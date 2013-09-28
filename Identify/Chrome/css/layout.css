@@ -1,0 +1,184 @@
+﻿      html, body {
+        height: 97%;
+        width: 98%;
+        padding: 0;
+      }
+
+      body {
+      margin: 1% 1% 2%;
+      background-color: #FFF;
+      color: #333;
+      font-size: 14px;
+      overflow: hidden;
+      font-family: "Tahoma", Tahoma, "Trebuchet MS", Arial, sans-serif;
+      }
+
+      a {
+        color: #369;
+      }
+
+      #header {
+        border: solid 1px #999;
+        height: 80px;
+        background: url(../images/chrome_headerbg.png) #969696 repeat-x;
+        -webkit-border-top-left-radius: 4px;
+        -webkit-border-top-right-radius: 4px;
+        -moz-border-radius-topleft: 4px;
+        -moz-border-radius-topright: 4px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        margin: 10;
+
+      }
+
+      #title {
+      color: #334453;
+      font-size: 30px;
+      text-align: left;
+      font-weight: bolder;
+      text-shadow: 0 1px 0 #EEE;
+      padding-top: 10px;
+      padding-left: 15px;
+      white-space: nowrap;  
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;
+      }
+
+      #subtitle {
+        font-size: 14px;
+        color: #334453;
+        padding-left: 15px;
+        white-space: nowrap;  
+        overflow: hidden;  
+        text-overflow: ellipsis;
+        -o-text-overflow:ellipsis;
+      }
+
+      #rightPane {
+        background-color: #e3e9ee;
+        border-left: solid 1px #999;
+        width: 25%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #leftPane {
+        background-color: #e3e9ee;
+        border-left: solid 1px #999;
+        width: 20%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .panel_content {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .panelHeader {
+        background: url(../images/chrome_leftheaderbg.png) repeat-x;
+        border-bottom: solid 1px #999;
+        color: #FFF;
+        height: 28px;
+        font-size: 18px;
+        line-height: 26px;
+        overflow: hidden;
+        margin: 10;
+        padding: 10px; 10px 10px 10px
+      }
+
+      #leftPaneBody {
+        margin: 0;
+      }
+
+      #rightPaneBody {
+        margin: 0;
+      }
+
+      #leftPaneBody .panel_content {
+        padding: 10px;
+      }
+
+      #rightPaneBody .panel_content {
+        padding: 10px;
+      }
+
+      #map {
+        border-left: solid 1px #999;
+        border-right: solid 1px #999;
+        margin: 0;
+      }
+
+      #footer {
+        font-size: 12px;
+        border: solid 1px #999;
+        background: url(../images/chrome_headerbg.png) #9b9b9b repeat-x;
+        -webkit-border-bottom-left-radius: 4px;
+        -webkit-border-bottom-right-radius: 4px;
+        -moz-border-radius-bottomleft: 4px;
+        -moz-border-radius-bottomright: 4px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        text-align: right;
+        height: 18px;
+        margin: 0;
+        padding: 10px 15px 5px;
+      }
+
+      .identifyServiceNameLabel {
+        margin: 6px;
+        padding: 3px;
+        color: #333;
+      background: url(../images/chrome_headerbg.png) #969696 repeat-x;
+        font-size: larger;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .identifyLayerNameLabel {
+        margin: 10px 40px 10px 40px;
+        padding: 3px;
+        color: #fff;
+        background: url(../images/chrome_leftheaderbg.png) repeat-x;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .identifyResult {
+        padding: 10px;
+        margin-left: 15px;
+        border-bottom: solid thin silver;
+        font-size:smaller;
+      }
+
+      .identifyResultError {
+        color: darkred;
+        padding: 10px;
+        margin-left: 15px;
+        border-bottom: solid thin silver;
+      }
+
+      .identifyResult:hover {
+        /*...*/
+      }
+
+      .identifyAttribute {
+        color: #333;
+        padding: 2px;
+        font-weight: normal;
+      }
+
+      .identifyValue {
+        color: #333;
+        padding: 2px;
+        font-weight: bold;
+      }
+      .esriScalebar{
+      padding-left:15px;
+      }
+      .map .bingLogo-lg{
+      left:18px !important;
+      }

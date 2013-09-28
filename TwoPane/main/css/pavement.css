@@ -1,0 +1,143 @@
+﻿html, body { 
+  height: 100%; 
+  width: 100%; 
+  padding: 0; 
+  margin: 0 !important;
+} 
+
+body { 
+  background: #000 url("../images/pavement_bg.jpg") center center fixed no-repeat;
+  *background: #000 url("../images/pavement_bg.jpg") top left repeat;
+  -moz-background-size: cover;
+  font-weight: lighter;
+  background-size: cover;
+  color: whitesmoke;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+} 
+
+a { 
+  color: #3E87DC; 	
+} 
+
+#header { 
+  margin-bottom: 10px; 
+  height: 100px; 
+}
+  
+#header_flourish{
+  background: url("../images/pavement_topflourish.png") no-repeat;
+  width: 642px;
+  height: 33px;
+  position: absolute;
+  bottom: 0px;
+}
+  
+#title {
+  color:#cf9325;
+  font-weight: lighter; 
+} 
+
+#subtitle { 
+  color: #FFFFFF; 
+  white-space: nowrap;  
+  overflow: hidden;  
+  text-overflow: ellipsis;
+  -o-text-overflow:ellipsis;  
+} 
+
+#rightPane { 
+  margin: 20px 20px 0px 0px; 
+} 
+
+#leftPane { 
+  margin: 20px 0px 0px 20px; 
+} 
+
+.panel_content { 
+  padding: 0; 
+  color:whitesmoke !important;
+} 
+.panelHeader{
+  height: 30px;
+  padding-top: 15px;
+  border-bottom: 3px solid #fff;
+}
+
+.panelHeader span { 
+  margin: 0px auto; 
+  padding: 0 10px 5px 10px;
+  font-weight: normal;
+  font-size: 18px;
+  color: #cf9325;
+} 
+
+#map { 
+  margin: 0 0 0px 0px; 
+  border: solid 3px #fff; 
+} 
+  
+#footer { 
+  color: #FFFFFF; 
+  font-size: 14px; 
+  padding: 8px 20px 5px; 
+  text-align:center; 
+  height:18px;
+}
+
+.esriPopup.pavement .titleButton,
+.esriPopup.pavement .pointer,
+.esriPopup.pavement .outerPointer,
+.esriPopup.pavement .esriViewPopup .gallery .mediaHandle,
+.esriPopup.pavement .esriViewPopup .gallery .mediaIcon {
+  background-image: url(../images/popup_sprite_pavement.png);
+}
+
+.esriPopup.pavement .titleButton {
+  top: 4px;
+}
+
+.esriPopup.pavement .titleButton.maximize,
+.esriPopup.pavement .titleButton.restore {
+  top: 6px;
+}
+
+.esriPopup.pavement .pointer.top {
+ background-position: 0 -616px;
+  
+}
+
+.esriPopup.pavement .pointer.topLeft {
+  left: 0px; top: -43px; background-position: 0 -525px; width: 51px; height: 45px;
+}
+
+.esriPopup.pavement .pointer.topRight {
+  right: 0px; top: -43px; background-position: 0 -707px; width: 51px; height: 45px;
+}
+
+
+.esriPopup.pavement .pointer.bottomLeft,
+.esriPopup.pavement .pointer.bottomRight { 
+  bottom: -44px; 
+}
+
+
+.esriPopup.pavement .contentPane,
+.esriPopup.pavement .actionsPane {
+  border-color: 1px solid #ffffff;
+  background-color: #1b1c20;
+  color:#ffffff;
+}
+
+.esriPopup.pavement .titlePane,
+.dj_ie7 .esriPopup.pavement .titlePane .title {
+  background-color: #cf9325;
+  color: #333333;
+  font-weight: bold;
+}
+
+.esriPopup.pavement .titlePane {
+  border-bottom: 1px solid #ffffff;
+}
+.esriPopup.pavement a {
+  color: #4ca0f5;
+}

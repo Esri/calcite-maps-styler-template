@@ -1,0 +1,67 @@
+#itemContainer {
+    margin-left: 8px;
+}
+
+#itemTitle {
+    color: #088da5;
+}
+
+#itemThumbnail {
+    max-width: 150px;
+    border-radius: 3px;
+    -moz-box-shadow: 2px 2px 3px rgb(133, 133, 133);
+    -webkit-box-shadow: 2px 2px 3px rgb(133, 133, 133);
+    box-shadow: 2px 2px 3px rgb(133, 133, 133);
+    float: left;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 4px;
+}
+
+#itemModified {
+    color: #6a6a6a;
+    font-size: 0.65em;
+    margin-left: 2px;
+    clear: both;
+}
+
+#averageRating {
+    color: #6a6a6a;
+    font-size: 0.9em;
+}
+
+#nRatings {
+    color: #6a6a6a;
+    font-size: 0.9em;
+}
+
+#itemOwner {
+    color: #6a6a6a;
+    font-size: 0.65em;
+    margin-left: 2px;
+    margin-bottom: 15px;
+    clear: both;
+}
+
+#itemSnippet {
+    font-size: 0.75em;
+    margin-left: 2px;
+    clear: both;
+}
+
+hr {
+    margin-left: 1px;
+    margin-right: 10px;
+}
+
+#descriptionLabel {
+    margin-top: 3px;
+    margin-left: 2px;
+    font-weight: bold;
+    font-size: 0.85em;
+}
+
+#itemDescription {
+    margin-left: 2px;
+    font-size: 0.75em;
+}

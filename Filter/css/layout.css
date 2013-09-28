@@ -1,0 +1,257 @@
+﻿
+  html, body{
+    height:100%;
+    width:100%;
+   padding:0;
+   margin: 0;
+  }
+    body {
+    background-color:#FFF;
+    color:#333;
+    font-size:14px;
+    overflow:hidden;
+    font-family: Century Gothic, sans-serif;
+    }
+
+    .heading{
+      border-bottom:  solid 1px #999;
+    }
+
+    #header {
+        border:solid 1px #999;
+        height:80px;
+        background: #7d7e7d; /* Old browsers */
+        background: -moz-linear-gradient(top,  #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+    }
+
+    #title {
+        color:#fff;
+        font-size:24pt;
+        font-weight:bolder;
+        text-shadow:0 -1px 1px rgba(0,0,0,0.5);
+        padding-top:10px;
+        padding-left:15px;
+    }
+
+    #subtitle {
+        font-size:12pt;
+        color:#ccc;
+        padding-left:15px;
+        white-space: nowrap;  
+        overflow: hidden;  
+        text-overflow: ellipsis;
+        -o-text-overflow:ellipsis;
+    }
+
+    #leftPane {
+        border-left:solid 1px #999;
+        padding: 5px;
+        font-size: 11pt;
+        color: #333;
+    }
+
+    #map {
+        border-left:solid 1px #999;
+        border-right:solid 1px #999;
+        height:100%;
+        padding: 0px;
+    }
+    .loader{
+      position: absolute;
+      top:50%;
+      right:50%;
+      z-index: 100;
+      display:none;
+    }
+
+  .mobile #header{
+    height:30px;
+    overflow: hidden;
+    text-align: center;
+    padding-right: 10px;
+  }
+  .mobile #title{
+    display:block;
+    padding:0;
+    min-height:1.1em; 
+    margin: 0.6em 30% 0.8em;
+    outline: 0 none !important;
+    font-size: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align:center;
+    overflow:hidden;
+    color: #fff;
+  }
+  .mobile #leftPane{
+    background-color: #fff;
+    height:100%;
+    overflow: auto;
+    position: absolute;
+    width:100%;
+    z-index:100;
+    display:none;
+  }
+
+.headerButton{
+  position: absolute;
+  top:3px;
+  left: 2px;
+  -moz-box-shadow: 0px 1px 1px -18px #999999;
+  -webkit-box-shadow: 0px 1px 1px -18px #999999;
+  box-shadow: 0px 1px 1px -18px #999999;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #45484d), color-stop(1, #000000) );
+  background:-moz-linear-gradient( center top, #45484d 5%, #000000 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#45484d', endColorstr='#000000');
+  background-color:#45484d;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #4c4c4c;
+  color:#fff;
+  font-family:arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:6px 6px;
+  text-decoration:none;
+  cursor: pointer;
+}
+.headerButton:hover{
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #000000), color-stop(1, #45484d) );
+  background:-moz-linear-gradient( center top, #000000 5%, #45484d 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#45484d');
+  background-color:#000000;
+}
+.headerButton:active {
+  position:relative;
+  top:1px;
+}
+  /*Input filter styles*/
+
+  legend{
+    background: none repeat scroll 0 0 transparent;
+    color: #003366;
+    font-size: 1.3 em;
+    font-weight: bold;
+    margin: .5em 0;
+    padding: 0 0.5 em;
+  }
+  .instructions{
+    margin: .5em 0;
+    color: #999;
+  }
+  #container{
+    margin: 0 auto;
+    padding: 1em;
+    text-align: left;
+    position: relative;
+  }
+
+  #container.esriRtl{
+    text-align: right;
+  }
+
+  .filter{
+    padding: 1em .5em;
+    display: block;
+
+  }
+  .selectedFilter{
+    border: solid 1px  #BBFFFF;
+  }
+  #container.esriLtr label{
+    float:left;
+  }
+  #container.esriRtl label{
+    float:right;
+  }
+  label{
+    padding: 0 .5em .4em .5em;
+    width:100px;
+  }
+
+ #container.esriRtl label.hint{
+    text-align: right;
+    float:right;
+  }
+  .hint {
+    font-style: italic;
+    font-size: 9pt;
+    width: 100%;
+    padding: 0 .5em .4em .5em;
+    text-align: left;
+    float:left;
+    color: #999;
+  }
+  #container.esriRtl .row{
+    float: left;
+    text-align: right;
+  }
+  #container.esriLtr .row{
+    float:right;
+    text-align: left;
+  }
+  .row{
+    padding-bottom: 10px;
+    width:150px;
+  }
+  .clearBoth{
+    width: 100%;
+    height:1px;
+    margin: 0 0 -1px;
+    clear:both;
+  }
+
+  input{
+    border-color: #555;
+    border-style: solid;
+    border-width: 1px;
+    color: #333;
+    padding: 1px;
+    width: 150px;
+  }
+ #container.esriLtr .submitButton{
+    float:left;
+ }
+  .submitButton{
+    background: none repeat scroll 0 0 #555555;
+    border: 1px solid #333333;
+    color: #FFFFFF;
+    font-size: 100%;
+    padding: 2px;
+    cursor:pointer;
+  }
+.submitButton:hover{
+  border: 1px solid #999;
+}
+.esriMobileNavigationBar{
+    background: #7d7e7d; /* Old browsers */
+    background: -moz-linear-gradient(top,  #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+}
+.esriPopupMobile .titlePane{
+    background: #7d7e7d; /* Old browsers */
+    background: -moz-linear-gradient(top,  #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+
+}
+
+select {
+    max-width: 150px;
+}

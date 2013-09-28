@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+  <title>Layout Template - Read Me</title>
+  <style>
+.selector{color:red;}
+.heading{
+  background-color:#D8E0E2;
+  background-repeat:repeat-x;
+  border-bottom:1px solid #FFFFFF;
+  border-top:1px solid #FFFFFF;
+  color:black;
+  font-family:Verdana,Arial,Helvetica,sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  letter-spacing:1.1px;
+  margin:15px 0 10px;
+  padding:3px 10px;
+  text-align:center;
+}
+  </style>
+</head>
+
+<body>
+
+<p>This template displays an elevation profile for a selected route in
+the map. This easily configurable template allows you to define the
+map, title and subtitle for the site. You can also provide the url to
+an elevation server object extenstion that generates elevations.</p>
+<div class="heading">Table of Contents</div>
+
+
+<ul>
+  <li><a href="#Install_the_Web_application">Install the web application</a></li>
+  <li><a href="#Configure_the_application">Configure the application<br>
+
+    </a></li>
+  <li><a href="#Configure_custom_utility_services_and">Configure custom utility
+services and other external URLs</a></li>
+</ul>
+
+
+<a name="deploy"></a>
+<h3 class="heading"><a name="Install_the_Web_application"></a>Install the Web application</h3>
+
+<p>These instructions assume that you have a web server like <a href="http://www.iis.net/">Internet Information Services
+(IIS)</a>
+installed and setup on your machine. If you are using another web
+server the general installation steps will be the same but you will
+need to check your web server's documentation for specific information
+on deploying and testing the application.
+</p>
+
+
+<ol>
+  <li>Copy the contents of the zip file into your web server's
+root directory. In IIS, the default location for the&nbsp;root
+folder is <code>c:\inetpub\wwwroot</code>. </li>
+  <li>If your application edits features in a feature service,
+enables the elevation chart, contains secure services, web maps that
+aren't publicly shared, or generates requests that exceed 2000
+characters you may need to setup and use a proxy page. Common
+situations where you may exceed the URL length are, using complex
+polygons as input to a task or specifying a spatial reference using
+well-known text (WKT).
+For details on installing and
+configuring a proxy page, see <a href="http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html">Using
+the proxy page</a>. After setting up the proxy set the <code>proxyurl</code>
+option in index.html to point to the location of your proxy. </li>
+  <li> Test the page using the following URL:
+http://localhost/[template name]/index.html, where [template name] is
+the name of the folder where you extracted the zip contents.</li>
+</ol>
+<h3 class="heading"><a name="Configure_the_application"></a>Configure the application</h3>
+
+
+<p>Now let's configure the application. </p>
+
+
+<ol>
+  <li><span>Every
+map you save contains a unique identifier.<span style=""> </span>You&rsquo;ll
+use this ID to configure the
+application.To
+obtain the ID, log in and open the map you
+want to include in your application.If
+you own the map, make sure it is shared with everyone.<span style="">
+View
+the map details and copy
+the ID from the URL in the top of your browser. The section you need to
+copy is highlighted in yellow in the image below.</span></span></li>
+  <br>
+  <img src="../OnePane/basicviewer/documentation/findmapid.png"><li>To modify the map, replace the string for <span style="font-style: italic;">webmap</span> with your
+map's id. The <span style="font-style: italic;">webmap</span> property is found in app.js. For example:
+    
+    <pre>function init(){<br> //The ID for the map<br> webmap = "<span class="selector">dbd1c6d52f4e447f8c01d14a691a70fe</span></pre>
+
+    <br>
+
+
+  </li>
+  <li>Modify <span style="font-style: italic;">sharingurl</span>, found
+inside app.js, to point to your sharing service URL if you are using&nbsp;an ArcGIS Online organization or Portal for
+ArcGIS.&nbsp;<br>
+
+
+  </li>
+  <ul>
+    <li>The default value is <i>null</i>, and
+automatically attempts to use <span style="font-style: italic;">www.arcgis.com</span>.
+    </li>
+    <li>For an organization, specify the&nbsp;url as
+follows:
+      <i>http://MyOrg.maps.arcgis.com</i></li>
+    <li>For Portal for ArcGIS, specify the url as follows: <span style="font-style: italic;">http://&lt;fully qualified
+domain name&gt;/&lt;web adaptor instance name&gt;. </span>For
+example,<span style="font-style: italic;">
+http://myportal.domain.com/arcgis.</span></li>
+  </ul>
+  <br>
+
+
+sharingurl: "<span class="selector">Sharing URL</span><br>
+  <br>
+  <li>If your map contains data from Bing Maps, enter your Bing
+Maps key in commonConfig.js.
+    
+    <pre>bingmapskey = "<span class="selector">Enter your Bing Maps key here</span>"; </pre>
+
+
+  </li>
+  <li>Save the file then test your application.&nbsp;</li>
+</ol>
+<h4 class="heading"><a name="Configure_custom_utility_services_and"></a>Configure custom utility services and
+other external URLs</h4>
+Your Elevations Profile application can be configured to use your
+own
+utility services. Additionally, any other externally facing URLs can be
+customized to point to URLs within your network, except where otherwise
+noted. The instructions below detail the steps necessary to configure
+your application in a disconnected environment.
+
+<ol>
+  <li><span style="font-weight: bold;">Specify a
+custom print service</span>. In commonConfig.js, replace the URL
+value in quotes for the <span style="font-style: italic;">printTask</span>
+property with your custom print service. For example:
+    
+    <pre>printTask:{<br> url: location + protocol + <span class="selector">"//MyServer/../rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"</span><br>}</pre>
+
+
+    <span style="font-weight: bold;">Note</span>:
+If a custom print service is not configured, the application uses the
+ArcGIS.com default print service.
+  </li>
+  <br>
+  <li><span style="font-weight: bold;">Specify a
+custom geometry
+service.&nbsp; </span><span style="font-weight: normal;">In
+commonConfig.js, replace the URL
+value in quotes for the </span><span style="font-style: italic; font-weight: normal;">geometry</span><span style="font-weight: normal;">
+property with your custom print service. For example:</span>
+    
+    <pre>geometry:{<br> url: location + protocol + <span class="selector">"//MyServer/../rest/services/Geometry/GeometryServer"</span><br>}</pre>
+
+
+Note<span style="font-weight: normal;">:
+If a custom geometry service is not configured, the application uses
+the
+ArcGIS.com default geometry service.</span></li>
+  <br>
+  <li><span style="font-weight: bold;">Specify a
+custom geocode
+service. </span><span style="font-weight: normal;">In
+commonConfig.js, replace the URL
+value in quotes for the </span><span style="font-style: italic; font-weight: normal;">geocode</span><span style="font-weight: normal;">
+property with your custom print service. For example:</span>
+    
+    <pre>geocode:{<br> url: location + protocol + <span class="selector">"//MyServer/../rest/services/World/GeocodeServer"</span><br>}</pre>
+
+
+    <span style="font-weight: bold;">Note</span>:
+    <span style="font-weight: normal;">If a custom geocode
+service is not configured, the application uses the
+ArcGIS.com World geocode service by default.</span></li>
+  <br>
+  <li><span style="font-weight: bold;">Search and
+replace Javascript API (JSAPI) references.&nbsp;</span><span style="font-weight: normal;">In index.html, use a text
+search&nbsp;to find all instances of&nbsp;
+"//serverapi.arcgisonline.com/jsapi/arcgis/3.5". </span><span style="font-weight: normal;">Your search should find three
+references to the ArcGIS.com JSAPI. Replace these three references with
+your internally hosted JSAPI. Be aware you may need to modify the
+search and replace text strings to correctly update the references to
+point to your
+hosted JSAPI. <br>
+
+
+If you are using Portal for ArcGIS, you can update
+the&nbsp;references to use the portal's internally hosted JSAPI,
+for
+example:</span>
+    
+    <pre><br>Search for: <span class="selector">//serverapi.arcgisonline.com/jsapi/arcgis/3.5</span><br></pre>
+
+
+    <span style="font-weight: bold;"></span>
+    
+    <pre>Replace with: <span class="selector">//MyPortalServer.domain.com/arcgis/jsapi/jsapi</span><br></pre>
+
+
+    <span style="font-weight: bold;"></span>
+    <br>
+
+
+    <span style="font-weight: normal;">Confirm the update
+was successful by opening one of the updated references in a web
+browser. If the file contents are displayed properly in the web
+browser, the
+update was succesful. &nbsp;For example:</span><br>
+
+
+    
+    <pre><br>Open in web browser: <span class="selector">"http://MyPortalServer.domain.com/arcgis/jsapi/jsapi/js/dojo/dojox/layout/resources/FloatingPane.css"</span><br></pre>
+
+
+    <br>
+
+
+    <b>Note: </b>If
+JSAPI
+references are not updated, the application uses the JSAPI hosted by
+ArcGIS.com.</li>
+</ol>
+<big style="font-weight: bold;">External URLs that cannot
+be modified<small><br>
+
+<br>
+
+</small></big>The application may not function correctly if
+the references below are modified.&nbsp;<br>
+
+<ol>
+  <li><span style="font-weight: bold;">Elevation
+widget.&nbsp;</span>The elevation widget uses
+these external references, which cannot be changed:
+    <ul>
+      <li>http://help.arcgis.com</li>
+      <li>http://sampleserver6.arcgisonline.com/ArcGIS/rest/services/Elevation/WorldElevations/MapServer</li>
+    </ul>
+
+  </li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,420 @@
+﻿{
+    "values": {
+        "webmap": "0ebefb7ea74b425ebeb5853c42d01142",
+        "titleBar.title": "Parcel Viewer",
+        "titleBar.iconUrl": "images/onlineapp.png",
+        "colorizer.theme": "DarkGray",
+        "searchBox.hint": "42757 Woodward Ave",
+        "featureSearcher.searchLayerName": "Parcel Details",
+        "featureSearcher.searchFields": "SITEADDRESS,CNVYNAME,PARCELID",
+        "basemapBox.basemapgroupTitle": "",
+        "basemapBox.basemapgroupOwner": "",
+        "helpMessageBox.content": "Parcel Viewer<hr><br>The Parcel Viewer provides the general public and other interested parties local government property tax and assessment information and supplements that information with lifestyle and internet broadband information for a given neighborhood.<br><br>To locate a parcel, simply click on the map or enter an address or parcel number in the search box and select a parcel from the list."
+    },
+
+    "configurationSettings": [{
+        "category": "Title",
+        "fields": [{
+            "label": "Application title",
+            "fieldName": "titleBar.title",
+            "type": "string",
+            "tooltip": "Title to display in application's title bar"
+        }, {
+            "label": "Application icon URL",
+            "fieldName": "titleBar.iconUrl",
+            "type": "string",
+            "tooltip": "URL to icon to display in application's title bar"
+        }, {
+            "label": "Color Scheme:",
+            "fieldName": "colorizer.theme",
+            "type": "string",
+            "options": [{
+                "label": "Dark Gray",
+                "value": "DarkGray"
+            }, {
+                "label": "Dark Green",
+                "value": "DarkGreen"
+            }, {
+                "label": "Dodger Blue",
+                "value": "DodgerBlue"
+            }, {
+                "label": "Gray",
+                "value": "Gray"
+            }, {
+                "label": "Brick",
+                "value": "Brick"
+            }, {
+                "label": "Thistle",
+                "value": "Thistle"
+            }, {
+                "label": "Turquoise",
+                "value": "Turquoise"
+            }, {
+                "label": "Orange",
+                "value": "Orange"
+            }],
+            "tooltip": "Color theme to use"
+        }]
+    }, {
+        "category": "Map",
+        "fields": [{
+            "label": "Hint in search field",
+            "fieldName": "searchBox.hint",
+            "type": "string",
+            "tooltip": "Text to display in the search entry field as a format hint"
+        }, {
+            "label": "Search layer name",
+            "fieldName": "featureSearcher.searchLayerName",
+            "type": "string",
+            "tooltip": "Layer name of the feature layer to use for search"
+        }, {
+            "label": "Search layer field(s)",
+            "fieldName": "featureSearcher.searchFields",
+            "type": "string",
+            "tooltip": "Comma-separated list of the field(s) to look at during a search"
+        }, {
+            "label": "Name of basemap group",
+            "fieldName": "basemapBox.basemapgroupTitle",
+            "type": "string",
+            "tooltip": "Name of the ArcGIS.com group containing your basemaps",
+            "placeholder": "Defaults to Esri basemaps"
+        }, {
+            "label": "Username of basemap group owner",
+            "fieldName": "basemapBox.basemapgroupOwner",
+            "type": "string",
+            "tooltip": "ArcGIS.com username of owner of basemap group"
+        }]
+    }, {
+        "category": "Help",
+        "fields": [{
+            "label": "Help text",
+            "fieldName": "helpMessageBox.content",
+            "type": "string",
+            "stringFieldOption": "textarea",
+            "tooltip": "Text to display when the help button is clicked"
+        }]
+    }],
+
+    "ui": [{
+        "classname": "js.LGColorizer",
+        "config": {
+            "rootId": "colorizer",
+            "parentDiv": "contentDiv",
+            "colorTable": [{
+                "theme": "DarkGray",
+                "colors": ["#fff", "#333333", "#5d5d5d"]
+            }, {
+                "theme": "DarkGreen",
+                "colors": ["#fff", "DarkGreen", "#9bcd9b"]
+            }, {
+                "theme": "DodgerBlue",
+                "colors": ["#fff", "#104e8b", "#1a78d7"]
+            }, {
+                "theme": "Gray",
+                "colors": ["#fff", "Gray", "#aaaaaa"]
+            }, {
+                "theme": "Brick",
+                "colors": ["#fff", "#9c661f", "#d89438"]
+            }, {
+                "theme": "Thistle",
+                "colors": ["#fff", "#8b7b8b", "#b3a8b3"]
+            }, {
+                "theme": "Turquoise",
+                "colors": ["#fff", "#00868b", "#00dadf"]
+            }, {
+                "theme": "Orange",
+                "colors": ["#fff", "#cd8500", "#ffb122"]
+            }]
+        }
+    }, {
+        "classname": "js.LGFrame",
+        "styles": ".appFrame{width:100%;height:100%;overflow:hidden;position:absolute}.frameHeader{width:100%;height:64px;padding:0px;overflow:hidden;position:absolute}.frameContent{width:100%;padding:0px;position:absolute}",
+        "config": {
+            "rootId": "outerFrame",
+            "headerDivId": "headerFrame",
+            "contentDivId": "contentFrame",
+            "parentDiv": "contentDiv",
+            "rootClass": "appFrame",
+            "headerDivClass": "frameHeader",
+            "contentDivClass": "frameContent"
+        }
+    }, {
+        "classname": "js.LGBusy",
+        "styles": ".busyImage{display:none;background-image:url('images/loading.gif');width:80px;height:17px;position:absolute;z-index:100}",
+        "config": {
+            "rootId": "busyIndicator",
+            "parentDiv": "contentFrame",
+            "horizOffset": 0,
+            "vertOffset": 0,
+            "busyImageClass": "busyImage"
+        }
+    }, {
+        "classname": "js.LGMap",
+        "styles": ".mapContainer{margin:0px;padding:0px;overflow:hidden;position:absolute}",
+        "config": {
+            "rootId": "map",
+            "rootClass": "mapContainer",
+            "parentDiv": "contentFrame",
+            "fill": true,
+            "lineHiliteColor": "#0000ff",
+            "fillHiliteColor": [0, 0, 255, 0.1]
+        }
+    }, {
+        "classname": "js.LGTitleBar",
+        "styles": ".appTitleBar{height:52px;margin:0px;padding:2px;overflow:hidden;position:absolute}.titleIcon{height:48px;margin:4px;padding:0px;float:left}.titleText{height:48px;margin:4px;padding:0px;font-size:200%;vertical-align:middle;word-wrap:break-word;float:left}@media all and (max-width: 520px){.titleText{display:none}}",
+        "config": {
+            "rootId": "titleBar",
+            "parentDiv": "headerFrame",
+            "rootClass": "appTitleBar",
+            "horizOffset": 4,
+            "vertOffset": 0,
+            "iconClass": "titleIcon",
+            "titleClass": "titleText"
+        }
+    }, {
+        "classname": "js.LGGallery",
+        "styles": ".commandPanel{height:52px;margin:0px;padding:2px;overflow:hidden;position:absolute;text-align:center;vertical-align:middle}.commandPanelArrow{width:12px;height:48px;margin:4px;padding:0px;cursor:pointer;vertical-align:middle}.okIE .commandPanelArrow{border-radius:4px}.commandButton{width:44px;height:44px;cursor:pointer}.okIE .commandButton{border-radius:8px}.commandTextButton{width:100%;height:44px;cursor:pointer}.okIE .commandTextButton{border-radius:8px}.commandText{display:inline;height:32px;margin-left:2px;font-size:120%;overflow:hidden;vertical-align:bottom}.okIE .commandText{display:inline-block}.commandIcon{width:32px;height:32px;margin-left:2px;margin-top:6px}",
+        "config": {
+            "rootId": "commandPanel",
+            "parentDiv": "headerFrame",
+            "rootClass": "commandPanel",
+            "horizOffset": -4,
+            "vertOffset": 0,
+            "itemClass": "commandPanelItem",
+            "arrowClass": "commandPanelArrow"
+        }
+    }, {
+        "classname": "js.LGSearchAddress",
+        "config": {
+            "rootId": "addressSearcher",
+            "parentDiv": "contentFrame",
+            "searchUrl": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Locators/TA_Address_NA_10/GeocodeServer",
+            "addressParamName": "SingleLine",
+            "minimumScore": 80,
+            "validLocators": ["US_RoofTop", "US_Streets", "US_StreetName"],
+            "outWkid": 102100,
+            "outFields": ["Loc_name", "Match_addr"]
+        }
+    }, {
+        "classname": "js.LGSearchFeatureLayer",
+        "config": {
+            "rootId": "featureSearcher",
+            "parentDiv": "contentFrame",
+            "mapRootId": "map",
+            "busyIndicator": "busyIndicator",
+            "publishPointsOnly": false,
+            "searchPattern": "%${1}%",
+            "caseInsensitiveSearch": true
+        }
+    }, {
+        "classname": "js.LGLaunchUrl",
+        "config": {
+            "sameWinTrigger": "launch/parent",
+            "newWinTrigger": "launch/blank"
+        }
+    }, {
+        "classname": "js.LGLocate",
+        "config": {
+            "rootId": "locator",
+            "parentDiv": "contentFrame",
+            "trigger": "locate",
+            "publish": "position"
+        }
+    }, {
+        "classname": "js.LGMessageBox",
+        "styles": ".helpMessageBox{display:none;max-width:400px;max-height:300px;padding:16px;position:absolute;overflow:auto;z-index:40;word-wrap:break-word}.okIE .helpMessageBox{border-radius:8px}",
+        "config": {
+            "rootId": "helpMessageBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "helpMessageBox",
+            "horizOffset": -2,
+            "vertOffset": [2, -2],
+            "trigger": "help"
+        }
+    }, {
+        "classname": "js.LGPublishEcho",
+        "config": {
+            "rootId": "diagMessageBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "helpMessageBox",
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "trigger": "error"
+        }
+    }, {
+        "classname": "js.LGBasemapBox",
+        "styles": ".basemapBox{display:none;width:269px;max-height:250px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .basemapBox{border-radius:8px}.basemapGallery{width:96%;height:96%;padding:4px;overflow-y:auto;}.lt-ie9 .basemapGallery{height:220px}",
+        "config": {
+            "rootId": "basemapBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "basemapBox",
+            "galleryClass": "basemapGallery",
+            "horizOffset": -2,
+            "vertOffset": [2, -2],
+            "trigger": "basemap",
+            "mapRootId": "map"
+        }
+    }, {
+        "classname": "js.LGMapBasedMenuBox",
+        "styles": ".shareBox{display:none;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .shareBox{border-radius:8px}",
+        "config": {
+            "rootId": "shareBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "shareBox",
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "trigger": "share",
+            "mapRootId": "map"
+        }
+    }, {
+        "classname": "js.LGSearchBoxByText",
+        "styles": ".searchBox{display:none;width:200px;max-height:224px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .searchBox{border-radius:8px}.resultsListBox{width:96%;top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;bottom:4px}.lt-ie9 .resultsListBox{width:100%;height:182px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}",
+        "config": {
+            "trigger": "search",
+            "publish": "showFeature",
+            "parentDiv": "contentFrame",
+            "rootId": "searchBox",
+            "rootClass": "searchBox",
+            "horizOffset": -2,
+            "vertOffset": [2, -2],
+            "searcher": "featureSearcher",
+            "showPrompt": "@prompts.search",
+            "resultsListBoxClass": "resultsListBox",
+            "resultsListTableClass": "resultsListTable",
+            "resultsListBodyClass": "resultsListBody",
+            "resultsListSearchingClass": "resultsListSearching",
+            "resultsListEntryClass": "resultsListEntry"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "tooltip": "@tooltips.search",
+            "iconUrl": "images/search.png",
+            "rootId": "search",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "featureSearcher",
+            "publish": "search"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "tooltip": "@tooltips.locate",
+            "iconUrl": "images/locate.png",
+            "rootId": "locate",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "locator",
+            "publish": "locate"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "tooltip": "@tooltips.basemap",
+            "iconUrl": "images/basemap.png",
+            "rootId": "basemap",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "basemapBox",
+            "publish": "basemap"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "tooltip": "@tooltips.share",
+            "iconUrl": "images/share.png",
+            "rootId": "share",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "shareBox",
+            "publish": "share"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "displayText": "@labels.email",
+            "displayTextClass": "commandText",
+            "tooltip": "@tooltips.shareViaEmail",
+            "iconUrl": "images/shareEmail.png",
+            "rootId": "share1",
+            "parentDiv": "shareBox",
+            "rootClass": "commandTextButton",
+            "iconClass": "commandIcon",
+            "publish": "share/email"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "displayText": "@labels.Facebook",
+            "displayTextClass": "commandText",
+            "tooltip": "@tooltips.shareViaFacebook",
+            "iconUrl": "images/shareFacebook.png",
+            "rootId": "share2",
+            "parentDiv": "shareBox",
+            "rootClass": "commandTextButton",
+            "iconClass": "commandIcon",
+            "publish": "share/facebook"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "displayText": "@labels.Twitter",
+            "displayTextClass": "commandText",
+            "tooltip": "@tooltips.shareViaTwitter",
+            "iconUrl": "images/shareTwitter.png",
+            "rootId": "share3",
+            "parentDiv": "shareBox",
+            "rootClass": "commandTextButton",
+            "iconClass": "commandIcon",
+            "publish": "share/twitter"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "tooltip": "@tooltips.help",
+            "iconUrl": "images/help.png",
+            "rootId": "help",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "publish": "help"
+        }
+    }, {
+        "classname": "js.LGShareAppExtents",
+        "config": {
+            "trigger": "share/email",
+            "publish": "launch/parent",
+            "tinyURLServiceURL": "",
+            "tinyURLResponseAttribute": "data.url",
+            "shareUrl": "mailto:%20?subject=Tax%20Viewer%20Map&body=${url}",
+            "busyIndicator": "busyIndicator",
+            "mapRootId": "map"
+        }
+    }, {
+        "classname": "js.LGShareAppExtents",
+        "config": {
+            "trigger": "share/facebook",
+            "publish": "launch/blank",
+            "tinyURLServiceURL": "",
+            "tinyURLResponseAttribute": "data.url",
+            "shareUrl": "http://www.facebook.com/sharer.php?u=${url}&t=Tax%20Viewer%20Map",
+            "busyIndicator": "busyIndicator",
+            "mapRootId": "map"
+        }
+    }, {
+        "classname": "js.LGShareAppExtents",
+        "config": {
+            "trigger": "share/twitter",
+            "publish": "launch/blank",
+            "tinyURLServiceURL": "",
+            "tinyURLResponseAttribute": "data.url",
+            "shareUrl": "http://twitter.com/home/?status=Tax%20Viewer%20Map ${url}",
+            "busyIndicator": "busyIndicator",
+            "mapRootId": "map"
+        }
+    }]
+}

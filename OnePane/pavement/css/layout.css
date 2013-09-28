@@ -1,0 +1,124 @@
+﻿ html, body { 
+        height: 100%; 
+        width: 100%; 
+        padding: 0; 
+        margin: 0;
+        } 
+      body { 
+        background: #000 url("../images/pavement_bg.jpg") center center fixed no-repeat;
+        *background: #000 url("../images/pavement_bg.jpg") top left repeat;
+        -moz-background-size: cover;
+        font-weight: lighter;
+        background-size: cover;
+        color: #fff;
+        font-size: 13px; 
+        overflow: hidden; 
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+      } 
+
+      a { 
+        color: #3E87DC; 	
+      } 
+
+      #header { 
+        margin: 0; 
+        height: 110px; 
+      }
+
+      #header_flourish{
+        background: url("../images/pavement_topflourish.png") no-repeat;
+        width: 642px;
+        height: 33px;
+        position: absolute;
+        bottom: 0px;
+      }
+
+      #title {
+        color:#cf9325;
+        font-size: 30px; 
+        font-weight: lighter; 
+        text-align: left; 
+        padding-top: 10px;
+        padding-left: 15px; 
+        white-space: nowrap;  
+        overflow: hidden;  
+        text-overflow: ellipsis;
+        -o-text-overflow:ellipsis;
+      } 
+
+      #subtitle { 
+        font-size: 14px; 
+        color: #FFFFFF; 
+        padding-left: 15px; 
+        white-space: nowrap;  
+        overflow: hidden;  
+        text-overflow: ellipsis;
+        -o-text-overflow:ellipsis;
+      } 
+
+      #rightPane { 
+        margin: 20px 20px 0px 0px;
+        padding: 0;
+        width: 20%; 
+      } 
+
+      #leftPane { 
+        margin: 20px 0px 0px 20px; 
+        padding: 0; 
+        width: 20%; 
+      } 
+
+      #leftPaneContent { 
+        height: 100%; 
+        width: 100%;
+        margin: 0; 
+        padding: 0; 
+      } 
+      #leftPaneHeader{
+        height: 30px;
+        padding-top: 15px;
+        border-bottom: 3px solid #fff;
+      }
+
+      #leftPaneHeader span { 
+        margin: 0px auto; 
+        padding: 0 10px 5px 10px;
+        font-weight: normal;
+        font-size: 18px;
+        color: #cf9325;
+      } 
+
+
+      #leftPaneBody { 
+        margin:0;
+      } 
+
+      #leftPaneBody .panel_content { 
+        padding: 10px; 
+      } 
+
+      #tabLink { 
+        text-decoration: none; 
+        color:#3f3f3f;
+      } 
+
+      #map { 
+        margin: 20px 20px 0px 0px; 
+        padding: 0; 
+        border: solid 3px #fff; 
+      } 
+
+      #footer { 
+        margin: 0; 
+        color: #FFFFFF; 
+        font-size: 14px; 
+        padding: 8px 20px 5px; 
+        text-align:right; 
+        height:18px;
+      }
+      .esriScalebar{
+        padding-left:15px;
+      }
+      .map .bingLogo-lg{
+        left:18px !important;
+      }

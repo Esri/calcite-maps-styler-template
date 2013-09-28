@@ -1,0 +1,24 @@
+<div id="groupView" data-dojo-type="dojox.mobile.View">
+  <ul id="groupTabBar" data-dojo-type="dojox.mobile.TabBar" data-dojo-props='barType:"segmentedControl"' fixed="top">
+    <li id="listItemLegend" data-dojo-type="dojox.mobile.TabBarButton" moveTo="legendSubView" selected="true"></li>
+    <li id="listItemAbout" data-dojo-type="dojox.mobile.TabBarButton" moveTo="aboutSubView"></li>
+  </ul>
+
+  <!-- the legend subview -->
+  <div id="legendSubView" data-dojo-type="dojox.mobile.ScrollableView" selected="true">
+    <div id="legendContainer">
+      <div id="legendHeader"></div>
+      <div id="legendDiv"></div>
+    </div>
+  </div>
+
+  <!-- the about subview -->
+  <div id="aboutSubView" data-dojo-type="dojox.mobile.ScrollableView">
+    <h4 id="title"></h4>
+    <hr />
+    <div id="subtitle"></div>
+    <div id="owner"></div>
+    <div id="footerText"></div>
+    <div id="modified"></div>
+  </div>
+</div>

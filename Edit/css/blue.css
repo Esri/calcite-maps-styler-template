@@ -1,0 +1,110 @@
+
+#header {
+border:solid 1px #446485;
+background-image: -ms-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -moz-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -o-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #446485), color-stop(1, #6788A2));
+background-image: -webkit-linear-gradient(bottom, #446485 0%, #6788A2 100%); 
+background-image: linear-gradient(to top, #446485 0%, #6788A2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#446485', endColorstr='#6788A2',GradientType=0 );
+}
+
+#title{
+color:#fff;
+text-shadow: 0px 1px 1px #000;
+}
+
+#subtitle{
+color:#fff;
+}
+
+#leftPane{
+color: #333;
+}
+
+.templatePicker{
+border-color: #666;
+}
+
+.mobile #title{
+color:#fff;
+}
+.mobile #leftPane{
+background-color: #fff;
+}
+
+/*Delete button the attribute inspector*/
+#mainWindow.dijitBorderContainerNoGutter div#map.dijitContentPane div#map_root.container div.esriPopup div.esriPopupWrapper div.sizer div.contentPane div#esri_dijit_AttributeInspector_0.esriAttributeInspector div.atiButtons span.dijit span.dijitReset{
+background-image: -ms-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -moz-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -o-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #446485), color-stop(1, #6788A2));
+background-image: -webkit-linear-gradient(bottom, #446485 0%, #6788A2 100%); 
+background-image: linear-gradient(to top, #446485 0%, #6788A2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#446485', endColorstr='#6788A2',GradientType=0 );
+color: #fff;
+border:none;
+}
+
+.headerButton{
+background-image: -ms-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -moz-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -o-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #446485), color-stop(1, #6788A2));
+background-image: -webkit-linear-gradient(bottom, #446485 0%, #6788A2 100%); 
+background-image: linear-gradient(to top, #446485 0%, #6788A2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#446485', endColorstr='#6788A2',GradientType=0 );
+border:1px solid #4c6c8c;
+color:#fff;
+text-shadow: 0 -1px 1px #000000;
+}
+
+.submitButton{
+background-image: -ms-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -moz-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -o-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #446485), color-stop(1, #6788A2));
+background-image: -webkit-linear-gradient(bottom, #446485 0%, #6788A2 100%); 
+background-image: linear-gradient(to top, #446485 0%, #6788A2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#446485', endColorstr='#6788A2',GradientType=0 );
+color: #FFFFFF;
+}
+.submitButton:hover{
+border: 1px solid #999;
+}
+background-image: -ms-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -moz-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -o-linear-gradient(bottom, #446485 0%, #6788A2 100%);
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #446485), color-stop(1, #6788A2));
+background-image: -webkit-linear-gradient(bottom, #446485 0%, #6788A2 100%); 
+background-image: linear-gradient(to top, #446485 0%, #6788A2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#446485', endColorstr='#6788A2',GradientType=0 );
+
+}
+
+/*Specify font for the popup window*/
+.esriPopup{
+font-family:"helvetica neue",helvetica,arial,sans-serif;
+}
+.esriPopup .pointer.top {
+background-position: 0 -616px;
+}
+.esriPopup .pointer.topLeft {
+left: 0px; top: -43px; background-position: 0 -525px; width: 51px; height: 45px;
+}
+
+.esriPopup .pointer.topRight {
+right: 0px; top: -43px; background-position: 0 -707px; width: 51px; height: 45px;
+}
+.esriPopup .titlePane{
+background-color:#446485;
+border-style:none;
+}
+.esriPopup .titleButton,
+.esriPopup .pointer,
+.esriPopup .outerPointer,
+.esriPopup .esriViewPopup .gallery .mediaHandle,
+.esriPopup .esriViewPopup .gallery .mediaIcon{
+background: url(blue/popup.png) no-repeat scroll 0 0 transparent;
+}

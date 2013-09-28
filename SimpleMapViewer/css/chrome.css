@@ -1,0 +1,150 @@
+﻿
+      body {
+      margin:1% 1% 2%;
+      background-color:#FFF;
+      color:#333;
+      font-size:14px;
+      overflow:hidden;
+      font-family:"Tahoma", Tahoma, "Trebuchet MS", Arial, sans-serif;
+      }
+
+      a {
+      color:#369;
+      }
+
+      #header {
+      border:solid 1px #999;
+      height:80px;
+      background:url(../images/chrome_headerbg.png) #969696 repeat-x;
+      -webkit-border-top-left-radius:4px;
+      -webkit-border-top-right-radius:4px;
+      -moz-border-radius-topleft:4px;
+      -moz-border-radius-topright:4px;
+      border-top-left-radius:4px;
+      border-top-right-radius:4px;
+      }
+
+      #title {
+      color:#334453;
+      font-size:30px;
+      text-align:left;
+      font-weight:bolder;
+      text-shadow:0 1px 0 #EEE;
+      padding-top:10px;
+      padding-left:15px;
+      }
+
+      #subtitle {
+      font-size:14px;
+      color:#444;
+      padding-left:15px;
+      /*white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;*/
+        word-wrap: break-word !important;
+      }
+
+      #rightPane {
+      background-color:#e3e9ee;
+      color:#3f3f3f;
+      border:solid 1px #999;
+      }
+
+      #leftPane {
+      background-color:#e3e9ee;
+      border-left:solid 1px #999;
+      margin:0;
+      padding:0;
+      }
+
+      #leftPaneContent{
+        background-color:#e3e9ee;
+      }
+      #leftPaneHeader {
+      background:url(../images/chrome_leftheaderbg.png) repeat-x;
+      border-bottom:solid 1px #999;
+      color:#FFF;
+      height:24px;
+      font-size:18px;
+      line-height:22px;
+      overflow:hidden;
+      padding:10px 10px 10px 15px;
+      }
+
+      #map {
+      border-left:solid 1px #999;
+      border-right:solid 1px #999;
+      }
+
+      #footer {
+      font-size:12px;
+      border:solid 1px #999;
+      background:url(../images/chrome_headerbg.png) #9b9b9b repeat-x;
+      -webkit-border-bottom-left-radius:4px;
+      -webkit-border-bottom-right-radius:4px;
+      -moz-border-radius-bottomleft:4px;
+      -moz-border-radius-bottomright:4px;
+      border-bottom-left-radius:4px;
+      border-bottom-right-radius:4px;
+      text-align:right;
+      height:18px;
+      padding:10px 15px 5px;
+      }
+
+      
+        .esriPopup.chrome .titleButton,
+        .esriPopup.chrome .pointer,
+         .esriPopup.chrome .outerPointer,
+        .esriPopup.chrome .esriViewPopup .gallery .mediaHandle,
+        .esriPopup.chrome .esriViewPopup .gallery .mediaIcon {
+          background-image: url(../images/popup_sprite_chrome.png);
+        }
+        
+        .esriPopup.chrome .titleButton {
+          top: 4px;
+        }
+        
+        .esriPopup.chrome .titleButton.maximize,
+        .esriPopup.chrome .titleButton.restore {
+          top: 6px;
+        }
+        
+        .esriPopup.chrome .pointer.top {
+          background-position: 0 -616px; 
+          
+        }
+        
+        .esriPopup.chrome .pointer.topLeft {
+          left: 0px; top: -43px; background-position: 0 -525px; width: 51px; height: 45px;
+        }
+        
+        .esriPopup.chrome .pointer.topRight {
+          right: 0px; top: -43px; background-position: 0 -707px; width: 51px; height: 45px;
+        }
+        
+        
+        .esriPopup.chrome .pointer.bottomLeft,
+        .esriPopup.chrome .pointer.bottomRight { 
+          bottom: -44px; 
+        }
+        
+        .esriPopup.chrome .contentPane,
+        .esriPopup.chrome .actionsPane {
+          border-color: 1px solid #999999;
+          background-color: #DAE4EF;
+        }
+        
+        .esriPopup.chrome .titlePane,
+        .dj_ie7 .esriPopup.chrome .titlePane .title {
+          background-color: #666666;
+          color: #FFFFFF;
+          font-weight: bold;
+        }
+        
+        .esriPopup.chrome .titlePane {
+          border-bottom: 1px solid #666666;
+        }
+        .esriPopup.chrome a {
+          color: #336699;
+        }

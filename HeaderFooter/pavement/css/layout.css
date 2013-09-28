@@ -1,0 +1,78 @@
+﻿      html,body {
+      height:100%;
+      width:100%;
+      margin:0;
+      padding:0;
+      }
+
+      body {
+      background:#000 url(../images/pavement_bg.jpg) top left repeat;
+      -moz-background-size:cover;
+      font-weight:lighter;
+      background-size:cover;
+      color:#fff;
+      font-size:13px;
+      overflow:hidden;
+      font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      a {
+      color:#3E87DC;
+      }
+
+      #header {
+      height:110px;
+      margin:0;
+      }
+
+      #header_flourish {
+      background:url(../images/pavement_topflourish.png) no-repeat;
+      width:642px;
+      height:33px;
+      position:absolute;
+      bottom:0;
+
+      }
+
+      #title {
+      color:#cf9325;
+      font-size:30px;
+      font-weight:lighter;
+      text-align:left;
+      padding-top:10px;
+      padding-left:15px;
+      white-space: nowrap;  
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;
+      }
+
+      #subtitle {
+      font-size:14px;
+      color:#FFF;
+      padding-left:15px;
+      white-space: nowrap;  
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;
+      }
+      #map {
+      border:solid 3px #fff;
+      margin:20px 20px 20px 20px;
+      padding:0;
+      }
+
+      #footer {
+      color:#FFF;
+      font-size:14px;
+      text-align:center;
+      height:40px;
+      margin:0;
+      padding:8px 20px 5px;
+      }
+    .esriScalebar{
+      padding-left:15px;
+    }
+    .map .bingLogo-lg{
+      left:18px !important;
+    }

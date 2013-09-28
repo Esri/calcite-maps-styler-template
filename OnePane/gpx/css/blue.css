@@ -1,0 +1,22 @@
+html,body{
+ color: #146ca1;
+}
+#header{
+  color:#fff; 
+  /* header background gradient, thanks to http://www.colorzilla.com/gradient-editor/ */
+  background: #155599; /* Old browsers */
+  background: -moz-linear-gradient(top, #155599 0%, #146ca1 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#155599), color-stop(100%,#146ca1)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #155599 0%,#146ca1 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #155599 0%,#146ca1 100%); /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #155599 0%,#146ca1 100%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#155599', endColorstr='#146ca1',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, #155599 0%,#146ca1 100%); /* W3C */
+}
+#subTitle{
+  color: #cfcfcf;
+}
+
+#rightPane{
+  background-color: #fff;
+}

@@ -1,0 +1,194 @@
+html,body {
+	height:98%;
+	width:98%;
+	margin: 0 10px;
+	padding:0;
+}
+
+body {
+	overflow:hidden;
+	font-family:"Tahoma", Tahoma, "Trebuchet MS", Arial, sans-serif;
+}
+
+#mainWindow {
+  width:	100%;
+  height:	100%;
+}
+
+#header {
+	margin:0;
+}
+
+#title {
+	white-space: nowrap;  
+	overflow: hidden;  
+	text-overflow: ellipsis;
+	-o-text-overflow:ellipsis;
+}
+
+#subtitle {
+	white-space: nowrap;
+	overflow: hidden;  
+	text-overflow: ellipsis;
+	-o-text-overflow:ellipsis;
+}
+
+#rightPane {
+	width:20%;
+}
+
+#leftPane {
+	width:20%;
+}
+
+#leftPaneContent {
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+#leftPaneHeader {
+	margin:0;
+}
+
+#leftPaneBody {
+	margin:0;
+}
+
+#leftPaneBody .panel_content {
+	padding:10px;
+}
+
+.mobile body {
+  font-size: 0.9em !important;
+}
+
+#tabLink {
+	text-decoration:none;
+	color:#3f3f3f;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+	padding:0;
+	margin:0;
+}
+
+#footer {
+	margin:0;
+}
+
+.esriScalebar{
+	padding-left:15px;
+}
+
+.map .bingLogo-lg{
+	left:18px !important;
+}
+
+#rightPanelToolbar {
+  position:absolute; 
+  z-index:1;
+  display:	none;
+}
+
+/* Custom Zoom Slider UI (pulled from http://developers.arcgis.com/en/ */
+#map_zoom_slider {
+    background-color: transparent;
+}
+
+.esriSimpleSlider {
+    position:absolute;
+    left:10px;
+    top:10px;
+    text-align:center;
+    color:#777;
+    cursor:pointer;
+    border:none;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    -ms-border-radius:0;
+    -o-border-radius:0;
+    border-radius:0;
+    -webkit-box-shadow:0 0 16px rgba(0,0,0,0.1);
+    -moz-box-shadow:0 0 16px rgba(0,0,0,0.1);
+    box-shadow:0 0 16px rgba(0,0,0,0.1);
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    user-select:none;
+}
+
+.esriSimpleSlider div {
+    margin-bottom:0;
+    width:32px;
+    height:32px;
+    font-size:16px;
+    line-height:29px;
+    background-color:#F3F3EF;
+    border:1px solid #d3d3cF;
+    -webkit-transition:background-color .1s linear;
+    -moz-transition:background-color .1s linear;
+    -o-transition:background-color .1s linear;
+    transition:background-color .1s linear;
+}
+
+.esriSimpleSlider div:hover {
+    background-color:#e3e3dF;
+    color:#555;
+}
+
+.esriSimpleSliderTL {
+    top:20px;
+    left:20px;
+}
+
+.esriSimpleSliderTR {
+    top:20px;
+    right:20px;
+}
+
+.esriSimpleSliderBL {
+    bottom:40px;
+    left:20px;
+}
+
+.esriSimpleSliderBR {
+    bottom:45px;
+    right:20px;
+}
+
+.esriSimpleSliderIncrementButton {
+    -webkit-border-radius:4px 4px 0 0;
+    -moz-border-radius:4px 4px 0 0;
+    -ms-border-radius:4px 4px 0 0;
+    -o-border-radius:4px 4px 0 0;
+    border-radius:4px 4px 0 0;
+}
+
+.esriSimpleSliderDecrementButton {
+    -webkit-border-radius:0 0 4px 4px;
+    -moz-border-radius:0 0 4px 4px;
+    -ms-border-radius:0 0 4px 4px;
+    -o-border-radius:0 0 4px 4px;
+    border-radius:0 0 4px 4px;
+}
+
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
+    border-bottom:none!important;
+}
+
+.esriSimpleSliderHorizontal .esriSimpleSliderIncrementButton {
+    border-right:none!important;
+    float:left;
+}
+
+.esriSimpleSliderHorizontal .esriSimpleSliderDecrementButton {
+    float:right;
+}
+
+.esriSimpleSliderHorizontal .esriSimpleSliderDecrementButton .dj_ie67Fix {
+    float:none;
+    text-align:center;
+}

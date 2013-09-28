@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9, IE=10">
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/dojo/dijit/themes/tundra/tundra.css">
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/esri/css/esri.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+
+   <script type="text/javascript">
+    var path_location = location.pathname.replace(/\/[^/]+$/, '');
+    var dojoConfig = {
+      parseOnLoad: true,
+      packages:[
+        {
+          name:"esriTemplate",
+          location: path_location
+        },
+        {
+          name:"utilities",
+          location: path_location + "/javascript" 
+        },
+        {
+         name: "templateConfig",
+          location: path_location.substr(0,path_location.lastIndexOf('/OnePane')) 
+        }
+      ]
+    };
+  </script>
+    <script type="text/javascript" src="//js.arcgis.com/3.7/"></script>
+    <script type="text/javascript" src="javascript/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="javascript/layout.js"></script>
+    <script type="text/javascript">
+
+
+  
+    function init(){
+     dojo.require("utilities.app");
+     dojo.require("templateConfig.commonConfig");
+
+      var defaults = {
+        //The ID for the map from ArcGIS.com
+        webmap : "9aae75bf5d2c4ce7ad8341e3c291f724",
+		    //The id for the web mapping applciation item that contains configuration info - in most
+        //cases this will be null.
+        appid:"",
+        //Enter a title, if no title is specified, the webmap's title is used.
+        title : "",
+        //Enter a subtitle, if not specified the ArcGIS.com web map's summary is used
+        subtitle : "",
+    	 //Display legend
+        legend : "true",
+        //specify a proxy url if needed
+        proxyurl:"",
+        //Modify this to point to your sharing service URL if you are using the portal
+        sharingurl :"",
+        //add default template options. This includes the bing key, sharing url, proxy url, 
+        //and any service urls (geometry, geocode, print) 
+        //that may be needed by the template.
+        bingmapskey: commonConfig.bingMapsKey,
+        helperServices:commonConfig.helperServices 
+      };
+      var app = new utilities.App(defaults);
+      app.init().then(function(options){
+        initMap(options);
+      });
+    }
+
+    //show map on load
+    dojo.addOnLoad(init);
+    </script>
+  </head>
+
+      <body class="tundra">
+        <div id="mainWindow" dojotype="dijit.layout.BorderContainer" design="headline"
+        gutters="false" style="width:100%; height:100%;">
+
+          <!-- Header Section-->
+          <div id="header" dojotype="dijit.layout.ContentPane" region="top">
+          	<div id="headerText">
+              <div id="title"></div>
+              <div id="subtitle"></div>
+            </div>
+            <div id="logoArea">
+            </div>
+        <div id="header_flourish"></div>
+
+          </div>
+
+          <!-- Map Section -->
+          <div id="map" dojotype="dijit.layout.ContentPane" region="center" dir="ltr">
+            <div id="legendCon"  dir="ltr">
+              	<div id="legendToggle"><p id="legTogText"></p></div>
+             	<div id="legendDiv"></div>
+            </div>
+            <img id="swipeImg" src="images/swipeStart.png" alt="">
+          </div>
+
+        </div>
+
+        <!--Loading Panel-->
+        <div id="loadingCon">
+    		<div id="loadingDialog">
+     			<div id="loadingHeader"></div>
+     			 <div id="loading"></div>
+       			 <img id="loadingImg" alt="" src="images/progressBar.gif">
+   		    </div>
+ 		  </div>
+
+       </body>
+
+  </html></div>
+ 		  </div>
+
+       </body>
+
+  </html>

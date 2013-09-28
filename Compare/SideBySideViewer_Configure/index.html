@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9,IE=10" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/dojo/dijit/themes/tundra/tundra.css">
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/esri/css/esri.css" />
+
+    <link rel="stylesheet" type="text/css" href="./css/layout.css"/>
+
+   <script type="text/javascript">
+    var path_location = location.pathname.replace(/\/[^/]+$/, '');
+    var dojoConfig = {
+      parseOnLoad: true,
+      packages:[
+        {
+          name:"esriTemplate",
+          location: path_location
+        },
+        {
+          name:"utilities",
+          location: path_location + "/javascript" 
+        },
+        {
+         name: "templateConfig",
+          location: path_location.substr(0,path_location.lastIndexOf('/Compare')) 
+        }
+      ]
+    };
+  </script>
+    <script type="text/javascript" src="//js.arcgis.com/3.7/">
+    </script>
+    <script type="text/javascript" src="javascript/layout.js"></script>
+    <script type="text/javascript">
+    dojo.require("esri.layout");
+    dojo.require("esri.widgets");
+    dojo.require("utilities.app");
+    dojo.require("templateConfig.commonConfig");
+
+
+
+
+    function init() {
+
+
+      var defaults = {
+        bottomHeight: 200,
+        // pixels (greater than 125)
+        webMaps: [{
+          'id': '4ff792a3962547caad2d924413c40985'
+        }, {
+          'id': '8ee873d16c424960a185aad57139328d'
+        }, {
+          'id': 'fb4a7cc496f144bd8d68b4b1d4804b5d'
+        }],
+        appid: "",
+        theme: "blue",
+        sharingurl: "",
+        proxyurl: "",
+        title: null,
+        //add default template options. This includes the bing key, sharing url, proxy url, 
+        //and any service urls (geometry, geocode, print) 
+        //that may be needed by the template.
+        bingmapskey: commonConfig.bingMapsKey,
+        helperServices:commonConfig.helperServices  
+      };
+      var app = new utilities.App(defaults);
+      app.init().then(function(options){
+        initMap(options);
+      });
+
+    }
+
+    dojo.addOnLoad(init);
+    </script>
+  </head>
+
+  <body class="tundra" link="gold" vlink="darkgoldenrod" alink="yellow">
+    <div id="mainWindow" dojotype="dijit.layout.BorderContainer" design="headline"
+    gutters="false">
+      <div id="topPane" dojoType="dijit.layout.BorderContainer" region="top"
+      gutters="false">
+        <div dojoType="dijit.layout.ContentPane" region="center">
+          <span id="title"></span>
+        </div>
+        <div dojoType="dijit.layout.ContentPane" region="right" style="overflow:hidden;">
+          <img src="images/esriGlobeLogo.png" height="50px" align="right" />
+        </div>
+      </div>
+      <div id="mainCenterPane" dojoType="dijit.layout.BorderContainer" region="center"
+      gutters="true">
+        <div id="bottomContainer" dojoType="dijit.layout.ContentPane" region="left">
+          <table id="bottomPane" width="100%" height="100%" border="0">
+            <tr height="35%" valign="bottom">
+              <td>
+                <div style="font-weight: bold;" id='syncHeader'></div>
+                <div>
+                  <input id="syncScale" name="syncMaps" dojoType="dijit.form.CheckBox" onclick="synchronizeScale();"
+                  style="margin:4px;" />
+                  <label for="syncScale" id='scaleLabel'></label>
+                </div>
+                <div>
+                  <input id="syncLocation" name="syncMaps" dojoType="dijit.form.CheckBox"
+                  onclick="synchronizeLocation();" style="margin:4px;" />
+                  <label for="syncLocation" id='locationLabel'></label>
+                </div>
+                <div id="iosTooltip" style="font-size:x-small; font-weight:bold; color:yellowgreen; display:none;"></div>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr id="mapInfoRow" valign="top">
+              <td>
+                <div style="font-weight: bold;" id='mapInfoHeader'></div>
+                <div>
+                  <input id="displayDescription" name="mapInformation" dojoType="dijit.form.RadioButton"
+                  onclick="setInformaitonType(_mapInfoType.description);" style="margin:4px;"
+                  checked/>
+                  <label for="displayDescription" id='descriptionLabel'></label>
+                </div>
+                <div>
+                  <input id="displayContent" name="mapInformation" dojoType="dijit.form.RadioButton"
+                  onclick="setInformaitonType(_mapInfoType.content);" style="margin:4px;"
+                  />
+                  <label for="displayContent" id='contentLabel'></label>
+                </div>
+                <div>
+                  <input id="displayLegend" name="mapInformation" dojoType="dijit.form.RadioButton"
+                  onclick="setInformaitonType(_mapInfoType.legend);" style="margin:4px;"
+                  />
+                  <label for="displayLegend" id='displayLegendLabel'></label>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="centerPane" dojoType="dijit.layout.BorderContainer" region="center">
+          <div id="mapContainer.0" class="mapContainer" dojoType="dijit.layout.BorderContainer"
+          region="left" gutters="false" style="width:33%;">
+            <div id="city.0" class="compareCity" dojoType="dijit.layout.ContentPane"
+            region="top"></div>
+            <div id="map.0" class="compareMap" dojoType="dijit.layout.ContentPane"
+            region="center"></div>
+            <div id="info.0" class="compareInfo" dojoType="dijit.layout.StackContainer"
+            region="bottom">
+              <div id="info.0.description" class="infoPanel" dojoType="dijit.layout.ContentPane"></div>
+              <div id="info.0.content" class="infoPanel" dojoType="dijit.layout.ContentPane"></div>
+              <div id="info.0.legend" class="infoPanel" dojoType="dijit.layout.ContentPane"></div>
+              <div id="info.0.identify" class="infoPanel" dojoType="dijit.layout.ContentPane"></div>
+            </div>
+          </div>
+          <div id="mapContainer.1" class="mapContainer" dojoType="dijit.layout.BorderContainer"
+          region="center" gutters="false">
+            <div id="city.1" class="compareCity" dojoType="dijit.layout.ContentPane"
+            region="top"></div>
+            <div id="map.1" class="compareMap" dojoType="dijit.layout.ContentPane"
+            region="center"></div>
+            <div id="info.1" class="compareInfo" dojoType="dijit.layout.StackContainer"
+            region="bottom">
+              <div id="info.1.description" class="infoPanel" dojoType="dijit.layout.ContentPane"></div>
+              <div id="info.1.content" class="infoPanel" dojoType="dijit.layout.ContentPane"></div>
+              <div id="info.1.legend" class="infoPanel" dojoType="dijit.layout.ContentPane"></div>
+              <div id="info.1.identify" class="infoPanel" dojoType="dijit.layout.ContentPane"></div>
+            </div>
+          </div>
+          <div id="mapContainer.2" class="mapContainer" dojoType="dijit.layout.BorderContainer"
+          region="right" gutters="false" style="width:33%;">
+            <div id="city.2" class="compareCity" dojoType="dijit.layout.ContentPane"
+            region="top"></div>
+            <div id="map.2" class="compareMap" dojoType="dijit.layout.ContentPane"
+            region="center"></div>
+            <div id="info.2" class="compareInfo" dojoType="dijit.layout.StackContainer"
+            region="bottom">
+              <div id="info.2.description" class="infoPanel" dojoType="dijit.layout.ContentPane"></div>
+              <div id="info.2.content" class="infoPanel" dojoType="dijit.layout.ContentPane"></div>
+              <div id="info.2.legend" class="infoPanel" dojoType="dijit.layout.ContentPane"></div>
+              <div id="info.2.identify" class="infoPanel" dojoType="dijit.layout.ContentPane"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="loadingDialog" dojoType="dijit.Dialog">
+      <div id="loadingDialogContent">
+        <div id='loadingMessage'></div>
+        <img id='loadingImage' src="images/progressBar.gif" />
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,30 @@
+html, body {
+    color: #324452;
+}
+
+#loadingDialog .dijitDialogPaneContent {
+    background-color: #597286;
+}
+
+#loadingDialogContent {
+    background-color: #597286;
+}
+
+
+
+#mainCenterPane {
+    padding: 0px;
+}
+
+
+#bottomContainer {
+    background-color: #e4e9ed;
+}
+
+.identifyLayerNameLabel {
+    background-color: #597286;
+}
+.identifyServiceNameLabel {
+		color: #324452;   
+		background: url(../images/appTitle_background.png) repeat-x;
+}

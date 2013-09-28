@@ -1,0 +1,15 @@
+.groupThumbnail {
+  max-width: 50px;
+  border-radius: 3px;
+  -moz-box-shadow: 2px 2px 3px rgb(133, 133, 133);
+  -webkit-box-shadow: 2px 2px 3px rgb(133, 133, 133);
+  box-shadow: 2px 2px 3px rgb(133, 133, 133);
+  float: left;
+  margin-bottom: 5px;
+  margin-right: 4px;
+}
+
+.groupLabel {
+  font-size: .95em !important;
+  color: #000000 !important;
+}

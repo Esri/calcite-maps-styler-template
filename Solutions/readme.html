@@ -1,0 +1,374 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Layout Template - Read Me</title>
+
+
+  <style>
+.selector{color:red;}
+.heading{
+background-color:#D8E0E2;
+background-repeat:repeat-x;
+border-bottom:1px solid #FFFFFF;
+border-top:1px solid #FFFFFF;
+color:black;
+font-family:Verdana,Arial,Helvetica,sans-serif;
+font-size:16px;
+font-weight:bold;
+letter-spacing:1.1px;
+margin:15px 0 10px;
+padding:3px 10px;
+text-align:center;
+}
+  </style>
+</head>
+
+<body>
+
+<a name="top"></a>
+<p>This template provides a starting point for creating your Web
+application. This
+easily configurable template allows you to define the map and many
+other parameters
+for the site. This read-me file explains how to setup and configure the
+template
+to run on your web server. We've also provided a few tips on how to
+customize
+the application.
+</p>
+
+<h3 class="heading">Table of Contents</h3>
+
+<ul>
+
+  <li> <a href="#deploy">Install the Web application</a>
+  </li>
+
+  <li> <a href="#configure">Configure the
+application</a></li>
+  <li><a href="#Configure_custom_utility_services_and">Configure
+custom utility
+services and other external URLs</a></li>
+
+</ul>
+
+<a name="deploy"></a>
+<h3 class="heading">Install the Web application</h3>
+
+<p>These instructions assume that you have a Web server like <a href="http://www.iis.net/">Internet
+Information Services (IIS)</a> installed and setup on your
+machine. If you are
+using another Web server the general installation steps will be the
+same but you
+will need to check your Web server's documentation for specific
+information on
+deploying and testing the application, and you will need to provide an
+alternate
+proxy program.</p>
+
+<p>There are several ways to use the app to work with a
+particular configuration; these are listed in increasing order of
+priority (i.e., if more than method is specified, the higher-numbered
+one in the list below is the one used):</p>
+
+<ol>
+
+  <li><dt><code>http://[server name]/[app
+name]/s2.html?app=<span class="selector">apps2/ParcelViewer</span></code></dt>
+
+    <dd>The configuration is read from the file
+"ParcelViewer.json" in the "apps2" folder of the site.</dd>
+
+  </li>
+
+  <br>
+
+  <li><dt><code>http://[server name]/[app
+name]/s2.html?appid=<span class="selector">3e4d81ec295a4b1ba06be0007718bf95</span></code></dt>
+
+    <dd>The configuration is read from the arcgis.com web
+application with the unique id "3e4d81ec295a4b1ba06be0007718bf95"; you
+can replace this id with the web application id of your choosing.<br>
+
+Because ArcGIS.com online currently uses the form <code>http://[server
+name]/[app name]/s2.html?webmap=0ebefb7ea74b425ebeb5853c42d01142</code>
+to preview a webmap in a template, a default configuration is used in
+the app by omitting the second argument and adding a third argument to
+the LGUIBuilder constructor in file js1\lgonlineStart.js:
+      <pre> // Read the UI spec<br> (new js.LGUIBuilder(window.location.search<span class="selector">, null, "apps2/ParcelViewer"</span>)).ready.then(</pre>
+
+    </dd>
+
+  </li>
+
+  <br>
+
+  <li><dt><code>http://[server name]/[app
+name]/s2.html</code></dt>
+
+    <dd>The configuration that you want your users to use is
+hard-wired into the site. To achieve this, change the following lines
+in the file js1\lgonlineStart.js to include the highlighted part
+containing the name of the configuration file; e.g., in the example,
+the configuration is read from the file "ParcelViewer.json" in the
+"apps2" folder of the site. Note the comma separating the
+"window.location.search" and configuration filename parameter.
+      <pre> // Read the UI spec<br> (new js.LGUIBuilder(window.location.search<span class="selector">, "apps2/ParcelViewer"</span>)).ready.then(</pre>
+
+    </dd>
+
+  </li>
+
+  <br>
+
+</ol>
+
+<ol>
+
+  <li> Copy the contents of the zip file into your web server's
+root directory. In IIS, the default location for the web server's root
+folder is <code>c:\inetpub\wwwroot</code>. </li>
+
+  <li> You may need to setup and use a proxy page to support
+sharing and secure services. View the <a href="http://help.arcgis.com/en/webapi/javascript/arcgis/jshelp/#ags_proxy">Using
+the proxy page</a> help topic for details on installing and
+configuring a proxy page. After setting up the proxy set the proxyUrl
+option in s2.html to point to your proxy. </li>
+
+  <li> Test the page using the following URL:
+http://localhost/[template name]/s2.html, where [template name] is the
+name of the folder where you extracted the zip contents. Unless you are
+using one of the configuration options above, you will see a blank
+page. </li>
+
+</ol>
+
+<a href="#top">Top</a>
+<a name="configure"></a>
+<h3 class="heading">Configure the application</h3>
+
+<p>There are three levels of configuration for this application;
+any or all are available to you:</p>
+
+<ol>
+
+  <li>Fine-tuning in the&nbsp;configuration web site: after
+publishing a webmap using this app's template, one configures the app's
+parameters. At this level, one can change
+    <ul>
+
+      <li>title</li>
+
+      <li>URL to the application's icon</li>
+
+      <li>color scheme, which currently picks from the set [Dark
+Gray, Dark Green, Dodger Blue, Gray, Brick, Thistle, Turquoise, Orange]</li>
+
+      <li>hint to show in the search type-in field</li>
+
+      <li>name of the layer in your webmap that is to be used for
+searches</li>
+
+      <li>field(s) to search in that layer</li>
+
+      <li>name of the ArcGIS.com group that contains the
+basemaps; if omitted, the default set of basemaps is used</li>
+
+      <li>ArcGIS.com username of the owner of the basemap group
+if used</li>
+
+      <li>HTML text to appear in the small help display</li>
+
+    </ul>
+
+  </li>
+
+  <br>
+
+  <li>User-interface remodelling using the app's JSON
+configuration: by modifying this JSON, you can change the user
+interface to add or remove commands and change details such as the set
+of available theme colors. These changes can be made in your copy of
+the app's template so that you can continue to host the application on
+ArcGIS.com. They can also be made in a file in the apps2 folder on your
+site; the same configuration format is used in both methods. </li>
+
+  <br>
+
+  <li>JavaScript remodelling of the app's source code: because
+all of the source code is included in this download (as well as on <a href="http://esri.github.com/">Esri's github</a>
+site), you have complete control to modify the code to fit your needs
+on your site. </li>
+
+</ol>
+
+<br>
+
+<p>For hosting the app on your site, there is some configuration
+that you must consider:</p>
+
+<ul>
+
+  <li>Every saved map&nbsp;has a unique identifier. To find
+the map ID and find the map you want to display. If it is one of your
+maps, make sure it's shared with everyone (public). View the map
+details and copy the ID from the URL in the top of your browser.<br>
+
+Set the webmap that the application uses in the JSON configuration. You
+can find this configuration item under the "values" section in the
+"webmap" item. </li>
+
+  <br>
+
+  <li>If you are using Bing maps (the default is to not show Bing
+maps), you will need to modify the JSON to include your Bing key. You
+can find this configuration item under the "js.LGMap" class in the
+"bingMapsKey" item. </li>
+
+  <br>
+
+  <li>If you want to compress the URL that you send via sharing
+(the default is to share the full URL), you will need to modify the
+JSON to include your bitly.com API key. You can find this configuration
+item under the three "js.LGShareAppExtents" classes in the
+"tinyURLServiceURL" item. Use this text in the configuration item and
+replace "[yourUsername]" with your bitly.com username and
+"[yourBitlyKey]" with your key:
+    <pre>"tinyURLServiceURL": "http://api.bit.ly/v3/shorten?login=[yourUsername]&amp;apiKey=[yourBitlyKey]&amp;format=json&amp;uri=${url}"</pre>
+
+The app currently uses the API key method of authenticating with
+bitly.com; because this method will be removed by bitly.com in the
+future, we will be updating this app in a future version to use the new
+authentication method.</li>
+
+  <br>
+
+  <li>Modify <span style="font-style: italic;">sharingUrl</span>,
+found
+inside commonConfig.js, to point to your sharing service URL if you are
+using&nbsp;an ArcGIS Online organization or Portal for
+ArcGIS.&nbsp;<br>
+
+  </li>
+
+  <ul>
+
+    <li>The default value is <i>null</i>, and
+automatically attempts to use <span style="font-style: italic;">www.arcgis.com</span>.
+    </li>
+
+    <li>For an organization, specify the&nbsp;url as
+follows: <i>http://MyOrg.maps.arcgis.com</i></li>
+
+    <li>For Portal for ArcGIS, specify the url as follows: <span style="font-style: italic;">http://&lt;fully qualified
+domain name&gt;/&lt;web adaptor instance name&gt;. </span>For
+example,<span style="font-style: italic;">
+http://myportal.domain.com/arcgis.</span> </li>
+
+  </ul>
+
+  <br>
+
+sharingUrl: "<span class="selector">Sharing URL</span>",<br>
+
+  <br>
+
+</ul>
+
+<h4 class="heading"><a name="Configure_custom_utility_services_and"></a>Configure
+custom utility services and
+other external URLs</h4>
+
+<br>
+
+This application can be configured to use
+your
+own
+utility services. Additionally, any other externally facing URLs can be
+customized to point to URLs within your network, except where otherwise
+noted. The instructions below detail the steps necessary to configure
+your application in a disconnected environment.
+<ol>
+
+  <li><span style="font-weight: bold;">Specify a
+custom print service</span>. In commonConfig.js, replace the URL
+value in quotes for the <span style="font-style: italic;">printTask</span>
+property with your custom print service. For example:
+    <pre>printTask:{<br> url: location + protocol + <span class="selector">"//MyServer/../rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"</span><br>}</pre>
+
+    <span style="font-weight: bold;">Note</span>:
+If a custom print service is not configured, the application uses the
+ArcGIS.com default print service. </li>
+
+  <br>
+
+  <li><span style="font-weight: bold;">Specify a
+custom geometry
+service.&nbsp; </span><span style="font-weight: normal;">In
+commonConfig.js, replace the URL
+value in quotes for the </span><span style="font-style: italic; font-weight: normal;">geometry</span><span style="font-weight: normal;">
+property with your custom print service. For example:</span>
+    <pre>geometry:{<br> url: location + protocol + <span class="selector">"//MyServer/../rest/services/Geometry/GeometryServer"</span><br>}</pre>
+
+Note<span style="font-weight: normal;">:
+If a custom geometry service is not configured, the application uses
+the
+ArcGIS.com default geometry service.</span></li>
+
+  <br>
+
+  <li><span style="font-weight: bold;">Specify a
+custom geocode
+service. </span><span style="font-weight: normal;">In
+commonConfig.js, replace the URL
+value in quotes for the </span><span style="font-style: italic; font-weight: normal;">geocode</span><span style="font-weight: normal;">
+property with your custom print service. For example:</span>
+    <pre>geocode:{<br> url: location + protocol + <span class="selector">"//MyServer/../rest/services/World/GeocodeServer"</span><br>}</pre>
+
+    <span style="font-weight: bold;">Note</span>: <span style="font-weight: normal;">If a custom geocode
+service is not configured, the application uses the
+ArcGIS.com world geocode service by default.</span></li>
+
+  <br>
+
+  <li><span style="font-weight: bold;">Search and
+replace Javascript API (JSAPI) references.&nbsp;</span><span style="font-weight: normal;">In s2.html, use a text
+search&nbsp;to find all instances of&nbsp;
+"//serverapi.arcgisonline.com/jsapi/arcgis/3.5". </span><span style="font-weight: normal;">Your search should find four
+references to the ArcGIS.com JSAPI. Replace these four references with
+your internally hosted JSAPI. Be aware you may need to modify the
+search and replace text strings to correctly update the references to
+point to your
+hosted JSAPI. <br>
+
+If you are using Portal for ArcGIS, you can update
+the&nbsp;references to use the portal's internally hosted JSAPI,
+for
+example:</span>
+    <pre><br>Search for: <span class="selector">//serverapi.arcgisonline.com/jsapi/arcgis/3.5</span><br></pre>
+
+    <span style="font-weight: bold;"></span>
+    <pre>Replace with: <span class="selector">//MyPortalServer.domain.com/arcgis/jsapi/jsapi</span><br></pre>
+
+    <span style="font-weight: bold;"></span> <br>
+
+    <span style="font-weight: normal;">Confirm the update
+was successful by opening one of the updated references in a web
+browser. If the file contents are displayed properly in the web
+browser, the
+update was succesful. &nbsp;For example:</span><br>
+
+    <pre><br>Open in web browser: <span class="selector">"http://MyPortalServer.domain.com/arcgis/jsapi/jsapi/js/dojo/dojox/layout/resources/FloatingPane.css"</span><br></pre>
+
+    <br>
+
+    <b>Note: </b>If
+JSAPI
+references are not updated, the application uses the JSAPI hosted by
+ArcGIS.com.</li>
+
+</ol>
+
+<a href="#top">Top</a>
+</body>
+</html>

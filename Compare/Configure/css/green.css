@@ -1,0 +1,39 @@
+﻿
+
+ #loadingDialog .dijitDialogPaneContent {
+    background-color: yellowgreen;
+}
+
+
+ #loadingDialogContent {
+    background-color: yellowgreen;
+}
+
+ #mainWindow {
+    background-color: darkslategray;
+}
+
+ #topPane {
+    background-color: yellowgreen;
+}
+
+ #bottomPane {
+    border-top: solid thin yellowgreen;
+}
+
+ .tundra .dijitCheckBox , .tundra .dijitCheckBoxIcon, .tundra .dijitRadio, .tundra .dijitRadioIcon {
+    background-image: url('../images/checkmark.green.png');
+}
+.identifyServiceNameLabel {
+  background-color:yellowgreen;
+}
+.identifyLayerNameLabel {
+  color: darkslategray;
+  background-color:yellowgreen;
+}
+.identifyResult{
+    border-bottom: solid thin yellowgreen;
+}
+.identifyResultError{
+    border-bottom: solid thin yellowgreen;
+}

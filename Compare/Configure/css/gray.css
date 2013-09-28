@@ -1,0 +1,46 @@
+﻿
+
+ #loadingDialog .dijitDialogPaneContent {
+    background-color: #333;
+}
+ #loadingDialogContent {
+    background-color: #333;
+}
+
+ #mainWindow {
+    background-color: #dadada;
+}
+#centerPane{
+  color:#3e3e3e;
+ }
+
+ #topPane {
+    background-color: #3e3e3e;
+    color:#f1f1f1;
+}
+
+ #bottomPane {
+    color:#3e3e3e;
+    background-color:#dadada;
+    border-top: solid thin #333;
+}
+.infoPanel span {
+  border:none;
+  color:#3e3e3e !important;
+}
+.infoPanel{
+  color:#3e3e3e !important;
+}
+.identifyServiceNameLabel {
+  background-color:#333;
+}
+.identifyLayerNameLabel {
+  background-color:#333;
+  color:whitesmoke;
+}
+.identifyResult{
+    border-bottom: solid thin #333;
+}
+.identifyResultError{
+    border-bottom: solid thin #333;
+}

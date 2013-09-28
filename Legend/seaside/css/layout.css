@@ -1,0 +1,137 @@
+﻿    html,body {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+    }
+
+    body {
+    background:url(../images/seaside_bg.png) #abcdd9 repeat-x;
+    color:#333;
+    font-size:14px;
+    overflow:hidden;
+    font-family:"Arial Narrow", Helvetica, Arial sans-serif;
+    }
+
+    a {
+    color:#369;
+    }
+
+    #header {
+    height:70px;
+    margin:0;
+    }
+
+    #title {
+    color:#FFF;
+    font-size:30px;
+    font-weight:bolder;
+    text-align:left;
+    padding-top:10px;
+    padding-left:25px;
+    text-shadow:0 1px 0 #333;
+    white-space: nowrap;  
+    overflow: hidden;  
+    text-overflow: ellipsis;
+    -o-text-overflow:ellipsis;
+    }
+
+    #subtitle {
+    font-size:16px;
+    color:#333;
+    padding-left:25px;
+    padding-top:5px;
+    white-space: nowrap;  
+    overflow: hidden;  
+    text-overflow: ellipsis;
+    -o-text-overflow:ellipsis;
+    }
+
+    #rightPane {
+    background-color:#fdfae2;
+    border:solid 5px #666;
+    width:20%;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border-radius:6px;
+    margin:15px 20px 0;
+    padding:0;
+    }
+
+    #leftPane {
+    background-color:#edf4f7;
+    border-top:solid 5px #666;
+    border-left:solid 5px #666;
+    border-bottom:solid 5px #666;
+    width:20%;
+    -webkit-border-bottom-left-radius:6px;
+    -webkit-border-top-left-radius:6px;
+    -moz-border-radius-bottomleft:6px;
+    -moz-border-radius-topleft:6px;
+    border-bottom-left-radius:6px;
+    border-top-left-radius:6px;
+    margin:25px 0 30px 20px;
+    padding:0;
+    }
+
+    #leftPaneContent {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+    }
+
+    #leftPaneHeader {
+    height:30px;
+    padding:15px 10px 0;
+    }
+
+    #leftPaneHeader span {
+    font-size:18px;
+    font-weight:700;
+    margin:0 auto 10px;
+    }
+
+    #leftPaneHeader
+    .dijitButtonNode {
+    background:none;
+    border:none;
+    padding:0;
+    }
+
+    #leftPaneBody {
+    margin:0;
+    }
+
+    #leftPaneBody .panel_content {
+    padding:10px;
+    }
+
+    #tabLink {
+    text-decoration:none;
+    color:#3f3f3f;
+    }
+
+    #map {
+    border:solid 5px #666;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border-radius:6px;
+    margin:15px 20px 0 0;
+    padding:0;
+    }
+
+    #footer {
+    color:#333;
+    font-size:14px;
+    text-align:right;
+    height:18px;
+    margin:0;
+    padding:3px 25px 5px;
+    }
+    .esriScalebar{
+      padding-left:15px;
+    }
+    .map .bingLogo-lg{
+      left:18px !important;
+    }

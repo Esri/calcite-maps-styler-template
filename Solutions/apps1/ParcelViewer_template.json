@@ -1,0 +1,97 @@
+﻿{
+    "values": {
+        "webmap": "0ebefb7ea74b425ebeb5853c42d01142",
+        "titleBar.title": "Parcel Viewer",
+        "titleBar.iconUrl": "images/onlineapp.png",
+        "colorizer.theme": "DarkGray",
+        "searchBox.hint": "42757 Woodward Ave",
+        "featureSearcher.searchLayerName": "Parcel Details",
+        "featureSearcher.searchFields": "SITEADDRESS,CNVYNAME,PARCELID",
+        "basemapBox.basemapgroupTitle": "",
+        "basemapBox.basemapgroupOwner": "",
+        "helpMessageBox.content": "Parcel Viewer<hr><br>The Parcel Viewer provides the general public and other interested parties local government property tax and assessment information and supplements that information with lifestyle and internet broadband information for a given neighborhood.<br><br>To locate a parcel, simply click on the map or enter an address or parcel number in the search box and select a parcel from the list."
+    },
+
+    "configurationSettings": [{
+        "category": "Title",
+        "fields": [{
+            "label": "Application title",
+            "fieldName": "titleBar.title",
+            "type": "string",
+            "tooltip": "Title to display in application's title bar"
+        }, {
+            "label": "Application icon URL",
+            "fieldName": "titleBar.iconUrl",
+            "type": "string",
+            "tooltip": "URL to icon to display in application's title bar"
+        }, {
+            "label": "Color Scheme:",
+            "fieldName": "colorizer.theme",
+            "type": "string",
+            "options": [{
+                "label": "Dark Gray",
+                "value": "DarkGray"
+            }, {
+                "label": "Dark Green",
+                "value": "DarkGreen"
+            }, {
+                "label": "Dodger Blue",
+                "value": "DodgerBlue"
+            }, {
+                "label": "Gray",
+                "value": "Gray"
+            }, {
+                "label": "Brick",
+                "value": "Brick"
+            }, {
+                "label": "Thistle",
+                "value": "Thistle"
+            }, {
+                "label": "Turquoise",
+                "value": "Turquoise"
+            }, {
+                "label": "Orange",
+                "value": "Orange"
+            }],
+            "tooltip": "Color theme to use"
+        }]
+    }, {
+        "category": "Map",
+        "fields": [{
+            "label": "Hint in search field",
+            "fieldName": "searchBox.hint",
+            "type": "string",
+            "tooltip": "Text to display in the search entry field as a format hint"
+        }, {
+            "label": "Search layer name",
+            "fieldName": "featureSearcher.searchLayerName",
+            "type": "string",
+            "tooltip": "Layer name of the feature layer to use for search"
+        }, {
+            "label": "Search layer field(s)",
+            "fieldName": "featureSearcher.searchFields",
+            "type": "string",
+            "tooltip": "Comma-separated list of the field(s) to look at during a search"
+        }, {
+            "label": "Name of basemap group",
+            "fieldName": "basemapBox.basemapgroupTitle",
+            "type": "string",
+            "tooltip": "Name of the ArcGIS.com group containing your basemaps",
+            "placeholder": "Defaults to Esri basemaps"
+        }, {
+            "label": "Username of basemap group owner",
+            "fieldName": "basemapBox.basemapgroupOwner",
+            "type": "string",
+            "tooltip": "ArcGIS.com username of owner of basemap group"
+        }]
+    }, {
+        "category": "Help",
+        "fields": [{
+            "label": "Help text",
+            "fieldName": "helpMessageBox.content",
+            "type": "string",
+            "stringFieldOption": "textarea",
+            "tooltip": "Text to display when the help button is clicked"
+        }]
+    }]
+}

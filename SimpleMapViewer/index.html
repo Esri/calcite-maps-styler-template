@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9,IE=10" />
+  <!-- On iOS, as part of optimizing your web application, have it use the
+  standalone mode to look more like a native application. When you use this
+  standalone mode, Safari is not used to display the web content—specifically,
+  there is no browser URL text field at the top of the screen or button bar
+  at the bottom of the screen. -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- Controls the dimensions and scaling of the browser window in iOS,
+  Android, webOS, Opera Mini, Opera Mobile and Blackberry. width: controls
+  the width of the viewport initial-scale: controls the zoom level when the
+  page is first loaded maximum-scale: control how users are allowed to zoom
+  the page in or out user-scalable: control how users are allowed to zoom
+  the page in or out -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <!-- Sets the style of the status bar for a web application when in standalone mode -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/dojo/dijit/themes/tundra/tundra.css">
+  <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/esri/css/esri.css" />
+
+  <style type="text/css">
+    .mblFixedSplitter {
+      width: 100%;
+      height: 100%;
+    }
+
+    .mblFixedSplitter > * {
+      position: absolute;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .mblFixedSplitterH > * {
+      height: 100%;
+      top: 0px;
+    }
+
+    .mblFixedSplitterV > * {
+      width: 100%;
+      left: 0px;
+    }
+  </style>
+
+  <script type="text/javascript">
+    var path_location = location.pathname.replace(/\/[^/]+$/, '');
+    var dojoConfig = {
+      parseOnLoad:true,
+      packages :[
+        {
+          name :"esriTemplate",
+          location: path_location
+        },{
+          name:"utilities",
+          location: path_location + "/javascript" 
+        },
+        {
+         name: "templateConfig",
+          location: path_location.substr(0,path_location.lastIndexOf('/')) 
+        }
+      ]
+    };
+  </script>
+
+  <script type="text/javascript" src="//js.arcgis.com/3.7compact/"></script>
+  <script type="text/javascript" src="javascript/layout.js"></script>
+  <script type="text/javascript" src="javascript/desktopUtils.js"></script>
+  <script type="text/javascript" src="javascript/geolocateUtils.js"></script>
+
+  <script type="text/javascript">
+  dojo.require("utilities.app");
+  dojo.require("templateConfig.commonConfig");
+  function init(){
+    var defaults = {
+      //The ID for the map from ArcGIS.com
+      webmap :"dbd1c6d52f4e447f8c01d14a691a70fe",
+      //Enter the configurable application id
+      appid :"",
+      //Enter a theme for the template. Valid values are (chrome, seaside, pavement)
+      theme :"chrome",
+      //Enter a title, if no title is specified, the webmap's title is used.
+      title : "",
+      //Enter a subtitle, if not specified the ArcGIS.com web map's summary is used
+      subtitle :"",
+      owner: "",
+      //specify a proxy url if needed
+      proxyurl :"",
+      //Modify this to point to your sharing service URL if you are using the portal
+      sharingurl :"",
+      //add default template options. This includes the bing key, sharing url, proxy url, 
+      //and any service urls (geometry, geocode, print) 
+      //that may be needed by the template.
+      bingmapskey: commonConfig.bingMapsKey,
+      helperServices:commonConfig.helperServices  
+   };
+
+    var app = new utilities.App(defaults);
+    app.init().then(function(options){
+      initMap(options);
+    });
+  }
+
+    dojo.addOnLoad(init);
+  </script>
+</head>
+
+<body class="tundra">
+  <!--
+    All nodes are currently generated on-the-fly.
+  -->
+</body>
+</html>

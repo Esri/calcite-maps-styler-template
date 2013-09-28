@@ -1,0 +1,272 @@
+﻿ html,body {
+      height:100%;
+      width:100%;
+      padding:0;
+	  margin:0;
+	  overflow:hidden;
+      }
+
+      body {
+      background-color:#fff;
+      color:#333;
+      font-size:14px;
+      overflow:hidden;
+      font-family:Arial, Helvetica, sans-serif;
+      }
+
+      a {
+      color:#555;
+	  font-weight:bold;
+	  text-decoration:none;
+      }
+	  
+	  a:hover{
+	  text-decoration:underline;
+	  }
+
+      #header {
+      height:80px;
+      background:#3e3e3e;
+      margin:0;
+      }
+
+      #title {
+      color:#fff;
+	  font-family:Georgia, "Times New Roman", Times, serif;
+      font-size:30px;
+      text-align:left;
+      padding-top:10px;
+      padding-left:15px;
+      white-space: nowrap;  
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;
+      }
+
+      #subtitle {
+      font-size:14px;
+      color:#fff;
+      padding-left:15px;
+      white-space: nowrap;  
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;
+      }
+
+      #rightPane {
+      background-color:#dadada;
+      color:#3e3e3e;
+      width:20%;
+      }
+
+      #leftPane {
+	  position:relative;
+      background-color:#dadada;
+      width:22%;
+      margin:0;
+      padding:0;
+      }
+	  
+	  #descriptionPanel {
+	  padding:10px;
+	  height:45%;
+	  overflow:auto;
+	  }
+
+      #legendHeader {
+      background:#848484;
+      color:#fff;
+      font-size:18px;
+      line-height:22px;
+      overflow:hidden;
+      margin:0;
+      padding:5px 10px 5px 10px;
+	  }
+	  
+	  #legendPanel{
+		  .overflow:hidden
+	  }
+	  
+	  #legendDiv {
+	  padding:10px;
+	  overflow:auto;
+	  .height:100%;
+	  }
+
+      #tabLink {
+      text-decoration:none;
+      color:#3e3e3e;
+      }
+
+      #map {
+      margin:0;
+      }
+
+      #footer {
+      font-size:12px;
+      background:#848484;
+      height:18px;
+      margin:0;
+      padding:10px 15px 5px;
+      }
+	  
+      .map .bingLogo-lg {
+      left:18px !important;
+      }
+	  
+	  g {
+	  cursor:pointer;
+	  }
+	  
+	  /* INTRO PANEL */
+	  #modalBackground {
+	  position:absolute;
+	  height:100%;
+	  width:100%;
+	  top:0;
+	  background-color:#3e3e3e;
+	  z-index:100;
+	  }
+	  
+	  #intro{
+	  display:none;
+	  position:absolute;
+	  width:800px;
+	  height:550px;
+	  top:65px;
+	  background-color:#dadada;
+	  z-index:101;
+	  }
+	  
+	  #introHeader{
+	  width:100%;
+	  height:65px;
+	  line-height:2.0;
+	  background-color:#848484;
+	  color:#fff;
+	  font-family:Georgia, "Times New Roman", Times, serif;
+      font-size:30px;
+      text-align:left;
+      padding:0px 15px ;
+      white-space: nowrap;  
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;
+	  }
+	  
+	  #introContent{
+	  overflow:hidden;
+	  }
+	  
+	  #textPanel{
+	  width:350px;
+	  height:485px;
+	  margin-left:15px;
+	  margin-top:2px;
+	  float:left;
+	  }
+	  
+	  #introText{
+	  max-height:390px;
+	  overflow:auto;
+	  margin-bottom:15px;
+	  padding-top:25px;
+	  padding-left:25px;
+	  }
+	  
+	  #continue{
+	  display:none;
+	  margin-left:115px;
+	  }
+	  
+	  #introImg{
+	  display:none;
+	  max-width:405px;
+	  max-height:440px;
+	  margin-top:15px;
+	  margin-right:15px;
+	  float:right;
+	  }
+	  
+	  #loadingCon{
+	  position:absolute;
+	  z-index:99;
+	  width:100%;
+      top:40%;
+	  text-align:center;
+	  }
+		
+	  #loadingDialog{
+	  margin:auto;
+	  background-color:#dadada;
+	  width:300px	
+	  }
+		
+	  #loadingHeader{
+	  background-color:#848484;
+	  color:#fff;
+	  padding-top:10px;
+	  padding-bottom:10px;
+	  width:300px;
+	  }
+		
+	  #loading{
+	  padding-top:10px;
+	  }
+		
+	  #loadingImg{
+	  margin-top:5px;
+	  padding-bottom:10px;
+	  }
+	  
+	  /* clean gray
+	  *******************************************************************************/
+	  .clean-gray {
+      background-color: #eeeeee;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
+      /* Saf4+, Chrome */
+  	  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+      background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+      background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+      background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+      background-image: linear-gradient(top, #eeeeee, #cccccc);
+      border: 1px solid #ccc;
+      border-bottom: 1px solid #bbb;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px;
+      color: #333;
+      font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+      line-height: 1;
+      padding: 8px 8px;
+      text-align: center;
+      text-shadow: 0 1px 0 #eee;
+      width: 150px;
+	  }
+
+	  .clean-gray:hover {
+      background-color: #dddddd;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#bbbbbb));
+      /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+      background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+      background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+      background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+      background-image: linear-gradient(top, #dddddd, #bbbbbb);
+      border: 1px solid #bbb;
+      border-bottom: 1px solid #999;
+      cursor: pointer;
+      text-shadow: 0 1px 0 #ddd;
+	  }
+
+	  .clean-gray:active {
+      border: 1px solid #aaa;
+      border-bottom: 1px solid #888;
+      -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+      -moz-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+      -ms-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+      -o-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+      box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+	  }	  

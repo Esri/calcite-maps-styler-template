@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Social Media Template - Read Me</title>
+<style>
+            .selector {
+                color:red;
+            }
+            ul, ol {
+                margin-top:10px;
+                margin-bottom:10px;
+            }
+            ul li, ol li {
+                margin:5px 0;
+            }
+            img {
+                padding:20px;
+            }
+            .heading {
+                background-color:#D8E0E2;
+                background-repeat:repeat-x;
+                border-bottom:1px solid #FFFFFF;
+                border-top:1px solid #FFFFFF;
+                color:black;
+                font-family:Verdana, Arial, Helvetica, sans-serif;
+                font-size:16px;
+                font-weight:bold;
+                letter-spacing:1.1px;
+                margin:15px 0 10px;
+                padding:3px 10px;
+                text-align:center;
+            }
+</style>
+</head>
+<body>
+<p id="top">
+	This template provides a starting point for creating your Web application. This easily configurable template allows you to define options for the site. This read-me file explains how to setup and configure the template to run on your web server.
+</p>
+<div class="heading">
+	Table of Contents
+</div>
+<ul>
+	<li><a href="#deploy">Install the Web application</a>
+	</li>
+	<li><a href="#configure">Configure the application</a>
+	</li>
+	<li><a href="#portal">Configure the template to work with your ArcGIS Portal</a>
+	</li>
+</ul>
+<h3 id="deploy" class="heading">Install the Web application</h3>
+<p>
+	These instructions assume that you have a Web server like <a href="http://www.iis.net/">Internet Information Services(IIS)</a> installed and setup on your machine. If you are using another Web server, the general installation steps will be the same, but you will need to check your Web server's documentation for specific information on deploying and testing the application.
+</p>
+<ol>
+	<li>Copy the contents of the zip file into your web server's root directory. In IIS, the default location for the web server's root folder is <code>c:\inetpub\wwwroot</code>.</li>
+	<li>If your application edits the features in a feature service, enables the elevation chart, contains secure services or web maps that aren't publicly shared or generates requests that exceed 2000 characters you may need to setup and use a proxy page. One example where you may exceed the URL length is by using complex polygons as an input to a task. Another example is by specifying a spatial reference using well-known text (wkt). View the <a href="http://help.arcgis.com/en/webapi/javascript/arcgis/jshelp/#ags_proxy">Using the proxy page</a>help topic for details on installing and configuring a proxy page. After setting up the proxy, set the proxyUrl option in index.html to point to your proxy.</li>
+	<li>Test the page using the following URL: http://localhost/[template name]/index.html, where [template name] is the name of the folder where you extracted the zip contents.</li>
+</ol>
+<p>
+	<a href="#top">Top</a>
+</p>
+<h3 id="configure" class="heading">Configure the application</h3>
+<p>
+	Now let's configure the application to use a different configuration options.
+</p>
+<ol>
+	<li>To modify the webmap, replace the string for webmap with your maps's id.
+	<pre>
+		"webmap":"<span class="selector">4a6f9fdc83ce44b6985115e4bd73cacd</span>"
+	</pre>
+	</li>
+	<li>Enter keys for social media.
+	<pre>
+		"flickrKey":"<span class="selector">Enter your Flickr Key here</span>",
+		"youtubeKey":"<span class="selector">Enter your YouTube Key here</span>",
+	</pre>
+	</li>
+	<li>
+	<ul>
+		<li><b>appid:</b> The ID of the application which will set these configuration options.</li>
+		<li><b>webmap:</b> The webmap ID is the unique combination of letters and numbers found on the end of the URL of your ArcGIS Online web map. To obtain the webmap ID, sign in to ArcGIS.com, navigate to your web map resource, open the web map in the ArcGIS Online viewer, and copy the last portion of the URL. If the URL appears like http://www.arcgis.com/home/webmap/viewer.html?webmap=d5e02a0c1f2b4ec399823fdd3c 2fdebd, your webmap ID is d5e02a0c1f2b4ec399823fdd3c2fdebd.</li>
+		<li><b>socialDisplay:</b> Option to display as heatmap or cluster by default. Valid options are: 'cluster' or 'heatmap'.</li>
+		<li><b>showFlickr:</b> Show Flickr on the social media layers menu.</li>
+		<li><b>showFlickrConfig:</b> Allow configuration of Flickr and it's search terms.</li>
+		<li><b>flickrChecked:</b> Search for Flickr Photos on map load.</li>
+		<li><b>flickrSearch:</b> Keyword to search for Flickr results.</li>
+		<li><b>flickrRange:</b> Show results ranging from this length of time. Valid entries are: 'today', 'this_week', 'this_month' or 'all_time'.</li>
+		<li><b>flickrKey:</b> Flickr Developer API Key. Required to display Flickr Photos.</li>
+		<li><b>showYouTube:</b> Show YouTube on the social media layers menu.</li>
+		<li><b>showYouTubeConfig:</b> Allow configuration of YouTube and it's search terms.</li>
+		<li><b>youtubeChecked:</b> Search for YouTube Photos on map load.</li>
+		<li><b>youtubeSearch:</b> Keyword to search for YouTube results.</li>
+		<li><b>youtubeRange:</b> Show results ranging from this length of time. Valid options are: 'today', 'this_week', 'this_month' or 'all_time'.</li>
+		<li><b>youtubeKey:</b> YouTube Developer API Key. Required to display Flickr Photos.</li>
+		<li><b>showTwitter:</b> Show Twitter on the social media layers menu.</li>
+		<li><b>showTwitterConfig:</b> Allow configuration of Twitter and it's search terms.</li>
+		<li><b>twitterChecked:</b> Search for Twitter Photos on map load.</li>
+		<li><b>twitterSearch:</b> Keyword to search for Twitter results.</li>
+		<li><b>useArcGISOnlineBasemaps:</b> Use the ArcGIS Online basemap group for basemaps.</li>
+		<li><b>basemapGroupTitle:</b> If useArcGISOnlineBasemaps is false, use this group title for basemap group.</li>
+		<li><b>basemapGroupOwner:</b> If useArcGISOnlineBasemaps is false, use this user for basemap group.</li>
+		<li><b>clusterImage:</b> Image for clustered social media.</li>
+		<li><b>clusterHoverImage:</b> Hover image for clustered social media.</li>
+		<li><b>pointGraphic:</b> When searching for a location, show this point image.</li>
+		<li><b>proxyUrl:</b> Leave this unchanged to use the proxy page packaged with the application. If using another proxy page, change the proxyURL value to point to the desired proxy page.</li>
+		<li><b>sharingurl:</b> Portal sharing URL.</li>
+		<li><b>defaultMenu:</b> Menu to be shown on page load. Valid options are: 'places', 'basemap', 'layers', 'social', 'legend' or 'none'.</li>
+		<li><b>showSearchBox:</b> To add or remove the ‘Find a place’ search box to let users search for a place,
+set the value to true or false. If true, you must also provide a value for locatorURL.</li>
+		<li><b>showShareMenu:</b> To add or remove the Share menu button from the user interface, set the value to true or false. When true, users can access options for sharing the application by URL, Facebook, Twitter, or embedding in websites.</li>
+		<li><b>showSocialMenu:</b> To add or remove the Social menu button from the user interface, set the value to true or false. When true, users can adjust the social options (turn on/off layers, change search terms and dates, etc.).</li>
+		<li><b>showBasemapMenu:</b> To add or remove the Basemap menu button from the user interface, set the value to true or false. When true, users can see the Basemap menu and change the
+basemap. Note – if a custom basemap is used in your web map, it will not appear as an option on the Basemap menu. If users select another basemap while using your application, they will have to reload the application to view the custom basemap again.</li>
+		<li><b>showLayersMenu:</b> To add or remove the Layers menu button from the user interface, set the value to true or false. When true, users can interact with the map layers (turn on/off, adjust transparency, view legends, etc.).</li>
+		<li><b>showLegendMenu:</b> Show legend menu in user interface.</li>
+		<li><b>showPlaces:</b> To add or remove the Places menu button from the user interface, set the value to true or false. When true, users can store the current view in a bookmark. Up to 5
+bookmarks can be saved at a time. Note – if more than 5 bookmarks are defined in your ArcGIS Online web map, the first 5 will appear in the Places menu. The others will not be loaded in the application.</li>
+		<li><b>showGeolocation:</b> To add or remove the option to find the current location of the user, set the value to true or false. When true, a link to My Current Location is displayed.</li>
+		<li><b>showAboutDialog:</b> Show about button in user interface.</li>
+		<li><b>showAboutDialogOnLoad:</b> Show about dialog on map load.</li>
+		<li><b>locateName:</b> Use this title in info window on locate point.</li>
+		<li><b>locatePoint:</b> Show this point on map load. Format as x,y eg: 1234.12,-1234.12.</li>
+	</ul>
+	</li>
+	<li>Save the file then test your application and note that it now displays your group and if specified your custom properties.</li>
+</ol>
+<p>
+	<a href="#top">Top</a>
+</p>
+<h4 id="portal">Configure the template to work with your ArcGIS Portal</h4>
+<p>
+	You can use this template with your organization's ArcGIS Portal by setting a few configuration options.
+</p>
+<ol>
+	<li>Open config.js in a text editor.</li>
+	<li>Locate the options for "sharingurl".
+	<div>
+		<pre>
+			 "sharingurl":"http://www.arcgis.com/",
+		</pre>
+	</div>
+	</li>
+	<li>Change these settings to point to your portal's URL instead of using ArcGIS.com's URL.
+	<div>
+		<pre>
+			 "sharingurl":"<span class="selector">http://www.myorg.com/>/span>"
+		</pre>
+	</div>
+	</li>
+	<li>Save the file.</li>
+	<li>Run the application and the template should be using your portal.</li>
+</ol>
+<p>
+	<a href="#top">Top</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿      html,body {
+      height:100%;
+      width:100%;
+      margin:0;
+      padding:0;
+      }
+
+      body {
+      background:url(../images/seaside_bg.png) #abcdd9 repeat-x;
+      color:#333;
+      font-size:14px;
+      overflow:hidden;
+      font-family:"Arial Narrow", Helvetica, Arial sans-serif;
+      }
+
+      a {
+      color:#369;
+      }
+
+      #header {
+      height:70px;
+      margin:0;
+      }
+
+      #title {
+      color:#FFF;
+      font-size:30px;
+      font-weight:bolder;
+      text-align:left;
+      padding-top:10px;
+      padding-left:25px;
+      text-shadow:0 1px 0 #333;
+      white-space: nowrap;  
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;
+      }
+      #subtitle {
+      font-size:16px;
+      color:#333;
+      padding-left:25px;
+      padding-top:5px;
+      white-space: nowrap;  
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;
+      }
+      #map {
+      border:solid 5px #666;
+      -webkit-border-radius:6px;
+      -moz-border-radius:6px;
+      border-radius:6px;
+      margin:15px 20px 15px 20px;
+      padding:0;
+      }
+      #footer {
+      color:#333;
+      font-size:14px;
+      text-align:center;
+      height:40px;
+      margin:0;
+      padding:3px 25px 5px;
+      }
+      .esriScalebar{
+        padding-left:15px;
+      }
+      .map .bingLogo-lg{
+        left:18px !important;
+      }
+       

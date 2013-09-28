@@ -1,0 +1,42 @@
+
+.identifyServiceNameLabel {
+    margin: 6px;
+    padding: 3px;
+    color: whitesmoke;
+    font-size: larger;
+    text-align: center;
+}
+
+.identifyLayerNameLabel {
+    margin: 10px 40px 10px 40px;
+    padding: 3px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.identifyResult {
+    padding: 10px;
+    margin-left: 15px;
+}
+
+.identifyResultError {
+    color: darkred;
+    padding: 10px;
+    margin-left: 15px;
+}
+
+.identifyResult:hover {
+    /*font-size: larger;*/
+    /*background-color: teal;*/
+}
+
+.identifyAttribute {
+    color: whitesmoke;
+    padding: 2px;
+    font-weight: normal;
+}
+
+.identifyValue {
+    color: white;
+    padding: 2px;
+}

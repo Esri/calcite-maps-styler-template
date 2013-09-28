@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- On iOS, as part of optimizing your web application, have it use the
+    standalone mode to look more like a native application. When you use this
+    standalone mode, Safari is not used to display the web content�specifically,
+    there is no browser URL text field at the top of the screen or button bar
+    at the bottom of the screen. -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Controls the dimensions and scaling of the browser window in iOS,
+    Android, webOS, Opera Mini, Opera Mobile and Blackberry. width: controls
+    the width of the viewport initial-scale: controls the zoom level when the
+    page is first loaded maximum-scale: control how users are allowed to zoom
+    the page in or out user-scalable: control how users are allowed to zoom
+    the page in or out -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- Sets the style of the status bar for a web application when in standalone mode -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title></title>
+   <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css">
+   <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/esri/css/esri.css" />
+
+    <link rel="stylesheet"  href="css/layout.css"/>
+    <script type="text/javascript">
+      var path_location = location.pathname.replace(/\/[^/]+$/, '');
+      var dojoConfig = {
+        parseOnLoad: true,
+        packages: [ {
+              name: "utilities",
+              location: path_location + '/javascript'
+             },{
+              name: "config",
+              location: path_location.substr(0,path_location.lastIndexOf('/')) 
+             }
+        ]
+      };
+    </script>
+    <script type="text/javascript" src="//js.arcgis.com/3.7/"></script>
+
+    <script type="text/javascript">
+    require([
+        "dojo/parser",
+        "dojo/ready",
+        "dojo/_base/lang",
+        "dojo/_base/Color",
+        "dojo/dom",
+        "dojo/query",
+        "dojo/_base/connect",
+        "dojo/on",
+        "dojo/dom-style",
+        "dojo/_base/array",
+        "dojo/dom-construct",
+        "dojo/dom-geometry",
+        "utilities/app",
+        "utilities/CreateContent",
+        "config/commonConfig",
+        "dojo/_base/Deferred",
+        "esri/dijit/editing/Editor",
+        "esri/arcgis/utils",
+        "esri/layers/FeatureLayer",
+        "esri/geometry/Point",
+        "esri/symbols/SimpleMarkerSymbol",
+        "esri/symbols/SimpleLineSymbol",
+        "esri/dijit/Legend",
+        "esri/graphic"
+        ],
+        function(
+            parser, 
+            ready, 
+            lang, 
+            Color, 
+            dom, 
+            query,
+            conn, 
+            on, 
+            domStyle,
+            array, 
+            domConstruct, 
+            domGeometry, 
+            App, 
+            Content, 
+            config, 
+            Deferred, 
+            Editor, 
+            arcgisUtils, 
+            FeatureLayer,
+            Point,
+            SimpleMarkerSymbol,
+            SimpleLineSymbol,
+            Legend,
+            Graphic
+          ){
+
+            
+            ready (function() {
+
+
+
+              var defaults = {
+                  webmap: "dbd1c6d52f4e447f8c01d14a691a70fe",
+                  bingmapskey: config.bingMapsKey,
+                  sharingurl: "",
+                  theme: "blue",  //blue, green black
+                  proxyurl: "",
+                  helperServices:config.helperServices
+              };
+
+               var app = new App(defaults);
+                    app.init().then(function(results){
+                     window.options = results;
+
+
+                //apply the specified theme
+                  var ss = document.createElement("link");
+                  ss.type = "text/css";
+                  ss.rel = "stylesheet";
+                  ss.href = "css/" + options.theme + ".css";
+                  document.getElementsByTagName("head")[0].appendChild(ss);
+
+
+                  //Build the user interface for the application. In this case it's a simple app with a header, content and a left (or floating) panel
+                  window.appcontent = new Content();
+                  window.appcontent.createLayout().then(function(){
+
+                     createMap();
+                  });
+
+
+
+
+              });
+
+  
+             function createMap(){
+                  var mapOptions =  {};
+                  var mapDeferred = arcgisUtils.createMap(window.options.webmap, "map", {
+                    mapOptions: mapOptions,
+                    bingMapsKey: window.options.bingmapskey
+                  });
+                  mapDeferred.then(function(response){
+        
+                    //disconnect the click event handler but hold on to it because we may want to reconnect later
+                    //we want the popup enabled when the map is created so we can read the popup info to find
+                    //out if any tooltip hints have been applied so we can apply to the editor window.
+                    window.handler = response.clickEventHandle;
+                    conn.disconnect(window.handler);
+
+
+
+                    window.map = response.map;
+
+
+                    //set the title and subtitle in the app's header
+                    document.title = window.options.title || response.itemInfo.item.title;
+                    dom.byId("title").innerHTML = window.options.title || response.itemInfo.item.title;
+                    if(dom.byId("subtitle")){
+                        dom.byId("subtitle").innerHTML =  window.options.subtitle || response.itemInfo.item.snippet || "";
+                    }
+
+ 
+                   if(window.map.loaded){
+                    initUI(response);
+                   }else{
+                    conn.connect(window.map, "onLoad", function(){
+                        initUI(response);
+                    });
+                   }
+
+
+                  }, function (error){
+
+                        alert(window.options.i8n.viewer.errors.message + " : " + error.message);
+                  });
+
+             }
+
+
+
+            function initUI(response){
+
+                //does the web map contain any editable layers?
+               var layers =  response.itemInfo.itemData.operationalLayers;
+               
+               var supportsOrientationChange = "onorientationchange" in window,
+                orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+                //IE8 doesn't support addEventListener so check before calling
+                if(window.addEventListener){
+                  window.addEventListener(orientationEvent, function () {
+                    orientationChanged();
+                  }, false);
+                }
+
+
+
+                var editableLayers = [];
+                array.forEach(layers, function(layer){
+
+                    if(layer &&  layer.layerObject ){
+
+                        var eLayer = layer.layerObject;
+ 
+                        if(eLayer instanceof esri.layers.FeatureLayer && eLayer.isEditable()){
+                            if(eLayer.capabilities && eLayer.capabilities === "Query"){
+                              //is capabilities set to Query if so then editing was disabled in the web map so 
+                              //we won't add to editable layers.
+                            }else{
+                              editableLayers.push({'featureLayer' : eLayer});
+                            }
+     
+                        
+
+                        }
+
+                    }
+                });
+
+
+                var content = domConstruct.create("div",{id:"editorDiv"});
+                window.appcontent.setPanelContent(window.options.i18n.viewer.content_title , content , "240px").then(function(){
+
+                //if there are not any editable layers show message. If there are layers then build content for left panel.
+                if(editableLayers.length  < 1){
+                    dom.byId("editorDiv").innerHTML = window.options.i18n.viewer.errors.no_editable_layers_message;
+                }else{
+
+                 //add field infos if applicable - this will contain hints if defined in the popup. Also added logic to hide fields that have visible = false. The popup takes 
+                 //care of this for the info window but not for the edit window. 
+                 array.forEach(editableLayers, function(layer){
+                    if(layer.featureLayer && layer.featureLayer.infoTemplate && layer.featureLayer.infoTemplate.info && layer.featureLayer.infoTemplate.info.fieldInfos){
+                        //only display visible fields 
+                        var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
+        
+                        var fieldInfos = [];
+                        array.forEach(fields, function(field){
+                          if(field.visible){
+                            fieldInfos.push(field);
+                          }
+                        });
+                        layer.fieldInfos = fieldInfos;
+                    }
+                 });
+                    //need to create the panel for the mobile case
+                    window.appcontent.showPanelContent();
+                    window.map.reposition();
+                    window.map.resize();
+
+                    //display the toolbar if the configuration option has been enabled and the site isn't mobile.
+                    var settings = {
+                      map: window.map,
+                      layerInfos: editableLayers,
+                      toolbarVisible: (window.options.displaytoolbar && !window.appcontent.isMobile) ? true : false
+                    };
+
+                    var params = {
+                      settings: settings
+                    };
+
+                    //create the editor, apply snapping and disable the tooltips for the template picker
+                    var editorWidget = new Editor(params, dom.byId('editorDiv'));
+                    var options = {snapKey:dojo.keys.copyKey};
+
+                    window.map.enableSnapping();
+                    adjustPopup();
+
+                    editorWidget.templatePicker.showTooltip = false;
+
+                    editorWidget.startup();
+
+                   if(editorWidget.templatePicker.featureLayers.length === 0){
+        
+                      //no editable layers so let's hide the template picker and add the legend widget.
+                      domStyle.set(dom.byId("editorDiv"),"height","20px");
+                      query(".templatePicker").style("display","none");
+
+                      var legend = new Legend({
+                        map: window.map,
+                        layerInfos: arcgisUtils.getLegendLayers(response)
+                      },domConstruct.create("div",{id:"legendDiv",className:'esriLegend'},dom.byId("leftPane"), "last"));
+                    
+                      legend.startup();
+ 
+                    }
+
+
+                    //if it's a mobile site you can add additional buttons to the header - geolocation is one option
+                    //that might make sense for mobile.
+                    if(window.appcontent.isMobile){
+                        window.appcontent.hidePanelContent();
+
+                        //add an additional  button to the header. This method accepts text and/or an image. If an image url is supplied that image
+                        //will be used as the button icon. Can add more that one button using the addMobileButton method. Additional buttons will
+                        //display on the right side.
+                        var btn = window.appcontent.addMobileButton("geo" , "images/gps.png");
+
+                        on(btn, "click", function(){
+                            if(navigator.geolocation){
+                                navigator.geolocation.getCurrentPosition(zoomToLocation, locationError);
+                            }
+
+                        });
+
+
+                        //when template picker selection changes close window
+                        conn.connect(editorWidget.templatePicker, "onSelectionChange", function(){
+                            window.appcontent.hidePanelContent();
+                        });
+                        //listen for info window and maximize
+                        conn.connect(window.map.infoWindow, "onShow", function(){
+                            window.map.infoWindow.maximize();
+                        });
+
+
+
+                    }
+
+                }
+
+                });
+
+            }
+
+            function zoomToLocation(location){
+              //Add  a graphic to the map to show the current location. Location is determined using geolocation api
+              window.map.graphics.clear();
+              var pt = new Point(location.coords);
+              var symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 12,
+                    new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
+                    new  Color([102, 255, 255, 0.5]), 8),
+                    new  Color([102, 255, 255, 0.9])
+                  );
+              graphic = new Graphic(pt, symbol);
+              map.graphics.add(graphic);
+              var zoom = window.map.getZoom() || 12;
+              map.centerAndZoom(pt, zoom);
+            }
+
+            function locationError(error){
+
+              switch (error.code) {
+              case error.PERMISSION_DENIED:
+                alert("Location not provided");
+                break;
+
+              case error.POSITION_UNAVAILABLE:
+                alert("Current location not available");
+                break;
+
+              case error.TIMEOUT:
+                alert("Timeout");
+                break;
+
+              default:
+                alert("unknown error");
+                break;
+              }
+            }
+
+            function adjustPopup() {
+              var box = domGeometry.getContentBox(window.map.container);
+
+              var width = 270, height = 300, // defaults
+                  newWidth = Math.round(box.w * 0.60),
+                  newHeight = Math.round(box.h * 0.45);
+              if (newWidth < width) {
+                width = newWidth;
+              }
+
+              if (newHeight < height) {
+                height = newHeight;
+              }
+
+               window.map.infoWindow.resize(width, height);
+            }
+
+
+
+            function orientationChanged() {
+              if (window.map) {
+                if(window.appcontent.isMobile){
+                    //resize the info window if displayed.
+                    if(window.map.infoWindow.isShowing){
+                        window.map.infoWindow.reposition();
+                        window.map.infoWindow.maximize();
+                    }
+                }
+                window.map.reposition();
+                window.map.resize();
+              }
+            }
+
+
+        });
+
+
+        });
+
+
+    </script>
+  </head>
+
+  <body class="claro">
+
+  </body>
+</html>

@@ -1,0 +1,64 @@
+/* Copyright (c) 2008 SitePen Inc. All rights reserved. */
+/* based on dojo svn trunk/dojo/tests/dnd/dndDefault.css */
+/*
+ 
+ there are basically all the classes you can set
+ for the various dojo.dnd states and elements in
+ their simplest form. hacking welcome.
+ 
+ */
+.dojoDndItem {
+    font-weight: bolder;
+    padding: 5px;
+    margin-bottom: 10px;
+    text-align: center;		 
+}
+
+.dojoDndItemOver {
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: darkslategray !important;
+}
+
+.dojoDndItemSelected {
+    background-color: transparent;
+    color: whitemsoke;
+}
+
+.dojoDndItemAnchor {
+    background-color: transparent;
+    color: whitemsoke;
+}
+
+.dojoDndItemOver .dojoDndItemSelected {
+    background-color: transparent;
+}
+
+.dojoDndItemOver .dojoDndItemAnchor {
+    background-color: transparent;
+}
+
+.dojoDndItemBefore {
+    border-top: 2px solid #369;
+}
+
+.dojoDndItemAfter {
+    border-bottom: 2px solid #369;
+}
+
+.dojoDndAvatar {
+    border: 2px solid #ccc;
+}
+
+.dojoDndAvatarHeader {
+    background-color: #aaa;
+}
+
+.dojoDndAvatarItem {
+    background-color: #fff;
+    border-bottom: 1px solid #666;
+}
+
+.dojoDndAvatarItem .itemText {
+    font-size: 120%;
+}

@@ -1,0 +1,105 @@
+html, body { 
+  height: 100%; width: 100%;
+  margin: 0; padding: 0;
+} 
+body{
+  background-color: #fff; overflow:hidden; 
+  font-family: sans-serif;
+} 
+#loading {
+  background: #fff;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+#loadingMessage {
+  color: #000;
+  margin: 0 auto;
+  padding: 150px 0 0 0;
+  text-align: center;
+  width: 200px;
+}
+#header {
+  padding: 10px;
+  font-size:1.4em; text-align:right;font-weight:bold;
+  height:55px;
+  white-space: nowrap;  
+  overflow: hidden;  
+  text-overflow: ellipsis;
+  -o-text-overflow:ellipsis;
+}
+#subTitle {
+  font-size: 0.8em;
+  text-align:right;
+  padding: 5px 0 0 0;
+   white-space: nowrap;  
+  overflow: hidden;  
+  text-overflow: ellipsis;
+  -o-text-overflow:ellipsis;
+}
+#rightPane{
+  margin: 0;
+  padding: 0;
+  width: 400px;
+}
+#sidebar, #elevLabel, #itemDesc {
+  padding: 10px;
+}
+#raceInfo {
+  padding: 10px 0 0 0;
+}
+#endWrapper {
+  float: right;
+}
+
+.chartTooltip {
+  background: #fff;
+  border: 2px solid #707070;
+  color: #146ca1;
+  display: inline-block;
+  height: auto;
+  padding: 4px 4px 2px 4px;
+  position: absolute;
+  visibility: hidden;
+  width: 140px;
+  z-index: 100;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+/* styles for subtle map and header shadows */
+.ds { background: #000; overflow: hidden; position: absolute; z-index: 2; }
+#ds-h div { width: 100%; }
+#ds-r div { right: 0; height: 100%; }
+#ds .o1 { filter: alpha(opacity=10); opacity: .1; }
+#ds .o2 { filter: alpha(opacity=8); opacity: .08; }
+#ds .o3 { filter: alpha(opacity=6); opacity: .06; }
+#ds .o4 { filter: alpha(opacity=4); opacity: .04; }
+#ds .o5 { filter: alpha(opacity=2); opacity: .02; }
+#ds .h1 { height: 1px; }
+#ds .h2 { height: 2px; }
+#ds .h3 { height: 3px; }
+#ds .h4 { height: 4px; }
+#ds .h5 { height: 5px; }
+#ds .v1 { width: 1px; }
+#ds .v2 { width: 2px; }
+#ds .v3 { width: 3px; }
+#ds .v4 { width: 4px; }
+#ds .v5 { width: 5px; }
+
+/* customize the map's zoom slider */
+.esriSimpleSliderVertical {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  border: none;
+}
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
+  border-bottom: none;
+}
+.esriSimpleSlider {
+  color: #444;
+}

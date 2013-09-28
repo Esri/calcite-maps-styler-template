@@ -1,0 +1,16 @@
+/**
+ * Note:
+ *	iOS ignores print and handheld media queries because these types do not supply high-end web content. 
+ *	Therefore, use the screen media type query for iOS.
+ *
+ *	To specify a style sheet that is just for iOS without affecting other devices, use the only keyword in 
+ *	combination with the screen keyword
+ *
+ */
+      
+/* iPhone */
+@import url("iPhone.css") only screen and (min-device-width:320px) and (max-device-width:680px);
+/* iPad */
+@import url("iPad.css") only screen and (min-device-width:768px) and (max-device-width:1024px);
+/* desktop */
+/* @import url("desktop.css") only screen and (min-width:800px) and (min-device-aspect-ratio: 1/1);*/

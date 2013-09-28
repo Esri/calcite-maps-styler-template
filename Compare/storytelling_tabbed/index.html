@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7, IE=9, IE=10">
+<title></title>
+<link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/dojo/dijit/themes/tundra/tundra.css">
+<link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/esri/css/esri.css" />
+<link rel="stylesheet" type="text/css" href="css/layout.css" />
+<script type="text/javascript">
+var path_location = location.pathname.replace(/\/[^/]+$/, '');
+var dojoConfig = {
+  parseOnLoad: true,
+  packages:[
+      {
+      name:"esriTemplate",
+      location: path_location
+    },
+    {
+      name:"utilities",
+      location: path_location + "/js" 
+    },
+    {
+     name: "templateConfig",
+      location: path_location.substr(0,path_location.lastIndexOf('/Compare')) 
+    }
+  ]
+};
+</script>
+<script type="text/javascript" src="//js.arcgis.com/3.7/">
+
+</script>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js">
+
+</script>
+<script type="text/javascript" src="js/map.js">
+
+</script>
+<script type="text/javascript" src="js/layout.js">
+
+</script>
+<script type="text/javascript">
+
+dojo.require("utilities.app");
+dojo.require("templateConfig.commonConfig");
+
+function init() {
+
+ var defaults = {
+        //The ID for the map from ArcGIS.com. Maximum of 4 maps.
+        webmaps: [{
+                'id': '8047eda3656e4241b75463a5451ba9e2'
+            }, {
+                'id': 'e0b7a53ab4e3480995ac25f4879f2014'
+            }, {
+                'id': '085648dddb0e41baa898b5e0b3afc902'
+            }, {
+                'id': 'd94dcdbe78e141c2b2d3a91d5ca8b9c9'
+            }
+        ],
+        //The id for the web mapping applciation item that contains configuration info - in most cases this will be null. 
+        appid: "",
+        //Choose whether or not scale and location will be synced across all maps. Set to "true" or "false"
+        syncMaps: true,
+        //Enter text for the introduction panel, if no title is specified, the value in the localizaiton file is used (nls/template.js).
+        introTitle: null,
+        //Enter a title for the introduction panel, if no title is specified, the value in the localizaiton file is used (nls/template.js)
+        introText: null,
+        //Enter the url for the image in the introduction panel, if no url is specified, the value in the localizaiton file is used (nls/template.js)
+        introImage: "images/introImg.png",
+        //Enter a title, if no title is specified, the value in the localizaiton file is used (nls/template.js) 
+        title: null,
+        //Enter the titles to be desplayed on tabs, if none are provided the values in the localizaiton file are used (nls/template.js) 
+        navigationTabs: [{
+                'title': null
+            }, {
+                'title': null
+            }, {
+                'title': null
+            }, {
+                'title': null
+            }
+        ],
+        //specify a proxy url if needed
+        proxyurl: "",
+        //Modify this to point to your sharing service URL if you are using the portal
+        sharingurl: "",
+        //add default template options. This includes the bing key, sharing url, proxy url, 
+        //and any service urls (geometry, geocode, print) 
+        //that may be needed by the template.
+        bingmapskey: commonConfig.bingMapsKey,
+        helperServices:commonConfig.helperServices   
+    };
+    var app = new utilities.App(defaults);
+    app.init().then(function(options){
+      initMap(options);
+    });
+
+}
+
+ //show map on load 
+dojo.addOnLoad(init);
+</script>
+<style type="text/css">
+</style>
+</head>
+
+<body class="tundra">
+<div id="main">
+<div id="bannerBkgd">
+    <div id="banner">
+         <h1 id="title"></h1>
+
+        <div id="links">
+            <div id='introTab'>
+                <p class='navText'></p>
+            </div>
+            <!--Navigation Tabs will automatically be loaded here-->
+        </div>
+        <!--/links-->
+    </div>
+    <!--/banner-->
+</div>
+<!--/bannerBkgd-->
+<div id="content">
+    <div id="sidePanel"></div>
+    <!--/sidePanel-->
+    <div id="mapContainer">
+        <img id="loadImg" src="images/loader.gif" alt="">
+        <!--Maps will automatically be loaded here-->
+    </div>
+    <!--/mapContainer-->
+    <!--/content-->
+</div>
+<!--/main-->
+<!--Modal Introduction-->
+<div id="modalBackground"></div>
+<div id="intro" dojotype="dijit.layout.BorderContainer" design="headline" gutters="false">
+    <div id="introHeader" dojotype="dijit.layout.ContentPane" region="top"></div>
+    <div id="introContent" dojotype="dijit.layout.ContentPane" region="center">
+        <div id="textPanel">
+            <div id="introText"></div> <span id="continue" class="clean-gray"></span>
+
+        </div>
+        <img id="introImg" src="" alt="">
+    </div>
+</div>
+</body>
+
+</html>

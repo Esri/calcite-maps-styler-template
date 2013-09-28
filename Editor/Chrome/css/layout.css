@@ -1,0 +1,137 @@
+﻿  html,body {
+          height:97%;
+          width:98%;
+          margin:1% 1% 2%;
+          padding:0;
+        }
+
+        body {
+          background-color:#FFF;
+          color:#333;
+          font-size:14px;
+          overflow:hidden;
+          font-family:"Helvetica Neue", Helvetica, "Trebuchet MS", Arial, sans-serif;
+        }
+
+        a {
+          color:#369;
+        }
+
+        #header {
+          border:solid 1px #999;
+          height:80px;
+          background:url(../images/chrome_headerbg.png) #969696 repeat-x;
+          -webkit-border-top-left-radius:4px;
+          -webkit-border-top-right-radius:4px;
+          -moz-border-radius-topleft:4px;
+          -moz-border-radius-topright:4px;
+          border-top-left-radius:4px;
+          border-top-right-radius:4px;
+          margin:0;
+        }
+
+        #title {
+          color:#555;
+          font-size:30px;
+          font-weight:bolder;
+          text-shadow:0 1px 0 #EEE;
+          padding-top:10px;
+          padding-left:15px;
+          white-space: nowrap;  
+          overflow: hidden;  
+          text-overflow: ellipsis;
+          -o-text-overflow:ellipsis;
+          
+        }
+
+        #subtitle {
+          font-size:14px;
+          color:#444;
+          padding-left:15px;
+          white-space: nowrap;  
+          overflow: hidden;  
+          text-overflow: ellipsis;
+          -o-text-overflow:ellipsis;
+        }
+
+        .esriRtl  #subtitle{
+          padding-right:15px;
+
+        }
+        .esriRtl #title{
+          padding-right:15px;
+        }
+        .paneTitle{
+          padding-left:14px;
+        }
+        
+        .esriRtl .paneTitle{
+          padding-right:14px;
+        }
+        .pane {
+          background-color:#dae4ef;
+          border-left:solid 1px #999;
+          margin:0;
+          padding:0;
+        }
+
+
+        .paneContent {
+          height:100%;
+          width:100%;
+          margin:0;
+          padding:0;
+        }
+
+        .paneHeader {
+          background:url(../images/chrome_leftheaderbg.png) repeat-x;
+          border-bottom:solid 1px #999;
+          color:#FFF;
+          height:28px;
+          font-size:18px;
+          line-height:26px;
+          margin:0;
+          padding:10px 10px 10px 15px;
+        }
+
+        .paneBody {
+          margin:0;
+        }
+
+        .paneBody .panel_content {
+          padding:10px;
+          height:100%;
+          width:100%;
+        }
+
+        #rightPane{
+          width:330px;
+        }
+   
+        #map {
+          border-left:solid 1px #999;
+          border-right:solid 1px #999;
+          margin:0;
+        }
+ 
+        #footer {
+          font-size:12px;
+          border:solid 1px #999;
+          background:url(../images/chrome_headerbg.png) #9b9b9b repeat-x;
+          -webkit-border-bottom-left-radius:4px;
+          -webkit-border-bottom-right-radius:4px;
+          -moz-border-radius-bottomleft:4px;
+          -moz-border-radius-bottomright:4px;
+          border-bottom-left-radius:4px;
+          border-bottom-right-radius:4px;
+          text-align:right;
+          height:18px;
+          margin:0;
+          padding:10px 15px 5px;
+        }
+        .esriScalebar{
+          padding-left:15px;
+        }
+        .map .bingLogo-lg{
+          left:18px !important;
+        }

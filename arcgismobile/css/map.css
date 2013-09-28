@@ -1,0 +1,146 @@
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.ui-btn-icon-left .ui-btn-inner {
+  padding: 18px 18px 18px 18px !important;
+}
+
+.ui-btn-icon-left .ui-icon {
+  left: 10px;
+}
+
+.ui-bar {
+  font-size: 5px;
+}
+
+.ui-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.ui-mobile .ui-btn-left, .ui-mobile .ui-btn-right {
+  float: right !important;
+  margin-left: 5px !important;
+  border-radius: 5px;
+}
+
+.ui-icon-legendIcon {
+  background-image: url('../img/legendIcon.png');
+}
+
+.ui-icon-geolocateIcon {
+  background-image: url('../img/gpsA_black.png');
+}
+
+.ui-btn-corner-all {
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+
+.ui-btn-inner {
+  min-width: .9em;
+}
+
+.ui-btn-icon-left > .ui-btn-inner > .ui-icon, .ui-btn-icon-right > .ui-btn-inner > .ui-icon {
+  margin-top: -15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+#search {
+  margin: 20px 10% 0 10%;
+  position: absolute;
+  width: 80%;
+  z-index: 2;
+  left: 25px;
+  top: 50px;
+}
+
+/* customize geocoder appearance */
+.simpleGeocoder, .simpleGeocoder .esriGeocoderContainer {
+  font-size: 1em;
+  line-height: 1em;
+  height: 2.5em;
+  width: 100%;
+}
+
+.simpleGeocoder .esriGeocoder {
+  border: 0;
+  height: 100%;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px #888;
+  box-shadow: 0 0 5px #888;
+}
+
+.simpleGeocoder .esriGeocoderIcon {
+  display: none;
+  height: 64px;
+  width: 64px;
+}
+
+.simpleGeocoder .esriGeocoder .esriGeocoderReset {
+  margin: 0;
+}
+
+/* show an x icon to clear the current value */
+.simpleGeocoder .esriGeocoderHasValue .esriGeocoderReset {
+  cursor: pointer;
+  display: block;
+  background: url("http://dl.dropbox.com/u/2654618/geocoder-reset.gif") no-repeat;
+}
+
+/* use a different loading icon */
+.simpleGeocoder .esriGeocoderLoading .esriGeocoderReset {
+  background: url("http://dl.dropbox.com/u/2654618/geocoder-loading.gif") center center no-repeat;
+}
+
+/* make input larger */
+.simpleGeocoder .esriGeocoder input {
+  font-size: 1.5em;
+  margin: 0 0 0 1.25%;
+  padding: 1% 0 1% 0;
+  width: 90.75%;
+}
+
+/* use gray in the input box instead of black */
+.simpleGeocoder .esriGeocoder input,
+.simpleGeocoder .esriGeocoder input:focus {
+  color: #686868;
+}
+
+/* get rid of rounded gray border, use a subtle box shadow instead */
+.simpleGeocoder .esriGeocoderResults {
+  border: 0;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  -moz-box-shadow: 0 5px 5px -5px #888;
+  -webkit-box-shadow: 0 5px 5px -5px #888;
+  box-shadow: 0 5px 5px -5px #888;
+}
+
+.simpleGeocoder .esriGeocoderResultLast {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+
+.simpleGeocoder .esriGeocoderResult:hover,
+.simpleGeocoder .esriGeocoderResultEven:focus,
+.simpleGeocoder .esriGeocoderResultOdd:focus {
+  /* default is #EDEDED, use a light blue instead */
+  background-color: #B5DAEA;
+}

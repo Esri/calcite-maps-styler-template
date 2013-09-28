@@ -1,0 +1,163 @@
+﻿html,body {
+height:100%;
+width:100%;
+margin:0;
+padding:0;
+}
+body {
+background:url(../images/seaside_bg.png) #abcdd9 repeat-x;
+color:#333;
+}
+
+a {
+color:#369;
+}
+
+#header {
+height:70px;
+margin-bottom: 10px;
+}
+
+#title {
+color:#FFF;
+padding-left:25px;
+text-shadow:0 1px 0 #333;
+}
+
+#subtitle {
+font-size:16px;
+color:#333;
+padding-left:25px;
+padding-top:5px;
+white-space: nowrap;  
+overflow: hidden;  
+text-overflow: ellipsis;
+-o-text-overflow:ellipsis;
+}
+
+#rightPane {
+background-color:#edf4f7;
+border-top:solid 5px #666;
+border-right:solid 5px #666;
+border-bottom:solid 5px #666;
+-webkit-border-bottom-right-radius:6px;
+-webkit-border-top-right-radius:6px;
+-moz-border-radius-bottomright:6px;
+-moz-border-radius-topright:6px;
+border-bottom-right-radius:6px;
+border-top-right-radius:6px;
+margin:25px 20px 30px 0px;
+padding:0;;
+}
+
+#leftPane {
+background-color:#edf4f7;
+border-top:solid 5px #666;
+border-left:solid 5px #666;
+border-bottom:solid 5px #666;
+-webkit-border-bottom-left-radius:6px;
+-webkit-border-top-left-radius:6px;
+-moz-border-radius-bottomleft:6px;
+-moz-border-radius-topleft:6px;
+border-bottom-left-radius:6px;
+border-top-left-radius:6px;
+margin:25px 0 30px 20px;
+padding:0;
+}
+
+.panel_content {
+padding:0;
+}
+
+.panelHeader {
+  height:24px;
+  margin-top: 10px;
+  line-height: 20px;
+}
+
+.panelHeader span {
+font-size:18px;
+font-weight:700;
+margin: 10px;
+}
+
+
+
+#map {
+border:solid 5px #666;
+-webkit-border-radius:6px;
+-moz-border-radius:6px;
+border-radius:6px;
+}
+
+#footer {
+color:#333;
+font-size:14px;
+text-align:center;
+height:18px;
+padding:3px 25px 5px;
+}
+.esriPopup.seaside .titleButton,
+.esriPopup.seaside .pointer,
+.esriPopup.seaside .outerPointer,
+.esriPopup.seaside .esriViewPopup .gallery .mediaHandle,
+.esriPopup.seaside .esriViewPopup .gallery .mediaIcon {
+background-image: url(../images/popup_sprite_seaside.png);
+}
+
+.esriPopup.seaside .titleButton {
+top: 4px;
+}
+
+.esriPopup.seaside .titleButton.maximize,
+.esriPopup.seaside .titleButton.restore {
+top: 6px;
+}
+
+.esriPopup.seaside .pointer.top {
+background-position: 0 -616px;
+
+}
+
+.esriPopup.seaside .pointer.topLeft {
+left: 0px; top: -43px; background-position: 0 -525px; width: 51px; height: 45px;
+}
+
+.esriPopup.seaside .pointer.topRight {
+right: 0px; top: -43px; background-position: 0 -707px; width: 51px; height: 45px;
+}
+
+
+.esriPopup.seaside .pointer.bottomLeft,
+.esriPopup.seaside .pointer.bottomRight { 
+bottom: -44px; 
+}
+
+.esriPopup.seaside .contentPane,
+.esriPopup.seaside .actionsPane {
+border: 2px solid #666666;
+background-color: #EDF4F7;
+}
+
+.esriPopup.seaside .actionsPane {
+border-top: none;
+}
+
+.esriPopup.seaside .contentPane{
+border-bottom: none;
+}
+
+.esriPopup.seaside .titlePane,
+.dj_ie7 .esriPopup.seaside .titlePane .title {
+background-color: #7AAEBB;
+border: 2px solid #666666;
+color: #333333;
+font-weight: bold;
+}
+
+.esriPopup.seaside .titlePane {
+border-bottom: none;
+}
+.esriPopup.seaside a {
+color: #336699;
+}

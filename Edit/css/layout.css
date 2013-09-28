@@ -1,0 +1,178 @@
+    html, body{
+     height:100%;
+     width:100%;
+     padding:0;
+     margin: 0;
+    }
+    body {
+     background-color:#FFF;
+     color:#333;
+     font-size:14px;
+     overflow:hidden;
+     font-family: Century Gothic, sans-serif;
+    }
+
+    .heading{
+      border-bottom:  solid 1px #999;
+    }
+
+    #header {
+     height:80px;
+    }
+
+    #title {
+     font-size:24pt;
+     font-weight:bolder;
+     padding-top:10px;
+     padding-left:15px;
+    }
+
+    #subtitle {
+     font-size:12pt;
+     padding-left:15px;
+     white-space: nowrap;  
+     overflow: hidden;  
+     text-overflow: ellipsis;
+     -o-text-overflow:ellipsis;
+    }
+
+    #leftPane {
+     border-left:solid 1px #999;
+     padding: 5px;
+     font-size: 11pt;
+     height:100%:
+    }
+    .esriEditor{
+      height:95%;
+    }
+    .esriLegend{
+        height:95%;
+        padding-top:5px;
+    }
+    .templatePicker{
+
+        /*was set to height 90%*/
+    }
+    
+    
+    .templatePicker .tooltip {
+      display: none;
+    }
+
+    
+    #map {
+     border-left:solid 1px #999;
+     border-right:solid 1px #999;
+     height:100%;
+     padding: 0px;
+    }
+
+  .mobile #header{
+    height:30px;
+    overflow: hidden;
+    text-align: center;
+    padding-right: 10px;
+  }
+  .mobile #title{
+   display: block;
+    font-size: 16px;
+    margin: 0.6em 30% 0.8em;
+    min-height: 1.1em;
+    outline: 0 none !important;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mobile #leftPane{
+    height:100%;
+    overflow: auto;
+    position: absolute;
+    width:100%;
+    z-index:100;
+    display:none;
+  }
+
+.headerBar{
+
+
+}
+
+.headerButton{
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    font-size:15px;
+    font-weight:bold;
+    padding: .5em 1em .55em;
+    text-decoration:none;
+    text-align:center;
+    cursor: pointer;
+
+}
+
+
+.leftButton{
+    top:3px;
+    left:5px;
+    display:inline-block;
+    position: absolute;
+    vertical-align: middle;
+}
+
+#rightTools{
+    top:3px;
+    right:5px;
+    display:inline-block;
+    position: absolute;
+    vertical-align: middle;
+}
+
+ .rightButton{
+    position: relative;
+    float:right;
+    margin-right: 3px;
+    cursor:pointer;
+ }
+  .submitButton{
+    font-size: 100%;
+    padding: 2px;
+    cursor:pointer;
+  }
+
+
+.mobile .esriPopup .titleButton.maximize{
+  display:none;
+}
+.mobile .esriPopup .titleButton.restore{
+
+  display:none;
+}
+
+
+@-webkit-keyframes pulse{
+    0% { opacity:1.0;}
+    45% { opacity: .20;}
+    100%{ opacity: :1.0;}
+
+}
+@-moz-keyframes pulse{
+    0%{ opacity: 1.0;}
+    45%{ opacity: .20;}
+    100%{ opacity: 1.0;}
+}
+@keyframes pulse{
+    0%{ opacity: 1.0;}
+    45%{ opacity: .20;}
+    100%{ opacity: 1.0;}
+
+}
+#map_graphics_layer{
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: pulse;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-name: pulse;
+
+}

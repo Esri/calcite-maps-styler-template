@@ -1,0 +1,142 @@
+     html, body { 
+    height: 100%; 
+    width: 100%; 
+    padding: 0; 
+    margin: 0;
+    } 
+
+    body { 
+    background: #222;
+    color: #222;
+    font-size: 13px;
+    line-height: 1.4em;
+    } 
+
+    a { 
+    color: #002f56; 	
+    } 
+
+    #header { 
+    height: 85px; 
+    }
+
+    #title {
+    color:#fff;
+    font-size: 30px; 
+    font-weight: lighter; 
+    text-align: left; 
+    padding-top: 20px;
+    padding-left: 20px; 
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    line-height:1em;
+    } 
+
+    #subtitle { 
+    font-size: 14px; 
+    color: #FFFFFF; 
+    padding-left: 20px; 
+    font-weight: lighter; 
+
+    } 
+
+    #rightPane { 
+    margin: 20px 20px 0px 0px;
+    padding: 0;
+    border: 1px solid white;
+    background: #81a045;
+    } 
+
+    #leftPane { 
+    margin: 20px 0px 0px 20px; 
+    padding: 0; 
+    border: 1px solid white;
+    background: #81a045;
+    } 
+
+    #leftPaneHeader{
+    height: 30px;
+    padding-top: 15px;
+    background-color: #9ab36a;
+    border-bottom: 1px solid #fff;
+    }
+    
+    #leftPaneHeader span{ 
+    margin: 0px auto; 
+    padding: 0px 10px;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #222;
+    } 
+
+
+
+
+    #map { 
+    margin: 20px 20px 0px 0px; 
+    border: solid 1px #fff; 
+    } 
+
+    #footer { 
+    color: #FFFFFF; 
+    font-size: 14px; 
+    padding: 8px 20px 5px; 
+    text-align:right; 
+    height:18px;
+    }
+   .esriPopup.contemporary_green .titleButton,
+    .esriPopup.contemporary_green .pointer,
+    .esriPopup.contemporary_green .outerPointer,
+    .esriPopup.contemporary_green .esriViewPopup .gallery .mediaHandle,
+    .esriPopup.contemporary_green .esriViewPopup .gallery .mediaIcon {
+      background-image: url(../images/popup_sprite_contemporary_green.png);
+    }
+    
+    .esriPopup.contemporary_green .titleButton {
+      top: 4px;
+    }
+    
+    .esriPopup.contemporary_green .titleButton.maximize,
+    .esriPopup.contemporary_green .titleButton.restore {
+      top: 6px;
+    }
+    
+    .esriPopup.contemporary_green .pointer.top {
+      background-position: 0 -616px;
+    }
+    
+    .esriPopup.contemporary_green .pointer.topLeft {
+      left: 0px; top: -43px; background-position: 0 -525px; width: 51px; height: 45px;
+    }
+    
+    .esriPopup.contemporary_green .pointer.topRight {
+      right: 0px; top: -43px; background-position: 0 -707px; width: 51px; height: 45px;
+    }
+
+    
+    .esriPopup.contemporary_green .pointer.bottomLeft,
+    .esriPopup.contemporary_green .pointer.bottomRight { 
+      bottom: -44px; 
+    }
+    
+    .esriPopup.contemporary_green .contentPane,
+    .esriPopup.contemporary_green .actionsPane {
+      border-color: #FFFFFF;
+      background-color: #DDDDDD;
+    }
+    
+    .esriPopup.contemporary_green .titlePane,
+    .dj_ie7 .esriPopup.contemporary_green .titlePane .title {
+      background-color: #81A045;
+      color: #333333;
+      font-weight: bold;
+      border: 1px solid #FFFFFF;
+    }
+    
+    .esriPopup.contemporary_green .titlePane {
+      border-bottom: 1px solid #FFFFFF;
+    }
+    .esriPopup.contemporary_green a {
+      color: #336699;
+    }

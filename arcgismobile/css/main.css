@@ -1,0 +1,124 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  /* overrode (make white on all devices) */
+  background-color: #FFFFFF !important;
+}
+
+/* header and logo */
+#esriLogo {
+  float: left;
+  margin: 8px 5px 7px 5px;
+  max-width: 25px;
+}
+
+/* Text in header (ArcGIS Online, or Organization's Name)*/
+#hdr {
+  font-size: 1.1em;
+  /* same as AGO site */
+  font-family: Verdana;
+  margin: 8px 5px 7px 0px;
+  float: left;
+  /* overrode (make black on all devices) */
+  color: #000000;
+}
+
+/* menu (used to navigate the app */
+#menu {
+  width: 35px !important;
+  height: 18px !important;
+  position: absolute;
+  top: -35px;
+  right: 5px;
+}
+
+/* grid cell */
+a.cell:link, a.cell:visited {
+  color: rgba(11, 11, 11, 0.63);
+  background-color: rgba(208, 208, 208, 0.40);
+  text-decoration: none;
+  font-size: 0.7em;
+  padding: 5px 10px 5px 10px;
+  width: 40% !important;
+  height: 100px;
+  margin: 5px;
+  border-radius: 7px;
+}
+
+a.cell:active {
+  color: rgba(43, 43, 43, 0.87);
+  background-color: rgba(223, 223, 223, 0.29);
+  text-decoration: none;
+  font-size: 0.7em;
+  padding: 5px 10px 5px 10px;
+  width: 40% !important;
+  height: 100px;
+  border-radius: 7px;
+}
+
+.itemThumbnail {
+  margin-top: 5px;
+  border-radius: 3px;
+  -moz-box-shadow: 2px 2px 3px rgb(133, 133, 133);
+  -webkit-box-shadow: 2px 2px 3px rgb(133, 133, 133);
+  box-shadow: 2px 2px 3px rgb(133, 133, 133);
+  float: left;
+}
+
+.mblListItem {
+  font-weight: normal;
+  font-size: 11px;
+  vertical-align: text-top;
+}
+
+p.itemTitle {
+
+}
+
+/* Override since app header obscures mobile popup header */
+.esriMobileNavigationBar {
+  top: 40px !important;
+}
+
+.esriMobileInfoView {
+  top: 82px !important;
+}
+
+/* */
+a.customLink:link, a.customLink:visited {
+  color: rgba(11, 11, 11, 0.63);
+  background-color: rgba(208, 208, 208, 0.40);
+  text-decoration: none;
+  position: absolute;
+  right: 10px;
+  font-size: 0.75em;
+  border-radius: 8px;
+  padding: 5px 10px 5px 10px;
+}
+
+a.customLink:active {
+  color: rgba(43, 43, 43, 0.87);
+  background-color: rgba(223, 223, 223, 0.29);
+  text-decoration: none;
+  position: absolute;
+  right: 10px;
+  font-size: 0.75em;
+  border-radius: 8px;
+  padding: 7px 11px 7px 11px;
+}
+
+hr {
+  margin-left: 10px;
+  margin-right: 10px;
+  opacity: 0.35;
+}
+
+/* No Items Message */
+.noItemsMsg {
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: .8em;
+}

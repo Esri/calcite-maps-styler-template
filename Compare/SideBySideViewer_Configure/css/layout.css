@@ -1,0 +1,246 @@
+﻿html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;    
+    font-family: "Helvetica Neue", Helvetica, "Trebuchet MS", Arial, sans-serif;
+    color: #324452;
+}
+
+#loadingDialog {
+    width: 400px;
+    height: 100px;
+    color: black;
+}
+
+
+#loadingDialogContent {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#mainWindow {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    background-color: whitesmoke;
+}
+
+#mainCenterPane {
+    padding: 0px;
+}
+
+#topPane {
+    height: 75px;
+    padding: 10px;
+    background: url(../images/appTitle_background.png) repeat-x;
+    font-size: 30px;
+    font-weight: bolder;
+    text-shadow: 0 1px 0 #EEEEEE;
+}
+
+#bottomContainer {
+    width: 125px;
+    padding: 15px 15px 15px 5px;
+    background-color: #e4e9ed;
+    font-size: 9pt;
+    border: none;
+    overflow: hidden;
+}
+
+#centerPane {
+    background-color: transparent;
+    border: none !important;
+    padding: 0px;
+}
+
+.mapContainer {
+    background-color: transparent !important;
+    padding: 0px !important;
+    border: none !important;
+}
+
+.compareCity {
+    height: 30px;
+    padding: 5px !important;
+    color: whitesmoke;
+    background: url(../images/title_background.png) repeat-x;
+    font-weight: bold;
+    font-size: 11pt;
+    overflow: hidden;
+}
+
+.compareMap {
+    background-color: transparent !important;
+    padding: 0px !important;
+}
+
+.compareInfo {
+    height: 250px;
+    background-color: transparent !important;
+}
+
+#mapInfoRow {
+    height: 230px;
+}
+
+#mapInfoRow td {
+    padding-top: 10px;
+    border-top: solid 1px #324452;
+}
+
+.infoPanel {
+    font-size: 9pt;
+    padding: 15px !important;
+    background-color: transparent !important;
+}
+
+.dijitGutter {
+    background-color: #597286 !important;
+}
+
+.dijitIconZoomTo {
+    background-image: url('../images/zoom-16x16.png');
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+.dijitIconScale {
+    background-image: url('../images/ScaleBar16.png');
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+.dijitIconLocation {
+    background-image: url('../images/Location.png');
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+.dijitIconScaleLocation {
+    background-image: url('../images/ScaleAndLocation.png');
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+.dijitIconIdentify {
+    background-image: url('../images/GenericInformation_B_16.png');
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+#bottomPane td div input, #bottomPane td div label {
+    cursor: pointer !important;
+}
+
+.tundra .dijitCheckBox, .tundra .dijitCheckBoxIcon, .tundra .dijitRadio, .tundra .dijitRadioIcon {
+    background-image: url('../images/checkmark.png');
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    padding-left: 20px;
+}
+
+.mapServiceLayerLI {
+    background-image: url('../images/LayerServiceMap16.png');
+    background-repeat: no-repeat;
+    margin-bottom:5px;
+}
+
+.mapServiceLayerOffLI {
+    background-image: url('../images/LayerServiceMapNotVisible16.png');
+    color: silver;
+}
+
+.LayerLI {
+    background-image: url('../images/Layer_LYR_File16.png');
+    background-repeat: no-repeat;
+    cursor: default;
+}
+
+.LayerOffLI {
+    background-image: url('../images/Layer_LYR_File16NotVisible.png');
+    color: silver;
+}
+
+.groupLayerLI {
+    background-image: url('../images/LayerGroup16.png');
+    background-repeat: no-repeat;
+    cursor: default;
+}
+
+.groupLayerOffLI {
+    background-image: url('../images/LayerGroupNotVisible16.png');
+    color: silver;
+}
+
+.subLayerLI {
+    background-image: url('../images/LayerGenericSmall16.png');
+    background-repeat: no-repeat;
+}
+
+.subLayerOffLI {
+    background-image: url('../images/LayerGenericSmall16NotVisible.png');
+    color: silver;
+}
+
+.baseMapLayerLI {
+    background-image: url('../images/Basemap16.png');
+    background-repeat: no-repeat;
+    cursor: default;
+    margin-bottom: 10px;
+}
+
+.esriLegendServiceLabel {
+    font-size: larger;
+    font-style: italic;
+    text-decoration: underline;
+    background-image: url('../images/LayerServiceMap16.png');
+    background-repeat: no-repeat;
+    padding-left: 22px;
+}
+
+.esriLegendLayer {
+    margin-left: 22px;
+}
+
+.esriLegendLayerLabel {
+    margin-left: 22px;
+}
+
+.esriScalebar {
+    left: 30px !important;
+}
+
+.esriScalebarLabel {
+    text-shadow: 1px 1px 0px whitesmoke;
+}
+.identifyLayerNameLabel {
+    background-color: #597286;
+}
+.identifyServiceNameLabel {
+		color: #324452;   
+		background: url(../images/appTitle_background.png) repeat-x;
+}

@@ -1,0 +1,151 @@
+/*
+ *	Reference
+ * 		http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html#//apple_ref/doc/uid/TP40006509-SW1
+ */
+ 
+/**
+ * 	Portrait orientation
+ */
+@media screen and (orientation:portrait) {
+  html,body {
+      width: 100%;
+      height: 100%;
+      margin:	0;
+      padding:	0;
+  }
+  #container {
+    width: 100%;
+    height:100%;
+    margin:	0;
+    padding:	0;
+  }
+  
+  #splitter {
+    width: 100%;
+    height:100%;
+    margin: 0;
+    padding:    0;
+    background-color: #cf9325;
+  }
+  
+  #leftPane {
+    display:	none;
+  }
+
+  #rightPane {
+    width: 100% !important;
+    height:100%;
+    margin:	0;
+    padding:	0;
+    position:	absolute;
+    z-index:	0;
+    left: 0 !important;
+  }
+
+  #rightPanelHeader {
+
+  }
+  #legendButton {
+    display: none;
+  }
+  #aboutButton {
+    display: none;
+  }
+  #popoverWindow {
+    display:	none;
+  }
+  
+  #map {
+    width: 100%;
+    height:100%;
+    margin:	0;
+    padding:	0;
+    position:	absolute;
+    z-index:	0;
+  }
+
+  .mblImageIcon {
+    padding: 5px;
+  }
+
+    .esriMobileInfoView .esriMobileInfoViewItem {
+        color: #000000 !important;
+    }
+}
+
+
+
+
+
+
+
+
+/**
+ * 	Landscape orientation
+ */
+@media screen and (orientation: landscape) {
+    html,body {
+        width: 100%;
+        height: 100%;
+        margin:	0;
+        padding:	0;
+    }
+    #container {
+        width: 100%;
+        height:100%;
+        margin:	0;
+        padding:	0;
+    }
+
+    #splitter {
+        width: 100%;
+        height:100%;
+        margin: 0;
+        padding:    0;
+        background-color: #cf9325;
+    }
+
+    #leftPane {
+        display:	none;
+    }
+
+    #rightPane {
+        width: 100% !important;
+        height:100%;
+        margin:	0;
+        padding:	0;
+        position:	absolute;
+        z-index:	0;
+        left: 0 !important;
+    }
+
+    #rightPanelHeader {
+        display: none;
+    }
+    #aboutButton {
+        display: none;
+    }
+    #legendButton {
+        display: none;
+    }
+    #popoverWindow {
+        display:	none;
+    }
+
+    #map {
+        width: 100%;
+        height:100%;
+        margin:	0;
+        padding:	0;
+        position:	absolute;
+        z-index:	0;
+    }
+
+    .mblImageIcon {
+        padding: 5px;
+    }
+
+    .esriMobileInfoView .esriMobileInfoViewItem {
+        color: #000000 !important;
+    }
+}

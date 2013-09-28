@@ -1,0 +1,48 @@
+﻿
+
+#loadingDialog {
+    background-color: #334453;
+}
+
+#loadingDialog .dijitDialogPaneContent {
+    color: whitesmoke;
+}
+
+#loadingDialogContent {
+    background-color: #334453;
+}
+
+ #mainWindow {
+    background-color: #5a7286;
+}
+
+#topPane {
+    background-color: #334453;
+}
+
+#bottomPane {
+    border-top: solid thin #334453;
+}
+
+.tundra .dijitCheckBox, .tundra .dijitCheckBoxIcon, .tundra .dijitRadio, .tundra .dijitRadioIcon {
+    background-image: url('../images/checkmark.blue.png') !important;
+}
+ #searchExpandoPane {
+    background-color: #334453;
+}
+.tundra .dojoxExpandoRight .dojoxExpandoTitle, .tundra .dojoxExpandoLeft .dojoxExpandoTitle, .tundra .dojoxExpandoClosed .dojoxExpandoTitle, .tundra .dojoxExpandoClosed{
+  background-color:#334453;
+}
+.identifyServiceNameLabel {
+  background-color:#334453;
+}
+.identifyLayerNameLabel {
+  color:whitesmoke;
+  background-color:#334453;
+}
+.identifyResult{
+    border-bottom: solid thin #334453;
+}
+.identifyResultError{
+    border-bottom: solid thin #334453;
+}

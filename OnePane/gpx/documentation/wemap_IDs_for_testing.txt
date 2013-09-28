@@ -1,0 +1,9 @@
+webmap IDs to test GPX template:
+?webmap=ce4cbe1d06e2484284ffd692dfa62545 - basic case, time and ele attributes, single point layer
+?webmap=2b704e303b5f4a3a85a2e5e1916dc5ec - no time, no ele, created with http://maps.esri.com/AGSJS_Demos/GPXRouteCreator/
+?webmap=0a9c2516b6fb4d78a7276cca6ed5d7fb - no time but has ele, Arcadia Hike
+?webmap=071fa75fb17e425aacd45f4ee640fbe6 - two point layers, one with waypoints
+?webmap=18beb88a318542a7a1365a45f3c5b872 - another basic case but lots of data
+?webmap=9640e14cd3864aefadc7a38448970321 - no gpx layer
+
+

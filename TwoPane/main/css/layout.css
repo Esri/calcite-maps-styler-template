@@ -1,0 +1,94 @@
+﻿html,body {
+height: 98%;
+width: 98%;
+margin: 0 10px;
+padding: 0;
+}
+
+body {
+font-size:14px;
+overflow:hidden;
+font-family:"Helvetica Neue", Helvetica, "Trebuchet MS", Arial, sans-serif;
+}
+
+#header {
+margin:0;
+}
+
+#title {
+font-size:30px;
+text-align:left;
+font-weight:bolder;
+padding-top:10px;
+padding-left:15px;
+white-space: nowrap;  
+overflow: hidden;  
+text-overflow: ellipsis;
+-o-text-overflow:ellipsis;
+}
+.esriRtl #title{
+    text-align: right;
+    padding-right:15px;
+
+}
+#subtitle {
+font-size:14px;
+padding-left:15px;
+}
+.esriRtl #subtitle{
+    padding-right:15px;
+
+}
+
+#rightPane {
+width:20%;
+margin:0;
+padding:0;
+}
+#leftPane {
+width:20%;
+margin:0;
+padding:0;
+}
+.panel_content {
+height:100%;
+width:100%;
+margin:0;
+}
+
+.panelHeader {
+font-size:18px;
+overflow:hidden;
+margin:0;
+}
+
+
+#leftPaneBody {
+margin:0;
+}
+#rightPaneBody{
+margin:0;
+}
+#leftPaneBody .panel_content {
+padding:10px;
+}
+
+#rightPaneBody .panel_content{
+padding:10px;
+}
+
+#map {
+margin:0;
+padding:0px;
+}
+
+#footer {
+margin:0;
+}
+
+.esriScalebar{
+padding-left:15px;
+}
+.map .bingLogo-lg{
+left:18px !important;
+}

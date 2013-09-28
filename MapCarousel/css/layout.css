@@ -1,0 +1,480 @@
+/*Custom app css*/
+  html,body{
+   font-family:verdana,tahoma,helvetica,sans-serif;
+   color:#747170; /*gray*/
+   overflow:hidden;
+   width:100%;
+   height:100%;
+  }
+
+  h1 {
+    font: bold 2em/1em;
+    color: #686868;
+  }
+ .pod{
+   /*padding:10px 10px 3px 10px;*/
+   min-height: 56px;
+ }
+ .rounded{
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+ }
+ #mainMap{
+    height:100%;
+ }
+ .map{
+    height:100% !important;
+ }
+.map .container {
+    height:100% !important;
+    position:absolute;
+ }
+ #mapSection{
+   border:solid 1px #747170; /*gray*/
+  border-bottom:none;
+  height:80%;
+ }
+.snippetPod{
+  font-size:.9em;
+}
+#detailsSection{
+  height:14%;
+  border:solid thin #747170; /*gray*/
+  padding-top:0px !important;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  overflow:hidden;
+}
+.title{
+    font-weight:600;
+    font-size:1em;
+}
+.subtitle{
+    font-size:.8em;
+}
+
+.gallery-nav {
+    height: 36px;
+    left: 0;
+    margin-top: -18px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+.gallery-nav-left, .gallery-nav-right {
+    background: url("../images/nav.png") repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 36px;
+    left: 20px;
+    position: absolute;
+    width: 36px;
+    z-index: 2;
+}
+.gallery-nav-right {
+    background-position: -36px -36px;
+    left: auto;
+    right: 20px;
+}
+.gallery-nav-left{
+    background-position: 0px -36px;
+}
+
+.gallery-thumb{
+    background: url('../images/thumbnail_gallery.png') no-repeat scroll 50% 50% transparent;
+    cursor:pointer;
+    height:18px;
+    width:18px;
+    position:absolute;
+}
+.esriRtl .gallery-thumb{
+  left:2px;
+  top:2px;
+}
+.esriLtr .gallery-thumb{
+  right:2px;
+  top:4px;
+}
+.gallery-thumbs-container{
+    background:url('../images/bg.png') repeat scroll 0 0 transparent;
+    position:absolute;
+    z-index: 4;
+    height:100%;
+    width:100%;
+    overflow:auto;
+}
+
+.gallery-thumbs-list{
+   list-style-type:none;    
+   padding-left:0px !important; /*remove default padding for ul of 40 px*/
+   margin:0px !important; /*removed default top and bottom margin of 16 px for ul*/
+ 
+}
+
+.gallery-thumbs-list li{
+    background:none repeat scroll 0 0 #F3F3F3;
+    box-shadow:0 3px 6px rgba(0,0,0,0.25);
+    height:130px;
+    width:152px !important;
+    margin-bottom:10px;
+    margin-top:10px;
+    padding:4px 8px;
+    cursor:pointer;
+}
+.gallery-thumbs-list li img{
+    height:100px;
+    width:100%; 
+}
+
+.gallery-thumbs-list li p{
+    margin-top:2px !important; /*reduce the default paragraph top margin size*/
+    margin-bottom:2px !important;
+    color:#747170;
+    text-align: left;
+    padding:0px 10px;
+    font-size:.6em;
+    height:20px;
+}
+.ellipsis{
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+
+/* Containers
+----------------------------------------------------------------------------------------------------*/
+.container_12 {
+	width: 92%;
+	height:100%;
+	margin-left: 4%;
+	margin-right: 4%;
+}
+
+/* Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+.gallery_grid{
+    margin-right:0 !important;
+}
+/* Grid >> Children (Alpha ~ First, Omega ~ Last)
+----------------------------------------------------------------------------------------------------*/
+
+.alpha {
+	margin-left: 0;
+}
+
+.omega {
+	margin-right: 0;
+}
+
+/* Grid >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container_12 .grid_1 {
+	width:6.333%;
+}
+
+.container_12 .grid_2 {
+	width:14.667%;
+}
+
+.container_12 .grid_3 {
+	width:23.0%;
+}
+
+.container_12 .grid_4 {
+	width:31.333%;
+}
+
+.container_12 .grid_5 {
+	width:39.667%;
+}
+
+.container_12 .grid_6 {
+	width:48.0%;
+}
+
+.container_12 .grid_7 {
+	width:56.333%;
+}
+
+.container_12 .grid_8 {
+	width:64.667%;
+}
+
+.container_12 .grid_9 {
+	width:73.0%;
+}
+
+.container_12 .grid_10 {
+	width:81.333%;
+}
+
+.container_12 .grid_11 {
+	width:89.667%;
+}
+
+.container_12 .grid_12 {
+	width:98.0%;
+}
+
+
+
+/* Prefix Extra Space >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container_12 .prefix_1 {
+	padding-left:8.333%;
+}
+
+.container_12 .prefix_2 {
+	padding-left:16.667%;
+}
+
+.container_12 .prefix_3 {
+	padding-left:25.0%;
+}
+
+.container_12 .prefix_4 {
+	padding-left:33.333%;
+}
+
+.container_12 .prefix_5 {
+	padding-left:41.667%;
+}
+
+.container_12 .prefix_6 {
+	padding-left:50.0%;
+}
+
+.container_12 .prefix_7 {
+	padding-left:58.333%;
+}
+
+.container_12 .prefix_8 {
+	padding-left:66.667%;
+}
+
+.container_12 .prefix_9 {
+	padding-left:75.0%;
+}
+
+.container_12 .prefix_10 {
+	padding-left:83.333%;
+}
+
+.container_12 .prefix_11 {
+	padding-left:91.667%;
+}
+
+
+
+/* Suffix Extra Space >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container_12 .suffix_1 {
+	padding-right:8.333%;
+}
+
+.container_12 .suffix_2 {
+	padding-right:16.667%;
+}
+
+.container_12 .suffix_3 {
+	padding-right:25.0%;
+}
+
+.container_12 .suffix_4 {
+	padding-right:33.333%;
+}
+
+.container_12 .suffix_5 {
+	padding-right:41.667%;
+}
+
+.container_12 .suffix_6 {
+	padding-right:50.0%;
+}
+
+.container_12 .suffix_7 {
+	padding-right:58.333%;
+}
+
+.container_12 .suffix_8 {
+	padding-right:66.667%;
+}
+
+.container_12 .suffix_9 {
+	padding-right:75.0%;
+}
+
+.container_12 .suffix_10 {
+	padding-right:83.333%;
+}
+
+.container_12 .suffix_11 {
+	padding-right:91.667%;
+}
+
+
+
+/* Push Space >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container_12 .push_1 {
+	left:8.333%;
+}
+
+.container_12 .push_2 {
+	left:16.667%;
+}
+
+.container_12 .push_3 {
+	left:25.0%;
+}
+
+.container_12 .push_4 {
+	left:33.333%;
+}
+
+.container_12 .push_5 {
+	left:41.667%;
+}
+
+.container_12 .push_6 {
+	left:50.0%;
+}
+
+.container_12 .push_7 {
+	left:58.333%;
+}
+
+.container_12 .push_8 {
+	left:66.667%;
+}
+
+.container_12 .push_9 {
+	left:75.0%;
+}
+
+.container_12 .push_10 {
+	left:83.333%;
+}
+
+.container_12 .push_11 {
+	left:91.667%;
+}
+
+
+
+/* Pull Space >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container_12 .pull_1 {
+	left:-8.333%;
+}
+
+.container_12 .pull_2 {
+	left:-16.667%;
+}
+
+.container_12 .pull_3 {
+	left:-25.0%;
+}
+
+.container_12 .pull_4 {
+	left:-33.333%;
+}
+
+.container_12 .pull_5 {
+	left:-41.667%;
+}
+
+.container_12 .pull_6 {
+	left:-50.0%;
+}
+
+.container_12 .pull_7 {
+	left:-58.333%;
+}
+
+.container_12 .pull_8 {
+	left:-66.667%;
+}
+
+.container_12 .pull_9 {
+	left:-75.0%;
+}
+
+.container_12 .pull_10 {
+	left:-83.333%;
+}
+
+.container_12 .pull_11 {
+	left:-91.667%;
+}
+
+
+
+
+/* Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack */
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}

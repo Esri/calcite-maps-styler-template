@@ -1,0 +1,126 @@
+﻿  html, body { 
+      height: 100%; 
+      width: 100%; 
+      padding: 0; 
+      margin: 0;
+    }     
+    body { 
+      background: #222;
+      color: #222;
+      font-size: 13px;
+      line-height: 1.4em;
+      overflow: hidden; 
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    } 
+    
+    a { 
+      color: #002f56; 	
+    } 
+    
+    #header { 
+      margin: 0; 
+      height: 85px; 
+      }
+      
+    #title {
+      color:#fff;
+      font-size: 30px; 
+      font-weight: lighter; 
+      text-align: left; 
+      padding-top: 20px;
+      padding-left: 20px; 
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      white-space: nowrap;  
+      overflow: hidden;  
+      line-height:1.0em;
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;
+    } 
+    
+    #subtitle { 
+      font-size: 14px; 
+      color: #FFFFFF; 
+      padding-left: 25px; 
+      font-weight: lighter; 
+      white-space: nowrap;  
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;
+      
+    } 
+    
+    #rightPane { 
+      margin: 20px 20px 0px 0px;
+      padding: 0;
+      width: 20%; 
+      border: 1px solid white;
+      background: #31bbe2;
+    } 
+    
+    #leftPane { 
+      margin: 20px 0px 0px 20px; 
+      padding: 0; 
+      width: 20%; 
+      border: 1px solid white;
+      background: #31bbe2;
+    } 
+    
+    #leftPaneContent { 
+      height: 100%; 
+      width: 100%;
+      margin: 0; 
+      padding: 0; 
+    } 
+    
+    #leftPaneHeader{
+      height: 30px;
+      padding-top: 15px;
+      background-color: #6ecfeb;
+      border-bottom: 1px solid #fff;
+    }
+    #leftPaneHeader span{ 
+      margin: 0px auto; 
+      padding: 0px 10px;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 16px;
+      color: #222;
+    } 
+    
+
+    
+    #leftPaneBody { 
+      margin:0;
+    } 
+    
+    #leftPaneBody .panel_content { 
+      padding: 10px; 
+    } 
+    
+    #tabLink { 
+      text-decoration: none; 
+      color:#3f3f3f;
+    } 
+    
+    #map { 
+      margin: 20px 20px 0px 0px; 
+      padding: 0; 
+      border: solid 1px #fff; 
+    } 
+    
+    #footer { 
+      margin: 0; 
+      color: #FFFFFF; 
+      font-size: 14px; 
+      padding: 8px 20px 5px; 
+      text-align:right; 
+      height:18px;
+   }
+   .esriScalebar{
+    padding-left:15px;
+   }
+  .map .bingLogo-lg{
+    left:18px !important;
+  }
+   

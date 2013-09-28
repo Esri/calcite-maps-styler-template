@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/esri/css/esri.css" />
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <script type="text/javascript">
+        var path_location = location.pathname.replace(/\/[^/]+$/, '');
+        var dojoConfig = {
+            parseOnLoad: true,
+            packages:[
+            {
+                name: "utilities",
+                location: path_location + '/javascript'
+             },
+             {
+                  name : "apl",
+                  location : path_location + "/apl"
+             },{
+                name : "templateConfig",
+                location: path_location.substr(0,path_location.lastIndexOf('/')) 
+             }
+            ]
+        };
+    </script>
+    <script type="text/javascript" src="//js.arcgis.com/3.7/"></script>
+    <script type="text/javascript" src="javascript/app.js"> </script>
+   
+    <script type="text/javascript">
+        dojo.require("esri.layout");
+        dojo.require("dijit.Toolbar");
+        dojo.require("dijit.TooltipDialog");
+        dojo.require("templateConfig.commonConfig")
+
+        dojo.ready( function(){
+          init();
+        });
+    </script>
+</head>
+  <body class="claro">
+    <div id="mainContainer" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline',gutters:true">
+      <div class="sideContainer topContainer" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="region:'top',gutters:true">
+        <div class="centerPane" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+          <span id="title"></span>
+        </div>
+        <div class="bottomPane" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom'">
+          <span id="snippet"></span>
+
+          <div id="toolbarButtons" data-dojo-type="dijit.Toolbar">
+            <div data-dojo-type="dijit.form.DropDownButton" id="measureDropDown">
+              <div data-dojo-type="dijit.layout.ContentPane" class="measurePane">
+                <div id="measurement"></div>
+                <span id="measurementNote" style="font-size:smaller;padding:5px 5px;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="infoContainer" class="sideContainer leftContainer" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="region:'left',gutters:true">
+        <div class="centerPane" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+          <div id="legendDiv"></div>
+        </div>
+      </div>
+      <div class="sideContainer centerContainer" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="region:'center',gutters:true">
+        <div class="centerPane" id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'" dir="ltr"></div>
+      </div>
+      <div id="profileChartContainer" class="sideContainer bottomContainer" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom',gutters:true,style:{height:'275px',margin:'10px',padding:'0'}">
+        <div id="profileChartPane" style="height:275px; margin:0 auto 0 auto; overflow:hidden;"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    #zoomSlider, #mapTitle {
+        display: none !important;
+    }
+
+    #topMenuBar, #mapcon, #map {
+        min-width: 320px;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+
+    #mapTitle {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    #locateBox, #autoComplete {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+
+
+    #basemapButton , #basemapMenu {
+        display: none !important;
+    }
+
+    .slideMenu {
+        left: auto !important;
+        right: 12px !important;
+    }
+
+    .esriRtl .slideMenu {
+        left: 12px !important;
+        right: auto !important;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+
+    #shareMap, #shareControls {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    #zoomSlider, #placesCon, #placesMenu, #aboutMap, #aboutDialog {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 385px) {
+    #topMenuBar, #mapcon, #map {
+        min-width: 320px;
+    }
+}

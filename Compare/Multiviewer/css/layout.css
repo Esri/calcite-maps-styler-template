@@ -1,0 +1,400 @@
+﻿html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;    
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3e3e3e;
+}
+
+a {
+	color:#555;
+	font-weight:bold;
+	text-decoration:none;
+}
+	  
+a:hover{
+	text-decoration:underline;
+}
+
+#loadingDialog {
+    width: 400px;
+    height: 100px;
+    color: black;
+}
+
+#loadingDialogContent {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#mainWindow {
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+#mainCenterPane {
+    padding: 0px;
+}
+
+#topPane {
+	background-color:#3e3e3e;
+    height: 75px;
+    padding: 10px;
+	color:#fff;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:32px;
+	white-space:nowrap;
+	line-height:1.5;
+}
+
+#bottomContainer {
+	display:none;
+    width: 125px;
+    padding: 15px 15px 15px 5px;
+    background-color: #e4e9ed;
+    font-size: 9pt;
+    border: none;
+    overflow: hidden;
+}
+
+#centerPane {
+    background-color: transparent;
+    border: none !important;
+    padding: 0px;
+}
+
+.mapContainer {
+    background-color: transparent !important;
+    padding: 0px !important;
+    border: none !important;
+}
+
+.compareCity {
+    height: 30px;
+    padding: 5px !important;
+    background-color:#848484;
+    font-weight: bold;
+    font-size: 11pt;
+    overflow: hidden;
+}
+
+.compareMap {
+    background-color: transparent !important;
+    padding: 0px !important;
+}
+
+.compareInfo {
+    height: 250px;
+    background-color: #dadada; !important;
+}
+
+#mapInfoRow {
+    height: 230px;
+}
+
+#mapInfoRow td {
+    padding-top: 10px;
+    border-top: solid 1px #324452;
+}
+
+.infoPanel {
+    font-size: 9pt;
+    padding: 15px !important;
+    background-color: transparent !important;
+}
+
+.rightBorder{
+	border-right: 5px solid #848484;
+}
+
+.textToggle{
+	cursor:pointer;
+}
+
+g,v{
+	cursor:pointer;
+}
+
+#footer {
+    background:#848484;
+    height:25px;
+	margin:0;
+    padding:10px 15px 5px;
+}
+
+.dijitGutter {
+    background-color: #848484 !important;
+}
+
+.dijitIconZoomTo {
+    background-image: url('../images/zoom-16x16.png');
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+.dijitIconScale {
+    background-image: url('../images/ScaleBar16.png');
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+.dijitIconLocation {
+    background-image: url('../images/Location.png');
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+.dijitIconScaleLocation {
+    background-image: url('../images/ScaleAndLocation.png');
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+.dijitIconIdentify {
+    background-image: url('../images/GenericInformation_B_16.png');
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+.dijitDialog{
+	border:1px solid #333;
+}
+
+#bottomPane td div input, #bottomPane td div label {
+    cursor: pointer !important;
+}
+
+.tundra .dijitCheckBox, .tundra .dijitCheckBoxIcon, .tundra .dijitRadio, .tundra .dijitRadioIcon {
+    background-image: url('../images/checkmark.png');
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    padding-left: 20px;
+}
+
+.mapServiceLayerLI {
+    background-image: url('../images/LayerServiceMap16.png');
+    background-repeat: no-repeat;
+    margin-bottom:5px;
+}
+
+.mapServiceLayerOffLI {
+    background-image: url('../images/LayerServiceMapNotVisible16.png');
+    color: silver;
+}
+
+.LayerLI {
+    background-image: url('../images/Layer_LYR_File16.png');
+    background-repeat: no-repeat;
+    cursor: default;
+}
+
+.LayerOffLI {
+    background-image: url('../images/Layer_LYR_File16NotVisible.png');
+    color: silver;
+}
+
+.groupLayerLI {
+    background-image: url('../images/LayerGroup16.png');
+    background-repeat: no-repeat;
+    cursor: default;
+}
+
+.groupLayerOffLI {
+    background-image: url('../images/LayerGroupNotVisible16.png');
+    color: silver;
+}
+
+.subLayerLI {
+    background-image: url('../images/LayerGenericSmall16.png');
+    background-repeat: no-repeat;
+}
+
+.subLayerOffLI {
+    background-image: url('../images/LayerGenericSmall16NotVisible.png');
+    color: silver;
+}
+
+.baseMapLayerLI {
+    background-image: url('../images/Basemap16.png');
+    background-repeat: no-repeat;
+    cursor: default;
+    margin-bottom: 10px;
+}
+
+.esriLegendServiceLabel {
+    font-size: larger;
+    font-style: italic;
+    text-decoration: underline;
+    background-image: url('../images/LayerServiceMap16.png');
+    background-repeat: no-repeat;
+    padding-left: 22px;
+}
+
+.esriLegendLayer {
+    margin-left: 22px;
+}
+
+.esriLegendLayerLabel {
+    margin-left: 22px;
+}
+
+.esriScalebar {
+    left: 30px !important;
+}
+
+.esriScalebarLabel {
+    text-shadow: 1px 1px 0px whitesmoke;
+}
+.identifyLayerNameLabel {
+    background-color: #597286;
+}
+.identifyServiceNameLabel {
+		color: #324452;   
+		background: url(../images/appTitle_background.png) repeat-x;
+}
+
+	  /* INTRO PANEL */
+	  #modalBackground {
+	  position:absolute;
+	  height:100%;
+	  width:100%;
+	  top:0;
+	  background-color:#3e3e3e;
+	  z-index:1000;
+	  }
+	  
+	  #intro{
+	  display:none;
+	  position:absolute;
+	  width:800px;
+	  height:550px;
+	  top:65px;
+	  background-color:#c4c4c4;
+	  z-index:1001;
+	  }
+	  
+	  #introHeader{
+	  width:100%;
+	  height:65px;
+	  line-height:2.0;
+	  background-color:#848484;
+	  color:#fff;
+	  font-family:Georgia, "Times New Roman", Times, serif;
+      font-size:30px;
+      text-align:left;
+      padding:0px 15px ;
+      white-space: nowrap;  
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;
+	  }
+	  
+	  
+	  /* Intro Panel */
+	  #introContent{
+	  overflow:hidden;
+	  }
+	  
+	  #textPanel{
+	  width:340px;
+	  height:485px;
+	  margin-left:25px;
+	  float:left;
+	  }
+	  
+	  #introText{
+	  max-height:422px;
+	  overflow:auto;
+	  margin-bottom:15px;
+	  padding-top:15px;
+	  }
+	  
+	  #continue{
+	  display:none;
+	  }
+	  
+	  #introImg{
+	  display:none;
+	  max-width:405px;
+	  max-height:440px;
+	  margin-top:15px;
+	  margin-right:15px;
+	  float:right;
+	  }
+	  
+	  /* clean gray
+	  *******************************************************************************/
+	  .clean-gray {
+      background-color: #eeeeee;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
+      /* Saf4+, Chrome */
+  	  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+      background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+      background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+      background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+      background-image: linear-gradient(top, #eeeeee, #cccccc);
+      border: 1px solid #ccc;
+      border-bottom: 1px solid #bbb;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px;
+      color: #333;
+      font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+      line-height: 1;
+      padding: 8px 8px;
+      text-align: center;
+      text-shadow: 0 1px 0 #eee;
+      width: 150px;
+	  }
+
+	  .clean-gray:hover {
+      background-color: #dddddd;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#bbbbbb));
+      /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+      background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+      background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+      background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+      background-image: linear-gradient(top, #dddddd, #bbbbbb);
+      border: 1px solid #bbb;
+      border-bottom: 1px solid #999;
+      cursor: pointer;
+      text-shadow: 0 1px 0 #ddd;
+	  }
+
+	  .clean-gray:active {
+      border: 1px solid #aaa;
+      border-bottom: 1px solid #888;
+      -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+      -moz-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+      -ms-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+      -o-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+      box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+	  }	 

@@ -1,0 +1,183 @@
+﻿      html, body {
+          height: 100%;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+      }
+      
+      body {
+          background: #000 url(../images/pavement_bg.jpg) center center fixed no-repeat;
+          background: #000 url(../images/pavement_bg.jpg) top left repeat;
+          -moz-background-size: cover;
+          font-weight: lighter;
+          background-size: cover;
+          color: #fff;
+          font-size: 13px;
+          overflow: hidden;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      
+      a {
+          color: #3E87DC;
+      }
+      
+      #header {
+          margin: 0;
+          height: 110px;
+      }
+      
+      #header_flourish {
+          background: url(../images/pavement_topflourish.png) no-repeat;
+          width: 642px;
+          height: 33px;
+          position: absolute;
+          bottom: 0px;
+      }
+      
+      #title {
+          color: #cf9325;
+          font-size: 30px;
+          font-weight: lighter;
+          text-align: left;
+          padding-top: 10px;
+          padding-left: 15px;
+          white-space: nowrap;  
+          overflow: hidden;  
+          text-overflow: ellipsis;
+          -o-text-overflow:ellipsis;
+      }
+      
+      #subtitle {
+          font-size: 14px;
+          color: #FFFFFF;
+          padding-left: 15px;
+          white-space: nowrap;  
+          overflow: hidden;  
+          text-overflow: ellipsis;
+          -o-text-overflow:ellipsis;
+      }
+      
+      #rightPane {
+          margin: 20px 20px 0px 0px;
+          padding: 0;
+          width: 30%;
+      }
+      
+      #leftPane {
+          margin: 20px 0px 0px 20px;
+          padding: 0;
+          width: 20%;
+      }
+      
+      .panel_content {
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+      }
+      
+      .panelHeader {
+          height: 30px;
+          padding-top: 15px;
+          border-bottom: 3px solid #fff;
+      }
+      
+      .panelHeader span {
+          margin: 0px auto;
+          padding: 0 10px 5px 10px;
+          font-weight: normal;
+          font-size: 18px;
+          color: #cf9325;
+      }
+      
+      .panelHeader .dijitButtonNode {
+          background: none;
+          border: none;
+          padding: 0;
+      }
+      
+      #leftPaneBody {
+          margin: 0;
+      }
+      
+      #leftPaneBody .panel_content {
+          padding: 10px;
+      }
+      
+      #rightPaneBody {
+          margin: 0;
+      }
+      
+      #rightPaneBody .panel_content {
+          padding: 10px;
+      }
+      
+      #map {
+          margin: 0 0 0px 0px;
+          padding: 0;
+          border: solid 3px #fff;
+      }
+      
+      #footer {
+          margin: 0;
+          color: #FFFFFF;
+          font-size: 14px;
+          padding: 8px 20px 5px;
+          text-align: center;
+          height: 18px;
+      }
+      
+      .identifyServiceNameLabel {
+          margin: 6px;
+          padding: 3px;
+          color: #fff;
+          background-color: #cf9325;
+          font-size: larger;
+          text-align: center;
+          font-weight: bold;
+      }
+      
+      .identifyLayerNameLabel {
+          margin: 10px 40px 10px 40px;
+          padding: 3px;
+          color: #fff;
+          background: url(../images/pavement_topflourish.png) no-repeat;
+          text-align: center;
+          font-weight: bold;
+      }
+      
+      .identifyResult {
+          padding: 10px;
+          margin-left: 15px;
+          border-bottom: solid thin #cf9325;
+					font-size: smaller;
+      }
+      
+      .identifyResultError {
+          color: darkred;
+          padding: 10px;
+          margin-left: 15px;
+          border-bottom: solid thin #cf9325;
+      }
+      
+      .identifyResult:hover {
+          /*...*/
+      }
+      
+      .identifyAttribute {
+          color: #fff;
+          padding: 2px;
+          font-weight: normal;
+      }
+      
+      .identifyValue {
+          color: #cf9325;
+          padding: 2px;
+          font-weight: bold;
+      }
+      .esriScalebar{
+        padding-left:15px;
+      }
+      .map .bingLogo-lg{
+        left:18px !important;
+      }
