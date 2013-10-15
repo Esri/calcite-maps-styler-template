@@ -73,6 +73,7 @@ xcopy %TEMPLATES_ROOT%\archive\CompareSearch               		%BUILD_OUTPUT%\Comp
 xcopy %TEMPLATES_ROOT%\archive\CompareSideBySideViewer      	%BUILD_OUTPUT%\Compare\SideBySideViewer_Configure   /E /Y
 xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingSidepanel     %BUILD_OUTPUT%\Compare\storytelling_sidepanel       /E /Y
 xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingTabbed	    %BUILD_OUTPUT%\Compare\storytelling_tabbed	        /E /Y
+xcopy %TEMPLATES_ROOT%\StorytellingCompare	    				%BUILD_OUTPUT%\Compare\storytelling_compare	        /E /Y
 xcopy %TEMPLATES_ROOT%\archive\EditorChrome						%BUILD_OUTPUT%\Editor\Chrome				        /E /Y
 xcopy %TEMPLATES_ROOT%\Edit                  					%BUILD_OUTPUT%\Edit                 				/E /Y
 xcopy %TEMPLATES_ROOT%\ElevationsProfile      					%BUILD_OUTPUT%\ElevationsProfile    				/E /Y
@@ -102,7 +103,7 @@ xcopy %TEMPLATES_ROOT%\archive\OnePaneSeaside	    			%BUILD_OUTPUT%\OnePane\seas
 xcopy %TEMPLATES_ROOT%\archive\Splash			    			%BUILD_OUTPUT%\OnePane\splash        				/E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingBasic	    				%BUILD_OUTPUT%\OnePane\storytelling_basic        	/E /Y
 xcopy %TEMPLATES_ROOT%\archive\TwitterTimeline	    			%BUILD_OUTPUT%\OnePane\twittertimeline        		/E /Y
-xcopy %TEMPLATES_ROOT%\archive\swipe	    					%BUILD_OUTPUT%\OnePane\swipe        				/E /Y
+xcopy %TEMPLATES_ROOT%\archive\Swipe	    					%BUILD_OUTPUT%\OnePane\swipe        				/E /Y
 xcopy %TEMPLATES_ROOT%\archive\GPX				    			%BUILD_OUTPUT%\OnePane\gpx        					/E /Y
 xcopy %TEMPLATES_ROOT%\PublicGallery          					%BUILD_OUTPUT%\PublicGallery        				/E /Y
 xcopy %TEMPLATES_ROOT%\SimpleMapViewer        					%BUILD_OUTPUT%\SimpleMapViewer      				/E /Y
