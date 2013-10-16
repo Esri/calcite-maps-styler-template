@@ -52,7 +52,8 @@ mkdir %BUILD_OUTPUT%\OnePane\splash
 mkdir %BUILD_OUTPUT%\OnePane\storytelling_basic        				
 mkdir %BUILD_OUTPUT%\OnePane\swipe        				
 mkdir %BUILD_OUTPUT%\OnePane\twittertimeline        		
-mkdir %BUILD_OUTPUT%\OnePane\gpx        					
+mkdir %BUILD_OUTPUT%\OnePane\gpx  
+mkdir %BUILD_OUTPUT%\Panels      					
 mkdir %BUILD_OUTPUT%\PublicGallery
 mkdir %BUILD_OUTPUT%\SimpleMapViewer
 mkdir %BUILD_OUTPUT%\SocialMedia
@@ -81,17 +82,18 @@ xcopy %TEMPLATES_ROOT%\Filter                 					%BUILD_OUTPUT%\Filter        
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterChrome    			%BUILD_OUTPUT%\HeaderFooter\Chrome        			/E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterPavement   			%BUILD_OUTPUT%\HeaderFooter\pavement        		/E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterSeaside    			%BUILD_OUTPUT%\HeaderFooter\seaside        			/E /Y
-xcopy %TEMPLATES_ROOT%\HeaderFooter    							%BUILD_OUTPUT%\HeaderFooter\main        			/E /Y
+xcopy %TEMPLATES_ROOT%\archive\HeaderFooter    					%BUILD_OUTPUT%\HeaderFooter\main        			/E /Y
 xcopy %TEMPLATES_ROOT%\archive\IdentifyChrome	    			%BUILD_OUTPUT%\Identify\Chrome        				/E /Y
 xcopy %TEMPLATES_ROOT%\archive\IdentifyPavement	    			%BUILD_OUTPUT%\Identify\Pavement        			/E /Y
 xcopy %TEMPLATES_ROOT%\archive\IdentifySeaside	    			%BUILD_OUTPUT%\Identify\Seaside        				/E /Y
 xcopy %TEMPLATES_ROOT%\archive\LegendChrome	    				%BUILD_OUTPUT%\Legend\Chrome        				/E /Y
 xcopy %TEMPLATES_ROOT%\archive\LegendPavement	    			%BUILD_OUTPUT%\Legend\pavement        				/E /Y
 xcopy %TEMPLATES_ROOT%\archive\LegendSeaside	    			%BUILD_OUTPUT%\Legend\seaside        				/E /Y
-xcopy %TEMPLATES_ROOT%\Legend                					%BUILD_OUTPUT%\Legend\main               			/E /Y
+xcopy %TEMPLATES_ROOT%\archive\Legend                			%BUILD_OUTPUT%\Legend\main               			/E /Y
 xcopy %TEMPLATES_ROOT%\MapCarousel            					%BUILD_OUTPUT%\MapCarousel          				/E /Y
 xcopy %TEMPLATES_ROOT%\MapTour                					%BUILD_OUTPUT%\MapTour              				/E /Y
-xcopy %TEMPLATES_ROOT%\OnePane                					%BUILD_OUTPUT%\OnePane\main             			/E /Y
+xcopy %TEMPLATES_ROOT%\archive\OnePane                			%BUILD_OUTPUT%\OnePane\main             			/E /Y
+xcopy %TEMPLATES_ROOT%\Panels									%BUILD_OUTPUT%\Panels								/E /Y
 xcopy %TEMPLATES_ROOT%\BasicViewer                				%BUILD_OUTPUT%\OnePane\basicviewer             		/E /Y
 xcopy %TEMPLATES_ROOT%\TimeAware                			    %BUILD_OUTPUT%\OnePane\azuretime 	             	/E /Y
 xcopy %TEMPLATES_ROOT%\ChromeTwitter                			%BUILD_OUTPUT%\OnePane\azuretwitter             	/E /Y
@@ -111,7 +113,7 @@ xcopy %TEMPLATES_ROOT%\SocialMedia            					%BUILD_OUTPUT%\SocialMedia   
 xcopy %TEMPLATES_ROOT%\Solutions              					%BUILD_OUTPUT%\Solutions            				/E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingSwipe      					%BUILD_OUTPUT%\StorytellingSwipe    				/E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingTextLegend 					%BUILD_OUTPUT%\StorytellingTextLegend   			/E /Y
-xcopy %TEMPLATES_ROOT%\TwoPane                					%BUILD_OUTPUT%\TwoPane\main             			/E /Y
+xcopy %TEMPLATES_ROOT%\archive\TwoPane                			%BUILD_OUTPUT%\TwoPane\main             			/E /Y
 xcopy %TEMPLATES_ROOT%\archive\TwoPaneChrome                	%BUILD_OUTPUT%\TwoPane\Chrome             			/E /Y
 xcopy %TEMPLATES_ROOT%\archive\TwoPanePavement                	%BUILD_OUTPUT%\TwoPane\pavement             		/E /Y
 xcopy %TEMPLATES_ROOT%\archive\TwoPaneSeaside                	%BUILD_OUTPUT%\TwoPane\seaside             			/E /Y
