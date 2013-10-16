@@ -52,7 +52,8 @@ mkdir %BUILD_OUTPUT%\OnePane\splash
 mkdir %BUILD_OUTPUT%\OnePane\storytelling_basic        				
 mkdir %BUILD_OUTPUT%\OnePane\swipe        				
 mkdir %BUILD_OUTPUT%\OnePane\twittertimeline        		
-mkdir %BUILD_OUTPUT%\OnePane\gpx        					
+mkdir %BUILD_OUTPUT%\OnePane\gpx  
+mkdir %BUILD_OUTPUT%\Panels      					
 mkdir %BUILD_OUTPUT%\PublicGallery
 mkdir %BUILD_OUTPUT%\SimpleMapViewer
 mkdir %BUILD_OUTPUT%\SocialMedia
@@ -92,6 +93,7 @@ xcopy %TEMPLATES_ROOT%\Legend                					%BUILD_OUTPUT%\Legend\main    
 xcopy %TEMPLATES_ROOT%\MapCarousel            					%BUILD_OUTPUT%\MapCarousel          				/E /Y
 xcopy %TEMPLATES_ROOT%\MapTour                					%BUILD_OUTPUT%\MapTour              				/E /Y
 xcopy %TEMPLATES_ROOT%\OnePane                					%BUILD_OUTPUT%\OnePane\main             			/E /Y
+xcopy %TEMPLATES_ROOT%\Panels									%BUILD_OUTPUT%\Panels								/E /Y
 xcopy %TEMPLATES_ROOT%\BasicViewer                				%BUILD_OUTPUT%\OnePane\basicviewer             		/E /Y
 xcopy %TEMPLATES_ROOT%\TimeAware                			    %BUILD_OUTPUT%\OnePane\azuretime 	             	/E /Y
 xcopy %TEMPLATES_ROOT%\ChromeTwitter                			%BUILD_OUTPUT%\OnePane\azuretwitter             	/E /Y
