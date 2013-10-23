@@ -74,28 +74,28 @@ one in the list below is the one used):</p>
 <ol>
 
   <li><dt><code>http://[server name]/[app
-name]/s2.html?app=<span class="selector">apps2/ParcelViewer</span></code></dt>
+name]/s1.html?app=<span class="selector">apps1/ParcelViewer</span></code></dt>
 
     <dd>The configuration is read from the file
-"ParcelViewer.json" in the "apps2" folder of the site.</dd>
+"ParcelViewer.json" in the "apps1" folder of the site.</dd>
 
   </li>
 
   <br>
 
   <li><dt><code>http://[server name]/[app
-name]/s2.html?appid=<span class="selector">3e4d81ec295a4b1ba06be0007718bf95</span></code></dt>
+name]/s1.html?appid=<span class="selector">3e4d81ec295a4b1ba06be0007718bf95</span></code></dt>
 
     <dd>The configuration is read from the arcgis.com web
 application with the unique id "3e4d81ec295a4b1ba06be0007718bf95"; you
 can replace this id with the web application id of your choosing.<br>
 
 Because ArcGIS.com online currently uses the form <code>http://[server
-name]/[app name]/s2.html?webmap=0ebefb7ea74b425ebeb5853c42d01142</code>
+name]/[app name]/s1.html?webmap=0ebefb7ea74b425ebeb5853c42d01142</code>
 to preview a webmap in a template, a default configuration is used in
 the app by omitting the second argument and adding a third argument to
 the LGUIBuilder constructor in file js1\lgonlineStart.js:
-      <pre> // Read the UI spec<br> (new js.LGUIBuilder(window.location.search<span class="selector">, null, "apps2/ParcelViewer"</span>)).ready.then(</pre>
+      <pre> // Read the UI spec<br> (new js.LGUIBuilder(window.location.search<span class="selector">, null, "apps1/ParcelViewer"</span>)).ready.then(</pre>
 
     </dd>
 
@@ -104,16 +104,16 @@ the LGUIBuilder constructor in file js1\lgonlineStart.js:
   <br>
 
   <li><dt><code>http://[server name]/[app
-name]/s2.html</code></dt>
+name]/s1.html</code></dt>
 
     <dd>The configuration that you want your users to use is
 hard-wired into the site. To achieve this, change the following lines
 in the file js1\lgonlineStart.js to include the highlighted part
 containing the name of the configuration file; e.g., in the example,
 the configuration is read from the file "ParcelViewer.json" in the
-"apps2" folder of the site. Note the comma separating the
+"apps1" folder of the site. Note the comma separating the
 "window.location.search" and configuration filename parameter.
-      <pre> // Read the UI spec<br> (new js.LGUIBuilder(window.location.search<span class="selector">, "apps2/ParcelViewer"</span>)).ready.then(</pre>
+      <pre> // Read the UI spec<br> (new js.LGUIBuilder(window.location.search<span class="selector">, "apps1/ParcelViewer"</span>)).ready.then(</pre>
 
     </dd>
 
@@ -133,10 +133,10 @@ folder is <code>c:\inetpub\wwwroot</code>. </li>
 sharing and secure services. View the <a href="http://help.arcgis.com/en/webapi/javascript/arcgis/jshelp/#ags_proxy">Using
 the proxy page</a> help topic for details on installing and
 configuring a proxy page. After setting up the proxy set the proxyUrl
-option in s2.html to point to your proxy. </li>
+option in s1.html to point to your proxy. </li>
 
   <li> Test the page using the following URL:
-http://localhost/[template name]/s2.html, where [template name] is the
+http://localhost/[template name]/s1.html, where [template name] is the
 name of the folder where you extracted the zip contents. Unless you are
 using one of the configuration options above, you will see a blank
 page. </li>
@@ -190,7 +190,7 @@ configuration: by modifying this JSON, you can change the user
 interface to add or remove commands and change details such as the set
 of available theme colors. These changes can be made in your copy of
 the app's template so that you can continue to host the application on
-ArcGIS.com. They can also be made in a file in the apps2 folder on your
+ArcGIS.com. They can also be made in a file in the apps1 folder on your
 site; the same configuration format is used in both methods. </li>
 
   <br>
@@ -332,7 +332,7 @@ ArcGIS.com world geocode service by default.</span></li>
   <br>
 
   <li><span style="font-weight: bold;">Search and
-replace Javascript API (JSAPI) references.&nbsp;</span><span style="font-weight: normal;">In s2.html, use a text
+replace Javascript API (JSAPI) references.&nbsp;</span><span style="font-weight: normal;">In s1.html, use a text
 search&nbsp;to find all instances of&nbsp;
 "//serverapi.arcgisonline.com/jsapi/arcgis/3.5". </span><span style="font-weight: normal;">Your search should find four
 references to the ArcGIS.com JSAPI. Replace these four references with

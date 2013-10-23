@@ -30,12 +30,12 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="-1">
     <![endif]-->
-    <link rel="dns-prefetch" href="http://serverapi.arcgisonline.com" />
+    <link rel="dns-prefetch" href="//serverapi.arcgisonline.com" />
 
     <title>Local Government online app</title>
     <meta name="description" content="Local Government online app">
-    <link rel="stylesheet" href="http://js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css"/>
-    <link rel="stylesheet" href="http://js.arcgis.com/3.7/js/esri/css/esri.css" />
+    <link rel="stylesheet" href="//js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css"/>
+    <link rel="stylesheet" href="//js.arcgis.com/3.7/js/esri/css/esri.css" />
     <link rel="apple-touch-icon-precomposed" href="images/onlineapp.png" />
     <style>
         html, body {
@@ -88,7 +88,7 @@
                 location: path_location
             },{
                 name: "config",
-                location: path_location // common config
+                location: path_location + '/..'
             }],
             async: false,
             parseOnLoad: false
@@ -101,7 +101,7 @@
         dojoConfig.cacheBust = true;
     </script>
     <!--<![endif]-->
-    <script src="http://js.arcgis.com/3.7/"></script>
+    <script src="//js.arcgis.com/3.7/"></script>
     <script src="js1/libs.js"></script>
     <script src="js1/lgonlineStart.js"></script>
 </body>

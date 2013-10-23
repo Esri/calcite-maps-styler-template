@@ -1,6 +1,6 @@
 /* 
-This source is a compressed form of part of the git commit: 
-ecc41e0 Updated to JSAPI 3.7
+This source is a compressed form of part of the git commit 
+3451ed0 Converted color definitions to Dojo Color for AGOL printing
 Uncompressed source is available from https://github.com/Esri/local-government-online-apps 
 */ 
 /*
