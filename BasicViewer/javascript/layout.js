@@ -1456,14 +1456,20 @@ function createSocialLinks() {
         //display a popup for the result
         map.infoWindow.setTitle(i18n.tools.search.popupTitle);
         map.infoWindow.setContent(content);
+        
+        //Ensure popups don't interfere wtih the editor window contents. 
+        var handler = dojo.connect(map.infoWindow, "onHide", function(){
+            dojo.disconnect(handler);
+            if(editorWidget){
+                destroyEditor();
+                createEditor();
+            }
+        });
+        
+        
         map.infoWindow.show(geocodeLocation);
         map.setExtent(extent);
-        /*if(configOptions.searchextent){
-            map.centerAt(geocodeLocation);
 
-        }else{
-            map.setExtent(extent);
-        }*/
 
     }
     function showOtherResults(){
