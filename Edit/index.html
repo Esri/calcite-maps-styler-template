@@ -261,7 +261,9 @@
                     var options = {snapKey:dojo.keys.copyKey};
 
                     window.map.enableSnapping();
-                    adjustPopup();
+                    if(!dojo.isIE){
+                      adjustPopup();
+                    }
 
                     editorWidget.templatePicker.showTooltip = false;
 
