@@ -25,7 +25,7 @@
 
 
     <script type="text/javascript">
-        var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+        var package_path = location.pathname.replace(/\/[^/]+$/, '');
         var dojoConfig = {
             parseOnLoad:true,
             // The locationPath logic below may look confusing but all its doing is 
@@ -38,7 +38,7 @@
                 location: package_path + '/config'
             },{
                 name: "templateConfig",
-                location: path_location.substr(0,path_location.lastIndexOf('/'))
+                location: package_path.substr(0,package_path.lastIndexOf('/'))
             }]
         };
     </script>
