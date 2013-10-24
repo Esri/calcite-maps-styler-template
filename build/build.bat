@@ -53,7 +53,11 @@ mkdir %BUILD_OUTPUT%\OnePane\storytelling_basic
 mkdir %BUILD_OUTPUT%\OnePane\swipe        				
 mkdir %BUILD_OUTPUT%\OnePane\twittertimeline        		
 mkdir %BUILD_OUTPUT%\OnePane\gpx  
-mkdir %BUILD_OUTPUT%\Panels      					
+mkdir %BUILD_OUTPUT%\Panels  
+mkdir %BUILD_OUTPUT%\PanelsOne  
+mkdir %BUILD_OUTPUT%\PanelsTwo
+mkdir %BUILD_OUTPUT%\PanelsLegend
+mkdir %BUILD_OUTPUT%\PanelsHeader   					
 mkdir %BUILD_OUTPUT%\PublicGallery
 mkdir %BUILD_OUTPUT%\SimpleMapViewer
 mkdir %BUILD_OUTPUT%\SocialMedia
@@ -94,6 +98,14 @@ xcopy %TEMPLATES_ROOT%\MapCarousel            					%BUILD_OUTPUT%\MapCarousel   
 xcopy %TEMPLATES_ROOT%\MapTour                					%BUILD_OUTPUT%\MapTour              				/E /Y
 xcopy %TEMPLATES_ROOT%\archive\OnePane                			%BUILD_OUTPUT%\OnePane\main             			/E /Y
 xcopy %TEMPLATES_ROOT%\Panels									%BUILD_OUTPUT%\Panels								/E /Y
+xcopy %TEMPLATES_ROOT%\Panels									%BUILD_OUTPUT%\PanelsOne							/E /Y
+xcopy %TEMPLATES_ROOT%\Panels									%BUILD_OUTPUT%\PanelsTwo							/E /Y
+xcopy %TEMPLATES_ROOT%\Panels									%BUILD_OUTPUT%\PanelsLegend							/E /Y
+xcopy %TEMPLATES_ROOT%\Panels									%BUILD_OUTPUT%\PanelsHeader							/E /Y
+xcopy %TEMPLATES_ROOT%\Panels\config\onepane.js					%BUILD_OUTPUT%\PanelsOne\config\defaults.js			/E /Y
+xcopy %TEMPLATES_ROOT%\Panels\config\twopane.js					%BUILD_OUTPUT%\PanelsTwo\config\defaults.js			/E /Y
+xcopy %TEMPLATES_ROOT%\Panels\config\header.js					%BUILD_OUTPUT%\PanelsHeader\config\defaults.js		/E /Y
+xcopy %TEMPLATES_ROOT%\Panels\config\legend.js					%BUILD_OUTPUT%\PanelsLegend\config\defaults.js		/E /Y
 xcopy %TEMPLATES_ROOT%\BasicViewer                				%BUILD_OUTPUT%\OnePane\basicviewer             		/E /Y
 xcopy %TEMPLATES_ROOT%\TimeAware                			    %BUILD_OUTPUT%\OnePane\azuretime 	             	/E /Y
 xcopy %TEMPLATES_ROOT%\ChromeTwitter                			%BUILD_OUTPUT%\OnePane\azuretwitter             	/E /Y
