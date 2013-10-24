@@ -40,11 +40,11 @@ define([], function() {
         "legend":  true,
         "legend_side": "right",//left or right 
         /****************Optional Widgets*******************/
-        "home_button": false,
-        "basemap_toggle": false,
+        "home_button": true,
+        "basemap_toggle": true,
         "basemap_option": "", //valid values are street, satellite, hybrid, topo, gray, oceans, national-geographic and osm
-        "locate_button": false,
-        "geocoder": false
+        "locate_button": true,
+        "geocoder": true
     };
     return defaults;
 });
