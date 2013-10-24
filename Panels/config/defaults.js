@@ -22,22 +22,22 @@ define([], function() {
         //HEADER: When true a header section is added to the application. If title and subtitle are specified
         //that information will be used to populate the header area. If no values are specified for title and 
         //subtitle the web map title and subtitle are used. 
-        "header":false,
+        "header":true,
         "title": null,
         "subtitle": null,
         //FOOTER: When true and footer_text is supplied a footer section is added to the map. 
-        "footer": false,
+        "footer": true,
         "footer_text": "",
         //DESCRIPTION: Display content in a panel on the right or left side of the map. If no description_content
         //is provided the web map description is used. 
         //Use the description_side option to specify the side of the map the content will display. If both the legend
         //and description are displayed and both have the side set to the same value the legend will be flipped to the 
         //opposite side. 
-        "description": false,
+        "description": true,
         "description_content": "",
         "description_side": "left", //left or right
         //LEGEND: Display the legend in a panel on the right or left side of the map.
-        "legend":  false,
+        "legend":  true,
         "legend_side": "right",//left or right 
         /****************Optional Widgets*******************/
         "home_button": false,
