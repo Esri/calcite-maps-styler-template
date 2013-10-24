@@ -26,7 +26,7 @@ define([], function() {
         "title": null,
         "subtitle": null,
         //FOOTER: When true and footer_text is supplied a footer section is added to the map. 
-        "footer": false,
+        "footer": true,
         "footer_text": "",
         //DESCRIPTION: Display content in a panel on the right or left side of the map. If no description_content
         //is provided the web map description is used. 
