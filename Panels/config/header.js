@@ -37,7 +37,7 @@ define([], function() {
         "description_content": "",
         "description_side": "left", //left or right
         //LEGEND: Display the legend in a panel on the right or left side of the map.
-        "legend":  true,
+        "legend":  false,
         "legend_side": "right",//left or right 
         /****************Optional Widgets*******************/
         "home_button": true,
