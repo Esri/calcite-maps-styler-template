@@ -15,6 +15,12 @@
 		<meta property="og:description" content="Map Tour template enable ArcGIS user to create place-based narrative combining images, text, and a map through an interactive editing tool."/>
 		<meta property="og:image" content="http://www.arcgis.com/sharing/rest/content/items/d4a2705a8b224e71961404542ae94c6f/info/thumbnail/highline_thumbnail.png"/>
 
+		<!-- 
+			This template is released under the Apache License V2.0 by Esri http://www.esri.com/
+			Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
+			https://github.com/Esri/map-tour-storytelling-template-js
+		-->
+
 		<script type="text/javascript">
 			//----------------------------------------------------
 			//     Template configuration (ignored on Portal)
@@ -53,7 +59,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.1';
+			var version = '2.2-beta1';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -80,11 +86,8 @@
 				document.getElementsByTagName("head")[0].appendChild(el);
 			}
 
-			//loadCSS("//js.arcgis.com/3.6/js/esri/css/esri.css", true);
-			//loadCSS("//js.arcgis.com/3.6/js/dojo/dijit/themes/claro/claro.css", true);	
-			
-			loadCSS("//js.arcgis.com/3.7/js/esri/css/esri.css", true);
-			loadCSS("//js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css", true);			
+			loadCSS("//jsdev.arcgis.com/3.8/js/esri/css/esri.css", true);
+			loadCSS("//jsdev.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css", true);			
 
 			if( isProduction ) {
 				loadCSS("app/maptour-min.css");
@@ -194,7 +197,7 @@
 					</div>
 					<div class="logo">
 						<a target="_blank">
-							<img alt="Esri - Home" />
+							<img alt="Esri - Home" class="headerLogoImg"/>
 						</a>
 					</div>
 				</div>
@@ -963,8 +966,7 @@
 		</div>
 		
 		<script type="text/javascript">
-			//loadJS('//js.arcgis.com/3.6/init.js', true);
-			loadJS('//js.arcgis.com/3.7/init.js', true);
+			loadJS('//jsdev.arcgis.com/3.8/init.js', true);
 			loadJS('app/maptour-config.js');
 			
 			function getUrlVar(name)
