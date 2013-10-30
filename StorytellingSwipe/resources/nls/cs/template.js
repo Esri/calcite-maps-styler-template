@@ -5,7 +5,7 @@
 				step1: "NAHRÁVÁNÍ APLIKACE",
 				step2: "NAHRÁVÁNÍ DAT",
 				step3: "INICIALIZACE",
-				fail: "Nepodařilo se načíst nástroj překrývání.",
+				fail: "Načítání nástroje překrývání selhalo.",
 				loadBuilder: "PŘEPÍNÁNÍ DO REŽIMU TVORBY",
 				failButton: "Zkusit znovu"
 			},
@@ -60,7 +60,7 @@
 				gotIt: "OK",
 				savingApplication: "Ukládání aplikace",
 				saveSuccess: "Aplikace byla úspěšně uložena",
-				saveError: "Ukládání se nezdařilo, zkuste to prosím znovu.",
+				saveError: "Ukládání selhalo, zkuste to prosím znovu",
 				signIn: "Přihlaste se pomocí účtu na",
 				signInTwo: "pro uložení aplikace."
 			},
@@ -96,8 +96,8 @@
 				settingsTabExtent: "Rozsah",
 				settingsExtentExplain: "Prostřednictvím následující interaktivní mapy nastavte výchozí rozsah.",
 				settingsExtentExplainBottom: "Podle zadaného rozsahu se upraví výchozí rozsah webové mapy. Vytváříte-li sérii překrývání, tento rozsah se nepoužije.",
-				settingsExtentDateLineError: "Rozsah nesmí přesahovat 180° zeměpisné délky",
-				settingsExtentDateLineError2: "Při výpočtu rozsahu došlo k chybě",
+				settingsExtentDateLineError: "Rozsah nesmí přesahovat 180° zeměpisné délky.",
+				settingsExtentDateLineError2: "Při výpočtu rozsahu došlo k chybě.",
 				settingsExtentDrawBtn: "Určit nový rozsah",
 				settingsExtentModifyBtn: "Editovat aktuální rozsah",
 				settingsExtentApplyBtn: "Použít v hlavní mapě",
@@ -139,7 +139,7 @@
 				settingsDataModelExplainSpyGlass: "Vyberte vrstvu nebo webovou mapu, která se zobrazí v lupě.",
 				settingsDataModelOneMap: "Jedna webová mapa, jedna vrstva",
 				settingsDataModel1Explain: "Vyberte vrstvu k ovládání nástrojem překrývání.",
-				settingsDataModel1Warning: "Pokud je vrstva zakrytá svrchnějšími vrstvami, překrývání se nijak neprojeví.",
+				settingsDataModel1Warning: "Pokud je vrstva zakrytá svrchnějšími vrstvami, překrývání se neprojeví.",
 				settingsDataModel1SpyGlassExplain: "Vyberte vrstvu, která se zobrazí v lupě.",
 				settingsDataModelTwoMaps: "Dvě webové mapy",
 				settingsDataModelLayerIds: "Identifikátory vrstev webové mapy",
@@ -160,9 +160,9 @@
 				settingsLegendEnable: "Povolit legendu",
 				settingsDescriptionEnable: "Povolit popis",
 				settingsBookmarksEnable: "Povolit série překrývání",
-				settingsPopupDisable: "Povolit vyskakovací obsah",
-				settingsLegendHelpContent: "Chcete-li doplnit obsah legendy, použijte obsah prohlížeče webových map ArcGIS.com (Skrýt v legendě)",
-				settingsSeriesHelpContent: "Při první aktivaci budou vaše záložky webových map použity k naplnění lišty série. Pokud tuto možnost série později vypnete, vaše konfigurace série nebude zrušena a bude k dispozici, rozhodnete-li se sérii opět povolit.",
+				settingsPopupDisable: "Ř_Enable popup_ů",
+				settingsLegendHelpContent: "Chcete-li doplnit obsah legendy, použijte obsah prohlížeče webových map ArcGIS.com (Skrýt v legendě).",
+				settingsSeriesHelpContent: "Ř_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ů",
 				preview: "Náhled uživatelského rozhraní"
 			},
 			settingsSwipePopup: {
@@ -185,7 +185,7 @@
 				descr: "Popis",
 				discard: "Zrušit záložku",
 				saveExtent: "Nastavit rozsah záložky",
-				discardDisabled: "Tuto záložku nelze odstranit. Sérii překrývání můžete vypnout v nastavení."
+				discardDisabled: "Ř_You can't remove that bookmark. Swipe series can be disabled in the Settings._ů"
 			}
 		}
     })

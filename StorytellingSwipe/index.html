@@ -19,7 +19,7 @@
 			//--------------------------------
 			//     Template configuration
 			//--------------------------------
-			configOptions = {
+			configOptions = {				
 				//----------------------------------
 				// Swipe Style
 				//----------------------------------
@@ -31,7 +31,7 @@
 				// Choose to swipe between two webmaps or between the layer of a single webmap
 				// can be overrided by using webmap= in URL
 				// e.g: ["WEBMAP_ID"] OR ["WEBMAP_ID_1", "WEBMAP_ID_2"]
-				webmaps: [""],
+				webmaps: ["62702544d70648e593bc05d65180fd64"],
 				// If using one webmap, enter the layer index of the layer to be revealed. 
 				// Index is defined by the web map table of contents (0 is the top layer).
 				layerIndex: 1, 
@@ -67,10 +67,10 @@
 						description: "Bookmark 1 description",
 						extent: {
 							type: "extent",
-							xmin: -10864364.722880296,
-							ymin: 4523812.995539978,
-							xmax: -8817075.357290689,
-							ymax: 5723568.59150378,
+							xmax: -4552500.675205263,
+							xmin: -16801993.08007121,
+							ymax: 7906059.491489781,
+							ymin: 49555.976228313986,
 							spatialReference: {
 								wkid: 102100
 							}
@@ -81,10 +81,10 @@
 						description: "Bookmark 2 description",
 						extent: {
 							type: "extent",
-							xmin: -8980956.345934052,
-							ymin: 4874811.82942541,
-							xmax: -6933666.9803444445,
-							ymax: 6074567.425389213,
+							xmax: -12685400.484745855,
+							xmin: -14216587.03535409,
+							ymax: 5082781.414749258,
+							ymin: 4100718.475341579,
 							spatialReference: {
 								wkid: 102100
 							}
@@ -107,7 +107,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.1-beta7';
+			var version = '1.2-v1';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -134,8 +134,8 @@
 				document.getElementsByTagName("head")[0].appendChild(el);
 			}
 			
-			loadCSS("//js.arcgis.com/3.7/js/esri/css/esri.css", true);
-			loadCSS("//js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css", true);		
+			loadCSS("//jsdev.arcgis.com/3.8/js/esri/css/esri.css", true);
+			loadCSS("//jsdev.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css", true);		
 
 			if( isProduction ) {
 				loadCSS("app/swipe-min.css");
@@ -260,13 +260,16 @@
 			<div id="mapPanel">
                 <div id="mainMap0">
                     <div id="hoverInfo"></div>
-                    <div class="moveable" id="sliderDiv"></div>
-                    <img id="swipeImg" src='resources/icons/swipe-arrows.png'/>
+                    <div class="moveable" id="sliderDiv">
+                    	<div id="swipeImg"></div>
+					</div>
+                    
                 </div>
+				<div id="swipeImg1"></div>
                 <div id="resizeWrapper">
                     <div id="mainMap1"></div>
                 </div>
-				<img id="swipeImg1" src='resources/icons/swipe-arrows.png'/>
+				
 				<div>
 					<div id="lensWin">	
 						<div id="lensMapNode">	
@@ -279,6 +282,7 @@
 					<div id="infoWindowContent" data-dojo-type="dijit/layout/ContentPane"></div>
 					<div id="infoWindowTabImg"></div>
 				</div>
+				<div id="locator"></div>
             </div>
 			<div id="sidePanel">
 				<div id="descriptionPanel">
@@ -569,6 +573,10 @@
 									<input type="checkbox" name="optionsPopup" value="popup" checked>
 									<span class="popupText"></span> <span class="popupInfo"></span>
 								</label>
+								<label class="checkbox" style="margin-top: -3px;">
+									<input type="checkbox" name="optionsLocator" value="locator" checked>
+									<span class="locatorText"></span> <span class="locatorInfo"></span>
+								</label>
 							</div>
 							<div id="uiSimulator">
 								<div></div>
@@ -628,7 +636,7 @@
 		</div>
 
 		<script type="text/javascript">
-			loadJS('//js.arcgis.com/3.7/init.js', true);			
+			loadJS('//jsdev.arcgis.com/3.8/init.js', true);			
 			loadJS('app/swipe-config.js');
 			
 			function getUrlVar(name)
