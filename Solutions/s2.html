@@ -1,12 +1,10 @@
 <!doctype html>
-<!--[if IE 7]><html class="no-js ie7 lt-ie9" lang="en"><![endif]-->
-<!--[if IE 8]><html class="no-js ie8 lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js okIE" lang="en">
-<!--<![endif]-->
+<html>
 <head>
-    <meta charset=utf-8>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7, IE=9, IE=10">
     <!--
+     | ArcGIS Solutions
      | Version 10.2
      | Copyright 2012 Esri
      |
@@ -22,7 +20,6 @@
      | See the License for the specific language governing permissions and
      | limitations under the License.
     -->
-    <!--[if IE 8]><meta http-equiv="X-UA-Compatible" content="IE=7"><![endif]-->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -32,10 +29,10 @@
     <![endif]-->
     <link rel="dns-prefetch" href="//serverapi.arcgisonline.com" />
 
-    <title>Local Government online app</title>
-    <meta name="description" content="Local Government online app">
-    <link rel="stylesheet" href="//js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css"/>
-    <link rel="stylesheet" href="//js.arcgis.com/3.7/js/esri/css/esri.css" />
+    <title>ArcGIS Solutions online app</title>
+    <meta name="description" content="ArcGIS Solutions online app">
+    <link rel="stylesheet" href="//jsdev.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css"/>
+    <link rel="stylesheet" href="//jsdev.arcgis.com/3.8/js/esri/css/esri.css" />
     <link rel="apple-touch-icon-precomposed" href="images/onlineapp.png" />
     <style>
         html, body {
@@ -70,7 +67,10 @@
     </style>
 
 </head>
-<body id="pageBody" class="claro fill startupBkgd">
+<!--[if lt IE 9]><body id="pageBody" class="lt-ie9 claro fill startupBkgd"><![endif]-->
+<!--[if gt IE 8]><!-->
+<body id="pageBody" class="okIE claro fill startupBkgd">
+<!--<![endif]-->
     <div id="contentDiv" class="fill transparent"></div>
     <noscript>
         <div class="noJavaScriptMessage">
@@ -94,7 +94,7 @@
             parseOnLoad: false
         };
         document.ontouchmove = function(e) {e.preventDefault()};  // prevent mobile bounce
-        var defaultAppUI = "apps2/ParcelViewer";
+        var defaultAppUI = "apps2/GeneralMap";
     </script>
     <!--[if IE]>
     <script>
@@ -102,7 +102,10 @@
         dojoConfig.cacheBust = true;
     </script>
     <!--<![endif]-->
-    <script src="//js.arcgis.com/3.7/"></script>
+    <!--[if lte IE 8]><!-->
+    <script src="js2/json2.js"></script>
+    <!--<![endif]-->
+    <script src="//jsdev.arcgis.com/3.8/"></script>
     <script src="js2/libs.js"></script>
     <script src="js2/lgonlineStart.js"></script>
 </body>
