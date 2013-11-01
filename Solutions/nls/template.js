@@ -19,12 +19,12 @@
 define({
     root: ({
         tooltips: {
-            search: "Search",  // Command button to open a dialog box for searching for a feature
+            search: "Search",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Current location",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Submit correction",  // Command button to submit a correction to the app's host
             collect: "Add content to map",  // Command button to open a template picker to add features to the map
-            filter: "Filter map layers",  // Command button to open a dialog box for
-            basemap: "Switch basemap",  // Command button to open a dialog box for
+            filter: "Filter map layers",  // Explains purpose of type-in box affiliated with template picker
+            basemap: "Switch basemap",  // Command button to open a dialog box for switching basemaps
             share: "Share",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Share via email",  // Command button to share the current map extents via email
             shareViaFacebook: "Share via Facebook",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
