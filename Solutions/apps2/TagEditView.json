@@ -1,0 +1,579 @@
+{
+    "values": {
+        "webmap": "796c572e6dcb4c88b77c024ae003bd88",
+        "titleBar.title": "Tag, Edit, and View",
+        "titleBar.iconUrl": "images/onlineapp.png",
+        "colorizer.theme": "Brick",
+        "searchBox.hint": "",
+        "filter.hint1": "Floor number",
+        "filter.value1": 1,
+        "filter.fieldname1": "FLOOR",
+        "featureSearcher.searchLayerName": "Fire Suppression Systems",
+        "featureSearcher.searchFields": "COMPLEXID,PLANID,LOCDESC,COMMENTS",
+        "basemapBox.basemapgroupTitle": "",
+        "basemapBox.basemapgroupOwner": "",
+        "helpMessageBox.content": "Tag, Edit, and View provides decisions makers and data custodians the ability to edit geographic content, automatically set attribute values, and filter content in a webmap when viewing."
+    },
+
+    "configurationSettings": [{
+        "category": "Title",
+        "fields": [{
+            "label": "Application title",
+            "fieldName": "titleBar.title",
+            "type": "string",
+            "tooltip": "Title to display in application's title bar"
+        }, {
+            "label": "Application icon URL",
+            "fieldName": "titleBar.iconUrl",
+            "type": "string",
+            "tooltip": "URL to icon to display in application's title bar"
+        }, {
+            "label": "Color Scheme:",
+            "fieldName": "colorizer.theme",
+            "type": "string",
+            "options": [{
+                "label": "Dark Gray",
+                "value": "DarkGray"
+            }, {
+                "label": "Dark Green",
+                "value": "DarkGreen"
+            }, {
+                "label": "Dodger Blue",
+                "value": "DodgerBlue"
+            }, {
+                "label": "Gray",
+                "value": "Gray"
+            }, {
+                "label": "Brick",
+                "value": "Brick"
+            }, {
+                "label": "Thistle",
+                "value": "Thistle"
+            }, {
+                "label": "Turquoise",
+                "value": "Turquoise"
+            }, {
+                "label": "Orange",
+                "value": "Orange"
+            }],
+            "tooltip": "Color theme to use"
+        }]
+    }, {
+        "category": "Editing Filter",
+        "fields": [{
+            "label": "Value hint",
+            "fieldName": "filter.hint1",
+            "type": "string",
+            "tooltip": "Prompt for filter value field"
+        }, {
+            "label": "Value format hint",
+            "fieldName": "filter.value1",
+            "type": "string",
+            "tooltip": "Text to display in the value field as a format hint"
+        }, {
+            "label": "Value field",
+            "fieldName": "filter.fieldname1",
+            "type": "string",
+            "tooltip": "Field in the layer that is to be used as a filter"
+        }]
+    }, {
+        "category": "Map",
+        "fields": [{
+            "label": "Hint in search field",
+            "fieldName": "searchBox.hint",
+            "type": "string",
+            "tooltip": "Text to display in the search entry field as a format hint"
+        }, {
+            "label": "Search layer name",
+            "fieldName": "featureSearcher.searchLayerName",
+            "type": "string",
+            "tooltip": "Layer name of the feature layer to use for search"
+        }, {
+            "label": "Search layer field(s)",
+            "fieldName": "featureSearcher.searchFields",
+            "type": "string",
+            "tooltip": "Comma-separated list of the field(s) to look at during a search"
+        }, {
+            "label": "Zoom level for selected feature",
+            "fieldName": "highlighter.highlightZoomLevel",
+            "type": "number",
+            "constraints": {"min": 0, "places": 0},
+            "tooltip": "Sets the map zoom level to this level after selecting a feature"
+        }, {
+            "label": "Name of basemap group",
+            "fieldName": "basemapBox.basemapgroupTitle",
+            "type": "string",
+            "tooltip": "Name of the ArcGIS.com group containing your basemaps",
+            "placeholder": "Defaults to Esri basemaps"
+        }, {
+            "label": "Username of basemap group owner",
+            "fieldName": "basemapBox.basemapgroupOwner",
+            "type": "string",
+            "tooltip": "ArcGIS.com username of owner of basemap group"
+        }]
+    }, {
+        "category": "Help",
+        "fields": [{
+            "label": "Help text",
+            "fieldName": "helpMessageBox.content",
+            "type": "string",
+            "stringFieldOption": "textarea",
+            "tooltip": "Text to display when the help button is clicked"
+        }]
+    }],
+
+    "ui": [{
+        "classname": "js.LGColorizer",
+        "config": {
+            "rootId": "colorizer",
+            "parentDiv": "contentDiv",
+            "colorTable": [{
+                "theme": "DarkGray",
+                "colors": ["#fff", "#333333", "#5d5d5d", "#5d5d5d"]
+            }, {
+                "theme": "DarkGreen",
+                "colors": ["#fff", "DarkGreen", "#9bcd9b", "#9bcd9b"]
+            }, {
+                "theme": "DodgerBlue",
+                "colors": ["#fff", "#104e8b", "#1a78d7", "#1a78d7"]
+            }, {
+                "theme": "Gray",
+                "colors": ["#fff", "Gray", "#aaaaaa", "#aaaaaa"]
+            }, {
+                "theme": "Brick",
+                "colors": ["#fff", "#9c661f", "#d89438", "#d89438"]
+            }, {
+                "theme": "Thistle",
+                "colors": ["#fff", "#8b7b8b", "#b3a8b3", "#b3a8b3"]
+            }, {
+                "theme": "Turquoise",
+                "colors": ["#fff", "#00868b", "#00dadf", "#00dadf"]
+            }, {
+                "theme": "Orange",
+                "colors": ["#fff", "#cd8500", "#ffb122", "#ffb122"]
+            }]
+        }
+    }, {
+        "classname": "js.LGFrame",
+        "styles": ".appFrame{width:100%;height:100%;overflow:hidden;position:absolute}.frameHeader{width:100%;height:64px;padding:0px;overflow:hidden;position:absolute}.frameContent{width:100%;padding:0px;position:absolute}",
+        "config": {
+            "rootId": "outerFrame",
+            "headerDivId": "headerFrame",
+            "contentDivId": "contentFrame",
+            "parentDiv": "contentDiv",
+            "rootClass": "appFrame",
+            "headerDivClass": "frameHeader",
+            "contentDivClass": "frameContent"
+        }
+    }, {
+        "classname": "js.LGBusy",
+        "styles": ".busyImage{display:none;background-image:url('images/loading.gif');width:80px;height:17px;position:absolute;z-index:100}",
+        "config": {
+            "rootId": "busyIndicator",
+            "parentDiv": "contentFrame",
+            "horizOffset": 0,
+            "vertOffset": 0,
+            "busyImageClass": "busyImage"
+        }
+    }, {
+        "classname": "js.LGMap",
+        "styles": ".mapContainer{margin:0px;padding:0px;overflow:hidden;position:absolute}.simpleInfoWindow .close{width:32px!important;height:32px!important;background-size:32px 32px;left:244px!important;top:-18px!important}.simpleInfoWindow .title{min-height:14px}",
+        "config": {
+            "rootId": "map",
+            "rootClass": "mapContainer",
+            "parentDiv": "contentFrame",
+            "fill": true,
+            "ignorePopups": true
+        }
+    }, {
+        "classname": "js.LGHighlighter",
+        "config": {
+            "rootId": "highlighter",
+            "parentDiv": "contentFrame",
+            "dependencyId": "map",
+            "lineHiliteColor": "#0000ff",
+            "fillHiliteColor": [0, 0, 255, 0.1]
+        }
+    }, {
+        "classname": "js.LGTitleBar",
+        "styles": ".appTitleBar{height:52px;margin:0px;padding:2px;overflow:hidden;position:absolute}.titleIcon{height:48px;margin:4px;padding:0px;float:left}.titleText{height:48px;margin:4px;padding:0px;font-size:200%;vertical-align:middle;word-wrap:break-word;float:left}@media all and (max-width: 520px){.titleText{display:none}}",
+        "config": {
+            "rootId": "titleBar",
+            "parentDiv": "headerFrame",
+            "rootClass": "appTitleBar",
+            "horizOffset": 4,
+            "vertOffset": 0,
+            "iconClass": "titleIcon",
+            "titleClass": "titleText"
+        }
+    }, {
+        "classname": "js.LGGallery",
+        "styles": ".commandPanel{height:52px;margin:0px;padding:2px;overflow:hidden;position:absolute;text-align:center;vertical-align:middle}.commandPanel table{border-spacing:0px}.commandPanelArrow{width:12px;height:48px;margin:4px;padding:0px;cursor:pointer;vertical-align:middle}.okIE .commandPanelArrow{border-radius:4px}.commandButton{width:44px;height:44px;text-align:center;cursor:pointer}.okIE .commandButton{border-radius:8px}.commandTextButton{width:100%;height:44px;cursor:pointer}.okIE .commandTextButton{border-radius:8px}.commandText{display:inline;height:32px;margin-left:2px;font-size:120%;overflow:hidden;vertical-align:bottom}.okIE .commandText{display:inline-block}.commandIcon{width:32px;height:32px;margin-top:6px}",
+        "config": {
+            "rootId": "commandPanel",
+            "parentDiv": "headerFrame",
+            "rootClass": "commandPanel",
+            "horizOffset": -4,
+            "vertOffset": 0,
+            "itemClass": "commandPanelItem",
+            "arrowClass": "commandPanelArrow"
+        }
+    }, {
+        "classname": "js.LGSearchFeatureLayer",
+        "config": {
+            "rootId": "featureSearcher",
+            "parentDiv": "contentFrame",
+            "dependencyId": "map",
+            "busyIndicator": "busyIndicator",
+            "publishPointsOnly": false,
+            "searchPattern": "%${1}%",
+            "caseInsensitiveSearch": true
+        }
+    }, {
+        "classname": "js.LGLaunchUrl",
+        "config": {
+            "rootId": "launcher",
+            "sameWinTrigger": "launch/parent",
+            "newWinTrigger": "launch/blank"
+        }
+    }, {
+        "classname": "js.LGEditTemplatePickerWithDefaults",
+        "styles": ".templateArea{display:none;width:210px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .templateArea{border-radius:8px}.templatePickerHolder {position:absolute;right:5px;top:5px;left:5px;bottom:5px;overflow-x:hidden;overflow-y:auto;}",
+        "config": {
+            "rootId": "iTemplateArea",
+            "parentDiv": "contentFrame",
+            "rootClass": "templateArea",
+            "templatePickerHolderClass": "templatePickerHolder",
+            "templatePickerDivClass": "templatePickerDiv",
+            "colorizerId": "colorizer",
+            "horizOffset": -2,
+            "vertOffset": [56, -40],
+            "trigger": "markup",
+            "dependencyId": "map",
+            "listenForDefaultsTrigger": "floor"
+        }
+    }, {
+        "classname": "js.LGFilterLayers1WithDefaults",
+        "styles":
+        ".filter{display:none;width:210px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}"+
+        ".okIE .filter{border-radius:8px}",
+        "config": {
+            "rootId": "filter",
+            "tooltip": "@tooltips.filter",
+            "parentDiv": "contentFrame",
+            "rootClass": "filter",
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "defnExpression": "${fieldname1}=${value1}",
+            "trigger": "markup",
+            "dependencyId": "map",
+            "broadcastDefaultsPublish": "floor"
+        }
+    }, {
+        "classname": "js.LGLocate",
+        "config": {
+            "rootId": "locator",
+            "parentDiv": "contentFrame",
+            "trigger": "locate",
+            "publish": "position"
+        }
+    }, {
+        "classname": "js.LGPrintMap",
+        "styles": ".absolute{position:absolute}.printMapBox{display:none;width:269px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .printMapBox{border-radius:8px}.printFormatsPanel{height:52px;margin:0px;padding:2px;overflow:hidden;text-align:center;vertical-align:middle}.pushbuttonOn{border:1px solid blue}.printDlogItem{margin:3px!important}",
+        "config": {
+            "rootId": "printMap",
+            "parentDiv": "contentFrame",
+            "rootClass": "printMapBox",
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "asynchronous": false,
+            "format": "PDF",
+            "preserveScale": true,
+            "title": "",
+            "author": "",
+            "orientationButtonClass": "commandButton printDlogItem",
+            "orientationButtonIconClass": "commandIcon",
+            "landscapeButtonIconUrl": "images/landscapeDoc.png",
+            "landscapeButtonTooltip": "@tooltips.landscape",
+            "landscapeServerSpec": "Letter ANSI A Landscape",
+            "portraitButtonIconUrl": "images/portraitDoc.png",
+            "portraitButtonTooltip": "@tooltips.portrait",
+            "portraitServerSpec": "Letter ANSI A Portrait",
+            "titleHint": "title",
+            "titleClass": "printDlogItem",
+            "authorHint": "author",
+            "authorClass": "printDlogItem",
+            "printButtonIconUrl": "images/print.png",
+            "printButtonClass": "commandButton printDlogItem",
+            "printButtonIconClass": "commandIcon",
+            "printButtonTooltip": "@tooltips.print",
+            "copyrightText": null,
+            "dependencyId": "map",
+            "trigger": "print",
+            "publishReady": "printingReady",
+            "publishWorking": "printing",
+            "publishPrintUrl": "printUrl"
+        }
+    }, {
+        "classname": "js.LGFetchPrintedMap",
+        "config": {
+            "rootId": "fetchPrintedMap",
+            "publish": "launch/blank",
+            "parentDiv": "contentFrame",
+            "dependencyId": "map",
+            "trigger": "fetchPrint",
+            "triggerPrintUrl": "printUrl",
+            "publishPrintAvailable": "printAvailable",
+            "publishPrintNotAvailable": "printNotAvailable",
+            "printAvailabilityTimeoutMinutes": 15
+        }
+    }, {
+        "classname": "js.LGMessageBox",
+        "styles": ".helpMessageBox{display:none;max-width:400px;max-height:300px;padding:16px;position:absolute;overflow:auto;z-index:40;word-wrap:break-word}.okIE .helpMessageBox{border-radius:8px}",
+        "config": {
+            "rootId": "helpMessageBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "helpMessageBox",
+            "horizOffset": -2,
+            "vertOffset": [2, -2],
+            "trigger": "help"
+        }
+    }, {
+        "classname": "js.LGPublishEcho",
+        "config": {
+            "rootId": "diagMessageBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "helpMessageBox",
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "trigger": "error"
+        }
+    }, {
+        "classname": "js.LGBasemapBox",
+        "styles": ".basemapBox{display:none;width:280px;max-height:244px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .basemapBox{border-radius:8px}.basemapGallery{width:96%;height:96%;padding:4px;overflow-y:auto;}.lt-ie9 .basemapGallery{height:220px}",
+        "config": {
+            "rootId": "basemapBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "basemapBox",
+            "galleryClass": "basemapGallery",
+            "horizOffset": -2,
+            "vertOffset": [2, -2],
+            "trigger": "basemap",
+            "dependencyId": "map"
+        }
+    }, {
+        "classname": "js.LGMapBasedMenuBox",
+        "styles": ".shareBox{display:none;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .shareBox{border-radius:8px}",
+        "config": {
+            "rootId": "shareBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "shareBox",
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "trigger": "share",
+            "dependencyId": "map"
+        }
+    }, {
+        "classname": "js.LGSearchBoxByText",
+        "styles": ".searchBox{display:none;width:200px;max-height:224px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .searchBox{border-radius:8px}.resultsListBox{width:96%;top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;bottom:4px}.lt-ie9 .resultsListBox{width:100%;height:182px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}",
+        "config": {
+            "rootId": "searchBox",
+            "trigger": "search",
+            "publish": "showFeature",
+            "parentDiv": "contentFrame",
+            "rootClass": "searchBox",
+            "horizOffset": -2,
+            "vertOffset": [2, -2],
+            "searcher": "featureSearcher",
+            "showPrompt": "@prompts.search",
+            "resultsListBoxClass": "resultsListBox",
+            "resultsListTableClass": "resultsListTable",
+            "resultsListBodyClass": "resultsListBody",
+            "resultsListSearchingClass": "resultsListSearching",
+            "resultsListEntryClass": "resultsListEntry"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "search",
+            "tooltip": "@tooltips.search",
+            "iconUrl": "images/search.png",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "featureSearcher",
+            "publish": "search"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "locate",
+            "tooltip": "@tooltips.locate",
+            "iconUrl": "images/locate.png",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "locator",
+            "publish": "locate"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "markup",
+            "tooltip": "@tooltips.collect",
+            "iconUrl": "images/markup.png",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "map",
+            "publish": "markup"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "basemap",
+            "tooltip": "@tooltips.basemap",
+            "iconUrl": "images/basemap.png",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "basemapBox",
+            "publish": "basemap"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "share",
+            "tooltip": "@tooltips.share",
+            "iconUrl": "images/share.png",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "shareBox",
+            "publish": "share"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "shareEmail",
+            "displayText": "@labels.email",
+            "displayTextClass": "commandText",
+            "tooltip": "@tooltips.shareViaEmail",
+            "iconUrl": "images/shareEmail.png",
+            "parentDiv": "shareBox",
+            "rootClass": "commandTextButton",
+            "iconClass": "commandIcon",
+            "publish": "share/email"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "shareFB",
+            "displayText": "@labels.Facebook",
+            "displayTextClass": "commandText",
+            "tooltip": "@tooltips.shareViaFacebook",
+            "iconUrl": "images/shareFacebook.png",
+            "parentDiv": "shareBox",
+            "rootClass": "commandTextButton",
+            "iconClass": "commandIcon",
+            "publish": "share/facebook"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "shareTw",
+            "displayText": "@labels.Twitter",
+            "displayTextClass": "commandText",
+            "tooltip": "@tooltips.shareViaTwitter",
+            "iconUrl": "images/shareTwitter.png",
+            "parentDiv": "shareBox",
+            "rootClass": "commandTextButton",
+            "iconClass": "commandIcon",
+            "publish": "share/twitter"
+        }
+    }, {
+        "classname": "js.LGCommandToggle",
+        "config": {
+            "rootId": "print",
+            "tooltip": "@tooltips.print",
+            "iconUrl": "images/print.png",
+            "iconDisabledUrl": "images/printing.gif",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "publish": "print",
+            "dependencyId": "printMap",
+            "triggerEnable": "printingReady",
+            "triggerDisable": "printing",
+            "isVisible": false,
+            "isEnabled": true
+        }
+    }, {
+        "classname": "js.LGCommandToggle",
+        "config": {
+            "rootId": "fetchPrint",
+            "tooltip": "@tooltips.fetchPrint",
+            "iconUrl": "images/doc.png",
+            "iconDisabledUrl": "images/docDisabled.png",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "publish": "fetchPrint",
+            "triggerVisible": "printAvailable",
+            "triggerInvisible": "printNotAvailable",
+            "triggerEnable": "printingReady",
+            "triggerDisable": "printing",
+            "isVisible": false
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "help",
+            "tooltip": "@tooltips.help",
+            "iconUrl": "images/help.png",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "publish": "help"
+        }
+    }, {
+        "classname": "js.LGShareAppExtents",
+        "config": {
+            "rootId": "shareAppExtEmail",
+            "trigger": "share/email",
+            "publish": "launch/parent",
+            "subject": ".titleBar.title",
+            "tinyURLServiceURL": "",
+            "tinyURLResponseAttribute": "data.url",
+            "shareUrl": "mailto:%20?subject=${subject}&body=${url}",
+            "busyIndicator": "busyIndicator",
+            "dependencyId": "map"
+        }
+    }, {
+        "classname": "js.LGShareAppExtents",
+        "config": {
+            "rootId": "shareAppExtFB",
+            "trigger": "share/facebook",
+            "publish": "launch/blank",
+            "subject": ".titleBar.title",
+            "tinyURLServiceURL": "",
+            "tinyURLResponseAttribute": "data.url",
+            "shareUrl": "http://www.facebook.com/sharer.php?u=${url}&t=${subject}",
+            "busyIndicator": "busyIndicator",
+            "dependencyId": "map"
+        }
+    }, {
+        "classname": "js.LGShareAppExtents",
+        "config": {
+            "rootId": "shareAppExtTw",
+            "trigger": "share/twitter",
+            "publish": "launch/blank",
+            "subject": ".titleBar.title",
+            "tinyURLServiceURL": "",
+            "tinyURLResponseAttribute": "data.url",
+            "shareUrl": "http://twitter.com/home/?status=${subject} ${url}",
+            "busyIndicator": "busyIndicator",
+            "dependencyId": "map"
+        }
+    }]
+}

@@ -1,11 +1,11 @@
 /* 
 This source is a compressed form of part of the git commit 
-3451ed0 Converted color definitions to Dojo Color for AGOL printing
+8e8482d Removed message watcher used for testing
 Uncompressed source is available from https://github.com/Esri/local-government-online-apps 
 */ 
 /*
 
- | ArcGIS for Local Government
+ | ArcGIS Solutions
  | Version 10.1.2
  | Copyright 2012 Esri
  |
