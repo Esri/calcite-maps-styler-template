@@ -1,10 +1,26 @@
 ﻿{
+    "license": [
+        " | Copyright 2013 Esri",
+        " |",
+        " | Licensed under the Apache License, Version 2.0 (the 'License');",
+        " | you may not use this file except in compliance with the License.",
+        " | You may obtain a copy of the License at",
+        " |",
+        " |    http://www.apache.org/licenses/LICENSE-2.0",
+        " |",
+        " | Unless required by applicable law or agreed to in writing, software",
+        " | distributed under the License is distributed on an 'AS IS' BASIS,",
+        " | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.",
+        " | See the License for the specific language governing permissions and",
+        " | limitations under the License."
+    ],
+
     "values": {
         "webmap": "636e0812a3c748da8e482ce49ec7e3ff",
         "titleBar.title": "My Government Services",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "DarkGray",
-        "searchBox.hint": "42757 Woodward Ave",
+        "searchBox.hint": "400 S Eagle St",
         "basemapBox.basemapgroupTitle": "",
         "basemapBox.basemapgroupOwner": "",
         "helpMessageBox.content": "Parcel Viewer<hr><br>The Parcel Viewer provides the general public and other interested parties local government property tax and assessment information and supplements that information with lifestyle and internet broadband information for a given neighborhood.<br><br>To locate a parcel, simply click on the map or enter an address or parcel number in the search box and select a parcel from the list."
@@ -84,34 +100,41 @@
     }],
 
     "ui": [{
+        "classname": "js.LGNotes",
+        "config": {
+            "notes": [
+                "commit 9624d94519a4d5b0 2013-11-04 15:19:54 -0800"
+            ]
+        }
+    }, {
         "classname": "js.LGColorizer",
         "config": {
             "rootId": "colorizer",
             "parentDiv": "contentDiv",
             "colorTable": [{
                 "theme": "DarkGray",
-                "colors": ["#fff", "#333333", "#5d5d5d"]
+                "colors": ["#fff", "#333333", "#5d5d5d", "#5d5d5d"]
             }, {
                 "theme": "DarkGreen",
-                "colors": ["#fff", "DarkGreen", "#9bcd9b"]
+                "colors": ["#fff", "DarkGreen", "#9bcd9b", "#9bcd9b"]
             }, {
                 "theme": "DodgerBlue",
-                "colors": ["#fff", "#104e8b", "#1a78d7"]
+                "colors": ["#fff", "#104e8b", "#1a78d7", "#1a78d7"]
             }, {
                 "theme": "Gray",
-                "colors": ["#fff", "Gray", "#aaaaaa"]
+                "colors": ["#fff", "Gray", "#aaaaaa", "#aaaaaa"]
             }, {
                 "theme": "Brick",
-                "colors": ["#fff", "#9c661f", "#d89438"]
+                "colors": ["#fff", "#9c661f", "#d89438", "#d89438"]
             }, {
                 "theme": "Thistle",
-                "colors": ["#fff", "#8b7b8b", "#b3a8b3"]
+                "colors": ["#fff", "#8b7b8b", "#b3a8b3", "#b3a8b3"]
             }, {
                 "theme": "Turquoise",
-                "colors": ["#fff", "#00868b", "#00dadf"]
+                "colors": ["#fff", "#00868b", "#00dadf", "#00dadf"]
             }, {
                 "theme": "Orange",
-                "colors": ["#fff", "#cd8500", "#ffb122"]
+                "colors": ["#fff", "#cd8500", "#ffb122", "#ffb122"]
             }]
         }
     }, {
@@ -143,7 +166,14 @@
             "rootId": "map",
             "rootClass": "mapContainer",
             "parentDiv": "contentFrame",
-            "fill": true,
+            "fill": true
+        }
+    }, {
+        "classname": "js.LGHighlighter",
+        "config": {
+            "rootId": "highlighter",
+            "parentDiv": "contentFrame",
+            "dependencyId": "map",
             "lineHiliteColor": "#0000ff",
             "fillHiliteColor": [0, 0, 255, 0.1]
         }
@@ -161,7 +191,7 @@
         }
     }, {
         "classname": "js.LGGallery",
-        "styles": ".commandPanel{height:52px;margin:0px;padding:2px;overflow:hidden;position:absolute;text-align:center;vertical-align:middle}.commandPanelArrow{width:12px;height:48px;margin:4px;padding:0px;cursor:pointer;vertical-align:middle}.okIE .commandPanelArrow{border-radius:4px}.commandButton{width:44px;height:44px;cursor:pointer}.okIE .commandButton{border-radius:8px}.commandTextButton{width:100%;height:44px;cursor:pointer}.okIE .commandTextButton{border-radius:8px}.commandText{display:inline;height:32px;margin-left:2px;font-size:120%;overflow:hidden;vertical-align:bottom}.okIE .commandText{display:inline-block}.commandIcon{width:32px;height:32px;margin-left:2px;margin-top:6px}",
+        "styles": ".commandPanel{height:52px;margin:0px;padding:2px;overflow:hidden;position:absolute;text-align:center;vertical-align:middle}.commandPanel table{border-spacing:0px}.commandPanelArrow{width:12px;height:48px;margin:4px;padding:0px;cursor:pointer;vertical-align:middle}.okIE .commandPanelArrow{border-radius:4px}.commandButton{width:44px;height:44px;text-align:center;cursor:pointer}.okIE .commandButton{border-radius:8px}.commandTextButton{width:100%;height:44px;cursor:pointer}.okIE .commandTextButton{border-radius:8px}.commandText{display:inline;height:32px;margin-left:2px;font-size:120%;overflow:hidden;vertical-align:bottom}.okIE .commandText{display:inline-block}.commandIcon{width:32px;height:32px;margin-top:6px}",
         "config": {
             "rootId": "commandPanel",
             "parentDiv": "headerFrame",
@@ -176,10 +206,11 @@
         "config": {
             "rootId": "addressSearcher",
             "parentDiv": "contentFrame",
-            "searchUrl": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Locators/TA_Address_NA_10/GeocodeServer",
+            "dependencyId": "map",
+            "searchUrl": "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer",
             "addressParamName": "SingleLine",
             "minimumScore": 80,
-            "validLocators": ["US_RoofTop", "US_Streets", "US_StreetName"],
+            "validLocators": ["USA.StreetName", "USA.PointAddress", "USA.StreetAddress"],
             "outWkid": 102100,
             "outFields": ["Loc_name", "Match_addr"]
         }
@@ -247,10 +278,10 @@
         "classname": "js.LGSearchBoxByText",
         "styles": ".searchBox{display:none;width:200px;max-height:224px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .searchBox{border-radius:8px}.resultsListBox{width:96%;top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;bottom:4px}.lt-ie9 .resultsListBox{width:100%;height:182px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}",
         "config": {
+            "rootId": "searchBox",
             "trigger": "search",
             "publish": "showFeature",
             "parentDiv": "contentFrame",
-            "rootId": "searchBox",
             "rootClass": "searchBox",
             "horizOffset": -2,
             "vertOffset": [2, -2],
@@ -265,9 +296,9 @@
     }, {
         "classname": "js.LGCommand",
         "config": {
+            "rootId": "search",
             "tooltip": "@tooltips.search",
             "iconUrl": "images/search.png",
-            "rootId": "search",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -277,9 +308,9 @@
     }, {
         "classname": "js.LGCommand",
         "config": {
+            "rootId": "locate",
             "tooltip": "@tooltips.locate",
             "iconUrl": "images/locate.png",
-            "rootId": "locate",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -289,9 +320,9 @@
     }, {
         "classname": "js.LGCommand",
         "config": {
+            "rootId": "basemap",
             "tooltip": "@tooltips.basemap",
             "iconUrl": "images/basemap.png",
-            "rootId": "basemap",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -301,9 +332,9 @@
     }, {
         "classname": "js.LGCommand",
         "config": {
+            "rootId": "share",
             "tooltip": "@tooltips.share",
             "iconUrl": "images/share.png",
-            "rootId": "share",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -313,11 +344,11 @@
     }, {
         "classname": "js.LGCommand",
         "config": {
+            "rootId": "shareEmail",
             "displayText": "@labels.email",
             "displayTextClass": "commandText",
             "tooltip": "@tooltips.shareViaEmail",
             "iconUrl": "images/shareEmail.png",
-            "rootId": "share1",
             "parentDiv": "shareBox",
             "rootClass": "commandTextButton",
             "iconClass": "commandIcon",
@@ -326,11 +357,11 @@
     }, {
         "classname": "js.LGCommand",
         "config": {
+            "rootId": "shareFB",
             "displayText": "@labels.Facebook",
             "displayTextClass": "commandText",
             "tooltip": "@tooltips.shareViaFacebook",
             "iconUrl": "images/shareFacebook.png",
-            "rootId": "share2",
             "parentDiv": "shareBox",
             "rootClass": "commandTextButton",
             "iconClass": "commandIcon",
@@ -339,11 +370,11 @@
     }, {
         "classname": "js.LGCommand",
         "config": {
+            "rootId": "shareTw",
             "displayText": "@labels.Twitter",
             "displayTextClass": "commandText",
             "tooltip": "@tooltips.shareViaTwitter",
             "iconUrl": "images/shareTwitter.png",
-            "rootId": "share3",
             "parentDiv": "shareBox",
             "rootClass": "commandTextButton",
             "iconClass": "commandIcon",
@@ -352,9 +383,9 @@
     }, {
         "classname": "js.LGCommand",
         "config": {
+            "rootId": "help",
             "tooltip": "@tooltips.help",
             "iconUrl": "images/help.png",
-            "rootId": "help",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -363,6 +394,7 @@
     }, {
         "classname": "js.LGShareAppExtents",
         "config": {
+            "rootId": "shareAppExtEmail",
             "trigger": "share/email",
             "publish": "launch/parent",
             "subject": ".titleBar.title",
@@ -375,6 +407,7 @@
     }, {
         "classname": "js.LGShareAppExtents",
         "config": {
+            "rootId": "shareAppExtFB",
             "trigger": "share/facebook",
             "publish": "launch/blank",
             "subject": ".titleBar.title",
@@ -387,6 +420,7 @@
     }, {
         "classname": "js.LGShareAppExtents",
         "config": {
+            "rootId": "shareAppExtTw",
             "trigger": "share/twitter",
             "publish": "launch/blank",
             "subject": ".titleBar.title",

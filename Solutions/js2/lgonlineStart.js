@@ -1,6 +1,6 @@
 /* 
 This source is a compressed form of part of the git commit 
-8e8482d Removed message watcher used for testing
+9624d94519a4d5b0 2013-11-04 15:19:54 -0800
 Uncompressed source is available from https://github.com/Esri/local-government-online-apps 
 */ 
 /*
