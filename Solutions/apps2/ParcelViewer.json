@@ -16,7 +16,7 @@
     ],
 
     "values": {
-        "webmap": "0ebefb7ea74b425ebeb5853c42d01142",
+        "webmap": "d3df161ab8204e848b359d5f352b5b65",
         "titleBar.title": "Parcel Viewer",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "DarkGray",
@@ -128,7 +128,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 9624d94519a4d5b0 2013-11-04 15:19:54 -0800"
+                "commit b2a0569f0e520c09 2013-11-06 11:35:59 -0800"
             ]
         }
     }, {
