@@ -11,6 +11,14 @@
 		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
 		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
 		
+		<!-- 
+			To correctly reference your Map Tour in search engine:
+			 - create and fill out extensively an ArcGIS.com item that link to your final application
+			 - edit the following four tags as well as the upper title tag on line 4
+		-->
+		<meta name="description" content="Map Tour template enable ArcGIS user to create place-based narrative combining images, text, and a map through an interactive editing tool.">
+		
+		<!-- Facebook sharing -->
 		<meta property="og:title" content="Map Tour"/>
 		<meta property="og:description" content="Map Tour template enable ArcGIS user to create place-based narrative combining images, text, and a map through an interactive editing tool."/>
 		<meta property="og:image" content="http://www.arcgis.com/sharing/rest/content/items/d4a2705a8b224e71961404542ae94c6f/info/thumbnail/highline_thumbnail.png"/>
@@ -59,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta1';
+			var version = '2.2-beta2';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -95,6 +103,7 @@
 			else {
 				loadCSS("lib/bootstrap/css/bootstrap.min.css");
 				loadCSS("lib/spectrum/spectrum.css");
+				loadCSS("lib/colorbox/colorbox.css");
 
 				loadCSS("app/storymaps/ui/crossfader/CrossFader.css");
 				loadCSS("app/storymaps/ui/multiTips/MultiTips.css");
@@ -122,12 +131,14 @@
 				loadCSS("app/storymaps/maptour/builder/InitPopup.css");
 				loadCSS("app/storymaps/maptour/builder/InitPopupViewHome.css");
 				loadCSS("app/storymaps/maptour/builder/InitPopupViewHostedFSCreation.css");
+				loadCSS("app/storymaps/maptour/builder/InitPopupViewAdvanced.css");
 				loadCSS("app/storymaps/maptour/builder/ImportPopupViewHome.css");
 				
 				loadCSS("app/storymaps/maptour/builder/PopupViewCSV.css");
 				loadCSS("app/storymaps/maptour/builder/PopupViewFlickr.css");
 				loadCSS("app/storymaps/maptour/builder/PopupViewFacebook.css");
 				loadCSS("app/storymaps/maptour/builder/PopupViewPicasa.css");
+				loadCSS("app/storymaps/maptour/builder/PopupViewYoutube.css");
 				loadCSS("app/storymaps/maptour/builder/PopupViewGeoTag.css");
 				
 				loadCSS("app/storymaps/maptour/builder/BuilderView.css");
@@ -201,7 +212,7 @@
 						</a>
 					</div>
 				</div>
-				<button type="button" class="switchBuilder btn btn-success"></button>
+				<button type="button" class="switchBuilder btn"></button>
 				<!-- Builder top panel -->
 				<div id="builderPanel">
 					<h4></h4>
@@ -418,7 +429,7 @@
 										<i class="youtube"></i>
 									</td>
 								</tr>
-								<tr class="vimeo fade">
+								<tr class="vimeo">
 									<td><input type="radio" name="addVideoSrc" value="vimeo" />Vimeo</td>
 									<td>
 										<input class="clearVal type vimeo" type="text" disabled />
@@ -427,7 +438,7 @@
 										<i class="vimeo"></i>
 									</td>
 								</tr>
-								<tr class="other fade">
+								<tr class="other">
 									<td><input type="radio" name="addVideoSrc" value="other" /><span class="other"></span></td>
 									<td>
 										<input class="clearVal type other" type="text" disabled />
@@ -515,25 +526,23 @@
 					<table class="leftTable">
 						<tr>
 							<td class="btn-select-flickr">
-								<img style="width: 50px"/>
-								<div>Flickr</div>
+								<a><img style="width: 50px"/></a>
 							</td>
 							<td class="btn-select-fb">
-								<img style="height: 46px"/>
-								<div style="margin-top: 6px;">Facebook</div>
+								<a><img style="height: 46px"/></a>
 							</td>
 							<td class="btn-select-picasa">
-								<img style="width: 50px"/>
-								<div>Picasa</div>
+								<a><img style="width: 50px"/></a>
 							</td>
 						</tr>
+						<tr style="height: 15px">
+						</tr>
 						<tr>
-							<td class="btn-select-csv">
-								<img style="width: 50px"/>
-								<div class="csvLbl"></div>
+							<td class="btn-select-youtube">
+								<a><img style="width: 50px" src="https://developers.google.com/youtube/images/YouTube_logo_stacked_white.png"/></a>
 							</td>
-							<td class="btn-select-scratch"><img style="width: 40px"/>
-								<div class="scratchLbl"></div>
+							<td class="btn-select-scratch">
+								<a><img style="width: 40px"/></a>
 							</td>
 						</tr>
 						
@@ -543,14 +552,13 @@
 					<div class="sideTitle sideTitle2"></div>
 					<table>
 						<tr>
-							<td class="btn-select-hostedFS">
-								<img style="width: 120px"/>
-								<div>ArcGIS Online</div>
-								<div>Hosted Feature Service</div>
+							<td class="btn-select-hostedFS" style="vertical-align: middle; height: 125px;">
+								<img style="width: 100px" src="http://store.esri.com/esri/images/ArcGIS_Icon_160x130.png"/>
+								<div class="notAvailable hostedFsNote"></div>
 							</td>
 						</tr>
 					</table>
-					<div class="notAvailable hostedFsNote"></div>
+					
 				</div>
 				<div class="footer1"></div>
 				<div class="footer2"></div>
@@ -575,6 +583,22 @@
 					</div>
 				</form>
 				<ul class="dataError"></ul>
+			</div>
+			
+			<div id="initPopupViewAdvanced">
+				<div class="header"></div>
+				<div class="options">
+					<div class="options-row">
+						<button class="btn btn-adv btn-select-csv">Mass import from any hosting using a CSV</button>
+					</div>
+					<div class="options-row">
+						<button class="btn btn-adv btn-select-scratch">Manual input of the medias by URL</button>
+					</div>
+					<div class="options-row">
+						<button class="btn btn-adv btn-select-existingFS">Use an existing Feature Service (TODO)</button>
+					</div>
+				</div>
+				<div class="footer"></div>
 			</div>
 			
 			<!-- Import specific -->
@@ -713,10 +737,27 @@
 							<select id="picasaListAlbum"></select>
 						</div>
 					</div>
-					
 					<div class="howToFind">
 						<a></a>
 					</div>
+				</div>
+			</div>
+			<div id="popupViewYoutube" class="popupViewYoutube">
+				<div class="headerContainer">
+					<span class="header"></span>
+					<span class="commonHeader"></span>
+				</div>
+				<div class="youtubeContainer">
+					<input class="youtubeInput selectUserName" type="text" value=""/>
+					<button class="btn youtubeLookup btn-userLookup" disabled="disabled"><i class="icon-search"></i></button>
+					<span class="lookingUpMsg lookingUpUserMsg"></span>
+				</div>
+				<div class="useLocation">
+					<input type="checkbox" name="youtubeUseLocation" checked/>
+					<span></span>
+				</div>
+				<div class="howToFind">
+					<a></a>
 				</div>
 			</div>
 			<div id="popupViewGeoTag" class="popupViewGeoTag">
@@ -762,7 +803,6 @@
 					<span class="layout-box">
 						<div></div>
 						<img />
-						<!--<div class="layoutOption"></div>-->
 						<div class="layoutFooter">
 							<button class="btn"></button>
 							<div class="selectedLayout"></div>
@@ -776,6 +816,7 @@
 							<div class="selectedLayout"></div>
 						</div>
 					</span>
+					<div class="layoutOption"></div>
 				</div>
 				<!-- Colors -->
 				<div id="settings-colors" class="tab-content">
@@ -1004,6 +1045,7 @@
 				loadJS('lib/megapix-image.js');
 				loadJS('lib/spectrum/spectrum.js');
 				loadJS('lib/bootstrap.file-input.js');
+				loadJS('lib/colorbox/jquery.colorbox-min.js');
 			}
 		</script>
 		
