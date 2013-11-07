@@ -8,6 +8,6 @@
         no_editable_layers_message: "La mappa Web non contiene layer modificabili."
       }
     }
-  })
+  }),
 
 );

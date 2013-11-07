@@ -56,12 +56,12 @@
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
       centuryPattern: "гггг G",
-      decadePattern: "yyyy",
+      decadePattern: "yyyy", 
       yearPattern: "ММММ гггг",
       weekPattern: "dd MMMM yyyy \'г.\'",
       hourTimePattern: "H",
       // e.g. for German: "Ч:мм:сс:ССС"
-      millisecondTimePattern:"h:m:ss.SSS a",
+      millisecondTimePattern:"Ж_h:m:ss.SSS a_Я",
       minuteTimePattern: "H:mm",
       // e.g. for German: "Ч:мм"
       monthPattern: "ММММ ч, г",
@@ -96,7 +96,7 @@
       title: "Найти адрес или место",
       popupTitle: "Местоположение",
       currentLocation: "Текущее местоположение",
-      notWhatYouWanted: "Не то, что вам нужно?",
+      notWhatYouWanted: "Не то, что вам нужно?" ,
       selectAnother: "Выберите другое местоположение",
       errors:{
        missingLocation: "Местоположение не найдено"

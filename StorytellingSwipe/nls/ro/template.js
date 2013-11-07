@@ -1,5 +1,5 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
 				step1: "SE ÎNCARCĂ APLICAŢIA",
@@ -34,7 +34,7 @@
 			},
 			desktopView: {
 				storymapsText: "O hartă informativă",
-				builderButton: "Comutare la modul Instrument de creare",
+				builderButton: "Ă_Switch to builder mode_ș",
 				bitlyTooltip: "Obţinere link scurt către aplicaţie"
 			}
 		},
@@ -65,7 +65,7 @@
 				signInTwo: "pentru a salva aplicaţia."
 			},
 			header:{
-				editMe: "Editează-mă!",
+				editMe: "Ă_Click to edit description_ș",
 				templateTitle: "Setare titlu şablon",
 				templateSubtitle: "Setare subtitlu şablon"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Activare legendă",
 				settingsDescriptionEnable: "Activare descriere",
 				settingsBookmarksEnable: "Activare serii Swipe",
-				settingsPopupDisable: "Ă_Enable popup_ș",
+				settingsPopupDisable: "Activare pop-up",
+				settingsLocatorEnable: "Ă_Enable locator_ș",
 				settingsLegendHelpContent: "Pentru a rafina conţinutul legendei, utilizaţi cuprinsului aplicaţiei de vizualizare a hărţilor web din ArcGIS.com (Ascunderea în legendă)",
-				settingsSeriesHelpContent: "Ă_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ș",
+				settingsSeriesHelpContent: "La prima activare, semnele de carte pentru hărţi web vor fi utilizate pentru a popula în prealabil bara seriei. Dacă dezactivaţi ulterior opţiunea, configuraţia seriei nu va fi eliminată şi va fi disponibilă dacă decideţi să activaţi seria din nou.",
 				preview: "Previzualizare interfaţă cu utilizatorul"
 			},
 			settingsSwipePopup: {
@@ -185,8 +186,8 @@
 				descr: "Descriere",
 				discard: "Eliminare semn de carte",
 				saveExtent: "Setare extindere semn de carte",
-				discardDisabled: "Ă_You can't remove that bookmark. Swipe series can be disabled in the Settings._ș"
+				discardDisabled: "Nu puteţi elimina acest semn de carte. Seriile Swipe pot fi dezactivate din Setări."
 			}
 		}
-    })
+})
 );

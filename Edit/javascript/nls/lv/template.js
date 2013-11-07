@@ -8,6 +8,6 @@
         no_editable_layers_message: "Web kartē nav ietverts neviens rediģējams slānis."
       }
     }
-  })
+  }),
 
 );

@@ -56,12 +56,12 @@
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
       centuryPattern: "yyyy G",
-      decadePattern: "yyyy'年'",
+      decadePattern: "yyyy'年'", 
       yearPattern: "yyyy'年'M'月'",
       weekPattern: "yyyy'年'M'月'd'日'",
       hourTimePattern: "h a",
       // e.g. for German: "H:mm:ss:SSS"
-      millisecondTimePattern:"h:m:ss.SSS a",
+      millisecondTimePattern:"須_h:m:ss.SSS a_鷗",
       minuteTimePattern: "h:mm a",
       // e.g. for German: "H:mm"
       monthPattern: "yyyy'年'M'月'd'日'",
@@ -96,7 +96,7 @@
       title: "住所または場所の検索",
       popupTitle: "位置",
       currentLocation: "現在の場所",
-      notWhatYouWanted: "他の住所の候補を表示しますか？",
+      notWhatYouWanted: "他の住所の候補を表示しますか？" ,
       selectAnother: "他の候補を選択",
       errors:{
        missingLocation: "場所が見つかりません"

@@ -56,12 +56,12 @@
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
       centuryPattern: "yyyy G",
-      decadePattern: "yyyy",
+      decadePattern: "yyyy", 
       yearPattern: "MMMM yyyy",
       weekPattern: "yyyy.MM.dd",
       hourTimePattern: "H a",
       // e.g. for German: "H:mm:ss:SSS"
-      millisecondTimePattern:"h:m:ss.SSS a",
+      millisecondTimePattern:"ķ_h:m:ss.SSS a_ū",
       minuteTimePattern: "HH:mm",
       // e.g. for German: "H:mm"
       monthPattern: "MMMM d, y",
@@ -96,7 +96,7 @@
       title: "Atrast adresi vai vietu",
       popupTitle: "Izvietojums",
       currentLocation: "Pašreizējais izvietojums",
-      notWhatYouWanted: "Nav tas, ko vēlējāties?",
+      notWhatYouWanted: "Nav tas, ko vēlējāties?" ,
       selectAnother: "Izvēlieties citu izvietojumu",
       errors:{
        missingLocation: "Izvietojums nav atrasts"

@@ -56,12 +56,12 @@
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
       centuryPattern: "yyyy G",
-      decadePattern: "yyyy",
+      decadePattern: "yyyy", 
       yearPattern: "MMMM yyyy",
       weekPattern: "dd MMMM, yyyy",
       hourTimePattern: "h a",
       // e.g. for German: "H:mm:ss:SSS"
-      millisecondTimePattern:"h:m:ss.SSS a",
+      millisecondTimePattern:"بيت_h:m:ss.SSS a_لاحقة",
       minuteTimePattern: "h:mm a",
       // e.g. for German: "H:mm"
       monthPattern: "MMMM d, y",
@@ -96,7 +96,7 @@
       title: "العثور على عنوان أو مكان ما",
       popupTitle: "موقع",
       currentLocation: "الموقع الحالي",
-      notWhatYouWanted: "أليس هذا ما تريده؟",
+      notWhatYouWanted: "أليس هذا ما تريده؟" ,
       selectAnother: "حدد موقع آخر",
       errors:{
        missingLocation: "لم يتم العثور على الموقع"

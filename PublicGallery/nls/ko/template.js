@@ -3,7 +3,8 @@
         "viewer": {
             "main": {
                 "scaleBarUnits": "metric",
-                "clearSearch": "지우기"
+                "clearSearch": "지우기",
+                "datePattern": "한_MMM d, yyyy_빠" // added 2.5.2013
             },
             "errors": {
                 "createMap": "맵을 생성할 수 없음",
@@ -35,47 +36,47 @@
                 "loadingText": "맵을 로드하는 중&hellip;"
             },
 			"sortFields":{
-				"sortBy": "정렬", // new
-				"modified": "날짜", // new
-				"title": "제목", // new
-				"type": "유형", // new
-				"numRatings": "등급", // new
-				"avgRating": "평균 등급", // new
-				"numComments": "설명", // new
-				"numViews": "뷰" // new
+				"sortBy": "정렬",
+				"modified": "날짜",
+				"title": "제목",
+				"type": "유형",
+				"numRatings": "등급",
+				"avgRating": "평균 등급",
+				"numComments": "설명",
+				"numViews": "뷰"
 			},
 			"comments":{
-				"commentsHeader": "설명", // new
-				"posted": "게시됨", // new
-				"by": "작성자", // new
-				"deleteComment": "삭제", // new
-				"editComment": "편집", // new
-				"noComments": "설명 없음", // new
-				"addCommentButton": "설명 추가", // new
-				"signIn": "로그인", // new
-				"register": "등록", // new
-				"or": "또는", // new
-				"toPost": "설명 게시" // new
+				"commentsHeader": "설명",
+				"posted": "게시됨",
+				"by": "작성자",
+				"deleteComment": "삭제",
+				"editComment": "편집",
+				"noComments": "설명 없음",
+				"addCommentButton": "설명 추가",
+				"signIn": "로그인",
+				"register": "등록",
+				"or": "또는",
+				"toPost": "설명 게시"
 			},
 			"buttons":{
-				"cancel": "취소", // new
-				"submit": "보고" // new
+				"cancel": "취소",
+				"submit": "보고"
 			},
 			"rating":{
-				"signIn": "로그인", // new
-				"toRate": "등급 지정" // new
+				"signIn": "로그인",
+				"toRate": "등급 지정"
 			},
 			"itemInfo":{
-				"createdLabel": "생성됨", // new
-				"ratingsLabel": "등급", // new
-				"ratingsLabelPlural": "등급", // new
-				"viewsLabel": "뷰", // new
-				"viewsLabelPlural": "뷰", // new
-				"commentsLabel": "설명", // new
-				"commentsLabelPlural": "설명", // new
-				"modifiedLabel": "마지막으로 수정한 날짜", // new
-				"by": "작성자", // new
-				"separator": "," // new
+				"createdLabel": "생성됨",
+				"ratingsLabel": "등급",
+				"ratingsLabelPlural": "등급",
+				"viewsLabel": "뷰",
+				"viewsLabelPlural": "뷰",
+				"commentsLabel": "설명",
+				"commentsLabelPlural": "설명",
+				"modifiedLabel": "마지막으로 수정한 날짜",
+				"by": "작성자",
+				"separator": ","
 			},
             "mapPage": {
                 "findLocation": "위치 찾기",
@@ -92,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "소유자:",
                 "switchBasemap": "베이스맵 전환",
-				"getMobileApp": "앱 가져오기", // new
-				"constraintsHeading":"Use Constraints", // new
-				"createdLabel":"Created", // new
-				"noDescription":"No description.", // new
-				"detailsLabel":"Details" // new
+				"getMobileApp": "앱 가져오기",
+				"constraintsHeading":"한_Use Constraints_빠",
+				"createdLabel":"한_Created_빠",
+				"noDescription":"한_No description._빠",
+				"detailsLabel":"한_Details_빠"
             },
             "pagination": {
                 "previous": "이전",

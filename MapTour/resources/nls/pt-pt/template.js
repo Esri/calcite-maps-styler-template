@@ -37,13 +37,14 @@
 				hideIntro: "OCULTAR TÍTULO",
 				navList: "Lista",
 				navMap: "Mapa",
-				navInfo: "Imagens",
+				navInfo: "ã_Medias_Ç",
 				introStartBtn: "Iniciar"
 			},
 			desktopHTML: {
 				storymapsText: "Um mapa de história",
 				builderButton: "Mudar para modo de construtor",
-				bitlyTooltip: "Obter uma pequena ligação para a aplicação"
+				bitlyTooltip: "Obter uma pequena ligação para a aplicação",
+				bitlyStartIndex: "ã_Start on point no._Ç"
 			},
 			builderHTML: {
 				panelHeader: "CONFIGURAÇÃO DA APLICAÇÃO",
@@ -59,12 +60,13 @@
 				buttonImportDisabled: "A função Importar não está disponível quando utiliza um Serviço de Elementos com anexos",
 				dataEditionDisabled: "A edição de dados está desativada na fonte dos dados do CSV",
 				dataSourceWarning: "A camada de dados da Apresentação de Mapa (Map Tour) foi alterada. Se os IDs dos elementos não forem iguais, terá que restaurar a ordem padrão e os pontos ocultos utilizando <b>Organizar</b>. Se o nome dos campos for diferente, terá que restaurar o padrão das definições dos campos através do <b>separador dados em Definições</b>.",
+				organizeWarning: "ã_One or multiple points added outside of the interactive builder are hidden._Ç",
 				dataPicError0a: "Esta apresentação inclui <b>%NB%</b> URLs de imagem não-compatíveis.",
 				dataPicError0b: "Esta apresentação poderá incluir <b>%NB%</b> URLs de imagem não-compatíveis.",
 				dataPicError1: "A Apresentação de Mapa requer agora que um URL de uma imagem termine com uma das seguintes extensões: .jp(e)g, .png, .gif ou .bmp.",
 				dataPicError2: "Este requisito não afeta a sua Apresentação de Mapa já publicada. No entanto, a fim de usar o builder interativo, deve primeiro resolver o problema do  URL através da realização de uma das duas ações:",
 				dataPicError3: "Editar URLs",
-				dataPicError4: "Isto irá adicionar <i>#isPicture</i> no final dos URLs de imagem não suportados. A maioria dos servidores suporta o acrescentar de informação a URLs. Contudo, uma vez que tenha efetuado essa ação, deverá verificar que os URLs atualizados estão funcionais através da navegação nos seus pontos. Se cada imagem é carregada, pode agora guardar a Apresentação de Mapa. Se <b>as ligações para as imagens estão quebradas, não guarde a Apresentação de Mapa</b>. Em vez disso, recarregue o builder e efetue a segunda ação.",
+				dataPicError4: "ã_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, don’t save the Map Tour</b>. Instead, reload the builder and perform the second action._Ç",
 				dataPicError5: "Limitar a apresentação às imagens",
 				dataPicError6: "Esta opção faz com que todos os URLs sejam considerados como imagens, mas não conseguirá adicionar vídeos utilizando o builder interativo. Esta ação é reversível, caso decida no futuro adicionar vídeos.",
 				dataPicError7: "A sua Apresentação de Mapa foi limitada a imagens, não podem ser utilizados vídeos. Se escolher remover esta limitação, verifique que as suas imagens carregam corretamente antes de guardar a Apresentação de Mapa. Poderá restaura essa limitação mais tarde caso necessite.",
@@ -85,8 +87,8 @@
 				addTabInformation: "Informações",
 				addTabLocation: "Local",
 				addSelectCaption: "Selecionar ou largar imagem",
-				addNoteVideo: "Consulte a Ajuda para instruções sobre como utilizar vídeos",		
-				addSelectCaptionNoFileReader: "Selecionar imagem",
+				addNoteVideo: "ã_Consult Help for instructions on using videos_Ç",		
+				addSelectCaptionNoFileReader: "ã_Select picture_Ç",	
 				addChangePhoto: "Alterar imagem e miniatura",
 				addPictureResolutionIntro: "A resolução da imagem é superior à resolução necessária:",
 				addPictureResolutionOldBrowser: "A resolução da imagem é superior à resolução necessária. Otimize a experiência de Apresentação de Mapa definindo uma resolução inferior a %RECOMMENDED_RES%.",
@@ -137,6 +139,8 @@
 				settingsLayoutSelected: "Layout selecionado",
 				settingsLayoutSelect: "Selecionar este layout",
 				settingsLayoutNote: "Atenção que em pontos que utilizam vídeo, o placard será sempre colocado por baixo do vídeo, mesmo que a opção esteja desativada.",
+				settingsLayoutLocBtn: "ã_Display a locate button on supported browser_Ç",
+				settingsLayoutLocBtnHelp: "ã_That functionality is supported on most mobile device and desktop browsers (Internet Explorer 9)._Ç",
 				settingsColorExplain: "Mude o aspeto selecionando um tema pré-definido ou crie um tema à sua escolha.",
 				settingsLabelColor: "Cores do cabeçalho, conteúdo e rodapé",
 				settingsLogoExplain: "Personalize o logótipo do cabeçalho (o máximo é 250 x 50 px).",
@@ -188,10 +192,11 @@
 				uploadingPicture: "A carregar a imagem",
 				uploadSuccess: "Carregamento bem sucedido",
 				uploadError: "Erro ao carregar a imagem",
+				uploadError2: "ã_Error adding the feature (invalid html tag)_Ç",
 				notJpg: "Selecione uma foto jpeg para carregar",
 				errorNoPhoto: "Selecione uma imagem para carregar",
 				errorNoThumbnail: "Selecione uma miniatura para carregar",
-				errorInvalidPicUrl: "Introduza um URL de imagem válido para este ponto de apresentação",
+				errorInvalidPicUrl: "ã_Enter a valid picture (starts with http(s)://, ends with jpg, png, gif or bmp). You can end the URL with '#isImage' to override that rule._Ç",
 				errorInvalidThumbUrl: "Introduza um URL de miniatura válido para este ponto de apresentação",
 				errorInvalidVideoUrl: "Introduzir um URL válido para um vídeo (começa por http(s)://)",
 				errorNoName: "Introduza o nome deste ponto de apresentação",
@@ -213,6 +218,7 @@
 				savingApplication: "A guardar a aplicação",
 				saveSuccess: "Aplicação guardada com sucesso",
 				saveError: "Falha ao guardar, tente novamente",
+				saveError2: "ã_Save failed due to an invalid html tag in a name or description_Ç",
 				dragColorPicker: "Deslocar-me<br />ou alterar a minha cor",
 				dataWarningExtent: "Tem dados fora da extensão do mapa web. Esses dados não serão utilizados como pontos de apresentação, altere a extensão do mapa se quiser utilizar os dados.",
 				dataWarningVisibi: "A camada de Apresentação de Mapa não está visível com a extensão atual do mapa web. Confirme a visibilidade da camada de Apresentação de Mapa com um mapa grande %MAPSIZE%.",
@@ -263,10 +269,12 @@
 				header: "Onde estão guardadas as suas imagens?"
 			},
 			onlinePhotoSharingCommon: {
+				pictures: "ã_pictures_Ç",
+				videos: "ã_videos_Ç",
 				disabled: "Esta funcionalidade foi desativada pelo Admnistrador",
 				disabledPortal: "Esta funcionalidade está desativada no Portal for ArcGIS",
 				header1: "As imagens têm de ser partilhadas publicamente.",
-				header2: "A importação será limitada a %NB1% imagens para respeitar o limite de %NB2% pontos por apresentação.",
+				header2: "ã_The import will be limited to the first %NB1% %MEDIA% to respect the limit of %NB2% points per tour._Ç",
 				emptyDataset: "Erro, não foram encontradas imagens",
 				footerImport: "Importar",
 				selectAlbum: "Selecionar um álbum público",
@@ -275,10 +283,12 @@
 				userLookup: "Procurar",
 				userLookingup: "A procurar",
 				csv: "Referenciado num ficheiro CSV",
-				fromScratch: "Começar do princípio",
+				advanced: "ã_Advanced options_Ç",
 				select: "Escolher",
 				locUse: "Utilizar localização de imagens",
-				locExplain: "Pode não querer utilizar a localização de imagens, uma vez que as imagens podem ser herdadas do álbum, o que faz com que todas as fotografias fiquem na mesma localização."
+				locUse2: "ã_Use videos location_Ç",
+				locExplain: "Pode não querer utilizar a localização de imagens, uma vez que as imagens podem ser herdadas do álbum, o que faz com que todas as fotografias fiquem na mesma localização.",
+				locExplain2: "ã_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._Ç"
 			},
 			viewFlickr: {
 				header: "Introduza um nome de utilizador Flickr e selecione um Conjunto de Fotografias ou uma Palavra-chave para importação.",
@@ -328,8 +338,17 @@
 				footerProgress: "Importação em curso",
 				footerSucceed: "A importação foi bem sucedida. A carregar"
 			},
+			viewYoutube: {
+				header: "ã_Look for publicly shared videos using an user name._Ç",
+				pageInputLbl: "ã_Enter a Youtube user name_Ç",
+				lookupMsgError: "ã_User not found_Ç",
+				howToFind: "ã_How to find a Youtube user name_Ç",
+				howToFind2: "ã_User name is displayed under videos_Ç",
+				found: "ã_Found_Ç",
+				noData: "ã_No public videos found_Ç"
+			},
 			viewGeoTag: {
-				header: "Clique ou toque nas imagens que pretende importar para as localizar.",
+				header: "ã_Click or tap the pictures you want to import to locate them._Ç",
 				headerMore: "Porque é que as minhas imagens não são localizadas?",
 				headerExplain: "Se as suas imagens tiverem uma localização válida, serão localizadas automaticamente no mapa e listadas no segundo separador.<br /><br />Por predefinição, o Picasa e o Flickr não exploram os metadados de localização EXIF das imagens; verifique as definições do Flickr/Picasa no separador Privacidade para ativar a utilização da localização das imagens. Poderá ser necessário importar novamente todas as imagens para o Flickr/Picasa.<br /><br />No caso do Facebook, tem de ir a cada imagem, clicar em Editar e selecionar a localização de entre as opções sugeridas, que são baseadas nos metadados EXIF das imagens.",
 				leftPanelTab1: "Para localizar",
@@ -348,14 +367,17 @@
 				nextBtn: "Seguinte"
 			},
 			initPopupHome: {
+				header1: "ã_Where are your medias?_Ç",
 				header2: "Este assistente irá ajudá-lo a construir uma Apresentação de Mapa a partir de imagens guardadas online ou a importar as imagens para a sua conta ArcGIS Online for Organization.",
-				title1: "As minhas imagens já estão alojadas",
+				title1: "ã_My medias are already hosted_Ç",
 				title2: "Necessito de alojar as minhas imagens",
+				hostedFSTooltip: "ã_Use ArcGIS Online to host your pictures (doesn't support videos)._Ç",
 				hostedFsNA: "Disponível apenas para Publicadores e Administradores de ArcGIS for Organization",
 				footer1: "Quando acabar, não se esqueça de partilhar a Apresentação de Mapa com o público-alvo através da página de itens da aplicação.",
 				footer2: "Consultar a ajuda de Apresentação de Mapa",
 				footer3: "Descarregar o modelo CSV",
 				footer4: "Guardar como se não conseguir descarregar",
+				footer5: "ã_Learn about hosting options_Ç",
 				footerProgress: "Criação em curso",
 				footerSucceed: "A criação foi bem sucedida. A carregar..."
 			},
@@ -435,7 +457,7 @@
 					div8: "Existe um limite de 99 pontos por apresentação. Obviamente, a maioria das Apresentações de Mapa será significativamente mais pequena do que isso. Não espere que o público esteja disposto a percorrer demasiados pontos de apresentação. Poderá achar o seu tópico fascinante, mas não parta do princípio de que as outras pessoas acharão o mesmo!",
 					div9: "Para obter mais informações, consulte <a href='https://github.com/Esri/map-tour-storytelling-template-js/raw/master/Readme.pdf' target='_blank'>o guia detalhado</a>.",
 					div10: "Modo incorporado",
-					div11: "Se deseja incorporar o modelo noutro site através de um iframe, acrescentando o parâmetro opcional   \"&embed \" no final da URL irá remover o cabeçalho. Esse modo também pode ser definido na versão para download através do ficheiro de configuração." 
+					div11: "Se deseja incorporar o modelo noutro site através de um iframe, acrescentando o parâmetro opcional   "&embed " no final da URL irá remover o cabeçalho. Esse modo também pode ser definido na versão para download através do ficheiro de configuração." 
 				},
 				tab5: {
 					title: "A Publicar",

@@ -1,5 +1,5 @@
 ﻿define(
- ({
+({
   display: {
     elevationProfileTitle: "Profil wzniesień",
     showMe: "pokaż mi",

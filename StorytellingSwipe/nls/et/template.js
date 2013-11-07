@@ -1,12 +1,12 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
 				step1: "RAKENDUSE LAADIMINE",
 				step2: "ANDMETE LAADIMINE",
 				step3: "LÄHTESTAMINE",
 				fail: "Vabandust, rullimisvahendi laadimine nurjus",
-				loadBuilder: "VAHETA KOOSTAJA TÜÜP",
+				loadBuilder: "Š_SWITCHING TO BUILDER MODE_ä",
 				failButton: "Proovi uuesti"
 			},
 			errors: {
@@ -14,7 +14,7 @@
 				portalSelf: "Totaalne viga: Portaali seadistuse hankimine nurjus",
 				invalidConfig: "Totaalne viga: vigane konfiguratsioon",
 				invalidConfigNoWebmap: "Totaalne viga: Vigane konfiguratsioon (ühtegi veebikaarti ei ole määratud)",
-				createMap: "Võimetu koostama kaarti",
+				createMap: "Š_Unable to create map_ä",
 				invalidApp: "Totaalne viga: Rakendust ei saa laadida",
 				initMobile: "Tere tulemast rullimise veebirakendusse. Antud rakendus ei ole seadistatud. Interaktiivne koostaja ei ole mobiilsetes seadmetes toetatud.",
 				noBuilderIE8: "Rullimise interaktiivne koostaja ei ole toetatud Internet Explorer 9 eelse(te)s  versiooni(de)s.",
@@ -65,7 +65,7 @@
 				signInTwo: ", et salvestada rakendus."
 			},
 			header:{
-				editMe: "Muuda mind !",
+				editMe: "Š_Click to edit description_ä",
 				templateTitle: "Määra mallile pealkiri",
 				templateSubtitle: "Määra mallile alampealkiri"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Lülita legend sisse",
 				settingsDescriptionEnable: "Lülita kirjeldus sisse",
 				settingsBookmarksEnable: "Võimalda rullimise seeriad",
-				settingsPopupDisable: "Š_Enable popup_ä",
+				settingsPopupDisable: "Luba hüpikaken",
+				settingsLocatorEnable: "Š_Enable locator_ä",
 				settingsLegendHelpContent: "Legendi sisu täpsustamiseks kasuta ArcGIS.com veebikaardi akna kihtide loendit (peidetud legendi)",
-				settingsSeriesHelpContent: "Š_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ä",
+				settingsSeriesHelpContent: "Esimesel aktiveerimisel kasutatakse Teie lõpliku veebikaardi järjehoidjaid seeriate eelmääramiseks. Kui lülitate parameetri hiljem välja, Teie seeriate seadistusest ei loobuta ja see on kättesaadav taas kui te otsustate seeria taas lubada.",
 				preview: "UI vaade"
 			},
 			settingsSwipePopup: {
@@ -185,8 +186,8 @@
 				descr: "Kirjeldus",
 				discard: "Loobu järjehoidjast",
 				saveExtent: "Määra järjehoidja ulatus",
-				discardDisabled: "Š_You can't remove that bookmark. Swipe series can be disabled in the Settings._ä"
+				discardDisabled: "Te ei saa seda järjehoidjat eemaldada. Vahetamise seeriaid saab keelata seadetest."
 			}
 		}
-    })
+})
 );

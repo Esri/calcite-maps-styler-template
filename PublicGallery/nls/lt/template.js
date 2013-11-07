@@ -3,7 +3,8 @@
         "viewer": {
             "main": {
                 "scaleBarUnits": "metric",
-                "clearSearch": "Ištrinti"
+                "clearSearch": "Ištrinti",
+                "datePattern": "Į_MMM d, yyyy_š" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Žemėlapio sukurti nepavyko",
@@ -35,47 +36,47 @@
                 "loadingText": "Įkeliami žemėlapiai&hellip;"
             },
 			"sortFields":{
-				"sortBy": "Rūšiuoti pagal", // new
-				"modified": "Data", // new
-				"title": "Antraštė", // new
-				"type": "Tipas", // new
-				"numRatings": "Vertinimai", // new
-				"avgRating": "Vid. vertinimas", // new
-				"numComments": "Komentarai", // new
-				"numViews": "Peržiūrų sk." // new
+				"sortBy": "Rūšiuoti pagal",
+				"modified": "Data",
+				"title": "Antraštė",
+				"type": "Tipas",
+				"numRatings": "Vertinimai",
+				"avgRating": "Vid. vertinimas",
+				"numComments": "Komentarai",
+				"numViews": "Peržiūrų sk."
 			},
 			"comments":{
-				"commentsHeader": "Komentarai", // new
-				"posted": "Paskelbta", // new
-				"by": "pagal", // new
-				"deleteComment": "pašalinti", // new
-				"editComment": "redaguoti", // new
-				"noComments": "Komentarų nėra", // new
-				"addCommentButton": "Pridėti komentarą", // new
-				"signIn": "Prisijungti", // new
-				"register": "Registruotis", // new
-				"or": "arba", // new
-				"toPost": "skelbti komentarą." // new
+				"commentsHeader": "Komentarai",
+				"posted": "Paskelbta",
+				"by": "pagal",
+				"deleteComment": "pašalinti",
+				"editComment": "redaguoti",
+				"noComments": "Komentarų nėra",
+				"addCommentButton": "Pridėti komentarą",
+				"signIn": "Prisijungti",
+				"register": "Registruotis",
+				"or": "arba",
+				"toPost": "skelbti komentarą."
 			},
 			"buttons":{
-				"cancel": "Atsisakyti", // new
-				"submit": "Išsiųsti" // new
+				"cancel": "Atsisakyti",
+				"submit": "Išsiųsti"
 			},
 			"rating":{
-				"signIn": "Prisijungti", // new
-				"toRate": "vertinti." // new
+				"signIn": "Prisijungti",
+				"toRate": "vertinti."
 			},
 			"itemInfo":{
-				"createdLabel": "sukurtas", // new
-				"ratingsLabel": "vertinimas", // new
-				"ratingsLabelPlural": "vertinimai", // new
-				"viewsLabel": "peržiūra", // new
-				"viewsLabelPlural": "peržiūros", // new
-				"commentsLabel": "komentaras", // new
-				"commentsLabelPlural": "komentarai", // new
-				"modifiedLabel": "Paskutinį kartą keistas", // new
-				"by": "pagal", // new
-				"separator": "," // new
+				"createdLabel": "sukurtas",
+				"ratingsLabel": "vertinimas",
+				"ratingsLabelPlural": "vertinimai",
+				"viewsLabel": "peržiūra",
+				"viewsLabelPlural": "peržiūros",
+				"commentsLabel": "komentaras",
+				"commentsLabelPlural": "komentarai",
+				"modifiedLabel": "Paskutinį kartą keistas",
+				"by": "pagal",
+				"separator": ","
 			},
             "mapPage": {
                 "findLocation": "Rasti vietą",
@@ -92,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Savininkas:",
                 "switchBasemap": "Pakeisti pagrindo žėmėlapį",
-				"getMobileApp": "Gauti aplikaciją", // new
-				"constraintsHeading":"Use Constraints", // new
-				"createdLabel":"Created", // new
-				"noDescription":"No description.", // new
-				"detailsLabel":"Details" // new
+				"getMobileApp": "Gauti aplikaciją",
+				"constraintsHeading":"Į_Use Constraints_š",
+				"createdLabel":"Į_Created_š",
+				"noDescription":"Į_No description._š",
+				"detailsLabel":"Į_Details_š"
             },
             "pagination": {
                 "previous": "Ankstesnis",

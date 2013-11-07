@@ -65,7 +65,7 @@
 				signInTwo: "sovelluksen tallentamiseksi."
 			},
 			header:{
-				editMe: "Muokkaa minua!",
+				editMe: "Å_Click to edit description_ö",
 				templateTitle: "Määritä mallin nimi",
 				templateSubtitle: "Määritä mallin alaotsikko"
 			},
@@ -95,7 +95,7 @@
 			settingsExtent: {
 				settingsTabExtent: "Laajuus",
 				settingsExtentExplain: "Määritä alkuperäinen laajuus alla olevan vuorovaikutteisen kartan avulla.",
-				settingsExtentExplainBottom: "Määrittämäsi laajuus määrittää web-kartan alkuperäisen laajuuden. Huomaa, että jos teet pyyhkäisysarjan, määritettyä laajuutta ei käytetä.",
+				settingsExtentExplainBottom: "Määrittämäsi laajuus muokkaa web-kartan alkuperäistä laajuutta. Huomaa, että jos teet pyyhkäisysarjan, määritettyä laajuutta ei käytetä.",
 				settingsExtentDateLineError: "Laajuus ei saa ylittää 180° pituusasteen meridiaania",
 				settingsExtentDateLineError2: "Virhe laajuuden laskennassa",
 				settingsExtentDrawBtn: "Piirrä uusi laajuus",
@@ -139,7 +139,7 @@
 				settingsDataModelExplainSpyGlass: "Valitse karttataso tai web-kartta, joka tulee näkyviin kiikarissa.",
 				settingsDataModelOneMap: "Yksi web-kartta, yksi taso",
 				settingsDataModel1Explain: "Valitse karttataso, johon pyyhkäisytyökalu vaikuttaa.",
-				settingsDataModel1Warning: "Jos karttataso on ylätasojen peitossa, pyyhkäisyt eivät vaikuta mitenkään.",
+				settingsDataModel1Warning: "Jos karttataso on piirtojärjestyksessä ylempänä olevien karttatasojen peitossa, pyyhkäisyt eivät vaikuta mitenkään.",
 				settingsDataModel1SpyGlassExplain: "Valitse karttataso, joka näkyy kiikarissa.",
 				settingsDataModelTwoMaps: "Kaksi web-karttaa",
 				settingsDataModelLayerIds: "Web-karttatason tunnus",
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Ota selite käyttöön",
 				settingsDescriptionEnable: "Ota kuvaus käyttöön",
 				settingsBookmarksEnable: "Ota sarjapyyhkäisy käyttöön",
-				settingsPopupDisable: "Å_Enable popup_ö",
+				settingsPopupDisable: "Ota ponnahdusikkunat käyttöön",
+				settingsLocatorEnable: "Å_Enable locator_ö",
 				settingsLegendHelpContent: "Jos haluat määrittää selitteen sisällön, käytä ArcGIS.com-sivuston web-kartan katseluohjelman sisällysluetteloa (Piilota selitteessä)",
-				settingsSeriesHelpContent: "Å_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ö",
+				settingsSeriesHelpContent: "Kun otat asetuksen käyttöön ensimmäisen kerran, sarjapalkki täytetään valmiiksi web-kartan kirjanmerkkien avulla. Jos poistat sarjan asetuksen käytöstä myöhemmin, sarjan määrityksiä ei hylätä, vaan ne ovat käytettävissä, jos päätät ottaa sarjan käyttöön uudelleen.",
 				preview: "Käyttöliittymän esikatselu"
 			},
 			settingsSwipePopup: {
@@ -185,7 +186,7 @@
 				descr: "Kuvaus",
 				discard: "Hylkää kirjanmerkki",
 				saveExtent: "Aseta kirjanmerkin laajuus",
-				discardDisabled: "Å_You can't remove that bookmark. Swipe series can be disabled in the Settings._ö"
+				discardDisabled: "Tätä kirjanmerkkiä ei voi poistaa. Sarjapyyhkäisyn voi poistaa käytöstä asetuksissa."
 			}
 		}
     })

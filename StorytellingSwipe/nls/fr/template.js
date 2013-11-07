@@ -1,5 +1,5 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
 				step1: "CHARGEMENT DE L\’APPLICATION",
@@ -65,7 +65,7 @@
 				signInTwo: "pour enregistrer l\’application."
 			},
 			header:{
-				editMe: "Modifier",
+				editMe: "æ_Click to edit description_Â",
 				templateTitle: "Définir le titre du modèle",
 				templateSubtitle: "Définir le sous-titre du modèle"
 			},
@@ -96,8 +96,8 @@
 				settingsTabExtent: "Etendue",
 				settingsExtentExplain: "Définissez l\’étendue initiale au moyen de la carte interactive ci-dessous.",
 				settingsExtentExplainBottom: "L\'étendue que vous définissez modifiera l\'étendue initiale de votre carte Web. Notez que si vous effectuez une série de balayages, cette étendue ne sera pas utilisée.",
-				settingsExtentDateLineError: "L'étendue ne peut pas traverser le méridien de 180° de longitude",
-				settingsExtentDateLineError2: "Erreur de calcul de l'étendue",
+				settingsExtentDateLineError: "æ_The extent cannot be across the meridian of 180° longitude_Â",
+				settingsExtentDateLineError2: "æ_Error computing the extent_Â",
 				settingsExtentDrawBtn: "Tracer une nouvelle étendue",
 				settingsExtentModifyBtn: "Modifier l\’étendue actuelle",
 				settingsExtentApplyBtn: "Appliquer à la carte principale",
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Activer la légende",
 				settingsDescriptionEnable: "Activer la description",
 				settingsBookmarksEnable: "Activer la série de balayages",
-				settingsPopupDisable: "æ_Enable popup_Â",
+				settingsPopupDisable: "Activer la fenêtre contextuelle",
+				settingsLocatorEnable: "æ_Enable locator_Â",
 				settingsLegendHelpContent: "Pour affiner le contenu de la légende, utilisez la table des matières de la visionneuse de carte Web ArcGIS.com (Masquer dans la légende)",
-				settingsSeriesHelpContent: "æ_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._Â",
+				settingsSeriesHelpContent: "Lors de la première activation, les géosignets de vos cartes Web seront utilisés pour renseigner la barre de la série. Si vous désactivez l\'option de série par la suite, la configuration de votre série ne sera pas annulée et elle sera disponible si vous décidez de réactiver la série.",
 				preview: "Aperçu de l\'interface utilisateur"
 			},
 			settingsSwipePopup: {
@@ -185,8 +186,8 @@
 				descr: "Description",
 				discard: "Ignorer le géosignet",
 				saveExtent: "Définir l\'étendue du géosignet",
-				discardDisabled: "æ_You can't remove that bookmark. Swipe series can be disabled in the Settings._Â"
+				discardDisabled: "Vous ne pouvez pas supprimer ce géosignet. La série de balayages peut être désactivée dans les paramètres."
 			}
 		}
-    })
+})
 );

@@ -3,7 +3,8 @@
         "viewer": {
             "main": {
                 "scaleBarUnits": "metric",
-                "clearSearch": "Notīrīt"
+                "clearSearch": "Notīrīt",
+                "datePattern": "ķ_MMM d, yyyy_ū" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Nevar izveidot karti",
@@ -35,47 +36,47 @@
                 "loadingText": "Ielādē kartes&hellip;"
             },
 			"sortFields":{
-				"sortBy": "Sortēt pēc", // new
-				"modified": "Datums", // new
-				"title": "Virsraksts", // new
-				"type": "Tips", // new
-				"numRatings": "Novērtējumi", // new
-				"avgRating": "Vid. novērtējums", // new
-				"numComments": "Komentāri", // new
-				"numViews": "Skati" // new
+				"sortBy": "Sortēt pēc",
+				"modified": "Datums",
+				"title": "Virsraksts",
+				"type": "Tips",
+				"numRatings": "Novērtējumi",
+				"avgRating": "Vid. novērtējums",
+				"numComments": "Komentāri",
+				"numViews": "Skati"
 			},
 			"comments":{
-				"commentsHeader": "Komentāri", // new
-				"posted": "Pasta sūtījums", // new
-				"by": "ar", // new
-				"deleteComment": "izdzēst", // new
-				"editComment": "rediģēt", // new
-				"noComments": "Nav komentāru", // new
-				"addCommentButton": "Pievienot komentāru", // new
-				"signIn": "Pierakstīties", // new
-				"register": "Reģistrēties", // new
-				"or": "vai", // new
-				"toPost": "lai sūtītu komentāru." // new
+				"commentsHeader": "Komentāri",
+				"posted": "Pasta sūtījums",
+				"by": "ar",
+				"deleteComment": "izdzēst",
+				"editComment": "rediģēt",
+				"noComments": "Nav komentāru",
+				"addCommentButton": "Pievienot komentāru",
+				"signIn": "Pierakstīties",
+				"register": "Reģistrēties",
+				"or": "vai",
+				"toPost": "lai sūtītu komentāru."
 			},
 			"buttons":{
-				"cancel": "Atcelt", // new
-				"submit": "Pakļauties" // new
+				"cancel": "Atcelt",
+				"submit": "Pakļauties"
 			},
 			"rating":{
-				"signIn": "Pierakstīties", // new
-				"toRate": "novērtēt." // new
+				"signIn": "Pierakstīties",
+				"toRate": "novērtēt."
 			},
 			"itemInfo":{
-				"createdLabel": "izveidots", // new
-				"ratingsLabel": "novērtējums", // new
-				"ratingsLabelPlural": "novērtējumi", // new
-				"viewsLabel": "skats", // new
-				"viewsLabelPlural": "skati", // new
-				"commentsLabel": "komentārs", // new
-				"commentsLabelPlural": "komentāri", // new
-				"modifiedLabel": "Pēdējā modificēšana", // new
-				"by": "ar", // new
-				"separator": "," // new
+				"createdLabel": "izveidots",
+				"ratingsLabel": "novērtējums",
+				"ratingsLabelPlural": "novērtējumi",
+				"viewsLabel": "skats",
+				"viewsLabelPlural": "skati",
+				"commentsLabel": "komentārs",
+				"commentsLabelPlural": "komentāri",
+				"modifiedLabel": "Pēdējā modificēšana",
+				"by": "ar",
+				"separator": ","
 			},
             "mapPage": {
                 "findLocation": "Meklēt izvietojumu",
@@ -92,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Īpašnieks:",
                 "switchBasemap": "Pārslēgt pamatkarti",
-				"getMobileApp": "Darbojas lietotne", // new
-				"constraintsHeading":"Use Constraints", // new
-				"createdLabel":"Created", // new
-				"noDescription":"No description.", // new
-				"detailsLabel":"Details" // new
+				"getMobileApp": "Darbojas lietotne",
+				"constraintsHeading":"ķ_Use Constraints_ū",
+				"createdLabel":"ķ_Created_ū",
+				"noDescription":"ķ_No description._ū",
+				"detailsLabel":"ķ_Details_ū"
             },
             "pagination": {
                 "previous": "Iepriekšējs",

@@ -1,4 +1,5 @@
-﻿/*
+﻿/*global define */
+/*
  | ArcGIS Solutions
  | Version 10.2
  | Copyright 2012 Esri
@@ -18,37 +19,39 @@
 define(
 ({
         tooltips: {
-            search: "Søk",
-            locate: "Gjeldende plassering",
-            markup: "Send rettelse",
-            basemap: "Bytt bakgrunnskart",
-            share: "Del",
-            shareViaEmail: "Del via e-post",
-            shareViaFacebook: "Del via Facebook",
-            shareViaTwitter: "Del via Twitter",
-            print: "Skriv ut kart",
-            fetchPrint: "Vis kartutskriften",
-            landscape: "Liggende papirretning",
-            portrait: "Stående papirretning",
-            help: "Hjelp"
+            search: "Søk",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            locate: "Gjeldende plassering",  // Command button to zoom and pan to the current geographical position reported by the browser
+            markup: "Send rettelse",  // Command button to submit a correction to the app's host
+            collect: "å_Add content to map_ø",  // Command button to open a template picker to add features to the map
+            filter: "å_Filter map layers_ø",  // Explains purpose of type-in box affiliated with template picker
+            basemap: "Bytt bakgrunnskart",  // Command button to open a dialog box for switching basemaps
+            share: "Del",  // Command button to open a dropdown menu for picking a type of sharing
+            shareViaEmail: "Del via e-post",  // Command button to share the current map extents via email
+            shareViaFacebook: "Del via Facebook",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
+            shareViaTwitter: "Del via Twitter",  // Command button to share the current map extents via a Twitter tweet: a URL is opened that permits the user to log into Twitter with a tweet that is ready to go
+            print: "Skriv ut kart",  // Command button to open a dialog box for specifying print orientation, title, and author before printing; also used inside print dialog box
+            fetchPrint: "Vis kartutskriften",  // Command button to open a PDF containing a map that was just printed by the print map command
+            landscape: "Liggende papirretning",  // Command button in the print map dialog box to select the landscape page orientation
+            portrait: "Stående papirretning",  // Command button in the print map dialog box to select the portrait page orientation
+            help: "Hjelp"  // Command button to open a dialog box with a short description of the app
         },
         labels: {
-            email: "e-post",
-            Facebook: "Facebook",
-            Twitter: "Twitter"
+            email: "e-post",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
+            Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
+            Twitter: "Twitter"  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
         },
         prompts: {
-            search: "Søk:",
-            markup: "Tegn",
-            mapLayers: "Kartlag:",
-            layerFields: "Søk i lagfelt:"
+            search: "Søk:",  // Appears before a search text field in dialog box for searching for a feature
+            markup: "Tegn",  // Appears before a set of tools for drawing on the map
+            mapLayers: "Kartlag:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
+            layerFields: "Søk i lagfelt:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
         },
         messages: {
-            geolocationDenied: "Dette området har ikke tillatelse til å hente gjeldende plassering",
-            geolocationUnavailable: "Nettleseren kunne ikke hente gjeldende plassering",
-            geolocationTimeout: "Nettleseren kunne ikke hente gjeldende plassering innen rimelig tid",
-            searchLayerMissing: "Fant ikke dette søkelaget i kartet",
-            searchFieldMissing: "Fant ikke dette feltet i kartsøkelaget"
+            geolocationDenied: "Dette området har ikke tillatelse til å hente gjeldende plassering",  // Shown when the browser does not permit the app to get the current geographical position
+            geolocationUnavailable: "Nettleseren kunne ikke hente gjeldende plassering",  // Shown when the browser returns an error instead of the current geographical position
+            geolocationTimeout: "Nettleseren kunne ikke hente gjeldende plassering innen rimelig tid",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            searchLayerMissing: "Fant ikke dette søkelaget i kartet",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
+            searchFieldMissing: "Fant ikke dette feltet i kartsøkelaget"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
         }
     })
 );

@@ -6,7 +6,7 @@
       filterInstructions: "Filtre a camada definindo valores.",
       filterOr: "Qualquer uma das expressões seguintes tem de ser verdadeira.",
       filterAnd: "Todas as expressões seguintes têm de ser verdadeiras.",
-      filterNo:  "Web map does not contain any interactive filters.",
+      filterNo: "ã_Web map does not contain any interactive filters._Ç",
       errors:{
         message: "Problema ao criar a aplicação de filtros"
       }

@@ -65,7 +65,7 @@
 				signInTwo: "pour enregistrer l\’application."
 			},
 			header:{
-				editMe: "Modifier",
+				editMe: "æ_Click to edit description_Â",
 				templateTitle: "Définir le titre du modèle",
 				templateSubtitle: "Définir le sous-titre du modèle"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Activer la légende",
 				settingsDescriptionEnable: "Activer la description",
 				settingsBookmarksEnable: "Activer la série de balayages",
-				settingsPopupDisable: "æ_Enable popup_Â",
+				settingsPopupDisable: "Activer la fenêtre contextuelle",
+				settingsLocatorEnable: "æ_Enable locator_Â",
 				settingsLegendHelpContent: "Pour affiner le contenu de la légende, utilisez la table des matières de la visionneuse de carte Web ArcGIS.com (Masquer dans la légende)",
-				settingsSeriesHelpContent: "æ_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._Â",
+				settingsSeriesHelpContent: "Lors de la première activation, les géosignets de vos cartes Web seront utilisés pour renseigner la barre de la série. Si vous désactivez l\'option de série par la suite, la configuration de votre série ne sera pas annulée et elle sera disponible si vous décidez de réactiver la série.",
 				preview: "Aperçu de l\'interface utilisateur"
 			},
 			settingsSwipePopup: {
@@ -185,7 +186,7 @@
 				descr: "Description",
 				discard: "Ignorer le géosignet",
 				saveExtent: "Définir l\'étendue du géosignet",
-				discardDisabled: "æ_You can't remove that bookmark. Swipe series can be disabled in the Settings._Â"
+				discardDisabled: "Vous ne pouvez pas supprimer ce géosignet. La série de balayages peut être désactivée dans les paramètres."
 			}
 		}
     })

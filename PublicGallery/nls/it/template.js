@@ -3,7 +3,8 @@
         "viewer": {
             "main": {
                 "scaleBarUnits": "metric",
-                "clearSearch": "Cancella"
+                "clearSearch": "Cancella",
+                "datePattern": "é_MMM d, yyyy_È" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Impossibile creare la mappa",
@@ -35,47 +36,47 @@
                 "loadingText": "Caricamento mappe in corso&hellip;"
             },
 			"sortFields":{
-				"sortBy": "Ordina per", // new
-				"modified": "Data", // new
-				"title": "Titolo", // new
-				"type": "Tipo", // new
-				"numRatings": "Valutazioni", // new
-				"avgRating": "Valutaz. media", // new
-				"numComments": "Commenti", // new
-				"numViews": "Viste" // new
+				"sortBy": "Ordina per",
+				"modified": "Data",
+				"title": "Titolo",
+				"type": "Tipo",
+				"numRatings": "Valutazioni",
+				"avgRating": "Valutaz. media",
+				"numComments": "Commenti",
+				"numViews": "Viste"
 			},
 			"comments":{
-				"commentsHeader": "Commenti", // new
-				"posted": "Inserito", // new
-				"by": "di", // new
-				"deleteComment": "elimina", // new
-				"editComment": "modifica", // new
-				"noComments": "Nessun commento", // new
-				"addCommentButton": "Aggiungi commento", // new
-				"signIn": "Accedi", // new
-				"register": "Registra", // new
-				"or": "oppure", // new
-				"toPost": "per inserire un commento." // new
+				"commentsHeader": "Commenti",
+				"posted": "Inserito",
+				"by": "di",
+				"deleteComment": "elimina",
+				"editComment": "modifica",
+				"noComments": "Nessun commento",
+				"addCommentButton": "Aggiungi commento",
+				"signIn": "Accedi",
+				"register": "Registra",
+				"or": "oppure",
+				"toPost": "per inserire un commento."
 			},
 			"buttons":{
-				"cancel": "Annulla", // new
-				"submit": "Invia" // new
+				"cancel": "Annulla",
+				"submit": "Invia"
 			},
 			"rating":{
-				"signIn": "Accedi", // new
-				"toRate": "per fornire una valutazione." // new
+				"signIn": "Accedi",
+				"toRate": "per fornire una valutazione."
 			},
 			"itemInfo":{
-				"createdLabel": "creato", // new
-				"ratingsLabel": "valutazione", // new
-				"ratingsLabelPlural": "valutazioni", // new
-				"viewsLabel": "vista", // new
-				"viewsLabelPlural": "viste", // new
-				"commentsLabel": "commento", // new
-				"commentsLabelPlural": "commenti", // new
-				"modifiedLabel": "Data ultima modifica", // new
-				"by": "di", // new
-				"separator": "," // new
+				"createdLabel": "creato",
+				"ratingsLabel": "valutazione",
+				"ratingsLabelPlural": "valutazioni",
+				"viewsLabel": "vista",
+				"viewsLabelPlural": "viste",
+				"commentsLabel": "commento",
+				"commentsLabelPlural": "commenti",
+				"modifiedLabel": "Data ultima modifica",
+				"by": "di",
+				"separator": ","
 			},
             "mapPage": {
                 "findLocation": "Trova posizione",
@@ -92,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Proprietario:",
                 "switchBasemap": "Cambia mappa di base",
-				"getMobileApp": "Ottieni applicazione", // new
-				"constraintsHeading":"Use Constraints", // new
-				"createdLabel":"Created", // new
-				"noDescription":"No description.", // new
-				"detailsLabel":"Details" // new
+				"getMobileApp": "Ottieni applicazione",
+				"constraintsHeading":"é_Use Constraints_È",
+				"createdLabel":"é_Created_È",
+				"noDescription":"é_No description._È",
+				"detailsLabel":"é_Details_È"
             },
             "pagination": {
                 "previous": "Indietro",

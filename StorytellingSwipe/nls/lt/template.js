@@ -1,5 +1,5 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
 				step1: "ĮKELIAMA APLIKACIJA",
@@ -24,7 +24,7 @@
 				notAuthorized: "Neturite teisių pasiekti šią aplikaciją",
 				conflictingProjectionsTitle: "Nesuderinamos projekcijos",
 				conflictingProjections: "Keitiklis nepalaiko dviejų internetinių žemėlapių su skirtingomis projekcijomis. Atidarykite nustatymus ir naudokite internetinį žemėlapį, naudojantį tą pačią projekciją kaip ir pirmasis internetinis žemėlapis.",
-				cpButton: "Uždaryti"
+				cpButton: "Į_Close_š"
 			},
 			mobileView: {
 				hideIntro: "SLĖPTI ĮŽANGĄ",
@@ -65,7 +65,7 @@
 				signInTwo: "aplikacijai įrašyti."
 			},
 			header:{
-				editMe: "Redaguok !",
+				editMe: "Į_Click to edit description_š",
 				templateTitle: "Nustatyti šablono antraštę",
 				templateSubtitle: "Nustatyti šablono poantraštę"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Įjungti legendą",
 				settingsDescriptionEnable: "Įjungti aprašą",
 				settingsBookmarksEnable: "Įjungti keitiklių serijas",
-				settingsPopupDisable: "Į_Enable popup_š",
+				settingsPopupDisable: "Įgalinti informacinį langą",
+				settingsLocatorEnable: "Į_Enable locator_š",
 				settingsLegendHelpContent: "Legendos nustatymui naudokite ArcGIS.com internetinio žemėlapio peržiūros aplikacijos turinį (Paslėpti legendoje)",
-				settingsSeriesHelpContent: "Į_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._š",
+				settingsSeriesHelpContent: "Aktyvuojant pirmą kartą, jūsų internetinio(-ių) žemėlapio(-ių) žymės bus panaudotos preliminariai užpildant serijų juostą. Jei vėliau išjungsite šį pasirinkimą, jūsų serijų konfigūracija nebus pamestair bus galima jei nuspręsite vėl įgalinti serijas.",
 				preview: "Vartotojo sąsajos peržiūra"
 			},
 			settingsSwipePopup: {
@@ -177,16 +178,16 @@
 			},
 			initPopup: {
 				initHeader: "Sveiki atvykę į Keitiklio kūrėją",
-				modalNext: "Toliau",
+				modalNext: "Į_Next_š",
 				modalApply: "Atidaryti aplikaciją"
 			},
 			seriesPanel: {
-				title: "Pavadinimas",
+				title: "Į_Title_š",
 				descr: "Aprašas",
 				discard: "Pašalinti žymę",
 				saveExtent: "Nustatyti žymės aprėptį",
-				discardDisabled: "Į_You can't remove that bookmark. Swipe series can be disabled in the Settings._š"
+				discardDisabled: "Negalite pašalinti šios žymės. Keitiklio serijos gali būti išjungos nustatymuose."
 			}
 		}
-    })
+})
 );

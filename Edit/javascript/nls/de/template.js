@@ -8,6 +8,6 @@
         no_editable_layers_message: "Webkarte enthält keine editierbaren Layer."
       }
     }
-  })
+  }),
 
 );

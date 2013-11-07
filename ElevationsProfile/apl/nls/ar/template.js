@@ -1,5 +1,5 @@
 ﻿define(
-  ({
+({
   display: {
     elevationProfileTitle: "ارتفاع الملف التعريفي",
     showMe: "عرض",
@@ -45,4 +45,3 @@
   }
 })
 );
-

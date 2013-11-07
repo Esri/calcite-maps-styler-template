@@ -1,5 +1,5 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
 				step1: "IELĀDĒ APLIKĀCIJU",
@@ -11,7 +11,7 @@
 			},
 			errors: {
 				boxTitle: "Kļūda",
-				portalSelf: "Fatāla kļūda: Neizdevās iegūt portāla konfigurāciju",
+				portalSelf: "ķ_Fatal error: Failed to get portal configuration_ū",
 				invalidConfig: "Fatāla kļūda: konfigurācijas neveiksme",
 				invalidConfigNoWebmap: "Fatāla kļūda: nederīga konfigurācija (nav norādīta web karte)",
 				createMap: "Nevar izveidot karti",
@@ -35,7 +35,7 @@
 			desktopView: {
 				storymapsText: "Stāstu karte",
 				builderButton: "Pārslēgties uz veidotāja režīmu",
-				bitlyTooltip: "Iegūt īsceļu uz aplikāciju"
+				bitlyTooltip: "ķ_Get a short link to the application_ū"
 			}
 		},
 		builder: {
@@ -65,7 +65,7 @@
 				signInTwo: "lai saglabātu aplikāciju."
 			},
 			header:{
-				editMe: "Rediģē mani !",
+				editMe: "ķ_Click to edit description_ū",
 				templateTitle: "Iestatīt šablona virsrakstu",
 				templateSubtitle: "Iestatīt šablona apakšvirsrakstu"
 			},
@@ -90,7 +90,7 @@
 				settingsLogoSocialExplain: "Pielāgot galvenes labās augšējās saites.",
 				settingsLogoSocialText: "Teksts",
 				settingsLogoSocialLink: "Saite",
-				settingsLogoSocialDisabled: "Administrators ir atspējojis elementu."
+				settingsLogoSocialDisabled: "ķ_This feature has been disabled by the Administrator_ū"
 			},
 			settingsExtent: {
 				settingsTabExtent: "Pārklājums",
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Iespējot leģendu",
 				settingsDescriptionEnable: "Iespējot aprakstu",
 				settingsBookmarksEnable: "Iespējot sēriju Pārvilkt",
-				settingsPopupDisable: "ķ_Enable popup_ū",
+				settingsPopupDisable: "Iespējot uznirstošo logu",
+				settingsLocatorEnable: "ķ_Enable locator_ū",
 				settingsLegendHelpContent: "Lai attīrītu leģendas saturu izmantojiet ArcGIS.com web kartes skatītāja satura tabulu (Paslēpt leģendā)",
-				settingsSeriesHelpContent: "ķ_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ū",
+				settingsSeriesHelpContent: "Pirmajā aktivizācijas reizē, web karšu grāmatzīmes tiks izmantotas, lai ierpiekš aizpildītu sēriju joslas. Ja jūs atiespējosiet sērijas izvēlnii vēlāk, jūsu sērijas konfigurācija netiks atmesta un būs pieejama, ja iespējosiet sēriju atkal.",
 				preview: "Saskarnes priekšskatījums"
 			},
 			settingsSwipePopup: {
@@ -185,8 +186,8 @@
 				descr: "Apraksts",
 				discard: "Atmest grāmatzīmi",
 				saveExtent: "Iesatīt grāmatzīmes pārklājumu",
-				discardDisabled: "ķ_You can't remove that bookmark. Swipe series can be disabled in the Settings._ū"
+				discardDisabled: "Jūs nevarat noņemt grāmatzīmi. Pārvilktās sērijas var tikt atiespējotas iestatījumu sadaļā."
 			}
 		}
-    })
+})
 );

@@ -1,5 +1,5 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
 				step1: "ANWENDUNG WIRD GELADEN",
@@ -14,7 +14,7 @@
 				portalSelf: "Schwerwiegender Fehler: Die Portalkonfiguration konnte nicht abgerufen werden",
 				invalidConfig: "Schwerwiegender Fehler: Ungültige Konfiguration",
 				invalidConfigNoWebmap: "Schwerwiegender Fehler: Ungültige Konfiguration (keine Webkarte angegeben)",
-				createMap: "Karte konnte nicht erstellt werden",
+				createMap: "ä_Unable to create map_Ü",
 				invalidApp: "Schwerwiegender Fahler: Die Anwendung kann nicht geladen werden",
 				initMobile: "Willkommen bei der Webanwendung \"Ausblenden\". Die Anwendung ist nicht konfiguriert. Der interaktive Generator wird auf mobilen Geräten nicht unterstützt.",
 				noBuilderIE8: "Der interaktive Generator \"Ausblenden\" wird in Internet Explorer vor Version 9 nicht unterstützt.",
@@ -65,7 +65,7 @@
 				signInTwo: "um die Anwendung zu speichern."
 			},
 			header:{
-				editMe: "Bearbeiten!",
+				editMe: "ä_Click to edit description_Ü",
 				templateTitle: "Vorlagentitel festlegen",
 				templateSubtitle: "Untertitel der Vorlage festlegen"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Legende aktivieren",
 				settingsDescriptionEnable: "Beschreibung aktivieren",
 				settingsBookmarksEnable: "Ausblendereihe aktivieren",
-				settingsPopupDisable: "ä_Enable popup_Ü",
+				settingsPopupDisable: "Pop-up aktivieren",
+				settingsLocatorEnable: "ä_Enable locator_Ü",
 				settingsLegendHelpContent: "Verwenden Sie das Inhaltsverzeichnis des ArcGIS.com-Webkarten-Viewers, um den Legendeninhalt zu optimieren (In Legende ausblenden)",
-				settingsSeriesHelpContent: "ä_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._Ü",
+				settingsSeriesHelpContent: "Bei der ersten Aktivierung werden Ihre Webkarten-Lesezeichen verwendet, um die Leiste der Reihe vorab auszufüllen. Wenn Sie die Reihen-Option später deaktivieren, geht die Konfiguration der Reihe nicht verloren, sondern steht bei einer eventuellen späteren Aktivierung der Serie wieder zur Verfügung.",
 				preview: "Benutzeroberflächen-Vorschau"
 			},
 			settingsSwipePopup: {
@@ -185,8 +186,8 @@
 				descr: "Beschreibung",
 				discard: "Lesezeichen verwerfen",
 				saveExtent: "Lesezeichenausdehnung festlegen",
-				discardDisabled: "ä_You can't remove that bookmark. Swipe series can be disabled in the Settings._Ü"
+				discardDisabled: "Sie können dieses Lesezeichen nicht entfernen. Das Ausblenden von Reihen lässt sich in den Einstellungen deaktivieren."
 			}
 		}
-    })
+})
 );

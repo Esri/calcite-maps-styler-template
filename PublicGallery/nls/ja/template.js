@@ -3,7 +3,8 @@
         "viewer": {
             "main": {
                 "scaleBarUnits": "metric",
-                "clearSearch": "消去"
+                "clearSearch": "消去",
+                "datePattern": "須_MMM d, yyyy_鷗" // added 2.5.2013
             },
             "errors": {
                 "createMap": "マップを作成できません",
@@ -35,47 +36,47 @@
                 "loadingText": "マップを読み込んでいます..."
             },
 			"sortFields":{
-				"sortBy": "並べ替え", // new
-				"modified": "日付", // new
-				"title": "タイトル", // new
-				"type": "タイプ", // new
-				"numRatings": "評価", // new
-				"avgRating": "評価の平均", // new
-				"numComments": "コメント", // new
-				"numViews": "ビュー" // new
+				"sortBy": "並べ替え",
+				"modified": "日付",
+				"title": "タイトル",
+				"type": "タイプ",
+				"numRatings": "評価",
+				"avgRating": "評価の平均",
+				"numComments": "コメント",
+				"numViews": "ビュー"
 			},
 			"comments":{
-				"commentsHeader": "コメント", // new
-				"posted": "ポストされた", // new
-				"by": "作成者", // new
-				"deleteComment": "削除", // new
-				"editComment": "編集", // new
-				"noComments": "コメントなし", // new
-				"addCommentButton": "コメントの追加", // new
-				"signIn": "サイン イン", // new
-				"register": "登録", // new
-				"or": "または", // new
-				"toPost": "コメントをポストします。" // new
+				"commentsHeader": "コメント",
+				"posted": "ポストされた",
+				"by": "作成者",
+				"deleteComment": "削除",
+				"editComment": "編集",
+				"noComments": "コメントなし",
+				"addCommentButton": "コメントの追加",
+				"signIn": "サイン イン",
+				"register": "登録",
+				"or": "または",
+				"toPost": "コメントをポストします。"
 			},
 			"buttons":{
-				"cancel": "キャンセル", // new
-				"submit": "送信" // new
+				"cancel": "キャンセル",
+				"submit": "送信"
 			},
 			"rating":{
-				"signIn": "サイン イン", // new
-				"toRate": "評価します。" // new
+				"signIn": "サイン イン",
+				"toRate": "評価します。"
 			},
 			"itemInfo":{
-				"createdLabel": "作成された", // new
-				"ratingsLabel": "評価", // new
-				"ratingsLabelPlural": "評価", // new
-				"viewsLabel": "ビュー", // new
-				"viewsLabelPlural": "ビュー", // new
-				"commentsLabel": "コメント", // new
-				"commentsLabelPlural": "コメント", // new
-				"modifiedLabel": "最終更新日", // new
-				"by": "作成者", // new
-				"separator": "," // new
+				"createdLabel": "作成された",
+				"ratingsLabel": "評価",
+				"ratingsLabelPlural": "評価",
+				"viewsLabel": "ビュー",
+				"viewsLabelPlural": "ビュー",
+				"commentsLabel": "コメント",
+				"commentsLabelPlural": "コメント",
+				"modifiedLabel": "最終更新日",
+				"by": "作成者",
+				"separator": ","
 			},
             "mapPage": {
                 "findLocation": "場所を検索",
@@ -92,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "所有者:",
                 "switchBasemap": "ベースマップの切り替え",
-				"getMobileApp": "アプリケーションの取得", // new
-				"constraintsHeading":"Use Constraints", // new
-				"createdLabel":"Created", // new
-				"noDescription":"No description.", // new
-				"detailsLabel":"Details" // new
+				"getMobileApp": "アプリケーションの取得",
+				"constraintsHeading":"須_Use Constraints_鷗",
+				"createdLabel":"須_Created_鷗",
+				"noDescription":"須_No description._鷗",
+				"detailsLabel":"須_Details_鷗"
             },
             "pagination": {
                 "previous": "前へ",

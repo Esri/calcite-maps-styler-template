@@ -1,5 +1,5 @@
-define(
-	({
+﻿define(
+({
 		viewer: {
 			loading: {
 				step1: "LOADING APPLICATION",
@@ -65,7 +65,7 @@ define(
 				signInTwo: "to save the application."
 			},
 			header:{
-				editMe: "Edit me !",
+				editMe: "Click to edit description",
 				templateTitle: "Set template title",
 				templateSubtitle: "Set template subtitle"
 			},
@@ -96,7 +96,7 @@ define(
 				settingsTabExtent: "Extent",
 				settingsExtentExplain: "Set the initial extent through the interactive map below.",
 				settingsExtentExplainBottom: "The extent you define will modify your web map initial extent. Note that if you are doing a swipe series that extent won't be used.",
-				settingsExtentDateLineError: "The extent cannot be across the meridian of 180� longitude",
+				settingsExtentDateLineError: "The extent cannot be across the meridian of 180° longitude",
 				settingsExtentDateLineError2: "Error computing the extent",
 				settingsExtentDrawBtn: "Draw a new extent",
 				settingsExtentModifyBtn: "Edit the current extent",
@@ -161,6 +161,7 @@ define(
 				settingsDescriptionEnable: "Enable Description",
 				settingsBookmarksEnable: "Enable Swipe series",
 				settingsPopupDisable: "Enable popup",
+				settingsLocatorEnable: "Enable locator",
 				settingsLegendHelpContent: "To refine the legend content, use ArcGIS.com web map viewer table of contents (Hide in Legend)",
 				settingsSeriesHelpContent: "On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again.",
 				preview: "UI preview"
@@ -188,5 +189,5 @@ define(
 				discardDisabled: "You can't remove that bookmark. Swipe series can be disabled in the Settings."
 			}
 		}
-    })
+})
 );

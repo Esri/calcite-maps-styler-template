@@ -8,6 +8,6 @@
         no_editable_layers_message: "Mapa internetowa nie zawiera warstw edytowalnych."
       }
     }
-  })
+  }),
 
 );

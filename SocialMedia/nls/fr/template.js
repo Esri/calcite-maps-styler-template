@@ -1,7 +1,7 @@
 ﻿define(
 ({
         "viewer": {
-        	"main": {
+            "main": {
                 "scaleBarUnits": "metric",
                 "timePattern": "h:mma", // added 2.5.2013
                 "datePattern": "MMM d, yyyy" // added 2.5.2013
@@ -14,7 +14,7 @@
                 "hashTagTwitter": "Hashtag utilisé pour Twitter", // added 8.26.2013
                 "hashTagYoutube": "Hashtag utilisé pour YouTube" // added 8.26.2013
             },
-			"errors": {
+            "errors": {
                 "createMap": "Impossible de créer la carte",
                 "general": "Erreur",
                 "bingError": "Le déploiement de cette application nécessite votre propre clé Bing Maps.",
@@ -33,93 +33,93 @@
                 "tinyURLError": "Impossible de générer l\'URL réduite", // added 8.26.2013
                 "invalidSearch": "Recherche non valide" // added 8.26.2013
             },
-			"legend": {
-				"menuTitle": "Légende"
-			},
-            "search": {
-            	"location": "Emplacement",
-            	"clearLocation": "Effacer l\'emplacement",
-            	"placeholder": "Rechercher un site"
+            "legend": {
+                "menuTitle": "Légende"
             },
-			"layers": {
+            "search": {
+                "location": "Emplacement",
+                "clearLocation": "Effacer l\'emplacement",
+                "placeholder": "Rechercher un site"
+            },
+            "layers": {
                 "menuTitle": "Couches"
             },
             "locator": {
                 "menuTitle": "Adresse de recherche" // added 8.26.2013
-			},
+            },
             "layer": {
-            	"information": "Informations",
-            	"transparency": "Transparence",
-            	"searchSettings": "Paramètres de recherche",
-            	"filteredBy": "filtrés par :"
+                "information": "Informations",
+                "transparency": "Transparence",
+                "searchSettings": "Paramètres de recherche",
+                "filteredBy": "filtrés par :"
             },
             "general": {
-            	"at": "sur",
-				"of": "de",
-            	"homeExtent": "Charger l\'affichage d\'accueil",
-				"ok": "OK",
-				"close": "Fermer"
+                "at": "sur",
+                "of": "de",
+                "homeExtent": "Charger l\'affichage d\'accueil",
+                "ok": "OK",
+                "close": "Fermer"
             },
-			"basemap": {
-				"menuTitle": "Sélectionner un fond de carte"
-			},
+            "basemap": {
+                "menuTitle": "Sélectionner un fond de carte"
+            },
             "settings": {
-            	"title": "Paramètres",
-            	"searchAll": "Rechercher tout",
-            	"usingThisKeyword": "Avec des mots-clés",
-            	"search": "Rechercher",
-            	"fromThePast": "Du/de la",
-            	"today": "Jour précédent",
-            	"this_week": "Semaine précédente",
-            	"this_month": "Mois précédent",
-            	"all_time": "Tout le temps",
-            	"atLocation": "A cet emplacement",
-            	"centerOfMap": "Centre de la carte",
-            	"centerOfMapTitle": "Utiliser le centre de la carte",
-            	"withinThisDistance": "A cette distance",
-            	"latitude": "Lat :",
-            	"longitude": "Long :",
-            	"locationText": "cliquez sur la carte pour définir l\'origine",
+                "title": "Paramètres",
+                "searchAll": "Rechercher tout",
+                "usingThisKeyword": "Avec des mots-clés",
+                "search": "Rechercher",
+                "fromThePast": "Du/de la",
+                "today": "Jour précédent",
+                "this_week": "Semaine précédente",
+                "this_month": "Mois précédent",
+                "all_time": "Tout le temps",
+                "atLocation": "A cet emplacement",
+                "centerOfMap": "Centre de la carte",
+                "centerOfMapTitle": "Utiliser le centre de la carte",
+                "withinThisDistance": "A cette distance",
+                "latitude": "Lat :",
+                "longitude": "Long :",
+                "locationText": "cliquez sur la carte pour définir l\'origine",
                 "twSearch": "Mode d\'utilisation de la recherche Twitter avancée",
                 "screenName": "Nom d\'écran", // added 8.26.2013
                 "signIn": "Se connecter", // added 8.26.2013
                 "switchAccount": "Changer de compte" // added 8.26.2013
             },
-			"autoComplete": {
-				"menuTitle": "Résultats&hellip;"
-			},
+            "autoComplete": {
+                "menuTitle": "Résultats&hellip;"
+            },
             "places": {
-				"menuTitle": "Sites avec géosignet",
-            	"places": "Géosignets",
-            	"placesTitle": "Ajouter un géosignet aux sites",
-            	"myLocation": "Mon emplacement actuel",
-            	"myLocationTitle": "Centrer la carte sur mon emplacement"
+                "menuTitle": "Sites avec géosignet",
+                "places": "Géosignets",
+                "placesTitle": "Ajouter un géosignet aux sites",
+                "myLocation": "Mon emplacement actuel",
+                "myLocationTitle": "Centrer la carte sur mon emplacement"
             },
             "distanceSlider": {
-            	"local": "Local",
-            	"regional": "Régional",
-            	"national": "National"
+                "local": "Local",
+                "regional": "Régional",
+                "national": "National"
             },
             "about": {
-            	"title": "A propos",
-            	"access": "Contraintes d\’accès et d\’utilisation"
+                "title": "A propos",
+                "access": "Contraintes d\’accès et d\’utilisation"
             },
             "buttons": {
-            	"legend": "Légende",
-            	"legendTitle": "Afficher la légende",
-            	"basemap": "Fond de carte",
-            	"basemapTitle": "Changer de fond de carte",
-            	"layers": "Couches",
-            	"layersTitle": "Explorer les couches",
-            	"social": "Social",
-            	"socialTitle": "Réseau social",
-            	"link": "Lien",
-            	"linkTitle": "Partager cette application Web",
-            	"about": "A propos",
-            	"aboutTitle": "A propos de cette carte",
-            	"displayAs": "Afficher comme",
-            	"point": "Points",
-            	"cluster": "Agrégats",
+                "legend": "Légende",
+                "legendTitle": "Afficher la légende",
+                "basemap": "Fond de carte",
+                "basemapTitle": "Changer de fond de carte",
+                "layers": "Couches",
+                "layersTitle": "Explorer les couches",
+                "social": "Social",
+                "socialTitle": "Réseau social",
+                "link": "Lien",
+                "linkTitle": "Partager cette application Web",
+                "about": "A propos",
+                "aboutTitle": "A propos de cette carte",
+                "displayAs": "Afficher comme",
+                "point": "Points",
+                "cluster": "Agrégats",
                 "heatmap": "Densité", // added 8.26.2013
                 "map": "Carte", // added 8.26.2013
                 "share": "Partager", // added 8.26.2013
@@ -137,66 +137,66 @@
                 "refreshContext": "Cliquez pour charger de nouveaux flux." // added 8.26.2013
             },
             "shareMenu": {
-				"menuTitle": "Partager la vue actuelle",
-				"shareHeader": "Partager un lien vers votre application Web",
-            	"facebook": "Facebook",
-            	"facebookHeader": "Partager sur Facebook",
-            	"twitter": "Twitter",
-            	"twitterHeader": "Partager sur Twitter",
-            	"instructionHeader": "Copiez/collez le code HTML dans votre page Web",
-            	"preview": "Aperçu et personnalisation"
+                "menuTitle": "Partager la vue actuelle",
+                "shareHeader": "Partager un lien vers votre application Web",
+                "facebook": "Facebook",
+                "facebookHeader": "Partager sur Facebook",
+                "twitter": "Twitter",
+                "twitterHeader": "Partager sur Twitter",
+                "instructionHeader": "Copiez/collez le code HTML dans votre page Web",
+                "preview": "Aperçu et personnalisation"
             },
             "itemInfo": {
-				"createdLabel": "créé(e)",
-				"ratingsLabel": "évaluation",
-				"ratingsLabelPlural": "évaluations",
-				"viewsLabel": "vue",
-				"viewsLabelPlural": "vues",
-				"commentsLabel": "commentaire",
-				"commentsLabelPlural": "commentaires",
-				"modifiedLabel": "Dernière modification",
-				"by": "par",
-				"separator": ","
-			},
-			"social": {
+                "createdLabel": "créé(e)",
+                "ratingsLabel": "évaluation",
+                "ratingsLabelPlural": "évaluations",
+                "viewsLabel": "vue",
+                "viewsLabelPlural": "vues",
+                "commentsLabel": "commentaire",
+                "commentsLabelPlural": "commentaires",
+                "modifiedLabel": "Dernière modification",
+                "by": "par",
+                "separator": "æ_,_Â"
+            },
+            "social": {
                 "menuTitle": "Couches de réseaux sociaux",
                 "screenName": "Nom d\'écran",
                 "signIn": "Se connecter",
                 "switchAccount": "Changer de compte"
-			},
-			"preview": {
-				"minWidth": "La largeur minimale est",
-				"minHeight": "La hauteur minimale est",
-				"maxWidth": "La largeur maximale est",
-				"maxHeight": "La hauteur maximale est",
-				"customize": "Personnaliser",
-				"small": "Petit",
-				"medium": "Moyen",
-				"large": "Grand",
-				"custom": "Personnalisé",
-				"embed": "Incorporer",
-				"instruction": "Copiez et collez le code HTML suivant pour incorporer la carte dans votre site Web."
-			},
-			"flickr": {
-				"title": "Flickr",
-				"description": "Photos de Flickr"
-			},
-			"twitter": {
-				"title": "Twitter",
-				"description": "Tweets de Twitter"
-			},
-			"youtube": {
-				"title": "YouTube",
-				"description": "Vidéos de YouTube"
-			},
-			"panoramio":{
-				"title": "Panoramio",
-				"description": "Photos de Panoramio"
-			},
-			"ushahidi":{
-				"title": "Ushahidi",
-				"description": "Rapports d\'incidents d\'Ushahidi"
-			}
+            },
+            "preview": {
+                "minWidth": "La largeur minimale est",
+                "minHeight": "La hauteur minimale est",
+                "maxWidth": "La largeur maximale est",
+                "maxHeight": "La hauteur maximale est",
+                "customize": "Personnaliser",
+                "small": "Petit",
+                "medium": "Moyen",
+                "large": "Grand",
+                "custom": "Personnalisé",
+                "embed": "Incorporer",
+                "instruction": "Copiez et collez le code HTML suivant pour incorporer la carte dans votre site Web."
+            },
+            "flickr": {
+                "title": "Flickr",
+                "description": "Photos de Flickr"
+            },
+            "twitter": {
+                "title": "Twitter",
+                "description": "Tweets de Twitter"
+            },
+            "youtube": {
+                "title": "YouTube",
+                "description": "Vidéos de YouTube"
+            },
+            "panoramio": {
+                "title": "Panoramio",
+                "description": "Photos de Panoramio"
+            },
+            "ushahidi": {
+                "title": "Ushahidi",
+                "description": "Rapports d\'incidents d\'Ushahidi"
+            }
         }
     })
 );

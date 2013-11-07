@@ -8,6 +8,6 @@
         no_editable_layers_message: "O mapa da web não contém nenhuma camada editável."
       }
     }
-  })
+  }),
 
 );

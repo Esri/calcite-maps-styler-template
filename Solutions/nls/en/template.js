@@ -1,4 +1,5 @@
-﻿/*
+﻿/*global define */
+/*
  | ArcGIS Solutions
  | Version 10.2
  | Copyright 2012 Esri
@@ -18,39 +19,39 @@
 define(
 ({
         tooltips: {
-            search: "Search",
-            locate: "Current location",
-            markup: "Submit correction",
-            collect: "Add content to map",
-            filter: "Filter map layers",
-            basemap: "Switch basemap",
-            share: "Share",
-            shareViaEmail: "Share via email",
-            shareViaFacebook: "Share via Facebook",
-            shareViaTwitter: "Share via Twitter",
-            print: "Print map",
-            fetchPrint: "View printed map",
-            landscape: "Landscape page orientation",
-            portrait: "Portrait page orientation",
-            help: "Help"
+            search: "Search",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            locate: "Current location",  // Command button to zoom and pan to the current geographical position reported by the browser
+            markup: "Submit correction",  // Command button to submit a correction to the app's host
+            collect: "Add content to map",  // Command button to open a template picker to add features to the map
+            filter: "Filter map layers",  // Explains purpose of type-in box affiliated with template picker
+            basemap: "Switch basemap",  // Command button to open a dialog box for switching basemaps
+            share: "Share",  // Command button to open a dropdown menu for picking a type of sharing
+            shareViaEmail: "Share via email",  // Command button to share the current map extents via email
+            shareViaFacebook: "Share via Facebook",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
+            shareViaTwitter: "Share via Twitter",  // Command button to share the current map extents via a Twitter tweet: a URL is opened that permits the user to log into Twitter with a tweet that is ready to go
+            print: "Print map",  // Command button to open a dialog box for specifying print orientation, title, and author before printing; also used inside print dialog box
+            fetchPrint: "View printed map",  // Command button to open a PDF containing a map that was just printed by the print map command
+            landscape: "Landscape page orientation",  // Command button in the print map dialog box to select the landscape page orientation
+            portrait: "Portrait page orientation",  // Command button in the print map dialog box to select the portrait page orientation
+            help: "Help"  // Command button to open a dialog box with a short description of the app
         },
         labels: {
-            email: "email",
-            Facebook: "Facebook",
-            Twitter: "Twitter"
+            email: "email",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
+            Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
+            Twitter: "Twitter"  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
         },
         prompts: {
-            search: "Search:",
-            markup: "Draw",
-            mapLayers: "Map layers:",
-            layerFields: "Search layer fields:"
+            search: "Search:",  // Appears before a search text field in dialog box for searching for a feature
+            markup: "Draw",  // Appears before a set of tools for drawing on the map
+            mapLayers: "Map layers:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
+            layerFields: "Search layer fields:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
         },
         messages: {
-            geolocationDenied: "This site does not have permission to get the current location",
-            geolocationUnavailable: "The browser was not able to get the current location",
-            geolocationTimeout: "The browser was not able to get the current location in a timely fashion",
-            searchLayerMissing: "This search layer was not found in the map",
-            searchFieldMissing: "This field was not found in the map search layer"
+            geolocationDenied: "This site does not have permission to get the current location",  // Shown when the browser does not permit the app to get the current geographical position
+            geolocationUnavailable: "The browser was not able to get the current location",  // Shown when the browser returns an error instead of the current geographical position
+            geolocationTimeout: "The browser was not able to get the current location in a timely fashion",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            searchLayerMissing: "This search layer was not found in the map",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
+            searchFieldMissing: "This field was not found in the map search layer"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
         }
     })
 );

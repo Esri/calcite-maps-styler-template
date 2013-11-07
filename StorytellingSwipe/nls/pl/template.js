@@ -1,5 +1,5 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
 				step1: "WCZYTYWANIE APLIKACJI",
@@ -65,7 +65,7 @@
 				signInTwo: "aby zapisać aplikację."
 			},
 			header:{
-				editMe: "Zmodyfikuj mnie!",
+				editMe: "ł_Click to edit description_ą",
 				templateTitle: "Ustaw tytuł szablonu",
 				templateSubtitle: "Ustaw podtytuł szablonu"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Włącz legendę",
 				settingsDescriptionEnable: "Włącz opis",
 				settingsBookmarksEnable: "Włącz serię odsłaniania",
-				settingsPopupDisable: "ł_Enable popup_ą",
+				settingsPopupDisable: "Włącz okno podręczne",
+				settingsLocatorEnable: "ł_Enable locator_ą",
 				settingsLegendHelpContent: "Aby ulepszyć zawartość legendy, skorzystaj z tabeli zawartości przeglądarki map ArcGIS.com (Ukryj w legendzie)",
-				settingsSeriesHelpContent: "ł_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ą",
+				settingsSeriesHelpContent: "Podczas pierwszej aktywacji zakładki mapy internetowej zostaną użyte do wstępnego wypełnienia paska serii. Jeżeli wyłączysz później opcję serii, konfiguracja serii nie zostanie odrzucona i pozostanie dostępna, gdy zdecydujesz się ją włączyć ponownie.",
 				preview: "Podgląd interfejsu użytkownika"
 			},
 			settingsSwipePopup: {
@@ -185,8 +186,8 @@
 				descr: "Opis",
 				discard: "Odrzuć zakładkę",
 				saveExtent: "Ustaw zasięg zakładki",
-				discardDisabled: "ł_You can't remove that bookmark. Swipe series can be disabled in the Settings._ą"
+				discardDisabled: "Nie można usunąć tej zakładki. Serie odsłaniania można wyłączyć w Ustawieniach."
 			}
 		}
-    })
+})
 );

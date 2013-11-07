@@ -1,5 +1,5 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
 				step1: "CARREGANDO APLICATIVO",
@@ -40,7 +40,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "CONFIGURAÇÃO DO MAPA",
+				panelHeader: "ã_APPLICATION CONFIGURATION_Ç",
 				buttonSave: "SALVAR",
 				buttonDiscard: "CANCELAR",
 				buttonSettings: "Configurações",
@@ -65,7 +65,7 @@
 				signInTwo: "para salvar o aplicativo."
 			},
 			header:{
-				editMe: "Editar-me !",
+				editMe: "ã_Click to edit description_Ç",
 				templateTitle: "Configurar título do modelo",
 				templateSubtitle: "Configurar subtítulo do modelo"
 			},
@@ -80,7 +80,7 @@
 				settingsLabelColor: "Cores do plano de fundo do painel lateral e cabeçalho"
 			},
 			settingsHeader: {
-				settingsTabLogo: "Cabeçalho",
+				settingsTabLogo: "ã_Header_Ç",
 				settingsLogoExplain: "Personalize o logo do cabeçalho (máximo de 250 x 50px).",
 				settingsLogoEsri: "Logo da Esri",
 				settingsLogoNone: "Nenhum logo",
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Habilitar Legenda",
 				settingsDescriptionEnable: "Habilitar Descrição",
 				settingsBookmarksEnable: "Habilitar série do Oscilar",
-				settingsPopupDisable: "ã_Enable popup_Ç",
+				settingsPopupDisable: "Habilitar pop-up",
+				settingsLocatorEnable: "ã_Enable locator_Ç",
 				settingsLegendHelpContent: "Para refinar o conteúdo da legenda, utilize a área de controle do visualizador de mapa da web do ArcGIS.com (Oculto na Legenda)",
-				settingsSeriesHelpContent: "ã_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._Ç",
+				settingsSeriesHelpContent: "Na primeira ativação, seus marcadores de mapas da web serão utilizados para preencher a barra de série. Se você desabilitar a opção de série posteriormente, a sua configuração de série não será descartada e estará disponível se você decidir habilitar a série novamente.",
 				preview: "Visualizar ID"
 			},
 			settingsSwipePopup: {
@@ -185,8 +186,8 @@
 				descr: "Descrição",
 				discard: "Descartar Marcador",
 				saveExtent: "Configurar Extensão do Marcador",
-				discardDisabled: "ã_You can't remove that bookmark. Swipe series can be disabled in the Settings._Ç"
+				discardDisabled: "Você não pode remover este marcador. A troca de série pode ser desabilitada nas Configurações."
 			}
 		}
-    })
+})
 );
