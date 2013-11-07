@@ -1,5 +1,5 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
 				step1: "응용프로그램을 로드하는 중",
@@ -65,7 +65,7 @@
 				signInTwo: "로그인 계정으로 로그인하세요."
 			},
 			header:{
-				editMe: "편집!",
+				editMe: "한_Click to edit description_빠",
 				templateTitle: "템플릿 제목 설정",
 				templateSubtitle: "템플릿 부제목 설정"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "범례 사용",
 				settingsDescriptionEnable: "설명 사용",
 				settingsBookmarksEnable: "스와이프 계열 사용",
-				settingsPopupDisable: "한_Enable popup_빠",
+				settingsPopupDisable: "팝업 사용",
+				settingsLocatorEnable: "한_Enable locator_빠",
 				settingsLegendHelpContent: "범례 컨텐츠를 세분화하려면 ArcGIS.com web map viewer 목차를 사용하세요(범례에서 숨겨짐).",
-				settingsSeriesHelpContent: "한_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._빠",
+				settingsSeriesHelpContent: "처음 활성화하면 웹 맵 책갈피로 계열 모음이 미리 채워집니다. 나중에 계열 옵션을 사용하지 않도록 설정하면 계열 구성이 삭제됩니다. 또한 다시 사용하도록 설정하면 계열 옵션을 사용할 수 있습니다.",
 				preview: "UI 미리보기"
 			},
 			settingsSwipePopup: {
@@ -185,8 +186,8 @@
 				descr: "설명",
 				discard: "책갈피 취소",
 				saveExtent: "책갈피 범위 설정",
-				discardDisabled: "한_You can't remove that bookmark. Swipe series can be disabled in the Settings._빠"
+				discardDisabled: "책갈피를 제거할 수 없습니다. 스와이프 계열이 설정에서 사용하지 않도록 설정되어 있을 수 있습니다."
 			}
 		}
-    })
+})
 );

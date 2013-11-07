@@ -3,7 +3,8 @@
         "viewer": {
             "main": {
                 "scaleBarUnits": "metric",
-                "clearSearch": "Vyprázdnit"
+                "clearSearch": "Vyprázdnit",
+                "datePattern": "Ř_MMM d, yyyy_ů" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Nelze vytvořit mapu",
@@ -35,47 +36,47 @@
                 "loadingText": "Načítám mapy&hellip;"
             },
 			"sortFields":{
-				"sortBy": "Třídit podle", // new
-				"modified": "Datum", // new
-				"title": "Název", // new
-				"type": "Typ", // new
-				"numRatings": "Hodnocení", // new
-				"avgRating": "Prům. hodnocení", // new
-				"numComments": "Poznámky", // new
-				"numViews": "Zobrazení" // new
+				"sortBy": "Třídit podle",
+				"modified": "Datum",
+				"title": "Název",
+				"type": "Typ",
+				"numRatings": "Hodnocení",
+				"avgRating": "Prům. hodnocení",
+				"numComments": "Poznámky",
+				"numViews": "Zobrazení"
 			},
 			"comments":{
-				"commentsHeader": "Poznámky", // new
-				"posted": "Vystaveno", // new
-				"by": "podle", // new
-				"deleteComment": "smazat", // new
-				"editComment": "upravit", // new
-				"noComments": "Žádné komentáře", // new
-				"addCommentButton": "Přidat komentář", // new
-				"signIn": "Přihlásit", // new
-				"register": "Registrovat", // new
-				"or": "nebo", // new
-				"toPost": "pro přidání komentáře." // new
+				"commentsHeader": "Poznámky",
+				"posted": "Vystaveno",
+				"by": "podle",
+				"deleteComment": "smazat",
+				"editComment": "upravit",
+				"noComments": "Žádné komentáře",
+				"addCommentButton": "Přidat komentář",
+				"signIn": "Přihlásit",
+				"register": "Registrovat",
+				"or": "nebo",
+				"toPost": "pro přidání komentáře."
 			},
 			"buttons":{
-				"cancel": "Storno", // new
-				"submit": "Odeslat" // new
+				"cancel": "Storno",
+				"submit": "Odeslat"
 			},
 			"rating":{
-				"signIn": "Přihlásit", // new
-				"toRate": "pro ohodnocení." // new
+				"signIn": "Přihlásit",
+				"toRate": "pro ohodnocení."
 			},
 			"itemInfo":{
-				"createdLabel": "vytvořeno", // new
-				"ratingsLabel": "hodnocení", // new
-				"ratingsLabelPlural": "hodnocení", // new
-				"viewsLabel": "zobrazení", // new
-				"viewsLabelPlural": "zobrazení", // new
-				"commentsLabel": "komentář", // new
-				"commentsLabelPlural": "komentáře", // new
-				"modifiedLabel": "Naposledy upraven", // new
-				"by": "podle", // new
-				"separator": "," // new
+				"createdLabel": "vytvořeno",
+				"ratingsLabel": "hodnocení",
+				"ratingsLabelPlural": "hodnocení",
+				"viewsLabel": "zobrazení",
+				"viewsLabelPlural": "zobrazení",
+				"commentsLabel": "komentář",
+				"commentsLabelPlural": "komentáře",
+				"modifiedLabel": "Naposledy upraven",
+				"by": "podle",
+				"separator": ","
 			},
             "mapPage": {
                 "findLocation": "Najít umístění",
@@ -92,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Vlastník:",
                 "switchBasemap": "Přepnout podkladovou mapu",
-				"getMobileApp": "Stáhnout aplikaci", // new
-				"constraintsHeading":"Use Constraints", // new
-				"createdLabel":"Created", // new
-				"noDescription":"No description.", // new
-				"detailsLabel":"Details" // new
+				"getMobileApp": "Stáhnout aplikaci",
+				"constraintsHeading":"Ř_Use Constraints_ů",
+				"createdLabel":"Ř_Created_ů",
+				"noDescription":"Ř_No description._ů",
+				"detailsLabel":"Ř_Details_ů"
             },
             "pagination": {
                 "previous": "Předchozí",

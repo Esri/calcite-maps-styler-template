@@ -3,7 +3,8 @@
         "viewer": {
             "main": {
                 "scaleBarUnits": "english",
-                "clearSearch": "Tyhjennä"
+                "clearSearch": "Tyhjennä",
+                "datePattern": "Å_MMM d, yyyy_ö" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Karttaa ei voi luoda",
@@ -35,47 +36,47 @@
                 "loadingText": "Ladataan karttoja&hellip;"
             },
 			"sortFields":{
-				"sortBy": "Lajitteluperuste", // new
-				"modified": "Päivämäärä", // new
-				"title": "Otsikko", // new
-				"type": "Tyyppi", // new
-				"numRatings": "Arvioinnit", // new
-				"avgRating": "Keskimääräinen arviointi", // new
-				"numComments": "Kommentit", // new
-				"numViews": "Näkymät" // new
+				"sortBy": "Lajitteluperuste",
+				"modified": "Päivämäärä",
+				"title": "Otsikko",
+				"type": "Tyyppi",
+				"numRatings": "Arvioinnit",
+				"avgRating": "Keskimääräinen arviointi",
+				"numComments": "Kommentit",
+				"numViews": "Näkymät"
 			},
 			"comments":{
-				"commentsHeader": "Kommentit", // new
-				"posted": "Lähetetty", // new
-				"by": "peruste", // new
-				"deleteComment": "poista", // new
-				"editComment": "muokkaa", // new
-				"noComments": "Ei kommentteja", // new
-				"addCommentButton": "Lisää kommentti", // new
-				"signIn": "Kirjaudu sisään", // new
-				"register": "Rekisteröi", // new
-				"or": "tai", // new
-				"toPost": "lähettääksesi kommentin." // new
+				"commentsHeader": "Kommentit",
+				"posted": "Lähetetty",
+				"by": "peruste",
+				"deleteComment": "poista",
+				"editComment": "muokkaa",
+				"noComments": "Ei kommentteja",
+				"addCommentButton": "Lisää kommentti",
+				"signIn": "Kirjaudu sisään",
+				"register": "Rekisteröi",
+				"or": "tai",
+				"toPost": "lähettääksesi kommentin."
 			},
 			"buttons":{
-				"cancel": "Peruuta", // new
-				"submit": "Lähetä" // new
+				"cancel": "Peruuta",
+				"submit": "Lähetä"
 			},
 			"rating":{
-				"signIn": "Kirjaudu sisään", // new
-				"toRate": "arvioimiseksi." // new
+				"signIn": "Kirjaudu sisään",
+				"toRate": "arvioimiseksi."
 			},
 			"itemInfo":{
-				"createdLabel": "luotu", // new
-				"ratingsLabel": "arviointi", // new
-				"ratingsLabelPlural": "arvioinnit", // new
-				"viewsLabel": "näytä", // new
-				"viewsLabelPlural": "Näkymät", // new
-				"commentsLabel": "kommentti", // new
-				"commentsLabelPlural": "kommentit", // new
-				"modifiedLabel": "Muokattu viimeksi", // new
-				"by": "peruste", // new
-				"separator": "," // new
+				"createdLabel": "luotu",
+				"ratingsLabel": "arviointi",
+				"ratingsLabelPlural": "arvioinnit",
+				"viewsLabel": "näytä",
+				"viewsLabelPlural": "Näkymät",
+				"commentsLabel": "kommentti",
+				"commentsLabelPlural": "kommentit",
+				"modifiedLabel": "Muokattu viimeksi",
+				"by": "peruste",
+				"separator": ","
 			},
             "mapPage": {
                 "findLocation": "Etsi sijainti",
@@ -92,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Omistaja:",
                 "switchBasemap": "Vaihda taustakartta",
-				"getMobileApp": "Hanki sovellus", // new
-				"constraintsHeading":"Use Constraints", // new
-				"createdLabel":"Created", // new
-				"noDescription":"No description.", // new
-				"detailsLabel":"Details" // new
+				"getMobileApp": "Hanki sovellus",
+				"constraintsHeading":"Å_Use Constraints_ö",
+				"createdLabel":"Å_Created_ö",
+				"noDescription":"Å_No description._ö",
+				"detailsLabel":"Å_Details_ö"
             },
             "pagination": {
                 "previous": "Edellinen",

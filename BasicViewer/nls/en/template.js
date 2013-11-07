@@ -56,7 +56,7 @@
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
       centuryPattern: "yyyy G",
-      decadePattern: "yyyy",
+      decadePattern: "yyyy", 
       yearPattern: "MMMM yyyy",
       weekPattern: "MMMM d, yyyy",
       hourTimePattern: "h a",
@@ -96,7 +96,7 @@
       title: "Find address or place",
       popupTitle: "Location",
       currentLocation: "Current location",
-      notWhatYouWanted: "Not what you wanted?",
+      notWhatYouWanted: "Not what you wanted?" ,
       selectAnother: "Select another location",
       errors:{
        missingLocation: "Location not found"

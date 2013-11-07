@@ -1,8 +1,8 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
-				step1: "LASTER INN APPLIKASJON",
+				step1: "å_LOADING APPLICATION_ø",
 				step2: "LASTER INN DATA",
 				step3: "INITIALISERER",
 				fail: "Beklager, men innlasting av sveipeverktøyet mislyktes",
@@ -65,7 +65,7 @@
 				signInTwo: "for å lagre applikasjonen."
 			},
 			header:{
-				editMe: "Rediger meg!",
+				editMe: "å_Click to edit description_ø",
 				templateTitle: "Angi tittel på malen",
 				templateSubtitle: "Angi undertittel for malen"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Aktiver tegnforklaring",
 				settingsDescriptionEnable: "Aktiver beskrivelse",
 				settingsBookmarksEnable: "Aktiver sveipeserier",
-				settingsPopupDisable: "å_Enable popup_ø",
+				settingsPopupDisable: "Aktiver sprettoppvindu",
+				settingsLocatorEnable: "å_Enable locator_ø",
 				settingsLegendHelpContent: "Hvis du vil finjustere innholdet i tegnforklaringen, bruker du innholdsfortegnelsen for kartviseren på ArcGIS.com (skjul i tegnforklaringen)",
-				settingsSeriesHelpContent: "å_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ø",
+				settingsSeriesHelpContent: "Ved første aktivering brukes webkartbokmerker til å forhåndsutfylle seriestolpen. Hvis du senere deaktiverer dette seriealternativet, fjernes ikke seriekonfigurasjonen, og den vil være tilgjengelig hvis du bestemmer deg for å aktivere serien på nytt.",
 				preview: "Forhåndsvisning av brukergrensesnitt"
 			},
 			settingsSwipePopup: {
@@ -185,8 +186,8 @@
 				descr: "Beskrivelse",
 				discard: "Fjern bokmerke",
 				saveExtent: "Angi utstrekning for bokmerke",
-				discardDisabled: "å_You can't remove that bookmark. Swipe series can be disabled in the Settings._ø"
+				discardDisabled: "Du kan ikke fjerne dette bokmerket. Du kan deaktivere sveipeserier i innstillingene."
 			}
 		}
-    })
+})
 );

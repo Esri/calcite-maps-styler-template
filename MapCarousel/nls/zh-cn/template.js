@@ -1,7 +1,7 @@
 ﻿define(
 ({
   app:{
-   title:"Map Carousel",
+   title:"试_Map Carousel_验",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
       createMap: "无法创建地图",

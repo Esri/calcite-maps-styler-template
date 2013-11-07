@@ -1,7 +1,7 @@
 ﻿define(
 ({
         "viewer": {
-        	"main": {
+            "main": {
                 "scaleBarUnits": "english",
                 "timePattern": "h:mma", // added 2.5.2013
                 "datePattern": "KKK p, vvvv" // added 2.5.2013
@@ -14,7 +14,7 @@
                 "hashTagTwitter": "Twitterissä käytettävä tunniste", // added 8.26.2013
                 "hashTagYoutube": "YouTubessa käytettävä tunniste" // added 8.26.2013
             },
-			"errors": {
+            "errors": {
                 "createMap": "Karttaa ei voi luoda",
                 "general": "Virhe",
                 "bingError": "Tämän sovelluksen käyttöönotto edellyttää omaa Bing Maps -avaintasi.",
@@ -33,93 +33,93 @@
                 "tinyURLError": "TinyURL:n luonti epäonnistui", // added 8.26.2013
                 "invalidSearch": "Virheellinen haku" // added 8.26.2013
             },
-			"legend": {
-				"menuTitle": "Selite"
-			},
-            "search": {
-            	"location": "Sijainti",
-            	"clearLocation": "Tyhjennä sijainti",
-            	"placeholder": "Etsi paikka"
+            "legend": {
+                "menuTitle": "Selite"
             },
-			"layers": {
+            "search": {
+                "location": "Sijainti",
+                "clearLocation": "Tyhjennä sijainti",
+                "placeholder": "Etsi paikka"
+            },
+            "layers": {
                 "menuTitle": "Karttatasot"
             },
             "locator": {
                 "menuTitle": "Hae osoitetta" // added 8.26.2013
-			},
+            },
             "layer": {
-            	"information": "Tiedot",
-            	"transparency": "Läpinäkyvyys",
-            	"searchSettings": "Hakuasetukset",
-            	"filteredBy": "suodatusperuste:"
+                "information": "Tiedot",
+                "transparency": "Läpinäkyvyys",
+                "searchSettings": "Hakuasetukset",
+                "filteredBy": "suodatusperuste:"
             },
             "general": {
-            	"at": "klo",
-				"of": "/",
-            	"homeExtent": "Lataa Koti-näkymä",
-				"ok": "OK",
-				"close": "Sulje"
+                "at": "klo",
+                "of": "/",
+                "homeExtent": "Lataa Koti-näkymä",
+                "ok": "OK",
+                "close": "Sulje"
             },
-			"basemap": {
-				"menuTitle": "Valitse taustakartta"
-			},
+            "basemap": {
+                "menuTitle": "Valitse taustakartta"
+            },
             "settings": {
-            	"title": "Asetukset",
-            	"searchAll": "Etsi kaikki seuraavat:",
-            	"usingThisKeyword": "Käytetään avainsanaa/-sanoja",
-            	"search": "Etsi",
-            	"fromThePast": "Menneisyydestä",
-            	"today": "Päivä",
-            	"this_week": "Viikko",
-            	"this_month": "Kuukausi",
-            	"all_time": "Koko ajan",
-            	"atLocation": "Tässä sijainnissa",
-            	"centerOfMap": "Kartan keskikohta",
-            	"centerOfMapTitle": "Käytä kartan keskikohtaa",
-            	"withinThisDistance": "Tällä etäisyydellä",
-            	"latitude": "Leveysaste:",
-            	"longitude": "Pituusaste:",
-            	"locationText": "määritä aloituskohta napsauttamalla karttaa",
+                "title": "Asetukset",
+                "searchAll": "Etsi kaikki seuraavat:",
+                "usingThisKeyword": "Käytetään avainsanaa/-sanoja",
+                "search": "Etsi",
+                "fromThePast": "Menneisyydestä",
+                "today": "Päivä",
+                "this_week": "Viikko",
+                "this_month": "Kuukausi",
+                "all_time": "Koko ajan",
+                "atLocation": "Tässä sijainnissa",
+                "centerOfMap": "Kartan keskikohta",
+                "centerOfMapTitle": "Käytä kartan keskikohtaa",
+                "withinThisDistance": "Tällä etäisyydellä",
+                "latitude": "Leveysaste:",
+                "longitude": "Pituusaste:",
+                "locationText": "määritä aloituskohta napsauttamalla karttaa",
                 "twSearch": "Tarkennetun Twitter-haun käyttö",
                 "screenName": "Näyttönimi", // added 8.26.2013
                 "signIn": "Kirjaudu sisään", // added 8.26.2013
                 "switchAccount": "Vaihda tiliä" // added 8.26.2013
             },
-			"autoComplete": {
-				"menuTitle": "Tulokset&hellip;"
-			},
+            "autoComplete": {
+                "menuTitle": "Tulokset&hellip;"
+            },
             "places": {
-				"menuTitle": "Kirjanmerkiksi tallennetut paikat",
-            	"places": "Kirjanmerkit",
-            	"placesTitle": "Tallenna paikat kirjanmerkiksi",
-            	"myLocation": "Oma nykyinen sijainti",
-            	"myLocationTitle": "Keskitä kartta sijaintiini"
+                "menuTitle": "Kirjanmerkiksi tallennetut paikat",
+                "places": "Kirjanmerkit",
+                "placesTitle": "Tallenna paikat kirjanmerkiksi",
+                "myLocation": "Oma nykyinen sijainti",
+                "myLocationTitle": "Keskitä kartta sijaintiini"
             },
             "distanceSlider": {
-            	"local": "Paikallinen",
-            	"regional": "Alueellinen",
-            	"national": "Kansallinen"
+                "local": "Paikallinen",
+                "regional": "Alueellinen",
+                "national": "Kansallinen"
             },
             "about": {
-            	"title": "Tietoja",
-            	"access": "Pääsyn ja käytön rajoitukset"
+                "title": "Tietoja",
+                "access": "Pääsyn ja käytön rajoitukset"
             },
             "buttons": {
-            	"legend": "Selite",
-            	"legendTitle": "Näytä selite",
-            	"basemap": "Taustakartat",
-            	"basemapTitle": "Vaihda taustakartta",
-            	"layers": "Karttatasot",
-            	"layersTitle": "Tutki karttatasoja",
-            	"social": "Sosiaalinen",
-            	"socialTitle": "Sosiaalinen media",
-            	"link": "Linkki",
-            	"linkTitle": "Jaa tämä Web-sovellus",
-            	"about": "Tietoja",
-            	"aboutTitle": "Tietoja tästä kartasta",
-            	"displayAs": "Näytä muodossa",
-            	"point": "Pistettä",
-            	"cluster": "Ryväkset",
+                "legend": "Selite",
+                "legendTitle": "Näytä selite",
+                "basemap": "Taustakartat",
+                "basemapTitle": "Vaihda taustakartta",
+                "layers": "Karttatasot",
+                "layersTitle": "Tutki karttatasoja",
+                "social": "Sosiaalinen",
+                "socialTitle": "Sosiaalinen media",
+                "link": "Linkki",
+                "linkTitle": "Jaa tämä Web-sovellus",
+                "about": "Tietoja",
+                "aboutTitle": "Tietoja tästä kartasta",
+                "displayAs": "Näytä muodossa",
+                "point": "Pistettä",
+                "cluster": "Ryväkset",
                 "heatmap": "Tiheys", // added 8.26.2013
                 "map": "Kartta", // added 8.26.2013
                 "share": "Jaa", // added 8.26.2013
@@ -137,66 +137,66 @@
                 "refreshContext": "Lataa uudet syötteet napsauttamalla." // added 8.26.2013
             },
             "shareMenu": {
-				"menuTitle": "Jaa nykyinen näkymä",
-				"shareHeader": "Jaa linkki Web-sovellukseesi",
-            	"facebook": "Facebook",
-            	"facebookHeader": "Jaa Facebookissa",
-            	"twitter": "Twitter",
-            	"twitterHeader": "Jaa Twitterissä",
-            	"instructionHeader": "Kopioi ja liitä HTML Web-sivullesi",
-            	"preview": "Esikatsele ja mukauta"
+                "menuTitle": "Jaa nykyinen näkymä",
+                "shareHeader": "Jaa linkki Web-sovellukseesi",
+                "facebook": "Facebook",
+                "facebookHeader": "Jaa Facebookissa",
+                "twitter": "Twitter",
+                "twitterHeader": "Jaa Twitterissä",
+                "instructionHeader": "Kopioi ja liitä HTML Web-sivullesi",
+                "preview": "Esikatsele ja mukauta"
             },
             "itemInfo": {
-				"createdLabel": "luotu",
-				"ratingsLabel": "arviointi",
-				"ratingsLabelPlural": "arvioinnit",
-				"viewsLabel": "näytä",
-				"viewsLabelPlural": "katselukerrat",
-				"commentsLabel": "kommentti",
-				"commentsLabelPlural": "kommentit",
-				"modifiedLabel": "Muokattu viimeksi",
-				"by": "peruste",
-				"separator": ","
-			},
-			"social": {
+                "createdLabel": "luotu",
+                "ratingsLabel": "arviointi",
+                "ratingsLabelPlural": "arvioinnit",
+                "viewsLabel": "näytä",
+                "viewsLabelPlural": "katselukerrat",
+                "commentsLabel": "kommentti",
+                "commentsLabelPlural": "kommentit",
+                "modifiedLabel": "Muokattu viimeksi",
+                "by": "peruste",
+                "separator": "Å_,_ö"
+            },
+            "social": {
                 "menuTitle": "Sosiaalisen median tasot",
                 "screenName": "Nimi näytöllä",
                 "signIn": "Kirjaudu sisään",
                 "switchAccount": "Vaihda tiliä"
-			},
-			"preview": {
-				"minWidth": "Vähimmäisleveys on",
-				"minHeight": "Vähimmäiskorkeus on",
-				"maxWidth": "Enimmäisleveys on",
-				"maxHeight": "Enimmäiskorkeus on",
-				"customize": "Mukauta",
-				"small": "Pieni",
-				"medium": "Keskisuuri",
-				"large": "Suuri",
-				"custom": "Mukautettu",
-				"embed": "Upottaminen",
-				"instruction": "Kopioi ja liitä seuraava HTML, joka upotetaan Web-sivustosi karttaan."
-			},
-			"flickr": {
-				"title": "Flickr",
-				"description": "Valokuvat Flickr-palvelusta"
-			},
-			"twitter": {
-				"title": "Twitter",
-				"description": "Tweetit Twitteristä"
-			},
-			"youtube": {
-				"title": "YouTube",
-				"description": "Videot YouTubesta"
-			},
-			"panoramio":{
-				"title": "Panoramio",
-				"description": "Valokuvat Panoramiosta"
-			},
-			"ushahidi":{
-				"title": "Ushahidi",
-				"description": "Onnettomuusraportit Ushahidista"
-			}
+            },
+            "preview": {
+                "minWidth": "Vähimmäisleveys on",
+                "minHeight": "Vähimmäiskorkeus on",
+                "maxWidth": "Enimmäisleveys on",
+                "maxHeight": "Enimmäiskorkeus on",
+                "customize": "Mukauta",
+                "small": "Pieni",
+                "medium": "Keskisuuri",
+                "large": "Suuri",
+                "custom": "Mukautettu",
+                "embed": "Upottaminen",
+                "instruction": "Kopioi ja liitä seuraava HTML, joka upotetaan Web-sivustosi karttaan."
+            },
+            "flickr": {
+                "title": "Flickr",
+                "description": "Valokuvat Flickr-palvelusta"
+            },
+            "twitter": {
+                "title": "Twitter",
+                "description": "Tweetit Twitteristä"
+            },
+            "youtube": {
+                "title": "YouTube",
+                "description": "Videot YouTubesta"
+            },
+            "panoramio": {
+                "title": "Panoramio",
+                "description": "Valokuvat Panoramiosta"
+            },
+            "ushahidi": {
+                "title": "Ushahidi",
+                "description": "Onnettomuusraportit Ushahidista"
+            }
         }
     })
 );

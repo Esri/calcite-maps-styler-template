@@ -1,4 +1,5 @@
-﻿/*
+﻿/*global define */
+/*
  | ArcGIS Solutions
  | Version 10.2
  | Copyright 2012 Esri
@@ -18,37 +19,39 @@
 define(
 ({
         tooltips: {
-            search: "搜索",
-            locate: "当前位置",
-            markup: "提交修正",
-            basemap: "切换底图",
-            share: "共享",
-            shareViaEmail: "通过电子邮件共享",
-            shareViaFacebook: "通过 Facebook 共享",
-            shareViaTwitter: "通过 Twitter 共享",
-            print: "打印地图",
-            fetchPrint: "查看打印的地图",
-            landscape: "横向页面方向",
-            portrait: "纵向页面方向",
-            help: "帮助"
+            search: "搜索",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            locate: "当前位置",  // Command button to zoom and pan to the current geographical position reported by the browser
+            markup: "提交修正",  // Command button to submit a correction to the app's host
+            collect: "试_Add content to map_验",  // Command button to open a template picker to add features to the map
+            filter: "试_Filter map layers_验",  // Explains purpose of type-in box affiliated with template picker
+            basemap: "切换底图",  // Command button to open a dialog box for switching basemaps
+            share: "共享",  // Command button to open a dropdown menu for picking a type of sharing
+            shareViaEmail: "通过电子邮件共享",  // Command button to share the current map extents via email
+            shareViaFacebook: "通过 Facebook 共享",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
+            shareViaTwitter: "通过 Twitter 共享",  // Command button to share the current map extents via a Twitter tweet: a URL is opened that permits the user to log into Twitter with a tweet that is ready to go
+            print: "打印地图",  // Command button to open a dialog box for specifying print orientation, title, and author before printing; also used inside print dialog box
+            fetchPrint: "查看打印的地图",  // Command button to open a PDF containing a map that was just printed by the print map command
+            landscape: "横向页面方向",  // Command button in the print map dialog box to select the landscape page orientation
+            portrait: "纵向页面方向",  // Command button in the print map dialog box to select the portrait page orientation
+            help: "帮助"  // Command button to open a dialog box with a short description of the app
         },
         labels: {
-            email: "电子邮件",
-            Facebook: "Facebook",
-            Twitter: "Twitter"
+            email: "电子邮件",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
+            Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
+            Twitter: "Twitter"  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
         },
         prompts: {
-            search: "搜索:",
-            markup: "绘图",
-            mapLayers: "地图图层:",
-            layerFields: "搜索图层字段:"
+            search: "搜索:",  // Appears before a search text field in dialog box for searching for a feature
+            markup: "绘图",  // Appears before a set of tools for drawing on the map
+            mapLayers: "地图图层:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
+            layerFields: "搜索图层字段:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
         },
         messages: {
-            geolocationDenied: "该网站无权获取当前位置",
-            geolocationUnavailable: "浏览器无法获取当前位置",
-            geolocationTimeout: "浏览器无法及时获取当前位置",
-            searchLayerMissing: "在地图中未找到此搜索图层",
-            searchFieldMissing: "在地图搜索图层中未找到此字段"
+            geolocationDenied: "该网站无权获取当前位置",  // Shown when the browser does not permit the app to get the current geographical position
+            geolocationUnavailable: "浏览器无法获取当前位置",  // Shown when the browser returns an error instead of the current geographical position
+            geolocationTimeout: "浏览器无法及时获取当前位置",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            searchLayerMissing: "在地图中未找到此搜索图层",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
+            searchFieldMissing: "在地图搜索图层中未找到此字段"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
         }
     })
 );

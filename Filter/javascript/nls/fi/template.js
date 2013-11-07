@@ -6,7 +6,7 @@
       filterInstructions: "Suodata karttatasoa määrittämällä arvot.",
       filterOr: "Minkä tahansa seuraavista ehtolausekkeista on oltava tosi.",
       filterAnd: "Kaikkien seuraavien ehtolausekkeiden on oltava tosia.",
-      filterNo:  "Web map does not contain any interactive filters.",
+      filterNo: "Å_Web map does not contain any interactive filters._ö",
       errors:{
         message: "Ongelma luotaessa suodatinsovellusta"
       }

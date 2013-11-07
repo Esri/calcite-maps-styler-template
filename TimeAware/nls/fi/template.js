@@ -21,12 +21,12 @@
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
       centuryPattern: "vvvv G",
-      decadePattern: "vvvv",
+      decadePattern: "vvvv", 
       yearPattern: "KKKK vvvv",
       weekPattern: "p. KKKK vvvv",
       hourTimePattern: "t",
       // e.g. for German: "H:mm:ss:SSS"
-      millisecondTimePattern:"h:m:ss.SSS a",
+      millisecondTimePattern:"Å_h:m:ss.SSS a_ö",
       minuteTimePattern: "h:mm a",
       // e.g. for German: "H:mm"
       monthPattern: "KKKK p, v",

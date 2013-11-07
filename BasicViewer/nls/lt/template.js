@@ -56,12 +56,12 @@
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
       centuryPattern: "yyyy G",
-      decadePattern: "yyyy",
+      decadePattern: "yyyy", 
       yearPattern: "yyyy MMMM",
       weekPattern: "yyyy.MM.dd",
       hourTimePattern: "H a",
       // e.g. for German: "HH:mm:ss:SSS"
-      millisecondTimePattern:"h:m:ss.SSS a",
+      millisecondTimePattern:"Į_h:m:ss.SSS a_š",
       minuteTimePattern: "HH:mm",
       // e.g. for German: "HH:mm"
       monthPattern: "y MMMM, d",
@@ -96,7 +96,7 @@
       title: "Ieškoti adreso arba vietos",
       popupTitle: "Vieta",
       currentLocation: "Esama padėtis",
-      notWhatYouWanted: "Ne tai ko norėjote?",
+      notWhatYouWanted: "Ne tai ko norėjote?" ,
       selectAnother: "Pasirinkite kitą vietą",
       errors:{
        missingLocation: "Vieta nerasta"

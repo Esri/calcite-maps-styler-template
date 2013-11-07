@@ -1,5 +1,5 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
 				step1: "INDLÆSER APPLIKATION",
@@ -54,7 +54,7 @@
 				no: "Nej",
 				popoverOpenViewExplain: "Ved at åbne viseren mister du eventuelle ikke-gemte ændringer",
 				popoverOpenViewOk: "OK",
-				popoverOpenViewCancel: "Annullér",
+				popoverOpenViewCancel: "ø_Cancel_å",
 				popoverSaveWhenDone: "Glem ikke at gemme, når du er færdig",
 				closeWithPendingChange: "Er du sikker på, at du vil bekræfte denne handling? Dine ændringer vil gå tabt.",
 				gotIt: "OK",
@@ -65,13 +65,13 @@
 				signInTwo: "for at gemme applikationen."
 			},
 			header:{
-				editMe: "Redigér mig!",
+				editMe: "ø_Click to edit description_å",
 				templateTitle: "Indstil skabelontitel",
 				templateSubtitle: "Indstil skabelonundertitel"
 			},
 			settings: {
 				settingsHeader: "Applikationsindstillinger",
-				modalCancel: "Annullér",
+				modalCancel: "ø_Cancel_å",
 				modalApply: "Anvend"
 			},
 			settingsColors: {
@@ -116,7 +116,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Angiv beskrivelse til sidepanelet",
-				editMe: "Redigér mig!",
+				editMe: "ø_Edit me !_å",
 				legendTitle: "Signaturforklaring"
 			},
 			infoWindow: {
@@ -157,12 +157,13 @@
 			settingsLegend: {
 				settingsTabLegend: "App-layout",
 				settingsLegendExplain: "Vælg indstillinger for applikationslayout.",
-				settingsLegendEnable: "Aktiver signaturforklaring",
-				settingsDescriptionEnable: "Aktiver beskrivelse",
-				settingsBookmarksEnable: "Aktiver Swipe-serie",
-				settingsPopupDisable: "ø_Enable popup_å",
+				settingsLegendEnable: "Aktiv\ér signaturforklaring",
+				settingsDescriptionEnable: "Aktiv\ér beskrivelse",
+				settingsBookmarksEnable: "Aktiv\ér Swipe-serie",
+				settingsPopupDisable: "Aktiv\ér pop-up-vindue",
+				settingsLocatorEnable: "ø_Enable locator_å",
 				settingsLegendHelpContent: "Hvis du vil forfine signaturforklaringens indhold, kan du bruge indholdsfortegnelsen i ArcGIS.com-webkortviseren (Skjul i signaturforklaring)",
-				settingsSeriesHelpContent: "ø_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._å",
+				settingsSeriesHelpContent: "Ved første aktivering vil dine webkortbogmærker blive anvendt til at udfylde serielinjen på forhånd. Hvis du deaktiverer seriefunktionen senere, slettes din seriekonfiguration ikke, og den vil være tilgængelig, hvis du aktiverer serien igen.",
 				preview: "UI-forhåndsvisning"
 			},
 			settingsSwipePopup: {
@@ -185,8 +186,8 @@
 				descr: "Beskrivelse",
 				discard: "Slet bogmærke",
 				saveExtent: "Indstil bogmærkeudstrækning",
-				discardDisabled: "ø_You can't remove that bookmark. Swipe series can be disabled in the Settings._å"
+				discardDisabled: "Du kan ikke fjerne dette bogmærke. Swipe-serier kan deaktiveres under Indstillinger."
 			}
 		}
-    })
+})
 );

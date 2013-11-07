@@ -1,4 +1,5 @@
-﻿/*
+﻿/*global define */
+/*
  | ArcGIS Solutions
  | Version 10.2
  | Copyright 2012 Esri
@@ -18,37 +19,39 @@
 define(
 ({
         tooltips: {
-            search: "検索",
-            locate: "現在の位置",
-            markup: "補正の送信",
-            basemap: "ベースマップの切り替え",
-            share: "共有",
-            shareViaEmail: "電子メールで共有",
-            shareViaFacebook: "Facebook で共有",
-            shareViaTwitter: "Twitter で共有",
-            print: "マップの印刷",
-            fetchPrint: "印刷されたマップの表示",
-            landscape: "横向きページ",
-            portrait: "縦向きページ",
-            help: "ヘルプ"
+            search: "検索",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            locate: "現在の位置",  // Command button to zoom and pan to the current geographical position reported by the browser
+            markup: "補正の送信",  // Command button to submit a correction to the app's host
+            collect: "須_Add content to map_鷗",  // Command button to open a template picker to add features to the map
+            filter: "須_Filter map layers_鷗",  // Explains purpose of type-in box affiliated with template picker
+            basemap: "ベースマップの切り替え",  // Command button to open a dialog box for switching basemaps
+            share: "共有",  // Command button to open a dropdown menu for picking a type of sharing
+            shareViaEmail: "電子メールで共有",  // Command button to share the current map extents via email
+            shareViaFacebook: "Facebook で共有",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
+            shareViaTwitter: "Twitter で共有",  // Command button to share the current map extents via a Twitter tweet: a URL is opened that permits the user to log into Twitter with a tweet that is ready to go
+            print: "マップの印刷",  // Command button to open a dialog box for specifying print orientation, title, and author before printing; also used inside print dialog box
+            fetchPrint: "印刷されたマップの表示",  // Command button to open a PDF containing a map that was just printed by the print map command
+            landscape: "横向きページ",  // Command button in the print map dialog box to select the landscape page orientation
+            portrait: "縦向きページ",  // Command button in the print map dialog box to select the portrait page orientation
+            help: "ヘルプ"  // Command button to open a dialog box with a short description of the app
         },
         labels: {
-            email: "電子メール",
-            Facebook: "Facebook",
-            Twitter: "Twitter"
+            email: "電子メール",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
+            Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
+            Twitter: "Twitter"  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
         },
         prompts: {
-            search: "検索:",
-            markup: "描画",
-            mapLayers: "マップ レイヤ:",
-            layerFields: "検索レイヤ フィールド:"
+            search: "検索:",  // Appears before a search text field in dialog box for searching for a feature
+            markup: "描画",  // Appears before a set of tools for drawing on the map
+            mapLayers: "マップ レイヤ:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
+            layerFields: "検索レイヤ フィールド:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
         },
         messages: {
-            geolocationDenied: "このサイトには、現在の位置を取得する権限がありません。",
-            geolocationUnavailable: "ブラウザが現在の位置を取得できませんでした",
-            geolocationTimeout: "ブラウザが現在の位置を適切な時間内に取得できませんでした",
-            searchLayerMissing: "この検索レイヤは、マップ内に見つかりませんでした。",
-            searchFieldMissing: "このフィールドは、マップ検索レイヤ内に見つかりませんでした。"
+            geolocationDenied: "このサイトには、現在の位置を取得する権限がありません。",  // Shown when the browser does not permit the app to get the current geographical position
+            geolocationUnavailable: "ブラウザが現在の位置を取得できませんでした",  // Shown when the browser returns an error instead of the current geographical position
+            geolocationTimeout: "ブラウザが現在の位置を適切な時間内に取得できませんでした",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            searchLayerMissing: "この検索レイヤは、マップ内に見つかりませんでした。",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
+            searchFieldMissing: "このフィールドは、マップ検索レイヤ内に見つかりませんでした。"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
         }
     })
 );

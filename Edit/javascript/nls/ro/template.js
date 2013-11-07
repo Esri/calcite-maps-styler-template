@@ -8,6 +8,6 @@
         no_editable_layers_message: "Harta web nu conţine niciun strat tematic editabil."
       }
     }
-  })
+  }),
 
 );

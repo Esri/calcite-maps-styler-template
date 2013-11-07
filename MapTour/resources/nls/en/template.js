@@ -37,13 +37,14 @@ define(
 				hideIntro: "HIDE TITLE",
 				navList: "List",
 				navMap: "Map",
-				navInfo: "Pictures",
+				navInfo: "Medias",
 				introStartBtn: "Start"
 			},
 			desktopHTML: {
 				storymapsText: "A story map",
 				builderButton: "Switch to builder mode",
-				bitlyTooltip: "Get a short link to the application"
+				bitlyTooltip: "Get a short link to the application",
+				bitlyStartIndex: "Start on point no."
 			},
 			builderHTML: {
 				panelHeader: "APPLICATION CONFIGURATION",
@@ -59,12 +60,13 @@ define(
 				buttonImportDisabled: "Import is not available when using a Feature Service with attachments",
 				dataEditionDisabled: "Data edition is disabled on CSV data source",
 				dataSourceWarning: "The Map Tour data layer has changed. If the features ID are not the same, you have to reset the order and hidden points through <b>Organize</b>. If the fields name differs, you have to reset the fields settings under the <b>data tab in Settings</b>.",
+				organizeWarning: "One or multiple points added outside of the interactive builder are hidden.",
 				dataPicError0a: "This tour includes <b>%NB%</b> non-compliant picture URLs.",
 				dataPicError0b: "This tour may includes <b>%NB%</b> non-compliant picture URLs.",
 				dataPicError1: "Map Tour now requires that a picture URL end with one of the following extension: .jp(e)g, .png, .gif or .bmp.",
 				dataPicError2: "This requirement will not affect your existing published Map Tour. However, in order to use the interactive builder, you must first resolve the URL issue by performing one of two actions:",
 				dataPicError3: "Edit URLs",
-				dataPicError4: "This will add <i>#isPicture</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, don’t save the Map Tour</b>. Instead, reload the builder and perform the second action.",
+				dataPicError4: "This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, don’t save the Map Tour</b>. Instead, reload the builder and perform the second action.",
 				dataPicError5: "Limit the tour to pictures",
 				dataPicError6: "This option cause all URLs to be considered images, but you won't be able to add videos using the interactive builder. This action is reversible, should you decide to add video in the future.",
 				dataPicError7: "Your Map Tour has been restricted to pictures, videos can't be used. If you choose to remove that limitation, check that your pictures still loads correctly before saving the Map Tour. You will be able to restore that limitation later if needed.",
@@ -86,7 +88,7 @@ define(
 				addTabLocation: "Location",
 				addSelectCaption: "Select or drop picture",
 				addNoteVideo: "Consult Help for instructions on using videos",		
-				addSelectCaptionNoFileReader: "Select picture",
+				addSelectCaptionNoFileReader: "Select picture",	
 				addChangePhoto: "Change picture and thumbnail",
 				addPictureResolutionIntro: "The picture resolution is higher than required:",
 				addPictureResolutionOldBrowser: "The picture resolution is higher than required. Optimize the Map Tour experience by specifying a resolution lower than %RECOMMENDED_RES%.",
@@ -137,6 +139,8 @@ define(
 				settingsLayoutSelected: "Selected layout",
 				settingsLayoutSelect: "Select this layout",
 				settingsLayoutNote: "Note that on points using videos, the placard will always be placed under the video even if that option is unchecked.",
+				settingsLayoutLocBtn: "Display a locate button on supported browser",
+				settingsLayoutLocBtnHelp: "That functionality is supported on most mobile device and desktop browsers (Internet Explorer 9).",
 				settingsColorExplain: "Change appearance by choosing a pre-defined theme, or create your own.",
 				settingsLabelColor: "Header, content and footer colors",
 				settingsLogoExplain: "Customize the header logo (maximum is 250 x 50px).",
@@ -188,10 +192,11 @@ define(
 				uploadingPicture: "Uploading picture",
 				uploadSuccess: "Upload successful",
 				uploadError: "Error uploading the picture",
+				uploadError2: "Error adding the feature (invalid html tag)",
 				notJpg: "Please choose a jpeg photo to upload",
 				errorNoPhoto: "Choose an image to upload",
 				errorNoThumbnail: "Choose a thumbnail to upload",
-				errorInvalidPicUrl: "Enter a valid picture (starts with http(s)://, ends with jpg, png, gif or bmp). You can end the URL with '#isPicture' to override that rule.",
+				errorInvalidPicUrl: "Enter a valid picture (starts with http(s)://, ends with jpg, png, gif or bmp). You can end the URL with '#isImage' to override that rule.",
 				errorInvalidThumbUrl: "Enter a valid thumbnail (starts with http(s)://, ends with jpg, png, gif or bmp).",
 				errorInvalidVideoUrl: "Enter a valid video URL (starts with http(s)://)",
 				errorNoName: "Enter a name for this tour point",
@@ -213,6 +218,7 @@ define(
 				savingApplication: "Saving application",
 				saveSuccess: "Application saved successfully",
 				saveError: "Save failed, please try again",
+				saveError2: "Save failed due to an invalid html tag in a name or description",
 				dragColorPicker: "Move me around<br />or change my color",
 				dataWarningExtent: "You have data outside of the web map extent. Those data won't be used as tour points, change map extent if you want to use them.",
 				dataWarningVisibi: "Your Map Tour layer is not visible at the current web map extent. Confirm your Map Tour layer is visible with a %MAPSIZE% large map.",
@@ -263,10 +269,12 @@ define(
 				header: "Where are your pictures stored ?"
 			},
 			onlinePhotoSharingCommon: {
+				pictures: "pictures",
+				videos: "videos",
 				disabled: "This feature has been disabled by the Administrator",
 				disabledPortal: "This feature is disabled on Portal for ArcGIS",
 				header1: "The pictures need to be publicly shared.",
-				header2: "The import will be limited to %NB1% pictures to respect the limit of %NB2% points per tour.",
+				header2: "The import will be limited to the first %NB1% %MEDIA% to respect the limit of %NB2% points per tour.",
 				emptyDataset: "Error, no pictures found",
 				footerImport: "Import",
 				selectAlbum: "Select a public album",
@@ -275,10 +283,12 @@ define(
 				userLookup: "Look up",
 				userLookingup: "Looking up",
 				csv: "Referenced in a CSV",
-				fromScratch: "Start from scratch",
+				advanced: "Advanced options",
 				select: "Make a selection",
 				locUse: "Use pictures location",
-				locExplain: "You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location."
+				locUse2: "Use videos location",
+				locExplain: "You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location.",
+				locExplain2: "You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location."
 			},
 			viewFlickr: {
 				header: "Enter a Flickr user name and select a Photo Set or a Tag to be imported.",
@@ -328,6 +338,15 @@ define(
 				footerProgress: "Import in progress",
 				footerSucceed: "Import succeeded. Loading"
 			},
+			viewYoutube: {
+				header: "Look for publicly shared videos using an user name.",
+				pageInputLbl: "Enter a Youtube user name",
+				lookupMsgError: "User not found",
+				howToFind: "How to find a Youtube user name",
+				howToFind2: "User name is displayed under videos",
+				found: "Found",
+				noData: "No public videos found"
+			},
 			viewGeoTag: {
 				header: "Click or tap the pictures you want to import to locate them.",
 				headerMore: "Why my pictures are not located?",
@@ -348,14 +367,17 @@ define(
 				nextBtn: "Next"
 			},
 			initPopupHome: {
+				header1: "Where are your medias?",
 				header2: "This assistant will help you build a Map Tour from pictures already stored online or it will import them into your ArcGIS Online for Organization account.",
-				title1: "My pictures are already hosted",
+				title1: "My medias are already hosted",
 				title2: "I need to host my pictures",
+				hostedFSTooltip: "Use ArcGIS Online to host your pictures (doesn't support videos).",
 				hostedFsNA: "Only available for ArcGIS for Organization Publisher and Administrator users",
 				footer1: "When you are done, don't forget to share your Map Tour with your audience through the application item page.",
 				footer2: "Map Tour Help",
 				footer3: "Download the CSV template",
 				footer4: "\"Save as\" if it doesn't download",
+				footer5: "Learn about hosting options",
 				footerProgress: "Creation in progress",
 				footerSucceed: "Creation succeeded. Loading..."
 			},

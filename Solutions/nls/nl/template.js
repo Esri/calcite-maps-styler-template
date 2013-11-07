@@ -1,4 +1,5 @@
-﻿/*
+﻿/*global define */
+/*
  | ArcGIS Solutions
  | Version 10.2
  | Copyright 2012 Esri
@@ -18,37 +19,39 @@
 define(
 ({
         tooltips: {
-            search: "Zoeken",
-            locate: "Huidige locatie",
-            markup: "Correctie verzenden",
-            basemap: "Basiskaart wijzigen",
-            share: "Delen",
-            shareViaEmail: "Delen via e-mail",
-            shareViaFacebook: "Delen via Facebook",
-            shareViaTwitter: "Delen via Twitter",
-            print: "Kaart afdrukken",
-            fetchPrint: "Afgedrukte kaart weergeven",
-            landscape: "Liggende stand",
-            portrait: "Staande stand",
-            help: "Help"
+            search: "Zoeken",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            locate: "Huidige locatie",  // Command button to zoom and pan to the current geographical position reported by the browser
+            markup: "Correctie verzenden",  // Command button to submit a correction to the app's host
+            collect: "Ĳ_Add content to map_ä",  // Command button to open a template picker to add features to the map
+            filter: "Ĳ_Filter map layers_ä",  // Explains purpose of type-in box affiliated with template picker
+            basemap: "Basiskaart wijzigen",  // Command button to open a dialog box for switching basemaps
+            share: "Delen",  // Command button to open a dropdown menu for picking a type of sharing
+            shareViaEmail: "Delen via e-mail",  // Command button to share the current map extents via email
+            shareViaFacebook: "Delen via Facebook",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
+            shareViaTwitter: "Delen via Twitter",  // Command button to share the current map extents via a Twitter tweet: a URL is opened that permits the user to log into Twitter with a tweet that is ready to go
+            print: "Kaart afdrukken",  // Command button to open a dialog box for specifying print orientation, title, and author before printing; also used inside print dialog box
+            fetchPrint: "Afgedrukte kaart weergeven",  // Command button to open a PDF containing a map that was just printed by the print map command
+            landscape: "Liggende stand",  // Command button in the print map dialog box to select the landscape page orientation
+            portrait: "Staande stand",  // Command button in the print map dialog box to select the portrait page orientation
+            help: "Help"  // Command button to open a dialog box with a short description of the app
         },
         labels: {
-            email: "e-mail",
-            Facebook: "Facebook",
-            Twitter: "Twitter"
+            email: "e-mail",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
+            Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
+            Twitter: "Twitter"  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
         },
         prompts: {
-            search: "Zoeken:",
-            markup: "Tekenen",
-            mapLayers: "Kaartlagen:",
-            layerFields: "Zoeklaagvelden:"
+            search: "Zoeken:",  // Appears before a search text field in dialog box for searching for a feature
+            markup: "Tekenen",  // Appears before a set of tools for drawing on the map
+            mapLayers: "Kaartlagen:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
+            layerFields: "Zoeklaagvelden:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
         },
         messages: {
-            geolocationDenied: "Deze site heeft geen toestemming om de huidige locatie op te halen",
-            geolocationUnavailable: "De browser kon de huidige locatie niet ophalen",
-            geolocationTimeout: "De browser kon de huidige locatie niet tijdig ophalen",
-            searchLayerMissing: "Deze zoeklaag is niet gevonden op de kaart",
-            searchFieldMissing: "Dit veld is niet gevonden in de zoeklaag van de kaart"
+            geolocationDenied: "Deze site heeft geen toestemming om de huidige locatie op te halen",  // Shown when the browser does not permit the app to get the current geographical position
+            geolocationUnavailable: "De browser kon de huidige locatie niet ophalen",  // Shown when the browser returns an error instead of the current geographical position
+            geolocationTimeout: "De browser kon de huidige locatie niet tijdig ophalen",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            searchLayerMissing: "Deze zoeklaag is niet gevonden op de kaart",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
+            searchFieldMissing: "Dit veld is niet gevonden in de zoeklaag van de kaart"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
         }
     })
 );

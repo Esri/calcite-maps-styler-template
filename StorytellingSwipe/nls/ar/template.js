@@ -1,12 +1,12 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
 				step1: "تحميل التطبيق",
 				step2: "تحميل البيانات",
 				step3: "تهيئة",
 				fail: "للأسف، فشل تحميل السحب",
-				loadBuilder: "التبديل إلى وضع المُنشيء",
+				loadBuilder: "بيت_SWITCHING TO BUILDER MODE_لاحقة",
 				failButton: "إعادة المحاولة"
 			},
 			errors: {
@@ -14,7 +14,7 @@
 				portalSelf: "خطأ فادح: فشل في الحصول على تكوين المدخل",
 				invalidConfig: "خطأ فادح: تكوين غير صحيح",
 				invalidConfigNoWebmap: "خطأ فادح: تكوين غير صحيح (لا توجد خرائط ويب محددة)",
-				createMap: "تعذر إنشاء الخريطة",
+				createMap: "بيت_Unable to create map_لاحقة",
 				invalidApp: "خطأ فادح: لا يمكن تحميل التطبيق",
 				initMobile: "مرحبًا بك في تطبيق خريطة السحب. تعذر تكوين التطبيق. المنشئ التفاعلي غير مدعوم على أجهزة الجوال.",
 				noBuilderIE8: "منشئ السحب التفاعلي غير مدعوم على Internet Explorer فيما قبل الإصدار 9.",
@@ -65,7 +65,7 @@
 				signInTwo: "لحفظ التطبيق"
 			},
 			header:{
-				editMe: "حررني !",
+				editMe: "بيت_Click to edit description_لاحقة",
 				templateTitle: "تحديد عنوان القالب",
 				templateSubtitle: "تحديد العنوان الفرعي للقالب"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "تمكين وسيلة الإيضاح",
 				settingsDescriptionEnable: "تمكين الوصف",
 				settingsBookmarksEnable: "تمكين سلاسل السحب",
-				settingsPopupDisable: "بيت_Enable popup_لاحقة",
+				settingsPopupDisable: "تمكين عنصر منبثق",
+				settingsLocatorEnable: "بيت_Enable locator_لاحقة",
 				settingsLegendHelpContent: "لتحسين محتوى مفتاح الخريطة، استخدم جدول محتويات عارض خريطة الويب ArcGIS.com (مخفي في وسيلة الإيضاح)",
-				settingsSeriesHelpContent: "بيت_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._لاحقة",
+				settingsSeriesHelpContent: "في التفعيل الأول، سيتم استخدام العلامات المرجعية لخرائط الويب لإعادة تعبئة شريط السلسلة. إذا قمت بتعطيل خيار السلسلة لاحقًا، لن يتم تجاهل تكوين السلسلة وسيتوفر عند تقرير تمكين السلسلة مجددًا.",
 				preview: "معاينة واجهة المستخدم"
 			},
 			settingsSwipePopup: {
@@ -182,11 +183,11 @@
 			},
 			seriesPanel: {
 				title: "العنوان",
-				descr: "الوصف",
+				descr: "بيت_Description_لاحقة",
 				discard: "تجاهل العلامة المرجعية",
 				saveExtent: "تعيين نطاق العلامة المرجعية",
-				discardDisabled: "بيت_You can't remove that bookmark. Swipe series can be disabled in the Settings._لاحقة"
+				discardDisabled: "لا يمكنك إزالة العلامة المرجعية. يمكن تعطيل سلسلة السحب في الإعدادات."
 			}
 		}
-    })
+})
 );

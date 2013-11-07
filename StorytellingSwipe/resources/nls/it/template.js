@@ -65,7 +65,7 @@
 				signInTwo: "per salvare l\'applicazione."
 			},
 			header:{
-				editMe: "Modifica utente",
+				editMe: "é_Click to edit description_È",
 				templateTitle: "Imposta titolo modello",
 				templateSubtitle: "Imposta sottotitolo modello"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Abilita legenda",
 				settingsDescriptionEnable: "Abilita descrizione",
 				settingsBookmarksEnable: "Abilita serie di scorrimenti con dito",
-				settingsPopupDisable: "é_Enable popup_È",
+				settingsPopupDisable: "Abilita popup",
+				settingsLocatorEnable: "é_Enable locator_È",
 				settingsLegendHelpContent: "Per definire il contenuto della legenda, utilizzare il sommario del map viewer Web di ArcGIS.com (Nascondi nella legenda)",
-				settingsSeriesHelpContent: "é_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._È",
+				settingsSeriesHelpContent: "Al momento della prima attivazione, verranno utilizzati i segnalibri delle mappe Web per prepopolare la barra della serie. Se in seguito l\'opzione viene disabilitata, la configurazione della serie non verrà eliminata e risulterà disponibile se si decide di riabilitare la serie.",
 				preview: "Anteprima interfaccia utente"
 			},
 			settingsSwipePopup: {
@@ -185,7 +186,7 @@
 				descr: "Descrizione",
 				discard: "Annulla segnalibro",
 				saveExtent: "Impostare l\'estensione del segnalibro",
-				discardDisabled: "é_You can't remove that bookmark. Swipe series can be disabled in the Settings._È"
+				discardDisabled: "Impossibile rimuovere il segnalibro. È possibile disabilitare la serie di scorrimenti nelle impostazioni."
 			}
 		}
     })

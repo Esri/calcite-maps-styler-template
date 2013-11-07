@@ -56,12 +56,12 @@
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
       centuryPattern: "g yyyy",
-      decadePattern: "yyyy",
+      decadePattern: "yyyy", 
       yearPattern: "mm-yyyy",
       weekPattern: "dd-mm-yyyy",
       hourTimePattern: "hh",
       // e.g. for German: "hh:mm:ss"
-      millisecondTimePattern:"h:m:ss.SSS a",
+      millisecondTimePattern:"ł_h:m:ss.SSS a_ą",
       minuteTimePattern: "hh:mm",
       // e.g. for German: "h:mm"
       monthPattern: "dd-mm-yyyy",
@@ -96,7 +96,7 @@
       title: "Znajdź adres lub miejsce",
       popupTitle: "Lokalizacja",
       currentLocation: "Bieżąca lokalizacja",
-      notWhatYouWanted: "Nie to, czego oczekiwano?",
+      notWhatYouWanted: "Nie to, czego oczekiwano?" ,
       selectAnother: "Wybierz inną lokalizację",
       errors:{
        missingLocation: "Nie odnaleziono lokalizacji"

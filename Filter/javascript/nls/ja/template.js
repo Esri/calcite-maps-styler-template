@@ -6,7 +6,7 @@
       filterInstructions: "値を指定して、レイヤにフィルタをかけます。",
       filterOr: "次のいずれかの条件式が正しい必要があります。",
       filterAnd: "次の条件式のすべてが正しい必要があります。",
-      filterNo:  "Web map does not contain any interactive filters.",
+      filterNo: "須_Web map does not contain any interactive filters._鷗",
       errors:{
         message: "フィルタ アプリケーションの作成中に問題が発生しました"
       }

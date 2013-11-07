@@ -8,6 +8,6 @@
         no_editable_layers_message: "웹 맵에 편집 가능한 레이어가 없습니다."
       }
     }
-  })
+  }),
 
 );

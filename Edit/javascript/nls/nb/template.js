@@ -8,6 +8,6 @@
         no_editable_layers_message: "Webkartet inneholder ingen redigerbare lag."
       }
     }
-  })
+  }),
 
 );

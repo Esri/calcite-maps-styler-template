@@ -8,6 +8,6 @@ define(
         no_editable_layers_message: "Web map does not contain any editable layers."
       }
     }
-  })
+  }),
 
 );

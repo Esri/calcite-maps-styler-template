@@ -1,7 +1,7 @@
 ﻿define(
 ({
   app:{
-   title:"Map Carousel",
+   title:"ķ_Map Carousel_ū",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
       createMap: "Nevar izveidot karti",

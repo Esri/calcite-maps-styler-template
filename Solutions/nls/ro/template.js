@@ -1,4 +1,5 @@
-﻿/*
+﻿/*global define */
+/*
  | ArcGIS Solutions
  | Version 10.2
  | Copyright 2012 Esri
@@ -18,37 +19,39 @@
 define(
 ({
         tooltips: {
-            search: "Căutare",
-            locate: "Locaţie curentă",
-            markup: "Trimitere corecţie",
-            basemap: "Comutare hartă fundal",
-            share: "Partajare",
-            shareViaEmail: "Partajare prin e-mail",
-            shareViaFacebook: "Partajare prin Facebook",
-            shareViaTwitter: "Partajare prin Twitter",
-            print: "Imprimare dată",
-            fetchPrint: "Vizualizare hartă imprimată",
-            landscape: "Orientare pagină peisaj",
-            portrait: "Orientare pagină portret",
-            help: "Ajutor"
+            search: "Căutare",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            locate: "Locaţie curentă",  // Command button to zoom and pan to the current geographical position reported by the browser
+            markup: "Trimitere corecţie",  // Command button to submit a correction to the app's host
+            collect: "Ă_Add content to map_ș",  // Command button to open a template picker to add features to the map
+            filter: "Ă_Filter map layers_ș",  // Explains purpose of type-in box affiliated with template picker
+            basemap: "Comutare hartă fundal",  // Command button to open a dialog box for switching basemaps
+            share: "Partajare",  // Command button to open a dropdown menu for picking a type of sharing
+            shareViaEmail: "Partajare prin e-mail",  // Command button to share the current map extents via email
+            shareViaFacebook: "Partajare prin Facebook",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
+            shareViaTwitter: "Partajare prin Twitter",  // Command button to share the current map extents via a Twitter tweet: a URL is opened that permits the user to log into Twitter with a tweet that is ready to go
+            print: "Imprimare dată",  // Command button to open a dialog box for specifying print orientation, title, and author before printing; also used inside print dialog box
+            fetchPrint: "Vizualizare hartă imprimată",  // Command button to open a PDF containing a map that was just printed by the print map command
+            landscape: "Orientare pagină peisaj",  // Command button in the print map dialog box to select the landscape page orientation
+            portrait: "Orientare pagină portret",  // Command button in the print map dialog box to select the portrait page orientation
+            help: "Ajutor"  // Command button to open a dialog box with a short description of the app
         },
         labels: {
-            email: "e-mail",
-            Facebook: "Facebook",
-            Twitter: "Twitter"
+            email: "e-mail",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
+            Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
+            Twitter: "Twitter"  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
         },
         prompts: {
-            search: "Căutare:",
-            markup: "Trasare",
-            mapLayers: "Straturi tematice hartă:",
-            layerFields: "Câmpuri strat tematic de căutare:"
+            search: "Căutare:",  // Appears before a search text field in dialog box for searching for a feature
+            markup: "Trasare",  // Appears before a set of tools for drawing on the map
+            mapLayers: "Straturi tematice hartă:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
+            layerFields: "Câmpuri strat tematic de căutare:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
         },
         messages: {
-            geolocationDenied: "Acest site nu are permisiunea de a obţine locaţia curentă",
-            geolocationUnavailable: "Browserul nu a putut obţine locaţia curentă",
-            geolocationTimeout: "Browserul nu a putut obţine locaţia curentă la timp",
-            searchLayerMissing: "Acest strat tematic de căutare nu a fost găsit în hartă",
-            searchFieldMissing: "Acest câmp nu a fost găsit în stratul tematic de căutare al hărţii"
+            geolocationDenied: "Acest site nu are permisiunea de a obţine locaţia curentă",  // Shown when the browser does not permit the app to get the current geographical position
+            geolocationUnavailable: "Browserul nu a putut obţine locaţia curentă",  // Shown when the browser returns an error instead of the current geographical position
+            geolocationTimeout: "Browserul nu a putut obţine locaţia curentă la timp",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            searchLayerMissing: "Acest strat tematic de căutare nu a fost găsit în hartă",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
+            searchFieldMissing: "Acest câmp nu a fost găsit în stratul tematic de căutare al hărţii"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
         }
     })
 );

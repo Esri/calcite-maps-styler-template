@@ -65,7 +65,7 @@
 				signInTwo: "om de applicatie op te slaan."
 			},
 			header:{
-				editMe: "Bewerk me!",
+				editMe: "Ĳ_Click to edit description_ä",
 				templateTitle: "Titel voor template instellen",
 				templateSubtitle: "Subtitel voor template instellen"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Legenda inschakelen",
 				settingsDescriptionEnable: "Omschrijving inschakelen",
 				settingsBookmarksEnable: "Swipe-reeks inschakelen",
-				settingsPopupDisable: "Ĳ_Enable popup_ä",
+				settingsPopupDisable: "Pop-up inschakelen",
+				settingsLocatorEnable: "Ĳ_Enable locator_ä",
 				settingsLegendHelpContent: "Om de inhoud van de legenda te verfijnen, gebruikt u de inhoudsopgave van de ArcGIS.com-webmap viewer (Verbergen in Legenda)",
-				settingsSeriesHelpContent: "Ĳ_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ä",
+				settingsSeriesHelpContent: "Bij de eerste activering worden de bladwijzers voor uw webmaps gebruikt om de reeksbalk vooraf in te vullen. Als u de reeksoptie later uitschakelt, wordt uw reeksconfiguratie niet verwijderd en blijft deze beschikbaar als u de reeks opnieuw wilt inschakelen.",
 				preview: "Voorbeeldweergave UI"
 			},
 			settingsSwipePopup: {
@@ -183,9 +184,9 @@
 			seriesPanel: {
 				title: "Titel",
 				descr: "Beschrijving",
-				discard: "Markering negeren",
-				saveExtent: "Extent met bladwijzer instellen",
-				discardDisabled: "Ĳ_You can't remove that bookmark. Swipe series can be disabled in the Settings._ä"
+				discard: "Bladwijzer negeren",
+				saveExtent: "Bladwijzer extent instellen",
+				discardDisabled: "U kunt de bladwijzer niet verwijderen. Swipe-reeks kan worden uitgeschakeld in de Instellingen."
 			}
 		}
     })

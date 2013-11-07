@@ -65,7 +65,7 @@
 				signInTwo: "لحفظ التطبيق"
 			},
 			header:{
-				editMe: "حررني !",
+				editMe: "بيت_Click to edit description_لاحقة",
 				templateTitle: "تحديد عنوان القالب",
 				templateSubtitle: "تحديد العنوان الفرعي للقالب"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "تمكين وسيلة الإيضاح",
 				settingsDescriptionEnable: "تمكين الوصف",
 				settingsBookmarksEnable: "تمكين سلاسل السحب",
-				settingsPopupDisable: "بيت_Enable popup_لاحقة",
+				settingsPopupDisable: "تمكين عنصر منبثق",
+				settingsLocatorEnable: "بيت_Enable locator_لاحقة",
 				settingsLegendHelpContent: "لتحسين محتوى مفتاح الخريطة، استخدم جدول محتويات عارض خريطة الويب ArcGIS.com (مخفي في وسيلة الإيضاح)",
-				settingsSeriesHelpContent: "بيت_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._لاحقة",
+				settingsSeriesHelpContent: "في التفعيل الأول، سيتم استخدام العلامات المرجعية لخرائط الويب لإعادة تعبئة شريط السلسلة. إذا قمت بتعطيل خيار السلسلة لاحقًا، لن يتم تجاهل تكوين السلسلة وسيتوفر عند تقرير تمكين السلسلة مجددًا.",
 				preview: "معاينة واجهة المستخدم"
 			},
 			settingsSwipePopup: {
@@ -185,7 +186,7 @@
 				descr: "الوصف",
 				discard: "تجاهل العلامة المرجعية",
 				saveExtent: "تعيين نطاق العلامة المرجعية",
-				discardDisabled: "بيت_You can't remove that bookmark. Swipe series can be disabled in the Settings._لاحقة"
+				discardDisabled: "لا يمكنك إزالة العلامة المرجعية. يمكن تعطيل سلسلة السحب في الإعدادات."
 			}
 		}
     })

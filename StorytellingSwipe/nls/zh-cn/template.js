@@ -1,5 +1,5 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
 				step1: "正在加载应用程序",
@@ -65,7 +65,7 @@
 				signInTwo: "保存应用程序。"
 			},
 			header:{
-				editMe: "编辑!",
+				editMe: "试_Click to edit description_验",
 				templateTitle: "设置模板标题",
 				templateSubtitle: "设置模板子标题"
 			},
@@ -90,12 +90,12 @@
 				settingsLogoSocialExplain: "自定义标题右上方的链接。",
 				settingsLogoSocialText: "文本",
 				settingsLogoSocialLink: "链接",
-				settingsLogoSocialDisabled: "此功能已由管理员禁用"
+				settingsLogoSocialDisabled: "此功能已被管理员禁用"
 			},
 			settingsExtent: {
 				settingsTabExtent: "范围",
 				settingsExtentExplain: "通过下面的交互式地图设置初始范围。",
-				settingsExtentExplainBottom: "您定义的范围将修改您的 web 地图初始范围。请注意，如果您在执行卷帘系列操作，将不使用该范围。",
+				settingsExtentExplainBottom: "您定义的范围将修改您的 web 地图初始范围。请注意，如果您正在执行卷帘操作，则不会使用该范围。",
 				settingsExtentDateLineError: "范围不可跨越 180° 经线",
 				settingsExtentDateLineError2: "计算范围时出错",
 				settingsExtentDrawBtn: "确定一个新范围",
@@ -139,7 +139,7 @@
 				settingsDataModelExplainSpyGlass: "选择在望远镜中显示的图层或 web 地图。",
 				settingsDataModelOneMap: "一幅 web 地图，单个图层",
 				settingsDataModel1Explain: "选择由卷帘工具控制的图层。",
-				settingsDataModel1Warning: "图层被上面的图层隐藏时，卷帘不起任何作用。",
+				settingsDataModel1Warning: "如果图层被上面的图层所遮盖，则卷帘无任何效果。",
 				settingsDataModel1SpyGlassExplain: "选择要在望远镜中显示的图层。",
 				settingsDataModelTwoMaps: "两幅 web 地图",
 				settingsDataModelLayerIds: "Web 地图图层 ID",
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "启用图例",
 				settingsDescriptionEnable: "启用描述",
 				settingsBookmarksEnable: "启用卷帘系列",
-				settingsPopupDisable: "试_Enable popup_验",
+				settingsPopupDisable: "启用弹出窗口",
+				settingsLocatorEnable: "试_Enable locator_验",
 				settingsLegendHelpContent: "要优化图例内容，请使用 ArcGIS.com web 地图查看器内容列表(隐藏在图例中)",
-				settingsSeriesHelpContent: "试_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._验",
+				settingsSeriesHelpContent: "首次激活时，将使用您的 web 地图书签预填充该系列条形图。如果您稍后禁用此系列选项，您的系列配置也不会被放弃，再次启用该系列时还可使用此系列配置。",
 				preview: "UI 预览"
 			},
 			settingsSwipePopup: {
@@ -177,7 +178,7 @@
 			},
 			initPopup: {
 				initHeader: "欢迎使用 Swipe Builder",
-				modalNext: "下一步",
+				modalNext: "试_Next_验",
 				modalApply: "打开应用程序"
 			},
 			seriesPanel: {
@@ -185,8 +186,8 @@
 				descr: "描述",
 				discard: "放弃书签",
 				saveExtent: "设置书签范围",
-				discardDisabled: "试_You can't remove that bookmark. Swipe series can be disabled in the Settings._验"
+				discardDisabled: "无法移除书签。可在设置中禁用卷帘系列。"
 			}
 		}
-    })
+})
 );

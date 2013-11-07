@@ -1,12 +1,12 @@
 ﻿define(
-	({
+({
 		viewer: {
 			loading: {
-				step1: "CARREGAR A APLICAÇÃO",
-				step2: "CARREGAR DADOS",
+				step1: "ã_LOADING APPLICATION_Ç",
+				step2: "ã_LOADING DATA_Ç",
 				step3: "INICIALIZAR",
 				fail: "Não foi possível carregar o Varrimento",
-				loadBuilder: "A MUDAR PARA O MODO DE BUILDER",
+				loadBuilder: "ã_SWITCHING TO BUILDER MODE_Ç",
 				failButton: "Tentar Novamente"
 			},
 			errors: {
@@ -65,7 +65,7 @@
 				signInTwo: "para guardar a aplicação."
 			},
 			header:{
-				editMe: "Editar-me!",
+				editMe: "ã_Click to edit description_Ç",
 				templateTitle: "Definir título do modelo",
 				templateSubtitle: "Definir subtítulo do modelo"
 			},
@@ -160,9 +160,10 @@
 				settingsLegendEnable: "Ativar Legenda",
 				settingsDescriptionEnable: "Ativar Descrição",
 				settingsBookmarksEnable: "Ativar série de Varrimento",
-				settingsPopupDisable: "ã_Enable popup_Ç",
+				settingsPopupDisable: "Ativar janelas popup",
+				settingsLocatorEnable: "ã_Enable locator_Ç",
 				settingsLegendHelpContent: "Utilize o índice do visualizador de mapas do ArcGIS.com (Ocultar em Legenda)",
-				settingsSeriesHelpContent: "ã_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._Ç",
+				settingsSeriesHelpContent: "Durante a primeira ativação, os seus eventuais marcadores de mapas web serão utilizados para pré-preencher a barra de séries. Se desativar esta opção mais tarde, as configurações das suas séries não serão perdidas, reativar esta opção irá carregar o estado antes da desativação.",
 				preview: "Pré-visualizar IU"
 			},
 			settingsSwipePopup: {
@@ -185,8 +186,8 @@
 				descr: "Descrição",
 				discard: "Rejeitar Marcador",
 				saveExtent: "Definir a extensão do Marcador",
-				discardDisabled: "ã_You can't remove that bookmark. Swipe series can be disabled in the Settings._Ç"
+				discardDisabled: "Não pode remover aquele marcador. As séries Swipe podem ser desativadas nas Definições."
 			}
 		}
-    })
+})
 );
