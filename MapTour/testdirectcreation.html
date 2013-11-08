@@ -15,7 +15,7 @@ Inconvenient: user see the builder loading.
 User may be surprised to get redirected and may not be sure he will got back to builder, (I put 
 a message before redirecting but I'm sure someone will miss it).
 </pre>
-<input type="button" value="Build a Tour" onClick="document.location = 'index.html?edit&fromScratch'"/>
+<input type="button" value="Build a Tour" onClick="document.location = 'index.html?fromScratch'"/>
 
 <h1>Dynamic button</h1>
 <pre>
@@ -53,9 +53,9 @@ Working exemple:
 	function buildTour4()
 	{
 		if ( getCookie('esri_auth') )
-			document.location = "index.html?edit&fromScratch";
+			document.location = "index.html?fromScratch";
 		else
-			document.location = "/home/signin.html?returnUrl=" + document.location.origin + document.location.pathname.split('/').slice(1,-1).join('/') + '/index.html%3Fedit%26fromScratch';
+			document.location = "/home/signin.html?returnUrl=" + document.location.origin + '/' + document.location.pathname.split('/').slice(1,-1).join('/') + '/index.html%3FfromScratch';
 	}
 	
 	document.getElementById('buildTour4').value = getCookie('esri_auth') ? "Build a Tour" : "Sign-in and build a Tour";

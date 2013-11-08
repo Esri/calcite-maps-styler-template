@@ -228,7 +228,8 @@ define({
 				dataWarningEdit: "Edit web map",
 				dataWarningClose: "Close",
 				signIn: "Please sign in with an account on",
-				signInTwo: "to save the application."
+				signInTwo: "to save the application.",
+				switchBM: "Switch Basemap"
 			},
 			organizePopupJS: {
 				messageStart: "You have chosen to delete",

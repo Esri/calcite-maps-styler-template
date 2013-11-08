@@ -67,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta3';
+			var version = '2.2-beta4';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -157,7 +157,7 @@
 
 			var path_location = location.pathname.replace(/\/[^/]+$/, '');
 			var dojoConfig = {
-				parseOnLoad: false,
+				parseOnLoad: true,
 				isDebug: false,
 				useDeferredInstrumentation: true,
 				cacheBust: ! isProduction,
@@ -235,6 +235,14 @@
 				<div id="mainMap">
 					<div id="hoverInfo"></div>
 				</div>
+				<!-- Builder switch basemap -->
+				<div id="basemapChooser">
+					<div data-dojo-type="dijit/TitlePane" 
+						 data-dojo-props="closable:false,  open:false">
+					<div data-dojo-type="dijit/layout/ContentPane" style="width:380px; height:280px; overflow:auto;">
+						<div id="basemapGallery" ></div></div>
+					</div>
+				</div>
 			</div>
 			<!-- Picture panel -->
 			<div id="picturePanel">
@@ -269,6 +277,7 @@
 					</div>
 				</div>
 			</div>
+		
 			<!-- Builder bottom panel -->
 			<div id="builderPanel3">
 				<button id="introRecordButton" type="button" class="btn"></button>
@@ -540,9 +549,9 @@
 						</tr>
 						<tr>
 							<td class="btn-select-youtube">
-								<a><img style="width: 50px" src="https://developers.google.com/youtube/images/YouTube_logo_stacked_white.png"/></a>
+								<a><img style="width: 50px"/></a>
 							</td>
-							<td class="btn-select-scratch">
+							<td class="btn-select-advanced">
 								<a><img style="width: 40px"/></a>
 							</td>
 						</tr>
@@ -554,7 +563,7 @@
 					<table>
 						<tr>
 							<td class="btn-select-hostedFS" style="vertical-align: middle; height: 125px;">
-								<img style="width: 100px" src="http://store.esri.com/esri/images/ArcGIS_Icon_160x130.png"/>
+								<img style="width: 72px"/>
 								<div class="notAvailable hostedFsNote"></div>
 							</td>
 						</tr>
@@ -590,16 +599,13 @@
 				<div class="header"></div>
 				<div class="options">
 					<div class="options-row">
-						<button class="btn btn-adv btn-select-csv">Mass import from any hosting using a CSV</button>
-					</div>
-					<div class="options-row">
 						<button class="btn btn-adv btn-select-scratch">Manual input of the medias by URL</button>
 					</div>
 					<div class="options-row">
-						<button class="btn btn-adv btn-select-existingFS">Use an existing Feature Service (TODO)</button>
+						<button class="btn btn-adv btn-select-csv">Import from any source using a CSV</button>
+						<div class="csv-note"></div>
 					</div>
 				</div>
-				<div class="footer"></div>
 			</div>
 			
 			<!-- Import specific -->
@@ -1058,7 +1064,7 @@
 			}
 			
 			if( isProduction ) {
-				if( getUrlVar('edit') )
+				if( getUrlVar('edit') || getUrlVar('fromScratch') )
 					loadJS('app/maptour-builder-min.js');
 				else
 					loadJS('app/maptour-viewer-min.js');
@@ -1129,7 +1135,7 @@
 							
 						 	require(["storymaps/core/Core", "storymaps/maptour/core/MainView"], function(Core, MainView){
 						 		var urlParams = urlUtils.urlToObject(document.location.search).query || {};
-						 		var isInBuilderMode = urlParams.edit != null;
+						 		var isInBuilderMode = urlParams.edit != null || urlParams.fromScratch != null;
 						 		
 						 		if (isInBuilderMode) {
 						 			require(["storymaps/builder/Builder", "storymaps/maptour/builder/BuilderView"], function(Builder, BuilderView) {
