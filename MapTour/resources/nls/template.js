@@ -6,6 +6,8 @@ define({
 				step2: "LOADING DATA",
 				step3: "INITIALIZING THE TOUR",
 				loadBuilder: "SWITCHING TO BUILDER MODE",
+				redirectSignIn: "REDIRECTING TO SIGN-IN PAGE",
+				redirectSignIn2: "(you will be redirected here after sign-in)",
 				fail: "Sorry, Map Tour loading failed",
 				failButton: "Retry"
 			},
@@ -219,6 +221,7 @@ define({
 				saveSuccess: "Application saved successfully",
 				saveError: "Save failed, please try again",
 				saveError2: "Save failed due to an invalid html tag in a name or description",
+				saveError3: "The name can't be empty",
 				dragColorPicker: "Move me around<br />or change my color",
 				dataWarningExtent: "You have data outside of the web map extent. Those data won't be used as tour points, change map extent if you want to use them.",
 				dataWarningVisibi: "Your Map Tour layer is not visible at the current web map extent. Confirm your Map Tour layer is visible with a %MAPSIZE% large map.",
@@ -466,6 +469,18 @@ define({
 					div3: "Before sharing a Map Tour publicly, make sure it works when you are not logged in your ArcGIS.com account.",
 					div4: "It is a good idea to see what your map tour looks like on an iPad held in landscape orientation. This can help you see if your captions cover up too much of the pictures."
 				}
+			},
+			directCreationFirstSave: {
+				defaultTitle: "My Map Tour (TODO what to use here?)",
+				title: "Your Tour has been saved",
+				div1: "Congratulation! A new <a href='%LINK1%' target='_blank'>webmap</a> and <a href='%LINK2%' target='_blank'>application</a> have been created in your <a href='%LINK3%' target='_blank'>root directory</a> under the name %NAME%.",
+				div2: "Your Tour isn’t shared with your audience yet. When you are ready, use the share button on <a href='%LINK1%' target='_blank'>the application page</a>: <br><br> TODO SCREENSHOT <br>",
+				div3: "Here are the final application URLs:",
+				div3link1: "Regular",
+				div3link2: "Shortened",
+				div3link3: "Administration",
+				div4: "As the owner of the application, when you are logged in, the application include a button to open the interactive builder, use the administration link if that button isn't displayed. <br><br> TODO SCREENSHOT <br><br>",
+				bitlyInProgress: "Requesting ..."
 			}
         }
     }),

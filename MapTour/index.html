@@ -67,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta2';
+			var version = '2.2-beta3';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -145,6 +145,7 @@
 				loadCSS("app/storymaps/maptour/builder/OrganizePopup.css");
 				loadCSS("app/storymaps/maptour/builder/AddPopup.css");
 				loadCSS("app/storymaps/maptour/builder/HelpPopup.css");
+				loadCSS("app/storymaps/maptour/builder/DirectCreationFirstSavePopup.css");
 				
 				loadCSS("app/storymaps/maptour/ui/mobile/Common.css");
 				loadCSS("app/storymaps/maptour/ui/mobile/Carousel.css");
@@ -649,7 +650,7 @@
 					<span class="header"></span>
 					<span class="commonHeader"></span>
 				</div>
-				<input class="selectUserName" type="text" value=""/>
+				<input class="selectUserName" type="text" value="greg.lazou"/>
 				<button class="btn btn-userLogin"></button>
 				<span class="signInMsg"></span>
 				<div>
@@ -977,6 +978,37 @@
 			</div>
 		</div>
 		
+		<!-- Direct Creation First Save popup -->
+		<div class="modal hide" id="directCreationFirstSavePopup" data-backdrop="static" tabindex="-1">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3></h3>
+			</div>
+			<div class="modal-body">
+				<div class="div1"></div>
+				<div class="div2"></div>
+				<div class="div3"></div>
+				<table class="table1">
+					<tr>
+						<td class="firstColumn div3link1"></td>
+						<td class="secondColumn"><input type="text" class="linkinput link1"></td>
+					</tr>
+					<tr>
+						<td class="firstColumn div3link2"></td>
+						<td class="secondColumn"><input type="text" class="linkinput link2"></td>
+					</tr>
+					<tr>
+						<td class="firstColumn div3link3"></td>
+						<td class="secondColumn"><input type="text" class="linkinput link3"></td>
+					</tr>
+				</table>
+				<div class="div4"></div>
+			</div>
+			<div class="modal-footer">
+				<button class="btnClose btn" data-dismiss="modal" aria-hidden="true"></button>
+			</div>
+		</div>
+		
 		<!-- Browser popup -->
 		<div class="modal hide" id="browserPopup" data-backdrop="static" tabindex="-1">
 			<div class="modal-header">
@@ -1007,7 +1039,7 @@
 		</div>
 		
 		<script type="text/javascript">
-			loadJS('//jsdev.arcgis.com/3.8/init.js', true);
+			loadJS('//js.arcgis.com/3.7/', true);
 			loadJS('app/maptour-config.js');
 			
 			function getUrlVar(name)
@@ -1035,6 +1067,7 @@
 				loadJS('lib/_jquery.1.9.1.min.js');
 				loadJS('lib/bootstrap/js/bootstrap.min.js');
 				loadJS('lib/spin.min.js');
+				loadJS('lib/history.min.js');
 				loadJS('lib/cubiq.iscroll.js');
 				loadJS('lib/cubiq.swipeview.js');
 				loadJS('lib/jquery-ui-1.10.0.custom.min.js');
@@ -1063,7 +1096,7 @@
 				})();
 			}
 		</script>
-
+		
 		<script type="text/javascript">
 			var loadingIndicator = {};
 			var i18n = null;
