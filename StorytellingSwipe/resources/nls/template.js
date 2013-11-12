@@ -179,6 +179,7 @@ define({
 			initPopup: {
 				initHeader: "Welcome to the Swipe Builder",
 				modalNext: "Next",
+				modalPrev: "Previous",
 				modalApply: "Open the app"
 			},
 			seriesPanel: {
