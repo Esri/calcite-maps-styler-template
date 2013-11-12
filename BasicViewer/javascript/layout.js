@@ -337,7 +337,7 @@ function initUI(response) {
         //add scalebar
         var scalebar = new esri.dijit.Scalebar({
             map: map,
-            scalebarUnit: i18n.viewer.main.scaleBarUnits //metric or english
+            scalebarUnit: configOptions.units //i18n.viewer.main.scaleBarUnits //metric or english
         });
     }
 
@@ -885,7 +885,7 @@ function addPrint(layers) {
     var layoutOptions = {
         'authorText': configOptions.owner,
         'titleText': configOptions.title,
-        'scalebarUnit': (i18n.viewer.main.scaleBarUnits === 'english') ? 'Miles' : 'Kilometers',
+        'scalebarUnit': configOptions.units, //(i18n.viewer.main.scaleBarUnits === 'english') ? 'Miles' : 'Kilometers',
         'legendLayers': legendLayers
     };
 
@@ -1781,7 +1781,7 @@ function createElevationProfileTools() {
     // IF SCALEBAR IS NOT DISPLAYED THEN USE MILES AS DEFAULT //
     var defaultDistanceUnits = measure.units.esriMiles;
     if (configOptions.displayscalebar === "true" || configOptions.displayscalebar === true) {
-        if (i18n.viewer.main.scaleBarUnits === 'metric') {
+        if (configOptions.units === "metric"){//(i18n.viewer.main.scaleBarUnits === 'metric') {
             defaultDistanceUnits = measure.units.esriKilometers;
         }
     }
