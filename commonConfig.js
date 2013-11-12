@@ -3,6 +3,7 @@ define(
 function() {
   var config = {
     bingMapsKey:"Arrzu_Koi7htDRMIwm6kTe0Nqh8FvVdN17blcaJVTEhn87z-tIYJh2LgBNbJS4fv",   
+    units: "english",
     helperServices: {
        geometry:{
         url: location.protocol + "//utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer"
