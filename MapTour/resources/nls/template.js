@@ -39,7 +39,7 @@ define({
 				hideIntro: "HIDE TITLE",
 				navList: "List",
 				navMap: "Map",
-				navInfo: "Medias",
+				navInfo: "Media",
 				introStartBtn: "Start"
 			},
 			desktopHTML: {
@@ -221,7 +221,7 @@ define({
 				saveSuccess: "Application saved successfully",
 				saveError: "Save failed, please try again",
 				saveError2: "Save failed due to an invalid html tag in a name or description",
-				saveError3: "The name can't be empty",
+				saveError3: "The title can't be empty",
 				dragColorPicker: "Move me around<br />or change my color",
 				dataWarningExtent: "You have data outside of the web map extent. Those data won't be used as tour points, change map extent if you want to use them.",
 				dataWarningVisibi: "Your Map Tour layer is not visible at the current web map extent. Confirm your Map Tour layer is visible with a %MAPSIZE% large map.",
@@ -371,9 +371,9 @@ define({
 				nextBtn: "Next"
 			},
 			initPopupHome: {
-				header1: "Where are your medias?",
-				header2: "This assistant will help you build a Map Tour from pictures already stored online or it will import them into your ArcGIS Online for Organization account.",
-				title1: "My medias are already hosted",
+				header1: "Where are your images or videos?",
+				header2: "This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organization account.",
+				title1: "My media are already hosted",
 				title2: "I need to host my pictures",
 				hostedFSTooltip: "Use ArcGIS Online to host your pictures (doesn't support videos).",
 				hostedFsNA: "Only available for ArcGIS for Organization Publisher and Administrator users",
@@ -381,6 +381,7 @@ define({
 				footer2: "Map Tour Help",
 				footer3: "Download the CSV template",
 				footer4: "\"Save as\" if it doesn't download",
+				footer4bis: "Use right click and Save as if download doesn't start",
 				footer5: "Learn about hosting options",
 				footerProgress: "Creation in progress",
 				footerSucceed: "Creation succeeded. Loading..."
@@ -472,16 +473,20 @@ define({
 				}
 			},
 			directCreationFirstSave: {
-				defaultTitle: "My Map Tour (TODO what to use here?)",
-				title: "Your Tour has been saved",
-				div1: "Congratulation! A new <a href='%LINK1%' target='_blank'>webmap</a> and <a href='%LINK2%' target='_blank'>application</a> have been created in your <a href='%LINK3%' target='_blank'>root directory</a> under the name %NAME%.",
-				div2: "Your Tour isn’t shared with your audience yet. When you are ready, use the share button on <a href='%LINK1%' target='_blank'>the application page</a>: <br><br> TODO SCREENSHOT <br>",
-				div3: "Here are the final application URLs:",
-				div3link1: "Regular",
-				div3link2: "Shortened",
-				div3link3: "Administration",
-				div4: "As the owner of the application, when you are logged in, the application include a button to open the interactive builder, use the administration link if that button isn't displayed. <br><br> TODO SCREENSHOT <br><br>",
-				bitlyInProgress: "Requesting ..."
+				title: "Congratulation, your Tour has been saved",
+				div1opt1: "Your Tour is <strong>publicly accessible</strong>, you can share it using %URL%.",
+				div1opt2: "Your Tour is accessible by the members of your organization, you can share it using %URL%.",
+				div1opt3: "Your Tour is <strong>private</strong>",
+				div2: "How to keep the Tour private?",
+				div2bis: "How to make the Tour public?",
+				div3: "Use the share button on <a href='%LINK1%' target='_blank'>the application page</a>:",
+				div3bis: "Use the share button on <a href='%LINK1%' target='_blank'>the application page</a> and share it using %URL%:",
+				div4: "How to administer the Tour?",
+				div5: "Save and reuse the following link %LINK1% or find the application in your <a href='%LINK2%' target='_blank'>ArcGIS.com content folder</a>.",
+				div6: "As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:",
+				bitlyInProgress: "Creating...",
+				title2: "Publish your Map Tour",
+				
 			}
         }
     }),

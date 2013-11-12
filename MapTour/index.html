@@ -67,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta4';
+			var version = '2.2-beta5';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -552,7 +552,7 @@
 								<a><img style="width: 50px"/></a>
 							</td>
 							<td class="btn-select-advanced">
-								<a><img style="width: 40px"/></a>
+								<a><img style="width: 44px"/></a>
 							</td>
 						</tr>
 						
@@ -599,7 +599,8 @@
 				<div class="header"></div>
 				<div class="options">
 					<div class="options-row">
-						<button class="btn btn-adv btn-select-scratch">Manual input of the medias by URL</button>
+						<!-- TODO -->
+						<button class="btn btn-adv btn-select-scratch">Manual input of media via URL</button>
 					</div>
 					<div class="options-row">
 						<button class="btn btn-adv btn-select-csv">Import from any source using a CSV</button>
@@ -994,21 +995,11 @@
 				<div class="div1"></div>
 				<div class="div2"></div>
 				<div class="div3"></div>
-				<table class="table1">
-					<tr>
-						<td class="firstColumn div3link1"></td>
-						<td class="secondColumn"><input type="text" class="linkinput link1"></td>
-					</tr>
-					<tr>
-						<td class="firstColumn div3link2"></td>
-						<td class="secondColumn"><input type="text" class="linkinput link2"></td>
-					</tr>
-					<tr>
-						<td class="firstColumn div3link3"></td>
-						<td class="secondColumn"><input type="text" class="linkinput link3"></td>
-					</tr>
-				</table>
+				<div class="img"><img class="img1"></img></div>
 				<div class="div4"></div>
+				<div class="div5"></div>
+				<div class="div6"></div>
+				<div class="img"><img class="img2"></img></div>
 			</div>
 			<div class="modal-footer">
 				<button class="btnClose btn" data-dismiss="modal" aria-hidden="true"></button>
@@ -1045,7 +1036,7 @@
 		</div>
 		
 		<script type="text/javascript">
-			loadJS('//js.arcgis.com/3.7/', true);
+			loadJS('//jsdev.arcgis.com/3.8/init.js', true);
 			loadJS('app/maptour-config.js');
 			
 			function getUrlVar(name)
