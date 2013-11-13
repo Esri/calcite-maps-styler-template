@@ -33,13 +33,12 @@
 			
 			function buildTour()
 			{
+				var baseURL = document.location.protocol + '//' + "www.arcgis.com/";
+				
 				if ( getCookie('esri_auth') )
-					document.location = "index.html?fromScratch";
+					document.location = baseURL + "apps/MapTour/?fromScratch";
 				else
-					document.location = "/home/signin.html?returnUrl=" 
-											+ document.location.origin 
-											+ '/' + document.location.pathname.split('/').slice(1,-1).join('/') 
-											+ '/index.html%3FfromScratch';
+					document.location = baseURL + "home/signin.html?returnUrl=" + encodeURIComponent(baseURL + 'apps/MapTour/?fromScratch');
 			}
 		</script>
 

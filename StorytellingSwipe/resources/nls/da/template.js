@@ -65,7 +65,7 @@
 				signInTwo: "for at gemme applikationen."
 			},
 			header:{
-				editMe: "ø_Click to edit description_å",
+				editMe: "Redigér mig!",
 				templateTitle: "Indstil skabelontitel",
 				templateSubtitle: "Indstil skabelonundertitel"
 			},
@@ -157,13 +157,12 @@
 			settingsLegend: {
 				settingsTabLegend: "App-layout",
 				settingsLegendExplain: "Vælg indstillinger for applikationslayout.",
-				settingsLegendEnable: "Aktiv\ér signaturforklaring",
-				settingsDescriptionEnable: "Aktiv\ér beskrivelse",
-				settingsBookmarksEnable: "Aktiv\ér Swipe-serie",
-				settingsPopupDisable: "Aktiv\ér pop-up-vindue",
-				settingsLocatorEnable: "ø_Enable locator_å",
+				settingsLegendEnable: "Aktiver signaturforklaring",
+				settingsDescriptionEnable: "Aktiver beskrivelse",
+				settingsBookmarksEnable: "Aktiver Swipe-serie",
+				settingsPopupDisable: "ø_Enable popup_å",
 				settingsLegendHelpContent: "Hvis du vil forfine signaturforklaringens indhold, kan du bruge indholdsfortegnelsen i ArcGIS.com-webkortviseren (Skjul i signaturforklaring)",
-				settingsSeriesHelpContent: "Ved første aktivering vil dine webkortbogmærker blive anvendt til at udfylde serielinjen på forhånd. Hvis du deaktiverer seriefunktionen senere, slettes din seriekonfiguration ikke, og den vil være tilgængelig, hvis du aktiverer serien igen.",
+				settingsSeriesHelpContent: "ø_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._å",
 				preview: "UI-forhåndsvisning"
 			},
 			settingsSwipePopup: {
@@ -186,7 +185,7 @@
 				descr: "Beskrivelse",
 				discard: "Slet bogmærke",
 				saveExtent: "Indstil bogmærkeudstrækning",
-				discardDisabled: "Du kan ikke fjerne dette bogmærke. Swipe-serier kan deaktiveres under Indstillinger."
+				discardDisabled: "ø_You can't remove that bookmark. Swipe series can be disabled in the Settings._å"
 			}
 		}
     })

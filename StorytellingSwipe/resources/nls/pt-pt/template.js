@@ -65,7 +65,7 @@
 				signInTwo: "para guardar a aplicação."
 			},
 			header:{
-				editMe: "ã_Click to edit description_Ç",
+				editMe: "Editar-me!",
 				templateTitle: "Definir título do modelo",
 				templateSubtitle: "Definir subtítulo do modelo"
 			},
@@ -160,10 +160,9 @@
 				settingsLegendEnable: "Ativar Legenda",
 				settingsDescriptionEnable: "Ativar Descrição",
 				settingsBookmarksEnable: "Ativar série de Varrimento",
-				settingsPopupDisable: "Ativar janelas popup",
-				settingsLocatorEnable: "ã_Enable locator_Ç",
+				settingsPopupDisable: "ã_Enable popup_Ç",
 				settingsLegendHelpContent: "Utilize o índice do visualizador de mapas do ArcGIS.com (Ocultar em Legenda)",
-				settingsSeriesHelpContent: "Durante a primeira ativação, os seus eventuais marcadores de mapas web serão utilizados para pré-preencher a barra de séries. Se desativar esta opção mais tarde, as configurações das suas séries não serão perdidas, reativar esta opção irá carregar o estado antes da desativação.",
+				settingsSeriesHelpContent: "ã_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._Ç",
 				preview: "Pré-visualizar IU"
 			},
 			settingsSwipePopup: {
@@ -186,7 +185,7 @@
 				descr: "Descrição",
 				discard: "Rejeitar Marcador",
 				saveExtent: "Definir a extensão do Marcador",
-				discardDisabled: "Não pode remover aquele marcador. As séries Swipe podem ser desativadas nas Definições."
+				discardDisabled: "ã_You can't remove that bookmark. Swipe series can be disabled in the Settings._Ç"
 			}
 		}
     })

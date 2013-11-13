@@ -65,7 +65,7 @@
 				signInTwo: "och spara programmet."
 			},
 			header:{
-				editMe: "Å_Click to edit description_ö",
+				editMe: "Redigera mig!",
 				templateTitle: "Ange malltitel",
 				templateSubtitle: "Ange underrubrik för mallen"
 			},
@@ -160,10 +160,9 @@
 				settingsLegendEnable: "Aktivera teckenförklaring",
 				settingsDescriptionEnable: "Aktivera beskrivning",
 				settingsBookmarksEnable: "Aktivera svepserie",
-				settingsPopupDisable: "Aktivera popup-fönster",
-				settingsLocatorEnable: "Å_Enable locator_ö",
+				settingsPopupDisable: "Å_Enable popup_ö",
 				settingsLegendHelpContent: "Om du vill förfina innehållsförteckningen använder du innehållsförteckningen i webbkartvyn på ArcGIS.com (Dölj i teckenförklaringen)",
-				settingsSeriesHelpContent: "Vid den första aktiveringen används webbkartans bokmärken för att fylla i seriefältet. Om du inaktiverar alternativet försvinner inte seriekonfigurationen utan finns kvar om du aktiverar alternativet igen.",
+				settingsSeriesHelpContent: "Å_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ö",
 				preview: "Förhandsgranska användargränssnitt"
 			},
 			settingsSwipePopup: {
@@ -186,7 +185,7 @@
 				descr: "Beskrivning",
 				discard: "Ignorera bokmärke",
 				saveExtent: "Ange utbredning för bokmärke",
-				discardDisabled: "Det går inte att ta bort det här bokmärket. Du kan inaktivera svepserier i inställningarna."
+				discardDisabled: "Å_You can't remove that bookmark. Swipe series can be disabled in the Settings._ö"
 			}
 		}
     })

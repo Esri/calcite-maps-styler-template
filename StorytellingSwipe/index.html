@@ -19,7 +19,7 @@
 			//--------------------------------
 			//     Template configuration
 			//--------------------------------
-			configOptions = {				
+			configOptions = {
 				//----------------------------------
 				// Swipe Style
 				//----------------------------------
@@ -91,6 +91,7 @@
 						}
 					}*/
 				],
+				locator: false,
 				//----------------------------------
 				// Header
 				//----------------------------------
@@ -107,7 +108,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.2-v1';
+			var version = '1.2-beta3';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -135,14 +136,16 @@
 			}
 			
 			loadCSS("//jsdev.arcgis.com/3.8/js/esri/css/esri.css", true);
-			loadCSS("//jsdev.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css", true);		
+			loadCSS("//jsdev.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css", true);
 
 			if( isProduction ) {
 				loadCSS("app/swipe-min.css");
 			}
 			else {
+				loadCSS("lib/fuelux/wizard.css");
 				loadCSS("lib/bootstrap/css/bootstrap.min.css");
 				loadCSS("lib/spectrum/spectrum.css");
+				
 				
 				loadCSS("app/storymaps/ui/inlineFieldEdit/InlineFieldEdit.css");
 				loadCSS("app/storymaps/ui/loadingIndicator/LoadingIndicator.css");
@@ -284,7 +287,8 @@
 				</div>
 				<div id="locator"></div>
             </div>
-			<div id="sidePanel">
+			<!-- In order for the animate clip method to work on the side panel, a clip property must be already set -->
+			<div id="sidePanel" style="clip: rect(0px 10000px 10000px 0px);">
 				<div id="descriptionPanel">
 					<div id="textEditPanel"></div>
 					<div id="descriptionTitle">
@@ -302,6 +306,7 @@
 					<div id="legend1"></div>
 				</div>
 				<div id="sidePanelTabImg" class="open closeImg"></div>
+				<div id="sidePanelUnderTabImg" class="open closeImg"></div>
 			</div>
 		</div>
 
@@ -374,7 +379,7 @@
 					<p></p>
 					<form class="form-horizontal">
 						<div id="colorScheme" class="control-group" style="margin-bottom: 5px">
-							<label class="control-label"></label>
+							<label class="control-label noFloat"></label>
 							<div class="controls"></div>
 						</div>
 					</form>
@@ -466,32 +471,32 @@
 			<div class="modal-header">
 				<h3></h3>
 			</div>
-			<div class="initPopupHeader modal-tabs">
-				<div class="tab"></div>
-				<span class="tabspacer">>></span>
-				<div class="tab"></div>
-				<span class="tabspacer">>></span>
-				<div class="tab"></div>
-				<span class="tabspacer">>></span>
-				<div class="tab"></div> 
+			
+			<div id="builderWizard" class="wizard">
+				<ul class="steps">
+					<li data-target="#step1" class="active tab"><span class="badge badge-info"></span><span class="wizardLabel"></span><span class="chevron"></span></li>
+					<li data-target="#step2" class="tab"><span class="badge"></span><span class="wizardLabel"></span><span class="chevron"></span></li>
+					<li data-target="#step3" class="tab"><span class="badge"></span><span class="wizardLabel"></span><span class="chevron"></span></li>
+					<li data-target="#step4" class="tab"><span class="badge"></span><span class="wizardLabel"></span><span class="chevron"></span></li>
+				</ul>
 			</div>
-			<div class="modal-body">
+			<div class="step-content">
 				<!-- Layout -->
-				<div class="tab-content viewLayout">					
-				</div>
+				<div class="step-pane active viewLayout" id="step1"></div>
 				<!-- Data Model-->
-				<div class="tab-content viewDataModel">														
-				</div>
+				<div class="step-pane viewDataModel" id="step2"></div>
 				<!-- Legend -->
-				<div class="tab-content viewLegend">
-				</div>
+				<div class="step-pane viewLegend" id="step3"></div>
 				<!-- Popup -->
-				<div class="tab-content viewPopup">  
-				</div>			
+				<div class="step-pane viewPopup" id="step4"></div>
 			</div>
+
 			<div class="modal-footer">
 				<span class="error"></span>
-				<button class="btnSave btn btn-primary" data-dismiss="modal"></button>
+				<div class="actions">
+					<button type="button" class="btn btn-mini btn-prev"> <i class="icon-arrow-left"></i><span class="prev"></span></button>
+					<button type="button" class="btn btn-mini btn-next btn-save" data-dismiss="modal"><span class="next"></span><i class="icon-arrow-right"></i></button>
+				</div>
 			</div>
 		</div>
 		
@@ -671,6 +676,7 @@
 				loadJS('lib/jquery-ui-1.10.3.custom.min.js');
 				loadJS('lib/jquery.ui.touch-punch.min.js');
 				loadJS('lib/nicEdit.js');
+				loadJS('lib/fuelux/wizard.js');
 			}
 		</script>
 
@@ -692,7 +698,7 @@
 		<script type="text/javascript">
 			var loadingIndicator = {};
 			var i18n = null;
-			
+
 			if (document.location.protocol == "file:") {
 				$(document).ready(function() {
 					$("#fatalError .error-title").html("Application loading failed");
@@ -702,8 +708,7 @@
 			}
 			else {
 				dojo.addOnLoad(function() {
-					require([
-							"dojo/i18n!./resources/nls/template.js?v=" + version, 
+					require(["dojo/i18n!./resources/nls/template.js?v=" + version, 
 							"storymaps/ui/loadingIndicator/LoadingIndicator", 
 							"esri/urlUtils", 
 							"templateConfig/commonConfig.js?v=" + version,

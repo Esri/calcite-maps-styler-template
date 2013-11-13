@@ -67,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta4';
+			var version = '2.2-beta6';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -94,8 +94,8 @@
 				document.getElementsByTagName("head")[0].appendChild(el);
 			}
 
-			loadCSS("//jsdev.arcgis.com/3.8/js/esri/css/esri.css", true);
-			loadCSS("//jsdev.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css", true);			
+			loadCSS("//js.arcgis.com/3.7/js/esri/css/esri.css", true);
+			loadCSS("//js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css", true);			
 
 			if( isProduction ) {
 				loadCSS("app/maptour-min.css");
@@ -221,9 +221,7 @@
 						<button type="button" class="btn builder-cmd builder-save"></button>
 						<button type="button" class="btn builder-cmd builder-discard"></button>
 						<button type="button" class="btn builder-cmd builder-settings"></button>
-						<button type="button" class="btn builder-cmd small builder-view"></button>
-						<button type="button" class="btn builder-cmd small builder-item"></button>
-						<button type="button" class="btn builder-cmd small builder-help"></button>
+						<button type="button" class="btn builder-cmd builder-help"></button>
 					</div>
 					<div id="save-counter"></div>
 				</div>
@@ -250,6 +248,9 @@
 				<div id="cfader"></div>
 				<div id="pictureLoadingIndicator" style="visibility:hidden;"></div>
 				<img id="arrowNext" class="arrow disabled" />
+				<a class="modern-layout-control left">‹</a>
+				<a class="modern-layout-control right">›</a>
+		
 				<!-- Builder picture panel buttons -->
 				<div class="editPictureButtons">
 					<div>
@@ -530,7 +531,7 @@
 		<div id="init-import-views">
 			<!-- Init specific -->
 			<div id="initPopupViewHome">
-				<div class="header2"></div>
+				<div class="header"></div>
 				<div class="sideContainer">
 					<div class="sideTitle sideTitle1"></div>
 					<table class="leftTable">
@@ -552,7 +553,7 @@
 								<a><img style="width: 50px"/></a>
 							</td>
 							<td class="btn-select-advanced">
-								<a><img style="width: 40px"/></a>
+								<a><img style="width: 44px"/></a>
 							</td>
 						</tr>
 						
@@ -570,8 +571,8 @@
 					</table>
 					
 				</div>
-				<div class="footer1"></div>
-				<div class="footer2"></div>
+				<div class="footer"></div>
+				<div class="popover-init"></div>
 			</div>
 			
 			<div id="initPopupViewHostedFSCreation">
@@ -599,7 +600,8 @@
 				<div class="header"></div>
 				<div class="options">
 					<div class="options-row">
-						<button class="btn btn-adv btn-select-scratch">Manual input of the medias by URL</button>
+						<!-- TODO -->
+						<button class="btn btn-adv btn-select-scratch">Manual input of media via URL</button>
 					</div>
 					<div class="options-row">
 						<button class="btn btn-adv btn-select-csv">Import from any source using a CSV</button>
@@ -615,23 +617,23 @@
 					<tr>
 						<td class="btn-select-flickr">
 							<img style="width: 50px"/>
-							<div>Flickr</div>
 						</td>
 						<td class="btn-select-fb">
 							<img style="height: 46px"/>
-							<div style="margin-top: 6px;">Facebook</div>
 						</td>
 						<td class="btn-select-picasa">
 							<img style="width: 50px"/>
-							<div>Picasa</div>
+						</td>
+						<td class="btn-select-youtube">
+							<img style="width: 50px"/>
 						</td>
 						<td class="btn-select-csv">
 							<img style="width: 50px"/>
-							<div class="csvLbl"></div>
 						</td>
 					</tr>
 				</table>
 				<div class="footer"></div>
+				<div class="popover-import"></div>
 			</div>
 			
 			<!-- Common -->
@@ -992,23 +994,18 @@
 			</div>
 			<div class="modal-body">
 				<div class="div1"></div>
-				<div class="div2"></div>
-				<div class="div3"></div>
-				<table class="table1">
-					<tr>
-						<td class="firstColumn div3link1"></td>
-						<td class="secondColumn"><input type="text" class="linkinput link1"></td>
-					</tr>
-					<tr>
-						<td class="firstColumn div3link2"></td>
-						<td class="secondColumn"><input type="text" class="linkinput link2"></td>
-					</tr>
-					<tr>
-						<td class="firstColumn div3link3"></td>
-						<td class="secondColumn"><input type="text" class="linkinput link3"></td>
-					</tr>
-				</table>
-				<div class="div4"></div>
+				<div class="share" style="text-align: center; margin-top: 15px;"></div>
+				<div class="question1"></div>
+				<div class="answer1 collapse"></div>
+				<div class="question2"></div>
+				<div class="answer2 collapse">
+					<div class="div5"></div>
+					<div class="div6"></div>
+					<div class="img"><img class="img2"></img></div>
+				</div>
+				<div class="question3"></div>
+				<div class="answer3 collapse">
+				</div>
 			</div>
 			<div class="modal-footer">
 				<button class="btnClose btn" data-dismiss="modal" aria-hidden="true"></button>
@@ -1045,7 +1042,7 @@
 		</div>
 		
 		<script type="text/javascript">
-			loadJS('//js.arcgis.com/3.7/', true);
+			loadJS('//js.arcgis.com/3.7/init.js', true);
 			loadJS('app/maptour-config.js');
 			
 			function getUrlVar(name)

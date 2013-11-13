@@ -65,7 +65,7 @@
 				signInTwo: "pentru a salva aplicaţia."
 			},
 			header:{
-				editMe: "Ă_Click to edit description_ș",
+				editMe: "Editează-mă!",
 				templateTitle: "Setare titlu şablon",
 				templateSubtitle: "Setare subtitlu şablon"
 			},
@@ -160,10 +160,9 @@
 				settingsLegendEnable: "Activare legendă",
 				settingsDescriptionEnable: "Activare descriere",
 				settingsBookmarksEnable: "Activare serii Swipe",
-				settingsPopupDisable: "Activare pop-up",
-				settingsLocatorEnable: "Ă_Enable locator_ș",
+				settingsPopupDisable: "Ă_Enable popup_ș",
 				settingsLegendHelpContent: "Pentru a rafina conţinutul legendei, utilizaţi cuprinsului aplicaţiei de vizualizare a hărţilor web din ArcGIS.com (Ascunderea în legendă)",
-				settingsSeriesHelpContent: "La prima activare, semnele de carte pentru hărţi web vor fi utilizate pentru a popula în prealabil bara seriei. Dacă dezactivaţi ulterior opţiunea, configuraţia seriei nu va fi eliminată şi va fi disponibilă dacă decideţi să activaţi seria din nou.",
+				settingsSeriesHelpContent: "Ă_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ș",
 				preview: "Previzualizare interfaţă cu utilizatorul"
 			},
 			settingsSwipePopup: {
@@ -186,7 +185,7 @@
 				descr: "Descriere",
 				discard: "Eliminare semn de carte",
 				saveExtent: "Setare extindere semn de carte",
-				discardDisabled: "Nu puteţi elimina acest semn de carte. Seriile Swipe pot fi dezactivate din Setări."
+				discardDisabled: "Ă_You can't remove that bookmark. Swipe series can be disabled in the Settings._ș"
 			}
 		}
     })
