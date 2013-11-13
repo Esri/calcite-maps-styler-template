@@ -11,7 +11,7 @@
 			},
 			errors: {
 				boxTitle: "エラーが発生しました",
-				portalSelf: "致命的なエラー: ポータルの構成情報を取得できませんでした",
+				portalSelf: "致命的なエラー: ポータルの構成を取得できませんでした",
 				invalidConfig: "致命的なエラー: 無効な構成",
 				invalidConfigNoWebmap: "致命的なエラー: 無効な構成 (Web マップが指定されていません)",
 				createMap: "マップを作成できません",
@@ -65,7 +65,7 @@
 				signInTwo: "アプリケーションを保存してください。"
 			},
 			header:{
-				editMe: "須_Click to edit description_鷗",
+				editMe: "編集",
 				templateTitle: "テンプレートのタイトルの設定",
 				templateSubtitle: "テンプレートのサブタイトルの設定"
 			},
@@ -160,10 +160,9 @@
 				settingsLegendEnable: "凡例を有効化",
 				settingsDescriptionEnable: "説明を有効化",
 				settingsBookmarksEnable: "一連のスワイプを有効化",
-				settingsPopupDisable: "ポップアップの有効化",
-				settingsLocatorEnable: "須_Enable locator_鷗",
+				settingsPopupDisable: "須_Enable popup_鷗",
 				settingsLegendHelpContent: "凡例のコンテンツを更新するには、ArcGIS.com Web マップ ビューアのコンテンツ ウィンドウを使用します (凡例では非表示)",
-				settingsSeriesHelpContent: "最初に起動したときに、Web マップのブックマークが使用されて、一連のバーに値が事前入力されます。その後、その一連のオプションを無効にしても一連の構成は破棄されず、その一連のオプションを再び有効化すると利用できるようになります。",
+				settingsSeriesHelpContent: "須_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._鷗",
 				preview: "UI のプレビュー"
 			},
 			settingsSwipePopup: {
@@ -186,7 +185,7 @@
 				descr: "説明",
 				discard: "ブックマークの破棄",
 				saveExtent: "ブックマークの範囲の設定",
-				discardDisabled: "そのブックマークを削除することができません。[設定] で、スワイプが無効化されている可能性があります。"
+				discardDisabled: "須_You can't remove that bookmark. Swipe series can be disabled in the Settings._鷗"
 			}
 		}
     })

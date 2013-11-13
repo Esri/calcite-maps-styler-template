@@ -6,7 +6,7 @@
 				step2: "CARGANDO DATOS",
 				step3: "INICIALIZANDO",
 				fail: "La carga de la comparativa de mapas ha fallado",
-				loadBuilder: "CAMBIANDO A MODO DE BUILDER",
+				loadBuilder: "CAMBIANDO A MODO DE CREADOR",
 				failButton: "Reintentar"
 			},
 			errors: {
@@ -16,8 +16,8 @@
 				invalidConfigNoWebmap: "Error muy grave: configuración no válida (no se ha especificado mapa Web)",
 				createMap: "No se puede crear el mapa",
 				invalidApp: "Error muy grave: la aplicación no se puede cargar",
-				initMobile: "Bienvenido a la aplicación Web para la comparativa. La aplicación no está configurada. El builder interactivo no es compatible con dispositivos móviles.",
-				noBuilderIE8: "El builder interactivo de comparativas no es compatible con las versiones anteriores a Internet Explorer 9.",
+				initMobile: "Bienvenido a la aplicación Web para la comparativa. La aplicación no está configurada. El creador interactivo no está admitido en dispositivos móviles.",
+				noBuilderIE8: "El creador interactivo de comparativas no es compatible con las versiones anteriores a Internet Explorer 9.",
 				noLayerView: "Bienvenido a la aplicación Web para la comparativa.<br />La aplicación aún no está configurada.",
 				appSave: "Error al guardar la aplicación web",
 				mapSave: "Error al guardar el mapa web",
@@ -34,7 +34,7 @@
 			},
 			desktopView: {
 				storymapsText: "Un mapa de historias",
-				builderButton: "Cambiar a modo de builder",
+				builderButton: "Cambiar el modo de creador",
 				bitlyTooltip: "Consigue un enlace corto a la aplicación"
 			}
 		},
@@ -65,7 +65,7 @@
 				signInTwo: "para guardar la aplicación."
 			},
 			header:{
-				editMe: "á_Click to edit description_Ó",
+				editMe: "¡Modifícame!",
 				templateTitle: "Establecer título de plantilla",
 				templateSubtitle: "Establecer subtítulo de plantilla"
 			},
@@ -95,7 +95,7 @@
 			settingsExtent: {
 				settingsTabExtent: "Extensión",
 				settingsExtentExplain: "Establecer la extensión inicial mediante el mapa interactivo siguiente.",
-				settingsExtentExplainBottom: "La extensión que definas modificará la extensión inicial del mapa web. Ten en cuenta que si estás llevando a cabo una serie comparativa no se usará esa extensión.",
+				settingsExtentExplainBottom: "La extensión que definas modificará la extensión inicial del mapa web. Ten en cuenta que si estás llevando a cabo una serie comparativa no se usará la extensión.",
 				settingsExtentDateLineError: "La extensión no puede atravesar el meridiano de longitud 180º",
 				settingsExtentDateLineError2: "Error al calcular la extensión",
 				settingsExtentDrawBtn: "Dibuja una nueva extensión",
@@ -160,10 +160,9 @@
 				settingsLegendEnable: "Activar leyenda",
 				settingsDescriptionEnable: "Activar descripción",
 				settingsBookmarksEnable: "Activar series de comparativas",
-				settingsPopupDisable: "Habilitar ventana emergente",
-				settingsLocatorEnable: "á_Enable locator_Ó",
+				settingsPopupDisable: "á_Enable popup_Ó",
 				settingsLegendHelpContent: "Utiliza la tabla de contenido del visor de mapas web de ArcGIS.com (ocultar en leyenda) para delimitar el contenido de la leyenda.",
-				settingsSeriesHelpContent: "En el momento de la primera activación, tus marcadores de mapa web se usarán para completar previamente la barra de series. Si más tarde deshabilitas esa opción, tu configuración de series no se descartará y estará disponible si decides activar la serie de nuevo.",
+				settingsSeriesHelpContent: "á_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._Ó",
 				preview: "Vista previa de la interfaz de usuario"
 			},
 			settingsSwipePopup: {
@@ -186,7 +185,7 @@
 				descr: "Descripción",
 				discard: "Descartar marcadores",
 				saveExtent: "Configurar extensión de marcadores",
-				discardDisabled: "No puedes eliminar ese marcador. Las series comparativas pueden deshabilitarse en la Configuración."
+				discardDisabled: "á_You can't remove that bookmark. Swipe series can be disabled in the Settings._Ó"
 			}
 		}
     })

@@ -65,7 +65,7 @@
 				signInTwo: "aplikacijai įrašyti."
 			},
 			header:{
-				editMe: "Į_Click to edit description_š",
+				editMe: "Redaguok !",
 				templateTitle: "Nustatyti šablono antraštę",
 				templateSubtitle: "Nustatyti šablono poantraštę"
 			},
@@ -160,10 +160,9 @@
 				settingsLegendEnable: "Įjungti legendą",
 				settingsDescriptionEnable: "Įjungti aprašą",
 				settingsBookmarksEnable: "Įjungti keitiklių serijas",
-				settingsPopupDisable: "Įgalinti informacinį langą",
-				settingsLocatorEnable: "Į_Enable locator_š",
+				settingsPopupDisable: "Į_Enable popup_š",
 				settingsLegendHelpContent: "Legendos nustatymui naudokite ArcGIS.com internetinio žemėlapio peržiūros aplikacijos turinį (Paslėpti legendoje)",
-				settingsSeriesHelpContent: "Aktyvuojant pirmą kartą, jūsų internetinio(-ių) žemėlapio(-ių) žymės bus panaudotos preliminariai užpildant serijų juostą. Jei vėliau išjungsite šį pasirinkimą, jūsų serijų konfigūracija nebus pamestair bus galima jei nuspręsite vėl įgalinti serijas.",
+				settingsSeriesHelpContent: "Į_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._š",
 				preview: "Vartotojo sąsajos peržiūra"
 			},
 			settingsSwipePopup: {
@@ -186,7 +185,7 @@
 				descr: "Aprašas",
 				discard: "Pašalinti žymę",
 				saveExtent: "Nustatyti žymės aprėptį",
-				discardDisabled: "Negalite pašalinti šios žymės. Keitiklio serijos gali būti išjungos nustatymuose."
+				discardDisabled: "Į_You can't remove that bookmark. Swipe series can be disabled in the Settings._š"
 			}
 		}
     })

@@ -65,7 +65,7 @@ define(
 				signInTwo: "to save the application."
 			},
 			header:{
-				editMe: "Click to edit description",
+				editMe: "Edit me !",
 				templateTitle: "Set template title",
 				templateSubtitle: "Set template subtitle"
 			},
@@ -161,7 +161,6 @@ define(
 				settingsDescriptionEnable: "Enable Description",
 				settingsBookmarksEnable: "Enable Swipe series",
 				settingsPopupDisable: "Enable popup",
-				settingsLocatorEnable: "Enable locator",
 				settingsLegendHelpContent: "To refine the legend content, use ArcGIS.com web map viewer table of contents (Hide in Legend)",
 				settingsSeriesHelpContent: "On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again.",
 				preview: "UI preview"

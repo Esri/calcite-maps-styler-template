@@ -96,7 +96,7 @@ define({
 				settingsTabExtent: "Extent",
 				settingsExtentExplain: "Set the initial extent through the interactive map below.",
 				settingsExtentExplainBottom: "The extent you define will modify your web map initial extent. Note that if you are doing a swipe series that extent won't be used.",
-				settingsExtentDateLineError: "The extent cannot be across the meridian of 180Â° longitude",
+				settingsExtentDateLineError: "The extent cannot be across the meridian of 180° longitude",
 				settingsExtentDateLineError2: "Error computing the extent",
 				settingsExtentDrawBtn: "Draw a new extent",
 				settingsExtentModifyBtn: "Edit the current extent",

@@ -65,7 +65,7 @@
 				signInTwo: ", et salvestada rakendus."
 			},
 			header:{
-				editMe: "Š_Click to edit description_ä",
+				editMe: "Muuda mind !",
 				templateTitle: "Määra mallile pealkiri",
 				templateSubtitle: "Määra mallile alampealkiri"
 			},
@@ -160,10 +160,9 @@
 				settingsLegendEnable: "Lülita legend sisse",
 				settingsDescriptionEnable: "Lülita kirjeldus sisse",
 				settingsBookmarksEnable: "Võimalda rullimise seeriad",
-				settingsPopupDisable: "Luba hüpikaken",
-				settingsLocatorEnable: "Š_Enable locator_ä",
+				settingsPopupDisable: "Š_Enable popup_ä",
 				settingsLegendHelpContent: "Legendi sisu täpsustamiseks kasuta ArcGIS.com veebikaardi akna kihtide loendit (peidetud legendi)",
-				settingsSeriesHelpContent: "Esimesel aktiveerimisel kasutatakse Teie lõpliku veebikaardi järjehoidjaid seeriate eelmääramiseks. Kui lülitate parameetri hiljem välja, Teie seeriate seadistusest ei loobuta ja see on kättesaadav taas kui te otsustate seeria taas lubada.",
+				settingsSeriesHelpContent: "Š_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ä",
 				preview: "UI vaade"
 			},
 			settingsSwipePopup: {
@@ -186,7 +185,7 @@
 				descr: "Kirjeldus",
 				discard: "Loobu järjehoidjast",
 				saveExtent: "Määra järjehoidja ulatus",
-				discardDisabled: "Te ei saa seda järjehoidjat eemaldada. Vahetamise seeriaid saab keelata seadetest."
+				discardDisabled: "Š_You can't remove that bookmark. Swipe series can be disabled in the Settings._ä"
 			}
 		}
     })

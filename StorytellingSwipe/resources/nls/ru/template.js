@@ -6,7 +6,7 @@
 				step2: "ЗАГРУЗКА ДАННЫХ",
 				step3: "ИНИЦИАЛИЗАЦИЯ",
 				fail: "Загрузка инструмента Шторка (Swipe) не удалась",
-				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОНСТРУКТОРА",
+				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОМПОНОВКИ",
 				failButton: "Повторить"
 			},
 			errors: {
@@ -65,7 +65,7 @@
 				signInTwo: "чтобы сохранить приложение."
 			},
 			header:{
-				editMe: "Ж_Click to edit description_Я",
+				editMe: "Отредактируйте меня !",
 				templateTitle: "Ввести заголовок шаблона",
 				templateSubtitle: "Ввести подзаголовок шаблона"
 			},
@@ -160,10 +160,9 @@
 				settingsLegendEnable: "Включить легенду",
 				settingsDescriptionEnable: "Включить описание",
 				settingsBookmarksEnable: "Включить несколько шторок",
-				settingsPopupDisable: "Включить всплывающее окно",
-				settingsLocatorEnable: "Ж_Enable locator_Я",
+				settingsPopupDisable: "Ж_Enable popup_Я",
 				settingsLegendHelpContent: "Для настройки содержания легенды используйте таблицу содержания вьюера веб-карт ArcGIS.com (Скрыть в легенде)",
-				settingsSeriesHelpContent: "При первой активации закладки веб-карты будут использоваться для заполнения линейки серий. Если вы впоследствии отключите эту опцию, настройка серий не будет утрачена и станет доступной  при следующем включении серии.",
+				settingsSeriesHelpContent: "Ж_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._Я",
 				preview: "Просмотр UI"
 			},
 			settingsSwipePopup: {
@@ -186,7 +185,7 @@
 				descr: "Описание",
 				discard: "Сброс закладки",
 				saveExtent: "Задать экстент закладки",
-				discardDisabled: "Вы не можете удалить эту закладку. Серию шторок можно отключить в Настройках."
+				discardDisabled: "Ж_You can't remove that bookmark. Swipe series can be disabled in the Settings._Я"
 			}
 		}
     })
