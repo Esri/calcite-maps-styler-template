@@ -374,8 +374,8 @@ define({
 				header1: "Where are your images or videos?",
 				header2: "This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organization account.",
 				title1: "My media are already hosted",
-				title2: "I need to host my pictures",
-				hostedFSTooltip: "Use ArcGIS Online to host your pictures (doesn't support videos).",
+				title2: "I need to host my images",
+				hostedFSTooltip: "Use ArcGIS Online to host your images (doesn't support videos).",
 				hostedFsNA: "Only available for ArcGIS for Organization Publisher and Administrator users",
 				footer1: "When you are done, don't forget to share your Map Tour with your audience through the application item page.",
 				footer2: "Map Tour Help",
@@ -473,20 +473,18 @@ define({
 				}
 			},
 			directCreationFirstSave: {
-				title: "Congratulation, your Tour has been saved",
-				div1opt1: "Your Tour is <strong>publicly accessible</strong>, you can share it using %URL%.",
-				div1opt2: "Your Tour is accessible by the members of your organization, you can share it using %URL%.",
-				div1opt3: "Your Tour is <strong>private</strong>",
+				title: "Congratulations, your Tour has been published",
+				title2: "Publish your Map Tour",
+				div1opt1: "Your Tour is now <strong>publicly accessible</strong> (it will appear in search results). If you are not ready for that, see below.",
+				div1link: "OPEN",
+				div1opt2: "Your Tour is accessible by your organization members (login is required).",
+				div1opt3: "Your Tour is private",
 				div2: "How to keep the Tour private?",
-				div2bis: "How to make the Tour public?",
-				div3: "Use the share button on <a href='%LINK1%' target='_blank'>the application page</a>:",
-				div3bis: "Use the share button on <a href='%LINK1%' target='_blank'>the application page</a> and share it using %URL%:",
+				div2bis: "How to make the Tour public or keep it private?",
+				div3: "Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>.",
 				div4: "How to administer the Tour?",
 				div5: "Save and reuse the following link %LINK1% or find the application in your <a href='%LINK2%' target='_blank'>ArcGIS.com content folder</a>.",
-				div6: "As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:",
-				bitlyInProgress: "Creating...",
-				title2: "Publish your Map Tour",
-				
+				div6: "As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:"				
 			}
         }
     }),
