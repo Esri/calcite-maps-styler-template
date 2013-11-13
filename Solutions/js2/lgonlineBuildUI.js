@@ -1,6 +1,6 @@
 /* 
 This source is a compressed form of part of the git commit 
-b2a0569f0e520c09 2013-11-06 11:35:59 -0800
+483d7af3b72b67b4 2013-11-11 12:45:01 -0800
 Uncompressed source is available from https://github.com/Esri/local-government-online-apps 
 */ 
 /*
@@ -32,4 +32,5 @@ launch:function(){var a=this,b=new f;setTimeout(function(){dojo.forEach(a.uiSpec
 "")},getValues:function(a){var b=null;this.values&&this.values[a]&&(b=this.values[a]);return b},injectCSS:function(a){var b;b=document.createElement("style");b.setAttribute("type","text/css");b.styleSheet?b.styleSheet.cssText=a:(a=document.createTextNode(a),b.appendChild(a));document.body.appendChild(b);return b},loadFromFile:function(a,b){var c=null;return c=void 0===b||b?this.loadJSONFile(a):this.loadJSFile(a)},loadJSFile:function(a){var b=new f;w.get({url:a+".js",load:function(){b.resolve(a)},
 error:function(a){b.reject(a)}});return b},loadJSONFile:function(a){var b=new f;dojo.xhrGet({url:a+".json",handleAs:"json",load:function(a){b.resolve(a)},error:function(a){b.reject(a)}});return b},setDefaults:function(a){var b,c,d=new f;b=location.pathname.indexOf("/apps/");-1===b&&(b=location.pathname.indexOf("/home/"));-1!==b&&(c=location.pathname.substr(0,b));a.sharingUrl||(a.sharingUrl=-1!==b?location.protocol+"//"+location.host+c:location.protocol+"//www.arcgis.com");console.log("sharingUrl: "+
 a.sharingUrl);!a.proxyUrl&&-1!==b&&(a.proxyUrl=location.protocol+"//"+location.host+c+"/sharing/proxy");console.log("proxyUrl: "+a.proxyUrl);-1!==b?(b=esri.request({url:a.sharingUrl+"/sharing/rest/portals/self",content:{f:"json"},callbackParamName:"callback"}),b.then(function(b){a.self=b;b.isPortal&&"single tenant"===b.portalMode&&(a.sharingUrl=b.portalHostname);x.mixin(a.helperServices,b.helperServices);esri.arcgis.utils.arcgisUrl=a.sharingUrl+"/sharing/rest/content/items";a.helperServices&&(a.helperServices.geometry&&
-a.helperServices.geometry.url)&&(esri.config.defaults.geometryService=new esri.tasks.GeometryService(a.helperServices.geometry.url));d.resolve(!0)})):d.resolve(!0);a.proxyUrl&&(esri.config.defaults.io.proxyUrl=a.proxyUrl,esri.config.defaults.io.alwaysUseProxy=!1);return d}})});
+a.helperServices.geometry.url)&&(esri.config.defaults.geometryService=new esri.tasks.GeometryService(a.helperServices.geometry.url));d.resolve(!0)})):(esri.arcgis.utils.arcgisUrl=a.sharingUrl+"/sharing/rest/content/items",a.helperServices&&(a.helperServices.geometry&&a.helperServices.geometry.url)&&(esri.config.defaults.geometryService=new esri.tasks.GeometryService(a.helperServices.geometry.url)),d.resolve(!0));a.proxyUrl&&(esri.config.defaults.io.proxyUrl=a.proxyUrl,esri.config.defaults.io.alwaysUseProxy=
+!1);return d}})});
