@@ -4,6 +4,8 @@ define(
    "dojo/_base/kernel",
    "dojo/_base/array",
    "dojo/dom-class",
+   "dojo/cookie",
+   "dojo/_base/json",
    "dojo/Deferred",
    "dojo/promise/all",
    "dojo/i18n",
@@ -15,6 +17,8 @@ define(
         kernel, 
         array, 
         domClass, 
+        dojoCookie,
+        dojoJson,
         Deferred, 
         all, 
         jsapiBundle, 
@@ -27,6 +31,7 @@ define(
                 //specify class defaults 
                 this.config.helperServices = defaults.helperServices || {};
                 lang.mixin(this.config, defaults);
+             
 
             },
             init: function(){
@@ -40,8 +45,8 @@ define(
                 //location is searched. 
                 this.setDefaults();
                 var orgDef = this.queryOrganization();
-                orgDef.then(dojo.hitch(this, function(){
-                  all([ this.getlocalization(), this.queryApplication() ]).then(dojo.hitch(this,function(results){
+                orgDef.then(lang.hitch(this, function(){
+                  all([ this.getlocalization(), this.queryApplication() ]).then(lang.hitch(this,function(results){
                        deferred.resolve(this.config);
                   }));
                 }));
@@ -148,13 +153,28 @@ define(
                //Is this a hosted app or is it an app with an organization url set to query for info
                 if(this.config.sharingurl && this.isOrg){
 
+                var requestParams;
+                var cookie = dojoCookie("esri_auth");
+                if(cookie && cookie.length > 0){
+                  var userInfo = dojoJson.fromJson(dojoCookie("esri_auth"));
+                  userToken = userInfo.token || null;
+                  requestParams = {
+                    "f": "json",
+                    "token": userToken
+                  };
+                }else{
+                  requestParams = {
+                    "f": "json"
+                  }
+                }
+
                  var req = esri.request({
                     url: this.config.sharingurl + "/sharing/rest/portals/self",
-                    content:{"f": "json"},
+                    content: requestParams, // {"f": "json"},
                     callbackParamName:"callback"
                  });
-                 req.then(dojo.hitch(this, function(response){
-      
+                 req.then(lang.hitch(this, function(response){
+        
                         //Is there a custom basemap group owner and title  or id? 
                         var q = this._parseQuery(response.basemapGalleryGroupQuery);
                         if(q.id){
@@ -164,6 +184,13 @@ define(
                           this.config.basemapgroup.owner = q.owner;
                         }
 
+                        //Get Units 
+                        if(response.units){
+                          this.config.units = response.units;
+                        }else{
+                          //use english 
+                          this.config.units = "english";
+                        }
                         //look for helper services and if they exist set them
                         if(response.isPortal && response.portalMode === "single tenant"){
                           this.config.sharingurl = response.portalHostname;

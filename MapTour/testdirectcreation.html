@@ -6,60 +6,42 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 	</head>
 	<body>
-
-<h1>Static button</h1>
-<pre>
-The builder will evaluate if the user is signed-in and redirect it to the sign-in page if needed.
-After sign-in/sign-up, the user is redirected to the builder.
-Inconvenient: user see the builder loading.
-User may be surprised to get redirected and may not be sure he will got back to builder, (I put 
-a message before redirecting but I'm sure someone will miss it).
-</pre>
-<input type="button" value="Build a Tour" onClick="document.location = 'index.html?fromScratch'"/>
-
-<h1>Dynamic button</h1>
-<pre>
-The button label is different if user isn't signed-in.
-After sign-in/sign-up, the user is redirected to the builder.
-Inconvenient: button isn't a fixed size. We have to check if it's compatible with the website localization process.
-</pre>
-<input type="button" value="Build a Tour" />
-OR <input type="button" value="Sign-in and build a Tour" />
-
-<br /><br />
-Working exemple:
-
-<input type="button" id="buildTour4" onClick="buildTour4()"/>
-<script>
-	function getCookie(c_name) {
-	    var c_value = document.cookie;
-	    var c_start = c_value.indexOf(" " + c_name + "=");
-	    if (c_start == -1) {
-	        c_start = c_value.indexOf(c_name + "=");
-	    }
-	    if (c_start == -1) {
-	        c_value = null;
-	    } else {
-	        c_start = c_value.indexOf("=", c_start) + 1;
-	        var c_end = c_value.indexOf(";", c_start);
-	        if (c_end == -1) {
-	            c_end = c_value.length;
-	        }
-	        c_value = unescape(c_value.substring(c_start, c_end));
-	    }
-	    return c_value;
-	}
-	
-	function buildTour4()
-	{
-		if ( getCookie('esri_auth') )
-			document.location = "index.html?fromScratch";
-		else
-			document.location = "/home/signin.html?returnUrl=" + document.location.origin + '/' + document.location.pathname.split('/').slice(1,-1).join('/') + '/index.html%3FfromScratch';
-	}
-	
-	document.getElementById('buildTour4').value = getCookie('esri_auth') ? "Build a Tour" : "Sign-in and build a Tour";
-</script>
+		<input type="button" id="buildTour" onClick="buildTour()" value="Build a Tour"/>
+		<script>
+			function getCookie(c_name)
+			{
+			    var c_value = document.cookie;
+			    var c_start = c_value.indexOf(" " + c_name + "=");
+			    
+				if (c_start == -1) {
+			        c_start = c_value.indexOf(c_name + "=");
+			    }
+			    
+				if (c_start == -1) {
+			        c_value = null;
+			    }
+				else {
+			        c_start = c_value.indexOf("=", c_start) + 1;
+			        var c_end = c_value.indexOf(";", c_start);
+			        if (c_end == -1) {
+			            c_end = c_value.length;
+			        }
+			        c_value = unescape(c_value.substring(c_start, c_end));
+			    }
+			    return c_value;
+			}
+			
+			function buildTour()
+			{
+				if ( getCookie('esri_auth') )
+					document.location = "index.html?fromScratch";
+				else
+					document.location = "/home/signin.html?returnUrl=" 
+											+ document.location.origin 
+											+ '/' + document.location.pathname.split('/').slice(1,-1).join('/') 
+											+ '/index.html%3FfromScratch';
+			}
+		</script>
 
 	</body>
 </html>
