@@ -1367,6 +1367,7 @@ function createSocialLinks() {
 
         var geocoder = new esri.dijit.Geocoder({
             map: map,
+            autoComplete:true,
             geocoders: geocoders,
             autoNavigate: false,
             theme: "simpleGeocoder",
