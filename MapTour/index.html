@@ -67,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta6';
+			var version = '2.2-beta7';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -223,7 +223,10 @@
 						<button type="button" class="btn builder-cmd builder-settings"></button>
 						<button type="button" class="btn builder-cmd builder-help"></button>
 					</div>
-					<div id="save-counter"></div>
+					<div id="status-bar">
+						<span id="save-counter"></span>
+						<span id="sharing-status"></span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -432,7 +435,7 @@
 							<label></label>
 							<table>
 								<tr class="youtube">
-									<td><input type="radio" name="addVideoSrc" value="youtube" checked />Youtube</td>
+									<td><input type="radio" name="addVideoSrc" value="youtube" checked />YouTube</td>
 									<td>
 										<input class="clearVal type youtube" type="text" />
 										<a><img /></a>
@@ -993,21 +996,40 @@
 				<h3></h3>
 			</div>
 			<div class="modal-body">
-				<div class="div1"></div>
-				<div class="share" style="text-align: center; margin-top: 15px;"></div>
-				<div class="question1"></div>
-				<div class="answer1 collapse"></div>
-				<div class="question2"></div>
-				<div class="answer2 collapse">
-					<div class="div5"></div>
-					<div class="div6"></div>
-					<div class="img"><img class="img2"></img></div>
+				<div class="first-save hide">
+					<div class="header"></div>
+					<div class="question question1"></div>
+					<div class="answer answer1"></div>
+					<div class="question question2"></div>
+					<div class="answer answer2"></div>
 				</div>
-				<div class="question3"></div>
-				<div class="answer3 collapse">
+				<div class="share">
+					<div class="not-shared hide">
+						<div class="header"></div>
+						<div class="share-btn">
+							<button class="btn btn-sharePublic"></button>
+							<button class="btn btn-shareOrga"></button>
+						</div>
+						<a class="btn-preview"></a>
+					</div>
+					<div class="shared-dialog">
+						<div class="header"></div>
+						<div class="share-link"></div>
+						
+						<div class="question shared-question1"></div>
+						<div class="collapse answer shared-answer1"></div>
+						
+						<div class="question shared-question2"></div>
+						<div class="collapse answer shared-answer2"></div>
+						
+						<div class="question shared-question3"></div>
+						<div class="collapse answer shared-answer3"></div>
+					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
+				<span class="footer-status success"></span>
+				<span class="footer-status error"></span>
 				<button class="btnClose btn" data-dismiss="modal" aria-hidden="true"></button>
 			</div>
 		</div>
