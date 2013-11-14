@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	</head>
+	<body>
+		<input type="button" id="buildTour" onClick="buildTour()" value="Build a Tour"/>
+		<script>
+			function getCookie(c_name)
+			{
+			    var c_value = document.cookie;
+			    var c_start = c_value.indexOf(" " + c_name + "=");
+			    
+				if (c_start == -1) {
+			        c_start = c_value.indexOf(c_name + "=");
+			    }
+			    
+				if (c_start == -1) {
+			        c_value = null;
+			    }
+				else {
+			        c_start = c_value.indexOf("=", c_start) + 1;
+			        var c_end = c_value.indexOf(";", c_start);
+			        if (c_end == -1) {
+			            c_end = c_value.length;
+			        }
+			        c_value = unescape(c_value.substring(c_start, c_end));
+			    }
+			    return c_value;
+			}
+			
+			function buildTour()
+			{
+				var baseURL = document.location.protocol + '//' + "www.arcgis.com/";
+				
+				if ( getCookie('esri_auth') )
+					document.location = baseURL + "apps/MapTour/?fromScratch";
+				else
+					document.location = baseURL + "home/signin.html?returnUrl=" + encodeURIComponent(baseURL + 'apps/MapTour/?fromScratch');
+			}
+		</script>
+
+	</body>
+</html>

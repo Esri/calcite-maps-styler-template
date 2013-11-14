@@ -82,15 +82,15 @@
             "type": "string",
             "tooltip": "Prompt for filter value field"
         }, {
-            "label": "Value format hint",
+            "label": "Initial value",
             "fieldName": "filter.value1",
             "type": "string",
-            "tooltip": "Text to display in the value field as a format hint"
+            "tooltip": "Text to display in the value field as the initial value"
         }, {
             "label": "Value field",
             "fieldName": "filter.fieldname1",
             "type": "string",
-            "tooltip": "Field in the layer that is to be used as a filter"
+            "tooltip": "Field in the layer(s) that is to be used as a filter"
         }]
     }, {
         "category": "Map",
@@ -113,7 +113,10 @@
             "label": "Zoom level for selected feature",
             "fieldName": "highlighter.highlightZoomLevel",
             "type": "number",
-            "constraints": {"min": 0, "places": 0},
+            "constraints": {
+                "min": 0,
+                "places": 0
+            },
             "tooltip": "Sets the map zoom level to this level after selecting a feature"
         }, {
             "label": "Name of basemap group",
@@ -142,7 +145,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 9624d94519a4d5b0 2013-11-04 15:19:54 -0800"
+                "commit 483d7af3b72b67b4 2013-11-11 12:45:01 -0800"
             ]
         }
     }, {
@@ -277,9 +280,7 @@
         }
     }, {
         "classname": "js.LGFilterLayers1WithDefaults",
-        "styles":
-        ".filter{display:none;width:210px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}"+
-        ".okIE .filter{border-radius:8px}",
+        "styles": ".filter{display:none;width:210px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .filter{border-radius:8px}",
         "config": {
             "rootId": "filter",
             "tooltip": "@tooltips.filter",
@@ -299,56 +300,6 @@
             "parentDiv": "contentFrame",
             "trigger": "locate",
             "publish": "position"
-        }
-    }, {
-        "classname": "js.LGPrintMap",
-        "styles": ".absolute{position:absolute}.printMapBox{display:none;width:269px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .printMapBox{border-radius:8px}.printFormatsPanel{height:52px;margin:0px;padding:2px;overflow:hidden;text-align:center;vertical-align:middle}.pushbuttonOn{border:1px solid blue}.printDlogItem{margin:3px!important}",
-        "config": {
-            "rootId": "printMap",
-            "parentDiv": "contentFrame",
-            "rootClass": "printMapBox",
-            "horizOffset": -2,
-            "vertOffset": 2,
-            "asynchronous": false,
-            "format": "PDF",
-            "preserveScale": true,
-            "title": "",
-            "author": "",
-            "orientationButtonClass": "commandButton printDlogItem",
-            "orientationButtonIconClass": "commandIcon",
-            "landscapeButtonIconUrl": "images/landscapeDoc.png",
-            "landscapeButtonTooltip": "@tooltips.landscape",
-            "landscapeServerSpec": "Letter ANSI A Landscape",
-            "portraitButtonIconUrl": "images/portraitDoc.png",
-            "portraitButtonTooltip": "@tooltips.portrait",
-            "portraitServerSpec": "Letter ANSI A Portrait",
-            "titleHint": "title",
-            "titleClass": "printDlogItem",
-            "authorHint": "author",
-            "authorClass": "printDlogItem",
-            "printButtonIconUrl": "images/print.png",
-            "printButtonClass": "commandButton printDlogItem",
-            "printButtonIconClass": "commandIcon",
-            "printButtonTooltip": "@tooltips.print",
-            "copyrightText": null,
-            "dependencyId": "map",
-            "trigger": "print",
-            "publishReady": "printingReady",
-            "publishWorking": "printing",
-            "publishPrintUrl": "printUrl"
-        }
-    }, {
-        "classname": "js.LGFetchPrintedMap",
-        "config": {
-            "rootId": "fetchPrintedMap",
-            "publish": "launch/blank",
-            "parentDiv": "contentFrame",
-            "dependencyId": "map",
-            "trigger": "fetchPrint",
-            "triggerPrintUrl": "printUrl",
-            "publishPrintAvailable": "printAvailable",
-            "publishPrintNotAvailable": "printNotAvailable",
-            "printAvailabilityTimeoutMinutes": 15
         }
     }, {
         "classname": "js.LGMessageBox",
@@ -513,40 +464,6 @@
             "rootClass": "commandTextButton",
             "iconClass": "commandIcon",
             "publish": "share/twitter"
-        }
-    }, {
-        "classname": "js.LGCommandToggle",
-        "config": {
-            "rootId": "print",
-            "tooltip": "@tooltips.print",
-            "iconUrl": "images/print.png",
-            "iconDisabledUrl": "images/printing.gif",
-            "parentDiv": "commandPanel",
-            "rootClass": "commandButton",
-            "iconClass": "commandIcon",
-            "publish": "print",
-            "dependencyId": "printMap",
-            "triggerEnable": "printingReady",
-            "triggerDisable": "printing",
-            "isVisible": false,
-            "isEnabled": true
-        }
-    }, {
-        "classname": "js.LGCommandToggle",
-        "config": {
-            "rootId": "fetchPrint",
-            "tooltip": "@tooltips.fetchPrint",
-            "iconUrl": "images/doc.png",
-            "iconDisabledUrl": "images/docDisabled.png",
-            "parentDiv": "commandPanel",
-            "rootClass": "commandButton",
-            "iconClass": "commandIcon",
-            "publish": "fetchPrint",
-            "triggerVisible": "printAvailable",
-            "triggerInvisible": "printNotAvailable",
-            "triggerEnable": "printingReady",
-            "triggerDisable": "printing",
-            "isVisible": false
         }
     }, {
         "classname": "js.LGCommand",

@@ -67,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta5';
+			var version = '2.2-beta7';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -94,8 +94,8 @@
 				document.getElementsByTagName("head")[0].appendChild(el);
 			}
 
-			loadCSS("//jsdev.arcgis.com/3.8/js/esri/css/esri.css", true);
-			loadCSS("//jsdev.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css", true);			
+			loadCSS("//js.arcgis.com/3.7/js/esri/css/esri.css", true);
+			loadCSS("//js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css", true);			
 
 			if( isProduction ) {
 				loadCSS("app/maptour-min.css");
@@ -221,11 +221,12 @@
 						<button type="button" class="btn builder-cmd builder-save"></button>
 						<button type="button" class="btn builder-cmd builder-discard"></button>
 						<button type="button" class="btn builder-cmd builder-settings"></button>
-						<button type="button" class="btn builder-cmd small builder-view"></button>
-						<button type="button" class="btn builder-cmd small builder-item"></button>
-						<button type="button" class="btn builder-cmd small builder-help"></button>
+						<button type="button" class="btn builder-cmd builder-help"></button>
 					</div>
-					<div id="save-counter"></div>
+					<div id="status-bar">
+						<span id="save-counter"></span>
+						<span id="sharing-status"></span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -250,6 +251,9 @@
 				<div id="cfader"></div>
 				<div id="pictureLoadingIndicator" style="visibility:hidden;"></div>
 				<img id="arrowNext" class="arrow disabled" />
+				<a class="modern-layout-control left">‹</a>
+				<a class="modern-layout-control right">›</a>
+		
 				<!-- Builder picture panel buttons -->
 				<div class="editPictureButtons">
 					<div>
@@ -431,7 +435,7 @@
 							<label></label>
 							<table>
 								<tr class="youtube">
-									<td><input type="radio" name="addVideoSrc" value="youtube" checked />Youtube</td>
+									<td><input type="radio" name="addVideoSrc" value="youtube" checked />YouTube</td>
 									<td>
 										<input class="clearVal type youtube" type="text" />
 										<a><img /></a>
@@ -530,7 +534,7 @@
 		<div id="init-import-views">
 			<!-- Init specific -->
 			<div id="initPopupViewHome">
-				<div class="header2"></div>
+				<div class="header"></div>
 				<div class="sideContainer">
 					<div class="sideTitle sideTitle1"></div>
 					<table class="leftTable">
@@ -570,8 +574,8 @@
 					</table>
 					
 				</div>
-				<div class="footer1"></div>
-				<div class="footer2"></div>
+				<div class="footer"></div>
+				<div class="popover-init"></div>
 			</div>
 			
 			<div id="initPopupViewHostedFSCreation">
@@ -616,23 +620,23 @@
 					<tr>
 						<td class="btn-select-flickr">
 							<img style="width: 50px"/>
-							<div>Flickr</div>
 						</td>
 						<td class="btn-select-fb">
 							<img style="height: 46px"/>
-							<div style="margin-top: 6px;">Facebook</div>
 						</td>
 						<td class="btn-select-picasa">
 							<img style="width: 50px"/>
-							<div>Picasa</div>
+						</td>
+						<td class="btn-select-youtube">
+							<img style="width: 50px"/>
 						</td>
 						<td class="btn-select-csv">
 							<img style="width: 50px"/>
-							<div class="csvLbl"></div>
 						</td>
 					</tr>
 				</table>
 				<div class="footer"></div>
+				<div class="popover-import"></div>
 			</div>
 			
 			<!-- Common -->
@@ -992,16 +996,40 @@
 				<h3></h3>
 			</div>
 			<div class="modal-body">
-				<div class="div1"></div>
-				<div class="div2"></div>
-				<div class="div3"></div>
-				<div class="img"><img class="img1"></img></div>
-				<div class="div4"></div>
-				<div class="div5"></div>
-				<div class="div6"></div>
-				<div class="img"><img class="img2"></img></div>
+				<div class="first-save hide">
+					<div class="header"></div>
+					<div class="question question1"></div>
+					<div class="answer answer1"></div>
+					<div class="question question2"></div>
+					<div class="answer answer2"></div>
+				</div>
+				<div class="share">
+					<div class="not-shared hide">
+						<div class="header"></div>
+						<div class="share-btn">
+							<button class="btn btn-sharePublic"></button>
+							<button class="btn btn-shareOrga"></button>
+						</div>
+						<a class="btn-preview"></a>
+					</div>
+					<div class="shared-dialog">
+						<div class="header"></div>
+						<div class="share-link"></div>
+						
+						<div class="question shared-question1"></div>
+						<div class="collapse answer shared-answer1"></div>
+						
+						<div class="question shared-question2"></div>
+						<div class="collapse answer shared-answer2"></div>
+						
+						<div class="question shared-question3"></div>
+						<div class="collapse answer shared-answer3"></div>
+					</div>
+				</div>
 			</div>
 			<div class="modal-footer">
+				<span class="footer-status success"></span>
+				<span class="footer-status error"></span>
 				<button class="btnClose btn" data-dismiss="modal" aria-hidden="true"></button>
 			</div>
 		</div>
@@ -1036,7 +1064,7 @@
 		</div>
 		
 		<script type="text/javascript">
-			loadJS('//jsdev.arcgis.com/3.8/init.js', true);
+			loadJS('//js.arcgis.com/3.7/init.js', true);
 			loadJS('app/maptour-config.js');
 			
 			function getUrlVar(name)

@@ -110,7 +110,8 @@ APPCFG = {
 		featureService: true,
 		flickr: true,
 		facebook: true,
-		picasa: true
+		picasa: true,
+		youtube: true
 	},
 	
 	// Online photo sharing services connection parameters
