@@ -112,6 +112,8 @@ function(
                    }
                 }
                 params.map = this.map;
+                params.autoComplete = true;
+
                 var geocoderDiv = domConstruct.create("div",{id:"geocoderDiv"},"mapDiv");
                 var geocoder = new Geocoder(params,geocoderDiv);
 
