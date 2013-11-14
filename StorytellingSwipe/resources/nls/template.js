@@ -161,7 +161,8 @@ define({
 				settingsDescriptionEnable: "Enable Description",
 				settingsBookmarksEnable: "Enable Swipe series",
 				settingsPopupDisable: "Enable popup",
-				settingsLocatorEnable: "Enable locator",
+				settingsLocationSearchEnable: "Enable locator search",
+				settingsGeolocatorEnable: "Enable geolocator",
 				settingsLegendHelpContent: "To refine the legend content, use ArcGIS.com web map viewer table of contents (Hide in Legend)",
 				settingsSeriesHelpContent: "On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again.",
 				preview: "UI preview"

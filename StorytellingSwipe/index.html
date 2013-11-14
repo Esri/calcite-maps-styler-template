@@ -91,7 +91,8 @@
 						}
 					}*/
 				],
-				locator: false,
+				locationSearch: false,
+				geolocator: false,
 				//----------------------------------
 				// Header
 				//----------------------------------
@@ -108,7 +109,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.2-beta3';
+			var version = '1.2-beta4';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -285,7 +286,7 @@
 					<div id="infoWindowContent" data-dojo-type="dijit/layout/ContentPane"></div>
 					<div id="infoWindowTabImg"></div>
 				</div>
-				<div id="locator"></div>
+				<div id="locationSearch"></div>
             </div>
 			<!-- In order for the animate clip method to work on the side panel, a clip property must be already set -->
 			<div id="sidePanel" style="clip: rect(0px 10000px 10000px 0px);">
@@ -529,6 +530,7 @@
 							<div class="controls">
 								<input class="inputWebmapId1" type="text" maxlength="32" disabled>
 							</div>
+							<a class="btn btn-small switchMapIds"><i class="icon-retweet"></i></a>
 							<label class="control-label" for="inputWebmapId2"></label>
 							<div class="controls">
 								<input class="inputWebmapId2" type="text" maxlength="32"/>
@@ -579,8 +581,12 @@
 									<span class="popupText"></span> <span class="popupInfo"></span>
 								</label>
 								<label class="checkbox" style="margin-top: -3px;">
-									<input type="checkbox" name="optionsLocator" value="locator" checked>
-									<span class="locatorText"></span> <span class="locatorInfo"></span>
+									<input type="checkbox" name="optionsLocationSearch" value="locationSearch" >
+									<span class="locationSearchText"></span> <span class="locationSearchInfo"></span>
+								</label>
+								<label class="checkbox" style="margin-top: -3px;">
+									<input type="checkbox" name="optionsGeolocator" value="geolocator" >
+									<span class="geolocatorText"></span> <span class="geolocatorInfo"></span>
 								</label>
 							</div>
 							<div id="uiSimulator">
