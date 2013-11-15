@@ -21,6 +21,7 @@ mkdir %BUILD_OUTPUT%\Edit
 mkdir %BUILD_OUTPUT%\Editor
 mkdir %BUILD_OUTPUT%\Editor\Chrome
 mkdir %BUILD_OUTPUT%\ElevationsProfile
+mkdir %BUILD_OUTPUT%\Elevations
 mkdir %BUILD_OUTPUT%\Filter
 mkdir %BUILD_OUTPUT%\HeaderFooter
 mkdir %BUILD_OUTPUT%\HeaderFooter\Chrome        		
@@ -56,6 +57,7 @@ mkdir %BUILD_OUTPUT%\OnePane\gpx
 mkdir %BUILD_OUTPUT%\Panels  
 mkdir %BUILD_OUTPUT%\PanelsLegend
 mkdir %BUILD_OUTPUT%\PublicGallery
+mkdir %BUILD_OUTPUT%\ServiceLookup
 mkdir %BUILD_OUTPUT%\SimpleMapViewer
 mkdir %BUILD_OUTPUT%\SocialMedia
 mkdir %BUILD_OUTPUT%\Solutions
@@ -78,7 +80,8 @@ xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingTabbed	    %BUILD_OUTPUT%\Comp
 xcopy %TEMPLATES_ROOT%\StorytellingCompare	    				%BUILD_OUTPUT%\Compare\storytelling_compare	        /E /Y
 xcopy %TEMPLATES_ROOT%\archive\EditorChrome						%BUILD_OUTPUT%\Editor\Chrome				        /E /Y
 xcopy %TEMPLATES_ROOT%\Edit                  					%BUILD_OUTPUT%\Edit                 				/E /Y
-xcopy %TEMPLATES_ROOT%\ElevationsProfile      					%BUILD_OUTPUT%\ElevationsProfile    				/E /Y
+xcopy %TEMPLATES_ROOT%\archive\ElevationsProfile      			%BUILD_OUTPUT%\ElevationsProfile    				/E /Y
+xcopy %TEMPLATES_ROOT%\Elevations                               %BUILD_OUTPUT%\Elevations
 xcopy %TEMPLATES_ROOT%\Filter                 					%BUILD_OUTPUT%\Filter              					/E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterChrome    			%BUILD_OUTPUT%\HeaderFooter\Chrome        			/E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterPavement   			%BUILD_OUTPUT%\HeaderFooter\pavement        		/E /Y
@@ -114,6 +117,7 @@ xcopy %TEMPLATES_ROOT%\archive\TwitterTimeline	    			%BUILD_OUTPUT%\OnePane\twi
 xcopy %TEMPLATES_ROOT%\archive\Swipe	    					%BUILD_OUTPUT%\OnePane\swipe        				/E /Y
 xcopy %TEMPLATES_ROOT%\archive\GPX				    			%BUILD_OUTPUT%\OnePane\gpx        					/E /Y
 xcopy %TEMPLATES_ROOT%\PublicGallery          					%BUILD_OUTPUT%\PublicGallery        				/E /Y
+xcopy %TEMPLATES_ROOT%\ServiceLookup                            %BUILD_OUTPUT%\ServiceLookup
 xcopy %TEMPLATES_ROOT%\SimpleMapViewer        					%BUILD_OUTPUT%\SimpleMapViewer      				/E /Y
 xcopy %TEMPLATES_ROOT%\SocialMedia            					%BUILD_OUTPUT%\SocialMedia          				/E /Y
 xcopy %TEMPLATES_ROOT%\Solutions              					%BUILD_OUTPUT%\Solutions            				/E /Y

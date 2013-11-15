@@ -46,7 +46,7 @@ define({
 				storymapsText: "A story map",
 				builderButton: "Switch to builder mode",
 				bitlyTooltip: "Get a short link to the application",
-				bitlyStartIndex: "Start on point no."
+				bitlyStartIndex: "Link to current place"
 			},
 			builderHTML: {
 				panelHeader: "APPLICATION CONFIGURATION",
@@ -141,7 +141,7 @@ define({
 				settingsLayoutSelected: "Selected layout",
 				settingsLayoutSelect: "Select this layout",
 				settingsLayoutNote: "Note that on points using videos, the placard will always be placed under the video even if that option is unchecked.",
-				settingsLayoutLocBtn: "Display a locate button on supported browser",
+				settingsLayoutLocBtn: "Display a 'Locate' button on supported browser",
 				settingsLayoutLocBtnHelp: "That functionality is supported on most mobile device and desktop browsers (Internet Explorer 9).",
 				settingsColorExplain: "Change appearance by choosing a pre-defined theme, or create your own.",
 				settingsLabelColor: "Header, content and footer colors",
@@ -173,6 +173,7 @@ define({
 				settingsLabelZoom: "Scale/level",
 				settingsZoomFirstValue: "None",
 				settingsFieldError: "Please select a field in each list",
+				dataTitle: "ArcGIS Online hosting",
 				dataExplain: "The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />If you change the application sharing privileges, the system will ask you if you want to update your Feature Service sharing configuration. This is required for your users to access your data. You will remain the only one with editing privileges.",
 				dataNameLbl: "Service name",
 				dataFolderListLbl: "Folder",
@@ -206,7 +207,7 @@ define({
 				errorNoLocation: "Set a location for this tour point"
 			},
 			builderJS: {
-				noPendingChange: "No pending change",
+				noPendingChange: "No unsaved change",
 				unSavedChangeSingular: "1 unsaved change",
 				unSavedChangePlural: "unsaved changes",
 				popoverDiscard: "Are you sure to want to discard any unsaved changes?",
@@ -229,7 +230,7 @@ define({
 				dataWarningClose: "Close",
 				signIn: "Please sign in with an account on",
 				signInTwo: "to save the application.",
-				switchBM: "Switch Basemap"
+				switchBM: "Change Basemap"
 			},
 			organizePopupJS: {
 				messageStart: "You have chosen to delete",
@@ -277,8 +278,8 @@ define({
 				videos: "videos",
 				disabled: "This feature has been disabled by the Administrator",
 				disabledPortal: "This feature is disabled on Portal for ArcGIS",
-				header1: "The pictures need to be publicly shared.",
-				header2: "The import will be limited to the first %NB1% %MEDIA% to respect the limit of %NB2% points per tour.",
+				header1: "Your pictures must be shared publicly.",
+				header2: "The import will be limited to the first %NB1% %MEDIA%.",
 				emptyDataset: "Error, no pictures found",
 				footerImport: "Import",
 				selectAlbum: "Select a public album",
@@ -289,12 +290,12 @@ define({
 				csv: "Referenced in a CSV",
 				advanced: "Advanced options",
 				select: "Make a selection",
-				locUse: "Use pictures location",
-				locUse2: "Use videos location",
-				locExplain: "You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location.",
-				locExplain2: "You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location."
+				locUse: "Use pictures geolocation",
+				locExplain: "You may not want to use pictures geolocation as they can be inherited from the album, resulting in all photos being at the same location.",
+				locExplain2: "You may not want to use videos geolocation as they can be inherited from the user settings, resulting in all videos being at the same location."
 			},
 			viewFlickr: {
+				title: "Flickr import",
 				header: "Enter a Flickr user name and select a Photo Set or a Tag to be imported.",
 				userInputLbl: "Enter a User Name",
 				signInMsg2: "User not found",
@@ -304,6 +305,7 @@ define({
 				footerImportSet: "Import the selected Set"
 			},
 			viewFacebook: {
+				title: "Facebook import",
 				header: "Authenticate with a Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private.",
 				leftHeader: "Facebook User",
 				rightHeader: "Facebook Page",
@@ -312,13 +314,15 @@ define({
 				lookupMsgError: "Page not found"
 			},
 			viewPicasa: {
-				header: "Enter the email or the ID of a Picasa or Google+ account.",
+				title: "Picasa/Google+ import",
+				header: "Enter your email address or the ID of a Picasa or Google+ account.",
 				userInputLbl: "Enter an email or ID",
 				signInMsg2: "Account not found",
-				howToFind: "How to find an account ID",
+				howToFind: "How to find a Picasa or Google+ account ID",
 				howToFind2: "Copy digits between the first and second '/' of any Picasa or G+ page"
 			},
 			viewCSV: {
+				title: "CSV import",
 				uploadBtn: "Select or drop a CSV file",
 				resultHeaderEmpty: "The CSV is empty",
 				resultHeaderSuccess: "Successfully loaded %NB_POINTS% points",
@@ -343,7 +347,8 @@ define({
 				footerSucceed: "Import succeeded. Loading"
 			},
 			viewYoutube: {
-				header: "Look for publicly shared videos using an user name.",
+				title: "Youtube import",
+				header: "Enter a YouTube user name to find publicly shared videos.",
 				pageInputLbl: "Enter a YouTube user name",
 				lookupMsgError: "User not found",
 				howToFind: "How to find a YouTube user name",
@@ -352,9 +357,10 @@ define({
 				noData: "No public videos found"
 			},
 			viewGeoTag: {
+				title: "Locate your images/videos",
 				header: "Click or tap the pictures you want to import to locate them.",
-				headerMore: "Why my pictures are not located?",
-				headerExplain: "If your pictures have a valid location, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't exploit the pictures EXIF location metadata, check Flickr/Picasa settings under Privacy tab to enable pictures location usage. You may have to completly reimport your pictures into Flickr/Picasa.<br /><br />For Facebook, you have to go on each picture, click Edit and select the location between the suggested choices that are based on the pictures EXIF metadata.",
+				headerMore: "Why aren't my images/videos geolocated?",
+				headerExplain: "If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't sore the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location.",
 				leftPanelTab1: "To locate",
 				leftPanelTab2: "Located",
 				clickOrTap: "Click or tap the Map to locate",
@@ -363,7 +369,7 @@ define({
 				footerProgress: "Import in progress",
 				footerSucceed: "Import succeeded. Loading...",
 				loading: "Loading",
-				error: "Pictures location import failed, locations have been ignored."
+				error: "Pictures geolocation import failed, geolocations have been ignored."
 			},
 			initPopup: {
 				title: "Welcome to the Map Tour Builder",
@@ -372,15 +378,15 @@ define({
 			},
 			initPopupHome: {
 				header1: "Where are your images or videos?",
-				header2: "This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organization account.",
+				header2: "This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account.",
 				title1: "They are already online",
-				title2: "I need to upload them",
+				title2: "I need to upload my images",
 				hostedFSTooltip: "Use ArcGIS Online to host your images (doesn't support videos).",
-				hostedFsNA: "Only available for ArcGIS for Organization Publisher and Administrator users",
+				hostedFsNA: "Only available for ArcGIS for Organizations Publisher and Administrator users",
 				footer1: "When you are done, don't forget to share your Map Tour with your audience through the application item page.",
 				footer3: "Download the CSV template",
 				footer4: "\"Save as\" if it doesn't download",
-				footer4bis: "Use right click and Save as if download doesn't start",
+				footer4bis: "Use right click and \"Save as\" if download doesn't start",
 				footer5: "Learn more",
 				footerProgress: "Creation in progress",
 				footerSucceed: "Creation succeeded. Loading..."
@@ -471,31 +477,36 @@ define({
 					div4: "It is a good idea to see what your map tour looks like on an iPad held in landscape orientation. This can help you see if your captions cover up too much of the pictures."
 				}
 			},
-			directCreationFirstSave: {
+			share: {
 				firstSaveTitle: "Tour successfully saved",
 				firstSaveHeader: "Congratulations! Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions.",
 				firstSaveQ1: "How to get back to the authoring interface?",
-				firstSaveA1: "If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link %LINK1%. Otherwise the Tour can be found in your <a href='%LINK2%' target='_blank'>content folder</a>.",
-				firstSaveQ2: "Is my Tour private or public?",
+				firstSaveA1: "If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%",
+				firstSaveA1bis: "The Tour can be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>.",
+				firstSaveQ2: "Is my Tour shared?",
 				firstSaveA2: "From now only you can access your Tour, when you are ready to share your Tour, use the SHARE button on the main interface.",
 				shareTitle: "Share your Tour",
-				sharePrivateHeader: "Your Tour is private, would you like to share it?",
+				sharePrivateHeader: "Your Tour is not shared, would you like to share it?",
 				sharePrivateBtn1: "Share publicly",
 				sharePrivateBtn2: "Share with my Organization",
 				sharePrivateProgress: "Sharing in progress...",
 				sharePrivateErr: "Sharing failed, try again or",
 				sharePrivateOk: "Sharing updated successfully, loading...",
-				sharePreviewAsUser: "Preview as a user",
-				shareHeader1: "Your Tour is <strong>publicly accessible</strong> (it appears in search results and everyone with the link can access it).",
+				sharePrivateLearnMore1: "This will update the application and webmap items.",
+				sharePrivateLearnMore2: "This will update the application, webmap and Feature Service items.",
+				sharePrivateLearnMore3: "If you have added layers through ArcGIS.com map viewer, they won't be updated. This may result in the Tour not beeing shared as expected.",
+				sharePrivateLearnMore4: "Items that already have the required (or more) privileges they won't be updated.",
+				sharePreviewAsUser: "Preview",
+				shareHeader1: "Your Tour is <strong>publicly accessible</strong>.",
 				shareHeader2: "Your Tour is accessible by your organization members (login is required).",
 				shareLinkHeader: "Share the Tour with your audience",
 				shareLinkOpen: "OPEN",
-				shareQ1Opt1: "How to keep the Tour private?",
-				shareQ1Opt2: "How to make the Tour public or keep it private?",
-				shareA1: "Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>",
-				shareA1bis: "and on <a href='%LINK1%' target='_blank'>the webmap item page</a>.",
-				shareQ2: "How to administer the Tour?",
-				shareA2div1: "Save and reuse the following link %LINK1% or find the application in your <a href='%LINK2%' target='_blank'>content folder</a>.",
+				shareQ1Opt1: "How do I keep the Tour private?",
+				shareQ1Opt2: "How do I keep the Tour private or make it public?",
+				shareA1: "Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>.",
+				shareA1bis: "If you want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>.",
+				shareQ2: "How do I administer the Tour?",
+				shareA2div1: "Save and reuse the following link %LINK1% or find the application in your <a href='%LINK2%' target='_blank'>ArcGIS.com content folder</a>.",
 				shareA2div2: "As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:",				
 				shareQ3: "Where is the data stored?",
 				shareA3: "The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online."

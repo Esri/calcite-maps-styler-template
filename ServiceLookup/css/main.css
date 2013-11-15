@@ -1,0 +1,64 @@
+html, body
+{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+#mapDiv
+{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#searchDiv
+{
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    left: 75px;
+    width: 60%;
+}
+
+#LocateButton
+{
+    position: absolute;
+    top: 95px;
+    left: 20px;
+    z-index: 50;
+}
+/* customize geocoder appearance */
+.simpleGeocoder, .simpleGeocoder .esriGeocoderContainer
+{
+    width: 100%;
+}
+
+.simpleGeocoder .esriGeocoder
+{
+    height: 100%;
+}
+
+.simpleGeocoder .esriGeocoder input
+{
+    width: 75%;
+}
+
+
+.simpleGeocoder .esriGeocoderResult:hover,
+.simpleGeocoder .esriGeocoderResultEven:focus,
+.simpleGeocoder .esriGeocoderResultOdd:focus
+{
+    /* default is #EDEDED, use a light blue instead */
+    background-color: #B5DAEA;
+}
+
+
+.esriRTL label
+{
+    /*Example of a rule that will be applied if the app is viewed in a browser wtih a RTL locale like Hebrew or Arabic.*/
+}

@@ -67,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta7';
+			var version = '2.2-beta8';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -145,7 +145,7 @@
 				loadCSS("app/storymaps/maptour/builder/OrganizePopup.css");
 				loadCSS("app/storymaps/maptour/builder/AddPopup.css");
 				loadCSS("app/storymaps/maptour/builder/HelpPopup.css");
-				loadCSS("app/storymaps/maptour/builder/DirectCreationFirstSavePopup.css");
+				loadCSS("app/storymaps/maptour/builder/SharePopup.css");
 				
 				loadCSS("app/storymaps/maptour/ui/mobile/Common.css");
 				loadCSS("app/storymaps/maptour/ui/mobile/Carousel.css");
@@ -604,10 +604,10 @@
 				<div class="options">
 					<div class="options-row">
 						<!-- TODO -->
-						<button class="btn btn-adv btn-select-scratch">Manual input of media via URL</button>
+						<button class="btn btn-adv btn-select-scratch">Start an empty Tour</button>
 					</div>
-					<div class="options-row">
-						<button class="btn btn-adv btn-select-csv">Import from any source using a CSV</button>
+					<div class="options-row" style="margin-top: 20px;">
+						<button class="btn btn-adv btn-select-csv">Import Tour data from a CSV file</button>
 						<div class="csv-note"></div>
 					</div>
 				</div>
@@ -685,10 +685,6 @@
 							</div>
 						</div>
 					</div>
-					<div class="useLocation">
-						<input type="checkbox" name="fbUseLocation"/>
-						<span></span>
-					</div>
 				</div>
 			</div>
 			<div id="popupViewFacebook" class="popupViewFacebook">
@@ -728,10 +724,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="useLocation">
-					<input type="checkbox" name="fbUseLocation"/>
-					<span></span>
-				</div>
 			</div>
 			<div id="popupViewPicasa" class="popupViewPicasa">
 				<div class="headerContainer">
@@ -763,10 +755,6 @@
 					<input class="youtubeInput selectUserName" type="text" value=""/>
 					<button class="btn youtubeLookup btn-userLookup" disabled="disabled"><i class="icon-search"></i></button>
 					<span class="lookingUpMsg lookingUpUserMsg"></span>
-				</div>
-				<div class="useLocation">
-					<input type="checkbox" name="youtubeUseLocation" checked/>
-					<span></span>
 				</div>
 				<div class="howToFind">
 					<a></a>
@@ -990,7 +978,7 @@
 		</div>
 		
 		<!-- Direct Creation First Save popup -->
-		<div class="modal hide" id="directCreationFirstSavePopup" data-backdrop="static" tabindex="-1">
+		<div class="modal hide" id="sharePopup" data-backdrop="static" tabindex="-1">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				<h3></h3>
@@ -1010,7 +998,10 @@
 							<button class="btn btn-sharePublic"></button>
 							<button class="btn btn-shareOrga"></button>
 						</div>
-						<a class="btn-preview"></a>
+						<div class="footer">
+							<a class="btn-learnmore"></a>
+							| <a class="btn-preview"></a>
+						</div>
 					</div>
 					<div class="shared-dialog">
 						<div class="header"></div>
