@@ -3,7 +3,7 @@ define({
 		firstPane: {
 			head: "<span class='highlightText'>The Map Tour Template</span> enables all ArcGIS Online account levels including the free Public account to create and edit a place-based narrative combining images, text, and map from:",
 			list0: "Pictures stored in major online photo-sharing services like Flickr, Picasa and Facebook, or on any website or web server",
-			list1: "Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organization members)"
+			list1: "Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>The Template</span> incorporates easy-to-use editing tools that include:",
