@@ -67,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta8';
+			var version = '2.2-beta9';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -94,8 +94,8 @@
 				document.getElementsByTagName("head")[0].appendChild(el);
 			}
 
-			loadCSS("//js.arcgis.com/3.7/js/esri/css/esri.css", true);
-			loadCSS("//js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css", true);			
+			loadCSS("//jsdev.arcgis.com/3.8/js/esri/css/esri.css", true);
+			loadCSS("//jsdev.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css", true);			
 
 			if( isProduction ) {
 				loadCSS("app/maptour-min.css");
@@ -239,7 +239,7 @@
 				<!-- Builder switch basemap -->
 				<div id="basemapChooser">
 					<div data-dojo-type="dijit/TitlePane" 
-						 data-dojo-props="closable:false,  open:false">
+						 data-dojo-props="closable:false, open:false">
 					<div data-dojo-type="dijit/layout/ContentPane" style="width:380px; height:280px; overflow:auto;">
 						<div id="basemapGallery" ></div></div>
 					</div>
@@ -253,7 +253,6 @@
 				<img id="arrowNext" class="arrow disabled" />
 				<a class="modern-layout-control left">‹</a>
 				<a class="modern-layout-control right">›</a>
-		
 				<!-- Builder picture panel buttons -->
 				<div class="editPictureButtons">
 					<div>
@@ -603,11 +602,10 @@
 				<div class="header"></div>
 				<div class="options">
 					<div class="options-row">
-						<!-- TODO -->
-						<button class="btn btn-adv btn-select-scratch">Start an empty Tour</button>
+						<button class="btn btn-adv btn-select-scratch"></button>
 					</div>
 					<div class="options-row" style="margin-top: 20px;">
-						<button class="btn btn-adv btn-select-csv">Import Tour data from a CSV file</button>
+						<button class="btn btn-adv btn-select-csv"></button>
 						<div class="csv-note"></div>
 					</div>
 				</div>
@@ -661,7 +659,7 @@
 					<span class="header"></span>
 					<span class="commonHeader"></span>
 				</div>
-				<input class="selectUserName" type="text" value="greg.lazou"/>
+				<input class="selectUserName" type="text" value=""/>
 				<button class="btn btn-userLogin"></button>
 				<span class="signInMsg"></span>
 				<div>
@@ -952,32 +950,7 @@
 			</div>
 		</div>
 		
-		<!-- Help popup -->
-		<div class="modal hide" id="helpPopup" data-backdrop="static" tabindex="-1">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h3></h3>
-			</div>
-			<div class="helpPopupHeader modal-tabs">
-				<div class="tab"></div>
-				<div class="tab"></div>
-				<div class="tab"></div>
-				<div class="tab"></div>
-				<div class="tab"></div>
-			</div>
-			<div class="modal-body">
-				<div id="help-tab1" class="tab-content"></div>
-				<div id="help-tab2" class="tab-content"></div>
-				<div id="help-tab3" class="tab-content"></div>
-				<div id="help-tab4" class="tab-content"></div>
-				<div id="help-tab5" class="tab-content"></div>
-			</div>
-			<div class="modal-footer">
-				<button class="btnClose btn" data-dismiss="modal" aria-hidden="true"></button>
-			</div>
-		</div>
-		
-		<!-- Direct Creation First Save popup -->
+		<!-- Share popup -->
 		<div class="modal hide" id="sharePopup" data-backdrop="static" tabindex="-1">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -1025,6 +998,31 @@
 			</div>
 		</div>
 		
+		<!-- Help popup -->
+		<div class="modal hide" id="helpPopup" data-backdrop="static" tabindex="-1">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3></h3>
+			</div>
+			<div class="helpPopupHeader modal-tabs">
+				<div class="tab"></div>
+				<div class="tab"></div>
+				<div class="tab"></div>
+				<div class="tab"></div>
+				<div class="tab"></div>
+			</div>
+			<div class="modal-body">
+				<div id="help-tab1" class="tab-content"></div>
+				<div id="help-tab2" class="tab-content"></div>
+				<div id="help-tab3" class="tab-content"></div>
+				<div id="help-tab4" class="tab-content"></div>
+				<div id="help-tab5" class="tab-content"></div>
+			</div>
+			<div class="modal-footer">
+				<button class="btnClose btn" data-dismiss="modal" aria-hidden="true"></button>
+			</div>
+		</div>
+		
 		<!-- Browser popup -->
 		<div class="modal hide" id="browserPopup" data-backdrop="static" tabindex="-1">
 			<div class="modal-header">
@@ -1055,7 +1053,7 @@
 		</div>
 		
 		<script type="text/javascript">
-			loadJS('//js.arcgis.com/3.7/init.js', true);
+			loadJS('//jsdev.arcgis.com/3.8/init.js', true);
 			loadJS('app/maptour-config.js');
 			
 			function getUrlVar(name)
