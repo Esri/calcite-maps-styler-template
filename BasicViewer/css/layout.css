@@ -63,6 +63,7 @@ body {
   box-shadow: 0 0 5px #888;
 }
 #map {
+  z-index: 0;
   padding:0px;
   border-right:solid 1px #999;
   border-bottom:solid 1px #999;
@@ -82,7 +83,7 @@ body {
   color:#336699;
 }
 .dijitContentPane{
-   overflow:hidden;
+   overflow:visible;
 }
 #legendPanel{
 /*width:100%;*/
@@ -101,7 +102,7 @@ body {
 }
 /*styles for the top toolbar and buttons*/
 #toolbarContainer_bv{
-  overflow:hidden;
+  overflow:visible;
   width:100% !important;
   padding:0px !important;
   height:34px;
@@ -111,12 +112,15 @@ body {
 /*override claro background and other props*/
 #toolbarContainer_bv .dijitToolbar {
   height:100%;
+  overflow: visible;
 }
 
 .claro .dijitButton .dijitButtonNode, .claro .dijitDropDownButton .dijitButtonNode, .claro .dijitComboButton .dijitButtonNode, .claro .dijitToggleButton .dijitButtonNode{
 background-image:none !important;
 }
-
+.claro .dijitToolbar{
+  padding:0 !important;
+}
 
 /*Measure toggle button*/
 .claro .dijitToolbar .dijitButtonNode:hover {
@@ -133,17 +137,14 @@ background-image:none !important;
 /*The top toolbar is split into three sections. */
 #webmap-toolbar-left {
   float: left;
-  overflow:hidden;  
 }
 
 #webmap-toolbar-center {
   float: right;
-  overflow:hidden;
 }
 
 #webmap-toolbar-right {
   float: right;
-  padding-right: 10px;
   width:250px;
 }
 #legendButton{
@@ -458,12 +459,26 @@ background-image:none !important;
 }
 
 /*Styles for the search box (find address or place)*/
+.esriGeocoderResultsOpen .esriGeocoderContainer{
+  position: relative;
+  z-index:1;
+}
+.simpleGeocoder .esriGeocoderResults{
+  color:#333;
+}
+.simpleGeocoder{
+  top:0;
+  vertical-align: top;
+  line-height: 30px;
+  position: relative;
+}
 .arcgisTheme .esriGeocoder {
   border-radius:2px;
   border: solid 1px #fff;
 }
 .arcgisTheme .esriGeocoder input {
   font-style: italic;
+  color: #333;
 }
 /*Specify font for the popup window*/
 .esriPopup{

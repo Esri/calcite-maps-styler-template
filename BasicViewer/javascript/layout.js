@@ -1372,9 +1372,10 @@ function createSocialLinks() {
             autoNavigate: false,
             theme: "simpleGeocoder",
             arcgisGeocoder: geocodeOptions
-        }, "webmap-toolbar-right");
-        geocoder.startup();
+        }, dojo.create("div", {id: "geocoder"}));
 
+        geocoder.startup();
+        dojo.byId('webmap-toolbar-right').appendChild(geocoder.domNode);
 
         //if location was set go there 
         if(configOptions.find){
