@@ -20,7 +20,7 @@ define([], function() {
         "serviceRequestLayerAvailibiltyFieldValueNotAvail": "Not Intersected",
         "serviceUnavailableTitle": "Service Unavailable",
         "serviceUnavailableMessage": "Thank you for your interest in service!  The selected location is not within the service area. We apologize for the inconvenience. If you have any questions or comments, please contact us at 555-5555 or by email at email@email.com",
-        "bingmapskey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
+        "bingMapsKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
         "sharinghost": location.protocol + "//" + "www.arcgis.com" //Defaults to arcgis.com. Set this value to your portal or organization host name. 
     };
     return defaults;

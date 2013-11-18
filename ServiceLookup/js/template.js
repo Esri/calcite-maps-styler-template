@@ -15,6 +15,7 @@ define([
     "esri/IdentityManager",
     "esri/tasks/GeometryService",
     "config/defaults",
+     "templateConfig/commonConfig",
     "application/OAuthHelper"
 
 ],
@@ -35,6 +36,7 @@ function(
     IdentityManager,
     GeometryService,
     defaults,
+    commonConfig,
     OAuthHelper
 ) {
     return declare([Evented], {
@@ -44,6 +46,9 @@ function(
             //config will contain application and user defined info for the application such as i18n strings, 
             //the web map id and application id, any url parameters and any application specific configuration
             // information. 
+            lang.mixin(defaults,commonConfig);
+
+
             this.config = defaults;
             this.localize = supportsLocalization || false;
             this._init().then(lang.hitch(this, function() {
@@ -207,8 +212,9 @@ function(
                 },
                 callbackParamName: "callback"
             }).then(lang.hitch(this, function(response) {
-                this.config.helperServices = {};
-                lang.mixin(this.config.helperServices, response.helperServices);
+              
+                declare.safeMixin(this.config.helperServices || {}, response.helperServices);
+
                 //Let's set the geometry helper service to be the app default.  
                 if (this.config.helperServices && this.config.helperServices.geometry && this.config.helperServices.geometry.url) {
                     esriConfig.defaults.geometryService = new GeometryService(this.config.helperServices.geometry.url);

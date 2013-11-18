@@ -47,7 +47,7 @@ function(
             //the web map id and application id, any url parameters and any application specific configuration
             // information. 
             lang.mixin(defaults, commonConfig);
-            this.config = defaults;
+            declare.safeMixin(defaults, commonConfig);
             this.localize = supportsLocalization || false;
             this._init().then(lang.hitch(this, function() {
                 this.emit("ready", this.config);
@@ -214,8 +214,9 @@ function(
                 },
                 callbackParamName: "callback"
             }).then(lang.hitch(this, function(response) {
-                this.config.helperServices = {};
-                declare.safeMixin(this.config.helperServices, response.helperServices);
+             
+                 this.config.helperServices = declare.safeMixin(this.config.helperServices || {}, response.helperServices);
+
                 //Let's set the geometry helper service to be the app default.  
                 if (this.config.helperServices && this.config.helperServices.geometry && this.config.helperServices.geometry.url) {
                     esriConfig.defaults.geometryService = new GeometryService(this.config.helperServices.geometry.url);
