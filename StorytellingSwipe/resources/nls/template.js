@@ -151,7 +151,7 @@ define({
 				settingsDataModelSelect: "Select this type",
 				settingsDataModel2Explain: "Swipe with another web map.",
 				settingsDataModel2SpyGlassExplain: "Reveal another web map.",
-				settingsDataModel2HelpTitle: "How do I find a web map's ID",
+				settingsDataModel2HelpTitle: "How do I find a web map's ID?",
 				settingsDataModel2HelpContent: "Copy and paste digits after the '=' sign in the URL of the web map"
 			},
 			settingsLegend: {
@@ -165,7 +165,10 @@ define({
 				settingsGeolocatorEnable: "Enable geolocator",
 				settingsLegendHelpContent: "To refine the legend content, use ArcGIS.com web map viewer table of contents (Hide in Legend)",
 				settingsSeriesHelpContent: "Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use.", 
-				preview: "UI preview"
+				preview: "UI preview",
+				settingsLocateButtonExplain: "This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+).",
+				settingsLocateButton: "Enable a 'Locate' button supported browsers",
+				settingsAddressSearch: "Enable an address search tool"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Pop-up",
