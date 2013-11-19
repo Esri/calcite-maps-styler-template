@@ -11,7 +11,7 @@
 			},
 			errors: {
 				boxTitle: "エラーが発生しました",
-				portalSelf: "致命的なエラー: ポータルの構成を取得できませんでした",
+				portalSelf: "致命的なエラー: ポータルの構成情報を取得できませんでした",
 				invalidConfig: "致命的なエラー: 無効な構成",
 				invalidConfigNoWebmap: "致命的なエラー: 無効な構成 (Web マップが指定されていません)",
 				createMap: "マップを作成できません",
@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "一部の変更は、保存してアプリケーションを再読み込みする必要があります"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "レイヤのスワイプ",
-				settingsDataModelExplainSwipe: "スワイプで表示したり非表示にしたりするレイヤまたは Web マップを選択します。",
+				settingsTabDataModel: "須_Swipe Type_鷗",
+				settingsDataModelExplainSwipe: "須_What do you want users to swipe?_鷗",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "スパイグラスに表示するレイヤまたは Web マップを選択します。",
-				settingsDataModelOneMap: "1 つの Web マップ、1 つのレイヤ",
-				settingsDataModel1Explain: "スワイプ ツールによって制御されるレイヤを選択します。",
+				settingsDataModelOneMap: "須_A layer in a web map_鷗",
+				settingsDataModel1Explain: "須_Select the layer you want to be swiped_鷗",
 				settingsDataModel1Warning: "レイヤが上に重なっているレイヤによって隠れている場合、スワイプは機能しません。",
 				settingsDataModel1SpyGlassExplain: "スパイグラス内に表示するレイヤを選択します。",
 				settingsDataModelTwoMaps: "2 つの Web マップ",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "このタイプを選択",
 				settingsDataModel2Explain: "別の Web マップでスワイプします。",
 				settingsDataModel2SpyGlassExplain: "別の Web マップを公開します。",
-				settingsDataModel2HelpTitle: "Web マップ ID の検索方法",
+				settingsDataModel2HelpTitle: "須_How do I find a web map's ID?_鷗",
 				settingsDataModel2HelpContent: "Web マップの URL 内の「=」記号から後ろの数字をコピーして貼り付けます。"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "凡例を有効化",
 				settingsDescriptionEnable: "説明を有効化",
 				settingsBookmarksEnable: "一連のスワイプを有効化",
-				settingsPopupDisable: "須_Enable popup_鷗",
+				settingsPopupDisable: "ポップアップの有効化",
+				settingsLocationSearchEnable: "須_Enable locator search_鷗",
+				settingsGeolocatorEnable: "須_Enable geolocator_鷗",
 				settingsLegendHelpContent: "凡例のコンテンツを更新するには、ArcGIS.com Web マップ ビューアのコンテンツ ウィンドウを使用します (凡例では非表示)",
-				settingsSeriesHelpContent: "須_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._鷗",
-				preview: "UI のプレビュー"
+				settingsSeriesHelpContent: "須_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._鷗", 
+				preview: "UI のプレビュー",
+				settingsLocateButtonExplain: "須_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._鷗",
+				settingsLocateButton: "須_Enable a 'Locate' button supported browsers_鷗",
+				settingsAddressSearch: "須_Enable an address search tool_鷗"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "ポップアップ",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "スワイプ ビルダへようこそ",
 				modalNext: "次へ",
+				modalPrev: "須_Previous_鷗",
 				modalApply: "アプリケーションを開く"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "説明",
 				discard: "ブックマークの破棄",
 				saveExtent: "ブックマークの範囲の設定",
-				discardDisabled: "須_You can't remove that bookmark. Swipe series can be disabled in the Settings._鷗"
+				discardDisabled: "そのブックマークを削除することができません。[設定] で、スワイプが無効化されている可能性があります。"
 			}
 		}
     })

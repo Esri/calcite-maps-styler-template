@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "kommentit",
                 "modifiedLabel": "Muokattu viimeksi",
                 "by": "peruste",
-                "separator": "Å_,_ö"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Sosiaalisen median tasot",

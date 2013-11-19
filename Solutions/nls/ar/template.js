@@ -22,8 +22,8 @@ define(
             search: "بحث",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "الموقع الحالي",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "إرسال التصحيح",  // Command button to submit a correction to the app's host
-            collect: "بيت_Add content to map_لاحقة",  // Command button to open a template picker to add features to the map
-            filter: "بيت_Filter map layers_لاحقة",  // Explains purpose of type-in box affiliated with template picker
+            collect: "إضافة محتوى إلى الخريطة",  // Command button to open a template picker to add features to the map
+            filter: "تنقية طبقات الخريطة",  // Explains purpose of type-in box affiliated with template picker
             basemap: "تبديل خريطة الأساس",  // Command button to open a dialog box for switching basemaps
             share: "مشاركة",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "مشاركة عن طريق البريد الإلكتروني",  // Command button to share the current map extents via email

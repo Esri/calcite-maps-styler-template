@@ -11,7 +11,7 @@
 			},
 			errors: {
 				boxTitle: "אירעה שגיאה",
-				portalSelf: "כן_Fatal error: Failed to get portal configuration_ש",
+				portalSelf: "שגיאה חמורה: נכשל ניסיון לקבל תצורת פורטל",
 				invalidConfig: "שגיאה קריטית: קביעת תצורה לא תקינה",
 				invalidConfigNoWebmap: "שגיאה קריטית: קביעת תצורה לא תקינה (לא הוגדר web map)",
 				createMap: "לא ניתן ליצור מפה",
@@ -21,7 +21,7 @@
 				noLayerView: "ברוכים הבאים לאפליקצית ה- web של כלי ה- swipe. <br />עדיין לא הוגדרה תצורה לאפליקציה.",
 				appSave: "שגיאה בשמירת אפליקצית ה- web",
 				mapSave: "שגיאה בשמירת ה- web map",
-				notAuthorized: "כן_You are not authorized to access this application_ש",
+				notAuthorized: "אינך מורשה לגשת לאפליקציה זו",
 				conflictingProjectionsTitle: "היטלים סותרים",
 				conflictingProjections: "כלי ה- Swipe לא ישים כאשר ישנם היטלים שונים לשני webmaps. אנא פתח את ההגדרות והשתמש ב- webmap שמשתמשת באותו היטל של ה- webmap הראשון.",
 				cpButton: "סגור"
@@ -35,7 +35,7 @@
 			desktopView: {
 				storymapsText: "מפת סיפור",
 				builderButton: "עבור למצב בנייה",
-				bitlyTooltip: "כן_Get a short link to the application_ש"
+				bitlyTooltip: "קבל קישור קצר ליישום"
 			}
 		},
 		builder: {
@@ -45,7 +45,7 @@
 				buttonDiscard: "ביטול",
 				buttonSettings: "הגדרות",
 				buttonView: "מצב צפיה",
-				buttonItem: "כן_Open the Web Application item_ש",
+				buttonItem: "פתח פריט של אפליקצית web",
 				noPendingChange: "אין שינוי לביצוע",
 				unSavedChangeSingular: "שינוי אחד שלא נשמר",
 				unSavedChangePlural: "שינויים שלא נשמרו",
@@ -72,7 +72,7 @@
 			settings: {
 				settingsHeader: "הגדרות אפליקציה",
 				modalCancel: "ביטול",
-				modalApply: "החל"
+				modalApply: "בצע"
 			},
 			settingsColors: {
 				settingsTabColor: "נושא",
@@ -90,18 +90,18 @@
 				settingsLogoSocialExplain: "התאם הלינק בצד ימין עליון של הכותרת העליונה",
 				settingsLogoSocialText: "טקסט",
 				settingsLogoSocialLink: "קישור",
-				settingsLogoSocialDisabled: "כן_This feature has been disabled by the Administrator_ש"
+				settingsLogoSocialDisabled: "תכונה זו הוגדרה כלא זמינה על ידי המנהל"
 			},
 			settingsExtent: {
 				settingsTabExtent: "תיחום",
 				settingsExtentExplain: "בחר את התיחום ההתחלתי באמצעות המפה האינטראקטיבית שלהלן.",
-				settingsExtentExplainBottom: "כן_The extent you define will modify your web map initial extent. Note that if you are doing a swipe series that extent won't be used._ש",
-				settingsExtentDateLineError: "כן_The extent cannot be across the meridian of 180° longitude_ש",
-				settingsExtentDateLineError2: "כן_Error computing the extent_ש",
+				settingsExtentExplainBottom: "התיחום אותו הגדרת ישנה את התיחום ההתחלתי של ה- web map שלך. שים לב שאם אתה עושה סדרות swipe תיחום זה לא יהיה בשימוש.",
+				settingsExtentDateLineError: "התיחום לא יכול להיותבין המרידיאן של קו אורך 180°",
+				settingsExtentDateLineError2: "שגיאה בחישוב התיחום",
 				settingsExtentDrawBtn: "שרטט תיחום חדש",
 				settingsExtentModifyBtn: "ערוך את התיחום הנוכחי",
 				settingsExtentApplyBtn: "יישם על המפה המרכזית",
-				settingsExtentUseMainMap: "כן_Use main map extent_ש"
+				settingsExtentUseMainMap: "השתמש בתיחום של המפה הראשית"
 			}
         },
 		swipe: {
@@ -133,13 +133,13 @@
 				settingsSaveConfirm: "חלק מהשינויים שלך דורשים שמירה וטעינה מחדש של האפליקציה"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "שכבת Swipe",
-				settingsDataModelExplainSwipe: "בחר את השכבה או את ה- web map שתופיע ותיעלם כאשר יבוצע swipe.",
+				settingsTabDataModel: "כן_Swipe Type_ש",
+				settingsDataModelExplainSwipe: "כן_What do you want users to swipe?_ש",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "בחר את השכבה או את ה- web map שתופיע במשקפת.",
-				settingsDataModelOneMap: "web map אחד, שכבה אחת",
-				settingsDataModel1Explain: "בחר שכבה שתנוהל על ידי כלי ה- swipe.",
-				settingsDataModel1Warning: "כן_If the layer is hidden by upper layers, swipe won't have any effect._ש",
+				settingsDataModelOneMap: "כן_A layer in a web map_ש",
+				settingsDataModel1Explain: "כן_Select the layer you want to be swiped_ש",
+				settingsDataModel1Warning: "אם השכבה מוסתרת על ידי שכבות עליונות יותר, לכלי ה- swipe לא תהיה השפעה.",
 				settingsDataModel1SpyGlassExplain: "בחר את השכבה שתופיע בתוך ה- spyglass.",
 				settingsDataModelTwoMaps: "שני web maps",
 				settingsDataModelLayerIds: "ה-  IDs של שכבת ה- Web map",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "בחר את הסוג הזה",
 				settingsDataModel2Explain: "בצע Swipe באמצעות web map נוסף.",
 				settingsDataModel2SpyGlassExplain: "חשוף web map נוסף.",
-				settingsDataModel2HelpTitle: "כיצד למצוא את ה- ID של ה- web map",
+				settingsDataModel2HelpTitle: "כן_How do I find a web map's ID?_ש",
 				settingsDataModel2HelpContent: "העתק והדבק תווים אחרי סימן ה =בכתובת ה- URL של ה- web map"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "הדלק מקרא",
 				settingsDescriptionEnable: "הדלק תיאור",
 				settingsBookmarksEnable: "הדלק סדרת Swipe",
-				settingsPopupDisable: "כן_Enable popup_ש",
-				settingsLegendHelpContent: "כן_To refine the legend content, use ArcGIS.com web map viewer table of contents (Hide in Legend)_ש",
-				settingsSeriesHelpContent: "כן_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ש",
-				preview: "תצוגה מקדימה של UI"
+				settingsPopupDisable: "אפשר חלון קופץ",
+				settingsLocationSearchEnable: "כן_Enable locator search_ש",
+				settingsGeolocatorEnable: "כן_Enable geolocator_ש",
+				settingsLegendHelpContent: "כדי לעדן את תוכן המקרא, השתמש בתוכן העניינים של צפיין ה- ArcGIS.com web map (הסתר במקרא)",
+				settingsSeriesHelpContent: "כן_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ש", 
+				preview: "תצוגה מקדימה של UI",
+				settingsLocateButtonExplain: "כן_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ש",
+				settingsLocateButton: "כן_Enable a 'Locate' button supported browsers_ש",
+				settingsAddressSearch: "כן_Enable an address search tool_ש"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "חלונית קופצת",
@@ -178,14 +183,15 @@
 			initPopup: {
 				initHeader: "ברוכים הבאים לבונה ה- Swipe",
 				modalNext: "הבא",
+				modalPrev: "כן_Previous_ש",
 				modalApply: "פתח את האפליקציה"
 			},
 			seriesPanel: {
-				title: "כן_Title_ש",
-				descr: "כן_Description_ש",
-				discard: "כן_Discard Bookmark_ש",
-				saveExtent: "כן_Set Bookmark Extent_ש",
-				discardDisabled: "כן_You can't remove that bookmark. Swipe series can be disabled in the Settings._ש"
+				title: "כותרת",
+				descr: "תיאור",
+				discard: "אל תשמור סימניות",
+				saveExtent: "הגדר תיחום סימניות",
+				discardDisabled: "אינך יכול להסיר סימניה זו. ניתן להפוך סדרות swipe ללא פעילות בהגדרות."
 			}
 		}
     })

@@ -22,8 +22,8 @@ define(
             search: "Søk",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Gjeldende plassering",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Send rettelse",  // Command button to submit a correction to the app's host
-            collect: "å_Add content to map_ø",  // Command button to open a template picker to add features to the map
-            filter: "å_Filter map layers_ø",  // Explains purpose of type-in box affiliated with template picker
+            collect: "Legg til innhold på kart",  // Command button to open a template picker to add features to the map
+            filter: "Filtrer kartlag",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Bytt bakgrunnskart",  // Command button to open a dialog box for switching basemaps
             share: "Del",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Del via e-post",  // Command button to share the current map extents via email

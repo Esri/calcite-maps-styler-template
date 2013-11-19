@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Notīrīt",
-                "datePattern": "ķ_MMM d, yyyy_ū" // added 2.5.2013
+                "datePattern": "MMM d, gggg" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Nevar izveidot karti",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Īpašnieks:",
                 "switchBasemap": "Pārslēgt pamatkarti",
 				"getMobileApp": "Darbojas lietotne",
-				"constraintsHeading":"ķ_Use Constraints_ū",
-				"createdLabel":"ķ_Created_ū",
-				"noDescription":"ķ_No description._ū",
-				"detailsLabel":"ķ_Details_ū"
+				"constraintsHeading":"Lietošanas ierobežojumi",
+				"createdLabel":"Izveidoja",
+				"noDescription":"Bez apraksta.",
+				"detailsLabel":"Detaļas"
             },
             "pagination": {
                 "previous": "Iepriekšējs",

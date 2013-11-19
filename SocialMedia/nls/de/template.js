@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "Kommentare",
                 "modifiedLabel": "Zuletzt geändert",
                 "by": "von",
-                "separator": "ä_,_Ü"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Layer für Social Media",

@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "комментарии",
                 "modifiedLabel": "Последние изменения",
                 "by": "от",
-                "separator": "Ж_,_Я"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Слои социальных сетей",

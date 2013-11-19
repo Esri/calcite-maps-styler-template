@@ -22,8 +22,8 @@ define(
             search: "検索",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "現在の位置",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "補正の送信",  // Command button to submit a correction to the app's host
-            collect: "須_Add content to map_鷗",  // Command button to open a template picker to add features to the map
-            filter: "須_Filter map layers_鷗",  // Explains purpose of type-in box affiliated with template picker
+            collect: "コンテンツをマップに追加",  // Command button to open a template picker to add features to the map
+            filter: "マップ レイヤのフィルタ処理",  // Explains purpose of type-in box affiliated with template picker
             basemap: "ベースマップの切り替え",  // Command button to open a dialog box for switching basemaps
             share: "共有",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "電子メールで共有",  // Command button to share the current map extents via email

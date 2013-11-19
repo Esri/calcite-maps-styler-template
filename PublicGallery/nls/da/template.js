@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Ryd",
-                "datePattern": "ø_MMM d, yyyy_å" // added 2.5.2013
+                "datePattern": "MMM d, åååå" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Kan ikke oprette kort",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Ejer:",
                 "switchBasemap": "Skift baggrundskort",
 				"getMobileApp": "Hent App",
-				"constraintsHeading":"ø_Use Constraints_å",
-				"createdLabel":"ø_Created_å",
-				"noDescription":"ø_No description._å",
-				"detailsLabel":"ø_Details_å"
+				"constraintsHeading":"Brug begrænsninger",
+				"createdLabel":"Oprettet",
+				"noDescription":"Ingen beskrivelse",
+				"detailsLabel":"Detaljer"
             },
             "pagination": {
                 "previous": "Tidligere",

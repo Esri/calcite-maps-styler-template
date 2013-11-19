@@ -1,7 +1,7 @@
 ﻿define(
 ({
   app:{
-   title:"Ă_Map Carousel_ș",
+   title:"Carusel de hărţi",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
       createMap: "Imposibil de creat harta",

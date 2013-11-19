@@ -2,7 +2,7 @@
 ({
 		firstPane: {
 			head: "<span class='highlightText'>Map Tour-skabelonen</span> gør alle ArcGIS Online-konti, inklusive gratis, offentlige konti, i stand til at oprette og redigere en stedbaseret historie vha. billeder, tekst og kort fra:",
-			list0: "ø_Pictures stored in major online photo-sharing services like Flickr, Picasa and Facebook, or on any website or web server_å",
+			list0: "Billeder, der er gemt på større fotodelingstjenester såsom Flickr, Picasa og Facebook eller på et websted eller en webserver",
 			list1: "Billeder, der ikke er gemt online endnu, bliver gemt som vedhæftninger til en featuretjeneste (gælder kun medlemmer af ArcGIS Online Organization)"
 		},
 		secondPane: {
@@ -13,8 +13,8 @@
 		},
 		thirdPane: {
 			head: "Hvis du vil bruge den hostede tour-skabelon, skal du begynde med at oprette et kort i ArcGIS Online-webkortviseren (det behøver ikke indeholde nogen lag), gemme det og derefter klikke på knappen Del. I dialogboksen Del skal du vælge indstillingen \'Opret en webapplikation\' og derefter vælge den Map Tout-skabelon i galleriet, der vises, og fortsætte gennem de trin, du ser. Når du konfigurerer applikationen, åbnes den interaktive editor automatisk. <br /><br />For brugere, der ønsker at udvide brugerfladen til deres map tours eller tilføje ny funktionalitet, kan du:",
-			list0: "ø_Download the template from the <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps template page</a> and follow the included documentation_å", 
-			list1: "ø_Host the template on your own web server, or a third-party server_å"
+			list0: "Hent skabelonen fra <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps-skabelonsiden</a>, og følg den medfølgende dokumentation.", 
+			list1: "Placér skabelonen på din egen webserver eller en tredjepartsserver"
 		},
 		fourthPane: {
 			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Se Esris Story Maps-websted</a> for at lære mere om at oprette og dele historier. Ressourcerne omfatter:",

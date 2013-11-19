@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Puhasta",
-                "datePattern": "Š_MMM d, yyyy_ä" // added 2.5.2013
+                "datePattern": "MMM d, yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Kaarti ei saa luua",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Omanik:",
                 "switchBasemap": "Vaheta aluskaart",
 				"getMobileApp": "Hangi rakendus",
-				"constraintsHeading":"Š_Use Constraints_ä",
-				"createdLabel":"Š_Created_ä",
-				"noDescription":"Š_No description._ä",
-				"detailsLabel":"Š_Details_ä"
+				"constraintsHeading":"Kasuta piiranguid",
+				"createdLabel":"Loodud",
+				"noDescription":"Kirjeldus puudub.",
+				"detailsLabel":"Detailid"
             },
             "pagination": {
                 "previous": "Eelmine",

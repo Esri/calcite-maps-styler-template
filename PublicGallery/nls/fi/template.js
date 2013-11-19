@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "english",
                 "clearSearch": "Tyhjennä",
-                "datePattern": "Å_MMM d, yyyy_ö" // added 2.5.2013
+                "datePattern": "KKK p, vvvv" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Karttaa ei voi luoda",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Omistaja:",
                 "switchBasemap": "Vaihda taustakartta",
 				"getMobileApp": "Hanki sovellus",
-				"constraintsHeading":"Å_Use Constraints_ö",
-				"createdLabel":"Å_Created_ö",
-				"noDescription":"Å_No description._ö",
-				"detailsLabel":"Å_Details_ö"
+				"constraintsHeading":"Käyttörajoitukset",
+				"createdLabel":"Luotu",
+				"noDescription":"Ei kuvausta.",
+				"detailsLabel":"Yksityiskohdat"
             },
             "pagination": {
                 "previous": "Edellinen",

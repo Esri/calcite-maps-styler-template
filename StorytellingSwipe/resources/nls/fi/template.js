@@ -95,7 +95,7 @@
 			settingsExtent: {
 				settingsTabExtent: "Laajuus",
 				settingsExtentExplain: "Määritä alkuperäinen laajuus alla olevan vuorovaikutteisen kartan avulla.",
-				settingsExtentExplainBottom: "Määrittämäsi laajuus määrittää web-kartan alkuperäisen laajuuden. Huomaa, että jos teet pyyhkäisysarjan, määritettyä laajuutta ei käytetä.",
+				settingsExtentExplainBottom: "Määrittämäsi laajuus muokkaa web-kartan alkuperäistä laajuutta. Huomaa, että jos teet pyyhkäisysarjan, määritettyä laajuutta ei käytetä.",
 				settingsExtentDateLineError: "Laajuus ei saa ylittää 180° pituusasteen meridiaania",
 				settingsExtentDateLineError2: "Virhe laajuuden laskennassa",
 				settingsExtentDrawBtn: "Piirrä uusi laajuus",
@@ -133,13 +133,13 @@
 				settingsSaveConfirm: "Jotkin muutokset edellyttävät sovelluksen tallennusta ja uudelleenkäynnistystä."
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Pyyhkäisytaso",
-				settingsDataModelExplainSwipe: "Valitse karttataso tai web-kartta, joka tulee näkyviin ja häviää näkyvistä pyyhkäisytyökalulla.",
+				settingsTabDataModel: "Å_Swipe Type_ö",
+				settingsDataModelExplainSwipe: "Å_What do you want users to swipe?_ö",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Valitse karttataso tai web-kartta, joka tulee näkyviin kiikarissa.",
-				settingsDataModelOneMap: "Yksi web-kartta, yksi taso",
-				settingsDataModel1Explain: "Valitse karttataso, johon pyyhkäisytyökalu vaikuttaa.",
-				settingsDataModel1Warning: "Jos karttataso on ylätasojen peitossa, pyyhkäisyt eivät vaikuta mitenkään.",
+				settingsDataModelOneMap: "Å_A layer in a web map_ö",
+				settingsDataModel1Explain: "Å_Select the layer you want to be swiped_ö",
+				settingsDataModel1Warning: "Jos karttataso on piirtojärjestyksessä ylempänä olevien karttatasojen peitossa, pyyhkäisyt eivät vaikuta mitenkään.",
 				settingsDataModel1SpyGlassExplain: "Valitse karttataso, joka näkyy kiikarissa.",
 				settingsDataModelTwoMaps: "Kaksi web-karttaa",
 				settingsDataModelLayerIds: "Web-karttatason tunnus",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Valitse tämä tyyppi",
 				settingsDataModel2Explain: "Pyyhkäise toisella web-kartalla.",
 				settingsDataModel2SpyGlassExplain: "Näytä toinen web-kartta.",
-				settingsDataModel2HelpTitle: "Web-kartan tunnuksen etsiminen",
+				settingsDataModel2HelpTitle: "Å_How do I find a web map's ID?_ö",
 				settingsDataModel2HelpContent: "Kopioi ja liitä web-kartan URL-osoitteessa olevan '='-merkin jälkeiset luvut."
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "Ota selite käyttöön",
 				settingsDescriptionEnable: "Ota kuvaus käyttöön",
 				settingsBookmarksEnable: "Ota sarjapyyhkäisy käyttöön",
-				settingsPopupDisable: "Å_Enable popup_ö",
+				settingsPopupDisable: "Ota ponnahdusikkunat käyttöön",
+				settingsLocationSearchEnable: "Å_Enable locator search_ö",
+				settingsGeolocatorEnable: "Å_Enable geolocator_ö",
 				settingsLegendHelpContent: "Jos haluat määrittää selitteen sisällön, käytä ArcGIS.com-sivuston web-kartan katseluohjelman sisällysluetteloa (Piilota selitteessä)",
-				settingsSeriesHelpContent: "Å_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ö",
-				preview: "Käyttöliittymän esikatselu"
+				settingsSeriesHelpContent: "Å_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ö", 
+				preview: "Käyttöliittymän esikatselu",
+				settingsLocateButtonExplain: "Å_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ö",
+				settingsLocateButton: "Å_Enable a 'Locate' button supported browsers_ö",
+				settingsAddressSearch: "Å_Enable an address search tool_ö"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Ponnahdusikkuna",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Tervetuloa käyttämään pyyhkäisyn luontitoimintoa",
 				modalNext: "Seuraava",
+				modalPrev: "Å_Previous_ö",
 				modalApply: "Avaa sovellus"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Kuvaus",
 				discard: "Hylkää kirjanmerkki",
 				saveExtent: "Aseta kirjanmerkin laajuus",
-				discardDisabled: "Å_You can't remove that bookmark. Swipe series can be disabled in the Settings._ö"
+				discardDisabled: "Tätä kirjanmerkkiä ei voi poistaa. Sarjapyyhkäisyn voi poistaa käytöstä asetuksissa."
 			}
 		}
     })

@@ -2,7 +2,7 @@
 ({
 		firstPane: {
 			head: "Met de <span class='highlightText'>template Kaart Tour</span> kunnen gebruikers van ArcGIS Online inclusief het gratis openbare account een op plaatsen gebaseerd verhaal maken en bewerken met afbeeldingen, tekst en een kaart van:",
-			list0: "Ĳ_Pictures stored in major online photo-sharing services like Flickr, Picasa and Facebook, or on any website or web server_ä",
+			list0: "Afbeeldingen opgeslagen op grote onlinediensten voor het delen van foto\'s zoals Flickr, Picasa en Facebook, of op elke website of webserver",
 			list1: "Afbeeldingen die nog niet online zijn opgeslagen en die als Featureservice-bijlagen worden opgeslagen (beperkt tot leden van ArcGIS for Organizations)"
 		},
 		secondPane: {
@@ -13,8 +13,8 @@
 		},
 		thirdPane: {
 			head: "Om de template voor de gehoste kaarttour te gebruiken, maakt u eerst een kaart in de ArcGIS Online webmapviewer (die hoeft geen lagen te bevatten). Sla deze op en klik op de knop Delen. Kies in het dialoogvenster Delen de optie 'Een webapplicatie maken' en kies de template Kaart Tour in de galerij met templates die verschijnt, en ga door met de stappen die u ziet. Als u de applicatie instelt, opent automatisch de interactieve editor.<br / ><br />Gebruikers die de UI van hun kaarttours willen uitbreiden of nieuwe mogelijkheden willen toevoegen, kunnen:",
-			list0: "Ĳ_Download the template from the <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps template page</a> and follow the included documentation_ä", 
-			list1: "Ĳ_Host the template on your own web server, or a third-party server_ä"
+			list0: "De template downloaden via de pagina<a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps-templates</a> en de meegeleverde documentatie volgen", 
+			list1: "De template hosten op uw eigen webserver of de server van derden"
 		},
 		fourthPane: {
 			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Zie de site met kaartverhalen van Esri</a> voor meer informatie over het maken en delen van verhalen. Bronnen omvatten:",

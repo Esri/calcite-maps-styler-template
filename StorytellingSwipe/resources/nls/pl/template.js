@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Niektóre z wprowadzonych zmian wymagają zapisania i ponownego wczytania aplikacji"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Warstwa odsłaniana",
-				settingsDataModelExplainSwipe: "Wybierz warstwę lub mapę internetową, która będzie pojawiać się i znikać po zastosowaniu odsłaniania.",
+				settingsTabDataModel: "ł_Swipe Type_ą",
+				settingsDataModelExplainSwipe: "ł_What do you want users to swipe?_ą",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Wybierz warstwę lub mapę internetową, która pojawi się w lunetce.",
-				settingsDataModelOneMap: "Jedna mapa internetowa, pojedyncza warstwa",
-				settingsDataModel1Explain: "Wybierz warstwę, która ma być kontrolowana przez narzędzie odsłaniania.",
+				settingsDataModelOneMap: "ł_A layer in a web map_ą",
+				settingsDataModel1Explain: "ł_Select the layer you want to be swiped_ą",
 				settingsDataModel1Warning: "Jeśli warstwa jest ukryta pod górnymi warstwami, użycie odsłaniania nie przyniesie rezultatów.",
 				settingsDataModel1SpyGlassExplain: "Wybierz warstwę, która ma pojawić się w lunetce.",
 				settingsDataModelTwoMaps: "Dwie mapy internetowe",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Wybierz ten typ",
 				settingsDataModel2Explain: "Odsłanianie z inną mapą internetową.",
 				settingsDataModel2SpyGlassExplain: "Odkryj kolejną mapę internetową.",
-				settingsDataModel2HelpTitle: "Jak odnaleźć identyfikator mapy internetowej",
+				settingsDataModel2HelpTitle: "ł_How do I find a web map's ID?_ą",
 				settingsDataModel2HelpContent: "Skopiuj i wklej cyfry po znaku „=” w adresie URL mapy internetowej"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "Włącz legendę",
 				settingsDescriptionEnable: "Włącz opis",
 				settingsBookmarksEnable: "Włącz serię odsłaniania",
-				settingsPopupDisable: "ł_Enable popup_ą",
+				settingsPopupDisable: "Włącz okno podręczne",
+				settingsLocationSearchEnable: "ł_Enable locator search_ą",
+				settingsGeolocatorEnable: "ł_Enable geolocator_ą",
 				settingsLegendHelpContent: "Aby ulepszyć zawartość legendy, skorzystaj z tabeli zawartości przeglądarki map ArcGIS.com (Ukryj w legendzie)",
-				settingsSeriesHelpContent: "ł_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ą",
-				preview: "Podgląd interfejsu użytkownika"
+				settingsSeriesHelpContent: "ł_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ą", 
+				preview: "Podgląd interfejsu użytkownika",
+				settingsLocateButtonExplain: "ł_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ą",
+				settingsLocateButton: "ł_Enable a 'Locate' button supported browsers_ą",
+				settingsAddressSearch: "ł_Enable an address search tool_ą"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Okno podręczne",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Witamy w kreatorze aplikacji odsłaniania",
 				modalNext: "Dalej",
+				modalPrev: "ł_Previous_ą",
 				modalApply: "Otwórz aplikację"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Opis",
 				discard: "Odrzuć zakładkę",
 				saveExtent: "Ustaw zasięg zakładki",
-				discardDisabled: "ł_You can't remove that bookmark. Swipe series can be disabled in the Settings._ą"
+				discardDisabled: "Nie można usunąć tej zakładki. Serie odsłaniania można wyłączyć w Ustawieniach."
 			}
 		}
     })

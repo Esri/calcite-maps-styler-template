@@ -1,17 +1,17 @@
-define(
+锘縟efine(
 ({
   viewer:{
     main:{
       scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
-      legendLabel: "图例",
-      descriptionLabel: "描述"
+      legendLabel: "鍥句緥",
+      descriptionLabel: "鎻忚堪"
     },
     errors:{
-      createMap: "无法创建地图",
-      general: "错误"
+      createMap: "鏃犳硶鍒涘缓鍦板浘",
+      general: "閿欒"
     },
     footer:{
-    	label: "地图来自:"
+    	label: "鍦板浘鏉ヨ嚜:"
     }
   }
 })

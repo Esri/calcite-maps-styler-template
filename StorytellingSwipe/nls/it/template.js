@@ -65,7 +65,7 @@
 				signInTwo: "per salvare l\'applicazione."
 			},
 			header:{
-				editMe: "é_Click to edit description_È",
+				editMe: "Fare clic per modificare la descrizione",
 				templateTitle: "Imposta titolo modello",
 				templateSubtitle: "Imposta sottotitolo modello"
 			},
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Abilita descrizione",
 				settingsBookmarksEnable: "Abilita serie di scorrimenti con dito",
 				settingsPopupDisable: "Abilita popup",
-				settingsLocatorEnable: "é_Enable locator_È",
+				settingsLocatorEnable: "Abilita localizzatore",
 				settingsLegendHelpContent: "Per definire il contenuto della legenda, utilizzare il sommario del map viewer Web di ArcGIS.com (Nascondi nella legenda)",
 				settingsSeriesHelpContent: "Al momento della prima attivazione, verranno utilizzati i segnalibri delle mappe Web per prepopolare la barra della serie. Se in seguito l\'opzione viene disabilitata, la configurazione della serie non verrà eliminata e risulterà disponibile se si decide di riabilitare la serie.",
 				preview: "Anteprima interfaccia utente"

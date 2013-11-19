@@ -2,7 +2,7 @@
 ({
 		firstPane: {
 			head: "Il <span class='highlightText'>modello Tour mappa</span> consente a tutti i livelli di account ArcGIS Online, compresi gli account pubblici gratuiti, di creare e modificare una storia basata su luoghi combinando immagini, testo e mappe da:",
-			list0: "é_Pictures stored in major online photo-sharing services like Flickr, Picasa and Facebook, or on any website or web server_È",
+			list0: "Immagini archiviate nei principali servizi di condivisione di immagini, come Flickr, Picasa e Facebook, o su qualsiasi sito o server Web",
 			list1: "Immagini non ancora archiviate online che verranno archiviate come allegati di feature service (limitato ai membri di ArcGIS for Organization)"
 		},
 		secondPane: {
@@ -13,8 +13,8 @@
 		},
 		thirdPane: {
 			head: "Per utilizzare il modello di Tour mappa ospitato, iniziare creando una mappa nel map viewer Web di ArcGIS Online (non è necessario che contenga dei layer), quindi salvarla e fare clic sul pulsante Condividi. Nella finestra di dialogo Condividi, scegliere l\'opzione \"Crea applicazione Web\" e scegliere il modello di Tour mappa dalla galleria di modelli visualizzata, quindi proseguire con i passaggi visualizzati. Quando si configura l\'applicazione, l\'editor interattivo si apre automaticamente.<br /><br />Per gli utenti che desiderano ottimizzare l\'interfaccia utente di Tour mappa o aggiungere nuove funzionalità , è possibile:",
-			list0: "é_Download the template from the <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps template page</a> and follow the included documentation_È", 
-			list1: "é_Host the template on your own web server, or a third-party server_È"
+			list0: "Scaricare il modello dalla <a href='http://storymaps.esri.com/templategallery/' target='_blank'>pagina del modello Mappe collegate a storie</a> e seguire la documentazione inclusa", 
+			list1: "Ospitare il modello sul server Web personale o su un server di terzi"
 		},
 		fourthPane: {
 			head: "Per informazioni sulla creazione e la condivisione di storie, <a href='http://storymaps.esri.com/home/' target='_blank'>visitare il sito delle mappe collegate a storie di Esri</a>. Le risorse includono:",

@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Löschen",
-                "datePattern": "ä_MMM d, yyyy_Ü" // added 2.5.2013
+                "datePattern": "d. MMMM yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Karte kann nicht erstellt werden",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Besitzer:",
                 "switchBasemap": "Grundkarte wechseln",
 				"getMobileApp": "Anwendung abrufen",
-				"constraintsHeading":"ä_Use Constraints_Ü",
-				"createdLabel":"ä_Created_Ü",
-				"noDescription":"ä_No description._Ü",
-				"detailsLabel":"ä_Details_Ü"
+				"constraintsHeading":"Nutzungsbeschränkungen",
+				"createdLabel":"Erstellt",
+				"noDescription":"Keine Beschreibung.",
+				"detailsLabel":"Details"
             },
             "pagination": {
                 "previous": "Zurück",

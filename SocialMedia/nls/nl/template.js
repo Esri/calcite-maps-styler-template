@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "opmerkingen",
                 "modifiedLabel": "Laatst gewijzigd",
                 "by": "van",
-                "separator": "Ĳ_,_ä"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Kaartlagen met sociale media",

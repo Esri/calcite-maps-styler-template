@@ -22,8 +22,8 @@ define(
             search: "Meklēt",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Pašreizējais izvietojums",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Pieteikt korekciju",  // Command button to submit a correction to the app's host
-            collect: "ķ_Add content to map_ū",  // Command button to open a template picker to add features to the map
-            filter: "ķ_Filter map layers_ū",  // Explains purpose of type-in box affiliated with template picker
+            collect: "Pievienot saturu kartei",  // Command button to open a template picker to add features to the map
+            filter: "Filtrēt kartes slāņus",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Pārslēgt pamatkarti",  // Command button to open a dialog box for switching basemaps
             share: "Koplietot",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Koplietot caur epastu",  // Command button to share the current map extents via email

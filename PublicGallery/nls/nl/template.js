@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Wissen",
-                "datePattern": "Ĳ_MMM d, yyyy_ä" // added 2.5.2013
+                "datePattern": "d MMM yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Kan kaart niet maken",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Eigenaar:",
                 "switchBasemap": "Basiskaart wijzigen",
 				"getMobileApp": "App downloaden",
-				"constraintsHeading":"Ĳ_Use Constraints_ä",
-				"createdLabel":"Ĳ_Created_ä",
-				"noDescription":"Ĳ_No description._ä",
-				"detailsLabel":"Ĳ_Details_ä"
+				"constraintsHeading":"Gebruiksbeperkingen",
+				"createdLabel":"Gemaakt",
+				"noDescription":"Geen beschrijving.",
+				"detailsLabel":"Details"
             },
             "pagination": {
                 "previous": "Vorige",

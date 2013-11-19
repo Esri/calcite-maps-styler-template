@@ -2,7 +2,7 @@
 ({
 		firstPane: {
 			head: "<span class='highlightText'>Le modèle Map Tour</span> permet à tous les niveaux de comptes ArcGIS Online, compte public gratuit compris, de créer et modifier une narration géographique associant images, texte et carte depuis :",
-			list0: "æ_Pictures stored in major online photo-sharing services like Flickr, Picasa and Facebook, or on any website or web server_Â",
+			list0: "des images stockées dans des services de partage de photos en ligne, tels que Flickr, Picasa et Facebook ou sur n\'importe quel site Web ou serveur Web ;",
 			list1: "des images qui ne sont pas encore stockées en ligne, qui seront enregistrées en tant que pièces jointes de services d\'entités (limité aux membres ArcGIS for Organization) ;"
 		},
 		secondPane: {
@@ -12,12 +12,12 @@
 			list2: "la possibilité de déplacer des icônes pour modifier l\’emplacement des points de narration."
 		},
 		thirdPane: {
-			head: "Pour utiliser le modèle Map Tour hébergé, commencez par créer une carte dans la visionneuse de cartes Web ArcGIS Online (elle ne doit pas nécessairement contenir de couches), enregistrez-la, puis cliquez sur le bouton Partager. Dans la boîte de dialogue Partager, sélectionnez l\'option Créer une application Web puis sélectionnez le modèle Map Tour dans la bibliothèque de modèle qui s\'ouvre et poursuivez avec les étapes qui s\'affichent. Lorsque vous configurez l\'application, l\'éditeur interactif s\'ouvre automatiquement.<br /><br />Les utilisateurs souhaitant améliorer l\'interface utilisateur de leur visite ou ajouter de nouvelles fonctionnalités peuvent :",
-			list0: "æ_Download the template from the <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps template page</a> and follow the included documentation_Â", 
-			list1: "æ_Host the template on your own web server, or a third-party server_Â"
+			head: "Pour utiliser le modèle Map Tour hébergé, commencez par créer une carte dans la visionneuse de cartes Web ArcGIS Online (elle ne doit pas nécessairement contenir de couches), enregistrez-la, puis cliquez sur le bouton Partager. Dans la boîte de dialogue Partager, sélectionnez l\'option Créer une application Web puis sélectionnez le modèle Map Tour dans la bibliothèque de modèle qui s\'ouvre et poursuivez avec les étapes qui s\'affichent. Lorsque vous configurez l\'application, l\'éditeur interactif s\'ouvre automatiquement.<br /><br />Pour les utilisateurs souhaitant améliorer l\'interface utilisateur de leur visite ou ajouter de nouvelles fonctionnalités, vous pouvez :",
+			list0: "télécharger le modèle depuis la <a href='http://storymaps.esri.com/templategallery/\' target='_blank'>page des modèles des cartes de narration</a> et suivre la documentation incluse ;", 
+			list1: "héberger le modèle sur votre propre serveur Web ou sur un serveur tiers."
 		},
 		fourthPane: {
-			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Consultez le site des cartes de narration d\’Esri</a> pour en savoir plus sur la création et le partage des narrations. Les ressources incluent :",
+			head: "<a href='http://storymaps.esri.com/home/\' target='_blank'>Consultez le site des cartes de narration d\’Esri</a> pour en savoir plus sur la création et le partage des narrations. Les ressources incluent :",
 			list0: "des cartes de narration publiées par les équipes d\’Esri ;",
 			list1: "une sélection de modèles à télécharger ;",
 			list2: "des guides de pratiques conseillées ;", 

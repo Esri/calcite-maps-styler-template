@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Golire",
-                "datePattern": "Ă_MMM d, yyyy_ș" // added 2.5.2013
+                "datePattern": "ll.zz.aaaa" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Imposibil de creat harta",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Proprietar:",
                 "switchBasemap": "Schimbare hartă fundal",
 				"getMobileApp": "Obţinere aplicaţie",
-				"constraintsHeading":"Ă_Use Constraints_ș",
-				"createdLabel":"Ă_Created_ș",
-				"noDescription":"Ă_No description._ș",
-				"detailsLabel":"Ă_Details_ș"
+				"constraintsHeading":"Utilizare restricţii",
+				"createdLabel":"Creat",
+				"noDescription":"Nicio descriere.",
+				"detailsLabel":"Detalii"
             },
             "pagination": {
                 "previous": "Înapoi",

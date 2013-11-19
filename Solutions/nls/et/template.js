@@ -22,13 +22,13 @@ define(
             search: "Otsi",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Praegune asukoht",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Esita parandus",  // Command button to submit a correction to the app's host
-            collect: "Š_Add content to map_ä",  // Command button to open a template picker to add features to the map
-            filter: "Š_Filter map layers_ä",  // Explains purpose of type-in box affiliated with template picker
+            collect: "Lisa sisu kaardile",  // Command button to open a template picker to add features to the map
+            filter: "Filtreeri kaardikihte",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Vaheta aluskaart",  // Command button to open a dialog box for switching basemaps
             share: "Jaga",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Jaga e-maili teel",  // Command button to share the current map extents via email
-            shareViaFacebook: "Jaga läbi Facebook-i",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
-            shareViaTwitter: "Jaga läbi Twitter-i",  // Command button to share the current map extents via a Twitter tweet: a URL is opened that permits the user to log into Twitter with a tweet that is ready to go
+            shareViaFacebook: "Jaga läbi Facebooki",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
+            shareViaTwitter: "Jaga läbi Twitteri",  // Command button to share the current map extents via a Twitter tweet: a URL is opened that permits the user to log into Twitter with a tweet that is ready to go
             print: "Prindi kaart",  // Command button to open a dialog box for specifying print orientation, title, and author before printing; also used inside print dialog box
             fetchPrint: "Vaata prinditud kaarti",  // Command button to open a PDF containing a map that was just printed by the print map command
             landscape: "Horisontaalpaigutusega leht",  // Command button in the print map dialog box to select the landscape page orientation
@@ -44,7 +44,7 @@ define(
             search: "Otsing:",  // Appears before a search text field in dialog box for searching for a feature
             markup: "Joonista",  // Appears before a set of tools for drawing on the map
             mapLayers: "Kaardikihid:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
-            layerFields: "Otsi kihi väljadelt:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
+            layerFields: "Otsi kihi väljadest:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "See lehekülg ei oma luba praeguse asukoha saamiseks",  // Shown when the browser does not permit the app to get the current geographical position

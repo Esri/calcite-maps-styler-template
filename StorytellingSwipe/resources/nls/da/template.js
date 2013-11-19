@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Nogle af dine ændringer kræver, at du gemmer og genindlæser applikationen"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Swipe-lag",
-				settingsDataModelExplainSwipe: "Vælg det lag eller webkort, der vises og forsvinder med swipe.",
+				settingsTabDataModel: "ø_Swipe Type_å",
+				settingsDataModelExplainSwipe: "ø_What do you want users to swipe?_å",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Vælg det lag eller webkort, der vises i kikkerten.",
-				settingsDataModelOneMap: "Et webkort, enkelt lag",
-				settingsDataModel1Explain: "Vælg et lag, der skal styres af swipe-værktøjet.",
+				settingsDataModelOneMap: "ø_A layer in a web map_å",
+				settingsDataModel1Explain: "ø_Select the layer you want to be swiped_å",
 				settingsDataModel1Warning: "Hvis laget er skjult af lag oven på det, har swipe ingen virkning.",
 				settingsDataModel1SpyGlassExplain: "Marker det lag, der skal vises i kikkerten.",
 				settingsDataModelTwoMaps: "To webkort",
@@ -151,19 +151,24 @@
 				settingsDataModelSelect: "Vælg denne type",
 				settingsDataModel2Explain: "Swipe med et andet webkort.",
 				settingsDataModel2SpyGlassExplain: "Vis et andet webkort.",
-				settingsDataModel2HelpTitle: "Sådan finder du et webkorts ID",
+				settingsDataModel2HelpTitle: "ø_How do I find a web map's ID?_å",
 				settingsDataModel2HelpContent: "Kopiér tallene efter \'=\' -tegnet i webkortets URL"
 			},
 			settingsLegend: {
 				settingsTabLegend: "App-layout",
 				settingsLegendExplain: "Vælg indstillinger for applikationslayout.",
-				settingsLegendEnable: "Aktiver signaturforklaring",
-				settingsDescriptionEnable: "Aktiver beskrivelse",
-				settingsBookmarksEnable: "Aktiver Swipe-serie",
-				settingsPopupDisable: "ø_Enable popup_å",
+				settingsLegendEnable: "Aktiv\ér signaturforklaring",
+				settingsDescriptionEnable: "Aktiv\ér beskrivelse",
+				settingsBookmarksEnable: "Aktiv\ér Swipe-serie",
+				settingsPopupDisable: "Aktiv\ér pop-up-vindue",
+				settingsLocationSearchEnable: "ø_Enable locator search_å",
+				settingsGeolocatorEnable: "ø_Enable geolocator_å",
 				settingsLegendHelpContent: "Hvis du vil forfine signaturforklaringens indhold, kan du bruge indholdsfortegnelsen i ArcGIS.com-webkortviseren (Skjul i signaturforklaring)",
-				settingsSeriesHelpContent: "ø_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._å",
-				preview: "UI-forhåndsvisning"
+				settingsSeriesHelpContent: "ø_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._å", 
+				preview: "UI-forhåndsvisning",
+				settingsLocateButtonExplain: "ø_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._å",
+				settingsLocateButton: "ø_Enable a 'Locate' button supported browsers_å",
+				settingsAddressSearch: "ø_Enable an address search tool_å"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Pop-up-vindue",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Velkommen til Swipe Builder",
 				modalNext: "Næste",
+				modalPrev: "ø_Previous_å",
 				modalApply: "Åbn app\'en"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Beskrivelse",
 				discard: "Slet bogmærke",
 				saveExtent: "Indstil bogmærkeudstrækning",
-				discardDisabled: "ø_You can't remove that bookmark. Swipe series can be disabled in the Settings._å"
+				discardDisabled: "Du kan ikke fjerne dette bogmærke. Swipe-serier kan deaktiveres under Indstillinger."
 			}
 		}
     })

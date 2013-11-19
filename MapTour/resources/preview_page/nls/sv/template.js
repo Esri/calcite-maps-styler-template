@@ -2,7 +2,7 @@
 ({
 		firstPane: {
 			head: "<span class='highlightText'>Map Tour-mallen</span> ger alla ArcGIS Online-kontonivåer inklusive det kostnadsfria offentliga kontot möjlighet att skapa och redigera en platsbaserad berättelse som kombinerar bilder, text och kartor från:",
-			list0: "Å_Pictures stored in major online photo-sharing services like Flickr, Picasa and Facebook, or on any website or web server_ö",
+			list0: "Bilder som finns lagrade på större onlinefotodelningstjänster som Flickr, Picasa och Facebook, på en webbplats eller på en webbserver",
 			list1: "Bilder som ännu inte finns lagrade online och som kommer att lagras som bilagor till geoobjekttjänster (begränsat till ArcGIS for Organizations-medlemmar)"
 		},
 		secondPane: {
@@ -12,9 +12,9 @@
 			list2: "möjlighet att dra och släppa ikoner när man ska flytta berättelsepunkter"
 		},
 		thirdPane: {
-			head: "När du vill använda mallen för driftade kartturer kan du börja med att skapa en karta i kartvyn på ArcGIS Online (den behöver inte innehålla några lager), spara den och sedan klicka på knappen Dela. Välj alternativet 'Skapa en webbapplikation' i dialogrutan Dela och välj sedan Map Tour-mallen i mallgalleriet. Fortsätt följa stegen som visas. När du konfigurerar applikationen öppnas den interaktiva redigeraren automatiskt.<br /><br />Användare som vill förbättra användargränssnittet för sina kartturer och lägga till nya funktioner kan:",
-			list0: "Å_Download the template from the <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps template page</a> and follow the included documentation_ö", 
-			list1: "Å_Host the template on your own web server, or a third-party server_ö"
+			head: "När du vill använda mallen för driftade kartturer kan du börja med att skapa en karta i kartvyn på ArcGIS Online (den behöver inte innehålla några lager), spara den och sedan klicka på knappen Dela. Välj alternativet \'Skapa en webbapplikation' i dialogrutan Dela och välj sedan Map Tour-mallen i mallgalleriet. Fortsätt följa stegen som visas. När du konfigurerar applikationen öppnas den interaktiva redigeraren automatiskt.<br /><br />Användare som vill förbättra användargränssnittet för sina kartturer och lägga till nya funktioner kan:",
+			list0: "Hämta mallen från <a href='http://storymaps.esri.com/templategallery/' target='_blank'>sidan med berättelsekartmallar</a> och följa den medföljande dokumentationen", 
+			list1: "förvara mallen på din egen webbserver eller hos en fristående leverantör"
 		},
 		fourthPane: {
 			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>På Esris webbplats för berättelsekartor</a> kan du läsa mer om att skapa och dela berättelser. Bland resurserna finns:",

@@ -1,17 +1,17 @@
-define(
+ï»¿define(
 ({
   viewer:{
     main:{
       scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
-      legendLabel: "ãİÊÇÍ ÇáÎÑíØÉ",
-      descriptionLabel: "ÈíÊ_Description_áÇÍŞÉ"
+      legendLabel: "Ù…ÙØªØ§Ø­ Ø§Ù„Ø®Ø±ÙŠØ·Ø©",
+      descriptionLabel: "Ø§Ù„ÙˆØµÙ"
     },
     errors:{
-      createMap: "ÈíÊ_Unable to create map_áÇÍŞÉ",
-      general: "ÎØÃ"
+      createMap: "ØªØ¹Ø°Ø± Ø¥Ù†Ø´Ø§Ø¡ Ø®Ø±ÙŠØ·Ø©",
+      general: "Ø®Ø·Ø£"
     },
     footer:{
-    	label: "ÎÑíØÉ ãä:"
+    	label: "Ø®Ø±ÙŠØ·Ø© Ù…Ù†:"
     }
   }
 })

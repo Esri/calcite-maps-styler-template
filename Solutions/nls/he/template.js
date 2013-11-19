@@ -22,8 +22,8 @@ define(
             search: "חפש",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "מיקום נוכחי",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "שלח תיקון",  // Command button to submit a correction to the app's host
-            collect: "כן_Add content to map_ש",  // Command button to open a template picker to add features to the map
-            filter: "כן_Filter map layers_ש",  // Explains purpose of type-in box affiliated with template picker
+            collect: "הוסף תוכן למפה",  // Command button to open a template picker to add features to the map
+            filter: "סנן שכבות מפה",  // Explains purpose of type-in box affiliated with template picker
             basemap: "החלף מפת בסיס",  // Command button to open a dialog box for switching basemaps
             share: "שיתוף",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "שתף בדוא\"ל",  // Command button to share the current map extents via email

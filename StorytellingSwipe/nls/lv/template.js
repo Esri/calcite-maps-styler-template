@@ -11,7 +11,7 @@
 			},
 			errors: {
 				boxTitle: "Kļūda",
-				portalSelf: "ķ_Fatal error: Failed to get portal configuration_ū",
+				portalSelf: "Fatāla kļūda: Neizdevās iegūt portāla konfigurāciju",
 				invalidConfig: "Fatāla kļūda: konfigurācijas neveiksme",
 				invalidConfigNoWebmap: "Fatāla kļūda: nederīga konfigurācija (nav norādīta web karte)",
 				createMap: "Nevar izveidot karti",
@@ -35,7 +35,7 @@
 			desktopView: {
 				storymapsText: "Stāstu karte",
 				builderButton: "Pārslēgties uz veidotāja režīmu",
-				bitlyTooltip: "ķ_Get a short link to the application_ū"
+				bitlyTooltip: "Iegūstiet īssaiti uz aplikāciju"
 			}
 		},
 		builder: {
@@ -65,7 +65,7 @@
 				signInTwo: "lai saglabātu aplikāciju."
 			},
 			header:{
-				editMe: "ķ_Click to edit description_ū",
+				editMe: "Klikšķiniet lai rediģētu aprakstu",
 				templateTitle: "Iestatīt šablona virsrakstu",
 				templateSubtitle: "Iestatīt šablona apakšvirsrakstu"
 			},
@@ -90,7 +90,7 @@
 				settingsLogoSocialExplain: "Pielāgot galvenes labās augšējās saites.",
 				settingsLogoSocialText: "Teksts",
 				settingsLogoSocialLink: "Saite",
-				settingsLogoSocialDisabled: "ķ_This feature has been disabled by the Administrator_ū"
+				settingsLogoSocialDisabled: "Administrators ir atspējojis šo funkciju"
 			},
 			settingsExtent: {
 				settingsTabExtent: "Pārklājums",
@@ -155,13 +155,13 @@
 				settingsDataModel2HelpContent: "Kopēt un ielīmēt ciparus aiz zīmes "=" vietrādī URL no web kartes"
 			},
 			settingsLegend: {
-				settingsTabLegend: "Lietotnes izkārtojums",
+				settingsTabLegend: "Aplikāciju izkārtojums",
 				settingsLegendExplain: "Izvēlieties aplikācijas izkārtojuma iestatījumus.",
 				settingsLegendEnable: "Iespējot leģendu",
 				settingsDescriptionEnable: "Iespējot aprakstu",
 				settingsBookmarksEnable: "Iespējot sēriju Pārvilkt",
 				settingsPopupDisable: "Iespējot uznirstošo logu",
-				settingsLocatorEnable: "ķ_Enable locator_ū",
+				settingsLocatorEnable: "Iespējot meklētāju",
 				settingsLegendHelpContent: "Lai attīrītu leģendas saturu izmantojiet ArcGIS.com web kartes skatītāja satura tabulu (Paslēpt leģendā)",
 				settingsSeriesHelpContent: "Pirmajā aktivizācijas reizē, web karšu grāmatzīmes tiks izmantotas, lai ierpiekš aizpildītu sēriju joslas. Ja jūs atiespējosiet sērijas izvēlnii vēlāk, jūsu sērijas konfigurācija netiks atmesta un būs pieejama, ja iespējosiet sēriju atkal.",
 				preview: "Saskarnes priekšskatījums"

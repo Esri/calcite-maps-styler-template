@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "commenti",
                 "modifiedLabel": "Data ultima modifica",
                 "by": "di",
-                "separator": "é_,_È"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Layer dei social media",

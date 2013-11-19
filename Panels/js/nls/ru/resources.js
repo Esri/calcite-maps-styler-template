@@ -1,17 +1,17 @@
-define(
+п»їdefine(
 ({
   viewer:{
     main:{
       scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
-      legendLabel: "Легенда",
-      descriptionLabel: "Описание"
+      legendLabel: "Р›РµРіРµРЅРґР°",
+      descriptionLabel: "РћРїРёСЃР°РЅРёРµ"
     },
     errors:{
-      createMap: "Не удалось создать карту",
-      general: "Ошибка"
+      createMap: "РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ РєР°СЂС‚Сѓ",
+      general: "РћС€РёР±РєР°"
     },
     footer:{
-    	label: "Карта из:"
+    	label: "РљР°СЂС‚Р° РёР·:"
     }
   }
 })

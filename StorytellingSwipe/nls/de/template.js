@@ -14,7 +14,7 @@
 				portalSelf: "Schwerwiegender Fehler: Die Portalkonfiguration konnte nicht abgerufen werden",
 				invalidConfig: "Schwerwiegender Fehler: Ungültige Konfiguration",
 				invalidConfigNoWebmap: "Schwerwiegender Fehler: Ungültige Konfiguration (keine Webkarte angegeben)",
-				createMap: "ä_Unable to create map_Ü",
+				createMap: "Karte kann nicht erstellt werden",
 				invalidApp: "Schwerwiegender Fahler: Die Anwendung kann nicht geladen werden",
 				initMobile: "Willkommen bei der Webanwendung \"Ausblenden\". Die Anwendung ist nicht konfiguriert. Der interaktive Generator wird auf mobilen Geräten nicht unterstützt.",
 				noBuilderIE8: "Der interaktive Generator \"Ausblenden\" wird in Internet Explorer vor Version 9 nicht unterstützt.",
@@ -65,7 +65,7 @@
 				signInTwo: "um die Anwendung zu speichern."
 			},
 			header:{
-				editMe: "ä_Click to edit description_Ü",
+				editMe: "Zum Bearbeiten der Beschreibung klicken",
 				templateTitle: "Vorlagentitel festlegen",
 				templateSubtitle: "Untertitel der Vorlage festlegen"
 			},
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Beschreibung aktivieren",
 				settingsBookmarksEnable: "Ausblendereihe aktivieren",
 				settingsPopupDisable: "Pop-up aktivieren",
-				settingsLocatorEnable: "ä_Enable locator_Ü",
+				settingsLocatorEnable: "Locator aktivieren",
 				settingsLegendHelpContent: "Verwenden Sie das Inhaltsverzeichnis des ArcGIS.com-Webkarten-Viewers, um den Legendeninhalt zu optimieren (In Legende ausblenden)",
 				settingsSeriesHelpContent: "Bei der ersten Aktivierung werden Ihre Webkarten-Lesezeichen verwendet, um die Leiste der Reihe vorab auszufüllen. Wenn Sie die Reihen-Option später deaktivieren, geht die Konfiguration der Reihe nicht verloren, sondern steht bei einer eventuellen späteren Aktivierung der Serie wieder zur Verfügung.",
 				preview: "Benutzeroberflächen-Vorschau"

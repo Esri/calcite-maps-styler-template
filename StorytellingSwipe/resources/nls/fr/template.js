@@ -96,12 +96,12 @@
 				settingsTabExtent: "Etendue",
 				settingsExtentExplain: "Définissez l\’étendue initiale au moyen de la carte interactive ci-dessous.",
 				settingsExtentExplainBottom: "L\'étendue que vous définissez modifiera l\'étendue initiale de votre carte Web. Notez que si vous effectuez une série de balayages, cette étendue ne sera pas utilisée.",
-				settingsExtentDateLineError: "L'étendue ne peut pas traverser le méridien de 180° de longitude",
-				settingsExtentDateLineError2: "Erreur de calcul de l'étendue",
+				settingsExtentDateLineError: "L\'étendue ne peut pas traverser le méridien de 180° de longitude",
+				settingsExtentDateLineError2: "Erreur de calcul de l\'étendue",
 				settingsExtentDrawBtn: "Tracer une nouvelle étendue",
 				settingsExtentModifyBtn: "Modifier l\’étendue actuelle",
 				settingsExtentApplyBtn: "Appliquer à la carte principale",
-				settingsExtentUseMainMap: "Utiliser l'étendue de carte principale"
+				settingsExtentUseMainMap: "Utiliser l\'étendue de carte principale"
 			}
         },
 		swipe: {
@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Certaines de vos modifications nécessitent d\'enregistrer et de recharger l\'application"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Balayer une couche",
-				settingsDataModelExplainSwipe: "Sélectionnez la couche ou la carte Web qui apparaît et disparaît avec le balayage.",
+				settingsTabDataModel: "æ_Swipe Type_Â",
+				settingsDataModelExplainSwipe: "æ_What do you want users to swipe?_Â",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Sélectionnez la couche ou la carte Web qui apparaîtra dans la longue-vue.",
-				settingsDataModelOneMap: "Une carte Web, couche unique",
-				settingsDataModel1Explain: "Sélectionnez une couche à contrôler par l\'outil de balayage.",
+				settingsDataModelOneMap: "æ_A layer in a web map_Â",
+				settingsDataModel1Explain: "æ_Select the layer you want to be swiped_Â",
 				settingsDataModel1Warning: "Si la couche est masquée par des couches supérieures, le balayage sera sans effet.",
 				settingsDataModel1SpyGlassExplain: "Sélectionner la couche devant apparaître dans la longue-vue.",
 				settingsDataModelTwoMaps: "Deux cartes Web",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Sélectionner ce type",
 				settingsDataModel2Explain: "Balayer avec une autre carte Web.",
 				settingsDataModel2SpyGlassExplain: "Révéler une autre carte Web.",
-				settingsDataModel2HelpTitle: "Comment trouver l\'ID d\'une carte Web",
+				settingsDataModel2HelpTitle: "æ_How do I find a web map's ID?_Â",
 				settingsDataModel2HelpContent: "Copiez et collez les chiffres après le signe « = » dans l\'URL de la carte Web"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "Activer la légende",
 				settingsDescriptionEnable: "Activer la description",
 				settingsBookmarksEnable: "Activer la série de balayages",
-				settingsPopupDisable: "æ_Enable popup_Â",
+				settingsPopupDisable: "Activer la fenêtre contextuelle",
+				settingsLocationSearchEnable: "æ_Enable locator search_Â",
+				settingsGeolocatorEnable: "æ_Enable geolocator_Â",
 				settingsLegendHelpContent: "Pour affiner le contenu de la légende, utilisez la table des matières de la visionneuse de carte Web ArcGIS.com (Masquer dans la légende)",
-				settingsSeriesHelpContent: "æ_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._Â",
-				preview: "Aperçu de l\'interface utilisateur"
+				settingsSeriesHelpContent: "æ_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._Â", 
+				preview: "Aperçu de l\'interface utilisateur",
+				settingsLocateButtonExplain: "æ_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Â",
+				settingsLocateButton: "æ_Enable a 'Locate' button supported browsers_Â",
+				settingsAddressSearch: "æ_Enable an address search tool_Â"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Fenêtre contextuelle",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Bienvenue dans le Générateur de balayages",
 				modalNext: "Suivant",
+				modalPrev: "æ_Previous_Â",
 				modalApply: "Ouvrir l\'application"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Description",
 				discard: "Ignorer le géosignet",
 				saveExtent: "Définir l\'étendue du géosignet",
-				discardDisabled: "æ_You can't remove that bookmark. Swipe series can be disabled in the Settings._Â"
+				discardDisabled: "Vous ne pouvez pas supprimer ce géosignet. La série de balayages peut être désactivée dans les paramètres."
 			}
 		}
     })

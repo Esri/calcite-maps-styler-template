@@ -1,4 +1,4 @@
-define(
+ï»¿define(
 ({
   viewer:{
     main:{
@@ -7,8 +7,8 @@ define(
       descriptionLabel: "Opis"
     },
     errors:{
-      createMap: "Nie mo¿na utworzyæ mapy",
-      general: "B³¹d"
+      createMap: "Nie moÅ¼na utworzyÄ‡ mapy",
+      general: "BÅ‚Ä…d"
     },
     footer:{
     	label: "Mapa od:"

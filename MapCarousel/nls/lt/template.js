@@ -1,7 +1,7 @@
 ﻿define(
 ({
   app:{
-   title:"Į_Map Carousel_š",
+   title:"Žemėlapių karuselė",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
       createMap: "Žemėlapio sukurti nepavyko",

@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Effacer",
-                "datePattern": "æ_MMM d, yyyy_Â" // added 2.5.2013
+                "datePattern": "d MMM, yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Impossible de créer la carte",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Propriétaire :",
                 "switchBasemap": "Changer de fond de carte",
 				"getMobileApp": "Obtenir une application",
-				"constraintsHeading":"æ_Use Constraints_Â",
-				"createdLabel":"æ_Created_Â",
-				"noDescription":"æ_No description._Â",
-				"detailsLabel":"æ_Details_Â"
+				"constraintsHeading":"Contraintes d\'utilisation",
+				"createdLabel":"Créé",
+				"noDescription":"Aucune description.",
+				"detailsLabel":"Détails"
             },
             "pagination": {
                 "previous": "Précédent",

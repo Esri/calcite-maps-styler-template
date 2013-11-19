@@ -2,7 +2,7 @@
 ({
 		viewer: {
 			loading: {
-				step1: "å_LOADING APPLICATION_ø",
+				step1: "LASTER INN APPLIKASJON",
 				step2: "LASTER INN DATA",
 				step3: "INITIALISERER",
 				fail: "Beklager, men innlasting av sveipeverktøyet mislyktes",
@@ -65,7 +65,7 @@
 				signInTwo: "for å lagre applikasjonen."
 			},
 			header:{
-				editMe: "å_Click to edit description_ø",
+				editMe: "Klikk for å redigere beskrivelse",
 				templateTitle: "Angi tittel på malen",
 				templateSubtitle: "Angi undertittel for malen"
 			},
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Aktiver beskrivelse",
 				settingsBookmarksEnable: "Aktiver sveipeserier",
 				settingsPopupDisable: "Aktiver sprettoppvindu",
-				settingsLocatorEnable: "å_Enable locator_ø",
+				settingsLocatorEnable: "Aktiver posisjonsindikator",
 				settingsLegendHelpContent: "Hvis du vil finjustere innholdet i tegnforklaringen, bruker du innholdsfortegnelsen for kartviseren på ArcGIS.com (skjul i tegnforklaringen)",
 				settingsSeriesHelpContent: "Ved første aktivering brukes webkartbokmerker til å forhåndsutfylle seriestolpen. Hvis du senere deaktiverer dette seriealternativet, fjernes ikke seriekonfigurasjonen, og den vil være tilgjengelig hvis du bestemmer deg for å aktivere serien på nytt.",
 				preview: "Forhåndsvisning av brukergrensesnitt"

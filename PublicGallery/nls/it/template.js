@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Cancella",
-                "datePattern": "é_MMM d, yyyy_È" // added 2.5.2013
+                "datePattern": "d MMM yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Impossibile creare la mappa",
@@ -28,7 +28,7 @@
             "groupPage": {
                 "showAllMaps": "Mostra tutte le mappe",
                 "searchTitle": "Cerca gruppo",
-                "searchTitleShort": "Ricerca",
+                "searchTitleShort": "Cerca",
                 "searchPlaceholder": "Cerca mappe",
                 "itemTitle": "Visualizza mappa",
                 "gridSwitch": "Passa a vista griglia",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Proprietario:",
                 "switchBasemap": "Cambia mappa di base",
 				"getMobileApp": "Ottieni applicazione",
-				"constraintsHeading":"é_Use Constraints_È",
-				"createdLabel":"é_Created_È",
-				"noDescription":"é_No description._È",
-				"detailsLabel":"é_Details_È"
+				"constraintsHeading":"Vincoli d\'uso",
+				"createdLabel":"Data creazione",
+				"noDescription":"Nessuna descrizione.",
+				"detailsLabel":"Dettagli"
             },
             "pagination": {
                 "previous": "Indietro",

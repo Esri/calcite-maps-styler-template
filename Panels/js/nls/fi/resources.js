@@ -1,8 +1,8 @@
-define(
+ï»¿define(
 ({
   viewer:{
     main:{
-      scaleBarUnits: "Å_english_ö", //"english (for miles) or "metric" (for km) - don't translate.
+      scaleBarUnits: "english", //"english (for miles) or "metric" (for km) - don't translate.
       legendLabel: "Selite",
       descriptionLabel: "Kuvaus"
     },

@@ -22,8 +22,8 @@ define(
             search: "Hledat",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Aktuální umístění",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Odeslat korekci",  // Command button to submit a correction to the app's host
-            collect: "Ř_Add content to map_ů",  // Command button to open a template picker to add features to the map
-            filter: "Ř_Filter map layers_ů",  // Explains purpose of type-in box affiliated with template picker
+            collect: "Přidat obsah do mapy",  // Command button to open a template picker to add features to the map
+            filter: "Filtrovat mapové vrstvy",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Přepnout podkladovou mapu",  // Command button to open a dialog box for switching basemaps
             share: "Sdílet",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Sdílet e-mailem",  // Command button to share the current map extents via email

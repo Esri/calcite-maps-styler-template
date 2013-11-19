@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "komentáře",
                 "modifiedLabel": "Naposledy upraveno",
                 "by": "podle",
-                "separator": "Ř_,_ů"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Vrstvy sociálních médií",

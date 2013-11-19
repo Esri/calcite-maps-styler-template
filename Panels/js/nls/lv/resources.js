@@ -1,14 +1,14 @@
-define(
+ï»¿define(
 ({
   viewer:{
     main:{
       scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
-      legendLabel: "Leìenda",
+      legendLabel: "LeÄ£enda",
       descriptionLabel: "Apraksts"
     },
     errors:{
       createMap: "Nevar izveidot karti",
-      general: "Kïûda"
+      general: "KÄ¼Å«da"
     },
     footer:{
     	label: "Karte no:"

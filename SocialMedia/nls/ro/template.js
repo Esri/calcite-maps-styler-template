@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "comentarii",
                 "modifiedLabel": "Ultima modificare",
                 "by": "de",
-                "separator": "Ă_,_ș"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Straturi tematice de reţele de socializare",

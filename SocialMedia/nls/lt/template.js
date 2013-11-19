@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "komentarai",
                 "modifiedLabel": "Paskutinis pakeitimas",
                 "by": "pagal",
-                "separator": "Į_,_š"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Socialinės žiniasklaidos sluoksniai",

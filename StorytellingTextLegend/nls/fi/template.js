@@ -19,7 +19,7 @@
         datePattern: "p. KKKK vvvv",
         yearPattern: "vvvv",
         hourTimePattern: "t",
-        minuteTimePattern: "Å_h:mm a_ö",
+        minuteTimePattern: "t:mm a",
         secondTimePattern: "t:mm:ss",
         millisecondTimePattern: "h:mm:ss:SSS"
       }

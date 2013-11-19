@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Ištrinti",
-                "datePattern": "Į_MMM d, yyyy_š" // added 2.5.2013
+                "datePattern": "yyyy.MMM.dd" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Žemėlapio sukurti nepavyko",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Savininkas:",
                 "switchBasemap": "Pakeisti pagrindo žėmėlapį",
 				"getMobileApp": "Gauti aplikaciją",
-				"constraintsHeading":"Į_Use Constraints_š",
-				"createdLabel":"Į_Created_š",
-				"noDescription":"Į_No description._š",
-				"detailsLabel":"Į_Details_š"
+				"constraintsHeading":"Naudojimo apribojimai",
+				"createdLabel":"Sukurtas",
+				"noDescription":"Aprašymo nėra.",
+				"detailsLabel":"Detali informacija"
             },
             "pagination": {
                 "previous": "Ankstesnis",

@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Fjern",
-                "datePattern": "å_MMM d, yyyy_ø" // added 2.5.2013
+                "datePattern": "d. MMM yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Kan ikke opprette kart",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Eier:",
                 "switchBasemap": "Bytt bakgrunnskart",
 				"getMobileApp": "Hent program",
-				"constraintsHeading":"å_Use Constraints_ø",
-				"createdLabel":"å_Created_ø",
-				"noDescription":"å_No description._ø",
-				"detailsLabel":"å_Details_ø"
+				"constraintsHeading":"Brukerbegrensninger",
+				"createdLabel":"Opprettet",
+				"noDescription":"Ingen beskrivelse.",
+				"detailsLabel":"Detaljer"
             },
             "pagination": {
                 "previous": "Forrige",

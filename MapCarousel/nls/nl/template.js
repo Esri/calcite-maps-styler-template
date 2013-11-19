@@ -1,7 +1,7 @@
 ﻿define(
 ({
   app:{
-   title:"Ĳ_Map Carousel_ä",
+   title:"Kaartencarrousel",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
       createMap: "Kan kaart niet maken",

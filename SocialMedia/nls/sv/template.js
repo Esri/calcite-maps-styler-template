@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "kommentarer",
                 "modifiedLabel": "Senast ändrad",
                 "by": "av",
-                "separator": "Å_,_ö"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Sociala medier-lager",

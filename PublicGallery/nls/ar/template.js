@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "مسح",
-                "datePattern": "بيت_MMM d, yyyy_لاحقة" // added 2.5.2013
+                "datePattern": "MMM d, yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "يتعذر إنشاء الخريطة",
@@ -94,10 +94,10 @@
                 "ownerHeader": "المالك:",
                 "switchBasemap": "تبديل خريطة الأساس",
 				"getMobileApp": "الحصول على تطبيق",
-				"constraintsHeading":"بيت_Use Constraints_لاحقة",
-				"createdLabel":"بيت_Created_لاحقة",
-				"noDescription":"بيت_No description._لاحقة",
-				"detailsLabel":"بيت_Details_لاحقة"
+				"constraintsHeading":"استخدام القيود",
+				"createdLabel":"تم الإنشاء",
+				"noDescription":"لا يوجد وصف.",
+				"detailsLabel":"تفاصيل"
             },
             "pagination": {
                 "previous": "السابق",

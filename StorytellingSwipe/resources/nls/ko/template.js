@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "일부 변경 사항은 응용프로그램을 저장하고 다시 로드해야 합니다."
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "스와이프 레이어",
-				settingsDataModelExplainSwipe: "스와이프와 함께 표시되고 사라지는 레이어 또는 웹 맵을 선택합니다.",
+				settingsTabDataModel: "한_Swipe Type_빠",
+				settingsDataModelExplainSwipe: "한_What do you want users to swipe?_빠",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "망원경에 표시할 레이어 또는 웹 맵을 선택합니다.",
-				settingsDataModelOneMap: "웹 맵 하나, 단일 레이어",
-				settingsDataModel1Explain: "스와이프 도구를 사용하여 제어할 레이어를 선택합니다.",
+				settingsDataModelOneMap: "한_A layer in a web map_빠",
+				settingsDataModel1Explain: "한_Select the layer you want to be swiped_빠",
 				settingsDataModel1Warning: "레이어가 상위 레이어에 의해 숨겨진 경우에는 스와이프가 적용되지 않습니다.",
 				settingsDataModel1SpyGlassExplain: "망원경 내에 표시할 레이어를 선택합니다.",
 				settingsDataModelTwoMaps: "웹 맵 두 개",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "이 유형 선택",
 				settingsDataModel2Explain: "다른 웹 맵으로 스와이프합니다.",
 				settingsDataModel2SpyGlassExplain: "다른 웹 맵을 표시합니다.",
-				settingsDataModel2HelpTitle: "웹 맵 ID를 찾는 방법",
+				settingsDataModel2HelpTitle: "한_How do I find a web map's ID?_빠",
 				settingsDataModel2HelpContent: "웹 맵의 URL에 '=' 부호 뒤의 숫자 복사 및 붙여넣기"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "범례 사용",
 				settingsDescriptionEnable: "설명 사용",
 				settingsBookmarksEnable: "스와이프 계열 사용",
-				settingsPopupDisable: "한_Enable popup_빠",
+				settingsPopupDisable: "팝업 사용",
+				settingsLocationSearchEnable: "한_Enable locator search_빠",
+				settingsGeolocatorEnable: "한_Enable geolocator_빠",
 				settingsLegendHelpContent: "범례 컨텐츠를 세분화하려면 ArcGIS.com web map viewer 목차를 사용하세요(범례에서 숨겨짐).",
-				settingsSeriesHelpContent: "한_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._빠",
-				preview: "UI 미리보기"
+				settingsSeriesHelpContent: "한_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._빠", 
+				preview: "UI 미리보기",
+				settingsLocateButtonExplain: "한_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._빠",
+				settingsLocateButton: "한_Enable a 'Locate' button supported browsers_빠",
+				settingsAddressSearch: "한_Enable an address search tool_빠"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "팝업",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "스와이프 빌더 시작",
 				modalNext: "다음",
+				modalPrev: "한_Previous_빠",
 				modalApply: "앱 열기"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "설명",
 				discard: "책갈피 취소",
 				saveExtent: "책갈피 범위 설정",
-				discardDisabled: "한_You can't remove that bookmark. Swipe series can be disabled in the Settings._빠"
+				discardDisabled: "책갈피를 제거할 수 없습니다. 스와이프 계열이 설정에서 사용하지 않도록 설정되어 있을 수 있습니다."
 			}
 		}
     })

@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "コメント",
                 "modifiedLabel": "最終更新日",
                 "by": "作成者",
-                "separator": "須_,_鷗"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "ソーシャル メディア レイヤ",

@@ -1,7 +1,7 @@
 ﻿define(
 ({
   app:{
-   title:"한_Map Carousel_빠",
+   title:"맵 회전 슬라이드",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
       createMap: "맵을 생성할 수 없음",

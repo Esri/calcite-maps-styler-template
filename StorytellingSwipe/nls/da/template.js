@@ -54,7 +54,7 @@
 				no: "Nej",
 				popoverOpenViewExplain: "Ved at åbne viseren mister du eventuelle ikke-gemte ændringer",
 				popoverOpenViewOk: "OK",
-				popoverOpenViewCancel: "ø_Cancel_å",
+				popoverOpenViewCancel: "Annull\ér",
 				popoverSaveWhenDone: "Glem ikke at gemme, når du er færdig",
 				closeWithPendingChange: "Er du sikker på, at du vil bekræfte denne handling? Dine ændringer vil gå tabt.",
 				gotIt: "OK",
@@ -65,13 +65,13 @@
 				signInTwo: "for at gemme applikationen."
 			},
 			header:{
-				editMe: "ø_Click to edit description_å",
+				editMe: "Klik for at redigere beskrivelse",
 				templateTitle: "Indstil skabelontitel",
 				templateSubtitle: "Indstil skabelonundertitel"
 			},
 			settings: {
 				settingsHeader: "Applikationsindstillinger",
-				modalCancel: "ø_Cancel_å",
+				modalCancel: "Annull\ér",
 				modalApply: "Anvend"
 			},
 			settingsColors: {
@@ -116,7 +116,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Angiv beskrivelse til sidepanelet",
-				editMe: "ø_Edit me !_å",
+				editMe: "Redig\ér mig!",
 				legendTitle: "Signaturforklaring"
 			},
 			infoWindow: {
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Aktiv\ér beskrivelse",
 				settingsBookmarksEnable: "Aktiv\ér Swipe-serie",
 				settingsPopupDisable: "Aktiv\ér pop-up-vindue",
-				settingsLocatorEnable: "ø_Enable locator_å",
+				settingsLocatorEnable: "Aktiv\ér lokator",
 				settingsLegendHelpContent: "Hvis du vil forfine signaturforklaringens indhold, kan du bruge indholdsfortegnelsen i ArcGIS.com-webkortviseren (Skjul i signaturforklaring)",
 				settingsSeriesHelpContent: "Ved første aktivering vil dine webkortbogmærker blive anvendt til at udfylde serielinjen på forhånd. Hvis du deaktiverer seriefunktionen senere, slettes din seriekonfiguration ikke, og den vil være tilgængelig, hvis du aktiverer serien igen.",
 				preview: "UI-forhåndsvisning"

@@ -10,7 +10,7 @@
 				failButton: "Zkusit znovu"
 			},
 			errors: {
-				boxTitle: "Ř_An error has occurred_ů",
+				boxTitle: "Došlo k chybě",
 				portalSelf: "Závažná chyba: Nepodařilo se získat konfiguraci portálu.",
 				invalidConfig: "Závažná chyba: Neplatná konfigurace",
 				invalidConfigNoWebmap: "Závažná chyba: Neplatná konfigurace (není specifikována žádná webová mapa)",
@@ -42,7 +42,7 @@
 			builder: {
 				panelHeader: "KONFIGURACE APLIKACE",
 				buttonSave: "ULOŽIT",
-				buttonDiscard: "Ř_CANCEL_ů",
+				buttonDiscard: "STORNO",
 				buttonSettings: "Nastavení",
 				buttonView: "Režim prohlížení",
 				buttonItem: "Otevřít položku webové aplikace",
@@ -56,16 +56,16 @@
 				popoverOpenViewOk: "OK",
 				popoverOpenViewCancel: "Storno",
 				popoverSaveWhenDone: "Až budete hotovi, nezapomeňte provedené změny uložit.",
-				closeWithPendingChange: "Ř_Are you sure to want to confirm the action ? Your changes will be lost._ů",
+				closeWithPendingChange: "Určitě chcete potvrdit akci? Vaše změny budou ztraceny.",
 				gotIt: "OK",
 				savingApplication: "Ukládání aplikace",
-				saveSuccess: "Ř_Application saved successfully_ů",
-				saveError: "Ř_Save failed, please try again_ů",
+				saveSuccess: "Aplikace úspěšně uložena",
+				saveError: "Ukládání selhalo, zkuste to prosím znovu.",
 				signIn: "Přihlaste se pomocí účtu na",
 				signInTwo: "pro uložení aplikace."
 			},
 			header:{
-				editMe: "Ř_Click to edit description_ů",
+				editMe: "Klikněte pro úpravu popisu",
 				templateTitle: "Nastavit název šablony",
 				templateSubtitle: "Nastavit podnadpis šablony"
 			},
@@ -81,13 +81,13 @@
 			},
 			settingsHeader: {
 				settingsTabLogo: "Záhlaví",
-				settingsLogoExplain: "Ř_Customize the header logo (maximum is 250 x 50px)._ů",
+				settingsLogoExplain: "Přizpůsobte logo v záhlaví (maximum je 250 × 50 px).",
 				settingsLogoEsri: "Logo Esri",
 				settingsLogoNone: "Bez loga",
 				settingsLogoCustom: "Vlastní logo",
 				settingsLogoCustomPlaceholder: "URL obrázku",
 				settingsLogoCustomTargetPlaceholder: "Odkaz při kliknutí na obrázek",
-				settingsLogoSocialExplain: "Ř_Customize the header top right link._ů",
+				settingsLogoSocialExplain: "Přizpůsobte odkaz v pravé horní části záhlaví.",
 				settingsLogoSocialText: "Text",
 				settingsLogoSocialLink: "Odkaz",
 				settingsLogoSocialDisabled: "Tato funkce byla zakázána administrátorem."
@@ -96,8 +96,8 @@
 				settingsTabExtent: "Rozsah",
 				settingsExtentExplain: "Prostřednictvím následující interaktivní mapy nastavte výchozí rozsah.",
 				settingsExtentExplainBottom: "Podle zadaného rozsahu se upraví výchozí rozsah webové mapy. Vytváříte-li sérii překrývání, tento rozsah se nepoužije.",
-				settingsExtentDateLineError: "Ř_The extent cannot be across the meridian of 180° longitude_ů",
-				settingsExtentDateLineError2: "Ř_Error computing the extent_ů",
+				settingsExtentDateLineError: "Rozsah nesmí přesahovat 180° zeměpisné délky",
+				settingsExtentDateLineError2: "Při výpočtu rozsahu došlo k chybě",
 				settingsExtentDrawBtn: "Určit nový rozsah",
 				settingsExtentModifyBtn: "Editovat aktuální rozsah",
 				settingsExtentApplyBtn: "Použít v hlavní mapě",
@@ -116,7 +116,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Nastavit popis postranního panelu",
-				editMe: "Ř_Edit me !_ů",
+				editMe: "Uprav mě!",
 				legendTitle: "Legenda"
 			},
 			infoWindow: {
@@ -129,7 +129,7 @@
 				settingsLayoutSwipe: "Svislý sloupec",
 				settingsLayoutSpyGlass: "Lupa",
 				settingsLayoutSelected: "Vybrané rozvržení",
-				settingsLayoutSelect: "Ř_Select this layout_ů",
+				settingsLayoutSelect: "Zvolit toto rozvržení",
 				settingsSaveConfirm: "Některé ze změn vyžadují uložení a opětovné spuštění aplikace"
 			},
 			settingsDataModel: {
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Povolit popis",
 				settingsBookmarksEnable: "Povolit série překrývání",
 				settingsPopupDisable: "Povolit vyskakovací obsah",
-				settingsLocatorEnable: "Ř_Enable locator_ů",
+				settingsLocatorEnable: "Povolit lokátor",
 				settingsLegendHelpContent: "Chcete-li doplnit obsah legendy, použijte obsah prohlížeče webových map ArcGIS.com (Skrýt v legendě)",
 				settingsSeriesHelpContent: "Při první aktivaci budou vaše záložky webových map použity k naplnění lišty série. Pokud tuto možnost série později vypnete, vaše konfigurace série nebude zrušena a bude k dispozici, rozhodnete-li se sérii opět povolit.",
 				preview: "Náhled uživatelského rozhraní"
@@ -182,7 +182,7 @@
 				modalApply: "Otevřít aplikaci"
 			},
 			seriesPanel: {
-				title: "Ř_Title_ů",
+				title: "Název",
 				descr: "Popis",
 				discard: "Zrušit záložku",
 				saveExtent: "Nastavit rozsah záložky",

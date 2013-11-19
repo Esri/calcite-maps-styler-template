@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "É necessário guardar e reiniciar a aplicação para aplicar algumas das alterações efetuadas"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Camada de Varrimento",
-				settingsDataModelExplainSwipe: "Selecione a camada ou o mapa web que irá aparecer e desaparecer com o varrimento.",
+				settingsTabDataModel: "ã_Swipe Type_Ç",
+				settingsDataModelExplainSwipe: "ã_What do you want users to swipe?_Ç",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Selecione a camada ou o mapa web que irá aparecer na luneta.",
-				settingsDataModelOneMap: "Um mapa web, camada única",
-				settingsDataModel1Explain: "Selecione uma camada para ser controlada pela ferramenta de varrimento.",
+				settingsDataModelOneMap: "ã_A layer in a web map_Ç",
+				settingsDataModel1Explain: "ã_Select the layer you want to be swiped_Ç",
 				settingsDataModel1Warning: "Só é possível utilizar serviços Dinâmicos, de Mosaicos e de Imagens. Se a camada estiver tapada por camadas superiores, o varrimento não terá qualquer efeito.",
 				settingsDataModel1SpyGlassExplain: "Selecione a camada que irá aparecer dentro da luneta.",
 				settingsDataModelTwoMaps: "Dois mapas web",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Selecionar este tipo",
 				settingsDataModel2Explain: "Varrer com outro mapa web.",
 				settingsDataModel2SpyGlassExplain: "Revelar outro mapa web.",
-				settingsDataModel2HelpTitle: "Como descobrir o ID do mapa web",
+				settingsDataModel2HelpTitle: "ã_How do I find a web map's ID?_Ç",
 				settingsDataModel2HelpContent: "Copie e cole os dígitos que aparecem depois do sinal \'=\' no URL do mapa web"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "Ativar Legenda",
 				settingsDescriptionEnable: "Ativar Descrição",
 				settingsBookmarksEnable: "Ativar série de Varrimento",
-				settingsPopupDisable: "ã_Enable popup_Ç",
+				settingsPopupDisable: "Ativar janelas popup",
+				settingsLocationSearchEnable: "ã_Enable locator search_Ç",
+				settingsGeolocatorEnable: "ã_Enable geolocator_Ç",
 				settingsLegendHelpContent: "Utilize o índice do visualizador de mapas do ArcGIS.com (Ocultar em Legenda)",
-				settingsSeriesHelpContent: "ã_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._Ç",
-				preview: "Pré-visualizar IU"
+				settingsSeriesHelpContent: "ã_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._Ç", 
+				preview: "Pré-visualizar IU",
+				settingsLocateButtonExplain: "ã_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Ç",
+				settingsLocateButton: "ã_Enable a 'Locate' button supported browsers_Ç",
+				settingsAddressSearch: "ã_Enable an address search tool_Ç"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Janela Pop-up",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Bem-vindo ao Builder de Varrimento",
 				modalNext: "Seguinte",
+				modalPrev: "ã_Previous_Ç",
 				modalApply: "Abrir a aplicação"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Descrição",
 				discard: "Rejeitar Marcador",
 				saveExtent: "Definir a extensão do Marcador",
-				discardDisabled: "ã_You can't remove that bookmark. Swipe series can be disabled in the Settings._Ç"
+				discardDisabled: "Não pode remover aquele marcador. As séries Swipe podem ser desativadas nas Definições."
 			}
 		}
     })

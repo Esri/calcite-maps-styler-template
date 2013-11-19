@@ -22,8 +22,8 @@ define(
             search: "Zoeken",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Huidige locatie",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Correctie verzenden",  // Command button to submit a correction to the app's host
-            collect: "Ĳ_Add content to map_ä",  // Command button to open a template picker to add features to the map
-            filter: "Ĳ_Filter map layers_ä",  // Explains purpose of type-in box affiliated with template picker
+            collect: "Content toevoegen aan kaart",  // Command button to open a template picker to add features to the map
+            filter: "Kaartlagen filteren",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Basiskaart wijzigen",  // Command button to open a dialog box for switching basemaps
             share: "Delen",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Delen via e-mail",  // Command button to share the current map extents via email

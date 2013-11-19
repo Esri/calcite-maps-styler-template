@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "kommentaari",
                 "modifiedLabel": "Viimati muudetud",
                 "by": "autor:",
-                "separator": "Š_,_ä"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Sotsiaalmeedia kihid",

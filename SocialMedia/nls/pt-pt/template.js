@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "comentários",
                 "modifiedLabel": "Última Modificação",
                 "by": "Por",
-                "separator": "ã_,_Ç"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Camadas de Social Media",

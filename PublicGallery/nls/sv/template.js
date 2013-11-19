@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Rensa",
-                "datePattern": "Å_MMM d, yyyy_ö" // added 2.5.2013
+                "datePattern": "d MMM yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Det går inte att skapa kartan",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Ägare:",
                 "switchBasemap": "Byt baskarta",
 				"getMobileApp": "Hämta app",
-				"constraintsHeading":"Å_Use Constraints_ö",
-				"createdLabel":"Å_Created_ö",
-				"noDescription":"Å_No description._ö",
-				"detailsLabel":"Å_Details_ö"
+				"constraintsHeading":"Användningsbegränsningar",
+				"createdLabel":"Skapad",
+				"noDescription":"Ingen beskrivning.",
+				"detailsLabel":"Information"
             },
             "pagination": {
                 "previous": "Föregående",

@@ -19,11 +19,11 @@
 define(
 ({
         tooltips: {
-            search: "Ricerca",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "Cerca",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Posizione corrente",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Invia correzione",  // Command button to submit a correction to the app's host
-            collect: "é_Add content to map_È",  // Command button to open a template picker to add features to the map
-            filter: "é_Filter map layers_È",  // Explains purpose of type-in box affiliated with template picker
+            collect: "Aggiungi contenuto alla mappa",  // Command button to open a template picker to add features to the map
+            filter: "Layer mappa di filtro",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Cambia mappa di base",  // Command button to open a dialog box for switching basemaps
             share: "Condividi",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Condividi tramite e-mail",  // Command button to share the current map extents via email

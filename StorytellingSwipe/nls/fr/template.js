@@ -65,7 +65,7 @@
 				signInTwo: "pour enregistrer l\’application."
 			},
 			header:{
-				editMe: "æ_Click to edit description_Â",
+				editMe: "Cliquez pour modifier la description",
 				templateTitle: "Définir le titre du modèle",
 				templateSubtitle: "Définir le sous-titre du modèle"
 			},
@@ -96,12 +96,12 @@
 				settingsTabExtent: "Etendue",
 				settingsExtentExplain: "Définissez l\’étendue initiale au moyen de la carte interactive ci-dessous.",
 				settingsExtentExplainBottom: "L\'étendue que vous définissez modifiera l\'étendue initiale de votre carte Web. Notez que si vous effectuez une série de balayages, cette étendue ne sera pas utilisée.",
-				settingsExtentDateLineError: "æ_The extent cannot be across the meridian of 180° longitude_Â",
-				settingsExtentDateLineError2: "æ_Error computing the extent_Â",
+				settingsExtentDateLineError: "L\'étendue ne peut pas traverser le méridien de 180° de longitude",
+				settingsExtentDateLineError2: "Erreur de calcul de l\'étendue",
 				settingsExtentDrawBtn: "Tracer une nouvelle étendue",
 				settingsExtentModifyBtn: "Modifier l\’étendue actuelle",
 				settingsExtentApplyBtn: "Appliquer à la carte principale",
-				settingsExtentUseMainMap: "Utiliser l'étendue de carte principale"
+				settingsExtentUseMainMap: "Utiliser l\'étendue de carte principale"
 			}
         },
 		swipe: {
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Activer la description",
 				settingsBookmarksEnable: "Activer la série de balayages",
 				settingsPopupDisable: "Activer la fenêtre contextuelle",
-				settingsLocatorEnable: "æ_Enable locator_Â",
+				settingsLocatorEnable: "Activer le localisateur",
 				settingsLegendHelpContent: "Pour affiner le contenu de la légende, utilisez la table des matières de la visionneuse de carte Web ArcGIS.com (Masquer dans la légende)",
 				settingsSeriesHelpContent: "Lors de la première activation, les géosignets de vos cartes Web seront utilisés pour renseigner la barre de la série. Si vous désactivez l\'option de série par la suite, la configuration de votre série ne sera pas annulée et elle sera disponible si vous décidez de réactiver la série.",
 				preview: "Aperçu de l\'interface utilisateur"

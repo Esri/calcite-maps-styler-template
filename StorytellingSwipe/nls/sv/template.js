@@ -6,7 +6,7 @@
 				step2: "LÄSER IN DATA",
 				step3: "INITIERAR",
 				fail: "Det gick inte att hämta svep",
-				loadBuilder: "Å_SWITCHING TO BUILDER MODE_ö",
+				loadBuilder: "VÄXLAR TILL BYGGLÄGET",
 				failButton: "Försök igen"
 			},
 			errors: {
@@ -14,7 +14,7 @@
 				portalSelf: "Allvarligt fel: det gick inte att hämta portalkonfigurationen",
 				invalidConfig: "Allvarligt fel: ogiltig konfiguration",
 				invalidConfigNoWebmap: "Allvarligt fel: ogiltig konfiguration (ingen webbkarta angiven)",
-				createMap: "Å_Unable to create map_ö",
+				createMap: "Det gick inte att skapa kartan",
 				invalidApp: "Allvarligt fel: programmet kunde inte läsas in",
 				initMobile: "Välkommen till Svep-webbapplikationen. Applikationen är inte konfigurerad. Det interaktiva byggverktyget fungerar inte på mobila enheter.",
 				noBuilderIE8: "Det interaktiva Svep-byggverktyget fungerar inte med tidigare versioner av Internet Explorer än version 9.",
@@ -65,7 +65,7 @@
 				signInTwo: "och spara programmet."
 			},
 			header:{
-				editMe: "Å_Click to edit description_ö",
+				editMe: "Klicka för att redigera beskrivningen",
 				templateTitle: "Ange malltitel",
 				templateSubtitle: "Ange underrubrik för mallen"
 			},
@@ -152,7 +152,7 @@
 				settingsDataModel2Explain: "Svep med en annan webbkarta.",
 				settingsDataModel2SpyGlassExplain: "Visa en annan webbkarta.",
 				settingsDataModel2HelpTitle: "Hitta webbkart-ID",
-				settingsDataModel2HelpContent: "Kopiera och klistra in siffror efter tecknet '=' i webbkartans webbadress"
+				settingsDataModel2HelpContent: "Kopiera och klistra in siffror efter tecknet \'=' i webbkartans webbadress"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Applikationslayout",
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Aktivera beskrivning",
 				settingsBookmarksEnable: "Aktivera svepserie",
 				settingsPopupDisable: "Aktivera popup-fönster",
-				settingsLocatorEnable: "Å_Enable locator_ö",
+				settingsLocatorEnable: "Aktivera lokaliserare",
 				settingsLegendHelpContent: "Om du vill förfina innehållsförteckningen använder du innehållsförteckningen i webbkartvyn på ArcGIS.com (Dölj i teckenförklaringen)",
 				settingsSeriesHelpContent: "Vid den första aktiveringen används webbkartans bokmärken för att fylla i seriefältet. Om du inaktiverar alternativet försvinner inte seriekonfigurationen utan finns kvar om du aktiverar alternativet igen.",
 				preview: "Förhandsgranska användargränssnitt"

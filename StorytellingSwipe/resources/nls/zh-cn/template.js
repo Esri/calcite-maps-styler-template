@@ -90,12 +90,12 @@
 				settingsLogoSocialExplain: "自定义标题右上方的链接。",
 				settingsLogoSocialText: "文本",
 				settingsLogoSocialLink: "链接",
-				settingsLogoSocialDisabled: "此功能已由管理员禁用"
+				settingsLogoSocialDisabled: "此功能已被管理员禁用"
 			},
 			settingsExtent: {
 				settingsTabExtent: "范围",
 				settingsExtentExplain: "通过下面的交互式地图设置初始范围。",
-				settingsExtentExplainBottom: "您定义的范围将修改您的 web 地图初始范围。请注意，如果您在执行卷帘系列操作，将不使用该范围。",
+				settingsExtentExplainBottom: "您定义的范围将修改您的 web 地图初始范围。请注意，如果您正在执行卷帘操作，则不会使用该范围。",
 				settingsExtentDateLineError: "范围不可跨越 180° 经线",
 				settingsExtentDateLineError2: "计算范围时出错",
 				settingsExtentDrawBtn: "确定一个新范围",
@@ -133,13 +133,13 @@
 				settingsSaveConfirm: "其中一些更改需要您保存和重新加载应用程序"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "卷帘图层",
-				settingsDataModelExplainSwipe: "选择随卷帘显示和消失的图层或 web 地图。",
+				settingsTabDataModel: "试_Swipe Type_验",
+				settingsDataModelExplainSwipe: "试_What do you want users to swipe?_验",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "选择在望远镜中显示的图层或 web 地图。",
-				settingsDataModelOneMap: "一幅 web 地图，单个图层",
-				settingsDataModel1Explain: "选择由卷帘工具控制的图层。",
-				settingsDataModel1Warning: "图层被上面的图层隐藏时，卷帘不起任何作用。",
+				settingsDataModelOneMap: "试_A layer in a web map_验",
+				settingsDataModel1Explain: "试_Select the layer you want to be swiped_验",
+				settingsDataModel1Warning: "如果图层被上面的图层所遮盖，则卷帘无任何效果。",
 				settingsDataModel1SpyGlassExplain: "选择要在望远镜中显示的图层。",
 				settingsDataModelTwoMaps: "两幅 web 地图",
 				settingsDataModelLayerIds: "Web 地图图层 ID",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "选择该类型",
 				settingsDataModel2Explain: "随另一 web 地图卷起。",
 				settingsDataModel2SpyGlassExplain: "显示另一 web 地图。",
-				settingsDataModel2HelpTitle: "如何查找 web 地图 ID",
+				settingsDataModel2HelpTitle: "试_How do I find a web map's ID?_验",
 				settingsDataModel2HelpContent: "复制并粘贴 web 地图 URL 中 '=' 符号后面的数字"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "启用图例",
 				settingsDescriptionEnable: "启用描述",
 				settingsBookmarksEnable: "启用卷帘系列",
-				settingsPopupDisable: "试_Enable popup_验",
+				settingsPopupDisable: "启用弹出窗口",
+				settingsLocationSearchEnable: "试_Enable locator search_验",
+				settingsGeolocatorEnable: "试_Enable geolocator_验",
 				settingsLegendHelpContent: "要优化图例内容，请使用 ArcGIS.com web 地图查看器内容列表(隐藏在图例中)",
-				settingsSeriesHelpContent: "试_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._验",
-				preview: "UI 预览"
+				settingsSeriesHelpContent: "试_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._验", 
+				preview: "UI 预览",
+				settingsLocateButtonExplain: "试_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._验",
+				settingsLocateButton: "试_Enable a 'Locate' button supported browsers_验",
+				settingsAddressSearch: "试_Enable an address search tool_验"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "弹出窗口",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "欢迎使用 Swipe Builder",
 				modalNext: "下一步",
+				modalPrev: "试_Previous_验",
 				modalApply: "打开应用程序"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "描述",
 				discard: "放弃书签",
 				saveExtent: "设置书签范围",
-				discardDisabled: "试_You can't remove that bookmark. Swipe series can be disabled in the Settings._验"
+				discardDisabled: "无法移除书签。可在设置中禁用卷帘系列。"
 			}
 		}
     })

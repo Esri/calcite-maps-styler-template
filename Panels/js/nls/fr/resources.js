@@ -1,17 +1,17 @@
-define(
+ï»¿define(
 ({
   viewer:{
     main:{
       scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
-      legendLabel: "Légende",
+      legendLabel: "LÃ©gende",
       descriptionLabel: "Description"
     },
     errors:{
-      createMap: "Impossible de créer la carte",
+      createMap: "Impossible de crÃ©er la carte",
       general: "Erreur"
     },
     footer:{
-    	label: "Carte de :"
+    	label: "Carte deÂ :"
     }
   }
 })

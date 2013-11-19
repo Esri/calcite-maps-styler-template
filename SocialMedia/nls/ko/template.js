@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "설명",
                 "modifiedLabel": "마지막으로 수정한 날짜",
                 "by": "작성자",
-                "separator": "한_,_빠"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "소셜 미디어 레이어",

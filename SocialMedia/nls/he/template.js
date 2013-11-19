@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "הערות",
                 "modifiedLabel": "שונה לאחרונה",
                 "by": "ע\"י",
-                "separator": "כן_,_ש"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "שכבות מדיה חברתית",

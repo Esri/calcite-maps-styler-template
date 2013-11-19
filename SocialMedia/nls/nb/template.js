@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "kommentarer",
                 "modifiedLabel": "Sist endret",
                 "by": "ved",
-                "separator": "å_,_ø"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Sosiale medielag",

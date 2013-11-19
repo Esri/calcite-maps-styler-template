@@ -1,7 +1,7 @@
 ﻿define(
 ({
   app:{
-   title:"כן_Map Carousel_ש",
+   title:"קרוסלת מפה",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
       createMap: "לא ניתן ליצור מפה",

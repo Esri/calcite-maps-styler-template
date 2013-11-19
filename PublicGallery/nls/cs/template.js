@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Vyprázdnit",
-                "datePattern": "Ř_MMM d, yyyy_ů" // added 2.5.2013
+                "datePattern": "MMM d, yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Nelze vytvořit mapu",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Vlastník:",
                 "switchBasemap": "Přepnout podkladovou mapu",
 				"getMobileApp": "Stáhnout aplikaci",
-				"constraintsHeading":"Ř_Use Constraints_ů",
-				"createdLabel":"Ř_Created_ů",
-				"noDescription":"Ř_No description._ů",
-				"detailsLabel":"Ř_Details_ů"
+				"constraintsHeading":"Omezení použití",
+				"createdLabel":"Vytvořeno",
+				"noDescription":"Žádný popis.",
+				"detailsLabel":"Podrobnosti"
             },
             "pagination": {
                 "previous": "Předchozí",

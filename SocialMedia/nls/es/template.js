@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "comentarios",
                 "modifiedLabel": "Última modificación",
                 "by": "de",
-                "separator": "á_,_Ó"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Capas de medios sociales",

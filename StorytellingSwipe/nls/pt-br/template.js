@@ -40,7 +40,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "ã_APPLICATION CONFIGURATION_Ç",
+				panelHeader: "CONFIGURAÇÃO DO APLICATIVO",
 				buttonSave: "SALVAR",
 				buttonDiscard: "CANCELAR",
 				buttonSettings: "Configurações",
@@ -65,7 +65,7 @@
 				signInTwo: "para salvar o aplicativo."
 			},
 			header:{
-				editMe: "ã_Click to edit description_Ç",
+				editMe: "Clique para editar a descrição",
 				templateTitle: "Configurar título do modelo",
 				templateSubtitle: "Configurar subtítulo do modelo"
 			},
@@ -80,7 +80,7 @@
 				settingsLabelColor: "Cores do plano de fundo do painel lateral e cabeçalho"
 			},
 			settingsHeader: {
-				settingsTabLogo: "ã_Header_Ç",
+				settingsTabLogo: "Cabeçalho",
 				settingsLogoExplain: "Personalize o logo do cabeçalho (máximo de 250 x 50px).",
 				settingsLogoEsri: "Logo da Esri",
 				settingsLogoNone: "Nenhum logo",
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Habilitar Descrição",
 				settingsBookmarksEnable: "Habilitar série do Oscilar",
 				settingsPopupDisable: "Habilitar pop-up",
-				settingsLocatorEnable: "ã_Enable locator_Ç",
+				settingsLocatorEnable: "Habilitar localizador",
 				settingsLegendHelpContent: "Para refinar o conteúdo da legenda, utilize a área de controle do visualizador de mapa da web do ArcGIS.com (Oculto na Legenda)",
 				settingsSeriesHelpContent: "Na primeira ativação, seus marcadores de mapas da web serão utilizados para preencher a barra de série. Se você desabilitar a opção de série posteriormente, a sua configuração de série não será descartada e estará disponível se você decidir habilitar a série novamente.",
 				preview: "Visualizar ID"

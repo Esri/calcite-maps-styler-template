@@ -1,7 +1,7 @@
 ﻿define(
 ({
   app:{
-   title:"須_Map Carousel_鷗",
+   title:"マップ カルーセル",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
       createMap: "マップを作成できません",

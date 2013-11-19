@@ -6,7 +6,7 @@
       filterInstructions: "Filtruj warstwę według wprowadzonych wartości.",
       filterOr: "Którekolwiek z podanych wyrażeń musi być prawdziwe.",
       filterAnd: "Wszystkie podane wyrażenia muszą być prawdziwe.",
-      filterNo: "ł_Web map does not contain any interactive filters._ą",
+      filterNo: "Mapa internetowa nie zawiera żadnych filtrów interaktywnych.",
       errors:{
         message: "Wystąpił problem podczas filtrowania aplikacji"
       }

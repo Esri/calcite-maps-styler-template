@@ -6,7 +6,7 @@
       filterInstructions: "تنقية الطبقة بتحديد القيم.",
       filterOr: "يجب أن يكون أحد التعبيرات التالية صحيحًا.",
       filterAnd: "يجب أن تكون جميع التعبيرات التالية صحيحة.",
-      filterNo: "بيت_Web map does not contain any interactive filters._لاحقة",
+      filterNo: "لا تحتوي خريطة الويب على أي عوامل تنقية تفاعلية.",
       errors:{
         message: "حدثت مشكلة أثناء إنشاء تطبيقات المُنقيات"
       }

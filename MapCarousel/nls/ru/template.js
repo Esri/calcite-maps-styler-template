@@ -1,7 +1,7 @@
 ﻿define(
 ({
   app:{
-   title:"Ж_Map Carousel_Я",
+   title:"Карусель карт",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
       createMap: "Не удалось создать карту",

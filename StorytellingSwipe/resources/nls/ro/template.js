@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Unele modificări necesită salvarea şi reîncărcarea aplicaţiei"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Strat tematic Swipe",
-				settingsDataModelExplainSwipe: "Alegeţi stratul tematic sau harta web care va apărea şi dispărea cu Swipe.",
+				settingsTabDataModel: "Ă_Swipe Type_ș",
+				settingsDataModelExplainSwipe: "Ă_What do you want users to swipe?_ș",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Alegeţi stratul tematic sau harta web care va apărea în ochean.",
-				settingsDataModelOneMap: "O hartă web, un singur strat tematic",
-				settingsDataModel1Explain: "Selectaţi un strat tematic de controlat de către instrumentul Swipe.",
+				settingsDataModelOneMap: "Ă_A layer in a web map_ș",
+				settingsDataModel1Explain: "Ă_Select the layer you want to be swiped_ș",
 				settingsDataModel1Warning: "Dacă stratul tematic este ascuns de straturi tematice superioare, preluarea nu va avea niciun efect.",
 				settingsDataModel1SpyGlassExplain: "Selectaţi stratul tematic care să apară în ochean.",
 				settingsDataModelTwoMaps: "Două hărţi web",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Selectaţi acest tip",
 				settingsDataModel2Explain: "Swipe cu altă hartă web.",
 				settingsDataModel2SpyGlassExplain: "Aduceţi în prim-plan altă hartă web.",
-				settingsDataModel2HelpTitle: "Cum găsiţi ID-urile hărţilor web",
+				settingsDataModel2HelpTitle: "Ă_How do I find a web map's ID?_ș",
 				settingsDataModel2HelpContent: "Copiaţi şi lipiţi cifre după semnul „=” în URL-ul hărţii web"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "Activare legendă",
 				settingsDescriptionEnable: "Activare descriere",
 				settingsBookmarksEnable: "Activare serii Swipe",
-				settingsPopupDisable: "Ă_Enable popup_ș",
+				settingsPopupDisable: "Activare pop-up",
+				settingsLocationSearchEnable: "Ă_Enable locator search_ș",
+				settingsGeolocatorEnable: "Ă_Enable geolocator_ș",
 				settingsLegendHelpContent: "Pentru a rafina conţinutul legendei, utilizaţi cuprinsului aplicaţiei de vizualizare a hărţilor web din ArcGIS.com (Ascunderea în legendă)",
-				settingsSeriesHelpContent: "Ă_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ș",
-				preview: "Previzualizare interfaţă cu utilizatorul"
+				settingsSeriesHelpContent: "Ă_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ș", 
+				preview: "Previzualizare interfaţă cu utilizatorul",
+				settingsLocateButtonExplain: "Ă_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ș",
+				settingsLocateButton: "Ă_Enable a 'Locate' button supported browsers_ș",
+				settingsAddressSearch: "Ă_Enable an address search tool_ș"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Mesaj pop-up",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Bine aţi venit la builderul instrumentului de preluare",
 				modalNext: "Înainte",
+				modalPrev: "Ă_Previous_ș",
 				modalApply: "Deschidere aplicaţie"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Descriere",
 				discard: "Eliminare semn de carte",
 				saveExtent: "Setare extindere semn de carte",
-				discardDisabled: "Ă_You can't remove that bookmark. Swipe series can be disabled in the Settings._ș"
+				discardDisabled: "Nu puteţi elimina acest semn de carte. Seriile Swipe pot fi dezactivate din Setări."
 			}
 		}
     })

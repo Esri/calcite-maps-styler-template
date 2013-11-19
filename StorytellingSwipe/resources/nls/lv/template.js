@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Lai dažas no jūsu veiktajām izmaiņām stātos spēkā, ir nepieciešams saglabāt un atkārtoti ielādēt aplikāciju."
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Pārvilkšanas slānis",
-				settingsDataModelExplainSwipe: "Izvēlieties slāni vai web karti, kas tiks radīta, bet pārvelkot vairs netiks rādīta.",
+				settingsTabDataModel: "ķ_Swipe Type_ū",
+				settingsDataModelExplainSwipe: "ķ_What do you want users to swipe?_ū",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Izvēlieties slāni vai web karti, kas tiks rādīta tālskatī.",
-				settingsDataModelOneMap: "Viena web karte, viens slānis",
-				settingsDataModel1Explain: "Izvēlieties slāni, ko kontrolēs pārvilkšanas rīks.",
+				settingsDataModelOneMap: "ķ_A layer in a web map_ū",
+				settingsDataModel1Explain: "ķ_Select the layer you want to be swiped_ū",
 				settingsDataModel1Warning: "Ja slānis ir paslēpts augšējos slāņos, pārvilkšanai nebūs nekāda efekta.",
 				settingsDataModel1SpyGlassExplain: "Izvēlieties slāni, ko parādīt tālskatī.",
 				settingsDataModelTwoMaps: "Divas web kartes",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Izvēlieties šo tipu",
 				settingsDataModel2Explain: "Pārvilkt ar citu web karti.",
 				settingsDataModel2SpyGlassExplain: "Atklāt citu web karti.",
-				settingsDataModel2HelpTitle: "Kā atrast web kartes ID",
+				settingsDataModel2HelpTitle: "ķ_How do I find a web map's ID?_ū",
 				settingsDataModel2HelpContent: "Kopēt un ielīmēt ciparus aiz zīmes "=" vietrādī URL no web kartes"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "Iespējot leģendu",
 				settingsDescriptionEnable: "Iespējot aprakstu",
 				settingsBookmarksEnable: "Iespējot sēriju Pārvilkt",
-				settingsPopupDisable: "ķ_Enable popup_ū",
+				settingsPopupDisable: "Iespējot uznirstošo logu",
+				settingsLocationSearchEnable: "ķ_Enable locator search_ū",
+				settingsGeolocatorEnable: "ķ_Enable geolocator_ū",
 				settingsLegendHelpContent: "Lai attīrītu leģendas saturu izmantojiet ArcGIS.com web kartes skatītāja satura tabulu (Paslēpt leģendā)",
-				settingsSeriesHelpContent: "ķ_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ū",
-				preview: "Saskarnes priekšskatījums"
+				settingsSeriesHelpContent: "ķ_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ū", 
+				preview: "Saskarnes priekšskatījums",
+				settingsLocateButtonExplain: "ķ_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ū",
+				settingsLocateButton: "ķ_Enable a 'Locate' button supported browsers_ū",
+				settingsAddressSearch: "ķ_Enable an address search tool_ū"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Uznirstošie logi",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Laipni lūdzam pārvilkšanas veidotājā",
 				modalNext: "Nākošais",
+				modalPrev: "ķ_Previous_ū",
 				modalApply: "Atveriet lietotni"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Apraksts",
 				discard: "Atmest grāmatzīmi",
 				saveExtent: "Iesatīt grāmatzīmes pārklājumu",
-				discardDisabled: "ķ_You can't remove that bookmark. Swipe series can be disabled in the Settings._ū"
+				discardDisabled: "Jūs nevarat noņemt grāmatzīmi. Pārvilktās sērijas var tikt atiespējotas iestatījumu sadaļā."
 			}
 		}
     })

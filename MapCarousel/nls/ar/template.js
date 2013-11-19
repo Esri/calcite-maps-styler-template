@@ -1,7 +1,7 @@
 ﻿define(
 ({
   app:{
-   title:"بيت_Map Carousel_لاحقة",
+   title:"مكتبة الخريطة",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
       createMap: "يتعذر إنشاء الخريطة",

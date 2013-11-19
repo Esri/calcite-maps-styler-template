@@ -1,17 +1,17 @@
-define(
+ï»¿define(
 ({
   viewer:{
     main:{
       scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
-      legendLabel: "Teckenförklaring",
+      legendLabel: "TeckenfÃ¶rklaring",
       descriptionLabel: "Beskrivning"
     },
     errors:{
-      createMap: "Å_Unable to create map_ö",
+      createMap: "Det gick inte att skapa kartan",
       general: "Fel"
     },
     footer:{
-    	label: "En karta från:"
+    	label: "En karta frÃ¥n:"
     }
   }
 })

@@ -1,7 +1,7 @@
 ﻿define(
 ({
   app:{
-   title:"ł_Map Carousel_ą",
+   title:"Mapa z widokiem ciągłego przewijania",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
       createMap: "Nie można utworzyć mapy",

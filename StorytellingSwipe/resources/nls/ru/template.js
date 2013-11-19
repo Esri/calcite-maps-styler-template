@@ -6,7 +6,7 @@
 				step2: "ЗАГРУЗКА ДАННЫХ",
 				step3: "ИНИЦИАЛИЗАЦИЯ",
 				fail: "Загрузка инструмента Шторка (Swipe) не удалась",
-				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОМПОНОВКИ",
+				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОНСТРУКТОРА",
 				failButton: "Повторить"
 			},
 			errors: {
@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Некоторые внесенные изменения требуют сохранения и перезагрузки приложения"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Слой Шторка (Swipe)",
-				settingsDataModelExplainSwipe: "Выберите слой или веб-карту, которые будут появляться и исчезать за шторкой.",
+				settingsTabDataModel: "Ж_Swipe Type_Я",
+				settingsDataModelExplainSwipe: "Ж_What do you want users to swipe?_Я",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Выберите слой или веб-карту, которые появятся в подзорной трубе.",
-				settingsDataModelOneMap: "Одна веб-карта, простой слой",
-				settingsDataModel1Explain: "Выберите слой, который будет контролироваться инструментом Шторка (Swipe).",
+				settingsDataModelOneMap: "Ж_A layer in a web map_Я",
+				settingsDataModel1Explain: "Ж_Select the layer you want to be swiped_Я",
 				settingsDataModel1Warning: "Если слой скрыт под другими слоями, использование шторки не даст никакого результата.",
 				settingsDataModel1SpyGlassExplain: "Выберите слой, появляющийся в подзорной трубе.",
 				settingsDataModelTwoMaps: "Две веб-карты",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Выбрать этот тип",
 				settingsDataModel2Explain: "Спрятать под другой веб-картой.",
 				settingsDataModel2SpyGlassExplain: "Показать другую веб-карту.",
-				settingsDataModel2HelpTitle: "Как найти ID веб карты",
+				settingsDataModel2HelpTitle: "Ж_How do I find a web map's ID?_Я",
 				settingsDataModel2HelpContent: "Скопируйте и вставьте цифры, расположенные после знака '=' в URL веб-карты"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "Включить легенду",
 				settingsDescriptionEnable: "Включить описание",
 				settingsBookmarksEnable: "Включить несколько шторок",
-				settingsPopupDisable: "Ж_Enable popup_Я",
+				settingsPopupDisable: "Включить всплывающее окно",
+				settingsLocationSearchEnable: "Ж_Enable locator search_Я",
+				settingsGeolocatorEnable: "Ж_Enable geolocator_Я",
 				settingsLegendHelpContent: "Для настройки содержания легенды используйте таблицу содержания вьюера веб-карт ArcGIS.com (Скрыть в легенде)",
-				settingsSeriesHelpContent: "Ж_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._Я",
-				preview: "Просмотр UI"
+				settingsSeriesHelpContent: "Ж_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._Я", 
+				preview: "Просмотр UI",
+				settingsLocateButtonExplain: "Ж_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Я",
+				settingsLocateButton: "Ж_Enable a 'Locate' button supported browsers_Я",
+				settingsAddressSearch: "Ж_Enable an address search tool_Я"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Всплывающая информация",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Начало работы со Шторкой",
 				modalNext: "Далее",
+				modalPrev: "Ж_Previous_Я",
 				modalApply: "Открыть приложение"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Описание",
 				discard: "Сброс закладки",
 				saveExtent: "Задать экстент закладки",
-				discardDisabled: "Ж_You can't remove that bookmark. Swipe series can be disabled in the Settings._Я"
+				discardDisabled: "Вы не можете удалить эту закладку. Серию шторок можно отключить в Настройках."
 			}
 		}
     })

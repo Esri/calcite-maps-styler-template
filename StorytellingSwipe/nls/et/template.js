@@ -6,7 +6,7 @@
 				step2: "ANDMETE LAADIMINE",
 				step3: "LÄHTESTAMINE",
 				fail: "Vabandust, rullimisvahendi laadimine nurjus",
-				loadBuilder: "Š_SWITCHING TO BUILDER MODE_ä",
+				loadBuilder: "LÜLITA ÜMBER KOOSTAMISE REŽIIMILE",
 				failButton: "Proovi uuesti"
 			},
 			errors: {
@@ -14,7 +14,7 @@
 				portalSelf: "Totaalne viga: Portaali seadistuse hankimine nurjus",
 				invalidConfig: "Totaalne viga: vigane konfiguratsioon",
 				invalidConfigNoWebmap: "Totaalne viga: Vigane konfiguratsioon (ühtegi veebikaarti ei ole määratud)",
-				createMap: "Š_Unable to create map_ä",
+				createMap: "Võimetu kaarti looma",
 				invalidApp: "Totaalne viga: Rakendust ei saa laadida",
 				initMobile: "Tere tulemast rullimise veebirakendusse. Antud rakendus ei ole seadistatud. Interaktiivne koostaja ei ole mobiilsetes seadmetes toetatud.",
 				noBuilderIE8: "Rullimise interaktiivne koostaja ei ole toetatud Internet Explorer 9 eelse(te)s  versiooni(de)s.",
@@ -48,7 +48,7 @@
 				buttonItem: "Ava veebirakenduse sisu",
 				noPendingChange: "Ühtegi muudatust ei ole ootel",
 				unSavedChangeSingular: "1 mittesalvestatud muudatus",
-				unSavedChangePlural: "mittesalvestatud muudatused",
+				unSavedChangePlural: "mittesalvestatud muudatust",
 				popoverDiscard: "Olete kindel, et soovite loobuda salvestamata muudatustest?",
 				yes: "Jah",
 				no: "Ei",
@@ -65,7 +65,7 @@
 				signInTwo: ", et salvestada rakendus."
 			},
 			header:{
-				editMe: "Š_Click to edit description_ä",
+				editMe: "Kliki kirjelduse muutmiseks",
 				templateTitle: "Määra mallile pealkiri",
 				templateSubtitle: "Määra mallile alampealkiri"
 			},
@@ -128,8 +128,8 @@
 				settingsLayoutExplain: "Vali rullimisvahendi stiil.",
 				settingsLayoutSwipe: "Vertikaalne riba",
 				settingsLayoutSpyGlass: "Pikksilm",
-				settingsLayoutSelected: "Valitud kujundus",
-				settingsLayoutSelect: "Vali see kujundus",
+				settingsLayoutSelected: "Valitud paigutus",
+				settingsLayoutSelect: "Vali see paigutus",
 				settingsSaveConfirm: "Mõned muudatustest eeldavad, et salvestad tööseisu ning avad rakenduse uuesti"
 			},
 			settingsDataModel: {
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Lülita kirjeldus sisse",
 				settingsBookmarksEnable: "Võimalda rullimise seeriad",
 				settingsPopupDisable: "Luba hüpikaken",
-				settingsLocatorEnable: "Š_Enable locator_ä",
+				settingsLocatorEnable: "Luba lokaator",
 				settingsLegendHelpContent: "Legendi sisu täpsustamiseks kasuta ArcGIS.com veebikaardi akna kihtide loendit (peidetud legendi)",
 				settingsSeriesHelpContent: "Esimesel aktiveerimisel kasutatakse Teie lõpliku veebikaardi järjehoidjaid seeriate eelmääramiseks. Kui lülitate parameetri hiljem välja, Teie seeriate seadistusest ei loobuta ja see on kättesaadav taas kui te otsustate seeria taas lubada.",
 				preview: "UI vaade"

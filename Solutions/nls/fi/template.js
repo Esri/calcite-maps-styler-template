@@ -22,8 +22,8 @@ define(
             search: "Etsi",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Nykyinen sijainti",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Lähetä korjaus",  // Command button to submit a correction to the app's host
-            collect: "Å_Add content to map_ö",  // Command button to open a template picker to add features to the map
-            filter: "Å_Filter map layers_ö",  // Explains purpose of type-in box affiliated with template picker
+            collect: "Lisää sisältöä karttaan",  // Command button to open a template picker to add features to the map
+            filter: "Suodata karttatasot",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Vaihda taustakartta",  // Command button to open a dialog box for switching basemaps
             share: "Jaa",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Jaa sähköpostitse",  // Command button to share the current map extents via email

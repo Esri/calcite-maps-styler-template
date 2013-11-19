@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "تتطلب بعض من التغيرات حفظ التطبيق وإعادة تحميله مرة أخرى"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "طبقة السحب",
-				settingsDataModelExplainSwipe: "اختر الطبقة أو خريطة الويب التي ستظهر وتختفي أثناء السحب.",
+				settingsTabDataModel: "بيت_Swipe Type_لاحقة",
+				settingsDataModelExplainSwipe: "بيت_What do you want users to swipe?_لاحقة",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "اختر الطبقة أو خريطة الويب التي ستظهر في المنظار.",
-				settingsDataModelOneMap: "خريطة ويب واحدة وطبقة فردية",
-				settingsDataModel1Explain: "حدد الطبقة ليتم التحكم فيها من قبل أداة السحب.",
+				settingsDataModelOneMap: "بيت_A layer in a web map_لاحقة",
+				settingsDataModel1Explain: "بيت_Select the layer you want to be swiped_لاحقة",
 				settingsDataModel1Warning: "إذا كانت الطبقة مختفية من قبل الطبقات العلوية، لن يكون السحب ذو تأثير يذكر.",
 				settingsDataModel1SpyGlassExplain: "حدد الطبقة لتظهر داخل المنظار.",
 				settingsDataModelTwoMaps: "اثنان من خرائط الويب",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "حدد هذا النوع",
 				settingsDataModel2Explain: "اسحب مع خريطة ويب أخرى",
 				settingsDataModel2SpyGlassExplain: "كشف خريطة ويب أخرى.",
-				settingsDataModel2HelpTitle: "كيفية إيجاد معرف خريطة الويب",
+				settingsDataModel2HelpTitle: "بيت_How do I find a web map's ID?_لاحقة",
 				settingsDataModel2HelpContent: "انسخ والصق الأرقام بعد علامة "=" داخل عنوان URL لخريطة الويب"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "تمكين وسيلة الإيضاح",
 				settingsDescriptionEnable: "تمكين الوصف",
 				settingsBookmarksEnable: "تمكين سلاسل السحب",
-				settingsPopupDisable: "بيت_Enable popup_لاحقة",
+				settingsPopupDisable: "تمكين عنصر منبثق",
+				settingsLocationSearchEnable: "بيت_Enable locator search_لاحقة",
+				settingsGeolocatorEnable: "بيت_Enable geolocator_لاحقة",
 				settingsLegendHelpContent: "لتحسين محتوى مفتاح الخريطة، استخدم جدول محتويات عارض خريطة الويب ArcGIS.com (مخفي في وسيلة الإيضاح)",
-				settingsSeriesHelpContent: "بيت_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._لاحقة",
-				preview: "معاينة واجهة المستخدم"
+				settingsSeriesHelpContent: "بيت_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._لاحقة", 
+				preview: "معاينة واجهة المستخدم",
+				settingsLocateButtonExplain: "بيت_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._لاحقة",
+				settingsLocateButton: "بيت_Enable a 'Locate' button supported browsers_لاحقة",
+				settingsAddressSearch: "بيت_Enable an address search tool_لاحقة"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "العنصر المنبثق",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "مرحبًا بك في منشئ السحب",
 				modalNext: "التالي",
+				modalPrev: "بيت_Previous_لاحقة",
 				modalApply: "فتح التطبيق"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "الوصف",
 				discard: "تجاهل العلامة المرجعية",
 				saveExtent: "تعيين نطاق العلامة المرجعية",
-				discardDisabled: "بيت_You can't remove that bookmark. Swipe series can be disabled in the Settings._لاحقة"
+				discardDisabled: "لا يمكنك إزالة العلامة المرجعية. يمكن تعطيل سلسلة السحب في الإعدادات."
 			}
 		}
     })

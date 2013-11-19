@@ -22,8 +22,8 @@ define(
             search: "Sök",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Aktuell plats",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Skicka in rättelse",  // Command button to submit a correction to the app's host
-            collect: "Å_Add content to map_ö",  // Command button to open a template picker to add features to the map
-            filter: "Å_Filter map layers_ö",  // Explains purpose of type-in box affiliated with template picker
+            collect: "Lägg till innehåll i kartan",  // Command button to open a template picker to add features to the map
+            filter: "Filtrera kartlager",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Byt baskarta",  // Command button to open a dialog box for switching basemaps
             share: "Dela",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Dela via e-post",  // Command button to share the current map extents via email

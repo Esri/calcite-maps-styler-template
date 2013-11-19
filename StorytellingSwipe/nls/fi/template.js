@@ -6,7 +6,7 @@
 				step2: "LADATAAN DATAA",
 				step3: "KÄYNNISTETÄÄN",
 				fail: "Pyyhkäisyn lataus epäonnistui",
-				loadBuilder: "Å_SWITCHING TO BUILDER MODE_ö",
+				loadBuilder: "VAIHDETAAN RAKENNUSTILAAN",
 				failButton: "Yritä uudelleen"
 			},
 			errors: {
@@ -65,7 +65,7 @@
 				signInTwo: "sovelluksen tallentamiseksi."
 			},
 			header:{
-				editMe: "Å_Click to edit description_ö",
+				editMe: "Muokkaa kuvausta napsauttamalla",
 				templateTitle: "Määritä mallin nimi",
 				templateSubtitle: "Määritä mallin alaotsikko"
 			},
@@ -90,7 +90,7 @@
 				settingsLogoSocialExplain: "Mukauta ylätunnisteen oikean yläkulman linkki.",
 				settingsLogoSocialText: "Teksti",
 				settingsLogoSocialLink: "Linkki",
-				settingsLogoSocialDisabled: "Å_This feature has been disabled by the Administrator_ö"
+				settingsLogoSocialDisabled: "Järjestelmänvalvoja on poistanut tämän toiminnon käytöstä"
 			},
 			settingsExtent: {
 				settingsTabExtent: "Laajuus",
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Ota kuvaus käyttöön",
 				settingsBookmarksEnable: "Ota sarjapyyhkäisy käyttöön",
 				settingsPopupDisable: "Ota ponnahdusikkunat käyttöön",
-				settingsLocatorEnable: "Å_Enable locator_ö",
+				settingsLocatorEnable: "Ota paikannin käyttöön",
 				settingsLegendHelpContent: "Jos haluat määrittää selitteen sisällön, käytä ArcGIS.com-sivuston web-kartan katseluohjelman sisällysluetteloa (Piilota selitteessä)",
 				settingsSeriesHelpContent: "Kun otat asetuksen käyttöön ensimmäisen kerran, sarjapalkki täytetään valmiiksi web-kartan kirjanmerkkien avulla. Jos poistat sarjan asetuksen käytöstä myöhemmin, sarjan määrityksiä ei hylätä, vaan ne ovat käytettävissä, jos päätät ottaa sarjan käyttöön uudelleen.",
 				preview: "Käyttöliittymän esikatselu"

@@ -22,8 +22,8 @@ define(
             search: "Поиск",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Текущее местоположение",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Закрепить исправление",  // Command button to submit a correction to the app's host
-            collect: "Ж_Add content to map_Я",  // Command button to open a template picker to add features to the map
-            filter: "Ж_Filter map layers_Я",  // Explains purpose of type-in box affiliated with template picker
+            collect: "Добавить ресурсы на карту",  // Command button to open a template picker to add features to the map
+            filter: "Фильтрация слоев карты",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Переключить базовую карту",  // Command button to open a dialog box for switching basemaps
             share: "Общий доступ",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Отправить по электронной почте",  // Command button to share the current map extents via email

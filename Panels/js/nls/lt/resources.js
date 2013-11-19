@@ -1,17 +1,17 @@
-define(
+ï»¿define(
 ({
   viewer:{
     main:{
       scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
       legendLabel: "Legenda",
-      descriptionLabel: "Apraðas"
+      descriptionLabel: "ApraÅ¡as"
     },
     errors:{
-      createMap: "Þemëlapio sukurti nepavyko",
+      createMap: "Å½emÄ—lapio sukurti nepavyko",
       general: "Klaida"
     },
     footer:{
-    	label: "Þemëlapá sudarë:"
+    	label: "Å½emÄ—lapÄ¯ sudarÄ—:"
     }
   }
 })

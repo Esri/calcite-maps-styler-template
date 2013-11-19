@@ -10,14 +10,14 @@
         timeout:"请选择其他标签开始"
       },
       loading:{
-        message: "加载地图"
+        message: "正在加载地图"
       },
       sidePanel:{
         legendHeader: "图例"
       },
       datePatterns:{
-        datePattern: "试_MMMM d, yyyy_验",
-        yearPattern: "试_yyyy_验",
+        datePattern: "yyyy 年 M 月 d 日",
+        yearPattern: "yyyy 年",
         hourTimePattern: "H",
         minuteTimePattern: "H:mm",
         secondTimePattern: "H:mm:ss",

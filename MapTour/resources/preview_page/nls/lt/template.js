@@ -2,7 +2,7 @@
 ({
 		firstPane: {
 			head: "<span class='highlightText'>Žemėlapio turo šablonas</span> įgalina visus ArcGIS Online paskyrų lygius, įskaitant nemokamą viešą paskyrą, kurti ir redaguoti vietovėmis paremtus pasakojimus kombintuojant vazidus, tekstą ir žemėlapį iš:",
-			list0: "Į_Pictures stored in major online photo-sharing services like Flickr, Picasa and Facebook, or on any website or web server_š",
+			list0: "Nuotraukos, laikomos pagrindiniuose interneto nuotraukų talpyklose: Fickr, Picasa ir Facebook arba bet kuriame interneto serveryje",
 			list1: "Nuotraukos, dar nesaugomos internete, kurios bus saugomos kaip elementų paslaugų priedai (apribota tik ArcGIS for Organization vartotojams)"
 		},
 		secondPane: {
@@ -13,8 +13,8 @@
 		},
 		thirdPane: {
 			head: "Norėdami naudoti talpinamą žemėlapio turo šabloną, pradėkite kurdami žemėlapį ArcGIS Online internetinio žemėlapio peržiūros aplikacijoje (ji nebūtinai turi turėti sluoksnių), išsaugokite jį, o tuomet spauskite mygtuką Bendrinti. Bendrinimo dialoge pasirinkite "Sukurti internetinę aplikaciją", tuomet pasirinkite Žemėlapio turo šabloną iš atsiradusios šablonų galerijos ir sekite žingsniais, kuriuos matote. Kai konfigūruosite aplikaciją, automatiškai bus įgalintas interaktyvus redagavimas.<br /><br />Vartotojai, kurie nori išplėsti žemėlapio turų vartotojo sąsają arba pridėti funkcionalumo, gali:",
-			list0: "Į_Download the template from the <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps template page</a> and follow the included documentation_š", 
-			list1: "Į_Host the template on your own web server, or a third-party server_š"
+			list0: "Atsisiųsti šabloną iš <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Pristatomojo žemėlapio šablono puslapio</a> ir sekti dokumentaciją", 
+			list1: "Patalpinti šabloną savo, ar trečių šalių interneto serveryje"
 		},
 		fourthPane: {
 			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Aplankykite Esri pristatomųjų žemėlapių svetainę</a> tam, kad sužinotumėt daugiau kaip kurti ir dalintis pristatymais. Resursai apima:",

@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "清除",
-                "datePattern": "试_MMM d, yyyy_验" // added 2.5.2013
+                "datePattern": "yyyy 年 M 月 d 日" // added 2.5.2013
             },
             "errors": {
                 "createMap": "无法创建地图",
@@ -94,10 +94,10 @@
                 "ownerHeader": "所有者:",
                 "switchBasemap": "切换底图",
 				"getMobileApp": "获取应用程序",
-				"constraintsHeading":"试_Use Constraints_验",
-				"createdLabel":"试_Created_验",
-				"noDescription":"试_No description._验",
-				"detailsLabel":"试_Details_验"
+				"constraintsHeading":"使用限制",
+				"createdLabel":"创建时间",
+				"noDescription":"无描述。",
+				"detailsLabel":"详细信息"
             },
             "pagination": {
                 "previous": "上一页",

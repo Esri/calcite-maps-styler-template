@@ -65,7 +65,7 @@
 				signInTwo: "アプリケーションを保存してください。"
 			},
 			header:{
-				editMe: "須_Click to edit description_鷗",
+				editMe: "クリックして説明を編集します",
 				templateTitle: "テンプレートのタイトルの設定",
 				templateSubtitle: "テンプレートのサブタイトルの設定"
 			},
@@ -96,7 +96,7 @@
 				settingsTabExtent: "範囲",
 				settingsExtentExplain: "以下の対話型マップを使用して初期範囲を設定します。",
 				settingsExtentExplainBottom: "定義した範囲によって、Web マップの初期範囲が変更されます。スワイプ操作を実行する場合、その範囲は使用されないことに注意してください。",
-				settingsExtentDateLineError: "須_The extent cannot be across the meridian of 180° longitude_鷗",
+				settingsExtentDateLineError: "この範囲は、経度 180°の子午線を超えることはできません。",
 				settingsExtentDateLineError2: "範囲を計算中にエラーが発生しました",
 				settingsExtentDrawBtn: "新しい範囲の描画",
 				settingsExtentModifyBtn: "現在の範囲の編集",
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "説明を有効化",
 				settingsBookmarksEnable: "一連のスワイプを有効化",
 				settingsPopupDisable: "ポップアップの有効化",
-				settingsLocatorEnable: "須_Enable locator_鷗",
+				settingsLocatorEnable: "ロケータの有効化",
 				settingsLegendHelpContent: "凡例のコンテンツを更新するには、ArcGIS.com Web マップ ビューアのコンテンツ ウィンドウを使用します (凡例では非表示)",
 				settingsSeriesHelpContent: "最初に起動したときに、Web マップのブックマークが使用されて、一連のバーに値が事前入力されます。その後、その一連のオプションを無効にしても一連の構成は破棄されず、その一連のオプションを再び有効化すると利用できるようになります。",
 				preview: "UI のプレビュー"

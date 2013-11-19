@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "commentaires",
                 "modifiedLabel": "Dernière modification",
                 "by": "par",
-                "separator": "æ_,_Â"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Couches de réseaux sociaux",

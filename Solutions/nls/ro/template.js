@@ -22,8 +22,8 @@ define(
             search: "Căutare",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Locaţie curentă",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Trimitere corecţie",  // Command button to submit a correction to the app's host
-            collect: "Ă_Add content to map_ș",  // Command button to open a template picker to add features to the map
-            filter: "Ă_Filter map layers_ș",  // Explains purpose of type-in box affiliated with template picker
+            collect: "Adăugare conţinut în hartă",  // Command button to open a template picker to add features to the map
+            filter: "Filtrare straturi tematice de hartă",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Comutare hartă fundal",  // Command button to open a dialog box for switching basemaps
             share: "Partajare",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Partajare prin e-mail",  // Command button to share the current map extents via email

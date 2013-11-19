@@ -34,7 +34,7 @@
 			},
 			desktopView: {
 				storymapsText: "O hartă informativă",
-				builderButton: "Ă_Switch to builder mode_ș",
+				builderButton: "Comutare la modul Instrument de creare",
 				bitlyTooltip: "Obţinere link scurt către aplicaţie"
 			}
 		},
@@ -65,7 +65,7 @@
 				signInTwo: "pentru a salva aplicaţia."
 			},
 			header:{
-				editMe: "Ă_Click to edit description_ș",
+				editMe: "Clic pentru editarea descrierii",
 				templateTitle: "Setare titlu şablon",
 				templateSubtitle: "Setare subtitlu şablon"
 			},
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Activare descriere",
 				settingsBookmarksEnable: "Activare serii Swipe",
 				settingsPopupDisable: "Activare pop-up",
-				settingsLocatorEnable: "Ă_Enable locator_ș",
+				settingsLocatorEnable: "Activare Localizator",
 				settingsLegendHelpContent: "Pentru a rafina conţinutul legendei, utilizaţi cuprinsului aplicaţiei de vizualizare a hărţilor web din ArcGIS.com (Ascunderea în legendă)",
 				settingsSeriesHelpContent: "La prima activare, semnele de carte pentru hărţi web vor fi utilizate pentru a popula în prealabil bara seriei. Dacă dezactivaţi ulterior opţiunea, configuraţia seriei nu va fi eliminată şi va fi disponibilă dacă decideţi să activaţi seria din nou.",
 				preview: "Previzualizare interfaţă cu utilizatorul"

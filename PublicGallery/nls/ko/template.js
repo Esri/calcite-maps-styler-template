@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "지우기",
-                "datePattern": "한_MMM d, yyyy_빠" // added 2.5.2013
+                "datePattern": "MMM d, yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "맵을 생성할 수 없음",
@@ -94,10 +94,10 @@
                 "ownerHeader": "소유자:",
                 "switchBasemap": "베이스맵 전환",
 				"getMobileApp": "앱 가져오기",
-				"constraintsHeading":"한_Use Constraints_빠",
-				"createdLabel":"한_Created_빠",
-				"noDescription":"한_No description._빠",
-				"detailsLabel":"한_Details_빠"
+				"constraintsHeading":"사용 제약 조건",
+				"createdLabel":"생성됨",
+				"noDescription":"설명 없음",
+				"detailsLabel":"세부정보"
             },
             "pagination": {
                 "previous": "이전",

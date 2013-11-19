@@ -6,7 +6,7 @@
 				step2: "GEGEVENS LADEN",
 				step3: "INITIALISEREN",
 				fail: "Laden Swipe mislukt",
-				loadBuilder: "Ĳ_SWITCHING TO BUILDER MODE_ä",
+				loadBuilder: "OVERSCHAKELEN NAAR BUILDERMODUS",
 				failButton: "Opnieuw proberen"
 			},
 			errors: {
@@ -65,7 +65,7 @@
 				signInTwo: "om de applicatie op te slaan."
 			},
 			header:{
-				editMe: "Ĳ_Click to edit description_ä",
+				editMe: "Klikken om beschrijving te bewerken",
 				templateTitle: "Titel voor template instellen",
 				templateSubtitle: "Subtitel voor template instellen"
 			},
@@ -81,7 +81,7 @@
 			},
 			settingsHeader: {
 				settingsTabLogo: "Koptekst",
-				settingsLogoExplain: "Ĳ_Customize the header logo (maximum is 250 x 50px)._ä",
+				settingsLogoExplain: "Pas het logo van de koptekst aan (maximaal 250 x 50px).",
 				settingsLogoEsri: "Esri-logo",
 				settingsLogoNone: "Geen logo",
 				settingsLogoCustom: "Aangepast logo",
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Omschrijving inschakelen",
 				settingsBookmarksEnable: "Swipe-reeks inschakelen",
 				settingsPopupDisable: "Pop-up inschakelen",
-				settingsLocatorEnable: "Ĳ_Enable locator_ä",
+				settingsLocatorEnable: "Locator inschakelen",
 				settingsLegendHelpContent: "Om de inhoud van de legenda te verfijnen, gebruikt u de inhoudsopgave van de ArcGIS.com-webmap viewer (Verbergen in Legenda)",
 				settingsSeriesHelpContent: "Bij de eerste activering worden de bladwijzers voor uw webmaps gebruikt om de reeksbalk vooraf in te vullen. Als u de reeksoptie later uitschakelt, wordt uw reeksconfiguratie niet verwijderd en blijft deze beschikbaar als u de reeks opnieuw wilt inschakelen.",
 				preview: "Voorbeeldweergave UI"

@@ -65,7 +65,7 @@
 				signInTwo: "para guardar la aplicación."
 			},
 			header:{
-				editMe: "á_Click to edit description_Ó",
+				editMe: "Haz clic para editar la descripción",
 				templateTitle: "Establecer título de plantilla",
 				templateSubtitle: "Establecer subtítulo de plantilla"
 			},
@@ -90,7 +90,7 @@
 				settingsLogoSocialExplain: "Personaliza el enlace superior derecho del encabezado.",
 				settingsLogoSocialText: "Texto",
 				settingsLogoSocialLink: "Vínculo",
-				settingsLogoSocialDisabled: "á_This feature has been disabled by the Administrator_Ó"
+				settingsLogoSocialDisabled: "Esta función ha sido deshabilitada por el administrador"
 			},
 			settingsExtent: {
 				settingsTabExtent: "Extensión",
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Activar descripción",
 				settingsBookmarksEnable: "Activar series de comparativas",
 				settingsPopupDisable: "Habilitar ventana emergente",
-				settingsLocatorEnable: "á_Enable locator_Ó",
+				settingsLocatorEnable: "Habilitar localizador",
 				settingsLegendHelpContent: "Utiliza la tabla de contenido del visor de mapas web de ArcGIS.com (ocultar en leyenda) para delimitar el contenido de la leyenda.",
 				settingsSeriesHelpContent: "En el momento de la primera activación, tus marcadores de mapa web se usarán para completar previamente la barra de series. Si más tarde deshabilitas esa opción, tu configuración de series no se descartará y estará disponible si decides activar la serie de nuevo.",
 				preview: "Vista previa de la interfaz de usuario"

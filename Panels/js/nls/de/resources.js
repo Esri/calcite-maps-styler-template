@@ -1,4 +1,4 @@
-define(
+ï»¿define(
 ({
   viewer:{
     main:{
@@ -7,7 +7,7 @@ define(
       descriptionLabel: "Beschreibung"
     },
     errors:{
-      createMap: "ä_Unable to create map_Ü",
+      createMap: "Karte kann nicht erstellt werden",
       general: "Fehler"
     },
     footer:{

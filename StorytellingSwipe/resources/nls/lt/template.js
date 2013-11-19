@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Kai kurie jūsų pakeitimai reikalauja išsaugoti ir perkrauti aplikaciją"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Keitiklio sluoksnis",
-				settingsDataModelExplainSwipe: "Pasirinkite sluoksnį internetiniame žemėlapyje, kuris pasirodys iš išnyks naudojant keitiklį.",
+				settingsTabDataModel: "Į_Swipe Type_š",
+				settingsDataModelExplainSwipe: "Į_What do you want users to swipe?_š",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Pasirinkite sluoksnį arba internetinį žemėlapį, kuris atsiras po didinamuoju stiklu",
-				settingsDataModelOneMap: "Vienas internetinis žemėlapis, vienas sluoksnis",
-				settingsDataModel1Explain: "Pasirinkite sluoksnį, kontroliuojamą keitiklio įrankio.",
+				settingsDataModelOneMap: "Į_A layer in a web map_š",
+				settingsDataModel1Explain: "Į_Select the layer you want to be swiped_š",
 				settingsDataModel1Warning: "Jei sluoksnis paslėptas po aukščiau esančiais sluoksniais, keitiklis neturės jokio poveikio.",
 				settingsDataModel1SpyGlassExplain: "Pasirinkite sluoksnį, kuris atsiras po didinamuoju stiklu.",
 				settingsDataModelTwoMaps: "Du internetiniai žemėlapiai",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Pasirinkite šį tipą",
 				settingsDataModel2Explain: "Keisti kitu internetiniu žemėlapiu.",
 				settingsDataModel2SpyGlassExplain: "Atidengti kitą internetinį žemėlapį.",
-				settingsDataModel2HelpTitle: "Kaip surasti žemėlapių ID",
+				settingsDataModel2HelpTitle: "Į_How do I find a web map's ID?_š",
 				settingsDataModel2HelpContent: "Nukopijuokite skaičius po '=' ženklo, esančio internetinio žemėlapio URL"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "Įjungti legendą",
 				settingsDescriptionEnable: "Įjungti aprašą",
 				settingsBookmarksEnable: "Įjungti keitiklių serijas",
-				settingsPopupDisable: "Į_Enable popup_š",
+				settingsPopupDisable: "Įgalinti informacinį langą",
+				settingsLocationSearchEnable: "Į_Enable locator search_š",
+				settingsGeolocatorEnable: "Į_Enable geolocator_š",
 				settingsLegendHelpContent: "Legendos nustatymui naudokite ArcGIS.com internetinio žemėlapio peržiūros aplikacijos turinį (Paslėpti legendoje)",
-				settingsSeriesHelpContent: "Į_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._š",
-				preview: "Vartotojo sąsajos peržiūra"
+				settingsSeriesHelpContent: "Į_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._š", 
+				preview: "Vartotojo sąsajos peržiūra",
+				settingsLocateButtonExplain: "Į_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._š",
+				settingsLocateButton: "Į_Enable a 'Locate' button supported browsers_š",
+				settingsAddressSearch: "Į_Enable an address search tool_š"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Iškylantis langas",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Sveiki atvykę į Keitiklio kūrėją",
 				modalNext: "Toliau",
+				modalPrev: "Į_Previous_š",
 				modalApply: "Atidaryti aplikaciją"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Aprašas",
 				discard: "Pašalinti žymę",
 				saveExtent: "Nustatyti žymės aprėptį",
-				discardDisabled: "Į_You can't remove that bookmark. Swipe series can be disabled in the Settings._š"
+				discardDisabled: "Negalite pašalinti šios žymės. Keitiklio serijos gali būti išjungos nustatymuose."
 			}
 		}
     })

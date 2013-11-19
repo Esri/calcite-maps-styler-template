@@ -1,5 +1,5 @@
 ﻿define({
-  map: {
-    error: "Unable to create map"
-  }
+    map: {
+      error: "Unable to create map"
+    }
 });

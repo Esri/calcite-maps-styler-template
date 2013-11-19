@@ -1,7 +1,7 @@
 ﻿define(
 ({
   app:{
-   title:"é_Map Carousel_È",
+   title:"Sequenza mappe",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
       createMap: "Impossibile creare la mappa",

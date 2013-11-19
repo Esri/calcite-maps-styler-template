@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "נקה",
-                "datePattern": "כן_MMM d, yyyy_ש" // added 2.5.2013
+                "datePattern": "MMM d, yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "לא ניתן ליצור מפה",
@@ -94,10 +94,10 @@
                 "ownerHeader": "יוצר:",
                 "switchBasemap": "החלף מפת בסיס",
 				"getMobileApp": "השג אפליקציה",
-				"constraintsHeading":"כן_Use Constraints_ש",
-				"createdLabel":"כן_Created_ש",
-				"noDescription":"כן_No description._ש",
-				"detailsLabel":"כן_Details_ש"
+				"constraintsHeading":"השתמש במגבלות",
+				"createdLabel":"נוצר",
+				"noDescription":"אין תיאור.",
+				"detailsLabel":"פרטים"
             },
             "pagination": {
                 "previous": "קודם",

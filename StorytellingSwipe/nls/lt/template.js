@@ -24,7 +24,7 @@
 				notAuthorized: "Neturite teisių pasiekti šią aplikaciją",
 				conflictingProjectionsTitle: "Nesuderinamos projekcijos",
 				conflictingProjections: "Keitiklis nepalaiko dviejų internetinių žemėlapių su skirtingomis projekcijomis. Atidarykite nustatymus ir naudokite internetinį žemėlapį, naudojantį tą pačią projekciją kaip ir pirmasis internetinis žemėlapis.",
-				cpButton: "Į_Close_š"
+				cpButton: "Užverti"
 			},
 			mobileView: {
 				hideIntro: "SLĖPTI ĮŽANGĄ",
@@ -65,7 +65,7 @@
 				signInTwo: "aplikacijai įrašyti."
 			},
 			header:{
-				editMe: "Į_Click to edit description_š",
+				editMe: "Spustelkite norėdami redaguoti aprašą",
 				templateTitle: "Nustatyti šablono antraštę",
 				templateSubtitle: "Nustatyti šablono poantraštę"
 			},
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Įjungti aprašą",
 				settingsBookmarksEnable: "Įjungti keitiklių serijas",
 				settingsPopupDisable: "Įgalinti informacinį langą",
-				settingsLocatorEnable: "Į_Enable locator_š",
+				settingsLocatorEnable: "Įgalinti logatorių",
 				settingsLegendHelpContent: "Legendos nustatymui naudokite ArcGIS.com internetinio žemėlapio peržiūros aplikacijos turinį (Paslėpti legendoje)",
 				settingsSeriesHelpContent: "Aktyvuojant pirmą kartą, jūsų internetinio(-ių) žemėlapio(-ių) žymės bus panaudotos preliminariai užpildant serijų juostą. Jei vėliau išjungsite šį pasirinkimą, jūsų serijų konfigūracija nebus pamestair bus galima jei nuspręsite vėl įgalinti serijas.",
 				preview: "Vartotojo sąsajos peržiūra"
@@ -178,11 +178,11 @@
 			},
 			initPopup: {
 				initHeader: "Sveiki atvykę į Keitiklio kūrėją",
-				modalNext: "Į_Next_š",
+				modalNext: "Sekantis",
 				modalApply: "Atidaryti aplikaciją"
 			},
 			seriesPanel: {
-				title: "Į_Title_š",
+				title: "Pavadinimas",
 				descr: "Aprašas",
 				discard: "Pašalinti žymę",
 				saveExtent: "Nustatyti žymės aprėptį",

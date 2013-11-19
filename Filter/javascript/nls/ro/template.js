@@ -6,7 +6,7 @@
       filterInstructions: "Filtraţi stratul tematic specificând valorile.",
       filterOr: "Oricare dintre expresiile următoare trebuie să fie adevărată.",
       filterAnd: "Toate expresiile următoare trebuie să fie adevărate.",
-      filterNo: "Ă_Web map does not contain any interactive filters._ș",
+      filterNo: "Harta web nu conţine niciun filtru interactiv.",
       errors:{
         message: "Problemă la crearea aplicaţiei de filtrare"
       }

@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Per alcune modifiche è necessario salvare e ricaricare l\'applicazione"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Sottrai layer",
-				settingsDataModelExplainSwipe: "Scegliere il layer o la mappa Web da visualizzare o nascondere con lo scorrimento con il dito.",
+				settingsTabDataModel: "é_Swipe Type_È",
+				settingsDataModelExplainSwipe: "é_What do you want users to swipe?_È",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Scegliere il layer o la mappa Web da visualizzare nel cannocchiale.",
-				settingsDataModelOneMap: "Una mappa Web, singolo layer",
-				settingsDataModel1Explain: "Selezionare un layer da controllare con lo strumento di scorrimento con il dito.",
+				settingsDataModelOneMap: "é_A layer in a web map_È",
+				settingsDataModel1Explain: "é_Select the layer you want to be swiped_È",
 				settingsDataModel1Warning: "Se il layer è nascosto dai layer superiori, lo scorrimento non ha alcun effetto.",
 				settingsDataModel1SpyGlassExplain: "Selezionare il layer da visualizzare nel cannocchiale.",
 				settingsDataModelTwoMaps: "Due mappe Web",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Seleziona questo tipo",
 				settingsDataModel2Explain: "Scorrimento con il dito con un\'altra mappa Web.",
 				settingsDataModel2SpyGlassExplain: "Mostra un\'altra mappa Web.",
-				settingsDataModel2HelpTitle: "Come trovare gli ID delle mappe Web",
+				settingsDataModel2HelpTitle: "é_How do I find a web map's ID?_È",
 				settingsDataModel2HelpContent: "Copiare e incollare le cifre dopo il segno \"=\" nell\'URL della mappa Web"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "Abilita legenda",
 				settingsDescriptionEnable: "Abilita descrizione",
 				settingsBookmarksEnable: "Abilita serie di scorrimenti con dito",
-				settingsPopupDisable: "é_Enable popup_È",
+				settingsPopupDisable: "Abilita popup",
+				settingsLocationSearchEnable: "é_Enable locator search_È",
+				settingsGeolocatorEnable: "é_Enable geolocator_È",
 				settingsLegendHelpContent: "Per definire il contenuto della legenda, utilizzare il sommario del map viewer Web di ArcGIS.com (Nascondi nella legenda)",
-				settingsSeriesHelpContent: "é_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._È",
-				preview: "Anteprima interfaccia utente"
+				settingsSeriesHelpContent: "é_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._È", 
+				preview: "Anteprima interfaccia utente",
+				settingsLocateButtonExplain: "é_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._È",
+				settingsLocateButton: "é_Enable a 'Locate' button supported browsers_È",
+				settingsAddressSearch: "é_Enable an address search tool_È"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Popup",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Benvenuto in Swipe Builder",
 				modalNext: "Avanti",
+				modalPrev: "é_Previous_È",
 				modalApply: "Apri l\'app"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Descrizione",
 				discard: "Annulla segnalibro",
 				saveExtent: "Impostare l\'estensione del segnalibro",
-				discardDisabled: "é_You can't remove that bookmark. Swipe series can be disabled in the Settings._È"
+				discardDisabled: "Impossibile rimuovere il segnalibro. È possibile disabilitare la serie di scorrimenti nelle impostazioni."
 			}
 		}
     })

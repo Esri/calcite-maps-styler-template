@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Für einige Änderungen muss die Anwendung gespeichert und neu geladen werden"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Layer für \"Ausblenden\"",
-				settingsDataModelExplainSwipe: "Layer oder Webkarte auswählen, der bzw. die mit \"Ausblenden\" ein- und ausgeblendet wird.",
+				settingsTabDataModel: "ä_Swipe Type_Ü",
+				settingsDataModelExplainSwipe: "ä_What do you want users to swipe?_Ü",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Layer oder Webkarte auswählen, der bzw. die im Fernglas angezeigt werden soll.",
-				settingsDataModelOneMap: "Eine Webkarte, einzelner Layer",
-				settingsDataModel1Explain: "Layer auswählen, der mit dem Werkzeug \"Ausblenden\" gesteuert wird.",
+				settingsDataModelOneMap: "ä_A layer in a web map_Ü",
+				settingsDataModel1Explain: "ä_Select the layer you want to be swiped_Ü",
 				settingsDataModel1Warning: "Wenn der Layer von darüberliegenden Layern verdeckt wird, hat \"Ausblenden\" keine Wirkung.",
 				settingsDataModel1SpyGlassExplain: "Layer auswählen, der im Fernglas angezeigt werden soll.",
 				settingsDataModelTwoMaps: "Zwei Webkarten",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Diesen Typ auswählen",
 				settingsDataModel2Explain: "Mit anderer Webkarte ausblenden.",
 				settingsDataModel2SpyGlassExplain: "Andere Webkarte einblenden.",
-				settingsDataModel2HelpTitle: "Suchen der Webkarten-ID",
+				settingsDataModel2HelpTitle: "ä_How do I find a web map's ID?_Ü",
 				settingsDataModel2HelpContent: "Kopieren Sie die Ziffern nach dem Zeichen '=' in der URL der Webkarte, und fügen Sie sie ein"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "Legende aktivieren",
 				settingsDescriptionEnable: "Beschreibung aktivieren",
 				settingsBookmarksEnable: "Ausblendereihe aktivieren",
-				settingsPopupDisable: "ä_Enable popup_Ü",
+				settingsPopupDisable: "Pop-up aktivieren",
+				settingsLocationSearchEnable: "ä_Enable locator search_Ü",
+				settingsGeolocatorEnable: "ä_Enable geolocator_Ü",
 				settingsLegendHelpContent: "Verwenden Sie das Inhaltsverzeichnis des ArcGIS.com-Webkarten-Viewers, um den Legendeninhalt zu optimieren (In Legende ausblenden)",
-				settingsSeriesHelpContent: "ä_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._Ü",
-				preview: "Benutzeroberflächen-Vorschau"
+				settingsSeriesHelpContent: "ä_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._Ü", 
+				preview: "Benutzeroberflächen-Vorschau",
+				settingsLocateButtonExplain: "ä_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Ü",
+				settingsLocateButton: "ä_Enable a 'Locate' button supported browsers_Ü",
+				settingsAddressSearch: "ä_Enable an address search tool_Ü"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Pop-up",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Willkommen beim Builder für \"Ausblenden\"",
 				modalNext: "Weiter",
+				modalPrev: "ä_Previous_Ü",
 				modalApply: "App öffnen"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Beschreibung",
 				discard: "Lesezeichen verwerfen",
 				saveExtent: "Lesezeichenausdehnung festlegen",
-				discardDisabled: "ä_You can't remove that bookmark. Swipe series can be disabled in the Settings._Ü"
+				discardDisabled: "Sie können dieses Lesezeichen nicht entfernen. Das Ausblenden von Reihen lässt sich in den Einstellungen deaktivieren."
 			}
 		}
     })

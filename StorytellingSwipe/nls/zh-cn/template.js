@@ -65,7 +65,7 @@
 				signInTwo: "保存应用程序。"
 			},
 			header:{
-				editMe: "试_Click to edit description_验",
+				editMe: "单击以编辑描述",
 				templateTitle: "设置模板标题",
 				templateSubtitle: "设置模板子标题"
 			},
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "启用描述",
 				settingsBookmarksEnable: "启用卷帘系列",
 				settingsPopupDisable: "启用弹出窗口",
-				settingsLocatorEnable: "试_Enable locator_验",
+				settingsLocatorEnable: "启用定位器",
 				settingsLegendHelpContent: "要优化图例内容，请使用 ArcGIS.com web 地图查看器内容列表(隐藏在图例中)",
 				settingsSeriesHelpContent: "首次激活时，将使用您的 web 地图书签预填充该系列条形图。如果您稍后禁用此系列选项，您的系列配置也不会被放弃，再次启用该系列时还可使用此系列配置。",
 				preview: "UI 预览"
@@ -178,7 +178,7 @@
 			},
 			initPopup: {
 				initHeader: "欢迎使用 Swipe Builder",
-				modalNext: "试_Next_验",
+				modalNext: "下一步",
 				modalApply: "打开应用程序"
 			},
 			seriesPanel: {

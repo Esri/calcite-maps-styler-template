@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Очистить",
-                "datePattern": "Ж_MMM d, yyyy_Я" // added 2.5.2013
+                "datePattern": "МММ д, гггг" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Не удалось создать карту",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Владелец:",
                 "switchBasemap": "Переключить базовую карту",
 				"getMobileApp": "Получить приложение",
-				"constraintsHeading":"Ж_Use Constraints_Я",
-				"createdLabel":"Ж_Created_Я",
-				"noDescription":"Ж_No description._Я",
-				"detailsLabel":"Ж_Details_Я"
+				"constraintsHeading":"Ограничения на использование",
+				"createdLabel":"Создано",
+				"noDescription":"Описание отсутствует.",
+				"detailsLabel":"Детали"
             },
             "pagination": {
                 "previous": "Предыдущий",

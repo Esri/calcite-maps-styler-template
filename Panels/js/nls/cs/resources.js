@@ -1,4 +1,4 @@
-define(
+ï»¿define(
 ({
   viewer:{
     main:{
@@ -7,7 +7,7 @@ define(
       descriptionLabel: "Popis"
     },
     errors:{
-      createMap: "Ø_Unable to create map_ù",
+      createMap: "Nelze vytvoÅ™it mapu",
       general: "Chyba"
     },
     footer:{

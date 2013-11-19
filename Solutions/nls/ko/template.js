@@ -22,8 +22,8 @@ define(
             search: "검색",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "현재 위치",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "보정 제출",  // Command button to submit a correction to the app's host
-            collect: "한_Add content to map_빠",  // Command button to open a template picker to add features to the map
-            filter: "한_Filter map layers_빠",  // Explains purpose of type-in box affiliated with template picker
+            collect: "맵에 컨텐츠 추가",  // Command button to open a template picker to add features to the map
+            filter: "맵 레이어 필터링",  // Explains purpose of type-in box affiliated with template picker
             basemap: "베이스맵 전환",  // Command button to open a dialog box for switching basemaps
             share: "공유",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "이메일을 통해 공유",  // Command button to share the current map extents via email

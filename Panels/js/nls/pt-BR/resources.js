@@ -1,13 +1,13 @@
-define(
+ï»¿define(
 ({
   viewer:{
     main:{
       scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
       legendLabel: "Legenda",
-      descriptionLabel: "Descrição"
+      descriptionLabel: "DescriÃ§Ã£o"
     },
     errors:{
-      createMap: "Não foi possível criar o mapa",
+      createMap: "NÃ£o foi possÃ­vel criar o mapa",
       general: "Erro"
     },
     footer:{

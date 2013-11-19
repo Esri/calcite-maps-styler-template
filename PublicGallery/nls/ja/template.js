@@ -4,12 +4,12 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "消去",
-                "datePattern": "須_MMM d, yyyy_鷗" // added 2.5.2013
+                "datePattern": "yyyy'年'M'月'd'日'" // added 2.5.2013
             },
             "errors": {
                 "createMap": "マップを作成できません",
                 "general": "エラー",
-                "bingError": "このアプリケーションを導入するには、ユーザ自身の Bing Maps キーが必要です。",
+                "bingError": "このアプリケーションを導入するには、Bing Maps キーの所有が必要です。",
                 "noLayers": "操作レイヤがありません",
                 "noSearchResults": "該当する結果は見つかりませんでした。",
 				"noGroupResults": "グループが見つかりませんでした。",
@@ -94,10 +94,10 @@
                 "ownerHeader": "所有者:",
                 "switchBasemap": "ベースマップの切り替え",
 				"getMobileApp": "アプリケーションの取得",
-				"constraintsHeading":"須_Use Constraints_鷗",
-				"createdLabel":"須_Created_鷗",
-				"noDescription":"須_No description._鷗",
-				"detailsLabel":"須_Details_鷗"
+				"constraintsHeading":"利用制限",
+				"createdLabel":"作成日",
+				"noDescription":"説明がありません。",
+				"detailsLabel":"詳細"
             },
             "pagination": {
                 "previous": "前へ",

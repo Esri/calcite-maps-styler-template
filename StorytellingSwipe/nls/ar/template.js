@@ -6,7 +6,7 @@
 				step2: "تحميل البيانات",
 				step3: "تهيئة",
 				fail: "للأسف، فشل تحميل السحب",
-				loadBuilder: "بيت_SWITCHING TO BUILDER MODE_لاحقة",
+				loadBuilder: "التبديل إلى وضع المنشئ",
 				failButton: "إعادة المحاولة"
 			},
 			errors: {
@@ -14,7 +14,7 @@
 				portalSelf: "خطأ فادح: فشل في الحصول على تكوين المدخل",
 				invalidConfig: "خطأ فادح: تكوين غير صحيح",
 				invalidConfigNoWebmap: "خطأ فادح: تكوين غير صحيح (لا توجد خرائط ويب محددة)",
-				createMap: "بيت_Unable to create map_لاحقة",
+				createMap: "تعذر إنشاء خريطة",
 				invalidApp: "خطأ فادح: لا يمكن تحميل التطبيق",
 				initMobile: "مرحبًا بك في تطبيق خريطة السحب. تعذر تكوين التطبيق. المنشئ التفاعلي غير مدعوم على أجهزة الجوال.",
 				noBuilderIE8: "منشئ السحب التفاعلي غير مدعوم على Internet Explorer فيما قبل الإصدار 9.",
@@ -65,7 +65,7 @@
 				signInTwo: "لحفظ التطبيق"
 			},
 			header:{
-				editMe: "بيت_Click to edit description_لاحقة",
+				editMe: "انقر لتحرير الوصف",
 				templateTitle: "تحديد عنوان القالب",
 				templateSubtitle: "تحديد العنوان الفرعي للقالب"
 			},
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "تمكين الوصف",
 				settingsBookmarksEnable: "تمكين سلاسل السحب",
 				settingsPopupDisable: "تمكين عنصر منبثق",
-				settingsLocatorEnable: "بيت_Enable locator_لاحقة",
+				settingsLocatorEnable: "تمكين محدد الموقع",
 				settingsLegendHelpContent: "لتحسين محتوى مفتاح الخريطة، استخدم جدول محتويات عارض خريطة الويب ArcGIS.com (مخفي في وسيلة الإيضاح)",
 				settingsSeriesHelpContent: "في التفعيل الأول، سيتم استخدام العلامات المرجعية لخرائط الويب لإعادة تعبئة شريط السلسلة. إذا قمت بتعطيل خيار السلسلة لاحقًا، لن يتم تجاهل تكوين السلسلة وسيتوفر عند تقرير تمكين السلسلة مجددًا.",
 				preview: "معاينة واجهة المستخدم"
@@ -183,7 +183,7 @@
 			},
 			seriesPanel: {
 				title: "العنوان",
-				descr: "بيت_Description_لاحقة",
+				descr: "الوصف",
 				discard: "تجاهل العلامة المرجعية",
 				saveExtent: "تعيين نطاق العلامة المرجعية",
 				discardDisabled: "لا يمكنك إزالة العلامة المرجعية. يمكن تعطيل سلسلة السحب في الإعدادات."

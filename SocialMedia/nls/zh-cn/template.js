@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "次评论",
                 "modifiedLabel": "上次修改时间",
                 "by": "修改者",
-                "separator": "试_,_验"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "社交媒体图层",

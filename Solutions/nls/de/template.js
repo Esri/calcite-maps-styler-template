@@ -22,8 +22,8 @@ define(
             search: "Suchen",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Aktuelle Position",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Korrektur senden",  // Command button to submit a correction to the app's host
-            collect: "ä_Add content to map_Ü",  // Command button to open a template picker to add features to the map
-            filter: "ä_Filter map layers_Ü",  // Explains purpose of type-in box affiliated with template picker
+            collect: "Inhalt zur Karte hinzufügen",  // Command button to open a template picker to add features to the map
+            filter: "Karten-Layer filtern",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Grundkarte wechseln",  // Command button to open a dialog box for switching basemaps
             share: "Freigeben",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Per E-Mail freigeben",  // Command button to share the current map extents via email

@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "kommentarer",
                 "modifiedLabel": "Sidst ændret",
                 "by": "af",
-                "separator": "ø_,_å"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Sociale Medier-lag",

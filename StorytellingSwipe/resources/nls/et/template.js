@@ -48,7 +48,7 @@
 				buttonItem: "Ava veebirakenduse sisu",
 				noPendingChange: "Ühtegi muudatust ei ole ootel",
 				unSavedChangeSingular: "1 mittesalvestatud muudatus",
-				unSavedChangePlural: "mittesalvestatud muudatused",
+				unSavedChangePlural: "mittesalvestatud muudatust",
 				popoverDiscard: "Olete kindel, et soovite loobuda salvestamata muudatustest?",
 				yes: "Jah",
 				no: "Ei",
@@ -76,7 +76,7 @@
 			},
 			settingsColors: {
 				settingsTabColor: "Teema",
-				settingsColorExplain: "Vali appi teema või määra  värvid.",
+				settingsColorExplain: "Vali apiga seotud teema või määra  värvid.",
 				settingsLabelColor: "Päise ja küljepaneeli taustvärvid"
 			},
 			settingsHeader: {
@@ -128,17 +128,17 @@
 				settingsLayoutExplain: "Vali rullimisvahendi stiil.",
 				settingsLayoutSwipe: "Vertikaalne riba",
 				settingsLayoutSpyGlass: "Pikksilm",
-				settingsLayoutSelected: "Valitud kujundus",
-				settingsLayoutSelect: "Vali see kujundus",
+				settingsLayoutSelected: "Valitud paigutus",
+				settingsLayoutSelect: "Vali see paigutus",
 				settingsSaveConfirm: "Mõned muudatustest eeldavad, et salvestad tööseisu ning avad rakenduse uuesti"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Rullitav kiht",
-				settingsDataModelExplainSwipe: "Vali kiht või veebikaart, mis ilmub ja kaob rullimisega.",
+				settingsTabDataModel: "Š_Swipe Type_ä",
+				settingsDataModelExplainSwipe: "Š_What do you want users to swipe?_ä",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Vali kiht või veebikaart, mis ilmub pikksilma.",
-				settingsDataModelOneMap: "Üks veebikaart, üks kiht",
-				settingsDataModel1Explain: "Vali kiht, mida kontrollib rullimisvahend.",
+				settingsDataModelOneMap: "Š_A layer in a web map_ä",
+				settingsDataModel1Explain: "Š_Select the layer you want to be swiped_ä",
 				settingsDataModel1Warning: "Rullimine ei mõju, kui vastav kiht on peidetud ülemiste kihtide alla.",
 				settingsDataModel1SpyGlassExplain: "Vali kiht, mis ilmub pikksilma.",
 				settingsDataModelTwoMaps: "Kaks veebikaarti",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Vali see tüüp",
 				settingsDataModel2Explain: "Rulli mõne teise veebikaardiga.",
 				settingsDataModel2SpyGlassExplain: "Ilmu teises veebikaardis.",
-				settingsDataModel2HelpTitle: "Kuidas leida veebikaardi ID-d",
+				settingsDataModel2HelpTitle: "Š_How do I find a web map's ID?_ä",
 				settingsDataModel2HelpContent: "Kopeeri ja kleebi numbrid pärast '=' märki veebikaardi URL sisust"
 			},
 			settingsLegend: {
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "Lülita legend sisse",
 				settingsDescriptionEnable: "Lülita kirjeldus sisse",
 				settingsBookmarksEnable: "Võimalda rullimise seeriad",
-				settingsPopupDisable: "Š_Enable popup_ä",
+				settingsPopupDisable: "Luba hüpikaken",
+				settingsLocationSearchEnable: "Š_Enable locator search_ä",
+				settingsGeolocatorEnable: "Š_Enable geolocator_ä",
 				settingsLegendHelpContent: "Legendi sisu täpsustamiseks kasuta ArcGIS.com veebikaardi akna kihtide loendit (peidetud legendi)",
-				settingsSeriesHelpContent: "Š_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ä",
-				preview: "UI vaade"
+				settingsSeriesHelpContent: "Š_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ä", 
+				preview: "UI vaade",
+				settingsLocateButtonExplain: "Š_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ä",
+				settingsLocateButton: "Š_Enable a 'Locate' button supported browsers_ä",
+				settingsAddressSearch: "Š_Enable an address search tool_ä"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Hüpikaken",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Tere tulemast rullimise koostajasse",
 				modalNext: "Järgmine",
+				modalPrev: "Š_Previous_ä",
 				modalApply: "Ava app"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Kirjeldus",
 				discard: "Loobu järjehoidjast",
 				saveExtent: "Määra järjehoidja ulatus",
-				discardDisabled: "Š_You can't remove that bookmark. Swipe series can be disabled in the Settings._ä"
+				discardDisabled: "Te ei saa seda järjehoidjat eemaldada. Vahetamise seeriaid saab keelata seadetest."
 			}
 		}
     })

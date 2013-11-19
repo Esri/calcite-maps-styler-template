@@ -65,7 +65,7 @@
 				signInTwo: "aby zapisać aplikację."
 			},
 			header:{
-				editMe: "ł_Click to edit description_ą",
+				editMe: "Kliknij, aby edytować opis",
 				templateTitle: "Ustaw tytuł szablonu",
 				templateSubtitle: "Ustaw podtytuł szablonu"
 			},
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Włącz opis",
 				settingsBookmarksEnable: "Włącz serię odsłaniania",
 				settingsPopupDisable: "Włącz okno podręczne",
-				settingsLocatorEnable: "ł_Enable locator_ą",
+				settingsLocatorEnable: "Włącz lokatora",
 				settingsLegendHelpContent: "Aby ulepszyć zawartość legendy, skorzystaj z tabeli zawartości przeglądarki map ArcGIS.com (Ukryj w legendzie)",
 				settingsSeriesHelpContent: "Podczas pierwszej aktywacji zakładki mapy internetowej zostaną użyte do wstępnego wypełnienia paska serii. Jeżeli wyłączysz później opcję serii, konfiguracja serii nie zostanie odrzucona i pozostanie dostępna, gdy zdecydujesz się ją włączyć ponownie.",
 				preview: "Podgląd interfejsu użytkownika"

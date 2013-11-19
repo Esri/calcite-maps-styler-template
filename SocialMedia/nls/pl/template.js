@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "komentarze/-y",
                 "modifiedLabel": "Ostatnia modyfikacja",
                 "by": "utworzone przez",
-                "separator": "ł_,_ą"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Warstwy mediów społecznościowych",

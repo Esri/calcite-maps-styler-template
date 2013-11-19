@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Wyczyść",
-                "datePattern": "ł_MMM d, yyyy_ą" // added 2.5.2013
+                "datePattern": "MMM d, rrrr" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Nie można utworzyć mapy",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Właściciel:",
                 "switchBasemap": "Przełącz mapę bazową",
 				"getMobileApp": "Pobierz aplikację",
-				"constraintsHeading":"ł_Use Constraints_ą",
-				"createdLabel":"ł_Created_ą",
-				"noDescription":"ł_No description._ą",
-				"detailsLabel":"ł_Details_ą"
+				"constraintsHeading":"Używaj ograniczeń",
+				"createdLabel":"Utworzone",
+				"noDescription":"Brak opisu",
+				"detailsLabel":"Szczegóły"
             },
             "pagination": {
                 "previous": "Wstecz",

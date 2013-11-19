@@ -26,7 +26,7 @@
       weekPattern: "yyyy.MM.dd",
       hourTimePattern: "H a",
       // e.g. for German: "HH:mm:ss:SSS"
-      millisecondTimePattern:"Į_h:m:ss.SSS a_š",
+      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "HH:mm",
       // e.g. for German: "HH:mm"
       monthPattern: "y MMMM, d",

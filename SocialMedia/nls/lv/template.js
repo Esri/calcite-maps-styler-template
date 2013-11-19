@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "komentāri",
                 "modifiedLabel": "Pēdējā modificēšana",
                 "by": "ar",
-                "separator": "ķ_,_ū"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "Social Media slāņi",

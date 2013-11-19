@@ -22,8 +22,8 @@ define(
             search: "Ieškoti",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
             locate: "Esama padėtis",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Pateikti korekciją",  // Command button to submit a correction to the app's host
-            collect: "Į_Add content to map_š",  // Command button to open a template picker to add features to the map
-            filter: "Į_Filter map layers_š",  // Explains purpose of type-in box affiliated with template picker
+            collect: "Pridėti turinį į žemėlapį",  // Command button to open a template picker to add features to the map
+            filter: "Filtruoti žemėlapio sluosnius",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Pakeisti pagrindo žemėlapį",  // Command button to open a dialog box for switching basemaps
             share: "Bendrinti",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Bendrinti naudojant el. paštą",  // Command button to share the current map extents via email

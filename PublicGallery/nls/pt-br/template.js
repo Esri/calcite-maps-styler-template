@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Limpar",
-                "datePattern": "ã_MMM d, yyyy_Ç" // added 2.5.2013
+                "datePattern": "d\' de \'MMMM\' de \'yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Não foi possível criar o mapa",
@@ -33,7 +33,7 @@
                 "itemTitle": "Visualizar mapas",
                 "gridSwitch": "Trocar para Visualização de Grade",
                 "listSwitch": "Trocar para Visualização de Lista",
-                "loadingText": "Carregando Maps&hellip;"
+                "loadingText": "Carregando Mapas&hellip;"
             },
 			"sortFields":{
 				"sortBy": "Classificar por",
@@ -94,10 +94,10 @@
                 "ownerHeader": "Proprietário:",
                 "switchBasemap": "Trocar Mapa Base",
 				"getMobileApp": "Obter Aplicativo",
-				"constraintsHeading":"ã_Use Constraints_Ç",
-				"createdLabel":"ã_Created_Ç",
-				"noDescription":"ã_No description._Ç",
-				"detailsLabel":"ã_Details_Ç"
+				"constraintsHeading":"Restrições de Uso",
+				"createdLabel":"Criado",
+				"noDescription":"Nenhuma descrição.",
+				"detailsLabel":"Detalhes"
             },
             "pagination": {
                 "previous": "Anterior",

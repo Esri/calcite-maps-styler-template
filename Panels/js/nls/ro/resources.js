@@ -1,9 +1,9 @@
-define(
+ï»¿define(
 ({
   viewer:{
     main:{
       scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
-      legendLabel: "Legendã",
+      legendLabel: "LegendÄƒ",
       descriptionLabel: "Descriere"
     },
     errors:{
@@ -11,7 +11,7 @@ define(
       general: "Eroare"
     },
     footer:{
-    	label: "O hartã de la:"
+    	label: "O hartÄƒ de la:"
     }
   }
 })

@@ -156,7 +156,7 @@
                 "commentsLabelPlural": "تعليقات",
                 "modifiedLabel": "آخر تعديل",
                 "by": "حسب",
-                "separator": "بيت_,_لاحقة"
+                "separator": ","
             },
             "social": {
                 "menuTitle": "طبقات الوسائط الاجتماعية",

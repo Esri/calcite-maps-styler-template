@@ -1,17 +1,17 @@
-define(
+ï»¿define(
 ({
   viewer:{
     main:{
       scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
-      legendLabel: "–}—á",
-      descriptionLabel: "à–¾"
+      legendLabel: "å‡¡ä¾‹",
+      descriptionLabel: "èª¬æ˜"
     },
     errors:{
-      createMap: "ƒ}ƒbƒv‚ğì¬‚Å‚«‚Ü‚¹‚ñ",
-      general: "ƒGƒ‰["
+      createMap: "ãƒãƒƒãƒ—ã‚’ä½œæˆã§ãã¾ã›ã‚“",
+      general: "ã‚¨ãƒ©ãƒ¼"
     },
     footer:{
-    	label: "ƒ}ƒbƒv‚ÌQÆŒ³:"
+    	label: "ãƒãƒƒãƒ—ã®å‚ç…§å…ƒ:"
     }
   }
 })

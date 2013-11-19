@@ -2,7 +2,7 @@
 ({
 		firstPane: {
 			head: "<span class='highlightText'>Шаблон Map Tour</span> позволяет всем пользователям ArcGIS Online, включая уровень бесплатного публичного доступа, создавать и редактировать подробное описание местоположения, включающее изображения, текст и карту из:",
-			list0: "Ж_Pictures stored in major online photo-sharing services like Flickr, Picasa and Facebook, or on any website or web server_Я",
+			list0: "Изображения, хранящиеся на онлайн-сервисах хранения изображений, таких как Flickr, Picasa и Facebook, либо на любом веб-сайте или веб-сервере",
 			list1: "Изображения, еще не размещенные в сети, которые будут храниться в качестве вложений сервиса объектов (ограничено для участников ArcGIS for Organization)"
 		},
 		secondPane: {
@@ -13,8 +13,8 @@
 		},
 		thirdPane: {
 			head: "Для работы с шаблоном размещенного обзорного тура начните с создания карты во вьюере веб-карт ArcGIS Online (она не обязательно должна содержать слои), сохраните ее, а затем щелкните кнопку Опубликовать (Share). В диалоговом окне Опубликовать (Share) выберите опцию Создать веб-приложение (Make a Web Application), а затем шаблон Map Tour из появившейся галереи шаблонов, после чего выполните дальнейшие шаги. При настройке приложения автоматически откроется интерактивный редактор.<br /><br />Для пользователей, желающих улучшить UI своего тура или добавить новые функциональные возможности, вы можете:",
-			list0: "Ж_Download the template from the <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps template page</a> and follow the included documentation_Я", 
-			list1: "Ж_Host the template on your own web server, or a third-party server_Я"
+			list0: "Загрузите шаблон со <a href='http://storymaps.esri.com/templategallery/' target='_blank'>страницы шаблонов Story Maps</a> и следуйте советам, содержащимся в документации", 
+			list1: "Опубликовать шаблон на собственном веб-сервере или на сервере третьей стороны"
 		},
 		fourthPane: {
 			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>См. сайт Esri Story Maps</a> чтобы узнать больше о создании и совместном использовании карт повествований. Ресурсы включают:",

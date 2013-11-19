@@ -65,7 +65,7 @@
 				signInTwo: "כדי לשמור את האפליקציה."
 			},
 			header:{
-				editMe: "כן_Click to edit description_ש",
+				editMe: "הקש לעריכת התאור",
 				templateTitle: "קבע כותרת תבנית",
 				templateSubtitle: "קבע כותרת משנה לתבנית"
 			},
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "הדלק תיאור",
 				settingsBookmarksEnable: "הדלק סדרת Swipe",
 				settingsPopupDisable: "אפשר חלון קופץ",
-				settingsLocatorEnable: "כן_Enable locator_ש",
+				settingsLocatorEnable: "הפעל מגדיר עיגון כתובות",
 				settingsLegendHelpContent: "כדי לעדן את תוכן המקרא, השתמש בתוכן העניינים של צפיין ה- ArcGIS.com web map (הסתר במקרא)",
 				settingsSeriesHelpContent: "באקטיבציה הראשונה, סימניות ה- web map ישמשו לאכלוס מראש של מוט הסדרה. אם תהפוך את אפשרות הסדרה ללא פעילה בשלב מאוחר יותר, תצורת הסדרה שלך תכלל ותהיה זמינה אם מחליטים לאפשר את הסדרה שוב.",
 				preview: "תצוגה מקדימה של UI"

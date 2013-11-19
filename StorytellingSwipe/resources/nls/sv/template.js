@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "En del av ändringarna kräver att du sparar och hämtar applikationen igen"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Sveplager",
-				settingsDataModelExplainSwipe: "Välj det lager eller den webbkarta som ska visas och försvinna när du sveper.",
+				settingsTabDataModel: "Å_Swipe Type_ö",
+				settingsDataModelExplainSwipe: "Å_What do you want users to swipe?_ö",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Välj det lager eller den webbkarta som ska visas i kikaren.",
-				settingsDataModelOneMap: "En webbkarta, ett lager",
-				settingsDataModel1Explain: "Välj ett lager som ska styras med svepverktyget.",
+				settingsDataModelOneMap: "Å_A layer in a web map_ö",
+				settingsDataModel1Explain: "Å_Select the layer you want to be swiped_ö",
 				settingsDataModel1Warning: "Om lagret är dolt av högre lager har det ingen effekt när du sveper.",
 				settingsDataModel1SpyGlassExplain: "Välj det lager som ska visas i kikaren.",
 				settingsDataModelTwoMaps: "Två webbkartor",
@@ -151,8 +151,8 @@
 				settingsDataModelSelect: "Välj den här typen",
 				settingsDataModel2Explain: "Svep med en annan webbkarta.",
 				settingsDataModel2SpyGlassExplain: "Visa en annan webbkarta.",
-				settingsDataModel2HelpTitle: "Hitta webbkart-ID",
-				settingsDataModel2HelpContent: "Kopiera och klistra in siffror efter tecknet '=' i webbkartans webbadress"
+				settingsDataModel2HelpTitle: "Å_How do I find a web map's ID?_ö",
+				settingsDataModel2HelpContent: "Kopiera och klistra in siffror efter tecknet \'=' i webbkartans webbadress"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Applikationslayout",
@@ -160,10 +160,15 @@
 				settingsLegendEnable: "Aktivera teckenförklaring",
 				settingsDescriptionEnable: "Aktivera beskrivning",
 				settingsBookmarksEnable: "Aktivera svepserie",
-				settingsPopupDisable: "Å_Enable popup_ö",
+				settingsPopupDisable: "Aktivera popup-fönster",
+				settingsLocationSearchEnable: "Å_Enable locator search_ö",
+				settingsGeolocatorEnable: "Å_Enable geolocator_ö",
 				settingsLegendHelpContent: "Om du vill förfina innehållsförteckningen använder du innehållsförteckningen i webbkartvyn på ArcGIS.com (Dölj i teckenförklaringen)",
-				settingsSeriesHelpContent: "Å_On first activation, your web map(s) bookmarks will be used to pre-populate the series bar. If you disable the series option later, your series configuration won't be discarded and will be available if you decide to enable the series again._ö",
-				preview: "Förhandsgranska användargränssnitt"
+				settingsSeriesHelpContent: "Å_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ö", 
+				preview: "Förhandsgranska användargränssnitt",
+				settingsLocateButtonExplain: "Å_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ö",
+				settingsLocateButton: "Å_Enable a 'Locate' button supported browsers_ö",
+				settingsAddressSearch: "Å_Enable an address search tool_ö"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Popupfönster",
@@ -178,6 +183,7 @@
 			initPopup: {
 				initHeader: "Välkommen till Svep-byggverktyget",
 				modalNext: "Nästa",
+				modalPrev: "Å_Previous_ö",
 				modalApply: "Öppna applikationen"
 			},
 			seriesPanel: {
@@ -185,7 +191,7 @@
 				descr: "Beskrivning",
 				discard: "Ignorera bokmärke",
 				saveExtent: "Ange utbredning för bokmärke",
-				discardDisabled: "Å_You can't remove that bookmark. Swipe series can be disabled in the Settings._ö"
+				discardDisabled: "Det går inte att ta bort det här bokmärket. Du kan inaktivera svepserier i inställningarna."
 			}
 		}
     })
