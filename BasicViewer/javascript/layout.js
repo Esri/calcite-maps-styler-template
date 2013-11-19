@@ -981,6 +981,8 @@ function addMeasurementWidget() {
 
     measure = new esri.dijit.Measurement({
         map: map,
+        defaultAreaUnit: (configOptions.units === "metric") ? "esriSquareKilometers" : "esriSquareMiles",
+        defaultLengthUnit: (configOptions.units === "metric") ? "esriKilometers" : "esriMiles",
         id: 'measureTool'
     }, 'measureDiv');
 
