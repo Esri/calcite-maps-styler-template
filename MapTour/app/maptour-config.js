@@ -32,6 +32,9 @@ APPCFG = {
 	POPUP_BORDER_COLOR: "#444444",
 	POPUP_ARROW_COLOR: "#444444",
 	
+	// Add a 'zoom on my location' button under the +/home/- buttons - only if browser is compatible (IE9) 
+	DISPLAY_LOCATE_BUTTON: false,
+	
 	MINIMUM_MAP_WIDTH: 450,
 	TIMEOUT_VIEWER_LOAD: 12000,
 	TIMEOUT_VIEWER_REQUEST: 8000,
@@ -51,8 +54,25 @@ APPCFG = {
 		thumb_url: ['thumb_url', 'thumb', 'thumbnail']
 	},
 	
-	// Pin has to be numbered from 1 to that value
+	// Maximum number of points in the tour
+	// If not using the USE_STATIC_ICON option, markers have to be numbered from 1 to that value
 	MAX_ALLOWED_POINTS: 99,
+	
+	//
+	// MAP MARKERS
+	//
+	
+	// Enable the use of static icons for map markers
+	// The carousel and mobile UI will continue to be numbered
+	USE_STATIC_ICON: {
+		enabled: false,
+		// The path can be relative or absolute
+		url: 'http://glazou.esri.com:8080/src/resources/markers/StaticIcon1.png',
+		// If width and height are defined here, markers won't have hover or selected effect
+		// To keep those effects, comment the following line and the value from ICON_CFG will be used
+		width: 34,
+		height: 34
+	},
 	// Ordered list of pin configuration (has to be lower case)
 	PIN_CFG: {
 		r: {
@@ -82,7 +102,7 @@ APPCFG = {
 			height: 28, 
 			offsetX: 3,
 			offsetY: 8,
-			// Normal state has to define the clip information for mobile components
+			// Normal state has to define the clip information for mobile UI (carousel, list and picture view)
 			clipRules: "clip: rect(0px, 22px, 22px, 0px); left: 13px; top: 13px; height:40px; width: 32px;"
 		},
 		hover: {
