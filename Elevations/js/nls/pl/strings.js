@@ -1,5 +1,5 @@
 ﻿define({
     map: {
-      error: "ł_Unable to create map_ą"
+      error: "Nie można utworzyć mapy"
     }
 });

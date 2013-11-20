@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Některé ze změn vyžadují uložení a opětovné spuštění aplikace"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Ř_Swipe Type_ů",
-				settingsDataModelExplainSwipe: "Ř_What do you want users to swipe?_ů",
+				settingsTabDataModel: "Typ překrývání",
+				settingsDataModelExplainSwipe: "Co chcete, aby uživatelé překrývali?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Vyberte vrstvu nebo webovou mapu, která se zobrazí v lupě.",
-				settingsDataModelOneMap: "Ř_A layer in a web map_ů",
-				settingsDataModel1Explain: "Ř_Select the layer you want to be swiped_ů",
+				settingsDataModelOneMap: "Vrstva ve webové mapě",
+				settingsDataModel1Explain: "Vyberte vrstvu, kterou chcete překrýt",
 				settingsDataModel1Warning: "Pokud je vrstva zakrytá svrchnějšími vrstvami, překrývání se nijak neprojeví.",
 				settingsDataModel1SpyGlassExplain: "Vyberte vrstvu, která se zobrazí v lupě.",
 				settingsDataModelTwoMaps: "Dvě webové mapy",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Povolit popis",
 				settingsBookmarksEnable: "Povolit série překrývání",
 				settingsPopupDisable: "Povolit vyskakovací obsah",
-				settingsLocationSearchEnable: "Ř_Enable locator search_ů",
-				settingsGeolocatorEnable: "Ř_Enable geolocator_ů",
+				settingsLocationSearchEnable: "Povolit vyhledávání lokátoru",
+				settingsGeolocatorEnable: "Povolit geolokátor",
 				settingsLegendHelpContent: "Chcete-li doplnit obsah legendy, použijte obsah prohlížeče webových map ArcGIS.com (Skrýt v legendě)",
-				settingsSeriesHelpContent: "Ř_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ů", 
+				settingsSeriesHelpContent: "Série překrývání je možnost navigace s pomocí karet, která diváka vede ke konkrétnímu rozsahu a zobrazí název a textový popis v postranním panelu. Během počáteční aktivace se importují záložky z webové mapy / webových map a použijí se k prvotnímu zaplnění lišty série. Zakázáním možnosti série lištu série vypnete, ale konfigurace série zůstane uložena pro budoucí použití.", 
 				preview: "Náhled uživatelského rozhraní",
-				settingsLocateButtonExplain: "Ř_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ů",
-				settingsLocateButton: "Ř_Enable a 'Locate' button supported browsers_ů",
-				settingsAddressSearch: "Ř_Enable an address search tool_ů"
+				settingsLocateButtonExplain: "Tato funkcionalita je podporována na většině mobilních zařízení a stolních prohlížečů (včetně Internet Explorer 9+).",
+				settingsLocateButton: "Povolit tlačítko 'Hledat' v podporovaných prohlížečích",
+				settingsAddressSearch: "Povolit nástroj pro vyhledávání adres"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Vyskakovací okno",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Vítá vás nástroj pro tvorbu překrývání.",
 				modalNext: "Další",
-				modalPrev: "Ř_Previous_ů",
+				modalPrev: "Předchozí",
 				modalApply: "Otevřít aplikaci"
 			},
 			seriesPanel: {

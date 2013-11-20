@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Niektóre z wprowadzonych zmian wymagają zapisania i ponownego wczytania aplikacji"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "ł_Swipe Type_ą",
-				settingsDataModelExplainSwipe: "ł_What do you want users to swipe?_ą",
+				settingsTabDataModel: "Typ odsłaniania",
+				settingsDataModelExplainSwipe: "Co mogą odsłaniać użytkownicy?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Wybierz warstwę lub mapę internetową, która pojawi się w lunetce.",
-				settingsDataModelOneMap: "ł_A layer in a web map_ą",
-				settingsDataModel1Explain: "ł_Select the layer you want to be swiped_ą",
+				settingsDataModelOneMap: "Warstwa mapy internetowej",
+				settingsDataModel1Explain: "Wybierz warstwę, która ma być odsłaniana.",
 				settingsDataModel1Warning: "Jeśli warstwa jest ukryta pod górnymi warstwami, użycie odsłaniania nie przyniesie rezultatów.",
 				settingsDataModel1SpyGlassExplain: "Wybierz warstwę, która ma pojawić się w lunetce.",
 				settingsDataModelTwoMaps: "Dwie mapy internetowe",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Włącz opis",
 				settingsBookmarksEnable: "Włącz serię odsłaniania",
 				settingsPopupDisable: "Włącz okno podręczne",
-				settingsLocationSearchEnable: "ł_Enable locator search_ą",
-				settingsGeolocatorEnable: "ł_Enable geolocator_ą",
+				settingsLocationSearchEnable: "Włącz wyszukiwanie przy użyciu lokatora",
+				settingsGeolocatorEnable: "Włącz geolokator",
 				settingsLegendHelpContent: "Aby ulepszyć zawartość legendy, skorzystaj z tabeli zawartości przeglądarki map ArcGIS.com (Ukryj w legendzie)",
-				settingsSeriesHelpContent: "ł_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ą", 
+				settingsSeriesHelpContent: "Seria odsłaniania to opcja nawigacji przy użyciu kart, która kieruje użytkownika w pewnym zakresie i wyświetla tytuł oraz tekst opisu na panelu bocznym. Podczas pierwszej aktywacji zakładki mapy internetowej zostaną użyte do wstępnego wypełnienia paska serii. Jeżeli wyłączysz później opcję serii, zostanie też wyłączony pasek serii, ale konfiguracja serii zostanie zachowana na przyszłość.", 
 				preview: "Podgląd interfejsu użytkownika",
-				settingsLocateButtonExplain: "ł_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ą",
-				settingsLocateButton: "ł_Enable a 'Locate' button supported browsers_ą",
-				settingsAddressSearch: "ł_Enable an address search tool_ą"
+				settingsLocateButtonExplain: "Ten sposób działania jest obsługiwany w większości urządzeń mobilnych i przeglądarek komputerowych (łącznie z programem Internet Explorer 9 i nowszymi wersjami).",
+				settingsLocateButton: "Włącz przycisk Lokalizuj w obsługiwanych przeglądarkach",
+				settingsAddressSearch: "Włącz narzędzie wyszukiwania adresów"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Okno podręczne",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Witamy w kreatorze aplikacji odsłaniania",
 				modalNext: "Dalej",
-				modalPrev: "ł_Previous_ą",
+				modalPrev: "Wstecz",
 				modalApply: "Otwórz aplikację"
 			},
 			seriesPanel: {

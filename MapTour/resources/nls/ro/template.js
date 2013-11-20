@@ -6,8 +6,8 @@
 				step2: "SE ÎNCARCĂ DATELE",
 				step3: "SE INIŢIALIZEAZĂ TURUL",
 				loadBuilder: "SE COMUTĂ LA MODUL INSTRUMENT DE CĂUTARE",
-				redirectSignIn: "Ă_REDIRECTING TO SIGN-IN PAGE_ș",
-				redirectSignIn2: "Ă_(you will be redirected here after sign-in)_ș",
+				redirectSignIn: "REDIRECȚIONARE LA PAGINA DE AUTENTIFICARE",
+				redirectSignIn2: "(veți fi redirecționat aici după autentificare)",
 				fail: "Ne pare rău, nu s-a reuşit încărcarea turului hărţii",
 				failButton: "Reîncercare"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "O hartă informativă",
 				builderButton: "Comutare la modul builder",
 				bitlyTooltip: "Obţinere link scurt către aplicaţie",
-				bitlyStartIndex: "Ă_Link to current place_ș"
+				bitlyStartIndex: "Link către locul curent"
 			},
 			builderHTML: {
 				panelHeader: "CONFIGURARE APLICAŢIE",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "Scară/nivel",
 				settingsZoomFirstValue: "Niciuna",
 				settingsFieldError: "Selectaţi un câmp în fiecare listă",
-				dataTitle: "Ă_ArcGIS Online hosting_ș",
+				dataTitle: "Găzduire ArcGIS Online",
 				dataExplain: "Ă_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._ș",
 				dataNameLbl: "Nume serviciu",
 				dataFolderListLbl: "Director",
@@ -207,7 +207,7 @@
 				errorNoLocation: "Setaţi o locaţie pentru acest punct de tur"
 			},
 			builderJS: {
-				noPendingChange: "Ă_No unsaved change_ș",
+				noPendingChange: "Nicio modificare nesalvată",
 				unSavedChangeSingular: "O modificare nesalvată",
 				unSavedChangePlural: "modificări nesalvate",
 				shareStatus1: "Ă_Tour is not saved_ș",
@@ -226,7 +226,7 @@
 				saveSuccess: "S-a reuşit salvarea aplicaţiei",
 				saveError: "Salvare nereuşită, încercaţi din nou",
 				saveError2: "Salvare eşuată din cauza unei etichete html nevalide într-un nume sau o descriere",
-				saveError3: "Ă_The title can't be empty_ș",
+				saveError3: "Titlul nu poate fi necompletat",
 				dragColorPicker: "Deplasează-mă<br />sau schimbă-mi culoarea",
 				dataWarningExtent: "Aveţi date care nu se încadrează în limitele hărţii web. Aceste date nu vor fi utilizate ca puncte de tur, modificaţi limitele hărţii dacă doriţi să le utilizaţi.",
 				dataWarningVisibi: "Stratul tematic al turului de hartă nu este vizibil în limitele actuale ale hărţii. Confirmaţi că stratul tematic al turul de hartă este vizibil cu o hartă mai mare %MAPSIZE%.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "Închidere",
 				signIn: "Conectaţi-vă la un cont în",
 				signInTwo: "pentru a salva aplicaţia.",
-				switchBM: "Ă_Change Basemap_ș"
+				switchBM: "Modificare hartă fundal"
 			},
 			organizePopupJS: {
 				messageStart: "Aţi ales să ştergeţi",
@@ -282,8 +282,8 @@
 				videos: "videoclipuri",
 				disabled: "Acest obiect spaţial a fost dezactivat de administrator",
 				disabledPortal: "Această caracteristică este dezactivată în Portal for ArcGIS",
-				header1: "Ă_Your pictures must be shared publicly._ș",
-				header2: "Ă_The import will be limited to the first %NB1% %MEDIA%._ș",
+				header1: "Imaginile dvs. trebuie partajate public.",
+				header2: "Importul va fi limitat la primele %NB1% %MEDIA%.",
 				emptyDataset: "Eroare, nu a fost găsită nicio imagine",
 				footerImport: "Import",
 				selectAlbum: "Selectare album public",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "Ă_Import your Tour content from a CSV file._ș",
 				advancedCommonTip: "Ă_It requires that your images and videos are already online._ș",
 				select: "Efectuare selecţie",
-				locUse: "Ă_Use pictures geolocation_ș",
+				locUse: "Utilizare locație geografică imagini",
 				locExplain: "Ă_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._ș",
 				locExplain2: "Ă_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._ș"
 			},
 			viewFlickr: {
-				title: "Ă_Flickr import_ș",
+				title: "Import Flickr",
 				header: "Ă_Enter your Flickr user name and select a Photo Set or a Tag to be imported._ș",
 				userInputLbl: "Introducere nume de utilizator",
 				signInMsg2: "Utilizator negăsit",
@@ -314,7 +314,7 @@
 				footerImportSet: "Import set selectat"
 			},
 			viewFacebook: {
-				title: "Ă_Facebook import_ș",
+				title: "Import Facebook",
 				header: "Ă_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._ș",
 				leftHeader: "Utilizator Facebook",
 				rightHeader: "Pagină Facebook",
@@ -323,15 +323,15 @@
 				lookupMsgError: "Pagină negăsită"
 			},
 			viewPicasa: {
-				title: "Ă_Picasa/Google+ import_ș",
+				title: "Import Picasa/Google+",
 				header: "Ă_Enter your email address or the ID of your Picasa or Google+ account._ș",
 				userInputLbl: "Introducere e-mail sau ID",
 				signInMsg2: "Cont negăsit",
-				howToFind: "Ă_How to find a Picasa or Google+ account ID_ș",
+				howToFind: "Găsirea unui ID de cont Picasa sau Google+",
 				howToFind2: "Copiaţi cifrele dintre primul şi al doilea caracter „/” a unei pagini Picasa sau G+"
 			},
 			viewCSV: {
-				title: "Ă_CSV import_ș",
+				title: "Import CSV",
 				uploadBtn: "Selectare sau plasare fişier CSV",
 				resultHeaderEmpty: "Fişierul CSV este gol",
 				resultHeaderSuccess: "Au fost încărcate cu succes %NB_POINTS% puncte",
@@ -356,8 +356,8 @@
 				footerSucceed: "Importul a reuşit. Se încarcă"
 			},
 			viewYoutube: {
-				title: "Ă_Youtube import_ș",
-				header: "Ă_Enter a YouTube user name to find publicly shared videos._ș",
+				title: "Import Youtube",
+				header: "Introduceți un nume de utilizator YouTube pentru a găsi clipuri video partajate în mod public.",
 				pageInputLbl: "Ă_Enter a Youtube user name_ș",
 				lookupMsgError: "Utilizator negăsit",
 				howToFind: "Ă_How to find a Youtube user name_ș",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "Ă_Select and locate your images/videos_ș",
 				header: "Faceţi clic pe sau atingeţi imaginile pe care doriţi să le importaţi pentru a le localiza.",
-				headerMore: "Ă_Why aren't my images/videos geolocated?_ș",
+				headerMore: "De ce nu sunt localizate geografic imaginile/clipurile mele video?",
 				headerExplain: "Ă_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._ș",
 				leftPanelTab1: "De localizat",
 				leftPanelTab2: "Localizat",
@@ -379,30 +379,30 @@
 				footerProgress: "Import în curs",
 				footerSucceed: "Import reuşit. Se încarcă...",
 				loading: "Se încarcă",
-				error: "Ă_Pictures geolocation import failed, geolocations have been ignored._ș"
+				error: "Importul locațiilor geografice ale imaginilor nu a reușit, locațiile geografice au fost ignorate."
 			},
 			initPopup: {
-				title: "Ă_Welcome to the Map Tour Builder_ș",
+				title: "Bun venit la instrumentul de creare a Turului hărții",
 				prevBtn: "Înapoi",
 				nextBtn: "Înainte"
 			},
 			initPopupHome: {
-				header1: "Ă_Where are your images or videos?_ș",
-				header2: "Ă_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._ș",
-				title1: "Ă_They are already online_ș",
-				title2: "Ă_I need to upload my images_ș",
-				hostedFSTooltip: "Ă_Use ArcGIS Online to host your images (doesn't support videos)._ș",
-				hostedFsNA: "Ă_Only available for ArcGIS for Organizations Publisher and Administrator users_ș",
+				header1: "Unde se găsesc imaginile sau clipurile video?",
+				header2: "Acest asistent vă va ajuta să creați un Tur al hărții din imaginile stocate deja online sau le va importa în contul ArcGIS Online for Organizations.",
+				title1: "Acestea sunt online deja",
+				title2: "Trebuie să încarc imaginile",
+				hostedFSTooltip: "Utilizați ArcGIS Online pentru a găzdui imaginile (nu acceptă clipuri video).",
+				hostedFsNA: "Disponibil numai pentru utilizatori cu permisiuni Editor sau Administrator ArcGIS for Organizations",
 				footer1: "După ce terminaţi, nu uitaţi să partajaţi Turul hărţii cu audienţa prin pagina elementului de tip aplicaţie.",
 				footer3: "Descărcare şablon CSV",
 				footer4: "\"Salvare ca\" dacă nu se descarcă",
-				footer4bis: "Ă_Use right click and \"Save as\" if download doesn't start_ș",
-				footer5: "Ă_Learn more_ș",
+				footer4bis: "Utilizați clic dreapta și \„Salvare ca\” dacă descărcarea nu începe",
+				footer5: "Învăţaţi mai mult",
 				footerProgress: "Creare în curs",
 				footerSucceed: "Creare reuşită. Se încarcă..."
 			},
 			helpPopup: {
-				title: "Ă_Help_ș",
+				title: "Ajutor",
 				close: "Închidere",
 				tab1: {
 					title: "Introducere",
@@ -455,7 +455,7 @@
 					div3: "<li>Când nu oferă o personalizare a interfeţei cu utilizatorul pe care o doriţi, precum în cazul utilizării unei imagini de fundal pentru antet.</li><li>Când sunteţi dezvoltator şi doriţi să îmbunătăţiţi aplicaţia.</li>",
 					div4: "Versiunea descărcabilă poate fi configurată printr-un identificator de hartă web sau aplicaţie de cartografiere web. Principalele situaţii de utilizare sunt:",
 					div41: "Construiţi un tur de hartă folosind aplicaţia de creare interactivă din mediul găzduit şi să configuraţi şablonul cu identificatorul aplicaţiei de cartografiere web. Se vor aplica setările pe care le-aţi definit cu instrumentul de creare interactiv.",
-					div42: "Ă_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._ș",
+					div42: "Construiţi harta web în afara aplicaţiei de creare interactivă şi să configuraţi şablonul cu identificatorul hărţii web. Va trebui să citiţi documentaţia pentru a afla cum să configuraţi şablonul.",
 					div43: "Reţineţi că aplicaţia de creare interactivă este disponibilă în versiunea descărcabilă, însă cu unele restricţii tehnice pentru browsere precum Internet Explorer anterior versiunii 10.",
 					div5: "Ă_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._ș"
 				},
@@ -488,7 +488,7 @@
 					div2c: "Ă_Sharing the Tour through ArcGIS Online_ș",
 					div2d: "Ă_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._ș",
 					div3t: "Ă_Feature Service security_ș",
-					div3a: "Ă_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._ș",
+					div3a: "Dacă utilizaţi un serviciu de obiecte spaţiale găzduit, creat prin instrumentul de creare a Turului hărţii, aplicaţia administrează securitatea serviciului pentru dvs. şi dvs. veţi rămâne singurul cu privilegii de editare chiar dacă partajaţi serviciul public.",
 					div3t2: "Ă_Before sharing your Tour with your audience_ș",
 					div3: "Ă_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._ș",
 					div4: "Ă_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._ș",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Ă_Tour successfully saved_ș",
+				firstSaveTitle: "Tur salvat cu succes",
 				firstSaveHeader: "Ă_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._ș",
-				firstSaveA1: "Ă_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ș",
+				firstSaveA1: "Dacă nu sunteți familiarizat cu ArcGIS Online sau doriți o comandă rapidă pentru a accesa interfața de creare, puteți salva următorul link: %LINK1%",
 				firstSaveA1bis: "Ă_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ș",
-				firstSaveQ2: "Ă_Is my Tour shared?_ș",
+				firstSaveQ2: "Este partajat Turul meu?",
 				firstSaveA2: "Ă_Currently your Tour is not shared. To share it, use the SHARE button._ș",
-				shareTitle: "Ă_Share your Tour_ș",
-				sharePrivateHeader: "Ă_Your Tour is not shared, would you like to share it?_ș",
-				sharePrivateBtn1: "Ă_Share publicly_ș",
-				sharePrivateBtn2: "Ă_Share with my Organization_ș",
-				sharePrivateProgress: "Ă_Sharing in progress..._ș",
-				sharePrivateErr: "Ă_Sharing failed, try again or_ș",
-				sharePrivateOk: "Ă_Sharing updated successfully, loading..._ș",
-				sharePreviewAsUser: "Ă_Preview_ș",
-				shareHeader1: "Ă_Your Tour is <strong>publicly accessible</strong>._ș",
-				shareHeader2: "Ă_Your Tour is accessible by your organization members (login is required)._ș",
-				shareLinkHeader: "Ă_Share the Tour with your audience_ș",
-				shareLinkOpen: "Ă_OPEN_ș",
-				shareQ1Opt1: "Ă_How do I keep the Tour private?_ș",
+				shareTitle: "Partajarea Turului",
+				sharePrivateHeader: "Turul dvs. nu este partajat, doriți să îl partajați?",
+				sharePrivateBtn1: "Partajare în mod public",
+				sharePrivateBtn2: "Partajare cu organizația mea",
+				sharePrivateProgress: "Partajare în curs...",
+				sharePrivateErr: "Partajare nereușită, încercați din nou sau",
+				sharePrivateOk: "Partajare actualizată cu succes, se încarcă...",
+				sharePreviewAsUser: "Previzualizare",
+				shareHeader1: "Turul dvs. este <strong>accesibil în mod public</strong>.",
+				shareHeader2: "Turul dvs. este accesibil membrilor organizației (este necesară conectarea).",
+				shareLinkHeader: "Partajare Tur cu publicul",
+				shareLinkOpen: "DESCHIDERE",
+				shareQ1Opt1: "Cum păstrez Turul privat?",
 				shareQ1Opt2: "Ă_How do I keep the Tour private or share it publicly?_ș",
 				shareA1: "Ă_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._ș",
 				shareA1bis: "Ă_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ș",
 				shareQ2: "Ă_How do I edit the Tour later?_ș",
 				shareQ2bis: "Ă_How do I get back to the authoring interface?_ș",
 				shareA2div1: "Ă_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ș",
-				shareA2div2: "Ă_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ș",				
-				shareQ3: "Ă_Where is the data stored?_ș",
-				shareA3: "Ă_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._ș"
+				shareA2div2: "În calitate de proprietar al aplicației, când sunteți autentificat pe ArcGIS.com, aplicația include un buton pentru a deschide instrumentul de creare interactiv:",				
+				shareQ3: "Unde sunt stocate datele?",
+				shareA3: "Configurația Turului este stocată în <a href='%LINK1%' target='_blank'>acest element de hartă Web</a> și <a href='%LINK2%' target='_blank'>acest element de aplicație Web</a>. Dacă ați utilizat importul Flickr, Picasa, Facebook sau YouTube, imaginile și clipurile video rămân stocate acolo și nu sunt dublate în ArcGIS Online."
 			}
         }
     })

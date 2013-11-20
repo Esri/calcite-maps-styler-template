@@ -6,8 +6,8 @@
 				step2: "ANDMETE LAADIMINE",
 				step3: "ALUSTAN TUURI",
 				loadBuilder: "LÜLITU KOOSTAMISREŽIIMILE",
-				redirectSignIn: "Š_REDIRECTING TO SIGN-IN PAGE_ä",
-				redirectSignIn2: "Š_(you will be redirected here after sign-in)_ä",
+				redirectSignIn: "SUUNAN ÜMBER SISSELOGIMISE LEHELE",
+				redirectSignIn2: "(teid suunatakse peale sisselogimist siia)",
 				fail: "Kaardi tuuri laadimine ebaõnnestus. Vabandame.",
 				failButton: "Proovi uuesti"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "Kaardilugu",
 				builderButton: "Vaheta koostamise režiimile",
 				bitlyTooltip: "Tekita kiirlink rakendusele",
-				bitlyStartIndex: "Š_Link to current place_ä"
+				bitlyStartIndex: "Link hetke asukohale"
 			},
 			builderHTML: {
 				panelHeader: "RAKENDUSE KONFIGURATSIOON",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "Mõõtkava/tase",
 				settingsZoomFirstValue: "Puudub",
 				settingsFieldError: "Palun vali väli igale loendile",
-				dataTitle: "Š_ArcGIS Online hosting_ä",
+				dataTitle: "ArcGIS Online majutus",
 				dataExplain: "Š_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._ä",
 				dataNameLbl: "Teenuse nimi",
 				dataFolderListLbl: "Kaust",
@@ -207,7 +207,7 @@
 				errorNoLocation: "Määra selle tuuri punktile asukoht"
 			},
 			builderJS: {
-				noPendingChange: "Š_No unsaved change_ä",
+				noPendingChange: "Salvestamata muudatused puuduvad",
 				unSavedChangeSingular: "1 mittesalvestatud muudatus",
 				unSavedChangePlural: "mittesalvestatud muudatust",
 				shareStatus1: "Š_Tour is not saved_ä",
@@ -226,7 +226,7 @@
 				saveSuccess: "Rakenduse salvestamine õnnestus",
 				saveError: "Salvestamine ebaõnnestus, palun proovi uuesti",
 				saveError2: "Salvestamine nurjus vigase html tagi tõttu nimes või kirjelduses",
-				saveError3: "Š_The title can't be empty_ä",
+				saveError3: "Pealkiri ei saa olla tühi",
 				dragColorPicker: "Paigutage mind ümber<br />või muutke minu värvi",
 				dataWarningExtent: "Teie andmed on väljaspool veebikaardi ulatust. Neid andmeid ei saa kasutada tuuri punktidena, mistõttu vahetage nende kasutamiseks kaardi ulatust.",
 				dataWarningVisibi: "Teie kaardi tuur ei ole praeguse veebikaardi ulatuses nähtav. Veenduge, et Teie kaardi tuuri kiht on nähtav %KAARDI SUURUS% suuremal kaardil.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "Sulge",
 				signIn: "Palun logige konto kaudu sisse",
 				signInTwo: ", et salvestada rakendus.",
-				switchBM: "Š_Change Basemap_ä"
+				switchBM: "Muuda aluskaarti"
 			},
 			organizePopupJS: {
 				messageStart: "Olete valinud kustutamiseks",
@@ -282,8 +282,8 @@
 				videos: "videod",
 				disabled: "See funktsionaalsus on administraatori poolt välja lülitatud",
 				disabledPortal: "Võimalus on blokeeritud Portal for ArcGIS lahenduses",
-				header1: "Š_Your pictures must be shared publicly._ä",
-				header2: "Š_The import will be limited to the first %NB1% %MEDIA%._ä",
+				header1: "Teie pildid peavad olema jagatud avalikult.",
+				header2: "Importimine on limiteeritud esimeste %NB1% %MEDIA%.",
 				emptyDataset: "Viga, pilte ei leitud",
 				footerImport: "Impordi",
 				selectAlbum: "Vali avalik album",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "Š_Import your Tour content from a CSV file._ä",
 				advancedCommonTip: "Š_It requires that your images and videos are already online._ä",
 				select: "Koosta valik",
-				locUse: "Š_Use pictures geolocation_ä",
+				locUse: "Kasuta piltide ruumilist asukohta",
 				locExplain: "Š_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._ä",
 				locExplain2: "Š_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._ä"
 			},
 			viewFlickr: {
-				title: "Š_Flickr import_ä",
+				title: "Flickr import",
 				header: "Š_Enter your Flickr user name and select a Photo Set or a Tag to be imported._ä",
 				userInputLbl: "Sisesta kasutajanimi",
 				signInMsg2: "Kasutajat ei leitud",
@@ -314,7 +314,7 @@
 				footerImportSet: "Impordi valitud kogum"
 			},
 			viewFacebook: {
-				title: "Š_Facebook import_ä",
+				title: "Facebook import",
 				header: "Š_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._ä",
 				leftHeader: "Facebooki kasutajanimi",
 				rightHeader: "Facebooki leht",
@@ -323,15 +323,15 @@
 				lookupMsgError: "Lehte ei leitud"
 			},
 			viewPicasa: {
-				title: "Š_Picasa/Google+ import_ä",
+				title: "Picasa/Google+ import",
 				header: "Š_Enter your email address or the ID of your Picasa or Google+ account._ä",
 				userInputLbl: "Sisesta e-mail või ID",
 				signInMsg2: "Kontot ei leitud",
-				howToFind: "Š_How to find a Picasa or Google+ account ID_ä",
+				howToFind: "Kuidas leida Picasa või Google+ konto ID-d",
 				howToFind2: "Kopeeri numbrikohad esimese ja teise '/' vahelt Picasa või G+ lehelt"
 			},
 			viewCSV: {
-				title: "Š_CSV import_ä",
+				title: "CSV import",
 				uploadBtn: "Vali või haara CSV fail",
 				resultHeaderEmpty: "CSV fail on tühi",
 				resultHeaderSuccess: "Edukalt laeti %NB_POINTS% punkti",
@@ -356,8 +356,8 @@
 				footerSucceed: "Importimine õnnestus. Laadin"
 			},
 			viewYoutube: {
-				title: "Š_Youtube import_ä",
-				header: "Š_Enter a YouTube user name to find publicly shared videos._ä",
+				title: "Youtube import",
+				header: "Sisesta YouTube kasutajanimi, et leida avalikult jagatud videosid.",
 				pageInputLbl: "Š_Enter a Youtube user name_ä",
 				lookupMsgError: "Kasutajat ei leitud",
 				howToFind: "Š_How to find a Youtube user name_ä",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "Š_Select and locate your images/videos_ä",
 				header: "Klikka või koputa piltidele, mida soovite nende paigutamiseks importida.",
-				headerMore: "Š_Why aren't my images/videos geolocated?_ä",
+				headerMore: "Miks minu pildid/videod ei ole ruumiliselt paigutatud?",
 				headerExplain: "Š_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._ä",
 				leftPanelTab1: "Paiguta",
 				leftPanelTab2: "Paigutatud",
@@ -379,7 +379,7 @@
 				footerProgress: "Toimub importimine",
 				footerSucceed: "Importimine õnnestus. Laadin...",
 				loading: "Laen",
-				error: "Š_Pictures geolocation import failed, geolocations have been ignored._ä"
+				error: "Piltide ruumiliste asukohtade import ebaõnnestus, asukohti ignoreeriti."
 			},
 			initPopup: {
 				title: "Tere tulemast kaardi tuuri koostajasse",
@@ -387,17 +387,17 @@
 				nextBtn: "Järgmine"
 			},
 			initPopupHome: {
-				header1: "Š_Where are your images or videos?_ä",
-				header2: "Š_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._ä",
-				title1: "Š_They are already online_ä",
-				title2: "Š_I need to upload my images_ä",
-				hostedFSTooltip: "Š_Use ArcGIS Online to host your images (doesn't support videos)._ä",
-				hostedFsNA: "Š_Only available for ArcGIS for Organizations Publisher and Administrator users_ä",
+				header1: "Kus paiknevad teie pildid või videod?",
+				header2: "See nõustaja abistab sind kaardi tuuri loomisel, kasutades selleks  kas veebis olemasolevaid pilte või importides pildid sinu ArcGIS Online for Organizations kontole.",
+				title1: "Nad on juba veebis üleval",
+				title2: "Ma pean oma pildid üleslaadima",
+				hostedFSTooltip: "Kasuta ArcGIS Online keskkonda, et majutada oma pilte (ei toeta videosid).",
+				hostedFsNA: "Kättesaadav ainult nendele ArcGIS for Organizations kasutajatele, kellel on avaldaja ja administraatori õigused.",
 				footer1: "Kui oled valmis, ära unusta oma kaarti rakenduste lehe kaudu teistega jagada.",
 				footer3: "Laadi alla CSV mall",
 				footer4: "\"Salvesta nimega\" kui ei saa alla laadida",
-				footer4bis: "Š_Use right click and \"Save as\" if download doesn't start_ä",
-				footer5: "Š_Learn more_ä",
+				footer4bis: "Kasuta paremat klikki ja \"Salvesta kui\" kui allalaadimine ei käivitu",
+				footer5: "Loe lähemalt",
 				footerProgress: "Koostamine käib",
 				footerSucceed: "Koostamine oli edukas. Laadin..."
 			},
@@ -455,7 +455,7 @@
 					div3: "<li>See ei paku kasutajaliidese seadistamist nagu näiteks päise taustapildi kasutus</li><li>Kui oled arendaja ning soovid rakendust omalt poolt täiustada.</li>",
 					div4: "Allalaaditav versioon on konfigureeritav läbi veebikaardi või veebikaardi rakenduse keskkonna kaudu. Peamised kasutusjuhud on järgnevad:",
 					div41: "Te ehitate oma kaardituuri kasutades interaktiivset loojat majutatud keskkonnas ja konfigureerite malli kaardirakenduse identifikaatoriga. Rakendatakse sätted, mille olete defineerinud interaktiivse loojaga.",
-					div42: "Š_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._ä",
+					div42: "Te loote oma kaardituuri väljaspool interaktiivset loojat ja konfigureerite malli kaardi identifikaatoriga. Te peate lugema dokumentatsiooni, et saada infot malli konfigureerimise kohta.",
 					div43: "Pane tähele et interaktiivne looja on saadaval allalaetava versioonina aga mõningaste tehniliste piirangutega veebibrauserites nagu Internet Explorer vanemad versioonid kui 10.",
 					div5: "Š_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._ä"
 				},
@@ -488,7 +488,7 @@
 					div2c: "Š_Sharing the Tour through ArcGIS Online_ä",
 					div2d: "Š_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._ä",
 					div3t: "Š_Feature Service security_ä",
-					div3a: "Š_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._ä",
+					div3a: "Kui kasutate kaardi tuuri koostaja kaudu loodud majutatud objektiteenust, haldab rakendus teenuse turvalisust Teie eest ning Teie jääte ainsaks muutmisõigustega kasutajaks (ka juhul, kui teenus on avalik).",
 					div3t2: "Š_Before sharing your Tour with your audience_ä",
 					div3: "Š_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._ä",
 					div4: "Š_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._ä",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Š_Tour successfully saved_ä",
+				firstSaveTitle: "Tuur edukalt salvestatud",
 				firstSaveHeader: "Š_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._ä",
-				firstSaveA1: "Š_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ä",
+				firstSaveA1: "Kui te ei ole tuttav ArcGIS Online keskkonnaga või soovite otseteed redigeerimise liidesele, siis võite salvestada järgmise lingi: %LINK1%",
 				firstSaveA1bis: "Š_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ä",
-				firstSaveQ2: "Š_Is my Tour shared?_ä",
+				firstSaveQ2: "Kas mu tuur on jagatud?",
 				firstSaveA2: "Š_Currently your Tour is not shared. To share it, use the SHARE button._ä",
-				shareTitle: "Š_Share your Tour_ä",
-				sharePrivateHeader: "Š_Your Tour is not shared, would you like to share it?_ä",
-				sharePrivateBtn1: "Š_Share publicly_ä",
-				sharePrivateBtn2: "Š_Share with my Organization_ä",
-				sharePrivateProgress: "Š_Sharing in progress..._ä",
-				sharePrivateErr: "Š_Sharing failed, try again or_ä",
-				sharePrivateOk: "Š_Sharing updated successfully, loading..._ä",
-				sharePreviewAsUser: "Š_Preview_ä",
-				shareHeader1: "Š_Your Tour is <strong>publicly accessible</strong>._ä",
-				shareHeader2: "Š_Your Tour is accessible by your organization members (login is required)._ä",
-				shareLinkHeader: "Š_Share the Tour with your audience_ä",
-				shareLinkOpen: "Š_OPEN_ä",
-				shareQ1Opt1: "Š_How do I keep the Tour private?_ä",
+				shareTitle: "Jaga oma tuuri",
+				sharePrivateHeader: "Teie tuur ei ole jagatud, kas soovite seda jagada?",
+				sharePrivateBtn1: "Jaga avalikult",
+				sharePrivateBtn2: "Jaga oma organisatsiooniga",
+				sharePrivateProgress: "Jagamine töös...",
+				sharePrivateErr: "Jagamine ebaõnnestus, proovi uuesti või",
+				sharePrivateOk: "Jagamine uuendatud edukalt, laen...",
+				sharePreviewAsUser: "Eelvaade",
+				shareHeader1: "Teie tuur on <strong>avalikult ligipääsetav</strong>.",
+				shareHeader2: "Teie tuur on saadaval teie organisatsiooni liikmetele (sisselogimine nõutud).",
+				shareLinkHeader: "Jaga tuuri oma inimestega",
+				shareLinkOpen: "AVA",
+				shareQ1Opt1: "Kuidas hoida tuuri privaatsena?",
 				shareQ1Opt2: "Š_How do I keep the Tour private or share it publicly?_ä",
 				shareA1: "Š_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._ä",
 				shareA1bis: "Š_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ä",
 				shareQ2: "Š_How do I edit the Tour later?_ä",
 				shareQ2bis: "Š_How do I get back to the authoring interface?_ä",
 				shareA2div1: "Š_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ä",
-				shareA2div2: "Š_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ä",				
-				shareQ3: "Š_Where is the data stored?_ä",
-				shareA3: "Š_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._ä"
+				shareA2div2: "Rakenduse omanikuna, ArcGIS.com sisselogituna, sisaldab rakendus nuppu interaktiivse looja avamiseks.",				
+				shareQ3: "Kus on andmed majutatud?",
+				shareA3: "Tuuri konfiguratsioon on salvestatud <a href='%LINK1%' target='_blank'>siin veebikaardi sisus</a> ja <a href='%LINK2%' target='_blank'>siin veebirakenduse sisus</a>.Kui olete kasutanud Flickr, Picasa, Facebook või YouTube importi, siis teie pildid ja videod säilitatakse seal ja ei ole kopeeritud ArcGIS Online keskkonda."
 			}
         }
     })

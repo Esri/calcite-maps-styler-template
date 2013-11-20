@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Kai kurie jūsų pakeitimai reikalauja išsaugoti ir perkrauti aplikaciją"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Į_Swipe Type_š",
-				settingsDataModelExplainSwipe: "Į_What do you want users to swipe?_š",
+				settingsTabDataModel: "Keitiklio tipas",
+				settingsDataModelExplainSwipe: "Ką norite, kad vartotojai keistų?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Pasirinkite sluoksnį arba internetinį žemėlapį, kuris atsiras po didinamuoju stiklu",
-				settingsDataModelOneMap: "Į_A layer in a web map_š",
-				settingsDataModel1Explain: "Į_Select the layer you want to be swiped_š",
+				settingsDataModelOneMap: "Sluoksnis internetiniame žemėlapyje",
+				settingsDataModel1Explain: "Pasirinkite sluoksnį, kurį norite keisti",
 				settingsDataModel1Warning: "Jei sluoksnis paslėptas po aukščiau esančiais sluoksniais, keitiklis neturės jokio poveikio.",
 				settingsDataModel1SpyGlassExplain: "Pasirinkite sluoksnį, kuris atsiras po didinamuoju stiklu.",
 				settingsDataModelTwoMaps: "Du internetiniai žemėlapiai",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Įjungti aprašą",
 				settingsBookmarksEnable: "Įjungti keitiklių serijas",
 				settingsPopupDisable: "Įgalinti informacinį langą",
-				settingsLocationSearchEnable: "Į_Enable locator search_š",
-				settingsGeolocatorEnable: "Į_Enable geolocator_š",
+				settingsLocationSearchEnable: "Įgalitnti lokatoriaus paiešką",
+				settingsGeolocatorEnable: "Įgalinti geolokatorių",
 				settingsLegendHelpContent: "Legendos nustatymui naudokite ArcGIS.com internetinio žemėlapio peržiūros aplikacijos turinį (Paslėpti legendoje)",
-				settingsSeriesHelpContent: "Į_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._š", 
+				settingsSeriesHelpContent: "Keitiklių serija yra navigavimo galimybė, supažindinanti vartotoją su tam tikra aprėptimi ir atvaizduoja pavadinimą bei aprašymo tekstą šoninėje panelėje. Aktyvuojant pirmą kartą, jūsų internetinio(-ių) žemėlapio(-ių) žymės bus panaudotos preliminariai užpildant serijų juostą. Šio pasirinkimo išjungimas, išjungia ir serijų juostą, tačiau serijų konfigūracija bus išlaikoma tolimesniam naudojimui.", 
 				preview: "Vartotojo sąsajos peržiūra",
-				settingsLocateButtonExplain: "Į_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._š",
-				settingsLocateButton: "Į_Enable a 'Locate' button supported browsers_š",
-				settingsAddressSearch: "Į_Enable an address search tool_š"
+				settingsLocateButtonExplain: "Šis funkcionalumas palaikomas daugelyje mobilių įrenginių ir darbastalio naršyklių (įskaitant Internet Explorer 9+).",
+				settingsLocateButton: "Įgalinti \'Rasti\' mygtuką palaikomose naršyklėse",
+				settingsAddressSearch: "Įgalinti adreso paieškos įrankį"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Iškylantis langas",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Sveiki atvykę į Keitiklio kūrėją",
 				modalNext: "Toliau",
-				modalPrev: "Į_Previous_š",
+				modalPrev: "Ankstesnis",
 				modalApply: "Atidaryti aplikaciją"
 			},
 			seriesPanel: {

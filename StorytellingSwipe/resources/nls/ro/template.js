@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Unele modificări necesită salvarea şi reîncărcarea aplicaţiei"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Ă_Swipe Type_ș",
-				settingsDataModelExplainSwipe: "Ă_What do you want users to swipe?_ș",
+				settingsTabDataModel: "Tip preluare",
+				settingsDataModelExplainSwipe: "Ce doriți să preia utilizatorii?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Alegeţi stratul tematic sau harta web care va apărea în ochean.",
-				settingsDataModelOneMap: "Ă_A layer in a web map_ș",
-				settingsDataModel1Explain: "Ă_Select the layer you want to be swiped_ș",
+				settingsDataModelOneMap: "Un strat tematic într-o hartă Web",
+				settingsDataModel1Explain: "Selectați stratul tematic care doriți să fie preluat",
 				settingsDataModel1Warning: "Dacă stratul tematic este ascuns de straturi tematice superioare, preluarea nu va avea niciun efect.",
 				settingsDataModel1SpyGlassExplain: "Selectaţi stratul tematic care să apară în ochean.",
 				settingsDataModelTwoMaps: "Două hărţi web",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Activare descriere",
 				settingsBookmarksEnable: "Activare serii Swipe",
 				settingsPopupDisable: "Activare pop-up",
-				settingsLocationSearchEnable: "Ă_Enable locator search_ș",
-				settingsGeolocatorEnable: "Ă_Enable geolocator_ș",
+				settingsLocationSearchEnable: "Activare căutare în localizator",
+				settingsGeolocatorEnable: "Activare localizator geografic",
 				settingsLegendHelpContent: "Pentru a rafina conţinutul legendei, utilizaţi cuprinsului aplicaţiei de vizualizare a hărţilor web din ArcGIS.com (Ascunderea în legendă)",
-				settingsSeriesHelpContent: "Ă_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ș", 
+				settingsSeriesHelpContent: "Seria de preluare reprezintă o opțiune de navigare cu file care ghidează vizualizatorul către o anumită extindere și afișează un titlu și text descriptiv în panoul lateral. În timpul activării inițiale, marcajele din hărțile Web vor fi importate și utilizate pentru a popula în prealabil bara seriei. Dezactivarea opțiunii de serie dezactivează bara seriei, dar configurația seriei se păstrează pentru utilizare ulterioară.", 
 				preview: "Previzualizare interfaţă cu utilizatorul",
-				settingsLocateButtonExplain: "Ă_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ș",
-				settingsLocateButton: "Ă_Enable a 'Locate' button supported browsers_ș",
-				settingsAddressSearch: "Ă_Enable an address search tool_ș"
+				settingsLocateButtonExplain: "Această funcționalitate este acceptată pe majoritatea dispozitivelor mobile și browserelor desktop (inclusiv Internet Explorer 9+).",
+				settingsLocateButton: "Activare buton \„Localizare\” pe browsere acceptate",
+				settingsAddressSearch: "Activare instrument de căutare adrese"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Mesaj pop-up",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Bine aţi venit la builderul instrumentului de preluare",
 				modalNext: "Înainte",
-				modalPrev: "Ă_Previous_ș",
+				modalPrev: "Anteriorul",
 				modalApply: "Deschidere aplicaţie"
 			},
 			seriesPanel: {

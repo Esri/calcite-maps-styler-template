@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Algunos de tus cambios requieren que guardes y vuelvas a cargar la aplicación"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "á_Swipe Type_Ó",
-				settingsDataModelExplainSwipe: "á_What do you want users to swipe?_Ó",
+				settingsTabDataModel: "Cambiar tipo",
+				settingsDataModelExplainSwipe: "¿Qué quieres que cambien los usuarios?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Elige la capa o el mapa Web que aparecerá en el catalejo.",
-				settingsDataModelOneMap: "á_A layer in a web map_Ó",
-				settingsDataModel1Explain: "á_Select the layer you want to be swiped_Ó",
+				settingsDataModelOneMap: "Una capa en un mapa web",
+				settingsDataModel1Explain: "Selecciona la capa que quieras cambiar",
 				settingsDataModel1Warning: "Si la capa está oculta por capas superiores, la comparativa de mapas no tendrá ningún efecto.",
 				settingsDataModel1SpyGlassExplain: "Selecciona la capa que aparecerá en el catalejo.",
 				settingsDataModelTwoMaps: "Dos mapas Web",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Activar descripción",
 				settingsBookmarksEnable: "Activar series de comparativas",
 				settingsPopupDisable: "Habilitar ventana emergente",
-				settingsLocationSearchEnable: "á_Enable locator search_Ó",
-				settingsGeolocatorEnable: "á_Enable geolocator_Ó",
+				settingsLocationSearchEnable: "Habilitar la búsqueda del localizador",
+				settingsGeolocatorEnable: "Habilitar geolocalizador",
 				settingsLegendHelpContent: "Utiliza la tabla de contenido del visor de mapas web de ArcGIS.com (ocultar en leyenda) para delimitar el contenido de la leyenda.",
-				settingsSeriesHelpContent: "á_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._Ó", 
+				settingsSeriesHelpContent: "Las series comparativas es una opción de navegación por pestañas que hasta cierto punto sirve de guía al visor y muestra un título y un texto descriptivo en el panel lateral. En el momento de la primera activación, los marcadores de mapas web se importarán y usarán para completar la barra de series. Si deshabilitas esta opción, la barra de series se desactivará, pero la configuración de las series se conservará para usarse de nuevo.", 
 				preview: "Vista previa de la interfaz de usuario",
-				settingsLocateButtonExplain: "á_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Ó",
-				settingsLocateButton: "á_Enable a 'Locate' button supported browsers_Ó",
-				settingsAddressSearch: "á_Enable an address search tool_Ó"
+				settingsLocateButtonExplain: "Esta funcionalidad es compatible con la mayoría de dispositivos móviles y navegadores de escritorio (incluido Internet Explorer 9+).",
+				settingsLocateButton: "Habilitar un botón "Localizar" en navegadores compatibles",
+				settingsAddressSearch: "Habilitar una herramienta de búsqueda de direcciones"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Ventana emergente",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Bienvenido a Swipe Builder",
 				modalNext: "Siguiente",
-				modalPrev: "á_Previous_Ó",
+				modalPrev: "Anterior",
 				modalApply: "Abrir la aplicación"
 			},
 			seriesPanel: {

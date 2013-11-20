@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Voor een aantal veranderingen moet u de applicatie opslaan en opnieuw laden"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Ĳ_Swipe Type_ä",
-				settingsDataModelExplainSwipe: "Ĳ_What do you want users to swipe?_ä",
+				settingsTabDataModel: "Swipe-type",
+				settingsDataModelExplainSwipe: "Waarop mogen gebruikers swipe toepassen?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Kies de laag of de webmap die in de verrekijker moet verschijnen.",
-				settingsDataModelOneMap: "Ĳ_A layer in a web map_ä",
-				settingsDataModel1Explain: "Ĳ_Select the layer you want to be swiped_ä",
+				settingsDataModelOneMap: "Een kaartlaag in een webmap",
+				settingsDataModel1Explain: "Selecteer de laag waarop swipe moet worden toegepast",
 				settingsDataModel1Warning: "Als de laag door bovenliggende lagen verborgen wordt, heeft swipe geen effect.",
 				settingsDataModel1SpyGlassExplain: "Selecteer de laag die binnen de verrekijker moet verschijnen.",
 				settingsDataModelTwoMaps: "Twee webmaps",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Omschrijving inschakelen",
 				settingsBookmarksEnable: "Swipe-reeks inschakelen",
 				settingsPopupDisable: "Pop-up inschakelen",
-				settingsLocationSearchEnable: "Ĳ_Enable locator search_ä",
-				settingsGeolocatorEnable: "Ĳ_Enable geolocator_ä",
+				settingsLocationSearchEnable: "Zoeken naar locator inschakelen",
+				settingsGeolocatorEnable: "Geografische locator inschakelen",
 				settingsLegendHelpContent: "Om de inhoud van de legenda te verfijnen, gebruikt u de inhoudsopgave van de ArcGIS.com-webmap viewer (Verbergen in Legenda)",
-				settingsSeriesHelpContent: "Ĳ_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ä", 
+				settingsSeriesHelpContent: "Swipe-reeks is een navigatie-optie met tabbladen die de raadpleger naar een specifiek extent zal leiden en een titel en beschrijving in het deelvenster aan de zijkant zal weergeven. Tijdens de initiële activering worden de bladwijzers van de webmap(s) geïmporteerd en gebruikt om de reeksbalk vooraf in te vullen. Als u de reeksoptie uitschakelt, wordt de reeksbalk uitgeschakeld, maar de reeksconfiguratie wordt behouden voor toekomstig gebruik.", 
 				preview: "Voorbeeldweergave UI",
-				settingsLocateButtonExplain: "Ĳ_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ä",
-				settingsLocateButton: "Ĳ_Enable a 'Locate' button supported browsers_ä",
-				settingsAddressSearch: "Ĳ_Enable an address search tool_ä"
+				settingsLocateButtonExplain: "Deze functionaliteit wordt ondersteund op de meeste mobiele apparaten en desktopbrowsers (inclusief Internet Explorer 9+).",
+				settingsLocateButton: "Schakel een knop Locatie in op ondersteunde browsers",
+				settingsAddressSearch: "Schakel een tool voor het zoeken naar adressen in"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Pop-upvenster",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Welkom bij de Swipe Builder",
 				modalNext: "Volgende",
-				modalPrev: "Ĳ_Previous_ä",
+				modalPrev: "Vorige",
 				modalApply: "Open de app"
 			},
 			seriesPanel: {

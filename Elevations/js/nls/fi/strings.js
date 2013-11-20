@@ -1,5 +1,5 @@
 ﻿define({
     map: {
-      error: "Å_Unable to create map_ö"
+      error: "Karttaa ei voi luoda"
     }
 });

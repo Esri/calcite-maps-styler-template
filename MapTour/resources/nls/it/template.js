@@ -6,8 +6,8 @@
 				step2: "CARICAMENTO DATI",
 				step3: "INIZIALIZZAZIONE DEL TOUR",
 				loadBuilder: "PASSAGGIO A MODALITÀ GENERATORE",
-				redirectSignIn: "é_REDIRECTING TO SIGN-IN PAGE_È",
-				redirectSignIn2: "é_(you will be redirected here after sign-in)_È",
+				redirectSignIn: "REINDIRIZZAMENTO ALLA PAGINA DI ACCESSO",
+				redirectSignIn2: "(pagina alla quale si verrà reindirizzati dopo l\'accesso)",
 				fail: "Caricamento Tour mappa non riuscito",
 				failButton: "Riprova"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "Mappa collegata a una storia",
 				builderButton: "Passa a modalità generatore",
 				bitlyTooltip: "Ottieni un collegamento breve all\'applicazione",
-				bitlyStartIndex: "é_Link to current place_È"
+				bitlyStartIndex: "Collegamento alla posizione corrente"
 			},
 			builderHTML: {
 				panelHeader: "CONFIGURAZIONE APPLICAZIONE",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "Scala/livello",
 				settingsZoomFirstValue: "Nessuno",
 				settingsFieldError: "Selezionare un campo in ogni elenco",
-				dataTitle: "é_ArcGIS Online hosting_È",
+				dataTitle: "Hosting in ArcGIS Online",
 				dataExplain: "é_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._È",
 				dataNameLbl: "Nome servizio",
 				dataFolderListLbl: "Cartella",
@@ -207,7 +207,7 @@
 				errorNoLocation: "Imposta una posizione per il punto del tour"
 			},
 			builderJS: {
-				noPendingChange: "é_No unsaved change_È",
+				noPendingChange: "Nessuna modifica non salvata",
 				unSavedChangeSingular: "1 modifica non salvata",
 				unSavedChangePlural: "modifiche non salvate",
 				shareStatus1: "é_Tour is not saved_È",
@@ -226,7 +226,7 @@
 				saveSuccess: "Salvataggio dell\'applicazione completato",
 				saveError: "Salvataggio non riuscito. Riprovare",
 				saveError2: "Salvataggio non riuscito a causa di un tag HTML non valido in un nome o in una descrizione",
-				saveError3: "é_The title can't be empty_È",
+				saveError3: "Specificare il titolo",
 				dragColorPicker: "Cambia posizione<br />o colore",
 				dataWarningExtent: "Sono presenti dati esterni all\'estensione della mappa Web. Tali dati non verranno utilizzati come punti del tour. Se si desidera utilizzarli, cambiare l\'estensione della mappa.",
 				dataWarningVisibi: "Il layer Tour mappa non è attualmente visibile nell\'estensione della mappa Web corrente. Verificare che il layer sia visibile con una mappa di dimensioni %MAPSIZE%.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "Chiudi",
 				signIn: "Effettuare l\'accesso con un account su",
 				signInTwo: "per salvare l\'applicazione.",
-				switchBM: "é_Change Basemap_È"
+				switchBM: "Cambia mappa di base"
 			},
 			organizePopupJS: {
 				messageStart: "L\'opzione scelta consente di eliminare",
@@ -282,8 +282,8 @@
 				videos: "video",
 				disabled: "Questa feature è stata disabilitata dall\'Amministratore",
 				disabledPortal: "Questa funzionalità è disabilitata in Portal for ArcGIS",
-				header1: "é_Your pictures must be shared publicly._È",
-				header2: "é_The import will be limited to the first %NB1% %MEDIA%._È",
+				header1: "Le immagini devono essere condivise pubblicamente.",
+				header2: "L\'importazione sarà limitata ai primi %NB1% %MEDIA%.",
 				emptyDataset: "Errore, nessun\'immagine trovata",
 				footerImport: "Importa",
 				selectAlbum: "Seleziona un album pubblico",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "é_Import your Tour content from a CSV file._È",
 				advancedCommonTip: "é_It requires that your images and videos are already online._È",
 				select: "Crea una selezione",
-				locUse: "é_Use pictures geolocation_È",
+				locUse: "Usa geoposizione immagini",
 				locExplain: "é_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._È",
 				locExplain2: "é_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._È"
 			},
 			viewFlickr: {
-				title: "é_Flickr import_È",
+				title: "Importazione da Flickr",
 				header: "é_Enter your Flickr user name and select a Photo Set or a Tag to be imported._È",
 				userInputLbl: "Immettere un nome utente",
 				signInMsg2: "Utente non trovato",
@@ -314,7 +314,7 @@
 				footerImportSet: "Importa il set selezionato"
 			},
 			viewFacebook: {
-				title: "é_Facebook import_È",
+				title: "Importazione da Facebook",
 				header: "é_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._È",
 				leftHeader: "Utente Facebook",
 				rightHeader: "Pagina Facebook",
@@ -323,15 +323,15 @@
 				lookupMsgError: "Pagina non trovata"
 			},
 			viewPicasa: {
-				title: "é_Picasa/Google+ import_È",
+				title: "Importazione da Picasa/Google+",
 				header: "é_Enter your email address or the ID of your Picasa or Google+ account._È",
 				userInputLbl: "Immettere un\'e-mail o un ID",
 				signInMsg2: "Account non trovato",
-				howToFind: "é_How to find a Picasa or Google+ account ID_È",
+				howToFind: "Come trovare l\'ID di un account Picasa o Google+",
 				howToFind2: "Copiare le cifre tra il primo e il secondo \"/\" di qualsiasi pagina Picasa o G+"
 			},
 			viewCSV: {
-				title: "é_CSV import_È",
+				title: "Importazione da CSV",
 				uploadBtn: "Selezionare o rilasciare un file CSV",
 				resultHeaderEmpty: "Il CSV è vuoto",
 				resultHeaderSuccess: "Caricati %NB_POINTS% punti",
@@ -356,8 +356,8 @@
 				footerSucceed: "Importazione riuscita. Caricamento in corso"
 			},
 			viewYoutube: {
-				title: "é_Youtube import_È",
-				header: "é_Enter a YouTube user name to find publicly shared videos._È",
+				title: "Importazione da YouTube",
+				header: "Immettere un nome utente di YouTube per trovare video condivisi pubblicamente.",
 				pageInputLbl: "é_Enter a Youtube user name_È",
 				lookupMsgError: "Utente non trovato",
 				howToFind: "é_How to find a Youtube user name_È",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "é_Select and locate your images/videos_È",
 				header: "Fare clic o toccare le immagini da importare per individuarle.",
-				headerMore: "é_Why aren't my images/videos geolocated?_È",
+				headerMore: "Perché le immagini o i video non vengono geolocalizzati?",
 				headerExplain: "é_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._È",
 				leftPanelTab1: "Per individuare",
 				leftPanelTab2: "Individuato",
@@ -379,30 +379,30 @@
 				footerProgress: "Importazione in corso",
 				footerSucceed: "Importazione completata. Caricamento in corso...",
 				loading: "Caricamento in corso",
-				error: "é_Pictures geolocation import failed, geolocations have been ignored._È"
+				error: "Importazione delle geoposizioni immagini non riuscita. Le geoposizioni sono state ignorate."
 			},
 			initPopup: {
-				title: "é_Welcome to the Map Tour Builder_È",
+				title: "Benvenuti nel Generatore di Tour mappa",
 				prevBtn: "Indietro",
 				nextBtn: "Avanti"
 			},
 			initPopupHome: {
-				header1: "é_Where are your images or videos?_È",
-				header2: "é_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._È",
-				title1: "é_They are already online_È",
-				title2: "é_I need to upload my images_È",
-				hostedFSTooltip: "é_Use ArcGIS Online to host your images (doesn't support videos)._È",
-				hostedFsNA: "é_Only available for ArcGIS for Organizations Publisher and Administrator users_È",
+				header1: "Dove si trovano le immagini o i video?",
+				header2: "L\'Assistente consente di generare un Tour mappa da immagini già archiviate online o le importerà nell\'account ArcGIS Online for Organizations dell\'utente.",
+				title1: "Sono già online",
+				title2: "Le immagini devono essere caricate",
+				hostedFSTooltip: "Usa ArcGIS Online per ospitare le immagini (video non supportati).",
+				hostedFsNA: "Disponibile solo per utenti con privilegi di editore e amministratore di ArcGIS for Organizations",
 				footer1: "Al termine, non dimenticare di condividere il Tour mappa con il proprio pubblico mediante la pagina di elementi dell\'applicazione.",
 				footer3: "Scarica il modello CSV",
 				footer4: "\"Salva come\" se il download non fosse stato completato",
-				footer4bis: "é_Use right click and \"Save as\" if download doesn't start_È",
-				footer5: "é_Learn more_È",
+				footer4bis: "Se il download non si avvia, fare clic con il pulsante destro del mouse e scegliere \"Salva con nome\"",
+				footer5: "Ulteriori informazioni",
 				footerProgress: "Creazione in corso",
 				footerSucceed: "Creazione completata. Caricamento in corso..."
 			},
 			helpPopup: {
-				title: "é_Help_È",
+				title: "Guida",
 				close: "Chiudi",
 				tab1: {
 					title: "Introduzione",
@@ -455,7 +455,7 @@
 					div3: "<li>Non offre una personalizzazione dell\'interfaccia utente desiderata, per esempio l\'utilizzo di un\'immagine di sfondo per l\'intestazione.</li><li>L\'utente è uno sviluppatore e desidera migliorare l\'applicazione.</li>",
 					div4: "La versione scaricabile può essere configurata attraverso una mappa Web o un identificatore di un\'applicazione di mappatura Web. I principali casi d\'uso sono:",
 					div41: "Per creare il Tour mappa, si utilizza il generatore interattivo nell\'ambiente ospitato e si configura il modello con l\'identificatore dell\'applicazione di mapping Web. Verranno applicate le impostazioni definite con il generatore interattivo.",
-					div42: "é_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._È",
+					div42: "Si crea la mappa Web all\'esterno del generatore interattivo e si configura il modello con l\'identificatore di mappa Web. Per informazioni su come configurare il modello, sarà necessario leggere la documentazione.",
 					div43: "Si noti che il generatore interattivo è disponibile nella versione scaricabile ma con alcuni limitazioni tecniche in alcuni browser, ad esempio le versioni di Internet Explorer anteriori alla 10.",
 					div5: "é_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._È"
 				},
@@ -488,7 +488,7 @@
 					div2c: "é_Sharing the Tour through ArcGIS Online_È",
 					div2d: "é_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._È",
 					div3t: "é_Feature Service security_È",
-					div3a: "é_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._È",
+					div3a: "Se si utilizza un feature service ospitato creato mediante il generatore di Tour mappa, l\'applicazione gestisce la protezione del servizio e l\'utente è il solo con privilegi di modifica, anche se il servizio è condiviso pubblicamente.",
 					div3t2: "é_Before sharing your Tour with your audience_È",
 					div3: "é_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._È",
 					div4: "é_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._È",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "é_Tour successfully saved_È",
+				firstSaveTitle: "Tour salvato",
 				firstSaveHeader: "é_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._È",
-				firstSaveA1: "é_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_È",
+				firstSaveA1: "Se non si è esperti di ArcGIS Online o si desidera impostare una scelta rapida per accedere all\'interfaccia di modifica, salvare il collegamento seguente: %LINK1%",
 				firstSaveA1bis: "é_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._È",
-				firstSaveQ2: "é_Is my Tour shared?_È",
+				firstSaveQ2: "Il Tour è condiviso?",
 				firstSaveA2: "é_Currently your Tour is not shared. To share it, use the SHARE button._È",
-				shareTitle: "é_Share your Tour_È",
-				sharePrivateHeader: "é_Your Tour is not shared, would you like to share it?_È",
-				sharePrivateBtn1: "é_Share publicly_È",
-				sharePrivateBtn2: "é_Share with my Organization_È",
-				sharePrivateProgress: "é_Sharing in progress..._È",
-				sharePrivateErr: "é_Sharing failed, try again or_È",
-				sharePrivateOk: "é_Sharing updated successfully, loading..._È",
-				sharePreviewAsUser: "é_Preview_È",
-				shareHeader1: "é_Your Tour is <strong>publicly accessible</strong>._È",
-				shareHeader2: "é_Your Tour is accessible by your organization members (login is required)._È",
-				shareLinkHeader: "é_Share the Tour with your audience_È",
-				shareLinkOpen: "é_OPEN_È",
-				shareQ1Opt1: "é_How do I keep the Tour private?_È",
+				shareTitle: "Condividi il Tour",
+				sharePrivateHeader: "Il Tour non è condiviso. Condividerlo?",
+				sharePrivateBtn1: "Condividi pubblicamente",
+				sharePrivateBtn2: "Condividi con l\'organizzazione",
+				sharePrivateProgress: "Condivisione in corso...",
+				sharePrivateErr: "Condivisione non riuscita. Riprovare o",
+				sharePrivateOk: "Condivisione aggiornata. Caricamento in corso...",
+				sharePreviewAsUser: "Anteprima",
+				shareHeader1: "Il Tour è <strong>accessibile pubblicamente</strong>.",
+				shareHeader2: "Il Tour è accessibile ai membri dell\'organizzazione (accesso obbligatorio).",
+				shareLinkHeader: "Condividi il Tour con il pubblico",
+				shareLinkOpen: "APRI",
+				shareQ1Opt1: "Come si mantiene privato il Tour?",
 				shareQ1Opt2: "é_How do I keep the Tour private or share it publicly?_È",
 				shareA1: "é_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._È",
 				shareA1bis: "é_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._È",
 				shareQ2: "é_How do I edit the Tour later?_È",
 				shareQ2bis: "é_How do I get back to the authoring interface?_È",
 				shareA2div1: "é_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._È",
-				shareA2div2: "é_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_È",				
-				shareQ3: "é_Where is the data stored?_È",
-				shareA3: "é_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._È"
+				shareA2div2: "In quanto proprietari dell\'applicazione, all\'accesso in ArcGIS.com, l\'applicazione includerà un pulsante per aprire il generatore interattivo:",				
+				shareQ3: "Dove vengono memorizzati i dati?",
+				shareA3: "La configurazione del Tour viene memorizzata in <a href='%LINK1%' target='_blank'>questo elemento della mappa Web</a> e in <a href='%LINK2%' target='_blank'>questo elemento dell\'applicazione Web</a>. Se è stato utilizzata l\'importazione da Flickr, Picasa, Facebook o YouTube, le immagini e i video rimarranno memorizzati in tale posizione e non verranno duplicati in ArcGIS Online."
 			}
         }
     })

@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Некоторые внесенные изменения требуют сохранения и перезагрузки приложения"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Ж_Swipe Type_Я",
-				settingsDataModelExplainSwipe: "Ж_What do you want users to swipe?_Я",
+				settingsTabDataModel: "Тип шторки",
+				settingsDataModelExplainSwipe: "Что пользователи должны сдвигать?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Выберите слой или веб-карту, которые появятся в подзорной трубе.",
-				settingsDataModelOneMap: "Ж_A layer in a web map_Я",
-				settingsDataModel1Explain: "Ж_Select the layer you want to be swiped_Я",
+				settingsDataModelOneMap: "Слой на веб-карте",
+				settingsDataModel1Explain: "Выберите слой, который будет управляться инструментом Шторка.",
 				settingsDataModel1Warning: "Если слой скрыт под другими слоями, использование шторки не даст никакого результата.",
 				settingsDataModel1SpyGlassExplain: "Выберите слой, появляющийся в подзорной трубе.",
 				settingsDataModelTwoMaps: "Две веб-карты",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Включить описание",
 				settingsBookmarksEnable: "Включить несколько шторок",
 				settingsPopupDisable: "Включить всплывающее окно",
-				settingsLocationSearchEnable: "Ж_Enable locator search_Я",
-				settingsGeolocatorEnable: "Ж_Enable geolocator_Я",
+				settingsLocationSearchEnable: "Включить поиск локатора",
+				settingsGeolocatorEnable: "Включить геолокатор",
 				settingsLegendHelpContent: "Для настройки содержания легенды используйте таблицу содержания вьюера веб-карт ArcGIS.com (Скрыть в легенде)",
-				settingsSeriesHelpContent: "Ж_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._Я", 
+				settingsSeriesHelpContent: "Серии шторок - это опция навигации, позволяющая пользователю переходить к определенному экстенту и отображать текст заголовка и описания на боковой панели.  При первоначальном включении закладки с веб-карт будут импортированы и использованы для создания серий.  Отключение опции работы с сериями приводит к отключению панели серий, но настройки серий остаются для использования в будущем.", 
 				preview: "Просмотр UI",
-				settingsLocateButtonExplain: "Ж_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Я",
-				settingsLocateButton: "Ж_Enable a 'Locate' button supported browsers_Я",
-				settingsAddressSearch: "Ж_Enable an address search tool_Я"
+				settingsLocateButtonExplain: "Эта функция поддерживается на большинстве браузеров мобильных устройств и настольных ПК (включая Internet Explorer 9+).",
+				settingsLocateButton: "Включить в поддерживаемых браузерах кнопку Размещение",
+				settingsAddressSearch: "Включить инструмент поиска адреса"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Всплывающая информация",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Начало работы со Шторкой",
 				modalNext: "Далее",
-				modalPrev: "Ж_Previous_Я",
+				modalPrev: "Предыдущий",
 				modalApply: "Открыть приложение"
 			},
 			seriesPanel: {

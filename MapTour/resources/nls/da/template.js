@@ -6,8 +6,8 @@
 				step2: "INDLÆSER DATA",
 				step3: "STARTER TUREN",
 				loadBuilder: "SKIFTER TIL BUILDER-TILSTAND",
-				redirectSignIn: "ø_REDIRECTING TO SIGN-IN PAGE_å",
-				redirectSignIn2: "ø_(you will be redirected here after sign-in)_å",
+				redirectSignIn: "OMDIRIGERER TIL LOG IND-SIDE",
+				redirectSignIn2: "(du omdirigeres hertil efter login)",
 				fail: "Beklager, indlæsning af Map Tour mislykkedes",
 				failButton: "Prøv igen"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "Et historiekort",
 				builderButton: "Skift til builder-tilstand",
 				bitlyTooltip: "Hent et kortere link til applikationen",
-				bitlyStartIndex: "ø_Link to current place_å"
+				bitlyStartIndex: "Link til aktuelt sted"
 			},
 			builderHTML: {
 				panelHeader: "APPLIKATIONSKONFIGURATION",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "Skala/niveau",
 				settingsZoomFirstValue: "Ingen",
 				settingsFieldError: "Marker et felt i hver liste",
-				dataTitle: "ø_ArcGIS Online hosting_å",
+				dataTitle: "ArcGIS Online \"hosting\"",
 				dataExplain: "ø_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._å",
 				dataNameLbl: "Tjenestenavn",
 				dataFolderListLbl: "Mappe",
@@ -207,7 +207,7 @@
 				errorNoLocation: "Indstil en position for dette turpunkt"
 			},
 			builderJS: {
-				noPendingChange: "ø_No unsaved change_å",
+				noPendingChange: "Ingen ikke-gemte ændringer",
 				unSavedChangeSingular: "1 ikke-gemt ændring",
 				unSavedChangePlural: "ikke-gemte ændringer",
 				shareStatus1: "ø_Tour is not saved_å",
@@ -226,7 +226,7 @@
 				saveSuccess: "Applikation gemt med succes",
 				saveError: "Lagring mislykkedes, prøv igen",
 				saveError2: "Lagring mislykkedes pga. en ugyldig html-kode i et navn eller beskrivelse",
-				saveError3: "ø_The title can't be empty_å",
+				saveError3: "Titlen kan ikke være tom",
 				dragColorPicker: "Flyt mig rundt,<br />eller skift min farve",
 				dataWarningExtent: "Du har data uden for webkortudstrækningen. Disse data vil ikke blive brugt som turpunkter. Du skal ændre kortudstrækningen, hvis du vil bruge dem.",
 				dataWarningVisibi: "Dit Map Tour-lag er ikke synligt med den aktuelle webkortudstrækning. Bekræft, at dit Map Tour-lag vil være synligt med et %MAPSIZE% større kort.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "Luk",
 				signIn: "Log ind med en konto på",
 				signInTwo: "for at gemme applikationen.",
-				switchBM: "ø_Change Basemap_å"
+				switchBM: "Skift baggrundskort"
 			},
 			organizePopupJS: {
 				messageStart: "Du har valgt at slette",
@@ -282,8 +282,8 @@
 				videos: "videoer",
 				disabled: "Dette objekt er blevet deaktiveret af administratoren",
 				disabledPortal: "Dette objekt er deaktiveret på Portal for ArcGIS",
-				header1: "ø_Your pictures must be shared publicly._å",
-				header2: "ø_The import will be limited to the first %NB1% %MEDIA%._å",
+				header1: "Dine billeder skal være delt offentligt.",
+				header2: "Importen begrænses til det første %NB1%%MEDIA%.",
 				emptyDataset: "Fejl, der blev ikke fundet nogen billeder",
 				footerImport: "Import\ér",
 				selectAlbum: "Vælg et offentligt album",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "ø_Import your Tour content from a CSV file._å",
 				advancedCommonTip: "ø_It requires that your images and videos are already online._å",
 				select: "Foretag en markering",
-				locUse: "ø_Use pictures geolocation_å",
+				locUse: "Brug billed-geoplacering",
 				locExplain: "ø_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._å",
 				locExplain2: "ø_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._å"
 			},
 			viewFlickr: {
-				title: "ø_Flickr import_å",
+				title: "Flickr-import",
 				header: "ø_Enter your Flickr user name and select a Photo Set or a Tag to be imported._å",
 				userInputLbl: "Indtast et brugernavn",
 				signInMsg2: "Bruger ikke fundet",
@@ -314,7 +314,7 @@
 				footerImportSet: "Import\ér det valgte sæt"
 			},
 			viewFacebook: {
-				title: "ø_Facebook import_å",
+				title: "Facebook-import",
 				header: "ø_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._å",
 				leftHeader: "Facebook-bruger",
 				rightHeader: "Facebook-side",
@@ -323,15 +323,15 @@
 				lookupMsgError: "Side ikke fundet"
 			},
 			viewPicasa: {
-				title: "ø_Picasa/Google+ import_å",
+				title: "Picasa-/Google+ import",
 				header: "ø_Enter your email address or the ID of your Picasa or Google+ account._å",
 				userInputLbl: "Indtast e-mail eller ID",
 				signInMsg2: "Kontoen kunne ikke findes",
-				howToFind: "ø_How to find a Picasa or Google+ account ID_å",
+				howToFind: "Sådan findes et Picasa- eller Google+ konto-ID",
 				howToFind2: "Kopier tal mellem første og anden \'\/\' på Picasa eller en G+-side"
 			},
 			viewCSV: {
-				title: "ø_CSV import_å",
+				title: "CSV-import",
 				uploadBtn: "Mark\ér eller slip en CSV-fil",
 				resultHeaderEmpty: "CSV-filen er tom",
 				resultHeaderSuccess: "Der er indlæst %NB_POINTS% punkter",
@@ -356,8 +356,8 @@
 				footerSucceed: "Import lykkedes. Indlæser"
 			},
 			viewYoutube: {
-				title: "ø_Youtube import_å",
-				header: "ø_Enter a YouTube user name to find publicly shared videos._å",
+				title: "YouTube-import",
+				header: "Angiv et YouTube-brugernavn for at finde offentligt delte videoer.",
 				pageInputLbl: "ø_Enter a Youtube user name_å",
 				lookupMsgError: "Bruger ikke fundet",
 				howToFind: "ø_How to find a Youtube user name_å",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "ø_Select and locate your images/videos_å",
 				header: "Klik eller tryk på de billeder, du vil importere, for at finde dem.",
-				headerMore: "ø_Why aren't my images/videos geolocated?_å",
+				headerMore: "Hvorfor er mine billeder/videoer ikke blevet geoplaceret?",
 				headerExplain: "ø_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._å",
 				leftPanelTab1: "Skal findes",
 				leftPanelTab2: "Fundet",
@@ -379,30 +379,30 @@
 				footerProgress: "Import i gang",
 				footerSucceed: "Import lykkedes. Indlæser...",
 				loading: "Indlæser",
-				error: "ø_Pictures geolocation import failed, geolocations have been ignored._å"
+				error: "Import af billedernes geoplaceringer mislykkedes, geoplaceringer er blevet tilsidesat."
 			},
 			initPopup: {
-				title: "ø_Welcome to the Map Tour Builder_å",
+				title: "Velkommen til Map Tour Builder",
 				prevBtn: "Tilbage",
 				nextBtn: "Næste"
 			},
 			initPopupHome: {
-				header1: "ø_Where are your images or videos?_å",
-				header2: "ø_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._å",
-				title1: "ø_They are already online_å",
-				title2: "ø_I need to upload my images_å",
-				hostedFSTooltip: "ø_Use ArcGIS Online to host your images (doesn't support videos)._å",
-				hostedFsNA: "ø_Only available for ArcGIS for Organizations Publisher and Administrator users_å",
+				header1: "Hvor er dine billeder eller videoer?",
+				header2: "Denne assistent hjælper dig med at oprette en Map Tour på grundlag af medier, der allerede er lagret online, eller den importerer dem til din ArcGIS Online for Organizations-konto.",
+				title1: "De findes allerede online",
+				title2: "Jeg skal overføre mine billeder",
+				hostedFSTooltip: "Brug ArcGIS Online til at \"hoste\" dine billeder (understøtter ikke videoer).",
+				hostedFsNA: "Kun tilgængelig for udgiver- og administratorbrugere på ArcGIS for Organizations",
 				footer1: "Når du er færdig, skal du huske at dele din Map Tour med dit publikum gennem siden for applikationselementer.",
 				footer3: "Download CSV-skabelonen",
 				footer4: "\"Gem som\" hvis den ikke overføres",
-				footer4bis: "ø_Use right click and \"Save as\" if download doesn't start_å",
-				footer5: "ø_Learn more_å",
+				footer4bis: "Brug højreklik og \"Gem som\", hvis overførslen ikke starter",
+				footer5: "Find ud af mere",
 				footerProgress: "Oprettelse i gang",
 				footerSucceed: "Oprettelse lykkedes. Indlæser..."
 			},
 			helpPopup: {
-				title: "ø_Help_å",
+				title: "Hjælp",
 				close: "Luk",
 				tab1: {
 					title: "Introduktion",
@@ -455,7 +455,7 @@
 					div3: "<li>Den ikke indeholder den UI-tilpasning, du ønsker, f.eks. brug af et baggrundsbillede til overskiften</li><li>Du er udvikler, og du ønsker at forbedre applikationen.</li>",
 					div4: "Den overførbare version kan konfigureres via en webkort- eller en webkortapplikationsidentifikator. De primære brugssituationer er:",
 					div41: "Du opretter din map tour med det interaktive builder-program i værtsmiljøet og konfigurerer skabelonen med et webkortapplikations-ID. De indstillinger, du har defineret med det interaktive builder-program, vil blive anvendt.",
-					div42: "ø_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._å",
+					div42: "Du opretter din map tour uden for det interaktive builder-program og konfigurerer skabelonen med et webkort-ID. Du skal læse dokumentationen for at lære, hvordan du konfigurerer skabelonen.",
 					div43: "Bemærk, at det interaktive builder-program er tilgængeligt i en version, der kan overføres, men at der er nogle tekniske begrænsninger for browsere, f.eks. Internet Explorer, der er ældre end version 10.",
 					div5: "ø_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._å"
 				},
@@ -488,7 +488,7 @@
 					div2c: "ø_Sharing the Tour through ArcGIS Online_å",
 					div2d: "ø_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._å",
 					div3t: "ø_Feature Service security_å",
-					div3a: "ø_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._å",
+					div3a: "Hvis du bruger en \"hosted\" featuretjeneste, der er oprettet med Map Tour-builder-programmet, håndterer applikationen tjenestens sikkerhed for dig , og du er den eneste, der har redigeringsrettigheder, også når tjenesten er delt med offentligheden.",
 					div3t2: "ø_Before sharing your Tour with your audience_å",
 					div3: "ø_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._å",
 					div4: "ø_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._å",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "ø_Tour successfully saved_å",
+				firstSaveTitle: "Map Tour\'en blev gemt uden fejl",
 				firstSaveHeader: "ø_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._å",
-				firstSaveA1: "ø_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_å",
+				firstSaveA1: "Hvis du ikke er fortrolig med ArcGIS Online, eller hvis du ønsker en genvej for at få adgang til forfattergrænsefladen, kan du gemme dette link: %LINK1%",
 				firstSaveA1bis: "ø_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._å",
-				firstSaveQ2: "ø_Is my Tour shared?_å",
+				firstSaveQ2: "Er min Map Tour delt?",
 				firstSaveA2: "ø_Currently your Tour is not shared. To share it, use the SHARE button._å",
-				shareTitle: "ø_Share your Tour_å",
-				sharePrivateHeader: "ø_Your Tour is not shared, would you like to share it?_å",
-				sharePrivateBtn1: "ø_Share publicly_å",
-				sharePrivateBtn2: "ø_Share with my Organization_å",
-				sharePrivateProgress: "ø_Sharing in progress..._å",
-				sharePrivateErr: "ø_Sharing failed, try again or_å",
-				sharePrivateOk: "ø_Sharing updated successfully, loading..._å",
-				sharePreviewAsUser: "ø_Preview_å",
-				shareHeader1: "ø_Your Tour is <strong>publicly accessible</strong>._å",
-				shareHeader2: "ø_Your Tour is accessible by your organization members (login is required)._å",
-				shareLinkHeader: "ø_Share the Tour with your audience_å",
-				shareLinkOpen: "ø_OPEN_å",
-				shareQ1Opt1: "ø_How do I keep the Tour private?_å",
+				shareTitle: "Del din Map Tour",
+				sharePrivateHeader: "Din Map Tour er ikke delt. Vil du gerne dele den?",
+				sharePrivateBtn1: "Del offentligt",
+				sharePrivateBtn2: "Del med min organiaation",
+				sharePrivateProgress: "Deling i gang...",
+				sharePrivateErr: "Deling mislykkedes, prøv igen eller",
+				sharePrivateOk: "Deling blev opdateret med succes, indlæser...",
+				sharePreviewAsUser: "Forhåndsvisning",
+				shareHeader1: "Din Map Tour er <strong>offentligt tilgængelig</strong>.",
+				shareHeader2: "Din Map Tour er tilgængelig for dine organisationsmedlemmer (login kræves).",
+				shareLinkHeader: "Del Map Tour\'en med dit publikum",
+				shareLinkOpen: "ÅBN",
+				shareQ1Opt1: "Hvordan bevarer jeg Map Tour\'en privat?",
 				shareQ1Opt2: "ø_How do I keep the Tour private or share it publicly?_å",
 				shareA1: "ø_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._å",
 				shareA1bis: "ø_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._å",
 				shareQ2: "ø_How do I edit the Tour later?_å",
 				shareQ2bis: "ø_How do I get back to the authoring interface?_å",
 				shareA2div1: "ø_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._å",
-				shareA2div2: "ø_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_å",				
-				shareQ3: "ø_Where is the data stored?_å",
-				shareA3: "ø_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._å"
+				shareA2div2: "Når du som ejer af applikationen er logget ind på ArcGIS.com, indeholder applikationen en knap, der åbner det interaktive builder-program:",				
+				shareQ3: "Hvor er dataene gemt?",
+				shareA3: "Tour-konfigurationen er gemt i <a href='%LINK1%' target='_blank'>dette webkortelement</a> og i <a href='%LINK2%' target='_blank'>dette webapplikationselement</a>. Hvis du har benyttet Flickr-, Picasa-, Facebook- eller YouTube-import, forbliver dine billeder og videoer d\ér, og de kopieres ikke til ArcGIS Online."
 			}
         }
     })

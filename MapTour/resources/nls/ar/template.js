@@ -6,8 +6,8 @@
 				step2: "تحميل البيانات",
 				step3: "بدأ الجولة",
 				loadBuilder: "التبديل إلى وضع المُنشىء",
-				redirectSignIn: "بيت_REDIRECTING TO SIGN-IN PAGE_لاحقة",
-				redirectSignIn2: "بيت_(you will be redirected here after sign-in)_لاحقة",
+				redirectSignIn: "إعادة التوجيه لصفحة تسجيل الدخول",
+				redirectSignIn2: "(سيتم إعادة توجيهك هنا بعد تسجيل الدخول)",
 				fail: "عفواً، فشل أثناء تحميل جولة داخل الخريطة",
 				failButton: "إعادة المحاولة"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "قصة داخل خريطة",
 				builderButton: "الانتقال إلى وضع المنشئ",
 				bitlyTooltip: "الحصول على رابط قصير إلى التطبيق",
-				bitlyStartIndex: "بيت_Link to current place_لاحقة"
+				bitlyStartIndex: "الارتباط بالمكان الحالي"
 			},
 			builderHTML: {
 				panelHeader: "تكوين التطبيق",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "المقياس/ المستوى",
 				settingsZoomFirstValue: "لا شيء",
 				settingsFieldError: "الرجاء تحديد حقل في كل قائمة",
-				dataTitle: "بيت_ArcGIS Online hosting_لاحقة",
+				dataTitle: "استضافة ArcGIS Online",
 				dataExplain: "بيت_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._لاحقة",
 				dataNameLbl: "اسم الخدمة",
 				dataFolderListLbl: "المجلد",
@@ -207,7 +207,7 @@
 				errorNoLocation: "تحديد الموقع لنقطة الجولة"
 			},
 			builderJS: {
-				noPendingChange: "بيت_No unsaved change_لاحقة",
+				noPendingChange: "لا توجد أي تغيرات غير محفوظة",
 				unSavedChangeSingular: "1 تغيير غير محفوظ",
 				unSavedChangePlural: "تغييرات غير محفوظة",
 				shareStatus1: "بيت_Tour is not saved_لاحقة",
@@ -226,7 +226,7 @@
 				saveSuccess: "تم حفظ التطبيق بنجاح",
 				saveError: "حدث فشل أثناء الحفظ، يرجى المحاولة مرة أخرى",
 				saveError2: "فشل الحفظ نظرًا لعلامة html غير الصحيحة في اسم أو وصف",
-				saveError3: "بيت_The title can't be empty_لاحقة",
+				saveError3: "يتعذر أن يكون العنوان فارغًا",
 				dragColorPicker: "تحرك في المحيط<br />أو تغيير اللون",
 				dataWarningExtent: "لديك بيانات خارج مدى خريطة الويب.ولن يتم استخدام تلك البيانات باعتبارها نقاط الجولة، ثم قم بتغيير مدى الخريطة إذا كنت تود استخدامها.",
 				dataWarningVisibi: "طبقة الجولة داخل الخريطة غير مرئية داخل مدى خريطة الويب الحالي. تأكد أن طبقة جولة داخل الخريطة مرئية مع الخريطة الكبيرة %MAPSIZE%.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "إغلاق",
 				signIn: "يرجى تسجيل الدخول بحساب داخل",
 				signInTwo: "لحفظ التطبيق",
-				switchBM: "بيت_Change Basemap_لاحقة"
+				switchBM: "تغيير خريطة الأساس"
 			},
 			organizePopupJS: {
 				messageStart: "قد تم الاختيار للحذف",
@@ -282,8 +282,8 @@
 				videos: "فيديوهات",
 				disabled: "لقد تم تعطيل هذا المعلم بواسطة المدير",
 				disabledPortal: "هذه الميزة مُعطلة في Portal for ArcGIS",
-				header1: "بيت_Your pictures must be shared publicly._لاحقة",
-				header2: "بيت_The import will be limited to the first %NB1% %MEDIA%._لاحقة",
+				header1: "تتعين مشاركة الصور بشكل عام.",
+				header2: "سيتم تحديد الاستيراد لـ %NB1% %MEDIA% الأول.",
 				emptyDataset: "خطأ، لم يتم العثور على صور",
 				footerImport: "استيراد",
 				selectAlbum: "تحديد ألبوم عام",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "بيت_Import your Tour content from a CSV file._لاحقة",
 				advancedCommonTip: "بيت_It requires that your images and videos are already online._لاحقة",
 				select: "عمل تحديد",
-				locUse: "بيت_Use pictures geolocation_لاحقة",
+				locUse: "استخدم موقع الصور الجغرافي",
 				locExplain: "بيت_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._لاحقة",
 				locExplain2: "بيت_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._لاحقة"
 			},
 			viewFlickr: {
-				title: "بيت_Flickr import_لاحقة",
+				title: "استيراد Flickr",
 				header: "بيت_Enter your Flickr user name and select a Photo Set or a Tag to be imported._لاحقة",
 				userInputLbl: "أدخل اسم مستخدم",
 				signInMsg2: "لم يتم العثور على المستخدم",
@@ -314,7 +314,7 @@
 				footerImportSet: "استيراد المجموعة المحددة"
 			},
 			viewFacebook: {
-				title: "بيت_Facebook import_لاحقة",
+				title: "استيراد Facebook",
 				header: "بيت_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._لاحقة",
 				leftHeader: "مستخدم Facebook",
 				rightHeader: "صفحة Facebook",
@@ -323,15 +323,15 @@
 				lookupMsgError: "لم يتم العثور على الصفحة"
 			},
 			viewPicasa: {
-				title: "بيت_Picasa/Google+ import_لاحقة",
+				title: "استيراد Picasa/Google+",
 				header: "بيت_Enter your email address or the ID of your Picasa or Google+ account._لاحقة",
 				userInputLbl: "أدخل بريد إلكتروني أو معرف",
 				signInMsg2: "لم يتم العثور على الحساب",
-				howToFind: "بيت_How to find a Picasa or Google+ account ID_لاحقة",
+				howToFind: "كيفية إيجاد Picasa أو Google+ أو معرف الحساب",
 				howToFind2: "نسخ الأرقام بين الأول والثاني \'/\'  لأي من Picasa او صفحة G+"
 			},
 			viewCSV: {
-				title: "بيت_CSV import_لاحقة",
+				title: "استيراد CSV",
 				uploadBtn: "تحديد ملف CSV أو إفلاته",
 				resultHeaderEmpty: "ملف CSV فارغ",
 				resultHeaderSuccess: "تم تحميل %NB_POINTS% نقاط بنجاح",
@@ -356,8 +356,8 @@
 				footerSucceed: "نجحت عملية الاستيراد.جارِ التحميل"
 			},
 			viewYoutube: {
-				title: "بيت_Youtube import_لاحقة",
-				header: "بيت_Enter a YouTube user name to find publicly shared videos._لاحقة",
+				title: "استيراد Youtube",
+				header: "أدخل اسم مستخدم YouTube لإيجاد مقاطع الفيديو المشتركة بشكل عام.",
 				pageInputLbl: "بيت_Enter a Youtube user name_لاحقة",
 				lookupMsgError: "لم يتم العثور على المستخدم",
 				howToFind: "بيت_How to find a Youtube user name_لاحقة",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "بيت_Select and locate your images/videos_لاحقة",
 				header: "انقر أو اضغط فوق الصور التي ترغب في استيرادها لتحديد موقعهم.",
-				headerMore: "بيت_Why aren't my images/videos geolocated?_لاحقة",
+				headerMore: "لماذا لم يتم تحديد موقع الصور ومقاطع الفيديو جغرافيًا؟",
 				headerExplain: "بيت_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._لاحقة",
 				leftPanelTab1: "لتحديد الموقع",
 				leftPanelTab2: "تم تحديد الموقع",
@@ -379,30 +379,30 @@
 				footerProgress: "الاستيراد قيد التقدم",
 				footerSucceed: "نجحت عملية الاستيراد.جارِ التحميل...",
 				loading: "تحميل",
-				error: "بيت_Pictures geolocation import failed, geolocations have been ignored._لاحقة"
+				error: "فضل استيراد موقع الصور الجغرافي، تم تجاهل المواقع الجغرافية."
 			},
 			initPopup: {
-				title: "بيت_Welcome to the Map Tour Builder_لاحقة",
+				title: "مرحبًا في منشئ جولة الخريطة",
 				prevBtn: "السابق",
 				nextBtn: "التالي"
 			},
 			initPopupHome: {
-				header1: "بيت_Where are your images or videos?_لاحقة",
-				header2: "بيت_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._لاحقة",
-				title1: "بيت_They are already online_لاحقة",
-				title2: "بيت_I need to upload my images_لاحقة",
-				hostedFSTooltip: "بيت_Use ArcGIS Online to host your images (doesn't support videos)._لاحقة",
-				hostedFsNA: "بيت_Only available for ArcGIS for Organizations Publisher and Administrator users_لاحقة",
+				header1: "أين توجد الصور أو مقاطع الفيديو؟",
+				header2: "ستساعد هذه المساعدة في بناء جولة الخريطة من الوسائط المخزنة على شبكة الإنترنت بالفعل أو سيتم استيرادها داخل حساب ArcGIS Online for Organizations.",
+				title1: "تكون متصلة بشبكة الإنترنت بالفعل",
+				title2: "احتاج تحميل الصور",
+				hostedFSTooltip: "استخدم ArcGIS Online لاستضافة الصور (لا تدعم مقاطع الفيديو).",
+				hostedFsNA: "تكون متاحة فقط لـ ArcGIS for Organizations Publisher ومستخدمي المسئول",
 				footer1: "عند الإتمام، لا تنسى مشاركة جولة الخريطة مع الحضور خلال صفحة عنصر التطبيق.",
 				footer3: "تحميل قالب CSV",
 				footer4: "\"Save as\" كما لم يتم التنزيل",
-				footer4bis: "بيت_Use right click and \"Save as\" if download doesn't start_لاحقة",
-				footer5: "بيت_Learn more_لاحقة",
+				footer4bis: "استخدم الزر الأيمن و\"Save as\" إذا لم يتم تشغيل التنزيل",
+				footer5: "تعلم المزيد",
 				footerProgress: "الإنشاء قيد التقدم",
 				footerSucceed: "نجحت عملية الإنشاء. جارِ التحميل..."
 			},
 			helpPopup: {
-				title: "بيت_Help_لاحقة",
+				title: "تعليمات",
 				close: "إغلاق",
 				tab1: {
 					title: "مقدمة",
@@ -455,7 +455,7 @@
 					div3: "<li>لا يُوفر تخصيص واجهة المستخدم التي ترغب في الحصول عليها، مثل استخدام صورة الخلفية.</li><li>أنت تعمل كمُطور وترغب في تحسين التطبيق.</li>",
 					div4: "يمكن تكوين الإصدار القابل للتنزيل من خلال خريطة الويب أو معرف تطبيق رسم الخرائط على الويب. تشمل حالات الاستخدام الرئيسي:",
 					div41: "إنك تقوم بإنشاء جولة الخريطة باستخدام المنشئ التفاعلي في البيئة المستضافة وتكوين القالب باستخدام مُعرف تطبيق رسم الخرائط على الويب، ويتم تطبيق الإعدادات التي قمت بتعريفها بالمنشئ التفاعلي.",
-					div42: "بيت_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._لاحقة",
+					div42: "إنك تقوم بإنشاء خريطة الويب خارج المنشئ التفاعلي وتكوين القالب بمُعرف خريطة الويب، ويتعين عليك قراءة الوثائق لتعلم كيفية تكوين القالب.",
 					div43: "لاحظ أن المنشئ التفاعلي يتوفر في الإصدارات التي يمكن تنزيلها، إلا أن بعض القيود الفنية في المستعرضات مثل Internet Explorer التي تسبق الإصدار 10.",
 					div5: "بيت_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._لاحقة"
 				},
@@ -488,7 +488,7 @@
 					div2c: "بيت_Sharing the Tour through ArcGIS Online_لاحقة",
 					div2d: "بيت_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._لاحقة",
 					div3t: "بيت_Feature Service security_لاحقة",
-					div3a: "بيت_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._لاحقة",
+					div3a: "في حالة استخدام خدمة المعالم المستضافة التي يقوم مُنشئ جولة الخريطة بإنشائها، يقوم التطبيق بإدارة أمان الخدمة وستظل الشخص الوحيد الذي يملك امتيازات التحرير حتى أثناء مشاركة الخدمة مع الجميع.",
 					div3t2: "بيت_Before sharing your Tour with your audience_لاحقة",
 					div3: "بيت_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._لاحقة",
 					div4: "بيت_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._لاحقة",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "بيت_Tour successfully saved_لاحقة",
+				firstSaveTitle: "تم حفظ الجولة بنجاح",
 				firstSaveHeader: "بيت_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._لاحقة",
-				firstSaveA1: "بيت_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_لاحقة",
+				firstSaveA1: "إذا لم تكن متألف مع ArcGIS Online أو ترغب في الحصول على الاختصار للوصول إلى واجهة التأليف، يمكن حفظ الرابط التالي: %LINK1%",
 				firstSaveA1bis: "بيت_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._لاحقة",
-				firstSaveQ2: "بيت_Is my Tour shared?_لاحقة",
+				firstSaveQ2: "هل تمت مشاركة الجولة؟",
 				firstSaveA2: "بيت_Currently your Tour is not shared. To share it, use the SHARE button._لاحقة",
-				shareTitle: "بيت_Share your Tour_لاحقة",
-				sharePrivateHeader: "بيت_Your Tour is not shared, would you like to share it?_لاحقة",
-				sharePrivateBtn1: "بيت_Share publicly_لاحقة",
-				sharePrivateBtn2: "بيت_Share with my Organization_لاحقة",
-				sharePrivateProgress: "بيت_Sharing in progress..._لاحقة",
-				sharePrivateErr: "بيت_Sharing failed, try again or_لاحقة",
-				sharePrivateOk: "بيت_Sharing updated successfully, loading..._لاحقة",
-				sharePreviewAsUser: "بيت_Preview_لاحقة",
-				shareHeader1: "بيت_Your Tour is <strong>publicly accessible</strong>._لاحقة",
-				shareHeader2: "بيت_Your Tour is accessible by your organization members (login is required)._لاحقة",
-				shareLinkHeader: "بيت_Share the Tour with your audience_لاحقة",
-				shareLinkOpen: "بيت_OPEN_لاحقة",
-				shareQ1Opt1: "بيت_How do I keep the Tour private?_لاحقة",
+				shareTitle: "مشاركة الجولة",
+				sharePrivateHeader: "لم تتم مشاركة الجولة، هل ترغب في مشاركتها؟",
+				sharePrivateBtn1: "مشاركتها بشكل عام",
+				sharePrivateBtn2: "مشاركتها مع المنظمة",
+				sharePrivateProgress: "المشاركة قيد التقدم...",
+				sharePrivateErr: "فشلت المشاركة، أعد المحاولة مرة أخرى أو",
+				sharePrivateOk: "تم تحديث المشاركة بنجاح، جارِ التحميل...",
+				sharePreviewAsUser: "معاينة",
+				shareHeader1: "يمكن الوصول إلى الجولة <strong>بشكل عام</strong>.",
+				shareHeader2: "يمكن الوصول إلى الجولة من قبل أعضاء المنظمة (يتطلب تسجيل الدخول).",
+				shareLinkHeader: "مشاركة الجولة مع الحضور",
+				shareLinkOpen: "فتح",
+				shareQ1Opt1: "كيف يمكنني جعل الجولة خاصة؟",
 				shareQ1Opt2: "بيت_How do I keep the Tour private or share it publicly?_لاحقة",
 				shareA1: "بيت_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._لاحقة",
 				shareA1bis: "بيت_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._لاحقة",
 				shareQ2: "بيت_How do I edit the Tour later?_لاحقة",
 				shareQ2bis: "بيت_How do I get back to the authoring interface?_لاحقة",
 				shareA2div1: "بيت_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._لاحقة",
-				shareA2div2: "بيت_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_لاحقة",				
-				shareQ3: "بيت_Where is the data stored?_لاحقة",
-				shareA3: "بيت_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._لاحقة"
+				shareA2div2: "بصفتك مالك التطبيق، عند تسجيل الدخول على ArcGIS.com، سيتضمن التطبيق زر لفتح المنشئ التفاعلي:",				
+				shareQ3: "أين يتم تخزين البيانات؟",
+				shareA3: "يتم تخزين تكوين الجولة في <a href='%LINK1%' target='_blank'>عنصر خريطة الويب</a> و <a href='%LINK2%' target='_blank'>عنصر تطبيق الويب الحالي</a>. عند استخدام Flicker أو Picasa أو Facebook أو YouTube، ستظل الصور ومقاطع الفيديو مخزنة ولن تتكرر في ArcGIS Online."
 			}
         }
     })

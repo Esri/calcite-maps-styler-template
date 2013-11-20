@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "其中一些更改需要您保存和重新加载应用程序"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "试_Swipe Type_验",
-				settingsDataModelExplainSwipe: "试_What do you want users to swipe?_验",
+				settingsTabDataModel: "卷帘类型",
+				settingsDataModelExplainSwipe: "您希望用户对哪些对象执行卷帘操作?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "选择在望远镜中显示的图层或 web 地图。",
-				settingsDataModelOneMap: "试_A layer in a web map_验",
-				settingsDataModel1Explain: "试_Select the layer you want to be swiped_验",
+				settingsDataModelOneMap: "Web 地图中的图层",
+				settingsDataModel1Explain: "选择要对其进行卷帘操作的图层",
 				settingsDataModel1Warning: "如果图层被上面的图层所遮盖，则卷帘无任何效果。",
 				settingsDataModel1SpyGlassExplain: "选择要在望远镜中显示的图层。",
 				settingsDataModelTwoMaps: "两幅 web 地图",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "启用描述",
 				settingsBookmarksEnable: "启用卷帘系列",
 				settingsPopupDisable: "启用弹出窗口",
-				settingsLocationSearchEnable: "试_Enable locator search_验",
-				settingsGeolocatorEnable: "试_Enable geolocator_验",
+				settingsLocationSearchEnable: "启用定位器搜索",
+				settingsGeolocatorEnable: "启用地理定位器",
 				settingsLegendHelpContent: "要优化图例内容，请使用 ArcGIS.com web 地图查看器内容列表(隐藏在图例中)",
-				settingsSeriesHelpContent: "试_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._验", 
+				settingsSeriesHelpContent: "卷帘系列是一种选项卡式的导航选项，它可将查看器设置为特定范围，并在侧面板中显示标题和描述文本。在首次激活时，将导入 web 地图的书签并将其用于预填充系列条形图。禁用系列选项将关闭系列条形图，但系列配置将被保留供以后使用。", 
 				preview: "UI 预览",
-				settingsLocateButtonExplain: "试_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._验",
-				settingsLocateButton: "试_Enable a 'Locate' button supported browsers_验",
-				settingsAddressSearch: "试_Enable an address search tool_验"
+				settingsLocateButtonExplain: "此功能在大多数移动设备和桌面浏览器(包括 Internet Explorer 9+)中都受支持。",
+				settingsLocateButton: "启用支持“定位”按钮的浏览器",
+				settingsAddressSearch: "启用地址搜索工具"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "弹出窗口",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "欢迎使用 Swipe Builder",
 				modalNext: "下一步",
-				modalPrev: "试_Previous_验",
+				modalPrev: "上一步",
 				modalApply: "打开应用程序"
 			},
 			seriesPanel: {

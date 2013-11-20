@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Lai dažas no jūsu veiktajām izmaiņām stātos spēkā, ir nepieciešams saglabāt un atkārtoti ielādēt aplikāciju."
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "ķ_Swipe Type_ū",
-				settingsDataModelExplainSwipe: "ķ_What do you want users to swipe?_ū",
+				settingsTabDataModel: "Pārvilkšanas tips",
+				settingsDataModelExplainSwipe: "Ko jūs vēlaties lai lietotāji pārvelk?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Izvēlieties slāni vai web karti, kas tiks rādīta tālskatī.",
-				settingsDataModelOneMap: "ķ_A layer in a web map_ū",
-				settingsDataModel1Explain: "ķ_Select the layer you want to be swiped_ū",
+				settingsDataModelOneMap: "Slānis web kartē",
+				settingsDataModel1Explain: "Izvēlieties slāni, ko vēlaties pārvilkt",
 				settingsDataModel1Warning: "Ja slānis ir paslēpts augšējos slāņos, pārvilkšanai nebūs nekāda efekta.",
 				settingsDataModel1SpyGlassExplain: "Izvēlieties slāni, ko parādīt tālskatī.",
 				settingsDataModelTwoMaps: "Divas web kartes",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Iespējot aprakstu",
 				settingsBookmarksEnable: "Iespējot sēriju Pārvilkt",
 				settingsPopupDisable: "Iespējot uznirstošo logu",
-				settingsLocationSearchEnable: "ķ_Enable locator search_ū",
-				settingsGeolocatorEnable: "ķ_Enable geolocator_ū",
+				settingsLocationSearchEnable: "Iespējot meklētāja meklēšanu",
+				settingsGeolocatorEnable: "Iespējot ģeolokatoru",
 				settingsLegendHelpContent: "Lai attīrītu leģendas saturu izmantojiet ArcGIS.com web kartes skatītāja satura tabulu (Paslēpt leģendā)",
-				settingsSeriesHelpContent: "ķ_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ū", 
+				settingsSeriesHelpContent: "Pārvilkšanas sērijas ir cilņu navigācijas opcija, kas virzīs skatītāju uz noteiktu pārklājumu un attēlos virsrakstu un apraksta tekstu sānu panelī. Sākotnējās aktivizācijas laikā, web karšu grāmatzīmes tiks importētas un izmantotas, lai aizpildītu seriju joslu. Sēriju opciju atiespējošana izslēgs sēriju joslu, bet sēriju konfigurācija tiks saglabāta izmantošanai nākotnē.", 
 				preview: "Saskarnes priekšskatījums",
-				settingsLocateButtonExplain: "ķ_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ū",
-				settingsLocateButton: "ķ_Enable a 'Locate' button supported browsers_ū",
-				settingsAddressSearch: "ķ_Enable an address search tool_ū"
+				settingsLocateButtonExplain: "Šī funkcionalitāte tiek atbalstīta uz vairuma mobilo ierīču un darbvirsmas pārlūkiem (ieskaitot Internet Explorer 9+).",
+				settingsLocateButton: "Iespējot 'Atrast izvietojumu' pogu atblastītajos pārlūkos",
+				settingsAddressSearch: "Iespējot adreses meklēšanas rīku"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Uznirstošie logi",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Laipni lūdzam pārvilkšanas veidotājā",
 				modalNext: "Nākošais",
-				modalPrev: "ķ_Previous_ū",
+				modalPrev: "Iepriekšējs",
 				modalApply: "Atveriet lietotni"
 			},
 			seriesPanel: {

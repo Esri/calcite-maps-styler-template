@@ -6,8 +6,8 @@
 				step2: "正在加载数据",
 				step3: "正在初始化浏览",
 				loadBuilder: "切换到构建器模式",
-				redirectSignIn: "试_REDIRECTING TO SIGN-IN PAGE_验",
-				redirectSignIn2: "试_(you will be redirected here after sign-in)_验",
+				redirectSignIn: "重定向到登录页面",
+				redirectSignIn2: "(登录后您将重定向到此处)",
 				fail: "抱歉，地图浏览加载失败",
 				failButton: "重试"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "故事地图",
 				builderButton: "切换到构建器模式",
 				bitlyTooltip: "获取应用程序的短链接",
-				bitlyStartIndex: "试_Link to current place_验"
+				bitlyStartIndex: "当前地点的链接"
 			},
 			builderHTML: {
 				panelHeader: "应用程序配置",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "比例/级别",
 				settingsZoomFirstValue: "无",
 				settingsFieldError: "请在每个列表中选择一个字段",
-				dataTitle: "试_ArcGIS Online hosting_验",
+				dataTitle: "ArcGIS Online 托管",
 				dataExplain: "试_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._验",
 				dataNameLbl: "服务名称",
 				dataFolderListLbl: "文件夹",
@@ -207,7 +207,7 @@
 				errorNoLocation: "设置该浏览点的位置"
 			},
 			builderJS: {
-				noPendingChange: "试_No unsaved change_验",
+				noPendingChange: "无未保存的更改",
 				unSavedChangeSingular: "1 个未保存的更改",
 				unSavedChangePlural: "未保存的更改",
 				shareStatus1: "试_Tour is not saved_验",
@@ -226,7 +226,7 @@
 				saveSuccess: "应用程序保存成功",
 				saveError: "保存失败，请重试",
 				saveError2: "由于名称或描述中存在无效 html 标签，因此保存失败",
-				saveError3: "试_The title can't be empty_验",
+				saveError3: "标题不能为空",
 				dragColorPicker: "随意移动<br />或更改颜色",
 				dataWarningExtent: "部分数据位于 web 地图的范围之外。这些数据不用作浏览点，如果要使用它们，请更改地图范围。",
 				dataWarningVisibi: "您的地图浏览图层在当前 web 地图范围内不可见。将地图扩大到 %MAPSIZE% 可保证地图浏览图层可见。",
@@ -234,7 +234,7 @@
 				dataWarningClose: "关闭",
 				signIn: "请使用帐户登录",
 				signInTwo: "保存应用程序。",
-				switchBM: "试_Change Basemap_验"
+				switchBM: "更改底图"
 			},
 			organizePopupJS: {
 				messageStart: "您已选择删除",
@@ -282,8 +282,8 @@
 				videos: "视频",
 				disabled: "此功能已被管理员禁用",
 				disabledPortal: "Portal for ArcGIS 中禁用此功能",
-				header1: "试_Your pictures must be shared publicly._验",
-				header2: "试_The import will be limited to the first %NB1% %MEDIA%._验",
+				header1: "您的图片必须公开共享。",
+				header2: "导入将限制为前 %NB1% 个 %MEDIA%。",
 				emptyDataset: "发生错误，未找到图片",
 				footerImport: "导入",
 				selectAlbum: "选择公共图片集",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "试_Import your Tour content from a CSV file._验",
 				advancedCommonTip: "试_It requires that your images and videos are already online._验",
 				select: "做出选择",
-				locUse: "试_Use pictures geolocation_验",
+				locUse: "使用图片地理位置",
 				locExplain: "试_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._验",
 				locExplain2: "试_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._验"
 			},
 			viewFlickr: {
-				title: "试_Flickr import_验",
+				title: "Flickr 导入",
 				header: "试_Enter your Flickr user name and select a Photo Set or a Tag to be imported._验",
 				userInputLbl: "输入用户名",
 				signInMsg2: "未找到用户",
@@ -314,7 +314,7 @@
 				footerImportSet: "导入所选集"
 			},
 			viewFacebook: {
-				title: "试_Facebook import_验",
+				title: "Facebook 导入",
 				header: "试_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._验",
 				leftHeader: "Facebook 用户",
 				rightHeader: "Facebook 页面",
@@ -323,15 +323,15 @@
 				lookupMsgError: "未找到页面"
 			},
 			viewPicasa: {
-				title: "试_Picasa/Google+ import_验",
+				title: "Picasa/Google+ 导入",
 				header: "试_Enter your email address or the ID of your Picasa or Google+ account._验",
 				userInputLbl: "输入电子邮件或 ID",
 				signInMsg2: "未找到帐户",
-				howToFind: "试_How to find a Picasa or Google+ account ID_验",
+				howToFind: "如何查找 Picasa 或 Google+ 帐户 ID",
 				howToFind2: "复制任何 Picasa 或 G+ 页面的第一个和第二个 '/' 之间的数字"
 			},
 			viewCSV: {
-				title: "试_CSV import_验",
+				title: "CSV 导入",
 				uploadBtn: "选择或删除 CSV 文件",
 				resultHeaderEmpty: "CSV 为空",
 				resultHeaderSuccess: "已成功加载 %NB_POINTS% 个点",
@@ -356,8 +356,8 @@
 				footerSucceed: "导入成功。正在加载"
 			},
 			viewYoutube: {
-				title: "试_Youtube import_验",
-				header: "试_Enter a YouTube user name to find publicly shared videos._验",
+				title: "Youtube 导入",
+				header: "输入 YouTube 用户名以查找公开共享的视频。",
 				pageInputLbl: "试_Enter a Youtube user name_验",
 				lookupMsgError: "未找到用户",
 				howToFind: "试_How to find a Youtube user name_验",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "试_Select and locate your images/videos_验",
 				header: "单击或点击想导入的图片，以将其定位。",
-				headerMore: "试_Why aren't my images/videos geolocated?_验",
+				headerMore: "为什么我的图像/视频没有地理定位?",
 				headerExplain: "试_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._验",
 				leftPanelTab1: "定位",
 				leftPanelTab2: "已定位",
@@ -379,7 +379,7 @@
 				footerProgress: "正在导入",
 				footerSucceed: "导入成功。正在加载...",
 				loading: "正在加载",
-				error: "试_Pictures geolocation import failed, geolocations have been ignored._验"
+				error: "图片地理位置导入失败，地理位置已被忽略。"
 			},
 			initPopup: {
 				title: "欢迎使用地图浏览构建器",
@@ -387,17 +387,17 @@
 				nextBtn: "下一步"
 			},
 			initPopupHome: {
-				header1: "试_Where are your images or videos?_验",
-				header2: "试_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._验",
-				title1: "试_They are already online_验",
-				title2: "试_I need to upload my images_验",
-				hostedFSTooltip: "试_Use ArcGIS Online to host your images (doesn't support videos)._验",
-				hostedFsNA: "试_Only available for ArcGIS for Organizations Publisher and Administrator users_验",
+				header1: "图像或视频的位置在哪?",
+				header2: "该助手将帮助您通过已在线存储的媒体来构建地图浏览，或者将媒体导入到您的 ArcGIS Online for Organizations 帐户。",
+				title1: "媒体已在线",
+				title2: "我需要上传我的图像",
+				hostedFSTooltip: "使用 ArcGIS Online 托管您的图像(不支持视频)。",
+				hostedFsNA: "仅适用于 ArcGIS for Organizations 发布者和管理员用户",
 				footer1: "完成后，不要忘记通过应用程序项目页面与受众共享您的地图浏览。",
 				footer3: "下载 CSV 模板",
 				footer4: "如果不下载，则 \"另存为\"",
-				footer4bis: "试_Use right click and \"Save as\" if download doesn't start_验",
-				footer5: "试_Learn more_验",
+				footer4bis: "如果下载未开始，请右键单击并选择\“另存为\”",
+				footer5: "了解详细信息",
 				footerProgress: "正在创建",
 				footerSucceed: "创建成功。正在加载..."
 			},
@@ -455,7 +455,7 @@
 					div3: "<li>它不提供您想要的 UI 自定义，例如使用标题背景图像。</li><li>您是开发者，并且希望增强应用程序。</li>",
 					div4: "可通过 web 地图或 web 制图应用程序标识符配置可下载版本。主要用例有:",
 					div41: "使用托管环境中的交互式构建器来构建地图浏览，并通过 web 制图应用程序标识符来配置模板。将应用通过交互式构建器定义的设置。",
-					div42: "试_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._验",
+					div42: "在交互式构建器外部构建您的 web 地图，并通过 web 地图标识符配置模板。您需要阅读文档以了解如何配置模板。",
 					div43: "请注意，交互式构建器在可下载的版本中提供，但对于 Internet Explorer 10 版本之前的浏览器仍有技术限制。",
 					div5: "试_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._验"
 				},
@@ -488,7 +488,7 @@
 					div2c: "试_Sharing the Tour through ArcGIS Online_验",
 					div2d: "试_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._验",
 					div3t: "试_Feature Service security_验",
-					div3a: "试_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._验",
+					div3a: "如果使用通过地图浏览构建器创建的托管要素服务，应用程序将为您管理服务安全性，即使公开共享服务，您也是唯一具有编辑权限的人员。",
 					div3t2: "试_Before sharing your Tour with your audience_验",
 					div3: "试_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._验",
 					div4: "试_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._验",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "试_Tour successfully saved_验",
+				firstSaveTitle: "成功保存浏览内容",
 				firstSaveHeader: "试_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._验",
-				firstSaveA1: "试_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_验",
+				firstSaveA1: "如果您不熟悉 ArcGIS Online，或需要访问创作界面的快捷方式，则可以保存以下链接: %LINK1%",
 				firstSaveA1bis: "试_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._验",
-				firstSaveQ2: "试_Is my Tour shared?_验",
+				firstSaveQ2: "是否共享我的浏览?",
 				firstSaveA2: "试_Currently your Tour is not shared. To share it, use the SHARE button._验",
-				shareTitle: "试_Share your Tour_验",
-				sharePrivateHeader: "试_Your Tour is not shared, would you like to share it?_验",
-				sharePrivateBtn1: "试_Share publicly_验",
-				sharePrivateBtn2: "试_Share with my Organization_验",
-				sharePrivateProgress: "试_Sharing in progress..._验",
-				sharePrivateErr: "试_Sharing failed, try again or_验",
-				sharePrivateOk: "试_Sharing updated successfully, loading..._验",
-				sharePreviewAsUser: "试_Preview_验",
-				shareHeader1: "试_Your Tour is <strong>publicly accessible</strong>._验",
-				shareHeader2: "试_Your Tour is accessible by your organization members (login is required)._验",
-				shareLinkHeader: "试_Share the Tour with your audience_验",
-				shareLinkOpen: "试_OPEN_验",
-				shareQ1Opt1: "试_How do I keep the Tour private?_验",
+				shareTitle: "共享您的浏览",
+				sharePrivateHeader: "您的浏览尚未共享，是否要共享?",
+				sharePrivateBtn1: "公开共享",
+				sharePrivateBtn2: "与我的组织共享",
+				sharePrivateProgress: "正在进行共享...",
+				sharePrivateErr: "共享失败，请重试或",
+				sharePrivateOk: "共享更新成功，正在加载...",
+				sharePreviewAsUser: "预览",
+				shareHeader1: "您的浏览<strong>可公开访问</strong>。",
+				shareHeader2: "组织成员可以访问您的浏览(需要登录)。",
+				shareLinkHeader: "与受众共享浏览",
+				shareLinkOpen: "打开",
+				shareQ1Opt1: "如何将浏览设置为私有?",
 				shareQ1Opt2: "试_How do I keep the Tour private or share it publicly?_验",
 				shareA1: "试_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._验",
 				shareA1bis: "试_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._验",
 				shareQ2: "试_How do I edit the Tour later?_验",
 				shareQ2bis: "试_How do I get back to the authoring interface?_验",
 				shareA2div1: "试_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._验",
-				shareA2div2: "试_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_验",				
-				shareQ3: "试_Where is the data stored?_验",
-				shareA3: "试_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._验"
+				shareA2div2: "作为应用程序所有者，当您登录到 ArcGIS.com 后，可使用应用程序中的按钮来打开交互式构建器:",				
+				shareQ3: "数据存储位置在哪?",
+				shareA3: "浏览配置存储在<a href='%LINK1%' target='_blank'>此 webmap 项目</a>和<a href='%LINK2%' target='_blank'>此 web 应用程序项目</a>中。如果使用 Flickr、Picasa、Facebook 或 YouTube 导入，则图像和视频仍将存储在上述位置，并且不会复制到 ArcGIS Online。"
 			}
         }
     })

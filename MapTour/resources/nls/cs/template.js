@@ -6,8 +6,8 @@
 				step2: "NAHRÁVÁNÍ DAT",
 				step3: "SPOUŠTĚNÍ PROHLÍDKY",
 				loadBuilder: "PŘEPÍNÁNÍ DO REŽIMU TVORBY",
-				redirectSignIn: "Ř_REDIRECTING TO SIGN-IN PAGE_ů",
-				redirectSignIn2: "Ř_(you will be redirected here after sign-in)_ů",
+				redirectSignIn: "PROBÍHÁ PŘESMĚROVÁNÍ NA PŘIHLAŠOVACÍ STRÁNKU",
+				redirectSignIn2: "(budete sem přesměrováni po přihlášení)",
 				fail: "Je nám líto, ale nepodařilo se načíst prohlídku mapy.",
 				failButton: "Zkusit znovu"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "Mapa s příběhem",
 				builderButton: "Přepnout do režimu tvorby",
 				bitlyTooltip: "Získejte krátký odkaz k aplikaci",
-				bitlyStartIndex: "Ř_Link to current place_ů"
+				bitlyStartIndex: "Odkaz na současné místo"
 			},
 			builderHTML: {
 				panelHeader: "KONFIGURACE APLIKACE",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "Měřítko/úroveň",
 				settingsZoomFirstValue: "Žádné",
 				settingsFieldError: "Vyberte pole v každém seznamu.",
-				dataTitle: "Ř_ArcGIS Online hosting_ů",
+				dataTitle: "Hosting ArcGIS Online",
 				dataExplain: "Ř_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._ů",
 				dataNameLbl: "Název služby",
 				dataFolderListLbl: "Složka",
@@ -207,7 +207,7 @@
 				errorNoLocation: "Nastavte umístění tohoto bodu prohlídky."
 			},
 			builderJS: {
-				noPendingChange: "Ř_No unsaved change_ů",
+				noPendingChange: "Žádná neuložená změna",
 				unSavedChangeSingular: "1 neuložená změna",
 				unSavedChangePlural: "neuložených změn",
 				shareStatus1: "Ř_Tour is not saved_ů",
@@ -226,7 +226,7 @@
 				saveSuccess: "Aplikace byla úspěšně uložena.",
 				saveError: "Uložení se nezdařilo, zkuste to prosím znovu.",
 				saveError2: "Ukládání selhalo kvůli neplatné značce HTML v názvu nebo popisu.",
-				saveError3: "Ř_The title can't be empty_ů",
+				saveError3: "Název nesmí být prázdný",
 				dragColorPicker: "Přesuň<br />nebo změň  barvu.",
 				dataWarningExtent: "Některá data se nachází mimo rozsah webové mapy. Tato data nebudou použita jako body prohlídky. Chcete-li je použít, změňte rozsah mapy.",
 				dataWarningVisibi: "Vrstva prohlídky mapy není při současném rozsahu webové mapy viditelná. Ujistěte se, že je vrstva prohlídky mapy viditelná v mapě o velikosti %MAPSIZE%.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "Zavřít",
 				signIn: "Přihlaste se pomocí účtu na",
 				signInTwo: "pro uložení aplikace.",
-				switchBM: "Ř_Change Basemap_ů"
+				switchBM: "Změnit podkladovou mapu"
 			},
 			organizePopupJS: {
 				messageStart: "Přejete si odstranit",
@@ -282,8 +282,8 @@
 				videos: "videa",
 				disabled: "Tato funkce byla zakázána administrátorem.",
 				disabledPortal: "Tato funkce byla ve službě Portal for ArcGIS zakázána.",
-				header1: "Ř_Your pictures must be shared publicly._ů",
-				header2: "Ř_The import will be limited to the first %NB1% %MEDIA%._ů",
+				header1: "Vaše obrázky musí být sdíleny veřejně.",
+				header2: "Import bude omezen na prvních %NB1% %MEDIA%.",
 				emptyDataset: "Chyba: nebyly nalezeny žádné obrázky",
 				footerImport: "Import",
 				selectAlbum: "Vybrat veřejné album",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "Ř_Import your Tour content from a CSV file._ů",
 				advancedCommonTip: "Ř_It requires that your images and videos are already online._ů",
 				select: "Provést výběr",
-				locUse: "Ř_Use pictures geolocation_ů",
+				locUse: "Používat geo-umístění obrázků",
 				locExplain: "Ř_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._ů",
 				locExplain2: "Ř_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._ů"
 			},
 			viewFlickr: {
-				title: "Ř_Flickr import_ů",
+				title: "Import z Flickru",
 				header: "Ř_Enter your Flickr user name and select a Photo Set or a Tag to be imported._ů",
 				userInputLbl: "Zadat uživatelské jméno",
 				signInMsg2: "Uživatel nenalezen",
@@ -314,7 +314,7 @@
 				footerImportSet: "Importovat vybranou sadu"
 			},
 			viewFacebook: {
-				title: "Ř_Facebook import_ů",
+				title: "Import z Facebooku",
 				header: "Ř_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._ů",
 				leftHeader: "Uživatel služby Facebook",
 				rightHeader: "Stránka služby Facebook",
@@ -323,15 +323,15 @@
 				lookupMsgError: "Stránka nenalezena"
 			},
 			viewPicasa: {
-				title: "Ř_Picasa/Google+ import_ů",
+				title: "Import z Picasa/Google+",
 				header: "Ř_Enter your email address or the ID of your Picasa or Google+ account._ů",
 				userInputLbl: "Zadat e-mail nebo identifikátor",
 				signInMsg2: "Účet nenalezen",
-				howToFind: "Ř_How to find a Picasa or Google+ account ID_ů",
+				howToFind: "Jak najít identifikátor účtu Picasa nebo Google+",
 				howToFind2: "Zkopírujte číslice mezi prvním a druhým lomítkem (/) libovolné stránky služeb Picasa nebo Google+."
 			},
 			viewCSV: {
-				title: "Ř_CSV import_ů",
+				title: "Import CSV",
 				uploadBtn: "Vybrat nebo přetáhnout soubor CSV",
 				resultHeaderEmpty: "Soubor CSV je prázdný",
 				resultHeaderSuccess: "Počet úspěšně načtených bodů: %NB_POINTS%",
@@ -356,8 +356,8 @@
 				footerSucceed: "Import byl úspěšný. Načítání"
 			},
 			viewYoutube: {
-				title: "Ř_Youtube import_ů",
-				header: "Ř_Enter a YouTube user name to find publicly shared videos._ů",
+				title: "Import z YouTube",
+				header: "Zadejte uživatelské jméno YouTube, abyste našli veřejně sdílená videa.",
 				pageInputLbl: "Ř_Enter a Youtube user name_ů",
 				lookupMsgError: "Uživatel nenalezen",
 				howToFind: "Ř_How to find a Youtube user name_ů",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "Ř_Select and locate your images/videos_ů",
 				header: "Klikněte nebo klepněte na obrázky, které chcete importovat, abyste je našli.",
-				headerMore: "Ř_Why aren't my images/videos geolocated?_ů",
+				headerMore: "Proč nejsou mé obrázky/videa geolokalizovány?",
 				headerExplain: "Ř_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._ů",
 				leftPanelTab1: "Umístit",
 				leftPanelTab2: "Umístěno",
@@ -379,30 +379,30 @@
 				footerProgress: "Probíhá import",
 				footerSucceed: "Import byl úspěšný. Načítání…",
 				loading: "Načítání",
-				error: "Ř_Pictures geolocation import failed, geolocations have been ignored._ů"
+				error: "Nezdařil se import geo-umístění obrázků, geo-umístění byla ignorována."
 			},
 			initPopup: {
-				title: "Ř_Welcome to the Map Tour Builder_ů",
+				title: "Vítejte v Nástroji pro tvorbu prohlídek map",
 				prevBtn: "Zpět",
 				nextBtn: "Další"
 			},
 			initPopupHome: {
-				header1: "Ř_Where are your images or videos?_ů",
-				header2: "Ř_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._ů",
-				title1: "Ř_They are already online_ů",
-				title2: "Ř_I need to upload my images_ů",
-				hostedFSTooltip: "Ř_Use ArcGIS Online to host your images (doesn't support videos)._ů",
-				hostedFsNA: "Ř_Only available for ArcGIS for Organizations Publisher and Administrator users_ů",
+				header1: "Kde jsou vaše obrázky nebo videa?",
+				header2: "Tento asistent vám pomůže vytvořit prohlídku mapy z médií, která jsou již uložena online, případně je importuje do vašeho účtu ArcGIS Online pro organizace.",
+				title1: "Jsou již online",
+				title2: "Potřebuji nahrát své obrázky",
+				hostedFSTooltip: "Použít ArcGIS Online pro hosting vašich obrázků (nepodporuje videa)",
+				hostedFsNA: "Dostupné pouze pro uživatele služby ArcGIS pro organizace v roli vydavatele nebo administrátora.",
 				footer1: "Až budete hotovi, nezapomeňte prohlídku mapy sdílet se svým publikem na stránce položek aplikace.",
 				footer3: "Stáhnout šablony CSV",
 				footer4: "Pokud se nestáhne, zvolte možnost \"Uložit jako\".",
-				footer4bis: "Ř_Use right click and \"Save as\" if download doesn't start_ů",
-				footer5: "Ř_Learn more_ů",
+				footer4bis: "Pokud se stahování nespustí, použijte kliknutí pravým tlačítkem a  \"Uložit jako\"",
+				footer5: "Více informací",
 				footerProgress: "Probíhá vytváření",
 				footerSucceed: "Úspěšně vytvořeno. Načítání..."
 			},
 			helpPopup: {
-				title: "Ř_Help_ů",
+				title: "Nápověda",
 				close: "Zavřít",
 				tab1: {
 					title: "Úvod",
@@ -455,7 +455,7 @@
 					div3: "<li>Nenabízí požadované přizpůsobení uživatelského rozhraní, jako je například obrázek pozadí záhlaví.</li><li>Jste vývojář a chcete si aplikaci upravit.</li>",
 					div4: "Verzi ke stažení lze nakonfigurovat prostřednictvím webové mapy nebo identifikátoru aplikace webového mapování. Hlavní způsoby použití jsou:",
 					div41: "Svou prohlídku mapy tvoříte pomocí interaktivního nástroje pro tvorbu v hostovaném prostředí a šablonu konfigurujete pomocí identifikátoru aplikace webového mapování. Budou použita nastavení určena interaktivním nástrojem pro tvorbu.",
-					div42: "Ř_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._ů",
+					div42: "Svou prohlídku mapy tvoříte mimo interaktivní nástroj pro tvorbu a šablonu konfigurujete pomocí identifikátoru webových map. V dokumentaci se dozvíte, jak šablonu konfigurovat.",
 					div43: "Mějte na paměti, že interaktivní nástroj pro tvorbu je dostupný ve stažitelné verzi. Obsahuje však některá technická omezení ohledně prohlížečů, jako je například Internet Explorer ve verzi starší než 10.",
 					div5: "Ř_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._ů"
 				},
@@ -488,7 +488,7 @@
 					div2c: "Ř_Sharing the Tour through ArcGIS Online_ů",
 					div2d: "Ř_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._ů",
 					div3t: "Ř_Feature Service security_ů",
-					div3a: "Ř_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._ů",
+					div3a: "Pokud používáte hostovanou službu feature service vytvořenou nástrojem pro tvorbu prohlídek map, bude za vás aplikace spravovat zabezpečení služby. Zůstanete jediným uživatelem s oprávněním k editaci, i kdy budete službu sdílet veřejně.",
 					div3t2: "Ř_Before sharing your Tour with your audience_ů",
 					div3: "Ř_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._ů",
 					div4: "Ř_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._ů",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Ř_Tour successfully saved_ů",
+				firstSaveTitle: "Prohlídka byla úspěšně uložena",
 				firstSaveHeader: "Ř_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._ů",
-				firstSaveA1: "Ř_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ů",
+				firstSaveA1: "Pokud nejste obeznámeni s ArcGIS Online nebo chcete zkratku pro přístup do autorského rozhraní, můžete si uložit následující odkaz: %LINK1%",
 				firstSaveA1bis: "Ř_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ů",
-				firstSaveQ2: "Ř_Is my Tour shared?_ů",
+				firstSaveQ2: "Je má prohlídka sdílená?",
 				firstSaveA2: "Ř_Currently your Tour is not shared. To share it, use the SHARE button._ů",
-				shareTitle: "Ř_Share your Tour_ů",
-				sharePrivateHeader: "Ř_Your Tour is not shared, would you like to share it?_ů",
-				sharePrivateBtn1: "Ř_Share publicly_ů",
-				sharePrivateBtn2: "Ř_Share with my Organization_ů",
-				sharePrivateProgress: "Ř_Sharing in progress..._ů",
-				sharePrivateErr: "Ř_Sharing failed, try again or_ů",
-				sharePrivateOk: "Ř_Sharing updated successfully, loading..._ů",
-				sharePreviewAsUser: "Ř_Preview_ů",
-				shareHeader1: "Ř_Your Tour is <strong>publicly accessible</strong>._ů",
-				shareHeader2: "Ř_Your Tour is accessible by your organization members (login is required)._ů",
-				shareLinkHeader: "Ř_Share the Tour with your audience_ů",
-				shareLinkOpen: "Ř_OPEN_ů",
-				shareQ1Opt1: "Ř_How do I keep the Tour private?_ů",
+				shareTitle: "Sdílet vaši prohlídku",
+				sharePrivateHeader: "Vaše prohlídka není sdílená, chcete ji sdílet?",
+				sharePrivateBtn1: "Sdílet veřejně",
+				sharePrivateBtn2: "Sdílet s mou organizací",
+				sharePrivateProgress: "Probíhá sdílení…",
+				sharePrivateErr: "Sdílení selhalo, zkuste to znovu nebo",
+				sharePrivateOk: "Sdílení bylo úspěšně aktualizováno, probíhá nahrávání…",
+				sharePreviewAsUser: "Náhled",
+				shareHeader1: "Vaše prohlídka je <strong>veřejně přístupná</strong>.",
+				shareHeader2: "Vaše prohlídka je přístupná členům vaší organizace (je vyžadováno přihlášení).",
+				shareLinkHeader: "Sdílejte prohlídku se svým publikem",
+				shareLinkOpen: "OTEVŘENO",
+				shareQ1Opt1: "Jak ponechám prohlídku soukromou?",
 				shareQ1Opt2: "Ř_How do I keep the Tour private or share it publicly?_ů",
 				shareA1: "Ř_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._ů",
 				shareA1bis: "Ř_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ů",
 				shareQ2: "Ř_How do I edit the Tour later?_ů",
 				shareQ2bis: "Ř_How do I get back to the authoring interface?_ů",
 				shareA2div1: "Ř_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ů",
-				shareA2div2: "Ř_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ů",				
-				shareQ3: "Ř_Where is the data stored?_ů",
-				shareA3: "Ř_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._ů"
+				shareA2div2: "Když jste přihlášeni na webu ArcGIS.com jako majitel aplikace, tak aplikace obsahuje tlačítko pro otevření interaktivního nástroje pro tvorbu:",				
+				shareQ3: "Kde jsou uložena data?",
+				shareA3: "Nastavení prohlídky je uloženo v <a href='%LINK1%' target='_blank'>této položce webové mapy</a> a <a href='%LINK2%' target='_blank'>této položce webové aplikace</a>. Pokud jste použili import z Flickru, Picasa, Facebooku nebo YouTube, zůstávají vaše obrázky a videa uloženy tam a nejsou duplikovány v ArcGIS Online."
 			}
         }
     })

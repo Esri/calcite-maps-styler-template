@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "En del av ändringarna kräver att du sparar och hämtar applikationen igen"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Å_Swipe Type_ö",
-				settingsDataModelExplainSwipe: "Å_What do you want users to swipe?_ö",
+				settingsTabDataModel: "Sveptyp",
+				settingsDataModelExplainSwipe: "Vad vill du att användarna ska svepa?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Välj det lager eller den webbkarta som ska visas i kikaren.",
-				settingsDataModelOneMap: "Å_A layer in a web map_ö",
-				settingsDataModel1Explain: "Å_Select the layer you want to be swiped_ö",
+				settingsDataModelOneMap: "Ett lager i en webbkarta",
+				settingsDataModel1Explain: "Välj det lager som ska svepas.",
 				settingsDataModel1Warning: "Om lagret är dolt av högre lager har det ingen effekt när du sveper.",
 				settingsDataModel1SpyGlassExplain: "Välj det lager som ska visas i kikaren.",
 				settingsDataModelTwoMaps: "Två webbkartor",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Aktivera beskrivning",
 				settingsBookmarksEnable: "Aktivera svepserie",
 				settingsPopupDisable: "Aktivera popup-fönster",
-				settingsLocationSearchEnable: "Å_Enable locator search_ö",
-				settingsGeolocatorEnable: "Å_Enable geolocator_ö",
+				settingsLocationSearchEnable: "Aktivera sökning med lokaliserare",
+				settingsGeolocatorEnable: "Aktivera geolokalisering",
 				settingsLegendHelpContent: "Om du vill förfina innehållsförteckningen använder du innehållsförteckningen i webbkartvyn på ArcGIS.com (Dölj i teckenförklaringen)",
-				settingsSeriesHelpContent: "Å_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ö", 
+				settingsSeriesHelpContent: "En svepserie är ett tabbat navigeringsalternativ som hjälper användaren till en viss utbredning och visar en titel och beskrivande text i sidopanelen. Vid den första aktiveringen importeras webbkartans bokmärken och används för att fylla i seriefältet. Om du inaktiverar alternativet stängs seriefältet, men seriekonfigurationen finns kvar för framtida användning.", 
 				preview: "Förhandsgranska användargränssnitt",
-				settingsLocateButtonExplain: "Å_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ö",
-				settingsLocateButton: "Å_Enable a 'Locate' button supported browsers_ö",
-				settingsAddressSearch: "Å_Enable an address search tool_ö"
+				settingsLocateButtonExplain: "Den här funktionen kan användas på de flesta mobila enheter och skrivbordswebbläsare (inklusive Internet Explorer 9+).",
+				settingsLocateButton: "Aktivera knappen Hitta på webbläsare som stöds",
+				settingsAddressSearch: "Aktivera ett adressökverktyg"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Popupfönster",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Välkommen till Svep-byggverktyget",
 				modalNext: "Nästa",
-				modalPrev: "Å_Previous_ö",
+				modalPrev: "Föregående",
 				modalApply: "Öppna applikationen"
 			},
 			seriesPanel: {

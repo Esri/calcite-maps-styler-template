@@ -1,5 +1,5 @@
 ﻿define({
     map: {
-      error: "试_Unable to create map_验"
+      error: "无法创建地图"
     }
 });

@@ -1,14 +1,19 @@
-﻿define({
-    root: ({
+﻿define(
+	({
         map: {
             error: "Impossible de créer la carte",
-            mouseToolTip: "Click on the map to check for service"
+            mouseToolTip: "Cliquez sur la carte pour vérifier la présence d'un service"
         },
         geocoder: {
-            defaultText: "Enter your address"
+            defaultText: "Saisissez votre adresse"
         },
         error: {
-            layerNotFound: "Service Area Layer is not in the webmap"
+            layerNotFound: "La couche de zone de desserte ne se trouve pas dans la carte Web",
+            fieldNotFound: "Champ introuvable"
+        },
+        page: {
+            title: "Consultation de service",
         }
     })
-});
+
+);

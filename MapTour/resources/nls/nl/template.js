@@ -6,8 +6,8 @@
 				step2: "GEGEVENS LADEN",
 				step3: "DE TOUR INITIALISEREN",
 				loadBuilder: "OMSCHAKELEN NAAR BUILDERMODUS",
-				redirectSignIn: "Ĳ_REDIRECTING TO SIGN-IN PAGE_ä",
-				redirectSignIn2: "Ĳ_(you will be redirected here after sign-in)_ä",
+				redirectSignIn: "OMLEIDEN NAAR AANMELDINGSPAGINA",
+				redirectSignIn2: "(na het aanmelden wordt u naar hier omgeleid)",
 				fail: "De Kaart Tour kon niet worden geladen",
 				failButton: "Opnieuw proberen"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "Een kaartverhaal",
 				builderButton: "Omschakelen naar buildermodus",
 				bitlyTooltip: "Een korte koppeling naar de applicatie maken",
-				bitlyStartIndex: "Ĳ_Link to current place_ä"
+				bitlyStartIndex: "Koppeling naar huidige plaats"
 			},
 			builderHTML: {
 				panelHeader: "APPLICATIECONFIGURATIE",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "Schaal/niveau",
 				settingsZoomFirstValue: "Geen",
 				settingsFieldError: "Selecteer een veld in elke lijst",
-				dataTitle: "Ĳ_ArcGIS Online hosting_ä",
+				dataTitle: "ArcGIS Online-hosting",
 				dataExplain: "Ĳ_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._ä",
 				dataNameLbl: "Servicenaam",
 				dataFolderListLbl: "Folder",
@@ -207,7 +207,7 @@
 				errorNoLocation: "Selecteer een locatie voor dit punt van de tour"
 			},
 			builderJS: {
-				noPendingChange: "Ĳ_No unsaved change_ä",
+				noPendingChange: "Geen niet-opgeslagen wijziging",
 				unSavedChangeSingular: "1 niet-opgeslagen wijziging",
 				unSavedChangePlural: "niet-opgeslagen wijzigingen",
 				shareStatus1: "Ĳ_Tour is not saved_ä",
@@ -226,7 +226,7 @@
 				saveSuccess: "Applicatie opgeslagen",
 				saveError: "Opslaan mislukt, probeer het opnieuw",
 				saveError2: "Opslaan is mislukt vanwege een ongeldige HTML-tag in een naam of beschrijving",
-				saveError3: "Ĳ_The title can't be empty_ä",
+				saveError3: "De titel mag niet leeg zijn",
 				dragColorPicker: "Wijzig mijn positie<br />of verander mijn kleur",
 				dataWarningExtent: "U beschikt over gegevens buiten het webmapextent. Deze gegevens worden niet gebruikt als punten voor de tour. Wijzig het kaartextent als u deze toch wilt gebruiken.",
 				dataWarningVisibi: "Uw laag Kaart Tour is niet zichtbaar op het huidige webmapextent. Controleer of uw laag Kaart Tour zichtbaar is met een kaart die %MAPSIZE% groot is.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "Sluiten",
 				signIn: "Meld u aan met een account op",
 				signInTwo: "om de applicatie op te slaan.",
-				switchBM: "Ĳ_Change Basemap_ä"
+				switchBM: "Basiskaart wijzigen"
 			},
 			organizePopupJS: {
 				messageStart: "U hebt gekozen om het volgende te verwijderen",
@@ -282,8 +282,8 @@
 				videos: "video's",
 				disabled: "Deze functie is uitgeschakeld door de beheerder",
 				disabledPortal: "Deze functie is uitgeschakeld op Portal for ArcGIS",
-				header1: "Ĳ_Your pictures must be shared publicly._ä",
-				header2: "Ĳ_The import will be limited to the first %NB1% %MEDIA%._ä",
+				header1: "Uw afbeeldingen moeten openbaar worden gedeeld.",
+				header2: "Het importeren wordt beperkt tot de eerste %NB1% %MEDIA%.",
 				emptyDataset: "Fout, geen afbeeldingen gevonden",
 				footerImport: "Importeren",
 				selectAlbum: "Selecteer een openbaar album",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "Ĳ_Import your Tour content from a CSV file._ä",
 				advancedCommonTip: "Ĳ_It requires that your images and videos are already online._ä",
 				select: "Maak een keuze",
-				locUse: "Ĳ_Use pictures geolocation_ä",
+				locUse: "Gebruik de geografische locatie van de afbeeldingen",
 				locExplain: "Ĳ_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._ä",
 				locExplain2: "Ĳ_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._ä"
 			},
 			viewFlickr: {
-				title: "Ĳ_Flickr import_ä",
+				title: "Importeren van Flickr",
 				header: "Ĳ_Enter your Flickr user name and select a Photo Set or a Tag to be imported._ä",
 				userInputLbl: "Typ een gebruikersnaam",
 				signInMsg2: "Gebruiker niet gevonden",
@@ -314,7 +314,7 @@
 				footerImportSet: "Importeer de geselecteerde set"
 			},
 			viewFacebook: {
-				title: "Ĳ_Facebook import_ä",
+				title: "Importeren van Facebook",
 				header: "Ĳ_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._ä",
 				leftHeader: "Facebook-gebruiker",
 				rightHeader: "Facebook-pagina",
@@ -323,15 +323,15 @@
 				lookupMsgError: "Pagina niet gevonden"
 			},
 			viewPicasa: {
-				title: "Ĳ_Picasa/Google+ import_ä",
+				title: "Importeren van Picasa/Google+",
 				header: "Ĳ_Enter your email address or the ID of your Picasa or Google+ account._ä",
 				userInputLbl: "Typ een e-mailadres of ID",
 				signInMsg2: "Account niet gevonden",
-				howToFind: "Ĳ_How to find a Picasa or Google+ account ID_ä",
+				howToFind: "Zoeken naar een Picasa- of Google+-account-ID",
 				howToFind2: "Kopieer getallen tussen de eerste en tweede '/' van een pagina van Picasa of G+"
 			},
 			viewCSV: {
-				title: "Ĳ_CSV import_ä",
+				title: "Importeren van CSV",
 				uploadBtn: "Selecteer of sleep een CSV-bestand",
 				resultHeaderEmpty: "Het CSV-bestand is leeg",
 				resultHeaderSuccess: "Laden van %NB_POINTS% punten is gelukt",
@@ -356,8 +356,8 @@
 				footerSucceed: "Importeren geslaagd. Bezig met laden"
 			},
 			viewYoutube: {
-				title: "Ĳ_Youtube import_ä",
-				header: "Ĳ_Enter a YouTube user name to find publicly shared videos._ä",
+				title: "Importeren van YouTube",
+				header: "Voer een YouTube-gebruikersnaam in om te zoeken naar openbaar gedeelde video's.",
 				pageInputLbl: "Ĳ_Enter a Youtube user name_ä",
 				lookupMsgError: "Gebruiker niet gevonden",
 				howToFind: "Ĳ_How to find a Youtube user name_ä",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "Ĳ_Select and locate your images/videos_ä",
 				header: "Klik of tik op de afbeeldingen die u wilt importeren om ze te lokaliseren.",
-				headerMore: "Ĳ_Why aren't my images/videos geolocated?_ä",
+				headerMore: "Waarom zijn mijn afbeeldingen/video's niet geografisch gelokaliseerd?",
 				headerExplain: "Ĳ_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._ä",
 				leftPanelTab1: "Lokaliseren",
 				leftPanelTab2: "Gelokaliseerd",
@@ -379,7 +379,7 @@
 				footerProgress: "Bezig met importeren",
 				footerSucceed: "Importeren geslaagd. Bezig met laden...",
 				loading: "Laden",
-				error: "Ĳ_Pictures geolocation import failed, geolocations have been ignored._ä"
+				error: "Importeren van geografische locatie van afbeeldingen mislukt, geografische locaties zijn genegeerd."
 			},
 			initPopup: {
 				title: "Welkom bij de Kaart Tour Builder",
@@ -387,17 +387,17 @@
 				nextBtn: "Volgende"
 			},
 			initPopupHome: {
-				header1: "Ĳ_Where are your images or videos?_ä",
-				header2: "Ĳ_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._ä",
-				title1: "Ĳ_They are already online_ä",
-				title2: "Ĳ_I need to upload my images_ä",
-				hostedFSTooltip: "Ĳ_Use ArcGIS Online to host your images (doesn't support videos)._ä",
-				hostedFsNA: "Ĳ_Only available for ArcGIS for Organizations Publisher and Administrator users_ä",
+				header1: "Waar zijn uw afbeeldingen of video's?",
+				header2: "Deze assistent helpt u bij het samenstellen van een Kaart Tour met afbeeldingen die al online zijn opgeslagen, of het importeert deze in uw ArcGIS Online for Organizations-account.",
+				title1: "Ze zijn al online",
+				title2: "Ik moet mijn afbeeldingen uploaden",
+				hostedFSTooltip: "Gebruik ArcGIS Online om uw afbeeldingen te hosten (geen ondersteuning voor video's).",
+				hostedFsNA: "Alleen beschikbaar voor gebruikers van ArcGIS for Organizations met de rol van Publisher en Beheerder",
 				footer1: "Als u klaar bent, moet u niet vergeten om uw Kaart Tour te delen met uw publiek via de applicatie-itempagina.",
 				footer3: "De CSV-template downloaden",
 				footer4: "\"Opslaan als\" wanneer het niet is gedownload",
-				footer4bis: "Ĳ_Use right click and \"Save as\" if download doesn't start_ä",
-				footer5: "Ĳ_Learn more_ä",
+				footer4bis: "Klik met de rechtermuisknop en gebruik \"Opslaan als\" als het downloaden niet wordt gestart",
+				footer5: "Meer weten",
 				footerProgress: "Wordt gemaakt",
 				footerSucceed: "Aangemaakt. Bezig met laden...."
 			},
@@ -455,7 +455,7 @@
 					div3: "<li>Deze niet de aanpassing voor de gebruikersinterface biedt die u nodig hebt, zoals het gebruik van een achtergrondafbeelding in de kop.</li><li>U ontwikkelaar bent en u de applicatie wilt uitbreiden.</li>",
 					div4: "De downloadbare versie kan worden geconfigureerd via een webmap-id of een webmapapplicatie-id. De belangrijkste gebruiksvoorbeelden zijn:",
 					div41: "U bouwt uw kaarttour met de interactieve builder in de gehoste omgeving en configureert de template met de webmapapplicatie-id. De instellingen die u met de interactieve builder hebt gedefinieerd, zullen worden toegepast.",
-					div42: "Ĳ_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._ä",
+					div42: "U bouwt uw webmap buiten de interactieve builder en configureert de template met de webmap-id. Lees de documentatie om te leren hoe u de template configureert.",
 					div43: "Merk op dat de interactieve builder beschikbaar is in de downloadbare versie, maar dat er enkele technische beperkingen gelden voor browers zoals Internet Explorer ouder dan versie 10.",
 					div5: "Ĳ_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._ä"
 				},
@@ -488,7 +488,7 @@
 					div2c: "Ĳ_Sharing the Tour through ArcGIS Online_ä",
 					div2d: "Ĳ_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._ä",
 					div3t: "Ĳ_Feature Service security_ä",
-					div3a: "Ĳ_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._ä",
+					div3a: "Als u een gehoste featureservice gebruikt die met de Kaarttour-builder is gemaakt, beheert de applicatie de beveiliging van de service voor u en behoudt u als enige de bewerkingsrechten, ook als u de service openbaar deelt.",
 					div3t2: "Ĳ_Before sharing your Tour with your audience_ä",
 					div3: "Ĳ_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._ä",
 					div4: "Ĳ_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._ä",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Ĳ_Tour successfully saved_ä",
+				firstSaveTitle: "Opslaan van Tour geslaagd",
 				firstSaveHeader: "Ĳ_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._ä",
-				firstSaveA1: "Ĳ_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ä",
+				firstSaveA1: "Als u niet vertrouwd bent met ArcGIS Online of u zoekt een snelle manier om toegang te krijgen tot de ontwerpinterface, kunt u de volgende koppeling opslaan: %LINK1%",
 				firstSaveA1bis: "Ĳ_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ä",
-				firstSaveQ2: "Ĳ_Is my Tour shared?_ä",
+				firstSaveQ2: "Is mijn Tour gedeeld?",
 				firstSaveA2: "Ĳ_Currently your Tour is not shared. To share it, use the SHARE button._ä",
-				shareTitle: "Ĳ_Share your Tour_ä",
-				sharePrivateHeader: "Ĳ_Your Tour is not shared, would you like to share it?_ä",
-				sharePrivateBtn1: "Ĳ_Share publicly_ä",
-				sharePrivateBtn2: "Ĳ_Share with my Organization_ä",
-				sharePrivateProgress: "Ĳ_Sharing in progress..._ä",
-				sharePrivateErr: "Ĳ_Sharing failed, try again or_ä",
-				sharePrivateOk: "Ĳ_Sharing updated successfully, loading..._ä",
-				sharePreviewAsUser: "Ĳ_Preview_ä",
-				shareHeader1: "Ĳ_Your Tour is <strong>publicly accessible</strong>._ä",
-				shareHeader2: "Ĳ_Your Tour is accessible by your organization members (login is required)._ä",
-				shareLinkHeader: "Ĳ_Share the Tour with your audience_ä",
-				shareLinkOpen: "Ĳ_OPEN_ä",
-				shareQ1Opt1: "Ĳ_How do I keep the Tour private?_ä",
+				shareTitle: "Uw Tour opslaan",
+				sharePrivateHeader: "Uw Tour wordt niet gedeeld. Wilt u deze delen?",
+				sharePrivateBtn1: "Openbaar delen",
+				sharePrivateBtn2: "Delen met Mijn Organisatie",
+				sharePrivateProgress: "Delen wordt uitgevoerd...",
+				sharePrivateErr: "Delen is mislukt. Probeer het opnieuw of",
+				sharePrivateOk: "Delen is bijgewerkt. Bezig met laden...",
+				sharePreviewAsUser: "Voorbeeld",
+				shareHeader1: "Uw Tour is <strong>openbaar toegankelijk</strong>.",
+				shareHeader2: "Uw Tour is toegankelijk voor de leden van uw organisatie (aanmelding is vereist).",
+				shareLinkHeader: "De Tour delen met uw publiek",
+				shareLinkOpen: "OPENEN",
+				shareQ1Opt1: "Hoe houd ik de Tour privé?",
 				shareQ1Opt2: "Ĳ_How do I keep the Tour private or share it publicly?_ä",
 				shareA1: "Ĳ_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._ä",
 				shareA1bis: "Ĳ_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ä",
 				shareQ2: "Ĳ_How do I edit the Tour later?_ä",
 				shareQ2bis: "Ĳ_How do I get back to the authoring interface?_ä",
 				shareA2div1: "Ĳ_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ä",
-				shareA2div2: "Ĳ_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ä",				
-				shareQ3: "Ĳ_Where is the data stored?_ä",
-				shareA3: "Ĳ_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._ä"
+				shareA2div2: "Als u bent aangemeld bij ArcGIS.com als de eigenaar van de applicatie, bevat de applicatie een knop om de interactieve builder te openen:",				
+				shareQ3: "Waar zijn de gegevens opgeslagen?",
+				shareA3: "De Tour-configuratie wordt opgeslagen in <a href='%LINK1%' target='_blank'>dit webmapitem</a> en <a href='%LINK2%' target='_blank'>dit webapplicatie-item</a>. Als u importeren van Flickr, Picasa, Facebook of YouTube hebt gebruikt, blijven uw afbeeldingen en video's daar opgeslagen en worden deze niet gedupliceerd in ArcGIS Online."
 			}
         }
     })

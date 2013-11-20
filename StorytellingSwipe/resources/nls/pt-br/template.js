@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Algumas de suas alterações exigem que você salve e recarregue o aplicativo"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "ã_Swipe Type_Ç",
-				settingsDataModelExplainSwipe: "ã_What do you want users to swipe?_Ç",
+				settingsTabDataModel: "Tipo de Oscilação",
+				settingsDataModelExplainSwipe: "O que você deseja que seja oscilado pelos usuários?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Escolha a camada ou mapa da web que aparecerá na luneta.",
-				settingsDataModelOneMap: "ã_A layer in a web map_Ç",
-				settingsDataModel1Explain: "ã_Select the layer you want to be swiped_Ç",
+				settingsDataModelOneMap: "Uma camada em um mapa da web",
+				settingsDataModel1Explain: "Selecione uma camada que deseja que seja oscilada",
 				settingsDataModel1Warning: "Se a camada estiver ocultada por camadas superiores, a oscilação não terá efeito.",
 				settingsDataModel1SpyGlassExplain: "Selecione a camada para aparecer na luneta.",
 				settingsDataModelTwoMaps: "Dois mapas da web",
@@ -152,7 +152,7 @@
 				settingsDataModel2Explain: "Oscilar com outro mapa da web.",
 				settingsDataModel2SpyGlassExplain: "Revelar com outro mapa da web.",
 				settingsDataModel2HelpTitle: "ã_How do I find a web map's ID?_Ç",
-				settingsDataModel2HelpContent: "Copie e cole os dígitos após o sinal '=' na URL do mapa da web"
+				settingsDataModel2HelpContent: "Copie e cole os dígitos após o sinal \'=\' na URL do mapa da web"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Layout do Aplicativo",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Habilitar Descrição",
 				settingsBookmarksEnable: "Habilitar série do Oscilar",
 				settingsPopupDisable: "Habilitar pop-up",
-				settingsLocationSearchEnable: "ã_Enable locator search_Ç",
-				settingsGeolocatorEnable: "ã_Enable geolocator_Ç",
+				settingsLocationSearchEnable: "Habilitar pesquisa do localizador",
+				settingsGeolocatorEnable: "Habilitar geolocalizador",
 				settingsLegendHelpContent: "Para refinar o conteúdo da legenda, utilize a área de controle do visualizador de mapa da web do ArcGIS.com (Oculto na Legenda)",
-				settingsSeriesHelpContent: "ã_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._Ç", 
+				settingsSeriesHelpContent: "A série Oscilar é uma opção de navegação por abas, que irá orientar o visualizador até uma extensão em particular e exibir um texto de descrição e título no painel lateral. Durante a ativação inicial, os marcadores de mapa da web serão importados e utilizados para preencher a barra de série. Desabilitar a opção em série desligará a barra de série, mas a configuração de série é preservada para utilização futura.", 
 				preview: "Visualizar ID",
-				settingsLocateButtonExplain: "ã_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Ç",
-				settingsLocateButton: "ã_Enable a 'Locate' button supported browsers_Ç",
-				settingsAddressSearch: "ã_Enable an address search tool_Ç"
+				settingsLocateButtonExplain: "Esta funcionalidade se suportada na maioria dos dispositivos móveis e navegadores desktop (incluindo Internet Explorer 9 +).",
+				settingsLocateButton: "Habilitar botão \'Localizar\' dos navegadores suportados",
+				settingsAddressSearch: "Habilitar uma ferramenta de pesquisa de endereço"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Pop-up",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Bem-Vindo ao Construtor de Oscilação",
 				modalNext: "Avançar",
-				modalPrev: "ã_Previous_Ç",
+				modalPrev: "Anterior",
 				modalApply: "Abrir o aplicativo"
 			},
 			seriesPanel: {

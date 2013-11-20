@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Jotkin muutokset edellyttävät sovelluksen tallennusta ja uudelleenkäynnistystä."
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Å_Swipe Type_ö",
-				settingsDataModelExplainSwipe: "Å_What do you want users to swipe?_ö",
+				settingsTabDataModel: "Pyyhkäisytyyppi",
+				settingsDataModelExplainSwipe: "Mitä haluat käyttäjien pyyhkäisevän?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Valitse karttataso tai web-kartta, joka tulee näkyviin kiikarissa.",
-				settingsDataModelOneMap: "Å_A layer in a web map_ö",
-				settingsDataModel1Explain: "Å_Select the layer you want to be swiped_ö",
+				settingsDataModelOneMap: "Web-kartassa oleva karttataso",
+				settingsDataModel1Explain: "Valitse karttataso, jota haluat pyyhkäistävän",
 				settingsDataModel1Warning: "Jos karttataso on piirtojärjestyksessä ylempänä olevien karttatasojen peitossa, pyyhkäisyt eivät vaikuta mitenkään.",
 				settingsDataModel1SpyGlassExplain: "Valitse karttataso, joka näkyy kiikarissa.",
 				settingsDataModelTwoMaps: "Kaksi web-karttaa",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Ota kuvaus käyttöön",
 				settingsBookmarksEnable: "Ota sarjapyyhkäisy käyttöön",
 				settingsPopupDisable: "Ota ponnahdusikkunat käyttöön",
-				settingsLocationSearchEnable: "Å_Enable locator search_ö",
-				settingsGeolocatorEnable: "Å_Enable geolocator_ö",
+				settingsLocationSearchEnable: "Ota käyttöön paikanninhaku",
+				settingsGeolocatorEnable: "Ota käyttöön paikannin",
 				settingsLegendHelpContent: "Jos haluat määrittää selitteen sisällön, käytä ArcGIS.com-sivuston web-kartan katseluohjelman sisällysluetteloa (Piilota selitteessä)",
-				settingsSeriesHelpContent: "Å_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ö", 
+				settingsSeriesHelpContent: "Pyyhintäsarja on välilehdellinen navigointivalinta, joka ohjaa katselijan tiettyyn laajuuteen ja näyttää otsikon ja kuvaavan tekstin sivupaneelissa. Kun otat asetuksen käyttöön ensimmäisen kerran, web-kartan(/-karttojen) kirjanmerkit tuodaan ja niillä täytetään valmiiksi sarjapalkki. Jos poistat sarjan asetuksen käytöstä, sarjapalkki poistuu käytöstä, mutta sarjan määritykset tallennetaan tulevaa käyttöä varten.", 
 				preview: "Käyttöliittymän esikatselu",
-				settingsLocateButtonExplain: "Å_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ö",
-				settingsLocateButton: "Å_Enable a 'Locate' button supported browsers_ö",
-				settingsAddressSearch: "Å_Enable an address search tool_ö"
+				settingsLocateButtonExplain: "Kyseinen toiminto on tuettu useimmissa mobiililaitteissa ja tietokoneiden selaimissa (mm. Internet Explorer 9 ja uudemmat versiot).",
+				settingsLocateButton: "Ota Paikanna-painiketta tukevat selaimet käyttöön",
+				settingsAddressSearch: "Ota osoitehakutyökalu käyttöön"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Ponnahdusikkuna",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Tervetuloa käyttämään pyyhkäisyn luontitoimintoa",
 				modalNext: "Seuraava",
-				modalPrev: "Å_Previous_ö",
+				modalPrev: "Edellinen",
 				modalApply: "Avaa sovellus"
 			},
 			seriesPanel: {

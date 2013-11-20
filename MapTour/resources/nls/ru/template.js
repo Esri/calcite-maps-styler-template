@@ -6,8 +6,8 @@
 				step2: "ЗАГРУЗКА ДАННЫХ",
 				step3: "ИНИЦИАЛИЗАЦИЯ",
 				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОНСТРУКТОРА",
-				redirectSignIn: "Ж_REDIRECTING TO SIGN-IN PAGE_Я",
-				redirectSignIn2: "Ж_(you will be redirected here after sign-in)_Я",
+				redirectSignIn: "ПЕРЕНАПРАВЛЕНИЕ НА СТРАНИЦУ ВХОДА",
+				redirectSignIn2: "(после входа вы будете перенаправлены сюда)",
 				fail: "Загрузка Тура по карте не удалась",
 				failButton: "Повторить"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "Карта истории",
 				builderButton: "Переключиться в режим компоновки",
 				bitlyTooltip: "Получить короткую ссылку на приложение",
-				bitlyStartIndex: "Ж_Link to current place_Я"
+				bitlyStartIndex: "Ссылка на текущее местоположение"
 			},
 			builderHTML: {
 				panelHeader: "КОНФИГУРАЦИЯ ПРИЛОЖЕНИЯ",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "Масштаб/уровень",
 				settingsZoomFirstValue: "Нет",
 				settingsFieldError: "Выберите поле в каждом списке",
-				dataTitle: "Ж_ArcGIS Online hosting_Я",
+				dataTitle: "Размещение на ArcGIS Online",
 				dataExplain: "Ж_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._Я",
 				dataNameLbl: "Имя сервиса",
 				dataFolderListLbl: "Папка",
@@ -207,7 +207,7 @@
 				errorNoLocation: "Введите местоположение для этой точки маршрута"
 			},
 			builderJS: {
-				noPendingChange: "Ж_No unsaved change_Я",
+				noPendingChange: "Нет несохраненных изменений",
 				unSavedChangeSingular: "1 несохраненное изменение",
 				unSavedChangePlural: "несохраненных изменений",
 				shareStatus1: "Ж_Tour is not saved_Я",
@@ -226,7 +226,7 @@
 				saveSuccess: "Приложение успешно сохранено",
 				saveError: "Сохранение не удалось, попробуйте еще раз",
 				saveError2: "Ошибка при сохранении из-за недопустимого html-тега в имени или описании",
-				saveError3: "Ж_The title can't be empty_Я",
+				saveError3: "Заголовок не может быть пустым",
 				dragColorPicker: "Переместить меня<br />или изменить цвет",
 				dataWarningExtent: "Имеются данные за пределами экстента веб-карты. Эти данные не будет использоваться как точки маршрута, измените экстент карты, чтобы использовать их.",
 				dataWarningVisibi: "Слой Тура по карте не отображается при текущем экстенте веб-карты. Подтвердите, что слой Тура по карте отображается на карте размера %MAPSIZE%.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "Закрыть",
 				signIn: "Войдите с помощью учетной записи в",
 				signInTwo: "чтобы сохранить приложение.",
-				switchBM: "Ж_Change Basemap_Я"
+				switchBM: "Изменить базовую карту"
 			},
 			organizePopupJS: {
 				messageStart: "Вы выбрали удаление",
@@ -282,8 +282,8 @@
 				videos: "видео",
 				disabled: "Объект был отключен администратором",
 				disabledPortal: "В Portal for ArcGIS эта функция отключена",
-				header1: "Ж_Your pictures must be shared publicly._Я",
-				header2: "Ж_The import will be limited to the first %NB1% %MEDIA%._Я",
+				header1: "Изображения должны быть общедоступными.",
+				header2: "Импорт будет ограничен первыми %NB1% %MEDIA%.",
 				emptyDataset: "Ошибка, изображения не найдены",
 				footerImport: "Импорт",
 				selectAlbum: "Выберите публичный альбом",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "Ж_Import your Tour content from a CSV file._Я",
 				advancedCommonTip: "Ж_It requires that your images and videos are already online._Я",
 				select: "Сделать выборку",
-				locUse: "Ж_Use pictures geolocation_Я",
+				locUse: "Использовать геолокацию изображений",
 				locExplain: "Ж_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._Я",
 				locExplain2: "Ж_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._Я"
 			},
 			viewFlickr: {
-				title: "Ж_Flickr import_Я",
+				title: "Импорт из Flickr",
 				header: "Ж_Enter your Flickr user name and select a Photo Set or a Tag to be imported._Я",
 				userInputLbl: "Введите имя пользователя",
 				signInMsg2: "Пользователь не найден",
@@ -314,7 +314,7 @@
 				footerImportSet: "Импорт выбранного набора"
 			},
 			viewFacebook: {
-				title: "Ж_Facebook import_Я",
+				title: "Импорт из Facebook",
 				header: "Ж_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._Я",
 				leftHeader: "Пользователь Facebook",
 				rightHeader: "Страница Facebook",
@@ -323,15 +323,15 @@
 				lookupMsgError: "Страница не найдена"
 			},
 			viewPicasa: {
-				title: "Ж_Picasa/Google+ import_Я",
+				title: "Импорт из Picasa/Google+",
 				header: "Ж_Enter your email address or the ID of your Picasa or Google+ account._Я",
 				userInputLbl: "Введите эл.почту или ID",
 				signInMsg2: "Учетная запись не найдена",
-				howToFind: "Ж_How to find a Picasa or Google+ account ID_Я",
+				howToFind: "Как найти ID учетной записи Picasa или Google+",
 				howToFind2: "Скопируйте цифры, расположенные между первой и второй косой чертой \'/\' любой страницы Picasa или G+"
 			},
 			viewCSV: {
-				title: "Ж_CSV import_Я",
+				title: "Импорт CSV",
 				uploadBtn: "Выберите или перетащите CSV-файл",
 				resultHeaderEmpty: "CSV-файл пустой",
 				resultHeaderSuccess: "Успешно загружено %NB_POINTS% точек",
@@ -356,8 +356,8 @@
 				footerSucceed: "Импорт успешно завершен. Загрузка"
 			},
 			viewYoutube: {
-				title: "Ж_Youtube import_Я",
-				header: "Ж_Enter a YouTube user name to find publicly shared videos._Я",
+				title: "Импорт из Youtube",
+				header: "Введите имя пользователя YouTube, чтобы увидеть общедоступное видео.",
 				pageInputLbl: "Ж_Enter a Youtube user name_Я",
 				lookupMsgError: "Пользователь не найден",
 				howToFind: "Ж_How to find a Youtube user name_Я",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "Ж_Select and locate your images/videos_Я",
 				header: "Щелкните или коснитесь изображений, которые вы хотите импортировать, чтобы разместить их.",
-				headerMore: "Ж_Why aren't my images/videos geolocated?_Я",
+				headerMore: "Почему геолокация моих изображений/видео не работает?",
 				headerExplain: "Ж_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._Я",
 				leftPanelTab1: "Для размещения",
 				leftPanelTab2: "С местоположениями",
@@ -379,30 +379,30 @@
 				footerProgress: "Производится импорт",
 				footerSucceed: "Импорт успешно завершен. Загрузка...",
 				loading: "Загрузка",
-				error: "Ж_Pictures geolocation import failed, geolocations have been ignored._Я"
+				error: "Импорт геолокаций изображений не удался, геолокация будет игнорироваться."
 			},
 			initPopup: {
-				title: "Ж_Welcome to the Map Tour Builder_Я",
+				title: "Добро пожаловать в Построение тура по карте",
 				prevBtn: "Назад",
 				nextBtn: "Далее"
 			},
 			initPopupHome: {
-				header1: "Ж_Where are your images or videos?_Я",
-				header2: "Ж_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._Я",
-				title1: "Ж_They are already online_Я",
-				title2: "Ж_I need to upload my images_Я",
-				hostedFSTooltip: "Ж_Use ArcGIS Online to host your images (doesn't support videos)._Я",
-				hostedFsNA: "Ж_Only available for ArcGIS for Organizations Publisher and Administrator users_Я",
+				header1: "Где находятся ваши изображения или видео?",
+				header2: "Это приложение поможет вам создать Тур по карте с помощью изображений, которые уже находятся в сети Интернет, либо импортирует их в вашу учетную запись ArcGIS Online for Organization.",
+				title1: "Они уже опубликованы",
+				title2: "Мне необходимо опубликовать мои изображения",
+				hostedFSTooltip: "Использовать ArcGIS Online для хранения изображений (не поддерживает видео).",
+				hostedFsNA: "Доступно только для пользователей с правами издателя и администратора ArcGIS for Organization",
 				footer1: "По окончании не забудьте опубликовать ваш обзорный тур Тур по карте на странице элемента приложения.",
 				footer3: "Скачать шаблон CSV",
 				footer4: "Если возникли проблемы с загрузкой, используйте опцию \"Сохранить как\"",
-				footer4bis: "Ж_Use right click and \"Save as\" if download doesn't start_Я",
-				footer5: "Ж_Learn more_Я",
+				footer4bis: "Если загрузка не начинается, щелкните правой кнопкой мыши и выберите Сохранить как",
+				footer5: "Подробнее",
 				footerProgress: "Создание в процессе",
 				footerSucceed: "Создание выполнено успешно. Загрузка..."
 			},
 			helpPopup: {
-				title: "Ж_Help_Я",
+				title: "Справка",
 				close: "Закрыть",
 				tab1: {
 					title: "Введение",
@@ -455,7 +455,7 @@
 					div3: "<li>Не предоставляется нужная вам настройка UI, например, использование фонового изображения для заголовка.</li><li>Вы являетесь разработчиком и хотите доработать приложение.</li>",
 					div4: "Загружаемую версию можно настроить с помощью веб-карты или идентификатора приложения веб-картографии. В основном используются следующие способы:",
 					div41: "Вы создаете обзорную карту с помощью интерактивного построителя в размещенной среде и настраиваете шаблон с применением идентификатора приложения веб-картографии. Будут применены все настройки, заданные в конструкторе.",
-					div42: "Ж_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._Я",
+					div42: "Вы создаете веб-карту вне интерактивного конструктора и настраиваете шаблон с применением идентификатора веб-карты. Для настройки шаблона следует изучить документацию.",
 					div43: "Обратите внимание, что интерактивный конструктор доступен в загружаемой версии, но с некоторыми техническими ограничениями по используемым браузерам, например не работает в Internet Explorer до версии 10.",
 					div5: "Ж_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._Я"
 				},
@@ -488,7 +488,7 @@
 					div2c: "Ж_Sharing the Tour through ArcGIS Online_Я",
 					div2d: "Ж_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._Я",
 					div3t: "Ж_Feature Service security_Я",
-					div3a: "Ж_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._Я",
+					div3a: "Если вы используете размещенный сервис объектов, созданный конструктором тура по карте, безопасностью сервиса будет управлять приложение, а вы будете являться единственным пользователем, имеющим права редактирования даже в случае публикации сервиса для широкой аудитории.",
 					div3t2: "Ж_Before sharing your Tour with your audience_Я",
 					div3: "Ж_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._Я",
 					div4: "Ж_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._Я",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Ж_Tour successfully saved_Я",
+				firstSaveTitle: "Тур успешно сохранен",
 				firstSaveHeader: "Ж_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._Я",
-				firstSaveA1: "Ж_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_Я",
+				firstSaveA1: "Если вы не знакомы с ArcGIS Online или хотите получить ссылку на интерфейс построения, сохраните эту ссылку: %LINK1%",
 				firstSaveA1bis: "Ж_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._Я",
-				firstSaveQ2: "Ж_Is my Tour shared?_Я",
+				firstSaveQ2: "Имеется ли общий доступ к моему туру?",
 				firstSaveA2: "Ж_Currently your Tour is not shared. To share it, use the SHARE button._Я",
-				shareTitle: "Ж_Share your Tour_Я",
-				sharePrivateHeader: "Ж_Your Tour is not shared, would you like to share it?_Я",
-				sharePrivateBtn1: "Ж_Share publicly_Я",
-				sharePrivateBtn2: "Ж_Share with my Organization_Я",
-				sharePrivateProgress: "Ж_Sharing in progress..._Я",
-				sharePrivateErr: "Ж_Sharing failed, try again or_Я",
-				sharePrivateOk: "Ж_Sharing updated successfully, loading..._Я",
-				sharePreviewAsUser: "Ж_Preview_Я",
-				shareHeader1: "Ж_Your Tour is <strong>publicly accessible</strong>._Я",
-				shareHeader2: "Ж_Your Tour is accessible by your organization members (login is required)._Я",
-				shareLinkHeader: "Ж_Share the Tour with your audience_Я",
-				shareLinkOpen: "Ж_OPEN_Я",
-				shareQ1Opt1: "Ж_How do I keep the Tour private?_Я",
+				shareTitle: "Опубликовать тур по карте",
+				sharePrivateHeader: "Тур не опубликован, хотите опубликовать его?",
+				sharePrivateBtn1: "Публичный доступ",
+				sharePrivateBtn2: "Доступ только для моей организации",
+				sharePrivateProgress: "Публикация...",
+				sharePrivateErr: "Публикация не удалась, повторите попытку или",
+				sharePrivateOk: "Тип публикации успешно изменен, загрузка...",
+				sharePreviewAsUser: "Просмотр",
+				shareHeader1: "Ваш тур по карте имеет <strong>публичный доступ</strong>.",
+				shareHeader2: "Ваш тур по карте доступен для сотрудников вашей организации (требуется учетная запись).",
+				shareLinkHeader: "Опубликовать тур по карте для вашей аудитории",
+				shareLinkOpen: "ОТКРЫТЬ",
+				shareQ1Opt1: "Как сохранить тур по карте частным?",
 				shareQ1Opt2: "Ж_How do I keep the Tour private or share it publicly?_Я",
 				shareA1: "Ж_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._Я",
 				shareA1bis: "Ж_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._Я",
 				shareQ2: "Ж_How do I edit the Tour later?_Я",
 				shareQ2bis: "Ж_How do I get back to the authoring interface?_Я",
 				shareA2div1: "Ж_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._Я",
-				shareA2div2: "Ж_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_Я",				
-				shareQ3: "Ж_Where is the data stored?_Я",
-				shareA3: "Ж_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._Я"
+				shareA2div2: "Как владелец приложения, при входе на ArcGIS.com вы увидите в нем кнопку для открытия интерактивного построителя:",				
+				shareQ3: "Где хранятся данные?",
+				shareA3: "Конфигурация тура хранится в <a href='%LINK1%' target='_blank'>этом элементе веб-карты</a> и <a href='%LINK2%' target='_blank'>этом элементе веб-приложения</a>. Если вы использовали импорт из Flickr, Picasa, Facebook или YouTube, изображения и видео остаются там же, они не дублируются в ArcGIS Online."
 			}
         }
     })

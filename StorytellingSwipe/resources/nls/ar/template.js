@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "تتطلب بعض من التغيرات حفظ التطبيق وإعادة تحميله مرة أخرى"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "بيت_Swipe Type_لاحقة",
-				settingsDataModelExplainSwipe: "بيت_What do you want users to swipe?_لاحقة",
+				settingsTabDataModel: "نوع السحب",
+				settingsDataModelExplainSwipe: "ما ترغب أن يقوم المستخدمين بسحبه؟",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "اختر الطبقة أو خريطة الويب التي ستظهر في المنظار.",
-				settingsDataModelOneMap: "بيت_A layer in a web map_لاحقة",
-				settingsDataModel1Explain: "بيت_Select the layer you want to be swiped_لاحقة",
+				settingsDataModelOneMap: "الطبقة في خريطة الويب",
+				settingsDataModel1Explain: "تحديد الطبقة التي تود سحبها",
 				settingsDataModel1Warning: "إذا كانت الطبقة مختفية من قبل الطبقات العلوية، لن يكون السحب ذو تأثير يذكر.",
 				settingsDataModel1SpyGlassExplain: "حدد الطبقة لتظهر داخل المنظار.",
 				settingsDataModelTwoMaps: "اثنان من خرائط الويب",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "تمكين الوصف",
 				settingsBookmarksEnable: "تمكين سلاسل السحب",
 				settingsPopupDisable: "تمكين عنصر منبثق",
-				settingsLocationSearchEnable: "بيت_Enable locator search_لاحقة",
-				settingsGeolocatorEnable: "بيت_Enable geolocator_لاحقة",
+				settingsLocationSearchEnable: "تمكين بحث محدد المواقع",
+				settingsGeolocatorEnable: "تمكين محدد المواقع الجغرافي",
 				settingsLegendHelpContent: "لتحسين محتوى مفتاح الخريطة، استخدم جدول محتويات عارض خريطة الويب ArcGIS.com (مخفي في وسيلة الإيضاح)",
-				settingsSeriesHelpContent: "بيت_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._لاحقة", 
+				settingsSeriesHelpContent: "سلاسل السحب هي خيارات التنقل التي سترشد العارض خلال النطاق المحدد وعرض العنوان ونص الوصف في اللوحة الجانبية. أثناء التفعيل الأولي، سيتم استيراد العلامات المرجعية من خرائط الويب وسيتم استخدامها لإعادة تعبئة شريط السلاسل. يقوم تعطيل خيار السلاسل بإيقاف تشغيل شريط السلاسل،لكن يتم الاحتفاظ بتكوين السلاسل للاستخدام المستقبلي.", 
 				preview: "معاينة واجهة المستخدم",
-				settingsLocateButtonExplain: "بيت_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._لاحقة",
-				settingsLocateButton: "بيت_Enable a 'Locate' button supported browsers_لاحقة",
-				settingsAddressSearch: "بيت_Enable an address search tool_لاحقة"
+				settingsLocateButtonExplain: "تكون هذه الوظائف مدعومة على العديد من أجهزة الجوال ومستعرضات سطح المكتب (بما في ذلك Internet Explorer 9+)",
+				settingsLocateButton: "تمكين زر 'تحديد الموقع' على المستعرضات المدعومة",
+				settingsAddressSearch: "تمكين أداة البحث عن العنوان"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "العنصر المنبثق",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "مرحبًا بك في منشئ السحب",
 				modalNext: "التالي",
-				modalPrev: "بيت_Previous_لاحقة",
+				modalPrev: "السابق",
 				modalApply: "فتح التطبيق"
 			},
 			seriesPanel: {

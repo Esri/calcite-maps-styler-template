@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Für einige Änderungen muss die Anwendung gespeichert und neu geladen werden"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "ä_Swipe Type_Ü",
-				settingsDataModelExplainSwipe: "ä_What do you want users to swipe?_Ü",
+				settingsTabDataModel: "Ausblendungstyp",
+				settingsDataModelExplainSwipe: "Welche Elemente sollen Benutzer ausblenden können?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Layer oder Webkarte auswählen, der bzw. die im Fernglas angezeigt werden soll.",
-				settingsDataModelOneMap: "ä_A layer in a web map_Ü",
-				settingsDataModel1Explain: "ä_Select the layer you want to be swiped_Ü",
+				settingsDataModelOneMap: "Ein Layer in einer Webkarte",
+				settingsDataModel1Explain: "Wählen Sie den Layer aus, der ausgeblendet werden soll",
 				settingsDataModel1Warning: "Wenn der Layer von darüberliegenden Layern verdeckt wird, hat \"Ausblenden\" keine Wirkung.",
 				settingsDataModel1SpyGlassExplain: "Layer auswählen, der im Fernglas angezeigt werden soll.",
 				settingsDataModelTwoMaps: "Zwei Webkarten",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Beschreibung aktivieren",
 				settingsBookmarksEnable: "Ausblendereihe aktivieren",
 				settingsPopupDisable: "Pop-up aktivieren",
-				settingsLocationSearchEnable: "ä_Enable locator search_Ü",
-				settingsGeolocatorEnable: "ä_Enable geolocator_Ü",
+				settingsLocationSearchEnable: "Locator-Suche aktivieren",
+				settingsGeolocatorEnable: "Geolocator aktivieren",
 				settingsLegendHelpContent: "Verwenden Sie das Inhaltsverzeichnis des ArcGIS.com-Webkarten-Viewers, um den Legendeninhalt zu optimieren (In Legende ausblenden)",
-				settingsSeriesHelpContent: "ä_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._Ü", 
+				settingsSeriesHelpContent: "\"Ausblendereihe\" ist die Navigationsoption einer Registerkarte, die den Viewer zu einer bestimmten Ausdehnung führt und einen Titel und einen Beschreibungstext im Seitenfenster anzeigt. Bei der ersten Aktivierung werden Ihre Webkarten-Lesezeichen verwendet, um die Leiste der Reihe vorab auszufüllen. Durch Deaktivieren der Reihen-Option wird die Leiste der Reihen deaktiviert, die Konfiguration der Reihe wird jedoch zur zukünftigen Verwendung beibehalten.", 
 				preview: "Benutzeroberflächen-Vorschau",
-				settingsLocateButtonExplain: "ä_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Ü",
-				settingsLocateButton: "ä_Enable a 'Locate' button supported browsers_Ü",
-				settingsAddressSearch: "ä_Enable an address search tool_Ü"
+				settingsLocateButtonExplain: "Diese Funktion wird auf den meisten mobilen Geräten und Desktop-Browsern (einschließlich Internet Explorer 9+) unterstützt.",
+				settingsLocateButton: "Schaltfläche \"Suchen\" für unterstützte Browser aktivieren",
+				settingsAddressSearch: "Werkzeug für Adressensuche aktivieren"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Pop-up",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Willkommen beim Builder für \"Ausblenden\"",
 				modalNext: "Weiter",
-				modalPrev: "ä_Previous_Ü",
+				modalPrev: "Zurück",
 				modalApply: "App öffnen"
 			},
 			seriesPanel: {

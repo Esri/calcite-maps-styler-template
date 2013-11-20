@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Mõned muudatustest eeldavad, et salvestad tööseisu ning avad rakenduse uuesti"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Š_Swipe Type_ä",
-				settingsDataModelExplainSwipe: "Š_What do you want users to swipe?_ä",
+				settingsTabDataModel: "Rullitav tüüp",
+				settingsDataModelExplainSwipe: "Mida kasutajad peaksid rullima?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Vali kiht või veebikaart, mis ilmub pikksilma.",
-				settingsDataModelOneMap: "Š_A layer in a web map_ä",
-				settingsDataModel1Explain: "Š_Select the layer you want to be swiped_ä",
+				settingsDataModelOneMap: "Kiht veebikaardil",
+				settingsDataModel1Explain: "Vali kiht rullimiseks",
 				settingsDataModel1Warning: "Rullimine ei mõju, kui vastav kiht on peidetud ülemiste kihtide alla.",
 				settingsDataModel1SpyGlassExplain: "Vali kiht, mis ilmub pikksilma.",
 				settingsDataModelTwoMaps: "Kaks veebikaarti",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Lülita kirjeldus sisse",
 				settingsBookmarksEnable: "Võimalda rullimise seeriad",
 				settingsPopupDisable: "Luba hüpikaken",
-				settingsLocationSearchEnable: "Š_Enable locator search_ä",
-				settingsGeolocatorEnable: "Š_Enable geolocator_ä",
+				settingsLocationSearchEnable: "Luba asukoha otsing",
+				settingsGeolocatorEnable: "Luba geolokaator",
 				settingsLegendHelpContent: "Legendi sisu täpsustamiseks kasuta ArcGIS.com veebikaardi akna kihtide loendit (peidetud legendi)",
-				settingsSeriesHelpContent: "Š_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ä", 
+				settingsSeriesHelpContent: "Rullimiste seeria on vahelehtedega navigeerimise valik, mis viib vaataja konkreetsele kuvaulatusele ja kuvab pealkirja ning kirjeldust külje paneelil. Algselt aktiveerimiseks imporditakse veebikaardi järjehoidjad ja kasutatakse seeriate lehe eelgenereerimiseks. Seeriate valiku keelamine lülitab välja ka seeriate riba, aga seeriate konfiguratsioon säilitatakse tulevikus kasutamiseks.", 
 				preview: "UI vaade",
-				settingsLocateButtonExplain: "Š_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ä",
-				settingsLocateButton: "Š_Enable a 'Locate' button supported browsers_ä",
-				settingsAddressSearch: "Š_Enable an address search tool_ä"
+				settingsLocateButtonExplain: "Funktsionaalsus on toetatud enamustel nutiseadmetel ja töökoha brauserites (k.a Internet Explorer 9+).",
+				settingsLocateButton: "Luba positsioneerimise nupp toetatud brauserites",
+				settingsAddressSearch: "Luba aadressi otsimise tööriist"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Hüpikaken",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Tere tulemast rullimise koostajasse",
 				modalNext: "Järgmine",
-				modalPrev: "Š_Previous_ä",
+				modalPrev: "Eelmine",
 				modalApply: "Ava app"
 			},
 			seriesPanel: {

@@ -6,8 +6,8 @@
 				step2: "LADATAAN DATAA",
 				step3: "ALUSTETAAN KIERROSTA",
 				loadBuilder: "VAIHDETAAN RAKENNUSTILAAN",
-				redirectSignIn: "Å_REDIRECTING TO SIGN-IN PAGE_ö",
-				redirectSignIn2: "Å_(you will be redirected here after sign-in)_ö",
+				redirectSignIn: "OHJATAAN SISÄÄNKIRJAUTUMISSIVULLE",
+				redirectSignIn2: "(sinut ohjataan tänne sisäänkirjautumisen jälkeen)",
 				fail: "Karttakierroksen lataus epäonnistui",
 				failButton: "Yritä uudelleen"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "Tarinakartta",
 				builderButton: "Vaihda muodostusohjelman tilaan",
 				bitlyTooltip: "Hanki lyhyt linkki sovellukseen",
-				bitlyStartIndex: "Å_Link to current place_ö"
+				bitlyStartIndex: "Linkki nykyiseen paikkaan"
 			},
 			builderHTML: {
 				panelHeader: "SOVELLUKSEN MÄÄRITYS",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "Mittakaava/taso",
 				settingsZoomFirstValue: "Ei mitään",
 				settingsFieldError: "Valitse kenttä jokaisesta luettelosta",
-				dataTitle: "Å_ArcGIS Online hosting_ö",
+				dataTitle: "ArcGIS Online -isännöinti",
 				dataExplain: "Å_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._ö",
 				dataNameLbl: "Palvelun nimi",
 				dataFolderListLbl: "Kansio",
@@ -207,7 +207,7 @@
 				errorNoLocation: "Määritä tämän kierroksen pisteen sijainti"
 			},
 			builderJS: {
-				noPendingChange: "Å_No unsaved change_ö",
+				noPendingChange: "Ei tallentamattomia muutoksia",
 				unSavedChangeSingular: "1 tallentamaton muutos",
 				unSavedChangePlural: "tallentamattomat muutokset",
 				shareStatus1: "Å_Tour is not saved_ö",
@@ -226,7 +226,7 @@
 				saveSuccess: "Sovelluksen tallennus onnistui",
 				saveError: "Tallennus epäonnistui, yritä uudelleen",
 				saveError2: "Tallennus epäonnistui nimen tai kuvauksen virheellisen HTML-tunnisteen takia",
-				saveError3: "Å_The title can't be empty_ö",
+				saveError3: "Otsikko ei voi olla tyhjä",
 				dragColorPicker: "Siirrä minua<br />tai vaihda värini",
 				dataWarningExtent: "Sinulla on tietoja Web-kartan laajuuden ulkopuolelta. Näitä tietoja ei käytetä kierrospisteinämme. Vaihda kartan laajuutta, jos haluat käyttää niitä.",
 				dataWarningVisibi: "Karttakierros-karttatasosi ei näy nykyisessä Web-kartan laajuudessa. Vahvista, että Karttakierros-karttatasosi näkyy %MAPSIZE% -koon kartassa.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "Sulje",
 				signIn: "Kirjaudu sisään tilillä palvelussa",
 				signInTwo: "sovelluksen tallentamiseksi.",
-				switchBM: "Å_Change Basemap_ö"
+				switchBM: "Muuta taustakarttaa"
 			},
 			organizePopupJS: {
 				messageStart: "Olet päättänyt poistaa",
@@ -282,8 +282,8 @@
 				videos: "videot",
 				disabled: "Järjestelmänvalvoja on poistanut tämän toiminnon käytöstä",
 				disabledPortal: "Tämä toiminto on poistettu käytöstä ArcGIS-portaalissa",
-				header1: "Å_Your pictures must be shared publicly._ö",
-				header2: "Å_The import will be limited to the first %NB1% %MEDIA%._ö",
+				header1: "Kuvasi on jaettava julkisesti.",
+				header2: "Tuonti rajoitetaan ensimmäisiin %NB1% %MEDIA% -kohteeseen.",
 				emptyDataset: "Virhe. Kuvia ei löydy",
 				footerImport: "Tuo",
 				selectAlbum: "Valitse julkinen albumi",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "Å_Import your Tour content from a CSV file._ö",
 				advancedCommonTip: "Å_It requires that your images and videos are already online._ö",
 				select: "Tee valinta",
-				locUse: "Å_Use pictures geolocation_ö",
+				locUse: "Käytä kuvien geosijaintia",
 				locExplain: "Å_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._ö",
 				locExplain2: "Å_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._ö"
 			},
 			viewFlickr: {
-				title: "Å_Flickr import_ö",
+				title: "Flickr-tuonti",
 				header: "Å_Enter your Flickr user name and select a Photo Set or a Tag to be imported._ö",
 				userInputLbl: "Kirjoita käyttäjänimi",
 				signInMsg2: "Käyttäjää ei löydy",
@@ -314,7 +314,7 @@
 				footerImportSet: "Tuo valittu sarja"
 			},
 			viewFacebook: {
-				title: "Å_Facebook import_ö",
+				title: "Facebook-tuonti",
 				header: "Å_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._ö",
 				leftHeader: "Facebook-käyttäjä",
 				rightHeader: "Facebook-sivu",
@@ -323,15 +323,15 @@
 				lookupMsgError: "Sivua ei löydy"
 			},
 			viewPicasa: {
-				title: "Å_Picasa/Google+ import_ö",
+				title: "Tuonti Picasasta/Google+:sta",
 				header: "Å_Enter your email address or the ID of your Picasa or Google+ account._ö",
 				userInputLbl: "Kirjoita sähköpostiosoite tai tunnus",
 				signInMsg2: "Tiliä ei löydy",
-				howToFind: "Å_How to find a Picasa or Google+ account ID_ö",
+				howToFind: "Picasa- tai Google+-tilitunnuksen etsiminen",
 				howToFind2: "Kopioi minkä tahansa Picasa- tai Google+-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
 			},
 			viewCSV: {
-				title: "Å_CSV import_ö",
+				title: "CSV-tuonti",
 				uploadBtn: "Valitse tai pudota CSV-tiedosto",
 				resultHeaderEmpty: "CSV-tiedosto on tyhjä",
 				resultHeaderSuccess: "%NB_POINTS% pisteen lataus onnistui",
@@ -356,8 +356,8 @@
 				footerSucceed: "Tuonti onnistui. Ladataan"
 			},
 			viewYoutube: {
-				title: "Å_Youtube import_ö",
-				header: "Å_Enter a YouTube user name to find publicly shared videos._ö",
+				title: "Youtube-tuonti",
+				header: "Etsi julkisesti jaettuja videoita käyttämällä YouTube-käyttäjätunnusta.",
 				pageInputLbl: "Å_Enter a Youtube user name_ö",
 				lookupMsgError: "Käyttäjää ei löydy",
 				howToFind: "Å_How to find a Youtube user name_ö",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "Å_Select and locate your images/videos_ö",
 				header: "Paikanna tuotavat kuvat napsauttamalla tai napauttamalla niitä.",
-				headerMore: "Å_Why aren't my images/videos geolocated?_ö",
+				headerMore: "Miksei kuviani/videoitani geopaikanneta?",
 				headerExplain: "Å_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._ö",
 				leftPanelTab1: "Paikannettava",
 				leftPanelTab2: "Paikannettu",
@@ -379,30 +379,30 @@
 				footerProgress: "Tuonti on käynnissä",
 				footerSucceed: "Tuonti onnistui. Ladataan...",
 				loading: "Ladataan",
-				error: "Å_Pictures geolocation import failed, geolocations have been ignored._ö"
+				error: "Kuvien geosijainnin tuonti epäonnistui, ja geosijainnit on jätetty huomiotta."
 			},
 			initPopup: {
-				title: "Å_Welcome to the Map Tour Builder_ö",
+				title: "Tervetuloa Map Tourin rakentamisohjelmaan",
 				prevBtn: "Takaosa",
 				nextBtn: "Seuraava"
 			},
 			initPopupHome: {
-				header1: "Å_Where are your images or videos?_ö",
-				header2: "Å_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._ö",
-				title1: "Å_They are already online_ö",
-				title2: "Å_I need to upload my images_ö",
-				hostedFSTooltip: "Å_Use ArcGIS Online to host your images (doesn't support videos)._ö",
-				hostedFsNA: "Å_Only available for ArcGIS for Organizations Publisher and Administrator users_ö",
+				header1: "Missä kuvasi tai videosi ovat?",
+				header2: "Tämän avustusohjelman avulla voit luoda karttakierroksen verkkoon aiemmin tallennetuista kuvista tai tuoda ne ArcGIS Online for Organizations -tilillesi.",
+				title1: "Ne ovat jo verkossa",
+				title2: "Minun on ladattava kuvani palveluun",
+				hostedFSTooltip: "Käytä ArcGIS Onlinea kuviesi isännöintiin (ei tue videoita).",
+				hostedFsNA: "Käytettävissä vain henkilöille, joilla on ArcGIS for Organizations -tilin julkaisijan tai järjestelmänvalvojan käyttöoikeudet",
 				footer1: "Kun olet valmis, muista jakaa karttakierroksesi yleisösi kanssa sovelluskohteen sivulla.",
 				footer3: "Lataa CSV-malli",
 				footer4: "\"Tallenna nimellä\", jos kohde ei lataudu",
-				footer4bis: "Å_Use right click and \"Save as\" if download doesn't start_ö",
-				footer5: "Å_Learn more_ö",
+				footer4bis: "Paina hiiren kakkospainiketta ja valitse \"Tallenna nimellä\", jos lataus ei ala",
+				footer5: "Lisätietoja",
 				footerProgress: "Luonti on käynnissä",
 				footerSucceed: "Luonti onnistui. Ladataan..."
 			},
 			helpPopup: {
-				title: "Å_Help_ö",
+				title: "Ohje",
 				close: "Sulje",
 				tab1: {
 					title: "Johdanto",
@@ -455,7 +455,7 @@
 					div3: "<li>Se ei tarjoa haluamaasi käyttöliittymän mukautusta, kuten ylätunnisteen taustakuvan käyttämistä.</li><li>Olet kehittäjä ja haluat parantaa sovellusta.</li>",
 					div4: "Ladattava versio voidaan määrittää web-kartan tai web-sovelluksen tunnisteen avulla. Pääasialliset käyttötapaukset ovat seuraavat:",
 					div41: "Luot karttakierroksen käyttämällä interaktiivista muodostusohjelmaa isännöidyssä ympäristössä ja määrität mallin web-karttasovelluksen tunnisteen avulla. Järjestelmä käyttää interaktiivisen muodostusohjelman kanssa määrittämiäsi asetuksia.",
-					div42: "Å_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._ö",
+					div42: "Luot web-kartan interaktiivisen muodostusohjelman ulkopuolella ja määrität mallin web-kartan tunnisteen avulla. Lisätietoja mallin määrittämisestä on ohjeissa.",
 					div43: "Huomaa, että interaktiivinen muodostusohjelma on käytettävissä ladattavana versiona. Siihen liittyy kuitenkin joitakin selaimiin, kuten Internet Explorer 10:tä vanhempiin selaimiin, liittyviä teknisiä rajoituksia.",
 					div5: "Å_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._ö"
 				},
@@ -488,7 +488,7 @@
 					div2c: "Å_Sharing the Tour through ArcGIS Online_ö",
 					div2d: "Å_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._ö",
 					div3t: "Å_Feature Service security_ö",
-					div3a: "Å_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._ö",
+					div3a: "Jos käytät karttakierroksen muodostusohjelman avulla luotua isännöityä kohdepalvelua, sovellus huolehtii palvelun suojaamisesta puolestasi säilyttäen muokkausoikeudet vain itsellään, vaikka palvelu jaettaisiinkin julkisesti.",
 					div3t2: "Å_Before sharing your Tour with your audience_ö",
 					div3: "Å_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._ö",
 					div4: "Å_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._ö",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Å_Tour successfully saved_ö",
+				firstSaveTitle: "Kierroksen tallennus onnistui",
 				firstSaveHeader: "Å_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._ö",
-				firstSaveA1: "Å_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ö",
+				firstSaveA1: "Jos et tunne ArcGIS Onlinea tai haluat pikavalinnan, jonka kautta pääsee sisällönluonnin käyttöliittymään, voit tallentaa seuraavan linkin: %LINK1%",
 				firstSaveA1bis: "Å_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ö",
-				firstSaveQ2: "Å_Is my Tour shared?_ö",
+				firstSaveQ2: "Onko kierrokseni jaettu?",
 				firstSaveA2: "Å_Currently your Tour is not shared. To share it, use the SHARE button._ö",
-				shareTitle: "Å_Share your Tour_ö",
-				sharePrivateHeader: "Å_Your Tour is not shared, would you like to share it?_ö",
-				sharePrivateBtn1: "Å_Share publicly_ö",
-				sharePrivateBtn2: "Å_Share with my Organization_ö",
-				sharePrivateProgress: "Å_Sharing in progress..._ö",
-				sharePrivateErr: "Å_Sharing failed, try again or_ö",
-				sharePrivateOk: "Å_Sharing updated successfully, loading..._ö",
-				sharePreviewAsUser: "Å_Preview_ö",
-				shareHeader1: "Å_Your Tour is <strong>publicly accessible</strong>._ö",
-				shareHeader2: "Å_Your Tour is accessible by your organization members (login is required)._ö",
-				shareLinkHeader: "Å_Share the Tour with your audience_ö",
-				shareLinkOpen: "Å_OPEN_ö",
-				shareQ1Opt1: "Å_How do I keep the Tour private?_ö",
+				shareTitle: "Jaa kierroksesi",
+				sharePrivateHeader: "Kierrostasi ei ole jaettu. Haluatko jakaa sen?",
+				sharePrivateBtn1: "Jaa julkisesti",
+				sharePrivateBtn2: "Jaa oman organisaation kanssa",
+				sharePrivateProgress: "Jakaminen käynnissä...",
+				sharePrivateErr: "Jakaminen epäonnistui. Yritä uudelleen tai",
+				sharePrivateOk: "Jakamisen päivitys onnistui, ladataan...",
+				sharePreviewAsUser: "Esikatselu",
+				shareHeader1: "Kierroksesi on <strong>julkisesti käytettävissä</strong>.",
+				shareHeader2: "Organisaatiosi jäsenet voivat käyttää kierrostasi (sisäänkirjauduttuaan).",
+				shareLinkHeader: "Jaa kierros yleisösi kanassa",
+				shareLinkOpen: "AVAA",
+				shareQ1Opt1: "Miten voin pitää kierroksen yksityisenä?",
 				shareQ1Opt2: "Å_How do I keep the Tour private or share it publicly?_ö",
 				shareA1: "Å_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._ö",
 				shareA1bis: "Å_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ö",
 				shareQ2: "Å_How do I edit the Tour later?_ö",
 				shareQ2bis: "Å_How do I get back to the authoring interface?_ö",
 				shareA2div1: "Å_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ö",
-				shareA2div2: "Å_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ö",				
-				shareQ3: "Å_Where is the data stored?_ö",
-				shareA3: "Å_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._ö"
+				shareA2div2: "Koska olet sovelluksen omistaja, kun olet kirjautunut ArcGIS.com-sivustoon, sovelluksessa näkyy painike, jolla voita avata vuorovaikutteisen muodostusohjelman:",				
+				shareQ3: "Minne tiedot on tallennettu?",
+				shareA3: "Kierroksen määritykset tallennetaan <a href='%LINK1%' target='_blank'>tähän web-karttakohteeseen</a> ja <a href='%LINK2%' target='_blank'>tähän web-sovelluskohteeseen</a>. Jos olet käyttänyt Flickr-, Picasa-, Facebook- tai YouTube-tuontia, kuvasi ja videosi jäävät kyseiseen palveluun, eikä niitä kopioida ArcGIS Onlineen."
 			}
         }
     })

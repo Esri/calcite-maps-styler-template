@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Certaines de vos modifications nécessitent d\'enregistrer et de recharger l\'application"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "æ_Swipe Type_Â",
-				settingsDataModelExplainSwipe: "æ_What do you want users to swipe?_Â",
+				settingsTabDataModel: "Balayer un type",
+				settingsDataModelExplainSwipe: "Que voulez-vous que les utilisateurs balayent ?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Sélectionnez la couche ou la carte Web qui apparaîtra dans la longue-vue.",
-				settingsDataModelOneMap: "æ_A layer in a web map_Â",
-				settingsDataModel1Explain: "æ_Select the layer you want to be swiped_Â",
+				settingsDataModelOneMap: "Une couche dans une carte Web",
+				settingsDataModel1Explain: "Sélectionnez la couche à balayer",
 				settingsDataModel1Warning: "Si la couche est masquée par des couches supérieures, le balayage sera sans effet.",
 				settingsDataModel1SpyGlassExplain: "Sélectionner la couche devant apparaître dans la longue-vue.",
 				settingsDataModelTwoMaps: "Deux cartes Web",
@@ -161,14 +161,14 @@
 				settingsDescriptionEnable: "Activer la description",
 				settingsBookmarksEnable: "Activer la série de balayages",
 				settingsPopupDisable: "Activer la fenêtre contextuelle",
-				settingsLocationSearchEnable: "æ_Enable locator search_Â",
-				settingsGeolocatorEnable: "æ_Enable geolocator_Â",
+				settingsLocationSearchEnable: "Activer la recherche de localisateur",
+				settingsGeolocatorEnable: "Activer le géolocalisateur",
 				settingsLegendHelpContent: "Pour affiner le contenu de la légende, utilisez la table des matières de la visionneuse de carte Web ArcGIS.com (Masquer dans la légende)",
-				settingsSeriesHelpContent: "æ_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._Â", 
+				settingsSeriesHelpContent: "La série de balayages est une option de navigation par onglets qui guide la visionneuse vers une étendue particulière et qui affiche un titre et un texte de description dans le volet latéral. Lors de la première activation, les géosignets des cartes Web sont importés et utilisés pour renseigner la barre de la série. Si vous désactivez l'option de série, la barre de série est désactivée, mais la configuration de votre série est conservée pour une utilisation ultérieure.", 
 				preview: "Aperçu de l\'interface utilisateur",
-				settingsLocateButtonExplain: "æ_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Â",
-				settingsLocateButton: "æ_Enable a 'Locate' button supported browsers_Â",
-				settingsAddressSearch: "æ_Enable an address search tool_Â"
+				settingsLocateButtonExplain: "Cette fonctionnalité est prise en charge par la plupart des appareils mobiles et des navigateurs bureautiques (y compris Internet Explorer 9+).",
+				settingsLocateButton: "Activer un bouton 'Localiser' sur les navigateurs pris en charge",
+				settingsAddressSearch: "Activer un outil de recherche d'adresses"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Fenêtre contextuelle",
@@ -183,7 +183,7 @@
 			initPopup: {
 				initHeader: "Bienvenue dans le Générateur de balayages",
 				modalNext: "Suivant",
-				modalPrev: "æ_Previous_Â",
+				modalPrev: "Précédent",
 				modalApply: "Ouvrir l\'application"
 			},
 			seriesPanel: {

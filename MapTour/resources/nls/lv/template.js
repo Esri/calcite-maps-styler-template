@@ -6,8 +6,8 @@
 				step2: "IELĀDĒ DATUS",
 				step3: "IZPILDA TŪRI",
 				loadBuilder: "PĀRSLĒGT UZ BUILDER MODE",
-				redirectSignIn: "ķ_REDIRECTING TO SIGN-IN PAGE_ū",
-				redirectSignIn2: "ķ_(you will be redirected here after sign-in)_ū",
+				redirectSignIn: "NOVIRZA UZ PIERAKSTĪŠANĀS LAPU",
+				redirectSignIn2: "(pēc pierakstīšanās jūs tiksiet novirzīti uz šejieni)",
 				fail: "Atvainojiet, Map Tour ielādēšanas neveiksme",
 				failButton: "Atkārtot"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "Stāstu karte",
 				builderButton: "Pārslēgties uz veidotāja režīmu",
 				bitlyTooltip: "Iegūt īssaiti uz aplikāciju",
-				bitlyStartIndex: "ķ_Link to current place_ū"
+				bitlyStartIndex: "Saite uz pašreizējo vietu"
 			},
 			builderHTML: {
 				panelHeader: "APLIKĀCIJAS KONFIGURĀCIJA",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "Mērogs/līmenis",
 				settingsZoomFirstValue: "Neviens",
 				settingsFieldError: "Lūdzu, izvēlieties lauku katrā sarakstā",
-				dataTitle: "ķ_ArcGIS Online hosting_ū",
+				dataTitle: "ArcGIS Online viesošana",
 				dataExplain: "ķ_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._ū",
 				dataNameLbl: "Servisa nosaukums",
 				dataFolderListLbl: "Mape",
@@ -207,7 +207,7 @@
 				errorNoLocation: "Iestatiet izvietojumu šim tūres punktam"
 			},
 			builderJS: {
-				noPendingChange: "ķ_No unsaved change_ū",
+				noPendingChange: "Nav nesaglabātu izmaiņu",
 				unSavedChangeSingular: "1 nesaglabāta izmaiņa",
 				unSavedChangePlural: "nesaglabātas izmaiņas",
 				shareStatus1: "ķ_Tour is not saved_ū",
@@ -226,7 +226,7 @@
 				saveSuccess: "Aplikācija saglabāta veiksmīgi",
 				saveError: "Saglabāt neizdevās, lūdzu, mēģiniet vēlreiz",
 				saveError2: "Saglabāšana neizdevās nederīga html taga dēļ vārdā vai aprakstā",
-				saveError3: "ķ_The title can't be empty_ū",
+				saveError3: "Virsraksts nevar būt tukšs",
 				dragColorPicker: "Pārvietot man apkārt<br />vai mainīt manu krāsu",
 				dataWarningExtent: "Jums ir dati web kartes pārklājuma ārpusē. Šie dati netiks izmantoti kā tūres punkti, izmainiet kartes pārklājumu, ja jūs vēlaties tos izmantot.",
 				dataWarningVisibi: "Jūsu Map Tour slānis nav redzams pašreizējā web kartes pārklājumā. Apstipriniet, ka jūsu Map Tour slānis ir redzams ar %MAPSIZE% lielā kartē.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "Aizvērt",
 				signIn: "Lūdzu, pierakstieties kontā uz",
 				signInTwo: "lai saglabātu aplikāciju.",
-				switchBM: "ķ_Change Basemap_ū"
+				switchBM: "Mainīt pamatkarti"
 			},
 			organizePopupJS: {
 				messageStart: "Jūs esat izvēlējies izdzēst",
@@ -282,8 +282,8 @@
 				videos: "video",
 				disabled: "Administrators ir atspējojis šo iezīmi",
 				disabledPortal: "Ši iezīme ir atiespējota Portal for ArcGIS",
-				header1: "ķ_Your pictures must be shared publicly._ū",
-				header2: "ķ_The import will be limited to the first %NB1% %MEDIA%._ū",
+				header1: "Jūsu attēliem jābūt publiski koplietotiem.",
+				header2: "Imports būs limitēts uz pirmajiem %NB1% %MEDIA%.",
 				emptyDataset: "Kļūda, nav atrastas bildes",
 				footerImport: "Importēt",
 				selectAlbum: "Izvēlieties publisku albumu",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "ķ_Import your Tour content from a CSV file._ū",
 				advancedCommonTip: "ķ_It requires that your images and videos are already online._ū",
 				select: "Veikt izvēli",
-				locUse: "ķ_Use pictures geolocation_ū",
+				locUse: "Lietot bilžu ģeoizvietojumu",
 				locExplain: "ķ_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._ū",
 				locExplain2: "ķ_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._ū"
 			},
 			viewFlickr: {
-				title: "ķ_Flickr import_ū",
+				title: "Flickr imports",
 				header: "ķ_Enter your Flickr user name and select a Photo Set or a Tag to be imported._ū",
 				userInputLbl: "Ievadiet Lietotāja vārdu",
 				signInMsg2: "Lietotājs nav atrasts",
@@ -314,7 +314,7 @@
 				footerImportSet: "Importēt izvēlēto iestatījumu"
 			},
 			viewFacebook: {
-				title: "ķ_Facebook import_ū",
+				title: "Facebook impots",
 				header: "ķ_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._ū",
 				leftHeader: "Facebook Lietotājs",
 				rightHeader: "Facebook Lapa",
@@ -323,15 +323,15 @@
 				lookupMsgError: "Lapa nav atrasta"
 			},
 			viewPicasa: {
-				title: "ķ_Picasa/Google+ import_ū",
+				title: "Picasa/Google+ imports",
 				header: "ķ_Enter your email address or the ID of your Picasa or Google+ account._ū",
 				userInputLbl: "Ievadiet epastu vai ID",
 				signInMsg2: "Konts nav atrasts",
-				howToFind: "ķ_How to find a Picasa or Google+ account ID_ū",
+				howToFind: "Kā atrast Picasa vai Google+ konta ID",
 				howToFind2: "Kopēt ciparus starp pirmo un otro '/' no jebkura Picasa vai G+ lapa"
 			},
 			viewCSV: {
-				title: "ķ_CSV import_ū",
+				title: "CSV imports",
 				uploadBtn: "Izvēlieties vai nometiet CSV failu",
 				resultHeaderEmpty: "CSV ir tukšs",
 				resultHeaderSuccess: "Sekmīgi ielādēja %NB_POINTS% punktus",
@@ -356,8 +356,8 @@
 				footerSucceed: "Imports sekmīgs. Ielādē"
 			},
 			viewYoutube: {
-				title: "ķ_Youtube import_ū",
-				header: "ķ_Enter a YouTube user name to find publicly shared videos._ū",
+				title: "YouTube imports",
+				header: "Ievadiet YouTube lietotāja vārdu, lai atrastu publiski koplietotus video.",
 				pageInputLbl: "ķ_Enter a Youtube user name_ū",
 				lookupMsgError: "Lietotājs nav atrasts",
 				howToFind: "ķ_How to find a Youtube user name_ū",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "ķ_Select and locate your images/videos_ū",
 				header: "Lai atrastu, noklikšķiniet vai pieskarieties bildēm, kuras vēlaties importēt.",
-				headerMore: "ķ_Why aren't my images/videos geolocated?_ū",
+				headerMore: "Kāpēc manas bildes/video nav ģeoizvietoti?",
 				headerExplain: "ķ_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._ū",
 				leftPanelTab1: "Lai atrastu",
 				leftPanelTab2: "Atrodas",
@@ -379,7 +379,7 @@
 				footerProgress: "Imports progresā",
 				footerSucceed: "Imports sekmīgs. Ielādē...",
 				loading: "Ielādē",
-				error: "ķ_Pictures geolocation import failed, geolocations have been ignored._ū"
+				error: "Attēla izvietojuma importēšana neizdevās, ģeoizvietojumi tika ignorēti."
 			},
 			initPopup: {
 				title: "Laipni lūdzam Map Tour Veidotājā",
@@ -387,17 +387,17 @@
 				nextBtn: "Nākošais"
 			},
 			initPopupHome: {
-				header1: "ķ_Where are your images or videos?_ū",
-				header2: "ķ_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._ū",
-				title1: "ķ_They are already online_ū",
-				title2: "ķ_I need to upload my images_ū",
-				hostedFSTooltip: "ķ_Use ArcGIS Online to host your images (doesn't support videos)._ū",
-				hostedFsNA: "ķ_Only available for ArcGIS for Organizations Publisher and Administrator users_ū",
+				header1: "Kur ir jūsu attēli vai video?",
+				header2: "Šis asistents palīdzēs jums veidot Map Tour no attēliem, kas jau glabājas tiešsaistē vai tie tiks importēti jūsu ArcGIS Online for Organizations kontā.",
+				title1: "Tās jau atrodas tiešsaistē",
+				title2: "Man nepieciešams augšupielādēt attēlus",
+				hostedFSTooltip: "Izmantojiet ArcGIS Online, lai viesotu savus attēlus (neatbalsta video).",
+				hostedFsNA: "Pieejams tikai ArcGIS for Organizations izdevēja un aministratora lietotājiem",
 				footer1: "Kad tas ir izdarīts, neaizmirstiet dalīties ar jūsu Map Tour ar jūsu auditoriju, izmantojot aplikācijas vienības lapu.",
 				footer3: "Lejupielādēt CSV šablonu",
 				footer4: "\"Saglabājiet kā\" ja tas nelejupielādējas",
-				footer4bis: "ķ_Use right click and \"Save as\" if download doesn't start_ū",
-				footer5: "ķ_Learn more_ū",
+				footer4bis: "Izmantojiet labo pogu un\"Saglabāt kā\" ja nesākas lejupielāde",
+				footer5: "Uzziniet vairāk",
 				footerProgress: "Izveide notiek",
 				footerSucceed: "Izveide sekmīga. Ielādē..."
 			},
@@ -455,7 +455,7 @@
 					div3: "<li>Tas nepiedāvā UI pielāgošanu, kādu vēlaties, piemēram, izmantojot galvenes fona attēlu</li><li>Jūs esat programmētājs un jūs vēlaties uzlabot aplikāciju.</li>",
 					div4: "Lejupielādējamā versija var tikt konfigurēta izmantojot web karti vai web kartēšanas aplikācijas identifikatoru. Galvenie lietošanas gadījumi ir:",
 					div41: "Jūs veidojat kartes tūri izmantojot interaktīvo veidotāju viesotā vidē un konfigurējat šablonu ar web kartēšanas aplikācijas identifikatoru. Tiks piemēroti iestatījumi, kurus jūs definējat ar interaktīvo veidotāju.",
-					div42: "ķ_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._ū",
+					div42: "Jūs veidoja web karti ārpus interaktīvā veidotāja un konfigurējat šablonu ar web kartes identifikatoru. Jums būs jālasa dokumentācija, lai uzzinātu kā konfigurēt šablonu.",
 					div43: "Atcerieties, ka interaktīvais veidotājs ir pieejams lejupielādēšanas versijā, bet ar dažiem tehniskiem ierobežojumiem pārlūkam Internet Explorer vecākām verijām par 10.",
 					div5: "ķ_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._ū"
 				},
@@ -488,7 +488,7 @@
 					div2c: "ķ_Sharing the Tour through ArcGIS Online_ū",
 					div2d: "ķ_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._ū",
 					div3t: "ķ_Feature Service security_ū",
-					div3a: "ķ_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._ū",
+					div3a: "Ja jūs izmantojat viesotu elementu servisu, izveidotu caur Map Tour veidotāju, aplikācija pārvalda servisa drošību priekš jums un jums paliks tikai rediģēšanas privilēģijas, pat tad, ja jūs koplietosiet servisu publiski.",
 					div3t2: "ķ_Before sharing your Tour with your audience_ū",
 					div3: "ķ_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._ū",
 					div4: "ķ_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._ū",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "ķ_Tour successfully saved_ū",
+				firstSaveTitle: "Tūre veiksmīgi saglabāta",
 				firstSaveHeader: "ķ_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._ū",
-				firstSaveA1: "ķ_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ū",
+				firstSaveA1: "Ja jūs neesat pazīstams ar ArcGIS Online vai vēlaties īsinājumikonu, lai piekļūtu autorēšanas saskarnei, jūs varat saglabāt sekojošu saiti: %LINK1%",
 				firstSaveA1bis: "ķ_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ū",
-				firstSaveQ2: "ķ_Is my Tour shared?_ū",
+				firstSaveQ2: "Vai mana tūre ir koplietota?",
 				firstSaveA2: "ķ_Currently your Tour is not shared. To share it, use the SHARE button._ū",
-				shareTitle: "ķ_Share your Tour_ū",
-				sharePrivateHeader: "ķ_Your Tour is not shared, would you like to share it?_ū",
-				sharePrivateBtn1: "ķ_Share publicly_ū",
-				sharePrivateBtn2: "ķ_Share with my Organization_ū",
-				sharePrivateProgress: "ķ_Sharing in progress..._ū",
-				sharePrivateErr: "ķ_Sharing failed, try again or_ū",
-				sharePrivateOk: "ķ_Sharing updated successfully, loading..._ū",
-				sharePreviewAsUser: "ķ_Preview_ū",
-				shareHeader1: "ķ_Your Tour is <strong>publicly accessible</strong>._ū",
-				shareHeader2: "ķ_Your Tour is accessible by your organization members (login is required)._ū",
-				shareLinkHeader: "ķ_Share the Tour with your audience_ū",
-				shareLinkOpen: "ķ_OPEN_ū",
-				shareQ1Opt1: "ķ_How do I keep the Tour private?_ū",
+				shareTitle: "Koplietot jūsu tūri",
+				sharePrivateHeader: "Jūsu tūre nav koplietota, vai vēlaties to koplietot?",
+				sharePrivateBtn1: "Koplietot publiski",
+				sharePrivateBtn2: "Koplietot ar Organizāciju",
+				sharePrivateProgress: "Notiek koplietošana...",
+				sharePrivateErr: "Neizdevās koplietot, mēģiniet vēlreiz vai",
+				sharePrivateOk: "Koplietošana veiksmīgi atjaunināta, ielādē...",
+				sharePreviewAsUser: "Priekšskatījums",
+				shareHeader1: "Jūsu tūre ir <strong>publiski pieejama</strong>.",
+				shareHeader2: "Jūsu tūre ir pieejama jūsu organizācijas biedriem (nepieciešama pieteikšanās).",
+				shareLinkHeader: "Koplietojiet tūri ar jūsu auditoriju",
+				shareLinkOpen: "ATVĒRTS",
+				shareQ1Opt1: "Kā paturēt tūri privātu?",
 				shareQ1Opt2: "ķ_How do I keep the Tour private or share it publicly?_ū",
 				shareA1: "ķ_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._ū",
 				shareA1bis: "ķ_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ū",
 				shareQ2: "ķ_How do I edit the Tour later?_ū",
 				shareQ2bis: "ķ_How do I get back to the authoring interface?_ū",
 				shareA2div1: "ķ_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ū",
-				shareA2div2: "ķ_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ū",				
-				shareQ3: "ķ_Where is the data stored?_ū",
-				shareA3: "ķ_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._ū"
+				shareA2div2: "Kā aplikācijas īpašnieks, kad esat pierakstījies ArcGIS.com, aplikācija satur pogu, lai atvērtu to interaktīvajā veidotājā:",				
+				shareQ3: "Kur tiek glabāti dati?",
+				shareA3: "Tūres konfigurācija tiek glabāta <a href='%LINK1%' target='_blank'>šajā web kartes vienībā</a> un <a href='%LINK2%' target='_blank'>šajā web aplikācijas vienībā</a>. Ja esat izmantojis Flickr, Picasa, Facebook vai YouTube importu, jūsu attēli un video tiek glabāti turpat un netiek dublēti ArcGIS Online."
 			}
         }
     })

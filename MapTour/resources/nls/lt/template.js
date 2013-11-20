@@ -6,8 +6,8 @@
 				step2: "ĮKELIAMI DUOMENYS",
 				step3: "INICIJUOJAMA KELIONĖ",
 				loadBuilder: "PERSIJUNGIAMA Į KŪRIMO REŽIMĄ",
-				redirectSignIn: "Į_REDIRECTING TO SIGN-IN PAGE_š",
-				redirectSignIn2: "Į_(you will be redirected here after sign-in)_š",
+				redirectSignIn: "NUKREIPIAMA Į PRISIJUNGIMO PUSLAPĮ",
+				redirectSignIn2: "(jūs būsite nukreiptas čia po prisijungimo)",
 				fail: "Atsiprašome, kelionės žemėlapyje įkėlimas nepavyko",
 				failButton: "Bandyti vėl"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "Pristatomasis žemėlapis",
 				builderButton: "Perjungti į kūrimo būseną",
 				bitlyTooltip: "Gauti sutrumpintą aplikacijos nuorodą",
-				bitlyStartIndex: "Į_Link to current place_š"
+				bitlyStartIndex: "Nuoroda į esamą vietą"
 			},
 			builderHTML: {
 				panelHeader: "APLIKACIJOS KONFIGŪRACIJA",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "Mastelis/lygis",
 				settingsZoomFirstValue: "Nėra",
 				settingsFieldError: "Kiekviename sąraše nurodykite lauką",
-				dataTitle: "Į_ArcGIS Online hosting_š",
+				dataTitle: "ArcGIS Online talpinimas",
 				dataExplain: "Į_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._š",
 				dataNameLbl: "Paslaugos pavadinimas",
 				dataFolderListLbl: "Katalogas",
@@ -207,7 +207,7 @@
 				errorNoLocation: "Nurodykite šio kelionės taško vietą"
 			},
 			builderJS: {
-				noPendingChange: "Į_No unsaved change_š",
+				noPendingChange: "Neišsaugotų pakeitimų nėra",
 				unSavedChangeSingular: "1 neišsaugotas pakeitimas",
 				unSavedChangePlural: "neišsaugoti pakeitimai",
 				shareStatus1: "Į_Tour is not saved_š",
@@ -226,7 +226,7 @@
 				saveSuccess: "Aplikacija įrašyta sėkmingai",
 				saveError: "Įrašyti nepavyko, pabandykite iš naujo",
 				saveError2: "Išsaugoti nepavyko dėl negalimo html tego pavadinime ar apraše",
-				saveError3: "Į_The title can't be empty_š",
+				saveError3: "Pavadinimas negali būti tuščias",
 				dragColorPicker: "Traukite aplink<br />arba pakeiskite spalvą",
 				dataWarningExtent: "Turite duomenų nepatenkančių į žemėlapio aprėptį. Šie duomenys nebus naudojami kaip kelionės taškai, jei norite juos naudoti - pakeiskite žemėlapio aprėptį.",
 				dataWarningVisibi: "Šioje aprėptyje, Kelionės Žemėlapyje sluoksnis nėra matomas. Patvirtinkite, kad Kelionės Žemėlapyje sluoksnis yra matomas naudojant %MAPSIZE% dydžio žemėlapį.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "Užverti",
 				signIn: "Prisijunkite su paskyra prie",
 				signInTwo: "aplikacijai įrašyti.",
-				switchBM: "Į_Change Basemap_š"
+				switchBM: "Pakeisti pagrindo žemėlapį"
 			},
 			organizePopupJS: {
 				messageStart: "Nusprendėte panaikinti",
@@ -282,8 +282,8 @@
 				videos: "video medžiagą",
 				disabled: "Šią funkciją išjungė Administratorius",
 				disabledPortal: "Šis funkcionalumas išjungtas Portal for ArcGIS",
-				header1: "Į_Your pictures must be shared publicly._š",
-				header2: "Į_The import will be limited to the first %NB1% %MEDIA%._š",
+				header1: "Jūsų nuotraukos turi būti bendrinamos viešai.",
+				header2: "Importavimas bus apribotas iki %NB1% %MEDIA%.",
 				emptyDataset: "Klaida, paveikslų nerasta",
 				footerImport: "Importuoti",
 				selectAlbum: "Pasirinkte viešą albumą",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "Į_Import your Tour content from a CSV file._š",
 				advancedCommonTip: "Į_It requires that your images and videos are already online._š",
 				select: "Pažymėti",
-				locUse: "Į_Use pictures geolocation_š",
+				locUse: "Naudoti nuotraukų vietas",
 				locExplain: "Į_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._š",
 				locExplain2: "Į_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._š"
 			},
 			viewFlickr: {
-				title: "Į_Flickr import_š",
+				title: "Flickr importas",
 				header: "Į_Enter your Flickr user name and select a Photo Set or a Tag to be imported._š",
 				userInputLbl: "Įveskite vartotojo vardą",
 				signInMsg2: "Vartotojas nerastas",
@@ -314,7 +314,7 @@
 				footerImportSet: "Importuoti pasirinktą rinkinį"
 			},
 			viewFacebook: {
-				title: "Į_Facebook import_š",
+				title: "Facebook importas",
 				header: "Į_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._š",
 				leftHeader: "Facebook vartotojas",
 				rightHeader: "Facebook puslapis",
@@ -323,15 +323,15 @@
 				lookupMsgError: "Puslapis nerastas"
 			},
 			viewPicasa: {
-				title: "Į_Picasa/Google+ import_š",
+				title: "Picasa/Google+ importas",
 				header: "Į_Enter your email address or the ID of your Picasa or Google+ account._š",
 				userInputLbl: "Įveskite elektroninį paštą arba ID",
 				signInMsg2: "Paskyra nerasta",
-				howToFind: "Į_How to find a Picasa or Google+ account ID_š",
+				howToFind: "Kaip surasti Picasa arba Google+ paskyros ID",
 				howToFind2: "Nukopijuokite skaičius tarp pirmo ir antro '/' bet kuriame Picasa ar G+ puslapyje"
 			},
 			viewCSV: {
-				title: "Į_CSV import_š",
+				title: "CSV importas",
 				uploadBtn: "Pasirinkite arba nužymėkite CSV failą",
 				resultHeaderEmpty: "CSV tuščias",
 				resultHeaderSuccess: "Sėkmingai užkrauta %NB_POINTS% taškų",
@@ -356,8 +356,8 @@
 				footerSucceed: "Importavimas pavyko. Kraunama"
 			},
 			viewYoutube: {
-				title: "Į_Youtube import_š",
-				header: "Į_Enter a YouTube user name to find publicly shared videos._š",
+				title: "Youtube importas",
+				header: "Įveskite YouTube vartotojo vardą ir raskite viešai bendrinamų video.",
 				pageInputLbl: "Į_Enter a Youtube user name_š",
 				lookupMsgError: "Vartotojas nerastas",
 				howToFind: "Į_How to find a Youtube user name_š",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "Į_Select and locate your images/videos_š",
 				header: "Spustelkite paveikslus, kuriuos norite importuoti, norėdami juos rasti",
-				headerMore: "Į_Why aren't my images/videos geolocated?_š",
+				headerMore: "Kodėl mano nuotraukos/video nerasti?",
 				headerExplain: "Į_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._š",
 				leftPanelTab1: "Norint rasti",
 				leftPanelTab2: "Rasti",
@@ -379,7 +379,7 @@
 				footerProgress: "Vyksta importavimas",
 				footerSucceed: "Importavimas pavyko. Kraunama...",
 				loading: "Kraunama",
-				error: "Į_Pictures geolocation import failed, geolocations have been ignored._š"
+				error: "Nuotraukos kelio importas nepavyko, vietos ignoruojamos."
 			},
 			initPopup: {
 				title: "Sveiki atvykę į Žemėlapio turo kūrėją",
@@ -387,17 +387,17 @@
 				nextBtn: "Toliau"
 			},
 			initPopupHome: {
-				header1: "Į_Where are your images or videos?_š",
-				header2: "Į_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._š",
-				title1: "Į_They are already online_š",
-				title2: "Į_I need to upload my images_š",
-				hostedFSTooltip: "Į_Use ArcGIS Online to host your images (doesn't support videos)._š",
-				hostedFsNA: "Į_Only available for ArcGIS for Organizations Publisher and Administrator users_š",
+				header1: "Kur yra jūsų nuotraukos ir video?",
+				header2: "Šis įrankis padės jums sukurti žemėlapio turą iš paveikslų, saugomų internete arba importuos juos į jūsų ArcGIS Online for Organization paskyrą.",
+				title1: "Jie jau internete",
+				title2: "Man reikia talpinti nuotraukas",
+				hostedFSTooltip: "Naudokite ArcGIS Online vaizdų talpinimui (nepalaiko video).",
+				hostedFsNA: "Galima tik ArcGIS for Organization publikuotojui ir administratoriui",
 				footer1: "Kai baigsite, nepamirškite bendrinti žemėlapio turo su vartotojais per aplikacijos elementų puslapį.",
 				footer3: "Atsisiųsti CSV šabloną",
 				footer4: "\"Išsaugoti\" jei neįmanoma nukrauti",
-				footer4bis: "Į_Use right click and \"Save as\" if download doesn't start_š",
-				footer5: "Į_Learn more_š",
+				footer4bis: "Spauskite dešiniu klavišu \"Įrašyti\" jei siuntimas neprasidėjo",
+				footer5: "Sužinokite daugiau",
 				footerProgress: "Vyksta kūrimas",
 				footerSucceed: "Kūrimas pavyko. Kraunama..."
 			},
@@ -455,7 +455,7 @@
 					div3: "<li>Joje nėra vartotojo sąsajos adaptavimo, kurį norėtumėte turėti, pavyzdžiui, naudoti antraštės foninį vaizdą</li><li>Esate programuotojas ir norite patobulinti aplikaciją.</li>",
 					div4: "Parsisiunčiama versijoja gali būti konfigūruojama per internetinio žemėlapio ar internetinės kartografavimo aplikacijos identifikatorių. Pagrindiniai panaudos atvejai yra:",
 					div41: "Kuriate žemėlapio turą naudodami interaktyvų vedlį talpinamoje aplinkoje ir konfigūruojate šabloną su žemėlapių aplikacijos identifikatoriumi. Galios nustatymai, kuriuos nurodėte interaktyviame vedlyje.",
-					div42: "Į_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._š",
+					div42: "Kuriate internetinį žemėlapį už interaktyvaus vedlio ribų ir konfigūruojate šabloną su internetinio žemėlapio identifikatoriumi. Turėsite perskaityti dokumentaciją, kad išmoktumėt konfigūruoti šabloną.",
 					div43: "Atkreipkite dėmesį, kad interaktyvus vedlys galimas parsisiunčiamoje versijoje , tačiau su tam tikrais techniniais apribojimais naršyklėms, tokioms kaip senesnės už 10 versiją Internet Explorer.",
 					div5: "Į_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._š"
 				},
@@ -488,7 +488,7 @@
 					div2c: "Į_Sharing the Tour through ArcGIS Online_š",
 					div2d: "Į_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._š",
 					div3t: "Į_Feature Service security_š",
-					div3a: "Į_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._š",
+					div3a: "Jei naudojate talpinamą elementų paslaugą, sukurta žemėlapių turo vedlio pagalba, aplikacija už jus sutvarkys paslaugos saugumą, ir jūs išliksite vienintelis vartotojas, turintis redagavimo teises, net jei bendrinsite viešai.",
 					div3t2: "Į_Before sharing your Tour with your audience_š",
 					div3: "Į_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._š",
 					div4: "Į_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._š",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Į_Tour successfully saved_š",
+				firstSaveTitle: "Turas sėkmingai įrašytas",
 				firstSaveHeader: "Į_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._š",
-				firstSaveA1: "Į_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_š",
+				firstSaveA1: "Jei nesate pažįstamas su ArcGIS Online arba norite greitai patekti į autoriaus vartotojo sąsają, galite išsaugoti šią nuorodą: %LINK1%",
 				firstSaveA1bis: "Į_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._š",
-				firstSaveQ2: "Į_Is my Tour shared?_š",
+				firstSaveQ2: "Ar mano turas bendrintas?",
 				firstSaveA2: "Į_Currently your Tour is not shared. To share it, use the SHARE button._š",
-				shareTitle: "Į_Share your Tour_š",
-				sharePrivateHeader: "Į_Your Tour is not shared, would you like to share it?_š",
-				sharePrivateBtn1: "Į_Share publicly_š",
-				sharePrivateBtn2: "Į_Share with my Organization_š",
-				sharePrivateProgress: "Į_Sharing in progress..._š",
-				sharePrivateErr: "Į_Sharing failed, try again or_š",
-				sharePrivateOk: "Į_Sharing updated successfully, loading..._š",
-				sharePreviewAsUser: "Į_Preview_š",
-				shareHeader1: "Į_Your Tour is <strong>publicly accessible</strong>._š",
-				shareHeader2: "Į_Your Tour is accessible by your organization members (login is required)._š",
-				shareLinkHeader: "Į_Share the Tour with your audience_š",
-				shareLinkOpen: "Į_OPEN_š",
-				shareQ1Opt1: "Į_How do I keep the Tour private?_š",
+				shareTitle: "Bendrinti jūsų turą",
+				sharePrivateHeader: "Jūsų turas nebendrintas. Ar norėsite bendrinti jį?",
+				sharePrivateBtn1: "Bendrinti viešai",
+				sharePrivateBtn2: "Bendrinti su viena organizacija",
+				sharePrivateProgress: "Vyksta bendrinimas...",
+				sharePrivateErr: "Bendrinimas nepavyko, bandykite dar kartą arba",
+				sharePrivateOk: "Bendrinimas sėkmingai atnaujintas, kraunama...",
+				sharePreviewAsUser: "Peržiūra",
+				shareHeader1: "Jūsų turas yra <strong>viešai pasiekiamas</strong>.",
+				shareHeader2: "Jūsų turas yra pasiekiamas jūsų organizacijos nariams (reikalingas prisijungimas).",
+				shareLinkHeader: "Bendrinkite turą su savo auditorija",
+				shareLinkOpen: "ATIDARYTI",
+				shareQ1Opt1: "Kaip išlaikyti turą privačiu?",
 				shareQ1Opt2: "Į_How do I keep the Tour private or share it publicly?_š",
 				shareA1: "Į_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._š",
 				shareA1bis: "Į_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._š",
 				shareQ2: "Į_How do I edit the Tour later?_š",
 				shareQ2bis: "Į_How do I get back to the authoring interface?_š",
 				shareA2div1: "Į_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._š",
-				shareA2div2: "Į_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_š",				
-				shareQ3: "Į_Where is the data stored?_š",
-				shareA3: "Į_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._š"
+				shareA2div2: "Kaip aplikacijos savininkas, kai prisijungiate prie ArcGIS.com, aplikacija turės interaktyvaus kūrėjo atverimo mygtuką:",				
+				shareQ3: "Kur laikomi duomenys?",
+				shareA3: "Turo konfigūracija yra saugojama <a href='%LINK1%' target='_blank'>šiame internetinio žemėlapio elemente</a> ir <a href='%LINK2%' target='_blank'>šiame internetinio žemėlapio elemente</a>. Jei naudojote Flickr, Picasa, Facebook arba YouTube importą, jūsų vaizdai ir video lieka saugomi ten ir nėra dublikuojami ArcGIS Online."
 			}
         }
     })
