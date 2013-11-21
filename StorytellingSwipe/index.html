@@ -11,9 +11,23 @@
 		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
 		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
 
+		<!-- 
+			To correctly reference your application in search engine:
+			 - create and fill out extensively an ArcGIS.com item that link to your final application
+			 - edit the following four tags as well as the upper title tag on line 4
+		-->
+		<meta name="description" content="A storytelling template that enables users to view and compare two layers of a web map using a vertical bar or a spyglass.">
+
+		<!-- Facebook sharing -->
 		<meta property="og:title" content="Swipe"/>
 		<meta property="og:description" content="A storytelling template that enables users to view and compare two layers of a web map using a vertical bar or a spyglass."/>
 		<meta property="og:image" content="http://www.arcgis.com/sharing/rest/content/items/dcaadc9aae1948c5b2df9adf8698f9cc/info/thumbnail/thumbnail.png"/>
+
+		<!-- 
+			This template is released under the Apache License V2.0 by Esri http://www.esri.com/
+			Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
+			https://github.com/Esri/swipe-map-storytelling-template-js
+		-->
 
 		<script type="text/javascript">
 			//--------------------------------
@@ -109,7 +123,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.2-beta6';
+			var version = '1.2-beta7';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -240,7 +254,7 @@
 						</a>
 					</div>
 				</div>
-				<button type="button" class="switchBuilder btn btn-success"></button>
+				<button type="button" class="switchBuilder btn"></button>
 				<!-- Builder top panel -->
 				<div id="builderPanel">
 					<h4></h4>
@@ -495,8 +509,14 @@
 			<div class="modal-footer">
 				<span class="error"></span>
 				<div class="actions">
-					<button type="button" class="btn btn-mini btn-prev"> <i class="icon-arrow-left"></i><span class="prev"></span></button>
-					<button type="button" class="btn btn-mini btn-next btn-save" data-dismiss="modal"><span class="next"></span><i class="icon-arrow-right"></i></button>
+					<button type="button" class="btn btn-prev">
+						<i class="icon-arrow-left"></i>
+						<span class="prev" style="margin-left:  2px;"></span>
+					</button>
+					<button type="button" class="btn btn-next btn-save" data-dismiss="modal">
+						<span class="next" style="margin-right:  2px;"></span>
+						<i class="icon-arrow-right"></i>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -568,23 +588,23 @@
 									<input type="checkbox" name="optionsDescription" value="description" checked>
 									<span class="descriptionText"></span>
 								</label>
-								<label class="checkbox">
+								<label class="checkbox" style="margin-bottom: 1px;">
 									<input type="checkbox" name="optionsLegend" value="legend" checked>
 									<span class="legendText"></span> <span class="legendInfo"></span>
 								</label>
-								<label class="checkbox" style="margin-top: -3px;">
+								<label class="checkbox" style="margin-bottom: 1px;">
 									<input type="checkbox" name="optionsBookmarks" value="bookmarks">
 									<span class="bookmarksText"></span> <span class="seriesInfo"></span>
 								</label>
-								<label class="checkbox" style="margin-top: -3px;">
+								<label class="checkbox">
 									<input type="checkbox" name="optionsPopup" value="popup" checked>
 									<span class="popupText"></span> <span class="popupInfo"></span>
 								</label>
-								<label class="checkbox" style="margin-top: -3px;">
+								<label class="checkbox">
 									<input type="checkbox" name="optionsLocationSearch" value="locationSearch" >
 									<span class="locationSearchText"></span> <span class="locationSearchInfo"></span>
 								</label>
-								<label class="checkbox" style="margin-top: -3px;">
+								<label class="checkbox">
 									<input type="checkbox" name="optionsGeolocator" value="geolocator" >
 									<span class="geolocatorText"></span> <span class="geolocatorInfo"></span>
 								</label>
