@@ -67,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta10';
+			var version = '2.2-beta11';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -94,8 +94,8 @@
 				document.getElementsByTagName("head")[0].appendChild(el);
 			}
 
-			loadCSS("//js.arcgis.com/3.7/js/esri/css/esri.css", true);
-			loadCSS("//js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css", true);			
+			loadCSS("//jsdev.arcgis.com/3.8/js/esri/css/esri.css", true);
+			loadCSS("//jsdev.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css", true);			
 
 			if( isProduction ) {
 				loadCSS("app/maptour-min.css");
@@ -659,7 +659,7 @@
 					<span class="header"></span>
 					<span class="commonHeader"></span>
 				</div>
-				<input class="selectUserName" type="text" value="greg.lazou"/>
+				<input class="selectUserName" type="text" value=""/>
 				<button class="btn btn-userLogin"></button>
 				<span class="signInMsg"></span>
 				<div>
@@ -1053,7 +1053,7 @@
 		</div>
 		
 		<script type="text/javascript">
-			loadJS('//js.arcgis.com/3.7/init.js', true);
+			loadJS('//jsdev.arcgis.com/3.8/init.js', true);
 			loadJS('app/maptour-config.js');
 			
 			function getUrlVar(name)
