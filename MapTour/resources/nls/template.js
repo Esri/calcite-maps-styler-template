@@ -141,7 +141,7 @@ define({
 				settingsLayoutSelected: "Selected layout",
 				settingsLayoutSelect: "Select this layout",
 				settingsLayoutNote: "Note that on points using videos, the placard will always be placed under the video even if that option is unchecked.",
-				settingsLayoutLocBtn: "Display a 'Locate' button on supported browser",
+				settingsLayoutLocBtn: "Display a 'Locate' button",
 				settingsLayoutLocBtnHelp: "That functionality is supported on most mobile device and desktop browsers (Internet Explorer 9).",
 				settingsColorExplain: "Change appearance by choosing a pre-defined theme, or create your own.",
 				settingsLabelColor: "Header, content and footer colors",
@@ -356,7 +356,7 @@ define({
 				footerSucceed: "Import succeeded. Loading"
 			},
 			viewYoutube: {
-				title: "Youtube import",
+				title: "YouTube import",
 				header: "Enter a YouTube user name to find publicly shared videos.",
 				pageInputLbl: "Enter a YouTube user name",
 				lookupMsgError: "User not found",

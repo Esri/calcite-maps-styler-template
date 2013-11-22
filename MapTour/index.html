@@ -67,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta11';
+			var version = '2.2-beta12';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -251,8 +251,13 @@
 				<div id="cfader"></div>
 				<div id="pictureLoadingIndicator" style="visibility:hidden;"></div>
 				<img id="arrowNext" class="arrow disabled" />
-				<a class="modern-layout-control left">‹</a>
-				<a class="modern-layout-control right">›</a>
+				
+				<div class="modern-layout-control left click-bg"></div>
+				<a class="modern-layout-control left click-btn">‹</a>
+				
+				<div class="modern-layout-control right click-bg"></div>
+				<a class="modern-layout-control right click-btn">›</a>
+				
 				<!-- Builder picture panel buttons -->
 				<div class="editPictureButtons">
 					<div>
