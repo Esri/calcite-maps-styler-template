@@ -3,9 +3,9 @@ define([], function () {
     "appid": "",
     "webmap": "95b99082737c4b08ac3b691d271b0b14",
     "oauthappid": null,
-    "proxyurl": "./resources/proxy.ashx",
+    "proxyurl": "",
     "bingmapskey": null,
-    "sharinghost": location.protocol + "//" + "www.arcgis.com",
+    "sharinghost": "",
     "scalebarUnits": "dual"
   };
   return defaults;
