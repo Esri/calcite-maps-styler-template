@@ -762,7 +762,7 @@ define([
         // SET GEOMETRY OF LOCATION GRAPHIC //
         var pointIndex = (this.distances) ? array.indexOf(this.distances,chartObjectX) : -1;
         if ((pointIndex >= 0) && (pointIndex < this.elevationData.length)) {
-          this.chartLocationGraphic.setGeometry(this.profilePolyline.getPoint(0, pointIndex))
+          this.chartLocationGraphic.setGeometry(this.profilePolyline.getPoint(0, pointIndex));
         } else {
           this.chartLocationGraphic.setGeometry(null);
         }
