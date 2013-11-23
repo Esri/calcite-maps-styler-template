@@ -165,6 +165,8 @@ define({
 				settingsGeolocatorEnable: "Enable geolocator",
 				settingsLegendHelpContent: "To refine the legend content, use ArcGIS.com web map viewer table of contents (Hide in Legend)",
 				settingsSeriesHelpContent: "Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use.", 
+				settingsSeriesHelpContent2: "Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use.",
+				settingsSeriesHelpLink: "See an example of an application with a swipe series here",
 				preview: "UI preview",
 				settingsLocateButtonExplain: "This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+).",
 				settingsLocateButton: "Enable a 'Locate' button supported browsers",
