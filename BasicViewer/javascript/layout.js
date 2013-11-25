@@ -1414,12 +1414,13 @@ function createOptions() {
     var options = {
         map: map,
         autoNavigate: false,
+        autoComplete: hasEsri,
         theme: "simpleGeocoder"
 
     }
     //If the World geocoder is primary enable auto complete 
     if (hasEsri && esriIdx === 0) {
-        options.autoComplete = true;
+       // options.autoComplete = true;
         options.minCharacters = 0;
         options.maxLocations = 5;
         options.searchDelay = 100
@@ -1428,7 +1429,7 @@ function createOptions() {
             options.geocoders = geocoders;
         }
     } else {
-        options.autoComplete = false;
+       // options.autoComplete = false;
         options.arcgisGeocoder = false;
         options.geocoders = geocoders;
     }
