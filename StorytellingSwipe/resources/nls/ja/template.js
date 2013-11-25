@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "一部の変更は、保存してアプリケーションを再読み込みする必要があります"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "須_Swipe Type_鷗",
-				settingsDataModelExplainSwipe: "須_What do you want users to swipe?_鷗",
+				settingsTabDataModel: "スワイプのタイプ",
+				settingsDataModelExplainSwipe: "ユーザに許可するスワイプ操作の対象",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "スパイグラスに表示するレイヤまたは Web マップを選択します。",
-				settingsDataModelOneMap: "須_A layer in a web map_鷗",
-				settingsDataModel1Explain: "須_Select the layer you want to be swiped_鷗",
+				settingsDataModelOneMap: "Web マップのレイヤ",
+				settingsDataModel1Explain: "スワイプ操作の対象となるレイヤの選択",
 				settingsDataModel1Warning: "レイヤが上に重なっているレイヤによって隠れている場合、スワイプは機能しません。",
 				settingsDataModel1SpyGlassExplain: "スパイグラス内に表示するレイヤを選択します。",
 				settingsDataModelTwoMaps: "2 つの Web マップ",
@@ -161,14 +161,16 @@
 				settingsDescriptionEnable: "説明を有効化",
 				settingsBookmarksEnable: "一連のスワイプを有効化",
 				settingsPopupDisable: "ポップアップの有効化",
-				settingsLocationSearchEnable: "須_Enable locator search_鷗",
-				settingsGeolocatorEnable: "須_Enable geolocator_鷗",
+				settingsLocationSearchEnable: "ロケータ検索の有効化",
+				settingsGeolocatorEnable: "ジオロケータの有効化",
 				settingsLegendHelpContent: "凡例のコンテンツを更新するには、ArcGIS.com Web マップ ビューアのコンテンツ ウィンドウを使用します (凡例では非表示)",
-				settingsSeriesHelpContent: "須_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._鷗", 
+				settingsSeriesHelpContent: "スワイプは、タブ付きのナビゲーション オプションで、ビューアを特定の範囲に移動したり、サイド パネルにタイトルや説明文を表示したりできます。最初に起動したときに、Web マップのブックマークがインポートされ使用されて、一連のバーに値が事前入力されます。一連のオプションを無効にすると、一連のバーは無効になりますが、一連の構成は保持され、後で使用することができます。", 
+				settingsSeriesHelpContent2: "須_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._鷗",
+				settingsSeriesHelpLink: "須_See an example of an application with a swipe series here_鷗",
 				preview: "UI のプレビュー",
-				settingsLocateButtonExplain: "須_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._鷗",
-				settingsLocateButton: "須_Enable a 'Locate' button supported browsers_鷗",
-				settingsAddressSearch: "須_Enable an address search tool_鷗"
+				settingsLocateButtonExplain: "須_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._鷗",
+				settingsLocateButton: "[検索] ボタンに対応したブラウザの有効化",
+				settingsAddressSearch: "アドレス検索ツールの有効化"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "ポップアップ",
@@ -183,7 +185,7 @@
 			initPopup: {
 				initHeader: "スワイプ ビルダへようこそ",
 				modalNext: "次へ",
-				modalPrev: "須_Previous_鷗",
+				modalPrev: "前へ",
 				modalApply: "アプリケーションを開く"
 			},
 			seriesPanel: {

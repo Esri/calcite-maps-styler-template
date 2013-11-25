@@ -6,8 +6,8 @@
 				step2: "データを読み込んでいます",
 				step3: "ツアーを初期化しています",
 				loadBuilder: "ビルダ モードへの切り替え",
-				redirectSignIn: "須_REDIRECTING TO SIGN-IN PAGE_鷗",
-				redirectSignIn2: "須_(you will be redirected here after sign-in)_鷗",
+				redirectSignIn: "サイン イン ページへのリダイレクト",
+				redirectSignIn2: "(サイン イン後にここにリダイレクトされます)",
 				fail: "マップ ツアーの読み込みに失敗しました",
 				failButton: "再試行"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "ストーリー マップ",
 				builderButton: "ビルダ モードに切り替え",
 				bitlyTooltip: "アプリケーションへのショート リンクを取得",
-				bitlyStartIndex: "須_Link to current place_鷗"
+				bitlyStartIndex: "現在の場所へのリンク"
 			},
 			builderHTML: {
 				panelHeader: "アプリケーション構成",
@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "選択したレイアウト",
 				settingsLayoutSelect: "このレイアウトを選択",
 				settingsLayoutNote: "ビデオを使用するポイントでは、プラカードは、そのオプションがオフの場合でも常に、ビデオの下に配置されるので、注意してください。",
-				settingsLayoutLocBtn: "須_Display a locate button on supported browser_鷗",
+				settingsLayoutLocBtn: "須_Display a 'Locate' button_鷗",
 				settingsLayoutLocBtnHelp: "その機能は、ほとんどのモバイル デバイスとデスクトップ ブラウザ (Internet Explorer 9) でサポートされています。",
 				settingsColorExplain: "外観を変更するには、定義済みのテーマを選択するか、独自のテーマを作成します。",
 				settingsLabelColor: "ヘッダー、コンテンツおよびフッターの色",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "縮尺/レベル",
 				settingsZoomFirstValue: "なし",
 				settingsFieldError: "各リスト内のフィールドを選択してください",
-				dataTitle: "須_ArcGIS Online hosting_鷗",
+				dataTitle: "ArcGIS Online ホスト",
 				dataExplain: "須_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._鷗",
 				dataNameLbl: "サービス名",
 				dataFolderListLbl: "フォルダ",
@@ -207,7 +207,7 @@
 				errorNoLocation: "このツアー ポイントの位置を設定"
 			},
 			builderJS: {
-				noPendingChange: "須_No unsaved change_鷗",
+				noPendingChange: "保留中の変更はありません",
 				unSavedChangeSingular: "1 つの保存されていない変更",
 				unSavedChangePlural: "複数の保存されていない変更",
 				shareStatus1: "須_Tour is not saved_鷗",
@@ -226,7 +226,7 @@
 				saveSuccess: "アプリケーションは正常に保存されました",
 				saveError: "保存に失敗しました。もう一度やり直してください。",
 				saveError2: "名前または説明に無効な html タグがあるため保存に失敗しました",
-				saveError3: "須_The title can't be empty_鷗",
+				saveError3: "タイトルは必ず入力してください",
 				dragColorPicker: "移動するか<br />色を変更します",
 				dataWarningExtent: "Web マップの範囲外にデータがあります。これらのデータはツアー ポイントとして使用されません。使用するには、マップ範囲を変更します。",
 				dataWarningVisibi: "現在の Web マップの範囲では、マップ ツアー レイヤは表示されません。%MAPSIZE% のマップでマップ ツアー レイヤが表示されることを確認してください。",
@@ -234,7 +234,7 @@
 				dataWarningClose: "閉じる",
 				signIn: "アカウントでサイン インして",
 				signInTwo: "アプリケーションを保存してください。",
-				switchBM: "須_Change Basemap_鷗"
+				switchBM: "ベースマップの変更"
 			},
 			organizePopupJS: {
 				messageStart: "次のレコードを削除しようとしています。",
@@ -282,8 +282,8 @@
 				videos: "ビデオ",
 				disabled: "この機能は、管理者によって無効にされています",
 				disabledPortal: "この機能は Portal for ArcGIS では無効になっています。",
-				header1: "須_Your pictures must be shared publicly._鷗",
-				header2: "須_The import will be limited to the first %NB1% %MEDIA%._鷗",
+				header1: "写真はパブリックに共有する必要があります。",
+				header2: "インポートは最初の %NB1% %MEDIA% に制限されます。",
 				emptyDataset: "写真が見つかりませんでした",
 				footerImport: "インポート",
 				selectAlbum: "パブリック アルバムの選択",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "須_Import your Tour content from a CSV file._鷗",
 				advancedCommonTip: "須_It requires that your images and videos are already online._鷗",
 				select: "選択",
-				locUse: "須_Use pictures geolocation_鷗",
+				locUse: "写真のジオロケーションを使用",
 				locExplain: "須_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._鷗",
 				locExplain2: "須_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._鷗"
 			},
 			viewFlickr: {
-				title: "須_Flickr import_鷗",
+				title: "Flickr のインポート",
 				header: "須_Enter your Flickr user name and select a Photo Set or a Tag to be imported._鷗",
 				userInputLbl: "ユーザ名の入力",
 				signInMsg2: "ユーザが見つかりません",
@@ -314,7 +314,7 @@
 				footerImportSet: "選択したセットのインポート"
 			},
 			viewFacebook: {
-				title: "須_Facebook import_鷗",
+				title: "Facebook のインポート",
 				header: "須_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._鷗",
 				leftHeader: "Facebook ユーザ",
 				rightHeader: "Facebook ページ",
@@ -323,15 +323,15 @@
 				lookupMsgError: "ページが見つかりません"
 			},
 			viewPicasa: {
-				title: "須_Picasa/Google+ import_鷗",
+				title: "Picasa/Google+ のインポート",
 				header: "須_Enter your email address or the ID of your Picasa or Google+ account._鷗",
 				userInputLbl: "電子メールまたは ID の入力",
 				signInMsg2: "アカウントが見つかりません",
-				howToFind: "須_How to find a Picasa or Google+ account ID_鷗",
+				howToFind: "Picasa または Google+ アカウントの ID の検索方法",
 				howToFind2: "任意の Picasa または Google+ のページの 1 番目と 2 番目の「/」の間の数字をコピーします。"
 			},
 			viewCSV: {
-				title: "須_CSV import_鷗",
+				title: "CSV のインポート",
 				uploadBtn: "CSV ファイルの選択またはドロップ",
 				resultHeaderEmpty: "CSV が空です",
 				resultHeaderSuccess: "%NB_POINTS% ポイントが正常に読み込まれました",
@@ -356,8 +356,8 @@
 				footerSucceed: "インポートに成功しました。読み込んでいます"
 			},
 			viewYoutube: {
-				title: "須_Youtube import_鷗",
-				header: "須_Enter a YouTube user name to find publicly shared videos._鷗",
+				title: "YouTube のインポート",
+				header: "YouTube のユーザ名を入力してパブリックに共有されているビデオを検索します。",
 				pageInputLbl: "須_Enter a Youtube user name_鷗",
 				lookupMsgError: "ユーザが見つかりません",
 				howToFind: "須_How to find a Youtube user name_鷗",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "須_Select and locate your images/videos_鷗",
 				header: "インポートする写真をクリックまたはタップして特定します。",
-				headerMore: "須_Why aren't my images/videos geolocated?_鷗",
+				headerMore: "画像/ビデオがジオロケートできない理由",
 				headerExplain: "須_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._鷗",
 				leftPanelTab1: "検索する",
 				leftPanelTab2: "検索済み",
@@ -379,7 +379,7 @@
 				footerProgress: "インポートが進行中です",
 				footerSucceed: "インポートに成功しました。読み込んでいます...",
 				loading: "読み込んでいます",
-				error: "須_Pictures geolocation import failed, geolocations have been ignored._鷗"
+				error: "写真のジオロケーションのインポートに失敗しました。ジオロケーションが無視されました。"
 			},
 			initPopup: {
 				title: "マップ ツアー ビルダへようこそ",
@@ -387,17 +387,17 @@
 				nextBtn: "次へ"
 			},
 			initPopupHome: {
-				header1: "須_Where are your images or videos?_鷗",
-				header2: "須_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._鷗",
-				title1: "須_They are already online_鷗",
-				title2: "須_I need to upload my images_鷗",
-				hostedFSTooltip: "須_Use ArcGIS Online to host your images (doesn't support videos)._鷗",
-				hostedFsNA: "須_Only available for ArcGIS for Organizations Publisher and Administrator users_鷗",
+				header1: "写真またはビデオの場所",
+				header2: "このアシスタントを使用して、オンラインに保存されたメディアからマップ ツアーを構築したり、それらを ArcGIS Online for Organization アカウントにインポートしたりできます。",
+				title1: "メディアはすでにオンラインにあります",
+				title2: "画像をアップロードする必要があります",
+				hostedFSTooltip: "ArcGIS Online を使用して、画像をホストします (ビデオはサポートされていません)。",
+				hostedFsNA: "ArcGIS for Organization の公開者ユーザまたは管理者ユーザのみが使用できます",
 				footer1: "完了したら、必ずアプリケーション アイテム ページを使用してマップ ツアーを利用者と共有してください。",
 				footer3: "CSV テンプレートのダウンロード",
 				footer4: "ダウンロードしない場合、\"名前を付けて保存\"",
-				footer4bis: "須_Use right click and \"Save as\" if download doesn't start_鷗",
-				footer5: "須_Learn more_鷗",
+				footer4bis: "ダウンロードが開始しない場合は、右クリックして、[名前を付けて保存] を実行します。",
+				footer5: "詳細",
 				footerProgress: "作成が進行中です",
 				footerSucceed: "正常に作成されました。読み込んでいます..."
 			},
@@ -455,7 +455,7 @@
 					div3: "<li>ヘッダーの背景画像の使用など、必要な UI のカスタマイズが提供されていない場合</li><li>開発者がアプリケーションの拡張を行う場合</li>",
 					div4: "ダウンロード可能なバージョンは、Web マップまたは Web マッピング アプリケーション ID を使用して構成できます。主に次のような場合に使用します。",
 					div41: "ホストされた環境で対話型ビルダを使用してマップ ツアーを構築し、Web マッピング アプリケーション ID によってテンプレートを構成する場合。対話型ビルダによって定義した設定が適用されます。",
-					div42: "須_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._鷗",
+					div42: "対話型ビルダの外部で Web マップを構築し、Web マップ ID によってテンプレートを構成する場合。テンプレートの構成方法についてのドキュメントを参照する必要があります。",
 					div43: "対話型ビルダは、ダウンロード可能なバージョンで入手できますが、バージョン 10 より前の Internet Explorer など、ブラウザに関するいくつかの技術的制約があるので、ご注意ください。",
 					div5: "須_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._鷗"
 				},
@@ -488,7 +488,7 @@
 					div2c: "須_Sharing the Tour through ArcGIS Online_鷗",
 					div2d: "須_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._鷗",
 					div3t: "須_Feature Service security_鷗",
-					div3a: "須_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._鷗",
+					div3a: "マップ ツアー ビルダによって作成された、ホスト フィーチャ サービスを使用している場合、アプリケーションはサービスのセキュリティを自動的に管理します。サービスをパブリックに共有している場合でも、編集権限を持つのはあなただけです。",
 					div3t2: "須_Before sharing your Tour with your audience_鷗",
 					div3: "須_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._鷗",
 					div4: "須_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._鷗",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "須_Tour successfully saved_鷗",
+				firstSaveTitle: "ツアーが保存されました",
 				firstSaveHeader: "須_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._鷗",
-				firstSaveA1: "須_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_鷗",
+				firstSaveA1: "ArcGIS Online の操作に慣れていない、または作成インタフェースに簡単にアクセスしたい場合は、次のリンクを保存できます: %LINK1%",
 				firstSaveA1bis: "須_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._鷗",
-				firstSaveQ2: "須_Is my Tour shared?_鷗",
+				firstSaveQ2: "私のツアーは共有されていますか？",
 				firstSaveA2: "須_Currently your Tour is not shared. To share it, use the SHARE button._鷗",
-				shareTitle: "須_Share your Tour_鷗",
-				sharePrivateHeader: "須_Your Tour is not shared, would you like to share it?_鷗",
-				sharePrivateBtn1: "須_Share publicly_鷗",
-				sharePrivateBtn2: "須_Share with my Organization_鷗",
-				sharePrivateProgress: "須_Sharing in progress..._鷗",
-				sharePrivateErr: "須_Sharing failed, try again or_鷗",
-				sharePrivateOk: "須_Sharing updated successfully, loading..._鷗",
-				sharePreviewAsUser: "須_Preview_鷗",
-				shareHeader1: "須_Your Tour is <strong>publicly accessible</strong>._鷗",
-				shareHeader2: "須_Your Tour is accessible by your organization members (login is required)._鷗",
-				shareLinkHeader: "須_Share the Tour with your audience_鷗",
-				shareLinkOpen: "須_OPEN_鷗",
-				shareQ1Opt1: "須_How do I keep the Tour private?_鷗",
+				shareTitle: "ツアーの共有",
+				sharePrivateHeader: "ツアーが共有されていません。共有しますか？",
+				sharePrivateBtn1: "パブリックに共有",
+				sharePrivateBtn2: "組織内で共有",
+				sharePrivateProgress: "共有の実行中...",
+				sharePrivateErr: "共有に失敗しました。もう一度行ってください。",
+				sharePrivateOk: "共有の更新に成功しました。読み込んでいます...",
+				sharePreviewAsUser: "プレビュー",
+				shareHeader1: "ツアーには<strong>一般ユーザがアクセス</strong>できます。",
+				shareHeader2: "ツアーには、組織のメンバーがアクセスできます (ログインが必要)。",
+				shareLinkHeader: "ツアーを一般ユーザと共有",
+				shareLinkOpen: "オープン",
+				shareQ1Opt1: "ツアーをプライベートにするには？",
 				shareQ1Opt2: "須_How do I keep the Tour private or share it publicly?_鷗",
 				shareA1: "須_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._鷗",
 				shareA1bis: "須_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._鷗",
 				shareQ2: "須_How do I edit the Tour later?_鷗",
 				shareQ2bis: "須_How do I get back to the authoring interface?_鷗",
 				shareA2div1: "須_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._鷗",
-				shareA2div2: "須_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_鷗",				
-				shareQ3: "須_Where is the data stored?_鷗",
-				shareA3: "須_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._鷗"
+				shareA2div2: "アプリケーションの所有者として ArcGIS.com にサイン インした場合、アプリケーションに対話型ビルダを開くボタンが含まれます。",				
+				shareQ3: "データの保存場所は？",
+				shareA3: "ツアーの構成は、<a href='%LINK1%' target='_blank'>この Web アイテム</a>と<a href='%LINK2%' target='_blank'>この Web アプリケーション アイテム</a>に保存されます。Flickr、Picasa、Facebook、または YouTube のインポートを使用した場合、画像とビデオはそのままそこに保存され、ArcGIS Online に複製されることはありません。"
 			}
         }
     })

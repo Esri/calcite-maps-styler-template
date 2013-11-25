@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Pažymėtas maketas",
 				settingsLayoutSelect: "Pažymėkite šį maketą",
 				settingsLayoutNote: "Turėkite omenyje, kad taškuose su video, plakatai visuomet bus dedami po video, net jei šis pasirinkimas nepažymėtas.",
-				settingsLayoutLocBtn: "Į_Display a locate button on supported browser_š",
+				settingsLayoutLocBtn: "Į_Display a 'Locate' button_š",
 				settingsLayoutLocBtnHelp: "Šis funkcionalumas palaikomas daugelyje mobilių prietaisų ir stacionarių kompiuterių naršyklėse (Internet Explorer 9).",
 				settingsColorExplain: "Keisti atvaizdavimą pasirenkant iš anksto paruoštą apipavidalinimą arba sukuriant savą.",
 				settingsLabelColor: "Antraštės, turinio, ir poraštės spalvos",

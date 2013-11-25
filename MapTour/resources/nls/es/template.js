@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Diseño seleccionado",
 				settingsLayoutSelect: "Selecciona este diseño",
 				settingsLayoutNote: "Ten en cuenta que en los puntos que usan vídeos, el letrero siempre se situará debajo del vídeo, incluso si esta opción está desactivada.",
-				settingsLayoutLocBtn: "á_Display a locate button on supported browser_Ó",
+				settingsLayoutLocBtn: "á_Display a 'Locate' button_Ó",
 				settingsLayoutLocBtnHelp: "Esa funcionalidad se admite en la mayoría de los dispositivos móviles y navegadores de escritorio (Internet Explorer 9).",
 				settingsColorExplain: "Cambia el aspecto eligiendo un tema predefinido, o crea uno propio.",
 				settingsLabelColor: "Colores del encabezado, contenido y pie",
@@ -357,7 +357,7 @@
 			},
 			viewYoutube: {
 				title: "Importación de Youtube",
-				header: "Introduce un nombre de usuario YouTube para buscar vídeos que se hayan compartido públicamente.",
+				header: "Introduce un nombre de usuario de YouTube para buscar vídeos que se hayan compartido públicamente.",
 				pageInputLbl: "á_Enter a Youtube user name_Ó",
 				lookupMsgError: "Usuario no encontrado",
 				howToFind: "á_How to find a Youtube user name_Ó",

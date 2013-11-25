@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "Noen av endringene dine krever at du lagrer og laster inn programmet på nytt"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "å_Swipe Type_ø",
-				settingsDataModelExplainSwipe: "å_What do you want users to swipe?_ø",
+				settingsTabDataModel: "Sveipetype",
+				settingsDataModelExplainSwipe: "Hva vil du at brukerne skal sveipe?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Velg hvilket lag eller webkart som skal vises i kikkerten.",
-				settingsDataModelOneMap: "å_A layer in a web map_ø",
-				settingsDataModel1Explain: "å_Select the layer you want to be swiped_ø",
+				settingsDataModelOneMap: "Et lag i et webkart",
+				settingsDataModel1Explain: "Velg laget du vil at skal sveipes",
 				settingsDataModel1Warning: "Hvis laget er skjult av overliggende lag, har ikke sveipingen noen virkning.",
 				settingsDataModel1SpyGlassExplain: "Velg laget som skal vises i kikkerten.",
 				settingsDataModelTwoMaps: "To webkart",
@@ -161,14 +161,16 @@
 				settingsDescriptionEnable: "Aktiver beskrivelse",
 				settingsBookmarksEnable: "Aktiver sveipeserier",
 				settingsPopupDisable: "Aktiver sprettoppvindu",
-				settingsLocationSearchEnable: "å_Enable locator search_ø",
-				settingsGeolocatorEnable: "å_Enable geolocator_ø",
+				settingsLocationSearchEnable: "Aktiver posisjonsindikatorsøk",
+				settingsGeolocatorEnable: "Aktiver geoposisjonsindikatoren",
 				settingsLegendHelpContent: "Hvis du vil finjustere innholdet i tegnforklaringen, bruker du innholdsfortegnelsen for kartviseren på ArcGIS.com (skjul i tegnforklaringen)",
-				settingsSeriesHelpContent: "å_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ø", 
+				settingsSeriesHelpContent: "Sveip serier er et fanebasert navigeringsalternativ som veileder brukeren til en bestemt utstrekning, og viser en tittel og beskrivende tekst i sidepanelet.  Under den første aktiveringen, blir bokmerkene fra webkart importert og brukt for å fylle serieraden.  Hvis seriealternativet deaktiveres, slås serieraden av, men seriekonfigurasjonen spares til senere bruk.", 
+				settingsSeriesHelpContent2: "å_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ø",
+				settingsSeriesHelpLink: "å_See an example of an application with a swipe series here_ø",
 				preview: "Forhåndsvisning av brukergrensesnitt",
-				settingsLocateButtonExplain: "å_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ø",
-				settingsLocateButton: "å_Enable a 'Locate' button supported browsers_ø",
-				settingsAddressSearch: "å_Enable an address search tool_ø"
+				settingsLocateButtonExplain: "å_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ø",
+				settingsLocateButton: "Akriver en Lokaliser-knapp i støttede nettlesere",
+				settingsAddressSearch: "Aktiver et adressesøkverktøy"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Popup",
@@ -183,7 +185,7 @@
 			initPopup: {
 				initHeader: "Velkommen til Swipe-verktøyet",
 				modalNext: "Neste",
-				modalPrev: "å_Previous_ø",
+				modalPrev: "Forrige",
 				modalApply: "Åpne appen"
 			},
 			seriesPanel: {

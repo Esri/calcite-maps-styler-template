@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Ausgewähltes Layout",
 				settingsLayoutSelect: "Dieses Layout auswählen",
 				settingsLayoutNote: "Beachten Sie, dass für Punkte, die Videos verwenden, das Werbeplakat immer unter dem Video angezeigt wird, selbst wenn die Option deaktiviert ist.",
-				settingsLayoutLocBtn: "ä_Display a locate button on supported browser_Ü",
+				settingsLayoutLocBtn: "ä_Display a 'Locate' button_Ü",
 				settingsLayoutLocBtnHelp: "Diese Funktion wird von den meisten Browsern für mobile Geräte und Desktops (Internet Explorer 9) unterstützt.",
 				settingsColorExplain: "Ändern Sie das Aussehen durch Auswahl eines vordefinierten Themas, oder erstellen Sie ein eigenes.",
 				settingsLabelColor: "Farben für Kopfzeilen, Inhalt und Fußzeilen",
@@ -299,7 +299,7 @@
 				advancedCSVTip: "ä_Import your Tour content from a CSV file._Ü",
 				advancedCommonTip: "ä_It requires that your images and videos are already online._Ü",
 				select: "Auswahl treffen",
-				locUse: "Geolokalisierung von Bildern verwenden",
+				locUse: "Geolocation von Bildern verwenden",
 				locExplain: "ä_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._Ü",
 				locExplain2: "ä_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._Ü"
 			},
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "ä_Select and locate your images/videos_Ü",
 				header: "Klicken oder tippen Sie auf die Bilder, die importiert werden sollen, um sie zu verorten.",
-				headerMore: "Warum werden meine Bilder nicht geolokalisiert?",
+				headerMore: "Warum werden meine Bilder nicht verortet?",
 				headerExplain: "ä_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._Ü",
 				leftPanelTab1: "Zur Verortung",
 				leftPanelTab2: "Verortet",
@@ -379,7 +379,7 @@
 				footerProgress: "Import wird ausgeführt",
 				footerSucceed: "Import erfolgreich. Wird geladen...",
 				loading: "Wird geladen",
-				error: "Geolokalisierung der Bilder konnte nicht importiert werden, Geolokalisierungen wurden ignoriert."
+				error: "Der Import von Geolocations der Bilder ist fehlgeschlagen; Geolocations wurden ignoriert."
 			},
 			initPopup: {
 				title: "Willkommen beim Map Tour-Builder",
@@ -499,7 +499,7 @@
 			share: {
 				firstSaveTitle: "Tour wurde erfolgreich gespeichert",
 				firstSaveHeader: "ä_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._Ü",
-				firstSaveA1: "Wenn Sie nicht mit ArcGIS Online vertraut sind oder eine Verknüpfung für den Zugriff auf die Erstellungsschnittstelle wünschen, können Sie den folgenden Link speichern: %LINK1%",
+				firstSaveA1: "Wenn Sie nicht mit ArcGIS Online vertraut sind oder eine Verknüpfung für den Zugriff auf die Autor-Oberfläche wünschen, können Sie den folgenden Link speichern: %LINK1%",
 				firstSaveA1bis: "ä_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._Ü",
 				firstSaveQ2: "Ist meine Tour freigegeben?",
 				firstSaveA2: "ä_Currently your Tour is not shared. To share it, use the SHARE button._Ü",

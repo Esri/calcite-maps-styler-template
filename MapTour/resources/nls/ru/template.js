@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Выбранная компоновка",
 				settingsLayoutSelect: "Выбрать эту компоновку",
 				settingsLayoutNote: "У точек, использующих видео, всегда имеется соответствующий значок, даже если эта опция отключена.",
-				settingsLayoutLocBtn: "Ж_Display a locate button on supported browser_Я",
+				settingsLayoutLocBtn: "Ж_Display a 'Locate' button_Я",
 				settingsLayoutLocBtnHelp: "Эта функция поддерживается на большинстве браузеров мобильных устройств и настольных ПК (Internet Explorer 9).",
 				settingsColorExplain: "Измените внешний вид, выбрав готовую тему или создав свою собственную.",
 				settingsLabelColor: "Цвета колонтитулов и содержания",

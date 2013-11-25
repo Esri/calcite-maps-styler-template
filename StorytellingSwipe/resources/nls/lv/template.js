@@ -165,8 +165,10 @@
 				settingsGeolocatorEnable: "Iespējot ģeolokatoru",
 				settingsLegendHelpContent: "Lai attīrītu leģendas saturu izmantojiet ArcGIS.com web kartes skatītāja satura tabulu (Paslēpt leģendā)",
 				settingsSeriesHelpContent: "Pārvilkšanas sērijas ir cilņu navigācijas opcija, kas virzīs skatītāju uz noteiktu pārklājumu un attēlos virsrakstu un apraksta tekstu sānu panelī. Sākotnējās aktivizācijas laikā, web karšu grāmatzīmes tiks importētas un izmantotas, lai aizpildītu seriju joslu. Sēriju opciju atiespējošana izslēgs sēriju joslu, bet sēriju konfigurācija tiks saglabāta izmantošanai nākotnē.", 
+				settingsSeriesHelpContent2: "ķ_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ū",
+				settingsSeriesHelpLink: "ķ_See an example of an application with a swipe series here_ū",
 				preview: "Saskarnes priekšskatījums",
-				settingsLocateButtonExplain: "Šī funkcionalitāte tiek atbalstīta uz vairuma mobilo ierīču un darbvirsmas pārlūkiem (ieskaitot Internet Explorer 9+).",
+				settingsLocateButtonExplain: "ķ_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ū",
 				settingsLocateButton: "Iespējot 'Atrast izvietojumu' pogu atblastītajos pārlūkos",
 				settingsAddressSearch: "Iespējot adreses meklēšanas rīku"
 			},

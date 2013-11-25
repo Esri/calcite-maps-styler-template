@@ -161,13 +161,15 @@
 				settingsDescriptionEnable: "Omschrijving inschakelen",
 				settingsBookmarksEnable: "Swipe-reeks inschakelen",
 				settingsPopupDisable: "Pop-up inschakelen",
-				settingsLocationSearchEnable: "Zoeken naar locator inschakelen",
+				settingsLocationSearchEnable: "Zoeken naar locaties inschakelen",
 				settingsGeolocatorEnable: "Geografische locator inschakelen",
 				settingsLegendHelpContent: "Om de inhoud van de legenda te verfijnen, gebruikt u de inhoudsopgave van de ArcGIS.com-webmap viewer (Verbergen in Legenda)",
 				settingsSeriesHelpContent: "Swipe-reeks is een navigatie-optie met tabbladen die de raadpleger naar een specifiek extent zal leiden en een titel en beschrijving in het deelvenster aan de zijkant zal weergeven. Tijdens de initiële activering worden de bladwijzers van de webmap(s) geïmporteerd en gebruikt om de reeksbalk vooraf in te vullen. Als u de reeksoptie uitschakelt, wordt de reeksbalk uitgeschakeld, maar de reeksconfiguratie wordt behouden voor toekomstig gebruik.", 
+				settingsSeriesHelpContent2: "Ĳ_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ä",
+				settingsSeriesHelpLink: "Ĳ_See an example of an application with a swipe series here_ä",
 				preview: "Voorbeeldweergave UI",
-				settingsLocateButtonExplain: "Deze functionaliteit wordt ondersteund op de meeste mobiele apparaten en desktopbrowsers (inclusief Internet Explorer 9+).",
-				settingsLocateButton: "Schakel een knop Locatie in op ondersteunde browsers",
+				settingsLocateButtonExplain: "Ĳ_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ä",
+				settingsLocateButton: "Schakel een knop \'Locatie\' in op ondersteunde browsers",
 				settingsAddressSearch: "Schakel een tool voor het zoeken naar adressen in"
 			},
 			settingsSwipePopup: {

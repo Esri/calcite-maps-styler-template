@@ -6,8 +6,8 @@
 				step2: "데이터를 로드하는 중",
 				step3: "Tour를 초기화하는 중",
 				loadBuilder: "빌더 모드로 전환하는 중",
-				redirectSignIn: "한_REDIRECTING TO SIGN-IN PAGE_빠",
-				redirectSignIn2: "한_(you will be redirected here after sign-in)_빠",
+				redirectSignIn: "로그인 페이지로 이동하는 중",
+				redirectSignIn2: "(로그인 후 이 페이지로 다시 돌아옵니다.)",
 				fail: "죄송합니다. Map Tour를 로드하지 못했습니다.",
 				failButton: "재시도"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "스토리 맵",
 				builderButton: "빌더 모드로 전환",
 				bitlyTooltip: "응용프로그램의 짧은 링크를 가져옵니다.",
-				bitlyStartIndex: "한_Link to current place_빠"
+				bitlyStartIndex: "현재 장소에 연결"
 			},
 			builderHTML: {
 				panelHeader: "응용프로그램 구성",
@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "선택한 레이아웃",
 				settingsLayoutSelect: "이 레이아웃 선택",
 				settingsLayoutNote: "동영상을 사용하는 포인트에는 해당 옵션의 선택이 취소된 경우에도 항상 플래카드가 동영상 아래에 배치됩니다.",
-				settingsLayoutLocBtn: "한_Display a locate button on supported browser_빠",
+				settingsLayoutLocBtn: "한_Display a 'Locate' button_빠",
 				settingsLayoutLocBtnHelp: "이 기능은 대부분의 모바일 장치 및 데스크탑 브라우저(Internet Explorer 9)에서 지원됩니다.",
 				settingsColorExplain: "미리 정의된 테마를 선택하여 모양을 변경하거나 고유의 모양을 생성합니다.",
 				settingsLabelColor: "머리글, 내용 및 바닥글 색상",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "축척/수준",
 				settingsZoomFirstValue: "없음",
 				settingsFieldError: "각 목록에서 필드를 선택하세요.",
-				dataTitle: "한_ArcGIS Online hosting_빠",
+				dataTitle: "ArcGIS Online 호스팅",
 				dataExplain: "한_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._빠",
 				dataNameLbl: "서비스 이름",
 				dataFolderListLbl: "폴더",
@@ -207,7 +207,7 @@
 				errorNoLocation: "이 Tour 포인트의 위치를 설정하세요."
 			},
 			builderJS: {
-				noPendingChange: "한_No unsaved change_빠",
+				noPendingChange: "저장되지 않은 변경 사항 없음",
 				unSavedChangeSingular: "저장되지 않은 변경 사항 1개",
 				unSavedChangePlural: "저장되지 않은 변경 사항",
 				shareStatus1: "한_Tour is not saved_빠",
@@ -226,7 +226,7 @@
 				saveSuccess: "응용프로그램이 저장되었습니다.",
 				saveError: "저장하지 못했습니다. 다시 시도하세요.",
 				saveError2: "이름 또는 설명의 잘못된 html 태그로 인해 저장하지 못했습니다.",
-				saveError3: "한_The title can't be empty_빠",
+				saveError3: "제목은 비워 둘 수 없습니다.",
 				dragColorPicker: "나를 중심으로 이동하거나<br />내 색상 변경",
 				dataWarningExtent: "웹 맵 범위를 벗어난 데이터가 있습니다. 이러한 데이터는 Tour 포인트로 사용되지 않으므로 사용하려면 맵 범위를 변경해야 합니다.",
 				dataWarningVisibi: "Map Tour 레이어가 현재 웹 맵 범위에 표시되지 않습니다. Map Tour 레이어가 %MAPSIZE%의 큰 맵에 표시되는지 확인하세요.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "닫기",
 				signIn: "응용프로그램을 저장하려면",
 				signInTwo: "로그인 계정으로 로그인하세요.",
-				switchBM: "한_Change Basemap_빠"
+				switchBM: "베이스맵 변경"
 			},
 			organizePopupJS: {
 				messageStart: "Tour 포인트",
@@ -282,8 +282,8 @@
 				videos: "동영상",
 				disabled: "이 기능은 관리자가 사용하지 않도록 설정했습니다.",
 				disabledPortal: "이 기능은 Portal for ArcGIS에서 사용하지 않도록 설정되었습니다.",
-				header1: "한_Your pictures must be shared publicly._빠",
-				header2: "한_The import will be limited to the first %NB1% %MEDIA%._빠",
+				header1: "그림을 공개적으로 공유해야 합니다.",
+				header2: "가져오기는 처음 %NB1%개의 %MEDIA%(으)로 제한됩니다.",
 				emptyDataset: "오류입니다. 그림이 없습니다.",
 				footerImport: "가져오기",
 				selectAlbum: "공용 앨범 선택",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "한_Import your Tour content from a CSV file._빠",
 				advancedCommonTip: "한_It requires that your images and videos are already online._빠",
 				select: "선택",
-				locUse: "한_Use pictures geolocation_빠",
+				locUse: "그림 지오로케이션 사용",
 				locExplain: "한_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._빠",
 				locExplain2: "한_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._빠"
 			},
 			viewFlickr: {
-				title: "한_Flickr import_빠",
+				title: "Flickr 가져오기",
 				header: "한_Enter your Flickr user name and select a Photo Set or a Tag to be imported._빠",
 				userInputLbl: "사용자 이름 입력",
 				signInMsg2: "사용자를 찾을 수 없습니다.",
@@ -314,7 +314,7 @@
 				footerImportSet: "선택한 세트 가져오기"
 			},
 			viewFacebook: {
-				title: "한_Facebook import_빠",
+				title: "Facebook 가져오기",
 				header: "한_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._빠",
 				leftHeader: "Facebook 사용자",
 				rightHeader: "Facebook 페이지",
@@ -323,15 +323,15 @@
 				lookupMsgError: "페이지를 찾을 수 없음"
 			},
 			viewPicasa: {
-				title: "한_Picasa/Google+ import_빠",
+				title: "Picasa/Google+ 가져오기",
 				header: "한_Enter your email address or the ID of your Picasa or Google+ account._빠",
 				userInputLbl: "이메일 또는 ID 입력",
 				signInMsg2: "계정을 찾을 수 없음",
-				howToFind: "한_How to find a Picasa or Google+ account ID_빠",
+				howToFind: "Picasa 또는 Google+ 계정 ID를 찾는 방법",
 				howToFind2: "Picasa 또는 G+ 페이지의 첫 번째 '/'와 두 번째 '/' 사이의 숫자 복사"
 			},
 			viewCSV: {
-				title: "한_CSV import_빠",
+				title: "CSV 가져오기",
 				uploadBtn: "CSV 파일을 선택하거나 드래그 앤 드롭",
 				resultHeaderEmpty: "CSV가 비어 있음",
 				resultHeaderSuccess: "%NB_POINTS%개의 포인트 로드 완료",
@@ -356,10 +356,10 @@
 				footerSucceed: "가져오기가 완료되었습니다. 로드하는 중"
 			},
 			viewYoutube: {
-				title: "한_Youtube import_빠",
-				header: "한_Enter a YouTube user name to find publicly shared videos._빠",
+				title: "YouTube 가져오기",
+				header: "공개적으로 공유된 동영상을 찾으려면 YouTube 사용자 이름을 입력하세요.",
 				pageInputLbl: "한_Enter a Youtube user name_빠",
-				lookupMsgError: "사용자를 찾을 수 없음",
+				lookupMsgError: "사용자를 찾을 수 없습니다.",
 				howToFind: "한_How to find a Youtube user name_빠",
 				howToFind2: "동영상 아래에 사용자 이름 표시",
 				found: "찾음",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "한_Select and locate your images/videos_빠",
 				header: "가져와서 배치하려는 그림을 클릭하거나 누르세요.",
-				headerMore: "한_Why aren't my images/videos geolocated?_빠",
+				headerMore: "이미지/동영상이 배치되지 않는 이유가 무엇입니까?",
 				headerExplain: "한_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._빠",
 				leftPanelTab1: "배치할 항목",
 				leftPanelTab2: "배치된 항목",
@@ -379,30 +379,30 @@
 				footerProgress: "가져오기 진행 중",
 				footerSucceed: "가져오기가 완료되었습니다. 로드하는 중...",
 				loading: "로드 중",
-				error: "한_Pictures geolocation import failed, geolocations have been ignored._빠"
+				error: "그림 지오로케이션을 가져오지 못했습니다. 지오로케이션이 무시되었습니다."
 			},
 			initPopup: {
-				title: "한_Welcome to the Map Tour Builder_빠",
+				title: "Map Tour 빌더",
 				prevBtn: "뒤로",
 				nextBtn: "다음"
 			},
 			initPopupHome: {
-				header1: "한_Where are your images or videos?_빠",
-				header2: "한_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._빠",
-				title1: "한_They are already online_빠",
-				title2: "한_I need to upload my images_빠",
-				hostedFSTooltip: "한_Use ArcGIS Online to host your images (doesn't support videos)._빠",
-				hostedFsNA: "한_Only available for ArcGIS for Organizations Publisher and Administrator users_빠",
+				header1: "이미지 또는 동영상이 어디에 있습니까?",
+				header2: "이 도우미는 온라인으로 이미 저장된 미디어에서 Map Tour를 작성하도록 도와주거나, ArcGIS Online for Organizations 계정으로 Map Tour를 가져옵니다.",
+				title1: "이미 온라인 상태입니다.",
+				title2: "이미지를 업로드해야 합니다.",
+				hostedFSTooltip: "ArcGIS Online을 사용하여 이미지를 호스팅할 수 있습니다(동영상은 지원되지 않음).",
+				hostedFsNA: "ArcGIS for Organizations 발행자 및 관리자 사용자만 사용할 수 있습니다.",
 				footer1: "작업을 마치면 응용프로그램 항목 페이지를 통해 Map Tour를 대상 그룹과 공유해야 합니다.",
 				footer3: "CSV 템플릿 다운로드",
 				footer4: "다운로드되지 않을 경우 \"다른 이름으로 저장\"",
-				footer4bis: "한_Use right click and \"Save as\" if download doesn't start_빠",
-				footer5: "한_Learn more_빠",
+				footer4bis: "다운로드가 시작되지 않는 경우 마우스 오른쪽 버튼을 클릭한 다음 \"다른 이름으로 저장\"을 클릭하세요.",
+				footer5: "자세한 정보",
 				footerProgress: "생성 중",
 				footerSucceed: "생성이 완료되었습니다. 로드하는 중..."
 			},
 			helpPopup: {
-				title: "한_Help_빠",
+				title: "도움말",
 				close: "닫기",
 				tab1: {
 					title: "소개",
@@ -455,7 +455,7 @@
 					div3: "<li>헤더 배경 이미지와 같은 원하는 UI 사용자 정의 옵션이 없는 경우</li><li>응용프로그램을 개선하려는 개발자인 경우</li>",
 					div4: "웹 맵 또는 웹 매핑 응용프로그램 식별자를 통해 다운로드 버전을 구성할 수 있습니다. 기본 사용 사례는 다음과 같습니다.",
 					div41: "호스팅되는 환경에서 대화형 빌더를 사용하여 Map Tour를 빌드하고 웹 매핑 응용프로그램 식별자로 템플릿을 구성합니다. 대화형 빌더를 사용하여 정의한 설정이 적용됩니다.",
-					div42: "한_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._빠",
+					div42: "대화형 빌더 외부에서 웹 맵을 빌드하고 웹 맵 식별자로 템플릿을 구성합니다. 템플릿을 구성하는 방법은 설명서를 참조해야 합니다.",
 					div43: "대화형 빌더는 다운로드 가능한 버전으로 제공되지만 Internet Explorer 10 이전 버전과 같은 브라우저에는 일부 기술적 제한 사항이 있습니다.",
 					div5: "한_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._빠"
 				},
@@ -488,7 +488,7 @@
 					div2c: "한_Sharing the Tour through ArcGIS Online_빠",
 					div2d: "한_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._빠",
 					div3t: "한_Feature Service security_빠",
-					div3a: "한_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._빠",
+					div3a: "Map Tour 빌더를 통해 생성된 호스팅 피처 서비스를 사용하는 경우 응용프로그램에서 서비스 보안을 관리하므로 서비스를 공개적으로 공유한 경우에도 편집 권한은 소유자에게만 유지됩니다.",
 					div3t2: "한_Before sharing your Tour with your audience_빠",
 					div3: "한_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._빠",
 					div4: "한_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._빠",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "한_Tour successfully saved_빠",
+				firstSaveTitle: "Tour가 저장되었습니다.",
 				firstSaveHeader: "한_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._빠",
-				firstSaveA1: "한_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_빠",
+				firstSaveA1: "ArcGIS Online에 익숙하지 않거나 바로가기를 사용하여 작성 인터페이스에 액세스하려는 경우 다음 링크를 저장하면 됩니다. %LINK1%",
 				firstSaveA1bis: "한_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._빠",
-				firstSaveQ2: "한_Is my Tour shared?_빠",
+				firstSaveQ2: "내 Tour가 공유되나요?",
 				firstSaveA2: "한_Currently your Tour is not shared. To share it, use the SHARE button._빠",
-				shareTitle: "한_Share your Tour_빠",
-				sharePrivateHeader: "한_Your Tour is not shared, would you like to share it?_빠",
-				sharePrivateBtn1: "한_Share publicly_빠",
-				sharePrivateBtn2: "한_Share with my Organization_빠",
-				sharePrivateProgress: "한_Sharing in progress..._빠",
-				sharePrivateErr: "한_Sharing failed, try again or_빠",
-				sharePrivateOk: "한_Sharing updated successfully, loading..._빠",
-				sharePreviewAsUser: "한_Preview_빠",
-				shareHeader1: "한_Your Tour is <strong>publicly accessible</strong>._빠",
-				shareHeader2: "한_Your Tour is accessible by your organization members (login is required)._빠",
-				shareLinkHeader: "한_Share the Tour with your audience_빠",
-				shareLinkOpen: "한_OPEN_빠",
-				shareQ1Opt1: "한_How do I keep the Tour private?_빠",
+				shareTitle: "Tour 공유",
+				sharePrivateHeader: "Tour가 공유되어 있지 않습니다. 공유하시겠습니까?",
+				sharePrivateBtn1: "공개적으로 공유",
+				sharePrivateBtn2: "내 기관과 공유",
+				sharePrivateProgress: "공유 처리 중...",
+				sharePrivateErr: "공유에 실패했습니다. 다시 시도하거나",
+				sharePrivateOk: "공유가 업데이트되었습니다. 로그하는 중...",
+				sharePreviewAsUser: "미리보기",
+				shareHeader1: "Tour가 <strong>모든 사용자에게 공개</strong>되었습니다.",
+				shareHeader2: "Tour가 기관의 구성원에게 공개되었습니다(로그인 필요).",
+				shareLinkHeader: "모든 사용자와 Tour 공유",
+				shareLinkOpen: "열기",
+				shareQ1Opt1: "Tour를 비공개로 유지하려면 어떻게 해야 하나요?",
 				shareQ1Opt2: "한_How do I keep the Tour private or share it publicly?_빠",
 				shareA1: "한_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._빠",
 				shareA1bis: "한_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._빠",
 				shareQ2: "한_How do I edit the Tour later?_빠",
 				shareQ2bis: "한_How do I get back to the authoring interface?_빠",
 				shareA2div1: "한_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._빠",
-				shareA2div2: "한_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_빠",				
-				shareQ3: "한_Where is the data stored?_빠",
-				shareA3: "한_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._빠"
+				shareA2div2: "응용프로그램의 소유자인 경우 ArcGIS.com에 로그인하면 대화형 빌더를 열 수 있는 버튼이 응용프로그램에 표시됩니다.",				
+				shareQ3: "데이터는 어디에 저장되나요?",
+				shareA3: "Tour 구성은 <a href='%LINK1%' target='_blank'>이 웹 맵 항목</a>과 <a href='%LINK2%' target='_blank'>이 웹 응용프로그램 항목</a>에 저장됩니다. Flickr, Picasa, Facebook 또는 YouTube 가져오기를 사용한 경우 이미지는 해당 위치에 저장된 상태로 유지되고 ArcGIS Online에서 복제되지 않습니다."
 			}
         }
     })

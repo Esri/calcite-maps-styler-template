@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Layout selezionato",
 				settingsLayoutSelect: "Seleziona il layout",
 				settingsLayoutNote: "Tenere presente che sui punti che utilizzano i video l\'etichetta verrà posizionata sempre al di sotto del video, anche se l\'opzione non è selezionata.",
-				settingsLayoutLocBtn: "é_Display a locate button on supported browser_È",
+				settingsLayoutLocBtn: "é_Display a 'Locate' button_È",
 				settingsLayoutLocBtnHelp: "Questa funzionalità è supportata nella maggior parte dei browser per dispositivi mobili e desktop (Internet Explorer 9).",
 				settingsColorExplain: "Per modificare l\'aspetto, scegliere un tema predefinito o crearne uno personale.",
 				settingsLabelColor: "Colori di intestazione, contenuto e piè di pagina",

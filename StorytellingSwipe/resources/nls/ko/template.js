@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "일부 변경 사항은 응용프로그램을 저장하고 다시 로드해야 합니다."
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "한_Swipe Type_빠",
-				settingsDataModelExplainSwipe: "한_What do you want users to swipe?_빠",
+				settingsTabDataModel: "스와이프 유형",
+				settingsDataModelExplainSwipe: "사용자가 무엇을 스와이프하기를 원하시나요?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "망원경에 표시할 레이어 또는 웹 맵을 선택합니다.",
-				settingsDataModelOneMap: "한_A layer in a web map_빠",
-				settingsDataModel1Explain: "한_Select the layer you want to be swiped_빠",
+				settingsDataModelOneMap: "웹 맵의 레이어",
+				settingsDataModel1Explain: "스와이프하기를 원하는 레이어를 선택하세요.",
 				settingsDataModel1Warning: "레이어가 상위 레이어에 의해 숨겨진 경우에는 스와이프가 적용되지 않습니다.",
 				settingsDataModel1SpyGlassExplain: "망원경 내에 표시할 레이어를 선택합니다.",
 				settingsDataModelTwoMaps: "웹 맵 두 개",
@@ -161,14 +161,16 @@
 				settingsDescriptionEnable: "설명 사용",
 				settingsBookmarksEnable: "스와이프 계열 사용",
 				settingsPopupDisable: "팝업 사용",
-				settingsLocationSearchEnable: "한_Enable locator search_빠",
-				settingsGeolocatorEnable: "한_Enable geolocator_빠",
+				settingsLocationSearchEnable: "로케이터 검색 사용",
+				settingsGeolocatorEnable: "지오로케이터 사용",
 				settingsLegendHelpContent: "범례 컨텐츠를 세분화하려면 ArcGIS.com web map viewer 목차를 사용하세요(범례에서 숨겨짐).",
-				settingsSeriesHelpContent: "한_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._빠", 
+				settingsSeriesHelpContent: "스와이프 계열은 뷰어를 특정 범위로 안내하고 사이드 패널에 제목 및 설명 텍스트를 표시하는 탭이 지정된 탐색 옵션입니다. 초기 활성화 중에 웹 맵의 책갈피를 가져오며 이를 통해 계열 모음이 미리 채워집니다. 계열 옵션을 비활성화하면 계열 모음이 꺼지지만 계열 구성은 나중에 사용할 수 있도록 유지됩니다.", 
+				settingsSeriesHelpContent2: "한_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._빠",
+				settingsSeriesHelpLink: "한_See an example of an application with a swipe series here_빠",
 				preview: "UI 미리보기",
-				settingsLocateButtonExplain: "한_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._빠",
-				settingsLocateButton: "한_Enable a 'Locate' button supported browsers_빠",
-				settingsAddressSearch: "한_Enable an address search tool_빠"
+				settingsLocateButtonExplain: "한_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._빠",
+				settingsLocateButton: "지원되는 브라우저에서 '찾기' 버튼 사용",
+				settingsAddressSearch: "주소 검색 도구 사용"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "팝업",
@@ -183,7 +185,7 @@
 			initPopup: {
 				initHeader: "스와이프 빌더 시작",
 				modalNext: "다음",
-				modalPrev: "한_Previous_빠",
+				modalPrev: "이전",
 				modalApply: "앱 열기"
 			},
 			seriesPanel: {

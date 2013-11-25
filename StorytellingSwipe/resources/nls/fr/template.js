@@ -165,8 +165,10 @@
 				settingsGeolocatorEnable: "Activer le géolocalisateur",
 				settingsLegendHelpContent: "Pour affiner le contenu de la légende, utilisez la table des matières de la visionneuse de carte Web ArcGIS.com (Masquer dans la légende)",
 				settingsSeriesHelpContent: "La série de balayages est une option de navigation par onglets qui guide la visionneuse vers une étendue particulière et qui affiche un titre et un texte de description dans le volet latéral. Lors de la première activation, les géosignets des cartes Web sont importés et utilisés pour renseigner la barre de la série. Si vous désactivez l'option de série, la barre de série est désactivée, mais la configuration de votre série est conservée pour une utilisation ultérieure.", 
+				settingsSeriesHelpContent2: "æ_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._Â",
+				settingsSeriesHelpLink: "æ_See an example of an application with a swipe series here_Â",
 				preview: "Aperçu de l\'interface utilisateur",
-				settingsLocateButtonExplain: "Cette fonctionnalité est prise en charge par la plupart des appareils mobiles et des navigateurs bureautiques (y compris Internet Explorer 9+).",
+				settingsLocateButtonExplain: "æ_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Â",
 				settingsLocateButton: "Activer un bouton 'Localiser' sur les navigateurs pris en charge",
 				settingsAddressSearch: "Activer un outil de recherche d'adresses"
 			},

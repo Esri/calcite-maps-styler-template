@@ -165,8 +165,10 @@
 				settingsGeolocatorEnable: "تمكين محدد المواقع الجغرافي",
 				settingsLegendHelpContent: "لتحسين محتوى مفتاح الخريطة، استخدم جدول محتويات عارض خريطة الويب ArcGIS.com (مخفي في وسيلة الإيضاح)",
 				settingsSeriesHelpContent: "سلاسل السحب هي خيارات التنقل التي سترشد العارض خلال النطاق المحدد وعرض العنوان ونص الوصف في اللوحة الجانبية. أثناء التفعيل الأولي، سيتم استيراد العلامات المرجعية من خرائط الويب وسيتم استخدامها لإعادة تعبئة شريط السلاسل. يقوم تعطيل خيار السلاسل بإيقاف تشغيل شريط السلاسل،لكن يتم الاحتفاظ بتكوين السلاسل للاستخدام المستقبلي.", 
+				settingsSeriesHelpContent2: "بيت_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._لاحقة",
+				settingsSeriesHelpLink: "بيت_See an example of an application with a swipe series here_لاحقة",
 				preview: "معاينة واجهة المستخدم",
-				settingsLocateButtonExplain: "تكون هذه الوظائف مدعومة على العديد من أجهزة الجوال ومستعرضات سطح المكتب (بما في ذلك Internet Explorer 9+)",
+				settingsLocateButtonExplain: "بيت_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._لاحقة",
 				settingsLocateButton: "تمكين زر 'تحديد الموقع' على المستعرضات المدعومة",
 				settingsAddressSearch: "تمكين أداة البحث عن العنوان"
 			},

@@ -142,7 +142,7 @@
 				settingsLayoutSelected: "Markerad layout",
 				settingsLayoutSelect: "Markera denna layout",
 				settingsLayoutNote: "För punkter som använder videoklipp kommer plakatet alltid att placeras under videoklippet, även om alternativet inte har markerats.",
-				settingsLayoutLocBtn: "Å_Display a locate button on supported browser_ö",
+				settingsLayoutLocBtn: "Å_Display a 'Locate' button_ö",
 				settingsLayoutLocBtnHelp: "Den här funktionen stöds på de flesta mobila enheter och skrivbordswebbläsare (Internet Explorer 9).",
 				settingsColorExplain: "Ändra utseende genom att välja ett fördefinierat tema, eller skapa ett eget.",
 				settingsLabelColor: "Färger på rubrik, innehåll och sidfot",

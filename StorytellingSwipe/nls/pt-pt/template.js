@@ -2,11 +2,11 @@
 ({
 		viewer: {
 			loading: {
-				step1: "ã_LOADING APPLICATION_Ç",
-				step2: "ã_LOADING DATA_Ç",
+				step1: "A CARREGAR A APLICAÇÃO",
+				step2: "A CARREGAR OS DADOS",
 				step3: "INICIALIZAR",
 				fail: "Não foi possível carregar o Varrimento",
-				loadBuilder: "ã_SWITCHING TO BUILDER MODE_Ç",
+				loadBuilder: "ALTERNAR PARA MODO BUILDER",
 				failButton: "Tentar Novamente"
 			},
 			errors: {
@@ -65,7 +65,7 @@
 				signInTwo: "para guardar a aplicação."
 			},
 			header:{
-				editMe: "ã_Click to edit description_Ç",
+				editMe: "Clique para editar a descrição",
 				templateTitle: "Definir título do modelo",
 				templateSubtitle: "Definir subtítulo do modelo"
 			},
@@ -161,7 +161,7 @@
 				settingsDescriptionEnable: "Ativar Descrição",
 				settingsBookmarksEnable: "Ativar série de Varrimento",
 				settingsPopupDisable: "Ativar janelas popup",
-				settingsLocatorEnable: "ã_Enable locator_Ç",
+				settingsLocatorEnable: "Ativar o localizador",
 				settingsLegendHelpContent: "Utilize o índice do visualizador de mapas do ArcGIS.com (Ocultar em Legenda)",
 				settingsSeriesHelpContent: "Durante a primeira ativação, os seus eventuais marcadores de mapas web serão utilizados para pré-preencher a barra de séries. Se desativar esta opção mais tarde, as configurações das suas séries não serão perdidas, reativar esta opção irá carregar o estado antes da desativação.",
 				preview: "Pré-visualizar IU"

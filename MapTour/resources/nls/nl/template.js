@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Geselecteerde lay-out",
 				settingsLayoutSelect: "Selecteer deze lay-out",
 				settingsLayoutNote: "Merk op dat, op punten die video\'s gebruiken, de markering altijd onder de video zal worden geplaatst, zelfs als die optie niet is ingeschakeld.",
-				settingsLayoutLocBtn: "Ĳ_Display a locate button on supported browser_ä",
+				settingsLayoutLocBtn: "Ĳ_Display a 'Locate' button_ä",
 				settingsLayoutLocBtnHelp: "Deze functionaliteit wordt ondersteund op de meeste mobiele apparaten en desktopbrowsers (Internet Explorer 9).",
 				settingsColorExplain: "Verander het uiterlijk door een vooraf gedefinieerd thema te kiezen of door uw eigen thema te kiezen.",
 				settingsLabelColor: "Kleuren van koptekst, inhoud en voettekst",
@@ -524,7 +524,7 @@
 				shareA2div1: "Ĳ_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ä",
 				shareA2div2: "Als u bent aangemeld bij ArcGIS.com als de eigenaar van de applicatie, bevat de applicatie een knop om de interactieve builder te openen:",				
 				shareQ3: "Waar zijn de gegevens opgeslagen?",
-				shareA3: "De Tour-configuratie wordt opgeslagen in <a href='%LINK1%' target='_blank'>dit webmapitem</a> en <a href='%LINK2%' target='_blank'>dit webapplicatie-item</a>. Als u importeren van Flickr, Picasa, Facebook of YouTube hebt gebruikt, blijven uw afbeeldingen en video's daar opgeslagen en worden deze niet gedupliceerd in ArcGIS Online."
+				shareA3: "De Tour-configuratie wordt opgeslagen in <a href='%LINK1%' target='_blank'>dit webmap-item</a> en <a href='%LINK2%' target='_blank'>dit webapplicatie-item</a>. Als u importeren van Flickr, Picasa, Facebook of YouTube hebt gebruikt, blijven uw afbeeldingen en video's daar opgeslagen en worden deze niet gedupliceerd in ArcGIS Online."
 			}
         }
     })

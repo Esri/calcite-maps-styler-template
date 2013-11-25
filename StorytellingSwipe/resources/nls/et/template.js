@@ -165,8 +165,10 @@
 				settingsGeolocatorEnable: "Luba geolokaator",
 				settingsLegendHelpContent: "Legendi sisu täpsustamiseks kasuta ArcGIS.com veebikaardi akna kihtide loendit (peidetud legendi)",
 				settingsSeriesHelpContent: "Rullimiste seeria on vahelehtedega navigeerimise valik, mis viib vaataja konkreetsele kuvaulatusele ja kuvab pealkirja ning kirjeldust külje paneelil. Algselt aktiveerimiseks imporditakse veebikaardi järjehoidjad ja kasutatakse seeriate lehe eelgenereerimiseks. Seeriate valiku keelamine lülitab välja ka seeriate riba, aga seeriate konfiguratsioon säilitatakse tulevikus kasutamiseks.", 
+				settingsSeriesHelpContent2: "Š_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ä",
+				settingsSeriesHelpLink: "Š_See an example of an application with a swipe series here_ä",
 				preview: "UI vaade",
-				settingsLocateButtonExplain: "Funktsionaalsus on toetatud enamustel nutiseadmetel ja töökoha brauserites (k.a Internet Explorer 9+).",
+				settingsLocateButtonExplain: "Š_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ä",
 				settingsLocateButton: "Luba positsioneerimise nupp toetatud brauserites",
 				settingsAddressSearch: "Luba aadressi otsimise tööriist"
 			},

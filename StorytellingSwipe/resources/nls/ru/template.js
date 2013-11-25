@@ -165,8 +165,10 @@
 				settingsGeolocatorEnable: "Включить геолокатор",
 				settingsLegendHelpContent: "Для настройки содержания легенды используйте таблицу содержания вьюера веб-карт ArcGIS.com (Скрыть в легенде)",
 				settingsSeriesHelpContent: "Серии шторок - это опция навигации, позволяющая пользователю переходить к определенному экстенту и отображать текст заголовка и описания на боковой панели.  При первоначальном включении закладки с веб-карт будут импортированы и использованы для создания серий.  Отключение опции работы с сериями приводит к отключению панели серий, но настройки серий остаются для использования в будущем.", 
+				settingsSeriesHelpContent2: "Ж_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._Я",
+				settingsSeriesHelpLink: "Ж_See an example of an application with a swipe series here_Я",
 				preview: "Просмотр UI",
-				settingsLocateButtonExplain: "Эта функция поддерживается на большинстве браузеров мобильных устройств и настольных ПК (включая Internet Explorer 9+).",
+				settingsLocateButtonExplain: "Ж_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Я",
 				settingsLocateButton: "Включить в поддерживаемых браузерах кнопку Размещение",
 				settingsAddressSearch: "Включить инструмент поиска адреса"
 			},

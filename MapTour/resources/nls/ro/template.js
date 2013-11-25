@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Configuraţie selectată",
 				settingsLayoutSelect: "Selectaţi această configuraţie",
 				settingsLayoutNote: "Reţineţi că în punctele care utilizează clipuri video, afişul va fi plasat întotdeauna sub clipul video chiar dacă opţiunea este debifată.",
-				settingsLayoutLocBtn: "Ă_Display a locate button on supported browser_ș",
+				settingsLayoutLocBtn: "Ă_Display a 'Locate' button_ș",
 				settingsLayoutLocBtnHelp: "Acea funcţionalitate este suportată pe majoritatea browserelor pentru dispozitive mobile şi sisteme desktop (Internet Explorer 9).",
 				settingsColorExplain: "Schimbaţi aspectul prin alegerea unei teme predefinite sau creaţi una proprie.",
 				settingsLabelColor: "Culori pentru antet, cuprins şi notă de subsol",

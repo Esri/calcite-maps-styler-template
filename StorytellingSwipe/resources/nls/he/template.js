@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "חלק מהשינויים שלך דורשים שמירה וטעינה מחדש של האפליקציה"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "כן_Swipe Type_ש",
-				settingsDataModelExplainSwipe: "כן_What do you want users to swipe?_ש",
+				settingsTabDataModel: "סוג Swipe",
+				settingsDataModelExplainSwipe: "למה אתה רוצה שמשתמשים יבצעו swipe?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "בחר את השכבה או את ה- web map שתופיע במשקפת.",
-				settingsDataModelOneMap: "כן_A layer in a web map_ש",
-				settingsDataModel1Explain: "כן_Select the layer you want to be swiped_ש",
+				settingsDataModelOneMap: "שכבה ב- web map",
+				settingsDataModel1Explain: "בחר שכבה שתנוהל על ידי כלי ה- swipe.",
 				settingsDataModel1Warning: "אם השכבה מוסתרת על ידי שכבות עליונות יותר, לכלי ה- swipe לא תהיה השפעה.",
 				settingsDataModel1SpyGlassExplain: "בחר את השכבה שתופיע בתוך ה- spyglass.",
 				settingsDataModelTwoMaps: "שני web maps",
@@ -161,14 +161,16 @@
 				settingsDescriptionEnable: "הדלק תיאור",
 				settingsBookmarksEnable: "הדלק סדרת Swipe",
 				settingsPopupDisable: "אפשר חלון קופץ",
-				settingsLocationSearchEnable: "כן_Enable locator search_ש",
-				settingsGeolocatorEnable: "כן_Enable geolocator_ש",
+				settingsLocationSearchEnable: "הפעל חיפוש עיגון כתובות",
+				settingsGeolocatorEnable: "הפעל חיפוש מרחבי",
 				settingsLegendHelpContent: "כדי לעדן את תוכן המקרא, השתמש בתוכן העניינים של צפיין ה- ArcGIS.com web map (הסתר במקרא)",
-				settingsSeriesHelpContent: "כן_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ש", 
+				settingsSeriesHelpContent: "Swipe להסדרות היא אפשרות ניווט באמצעות כרטיסיות שתדריך את הצופה לתיחום מסוים והצג הכותרת וטקסט תיאור בפאנל בצד. במהלך הפעלה ראשונית, סימניות מה- web map ייבוא וישמשו לאכלוס מראש של מוט הסדרה. הפסקת אפשרות הסדרה מכבה את מוט הסדרה, אבל תצורת הסדרות נשמרת לשימוש עתידי.", 
+				settingsSeriesHelpContent2: "כן_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ש",
+				settingsSeriesHelpLink: "כן_See an example of an application with a swipe series here_ש",
 				preview: "תצוגה מקדימה של UI",
-				settingsLocateButtonExplain: "כן_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ש",
-				settingsLocateButton: "כן_Enable a 'Locate' button supported browsers_ש",
-				settingsAddressSearch: "כן_Enable an address search tool_ש"
+				settingsLocateButtonExplain: "כן_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ש",
+				settingsLocateButton: "הפוך לפעית את כפתור 'איתור' לדפדפנים נתמכים",
+				settingsAddressSearch: "הפוך לפעיל כלי חיפוש כתובת"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "חלונית קופצת",
@@ -183,7 +185,7 @@
 			initPopup: {
 				initHeader: "ברוכים הבאים לבונה ה- Swipe",
 				modalNext: "הבא",
-				modalPrev: "כן_Previous_ש",
+				modalPrev: "קודם",
 				modalApply: "פתח את האפליקציה"
 			},
 			seriesPanel: {

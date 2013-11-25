@@ -6,8 +6,8 @@
 				step2: "טעינת מידע",
 				step3: "אתחול הסיור",
 				loadBuilder: "החלפה למצב בניה",
-				redirectSignIn: "כן_REDIRECTING TO SIGN-IN PAGE_ש",
-				redirectSignIn2: "כן_(you will be redirected here after sign-in)_ש",
+				redirectSignIn: "הפניה לדף ההתחברות",
+				redirectSignIn2: "(תופנה מחדש לאחר ההתחברות)",
 				fail: "סליחה, טעינת מפת סיור נכשלה",
 				failButton: "נסה שוב"
 			},
@@ -46,7 +46,7 @@
 				storymapsText: "מפת סיפור",
 				builderButton: "עבור למצב בנייה",
 				bitlyTooltip: "קבל קישור קצר ליישום",
-				bitlyStartIndex: "כן_Link to current place_ש"
+				bitlyStartIndex: "קישור למקום נוכחי"
 			},
 			builderHTML: {
 				panelHeader: "קביעת תצורת אפליקציה",
@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "תצוגה נבחרת",
 				settingsLayoutSelect: "בחר תצוגה זו",
 				settingsLayoutNote: "שים לב כי בנקןדות עם קטעי וידאו הכותרת תהיה תמיד ממוקמת מתחת לוידאו, גם אם האפשרות שאינה מסומנת.",
-				settingsLayoutLocBtn: "כן_Display a locate button on supported browser_ש",
+				settingsLayoutLocBtn: "כן_Display a 'Locate' button_ש",
 				settingsLayoutLocBtnHelp: "פונקציונליות זו נתמכת ברוב המכשירים הניידים ובדפדפנים השולחניים (Internet Explorer 9).",
 				settingsColorExplain: "שנה ניראות על ידי בחירת נושא מוגדר מראש או יצירת מראה משלך.",
 				settingsLabelColor: "צבעים של כותרת עליונה, תוכן וכותרת תחתונה",
@@ -173,7 +173,7 @@
 				settingsLabelZoom: "קנה מידה/רמת התמקדות",
 				settingsZoomFirstValue: "ללא",
 				settingsFieldError: "אנא בחר שדה לכל רשימה",
-				dataTitle: "כן_ArcGIS Online hosting_ש",
+				dataTitle: "אירוח ArcGIS Online",
 				dataExplain: "כן_The feature service will be added to your web map. It won't be shared with anyone, and only you will have add, edit, and delete privileges.<br /><br />Note that if you share the application through the item page, the system will ask if you also want to share the Feature Service. This is a required step. You will remain the only one with editing privileges._ש",
 				dataNameLbl: "שם שירות",
 				dataFolderListLbl: "תיקייה",
@@ -207,7 +207,7 @@
 				errorNoLocation: "קבע את המיקום של נקודת סיור זו"
 			},
 			builderJS: {
-				noPendingChange: "כן_No unsaved change_ש",
+				noPendingChange: "אין שינוי לא שמור",
 				unSavedChangeSingular: "שינוי אחד שלא נשמר",
 				unSavedChangePlural: "שינויים שלא נשמרו",
 				shareStatus1: "כן_Tour is not saved_ש",
@@ -226,7 +226,7 @@
 				saveSuccess: "שמירת אפליקציה בוצעה בהצלחה",
 				saveError: "שמירה נכשלה, יש לנסות שוב",
 				saveError2: "השמירה נכשלה בשל תג HTML לא חוקי בשם או בתיאור",
-				saveError3: "כן_The title can't be empty_ש",
+				saveError3: "הכותרת לא יכולה להיות ריקה",
 				dragColorPicker: "הזז אותי סביב<br />או שנה את הצבע שלי",
 				dataWarningExtent: "יש לך נתונים מחוץ לתיחום ה- web map. נתונים אלו לא יעובדו לכדי נקודות סיפור, שנה את תיחום המפה באם ברצונך להשתמש בהם.",
 				dataWarningVisibi: "שכבת מפת הסיור שלך כבויה בתיחום ה- web map הנוכחי. הדלק את שכבת מפת הסיור שלך באמצעות %MAPSIZE% מפה גדולה.",
@@ -234,7 +234,7 @@
 				dataWarningClose: "סגור",
 				signIn: "אנא התחבר עם חשבון ב",
 				signInTwo: "כדי לשמור את האפליקציה.",
-				switchBM: "כן_Change Basemap_ש"
+				switchBM: "משנה את מפת הבסיס"
 			},
 			organizePopupJS: {
 				messageStart: "בחרת למחוק",
@@ -282,8 +282,8 @@
 				videos: "סרטונים",
 				disabled: "תכונה זו הוגדרה כלא זמינה על ידי המנהל",
 				disabledPortal: "ישות זו אינה זמינה ב- Portal for ArcGIS",
-				header1: "כן_Your pictures must be shared publicly._ש",
-				header2: "כן_The import will be limited to the first %NB1% %MEDIA%._ש",
+				header1: "חייב להיות שיתוף ציבורי לתמונות שלך.",
+				header2: "וא יוגבל ל- ‎%NB1% ‏%MEDIA% ראשונים.",
 				emptyDataset: "שגיאה, לא נמצאו תמונות",
 				footerImport: "ייבא",
 				selectAlbum: "בחר אלבום ציבורי",
@@ -299,12 +299,12 @@
 				advancedCSVTip: "כן_Import your Tour content from a CSV file._ש",
 				advancedCommonTip: "כן_It requires that your images and videos are already online._ש",
 				select: "בצע בחירה",
-				locUse: "כן_Use pictures geolocation_ש",
+				locUse: "השתמש במיקום מרחבי לתמונות",
 				locExplain: "כן_You may not want to use pictures location as they can be inherited from the album, resulting in all photos being at the same location._ש",
 				locExplain2: "כן_You may not want to use videos location as they can be inherited from the user settings, resulting in all videos being at the same location._ש"
 			},
 			viewFlickr: {
-				title: "כן_Flickr import_ש",
+				title: "ייבא Flickr",
 				header: "כן_Enter your Flickr user name and select a Photo Set or a Tag to be imported._ש",
 				userInputLbl: "הכנס שם משתמש",
 				signInMsg2: "משתמש לא נמצא",
@@ -314,7 +314,7 @@
 				footerImportSet: "ייבא את הסט הנבחר"
 			},
 			viewFacebook: {
-				title: "כן_Facebook import_ש",
+				title: "ייבוא מפיסבוק",
 				header: "כן_Authenticate with your Facebook User Account or use a Public Page. Private albums can be used to create a public Map Tour that does not require Facebook user authentication, which allows comments and likes to remain private._ש",
 				leftHeader: "משתמש פייסבוק",
 				rightHeader: "עמוד פייסבוק",
@@ -323,15 +323,15 @@
 				lookupMsgError: "עמוד לא נמצא"
 			},
 			viewPicasa: {
-				title: "כן_Picasa/Google+ import_ש",
+				title: "יבוא Picasa/Google+",
 				header: "כן_Enter your email address or the ID of your Picasa or Google+ account._ש",
 				userInputLbl: "הכנס כתובת דואר אלקטורני או ID",
 				signInMsg2: "חשבון לא נמצא",
-				howToFind: "כן_How to find a Picasa or Google+ account ID_ש",
+				howToFind: "כיצד למצוא את ה- ID של חשבון ה- Picasa או Google+",
 				howToFind2: "העתק תווים בין ה \'/\'  הראשון לשני של כל עמוד Picasa או G+"
 			},
 			viewCSV: {
-				title: "כן_CSV import_ש",
+				title: "ייבוא CSV",
 				uploadBtn: "בחר או גרור קובץ CSV",
 				resultHeaderEmpty: "קובץ ה- CSV ריק",
 				resultHeaderSuccess: "%NB_POINTS% נקודות נטענו בהצלחה",
@@ -356,8 +356,8 @@
 				footerSucceed: "הייבוא הצליח. טוען"
 			},
 			viewYoutube: {
-				title: "כן_Youtube import_ש",
-				header: "כן_Enter a YouTube user name to find publicly shared videos._ש",
+				title: "ייבא Youtube",
+				header: "הכנס שם משתמש YouTube כדי לחפש סרטונים המשותפים לציבור.",
 				pageInputLbl: "כן_Enter a Youtube user name_ש",
 				lookupMsgError: "משתמש לא נמצא",
 				howToFind: "כן_How to find a Youtube user name_ש",
@@ -368,7 +368,7 @@
 			viewGeoTag: {
 				title: "כן_Select and locate your images/videos_ש",
 				header: "לחץ או הקש על התמונות שברצונך לייבא בכדי לאתר אותם.",
-				headerMore: "כן_Why aren't my images/videos geolocated?_ש",
+				headerMore: "מדוע לא אותרו מרחבית התמונות/הוידאו שלי?",
 				headerExplain: "כן_If your pictures have a valid geolocation, they will be automatically located on the map and listed on the second tab.<br /><br />By default Picasa and Flickr don't store the geolocation EXIF metadata when you import pictures. Check Picasa/Flickr privacy settings to enable pictures geolocation import and usage by external application. You may have to reimport your existing pictures into Flickr/Picasa for the EXIF geolocation to be used.<br /><br />In Facebook, you have to go to each picture, click Edit and select the location._ש",
 				leftPanelTab1: "בכדי לאתר",
 				leftPanelTab2: "מאותר",
@@ -379,30 +379,30 @@
 				footerProgress: "הייבוא מתבצע כעת",
 				footerSucceed: "הייבוא הצליח. טוען...",
 				loading: "טוען",
-				error: "כן_Pictures geolocation import failed, geolocations have been ignored._ש"
+				error: "ייבוא מיקום מרחבי תמונות נכשל, אין התייחסות למיקומים מרחביים."
 			},
 			initPopup: {
-				title: "כן_Welcome to the Map Tour Builder_ש",
+				title: "ברוכים הבאים לבונה הסיור הממופה",
 				prevBtn: "חזור",
 				nextBtn: "הבא"
 			},
 			initPopupHome: {
-				header1: "כן_Where are your images or videos?_ש",
-				header2: "כן_This assistant will help you build a Map Tour from media already stored online or it will import them into your ArcGIS Online for Organizations account._ש",
-				title1: "כן_They are already online_ש",
-				title2: "כן_I need to upload my images_ש",
-				hostedFSTooltip: "כן_Use ArcGIS Online to host your images (doesn't support videos)._ש",
-				hostedFsNA: "כן_Only available for ArcGIS for Organizations Publisher and Administrator users_ש",
+				header1: "איכן התמונות או הסרטונים שלך?",
+				header2: "כלי הסיוע יעזור לך לבנות סיור ממופה מתוך המדיה שכבר מאוחסנת בצורה מקוונת או שהוא ייבא אותם לתוך ההחשבון הארגוני של ה- ArcGIS Online שלך.",
+				title1: "הם כבר ברשת",
+				title2: "אני צריך להעלות את התמונות שלי",
+				hostedFSTooltip: "השתמש ב-ArcGIS Online לארוח התמונות שלך (אינו תומך בוידאו).",
+				hostedFsNA: "זמין רק עבור ArcGIS למפרסמים ארגוניים ומשתמשים בדרגת מנהלים",
 				footer1: "כשתסיים, אל תשכח לשתף את הסיור הממופה שלך עם הקהל שלך באמצעות עמוד פריט אפליקציה",
 				footer3: "הורד את תבנית קובץ ה- CSV",
 				footer4: "\"שמור בשם\" אם זה לא ירד",
-				footer4bis: "כן_Use right click and \"Save as\" if download doesn't start_ש",
-				footer5: "כן_Learn more_ש",
+				footer4bis: "השתמש בקליק ימני וגם \"שמירה בשם\" אם ההורדה לא מתחילה",
+				footer5: "מידע נוסף",
 				footerProgress: "היצירה בתהליך",
 				footerSucceed: "יצירה עברה בהצלחה. טוען..."
 			},
 			helpPopup: {
-				title: "כן_Help_ש",
+				title: "עזרה",
 				close: "סגור",
 				tab1: {
 					title: "הקדמה",
@@ -455,7 +455,7 @@
 					div3: "<li>לא מציע התאמת UI שאתה מעוניין בה, דוגמת שימוש בתמונת רקע לכותרת עליונה.</li><li>אתה מפתח וברצונך לשדרג את האפליקציה.</li>",
 					div4: "ניתן להגדיר את הגרסה הזמינה להורדה באמצעות web map או  מזהה יישום מיפוי אינטרנטי. תרחישי השימוש העיקריים הם:",
 					div41: "אתה בונה את הסיור הממופה שלך באמצעות כלי הבניה האינטראקטיבי בסביבה מארחת וקובע את תצורת התבנית עם מזהה אפליקציית ה- web mapping. ההגדרות אותן תקבע בעזרת כלי הבניה האינטראקטיבי ייושמו.",
-					div42: "כן_You build your web map outside of the interactive builder and configure the template with the web map identifier. You will have to read the documentation to learn how to configure the template._ש",
+					div42: "אתה בונה את ה- web map שלך מחוץ לכלי הבניה האינטראקטיבי וקובע את תצורת התבנית עם מזהה ה- web map. עליך לקרוא את התיעוד בכדי ללמוד כיצד לקבוע את התבנית.",
 					div43: "שים לב שכלי הבניה האינטראקטיבי זמין בגרסה מוכנה להורדה אך עם מספר מגבלות טכניות בדפדפנים דוגמת Internet Explorer בגרסאות ישנות מגרסה 10.",
 					div5: "כן_To download the most recent version of the template and learn more about how to use it, visit the <a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>._ש"
 				},
@@ -488,7 +488,7 @@
 					div2c: "כן_Sharing the Tour through ArcGIS Online_ש",
 					div2d: "כן_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that aren’t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page._ש",
 					div3t: "כן_Feature Service security_ש",
-					div3a: "כן_If you are using a hosted feature service created through the Map Tour builder, the application manages the service security for you and you will remain the only one with editing privileges, even if you share the service publicly._ש",
+					div3a: "אם אתה משתמש בשירות ישויות מתארח שנוצר באמצעות כלי הבניה של הסיור הממופה, האפליקציה מנהלת את שירות האבטחה עבורך ואתה תישאר היחידי עם הרשאות עריכה אפילו אם תשתף את השירות הזה לציבור.",
 					div3t2: "כן_Before sharing your Tour with your audience_ש",
 					div3: "כן_Make sure the Tour works well when you are not signed in with your ArcGIS.com account. The URL you are going to use should not redirect to a login page or to the builder mode._ש",
 					div4: "כן_It is a good idea to see what your map tour looks like on an iPad held in landscape orientation to make sure it looks good on this popular device. This can help you see if your captions cover up too much of the pictures. It also lets you see if your subtitle fits and isn't so long that it gets clipped._ש",
@@ -497,34 +497,34 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "כן_Tour successfully saved_ש",
+				firstSaveTitle: "הסיור נשמר בהצלחה",
 				firstSaveHeader: "כן_Your Tour is now saved in ArcGIS Online. Please read the following answers to frequent questions._ש",
-				firstSaveA1: "כן_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ש",
+				firstSaveA1: "אם אינך מכיר את ArcGIS Online או שאתה מעוניין בקיצור דרך לממשק העריכה, אתה יכול לשמור את הלינק הבא: %LINK1%",
 				firstSaveA1bis: "כן_The Tour can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ש",
-				firstSaveQ2: "כן_Is my Tour shared?_ש",
+				firstSaveQ2: "האם הסיור שלי משותף?",
 				firstSaveA2: "כן_Currently your Tour is not shared. To share it, use the SHARE button._ש",
-				shareTitle: "כן_Share your Tour_ש",
-				sharePrivateHeader: "כן_Your Tour is not shared, would you like to share it?_ש",
-				sharePrivateBtn1: "כן_Share publicly_ש",
-				sharePrivateBtn2: "כן_Share with my Organization_ש",
-				sharePrivateProgress: "כן_Sharing in progress..._ש",
-				sharePrivateErr: "כן_Sharing failed, try again or_ש",
-				sharePrivateOk: "כן_Sharing updated successfully, loading..._ש",
-				sharePreviewAsUser: "כן_Preview_ש",
-				shareHeader1: "כן_Your Tour is <strong>publicly accessible</strong>._ש",
-				shareHeader2: "כן_Your Tour is accessible by your organization members (login is required)._ש",
-				shareLinkHeader: "כן_Share the Tour with your audience_ש",
-				shareLinkOpen: "כן_OPEN_ש",
-				shareQ1Opt1: "כן_How do I keep the Tour private?_ש",
+				shareTitle: "שתף את הסיור שלך",
+				sharePrivateHeader: "הסיור שלך אינו משותף, ​​היית רוצה לשתף אותו?",
+				sharePrivateBtn1: "שתף באופן ציבורי",
+				sharePrivateBtn2: "שתף עם הארגון שלי",
+				sharePrivateProgress: "שיתוף בתהליך...",
+				sharePrivateErr: "השיתוף נכשל, נסה שנית או",
+				sharePrivateOk: "עדכון השיתוף הצליח, טוען...",
+				sharePreviewAsUser: "תצוגה מקדימה",
+				shareHeader1: "הסיור שלך <strong>נגיש לציבור</strong>.",
+				shareHeader2: "הסיור שלך נגיש לחברי הארגון שלך (נדרש להתחבר).",
+				shareLinkHeader: "שתף את הסיור עם הקהל",
+				shareLinkOpen: "פתח",
+				shareQ1Opt1: "כיצד לשמור על הסיור פרטי?",
 				shareQ1Opt2: "כן_How do I keep the Tour private or share it publicly?_ש",
 				shareA1: "כן_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._ש",
 				shareA1bis: "כן_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ש",
 				shareQ2: "כן_How do I edit the Tour later?_ש",
 				shareQ2bis: "כן_How do I get back to the authoring interface?_ש",
 				shareA2div1: "כן_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ש",
-				shareA2div2: "כן_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ש",				
-				shareQ3: "כן_Where is the data stored?_ש",
-				shareA3: "כן_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._ש"
+				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל ArcGIS.com האפליקציה כוללת כפתור הפותח את הבונה האינטראקטיבי.",				
+				shareQ3: "היכן מאוחסן המידע?",
+				shareA3: "תצורת הסיור מאוחסנת בתוך  <a href='%LINK1%' target='_blank'>this webmap item</a> וגם זה <a href='%LINK2%' target='_blank'> פריט האפליקציה</a>. אם ייבאת מתוך Flickr, Picasa, Facebook או YouTube התמונות והוידאו שלך נשארים מאוחסנים שם ואינם משוכפלים אל  ArcGIS Online."
 			}
         }
     })

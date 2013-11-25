@@ -165,8 +165,10 @@
 				settingsGeolocatorEnable: "Abilita geolocalizzatore",
 				settingsLegendHelpContent: "Per definire il contenuto della legenda, utilizzare il sommario del map viewer Web di ArcGIS.com (Nascondi nella legenda)",
 				settingsSeriesHelpContent: "La serie di scorrimenti con dito è un\'opzione di spostamento tra le schede che guida il visualizzatore a una particolare estensione e visualizza un testo e una descrizione nel pannello laterale. Durante l\'attivazione iniziale i segnalibri delle mappe Web verranno importati e utilizzati per pre-popolare la barra della serie. Se si disabilita l\'opzione relativa alla serie viene disattivata anche la barra corrispondente, tuttavia la configurazione della serie viene mantenuta per usi futuri.", 
+				settingsSeriesHelpContent2: "é_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._È",
+				settingsSeriesHelpLink: "é_See an example of an application with a swipe series here_È",
 				preview: "Anteprima interfaccia utente",
-				settingsLocateButtonExplain: "Questa funzionalità è supportata nella maggior parte dei browser per dispositivi mobili e desktop (incluso Internet Explorer 9 e versioni successive).",
+				settingsLocateButtonExplain: "é_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._È",
 				settingsLocateButton: "Abilita un pulsante Trova posizione nei browser supportati",
 				settingsAddressSearch: "Abilita uno strumento per la ricerca di indirizzi"
 			},

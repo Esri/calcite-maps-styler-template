@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Vælg layout",
 				settingsLayoutSelect: "Vælg dette layout",
 				settingsLayoutNote: "Bemærk, at ved punkter, der benytter videoer, vil opslaget altid være placeret under videoen, selvom denne indstilling ikke er markeret.",
-				settingsLayoutLocBtn: "ø_Display a locate button on supported browser_å",
+				settingsLayoutLocBtn: "ø_Display a 'Locate' button_å",
 				settingsLayoutLocBtnHelp: "Denne funktionalitet understøttes på de fleste browsere på mobile enheder samt pc-browsere (Internet Explorer 9).",
 				settingsColorExplain: "Skift udseende ved at vælge et foruddefineret tema eller ved at oprette dit eget.",
 				settingsLabelColor: "Farver på toptekster, indhold og bundtekster",

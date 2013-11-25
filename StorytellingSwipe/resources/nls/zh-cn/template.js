@@ -165,8 +165,10 @@
 				settingsGeolocatorEnable: "启用地理定位器",
 				settingsLegendHelpContent: "要优化图例内容，请使用 ArcGIS.com web 地图查看器内容列表(隐藏在图例中)",
 				settingsSeriesHelpContent: "卷帘系列是一种选项卡式的导航选项，它可将查看器设置为特定范围，并在侧面板中显示标题和描述文本。在首次激活时，将导入 web 地图的书签并将其用于预填充系列条形图。禁用系列选项将关闭系列条形图，但系列配置将被保留供以后使用。", 
+				settingsSeriesHelpContent2: "试_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._验",
+				settingsSeriesHelpLink: "试_See an example of an application with a swipe series here_验",
 				preview: "UI 预览",
-				settingsLocateButtonExplain: "此功能在大多数移动设备和桌面浏览器(包括 Internet Explorer 9+)中都受支持。",
+				settingsLocateButtonExplain: "试_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._验",
 				settingsLocateButton: "启用支持“定位”按钮的浏览器",
 				settingsAddressSearch: "启用地址搜索工具"
 			},

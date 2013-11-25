@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Valitud kujundus",
 				settingsLayoutSelect: "Vali see kujundus",
 				settingsLayoutNote: "Pange tähele, et videosid kasutavad punktid paigutatakse vastava plakatina video alla ka situatsioonis, kui antud valik on välja lülitatud.",
-				settingsLayoutLocBtn: "Š_Display a locate button on supported browser_ä",
+				settingsLayoutLocBtn: "Š_Display a 'Locate' button_ä",
 				settingsLayoutLocBtnHelp: "Antud funktsionaalsus on toetatud enamikes mobiilsetes seadmetes ja veebibrauserites (Internet Explorer 9).",
 				settingsColorExplain: "Muuda väljanägemist, valides selleks puhuks eelnevalt määratud teema või koostades ise uue.",
 				settingsLabelColor: "Päise, sisu ja jaluse värvid",

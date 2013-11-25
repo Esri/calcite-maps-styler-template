@@ -1,18 +1,18 @@
 ﻿define(
 	({
         map: {
-            error: "ã_Unable to create map_Ç",
-            mouseToolTip: "ã_Click on the map to check for service_Ç"
+            error: "Não foi possível criar o mapa",
+            mouseToolTip: "Clique no mapa para verificar o serviço"
         },
         geocoder: {
-            defaultText: "ã_Enter your address_Ç"
+            defaultText: "Introduza a sua morada"
         },
         error: {
-            layerNotFound: "ã_Service Area Layer is not in the webmap_Ç",
-            fieldNotFound: "ã_Field not found_Ç"
+            layerNotFound: "A Camada de Área de Serviço não está no mapa web.",
+            fieldNotFound: "Campo não encontrado"
         },
         page: {
-            title: "ã_Service Lookup_Ç",
+            title: "Verificação de Serviço",
         }
     })
 

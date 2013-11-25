@@ -165,8 +165,10 @@
 				settingsGeolocatorEnable: "Aktivera geolokalisering",
 				settingsLegendHelpContent: "Om du vill förfina innehållsförteckningen använder du innehållsförteckningen i webbkartvyn på ArcGIS.com (Dölj i teckenförklaringen)",
 				settingsSeriesHelpContent: "En svepserie är ett tabbat navigeringsalternativ som hjälper användaren till en viss utbredning och visar en titel och beskrivande text i sidopanelen. Vid den första aktiveringen importeras webbkartans bokmärken och används för att fylla i seriefältet. Om du inaktiverar alternativet stängs seriefältet, men seriekonfigurationen finns kvar för framtida användning.", 
+				settingsSeriesHelpContent2: "Å_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ö",
+				settingsSeriesHelpLink: "Å_See an example of an application with a swipe series here_ö",
 				preview: "Förhandsgranska användargränssnitt",
-				settingsLocateButtonExplain: "Den här funktionen kan användas på de flesta mobila enheter och skrivbordswebbläsare (inklusive Internet Explorer 9+).",
+				settingsLocateButtonExplain: "Å_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ö",
 				settingsLocateButton: "Aktivera knappen Hitta på webbläsare som stöds",
 				settingsAddressSearch: "Aktivera ett adressökverktyg"
 			},

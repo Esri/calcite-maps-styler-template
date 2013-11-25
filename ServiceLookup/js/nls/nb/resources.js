@@ -1,18 +1,18 @@
 ﻿define(
 	({
         map: {
-            error: "å_Unable to create map_ø",
-            mouseToolTip: "å_Click on the map to check for service_ø"
+            error: "Kan ikke opprette kart",
+            mouseToolTip: "Klikk på kartet for å se eetter tjeneste"
         },
         geocoder: {
-            defaultText: "å_Enter your address_ø"
+            defaultText: "Skriv inn adressen din"
         },
         error: {
-            layerNotFound: "å_Service Area Layer is not in the webmap_ø",
-            fieldNotFound: "å_Field not found_ø"
+            layerNotFound: "Tjenesteområdelaget er ikke i webkartet",
+            fieldNotFound: "Fant ikke feltet"
         },
         page: {
-            title: "å_Service Lookup_ø",
+            title: "Tjenesteopptegning",
         }
     })
 

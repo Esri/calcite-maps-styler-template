@@ -165,8 +165,10 @@
 				settingsGeolocatorEnable: "Activare localizator geografic",
 				settingsLegendHelpContent: "Pentru a rafina conţinutul legendei, utilizaţi cuprinsului aplicaţiei de vizualizare a hărţilor web din ArcGIS.com (Ascunderea în legendă)",
 				settingsSeriesHelpContent: "Seria de preluare reprezintă o opțiune de navigare cu file care ghidează vizualizatorul către o anumită extindere și afișează un titlu și text descriptiv în panoul lateral. În timpul activării inițiale, marcajele din hărțile Web vor fi importate și utilizate pentru a popula în prealabil bara seriei. Dezactivarea opțiunii de serie dezactivează bara seriei, dar configurația seriei se păstrează pentru utilizare ulterioară.", 
+				settingsSeriesHelpContent2: "Ă_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ș",
+				settingsSeriesHelpLink: "Ă_See an example of an application with a swipe series here_ș",
 				preview: "Previzualizare interfaţă cu utilizatorul",
-				settingsLocateButtonExplain: "Această funcționalitate este acceptată pe majoritatea dispozitivelor mobile și browserelor desktop (inclusiv Internet Explorer 9+).",
+				settingsLocateButtonExplain: "Ă_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ș",
 				settingsLocateButton: "Activare buton \„Localizare\” pe browsere acceptate",
 				settingsAddressSearch: "Activare instrument de căutare adrese"
 			},

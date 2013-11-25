@@ -165,8 +165,10 @@
 				settingsGeolocatorEnable: "Įgalinti geolokatorių",
 				settingsLegendHelpContent: "Legendos nustatymui naudokite ArcGIS.com internetinio žemėlapio peržiūros aplikacijos turinį (Paslėpti legendoje)",
 				settingsSeriesHelpContent: "Keitiklių serija yra navigavimo galimybė, supažindinanti vartotoją su tam tikra aprėptimi ir atvaizduoja pavadinimą bei aprašymo tekstą šoninėje panelėje. Aktyvuojant pirmą kartą, jūsų internetinio(-ių) žemėlapio(-ių) žymės bus panaudotos preliminariai užpildant serijų juostą. Šio pasirinkimo išjungimas, išjungia ir serijų juostą, tačiau serijų konfigūracija bus išlaikoma tolimesniam naudojimui.", 
+				settingsSeriesHelpContent2: "Į_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._š",
+				settingsSeriesHelpLink: "Į_See an example of an application with a swipe series here_š",
 				preview: "Vartotojo sąsajos peržiūra",
-				settingsLocateButtonExplain: "Šis funkcionalumas palaikomas daugelyje mobilių įrenginių ir darbastalio naršyklių (įskaitant Internet Explorer 9+).",
+				settingsLocateButtonExplain: "Į_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._š",
 				settingsLocateButton: "Įgalinti \'Rasti\' mygtuką palaikomose naršyklėse",
 				settingsAddressSearch: "Įgalinti adreso paieškos įrankį"
 			},

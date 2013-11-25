@@ -165,8 +165,10 @@
 				settingsGeolocatorEnable: "Habilitar geolocalizador",
 				settingsLegendHelpContent: "Para refinar o conteúdo da legenda, utilize a área de controle do visualizador de mapa da web do ArcGIS.com (Oculto na Legenda)",
 				settingsSeriesHelpContent: "A série Oscilar é uma opção de navegação por abas, que irá orientar o visualizador até uma extensão em particular e exibir um texto de descrição e título no painel lateral. Durante a ativação inicial, os marcadores de mapa da web serão importados e utilizados para preencher a barra de série. Desabilitar a opção em série desligará a barra de série, mas a configuração de série é preservada para utilização futura.", 
+				settingsSeriesHelpContent2: "ã_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._Ç",
+				settingsSeriesHelpLink: "ã_See an example of an application with a swipe series here_Ç",
 				preview: "Visualizar ID",
-				settingsLocateButtonExplain: "Esta funcionalidade se suportada na maioria dos dispositivos móveis e navegadores desktop (incluindo Internet Explorer 9 +).",
+				settingsLocateButtonExplain: "ã_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Ç",
 				settingsLocateButton: "Habilitar botão \'Localizar\' dos navegadores suportados",
 				settingsAddressSearch: "Habilitar uma ferramenta de pesquisa de endereço"
 			},

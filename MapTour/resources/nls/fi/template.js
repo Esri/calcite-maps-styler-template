@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Valittu asettelu",
 				settingsLayoutSelect: "Valitse tämä asettelu",
 				settingsLayoutNote: "Huomaa, että videoita käyttävissä pisteissä kyltti sijoitetaan aina videon alapuolelle, vaikka tätä asetusta ei olisi valittu.",
-				settingsLayoutLocBtn: "Å_Display a locate button on supported browser_ö",
+				settingsLayoutLocBtn: "Å_Display a 'Locate' button_ö",
 				settingsLayoutLocBtnHelp: "Kyseinen toiminto on tuettu useimmissa mobiililaitteissa ja tietokoneiden selaimissa (Internet Explorer 9).",
 				settingsColorExplain: "Muuta ulkoasua valitsemalla ennalta määritetty teema tai luo omasi.",
 				settingsLabelColor: "Ylätunnisteen, sisällön ja alatunnisteen värit",

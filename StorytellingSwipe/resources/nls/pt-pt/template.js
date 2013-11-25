@@ -133,12 +133,12 @@
 				settingsSaveConfirm: "É necessário guardar e reiniciar a aplicação para aplicar algumas das alterações efetuadas"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "ã_Swipe Type_Ç",
-				settingsDataModelExplainSwipe: "ã_What do you want users to swipe?_Ç",
+				settingsTabDataModel: "Tipo de Varrimento",
+				settingsDataModelExplainSwipe: "Selecione a camada ou o mapa web que irá aparecer e desaparecer com o varrimento.",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Selecione a camada ou o mapa web que irá aparecer na luneta.",
-				settingsDataModelOneMap: "ã_A layer in a web map_Ç",
-				settingsDataModel1Explain: "ã_Select the layer you want to be swiped_Ç",
+				settingsDataModelOneMap: "Uma camada num mapa web",
+				settingsDataModel1Explain: "Selecione uma camada para ser controlada pela ferramenta de varrimento.",
 				settingsDataModel1Warning: "Só é possível utilizar serviços Dinâmicos, de Mosaicos e de Imagens. Se a camada estiver tapada por camadas superiores, o varrimento não terá qualquer efeito.",
 				settingsDataModel1SpyGlassExplain: "Selecione a camada que irá aparecer dentro da luneta.",
 				settingsDataModelTwoMaps: "Dois mapas web",
@@ -161,14 +161,16 @@
 				settingsDescriptionEnable: "Ativar Descrição",
 				settingsBookmarksEnable: "Ativar série de Varrimento",
 				settingsPopupDisable: "Ativar janelas popup",
-				settingsLocationSearchEnable: "ã_Enable locator search_Ç",
-				settingsGeolocatorEnable: "ã_Enable geolocator_Ç",
+				settingsLocationSearchEnable: "Ativar pesquisa de localizadores",
+				settingsGeolocatorEnable: "Ativar geolocalizador",
 				settingsLegendHelpContent: "Utilize o índice do visualizador de mapas do ArcGIS.com (Ocultar em Legenda)",
-				settingsSeriesHelpContent: "ã_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._Ç", 
+				settingsSeriesHelpContent: "As Séries de Varrimento são uma opção de navegação por separadores que permite guiar o visualizador para uma extensão em particular, e exibir um título e descrição no painel lateral. Durante a primeira ativação, os seus eventuais marcadores de mapas web serão utilizados para pré-preencher a barra de séries. Se desativar esta opção mais tarde, as configurações das suas séries não serão perdidas, reativar esta opção irá carregar o estado antes da desativação.", 
+				settingsSeriesHelpContent2: "ã_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._Ç",
+				settingsSeriesHelpLink: "ã_See an example of an application with a swipe series here_Ç",
 				preview: "Pré-visualizar IU",
-				settingsLocateButtonExplain: "ã_This functionality if supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Ç",
-				settingsLocateButton: "ã_Enable a 'Locate' button supported browsers_Ç",
-				settingsAddressSearch: "ã_Enable an address search tool_Ç"
+				settingsLocateButtonExplain: "ã_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Ç",
+				settingsLocateButton: "Ativar navegadores que suportam um botão 'Localizar'",
+				settingsAddressSearch: "Ativar uma ferramenta de pesquisa de moradas"
 			},
 			settingsSwipePopup: {
 				settingsSwipePopup: "Janela Pop-up",
@@ -183,7 +185,7 @@
 			initPopup: {
 				initHeader: "Bem-vindo ao Builder de Varrimento",
 				modalNext: "Seguinte",
-				modalPrev: "ã_Previous_Ç",
+				modalPrev: "Anterior",
 				modalApply: "Abrir a aplicação"
 			},
 			seriesPanel: {

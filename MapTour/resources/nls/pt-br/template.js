@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Layout selecionado",
 				settingsLayoutSelect: "Selecionar este layout",
 				settingsLayoutNote: "Observe que em pontos utilizando vídeos, o letreiro será sempre posicionado abaixo do vídeo, mesmo que esta opção esteja desmarcada.",
-				settingsLayoutLocBtn: "ã_Display a locate button on supported browser_Ç",
+				settingsLayoutLocBtn: "ã_Display a 'Locate' button_Ç",
 				settingsLayoutLocBtnHelp: "Esta funcionalidade é suportada na maioria dos dispositivos móveis e navegadores desktop (Internet Explorer 9).",
 				settingsColorExplain: "Altere a aparência escolhendo um tema pré-definido ou crie seu próprio.",
 				settingsLabelColor: "Cabeçalho, conteúdo e cores do rodapé",

@@ -95,7 +95,7 @@
 			settingsExtent: {
 				settingsTabExtent: "Zasięg",
 				settingsExtentExplain: "Ustaw początkowy zasięg za pomocą poniższej mapy interaktywnej.",
-				settingsExtentExplainBottom: "Zdefiniowany zasięg zostanie użyty do modyfikacji początkowego zasięgu mapy internetowej. Prosimy pamiętać, że zasięg ten nie będzie używany podczas korzystania z serii odsłaniania.",
+				settingsExtentExplainBottom: "Zdefiniowany zasięg zostanie użyty do modyfikacji początkowego zasięgu mapy internetowej. Należy pamiętać, że zasięg ten nie będzie używany podczas korzystania z serii zwijania.",
 				settingsExtentDateLineError: "Zasięg nie może przebiegać przez południk 180°",
 				settingsExtentDateLineError2: "Błąd w obliczaniu zasięgu",
 				settingsExtentDrawBtn: "Określ nowy zasięg",
@@ -133,13 +133,13 @@
 				settingsSaveConfirm: "Niektóre z wprowadzonych zmian wymagają zapisania i ponownego wczytania aplikacji"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "Typ odsłaniania",
-				settingsDataModelExplainSwipe: "Co mogą odsłaniać użytkownicy?",
+				settingsTabDataModel: "Typ zwijania",
+				settingsDataModelExplainSwipe: "Co mogą zwijać użytkownicy?",
 				settingsDataModelExplainSwipe2: "",
 				settingsDataModelExplainSpyGlass: "Wybierz warstwę lub mapę internetową, która pojawi się w lunetce.",
 				settingsDataModelOneMap: "Warstwa mapy internetowej",
-				settingsDataModel1Explain: "Wybierz warstwę, która ma być odsłaniana.",
-				settingsDataModel1Warning: "Jeśli warstwa jest ukryta pod górnymi warstwami, użycie odsłaniania nie przyniesie rezultatów.",
+				settingsDataModel1Explain: "Wybierz warstwę, która ma być zwijana.",
+				settingsDataModel1Warning: "Jeśli warstwa jest ukryta pod górnymi warstwami, użycie zwijania nie przyniesie rezultatów.",
 				settingsDataModel1SpyGlassExplain: "Wybierz warstwę, która ma pojawić się w lunetce.",
 				settingsDataModelTwoMaps: "Dwie mapy internetowe",
 				settingsDataModelLayerIds: "Identyfikatory warstwy mapy internetowej",
@@ -164,9 +164,11 @@
 				settingsLocationSearchEnable: "Włącz wyszukiwanie przy użyciu lokatora",
 				settingsGeolocatorEnable: "Włącz geolokator",
 				settingsLegendHelpContent: "Aby ulepszyć zawartość legendy, skorzystaj z tabeli zawartości przeglądarki map ArcGIS.com (Ukryj w legendzie)",
-				settingsSeriesHelpContent: "Seria odsłaniania to opcja nawigacji przy użyciu kart, która kieruje użytkownika w pewnym zakresie i wyświetla tytuł oraz tekst opisu na panelu bocznym. Podczas pierwszej aktywacji zakładki mapy internetowej zostaną użyte do wstępnego wypełnienia paska serii. Jeżeli wyłączysz później opcję serii, zostanie też wyłączony pasek serii, ale konfiguracja serii zostanie zachowana na przyszłość.", 
+				settingsSeriesHelpContent: "Seria zwijania to opcja nawigacji przy użyciu kart, która kieruje użytkownika w pewnym zakresie i wyświetla tytuł oraz tekst opisu w panelu bocznym. Podczas pierwszej aktywacji zakładki mapy internetowej zostaną użyte do wstępnego wypełnienia paska serii. Jeżeli wyłączysz później opcję serii, zostanie też wyłączony pasek serii, ale konfiguracja serii zostanie zachowana na przyszłość.", 
+				settingsSeriesHelpContent2: "ł_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ą",
+				settingsSeriesHelpLink: "ł_See an example of an application with a swipe series here_ą",
 				preview: "Podgląd interfejsu użytkownika",
-				settingsLocateButtonExplain: "Ten sposób działania jest obsługiwany w większości urządzeń mobilnych i przeglądarek komputerowych (łącznie z programem Internet Explorer 9 i nowszymi wersjami).",
+				settingsLocateButtonExplain: "ł_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ą",
 				settingsLocateButton: "Włącz przycisk Lokalizuj w obsługiwanych przeglądarkach",
 				settingsAddressSearch: "Włącz narzędzie wyszukiwania adresów"
 			},
@@ -191,7 +193,7 @@
 				descr: "Opis",
 				discard: "Odrzuć zakładkę",
 				saveExtent: "Ustaw zasięg zakładki",
-				discardDisabled: "Nie można usunąć tej zakładki. Serie odsłaniania można wyłączyć w Ustawieniach."
+				discardDisabled: "Nie można usunąć tej zakładki. Serie zwijania można wyłączyć w Ustawieniach."
 			}
 		}
     })

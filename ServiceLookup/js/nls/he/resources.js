@@ -1,18 +1,18 @@
 ﻿define(
 	({
         map: {
-            error: "כן_Unable to create map_ש",
-            mouseToolTip: "כן_Click on the map to check for service_ש"
+            error: "לא ניתן ליצור מפה",
+            mouseToolTip: "הקש על המפה כדי לבדוק שירות"
         },
         geocoder: {
-            defaultText: "כן_Enter your address_ש"
+            defaultText: "הכנס את הכתובת שלך"
         },
         error: {
-            layerNotFound: "כן_Service Area Layer is not in the webmap_ש",
-            fieldNotFound: "כן_Field not found_ש"
+            layerNotFound: "שכבת אזורי שירות לא נימצאת ב webmap",
+            fieldNotFound: "שדה לא נמצא"
         },
         page: {
-            title: "כן_Service Lookup_ש",
+            title: "בדיקת שירות",
         }
     })
 

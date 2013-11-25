@@ -165,8 +165,10 @@
 				settingsGeolocatorEnable: "Geolocator aktivieren",
 				settingsLegendHelpContent: "Verwenden Sie das Inhaltsverzeichnis des ArcGIS.com-Webkarten-Viewers, um den Legendeninhalt zu optimieren (In Legende ausblenden)",
 				settingsSeriesHelpContent: "\"Ausblendereihe\" ist die Navigationsoption einer Registerkarte, die den Viewer zu einer bestimmten Ausdehnung führt und einen Titel und einen Beschreibungstext im Seitenfenster anzeigt. Bei der ersten Aktivierung werden Ihre Webkarten-Lesezeichen verwendet, um die Leiste der Reihe vorab auszufüllen. Durch Deaktivieren der Reihen-Option wird die Leiste der Reihen deaktiviert, die Konfiguration der Reihe wird jedoch zur zukünftigen Verwendung beibehalten.", 
+				settingsSeriesHelpContent2: "ä_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._Ü",
+				settingsSeriesHelpLink: "ä_See an example of an application with a swipe series here_Ü",
 				preview: "Benutzeroberflächen-Vorschau",
-				settingsLocateButtonExplain: "Diese Funktion wird auf den meisten mobilen Geräten und Desktop-Browsern (einschließlich Internet Explorer 9+) unterstützt.",
+				settingsLocateButtonExplain: "ä_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Ü",
 				settingsLocateButton: "Schaltfläche \"Suchen\" für unterstützte Browser aktivieren",
 				settingsAddressSearch: "Werkzeug für Adressensuche aktivieren"
 			},

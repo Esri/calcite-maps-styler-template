@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Izvēlētais izkārtojums",
 				settingsLayoutSelect: "Izvēlieties šo izkārtojumu",
 				settingsLayoutNote: "Ņemiet vērā, ka punktiem, kuriem izmantoti video, plakāti vienmēr būs novietoti zem video, pat ja šī izvēlne būs atiezīmēta.",
-				settingsLayoutLocBtn: "ķ_Display a locate button on supported browser_ū",
+				settingsLayoutLocBtn: "ķ_Display a 'Locate' button_ū",
 				settingsLayoutLocBtnHelp: "Šī funkcionalitāte tiek atbalstīta uz biežāk lietotajām mobilājām ierīcēm un darbvirsmas pārlūkiem (Internet Explorer 9).",
 				settingsColorExplain: "Mainīt izskatu, izvēloties iepriekš noteiktu tēmu, vai izveidojot savu.",
 				settingsLabelColor: "Galvenes, satura un kājenes krāsas",
