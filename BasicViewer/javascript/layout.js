@@ -1536,10 +1536,10 @@ function setupInfoWindowAndZoom(content, geocodeLocation, newExtent, geocodeResu
             content += currentLocationName;
         } else {
             content += attr.Match_addr;
-            if (attr.StAddr && attr.City) {
-                content += " - " + attr.StAddr + ", " + attr.City;
-            } else if (attr.StAddr) {
-                content += " - " + attr.StAddr;
+            if (attr.stAddr && attr.City) {
+                content += " - " + attr.stAddr + ", " + attr.City;
+            } else if (attr.stAddr) {
+                content += " - " + attr.stAddr;
             }
         }
 
@@ -1563,10 +1563,10 @@ function setupInfoWindowAndZoom(content, geocodeLocation, newExtent, geocodeResu
                 } else {
                     //content += result.feature.attributes.Place_addr ? (" - " + result.feature.attributes.Place_addr) : ""
                     content += attr.Match_addr;
-                    if (attr.StAddr && attr.City) {
-                        content += " - " + attr.StAddr + ", " + attr.City;
-                    } else if (attr.StAddr) {
-                        content += " - " + attr.StAddr;
+                    if (attr.stAddr && attr.City) {
+                        content += " - " + attr.stAddr + ", " + attr.City;
+                    } else if (attr.stAddr) {
+                        content += " - " + attr.stAddr;
                     }
                 }
 
