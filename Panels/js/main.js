@@ -2,11 +2,17 @@ define([
     "dojo/ready", 
     "dojo/_base/declare",
     "dojo/dom-class",
+    "dojo/dom-style",
+    "dojo/dom",
+    "dojo/query",
     "dijit/registry",
     "dojo/dom-construct",
+    "dojo/on",
     "dojo/_base/lang",
+    "dojo/_base/array",
     "esri/arcgis/utils",
     "esri/IdentityManager",
+    "esri/geometry/Point",
     "esri/lang",
     "dijit/layout/ContentPane",
     "dijit/layout/LayoutContainer"
@@ -15,17 +21,24 @@ function(
     ready, 
     declare, 
     domClass, 
+    domStyle,
+    dom,
+    query,
     registry,
     domConstruct,
+    on,
     lang,
+    array,
     arcgisUtils,
     IdentityManager,
+    Point,
     esriLang,
     ContentPane,
     LayoutContainer
 ) {
     return declare("", null, {
         config: {},
+        allResults: null,
         constructor: function(config) {
             //config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
@@ -85,44 +98,216 @@ function(
          }
 
         if(this.config.geocoder){
-            require(["esri/dijit/Geocoder", "dojo/_base/array"], lang.hitch(this,function(Geocoder, array){
+            this._createGeocoder();
+        }      
+
+
+
+        },
+        _createGeocoder: function (){
+            require(["esri/dijit/Geocoder"], lang.hitch(this,function(Geocoder){
                 //add the geocoder widget as a child of the map div. This widget
                 //is positioned using css. Search main.css for the geocoderDiv selector
 
-                //Use the geocode helper service if available 
-                var geocodeUrl = null;
-                var params = {};
-                if(this.config.helperServices && this.config.helperServices.geocode && this.config.helperServices.geocode.length > 0){
-                   var geocoders = [];
-                   array.forEach(this.config.helperServices.geocode, function(g){
-                        //If the default geocoder is the wold geocoder service then we can ignore because that's the service default
-                        if(g.url.indexOf("/World/GeocodeServer") === -1){
-                            var customGeocoder = {};
-                            customGeocoder.url = g.url;
-                            if(g.singleLineFieldName){
-                                customGeocoder.singleLineFieldName = g.singleLineFieldName;
-                            }
-                            geocoders.push(customGeocoder);
-                        }
-             
-                   });
-                   if(geocoders.length >0){
-                    params.arcgisGeocoder = false;
-                    params.geocoders = geocoders;
-                   }
-                }
-                params.map = this.map;
-                params.autoComplete = true;
+                var options = this._createGeocoderOptions();
 
                 var geocoderDiv = domConstruct.create("div",{id:"geocoderDiv"},"mapDiv");
-                var geocoder = new Geocoder(params,geocoderDiv);
+                var geocoder = new Geocoder(options,geocoderDiv);
 
 
                 geocoder.startup();
 
-            }));
-         }      
+                geocoder.on("find-results", lang.hitch(this, this.checkResults)); 
+                geocoder.on("select", lang.hitch(this, this.showGeocodingResult));
+                geocoder.on("auto-complete", lang.hitch(this, this.clearGeocodeResults));
+                geocoder.on("clear", lang.hitch(this, this.clearGeocodeResults));
 
+
+
+            }));
+        },
+        checkResults: function(geocodeResults){
+            this.allResults = null;
+            if (geocodeResults && geocodeResults.results && geocodeResults.results.results) {
+                geocodeResults.results = geocodeResults.results.results;
+            }
+            if ((!geocodeResults || !geocodeResults.results || !geocodeResults.results.length)) {
+                //No results
+                console.log("No results found");
+            } else if (geocodeResults) {
+                this.allResults = geocodeResults.results;
+            }
+        },
+        clearGeocodeResults: function(){
+            if(this.map.infoWindow.isShowing){
+                this.map.infoWindow.hide();
+            }
+            this.allResults = null;
+
+        },
+        showGeocodingResult: function(geocodeResult, pos) {
+            if (!esriLang.isDefined(pos)) {
+                pos = 0;
+            }
+
+            if (geocodeResult.result) {
+                geocodeResult = geocodeResult.result;
+            }
+
+            if (geocodeResult.extent) {
+                this.setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, geocodeResult.extent, geocodeResult, pos);
+            } else { //best view 
+                var bestView = this.map.extent.centerAt(geocodeResult.feature.geometry).expand(0.0625);
+                this.setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, bestView, geocodeResult, pos);
+            }
+        },  
+        setupInfoWindowAndZoom: function(content, geocodeLocation, newExtent, geocodeResult, pos) {
+            this.map.infoWindow.clearFeatures();
+
+            //Show info window
+            if (this.allResults && this.allResults.length > 1) {
+                    //let's update the content to show additional results 
+                var currentLocationName = content;
+                var attr = this.allResults[pos].feature.attributes;
+                content = "<div id='geocodeCurrentResult' style='display:none;'><span style='font-weight:bold;'>";
+                content += this.config.i18n.viewer.main.search.currentLocation;
+                content += "</span></div>";
+                content += "<span>";
+
+                if (!attr.Match_addr) {
+                    content += currentLocationName;
+                } else {
+                    content += attr.Match_addr;
+                    if (attr.stAddr && attr.City) {
+                        content += " - " + attr.stAddr + ", " + attr.City;
+                    } else if (attr.stAddr) {
+                        content += " - " + attr.stAddr;
+                    }
+                }
+
+                content += "</span>";
+                content += "<div id='geocodeWantOtherResults'>";
+                content += "<a id='results' style='cursor:pointer'>";
+
+                content += this.config.i18n.viewer.main.search.notWhatYouWanted;
+                content += "</a>";
+                content += "</div>";
+                content += "<div id='geocodeOtherResults' style='display:none;'><span style='font-weight:bold;'>";
+                content += this.config.i18n.viewer.main.search.selectAnother;
+                content += "</span><br/>";
+                for (var i = 0; i < this.allResults.length; i++) {
+                    if (i !== pos) {
+                        var result = this.allResults[i];
+                        attr = result.feature.attributes;
+                        content += "<a style='cursor:pointer' class='li_item' id=" + i + ">"; 
+               
+                        if (!attr.Match_addr) {
+                            content += result.name;
+                        } else {
+                            //content += result.feature.attributes.Place_addr ? (" - " + result.feature.attributes.Place_addr) : ""
+                            content += attr.Match_addr;
+                            if (attr.stAddr && attr.City) {
+                                content += " - " + attr.stAddr + ", " + attr.City;
+                            } else if (attr.stAddr) {
+                                content += " - " + attr.stAddr;
+                            }
+                        }
+
+                        content += "</a><br/>";
+                    }
+                }
+                content += "</div>";
+
+            }
+
+            //display a popup for the result
+            this.map.infoWindow.setTitle(this.config.i18n.viewer.main.search.popupTitle);
+            this.map.infoWindow.setContent(content);
+            query(".li_item").forEach(lang.hitch(this, function(node){
+                on(node, "click", lang.hitch(this, function(){
+                    if(node.id >= 0){
+                        this.selectAnotherResult(node.id);
+                    }
+                }));
+
+            }));
+            on(dom.byId("results"),"click",lang.hitch(this, function(){
+                this.showOtherResults();
+            }));
+    
+ 
+
+
+
+            var location = new Point(geocodeLocation.x, geocodeLocation.y, geocodeLocation.spatialReference);
+            on.once(this.map, "extent-change", lang.hitch(this, function(){
+                this.map.infoWindow.show(location);
+            }));
+            this.map.setExtent(newExtent);
+
+
+        },      
+        showOtherResults: function() {
+        
+            domStyle.set(dom.byId("geocodeWantOtherResults"), "display", "none");
+            domStyle.set(dom.byId("geocodeCurrentResult"), "display", "block");
+            domStyle.set(dom.byId("geocodeOtherResults"), "display", "block");
+
+        },
+        selectAnotherResult: function(pos) {
+            this.showGeocodingResult(this.allResults[pos], pos);
+        },
+        _createGeocoderOptions: function(){
+            //Check for multiple geocoder support and setup options for geocoder widget. 
+            var hasEsri = false,
+                geocoders = lang.clone(this.config.helperServices.geocode);
+
+            array.forEach(geocoders, function (geocoder, index) {
+                if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+                    hasEsri = true;
+                    geocoder.name = "Esri World Geocoder";
+                    geocoder.outFields = "Match_addr, stAddr, City";
+                    geocoder.singleLineFieldName = "Single Line";
+                    geocoder.esri = geocoder.placefinding = true;
+  
+                }
+
+            });
+            //only use geocoders with a singleLineFieldName that allow placefinding
+            geocoders = array.filter(geocoders, function (geocoder) {
+                return (esriLang.isDefined(geocoder.singleLineFieldName) && esriLang.isDefined(geocoder.placefinding) && geocoder.placefinding);
+            });
+            var esriIdx;
+            if (hasEsri) {
+                for (var i = 0; i < geocoders.length; i++) {
+                    if (esriLang.isDefined(geocoders[i].esri) && geocoders[i].esri === true) {
+                        esriIdx = i;
+                        break;
+                    }
+                }
+            }
+            var options = {
+                map: this.map,
+                autoNavigate: false,
+                autoComplete: hasEsri,
+                theme: "simpleGeocoder"
+
+            }
+            //If the World geocoder is primary enable auto complete 
+            if (hasEsri && esriIdx === 0) {         
+                options.minCharacters = 0;
+                options.maxLocations = 5;
+                options.searchDelay = 100
+                options.arcgisGeocoder = geocoders.splice(0, 1)[0]; //geocoders[0];
+                if (geocoders.length > 0) {
+                    options.geocoders = geocoders;
+                }
+            } else {
+                options.arcgisGeocoder = false;
+                options.geocoders = geocoders;
+            }
+
+            return options;
 
 
         },
