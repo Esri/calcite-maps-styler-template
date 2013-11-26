@@ -152,7 +152,7 @@
 				settingsDataModel2Explain: "Comparar con otro mapa Web.",
 				settingsDataModel2SpyGlassExplain: "Deja al descubierto otro mapa Web.",
 				settingsDataModel2HelpTitle: "á_How do I find a web map's ID?_Ó",
-				settingsDataModel2HelpContent: "Copia y pega los dígitos que hay tras el signo "=" en la URL del mapa Web"
+				settingsDataModel2HelpContent: "Copia y pega los dígitos que hay tras el signo \"=\" en la URL del mapa Web"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Diseño de la aplicación",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "á_See an example of an application with a swipe series here_Ó",
 				preview: "Vista previa de la interfaz de usuario",
 				settingsLocateButtonExplain: "á_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Ó",
-				settingsLocateButton: "Habilitar un botón "Localizar" en navegadores compatibles",
+				settingsLocateButton: "Habilitar un botón \"Localizar\" en navegadores compatibles",
 				settingsAddressSearch: "Habilitar una herramienta de búsqueda de direcciones"
 			},
 			settingsSwipePopup: {

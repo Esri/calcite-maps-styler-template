@@ -152,7 +152,7 @@
 				settingsDataModel2Explain: "Svep med en annan webbkarta.",
 				settingsDataModel2SpyGlassExplain: "Visa en annan webbkarta.",
 				settingsDataModel2HelpTitle: "Å_How do I find a web map's ID?_ö",
-				settingsDataModel2HelpContent: "Kopiera och klistra in siffror efter tecknet \'=' i webbkartans webbadress"
+				settingsDataModel2HelpContent: "Kopiera och klistra in siffror efter tecknet '=' i webbkartans webbadress"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Applikationslayout",

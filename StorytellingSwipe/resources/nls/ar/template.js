@@ -152,7 +152,7 @@
 				settingsDataModel2Explain: "اسحب مع خريطة ويب أخرى",
 				settingsDataModel2SpyGlassExplain: "كشف خريطة ويب أخرى.",
 				settingsDataModel2HelpTitle: "بيت_How do I find a web map's ID?_لاحقة",
-				settingsDataModel2HelpContent: "انسخ والصق الأرقام بعد علامة "=" داخل عنوان URL لخريطة الويب"
+				settingsDataModel2HelpContent: "انسخ والصق الأرقام بعد علامة \"=\" داخل عنوان URL لخريطة الويب"
 			},
 			settingsLegend: {
 				settingsTabLegend: "التخطيط الطباعي للتطبيق",
