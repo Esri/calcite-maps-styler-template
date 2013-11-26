@@ -8,6 +8,6 @@
         no_editable_layers_message: "Web 地图不包含任何可编辑图层。"
       }
     }
-  }),
+  })
 
 );

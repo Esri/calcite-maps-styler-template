@@ -152,7 +152,7 @@
 				settingsDataModel2Explain: "اسحب مع خريطة ويب أخرى",
 				settingsDataModel2SpyGlassExplain: "كشف خريطة ويب أخرى.",
 				settingsDataModel2HelpTitle: "كيفية إيجاد معرف خريطة الويب",
-				settingsDataModel2HelpContent: "انسخ والصق الأرقام بعد علامة "=" داخل عنوان URL لخريطة الويب"
+				settingsDataModel2HelpContent: "انسخ والصق الأرقام بعد علامة \"=\" داخل عنوان URL لخريطة الويب"
 			},
 			settingsLegend: {
 				settingsTabLegend: "التخطيط الطباعي للتطبيق",

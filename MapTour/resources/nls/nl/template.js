@@ -181,7 +181,7 @@
 				dataRootFolder: "Hoofdmap",
 				dataNameError: "Voer een naam in voor de featureservice",
 				dataFolderError: "Selecteer een geldige folder",
-				dataSrcContainsInvalidChar: "De naam van de featureservice bevat een of meer ongeldige tekens (-, <, >, #, %, :, ", ?, &, +, /, of ).",
+				dataSrcContainsInvalidChar: "De naam van de featureservice bevat een of meer ongeldige tekens (-, <, >, #, %, :, \", ?, &, +, /, of \).",
 				dataSrvAlreadyExistsError: "Er bestaat al een service met deze naam in de organisaties. Kies een andere naam.",
 				dataBtnSave: "De service maken",
 				dataFooterProgress: "Wordt gemaakt",

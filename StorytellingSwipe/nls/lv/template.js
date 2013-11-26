@@ -152,7 +152,7 @@
 				settingsDataModel2Explain: "Pārvilkt ar citu web karti.",
 				settingsDataModel2SpyGlassExplain: "Atklāt citu web karti.",
 				settingsDataModel2HelpTitle: "Kā atrast web kartes ID",
-				settingsDataModel2HelpContent: "Kopēt un ielīmēt ciparus aiz zīmes "=" vietrādī URL no web kartes"
+				settingsDataModel2HelpContent: "Kopēt un ielīmēt ciparus aiz zīmes \"=\" vietrādī URL no web kartes"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Aplikāciju izkārtojums",

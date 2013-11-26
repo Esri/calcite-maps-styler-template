@@ -8,6 +8,6 @@
         no_editable_layers_message: "La carte Web ne contient pas de couches modifiables."
       }
     }
-  }),
+  })
 
 );

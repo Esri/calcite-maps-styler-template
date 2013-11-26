@@ -8,6 +8,6 @@
         no_editable_layers_message: "El mapa Web no contiene ninguna capa editable"
       }
     }
-  }),
+  })
 
 );

@@ -16,8 +16,7 @@
 				portalSelf: "Allvarligt fel: det gick inte att hämta portalkonfigurationen",
 				invalidConfig: "Allvarligt fel: ogiltig konfiguration",
 				invalidConfigOwner: "Allvarligt fel: ogiltig konfiguration (auktoriserad ägare krävs)",
-				invalidConfigNoWebmap: "Allvarligt fel: ogiltig konfiguration (webbkarta eller
- applikations-ID anges inte i index.html)",
+				invalidConfigNoWebmap: "Allvarligt fel: ogiltig konfiguration (webbkarta eller applikations-ID anges inte i index.html)",
 				createMap: "Det går inte att skapa kartan",
 				invalidApp: "Allvarligt fel: programmet kunde inte läsas in",
 				noLayer: "Webbkartan innehåller inte ett giltigt datalager för Map Tour.",

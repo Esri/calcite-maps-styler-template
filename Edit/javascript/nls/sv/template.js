@@ -8,6 +8,6 @@
         no_editable_layers_message: "Webbkartan innehåller inga redigerbara lager."
       }
     }
-  }),
+  })
 
 );

@@ -8,6 +8,6 @@
         no_editable_layers_message: "ה- Web map לא מכיל שכבות שניתן לערוך אותן."
       }
     }
-  }),
+  })
 
 );

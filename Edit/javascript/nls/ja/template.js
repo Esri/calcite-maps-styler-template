@@ -8,6 +8,6 @@
         no_editable_layers_message: "Web マップに編集可能なレイヤが含まれていません。"
       }
     }
-  }),
+  })
 
 );

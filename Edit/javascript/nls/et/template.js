@@ -8,6 +8,6 @@
         no_editable_layers_message: "Veebikaart ei sisalda ühtegi muudetavat kihti."
       }
     }
-  }),
+  })
 
 );
