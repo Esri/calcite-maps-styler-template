@@ -12,7 +12,7 @@
 			list2: "Habilidade para arrastar e soltar ícones para alterar locais do ponto histórico"
 		},
 		thirdPane: {
-			head: "Para utilizar o modelo de apresentação do mapa hospedado, você inicia criando um mapa no visualizador de mapa da web do ArcGIS Online (não precisa conter quaisquer camadas), o salvando, e então clicando no botão Compartilhar. No diálogo Compartilhar, escolha a opção 'Criar Aplicativo da Web' e então escolhe o modelo Apresentação do Mapa da galeria de modelos que aparece, e continue com as etaaps que você visualiza. Quando você configurar o aplicativo, o editor interativo automaticamente abrirá.<br /><br />Para usuários que desejam melhorar a UI das suas apresentações do mapa ou adicionar uma nova funcionalidade, você pode:",
+			head: "Para utilizar o modelo de apresentação do mapa hospedado, você inicia criando um mapa no visualizador de mapa da web do ArcGIS Online (não precisa conter quaisquer camadas), o salvando, e então clicando no botão Compartilhar. No diálogo Compartilhar, escolha a opção \'Criar Aplicativo da Web\' e então escolhe o modelo Apresentação do Mapa da galeria de modelos que aparece, e continue com as etaaps que você visualiza. Quando você configurar o aplicativo, o editor interativo automaticamente abrirá.<br /><br />Para usuários que desejam melhorar a UI das suas apresentações do mapa ou adicionar uma nova funcionalidade, você pode:",
 			list0: "Baixe o modelo de uma <a href='http://storymaps.esri.com/templategallery/' target='_blank'>página do modelo Mapas Históricos</a>e siga a documentação incluída", 
 			list1: "Hospedar o modelo no seu próprio servidor da web ou um servidor de terceiros"
 		},

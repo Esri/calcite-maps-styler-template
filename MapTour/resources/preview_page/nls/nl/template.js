@@ -12,7 +12,7 @@
 			list2: "De mogelijkheid om pictogrammen te slepen en neer te zetten om de locaties van verhaalpunten te wijzigen"
 		},
 		thirdPane: {
-			head: "Om de template voor de gehoste kaarttour te gebruiken, maakt u eerst een kaart in de ArcGIS Online webmapviewer (die hoeft geen lagen te bevatten). Sla deze op en klik op de knop Delen. Kies in het dialoogvenster Delen de optie 'Een webapplicatie maken' en kies de template Kaart Tour in de galerij met templates die verschijnt, en ga door met de stappen die u ziet. Als u de applicatie instelt, opent automatisch de interactieve editor.<br / ><br />Gebruikers die de UI van hun kaarttours willen uitbreiden of nieuwe mogelijkheden willen toevoegen, kunnen:",
+			head: "Om de template voor de gehoste kaarttour te gebruiken, maakt u eerst een kaart in de ArcGIS Online webmapviewer (die hoeft geen lagen te bevatten). Sla deze op en klik op de knop Delen. Kies in het dialoogvenster Delen de optie \'Een webapplicatie maken\' en kies de template Kaart Tour in de galerij met templates die verschijnt, en ga door met de stappen die u ziet. Als u de applicatie instelt, opent automatisch de interactieve editor.<br / ><br />Gebruikers die de UI van hun kaarttours willen uitbreiden of nieuwe mogelijkheden willen toevoegen, kunnen:",
 			list0: "De template downloaden via de pagina<a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps-templates</a> en de meegeleverde documentatie volgen", 
 			list1: "De template hosten op uw eigen webserver of de server van derden"
 		},

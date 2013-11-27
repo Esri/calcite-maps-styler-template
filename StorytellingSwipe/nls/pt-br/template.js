@@ -152,7 +152,7 @@
 				settingsDataModel2Explain: "Oscilar com outro mapa da web.",
 				settingsDataModel2SpyGlassExplain: "Revelar com outro mapa da web.",
 				settingsDataModel2HelpTitle: "Como encontrar ID do mapa da web",
-				settingsDataModel2HelpContent: "Copie e cole os dígitos após o sinal '=' na URL do mapa da web"
+				settingsDataModel2HelpContent: "Copie e cole os dígitos após o sinal \'=\' na URL do mapa da web"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Layout do Aplicativo",

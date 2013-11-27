@@ -35,7 +35,7 @@
     title: "Tweet",
     error: "Nessun risultato trovato. Provare con un altro termine o con un\'altra posizione da cercare",
 		search:{
-			label: "Ricerca",
+			label: "Cerca",
 			title: "Cerca in Twitter",
 			placeholder: 'Parole chiave da cercare'
 		},
