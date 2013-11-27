@@ -169,7 +169,7 @@ define({
 				settingsSeriesHelpLink: "See an example of an application with a swipe series here",
 				preview: "UI preview",
 				settingsLocateButtonExplain: "This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+).",
-				settingsLocateButton: "Enable a 'Locate' button supported browsers",
+				settingsLocateButton: "Enable a 'Locate' button on supported browsers",
 				settingsAddressSearch: "Enable an address search tool"
 			},
 			settingsSwipePopup: {
