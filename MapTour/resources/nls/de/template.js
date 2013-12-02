@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Ausgewähltes Layout",
 				settingsLayoutSelect: "Dieses Layout auswählen",
 				settingsLayoutNote: "Beachten Sie, dass für Punkte, die Videos verwenden, das Werbeplakat immer unter dem Video angezeigt wird, selbst wenn die Option deaktiviert ist.",
-				settingsLayoutLocBtn: ""Suchen"-Schaltfläche anzeigen",
+				settingsLayoutLocBtn: "\"Suchen\"-Schaltfläche anzeigen",
 				settingsLayoutLocBtnHelp: "Diese Funktion wird von den meisten Browsern für mobile Geräte und Desktops (Internet Explorer 9) unterstützt.",
 				settingsColorExplain: "Ändern Sie das Aussehen durch Auswahl eines vordefinierten Themas, oder erstellen Sie ein eigenes.",
 				settingsLabelColor: "Farben für Kopfzeilen, Inhalt und Fußzeilen",

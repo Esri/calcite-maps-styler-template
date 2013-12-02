@@ -315,7 +315,7 @@
 			},
 			viewFacebook: {
 				title: "Importación de Facebook",
-				header: "Autentica con tu cuenta de usuario de Facebook o usa una página pública. Los álbumes se pueden usar para crear recorridos de mapa públicos que no necesiten autenticación con un usuario de Facebook, lo que permite que los comentarios y las etiquetas de "me gusta" se mantengan en privado.",
+				header: "Autentica con tu cuenta de usuario de Facebook o usa una página pública. Los álbumes se pueden usar para crear recorridos de mapa públicos que no necesiten autenticación con un usuario de Facebook, lo que permite que los comentarios y las etiquetas de \"me gusta\" se mantengan en privado.",
 				leftHeader: "Usuario de Facebook",
 				rightHeader: "Página de Facebook",
 				pageExplain: "Una página de Facebook es una marca/producto público o un famoso como <b>esrigis</b>. Puedes obtener el nombre de la página después de la  primera '/' de la URL de la página.",

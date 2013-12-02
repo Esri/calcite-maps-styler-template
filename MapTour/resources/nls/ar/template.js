@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "مخطط محدد",
 				settingsLayoutSelect: "حدد هذا المخطط",
 				settingsLayoutNote: "لاحظ من على النقاط باستخدام مقاطع الفيديو،توضع دائمًا اللافتة أسفل الفيديو حتى إذا لم يكن هذا الخيار محددًا.",
-				settingsLayoutLocBtn: "اعرض زر "تحديد موقع"",
+				settingsLayoutLocBtn: "اعرض زر \"تحديد موقع\"",
 				settingsLayoutLocBtnHelp: "يتم دعم الوظائف على معظم أجهزة الجوال ومستعرضات سطح المكتب (Internet Explorer 9)",
 				settingsColorExplain: "تغيير الظهور عن طريق اختيار نسق مُعرف من قبل أو إنشاء الخاص بك.",
 				settingsLabelColor: "ألوان الرأس والمحتوى والذيل",
