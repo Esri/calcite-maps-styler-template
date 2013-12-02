@@ -17,7 +17,7 @@
       "moreInfo": "城市观测站的详细信息",
       "buttonText": "开始比较"
     },
-    "socialMediaMessage":"使用地图作为共同语言来比较个全球城市。体验 #UrbanObservatory",
+    "socialMediaMessage":"使用地图作为共同语言来比较 16 个全球城市。体验 #UrbanObservatory",
     "viewMapOnline": "在 ArcGIS.com 中查看此地图",
     "selectMapPanel": "选择地图面板",
     "noDescription": "[无描述]",
@@ -25,14 +25,14 @@
     "legend": "图例"
   },
   errors: {
-    "webmap": "WebMap",
+    "webmap": "Web 地图",
     "protocolMismatchError": "协议不匹配错误... 是否仍要继续？",
-    "problematicWebmap": "目前我们使用此地图时遇到了技术问题: ",
+    "problematicWebmap": "目前此地图遇到了技术问题: ",
     /* DO NOT REPLACE TEXT INSIDE CURLY BRACKETS */
-    "invalidDefaultThemeTemplate": "'{groupName}' 组中不提供默认专题 '{theme}'。",
-    "mapHasNoLODs": "此地图没有定义 LOD: ",
+    "invalidDefaultThemeTemplate": "//“{groupName}//”组中的默认专题//“{theme}//”不可用。",
+    "mapHasNoLODs": "此地图没有定义的 LOD: ",
     "errorCreatingMap": "创建地图时出错: ",
-    "cantFindWebmap": "找不到 webmap: ",
+    "cantFindWebmap": "无法找到 web 地图: ",
     "alreadyLoadingCity": "已加载城市: "
   }
 

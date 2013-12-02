@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Seleziona questo tipo",
 				settingsDataModel2Explain: "Scorrimento con il dito con un\'altra mappa Web.",
 				settingsDataModel2SpyGlassExplain: "Mostra un\'altra mappa Web.",
-				settingsDataModel2HelpTitle: "é_How do I find a web map's ID?_È",
+				settingsDataModel2HelpTitle: "Come trovare gli ID delle mappe Web",
 				settingsDataModel2HelpContent: "Copiare e incollare le cifre dopo il segno \"=\" nell\'URL della mappa Web"
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "Abilita geolocalizzatore",
 				settingsLegendHelpContent: "Per definire il contenuto della legenda, utilizzare il sommario del map viewer Web di ArcGIS.com (Nascondi nella legenda)",
 				settingsSeriesHelpContent: "La serie di scorrimenti con dito è un\'opzione di spostamento tra le schede che guida il visualizzatore a una particolare estensione e visualizza un testo e una descrizione nel pannello laterale. Durante l\'attivazione iniziale i segnalibri delle mappe Web verranno importati e utilizzati per pre-popolare la barra della serie. Se si disabilita l\'opzione relativa alla serie viene disattivata anche la barra corrispondente, tuttavia la configurazione della serie viene mantenuta per usi futuri.", 
-				settingsSeriesHelpContent2: "é_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._È",
-				settingsSeriesHelpLink: "é_See an example of an application with a swipe series here_È",
+				settingsSeriesHelpContent2: "La serie di scorrimenti consente di creare e modificare una selezione di posizioni unitamente ai titoli e al testo cui sono associate. Verranno visualizzati gli eventuali segnalibri presenti nella mappa Web. È possibile disabilitare la serie, ma la configurazione verrà mantenuta per usi futuri.",
+				settingsSeriesHelpLink: "Per un esempio di applicazione con una serie di scorrimenti, vedere qui",
 				preview: "Anteprima interfaccia utente",
-				settingsLocateButtonExplain: "é_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._È",
+				settingsLocateButtonExplain: "Questa funzionalità è supportata nella maggior parte dei browser per dispositivi mobili e desktop (incluso Internet Explorer 9 e versioni successive).",
 				settingsLocateButton: "Abilita un pulsante Trova posizione nei browser supportati",
 				settingsAddressSearch: "Abilita uno strumento per la ricerca di indirizzi"
 			},

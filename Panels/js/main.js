@@ -289,21 +289,24 @@ function(
             var options = {
                 map: this.map,
                 autoNavigate: false,
-                autoComplete: hasEsri,
                 theme: "simpleGeocoder"
 
             }
-            //If the World geocoder is primary enable auto complete 
-            if (hasEsri && esriIdx === 0) {         
+            //If the World geocoder exists enable auto complete
+            if(hasEsri){
+                options.autoComplete = true;
                 options.minCharacters = 0;
                 options.maxLocations = 5;
-                options.searchDelay = 100
+                options.searchDelay = 100;    
+
+            }
+            
+            if (hasEsri && esriIdx === 0) {         
                 options.arcgisGeocoder = geocoders.splice(0, 1)[0]; //geocoders[0];
                 if (geocoders.length > 0) {
                     options.geocoders = geocoders;
                 }
             } else {
-                options.arcgisGeocoder = false;
                 options.geocoders = geocoders;
             }
 

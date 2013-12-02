@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Wybierz ten typ",
 				settingsDataModel2Explain: "Odsłanianie z inną mapą internetową.",
 				settingsDataModel2SpyGlassExplain: "Odkryj kolejną mapę internetową.",
-				settingsDataModel2HelpTitle: "ł_How do I find a web map's ID?_ą",
+				settingsDataModel2HelpTitle: "Jak odnaleźć identyfikator mapy internetowej?",
 				settingsDataModel2HelpContent: "Skopiuj i wklej cyfry po znaku „=” w adresie URL mapy internetowej"
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "Włącz geolokator",
 				settingsLegendHelpContent: "Aby ulepszyć zawartość legendy, skorzystaj z tabeli zawartości przeglądarki map ArcGIS.com (Ukryj w legendzie)",
 				settingsSeriesHelpContent: "Seria zwijania to opcja nawigacji przy użyciu kart, która kieruje użytkownika w pewnym zakresie i wyświetla tytuł oraz tekst opisu w panelu bocznym. Podczas pierwszej aktywacji zakładki mapy internetowej zostaną użyte do wstępnego wypełnienia paska serii. Jeżeli wyłączysz później opcję serii, zostanie też wyłączony pasek serii, ale konfiguracja serii zostanie zachowana na przyszłość.", 
-				settingsSeriesHelpContent2: "ł_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ą",
-				settingsSeriesHelpLink: "ł_See an example of an application with a swipe series here_ą",
+				settingsSeriesHelpContent2: "Serie zwijania umożliwiają tworzenie i edycję wybranych lokalizacji z towarzyszącymi im tytułami i tekstem. Jeśli dana mapa internetowa zawiera zakładki, zostaną one wyświetlone. Istnieje możliwość wyłączenia serii, ale ta konfiguracja zostanie zapisana do późniejszego wykorzystania.",
+				settingsSeriesHelpLink: "Tutaj znajduje się przykładowa aplikacja zawierająca serie zwijania",
 				preview: "Podgląd interfejsu użytkownika",
-				settingsLocateButtonExplain: "ł_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ą",
+				settingsLocateButtonExplain: "Ten sposób działania jest obsługiwany w większości urządzeń mobilnych i przeglądarek komputerowych (łącznie z programem Internet Explorer 9 i nowszymi wersjami).",
 				settingsLocateButton: "Włącz przycisk Lokalizuj w obsługiwanych przeglądarkach",
 				settingsAddressSearch: "Włącz narzędzie wyszukiwania adresów"
 			},

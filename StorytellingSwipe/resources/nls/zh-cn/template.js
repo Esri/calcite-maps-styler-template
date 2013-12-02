@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "选择该类型",
 				settingsDataModel2Explain: "随另一 web 地图卷起。",
 				settingsDataModel2SpyGlassExplain: "显示另一 web 地图。",
-				settingsDataModel2HelpTitle: "试_How do I find a web map's ID?_验",
+				settingsDataModel2HelpTitle: "如何查找 web 地图 ID？",
 				settingsDataModel2HelpContent: "复制并粘贴 web 地图 URL 中 '=' 符号后面的数字"
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "启用地理定位器",
 				settingsLegendHelpContent: "要优化图例内容，请使用 ArcGIS.com web 地图查看器内容列表(隐藏在图例中)",
 				settingsSeriesHelpContent: "卷帘系列是一种选项卡式的导航选项，它可将查看器设置为特定范围，并在侧面板中显示标题和描述文本。在首次激活时，将导入 web 地图的书签并将其用于预填充系列条形图。禁用系列选项将关闭系列条形图，但系列配置将被保留供以后使用。", 
-				settingsSeriesHelpContent2: "试_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._验",
-				settingsSeriesHelpLink: "试_See an example of an application with a swipe series here_验",
+				settingsSeriesHelpContent2: "通过卷帘系列可创建和编辑一系列具有随附标题和文本的位置。如果 web 地图具有书签，则会显示这些书签。您可以禁用卷帘系列，但配置将保留以供之后使用。",
+				settingsSeriesHelpLink: "在此处查看具有卷帘系列的应用程序示例",
 				preview: "UI 预览",
-				settingsLocateButtonExplain: "试_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._验",
+				settingsLocateButtonExplain: "此功能在大多数移动设备和桌面浏览器 (包括 Internet Explorer 9+) 中都受支持。",
 				settingsLocateButton: "启用支持“定位”按钮的浏览器",
 				settingsAddressSearch: "启用地址搜索工具"
 			},

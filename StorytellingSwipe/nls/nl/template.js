@@ -152,7 +152,7 @@
 				settingsDataModel2Explain: "Swipe met een andere webmap.",
 				settingsDataModel2SpyGlassExplain: "Een andere webmap weergeven.",
 				settingsDataModel2HelpTitle: "De ID van de webmap vinden",
-				settingsDataModel2HelpContent: "Kopieer en plak tekens achter het '='  teken in de URL van de webmap"
+				settingsDataModel2HelpContent: "Kopieer en plak tekens achter het \'=\'  teken in de URL van de webmap"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Indeling app",

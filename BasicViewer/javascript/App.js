@@ -43,14 +43,16 @@ define(
                 
                 //need to set the sharing url here so that when we query the applciation and organization the correct 
                 //location is searched. 
-                this.setDefaults();
-                var orgDef = this.queryOrganization();
-                orgDef.then(lang.hitch(this, function(){
-                  all([ this.getlocalization(), this.queryApplication() ]).then(lang.hitch(this,function(results){
-                       deferred.resolve(this.config);
+                this.setDefaults().then(lang.hitch(this, function(){
+        
+                  var orgDef = this.queryOrganization();
+                  orgDef.then(lang.hitch(this, function(){
+                    all([ this.getlocalization(), this.queryApplication() ]).then(lang.hitch(this,function(results){
+                         deferred.resolve(this.config);
+                    }));
                   }));
-                }));
 
+                }));
                 return deferred.promise;
             },
             getlocalization: function(){
@@ -86,7 +88,7 @@ define(
             setDefaults: function(){
               //Check to see if the app is hosted or a portal. In those cases set the sharing url and the proxy. Otherwise use
               //the sharing url set it to arcgis.com. We know app is hosted (or portal) if it has /apps/ in the url 
-  
+              var deferred = new Deferred();
 
               //templates can be at /apps or /home/webmap/templates
               var appLocation = location.pathname.indexOf("/apps/");
@@ -109,9 +111,7 @@ define(
               }
 
               esri.arcgis.utils.arcgisUrl = this.config.sharingurl + "/sharing/rest/content/items";
-              //esri.dijit._arcgisUrl = this.config.sharingurl + "/sharing/rest";  
-   
-      
+          
               //Set the proxy. If the app is hosted use the default proxy. 
               if(this.config.proxyurl){
                 esri.config.defaults.io.proxyUrl = this.config.proxyurl;
@@ -122,7 +122,15 @@ define(
               if(this.config.helperServices && this.config.helperServices.geometry && this.config.helperServices.geometry.url){
                 esri.config.defaults.geometryService = new esri.tasks.GeometryService(this.config.helperServices.geometry.url);
               }
-     
+    
+             //check sign-in status 
+              esri.id.checkSignInStatus(this.config.sharingurl + "/sharing").then(
+                  function(credential){deferred.resolve();},
+                  function(error){deferred.resolve();}
+              );
+
+
+              return deferred.promise;
             },
              queryApplication : function(){
     
@@ -151,7 +159,7 @@ define(
 
                 var deferred = new Deferred();
                //Is this a hosted app or is it an app with an organization url set to query for info
-                if(this.config.sharingurl && this.isOrg){
+             //   if(this.config.sharingurl && this.isOrg){
 
                 var requestParams;
                 var cookie = dojoCookie("esri_auth");
@@ -196,6 +204,8 @@ define(
                           this.config.sharingurl = response.portalHostname;
                            esri.arcgis.utils.arcgisUrl = response.portalHostname + "/sharing/rest/content/items";
                         }
+                        console.log(response.helperServices);
+                        console.log(this.config.helperServices);
                         lang.mixin(this.config.helperServices, response.helperServices);
                         //update geometry service (note: replaced the setDefaults call again)
                         if(this.config.helperServices && this.config.helperServices.geometry && this.config.helperServices.geometry.url){
@@ -204,11 +214,11 @@ define(
           
                         deferred.resolve(true); 
                  }));
-                }else{
-  
-                  deferred.resolve(true);
+    //            }else{
+  //
+  //                deferred.resolve(true);
    
-                }
+               // }
                 return deferred.promise;
             },
             _parseQuery: function(queryString){
