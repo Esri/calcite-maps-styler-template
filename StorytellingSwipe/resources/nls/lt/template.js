@@ -151,8 +151,8 @@
 				settingsDataModelSelect: "Pasirinkite šį tipą",
 				settingsDataModel2Explain: "Keisti kitu internetiniu žemėlapiu.",
 				settingsDataModel2SpyGlassExplain: "Atidengti kitą internetinį žemėlapį.",
-				settingsDataModel2HelpTitle: "Į_How do I find a web map's ID?_š",
-				settingsDataModel2HelpContent: "Nukopijuokite skaičius po '=' ženklo, esančio internetinio žemėlapio URL"
+				settingsDataModel2HelpTitle: "Kaip surasti internetinio žemėlapio ID",
+				settingsDataModel2HelpContent: "Nukopijuokite skaičius po \'=\' ženklo, esančio internetinio žemėlapio URL"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Aplikacijos išdėstymas",
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "Įgalinti geolokatorių",
 				settingsLegendHelpContent: "Legendos nustatymui naudokite ArcGIS.com internetinio žemėlapio peržiūros aplikacijos turinį (Paslėpti legendoje)",
 				settingsSeriesHelpContent: "Keitiklių serija yra navigavimo galimybė, supažindinanti vartotoją su tam tikra aprėptimi ir atvaizduoja pavadinimą bei aprašymo tekstą šoninėje panelėje. Aktyvuojant pirmą kartą, jūsų internetinio(-ių) žemėlapio(-ių) žymės bus panaudotos preliminariai užpildant serijų juostą. Šio pasirinkimo išjungimas, išjungia ir serijų juostą, tačiau serijų konfigūracija bus išlaikoma tolimesniam naudojimui.", 
-				settingsSeriesHelpContent2: "Į_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._š",
-				settingsSeriesHelpLink: "Į_See an example of an application with a swipe series here_š",
+				settingsSeriesHelpContent2: "Keitiklių serijos leidžia jums sukurti ir redaguoti pažymėtas vietas su kartu esančiais pavadinimais ir tekstu. Jei jūsų internetinis žemėlapis turi žymių, jos bus atvaizduotos. Galite išjungti serijas, bet konfigūracija bus išsaugota ateičiai.",
+				settingsSeriesHelpLink: "Peržiūrėkite aplikacijos su keitiklių serijomis pavyzdį čia",
 				preview: "Vartotojo sąsajos peržiūra",
-				settingsLocateButtonExplain: "Į_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._š",
+				settingsLocateButtonExplain: "Šis funkcionalumas palaikomas daugelyje mobilių įrenginių ir darbastalio naršyklių (įskaitant Internet Explorer 9+).",
 				settingsLocateButton: "Įgalinti \'Rasti\' mygtuką palaikomose naršyklėse",
 				settingsAddressSearch: "Įgalinti adreso paieškos įrankį"
 			},

@@ -151,8 +151,8 @@
 				settingsDataModelSelect: "Vali see tüüp",
 				settingsDataModel2Explain: "Rulli mõne teise veebikaardiga.",
 				settingsDataModel2SpyGlassExplain: "Ilmu teises veebikaardis.",
-				settingsDataModel2HelpTitle: "Š_How do I find a web map's ID?_ä",
-				settingsDataModel2HelpContent: "Kopeeri ja kleebi numbrid pärast '=' märki veebikaardi URL sisust"
+				settingsDataModel2HelpTitle: "Kuidas leida veebikaardi ID-d?",
+				settingsDataModel2HelpContent: "Kopeeri ja kleebi numbrid pärast \'=\' märki veebikaardi URL sisust"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Rakenduse paigutus",
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "Luba geolokaator",
 				settingsLegendHelpContent: "Legendi sisu täpsustamiseks kasuta ArcGIS.com veebikaardi akna kihtide loendit (peidetud legendi)",
 				settingsSeriesHelpContent: "Rullimiste seeria on vahelehtedega navigeerimise valik, mis viib vaataja konkreetsele kuvaulatusele ja kuvab pealkirja ning kirjeldust külje paneelil. Algselt aktiveerimiseks imporditakse veebikaardi järjehoidjad ja kasutatakse seeriate lehe eelgenereerimiseks. Seeriate valiku keelamine lülitab välja ka seeriate riba, aga seeriate konfiguratsioon säilitatakse tulevikus kasutamiseks.", 
-				settingsSeriesHelpContent2: "Š_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ä",
-				settingsSeriesHelpLink: "Š_See an example of an application with a swipe series here_ä",
+				settingsSeriesHelpContent2: "Vahetamise seeriad lubab teil luua ja muuta asukohtade selektsiooni koos vastavate pealkirjade ja tekstidega. Kui teie veebikaartidel on järjehoidjad, siis kuvatakse neid. Võite keelata seeriad, kuid konfiguratsioon säilitatakse võimalikuks kasutuseks tulevikuks.",
+				settingsSeriesHelpLink: "Vaata vahetatavate seeriatega rakenduse näidet siit",
 				preview: "UI vaade",
-				settingsLocateButtonExplain: "Š_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ä",
+				settingsLocateButtonExplain: "Funktsionaalsus on toetatud enamustel nutiseadmetel ja töökoha brauserites (k.a Internet Explorer 9+).",
 				settingsLocateButton: "Luba positsioneerimise nupp toetatud brauserites",
 				settingsAddressSearch: "Luba aadressi otsimise tööriist"
 			},

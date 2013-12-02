@@ -17,7 +17,7 @@
       "moreInfo": "Plus d\'informations sur l\'Observatoire urbain",
       "buttonText": "Commencer la comparaison"
     },
-    "socialMediaMessage":"Comparez villes à travers le monde en utilisant les cartes comme langue commune. Découvrez l'#ObservatoireUrbain",
+    "socialMediaMessage":"Comparez 16 villes à travers le monde en utilisant les cartes comme langue commune. Découvrez l'#ObservatoireUrbain",
     "viewMapOnline": "Afficher cette carte dans ArcGIS.com",
     "selectMapPanel": "SELECTIONNER LE VOLET DE CARTE",
     "noDescription": "[ AUCUNE DESCRIPTION ]",

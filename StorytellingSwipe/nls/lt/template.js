@@ -152,7 +152,7 @@
 				settingsDataModel2Explain: "Keisti kitu internetiniu žemėlapiu.",
 				settingsDataModel2SpyGlassExplain: "Atidengti kitą internetinį žemėlapį.",
 				settingsDataModel2HelpTitle: "Kaip surasti žemėlapių ID",
-				settingsDataModel2HelpContent: "Nukopijuokite skaičius po '=' ženklo, esančio internetinio žemėlapio URL"
+				settingsDataModel2HelpContent: "Nukopijuokite skaičius po \'=\' ženklo, esančio internetinio žemėlapio URL"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Aplikacijos išdėstymas",

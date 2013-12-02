@@ -5,8 +5,8 @@
     "Cities": "城市",
     "Nouns": {
       "Work": "工作",
-      "Movement": "移动",
-      "People": "人类",
+      "Movement": "交通",
+      "People": "人口",
       "Public": "公共",
       "Systems": "系统"
     },

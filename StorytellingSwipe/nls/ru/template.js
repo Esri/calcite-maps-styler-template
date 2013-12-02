@@ -5,8 +5,8 @@
 				step1: "ЗАГРУЗКА ПРИЛОЖЕНИЯ",
 				step2: "ЗАГРУЗКА ДАННЫХ",
 				step3: "ИНИЦИАЛИЗАЦИЯ",
-				fail: "Загрузка инструмента Шторка (Swipe) не удалась",
-				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОНСТРУКТОРА",
+				fail: "Загрузка инструмента Шторка не удалась",
+				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОМПОНОВЩИКА",
 				failButton: "Повторить"
 			},
 			errors: {
@@ -95,7 +95,7 @@
 			settingsExtent: {
 				settingsTabExtent: "Экстент",
 				settingsExtentExplain: "Выберите начальный экстент через интерактивную карту, показанную ниже.",
-				settingsExtentExplainBottom: "Указанный вами экстент обновит исходный экстент веб-карты. Если вы создаете серию карт со шторками, этот экстент использоваться не будет.",
+				settingsExtentExplainBottom: "Указанный вами экстент обновит исходный экстент веб-карты. Если вы создаете серию шток, этот экстент использоваться не будет.",
 				settingsExtentDateLineError: "Экстент не может продолжаться за меридиан 180°",
 				settingsExtentDateLineError2: "Ошибка вычисления экстента",
 				settingsExtentDrawBtn: "Нарисовать новый экстент",
@@ -147,7 +147,7 @@
 				settingsDataModelWebmapSwipeId1: "ID правой веб-карты",
 				settingsDataModelWebmapSwipeId2: "ID левой веб-карты",
 				settingsDataModelWebmapGlassId1: "ID основной веб-карты",
-				settingsDataModelWebmapGlassId2: "ID веб-карты Spyglass",
+				settingsDataModelWebmapGlassId2: "ID веб-карты подзорной трубы",
 				settingsDataModelSelect: "Выбрать этот тип",
 				settingsDataModel2Explain: "Спрятать под другой веб-картой.",
 				settingsDataModel2SpyGlassExplain: "Показать другую веб-карту.",
@@ -159,7 +159,7 @@
 				settingsLegendExplain: "Выберите настройки компоновки приложения.",
 				settingsLegendEnable: "Включить легенду",
 				settingsDescriptionEnable: "Включить описание",
-				settingsBookmarksEnable: "Включить несколько шторок",
+				settingsBookmarksEnable: "Включить серии шторок",
 				settingsPopupDisable: "Включить всплывающее окно",
 				settingsLocatorEnable: "Включить локатор",
 				settingsLegendHelpContent: "Для настройки содержания легенды используйте таблицу содержания вьюера веб-карт ArcGIS.com (Скрыть в легенде)",
@@ -172,7 +172,7 @@
 				settingsSwipePopupSwipe1: "Левая карта",
 				settingsSwipePopupSwipe2: "Правая карта",
 				settingsSwipePopupGlass1: "Основная карта",
-				settingsSwipePopupGlass2: "Карта Spyglass",
+				settingsSwipePopupGlass2: "Карта подзорной трубы",
 				settingsSwipePopupTitle: "Название заголовка",
 				settingsSwipePopupColor: "Цвет заголовка"
 			},

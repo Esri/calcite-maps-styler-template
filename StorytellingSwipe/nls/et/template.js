@@ -152,7 +152,7 @@
 				settingsDataModel2Explain: "Rulli mõne teise veebikaardiga.",
 				settingsDataModel2SpyGlassExplain: "Ilmu teises veebikaardis.",
 				settingsDataModel2HelpTitle: "Kuidas leida veebikaardi ID-d",
-				settingsDataModel2HelpContent: "Kopeeri ja kleebi numbrid pärast '=' märki veebikaardi URL sisust"
+				settingsDataModel2HelpContent: "Kopeeri ja kleebi numbrid pärast \'=\' märki veebikaardi URL sisust"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Rakenduse paigutus",

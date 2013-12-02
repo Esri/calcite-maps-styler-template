@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "このタイプを選択",
 				settingsDataModel2Explain: "別の Web マップでスワイプします。",
 				settingsDataModel2SpyGlassExplain: "別の Web マップを公開します。",
-				settingsDataModel2HelpTitle: "須_How do I find a web map's ID?_鷗",
+				settingsDataModel2HelpTitle: "Web マップ ID の検索方法",
 				settingsDataModel2HelpContent: "Web マップの URL 内の「=」記号から後ろの数字をコピーして貼り付けます。"
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "ジオロケータの有効化",
 				settingsLegendHelpContent: "凡例のコンテンツを更新するには、ArcGIS.com Web マップ ビューアのコンテンツ ウィンドウを使用します (凡例では非表示)",
 				settingsSeriesHelpContent: "スワイプは、タブ付きのナビゲーション オプションで、ビューアを特定の範囲に移動したり、サイド パネルにタイトルや説明文を表示したりできます。最初に起動したときに、Web マップのブックマークがインポートされ使用されて、一連のバーに値が事前入力されます。一連のオプションを無効にすると、一連のバーは無効になりますが、一連の構成は保持され、後で使用することができます。", 
-				settingsSeriesHelpContent2: "須_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._鷗",
-				settingsSeriesHelpLink: "須_See an example of an application with a swipe series here_鷗",
+				settingsSeriesHelpContent2: "スワイプ操作を使用すると、選択した場所とそのタイトルおよびテキストを作成および編集できます。Web マップにブックマークがある場合は表示されます。スワイプ操作は無効化できますが、構成は今後の使用のために維持されます。",
+				settingsSeriesHelpLink: "スワイプ操作を使用したアプリケーションの例を表示",
 				preview: "UI のプレビュー",
-				settingsLocateButtonExplain: "須_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._鷗",
+				settingsLocateButtonExplain: "この機能は、ほとんどのモバイル デバイスとデスクトップ ブラウザ (Internet Explorer 9 以上) でサポートされています。",
 				settingsLocateButton: "[検索] ボタンに対応したブラウザの有効化",
 				settingsAddressSearch: "アドレス検索ツールの有効化"
 			},

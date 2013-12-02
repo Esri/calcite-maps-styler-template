@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Valitse tämä tyyppi",
 				settingsDataModel2Explain: "Pyyhkäise toisella web-kartalla.",
 				settingsDataModel2SpyGlassExplain: "Näytä toinen web-kartta.",
-				settingsDataModel2HelpTitle: "Å_How do I find a web map's ID?_ö",
+				settingsDataModel2HelpTitle: "Miten löydän web-kartan tunnuksen?",
 				settingsDataModel2HelpContent: "Kopioi ja liitä web-kartan URL-osoitteessa olevan '='-merkin jälkeiset luvut."
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "Ota käyttöön paikannin",
 				settingsLegendHelpContent: "Jos haluat määrittää selitteen sisällön, käytä ArcGIS.com-sivuston web-kartan katseluohjelman sisällysluetteloa (Piilota selitteessä)",
 				settingsSeriesHelpContent: "Pyyhintäsarja on välilehdellinen navigointivalinta, joka ohjaa katselijan tiettyyn laajuuteen ja näyttää otsikon ja kuvaavan tekstin sivupaneelissa. Kun otat asetuksen käyttöön ensimmäisen kerran, web-kartan(/-karttojen) kirjanmerkit tuodaan ja niillä täytetään valmiiksi sarjapalkki. Jos poistat sarjan asetuksen käytöstä, sarjapalkki poistuu käytöstä, mutta sarjan määritykset tallennetaan tulevaa käyttöä varten.", 
-				settingsSeriesHelpContent2: "Å_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ö",
-				settingsSeriesHelpLink: "Å_See an example of an application with a swipe series here_ö",
+				settingsSeriesHelpContent2: "Pyyhkäisysarjan avulla voit luoda ja muokata sijaintivalikoimaa ja sijainteihin liittyviä otsikoita ja tekstejä. Jos web-kartassa on kirjanmerkkejä, ne tulevat näkyviin. Voit tuoda näkyviin sarjan, mutta kokoonpano säilytetään tulevaa käyttöä varten.",
+				settingsSeriesHelpLink: "Tarkastele tässä esimerkkiä sovelluksesta, jossa on pyyhkäisysarja",
 				preview: "Käyttöliittymän esikatselu",
-				settingsLocateButtonExplain: "Å_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ö",
+				settingsLocateButtonExplain: "Kyseinen toiminto on tuettu useimmissa mobiililaitteissa ja tietokoneiden selaimissa (mm. Internet Explorer 9 ja uudemmat versiot).",
 				settingsLocateButton: "Ota Paikanna-painiketta tukevat selaimet käyttöön",
 				settingsAddressSearch: "Ota osoitehakutyökalu käyttöön"
 			},

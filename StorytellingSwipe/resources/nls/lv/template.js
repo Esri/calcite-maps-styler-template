@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Izvēlieties šo tipu",
 				settingsDataModel2Explain: "Pārvilkt ar citu web karti.",
 				settingsDataModel2SpyGlassExplain: "Atklāt citu web karti.",
-				settingsDataModel2HelpTitle: "ķ_How do I find a web map's ID?_ū",
+				settingsDataModel2HelpTitle: "Kā atrast web kartes ID?",
 				settingsDataModel2HelpContent: "Kopēt un ielīmēt ciparus aiz zīmes \"=\" vietrādī URL no web kartes"
 			},
 			settingsLegend: {
@@ -165,11 +165,11 @@
 				settingsGeolocatorEnable: "Iespējot ģeolokatoru",
 				settingsLegendHelpContent: "Lai attīrītu leģendas saturu izmantojiet ArcGIS.com web kartes skatītāja satura tabulu (Paslēpt leģendā)",
 				settingsSeriesHelpContent: "Pārvilkšanas sērijas ir cilņu navigācijas opcija, kas virzīs skatītāju uz noteiktu pārklājumu un attēlos virsrakstu un apraksta tekstu sānu panelī. Sākotnējās aktivizācijas laikā, web karšu grāmatzīmes tiks importētas un izmantotas, lai aizpildītu seriju joslu. Sēriju opciju atiespējošana izslēgs sēriju joslu, bet sēriju konfigurācija tiks saglabāta izmantošanai nākotnē.", 
-				settingsSeriesHelpContent2: "ķ_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ū",
-				settingsSeriesHelpLink: "ķ_See an example of an application with a swipe series here_ū",
+				settingsSeriesHelpContent2: "Pārvilkšanas sērijas ļauj izveidot un rediģēt izvēlētus izvietojumus ar pavadošajiem virsrakstiem un tekstiem. Ja jūsu web kartei ir grāmatzīmes, tās tiks attēlotas. Jūs varat atiespējot sērijas, bet konfigurācija tiks saglabāta izmantošanai nākotnē.",
+				settingsSeriesHelpLink: "Aopskatiet aplikācijas piemēru ar pārvilkšanas sērijām šeit",
 				preview: "Saskarnes priekšskatījums",
-				settingsLocateButtonExplain: "ķ_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ū",
-				settingsLocateButton: "Iespējot 'Atrast izvietojumu' pogu atblastītajos pārlūkos",
+				settingsLocateButtonExplain: "Šī funkcionalitāte tiek atbalstīta uz vairuma mobilo ierīču un darbvirsmas pārlūkiem (ieskaitot Internet Explorer 9+).",
+				settingsLocateButton: "Iespējot \'Atrast izvietojumu\' pogu atblastītajos pārlūkos",
 				settingsAddressSearch: "Iespējot adreses meklēšanas rīku"
 			},
 			settingsSwipePopup: {

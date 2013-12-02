@@ -17,7 +17,7 @@
       "moreInfo": "Más información sobre Urban Observatory",
       "buttonText": "Empezar a comparar"
     },
-    "socialMediaMessage":"Compara ciudades de todo el mundo usando los mapas como idioma común. Disfruta de #UrbanObservatory",
+    "socialMediaMessage":"Compara 16 ciudades de todo el mundo usando los mapas como idioma común. Disfruta de #UrbanObservatory",
     "viewMapOnline": "Ver este mapa en ArcGIS.com",
     "selectMapPanel": "SELECCIONAR PANEL DEL MAPA",
     "noDescription": "[SIN DESCRIPCIÓN]",

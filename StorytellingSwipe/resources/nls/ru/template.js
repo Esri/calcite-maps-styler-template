@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Выбрать этот тип",
 				settingsDataModel2Explain: "Спрятать под другой веб-картой.",
 				settingsDataModel2SpyGlassExplain: "Показать другую веб-карту.",
-				settingsDataModel2HelpTitle: "Ж_How do I find a web map's ID?_Я",
+				settingsDataModel2HelpTitle: "Как найти ID веб-карты?",
 				settingsDataModel2HelpContent: "Скопируйте и вставьте цифры, расположенные после знака '=' в URL веб-карты"
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "Включить геолокатор",
 				settingsLegendHelpContent: "Для настройки содержания легенды используйте таблицу содержания вьюера веб-карт ArcGIS.com (Скрыть в легенде)",
 				settingsSeriesHelpContent: "Серии шторок - это опция навигации, позволяющая пользователю переходить к определенному экстенту и отображать текст заголовка и описания на боковой панели.  При первоначальном включении закладки с веб-карт будут импортированы и использованы для создания серий.  Отключение опции работы с сериями приводит к отключению панели серий, но настройки серий остаются для использования в будущем.", 
-				settingsSeriesHelpContent2: "Ж_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._Я",
-				settingsSeriesHelpLink: "Ж_See an example of an application with a swipe series here_Я",
+				settingsSeriesHelpContent2: "Серии шторок позволяют создавать и редактировать выбранные местоположения, а также их заголовки и текст. Если ваша веб-карта содержит закладки, то они будут отображаться. Вы можете отменить отображение серии шторок, но их настройки сохранятся для будущей работы.",
+				settingsSeriesHelpLink: "См. пример приложения с серией шторок здесь",
 				preview: "Просмотр UI",
-				settingsLocateButtonExplain: "Ж_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Я",
+				settingsLocateButtonExplain: "Эта функция поддерживается на большинстве браузеров мобильных устройств и настольных браузеров (включая Internet Explorer 9+).",
 				settingsLocateButton: "Включить в поддерживаемых браузерах кнопку Размещение",
 				settingsAddressSearch: "Включить инструмент поиска адреса"
 			},

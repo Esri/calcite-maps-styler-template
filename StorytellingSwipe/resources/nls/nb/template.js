@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Velg denne typen",
 				settingsDataModel2Explain: "Sveip med et annet webkart.",
 				settingsDataModel2SpyGlassExplain: "Avdekk et annet webkart.",
-				settingsDataModel2HelpTitle: "å_How do I find a web map's ID?_ø",
+				settingsDataModel2HelpTitle: "Hvordan finner jeg webkartets ID?",
 				settingsDataModel2HelpContent: "Kopier og lim inn tallene etter likhetstegnet (=) i URL-adressen til webkartet"
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "Aktiver geoposisjonsindikatoren",
 				settingsLegendHelpContent: "Hvis du vil finjustere innholdet i tegnforklaringen, bruker du innholdsfortegnelsen for kartviseren på ArcGIS.com (skjul i tegnforklaringen)",
 				settingsSeriesHelpContent: "Sveip serier er et fanebasert navigeringsalternativ som veileder brukeren til en bestemt utstrekning, og viser en tittel og beskrivende tekst i sidepanelet.  Under den første aktiveringen, blir bokmerkene fra webkart importert og brukt for å fylle serieraden.  Hvis seriealternativet deaktiveres, slås serieraden av, men seriekonfigurasjonen spares til senere bruk.", 
-				settingsSeriesHelpContent2: "å_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ø",
-				settingsSeriesHelpLink: "å_See an example of an application with a swipe series here_ø",
+				settingsSeriesHelpContent2: "Med sveipeserier kan du opprette og redigere et utvalg av lokasjoner med tilhørende titler og tekst. Hvis du har et webkart med bokmerker, vises de. Du kan deaktivere serien, men konfigurasjonen beholdes for fremtidig bruk.",
+				settingsSeriesHelpLink: "Se et eksempel på et program med en sveipeserie her",
 				preview: "Forhåndsvisning av brukergrensesnitt",
-				settingsLocateButtonExplain: "å_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ø",
+				settingsLocateButtonExplain: "Denne funksjonen støttes på de fleste mobile enheter og nettlesere på stasjonære datamaskiner (inkludert Internet Explorer 9+).",
 				settingsLocateButton: "Akriver en Lokaliser-knapp i støttede nettlesere",
 				settingsAddressSearch: "Aktiver et adressesøkverktøy"
 			},

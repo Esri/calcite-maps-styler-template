@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "حدد هذا النوع",
 				settingsDataModel2Explain: "اسحب مع خريطة ويب أخرى",
 				settingsDataModel2SpyGlassExplain: "كشف خريطة ويب أخرى.",
-				settingsDataModel2HelpTitle: "بيت_How do I find a web map's ID?_لاحقة",
+				settingsDataModel2HelpTitle: "كيف أقوم بالعثور على معرف خريطة الويب؟",
 				settingsDataModel2HelpContent: "انسخ والصق الأرقام بعد علامة \"=\" داخل عنوان URL لخريطة الويب"
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "تمكين محدد المواقع الجغرافي",
 				settingsLegendHelpContent: "لتحسين محتوى مفتاح الخريطة، استخدم جدول محتويات عارض خريطة الويب ArcGIS.com (مخفي في وسيلة الإيضاح)",
 				settingsSeriesHelpContent: "سلاسل السحب هي خيارات التنقل التي سترشد العارض خلال النطاق المحدد وعرض العنوان ونص الوصف في اللوحة الجانبية. أثناء التفعيل الأولي، سيتم استيراد العلامات المرجعية من خرائط الويب وسيتم استخدامها لإعادة تعبئة شريط السلاسل. يقوم تعطيل خيار السلاسل بإيقاف تشغيل شريط السلاسل،لكن يتم الاحتفاظ بتكوين السلاسل للاستخدام المستقبلي.", 
-				settingsSeriesHelpContent2: "بيت_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._لاحقة",
-				settingsSeriesHelpLink: "بيت_See an example of an application with a swipe series here_لاحقة",
+				settingsSeriesHelpContent2: "تتيح عملية سحب السلسلة إنشاء وتحرير مجموعة مختارة من المواقع مع النص والعناوين المصاحبة. إذا كانت خريطة الويب الخاص بك لديها علامات مرجعية، فإنه سيتم عرضهم. ويمكنك تعطيل هذه السلسلة، ولكن سيتم الاحتفاظ بالتكوين للاستخدام في المستقبل.",
+				settingsSeriesHelpLink: "راجع مثال على التطبيق مع سحب السلاسل هنا",
 				preview: "معاينة واجهة المستخدم",
-				settingsLocateButtonExplain: "بيت_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._لاحقة",
+				settingsLocateButtonExplain: "يتم دعم هذه الوظيفة على معظم أجهزة الجوال ومستعرضات سطح المكتب (بما في ذلك Internet Explorer 9+(.",
 				settingsLocateButton: "تمكين زر 'تحديد الموقع' على المستعرضات المدعومة",
 				settingsAddressSearch: "تمكين أداة البحث عن العنوان"
 			},

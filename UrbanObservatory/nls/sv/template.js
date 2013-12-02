@@ -29,7 +29,7 @@
     "protocolMismatchError": "Protokollmatchningsfel ... Vill du fortsätta ändå?",
     "problematicWebmap": "Vi har för tillfället tekniska problem med den här kartan: ",
     /* DO NOT REPLACE TEXT INSIDE CURLY BRACKETS */
-    "invalidDefaultThemeTemplate": "Standardtemat '{theme}' finns inte tillgängligt i gruppen '{groupName}'.",
+    "invalidDefaultThemeTemplate": "Standardtemat \'{theme}' finns inte tillgängligt i gruppen \'{groupName}'.",
     "mapHasNoLODs": "Det finns inga LOD definierade för den här kartan: ",
     "errorCreatingMap": "Det gick inte att skapa kartan: ",
     "cantFindWebmap": "Det gick inte att hitta webbkartan: ",

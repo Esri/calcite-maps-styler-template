@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Vælg denne type",
 				settingsDataModel2Explain: "Swipe med et andet webkort.",
 				settingsDataModel2SpyGlassExplain: "Vis et andet webkort.",
-				settingsDataModel2HelpTitle: "ø_How do I find a web map's ID?_å",
+				settingsDataModel2HelpTitle: "Hvordan finder jeg et webkorts ID?",
 				settingsDataModel2HelpContent: "Kopiér tallene efter \'=\' -tegnet i webkortets URL"
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "Aktiv\ér geolokator",
 				settingsLegendHelpContent: "Hvis du vil forfine signaturforklaringens indhold, kan du bruge indholdsfortegnelsen i ArcGIS.com-webkortviseren (Skjul i signaturforklaring)",
 				settingsSeriesHelpContent: "Når du trykker på swipe-serien, vil kortviseren navigere til en bestemt udstrækning og vise en titel og en beskrivelsestekst i sidepanelet. Ved første aktivering importeres dine webkortbogmærker, og de anvendes til at udfylde serielinjen på forhånd. Hvis du deaktiverer seriefunktionen, slås seriellinjen fra, men seriekonfigurationen bevares til fremtidig brug.", 
-				settingsSeriesHelpContent2: "ø_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._å",
-				settingsSeriesHelpLink: "ø_See an example of an application with a swipe series here_å",
+				settingsSeriesHelpContent2: "Med swipe-serien kan du oprette og redigere et udvalg af steder med ledsagende titler og tekst. Hvis dit webkort har bogmærker, bliver disse vist. Du kan deaktivere serien, men konfigurationen vil blive bevaret til fremtidig brug.",
+				settingsSeriesHelpLink: "Se et eksempel på en applikation med swipe-serien her",
 				preview: "UI-forhåndsvisning",
-				settingsLocateButtonExplain: "ø_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._å",
+				settingsLocateButtonExplain: "Denne funktionalitet understøttes på de fleste mobile enheder og pc-browsere (inkl. Internet Explorer 9+).",
 				settingsLocateButton: "Aktiv\ér browsere, der har en 'Find'-knap",
 				settingsAddressSearch: "Aktiv\ér et adressesøgningsværktøj"
 			},

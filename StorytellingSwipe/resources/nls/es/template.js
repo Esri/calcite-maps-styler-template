@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Selecciona este tipo",
 				settingsDataModel2Explain: "Comparar con otro mapa Web.",
 				settingsDataModel2SpyGlassExplain: "Deja al descubierto otro mapa Web.",
-				settingsDataModel2HelpTitle: "á_How do I find a web map's ID?_Ó",
+				settingsDataModel2HelpTitle: "¿Cómo puedo encontrar el ID de un mapa Web?",
 				settingsDataModel2HelpContent: "Copia y pega los dígitos que hay tras el signo \"=\" en la URL del mapa Web"
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "Habilitar geolocalizador",
 				settingsLegendHelpContent: "Utiliza la tabla de contenido del visor de mapas web de ArcGIS.com (ocultar en leyenda) para delimitar el contenido de la leyenda.",
 				settingsSeriesHelpContent: "Las series comparativas es una opción de navegación por pestañas que guía al usuario a una extensión concreta y muestra un título y un texto descriptivo en el panel lateral. En el momento de la primera activación, los marcadores de mapas web se importarán y usarán para rellenar la barra de series. Si deshabilitas esta opción, la barra de series se desactivará, pero la configuración de las series se conservará para usarse de nuevo.", 
-				settingsSeriesHelpContent2: "á_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._Ó",
-				settingsSeriesHelpLink: "á_See an example of an application with a swipe series here_Ó",
+				settingsSeriesHelpContent2: "Las series de comparativas te permiten crear y editar una selección de ubicaciones junto con títulos y texto. Si tu mapa Web tiene marcadores de posición, se mostrarán. Puedes desactivar las series, pero la configuración se mantendrá para su uso futuro.",
+				settingsSeriesHelpLink: "Mira un ejemplo de una aplicación con una serie de comparativas aquí",
 				preview: "Vista previa de la interfaz de usuario",
-				settingsLocateButtonExplain: "á_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Ó",
+				settingsLocateButtonExplain: "Esta funcionalidad es compatible con la mayoría de dispositivos móviles y navegadores de escritorio (incluido Internet Explorer 9+).",
 				settingsLocateButton: "Habilitar un botón \"Localizar\" en navegadores compatibles",
 				settingsAddressSearch: "Habilitar una herramienta de búsqueda de direcciones"
 			},

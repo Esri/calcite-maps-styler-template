@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "이 유형 선택",
 				settingsDataModel2Explain: "다른 웹 맵으로 스와이프합니다.",
 				settingsDataModel2SpyGlassExplain: "다른 웹 맵을 표시합니다.",
-				settingsDataModel2HelpTitle: "한_How do I find a web map's ID?_빠",
+				settingsDataModel2HelpTitle: "웹 맵 ID를 찾는 방법",
 				settingsDataModel2HelpContent: "웹 맵의 URL에 '=' 부호 뒤의 숫자 복사 및 붙여넣기"
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "지오로케이터 사용",
 				settingsLegendHelpContent: "범례 컨텐츠를 세분화하려면 ArcGIS.com web map viewer 목차를 사용하세요(범례에서 숨겨짐).",
 				settingsSeriesHelpContent: "스와이프 계열은 뷰어를 특정 범위로 안내하고 사이드 패널에 제목 및 설명 텍스트를 표시하는 탭이 지정된 탐색 옵션입니다. 초기 활성화 중에 웹 맵의 책갈피를 가져오며 이를 통해 계열 모음이 미리 채워집니다. 계열 옵션을 비활성화하면 계열 모음이 꺼지지만 계열 구성은 나중에 사용할 수 있도록 유지됩니다.", 
-				settingsSeriesHelpContent2: "한_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._빠",
-				settingsSeriesHelpLink: "한_See an example of an application with a swipe series here_빠",
+				settingsSeriesHelpContent2: "스와이프 계열을 사용하면 선택한 위치 및 함께 제공되는 제목과 텍스트를 생성하고 편집할 수 있습니다. 웹 맵에 책갈피가 있으면 책갈피가 표시됩니다. 계열을 비활성화할 수도 있지만 구성은 나중에 사용할 수 있도록 유지됩니다.",
+				settingsSeriesHelpLink: "스와이프 계열이 포함된 응용프로그램 예제 확인",
 				preview: "UI 미리보기",
-				settingsLocateButtonExplain: "한_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._빠",
+				settingsLocateButtonExplain: "이 기능은 대부분의 모바일 장치와 데스크탑 브라우저(Internet Explorer 9 이상 포함)에서 지원됩니다.",
 				settingsLocateButton: "지원되는 브라우저에서 '찾기' 버튼 사용",
 				settingsAddressSearch: "주소 검색 도구 사용"
 			},

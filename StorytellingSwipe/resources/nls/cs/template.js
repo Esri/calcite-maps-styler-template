@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Vybrat tento typ",
 				settingsDataModel2Explain: "Proveďte překrytí jinou webovou mapou.",
 				settingsDataModel2SpyGlassExplain: "Odkryjte jinou webovou mapu.",
-				settingsDataModel2HelpTitle: "Ř_How do I find a web map's ID?_ů",
+				settingsDataModel2HelpTitle: "Jak najdu identifikátor webové mapy?",
 				settingsDataModel2HelpContent: "Překopírovat číslice po rovnítku (=) v URL webové mapy"
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "Povolit geolokátor",
 				settingsLegendHelpContent: "Chcete-li doplnit obsah legendy, použijte obsah prohlížeče webových map ArcGIS.com (Skrýt v legendě)",
 				settingsSeriesHelpContent: "Série překrývání je možnost navigace s pomocí karet, která diváka vede ke konkrétnímu rozsahu a zobrazí název a textový popis v postranním panelu. Během počáteční aktivace se importují záložky z webové mapy / webových map a použijí se k prvotnímu zaplnění lišty série. Zakázáním možnosti série lištu série vypnete, ale konfigurace série zůstane uložena pro budoucí použití.", 
-				settingsSeriesHelpContent2: "Ř_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ů",
-				settingsSeriesHelpLink: "Ř_See an example of an application with a swipe series here_ů",
+				settingsSeriesHelpContent2: "Série překrývání vám umožní vytvořit a editovat výběr lokací s připojenými nadpisy a textem. Pokud má vaše webová mapa záložky, budou zobrazeny. Sérii můžete zakázat, ale konfigurace bude uložena pro budoucí použití.",
+				settingsSeriesHelpLink: "Zde se podívejte na příklad aplikace se sérií překrývání",
 				preview: "Náhled uživatelského rozhraní",
-				settingsLocateButtonExplain: "Ř_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ů",
+				settingsLocateButtonExplain: "Tato funkcionalita je podporována na většině mobilních zařízení a stolních prohlížečů (včetně Internet Explorer 9+).",
 				settingsLocateButton: "Povolit tlačítko 'Hledat' v podporovaných prohlížečích",
 				settingsAddressSearch: "Povolit nástroj pro vyhledávání adres"
 			},
