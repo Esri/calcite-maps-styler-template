@@ -123,7 +123,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.2-beta10';
+			var version = '1.2-beta11';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -309,6 +309,7 @@
 					<div id="descriptionTitle">
 					</div>
 					<div id="descriptionContent">
+						<div id="descriptionContentInner"></div>
 					</div>
 					<div id="seriesControls">
 						<button type="button" class="btn btn-danger series-discard"></button>
@@ -604,7 +605,7 @@
 									<input type="checkbox" name="optionsLocationSearch" value="locationSearch" >
 									<span class="locationSearchText"></span> <span class="locationSearchInfo"></span>
 								</label>
-								<label class="checkbox">
+								<label class="checkbox" style="width:225px;">
 									<input type="checkbox" name="optionsGeolocator" value="geolocator" >
 									<span class="geolocatorText"></span> <span class="geolocatorInfo"></span>
 								</label>
@@ -697,6 +698,7 @@
 				loadJS('lib/bootstrap/js/bootstrap.min.js');
 				loadJS('lib/spin.min.js');
 				loadJS('lib/cubiq.swipeview.js');
+				loadJS('lib/cubiq.iscroll.js');
 				loadJS('lib/jquery.fastClick.js');
 				loadJS('lib/spectrum/spectrum.js');
 				loadJS('lib/jquery-ui-1.10.3.custom.min.js');
