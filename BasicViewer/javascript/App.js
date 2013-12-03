@@ -161,7 +161,7 @@ define(
                //Is this a hosted app or is it an app with an organization url set to query for info
              //   if(this.config.sharingurl && this.isOrg){
 
-                var requestParams;
+               /* var requestParams;
                 var cookie = dojoCookie("esri_auth");
                 if(cookie && cookie.length > 0){
                   var userInfo = dojoJson.fromJson(dojoCookie("esri_auth"));
@@ -174,11 +174,11 @@ define(
                   requestParams = {
                     "f": "json"
                   }
-                }
+                }*/
 
                  var req = esri.request({
                     url: this.config.sharingurl + "/sharing/rest/portals/self",
-                    content: requestParams, // {"f": "json"},
+                    content: {"f": "json"},
                     callbackParamName:"callback"
                  });
                  req.then(lang.hitch(this, function(response){
