@@ -49,24 +49,20 @@ define([
       //Define the sharing url and other default values like the proxy.
       //The sharing url defines where to search for the web map and application content. The
       //default value is arcgis.com.
-        this._initializeApplication().then(lang.hitch(this, function(){
-
-
-            all([this._getLocalization(), this._queryOrganizationInformation()]).then(lang.hitch(this, function() {
-                this._queryApplicationConfiguration().then(lang.hitch(this, function() {
-                    //update URL Parameters. Uncomment the following line and 
-                    //edit the _queryUrlParams function if your application needs to support
-                    //custom url parameters. 
-                    this._queryUrlParams();
-                    //setup OAuth if oauth appid exists
-                    if (this.config.oauthappid) {
-                        this._setupOAuth(this.config.oauthappid, this.config.sharinghost);
-                    }
-                    deferred.resolve();
-                }));
-            }));
-
+      this._initializeApplication();
+      all([this._getLocalization(), this._queryOrganizationInformation()]).then(lang.hitch(this, function () {
+        this._queryApplicationConfiguration().then(lang.hitch(this, function () {
+          //update URL Parameters. Uncomment the following line and
+          //edit the _queryUrlParams function if your application needs to support
+          //custom url parameters.
+          this._queryUrlParams();
+          //setup OAuth if oauth appid exists
+          if (this.config.oauthappid) {
+            this._setupOAuth(this.config.oauthappid, this.config.sharinghost);
+          }
+          deferred.resolve();
         }));
+      }));
       return deferred.promise;
     },
     _createUrlParamsObject: function (items) {
@@ -91,41 +87,32 @@ define([
       return obj;
     },
     _initializeApplication: function () {
-            var deferred = new Deferred();
-
-            //Check to see if the app is hosted or a portal. If the app is hosted or a portal set the
-            // sharing url and the proxy. Otherwise use the sharing url set it to arcgis.com. 
-            //We know app is hosted (or portal) if it has /apps/ or /home/ in the url. 
-            var appLocation = location.pathname.indexOf("/apps/");
-            if (appLocation === -1) {
-                appLocation = location.pathname.indexOf("/home/");
-            }
-            //app is hosted and no sharing url is defined so let's figure it out. 
-            if (appLocation !== -1) {
-                //hosted or portal
-                var instance = location.pathname.substr(0, appLocation); //get the portal instance name
-                this.config.sharinghost = location.protocol + "//" + location.host + instance;
-                this.config.proxyurl = location.protocol + "//" + location.host + instance + "/sharing/proxy";
-            } else {
-                //setup OAuth if oauth appid exists. If we don't call it here before querying for appid
-                //the idenity manager dialog will appear if the appid isn't publicly shared. 
-                if (this.config.oauthappid) {
-                    this._setupOAuth(this.config.oauthappid, this.config.sharinghost);
-                }
-            }
-            arcgisUtils.arcgisUrl = this.config.sharinghost + "/sharing/rest/content/items";
-            //Define the proxy url for the app 
-            if (this.config.proxyurl) {
-                esriConfig.defaults.io.proxyUrl = this.config.proxyurl;
-                esriConfig.defaults.io.alwaysUseProxy = false;
-            }
-
-            //check sign-in status 
-            esri.id.checkSignInStatus(this.config.sharinghost + "/sharing").then(
-                function(credential){deferred.resolve();},
-                function(error){deferred.resolve();}
-            );
-            return deferred.promise;
+      //Check to see if the app is hosted or a portal. If the app is hosted or a portal set the
+      // sharing url and the proxy. Otherwise use the sharing url set it to arcgis.com.
+      //We know app is hosted (or portal) if it has /apps/ or /home/ in the url.
+      var appLocation = location.pathname.indexOf("/apps/");
+      if (appLocation === -1) {
+        appLocation = location.pathname.indexOf("/home/");
+      }
+      //app is hosted and no sharing url is defined so let's figure it out.
+      if (appLocation !== -1) {
+        //hosted or portal
+        var instance = location.pathname.substr(0, appLocation); //get the portal instance name
+        this.config.sharinghost = location.protocol + "//" + location.host + instance;
+        this.config.proxyurl = location.protocol + "//" + location.host + instance + "/sharing/proxy";
+      } else {
+        //setup OAuth if oauth appid exists. If we don't call it here before querying for appid
+        //the idenity manager dialog will appear if the appid isn't publicly shared.
+        if (this.config.oauthappid) {
+          this._setupOAuth(this.config.oauthappid, this.config.sharinghost);
+        }
+      }
+      arcgisUtils.arcgisUrl = this.config.sharinghost + "/sharing/rest/content/items";
+      //Define the proxy url for the app
+      if (this.config.proxyurl) {
+        esriConfig.defaults.io.proxyUrl = this.config.proxyurl;
+        esriConfig.defaults.io.alwaysUseProxy = false;
+      }
     },
     _setupOAuth: function (id, portal) {
       OAuthHelper.init({
@@ -207,6 +194,15 @@ define([
         if (this.config.helperServices && this.config.helperServices.geometry && this.config.helperServices.geometry.url) {
           esriConfig.defaults.geometryService = new GeometryService(this.config.helperServices.geometry.url);
         }
+
+        //Set units 
+        if(response.units){
+          this.config.units = response.units
+        }else{
+          //use english 
+          this.config.units = "english";
+        }
+
         deferred.resolve();
       }), function (error) {
             console.log(error);
