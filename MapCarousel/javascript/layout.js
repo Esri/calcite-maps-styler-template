@@ -15,24 +15,24 @@ var webmaps = [], map, currentMap = 0;
 dojo.ready( function(){             
   var defaults = {
      "id": "908dd46e749d4565a17d2b646ace7b1a", //specfiy the group id 
+     "appid": "",
      "numitems":100, //100 is max value
      "bingmapskey": this.commonConfig.bingMapsKey,
      "proxyurl":"",
-     "sharingurl":"",
+     "sharinghost":"",
      "portalurl":"",
      "helperServices": this.commonConfig.helperServices
   };
 
-    var app = new utilities.App(defaults);
-    app.init().then(function (options){
-
-      configOptions = options;
+    var app = new utilities.App(defaults, true);
+    app.on("ready", dojo.hitch(this, function(config){
+      configOptions = config;
       if(configOptions.group){
         configOptions.id = configOptions.group;
       }
       init();
-    });
-
+    }));
+    
  });
 function init() {
   
@@ -165,7 +165,7 @@ function showMap() {
   } else {
     //create the map 
     esri.show(dojo.byId('loadingImg'));
-    createMap(items[currentMap])
+    createMap(items[currentMap]);
   }
 
 }
