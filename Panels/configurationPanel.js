@@ -146,10 +146,6 @@
                 "label": "Place search"
 
             },{
-                "type": "boolean",
-                "fieldName": "basemap_toggle",
-                "label": "Basemap toggle button"
-            },{
                 "type": "options",
                 "fieldName": "basemap_option",
                 "label": "Basemap to switch between",
@@ -191,7 +187,6 @@
         "legend": false,
         "legend_side": "left",
         "home_button": false,
-        "basemap_toggle": false,
         "locate_button": false,
         "geocoder": false
     }
