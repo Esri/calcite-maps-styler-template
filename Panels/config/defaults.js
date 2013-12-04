@@ -41,7 +41,6 @@ define([], function() {
         "legend_side": "right",//left or right 
         /****************Optional Widgets*******************/
         "home_button": true,
-        "basemap_toggle": true,
         "basemap_option": "", //valid values are street, satellite, hybrid, topo, gray, oceans, national-geographic and osm
         "locate_button": true,
         "geocoder": true
