@@ -13,6 +13,7 @@ define([
     "esri/arcgis/utils",
     "esri/IdentityManager",
     "esri/geometry/Point",
+    "esri/dijit/Scalebar",
     "esri/lang",
     "dijit/layout/ContentPane",
     "dijit/layout/LayoutContainer"
@@ -32,6 +33,7 @@ function(
     arcgisUtils,
     IdentityManager,
     Point,
+    Scalebar,
     esriLang,
     ContentPane,
     LayoutContainer
@@ -60,8 +62,14 @@ function(
           //apply the theme to the popups 
           domClass.add(this.map.infoWindow.domNode,  this.config.theme);
 
-          //add optional widgets 
+          //add the scalebar 
+          var scalebar = new Scalebar({
+            map: this.map,
+            scalebarUnit: this.config.units 
+          });
 
+
+          //add optional widgets 
          if(this.config.home_button){//Add the home button to the small slider 
              require(["esri/dijit/HomeButton", "dojo/query"], lang.hitch(this,function(HomeButton,query){
                 var homeButton = new HomeButton({
@@ -71,18 +79,7 @@ function(
             }));
          }
 
-         if(this.config.basemap_toggle){
-            require(["esri/dijit/BasemapToggle"], lang.hitch(this,function(BasemapToggle){
-                //add the basemap toggle button as a child of the map div. This button
-                //is positioned using css. Search main.css for the basemapDiv selector
-                var basemapDiv = domConstruct.create("div",{id:"basemapDiv"},"mapDiv");
-                var basemapToggle = new BasemapToggle({
-                    map: this.map,
-                    basemap: (this.config.basemap_option) ? this.config.basemap_option : "hybrid"
-                },basemapDiv);
-                basemapToggle.startup();
-            }));
-         }
+
 
 
          if(this.config.locate_button){
