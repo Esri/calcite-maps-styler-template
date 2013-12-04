@@ -80,7 +80,7 @@ define([
             // ELEVATIONS PROFILE PARAMETERS //
             var profileParams = {
               map: this.map,
-              profileTaskUrl: this.config.helperServices.elevation.url,
+              profileTaskUrl: this.config.helperServices.elevationSync.url,
               scalebarUnits: this.config.scalebarUnits
             };
 
