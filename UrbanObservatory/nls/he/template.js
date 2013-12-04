@@ -17,7 +17,7 @@
       "moreInfo": "מידע נוסף אודות Urban Observatory",
       "buttonText": "התחל להשוות"
     },
-    "socialMediaMessage":"השווה ערים גלובליות באמצעות מפות כשפה משותפת. חווה #UrbanObservatory",
+    "socialMediaMessage":"השווה 16 ערים גלובליות באמצעות מפות כשפה משותפת. חווה #UrbanObservatory",
     "viewMapOnline": "צפה במפה זו ב ArcGIS.com",
     "selectMapPanel": "בחר פאנל מפה",
     "noDescription": "[ לא קיים תאור ]",

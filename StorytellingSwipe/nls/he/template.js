@@ -35,7 +35,7 @@
 			desktopView: {
 				storymapsText: "מפת סיפור",
 				builderButton: "עבור למצב בנייה",
-				bitlyTooltip: "קבל קישור קצר ליישום"
+				bitlyTooltip: "קבל קישור קצר לאפליקציה"
 			}
 		},
 		builder: {
@@ -81,7 +81,7 @@
 			},
 			settingsHeader: {
 				settingsTabLogo: "כותרת עליונה",
-				settingsLogoExplain: "התאם את הלוגו של הכותרת העליונה (המקסימום הוא 250 x 50 פיקסלים)",
+				settingsLogoExplain: "התאם את הלוגו של הכותרת העליונה (המקסימום הוא 250 x‏ 50 פיקסלים)",
 				settingsLogoEsri: "לוגו של Esri",
 				settingsLogoNone: "אין לוגו",
 				settingsLogoCustom: "לוגו מותאם",

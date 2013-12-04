@@ -29,7 +29,7 @@
     "protocolMismatchError": "协议不匹配错误... 是否仍要继续？",
     "problematicWebmap": "目前此地图遇到了技术问题: ",
     /* DO NOT REPLACE TEXT INSIDE CURLY BRACKETS */
-    "invalidDefaultThemeTemplate": "//“{groupName}//”组中的默认专题//“{theme}//”不可用。",
+    "invalidDefaultThemeTemplate": "\“{groupName}\”组中的默认专题\“{theme}\”不可用。",
     "mapHasNoLODs": "此地图没有定义的 LOD: ",
     "errorCreatingMap": "创建地图时出错: ",
     "cantFindWebmap": "无法找到 web 地图: ",

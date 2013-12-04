@@ -35,7 +35,7 @@
 			desktopView: {
 				storymapsText: "מפת סיפור",
 				builderButton: "עבור למצב בנייה",
-				bitlyTooltip: "קבל קישור קצר ליישום"
+				bitlyTooltip: "קבל קישור קצר לאפליקציה"
 			}
 		},
 		builder: {
@@ -81,7 +81,7 @@
 			},
 			settingsHeader: {
 				settingsTabLogo: "כותרת עליונה",
-				settingsLogoExplain: "התאם את הלוגו של הכותרת העליונה (המקסימום הוא 250 x 50 פיקסלים)",
+				settingsLogoExplain: "התאם את הלוגו של הכותרת העליונה (המקסימום הוא 250 x‏ 50 פיקסלים)",
 				settingsLogoEsri: "לוגו של Esri",
 				settingsLogoNone: "אין לוגו",
 				settingsLogoCustom: "לוגו מותאם",
@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "בחר את הסוג הזה",
 				settingsDataModel2Explain: "בצע Swipe באמצעות web map נוסף.",
 				settingsDataModel2SpyGlassExplain: "חשוף web map נוסף.",
-				settingsDataModel2HelpTitle: "כן_How do I find a web map's ID?_ש",
+				settingsDataModel2HelpTitle: "כיצד למצוא את ה- ID של ה- web map",
 				settingsDataModel2HelpContent: "העתק והדבק תווים אחרי סימן ה =בכתובת ה- URL של ה- web map"
 			},
 			settingsLegend: {
@@ -165,11 +165,11 @@
 				settingsGeolocatorEnable: "הפעל חיפוש מרחבי",
 				settingsLegendHelpContent: "כדי לעדן את תוכן המקרא, השתמש בתוכן העניינים של צפיין ה- ArcGIS.com web map (הסתר במקרא)",
 				settingsSeriesHelpContent: "Swipe להסדרות היא אפשרות ניווט באמצעות כרטיסיות שתדריך את הצופה לתיחום מסוים והצג הכותרת וטקסט תיאור בפאנל בצד. במהלך הפעלה ראשונית, סימניות מה- web map ייבוא וישמשו לאכלוס מראש של מוט הסדרה. הפסקת אפשרות הסדרה מכבה את מוט הסדרה, אבל תצורת הסדרות נשמרת לשימוש עתידי.", 
-				settingsSeriesHelpContent2: "כן_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ש",
-				settingsSeriesHelpLink: "כן_See an example of an application with a swipe series here_ש",
+				settingsSeriesHelpContent2: "סדרת ה-Swipe מאפשרת לך ליצור ולערוך מבחר מיקומים מלווים בכיתוביות כותרות וטקסט. אם ל- web map יש סימניות, הן יוצגו. אתה יכול לבטל את הסדרה, אך ההגדרות תישמרנה לשימוש עתידי.",
+				settingsSeriesHelpLink: "ראה כאן דוגמא לאלפליקציה עם סדרת ה-Swipe",
 				preview: "תצוגה מקדימה של UI",
-				settingsLocateButtonExplain: "כן_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ש",
-				settingsLocateButton: "הפוך לפעית את כפתור 'איתור' לדפדפנים נתמכים",
+				settingsLocateButtonExplain: "פונקציונליות זו נתמכת ברוב המכשירים הניידים ובדפדפנים השולחניים (Internet Explorer 9).",
+				settingsLocateButton: "הפוך לפעיל את כפתור 'איתור' לדפדפנים נתמכים",
 				settingsAddressSearch: "הפוך לפעיל כלי חיפוש כתובת"
 			},
 			settingsSwipePopup: {

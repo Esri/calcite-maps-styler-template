@@ -16,12 +16,12 @@
         legendHeader: "ЛЕГЕНДА"
       },
       datePatterns:{
-        datePattern: "dd MMMM yyyy \'г.\'",
-        yearPattern: "yyyy",
-        hourTimePattern: "H",
-        minuteTimePattern: "H:mm",
-        secondTimePattern: "H:mm:ss",
-        millisecondTimePattern: "H:mm:ss:SSS"
+        datePattern: "ММММ д, гггг",
+        yearPattern: "гггг",
+        hourTimePattern: "Ч",
+        minuteTimePattern: "ч:мм",
+        secondTimePattern: "ч:мм:сс",
+        millisecondTimePattern: "Ч:мм:сс:ммм"
       }
     }
 })
