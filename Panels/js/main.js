@@ -286,24 +286,24 @@ function(
             var options = {
                 map: this.map,
                 autoNavigate: false,
-                theme: "simpleGeocoder"
+                theme: "simpleGeocoder",
+                autoComplete:hasEsri
 
             }
-            //If the World geocoder exists enable auto complete
-            if(hasEsri){
-                options.autoComplete = true;
+   
+   
+            if (hasEsri && esriIdx === 0) {
+
                 options.minCharacters = 0;
                 options.maxLocations = 5;
-                options.searchDelay = 100;    
-
-            }
-            
-            if (hasEsri && esriIdx === 0) {         
+                options.searchDelay = 100
                 options.arcgisGeocoder = geocoders.splice(0, 1)[0]; //geocoders[0];
                 if (geocoders.length > 0) {
                     options.geocoders = geocoders;
                 }
             } else {
+                //options.autoComplete = false;
+                options.arcgisGeocoder = false;
                 options.geocoders = geocoders;
             }
 
