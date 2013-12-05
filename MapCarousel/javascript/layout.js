@@ -20,7 +20,6 @@ dojo.ready( function(){
      "bingmapskey": this.commonConfig.bingMapsKey,
      "proxyurl":"",
      "sharinghost":"",
-     "portalurl":"",
      "helperServices": this.commonConfig.helperServices
   };
 
@@ -46,7 +45,7 @@ function init() {
     load: function (response) {
       //load the portal      
       var signInRequired = (response.access !== 'public')? true : false;
-      portal = new esri.arcgis.Portal(configOptions.portalurl);
+      portal = new esri.arcgis.Portal(configOptions.sharinghost);
 
       dojo.connect(portal, 'onLoad', function(){
       loadPortal(signInRequired);
