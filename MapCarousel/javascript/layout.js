@@ -39,7 +39,7 @@ function init() {
 
    //use esri.request to query the group - if group query fails identity manager will kick-in and get credentials.      
   esri.request({
-    url: configOptions.portalurl + '/sharing/rest/community/groups/' + configOptions.id,
+    url: configOptions.sharinghost + '/sharing/rest/community/groups/' + configOptions.id,
     content: {'f':'json'},
     callbackParamName: 'callback',
     load: function (response) {
