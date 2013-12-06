@@ -208,7 +208,7 @@ define([
           callbackParamName: "callback"
       }).then(lang.hitch(this, function(response) {
        
-          if(response.untis){
+          if(response.units){
               this.config.units = response.units;
           }else{
               this.config.units = "english";
