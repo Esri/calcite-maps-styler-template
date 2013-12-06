@@ -4,7 +4,6 @@ define(
    "dojo/_base/kernel",
    "dojo/_base/array",
    "dojo/dom-class",
-   "dojo/cookie",
    "dojo/_base/json",
    "dojo/Deferred",
    "dojo/promise/all",
@@ -17,7 +16,6 @@ define(
         kernel, 
         array, 
         domClass, 
-        dojoCookie,
         dojoJson,
         Deferred, 
         all, 
@@ -125,8 +123,12 @@ define(
     
              //check sign-in status 
               esri.id.checkSignInStatus(this.config.sharingurl + "/sharing").then(
-                  function(credential){deferred.resolve();},
-                  function(error){deferred.resolve();}
+                  function(credential){
+                    deferred.resolve();
+                  },
+                  function(error){
+                    deferred.resolve();
+                  }
               );
 
 
@@ -159,67 +161,70 @@ define(
 
                 var deferred = new Deferred();
                //Is this a hosted app or is it an app with an organization url set to query for info
-             //   if(this.config.sharingurl && this.isOrg){
-
-               /* var requestParams;
-                var cookie = dojoCookie("esri_auth");
-                if(cookie && cookie.length > 0){
-                  var userInfo = dojoJson.fromJson(dojoCookie("esri_auth"));
-                  userToken = userInfo.token || null;
-                  requestParams = {
-                    "f": "json",
-                    "token": userToken
-                  };
-                }else{
-                  requestParams = {
-                    "f": "json"
-                  }
-                }*/
 
                  var req = esri.request({
                     url: this.config.sharingurl + "/sharing/rest/portals/self",
+                    //content: requestParams,
                     content: {"f": "json"},
                     callbackParamName:"callback"
                  });
                  req.then(lang.hitch(this, function(response){
         
-                        //Is there a custom basemap group owner and title  or id? 
-                        var q = this._parseQuery(response.basemapGalleryGroupQuery);
-                        if(q.id){
-                          this.config.basemapgroup.id = q.id;
-                        }else if(q.title && q.owner){
-                          this.config.basemapgroup.title = q.title;
-                          this.config.basemapgroup.owner = q.owner;
-                        }
+                    this._updateDefaults(response);
+                    deferred.resolve(true); 
 
-                        //Get Units 
-                        if(response.units){
-                          this.config.units = response.units;
-                        }else{
-                          //use english 
-                          this.config.units = "english";
-                        }
-                        //look for helper services and if they exist set them
-                        if(response.isPortal && response.portalMode === "single tenant"){
-                          this.config.sharingurl = response.portalHostname;
-                           esri.arcgis.utils.arcgisUrl = response.portalHostname + "/sharing/rest/content/items";
-                        }
-                        console.log(response.helperServices);
-                        console.log(this.config.helperServices);
-                        lang.mixin(this.config.helperServices, response.helperServices);
-                        //update geometry service (note: replaced the setDefaults call again)
-                        if(this.config.helperServices && this.config.helperServices.geometry && this.config.helperServices.geometry.url){
-                          esri.config.defaults.geometryService = new esri.tasks.GeometryService(this.config.helperServices.geometry.url);
-                        }
-          
-                        deferred.resolve(true); 
-                 }));
-    //            }else{
-  //
-  //                deferred.resolve(true);
-   
-               // }
+                 }), lang.hitch(this, function(error){
+
+                      //IF the request fails lets try it again this time without the credentials 
+                      var new_req = esri.request({
+                            url: this.config.sharingurl + "/sharing/rest/portals/self",
+                            content: {"f": "json"},
+                            callbackParamName:"callback"
+                      },{
+                        disableIdentityLookup:true
+                      });
+
+                      new_req.then(lang.hitch(this, function(response){
+                        this._updateDefaults(response);
+                        deferred.resolve();
+                      }), lang.hitch(this, function(error){ 
+                        console.log("Unable to access resource");
+                      }));
+
+
+                }));
+ 
                 return deferred.promise;
+            },
+            _updateDefaults: function(response){
+             //Is there a custom basemap group owner and title  or id? 
+                  var q = this._parseQuery(response.basemapGalleryGroupQuery);
+                  if(q.id){
+                    this.config.basemapgroup.id = q.id;
+                  }else if(q.title && q.owner){
+                    this.config.basemapgroup.title = q.title;
+                    this.config.basemapgroup.owner = q.owner;
+                  }
+
+                  //Get Units 
+                  if(response.units){
+                    this.config.units = response.units;
+                  }else{
+                    //use english 
+                    this.config.units = "english";
+                  }
+                  //look for helper services and if they exist set them
+                  if(response.isPortal && response.portalMode === "single tenant"){
+                    this.config.sharingurl = response.portalHostname;
+                     esri.arcgis.utils.arcgisUrl = response.portalHostname + "/sharing/rest/content/items";
+                  }
+   
+                  lang.mixin(this.config.helperServices, response.helperServices);
+                  //update geometry service (note: replaced the setDefaults call again)
+                  if(this.config.helperServices && this.config.helperServices.geometry && this.config.helperServices.geometry.url){
+                    esri.config.defaults.geometryService = new esri.tasks.GeometryService(this.config.helperServices.geometry.url);
+                  }
+          
             },
             _parseQuery: function(queryString){
     
