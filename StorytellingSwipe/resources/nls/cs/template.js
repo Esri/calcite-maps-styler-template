@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Vybrat tento typ",
 				settingsDataModel2Explain: "Proveďte překrytí jinou webovou mapou.",
 				settingsDataModel2SpyGlassExplain: "Odkryjte jinou webovou mapu.",
-				settingsDataModel2HelpTitle: "Jak najdu identifikátor webové mapy?",
+				settingsDataModel2HelpTitle: "Jak najdu ID webové mapy?",
 				settingsDataModel2HelpContent: "Překopírovat číslice po rovnítku (=) v URL webové mapy"
 			},
 			settingsLegend: {
@@ -165,7 +165,7 @@
 				settingsGeolocatorEnable: "Povolit geolokátor",
 				settingsLegendHelpContent: "Chcete-li doplnit obsah legendy, použijte obsah prohlížeče webových map ArcGIS.com (Skrýt v legendě)",
 				settingsSeriesHelpContent: "Série překrývání je možnost navigace s pomocí karet, která diváka vede ke konkrétnímu rozsahu a zobrazí název a textový popis v postranním panelu. Během počáteční aktivace se importují záložky z webové mapy / webových map a použijí se k prvotnímu zaplnění lišty série. Zakázáním možnosti série lištu série vypnete, ale konfigurace série zůstane uložena pro budoucí použití.", 
-				settingsSeriesHelpContent2: "Série překrývání vám umožní vytvořit a editovat výběr lokací s připojenými nadpisy a textem. Pokud má vaše webová mapa záložky, budou zobrazeny. Sérii můžete zakázat, ale konfigurace bude uložena pro budoucí použití.",
+				settingsSeriesHelpContent2: "Série překrývání vám umožní vytvořit a editovat výběr lokalit s připojenými nadpisy a textem. Pokud má vaše webová mapa záložky, budou zobrazeny. Sérii můžete zakázat, ale konfigurace bude uložena pro budoucí použití.",
 				settingsSeriesHelpLink: "Zde se podívejte na příklad aplikace se sérií překrývání",
 				preview: "Náhled uživatelského rozhraní",
 				settingsLocateButtonExplain: "Tato funkcionalita je podporována na většině mobilních zařízení a stolních prohlížečů (včetně Internet Explorer 9+).",

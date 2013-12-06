@@ -9,7 +9,7 @@
 				redirectSignIn: "NUKREIPIAMA Į PRISIJUNGIMO PUSLAPĮ",
 				redirectSignIn2: "(jūs būsite nukreiptas čia po prisijungimo)",
 				fail: "Atsiprašome, kelionės žemėlapyje įkėlimas nepavyko",
-				failButton: "Bandyti vėl"
+				failButton: "Pakartoti"
 			},
 			errors: {
 				boxTitle: "Įvyko klaida",
@@ -74,7 +74,7 @@
 				dataPicError7: "Jūsų žemėlapio turas buvo apribotas iki nuotraukų, video negali būti naudojami. Jei pasirinksite pašalinti šį ribojimą, prieš išsaugodami žemėlapio turą patikrinkite ar jūsų nuotraukos dar vis užkraunamos. Jei reikės, jūs galėsite atkurti šį apribojimą.",
 				dataPicError8: "Pašalinti nuotraukų apribojimą",
 				dataPicError9: "Jei šie URL nurodo į video, galite ignoruoti šį įspėjimą. Jei jie nurodo nuotrauką, galite atlikti vieną iš šių dviejų veiksmų:",
-				modalCancel: "Atsisakyti",
+				modalCancel: "Atšaukti",
 				modalApply: "Vykdyti",
 				organizeHeader: "Tvarkyti kelionę",
 				organizeGeneralCaption: "Kelionės taškų rikiavimui, pertempkite juos",
@@ -98,7 +98,7 @@
 				addPictureResolutionKeep: "Išlaikyti originalią skiriamąją gebą %RESOLUTION%",
 				addSelectThumbnail: "Parinkite miniatiūrą",
 				addNoThumbSelected: "Miniatiūra neparinkta",
-				addThumbSelected: "Pažymeta",
+				addThumbSelected: "Pažymėta",
 				addCameraSettingsHeader: "FOTOAPARATO NUSTATYMAI",
 				addThumbnailHeader: "MINIATIŪRA",
 				addLabelPicUrl: "Nuotrauka",
@@ -272,7 +272,7 @@
 			importPopup: {
 				title: "Importuoti",
 				prevBtn: "Grįžti",
-				nextBtn: "Toliau"
+				nextBtn: "Sekantis"
 			},
 			importPopupHome: {
 				header: "Kur saugomi jūsų paveikslai?"
@@ -384,7 +384,7 @@
 			initPopup: {
 				title: "Sveiki atvykę į Žemėlapio turo kūrėją",
 				prevBtn: "Grįžti",
-				nextBtn: "Toliau"
+				nextBtn: "Sekantis"
 			},
 			initPopupHome: {
 				header1: "Kur yra jūsų nuotraukos ir video?",
@@ -395,7 +395,7 @@
 				hostedFsNA: "Galima tik ArcGIS for Organization publikuotojui ir administratoriui",
 				footer1: "Kai baigsite, nepamirškite bendrinti žemėlapio turo su vartotojais per aplikacijos elementų puslapį.",
 				footer3: "Atsisiųsti CSV šabloną",
-				footer4: "\"Išsaugoti\" jei neįmanoma nukrauti",
+				footer4: "Išsaugokite, jei nebus atsiųsta",
 				footer4bis: "Spauskite dešiniu klavišu \"Įrašyti\" jei siuntimas neprasidėjo",
 				footer5: "Sužinokite daugiau",
 				footerProgress: "Vyksta kūrimas",

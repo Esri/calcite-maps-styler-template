@@ -3,7 +3,7 @@
         "viewer": {
             "main": {
                 "scaleBarUnits": "metric",
-                "clearSearch": "Ištrinti",
+                "clearSearch": "Valyti",
                 "datePattern": "yyyy.MMM.dd" // added 2.5.2013
             },
             "errors": {
@@ -28,7 +28,7 @@
             "groupPage": {
                 "showAllMaps": "Rodyti visus žemėlapius",
                 "searchTitle": "Ieškoti šioje grupėje",
-                "searchTitleShort": "Paieška",
+                "searchTitleShort": "Ieškoti",
                 "searchPlaceholder": "Ieškoti žemėlapių",
                 "itemTitle": "Peržiūrėti žemėlapį",
                 "gridSwitch": "Perjungti į vaizdavimą tinkleliu",
@@ -38,12 +38,12 @@
 			"sortFields":{
 				"sortBy": "Rūšiuoti pagal",
 				"modified": "Data",
-				"title": "Antraštė",
+				"title": "Pavadinimas",
 				"type": "Tipas",
 				"numRatings": "Vertinimai",
 				"avgRating": "Vid. vertinimas",
 				"numComments": "Komentarai",
-				"numViews": "Peržiūrų sk."
+				"numViews": "Peržiūras"
 			},
 			"comments":{
 				"commentsHeader": "Komentarai",
@@ -54,13 +54,13 @@
 				"noComments": "Komentarų nėra",
 				"addCommentButton": "Pridėti komentarą",
 				"signIn": "Prisijungti",
-				"register": "Registruotis",
-				"or": "arba",
+				"register": "Registruoti",
+				"or": "or",
 				"toPost": "skelbti komentarą."
 			},
 			"buttons":{
-				"cancel": "Atsisakyti",
-				"submit": "Išsiųsti"
+				"cancel": "Atšaukti",
+				"submit": "Pateikti"
 			},
 			"rating":{
 				"signIn": "Prisijungti",
@@ -68,13 +68,13 @@
 			},
 			"itemInfo":{
 				"createdLabel": "sukurtas",
-				"ratingsLabel": "vertinimas",
-				"ratingsLabelPlural": "vertinimai",
+				"ratingsLabel": "įvertinimas",
+				"ratingsLabelPlural": "reitingai",
 				"viewsLabel": "peržiūra",
 				"viewsLabelPlural": "peržiūros",
 				"commentsLabel": "komentaras",
 				"commentsLabelPlural": "komentarai",
-				"modifiedLabel": "Paskutinį kartą keistas",
+				"modifiedLabel": "Pakeitimo data",
 				"by": "pagal",
 				"separator": ","
 			},
@@ -85,7 +85,7 @@
                 "layersHeader": "Sluoksniai",
                 "enterFullscreen": "Rodyti visame ekrane",
                 "exitFullscreen": "Grįžti iš viso ekrano rėžimo",
-                "arcgisLink": "Elemento apibūdinimas",
+                "arcgisLink": "Elemento aprašas",
                 "moreInformation": "Daugiau informacijos",
                 "geoLocateTitle": "Naudoti esamą padėtį",
                 "openInMobile": "Atverti mobilioje aplikacijoje",
@@ -101,7 +101,7 @@
             },
             "pagination": {
                 "previous": "Ankstesnis",
-                "next": "Kitas",
+                "next": "Sekantis",
                 "first": "Pirmas puslapis",
                 "last": "Paskutinis puslapis",
                 "helip": "&hellip;",

@@ -152,7 +152,7 @@
 				settingsDataModel2Explain: "随另一 web 地图卷起。",
 				settingsDataModel2SpyGlassExplain: "显示另一 web 地图。",
 				settingsDataModel2HelpTitle: "如何查找 web 地图 ID？",
-				settingsDataModel2HelpContent: "复制并粘贴 web 地图 URL 中 '=' 符号后面的数字"
+				settingsDataModel2HelpContent: "复制并粘贴 web 地图 URL 中\“=\”符号后面的数字"
 			},
 			settingsLegend: {
 				settingsTabLegend: "应用程序布局",

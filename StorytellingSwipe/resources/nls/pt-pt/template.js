@@ -151,7 +151,7 @@
 				settingsDataModelSelect: "Selecionar este tipo",
 				settingsDataModel2Explain: "Varrer com outro mapa web.",
 				settingsDataModel2SpyGlassExplain: "Revelar outro mapa web.",
-				settingsDataModel2HelpTitle: "ã_How do I find a web map's ID?_Ç",
+				settingsDataModel2HelpTitle: "Como descobrir o ID do mapa web",
 				settingsDataModel2HelpContent: "Copie e cole os dígitos que aparecem depois do sinal \'=\' no URL do mapa web"
 			},
 			settingsLegend: {
@@ -165,10 +165,10 @@
 				settingsGeolocatorEnable: "Ativar geolocalizador",
 				settingsLegendHelpContent: "Utilize o índice do visualizador de mapas do ArcGIS.com (Ocultar em Legenda)",
 				settingsSeriesHelpContent: "As Séries de Varrimento são uma opção de navegação por separadores que permite guiar o visualizador para uma extensão em particular, e exibir um título e descrição no painel lateral. Durante a primeira ativação, os seus eventuais marcadores de mapas web serão utilizados para pré-preencher a barra de séries. Se desativar esta opção mais tarde, as configurações das suas séries não serão perdidas, reativar esta opção irá carregar o estado antes da desativação.", 
-				settingsSeriesHelpContent2: "ã_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._Ç",
-				settingsSeriesHelpLink: "ã_See an example of an application with a swipe series here_Ç",
+				settingsSeriesHelpContent2: "A aplicação de varrimento permite-lhe criar e editar uma selecção de localizações que acompanham os títulos e texto. Se o seu mapa web possui marcadores, eles serão exibidos. Pode desativar esta opção, mas a configuração será preservada para futuras utilizações.",
+				settingsSeriesHelpLink: "Consulte aqui um exemplo de uma aplicação de varrimento",
 				preview: "Pré-visualizar IU",
-				settingsLocateButtonExplain: "ã_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._Ç",
+				settingsLocateButtonExplain: "Esta funcionalidade é suportada na maioria dos dispositivos móveis e navegadores de internet (incluindo o Internet Explorer 9+).",
 				settingsLocateButton: "Ativar navegadores que suportam um botão 'Localizar'",
 				settingsAddressSearch: "Ativar uma ferramenta de pesquisa de moradas"
 			},

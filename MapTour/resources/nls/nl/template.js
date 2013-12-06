@@ -279,7 +279,7 @@
 			},
 			onlinePhotoSharingCommon: {
 				pictures: "afbeeldingen",
-				videos: "video's",
+				videos: "video\'s",
 				disabled: "Deze functie is uitgeschakeld door de beheerder",
 				disabledPortal: "Deze functie is uitgeschakeld op Portal for ArcGIS",
 				header1: "Uw afbeeldingen moeten openbaar worden gedeeld.",
@@ -297,7 +297,7 @@
 				advancedScratchTip: "Maak een lege tour die u handmatig kunt invullen met behulp van een wizard.",
 				advancedCSVLbl: "Tourgegevens importeren vanaf een CSV-bestand",
 				advancedCSVTip: "Importeer uw tourcontent vanaf een CSV-bestand.",
-				advancedCommonTip: "Om dit te doen moeten uw afbeeldingen en video's al online zijn.",
+				advancedCommonTip: "Om dit te doen moeten uw afbeeldingen en video\'s al online zijn.",
 				select: "Maak een keuze",
 				locUse: "Gebruik de geografische locatie van de afbeeldingen",
 				locExplain: "Het is mogelijk niet handig om de locatie van de afbeeldingen te gebruiken omdat ze geërfd kunnen worden van het album, waardoor alle foto\'s op dezelfde locatie terechtkomen.",
@@ -357,7 +357,7 @@
 			},
 			viewYoutube: {
 				title: "Importeren van YouTube",
-				header: "Voer een YouTube-gebruikersnaam in om te zoeken naar openbaar gedeelde video's.",
+				header: "Voer een YouTube-gebruikersnaam in om te zoeken naar openbaar gedeelde video\'s.",
 				pageInputLbl: "Voer een Youtube-gebruikersnaam in",
 				lookupMsgError: "Gebruiker niet gevonden",
 				howToFind: "Hoe een Youtube-gebruikersnaam vinden",
@@ -366,9 +366,9 @@
 				noData: "Geen openbare video\'s gevonden"
 			},
 			viewGeoTag: {
-				title: "Uw afbeeldingen/video's selecteren en zoeken",
+				title: "Uw afbeeldingen/video\'s selecteren en zoeken",
 				header: "Klik of tik op de afbeeldingen die u wilt importeren om ze te lokaliseren.",
-				headerMore: "Waarom zijn mijn afbeeldingen/video's niet geografisch gelokaliseerd?",
+				headerMore: "Waarom zijn mijn afbeeldingen/video\'s niet geografisch gelokaliseerd?",
 				headerExplain: "Als uw afbeeldingen een geldige locatie hebben, worden ze automatisch op de kaart gelokaliseerd en op het tweede tabblad weergegeven.<br /><br />Standaard slaan Picasa en Flickr de EXIF-metadata voor locaties niet op wanneer u afbeeldingen importeert. Raadpleeg de privacyinstellingen voor Flickr/Picasa om het importeren en gebruiken van de locaties van afbeeldingen door een externe applicatie mogelijk te maken. Mogelijk moet u uw bestaande afbeeldingen opnieuw importeren in Flickr/Picasa zodat de EXIF-gegevens van locaties worden gebruikt.<br /><br />In Facebook moet u naar elke afbeelding gaan, op Bewerken klikken en de locatie selecteren.",
 				leftPanelTab1: "Lokaliseren",
 				leftPanelTab2: "Gelokaliseerd",
@@ -387,11 +387,11 @@
 				nextBtn: "Volgende"
 			},
 			initPopupHome: {
-				header1: "Waar zijn uw afbeeldingen of video's?",
+				header1: "Waar zijn uw afbeeldingen of video\'s?",
 				header2: "Deze assistent helpt u bij het samenstellen van een Kaart Tour met afbeeldingen die al online zijn opgeslagen, of het importeert deze in uw ArcGIS Online for Organizations-account.",
 				title1: "Ze zijn al online",
 				title2: "Ik moet mijn afbeeldingen uploaden",
-				hostedFSTooltip: "Gebruik ArcGIS Online om uw afbeeldingen te hosten (geen ondersteuning voor video's).",
+				hostedFSTooltip: "Gebruik ArcGIS Online om uw afbeeldingen te hosten (geen ondersteuning voor video\'s).",
 				hostedFsNA: "Alleen beschikbaar voor gebruikers van ArcGIS for Organizations met de rol van Publisher en Beheerder",
 				footer1: "Als u klaar bent, moet u niet vergeten om uw Kaart Tour te delen met uw publiek via de applicatie-itempagina.",
 				footer3: "De CSV-template downloaden",
@@ -465,7 +465,7 @@
 					div0a: "De Kaarttour-viewer wordt ondersteund op IE8+. De interactieve builder wordt ondersteund op IE9+. Wij voeren actief tests uit in alle belangrijke browsers, maar als u problemen ondervindt, raden wij u aan Chrome te gebruiken.",
 					div0b: "Als u problemen ondervindt, laat het ons dan weten. Ondertussen kunt u uw Kaarttour bouwen met de CSV-template en zo uw interactie met de builderinterface minimaliseren.",
 					div1: "Afbeeldingen",
-					div2: "We raden het gebruik aan van liggende foto\'s in plaats van staande. Foto's met een beeldverhouding van 4:3 passen het beste. Staande afbeeldingen zijn bruikbaar, maar op kleinere schermen zoals de iPad kan een groot deel van de foto door de tekst worden bedekt (tekst neemt meer ruimte in als het wordt weergegeven in een hoog gebied dan in een liggend gebied). Afbeeldingen met verschillende grootten, vormen en stand kunnen weliswaar worden toegepast in een Kaart tour, maar we raden aan om voor alle afbeeldingen dezelfde grootte en vorm te gebruiken. Op deze manier wordt de gebruiker niet afgeleid door afbeeldingen met verschillende maten tijdens het volgen van de tour.",
+					div2: "We raden het gebruik aan van liggende foto\'s in plaats van staande. Foto\'s met een beeldverhouding van 4:3 passen het beste. Staande afbeeldingen zijn bruikbaar, maar op kleinere schermen zoals de iPad kan een groot deel van de foto door de tekst worden bedekt (tekst neemt meer ruimte in als het wordt weergegeven in een hoog gebied dan in een liggend gebied). Afbeeldingen met verschillende grootten, vormen en stand kunnen weliswaar worden toegepast in een Kaart tour, maar we raden aan om voor alle afbeeldingen dezelfde grootte en vorm te gebruiken. Op deze manier wordt de gebruiker niet afgeleid door afbeeldingen met verschillende maten tijdens het volgen van de tour.",
 					div2a: "Wij raden u aan een maximaal afbeeldingsformaat van 1000 pixels breed x 750 pixels hoog te gebruiken voor de hoofdafbeeldingen en 140x93 voor de thumbnails.",
 					div3: "Tekst opmaken met HTML-tags",
 					div4: "De koptekst, en de titel en het bijschrift van de afbeelding kunnen HTML-tags bevatten voor de opmaak en de koppelingen. Deze code voegt bijvoorbeeld een gele koppeling toe:",
@@ -524,7 +524,7 @@
 				shareA2div1: "Sla de volgende koppeling op %LINK1% en gebruik deze opnieuw of gebruik <a href='%LINK2%' target='_blank'>de applicatie-itempagina</a>.",
 				shareA2div2: "Als u bent aangemeld bij ArcGIS.com als de eigenaar van de applicatie, bevat de applicatie een knop om de interactieve builder te openen:",				
 				shareQ3: "Waar zijn de gegevens opgeslagen?",
-				shareA3: "De Tour-configuratie wordt opgeslagen in <a href='%LINK1%' target='_blank'>dit webmap-item</a> en <a href='%LINK2%' target='_blank'>dit webapplicatie-item</a>. Als u importeren van Flickr, Picasa, Facebook of YouTube hebt gebruikt, blijven uw afbeeldingen en video's daar opgeslagen en worden deze niet gedupliceerd in ArcGIS Online."
+				shareA3: "De Tour-configuratie wordt opgeslagen in <a href='%LINK1%' target='_blank'>dit webmap-item</a> en <a href='%LINK2%' target='_blank'>dit webapplicatie-item</a>. Als u importeren van Flickr, Picasa, Facebook of YouTube hebt gebruikt, blijven uw afbeeldingen en video\'s daar opgeslagen en worden deze niet gedupliceerd in ArcGIS Online."
 			}
         }
     })

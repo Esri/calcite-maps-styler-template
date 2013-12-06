@@ -3,9 +3,9 @@
 		viewer: {
 			loading: {
 				step1: "WCZYTYWANIE APLIKACJI",
-				step2: "WYCZYTYWANIE DANYCH",
+				step2: "WCZYTYWANIE DANYCH",
 				step3: "INICJOWANIE",
-				fail: "Przepraszamy, wczytywanie narzędzia odsłaniania nie powiodło się",
+				fail: "Przepraszamy, wczytywanie narzędzia zwijania nie powiodło się",
 				loadBuilder: "PRZEŁĄCZANIE DO TRYBU KREATORA",
 				failButton: "Ponów próbę"
 			},
@@ -16,14 +16,14 @@
 				invalidConfigNoWebmap: "Błąd krytyczny: Nieprawidłowa konfiguracja (brak zdefiniowanej mapy internetowej)",
 				createMap: "Nie można utworzyć mapy",
 				invalidApp: "Błąd krytyczny: Nie można wczytać aplikacji",
-				initMobile: "Witamy w internetowej aplikacji swipe (z funkcją odsłaniania). Aplikacja nie została skonfigurowana. Interaktywny kreator nie jest obsługiwany na urządzeniach przenośnych.",
-				noBuilderIE8: "Interaktywny kreator narzędzia odsłaniania nie jest obsługiwany przez przeglądarkę Internet Explorer w wersji starszej niż 9.",
-				noLayerView: "Witamy w internetowej aplikacji swipe (z funkcją odsłaniania).<br />Aplikacja nie została jeszcze skonfigurowana.",
+				initMobile: "Witamy w internetowej aplikacji swipe (z funkcją zwijania). Aplikacja nie została skonfigurowana. Interaktywny kreator nie jest obsługiwany na urządzeniach przenośnych.",
+				noBuilderIE8: "Interaktywny kreator narzędzia zwijania nie jest obsługiwany przez przeglądarkę Internet Explorer w wersji starszej niż 9.",
+				noLayerView: "Witamy w internetowej aplikacji swipe (z funkcją zwijania).<br />Aplikacja nie została jeszcze skonfigurowana.",
 				appSave: "Błąd podczas zapisywania aplikacji internetowej",
 				mapSave: "Błąd podczas zapisywania mapy internetowej",
 				notAuthorized: "Nie masz uprawnień do uzyskania dostępu do tej aplikacji.",
 				conflictingProjectionsTitle: "Konflikt odwzorowań",
-				conflictingProjections: "Narzędzie odsłaniania nie obsługuje dwóch map internetowych o różnych odwzorowaniach. Przejdź do ustawień i wybierz mapę internetową o tym samym odwzorowaniu co pierwsza użyta mapa.",
+				conflictingProjections: "Narzędzie zwijania nie obsługuje dwóch map internetowych o różnych odwzorowaniach. Przejdź do ustawień i wybierz mapę internetową o tym samym odwzorowaniu co pierwsza użyta mapa.",
 				cpButton: "Zamknij"
 			},
 			mobileView: {
@@ -124,8 +124,8 @@
 				noFeatureExplain: "Dotknij mapę, aby wybrać obiekt"
 			},
 			settingsLayout: {
-				settingsTabLayout: "Styl odsłaniania",
-				settingsLayoutExplain: "Wybierz styl dla narzędzia odsłaniania.",
+				settingsTabLayout: "Styl zwijania",
+				settingsLayoutExplain: "Wybierz styl dla narzędzia zwijania.",
 				settingsLayoutSwipe: "Pasek pionowy",
 				settingsLayoutSpyGlass: "Lunetka",
 				settingsLayoutSelected: "Wybrany układ",
@@ -159,7 +159,7 @@
 				settingsLegendExplain: "Wybierz ustawienia układu aplikacji.",
 				settingsLegendEnable: "Włącz legendę",
 				settingsDescriptionEnable: "Włącz opis",
-				settingsBookmarksEnable: "Włącz serię odsłaniania",
+				settingsBookmarksEnable: "Włącz serię zwijania",
 				settingsPopupDisable: "Włącz okno podręczne",
 				settingsLocationSearchEnable: "Włącz wyszukiwanie przy użyciu lokatora",
 				settingsGeolocatorEnable: "Włącz geolokator",

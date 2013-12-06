@@ -1,7 +1,7 @@
 ﻿define(
    ({
     viewer: {
-      content_title: "Filtr",
+      content_title: "Filtruj",
       button_text: "Zastosuj",
       filterInstructions: "Filtruj warstwę według wprowadzonych wartości.",
       filterOr: "Którekolwiek z podanych wyrażeń musi być prawdziwe.",

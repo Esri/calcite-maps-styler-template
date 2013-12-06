@@ -15,7 +15,7 @@
       sidePanel: {
         title: "Legenda",
         owner: "savininkas: ",
-        modified: "Paskutinis pakeitimas: ",
+        modified: "Pakeitimo data: ",
         message: "Darbinių sluoksnių nėra"
       },
       mainPanel: {

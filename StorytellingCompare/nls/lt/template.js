@@ -7,7 +7,7 @@
     errors:{
       createMap: "Žemėlapio sukurti nepavyko:",
       general:"Klaida",
-	  timeout:"Iš pradžių pasirinkite kitą kortelę"
+	  timeout:"Norėdami pradėti, pasirinkite kitą kortelę"
     },
     loading:{
     	message: "Įkeliami žemėlapiai"

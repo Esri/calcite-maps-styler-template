@@ -15,7 +15,7 @@
   tools:{
     tweets: {
     "screenName": "Nazwa ekranu",
-    "signIn": "Zaloguj",
+    "signIn": "Logowanie",
     "switchAccount": "Przełącz konto",
     // doc about date and time patterns: http://dojotoolkit.org/reference-guide/dojo/date/locale/format.html
     // yyyy: full year, e.g. 2011

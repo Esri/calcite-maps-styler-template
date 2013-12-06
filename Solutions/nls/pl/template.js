@@ -29,7 +29,7 @@ define(
             shareViaEmail: "Udostępnij przez e-mail",  // Command button to share the current map extents via email
             shareViaFacebook: "Udostępnij przez Facebook",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
             shareViaTwitter: "Udostępnij przez Twitter",  // Command button to share the current map extents via a Twitter tweet: a URL is opened that permits the user to log into Twitter with a tweet that is ready to go
-            print: "Drukuj mapę",  // Command button to open a dialog box for specifying print orientation, title, and author before printing; also used inside print dialog box
+            print: "Drukowanie mapy",  // Command button to open a dialog box for specifying print orientation, title, and author before printing; also used inside print dialog box
             fetchPrint: "Wyświetl drukowaną mapę",  // Command button to open a PDF containing a map that was just printed by the print map command
             landscape: "Orientacja pozioma strony",  // Command button in the print map dialog box to select the landscape page orientation
             portrait: "Orientacja pionowa strony",  // Command button in the print map dialog box to select the portrait page orientation

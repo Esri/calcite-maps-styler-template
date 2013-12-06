@@ -94,12 +94,12 @@
     },
     search: {
       title: "Najít adresu nebo místo",
-      popupTitle: "Umístění",
-      currentLocation: "Aktuální umístění",
+      popupTitle: "Lokalita",
+      currentLocation: "Aktuální lokalita",
       notWhatYouWanted: "Nenašli jste, co jste hledali?" ,
-      selectAnother: "Vybrat jiné umístění",
+      selectAnother: "Vybrat jinou lokalitu",
       errors:{
-       missingLocation: "Umístění nenalezeno."
+       missingLocation: "Lokalita nenalezena"
       }
     }
   },

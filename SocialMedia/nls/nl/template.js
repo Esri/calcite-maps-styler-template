@@ -179,7 +179,7 @@
             },
             "flickr": {
                 "title": "Flickr",
-                "description": "Foto's van Flickr"
+                "description": "Foto\'s van Flickr"
             },
             "twitter": {
                 "title": "Twitter",
@@ -187,11 +187,11 @@
             },
             "youtube": {
                 "title": "YouTube",
-                "description": "Video's van YouTube"
+                "description": "Video\'s van YouTube"
             },
             "panoramio": {
                 "title": "Panoramio",
-                "description": "Foto's van Panoramio"
+                "description": "Foto\'s van Panoramio"
             },
             "ushahidi": {
                 "title": "Ushahidi",

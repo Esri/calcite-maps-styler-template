@@ -7,7 +7,7 @@
 				step3: "PRADEDAMA",
 				fail: "Atsiprašome keitiklio krovimas nepavyko",
 				loadBuilder: "PERSIJUNGIAMA Į KŪRIMO REŽIMĄ",
-				failButton: "Bandyti vėl"
+				failButton: "Pakartoti"
 			},
 			errors: {
 				boxTitle: "Įvyko klaida",
@@ -24,7 +24,7 @@
 				notAuthorized: "Neturite teisių pasiekti šią aplikaciją",
 				conflictingProjectionsTitle: "Nesuderinamos projekcijos",
 				conflictingProjections: "Keitiklis nepalaiko dviejų internetinių žemėlapių su skirtingomis projekcijomis. Atidarykite nustatymus ir naudokite internetinį žemėlapį, naudojantį tą pačią projekciją kaip ir pirmasis internetinis žemėlapis.",
-				cpButton: "Uždaryti"
+				cpButton: "Užverti"
 			},
 			mobileView: {
 				hideIntro: "SLĖPTI ĮŽANGĄ",
@@ -54,7 +54,7 @@
 				no: "Ne",
 				popoverOpenViewExplain: "Atverdami peržiūros programą, prarasite visus neįrašytus pakeitimus",
 				popoverOpenViewOk: "Gerai",
-				popoverOpenViewCancel: "Atsisakyti",
+				popoverOpenViewCancel: "Atšaukti",
 				popoverSaveWhenDone: "Užbaigus nepamirškite įrašyti",
 				closeWithPendingChange: "Ar tikrai patvirtinate šį veiksmą ? Atlikti pakeitimai bus prarasti.",
 				gotIt: "Gerai",
@@ -71,7 +71,7 @@
 			},
 			settings: {
 				settingsHeader: "Aplikacijos nuostatos",
-				modalCancel: "Atsisakyti",
+				modalCancel: "Atšaukti",
 				modalApply: "Vykdyti"
 			},
 			settingsColors: {
@@ -184,7 +184,7 @@
 			},
 			initPopup: {
 				initHeader: "Sveiki atvykę į Keitiklio kūrėją",
-				modalNext: "Toliau",
+				modalNext: "Sekantis",
 				modalPrev: "Ankstesnis",
 				modalApply: "Atidaryti aplikaciją"
 			},

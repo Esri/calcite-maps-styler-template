@@ -17,7 +17,7 @@
       "moreInfo": "Więcej informacji na temat aplikacji Urban Observatory",
       "buttonText": "Rozpocznij porównywanie"
     },
-    "socialMediaMessage":"Porównaj miast z całego świata we wspólnym języku map. Poznaj aplikację #UrbanObservatory",
+    "socialMediaMessage":"Porównaj miasta z całego świata we wspólnym języku map. Poznaj aplikację #UrbanObservatory",
     "viewMapOnline": "Wyświetl mapę na stronie ArcGIS.com",
     "selectMapPanel": "WYBIERZ PANEL MAPY",
     "noDescription": "[ BRAK OPISU ]",

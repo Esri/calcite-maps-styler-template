@@ -17,7 +17,7 @@
       "moreInfo": "Další informace o aplikaci Urban Observatory",
       "buttonText": "Začít porovnávat"
     },
-    "socialMediaMessage":"Porovnejte světových měst pomocí map jako univerzálního jazyka. Poznejte #UrbanObservatory",
+    "socialMediaMessage":"Porovnejte 16 světových měst pomocí map jako univerzálního jazyka. Poznejte #UrbanObservatory",
     "viewMapOnline": "Zobrazit tuto mapu v ArcGIS.com",
     "selectMapPanel": "VYBERTE MAPOVÝ PANEL",
     "noDescription": "[ BEZ POPISU ]",

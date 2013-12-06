@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Obrázek",
 				addLabelThumbUrl: "Miniatura",
 				addTextPlaceholderUrl: "Zadejte URL obrázku.",
-				addTextPlaceholderUrl2: "Zadejte URL stránky YouTube.",
+				addTextPlaceholderUrl2: "Zadejte URL YouTube stránky.",
 				addTextPlaceholderUrl3: "Zadejte URL stránky Vimeo.",
 				addTextPlaceholderUrl4: "Zadejte URL pro vložení videa.",
 				addLabelVideo: "Video",
@@ -297,7 +297,7 @@
 				advancedScratchTip: "Vytvořte prázdnou prohlídku, kterou budete moci manuálně zaplnit pomocí průvodce.",
 				advancedCSVLbl: "Importovat data prohlídky ze souboru CSV",
 				advancedCSVTip: "Importujte svůj obsah prohlídky ze souboru CSV.",
-				advancedCommonTip: "Vyžaduje, aby obrázky a videa už byly online.",
+				advancedCommonTip: "Je nutné, aby obrázky a videa už byly online.",
 				select: "Provést výběr",
 				locUse: "Používat geo-umístění obrázků",
 				locExplain: "Používat lokaci obrázků nemusí být vždy vhodné, protože může být převzata z alba. Všechny obrázky by tak byly umístěny ve stejné lokaci.",
@@ -478,7 +478,7 @@
 					div9: "Další informace najdete v <a href='https://github.com/Esri/map-tour-storytelling-template-js/raw/master/Readme.pdf' target='_blank'>podrobném průvodci</a>.",
 					div10: "Režim vkládání",
 					div11: "Chcete-li vložit šablonu do jiné webové stránky pomocí iframe, přidáním volitelného parametru \"&embed\" na konec adresy URL odstraníte záhlaví. Ve verzi ke stažení lze tento režim nastavit také konfiguračním souborem.",
-					div12: "Vyhněte se použití iFrame úzké šířky, který pro maximální zjednodušení používání donutí prohlídku mapy přepnout do rozvržení pro malé dotykové displeje. Při vkládání prohlídky mapy doporučujeme vedle vložené prohlídky vždy poskytnout odkaz, aby uživatelé prohlídku mohli spustit na celé obrazovce." 
+					div12: "Vyhněte se použití iFrame úzké šířky, který pro maximální zjednodušení používání přepne prohlídku mapy do rozvržení pro malé dotykové displeje. Při vkládání prohlídky mapy doporučujeme vedle vložené prohlídky vždy poskytnout odkaz, aby uživatelé prohlídku mohli spustit na celé obrazovce." 
 				},
 				tab5: {
 					title: "Publikování",

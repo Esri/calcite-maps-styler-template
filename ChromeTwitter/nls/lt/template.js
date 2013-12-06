@@ -35,7 +35,7 @@
     title: "Twitter pranešimai",
     error: "Nieko nerasta, bandykite kitą paieškos žodį ar vietą",
 		search:{
-			label: "Paieška",
+			label: "Ieškoti",
 			title: "Ieškoti Twitter",
 			placeholder: 'Raktažodžiai paieškai'
 		},

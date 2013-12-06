@@ -29,7 +29,7 @@
                 "showAllMaps": "Pokaż wszystkie mapy",
                 "searchTitle": "Wyszukaj tę grupę",
                 "searchTitleShort": "Wyszukaj",
-                "searchPlaceholder": "Wyszukaj mapy",
+                "searchPlaceholder": "Mapy z funkcją wyszukiwania",
                 "itemTitle": "Wyświetl mapę",
                 "gridSwitch": "Przełącz do widoku siatki",
                 "listSwitch": "Przełącz do widoku listy",
@@ -67,7 +67,7 @@
 				"toRate": "aby ocenić."
 			},
 			"itemInfo":{
-				"createdLabel": "utworzono",
+				"createdLabel": "utworzone",
 				"ratingsLabel": "ocena",
 				"ratingsLabelPlural": "oceny",
 				"viewsLabel": "wyświetlenie",

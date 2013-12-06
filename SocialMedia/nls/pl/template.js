@@ -23,7 +23,7 @@
                 "noText": "Wprowadź miejsce wyszukiwania.",
                 "noLocation": "Nie można odnaleźć lokalizacji.",
                 "integersOnly": "W polu mogą znajdować się wyłącznie liczby całkowite.",
-                "nodesc": "Brak opisu.",
+                "nodesc": "Brak opisu",
                 "notAvailable": "Niedostępne", // added 8.26.2013
                 "outsideArea": "Znajdujesz się obecnie poza obsługiwanym obszarem", // added 8.26.2013
                 "geoLocationTimeOut": "Przekroczono limit czasu. Nie można wykonać operacji", // added 8.26.2013
@@ -112,7 +112,7 @@
                 "layers": "Warstwy",
                 "layersTitle": "Przeglądaj warstwy",
                 "social": "Społeczne",
-                "socialTitle": "Media społecznościowe",
+                "socialTitle": "Social Media",
                 "link": "Łącze",
                 "linkTitle": "Udostępnij aplikację internetową",
                 "about": "Informacje o",
@@ -123,10 +123,10 @@
                 "heatmap": "Gęstość", // added 8.26.2013
                 "map": "Mapa", // added 8.26.2013
                 "share": "Udostępnij", // added 8.26.2013
-                "home": "Start", // added 8.26.2013
+                "home": "Strona główna", // added 8.26.2013
                 "bookmarks": "Zakładki", // added 8.26.2013
                 "noBookmarks": "Brak zakładek", // added 8.26.2013
-                "layerVisible": "Widoczność warstw", // added 8.26.2013
+                "layerVisible": "Widoczność warstwy", // added 8.26.2013
                 "flagAppropriate": "Oflaguj jako niewłaściwe", // added 8.26.2013
                 "flatReporting": "raportowanie", // added 8.26.2013
                 "zoomToLabel": "Powiększ do", // added 8.26.2013
@@ -134,7 +134,7 @@
                 "locator": "Pokaż lokalizator", // added 8.26.2013
                 "tinyUrl": "Pokaż adres TinyUrl", // added 8.26.2013
                 "refresh": "Odśwież", // added 8.26.2013
-                "refreshContext": "Kliknij, aby załadować nowe źródła." // added 8.26.2013
+                "refreshContext": "Kliknij, aby wczytać nowe źródła." // added 8.26.2013
             },
             "shareMenu": {
                 "menuTitle": "Udostępnij aktualny widok",
@@ -147,7 +147,7 @@
                 "preview": "Wyświetl podgląd i dostosuj"
             },
             "itemInfo": {
-                "createdLabel": "utworzono",
+                "createdLabel": "utworzone",
                 "ratingsLabel": "ocena",
                 "ratingsLabelPlural": "oceny",
                 "viewsLabel": "wyświetlenie",
@@ -161,7 +161,7 @@
             "social": {
                 "menuTitle": "Warstwy mediów społecznościowych",
                 "screenName": "Nazwa ekranu",
-                "signIn": "Zaloguj",
+                "signIn": "Logowanie",
                 "switchAccount": "Przełącz konto"
             },
             "preview": {

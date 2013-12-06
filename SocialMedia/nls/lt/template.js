@@ -90,7 +90,7 @@
             },
             "places": {
                 "menuTitle": "Pažymėtos vietos",
-                "places": "Vietos",
+                "places": "Žymės",
                 "placesTitle": "Pažymėti vietas",
                 "myLocation": "Dabartinė padėtis",
                 "myLocationTitle": "Centruoti žemėlapį į mano padėtį"
@@ -118,7 +118,7 @@
                 "about": "Apie",
                 "aboutTitle": "Apie šį žemėlapį",
                 "displayAs": "Rodyti kaip",
-                "point": "tašk.",
+                "point": "Taškai",
                 "cluster": "Telkiniai",
                 "heatmap": "Tankumas", // added 8.26.2013
                 "map": "Žemėlapis", // added 8.26.2013
@@ -149,12 +149,12 @@
             "itemInfo": {
                 "createdLabel": "sukurtas",
                 "ratingsLabel": "įvertinimas",
-                "ratingsLabelPlural": "įvertinimai",
+                "ratingsLabelPlural": "reitingai",
                 "viewsLabel": "peržiūra",
                 "viewsLabelPlural": "peržiūros",
                 "commentsLabel": "komentaras",
                 "commentsLabelPlural": "komentarai",
-                "modifiedLabel": "Paskutinis pakeitimas",
+                "modifiedLabel": "Pakeitimo data",
                 "by": "pagal",
                 "separator": ","
             },

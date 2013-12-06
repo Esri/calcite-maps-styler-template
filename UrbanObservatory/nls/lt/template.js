@@ -7,7 +7,7 @@
       "Work": "Veikla",
       "Movement": "Transportas",
       "People": "Žmonės",
-      "Public": "Visuomenė",
+      "Public": "Vieša",
       "Systems": "Sistemos"
     },
     "splashDialog": {
@@ -17,7 +17,7 @@
       "moreInfo": "Daugiau informacijos apie Miestų Observatoriją",
       "buttonText": "Pradėti palyginimą"
     },
-    "socialMediaMessage":"Palyginkite pasaulio miestų naudodami bendrą žemėlapio kalbą. Išbandykite #UrbanObservatory",
+    "socialMediaMessage":"Palyginkite 16 pasaulio miestų naudodami bendrą žemėlapio kalbą. Išbandykite #UrbanObservatory",
     "viewMapOnline": "Peržiūrėti šį žemėlapį naudojant ArcGIS.com",
     "selectMapPanel": "PASIRINKITE ŽEMĖLAPIO SKYDELĮ",
     "noDescription": "[ APRAŠO NĖRA ]",
