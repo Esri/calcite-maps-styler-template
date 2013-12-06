@@ -174,22 +174,7 @@ define(
                     deferred.resolve(true); 
 
                  }), lang.hitch(this, function(error){
-
-                      //IF the request fails lets try it again this time without the credentials 
-                      var new_req = esri.request({
-                            url: this.config.sharingurl + "/sharing/rest/portals/self",
-                            content: {"f": "json"},
-                            callbackParamName:"callback"
-                      },{
-                        disableIdentityLookup:true
-                      });
-
-                      new_req.then(lang.hitch(this, function(response){
-                        this._updateDefaults(response);
-                        deferred.resolve();
-                      }), lang.hitch(this, function(error){ 
-                        console.log("Unable to access resource");
-                      }));
+                  deferred.resolve(true);
 
 
                 }));
