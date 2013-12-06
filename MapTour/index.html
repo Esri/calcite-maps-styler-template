@@ -67,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta18';
+			var version = '2.2-beta20';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -1080,57 +1080,8 @@
 			    return vars[name];
 			}
 			
-			function getCookie(c_name)
-			{
-				var c_value = document.cookie;
-				var c_start = c_value.indexOf(" " + c_name + "=");
-			
-				if (c_start == -1)
-					c_start = c_value.indexOf(c_name + "=");
-			
-				if (c_start == -1)
-					c_value = null;
-				else {
-					c_start = c_value.indexOf("=", c_start) + 1;
-					var c_end = c_value.indexOf(";", c_start);
-					if (c_end == -1)
-						c_end = c_value.length;
-					c_value = unescape(c_value.substring(c_start, c_end));
-				}
-				return c_value;
-			}
-			
-			function isDirectCreationMode()
-			{
-				// Direct Creation mode for AGOL gallery: No URL parameters, on AGOL/Portal and user is logged-in
-				return ! document.location.search || document.location.search == "?" 
-						&& (/(\/apps\/|\/home\/)(MapTour\/)/).test(document.location.pathname)
-						&& getCookie('esri_auth') != null;
-			}
-			
-			if (typeof Object.getOwnPropertyNames !== "function") {
-				Object.getOwnPropertyNames = function (obj) {
-					var keys = [];
-			
-					// Only iterate the keys if we were given an object, and
-					// a special check for null, as typeof null == "object"
-					if (typeof obj === "object" && obj !== null) {    
-						// Use a standard for in loop
-						for (var x in obj) {
-							// A for in will iterate over members on the prototype
-							// chain as well, but Object.getOwnPropertyNames returns
-							// only those directly on the object, so use hasOwnProperty.
-							if (obj.hasOwnProperty(x)) {
-								keys.push(x);
-							}
-						}
-					}
-					return keys;
-				}
-			}
-			
 			if( isProduction ) {
-				if( getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fromscratch') || isDirectCreationMode() )
+				if( getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fromscratch') || getUrlVar('fromGallery') )
 					loadJS('app/maptour-builder-min.js');
 				else
 					loadJS('app/maptour-viewer-min.js');
@@ -1199,13 +1150,9 @@
 					 		loadingIndicator.init();
 							loadingIndicator.setMessage(i18n.viewer.loading.step1);
 							
-						 	require(["storymaps/core/Core", "storymaps/maptour/core/MainView", "storymaps/utils/Helper"], function(Core, MainView, Helper){
+						 	require(["storymaps/core/Core", "storymaps/maptour/core/MainView"], function(Core, MainView){
 						 		var urlParams = urlUtils.urlToObject(document.location.search).query || {};
-						 		var isInBuilderMode = urlParams.edit != null || urlParams.fromScratch != null || urlParams.fromscratch != null;
-						 		
-								// No URL parameters, on AGOL/Portal and a user is logged-in
-								if( ! Object.getOwnPropertyNames(urlParams).length && Helper.isArcGISHosted() && Helper.getPortalUser() )
-									isInBuilderMode = true;
+						 		var isInBuilderMode = urlParams.edit != null || urlParams.fromScratch != null || urlParams.fromscratch != null || urlParams.fromGallery != null;
 								
 						 		if (isInBuilderMode) {
 						 			require(["storymaps/builder/Builder", "storymaps/maptour/builder/BuilderView"], function(Builder, BuilderView) {
