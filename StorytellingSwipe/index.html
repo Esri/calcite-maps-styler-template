@@ -16,12 +16,12 @@
 			 - create and fill out extensively an ArcGIS.com item that link to your final application
 			 - edit the following four tags as well as the upper title tag on line 4
 		-->
-		<meta name="description" content="A storytelling template that enables users to view and compare two layers of a web map using a vertical bar or a spyglass.">
+		<meta name="description" content="This story map was created with the Esri Swipe application in ArcGIS Online.">
 
 		<!-- Facebook sharing -->
 		<meta property="og:title" content="Swipe"/>
-		<meta property="og:description" content="A storytelling template that enables users to view and compare two layers of a web map using a vertical bar or a spyglass."/>
-		<meta property="og:image" content="http://www.arcgis.com/sharing/rest/content/items/dcaadc9aae1948c5b2df9adf8698f9cc/info/thumbnail/thumbnail.png"/>
+		<meta property="og:description" content="This story map was created with the Esri Swipe application in ArcGIS Online."/>
+		<meta property="og:image" content="resources/icons/esri-globe.png"/>
 
 		<!-- 
 			This template is released under the Apache License V2.0 by Esri http://www.esri.com/
@@ -48,7 +48,7 @@
 				webmaps: ["62702544d70648e593bc05d65180fd64"],
 				// If using one webmap, enter the layer index of the layer to be revealed. 
 				// Index is defined by the web map table of contents (0 is the top layer).
-				layerIndex: 1, 
+				layerIndex: 0, 
 				// Alternatively you can also reuse a web application ID created through the interactive builder in ArcGIS.com 
 				// This allow to reuse the settings like the header configuration without having to edit any configuration here
 				appid: "",
@@ -123,7 +123,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.2-beta13';
+			var version = '1.2-beta14';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
