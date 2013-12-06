@@ -167,7 +167,7 @@ function(
                 var currentLocationName = content;
                 var attr = this.allResults[pos].feature.attributes;
                 content = "<div id='geocodeCurrentResult' style='display:none;'><span style='font-weight:bold;'>";
-                content += this.config.i18n.viewer.main.search.currentLocation;
+                content += "Current Location";//this.config.i18n.viewer.main.search.currentLocation;
                 content += "</span></div>";
                 content += "<span>";
 
@@ -186,11 +186,11 @@ function(
                 content += "<div id='geocodeWantOtherResults'>";
                 content += "<a id='results' style='cursor:pointer'>";
 
-                content += this.config.i18n.viewer.main.search.notWhatYouWanted;
+                content += "Not what you wanted?";//this.config.i18n.viewer.main.search.notWhatYouWanted;
                 content += "</a>";
                 content += "</div>";
                 content += "<div id='geocodeOtherResults' style='display:none;'><span style='font-weight:bold;'>";
-                content += this.config.i18n.viewer.main.search.selectAnother;
+                content += "Select another location";//this.config.i18n.viewer.main.search.selectAnother;
                 content += "</span><br/>";
                 for (var i = 0; i < this.allResults.length; i++) {
                     if (i !== pos) {
@@ -218,7 +218,9 @@ function(
             }
 
             //display a popup for the result
-            this.map.infoWindow.setTitle(this.config.i18n.viewer.main.search.popupTitle);
+            //this.config.i18n.viewer.main.search.popupTitle
+            this.map.infoWindow.setTitle("Location");
+
             this.map.infoWindow.setContent(content);
             query(".li_item").forEach(lang.hitch(this, function(node){
                 on(node, "click", lang.hitch(this, function(){
@@ -228,9 +230,13 @@ function(
                 }));
 
             }));
-            on(dom.byId("results"),"click",lang.hitch(this, function(){
-                this.showOtherResults();
-            }));
+            var resDiv = dom.byId("results");
+            if(resDiv){
+                on(resDiv,"click",lang.hitch(this, function(){
+                    this.showOtherResults();
+                }));
+            }
+
     
  
 
