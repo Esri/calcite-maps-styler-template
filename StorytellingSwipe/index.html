@@ -45,10 +45,10 @@
 				// Choose to swipe between two webmaps or between the layer of a single webmap
 				// can be overrided by using webmap= in URL
 				// e.g: ["WEBMAP_ID"] OR ["WEBMAP_ID_1", "WEBMAP_ID_2"]
-				webmaps: ["62702544d70648e593bc05d65180fd64"],
+				webmaps: ["b987b34df9674e7baa7f7ee1023d49fd"],
 				// If using one webmap, enter the layer index of the layer to be revealed. 
 				// Index is defined by the web map table of contents (0 is the top layer).
-				layerIndex: 0, 
+				layerIndex: 1, 
 				// Alternatively you can also reuse a web application ID created through the interactive builder in ArcGIS.com 
 				// This allow to reuse the settings like the header configuration without having to edit any configuration here
 				appid: "",
@@ -123,7 +123,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.2-beta14';
+			var version = '1.2-beta15';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -216,6 +216,9 @@
 				]
 			};
 		</script>
+		<!--[if IE 7]>
+			<link rel="stylesheet" href="resources/font/storymaps-icons-ie7.css">
+		<![endif]-->
 	</head>
 	<body class="claro">
 		<div id="header">
@@ -244,9 +247,9 @@
 						<span class="msLink">
 							<a href="http://storymaps.esri.com" target="_blank"></a>
 						</span>
-						<div class="shareIcon share_facebook"></div>
-						<div class="shareIcon share_twitter"></div>
-						<a class="shareIcon share_bitly"></a>
+						<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
+						<i class="icon-twitter-1 shareIcon share_twitter"></i>
+						<i class="icon-link shareIcon share_bitly"></i>
 					</div>
 					<div class="logo">
 						<a target="_blank">
