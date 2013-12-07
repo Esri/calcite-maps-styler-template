@@ -67,7 +67,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2-beta20';
+			var version = '2.2-beta21';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -1150,8 +1150,8 @@
 					 		loadingIndicator.init();
 							loadingIndicator.setMessage(i18n.viewer.loading.step1);
 							
-						 	require(["storymaps/core/Core", "storymaps/maptour/core/MainView"], function(Core, MainView){
-						 		var urlParams = urlUtils.urlToObject(document.location.search).query || {};
+						 	require(["storymaps/core/Core", "storymaps/maptour/core/MainView", "storymaps/utils/Helper"], function(Core, MainView, Helper){
+						 		var urlParams = Helper.getUrlParams();
 						 		var isInBuilderMode = urlParams.edit != null || urlParams.fromScratch != null || urlParams.fromscratch != null || urlParams.fromGallery != null;
 								
 						 		if (isInBuilderMode) {
