@@ -15,14 +15,14 @@
   },
   chart: {
     title: "Hoogteprofiel",
-    demResolution: "DEM Resolution",
+    demResolution:"DEM Resolution",
     elevationTitleTemplate: "Hoogte in {0}",
     distanceTitleTemplate: "Afstand in {0}",
     gainLossTemplate: "Min:{min}   Max:{max}   Start:{start}   Einde :{end}   Wijzigen:{gainloss}"
   },
   errors: {
-    MissingConstructorParameters: 'Ontbrekende opbouwparameter.',
-    InvalidConfiguration: 'Ongeldige configuratie.',
+    MissingConstructorParameters: "Ontbrekende opbouwparameter.",
+    InvalidConfiguration: "Ongeldige configuratie.",
     UnableToProcessResults: "Unable to process analysis results."
   }
 });

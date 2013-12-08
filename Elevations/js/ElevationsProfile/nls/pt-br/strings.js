@@ -11,18 +11,18 @@
   },
   buttons: {
     measureLabel: "Medir",
-    helpLabel: "Help"
+    helpLabel: "Ajuda"
   },
   chart: {
     title: "Perfil de Elevação",
-    demResolution: "DEM Resolution",
+    demResolution:"DEM Resolution",
     elevationTitleTemplate: "Elevação em {0}",
     distanceTitleTemplate: "Distância em {0}",
     gainLossTemplate: "Mín:{min}   Máx:{max}   Inicial:{start}   Final:{end}   Alterar:{gainloss}"
   },
   errors: {
-    MissingConstructorParameters: 'Parâmetro do construtor ausente.',
-    InvalidConfiguration: 'Configuração inválida.',
+    MissingConstructorParameters: "Parâmetro do construtor ausente.",
+    InvalidConfiguration: "Configuração inválida.",
     UnableToProcessResults: "Unable to process analysis results."
   }
 });

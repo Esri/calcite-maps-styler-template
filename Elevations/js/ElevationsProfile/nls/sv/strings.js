@@ -11,18 +11,18 @@
   },
   buttons: {
     measureLabel: "Mät",
-    helpLabel: "Help"
+    helpLabel: "Hjälp"
   },
   chart: {
     title: "Profil för höjdkurva",
-    demResolution: "DEM Resolution",
+    demResolution:"DEM Resolution",
     elevationTitleTemplate: "Höjd i {0}",
     distanceTitleTemplate: "Avstånd i {0}",
     gainLossTemplate: "Min:{min}   Max:{max}   Start:{start}   Slut:{end}   Ändring:{gainloss}"
   },
   errors: {
-    MissingConstructorParameters: 'Konstruerarparameter saknas.',
-    InvalidConfiguration: 'Ogiltig konfiguration.',
+    MissingConstructorParameters: "Konstruerarparameter saknas.",
+    InvalidConfiguration: "Ogiltig konfiguration.",
     UnableToProcessResults: "Unable to process analysis results."
   }
 });
