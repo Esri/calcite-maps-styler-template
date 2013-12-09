@@ -22,7 +22,7 @@ define([], function() {
         //HEADER: When true a header section is added to the application. If title and subtitle are specified
         //that information will be used to populate the header area. If no values are specified for title and 
         //subtitle the web map title and subtitle are used. 
-        "header":true,
+        "header":false,
         "title": null,
         "subtitle": null,
         //FOOTER: When true and footer_text is supplied a footer section is added to the map. 
