@@ -15,7 +15,7 @@
   },
   chart: {
     title: "Profil för höjdkurva",
-    demResolution:"DEM Resolution",
+    demResolution:"DEM-upplösning",
     elevationTitleTemplate: "Höjd i {0}",
     distanceTitleTemplate: "Avstånd i {0}",
     gainLossTemplate: "Min:{min}   Max:{max}   Start:{start}   Slut:{end}   Ändring:{gainloss}"
@@ -23,6 +23,6 @@
   errors: {
     MissingConstructorParameters: "Konstruerarparameter saknas.",
     InvalidConfiguration: "Ogiltig konfiguration.",
-    UnableToProcessResults: "Unable to process analysis results."
+    UnableToProcessResults: "Det gick inte att bearbeta analysresultaten."
   }
 });

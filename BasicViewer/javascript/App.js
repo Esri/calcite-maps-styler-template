@@ -122,15 +122,15 @@ define(
               }
     
              //check sign-in status 
-             deferred.resolve();
-             /* esri.id.checkSignInStatus(this.config.sharingurl + "/sharing").then(
+             
+              esri.id.checkSignInStatus(this.config.sharingurl + "/sharing").then(
                   function(credential){
                     deferred.resolve();
                   },
                   function(error){
                     deferred.resolve();
                   }
-              );*/
+              );
 
 
               return deferred.promise;
@@ -175,6 +175,7 @@ define(
                     deferred.resolve(true); 
 
                  }), lang.hitch(this, function(error){
+                  esri.id.credentials = [];
                   deferred.resolve(true);
 
 

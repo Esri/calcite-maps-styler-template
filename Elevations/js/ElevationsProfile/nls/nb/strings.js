@@ -15,7 +15,7 @@
   },
   chart: {
     title: "Høydeprofil",
-    demResolution:"DEM Resolution",
+    demResolution:"DEM-oppløsning",
     elevationTitleTemplate: "Høyde i {0}",
     distanceTitleTemplate: "Avstand i {0}",
     gainLossTemplate: "Min:{min}   Maks:{max}   Start:{start}   Slutt:{end}   Endring:{gainloss}"
@@ -23,6 +23,6 @@
   errors: {
     MissingConstructorParameters: "Mangler konstruksjonsparameter.",
     InvalidConfiguration: "Ugyldig konfigurasjon.",
-    UnableToProcessResults: "Unable to process analysis results."
+    UnableToProcessResults: "Kan ikke behandle analyseresultatene."
   }
 });

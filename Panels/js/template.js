@@ -125,11 +125,11 @@ define([
         }
 
         //check sign-in status 
-        /*esri.id.checkSignInStatus(this.config.sharinghost + "/sharing").then(
+        esri.id.checkSignInStatus(this.config.sharinghost + "/sharing").then(
             function(credential){deferred.resolve();},
             function(error){deferred.resolve();}
-        );*/
-        deferred.resolve();
+        );
+
         return deferred.promise;
 
     },
@@ -222,7 +222,7 @@ define([
           }
           deferred.resolve();
       }), function(error) {
-          console.log(error);
+          esri.id.credentials = [];
           deferred.resolve();
       });
       return deferred.promise;

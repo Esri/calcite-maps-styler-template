@@ -15,7 +15,7 @@
   },
   chart: {
     title: "ارتفاع الملف التعريفي",
-    demResolution:"DEM Resolution",
+    demResolution:"دقة DEM",
     elevationTitleTemplate: "الارتفاع بـ {0}",
     distanceTitleTemplate: "المسافة بـ {0}",
     gainLossTemplate: "الحد الأدنى:{min}   الحد الأقصى:{max}   البداية:{start}   النهاية:{end}   تغيير:{gainloss}"
@@ -23,6 +23,6 @@
   errors: {
     MissingConstructorParameters: "يوجد معطى مفقود في المنشئ.",
     InvalidConfiguration: "تكوين غير صالح.",
-    UnableToProcessResults: "Unable to process analysis results."
+    UnableToProcessResults: "تتعذر متابعة نتائج التحليل."
   }
 });

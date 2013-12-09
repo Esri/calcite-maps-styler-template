@@ -15,7 +15,7 @@
   },
   chart: {
     title: "高程剖面图",
-    demResolution:"DEM Resolution",
+    demResolution:"DEM 分辨率",
     elevationTitleTemplate: "高程(以 {0} 为单位)",
     distanceTitleTemplate: "距离(以 {0} 为单位)",
     gainLossTemplate: "最小值:{min}   最大值:{max}   起始值:{start}   终止值:{end}   变化值:{gainloss}"
@@ -23,6 +23,6 @@
   errors: {
     MissingConstructorParameters: "缺少构造器参数。",
     InvalidConfiguration: "配置无效。",
-    UnableToProcessResults: "Unable to process analysis results."
+    UnableToProcessResults: "无法处理分析结果。"
   }
 });
