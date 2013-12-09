@@ -32,7 +32,8 @@ APPCFG = {
 	POPUP_BORDER_COLOR: "#444444",
 	POPUP_ARROW_COLOR: "#444444",
 	
-	// Add a 'zoom on my location' button under the +/home/- buttons - only if browser is compatible (IE9) 
+	// Add a 'zoom on my location' button under the +/home/- buttons
+	// For example this is not supported in IE 8
 	DISPLAY_LOCATE_BUTTON: false,
 	
 	MINIMUM_MAP_WIDTH: 450,
