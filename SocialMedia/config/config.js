@@ -1,7 +1,7 @@
 define([], function() {
     var config = {
         "appid": "",
-        "webmap": "4ff792a3962547caad2d924413c40985",
+        "webmap": "8a63712c19a8410082f3dc106118b7d1",
         "socialDisplay": "point",
         "showFlickr": true,
         "showFlickrConfig": true,
