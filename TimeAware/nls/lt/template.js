@@ -23,7 +23,7 @@
       centuryPattern: "yyyy G",
       decadePattern: "yyyy", 
       yearPattern: "yyyy MMMM",
-      weekPattern: "yyyy.MM.dd",
+      weekPattern: "yyyy.MMMM.d",
       hourTimePattern: "H a",
       // e.g. for German: "HH:mm:ss:SSS"
       millisecondTimePattern:"h:m:ss.SSS a",

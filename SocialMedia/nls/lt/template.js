@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "timePattern": "hh:mm", // added 2.5.2013
-                "datePattern": "yyyy.MMM.dd" // added 2.5.2013
+                "datePattern": "yyyy.MMM.d" // added 2.5.2013
             },
             "applicationTitle": {
                 "PIM": "Viešos informacijos žemėlapis" // added 8.26.2013

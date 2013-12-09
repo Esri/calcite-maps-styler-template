@@ -29,7 +29,7 @@
       millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "HH:mm",
       // e.g. for German: "H:mm"
-      monthPattern: "MMMM d, y",
+      monthPattern: "y.MMMM.d",
       secondTimePattern: "h:m:s.SSS a",
       timeRange: "<b>Laika diapazons:</b> ${start_time} līdz ${end_time}",
       timeRangeSingle: "<b>Laika diapazons:</b> ${time}"

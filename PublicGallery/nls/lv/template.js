@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Notīrīt",
-                "datePattern": "MMM d, gggg" // added 2.5.2013
+                "datePattern": "yyyy.MMM.d" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Nevar izveidot karti",

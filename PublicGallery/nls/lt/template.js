@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Valyti",
-                "datePattern": "yyyy.MMM.dd" // added 2.5.2013
+                "datePattern": "yyyy.MMM.d" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Žemėlapio sukurti nepavyko",

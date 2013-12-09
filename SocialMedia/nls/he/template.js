@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "timePattern": "h:mma", // added 2.5.2013
-                "datePattern": "MMM d, yyyy" // added 2.5.2013
+                "datePattern": "d, MMM,  yyyy" // added 2.5.2013
             },
             "applicationTitle": {
                 "PIM": "מפת מידע ציבורי" // added 8.26.2013

@@ -64,7 +64,7 @@
       millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "HH:mm",
       // e.g. for German: "H:mm"
-      monthPattern: "MMMM d, y",
+      monthPattern: "y.MMMM.d",
       secondTimePattern: "h:m:s.SSS a",
       title: "Parādīt laika slīdni",
       label: "Laiks",

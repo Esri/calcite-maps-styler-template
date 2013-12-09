@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "נקה",
-                "datePattern": "MMM d, yyyy" // added 2.5.2013
+                "datePattern": "d, MMM,  yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "לא ניתן ליצור מפה",

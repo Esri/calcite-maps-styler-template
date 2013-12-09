@@ -29,7 +29,7 @@
       millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "h:mm a",
       // e.g. for German: "H:mm"
-      monthPattern: "MMMM d, y",
+      monthPattern: "d, MMMM,  y",
       secondTimePattern: "h:m:s.SSS a",
       timeRange: "<b>טווח זמן: </b> ${start_time} עד ${end_time}",
       timeRangeSingle: "<b>טווח זמן: </b> ${time}"
