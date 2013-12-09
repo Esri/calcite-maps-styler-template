@@ -15,7 +15,7 @@
   },
   chart: {
     title: "Pacēluma profils",
-    demResolution:"DEM Resolution",
+    demResolution:"DEM izšķirtspēja",
     elevationTitleTemplate: "Pacēlums {0}",
     distanceTitleTemplate: "Distance {0}",
     gainLossTemplate: "Min:{min}   Max:{max}   Starts:{start}   Beigas:{end}  Mainīt:{gainloss}"
@@ -23,6 +23,6 @@
   errors: {
     MissingConstructorParameters: "Trūkst konstruktora parametrs.",
     InvalidConfiguration: "Nederīga konfigurācija.",
-    UnableToProcessResults: "Unable to process analysis results."
+    UnableToProcessResults: "Nevar apstrādāt analīzes rezultātus."
   }
 });

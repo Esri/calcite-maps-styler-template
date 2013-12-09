@@ -15,7 +15,7 @@
   },
   chart: {
     title: "Kõrgusprofiil",
-    demResolution:"DEM Resolution",
+    demResolution:"DEM resolutsioon",
     elevationTitleTemplate: "Kõrgus {0}",
     distanceTitleTemplate: "Vahemaa {0}",
     gainLossTemplate: "Min:{min}   Maks:{max}   Algus:{start}   Lõpp:{end}   Muutus:{gainloss}"
@@ -23,6 +23,6 @@
   errors: {
     MissingConstructorParameters: "Puuduv konstruktori parameeter.",
     InvalidConfiguration: "Vale konfiguratsioon.",
-    UnableToProcessResults: "Unable to process analysis results."
+    UnableToProcessResults: "Analüüsi tulemuste töötlemine ebaõnnestus."
   }
 });

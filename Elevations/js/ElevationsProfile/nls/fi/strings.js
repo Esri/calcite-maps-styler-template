@@ -15,7 +15,7 @@
   },
   chart: {
     title: "Korkeusprofiili",
-    demResolution:"DEM Resolution",
+    demResolution:"DEM-tarkkuus",
     elevationTitleTemplate: "Korkeustaso yksiköissä {0}",
     distanceTitleTemplate: "Etäisyys yksiköissä {0}",
     gainLossTemplate: "Min.:{min}   Maks.:{max}   Alku:{start}   Loppu:{end}   Muutos:{gainloss}"
@@ -23,6 +23,6 @@
   errors: {
     MissingConstructorParameters: "Muodostusohjelman parametri puuttuu.",
     InvalidConfiguration: "Virheellinen kokoonpano",
-    UnableToProcessResults: "Unable to process analysis results."
+    UnableToProcessResults: "Analyysin tuloksia ei voi käsitellä."
   }
 });

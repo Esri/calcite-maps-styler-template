@@ -15,7 +15,7 @@
   },
   chart: {
     title: "פרופיל גבהים",
-    demResolution:"DEM Resolution",
+    demResolution:"רזולוצית DEM",
     elevationTitleTemplate: "גובה ב {0}",
     distanceTitleTemplate: "מרחק ב {0}",
     gainLossTemplate: "מינימום:{min}   מקסימום:{max}   התחלה:{start}   סוף:{end}   שינוי:{gainloss}"
@@ -23,6 +23,6 @@
   errors: {
     MissingConstructorParameters: "פרמטר Constructor חסר",
     InvalidConfiguration: "תצורה לא תקינה.",
-    UnableToProcessResults: "Unable to process analysis results."
+    UnableToProcessResults: "לא ניתן לעבד את תוצאות הניתוח."
   }
 });

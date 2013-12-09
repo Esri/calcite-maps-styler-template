@@ -15,7 +15,7 @@
   },
   chart: {
     title: "Aukščių profilis",
-    demResolution:"DEM Resolution",
+    demResolution:"DEM raiška",
     elevationTitleTemplate: "Aukštis {0}",
     distanceTitleTemplate: "Atstumas {0}",
     gainLossTemplate: "Min:{min}   Maks:{max}   Pradžia:{start}   Pabaiga:{end}   Pokytis:{gainloss}"
@@ -23,6 +23,6 @@
   errors: {
     MissingConstructorParameters: "Konstruktoriui trūksta parametrų.",
     InvalidConfiguration: "Neteisinga konfigūracija",
-    UnableToProcessResults: "Unable to process analysis results."
+    UnableToProcessResults: "Neįmanoma apdoroti analizės rezultatų."
   }
 });

@@ -15,7 +15,7 @@
   },
   chart: {
     title: "Výškový profil",
-    demResolution:"DEM Resolution",
+    demResolution:"Rozlišení DEM",
     elevationTitleTemplate: "Nadmořská výška v {0}",
     distanceTitleTemplate: "Vzdálenost v {0}",
     gainLossTemplate: "Min:{min}   Max:{max}   Začátek:{start}   Konec:{end}   Změna:{gainloss}"
@@ -23,6 +23,6 @@
   errors: {
     MissingConstructorParameters: "Chybí parametry konstruktéru.",
     InvalidConfiguration: "Neplatná konfigurace",
-    UnableToProcessResults: "Unable to process analysis results."
+    UnableToProcessResults: "Nelze zpracovat výsledky analýzy."
   }
 });

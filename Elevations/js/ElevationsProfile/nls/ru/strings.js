@@ -15,7 +15,7 @@
   },
   chart: {
     title: "Профиль рельефа",
-    demResolution:"DEM Resolution",
+    demResolution:"Разрешение ЦМР",
     elevationTitleTemplate: "Высота в {0}",
     distanceTitleTemplate: "Расстояние в {0}",
     gainLossTemplate: "Мин:{min}   Макс:{max}   Начало:{start}   Конец:{end}   Изменено:{gainloss}"
@@ -23,6 +23,6 @@
   errors: {
     MissingConstructorParameters: "Пропуск параметра конструктора.",
     InvalidConfiguration: "Некорректная конфигурация",
-    UnableToProcessResults: "Unable to process analysis results."
+    UnableToProcessResults: "Не удалось обработать результаты анализа."
   }
 });

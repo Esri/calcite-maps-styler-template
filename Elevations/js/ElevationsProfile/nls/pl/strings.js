@@ -15,7 +15,7 @@
   },
   chart: {
     title: "Profil wzniesień",
-    demResolution:"DEM Resolution",
+    demResolution:"Rozdzielczość DEM",
     elevationTitleTemplate: "Wzniesienie w {0}",
     distanceTitleTemplate: "Odległość w {0}",
     gainLossTemplate: "Min.:{min}   Maks.:{max}   Początek:{start}   Koniec:{end}   Zmiana:{gainloss}"
@@ -23,6 +23,6 @@
   errors: {
     MissingConstructorParameters: "Brak parametru konstrukcyjnego.",
     InvalidConfiguration: "Nieprawidłowa konfiguracja.",
-    UnableToProcessResults: "Unable to process analysis results."
+    UnableToProcessResults: "Nie można przetworzyć wyników analizy."
   }
 });
