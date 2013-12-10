@@ -71,6 +71,10 @@
 				description: true,
 				// Text that appears in the description panel of the side panel. Valid HTML string expected.
 				sidePanelDescription: "",
+				// Address location search widget
+				locationSearch: false,
+				// Location button that locates user (on supported browsers)
+				geolocator: false,
 				// Dictate if a series is used in the application.  A series is a tabbed navigation tool to guide viewers through particular geographic
 				// extents with appropriate titles and descriptions.
 				series: false,
@@ -105,8 +109,6 @@
 						}
 					}*/
 				],
-				locationSearch: false,
-				geolocator: false,
 				//----------------------------------
 				// Header
 				//----------------------------------
@@ -123,7 +125,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.2-beta16';
+			var version = '1.2';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
