@@ -65,15 +65,15 @@ APPCFG = {
 	//
 	
 	// Enable the use of static icons for map markers
-	// The carousel and mobile UI will continue to be numbered
+	// The desktop carousel and mobile UI won't be numbered
 	USE_STATIC_ICON: {
 		enabled: false,
 		// The path can be relative or absolute
-		url: 'http://glazou.esri.com:8080/src/resources/markers/StaticIcon1.png',
+		url: 'resources/markers/StaticIcon1.png',
 		// If width and height are defined here, markers won't have hover or selected effect
 		// To keep those effects, comment the following line and the value from ICON_CFG will be used
-		width: 34,
-		height: 34
+		width: 24,
+		height: 24
 	},
 	// Ordered list of pin configuration (has to be lower case)
 	PIN_CFG: {
