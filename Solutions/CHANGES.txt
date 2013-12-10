@@ -1,0 +1,21 @@
+change report #1 at 12/10/2013  8:09:23.58
+-
+for git branch
+master
+in repository local-government-online-apps
+-
+changes in this branch since its last commit
+D  ConstituentEngagement.html
+M  ParcelViewer.html
+M  README.md
+D  TagEditView.html
+M  apps2/ParcelViewer.json
+M  images/consteng_thumb.png
+M  images/parcelvw_thumb.png
+M  images/tagedtvw_thumb.png
+M  js2/lgonlineDrawing.js
+M  nls/pl/template.js
+M  nls/pt-pt/template.js
+M  s1.html
+M  s2.html
+?? CHANGES.txt
