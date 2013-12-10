@@ -5,7 +5,6 @@
     "dojo/_base/connect",
     "esri/lang",
     "dojo/_base/array",
-    "dojo/_base/lang",
     "dojo/_base/event",
     "dojo/dom",
     "dojo/query",
@@ -32,7 +31,7 @@
     "esri/geometry",
     "esri/utils"
   ],
-  function (dojo, declare, lang, connect, esriLang, arr, lang, event, dom, query, i18n, coreFx, domClass, date, on, ioQuery, locale, esri, templateConfig, cookie, JSON, config, arcgisUtils, GeometryService, Extent, Point, SpatialReference, QueryTask, Query, urlUtils) {
+  function (dojo, declare, lang, connect, esriLang, array, event, dom, query, i18n, coreFx, domClass, date, on, ioQuery, locale, esri, templateConfig, cookie, JSON, config, arcgisUtils, GeometryService, Extent, Point, SpatialReference, QueryTask, Query, urlUtils) {
       var Widget = declare("modules.utils", null, {
           constructor: function (options) {
               declare.safeMixin(this, options);
@@ -55,7 +54,7 @@
             var _self = this;
             var hasEsri = false,
                 geocoders = lang.clone(templateConfig.helperServices.geocode);
-            arr.forEach(geocoders, function(geocoder, index) {
+            array.forEach(geocoders, function(geocoder, index) {
                 if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
                     hasEsri = true;
                     geocoder.name = "Esri World Geocoder";
@@ -66,7 +65,7 @@
                 }
             });
             //only use geocoders with a singleLineFieldName that allow placefinding
-            geocoders = arr.filter(geocoders, function(geocoder) {
+            geocoders = array.filter(geocoders, function(geocoder) {
                 return (esriLang.isDefined(geocoder.singleLineFieldName) && esriLang.isDefined(geocoder.placefinding) && geocoder.placefinding);
             });
             var esriIdx;
@@ -96,6 +95,10 @@
             } else {
                 options.arcgisGeocoder = false;
                 options.geocoders = geocoders;
+            }
+            if(!geocoders || !geocoders.length){
+                options.arcgisGeocoder = true;
+                options.geocoders = null;
             }
             return options;
             },
