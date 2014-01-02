@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "english",
                 "clearSearch": "Tyhjennä",
-                "datePattern": "KKK p, vvvv" // added 2.5.2013
+                "datePattern": "MMM d, yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Karttaa ei voi luoda",
