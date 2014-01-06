@@ -133,7 +133,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 36a521698e32e71e 2013-12-10 08:10:08 -0800"
+                "commit 14d81b237dec3862 2013-12-18 07:57:23 -0800"
             ]
         }
     }, {
@@ -278,9 +278,11 @@
             "portraitButtonIconUrl": "images/portraitDoc.png",
             "portraitButtonTooltip": "@tooltips.portrait",
             "portraitServerSpec": "Letter ANSI A Portrait",
-            "titleHint": "title",
+            "titleHint": null,
+            "titleHintDefault": "@labels.title",
             "titleClass": "printDlogItem",
-            "authorHint": "author",
+            "authorHint": null,
+            "authorHintDefault": "@labels.author",
             "authorClass": "printDlogItem",
             "printButtonIconUrl": "images/print.png",
             "printButtonClass": "commandButton printDlogItem",
