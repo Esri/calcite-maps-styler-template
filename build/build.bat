@@ -69,6 +69,8 @@ mkdir %BUILD_OUTPUT%\TwoPane\Chrome
 mkdir %BUILD_OUTPUT%\TwoPane\pavement                   
 mkdir %BUILD_OUTPUT%\TwoPane\seaside                        
 mkdir %BUILD_OUTPUT%\UrbanObservatory
+mkdir %BUILD_OUTPUT%\PublicInformation
+mkdir %BUILD_OUTPUT%\DataSummary
 
 
 xcopy %TEMPLATES_ROOT%\archive\CompareConfigure                 %BUILD_OUTPUT%\Compare\Configure                    /E /Y
@@ -128,6 +130,8 @@ xcopy %TEMPLATES_ROOT%\archive\TwoPaneChrome                    %BUILD_OUTPUT%\T
 xcopy %TEMPLATES_ROOT%\archive\TwoPanePavement                  %BUILD_OUTPUT%\TwoPane\pavement                     /E /Y
 xcopy %TEMPLATES_ROOT%\archive\TwoPaneSeaside                   %BUILD_OUTPUT%\TwoPane\seaside                      /E /Y
 xcopy %TEMPLATES_ROOT%\UrbanObservatory                         %BUILD_OUTPUT%\UrbanObservatory                     /E /Y
+xcopy %TEMPLATES_ROOT%\PublicInformation                        %BUILD_OUTPUT%\PublicInformation                    /E /Y
+xcopy %TEMPLATES_ROOT%\DataSummary                              %BUILD_OUTPUT%\DataSummary                          /E /Y
 
 
 REM Finally copy assorted files in the root directory
