@@ -1,0 +1,68 @@
+.calcite .icon-container {
+    margin: 10px 0 20px;
+}
+.calcite .map-size-label {
+    float: left;
+    font-size: 15px;
+    margin: 0 5px 0 0;
+}
+.esriRTL .calcite .map-size-label {
+    float: right;
+    margin: 0 0 0 5px;
+}
+.calcite .share-dialog-icon {
+    font-size: 32px;
+    line-height: 32px;
+    float: left;
+    color: #007ac2;
+    cursor: pointer;
+    margin: 0 10px 0 0;
+}
+.esriRTL .calcite .share-dialog-icon {
+    float: right;
+    margin: 0 0 0 10px;
+}
+.calcite .share-dialog-icon:hover {
+    color: #97cbec;
+}
+.calcite .share-dialog-icon:active {
+    color: #555;
+}
+.calcite .share-map-url {
+    width: 50%;
+    min-width: 30%;
+    max-width: 90%;
+    height: 25px;
+    font-size: 14px;
+    color: #777;
+    border: 1px solid #dcdcdc;
+    margin: 0 0 20px;
+}
+.calcite .map-size-container {
+    margin: 0;
+    padding: 0 0 20px;
+}
+.calcite .embed-map-size-clear,
+.calcite .icon-clear {
+    clear: both;
+}
+.calcite .embed-map-size-dropdown {
+    float: left;
+}
+.esriRTL .calcite .embed-map-size-dropdown {
+    float: right;
+}
+.calcite .share-dialog-subheader {
+    font-size: 19px;
+    margin: 0 0 5px;
+}
+.calcite .share-dialog-textarea {
+    width: auto;
+    max-width: 90%;
+    width: 75%;
+    height: 75px;
+    font-size: 14px;
+    color: #777;
+    border: 1px solid #dcdcdc;
+    margin: 0 0 20px;
+}

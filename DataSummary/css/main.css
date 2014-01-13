@@ -1,0 +1,604 @@
+/* General */
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+}
+input[type=text]::-ms-clear {
+    display: none;
+}
+.calcite a {
+    color: #007ac2;
+}
+.calcite a:visited {
+    color: #97cbec;
+}
+.calcite a:hover {
+    color: #555;
+}
+.calcite a:active {
+    color: #555;
+}
+.esriRTL .esriSimpleSliderTL {
+    left:auto;
+    right:20px;
+}
+/* General Misc */
+
+.toggle-grey {
+    color: #999;
+}
+.toggle-grey:hover,
+.toggle-grey:active {
+    color: #333;
+}
+.toggle-grey-on {
+    color: #007ac2;
+}
+.toggle-grey-on:hover,
+.toggle-grey-on:active {
+    color: #97cbec;
+}
+.button-container {
+    padding: 6px;
+    line-height: 22px;
+    font-size: 18px;
+}
+.top-menu-right {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: right;
+}
+.esriRTL .top-menu-right{
+    float:left;
+    left:auto;
+    right:0;
+}
+.icon-right {
+    float: right;
+    cursor: pointer;
+    height: 34px;
+    padding: 0;
+    margin: 0;
+}
+.esriRTL .icon-right{
+    float:left;
+}
+/* Drawer */
+
+.top-bar {
+    position: absolute;
+    z-index: 36;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
+    height: 34px;
+    border-bottom: 1px solid #ddd;
+}
+.esriRTL .top-bar{
+    left:auto;
+    right:0;
+}
+.app-title {
+    color: #007ac2;
+    padding: 6px 0;
+    line-height: 22px;
+    font-size: 18px;
+    font-weight: 700;
+    max-width: 40%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    float: left;
+}
+.esriRTL .app-title{
+    float:right;
+}
+.hamburger-button {
+    float: left;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    height: 34px;
+    font-size: 25px;
+    line-height: 34px;
+}
+.esriRTL .hamburger-button{
+    float:right;
+}
+.border-container-outer {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    overflow: hidden;
+}
+.content-pane-left {
+    width: 0px;
+    max-width: 280px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: #fff;
+    overflow: hidden;
+    -webkit-transition: width 250ms ease;
+    -moz-transition: width 250ms ease;
+    -ms-transition: width 250ms ease;
+    -o-transition: width 250ms ease;
+    transition: width 250ms ease;
+}
+.drawer-open .content-pane-left {
+    width: 280px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.drawer-open-shadow .content-pane-left:before {
+    -webkit-box-shadow: inset -1px 0 6px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: inset -1px 0 6px 0 rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    content: '';
+    display: block;
+    pointer-events: none;
+}
+.esriRTL .drawer-open-shadow .content-pane-left:before {
+    left:auto;
+    right:0;
+}
+.content-pane-center {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+/* Map */
+
+.calcite .map {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.BasemapToggle {
+    position: absolute;
+    top: 55px;
+    right: 20px;
+    z-index: 35;
+}
+.esriRTL .BasemapToggle{
+    right:auto;
+    left:20px;
+}
+.map-buttons {
+    position: absolute;
+    top: 127px;
+    left: 20px;
+    z-index: 35;
+}
+.esriRTL .map-buttons{
+    left:auto;
+    right:20px;
+}
+.HomeButtonCalcite {
+    margin-top: 6px;
+}
+.mobile-geocoder-icon {
+    display: none;
+}
+.geocoder-mobile {
+    float: left;
+    width: 75%;
+}
+.esriRTL .geocoder-mobile{
+    float:right;
+} 
+.drawer-open .geocoder-mobile {
+    width: 60%;
+}
+.geocoder-mobile .esriGeocoderContainer {
+    width: 100%;
+}
+.mobile-locate-box-hidden {
+    display: none;
+}
+.geocoder-mobile .esriGeocoder input {
+    width: 75%;
+}
+.drawer-open .geocoder-mobile .esriGeocoder input {
+    width: 60%;
+}
+.close-geocoder-button {
+    float: left;
+    width: 60px;
+    padding: 1px 0;
+    line-height: 30px;
+    height: 30px;
+    color: #999;
+    margin-left: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    text-align: center;
+}
+.esriRTL  .close-geocoder-button{
+    float:right;
+    margin-left:0;
+    margin-right:10px;
+}
+.close-geocoder-button:hover {
+    color: #555;
+}
+.close-geocoder-button:active {
+    color: #007ac2;
+}
+.mobile-locate-box-hidden {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 35px;
+    width: 100%;
+}
+.esriRTL .mobile-locate-box-hidden {
+    left:auto;
+    right:0;
+}
+.mobile-locate-box-hidden .mobile-search-container {
+    padding: 5px 15px;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.7);
+    height: 32px;
+}
+/* Drawer Menu */
+
+.drawer-menu-container {
+    width: 280px;
+}
+.drawer-menu-panels .panel {
+    display: none;
+    width: 100%;
+}
+.drawer-menu-panels .panel-selected {
+    display: block;
+    width: 100%;
+}
+.drawer-menu-buttons {
+    background-color: #007ac2;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    overflow: visible;
+    font-weight: 700;
+    width: 100%;
+}
+.drawer-menu-buttons .item {
+    width: 50%;
+    text-align: center;
+    color: #97cbec;
+    float: left;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.esriRTL .drawer-menu-buttons .item {
+    float:right;
+}
+.drawer-menu-buttons .item-only {
+    width: 100%;
+}
+.drawer-menu-buttons .item-container {
+    position: relative;
+    overflow: visible;
+    padding: 7px 0;
+}
+.drawer-menu-buttons .item .title {
+    padding: 7px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
+}
+.drawer-menu-buttons .item-first .title {
+    border-right: 1px solid #5fa8d4;
+}
+.esriRTL .drawer-menu-buttons .item-first .title {
+    border-right:0;
+    border-left: 1px solid #5fa8d4;
+}
+.drawer-menu-buttons .item-only .title {
+    border-right: 0;
+}
+.esriRTL .drawer-menu-buttons .item-only .title {
+    border-left:0;   
+}
+.drawer-menu-buttons .item-selected {
+    color: #fff;
+    cursor: default;
+}
+.drawer-menu-buttons .arrow {
+    display: none;
+}
+.drawer-menu-buttons .item-selected .arrow {
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    z-index: 2;
+    height: 9px;
+    width: 100%;
+    background: url(../images/selected-arrow.png) no-repeat center bottom;
+}
+.esriRTL .drawer-menu-buttons .item-selected .arrow {
+    left:auto;
+    right:0;
+}
+.drawer-menu-buttons .item-only .arrow {
+    display: none;
+}
+/* Misc */
+
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+/* Loading */
+
+.loading-indicator {
+    height: 100%;
+    width: 100%;
+    display: block;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: #eee;
+    background-position: center center;
+    background-image: url(../images/ajax-loader.gif);
+    background-repeat: no-repeat;
+}
+/* Media Queries */
+
+/* max width */
+
+@media screen and (max-width: 850px) {
+    .mobile-locate-box-display {
+        display: none;
+    }
+    .app-title {
+        max-width: 30%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .mobile-locate-box-hidden {
+        display: none;
+    }
+    .app-title {
+        max-width: 35%;
+    }
+}
+@media only screen and (max-width: 510px) {
+    .app-title {
+        display: none;
+    }
+}
+@media screen and (max-width: 480px) {
+    .esriAttribution {
+        display: none!important;
+    }
+    .mobile-locate-box-display {
+        display: block!important;
+    }
+    .esriSimpleSlider,
+    .BasemapToggle,
+    .app-title,
+    .esriAttribution,
+    .locate-box {
+        display: none!important;
+    }
+    .map-buttons {
+        top: 55px!important;
+        display: block!important;
+    }
+    .mobile-locate-box-display {
+        display: block!important;
+    }
+    .mobile-geocoder-icon,
+    .geocoder-mobile {
+        display: block!important;
+    }
+    .mobile-locate-box-hidden {
+        display: none;
+    }
+}
+@media screen and (max-width: 320px) {
+    .locate-box {
+        display: none!important;
+    }
+}
+@media screen and (max-width: 310px) {
+    .top-menu-right,
+    .mobile-locate-box-hidden {
+        display: none!important;
+    }
+}
+@media screen and (max-width: 800px) {
+    .drawer-open .app-title {
+        display: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .drawer-open .esriSimpleSlider,
+    .drawer-open .map-buttons,
+    .drawer-open .BasemapToggle,
+    .drawer-open .app-title,
+    .drawer-open .esriAttribution,
+    .drawer-open .locate-box {
+        display: none!important;
+    }
+    .drawer-open .mobile-locate-box-display {
+        display: block!important;
+    }
+    .drawer-open .mobile-geocoder-icon,
+    .drawer-open .geocoder-mobile {
+        display: block!important;
+    }
+    .drawer-open .locate-box {
+        display: none!important;
+    }
+}
+@media screen and (max-width: 580px) {
+    .drawer-open .top-menu-right,
+    .drawer-open .mobile-locate-box-hidden {
+        display: none!important;
+    }
+}
+/* max height */
+
+@media screen and (max-height: 256px) {
+    .esriAttribution {
+        display: none!important;
+    }
+    .mobile-locate-box-display {
+        display: block!important;
+    }
+    .esriSimpleSlider,
+    .BasemapToggle,
+    .app-title,
+    .esriAttribution,
+    .locate-box {
+        display: none!important;
+    }
+    .map-buttons {
+        top: 55px!important;
+        display: block!important;
+    }
+    .mobile-locate-box-display {
+        display: block!important;
+    }
+    .mobile-geocoder-icon,
+    .geocoder-mobile {
+        display: block!important;
+    }
+    .mobile-locate-box-hidden {
+        display: none;
+    }
+}
+/* iPhone 5 in portrait and landscape */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+    /* STYLES GO HERE */
+    .esriSimpleSlider,
+    .BasemapToggle,
+    .app-title,
+    .locate-box {
+        display: none!important;
+    }
+    .map-buttons {
+        top: 55px!important;
+        display: block!important;
+    }
+    .mobile-locate-box-display {
+        display: block!important;
+    }
+    .mobile-geocoder-icon,
+    .geocoder-mobile {
+        display: block!important;
+    }
+}
+/* iPhone 5 in landscape */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+    .mobile-geocoder-icon,
+    .geocoder-mobile {
+        display: block!important;
+    }
+    .drawer-open .mobile-locate-box-display {
+        display: block!important;
+    }
+    .drawer-open .map-buttons {
+        top: 55px!important;
+        display: block!important;
+    }
+    .drawer-open .esriSimpleSlider,
+    .drawer-open .BasemapToggle,
+    .drawer-open .app-title,
+    .drawer-open .locate-box {
+        display: none!important;
+    }
+    .drawer-open .esriAttribution {
+        display: none!important;
+    }
+    .drawer-open .geocoder-mobile .esriGeocoderResults,
+    .drawer-open .geocoder-mobile .esriGeocoder input,
+    .drawer-open .geocoder-mobile .esriGeocoderContainer ul li {
+        font-size: 15px!important;
+    }
+}
+/* iPhone 5 in portrait */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {}
+/* iPhone 2G-4S in portrait and landscape */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .mobile-locate-box-display {
+        display: block!important;
+    }
+    .map-buttons {
+        top: 55px!important;
+        display: block!important;
+    }
+    .esriSimpleSlider,
+    .BasemapToggle,
+    .app-title,
+    .locate-box {
+        display: none!important;
+    }
+    .esriAttribution {
+        display: none!important;
+    }
+}
+/* iPhone 2G-4S in landscape */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
+    .mobile-geocoder-icon {
+        display: block!important;
+    }
+    .geocoder-mobile .esriGeocoderResults,
+    .geocoder-mobile .esriGeocoder input,
+    .geocoder-mobile .esriGeocoderContainer ul li {
+        font-size: 15px!important;
+    }
+}
+/* iPhone 2G-4S in portrait */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
+    .geocoder-mobile .esriGeocoderResults,
+    .geocoder-mobile .esriGeocoder input,
+    .geocoder-mobile .esriGeocoderContainer ul li {
+        font-size: 15px!important;
+    }
+}

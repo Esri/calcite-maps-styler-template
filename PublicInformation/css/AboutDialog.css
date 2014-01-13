@@ -1,0 +1,15 @@
+.calcite .dialog-header {
+    font-weight: 700;
+    margin: 10px 0;
+}
+.calcite .title-header {
+    margin: 0 0 5px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.calcite .more-info {
+    padding-bottom: 40px;
+}
+.calcite .dialog-description {
+    margin: 0 0 20px;
+}

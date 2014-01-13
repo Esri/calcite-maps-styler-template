@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Public Information Map</title>
+    <meta charset="utf-8" />
+    <!--Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional.-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <!-- End Mobile -->
+    <!-- SEO -->
+    <meta name="Keywords" content="Public Information Map, Map, Esri" />
+    <meta name="Description" content="A fully configurable and responsive web mapping application that highlights areas of interest through data, map notes, and/or social content to a wide audience." />
+    <!-- End SEO -->
+    <!-- Facebook -->
+    <meta property="og:image" content="images/item.png" />
+    <meta property="og:site_name" content="esri" />
+    <!-- End Facebook -->
+    <!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.8/js/esri/css/esri.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700" />
+    <!--Load any application specific styles-->
+    <link rel="stylesheet" type="text/css" href="css/dijit.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontello.css" />
+    <link rel="stylesheet" type="text/css" href="css/TableOfContents.css" />
+    <link rel="stylesheet" type="text/css" href="css/HomeButton.css" />
+    <link rel="stylesheet" type="text/css" href="css/LocateButton.css" />
+    <link rel="stylesheet" type="text/css" href="css/SimpleSlider.css" />
+    <link rel="stylesheet" type="text/css" href="css/popup.css" />
+    <link rel="stylesheet" type="text/css" href="css/dialogs.css" />
+    <link rel="stylesheet" type="text/css" href="css/geocoder.css" />
+    <link rel="stylesheet" type="text/css" href="css/ShareDialog.css" />
+    <link rel="stylesheet" type="text/css" href="css/AboutDialog.css" />
+    <link rel="stylesheet" type="text/css" href="css/FlickrLayer.css" />
+	<link rel="stylesheet" type="text/css" href="css/TwitterLayer.css" />
+	<link rel="stylesheet" type="text/css" href="css/WebcamsLayer.css" />
+	<link rel="stylesheet" type="text/css" href="css/InstagramLayer.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" href="css/fontello-ie7.css" /><![endif]-->
+    <!--[if lt IE 11]><link rel="stylesheet" type="text/css" href="css/no-shadow.css" /><![endif]-->
+</head>
+<body class="calcite">
+    <!--The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. -->
+    <div id="loadingIndicatorDiv" class="loading-indicator"></div>
+    <div id="bc_outer" class="border-container-outer">
+        <div id="cp_outer_left" class="content-pane-left">
+            <div id="drawer_menus"></div>
+        </div>
+        <div id="cp_outer_center" class="content-pane-center">
+            <div id="geoData"></div>
+            <div class="top-bar">
+                <div id="hamburger_button" class="hamburger-button toggle-grey toggle-grey-on">
+                    <div class="icon-menu-1"></div>
+                </div>
+                <div id="title" class="app-title"></div>
+                <div class="top-menu-right">
+                    <div id="AboutDialog"></div>
+                    <div id="ShareDialog"></div>
+                    <div class="locate-box">
+                        <div id="geocoderSearch"></div>
+                    </div>
+                    <div id="mobileGeocoderIcon" class="mobile-geocoder-icon icon-right">
+                        <div id="mobileGeocoderIconContainer" class="button-container toggle-grey icon-search-1"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div id="mobileSearch" class="mobile-locate-box-hidden">
+                <div class="mobile-search-container">
+                    <div id="geocoderMobile"></div>
+                    <div id="btnCloseGeocoder" class="close-geocoder-button">Cancel</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div id="mapButtons" class="map-buttons">
+                <div id="LocateButton"></div>
+                <div id="HomeButton"></div>
+            </div>
+            <div id="BasemapToggle"></div>
+            <div id="mapDiv" dir="ltr"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+        var dojoConfig = {
+            //The location.pathname.replace() logic below may look confusing but all its doing is
+            // enabling us to load the api from a CDN and load local modules from the correct location.
+            packages: [{
+                name: "application",
+                location: package_path + '/js'
+            }, {
+                name: "modules",
+                location: package_path + '/js'
+            }, {
+                name: "views",
+                location: package_path + '/views'
+            }, {
+                name: "config",
+                location: package_path + '/config'
+            }]
+        };
+    </script>
+    <script type="text/javascript" src="//js.arcgis.com/3.8/init.js"></script>
+    <script type="text/javascript">
+        require([
+            "dojo/on",
+            "application/main",
+            "application/template",
+            "dojo/domReady!"
+        ], function(
+            on,
+            Main,
+            Template
+        ) {
+            //create the template. This will take care of all the logic required for template applciations
+            //If you need localization set the supportsLocalization value to true to get the localized strings
+            //from the javascript/nls/resource files.
+            //Note that we've included a placeholder nls folder and a resource file with one error string
+            //to show how to setup the strings file.
+            var supportsLocalization = true; //defaults to false
+            var myTemplate = new Template(supportsLocalization);
+            on(myTemplate, "ready", function(config) {
+                //The config object contains the following properties: helper services, (optionally)
+                //i18n, appid, webmap and any custom values defined by the applcation.
+                //In this example we have one called theme.
+                Main(config);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-215788-4']);
+         //_gaq.push(['_setDomainName', 'esri.com']);
+        _gaq.push(['_trackPageview']);
+        _gaq.push(['_trackPageLoadTime']);
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!--[if lt IE 9]><script type="text/javascript" src="js/respond.min.js"></script><![endif]-->
+</body>
+</html>
