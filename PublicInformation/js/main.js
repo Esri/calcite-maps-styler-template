@@ -20,6 +20,7 @@ define([
     "esri/dijit/Popup",
     "modules/AreaOfInterest",
     "modules/SocialLayers",
+    "esri/dijit/OverviewMap"
 ],
 function(
     declare,
@@ -36,7 +37,8 @@ function(
     Geocoder,
     Popup,
     AreaOfInterest,
-    SocialLayers
+    SocialLayers,
+    OverviewMap
 ) {
     return declare("", [AreaOfInterest, SocialLayers], {
         config: {},
@@ -188,6 +190,22 @@ function(
                     }, legendNode);
                     LL.startup();
                 }
+            }
+            // i18n overview placement
+            var overviewPlacement = 'left';
+            if(this.config.i18n.direction === 'rtl'){
+                overviewPlacement = 'right';
+            }
+            // Overview Map
+            if(this.config.showOverviewMap){
+                this._overviewMap = new OverviewMap({
+                    attachTo: "bottom-" + overviewPlacement,
+                    height: 150,
+                    width: 150,
+                    visible: this.config.openOverviewMap,
+                    map: this.map
+                });
+                this._overviewMap.startup();
             }
             // geocoders
             this._createGeocoders();

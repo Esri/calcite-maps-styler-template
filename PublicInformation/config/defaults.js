@@ -24,6 +24,8 @@ define([], function() {
         "showAboutDialog":true,
         "ShowShareDialog":true,
         "showBookmarks": true,
+        "showOverviewMap":false,
+        "openOverviewMap":true,
         "showMapNotes":true,
         "nextBasemap": "hybrid",
         "currentBasemap": "topo",
