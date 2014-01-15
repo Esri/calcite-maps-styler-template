@@ -38,7 +38,9 @@ define(
         labels: {
             email: "email",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
-            Twitter: "Twitter"  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
+            Twitter: "Twitter",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
+            title: "Ж_title_Я",  // Shown as title hint in print specification box if a title hint is not configured
+            author: "Ж_author_Я"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
             search: "Поиск:",  // Appears before a search text field in dialog box for searching for a feature
@@ -51,7 +53,8 @@ define(
             geolocationUnavailable: "Браузер не смог получить текущее местоположение",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Браузер не смог вовремя получить текущее местоположение",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "Этот слой поиска не был найден на карте",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
-            searchFieldMissing: "Это поле не было найдено в слое поиска карты"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
+            searchFieldMissing: "Это поле не было найдено в слое поиска карты",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
+            allSearchFieldsMissing: "Ж_None of these fields was found in the map search layer_Я"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
         }
     })
 );

@@ -38,7 +38,9 @@ define(
         labels: {
             email: "דוא\"ל",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "פייסבוק",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
-            Twitter: "טוויטר"  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
+            Twitter: "טוויטר",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
+            title: "כן_title_ש",  // Shown as title hint in print specification box if a title hint is not configured
+            author: "כן_author_ש"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
             search: "חיפוש:",  // Appears before a search text field in dialog box for searching for a feature
@@ -51,7 +53,8 @@ define(
             geolocationUnavailable: "הדפדפן לא יכול לקבל את המיקום הנוכחי",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "הדפדפן לא יכול לקבל מיקום נוכחי בזמן סביר",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "שכבת חיפוש זו לא נמצאה במפה",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
-            searchFieldMissing: "שדה זה לא נמצא בשכבת חיפוש מפה"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
+            searchFieldMissing: "שדה זה לא נמצא בשכבת חיפוש מפה",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
+            allSearchFieldsMissing: "כן_None of these fields was found in the map search layer_ש"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
         }
     })
 );

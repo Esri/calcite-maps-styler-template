@@ -38,7 +38,9 @@ define(
         labels: {
             email: "E-Mail",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
-            Twitter: "Twitter"  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
+            Twitter: "Twitter",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
+            title: "ä_title_Ü",  // Shown as title hint in print specification box if a title hint is not configured
+            author: "ä_author_Ü"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
             search: "Suche:",  // Appears before a search text field in dialog box for searching for a feature
@@ -51,7 +53,8 @@ define(
             geolocationUnavailable: "Der Browser konnte die aktuelle Position nicht ermitteln",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Der Browser konnte die aktuelle Position nicht rechtzeitig ermitteln",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "Der Such-Layer wurde nicht auf der Karte gefunden",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
-            searchFieldMissing: "Dieses Feld wurde nicht im Such-Layer für die Karte gefunden"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
+            searchFieldMissing: "Dieses Feld wurde nicht im Such-Layer für die Karte gefunden",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
+            allSearchFieldsMissing: "ä_None of these fields was found in the map search layer_Ü"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
         }
     })
 );
