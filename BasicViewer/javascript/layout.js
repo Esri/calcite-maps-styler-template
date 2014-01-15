@@ -16,7 +16,7 @@ var allResults = null;
 var measure;
 
 function initMap(options) {
-/*Patch to fix issue with floating panes used to display the measure and time panel. They
+    /*Patch to fix issue with floating panes used to display the measure and time panel. They
        moved slightly each time the window was toggled due to this bug
        http://bugs.dojotoolkit.org/ticket/5849
        */
@@ -41,7 +41,7 @@ function initMap(options) {
             })
         }).play();
         this.resize(dojo.coords(this.domNode));
-    }
+    };
 
 
 
@@ -58,7 +58,7 @@ function initMap(options) {
     if (options.basemapgrouptitle !== undefined && options.basemapgroupowner !== undefined) {
         configOptions.basemapgroup.title = options.basemapgrouptitle;
         configOptions.basemapgroup.owner = options.basemapgroupowner;
-    };
+    }
     if (configOptions.leftpanelvisible) {
         configOptions.leftPanelVisibility = (configOptions.leftpanelvisible === 'true' || configOptions.leftpanelvisible === true) ? true : false;
     }
@@ -74,7 +74,7 @@ function initMap(options) {
     configOptions.displaybookmarks = (configOptions.displaybookmarks === "true" || configOptions.displaybookmarks === true) ? true : false;
     configOptions.displaylayerlist = (configOptions.displaylayerlist === "true" || configOptions.displaylayerlist === true) ? true : false;
     configOptions.displaydetails = (configOptions.displaydetails === "true" || configOptions.displaydetails === true) ? true : false;
-    configOptions.displaytimeslider = (configOptions.displaytimeslider === "true" || configOptions || displaytimeslider === true) ? true : false;
+    configOptions.displaytimeslider = (configOptions.displaytimeslider === "true" || configOptions.displaytimeslider === true) ? true : false;
     configOptions.displayelevation = (configOptions.displayelevation === "true" || configOptions.displayelevation === true) ? true : false;
     configOptions.displayprint = (configOptions.displayprint === "true" || configOptions.displayprint === true) ? true : false;
     configOptions.displayprintlegend = (configOptions.displayprintlegend === "true" || configOptions.displayprintlegend === true) ? true : false;
@@ -136,7 +136,7 @@ function createApp() {
     if (configOptions.displayslider) {
         configOptions.displaySlider = true;
     } else {
-        configOptions.displaySlider;
+        configOptions.displaySlider = false;
     }
 
 
@@ -418,7 +418,7 @@ function initUI(response) {
             content: esri.substitute({
                 close_title: i18n.panel.close.title,
                 close_alt: i18n.panel.close.label
-            }, '<div style="float:right;clear:both;" id="paneCloseBtn"><a title=${close_title} alt=${close_alt} href="JavaScript:hideLeftPanel();"><img src=images/closepanel.png border="0"/></a></div>')
+            }, '<div style="float:right;clear:both;" id="paneCloseBtn" onClick="hideLeftPanel();"><a title=${close_title} alt=${close_alt} href="#"><img src=images/closepanel.png border="0"/></a></div>')
         });
         bc.addChild(cp);
         var cp2 = new dijit.layout.StackContainer({
@@ -501,7 +501,7 @@ function initUI(response) {
                     'thumbCount': 2,
                     'thumbMovingRate': 2000,
                     'timeStopInterval': findDefaultTimeInterval(fullExtent)
-                }
+                };
                 addTimeSlider(timeProperties);
             } else {
                 configOptions.displaytimeslider = false;
@@ -677,11 +677,11 @@ function getBasemapGroup() {
         basemapGroup = {
             "owner": configOptions.basemapgroup.owner,
             "title": configOptions.basemapgroup.title
-        }
+        };
     } else if (configOptions.basemapgroup.id) {
         basemapGroup = {
             "id": configOptions.basemapgroup.id
-        }
+        };
     }
     return basemapGroup;
 
@@ -710,7 +710,7 @@ function addBasemapGalleryMenu() {
     cp.set('content', basemapMenu.domNode);
 
     dojo.connect(basemapGallery, 'onLoad', function () {
-        var menu = dijit.byId("basemapMenu")
+        var menu = dijit.byId("basemapMenu");
         dojo.forEach(basemapGallery.basemaps, function (basemap) {
             //Add a menu item for each basemap, when the menu items are selected
             menu.addChild(new utilities.custommenu({
@@ -909,7 +909,7 @@ function addPrint(layers) {
         legendLayers = dojo.map(layers, function (layer) {
             return {
                 "layerId": layer.id
-            }
+            };
         });
     }
 
@@ -947,7 +947,7 @@ function addPrint(layers) {
                 return param.name === "Layout_Template";
             });
 
-            if (layoutTemplate.length == 0) {
+            if (layoutTemplate.length === 0) {
                 console.log("print service parameters name for templates must be \"Layout_Template\"");
                 return;
             }
@@ -970,7 +970,7 @@ function addPrint(layers) {
             });
             updatePrint(templates);
         }, function (error) {
-            updatePrint(templates)
+            updatePrint(templates);
         });
 
 
@@ -1416,8 +1416,8 @@ function createOptions() {
         autoNavigate: false,
         autoComplete: hasEsri,
         theme: "simpleGeocoder"
-    }
-    if(hasEsri){
+    };
+    if (hasEsri) {
         options.minCharacters = 0;
         options.maxLocations = 5;
         options.searchDelay = 100;
@@ -1589,9 +1589,9 @@ function setupInfoWindowAndZoom(content, geocodeLocation, newExtent, geocodeResu
     });
 
     var location = new esri.geometry.Point(geocodeLocation.x, geocodeLocation.y, geocodeLocation.spatialReference);
-    var handler = dojo.connect(map, "onExtentChange", function () {
+    var extentHandler = dojo.connect(map, "onExtentChange", function () {
         map.infoWindow.show(location);
-        dojo.disconnect(handler);
+        dojo.disconnect(extentHandler);
     });
 
     map.setExtent(newExtent);
