@@ -16,8 +16,6 @@
                "type":"layerAndFieldSelector",
                "layerOptions":{
                   "supportedTypes":[
-                     "MapServiceLayer",
-                     "ImageServiceLayer",
                      "FeatureLayer"
                   ],
                   "geometryTypes":[
@@ -37,9 +35,9 @@
             {
                "type":"string",
                "fieldName":"title",
-               "label":"Title",
+               "label":"Application Title",
                "tooltip":"Application Title",
-               "placeHolder":""
+               "placeHolder":"My Map"
             },
             {
                "type":"boolean",
@@ -68,8 +66,8 @@
             {
                "type":"boolean",
                "fieldName":"showArea",
-               "label":"Show Area",
-               "tooltip":"Show Area"
+               "label":"Show Area Side Panel",
+               "tooltip":"Show Area Side Panel"
             },
             {
                "type":"boolean",
@@ -94,6 +92,12 @@
                "fieldName":"showAboutDialog",
                "label":"Show About Dialog",
                "tooltip":"Show About Dialog"
+            },
+             {
+               "type":"boolean",
+               "fieldName":"showAboutOnLoad",
+               "label":"Show About Dialog on load",
+               "tooltip":"Show About Dialog on load"
             },
             {
                "type":"boolean",
@@ -124,7 +128,13 @@
                "fieldName":"openOverviewMap",
                "label":"Overview Map Widget is open by default",
                "tooltip":"Overview Map Widget is open by default"
-            },
+            }
+             
+            ]
+      },
+      {
+         "category":"<b>Basemap Widget</b>",
+         "fields":[ 
             {
                "type":"string",
                "fieldName":"nextBasemap",
@@ -336,9 +346,10 @@
       "showLocateButton":true,
       "showBasemapToggle":true,
       "showAboutDialog":true,
+      "showAboutOnLoad":false,
       "ShowShareDialog":true,
       "showBookmarks":true,
-      "showOverviewMap":false,
+      "showOverviewMap":true,
       "openOverviewMap":false,
       "showMapNotes":true,
       "nextBasemap":"hybrid",

@@ -4,7 +4,7 @@ This interactive map highlights your area of interest and shows an interactive r
 
 [View it live](http://driskull.github.io/data-summary-map-template-js/)
 
-![App](https://raw.github.com/driskull/data-summary-map-template-js/master/resources/item.png)
+![App](https://raw.github.com/driskull/data-summary-map-template-js/master/images/item.png)
 
 ## Instructions
 

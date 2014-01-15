@@ -169,6 +169,9 @@ function(
                     sharinghost: this.config.sharinghost
                 }, 'AboutDialog');
                 this._AboutDialog.startup();
+                if(this.config.showAboutOnLoad){
+                    this._AboutDialog.open();
+                }
             }
             // share dialog
             if (this.config.ShowShareDialog) {
@@ -176,6 +179,10 @@ function(
                     theme: "icon-right",
                     bitlyLogin: this.config.bitlyLogin,
                     bitlyKey: this.config.bitlyKey,
+                    image: this.config.sharinghost + '/sharing/rest/content/items/' + this.item.id + '/info/' + this.item.thumbnail,
+                    title: this.config.title,
+                    summary: this.item.snippet,
+                    hashtags: 'esriPIM',
                     map: this.map
                 }, 'ShareDialog');
                 this._ShareDialog.startup();
@@ -231,6 +238,8 @@ function(
             domClass.replace(dom.byId("mobileGeocoderIconContainer"), this.css.toggleBlue, this.css.toggleBlueOn);
         },
         _setTitle: function (title) {
+            // set config title
+            this.config.title = title;
             // map title node
             var node = dom.byId('title');
             if (node) {
