@@ -71,6 +71,7 @@ mkdir %BUILD_OUTPUT%\TwoPane\seaside
 mkdir %BUILD_OUTPUT%\UrbanObservatory
 mkdir %BUILD_OUTPUT%\PublicInformation
 mkdir %BUILD_OUTPUT%\DataSummary
+mkdir %BUILD_OUTPUT%\SummaryViewer
 
 
 xcopy %TEMPLATES_ROOT%\archive\CompareConfigure                 %BUILD_OUTPUT%\Compare\Configure                    /E /Y
@@ -132,7 +133,7 @@ xcopy %TEMPLATES_ROOT%\archive\TwoPaneSeaside                   %BUILD_OUTPUT%\T
 xcopy %TEMPLATES_ROOT%\UrbanObservatory                         %BUILD_OUTPUT%\UrbanObservatory                     /E /Y
 xcopy %TEMPLATES_ROOT%\PublicInformation                        %BUILD_OUTPUT%\PublicInformation                    /E /Y
 xcopy %TEMPLATES_ROOT%\DataSummary                              %BUILD_OUTPUT%\DataSummary                          /E /Y
-
+xcopy %TEMPLATES_ROOT%\SummaryViewer                            %BUILD_OUTPUT%\SummaryViewer                        /E /Y
 
 REM Finally copy assorted files in the root directory
 copy /Y %TEMPLATES_ROOT%\*.*  %BUILD_OUTPUT%

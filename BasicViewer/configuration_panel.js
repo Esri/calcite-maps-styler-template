@@ -1,6 +1,15 @@
 {
    "configurationSettings":[
       {
+         "category":"<b>General</b>",
+         "fields":[
+            {
+               "type":"webmap",
+               "label":"Select a map"
+            }
+         ]
+      },
+      {
          "category":"<b>General Settings</b>",
          "fields":[
             {
@@ -81,6 +90,12 @@
                "tooltip":"Display editor if web map contains feature service layer"
             },
             {
+               "type": "boolean",
+               "fieldName": "displayeditortoolbar",
+               "label": "Editor Toolbar",
+               "tooltip": "Display the optional editor toolbar when the editor is enabled."
+            },
+            {
                "type":"boolean",
                "fieldName":"displaytimeslider",
                "label":"Time Slider *",
@@ -121,18 +136,6 @@
                "fieldName":"displayshare",
                "label":"Share",
                "tooltip":""
-            },
-            {
-               "type":"boolean",
-               "fieldName":"displayelevation",
-               "label":"Elevation",
-               "tooltip":"Display an elevation profile for a measured line. Note the measure tool must be displayed."
-            },
-            {
-               "type":"boolean",
-               "fieldName":"showelevationdifference",
-               "label":"Show Elevation Difference",
-               "tooltip":"When true elevation gain and loss is show from the first location to the location under the cursor/finger."
             },
             {
                "type":"boolean",
@@ -187,6 +190,7 @@
       "displayshare":true,
       "displayoverviewmap":true,
       "displayeditor":true,
+      "displayeditortoolbar": false,
       "displaytimeslider":true,
       "displayprintlegend":false,
       "displayprint":true,
@@ -195,8 +199,6 @@
       "displaydetails":true,
       "displaylayerlist":true,
       "displaybasemaps":true,
-      "displayelevation":false,
-      "showelevationdifference":false,
       "printlayout":false
    }
 }
