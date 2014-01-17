@@ -4,6 +4,8 @@ dojo.require("esri.map");
 dojo.require('esri.dijit.Attribution');
 dojo.require("utilities.app");
 dojo.require("dojo.string");
+dojo.require("esri.dijit.LocateButton");
+dojo.require("esri.dijit.HomeButton");
 dojo.require("templateConfig.commonConfig");
 dojo.requireLocalization('esriTemplate', 'template');
 
@@ -20,7 +22,8 @@ dojo.ready( function(){
      "bingmapskey": this.commonConfig.bingMapsKey,
      "proxyurl":"",
      "sharinghost":"",
-     "helperServices": this.commonConfig.helperServices
+     "helperServices": this.commonConfig.helperServices,
+     "mapwidgets": false
   };
 
     var app = new utilities.App(defaults, true);
@@ -97,7 +100,7 @@ function createMap(item) {
     mapOptions: {
       wrapAround180: true,
       showAttribution:true,
-      slider: false
+      slider: configOptions.mapwidgets
     },
     bingMapsKey: configOptions.bingmapskey
   });
@@ -110,6 +113,24 @@ function createMap(item) {
     map.snippet = item.snippet;
     webmaps[currentMap] = map;
 
+    //add the home and locate buttons if mapwidgets is set to true 
+    if(configOptions.mapwidgets){
+       var thisMap = webmaps[currentMap];
+
+     //Find the increment button on the slider
+     var qs = "#" + thisMap.id + " .esriSimpleSliderIncrementButton";
+
+     var home = new esri.dijit.HomeButton({
+        map: thisMap
+      },dojo.create("div",{},dojo.query(qs)[0], "after"));
+      home.startup();
+
+     var locate = new esri.dijit.LocateButton({
+        map: thisMap
+      },dojo.create("div",{},thisMap.id));
+      locate.startup();
+
+    }
 
     updateDetails(map);
     resizeMap();
