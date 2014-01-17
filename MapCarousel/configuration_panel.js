@@ -16,6 +16,6 @@
       }
    ],
    "values":{
-     mapwidgets: false
+     "mapwidgets": false
    }
 }
