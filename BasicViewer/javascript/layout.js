@@ -1231,69 +1231,6 @@ function addEditor(editLayers) {
 //Functions to create and destroy the editor. We do this each time the edit button is clicked. 
 
 
-function createEditor() {
-
-    if (editorWidget) {
-        return;
-    }
-
-    if (editLayers.length > 0) {
-        //create template picker 
-        var templateLayers = dojo.map(editLayers, function (layer) {
-            return layer.featureLayer;
-        });
-
-        var eDiv = dojo.create("div", {
-            id: "editDiv"
-        });
-        dojo.byId('editPanel').appendChild(eDiv);
-        var editLayerInfo = editLayers;
-        //add field infos if applicable - this will contain hints if defined in the popup. Also added logic to hide fields that have visible = false. The popup takes 
-        //care of this for the info window but not for the edit window. 
-        dojo.forEach(editLayerInfo, function (layer) {
-            if (layer.featureLayer && layer.featureLayer.infoTemplate && layer.featureLayer.infoTemplate.info && layer.featureLayer.infoTemplate.info.fieldInfos) {
-                //only display visible fields 
-                var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
-                var fieldInfos = [];
-                dojo.forEach(fields, function (field) {
-                    if (field.visible) {
-                        fieldInfos.push(field);
-                    }
-                });
-                layer.fieldInfos = fieldInfos;
-            }
-        });
-
-
-        var editPanelHeight = dojo.style(dojo.byId("leftPane"), "height");
-
-        var templatePicker = new esri.dijit.editing.TemplatePicker({
-            featureLayers: templateLayers,
-            showTooltip: false,
-            rows: "auto",
-            columns: "auto",
-            style: "height:" + editPanelHeight + "px;width:" + (parseInt(configOptions.leftpanewidth) - 10) + "px;"
-        }, "editDiv");
-        templatePicker.startup();
-        var settings = {
-            map: map,
-            templatePicker: templatePicker,
-            layerInfos: editLayerInfo,
-            toolbarVisible: false
-        };
-        var params = {
-            settings: settings
-        };
-
-
-        editorWidget = new esri.dijit.editing.Editor(params);
-
-        editorWidget.startup();
-
-        disablePopups();
-    }
-
-}
 
 function destroyEditor() {
     if (editorWidget) {
@@ -1321,6 +1258,66 @@ function disablePopups() {
 
 //Create menu of social network sharing options (Email, Twitter, Facebook)
 
+function createEditor() {
+ 
+    if (editorWidget) {
+        return;
+    }
+ 
+    if (editLayers.length > 0) {
+ 
+        var editLayerInfo = editLayers;
+        var templateLayers = dojo.map(editLayers, function (layer) {
+            return layer.featureLayer;
+        });
+        //add field infos if applicable - this will contain hints if defined in the popup. Also added logic to hide fields that have visible = false. The popup takes 
+        //care of this for the info window but not for the edit window. 
+        dojo.forEach(editLayerInfo, function (layer) {
+            
+   
+            if (layer.featureLayer && layer.featureLayer.infoTemplate && layer.featureLayer.infoTemplate.info && layer.featureLayer.infoTemplate.info.fieldInfos) {
+                //only display visible fields 
+                var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
+                var fieldInfos = [];
+                dojo.forEach(fields, function (field) {
+                    if (field.visible) {
+                        fieldInfos.push(field);
+                    }
+                });
+                layer.fieldInfos = fieldInfos;
+            }
+        });
+ 
+ 
+        var editPanelHeight = dojo.style(dojo.byId("leftPane"), "height");
+ 
+        var templatePicker = new esri.dijit.editing.TemplatePicker({
+            featureLayers: templateLayers,
+            showTooltip: false,
+            rows: "auto",
+            columns: "auto",
+            style: "height:" + editPanelHeight + "px;width:" + (parseInt(configOptions.leftpanewidth) - 10) + "px;"
+        }, dojo.create("div",{},"editPanel")); 
+        templatePicker.startup();
+ 
+        var params = {
+            map: map,
+            templatePicker:templatePicker,
+            layerInfos: editLayerInfo,
+            toolbarVisible: configOptions.displayeditortoolbar
+        };
+        editorWidget = new esri.dijit.editing.Editor({settings: params},  dojo.create("div",{
+            id:"editDiv"
+        },"editPanel" ));
+          
+        editorWidget.startup();
+        
+ 
+        
+        disablePopups();
+    }
+ 
+}
 
 function createSocialLinks() {
     //extend the menu item so the </a> links are clickable 
