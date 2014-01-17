@@ -37,6 +37,8 @@ define({root:
 "ro":1,
 "ru":1,
 "sv":1,
+"tr":1,
+"th":1,
 "zh-cn":1
 });
 
