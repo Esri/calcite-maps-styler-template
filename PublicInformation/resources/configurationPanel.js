@@ -47,7 +47,7 @@
             },
             {
                "type":"boolean",
-               "fieldName":"showLegend",
+               "fieldName":"showLegendPanel",
                "label":"Show Legend Panel",
                "tooltip":"Show Legend"
             },
@@ -65,9 +65,9 @@
             },
             {
                "type":"boolean",
-               "fieldName":"showArea",
-               "label":"Show Area Side Panel",
-               "tooltip":"Show Area Side Panel"
+               "fieldName":"showAreaPanel",
+               "label":"Show Area Panel",
+               "tooltip":"Show Area Panel"
             },
             {
                "type":"boolean",
@@ -338,10 +338,11 @@
    ],
    "values":{
       "title":"",
-      "showLegend":true,
+      "showLegendPanel":true,
+      "hideNotesLayerPopups":true,
       "showOperationalLegend":true,
       "showSocialLegend":true,
-      "showArea":true,
+      "showAreaPanel":true,
       "showHomeButton":true,
       "showLocateButton":true,
       "showBasemapToggle":true,
@@ -355,14 +356,14 @@
       "nextBasemap":"hybrid",
       "currentBasemap":"topo",
       "showInstagram":true,
-      "instagramChecked":true,
-      "showFlickr":false,
-      "flickrChecked":true,
+      "instagramChecked":false,
+      "showFlickr":true,
+      "flickrChecked":false,
       "flickrSearch":"",
       "showTwitter":true,
-      "twitterChecked":true,
+      "twitterChecked":false,
       "twitterSearch":"",
-      "showWebcams":false,
-      "webcamsChecked":true
+      "showWebcams":true,
+      "webcamsChecked":false
    }
 }

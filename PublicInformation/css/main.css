@@ -194,7 +194,7 @@ input[type=text]::-ms-clear {
     border-right: 5px solid #007ac2;
 }
 .note-content {
-    background: #dfdfdf;
+    background: #e5e5e5;
     color: #333;
     position: relative;
     max-height: 0;
@@ -307,6 +307,9 @@ input[type=text]::-ms-clear {
     width: 280px;
     overflow: auto;
     overflow-x: hidden;
+}
+.drawer-open .content-pane-left:before {
+    display: none;
 }
 .drawer-open-shadow .content-pane-left:before {
     -webkit-box-shadow: inset -1px 0 6px 0 rgba(0, 0, 0, 0.5);

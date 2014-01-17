@@ -79,13 +79,13 @@ function(
             // menu panels
             this.drawerMenus = [];
             // multiple polygons
-            if (this._multiple && this.config.showArea) {
+            if (this._multiple && this.config.showAreaPanel) {
                 this.drawerMenus.push({
                     label: this.config.i18n.general.aoi,
                     content: '<div class="' + this.css.areaDescription + '" id="areaDescription"></div><div id="renderer_menu"></div>'
                 });
             }
-            if (this.config.showLegend) {
+            if (this.config.showLegendPanel) {
                 // legend menu
                 this.drawerMenus.push({
                     label: this.config.i18n.general.legend,
@@ -160,15 +160,13 @@ function(
                 this._ShareDialog.startup();
             }
             // Legend table of contents
-            if (this.config.showLegend) {
-                var legendNode = dom.byId('TableOfContents');
-                if (legendNode) {
-                    var LL = new TableOfContents({
-                        map: this.map,
-                        layers: this.layers
-                    }, legendNode);
-                    LL.startup();
-                }
+            var legendNode = dom.byId('TableOfContents');
+            if (legendNode) {
+                var LL = new TableOfContents({
+                    map: this.map,
+                    layers: this.layers
+                }, legendNode);
+                LL.startup();
             }
             // geocoders
             this._createGeocoders();
