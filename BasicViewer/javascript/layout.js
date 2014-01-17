@@ -1372,6 +1372,7 @@ function createSocialLinks() {
     });
 }
 
+
 function createOptions() {
 
 
@@ -1395,9 +1396,14 @@ function createOptions() {
         }
 
     });
-    //only use geocoders with a singleLineFieldName that allow placefinding
+    //only use geocoders with a singleLineFieldName that allow placefinding unless its custom
+
     geocoders = dojo.filter(geocoders, function (geocoder) {
-        return (esri.isDefined(geocoder.singleLineFieldName) && esri.isDefined(geocoder.placefinding) && geocoder.placefinding);
+        if(geocoder.name && geocoder.name === "Custom"){
+            return (esri.isDefined(geocoder.singleLineFieldName));
+        }else{
+         return (esri.isDefined(geocoder.singleLineFieldName) && esri.isDefined(geocoder.placefinding) && geocoder.placefinding);
+        }
     });
     var esriIdx;
     if (hasEsri) {
@@ -1441,6 +1447,7 @@ function createSearchTool() {
         configOptions.helperServices.geocode.push({
             name: "Custom",
             outFields: "*",
+            url: configOptions.placefinder.url,
             singleLineFieldName: configOptions.placefinder.singleLineFieldName
         });
     }
@@ -1476,7 +1483,6 @@ function createSearchTool() {
 
 
 }
-
 function checkResults(geocodeResults) {
     allResults = null;
     if (geocodeResults && geocodeResults.results && geocodeResults.results.results) {
