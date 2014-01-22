@@ -16,11 +16,11 @@ define([], function() {
         "logo": "",
         "color": "#80ab00",
         //Counter specific parameters
-        "summaryLayer": "Production Points",
-        "filterField": "Field_Disc",
-        "sumFields": "Net__oil_m,Net__gas_b,Net__NGL_m",
-        "avgFields": "Net__conde,Net__oil_e",
-        "minFields": "Produced_w",
+        "summaryLayer": "",
+        "filterField": "",
+        "sumFields": "",
+        "avgFields": "",
+        "minFields": "",
         "maxFields": "",
         "cluster": true,
         "bingmapskey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
