@@ -102,9 +102,7 @@ xcopy %TEMPLATES_ROOT%\MapTour                                  %BUILD_OUTPUT%\M
 xcopy %TEMPLATES_ROOT%\archive\OnePane                          %BUILD_OUTPUT%\OnePane\main                         /E /Y
 xcopy %TEMPLATES_ROOT%\Panels                                   %BUILD_OUTPUT%\Panels                               /E /Y
 xcopy %TEMPLATES_ROOT%\Panels                                   %BUILD_OUTPUT%\PanelsLegend                         /E /Y
-xcopy %TEMPLATES_ROOT%\Panels\config\onepane.js                 %BUILD_OUTPUT%\PanelsOne\config\defaults.js         /E /Y
-xcopy %TEMPLATES_ROOT%\Panels\config\twopane.js                 %BUILD_OUTPUT%\PanelsTwo\config\defaults.js         /E /Y
-xcopy %TEMPLATES_ROOT%\Panels\config\header.js                  %BUILD_OUTPUT%\PanelsHeader\config\defaults.js      /E /Y
+xcopy %TEMPLATES_ROOT%\Panels\config\onepane.js                 %BUILD_OUTPUT%\Panels\config\defaults.js            /E /Y
 xcopy %TEMPLATES_ROOT%\Panels\config\legend.js                  %BUILD_OUTPUT%\PanelsLegend\config\defaults.js      /E /Y
 xcopy %TEMPLATES_ROOT%\BasicViewer                              %BUILD_OUTPUT%\OnePane\basicviewer                  /E /Y
 xcopy %TEMPLATES_ROOT%\TimeAware                                %BUILD_OUTPUT%\OnePane\azuretime                    /E /Y
