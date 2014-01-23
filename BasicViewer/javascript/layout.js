@@ -1047,8 +1047,10 @@ function addMeasurementWidget() {
 
 function toggleMeasure() {
     if (dojo.byId('floater').style.visibility === 'hidden') {
+        //make sure the floater isn't hidden behind the toolbar
+         dojo.style(dojo.byId("floater"),"top", "0");
+         dijit.byId('floater').show();
 
-        dijit.byId('floater').show();
 
         //if the editor widget exists popups are already disabled. 
         if (!editorWidget) {
@@ -1774,6 +1776,7 @@ function toggleTime(timeProperties) {
     if (dojo.byId('timeFloater').style.visibility === 'hidden') {
         //create and display the time slider 
         createTimeSlider(timeProperties);
+        dojo.style(dojo.byId("timeFloater"),"top", "0");
         dijit.byId('timeFloater').show();
         dijit.byId('mainWindow').resize();
         resizeMap();
