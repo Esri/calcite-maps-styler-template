@@ -1015,7 +1015,7 @@ function addMeasurementWidget() {
         innerHTML: esri.substitute({
             close_title: i18n.panel.close.title,
             close_alt: i18n.panel.close.label
-        }, '<a alt=${close_alt} title=${close_title} href="JavaScript:toggleMeasure();"><img  src="images/close.png"/></a>')
+        }, '<a alt=${close_alt} title=${close_title} href="#" onClick="toggleMeasure();"><img  src="images/close.png"/></a>')
     }, titlePane);
 
     measure = new esri.dijit.Measurement({
@@ -1547,7 +1547,7 @@ function setupInfoWindowAndZoom(content, geocodeLocation, newExtent, geocodeResu
 
         content += "</span>";
         content += "<div id='geocodeWantOtherResults'>";
-        content += "<A href='JavaScript:showOtherResults()'>";
+        content += "<A onClick='showOtherResults();' href='#'>";
 
         content += i18n.tools.search.notWhatYouWanted;
         content += "</A>";
@@ -1559,7 +1559,7 @@ function setupInfoWindowAndZoom(content, geocodeLocation, newExtent, geocodeResu
             if (i !== pos) {
                 var result = allResults[i];
                 attr = result.feature.attributes;
-                content += "<A href='JavaScript:selectAnotherResult(" + i + ")'>";
+                content += "<A href='#' onClick='selectAnotherResult(" + i + ")'>";
                 if (!attr.Match_addr) {
                     content += result.name;
                 } else {
@@ -1640,7 +1640,7 @@ function addTimeSlider(timeProperties) {
         innerHTML: esri.substitute({
             close_title: i18n.panel.close.title,
             close_alt: i18n.panel.close.label
-        }, '<a alt=${close_alt} title=${close_title} href="JavaScript:toggleTime(null);"><img  src="images/close.png"/></a>')
+        }, '<a alt=${close_alt} title=${close_title} href="#" onClick="toggleTime(null);"><img  src="images/close.png"/></a>')
     }, titlePane);
 
 
