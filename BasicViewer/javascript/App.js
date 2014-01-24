@@ -143,6 +143,11 @@ define(
                 if(this.config.appid){
                    return utils.getItem(this.config.appid).then(lang.hitch(this,function(response){
                         lang.mixin(this.config, response.itemData.values);
+                        //Was an extent specified? If so set the extent property 
+                        if(response.item && response.item.extent){
+                            this.config.appextent = response.item.extent;
+                        }                        
+                        
                         //overwrite any values with url params 
                         var urlObject = esri.urlToObject(document.location.href);
                         urlObject.query = urlObject.query || {};
