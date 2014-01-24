@@ -186,6 +186,10 @@ define([
       if (this.config.appid) {
         arcgisUtils.getItem(this.config.appid).then(lang.hitch(this, function (response) {
           declare.safeMixin(this.config, response.itemData.values);
+              //get the extent for the applciation item. This can be used to override the default web map extent
+            if(response.item && response.item.extent){
+                this.config.application_extent = response.item.extent;
+            }        
           //setup OAuth if oauth appid exists. In this situation the oauthappid is specified in the
           //configuration panel.
           if (response.itemData.values && response.itemData.oauthappid) {
