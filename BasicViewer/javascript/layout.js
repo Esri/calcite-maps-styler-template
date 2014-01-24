@@ -270,6 +270,14 @@ function createMap(webmapitem) {
             }
 
         }
+        if(configOptions.appid && configOptions.appextent){
+            var xmin, xmax, ymin, ymax;
+            xmax = configOptions.appextent[1][0];
+            xmin = configOptions.appextent[0][0];
+            ymax = configOptions.appextent[1][1];
+            ymin = configOptions.appextent[0][1];
+            initialExtent = new esri.geometry.Extent(xmin, ymin, xmax, ymax);
+        }
         map.setExtent(initialExtent);
     });
 
