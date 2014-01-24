@@ -13,6 +13,7 @@ define([
     "esri/arcgis/utils",
     "esri/IdentityManager",
     "esri/geometry/Point",
+    "esri/geometry/Extent",
     "esri/dijit/Scalebar",
     "esri/lang",
     "dijit/layout/ContentPane",
@@ -33,6 +34,7 @@ function(
     arcgisUtils,
     IdentityManager,
     Point,
+    Extent,
     Scalebar,
     esriLang,
     ContentPane,
@@ -332,6 +334,19 @@ function(
                 //Here' we'll use it to update the application to match the specified color theme.  
    
                this.map = response.map;
+               
+               
+                //If there's an application id and an application extent re-set the map extent to match 
+                //the extent specified by the application item. 
+                if(this.config.appid && this.config.application_extent){
+                    var xmin, xmax, ymin, ymax;
+                    xmax = this.config.application_extent[1][0];
+                    xmin = this.config.application_extent[0][0];
+                    ymax = this.config.application_extent[1][1];
+                    ymin = this.config.application_extent[0][1];
+                    this.map.setExtent(new Extent(xmin, ymin, xmax, ymax));
+                    
+                }               
                //set the application title 
                document.title = this.config.title || response.itemInfo.item.title;
 
