@@ -2,6 +2,7 @@ dojo.require("esri.layout");
 dojo.require("esri.widgets");
 dojo.require("esri.dijit.PopupMobile");
 dojo.require("esri.arcgis.utils");
+dojo.require("esri.geometry.Extent");
 dojo.require("utilities.CreateContent");
 dojo.require("dojo.Deferred");
 dojo.require("dojo.DeferredList");
@@ -55,7 +56,17 @@ function createMap() {
 
 
        map = response.map;
-
+        //If there's an application id and an application extent re-set the map extent to match 
+        //the extent specified by the application item. 
+        if(options.appid && options.application_extent){
+            var xmin, xmax, ymin, ymax;
+            xmax = options.application_extent[1][0];
+            xmin = options.application_extent[0][0];
+            ymax = options.application_extent[1][1];
+            ymin = options.application_extent[0][1];
+            map.setExtent(new esri.geometry.Extent(xmin, ymin, xmax, ymax));
+            
+        }
        var layers =response.itemInfo.itemData.operationalLayers;
        var filter_layers = [];
        dojo.forEach(layers, function(layer){
