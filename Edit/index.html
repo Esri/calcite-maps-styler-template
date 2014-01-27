@@ -121,8 +121,18 @@
                   //Build the user interface for the application. In this case it's a simple app with a header, content and a left (or floating) panel
                   window.appcontent = new Content();
                   window.appcontent.createLayout().then(function(){
+                    arcgisUtils.getItem(window.options.webmap).then(lang.hitch(this, function (itemInfo) {
+                        //let's get the web map item and update the extent if needed. 
+                        if (window.options.appid && window.options.application_extent.length > 0) {
+                            itemInfo.item.extent = [
+                                [parseFloat(window.options.application_extent[0][0]), parseFloat(window.options.application_extent[0][1])],
+                                [parseFloat(window.options.application_extent[1][0]), parseFloat(window.options.application_extent[1][1])]
+                            ];
+                        }
+                        createMap(itemInfo);
+                    }));
 
-                     createMap();
+
                   });
 
 
@@ -131,9 +141,9 @@
               });
 
   
-             function createMap(){
+             function createMap(itemInfo){
                   var mapOptions =  {};
-                  var mapDeferred = arcgisUtils.createMap(window.options.webmap, "map", {
+                  var mapDeferred = arcgisUtils.createMap(itemInfo, "map", {
                     mapOptions: mapOptions,
                     bingMapsKey: window.options.bingmapskey
                   });

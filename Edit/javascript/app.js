@@ -131,6 +131,11 @@ define(
                 if(this.config.appid){
                    return arcgisUtils.getItem(this.config.appid).then(lang.hitch(this,function(response){
                         lang.mixin(this.config, response.itemData.values);
+
+                         //get the extent for the applciation item. This can be used to override the default web map extent
+                        if(response.item && response.item.extent){
+                            this.config.application_extent = response.item.extent;
+                        }                        
                         //overwrite any values with url params 
                         var urlObject = esri.urlToObject(document.location.href);
                         urlObject.query = urlObject.query || {};
