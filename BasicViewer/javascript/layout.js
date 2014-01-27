@@ -270,7 +270,7 @@ function createMap(webmapitem) {
             }
 
         }
-        if(configOptions.appid && configOptions.appextent){
+        if(configOptions.appid && configOptions.appextent.length > 0){
             var xmin, xmax, ymin, ymax;
             xmax = configOptions.appextent[1][0];
             xmin = configOptions.appextent[0][0];
