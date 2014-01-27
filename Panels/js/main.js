@@ -338,7 +338,7 @@ function(
                
                 //If there's an application id and an application extent re-set the map extent to match 
                 //the extent specified by the application item. 
-                if(this.config.appid && this.config.application_extent){
+                if(this.config.appid && this.config.application_extent.length > 0){
                     var xmin, xmax, ymin, ymax;
                     xmax = this.config.application_extent[1][0];
                     xmin = this.config.application_extent[0][0];
