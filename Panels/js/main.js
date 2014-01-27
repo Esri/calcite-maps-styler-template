@@ -56,8 +56,18 @@ function(
                 ss.rel = "stylesheet";
                 ss.href = "css/" + this.config.theme + ".css";
                 document.getElementsByTagName("head")[0].appendChild(ss);
-                
-                this._createWebMap();
+
+                arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
+                    //let's get the web map item and update the extent if needed. 
+                    if (this.config.appid && this.config.application_extent.length > 0) {
+                        itemInfo.item.extent = [
+                            [parseFloat(this.config.application_extent[0][0]), parseFloat(this.config.application_extent[0][1])],
+                            [parseFloat(this.config.application_extent[1][0]), parseFloat(this.config.application_extent[1][1])]
+                        ];
+                    }
+                    this._createWebMap(itemInfo);
+                }));
+
             }));
         },
         _mapLoaded: function() {
@@ -320,8 +330,8 @@ function(
 
         },
         //create a map based on the input web map id
-        _createWebMap: function() {
-            arcgisUtils.createMap(this.config.webmap, "mapDiv", {
+        _createWebMap: function(itemInfo) {
+            arcgisUtils.createMap(itemInfo , "mapDiv", {
                 mapOptions: {
                     //Optionally define additional map config here for example you can 
                     //turn the slider off, display info windows, disable wraparound 180, slider position and more. 
@@ -336,17 +346,7 @@ function(
                this.map = response.map;
                
                
-                //If there's an application id and an application extent re-set the map extent to match 
-                //the extent specified by the application item. 
-                if(this.config.appid && this.config.application_extent.length > 0){
-                    var xmin, xmax, ymin, ymax;
-                    xmax = this.config.application_extent[1][0];
-                    xmin = this.config.application_extent[0][0];
-                    ymax = this.config.application_extent[1][1];
-                    ymin = this.config.application_extent[0][1];
-                    this.map.setExtent(new Extent(xmin, ymin, xmax, ymax));
-                    
-                }               
+           
                //set the application title 
                document.title = this.config.title || response.itemInfo.item.title;
 
