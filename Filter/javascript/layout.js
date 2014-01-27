@@ -29,12 +29,26 @@ function init(initOptions) {
   //Build the user interface for the application. In this case it's a simple app with a header, content and a left (or floating) panel 
   appcontent = new utilities.CreateContent();
   appcontent.createLayout().then(function(){
-     createMap();
+
+      esri.arcgis.utils.getItem(options.webmap).then(dojo.hitch(this, function (itemInfo) {
+          //let's get the web map item and update the extent if needed. 
+          if (options.appid && this.options.application_extent.length > 0) {
+              itemInfo.item.extent = [
+                  [parseFloat(options.application_extent[0][0]), parseFloat(options.application_extent[0][1])],
+                  [parseFloat(options.application_extent[1][0]), parseFloat(options.application_extent[1][1])]
+              ];
+          }
+          createMap(itemInfo);
+      }));
+
+
+  
+
   });
 
 }
 
-function createMap() {
+function createMap(itemInfo) {
   var mapOptions =  {
     sliderStyle:"small"
   };
@@ -42,7 +56,7 @@ function createMap() {
     var popup = new esri.dijit.PopupMobile(null, dojo.create("div"));
     mapOptions.infoWindow = popup;
   }
-  var mapDeferred = esri.arcgis.utils.createMap(options.webmap, "map", {
+  var mapDeferred = esri.arcgis.utils.createMap(itemInfo, "map", {
     mapOptions: mapOptions, 
     ignorePopups: false,
     bingMapsKey: options.bingmapskey
@@ -56,17 +70,7 @@ function createMap() {
 
 
        map = response.map;
-        //If there's an application id and an application extent re-set the map extent to match 
-        //the extent specified by the application item. 
-        if(options.appid && options.application_extent.length > 0){
-            var xmin, xmax, ymin, ymax;
-            xmax = options.application_extent[1][0];
-            xmin = options.application_extent[0][0];
-            ymax = options.application_extent[1][1];
-            ymin = options.application_extent[0][1];
-            map.setExtent(new esri.geometry.Extent(xmin, ymin, xmax, ymax));
-            
-        }
+
        var layers =response.itemInfo.itemData.operationalLayers;
        var filter_layers = [];
        dojo.forEach(layers, function(layer){
