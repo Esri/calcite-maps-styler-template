@@ -44,18 +44,27 @@ dojo.require("social.twitter");
         twitterLayer.clear();
       }
    });
+    esri.arcgis.utils.getItem(configOptions.webmap).then(dojo.hitch(this, function (itemInfo) {
+        //let's get the web map item and update the extent if needed. 
+        if (configOptions.appid && configOptions.application_extent.length > 0) {
+            itemInfo.item.extent = [
+                [parseFloat(configOptions.application_extent[0][0]), parseFloat(configOptions.application_extent[0][1])],
+                [parseFloat(configOptions.application_extent[1][0]), parseFloat(configOptions.application_extent[1][1])]
+            ];
+        }
+        createApp(itemInfo);
+    }));
 
 
-   createApp();
  }
 
- function createApp() {
+ function createApp(itemInfo) {
    if(configOptions.bingMapsKey){
     configOptions.bingmapskey = configOptions.bingMapsKey;
    }
 
    //Display the webmap from arcgis.com 
-   var mapDeferred = esri.arcgis.utils.createMap(configOptions.webmap, "map", {
+   var mapDeferred = esri.arcgis.utils.createMap(itemInfo, "map", {
      mapOptions: {
        sliderStyle:'small',
        nav: false,
