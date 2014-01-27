@@ -157,6 +157,9 @@ function createApp() {
                 }
             }
         }
+    }else if (configOptions.appid && configOptions.appextent.length > 0) {
+        var extent = [configOptions.appextent[0][0],configOptions.appextent[0][1], configOptions.appextent[1][0], configOptions.appextent[1][1]];
+        getItem(configOptions.webmap, extent);
     } else {
         createMap(configOptions.webmap);
     }
@@ -270,14 +273,7 @@ function createMap(webmapitem) {
             }
 
         }
-        if(configOptions.appid && configOptions.appextent.length > 0){
-            var xmin, xmax, ymin, ymax;
-            xmax = configOptions.appextent[1][0];
-            xmin = configOptions.appextent[0][0];
-            ymax = configOptions.appextent[1][1];
-            ymin = configOptions.appextent[0][1];
-            initialExtent = new esri.geometry.Extent(xmin, ymin, xmax, ymax);
-        }
+
         map.setExtent(initialExtent);
     });
 
