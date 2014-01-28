@@ -26,6 +26,7 @@
         "filter.fieldname1": "FLOOR",
         "featureSearcher.searchLayerName": "Fire Suppression Systems",
         "featureSearcher.searchFields": "COMPLEXID,PLANID,LOCDESC,COMMENTS",
+        "featureSearcher.displayFields": "PLANID",
         "basemapBox.basemapgroupTitle": "",
         "basemapBox.basemapgroupOwner": "",
         "helpMessageBox.content": "Tag, Edit, and View provides decisions makers and data custodians the ability to edit geographic content, automatically set attribute values, and filter content in a webmap when viewing."
@@ -95,20 +96,35 @@
     }, {
         "category": "Map",
         "fields": [{
+            "label": "Select a map",
+            "fieldName": "webmap",
+            "type": "webmap",
+            "tooltip": "Select a webmap to use"
+        }, {
             "label": "Hint in search field",
             "fieldName": "searchBox.hint",
             "type": "string",
             "tooltip": "Text to display in the search entry field as a format hint"
         }, {
-            "label": "Search layer name",
+            "label": "Search layer(s)",
             "fieldName": "featureSearcher.searchLayerName",
             "type": "string",
-            "tooltip": "Layer name of the feature layer to use for search"
+            "tooltip": "Comma-separated list of the feature layer(s) to use for a search"
         }, {
-            "label": "Search layer field(s)",
+            "label": "Search field(s)",
             "fieldName": "featureSearcher.searchFields",
             "type": "string",
             "tooltip": "Comma-separated list of the field(s) to look at during a search"
+        }, {
+            "label": "Search display field(s)",
+            "fieldName": "featureSearcher.displayFields",
+            "type": "string",
+            "tooltip": "Comma-separated list of the field to use in each layer to display its results"
+        }, {
+            "label": "Show popup for selected feature",
+            "fieldName": "highlighter.showFeaturePopup",
+            "type": "boolean",
+            "tooltip": "Determines if the popup will automatically appear for a feature selected from a search results list"
         }, {
             "label": "Zoom level for selected feature",
             "fieldName": "highlighter.highlightZoomLevel",
@@ -145,7 +161,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 74a5111a838dd434 2014-01-24 08:16:27 -0800"
+                "commit 5c22119809387c51 2014-01-27 14:10:13 -0800"
             ]
         }
     }, {
@@ -245,7 +261,7 @@
             "arrowClass": "commandPanelArrow"
         }
     }, {
-        "classname": "js.LGSearchFeatureLayer",
+        "classname": "js.LGSearchFeatureLayerMultiplexer",
         "config": {
             "rootId": "featureSearcher",
             "parentDiv": "contentFrame",
