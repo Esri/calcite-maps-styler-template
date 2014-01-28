@@ -2,7 +2,8 @@ dojo.require("esri.widgets");
 dojo.require("esri.arcgis.utils");
 dojo.require("dojox.layout.FloatingPane");
 dojo.require("utilities.custommenu");
-
+dojo.require("esri.dijit.HomeButton");
+dojo.require("esri.dijit.LocateButton");
 dojo.require("apl.ElevationsChart.Pane");
 
 var map;
@@ -231,6 +232,8 @@ function createMap(webmapitem) {
         clickListener = response.clickEventListener;
         map = response.map;
 
+
+
         //Constrain the extent of the map to the webmap's initial extent
         if (configOptions.constrainmapextent) {
             webmapExtent = response.map.extent.expand(1.5);
@@ -275,6 +278,21 @@ function createMap(webmapitem) {
         }
 
         map.setExtent(initialExtent);
+
+        //add the map widgets (home, locate) if specified 
+        if(configOptions.displaymapwidgets){
+                var homeDiv = dojo.create("div",{id:"homeDiv"},"map");
+                var homeButton = new esri.dijit.HomeButton({
+                    map: map
+                },homeDiv);
+                homeButton.startup();
+                var locateDiv = dojo.create("div",{id:"locateDiv"},"map");
+                var locationButton = new esri.dijit.LocateButton({
+                    map: map
+                },locateDiv);
+                locationButton.startup();           
+        }
+
     });
 
     mapDeferred.addErrback(function (error) {

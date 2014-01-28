@@ -10,6 +10,19 @@ body {
 #toolbarContainer_bv .dijitToolbar {
   background:url(../images/purple/toolbar_bg.png) repeat-x #593e7f;
 }
+.HomeButton .home{
+  background-color: #593e7f;
+}
+
+.LocateButton .zoomLocateButton {
+ background-color: #593e7f;
+}
+.HomeButton .home:hover{
+ background-color: #c1bacb;  
+}
+.LocateButton .zoomLocateButton:hover {
+ background-color: #c1bacb;
+}
 /*Measure toggle button*/
 .claro .dijitToolbar .dijitButtonNode:hover {
   background:url(../images/purple/sidebar_header_active_bg.png) repeat-x #c1bacb;
@@ -47,6 +60,10 @@ body {
 .esriSimpleSliderVertical .esriSimpleSliderIncrementButton ,.esriSimpleSliderVertical .esriSimpleSliderDecrementButton  {
   background:url(../images/purple/toolbar_bg.png) repeat-x #593e7f;
   border:solid 1px #593e7f;
+}
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton:hover , .esriSimpleSliderVertical  .esriSimpleSliderDecrementButton:hover  {
+  background-color: #c1bacb;
+
 }
  /*Identity Manager Dialog*/
 .claro .dijitDialogTitleBar {

@@ -13,6 +13,29 @@ body {
   margin:0px;
   padding:0px;
 }
+
+.HomeButton .home{
+  position: absolute;
+  top: 120px;
+  left:20px;
+  z-index: 50;
+  background-color: #545454;
+}
+.LocateButton .zoomLocateButton {
+ position: absolute;
+ top:165px;
+ left:20px;
+ z-index: 50;
+ background-color: #545454;
+}
+.HomeButton .home:hover{
+ background-color: #CEE1EC;  
+}
+.LocateButton .zoomLocateButton:hover {
+ background-color: #CEE1EC;
+}
+
+
 .notembed{
   height:98%;
   width:98%;

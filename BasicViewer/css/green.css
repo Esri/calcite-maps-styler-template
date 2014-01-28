@@ -6,6 +6,20 @@ body {
 #leftPane {
   background-color:#ecf4e9;
 }
+
+.HomeButton .home{
+  background-color: #4a6f1c;
+}
+
+.LocateButton .zoomLocateButton {
+ background-color: #4a6f1c;
+}
+.HomeButton .home:hover{
+ background-color: #b5d19a;  
+}
+.LocateButton .zoomLocateButton:hover {
+ background-color: #b5d19a;
+}
 /*override claro background and other props*/
 #toolbarContainer_bv .dijitToolbar {
   background:url(../images/green/toolbar_bg.png) repeat-x #4a6f1c;
