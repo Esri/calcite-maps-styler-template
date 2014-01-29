@@ -65,21 +65,23 @@ overflow-x:hidden;
 overflow-y:auto;
 
 }
-
+.esriSimpleSliderDecrementButton:hover {
+border-top: 2px solid #666;
+}
 .HomeButton .home{
 background-image: url(../images/home.png);
 padding:0;
 border-radius: 0;
 border-bottom: 2px solid #666;
-	background-color:#FFF;
+background-color:#FFF;
 }
 .HomeButton .home:hover {
-	background-color:#eee;
+background-color:#eee;
 background-color: rgb(238, 238, 238);
 }
 
 .HomeButton .home:active {
-	background-color:#ddd;
+background-color:#ddd;
 }
 #locateDiv{
 position: absolute;
@@ -96,10 +98,6 @@ z-index: 50;
 top:20px;
 right:20px;
 }
-.simpleGeocoder .esriGeocoder{
-  width:90% !important;	
-}
-
 #geocoderDiv{
 position:absolute;
 display:block;

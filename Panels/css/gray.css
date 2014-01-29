@@ -77,26 +77,57 @@ top: 6px;
 background-image: url(../images/popup_gray.png);
 }
 
-.esriPopup.gray .pointer, .esriPopup.gray .outerPointer {
-background-image: url(../images/popup_gray.png);
+.esriPopup.gray .titleButton.close{
+background: url('../images/popup_gray.png') no-repeat 0 -174px;
+width: 11px;
+height: 11px;   
 }
 
-.esriPopup.gray .titleButton, .esriPopup.gray .pointer, .esriPopup.gray .esriViewPopup .gallery .mediaHandle, .esriPopup.gray .esriViewPopup .gallery .mediaIcon {
-background-image: url(../images/popup_gray.png);
+.esriPopup.gray .pointer.top{
+background: url('../images/popup_gray.png') no-repeat -1px -581px;
+width: 24px;
+height: 14px;
 }
 
+.esriPopup.gray .pointer.topRight{
+background: url('../images/popup_gray.png') no-repeat -1px -581px;
+width: 24px;
+height: 14px;
+}
+.esriPopup.gray .pointer.topLeft{
+background: url('../images/popup_gray.png') no-repeat -1px -581px;
+width: 24px;
+height: 14px;
+}
+
+}
+.esriPopup.gray .titleButton.prev{
+background: url('../images/popup_gray.png') no-repeat 0 -227px;
+width: 8px;
+height: 10px;
+}
+.esriPopup.gray .titleButton.next{
+background: url('../images/popup_gray.png') no-repeat -1px -446px;
+width: 8px;
+height: 10px;
+}
+.esriPopup.gray .titleButton.maximize{
+background: url('../images/popup_gray.png') no-repeat 0 -251px;
+width: 11px;
+height: 10px;
+
+}
+.esriPopup.gray .titleButton.restore{
+background: url('../images/popup_gray.png') no-repeat -2px -393px;
+width: 11px;
+height: 13px;
+}
 .esriPopup.gray .titlePane .spinner {
 margin-top: 6px;
 background: url(../images/ajax-loader.gif) no-repeat;
 }
 
-.esriPopup.gray .titleButton.maximize {
-top: 8px;
-}
 
-.esriPopup.gray .titleButton.restore {
-top: 8px;
-}
 
 .esriPopup.gray .contentPane {
 background: #fff;

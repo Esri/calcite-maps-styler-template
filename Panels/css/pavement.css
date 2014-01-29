@@ -39,49 +39,11 @@ color:#fff;
 #footer{
 color: #fff;
 }
-.esriPopup.pavement .titleButton,
-.esriPopup.pavement .pointer,
-.esriPopup.pavement .outerPointer,
-.esriPopup.pavement .esriViewPopup .gallery .mediaHandle,
-.esriPopup.pavement .esriViewPopup .gallery .mediaIcon {
-background-image: url(../images/popup_sprite_pavement.png);
-}
 
 .esriPopup.pavement .titleButton {
 top: 4px;
 }
 
-.esriPopup.pavement .titleButton.maximize,
-.esriPopup.pavement .titleButton.restore {
-top: 6px;
-}
-
-.esriPopup.pavement .pointer.top {
-background-position: 0 -616px; 
-
-}
-
-.esriPopup.pavement .pointer.topLeft {
-left: 0px; top: -43px; background-position: 0 -525px; width: 51px; height: 45px;
-}
-
-.esriPopup.pavement .pointer.topRight {
-right: 0px; top: -43px; background-position: 0 -707px; width: 51px; height: 45px;
-}
-
-
-.esriPopup.pavement .pointer.bottomLeft,
-.esriPopup.pavement .pointer.bottomRight { 
-bottom: -44px; 
-}
-
-
-.esriPopup.pavement .contentPane,
-.esriPopup.pavement .actionsPane {
-border-color: 1px solid #ffffff;
-background-color: #1b1c20;
-color:#ffffff;
-}
 
 .esriPopup.pavement .titlePane,
 .dj_ie7 .esriPopup.pavement .titlePane .title {
@@ -97,3 +59,47 @@ border-bottom: 1px solid #ffffff;
 color: #4ca0f5;
 }
 
+.esriPopup.pavement .titleButton.close{
+background: url('../images/popup_sprite_pavement.png') no-repeat 0 -174px;
+width: 11px;
+height: 11px;   
+}
+
+.esriPopup.pavement .pointer.top{
+background: url('../images/popup_sprite_pavement.png') no-repeat -1px -616px;
+width: 22px;
+height: 14px;
+}
+
+.esriPopup.pavement .pointer.topRight{
+background: url('../images/popup_sprite_pavement.png') no-repeat -1px -616px;
+width: 22px;
+height: 14px;
+}
+.esriPopup.pavement .pointer.topLeft{
+background: url('../images/popup_sprite_pavement.png') no-repeat -1px -616px;
+width: 22px;
+height: 14px;
+}
+}
+.esriPopup.pavement .titleButton.prev{
+background: url('../images/popup_sprite_pavement.png') no-repeat 0 -227px;
+width: 8px;
+height: 10px;
+}
+.esriPopup.pavement .titleButton.next{
+background: url('../images/popup_sprite_pavement.png') no-repeat -1px -446px;
+width: 8px;
+height: 10px;
+}
+.esriPopup.pavement .titleButton.maximize{
+background: url('../images/popup_sprite_pavement.png') no-repeat 0 -251px;
+width: 11px;
+height: 10px;
+
+}
+.esriPopup.pavement .titleButton.restore{
+background: url('../images/popup_sprite_pavement.png') no-repeat -2px -393px;
+width: 11px;
+height: 13px;
+}
