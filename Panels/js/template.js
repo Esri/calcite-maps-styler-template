@@ -213,9 +213,12 @@ define([
           callbackParamName: "callback"
       }).then(lang.hitch(this, function(response) {
        
-          if(response.units){
+          if(response.user && response.user.units){ //user defined units
+            this.conifg.units = response.user.units;
+          }
+          else if(response.units){ //org level units 
               this.config.units = response.units;
-          }else{
+          }else{ //default to english 
               this.config.units = "english";
           }
           this.config.helperServices = {};
