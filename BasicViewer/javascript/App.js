@@ -198,15 +198,18 @@ define(
                     this.config.basemapgroup.owner = q.owner;
                   }
 
-                  //get units 
-                   if(response.user && response.user.units){ //user defined units
-                      this.conifg.units = response.user.units;
+                  //get units if they aren't set in index.html
+                    if(this.config.units === null){ //if units isn't null its been set in the defaults so template is downloaded. 
+           
+                      if(response.user && response.user.units){ //user defined units
+                        this.conifg.units = response.user.units;
+                      }
+                      else if(response.units){ //org level units 
+                          this.config.units = response.units;
+                      }else{ //default to english 
+                          this.config.units = "english";
+                      }         
                     }
-                    else if(response.units){ //org level units 
-                        this.config.units = response.units;
-                    }else{ //default to english 
-                        this.config.units = "english";
-                    }              
                             
                   //look for helper services and if they exist set them
                   if(response.isPortal && response.portalMode === "single tenant"){
