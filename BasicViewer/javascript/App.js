@@ -198,13 +198,16 @@ define(
                     this.config.basemapgroup.owner = q.owner;
                   }
 
-                  //Get Units 
-                  if(response.units){
-                    this.config.units = response.units;
-                  }else{
-                    //use english 
-                    this.config.units = "english";
-                  }
+                  //get units 
+                   if(response.user && response.user.units){ //user defined units
+                      this.conifg.units = response.user.units;
+                    }
+                    else if(response.units){ //org level units 
+                        this.config.units = response.units;
+                    }else{ //default to english 
+                        this.config.units = "english";
+                    }              
+                            
                   //look for helper services and if they exist set them
                   if(response.isPortal && response.portalMode === "single tenant"){
                     this.config.sharingurl = response.portalHostname;
