@@ -162,16 +162,17 @@ define([
         // process operational layers
         processOperationalLayers: function() {
             var opLayerName = this.config.summaryLayer;
+            var me = this;
             if (opLayerName != "") {
                 dojo.forEach(this.opLayers,function(layer){
                     if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.title == opLayerName){
-                        this.opLayer = layer.layerObject;
+                        me.opLayer = layer.layerObject;
                     }
                 });
             } else {
                 this.opLayer = this.getDefaultOperationalLayer();
             }
-          
+            console.log(this.opLayer);
             if (this.opLayer) {
                 on(this.map, "extent-change", lang.hitch(this, this.summarizeFeatures));
                 this.setLayer();
