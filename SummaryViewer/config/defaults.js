@@ -4,7 +4,7 @@ define([], function() {
     //and url parameters.
     var defaults = {
         "appid": "",
-        "webmap": "55f15224d4da4b4e98504a4ff3a69119", //"9ff383a64850429893b0d09c64a4af8b", 
+        "webmap": "55f15224d4da4b4e98504a4ff3a69119",
         "oauthappid": null, //"AFTKRmv16wj14N3z",
         //Group templates must support a group url parameter. This will contain the id of the group. 
         //group: "",
@@ -16,7 +16,7 @@ define([], function() {
         "logo": "",
         "color": "#80ab00",
         //Counter specific parameters
-        "summaryLayer": "",
+        "summaryLayer": "", 
         "filterField": "",
         "sumFields": "",
         "avgFields": "",

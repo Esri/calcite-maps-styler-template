@@ -122,22 +122,9 @@ define([
                 on(this.clusterLayer, "click", lang.hitch(this, this.clusterClick));
                 
                 // process operational layers
-                var layers = response.itemInfo.itemData.operationalLayers;
-                var opLayers = [];
-                var opLayerName = this.config.summaryLayer;
-                dojo.forEach(layers,function(layer){
-                    if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.title == opLayerName){
-                        opLayers.push(layer.layerObject);
-                    }
-                });
-                if (opLayers.length > 0) {
-                    this.opLayers = opLayers;
-                    this.setLayer();
-                } else {
-                    this.showMessage("No Operational Layers in Web Map.");
-                }
+                this.opLayers = response.itemInfo.itemData.operationalLayers;
                 
-                on(this.map, "extent-change", lang.hitch(this, this.summarizeFeatures));
+                //on(this.map, "extent-change", lang.hitch(this, this.summarizeFeatures));
                 
                 if (this.map.loaded) {
                     this.mapLoaded();
@@ -169,8 +156,56 @@ define([
                     map: this.map
                 }, "basemapGallery");
              basemapGallery.startup();
+             this.processOperationalLayers();
         },
         
+        // process operational layers
+        processOperationalLayers: function() {
+            var opLayerName = this.config.summaryLayer;
+            if (opLayerName != "") {
+                dojo.forEach(this.opLayers,function(layer){
+                    if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.title == opLayerName){
+                        this.opLayer = layer.layerObject;
+                    }
+                });
+            } else {
+                this.opLayer = this.getDefaultOperationalLayer();
+            }
+          
+            if (this.opLayer) {
+                on(this.map, "extent-change", lang.hitch(this, this.summarizeFeatures));
+                this.setLayer();
+            } else {
+                this.showMessage("No Operational Layers in Web Map.");
+            }
+        },
+        
+        // get default operational layer
+        getDefaultOperationalLayer: function() {
+            this.opLayers.reverse();
+            for (var i=0; i<this.opLayers.length; i++) {
+                var layer = this.opLayers[i];
+                if (layer.layerObject && layer.layerObject.type == "Feature Layer"){
+                    var flds = this.getSummaryFields(layer.layerObject);
+                    if (flds.length > 0)
+                        return layer.layerObject;
+                }
+            }
+            return null;
+        },
+        
+        // get summary fields
+        getSummaryFields: function(layer) {
+            var array = [];
+            var infos = layer.infoTemplate.info.fieldInfos;
+            for (var i=0; i<infos.length; i++) {
+                var fld = infos[i];
+                if (fld.visible && fld.format && fld.fieldName != layer.objectIdField){
+                    array.push(fld.fieldName);
+                }
+            }
+            return array;
+        },
         
          // set layer
         setLayer: function() {
@@ -180,7 +215,6 @@ define([
             if (this.opSignal)
                 this.opSignal.remove();
             
-            this.opLayer = this.opLayers[0];
             this.populateFilterValues();
             this.opSignal = on(this.opLayer, "update-end", lang.hitch(this, this.summarizeFeatures));
             
@@ -209,18 +243,24 @@ define([
         
         // configure fields
         configureFields: function() {
-            var sumFlds = [];
+            var sumFields = [];
             var avgFields = [];
             var minFields = [];
             var maxFields = [];
-            if (this.config.sumFields != "")
-                sumFields = this.config.sumFields.split(",");
-            if (this.config.avgFields != "")
-                avgFields = this.config.avgFields.split(",");
-            if (this.config.minFields != "")
-                minFields = this.config.minFields.split(",");
-            if (this.config.maxFields != "")
-                maxFields = this.config.maxFields.split(",");
+            var str = this.config.sumFields + this.config.avgFields + this.config.minFields + this.config.maxFields;
+            if (str.length > 0) {
+                if (this.config.sumFields != "")
+                    sumFields = this.config.sumFields.split(",");
+                if (this.config.avgFields != "")
+                    avgFields = this.config.avgFields.split(",");
+                if (this.config.minFields != "")
+                    minFields = this.config.minFields.split(",");
+                if (this.config.maxFields != "")
+                    maxFields = this.config.maxFields.split(",");
+            } else {
+                console.log("here");
+                sumFields = this.getSummaryFields(this.opLayer);
+            }
                 
             var fields = ["COUNT"].concat(sumFields, avgFields, minFields, maxFields);
             var aliases = [];
