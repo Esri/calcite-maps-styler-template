@@ -50,8 +50,10 @@ body {
   border-style:none;
 }
 
-.esriPopup .pointer, .esriPopup .outerPointer {
-    background: url("../images/orange/popup_o.png") no-repeat scroll 0 0 transparent;
+.esriPopup .pointer.topRight, esriPopup .pointer.topLeft, .esriPopup .pointer.top {
+    background: url("../images/orange/popup_o.png") no-repeat 0 -617px;
+    width:24px;
+    height:14px;
 }
 
 /*slider background*/

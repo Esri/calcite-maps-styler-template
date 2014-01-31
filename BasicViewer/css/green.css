@@ -50,8 +50,10 @@ body {
   background-color:#406919;
   border-style:none;
 }
-.esriPopup .pointer, .esriPopup .outerPointer {
-    background: url("../images/green/popup_g.png") no-repeat scroll 0 0 transparent;
+.esriPopup .pointer.topRight, esriPopup .pointer.topLeft, .esriPopup .pointer.top {
+    background: url("../images/green/popup_g.png") no-repeat 0 -617px;
+    width:24px;
+    height:14px;
 }
 
 /*slider background*/
