@@ -202,7 +202,7 @@ define(
                     if(this.config.units === null){ //if units isn't null its been set in the defaults so template is downloaded. 
            
                       if(response.user && response.user.units){ //user defined units
-                        this.conifg.units = response.user.units;
+                        this.config.units = response.user.units;
                       }
                       else if(response.units){ //org level units 
                           this.config.units = response.units;
