@@ -1,31 +1,35 @@
-﻿html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
 }
-
 body {
     background: url(../images/seaside_bg.png) #abcdd9 repeat-x;
     color: #333;
     font-size: 14px;
 }
-
 /* Temporary work-around */
+
 .tundra .dijitBorderContainer {
     background-color: transparent !important;
     color: black !important;
 }
-
 a {
     color: #369;
 }
-
 #header {
     height: 70px;
     padding-bottom: 4px;
 }
 
+  .LocateButton .zoomLocateButton {
+      position: absolute;
+      top: 95px;
+      left: 20px;
+      z-index: 50;
+  }
 #title {
     color: #FFF;
     font-size: 30px;
@@ -35,14 +39,12 @@ a {
     padding-left: 25px;
     text-shadow: 0 1px 0 #333;
 }
-
 #subtitle {
     font-size: 16px;
     color: #333;
     padding-left: 25px;
     padding-top: 5px;
 }
-
 #rightPane {
     background-color: #fdfae2;
     border: solid 5px #666;
@@ -52,7 +54,6 @@ a {
     margin: 15px 20px 0;
     padding: 0;
 }
-
 #leftPane {
     background-color: #edf4f7;
     border-top: solid 5px #666;
@@ -67,18 +68,15 @@ a {
     margin: 25px 0 30px 20px;
     padding: 0;
 }
-
 #leftPaneHeader {
     height: 30px;
     padding: 15px 10px 0;
 }
-
 #leftPaneHeader span {
     font-size: 18px;
     font-weight: 700;
     margin: 0 auto 10px;
 }
-
 #map {
     border: solid 5px #666;
     -webkit-border-radius: 6px;
@@ -86,7 +84,6 @@ a {
     border-radius: 6px;
     margin: 15px 20px 0 0;
 }
-
 #footer {
     color: #333;
     font-size: 14px;
@@ -95,75 +92,28 @@ a {
     padding: 3px 25px 5px;
 }
 
-.esriPopup.seaside .titleButton,
-.esriPopup.seaside .pointer,
-.esriPopup.seaside .outerPointer,
-.esriPopup.seaside .esriViewPopup .gallery .mediaHandle,
-.esriPopup.seaside .esriViewPopup .gallery .mediaIcon {
-    background-image: url(../images/popup_sprite_seaside.png);
-}
-
 .esriPopup.seaside .titleButton {
     top: 4px;
 }
-
 .esriPopup.seaside .titleButton.maximize,
 .esriPopup.seaside .titleButton.restore {
     top: 6px;
 }
 
-.esriPopup.seaside .pointer.top {
-    background-position: 0 -616px;
-
-}
-
-.esriPopup.seaside .pointer.topLeft {
-    left: 0px;
-    top: -43px;
-    background-position: 0 -525px;
-    width: 51px;
-    height: 45px;
-}
-
-.esriPopup.seaside .pointer.topRight {
-    right: 0px;
-    top: -43px;
-    background-position: 0 -707px;
-    width: 51px;
-    height: 45px;
-}
-
-.esriPopup.seaside .pointer.bottomLeft,
-.esriPopup.seaside .pointer.bottomRight {
-    bottom: -44px;
-}
-
-.esriPopup.seaside .contentPane,
-.esriPopup.seaside .actionsPane {
-    border: 2px solid #666666;
-    background-color: #EDF4F7;
-}
-
 .esriPopup.seaside .actionsPane {
     border-top: none;
 }
-
 .esriPopup.seaside .contentPane {
     border-bottom: none;
 }
-
 .esriPopup.seaside .titlePane,
 .dj_ie7 .esriPopup.seaside .titlePane .title {
     background-color: #7AAEBB;
-    border: 2px solid #666666;
-    color: #333333;
     font-weight: bold;
 }
-
 .esriPopup.seaside .titlePane {
     border-bottom: none;
 }
-
 .esriPopup.seaside a {
     color: #336699;
 }

@@ -1,10 +1,10 @@
-﻿html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
 }
-
 body {
     background: #000 url(../images/pavement_bg.jpg) top left repeat;
     -moz-background-size: cover;
@@ -12,22 +12,30 @@ body {
     background-size: cover;
     font-size: 13px;
 }
-
 /* Temporary work-around */
+
 .tundra .dijitBorderContainer {
     background-color: transparent !important;
     color: white !important;
 }
-
 a {
     color: #3E87DC;
 }
+  .LocateButton .zoomLocateButton {
 
+      position: absolute;
+
+      top: 95px;
+
+      left: 20px;
+
+      z-index: 50;
+
+  }
 #header {
     height: 110px;
     margin: 0;
 }
-
 #header_flourish {
     background: url(../images/pavement_topflourish.png) no-repeat;
     width: 642px;
@@ -35,7 +43,6 @@ a {
     position: absolute;
     bottom: 0;
 }
-
 #title {
     color: #cf9325;
     font-size: 30px;
@@ -44,29 +51,24 @@ a {
     padding-top: 10px;
     padding-left: 15px;
 }
-
 #subtitle {
     font-size: 14px;
     color: #FFF;
     padding-left: 15px;
 }
-
 #rightPane {
     margin: 20px 20px 0 0;
     padding: 0;
 }
-
 #leftPane {
     margin: 20px 0 0 20px;
     padding: 0;
 }
-
 #leftPaneHeader {
     height: 30px;
     padding-top: 15px;
     border-bottom: 3px solid #fff;
 }
-
 #leftPaneHeader span {
     font-weight: 400;
     font-size: 18px;
@@ -74,12 +76,10 @@ a {
     margin: 0 auto;
     padding: 0 10px 5px;
 }
-
 #map {
     border: solid 3px #fff;
     margin: 20px 20px 0 0;
 }
-
 #footer {
     color: #FFF;
     font-size: 14px;
@@ -87,67 +87,30 @@ a {
     height: 18px;
     padding: 8px 20px 5px;
 }
-
-.esriPopup.pavement .titleButton,
-.esriPopup.pavement .pointer,
-.esriPopup.pavement .outerPointer,
-.esriPopup.pavement .esriViewPopup .gallery .mediaHandle,
-.esriPopup.pavement .esriViewPopup .gallery .mediaIcon {
-    background-image: url(../images/popup_sprite_pavement.png);
+.esriLegendService{
+    color: #fff;
 }
-
 .esriPopup.pavement .titleButton {
     top: 4px;
 }
-
 .esriPopup.pavement .titleButton.maximize,
 .esriPopup.pavement .titleButton.restore {
     top: 6px;
 }
 
-.esriPopup.pavement .pointer.top {
-    background-position: 0 -616px;
-}
-
-.esriPopup.pavement .pointer.topLeft {
-    left: 0px;
-    top: -43px;
-    background-position: 0 -525px;
-    width: 51px;
-    height: 45px;
-}
-
-.esriPopup.pavement .pointer.topRight {
-    right: 0px;
-    top: -43px;
-    background-position: 0 -707px;
-    width: 51px;
-    height: 45px;
-}
-
-.esriPopup.pavement .pointer.bottomLeft,
-.esriPopup.pavement .pointer.bottomRight {
-    bottom: -44px;
-}
 
 .esriPopup.pavement .contentPane,
 .esriPopup.pavement .actionsPane {
     border-color: 1px solid #ffffff;
-    background-color: #1b1c20;
-    color: #ffffff;
 }
-
 .esriPopup.pavement .titlePane,
 .dj_ie7 .esriPopup.pavement .titlePane .title {
     background-color: #cf9325;
-    color: #333333;
     font-weight: bold;
 }
-
 .esriPopup.pavement .titlePane {
     border-bottom: 1px solid #ffffff;
 }
-
 .esriPopup.pavement a {
     color: #4ca0f5;
 }

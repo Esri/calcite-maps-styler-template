@@ -1,92 +1,74 @@
-﻿    html,body {
-      height:98%;
-      width:98%;
-      margin: 0 10px;
-      padding:0;
-      }
-
-      body {
-      overflow:hidden;
-      font-family:"Tahoma", Tahoma, "Trebuchet MS", Arial, sans-serif;
-      }
-
-      #header {
-      margin:0;
-      }
-
-      #title {
-      white-space: nowrap;  
-      overflow: hidden;  
-      text-overflow: ellipsis;
-      -o-text-overflow:ellipsis;
-      }
-
-      #subtitle {
-      white-space: nowrap;  
-      overflow: hidden;  
-      text-overflow: ellipsis;
-      -o-text-overflow:ellipsis;
-      }
-
-      #rightPane {
-      width:20%;
-      }
-
-      #leftPane {
-      width:20%;
-      }
-
-
-      #leftPaneContent {
-      height:100%;
-      width:100%;
-      margin:0;
-      padding:0;
-      }
-
-      #leftPaneHeader {
-      margin:0;
-      }
-
-
-      #leftPaneBody {
-      margin:0;
-      }
-
-      #leftPaneBody .panel_content {
-      padding:10px;
-      }
-
-      #tabLink {
-      text-decoration:none;
-      color:#3f3f3f;
-      }
-
-      #map {
-      padding:0;
-      margin:0;
-      position:absolute; 
-      z-index:0;
-      }
-
-      #footer {
-      margin:0;
-      }
-      .esriScalebar{
-      padding-left:15px;
-      }
-      .map .bingLogo-lg{
-      left:18px !important;
-      }
-
-
-
-#rightPanelToolbar {
-  position:absolute; 
-  z-index:1;
-  display:	none;
+html,
+body {
+    height: 98%;
+    width: 98%;
+    margin: 0 10px;
+    padding: 0;
 }
-
+body {
+    overflow: hidden;
+    font-family: "Tahoma", Tahoma, "Trebuchet MS", Arial, sans-serif;
+}
+#header {
+    margin: 0;
+}
+#title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+#subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+#rightPane {
+    width: 20%;
+}
+#leftPane {
+    width: 20%;
+}
+#leftPaneContent {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+#leftPaneHeader {
+    margin: 0;
+}
+#leftPaneBody {
+    margin: 0;
+}
+#leftPaneBody .panel_content {
+    padding: 10px;
+}
+#tabLink {
+    text-decoration: none;
+    color: #3f3f3f;
+}
+#map {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 0;
+}
+#footer {
+    margin: 0;
+}
+.esriScalebar {
+    padding-left: 15px;
+}
+.map .bingLogo-lg {
+    left: 18px !important;
+}
+#rightPanelToolbar {
+    position: absolute;
+    z-index: 1;
+    display: none;
+}
 #leftPanelToolbar {
-  display:	none;
+    display: none;
 }

@@ -1,334 +1,283 @@
-@media screen and (orientation:portrait) {
-  html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0 10px;
-    padding: 0;
-  }
+@media screen and (orientation: portrait) {
+    html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0 10px;
+        padding: 0;
+    }
+    body {
+        font-family: "Tahoma", Tahoma, "Trebuchet MS", Arial, sans-serif;
+    }
+    .LocateButton  {
+          position: absolute;
+          top: 95px;
+          left: 20px;
+          z-index: 50;
+      }
+    #container {
+        width: 100%;
+        height: 100%;
+    }
+    #splitter {} #leftPane {
+        display: none;
+    }
+    #groupView {} #groupTabBar {} #listItemLegend {
+        width: 45% !important;
+    }
+    #listItemAbout {
+        width: 45% !important;
+    }
+    #legendSubView {
+        width: 100%;
+        height: 95%;
+        color: #000000;
+        padding: 10px;
+        font-size: 0.75em;
+    }
+    #legendContainer {} #legendHeader {} #legendDiv {
+        height: 100%;
+        width: 100%;
+    }
+    #aboutSubView {
+        height: 100%;
+    }
+    #subtitle {} #owner {} #footerText {} #modified {}
+    /* Right Pane */
+    #rightPane {
+        width: 100% !important;
+        left: 0 !important;
+    }
+    #rightPanelHeader {
+        border-top-width: 0 !important;
+        border-left: 1px;
+    }
+    #aboutButton {
+        display: none;
+    }
+    #legendButton {} #map {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+        padding: 0;
+    }
 
-  body {
-    font-family: "Tahoma", Tahoma, "Trebuchet MS", Arial, sans-serif;
-  }
-
-  #container {
-    width: 100%;
-    height: 100%;
-  }
-
-  #splitter {
-  }
-
-  #leftPane {
-    display: none;
-  }
-
-  #groupView { }
-  #groupTabBar { }
-
-  #listItemLegend {
-    width: 45% !important;
-  }
-
-  #listItemAbout {
-    width: 45% !important;
-  }
-
-  #legendSubView {
-    width: 100%;
-    height: 95%;
-    color: #000000;
-    padding: 10px;
-    font-size: 0.75em;
-  }
-  #legendContainer { }
-  #legendHeader { }
-
-  #legendDiv {
-    height: 100%;
-    width: 100%;
-  }
-
-  #aboutSubView {
-    height: 100%;
-  }
-
-  #subtitle { }
-  #owner { }
-  #footerText { }
-  #modified { }
-
-  /* Right Pane */
-  #rightPane {
-    width: 100% !important;
-    left: 0 !important;
-  }
-
-  #rightPanelHeader {
-    border-top-width: 0 !important;
-    border-left: 1px;
-  }
-
-  #aboutButton {
-    display: none;
-  }
-
-  #legendButton {
-  }
-
-  #map {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 0;
-    padding: 0;
-  }
-  #map_zoom_slider {
-    display: none;
-  }
-
-  #legendButton {
-    display: none;
-  }
-
-  .esriSimpleSlider div {
-    display: none;
-  }
-
-  .esriMobileInfoView .esriMobileInfoViewItem {
-    color: #000000 !important;
-  }
-
-  #popoverWindow {
-    position: absolute;
-    z-index: 2;
-    left: 17%;
-    top: 5%;
-    visibility: hidden;
-    height: 90% !important;
-  }
-
-  #popover-body {
-    height: 100% !important;
-  }
+    #legendButton {
+        display: none;
+    }
+#geocoderDiv{
+position:absolute;
+display:block;
+z-index:50;
+top:20px;
+left:74px;
 }
-
-
-
-@media screen and (orientation:landscape) {
-  html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0 10px;
-    padding: 0;
-  }
-
-  body {
-    font-family: "Tahoma", Tahoma, "Trebuchet MS", Arial, sans-serif;
-  }
-
-  #container {
-    width: 100%;
-    height: 100%;
-  }
-
-  #splitter { }
-
-  #leftPane {
-    width: 25%;
-    z-index: 5;
-  }
-
-  #groupView { }
-  #groupTabBar { }
-  #listItemLegend {
-    width: 45% !important;
-  }
-  #listItemAbout {
-    width: 45% !important;
-  }
-
-  #legendSubView {
-    width: 100%;
-    height: 95%;
-    color: #000000;
-    padding: 10px;
-    font-size: 0.75em;
-  }
-
-  #legendContainer { }
-  #legendHeader { }
-
-  #legendDiv {
-    height: 100%;
-    width: 100%;
-  }
-
-  /* About */
-  #aboutSubView {
-
-  }
-
-  #aboutSubView h4 {
-    font-size: 0.9em;
-  }
-
-  #aboutSubView #subtitle {
-    font-size: 0.75em;
-    height: 300px;
-    word-wrap: break-word !important;
-  }
-
-  #aboutSubView #owner {
-    margin-left: 20px;
-    font-size: 0.70em;
-    color: #000000;
-  }
-
-  #aboutSubView #footerText {
-    margin-left: 20px;
-    font-size: 0.70em;
-    color: #000000;
-  }
-
-  #aboutSubView #modified {
-    margin-left: 20px;
-    font-size: 0.70em;
-  }
-
-  /* Right Pane */
-  #rightPane {
-    width: 75%;
-  }
-
-  #rightPanelHeader {
-    border-top-width: 0 !important;
-    border-left: 1px;
-  }
-  #aboutToolbarButton {
-    display: none;
-  }
-  #geoLocateToolbarButton {
-
-  }
-
-
-  #aboutButton {
-    display: none;
-  }
-
-  #legendButton {
-    display: none;
-  }
-
-  #rightPanelToolbar {
-    position: absolute;
-    z-index: 1;
-  }
-
-  #map {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 0;
-    padding: 0;
-  }
-
-  #footer {
-    display: none;
-  }
-
-  #map_zoom_slider {
-    display: none;
-  }
-
-  .esriSimpleSlider div {
-    /*height: 30px !important;
-    width: 30px !important;*/
-    display: none;
-  }
-
-  .esriMobileInfoView .esriMobileInfoViewItem {
-    color: #000000 !important;
-  }
-
-  #popoverWindow {
-    position: absolute;
-    z-index: 2;
-    left: 17%;
-    top: 6%;
-    visibility: hidden;
-  }
+    .esriMobileInfoView .esriMobileInfoViewItem {
+        color: #000000 !important;
+    }
+    #popoverWindow {
+        position: absolute;
+        z-index: 2;
+        left: 17%;
+        top: 5%;
+        visibility: hidden;
+        height: 90% !important;
+    }
+    #popover-body {
+        height: 100% !important;
+    }
 }
+@media screen and (orientation: landscape) {
+    html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0 10px;
+        padding: 0;
+    }
+    body {
+        font-family: "Tahoma", Tahoma, "Trebuchet MS", Arial, sans-serif;
+    }
+    #container {
+        width: 100%;
+        height: 100%;
+    }
+        .LocateButton  {
+          position: absolute;
+          top: 95px;
+          left: 20px;
+          z-index: 50;
+      }
+      #geocoderDiv{
+position:absolute;
+display:block;
+z-index:50;
+top:20px;
+left:74px;
+}
+    #splitter {} #leftPane {
+        width: 25%;
+        z-index: 5;
+    }
+    #groupView {} #groupTabBar {} #listItemLegend {
+        width: 45% !important;
+    }
+    #listItemAbout {
+        width: 45% !important;
+    }
+    #legendSubView {
+        width: 100%;
+        height: 95%;
+        color: #000000;
+        padding: 10px;
+        font-size: 0.75em;
+    }
+    #legendContainer {} #legendHeader {} #legendDiv {
+        height: 100%;
+        width: 100%;
+    }
+    /* About */
+    #aboutSubView {} #aboutSubView h4 {
+        font-size: 0.9em;
+    }
+    #aboutSubView #subtitle {
+        font-size: 0.75em;
+        height: 300px;
+        word-wrap: break-word !important;
+    }
+    #aboutSubView #owner {
+        margin-left: 20px;
+        font-size: 0.70em;
+        color: #000000;
+    }
+    #aboutSubView #footerText {
+        margin-left: 20px;
+        font-size: 0.70em;
+        color: #000000;
+    }
+    #aboutSubView #modified {
+        margin-left: 20px;
+        font-size: 0.70em;
+    }
+    /* Right Pane */
+    #rightPane {
+        width: 75%;
+    }
+    #rightPanelHeader {
+        border-top-width: 0 !important;
+        border-left: 1px;
+    }
+    #aboutToolbarButton {
+        display: none;
+    }
+    #geoLocateToolbarButton {} #aboutButton {
+        display: none;
+    }
+    #legendButton {
+        display: none;
+    }
+    #rightPanelToolbar {
+        position: absolute;
+        z-index: 1;
+    }
+    #map {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+        padding: 0;
+    }
+    #footer {
+        display: none;
+    }
 
+    .esriMobileInfoView .esriMobileInfoViewItem {
+        color: #000000 !important;
+    }
+    #popoverWindow {
+        position: absolute;
+        z-index: 2;
+        left: 17%;
+        top: 6%;
+        visibility: hidden;
+    }
+}
 .popover {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 275px;
-  margin: 0 -118px;
-  height: 90%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 275px;
+    margin: 0 -118px;
+    height: 90%;
 }
-
 .popover .popover-content {
-  border: 1px solid #000;
-  position: relative;
-  -moz-border-radius: 11px;
-  -webkit-border-radius: 11px;
-  border-radius: 11px;
-  background-color: #575757;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#575757), to(#373737)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, #575757, #373737); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image: -moz-linear-gradient(top, #575757, #373737); /* FF3.6 */
-  background-image: -ms-linear-gradient(top, #575757, #373737); /* IE10 */
-  background-image: -o-linear-gradient(top, #575757, #373737); /* Opera 11.10+ */
-  background-image: linear-gradient(top, #575757, #373737);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#575757', EndColorStr = '#373737'); /* IE6-IE9 */
-  -webkit-box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.37), 0px 6px 18px 0px rgba(0, 0, 0, 0.95);
-  -moz-box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.37), 0px 6px 18px 0px rgba(0, 0, 0, 0.95);
-  box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.37), 0px 6px 18px 0px rgba(0, 0, 0, 0.95);
-  padding: 5px;
-  font-size: 0.8em;
-  height: 90%;
+    border: 1px solid #000;
+    position: relative;
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius: 11px;
+    background-color: #575757;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#575757), to(#373737));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #575757, #373737);
+    /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image: -moz-linear-gradient(top, #575757, #373737);
+    /* FF3.6 */
+    background-image: -ms-linear-gradient(top, #575757, #373737);
+    /* IE10 */
+    background-image: -o-linear-gradient(top, #575757, #373737);
+    /* Opera 11.10+ */
+    background-image: linear-gradient(top, #575757, #373737);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorStr='#575757', EndColorStr='#373737');
+    /* IE6-IE9 */
+    -webkit-box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.37), 0px 6px 18px 0px rgba(0, 0, 0, 0.95);
+    -moz-box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.37), 0px 6px 18px 0px rgba(0, 0, 0, 0.95);
+    box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.37), 0px 6px 18px 0px rgba(0, 0, 0, 0.95);
+    padding: 5px;
+    font-size: 0.8em;
+    height: 90%;
 }
-
 .popover .popover-body {
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  border-radius: 7px;
-  border: 1px solid #000;
-  background: #fff;
-  -webkit-box-shadow: 0px 1px 2px 0px rgba(255, 255, 255, 0.4), inset 1px 1px 4px 0px rgba(0, 0, 0, 0.66);
-  -moz-box-shadow: 0px 1px 2px 0px rgba(255, 255, 255, 0.4), inset 1px 1px 4px 0px rgba(0, 0, 0, 0.66);
-  box-shadow: 0px 1px 2px 0px rgba(255, 255, 255, 0.4), inset 1px 1px 4px 0px rgba(0, 0, 0, 0.66);
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    border: 1px solid #000;
+    background: #fff;
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(255, 255, 255, 0.4), inset 1px 1px 4px 0px rgba(0, 0, 0, 0.66);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(255, 255, 255, 0.4), inset 1px 1px 4px 0px rgba(0, 0, 0, 0.66);
+    box-shadow: 0px 1px 2px 0px rgba(255, 255, 255, 0.4), inset 1px 1px 4px 0px rgba(0, 0, 0, 0.66);
 }
-
 .popover .arrow {
-  position: absolute;
-  left: 23px;
-  top: -9px;
-  width: 25px;
-  height: 10px;
-  overflow: hidden;
+    position: absolute;
+    left: 23px;
+    top: -9px;
+    width: 25px;
+    height: 10px;
+    overflow: hidden;
 }
-
 .popover .arrow span {
-  display: block;
-  width: 14px;
-  height: 14px;
-  background: red;
-  -webkit-transform: rotate(45deg) skew(-10deg, -10deg);
-  -webkit-transform: rotate(45deg) skew(-10deg, -10deg); /* Saf3.1+, Chrome */
-  -moz-transform: rotate(45deg) skew(-10deg, -10deg); /* FF3.5+ */
-  -ms-transform: rotate(45deg) skew(-10deg, -10deg); /* IE9 */
-  -o-transform: rotate(45deg) skew(-10deg, -10deg); /* Opera 10.5 */
-  transform: rotate(45deg) skew(-10deg, -10deg);
-  filter: progid:DXImageTransform.Microsoft.Matrix(/* IE6–IE9 */ M11 = 0.7071067811865476, M12 = -0.7071067811865475, M21 = 0.7071067811865475, M22 = 0.7071067811865476, sizingMethod = 'auto expand');
-  zoom: 1;
-  margin: 1px 0 0 4px;
-  background: #575757;
-  border-left: 1px solid #000;
-  border-top: 1px solid #000;
-  -webkit-box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.37);
-  -moz-box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.37);
-  box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.37);
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: red;
+    -webkit-transform: rotate(45deg) skew(-10deg, -10deg);
+    -webkit-transform: rotate(45deg) skew(-10deg, -10deg);
+    /* Saf3.1+, Chrome */
+    -moz-transform: rotate(45deg) skew(-10deg, -10deg);
+    /* FF3.5+ */
+    -ms-transform: rotate(45deg) skew(-10deg, -10deg);
+    /* IE9 */
+    -o-transform: rotate(45deg) skew(-10deg, -10deg);
+    /* Opera 10.5 */
+    transform: rotate(45deg) skew(-10deg, -10deg);
+    filter: progid: DXImageTransform.Microsoft.Matrix(
+    /* IE6–IE9 */
+    M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476, sizingMethod='auto expand');
+    zoom: 1;
+    margin: 1px 0 0 4px;
+    background: #575757;
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+    -webkit-box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.37);
+    -moz-box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.37);
+    box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.37);
 }

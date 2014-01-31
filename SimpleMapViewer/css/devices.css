@@ -7,10 +7,15 @@
  *	combination with the screen keyword
  *
  */
-      
+
 /* iPhone */
-@import url("iPhone.css") only screen and (min-device-width:320px) and (max-device-width:680px);
+
+@import url("iPhone.css") only screen and (min-device-width: 320px) and (max-device-width: 680px);
+
 /* iPad */
-@import url("iPad.css") only screen and (min-device-width:768px) and (max-device-width:1024px);
+
+@import url("iPad.css") only screen and (min-device-width: 768px) and (max-device-width: 1024px);
+
 /* desktop */
+
 /* @import url("desktop.css") only screen and (min-width:800px) and (min-device-aspect-ratio: 1/1);*/

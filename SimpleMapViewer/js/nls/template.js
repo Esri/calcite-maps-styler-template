@@ -1,16 +1,24 @@
-﻿define({
-  root   :({
+﻿define({ root:
+  ({
     viewer:{
-      main     :{
+      main :{
         scaleBarUnits:"english" //"english (for miles) or "metric" (for km) - don't translate.
+        
       },
-      errors   :{
+      errors:{
         createMap:"Unable to create map",
         general  :"Error",
         bingError:"Deploying this application requires your own Bing Maps key."
       },
-      footer   :{
+      footer:{
         label:"A map from:"
+      },
+      geocoder: {
+        selectAnother: "Select another location",
+        notWhatYouWanted: "Not what you wanted?",
+        currentLocation: "Current Location",
+        title: "Location"
+
       },
       sidePanel:{
         title   :"Legend",
@@ -22,9 +30,9 @@
         title:""
       },
       buttons  :{
-        about                   :"About",
-        legend                  :"Legend",
-        backBtn                 :"Back",
+        about:"About",
+        legend:"Legend",
+        backBtn :"Back",
         detailedDescriptionLabel:"Detailed Description"
       }
     }
