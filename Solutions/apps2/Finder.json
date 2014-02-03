@@ -1,6 +1,6 @@
 {
     "license": [
-        " | Copyright 2013 Esri",
+        " | Copyright 2012 Esri",
         " |",
         " | Licensed under the Apache License, Version 2.0 (the 'License');",
         " | you may not use this file except in compliance with the License.",
@@ -16,20 +16,19 @@
     ],
 
     "values": {
-        "webmap": "796c572e6dcb4c88b77c024ae003bd88",
-        "titleBar.title": "Tag, Edit, and View",
+        "webmap": "d3df161ab8204e848b359d5f352b5b65",
+        "titleBar.title": "Finder",
         "titleBar.iconUrl": "images/onlineapp.png",
-        "colorizer.theme": "Brick",
-        "searchBox.hint": "",
-        "filter.hint1": "Floor number",
-        "filter.value1": 1,
-        "filter.fieldname1": "FLOOR",
-        "featureSearcher.searchLayerName": "Fire Suppression Systems",
-        "featureSearcher.searchFields": "COMPLEXID,PLANID,LOCDESC,COMMENTS",
-        "featureSearcher.displayFields": "PLANID",
+        "colorizer.theme": "DarkGray",
+        "searchBox.hint": "42757 Woodward Ave",
+        "featureSearcher.searchLayerName": "Parcel Details",
+        "featureSearcher.searchFields": "SITEADDRESS,CNVYNAME,PARCELID",
+        "featureSearcher.displayFields": "SITEADDRESS",
+        "highlighter.showFeaturePopup": true,
+        "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
         "basemapBox.basemapgroupOwner": "",
-        "helpMessageBox.content": "Tag, Edit, and View provides decisions makers and data custodians the ability to edit geographic content, automatically set attribute values, and filter content in a webmap when viewing."
+        "helpMessageBox.content": "Finder<hr><br>Finder (formerly known as Parcel Viewer) provides the general public and other interested parties access to searchable and interactive information such as property tax and assessment information or the locations of water access points.<br><br>To locate this information, click a feature on the map or search for the feature by address, name, or another identifier such as Parcel ID."
     },
 
     "configurationSettings": [{
@@ -76,24 +75,6 @@
             "tooltip": "Color theme to use"
         }]
     }, {
-        "category": "Editing Filter",
-        "fields": [{
-            "label": "Value hint",
-            "fieldName": "filter.hint1",
-            "type": "string",
-            "tooltip": "Prompt for filter value field"
-        }, {
-            "label": "Initial value",
-            "fieldName": "filter.value1",
-            "type": "string",
-            "tooltip": "Text to display in the value field as the initial value"
-        }, {
-            "label": "Value field",
-            "fieldName": "filter.fieldname1",
-            "type": "string",
-            "tooltip": "Field in the layer(s) that is to be used as a filter"
-        }]
-    }, {
         "category": "Map",
         "fields": [{
             "label": "Select a map",
@@ -129,10 +110,7 @@
             "label": "Zoom level for selected feature",
             "fieldName": "highlighter.highlightZoomLevel",
             "type": "number",
-            "constraints": {
-                "min": 0,
-                "places": 0
-            },
+            "constraints": {"min": 0, "places": 0},
             "tooltip": "Sets the map zoom level to this level after selecting a feature"
         }, {
             "label": "Name of basemap group",
@@ -224,8 +202,7 @@
             "rootId": "map",
             "rootClass": "mapContainer",
             "parentDiv": "contentFrame",
-            "fill": true,
-            "ignorePopups": true
+            "fill": true
         }
     }, {
         "classname": "js.LGHighlighter",
@@ -274,42 +251,8 @@
     }, {
         "classname": "js.LGLaunchUrl",
         "config": {
-            "rootId": "launcher",
             "sameWinTrigger": "launch/parent",
             "newWinTrigger": "launch/blank"
-        }
-    }, {
-        "classname": "js.LGEditTemplatePickerWithDefaults",
-        "styles": ".templateArea{display:none;width:210px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .templateArea{border-radius:8px}.templatePickerHolder {position:absolute;right:5px;top:5px;left:5px;bottom:5px;overflow-x:hidden;overflow-y:auto;}",
-        "config": {
-            "rootId": "iTemplateArea",
-            "parentDiv": "contentFrame",
-            "rootClass": "templateArea",
-            "templatePickerHolderClass": "templatePickerHolder",
-            "templatePickerDivClass": "templatePickerDiv",
-            "colorizerId": "colorizer",
-            "horizOffset": -2,
-            "vertOffset": [56, -40],
-            "trigger": "markup",
-            "dependencyId": "map",
-            "listenForDefaultsTrigger": "floor"
-        }
-    }, {
-        "classname": "js.LGFilterLayers1WithDefaults",
-        "styles": ".filter{display:none;width:210px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .filter{border-radius:8px}",
-        "config": {
-            "rootId": "filter",
-            "tooltip": "@tooltips.filter",
-            "parentDiv": "contentFrame",
-            "rootClass": "filter",
-            "horizOffset": -2,
-            "vertOffset": 2,
-            "defnExpression": "${fieldname1}=${value1}",
-            "trigger": "markup",
-            "dependencyId": "map",
-            "broadcastDefaultsPublish": "floor",
-            "busyIndicator": "busyIndicator",
-            "ieSwitchDelaySecs": "2.2"
         }
     }, {
         "classname": "js.LGLocate",
@@ -318,6 +261,58 @@
             "parentDiv": "contentFrame",
             "trigger": "locate",
             "publish": "position"
+        }
+    }, {
+        "classname": "js.LGPrintMap",
+        "styles": ".absolute{position:absolute}.printMapBox{display:none;width:269px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .printMapBox{border-radius:8px}.printFormatsPanel{height:52px;margin:0px;padding:2px;overflow:hidden;text-align:center;vertical-align:middle}.pushbuttonOn{border:1px solid blue}.printDlogItem{margin:3px!important}",
+        "config": {
+            "rootId": "printMap",
+            "parentDiv": "contentFrame",
+            "rootClass": "printMapBox",
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "asynchronous": false,
+            "format": "PDF",
+            "preserveScale": true,
+            "title": "",
+            "author": "",
+            "orientationButtonClass": "commandButton printDlogItem",
+            "orientationButtonIconClass": "commandIcon",
+            "landscapeButtonIconUrl": "images/landscapeDoc.png",
+            "landscapeButtonTooltip": "@tooltips.landscape",
+            "landscapeServerSpec": "Letter ANSI A Landscape",
+            "portraitButtonIconUrl": "images/portraitDoc.png",
+            "portraitButtonTooltip": "@tooltips.portrait",
+            "portraitServerSpec": "Letter ANSI A Portrait",
+            "titleHint": null,
+            "titleHintDefault": "@labels.title",
+            "titleClass": "printDlogItem",
+            "authorHint": null,
+            "authorHintDefault": "@labels.author",
+            "authorClass": "printDlogItem",
+            "printButtonIconUrl": "images/print.png",
+            "printButtonClass": "commandButton printDlogItem",
+            "printButtonIconClass": "commandIcon",
+            "printButtonTooltip": "@tooltips.print",
+            "copyrightText": null,
+            "dependencyId": "map",
+            "trigger": "print",
+            "publishReady": "printingReady",
+            "publishWorking": "printing",
+            "publishPrintUrl": "printUrl"
+        }
+    }, {
+        "classname": "js.LGFetchPrintedMap",
+        "config": {
+            "rootId": "fetchPrintedMap",
+            "publish": "launch/blank",
+            "parentDiv": "contentFrame",
+            "dependencyId": "map",
+            "trigger": "fetchPrint",
+            "triggerPrintUrl": "printUrl",
+            "publishPrintAvailable": "printAvailable",
+            "publishPrintNotAvailable": "printNotAvailable",
+            "printAvailabilityTimeoutMinutes": 15
         }
     }, {
         "classname": "js.LGMessageBox",
@@ -351,7 +346,8 @@
             "horizOffset": -2,
             "vertOffset": [2, -2],
             "trigger": "basemap",
-            "dependencyId": "map"
+            "dependencyId": "map",
+            "webmapThumbnail": "images/webmap.png"
         }
     }, {
         "classname": "js.LGMapBasedMenuBox",
@@ -407,18 +403,6 @@
             "iconClass": "commandIcon",
             "dependencyId": "locator",
             "publish": "locate"
-        }
-    }, {
-        "classname": "js.LGCommand",
-        "config": {
-            "rootId": "markup",
-            "tooltip": "@tooltips.collect",
-            "iconUrl": "images/markup.png",
-            "parentDiv": "commandPanel",
-            "rootClass": "commandButton",
-            "iconClass": "commandIcon",
-            "dependencyId": "map",
-            "publish": "markup"
         }
     }, {
         "classname": "js.LGCommand",
@@ -482,6 +466,40 @@
             "rootClass": "commandTextButton",
             "iconClass": "commandIcon",
             "publish": "share/twitter"
+        }
+    }, {
+        "classname": "js.LGCommandToggle",
+        "config": {
+            "rootId": "print",
+            "tooltip": "@tooltips.print",
+            "iconUrl": "images/print.png",
+            "iconDisabledUrl": "images/printing.gif",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "publish": "print",
+            "dependencyId": "printMap",
+            "triggerEnable": "printingReady",
+            "triggerDisable": "printing",
+            "isVisible": false,
+            "isEnabled": true
+        }
+    }, {
+        "classname": "js.LGCommandToggle",
+        "config": {
+            "rootId": "fetchPrint",
+            "tooltip": "@tooltips.fetchPrint",
+            "iconUrl": "images/doc.png",
+            "iconDisabledUrl": "images/docDisabled.png",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "publish": "fetchPrint",
+            "triggerVisible": "printAvailable",
+            "triggerInvisible": "printNotAvailable",
+            "triggerEnable": "printingReady",
+            "triggerDisable": "printing",
+            "isVisible": false
         }
     }, {
         "classname": "js.LGCommand",

@@ -1,6 +1,6 @@
 /* 
 This source is a compressed form of part of the git commit 
-5c22119809387c51 2014-01-27 14:10:13 -0800
+84bef690e57315be 2014-02-03 14:45:30 -0800
 Uncompressed source is available from https://github.com/Esri/local-government-online-apps 
 */ 
 /*
@@ -21,5 +21,5 @@ Uncompressed source is available from https://github.com/Esri/local-government-o
  | See the License for the specific language governing permissions and
  | limitations under the License.
 */
-require(["dojo/ready","dojo/Deferred","esri/map","dojo/i18n"],function(a,c){a(function(){String.prototype.trim||(String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g,"")});defaultAppUI||(defaultAppUI="apps2/GeneralMap");dojo.requireLocalization("esriTemplate","template");require(["dojo/ready","js/lgonlineBuildUI"],function(a){a(function(){var a=new c;require(["dojo/ready","js/lgonlineApp"],function(b){b(function(){a.resolve()})});(new js.LGUIBuilder(window.location.search,null,defaultAppUI)).ready.then(function(b){a.then(function(){b.launch().then(function(){dojo.fadeIn({node:"contentDiv",
-duration:500,onEnd:function(){dojo.removeClass("contentDiv","transparent");dojo.removeClass("pageBody","startupBkgd")}}).play();console.log("Application is ready")},function(){console.error("Unable to launch application")})})},function(){console.error("Unable to find configuration")})})})})});
+require(["dojo/ready","dojo/Deferred","esri/map","dojo/i18n"],function(a,d){a(function(){String.prototype.trim||(String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g,"")});defaultAppUI||(defaultAppUI="apps2/GeneralMap");dojo.requireLocalization("esriTemplate","template");require(["dojo/ready","js/lgonlineBuildUI"],function(a){a(function(){function a(c){var b=dojo.i18n.getLocalization("esriTemplate","template");alert(1===c?b.messages.noConfiguration:b.messages.unableToLaunchApp)}var b=
+new d;require(["dojo/ready","js/lgonlineApp"],function(a){a(function(){b.resolve()})});(new js.LGUIBuilder(window.location.search,null,defaultAppUI)).ready.then(function(c){b.then(function(){c.launch().then(function(){dojo.fadeIn({node:"contentDiv",duration:500,onEnd:function(){dojo.removeClass("contentDiv","transparent");dojo.removeClass("pageBody","startupBkgd")}}).play();console.log("Application is ready")},function(){a(0)})})},function(){a(1)})})})})});

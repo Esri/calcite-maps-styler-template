@@ -1,9 +1,9 @@
-change report #5 at 01/13/2014 19:21:03.37
+change report #7 at 02/03/2014 14:44:04.98
 -
 for git branch
-develop
+template_free_feature_adding
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M nls/template.js
+ M js2/lgonlineEditing.js
