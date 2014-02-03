@@ -54,7 +54,10 @@ define(
             geolocationTimeout: "브라우저에서 적절한 시간 내에 현재 위치를 확인할 수 없습니다.",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "맵에서 이 검색 레이어를 찾을 수 없습니다.",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "맵 검색 레이어에서 이 필드를 찾을 수 없습니다.",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "한_None of these fields was found in the map search layer_빠"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            allSearchFieldsMissing: "한_None of these fields was found in the map search layer_빠",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            yourContentSubmitted: "한_Your content has been submitted. Thank you._빠",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "한_Unable to access application's configuration_빠",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "한_Unable to launch application_빠"  // Appears for any failure to build the user interface
         }
     })
 );

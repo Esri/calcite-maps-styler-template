@@ -54,7 +54,10 @@ define(
             geolocationTimeout: "ก้_The browser was not able to get the current location in a timely fashion_ษฺ",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "ก้_This search layer was not found in the map_ษฺ",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "ก้_This field was not found in the map search layer_ษฺ",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "ก้_None of these fields was found in the map search layer_ษฺ"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            allSearchFieldsMissing: "ก้_None of these fields was found in the map search layer_ษฺ",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            yourContentSubmitted: "ก้_Your content has been submitted. Thank you._ษฺ",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "ก้_Unable to access application's configuration_ษฺ",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "ก้_Unable to launch application_ษฺ"  // Appears for any failure to build the user interface
         }
     })
 );

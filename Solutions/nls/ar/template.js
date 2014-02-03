@@ -54,7 +54,10 @@ define(
             geolocationTimeout: "لم يتمكن المتصفح من الحصول على الموقع الحالي داخل الحالة في وقتها",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "لم يتم العثور على طبقة البحث في الخريطة",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "لم يتم العثور على هذا الحقل في طبقة بحث الخريطة",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "بيت_None of these fields was found in the map search layer_لاحقة"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            allSearchFieldsMissing: "بيت_None of these fields was found in the map search layer_لاحقة",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            yourContentSubmitted: "بيت_Your content has been submitted. Thank you._لاحقة",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "بيت_Unable to access application's configuration_لاحقة",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "بيت_Unable to launch application_لاحقة"  // Appears for any failure to build the user interface
         }
     })
 );

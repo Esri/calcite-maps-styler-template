@@ -54,7 +54,10 @@ define(
             geolocationTimeout: "Nettleseren kunne ikke hente gjeldende plassering innen rimelig tid",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "Fant ikke dette søkelaget i kartet",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Fant ikke dette feltet i kartsøkelaget",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "å_None of these fields was found in the map search layer_ø"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            allSearchFieldsMissing: "å_None of these fields was found in the map search layer_ø",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            yourContentSubmitted: "å_Your content has been submitted. Thank you._ø",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "å_Unable to access application's configuration_ø",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "å_Unable to launch application_ø"  // Appears for any failure to build the user interface
         }
     })
 );
