@@ -96,7 +96,7 @@
 				settingsTabExtent: "Utbredning",
 				settingsExtentExplain: "Ange den ursprungliga utbredningen via den interaktiva kartan nedan.",
 				settingsExtentExplainBottom: "Den utbredning du definierar ändrar webbkartans ursprungliga utbredning. Om du kör en svepserie kommer den här utbredningen inte att användas.",
-				settingsExtentDateLineError: "Det går inte att ha en utbredning över 180°-meridianen",
+				settingsExtentDateLineError: "Å_The extent cannot be across the meridian of 180ï¿½ longitude_ö",
 				settingsExtentDateLineError2: "Det gick inte att beräkna utbredningen",
 				settingsExtentDrawBtn: "Rita en ny utbredning",
 				settingsExtentModifyBtn: "Redigera aktuell utbredning",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Här finns ett exempel på en applikation med en svepserie",
 				preview: "Förhandsgranska användargränssnitt",
 				settingsLocateButtonExplain: "Den här funktionen kan användas på de flesta mobila enheter och datorwebbläsare (inklusive Internet Explorer 9+).",
-				settingsLocateButton: "Aktivera knappen Hitta på webbläsare som stöds",
+				settingsLocateButton: "Å_Enable a 'Locate' button on supported browsers_ö",
 				settingsAddressSearch: "Aktivera ett adressökverktyg"
 			},
 			settingsSwipePopup: {

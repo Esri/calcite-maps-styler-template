@@ -12,8 +12,14 @@
       footer: {
         label: "Mapa od:"
       },
+      geocoder: {
+        selectAnother: "ł_Select another location_ą",
+        notWhatYouWanted: "ł_Not what you wanted?_ą",
+        currentLocation: "ł_Current Location_ą",
+        title: "ł_Location_ą"
+      },
       sidePanel: {
-        title: "Legenda",
+        title: "ł_Legend_ą",
         owner: "właściciel: ",
         modified: "Ostatnia modyfikacja: ",
         message: "Brak warstw operacyjnych"

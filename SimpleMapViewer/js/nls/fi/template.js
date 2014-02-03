@@ -12,8 +12,14 @@
       footer: {
         label: "Kartta kohteesta:"
       },
+      geocoder: {
+        selectAnother: "Å_Select another location_ö",
+        notWhatYouWanted: "Å_Not what you wanted?_ö",
+        currentLocation: "Å_Current Location_ö",
+        title: "Å_Location_ö"
+      },
       sidePanel: {
-        title: "Selite",
+        title: "Å_Legend_ö",
         owner: "omistaja: ",
         modified: "Muokattu viimeksi: ",
         message: "Ei toiminnallisia karttatasoja"

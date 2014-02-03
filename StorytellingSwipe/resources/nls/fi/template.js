@@ -96,7 +96,7 @@
 				settingsTabExtent: "Laajuus",
 				settingsExtentExplain: "Määritä alkuperäinen laajuus alla olevan vuorovaikutteisen kartan avulla.",
 				settingsExtentExplainBottom: "Määrittämäsi laajuus muokkaa web-kartan alkuperäistä laajuutta. Huomaa, että jos teet pyyhkäisysarjan, määritettyä laajuutta ei käytetä.",
-				settingsExtentDateLineError: "Laajuus ei saa ylittää 180° pituusasteen meridiaania",
+				settingsExtentDateLineError: "Å_The extent cannot be across the meridian of 180ï¿½ longitude_ö",
 				settingsExtentDateLineError2: "Virhe laajuuden laskennassa",
 				settingsExtentDrawBtn: "Piirrä uusi laajuus",
 				settingsExtentModifyBtn: "Muokkaa nykyistä laajuutta",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Tarkastele tässä esimerkkiä sovelluksesta, jossa on pyyhkäisysarja",
 				preview: "Käyttöliittymän esikatselu",
 				settingsLocateButtonExplain: "Kyseinen toiminto on tuettu useimmissa mobiililaitteissa ja tietokoneiden selaimissa (mm. Internet Explorer 9 ja uudemmat versiot).",
-				settingsLocateButton: "Ota Paikanna-painiketta tukevat selaimet käyttöön",
+				settingsLocateButton: "Å_Enable a 'Locate' button on supported browsers_ö",
 				settingsAddressSearch: "Ota osoitehakutyökalu käyttöön"
 			},
 			settingsSwipePopup: {

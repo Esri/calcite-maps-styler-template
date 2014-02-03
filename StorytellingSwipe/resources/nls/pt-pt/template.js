@@ -96,7 +96,7 @@
 				settingsTabExtent: "Extensão",
 				settingsExtentExplain: "Defina a extensão inicial através do mapa interativo abaixo.",
 				settingsExtentExplainBottom: "A extensão definida irá modificar a extensão inicial do seu mapa web.",
-				settingsExtentDateLineError: "A extensão não pode ser ao longo do meridiano de180° de longitude",
+				settingsExtentDateLineError: "ã_The extent cannot be across the meridian of 180ï¿½ longitude_Ç",
 				settingsExtentDateLineError2: "Erro ao calcular extensão",
 				settingsExtentDrawBtn: "Desenhar uma nova extensão",
 				settingsExtentModifyBtn: "Editar a extensão atual",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Consulte aqui um exemplo de uma aplicação de varrimento",
 				preview: "Pré-visualizar IU",
 				settingsLocateButtonExplain: "Esta funcionalidade é suportada na maioria dos dispositivos móveis e navegadores de internet (incluindo o Internet Explorer 9+).",
-				settingsLocateButton: "Ativar navegadores que suportam um botão 'Localizar'",
+				settingsLocateButton: "ã_Enable a 'Locate' button on supported browsers_Ç",
 				settingsAddressSearch: "Ativar uma ferramenta de pesquisa de moradas"
 			},
 			settingsSwipePopup: {

@@ -96,7 +96,7 @@
 				settingsTabExtent: "範囲",
 				settingsExtentExplain: "以下の対話型マップを使用して初期範囲を設定します。",
 				settingsExtentExplainBottom: "定義した範囲によって、Web マップの初期範囲が変更されます。スワイプ操作を実行する場合、その範囲は使用されないことに注意してください。",
-				settingsExtentDateLineError: "この範囲は、経度 180° の子午線を超えることはできません。",
+				settingsExtentDateLineError: "須_The extent cannot be across the meridian of 180ï¿½ longitude_鷗",
 				settingsExtentDateLineError2: "範囲を計算中にエラーが発生しました",
 				settingsExtentDrawBtn: "新しい範囲の描画",
 				settingsExtentModifyBtn: "現在の範囲の編集",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "スワイプ操作を使用したアプリケーションの例を表示",
 				preview: "UI のプレビュー",
 				settingsLocateButtonExplain: "この機能は、ほとんどのモバイル デバイスとデスクトップ ブラウザ (Internet Explorer 9 以上) でサポートされています。",
-				settingsLocateButton: "[検索] ボタンに対応したブラウザの有効化",
+				settingsLocateButton: "須_Enable a 'Locate' button on supported browsers_鷗",
 				settingsAddressSearch: "アドレス検索ツールの有効化"
 			},
 			settingsSwipePopup: {

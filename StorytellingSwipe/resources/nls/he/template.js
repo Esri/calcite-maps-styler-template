@@ -96,7 +96,7 @@
 				settingsTabExtent: "תיחום",
 				settingsExtentExplain: "בחר את התיחום ההתחלתי באמצעות המפה האינטראקטיבית שלהלן.",
 				settingsExtentExplainBottom: "התיחום אותו הגדרת ישנה את התיחום ההתחלתי של ה- web map שלך. שים לב שאם אתה עושה סדרות swipe תיחום זה לא יהיה בשימוש.",
-				settingsExtentDateLineError: "התיחום לא יכול להיותבין המרידיאן של קו אורך 180°",
+				settingsExtentDateLineError: "כן_The extent cannot be across the meridian of 180ï¿½ longitude_ש",
 				settingsExtentDateLineError2: "שגיאה בחישוב התיחום",
 				settingsExtentDrawBtn: "שרטט תיחום חדש",
 				settingsExtentModifyBtn: "ערוך את התיחום הנוכחי",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "ראה כאן דוגמא לאלפליקציה עם סדרת ה-Swipe",
 				preview: "תצוגה מקדימה של UI",
 				settingsLocateButtonExplain: "פונקציונליות זו נתמכת ברוב המכשירים הניידים ובדפדפנים השולחניים (Internet Explorer 9).",
-				settingsLocateButton: "הפוך לפעיל את כפתור 'איתור' לדפדפנים נתמכים",
+				settingsLocateButton: "כן_Enable a 'Locate' button on supported browsers_ש",
 				settingsAddressSearch: "הפוך לפעיל כלי חיפוש כתובת"
 			},
 			settingsSwipePopup: {

@@ -96,7 +96,7 @@
 				settingsTabExtent: "Ausdehnung",
 				settingsExtentExplain: "Die Anfangsausdehnung über die nachstehende interaktive Karte festlegen.",
 				settingsExtentExplainBottom: "Die definierte Ausdehnung ändert die Anfangsausdehnung Ihrer Webkarte. Beachten Sie, dass die Ausdehnung nicht verwendet wird, wenn Sie eine Ausblendereihe festlegen.",
-				settingsExtentDateLineError: "Die Ausdehnung darf nicht über den Meridian von 180° Längengrad hinausreichen",
+				settingsExtentDateLineError: "ä_The extent cannot be across the meridian of 180ï¿½ longitude_Ü",
 				settingsExtentDateLineError2: "Fehler beim Berechnen der Ausdehnung",
 				settingsExtentDrawBtn: "Eine neue Ausdehnung darstellen",
 				settingsExtentModifyBtn: "Die aktuelle Ausdehnung bearbeiten",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Nachfolgend finden Sie ein Beispiel für eine Anwendung mit einer Ausblendereihe",
 				preview: "Benutzeroberflächen-Vorschau",
 				settingsLocateButtonExplain: "Diese Funktion wird auf den meisten mobilen Geräten und Desktop-Browsern (einschließlich Internet Explorer 9+) unterstützt.",
-				settingsLocateButton: "Schaltfläche \"Suchen\" für unterstützte Browser aktivieren",
+				settingsLocateButton: "ä_Enable a 'Locate' button on supported browsers_Ü",
 				settingsAddressSearch: "Werkzeug für Adressensuche aktivieren"
 			},
 			settingsSwipePopup: {

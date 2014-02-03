@@ -12,6 +12,12 @@
       footer: {
         label: "ı_A map from:_İ"
       },
+      geocoder: {
+        selectAnother: "ı_Select another location_İ",
+        notWhatYouWanted: "ı_Not what you wanted?_İ",
+        currentLocation: "ı_Current Location_İ",
+        title: "ı_Location_İ"
+      },
       sidePanel: {
         title: "ı_Legend_İ",
         owner: "ı_owner:_İ ",

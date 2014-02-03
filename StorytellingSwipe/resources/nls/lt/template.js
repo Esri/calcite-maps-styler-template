@@ -96,7 +96,7 @@
 				settingsTabExtent: "Aprėptis",
 				settingsExtentExplain: "Nustatykite pradinę aprėptį žemiau esančiame interaktyviame žemėlapyje.",
 				settingsExtentExplainBottom: "Jūsų nurodyta aprėptis pakeis internetinio žemėlapio pradinę aprėptį. Jei naudojamas žemėlapių sukeitimas, ši aprėptis nebus naudojama.",
-				settingsExtentDateLineError: "Aprėptis negali būti abipus 180° ilgumos",
+				settingsExtentDateLineError: "Į_The extent cannot be across the meridian of 180ï¿½ longitude_š",
 				settingsExtentDateLineError2: "Klaida apskaičiuojant aprėptį",
 				settingsExtentDrawBtn: "Brėžti naują aprėptį",
 				settingsExtentModifyBtn: "Redaguoti esamą aprėptį",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Peržiūrėkite aplikacijos su keitiklių serijomis pavyzdį čia",
 				preview: "Vartotojo sąsajos peržiūra",
 				settingsLocateButtonExplain: "Šis funkcionalumas palaikomas daugelyje mobilių įrenginių ir darbastalio naršyklių (įskaitant Internet Explorer 9+).",
-				settingsLocateButton: "Įgalinti \'Rasti\' mygtuką palaikomose naršyklėse",
+				settingsLocateButton: "Į_Enable a 'Locate' button on supported browsers_š",
 				settingsAddressSearch: "Įgalinti adreso paieškos įrankį"
 			},
 			settingsSwipePopup: {

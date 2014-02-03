@@ -96,7 +96,7 @@
 				settingsTabExtent: "Extent",
 				settingsExtentExplain: "Stel het begin-extent in met de interactieve kaart hieronder.",
 				settingsExtentExplainBottom: "Het extent dat u definieert, zal het oorspronkelijke extent van de webmap wijzigen. Merk op dat dit extent niet zal worden gebruikt als u een Swipe-reeks uitvoert.",
-				settingsExtentDateLineError: "Het extent mag niet op de meridiaan van 180° lengtegraad zijn",
+				settingsExtentDateLineError: "Ĳ_The extent cannot be across the meridian of 180ï¿½ longitude_ä",
 				settingsExtentDateLineError2: "Fout bij het berekenen van het extent",
 				settingsExtentDrawBtn: "Een nieuw extent tekenen",
 				settingsExtentModifyBtn: "Het huidige extent bewerken",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Bekijk hier een voorbeeld van een applicatie met een Swipe-reeks",
 				preview: "Voorbeeldweergave UI",
 				settingsLocateButtonExplain: "Deze functionaliteit wordt ondersteund op de meeste mobiele apparaten en desktopbrowsers (inclusief Internet Explorer 9+).",
-				settingsLocateButton: "Schakel een knop \'Locatie\' in op ondersteunde browsers",
+				settingsLocateButton: "Ĳ_Enable a 'Locate' button on supported browsers_ä",
 				settingsAddressSearch: "Schakel een tool voor het zoeken naar adressen in"
 			},
 			settingsSwipePopup: {

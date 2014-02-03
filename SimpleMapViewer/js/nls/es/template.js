@@ -12,8 +12,14 @@
       footer: {
         label: "Un mapa de:"
       },
+      geocoder: {
+        selectAnother: "á_Select another location_Ó",
+        notWhatYouWanted: "á_Not what you wanted?_Ó",
+        currentLocation: "á_Current Location_Ó",
+        title: "á_Location_Ó"
+      },
       sidePanel: {
-        title: "Leyenda",
+        title: "á_Legend_Ó",
         owner: "propietario: ",
         modified: "Última modificación: ",
         message: "Ninguna capa operativa"

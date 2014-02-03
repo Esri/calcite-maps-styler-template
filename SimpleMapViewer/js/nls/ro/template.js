@@ -12,8 +12,14 @@
       footer: {
         label: "O hartă de la:"
       },
+      geocoder: {
+        selectAnother: "Ă_Select another location_ș",
+        notWhatYouWanted: "Ă_Not what you wanted?_ș",
+        currentLocation: "Ă_Current Location_ș",
+        title: "Ă_Location_ș"
+      },
       sidePanel: {
-        title: "Legendă",
+        title: "Ă_Legend_ș",
         owner: "proprietar: ",
         modified: "Data ultimei modificări: ",
         message: "Niciun strat tematic operaţional"

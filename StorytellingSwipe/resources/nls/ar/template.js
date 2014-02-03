@@ -96,7 +96,7 @@
 				settingsTabExtent: "المدى",
 				settingsExtentExplain: "تعيين النطاق الأولي خلال الخريطة التفاعلية الموضحة أدناه.",
 				settingsExtentExplainBottom: "سيقوم النطاق الذي تم تعريفه بتعديل النطاق الأولي لخريطة الويب. لاحظ أنه إذا كنت تقوم بعمل سلسلة من السحب، فلن يتم استخدام هذا النطاق.",
-				settingsExtentDateLineError: "لا يجب أن يتجاوز النطاق خط الطول 180 درجة",
+				settingsExtentDateLineError: "بيت_The extent cannot be across the meridian of 180ï¿½ longitude_لاحقة",
 				settingsExtentDateLineError2: "حدث خطأ أثناء حساب النطاق",
 				settingsExtentDrawBtn: "ارسم النطاق الجديد",
 				settingsExtentModifyBtn: "تحرير النطاق الحالي",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "راجع مثال على التطبيق مع سحب السلاسل هنا",
 				preview: "معاينة واجهة المستخدم",
 				settingsLocateButtonExplain: "يتم دعم هذه الوظيفة على معظم أجهزة الجوال ومستعرضات سطح المكتب (بما في ذلك Internet Explorer 9+(.",
-				settingsLocateButton: "تمكين زر 'تحديد الموقع' على المستعرضات المدعومة",
+				settingsLocateButton: "بيت_Enable a 'Locate' button on supported browsers_لاحقة",
 				settingsAddressSearch: "تمكين أداة البحث عن العنوان"
 			},
 			settingsSwipePopup: {

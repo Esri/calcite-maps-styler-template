@@ -96,7 +96,7 @@
 				settingsTabExtent: "Extindere",
 				settingsExtentExplain: "Setaţi extinderea iniţială prin harta interactivă de mai jos.",
 				settingsExtentExplainBottom: "Extinderea pe care o definiţi va modifica extinderea iniţială a hărţii web.Reţineţi că, dacă efectuaţi o serie Swipe, extinderea respectivă nu va fi utilizată.",
-				settingsExtentDateLineError: "Extinderea nu poate traversa meridianul cu longitudinea 180°",
+				settingsExtentDateLineError: "Ă_The extent cannot be across the meridian of 180ï¿½ longitude_ș",
 				settingsExtentDateLineError2: "Eroare la calculul extinderii",
 				settingsExtentDrawBtn: "Trasare extindere nouă",
 				settingsExtentModifyBtn: "Editare extindere curentă",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Vedeţi aici un exemplu de aplicaţie cu o serie de acţiuni",
 				preview: "Previzualizare interfaţă cu utilizatorul",
 				settingsLocateButtonExplain: "Această funcţionalitate este acceptată pe majoritatea dispozitivelor mobile şi browserelor desktop (inclusiv Internet Explorer 9+).",
-				settingsLocateButton: "Activare buton \„Localizare\” pe browsere acceptate",
+				settingsLocateButton: "Ă_Enable a 'Locate' button on supported browsers_ș",
 				settingsAddressSearch: "Activare instrument de căutare adrese"
 			},
 			settingsSwipePopup: {

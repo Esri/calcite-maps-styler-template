@@ -12,8 +12,14 @@
       footer: {
         label: "خريطة من:"
       },
+      geocoder: {
+        selectAnother: "بيت_Select another location_لاحقة",
+        notWhatYouWanted: "بيت_Not what you wanted?_لاحقة",
+        currentLocation: "بيت_Current Location_لاحقة",
+        title: "بيت_Location_لاحقة"
+      },
       sidePanel: {
-        title: "مفتاح الخريطة",
+        title: "بيت_Legend_لاحقة",
         owner: "المالك: ",
         modified: "آخر تعديل: ",
         message: "لا توجد طبقات تشغيلية"

@@ -12,8 +12,14 @@
       footer: {
         label: "Een kaart van:"
       },
+      geocoder: {
+        selectAnother: "Ĳ_Select another location_ä",
+        notWhatYouWanted: "Ĳ_Not what you wanted?_ä",
+        currentLocation: "Ĳ_Current Location_ä",
+        title: "Ĳ_Location_ä"
+      },
       sidePanel: {
-        title: "Legenda",
+        title: "Ĳ_Legend_ä",
         owner: "eigenaar: ",
         modified: "Laatst gewijzigd: ",
         message: "Geen operationele lagen"

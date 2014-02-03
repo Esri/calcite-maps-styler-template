@@ -96,7 +96,7 @@
 				settingsTabExtent: "Zasięg",
 				settingsExtentExplain: "Ustaw początkowy zasięg za pomocą poniższej mapy interaktywnej.",
 				settingsExtentExplainBottom: "Zdefiniowany zasięg zostanie użyty do modyfikacji początkowego zasięgu mapy internetowej. Należy pamiętać, że zasięg ten nie będzie używany podczas korzystania z serii zwijania.",
-				settingsExtentDateLineError: "Zasięg nie może przebiegać przez południk 180°",
+				settingsExtentDateLineError: "ł_The extent cannot be across the meridian of 180ï¿½ longitude_ą",
 				settingsExtentDateLineError2: "Błąd w obliczaniu zasięgu",
 				settingsExtentDrawBtn: "Określ nowy zasięg",
 				settingsExtentModifyBtn: "Zmień bieżący zasięg",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Tutaj znajduje się przykładowa aplikacja zawierająca serie zwijania",
 				preview: "Podgląd interfejsu użytkownika",
 				settingsLocateButtonExplain: "Ten sposób działania jest obsługiwany w większości urządzeń mobilnych i przeglądarek komputerowych (łącznie z programem Internet Explorer 9 i nowszymi wersjami).",
-				settingsLocateButton: "Włącz przycisk Lokalizuj w obsługiwanych przeglądarkach",
+				settingsLocateButton: "ł_Enable a 'Locate' button on supported browsers_ą",
 				settingsAddressSearch: "Włącz narzędzie wyszukiwania adresów"
 			},
 			settingsSwipePopup: {

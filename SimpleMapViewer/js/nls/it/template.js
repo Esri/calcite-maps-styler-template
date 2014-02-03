@@ -12,8 +12,14 @@
       footer: {
         label: "Una mappa da:"
       },
+      geocoder: {
+        selectAnother: "é_Select another location_È",
+        notWhatYouWanted: "é_Not what you wanted?_È",
+        currentLocation: "é_Current Location_È",
+        title: "é_Location_È"
+      },
       sidePanel: {
-        title: "Legenda",
+        title: "é_Legend_È",
         owner: "Proprietario: ",
         modified: "Data ultima modifica: ",
         message: "Layer operativi non disponibili"

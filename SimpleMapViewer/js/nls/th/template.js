@@ -12,6 +12,12 @@
       footer: {
         label: "ก้_A map from:_ษฺ"
       },
+      geocoder: {
+        selectAnother: "ก้_Select another location_ษฺ",
+        notWhatYouWanted: "ก้_Not what you wanted?_ษฺ",
+        currentLocation: "ก้_Current Location_ษฺ",
+        title: "ก้_Location_ษฺ"
+      },
       sidePanel: {
         title: "ก้_Legend_ษฺ",
         owner: "ก้_owner:_ษฺ ",

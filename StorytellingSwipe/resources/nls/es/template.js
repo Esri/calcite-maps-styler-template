@@ -96,7 +96,7 @@
 				settingsTabExtent: "Extensión",
 				settingsExtentExplain: "Establecer la extensión inicial mediante el mapa interactivo siguiente.",
 				settingsExtentExplainBottom: "La extensión que definas modificará la extensión inicial del mapa web. Ten en cuenta que si estás llevando a cabo una serie comparativa no se usará esa extensión.",
-				settingsExtentDateLineError: "La extensión no puede atravesar el meridiano de longitud 180º",
+				settingsExtentDateLineError: "á_The extent cannot be across the meridian of 180ï¿½ longitude_Ó",
 				settingsExtentDateLineError2: "Error al calcular la extensión",
 				settingsExtentDrawBtn: "Dibuja una nueva extensión",
 				settingsExtentModifyBtn: "Edita la extensión actual",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Mira un ejemplo de una aplicación con una serie de comparativas aquí",
 				preview: "Vista previa de la interfaz de usuario",
 				settingsLocateButtonExplain: "Esta funcionalidad es compatible con la mayoría de dispositivos móviles y navegadores de escritorio (incluido Internet Explorer 9+).",
-				settingsLocateButton: "Habilitar un botón \"Localizar\" en navegadores compatibles",
+				settingsLocateButton: "á_Enable a 'Locate' button on supported browsers_Ó",
 				settingsAddressSearch: "Habilitar una herramienta de búsqueda de direcciones"
 			},
 			settingsSwipePopup: {

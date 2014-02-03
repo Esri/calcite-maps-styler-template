@@ -12,8 +12,14 @@
       footer: {
         label: "Carte de :"
       },
+      geocoder: {
+        selectAnother: "æ_Select another location_Â",
+        notWhatYouWanted: "æ_Not what you wanted?_Â",
+        currentLocation: "æ_Current Location_Â",
+        title: "æ_Location_Â"
+      },
       sidePanel: {
-        title: "Légende",
+        title: "æ_Legend_Â",
         owner: "propriétaire : ",
         modified: "Date de dernière modification : ",
         message: "Aucune couche fonctionnelle"

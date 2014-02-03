@@ -96,7 +96,7 @@
 				settingsTabExtent: "Estensione",
 				settingsExtentExplain: "Impostare l\'estensione iniziale mediante la mappa interattiva riportata di seguito.",
 				settingsExtentExplainBottom: "L\'estensione specificata modificherà l\'estensione iniziale della mappa Web. Tenere presente che tale estensione non verrà utilizzata se si sta effettuando una serie di scorrimenti.",
-				settingsExtentDateLineError: "L\'estensione non può attraversare il meridiano per 180° di longitudine",
+				settingsExtentDateLineError: "é_The extent cannot be across the meridian of 180ï¿½ longitude_È",
 				settingsExtentDateLineError2: "Errore di calcolo dell\'estensione",
 				settingsExtentDrawBtn: "Disegna una nuova estensione",
 				settingsExtentModifyBtn: "Modifica l\'estensione corrente",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Per un esempio di applicazione con una serie di scorrimenti, vedere qui",
 				preview: "Anteprima interfaccia utente",
 				settingsLocateButtonExplain: "Questa funzionalità è supportata nella maggior parte dei browser per dispositivi mobili e desktop (incluso Internet Explorer 9 e versioni successive).",
-				settingsLocateButton: "Abilita un pulsante Trova posizione nei browser supportati",
+				settingsLocateButton: "é_Enable a 'Locate' button on supported browsers_È",
 				settingsAddressSearch: "Abilita uno strumento per la ricerca di indirizzi"
 			},
 			settingsSwipePopup: {

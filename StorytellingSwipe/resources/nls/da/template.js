@@ -96,7 +96,7 @@
 				settingsTabExtent: "Område",
 				settingsExtentExplain: "Indstil startudstrækningen via det interaktive kort nedenfor.",
 				settingsExtentExplainBottom: "Den udstrækning, du definerer, vil ændre dit webkorts oprindelige udstrækning. Bemærk, at hvis du udfører en swipe-serie, vil denne udstrækning ikke blive brugt.",
-				settingsExtentDateLineError: "Udstrækningen må ikke krydse meridianen på længdegraden 180°",
+				settingsExtentDateLineError: "ø_The extent cannot be across the meridian of 180ï¿½ longitude_å",
 				settingsExtentDateLineError2: "Fejl ved behandlingen af udstrækningen",
 				settingsExtentDrawBtn: "Tegn ny udstrækning",
 				settingsExtentModifyBtn: "Redigér den aktuelle udstrækning",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Se et eksempel på en applikation med swipe-serien her",
 				preview: "UI-forhåndsvisning",
 				settingsLocateButtonExplain: "Denne funktionalitet understøttes på de fleste mobile enheder og pc-browsere (inkl. Internet Explorer 9+).",
-				settingsLocateButton: "Aktiv\ér browsere, der har en 'Find'-knap",
+				settingsLocateButton: "ø_Enable a 'Locate' button on supported browsers_å",
 				settingsAddressSearch: "Aktiv\ér et adressesøgningsværktøj"
 			},
 			settingsSwipePopup: {

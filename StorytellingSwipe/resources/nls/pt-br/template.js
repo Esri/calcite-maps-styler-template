@@ -96,7 +96,7 @@
 				settingsTabExtent: "Extensão",
 				settingsExtentExplain: "Configure a extensão inicial pelo mapa interativo abaixo.",
 				settingsExtentExplainBottom: "A extensão que você define modificará sua extensão inicial do mapa da web. Observe que se você estiver realizando uma série de oscilações esta extensão não será utilizada.",
-				settingsExtentDateLineError: "A extensão não pode cruzar o meridiano de longitude de 180°",
+				settingsExtentDateLineError: "ã_The extent cannot be across the meridian of 180ï¿½ longitude_Ç",
 				settingsExtentDateLineError2: "Erro ao calcular a extensão",
 				settingsExtentDrawBtn: "Desenhar uma nova extensão",
 				settingsExtentModifyBtn: "Editar a extensão atual",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Consulte um exemplo de um aplicativo com uma série de oscilação aqui",
 				preview: "Visualizar ID",
 				settingsLocateButtonExplain: "Esta funcionalidade é suportada na maioria dos dispositivos móveis e navegadores desktop (incluindo Internet Explorer 9 +).",
-				settingsLocateButton: "Habilitar botão \'Localizar\' dos navegadores suportados",
+				settingsLocateButton: "ã_Enable a 'Locate' button on supported browsers_Ç",
 				settingsAddressSearch: "Habilitar uma ferramenta de pesquisa de endereço"
 			},
 			settingsSwipePopup: {

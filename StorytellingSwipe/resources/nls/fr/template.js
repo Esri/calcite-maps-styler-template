@@ -96,7 +96,7 @@
 				settingsTabExtent: "Etendue",
 				settingsExtentExplain: "Définissez l\’étendue initiale au moyen de la carte interactive ci-dessous.",
 				settingsExtentExplainBottom: "L\'étendue que vous définissez modifiera l\'étendue initiale de votre carte Web. Notez que si vous effectuez une série de balayages, cette étendue ne sera pas utilisée.",
-				settingsExtentDateLineError: "L\'étendue ne peut pas traverser le méridien de 180° de longitude",
+				settingsExtentDateLineError: "æ_The extent cannot be across the meridian of 180ï¿½ longitude_Â",
 				settingsExtentDateLineError2: "Erreur de calcul de l\'étendue",
 				settingsExtentDrawBtn: "Tracer une nouvelle étendue",
 				settingsExtentModifyBtn: "Modifier l\’étendue actuelle",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Consultez un exemple d\'application avec une série de balayages ici",
 				preview: "Aperçu de l\'interface utilisateur",
 				settingsLocateButtonExplain: "Cette fonctionnalité est prise en charge par la plupart des appareils mobiles et des navigateurs bureautiques (y compris Internet Explorer 9+).",
-				settingsLocateButton: "Activer un bouton \'Localiser\' sur les navigateurs pris en charge",
+				settingsLocateButton: "æ_Enable a 'Locate' button on supported browsers_Â",
 				settingsAddressSearch: "Activer un outil de recherche d\'adresses"
 			},
 			settingsSwipePopup: {

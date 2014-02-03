@@ -12,8 +12,14 @@
       footer: {
         label: "Et kart fra:"
       },
+      geocoder: {
+        selectAnother: "å_Select another location_ø",
+        notWhatYouWanted: "å_Not what you wanted?_ø",
+        currentLocation: "å_Current Location_ø",
+        title: "å_Location_ø"
+      },
       sidePanel: {
-        title: "Tegnforklaring",
+        title: "å_Legend_ø",
         owner: "eier: ",
         modified: "Sist endret: ",
         message: "Ingen funksjonelle lag"

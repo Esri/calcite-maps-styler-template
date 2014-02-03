@@ -96,7 +96,7 @@
 				settingsTabExtent: "범위",
 				settingsExtentExplain: "아래의 대화형 맵을 통해 초기 범위를 설정합니다.",
 				settingsExtentExplainBottom: "정의한 범위에 따라 웹 맵 초기 범위가 수정됩니다. 단, 스와이프 계열을 수행하는 경우에는 해당 범위가 사용되지 않습니다.",
-				settingsExtentDateLineError: "범위는 180° 경도의 자오선을 교차할 수 없습니다.",
+				settingsExtentDateLineError: "한_The extent cannot be across the meridian of 180ï¿½ longitude_빠",
 				settingsExtentDateLineError2: "범위를 계산하는 중 오류가 발생했습니다.",
 				settingsExtentDrawBtn: "새 범위 그리기",
 				settingsExtentModifyBtn: "현재 범위 편집",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "스와이프 계열이 포함된 응용프로그램 예제 확인",
 				preview: "UI 미리보기",
 				settingsLocateButtonExplain: "이 기능은 대부분의 모바일 장치와 데스크탑 브라우저(Internet Explorer 9 이상 포함)에서 지원됩니다.",
-				settingsLocateButton: "지원되는 브라우저에서 '찾기' 버튼 사용",
+				settingsLocateButton: "한_Enable a 'Locate' button on supported browsers_빠",
 				settingsAddressSearch: "주소 검색 도구 사용"
 			},
 			settingsSwipePopup: {

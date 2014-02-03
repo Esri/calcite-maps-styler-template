@@ -12,8 +12,14 @@
       footer: {
         label: "다음의 맵:"
       },
+      geocoder: {
+        selectAnother: "한_Select another location_빠",
+        notWhatYouWanted: "한_Not what you wanted?_빠",
+        currentLocation: "한_Current Location_빠",
+        title: "한_Location_빠"
+      },
       sidePanel: {
-        title: "범례",
+        title: "한_Legend_빠",
         owner: "소유자: ",
         modified: "마지막으로 수정한 날짜: ",
         message: "운영 레이어 없음"

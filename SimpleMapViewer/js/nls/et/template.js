@@ -12,8 +12,14 @@
       footer: {
         label: "Kaart:"
       },
+      geocoder: {
+        selectAnother: "Š_Select another location_ä",
+        notWhatYouWanted: "Š_Not what you wanted?_ä",
+        currentLocation: "Š_Current Location_ä",
+        title: "Š_Location_ä"
+      },
       sidePanel: {
-        title: "Legend",
+        title: "Š_Legend_ä",
         owner: "omanik: ",
         modified: "Viimati muudetud: ",
         message: "Puuduvad funktsioneerivad kihid"

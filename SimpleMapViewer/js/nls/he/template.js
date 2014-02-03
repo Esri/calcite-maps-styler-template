@@ -12,8 +12,14 @@
       footer: {
         label: "מפה מתוך:"
       },
+      geocoder: {
+        selectAnother: "כן_Select another location_ש",
+        notWhatYouWanted: "כן_Not what you wanted?_ש",
+        currentLocation: "כן_Current Location_ש",
+        title: "כן_Location_ש"
+      },
       sidePanel: {
-        title: "מקרא",
+        title: "כן_Legend_ש",
         owner: "בעלים: ",
         modified: "שונה לאחרונה: ",
         message: "אין שכבות אופרטיביות"

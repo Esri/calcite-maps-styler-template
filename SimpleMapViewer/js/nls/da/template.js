@@ -12,8 +12,14 @@
       footer: {
         label: "Et kort fra:"
       },
+      geocoder: {
+        selectAnother: "ø_Select another location_å",
+        notWhatYouWanted: "ø_Not what you wanted?_å",
+        currentLocation: "ø_Current Location_å",
+        title: "ø_Location_å"
+      },
       sidePanel: {
-        title: "Signaturforklaring",
+        title: "ø_Legend_å",
         owner: "ejer: ",
         modified: "Sidst ændret: ",
         message: "Ingen lag klar til brug"

@@ -96,7 +96,7 @@
 				settingsTabExtent: "Kuvaulatus",
 				settingsExtentExplain: "Määra sisemine ulatus läbi alloleva interaktiivse kaardi.",
 				settingsExtentExplainBottom: "Määratud ulatus muudab veebikaardi sisemist ulatust. Pange tähele, et kui teete rullimise seeriaid, siis ulatust ei kasutata.",
-				settingsExtentDateLineError: "Ulatus ei saa ületada 180° pikkuskraadi",
+				settingsExtentDateLineError: "Š_The extent cannot be across the meridian of 180ï¿½ longitude_ä",
 				settingsExtentDateLineError2: "Viga ulatuse arvutamisel",
 				settingsExtentDrawBtn: "Joonista uus ulatus",
 				settingsExtentModifyBtn: "Muuda praegust ulatust",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Vaata vahetatavate seeriatega rakenduse näidet siit",
 				preview: "UI vaade",
 				settingsLocateButtonExplain: "Funktsionaalsus on toetatud enamustel nutiseadmetel ja töökoha brauserites (k.a Internet Explorer 9+).",
-				settingsLocateButton: "Luba positsioneerimise nupp toetatud brauserites",
+				settingsLocateButton: "Š_Enable a 'Locate' button on supported browsers_ä",
 				settingsAddressSearch: "Luba aadressi otsimise tööriist"
 			},
 			settingsSwipePopup: {

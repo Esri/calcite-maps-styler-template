@@ -12,8 +12,14 @@
       footer: {
         label: "En karta från:"
       },
+      geocoder: {
+        selectAnother: "Å_Select another location_ö",
+        notWhatYouWanted: "Å_Not what you wanted?_ö",
+        currentLocation: "Å_Current Location_ö",
+        title: "Å_Location_ö"
+      },
       sidePanel: {
-        title: "Teckenförklaring",
+        title: "Å_Legend_ö",
         owner: "ägare: ",
         modified: "Senast ändrad: ",
         message: "Inga operativa lager"

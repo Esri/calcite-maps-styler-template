@@ -96,7 +96,7 @@
 				settingsTabExtent: "Экстент",
 				settingsExtentExplain: "Выберите начальный экстент через интерактивную карту, показанную ниже.",
 				settingsExtentExplainBottom: "Указанный вами экстент обновит исходный экстент веб-карты. Если вы создаете серию карт со шторками, этот экстент использоваться не будет.",
-				settingsExtentDateLineError: "Экстент не может продолжаться за меридиан 180°",
+				settingsExtentDateLineError: "Ж_The extent cannot be across the meridian of 180ï¿½ longitude_Я",
 				settingsExtentDateLineError2: "Ошибка вычисления экстента",
 				settingsExtentDrawBtn: "Нарисовать новый экстент",
 				settingsExtentModifyBtn: "Изменить текущий экстент",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "См. пример приложения с серией шторок здесь",
 				preview: "Просмотр UI",
 				settingsLocateButtonExplain: "Эта функция поддерживается на большинстве браузеров мобильных устройств и настольных браузеров (включая Internet Explorer 9+).",
-				settingsLocateButton: "Включить в поддерживаемых браузерах кнопку Размещение",
+				settingsLocateButton: "Ж_Enable a 'Locate' button on supported browsers_Я",
 				settingsAddressSearch: "Включить инструмент поиска адреса"
 			},
 			settingsSwipePopup: {

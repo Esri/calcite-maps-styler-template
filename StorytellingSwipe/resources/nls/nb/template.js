@@ -96,7 +96,7 @@
 				settingsTabExtent: "Utstrekning",
 				settingsExtentExplain: "Angi begynnerutstrekningen via det interaktive kartet nedenfor.",
 				settingsExtentExplainBottom: "Utstrekningen du definerer, endrer webkartets opprinnelige utstrekning. Legg merke til at hvis du foretar en sveipeserie, blir ikke denne utstrekningen brukt.",
-				settingsExtentDateLineError: "Utstrekningen kan ikke være over den 180. lengdegraden",
+				settingsExtentDateLineError: "å_The extent cannot be across the meridian of 180ï¿½ longitude_ø",
 				settingsExtentDateLineError2: "Feil ved beregning av utstrekningen",
 				settingsExtentDrawBtn: "Tegn en ny utstrekning",
 				settingsExtentModifyBtn: "Rediger gjeldende utstrekning",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Se et eksempel på et program med en sveipeserie her",
 				preview: "Forhåndsvisning av brukergrensesnitt",
 				settingsLocateButtonExplain: "Denne funksjonen støttes på de fleste mobile enheter og nettlesere på stasjonære datamaskiner (inkludert Internet Explorer 9+).",
-				settingsLocateButton: "Akriver en Lokaliser-knapp i støttede nettlesere",
+				settingsLocateButton: "å_Enable a 'Locate' button on supported browsers_ø",
 				settingsAddressSearch: "Aktiver et adressesøkverktøy"
 			},
 			settingsSwipePopup: {

@@ -12,8 +12,14 @@
       footer: {
         label: "Um mapa de:"
       },
+      geocoder: {
+        selectAnother: "ã_Select another location_Ç",
+        notWhatYouWanted: "ã_Not what you wanted?_Ç",
+        currentLocation: "ã_Current Location_Ç",
+        title: "ã_Location_Ç"
+      },
       sidePanel: {
-        title: "Legenda",
+        title: "ã_Legend_Ç",
         owner: "proprietário: ",
         modified: "Última Modificação: ",
         message: "Nenhuma camada operacional"

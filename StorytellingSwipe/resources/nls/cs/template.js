@@ -96,7 +96,7 @@
 				settingsTabExtent: "Rozsah",
 				settingsExtentExplain: "Prostřednictvím následující interaktivní mapy nastavte výchozí rozsah.",
 				settingsExtentExplainBottom: "Podle zadaného rozsahu se upraví výchozí rozsah webové mapy. Vytváříte-li sérii překrývání, tento rozsah se nepoužije.",
-				settingsExtentDateLineError: "Rozsah nesmí přesahovat 180° zeměpisné délky",
+				settingsExtentDateLineError: "Ř_The extent cannot be across the meridian of 180ï¿½ longitude_ů",
 				settingsExtentDateLineError2: "Při výpočtu rozsahu došlo k chybě",
 				settingsExtentDrawBtn: "Určit nový rozsah",
 				settingsExtentModifyBtn: "Editovat aktuální rozsah",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Zde se podívejte na příklad aplikace se sérií překrývání",
 				preview: "Náhled uživatelského rozhraní",
 				settingsLocateButtonExplain: "Tato funkcionalita je podporována na většině mobilních zařízení a stolních prohlížečů (včetně Internet Explorer 9+).",
-				settingsLocateButton: "Povolit tlačítko 'Hledat' v podporovaných prohlížečích",
+				settingsLocateButton: "Ř_Enable a 'Locate' button on supported browsers_ů",
 				settingsAddressSearch: "Povolit nástroj pro vyhledávání adres"
 			},
 			settingsSwipePopup: {

@@ -96,7 +96,7 @@
 				settingsTabExtent: "范围",
 				settingsExtentExplain: "通过下面的交互式地图设置初始范围。",
 				settingsExtentExplainBottom: "您定义的范围将修改您的 web 地图初始范围。请注意，如果您正在执行卷帘操作，则不会使用该范围。",
-				settingsExtentDateLineError: "范围不可跨越 180° 经线",
+				settingsExtentDateLineError: "试_The extent cannot be across the meridian of 180ï¿½ longitude_验",
 				settingsExtentDateLineError2: "计算范围时出错",
 				settingsExtentDrawBtn: "确定一个新范围",
 				settingsExtentModifyBtn: "编辑当前范围",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "在此处查看具有卷帘系列的应用程序示例",
 				preview: "UI 预览",
 				settingsLocateButtonExplain: "此功能在大多数移动设备和桌面浏览器 (包括 Internet Explorer 9+) 中都受支持。",
-				settingsLocateButton: "启用支持“定位”按钮的浏览器",
+				settingsLocateButton: "试_Enable a 'Locate' button on supported browsers_验",
 				settingsAddressSearch: "启用地址搜索工具"
 			},
 			settingsSwipePopup: {

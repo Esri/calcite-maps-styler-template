@@ -12,8 +12,14 @@
       footer: {
         label: "Eine Karte von:"
       },
+      geocoder: {
+        selectAnother: "ä_Select another location_Ü",
+        notWhatYouWanted: "ä_Not what you wanted?_Ü",
+        currentLocation: "ä_Current Location_Ü",
+        title: "ä_Location_Ü"
+      },
       sidePanel: {
-        title: "Legende",
+        title: "ä_Legend_Ü",
         owner: "Besitzer: ",
         modified: "Zuletzt geändert: ",
         message: "Keine operationalen Layer"

@@ -96,7 +96,7 @@
 				settingsTabExtent: "ก้_Extent_ษฺ",
 				settingsExtentExplain: "ก้_Set the initial extent through the interactive map below._ษฺ",
 				settingsExtentExplainBottom: "ก้_The extent you define will modify your web map initial extent. Note that if you are doing a swipe series that extent won't be used._ษฺ",
-				settingsExtentDateLineError: "ก้_The extent cannot be across the meridian of 180° longitude_ษฺ",
+				settingsExtentDateLineError: "ก้_The extent cannot be across the meridian of 180ï¿½ longitude_ษฺ",
 				settingsExtentDateLineError2: "ก้_Error computing the extent_ษฺ",
 				settingsExtentDrawBtn: "ก้_Draw a new extent_ษฺ",
 				settingsExtentModifyBtn: "ก้_Edit the current extent_ษฺ",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "ก้_See an example of an application with a swipe series here_ษฺ",
 				preview: "ก้_UI preview_ษฺ",
 				settingsLocateButtonExplain: "ก้_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ษฺ",
-				settingsLocateButton: "ก้_Enable a 'Locate' button supported browsers_ษฺ",
+				settingsLocateButton: "ก้_Enable a 'Locate' button on supported browsers_ษฺ",
 				settingsAddressSearch: "ก้_Enable an address search tool_ษฺ"
 			},
 			settingsSwipePopup: {

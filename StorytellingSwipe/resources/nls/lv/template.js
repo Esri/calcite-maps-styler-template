@@ -96,7 +96,7 @@
 				settingsTabExtent: "Pārklājums",
 				settingsExtentExplain: "Izmantojot zemāk esošo interaktīvo karti, iestatiet sākotnējo pārklājumu.",
 				settingsExtentExplainBottom: "Jūsu definētais pārklājums modificēs web kartes sākotnējo pārklājumu. Atcerieties ja jūs veicat kartes lasīšanas serijas, šis pārklājums netiks lietots.",
-				settingsExtentDateLineError: "Pārklājums nevar būt pāri 180° meridiāna garumam.",
+				settingsExtentDateLineError: "ķ_The extent cannot be across the meridian of 180ï¿½ longitude_ū",
 				settingsExtentDateLineError2: "Kļūda aprēķinot pārklājumu",
 				settingsExtentDrawBtn: "Zīmēt jaunu pārklājumu",
 				settingsExtentModifyBtn: "Rediģēt pašreizējo pārklājumu",
@@ -169,7 +169,7 @@
 				settingsSeriesHelpLink: "Aopskatiet aplikācijas piemēru ar pārvilkšanas sērijām šeit",
 				preview: "Saskarnes priekšskatījums",
 				settingsLocateButtonExplain: "Šī funkcionalitāte tiek atbalstīta uz vairuma mobilo ierīču un darbvirsmas pārlūkiem (ieskaitot Internet Explorer 9+).",
-				settingsLocateButton: "Iespējot \'Atrast izvietojumu\' pogu atblastītajos pārlūkos",
+				settingsLocateButton: "ķ_Enable a 'Locate' button on supported browsers_ū",
 				settingsAddressSearch: "Iespējot adreses meklēšanas rīku"
 			},
 			settingsSwipePopup: {
