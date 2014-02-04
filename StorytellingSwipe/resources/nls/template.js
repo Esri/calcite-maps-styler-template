@@ -6,7 +6,9 @@ define({
 				step2: "LOADING DATA",
 				step3: "INITIALIZING",
 				fail: "Sorry, Swipe loading failed",
-				loadBuilder: "SWITCHING TO BUILDER MODE",
+				loadBuilder: "SWITCHING TO BUILDER MODE",				
+				redirectSignIn: "REDIRECTING TO SIGN-IN PAGE",
+				redirectSignIn2: "(you will be redirected here after sign-in)",
 				failButton: "Retry"
 			},
 			errors: {
@@ -42,6 +44,8 @@ define({
 			builder: {
 				panelHeader: "APPLICATION CONFIGURATION",
 				buttonSave: "SAVE",
+				buttonHelp: "Help",
+				buttonShare: "Share",
 				buttonDiscard: "CANCEL",
 				buttonSettings: "Settings",
 				buttonView: "View mode",
@@ -152,7 +156,9 @@ define({
 				settingsDataModel2Explain: "Swipe with another web map.",
 				settingsDataModel2SpyGlassExplain: "Reveal another web map.",
 				settingsDataModel2HelpTitle: "How do I find a web map's ID?",
-				settingsDataModel2HelpContent: "Copy and paste digits after the '=' sign in the URL of the web map"
+				settingsDataModel2HelpContent: "Copy and paste digits after the '=' sign in the URL of the web map",
+				switchMaps: "Switch maps",
+				browseWebMaps: "Browse web maps"
 			},
 			settingsLegend: {
 				settingsTabLegend: "App Layout",
@@ -194,6 +200,70 @@ define({
 				discard: "Discard Bookmark",
 				saveExtent: "Set Bookmark Extent",
 				discardDisabled: "You can't remove that bookmark. Swipe series can be disabled in the Settings."
+			},
+			helpPopup: {
+				title: "Help",
+				close: "Close",
+				tab1: {
+					div1: "The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets.",
+					div2: "For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.esri.com/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
+					div3: "We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>."
+				}
+			},
+			share: {
+				firstSaveTitle: "Application successfully saved",
+				firstSaveHeader: "Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions.",
+				firstSaveA1: "If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%",
+				firstSaveA1bis: "The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>.",
+				firstSaveQ2: "Is my Application shared?",
+				firstSaveA2: "Currently your Application is not shared. To share it, use the SHARE button.",
+				shareTitle: "Share your Application",
+				sharePrivateHeader: "Your Application is not shared, would you like to share it?",
+				sharePrivateBtn1: "Share publicly",
+				sharePrivateBtn2: "Share with my Organization",
+				sharePrivateProgress: "Sharing in progress...",
+				sharePrivateErr: "Sharing failed, try again or",
+				sharePrivateOk: "Sharing updated successfully, loading...",
+				shareStatus1: "Application is not saved",
+				shareStatus2: "Application is shared publicly",
+				shareStatus3: "Application is shared within the organization",
+				shareStatus4: "Application is not shared",
+				sharePreviewAsUser: "Preview",
+				shareHeader1: "Your Application is <strong>publicly accessible</strong>.",
+				shareHeader2: "Your Application is accessible by your organization members (login is required).",
+				shareLinkHeader: "Share the Application with your audience",
+				shareLinkOpen: "OPEN",
+				learnMore: "Learn more",
+				shareQ1Opt1: "How do I keep the Application private?",
+				shareQ1Opt2: "How do I keep the Application private or share it publicly?",
+				shareA1: "Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>.",
+				shareA1bis: "If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>.",
+				shareQ2: "How do I edit the Application later?",
+				shareQ2bis: "How do I get back to the authoring interface?",
+				shareA2div1: "Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>.",
+				shareA2div2: "As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:",				
+				shareQ3: "Where is the data stored?",
+				shareA3: "The Application configuration is stored in this web application item</a>."
+			},
+			directCreation: {
+				header: "Welcome to the Swipe/Spyglass Builder",
+				mapPickHeader: "To get started, please input a valid web map id, or use the search button to browse web maps.",
+				launchBuilder: "Launch Builder"
+			}
+		},
+		configure: {
+			mapdlg:{
+				items:{
+					organizationLabel: "My Organization",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "My Content",
+					favoritesLabel: "My Favorites"
+				},
+				title: "Select Web Map",
+				searchTitle: "Search",
+				ok: "Ok",
+				cancel: "Cancel",
+				placeholder: "Enter search term"
 			}
 		}
     }),
@@ -223,3 +293,4 @@ define({
 	"th":1,
 	"zh-cn":1
 });
+
