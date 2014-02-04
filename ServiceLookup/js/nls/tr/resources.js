@@ -1,18 +1,18 @@
 ﻿define(
 	({
         map: {
-            error: "ı_Unable to create map_İ",
-            mouseToolTip: "ı_Click on the map to check for service_İ"
+            error: "Harita oluşturulamıyor",
+            mouseToolTip: "Servisi kontrol etmek için haritaya tıklayın"
         },
         geocoder: {
-            defaultText: "ı_Enter your address_İ"
+            defaultText: "Adresinizi girin"
         },
         error: {
-            layerNotFound: "ı_Service Area Layer is not in the webmap_İ",
-            fieldNotFound: "ı_Field not found_İ"
+            layerNotFound: "Servis Alanı Katmanı web haritasında değil",
+            fieldNotFound: "Alan bulunamadı"
         },
         page: {
-            title: "ı_Service Lookup_İ",
+            title: "Servis Arama",
         }
     })
 

@@ -2,48 +2,48 @@
 ({
   viewer:{
     main:{
-      scaleBarUnits: "ı_english_İ" //"english (for miles) or "metric" (for km) - don't translate.
+      scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors:{
-      createMap: "ı_Unable to create map_İ",
-      bitly: 'ı_bitly is used to shorten the url for sharing. View the readme file for details on creating and using a bitly key_İ',
-      general: "ı_Error_İ"
+      createMap: "Harita oluşturulamıyor",
+      bitly: 'bitly, paylaşmak üzere url\'yi kısaltmak için kullanılır. Bir bitly anahtarı oluşturma ve kullanmanın ayrıntıları için readme dosyasına bakın',
+      general: "Hata"
     }
   },
   tools:{
     basemap: {
-    title: "ı_Switch Basemap_İ",
-    label: "ı_Basemap_İ"
+    title: "Altlık Haritayı Değiştir",
+    label: "Altlık Harita"
     },
     print: {
     layouts:{
-      label1: 'ı_Landscape (PDF)_İ',
-      label2: 'ı_Portrait (PDF)_İ',
-      label3: 'ı_Landscape (Image)_İ',
-      label4: 'ı_Portrait (Image)_İ'
+      label1: 'Yatay (PDF)',
+      label2: 'Dikey (PDF)',
+      label3: 'Yatay (Görüntü)',
+      label4: 'Dikey (Görüntü)'
     },
-    title: "ı_Print Map_İ",
-    label: "ı_Print_İ"
+    title: "Haritayı Yazdır",
+    label: "Yazdır"
     },
     share: {
-    title: "ı_Share Map_İ",
-    label: "ı_Share_İ",
+    title: "Haritayı Paylaş",
+    label: "Paylaş",
     menu:{
       facebook:{
-        label: "ı_Facebook_İ"
+        label: "Facebook"
        },
       twitter:{
-        label: "ı_Twitter_İ"
+        label: "Twitter"
       },
       email:{
-        label: "ı_Email_İ",
-        message: "ı_Check out this map_İ"
+        label: "E-posta",
+        message: "Bu haritayı teslim al"
       }    
     }
     },
     measure: {
-      title: "ı_Measure_İ",
-      label: "ı_Measure_İ"
+      title: "Ölç",
+      label: "Ölç"
     },
     time: {
       // doc about date and time patterns: http://dojotoolkit.org/reference-guide/dojo/date/locale/format.html
@@ -55,58 +55,58 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "ı_yyyy G_İ",
-      decadePattern: "ı_yyyy_İ", 
-      yearPattern: "ı_MMMM yyyy_İ",
-      weekPattern: "ı_MMMM d, yyyy_İ",
-      hourTimePattern: "ı_h a_İ",
-      // e.g. for German: "ı_H:mm:ss:SSS_İ"
+      centuryPattern: "yyyy G",
+      decadePattern: "yyyy", 
+      yearPattern: "MMMM yyyy",
+      weekPattern: "d MMMM yyyy",
+      hourTimePattern: "h a",
+      // e.g. for German: "H:mm:ss:SSS"
       millisecondTimePattern:"h:m:ss.SSS a",
-      minuteTimePattern: "ı_h:mm a_İ",
-      // e.g. for German: "ı_H:mm_İ"
-      monthPattern: "ı_MMMM d, y_İ",
-      secondTimePattern: "ı_h:m:s.SSS a_İ",
-      title: "ı_Display Time Slider_İ",
-      label: "ı_Time_İ",
-      timeRange: "ı_<b>Time Range:</b> ${start_time} to ${end_time}_İ",
-      timeRangeSingle: "ı_<b>Time Range:</b> ${time}_İ"
+      minuteTimePattern: "h:mm a",
+      // e.g. for German: "H:mm"
+      monthPattern: "MMMM d, y",
+      secondTimePattern: "h:m:s.SSS a",
+      title: "Zaman Kaydırıcısını Göster",
+      label: "Zaman",
+      timeRange: "<b>Saat Aralığı:</b> ${start_time} - ${end_time}",
+      timeRangeSingle: "<b>Saat Aralığı:</b> ${time}"
     },
     editor: {
-      title: "ı_Display Editor_İ",
-      label: "ı_Editor_İ"
+      title: "Düzenleyiciyi Göster",
+      label: "Düzenleyici"
     },
     legend: {
-      title: "ı_Display Legend_İ",
-      label: "ı_Legend_İ"
+      title: "Göstergeyi Görüntüle",
+      label: "Gösterge"
     },
     details: {
-      title: "ı_Display Map Details_İ",
-      label: "ı_Details_İ"
+      title: "Harita Ayrıntılarını Görüntüle",
+      label: "Ayrıntılar"
     },
     bookmark:{
-      title: "ı_Display Bookmarks_İ",
-      label: "ı_Bookmarks_İ",
-      details: "ı_Click a bookmark to navigate to the location_İ"
+      title: "Yer İşaretlerini Görüntüle",
+      label: "Yer İşaretleri",
+      details: "Konuma gitmek için bir yer işaretine tıklayın"
     },
     layers: {
-      title: "ı_Display layer list_İ",
-      label: "ı_Layers_İ"
+      title: "Katman listesini görüntüle",
+      label: "Katmanlar"
     },
     search: {
-      title: "ı_Find address or place_İ",
-      popupTitle: "ı_Location_İ",
-      currentLocation: "ı_Current location_İ",
-      notWhatYouWanted: "ı_Not what you wanted?_İ" ,
-      selectAnother: "ı_Select another location_İ",
+      title: "Adres veya yer bul",
+      popupTitle: "Konum",
+      currentLocation: "Geçerli Konum",
+      notWhatYouWanted: "İstediğiniz bu değil mi?" ,
+      selectAnother: "Başka bir konum seç",
       errors:{
-       missingLocation: "ı_Location not found_İ"
+       missingLocation: "Konum bulunamadı"
       }
     }
   },
   panel:{
     close:{
-      title: "ı_Close Panel_İ",
-      label: "ı_Close_İ"
+      title: "Paneli Kapat",
+      label: "Kapat"
     }
   }
 })

@@ -2,198 +2,198 @@
 	({
 		viewer: {
 			loading: {
-				step1: "ı_LOADING APPLICATION_İ",
-				step2: "ı_LOADING DATA_İ",
-				step3: "ı_INITIALIZING_İ",
-				fail: "ı_Sorry, Swipe loading failed_İ",
-				loadBuilder: "ı_SWITCHING TO BUILDER MODE_İ",
-				failButton: "ı_Retry_İ"
+				step1: "UYGULAMA YÜKLENİYOR",
+				step2: "VERİLER YÜKLENİYOR",
+				step3: "BAŞLATILIYOR",
+				fail: "Özür dileriz; Swipe yüklenemedi",
+				loadBuilder: "DERLEYİCİ MODUNA GEÇİLİYOR",
+				failButton: "Tekrar dene"
 			},
 			errors: {
-				boxTitle: "ı_An error has occurred_İ",
-				portalSelf: "ı_Fatal error: Failed to get portal configuration_İ",
-				invalidConfig: "ı_Fatal error: Invalid configuration_İ",
-				invalidConfigNoWebmap: "ı_Fatal error: Invalid configuration (no web map specified)_İ",
-				createMap: "ı_Unable to create map_İ",
-				invalidApp: "ı_Fatal error: The application cannot be loaded_İ",
-				initMobile: "ı_Welcome to the swipe web application. The application is not configured. The interactive builder is not supported on mobile devices._İ",
-				noBuilderIE8: "ı_The Swipe interactive builder is not supported on Internet Explorer before version 9._İ",
-				noLayerView: "ı_Welcome to the Swipe web application.<br />The application is not configured yet._İ",
-				appSave: "ı_Error saving the web application_İ",
-				mapSave: "ı_Error saving the web map_İ",
-				notAuthorized: "ı_You are not authorized to access this application_İ",
-				conflictingProjectionsTitle: "ı_Conflicting Projections_İ",
-				conflictingProjections: "ı_Swipe does not support using two webmaps with different projections. Please open settings and use a webmap that use the same projection than the first webmap._İ",
-				cpButton: "ı_Close_İ"
+				boxTitle: "Hata oluştu",
+				portalSelf: "Onarılamaz hata: Portal yapılandırması alınamadı",
+				invalidConfig: "Onarılamaz: Geçersiz yapılandırma",
+				invalidConfigNoWebmap: "Onarılamaz hata: Geçersiz yapılandırma (hiçbir web haritası belirtilmedi)",
+				createMap: "Harita oluşturulamıyor",
+				invalidApp: "Onarılamaz hata: Uygulama yüklenemiyor",
+				initMobile: "Swipe web uygulamasına hoş geldiniz. Uygulama yapılandırılmadı. Etkileşimli derleyici mobil cihazlarda desteklenmez.",
+				noBuilderIE8: "Swipe etkileşimli derleyicisi Internet Explorer\'ın 9. sürümünden öncesinde desteklenmez.",
+				noLayerView: "Swipe web uygulamasına hoş geldiniz.<br />Uygulama henüz yapılandırılmadı.",
+				appSave: "Web uygulamasını kaydederken hata oluştu",
+				mapSave: "Web haritasını kaydederken hata oluştu",
+				notAuthorized: "Bu uygulamaya erişim yetkiniz yok",
+				conflictingProjectionsTitle: "Çelişen Projeksiyonlar",
+				conflictingProjections: "Swipe farklı projeksiyonları olan iki web haritasını desteklemez. Ayarları açın ve ilk web haritasıyla aynı projeksiyonu kullanan bir web haritası kullanın.",
+				cpButton: "Kapat"
 			},
 			mobileView: {
-				hideIntro: "ı_HIDE INTRO_İ",
-				navLeft: "ı_Legend_İ",
-				navMap: "ı_Map_İ",
-				navRight: "ı_Data_İ"
+				hideIntro: "GİRİŞİ GİZLE",
+				navLeft: "Gösterge",
+				navMap: "Harita",
+				navRight: "Veri"
 			},
 			desktopView: {
-				storymapsText: "ı_A story map_İ",
-				builderButton: "ı_Switch to builder mode_İ",
-				bitlyTooltip: "ı_Get a short link to the application_İ"
+				storymapsText: "Öykü haritası",
+				builderButton: "Derleyici moduna geç",
+				bitlyTooltip: "Uygulamaya bir kısa bağlantı alın"
 			}
 		},
 		builder: {
 			builder: {
-				panelHeader: "ı_APPLICATION CONFIGURATION_İ",
-				buttonSave: "ı_SAVE_İ",
-				buttonDiscard: "ı_CANCEL_İ",
-				buttonSettings: "ı_Settings_İ",
-				buttonView: "ı_View mode_İ",
-				buttonItem: "ı_Open the Web Application item_İ",
-				noPendingChange: "ı_No pending change_İ",
-				unSavedChangeSingular: "ı_1 unsaved change_İ",
-				unSavedChangePlural: "ı_unsaved changes_İ",
-				popoverDiscard: "ı_Are you sure to want to discard any unsaved changes?_İ",
-				yes: "ı_Yes_İ",
-				no: "ı_No_İ",
-				popoverOpenViewExplain: "ı_By opening the viewer, you will lose any unsaved changes_İ",
-				popoverOpenViewOk: "ı_Ok_İ",
-				popoverOpenViewCancel: "ı_Cancel_İ",
-				popoverSaveWhenDone: "ı_Don't forget to save when you are done_İ",
-				closeWithPendingChange: "ı_Are you sure to want to confirm the action ? Your changes will be lost._İ",
-				gotIt: "ı_Ok_İ",
-				savingApplication: "ı_Saving application_İ",
-				saveSuccess: "ı_Application saved successfully_İ",
-				saveError: "ı_Save failed, please try again_İ",
-				signIn: "ı_Please sign in with an account on_İ",
-				signInTwo: "ı_to save the application._İ"
+				panelHeader: "UYGULAMA YAPILANDIRMASI",
+				buttonSave: "KAYDET",
+				buttonDiscard: "İPTAL",
+				buttonSettings: "Ayarlar",
+				buttonView: "Modu görüntüle",
+				buttonItem: "Web Uygulaması öğesini açın",
+				noPendingChange: "Bekleyen değişiklik yok",
+				unSavedChangeSingular: "Kaydedilmemiş 1 değişiklik var",
+				unSavedChangePlural: "kaydedilmemiş değişiklikler",
+				popoverDiscard: "Kaydedilmemiş değişiklerden vazgeçmek istediğinizden emin misiniz?",
+				yes: "Evet",
+				no: "Hayır",
+				popoverOpenViewExplain: "Görüntüleyiciyi açarsanız, kaydedilmemiş değişiklikleri kaybedeceksiniz",
+				popoverOpenViewOk: "Tamam",
+				popoverOpenViewCancel: "İptal",
+				popoverSaveWhenDone: "İşiniz bittiğinde kaydetmeyi unutmayın",
+				closeWithPendingChange: "Eylemi onaylamak istediğinizden emin misiniz? Değişiklikleriniz kaybolacak.",
+				gotIt: "Tamam",
+				savingApplication: "Uygulama kaydediliyor",
+				saveSuccess: "Uygulama başarıyla kaydedildi",
+				saveError: "Kaydetme başarısız; tekrar deneyin",
+				signIn: "Uygulamayı kaydetmek için",
+				signInTwo: "üzerindeki başka bir hesap ile oturum açın."
 			},
 			header:{
-				editMe: "ı_Edit me !_İ",
-				templateTitle: "ı_Set template title_İ",
-				templateSubtitle: "ı_Set template subtitle_İ"
+				editMe: "Beni düzenle !",
+				templateTitle: "Şablon başlığını ayarla",
+				templateSubtitle: "Şablon altyazısını ayarla"
 			},
 			settings: {
-				settingsHeader: "ı_Application settings_İ",
-				modalCancel: "ı_Cancel_İ",
-				modalApply: "ı_Apply_İ"
+				settingsHeader: "Uygulama ayarları",
+				modalCancel: "İptal",
+				modalApply: "Uygula"
 			},
 			settingsColors: {
-				settingsTabColor: "ı_Theme_İ",
-				settingsColorExplain: "ı_Choose an app theme or define your own colors._İ",
-				settingsLabelColor: "ı_Header and side panel background colors_İ"
+				settingsTabColor: "Tema",
+				settingsColorExplain: "Uygulama teması seçin veya kendi renklerinizi tanımlayın.",
+				settingsLabelColor: "Üstbilgi ve yan panel arka plan renkleri"
 			},
 			settingsHeader: {
-				settingsTabLogo: "ı_Header_İ",
-				settingsLogoExplain: "ı_Customize the header logo (maximum is 250 x 50px)._İ",
-				settingsLogoEsri: "ı_Esri logo_İ",
-				settingsLogoNone: "ı_No logo_İ",
-				settingsLogoCustom: "ı_Custom logo_İ",
-				settingsLogoCustomPlaceholder: "ı_Image URL_İ",
-				settingsLogoCustomTargetPlaceholder: "ı_Click-through link_İ",
-				settingsLogoSocialExplain: "ı_Customize the header top right link._İ",
-				settingsLogoSocialText: "ı_Text_İ",
-				settingsLogoSocialLink: "ı_Link_İ",
-				settingsLogoSocialDisabled: "ı_This feature has been disabled by the Administrator_İ"
+				settingsTabLogo: "Üstbilgi",
+				settingsLogoExplain: "Üstbilgi logosunu özelleştirin. (Maksimum 250 x 50 px\'tir.)",
+				settingsLogoEsri: "Esri logosu",
+				settingsLogoNone: "Logo yok",
+				settingsLogoCustom: "Özel logo",
+				settingsLogoCustomPlaceholder: "Görüntü URL\'si",
+				settingsLogoCustomTargetPlaceholder: "Tıklanabilir bağlantı",
+				settingsLogoSocialExplain: "Üstbilgi üst sağ bağlantısını özelleştirin.",
+				settingsLogoSocialText: "Metin",
+				settingsLogoSocialLink: "Bağlantı",
+				settingsLogoSocialDisabled: "Bu özellik Yönetici tarafından devre dışı bırakıldı"
 			},
 			settingsExtent: {
-				settingsTabExtent: "ı_Extent_İ",
-				settingsExtentExplain: "ı_Set the initial extent through the interactive map below._İ",
-				settingsExtentExplainBottom: "ı_The extent you define will modify your web map initial extent. Note that if you are doing a swipe series that extent won't be used._İ",
+				settingsTabExtent: "Yayılım",
+				settingsExtentExplain: "Aşağıdaki harita yoluyla ilk yayılımı ayarlayın.",
+				settingsExtentExplainBottom: "Tanımladığınız yayılım web haritanızın ilk yayılımını değiştirir. Bir swipe serisi yapıyorsanız, yayılımın kullanılmayacağına dikkat edin.",
 				settingsExtentDateLineError: "ı_The extent cannot be across the meridian of 180ï¿½ longitude_İ",
-				settingsExtentDateLineError2: "ı_Error computing the extent_İ",
-				settingsExtentDrawBtn: "ı_Draw a new extent_İ",
-				settingsExtentModifyBtn: "ı_Edit the current extent_İ",
-				settingsExtentApplyBtn: "ı_Apply on main map_İ",
-				settingsExtentUseMainMap: "ı_Use main map extent_İ"
+				settingsExtentDateLineError2: "Yayılımı hesaplanırken hata oluştu",
+				settingsExtentDrawBtn: "Yeni yayılım çiz",
+				settingsExtentModifyBtn: "Geçerli yayılımı düzenle",
+				settingsExtentApplyBtn: "Ana haritaya uygula",
+				settingsExtentUseMainMap: "Ana harita yayılımını kullan"
 			}
         },
 		swipe: {
 			mobileData: {
-				noData: "ı_No data to display!_İ",
-				noDataExplain: "ı_Tap the map to select a feature and come back here_İ",
-				noDataMap: "ı_No data for this map_İ",
-				noPopup: "ı_No pop-up found for this feature_İ"
+				noData: "Görüntülenecek veri yok!",
+				noDataExplain: "Detay seçmek ve buraya geri dönmek için haritaya dokunun",
+				noDataMap: "Bu harita için veri yok",
+				noPopup: "Bu özellik için açılan bir pencere bulunamadı"
 			},
 			mobileLegend: {
-				noLegend: "ı_No legend to display._İ"
+				noLegend: "Görüntülenecek gösterim yok."
 			},
 			swipeSidePanel: {
-				editTooltip: "ı_Set the side panel description_İ",
-				editMe: "ı_Edit me !_İ",
-				legendTitle: "ı_Legend_İ"
+				editTooltip: "Yan panel açıklamasını ayarlayın",
+				editMe: "Beni düzenle !",
+				legendTitle: "Gösterge"
 			},
 			infoWindow: {
-				noFeature: "ı_No data to display_İ",
-				noFeatureExplain: "ı_Tap the map to select a feature_İ"
+				noFeature: "Görüntülenecek veri yok",
+				noFeatureExplain: "Detay seçmek için haritaya dokunun"
 			},
 			settingsLayout: {
-				settingsTabLayout: "ı_Swipe Style_İ",
-				settingsLayoutExplain: "ı_Choose a style for the swipe tool._İ",
-				settingsLayoutSwipe: "ı_Vertical bar_İ",
-				settingsLayoutSpyGlass: "ı_Spyglass_İ",
-				settingsLayoutSelected: "ı_Selected layout_İ",
-				settingsLayoutSelect: "ı_Select this layout_İ",
-				settingsSaveConfirm: "ı_Some of your changes require that you save and reload the application_İ"
+				settingsTabLayout: "Swipe Tarzı",
+				settingsLayoutExplain: "Swipe aracı için bir tarz seçin.",
+				settingsLayoutSwipe: "Dikey çubuk",
+				settingsLayoutSpyGlass: "Küçük dürbün",
+				settingsLayoutSelected: "Seçili düzen",
+				settingsLayoutSelect: "Bu düzeni seç",
+				settingsSaveConfirm: "Değişikliklerinizden bazıları kaydedip uygulamayı tekrar yüklemenizi gerektiriyor"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "ı_Swipe Type_İ",
-				settingsDataModelExplainSwipe: "ı_What do you want users to swipe?_İ",
+				settingsTabDataModel: "Swipe Türü",
+				settingsDataModelExplainSwipe: "Kullanıcıların swipe ile gezmesini istersiniz?",
 				settingsDataModelExplainSwipe2: "",
-				settingsDataModelExplainSpyGlass: "ı_Choose the layer or the web map that will appear in the spyglass._İ",
-				settingsDataModelOneMap: "ı_A layer in a web map_İ",
-				settingsDataModel1Explain: "ı_Select the layer you want to be swiped_İ",
-				settingsDataModel1Warning: "ı_If the layer is hidden by upper layers, swipe won't have any effect._İ",
-				settingsDataModel1SpyGlassExplain: "ı_Select the layer to appear within the spyglass._İ",
-				settingsDataModelTwoMaps: "ı_Two web maps_İ",
-				settingsDataModelLayerIds: "ı_Web map Layer IDs_İ",
-				settingsDataModelSelected: "ı_Selected type_İ",
-				settingsDataModelWebmapSwipeId1: "ı_Right Web map ID_İ",
-				settingsDataModelWebmapSwipeId2: "ı_Left Web map ID_İ",
-				settingsDataModelWebmapGlassId1: "ı_Main Web map ID_İ",
-				settingsDataModelWebmapGlassId2: "ı_Spyglass Web map ID_İ",
-				settingsDataModelSelect: "ı_Select this type_İ",
-				settingsDataModel2Explain: "ı_Swipe with another web map._İ",
-				settingsDataModel2SpyGlassExplain: "ı_Reveal another web map._İ",
-				settingsDataModel2HelpTitle: "ı_How do I find a web map's ID?_İ",
-				settingsDataModel2HelpContent: "ı_Copy and paste digits after the '=' sign in the URL of the web map_İ"
+				settingsDataModelExplainSpyGlass: "Küçük dürbünde görünecek katmanı veya web haritasını seçin.",
+				settingsDataModelOneMap: "Web haritasındaki bir katman",
+				settingsDataModel1Explain: "Swipe ile gezilmesini istediğiniz katmanı seçin",
+				settingsDataModel1Warning: "Katman üst katmanlar tarafından gizlenirse, swipe\'ın bir etkisi olmaz.",
+				settingsDataModel1SpyGlassExplain: "Küçük dürbünde görünecek katmanı seçin.",
+				settingsDataModelTwoMaps: "İki web haritası",
+				settingsDataModelLayerIds: "Web haritası Katman Kimlikleri",
+				settingsDataModelSelected: "Seçilen tür",
+				settingsDataModelWebmapSwipeId1: "Sağ Web haritası kimliği",
+				settingsDataModelWebmapSwipeId2: "Sol Web haritası kimliği",
+				settingsDataModelWebmapGlassId1: "Ana Web haritası kimliği",
+				settingsDataModelWebmapGlassId2: "Küçük Dürbün Web haritası kimliği",
+				settingsDataModelSelect: "Bu türü seç",
+				settingsDataModel2Explain: "Başka bir web haritasıyla swipe kullan.",
+				settingsDataModel2SpyGlassExplain: "Başka bir web haritasını ortaya çıkarın.",
+				settingsDataModel2HelpTitle: "Bir web haritasının kimliğini nasıl bulabilirim?",
+				settingsDataModel2HelpContent: "Web haritasının URL'sindeki '=' işaretinden sonraki rakamları kopyalayıp yapıştırın"
 			},
 			settingsLegend: {
-				settingsTabLegend: "ı_App Layout_İ",
-				settingsLegendExplain: "ı_Select the application layout settings._İ",
-				settingsLegendEnable: "ı_Enable Legend_İ",
-				settingsDescriptionEnable: "ı_Enable Description_İ",
-				settingsBookmarksEnable: "ı_Enable Swipe series_İ",
-				settingsPopupDisable: "ı_Enable popup_İ",
-				settingsLocationSearchEnable: "ı_Enable locator search_İ",
-				settingsGeolocatorEnable: "ı_Enable geolocator_İ",
-				settingsLegendHelpContent: "ı_To refine the legend content, use ArcGIS.com web map viewer table of contents (Hide in Legend)_İ",
-				settingsSeriesHelpContent: "ı_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._İ", 
-				settingsSeriesHelpContent2: "ı_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._İ",
-				settingsSeriesHelpLink: "ı_See an example of an application with a swipe series here_İ",
-				preview: "ı_UI preview_İ",
-				settingsLocateButtonExplain: "ı_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._İ",
+				settingsTabLegend: "Uygulama Düzeni",
+				settingsLegendExplain: "Uygulama yerleşim ayarlarını seçin.",
+				settingsLegendEnable: "Gösterimi Etkinleştir",
+				settingsDescriptionEnable: "Açıklamayı Etkinleştir",
+				settingsBookmarksEnable: "Swipe serisini etkinleştir",
+				settingsPopupDisable: "Açılan pencereyi etkinleştir",
+				settingsLocationSearchEnable: "Bulucu aramasını etkinleştir",
+				settingsGeolocatorEnable: "Coğrafi bulucuyu etkinleştir",
+				settingsLegendHelpContent: "Gösterge içeriğini netleştirmek için, ArcGIS.com web haritası görüntüleyicisi içindekiler tablosunu kullanın (Göstergede Gizle)",
+				settingsSeriesHelpContent: "Swipe serisi, izleyiciye belirli bir yayılım için kılavuzluk eden ve yan panelde bir başlık ve açıklama metni gösteren sekmeli bir gezinme seçeneğidir.  İlk etkinleştirme sırasında web haritalarının yer işaretleri içe aktarılır ve seri çubuğunu önceden doldurmak için kullanılır.  Seri seçeneğini devre dışı bırakmak seri çubuğunu kapatır, ancak seri yapılandırması gelecekte kullanılmak üzere saklanır.", 
+				settingsSeriesHelpContent2: "Swipe serisi, beraberinde başlıklar ve metin ile seçili bir konum kümesi oluşturmanıza ve bunu düzenlemenize izin verir.  Web haritanızın yer işaretleri varsa, bunlar görüntülenir.  Seriyi devre dışı bırakabilirsiniz, ancak yapılandırma gelecekte kullanılmak üzere saklanır.",
+				settingsSeriesHelpLink: "Bir swipe serisi olan bir uygulama örneğini burada görebilirsiniz",
+				preview: "Kullanıcı arayüzü önizlemesi",
+				settingsLocateButtonExplain: "Bu işlevsellik çoğu mobil cihazda ve (Internet Explorer 9+ dahil) masaüstü tarayıcısında desteklenir.",
 				settingsLocateButton: "ı_Enable a 'Locate' button on supported browsers_İ",
-				settingsAddressSearch: "ı_Enable an address search tool_İ"
+				settingsAddressSearch: "Adres arama aracını etkinleştir"
 			},
 			settingsSwipePopup: {
-				settingsSwipePopup: "ı_Pop-up_İ",
-				settingsSwipePopupExplain: "ı_Customize the appearance of the pop-ups header to help user associate pop-ups with maps layers._İ",
-				settingsSwipePopupSwipe1: "ı_Left Map_İ",
-				settingsSwipePopupSwipe2: "ı_Right Map_İ",
-				settingsSwipePopupGlass1: "ı_Main Map_İ",
-				settingsSwipePopupGlass2: "ı_Spyglass Map_İ",
-				settingsSwipePopupTitle: "ı_Header Title_İ",
-				settingsSwipePopupColor: "ı_Header Color_İ"
+				settingsSwipePopup: "Açılan Pencere",
+				settingsSwipePopupExplain: "Açılan pencere üstbilgisinin görünümünü, kullanıcının açılan pencereleri katmanlar ile ilişkilendirmesine yardımcı olacak şekilde özelleştirin.",
+				settingsSwipePopupSwipe1: "Sol Harita",
+				settingsSwipePopupSwipe2: "Sağ Harita",
+				settingsSwipePopupGlass1: "Ana Harita",
+				settingsSwipePopupGlass2: "Küçük Dürbün Haritası",
+				settingsSwipePopupTitle: "Üstbilgi Başlığı",
+				settingsSwipePopupColor: "Üstbilgi Rengi"
 			},
 			initPopup: {
-				initHeader: "ı_Welcome to the Swipe Builder_İ",
-				modalNext: "ı_Next_İ",
-				modalPrev: "ı_Previous_İ",
-				modalApply: "ı_Open the app_İ"
+				initHeader: "Swipe Derleyicisine Hoş Geldiniz",
+				modalNext: "Sonraki",
+				modalPrev: "Önceki",
+				modalApply: "Uygulamayı aç"
 			},
 			seriesPanel: {
-				title: "ı_Title_İ",
-				descr: "ı_Description_İ",
-				discard: "ı_Discard Bookmark_İ",
-				saveExtent: "ı_Set Bookmark Extent_İ",
-				discardDisabled: "ı_You can't remove that bookmark. Swipe series can be disabled in the Settings._İ"
+				title: "Başlık",
+				descr: "Açıklama",
+				discard: "Yer İşaretinden Vazgeç",
+				saveExtent: "Yer İşareti Yayılımını Ayarla",
+				discardDisabled: "Bu yer işaretini kaldıramazsınız. Swipe serisi Ayarlar\'da devre dışı bırakılabilir."
 			}
 		}
     })

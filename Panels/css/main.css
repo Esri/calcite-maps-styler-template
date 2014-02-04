@@ -98,6 +98,9 @@ z-index: 50;
 top:20px;
 right:20px;
 }
+.simpleGeocoder .esriGeocoderContainer{
+  width:215px !important;
+}
 #geocoderDiv{
 position:absolute;
 display:block;

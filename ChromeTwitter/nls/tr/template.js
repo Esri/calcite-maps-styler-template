@@ -2,21 +2,21 @@
 ({
   viewer:{
     main:{
-      scaleBarUnits: "ı_english_İ" //"english (for miles) or "metric" (for km) - don't translate.
+      scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel:{
-   	label: "ı_Description_İ"
+   	label: "Açıklama"
     },
     errors:{
-      createMap: "ı_Unable to create map_İ",
-      general: "ı_Error_İ"
+      createMap: "Harita oluşturulamıyor",
+      general: "Hata"
     }
   },
   tools:{
     tweets: {
-    "screenName": "ı_Screen name_İ",
-    "signIn": "ı_Sign in_İ",
-    "switchAccount": "ı_Switch account_İ",
+    "screenName": "Ekran adı",
+    "signIn": "Hesabınıza",
+    "switchAccount": "Hesap değiştir",
     // doc about date and time patterns: http://dojotoolkit.org/reference-guide/dojo/date/locale/format.html
     // yyyy: full year, e.g. 2011
     // MMMM: full month name, e.g. December
@@ -26,36 +26,36 @@
     // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
     // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
     // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-    datePattern: "ı_d MMM yy_İ",
-    timePattern: "ı_h:mma_İ",
-    reply: "ı_Reply_İ",
-    retweet:"ı_Retweet_İ",
-    favorite:"ı_Favorite_İ",
-    label: "ı_Tweets_İ",
-    title: "ı_Tweets_İ",
-    error: "ı_No results found, try another search term or location_İ",
+    datePattern: "d MMM yy",
+    timePattern: "h:mma",
+    reply: "Cevap",
+    retweet:"Yeniden Tweetle",
+    favorite:"Favori",
+    label: "Tweetler",
+    title: "Tweetler",
+    error: "Hiçbir sonuç bulunamadı; başka bir arama terimini veya konumunu deneyin",
 		search:{
-			label: "ı_Search_İ",
-			title: "ı_Search Twitter_İ",
-			placeholder: 'ı_Keywords to search_İ'
+			label: "Ara",
+			title: "Twitter\'da Ara",
+			placeholder: 'Aranacak anahtar kelimeler'
 		},
 		clear:{
-			label: "ı_Clear_İ",
-			title: "ı_Clear Map_İ"
+			label: "Temizle",
+			title: "Haritayı Temizle"
 		},
 		share:{
-			label: "ı_Share Map:_İ",
+			label: "Haritayı Paylaş:",
 			email:{
-				title: "ı_Email_İ",
-				label: "ı_Email_İ"
+				title: "E-posta",
+				label: "E-posta"
 			},
 			twitter:{
-				title: "ı_Twitter_İ",
-				label: "ı_Twitter_İ"
+				title: "Twitter",
+				label: "Twitter"
 			},
 			facebook:{
-				title: "ı_Facebook_İ",
-				label: "ı_Facebook_İ"
+				title: "Facebook",
+				label: "Facebook"
 			}
 		}
 	 }

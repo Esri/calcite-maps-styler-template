@@ -2,18 +2,18 @@
 (﻿{
   viewer:{
     main:{
-      scaleBarUnits: "ı_english_İ" //"english (for miles) or "metric" (for km) - don't translate.
+      scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors:{
-      createMap: "ı_Unable to create map:_İ ",
-      general:"ı_Error_İ"
+      createMap: "Harita oluşturulamıyor: ",
+      general:"Hata"
     },
 	legToggle:{
-	  up:"ı_MAP LEGEND ▲_İ",
-	  down:"ı_MAP LEGEND ▼_İ"
+	  up:"HARİTA GÖSTERİMİ ▲",
+	  down:"HARİTA GÖSTERİMİ ▼"
 	},
 	loading:{
-		message: "ı_Loading map_İ"
+		message: "Harita yükleniyor"
 	}
   }
 })

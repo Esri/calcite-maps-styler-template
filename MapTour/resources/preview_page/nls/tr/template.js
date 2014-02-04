@@ -1,27 +1,27 @@
 ﻿define(
 ({
 		firstPane: {
-			head: "ı_<span class='highlightText'>The Map Tour Template</span> enables all ArcGIS Online account levels including the free Public account to create and edit a place-based narrative combining images, text, and map from:_İ",
-			list0: "ı_Pictures stored in major online photo-sharing services like Flickr, Picasa and Facebook, or on any website or web server_İ",
-			list1: "ı_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organization members)_İ"
+			head: "<span class='highlightText'>Harita Turu Şablonu</span>, ücretsiz Genel hesap dahil tüm ArcGIS Online hesap düzeylerinin şuradan görüntü, metin ve harita birleştirerek yere özgü bir öykü oluşturup düzenlemesini olanaklı kılar:",
+			list0: "Flickr, Picasa ve Facebook gibi önemli çevrimiçi fotoğraf paylaşma servislerinde veya herhangi bir web sitesinde veya web sunucusunda depolanmış resimler",
+			list1: "Henüz çevrimiçi olarak depolanmamış resimler Detay Servisi ekleri olarak depolanacak (ArcGIS for Organization üyeleriyle sınırlıdır)"
 		},
 		secondPane: {
-			head: "ı_<span class='highlightText'>The Template</span> incorporates easy-to-use editing tools that include:_İ",
-			list0: "ı_Ability to quickly change titles and captions_İ", 
-			list1: "ı_Functions for adding, deleting, hiding, and changing the order of story points_İ",
-			list2: "ı_Ability to drag-and-drop icons to change story point locations_İ"
+			head: "<span class='highlightText'>Şablonda</span>, aralarında şunların olduğu kolay kullanılan düzenleme araçları bulunur:",
+			list0: "Başlıkları ve altyazıları çabucak değiştirme olanağı", 
+			list1: "Öykü noktaları ekleme, bunları silme, gizleme ve bunların sıralarını değiştirme fonksiyonları",
+			list2: "Öykü noktası konumlarını değiştirmek için simge sürükleyip bırakma olanağı"
 		},
 		thirdPane: {
-			head: "ı_To use the hosted map tour template, you start by making a map in the ArcGIS Online web map viewer (it doesn't need to contain any layers), saving it, and then clicking the Share button. In the Share dialog, choose the 'Make a Web Application' option and then choose the Map Tour template from the gallery of templates that appears, and continue with the steps that you see. When you configure the application, the interactive editor will open automatically.<br /><br />For users wishing to enhance the UI of their map tours or add new functionality, you can:_İ",
-			list0: "ı_Download the template from the <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps template page</a> and follow the included documentation_İ", 
-			list1: "ı_Host the template on your own web server, or a third-party server_İ"
+			head: "Barındırılan harita turu şablonunu kullanmak için, ArcGIS Online web sunucusu görüntüleyicisinde bir harita yapıp (hiçbir katman içermesi gerekmez), bunu kaydedip, sonra Paylaş düğmesine tıklayarak başlarsınız. Paylaş diyalog kutusunda, 'Bir Web Uygulaması Yap' seçeneğini belirleyip sonra beliren şablon galerisinden Harita Turu şablonunu seçin ve gördüğünüz adımlar ile devam edin. Uygulamayı yapılandırdığınızda, etkileşimli düzenleyici otomatik olarak açılır.<br /><br />Harita turlarının kullanıcı arayüzünü geliştirmek veya yeni fonksiyonlar eklemek isteyen kullanıcılar şunları yapabilir:",
+			list0: "<a href='http://storymaps.esri.com/templategallery/' target='_blank'>Öykü Haritaları şablon sayfasından</a> şablonu indirin ve ekli belgeleri uygulayın", 
+			list1: "Şablonu kendi web sunucunuzda veya üçüncü taraf bir sunucuda barındırın"
 		},
 		fourthPane: {
-			head: "ı_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esri’s Story Maps site</a> to learn more about creating and sharing stories. Resources include:_İ",
-			list0: "ı_Story maps published by Esri’s story maps teams_İ",
-			list1: "ı_A selection of downloadable templates_İ",
-			list2: "ı_Best practices guides_İ", 
-			list3: "ı_A gallery of story maps featuring a growing community of storytellers_İ"
+			head: "Öykü oluşturma ve bunları paylaşma hakkında daha fazla bilgi almak için <a href='http://storymaps.esri.com/home/' target='_blank'>Esri’nin Öykü Haritaları sitesine</a> bakın. Kaynak arasında şunlar bulunur:",
+			list0: "Esri’nin öykü haritaları ekiplerinin yayınladığı öykü haritaları",
+			list1: "Seçme indirilebilir şablonlar",
+			list2: "En başarılı uygulamalar kılavuzları", 
+			list3: "Büyüyen öykü anlatıcılar topluluğunun gösterimde olduğu bir öykü haritaları galerisi"
 		}
     })
 );

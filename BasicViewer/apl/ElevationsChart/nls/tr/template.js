@@ -1,53 +1,53 @@
 ﻿define(
 ({
   display: {
-    elevationProfileTitle: "ı_Elevation Profile_İ",
-    showMe: "ı_show me_İ",
-    selectLine: "ı_Select a feature in the map._İ",
-    popupRequirement: "ı_NOTE: the feature needs to be in a Feature Layer or be part of a map service that has Popups enabled._İ",
-    digitizeDistanceMeasureTool: "ı_Use the <b>Measure</b> button._İ",
-    selectFeatureHelpUrl: "ı_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q0000004s000000#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D_İ",
-    measureToolHelpUrl: "ı_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000_İ",
-    hoverOver: "ı_Hover over_İ ",
-    touchIPad: "ı_touch on iPad_İ",
-    locationOnMap: "ı_the Elevation Profile chart to display elevations and show location on map._İ"
+    elevationProfileTitle: "Yükselti Profili",
+    showMe: "göster",
+    selectLine: "Haritadan bir detay seçin.",
+    popupRequirement: "NOT: detayın bir Detay Katmanı içinde veya Açılan Pencerelerin etkinleştirildiği bir harita servisinin bir parçası olması gerekir.",
+    digitizeDistanceMeasureTool: "<b>Ölçüm</b> düğmesini kullanın.",
+    selectFeatureHelpUrl: "http://help.arcgis.com/tr/arcgisonline/help/index.html#//010q0000004s000000#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
+    measureToolHelpUrl: "http://help.arcgis.com/tr/arcgisonline/help/index.html#//010q00000096000000",
+    hoverOver: "Yükseltileri görüntülemek ve ",
+    touchIPad: "iPad\'e dokunun:",
+    locationOnMap: "haritada konumu göstermek için Yükselti Profili grafiği üzerinde gezinin."
   },
   // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //
-  locationResultTemplate: "ı_Elevation: {0} meters_İ",
+  locationResultTemplate: "Yükselti: {0} metre",
   chart: {
-    title: "ı_Elevation Profile_İ",
+    title: "Yükselti Profili",
     // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //
-    elevationTitleTemplate: "ı_Elevation in {0}_İ",
+    elevationTitleTemplate: "{0} olarak yükselti",
     // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //
-    distanceTitleTemplate: "ı_Distance in {0}_İ",
+    distanceTitleTemplate: "{0} olarak mesafe",
     // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //
-    gainLossTemplate: "ı_Min:{min}   Max:{max}   Start:{start}   End:{end}   Change:{gainloss}_İ"
+    gainLossTemplate: "Min.:{min}   Maks.:{max}   Başlangıç:{start}   Bitiş:{end}   Değişim:{gainloss}"
   },
   errors: {
     InvalidConfiguration: {
       code: 17056601,
-      name: 'ı_Invalid Configuration Error_İ',
-      message: 'ı_Invalid configuration._İ'
+      name: 'Geçersiz Yapılandırma Hatası',
+      message: 'Geçersiz yapılandırma.'
     },
     MissingConstructorParameters: {
       code: 17056602,
-      name: 'ı_Missing Constructor Parameters Error_İ',
-      message: 'ı_Missing constructor parameter._İ'
+      name: 'Eksik Yapıcı Parametreleri Hatası',
+      message: 'Eksik yapıcı parametresi.'
     },
     MissingInitParameter: {
       code: 17056603,
-      name: 'ı_Missing Init Parameter Error_İ',
-      message: 'ı_Missing init parameter._İ'
+      name: 'Eksik İlk Değer Parametresi Hatası',
+      message: 'Eksik ilk değer parametresi.'
     },
     SOEOperationNotSupported: {
       code: 17056604,
-      name: 'ı_Operation Not Supported Error_İ',
-      message: 'ı_This version of the SOE does NOT support this operation._İ'
+      name: 'İşlem Desteklenmiyor Hatası',
+      message: 'Bu SOE sürümü bu işlemi DESTEKLEMEZ.'
     },
     SOEMultiPartGeometriesNotSupported: {
       code: 17056605,
-      name: 'ı_Multi-part Geometries Not Supported Error_İ',
-      message: "ı_CAUTION: multi-part lines are currently NOT supported._İ"
+      name: 'Çok Bölümlü Geometriler Desteklenmiyor Hatası',
+      message: "DİKKAT: çok parçalı çizgiler henüz DESTEKLENMEMEKTEDİR."
     }
   }
 })
