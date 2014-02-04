@@ -2,26 +2,26 @@
   ({
     viewer:{
       main:{
-        scaleBarUnits: "ı_english_İ" //"english (for miles) or "metric" (for km) - don't translate.
+        scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
       },
       errors:{
-        createMap: "ı_Unable to create map:_İ",
-        general:"ı_Error_İ",
-        timeout:"ı_Please choose another tab to begin_İ"
+        createMap: "Harita oluşturulamıyor:",
+        general:"Hata",
+        timeout:"Başlamak için başka bir sekme seçin"
       },
       loading:{
-        message: "ı_Loading maps_İ"
+        message: "Haritalar yükleniyor"
       },
       sidePanel:{
-        legendHeader: "ı_LEGEND_İ"
+        legendHeader: "GÖSTERİM"
       },
       datePatterns:{
-        datePattern: "ı_MMMM d, yyyy_İ",
-        yearPattern: "ı_yyyy_İ",
-        hourTimePattern: "ı_h a_İ",
-        minuteTimePattern: "ı_h:mm a_İ",
-        secondTimePattern: "ı_h:mm:ss a_İ",
-        millisecondTimePattern: "ı_h:mm:ss:SSS a_İ"
+        datePattern: "d MMMM yyyy",
+        yearPattern: "yyyy",
+        hourTimePattern: "h a",
+        minuteTimePattern: "h:mm a",
+        secondTimePattern: "h:mm:ss a",
+        millisecondTimePattern: "h:mm:ss:SSS a"
       }
     }
 })

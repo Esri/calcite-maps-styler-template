@@ -2,200 +2,200 @@
 ({
         "viewer": {
             "main": {
-                "scaleBarUnits": "ı_english_İ",
-                "timePattern": "ı_h:mma_İ", // added 2.5.2013
-                "datePattern": "ı_MMM d, yyyy_İ" // added 2.5.2013
+                "scaleBarUnits": "english",
+                "timePattern": "h:mma", // added 2.5.2013
+                "datePattern": "MMM d, yyyy" // added 2.5.2013
             },
             "applicationTitle": {
-                "PIM": "ı_Public Information Map_İ" // added 8.26.2013
+                "PIM": "Genel Bilgi Haritası" // added 8.26.2013
             },
             "hashTagLabel": {
-                "hashTagFlickr": "ı_#Tag used for Flickr_İ", // added 8.26.2013
-                "hashTagTwitter": "ı_#Tag used for Twitter_İ", // added 8.26.2013
-                "hashTagYoutube": "ı_#Tag used for YouTube_İ" // added 8.26.2013
+                "hashTagFlickr": "Flickr için kullanılan #etiket", // added 8.26.2013
+                "hashTagTwitter": "Twitter için kullanılan #etiket", // added 8.26.2013
+                "hashTagYoutube": "YouTube için kullanılan #etiket" // added 8.26.2013
             },
             "errors": {
-                "createMap": "ı_Unable to create map_İ",
-                "general": "ı_Error_İ",
-                "bingError": "ı_Deploying this application requires your own Bing Maps key._İ",
-                "noLegend": "ı_No legend._İ",
-                "heatmap": "ı_Heatmapping is unsupported on this browser._İ",
-                "noText": "ı_Please enter a search location._İ",
-                "noLocation": "ı_Location could not be found._İ",
-                "integersOnly": "ı_You may only enter integers in this field._İ",
-                "nodesc": "ı_No description._İ",
-                "notAvailable": "ı_Not Available_İ", // added 8.26.2013
-                "outsideArea": "ı_You are currently outside the supported area_İ", // added 8.26.2013
-                "geoLocationTimeOut": "ı_Timeout exceeded. Unable to perform the operation_İ", // added 8.26.2013
-                "positionUnavailable": "ı_Position unavailable_İ", // added 8.26.2013
-                "permissionDenied": "ı_Permission denied to locate current location_İ", // added 8.26.2013
-                "unknownError": "ı_Unknown error occured. Unable to locate current location_İ", // added 8.26.2013
-                "tinyURLError": "ı_Unable to generate TinyURL_İ", // added 8.26.2013
-                "invalidSearch": "ı_Invalid Search_İ" // added 8.26.2013
+                "createMap": "Harita oluşturulamıyor",
+                "general": "Hata",
+                "bingError": "Bu uygulamayı dağıtmak kendi Bing Haritalar anahtarınızı gerektirir.",
+                "noLegend": "Gösterim yok.",
+                "heatmap": "Bu tarayıcıda ısı haritalaması desteklenmemektedir.",
+                "noText": "Arama konumu girin.",
+                "noLocation": "Konum bulunamadı.",
+                "integersOnly": "Bu alana yalnızca tamsayı girebilirsiniz.",
+                "nodesc": "Açıklama yok.",
+                "notAvailable": "Yok", // added 8.26.2013
+                "outsideArea": "Şu anda desteklenen alanın dışındasınız", // added 8.26.2013
+                "geoLocationTimeOut": "Süre doldu. İşlem gerçekleştirilemiyor", // added 8.26.2013
+                "positionUnavailable": "Pozisyon kullanılamıyor", // added 8.26.2013
+                "permissionDenied": "Geçerli konumu bulma izni verilmedi", // added 8.26.2013
+                "unknownError": "Bilinmeyen bir hata oluştu. Geçerli konum bulunamıyor", // added 8.26.2013
+                "tinyURLError": "TinyURL oluşturulamıyor", // added 8.26.2013
+                "invalidSearch": "Geçersiz Arama" // added 8.26.2013
             },
             "legend": {
-                "menuTitle": "ı_Legend_İ"
+                "menuTitle": "Gösterge"
             },
             "search": {
-                "location": "ı_Location_İ",
-                "clearLocation": "ı_Clear Location_İ",
-                "placeholder": "ı_Find a place_İ"
+                "location": "Konum",
+                "clearLocation": "Konumu Temizle",
+                "placeholder": "Yer bul"
             },
             "layers": {
-                "menuTitle": "ı_Layers_İ"
+                "menuTitle": "Katmanlar"
             },
             "locator": {
-                "menuTitle": "ı_Search Address_İ" // added 8.26.2013
+                "menuTitle": "Adresi Ara" // added 8.26.2013
             },
             "layer": {
-                "information": "ı_Information_İ",
-                "transparency": "ı_Transparency_İ",
-                "searchSettings": "ı_Search Settings_İ",
-                "filteredBy": "ı_filtered by:_İ"
+                "information": "Bilgi",
+                "transparency": "Saydamlık",
+                "searchSettings": "Arama Ayarları",
+                "filteredBy": "filtreleme ölçütü:"
             },
             "general": {
-                "at": "ı_at_İ",
-                "of": "ı_of_İ",
-                "homeExtent": "ı_Load home view_İ",
-                "ok": "ı_OK_İ",
-                "close": "ı_Close_İ"
+                "at": "saati",
+                "of": "/",
+                "homeExtent": "Giriş görünümünü yükle",
+                "ok": "Tamam",
+                "close": "Kapat"
             },
             "basemap": {
-                "menuTitle": "ı_Select a basemap_İ"
+                "menuTitle": "Altlık harita seçin"
             },
             "settings": {
-                "title": "ı_Settings_İ",
-                "searchAll": "ı_Search all of_İ",
-                "usingThisKeyword": "ı_Using keyword(s)_İ",
-                "search": "ı_Search_İ",
-                "fromThePast": "ı_From the past_İ",
-                "today": "ı_Day_İ",
-                "this_week": "ı_Week_İ",
-                "this_month": "ı_Month_İ",
-                "all_time": "ı_All Time_İ",
-                "atLocation": "ı_At this location_İ",
-                "centerOfMap": "ı_Center of map_İ",
-                "centerOfMapTitle": "ı_Use center of map_İ",
-                "withinThisDistance": "ı_Within this distance_İ",
-                "latitude": "ı_Lat:_İ",
-                "longitude": "ı_Long:_İ",
-                "locationText": "ı_click on the map to set the origin_İ",
-                "twSearch": "ı_How to Use Advanced Twitter Search_İ",
-                "screenName": "ı_Screen Name_İ", // added 8.26.2013
-                "signIn": "ı_Sign In_İ", // added 8.26.2013
-                "switchAccount": "ı_Switch Account_İ" // added 8.26.2013
+                "title": "Ayarlar",
+                "searchAll": "Şunun tümünü ara:",
+                "usingThisKeyword": "Şu anahtar kelimeleri kullanarak:",
+                "search": "Ara",
+                "fromThePast": "Geçmişten",
+                "today": "Gün",
+                "this_week": "Hafta",
+                "this_month": "Ay",
+                "all_time": "Tüm Zamanlar",
+                "atLocation": "Bu konumda",
+                "centerOfMap": "Haritanın merkezi",
+                "centerOfMapTitle": "Haritanın merkezini kullan",
+                "withinThisDistance": "Bu mesafe dahilinde",
+                "latitude": "Enl.:",
+                "longitude": "Boyl.:",
+                "locationText": "başlangıç noktasını ayarlamak için haritaya tıklayın",
+                "twSearch": "Gelişmiş Twitter Araması Nasıl Kullanılır",
+                "screenName": "Ekran Adı", // added 8.26.2013
+                "signIn": "Oturum Aç", // added 8.26.2013
+                "switchAccount": "Hesap Değiştir" // added 8.26.2013
             },
             "autoComplete": {
-                "menuTitle": "ı_Results&hellip;_İ"
+                "menuTitle": "Sonuçlar&hellip;"
             },
             "places": {
-                "menuTitle": "ı_Bookmarked places_İ",
-                "places": "ı_Bookmarks_İ",
-                "placesTitle": "ı_Bookmark Places_İ",
-                "myLocation": "ı_My Current Location_İ",
-                "myLocationTitle": "ı_Center map to my location_İ"
+                "menuTitle": "Yer işaretli yerler",
+                "places": "Yer İşaretleri",
+                "placesTitle": "Yerlere Yer İşareti Koy",
+                "myLocation": "Geçerli Konumum",
+                "myLocationTitle": "Haritayı konumuma ortala"
             },
             "distanceSlider": {
-                "local": "ı_Local_İ",
-                "regional": "ı_Regional_İ",
-                "national": "ı_National_İ"
+                "local": "Yerel Hükümet",
+                "regional": "Yöresel",
+                "national": "Ulusal"
             },
             "about": {
-                "title": "ı_About_İ",
-                "access": "ı_Access and Use Constraints_İ"
+                "title": "Hakkında",
+                "access": "Erişim ve Kullanım Kısıtlamaları"
             },
             "buttons": {
-                "legend": "ı_Legend_İ",
-                "legendTitle": "ı_Show Legend_İ",
-                "basemap": "ı_Basemap_İ",
-                "basemapTitle": "ı_Switch Basemap_İ",
-                "layers": "ı_Layers_İ",
-                "layersTitle": "ı_Explore Layers_İ",
-                "social": "ı_Social_İ",
-                "socialTitle": "ı_Social Media_İ",
-                "link": "ı_Link_İ",
-                "linkTitle": "ı_Share this web app_İ",
-                "about": "ı_About_İ",
-                "aboutTitle": "ı_About this map_İ",
-                "displayAs": "ı_Display As_İ",
-                "point": "ı_Points_İ",
-                "cluster": "ı_Clusters_İ",
-                "heatmap": "ı_Density_İ", // added 8.26.2013
-                "map": "ı_Map_İ", // added 8.26.2013
-                "share": "ı_Share_İ", // added 8.26.2013
-                "home": "ı_Home_İ", // added 8.26.2013
-                "bookmarks": "ı_Bookmarks_İ", // added 8.26.2013
-                "noBookmarks": "ı_No Bookmarks_İ", // added 8.26.2013
-                "layerVisible": "ı_Layer Visibility_İ", // added 8.26.2013
-                "flagAppropriate": "ı_Flag as inappropriate_İ", // added 8.26.2013
-                "flatReporting": "ı_reporting_İ", // added 8.26.2013
-                "zoomToLabel": "ı_Zoom to_İ", // added 8.26.2013
-                "contentFlagged": "ı_Content flagged_İ", // added 8.26.2013
-                "locator": "ı_Show Locator_İ", // added 8.26.2013
-                "tinyUrl": "ı_Show Tiny Url_İ", // added 8.26.2013
-                "refresh": "ı_Refresh_İ", // added 8.26.2013
-                "refreshContext": "ı_Click to load new feeds._İ" // added 8.26.2013
+                "legend": "Gösterge",
+                "legendTitle": "Gösterimi Göster",
+                "basemap": "Altlık Harita",
+                "basemapTitle": "Altlık Haritayı Değiştir",
+                "layers": "Katmanlar",
+                "layersTitle": "Katmanları İncele",
+                "social": "Sosyal",
+                "socialTitle": "Sosyal Medya",
+                "link": "Bağlantı",
+                "linkTitle": "Bu web uygulamasını paylaş",
+                "about": "Hakkında",
+                "aboutTitle": "Bu harita hakkında",
+                "displayAs": "Farklı Görüntüle",
+                "point": "Noktalar",
+                "cluster": "Kümeler",
+                "heatmap": "Yoğunluk", // added 8.26.2013
+                "map": "Harita", // added 8.26.2013
+                "share": "Paylaş", // added 8.26.2013
+                "home": "Giriş", // added 8.26.2013
+                "bookmarks": "Yer İşaretleri", // added 8.26.2013
+                "noBookmarks": "Yer İşareti Yok", // added 8.26.2013
+                "layerVisible": "Katman Görünürlüğü", // added 8.26.2013
+                "flagAppropriate": "Uygunsuz olarak işaretle", // added 8.26.2013
+                "flatReporting": "rapor ediliyor", // added 8.26.2013
+                "zoomToLabel": "Şuna Yakınlaştır", // added 8.26.2013
+                "contentFlagged": "İçerik işaretlendi", // added 8.26.2013
+                "locator": "Bulucuyu Göster", // added 8.26.2013
+                "tinyUrl": "Küçük URL\'yi Göster", // added 8.26.2013
+                "refresh": "Yenile", // added 8.26.2013
+                "refreshContext": "Yeni yayınları yüklemek için tıklayın." // added 8.26.2013
             },
             "shareMenu": {
-                "menuTitle": "ı_Share Current View_İ",
-                "shareHeader": "ı_Share a link to your web app_İ",
-                "facebook": "ı_Facebook_İ",
-                "facebookHeader": "ı_Share on Facebook_İ",
-                "twitter": "ı_Twitter_İ",
-                "twitterHeader": "ı_Share on Twitter_İ",
-                "instructionHeader": "ı_Copy/paste HTML into your web page_İ",
-                "preview": "ı_Preview and customize_İ"
+                "menuTitle": "Geçerli Görünümü Paylaş",
+                "shareHeader": "Web uygulamanız ile bir bağlantı paylaşın",
+                "facebook": "Facebook",
+                "facebookHeader": "Facebook\'ta Paylaş",
+                "twitter": "Twitter",
+                "twitterHeader": "Twitter\'da Paylaş",
+                "instructionHeader": "HTML\'yi kopyalayıp web sayfanıza yapıştırın",
+                "preview": "Önizle ve özelleştir"
             },
             "itemInfo": {
-                "createdLabel": "ı_created_İ",
-                "ratingsLabel": "ı_rating_İ",
-                "ratingsLabelPlural": "ı_ratings_İ",
-                "viewsLabel": "ı_view_İ",
-                "viewsLabelPlural": "ı_views_İ",
-                "commentsLabel": "ı_comment_İ",
-                "commentsLabelPlural": "ı_comments_İ",
-                "modifiedLabel": "ı_Last Modified_İ",
-                "by": "ı_by_İ",
+                "createdLabel": "oluşturma",
+                "ratingsLabel": "derecelendirme",
+                "ratingsLabelPlural": "derecelendirme",
+                "viewsLabel": "görünüm",
+                "viewsLabelPlural": "görünüm",
+                "commentsLabel": "yorum",
+                "commentsLabelPlural": "yorum",
+                "modifiedLabel": "Son Değiştirme",
+                "by": "kişi",
                 "separator": ","
             },
             "social": {
-                "menuTitle": "ı_Social Media Layers_İ",
-                "screenName": "ı_Screen name_İ",
-                "signIn": "ı_Sign in_İ",
-                "switchAccount": "ı_Switch account_İ"
+                "menuTitle": "Sosyal Medya Katmanları",
+                "screenName": "Ekran adı",
+                "signIn": "Hesabınıza",
+                "switchAccount": "Hesap değiştir"
             },
             "preview": {
-                "minWidth": "ı_Minimum width is_İ",
-                "minHeight": "ı_Minimum height is_İ",
-                "maxWidth": "ı_Maximum width is_İ",
-                "maxHeight": "ı_Maximum height is_İ",
-                "customize": "ı_Customize_İ",
-                "small": "ı_Small_İ",
-                "medium": "ı_Medium_İ",
-                "large": "ı_Large_İ",
-                "custom": "ı_Custom_İ",
-                "embed": "ı_Embed_İ",
-                "instruction": "ı_Copy and paste the following HTML to embed the map on your website._İ"
+                "minWidth": "Minimum genişlik",
+                "minHeight": "Minimum yükseklik",
+                "maxWidth": "Maksimum genişlik",
+                "maxHeight": "Maksimum yükseklik",
+                "customize": "Özelleştir",
+                "small": "Küçük",
+                "medium": "Orta",
+                "large": "Büyük",
+                "custom": "Özel",
+                "embed": "Katıştır",
+                "instruction": "Haritayı web sitenize katıştırmak için aşağıdaki HTML\'yi kopyalayıp yapıştırın."
             },
             "flickr": {
-                "title": "ı_Flickr_İ",
-                "description": "ı_Photos from Flickr_İ"
+                "title": "Flickr",
+                "description": "Flickr\'dan fotoğraflar"
             },
             "twitter": {
-                "title": "ı_Twitter_İ",
-                "description": "ı_Tweets from Twitter_İ"
+                "title": "Twitter",
+                "description": "Twitter\'dan tweetler"
             },
             "youtube": {
-                "title": "ı_YouTube_İ",
-                "description": "ı_Videos from YouTube_İ"
+                "title": "YouTube",
+                "description": "YouTube\'dan videolar"
             },
             "panoramio": {
-                "title": "ı_Panoramio_İ",
-                "description": "ı_Photos from Panoramio_İ"
+                "title": "Panoramio",
+                "description": "Panoramio\'dan fotoğraflar"
             },
             "ushahidi": {
-                "title": "ı_Ushahidi_İ",
-                "description": "ı_Incident reports from Ushahidi_İ"
+                "title": "Ushahidi",
+                "description": "Ushahidi\'den oluşum raporları"
             }
         }
     })
