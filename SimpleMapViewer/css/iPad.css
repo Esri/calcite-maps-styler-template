@@ -1,5 +1,6 @@
 @media screen and (orientation: portrait) {
-    html, body {
+    html,
+    body {
         height: 100%;
         width: 100%;
         margin: 0 10px;
@@ -8,12 +9,12 @@
     body {
         font-family: "Tahoma", Tahoma, "Trebuchet MS", Arial, sans-serif;
     }
-    .LocateButton  {
-          position: absolute;
-          top: 95px;
-          left: 20px;
-          z-index: 50;
-      }
+    .LocateButton {
+        position: absolute;
+        top: 95px;
+        left: 20px;
+        z-index: 50;
+    }
     #container {
         width: 100%;
         height: 100%;
@@ -61,17 +62,16 @@
         z-index: 0;
         padding: 0;
     }
-
     #legendButton {
         display: none;
     }
-#geocoderDiv{
-position:absolute;
-display:block;
-z-index:50;
-top:20px;
-left:74px;
-}
+    #geocoderDiv {
+        position: absolute;
+        display: block;
+        z-index: 50;
+        top: 20px;
+        left: 74px;
+    }
     .esriMobileInfoView .esriMobileInfoViewItem {
         color: #000000 !important;
     }
@@ -88,7 +88,8 @@ left:74px;
     }
 }
 @media screen and (orientation: landscape) {
-    html, body {
+    html,
+    body {
         height: 100%;
         width: 100%;
         margin: 0 10px;
@@ -101,19 +102,19 @@ left:74px;
         width: 100%;
         height: 100%;
     }
-        .LocateButton  {
-          position: absolute;
-          top: 95px;
-          left: 20px;
-          z-index: 50;
-      }
-      #geocoderDiv{
-position:absolute;
-display:block;
-z-index:50;
-top:20px;
-left:74px;
-}
+    .LocateButton {
+        position: absolute;
+        top: 95px;
+        left: 20px;
+        z-index: 50;
+    }
+    #geocoderDiv {
+        position: absolute;
+        display: block;
+        z-index: 50;
+        top: 20px;
+        left: 74px;
+    }
     #splitter {} #leftPane {
         width: 25%;
         z-index: 5;
@@ -189,7 +190,6 @@ left:74px;
     #footer {
         display: none;
     }
-
     .esriMobileInfoView .esriMobileInfoViewItem {
         color: #000000 !important;
     }
