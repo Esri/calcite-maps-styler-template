@@ -45,7 +45,7 @@
 				// Choose to swipe between two webmaps or between the layer of a single webmap
 				// can be overrided by using webmap= in URL
 				// e.g: ["WEBMAP_ID"] OR ["WEBMAP_ID_1", "WEBMAP_ID_2"]
-				webmaps: ["62702544d70648e593bc05d65180fd64"],
+				webmaps: [/*"62702544d70648e593bc05d65180fd64"*/],
 				// If using one webmap, enter the layer index of the layer to be revealed. 
 				// Index is defined by the web map table of contents (0 is the top layer).
 				layerIndex: 1, 
@@ -125,7 +125,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.2';
+			var version = '1.3-beta1';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -178,16 +178,20 @@
 				loadCSS("app/storymaps/builder/Builder.css");
 				loadCSS("app/storymaps/builder/BuilderPanel.css");
 				loadCSS("app/storymaps/swipe/builder/BuilderView.css");
+				loadCSS("app/storymaps/swipe/builder/HelpPopup.css");
+				loadCSS("app/storymaps/swipe/builder/SharePopup.css");
 				
 				loadCSS("app/storymaps/builder/SettingsPopup.css");
 				loadCSS("app/storymaps/swipe/builder/SettingsPopupTabLayout.css");
 				loadCSS("app/storymaps/swipe/builder/SettingsPopupTabDataModel.css");
 				loadCSS("app/storymaps/swipe/builder/SettingsPopupTabLegend.css");
 				loadCSS("app/storymaps/swipe/builder/SettingsPopupTabSwipePopup.css");
-				loadCSS("app/storymaps//swipe/builder/InitPopup.css");
+				loadCSS("app/storymaps/swipe/builder/InitPopup.css");
+				loadCSS("app/storymaps/swipe/builder/InitMapPicker.css");
 				loadCSS("app/storymaps/builder/SettingsPopupTabColors.css");
 				loadCSS("app/storymaps/builder/SettingsPopupTabHeader.css");
 				loadCSS("app/storymaps/builder/SettingsPopupTabExtent.css");
+				loadCSS("app/storymaps/ui/SelectMapWidget/browse-dialog/css/browse-dialog.css");
 				
 				loadCSS("app/storymaps/swipe/ui/mobile/MobileSwipeView.css");
 				loadCSS("app/storymaps/swipe/ui/mobile/Carousel.css");
@@ -214,7 +218,14 @@
 						// If the template is deployed on a Portal (apps path contains /apps/StorytellingSwipe/ or /home/StorytellingSwipe/)
 						// commonConfig.js is loaded from the parent folder, otherwise it's is loaded from the app folder
 						location: /(\/apps\/|\/home\/)(StorytellingSwipe\/)/.test(document.location.pathname) ? path_location.substr(0,path_location.lastIndexOf('/StorytellingSwipe')) : path_location.replace(/\/+$/, '') + '/app'
+					},
+					{
+						name: 'lib-build',
+						location: location.pathname.replace(/\/[^/]+$/, '/') + 'lib-build'
 					}
+				],
+				aliases: [
+					['text', 'lib-build/text']
 				]
 			};
 		</script>
@@ -260,18 +271,21 @@
 					</div>
 				</div>
 				<button type="button" class="switchBuilder btn"></button>
-				<!-- Builder top panel -->
+				<!-- Builder top panel -->			
 				<div id="builderPanel">
 					<h4></h4>
 					<div>
-						<button type="button" class="btn builder-save"></button>
-						<button type="button" class="btn builder-discard"></button>
-						<button type="button" class="btn builder-settings"></button>
-						<button type="button" class="btn small builder-view"></button>
-						<button type="button" class="btn small builder-item"></button>
+						<button type="button" class="btn builder-cmd builder-save"></button>
+						<button type="button" class="btn builder-cmd builder-share"></button>
+						<button type="button" class="btn builder-cmd builder-settings"></button>
+						<button type="button" class="btn builder-cmd builder-help"></button>
 					</div>
-					<div id="save-counter"></div>
+					<div id="status-bar">
+						<span id="save-counter"></span>
+						<span id="sharing-status"></span>
+					</div>
 				</div>
+				
 			</div>
 		</div>
 		<div id="seriesPanel">
@@ -556,11 +570,12 @@
 							<div class="controls">
 								<input class="inputWebmapId1" type="text" maxlength="32" disabled>
 							</div>
-							<a class="btn btn-small switchMapIds"><i class="icon-retweet"></i></a>
+							<a class="btn btn-mini switchMapIds"><i class="icon-retweet"></i></a>
 							<label class="control-label" for="inputWebmapId2"></label>
 							<div class="controls">
 								<input class="inputWebmapId2" type="text" maxlength="32"/>
 							</div>
+						<a class="btn btn-mini browseMaps" "><i class="icon-search"></i></a> 
 						</div>
 					</div>
 					<button class="btnSelect btn"></button>
@@ -659,6 +674,88 @@
 			</div>
 		</div>
 		
+		<!-- Share popup -->
+		<div class="modal hide" id="sharePopup" data-backdrop="static" tabindex="-1">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3></h3>
+			</div>
+			<div class="modal-body">
+				<div class="first-save hide">
+					<div class="header"></div>
+					<div class="question question1"></div>
+					<div class="answer answer1"></div>
+					<div class="question question2"></div>
+					<div class="answer answer2"></div>
+				</div>
+				<div class="share">
+					<div class="not-shared hide">
+						<div class="header"></div>
+						<div class="share-btn">
+							<button class="btn btn-sharePublic"></button>
+							<button class="btn btn-shareOrga"></button>
+						</div>
+						<div class="footer">
+							<a class="btn-learnmore"></a>
+							| <a class="btn-preview"></a>
+						</div>
+					</div>
+					<div class="shared-dialog">
+						<div class="header"></div>
+						<div class="share-link"></div>
+						
+						<div class="question shared-question1"></div>
+						<div class="collapse answer shared-answer1"></div>
+						
+						<div class="question shared-question2"></div>
+						<div class="collapse answer shared-answer2"></div>
+						
+						<div class="question shared-question3"></div>
+						<div class="collapse answer shared-answer3"></div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<span class="footer-status success"></span>
+				<span class="footer-status error"></span>
+				<button class="btnClose btn" data-dismiss="modal" aria-hidden="true"></button>
+			</div>
+		</div>
+		
+		<!-- Help popup -->
+		<div class="modal hide" id="helpPopup" data-backdrop="static" tabindex="-1">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3></h3>
+			</div>
+			<div class="modal-body">
+				<div id="help-tab1"></div>
+				<div id="help-tab2"></div>
+				<div id="help-tab3"></div>
+			</div>
+			<div class="modal-footer">
+				<button class="btnClose btn" data-dismiss="modal" aria-hidden="true"></button>
+			</div>
+		</div>
+		
+		<!-- Direct creation popup -->
+		<div class="modal hide" id="initMapPopup" data-backdrop="static" tabindex="-1">
+			<div class="modal-header">
+				<h3></h3>
+			</div>
+			<div class="modal-body">
+				<div class="mapPicker">
+					<div class="mapPicker-dialog">
+						<div class="header"></div>
+						<div class="webmap-id-input"></div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btnClose btn" data-dismiss="modal" aria-hidden="true"></button>
+			</div>
+		</div>
+		
 		<!-- Fatal error box -->
 		<div id="fatalError">
 			<table border="0">
@@ -692,7 +789,7 @@
 			}
 			
 			if( isProduction ) {
-				if( getUrlVar('edit') )
+				if( getUrlVar('edit')|| getUrlVar('fromScratch') || getUrlVar('fromscratch') )
 					loadJS('app/swipe-builder-min.js');
 				else
 					loadJS('app/swipe-viewer-min.js');
@@ -702,6 +799,7 @@
 				loadJS('lib/animateClip.js');
 				loadJS('lib/bootstrap/js/bootstrap.min.js');
 				loadJS('lib/spin.min.js');
+				loadJS('lib/history.min.js');
 				loadJS('lib/cubiq.swipeview.js');
 				loadJS('lib/jquery.fastClick.js');
 				loadJS('lib/spectrum/spectrum.js');
@@ -758,7 +856,7 @@
 							
 						 	require(["storymaps/core/Core", "storymaps/swipe/core/MainView"], function(Core, MainView){
 						 		var urlParams = urlUtils.urlToObject(document.location.search).query || {};
-						 		var isInBuilderMode = urlParams.edit != null;
+						 		var isInBuilderMode = urlParams.edit != null|| urlParams.fromScratch != null || urlParams.fromscratch != null;
 						 		
 						 		if (isInBuilderMode) {
 						 			require(["storymaps/builder/Builder", "storymaps/swipe/builder/BuilderView"], function(Builder, BuilderView) {
