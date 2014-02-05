@@ -5,7 +5,7 @@ define([
     "dojo/dom-construct",
     "dojo/dom-style",
     "dojo/on",
-    "modules/StatsBlock",
+    "application/StatsBlock",
     "dojo/dom-class",
     "esri/symbols/SimpleFillSymbol",
     "esri/symbols/SimpleLineSymbol",

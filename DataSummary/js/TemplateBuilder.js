@@ -17,7 +17,7 @@ function (
     dom, domConstruct, domClass
 ) {
     var Widget = declare([_WidgetBase, Evented], {
-        declaredClass: "modules.TemplateBuilder",
+        declaredClass: "application.TemplateBuilder",
         // lifecycle: 1
         constructor: function(options) {
             // mix in settings and defaults
@@ -49,7 +49,7 @@ function (
                 region: "top"
             }, builderNode);
             // add pane to border container
-            this.get("drawer")._bc_outer.addChild(builderContentPane);
+            this.get("drawer")._borderContainer.addChild(builderContentPane);
             // resize border container
             this.get("drawer").resize();
         },

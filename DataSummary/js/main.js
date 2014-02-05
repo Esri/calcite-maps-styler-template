@@ -8,17 +8,20 @@ define([
     "dojo/dom-style",
     "dojo/dom-attr",
     "dojo/dom-class",
-    "modules/TableOfContents",
-    "modules/AboutDialog",
-    "modules/ShareDialog",
-    "modules/Drawer",
-    "modules/DrawerMenu",
+    "application/TableOfContents",
+    "application/AboutDialog",
+    "application/ShareDialog",
+    "application/Drawer",
+    "application/DrawerMenu",
     "esri/dijit/HomeButton",
     "esri/dijit/LocateButton",
     "esri/dijit/BasemapToggle",
     "esri/dijit/Geocoder",
     "esri/dijit/Popup",
-    "modules/AreaOfInterest",
+    "application/AreaOfInterest",
+    "dijit/registry",
+    "dojo/_base/array",
+    "esri/lang"
 ],
 function(
     declare,
@@ -34,7 +37,10 @@ function(
     HomeButton, LocateButton, BasemapToggle,
     Geocoder,
     Popup,
-    AreaOfInterest
+    AreaOfInterest,
+    registry,
+    array,
+    esriLang
 ) {
     return declare("", [AreaOfInterest], {
         config: {},
@@ -48,18 +54,30 @@ function(
                 mobileSearchDisplay: "mobile-locate-box-display",
                 toggleBlue: 'toggle-grey',
                 toggleBlueOn: 'toggle-grey-on',
-                areaDescription: "area-description"
+                areaDescription: "area-description",
+                pointerEvents: "pointer-events",
+                iconRight: "icon-right",
+                locateButtonTheme: "LocateButtonCalcite",
+                homebuttonTheme: "HomeButtonCalcite",
+                desktopGeocoderTheme: "geocoder-desktop",
+                mobileGeocoderTheme: "geocoder-mobile"
             };
+            // mobile size switch domClass
+            this._showDrawerSize = 850;
+            // pointer event support
+            if(this._pointerEventsSupport()){
+                domClass.add(document.documentElement, this.css.pointerEvents);
+            }
             // mobile size switch domClass
             this._showDrawerSize = 850;
             // drawer
             this._drawer = new Drawer({
+                direction: this.config.i18n.direction,
                 showDrawerSize: this._showDrawerSize,
-                container: dom.byId('bc_outer'),
-                contentCenter: dom.byId('cp_outer_center'),
-                contentLeft: dom.byId('cp_outer_left'),
-                toggleButton: dom.byId('hamburger_button'),
-                direction: this.config.i18n.direction
+                borderContainer: 'bc_outer',
+                contentPaneCenter: 'cp_outer_center',
+                contentPaneSide: 'cp_outer_left',
+                toggleButton: 'hamburger_button'
             });
             // drawer resize event
             on(this._drawer, 'resize', lang.hitch(this, function () {
@@ -68,8 +86,28 @@ function(
             }));
             // startup drawer
             this._drawer.startup();
-            // lets get that webmap
-            this._createWebMap();
+            // get item info
+            arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
+                //let's get the web map item and update the extent if needed. 
+                if (this.config.appid && this.config.application_extent.length > 0) {
+                    itemInfo.item.extent = [
+                        [
+                            parseFloat(this.config.application_extent[0][0]),
+                            parseFloat(this.config.application_extent[0][1])
+                        ],
+                        [
+                            parseFloat(this.config.application_extent[1][0]),
+                            parseFloat(this.config.application_extent[1][1])
+                        ]
+                    ];
+                }
+                this._createWebMap(itemInfo);
+            }));
+        },
+        _pointerEventsSupport: function(){
+            var element = document.createElement('x');
+            element.style.cssText = 'pointer-events:auto';
+            return element.style.pointerEvents === 'auto';   
         },
         _init: function () {
             // drawer size check
@@ -78,19 +116,33 @@ function(
             this.initArea();
             // menu panels
             this.drawerMenus = [];
+            var menuObj;
             // multiple polygons
-            if (this._multiple && this.config.showAreaPanel) {
-                this.drawerMenus.push({
+            if (this.config.showAreaPanel) {
+                menuObj = {
                     label: this.config.i18n.general.aoi,
                     content: '<div class="' + this.css.areaDescription + '" id="areaDescription"></div><div id="renderer_menu"></div>'
-                });
+                };
+                // area menu
+                if(this.config.defaultMenu === 'area'){
+                    this.drawerMenus.splice(0,0,menuObj);
+                }
+                else{
+                    this.drawerMenus.push(menuObj);
+                }
             }
             if (this.config.showLegendPanel) {
-                // legend menu
-                this.drawerMenus.push({
+                menuObj = {
                     label: this.config.i18n.general.legend,
                     content: '<div id="TableOfContents"></div>'
-                });
+                };
+                // legend menu
+                if(this.config.defaultMenu === 'legend'){
+                    this.drawerMenus.splice(0,0,menuObj);
+                }
+                else{
+                    this.drawerMenus.push(menuObj);
+                }
             }
             // menus
             this._drawerMenu = new DrawerMenu({
@@ -101,7 +153,7 @@ function(
             if (this.config.showLocateButton) {
                 var LB = new LocateButton({
                     map: this.map,
-                    theme: "LocateButtonCalcite"
+                    theme: this.css.locateButtonTheme
                 }, 'LocateButton');
                 LB.startup();
             }
@@ -109,7 +161,7 @@ function(
             if (this.config.showHomeButton) {
                 var HB = new HomeButton({
                     map: this.map,
-                    theme: "HomeButtonCalcite"
+                    theme: this.css.homebuttonTheme
                 }, 'HomeButton');
                 HB.startup();
             }
@@ -136,7 +188,7 @@ function(
             // about dialog
             if (this.config.showAboutDialog) {
                 this._AboutDialog = new AboutDialog({
-                    theme: "icon-right",
+                    theme: this.css.iconRight,
                     item: this.item,
                     sharinghost: this.config.sharinghost
                 }, 'AboutDialog');
@@ -148,14 +200,13 @@ function(
             // share dialog
             if (this.config.ShowShareDialog) {
                 this._ShareDialog = new ShareDialog({
-                    theme: "icon-right",
+                    theme: this.css.iconRight,
                     bitlyLogin: this.config.bitlyLogin,
                     bitlyKey: this.config.bitlyKey,
                     image: this.config.sharinghost + '/sharing/rest/content/items/' + this.item.id + '/info/' + this.item.thumbnail,
                     title: this.config.title,
                     summary: this.item.snippet,
-                    hashtags: 'esriDSM',
-                    map: this.map
+                    hashtags: 'esriDSM'
                 }, 'ShareDialog');
                 this._ShareDialog.startup();
             }
@@ -173,10 +224,21 @@ function(
             this.startupArea();
             // hide loading div
             this._hideLoadingIndicator();
+            // on body click containing underlay class
+            on(document.body, '.dijitDialogUnderlay:click', function(){
+                // get all dialogs
+                var filtered = array.filter(registry.toArray(), function(w){ 
+                    return w && w.declaredClass == "dijit.Dialog";
+                });
+                // hide all dialogs
+                array.forEach(filtered, function(w){ 
+                    w.hide(); 
+                });
+            });
             // builder mode
             if(this.config.edit){
                 // require module
-                require(["modules/TemplateBuilder"], lang.hitch(this, function(TemplateBuilder){
+                require(["application/TemplateBuilder"], lang.hitch(this, function(TemplateBuilder){
                     // create template builder
                     var builder = new TemplateBuilder({
                         drawer: this._drawer
@@ -186,19 +248,25 @@ function(
             }
         },
         _checkMobileGeocoderVisibility: function () {
-            // check if mobile icon needs to be selected
-            if (domClass.contains(dom.byId("mobileGeocoderIcon"), this.css.toggleBlueOn)) {
-                domClass.add(dom.byId("mobileSearch"), this.css.mobileSearchDisplay);
+            if(this._mobileGeocoderIconNode && this._mobileSearchNode){
+                // check if mobile icon needs to be selected
+                if (domClass.contains(this._mobileGeocoderIconNode, this.css.toggleBlueOn)) {
+                    domClass.add(this._mobileSearchNode, this.css.mobileSearchDisplay);
+                }
             }
         },
         _showMobileGeocoder: function () {
-            domClass.add(dom.byId("mobileSearch"), this.css.mobileSearchDisplay);
-            domClass.replace(dom.byId("mobileGeocoderIconContainer"), this.css.toggleBlueOn, this.css.toggleBlue);
+            if(this._mobileSearchNode && this._mobileGeocoderIconContainerNode){
+                domClass.add(this._mobileSearchNode, this.css.mobileSearchDisplay);
+                domClass.replace(this._mobileGeocoderIconContainerNode, this.css.toggleBlueOn, this.css.toggleBlue);
+            }
         },
         _hideMobileGeocoder: function () {
-            domClass.remove(dom.byId("mobileSearch"), this.css.mobileSearchDisplay);
-            domStyle.set(dom.byId("mobileSearch"), "display", "none");
-            domClass.replace(dom.byId("mobileGeocoderIconContainer"), this.css.toggleBlue, this.css.toggleBlueOn);
+            if(this._mobileSearchNode && this._mobileGeocoderIconContainerNode){
+                domClass.remove(this._mobileSearchNode, this.css.mobileSearchDisplay);
+                domStyle.set(this._mobileSearchNode, "display", "none");
+                domClass.replace(this._mobileGeocoderIconContainerNode, this.css.toggleBlue, this.css.toggleBlueOn);
+            }
         },
         _setTitle: function (title) {
             // set config title
@@ -214,14 +282,72 @@ function(
             // window title
             window.document.title = title;
         },
+        _createGeocoderOptions: function() {
+            var hasEsri = false,
+                esriIdx, options, geocoders = lang.clone(this.config.helperServices.geocode);
+            // each geocoder
+            array.forEach(geocoders, function (geocoder) {
+                if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+                    hasEsri = true;
+                    geocoder.name = "Esri World Geocoder";
+                    geocoder.outFields = "Match_addr, stAddr, City";
+                    geocoder.singleLineFieldName = "Single Line";
+                    geocoder.esri = geocoder.placefinding = true;
+                }
+        
+            });
+            //only use geocoders with a singleLineFieldName that allow placefinding unless its custom
+            geocoders = array.filter(geocoders, function (geocoder) {
+                if (geocoder.name && geocoder.name === "Custom") {
+                    return (esriLang.isDefined(geocoder.singleLineFieldName));
+                } else {
+                    return (esriLang.isDefined(geocoder.singleLineFieldName) && esriLang.isDefined(geocoder.placefinding) && geocoder.placefinding);
+                }
+            });
+            if (hasEsri) {
+                for (var i = 0; i < geocoders.length; i++) {
+                    if (esriLang.isDefined(geocoders[i].esri) && geocoders[i].esri === true) {
+                        esriIdx = i;
+                        break;
+                    }
+                }
+            }
+            options = {
+                map: this.map,
+                autoNavigate: true,
+                autoComplete: hasEsri
+            };
+            if (hasEsri) {
+                options.minCharacters = 0;
+                options.maxLocations = 5;
+                options.searchDelay = 100;
+            }
+            //If the World geocoder is primary enable auto complete 
+            if (hasEsri && esriIdx === 0) {
+                options.arcgisGeocoder = geocoders.splice(0, 1)[0]; //geocoders[0];
+                if (geocoders.length > 0) {
+                    options.geocoders = geocoders;
+                }
+            } else {
+                options.arcgisGeocoder = false;
+                options.geocoders = geocoders;
+            }
+            return options;
+        },
         // create geocoder widgets
         _createGeocoders: function () {
+            // get options
+            var createdOptions = this._createGeocoderOptions();
+            // desktop geocoder options
+            var desktopOptions = lang.mixin({}, createdOptions, {
+                theme: this.css.desktopGeocoderTheme
+            });
+            // mobile geocoder options
+            var mobileOptions = lang.mixin({}, createdOptions, {
+                theme: this.css.mobileGeocoderTheme
+            });
             // desktop size geocoder
-            this._geocoder = new Geocoder({
-                map: this.map,
-                theme: 'calite geocoder-desktop',
-                autoComplete: true
-            }, dom.byId("geocoderSearch"));
+            this._geocoder = new Geocoder(desktopOptions, dom.byId("geocoderSearch"));
             this._geocoder.startup();
             // geocoder results
             on(this._geocoder, 'find-results', lang.hitch(this, function (response) {
@@ -230,11 +356,7 @@ function(
                 }
             }));
             // mobile sized geocoder
-            this._mobileGeocoder = new Geocoder({
-                map: this.map,
-                theme: 'calite geocoder-mobile',
-                autoComplete: true
-            }, dom.byId("geocoderMobile"));
+            this._mobileGeocoder = new Geocoder(mobileOptions, dom.byId("geocoderMobile"));
             this._mobileGeocoder.startup();
             // geocoder results
             on(this._mobileGeocoder, 'find-results', lang.hitch(this, function (response) {
@@ -251,21 +373,27 @@ function(
             this._mobileGeocoder.watch("value", lang.hitch(this, function (name, oldValue, value) {
                 this._geocoder.set("value", value);
             }));
-            // mobile geocoder toggle            
-            var mobileIcon = dom.byId("mobileGeocoderIcon");
-            if (mobileIcon) {
-                on(mobileIcon, "click", lang.hitch(this, function () {
-                    if (domStyle.get(dom.byId("mobileSearch"), "display") === "none") {
+            // geocoder nodes
+            this._mobileGeocoderIconNode = dom.byId("mobileGeocoderIcon");
+            this._mobileSearchNode = dom.byId("mobileSearch");
+            this._mobileGeocoderIconContainerNode = dom.byId("mobileGeocoderIconContainer");
+            // mobile geocoder toggle 
+            if (this._mobileGeocoderIconNode) {
+                on(this._mobileGeocoderIconNode, "click", lang.hitch(this, function () {
+                    if (domStyle.get(this._mobileSearchNode, "display") === "none") {
                         this._showMobileGeocoder();
                     } else {
                         this._hideMobileGeocoder();
                     }
                 }));
             }
-            // cancel mobile geocoder
-            on(dom.byId("btnCloseGeocoder"), "click", lang.hitch(this, function () {
-                this._hideMobileGeocoder();
-            }));
+            var closeMobileGeocoderNode = dom.byId("btnCloseGeocoder");
+            if(closeMobileGeocoderNode){
+                // cancel mobile geocoder
+                on(closeMobileGeocoderNode, "click", lang.hitch(this, function () {
+                    this._hideMobileGeocoder();
+                }));
+            }
         },
         // hide map loading spinner
         _hideLoadingIndicator: function () {
@@ -275,13 +403,13 @@ function(
             }
         },
         //create a map based on the input web map id
-        _createWebMap: function () {
+        _createWebMap: function (itemInfo) {
             // popup dijit
             var customPopup = new Popup({}, domConstruct.create("div"));
             // add popup theme
             domClass.add(customPopup.domNode, "calcite");
             //can be defined for the popup like modifying the highlight symbol, margin etc.
-            arcgisUtils.createMap(this.config.webmap, "mapDiv", {
+            arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: {
                     infoWindow: customPopup
                     //Optionally define additional map config here for example you can

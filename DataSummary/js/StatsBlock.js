@@ -9,8 +9,8 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/on",
     // load template
-    "dojo/text!modules/dijit/templates/StatsBlock.html",
-    "dojo/i18n!modules/nls/StatsBlock",
+    "dojo/text!application/dijit/templates/StatsBlock.html",
+    "dojo/i18n!application/nls/StatsBlock",
     "dojo/number",
     "dojo/dom-construct",
     "dojo/dom-class",

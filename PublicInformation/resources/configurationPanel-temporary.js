@@ -14,22 +14,14 @@
          "fields":[
             {
                "type":"paragraph",
-               "value":"Select a map notes layer for an interactive notes experience."
+               "value":"Name of the map notes layer."
             },
             {
-               "type":"layerAndFieldSelector",
-               "layerOptions":{
-                  "supportedTypes":[
-                     "FeatureLayer"
-                  ],
-                  "geometryTypes":[
-                     "esriGeometryPoint",
-                     "esriGeometryLine",
-                     "esriGeometryPolygon"
-                  ]
-               },
-               "fieldName":"notesLayerId",
-               "label":"Map Notes Layer"
+               "type":"string",
+               "fieldName":"notesLayerTitle",
+               "label":"Layer Title",
+               "tooltip":"Layer Title",
+               "placeHolder":"Map Notes"
             },
             {
                "type":"boolean",
