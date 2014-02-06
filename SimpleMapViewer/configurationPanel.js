@@ -8,6 +8,11 @@
             "type": "string",
             "tooltip": "Defaults to map owner"
         }, {
+            "type": "boolean",
+            "fieldName": "geocoder",
+            "label": "Search",
+            "tooltip": "Display the search tool"
+        }, {
             "type": "string",
             "fieldName": "theme",
             "tooltip": "Color theme to use",
@@ -24,5 +29,7 @@
             }]
         }]
     }],
-    "values": {}
+    "values": {
+        "geocoder": true
+    }
 }
