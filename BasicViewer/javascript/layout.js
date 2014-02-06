@@ -374,9 +374,16 @@ function initUI(response) {
 
     if (configOptions.displayscalebar === true) {
         //add scalebar
+        //is the map embedded? If so set scalebar value to dual otherwise use the units 
+        var scalebarUnits;
+        if(configOptions.embed){
+            scalebarUnits = "dual";
+        }else{
+            scalebarUnits = configOptions.units;
+        }
         var scalebar = new esri.dijit.Scalebar({
             map: map,
-            scalebarUnit: configOptions.units //i18n.viewer.main.scaleBarUnits //metric or english
+            scalebarUnit: scalebarUnits //metric, english or dual
         });
     }
 

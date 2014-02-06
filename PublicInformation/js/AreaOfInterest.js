@@ -23,16 +23,31 @@ define([
                 this.areaCSS = {
                     noteContainer: 'note-container',
                     noteItem: 'note-item',
+                    noteTitleText: 'note-text',
                     noteContent: 'note-content',
                     notePadding: 'note-padding',
                     noteSelected: 'note-selected',
                     noteImage: 'note-image',
                     noteLink: 'note-link',
+                    noteExpand: 'note-expand',
                     noteLoading: 'note-loading',
-                    bookmarkItem: 'bookmark-item'
+                    bookmarkItem: 'bookmark-item',
+                    clear: 'clear'
                 };
                 this._placeBookmarks();
                 this._placeNotes();
+                // description
+                if (this.config.showAreaDescription) {
+                    this._setAreaDescription(this.config.areaDescription || this.item.snippet);
+                }
+            },
+            _setAreaDescription: function (description) {
+                // map title node
+                var node = dom.byId('areaDescription');
+                if (node) {
+                    // set title
+                    node.innerHTML = description;
+                }
             },
             _placeNotes: function(){
                 // get note layers from the one layer id or title
@@ -42,10 +57,28 @@ define([
                     title: this.config.notesLayerTitle,
                     id: this.config.notesLayerId
                 });
+                // event for each layer
+                this._noteLayerEvents();
                 // update note layer title
                 this._setNoteLayerTitle();
                 // place items to click
                 this._placeNoteItems();
+            },
+            _noteLayerEvent: function(layer){
+                on(layer, 'visibility-change', lang.hitch(this, function(){
+                    // clear selected feature
+                    if(this.map.infoWindow){
+                        this.map.infoWindow.clearFeatures();   
+                    } 
+                }));
+            },
+            _noteLayerEvents: function(){
+                if(this._notesLayers.length){
+                    for(var i = 0; i < this._notesLayers.length; i++){
+                        var layer = this._notesLayers[i];
+                        this._noteLayerEvent(layer);
+                    }
+                }
             },
             _setNoteLayerTitle: function(){
                 if(this._notesLayerTitle){
@@ -89,10 +122,25 @@ define([
                                 }
                                 // note title
                                 var titleNode = domConstruct.create('div', {
-                                    innerHTML: attributes.TITLE || this.config.i18n.area.untitledNote,
                                     className: this.areaCSS.noteItem
                                 });
                                 domConstruct.place(titleNode, containerNode, 'last');
+                                // note title
+                                var noteTitleText = domConstruct.create('div', {
+                                    innerHTML: attributes.TITLE || this.config.i18n.area.untitledNote,
+                                    className: this.areaCSS.noteTitleText
+                                });
+                                domConstruct.place(noteTitleText, titleNode, 'last');
+                                // note title
+                                var noteExpand = domConstruct.create('div', {
+                                    className: this.areaCSS.noteExpand
+                                });
+                                domConstruct.place(noteExpand, titleNode, 'last');
+                                // note title
+                                var clear = domConstruct.create('div', {
+                                    className: this.areaCSS.clear
+                                });
+                                domConstruct.place(clear, titleNode, 'last');
                                 // note HTML
                                 var noteContent = '';
                                 if (attributes.DESCRIPTION) {
@@ -122,6 +170,8 @@ define([
                                 this.noteNodes.push({
                                     containerNode: containerNode,
                                     titleNode: titleNode,
+                                    noteTitleText: noteTitleText,
+                                    noteExpand: noteExpand,
                                     contentNode: contentNode
                                 });
                                 // note event
@@ -144,6 +194,7 @@ define([
                     for (i = 0; i < obj.layers.length; i++) {
                         layer = obj.layers[i];
                         if (layer.id === obj.id) {
+                            this._noteLayerObj = layer;
                             this._notesLayerTitle = layer.title;
                             layers = layer.featureCollection.layers;
                             for(j = 0; j < layers.length; j++){
@@ -160,6 +211,7 @@ define([
                     for (i = 0; i < obj.layers.length; i++) {
                         layer = obj.layers[i];
                         if (layer.title.toLowerCase() === obj.title.toLowerCase()) {
+                            this._noteLayerObj = layer;
                             this._notesLayerTitle = layer.title;
                             layers = layer.featureCollection.layers;
                             for(j = 0; j < layers.length; j++){
@@ -221,7 +273,17 @@ define([
                     }
                 }));
             },
+            _turnOnNoteLayers: function(){
+                if(this._notesLayers.length){
+                    for(var i = 0; i < this._notesLayers.length; i++){
+                        var layer = this._notesLayers[i];
+                        layer.show();
+                    }
+                    this._noteLayerObj.visibility = true;
+                }
+            },
             _setNoteExtent: function(idx, extent){
+                this._turnOnNoteLayers();
                 domClass.add(this.noteNodes[idx].titleNode, this.areaCSS.noteLoading);
                 this.map.setExtent(extent, true).then(lang.hitch(this, function(){
                     // select graphic

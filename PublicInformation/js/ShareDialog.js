@@ -9,8 +9,8 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/on",
      // load template
-    "dojo/text!modules/dijit/templates/ShareDialog.html",
-    "dojo/i18n!modules/nls/ShareDialog",
+    "dojo/text!application/dijit/templates/ShareDialog.html",
+    "dojo/i18n!application/nls/ShareDialog",
     "dojo/dom-class",
     "dojo/dom-style",
     "dojo/dom-attr",
@@ -51,19 +51,22 @@ function (
             bitlyKey: "",
             embedSizes: [{
                 "width": "100%",
-                "height": "500px"
+                "height": "640px"
             }, {
                 "width": "100%",
-                "height": "400px"
+                "height": "480px"
             }, {
                 "width": "100%",
-                "height": "300px"
+                "height": "320px"
             }, {
                 "width": "800px",
-                "height": "640px"
+                "height": "600px"
             }, {
                 "width": "640px",
                 "height": "480px"
+            }, {
+                "width": "480px",
+                "height": "320px"
             }]
         },
         // lifecycle: 1

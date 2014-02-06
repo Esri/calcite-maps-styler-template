@@ -53,7 +53,7 @@ define([
                 } else {
                     this.is_desktop = true;
                 }
-                this.is_smartphone = true;
+              
                 //load the appropriate stylesheet and popup 
                 var ss = document.createElement("link");
                 ss.type = "text/css";

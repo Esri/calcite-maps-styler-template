@@ -4,7 +4,7 @@ define([], function() {
     //and url parameters.
     var defaults = {
         "appid": "",
-        "webmap": "8a63712c19a8410082f3dc106118b7d1",
+        "webmap": "8c59dfba1f9b46ca88331f1a830a0ee9",
         "oauthappid": null,
         //"AFTKRmv16wj14N3z",
         //Enter the url to the proxy if needed by the applcation. See the "Using the proxy page" help topic for details
@@ -15,8 +15,9 @@ define([], function() {
         //color theme.
         "title":"",
         "areaDescription":"",
+        "defaultMenu":"area",
         "summaryLayerId":"",
-        "summaryLayerTitle": "Impact Area",
+        "summaryLayerTitle": "",
         "showTitle":true,
         "showEntireAreaButton": true,
         "showAreaDescription":true,
@@ -26,6 +27,7 @@ define([], function() {
         "showLocateButton":true,
         "showBasemapToggle": true,
         "showAboutDialog":true,
+        "showAboutOnLoad":false,
         "ShowShareDialog":true,
         "nextBasemap": "hybrid",
         "currentBasemap": "topo",

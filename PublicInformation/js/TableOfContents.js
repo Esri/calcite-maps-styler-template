@@ -8,8 +8,8 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/on",
     // load template    
-    "dojo/text!modules/dijit/templates/TableOfContents.html",
-    "dojo/i18n!modules/nls/TableOfContents",
+    "dojo/text!application/dijit/templates/TableOfContents.html",
+    "dojo/i18n!application/nls/TableOfContents",
     "dojo/dom-class",
     "dojo/dom-style",
     "dojo/dom-construct",
@@ -41,7 +41,7 @@ function (
             visible: true,
             accordion: true,
             expandFirstOnStart: false,
-            setVisibleOnExpand: true,
+            setVisibleOnExpand: false,
             expandAllOnStart: false
         },
         // lifecycle: 1
@@ -79,7 +79,13 @@ function (
                 titleText: "toc-text",
                 expanded: "toc-expanded",
                 visible: "toc-visible",
-                settingsIcon: "icon-cog"
+                settingsIcon: "icon-cog",
+                expandIcon: "toc-icon-expand",
+                settings: "toc-settings",
+                actions: "toc-actions",
+                account: "toc-account",
+                status: "toc-status",
+                clear: "clear"
             };
             // expanded array
             this._expanded = [];
@@ -216,6 +222,10 @@ function (
                     var layerInfos = [];
                     // show legend
                     var showLegend = true;
+                    // show legend property present
+                    if(layer.hasOwnProperty('showLegend')){
+                        showLegend = layer.showLegend;   
+                    }
                     // checkbox class
                     var titleCheckBoxClass = this.css.titleCheckbox;
                     // layer class
@@ -253,40 +263,77 @@ function (
                     });
                     domConstruct.place(titleContainerDiv, titleDiv, "last");
                     // Title checkbox
-                    var titleCheckbox = domConstruct.create("span", {
+                    var titleCheckbox = domConstruct.create("div", {
                         className: titleCheckBoxClass
                     });
                     domConstruct.place(titleCheckbox, titleContainerDiv, "last");
                     // Title text
-                    var titleText = domConstruct.create("span", {
+                    var titleText = domConstruct.create("div", {
                         className: this.css.titleText,
                         title: layer.title,
                         innerHTML: layer.title
                     });
                     domConstruct.place(titleText, titleContainerDiv, "last");
-                    // settings icon
-                    var settingsIcon;
-                    if(layer.settingsIcon){
-                        settingsIcon = domConstruct.create("span", {
-                            className: this.css.settingsIcon,
-                            id: layer.settingsIconId
-                        });
-                        domConstruct.place(settingsIcon, titleText, "last");
-                    }
+                    // Title text
+                    var expandIcon = domConstruct.create("div", {
+                        className: this.css.expandIcon
+                    });
+                    domConstruct.place(expandIcon, titleContainerDiv, "last");
+                    // clear css
+                    var clearCSS = domConstruct.create("div", {
+                        className: this.css.clear
+                    });
+                    domConstruct.place(clearCSS, titleContainerDiv, "last");
                     // content of layer
                     var contentDiv = domConstruct.create("div", {
                         className: this.css.content
                     });
                     domConstruct.place(contentDiv, layerDiv, "last");
+                    var actionsDiv;
+                    if(layer.settings || layer.account){
+                        // actions
+                        actionsDiv = domConstruct.create("div", {
+                            className: this.css.actions
+                        });
+                        domConstruct.place(actionsDiv, contentDiv, "last");
+                    }
+                    // settings container
+                    var settingsDiv, settingsIcon;
+                    if(layer.settings){
+                        settingsDiv = domConstruct.create("a", {
+                            className: this.css.settings,
+                            id: layer.settings
+                        });
+                        domConstruct.place(settingsDiv, actionsDiv, "last");
+                        // settings icon
+                        settingsIcon = domConstruct.create("span", {
+                            className: this.css.settingsIcon
+                        });
+                        domConstruct.place(settingsIcon, settingsDiv, "last");
+                    }
+                    // account functions
+                    var accountDiv;
+                    if(layer.account){
+                        accountDiv = domConstruct.create("a", {
+                            className: this.css.account,
+                            id: layer.account
+                        });
+                        domConstruct.place(accountDiv, actionsDiv, "last");
+                    }
+                    var statusDiv;
+                    if(layer.status){
+                        // status
+                        statusDiv = domConstruct.create("div", {
+                            id: layer.status,
+                            className: this.css.status
+                        });
+                        domConstruct.place(statusDiv, contentDiv, "last");
+                    }
                     // legend
                     var legendDiv = domConstruct.create("div", {
                         className: this.css.legend
                     });
-                    domConstruct.place(legendDiv, contentDiv, "first");
-                    // custom content
-                    if(layer.content){
-                        domConstruct.place(layer.content, contentDiv, "first");    
-                    }
+                    domConstruct.place(legendDiv, contentDiv, "last");
                     // client side layer
                     if (layer.featureCollection) {
                         // show legend defined
@@ -328,6 +375,11 @@ function (
                         titleContainer: titleContainerDiv,
                         titleText: titleText,
                         settingsIcon: settingsIcon,
+                        actionsDiv: actionsDiv,
+                        settingsDiv: settingsDiv,
+                        accountDiv: accountDiv,
+                        statusDiv: statusDiv,
+                        expandIcon: expandIcon,
                         content: contentDiv,
                         legend: legendDiv,
                         layer: layerDiv
