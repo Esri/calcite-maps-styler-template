@@ -96,9 +96,15 @@ dojo.require("social.twitter");
                     }
                 }, "credentialsPanel");
 
+                //search if a keyword was specified 
+               if (configOptions.search !== "") {
+                  var search = dojo.byId("twittersearch").value = configOptions.search;
+                  searchTwitter(search);
+               }
+
 
             } else {
-
+   
                 //create sign-in link
                 dojo.create("a", {
                     innerHTML: configOptions.i18n.tools.tweets.signIn,
@@ -175,7 +181,6 @@ dojo.require("social.twitter");
      //if a search term was included in the url but no extent - display tweets
      if (configOptions.search !== "" && !configOptions.extent) {
         var search = dojo.byId("twittersearch").value = configOptions.search;
-        searchTwitter(search);
      }
 
 
