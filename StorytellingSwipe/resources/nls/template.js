@@ -65,6 +65,8 @@ define({
 				savingApplication: "Saving application",
 				saveSuccess: "Application saved successfully",
 				saveError: "Save failed, please try again",
+				saveError2: "Save failed due to an invalid html tag in a name or description",
+				saveError3: "The title can't be empty",
 				signIn: "Please sign in with an account on",
 				signInTwo: "to save the application."
 			},
