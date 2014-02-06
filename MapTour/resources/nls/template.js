@@ -327,6 +327,7 @@ define({
 				header: "Enter your email address or the ID of your Picasa or Google+ account.",
 				userInputLbl: "Enter an email or ID",
 				signInMsg2: "Account not found",
+				signInMsg3: "No public album",
 				howToFind: "How to find a Picasa or Google+ account ID",
 				howToFind2: "Copy digits between the first and second '/' of any Picasa or G+ page"
 			},
