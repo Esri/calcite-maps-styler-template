@@ -1,35 +1,22 @@
 {
-    "configurationSettings": [{
-        "category": "<b>Choose template theme</b>",
-        "fields": [{
-            "placeHolder": "Defaults to map owner",
-            "label": "Owner Text:",
-            "fieldName": "owner",
-            "type": "string",
-            "tooltip": "Defaults to map owner"
-        }, {
-            "type": "boolean",
-            "fieldName": "geocoder",
-            "label": "Search",
-            "tooltip": "Display the search tool"
-        }, {
-            "type": "string",
-            "fieldName": "theme",
-            "tooltip": "Color theme to use",
-            "label": "Color Scheme:",
-            "options": [{
-                "label": "Chrome",
-                "value": "chrome"
-            }, {
-                "label": "Seaside",
-                "value": "seaside"
-            }, {
-                "label": "Pavement",
-                "value": "pavement"
-            }]
-        }]
-    }],
-    "values": {
-        "geocoder": true
-    }
+   "configurationSettings":[
+      {
+         "category":"<b>General</b>",
+         "fields":[
+            {
+               "type":"webmap",
+               "label":"Select a map"
+            },
+            {
+               "type":"boolean",
+               "label":"Search tool",
+               "fieldName":"geocoder",
+               "tooltip":"Display the search tool"
+            }
+         ]
+      }
+   ],
+   "values":{
+      "geocoder":true
+   }
 }
