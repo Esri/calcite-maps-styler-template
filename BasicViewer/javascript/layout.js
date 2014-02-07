@@ -1864,57 +1864,108 @@ function createTimeSlider(timeProperties) {
         timeSlider.setThumbIndexes([0, 1]);
     }
 
-    dojo.connect(timeSlider, 'onTimeExtentChange', function (timeExtent) {
-        //update the time details span.
-        var timeString, datePattern;
-        if (timeProperties.timeStopInterval !== undefined) {
-            switch (timeProperties.timeStopInterval.units) {
-            case 'esriTimeUnitsCenturies':
-                datePattern = i18n.tools.time.centuryPattern; // 'yyyy G'
-                break;
-            case 'esriTimeUnitsDecades':
-                datePattern = i18n.tools.time.decadePattern; //'yyyy'
-                break;
-            case 'esriTimeUnitsYears':
-                datePattern = i18n.tools.time.yearPattern; //'MMMM yyyy'
-                break;
-            case 'esriTimeUnitsWeeks':
-                datePattern = i18n.tools.time.weekPattern; //'MMMM d, yyyy'
-                break;
-            case 'esriTimeUnitsDays':
-                datePattern = i18n.tools.time.weekPattern; //'MMMM d, yyyy'
-                break;
-            case 'esriTimeUnitsHours':
-                datePattern = i18n.tools.time.hourTimePattern; //'h:m:s.SSS a'
-                break;
-            case 'esriTimeUnitsMilliseconds':
-                datePattern = i18n.tools.time.millisecondTimePattern; //'h:m:s.SSS a'
-                break;
-            case 'esriTimeUnitsMinutes':
-                datePattern = i18n.tools.time.minuteTimePattern; //'h:m:s.SSS a'
-                break;
-            case 'esriTimeUnitsMonths':
-                datePattern = i18n.tools.time.monthPattern; //'MMMM d, y'
-                break;
-            case 'esriTimeUnitsSeconds':
-                datePattern = i18n.tools.time.secondTimePattern; //'h:m:s.SSS a'
-                break;
-            }
-            var startTime = formatDate(timeExtent.startTime, datePattern);
-            var endTime = formatDate(timeExtent.endTime, datePattern);
-            timeString = esri.substitute({
-                "start_time": startTime,
-                "end_time": endTime
-            }, i18n.tools.time.timeRange);
-        } else {
-            timeString = esri.substitute({
-                "time": formatDate(timeExtent.endTime, datePattern)
-            }, i18n.tools.time.timeRangeSingle);
-
-        }
-        dojo.byId('timeSliderLabel').innerHTML = timeString;
-    });
+    dojo.connect(timeSlider,"onTimeExtentChange",updateTimeSliderTitle);
     timeSlider.startup();
+
+}
+function updateTimeSliderTitle(timeExtent) {
+    console.log(this);
+    var slider = this;
+    var start = null,
+        end = null;
+
+    if (!timeExtent) {
+        // startup
+        if (slider.thumbCount == 2) {
+            start = slider.timeStops[0];
+            end = slider.timeStops[1];
+        } else {
+            start = slider.timeStops[0];
+        }
+    } else {
+        start = timeExtent.startTime;
+        if ((timeExtent.endTime.getTime() - timeExtent.startTime.getTime()) > 0) {
+            end = timeExtent.endTime;
+        }
+    }
+
+    var startDatePattern = null;
+    var endDatePattern = null;
+    var startTimePattern = null;
+    var endTimePattern = null;
+    if (end && start.getFullYear() == end.getFullYear()) {
+        if (start.getMonth() == end.getMonth()) {
+            if (start.getDate() == end.getDate()) {
+                if (start.getHours() == end.getHours()) {
+                    if (start.getMinutes() == end.getMinutes()) {
+                        if (start.getSeconds() == end.getSeconds()) {
+                            // same second
+                            startDatePattern = i18n.tools.time.datePattern;
+                            startTimePattern = i18n.tools.time.millisecondTimePattern;
+                            endTimePattern = i18n.tools.time.millisecondTimePattern;
+                        } else { // same minute
+                            startDatePattern = i18n.tools.time.datePattern;
+                            startTimePattern = i18n.tools.time.secondTimePattern;
+                            endTimePattern = i18n.tools.time.secondTimePattern;
+                        }
+                    } else { // same hour
+                        startDatePattern = i18n.tools.time.datePattern;
+                        startTimePattern = i18n.tools.time.minuteTimePattern;
+                        endTimePattern = i18n.tools.time.minuteTimePattern;
+                    }
+                } else { // same day
+                    startDatePattern = i18n.tools.time.datePattern;
+                    startTimePattern = i18n.tools.time.hourTimePattern;
+                    endTimePattern = i18n.tools.time.hourTimePattern;
+                }
+            } else { // same month
+                if (end.getDate() - start.getDate() < 2) {
+                    // less than 2 days
+                    startDatePattern = i18n.tools.time.datePattern;
+                    startTimePattern = i18n.tools.time.hourTimePattern;
+                    endDatePattern = i18n.tools.time.datePattern;
+                    endTimePattern = i18n.tools.time.hourTimePattern;
+                } else {
+                    startDatePattern = i18n.tools.time.datePattern;
+                    endDatePattern = i18n.tools.time.datePattern;
+                }
+            }
+        } else { // same year
+            startDatePattern = i18n.tools.time.datePattern;
+            endDatePattern = i18n.tools.time.datePattern;
+        }
+    } else if (end && end.getFullYear() - start.getFullYear() > 2) {
+        startDatePattern = i18n.tools.time.yearPattern;
+        endDatePattern = i18n.tools.time.yearPattern;
+    } else {
+        startDatePattern = i18n.tools.time.datePattern;
+        endDatePattern = i18n.tools.time.datePattern;
+    }
+
+    var startTime = dojo.date.locale.format(start, {
+        datePattern: startDatePattern,
+        timePattern: startTimePattern,
+        selector: (startDatePattern && startTimePattern) ? null : (startDatePattern ? "date" : "time")
+    });
+    var endTime = null;
+    if (end) {
+        endTime = dojo.date.locale.format(end, {
+            datePattern: endDatePattern,
+            timePattern: endTimePattern,
+            selector: (endDatePattern && endTimePattern) ? null : (endDatePattern ? "date" : "time")
+        });
+    }
+
+    var info;
+    if (end) {
+        info = dojo.string.substitute(i18n.tools.time.timeRange, {
+            start_time: startTime,
+            end_time: endTime
+        });
+    } else {
+        info = "" + startTime;
+    }
+    dojo.byId("timeSliderLabel").innerHTML = info;
 
 }
 
