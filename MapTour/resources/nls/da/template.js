@@ -327,6 +327,7 @@
 				header: "Indtast din e-mail-adresse eller ID for din Picasa eller Google+-konto.",
 				userInputLbl: "Indtast e-mail eller ID",
 				signInMsg2: "Kontoen kunne ikke findes",
+				signInMsg3: "ø_No public album_å",
 				howToFind: "Sådan findes et Picasa- eller Google+ konto-ID",
 				howToFind2: "Kopier tal mellem første og anden \'\/\' på Picasa eller en G+-side"
 			},
@@ -524,7 +525,10 @@
 				shareA2div1: "Gem og genbrug følgende link %LINK1%, eller brug <a href='%LINK2%' target='_blank'>applikationens elementoplysningsside</a>.",
 				shareA2div2: "Når du som ejer af applikationen er logget ind på ArcGIS.com, indeholder applikationen en knap, der åbner det interaktive builder-program:",				
 				shareQ3: "Hvor er dataene gemt?",
-				shareA3: "Tour-konfigurationen er gemt i <a href='%LINK1%' target='_blank'>dette webkortelement</a> og i <a href='%LINK2%' target='_blank'>dette webapplikationselement</a>. Hvis du har benyttet Flickr-, Picasa-, Facebook- eller YouTube-import, forbliver dine billeder og videoer d\ér, og de kopieres ikke til ArcGIS Online."
+				shareA3: "Tour-konfigurationen er gemt i <a href='%LINK1%' target='_blank'>dette webkortelement</a> og i <a href='%LINK2%' target='_blank'>dette webapplikationselement</a>. Hvis du har benyttet Flickr-, Picasa-, Facebook- eller YouTube-import, forbliver dine billeder og videoer d\ér, og de kopieres ikke til ArcGIS Online.",
+				shareWarning: "ø_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._å",
+				shareWarningWith1: "ø_publicly_å",
+				shareWarningWith2: "ø_publicly and with the Organization_å"
 			}
         }
     })

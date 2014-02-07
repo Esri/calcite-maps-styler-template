@@ -1,5 +1,5 @@
 ﻿define({
     map: {
-      error: "ก้_Unable to create map_ษฺ"
+      error: "ไม่สามารถแสดงแผนที่ได้"
     }
 });

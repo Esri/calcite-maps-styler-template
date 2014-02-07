@@ -1,11 +1,11 @@
 ﻿define(
   ({
     viewer: {
-      legend_title: "ก้_Legend_ษฺ",
-      content_title: "ก้_Editor_ษฺ",
+      legend_title: "คำอธิบายสัญลักษณ์",
+      content_title: "เครื่องมือแก้ไข",
       errors:{
-        message: "ก้_Problem creating the editing application_ษฺ",
-        no_editable_layers_message: "ก้_Web map does not contain any editable layers._ษฺ"
+        message: "เกิดปัญหาระหว่างการสร้างแอพพลิเคชันการแก้ไข",
+        no_editable_layers_message: "เว็บแมพไม่มีชั้นข้อมูลใดที่สามารถแก้ไขได้"
       }
     }
   })

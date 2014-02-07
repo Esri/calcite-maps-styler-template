@@ -7,6 +7,8 @@
 				step3: "INITIALISEREN",
 				fail: "Laden Swipe mislukt",
 				loadBuilder: "OVERSCHAKELEN NAAR BUILDER MODUS",
+				redirectSignIn: "Ĳ_REDIRECTING TO SIGN-IN PAGE_ä",
+				redirectSignIn2: "Ĳ_(you will be redirected here after sign-in)_ä",
 				failButton: "Opnieuw proberen"
 			},
 			errors: {
@@ -42,6 +44,8 @@
 			builder: {
 				panelHeader: "APPLICATIECONFIGURATIE",
 				buttonSave: "OPSLAAN",
+				buttonHelp: "Ĳ_Help_ä",
+				buttonShare: "Ĳ_Share_ä",
 				buttonDiscard: "ANNULEREN",
 				buttonSettings: "Instellingen",
 				buttonView: "Weergavemodus",
@@ -61,6 +65,8 @@
 				savingApplication: "Applicatie opslaan",
 				saveSuccess: "Applicatie opgeslagen",
 				saveError: "Opslaan mislukt, probeer het opnieuw",
+				saveError2: "Ĳ_Save failed due to an invalid html tag in a name or description_ä",
+				saveError3: "Ĳ_The title can't be empty_ä",
 				signIn: "Meld u aan met een account op",
 				signInTwo: "om de applicatie op te slaan."
 			},
@@ -152,7 +158,9 @@
 				settingsDataModel2Explain: "Swipe met een andere webmap.",
 				settingsDataModel2SpyGlassExplain: "Een andere webmap weergeven.",
 				settingsDataModel2HelpTitle: "Hoe vind ik de ID van een webmap?",
-				settingsDataModel2HelpContent: "Kopieer en plak tekens achter het \'=\'  teken in de URL van de webmap"
+				settingsDataModel2HelpContent: "Kopieer en plak tekens achter het \'=\'  teken in de URL van de webmap",
+				switchMaps: "Ĳ_Switch maps_ä",
+				browseWebMaps: "Ĳ_Browse web maps_ä"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Indeling app",
@@ -183,7 +191,7 @@
 				settingsSwipePopupColor: "Kleur header"
 			},
 			initPopup: {
-				initHeader: "Welkom bij de Swipe Builder",
+				initHeader: "Ĳ_Welcome to the Swipe/Spyglass Builder_ä",
 				modalNext: "Volgende",
 				modalPrev: "Vorige",
 				modalApply: "Open de app"
@@ -194,6 +202,73 @@
 				discard: "Bladwijzer negeren",
 				saveExtent: "Bladwijzer extent instellen",
 				discardDisabled: "U kunt de bladwijzer niet verwijderen. Swipe-reeks kan worden uitgeschakeld in de Instellingen."
+			},
+			helpPopup: {
+				title: "Ĳ_Help_ä",
+				close: "Ĳ_Close_ä",
+				tab1: {
+					div1: "Ĳ_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._ä",
+					div2: "Ĳ_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ä",
+					div3: "Ĳ_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._ä"
+				}
+			},
+			share: {
+				firstSaveTitle: "Ĳ_Application successfully saved_ä",
+				firstSaveHeader: "Ĳ_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ä",
+				firstSaveA1: "Ĳ_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ä",
+				firstSaveA1bis: "Ĳ_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ä",
+				firstSaveQ2: "Ĳ_Is my Application shared?_ä",
+				firstSaveA2: "Ĳ_Currently your Application is not shared. To share it, use the SHARE button._ä",
+				shareTitle: "Ĳ_Share your Application_ä",
+				sharePrivateHeader: "Ĳ_Your Application is not shared, would you like to share it?_ä",
+				sharePrivateBtn1: "Ĳ_Share publicly_ä",
+				sharePrivateBtn2: "Ĳ_Share with my Organization_ä",
+				sharePrivateProgress: "Ĳ_Sharing in progress..._ä",
+				sharePrivateErr: "Ĳ_Sharing failed, try again or_ä",
+				sharePrivateOk: "Ĳ_Sharing updated successfully, loading..._ä",
+				shareStatus1: "Ĳ_Application is not saved_ä",
+				shareStatus2: "Ĳ_Application is shared publicly_ä",
+				shareStatus3: "Ĳ_Application is shared within the organization_ä",
+				shareStatus4: "Ĳ_Application is not shared_ä",
+				sharePreviewAsUser: "Ĳ_Preview_ä",
+				shareHeader1: "Ĳ_Your Application is <strong>publicly accessible</strong>._ä",
+				shareHeader2: "Ĳ_Your Application is accessible by your organization members (login is required)._ä",
+				shareLinkHeader: "Ĳ_Share the Application with your audience_ä",
+				shareLinkOpen: "Ĳ_OPEN_ä",
+				learnMore: "Ĳ_Learn more_ä",
+				shareQ1Opt1: "Ĳ_How do I keep the Application private?_ä",
+				shareQ1Opt2: "Ĳ_How do I keep the Application private or share it publicly?_ä",
+				shareA1: "Ĳ_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._ä",
+				shareA1bis: "Ĳ_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ä",
+				shareQ2: "Ĳ_How do I edit the Application later?_ä",
+				shareQ2bis: "Ĳ_How do I get back to the authoring interface?_ä",
+				shareA2div1: "Ĳ_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ä",
+				shareA2div2: "Ĳ_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ä",				
+				shareQ3: "Ĳ_Where is the data stored?_ä",
+				shareA3: "Ĳ_The Application configuration is stored in this web application item</a>._ä",
+				shareWarning: "Ĳ_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ä",
+ 				shareWarningWith1: "Ĳ_publicly_ä",
+ 				shareWarningWith2: "Ĳ_publicly and with the Organization_ä"
+			},
+			directCreation: {
+				header: "Ĳ_Welcome to the Swipe/Spyglass Builder_ä",
+				mapPickHeader: "Ĳ_To get started, please input a valid web map id, or use the search button to browse web maps._ä",
+				launchBuilder: "Ĳ_Launch Builder_ä"
+			}
+		},
+		configure: {
+			mapdlg:{
+				items:{
+					organizationLabel: "Ĳ_My Organization_ä",
+					onlineLabel: "Ĳ_ArcGIS Online_ä",
+					contentLabel: "Ĳ_My Content_ä",
+					favoritesLabel: "Ĳ_My Favorites_ä"
+				},
+				title: "Ĳ_Select Web Map_ä",
+				searchTitle: "Ĳ_Search_ä",
+				ok: "Ĳ_Ok_ä",
+				cancel: "Ĳ_Cancel_ä",
+				placeholder: "Ĳ_Enter search term_ä"
 			}
 		}
     })

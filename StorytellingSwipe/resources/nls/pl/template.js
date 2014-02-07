@@ -7,6 +7,8 @@
 				step3: "INICJOWANIE",
 				fail: "Przepraszamy, wczytywanie narzędzia zwijania nie powiodło się",
 				loadBuilder: "PRZEŁĄCZANIE DO TRYBU KREATORA",
+				redirectSignIn: "ł_REDIRECTING TO SIGN-IN PAGE_ą",
+				redirectSignIn2: "ł_(you will be redirected here after sign-in)_ą",
 				failButton: "Ponów próbę"
 			},
 			errors: {
@@ -42,6 +44,8 @@
 			builder: {
 				panelHeader: "KONFIGURACJA APLIKACJI",
 				buttonSave: "ZAPISZ",
+				buttonHelp: "ł_Help_ą",
+				buttonShare: "ł_Share_ą",
 				buttonDiscard: "ANULUJ",
 				buttonSettings: "Ustawienia",
 				buttonView: "Tryb wyświetlania",
@@ -61,6 +65,8 @@
 				savingApplication: "Zapisywanie aplikacji",
 				saveSuccess: "Aplikacja została pomyślnie zapisana",
 				saveError: "Zapisywanie nie powiodło się, spróbuj ponownie",
+				saveError2: "ł_Save failed due to an invalid html tag in a name or description_ą",
+				saveError3: "ł_The title can't be empty_ą",
 				signIn: "Zaloguj się na konto,",
 				signInTwo: "aby zapisać aplikację."
 			},
@@ -152,7 +158,9 @@
 				settingsDataModel2Explain: "Odsłanianie z inną mapą internetową.",
 				settingsDataModel2SpyGlassExplain: "Odkryj kolejną mapę internetową.",
 				settingsDataModel2HelpTitle: "Jak odnaleźć identyfikator mapy internetowej?",
-				settingsDataModel2HelpContent: "Skopiuj i wklej cyfry po znaku „=” w adresie URL mapy internetowej"
+				settingsDataModel2HelpContent: "Skopiuj i wklej cyfry po znaku „=” w adresie URL mapy internetowej",
+				switchMaps: "ł_Switch maps_ą",
+				browseWebMaps: "ł_Browse web maps_ą"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Układ aplikacji",
@@ -183,7 +191,7 @@
 				settingsSwipePopupColor: "Kolor nagłówka"
 			},
 			initPopup: {
-				initHeader: "Witamy w kreatorze aplikacji odsłaniania",
+				initHeader: "ł_Welcome to the Swipe/Spyglass Builder_ą",
 				modalNext: "Dalej",
 				modalPrev: "Wstecz",
 				modalApply: "Otwórz aplikację"
@@ -194,6 +202,73 @@
 				discard: "Odrzuć zakładkę",
 				saveExtent: "Ustaw zasięg zakładki",
 				discardDisabled: "Nie można usunąć tej zakładki. Serie zwijania można wyłączyć w Ustawieniach."
+			},
+			helpPopup: {
+				title: "ł_Help_ą",
+				close: "ł_Close_ą",
+				tab1: {
+					div1: "ł_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._ą",
+					div2: "ł_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ą",
+					div3: "ł_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._ą"
+				}
+			},
+			share: {
+				firstSaveTitle: "ł_Application successfully saved_ą",
+				firstSaveHeader: "ł_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ą",
+				firstSaveA1: "ł_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ą",
+				firstSaveA1bis: "ł_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ą",
+				firstSaveQ2: "ł_Is my Application shared?_ą",
+				firstSaveA2: "ł_Currently your Application is not shared. To share it, use the SHARE button._ą",
+				shareTitle: "ł_Share your Application_ą",
+				sharePrivateHeader: "ł_Your Application is not shared, would you like to share it?_ą",
+				sharePrivateBtn1: "ł_Share publicly_ą",
+				sharePrivateBtn2: "ł_Share with my Organization_ą",
+				sharePrivateProgress: "ł_Sharing in progress..._ą",
+				sharePrivateErr: "ł_Sharing failed, try again or_ą",
+				sharePrivateOk: "ł_Sharing updated successfully, loading..._ą",
+				shareStatus1: "ł_Application is not saved_ą",
+				shareStatus2: "ł_Application is shared publicly_ą",
+				shareStatus3: "ł_Application is shared within the organization_ą",
+				shareStatus4: "ł_Application is not shared_ą",
+				sharePreviewAsUser: "ł_Preview_ą",
+				shareHeader1: "ł_Your Application is <strong>publicly accessible</strong>._ą",
+				shareHeader2: "ł_Your Application is accessible by your organization members (login is required)._ą",
+				shareLinkHeader: "ł_Share the Application with your audience_ą",
+				shareLinkOpen: "ł_OPEN_ą",
+				learnMore: "ł_Learn more_ą",
+				shareQ1Opt1: "ł_How do I keep the Application private?_ą",
+				shareQ1Opt2: "ł_How do I keep the Application private or share it publicly?_ą",
+				shareA1: "ł_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._ą",
+				shareA1bis: "ł_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ą",
+				shareQ2: "ł_How do I edit the Application later?_ą",
+				shareQ2bis: "ł_How do I get back to the authoring interface?_ą",
+				shareA2div1: "ł_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ą",
+				shareA2div2: "ł_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ą",				
+				shareQ3: "ł_Where is the data stored?_ą",
+				shareA3: "ł_The Application configuration is stored in this web application item</a>._ą",
+				shareWarning: "ł_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ą",
+ 				shareWarningWith1: "ł_publicly_ą",
+ 				shareWarningWith2: "ł_publicly and with the Organization_ą"
+			},
+			directCreation: {
+				header: "ł_Welcome to the Swipe/Spyglass Builder_ą",
+				mapPickHeader: "ł_To get started, please input a valid web map id, or use the search button to browse web maps._ą",
+				launchBuilder: "ł_Launch Builder_ą"
+			}
+		},
+		configure: {
+			mapdlg:{
+				items:{
+					organizationLabel: "ł_My Organization_ą",
+					onlineLabel: "ł_ArcGIS Online_ą",
+					contentLabel: "ł_My Content_ą",
+					favoritesLabel: "ł_My Favorites_ą"
+				},
+				title: "ł_Select Web Map_ą",
+				searchTitle: "ł_Search_ą",
+				ok: "ł_Ok_ą",
+				cancel: "ł_Cancel_ą",
+				placeholder: "ł_Enter search term_ą"
 			}
 		}
     })

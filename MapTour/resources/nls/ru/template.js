@@ -327,6 +327,7 @@
 				header: "Введите адрес эл.почты или ID учетной записи Picasa или Google+.",
 				userInputLbl: "Введите эл.почту или ID",
 				signInMsg2: "Учетная запись не найдена",
+				signInMsg3: "Ж_No public album_Я",
 				howToFind: "Как найти ID учетной записи Picasa или Google+",
 				howToFind2: "Скопируйте цифры, расположенные между первой и второй косой чертой \'/\' любой страницы Picasa или G+"
 			},
@@ -524,7 +525,10 @@
 				shareA2div1: "Сохраните и используйте повторно следующую ссылку %LINK1% или обратитесь к<a href='%LINK2%' target='_blank'>странице элемента приложения</a>.",
 				shareA2div2: "Как владелец приложения, при входе на ArcGIS.com вы увидите в нем кнопку для открытия интерактивного построителя:",				
 				shareQ3: "Где хранятся данные?",
-				shareA3: "Конфигурация тура хранится в <a href='%LINK1%' target='_blank'>этом элементе веб-карты</a> и <a href='%LINK2%' target='_blank'>этом элементе веб-приложения</a>. Если вы использовали импорт из Flickr, Picasa, Facebook или YouTube, изображения и видео остаются там же, они не дублируются в ArcGIS Online."
+				shareA3: "Конфигурация тура хранится в <a href='%LINK1%' target='_blank'>этом элементе веб-карты</a> и <a href='%LINK2%' target='_blank'>этом элементе веб-приложения</a>. Если вы использовали импорт из Flickr, Picasa, Facebook или YouTube, изображения и видео остаются там же, они не дублируются в ArcGIS Online.",
+				shareWarning: "Ж_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Я",
+				shareWarningWith1: "Ж_publicly_Я",
+				shareWarningWith2: "Ж_publicly and with the Organization_Я"
 			}
         }
     })

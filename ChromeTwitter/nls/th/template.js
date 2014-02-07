@@ -5,18 +5,18 @@
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel:{
-   	label: "ก้_Description_ษฺ"
+   	label: "คำอธิบาย"
     },
     errors:{
-      createMap: "ก้_Unable to create map_ษฺ",
-      general: "ก้_Error_ษฺ"
+      createMap: "ไม่สามารถสร้างแผนที่ได้",
+      general: "ข้อผิดพลาด"
     }
   },
   tools:{
     tweets: {
-    "screenName": "ก้_Screen name_ษฺ",
-    "signIn": "ก้_Sign in_ษฺ",
-    "switchAccount": "ก้_Switch account_ษฺ",
+    "screenName": "ชื่อที่ใช้แสดง",
+    "signIn": "ลงชื่อเข้าใช้",
+    "switchAccount": "เปลี่ยนบัญชีผู้ใช้",
     // doc about date and time patterns: http://dojotoolkit.org/reference-guide/dojo/date/locale/format.html
     // yyyy: full year, e.g. 2011
     // MMMM: full month name, e.g. December
@@ -26,36 +26,36 @@
     // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
     // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
     // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-    datePattern: "ก้_d MMM yy_ษฺ",
-    timePattern: "ก้_h:mma_ษฺ",
-    reply: "ก้_Reply_ษฺ",
-    retweet:"ก้_Retweet_ษฺ",
-    favorite:"ก้_Favorite_ษฺ",
-    label: "ก้_Tweets_ษฺ",
-    title: "ก้_Tweets_ษฺ",
-    error: "ก้_No results found, try another search term or location_ษฺ",
+    datePattern: "วัน เดือน ปี",
+    timePattern: "ชั่วโมง",
+    reply: "ตอบกลับ",
+    retweet:"รีทวีต",
+    favorite:"รายการโปรด",
+    label: "ทวีต",
+    title: "ทวีต",
+    error: "ไม่พบผลลัพธ์ กรุณาใส่คำค้นหาหรือตำแหน่งใหม่",
 		search:{
-			label: "ก้_Search_ษฺ",
-			title: "ก้_Search Twitter_ษฺ",
-			placeholder: 'ก้_Keywords to search_ษฺ'
+			label: "ค้นหา",
+			title: "ค้นหาจากทวิตเตอร์",
+			placeholder: 'คำสำคัญในการค้นหา'
 		},
 		clear:{
-			label: "ก้_Clear_ษฺ",
-			title: "ก้_Clear Map_ษฺ"
+			label: "ลบ",
+			title: "ลบแผนที่"
 		},
 		share:{
-			label: "ก้_Share Map:_ษฺ",
+			label: "แชร์แผนที่:",
 			email:{
-				title: "ก้_Email_ษฺ",
-				label: "ก้_Email_ษฺ"
+				title: "อีเมล์",
+				label: "อีเมล์"
 			},
 			twitter:{
-				title: "ก้_Twitter_ษฺ",
-				label: "ก้_Twitter_ษฺ"
+				title: "ทวิตเตอร์",
+				label: "ทวิตเตอร์"
 			},
 			facebook:{
-				title: "ก้_Facebook_ษฺ",
-				label: "ก้_Facebook_ษฺ"
+				title: "เฟสบุค",
+				label: "เฟสบุค"
 			}
 		}
 	 }

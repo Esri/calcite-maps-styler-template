@@ -327,6 +327,7 @@
 				header: "E-posta adresinizi veya Picasa ya da Google+ hesabınızın kimliğini girin.",
 				userInputLbl: "E-posta veya kimlik girin",
 				signInMsg2: "Hesap bulunamadı",
+				signInMsg3: "ı_No public album_İ",
 				howToFind: "Picasa ya da Google+ hesabı kimliği nasıl bulunur",
 				howToFind2: "Herhangi bir Picasa ya da G+ sayfasının ilk ve ikinci '/' karakterleri arasındaki rakamları kopyalayın"
 			},
@@ -524,7 +525,10 @@
 				shareA2div1: "%LINK1% bağlantısını kaydedip tekrar kullanın veya <a href='%LINK2%' target='_blank'>uygulama öğesi sayfasını</a> kullanın.",
 				shareA2div2: "Uygulamanın sahibi olarak ArcGIS.com\'da oturum açtığınızda, uygulamada etkileşimli derleyiciyi açmak için bir düğme bulunur:",				
 				shareQ3: "Veriler nerede saklanıyor?",
-				shareA3: "Tur yapılandırması <a href='%LINK1%' target='_blank'>bu web haritası öğesinde</a> ve <a href='%LINK2%' target='_blank'>bu web uygulaması öğesinde</a> saklanır. Flickr, Picasa, Facebook veya YouTube içe aktarma kullandıysanız, resimleriniz ve videolarınız orada saklanmaya devam eder ve ArcGIS Online\'a kopyalanmaz."
+				shareA3: "Tur yapılandırması <a href='%LINK1%' target='_blank'>bu web haritası öğesinde</a> ve <a href='%LINK2%' target='_blank'>bu web uygulaması öğesinde</a> saklanır. Flickr, Picasa, Facebook veya YouTube içe aktarma kullandıysanız, resimleriniz ve videolarınız orada saklanmaya devam eder ve ArcGIS Online\'a kopyalanmaz.",
+				shareWarning: "ı_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._İ",
+				shareWarningWith1: "ı_publicly_İ",
+				shareWarningWith2: "ı_publicly and with the Organization_İ"
 			}
         }
     })

@@ -3,199 +3,199 @@
         "viewer": {
             "main": {
                 "scaleBarUnits": "metric",
-                "timePattern": "ก้_h:mma_ษฺ", // added 2.5.2013
-                "datePattern": "ก้_MMM d, yyyy_ษฺ" // added 2.5.2013
+                "timePattern": "ชั่วโมง", // added 2.5.2013
+                "datePattern": "เดือน วัน, ปี" // added 2.5.2013
             },
             "applicationTitle": {
-                "PIM": "ก้_Public Information Map_ษฺ" // added 8.26.2013
+                "PIM": "แผนที่แสดงข้อมูลสาธารณะ" // added 8.26.2013
             },
             "hashTagLabel": {
-                "hashTagFlickr": "ก้_#Tag used for Flickr_ษฺ", // added 8.26.2013
-                "hashTagTwitter": "ก้_#Tag used for Twitter_ษฺ", // added 8.26.2013
-                "hashTagYoutube": "ก้_#Tag used for YouTube_ษฺ" // added 8.26.2013
+                "hashTagFlickr": "#แท็กสำหรับ Flickr", // added 8.26.2013
+                "hashTagTwitter": "#แท็กสำหรับ Twitter", // added 8.26.2013
+                "hashTagYoutube": "#แท็กสำหรับ YouTube" // added 8.26.2013
             },
             "errors": {
-                "createMap": "ก้_Unable to create map_ษฺ",
-                "general": "ก้_Error_ษฺ",
-                "bingError": "ก้_Deploying this application requires your own Bing Maps key._ษฺ",
-                "noLegend": "ก้_No legend._ษฺ",
-                "heatmap": "ก้_Heatmapping is unsupported on this browser._ษฺ",
-                "noText": "ก้_Please enter a search location._ษฺ",
-                "noLocation": "ก้_Location could not be found._ษฺ",
-                "integersOnly": "ก้_You may only enter integers in this field._ษฺ",
-                "nodesc": "ก้_No description._ษฺ",
-                "notAvailable": "ก้_Not Available_ษฺ", // added 8.26.2013
-                "outsideArea": "ก้_You are currently outside the supported area_ษฺ", // added 8.26.2013
-                "geoLocationTimeOut": "ก้_Timeout exceeded. Unable to perform the operation_ษฺ", // added 8.26.2013
-                "positionUnavailable": "ก้_Position unavailable_ษฺ", // added 8.26.2013
-                "permissionDenied": "ก้_Permission denied to locate current location_ษฺ", // added 8.26.2013
-                "unknownError": "ก้_Unknown error occured. Unable to locate current location_ษฺ", // added 8.26.2013
-                "tinyURLError": "ก้_Unable to generate TinyURL_ษฺ", // added 8.26.2013
-                "invalidSearch": "ก้_Invalid Search_ษฺ" // added 8.26.2013
+                "createMap": "ไม่สามารถสร้างแผนที่ได้",
+                "general": "ข้อผิดพลาด",
+                "bingError": "การใช้งานแอพพลิเคชันนี้จะต้องมีคีย์ Bing Map ของคุณเอง",
+                "noLegend": "ไม่มีคำอธิบายสัญลักษณ์แผนที่",
+                "heatmap": "บราวเซอร์นี้ไม่รองรับการใช้งานแผนที่แสดงความร้อน",
+                "noText": "กรุณาใส่ตำแหน่งที่ต้องการค้นหา",
+                "noLocation": "ไม่พบตำแหน่ง",
+                "integersOnly": "กรุณาใส่เฉพาะตัวเลขในฟิลด์นี้",
+                "nodesc": "ไม่มีคำอธิบาย",
+                "notAvailable": "ไม่พบข้อมูล", // added 8.26.2013
+                "outsideArea": "ขณะนี้คุณอยู่นอกเขตพื้นที่บริการ", // added 8.26.2013
+                "geoLocationTimeOut": "หมดเวลา ไม่สามารถทำงานได้", // added 8.26.2013
+                "positionUnavailable": "ไม่พบตำแหน่ง", // added 8.26.2013
+                "permissionDenied": "ไม่ได้รับอนุญาตให้ระบุตำแหน่งปัจจุบัน", // added 8.26.2013
+                "unknownError": "เกิดข้อผิดพลาดขึ้น ไม่สามารถหาตำแหน่งปัจจุบันได้", // added 8.26.2013
+                "tinyURLError": "ไม่สามารถสร้าง TinylURL ได้", // added 8.26.2013
+                "invalidSearch": "คำค้นหาไม่ถูกต้อง" // added 8.26.2013
             },
             "legend": {
-                "menuTitle": "ก้_Legend_ษฺ"
+                "menuTitle": "คำอธิบายสัญลักษณ์"
             },
             "search": {
-                "location": "ก้_Location_ษฺ",
-                "clearLocation": "ก้_Clear Location_ษฺ",
-                "placeholder": "ก้_Find a place_ษฺ"
+                "location": "ตำแหน่ง",
+                "clearLocation": "ลบตำแหน่ง",
+                "placeholder": "ค้นหาสถานที่"
             },
             "layers": {
-                "menuTitle": "ก้_Layers_ษฺ"
+                "menuTitle": "ชั้นข้อมูล"
             },
             "locator": {
-                "menuTitle": "ก้_Search Address_ษฺ" // added 8.26.2013
+                "menuTitle": "ค้นหาที่อยู่" // added 8.26.2013
             },
             "layer": {
-                "information": "ก้_Information_ษฺ",
-                "transparency": "ก้_Transparency_ษฺ",
-                "searchSettings": "ก้_Search Settings_ษฺ",
-                "filteredBy": "ก้_filtered by:_ษฺ"
+                "information": "ข้อมูล",
+                "transparency": "โปร่งแสง",
+                "searchSettings": "ค้นหาการตั้งค่า",
+                "filteredBy": "คัดกรองโดย:"
             },
             "general": {
-                "at": "ก้_at_ษฺ",
-                "of": "ก้_of_ษฺ",
-                "homeExtent": "ก้_Load home view_ษฺ",
-                "ok": "ก้_OK_ษฺ",
-                "close": "ก้_Close_ษฺ"
+                "at": "ที่",
+                "of": "ของ",
+                "homeExtent": "โหลดมุมมิงหน้าหลัก",
+                "ok": "OK",
+                "close": "ปิด"
             },
             "basemap": {
-                "menuTitle": "ก้_Select a basemap_ษฺ"
+                "menuTitle": "เลือกแผนที่ฐาน"
             },
             "settings": {
-                "title": "ก้_Settings_ษฺ",
-                "searchAll": "ก้_Search all of_ษฺ",
-                "usingThisKeyword": "ก้_Using keyword(s)_ษฺ",
-                "search": "ก้_Search_ษฺ",
-                "fromThePast": "ก้_From the past_ษฺ",
-                "today": "ก้_Day_ษฺ",
-                "this_week": "ก้_Week_ษฺ",
-                "this_month": "ก้_Month_ษฺ",
-                "all_time": "ก้_All Time_ษฺ",
-                "atLocation": "ก้_At this location_ษฺ",
-                "centerOfMap": "ก้_Center of map_ษฺ",
-                "centerOfMapTitle": "ก้_Use center of map_ษฺ",
-                "withinThisDistance": "ก้_Within this distance_ษฺ",
-                "latitude": "ก้_Lat:_ษฺ",
-                "longitude": "ก้_Long:_ษฺ",
-                "locationText": "ก้_click on the map to set the origin_ษฺ",
-                "twSearch": "ก้_How to Use Advanced Twitter Search_ษฺ",
-                "screenName": "ก้_Screen Name_ษฺ", // added 8.26.2013
-                "signIn": "ก้_Sign In_ษฺ", // added 8.26.2013
-                "switchAccount": "ก้_Switch Account_ษฺ" // added 8.26.2013
+                "title": "การตั้งค่า",
+                "searchAll": "ค้นหาทั้งหมด",
+                "usingThisKeyword": "ใช้คำสำคัญ",
+                "search": "ค้นหา",
+                "fromThePast": "จากอดีต",
+                "today": "วัน",
+                "this_week": "สัปดาห์",
+                "this_month": "เดือน",
+                "all_time": "เวลาทั้งหมด",
+                "atLocation": "ที่ตำแหน่งนี้",
+                "centerOfMap": "จุดศูนย์กลางแผนที่",
+                "centerOfMapTitle": "ใช้จุดศูนย์กลางแผนที่",
+                "withinThisDistance": "ภายในระยะทางนี้",
+                "latitude": "ละติจูด:",
+                "longitude": "ลองจิจูต:",
+                "locationText": "คลิกบนแผนที่เพื่อกำหนดจุดเริ่มต้น",
+                "twSearch": "การใช้การค้นหาจากทวิตเตอร์ขั้นสูง",
+                "screenName": "ชื่อที่ใช้แสดง", // added 8.26.2013
+                "signIn": "ลงชื่อเข้าใช้", // added 8.26.2013
+                "switchAccount": "เปลี่ยนบัญชีผู้ใช้" // added 8.26.2013
             },
             "autoComplete": {
-                "menuTitle": "ก้_Results&hellip;_ษฺ"
+                "menuTitle": "ผลลัพธ์&hellip;"
             },
             "places": {
-                "menuTitle": "ก้_Bookmarked places_ษฺ",
-                "places": "ก้_Bookmarks_ษฺ",
-                "placesTitle": "ก้_Bookmark Places_ษฺ",
-                "myLocation": "ก้_My Current Location_ษฺ",
-                "myLocationTitle": "ก้_Center map to my location_ษฺ"
+                "menuTitle": "สถานที่ที่บุ๊คมาร์คไว้",
+                "places": "บุ๊คมาร์ค",
+                "placesTitle": "บุ๊คมาร์คสถานที่",
+                "myLocation": "ตำแหน่งปัจจุบันของฉัน",
+                "myLocationTitle": "ซูมแผนที่ไปยังตำแหน่งของฉัน"
             },
             "distanceSlider": {
-                "local": "ก้_Local_ษฺ",
-                "regional": "ก้_Regional_ษฺ",
-                "national": "ก้_National_ษฺ"
+                "local": "ท้องถิ่น",
+                "regional": "ภูมิภาค",
+                "national": "แห่งชาติ"
             },
             "about": {
-                "title": "ก้_About_ษฺ",
-                "access": "ก้_Access and Use Constraints_ษฺ"
+                "title": "เกี่ยวกับ",
+                "access": "การเข้าถึงและข้อจำกัด"
             },
             "buttons": {
-                "legend": "ก้_Legend_ษฺ",
-                "legendTitle": "ก้_Show Legend_ษฺ",
-                "basemap": "ก้_Basemap_ษฺ",
-                "basemapTitle": "ก้_Switch Basemap_ษฺ",
-                "layers": "ก้_Layers_ษฺ",
-                "layersTitle": "ก้_Explore Layers_ษฺ",
-                "social": "ก้_Social_ษฺ",
-                "socialTitle": "ก้_Social Media_ษฺ",
-                "link": "ก้_Link_ษฺ",
-                "linkTitle": "ก้_Share this web app_ษฺ",
-                "about": "ก้_About_ษฺ",
-                "aboutTitle": "ก้_About this map_ษฺ",
-                "displayAs": "ก้_Display As_ษฺ",
-                "point": "ก้_Points_ษฺ",
-                "cluster": "ก้_Clusters_ษฺ",
-                "heatmap": "ก้_Density_ษฺ", // added 8.26.2013
-                "map": "ก้_Map_ษฺ", // added 8.26.2013
-                "share": "ก้_Share_ษฺ", // added 8.26.2013
-                "home": "ก้_Home_ษฺ", // added 8.26.2013
-                "bookmarks": "ก้_Bookmarks_ษฺ", // added 8.26.2013
-                "noBookmarks": "ก้_No Bookmarks_ษฺ", // added 8.26.2013
-                "layerVisible": "ก้_Layer Visibility_ษฺ", // added 8.26.2013
-                "flagAppropriate": "ก้_Flag as inappropriate_ษฺ", // added 8.26.2013
-                "flatReporting": "ก้_reporting_ษฺ", // added 8.26.2013
-                "zoomToLabel": "ก้_Zoom to_ษฺ", // added 8.26.2013
-                "contentFlagged": "ก้_Content flagged_ษฺ", // added 8.26.2013
-                "locator": "ก้_Show Locator_ษฺ", // added 8.26.2013
-                "tinyUrl": "ก้_Show Tiny Url_ษฺ", // added 8.26.2013
-                "refresh": "ก้_Refresh_ษฺ", // added 8.26.2013
-                "refreshContext": "ก้_Click to load new feeds._ษฺ" // added 8.26.2013
+                "legend": "คำอธิบายสัญลักษณ์",
+                "legendTitle": "แสดงคำอธิบายสัญลักษณ์",
+                "basemap": "แผนที่ฐาน",
+                "basemapTitle": "เปลี่ยนแผนที่ฐาน",
+                "layers": "ชั้นข้อมูล",
+                "layersTitle": "สำรวจชั้นข้อมูลต่างๆ",
+                "social": "สังคม",
+                "socialTitle": "สื่อทางสังคม",
+                "link": "ลิงก์",
+                "linkTitle": "แชร์แผนที่นี้",
+                "about": "เกี่ยวกับ",
+                "aboutTitle": "เกี่ยวกับแผนที่นี้",
+                "displayAs": "แสดงเป็น",
+                "point": "จุด",
+                "cluster": "การกระจุกตัว",
+                "heatmap": "ความหนาแน่น", // added 8.26.2013
+                "map": "แผนที่", // added 8.26.2013
+                "share": "แชร์", // added 8.26.2013
+                "home": "หน้าหลัก", // added 8.26.2013
+                "bookmarks": "บุ๊คมาร์ค", // added 8.26.2013
+                "noBookmarks": "ไม่มีบุ๊คมาร์ค", // added 8.26.2013
+                "layerVisible": "การมองเห็นชั้นข้อมูล", // added 8.26.2013
+                "flagAppropriate": "รายงานความไม่เหมาะสม", // added 8.26.2013
+                "flatReporting": "รายงาน", // added 8.26.2013
+                "zoomToLabel": "ขยายไปยัง", // added 8.26.2013
+                "contentFlagged": "ปักธงเนื้อหา", // added 8.26.2013
+                "locator": "แสดงเครื่องมือระบุตำแหน่ง", // added 8.26.2013
+                "tinyUrl": "แสดง Tiny Url", // added 8.26.2013
+                "refresh": "รีเฟรช", // added 8.26.2013
+                "refreshContext": "คลิกเพื่อโหลดการรายงานข่าวใหม่ๆ" // added 8.26.2013
             },
             "shareMenu": {
-                "menuTitle": "ก้_Share Current View_ษฺ",
-                "shareHeader": "ก้_Share a link to your web app_ษฺ",
-                "facebook": "ก้_Facebook_ษฺ",
-                "facebookHeader": "ก้_Share on Facebook_ษฺ",
-                "twitter": "ก้_Twitter_ษฺ",
-                "twitterHeader": "ก้_Share on Twitter_ษฺ",
-                "instructionHeader": "ก้_Copy/paste HTML into your web page_ษฺ",
-                "preview": "ก้_Preview and customize_ษฺ"
+                "menuTitle": "แชร์หน้าปัจจุบัน",
+                "shareHeader": "แชร์ลิงก์แผนที่ของคุณ",
+                "facebook": "เฟสบุค",
+                "facebookHeader": "แชร์บนเฟสบุค",
+                "twitter": "ทวิตเตอร์",
+                "twitterHeader": "แชร์บนทวิตเตอร์",
+                "instructionHeader": "คัดลอก/วาง HTML บนเว็บเพจของคุณ",
+                "preview": "ดูตัวอย่างและปรับแต่ง"
             },
             "itemInfo": {
-                "createdLabel": "ก้_created_ษฺ",
-                "ratingsLabel": "ก้_rating_ษฺ",
-                "ratingsLabelPlural": "ก้_ratings_ษฺ",
-                "viewsLabel": "ก้_view_ษฺ",
-                "viewsLabelPlural": "ก้_views_ษฺ",
-                "commentsLabel": "ก้_comment_ษฺ",
-                "commentsLabelPlural": "ก้_comments_ษฺ",
-                "modifiedLabel": "ก้_Last Modified_ษฺ",
-                "by": "ก้_by_ษฺ",
+                "createdLabel": "สร้างโดย",
+                "ratingsLabel": "การจัดลำดับ",
+                "ratingsLabelPlural": "คะแนน",
+                "viewsLabel": "เปิดดู",
+                "viewsLabelPlural": "ยอดเข้าชม",
+                "commentsLabel": "แสดงความคิดเห็น",
+                "commentsLabelPlural": "ความคิดเห็น",
+                "modifiedLabel": "แก้ไขครั้งสุดท้ายเมื่อ",
+                "by": "โดย",
                 "separator": ","
             },
             "social": {
-                "menuTitle": "ก้_Social Media Layers_ษฺ",
-                "screenName": "ก้_Screen name_ษฺ",
-                "signIn": "ก้_Sign in_ษฺ",
-                "switchAccount": "ก้_Switch account_ษฺ"
+                "menuTitle": "ชั้นข้อมูลโซเชียลมีเดีย",
+                "screenName": "ชื่อที่ใช้แสดง",
+                "signIn": "ลงชื่อเข้าใช้",
+                "switchAccount": "เปลี่ยนบัญชีผู้ใช้"
             },
             "preview": {
-                "minWidth": "ก้_Minimum width is_ษฺ",
-                "minHeight": "ก้_Minimum height is_ษฺ",
-                "maxWidth": "ก้_Maximum width is_ษฺ",
-                "maxHeight": "ก้_Maximum height is_ษฺ",
-                "customize": "ก้_Customize_ษฺ",
-                "small": "ก้_Small_ษฺ",
-                "medium": "ก้_Medium_ษฺ",
-                "large": "ก้_Large_ษฺ",
-                "custom": "ก้_Custom_ษฺ",
-                "embed": "ก้_Embed_ษฺ",
-                "instruction": "ก้_Copy and paste the following HTML to embed the map on your website._ษฺ"
+                "minWidth": "ความกว้างต่ำสุดคือ",
+                "minHeight": "ความสูงต่ำสุดคือ",
+                "maxWidth": "ความกว้างสูงสุดคือ",
+                "maxHeight": "ความสูงสูงสุดคือ",
+                "customize": "ปรับแต่ง",
+                "small": "เล็ก",
+                "medium": "กลาง",
+                "large": "ใหญ่",
+                "custom": "ปรับแต่งเอง",
+                "embed": "ฝัง",
+                "instruction": "คัดลอก HTML ด้านล่างและนำไปวางบนเว็บไซต์ของคุณเพื่อแสดงแผนที่"
             },
             "flickr": {
-                "title": "ก้_Flickr_ษฺ",
-                "description": "ก้_Photos from Flickr_ษฺ"
+                "title": "ฟลิกเกอร์",
+                "description": "รูปภาพจากฟลิกเกอร์"
             },
             "twitter": {
-                "title": "ก้_Twitter_ษฺ",
-                "description": "ก้_Tweets from Twitter_ษฺ"
+                "title": "ทวิตเตอร์",
+                "description": "ทวีตจากทวิตเตอร์"
             },
             "youtube": {
-                "title": "ก้_YouTube_ษฺ",
-                "description": "ก้_Videos from YouTube_ษฺ"
+                "title": "ยูทูบ",
+                "description": "วิดีโอจากยูทูบ"
             },
             "panoramio": {
-                "title": "ก้_Panoramio_ษฺ",
-                "description": "ก้_Photos from Panoramio_ษฺ"
+                "title": "Panoramio",
+                "description": "รูปภาพจาก Panoramio"
             },
             "ushahidi": {
-                "title": "ก้_Ushahidi_ษฺ",
-                "description": "ก้_Incident reports from Ushahidi_ษฺ"
+                "title": "Ushahidi",
+                "description": "รายงานสถานการณ์จาก Ushahidi"
             }
         }
     })

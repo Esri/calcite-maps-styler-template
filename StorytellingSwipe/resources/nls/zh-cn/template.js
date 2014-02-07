@@ -7,6 +7,8 @@
 				step3: "正在初始化",
 				fail: "抱歉，卷帘加载失败",
 				loadBuilder: "切换到构建器模式",
+				redirectSignIn: "试_REDIRECTING TO SIGN-IN PAGE_验",
+				redirectSignIn2: "试_(you will be redirected here after sign-in)_验",
 				failButton: "重试"
 			},
 			errors: {
@@ -42,6 +44,8 @@
 			builder: {
 				panelHeader: "应用程序配置",
 				buttonSave: "保存",
+				buttonHelp: "试_Help_验",
+				buttonShare: "试_Share_验",
 				buttonDiscard: "取消",
 				buttonSettings: "设置",
 				buttonView: "视图模式",
@@ -61,6 +65,8 @@
 				savingApplication: "保存应用程序",
 				saveSuccess: "应用程序保存成功",
 				saveError: "保存失败，请重试",
+				saveError2: "试_Save failed due to an invalid html tag in a name or description_验",
+				saveError3: "试_The title can't be empty_验",
 				signIn: "请使用帐户登录",
 				signInTwo: "保存应用程序。"
 			},
@@ -152,7 +158,9 @@
 				settingsDataModel2Explain: "随另一 web 地图卷起。",
 				settingsDataModel2SpyGlassExplain: "显示另一 web 地图。",
 				settingsDataModel2HelpTitle: "如何查找 web 地图 ID？",
-				settingsDataModel2HelpContent: "复制并粘贴 web 地图 URL 中\“=\”符号后面的数字"
+				settingsDataModel2HelpContent: "复制并粘贴 web 地图 URL 中\“=\”符号后面的数字",
+				switchMaps: "试_Switch maps_验",
+				browseWebMaps: "试_Browse web maps_验"
 			},
 			settingsLegend: {
 				settingsTabLegend: "应用程序布局",
@@ -183,7 +191,7 @@
 				settingsSwipePopupColor: "页眉颜色"
 			},
 			initPopup: {
-				initHeader: "欢迎使用 Swipe Builder",
+				initHeader: "试_Welcome to the Swipe/Spyglass Builder_验",
 				modalNext: "下一步",
 				modalPrev: "上一步",
 				modalApply: "打开应用程序"
@@ -194,6 +202,73 @@
 				discard: "放弃书签",
 				saveExtent: "设置书签范围",
 				discardDisabled: "无法移除书签。可在设置中禁用卷帘系列。"
+			},
+			helpPopup: {
+				title: "试_Help_验",
+				close: "试_Close_验",
+				tab1: {
+					div1: "试_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._验",
+					div2: "试_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._验",
+					div3: "试_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._验"
+				}
+			},
+			share: {
+				firstSaveTitle: "试_Application successfully saved_验",
+				firstSaveHeader: "试_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._验",
+				firstSaveA1: "试_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_验",
+				firstSaveA1bis: "试_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._验",
+				firstSaveQ2: "试_Is my Application shared?_验",
+				firstSaveA2: "试_Currently your Application is not shared. To share it, use the SHARE button._验",
+				shareTitle: "试_Share your Application_验",
+				sharePrivateHeader: "试_Your Application is not shared, would you like to share it?_验",
+				sharePrivateBtn1: "试_Share publicly_验",
+				sharePrivateBtn2: "试_Share with my Organization_验",
+				sharePrivateProgress: "试_Sharing in progress..._验",
+				sharePrivateErr: "试_Sharing failed, try again or_验",
+				sharePrivateOk: "试_Sharing updated successfully, loading..._验",
+				shareStatus1: "试_Application is not saved_验",
+				shareStatus2: "试_Application is shared publicly_验",
+				shareStatus3: "试_Application is shared within the organization_验",
+				shareStatus4: "试_Application is not shared_验",
+				sharePreviewAsUser: "试_Preview_验",
+				shareHeader1: "试_Your Application is <strong>publicly accessible</strong>._验",
+				shareHeader2: "试_Your Application is accessible by your organization members (login is required)._验",
+				shareLinkHeader: "试_Share the Application with your audience_验",
+				shareLinkOpen: "试_OPEN_验",
+				learnMore: "试_Learn more_验",
+				shareQ1Opt1: "试_How do I keep the Application private?_验",
+				shareQ1Opt2: "试_How do I keep the Application private or share it publicly?_验",
+				shareA1: "试_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._验",
+				shareA1bis: "试_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._验",
+				shareQ2: "试_How do I edit the Application later?_验",
+				shareQ2bis: "试_How do I get back to the authoring interface?_验",
+				shareA2div1: "试_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._验",
+				shareA2div2: "试_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_验",				
+				shareQ3: "试_Where is the data stored?_验",
+				shareA3: "试_The Application configuration is stored in this web application item</a>._验",
+				shareWarning: "试_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._验",
+ 				shareWarningWith1: "试_publicly_验",
+ 				shareWarningWith2: "试_publicly and with the Organization_验"
+			},
+			directCreation: {
+				header: "试_Welcome to the Swipe/Spyglass Builder_验",
+				mapPickHeader: "试_To get started, please input a valid web map id, or use the search button to browse web maps._验",
+				launchBuilder: "试_Launch Builder_验"
+			}
+		},
+		configure: {
+			mapdlg:{
+				items:{
+					organizationLabel: "试_My Organization_验",
+					onlineLabel: "试_ArcGIS Online_验",
+					contentLabel: "试_My Content_验",
+					favoritesLabel: "试_My Favorites_验"
+				},
+				title: "试_Select Web Map_验",
+				searchTitle: "试_Search_验",
+				ok: "试_Ok_验",
+				cancel: "试_Cancel_验",
+				placeholder: "试_Enter search term_验"
 			}
 		}
     })

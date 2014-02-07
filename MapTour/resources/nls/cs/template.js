@@ -327,6 +327,7 @@
 				header: "Zadejte svůj e-mail nebo identifikátor pro účet Picasa nebo Google+.",
 				userInputLbl: "Zadat e-mail nebo identifikátor",
 				signInMsg2: "Účet nenalezen",
+				signInMsg3: "Ř_No public album_ů",
 				howToFind: "Jak najít identifikátor účtu Picasa nebo Google+",
 				howToFind2: "Zkopírujte číslice mezi prvním a druhým lomítkem (/) libovolné stránky služeb Picasa nebo Google+."
 			},
@@ -524,7 +525,10 @@
 				shareA2div1: "Uložte si pro budoucí použití tento odkaz %LINK1% nebo použijte <a href='%LINK2%' target='_blank'>stránku položek aplikace</a>.",
 				shareA2div2: "Když jste přihlášeni na webu ArcGIS.com jako majitel aplikace, tak aplikace obsahuje tlačítko pro otevření interaktivního nástroje pro tvorbu:",				
 				shareQ3: "Kde jsou uložena data?",
-				shareA3: "Nastavení prohlídky je uloženo v <a href='%LINK1%' target='_blank'>této položce webové mapy</a> a <a href='%LINK2%' target='_blank'>této položce webové aplikace</a>. Pokud jste použili import z Flickru, Picasa, Facebooku nebo YouTube, zůstávají vaše obrázky a videa uloženy tam a nejsou duplikovány v ArcGIS Online."
+				shareA3: "Nastavení prohlídky je uloženo v <a href='%LINK1%' target='_blank'>této položce webové mapy</a> a <a href='%LINK2%' target='_blank'>této položce webové aplikace</a>. Pokud jste použili import z Flickru, Picasa, Facebooku nebo YouTube, zůstávají vaše obrázky a videa uloženy tam a nejsou duplikovány v ArcGIS Online.",
+				shareWarning: "Ř_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ů",
+				shareWarningWith1: "Ř_publicly_ů",
+				shareWarningWith2: "Ř_publicly and with the Organization_ů"
 			}
         }
     })

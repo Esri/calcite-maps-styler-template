@@ -5,15 +5,15 @@
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors:{
-      createMap: "ก้_Unable to create map:_ษฺ ",
-      general:"ก้_Error_ษฺ"
+      createMap: "ไม่สามารถสร้างแผนที่ได้: ",
+      general:"ข้อผิดพลาด"
     },
 	legToggle:{
-	  up:"ก้_MAP LEGEND ▲_ษฺ",
-	  down:"ก้_MAP LEGEND ▼_ษฺ"
+	  up:"คำอธิบายสัญลักษณ์แผนที่ ▲",
+	  down:"คำอธิบายสัญลักษณ์แผนที่ ▼"
 	},
 	loading:{
-		message: "ก้_Loading map_ษฺ"
+		message: "กำลังดาวน์โหลดแผนที่"
 	}
   }
 })

@@ -2,198 +2,273 @@
 	({
 		viewer: {
 			loading: {
-				step1: "ก้_LOADING APPLICATION_ษฺ",
-				step2: "ก้_LOADING DATA_ษฺ",
-				step3: "ก้_INITIALIZING_ษฺ",
-				fail: "ก้_Sorry, Swipe loading failed_ษฺ",
-				loadBuilder: "ก้_SWITCHING TO BUILDER MODE_ษฺ",
-				failButton: "ก้_Retry_ษฺ"
+				step1: "กำลังโหลดแอพพลิเคชั่น",
+				step2: "กำลังโหลดข้อมูล",
+				step3: "กำลังเริ่มต้นทำงาน",
+				fail: "ขออภัย โหลด Swipe ล้มเหลว",
+				loadBuilder: "กำลังเปลี่ยนไปที่โหมดการสร้าง",
+				redirectSignIn: "ก้_REDIRECTING TO SIGN-IN PAGE_ษฺ",
+				redirectSignIn2: "ก้_(you will be redirected here after sign-in)_ษฺ",
+				failButton: "ลองใหม่"
 			},
 			errors: {
-				boxTitle: "ก้_An error has occurred_ษฺ",
-				portalSelf: "ก้_Fatal error: Failed to get portal configuration_ษฺ",
-				invalidConfig: "ก้_Fatal error: Invalid configuration_ษฺ",
-				invalidConfigNoWebmap: "ก้_Fatal error: Invalid configuration (no web map specified)_ษฺ",
-				createMap: "ก้_Unable to create map_ษฺ",
-				invalidApp: "ก้_Fatal error: The application cannot be loaded_ษฺ",
-				initMobile: "ก้_Welcome to the swipe web application. The application is not configured. The interactive builder is not supported on mobile devices._ษฺ",
-				noBuilderIE8: "ก้_The Swipe interactive builder is not supported on Internet Explorer before version 9._ษฺ",
-				noLayerView: "ก้_Welcome to the Swipe web application.<br />The application is not configured yet._ษฺ",
-				appSave: "ก้_Error saving the web application_ษฺ",
-				mapSave: "ก้_Error saving the web map_ษฺ",
-				notAuthorized: "ก้_You are not authorized to access this application_ษฺ",
-				conflictingProjectionsTitle: "ก้_Conflicting Projections_ษฺ",
-				conflictingProjections: "ก้_Swipe does not support using two webmaps with different projections. Please open settings and use a webmap that use the same projection than the first webmap._ษฺ",
-				cpButton: "ก้_Close_ษฺ"
+				boxTitle: "เกิดข้อผิดพลาด",
+				portalSelf: "ข้อผิดพลาดร้ายแรง: การปรับแต่งสารบัญข้อมูล",
+				invalidConfig: "เกิดข้อผิดพลาด: การปรับแต่งไม่ถูกต้อง",
+				invalidConfigNoWebmap: "เกิดข้อผิดพลาด: การปรับแต่งไม่ถูกต้อง (ไม่ได้ระบุเว็บแมพ)",
+				createMap: "ไม่สามารถสร้างแผนที่ได้",
+				invalidApp: "เกิดข้อผิดพลาด: ไม่สามารถโหลด Application ได้",
+				initMobile: "ขอต้อนรับสู่ Swipe Web Application ยังไม่มีการปรับแต่งแอพพลิเคชันและไม่รับรองโหมดการสร้างบนอุปกรณ์เคลื่อนที่",
+				noBuilderIE8: "Internet Explorer ก่อนเวอร์ชัน 9 ไม่รองรับโหมดการสร้างของ Swipe",
+				noLayerView: "ขอต้อนรับสู่ Swipe Web Application.<br />ยังไม่มีการปรับแต่งแอพพลิเคชัน",
+				appSave: "เกิดข้อผิดพลาดไม่สามารถบันทึก Web Application ได้",
+				mapSave: "เกิดข้อผิดพลาดในการบันทึกเว็บแมพ",
+				notAuthorized: "คุณไม่ได้รับอนุญาตให้เข้าถึงแอพพลิเคชั่นนี้",
+				conflictingProjectionsTitle: "การถ่ายภาพที่ไม่สัมพันธ์กัน",
+				conflictingProjections: "Swipe ไม่รองรับเว็บแมพที่มีโปรเจคชันต่างกัน กรุณาไปที่การตั้งค่าและเลือกใช้เว็บแมพที่มีโปรเจคชันเดียวกับเว็บแมพแรก",
+				cpButton: "ปิด"
 			},
 			mobileView: {
-				hideIntro: "ก้_HIDE INTRO_ษฺ",
-				navLeft: "ก้_Legend_ษฺ",
-				navMap: "ก้_Map_ษฺ",
-				navRight: "ก้_Data_ษฺ"
+				hideIntro: "ซ่อนคำอธิบายการเริ่มต้นใช้งาน",
+				navLeft: "คำอธิบายสัญลักษณ์",
+				navMap: "แผนที่",
+				navRight: "ข้อมูล"
 			},
 			desktopView: {
-				storymapsText: "ก้_A story map_ษฺ",
-				builderButton: "ก้_Switch to builder mode_ษฺ",
-				bitlyTooltip: "ก้_Get a short link to the application_ษฺ"
+				storymapsText: "แผนที่เรื่องราว",
+				builderButton: "เปลี่ยนไปยังโหมดการสร้าง",
+				bitlyTooltip: "ลิงก์ไปยังแอพพลิเคชัน"
 			}
 		},
 		builder: {
 			builder: {
-				panelHeader: "ก้_APPLICATION CONFIGURATION_ษฺ",
-				buttonSave: "ก้_SAVE_ษฺ",
-				buttonDiscard: "ก้_CANCEL_ษฺ",
-				buttonSettings: "ก้_Settings_ษฺ",
-				buttonView: "ก้_View mode_ษฺ",
-				buttonItem: "ก้_Open the Web Application item_ษฺ",
-				noPendingChange: "ก้_No pending change_ษฺ",
-				unSavedChangeSingular: "ก้_1 unsaved change_ษฺ",
-				unSavedChangePlural: "ก้_unsaved changes_ษฺ",
-				popoverDiscard: "ก้_Are you sure to want to discard any unsaved changes?_ษฺ",
-				yes: "ก้_Yes_ษฺ",
-				no: "ก้_No_ษฺ",
-				popoverOpenViewExplain: "ก้_By opening the viewer, you will lose any unsaved changes_ษฺ",
-				popoverOpenViewOk: "ก้_Ok_ษฺ",
-				popoverOpenViewCancel: "ก้_Cancel_ษฺ",
-				popoverSaveWhenDone: "ก้_Don't forget to save when you are done_ษฺ",
-				closeWithPendingChange: "ก้_Are you sure to want to confirm the action ? Your changes will be lost._ษฺ",
-				gotIt: "ก้_Ok_ษฺ",
-				savingApplication: "ก้_Saving application_ษฺ",
-				saveSuccess: "ก้_Application saved successfully_ษฺ",
-				saveError: "ก้_Save failed, please try again_ษฺ",
-				signIn: "ก้_Please sign in with an account on_ษฺ",
-				signInTwo: "ก้_to save the application._ษฺ"
+				panelHeader: "การปรับแต่งแอพพลิเคชั่น",
+				buttonSave: "บันทึก",
+				buttonHelp: "ก้_Help_ษฺ",
+				buttonShare: "ก้_Share_ษฺ",
+				buttonDiscard: "ยกเลิก",
+				buttonSettings: "การตั้งค่า",
+				buttonView: "โหมดการดู",
+				buttonItem: "เปิดเว็บแอพพลิเคชั่น",
+				noPendingChange: "ไม่มีการเปลี่ยนแปลง",
+				unSavedChangeSingular: "มี 1 การเปลี่ยนแปลงที่ยังไม่ได้ถูกบันทึก",
+				unSavedChangePlural: "การแก้ไขที่ไม่ได้รับการบันทึก",
+				popoverDiscard: "คุณไม่ต้องการบันทึกการเปลี่ยนแปลงใดๆ?",
+				yes: "ใช่",
+				no: "ไม่ใช่",
+				popoverOpenViewExplain: "เมื่อเปิดหน้าต่างแสดงผล การแก้ไขใดๆที่ไม่ได้รับการบันทึกจะหายไป",
+				popoverOpenViewOk: "ตกลง",
+				popoverOpenViewCancel: "ยกเลิก",
+				popoverSaveWhenDone: "อย่าลืมบันทึกข้อมูลเมื่อคุณทำงานเสร็จ",
+				closeWithPendingChange: "คุณต้องการยืนยันการกระทำนี้? การแก้ไขเปลี่ยนแปลงใดๆจะสูญหายไป",
+				gotIt: "ตกลง",
+				savingApplication: "กำลังบันทึกแอพพลิเคชั่น",
+				saveSuccess: "บันทึกแอพพลิเคชั่นเรียบร้อยแล้ว",
+				saveError: "การบันทึกไม่สำเร็จ กรุณาลองใหม่อีกครั้ง",
+				saveError2: "ก้_Save failed due to an invalid html tag in a name or description_ษฺ",
+				saveError3: "ก้_The title can't be empty_ษฺ",
+				signIn: "กรุณาลงชื่อเข้าใช้",
+				signInTwo: "บันทึกแอพพลิเคชั่น"
 			},
 			header:{
-				editMe: "ก้_Edit me !_ษฺ",
-				templateTitle: "ก้_Set template title_ษฺ",
-				templateSubtitle: "ก้_Set template subtitle_ษฺ"
+				editMe: "แก้ไขฉัน !",
+				templateTitle: "ตั้งชื่อโครงร่าง",
+				templateSubtitle: "ตั้งชื่อโครงร่างรอง"
 			},
 			settings: {
-				settingsHeader: "ก้_Application settings_ษฺ",
-				modalCancel: "ก้_Cancel_ษฺ",
-				modalApply: "ก้_Apply_ษฺ"
+				settingsHeader: "การตั้งค่าแอพพลิเคชั่น",
+				modalCancel: "ยกเลิก",
+				modalApply: "ใช้งาน"
 			},
 			settingsColors: {
-				settingsTabColor: "ก้_Theme_ษฺ",
-				settingsColorExplain: "ก้_Choose an app theme or define your own colors._ษฺ",
-				settingsLabelColor: "ก้_Header and side panel background colors_ษฺ"
+				settingsTabColor: "หัวข้อ",
+				settingsColorExplain: "เลือกธีมของแอพฯ หรือเลือกสีด้วยตัวเอง",
+				settingsLabelColor: "สีพื้นหลังของเฮดเดอร์และแถบด้านข้าง"
 			},
 			settingsHeader: {
-				settingsTabLogo: "ก้_Header_ษฺ",
-				settingsLogoExplain: "ก้_Customize the header logo (maximum is 250 x 50px)._ษฺ",
-				settingsLogoEsri: "ก้_Esri logo_ษฺ",
-				settingsLogoNone: "ก้_No logo_ษฺ",
-				settingsLogoCustom: "ก้_Custom logo_ษฺ",
-				settingsLogoCustomPlaceholder: "ก้_Image URL_ษฺ",
-				settingsLogoCustomTargetPlaceholder: "ก้_Click-through link_ษฺ",
-				settingsLogoSocialExplain: "ก้_Customize the header top right link._ษฺ",
-				settingsLogoSocialText: "ก้_Text_ษฺ",
-				settingsLogoSocialLink: "ก้_Link_ษฺ",
-				settingsLogoSocialDisabled: "ก้_This feature has been disabled by the Administrator_ษฺ"
+				settingsTabLogo: "เฮดเดอร์",
+				settingsLogoExplain: "เลือกรูปโลโก้เฮดเดอร์ (ขนาดไม่เกิน 250 x 50px).",
+				settingsLogoEsri: "ตราสัญลักษณ์ Esri",
+				settingsLogoNone: "ไม่มีตราสัญลักษณ์",
+				settingsLogoCustom: "ตราสัญลักษณ์ที่ปรับแต่เอง",
+				settingsLogoCustomPlaceholder: "URL รูปภาพ",
+				settingsLogoCustomTargetPlaceholder: "คลิกที่ลิงก์",
+				settingsLogoSocialExplain: "ปรับแต่งลิ้งด้านขวาบนในส่วนเฮดเดอร์",
+				settingsLogoSocialText: "ข้อความ",
+				settingsLogoSocialLink: "ลิงก์",
+				settingsLogoSocialDisabled: "ข้อมูลนี้ไม่ได้รับอนุญาตจากผู้ดูแลให้ใช้งาน"
 			},
 			settingsExtent: {
-				settingsTabExtent: "ก้_Extent_ษฺ",
-				settingsExtentExplain: "ก้_Set the initial extent through the interactive map below._ษฺ",
-				settingsExtentExplainBottom: "ก้_The extent you define will modify your web map initial extent. Note that if you are doing a swipe series that extent won't be used._ษฺ",
+				settingsTabExtent: "ขอบเขตแผนที่",
+				settingsExtentExplain: "กำหนดค่าแรกของขอบเขตแผนที่ผ่านแผนที่ด้านล่าง",
+				settingsExtentExplainBottom: "ขอบเขตแผนที่ที่คุณกำหนดจะเป็นค่าแรกของแผนที่ แต่หากคุณใช้แผนที่เป็น Swipe ขอบเขตที่ถูกกำหนดไว้นี้จะไม่ถูกนำมาใช้",
 				settingsExtentDateLineError: "ก้_The extent cannot be across the meridian of 180ï¿½ longitude_ษฺ",
-				settingsExtentDateLineError2: "ก้_Error computing the extent_ษฺ",
-				settingsExtentDrawBtn: "ก้_Draw a new extent_ษฺ",
-				settingsExtentModifyBtn: "ก้_Edit the current extent_ษฺ",
-				settingsExtentApplyBtn: "ก้_Apply on main map_ษฺ",
-				settingsExtentUseMainMap: "ก้_Use main map extent_ษฺ"
+				settingsExtentDateLineError2: "การสร้างขอบเขตแผนที่มีข้อผิดพลาด",
+				settingsExtentDrawBtn: "วาดขอบเขตแผนที่ใหม่",
+				settingsExtentModifyBtn: "แก้ไขขอบเขตแผนที่",
+				settingsExtentApplyBtn: "นำไปใช้กับแผนที่หลัก",
+				settingsExtentUseMainMap: "ใช้ขอบเขตของแผนที่หลัก"
 			}
         },
 		swipe: {
 			mobileData: {
-				noData: "ก้_No data to display!_ษฺ",
-				noDataExplain: "ก้_Tap the map to select a feature and come back here_ษฺ",
-				noDataMap: "ก้_No data for this map_ษฺ",
-				noPopup: "ก้_No pop-up found for this feature_ษฺ"
+				noData: "ไม่มีข้อมูล!",
+				noDataExplain: "คลิกที่แผนที่เพื่อเลือกฟีทเจอร์และกลับมาที่นี่",
+				noDataMap: "ไม่มีข้อมูลสำหรับแผนที่นี้",
+				noPopup: "ไม่พบป็อปอัพสำหรับข้อมูลนี้"
 			},
 			mobileLegend: {
-				noLegend: "ก้_No legend to display._ษฺ"
+				noLegend: "ไม่มีคำอธิบายสัญลักษณ์"
 			},
 			swipeSidePanel: {
-				editTooltip: "ก้_Set the side panel description_ษฺ",
-				editMe: "ก้_Edit me !_ษฺ",
-				legendTitle: "ก้_Legend_ษฺ"
+				editTooltip: "ตั้งค่าคำอธิบายที่แถบด้านข้าง",
+				editMe: "แก้ไขฉัน !",
+				legendTitle: "คำอธิบายสัญลักษณ์"
 			},
 			infoWindow: {
-				noFeature: "ก้_No data to display_ษฺ",
-				noFeatureExplain: "ก้_Tap the map to select a feature_ษฺ"
+				noFeature: "ไม่มีข้อมูล",
+				noFeatureExplain: "คลิกที่แผนที่เพื่อเลือกฟีทเจอร์"
 			},
 			settingsLayout: {
-				settingsTabLayout: "ก้_Swipe Style_ษฺ",
-				settingsLayoutExplain: "ก้_Choose a style for the swipe tool._ษฺ",
-				settingsLayoutSwipe: "ก้_Vertical bar_ษฺ",
-				settingsLayoutSpyGlass: "ก้_Spyglass_ษฺ",
-				settingsLayoutSelected: "ก้_Selected layout_ษฺ",
-				settingsLayoutSelect: "ก้_Select this layout_ษฺ",
-				settingsSaveConfirm: "ก้_Some of your changes require that you save and reload the application_ษฺ"
+				settingsTabLayout: "แบบ Swipe",
+				settingsLayoutExplain: "เลือกรูปแบบสำหรับเครื่องมือ Swipe",
+				settingsLayoutSwipe: "แถบแนวตั้ง",
+				settingsLayoutSpyGlass: "แว่นขยาย",
+				settingsLayoutSelected: "โครงร่างที่เลือก",
+				settingsLayoutSelect: "เลือกโครงร่างนี้",
+				settingsSaveConfirm: "จากการแก้ไขข้อมูล คุณต้องบันทึกและโหลดแอพพลิเคชันใหม่อีกครั้ง"
 			},
 			settingsDataModel: {
-				settingsTabDataModel: "ก้_Swipe Type_ษฺ",
-				settingsDataModelExplainSwipe: "ก้_What do you want users to swipe?_ษฺ",
+				settingsTabDataModel: "ประเภท Swipe",
+				settingsDataModelExplainSwipe: "คุณต้องการให้ผู้ใช้ Swipe อะไร?",
 				settingsDataModelExplainSwipe2: "",
-				settingsDataModelExplainSpyGlass: "ก้_Choose the layer or the web map that will appear in the spyglass._ษฺ",
-				settingsDataModelOneMap: "ก้_A layer in a web map_ษฺ",
-				settingsDataModel1Explain: "ก้_Select the layer you want to be swiped_ษฺ",
-				settingsDataModel1Warning: "ก้_If the layer is hidden by upper layers, swipe won't have any effect._ษฺ",
-				settingsDataModel1SpyGlassExplain: "ก้_Select the layer to appear within the spyglass._ษฺ",
-				settingsDataModelTwoMaps: "ก้_Two web maps_ษฺ",
-				settingsDataModelLayerIds: "ก้_Web map Layer IDs_ษฺ",
-				settingsDataModelSelected: "ก้_Selected type_ษฺ",
-				settingsDataModelWebmapSwipeId1: "ก้_Right Web map ID_ษฺ",
-				settingsDataModelWebmapSwipeId2: "ก้_Left Web map ID_ษฺ",
-				settingsDataModelWebmapGlassId1: "ก้_Main Web map ID_ษฺ",
-				settingsDataModelWebmapGlassId2: "ก้_Spyglass Web map ID_ษฺ",
-				settingsDataModelSelect: "ก้_Select this type_ษฺ",
-				settingsDataModel2Explain: "ก้_Swipe with another web map._ษฺ",
-				settingsDataModel2SpyGlassExplain: "ก้_Reveal another web map._ษฺ",
-				settingsDataModel2HelpTitle: "ก้_How do I find a web map's ID?_ษฺ",
-				settingsDataModel2HelpContent: "ก้_Copy and paste digits after the '=' sign in the URL of the web map_ษฺ"
+				settingsDataModelExplainSpyGlass: "เลือกชั้นข้อมูลหรือเว็บแมพที่ต้องการให้ปรากฎในกล้องส่องทางไกล",
+				settingsDataModelOneMap: "ชั้นข้อมูลในเว็บแมพ",
+				settingsDataModel1Explain: "เลือกชั้นข้อมูลที่คุณต้องการ Swipe",
+				settingsDataModel1Warning: "หากชั้นข้อมูลที่ต้องการถูกทับด้วยชั้นข้อมูลอื่น Swipe จะไม่มีผลต่อชั้นข้อมูลนั้น",
+				settingsDataModel1SpyGlassExplain: "เลือกชั้นข้อมูลที่ต้องการให้แสดงในกล้องส่องทางไกล",
+				settingsDataModelTwoMaps: "เว็บแมพ 2 อัน",
+				settingsDataModelLayerIds: "ID ของชั้นข้อมูลเว็บแมพ",
+				settingsDataModelSelected: "ประเภทที่เลือก",
+				settingsDataModelWebmapSwipeId1: "ID ของเว็บแมพทางด้านขวา",
+				settingsDataModelWebmapSwipeId2: "ID ของเว็บแมพทางด้านซ้าย",
+				settingsDataModelWebmapGlassId1: "ID ของเว็บแมพหลัก",
+				settingsDataModelWebmapGlassId2: "ID กล้องส่องทางไกลเว็บแมพ",
+				settingsDataModelSelect: "เลือกประเภทนี้",
+				settingsDataModel2Explain: "Swipe คู่กับอีกเว็บแมพ",
+				settingsDataModel2SpyGlassExplain: "แสดงอีกเว็บแมพหนึ่ง",
+				settingsDataModel2HelpTitle: "ID ของเว็บแมพอยู่ที่ไหน?",
+				settingsDataModel2HelpContent: "คัดลอกและวางหลังสัญลักษณ์ = ในช่อง URL ของเว็บแมพ",
+				switchMaps: "ก้_Switch maps_ษฺ",
+				browseWebMaps: "ก้_Browse web maps_ษฺ"
 			},
 			settingsLegend: {
-				settingsTabLegend: "ก้_App Layout_ษฺ",
-				settingsLegendExplain: "ก้_Select the application layout settings._ษฺ",
-				settingsLegendEnable: "ก้_Enable Legend_ษฺ",
-				settingsDescriptionEnable: "ก้_Enable Description_ษฺ",
-				settingsBookmarksEnable: "ก้_Enable Swipe series_ษฺ",
-				settingsPopupDisable: "ก้_Enable popup_ษฺ",
-				settingsLocationSearchEnable: "ก้_Enable locator search_ษฺ",
-				settingsGeolocatorEnable: "ก้_Enable geolocator_ษฺ",
-				settingsLegendHelpContent: "ก้_To refine the legend content, use ArcGIS.com web map viewer table of contents (Hide in Legend)_ษฺ",
-				settingsSeriesHelpContent: "ก้_Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use._ษฺ", 
-				settingsSeriesHelpContent2: "ก้_Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use._ษฺ",
-				settingsSeriesHelpLink: "ก้_See an example of an application with a swipe series here_ษฺ",
-				preview: "ก้_UI preview_ษฺ",
-				settingsLocateButtonExplain: "ก้_This functionality is supported on most mobile devices and desktop browsers (including Internet Explorer 9+)._ษฺ",
+				settingsTabLegend: "โครงร่างแอพฯ",
+				settingsLegendExplain: "เลือกโครงร่างของแอพพลิเคชัน",
+				settingsLegendEnable: "เปิดแสดงคำอธิบายสัญลักษณ์",
+				settingsDescriptionEnable: "เปิดแสดงคำอธิบาย",
+				settingsBookmarksEnable: "เปิดใช้งาน Swipe",
+				settingsPopupDisable: "เปิดแสดงป็อปอัพ",
+				settingsLocationSearchEnable: "เปิดใช้การค้นหาตำแหน่ง",
+				settingsGeolocatorEnable: "เปิดใช้งาน Geolocator",
+				settingsLegendHelpContent: "ในการปรับแต่งส่วนประกอบของคำอธิบายสัญลักษณ์",
+				settingsSeriesHelpContent: "ชุด Swipe เป็นตัวช่วยนำผู้ใช้ไปสู่ข้อมูลสำคัญและแสดงชื่อและคำอธิบายในแถบด้านข้าง บุ๊คมาร์คของเว็บแมพนั้นๆจะถูกนำเข้ามาใช้สร้างแถบนี้ การปิดการใช้งานตัวช่วยนี้จะผิดเพียงแถบคำสั่ง แต่ยังสามารถปรับแต่งให้นำกลับมาใช้งานได้ในอนาคต", 
+				settingsSeriesHelpContent2: "ชุด Swipe ให้คุณสร้างและแก้ไขรายชื่อตำแหน่งข้อมูลพร้อมชือ หากเว็บแมพของคุณมีบุ๊คมาร์ค บุ๊คมาร์คเหล่านั้นจะถูกนำมาแสดงด้วย สามารถยกเลิกการใช้งาน Swipe นี้ได้ และสามารถแก้ไขให้นำกลับมาใช้งานได้อีกภายหลัง",
+				settingsSeriesHelpLink: "ดูตัวอย่างแอพพลิเคชันที่ใช้ Swipe ได้ที่นี่",
+				preview: "ดูตัวอย่าง UI",
+				settingsLocateButtonExplain: "ความสามารถนี้รองรับบนอุปกรณ์เคลื่อนที่ทั่วไปและบราวเซอร์บนเดสก์ท็อปด้วย (รวมทั้ง Internet Explorer 9+)",
 				settingsLocateButton: "ก้_Enable a 'Locate' button on supported browsers_ษฺ",
-				settingsAddressSearch: "ก้_Enable an address search tool_ษฺ"
+				settingsAddressSearch: "เปิดใช้เครื่องมือค้นหาที่อยู่"
 			},
 			settingsSwipePopup: {
-				settingsSwipePopup: "ก้_Pop-up_ษฺ",
-				settingsSwipePopupExplain: "ก้_Customize the appearance of the pop-ups header to help user associate pop-ups with maps layers._ษฺ",
-				settingsSwipePopupSwipe1: "ก้_Left Map_ษฺ",
-				settingsSwipePopupSwipe2: "ก้_Right Map_ษฺ",
-				settingsSwipePopupGlass1: "ก้_Main Map_ษฺ",
-				settingsSwipePopupGlass2: "ก้_Spyglass Map_ษฺ",
-				settingsSwipePopupTitle: "ก้_Header Title_ษฺ",
-				settingsSwipePopupColor: "ก้_Header Color_ษฺ"
+				settingsSwipePopup: "ป็อปอัพ",
+				settingsSwipePopupExplain: "ปรับแต่งเฮดเดอร์ของป็อปอัพเพื่อช่วยให้ผู้ใช้เข้าใจแผนที่ประกอบกับป็อปอัพ",
+				settingsSwipePopupSwipe1: "แผนที่ทางด้านซ้าย",
+				settingsSwipePopupSwipe2: "แผนที่ทางด้านขวา",
+				settingsSwipePopupGlass1: "แผนที่หลัก",
+				settingsSwipePopupGlass2: "แผนที่กล้องส่องทางไกล",
+				settingsSwipePopupTitle: "หัวข้อเฮดเดอร์",
+				settingsSwipePopupColor: "สีของเฮดเดอร์"
 			},
 			initPopup: {
-				initHeader: "ก้_Welcome to the Swipe Builder_ษฺ",
-				modalNext: "ก้_Next_ษฺ",
-				modalPrev: "ก้_Previous_ษฺ",
-				modalApply: "ก้_Open the app_ษฺ"
+				initHeader: "ก้_Welcome to the Swipe/Spyglass Builder_ษฺ",
+				modalNext: "ต่อไป",
+				modalPrev: "ก่อนหน้า",
+				modalApply: "เปิด App"
 			},
 			seriesPanel: {
-				title: "ก้_Title_ษฺ",
-				descr: "ก้_Description_ษฺ",
-				discard: "ก้_Discard Bookmark_ษฺ",
-				saveExtent: "ก้_Set Bookmark Extent_ษฺ",
-				discardDisabled: "ก้_You can't remove that bookmark. Swipe series can be disabled in the Settings._ษฺ"
+				title: "หัวข้อ",
+				descr: "คำอธิบาย",
+				discard: "ลบบุ๊คมาร์ค",
+				saveExtent: "ตั้งค่าเนื้อหาบุ๊คมาร์ค",
+				discardDisabled: "คุณไม่สามารถลบบุ๊คมาร์คนี้ออกได้ สามารถยกเลิกใช้งาน Swipe ได้ที่การตั้งค่า"
+			},
+			helpPopup: {
+				title: "ก้_Help_ษฺ",
+				close: "ก้_Close_ษฺ",
+				tab1: {
+					div1: "ก้_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._ษฺ",
+					div2: "ก้_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ษฺ",
+					div3: "ก้_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._ษฺ"
+				}
+			},
+			share: {
+				firstSaveTitle: "ก้_Application successfully saved_ษฺ",
+				firstSaveHeader: "ก้_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ษฺ",
+				firstSaveA1: "ก้_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ษฺ",
+				firstSaveA1bis: "ก้_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ษฺ",
+				firstSaveQ2: "ก้_Is my Application shared?_ษฺ",
+				firstSaveA2: "ก้_Currently your Application is not shared. To share it, use the SHARE button._ษฺ",
+				shareTitle: "ก้_Share your Application_ษฺ",
+				sharePrivateHeader: "ก้_Your Application is not shared, would you like to share it?_ษฺ",
+				sharePrivateBtn1: "ก้_Share publicly_ษฺ",
+				sharePrivateBtn2: "ก้_Share with my Organization_ษฺ",
+				sharePrivateProgress: "ก้_Sharing in progress..._ษฺ",
+				sharePrivateErr: "ก้_Sharing failed, try again or_ษฺ",
+				sharePrivateOk: "ก้_Sharing updated successfully, loading..._ษฺ",
+				shareStatus1: "ก้_Application is not saved_ษฺ",
+				shareStatus2: "ก้_Application is shared publicly_ษฺ",
+				shareStatus3: "ก้_Application is shared within the organization_ษฺ",
+				shareStatus4: "ก้_Application is not shared_ษฺ",
+				sharePreviewAsUser: "ก้_Preview_ษฺ",
+				shareHeader1: "ก้_Your Application is <strong>publicly accessible</strong>._ษฺ",
+				shareHeader2: "ก้_Your Application is accessible by your organization members (login is required)._ษฺ",
+				shareLinkHeader: "ก้_Share the Application with your audience_ษฺ",
+				shareLinkOpen: "ก้_OPEN_ษฺ",
+				learnMore: "ก้_Learn more_ษฺ",
+				shareQ1Opt1: "ก้_How do I keep the Application private?_ษฺ",
+				shareQ1Opt2: "ก้_How do I keep the Application private or share it publicly?_ษฺ",
+				shareA1: "ก้_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._ษฺ",
+				shareA1bis: "ก้_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ษฺ",
+				shareQ2: "ก้_How do I edit the Application later?_ษฺ",
+				shareQ2bis: "ก้_How do I get back to the authoring interface?_ษฺ",
+				shareA2div1: "ก้_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ษฺ",
+				shareA2div2: "ก้_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ษฺ",				
+				shareQ3: "ก้_Where is the data stored?_ษฺ",
+				shareA3: "ก้_The Application configuration is stored in this web application item</a>._ษฺ",
+				shareWarning: "ก้_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ษฺ",
+ 				shareWarningWith1: "ก้_publicly_ษฺ",
+ 				shareWarningWith2: "ก้_publicly and with the Organization_ษฺ"
+			},
+			directCreation: {
+				header: "ก้_Welcome to the Swipe/Spyglass Builder_ษฺ",
+				mapPickHeader: "ก้_To get started, please input a valid web map id, or use the search button to browse web maps._ษฺ",
+				launchBuilder: "ก้_Launch Builder_ษฺ"
+			}
+		},
+		configure: {
+			mapdlg:{
+				items:{
+					organizationLabel: "ก้_My Organization_ษฺ",
+					onlineLabel: "ก้_ArcGIS Online_ษฺ",
+					contentLabel: "ก้_My Content_ษฺ",
+					favoritesLabel: "ก้_My Favorites_ษฺ"
+				},
+				title: "ก้_Select Web Map_ษฺ",
+				searchTitle: "ก้_Search_ษฺ",
+				ok: "ก้_Ok_ษฺ",
+				cancel: "ก้_Cancel_ษฺ",
+				placeholder: "ก้_Enter search term_ษฺ"
 			}
 		}
     })
