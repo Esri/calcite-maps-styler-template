@@ -191,7 +191,7 @@ define({
 				settingsSwipePopupColor: "Header Color"
 			},
 			initPopup: {
-				initHeader: "Welcome to the Swipe Builder",
+				initHeader: "Welcome to the Swipe/Spyglass Builder",
 				modalNext: "Next",
 				modalPrev: "Previous",
 				modalApply: "Open the app"
@@ -208,7 +208,7 @@ define({
 				close: "Close",
 				tab1: {
 					div1: "The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets.",
-					div2: "For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
+					div2: "For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>."
 				}
 			},
@@ -245,7 +245,10 @@ define({
 				shareA2div1: "Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>.",
 				shareA2div2: "As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:",				
 				shareQ3: "Where is the data stored?",
-				shareA3: "The Application configuration is stored in this web application item</a>."
+				shareA3: "The Application configuration is stored in this web application item</a>.",
+				shareWarning: "Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>.",
+ 				shareWarningWith1: "publicly",
+ 				shareWarningWith2: "publicly and with the Organization"
 			},
 			directCreation: {
 				header: "Welcome to the Swipe/Spyglass Builder",
