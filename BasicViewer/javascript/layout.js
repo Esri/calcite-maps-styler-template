@@ -1869,7 +1869,6 @@ function createTimeSlider(timeProperties) {
 
 }
 function updateTimeSliderTitle(timeExtent) {
-    console.log(this);
     var slider = this;
     var start = null,
         end = null;
