@@ -1,9 +1,10 @@
-change report #7 at 02/03/2014 14:44:04.98
+change report #9 at 02/08/2014 18:06:34.22
 -
 for git branch
-template_free_feature_adding
+non_ie_time_delay
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M js2/lgonlineEditing.js
+ M apps2/TagEditView.json
+ M js2/lgonlineCommand.js
