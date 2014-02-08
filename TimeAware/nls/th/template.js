@@ -20,18 +20,13 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "ปี",
-      decadePattern: "ปี", 
-      yearPattern: "เดือน ปี",
-      weekPattern: "เดือน วัน, ปี",
+      datePattern: "ก้_MMMM d, yyyy_ษฺ",
+      yearPattern: "ก้_yyyy_ษฺ",
       hourTimePattern: "ชั่วโมง",
-      // e.g. for German: "ชั่วโมง:นาที:วินาที"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "ชั่วโมง:นาที",
-      // e.g. for German: "ชั่วโมง:นาที"
-      monthPattern: "วัน เดือน, ปี",
       secondTimePattern: "ชั่วโมง:นาที:วินาที",
-      timeRange: "<b>ช่วงเวลา:</b> ${start_time} ถึง ${end_time}",
+      millisecondTimePattern:"h:m:ss.SSS a",
+      timeRange: "ก้_${start_time} to ${end_time}_ษฺ",
       timeRangeSingle: "<b>ช่วงเวลา:</b> ${time}"
     },
     legend: {
