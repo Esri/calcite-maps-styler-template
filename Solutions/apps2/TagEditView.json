@@ -20,13 +20,14 @@
         "titleBar.title": "Tag, Edit, and View",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "Brick",
-        "searchBox.hint": "",
         "filter.hint1": "Floor number",
         "filter.value1": 1,
         "filter.fieldname1": "FLOOR",
+        "searchBox.hint": "",
         "featureSearcher.searchLayerName": "Fire Suppression Systems",
         "featureSearcher.searchFields": "COMPLEXID,PLANID,LOCDESC,COMMENTS",
         "featureSearcher.displayFields": "PLANID",
+        "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
         "basemapBox.basemapgroupOwner": "",
         "helpMessageBox.content": "Tag, Edit, and View provides decisions makers and data custodians the ability to edit geographic content, automatically set attribute values, and filter content in a webmap when viewing."
@@ -121,11 +122,6 @@
             "type": "string",
             "tooltip": "Comma-separated list of the field to use in each layer to display its results"
         }, {
-            "label": "Show popup for selected feature",
-            "fieldName": "highlighter.showFeaturePopup",
-            "type": "boolean",
-            "tooltip": "Determines if the popup will automatically appear for a feature selected from a search results list"
-        }, {
             "label": "Zoom level for selected feature",
             "fieldName": "highlighter.highlightZoomLevel",
             "type": "number",
@@ -161,7 +157,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 2f4db99459d5f89e 2014-02-09 21:31:06 -0500"
+                "commit d8f6017ea013e80e 2014-02-10 10:33:31 -0500"
             ]
         }
     }, {
@@ -234,7 +230,8 @@
             "parentDiv": "contentFrame",
             "dependencyId": "map",
             "lineHiliteColor": "#0000ff",
-            "fillHiliteColor": [0, 0, 255, 0.1]
+            "fillHiliteColor": [0, 0, 255, 0.1],
+            "showFeaturePopup": false
         }
     }, {
         "classname": "js.LGTitleBar",
