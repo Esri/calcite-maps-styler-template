@@ -1,4 +1,4 @@
-change report #14 at 02/09/2014 21:30:30.27
+change report #15 at 02/10/2014 18:10:56.52
 -
 for git branch
 develop
@@ -6,5 +6,4 @@ in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M apps2/TagEditView.json
- M js2/lgonlineCommand.js
+ M js2/lgonlineEditing.js
