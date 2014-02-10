@@ -1,11 +1,10 @@
-change report #13 at 02/09/2014 19:05:13.81
+change report #14 at 02/09/2014 21:30:30.27
 -
 for git branch
-warn_filter_not_used
+develop
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
+ M apps2/TagEditView.json
  M js2/lgonlineCommand.js
- M nls/en/template.js
- M nls/template.js
