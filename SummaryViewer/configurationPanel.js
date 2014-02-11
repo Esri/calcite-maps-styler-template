@@ -26,49 +26,49 @@
             {
                "type": "string",
                "fieldName": "summaryLayer",
-               "label": "Summary Layer",
+               "label": "Summary layer",
                "tooltip": "Layer that will be summarized",
                "placeHolder": "Layer Name"
             },
             {
                "type": "string",
                "fieldName": "filterField",
-               "label": "Filter Field",
+               "label": "Field to filter features",
                "tooltip": "Field used to filter features",
-               "placeHolder": "Field Name"
+               "placeHolder": "Field_1"
             },
             {
                "type": "string",
                "fieldName": "sumFields",
-               "label": "Summary Fields",
-               "tooltip": "List of fields where the sum will be displayed",
+               "label": "Summary fields",
+               "tooltip": "List of numeric fields where the sum will be displayed",
                "placeHolder": "Field_1,Field_2"
             },
             {
                "type": "string",
                "fieldName": "avgFields",
-               "label": "Average Fields",
-               "tooltip": "List of fields where the average value will be displayed",
+               "label": "Average fields",
+               "tooltip": "List of numeric fields where the average value will be displayed",
                "placeHolder": "Field_1,Field_2"
             },
             {
                "type": "string",
                "fieldName": "minFields",
-               "label": "Minimum Fields",
-               "tooltip": "List of fields where the minimum value will be displayed",
+               "label": "Minimum fields",
+               "tooltip": "List of numeric fields where the minimum value will be displayed",
                "placeHolder": "Field_1,Field_2"
             },
             {
                "type": "string",
                "fieldName": "maxFields",
-               "label": "Maximum Fields",
-               "tooltip": "List of fields where the maximum value will be displayed",
+               "label": "Maximum fields",
+               "tooltip": "List of numeric fields where the maximum value will be displayed",
                "placeHolder": "Field_1,Field_2"
             },
             {
                "type": "boolean",
                "fieldName": "cluster",
-               "label": "Cluster Summary Layer",
+               "label": "Display summary as clusters ",
                "tooltip": "Summary layer points will be displayed as clusters"
             },
         ]

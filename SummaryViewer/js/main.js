@@ -5,6 +5,7 @@ define([
         "dojo/dom-style", 
         "dojo/_base/lang", 
         "dojo/number",
+        "dojo/mouse",
         "esri/arcgis/utils", 
         "esri/dijit/BasemapGallery",
         "esri/IdentityManager", 
@@ -20,6 +21,7 @@ define([
         domStyle, 
         lang, 
         number,
+        mouse,
         arcgisUtils, 
         BasemapGallery,
         IdentityManager, 
@@ -50,6 +52,8 @@ define([
         clusterLayer: null,
         cluster: false,
         sumData: [],
+        fieldTypes: "esriFieldTypeSmallInteger,esriFieldTypeInteger,esriFieldTypeSingle,esriFieldTypeDouble",
+        filterString: false,
 
         // constructor
         constructor : function(config) {
@@ -77,6 +81,12 @@ define([
             if (this.config.logo)
                 dom.byId("logo").src = this.config.logo;
             dom.byId("panelMain").innerHTML = this.config.title;
+            
+            var basemapTitle = dom.byId("basemapTitle");
+            on(basemapTitle, "click", function(){dojo.toggleClass("panelBasemaps", "panelBasemapsOn");});
+            on(basemapTitle, mouse.enter, function(){dojo.addClass("panelBasemaps", "panelBasemapsOn");});
+            var panelBasemaps = dom.byId("panelBasemaps");
+            on(panelBasemaps, mouse.leave, function(){dojo.removeClass("panelBasemaps", "panelBasemapsOn");});
         },
         
         // load counters
@@ -151,11 +161,14 @@ define([
             // Map is ready
             console.log('map loaded');
             dojo.query(".esriSimpleSlider").style("backgroundColor", this.config.color);
-             var basemapGallery = new BasemapGallery({
-                    showArcGISBasemaps: true,
-                    map: this.map
-                }, "basemapGallery");
+            var basemapGallery = new BasemapGallery({
+                showArcGISBasemaps: true,
+                map: this.map
+             }, "basemapGallery");
              basemapGallery.startup();
+             basemapGallery.on("selection-change", function(){
+                dojo.removeClass("panelBasemaps", "panelBasemapsOn"); 
+             });
              this.processOperationalLayers();
         },
         
@@ -165,14 +178,15 @@ define([
             var me = this;
             if (opLayerName != "") {
                 dojo.forEach(this.opLayers,function(layer){
-                    if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.title == opLayerName){
+                    if (layer.featureCollection && layer.featureCollection.title == opLayerName) {
+                        me.opLayer = layer.featureCollection.layers[0].layerObject;
+                    } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.title == opLayerName){
                         me.opLayer = layer.layerObject;
                     }
                 });
             } else {
                 this.opLayer = this.getDefaultOperationalLayer();
             }
-            console.log(this.opLayer);
             if (this.opLayer) {
                 on(this.map, "extent-change", lang.hitch(this, this.summarizeFeatures));
                 this.setLayer();
@@ -186,7 +200,11 @@ define([
             this.opLayers.reverse();
             for (var i=0; i<this.opLayers.length; i++) {
                 var layer = this.opLayers[i];
-                if (layer.layerObject && layer.layerObject.type == "Feature Layer"){
+                if (layer.featureCollection) {
+                    var flds = this.getSummaryFields(layer.featureCollection.layers[0].layerObject);
+                    if (flds.length > 0)
+                        return layer.featureCollection.layers[0].layerObject;
+                } else if (layer.layerObject && layer.layerObject.type == "Feature Layer") {
                     var flds = this.getSummaryFields(layer.layerObject);
                     if (flds.length > 0)
                         return layer.layerObject;
@@ -198,13 +216,20 @@ define([
         // get summary fields
         getSummaryFields: function(layer) {
             var array = [];
+            
+            // FIELDS
+            var fields = layer.fields;
             var infos = layer.infoTemplate.info.fieldInfos;
-            for (var i=0; i<infos.length; i++) {
-                var fld = infos[i];
-                if (fld.visible && fld.format && fld.fieldName != layer.objectIdField){
-                    array.push(fld.fieldName);
+            for (var i=0; i<fields.length; i++) {
+                var fld = fields[i];
+                var fldType = fld.type;
+                if ((this.fieldTypes.indexOf(fldType) > -1) && (fld.name != layer.objectIdField)){
+                    var fldInfo = infos[i];
+                    if ((fldInfo.visible) && (!fld.domain))
+                        array.push(fld.name);
                 }
             }
+            
             return array;
         },
         
@@ -226,10 +251,9 @@ define([
                if (this.config.cluster == true) {
                     this.cluster = true; 
                     this.clusterLayer.setVisibility(true);
-                    this.opLayer.setOpacity(0.01);
+                    this.opLayer.setOpacity(0.0001);
                }
                this.opLayer.setVisibility(true);
-               //this.opLayer.refresh();
             } 
             
            if (this.fields.length == 0) {
@@ -249,25 +273,45 @@ define([
             var minFields = [];
             var maxFields = [];
             var str = this.config.sumFields + this.config.avgFields + this.config.minFields + this.config.maxFields;
+            var aliases = ["COUNT"];
+            var i = 0;
             if (str.length > 0) {
-                if (this.config.sumFields != "")
+                if (this.config.sumFields != "") {
                     sumFields = this.config.sumFields.split(",");
-                if (this.config.avgFields != "")
+                    for (i=0; i<sumFields.length; i++) {
+                        aliases.push("SUM: " + this.getFieldAlias(sumFields[i]));
+                    }
+                }
+                    
+                if (this.config.avgFields != "") {
                     avgFields = this.config.avgFields.split(",");
-                if (this.config.minFields != "")
+                    for (i=0; i<avgFields.length; i++) {
+                        aliases.push("AVG: " + this.getFieldAlias(avgFields[i]));
+                    }
+                }
+                    
+                if (this.config.minFields != "") {
                     minFields = this.config.minFields.split(",");
-                if (this.config.maxFields != "")
+                    for (i=0; i<minFields.length; i++) {
+                        aliases.push("MIN: " + this.getFieldAlias(minFields[i]));
+                    }
+                }
+                    
+                if (this.config.maxFields != "") {
                     maxFields = this.config.maxFields.split(",");
+                    for (i=0; i<maxFields.length; i++) {
+                        aliases.push("MAX: " + this.getFieldAlias(maxFields[i]));
+                    }
+                }
+                    
             } else {
-                console.log("here");
                 sumFields = this.getSummaryFields(this.opLayer);
+                for (i=0; i<sumFields.length; i++) {
+                    aliases.push("SUM: " + this.getFieldAlias(sumFields[i]));
+                }
             }
                 
             var fields = ["COUNT"].concat(sumFields, avgFields, minFields, maxFields);
-            var aliases = [];
-            for (var i=0; i<fields.length; i++) {
-                aliases.push(this.getFieldAlias(fields[i]));
-            }
             
             this.sumFields = sumFields;
             this.avgFields = avgFields;
@@ -334,49 +378,102 @@ define([
         
         // populate filter values
         populateFilterValues: function () {
+            
             if (this.config.filterField) {
-                var list = dom.byId("selFilter");
-                domStyle.set(list, "display", "block");
-                on(list, "change", lang.hitch(this, this.setFilter));
+                
+                var array = [];
+                var fld = this.getFilterField();
+                
+                if (fld) {
                     
-                var fld = this.config.filterField;
-                var query = new Query();
-                var statDef = new StatisticDefinition();
-                statDef.statisticType = "count";
-                statDef.onStatisticField = fld;
-                statDef.outStatisticFieldName = "COUNT";
-                query.returnGeometry = false;
-                query.where = "1=1";
-                query.groupByFieldsForStatistics = [fld];
-                query.outStatistics = [ statDef ];
-                this.opLayer.queryFeatures(query, function(featureSet){
-                    var list = dom.byId("selFilter");
-                    dojo.create("option", {
-                            value: "",
-                            innerHTML: "All"
-                        }, list);
-                    dojo.forEach(featureSet.features, function(feature){
-                        var value = feature.attributes[fld];
-                        dojo.create("option", {
-                            value: value,
-                            innerHTML: value
-                        }, list);
-                    });
-                });
+                    // check for string
+                    if (fld.type == "esriFieldTypeString")
+                        this.filterString = true;
+                    
+                    // domains
+                    if (fld.domain && fld.domain.type == "codedValue") {
+                        var codedValues = fld.domain.codedValues;
+                        for (var i=0; i<codedValues.length; i++) {
+                            var obj = codedValues[i];
+                            var name = obj.name;
+                            var code = obj.code;
+                            array.push({value:code, label:name});
+                        }
+                        this.populateOptions(array);
+                        
+                    // unique values        
+                    } else {
+                        var query = new Query();
+                        var statDef = new StatisticDefinition();
+                        statDef.statisticType = "count";
+                        statDef.onStatisticField = fld.name;
+                        statDef.outStatisticFieldName = "COUNT";
+                        query.returnGeometry = false;
+                        query.where = "1=1";
+                        query.groupByFieldsForStatistics = [fld.name];
+                        query.outStatistics = [ statDef ];
+                        var me = this;
+                        this.opLayer.queryFeatures(query, function(featureSet){
+                            dojo.forEach(featureSet.features, function(feature){
+                                var name = feature.attributes[fld.name];
+                                array.push({value: name, label: name});
+                            });
+                            me.populateOptions(array);
+                        });
+                    }
+                }
             }
         },
+        
+        // populate options
+        populateOptions: function(array) {
+            if (array.length > 0) {
+                var list = dom.byId("selFilter");
+                dojo.create("option", {
+                        value: "",
+                        innerHTML: "All"
+                }, list);
+                for (var i=0; i<array.length; i++) {
+                    var obj = array[i];
+                    var value = obj.value;
+                    var label = obj.label;
+                    dojo.create("option", {
+                        value: value,
+                        innerHTML: label
+                    }, list);
+                }
+                domStyle.set("panelFilter", "display", "block");
+                on(list, "change", lang.hitch(this, this.setFilter));
+            }
+        },
+        
+        // get filter field
+        getFilterField: function() {
+            for (var i=0; i<this.opLayer.fields.length; i++) {
+                var f = this.opLayer.fields[i];
+                if (f.name == this.config.filterField) {
+                    var str = this.fieldTypes + ",esriFieldTypeString";
+                    if (str.indexOf(f.type) > -1) {
+                        return f;
+                    } else {
+                        return null;
+                    }
+                }
+            }
+            return null;            
+        },
+        
         
         // set filter
         setFilter: function() {
             var list = dom.byId("selFilter");
             var value = list.options[list.selectedIndex].value;
-            var expr = this.config.filterField + " = '" + value + "'";
+            var expr = this.config.filterField + " = " + value;
+            if (this.filterString)
+                expr = this.config.filterField + " = '" + value + "'";
             if (value == "")
                 expr = null;
-            //this.opLayer.setVisibility(true);
             this.opLayer.setDefinitionExpression(expr);
-            //if (this.cluster)
-            //    this.opLayer.setVisibility(false);
         },
         
         // summarize features
@@ -408,7 +505,8 @@ define([
             var sumData = this.summarizeAttributes(data); 
             var info = "";
             for (f=0; f<this.fieldCount; f++) {
-                info += this.getAlias(this.fields[f]) + ": " + sumData[f] + "<br/><br/>";
+                //info += this.getAlias(this.fields[f]) + ": " + sumData[f] + "<br/><br/>";
+                info += this.aliases[f] + ": " + sumData[f] + "<br/><br/>";
             }
             this.map.infoWindow.setTitle(title);
             this.map.infoWindow.setContent(info);
@@ -535,8 +633,11 @@ define([
                 units = "TRILLIONS";
             }
             var counter = this["counter"+index];
-            counter.setValue(number.format(num));
-            dom.byId("title"+index).innerHTML = this.getAlias(this.fields[fldIndex]);
+            var newValue = number.format(num);
+            if(counter.value != newValue);
+                counter.setValue(newValue);
+            //dom.byId("title"+index).innerHTML = this.getAlias(this.fields[fldIndex]);
+            dom.byId("title"+index).innerHTML = this.aliases[fldIndex];
             dom.byId("units"+index).innerHTML = units;
         },
         

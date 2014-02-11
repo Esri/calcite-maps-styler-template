@@ -150,14 +150,14 @@ define([
 						var count = clusterGraphic.graphics.length;
 						var data = clusterGraphic.graphics;
 						var label = count.toString();
-						var size = label.length * 16;
+						var size = label.length * 18;
 						var symColor = this.getSymbolColor();
 						var cls = new SimpleLineSymbol(SimpleLineSymbol.STYLE_NULL, new Color(0,0,0,0), 0);
-						var csym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, size * 1.6, cls, new Color([symColor[0], symColor[1], symColor[2], 0.3]));
-						var csym2 = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, size, cls, new Color([symColor[0], symColor[1], symColor[2], 0.7]));
+						var csym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, size * 1.6, cls, new Color([symColor[0], symColor[1], symColor[2], 0.4]));
+						var csym2 = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, size, cls, new Color([symColor[0], symColor[1], symColor[2], 0.8]));
 						var fnt = new Font();
 						fnt.family = "Arial";
-						fnt.size = "10px";
+						fnt.size = "12px";
 						var symText = new TextSymbol(label, fnt, "#ffffff");
 						symText.setOffset(0, -4);
 											
@@ -170,10 +170,13 @@ define([
 							this.add(new Graphic(clusterGraphic.center, csym2, attr));
 							this.add(new Graphic(clusterGraphic.center, symText, attr));
 						} else {
+							// var pt = clusterGraphic.graphics[0].geometry;
+							// var lineSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(0,0,0,1), 1);
+							// var ptSym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 10, lineSym, new Color([symColor[0], symColor[1], symColor[2], 1]));
+							// this.add(new Graphic(pt, ptSym, attr));
 							var pt = clusterGraphic.graphics[0].geometry;
-							var lineSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(0,0,0,1), 1);
-							var ptSym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 10, lineSym, new Color([symColor[0], symColor[1], symColor[2], 1]));
-							this.add(new Graphic(pt, ptSym, attr));
+							this.add(new Graphic(pt, csym2, attr));
+                            this.add(new Graphic(pt, symText, attr));
 						}
 						
 					}
@@ -182,9 +185,11 @@ define([
 		                        
 			},
 			
-			getSymbolColor: function(alpha) {
+			getSymbolColor: function() {
 				var symColor = Color.fromString(this.color);
-				return symColor.toRgb(); 
+				var darkColor = Color.fromString("#000000");
+				var newColor = Color.blendColors(symColor, darkColor, 0.2);
+				return newColor.toRgb(); 
 			},
 			
 			getClusterCenter: function(graphics) {

@@ -73,7 +73,7 @@ html, body {
 .logo-med {
 	position: absolute;
 	right: 0px;
-	bottom: 140px;
+	bottom: 120px;
 }
 
 /* Navigation */
@@ -141,19 +141,64 @@ html, body {
 	padding: 0px;
 }
 
-.panel {
+#panelLogo {
 	width: auto;
+	max-width: 60px;
 	height: 50px;
+	overflow: hidden;
 	float: left;
 	line-height: 50px;
+	margin-left: 10px;
+}
+
+#panelMain {
+	width: 300px;
+	height: 50px;
+	overflow: hidden;
+	float: left;
+	line-height: 50px;
+	margin-left: 5px;
+}
+
+#panelFilter {
+	position: absolute;
+	width: 200px;
+	height: 30px;
+	right: 10px;
+	top: 10px;
+	overflow: hidden;
+	background: url(../images/select.png) no-repeat;
+	display: none;
+}
+
+#panelFilter select {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	margin: 0px;
+	outline: transparent;
+	background: transparent;
+	width: 225px;
+   	padding: 0px 0px 0px 5px;
+   	color: #ffffff;
+   	font-size: 14px;
+   	line-height: 1;
+   	border: none;
+   	border-radius: 0;
+   	height: 30px;
+   -webkit-appearance: none;
+}
+
+select option {
+	color: #000000;
 }
 
 .panelBottom {
 	position: absolute;
 	width: 100%;
-	height: 120px;
+	height: 110px;
 	left: 0px;
-	bottom: 20px;
+	bottom: 10px;
 	text-align: center;
 	color: #ffffff;
 	padding: 0px;
@@ -164,7 +209,7 @@ html, body {
 	width: 100%;
 	height: 20px;
 	left: 0px;
-	bottom: 20px;
+	bottom: 10px;
 	text-align: center;
 	color: #ffffff;
 	padding: 0px;
@@ -173,7 +218,7 @@ html, body {
 #panelContainer {
 	margin: auto;
 	width: 880px;
-	height: 100px;
+	height: 90px;
 	overflow: hidden;
 	display: none;
 }
@@ -184,7 +229,7 @@ html, body {
 	height: 80px;
 	padding: 0px;
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
 	display: block;
 	text-align: center;
 	float: left;
@@ -193,6 +238,11 @@ html, body {
 .line {
 	border-right: 1px solid #fff;
 }
+
+/*.line {
+	background: url(../images/break.png) no-repeat;
+	background-position: right;
+}*/
 
 .titleCounter {
 	position: absolute;
@@ -207,11 +257,12 @@ html, body {
 	letter-spacing: 1px;
 	text-align: center;
 	display: block;
+	overflow: hidden;
 }
 
 .counter {
 	position: absolute;
-	top: 15px;
+	top: 20px;
 	left: 0px;
 	width: 204px;
 	height: 40px;
@@ -263,14 +314,6 @@ html, body {
 	cursor: pointer;
 }
 
-#selFilter {
-	outline: transparent;
-	position: absolute;
-	right: 10px;
-	top: 13px;
-	height: 24px;
-}
-
 #mapDiv {
 	padding: 0;
 	margin: 0;
@@ -282,11 +325,11 @@ html, body {
 	/*Example of a rule that will be applied if the app is viewed in a browser wtih a RTL locale like Hebrew or Arabic.*/
 }
 
-#panelBasemaps {
+.panelBasemaps {
 	position: absolute;
 	top: 10px;
 	right: 10px;
-	width: 125px;
+	width: 140px;
 	height: 50px;
 	font-family: HelveticaNeueUltraLight;
 	color: #ffffff;
@@ -295,24 +338,24 @@ html, body {
 	overflow: hidden;
 }
 
-#panelBasemaps:hover {
+.panelBasemapsOn {
 	height: 400px;
 }
 
 #basemapTitle {
 	display: block;
-	width: 116px;
+	width: 140px;
 	height: 50px;
 	font-family: HelveticaNeue;
 	text-align: center;
 	line-height: 50px;
 	cursor: pointer;
-	padding: 2px;
+	padding: 0px;
 }
 
 #basemapContent {
 	display: block;
-	width: 120px;
+	width: 140px;
 	height: 350px;
 	font-family: HelveticaNeue;
 	text-align: center;
