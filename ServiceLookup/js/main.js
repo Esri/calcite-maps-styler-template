@@ -18,7 +18,8 @@ define([
     "esri/geometry",
     "esri/dijit/PopupTemplate",
     "dojo/string",
-     "esri/lang"
+     "esri/lang",
+     "dojo/json"
 ],
 function (
     ready,
@@ -40,7 +41,8 @@ function (
     Geometry,
     PopupTemplate,
     String,
-    esriLang
+    esriLang,
+    JSON
 ) {
 
 
@@ -118,7 +120,7 @@ function (
                 if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
                     geocoder.placefinding = true;
                     geocoder.placeholder = this.config.i18n.geocoder.defaultText;
-                  
+
                 }
                 else {
                     geocoder.suggest = true;
@@ -139,16 +141,16 @@ function (
 
             };
 
-       
+
             return options;
         },
         _createGeocoder: function () {
             var gcOpts = this._createGeocoderOptions();
             this.geocoder = new Geocoder(gcOpts, dojo.byId('searchDiv'));
-         
+
             // address search startup
             this.geocoder.startup();
-           
+
             on(this.geocoder, "select", lang.hitch(this, function (result) {
                 if (result.result != null) {
                     var pt = result.result.feature.geometry;
@@ -166,7 +168,7 @@ function (
         },
         _extentChanged: function () {
             // each geocoder
-          
+
         },
         _initMap: function () {
 
@@ -177,7 +179,7 @@ function (
             document.title = this.config.i18n.page.title;
             this.serviceAreaLayerNames = [],
             this.popupMedia = [],
-           
+
             this.serviceAreaLayerNames = this.config.serviceAreaLayerNames.split("|");
             this.lookupLayers = [];
 
@@ -205,8 +207,7 @@ function (
                                         }
                                     }, this);
                                 }
-                                if (layDetails.popupInfo == null)
-                                {
+                                if (layDetails.popupInfo == null) {
                                     alert(this.config.i18n.error.popupNotSet + ": " + subLyrs.name);
                                 }
                                 this.lookupLayers.push(layDetails);
@@ -328,10 +329,49 @@ function (
         //    }
         //    return arr;
         //},
+        _processObject: function(obj,fieldName, layerName,matchName)
+        {
+            var matchForRec = matchName
+
+            for (var key in obj) {
+                if (key == "type") {
+                    if (obj[key].indexOf('chart')> -1) {
+                        matchForRec = true;
+                    }
+                }
+
+                if (obj[key] != null) {
+                    if (obj[key] instanceof Object) {
+                        if (key == 'fields')
+                        {
+                            obj[key] = this._processObject(obj[key], fieldName, layerName, true);
+                        }
+                        else
+                        {
+                            obj[key] = this._processObject(obj[key], fieldName, layerName, matchName);
+                        }
+                     
+                    }
+                    else
+                    {
+                        if (obj[key] == fieldName && (matchName || key == 'normalizeField'))
+
+                        {
+                            obj[key] = layerName + "_" + fieldName;
+                        }
+                        else{
+                            obj[key] = obj[key].replace("{" + fieldName + "}", "{" + layerName + "_" + fieldName + "}").replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'");
+                        }
+                    }
+                }
+            }
+            return obj;
+
+        },
         _queryComplete: function (lookupLayer) {
 
             return function (result) {
-             
+
                 if (result.features.length > 0) {
                     this.results.push({ "results": result.features, "Layer": lookupLayer });
                 }
@@ -351,14 +391,15 @@ function (
                         if (this.results.length > 0) {
                             var allFields = [];
 
-                           
+
                             var allDescriptions = "";
                             var popUpArray = [];
+                            var mediaArray = [];
                             var resultFeature = {};
 
 
                             popUpArray.length = this.results.length;
-
+                            mediaArray.length = this.results.length;
                             array.forEach(this.results, function (result) {
 
                                 var resetFieldNames = resetFieldNames = result.Layer.popupInfo.fieldInfos;
@@ -370,21 +411,48 @@ function (
                                 var layerFields = result.Layer.popupInfo.fieldInfos;
                                 this.layerDescription = result.Layer.popupInfo.description;
                                 popupTitle = result.Layer.popupInfo.title;
+                                mediaInfos = lang.clone(result.Layer.popupInfo.mediaInfos);
 
                                 for (var g = 0, gl = layerFields.length; g < gl; g++) {
+                                    if (mediaInfos != null) {
+                                        array.forEach(mediaInfos, function (mediaInfo)
+                                        {
+                                            mediaInfo = this._processObject(mediaInfo, layerFields[g].fieldName, result.Layer.name,false);
+                                          
+                                            //for (var key in mediaInfo) {
+                                            //    if (mediaInfo[key] instanceof Object) {
+                                            //        for (var keyInner in mediaInfo[key]) {
+                                            //            if (mediaInfo[key][keyInner] instanceof Object)
+                                            //            { }
+                                            //            else
+                                            //            {
+                                            //                mediaInfo[key][keyInner] = mediaInfo[key][keyInner].replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}")
+                                            //            }
+
+
+                                            //        }
+                                            //    }
+                                            //    else {
+                                            //        mediaInfo[key] = mediaInfo[key].replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}")
+                                            //    }
+                                               
+                                            
+                                        }, this)
+                                    }
+
                                     if (result.Layer.popupInfo.description == null) {
-                                        popupTitle = popupTitle.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}")
+                                        popupTitle = popupTitle.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
                                         if (this.layerDescription == null) {
-                                            this.layerDescription = layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>"
+                                            this.layerDescription = layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
                                         }
                                         else {
-                                            this.layerDescription = this.layerDescription + layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>"
+                                            this.layerDescription = this.layerDescription + layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
                                         }
                                     }
                                     else {
-                                        this.layerDescription = this.layerDescription.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}")
+                                        this.layerDescription = this.layerDescription.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
                                     }
-                                    resultFeature[result.Layer.name + "_" + layerFields[g].fieldName] = result.results[0].attributes[layerFields[g].fieldName]
+                                    resultFeature[result.Layer.name + "_" + layerFields[g].fieldName] = result.results[0].attributes[layerFields[g].fieldName];
                                     layerFields[g].fieldName = result.Layer.name + "_" + layerFields[g].fieldName;
 
                                 }
@@ -395,22 +463,29 @@ function (
                                 if (result.Layer.popupInfo.description == null) {
                                     this.layerDescription = popupTitle + "<br>" + this.layerDescription;
                                 }
-
+                             
+                                mediaArray[result.Layer.layerOrder] = mediaInfos;
                                 popUpArray[result.Layer.layerOrder] = this.layerDescription;
-                          
+
                             }, this)
 
+                            var finalMedArr = [];
 
                             array.forEach(popUpArray, function (descr) {
-                                allDescriptions = allDescriptions == "" ? descr : allDescriptions + descr
+                                allDescriptions = allDescriptions == "" ? descr : allDescriptions + descr;
+                            }, this)
+                            array.forEach(mediaArray, function (mediaInfos) {
+                                finalMedArr.push.apply(finalMedArr, mediaInfos);
+
+                               
                             }, this)
 
                             ////Make single Array of fields
-                            this.popupTemplate = new PopupTemplate({
+                                this.popupTemplate = new PopupTemplate({
                                 title: this.config.popupTitle,
                                 fieldInfos: allFields,
                                 description: allDescriptions.replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'"),
-                                showAttachments: true
+                                mediaInfos: finalMedArr
                             });
 
                         }
@@ -438,6 +513,7 @@ function (
 
                             this.map.infoWindow.setFeatures(featureArray);
                             this.map.infoWindow.show(editGraphic.geometry);
+                            this.map.infoWindow.resize();
                             //
                             if (this.config.storeLocation == true) {
                                 atts[this.config.serviceRequestLayerAvailibiltyField] = this.config.serviceRequestLayerAvailibiltyFieldValueAvail;
@@ -456,7 +532,7 @@ function (
             this.map.infoWindow.hide();
 
             this.map.graphics.clear();
-          
+
             //query to determine popup 
             var query = new Query();
             query.spatialRelationship = Query.SPATIAL_REL_INTERSECTS;
@@ -465,11 +541,11 @@ function (
             query.geometryType = "esriGeometryPoint";
             query.outFields = ["*"];
             var editGraphic;
-          
+
             this.event = evt;
             this.results = [];
             this.defCnt = this.lookupLayers.length;
-           
+
             for (var f = 0, fl = this.lookupLayers.length; f < fl; f++) {
                 var queryTask = new QueryTask(this.lookupLayers[f].url)
                 this.queryDeferred = queryTask.execute(query);
