@@ -1,5 +1,4 @@
-html, body
-{
+html, body {
     padding: 0;
     margin: 0;
     height: 100%;
@@ -7,16 +6,14 @@ html, body
     font-family: Arial,Helvetica,sans-serif;
 }
 
-#mapDiv
-{
+#mapDiv {
     padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
 }
 
-#searchDiv
-{
+#searchDiv {
     display: block;
     position: absolute;
     z-index: 3;
@@ -25,40 +22,77 @@ html, body
     width: 60%;
 }
 
-#LocateButton
-{
+/*.LocateButton .zoomLocateButton {
+    background: url("../images/home_locate.png") no-repeat -30px 0;
+    background-image: url(http://cdn.arcgis.com/cdn/3684/js/esri/arcgisonline/map/css/images/home_locate.png);
+    padding: 2px;
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    background-color: rgb(255, 255, 255);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    border: 2px solid #666;
+}*/
+
+
+#loader {
+    position: absolute;
+    /*background: url("./images/preloader.gif") no-repeat;*/
+    z-index: 250;
+    width: 65px;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    display: none;
+}
+#LocateButton {
     position: absolute;
     top: 95px;
     left: 20px;
     z-index: 50;
 }
+
 /* customize geocoder appearance */
-.simpleGeocoder, .simpleGeocoder .esriGeocoderContainer
-{
+.simpleGeocoder, .simpleGeocoder .esriGeocoderContainer {
     width: 100%;
 }
 
-.simpleGeocoder .esriGeocoder
-{
-    height: 100%;
-}
+    .simpleGeocoder .esriGeocoder {
+        height: 100%;
+    }
 
-.simpleGeocoder .esriGeocoder input
-{
-    width: 75%;
-}
+        .simpleGeocoder .esriGeocoder input {
+            
+            /* Firefox */
+            width: -moz-calc(100% - 75px);
+            /* WebKit */
+            width: -webkit-calc(100% - 75px);
+            /* Opera */
+            width: -o-calc(100% - 75px);
+            /* Standard */
+            width: calc(100% - 75px);
+            padding-right:0px;
+            margin-right:0px;
+
+        }
 
 
-.simpleGeocoder .esriGeocoderResult:hover,
-.simpleGeocoder .esriGeocoderResultEven:focus,
-.simpleGeocoder .esriGeocoderResultOdd:focus
-{
-    /* default is #EDEDED, use a light blue instead */
-    background-color: #B5DAEA;
-}
+    .simpleGeocoder .esriGeocoderResult:hover,
+    .simpleGeocoder .esriGeocoderResultEven:focus,
+    .simpleGeocoder .esriGeocoderResultOdd:focus {
+        /* default is #EDEDED, use a light blue instead */
+        background-color: #B5DAEA;
+    }
 
 
-.esriRTL label
-{
+.esriRTL label {
     /*Example of a rule that will be applied if the app is viewed in a browser wtih a RTL locale like Hebrew or Arabic.*/
 }

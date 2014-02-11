@@ -1,21 +1,26 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>Service Lookup</title>
     <meta charset="utf-8">
     <!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
-    <link rel="stylesheet" href="//js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css">
-    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/esri/css/esri.css">
+    <link rel="stylesheet" href="//js.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="//js.arcgis.com/3.8/js/esri/css/esri.css">
     <!--Load any application specific styles-->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="claro">
     <!--The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. 
        Specify this by setting the dir attribute on the div to ltr. -->
     <div id="searchDiv"></div>
+    <div id="loader">
+        <img src="images/preloader.gif" />
+
+    </div>
     <div id="mapDiv" dir="ltr"></div>
 
     <div id="LocateButton"></div>
+    <div id="HomeButton"></div>
 
 
     <script type="text/javascript">
@@ -23,23 +28,25 @@
         var dojoConfig = {
             // The locationPath logic below may look confusing but all its doing is 
             // enabling us to load the api from a CDN and load local modules from the correct location.
-         
+
             packages: [{
                 name: "application",
                 location: package_path + '/js'
             },
-            {
-                name: "templateConfig",
-                location: package_path.substr(0, package_path.lastIndexOf('/'))
-                
-            },
+
             {
                 name: "config",
                 location: package_path + '/config'
-            }]
+            }
+            , {
+                name: "templateConfig",
+                location: package_path.substr(0, package_path.lastIndexOf('/'))
+
+            }
+            ]
         };
     </script>
-    <script type="text/javascript" src="//js.arcgis.com/3.7/"></script>
+    <script type="text/javascript" src="//js.arcgis.com/3.8/"></script>
     <script type="text/javascript">
         require([
             "dojo/on",
@@ -59,7 +66,7 @@
             dojo.addOnLoad(pageReady);
             function pageReady() {
                 esri.config.defaults.io.corsEnabledServers.push("localhost");
-               
+
             }
             var supportsLocalization = true; //defaults to true
 

@@ -195,6 +195,10 @@ function(
                     if (response.itemData.values && response.itemData.values.oauthappid) {
                         this._setupOAuth(response.itemData.values.oauthappid, this.config.sharinghost);
                     }
+					//get the extent for the applciation item. This can be used to override the default web map extent
+                    if(response.item && response.item.extent){
+                        this.config.application_extent = response.item.extent;
+                    }
                     deferred.resolve();
                 }));
             } else {
