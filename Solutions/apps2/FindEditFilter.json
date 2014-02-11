@@ -17,7 +17,7 @@
 
     "values": {
         "webmap": "796c572e6dcb4c88b77c024ae003bd88",
-        "titleBar.title": "Tag, Edit, and View",
+        "titleBar.title": "Find, Edit, and Filter",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "Brick",
         "filter.hint1": "Floor number",
@@ -30,7 +30,7 @@
         "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
         "basemapBox.basemapgroupOwner": "",
-        "helpMessageBox.content": "Tag, Edit, and View provides decisions makers and data custodians the ability to edit geographic content, automatically set attribute values, and filter content in a webmap when viewing."
+        "helpMessageBox.content": "Find, Edit, and Filter provides decision makers and data custodians the ability to edit geographic content, automatically set attribute values, and filter content in a webmap when viewing."
     },
 
     "configurationSettings": [{
@@ -157,7 +157,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit c0d0e13725b5589a 2014-02-10 18:11:37 -0500"
+                "commit b9244eb90b3a773b 2014-02-10 20:38:37 -0500"
             ]
         }
     }, {
