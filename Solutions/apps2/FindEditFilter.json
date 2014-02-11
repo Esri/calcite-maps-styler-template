@@ -30,7 +30,7 @@
         "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
         "basemapBox.basemapgroupOwner": "",
-        "helpMessageBox.content": "Find, Edit, and Filter provides decision makers and data custodians the ability to edit geographic content, automatically set attribute values, and filter content in a webmap when viewing."
+        "helpMessageBox.content": "Find, Edit, and Filter provides you with the ability to locate features, edit new and existing features, and filter the visible features based on an attribute. The filter also will define the default value for the condition of newly created features."
     },
 
     "configurationSettings": [{
@@ -157,7 +157,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit b9244eb90b3a773b 2014-02-10 20:38:37 -0500"
+                "commit 0ed1e57960ecb3ae 2014-02-11 18:18:08 -0500"
             ]
         }
     }, {
