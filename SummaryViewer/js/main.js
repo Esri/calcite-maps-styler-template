@@ -3,7 +3,12 @@ define([
         "dojo/_base/declare", 
         "dojo/dom", 
         "dojo/dom-style", 
+        "dojo/dom-class",
+        "dojo/dom-construct",
         "dojo/_base/lang", 
+        "dojo/_base/array",
+        "dojo/_base/event",
+        "dojo/query",
         "dojo/number",
         "dojo/mouse",
         "esri/arcgis/utils", 
@@ -19,7 +24,12 @@ define([
         declare, 
         dom, 
         domStyle, 
+        domClass,
+        domConstruct,
         lang, 
+        array,
+        dojoEvent,
+        query,
         number,
         mouse,
         arcgisUtils, 
@@ -77,16 +87,16 @@ define([
         loadUI: function() {
             var msgClose = dom.byId("msgClose");
             on(msgClose, "click", this.closeMessage);
-            dojo.query(".bg").style("backgroundColor", this.config.color);
+            query(".bg").style("backgroundColor", this.config.color);
             if (this.config.logo)
                 dom.byId("logo").src = this.config.logo;
             dom.byId("panelMain").innerHTML = this.config.title;
             
             var basemapTitle = dom.byId("basemapTitle");
-            on(basemapTitle, "click", function(){dojo.toggleClass("panelBasemaps", "panelBasemapsOn");});
-            on(basemapTitle, mouse.enter, function(){dojo.addClass("panelBasemaps", "panelBasemapsOn");});
+            on(basemapTitle, "click", function(){domClass.toggle("panelBasemaps", "panelBasemapsOn");});
+            on(basemapTitle, mouse.enter, function(){domClass.add("panelBasemaps", "panelBasemapsOn");});
             var panelBasemaps = dom.byId("panelBasemaps");
-            on(panelBasemaps, mouse.leave, function(){dojo.removeClass("panelBasemaps", "panelBasemapsOn");});
+            on(panelBasemaps, mouse.leave, function(){domClass.remove("panelBasemaps", "panelBasemapsOn");});
         },
         
         // load counters
@@ -110,6 +120,7 @@ define([
 
         //create a map based on the input web map id
         createWebMap : function() {
+
             arcgisUtils.createMap(this.config.webmap, "mapDiv", {
                 mapOptions : {
                     showAttribution: false
@@ -159,28 +170,27 @@ define([
         // map loaded
         mapLoaded : function() {
             // Map is ready
-            console.log('map loaded');
-            dojo.query(".esriSimpleSlider").style("backgroundColor", this.config.color);
+            query(".esriSimpleSlider").style("backgroundColor", this.config.color);
             var basemapGallery = new BasemapGallery({
                 showArcGISBasemaps: true,
                 map: this.map
              }, "basemapGallery");
              basemapGallery.startup();
              basemapGallery.on("selection-change", function(){
-                dojo.removeClass("panelBasemaps", "panelBasemapsOn"); 
+                domClass.remove("panelBasemaps", "panelBasemapsOn"); 
              });
              this.processOperationalLayers();
         },
         
         // process operational layers
         processOperationalLayers: function() {
-            var opLayerName = this.config.summaryLayer;
+            var opLayerName = this.config.summaryLayer.id;
             var me = this;
             if (opLayerName != "") {
-                dojo.forEach(this.opLayers,function(layer){
-                    if (layer.featureCollection && layer.featureCollection.title == opLayerName) {
+                array.forEach(this.opLayers,function(layer){
+                    if (layer.featureCollection && layer.featureCollection.id == opLayerName) {
                         me.opLayer = layer.featureCollection.layers[0].layerObject;
-                    } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.title == opLayerName){
+                    } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.id == opLayerName){
                         me.opLayer = layer.layerObject;
                     }
                 });
@@ -272,33 +282,40 @@ define([
             var avgFields = [];
             var minFields = [];
             var maxFields = [];
-            var str = this.config.sumFields + this.config.avgFields + this.config.minFields + this.config.maxFields;
+           // var str = this.config.sumFields + this.config.avgFields + this.config.minFields + this.config.maxFields;
+            var str = "";
+            if(this.config.summaryLayer && this.config.summaryLayer.fields){
+                array.forEach(this.config.summaryLayer.fields, lang.hitch(this, function(field){
+                    str += field.fields;
+                    this.config[field.id] = field.fields;
+                }));
+            }
             var aliases = ["COUNT"];
             var i = 0;
             if (str.length > 0) {
                 if (this.config.sumFields != "") {
-                    sumFields = this.config.sumFields.split(",");
+                    sumFields= this.config.sumFields;
                     for (i=0; i<sumFields.length; i++) {
                         aliases.push("SUM: " + this.getFieldAlias(sumFields[i]));
                     }
                 }
                     
                 if (this.config.avgFields != "") {
-                    avgFields = this.config.avgFields.split(",");
+                    avgFields = this.config.avgFields;
                     for (i=0; i<avgFields.length; i++) {
                         aliases.push("AVG: " + this.getFieldAlias(avgFields[i]));
                     }
                 }
                     
                 if (this.config.minFields != "") {
-                    minFields = this.config.minFields.split(",");
+                    minFields = this.config.minFields;
                     for (i=0; i<minFields.length; i++) {
                         aliases.push("MIN: " + this.getFieldAlias(minFields[i]));
                     }
                 }
                     
                 if (this.config.maxFields != "") {
-                    maxFields = this.config.maxFields.split(",");
+                    maxFields = this.config.maxFields;
                     for (i=0; i<maxFields.length; i++) {
                         aliases.push("MAX: " + this.getFieldAlias(maxFields[i]));
                     }
@@ -345,21 +362,21 @@ define([
                 domStyle.set(list, "width", this.pageCount * 20 + 'px');
                 for (var i = 0; i < this.pageCount; i++) {
                     var id = "page" + i;
-                    var link = dojo.create("li", {
+                    var link = domConstruct.create("li", {
                         id : id
                     }, list);
                     on(link, "click", lang.hitch(this, this.setPage, i));
                 }
-                dojo.addClass("page0", "active");
+                domClass.add("page0", "active");
             }
             this.page = 0;
         },
         
         // set page
         setPage : function(num) {
-            dojo.removeClass("page" + this.page, "active");
+            domClass.remove("page" + this.page, "active");
             this.page = num;
-            dojo.addClass("page" + this.page, "active");
+            domClass.add("page" + this.page, "active");
             this.updateCounters();
         },
         
@@ -414,7 +431,7 @@ define([
                         query.outStatistics = [ statDef ];
                         var me = this;
                         this.opLayer.queryFeatures(query, function(featureSet){
-                            dojo.forEach(featureSet.features, function(feature){
+                            array.forEach(featureSet.features, function(feature){
                                 var name = feature.attributes[fld.name];
                                 array.push({value: name, label: name});
                             });
@@ -429,7 +446,7 @@ define([
         populateOptions: function(array) {
             if (array.length > 0) {
                 var list = dom.byId("selFilter");
-                dojo.create("option", {
+                domConstruct.create("option", {
                         value: "",
                         innerHTML: "All"
                 }, list);
@@ -437,7 +454,7 @@ define([
                     var obj = array[i];
                     var value = obj.value;
                     var label = obj.label;
-                    dojo.create("option", {
+                    domConstruct.create("option", {
                         value: value,
                         innerHTML: label
                     }, list);
@@ -511,7 +528,7 @@ define([
             this.map.infoWindow.setTitle(title);
             this.map.infoWindow.setContent(info);
             this.map.infoWindow.show(evt.mapPoint); 
-            dojo.stopEvent(evt); 
+            dojoEvent.stop(evt); 
         },
         
         //summarize attributes
