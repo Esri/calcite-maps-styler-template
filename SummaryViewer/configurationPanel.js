@@ -1,12 +1,10 @@
-
 {
    "configurationSettings":[
       {
          "category":"<b>General Settings</b>",
          "fields":[
          	{
-         		"type":"webmap",
-         		"label":"Select a map"
+         		"type":"webmap"
          	},
             {
                "type":"string",
