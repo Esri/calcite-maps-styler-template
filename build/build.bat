@@ -137,9 +137,9 @@ xcopy %TEMPLATES_ROOT%\DataSummary                              %BUILD_OUTPUT%\D
 xcopy %TEMPLATES_ROOT%\SummaryViewer                            %BUILD_OUTPUT%\SummaryViewer                        /E /Y
 xcopy %TEMPLATES_ROOT%\MapJournal                               %BUILD_OUTPUT%\MapJournal                           /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\MapSeries                            /E /Y
-xcopy %TEMPLATES_ROOT%\MapSeries\app\config\series-config.js    %BUILD_OUTPUT%\MapSeries\app\config.js              /E /Y
-xcopy %TEMPLATES_ROOT%\StorytellingBasic                        %BUILD_OUTPUT%\StorytellingBasic                    /E /Y
-xcopy %TEMPLATES_ROOT%\MapSeries\app\config\basic-config.js     %BUILD_OUTPUT%\StorytellingBasic\app\config.js      /E /Y
+xcopy %TEMPLATES_ROOT%\MapSeries\app\config\series-config.js    %BUILD_OUTPUT%\MapSeries\app\config.js*             /E /Y
+xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\StorytellingBasic                    /E /Y
+xcopy %TEMPLATES_ROOT%\MapSeries\app\config\basic-config.js     %BUILD_OUTPUT%\StorytellingBasic\app\config.js*     /E /Y
 
 
 REM Finally copy assorted files in the root directory
