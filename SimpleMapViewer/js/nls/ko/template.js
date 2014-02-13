@@ -13,13 +13,13 @@
         label: "다음의 맵:"
       },
       geocoder: {
-        selectAnother: "한_Select another location_빠",
-        notWhatYouWanted: "한_Not what you wanted?_빠",
-        currentLocation: "한_Current Location_빠",
-        title: "한_Location_빠"
+        selectAnother: "다른 위치 선택",
+        notWhatYouWanted: "원하는 결과가 아닌가요?",
+        currentLocation: "현재 위치",
+        title: "위치"
       },
       sidePanel: {
-        title: "한_Legend_빠",
+        title: "범례",
         owner: "소유자: ",
         modified: "마지막으로 수정한 날짜: ",
         message: "운영 레이어 없음"

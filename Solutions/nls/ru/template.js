@@ -39,8 +39,8 @@ define(
             email: "email",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
             Twitter: "Twitter",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
-            title: "Ж_title_Я",  // Shown as title hint in print specification box if a title hint is not configured
-            author: "Ж_author_Я"  // Shown as author hint in print specification box if an author hint is not configured
+            title: "Заголовок",  // Shown as title hint in print specification box if a title hint is not configured
+            author: "автор"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
             search: "Поиск:",  // Appears before a search text field in dialog box for searching for a feature
@@ -54,10 +54,11 @@ define(
             geolocationTimeout: "Браузер не смог вовремя получить текущее местоположение",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "Этот слой поиска не был найден на карте",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Это поле не было найдено в слое поиска карты",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "Ж_None of these fields was found in the map search layer_Я",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            yourContentSubmitted: "Ж_Your content has been submitted. Thank you._Я",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "Ж_Unable to access application's configuration_Я",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "Ж_Unable to launch application_Я"  // Appears for any failure to build the user interface
+            allSearchFieldsMissing: "Ни одно из этих полей в слое поиска не обнаружено",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            fieldNotFound: "Ж_This field does not exist in any of the map layers_Я",  // Appears when a field used in the configuration was not found in any map layer
+            yourContentSubmitted: "Ресурсы успешно добавлены. Спасибо.",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "Не удалось открыть конфигурацию приложения",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "Не удалось запустить приложение"  // Appears for any failure to build the user interface
         }
     })
 );

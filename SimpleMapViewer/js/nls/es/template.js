@@ -13,13 +13,13 @@
         label: "Un mapa de:"
       },
       geocoder: {
-        selectAnother: "á_Select another location_Ó",
-        notWhatYouWanted: "á_Not what you wanted?_Ó",
-        currentLocation: "á_Current Location_Ó",
-        title: "á_Location_Ó"
+        selectAnother: "Selecciona otra ubicación",
+        notWhatYouWanted: "¿No es lo que querías?",
+        currentLocation: "Ubicación actual",
+        title: "Ubicación"
       },
       sidePanel: {
-        title: "á_Legend_Ó",
+        title: "Leyenda",
         owner: "propietario: ",
         modified: "Última modificación: ",
         message: "Ninguna capa operativa"

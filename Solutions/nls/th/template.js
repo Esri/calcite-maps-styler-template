@@ -39,8 +39,8 @@ define(
             email: "อีเมล์",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "เฟสบุค",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
             Twitter: "ทวิตเตอร์",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
-            title: "ก้_title_ษฺ",  // Shown as title hint in print specification box if a title hint is not configured
-            author: "ก้_author_ษฺ"  // Shown as author hint in print specification box if an author hint is not configured
+            title: "ชื่อเรื่อง",  // Shown as title hint in print specification box if a title hint is not configured
+            author: "ผู้แต่ง"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
             search: "ค้นหา:",  // Appears before a search text field in dialog box for searching for a feature
@@ -54,10 +54,11 @@ define(
             geolocationTimeout: "บราวเซอร์ไม่สามารถหาตำแหน่งปัจจุบันได้ทันที",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "ไม่พบชั้นข้อมูลที่ค้นหาในแผนที่",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "ไม่พบฟิลด์ที่ค้นหาในชั้นข้อมูลของแผนที่",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "ก้_None of these fields was found in the map search layer_ษฺ",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            yourContentSubmitted: "ก้_Your content has been submitted. Thank you._ษฺ",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "ก้_Unable to access application's configuration_ษฺ",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "ก้_Unable to launch application_ษฺ"  // Appears for any failure to build the user interface
+            allSearchFieldsMissing: "ไม่พบข้อมูลฟิลด์ใดๆ จากการค้นหาชั้นข้อมูลในแผนที่นี้",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            fieldNotFound: "ก้_This field does not exist in any of the map layers_ษฺ",  // Appears when a field used in the configuration was not found in any map layer
+            yourContentSubmitted: "ข้อมูลของคุณได้ถูกส่งแล้ว ขอบคุณ",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "ไม่สามารถเข้าถึงการตั้งค่าของแอพพลิเคชั่นได้",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "ไม่สามารถเริ่มใช้แอพพลิเคชั่นได้"  // Appears for any failure to build the user interface
         }
     })
 );

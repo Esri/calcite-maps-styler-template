@@ -39,8 +39,8 @@ define(
             email: "E-Mail",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
             Twitter: "Twitter",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
-            title: "ä_title_Ü",  // Shown as title hint in print specification box if a title hint is not configured
-            author: "ä_author_Ü"  // Shown as author hint in print specification box if an author hint is not configured
+            title: "Titel",  // Shown as title hint in print specification box if a title hint is not configured
+            author: "Autor"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
             search: "Suche:",  // Appears before a search text field in dialog box for searching for a feature
@@ -54,10 +54,11 @@ define(
             geolocationTimeout: "Der Browser konnte die aktuelle Position nicht rechtzeitig ermitteln",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "Der Such-Layer wurde nicht auf der Karte gefunden",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Dieses Feld wurde nicht im Such-Layer für die Karte gefunden",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "ä_None of these fields was found in the map search layer_Ü",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            yourContentSubmitted: "ä_Your content has been submitted. Thank you._Ü",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "ä_Unable to access application's configuration_Ü",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "ä_Unable to launch application_Ü"  // Appears for any failure to build the user interface
+            allSearchFieldsMissing: "Keines dieser Felder wurde im Such-Layer der Karte gefunden",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            fieldNotFound: "ä_This field does not exist in any of the map layers_Ü",  // Appears when a field used in the configuration was not found in any map layer
+            yourContentSubmitted: "Ihr Inhalt wurde gesendet. Vielen Dank.",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "Auf die Konfiguration der Anwendung kann nicht zugegriffen werden",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "Die Anwendung kann nicht gestartet werden"  // Appears for any failure to build the user interface
         }
     })
 );

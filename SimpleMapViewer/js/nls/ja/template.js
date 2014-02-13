@@ -13,13 +13,13 @@
         label: "マップの参照元:"
       },
       geocoder: {
-        selectAnother: "須_Select another location_鷗",
-        notWhatYouWanted: "須_Not what you wanted?_鷗",
-        currentLocation: "須_Current Location_鷗",
-        title: "須_Location_鷗"
+        selectAnother: "別の場所を選択",
+        notWhatYouWanted: "他の住所の候補を表示しますか？",
+        currentLocation: "現在の位置",
+        title: "位置"
       },
       sidePanel: {
-        title: "須_Legend_鷗",
+        title: "凡例",
         owner: "所有者: ",
         modified: "最終更新日: ",
         message: "操作レイヤがありません"

@@ -39,8 +39,8 @@ define(
             email: "e-posta",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
             Twitter: "Twitter",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
-            title: "ı_title_İ",  // Shown as title hint in print specification box if a title hint is not configured
-            author: "ı_author_İ"  // Shown as author hint in print specification box if an author hint is not configured
+            title: "başlık",  // Shown as title hint in print specification box if a title hint is not configured
+            author: "yazar"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
             search: "Ara:",  // Appears before a search text field in dialog box for searching for a feature
@@ -54,10 +54,11 @@ define(
             geolocationTimeout: "Tarayıcı geçerli konumu zamanında alamadı",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "Bu arama katmanı haritada bulunamadı",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Bu alan harita arama katmanında bulunamadı",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "ı_None of these fields was found in the map search layer_İ",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            yourContentSubmitted: "ı_Your content has been submitted. Thank you._İ",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "ı_Unable to access application's configuration_İ",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "ı_Unable to launch application_İ"  // Appears for any failure to build the user interface
+            allSearchFieldsMissing: "Bu alanlardan hiçbiri harita arama katmanında bulunamadı",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            fieldNotFound: "ı_This field does not exist in any of the map layers_İ",  // Appears when a field used in the configuration was not found in any map layer
+            yourContentSubmitted: "İçeriğiniz teslim edildi. Teşekkür ederiz.",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "Uygulama yapılandırmasına erişilemiyor",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "Uygulama başlatılamıyor"  // Appears for any failure to build the user interface
         }
     })
 );

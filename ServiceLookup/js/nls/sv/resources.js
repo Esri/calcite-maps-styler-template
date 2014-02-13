@@ -8,8 +8,9 @@
             defaultText: "Ange din adress"
         },
         error: {
-            layerNotFound: "Tjänstområdeslagret finns inte i webbkartan",
-            fieldNotFound: "Fältet hittades inte"
+            layerNotFound: "Å_Layer is not in the webmap_ö",
+            fieldNotFound: "Fältet hittades inte",
+            popupNotSet: "Å_Popup not enabled for this layer_ö"
         },
         page: {
             title: "Tjänstsökning",

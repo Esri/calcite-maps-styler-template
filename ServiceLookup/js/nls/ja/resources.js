@@ -8,8 +8,9 @@
             defaultText: "アドレスの入力"
         },
         error: {
-            layerNotFound: "Web マップに到達圏レイヤがありません",
-            fieldNotFound: "フィールドが見つかりません"
+            layerNotFound: "須_Layer is not in the webmap_鷗",
+            fieldNotFound: "フィールドが見つかりません",
+            popupNotSet: "須_Popup not enabled for this layer_鷗"
         },
         page: {
             title: "サービス検索",

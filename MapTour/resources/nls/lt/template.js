@@ -351,7 +351,7 @@
 				errorFields2Thumb: "<b>Thumbnail URL</b> naudoja %VAL1% vietoje %VAL2%",
 				resultFieldsAll: "Visi atributai buvo importuoti",
 				resultFieldsNotAll: "Šie atributai nebuvo importuoti, nes neegzistuoja žemėlapio sluoksnyje:",
-				resultFieldsNotAll2: "Šie atributai nebuvo importuoti:",
+				resultFieldsNotAll2: "Šie atributai buvo importuoti:",
 				footerNextBtnResult: "Importavimas į internetinį žemėlapį",
 				footerProgress: "Vyksta importavimas",
 				footerSucceed: "Importavimas pavyko. Kraunama"
@@ -437,7 +437,7 @@
 					div154: "Miniatiūra",
 					div155: "Spalva ",
 					div16: "Jei aplikacija naudodama elementų paslaugą neranda atitinkamų laukų, peržiūros aplikacija neveiks kol nesukonfigūruosite laukų, naudotinų kūrėjui. CSV ir Shape failo sluoksniai, pridėti į internetinį žemėlapį, turi turėti visus būtinus laukus, arba kūrėjas neveiks.",
-					div162: "When using a feature service that stores the pictures as attachments, <b>only the features with two attachments will be used</b>. The first attachment defines the main picture, and the second attachment defines the thumbnail.",
+					div162: "Jei naudojama elementų paslauga, kurioje paveikslėliai saugomi kaip priedai, <b>bus panaudoti tik 2 priedus turintys elementai</b>. Pirmas priedas bus pagrindinis paveikslėlis, o antras - miniatiūra.",
 					div17: "Nuotraukos ir miniatiūros laukai yra privalomi elementų paslaugai be priedų. Pasirinktinos, bet primygtinai rekomenduojamos jos yra elementų paslaugoms su priedais. Jei jūsų paslauga turi įgalintus tuos pačius priedus, kūrėjas leis talpinti nuotraukas kaip priedus. Jei ne, jūs galėsite redaguoti tik nuotraukos ir miniatiūros URL.",
 					div172: "Kai jie yra, nuotraukos ir miniatiūros laukai visada bus naudojami, o elementų paslaugų priedus galima bus naudoti užklausomis.",
 					div173: "CSV ir Shape failų pavyzdžių galima parsisiųsti iš",

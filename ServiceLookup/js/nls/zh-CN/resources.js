@@ -8,8 +8,9 @@
             defaultText: "输入您的地址"
         },
         error: {
-            layerNotFound: "服务区图层不在 webmap 中",
-            fieldNotFound: "未找到字段"
+            layerNotFound: "试_Layer is not in the webmap_验",
+            fieldNotFound: "未找到字段",
+            popupNotSet: "试_Popup not enabled for this layer_验"
         },
         page: {
             title: "“查找表”服务",

@@ -39,8 +39,8 @@ define(
             email: "이메일",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
             Twitter: "Twitter",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
-            title: "한_title_빠",  // Shown as title hint in print specification box if a title hint is not configured
-            author: "한_author_빠"  // Shown as author hint in print specification box if an author hint is not configured
+            title: "제목",  // Shown as title hint in print specification box if a title hint is not configured
+            author: "작성자"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
             search: "검색:",  // Appears before a search text field in dialog box for searching for a feature
@@ -54,10 +54,11 @@ define(
             geolocationTimeout: "브라우저에서 적절한 시간 내에 현재 위치를 확인할 수 없습니다.",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "맵에서 이 검색 레이어를 찾을 수 없습니다.",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "맵 검색 레이어에서 이 필드를 찾을 수 없습니다.",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "한_None of these fields was found in the map search layer_빠",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            yourContentSubmitted: "한_Your content has been submitted. Thank you._빠",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "한_Unable to access application's configuration_빠",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "한_Unable to launch application_빠"  // Appears for any failure to build the user interface
+            allSearchFieldsMissing: "맵 검색 레이어에서 해당 필드를 찾을 수 없습니다.",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            fieldNotFound: "한_This field does not exist in any of the map layers_빠",  // Appears when a field used in the configuration was not found in any map layer
+            yourContentSubmitted: "컨텐츠를 제출했습니다. 감사합니다.",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "응용프로그램 구성에 접근할 수 없습니다.",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "응용프로그램을 시작할 수 없습니다."  // Appears for any failure to build the user interface
         }
     })
 );

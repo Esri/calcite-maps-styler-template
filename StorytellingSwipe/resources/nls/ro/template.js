@@ -7,8 +7,8 @@
 				step3: "INIŢIALIZARE",
 				fail: "Ne pare rău, încărcarea Swipe a eşuat",
 				loadBuilder: "SE COMUTĂ LA MODUL INSTRUMENT DE CĂUTARE",
-				redirectSignIn: "Ă_REDIRECTING TO SIGN-IN PAGE_ș",
-				redirectSignIn2: "Ă_(you will be redirected here after sign-in)_ș",
+				redirectSignIn: "REDIRECȚIONARE LA PAGINA DE AUTENTIFICARE",
+				redirectSignIn2: "(veţi fi redirecţionat aici după autentificare)",
 				failButton: "Reîncercare"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "CONFIGURARE APLICAŢIE",
 				buttonSave: "SALVARE",
-				buttonHelp: "Ă_Help_ș",
-				buttonShare: "Ă_Share_ș",
+				buttonHelp: "Ajutor",
+				buttonShare: "Partajare",
 				buttonDiscard: "ANULARE",
 				buttonSettings: "Setări",
 				buttonView: "Mod de vizualizare",
@@ -101,8 +101,8 @@
 			settingsExtent: {
 				settingsTabExtent: "Extindere",
 				settingsExtentExplain: "Setaţi extinderea iniţială prin harta interactivă de mai jos.",
-				settingsExtentExplainBottom: "Extinderea pe care o definiţi va modifica extinderea iniţială a hărţii web.Reţineţi că, dacă efectuaţi o serie Swipe, extinderea respectivă nu va fi utilizată.",
-				settingsExtentDateLineError: "Ă_The extent cannot be across the meridian of 180ï¿½ longitude_ș",
+				settingsExtentExplainBottom: "Extinderea pe care o definiţi va modifica extinderea iniţială a hărţii web.Reţineţi că, dacă efectuaţi o serie de preluare, extinderea respectivă nu va fi utilizată.",
+				settingsExtentDateLineError: "Extinderea nu poate traversa meridianul cu longitudinea 180°",
 				settingsExtentDateLineError2: "Eroare la calculul extinderii",
 				settingsExtentDrawBtn: "Trasare extindere nouă",
 				settingsExtentModifyBtn: "Editare extindere curentă",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "Aduceţi în prim-plan altă hartă web.",
 				settingsDataModel2HelpTitle: "Cum găsesc ID-ul unei hărţi web?",
 				settingsDataModel2HelpContent: "Copiaţi şi lipiţi cifre după semnul „=” în URL-ul hărţii web",
-				switchMaps: "Ă_Switch maps_ș",
-				browseWebMaps: "Ă_Browse web maps_ș"
+				switchMaps: "Comutaţi hărţi",
+				browseWebMaps: "Răsfoiţi hărţi web"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Configuraţie aplicaţie",
@@ -173,11 +173,11 @@
 				settingsGeolocatorEnable: "Activare localizator geografic",
 				settingsLegendHelpContent: "Pentru a rafina conţinutul legendei, utilizaţi cuprinsului aplicaţiei de vizualizare a hărţilor web din ArcGIS.com (Ascunderea în legendă)",
 				settingsSeriesHelpContent: "Seria de preluare reprezintă o opţiune de navigare cu file care ghidează vizualizatorul către o anumită extindere şi afişează un titlu şi text descriptiv în panoul lateral. În timpul activării iniţiale, marcajele din hărţile Web vor fi importate şi utilizate pentru a popula în prealabil bara seriei. Dezactivarea opţiunii de serie dezactivează bara seriei, dar configuraţia seriei se păstrează pentru utilizare ulterioară.", 
-				settingsSeriesHelpContent2: "Seriile de acţiuni vă permit să creaţi şi să editaţi o selecţie de locaţii împreună cu titlurile şi textele care le însoţesc. Dacă harta dvs. web conţine semne de carte, acestea vor fi afişate. Puteţi dezactiva seriile, însă configuraţia va fi păstrată pentru a fi utilizată în viitor.",
-				settingsSeriesHelpLink: "Vedeţi aici un exemplu de aplicaţie cu o serie de acţiuni",
+				settingsSeriesHelpContent2: "Seriile de preluare vă permit să creaţi şi să editaţi o selecţie de locaţii împreună cu titlurile şi textele care le însoţesc. Dacă harta dvs. web conţine semne de carte, acestea vor fi afişate. Puteţi dezactiva seriile, însă configuraţia va fi păstrată pentru a fi utilizată în viitor.",
+				settingsSeriesHelpLink: "Vedeţi aici un exemplu de aplicaţie cu o serie de preluare",
 				preview: "Previzualizare interfaţă cu utilizatorul",
 				settingsLocateButtonExplain: "Această funcţionalitate este acceptată pe majoritatea dispozitivelor mobile şi browserelor desktop (inclusiv Internet Explorer 9+).",
-				settingsLocateButton: "Ă_Enable a 'Locate' button on supported browsers_ș",
+				settingsLocateButton: "Activaţi butonul \„Localizare\” în browserele acceptate",
 				settingsAddressSearch: "Activare instrument de căutare adrese"
 			},
 			settingsSwipePopup: {
@@ -201,74 +201,78 @@
 				descr: "Descriere",
 				discard: "Eliminare semn de carte",
 				saveExtent: "Setare extindere semn de carte",
-				discardDisabled: "Nu puteţi elimina acest semn de carte. Seriile Swipe pot fi dezactivate din Setări."
+				discardDisabled: "Nu puteţi elimina acest semn de carte. Seriile de preluare pot fi dezactivate din Setări."
 			},
 			helpPopup: {
-				title: "Ă_Help_ș",
-				close: "Ă_Close_ș",
+				title: "Ajutor",
+				close: "Închidere",
 				tab1: {
-					div1: "Ă_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._ș",
+					div1: "Şablonul Preluare/Ochean este conceput pentru a compara două hărţi web separate sau două straturi tematice ale unei singure hărţi web într-o aplicaţie web atractivă, uşor de utilizat, care se poate utiliza în orice browser web pe orice dispozitiv, inclusiv pe telefoane inteligente şi tablete.",
 					div2: "Ă_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ș",
-					div3: "Ă_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._ș"
+					div3: "Ne-ar face plăcere să împărtăşiţi lucruri cu noi! Dacă aveţi o întrebare, doriţi să solicitaţi o caracteristică nouă sau credeţi că aţi găsit o defecţiune, vizitaţi <a href='http://links.esri.com/storymaps/forum' target='_blank'>Forumul utilizatorilor de hărţi informative</a>."
 				}
 			},
 			share: {
-				firstSaveTitle: "Ă_Application successfully saved_ș",
-				firstSaveHeader: "Ă_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ș",
-				firstSaveA1: "Ă_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ș",
-				firstSaveA1bis: "Ă_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ș",
-				firstSaveQ2: "Ă_Is my Application shared?_ș",
-				firstSaveA2: "Ă_Currently your Application is not shared. To share it, use the SHARE button._ș",
-				shareTitle: "Ă_Share your Application_ș",
-				sharePrivateHeader: "Ă_Your Application is not shared, would you like to share it?_ș",
-				sharePrivateBtn1: "Ă_Share publicly_ș",
-				sharePrivateBtn2: "Ă_Share with my Organization_ș",
-				sharePrivateProgress: "Ă_Sharing in progress..._ș",
-				sharePrivateErr: "Ă_Sharing failed, try again or_ș",
-				sharePrivateOk: "Ă_Sharing updated successfully, loading..._ș",
-				shareStatus1: "Ă_Application is not saved_ș",
-				shareStatus2: "Ă_Application is shared publicly_ș",
-				shareStatus3: "Ă_Application is shared within the organization_ș",
-				shareStatus4: "Ă_Application is not shared_ș",
-				sharePreviewAsUser: "Ă_Preview_ș",
-				shareHeader1: "Ă_Your Application is <strong>publicly accessible</strong>._ș",
-				shareHeader2: "Ă_Your Application is accessible by your organization members (login is required)._ș",
-				shareLinkHeader: "Ă_Share the Application with your audience_ș",
-				shareLinkOpen: "Ă_OPEN_ș",
-				learnMore: "Ă_Learn more_ș",
-				shareQ1Opt1: "Ă_How do I keep the Application private?_ș",
-				shareQ1Opt2: "Ă_How do I keep the Application private or share it publicly?_ș",
-				shareA1: "Ă_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._ș",
-				shareA1bis: "Ă_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ș",
-				shareQ2: "Ă_How do I edit the Application later?_ș",
-				shareQ2bis: "Ă_How do I get back to the authoring interface?_ș",
-				shareA2div1: "Ă_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ș",
-				shareA2div2: "Ă_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ș",				
-				shareQ3: "Ă_Where is the data stored?_ș",
-				shareA3: "Ă_The Application configuration is stored in this web application item</a>._ș",
+				firstSaveTitle: "S-a reuşit salvarea aplicaţiei",
+				firstSaveHeader: "Aplicaţia dvs. este acum salvată în ArcGIS Online. Citiţi următoarele răspunsuri la întrebări frecvente.",
+				firstSaveA1: "Dacă nu sunteţi familiarizat cu ArcGIS Online sau doriţi o comandă rapidă pentru a accesa interfaţa de creare, puteţi salva următorul link: %LINK1%",
+				firstSaveA1bis: "Aplicaţia poate fi găsită şi în <a href='%LINK2%' target='_blank'>folderul de conţinut ArcGIS Online</a>.",
+				firstSaveQ2: "Aplicaţia mea este partajată?",
+				firstSaveA2: "În prezent, aplicaţia dvs. nu este partajată. Pentru a o partaja, utilizaţi butonul Partajare.",
+				shareTitle: "Partajaţi aplicaţia",
+				sharePrivateHeader: "Aplicaţia dvs. nu este partajată, doriţi să o partajaţi?",
+				sharePrivateBtn1: "Partajare în mod public",
+				sharePrivateBtn2: "Partajare cu organizaţia mea",
+				sharePrivateProgress: "Partajare în curs...",
+				sharePrivateErr: "Partajare nereuşită, încercaţi din nou sau",
+				sharePrivateOk: "Partajare actualizată cu succes, se încarcă...",
+				shareStatus1: "Aplicaţia nu este salvată",
+				shareStatus2: "Aplicaţia nu este partajată public",
+				shareStatus3: "Aplicaţia este partajată în cadrul organizaţiei",
+				shareStatus4: "Aplicaţia nu este partajată",
+				sharePreviewAsUser: "Previzualizare",
+				shareHeader1: "Aplicaţia este <strong>accesibilă public</strong>.",
+				shareHeader2: "Aplicaţia dvs. este accesibilă membrilor organizaţiei (este necesară conectarea).",
+				shareLinkHeader: "Partajaţi aplicaţia cu publicul",
+				shareLinkOpen: "DESCHIDERE",
+				learnMore: "Învăţaţi mai mult",
+				shareQ1Opt1: "Cum menţin aplicaţia privată?",
+				shareQ1Opt2: "Cum menţin aplicaţia privată sau o partajez public?",
+				shareA1: "Utilizaţi %SHAREIMG% în <a href='%LINK1%' target='_blank'>pagina de element corespunzătoare aplicaţiei</a>. Dacă doriţi şi să anulaţi partajarea hărţii web, utilizaţi <a href='%LINK2%' target='_blank'>pagina de element corespunzătoare hărţii web</a>.",
+				shareA1bis: "De asemenea, dacă doriţi să anulaţi partajarea serviciului de obiecte spaţiale, utilizaţi <a href='%LINK1%' target='_blank'>pagina de element corespunzătoare serviciului de obiecte spaţiale</a>.",
+				shareQ2: "Cum editez aplicaţia ulterior?",
+				shareQ2bis: "Cum revin la interfaţa de creare?",
+				shareA2div1: "Salvaţi şi utilizaţi din nou următorul link, %LINK1%, sau utilizaţi <a href='%LINK2%' target='_blank'>pagina de element corespunzătoare aplicaţiei</a>.",
+				shareA2div2: "În calitate de proprietar al aplicaţiei, când sunteţi autentificat pe ArcGIS.com, aplicaţia include un buton pentru a deschide instrumentul de creare interactiv:",				
+				shareQ3: "Unde sunt stocate datele?",
+				shareA3: "Configuraţia aplicaţiei este stocată în acest element al aplicaţiei web</a>.",
 				shareWarning: "Ă_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ș",
  				shareWarningWith1: "Ă_publicly_ș",
  				shareWarningWith2: "Ă_publicly and with the Organization_ș"
 			},
 			directCreation: {
-				header: "Ă_Welcome to the Swipe/Spyglass Builder_ș",
-				mapPickHeader: "Ă_To get started, please input a valid web map id, or use the search button to browse web maps._ș",
-				launchBuilder: "Ă_Launch Builder_ș"
+				header: "Bine aţi venit la aplicaţia de creare a instrumentului Preluare/Ochean",
+				mapPickHeader: "Pentru a începe, introduceţi un ID corect al unei hărţi web sau utilizaţi butonul de căutare pentru a răsfoi hărţile web.",
+				launchBuilder: "Lansaţi aplicaţia de creare",
+				chooseWebmapLbl: "Ă_Choose web map..._ș",
+				explain2: "Ă_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ș",
+				explain3: "Ă_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ș",
+				webmapPlaceholder: "Ă_Enter a web map id..._ș"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "Ă_My Organization_ș",
-					onlineLabel: "Ă_ArcGIS Online_ș",
-					contentLabel: "Ă_My Content_ș",
-					favoritesLabel: "Ă_My Favorites_ș"
+					organizationLabel: "Organizaţia mea",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Resursele mele",
+					favoritesLabel: "Preferinţele mele"
 				},
-				title: "Ă_Select Web Map_ș",
-				searchTitle: "Ă_Search_ș",
-				ok: "Ă_Ok_ș",
-				cancel: "Ă_Cancel_ș",
-				placeholder: "Ă_Enter search term_ș"
+				title: "Selectare hartă Web",
+				searchTitle: "Căutare",
+				ok: "Ok",
+				cancel: "Anulare",
+				placeholder: "Introducere termen de căutare"
 			}
 		}
     })

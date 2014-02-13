@@ -7,8 +7,8 @@
 				step3: "INICIALIZACE",
 				fail: "Nepodařilo se načíst nástroj překrývání.",
 				loadBuilder: "PŘEPÍNÁNÍ DO REŽIMU TVORBY",
-				redirectSignIn: "Ř_REDIRECTING TO SIGN-IN PAGE_ů",
-				redirectSignIn2: "Ř_(you will be redirected here after sign-in)_ů",
+				redirectSignIn: "PROBÍHÁ PŘESMĚROVÁNÍ NA PŘIHLAŠOVACÍ STRÁNKU",
+				redirectSignIn2: "(budete sem přesměrováni po přihlášení)",
 				failButton: "Zkusit znovu"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "KONFIGURACE APLIKACE",
 				buttonSave: "ULOŽIT",
-				buttonHelp: "Ř_Help_ů",
-				buttonShare: "Ř_Share_ů",
+				buttonHelp: "Nápověda",
+				buttonShare: "Sdílet",
 				buttonDiscard: "ZRUŠIT",
 				buttonSettings: "Nastavení",
 				buttonView: "Režim prohlížení",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "Rozsah",
 				settingsExtentExplain: "Prostřednictvím následující interaktivní mapy nastavte výchozí rozsah.",
 				settingsExtentExplainBottom: "Podle zadaného rozsahu se upraví výchozí rozsah webové mapy. Vytváříte-li sérii překrývání, tento rozsah se nepoužije.",
-				settingsExtentDateLineError: "Ř_The extent cannot be across the meridian of 180ï¿½ longitude_ů",
+				settingsExtentDateLineError: "Rozsah nesmí přesahovat 180° zeměpisné délky",
 				settingsExtentDateLineError2: "Při výpočtu rozsahu došlo k chybě",
 				settingsExtentDrawBtn: "Určit nový rozsah",
 				settingsExtentModifyBtn: "Editovat aktuální rozsah",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "Odkryjte jinou webovou mapu.",
 				settingsDataModel2HelpTitle: "Jak najdu ID webové mapy?",
 				settingsDataModel2HelpContent: "Překopírovat číslice po rovnítku (=) v URL webové mapy",
-				switchMaps: "Ř_Switch maps_ů",
-				browseWebMaps: "Ř_Browse web maps_ů"
+				switchMaps: "Přepnout mapy",
+				browseWebMaps: "Procházet webové mapy"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Rozvržení aplikace",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "Zde se podívejte na příklad aplikace se sérií překrývání",
 				preview: "Náhled uživatelského rozhraní",
 				settingsLocateButtonExplain: "Tato funkcionalita je podporována na většině mobilních zařízení a stolních prohlížečů (včetně Internet Explorer 9+).",
-				settingsLocateButton: "Ř_Enable a 'Locate' button on supported browsers_ů",
+				settingsLocateButton: "Povolit tlačítko 'Hledat' v podporovaných prohlížečích",
 				settingsAddressSearch: "Povolit nástroj pro vyhledávání adres"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "Tuto záložku nelze odstranit. Sérii překrývání můžete vypnout v nastavení."
 			},
 			helpPopup: {
-				title: "Ř_Help_ů",
-				close: "Ř_Close_ů",
+				title: "Nápověda",
+				close: "Zavřít",
 				tab1: {
-					div1: "Ř_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._ů",
+					div1: "Šablona Překrývání/Lupa je navržena pro porovnání dvou různých webových map nebo dvou vrstev jedné webové mapy v atraktivní, snadno ovladatelné webové aplikaci, kterou lze použít v jakémkoli webovém prohlížeči na jakémkoli zařízení včetně chytrých telefonů a tabletů.",
 					div2: "Ř_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ů",
-					div3: "Ř_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._ů"
+					div3: "Rádi od vás uslyšíme! Ať už máte otázku, chcete požádat o novou funkci nebo si myslíte, že jste našli chybu, navštivte prosím <a href='http://links.esri.com/storymaps/forum' target='_blank'>uživatelské fórum map s příběhem</a>."
 				}
 			},
 			share: {
-				firstSaveTitle: "Ř_Application successfully saved_ů",
-				firstSaveHeader: "Ř_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ů",
-				firstSaveA1: "Ř_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ů",
-				firstSaveA1bis: "Ř_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ů",
-				firstSaveQ2: "Ř_Is my Application shared?_ů",
-				firstSaveA2: "Ř_Currently your Application is not shared. To share it, use the SHARE button._ů",
-				shareTitle: "Ř_Share your Application_ů",
-				sharePrivateHeader: "Ř_Your Application is not shared, would you like to share it?_ů",
-				sharePrivateBtn1: "Ř_Share publicly_ů",
-				sharePrivateBtn2: "Ř_Share with my Organization_ů",
-				sharePrivateProgress: "Ř_Sharing in progress..._ů",
-				sharePrivateErr: "Ř_Sharing failed, try again or_ů",
-				sharePrivateOk: "Ř_Sharing updated successfully, loading..._ů",
-				shareStatus1: "Ř_Application is not saved_ů",
-				shareStatus2: "Ř_Application is shared publicly_ů",
-				shareStatus3: "Ř_Application is shared within the organization_ů",
-				shareStatus4: "Ř_Application is not shared_ů",
-				sharePreviewAsUser: "Ř_Preview_ů",
-				shareHeader1: "Ř_Your Application is <strong>publicly accessible</strong>._ů",
-				shareHeader2: "Ř_Your Application is accessible by your organization members (login is required)._ů",
-				shareLinkHeader: "Ř_Share the Application with your audience_ů",
-				shareLinkOpen: "Ř_OPEN_ů",
-				learnMore: "Ř_Learn more_ů",
-				shareQ1Opt1: "Ř_How do I keep the Application private?_ů",
-				shareQ1Opt2: "Ř_How do I keep the Application private or share it publicly?_ů",
-				shareA1: "Ř_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._ů",
-				shareA1bis: "Ř_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ů",
-				shareQ2: "Ř_How do I edit the Application later?_ů",
-				shareQ2bis: "Ř_How do I get back to the authoring interface?_ů",
-				shareA2div1: "Ř_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ů",
-				shareA2div2: "Ř_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ů",				
-				shareQ3: "Ř_Where is the data stored?_ů",
-				shareA3: "Ř_The Application configuration is stored in this web application item</a>._ů",
+				firstSaveTitle: "Aplikace úspěšně uložena",
+				firstSaveHeader: "Vaše aplikace je nyní uložena v ArcGIS Online. Přečtěte si prosím následující odpovědi na časté dotazy.",
+				firstSaveA1: "Pokud nejste obeznámeni s ArcGIS Online nebo chcete zkratku pro přístup do autorského rozhraní, můžete si uložit následující odkaz: %LINK1%",
+				firstSaveA1bis: "Aplikaci naleznete i ve své <a href='%LINK2%' target='_blank'>složce obsahu ArcGIS Online</a>.",
+				firstSaveQ2: "Je má aplikace sdílená?",
+				firstSaveA2: "Vaše aplikace momentálně není sdílená. Pokud ji chcete sdílet, použijte tlačítko SDÍLET.",
+				shareTitle: "Sdílení vaší aplikace",
+				sharePrivateHeader: "Vaše aplikace není sdílená, chcete ji sdílet?",
+				sharePrivateBtn1: "Sdílet veřejně",
+				sharePrivateBtn2: "Sdílet s mou organizací",
+				sharePrivateProgress: "Probíhá sdílení…",
+				sharePrivateErr: "Sdílení selhalo, zkuste to znovu nebo",
+				sharePrivateOk: "Sdílení bylo úspěšně aktualizováno, probíhá nahrávání…",
+				shareStatus1: "Aplikace není uložena.",
+				shareStatus2: "Aplikace je sdílená veřejně.",
+				shareStatus3: "Aplikace je sdílená v rámci organizace.",
+				shareStatus4: "Aplikace není sdílená.",
+				sharePreviewAsUser: "Náhled",
+				shareHeader1: "Vaše aplikace je <strong>veřejně přístupná</strong>.",
+				shareHeader2: "Vaše aplikace je přístupná členům vaší organizace (je vyžadováno přihlášení).",
+				shareLinkHeader: "Sdílejte aplikaci se svým publikem",
+				shareLinkOpen: "OTEVŘENO",
+				learnMore: "Více informací",
+				shareQ1Opt1: "Jak ponechám aplikaci soukromou?",
+				shareQ1Opt2: "Jak lze aplikaci ponechat jako soukromou nebo ji veřejně sdílet?",
+				shareA1: "Použijte %SHAREIMG% na <a href='%LINK1%' target='_blank'>stránce položek aplikace</a>. Pokud chcete také přestat sdílet webové mapy, použijte <a href='%LINK2%' target='_blank'>stránku položek webové mapy</a>.",
+				shareA1bis: "Pokud chcete také zrušit sdílení služby Feature Service, použijte <a href='%LINK1%' target='_blank'>stránku položek služby Feature Service</a>.",
+				shareQ2: "Jak aplikaci později upravím?",
+				shareQ2bis: "Jak se vrátím do autorského rozhraní?",
+				shareA2div1: "Uložte si pro budoucí použití tento odkaz %LINK1% nebo použijte <a href='%LINK2%' target='_blank'>stránku položek aplikace</a>.",
+				shareA2div2: "Když jste přihlášeni na webu ArcGIS.com jako majitel aplikace, tak aplikace obsahuje tlačítko pro otevření interaktivního nástroje pro tvorbu:",				
+				shareQ3: "Kde jsou uložena data?",
+				shareA3: "Konfigurace aplikace je uložena v této položce webové aplikace</a>.",
 				shareWarning: "Ř_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ů",
  				shareWarningWith1: "Ř_publicly_ů",
  				shareWarningWith2: "Ř_publicly and with the Organization_ů"
 			},
 			directCreation: {
-				header: "Ř_Welcome to the Swipe/Spyglass Builder_ů",
-				mapPickHeader: "Ř_To get started, please input a valid web map id, or use the search button to browse web maps._ů",
-				launchBuilder: "Ř_Launch Builder_ů"
+				header: "Vítejte v nástroji pro tvorbu Překrývání/Lupy",
+				mapPickHeader: "Pro začátek zadejte platný identifikátor webové mapy nebo použijte tlačítko vyhledávání k procházení webových map.",
+				launchBuilder: "Spustit nástroj pro tvorbu",
+				chooseWebmapLbl: "Ř_Choose web map..._ů",
+				explain2: "Ř_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ů",
+				explain3: "Ř_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ů",
+				webmapPlaceholder: "Ř_Enter a web map id..._ů"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "Ř_My Organization_ů",
-					onlineLabel: "Ř_ArcGIS Online_ů",
-					contentLabel: "Ř_My Content_ů",
-					favoritesLabel: "Ř_My Favorites_ů"
+					organizationLabel: "Moje organizace",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Můj obsah",
+					favoritesLabel: "Moje oblíbené"
 				},
-				title: "Ř_Select Web Map_ů",
-				searchTitle: "Ř_Search_ů",
-				ok: "Ř_Ok_ů",
-				cancel: "Ř_Cancel_ů",
-				placeholder: "Ř_Enter search term_ů"
+				title: "Vybrat webovou mapu",
+				searchTitle: "Hledat",
+				ok: "OK",
+				cancel: "Storno",
+				placeholder: "Zadat vyhledávací výraz"
 			}
 		}
     })

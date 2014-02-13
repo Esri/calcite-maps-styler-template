@@ -13,10 +13,10 @@
         label: "แผนที่จาก:"
       },
       geocoder: {
-        selectAnother: "ก้_Select another location_ษฺ",
-        notWhatYouWanted: "ก้_Not what you wanted?_ษฺ",
-        currentLocation: "ก้_Current Location_ษฺ",
-        title: "ก้_Location_ษฺ"
+        selectAnother: "เลือกตำแหน่งอื่นๆ",
+        notWhatYouWanted: "ไม่ใช่สิ่งที่คุณต้องการ?",
+        currentLocation: "ตำแหน่งปัจจุบัน",
+        title: "ตำแหน่ง"
       },
       sidePanel: {
         title: "คำอธิบายสัญลักษณ์แผนที่",

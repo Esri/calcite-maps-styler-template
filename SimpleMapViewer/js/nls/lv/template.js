@@ -13,13 +13,13 @@
         label: "Karte no:"
       },
       geocoder: {
-        selectAnother: "ķ_Select another location_ū",
-        notWhatYouWanted: "ķ_Not what you wanted?_ū",
-        currentLocation: "ķ_Current Location_ū",
-        title: "ķ_Location_ū"
+        selectAnother: "Izvēlieties citu izvietojumu",
+        notWhatYouWanted: "Nav tas, ko vēlējāties?",
+        currentLocation: "Pašreizējā atrašanās vieta",
+        title: "Izvietojums"
       },
       sidePanel: {
-        title: "ķ_Legend_ū",
+        title: "Leģenda",
         owner: "īpašnieks: ",
         modified: "Pēdējā modificēšana: ",
         message: "Nav darbības slāņu"

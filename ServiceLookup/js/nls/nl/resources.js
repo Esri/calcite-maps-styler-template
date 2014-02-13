@@ -8,8 +8,9 @@
             defaultText: "Voer uw adres in"
         },
         error: {
-            layerNotFound: "Kaartlaag Verzorgingsgebied bevindt zich niet in de webmap",
-            fieldNotFound: "Veld niet gevonden"
+            layerNotFound: "Ĳ_Layer is not in the webmap_ä",
+            fieldNotFound: "Veld niet gevonden",
+            popupNotSet: "Ĳ_Popup not enabled for this layer_ä"
         },
         page: {
             title: "Service zoeken",

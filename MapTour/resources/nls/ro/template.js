@@ -463,7 +463,7 @@
 				tab4: {
 					title: "Sfaturi",
 					div0: "Browsere suportate",
-					div0a: "Aplicaţia de vizualizare pentru Turul hărţii este suportată începând de la IE8.Instrumentul de creare interactiv este suportat începând de la IE9+. Noi testăm în mod activ toate browserele importante, însă, dacă întâmpinaţi dificultăţi, vă recomandăm să utilizaţi Chrome.",
+					div0a: "Aplicaţia de vizualizare pentru Turul hărţii este suportată începând de la IE8+.Instrumentul de creare interactiv este suportat începând de la IE9+. Noi testăm în mod activ toate browserele importante, însă, dacă întâmpinaţi dificultăţi, vă recomandăm să utilizaţi Chrome.",
 					div0b: "Dacă întâmpinaţi dificultăţi, daţi-ne de ştire. Între timp, prin creare Turului hărţii utilizând şablonul CSV veţi reduce la minim interacţiunea cu interfaţa instrumentului de creare.",
 					div1: "Imagini",
 					div2: "Vă recomandăm să utilizaţi orientarea fotografiilor peisaj în loc de portret. Fotografiile cu raportul 4:3 se potrivesc cel mai bine. Imaginile cu orientare portret pot fi utilizate, însă pe ecrane mai mici precum iPad şi este posibil ca o mare parte din fotografie să fie obturată de subtitlu (textul ocupă mai mult spaţiu când este afişat într-o suprafaţă înaltă, decât într-o suprafaţă înaltă). Cu toate că se pot utiliza imagini de dimensiuni, forme şi orientări diferite într-un Tur al hărţii, vă recomandăm să utilizaţi aceeaşi dimensiune şi aceeaşi formă pentru toate imaginile. În acest fel, utilizatorul nu va fi distras de de imagini cu dimensiuni diferite în timp ce parcurg turul.",

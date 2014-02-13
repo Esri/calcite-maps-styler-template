@@ -8,8 +8,9 @@
             defaultText: "Introduza a sua morada"
         },
         error: {
-            layerNotFound: "A Camada de Área de Serviço não está no mapa web.",
-            fieldNotFound: "Campo não encontrado"
+            layerNotFound: "ã_Layer is not in the webmap_Ç",
+            fieldNotFound: "Campo não encontrado",
+            popupNotSet: "ã_Popup not enabled for this layer_Ç"
         },
         page: {
             title: "Verificação de Serviço",

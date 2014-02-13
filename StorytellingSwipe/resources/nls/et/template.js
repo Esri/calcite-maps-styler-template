@@ -7,8 +7,8 @@
 				step3: "LÄHTESTAMINE",
 				fail: "Vabandust, rullimisvahendi laadimine nurjus",
 				loadBuilder: "VAHETA KOOSTAJA TÜÜP",
-				redirectSignIn: "Š_REDIRECTING TO SIGN-IN PAGE_ä",
-				redirectSignIn2: "Š_(you will be redirected here after sign-in)_ä",
+				redirectSignIn: "SUUNAN ÜMBER SISSELOGIMISE LEHELE",
+				redirectSignIn2: "(Teid suunatakse peale sisselogimist siia)",
 				failButton: "Proovi uuesti"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "RAKENDUSE KONFIGURATSIOON",
 				buttonSave: "SALVESTA",
-				buttonHelp: "Š_Help_ä",
-				buttonShare: "Š_Share_ä",
+				buttonHelp: "Abi",
+				buttonShare: "Jaga",
 				buttonDiscard: "TÜHISTA",
 				buttonSettings: "Seaded",
 				buttonView: "Vaaterežiim",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "Kuvaulatus",
 				settingsExtentExplain: "Määra sisemine ulatus läbi alloleva interaktiivse kaardi.",
 				settingsExtentExplainBottom: "Määratud ulatus muudab veebikaardi sisemist ulatust. Pange tähele, et kui teete rullimise seeriaid, siis ulatust ei kasutata.",
-				settingsExtentDateLineError: "Š_The extent cannot be across the meridian of 180ï¿½ longitude_ä",
+				settingsExtentDateLineError: "Ulatus ei saa ületada 180ï¿½ pikkuskraadi",
 				settingsExtentDateLineError2: "Viga ulatuse arvutamisel",
 				settingsExtentDrawBtn: "Joonista uus ulatus",
 				settingsExtentModifyBtn: "Muuda praegust ulatust",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "Ilmu teises veebikaardis.",
 				settingsDataModel2HelpTitle: "Kuidas leida veebikaardi ID-d?",
 				settingsDataModel2HelpContent: "Kopeeri ja kleebi numbrid pärast \'=\' märki veebikaardi URL sisust",
-				switchMaps: "Š_Switch maps_ä",
-				browseWebMaps: "Š_Browse web maps_ä"
+				switchMaps: "Vaheta kaarti",
+				browseWebMaps: "Sirvi veebikaarte"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Rakenduse paigutus",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "Vaata vahetatavate seeriatega rakenduse näidet siit",
 				preview: "UI vaade",
 				settingsLocateButtonExplain: "Funktsionaalsus on toetatud enamustel nutiseadmetel ja töökoha brauserites (k.a Internet Explorer 9+).",
-				settingsLocateButton: "Š_Enable a 'Locate' button on supported browsers_ä",
+				settingsLocateButton: "Luba positsioneerimise nupp toetatud brauserites",
 				settingsAddressSearch: "Luba aadressi otsimise tööriist"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "Te ei saa seda järjehoidjat eemaldada. Vahetamise seeriaid saab keelata seadetest."
 			},
 			helpPopup: {
-				title: "Š_Help_ä",
-				close: "Š_Close_ä",
+				title: "Abi",
+				close: "Sulge",
 				tab1: {
-					div1: "Š_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._ä",
+					div1: "Võrdlev/pikksilm mall on loodud kahe erineva veebikaardi või kihi võrdlemiseks ühel veebikaardil atraktiivselt ja lihtsasti kasutatava rakendusena, mida saab vaadata igas veebibrauseris ja seadmes, k.a nutitelefonitel ja tahvelarvutitel.",
 					div2: "Š_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ä",
-					div3: "Š_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._ä"
+					div3: "Ootame tagasisidet!  Kui teil on küsimusi, soovite küsida uusi võimalusi või arvate, et olete leidnud vea, siis palun külastage meid <a href='http://links.esri.com/storymaps/forum' target='_blank'>Kaardilugide kasutajate foorumis</a>."
 				}
 			},
 			share: {
-				firstSaveTitle: "Š_Application successfully saved_ä",
-				firstSaveHeader: "Š_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ä",
-				firstSaveA1: "Š_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ä",
-				firstSaveA1bis: "Š_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ä",
-				firstSaveQ2: "Š_Is my Application shared?_ä",
-				firstSaveA2: "Š_Currently your Application is not shared. To share it, use the SHARE button._ä",
-				shareTitle: "Š_Share your Application_ä",
-				sharePrivateHeader: "Š_Your Application is not shared, would you like to share it?_ä",
-				sharePrivateBtn1: "Š_Share publicly_ä",
-				sharePrivateBtn2: "Š_Share with my Organization_ä",
-				sharePrivateProgress: "Š_Sharing in progress..._ä",
-				sharePrivateErr: "Š_Sharing failed, try again or_ä",
-				sharePrivateOk: "Š_Sharing updated successfully, loading..._ä",
-				shareStatus1: "Š_Application is not saved_ä",
-				shareStatus2: "Š_Application is shared publicly_ä",
-				shareStatus3: "Š_Application is shared within the organization_ä",
-				shareStatus4: "Š_Application is not shared_ä",
-				sharePreviewAsUser: "Š_Preview_ä",
-				shareHeader1: "Š_Your Application is <strong>publicly accessible</strong>._ä",
-				shareHeader2: "Š_Your Application is accessible by your organization members (login is required)._ä",
-				shareLinkHeader: "Š_Share the Application with your audience_ä",
-				shareLinkOpen: "Š_OPEN_ä",
-				learnMore: "Š_Learn more_ä",
-				shareQ1Opt1: "Š_How do I keep the Application private?_ä",
-				shareQ1Opt2: "Š_How do I keep the Application private or share it publicly?_ä",
-				shareA1: "Š_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._ä",
-				shareA1bis: "Š_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ä",
-				shareQ2: "Š_How do I edit the Application later?_ä",
-				shareQ2bis: "Š_How do I get back to the authoring interface?_ä",
-				shareA2div1: "Š_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ä",
-				shareA2div2: "Š_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ä",				
-				shareQ3: "Š_Where is the data stored?_ä",
-				shareA3: "Š_The Application configuration is stored in this web application item</a>._ä",
+				firstSaveTitle: "Rakendus edukalt salvestatud",
+				firstSaveHeader: "Teie rakendus on nüüd salvestatud ArcGIS Online keskkonda. Palun lugege järgnevaid sagedasemaid küsimusi.",
+				firstSaveA1: "Kui te ei ole tuttav ArcGIS Online keskkonnaga või soovite otseteed redigeerimise liidesele, siis võite salvestada järgmise lingi: %LINK1%",
+				firstSaveA1bis: "Rakenduse leiab samuti oma<a href='%LINK2%' target='_blank'>ArcGIS Online sisu kaustast</a>.",
+				firstSaveQ2: "Kas mu rakendus on jagatud?",
+				firstSaveA2: "Hetkel ei ole sinu rakendus jagatud. Selle jagamiseks kasuta JAGA nuppu.",
+				shareTitle: "Jaga oma rakendust",
+				sharePrivateHeader: "Sinu rakendus ei ole jagatud, kas sa soovid seda jagada?",
+				sharePrivateBtn1: "Jaga avalikult",
+				sharePrivateBtn2: "Jaga oma organisatsiooniga",
+				sharePrivateProgress: "Jagamine töös...",
+				sharePrivateErr: "Jagamine ebaõnnestus, proovi uuesti või",
+				sharePrivateOk: "Jagamine uuendatud edukalt, laen...",
+				shareStatus1: "Rakendus ei ole salvestatud",
+				shareStatus2: "Rakendus on jagatud avalikult",
+				shareStatus3: "Rakendus on jagatud organisatsiooniga",
+				shareStatus4: "Rakendus ei ole jagatud",
+				sharePreviewAsUser: "Eelvaade",
+				shareHeader1: "Sinu rakendus on <strong>avalikult kättesaadav</strong>.",
+				shareHeader2: "Sinu rakendus on kättesaadav organisatsiooni liikmetele (sisselogimine nõutud).",
+				shareLinkHeader: "Jaga rakendust oma inimestega",
+				shareLinkOpen: "AVA",
+				learnMore: "Loe lähemalt",
+				shareQ1Opt1: "Kuidas saan hoida rakenduse privaatsena?",
+				shareQ1Opt2: "Kuidas saan hoida rakenduse privaatsena või jagada seda avalikult?",
+				shareA1: "Kasuta %SHAREIMG% <a href='%LINK1%' target='_blank'>rakenduse sisu lehel</a>.Kui soovid samuti eemaldada veebikaardi jagamise, siis kasuta <a href='%LINK2%' target='_blank'>veebikaardi sisu lehte</a>.",
+				shareA1bis: "Kui soovite jagamise eemaldada ka objektiteenuselt, kasutage <a href='%LINK1%' target='_blank'>objektiteenuse sisu lehte</a>.",
+				shareQ2: "Kuidas saab rakendust hiljem muuta?",
+				shareQ2bis: "Kuidas ma pääsen tagasi loomise liidesesse?",
+				shareA2div1: "Salvestage ja taaskasutage järgnevat linki %LINK1% või kasutage <a href='%LINK2%' target='_blank'>rakenduse sisu lehte</a>.",
+				shareA2div2: "Rakenduse omanikuna, ArcGIS.com sisselogituna, sisaldab rakendus nuppu interaktiivse looja avamiseks.",				
+				shareQ3: "Kus on andmed majutatud?",
+				shareA3: "Rakenduse konfiguratsioon on salvestatud selles veebirakenduse sisus</a>.",
 				shareWarning: "Š_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ä",
  				shareWarningWith1: "Š_publicly_ä",
  				shareWarningWith2: "Š_publicly and with the Organization_ä"
 			},
 			directCreation: {
-				header: "Š_Welcome to the Swipe/Spyglass Builder_ä",
-				mapPickHeader: "Š_To get started, please input a valid web map id, or use the search button to browse web maps._ä",
-				launchBuilder: "Š_Launch Builder_ä"
+				header: "Teretulemast Võrdlus/pikksilm loojasse",
+				mapPickHeader: "Alustamiseks palun sisesta veebikaaardi id või kasuta otsingu nuppu veebikaartide sirvimiseks.",
+				launchBuilder: "Käivita Looja",
+				chooseWebmapLbl: "Š_Choose web map..._ä",
+				explain2: "Š_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ä",
+				explain3: "Š_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ä",
+				webmapPlaceholder: "Š_Enter a web map id..._ä"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "Š_My Organization_ä",
-					onlineLabel: "Š_ArcGIS Online_ä",
-					contentLabel: "Š_My Content_ä",
-					favoritesLabel: "Š_My Favorites_ä"
+					organizationLabel: "Minu organisatsioon",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Minu sisu",
+					favoritesLabel: "Minu lemmikud"
 				},
-				title: "Š_Select Web Map_ä",
-				searchTitle: "Š_Search_ä",
-				ok: "Š_Ok_ä",
-				cancel: "Š_Cancel_ä",
-				placeholder: "Š_Enter search term_ä"
+				title: "Vali veebikaart",
+				searchTitle: "Otsi",
+				ok: "Ok",
+				cancel: "Tühista",
+				placeholder: "Sisesta otsingu sõnad"
 			}
 		}
     })

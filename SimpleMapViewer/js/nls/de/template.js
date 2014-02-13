@@ -13,13 +13,13 @@
         label: "Eine Karte von:"
       },
       geocoder: {
-        selectAnother: "ä_Select another location_Ü",
-        notWhatYouWanted: "ä_Not what you wanted?_Ü",
-        currentLocation: "ä_Current Location_Ü",
-        title: "ä_Location_Ü"
+        selectAnother: "Andere Position auswählen",
+        notWhatYouWanted: "Nicht das gewünschte Ergebnis?",
+        currentLocation: "Aktuelle Position",
+        title: "Position"
       },
       sidePanel: {
-        title: "ä_Legend_Ü",
+        title: "Legende",
         owner: "Besitzer: ",
         modified: "Zuletzt geändert: ",
         message: "Keine operationalen Layer"

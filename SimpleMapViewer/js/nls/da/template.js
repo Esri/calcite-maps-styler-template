@@ -13,13 +13,13 @@
         label: "Et kort fra:"
       },
       geocoder: {
-        selectAnother: "ø_Select another location_å",
-        notWhatYouWanted: "ø_Not what you wanted?_å",
-        currentLocation: "ø_Current Location_å",
-        title: "ø_Location_å"
+        selectAnother: "Vælg et andet sted",
+        notWhatYouWanted: "Var det ikke det, du ville?",
+        currentLocation: "Nuværende placering",
+        title: "Sted"
       },
       sidePanel: {
-        title: "ø_Legend_å",
+        title: "Signaturforklaring",
         owner: "ejer: ",
         modified: "Sidst ændret: ",
         message: "Ingen lag klar til brug"

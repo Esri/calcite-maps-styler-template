@@ -13,13 +13,13 @@
         label: "Kaart:"
       },
       geocoder: {
-        selectAnother: "Š_Select another location_ä",
-        notWhatYouWanted: "Š_Not what you wanted?_ä",
-        currentLocation: "Š_Current Location_ä",
-        title: "Š_Location_ä"
+        selectAnother: "Vali muu asukoht",
+        notWhatYouWanted: "Ei ole see, mida soovisid?",
+        currentLocation: "Hetke asukoht",
+        title: "Asukoht"
       },
       sidePanel: {
-        title: "Š_Legend_ä",
+        title: "Legend",
         owner: "omanik: ",
         modified: "Viimati muudetud: ",
         message: "Puuduvad funktsioneerivad kihid"

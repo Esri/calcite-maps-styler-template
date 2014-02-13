@@ -8,8 +8,9 @@
             defaultText: "Zadejte svou adresu"
         },
         error: {
-            layerNotFound: "Vrstva území služby není ve webové mapě",
-            fieldNotFound: "Pole nenalezeno"
+            layerNotFound: "Ř_Layer is not in the webmap_ů",
+            fieldNotFound: "Pole nenalezeno",
+            popupNotSet: "Ř_Popup not enabled for this layer_ů"
         },
         page: {
             title: "Hledání služby",

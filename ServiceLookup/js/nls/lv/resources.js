@@ -8,8 +8,9 @@
             defaultText: "Ievadiet jūsu adresi"
         },
         error: {
-            layerNotFound: "Servisa areāla slānis neatrodas web kartē",
-            fieldNotFound: "Lauks netika atrasts"
+            layerNotFound: "ķ_Layer is not in the webmap_ū",
+            fieldNotFound: "Lauks netika atrasts",
+            popupNotSet: "ķ_Popup not enabled for this layer_ū"
         },
         page: {
             title: "Meklēt servisu",

@@ -7,8 +7,8 @@
 				step3: "初期化",
 				fail: "スワイプの読み込みに失敗しました",
 				loadBuilder: "ビルダ モードへの切り替え",
-				redirectSignIn: "須_REDIRECTING TO SIGN-IN PAGE_鷗",
-				redirectSignIn2: "須_(you will be redirected here after sign-in)_鷗",
+				redirectSignIn: "サイン イン ページへのリダイレクト",
+				redirectSignIn2: "(サイン イン後にここにリダイレクトされます)",
 				failButton: "再試行"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "アプリケーション構成",
 				buttonSave: "保存",
-				buttonHelp: "須_Help_鷗",
-				buttonShare: "須_Share_鷗",
+				buttonHelp: "ヘルプ",
+				buttonShare: "共有",
 				buttonDiscard: "キャンセル",
 				buttonSettings: "設定",
 				buttonView: "ビュー モード",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "範囲",
 				settingsExtentExplain: "以下の対話型マップを使用して初期範囲を設定します。",
 				settingsExtentExplainBottom: "定義した範囲によって、Web マップの初期範囲が変更されます。スワイプ操作を実行する場合、その範囲は使用されないことに注意してください。",
-				settingsExtentDateLineError: "須_The extent cannot be across the meridian of 180ï¿½ longitude_鷗",
+				settingsExtentDateLineError: "この範囲は、経度 180°の子午線を超えることはできません。",
 				settingsExtentDateLineError2: "範囲を計算中にエラーが発生しました",
 				settingsExtentDrawBtn: "新しい範囲の描画",
 				settingsExtentModifyBtn: "現在の範囲の編集",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "別の Web マップを公開します。",
 				settingsDataModel2HelpTitle: "Web マップ ID の検索方法",
 				settingsDataModel2HelpContent: "Web マップの URL 内の「=」記号から後ろの数字をコピーして貼り付けます。",
-				switchMaps: "須_Switch maps_鷗",
-				browseWebMaps: "須_Browse web maps_鷗"
+				switchMaps: "マップの切り替え",
+				browseWebMaps: "Web マップの参照"
 			},
 			settingsLegend: {
 				settingsTabLegend: "アプリケーションのレイアウト",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "スワイプ操作を使用したアプリケーションの例を表示",
 				preview: "UI のプレビュー",
 				settingsLocateButtonExplain: "この機能は、ほとんどのモバイル デバイスとデスクトップ ブラウザ (Internet Explorer 9 以上) でサポートされています。",
-				settingsLocateButton: "須_Enable a 'Locate' button on supported browsers_鷗",
+				settingsLocateButton: "サポートされているブラウザで [検索] ボタンを有効化",
 				settingsAddressSearch: "アドレス検索ツールの有効化"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "そのブックマークを削除することができません。[設定] で、スワイプが無効化されている可能性があります。"
 			},
 			helpPopup: {
-				title: "須_Help_鷗",
-				close: "須_Close_鷗",
+				title: "ヘルプ",
+				close: "閉じる",
 				tab1: {
-					div1: "須_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._鷗",
+					div1: "スワイプ/スパイグラス テンプレートは、スマートフォンやタブレットなど、あらゆるデバイスのあらゆる Web ブラウザで使用できる使いやすく魅力的なアプリケーションで、2 つの別々の Web マップまたは 1 つの Web マップの 2 つのレイヤを比較できるよう設計されています。",
 					div2: "須_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._鷗",
-					div3: "須_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._鷗"
+					div3: "みなさまのご参加をお待ちしています。質問がある場合、新しい機能を依頼する場合、あるいはバグを見つけた場合は、<a href='http://links.esri.com/storymaps/forum' target='_blank'>ストーリー マップ ユーザ フォーラム</a>をご覧ください。"
 				}
 			},
 			share: {
-				firstSaveTitle: "須_Application successfully saved_鷗",
-				firstSaveHeader: "須_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._鷗",
-				firstSaveA1: "須_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_鷗",
-				firstSaveA1bis: "須_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._鷗",
-				firstSaveQ2: "須_Is my Application shared?_鷗",
-				firstSaveA2: "須_Currently your Application is not shared. To share it, use the SHARE button._鷗",
-				shareTitle: "須_Share your Application_鷗",
-				sharePrivateHeader: "須_Your Application is not shared, would you like to share it?_鷗",
-				sharePrivateBtn1: "須_Share publicly_鷗",
-				sharePrivateBtn2: "須_Share with my Organization_鷗",
-				sharePrivateProgress: "須_Sharing in progress..._鷗",
-				sharePrivateErr: "須_Sharing failed, try again or_鷗",
-				sharePrivateOk: "須_Sharing updated successfully, loading..._鷗",
-				shareStatus1: "須_Application is not saved_鷗",
-				shareStatus2: "須_Application is shared publicly_鷗",
-				shareStatus3: "須_Application is shared within the organization_鷗",
-				shareStatus4: "須_Application is not shared_鷗",
-				sharePreviewAsUser: "須_Preview_鷗",
-				shareHeader1: "須_Your Application is <strong>publicly accessible</strong>._鷗",
-				shareHeader2: "須_Your Application is accessible by your organization members (login is required)._鷗",
-				shareLinkHeader: "須_Share the Application with your audience_鷗",
-				shareLinkOpen: "須_OPEN_鷗",
-				learnMore: "須_Learn more_鷗",
-				shareQ1Opt1: "須_How do I keep the Application private?_鷗",
-				shareQ1Opt2: "須_How do I keep the Application private or share it publicly?_鷗",
-				shareA1: "須_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._鷗",
-				shareA1bis: "須_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._鷗",
-				shareQ2: "須_How do I edit the Application later?_鷗",
-				shareQ2bis: "須_How do I get back to the authoring interface?_鷗",
-				shareA2div1: "須_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._鷗",
-				shareA2div2: "須_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_鷗",				
-				shareQ3: "須_Where is the data stored?_鷗",
-				shareA3: "須_The Application configuration is stored in this web application item</a>._鷗",
+				firstSaveTitle: "アプリケーションが保存されました",
+				firstSaveHeader: "アプリケーションが ArcGIS Online に保存されました。以下のよくある質問の答えをお読みください。",
+				firstSaveA1: "ArcGIS Online の操作に慣れていない、または作成インタフェースに簡単にアクセスしたい場合は、次のリンクを保存できます: %LINK1%",
+				firstSaveA1bis: "アプリケーションは <a href='%LINK2%' target='_blank'>ArcGIS Online コンテンツ フォルダ</a>にもあります。",
+				firstSaveQ2: "アプリケーションは共有されていますか？",
+				firstSaveA2: "現在、アプリケーションは共有されていません。共有するには、[共有] ボタンを使用します。",
+				shareTitle: "アプリケーションを共有",
+				sharePrivateHeader: "アプリケーションが共有されていません。共有しますか？",
+				sharePrivateBtn1: "パブリックに共有",
+				sharePrivateBtn2: "組織内で共有",
+				sharePrivateProgress: "共有の実行中...",
+				sharePrivateErr: "共有に失敗しました。もう一度行ってください。",
+				sharePrivateOk: "共有の更新に成功しました。読み込んでいます...",
+				shareStatus1: "アプリケーションが保存されていません",
+				shareStatus2: "アプリケーションがパブリックに共有されています",
+				shareStatus3: "アプリケーションが組織内で共有されています",
+				shareStatus4: "アプリケーションが共有されていません",
+				sharePreviewAsUser: "プレビュー",
+				shareHeader1: "アプリケーションには<strong>すべてのユーザがアクセスできます</strong>。",
+				shareHeader2: "アプリケーションには組織のメンバーがアクセスできます (ログインが必要)。",
+				shareLinkHeader: "アプリケーションをユーザと共有",
+				shareLinkOpen: "オープン",
+				learnMore: "詳細",
+				shareQ1Opt1: "アプリケーションをプライベートにする方法",
+				shareQ1Opt2: "アプリケーションのプライベート使用とパブリック使用を切り替える方法",
+				shareA1: "<a href='%LINK1%' target='_blank'>アプリケーション アイテム ページ</a>で %SHAREIMG% を使用します。Web マップの共有も解除する場合は、<a href='%LINK2%' target='_blank'>Web マップ アイテム ページ</a>を使用します。",
+				shareA1bis: "フィーチャ サービスの共有も解除する場合は、<a href='%LINK1%' target='_blank'>フィーチャ サービス アイテム ページ</a>を使用します。",
+				shareQ2: "アプリケーションを後で編集する方法",
+				shareQ2bis: "作成インタフェースに戻る方法",
+				shareA2div1: "次のリンク %LINK1% を保存および再利用するか、<a href='%LINK2%' target='_blank'>アプリケーション アイテム ページ</a>を使用します。",
+				shareA2div2: "アプリケーションの所有者として ArcGIS.com にサイン インした場合、アプリケーションに対話型ビルダを開くボタンが含まれます。",				
+				shareQ3: "データの保存場所は？",
+				shareA3: "アプリケーション構成は、この Web アプリケーション アイテムに保存されます</a>。",
 				shareWarning: "須_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._鷗",
  				shareWarningWith1: "須_publicly_鷗",
  				shareWarningWith2: "須_publicly and with the Organization_鷗"
 			},
 			directCreation: {
-				header: "須_Welcome to the Swipe/Spyglass Builder_鷗",
-				mapPickHeader: "須_To get started, please input a valid web map id, or use the search button to browse web maps._鷗",
-				launchBuilder: "須_Launch Builder_鷗"
+				header: "スワイプ/スパイグラス ビルダへようこそ",
+				mapPickHeader: "開始するには、有効な Web マップ ID を入力するか、または [検索] ボタンを使用して Web マップを参照してください。",
+				launchBuilder: "ビルダの開始",
+				chooseWebmapLbl: "須_Choose web map..._鷗",
+				explain2: "須_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._鷗",
+				explain3: "須_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._鷗",
+				webmapPlaceholder: "須_Enter a web map id..._鷗"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "須_My Organization_鷗",
-					onlineLabel: "須_ArcGIS Online_鷗",
-					contentLabel: "須_My Content_鷗",
-					favoritesLabel: "須_My Favorites_鷗"
+					organizationLabel: "組織",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "マイ コンテンツ",
+					favoritesLabel: "お気に入り"
 				},
-				title: "須_Select Web Map_鷗",
-				searchTitle: "須_Search_鷗",
-				ok: "須_Ok_鷗",
-				cancel: "須_Cancel_鷗",
-				placeholder: "須_Enter search term_鷗"
+				title: "Web マップの選択",
+				searchTitle: "検索",
+				ok: "OK",
+				cancel: "キャンセル",
+				placeholder: "検索語句の入力"
 			}
 		}
     })

@@ -8,8 +8,9 @@
             defaultText: "Angiv din adresse"
         },
         error: {
-            layerNotFound: "Tjenesteområdelaget findes ikke i webkortet",
-            fieldNotFound: "Felt ikke fundet"
+            layerNotFound: "ø_Layer is not in the webmap_å",
+            fieldNotFound: "Felt ikke fundet",
+            popupNotSet: "ø_Popup not enabled for this layer_å"
         },
         page: {
             title: "Tjenestesøgning",

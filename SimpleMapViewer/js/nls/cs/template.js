@@ -13,13 +13,13 @@
         label: "Mapa z:"
       },
       geocoder: {
-        selectAnother: "Ř_Select another location_ů",
-        notWhatYouWanted: "Ř_Not what you wanted?_ů",
-        currentLocation: "Ř_Current Location_ů",
-        title: "Ř_Location_ů"
+        selectAnother: "Vybrat jiné umístění",
+        notWhatYouWanted: "Nenašli jste, co jste hledali?",
+        currentLocation: "Současné umístění",
+        title: "Umístění"
       },
       sidePanel: {
-        title: "Ř_Legend_ů",
+        title: "Legenda",
         owner: "vlastník: ",
         modified: "Naposledy upraveno: ",
         message: "Žádné operační vrstvy"

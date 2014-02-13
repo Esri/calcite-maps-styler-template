@@ -8,8 +8,9 @@
             defaultText: "Įveskite savo adresą"
         },
         error: {
-            layerNotFound: "Aptarnavimo ploto sluoksnio nėra žemėlapyje",
-            fieldNotFound: "Laukas nerastas"
+            layerNotFound: "Į_Layer is not in the webmap_š",
+            fieldNotFound: "Laukas nerastas",
+            popupNotSet: "Į_Popup not enabled for this layer_š"
         },
         page: {
             title: "Paslaugos peržvalga",

@@ -13,10 +13,10 @@
         label: "Şuradan harita:"
       },
       geocoder: {
-        selectAnother: "ı_Select another location_İ",
-        notWhatYouWanted: "ı_Not what you wanted?_İ",
-        currentLocation: "ı_Current Location_İ",
-        title: "ı_Location_İ"
+        selectAnother: "Başka bir konum seç",
+        notWhatYouWanted: "İstediğiniz bu değil mi?",
+        currentLocation: "Mevcut Konum",
+        title: "Konum"
       },
       sidePanel: {
         title: "Gösterge",

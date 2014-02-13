@@ -7,8 +7,8 @@
 				step3: "מתחיל",
 				fail: "סליחה, אך טעינת כלי ה- swipe נכשלה",
 				loadBuilder: "החלפה למצב בניה",
-				redirectSignIn: "כן_REDIRECTING TO SIGN-IN PAGE_ש",
-				redirectSignIn2: "כן_(you will be redirected here after sign-in)_ש",
+				redirectSignIn: "הפניה לדף ההתחברות",
+				redirectSignIn2: "(תופנה מחדש לאחר ההתחברות)",
 				failButton: "נסה שוב"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "קביעת תצורת אפליקציה",
 				buttonSave: "שמירה",
-				buttonHelp: "כן_Help_ש",
-				buttonShare: "כן_Share_ש",
+				buttonHelp: "עזרה",
+				buttonShare: "שיתוף",
 				buttonDiscard: "ביטול",
 				buttonSettings: "הגדרות",
 				buttonView: "מצב צפיה",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "תיחום",
 				settingsExtentExplain: "בחר את התיחום ההתחלתי באמצעות המפה האינטראקטיבית שלהלן.",
 				settingsExtentExplainBottom: "התיחום אותו הגדרת ישנה את התיחום ההתחלתי של ה- web map שלך. שים לב שאם אתה עושה סדרות swipe תיחום זה לא יהיה בשימוש.",
-				settingsExtentDateLineError: "כן_The extent cannot be across the meridian of 180ï¿½ longitude_ש",
+				settingsExtentDateLineError: "התיחום לא יכול להיות על המרידיאן של קו אורך 180ï¿½",
 				settingsExtentDateLineError2: "שגיאה בחישוב התיחום",
 				settingsExtentDrawBtn: "שרטט תיחום חדש",
 				settingsExtentModifyBtn: "ערוך את התיחום הנוכחי",
@@ -142,7 +142,7 @@
 				settingsTabDataModel: "סוג Swipe",
 				settingsDataModelExplainSwipe: "למה אתה רוצה שמשתמשים יבצעו swipe?",
 				settingsDataModelExplainSwipe2: "",
-				settingsDataModelExplainSpyGlass: "בחר את השכבה או את ה- web map שתופיע במשקפת.",
+				settingsDataModelExplainSpyGlass: "בחר את השכבה או את ה- web map שיופיע ב spyglass.",
 				settingsDataModelOneMap: "שכבה ב- web map",
 				settingsDataModel1Explain: "בחר שכבה שתנוהל על ידי כלי ה- swipe.",
 				settingsDataModel1Warning: "אם השכבה מוסתרת על ידי שכבות עליונות יותר, לכלי ה- swipe לא תהיה השפעה.",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "חשוף web map נוסף.",
 				settingsDataModel2HelpTitle: "כיצד למצוא את ה- ID של ה- web map",
 				settingsDataModel2HelpContent: "העתק והדבק תווים אחרי סימן ה =בכתובת ה- URL של ה- web map",
-				switchMaps: "כן_Switch maps_ש",
-				browseWebMaps: "כן_Browse web maps_ש"
+				switchMaps: "החלף מפות",
+				browseWebMaps: "עיין ב web maps"
 			},
 			settingsLegend: {
 				settingsTabLegend: "אפליקצית תצוגה",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "ראה כאן דוגמא לאלפליקציה עם סדרת ה-Swipe",
 				preview: "תצוגה מקדימה של UI",
 				settingsLocateButtonExplain: "פונקציונליות זו נתמכת ברוב המכשירים הניידים ובדפדפנים השולחניים (Internet Explorer 9).",
-				settingsLocateButton: "כן_Enable a 'Locate' button on supported browsers_ש",
+				settingsLocateButton: "הפוך לפעיל את כפתור 'איתור' לדפדפנים נתמכים",
 				settingsAddressSearch: "הפוך לפעיל כלי חיפוש כתובת"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "אינך יכול להסיר סימניה זו. ניתן להפוך סדרות swipe ללא פעילות בהגדרות."
 			},
 			helpPopup: {
-				title: "כן_Help_ש",
-				close: "כן_Close_ש",
+				title: "עזרה",
+				close: "סגור",
 				tab1: {
-					div1: "כן_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._ש",
+					div1: "תבנית ה Swipe/Spyglass  להשוואה בין שני web maps או בין שתי שכבות של web map בודד באופן, באפליקצית web קלה לשימוש בה ניתן להשתמש מכל דפדפן על כל מכשיר, כולל טלפונים חכמים וטאבלטים.",
 					div2: "כן_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ש",
-					div3: "כן_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._ש"
+					div3: "נשמח לשמוע ממך! בין אם יש לך שאלה, רוצה לבקש יכולת חדשה, או חושב שמצאת באג, אנא בקר ב- <a href='http://links.esri.com/storymaps/forum' target='_blank'>פורום המשתמשים של מפות סיפור</a>."
 				}
 			},
 			share: {
-				firstSaveTitle: "כן_Application successfully saved_ש",
-				firstSaveHeader: "כן_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ש",
-				firstSaveA1: "כן_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ש",
-				firstSaveA1bis: "כן_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ש",
-				firstSaveQ2: "כן_Is my Application shared?_ש",
-				firstSaveA2: "כן_Currently your Application is not shared. To share it, use the SHARE button._ש",
-				shareTitle: "כן_Share your Application_ש",
-				sharePrivateHeader: "כן_Your Application is not shared, would you like to share it?_ש",
-				sharePrivateBtn1: "כן_Share publicly_ש",
-				sharePrivateBtn2: "כן_Share with my Organization_ש",
-				sharePrivateProgress: "כן_Sharing in progress..._ש",
-				sharePrivateErr: "כן_Sharing failed, try again or_ש",
-				sharePrivateOk: "כן_Sharing updated successfully, loading..._ש",
-				shareStatus1: "כן_Application is not saved_ש",
-				shareStatus2: "כן_Application is shared publicly_ש",
-				shareStatus3: "כן_Application is shared within the organization_ש",
-				shareStatus4: "כן_Application is not shared_ש",
-				sharePreviewAsUser: "כן_Preview_ש",
-				shareHeader1: "כן_Your Application is <strong>publicly accessible</strong>._ש",
-				shareHeader2: "כן_Your Application is accessible by your organization members (login is required)._ש",
-				shareLinkHeader: "כן_Share the Application with your audience_ש",
-				shareLinkOpen: "כן_OPEN_ש",
-				learnMore: "כן_Learn more_ש",
-				shareQ1Opt1: "כן_How do I keep the Application private?_ש",
-				shareQ1Opt2: "כן_How do I keep the Application private or share it publicly?_ש",
-				shareA1: "כן_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._ש",
-				shareA1bis: "כן_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ש",
-				shareQ2: "כן_How do I edit the Application later?_ש",
-				shareQ2bis: "כן_How do I get back to the authoring interface?_ש",
-				shareA2div1: "כן_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ש",
-				shareA2div2: "כן_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ש",				
-				shareQ3: "כן_Where is the data stored?_ש",
-				shareA3: "כן_The Application configuration is stored in this web application item</a>._ש",
+				firstSaveTitle: "האפליקציה נשמרה בהצלחה",
+				firstSaveHeader: "האפליקציה נשמרה כעת ב- ArcGIS Online . אנא קרא את התשובות לשאלות השכיחות הבאות.",
+				firstSaveA1: "אם אינך מכיר את ArcGIS Online או שאתה מעוניין בקיצור דרך לממשק העריכה, אתה יכול לשמור את הלינק הבא: %LINK1%",
+				firstSaveA1bis: "ניתן למצוא את האפליקציה גם ב- <a href='%LINK2%' target='_blank'>מחיצת התוכן של ArcGIS Online </a>.",
+				firstSaveQ2: "האם האפליקציה שלי נמצאת בשיתוף?",
+				firstSaveA2: "כעת האפליקציה שלך אינה משותפת. כדי לשתף אותה, השתמש בכפתור שתף.",
+				shareTitle: "שתף את האפליקציה שלך",
+				sharePrivateHeader: "האפליקציה שלך אינה משותפת, ​​היית רוצה לשתף אותה?",
+				sharePrivateBtn1: "שתף באופן ציבורי",
+				sharePrivateBtn2: "שתף עם הארגון שלי",
+				sharePrivateProgress: "שיתוף בתהליך...",
+				sharePrivateErr: "השיתוף נכשל, נסה שנית או",
+				sharePrivateOk: "עדכון השיתוף הצליח, טוען...",
+				shareStatus1: "האפליקציה לא נשמרה",
+				shareStatus2: "האפליקציה משותפת לציבור",
+				shareStatus3: "האפליקציה משותפת לארגון",
+				shareStatus4: "האפליקציה לא משותפת",
+				sharePreviewAsUser: "תצוגה מקדימה",
+				shareHeader1: "האפליקציה שלך <strong>נגישה לציבור</strong>.",
+				shareHeader2: "האפליקציה שלך נגישה לחברי הארגון שלך (נדרש להתחבר).",
+				shareLinkHeader: "שתף את האפליקציה עם קהל המטרה שלך",
+				shareLinkOpen: "פתח",
+				learnMore: "מידע נוסף",
+				shareQ1Opt1: "כיצד אני יכול לשמור את האפליקציה פרטית?",
+				shareQ1Opt2: "כיצד אני יכול לשמור את האפליקציה פרטית או לשתף אותה לציבור?",
+				shareA1: "השתמש ב- %SHAREIMG% ב- <a href='%LINK1%' target='_blank'>דף פריט האפליקציה</a>. אם אתה רוצה גם לבטל את שיתוף של ה- webmap, השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט webmap</a>.",
+				shareA1bis: "אם אתה רוצה לבטל גם את השיתוף לשירות הישויות, השתמש <a href='%LINK1%' target='_blank'>דף פריט שירות הישויות</a>.",
+				shareQ2: "כיצד אני יכול לערוך את האפליקציה מאוחר יותר?",
+				shareQ2bis: "כיצד אני יכול לחזור לממשק העריכה?",
+				shareA2div1: "שמור והשתמש שוב בקישור הבא %LINK1% או השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט האפליקציה</a>.",
+				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל ArcGIS.com האפליקציה כוללת כפתור הפותח את הבונה האינטראקטיבי.",				
+				shareQ3: "היכן מאוחסן המידע?",
+				shareA3: "תצורת האפליקציה אינה שמורה בפריט  web application</a> זה.",
 				shareWarning: "כן_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ש",
  				shareWarningWith1: "כן_publicly_ש",
  				shareWarningWith2: "כן_publicly and with the Organization_ש"
 			},
 			directCreation: {
-				header: "כן_Welcome to the Swipe/Spyglass Builder_ש",
-				mapPickHeader: "כן_To get started, please input a valid web map id, or use the search button to browse web maps._ש",
-				launchBuilder: "כן_Launch Builder_ש"
+				header: "ברוך הבא ל Swipe/Spyglass Builder",
+				mapPickHeader: "כדי להתחיל, אנא בחר מזהה web map תקין, או השתמש בכפתור החיפוש כדי למצא web maps.",
+				launchBuilder: "התחל Builder",
+				chooseWebmapLbl: "כן_Choose web map..._ש",
+				explain2: "כן_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ש",
+				explain3: "כן_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ש",
+				webmapPlaceholder: "כן_Enter a web map id..._ש"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "כן_My Organization_ש",
-					onlineLabel: "כן_ArcGIS Online_ש",
-					contentLabel: "כן_My Content_ש",
-					favoritesLabel: "כן_My Favorites_ש"
+					organizationLabel: "הארגון שלי",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "התוכן שלי",
+					favoritesLabel: "המועדפים שלי"
 				},
-				title: "כן_Select Web Map_ש",
-				searchTitle: "כן_Search_ש",
-				ok: "כן_Ok_ש",
-				cancel: "כן_Cancel_ש",
-				placeholder: "כן_Enter search term_ש"
+				title: "בחר Web Map",
+				searchTitle: "חפש",
+				ok: "אישור",
+				cancel: "ביטול",
+				placeholder: "הכנס מונח לחיפוש"
 			}
 		}
     })

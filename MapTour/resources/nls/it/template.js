@@ -479,7 +479,7 @@
 					div9: "Per ulteriori informazioni, consultare <a href='https://github.com/Esri/map-tour-storytelling-template-js/raw/master/Readme.pdf' target='_blank'>la guida dettagliata</a>.",
 					div10: "Modalità Incorpora",
 					div11: "Se si desidera incorporare il modello in un altro sito Web tramite un iframe, aggiungere il parametro facoltativo \"&embed\" alla fine dell\'URL per rimuovere l\'intestazione. È anche possibile impostare tale modalità nella versione scaricabile tramite il file di configurazione.",
-					div12: "Evitare di specificare una larghezza troppo ridotta per l\'iFrame; in caso contrario per il Tour mappa verrà attivato il layout per touch screen piccoli. Per garantire la massima semplicità d'uso, quando si incorpora un Tour mappa, si consiglia di fornire comunque un collegamento accanto al Tour incorporato per consentire agli utenti di avviare il Tour a schermo intero." 
+					div12: "Evitare di specificare una larghezza troppo ridotta per l\'iFrame; in caso contrario per il Tour mappa verrà attivato il layout per touch screen piccoli. Per garantire la massima semplicità d\'uso, quando si incorpora un Tour mappa, si consiglia di fornire comunque un collegamento accanto al Tour incorporato per consentire agli utenti di avviare il Tour a schermo intero." 
 				},
 				tab5: {
 					title: "Pubblicazione",

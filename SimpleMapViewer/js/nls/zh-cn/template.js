@@ -13,13 +13,13 @@
         label: "地图来自:"
       },
       geocoder: {
-        selectAnother: "试_Select another location_验",
-        notWhatYouWanted: "试_Not what you wanted?_验",
-        currentLocation: "试_Current Location_验",
-        title: "试_Location_验"
+        selectAnother: "选择其他位置",
+        notWhatYouWanted: "不是您想要的位置?",
+        currentLocation: "当前位置",
+        title: "位置"
       },
       sidePanel: {
-        title: "试_Legend_验",
+        title: "图例",
         owner: "所有者: ",
         modified: "上次修改时间: ",
         message: "无业务图层"

@@ -7,8 +7,8 @@
 				step3: "تهيئة",
 				fail: "للأسف، فشل تحميل السحب",
 				loadBuilder: "التبديل إلى وضع المُنشيء",
-				redirectSignIn: "بيت_REDIRECTING TO SIGN-IN PAGE_لاحقة",
-				redirectSignIn2: "بيت_(you will be redirected here after sign-in)_لاحقة",
+				redirectSignIn: "إعادة التوجيه لصفحة تسجيل الدخول",
+				redirectSignIn2: "(سيتم إعادة توجيهك هنا بعد تسجيل الدخول)",
 				failButton: "إعادة المحاولة"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "تكوين التطبيق",
 				buttonSave: "حفظ",
-				buttonHelp: "بيت_Help_لاحقة",
-				buttonShare: "بيت_Share_لاحقة",
+				buttonHelp: "تعليمات",
+				buttonShare: "مشاركة",
 				buttonDiscard: "إلغاء الأمر",
 				buttonSettings: "الإعدادات",
 				buttonView: "عرض الوضع",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "المدى",
 				settingsExtentExplain: "تعيين النطاق الأولي خلال الخريطة التفاعلية الموضحة أدناه.",
 				settingsExtentExplainBottom: "سيقوم النطاق الذي تم تعريفه بتعديل النطاق الأولي لخريطة الويب. لاحظ أنه إذا كنت تقوم بعمل سلسلة من السحب، فلن يتم استخدام هذا النطاق.",
-				settingsExtentDateLineError: "بيت_The extent cannot be across the meridian of 180ï¿½ longitude_لاحقة",
+				settingsExtentDateLineError: "لا يمكن أن يكون المدى عبر خط الطول 180ï¿½",
 				settingsExtentDateLineError2: "حدث خطأ أثناء حساب النطاق",
 				settingsExtentDrawBtn: "ارسم النطاق الجديد",
 				settingsExtentModifyBtn: "تحرير النطاق الحالي",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "كشف خريطة ويب أخرى.",
 				settingsDataModel2HelpTitle: "كيف أقوم بالعثور على معرف خريطة الويب؟",
 				settingsDataModel2HelpContent: "انسخ والصق الأرقام بعد علامة \"=\" داخل عنوان URL لخريطة الويب",
-				switchMaps: "بيت_Switch maps_لاحقة",
-				browseWebMaps: "بيت_Browse web maps_لاحقة"
+				switchMaps: "تبديل الخرائط",
+				browseWebMaps: "استعرض خرائط الويب"
 			},
 			settingsLegend: {
 				settingsTabLegend: "التخطيط الطباعي للتطبيق",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "راجع مثال على التطبيق مع سحب السلاسل هنا",
 				preview: "معاينة واجهة المستخدم",
 				settingsLocateButtonExplain: "يتم دعم هذه الوظيفة على معظم أجهزة الجوال ومستعرضات سطح المكتب (بما في ذلك Internet Explorer 9+(.",
-				settingsLocateButton: "بيت_Enable a 'Locate' button on supported browsers_لاحقة",
+				settingsLocateButton: "تمكين زر 'تحديد الموقع' في المستعرضات المدعومة",
 				settingsAddressSearch: "تمكين أداة البحث عن العنوان"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "لا يمكنك إزالة العلامة المرجعية. يمكن تعطيل سلسلة السحب في الإعدادات."
 			},
 			helpPopup: {
-				title: "بيت_Help_لاحقة",
-				close: "بيت_Close_لاحقة",
+				title: "تعليمات",
+				close: "إغلاق",
 				tab1: {
-					div1: "بيت_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._لاحقة",
+					div1: "يتم تصميم قالب Swipe/Spyglass لمقارنة خريطتي ويب منفصلتين أو طبقتي خريطة ويب مفردة في تطبيق ويب جذّاب سهل الاستخدام يمكن استخدامه في أي مستعرض ويب على أي جهاز، بما في ذلك الهواتف الذكية والحواسب اللوحية.",
 					div2: "بيت_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._لاحقة",
-					div3: "بيت_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._لاحقة"
+					div3: "نرغب في الاستماع إليك! سواء كان لديك سؤال، وترغب في طلب ميزة جديدة، أو تعتقد أنك وجدت خلل، يرجى زيارة <a href='http://links.esri.com/storymaps/forum' target='_blank'>منتدى مستخدمي خرائط القصة</a>."
 				}
 			},
 			share: {
-				firstSaveTitle: "بيت_Application successfully saved_لاحقة",
-				firstSaveHeader: "بيت_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._لاحقة",
-				firstSaveA1: "بيت_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_لاحقة",
-				firstSaveA1bis: "بيت_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._لاحقة",
-				firstSaveQ2: "بيت_Is my Application shared?_لاحقة",
-				firstSaveA2: "بيت_Currently your Application is not shared. To share it, use the SHARE button._لاحقة",
-				shareTitle: "بيت_Share your Application_لاحقة",
-				sharePrivateHeader: "بيت_Your Application is not shared, would you like to share it?_لاحقة",
-				sharePrivateBtn1: "بيت_Share publicly_لاحقة",
-				sharePrivateBtn2: "بيت_Share with my Organization_لاحقة",
-				sharePrivateProgress: "بيت_Sharing in progress..._لاحقة",
-				sharePrivateErr: "بيت_Sharing failed, try again or_لاحقة",
-				sharePrivateOk: "بيت_Sharing updated successfully, loading..._لاحقة",
-				shareStatus1: "بيت_Application is not saved_لاحقة",
-				shareStatus2: "بيت_Application is shared publicly_لاحقة",
-				shareStatus3: "بيت_Application is shared within the organization_لاحقة",
-				shareStatus4: "بيت_Application is not shared_لاحقة",
-				sharePreviewAsUser: "بيت_Preview_لاحقة",
-				shareHeader1: "بيت_Your Application is <strong>publicly accessible</strong>._لاحقة",
-				shareHeader2: "بيت_Your Application is accessible by your organization members (login is required)._لاحقة",
-				shareLinkHeader: "بيت_Share the Application with your audience_لاحقة",
-				shareLinkOpen: "بيت_OPEN_لاحقة",
-				learnMore: "بيت_Learn more_لاحقة",
-				shareQ1Opt1: "بيت_How do I keep the Application private?_لاحقة",
-				shareQ1Opt2: "بيت_How do I keep the Application private or share it publicly?_لاحقة",
-				shareA1: "بيت_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._لاحقة",
-				shareA1bis: "بيت_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._لاحقة",
-				shareQ2: "بيت_How do I edit the Application later?_لاحقة",
-				shareQ2bis: "بيت_How do I get back to the authoring interface?_لاحقة",
-				shareA2div1: "بيت_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._لاحقة",
-				shareA2div2: "بيت_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_لاحقة",				
-				shareQ3: "بيت_Where is the data stored?_لاحقة",
-				shareA3: "بيت_The Application configuration is stored in this web application item</a>._لاحقة",
+				firstSaveTitle: "تم حفظ التطبيق بنجاح",
+				firstSaveHeader: "تم حفظ التطبيق في ArcGIS Online الآن. يرجى قراءة الإجابات التالية على الأسئلة المكررة.",
+				firstSaveA1: "إذا لم تكن متألف مع ArcGIS Online أو ترغب في الحصول على الاختصار للوصول إلى واجهة التأليف، يمكن حفظ الرابط التالي: %LINK1%",
+				firstSaveA1bis: "يمكن العثور على التطبيق أيضًا في <a href='%LINK2%' target='_blank'>مجلد محتويات ArcGIS Online</a>.",
+				firstSaveQ2: "هل تمت مشاركة تطبيقي؟",
+				firstSaveA2: "لم تتم مشاركة التطبيق حاليًا. استخدم زر مشاركة لمشاركته.",
+				shareTitle: "مشاركة التطبيق",
+				sharePrivateHeader: "لم تتم مشاركة تطبيقك، هل تريد مشاركته؟",
+				sharePrivateBtn1: "مشاركتها بشكل عام",
+				sharePrivateBtn2: "مشاركتها مع المنظمة",
+				sharePrivateProgress: "المشاركة قيد التقدم...",
+				sharePrivateErr: "فشلت المشاركة، أعد المحاولة مرة أخرى أو",
+				sharePrivateOk: "تم تحديث المشاركة بنجاح، جارِ التحميل...",
+				shareStatus1: "لم يتم حفظ التطبيق",
+				shareStatus2: "تمت مشاركة التطبيق مع الجميع",
+				shareStatus3: "تمت مشاركة التطبيق في المؤسسة",
+				shareStatus4: "لم يتم مشاركة التطبيق",
+				sharePreviewAsUser: "معاينة",
+				shareHeader1: "التطبيق <strong>يمكن لكل المستخدمين الوصول إليه</strong>.",
+				shareHeader2: "يمكن لأعضاء المؤسسة الوصول إلى التطبيق (يلزم تسجيل الدخول).",
+				shareLinkHeader: "مشاركة التطبيق مع جمهور المستخدمين",
+				shareLinkOpen: "فتح",
+				learnMore: "تعلم المزيد",
+				shareQ1Opt1: "هل يمكن الحفاظ على التطبيق خاصًا؟",
+				shareQ1Opt2: "كيف يمكن الحفاظ على التطبيق خاصًا أو مشاركته مع الجميع؟",
+				shareA1: "استخدم %SHAREIMG% في <a href='%LINK1%' target='_blank'> صفحة عنصر التطبيق</a>. إذا أردت أيضًا إلغاء مشاركة طبقة الويب، استخدام <a href='%LINK2%' target='_blank'>صفحة عنصر خريطة الويب</a>.",
+				shareA1bis: "إذا كنت ترغب أيضًا في عدم مشاركة خدمة المعلم، استخدم <a href='%LINK1%' target='_blank'>صفحة عنصر خدمة المعلم</a>.",
+				shareQ2: "كيف يمكن تحرير التطبيق لاحقًا؟",
+				shareQ2bis: "كيف يمكنني الحصول على العودة إلى واجهة التأليف؟",
+				shareA2div1: "احفظ الرابط التالي وقم بإعادة استخدامه %LINK1% أو استخدم <a href='%LINK2%' target='_blank'>صفحة عنصر التطبيق</a>.",
+				shareA2div2: "بصفتك مالك التطبيق، عند تسجيل الدخول على ArcGIS.com، سيتضمن التطبيق زر لفتح المنشئ التفاعلي:",				
+				shareQ3: "أين يتم تخزين البيانات؟",
+				shareA3: "يتم تخزين تكوين التطبيق في عنصر تطبيق الويب</a>.",
 				shareWarning: "بيت_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._لاحقة",
  				shareWarningWith1: "بيت_publicly_لاحقة",
  				shareWarningWith2: "بيت_publicly and with the Organization_لاحقة"
 			},
 			directCreation: {
-				header: "بيت_Welcome to the Swipe/Spyglass Builder_لاحقة",
-				mapPickHeader: "بيت_To get started, please input a valid web map id, or use the search button to browse web maps._لاحقة",
-				launchBuilder: "بيت_Launch Builder_لاحقة"
+				header: "مرحبًا بك في مُنشئ Swipe/Spyglass",
+				mapPickHeader: "لبدء الاستخدام، يرجى إدخال مُعرف خريطة ويب صحيح أو استخدام زر البحث لاستعراض خرائط الويب.",
+				launchBuilder: "تشغيل المُنشئ",
+				chooseWebmapLbl: "بيت_Choose web map..._لاحقة",
+				explain2: "بيت_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._لاحقة",
+				explain3: "بيت_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._لاحقة",
+				webmapPlaceholder: "بيت_Enter a web map id..._لاحقة"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "بيت_My Organization_لاحقة",
-					onlineLabel: "بيت_ArcGIS Online_لاحقة",
-					contentLabel: "بيت_My Content_لاحقة",
-					favoritesLabel: "بيت_My Favorites_لاحقة"
+					organizationLabel: "المنظمة",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "المحتوى",
+					favoritesLabel: "المفضّلات"
 				},
-				title: "بيت_Select Web Map_لاحقة",
-				searchTitle: "بيت_Search_لاحقة",
-				ok: "بيت_Ok_لاحقة",
-				cancel: "بيت_Cancel_لاحقة",
-				placeholder: "بيت_Enter search term_لاحقة"
+				title: "تحديد خريطة الويب",
+				searchTitle: "بحث",
+				ok: "موافق",
+				cancel: "إلغاء الأمر",
+				placeholder: "إدخال مصطلح البحث"
 			}
 		}
     })

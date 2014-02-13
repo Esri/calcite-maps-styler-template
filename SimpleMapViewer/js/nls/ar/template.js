@@ -13,13 +13,13 @@
         label: "خريطة من:"
       },
       geocoder: {
-        selectAnother: "بيت_Select another location_لاحقة",
-        notWhatYouWanted: "بيت_Not what you wanted?_لاحقة",
-        currentLocation: "بيت_Current Location_لاحقة",
-        title: "بيت_Location_لاحقة"
+        selectAnother: "تحديد موقع آخر",
+        notWhatYouWanted: "أليس هذا ما تريده؟",
+        currentLocation: "الموقع الحالي",
+        title: "الموقع"
       },
       sidePanel: {
-        title: "بيت_Legend_لاحقة",
+        title: "مفتاح الخريطة",
         owner: "المالك: ",
         modified: "آخر تعديل: ",
         message: "لا توجد طبقات تشغيلية"

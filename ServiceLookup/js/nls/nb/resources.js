@@ -8,8 +8,9 @@
             defaultText: "Skriv inn adressen din"
         },
         error: {
-            layerNotFound: "Tjenesteområdelaget er ikke i webkartet",
-            fieldNotFound: "Fant ikke feltet"
+            layerNotFound: "å_Layer is not in the webmap_ø",
+            fieldNotFound: "Fant ikke feltet",
+            popupNotSet: "å_Popup not enabled for this layer_ø"
         },
         page: {
             title: "Tjenesteopptegning",

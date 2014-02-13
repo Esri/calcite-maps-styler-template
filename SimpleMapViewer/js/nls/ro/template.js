@@ -13,13 +13,13 @@
         label: "O hartă de la:"
       },
       geocoder: {
-        selectAnother: "Ă_Select another location_ș",
-        notWhatYouWanted: "Ă_Not what you wanted?_ș",
-        currentLocation: "Ă_Current Location_ș",
-        title: "Ă_Location_ș"
+        selectAnother: "Selectaţi altă locaţie",
+        notWhatYouWanted: "Nu este ce doreaţi?",
+        currentLocation: "Locaţie curentă",
+        title: "Locaţie"
       },
       sidePanel: {
-        title: "Ă_Legend_ș",
+        title: "Legendă",
         owner: "proprietar: ",
         modified: "Data ultimei modificări: ",
         message: "Niciun strat tematic operaţional"
