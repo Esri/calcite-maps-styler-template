@@ -42,11 +42,11 @@ define([
         on
 ) {
     return declare("", null, {
-        config : {},
-        counter0 : null,
-        counter1 : null,
-        counter2 : null,
-        counter3 : null,
+        config: {},
+        counter0: null,
+        counter1: null,
+        counter2: null,
+        counter3: null,
         opLayers: [],
         opLayer: null,
         opSignal: null,
@@ -56,14 +56,16 @@ define([
         maxFields: [],
         fields: [],
         aliases: [],
-        fieldCount : 0,
-        pageCount : 0,
-        page : 0,
+        fieldCount: 0,
+        pageCount: 0,
+        page: 0,
+        visCount: 4,
         clusterLayer: null,
         cluster: false,
         sumData: [],
         fieldTypes: "esriFieldTypeSmallInteger,esriFieldTypeInteger,esriFieldTypeSingle,esriFieldTypeDouble",
         filterString: false,
+        timer: null,
 
         // constructor
         constructor : function(config) {
@@ -74,6 +76,10 @@ define([
             ready(lang.hitch(this, function() {
                 this.initUI();
                 this.createWebMap();
+                var me = this;
+                window.onresize = function() {
+                    me.resizeWindow();
+                };
             }));
         },
 
@@ -142,10 +148,9 @@ define([
                 this.clusterLayer = clusterLayer;
                 on(this.clusterLayer, "click", lang.hitch(this, this.clusterClick));
                 
+                
                 // process operational layers
                 this.opLayers = response.itemInfo.itemData.operationalLayers;
-                
-                //on(this.map, "extent-change", lang.hitch(this, this.summarizeFeatures));
                 
                 if (this.map.loaded) {
                     this.mapLoaded();
@@ -198,7 +203,7 @@ define([
                 this.opLayer = this.getDefaultOperationalLayer();
             }
             if (this.opLayer) {
-                on(this.map, "extent-change", lang.hitch(this, this.summarizeFeatures));
+                //on(this.map, "extent-change", lang.hitch(this, this.summarizeFeatures));
                 this.setLayer();
             } else {
                 this.showMessage("No Operational Layers in Web Map.");
@@ -251,10 +256,11 @@ define([
             if (this.opSignal)
                 this.opSignal.remove();
             
-            this.populateFilterValues();
             this.opSignal = on(this.opLayer, "update-end", lang.hitch(this, this.summarizeFeatures));
+            on(this.map, "extent-change", lang.hitch(this, this.summarizeFeatures));
             
             this.configureFields();
+            this.populateFilterValues();
             this.loadPages();
             
             if (this.opLayer.geometryType == "esriGeometryPoint") {
@@ -286,7 +292,8 @@ define([
             var str = "";
             if(this.config.summaryLayer && this.config.summaryLayer.fields){
                 array.forEach(this.config.summaryLayer.fields, lang.hitch(this, function(field){
-                    str += field.fields;
+                    if (field.id != "filterField")
+                        str += field.fields;
                     this.config[field.id] = field.fields;
                 }));
             }
@@ -354,8 +361,10 @@ define([
         
         // load pages
         loadPages : function() {
+            var w = domStyle.get("panelContainer", "width");
+            this.visCount = Math.floor(w/220);
             this.fieldCount = this.fields.length;
-            this.pageCount = Math.ceil(this.fieldCount / 4);
+            this.pageCount = Math.ceil(this.fieldCount / this.visCount);
             var list = dom.byId("pages");
             list.innerHTML = "";
             if (this.pageCount > 1) {
@@ -377,6 +386,14 @@ define([
             domClass.remove("page" + this.page, "active");
             this.page = num;
             domClass.add("page" + this.page, "active");
+            for (var i=0; i<4; i++) {
+                var p = dom.byId("panel"+i);
+                if (i<this.visCount) {
+                    domStyle.set(p, "display", "block");
+                } else {
+                     domStyle.set(p, "display", "none");
+                }
+            }
             this.updateCounters();
         },
         
@@ -431,10 +448,11 @@ define([
                         query.outStatistics = [ statDef ];
                         var me = this;
                         this.opLayer.queryFeatures(query, function(featureSet){
-                            array.forEach(featureSet.features, function(feature){
+                            for (var i=0; i<featureSet.features.length; i++) {
+                                var feature = featureSet.features[i];
                                 var name = feature.attributes[fld.name];
                                 array.push({value: name, label: name});
-                            });
+                            }
                             me.populateOptions(array);
                         });
                     }
@@ -614,10 +632,11 @@ define([
         
         //update counters
         updateCounters: function() {
-            for (var i=0; i<4; i++) {
-                var fldIndex = this.page * 4 + i;
+            var vis = this.visCount;
+            for (var i=0; i<vis; i++) {
+                var fldIndex = this.page * vis + i;
                 var p = dom.byId("panel"+i);
-                if (fldIndex<this.fieldCount) {
+                if (fldIndex < this.fieldCount) {
                     domStyle.set(p, "display", "block");
                     this.updateCounter(i, fldIndex);
                 } else {
@@ -629,8 +648,8 @@ define([
         //update counter
         updateCounter: function(index, fldIndex) {
             var value = this.sumData[fldIndex];
-            if (fldIndex >= this.fields.length)
-                value = Math.round(value/this.count);
+            // if (fldIndex >= this.fields.length)
+                // value = Math.round(value/this.count);
             var num = value;
             var units = "";
             // if (value > 1000) {
@@ -669,6 +688,20 @@ define([
         closeMessage: function() {
             domStyle.set(dom.byId("panelMessage"), "display", "none");
             domStyle.set(dom.byId("panelContainer"), "display", "block");
+        },
+        
+        // resize 
+        resizeWindow: function() {
+            if (this.opLayer) {
+                this.loadPages();
+                this.timer = setTimeout(lang.hitch(this, this.resizeRefresh), 1000);
+            }
+        },
+        
+        // resize refresh
+        resizeRefresh: function() {
+            clearTimeout(this.timer);
+            this.updateCounters();
         }
         
     });
