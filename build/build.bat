@@ -72,6 +72,9 @@ mkdir %BUILD_OUTPUT%\UrbanObservatory
 mkdir %BUILD_OUTPUT%\PublicInformation
 mkdir %BUILD_OUTPUT%\DataSummary
 mkdir %BUILD_OUTPUT%\SummaryViewer
+mkdir %BUILD_OUTPUT%\MapJournal
+mkdir %BUILD_OUTPUT%\MapSeries
+mkdir %BUILD_OUTPUT%\MapSeriesBasic
 
 
 xcopy %TEMPLATES_ROOT%\archive\CompareConfigure                 %BUILD_OUTPUT%\Compare\Configure                    /E /Y
@@ -132,6 +135,12 @@ xcopy %TEMPLATES_ROOT%\UrbanObservatory                         %BUILD_OUTPUT%\U
 xcopy %TEMPLATES_ROOT%\PublicInformation                        %BUILD_OUTPUT%\PublicInformation                    /E /Y
 xcopy %TEMPLATES_ROOT%\DataSummary                              %BUILD_OUTPUT%\DataSummary                          /E /Y
 xcopy %TEMPLATES_ROOT%\SummaryViewer                            %BUILD_OUTPUT%\SummaryViewer                        /E /Y
+xcopy %TEMPLATES_ROOT%\MapJournal                               %BUILD_OUTPUT%\MapJournal                           /E /Y
+xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\MapSeries                            /E /Y
+xcopy %TEMPLATES_ROOT%\MapSeries\app\config\series-config.js    %BUILD_OUTPUT%\MapSeries\app\config.js              /E /Y
+xcopy %TEMPLATES_ROOT%\MapSeriesBasic                           %BUILD_OUTPUT%\MapSeriesBasic                       /E /Y
+xcopy %TEMPLATES_ROOT%\MapSeries\app\config\basic-config.js     %BUILD_OUTPUT%\MapSeriesBasic\app\config.js         /E /Y
+
 
 REM Finally copy assorted files in the root directory
 copy /Y %TEMPLATES_ROOT%\*.*  %BUILD_OUTPUT%
