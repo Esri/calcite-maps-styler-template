@@ -327,6 +327,7 @@
 				header: "Introduceţi adresa e-mail sau ID-ul contului dvs. Picasa sau Google+.",
 				userInputLbl: "Introducere e-mail sau ID",
 				signInMsg2: "Cont negăsit",
+				signInMsg3: "Ă_No public album_ș",
 				howToFind: "Găsirea unui ID de cont Picasa sau Google+",
 				howToFind2: "Copiaţi cifrele dintre primul şi al doilea caracter „/” a unei pagini Picasa sau G+"
 			},
@@ -524,7 +525,10 @@
 				shareA2div1: "Salvaţi şi utilizaţi din nou următorul link, %LINK1%, sau utilizaţi <a href='%LINK2%' target='_blank'>pagina de element corespunzătoare aplicaţiei</a>.",
 				shareA2div2: "În calitate de proprietar al aplicaţiei, când sunteţi autentificat pe ArcGIS.com, aplicaţia include un buton pentru a deschide instrumentul de creare interactiv:",				
 				shareQ3: "Unde sunt stocate datele?",
-				shareA3: "Configuraţia Turului este stocată în <a href='%LINK1%' target='_blank'>acest element de hartă Web</a> şi <a href='%LINK2%' target='_blank'>acest element de aplicaţie Web</a>. Dacă aţi utilizat importul Flickr, Picasa, Facebook sau YouTube, imaginile şi clipurile video rămân stocate acolo şi nu sunt dublate în ArcGIS Online."
+				shareA3: "Configuraţia Turului este stocată în <a href='%LINK1%' target='_blank'>acest element de hartă Web</a> şi <a href='%LINK2%' target='_blank'>acest element de aplicaţie Web</a>. Dacă aţi utilizat importul Flickr, Picasa, Facebook sau YouTube, imaginile şi clipurile video rămân stocate acolo şi nu sunt dublate în ArcGIS Online.",
+				shareWarning: "Ă_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ș",
+				shareWarningWith1: "Ă_publicly_ș",
+				shareWarningWith2: "Ă_publicly and with the Organization_ș"
 			}
         }
     })

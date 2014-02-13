@@ -1,14 +1,14 @@
 ﻿define(
    ({
     viewer: {
-      content_title: "ก้_Filter_ษฺ",
-      button_text: "ก้_Apply_ษฺ",
-      filterInstructions: "ก้_Filter the layer by specifying values._ษฺ",
-      filterOr: "ก้_Any of the following expressions must be true._ษฺ",
-      filterAnd: "ก้_All of the following expressions must be true._ษฺ",
-      filterNo: "ก้_Web map does not contain any interactive filters._ษฺ",
+      content_title: "ตัวคัดกรอง",
+      button_text: "ใช้งาน",
+      filterInstructions: "กรองชั้นข้อมูลด้วยการกำหนดค่าเฉพาะ",
+      filterOr: "เงื่อนไขอย่างใดอย่างหนึ่งต้องเป็นจริง",
+      filterAnd: "เงื่อนไขทั้งหมดต้องเป็นจริง",
+      filterNo: "เว็บแมพไม่มีตัวคัดกรองใดๆ",
       errors:{
-        message: "ก้_Problem creating the filters application_ษฺ"
+        message: "เกิดปัญหาระหว่างการสร้างแอพพลิเคชันตัวคัดกรอง"
       }
     }
   })

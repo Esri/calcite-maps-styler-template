@@ -1,18 +1,18 @@
 ﻿define(
 	({
         map: {
-            error: "ก้_Unable to create map_ษฺ",
-            mouseToolTip: "ก้_Click on the map to check for service_ษฺ"
+            error: "ไม่สามารถสร้างแผนที่ได้",
+            mouseToolTip: "คลิกบนแผนที่เพื่อตรวจสอบเซอร์วิส"
         },
         geocoder: {
-            defaultText: "ก้_Enter your address_ษฺ"
+            defaultText: "ใส่ข้อมูลที่อยู่ของคุณ"
         },
         error: {
-            layerNotFound: "ก้_Service Area Layer is not in the webmap_ษฺ",
-            fieldNotFound: "ก้_Field not found_ษฺ"
+            layerNotFound: "ชั้นช้อมูลพื้นที่การให้บริการไม่ปรากฎในเว็บแมพ",
+            fieldNotFound: "ไม่พบฟิลด์"
         },
         page: {
-            title: "ก้_Service Lookup_ษฺ",
+            title: "ค้นหาเซอร์วิส",
         }
     })
 

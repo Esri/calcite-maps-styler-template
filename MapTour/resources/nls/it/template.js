@@ -327,6 +327,7 @@
 				header: "Immettere l\'e-mail o l\'ID dell\'account Picasa o Google+.",
 				userInputLbl: "Immettere un\'e-mail o un ID",
 				signInMsg2: "Account non trovato",
+				signInMsg3: "é_No public album_È",
 				howToFind: "Come trovare l\'ID di un account Picasa o Google+",
 				howToFind2: "Copiare le cifre tra il primo e il secondo \"/\" di qualsiasi pagina Picasa o G+"
 			},
@@ -524,7 +525,10 @@
 				shareA2div1: "Salvare e riutilizzare il collegamento seguente %LINK1% oppure utilizzare la <a href='%LINK2%' target='_blank'>pagina degli elementi dell\'applicazione</a>.",
 				shareA2div2: "In quanto proprietari dell\'applicazione, all\'accesso in ArcGIS.com, l\'applicazione includerà un pulsante per aprire il generatore interattivo:",				
 				shareQ3: "Dove vengono memorizzati i dati?",
-				shareA3: "La configurazione del Tour viene memorizzata in <a href='%LINK1%' target='_blank'>questo elemento della mappa Web</a> e in <a href='%LINK2%' target='_blank'>questo elemento dell\'applicazione Web</a>. Se è stato utilizzata l\'importazione da Flickr, Picasa, Facebook o YouTube, le immagini e i video rimarranno memorizzati in tale posizione e non verranno duplicati in ArcGIS Online."
+				shareA3: "La configurazione del Tour viene memorizzata in <a href='%LINK1%' target='_blank'>questo elemento della mappa Web</a> e in <a href='%LINK2%' target='_blank'>questo elemento dell\'applicazione Web</a>. Se è stato utilizzata l\'importazione da Flickr, Picasa, Facebook o YouTube, le immagini e i video rimarranno memorizzati in tale posizione e non verranno duplicati in ArcGIS Online.",
+				shareWarning: "é_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._È",
+				shareWarningWith1: "é_publicly_È",
+				shareWarningWith2: "é_publicly and with the Organization_È"
 			}
         }
     })

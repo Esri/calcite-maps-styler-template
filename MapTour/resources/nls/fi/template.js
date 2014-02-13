@@ -327,6 +327,7 @@
 				header: "Kirjoita sähköpostiosoitteesi tai Picasa- tai Google+-tilisi tunnus.",
 				userInputLbl: "Kirjoita sähköpostiosoite tai tunnus",
 				signInMsg2: "Tiliä ei löydy",
+				signInMsg3: "Å_No public album_ö",
 				howToFind: "Picasa- tai Google+-tilitunnuksen etsiminen",
 				howToFind2: "Kopioi minkä tahansa Picasa- tai Google+-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
 			},
@@ -524,7 +525,10 @@
 				shareA2div1: "Tallenna ja käytä uudelleen seuraavaa linkkiä %LINK1% tai käytä <a href='%LINK2%' target='_blank'>sovelluskohteen sivua</a>.",
 				shareA2div2: "Koska olet sovelluksen omistaja, kun olet kirjautunut ArcGIS.com-sivustoon, sovelluksessa näkyy painike, jolla voita avata vuorovaikutteisen muodostusohjelman:",				
 				shareQ3: "Minne tiedot on tallennettu?",
-				shareA3: "Kierroksen määritykset tallennetaan <a href='%LINK1%' target='_blank'>tähän web-karttakohteeseen</a> ja <a href='%LINK2%' target='_blank'>tähän web-sovelluskohteeseen</a>. Jos olet käyttänyt Flickr-, Picasa-, Facebook- tai YouTube-tuontia, kuvasi ja videosi jäävät kyseiseen palveluun, eikä niitä kopioida ArcGIS Onlineen."
+				shareA3: "Kierroksen määritykset tallennetaan <a href='%LINK1%' target='_blank'>tähän web-karttakohteeseen</a> ja <a href='%LINK2%' target='_blank'>tähän web-sovelluskohteeseen</a>. Jos olet käyttänyt Flickr-, Picasa-, Facebook- tai YouTube-tuontia, kuvasi ja videosi jäävät kyseiseen palveluun, eikä niitä kopioida ArcGIS Onlineen.",
+				shareWarning: "Å_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ö",
+				shareWarningWith1: "Å_publicly_ö",
+				shareWarningWith2: "Å_publicly and with the Organization_ö"
 			}
         }
     })

@@ -327,6 +327,7 @@
 				header: "Introduce la dirección de correo electrónico o el ID tu cuenta de Picasa o de Google+.",
 				userInputLbl: "Introduce un correo electrónico o ID",
 				signInMsg2: "Cuenta no encontrada",
+				signInMsg3: "á_No public album_Ó",
 				howToFind: "Cómo encontrar el ID de una cuenta Picasa or Google+",
 				howToFind2: "Copia los dígitos que hay entre la primera y la segunda '/' de cualquier página de Picasa o G+"
 			},
@@ -524,7 +525,10 @@
 				shareA2div1: "Guarda y vuelve a usar el siguiente vínculo %LINK1% o utiliza la <a href='%LINK2%' target='_blank'>página de elementos de la aplicación</a>.",
 				shareA2div2: "Como propietario de la aplicación, cuando inicias sesión en ArcGIS.com, la aplicación incluye un botón para abrir el builder interactivo:",				
 				shareQ3: "¿Dónde se almacenan los datos?",
-				shareA3: "La configuración de la ruta se almacena en <a href='%LINK1%' target='_blank'>este elemento de mapa web</a> y <a href='%LINK2%' target='_blank'>este elemento de la aplicación web</a>. Si has usado la importación de Flickr, Picasa, Facebook o YouTube, tus imágenes y vídeos seguirán almacenados allí y no se duplican en ArcGIS Online."
+				shareA3: "La configuración de la ruta se almacena en <a href='%LINK1%' target='_blank'>este elemento de mapa web</a> y <a href='%LINK2%' target='_blank'>este elemento de la aplicación web</a>. Si has usado la importación de Flickr, Picasa, Facebook o YouTube, tus imágenes y vídeos seguirán almacenados allí y no se duplican en ArcGIS Online.",
+				shareWarning: "á_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Ó",
+				shareWarningWith1: "á_publicly_Ó",
+				shareWarningWith2: "á_publicly and with the Organization_Ó"
 			}
         }
     })

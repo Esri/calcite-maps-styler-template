@@ -1,11 +1,23 @@
 {
     "configurationSettings":[{
         "category":"General Settings",
-        "fields":[{
+
+        "fields":[
+        {
+            "type": "webmap",
+            "label": "Select a map"
+        }, 
+        {
             "type":"string",
-            "fieldName":"serviceAreaLayerName",
-            "label":"Lookup Layer Name",
-            "tooltip":"Polygon Layer used for service lookup"
+            "fieldName":"serviceAreaLayerNames",
+            "label":"Lookup Layers",
+            "tooltip":"Polygon Layers used for service lookup delimited by a vertical bar"
+        },
+        {
+            "type":"string",
+            "fieldName":"popupTitle", 
+            "label": "Popup Title",
+            "tooltip": "Popup title when service information is available"
         },
         {
             "type":"string",
@@ -20,7 +32,13 @@
             "tooltip":"Popup message when outside an area",
             "stringFieldOption": "richtext"
         },
-       
+       {
+           "label": "Zoom level for location",
+           "fieldName": "zoomLevel",
+           "type": "number",
+           "constraints": {"min": 0, "places": 0},
+           "tooltip": "Sets the map zoom level to this level after location is entered"
+       },
         {
             "type": "boolean",
             "fieldName": "storeLocation",
@@ -54,18 +72,21 @@
             "tooltip":"Value to set when the request location does not intersects a lookup feature",
             "stringFieldOption": "text"
         }
-
+        
         ]
     }],
     "values":{
-        "serviceAreaLayerName": "ServiceArea",
-        "serviceUnavailableTitle":"Service Unavailable",
-        "serviceUnavailableMessage":"Thank you for your interest in service!  The selected location is not within the service area. We apologize for the inconvenience. If you have any questions or comments, please contact us at 555-5555 or by email at email@email.com",
-        "storeLocation": true,
-        "serviceRequestLayerName": "Request Tracking",
-        "serviceRequestLayerAvailibiltyField": "REQSTATUS",
-        "serviceRequestLayerAvailibiltyFieldValueAvail":"Intersected",
-        "serviceRequestLayerAvailibiltyFieldValueNotAvail": "Not Intersected"
+         "serviceAreaLayerNames": "Service Area",
+         "popupTitle": "Service Information",
+         "serviceUnavailableTitle": "Outside Utility Service Area",
+         "serviceUnavailableMessage": "The utility does not provide service to the selected location",
+         "zoomLevel": 16,
+         "storeLocation": false,
+         "serviceRequestLayerName": "Request Tracking",
+         "serviceRequestLayerAvailibiltyField": "REQSTATUS",
+         "serviceRequestLayerAvailibiltyFieldValueAvail": "Intersected",
+         "serviceRequestLayerAvailibiltyFieldValueNotAvail": "Not Intersected"
+        
 
     }
 }

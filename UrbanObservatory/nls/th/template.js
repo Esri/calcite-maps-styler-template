@@ -1,39 +1,39 @@
 ﻿define(({
   mainPage: {
-    "UrbanObservatory": "ก้_Urban Observatory_ษฺ",
-    "Themes": "ก้_Themes_ษฺ",
-    "Cities": "ก้_Cities_ษฺ",
+    "UrbanObservatory": "Urban Observatory",
+    "Themes": "ธีม",
+    "Cities": "เมือง",
     "Nouns": {
-      "Work": "ก้_Work_ษฺ",
-      "Movement": "ก้_Movement_ษฺ",
-      "People": "ก้_People_ษฺ",
-      "Public": "ก้_Public_ษฺ",
-      "Systems": "ก้_Systems_ษฺ"
+      "Work": "งาน",
+      "Movement": "การเคลื่อนที่",
+      "People": "ประชากร",
+      "Public": "สาธารณะ",
+      "Systems": "ระบบ"
     },
     "splashDialog": {
-      "welcome": "ก้_The Urban Observatory city comparison app enables you to explore the living fabric of great cities by browsing a variety of cities and themes._ษฺ",
-      "changTheme": "ก้_To change <b>Themes</b>, click on a theme name in the Themes list._ษฺ",
-      "changeCity": "ก้_To change <b>Cities</b>, click on the city name in the Cities list, or drag-and-drop it over a map._ษฺ",
-      "moreInfo": "ก้_More Information on the Urban Observatory_ษฺ",
-      "buttonText": "ก้_Start Comparing_ษฺ"
+      "welcome": "โปรแกรมประยุกต์ Urban Observatory สำหรับเปรียบเทียบเมืองช่วยให้คุณสำรวจลักษณะด้านต่างๆของเมืองขนาดใหญ่ๆได้โดยเลือกเมืองและตีม",
+      "changTheme": "เปลี่ยน <b>ธีม</b>, โดยคลิกที่ชื่อตีมที่อยู่ในรายชื่อ",
+      "changeCity": "เปลี่ยน <b>เมือง</b>,คลิกที่ชื่อเมืองในรายชื่อ หรือลากมาวางบนแผนที่",
+      "moreInfo": "ข้อมูลเพิ่มเติมเกี่ยวกับ Urban Observatory",
+      "buttonText": "แสดงการเปรียบเทียบ"
     },
-    "socialMediaMessage":"ก้_Compare 16 global cities using maps as a common language. Experience #UrbanObservatory_ษฺ",
-    "viewMapOnline": "ก้_View this map in ArcGIS.com_ษฺ",
-    "selectMapPanel": "ก้_SELECT MAP PANEL_ษฺ",
-    "noDescription": "ก้_[ NO DESCRIPTION ]_ษฺ",
-    "themeNotAvailable": "ก้_Map not available._ษฺ",
-    "legend": "ก้_Legend_ษฺ"
+    "socialMediaMessage":"เปรียบเทียบเมืองใหญ่ๆของโลกทั้ง 16 เมืองผ่านภาษาเพียงภาษาเดียว ลอง #UrbanObservatory",
+    "viewMapOnline": "ดูแผนที่นี้บน ArcGIS.com",
+    "selectMapPanel": "เลือก",
+    "noDescription": "[ไม่มีคำอธิบาย]",
+    "themeNotAvailable": "ไม่พบแผนที่นี้",
+    "legend": "คำอธิบายสัญลักษณ์"
   },
   errors: {
-    "webmap": "ก้_WebMap_ษฺ",
-    "protocolMismatchError": "ก้_Protocol mismatch error...  Proceed anyway?_ษฺ",
-    "problematicWebmap": "ก้_We're currently experiencing technical issues with this map:_ษฺ ",
+    "webmap": "เว็บแมพ",
+    "protocolMismatchError": "ข้อผิดพลาดจากโปรโตคอล...  ดำเนินการต่อ?",
+    "problematicWebmap": "แผนที่นี้พบปัญหาทางเทคนิค: ",
     /* DO NOT REPLACE TEXT INSIDE CURLY BRACKETS */
-    "invalidDefaultThemeTemplate": "ก้_Default theme '{theme}' is not available in the '{groupName}' group._ษฺ",
-    "mapHasNoLODs": "ก้_This map has no LODs defined:_ษฺ ",
-    "errorCreatingMap": "ก้_Error creating map:_ษฺ ",
-    "cantFindWebmap": "ก้_Can't find webmap:_ษฺ ",
-    "alreadyLoadingCity": "ก้_Already loading city:_ษฺ "
+    "invalidDefaultThemeTemplate": "ธีมค่าตั้งต้น {theme} ไม่สามารถใช้ได้ใน {groupName} กลุ่ม.",
+    "mapHasNoLODs": "แผนที่นี้ไม่มี LODs กำหนด: ",
+    "errorCreatingMap": "พบปัญหาในการสร้างแผนที่: ",
+    "cantFindWebmap": "ไม่พบเว็บแมพ: ",
+    "alreadyLoadingCity": "กำลังโหลดเมือง: "
   }
 
 }));

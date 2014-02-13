@@ -1,15 +1,16 @@
-define({
-    root: ({
+﻿define(
+     ({
         map: {
-            error: "Unable to create map"
+            error: "بيت_Unable to create map_لاحقة"
         },
         general: {
-            legend: "Legend",
-            aoi: "Area",
-            summarize: "Entire Area",
-            share: "Share",
-            about: "About",
-            noSearchResult: "No result found"
+            legend: "بيت_Legend_لاحقة",
+            aoi: "بيت_Area_لاحقة",
+            summarize: "بيت_Entire Area_لاحقة",
+            share: "بيت_Share_لاحقة",
+            about: "بيت_About_لاحقة",
+            noSearchResult: "بيت_No result found_لاحقة"
         }
     })
-});
+
+);

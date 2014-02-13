@@ -56,6 +56,8 @@ define([
                 }
                 // get layer infos
                 this._getLayerInfos();
+                // out fields
+                this._getOutFields();
             },
             startupArea: function(){
                 // stats block
@@ -198,6 +200,9 @@ define([
                 var q = new Query();
                 q.returnGeometry = false;
                 q.where = '1=1';
+                if(this._aoiOutFields){
+                    q.outFields = this._aoiOutFields;
+                }
                 // if multiple features. (determined by renderer)
                 if (this._multiple && this._attributeField) {
                     // order by attribute field
@@ -237,6 +242,9 @@ define([
                     } else {
                         q.where = this._attributeField + ' = ' + value;
                     }
+                }
+                if(this._aoiOutFields){
+                    q.outFields = this._aoiOutFields;
                 }
                 var ct = node;
                 // query features
@@ -364,6 +372,29 @@ define([
                             this._aoiInfos = infos;
                         }
                     }
+                }
+            },
+            _getOutFields: function(){
+                var outFields = [];
+                // each parent
+                for(var i = 0; i < this.config.summaryAttributes.length; i++){
+                    var parent = this.config.summaryAttributes[i];
+                    var children = parent.children;
+                    // add parent field
+                    outFields.push(parent.attribute);
+                    // parent children
+                    if(children && children.length){
+                        // each child
+                        for(var j = 0; j < children.length; j++){
+                            var child = children[j];
+                            // add child field
+                            outFields.push(child.attribute);
+                        }
+                    }
+                }
+                // if outFields set
+                if(outFields && outFields.length){
+                    this._aoiOutFields = outFields;
                 }
             },
             // clear selected renderer & loading status

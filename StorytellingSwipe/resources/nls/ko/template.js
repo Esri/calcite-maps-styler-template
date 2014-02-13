@@ -7,6 +7,8 @@
 				step3: "초기화하는 중",
 				fail: "죄송합니다. 스와이프를 로드하지 못했습니다.",
 				loadBuilder: "빌더 모드로 전환하는 중",
+				redirectSignIn: "한_REDIRECTING TO SIGN-IN PAGE_빠",
+				redirectSignIn2: "한_(you will be redirected here after sign-in)_빠",
 				failButton: "재시도"
 			},
 			errors: {
@@ -42,6 +44,8 @@
 			builder: {
 				panelHeader: "응용프로그램 구성",
 				buttonSave: "저장",
+				buttonHelp: "한_Help_빠",
+				buttonShare: "한_Share_빠",
 				buttonDiscard: "취소",
 				buttonSettings: "설정",
 				buttonView: "보기 모드",
@@ -61,6 +65,8 @@
 				savingApplication: "응용프로그램을 저장하는 중",
 				saveSuccess: "응용프로그램이 저장되었습니다.",
 				saveError: "저장하지 못했습니다. 다시 시도하세요.",
+				saveError2: "한_Save failed due to an invalid html tag in a name or description_빠",
+				saveError3: "한_The title can't be empty_빠",
 				signIn: "응용프로그램을 저장하려면",
 				signInTwo: "로그인 계정으로 로그인하세요."
 			},
@@ -152,7 +158,9 @@
 				settingsDataModel2Explain: "다른 웹 맵으로 스와이프합니다.",
 				settingsDataModel2SpyGlassExplain: "다른 웹 맵을 표시합니다.",
 				settingsDataModel2HelpTitle: "웹 맵 ID를 찾는 방법",
-				settingsDataModel2HelpContent: "웹 맵의 URL에 '=' 부호 뒤의 숫자 복사 및 붙여넣기"
+				settingsDataModel2HelpContent: "웹 맵의 URL에 '=' 부호 뒤의 숫자 복사 및 붙여넣기",
+				switchMaps: "한_Switch maps_빠",
+				browseWebMaps: "한_Browse web maps_빠"
 			},
 			settingsLegend: {
 				settingsTabLegend: "앱 레이아웃",
@@ -183,7 +191,7 @@
 				settingsSwipePopupColor: "머리글 색상"
 			},
 			initPopup: {
-				initHeader: "스와이프 빌더 시작",
+				initHeader: "한_Welcome to the Swipe/Spyglass Builder_빠",
 				modalNext: "다음",
 				modalPrev: "이전",
 				modalApply: "앱 열기"
@@ -194,6 +202,73 @@
 				discard: "책갈피 취소",
 				saveExtent: "책갈피 범위 설정",
 				discardDisabled: "책갈피를 제거할 수 없습니다. 스와이프 계열이 설정에서 사용하지 않도록 설정되어 있을 수 있습니다."
+			},
+			helpPopup: {
+				title: "한_Help_빠",
+				close: "한_Close_빠",
+				tab1: {
+					div1: "한_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._빠",
+					div2: "한_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._빠",
+					div3: "한_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._빠"
+				}
+			},
+			share: {
+				firstSaveTitle: "한_Application successfully saved_빠",
+				firstSaveHeader: "한_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._빠",
+				firstSaveA1: "한_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_빠",
+				firstSaveA1bis: "한_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._빠",
+				firstSaveQ2: "한_Is my Application shared?_빠",
+				firstSaveA2: "한_Currently your Application is not shared. To share it, use the SHARE button._빠",
+				shareTitle: "한_Share your Application_빠",
+				sharePrivateHeader: "한_Your Application is not shared, would you like to share it?_빠",
+				sharePrivateBtn1: "한_Share publicly_빠",
+				sharePrivateBtn2: "한_Share with my Organization_빠",
+				sharePrivateProgress: "한_Sharing in progress..._빠",
+				sharePrivateErr: "한_Sharing failed, try again or_빠",
+				sharePrivateOk: "한_Sharing updated successfully, loading..._빠",
+				shareStatus1: "한_Application is not saved_빠",
+				shareStatus2: "한_Application is shared publicly_빠",
+				shareStatus3: "한_Application is shared within the organization_빠",
+				shareStatus4: "한_Application is not shared_빠",
+				sharePreviewAsUser: "한_Preview_빠",
+				shareHeader1: "한_Your Application is <strong>publicly accessible</strong>._빠",
+				shareHeader2: "한_Your Application is accessible by your organization members (login is required)._빠",
+				shareLinkHeader: "한_Share the Application with your audience_빠",
+				shareLinkOpen: "한_OPEN_빠",
+				learnMore: "한_Learn more_빠",
+				shareQ1Opt1: "한_How do I keep the Application private?_빠",
+				shareQ1Opt2: "한_How do I keep the Application private or share it publicly?_빠",
+				shareA1: "한_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._빠",
+				shareA1bis: "한_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._빠",
+				shareQ2: "한_How do I edit the Application later?_빠",
+				shareQ2bis: "한_How do I get back to the authoring interface?_빠",
+				shareA2div1: "한_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._빠",
+				shareA2div2: "한_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_빠",				
+				shareQ3: "한_Where is the data stored?_빠",
+				shareA3: "한_The Application configuration is stored in this web application item</a>._빠",
+				shareWarning: "한_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._빠",
+ 				shareWarningWith1: "한_publicly_빠",
+ 				shareWarningWith2: "한_publicly and with the Organization_빠"
+			},
+			directCreation: {
+				header: "한_Welcome to the Swipe/Spyglass Builder_빠",
+				mapPickHeader: "한_To get started, please input a valid web map id, or use the search button to browse web maps._빠",
+				launchBuilder: "한_Launch Builder_빠"
+			}
+		},
+		configure: {
+			mapdlg:{
+				items:{
+					organizationLabel: "한_My Organization_빠",
+					onlineLabel: "한_ArcGIS Online_빠",
+					contentLabel: "한_My Content_빠",
+					favoritesLabel: "한_My Favorites_빠"
+				},
+				title: "한_Select Web Map_빠",
+				searchTitle: "한_Search_빠",
+				ok: "한_Ok_빠",
+				cancel: "한_Cancel_빠",
+				placeholder: "한_Enter search term_빠"
 			}
 		}
     })

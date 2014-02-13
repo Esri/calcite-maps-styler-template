@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
+		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
+		
+		<!-- 
+			To correctly reference your Tpl in search engine:
+			 - create and fill out extensively an ArcGIS.com item that link to your final application
+			 - edit the following four tags as well as the upper title tag on line 4
+		-->
+		<meta name="description" content="This story map was created with the Esri Tpl application in ArcGIS Online.">
+		
+		<!-- Facebook sharing -->
+		<meta property="og:title" content="Tpl"/>
+		<meta property="og:description" content="This story map was created with the Esri Tpl application in ArcGIS Online."/>
+		<meta property="og:image" content="resources/common/icons/esri-globe.png"/>
+
+		<!-- 
+			This template is released under the Apache License V2.0 by Esri http://www.esri.com/
+			Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
+			https://github.com/Esri/TODO
+		-->
+
+		<script type="text/javascript">
+			//----------------------------------------------------------------
+			//     Template configuration (ignored on Portal and development)
+			//----------------------------------------------------------------
+			var configOptions = {
+				// Enter either a web map ID or a web application ID
+				// - Using an application ID created through the interactive builder in ArcGIS.com allow to reuse 
+				//   the settings like the header configuration without having to edit any configuration here
+				// - Web map and application can be dynamically specified through url parameters (webmap and appid) 
+				//   if the authorizedOwners property is specified (see below)
+				// - If an application id is specified, the webmap configuration isn't used
+				webmap: "",
+				appid: "",
+				// Optional list of authorized application or web map owners
+				// Has to be specified when using appid or webmap url parameters (e.g. ["user1"], ["user1", "user2"])
+				authorizedOwners: [""],
+				// The application header title, if no title is specified, the webmap's title is used
+				title: "",
+				// The application header subtitle, if not specified the ArcGIS.com web map's summary is used
+				subtitle: ""
+			};
+			// Optionally sharing and proxy URLs can be configured in app/tpl-config.js. This is only required  
+			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the template isn't deployed as /home/Tpl/ or /apps/Tpl/. 
+			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/commonConfig.js. This is only required 
+			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed 
+			//  on Portal for ArcGIS as /home/Tpl/ or /apps/Tpl/, that configuration is available in ../commonConfig.js
+		</script>
+
+		<!--
+		
+			Edit below at your own risk
+		
+		-->
+
+		<script type="text/javascript">
+			var app = {
+				version: 0.2,
+				isProduction: true,
+				isInBuilder: false,
+				indexCfg: configOptions
+			};
+			
+			function loadJS(url, isExternal)
+			{
+				if( isExternal )
+					url = document.location.protocol == 'file:' ? 'http:' + url : url;
+				else
+					url += '?v=' + app.version + (!app.isProduction ? '&_=' + new Date().getTime() : '');
+					
+				document.write("<script language='javascript' type='text/javascript' src='" + url + "'><\/script>");
+			}
+
+			function loadCSS(url, isExternal)
+			{
+				if( isExternal ) 
+					url = document.location.protocol == 'file:' ? 'http:' + url : url;
+				else
+					url += '?v=' + app.version + (!app.isProduction ? '&_=' + new Date().getTime() : '');
+					
+				var el = document.createElement("link");
+				el.setAttribute("rel", "stylesheet");
+				el.setAttribute("type", "text/css");
+				el.setAttribute("href", url);
+				document.getElementsByTagName("head")[0].appendChild(el);
+			}
+			
+			function getUrlVar(name)
+			{
+			    var vars = [], hash;
+			   	if( window.location.href.indexOf('?') == -1 ) return null;
+		
+			    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			    for(var i = 0; i < hashes.length; i++){
+			        hash = hashes[i].split('=');
+					hash[0] = hash[0].split('#')[0];
+			        vars.push(hash[0]);
+			        vars[hash[0]] = (hash[1] == undefined) ? true : hash[1];
+			    }
+			    return vars[name];
+			}
+
+			app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') 
+								|| getUrlVar('fromscratch') || getUrlVar('fromGallery');
+
+			loadCSS("//jsdev.arcgis.com/3.9/js/esri/css/esri.css", true);
+			// TODO
+			loadCSS("//jsdev.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css", true);			
+
+			if( app.isProduction ) {
+				if ( app.isInBuilder )
+					loadCSS("app/builder-min.css");
+				else
+					loadCSS("app/viewer-min.css");
+			}
+
+			var path1 = location.pathname.replace(/\/[^/]+$/, '');
+			var path2 = location.pathname.replace(/\/[^/]+$/, '/');
+			var dojoConfig = {
+				parseOnLoad: true,
+				isDebug: false,
+				useDeferredInstrumentation: true,
+				cacheBust: ! app.isProduction,
+				packages: [
+					{
+						name: 'storymaps',
+						location: path2 + 'app/storymaps'
+					},
+					{
+						name: "templateConfig",
+						// If the template is deployed on a Portal (apps path contains /apps/Tpl/ or /home/Tpl/)
+						// commonConfig.js is loaded from the parent folder, otherwise it's loaded from the app folder
+						location: /(\/apps\/|\/home\/)(Tpl\/)/.test(document.location.pathname) ? path1.substr(0,path1.lastIndexOf('/Tpl')) : path1.replace(/\/+$/, '') + '/app'
+					},
+					{
+						name: 'lib-app',
+						location: path2 + 'lib-app'
+					},
+					{
+						name: 'lib-build',
+						location: path2 + 'lib-build'
+					},
+					{
+						name: 'commonResources',
+						location: path2 + (app.isProduction ? 'resources/common' : 'app/storymaps/common/_resources/')
+					}
+				],
+				aliases: [
+					//['i18n', 'dojo/i18n'],
+					['text', 'lib-build/text'],
+					['underscore', 'lib-build/lodash']
+				]
+			};
+		</script>
+		<!--[if IE 7]>
+			<link rel="stylesheet" href="resources/common/font/storymaps-icons-ie7.css">
+		<![endif]-->
+	</head>
+	<body class="claro">
+		<style>
+			/* CUSTOM CSS RULES */
+		</style>
+		<div id="header" class="mainViewAboveMap">
+			<!-- Mobile header -->
+			<div id="headerMobile" class="firstDisplay">
+				<div class="banner">
+					<h1 class="title"></h1>
+					<h2 class="subtitle"></h2>
+				</div>
+				<div class="grip">...</div>
+				<h3 class="navBar">
+					<span data-viewid="list" class="leftLink"></span>
+					<span data-viewid="map" class="centerLink current"></span>
+					<span data-viewid="detail" class="rightLink"></span>
+				</h3>
+			</div>
+			<!-- Desktop header -->
+			<div id="headerDesktop">
+				<div class="textArea">
+					<h1 class="title"></h1>
+					<h2 class="subtitle"></h2>
+				</div>
+				<div class="rightArea">
+					<div class="social">
+						<span class="msLink">
+							<a href="" target="_blank"></a>
+						</span>
+						<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
+						<i class="icon-twitter-1 shareIcon share_twitter"></i>
+						<i class="icon-link shareIcon share_bitly"></i>
+					</div>
+					<div class="logo">
+						<a target="_blank">
+							<img alt="Esri - Home" class="headerLogoImg"/>
+						</a>
+					</div>
+				</div>
+				<button type="button" class="switchBuilder btn"></button>
+				<!-- Builder top panel is injected here -->
+				<div id="builderPanel" class="hide"></div>
+			</div>
+		</div>
+
+		<div id="tabNavigation" class="mainViewAboveMap">
+			<ul class="nav nav-tabs tabArea"></ul>
+		</div>
+
+        <!-- Content -->
+        <div id="contentPanel" class="mobileView">
+            <div id="mapPanel">
+                <!-- map -->
+                <!--<div id="mainMap">
+                    <div id="hoverInfo"></div>
+                </div>-->
+                <div id="tab-content" class="tab-content">
+                    <div id="mapTabContent0" class="tab-pane active">
+                        <div id="mainMap0" class="mapView"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="sidePanel"></div>
+        </div>
+        <!-- /Content -->
+
+		<!-- Mobile views -->
+		<div id="swipeView" class="mobileView">
+			Hello from swipeView
+			<div id="swipeViewCarousel"></div>
+		</div>
+		<div id="listView" class="mobileView">
+			<div class="carouselWrapper">
+				<div class="carouselScroller"></div>
+			</div>
+		</div>
+
+        <!-- Add button -->
+		<div id="addBtn" style="position: absolute; top: 75px; left: 25px; border: 1px solid black; display: none;">
+			<button type="button" class="btn builder-add">ADD</button>
+		</div>
+        <!-- Organize button -->
+		<div id="organizeBtn" style="position: absolute; top: 75px; left: 90px; border: 1px solid black; display: none;">
+            <button type="button" class="btn builder-organize"><span class="glyphicon glyphicon-th-list"></span> ORGANIZE</button>
+        </div>
+
+		<!-- Loading -->
+		<div id="loadingOverlay" style="position: absolute; top: 0; left: 0;  z-index: 1100; width: 100%; height: 100%; overflow: hidden; background-color: #c2c2c2;"></div>
+		<div id="loadingIndicator"></div>
+		<div id="loadingMessage"></div>
+		
+		<!-- Builder views are injected here -->
+        <div class="modal fade" id="addPopup" role="dialog" data-backdrop="static" tabindex="-1" aria-hidden="true"></div>
+		<div class="modal fade" id="organizePopup" role="dialog" data-backdrop="static" tabindex="-1" aria-hidden="true"></div>
+        <div class="modal fade" id="settingsPopup" role="dialog" data-backdrop="static" tabindex="-1" aria-hidden="true"></div>
+		<div class="modal fade" id="initPopup" role="dialog" data-backdrop="static"></div>
+		<div class="modal fade" id="sharePopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
+		
+		<!-- Fatal error box -->
+		<div id="fatalError">
+			<table border="0">
+				<tr>
+					<td width="70px" align="center" id="fatalError-icon"></td>
+					<td>
+						<b class="error-title"></b>
+						<p class="error-msg"></p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<script type="text/javascript">
+			loadJS('//jsdev.arcgis.com/3.9/init.js', true);
+			loadJS('app/config.js');
+			
+			if( app.isProduction ) {
+				_ = {};
+
+				if ( app.isInBuilder )
+					loadJS('app/builder-min.js');
+				else
+					loadJS('app/viewer-min.js');
+			}
+		</script>
+		
+		<!-- Enable Google Analytics on storymaps.esri.com -->
+		<script type="text/javascript">
+			if (window.location.href.toLowerCase().indexOf("storymaps.esri.com") >= 0) {
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-26529417-1']);
+				_gaq.push(['_trackPageview']);
+
+				(function() {
+					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				})();
+			}
+		</script>
+		
+		<script type="text/javascript">
+			var i18n = null;
+			
+			if (document.location.protocol == "file:") {
+				$(document).ready(function() {
+					$("#fatalError .error-title").html("Application loading failed");
+					$("#fatalError .error-msg").html("The application has to be accessed through a web server. Consult user guide for detail.");
+					$("#fatalError").show();
+				});
+			}
+			else {
+				define.amd.jQuery = true;
+
+				require([
+						"dojo/i18n!./resources/tpl/viewer/nls/template.js?v=" + app.version, 
+						"storymaps/common/ui/loadingIndicator/LoadingIndicator", 
+						"esri/urlUtils", 
+						"templateConfig/commonConfig.js?v=" + app.version,
+						"dojo/ready"
+					], function(
+						i18nViewer, 
+						LoadingIndicator, 
+						urlUtils
+					){
+						i18n = i18nViewer;
+						app.ui = {
+							loadingIndicator: new LoadingIndicator("loadingIndicator", "loadingMessage")
+						};
+				 		app.ui.loadingIndicator.init();
+						app.ui.loadingIndicator.setMessage(i18n.viewer.loading.step1);
+						
+					 	require([
+								"storymaps/common/Core", 
+								"storymaps/tpl/core/MainView"
+							], function(
+								Core, 
+								MainView
+							){
+								if (app.isInBuilder) {
+									require([
+											"storymaps/common/builder/Builder", 
+											"storymaps/tpl/builder/BuilderView", 
+											"dojo/i18n!./resources/tpl/builder/nls/template.js?v=" + app.version,
+											"dojo/_base/lang"
+										], function(
+											Builder, 
+											BuilderView, 
+											i18nBuilder, 
+											lang
+										){
+											lang.mixin(i18n, i18nBuilder);
+											var builderView = new BuilderView(Core);
+											var mainView = new MainView(builderView);
+											
+											Core.init(mainView, Builder);
+											Builder.init(Core, builderView);
+										}
+									);
+								}
+								else {
+									Core.init(new MainView());
+								}
+					 		}
+						);
+			 		}
+				);
+			 }
+		</script>
+	</body>
+</html>

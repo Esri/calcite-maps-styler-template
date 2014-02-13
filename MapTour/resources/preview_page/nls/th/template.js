@@ -1,27 +1,27 @@
 ﻿define(
 ({
 		firstPane: {
-			head: "ก้_<span class='highlightText'>The Map Tour Template</span> enables all ArcGIS Online account levels including the free Public account to create and edit a place-based narrative combining images, text, and map from:_ษฺ",
-			list0: "ก้_Pictures stored in major online photo-sharing services like Flickr, Picasa and Facebook, or on any website or web server_ษฺ",
-			list1: "ก้_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organization members)_ษฺ"
+			head: "<span class='highlightText'>โครงร่างแผนที่ท่องเที่ยว</span> ให้บัญชีของ ArcGIS Online ทุกระดับรวมถึงบัญชีผู้ใช้ฟรีสามารถสร้างแผนที่ที่รวมรูปภาพซึ่งมีสถานที่ที่ถ่ายและข้อความเข้าด้วยกันจาก:",
+			list0: "รูปภาพที่อยู่บนเว็บไซต์แชร์ภาพทั่วไป เช่น Flickr, Picasa และ Facebook หรือเว็บไซต์หรือเว็บเซิร์ฟเวอร์อื่นๆ",
+			list1: "รูปภาพที่ยังไม่ได้อยู่บนออนไลน์ซึ่งจะถูกเก็บเป็นฟีทเจอร์เซอร์วิส (เฉพาะสมาชิกขององค์กรที่ใช้ ArcGIS for Organization เท่านั้น)"
 		},
 		secondPane: {
-			head: "ก้_<span class='highlightText'>The Template</span> incorporates easy-to-use editing tools that include:_ษฺ",
-			list0: "ก้_Ability to quickly change titles and captions_ษฺ", 
-			list1: "ก้_Functions for adding, deleting, hiding, and changing the order of story points_ษฺ",
-			list2: "ก้_Ability to drag-and-drop icons to change story point locations_ษฺ"
+			head: "<span class='highlightText'>The Template</span> มีเครื่องมือแก้ไขที่ใช้งานง่ายรวมถึง:",
+			list0: "ความสามารถในการเปลี่ยนหัวข้อและคำอธิบายได้รวดเร็ว", 
+			list1: "ฟังก์ชันสำหรับการเพิ่ม, ลบ, ซ่อน และเปลี่ยนสำดับของเรื่องราว",
+			list2: "ความสามารถในการลากและวางไอคอนเพื่อเปลี่ยนตำแหน่งของเรื่อง"
 		},
 		thirdPane: {
-			head: "ก้_To use the hosted map tour template, you start by making a map in the ArcGIS Online web map viewer (it doesn't need to contain any layers), saving it, and then clicking the Share button. In the Share dialog, choose the 'Make a Web Application' option and then choose the Map Tour template from the gallery of templates that appears, and continue with the steps that you see. When you configure the application, the interactive editor will open automatically.<br /><br />For users wishing to enhance the UI of their map tours or add new functionality, you can:_ษฺ",
-			list0: "ก้_Download the template from the <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps template page</a> and follow the included documentation_ษฺ", 
-			list1: "ก้_Host the template on your own web server, or a third-party server_ษฺ"
+			head: "ในการใช้โครงร่างแผนที่ท่องเที่ยวสามารถเริ่มต้นโดยการสร้างแผนที่ใน ArcGIS Online (ไม่จำเป็นจะต้องมีชั้นข้อมูลใดๆในแผนที่) บันทึกแผนที่นั้นและคลิกที่ปุ่มแชร์ ในหน้าต่างแชร์ เลือก สร้างเป็นเว็บแอพพลิเคชัน และเลือกโครงร่างแผนที่ท่องเที่ยวจากแกลลอรี่โครงร่าง จากนั้นทำตามขั้นตอน เมื่อคุณปรับแต่งแอพพลิเคชันของคุณ เครื่องมือแก้ไขจะปรากฎอัตโนมัติ  .<br /><br />หากต้องการเพิ่มความสามารถให้ UI ของแผนที่ท่องเที่ยวหรือต้องการเพิ่มเติมฟังก์ชั่นอื่นๆ คุณสามารถ:",
+			list0: "ดาวน์โหลดโครงร่างจาก <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps template page</a> และทำตามเอกสารที่แนบมาด้วย", 
+			list1: "ฝากโครงร่างไว้บนเว็บเซิร์ฟเวอร์ของคุณเองหรือเซิร์ฟเวอร์อื่นๆ"
 		},
 		fourthPane: {
-			head: "ก้_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esri’s Story Maps site</a> to learn more about creating and sharing stories. Resources include:_ษฺ",
-			list0: "ก้_Story maps published by Esri’s story maps teams_ษฺ",
-			list1: "ก้_A selection of downloadable templates_ษฺ",
-			list2: "ก้_Best practices guides_ษฺ", 
-			list3: "ก้_A gallery of story maps featuring a growing community of storytellers_ษฺ"
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>เยี่ยมชมเว็บไซต์แผนที่แสดงเรื่องราวของ Esri </a> เพื่อเรียนรู้เพิ่มเติมเกี่ยวกับการสร้างและแชร์เรื่องราว แหล่งข้อมูลรวมถึง:",
+			list0: "สตอรี่แมพโดยทีมสตอรี่แมพของ Esri",
+			list1: "โครงร่างที่น่าสนใจสำหรับดาวน์โหลด",
+			list2: "คำแนะนำการฝึกฝน", 
+			list3: "สตอรี่แมพแกลลอรี่ซึ่งเป็นเหมือนชุมชนที่มีผู้ถ่ายทอดเรื่องราวมากมาย"
 		}
     })
 );

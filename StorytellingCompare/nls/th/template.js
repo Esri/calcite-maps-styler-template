@@ -5,24 +5,24 @@
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors:{
-      createMap: "ก้_Unable to create map:_ษฺ",
-      general:"ก้_Error_ษฺ",
-	  timeout:"ก้_Please choose another tab to begin_ษฺ"
+      createMap: "ไม่สามารถสร้างแผนที่ได้:",
+      general:"ข้อผิดพลาด",
+	  timeout:"กรุณาเลือกแถบอื่นเพื่อเริ่มต้น"
     },
     loading:{
-    	message: "ก้_Loading maps_ษฺ"
+    	message: "กำลังดาวน์โหลดแผนที่"
     },
 	sync:{
-		head: "ก้_SYNCHRONIZE MAPS_ษฺ",
-		scale: "ก้_Scale_ษฺ",
-		location: "ก้_Location_ษฺ"
+		head: "ซิงค์แผนที่",
+		scale: "มาตราส่วนแผนที่",
+		location: "ตำแหน่ง"
 	},
 	toggles:{
-		legend: "ก้_Legend_ษฺ",
-		description: "ก้_Description_ษฺ"
+		legend: "คำอธิบายสัญลักษณ์",
+		description: "คำอธิบาย"
 	},
 	sidePanel:{
-        legendHeader: "ก้_LEGEND_ษฺ"
+        legendHeader: "คำอธิบายสัญลักษณ์"
     }
   }
 }

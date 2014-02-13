@@ -4,8 +4,8 @@
 		<title>Summary Viewer</title>
 		<meta charset="utf-8">
 		<!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
-		<link rel="stylesheet" href="//jsdev.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
-		<link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.9/js/esri/css/esri.css">
+		<link rel="stylesheet" href="//js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/esri/css/esri.css">
 		<!--Load any application specific styles-->
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/counter.css">
@@ -20,12 +20,14 @@
 		<!-- Panel Title -->
 		<div id="bgTitle" class="panelTitle bg rounded shadow"></div>
 		<div class="panelTitle">
-			<div id="panelLogo" class="panel"><img id="logo" src="images/logo.png" style="height:100%" />
+			<div id="panelLogo"><img id="logo" src="images/logo.png" style="height:100%" />
 			</div>
-			<div id="panelMain"  class="panel">
+			<div id="panelMain">
 			</div>
-			<select id="selFilter" style="display: none">
-			</select>
+			<div id="panelFilter">
+				<select id="selFilter">
+				</select>
+			</div>
 		</div>
 
 		<!-- Panel Bottom -->
@@ -73,8 +75,8 @@
 		</div>
 		
 		<!-- Panel Basemaps -->
-		<div id="panelBasemaps" class="bg rounded shadow" >
-			<div id="basemapTitle" onclick="toggleBasemaps()">Maps</div>
+		<div id="panelBasemaps" class="panelBasemaps bg rounded shadow" >
+			<div id="basemapTitle"><img src="images/basemaps.png" title="Switch Base Map"/></div>
 			<div id="basemapContent">
 				<div id="basemapGallery" ></div>
 			</div>
@@ -98,7 +100,7 @@
             }]
             };
 		</script>
-		<script type="text/javascript" src="//jsdev.arcgis.com/3.9/"></script>
+		<script type="text/javascript" src="//js.arcgis.com/3.9/"></script>
 		<script type="text/javascript">
             require(["dojo/on", "application/main", "application/template", "dojo/domReady!"], function(on, Main, Template) {
                 //create the template. This will take care of all the logic required for template applications
@@ -121,4 +123,3 @@
 		</script>
 	</body>
 </html>
-

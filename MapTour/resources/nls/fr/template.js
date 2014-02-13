@@ -327,6 +327,7 @@
 				header: "Saisissez votre adresse de messagerie ou l'ID de votre compte Picasa ou Google+.",
 				userInputLbl: "Saisissez un e-mail ou un ID",
 				signInMsg2: "Compte introuvable",
+				signInMsg3: "æ_No public album_Â",
 				howToFind: "Comment trouver un ID de compte Picasa ou Google+",
 				howToFind2: "Copiez les chiffres compris entre la première et la deuxième barre oblique inverse \'/\' d\'une page Picasa ou G+"
 			},
@@ -524,7 +525,10 @@
 				shareA2div1: "Enregistrez et réutilisez le lien suivant %LINK1% ou utilisez <a href='%LINK2%' target='_blank'>la page des éléments de l\'application</a>.",
 				shareA2div2: "En tant que propriétaire de l\'application, lorsque vous êtes connecté à ArcGIS.com, l\'application affiche un bouton permettant d\'ouvrir le générateur interactif :",				
 				shareQ3: "Où les données sont-elles stockées ?",
-				shareA3: "La configuration de la visite est enregistrée dans <a href='%LINK1%' target='_blank'>cet élément de carte Web</a> et <a href='%LINK2%' target='_blank'>cet élément d'application Web</a>. Si vous avez utilisé une importation Flickr, Picasa, Facebook ou YouTube, vos images et vidéos y restent stockées et ne sont pas dupliquées dans ArcGIS Online."
+				shareA3: "La configuration de la visite est enregistrée dans <a href='%LINK1%' target='_blank'>cet élément de carte Web</a> et <a href='%LINK2%' target='_blank'>cet élément d'application Web</a>. Si vous avez utilisé une importation Flickr, Picasa, Facebook ou YouTube, vos images et vidéos y restent stockées et ne sont pas dupliquées dans ArcGIS Online.",
+				shareWarning: "æ_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Â",
+				shareWarningWith1: "æ_publicly_Â",
+				shareWarningWith2: "æ_publicly and with the Organization_Â"
 			}
         }
     })

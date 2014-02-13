@@ -327,6 +327,7 @@
 				header: "Ievadiet epastu vai ID no jūsu Picasa vai Google+ konta.",
 				userInputLbl: "Ievadiet epastu vai ID",
 				signInMsg2: "Konts nav atrasts",
+				signInMsg3: "ķ_No public album_ū",
 				howToFind: "Kā atrast Picasa vai Google+ konta ID",
 				howToFind2: "Kopēt ciparus starp pirmo un otro \'/\' no jebkura Picasa vai G+ lapa"
 			},
@@ -524,7 +525,10 @@
 				shareA2div1: "Saglabājiet un izmantojiet atkal sekojošu saiti %LINK1% vai izmantojiet <a href='%LINK2%' target='_blank'>aplikācijas vienības lapu</a>.",
 				shareA2div2: "Kā aplikācijas īpašnieks, kad esat pierakstījies ArcGIS.com, aplikācija satur pogu, lai atvērtu to interaktīvajā veidotājā:",				
 				shareQ3: "Kur tiek glabāti dati?",
-				shareA3: "Tūres konfigurācija tiek glabāta <a href='%LINK1%' target='_blank'>šajā web kartes vienībā</a> un <a href='%LINK2%' target='_blank'>šajā web aplikācijas vienībā</a>. Ja esat izmantojis Flickr, Picasa, Facebook vai YouTube importu, jūsu attēli un video tiek glabāti turpat un netiek dublēti ArcGIS Online."
+				shareA3: "Tūres konfigurācija tiek glabāta <a href='%LINK1%' target='_blank'>šajā web kartes vienībā</a> un <a href='%LINK2%' target='_blank'>šajā web aplikācijas vienībā</a>. Ja esat izmantojis Flickr, Picasa, Facebook vai YouTube importu, jūsu attēli un video tiek glabāti turpat un netiek dublēti ArcGIS Online.",
+				shareWarning: "ķ_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ū",
+				shareWarningWith1: "ķ_publicly_ū",
+				shareWarningWith2: "ķ_publicly and with the Organization_ū"
 			}
         }
     })

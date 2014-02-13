@@ -5,45 +5,45 @@
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors:{
-      createMap: "ก้_Unable to create map_ษฺ",
-      bitly: 'ก้_bitly is used to shorten the url for sharing. View the readme file for details on creating and using a bitly key_ษฺ',
-      general: "ก้_Error_ษฺ"
+      createMap: "ไม่สามารถสร้างแผนที่ได้",
+      bitly: 'bitly ใช้เพื่อทำให้ URL สำหรับการแชร์สั้นลง อ่านไฟล์ Readme สำหรับรายละเอียดในการสร้างและใช้ bitly key',
+      general: "ข้อผิดพลาด"
     }
   },
   tools:{
     basemap: {
-    title: "ก้_Switch Basemap_ษฺ",
-    label: "ก้_Basemap_ษฺ"
+    title: "เปลี่ยนแผนที่ฐาน",
+    label: "แผนที่ฐาน"
     },
     print: {
     layouts:{
-      label1: 'ก้_Landscape (PDF)_ษฺ',
-      label2: 'ก้_Portrait (PDF)_ษฺ',
-      label3: 'ก้_Landscape (Image)_ษฺ',
-      label4: 'ก้_Portrait (Image)_ษฺ'
+      label1: 'แนวนอน (PDF)',
+      label2: 'แนวตั้ง (PDF)',
+      label3: 'แนวนอน (Image)',
+      label4: 'แนวตั้ง (Image)'
     },
-    title: "ก้_Print Map_ษฺ",
-    label: "ก้_Print_ษฺ"
+    title: "พิมพ์แผนที่",
+    label: "พิมพ์"
     },
     share: {
-    title: "ก้_Share Map_ษฺ",
-    label: "ก้_Share_ษฺ",
+    title: "แชร์แผนที่",
+    label: "แชร์",
     menu:{
       facebook:{
-        label: "ก้_Facebook_ษฺ"
+        label: "เฟสบุค"
        },
       twitter:{
-        label: "ก้_Twitter_ษฺ"
+        label: "ทวิตเตอร์"
       },
       email:{
-        label: "ก้_Email_ษฺ",
-        message: "ก้_Check out this map_ษฺ"
+        label: "อีเมล์",
+        message: "ดูแผนที่นี้"
       }    
     }
     },
     measure: {
-      title: "ก้_Measure_ษฺ",
-      label: "ก้_Measure_ษฺ"
+      title: "มาตรา",
+      label: "มาตรา"
     },
     time: {
       // doc about date and time patterns: http://dojotoolkit.org/reference-guide/dojo/date/locale/format.html
@@ -55,58 +55,53 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "ก้_yyyy G_ษฺ",
-      decadePattern: "ก้_yyyy_ษฺ", 
-      yearPattern: "ก้_MMMM yyyy_ษฺ",
-      weekPattern: "ก้_MMMM d, yyyy_ษฺ",
-      hourTimePattern: "ก้_h a_ษฺ",
-      // e.g. for German: "ก้_H:mm:ss:SSS_ษฺ"
+      datePattern: "ก้_MMMM d, yyyy_ษฺ",
+      yearPattern: "ก้_yyyy_ษฺ",
+      hourTimePattern: "ชั่วโมง",
+      minuteTimePattern: "ชั่วโมง:นาที",
+      secondTimePattern: "ชั่วโมง:นาที:วินาที",
       millisecondTimePattern:"h:m:ss.SSS a",
-      minuteTimePattern: "ก้_h:mm a_ษฺ",
-      // e.g. for German: "ก้_H:mm_ษฺ"
-      monthPattern: "ก้_MMMM d, y_ษฺ",
-      secondTimePattern: "ก้_h:m:s.SSS a_ษฺ",
-      title: "ก้_Display Time Slider_ษฺ",
-      label: "ก้_Time_ษฺ",
-      timeRange: "ก้_<b>Time Range:</b> ${start_time} to ${end_time}_ษฺ",
-      timeRangeSingle: "ก้_<b>Time Range:</b> ${time}_ษฺ"
+      title: "แสดงตัวเลื่อนเวลา",
+      label: "เวลา",
+      timeRange: "ก้_${start_time} to ${end_time}_ษฺ",
+      timeRangeSingle: "<b>ช่วงเวลา:</b> ${time}"
     },
     editor: {
-      title: "ก้_Display Editor_ษฺ",
-      label: "ก้_Editor_ษฺ"
+      title: "แสดงแถบเครื่องมือแก้ไข",
+      label: "เครื่องมือแก้ไข"
     },
     legend: {
-      title: "ก้_Display Legend_ษฺ",
-      label: "ก้_Legend_ษฺ"
+      title: "แสดงคำอธิบายสัญลักษณ์",
+      label: "คำอธิบายสัญลักษณ์"
     },
     details: {
-      title: "ก้_Display Map Details_ษฺ",
-      label: "ก้_Details_ษฺ"
+      title: "แสดงรายละเอียดของแผนที่",
+      label: "รายละเอียดของแผนที่"
     },
     bookmark:{
-      title: "ก้_Display Bookmarks_ษฺ",
-      label: "ก้_Bookmarks_ษฺ",
-      details: "ก้_Click a bookmark to navigate to the location_ษฺ"
+      title: "แสดงบุ๊คมาร์ค",
+      label: "บุ๊คมาร์ค",
+      details: "คลิกบุ๊คมาร์คเพื่อไปยังตำแหน่งที่บันทึกไว้"
     },
     layers: {
-      title: "ก้_Display layer list_ษฺ",
-      label: "ก้_Layers_ษฺ"
+      title: "แสดงรายชื่อชั้นข้อมูล",
+      label: "รายชื่อชั้นข้อมูล"
     },
     search: {
-      title: "ก้_Find address or place_ษฺ",
-      popupTitle: "ก้_Location_ษฺ",
-      currentLocation: "ก้_Current location_ษฺ",
-      notWhatYouWanted: "ก้_Not what you wanted?_ษฺ" ,
-      selectAnother: "ก้_Select another location_ษฺ",
+      title: "ค้นหาที่อยู่หรือสถานที่",
+      popupTitle: "ตำแหน่ง",
+      currentLocation: "ตำแหน่งปัจจุบัน",
+      notWhatYouWanted: "ไม่ใช่สิ่งที่ต้องการ?" ,
+      selectAnother: "เลือกตำแหน่งใหม่",
       errors:{
-       missingLocation: "ก้_Location not found_ษฺ"
+       missingLocation: "ไม่พบตำแหน่งที่ต้องการ"
       }
     }
   },
   panel:{
     close:{
-      title: "ก้_Close Panel_ษฺ",
-      label: "ก้_Close_ษฺ"
+      title: "ปิดแถบเครื่องมือ",
+      label: "ปิด"
     }
   }
 })

@@ -327,6 +327,7 @@
 				header: "Įveskite Picasa ar Google+ paskyros elektroninį paštą arba ID.",
 				userInputLbl: "Įveskite elektroninį paštą arba ID",
 				signInMsg2: "Paskyra nerasta",
+				signInMsg3: "Į_No public album_š",
 				howToFind: "Kaip surasti Picasa arba Google+ paskyros ID",
 				howToFind2: "Nukopijuokite skaičius tarp pirmo ir antro \'/\' bet kuriame Picasa ar G+ puslapyje"
 			},
@@ -524,7 +525,10 @@
 				shareA2div1: "Išsaugokite ir pernaudokite šią nuorodą %LINK1% arba naudokite <a href='%LINK2%' target='_blank'>aplikacijos elemento puslapį</a>.",
 				shareA2div2: "Kaip aplikacijos savininkas, kai prisijungiate prie ArcGIS.com, aplikacija turės interaktyvaus kūrėjo atverimo mygtuką:",				
 				shareQ3: "Kur laikomi duomenys?",
-				shareA3: "Turo konfigūracija yra saugojama <a href='%LINK1%' target='_blank'>šiame internetinio žemėlapio elemente</a> ir <a href='%LINK2%' target='_blank'>šiame internetinio žemėlapio elemente</a>. Jei naudojote Flickr, Picasa, Facebook arba YouTube importą, jūsų vaizdai ir video lieka saugomi ten ir nėra dublikuojami ArcGIS Online."
+				shareA3: "Turo konfigūracija yra saugojama <a href='%LINK1%' target='_blank'>šiame internetinio žemėlapio elemente</a> ir <a href='%LINK2%' target='_blank'>šiame internetinio žemėlapio elemente</a>. Jei naudojote Flickr, Picasa, Facebook arba YouTube importą, jūsų vaizdai ir video lieka saugomi ten ir nėra dublikuojami ArcGIS Online.",
+				shareWarning: "Į_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._š",
+				shareWarningWith1: "Į_publicly_š",
+				shareWarningWith2: "Į_publicly and with the Organization_š"
 			}
         }
     })

@@ -327,6 +327,7 @@
 				header: "Sisesta e-mail või oma Picasa ID või Google+ konto.",
 				userInputLbl: "Sisesta e-mail või ID",
 				signInMsg2: "Kontot ei leitud",
+				signInMsg3: "Š_No public album_ä",
 				howToFind: "Kuidas leida Picasa või Google+ konto ID-d",
 				howToFind2: "Kopeeri numbrikohad esimese ja teise \'/\' vahelt Picasa või G+ lehelt"
 			},
@@ -524,7 +525,10 @@
 				shareA2div1: "Salvestage ja taaskasutage järgnevat linki %LINK1% või kasutage <a href='%LINK2%' target='_blank'>rakenduse sisu lehte</a>.",
 				shareA2div2: "Rakenduse omanikuna, ArcGIS.com sisselogituna, sisaldab rakendus nuppu interaktiivse looja avamiseks.",				
 				shareQ3: "Kus on andmed majutatud?",
-				shareA3: "Tuuri konfiguratsioon on salvestatud <a href='%LINK1%' target='_blank'>siin veebikaardi sisus</a> ja <a href='%LINK2%' target='_blank'>siin veebirakenduse sisus</a>.Kui olete kasutanud Flickr, Picasa, Facebook või YouTube importi, siis teie pildid ja videod säilitatakse seal ja ei ole kopeeritud ArcGIS Online keskkonda."
+				shareA3: "Tuuri konfiguratsioon on salvestatud <a href='%LINK1%' target='_blank'>siin veebikaardi sisus</a> ja <a href='%LINK2%' target='_blank'>siin veebirakenduse sisus</a>.Kui olete kasutanud Flickr, Picasa, Facebook või YouTube importi, siis teie pildid ja videod säilitatakse seal ja ei ole kopeeritud ArcGIS Online keskkonda.",
+				shareWarning: "Š_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ä",
+				shareWarningWith1: "Š_publicly_ä",
+				shareWarningWith2: "Š_publicly and with the Organization_ä"
 			}
         }
     })

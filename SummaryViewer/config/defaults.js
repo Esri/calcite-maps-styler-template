@@ -16,12 +16,31 @@ define([], function() {
         "logo": "",
         "color": "#80ab00",
         //Counter specific parameters
-        "summaryLayer": "", 
-        "filterField": "",
-        "sumFields": "",
-        "avgFields": "",
-        "minFields": "",
-        "maxFields": "",
+        "summaryLayer":{
+            "id": "",
+            "fields":[
+                {
+                    "id": "filterField",
+                    "fields": []
+                },
+                {
+                    "id": "sumFields",
+                    "fields": []
+                },
+                {
+                    "id": "avgFields",
+                    "fields": []
+                },
+                {
+                    "id": "minFields",
+                    "fields": []
+                },
+                {
+                    "id": "maxFields",
+                    "fields": []
+                }
+            ]
+        },
         "cluster": true,
         "bingmapskey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
         "sharinghost": location.protocol + "//" + "www.arcgis.com" //Defaults to arcgis.com. Set this value to your portal or organization host name. 

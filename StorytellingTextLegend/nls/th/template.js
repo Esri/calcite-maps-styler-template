@@ -5,23 +5,23 @@
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
       errors:{
-        createMap: "ก้_Unable to create map:_ษฺ",
-        general:"ก้_Error_ษฺ",
-        timeout:"ก้_Please choose another tab to begin_ษฺ"
+        createMap: "ไม่สามารถสร้างแผนที่ได้:",
+        general:"ข้อผิดพลาด",
+        timeout:"กรุณาเลือกแถบอื่นเพื่อเริ่ม"
       },
       loading:{
-        message: "ก้_Loading maps_ษฺ"
+        message: "กำลังดาวน์โหลดแผนที่"
       },
       sidePanel:{
-        legendHeader: "ก้_LEGEND_ษฺ"
+        legendHeader: "คำอธิบายสัญลักษณ์"
       },
       datePatterns:{
-        datePattern: "ก้_MMMM d, yyyy_ษฺ",
-        yearPattern: "ก้_yyyy_ษฺ",
-        hourTimePattern: "ก้_h a_ษฺ",
-        minuteTimePattern: "ก้_h:mm a_ษฺ",
-        secondTimePattern: "ก้_h:mm:ss a_ษฺ",
-        millisecondTimePattern: "ก้_h:mm:ss:SSS a_ษฺ"
+        datePattern: "เดือน วัน, ปี",
+        yearPattern: "ปี",
+        hourTimePattern: "ชั่วโมง",
+        minuteTimePattern: "ชั่วโมง:นาที",
+        secondTimePattern: "ชั่วโมง:นาที:วินาที",
+        millisecondTimePattern: "ชั่วโมง:นาที:วินาที"
       }
     }
 })

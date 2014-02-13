@@ -11,11 +11,15 @@ define([
     "esri/toolbars/draw",
     "esri/symbols/SimpleMarkerSymbol",
     "esri/layers/GraphicsLayer",
+    "esri/tasks/QueryTask",
     "esri/tasks/query",
     "esri/InfoTemplate",
     "esri/dijit/LocateButton",
     "esri/geometry",
-    "esri/dijit/PopupTemplate"
+    "esri/dijit/PopupTemplate",
+    "dojo/string",
+     "esri/lang",
+     "dojo/json"
 ],
 function (
     ready,
@@ -30,11 +34,15 @@ function (
     Draw,
     SimpleMarkerSymbol,
     GraphicsLayer,
+    QueryTask,
     Query,
     InfoTemplate,
     LocateButton,
     Geometry,
-    PopupTemplate
+    PopupTemplate,
+    String,
+    esriLang,
+    JSON
 ) {
 
 
@@ -45,10 +53,24 @@ function (
             // and application id
             // any url parameters and any application specific configuration information. 
             this.config = config;
+            // document ready
             ready(lang.hitch(this, function () {
-                this._createWebMap();
-
-
+                arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
+                    //let's get the web map item and update the extent if needed. 
+                    if (this.config.appid && this.config.application_extent.length > 0) {
+                        itemInfo.item.extent = [
+                            [
+                                parseFloat(this.config.application_extent[0][0]),
+                                parseFloat(this.config.application_extent[0][1])
+                            ],
+                            [
+                                parseFloat(this.config.application_extent[1][0]),
+                                parseFloat(this.config.application_extent[1][1])
+                            ]
+                        ];
+                    }
+                    this._createWebMap(itemInfo);
+                }));
             }));
         },
         _mapLoaded: function () {
@@ -63,111 +85,186 @@ function (
 
         },
         _createLocatorButton: function () {
+
             this.geoLocate = new LocateButton({
                 map: this.map,
-                pointerGraphic: new Graphic()
+                pointerGraphic: null,
+                centerAt: false,
+                highlightLocation: false,
+                setScale: false
             }, "LocateButton");
 
 
-            this.geoLocate.on("locate", lang.hitch(this, function (location) {
+            on(this.geoLocate, "locate", lang.hitch(this, function (location) {
                 this.geoLocate.clear();
-                var point = new Geometry.Point({ "x": location.position.coords.longitude, "y": location.position.coords.latitude, " spatialReference": { " wkid": 4326 } });
+                if (location.error != null) {
+                    alert(location.error);
 
-                this._addToMap(point);
+                }
+                else {
+                    var point = new Geometry.Point({ "x": location.position.coords.longitude, "y": location.position.coords.latitude, " spatialReference": { " wkid": 4326 } });
 
+                    this._addToMap(point);
+                }
             }));
 
 
             this.geoLocate.startup();
         },
-        _createGeocoder: function () {
+        _createGeocoderOptions: function () {
+            var options, geocoders = lang.clone(this.config.helperServices.geocode);
+            // each geocoder
+            if (geocoders.length == 0) { return null; }
 
-            this.geocoder = new Geocoder({
+            array.forEach(geocoders, function (geocoder) {
+                if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+                    geocoder.placefinding = true;
+                    geocoder.placeholder = this.config.i18n.geocoder.defaultText;
+
+                }
+                else {
+                    geocoder.suggest = true;
+                }
+                //geocoder.searchExtent = this.map.extent;
+            }, this);
+
+            options = {
+                map: this.map,
+                autoNavigate: false,
                 autoComplete: true,
-                theme: "simpleGeocoder",
-                arcgisGeocoder: {
-                    placeholder: this.config.i18n.geocoder.defaultText,
-                    searchExtent: this.map.extent
 
-                },
-                map: this.map
-            }, dojo.byId('searchDiv'));
+                minCharacters: 0,
+                maxLocations: 5,
+                searchDelay: 100,
+                arcgisGeocoder: geocoders.splice(0, 1)[0],
+                geocoders: geocoders
 
-            this.geocoder.on("select", lang.hitch(this, function (result) {
+            };
 
-                var pt = result.result.feature.geometry;
-                this._addToMap(pt);
-            }));
+
+            return options;
+        },
+        _createGeocoder: function () {
+            var gcOpts = this._createGeocoderOptions();
+            this.geocoder = new Geocoder(gcOpts, dojo.byId('searchDiv'));
+
             // address search startup
             this.geocoder.startup();
 
+            on(this.geocoder, "select", lang.hitch(this, function (result) {
+                if (result.result != null) {
+                    var pt = result.result.feature.geometry;
+                    //var mxZm = this.map.getMaxZoom();
+                    //if (mxZm != -1) {
+                    //    this.map.centerAndZoom(pt, mxZm);
+                    //}
+                    //else {
+                    //    this.map.centerAt(pt);
+                    //}
+                    this._addToMap(pt);
+                }
+            }));
+
+        },
+        _extentChanged: function () {
+            // each geocoder
 
         },
         _initMap: function () {
+
             console.log("InitMap");
+            var extentChange = on(this.map, "extent-change", lang.hitch(this, function () {
+                this._extentChanged();
+            }));
             document.title = this.config.i18n.page.title;
+            this.serviceAreaLayerNames = [],
+            this.popupMedia = [],
 
-            array.forEach(this.layers, function (layer) {
+            this.serviceAreaLayerNames = this.config.serviceAreaLayerNames.split("|");
+            this.lookupLayers = [];
+
+            for (var f = 0, fl = this.serviceAreaLayerNames.length; f < fl; f++) {
+                var layDetails = {};
+
+                array.forEach(this.layers, function (layer) {
+
+                    this.serviceAreaLayerNames[f] = String.trim(this.serviceAreaLayerNames[f])
+                    if (layer.layerObject.layerInfos != null) {
+                        array.forEach(layer.layerObject.layerInfos, function (subLyrs) {
+                            if (subLyrs.name == this.serviceAreaLayerNames[f]) {
+                                layDetails.name = subLyrs.name;
+                                layDetails.layerOrder = f;
+
+                                layDetails.url = layer.layerObject.url + "/" + subLyrs.id;
+
+                                console.log(this.serviceAreaLayerNames[f] + " " + "set");
 
 
-                if (layer.layerObject.layerInfos != null) {
-                    array.forEach(layer.layerObject.layerInfos, function (subLyrs) {
-                        if (subLyrs.name == this.config.serviceAreaLayerName) {
+                                if (layer.layers != null) {
+                                    array.forEach(layer.layers, function (popUp) {
+                                        if (subLyrs.id == popUp.id) {
+                                            layDetails.popupInfo = popUp.popupInfo
+                                        }
+                                    }, this);
+                                }
+                                if (layDetails.popupInfo == null) {
+                                    alert(this.config.i18n.error.popupNotSet + ": " + subLyrs.name);
+                                }
+                                this.lookupLayers.push(layDetails);
 
-                            this.serviceAreaLayerURL = layer.layerObject.url + "/" + subLyrs.id;
-                            console.log("Service Layer set");
-
-
-                            if (layer.layers != null) {
-                                array.forEach(layer.layers, function (popUp) {
-                                    if (subLyrs.id == popUp.id) {
-                                        this.popupInfo = popUp.popupInfo;
-                                    }
-                                }, this);
                             }
+                        }, this);
+                    }
+                    else {
+
+                        if (layer.title == this.serviceAreaLayerNames[f]) {
+                            layDetails.popupInfo = layer.popupInfo;
+                            layDetails.name = layer.title;
+                            layDetails.url = layer.layerObject.url;
+                            layDetails.layerOrder = f;
+                            this.lookupLayers.push(layDetails);
+                            console.log(layer.title + " " + "set");
 
                         }
-                    }, this);
-                }
-                else {
-
-                    if (layer.title == this.config.serviceAreaLayerName) {
-                        this.popupInfo = layer.popupInfo;
-                        this.serviceAreaLayerURL = layer.layerObject.url;
-                        console.log("Service Layer set");
-
                     }
-                }
-                if (this.config.storeLocation == true) {
+                    if (this.config.storeLocation == true) {
 
-                    if (layer.title == this.config.serviceRequestLayerName) {
+                        if (layer.title == String.trim(this.config.serviceRequestLayerName)) {
 
-                        this.serviceRequestLayerName = layer.layerObject;
-                        console.log("Service Request Layer set");
+                            this.serviceRequestLayerName = layer.layerObject;
+                            console.log("Service Request Layer set");
 
-                    }
-                }
-                if (this.popupInfo != null) {
-                    this.popupTemplate = new PopupTemplate({
-                        title: this.popupInfo.title,
-                        fieldInfos: this.popupInfo.fieldInfos,
-                        mediaInfos: this.popupInfo.mediaInfos,
-                        showAttachments: this.popupInfo.showAttachments,
-                        description: this.popupInfo.description
+                        }
                     }
 
-                           );
-                }
 
 
-            }, this);
-            if (this.serviceAreaLayerURL === undefined) {
-                alert(this.config.i18n.error.layerNotFound + ": " + this.config.serviceAreaLayerName);
+                }, this);
 
-                console.log("Layer name not found.");
-                return;
+
 
             }
+
+
+            var allLayerNames = "";
+            var layerTitles = [];
+            for (var f = 0, fl = this.lookupLayers.length; f < fl; f++) {
+
+                allLayerNames += this.lookupLayers[f].name + ",";
+            }
+
+            for (var n = 0, nl = this.serviceAreaLayerNames.length; n < nl; n++) {
+
+                if (allLayerNames.indexOf(this.serviceAreaLayerNames[n]) > -1) {
+
+                }
+
+                else {
+                    alert(this.config.i18n.error.layerNotFound + ":" + this.serviceAreaLayerNames[n]);
+                }
+
+            }
+
             if (this.serviceRequestLayerName === undefined && this.config.storeLocation == true) {
                 alert(this.config.i18n.error.layerNotFound + ": " + this.config.serviceRequestLayerName);
 
@@ -194,20 +291,18 @@ function (
                 }
             }
 
-            if (this.serviceAreaLayerURL == null) {
-
-            }
-            else {
-                this.queryTask = new esri.tasks.QueryTask(this.serviceAreaLayerURL);
-            }
-
         },
+
         _createToolbar: function () {
-            this.toolbar = new Draw(this.map);
+            this.toolbar = new Draw(this.map, { showTooltips: false });
             this.toolbar.on("draw-end", lang.hitch(this, this._drawEnd));
-            esri.bundle.toolbars.draw.addPoint = this.config.i18n.map.mouseToolTip;
+
+            //esri.bundle.toolbars.draw.addPoint = this.config.i18n.map.mouseToolTip;
+            //esri.bundle.toolbars.draw.addPoint = null;
+
 
             this.toolbar.activate(Draw.POINT);
+
         },
         _initGraphic: function () {
 
@@ -224,110 +319,252 @@ function (
         _drawEnd: function (evt) {
             this._addToMap(evt.geometry);
         },
+        //_createArray: function(size, defaultVal) {
+        //    var arr = new Array(size);
+        //    if (arguments.length == 2) {
+        //        // optional default value
+        //        for (int i = 0; i < size; ++i) {
+        //            arr[i] = defaultVal;
+        //        }
+        //    }
+        //    return arr;
+        //},
+        _processObject: function(obj,fieldName, layerName,matchName)
+        {
+            var matchForRec = matchName
+
+            for (var key in obj) {
+                if (key == "type") {
+                    if (obj[key].indexOf('chart')> -1) {
+                        matchForRec = true;
+                    }
+                }
+
+                if (obj[key] != null) {
+                    if (obj[key] instanceof Object) {
+                        if (key == 'fields')
+                        {
+                            obj[key] = this._processObject(obj[key], fieldName, layerName, true);
+                        }
+                        else
+                        {
+                            obj[key] = this._processObject(obj[key], fieldName, layerName, matchName);
+                        }
+                     
+                    }
+                    else
+                    {
+                        if (obj[key] == fieldName && (matchName || key == 'normalizeField'))
+
+                        {
+                            obj[key] = layerName + "_" + fieldName;
+                        }
+                        else{
+                            obj[key] = obj[key].replace("{" + fieldName + "}", "{" + layerName + "_" + fieldName + "}").replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'");
+                        }
+                    }
+                }
+            }
+            return obj;
+
+        },
+        _queryComplete: function (lookupLayer) {
+
+            return function (result) {
+
+                if (result.features.length > 0) {
+                    this.results.push({ "results": result.features, "Layer": lookupLayer });
+                }
+                else {
+
+                }
+                this.defCnt = this.defCnt - 1;
+
+
+
+
+
+                if (this.defCnt == 0) {
+
+                    if (this.results != null) {
+                        var atts = {};
+                        if (this.results.length > 0) {
+                            var allFields = [];
+
+
+                            var allDescriptions = "";
+                            var popUpArray = [];
+                            var mediaArray = [];
+                            var resultFeature = {};
+
+
+                            popUpArray.length = this.results.length;
+                            mediaArray.length = this.results.length;
+                            array.forEach(this.results, function (result) {
+
+                                var resetFieldNames = resetFieldNames = result.Layer.popupInfo.fieldInfos;
+                                for (var r = 0, rl = resetFieldNames.length; r < rl; r++) {
+                                    resetFieldNames[r].fieldName = resetFieldNames[r].fieldName.replace(result.Layer.name + "_", "");
+                                }
+
+                                //result.Layer.popupInfo.fieldInfos;
+                                var layerFields = result.Layer.popupInfo.fieldInfos;
+                                this.layerDescription = result.Layer.popupInfo.description;
+                                popupTitle = result.Layer.popupInfo.title;
+                                mediaInfos = lang.clone(result.Layer.popupInfo.mediaInfos);
+
+                                for (var g = 0, gl = layerFields.length; g < gl; g++) {
+                                    if (mediaInfos != null) {
+                                        array.forEach(mediaInfos, function (mediaInfo)
+                                        {
+                                            mediaInfo = this._processObject(mediaInfo, layerFields[g].fieldName, result.Layer.name,false);
+                                          
+                                            //for (var key in mediaInfo) {
+                                            //    if (mediaInfo[key] instanceof Object) {
+                                            //        for (var keyInner in mediaInfo[key]) {
+                                            //            if (mediaInfo[key][keyInner] instanceof Object)
+                                            //            { }
+                                            //            else
+                                            //            {
+                                            //                mediaInfo[key][keyInner] = mediaInfo[key][keyInner].replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}")
+                                            //            }
+
+
+                                            //        }
+                                            //    }
+                                            //    else {
+                                            //        mediaInfo[key] = mediaInfo[key].replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}")
+                                            //    }
+                                               
+                                            
+                                        }, this)
+                                    }
+
+                                    if (result.Layer.popupInfo.description == null) {
+                                        popupTitle = popupTitle.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
+                                        if (this.layerDescription == null) {
+                                            this.layerDescription = layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
+                                        }
+                                        else {
+                                            this.layerDescription = this.layerDescription + layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
+                                        }
+                                    }
+                                    else {
+                                        this.layerDescription = this.layerDescription.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
+                                    }
+                                    resultFeature[result.Layer.name + "_" + layerFields[g].fieldName] = result.results[0].attributes[layerFields[g].fieldName];
+                                    layerFields[g].fieldName = result.Layer.name + "_" + layerFields[g].fieldName;
+
+                                }
+
+
+
+                                allFields = allFields.concat(layerFields);
+                                if (result.Layer.popupInfo.description == null) {
+                                    this.layerDescription = popupTitle + "<br>" + this.layerDescription;
+                                }
+                             
+                                mediaArray[result.Layer.layerOrder] = mediaInfos;
+                                popUpArray[result.Layer.layerOrder] = this.layerDescription;
+
+                            }, this)
+
+                            var finalMedArr = [];
+
+                            array.forEach(popUpArray, function (descr) {
+                                allDescriptions = allDescriptions == "" ? descr : allDescriptions + descr;
+                            }, this)
+                            array.forEach(mediaArray, function (mediaInfos) {
+                                finalMedArr.push.apply(finalMedArr, mediaInfos);
+
+                               
+                            }, this)
+
+                            ////Make single Array of fields
+                                this.popupTemplate = new PopupTemplate({
+                                title: this.config.popupTitle,
+                                fieldInfos: allFields,
+                                description: allDescriptions.replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'"),
+                                mediaInfos: finalMedArr
+                            });
+
+                        }
+
+
+                        if (this.results.length == 0) {
+                            editGraphic = new Graphic(this.event, this.editSymbol, null, null);
+                            this.map.graphics.add(editGraphic);
+
+                            this.map.infoWindow.setTitle(this.config.serviceUnavailableTitle);
+                            this.map.infoWindow.setContent(this.config.serviceUnavailableMessage.replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'"));
+                            this.map.infoWindow.show(editGraphic.geometry);
+                            if (this.config.storeLocation == true) {
+                                atts[this.config.serviceRequestLayerAvailibiltyField] = this.config.serviceRequestLayerAvailibiltyFieldValueNotAvail;
+                                this._logRequest(this.event, atts);
+                            }
+
+                        }
+                        else {
+                            var featureArray = [];
+
+                            editGraphic = new Graphic(this.event, this.editSymbolAvailable, resultFeature, this.popupTemplate);
+                            featureArray.push(editGraphic);
+                            this.map.graphics.add(editGraphic);
+
+                            this.map.infoWindow.setFeatures(featureArray);
+                            this.map.infoWindow.show(editGraphic.geometry);
+                            this.map.infoWindow.resize();
+                            //
+                            if (this.config.storeLocation == true) {
+                                atts[this.config.serviceRequestLayerAvailibiltyField] = this.config.serviceRequestLayerAvailibiltyFieldValueAvail;
+
+                                this._logRequest(this.event, atts);
+                            }
+                        }
+                        this.map.centerAndZoom(this.event, this.config.zoomLevel);
+                    }
+                    dojo.style("loader", "display", "none");
+                }
+            }
+        },
         _addToMap: function (evt) {
+            dojo.style("loader", "display", "block");
             this.map.infoWindow.hide();
 
             this.map.graphics.clear();
 
-
-
-
-            //query to determine popup
-            var editGraphic;
-
-
-
-
+            //query to determine popup 
             var query = new Query();
             query.spatialRelationship = Query.SPATIAL_REL_INTERSECTS;
-
             query.geometry = evt;
-            query.outFields = ["*"];
-
-            query.outSpatialRefernce = this.map.spatialReference;
-            // query.inSpatialRefernce = this.map.spatialReference;
+            query.outSpatialReference = this.map.spatialReference;
             query.geometryType = "esriGeometryPoint";
+            query.outFields = ["*"];
+            var editGraphic;
 
-            var queryDeferred = this.queryTask.execute(query);
-            var atts = {};
+            this.event = evt;
+            this.results = [];
+            this.defCnt = this.lookupLayers.length;
 
-            queryDeferred.addCallback(lang.hitch(this, function (result) {
-
-
-                if (result.features.length == 0) {
-                    editGraphic = new Graphic(evt, this.editSymbol, null, null);
-                    this.map.graphics.add(editGraphic);
-
-                    this.map.infoWindow.setTitle(this.config.serviceUnavailableTitle);
-                    this.map.infoWindow.setContent(this.config.serviceUnavailableMessage.replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'"));
-                    this.map.infoWindow.show(editGraphic.geometry);
-                    if (this.config.storeLocation == true) {
-                        atts[this.config.serviceRequestLayerAvailibiltyField] = this.config.serviceRequestLayerAvailibiltyFieldValueNotAvail;
-
-                        this._logRequest(evt, atts);
-                    }
-
-                }
-                else {
-
-                    editGraphic = new Graphic(evt, this.editSymbolAvailable, null, null);
-                    this.map.graphics.add(editGraphic);
-
-                    //Not required, moved popup to one defined in the web map
-
-                    //var infoTemplate;
-                    //if (this.popupInfo != null) {
-                    //    if (this.popupInfo.description === null) {
-                    //        infoTemplate = new InfoTemplate(this.popupInfo.title.replace(/{/g, "${"), "");
-                    //    }
-                    //    else {
-                    //        infoTemplate = new InfoTemplate(this.popupInfo.title.replace(/{/g, "${"), this.popupInfo.description.replace(/{/g, "${"));
-                    //    }
-                    //    result.features[0].infoTemplate = infoTemplate;
-                    //}
-
-                    var featureArray = [];
-                    if (this.popupTemplate != null) {
-                      
-                        array.forEach(result.features, lang.hitch(this, function (feature) {
-                            feature.setInfoTemplate(this.popupTemplate);
-
-                            featureArray.push(feature);
-
-                        }));
-                        
-                    }
-                    else
-
-                    {
-                        array.forEach(result.features, lang.hitch(this, function (feature) {
-                        
-                            featureArray.push(feature);
-
-                        }));
-                    }
+            for (var f = 0, fl = this.lookupLayers.length; f < fl; f++) {
+                var queryTask = new QueryTask(this.lookupLayers[f].url)
+                this.queryDeferred = queryTask.execute(query);
+                this.queryDeferred.addCallback(lang.hitch(this, this._queryComplete(this.lookupLayers[f])))
 
 
-                    this.map.infoWindow.setFeatures(featureArray);
-                    this.map.infoWindow.show(editGraphic.geometry);
-                    if (this.config.storeLocation == true) {
+                this.queryDeferred.addErrback(function (error) {
+                    console.log(error);
+                })
 
-                        atts[this.config.serviceRequestLayerAvailibiltyField] = this.config.serviceRequestLayerAvailibiltyFieldValueAvail;
 
-                        this._logRequest(evt, atts);
-                    }
-                }
+            }
 
-            }));
-
-            queryDeferred.addErrback(function (error) {
-                console.log(error);
-            });
 
         },
+
         _processResults: function (features) {
             return dojo.map(features, function (feature) {
-               
+
                 return feature;
             });
         },
@@ -356,8 +593,8 @@ function (
 
         },
         //create a map based on the input web map id
-        _createWebMap: function () {
-            arcgisUtils.createMap(this.config.webmap, "mapDiv", {
+        _createWebMap: function (itemInfo) {
+            arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: {
 
                     //Optionally define additional map config here for example you can 

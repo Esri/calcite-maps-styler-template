@@ -3,15 +3,15 @@
   viewer:{
     main:{
       scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
-      legendLabel: "ก้_Legend_ษฺ",
-      descriptionLabel: "ก้_Description_ษฺ"
+      legendLabel: "คำอธิบายสัญลักษณ์",
+      descriptionLabel: "คำอธิบาย"
     },
     errors:{
-      createMap: "ก้_Unable to create map_ษฺ",
-      general: "ก้_Error_ษฺ"
+      createMap: "ไม่สามารถสร้างแผนที่ได้",
+      general: "ข้อผิดพลาด"
     },
     footer:{
-    	label: "ก้_A map from:_ษฺ"
+    	label: "แผนที่จาก:"
     }
   }
 })

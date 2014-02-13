@@ -19,7 +19,7 @@
 define([], function () {
     var config = {
         sharingUrl: null,  // URL to sharing service; default is www.arcgis.com with app's HTTP protocol
-        proxyUrl: "proxy.ashx",  // URL to proxy; default is no proxy in hosted and "proxy.ashx" in download
+        proxyUrl: "proxy.ashx",  // URL to proxy
         bingMapsKey: "",
         helperServices: {
             geometry: {

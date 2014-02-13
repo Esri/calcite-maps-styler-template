@@ -1,14 +1,14 @@
 ﻿define(
 ({
   app:{
-   title:"ก้_Map Carousel_ษฺ",
+   title:"Map Carousel",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
-      createMap: "ก้_Unable to create map_ษฺ",
-      bitly: 'ก้_bitly is used to shorten the url for sharing. View the readme file for details on creating and using a bitly key_ษฺ',
-      general: "ก้_Error_ษฺ"
+      createMap: "ไม่สามารถสร้างแผนที่ได้",
+      bitly: 'bitly ใช้เพื่อทำให้ URL สำหรับการแชร์สั้นลง อ่านไฟล์ Readme สำหรับรายละเอียดในการสร้างและใช้ bitly key',
+      general: "ข้อผิดพลาด"
     },
-    mapcount: "ก้_Map ${page} of  ${total}_ษฺ"
+    mapcount: "แผนที่ ${page} จาก  ${total}"
   }
 })
 );
