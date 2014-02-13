@@ -563,7 +563,10 @@ background-image:none !important;
   clear:both;
   display:block;
 }
-
+.toolbar.templatePicker{
+    position: absolute;
+    top:20px;
+}
 .templatePicker {
   border:none;
   padding: 0;
