@@ -66,13 +66,13 @@ overflow-y:auto;
 
 }
 .esriSimpleSliderDecrementButton:hover {
-border-top: 2px solid #666;
+border-top: 1px solid #666;
 }
 .HomeButton .home{
 background-image: url(../images/home.png);
 padding:0;
 border-radius: 0;
-border-bottom: 2px solid #666;
+border-bottom: 1px solid #666;
 background-color:#FFF;
 }
 .HomeButton .home:hover {
