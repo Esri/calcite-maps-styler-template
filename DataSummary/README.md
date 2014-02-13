@@ -2,9 +2,9 @@
 
 This interactive map highlights your area of interest and shows an interactive report based on its location, allowing you to leverage your analysis work. The data presented in the boxes, at the bottom of the map, can be any integer data allowing you to answer new questions about locations that you cannot answer with maps alone. 
 
-[View it live](http://driskull.github.io/data-summary-map-template-js/)
+[View it live](http://esri.github.io/data-summary-map-template-js/)
 
-![App](https://raw.github.com/driskull/data-summary-map-template-js/master/images/item.png)
+![App](http://esri.github.io/data-summary-map-template-js/images/item.png)
 
 ## Instructions
 
