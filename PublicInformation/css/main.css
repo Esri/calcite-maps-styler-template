@@ -85,9 +85,11 @@ input[type=text]::-ms-clear {
     margin: 10px;
     font-weight: 700;
     font-size: 18px;
+    color: #333;
 }
 .panel-padding {
     padding: 10px;
+    color: #666;
 }
 .panel-header {
     font-size: 18px;
@@ -108,10 +110,8 @@ input[type=text]::-ms-clear {
 }
 .panel-summary {
     color: #666;
-    padding: 10px;
-    background: #f8f8f8;
+    padding: 0 10px 10px 10px;
     line-height: 24px;
-    border-bottom: 1px solid #e0e0e0;
 }
 /* Twitter */
 
@@ -373,7 +373,7 @@ input[type=text]::-ms-clear {
     border-radius: 1px 1px 0 0;
 }
 .BasemapToggle .basemapTitle {
-    color: #999;
+    color: #666;
 }
 .map-buttons {
     position: absolute;

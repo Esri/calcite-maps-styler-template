@@ -19,7 +19,7 @@ define([
     "esri/dijit/Geocoder",
     "esri/dijit/Popup",
     "esri/dijit/Legend",
-    "application/Featured",
+    "application/MapPanel",
     "application/SocialLayers",
     "esri/dijit/OverviewMap",
     "dijit/registry",
@@ -60,7 +60,6 @@ function(
                 mobileSearchDisplay: "mobile-locate-box-display",
                 toggleBlue: 'toggle-grey',
                 toggleBlueOn: 'toggle-grey-on',
-                panelTitle: 'panel-title',
                 panelPadding: "panel-padding",
                 panelContainer: "panel-container",
                 panelHeader: "panel-header",
@@ -68,10 +67,9 @@ function(
                 panelSummary: "panel-summary",
                 pointerEvents: "pointer-events",
                 iconRight: "icon-right",
-                iconBookmarks: "icon-bookmarks",
                 iconList: "icon-list",
                 iconLayers: "icon-layers",
-                iconLocation: "icon-location",
+                iconMap: "icon-map",
                 locateButtonTheme: "LocateButtonCalcite",
                 homebuttonTheme: "HomeButtonCalcite",
                 desktopGeocoderTheme: "geocoder-desktop",
@@ -140,32 +138,29 @@ function(
             this.drawerMenus = [];
             var content, menuObj;
             // featured panel enabled
-            if (this.config.showFeaturedPanel) {
+            if (this.config.enableMapPanel) {
                 content = '';
-                content += '<div class="' + this.css.panelTitle + '">' + this.config.i18n.general.featured + '</div>';
                 content += '<div class="' + this.css.panelContainer + '">';
                 // if summary enabled
-                if (this.config.showSummary) {
-                    content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.featured.summary + '</div>';
-                    content += '<div class="' + this.css.panelSection + '">';
+                if (this.config.enableSummary) {
+                    content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.general.mapInfo + '</div>';
                     content += '<div class="' + this.css.panelSummary + '" id="summary"></div>';
-                    content += '</div>';
                 }
                 // show notes layer and has one of required things for getting notes layer
-                if(this.config.showMapNotes && (this.config.notesLayer)){
-                    content += '<div class="' + this.css.panelHeader + '"><span id="map_notes_title">' + this.config.i18n.featured.mapNotes + '</span></div>';
+                if(this.config.notesLayer && this.config.notesLayer.id){
+                    content += '<div class="' + this.css.panelHeader + '"><span id="map_notes_title">' + this.config.i18n.general.featured + '</span></div>';
                     content += '<div class="' + this.css.panelSection + '" id="featured_notes"></div>';
                 }
                 // show bookmarks and has bookmarks
-                if(this.config.showBookmarks && this.bookmarks && this.bookmarks.length){
-                    content += '<div class="' + this.css.panelHeader + '"><span class="' + this.css.iconBookmarks + '"></span> ' + this.config.i18n.featured.bookmarks + '</div>';
+                if(this.config.enableBookmarks && this.bookmarks && this.bookmarks.length){
+                    content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.featured.bookmarks + '</div>';
                     content += '<div class="' + this.css.panelSection + '" id="featured_bookmarks"></div>';
                 }
                 content += '</div>';
                 // menu info
                 menuObj = {
-                    title: this.config.i18n.general.featured,
-                    label: '<span class="' + this.css.iconLocation + '"></span>',
+                    title: this.config.i18n.general.map,
+                    label: '<span class="' + this.css.iconMap + '"></span>',
                     content: content
                 };
                 // featured menu
@@ -176,9 +171,9 @@ function(
                     this.drawerMenus.push(menuObj);
                 }
             }
-            if (this.config.showLegendPanel) {
+            if (this.config.enableLegendPanel) {
                 content = '';
-                content += '<div class="' + this.css.panelTitle + '">' + this.config.i18n.general.legend + '</div>';
+                content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.general.legend + '</div>';
                 content += '<div class="' + this.css.panelContainer + '">';
                 content += '<div class="' + this.css.panelPadding + '">';
                 content += '<div id="LegendDiv"></div>';
@@ -199,9 +194,9 @@ function(
                 }
             }
             // Layers Panel
-            if (this.config.showLayersPanel) {
+            if (this.config.enableLayersPanel) {
                 content = '';
-                content += '<div class="' + this.css.panelTitle + '">' + this.config.i18n.general.layers + '</div>';
+                content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.general.layers + '</div>';
                 content += '<div class="' + this.css.panelContainer + '">';
                 content += '<div id="TableOfContents"></div>';
                 content += '</div>';
@@ -225,7 +220,7 @@ function(
             }, dom.byId("drawer_menus"));
             this._drawerMenu.startup();
             // locate button
-            if (this.config.showLocateButton) {
+            if (this.config.enableLocateButton) {
                 var LB = new LocateButton({
                     map: this.map,
                     theme: this.css.locateButtonTheme
@@ -233,7 +228,7 @@ function(
                 LB.startup();
             }
             // home button
-            if (this.config.showHomeButton) {
+            if (this.config.enableHomeButton) {
                 var HB = new HomeButton({
                     map: this.map,
                     theme: this.css.homebuttonTheme
@@ -241,7 +236,7 @@ function(
                 HB.startup();
             }
             // basemap toggle
-            if (this.config.showBasemapToggle) {
+            if (this.config.enableBasemapToggle) {
                 var BT = new BasemapToggle({
                     map: this.map,
                     basemap: this.config.nextBasemap,
@@ -261,7 +256,7 @@ function(
                 /* END temporary until after JSAPI 3.9 is released */
             }
             // about dialog
-            if (this.config.showAboutDialog) {
+            if (this.config.enableAboutDialog) {
                 this._AboutDialog = new AboutDialog({
                     theme: this.css.iconRight,
                     item: this.item,
@@ -273,7 +268,7 @@ function(
                 }
             }
             // share dialog
-            if (this.config.ShowShareDialog) {
+            if (this.config.enableShareDialog) {
                 this._ShareDialog = new ShareDialog({
                     theme: this.css.iconRight,
                     bitlyLogin: this.config.bitlyLogin,
@@ -291,7 +286,7 @@ function(
                 overviewPlacement = 'right';
             }
             // Overview Map
-            if(this.config.showOverviewMap){
+            if(this.config.enableOverviewMap){
                 this._overviewMap = new OverviewMap({
                     attachTo: "bottom-" + overviewPlacement,
                     height: 150,
@@ -515,7 +510,7 @@ function(
                 this.bookmarks = response.itemInfo.itemData.bookmarks;
                 this.layerInfos = arcgisUtils.getLegendLayers(response);
                 // if title is enabled
-                if (this.config.showTitle) {
+                if (this.config.enableTitle) {
                     this._setTitle(this.config.title || response.itemInfo.item.title);
                 }
                 if (this.map.loaded) {
