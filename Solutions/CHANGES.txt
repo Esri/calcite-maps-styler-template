@@ -1,9 +1,9 @@
-change report #19 at 02/14/2014 13:05:11.52
+change report #20 at 02/14/2014 14:21:04.92
 -
 for git branch
-usability_improvements
+develop
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
-M  apps2/FindEditFilter.json
+ M nls/template.js
