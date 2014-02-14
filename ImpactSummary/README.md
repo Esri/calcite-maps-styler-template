@@ -1,10 +1,10 @@
-# data-summary-map-template-js
+# impact-summary-map-template-js
 
 This interactive map highlights your area of interest and shows an interactive report based on its location, allowing you to leverage your analysis work. The data presented in the boxes, at the bottom of the map, can be any integer data allowing you to answer new questions about locations that you cannot answer with maps alone. 
 
-[View it live](http://esri.github.io/data-summary-map-template-js/)
+[View it live](http://esri.github.io/impact-summary-map-template-js/)
 
-![App](http://esri.github.io/data-summary-map-template-js/images/item.png)
+![App](http://esri.github.io/impact-summary-map-template-js/images/item.png)
 
 ## Instructions
 
@@ -50,7 +50,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-A copy of the license is available in the repository's [license.txt](https://raw.github.com/Esri/data-summary-map-template-js/master/license.txt) file.
+A copy of the license is available in the repository's [license.txt](https://raw.github.com/Esri/impact-summary-map-template-js/master/license.txt) file.
 
 [](Esri Tags: ArcGIS ArcGIS Online Web Application Local Impact Map template Public)
 [](Esri Language: JavaScript)

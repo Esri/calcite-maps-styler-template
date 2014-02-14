@@ -8,7 +8,6 @@ define([
     "dojo/dom-style",
     "dojo/dom-attr",
     "dojo/dom-class",
-    "application/TableOfContents",
     "application/AboutDialog",
     "application/ShareDialog",
     "application/Drawer",
@@ -18,6 +17,7 @@ define([
     "esri/dijit/BasemapToggle",
     "esri/dijit/Geocoder",
     "esri/dijit/Popup",
+    "esri/dijit/Legend",
     "application/AreaOfInterest",
     "dijit/registry",
     "dojo/_base/array",
@@ -33,10 +33,11 @@ function(
     domStyle,
     domAttr,
     domClass,
-    TableOfContents, AboutDialog, ShareDialog, Drawer, DrawerMenu,
+    AboutDialog, ShareDialog, Drawer, DrawerMenu,
     HomeButton, LocateButton, BasemapToggle,
     Geocoder,
     Popup,
+    Legend,
     AreaOfInterest,
     registry,
     array,
@@ -60,7 +61,8 @@ function(
                 locateButtonTheme: "LocateButtonCalcite",
                 homebuttonTheme: "HomeButtonCalcite",
                 desktopGeocoderTheme: "geocoder-desktop",
-                mobileGeocoderTheme: "geocoder-mobile"
+                mobileGeocoderTheme: "geocoder-mobile",
+                panelPadding: "panel-padding"
             };
             // mobile size switch domClass
             this._showDrawerSize = 850;
@@ -134,7 +136,7 @@ function(
             if (this.config.showLegendPanel) {
                 menuObj = {
                     label: this.config.i18n.general.legend,
-                    content: '<div id="TableOfContents"></div>'
+                    content: '<div class="' + this.css.panelPadding + '"><div id="LegendDiv"></div></div>'
                 };
                 // legend menu
                 if(this.config.defaultMenu === 'legend'){
@@ -211,13 +213,13 @@ function(
                 this._ShareDialog.startup();
             }
             // Legend table of contents
-            var legendNode = dom.byId('TableOfContents');
+            var legendNode = dom.byId('LegendDiv');
             if (legendNode) {
-                var LL = new TableOfContents({
+                var L = new Legend({
                     map: this.map,
-                    layers: this.layers
+                    layerInfos: this.layerInfos
                 }, legendNode);
-                LL.startup();
+                L.startup();
             }
             // geocoders
             this._createGeocoders();
@@ -425,6 +427,7 @@ function(
                 this.layers = response.itemInfo.itemData.operationalLayers;
                 this.item = response.itemInfo.item;
                 this.bookmarks = response.itemInfo.itemData.bookmarks;
+                this.layerInfos = arcgisUtils.getLegendLayers(response);
                 // if title is enabled
                 if (this.config.showTitle) {
                     this._setTitle(this.config.title || response.itemInfo.item.title);
