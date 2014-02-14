@@ -3,7 +3,7 @@ html, body {
 	margin: 0;
 	height: 100%;
 	width: 100%;
-	min-width: 980px;
+	/*min-width: 980px;*/
 	font-family: HelveticaNeue;
 }
 
@@ -129,13 +129,13 @@ html, body {
 
 .panelTitle {
 	position: absolute;
-	width: 600px;
+	width: 500px;
 	height: 50px;
 	left: 40px;
 	top: 10px;
 	color: #ffffff;
 	font-family: HelveticaNeueUltraLight;
-	font-size: 30px;
+	font-size: 28px;
 	font-weight: normal;
 	line-height: 50px;
 	padding: 0px;
@@ -152,7 +152,7 @@ html, body {
 }
 
 #panelMain {
-	width: 300px;
+	width: 200px;
 	height: 50px;
 	overflow: hidden;
 	float: left;
@@ -230,13 +230,13 @@ select option {
 	padding: 0px;
 	margin-top: 10px;
 	margin-bottom: 0px;
-	display: block;
+	display: none;
 	text-align: center;
 	float: left;
 }
 
 .line {
-	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
 }
 
 /*.line {
@@ -284,6 +284,9 @@ select option {
 	display: block;
 }
 
+
+/* MESSAGES */
+
 #panelMessage {
 	position: absolute;
 	left: 50%;
@@ -325,6 +328,9 @@ select option {
 	/*Example of a rule that will be applied if the app is viewed in a browser wtih a RTL locale like Hebrew or Arabic.*/
 }
 
+
+/* BASEMAPS */
+
 .panelBasemaps {
 	position: absolute;
 	top: 10px;
@@ -364,3 +370,108 @@ select option {
 	overflow-x: hidden;
 	padding: 0px;
 }
+
+
+
+/* COUNTER */
+
+.counter_character {
+	display: inline;
+	float: left;
+	position: relative;
+	margin-left: 0px;
+	margin-right: 0px;
+	
+}
+
+.counter_character_left {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.counter_character_inner {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.counter_character_right {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.counter_marker {
+	position: relative;
+	z-index: 10;
+}
+
+
+/* MEDIA SPECIFIC */
+
+@media only screen and (max-width: 880px) {
+	
+	#panelContainer {
+		width: 660px;
+	}
+	
+}
+
+@media only screen and (max-width: 700px) {
+	
+	.panelTitle {
+		width: 300px;
+	}
+	   
+	#panelMain{
+		display: none;
+	}
+	
+	#panelContainer {
+		width: 440px;
+	}
+	
+}
+
+@media only screen and (max-width: 500px) {
+	
+	.panelTitle {
+		width: 300px;
+	}
+	   
+	#panelMain{
+		display: none;
+	}
+	   
+	.panelBasemaps {
+		display: none;
+	}
+	
+	#panelContainer {
+		width: 440px;
+	}
+	
+}
+
+@media only screen and (max-width: 400px) {
+	
+	.panelTitle {
+		width: 240px;
+	}
+	
+	#panelLogo {
+		display: none;
+	}
+	   
+	#panelMain{
+		display: none;
+	}
+	   
+	.panelBasemaps {
+		display: none;
+	}
+	
+	#panelContainer {
+		width: 220px;
+	}
+	
+}
+

@@ -39,8 +39,8 @@ define(
             email: "e-mail",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
             Twitter: "Twitter",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
-            title: "é_title_È",  // Shown as title hint in print specification box if a title hint is not configured
-            author: "é_author_È"  // Shown as author hint in print specification box if an author hint is not configured
+            title: "titolo",  // Shown as title hint in print specification box if a title hint is not configured
+            author: "autore"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
             search: "Cerca:",  // Appears before a search text field in dialog box for searching for a feature
@@ -54,10 +54,11 @@ define(
             geolocationTimeout: "Il browser non è in grado di ottenere la posizione corrente in modo puntuale",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "Layer di ricerca non trovato nella mappa",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Campo non trovato nel layer di ricerca della mappa",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "é_None of these fields was found in the map search layer_È",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            yourContentSubmitted: "é_Your content has been submitted. Thank you._È",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "é_Unable to access application's configuration_È",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "é_Unable to launch application_È"  // Appears for any failure to build the user interface
+            allSearchFieldsMissing: "Campi non trovati nel layer di ricerca della mappa",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            fieldNotFound: "é_This field does not exist in any of the map layers_È",  // Appears when a field used in the configuration was not found in any map layer
+            yourContentSubmitted: "I contenuti sono stati inviati. Grazie.",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "Impossibile accedere alla configurazione dell\'applicazione",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "Impossibile avviare l\'applicazione"  // Appears for any failure to build the user interface
         }
     })
 );

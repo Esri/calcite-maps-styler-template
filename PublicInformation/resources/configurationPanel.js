@@ -1,7 +1,7 @@
 {
    "configurationSettings":[
       {
-         "category":"<b>Choose Map</b>",
+         "category":"<b>Map</b>",
          "fields":[
             {
                "type":"webmap",
@@ -20,7 +20,7 @@
                "type":"layerAndFieldSelector",
                "layerOptions":{
                   "supportedTypes":[
-                     "FeatureLayer"
+                     "FeatureCollection"
                   ],
                   "geometryTypes":[
                      "esriGeometryPoint",
@@ -28,7 +28,7 @@
                      "esriGeometryPolygon"
                   ]
                },
-               "fieldName":"notesLayerId",
+               "fieldName":"notesLayer",
                "label":"Map Notes Layer"
             },
             {
@@ -51,21 +51,25 @@
             },
             {
                "type":"string",
-               "fieldName":"areaDescription",
+               "fieldName":"summary",
                "stringFieldOption":"richtext",
                "label":"Application Description",
                "tooltip":"Application Description",
                "placeHolder":"My Map"
             },
-             {
+            {
                "type":"string",
                "fieldName":"defaultMenu",
                "tooltip":"Default Menu Panel",
                "label":"Default Menu Panel",
                "options":[
                   {
-                     "label":"Area",
-                     "value":"area"
+                     "label":"Featured Locations",
+                     "value":"locations"
+                  },
+                  {
+                     "label":"layers",
+                     "value":"Layers"
                   },
                   {
                      "label":"Legend",
@@ -81,92 +85,86 @@
             {
                "type":"boolean",
                "fieldName":"showTitle",
-               "label":"Show Title",
-               "tooltip":"Show Title"
+               "label":"Enable Title",
+               "tooltip":"Enable Title"
             },
             {
                "type":"boolean",
-               "fieldName":"showAreaDescription",
-               "label":"Show Area Description",
-               "tooltip":"Show Area Description"
+               "fieldName":"showSummary",
+               "label":"Enable Summary Description",
+               "tooltip":"Enable Summary Description"
             },
             {
                "type":"boolean",
                "fieldName":"showLegendPanel",
-               "label":"Show Legend Panel",
-               "tooltip":"Show Legend"
+               "label":"Enable Legend Panel",
+               "tooltip":"Enable Legend"
             },
             {
                "type":"boolean",
-               "fieldName":"showOperationalLegend",
-               "label":"Show Operational Layers Legend",
-               "tooltip":"Show Operational Layers Legend"
+               "fieldName":"showFeaturedPanel",
+               "label":"Enable Featured Locations Panel",
+               "tooltip":"Enable Featured Locations Panel"
             },
             {
                "type":"boolean",
-               "fieldName":"showSocialLegend",
-               "label":"Show Social Layers Legend",
-               "tooltip":"Show Social Layers Legend"
-            },
-            {
-               "type":"boolean",
-               "fieldName":"showAreaPanel",
-               "label":"Show Area Panel",
-               "tooltip":"Show Area Panel"
+               "fieldName":"showLayersPanel",
+               "label":"Enable Layers Panel",
+               "tooltip":"Enable Layers Panel"
             },
             {
                "type":"boolean",
                "fieldName":"showHomeButton",
-               "label":"Show Home Button",
-               "tooltip":"Show Home Button"
+               "label":"Enable Home Button",
+               "tooltip":"Enable Home Button"
             },
             {
                "type":"boolean",
                "fieldName":"showLocateButton",
-               "label":"Show Locate Button",
-               "tooltip":"Show Locate Button"
+               "label":"Enable Locate Button",
+               "tooltip":"Enable Locate Button"
             },
             {
                "type":"boolean",
                "fieldName":"showBasemapToggle",
-               "label":"Show Basemap Toggle",
-               "tooltip":"Show Basemap Toggle"
+               "label":"Enable Basemap Toggle",
+               "tooltip":"Enable Basemap Toggle"
             },
             {
                "type":"boolean",
                "fieldName":"showAboutDialog",
-               "label":"Show About Dialog",
-               "tooltip":"Show About Dialog"
+               "label":"Enable About Dialog",
+               "tooltip":"Enable About Dialog"
             },
             {
                "type":"boolean",
                "fieldName":"showAboutOnLoad",
-               "label":"Show About Dialog on load",
-               "tooltip":"Show About Dialog on load"
+               "label":"Enable About Dialog on load",
+               "tooltip":"Enable About Dialog on load"
             },
             {
                "type":"boolean",
                "fieldName":"ShowShareDialog",
-               "label":"Show Share Dialog",
-               "tooltip":"Show Share Dialog"
+               "label":"Enable Share Dialog",
+               "tooltip":"Enable Share Dialog"
             },
             {
                "type":"boolean",
                "fieldName":"showBookmarks",
-               "label":"Show Bookmarks",
-               "tooltip":"Show Bookmarks"
+               "label":"Enable Bookmarks",
+               "tooltip":"Enable Bookmarks"
             },
             {
                "type":"boolean",
                "fieldName":"showMapNotes",
-               "label":"Show Map Notes",
-               "tooltip":"Show Map Notes"
+               "label":"Enable Map Notes",
+               "tooltip":"Enable Map Notes"
             },
             {
                "type":"boolean",
                "fieldName":"showOverviewMap",
-               "label":"Show OverviewMap widget",
-               "tooltip":"Show OverviewMap widget"
+               "label":"Enable OverviewMap widget",
+               "tooltip":"Enable OverviewMap widget"
             },
             {
                "type":"boolean",
@@ -182,7 +180,7 @@
             {
                "type":"string",
                "fieldName":"nextBasemap",
-               "tooltip":"Next selected basemap",
+               "tooltip":"Next selected basemap for this map.",
                "label":"Next Basemap",
                "options":[
                   {
@@ -222,8 +220,8 @@
             {
                "type":"string",
                "fieldName":"currentBasemap",
-               "tooltip":"Currently selected basemap",
-               "label":"Current Basemap",
+               "tooltip":"Default selected basemap for this map.",
+               "label":"Default Basemap",
                "options":[
                   {
                      "label":"Streets",
@@ -267,22 +265,22 @@
             {
                "type":"boolean",
                "fieldName":"showInstagram",
-               "label":"Show Instagram",
-               "tooltip":"Show Instagram"
+               "label":"Enable Instagram Layer",
+               "tooltip":"Enable Instagram Layer"
             },
             {
                "type":"paragraph",
-               "value":"Show Instagram on this template."
+               "value":"View Instagram photos on the map."
             },
             {
                "type":"boolean",
                "fieldName":"instagramChecked",
-               "label":"Checked",
-               "tooltip":"Checked"
+               "label":"Visible",
+               "tooltip":"Check this box to make the layer visible by default."
             },
             {
                "type":"paragraph",
-               "value":"Turn this layer on by default."
+               "value":"Show this layer by default."
             }
          ]
       },
@@ -292,22 +290,22 @@
             {
                "type":"boolean",
                "fieldName":"showFlickr",
-               "label":"Show Flickr",
-               "tooltip":"Show Flickr"
+               "label":"Enable Flickr Layer",
+               "tooltip":"Enable Flickr Layer"
             },
             {
                "type":"paragraph",
-               "value":"Show Flickr on this template."
+               "value":"View Flickr photos on this map."
             },
             {
                "type":"boolean",
                "fieldName":"flickrChecked",
-               "label":"Checked",
-               "tooltip":"Checked"
+               "label":"Visible",
+               "tooltip":"Check this box to make the layer visible by default."
             },
             {
                "type":"paragraph",
-               "value":"Turn this layer on by default."
+               "value":"Show this layer by default."
             },
             {
                "type":"string",
@@ -324,22 +322,22 @@
             {
                "type":"boolean",
                "fieldName":"showTwitter",
-               "label":"Show Twitter",
-               "tooltip":"Show Twitter"
+               "label":"Enable Twitter Layer",
+               "tooltip":"Enable Twitter Layer"
             },
             {
                "type":"paragraph",
-               "value":"Show Twitter on this template."
+               "value":"View Tweets on this map."
             },
             {
                "type":"boolean",
                "fieldName":"twitterChecked",
-               "label":"Checked",
-               "tooltip":"Checked"
+               "label":"Visible",
+               "tooltip":"Check this box to make the layer visible by default."
             },
             {
                "type":"paragraph",
-               "value":"Turn this layer on by default."
+               "value":"Show this layer by default."
             },
             {
                "type":"string",
@@ -355,39 +353,37 @@
          ]
       },
       {
-         "category":"<b>Webcams Options</b>",
+         "category":"<b>Webcams.travel Options</b>",
          "fields":[
             {
                "type":"boolean",
                "fieldName":"showWebcams",
-               "label":"Show Webcams",
-               "tooltip":"Show Webcams"
+               "label":"Enable Webcams Layer",
+               "tooltip":"Enable Webcams Layer"
             },
             {
                "type":"paragraph",
-               "value":"Show Webcams on this template."
+               "value":"View up-to-date webcam photos from <a href=\"http://www.webcams.travel/\" target=\"_blank\">Webcams.travel</a>."
             },
             {
                "type":"boolean",
                "fieldName":"webcamsChecked",
-               "label":"Checked",
-               "tooltip":"Checked"
+               "label":"Visible",
+               "tooltip":"Check this box to make the layer visible by default."
             },
             {
                "type":"paragraph",
-               "value":"Turn this layer on by default."
+               "value":"Show this layer by default."
             }
          ]
       }
    ],
    "values":{
       "title":"",
-      "showAreaDescription":true,
+      "showSummary":true,
       "showLegendPanel":true,
       "hideNotesLayerPopups":true,
-      "showOperationalLegend":true,
-      "showSocialLegend":true,
-      "showAreaPanel":true,
+      "showFeaturedPanel":true,
       "showHomeButton":true,
       "showLocateButton":true,
       "showBasemapToggle":true,

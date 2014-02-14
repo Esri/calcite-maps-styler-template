@@ -7,8 +7,8 @@
 				step3: "INICIALIZĒŠANA",
 				fail: "Diemžēl neizdevās pārvilkt ielādēšanu",
 				loadBuilder: "PĀRSLĒGT UZ BUILDER MODE",
-				redirectSignIn: "ķ_REDIRECTING TO SIGN-IN PAGE_ū",
-				redirectSignIn2: "ķ_(you will be redirected here after sign-in)_ū",
+				redirectSignIn: "NOVIRZA UZ PIERAKSTĪŠANĀS LAPU",
+				redirectSignIn2: "(pēc pierakstīšanās jūs tiksiet novirzīti uz šejieni)",
 				failButton: "Atkārtot"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "APLIKĀCIJAS KONFIGURĀCIJA",
 				buttonSave: "SAGLABĀT",
-				buttonHelp: "ķ_Help_ū",
-				buttonShare: "ķ_Share_ū",
+				buttonHelp: "Palīdzība",
+				buttonShare: "Koplietot",
 				buttonDiscard: "ATCELT",
 				buttonSettings: "Iestatījumi",
 				buttonView: "Skata režīms",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "Pārklājums",
 				settingsExtentExplain: "Izmantojot zemāk esošo interaktīvo karti, iestatiet sākotnējo pārklājumu.",
 				settingsExtentExplainBottom: "Jūsu definētais pārklājums modificēs web kartes sākotnējo pārklājumu. Atcerieties ja jūs veicat kartes lasīšanas serijas, šis pārklājums netiks lietots.",
-				settingsExtentDateLineError: "ķ_The extent cannot be across the meridian of 180ï¿½ longitude_ū",
+				settingsExtentDateLineError: "Pārklājums nevar būt pāri 180° meridiāna garumam.",
 				settingsExtentDateLineError2: "Kļūda aprēķinot pārklājumu",
 				settingsExtentDrawBtn: "Zīmēt jaunu pārklājumu",
 				settingsExtentModifyBtn: "Rediģēt pašreizējo pārklājumu",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "Atklāt citu web karti.",
 				settingsDataModel2HelpTitle: "Kā atrast web kartes ID?",
 				settingsDataModel2HelpContent: "Kopēt un ielīmēt ciparus aiz zīmes \"=\" vietrādī URL no web kartes",
-				switchMaps: "ķ_Switch maps_ū",
-				browseWebMaps: "ķ_Browse web maps_ū"
+				switchMaps: "Kartes apgriešana",
+				browseWebMaps: "Pārlūkot web kartes"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Lietotnes izkārtojums",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "Aopskatiet aplikācijas piemēru ar pārvilkšanas sērijām šeit",
 				preview: "Saskarnes priekšskatījums",
 				settingsLocateButtonExplain: "Šī funkcionalitāte tiek atbalstīta uz vairuma mobilo ierīču un darbvirsmas pārlūkiem (ieskaitot Internet Explorer 9+).",
-				settingsLocateButton: "ķ_Enable a 'Locate' button on supported browsers_ū",
+				settingsLocateButton: "Iespējot \'Atrast izvietojumu\' pogu atblastītajos pārlūkos",
 				settingsAddressSearch: "Iespējot adreses meklēšanas rīku"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "Jūs nevarat noņemt grāmatzīmi. Pārvilktās sērijas var tikt atiespējotas iestatījumu sadaļā."
 			},
 			helpPopup: {
-				title: "ķ_Help_ū",
-				close: "ķ_Close_ū",
+				title: "Palīdzība",
+				close: "Aizvērt",
 				tab1: {
-					div1: "ķ_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._ū",
+					div1: "Pievilkšanas/ Tālskatas sagatave ir izveidota, lai salīdzinātu divu atsevišķu tīmekļu kartšu vai divus slāņu pievilcīgumu,viegli izmantojama tīmekļa aplikācija, ko var izmantot uz jebkura tīmekļa pārlūka, uz jeb kuras ierīces, ieskaitot viedtālruņus un planšetes",
 					div2: "ķ_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ū",
-					div3: "ķ_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._ū"
+					div3: "Mēs labprāt vēlētos dzirdēt jūsu atsauksmes! Neatkarīgi no tā vai jums ir jautājumi, vēlaties pieprasit jaunu elementu, vai uzskatāt , ka esat atradis kļūdu, lūdzu apmeklējiet <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps lietotāju forums</a>."
 				}
 			},
 			share: {
-				firstSaveTitle: "ķ_Application successfully saved_ū",
-				firstSaveHeader: "ķ_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ū",
-				firstSaveA1: "ķ_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ū",
-				firstSaveA1bis: "ķ_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ū",
-				firstSaveQ2: "ķ_Is my Application shared?_ū",
-				firstSaveA2: "ķ_Currently your Application is not shared. To share it, use the SHARE button._ū",
-				shareTitle: "ķ_Share your Application_ū",
-				sharePrivateHeader: "ķ_Your Application is not shared, would you like to share it?_ū",
-				sharePrivateBtn1: "ķ_Share publicly_ū",
-				sharePrivateBtn2: "ķ_Share with my Organization_ū",
-				sharePrivateProgress: "ķ_Sharing in progress..._ū",
-				sharePrivateErr: "ķ_Sharing failed, try again or_ū",
-				sharePrivateOk: "ķ_Sharing updated successfully, loading..._ū",
-				shareStatus1: "ķ_Application is not saved_ū",
-				shareStatus2: "ķ_Application is shared publicly_ū",
-				shareStatus3: "ķ_Application is shared within the organization_ū",
-				shareStatus4: "ķ_Application is not shared_ū",
-				sharePreviewAsUser: "ķ_Preview_ū",
-				shareHeader1: "ķ_Your Application is <strong>publicly accessible</strong>._ū",
-				shareHeader2: "ķ_Your Application is accessible by your organization members (login is required)._ū",
-				shareLinkHeader: "ķ_Share the Application with your audience_ū",
-				shareLinkOpen: "ķ_OPEN_ū",
-				learnMore: "ķ_Learn more_ū",
-				shareQ1Opt1: "ķ_How do I keep the Application private?_ū",
-				shareQ1Opt2: "ķ_How do I keep the Application private or share it publicly?_ū",
-				shareA1: "ķ_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._ū",
-				shareA1bis: "ķ_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ū",
-				shareQ2: "ķ_How do I edit the Application later?_ū",
-				shareQ2bis: "ķ_How do I get back to the authoring interface?_ū",
-				shareA2div1: "ķ_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ū",
-				shareA2div2: "ķ_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ū",				
-				shareQ3: "ķ_Where is the data stored?_ū",
-				shareA3: "ķ_The Application configuration is stored in this web application item</a>._ū",
+				firstSaveTitle: "Aplikācija veiksmīgi saglabāta",
+				firstSaveHeader: "Jūsu aplikācija tagad ir saglabāta ArcGIS Online. Lūdzu izlasiet atbildes uz biežāk uzdotajiem jautājumiem.",
+				firstSaveA1: "Ja jūs neesat pazīstams ar ArcGIS Online vai vēlaties īsinājumikonu, lai piekļūtu autorēšanas saskarnei, jūs varat saglabāt sekojošu saiti: %LINK1%",
+				firstSaveA1bis: "Aplikāciju var arī atrast Jūsu <a href='%LINK2%' target='_blank'>ArcGIS Online satura mapē</a>.",
+				firstSaveQ2: "Vai ar manu aplikāciju dalīties?",
+				firstSaveA2: "Pašlaik Jūsu aplikācija nav kopīgota. Lai kopīgotu, izmantojiet KOPĪGOŠANAS pogu.",
+				shareTitle: "Koplietot savu aplikāciju",
+				sharePrivateHeader: "Jūsu aplikācija netika koplietota, vai Jūs vēlaties koplietoties ar to?",
+				sharePrivateBtn1: "Koplietot publiski",
+				sharePrivateBtn2: "Koplietot ar Organizāciju",
+				sharePrivateProgress: "Notiek koplietošana...",
+				sharePrivateErr: "Neizdevās koplietot, mēģiniet vēlreiz vai",
+				sharePrivateOk: "Koplietošana veiksmīgi atjaunināta, ielādē...",
+				shareStatus1: "Aplikācija nav saglabāta",
+				shareStatus2: "Aplikācija tiek publiski koplietota",
+				shareStatus3: "Aplikācija tiek koplietota organizācijai",
+				shareStatus4: "Aplikācija nav koplietota",
+				sharePreviewAsUser: "Priekšskatījums",
+				shareHeader1: "Jūsu aplikācija ir <strong>publiski pieejama</strong>.",
+				shareHeader2: "Jūsu aplikācija ir pieejama Jūsu organizācijas biedriem (pierakstīšanās ir nepieciešama).",
+				shareLinkHeader: "Koplietot aplikāciju ar Jūsu auditoriju",
+				shareLinkOpen: "ATVĒRTS",
+				learnMore: "Uzziniet vairāk",
+				shareQ1Opt1: "Kā es varu saglabāt privāto aplikāciju?",
+				shareQ1Opt2: "Kā es varu saglabāt privāto aplikāciju un publiski dalīties?",
+				shareA1: "Izmantojiet %SHAREIMG% on <a href='%LINK1%' target='_blank'>aplikācijas vienības lapu</a>. Ja arī Jūs vēlaties atcelt tīmekļa karti, izmantojiet<a href='%LINK2%' target='_blank'>tīmekļa kartes vienības lapu</a>.",
+				shareA1bis: "Ja jūs vēlaties pārtraukt koplietot elementu servisu, izmantojiet <a href='%LINK1%' target='_blank'>elementu servisa vienības lapu</a>.",
+				shareQ2: "Kā es varu vēlāk rediģēt aplikāciju?",
+				shareQ2bis: "Kā es varu nokļūt atpakaļ uz autorēšanas interfeisu?",
+				shareA2div1: "Saglabājiet un izmantojiet atkal sekojošu saiti %LINK1% vai izmantojiet <a href='%LINK2%' target='_blank'>aplikācijas vienības lapu</a>.",
+				shareA2div2: "Kā aplikācijas īpašnieks, kad esat pierakstījies ArcGIS.com, aplikācija satur pogu, lai atvērtu to interaktīvajā veidotājā:",				
+				shareQ3: "Kur tiek glabāti dati?",
+				shareA3: "Aplikācijas konfigurācija tiek saglabāta šajā web aplikācijas lapā</a>.",
 				shareWarning: "ķ_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ū",
  				shareWarningWith1: "ķ_publicly_ū",
  				shareWarningWith2: "ķ_publicly and with the Organization_ū"
 			},
 			directCreation: {
-				header: "ķ_Welcome to the Swipe/Spyglass Builder_ū",
-				mapPickHeader: "ķ_To get started, please input a valid web map id, or use the search button to browse web maps._ū",
-				launchBuilder: "ķ_Launch Builder_ū"
+				header: "Sveicināti Pievilkšanas/Tālskata veidotājā",
+				mapPickHeader: "Lai sāktu, lūdzu ievadiet derīgu web kartes id, vai izmantojiet meklēšanas pogu, lai pārlūkotu web kartes.",
+				launchBuilder: "Uzsākšanas veidotājs",
+				chooseWebmapLbl: "ķ_Choose web map..._ū",
+				explain2: "ķ_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ū",
+				explain3: "ķ_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ū",
+				webmapPlaceholder: "ķ_Enter a web map id..._ū"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "ķ_My Organization_ū",
-					onlineLabel: "ķ_ArcGIS Online_ū",
-					contentLabel: "ķ_My Content_ū",
-					favoritesLabel: "ķ_My Favorites_ū"
+					organizationLabel: "Organizācija",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Mans Saturs",
+					favoritesLabel: "Mani favorīti"
 				},
-				title: "ķ_Select Web Map_ū",
-				searchTitle: "ķ_Search_ū",
-				ok: "ķ_Ok_ū",
-				cancel: "ķ_Cancel_ū",
-				placeholder: "ķ_Enter search term_ū"
+				title: "Izvēlieties web karti",
+				searchTitle: "Meklēt",
+				ok: "Labi",
+				cancel: "Atcelt",
+				placeholder: "Ievadiet meklēšanas nosacījumus"
 			}
 		}
     })

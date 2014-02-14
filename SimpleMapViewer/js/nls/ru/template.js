@@ -13,13 +13,13 @@
         label: "Карта из:"
       },
       geocoder: {
-        selectAnother: "Ж_Select another location_Я",
-        notWhatYouWanted: "Ж_Not what you wanted?_Я",
-        currentLocation: "Ж_Current Location_Я",
-        title: "Ж_Location_Я"
+        selectAnother: "Выберите другое местоположение",
+        notWhatYouWanted: "Не то, что вам нужно?",
+        currentLocation: "Текущее местоположение",
+        title: "Местоположение"
       },
       sidePanel: {
-        title: "Ж_Legend_Я",
+        title: "Легенда",
         owner: "владелец: ",
         modified: "Последние изменения: ",
         message: "Нет рабочих слоев"

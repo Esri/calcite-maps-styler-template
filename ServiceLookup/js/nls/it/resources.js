@@ -8,8 +8,9 @@
             defaultText: "Immettere l\'indirizzo"
         },
         error: {
-            layerNotFound: "Layer area di servizio non incluso nella mappa Web",
-            fieldNotFound: "Campo non trovato"
+            layerNotFound: "é_Layer is not in the webmap_È",
+            fieldNotFound: "Campo non trovato",
+            popupNotSet: "é_Popup not enabled for this layer_È"
         },
         page: {
             title: "Ricerca servizi",

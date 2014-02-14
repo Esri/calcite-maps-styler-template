@@ -13,13 +13,13 @@
         label: "Mapa od:"
       },
       geocoder: {
-        selectAnother: "ł_Select another location_ą",
-        notWhatYouWanted: "ł_Not what you wanted?_ą",
-        currentLocation: "ł_Current Location_ą",
-        title: "ł_Location_ą"
+        selectAnother: "Wybierz inną lokalizację",
+        notWhatYouWanted: "Oczekiwano innej lokalizacji?",
+        currentLocation: "Bieżąca lokalizacja",
+        title: "Lokalizacja"
       },
       sidePanel: {
-        title: "ł_Legend_ą",
+        title: "Legenda",
         owner: "właściciel: ",
         modified: "Ostatnia modyfikacja: ",
         message: "Brak warstw operacyjnych"

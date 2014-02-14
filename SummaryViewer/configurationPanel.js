@@ -30,14 +30,14 @@
                "type":"layerAndFieldSelector",
                "fields":[ 
                     {
-                        "supportedTypes": ["esriFieldTypeSmallInteger"],
+                        "supportedTypes": ["esriFieldTypeSmallInteger", "esriFieldTypeInteger", "esriFieldTypeSingle", "esriFieldTypeDouble", "esriFieldTypeString"],
                         "multipleSelection": false,
                         "fieldName": "filterField",
                         "label": "Field to filter features",
                         "tooltip":"Field used to filter features"
 
                     },{
-                        "supportedTypes": ["esriFieldTypeSmallInteger"],
+                        "supportedTypes": ["esriFieldTypeSmallInteger", "esriFieldTypeInteger", "esriFieldTypeSingle", "esriFieldTypeDouble"],
                         "multipleSelection": true,
                         "fieldName": "sumFields",
                         "label": "Summary fields",
@@ -45,7 +45,7 @@
 
                     },
                     {
-                        "supportedTypes": ["esriFieldTypeSmallInteger"],
+                        "supportedTypes": ["esriFieldTypeSmallInteger", "esriFieldTypeInteger", "esriFieldTypeSingle", "esriFieldTypeDouble"],
                         "multipleSelection": true,
                         "fieldName": "avgFields",
                         "label": "Average fields",
@@ -53,7 +53,7 @@
 
                     },
                     {
-                        "supportedTypes": ["esriFieldTypeSmallInteger"],
+                        "supportedTypes": ["esriFieldTypeSmallInteger", "esriFieldTypeInteger", "esriFieldTypeSingle", "esriFieldTypeDouble"],
                         "multipleSelection": true,
                         "fieldName": "minFields",
                         "label": "Minimum fields",
@@ -61,7 +61,7 @@
 
                     },
                     {
-                        "supportedTypes": ["esriFieldTypeSmallInteger"],
+                        "supportedTypes": ["esriFieldTypeSmallInteger", "esriFieldTypeInteger", "esriFieldTypeSingle", "esriFieldTypeDouble"],
                         "multipleSelection": true,
                         "fieldName": "maxFields",
                         "label": "Maximum fields",

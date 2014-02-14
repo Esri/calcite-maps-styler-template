@@ -7,8 +7,8 @@
 				step3: "BAŞLATILIYOR",
 				fail: "Özür dileriz; Swipe yüklenemedi",
 				loadBuilder: "DERLEYİCİ MODUNA GEÇİLİYOR",
-				redirectSignIn: "ı_REDIRECTING TO SIGN-IN PAGE_İ",
-				redirectSignIn2: "ı_(you will be redirected here after sign-in)_İ",
+				redirectSignIn: "OTURUM AÇMA SAYFASINA YÖNLENDİRİLİYOR",
+				redirectSignIn2: "(oturum açtıktan sonra buraya yeniden yönlendirileceksiniz)",
 				failButton: "Tekrar dene"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "UYGULAMA YAPILANDIRMASI",
 				buttonSave: "KAYDET",
-				buttonHelp: "ı_Help_İ",
-				buttonShare: "ı_Share_İ",
+				buttonHelp: "Yardım",
+				buttonShare: "Paylaş",
 				buttonDiscard: "İPTAL",
 				buttonSettings: "Ayarlar",
 				buttonView: "Modu görüntüle",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "Yayılım",
 				settingsExtentExplain: "Aşağıdaki harita yoluyla ilk yayılımı ayarlayın.",
 				settingsExtentExplainBottom: "Tanımladığınız yayılım web haritanızın ilk yayılımını değiştirir. Bir swipe serisi yapıyorsanız, yayılımın kullanılmayacağına dikkat edin.",
-				settingsExtentDateLineError: "ı_The extent cannot be across the meridian of 180ï¿½ longitude_İ",
+				settingsExtentDateLineError: "Yayılım 180ï¿½ boylamının meridyeni boyunca olamaz",
 				settingsExtentDateLineError2: "Yayılımı hesaplanırken hata oluştu",
 				settingsExtentDrawBtn: "Yeni yayılım çiz",
 				settingsExtentModifyBtn: "Geçerli yayılımı düzenle",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "Başka bir web haritasını ortaya çıkarın.",
 				settingsDataModel2HelpTitle: "Bir web haritasının kimliğini nasıl bulabilirim?",
 				settingsDataModel2HelpContent: "Web haritasının URL'sindeki '=' işaretinden sonraki rakamları kopyalayıp yapıştırın",
-				switchMaps: "ı_Switch maps_İ",
-				browseWebMaps: "ı_Browse web maps_İ"
+				switchMaps: "Haritaları değiştir",
+				browseWebMaps: "Web haritalarına gözat"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Uygulama Düzeni",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "Bir swipe serisi olan bir uygulama örneğini burada görebilirsiniz",
 				preview: "Kullanıcı arayüzü önizlemesi",
 				settingsLocateButtonExplain: "Bu işlevsellik çoğu mobil cihazda ve (Internet Explorer 9+ dahil) masaüstü tarayıcısında desteklenir.",
-				settingsLocateButton: "ı_Enable a 'Locate' button on supported browsers_İ",
+				settingsLocateButton: "Desteklenen tarayıcılarda bir 'Konum Bul' düğmesini etkileştir",
 				settingsAddressSearch: "Adres arama aracını etkinleştir"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "Bu yer işaretini kaldıramazsınız. Swipe serisi Ayarlar\'da devre dışı bırakılabilir."
 			},
 			helpPopup: {
-				title: "ı_Help_İ",
-				close: "ı_Close_İ",
+				title: "Yardım",
+				close: "Kapat",
 				tab1: {
-					div1: "ı_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._İ",
+					div1: "Swipe/Küçük Dürbün şablonu iki ayrı web haritasını veya tek bir web haritasının iki katmanını akıllı telefonlar ve tabletler dahil herhangi bir cihazda herhangi bir web tarayıcısında kullanılabilecek çekici, kolay kullanılan bir web uygulamasında karşılaştırmak için tasarlanmıştır.",
 					div2: "ı_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._İ",
-					div3: "ı_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._İ"
+					div3: "Bize yazmanızı istiyoruz! İster bir soru sormak istiyor, ister yeni bir özellik istiyor, ister bir hata bulduğunuzu düşünüyor olun, <a href='http://links.esri.com/storymaps/forum' target='_blank'>Öykü Haritaları Kullanıcı Forumu</a>\'nu ziyaret edin."
 				}
 			},
 			share: {
-				firstSaveTitle: "ı_Application successfully saved_İ",
-				firstSaveHeader: "ı_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._İ",
-				firstSaveA1: "ı_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_İ",
-				firstSaveA1bis: "ı_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._İ",
-				firstSaveQ2: "ı_Is my Application shared?_İ",
-				firstSaveA2: "ı_Currently your Application is not shared. To share it, use the SHARE button._İ",
-				shareTitle: "ı_Share your Application_İ",
-				sharePrivateHeader: "ı_Your Application is not shared, would you like to share it?_İ",
-				sharePrivateBtn1: "ı_Share publicly_İ",
-				sharePrivateBtn2: "ı_Share with my Organization_İ",
-				sharePrivateProgress: "ı_Sharing in progress..._İ",
-				sharePrivateErr: "ı_Sharing failed, try again or_İ",
-				sharePrivateOk: "ı_Sharing updated successfully, loading..._İ",
-				shareStatus1: "ı_Application is not saved_İ",
-				shareStatus2: "ı_Application is shared publicly_İ",
-				shareStatus3: "ı_Application is shared within the organization_İ",
-				shareStatus4: "ı_Application is not shared_İ",
-				sharePreviewAsUser: "ı_Preview_İ",
-				shareHeader1: "ı_Your Application is <strong>publicly accessible</strong>._İ",
-				shareHeader2: "ı_Your Application is accessible by your organization members (login is required)._İ",
-				shareLinkHeader: "ı_Share the Application with your audience_İ",
-				shareLinkOpen: "ı_OPEN_İ",
-				learnMore: "ı_Learn more_İ",
-				shareQ1Opt1: "ı_How do I keep the Application private?_İ",
-				shareQ1Opt2: "ı_How do I keep the Application private or share it publicly?_İ",
-				shareA1: "ı_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._İ",
-				shareA1bis: "ı_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._İ",
-				shareQ2: "ı_How do I edit the Application later?_İ",
-				shareQ2bis: "ı_How do I get back to the authoring interface?_İ",
-				shareA2div1: "ı_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._İ",
-				shareA2div2: "ı_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_İ",				
-				shareQ3: "ı_Where is the data stored?_İ",
-				shareA3: "ı_The Application configuration is stored in this web application item</a>._İ",
+				firstSaveTitle: "Uygulama başarıyla kaydedildi",
+				firstSaveHeader: "Uygulamanız artık ArcGIS Online\'a kaydedildi. Aşağıdaki sık sorulan sorulara verilen cevapları okuyun.",
+				firstSaveA1: "ArcGIS Online\'ı iyi bilmiyorsanız veya hazırlama arayüzüne erişmek için bir kısayol istiyorsanız, şu bağlantıyı kaydedebilirsiniz: %LINK1%",
+				firstSaveA1bis: "Uygulama <a href='%LINK2%' target='_blank'>ArcGIS Online içerik klasörünüzde</a> de bulunabilir.",
+				firstSaveQ2: "Uygulamam paylaşılıyor mu?",
+				firstSaveA2: "Şu anda Uygulamanız paylaşılmıyor. Paylaşmak için PAYLAŞ düğmesini kullanın.",
+				shareTitle: "Uygulamanızı Paylaşın",
+				sharePrivateHeader: "Uygulamanız paylaşılmıyor; paylaşmak ister misiniz?",
+				sharePrivateBtn1: "Herkesle paylaş",
+				sharePrivateBtn2: "Kuruluşumla Paylaş",
+				sharePrivateProgress: "Paylaşma sürüyor...",
+				sharePrivateErr: "Paylaşma başarısız, tekrar deneyin veya",
+				sharePrivateOk: "Paylaşma başarıyla güncellendi, yükleniyor...",
+				shareStatus1: "Uygulama kaydedilmedi",
+				shareStatus2: "Uygulama herkesle paylaşılıyor",
+				shareStatus3: "Uygulama kuruluş içinde paylaşılıyor",
+				shareStatus4: "Uygulama paylaşılmıyor",
+				sharePreviewAsUser: "Önizleme",
+				shareHeader1: "Uygulamanıza <strong>herkes erişebilir</strong>.",
+				shareHeader2: "Uygulamanıza kuruluşunuzun üyeleri erişebilir. (Oturum açılması gerekir.)",
+				shareLinkHeader: "Uygulamayı izleyici kitlenizle paylaşın",
+				shareLinkOpen: "AÇ",
+				learnMore: "Daha fazla bilgi",
+				shareQ1Opt1: "Uygulamayı nasıl özel tutarım?",
+				shareQ1Opt2: "Uygulamayı nasıl özel tutarım veya herkesle paylaşırım?",
+				shareA1: "<a href='%LINK1%' target='_blank'>Uygulama öğesi sayfasında</a> %SHAREIMG% kullanın. Ayrıca, web haritasını paylaşmayı kaldırmak istiyorsanız, <a href='%LINK2%' target='_blank'>web haritası öğe sayfasını</a> kullanın.",
+				shareA1bis: "Detay Servisi\'ni paylaşmayı iptal etmek istiyorsanız, <a href='%LINK1%' target='_blank'>Detay Servisi öğesi sayfasını</a> kullanın.",
+				shareQ2: "Uygulamayı daha sonra nasıl düzenlerim?",
+				shareQ2bis: "Hazırlama arayüzüne nasıl geri dönerim?",
+				shareA2div1: "%LINK1% bağlantısını kaydedip tekrar kullanın veya <a href='%LINK2%' target='_blank'>uygulama öğesi sayfasını</a> kullanın.",
+				shareA2div2: "Uygulamanın sahibi olarak ArcGIS.com\'da oturum açtığınızda, uygulamada etkileşimli derleyiciyi açmak için bir düğme bulunur:",				
+				shareQ3: "Veriler nerede saklanıyor?",
+				shareA3: "Uygulama yapılandırması bu web uygulama öğesinde saklanır</a>.",
 				shareWarning: "ı_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._İ",
  				shareWarningWith1: "ı_publicly_İ",
  				shareWarningWith2: "ı_publicly and with the Organization_İ"
 			},
 			directCreation: {
-				header: "ı_Welcome to the Swipe/Spyglass Builder_İ",
-				mapPickHeader: "ı_To get started, please input a valid web map id, or use the search button to browse web maps._İ",
-				launchBuilder: "ı_Launch Builder_İ"
+				header: "Swipe/Küçük Dürbün Derleyici\'ye Hoş Geldiniz",
+				mapPickHeader: "Başlamak için geçerli bir web haritası kimliği girin veya web haritalarına göz atmak için arama düğmesini kullanın.",
+				launchBuilder: "Derleyiciyi Başlat",
+				chooseWebmapLbl: "ı_Choose web map..._İ",
+				explain2: "ı_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._İ",
+				explain3: "ı_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._İ",
+				webmapPlaceholder: "ı_Enter a web map id..._İ"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "ı_My Organization_İ",
-					onlineLabel: "ı_ArcGIS Online_İ",
-					contentLabel: "ı_My Content_İ",
-					favoritesLabel: "ı_My Favorites_İ"
+					organizationLabel: "Kuruluşum",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "İçeriğim",
+					favoritesLabel: "Favorilerim"
 				},
-				title: "ı_Select Web Map_İ",
-				searchTitle: "ı_Search_İ",
-				ok: "ı_Ok_İ",
-				cancel: "ı_Cancel_İ",
-				placeholder: "ı_Enter search term_İ"
+				title: "Web Haritası Seç",
+				searchTitle: "Ara",
+				ok: "Tamam",
+				cancel: "İptal",
+				placeholder: "Arama terimini gir"
 			}
 		}
     })

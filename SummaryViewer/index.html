@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Summary Viewer</title>
-		<meta charset="utf-8">
+	   <title>Summary Viewer</title>
+	    <meta charset="utf-8">
+		<!-- Mobile -->
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+	    <!-- End Mobile -->
 		<!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
-		<link rel="stylesheet" href="//js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
-		<link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/esri/css/esri.css">
+		<link rel="stylesheet" href="//jsdev.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.9/js/esri/css/esri.css">
 		<!--Load any application specific styles-->
 		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<link rel="stylesheet" type="text/css" href="css/counter.css">
+		<!--<link rel="stylesheet" type="text/css" href="css/counter.css">-->
 		<!-- Application specific javascript files -->
 		<script type="text/javascript" src="js/c.js"></script>
 	</head>
@@ -35,7 +41,7 @@
 		<div class="panelBottom">
 			<!--Panel Container -->
 			<div id="panelContainer">
-				<div id="panel0" class="col line">
+				<div id="panel0" class="col">
 					<div id="title0" class="titleCounter">
 					</div>
 					<div id="counter0" class="counter"></div>
@@ -53,7 +59,7 @@
 					<div id="counter2" class="counter"></div>
 					<div id="units2" class="units"></div>
 				</div>
-				<div id="panel3" class="col">
+				<div id="panel3" class="col line">
 					<div id="title3" class="titleCounter">
 					</div>
 					<div id="counter3" class="counter"></div>
@@ -100,7 +106,7 @@
             }]
             };
 		</script>
-		<script type="text/javascript" src="//js.arcgis.com/3.9/"></script>
+		<script type="text/javascript" src="//jsdev.arcgis.com/3.9/"></script>
 		<script type="text/javascript">
             require(["dojo/on", "application/main", "application/template", "dojo/domReady!"], function(on, Main, Template) {
                 //create the template. This will take care of all the logic required for template applications
@@ -119,6 +125,7 @@
                     //In this example we have one called theme.
                     Main(config);
                 });
+                
             });
 		</script>
 	</body>

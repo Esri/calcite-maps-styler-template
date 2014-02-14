@@ -39,8 +39,8 @@ define(
             email: "el. paštas",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
             Twitter: "Twitter",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
-            title: "Į_title_š",  // Shown as title hint in print specification box if a title hint is not configured
-            author: "Į_author_š"  // Shown as author hint in print specification box if an author hint is not configured
+            title: "pavadinimas",  // Shown as title hint in print specification box if a title hint is not configured
+            author: "autorius"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
             search: "Ieškoti:",  // Appears before a search text field in dialog box for searching for a feature
@@ -54,10 +54,11 @@ define(
             geolocationTimeout: "Naršyklei per priimtiną laiką nepavyko nustatyti esamos vietos",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "Paieškos sluoksnis žemėlapyje nerastas",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Žemėlapio paieškos sluoksnyje šis laukas nerastas",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "Į_None of these fields was found in the map search layer_š",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            yourContentSubmitted: "Į_Your content has been submitted. Thank you._š",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "Į_Unable to access application's configuration_š",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "Į_Unable to launch application_š"  // Appears for any failure to build the user interface
+            allSearchFieldsMissing: "Laukai nerasti paieškos sluoksnyje",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            fieldNotFound: "Į_This field does not exist in any of the map layers_š",  // Appears when a field used in the configuration was not found in any map layer
+            yourContentSubmitted: "Turinys buvo įkeltas. Ačiū.",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "Nepavyksta pasiekti aplikacijos konfigūracijos",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "Nepavyksta paleisti aplikacijos"  // Appears for any failure to build the user interface
         }
     })
 );

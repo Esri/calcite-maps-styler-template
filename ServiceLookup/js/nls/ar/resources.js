@@ -8,8 +8,9 @@
             defaultText: "أدخل العنوان"
         },
         error: {
-            layerNotFound: "طبقة منطقة الخدمة ليست في خريطة الويب",
-            fieldNotFound: "يتعذر إيجاد الحقل"
+            layerNotFound: "بيت_Layer is not in the webmap_لاحقة",
+            fieldNotFound: "يتعذر إيجاد الحقل",
+            popupNotSet: "بيت_Popup not enabled for this layer_لاحقة"
         },
         page: {
             title: "البحث عن الخدمة",

@@ -8,8 +8,9 @@
             defaultText: "ใส่ข้อมูลที่อยู่ของคุณ"
         },
         error: {
-            layerNotFound: "ชั้นช้อมูลพื้นที่การให้บริการไม่ปรากฎในเว็บแมพ",
-            fieldNotFound: "ไม่พบฟิลด์"
+            layerNotFound: "ก้_Layer is not in the webmap_ษฺ",
+            fieldNotFound: "ไม่พบฟิลด์",
+            popupNotSet: "ก้_Popup not enabled for this layer_ษฺ"
         },
         page: {
             title: "ค้นหาเซอร์วิส",

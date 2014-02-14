@@ -8,8 +8,9 @@
             defaultText: "Anna osoitteesi"
         },
         error: {
-            layerNotFound: "Palvelualueen karttataso ei ole Web-kartassa",
-            fieldNotFound: "Kenttää ei löydy"
+            layerNotFound: "Å_Layer is not in the webmap_ö",
+            fieldNotFound: "Kenttää ei löydy",
+            popupNotSet: "Å_Popup not enabled for this layer_ö"
         },
         page: {
             title: "Palvelusta haku",

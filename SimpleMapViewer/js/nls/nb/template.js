@@ -13,13 +13,13 @@
         label: "Et kart fra:"
       },
       geocoder: {
-        selectAnother: "å_Select another location_ø",
-        notWhatYouWanted: "å_Not what you wanted?_ø",
-        currentLocation: "å_Current Location_ø",
-        title: "å_Location_ø"
+        selectAnother: "Velg en annen lokasjon",
+        notWhatYouWanted: "Ikke den du ville ha?",
+        currentLocation: "Gjeldende lokasjon",
+        title: "Lokasjon"
       },
       sidePanel: {
-        title: "å_Legend_ø",
+        title: "Tegnforklaring",
         owner: "eier: ",
         modified: "Sist endret: ",
         message: "Ingen funksjonelle lag"

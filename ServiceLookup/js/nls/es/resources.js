@@ -8,8 +8,9 @@
             defaultText: "Introduce tu dirección"
         },
         error: {
-            layerNotFound: "La capa de área de servicio no está en el mapa web",
-            fieldNotFound: "Campo no encontrado"
+            layerNotFound: "á_Layer is not in the webmap_Ó",
+            fieldNotFound: "Campo no encontrado",
+            popupNotSet: "á_Popup not enabled for this layer_Ó"
         },
         page: {
             title: "Búsqueda de servicios",

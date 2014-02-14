@@ -8,8 +8,9 @@
             defaultText: "주소 입력"
         },
         error: {
-            layerNotFound: "서비스 영역 레이어가 웹 맵에 없습니다.",
-            fieldNotFound: "필드를 찾을 수 없음"
+            layerNotFound: "한_Layer is not in the webmap_빠",
+            fieldNotFound: "필드를 찾을 수 없음",
+            popupNotSet: "한_Popup not enabled for this layer_빠"
         },
         page: {
             title: "서비스 조회",

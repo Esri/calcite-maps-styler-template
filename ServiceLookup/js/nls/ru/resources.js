@@ -8,8 +8,9 @@
             defaultText: "Введите ваш адрес"
         },
         error: {
-            layerNotFound: "В веб-карте отсутствует слой области обслуживания",
-            fieldNotFound: "Поле не найдено"
+            layerNotFound: "Ж_Layer is not in the webmap_Я",
+            fieldNotFound: "Поле не найдено",
+            popupNotSet: "Ж_Popup not enabled for this layer_Я"
         },
         page: {
             title: "Поиск сервиса",

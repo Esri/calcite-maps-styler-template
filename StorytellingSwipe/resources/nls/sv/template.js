@@ -7,8 +7,8 @@
 				step3: "INITIERAR",
 				fail: "Det gick inte att hämta svep",
 				loadBuilder: "VÄXLAR TILL BYGGLÄGET",
-				redirectSignIn: "Å_REDIRECTING TO SIGN-IN PAGE_ö",
-				redirectSignIn2: "Å_(you will be redirected here after sign-in)_ö",
+				redirectSignIn: "OMDIRIGERAR TILL INLOGGNINGSSIDAN",
+				redirectSignIn2: "(du omdirigeras hit efter inloggning)",
 				failButton: "Försök igen"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "PROGRAMKONFIGURATION",
 				buttonSave: "SPARA",
-				buttonHelp: "Å_Help_ö",
-				buttonShare: "Å_Share_ö",
+				buttonHelp: "Hjälp",
+				buttonShare: "Dela",
 				buttonDiscard: "AVBRYT",
 				buttonSettings: "Inställningar",
 				buttonView: "Visningsläge",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "Utbredning",
 				settingsExtentExplain: "Ange den ursprungliga utbredningen via den interaktiva kartan nedan.",
 				settingsExtentExplainBottom: "Den utbredning du definierar ändrar webbkartans ursprungliga utbredning. Om du kör en svepserie kommer den här utbredningen inte att användas.",
-				settingsExtentDateLineError: "Å_The extent cannot be across the meridian of 180ï¿½ longitude_ö",
+				settingsExtentDateLineError: "Det går inte att ha en utbredning över 180ï¿½-meridianen",
 				settingsExtentDateLineError2: "Det gick inte att beräkna utbredningen",
 				settingsExtentDrawBtn: "Rita en ny utbredning",
 				settingsExtentModifyBtn: "Redigera aktuell utbredning",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "Visa en annan webbkarta.",
 				settingsDataModel2HelpTitle: "Hitta ett webbkart-ID",
 				settingsDataModel2HelpContent: "Kopiera och klistra in siffror efter tecknet '=' i webbkartans webbadress",
-				switchMaps: "Å_Switch maps_ö",
-				browseWebMaps: "Å_Browse web maps_ö"
+				switchMaps: "Växla kartor",
+				browseWebMaps: "Bläddra bland webbkartor"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Applikationslayout",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "Här finns ett exempel på en applikation med en svepserie",
 				preview: "Förhandsgranska användargränssnitt",
 				settingsLocateButtonExplain: "Den här funktionen kan användas på de flesta mobila enheter och datorwebbläsare (inklusive Internet Explorer 9+).",
-				settingsLocateButton: "Å_Enable a 'Locate' button on supported browsers_ö",
+				settingsLocateButton: "Aktivera knappen Hitta för webbläsare som stöds",
 				settingsAddressSearch: "Aktivera ett adressökverktyg"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "Det går inte att ta bort det här bokmärket. Du kan inaktivera svepserier i inställningarna."
 			},
 			helpPopup: {
-				title: "Å_Help_ö",
-				close: "Å_Close_ö",
+				title: "Hjälp",
+				close: "Stäng",
 				tab1: {
-					div1: "Å_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._ö",
+					div1: "Mallen Svep/Kikare är utformad för att jämföra två separata webbkartor eller två lager i en webbkarta i en tilltalande och lättanvänd webbapplikation som kan användas i valfri webbläsare på alla enheter, inklusive smartphones och surfplattor.",
 					div2: "Å_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ö",
-					div3: "Å_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._ö"
+					div3: "Vi vill gärna att du hör av dig! Om du undrar något, vill föreslå en ny funktion eller vill rapportera ett programfel är du välkommen att besöka <a href='http://links.esri.com/storymaps/forum' target='_blank'>användarforumet på Story Maps</a>."
 				}
 			},
 			share: {
-				firstSaveTitle: "Å_Application successfully saved_ö",
-				firstSaveHeader: "Å_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ö",
-				firstSaveA1: "Å_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ö",
-				firstSaveA1bis: "Å_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ö",
-				firstSaveQ2: "Å_Is my Application shared?_ö",
-				firstSaveA2: "Å_Currently your Application is not shared. To share it, use the SHARE button._ö",
-				shareTitle: "Å_Share your Application_ö",
-				sharePrivateHeader: "Å_Your Application is not shared, would you like to share it?_ö",
-				sharePrivateBtn1: "Å_Share publicly_ö",
-				sharePrivateBtn2: "Å_Share with my Organization_ö",
-				sharePrivateProgress: "Å_Sharing in progress..._ö",
-				sharePrivateErr: "Å_Sharing failed, try again or_ö",
-				sharePrivateOk: "Å_Sharing updated successfully, loading..._ö",
-				shareStatus1: "Å_Application is not saved_ö",
-				shareStatus2: "Å_Application is shared publicly_ö",
-				shareStatus3: "Å_Application is shared within the organization_ö",
-				shareStatus4: "Å_Application is not shared_ö",
-				sharePreviewAsUser: "Å_Preview_ö",
-				shareHeader1: "Å_Your Application is <strong>publicly accessible</strong>._ö",
-				shareHeader2: "Å_Your Application is accessible by your organization members (login is required)._ö",
-				shareLinkHeader: "Å_Share the Application with your audience_ö",
-				shareLinkOpen: "Å_OPEN_ö",
-				learnMore: "Å_Learn more_ö",
-				shareQ1Opt1: "Å_How do I keep the Application private?_ö",
-				shareQ1Opt2: "Å_How do I keep the Application private or share it publicly?_ö",
-				shareA1: "Å_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._ö",
-				shareA1bis: "Å_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ö",
-				shareQ2: "Å_How do I edit the Application later?_ö",
-				shareQ2bis: "Å_How do I get back to the authoring interface?_ö",
-				shareA2div1: "Å_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ö",
-				shareA2div2: "Å_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ö",				
-				shareQ3: "Å_Where is the data stored?_ö",
-				shareA3: "Å_The Application configuration is stored in this web application item</a>._ö",
+				firstSaveTitle: "Applikationen har sparats",
+				firstSaveHeader: "Din applikation har nu sparats i ArcGIS Online. Läs följande svar på vanliga frågor.",
+				firstSaveA1: "Om du inte är bekant med ArcGIS Online eller vill ha en genväg till skapargränssnittet kan du spara följande länk: %LINK1%",
+				firstSaveA1bis: "Applikationen finns även i <a href='%LINK2%' target='_blank'>innehållsmappen för ArcGIS Online</a>.",
+				firstSaveQ2: "Är min applikation delad?",
+				firstSaveA2: "Applikationen delas inte för tillfället. Tryck på knappen DELA om du vill dela den.",
+				shareTitle: "Dela din applikation",
+				sharePrivateHeader: "Din applikation är inte delad, vill du dela den?",
+				sharePrivateBtn1: "Dela offentligt",
+				sharePrivateBtn2: "Dela med min organisation",
+				sharePrivateProgress: "Delning pågår ...",
+				sharePrivateErr: "Det gick inte att dela. Försök igen eller",
+				sharePrivateOk: "Delningen har uppdaterats, laddar ...",
+				shareStatus1: "Applikationen har inte sparats",
+				shareStatus2: "Applikationen delas offentligt",
+				shareStatus3: "Applikationen delas inom organisationen",
+				shareStatus4: "Applikationen delas inte",
+				sharePreviewAsUser: "Förhandsgranska",
+				shareHeader1: "Applikationen är <strong>åtkomlig för alla</strong>.",
+				shareHeader2: "Applikationen är åtkomlig för organisationens medlemmar (inloggning krävs).",
+				shareLinkHeader: "Dela applikationen med din målgrupp",
+				shareLinkOpen: "ÖPPNA",
+				learnMore: "Läs mer",
+				shareQ1Opt1: "Hur gör jag för att hålla applikationen privat?",
+				shareQ1Opt2: "Hur gör jag för att hålla applikationen privat eller dela den offentligt?",
+				shareA1: "Använd %SHAREIMG% på <a href='%LINK1%' target='_blank'>applikationens objektsida</a>. Om du även vill sluta dela webbkartan använder du <a href='%LINK2%' target='_blank'>webbkartans objektsida</a>.",
+				shareA1bis: "Du kan också inaktivera delning av geoobjekttjänsten på <a href='%LINK1%' target='_blank'>geoobjekttjänstens objektsida</a>.",
+				shareQ2: "Hur gör jag för att redigera applikationen senare?",
+				shareQ2bis: "Hur kommer jag tillbaka till redigeringsgränssnittet?",
+				shareA2div1: "Spara följande länk och använd den senare: %LINK1%, eller gå via <a href='%LINK2%' target='_blank'>applikationens objektsida</a>.",
+				shareA2div2: "Som ägare till applikationen kan du se en knapp som öppnar det interaktiva byggverktyget när du är inloggad på ArcGIS.com:",				
+				shareQ3: "Var lagras data?",
+				shareA3: "Applikationens konfiguration sparas i det här webbapplikationsobjektet</a>.",
 				shareWarning: "Å_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ö",
  				shareWarningWith1: "Å_publicly_ö",
  				shareWarningWith2: "Å_publicly and with the Organization_ö"
 			},
 			directCreation: {
-				header: "Å_Welcome to the Swipe/Spyglass Builder_ö",
-				mapPickHeader: "Å_To get started, please input a valid web map id, or use the search button to browse web maps._ö",
-				launchBuilder: "Å_Launch Builder_ö"
+				header: "Välkommen till byggverktyget för Svep/Kikare",
+				mapPickHeader: "Du kan börja genom att ange ett giltigt webbkart-ID eller bläddra igenom webbkartorna med sökknappen.",
+				launchBuilder: "Starta byggverktyget",
+				chooseWebmapLbl: "Å_Choose web map..._ö",
+				explain2: "Å_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ö",
+				explain3: "Å_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ö",
+				webmapPlaceholder: "Å_Enter a web map id..._ö"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "Å_My Organization_ö",
-					onlineLabel: "Å_ArcGIS Online_ö",
-					contentLabel: "Å_My Content_ö",
-					favoritesLabel: "Å_My Favorites_ö"
+					organizationLabel: "Min organisation",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Mitt innehåll",
+					favoritesLabel: "Mina favoriter"
 				},
-				title: "Å_Select Web Map_ö",
-				searchTitle: "Å_Search_ö",
-				ok: "Å_Ok_ö",
-				cancel: "Å_Cancel_ö",
-				placeholder: "Å_Enter search term_ö"
+				title: "Välj webbkarta",
+				searchTitle: "Sök",
+				ok: "OK",
+				cancel: "Avbryt",
+				placeholder: "Ange sökterm"
 			}
 		}
     })

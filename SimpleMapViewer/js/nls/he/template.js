@@ -13,13 +13,13 @@
         label: "מפה מתוך:"
       },
       geocoder: {
-        selectAnother: "כן_Select another location_ש",
-        notWhatYouWanted: "כן_Not what you wanted?_ש",
-        currentLocation: "כן_Current Location_ש",
-        title: "כן_Location_ש"
+        selectAnother: "בחר מיקום אחר",
+        notWhatYouWanted: "לא מה שחיפשת?",
+        currentLocation: "מיקום נוכחי",
+        title: "מיקום"
       },
       sidePanel: {
-        title: "כן_Legend_ש",
+        title: "מקרא",
         owner: "בעלים: ",
         modified: "שונה לאחרונה: ",
         message: "אין שכבות אופרטיביות"

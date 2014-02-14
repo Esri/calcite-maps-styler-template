@@ -7,8 +7,8 @@
 				step3: "ИНИЦИАЛИЗАЦИЯ",
 				fail: "Загрузка инструмента Шторка (Swipe) не удалась",
 				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОНСТРУКТОРА",
-				redirectSignIn: "Ж_REDIRECTING TO SIGN-IN PAGE_Я",
-				redirectSignIn2: "Ж_(you will be redirected here after sign-in)_Я",
+				redirectSignIn: "ПЕРЕНАПРАВЛЕНИЕ НА СТРАНИЦУ ВХОДА",
+				redirectSignIn2: "(после входа вы будете перенаправлены сюда)",
 				failButton: "Повторить"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "КОНФИГУРАЦИЯ ПРИЛОЖЕНИЯ",
 				buttonSave: "СОХРАНИТЬ",
-				buttonHelp: "Ж_Help_Я",
-				buttonShare: "Ж_Share_Я",
+				buttonHelp: "Справка",
+				buttonShare: "Опубликовать",
 				buttonDiscard: "ОТМЕНА",
 				buttonSettings: "Настройки",
 				buttonView: "Режим просмотра",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "Экстент",
 				settingsExtentExplain: "Выберите начальный экстент через интерактивную карту, показанную ниже.",
 				settingsExtentExplainBottom: "Указанный вами экстент обновит исходный экстент веб-карты. Если вы создаете серию карт со шторками, этот экстент использоваться не будет.",
-				settingsExtentDateLineError: "Ж_The extent cannot be across the meridian of 180ï¿½ longitude_Я",
+				settingsExtentDateLineError: "Экстент не может продолжаться за меридиан 180ï¿½",
 				settingsExtentDateLineError2: "Ошибка вычисления экстента",
 				settingsExtentDrawBtn: "Нарисовать новый экстент",
 				settingsExtentModifyBtn: "Изменить текущий экстент",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "Показать другую веб-карту.",
 				settingsDataModel2HelpTitle: "Как найти ID веб-карты?",
 				settingsDataModel2HelpContent: "Скопируйте и вставьте цифры, расположенные после знака '=' в URL веб-карты",
-				switchMaps: "Ж_Switch maps_Я",
-				browseWebMaps: "Ж_Browse web maps_Я"
+				switchMaps: "Переключить карты",
+				browseWebMaps: "Обзор веб-карт"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Компоновка приложения",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "См. пример приложения с серией шторок здесь",
 				preview: "Просмотр UI",
 				settingsLocateButtonExplain: "Эта функция поддерживается на большинстве браузеров мобильных устройств и настольных браузеров (включая Internet Explorer 9+).",
-				settingsLocateButton: "Ж_Enable a 'Locate' button on supported browsers_Я",
+				settingsLocateButton: "Включить в поддерживаемых браузерах кнопку Размещение",
 				settingsAddressSearch: "Включить инструмент поиска адреса"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "Вы не можете удалить эту закладку. Серию шторок можно отключить в Настройках."
 			},
 			helpPopup: {
-				title: "Ж_Help_Я",
-				close: "Ж_Close_Я",
+				title: "Справка",
+				close: "Закрыть",
 				tab1: {
-					div1: "Ж_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._Я",
+					div1: "Шаблон Шторка/Подзорная труба предназначен для сравнения двух отдельных веб-карт или двух слоев одной веб-карты в удобном и простом в использовании приложении, которое может использоваться в любом браузере на любом устройстве, включая смартфоны и планшеты.",
 					div2: "Ж_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._Я",
-					div3: "Ж_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._Я"
+					div3: "Мы будем рады вам! Если у вас есть вопросы, вы желаете предложить новую функцию, или вы нашли ошибку, пожалуйста, посетите <a href='http://links.esri.com/storymaps/forum' target='_blank'>Форум пользователей Story Maps</a>."
 				}
 			},
 			share: {
-				firstSaveTitle: "Ж_Application successfully saved_Я",
-				firstSaveHeader: "Ж_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._Я",
-				firstSaveA1: "Ж_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_Я",
-				firstSaveA1bis: "Ж_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._Я",
-				firstSaveQ2: "Ж_Is my Application shared?_Я",
-				firstSaveA2: "Ж_Currently your Application is not shared. To share it, use the SHARE button._Я",
-				shareTitle: "Ж_Share your Application_Я",
-				sharePrivateHeader: "Ж_Your Application is not shared, would you like to share it?_Я",
-				sharePrivateBtn1: "Ж_Share publicly_Я",
-				sharePrivateBtn2: "Ж_Share with my Organization_Я",
-				sharePrivateProgress: "Ж_Sharing in progress..._Я",
-				sharePrivateErr: "Ж_Sharing failed, try again or_Я",
-				sharePrivateOk: "Ж_Sharing updated successfully, loading..._Я",
-				shareStatus1: "Ж_Application is not saved_Я",
-				shareStatus2: "Ж_Application is shared publicly_Я",
-				shareStatus3: "Ж_Application is shared within the organization_Я",
-				shareStatus4: "Ж_Application is not shared_Я",
-				sharePreviewAsUser: "Ж_Preview_Я",
-				shareHeader1: "Ж_Your Application is <strong>publicly accessible</strong>._Я",
-				shareHeader2: "Ж_Your Application is accessible by your organization members (login is required)._Я",
-				shareLinkHeader: "Ж_Share the Application with your audience_Я",
-				shareLinkOpen: "Ж_OPEN_Я",
-				learnMore: "Ж_Learn more_Я",
-				shareQ1Opt1: "Ж_How do I keep the Application private?_Я",
-				shareQ1Opt2: "Ж_How do I keep the Application private or share it publicly?_Я",
-				shareA1: "Ж_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._Я",
-				shareA1bis: "Ж_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._Я",
-				shareQ2: "Ж_How do I edit the Application later?_Я",
-				shareQ2bis: "Ж_How do I get back to the authoring interface?_Я",
-				shareA2div1: "Ж_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._Я",
-				shareA2div2: "Ж_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_Я",				
-				shareQ3: "Ж_Where is the data stored?_Я",
-				shareA3: "Ж_The Application configuration is stored in this web application item</a>._Я",
+				firstSaveTitle: "Приложение успешно сохранено",
+				firstSaveHeader: "Ваше приложение успешно сохранено в ArcGIS Online. Пожалуйста, прочитайте следующие ответы на часто задаваемые вопросы.",
+				firstSaveA1: "Если вы не знакомы с ArcGIS Online или хотите получить ссылку на интерфейс построения, сохраните эту ссылку: %LINK1%",
+				firstSaveA1bis: "Приложение также можно найти в вашей <a href='%LINK2%' target='_blank'>директории ресурсов ArcGIS Online</a>.",
+				firstSaveQ2: "Опубликовано ли мое приложение?",
+				firstSaveA2: "В данный момент ваше приложение не имеет общего доступа. Чтобы опубликовать его, используйте кнопку ОПУБЛИКОВАТЬ.",
+				shareTitle: "Публикация приложения",
+				sharePrivateHeader: "Приложение не опубликовано, хотите опубликовать его?",
+				sharePrivateBtn1: "Публичный доступ",
+				sharePrivateBtn2: "Доступ только для моей организации",
+				sharePrivateProgress: "Публикация...",
+				sharePrivateErr: "Публикация не удалась, повторите попытку или",
+				sharePrivateOk: "Тип публикации успешно изменен, загрузка...",
+				shareStatus1: "Приложение не сохранено",
+				shareStatus2: "К приложению предоставлен публичный доступ",
+				shareStatus3: "Приложение опубликовано в пределах организации",
+				shareStatus4: "Приложение не опубликовано",
+				sharePreviewAsUser: "Просмотр",
+				shareHeader1: "Ваше приложение имеет <strong>публичный доступ</strong>.",
+				shareHeader2: "Ваше приложение доступно для сотрудников вашей организации (требуется учетная запись).",
+				shareLinkHeader: "Опубликовать приложение для вашей аудитории",
+				shareLinkOpen: "ОТКРЫТЬ",
+				learnMore: "Подробнее",
+				shareQ1Opt1: "Как сохранить приложение частным?",
+				shareQ1Opt2: "Как я могу сохранить частный доступ к приложению или предоставить к нему публичный доступ?",
+				shareA1: "Используйте %SHAREIMG% на <a href='%LINK1%' target='_blank'>странице элемента приложения</a>. Если вы хотите закрыть общий доступ к веб-карте, перейдите на <a href='%LINK2%' target='_blank'>страницу элемента веб-карты</a>.",
+				shareA1bis: "Если вы желаете убрать из общего доступа сервис объектов, используйте <a href='%LINK1%' target='_blank'>страницу элемента сервиса объектов</a>.",
+				shareQ2: "Как позже отредактировать приложение?",
+				shareQ2bis: "Как мне вернуться к интерфейсу создания?",
+				shareA2div1: "Сохраните и используйте повторно следующую ссылку %LINK1% или обратитесь к<a href='%LINK2%' target='_blank'>странице элемента приложения</a>.",
+				shareA2div2: "Как владелец приложения, при входе на ArcGIS.com вы увидите в нем кнопку для открытия интерактивного построителя:",				
+				shareQ3: "Где хранятся данные?",
+				shareA3: "Настройки приложения хранятся в элементе веб-приложения</a>.",
 				shareWarning: "Ж_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Я",
  				shareWarningWith1: "Ж_publicly_Я",
  				shareWarningWith2: "Ж_publicly and with the Organization_Я"
 			},
 			directCreation: {
-				header: "Ж_Welcome to the Swipe/Spyglass Builder_Я",
-				mapPickHeader: "Ж_To get started, please input a valid web map id, or use the search button to browse web maps._Я",
-				launchBuilder: "Ж_Launch Builder_Я"
+				header: "Добро пожаловать в построитель шаблона Шторка/Подзорная труба",
+				mapPickHeader: "Сначала введите id веб-карты или выберите ее с помощью обзора веб-карт.",
+				launchBuilder: "Запустить построитель",
+				chooseWebmapLbl: "Ж_Choose web map..._Я",
+				explain2: "Ж_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._Я",
+				explain3: "Ж_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._Я",
+				webmapPlaceholder: "Ж_Enter a web map id..._Я"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "Ж_My Organization_Я",
-					onlineLabel: "Ж_ArcGIS Online_Я",
-					contentLabel: "Ж_My Content_Я",
-					favoritesLabel: "Ж_My Favorites_Я"
+					organizationLabel: "Моя организация",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Мои ресурсы",
+					favoritesLabel: "Мое избранное"
 				},
-				title: "Ж_Select Web Map_Я",
-				searchTitle: "Ж_Search_Я",
-				ok: "Ж_Ok_Я",
-				cancel: "Ж_Cancel_Я",
-				placeholder: "Ж_Enter search term_Я"
+				title: "Выберите веб-карту",
+				searchTitle: "Поиск",
+				ok: "Ok",
+				cancel: "Отмена",
+				placeholder: "Введите текст поиска"
 			}
 		}
     })

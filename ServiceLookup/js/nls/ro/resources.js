@@ -8,8 +8,9 @@
             defaultText: "Introduceţi-vă adresa"
         },
         error: {
-            layerNotFound: "Stratul tematic pentru suprafaţa deservită nu se găseşte pe harta Web",
-            fieldNotFound: "Nu s-a găsit câmpul"
+            layerNotFound: "Ă_Layer is not in the webmap_ș",
+            fieldNotFound: "Nu s-a găsit câmpul",
+            popupNotSet: "Ă_Popup not enabled for this layer_ș"
         },
         page: {
             title: "Căutare serviciu",

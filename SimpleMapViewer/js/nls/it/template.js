@@ -13,13 +13,13 @@
         label: "Una mappa da:"
       },
       geocoder: {
-        selectAnother: "é_Select another location_È",
-        notWhatYouWanted: "é_Not what you wanted?_È",
-        currentLocation: "é_Current Location_È",
-        title: "é_Location_È"
+        selectAnother: "Selezionare un\'altra posizione",
+        notWhatYouWanted: "Non è quanto desiderato?",
+        currentLocation: "Posizione corrente",
+        title: "Posizione"
       },
       sidePanel: {
-        title: "é_Legend_È",
+        title: "Legenda",
         owner: "Proprietario: ",
         modified: "Data ultima modifica: ",
         message: "Layer operativi non disponibili"

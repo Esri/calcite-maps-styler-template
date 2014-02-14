@@ -18,7 +18,8 @@ define([
     "esri/dijit/BasemapToggle",
     "esri/dijit/Geocoder",
     "esri/dijit/Popup",
-    "application/AreaOfInterest",
+    "esri/dijit/Legend",
+    "application/Featured",
     "application/SocialLayers",
     "esri/dijit/OverviewMap",
     "dijit/registry",
@@ -39,14 +40,15 @@ function(
     HomeButton, LocateButton, BasemapToggle,
     Geocoder,
     Popup,
-    AreaOfInterest,
+    Legend,
+    Featured,
     SocialLayers,
     OverviewMap,
     registry,
     array,
     esriLang
 ) {
-    return declare("", [AreaOfInterest, SocialLayers], {
+    return declare("", [Featured, SocialLayers], {
         config: {},
         constructor: function (config) {
             //config will contain application and user defined info for the template such as i18n strings, the web map id
@@ -58,21 +60,22 @@ function(
                 mobileSearchDisplay: "mobile-locate-box-display",
                 toggleBlue: 'toggle-grey',
                 toggleBlueOn: 'toggle-grey-on',
-                legendContainer: "legend-container",
-                legendHeader: "legend-header",
-                areaContainer: "area-container",
-                areaHeader: "area-header",
-                areaSection: "area-section",
+                panelTitle: 'panel-title',
+                panelPadding: "panel-padding",
+                panelContainer: "panel-container",
+                panelHeader: "panel-header",
+                panelSection: "panel-section",
+                panelSummary: "panel-summary",
                 pointerEvents: "pointer-events",
                 iconRight: "icon-right",
-                iconText: "icon-doc-text",
                 iconBookmarks: "icon-bookmarks",
                 iconList: "icon-list",
+                iconLayers: "icon-layers",
+                iconLocation: "icon-location",
                 locateButtonTheme: "LocateButtonCalcite",
                 homebuttonTheme: "HomeButtonCalcite",
                 desktopGeocoderTheme: "geocoder-desktop",
-                mobileGeocoderTheme: "geocoder-mobile",
-                areaDescription: "area-description"
+                mobileGeocoderTheme: "geocoder-mobile"
             };
             // pointer event support
             if(this._pointerEventsSupport()){
@@ -114,10 +117,21 @@ function(
                 this._createWebMap(itemInfo);
             }));
         },
+        // if pointer events are supported
         _pointerEventsSupport: function(){
             var element = document.createElement('x');
             element.style.cssText = 'pointer-events:auto';
             return element.style.pointerEvents === 'auto';   
+        },
+        _initLegend: function(){
+            var legendNode = dom.byId('LegendDiv');
+            if(legendNode){
+                this._mapLegend = new Legend({
+                    map: this.map,
+                    layerInfos: this.layerInfos
+                }, legendNode);
+                this._mapLegend.startup();
+            }
         },
         _init: function () {
             // drawer size check
@@ -125,29 +139,37 @@ function(
             // menu panels
             this.drawerMenus = [];
             var content, menuObj;
-            if (this.config.showAreaPanel) {
+            // featured panel enabled
+            if (this.config.showFeaturedPanel) {
                 content = '';
-                if (this.config.showAreaDescription) {
-                    content += '<div class="' + this.css.areaDescription + '" id="areaDescription"></div>';
+                content += '<div class="' + this.css.panelTitle + '">' + this.config.i18n.general.featured + '</div>';
+                content += '<div class="' + this.css.panelContainer + '">';
+                // if summary enabled
+                if (this.config.showSummary) {
+                    content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.featured.summary + '</div>';
+                    content += '<div class="' + this.css.panelSection + '">';
+                    content += '<div class="' + this.css.panelSummary + '" id="summary"></div>';
+                    content += '</div>';
                 }
-                content += '<div class="' + this.css.areaContainer + '">';
                 // show notes layer and has one of required things for getting notes layer
-                if(this.config.showMapNotes && (this.config.notesLayerTitle || this.config.notesLayerId)){
-                    content += '<div class="' + this.css.areaHeader + '"><span class="' + this.css.iconText + '"></span> <span id="map_notes_title">' + this.config.i18n.area.mapNotes + '</span></div>';
-                    content += '<div class="' + this.css.areaSection + '" id="area_notes"></div>';
+                if(this.config.showMapNotes && (this.config.notesLayer)){
+                    content += '<div class="' + this.css.panelHeader + '"><span id="map_notes_title">' + this.config.i18n.featured.mapNotes + '</span></div>';
+                    content += '<div class="' + this.css.panelSection + '" id="featured_notes"></div>';
                 }
                 // show bookmarks and has bookmarks
                 if(this.config.showBookmarks && this.bookmarks && this.bookmarks.length){
-                    content += '<div class="' + this.css.areaHeader + '"><span class="' + this.css.iconBookmarks + '"></span> ' + this.config.i18n.area.bookmarks + '</div>';
-                    content += '<div class="' + this.css.areaSection + '" id="area_bookmarks"></div>';
+                    content += '<div class="' + this.css.panelHeader + '"><span class="' + this.css.iconBookmarks + '"></span> ' + this.config.i18n.featured.bookmarks + '</div>';
+                    content += '<div class="' + this.css.panelSection + '" id="featured_bookmarks"></div>';
                 }
                 content += '</div>';
+                // menu info
                 menuObj = {
-                    label: this.config.i18n.general.aoi,
+                    title: this.config.i18n.general.featured,
+                    label: '<span class="' + this.css.iconLocation + '"></span>',
                     content: content
                 };
-                // area menu
-                if(this.config.defaultMenu === 'area'){
+                // featured menu
+                if(this.config.defaultMenu === 'featured'){
                     this.drawerMenus.splice(0,0,menuObj);
                 }
                 else{
@@ -156,22 +178,41 @@ function(
             }
             if (this.config.showLegendPanel) {
                 content = '';
-                if(this.config.showOperationalLegend){
-                    content += '<div class="' + this.css.legendContainer + '">';
-                    content += '<div class="' + this.css.legendHeader + '"><span class="' + this.css.iconList + '"></span> ' + this.config.i18n.layers.operational + '</div>';
-                    content += '<div id="TableOfContents"></div>';
-                }
-                if(this.config.showSocialLegend){
-                    content += '<div class="' + this.css.legendHeader + '"><span class="' + this.css.iconList + '"></span> ' + this.config.i18n.layers.social + '</div>';
-                    content += '<div id="SocialTableOfContents"></div>';
-                    content += '</div>';
-                }
+                content += '<div class="' + this.css.panelTitle + '">' + this.config.i18n.general.legend + '</div>';
+                content += '<div class="' + this.css.panelContainer + '">';
+                content += '<div class="' + this.css.panelPadding + '">';
+                content += '<div id="LegendDiv"></div>';
+                content += '</div>';
+                content += '</div>';
+                // menu info
                 menuObj = {
-                    label: this.config.i18n.general.legend,
+                    title: this.config.i18n.general.legend,
+                    label: '<span class="' + this.css.iconList + '"></span>',
                     content: content
                 };
                 // legend menu
                 if(this.config.defaultMenu === 'legend'){
+                    this.drawerMenus.splice(0,0,menuObj);
+                }
+                else{
+                    this.drawerMenus.push(menuObj);
+                }
+            }
+            // Layers Panel
+            if (this.config.showLayersPanel) {
+                content = '';
+                content += '<div class="' + this.css.panelTitle + '">' + this.config.i18n.general.layers + '</div>';
+                content += '<div class="' + this.css.panelContainer + '">';
+                content += '<div id="TableOfContents"></div>';
+                content += '</div>';
+                // menu info
+                menuObj = {
+                    title: this.config.i18n.general.layers,
+                    label: '<span class="' + this.css.iconLayers + '"></span>',
+                    content: content
+                };
+                // layers menu
+                if(this.config.defaultMenu === 'layers'){
                     this.drawerMenus.splice(0,0,menuObj);
                 }
                 else{
@@ -244,15 +285,6 @@ function(
                 }, 'ShareDialog');
                 this._ShareDialog.startup();
             }
-            // Legend table of contents
-            var legendNode = dom.byId('TableOfContents');
-            if (legendNode) {
-                var LL = new TableOfContents({
-                    map: this.map,
-                    layers: this.layers
-                }, legendNode);
-                LL.startup();
-            }
             // i18n overview placement
             var overviewPlacement = 'left';
             if(this.config.i18n.direction === 'rtl'){
@@ -271,9 +303,24 @@ function(
             }
             // geocoders
             this._createGeocoders();
-            // setup
+            // startup social
             this.initSocial();
-            this.initArea();
+            // startup featured
+            this.initFeatured();
+            // startup legend
+            this._initLegend();
+            // Legend table of contents
+            var legendNode = dom.byId('TableOfContents');
+            if (legendNode) {
+                var tocLayers = this.socialLayers.concat(this.layers);
+                var toc = new TableOfContents({
+                    map: this.map,
+                    layers: tocLayers
+                }, legendNode);
+                toc.startup();
+            }
+            // set social dialogs
+            this.configureSocial();
             // hide loading div
             this._hideLoadingIndicator();
             // on body click containing underlay class
@@ -466,6 +513,7 @@ function(
                 this.layers = response.itemInfo.itemData.operationalLayers;
                 this.item = response.itemInfo.item;
                 this.bookmarks = response.itemInfo.itemData.bookmarks;
+                this.layerInfos = arcgisUtils.getLegendLayers(response);
                 // if title is enabled
                 if (this.config.showTitle) {
                     this._setTitle(this.config.title || response.itemInfo.item.title);

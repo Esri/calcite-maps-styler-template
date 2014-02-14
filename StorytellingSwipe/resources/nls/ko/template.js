@@ -7,8 +7,8 @@
 				step3: "초기화하는 중",
 				fail: "죄송합니다. 스와이프를 로드하지 못했습니다.",
 				loadBuilder: "빌더 모드로 전환하는 중",
-				redirectSignIn: "한_REDIRECTING TO SIGN-IN PAGE_빠",
-				redirectSignIn2: "한_(you will be redirected here after sign-in)_빠",
+				redirectSignIn: "로그인 페이지로 이동하는 중",
+				redirectSignIn2: "(로그인 후 이 페이지로 다시 돌아옵니다.)",
 				failButton: "재시도"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "응용프로그램 구성",
 				buttonSave: "저장",
-				buttonHelp: "한_Help_빠",
-				buttonShare: "한_Share_빠",
+				buttonHelp: "도움말",
+				buttonShare: "공유",
 				buttonDiscard: "취소",
 				buttonSettings: "설정",
 				buttonView: "보기 모드",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "범위",
 				settingsExtentExplain: "아래의 대화형 맵을 통해 초기 범위를 설정합니다.",
 				settingsExtentExplainBottom: "정의한 범위에 따라 웹 맵 초기 범위가 수정됩니다. 단, 스와이프 계열을 수행하는 경우에는 해당 범위가 사용되지 않습니다.",
-				settingsExtentDateLineError: "한_The extent cannot be across the meridian of 180ï¿½ longitude_빠",
+				settingsExtentDateLineError: "범위는 180° 경도의 자오선을 교차할 수 없습니다.",
 				settingsExtentDateLineError2: "범위를 계산하는 중 오류가 발생했습니다.",
 				settingsExtentDrawBtn: "새 범위 그리기",
 				settingsExtentModifyBtn: "현재 범위 편집",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "다른 웹 맵을 표시합니다.",
 				settingsDataModel2HelpTitle: "웹 맵 ID를 찾는 방법",
 				settingsDataModel2HelpContent: "웹 맵의 URL에 '=' 부호 뒤의 숫자 복사 및 붙여넣기",
-				switchMaps: "한_Switch maps_빠",
-				browseWebMaps: "한_Browse web maps_빠"
+				switchMaps: "맵 전환",
+				browseWebMaps: "웹 맵 찾아보기"
 			},
 			settingsLegend: {
 				settingsTabLegend: "앱 레이아웃",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "스와이프 계열이 포함된 응용프로그램 예제 확인",
 				preview: "UI 미리보기",
 				settingsLocateButtonExplain: "이 기능은 대부분의 모바일 장치와 데스크탑 브라우저(Internet Explorer 9 이상 포함)에서 지원됩니다.",
-				settingsLocateButton: "한_Enable a 'Locate' button on supported browsers_빠",
+				settingsLocateButton: "지원되는 브라우저에서 '찾기' 버튼 사용",
 				settingsAddressSearch: "주소 검색 도구 사용"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "책갈피를 제거할 수 없습니다. 스와이프 계열이 설정에서 사용하지 않도록 설정되어 있을 수 있습니다."
 			},
 			helpPopup: {
-				title: "한_Help_빠",
-				close: "한_Close_빠",
+				title: "도움말",
+				close: "닫기",
 				tab1: {
-					div1: "한_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._빠",
+					div1: "스와이프/망원경 템플릿은 스마트폰과 태블릿을 비롯한 모든 장치의 모든 웹 브라우저에서 사용 가능한 간편하고 효율적인 웹 응용프로그램에서 단일 웹 맵의 두 레이어 또는 두 개별 웹 맵을 비교하도록 설계되었습니다.",
 					div2: "한_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._빠",
-					div3: "한_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._빠"
+					div3: "여러분의 참여를 기다립니다. 질문이 있거나 새 기능이 필요하거나 버그가 확인된 경우 <a href='http://links.esri.com/storymaps/forum' target='_blank'>스토리 맵 사용자 포럼</a>을 방문해 주세요."
 				}
 			},
 			share: {
-				firstSaveTitle: "한_Application successfully saved_빠",
-				firstSaveHeader: "한_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._빠",
-				firstSaveA1: "한_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_빠",
-				firstSaveA1bis: "한_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._빠",
-				firstSaveQ2: "한_Is my Application shared?_빠",
-				firstSaveA2: "한_Currently your Application is not shared. To share it, use the SHARE button._빠",
-				shareTitle: "한_Share your Application_빠",
-				sharePrivateHeader: "한_Your Application is not shared, would you like to share it?_빠",
-				sharePrivateBtn1: "한_Share publicly_빠",
-				sharePrivateBtn2: "한_Share with my Organization_빠",
-				sharePrivateProgress: "한_Sharing in progress..._빠",
-				sharePrivateErr: "한_Sharing failed, try again or_빠",
-				sharePrivateOk: "한_Sharing updated successfully, loading..._빠",
-				shareStatus1: "한_Application is not saved_빠",
-				shareStatus2: "한_Application is shared publicly_빠",
-				shareStatus3: "한_Application is shared within the organization_빠",
-				shareStatus4: "한_Application is not shared_빠",
-				sharePreviewAsUser: "한_Preview_빠",
-				shareHeader1: "한_Your Application is <strong>publicly accessible</strong>._빠",
-				shareHeader2: "한_Your Application is accessible by your organization members (login is required)._빠",
-				shareLinkHeader: "한_Share the Application with your audience_빠",
-				shareLinkOpen: "한_OPEN_빠",
-				learnMore: "한_Learn more_빠",
-				shareQ1Opt1: "한_How do I keep the Application private?_빠",
-				shareQ1Opt2: "한_How do I keep the Application private or share it publicly?_빠",
-				shareA1: "한_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._빠",
-				shareA1bis: "한_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._빠",
-				shareQ2: "한_How do I edit the Application later?_빠",
-				shareQ2bis: "한_How do I get back to the authoring interface?_빠",
-				shareA2div1: "한_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._빠",
-				shareA2div2: "한_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_빠",				
-				shareQ3: "한_Where is the data stored?_빠",
-				shareA3: "한_The Application configuration is stored in this web application item</a>._빠",
+				firstSaveTitle: "응용프로그램이 저장됨",
+				firstSaveHeader: "이제 응용프로그램이 ArcGIS Online에 저장되었습니다. 다음 FAQ를 확인하세요.",
+				firstSaveA1: "ArcGIS Online에 익숙하지 않거나 바로가기를 사용하여 작성 인터페이스에 액세스하려는 경우 다음 링크를 저장하면 됩니다. %LINK1%",
+				firstSaveA1bis: "<a href='%LINK2%' target='_blank'>ArcGIS Online 컨텐츠 폴더</a>에서도 응용프로그램을 찾을 수 있습니다.",
+				firstSaveQ2: "응용프로그램이 공유됩니까?",
+				firstSaveA2: "현재는 응용프로그램이 공유되지 않습니다. 공유하려면 공유 버튼을 사용합니다.",
+				shareTitle: "응용프로그램 공유",
+				sharePrivateHeader: "응용프로그램이 공유되고 있지 않습니다. 공유하시겠습니까?",
+				sharePrivateBtn1: "공개적으로 공유",
+				sharePrivateBtn2: "내 기관과 공유",
+				sharePrivateProgress: "공유 처리 중...",
+				sharePrivateErr: "공유에 실패했습니다. 다시 시도하거나",
+				sharePrivateOk: "공유가 업데이트되었습니다. 로그하는 중...",
+				shareStatus1: "응용프로그램이 저장되지 않음",
+				shareStatus2: "응용프로그램이 공개적으로 공유됨",
+				shareStatus3: "응용프로그램이 조직 내에서 공유됨",
+				shareStatus4: "응용프로그램이 공유되지 않음",
+				sharePreviewAsUser: "미리보기",
+				shareHeader1: "응용프로그램에 <strong>공개적으로 접근 가능</strong>합니다.",
+				shareHeader2: "조직 구성원이 응용프로그램에 접근할 수 있습니다(로그인 필요).",
+				shareLinkHeader: "대상 그룹과 응용프로그램 공유",
+				shareLinkOpen: "열기",
+				learnMore: "자세한 정보",
+				shareQ1Opt1: "응용프로그램을 비공개 상태로 유지하려면 어떻게 해야 합니까?",
+				shareQ1Opt2: "응용프로그램을 비공개 상태로 유지하거나 공개적으로 공유하려면 어떻게 해야 합니까?",
+				shareA1: "<a href='%LINK1%' target='_blank'>응용프로그램 항목 페이지</a>의 %SHAREIMG%을 사용합니다. 웹 맵도 공유 해제하려면 <a href='%LINK2%' target='_blank'>웹 맵 항목 페이지</a>를 사용합니다.",
+				shareA1bis: "피처 서비스의 공유도 해제하려면 <a href='%LINK1%' target='_blank'>피처 서비스 항목 페이지</a>를 사용하세요.",
+				shareQ2: "나중에 응용프로그램을 편집하려면 어떻게 해야 합니까?",
+				shareQ2bis: "작성 인터페이스로 돌아가는 방법",
+				shareA2div1: "%LINK1% 링크를 저장하여 다시 사용하거나 <a href='%LINK2%' target='_blank'>응용프로그램 항목 페이지</a>를 사용하세요.",
+				shareA2div2: "응용프로그램의 소유자인 경우 ArcGIS.com에 로그인하면 대화형 빌더를 열 수 있는 버튼이 응용프로그램에 표시됩니다.",				
+				shareQ3: "데이터는 어디에 저장되나요?",
+				shareA3: "응용프로그램 구성은 이 웹 응용프로그램 항목에 저장됩니다</a>.",
 				shareWarning: "한_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._빠",
  				shareWarningWith1: "한_publicly_빠",
  				shareWarningWith2: "한_publicly and with the Organization_빠"
 			},
 			directCreation: {
-				header: "한_Welcome to the Swipe/Spyglass Builder_빠",
-				mapPickHeader: "한_To get started, please input a valid web map id, or use the search button to browse web maps._빠",
-				launchBuilder: "한_Launch Builder_빠"
+				header: "스와이프/망원경 빌더 시작",
+				mapPickHeader: "시작하려면 유효한 웹 맵 ID를 입력하거나 검색 버튼을 사용하여 웹 맵을 찾으세요.",
+				launchBuilder: "빌더 시작",
+				chooseWebmapLbl: "한_Choose web map..._빠",
+				explain2: "한_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._빠",
+				explain3: "한_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._빠",
+				webmapPlaceholder: "한_Enter a web map id..._빠"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "한_My Organization_빠",
-					onlineLabel: "한_ArcGIS Online_빠",
-					contentLabel: "한_My Content_빠",
-					favoritesLabel: "한_My Favorites_빠"
+					organizationLabel: "내 기관",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "내 컨텐츠",
+					favoritesLabel: "내 즐겨찾기"
 				},
-				title: "한_Select Web Map_빠",
-				searchTitle: "한_Search_빠",
-				ok: "한_Ok_빠",
-				cancel: "한_Cancel_빠",
-				placeholder: "한_Enter search term_빠"
+				title: "웹 맵 선택",
+				searchTitle: "검색",
+				ok: "확인",
+				cancel: "취소",
+				placeholder: "검색어 입력"
 			}
 		}
     })

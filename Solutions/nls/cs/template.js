@@ -39,8 +39,8 @@ define(
             email: "e-mail",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
             Twitter: "Twitter",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
-            title: "Ř_title_ů",  // Shown as title hint in print specification box if a title hint is not configured
-            author: "Ř_author_ů"  // Shown as author hint in print specification box if an author hint is not configured
+            title: "nadpis",  // Shown as title hint in print specification box if a title hint is not configured
+            author: "autor"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
             search: "Hledat:",  // Appears before a search text field in dialog box for searching for a feature
@@ -54,10 +54,11 @@ define(
             geolocationTimeout: "Prohlížeči se nepovedlo včas získat aktuální umístění.",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "Tato vrstva vyhledávání nebyla v mapě nalezena.",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Toto pole nebylo ve vrstvě vyhledávání nalezeno.",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "Ř_None of these fields was found in the map search layer_ů",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            yourContentSubmitted: "Ř_Your content has been submitted. Thank you._ů",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "Ř_Unable to access application's configuration_ů",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "Ř_Unable to launch application_ů"  // Appears for any failure to build the user interface
+            allSearchFieldsMissing: "Žádné z těchto polí nebylo ve vrstvě vyhledávání mapy nalezeno.",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            fieldNotFound: "Ř_This field does not exist in any of the map layers_ů",  // Appears when a field used in the configuration was not found in any map layer
+            yourContentSubmitted: "Váš obsah byl odeslán. Děkujeme.",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "Nelze získat přístup ke konfiguraci aplikace.",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "Aplikaci nelze spustit."  // Appears for any failure to build the user interface
         }
     })
 );

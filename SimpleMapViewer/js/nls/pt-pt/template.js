@@ -13,13 +13,13 @@
         label: "Um mapa de:"
       },
       geocoder: {
-        selectAnother: "ã_Select another location_Ç",
-        notWhatYouWanted: "ã_Not what you wanted?_Ç",
-        currentLocation: "ã_Current Location_Ç",
-        title: "ã_Location_Ç"
+        selectAnother: "Selecionar outra localização",
+        notWhatYouWanted: "Não é o que procura?",
+        currentLocation: "Localização atual",
+        title: "Local"
       },
       sidePanel: {
-        title: "ã_Legend_Ç",
+        title: "Legenda",
         owner: "proprietário: ",
         modified: "Última Modificação: ",
         message: "Nenhuma camada operacional"

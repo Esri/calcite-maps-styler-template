@@ -13,13 +13,13 @@
         label: "Žemėlapį sudarė:"
       },
       geocoder: {
-        selectAnother: "Į_Select another location_š",
-        notWhatYouWanted: "Į_Not what you wanted?_š",
-        currentLocation: "Į_Current Location_š",
-        title: "Į_Location_š"
+        selectAnother: "Pasirinkite kitą vietą",
+        notWhatYouWanted: "Ne tai ko norėjote?",
+        currentLocation: "dabartinė vieta",
+        title: "Vieta"
       },
       sidePanel: {
-        title: "Į_Legend_š",
+        title: "Legenda",
         owner: "savininkas: ",
         modified: "Pakeitimo data: ",
         message: "Darbinių sluoksnių nėra"

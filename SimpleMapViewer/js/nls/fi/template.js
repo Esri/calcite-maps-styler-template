@@ -13,13 +13,13 @@
         label: "Kartta kohteesta:"
       },
       geocoder: {
-        selectAnother: "Å_Select another location_ö",
-        notWhatYouWanted: "Å_Not what you wanted?_ö",
-        currentLocation: "Å_Current Location_ö",
-        title: "Å_Location_ö"
+        selectAnother: "Valitse toinen sijainti",
+        notWhatYouWanted: "Etkö löytänyt etsimääsi?",
+        currentLocation: "Nykyinen sijainti",
+        title: "Sijainti"
       },
       sidePanel: {
-        title: "Å_Legend_ö",
+        title: "Selite",
         owner: "omistaja: ",
         modified: "Muokattu viimeksi: ",
         message: "Ei toiminnallisia karttatasoja"

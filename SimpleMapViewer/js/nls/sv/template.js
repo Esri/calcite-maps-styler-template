@@ -13,13 +13,13 @@
         label: "En karta från:"
       },
       geocoder: {
-        selectAnother: "Å_Select another location_ö",
-        notWhatYouWanted: "Å_Not what you wanted?_ö",
-        currentLocation: "Å_Current Location_ö",
-        title: "Å_Location_ö"
+        selectAnother: "Välj en annan plats",
+        notWhatYouWanted: "Är det inte vad du vill ha?",
+        currentLocation: "Aktuell plats",
+        title: "Plats"
       },
       sidePanel: {
-        title: "Å_Legend_ö",
+        title: "Teckenförklaring",
         owner: "ägare: ",
         modified: "Senast ändrad: ",
         message: "Inga operativa lager"

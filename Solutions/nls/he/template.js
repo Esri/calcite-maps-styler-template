@@ -39,8 +39,8 @@ define(
             email: "דוא\"ל",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "פייסבוק",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
             Twitter: "טוויטר",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
-            title: "כן_title_ש",  // Shown as title hint in print specification box if a title hint is not configured
-            author: "כן_author_ש"  // Shown as author hint in print specification box if an author hint is not configured
+            title: "כותרת",  // Shown as title hint in print specification box if a title hint is not configured
+            author: "מחבר"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
             search: "חיפוש:",  // Appears before a search text field in dialog box for searching for a feature
@@ -54,10 +54,11 @@ define(
             geolocationTimeout: "הדפדפן לא יכול לקבל מיקום נוכחי בזמן סביר",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "שכבת חיפוש זו לא נמצאה במפה",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "שדה זה לא נמצא בשכבת חיפוש מפה",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "כן_None of these fields was found in the map search layer_ש",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            yourContentSubmitted: "כן_Your content has been submitted. Thank you._ש",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "כן_Unable to access application's configuration_ש",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "כן_Unable to launch application_ש"  // Appears for any failure to build the user interface
+            allSearchFieldsMissing: "לא נמצא אף אחד מהשדות האלו בשכבת החיפוש",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            fieldNotFound: "כן_This field does not exist in any of the map layers_ש",  // Appears when a field used in the configuration was not found in any map layer
+            yourContentSubmitted: "התוכן שלך נשלח. תודה.",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "לא ניתן לגשת לתצורת האפליקציה",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "לא ניתן להפעיל את האפליקציה"  // Appears for any failure to build the user interface
         }
     })
 );

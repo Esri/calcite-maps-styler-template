@@ -1,18 +1,20 @@
-﻿define({
-    root: ({
+﻿define(
+	({
         map: {
             error: "Impossible de créer la carte",
-            mouseToolTip: "Click on the map to check for service"
+            mouseToolTip: "Cliquez sur la carte pour vérifier la présence d\'un service"
         },
         geocoder: {
-            defaultText: "Enter your address"
+            defaultText: "Saisissez votre adresse"
         },
         error: {
-            layerNotFound: "Layer is not in the webmap",
-            fieldNotFound: "Field not found"
+            layerNotFound: "æ_Layer is not in the webmap_Â",
+            fieldNotFound: "Champ introuvable",
+            popupNotSet: "æ_Popup not enabled for this layer_Â"
         },
         page: {
-            title: "Service Lookup",
+            title: "Consultation de service",
         }
     })
-});
+
+);

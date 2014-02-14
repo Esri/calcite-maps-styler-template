@@ -7,8 +7,8 @@
 				step3: "กำลังเริ่มต้นทำงาน",
 				fail: "ขออภัย โหลด Swipe ล้มเหลว",
 				loadBuilder: "กำลังเปลี่ยนไปที่โหมดการสร้าง",
-				redirectSignIn: "ก้_REDIRECTING TO SIGN-IN PAGE_ษฺ",
-				redirectSignIn2: "ก้_(you will be redirected here after sign-in)_ษฺ",
+				redirectSignIn: "กลับไปยังหน้าที่ลงชื่อใช้",
+				redirectSignIn2: "(คุณจะเปลี่ยนหน้าต่างนี้หลังจากลงชื่อเข้าใช้)",
 				failButton: "ลองใหม่"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "การปรับแต่งแอพพลิเคชั่น",
 				buttonSave: "บันทึก",
-				buttonHelp: "ก้_Help_ษฺ",
-				buttonShare: "ก้_Share_ษฺ",
+				buttonHelp: "ตัวช่วย",
+				buttonShare: "แชร์",
 				buttonDiscard: "ยกเลิก",
 				buttonSettings: "การตั้งค่า",
 				buttonView: "โหมดการดู",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "ขอบเขตแผนที่",
 				settingsExtentExplain: "กำหนดค่าแรกของขอบเขตแผนที่ผ่านแผนที่ด้านล่าง",
 				settingsExtentExplainBottom: "ขอบเขตแผนที่ที่คุณกำหนดจะเป็นค่าแรกของแผนที่ แต่หากคุณใช้แผนที่เป็น Swipe ขอบเขตที่ถูกกำหนดไว้นี้จะไม่ถูกนำมาใช้",
-				settingsExtentDateLineError: "ก้_The extent cannot be across the meridian of 180ï¿½ longitude_ษฺ",
+				settingsExtentDateLineError: "ขอบเขตที่กำหนดไม่สามารถเกินกว่าเส้นเมอริเดียนที่ลองจิจูด 180ï¿½ ได้",
 				settingsExtentDateLineError2: "การสร้างขอบเขตแผนที่มีข้อผิดพลาด",
 				settingsExtentDrawBtn: "วาดขอบเขตแผนที่ใหม่",
 				settingsExtentModifyBtn: "แก้ไขขอบเขตแผนที่",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "แสดงอีกเว็บแมพหนึ่ง",
 				settingsDataModel2HelpTitle: "ID ของเว็บแมพอยู่ที่ไหน?",
 				settingsDataModel2HelpContent: "คัดลอกและวางหลังสัญลักษณ์ = ในช่อง URL ของเว็บแมพ",
-				switchMaps: "ก้_Switch maps_ษฺ",
-				browseWebMaps: "ก้_Browse web maps_ษฺ"
+				switchMaps: "สลับแผนที่",
+				browseWebMaps: "บราวซ์เว็บแมพ"
 			},
 			settingsLegend: {
 				settingsTabLegend: "โครงร่างแอพฯ",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "ดูตัวอย่างแอพพลิเคชันที่ใช้ Swipe ได้ที่นี่",
 				preview: "ดูตัวอย่าง UI",
 				settingsLocateButtonExplain: "ความสามารถนี้รองรับบนอุปกรณ์เคลื่อนที่ทั่วไปและบราวเซอร์บนเดสก์ท็อปด้วย (รวมทั้ง Internet Explorer 9+)",
-				settingsLocateButton: "ก้_Enable a 'Locate' button on supported browsers_ษฺ",
+				settingsLocateButton: "เปิดใช้งานปุ่ม ค้นหา บนบราวเซอร์ที่รองรับ",
 				settingsAddressSearch: "เปิดใช้เครื่องมือค้นหาที่อยู่"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "คุณไม่สามารถลบบุ๊คมาร์คนี้ออกได้ สามารถยกเลิกใช้งาน Swipe ได้ที่การตั้งค่า"
 			},
 			helpPopup: {
-				title: "ก้_Help_ษฺ",
-				close: "ก้_Close_ษฺ",
+				title: "ตัวช่วย",
+				close: "ปิด",
 				tab1: {
-					div1: "ก้_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._ษฺ",
+					div1: "โครงร่างแบบ Swipe หรือ Spyglass ได้รับการออกแบบเพื่อใช้ในการเปรียบเทียบเว็บแมพ 2 ชิ้นที่อยู่แยกกัน หรือ ชั้นข้อมูล 2 ชั้นที่น่าสนใจที่อยู่บนเว็บแมพเดียว เว็บแอพพลิเคชั่นที่ง่ายต่อการใช้งานเพราะสามารถใช้กับเว็บบราวเซอร์ใดก็ได้ ผ่านทางอุปกรณ์สื่อสารใดก็ได้ ทั้งสมาร์ทโฟนและแท็บเล้ต",
 					div2: "ก้_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ษฺ",
-					div3: "ก้_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._ษฺ"
+					div3: "เรามีความต้องการที่จะได้ยินจากคุณ! ถ้าคุณมีคำถาม, ต้องการเพิ่มฟีเจอร์ใหม่, หรือคิดว่าคุณพบ bug โปรดชม <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>."
 				}
 			},
 			share: {
-				firstSaveTitle: "ก้_Application successfully saved_ษฺ",
-				firstSaveHeader: "ก้_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ษฺ",
-				firstSaveA1: "ก้_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ษฺ",
-				firstSaveA1bis: "ก้_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ษฺ",
-				firstSaveQ2: "ก้_Is my Application shared?_ษฺ",
-				firstSaveA2: "ก้_Currently your Application is not shared. To share it, use the SHARE button._ษฺ",
-				shareTitle: "ก้_Share your Application_ษฺ",
-				sharePrivateHeader: "ก้_Your Application is not shared, would you like to share it?_ษฺ",
-				sharePrivateBtn1: "ก้_Share publicly_ษฺ",
-				sharePrivateBtn2: "ก้_Share with my Organization_ษฺ",
-				sharePrivateProgress: "ก้_Sharing in progress..._ษฺ",
-				sharePrivateErr: "ก้_Sharing failed, try again or_ษฺ",
-				sharePrivateOk: "ก้_Sharing updated successfully, loading..._ษฺ",
-				shareStatus1: "ก้_Application is not saved_ษฺ",
-				shareStatus2: "ก้_Application is shared publicly_ษฺ",
-				shareStatus3: "ก้_Application is shared within the organization_ษฺ",
-				shareStatus4: "ก้_Application is not shared_ษฺ",
-				sharePreviewAsUser: "ก้_Preview_ษฺ",
-				shareHeader1: "ก้_Your Application is <strong>publicly accessible</strong>._ษฺ",
-				shareHeader2: "ก้_Your Application is accessible by your organization members (login is required)._ษฺ",
-				shareLinkHeader: "ก้_Share the Application with your audience_ษฺ",
-				shareLinkOpen: "ก้_OPEN_ษฺ",
-				learnMore: "ก้_Learn more_ษฺ",
-				shareQ1Opt1: "ก้_How do I keep the Application private?_ษฺ",
-				shareQ1Opt2: "ก้_How do I keep the Application private or share it publicly?_ษฺ",
-				shareA1: "ก้_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._ษฺ",
-				shareA1bis: "ก้_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ษฺ",
-				shareQ2: "ก้_How do I edit the Application later?_ษฺ",
-				shareQ2bis: "ก้_How do I get back to the authoring interface?_ษฺ",
-				shareA2div1: "ก้_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ษฺ",
-				shareA2div2: "ก้_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ษฺ",				
-				shareQ3: "ก้_Where is the data stored?_ษฺ",
-				shareA3: "ก้_The Application configuration is stored in this web application item</a>._ษฺ",
+				firstSaveTitle: "บันทึกแอพพลิเคชั่นเรียบร้อยแล้ว",
+				firstSaveHeader: "แอพพลิเคชั่นของคุณได้รับการบันทึกลงใน ArcGIS Online เรียบร้อยแล้ว โปรดอ่านคำถามที่พบบ่อย",
+				firstSaveA1: "ถ้าคุณไม่ใช่สมาชิกของ ArcGIS Online หรือต้องการทางลัดในการเข้าถึงหน้าการยอมรับ คุณสามารถบันทึกตามลิงก์: %LINK1%",
+				firstSaveA1bis: "สามารถค้นหาแอพพลิเคชั่นได้ใน<a href='%LINK2%' target='_blank'> โฟลเดอร์เนื้อหา ArcGIS Online ของคุณ</a>.",
+				firstSaveQ2: "แอพพลิเคชั่นของฉันถูกแชร์หรือไม่?",
+				firstSaveA2: "แอพพลิเคชั่นของคุณไม่ได้ถูกแชร์ในตอนนี้ หากต้องการจะแชร์ เลือกที่ปุ่ม แชร์",
+				shareTitle: "แชร์แอพพลิเคชั่นของคุณ",
+				sharePrivateHeader: "แอพพลิเคชั่นของคุณไม่ได้ถูกแชร์ คุณต้องการที่จะแชร์แอพฯ นี้หรือไม่?",
+				sharePrivateBtn1: "แบ่งปันสู่สาธารณะ",
+				sharePrivateBtn2: "แบ่งปันด้วยองค์กรของฉัน",
+				sharePrivateProgress: "การแบ่งปันอยู่ในดำเนินการ ...",
+				sharePrivateErr: "การแบ่งปันผิดพลาด ลองอีกครั้ง หรือ",
+				sharePrivateOk: "แบ่งปันอัพเดทสำเร็จ กำลังโหลด...",
+				shareStatus1: "แอพพลิเคชั่นไม่ได้ถูกบันทึก",
+				shareStatus2: "แอพพลิเคชั่นถูกแชร์ไปสู่สาธารณะ",
+				shareStatus3: "แอพพลิเคชั่นถุกแชร์ภายในองค์กร",
+				shareStatus4: "แอพพลิเคชั่นไม่ได้ถูกแชร์",
+				sharePreviewAsUser: "ตัวอย่าง",
+				shareHeader1: "แอพพลิเคชั่นของคุณ <strong>สามารถเข้าถึงได้อย่างสาธารณะ</strong>.",
+				shareHeader2: "แอพพลิเคชั่นของคุณสามารถเข้าถึงได้โดยสมาชิกองค์กรของคุณ (ต้องทำการลงทะเบียน)",
+				shareLinkHeader: "แชร์แอพพลิเคชั่นนี้ให้กับผู้สนใจ",
+				shareLinkOpen: "เปิด",
+				learnMore: "เรียนรู้เพิ่ม",
+				shareQ1Opt1: "ฉันจะกำหนดความเป็นส่วนตัวในการใช้งานแอพพลิเคชั่นได้อย่างไร?",
+				shareQ1Opt2: "ฉันจะกำหนดให้แอพพลิเคชั่นนี้มีความเป็นส่วนตัวหรือจะแชร์อย่างเปิดเผยได้อย่างไร?",
+				shareA1: "ใช้ %SHAREIMG% บน <a href='%LINK1%' target='_blank'>ในหน้าแอพพลิเคชั่น </a>.หากคุณไม่ต้องการแชร์เว็บแมพนี้ ใช้<a href='%LINK2%' target='_blank'>ในหน้าเว็บแมพ</a>.",
+				shareA1bis: "ถ้าคุณไม่ต้องการที่จะแบ่งปัน , ใช้ <a href='%LINK1%' target='_blank'>ในหน้ารายการฟีทเจอร์เซอร์วิส</a>.",
+				shareQ2: "ฉันจะแก้ไขแอพพลิเคชั่นในภายหลังได้อย่างไร?",
+				shareQ2bis: "ฉันจะกลับไปยังหน้าการเขียนมุมองหน้าได้อย่างไร ?",
+				shareA2div1: "บันทึกและนำกลับมาใช้ตามลิ้ง %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>.",
+				shareA2div2: "หากเป็นเจ้าของโปรแกรม เมื่อคุณลงชื่อเข้าใช้ใน ArcGIS.com โปรแกรมจะเปิดหน้าและปุ่มสำหรับการพัฒนาให้",				
+				shareQ3: "ข้อมูลของคุณเก็บไว้ที่ใด?",
+				shareA3: "การตั้งค่าแอพพลิเคชั่นถูกจัดเก็บอยู่ในเว็บแอพพลิเคชั่นนี้</a>.",
 				shareWarning: "ก้_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ษฺ",
  				shareWarningWith1: "ก้_publicly_ษฺ",
  				shareWarningWith2: "ก้_publicly and with the Organization_ษฺ"
 			},
 			directCreation: {
-				header: "ก้_Welcome to the Swipe/Spyglass Builder_ษฺ",
-				mapPickHeader: "ก้_To get started, please input a valid web map id, or use the search button to browse web maps._ษฺ",
-				launchBuilder: "ก้_Launch Builder_ษฺ"
+				header: "ยินดีต้อนรับสู่ การสร้างแผนที่แบบ Swipe/Spyglass",
+				mapPickHeader: "ในการเริ่มต้น โปรดใส่เลขรหัสที่ถูกต้องของเว็บแมพ หรือใช้ปุ่มค้นหาเพื่อเรียกดูเว็บแมพต่างๆ",
+				launchBuilder: "เริ่มใช้งานเครื่องมือสร้าง",
+				chooseWebmapLbl: "ก้_Choose web map..._ษฺ",
+				explain2: "ก้_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ษฺ",
+				explain3: "ก้_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ษฺ",
+				webmapPlaceholder: "ก้_Enter a web map id..._ษฺ"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "ก้_My Organization_ษฺ",
-					onlineLabel: "ก้_ArcGIS Online_ษฺ",
-					contentLabel: "ก้_My Content_ษฺ",
-					favoritesLabel: "ก้_My Favorites_ษฺ"
+					organizationLabel: "องค์กรของฉัน",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "เนื้อหาของฉัน",
+					favoritesLabel: "รายการโปรดของฉัน"
 				},
-				title: "ก้_Select Web Map_ษฺ",
-				searchTitle: "ก้_Search_ษฺ",
-				ok: "ก้_Ok_ษฺ",
-				cancel: "ก้_Cancel_ษฺ",
-				placeholder: "ก้_Enter search term_ษฺ"
+				title: "เลือกเว็บแมพ",
+				searchTitle: "ค้นหา",
+				ok: "ตกลง",
+				cancel: "ยกเลิก",
+				placeholder: "พิมพ์คำค้นหา"
 			}
 		}
     })

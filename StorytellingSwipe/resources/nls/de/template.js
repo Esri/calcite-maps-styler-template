@@ -7,8 +7,8 @@
 				step3: "WIRD INITIALISIERT",
 				fail: "\"Ausblenden\" konnte leider nicht geladen werden",
 				loadBuilder: "ES WIRD ZUM BUILDER-MODUS GEWECHSELT",
-				redirectSignIn: "ä_REDIRECTING TO SIGN-IN PAGE_Ü",
-				redirectSignIn2: "ä_(you will be redirected here after sign-in)_Ü",
+				redirectSignIn: "UMLEITUNG ZUR ANMELDESEITE",
+				redirectSignIn2: "(Sie werden nach der Anmeldung hierher umgeleitet)",
 				failButton: "Wiederholen"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "ANWENDUNGSKONFIGURATION",
 				buttonSave: "SPEICHERN",
-				buttonHelp: "ä_Help_Ü",
-				buttonShare: "ä_Share_Ü",
+				buttonHelp: "Hilfe",
+				buttonShare: "Freigeben",
 				buttonDiscard: "ABBRECHEN",
 				buttonSettings: "Einstellungen",
 				buttonView: "Anzeigemodus",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "Ausdehnung",
 				settingsExtentExplain: "Die Anfangsausdehnung über die nachstehende interaktive Karte festlegen.",
 				settingsExtentExplainBottom: "Die definierte Ausdehnung ändert die Anfangsausdehnung Ihrer Webkarte. Beachten Sie, dass die Ausdehnung nicht verwendet wird, wenn Sie eine Ausblendereihe festlegen.",
-				settingsExtentDateLineError: "ä_The extent cannot be across the meridian of 180ï¿½ longitude_Ü",
+				settingsExtentDateLineError: "Die Ausdehnung darf nicht über den Meridian von 180ï¿½ Längengrad hinausreichen",
 				settingsExtentDateLineError2: "Fehler beim Berechnen der Ausdehnung",
 				settingsExtentDrawBtn: "Eine neue Ausdehnung darstellen",
 				settingsExtentModifyBtn: "Die aktuelle Ausdehnung bearbeiten",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "Andere Webkarte einblenden.",
 				settingsDataModel2HelpTitle: "Suchen der ID einer Webkarte",
 				settingsDataModel2HelpContent: "Kopieren Sie die Ziffern nach dem Zeichen '=' in der URL der Webkarte, und fügen Sie sie ein",
-				switchMaps: "ä_Switch maps_Ü",
-				browseWebMaps: "ä_Browse web maps_Ü"
+				switchMaps: "Karten wechseln",
+				browseWebMaps: "Webkarten durchsuchen"
 			},
 			settingsLegend: {
 				settingsTabLegend: "App-Layout",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "Nachfolgend finden Sie ein Beispiel für eine Anwendung mit einer Ausblendereihe",
 				preview: "Benutzeroberflächen-Vorschau",
 				settingsLocateButtonExplain: "Diese Funktion wird auf den meisten mobilen Geräten und Desktop-Browsern (einschließlich Internet Explorer 9+) unterstützt.",
-				settingsLocateButton: "ä_Enable a 'Locate' button on supported browsers_Ü",
+				settingsLocateButton: "Schaltfläche \"Suchen\" für unterstützte Browser aktivieren",
 				settingsAddressSearch: "Werkzeug für Adressensuche aktivieren"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "Sie können dieses Lesezeichen nicht entfernen. Das Ausblenden von Reihen lässt sich in den Einstellungen deaktivieren."
 			},
 			helpPopup: {
-				title: "ä_Help_Ü",
-				close: "ä_Close_Ü",
+				title: "Hilfe",
+				close: "Schließen",
 				tab1: {
-					div1: "ä_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._Ü",
+					div1: "Die Ausblenden/Fernglas-Vorlage, mit der zwei getrennte Webkarten oder zwei Layer einer einzelnen Webkarte in einer ansprechenden, benutzerfreundlichen Webanwendung verglichen werden können, die in jedem Webbrowser auf einem beliebigen Gerät, einschließlich Smartphones und Tablets, verwendet werden kann.",
 					div2: "ä_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._Ü",
-					div3: "ä_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._Ü"
+					div3: "Wir freuen uns darauf, von Ihnen zu hören! Ob Sie eine Frage haben, ein neues Feature anfordern möchten oder einen Fehler gefunden haben, besuchen Sie das <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps-Benutzerforum</a>."
 				}
 			},
 			share: {
-				firstSaveTitle: "ä_Application successfully saved_Ü",
-				firstSaveHeader: "ä_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._Ü",
-				firstSaveA1: "ä_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_Ü",
-				firstSaveA1bis: "ä_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._Ü",
-				firstSaveQ2: "ä_Is my Application shared?_Ü",
-				firstSaveA2: "ä_Currently your Application is not shared. To share it, use the SHARE button._Ü",
-				shareTitle: "ä_Share your Application_Ü",
-				sharePrivateHeader: "ä_Your Application is not shared, would you like to share it?_Ü",
-				sharePrivateBtn1: "ä_Share publicly_Ü",
-				sharePrivateBtn2: "ä_Share with my Organization_Ü",
-				sharePrivateProgress: "ä_Sharing in progress..._Ü",
-				sharePrivateErr: "ä_Sharing failed, try again or_Ü",
-				sharePrivateOk: "ä_Sharing updated successfully, loading..._Ü",
-				shareStatus1: "ä_Application is not saved_Ü",
-				shareStatus2: "ä_Application is shared publicly_Ü",
-				shareStatus3: "ä_Application is shared within the organization_Ü",
-				shareStatus4: "ä_Application is not shared_Ü",
-				sharePreviewAsUser: "ä_Preview_Ü",
-				shareHeader1: "ä_Your Application is <strong>publicly accessible</strong>._Ü",
-				shareHeader2: "ä_Your Application is accessible by your organization members (login is required)._Ü",
-				shareLinkHeader: "ä_Share the Application with your audience_Ü",
-				shareLinkOpen: "ä_OPEN_Ü",
-				learnMore: "ä_Learn more_Ü",
-				shareQ1Opt1: "ä_How do I keep the Application private?_Ü",
-				shareQ1Opt2: "ä_How do I keep the Application private or share it publicly?_Ü",
-				shareA1: "ä_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._Ü",
-				shareA1bis: "ä_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._Ü",
-				shareQ2: "ä_How do I edit the Application later?_Ü",
-				shareQ2bis: "ä_How do I get back to the authoring interface?_Ü",
-				shareA2div1: "ä_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._Ü",
-				shareA2div2: "ä_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_Ü",				
-				shareQ3: "ä_Where is the data stored?_Ü",
-				shareA3: "ä_The Application configuration is stored in this web application item</a>._Ü",
+				firstSaveTitle: "Anwendung wurde erfolgreich gespeichert",
+				firstSaveHeader: "Ihre Anwendung ist jetzt in ArcGIS Online gespeichert. Lesen Sie die folgenden Antworten auf häufig gestellte Fragen.",
+				firstSaveA1: "Wenn Sie nicht mit ArcGIS Online vertraut sind oder eine Verknüpfung für den Zugriff auf die Autor-Oberfläche wünschen, können Sie den folgenden Link speichern: %LINK1%",
+				firstSaveA1bis: "Die Anwendung befindet sich außerdem in Ihrem <a href='%LINK2%' target='_blank'>ArcGIS Online-Inhaltsordner</a>.",
+				firstSaveQ2: "Ist meine Anwendung freigegeben?",
+				firstSaveA2: "Ihre Anwendung ist zurzeit nicht freigegeben. Um sie freizugeben, verwenden Sie die FREIGABE-Schaltfläche.",
+				shareTitle: "Anwendung freigeben",
+				sharePrivateHeader: "Ihre Anwendung ist nicht freigegeben. Möchten Sie sie freigeben?",
+				sharePrivateBtn1: "Öffentlich freigeben",
+				sharePrivateBtn2: "Für meine Organisation freigeben",
+				sharePrivateProgress: "Freigabe wird ausgeführt...",
+				sharePrivateErr: "Fehler bei der Freigabe. Versuchen Sie es erneut, oder",
+				sharePrivateOk: "Freigabe wurde erfolgreich aktualisiert. Wird geladen...",
+				shareStatus1: "Anwendung ist nicht gespeichert",
+				shareStatus2: "Anwendung ist öffentlich freigegeben",
+				shareStatus3: "Anwendung ist innerhalb der Organisation freigegeben",
+				shareStatus4: "Anwendung ist nicht freigegeben",
+				sharePreviewAsUser: "Vorschau",
+				shareHeader1: "Ihre Anwendung ist <strong>öffentlich zugänglich</strong>.",
+				shareHeader2: "Ihre Anwendung ist für die Mitglieder Ihrer Organisation zugänglich (Anmeldung ist erforderlich).",
+				shareLinkHeader: "Freigeben der Anwendung für Ihre Zielgruppe",
+				shareLinkOpen: "ÖFFNEN",
+				learnMore: "Weitere Informationen",
+				shareQ1Opt1: "Wie bleibt die Anwendung privat?",
+				shareQ1Opt2: "Wie bleibt die Anwendung privat oder wie wird sie veröffentlicht?",
+				shareA1: "Verwenden Sie %SHAREIMG% auf <a href='%LINK1%' target='_blank'>der Seite der Anwendungselemente</a>. Wenn Sie die Freigabe der Webkarte aufheben möchten, verwenden Sie <a href='%LINK2%' target='_blank'>die Seite der Webkartenelemente</a>.",
+				shareA1bis: "Wenn Sie die Freigabe des Feature-Service aufheben möchten, verwenden Sie <a href='%LINK1%' target='_blank'>die Seite der Feature-Service-Elemente</a>.",
+				shareQ2: "Wie kann ich die Anwendung später bearbeiten?",
+				shareQ2bis: "Wie kehre ich zur Autor-Oberfläche zurück?",
+				shareA2div1: "Speichern Sie den folgenden Link %LINK1%, und verwenden Sie ihn erneut, oder verwenden Sie <a href='%LINK2%' target='_blank'>die Seite der Anwendungselemente</a>.",
+				shareA2div2: "Wenn Sie bei ArcGIS.com als Besitzer der Anwendung angemeldet sind, enthält die Anwendung eine Schaltfläche zum Öffnen des interaktiven Builders:",				
+				shareQ3: "Wo werden die Daten gespeichert?",
+				shareA3: "Die Anwendungskonfiguration wird in diesem Webanwendungselement gespeichert</a>.",
 				shareWarning: "ä_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Ü",
  				shareWarningWith1: "ä_publicly_Ü",
  				shareWarningWith2: "ä_publicly and with the Organization_Ü"
 			},
 			directCreation: {
-				header: "ä_Welcome to the Swipe/Spyglass Builder_Ü",
-				mapPickHeader: "ä_To get started, please input a valid web map id, or use the search button to browse web maps._Ü",
-				launchBuilder: "ä_Launch Builder_Ü"
+				header: "Willkommen beim Ausblenden/Fernglas-Generator",
+				mapPickHeader: "Um zu beginnen, geben Sie eine gültige Webkarten-ID ein, oder verwenden Sie die Schaltfläche \"Suchen\", um Webkarten zu durchsuchen.",
+				launchBuilder: "Generator starten",
+				chooseWebmapLbl: "ä_Choose web map..._Ü",
+				explain2: "ä_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._Ü",
+				explain3: "ä_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._Ü",
+				webmapPlaceholder: "ä_Enter a web map id..._Ü"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "ä_My Organization_Ü",
-					onlineLabel: "ä_ArcGIS Online_Ü",
-					contentLabel: "ä_My Content_Ü",
-					favoritesLabel: "ä_My Favorites_Ü"
+					organizationLabel: "Eigene Organisation",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Eigene Inhalte",
+					favoritesLabel: "Eigene Favoriten"
 				},
-				title: "ä_Select Web Map_Ü",
-				searchTitle: "ä_Search_Ü",
-				ok: "ä_Ok_Ü",
-				cancel: "ä_Cancel_Ü",
-				placeholder: "ä_Enter search term_Ü"
+				title: "Webkarte auswählen",
+				searchTitle: "Suchen",
+				ok: "OK",
+				cancel: "Abbrechen",
+				placeholder: "Suchbegriff eingeben"
 			}
 		}
     })

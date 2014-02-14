@@ -7,8 +7,8 @@
 				step3: "INITIALISERER",
 				fail: "Beklager, men innlasting av sveipeverktøyet mislyktes",
 				loadBuilder: "BYTTER TIL MODUS FOR BYGGEVERKTØY",
-				redirectSignIn: "å_REDIRECTING TO SIGN-IN PAGE_ø",
-				redirectSignIn2: "å_(you will be redirected here after sign-in)_ø",
+				redirectSignIn: "OMDIRIGERING TIL PÅLOGGINGSSIDEN",
+				redirectSignIn2: "(du blir omdirigert hit etter pålogging)",
 				failButton: "Prøv på nytt"
 			},
 			errors: {
@@ -44,8 +44,8 @@
 			builder: {
 				panelHeader: "KONFIGURASJON AV APPLIKASJON",
 				buttonSave: "LAGRE",
-				buttonHelp: "å_Help_ø",
-				buttonShare: "å_Share_ø",
+				buttonHelp: "Hjelp",
+				buttonShare: "Del",
 				buttonDiscard: "AVBRYT",
 				buttonSettings: "Innstillinger",
 				buttonView: "Visningsmodus",
@@ -102,7 +102,7 @@
 				settingsTabExtent: "Utstrekning",
 				settingsExtentExplain: "Angi begynnerutstrekningen via det interaktive kartet nedenfor.",
 				settingsExtentExplainBottom: "Utstrekningen du definerer, endrer webkartets opprinnelige utstrekning. Legg merke til at hvis du foretar en sveipeserie, blir ikke denne utstrekningen brukt.",
-				settingsExtentDateLineError: "å_The extent cannot be across the meridian of 180ï¿½ longitude_ø",
+				settingsExtentDateLineError: "Utstrekningen kan ikke være over den 180. lengdegraden",
 				settingsExtentDateLineError2: "Feil ved beregning av utstrekningen",
 				settingsExtentDrawBtn: "Tegn en ny utstrekning",
 				settingsExtentModifyBtn: "Rediger gjeldende utstrekning",
@@ -159,8 +159,8 @@
 				settingsDataModel2SpyGlassExplain: "Avdekk et annet webkart.",
 				settingsDataModel2HelpTitle: "Hvordan finner jeg webkartets ID?",
 				settingsDataModel2HelpContent: "Kopier og lim inn tallene etter likhetstegnet (=) i URL-adressen til webkartet",
-				switchMaps: "å_Switch maps_ø",
-				browseWebMaps: "å_Browse web maps_ø"
+				switchMaps: "Bytt kart",
+				browseWebMaps: "Bla igjennom nettkart"
 			},
 			settingsLegend: {
 				settingsTabLegend: "Appens utforming",
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "Se et eksempel på et program med en sveipeserie her",
 				preview: "Forhåndsvisning av brukergrensesnitt",
 				settingsLocateButtonExplain: "Denne funksjonen støttes på de fleste mobile enheter og nettlesere på stasjonære datamaskiner (inkludert Internet Explorer 9+).",
-				settingsLocateButton: "å_Enable a 'Locate' button on supported browsers_ø",
+				settingsLocateButton: "Aktiver en 'Finn'-knapp i støttede nettlesere",
 				settingsAddressSearch: "Aktiver et adressesøkverktøy"
 			},
 			settingsSwipePopup: {
@@ -204,71 +204,75 @@
 				discardDisabled: "Du kan ikke fjerne dette bokmerket. Du kan deaktivere sveipeserier i innstillingene."
 			},
 			helpPopup: {
-				title: "å_Help_ø",
-				close: "å_Close_ø",
+				title: "Hjelp",
+				close: "Lukk",
 				tab1: {
-					div1: "å_The Swipe/Spyglass template is designed to compare two seperate web maps or two layers of a single web map in an attractive, easy-to-use web application that can be used in any web browser on any device, including smartphones and tablets._ø",
+					div1: "Malen for sveiping/forstørrelsesglass er utviklet for å sammenligne to ulike nettkart eller to lag i ett enkelt nettkart i et flott og brukervennlig nettprogram som kan brukes i alle nettlesere på alle slags enheter, blant annet smarttelefoner og nettbrett.",
 					div2: "å_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ø",
-					div3: "å_We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>._ø"
+					div3: "Vi vil gjerne høre fra deg! Uansett om du har spørsmål, ønsker en ny funksjon eller tror du har funnet en feil, kan du besøke <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>."
 				}
 			},
 			share: {
-				firstSaveTitle: "å_Application successfully saved_ø",
-				firstSaveHeader: "å_Your Application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ø",
-				firstSaveA1: "å_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ø",
-				firstSaveA1bis: "å_The Application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ø",
-				firstSaveQ2: "å_Is my Application shared?_ø",
-				firstSaveA2: "å_Currently your Application is not shared. To share it, use the SHARE button._ø",
-				shareTitle: "å_Share your Application_ø",
-				sharePrivateHeader: "å_Your Application is not shared, would you like to share it?_ø",
-				sharePrivateBtn1: "å_Share publicly_ø",
-				sharePrivateBtn2: "å_Share with my Organization_ø",
-				sharePrivateProgress: "å_Sharing in progress..._ø",
-				sharePrivateErr: "å_Sharing failed, try again or_ø",
-				sharePrivateOk: "å_Sharing updated successfully, loading..._ø",
-				shareStatus1: "å_Application is not saved_ø",
-				shareStatus2: "å_Application is shared publicly_ø",
-				shareStatus3: "å_Application is shared within the organization_ø",
-				shareStatus4: "å_Application is not shared_ø",
-				sharePreviewAsUser: "å_Preview_ø",
-				shareHeader1: "å_Your Application is <strong>publicly accessible</strong>._ø",
-				shareHeader2: "å_Your Application is accessible by your organization members (login is required)._ø",
-				shareLinkHeader: "å_Share the Application with your audience_ø",
-				shareLinkOpen: "å_OPEN_ø",
-				learnMore: "å_Learn more_ø",
-				shareQ1Opt1: "å_How do I keep the Application private?_ø",
-				shareQ1Opt2: "å_How do I keep the Application private or share it publicly?_ø",
-				shareA1: "å_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the web map, use <a href='%LINK2%' target='_blank'>the web map item page</a>._ø",
-				shareA1bis: "å_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ø",
-				shareQ2: "å_How do I edit the Application later?_ø",
-				shareQ2bis: "å_How do I get back to the authoring interface?_ø",
-				shareA2div1: "å_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ø",
-				shareA2div2: "å_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ø",				
-				shareQ3: "å_Where is the data stored?_ø",
-				shareA3: "å_The Application configuration is stored in this web application item</a>._ø",
+				firstSaveTitle: "Programmet er lagret",
+				firstSaveHeader: "Programmet er nå lagret i ArcGIS Online. Les disse svarene på vanlige spørsmål.",
+				firstSaveA1: "Hvis du er ukjent med ArcGIS Online eller vil opprette en snarvei til grensesnittet for opprettere, kan du lagre følgende kobling: %LINK1%",
+				firstSaveA1bis: "Du finner også programmet i <a href='%LINK2%' target='_blank'>innholdsmappen din i ArcGIS Online</a>.",
+				firstSaveQ2: "Har programmet mitt blitt delt?",
+				firstSaveA2: "For øyeblikket har ikke programmet ditt blitt delt. Hvis du vil dele det, bruker du DEL-knappen.",
+				shareTitle: "Del programmet ditt",
+				sharePrivateHeader: "Programmet ditt er ikke delt. Har du lyst til å dele det?",
+				sharePrivateBtn1: "Del offentlig",
+				sharePrivateBtn2: "Del med min organisasjon",
+				sharePrivateProgress: "Deling pågår ...",
+				sharePrivateErr: "Deling mislyktes. Prøv på nytt, eller",
+				sharePrivateOk: "Delingen er blitt oppdatert, lastes inn ...",
+				shareStatus1: "Programmet er ikke lagret",
+				shareStatus2: "Programmet er delt offentlig",
+				shareStatus3: "Programmet er delt innenfor organisasjonen",
+				shareStatus4: "Programmet er ikke delt",
+				sharePreviewAsUser: "Forhåndsvisning",
+				shareHeader1: "Programmet er <strong>offentlig tilgjengelig</strong>.",
+				shareHeader2: "Programmet ditt er tilgjengelig for medlemmer av organisasjonen din (krever pålogging).",
+				shareLinkHeader: "Del programmet ditt med publikum",
+				shareLinkOpen: "ÅPNE",
+				learnMore: "Få mer informasjon",
+				shareQ1Opt1: "Hvordan kan jeg beholde programmet privat?",
+				shareQ1Opt2: "Hvordan kan jeg beholde programmet privat eller dele det offentlig?",
+				shareA1: "Bruk %SHAREIMG% på <a href='%LINK1%' target='_blank'>elementsiden for programmet</a>. Hvis du også vil oppheve deling av nettkartet, bruker du <a href='%LINK2%' target='_blank'>elementsiden for nettkartet</a>.",
+				shareA1bis: "Hvis du også vil oppheve delingen av geoobjektstjenesten, kan du bruke <a href='%LINK1%' target='_blank'>siden for geoobjektstjenesteelementer</a>.",
+				shareQ2: "Hvordan kan jeg redigere programmet senere?",
+				shareQ2bis: "Hvordan kommer jeg tilbake til grensesnittet for opprettere?",
+				shareA2div1: "Lagre og bruk følgende kobling på nytt, %LINK1% eller bruk <a href='%LINK2%' target='_blank'>siden for programelementer</a>.",
+				shareA2div2: "Når du har logget på ArcGIS.com som eier av programmet, får du tilgang til en knapp for å åpne det interaktive byggeverktøyet:",				
+				shareQ3: "Hvor lagres dataene?",
+				shareA3: "Programmets konfigurasjon er lagret i dette webprogramelementet</a>.",
 				shareWarning: "å_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ø",
  				shareWarningWith1: "å_publicly_ø",
  				shareWarningWith2: "å_publicly and with the Organization_ø"
 			},
 			directCreation: {
-				header: "å_Welcome to the Swipe/Spyglass Builder_ø",
-				mapPickHeader: "å_To get started, please input a valid web map id, or use the search button to browse web maps._ø",
-				launchBuilder: "å_Launch Builder_ø"
+				header: "Velkommen til byggeverktøyet for sveiping/forstørrelsesglass",
+				mapPickHeader: "Angi en gyldig nettkart-ID for å komme i gang, eller bruk søkeknappen for å bla igjennom nettkart.",
+				launchBuilder: "Start byggeverktøyet",
+				chooseWebmapLbl: "å_Choose web map..._ø",
+				explain2: "å_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ø",
+				explain3: "å_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ø",
+				webmapPlaceholder: "å_Enter a web map id..._ø"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "å_My Organization_ø",
-					onlineLabel: "å_ArcGIS Online_ø",
-					contentLabel: "å_My Content_ø",
-					favoritesLabel: "å_My Favorites_ø"
+					organizationLabel: "Min organisasjon",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Mitt innhold",
+					favoritesLabel: "Mine favoritter"
 				},
-				title: "å_Select Web Map_ø",
-				searchTitle: "å_Search_ø",
-				ok: "å_Ok_ø",
-				cancel: "å_Cancel_ø",
-				placeholder: "å_Enter search term_ø"
+				title: "Velg webkart",
+				searchTitle: "Søk",
+				ok: "Ok",
+				cancel: "Avbryt",
+				placeholder: "Angi søkeord"
 			}
 		}
     })
