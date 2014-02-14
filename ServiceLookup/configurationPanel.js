@@ -46,19 +46,30 @@
             "tooltip": "Check this to store the location in a layer in the webmap"
         },
         {
-            "type":"string",
+            "type":"layerAndFieldSelector",
+            "fields":[ 
+                    {
+                        "supportedTypes": ["esriFieldTypeString"],
+                        "multipleSelection": false,
+                        "fieldName": "serviceRequestLayerAvailibiltyField",
+                        "label": "Field used to store the Yes or No value",
+                        "tooltip":"Field used to store the Yes or No value"
+
+                    }
+            ],
+            "layerOptions":{
+                "supportedTypes":[
+                    "FeatureLayer"
+                ],      
+                "geometryTypes":[
+                    "esriGeometryPoint"
+                ]
+            },
             "fieldName":"serviceRequestLayerName",
             "label":"Storage Layer Name",
-            "tooltip":"Point layer used for to store request locations",
-            "stringFieldOption": "text"
+            "tooltip":"Point layer used for to store request locations"
         },
-        {
-            "type":"string",
-            "fieldName":"serviceRequestLayerAvailibiltyField",
-            "label":"Storage Layer Field",
-            "tooltip":"Field used to store if the request intersected a lookup feature",
-            "stringFieldOption": "text"
-        },
+
         {
             "type":"string",
             "fieldName":"serviceRequestLayerAvailibiltyFieldValueAvail",
@@ -76,16 +87,14 @@
         ]
     }],
     "values":{
-         "serviceAreaLayerNames": "Service Area",
-         "popupTitle": "Service Information",
-         "serviceUnavailableTitle": "Outside Utility Service Area",
-         "serviceUnavailableMessage": "The utility does not provide service to the selected location",
-         "zoomLevel": 16,
-         "storeLocation": false,
-         "serviceRequestLayerName": "Request Tracking",
-         "serviceRequestLayerAvailibiltyField": "REQSTATUS",
-         "serviceRequestLayerAvailibiltyFieldValueAvail": "Intersected",
-         "serviceRequestLayerAvailibiltyFieldValueNotAvail": "Not Intersected"
+        "serviceAreaLayerNames": "Service Area",
+        "popupTitle": "Service Information",
+        "serviceUnavailableTitle": "Outside Utility Service Area",
+        "serviceUnavailableMessage": "The utility does not provide service to the selected location",
+        "zoomLevel": 16,
+        "storeLocation": false,
+        "serviceRequestLayerAvailibiltyFieldValueAvail": "Intersected",
+        "serviceRequestLayerAvailibiltyFieldValueNotAvail": "Not Intersected"
         
 
     }
