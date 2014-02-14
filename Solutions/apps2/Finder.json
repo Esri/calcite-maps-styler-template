@@ -32,7 +32,7 @@
     },
 
     "configurationSettings": [{
-        "category": "Title",
+        "category": "<b>Title</b>",
         "fields": [{
             "label": "Application title",
             "fieldName": "titleBar.title",
@@ -75,7 +75,7 @@
             "tooltip": "Color theme to use"
         }]
     }, {
-        "category": "Map",
+        "category": "<b>Map</b>",
         "fields": [{
             "label": "Select a map",
             "fieldName": "webmap",
@@ -125,7 +125,7 @@
             "tooltip": "ArcGIS.com username of owner of basemap group"
         }]
     }, {
-        "category": "Help",
+        "category": "<b>Help</b>",
         "fields": [{
             "label": "Help text",
             "fieldName": "helpMessageBox.content",
@@ -139,7 +139,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 0ed1e57960ecb3ae 2014-02-11 18:18:08 -0500"
+                "commit ee8453cf2497ccdf 2014-02-14 13:05:24 -0800"
             ]
         }
     }, {

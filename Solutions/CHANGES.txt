@@ -1,10 +1,9 @@
-change report #16 at 02/10/2014 20:37:57.93
+change report #19 at 02/14/2014 13:05:11.52
 -
 for git branch
-develop
+usability_improvements
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
- D apps2/TagEditView.json
-?? apps2/FindEditFilter.json
+M  apps2/FindEditFilter.json
