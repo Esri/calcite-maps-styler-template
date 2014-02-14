@@ -4,8 +4,8 @@ define([], function () {
     //and url parameters.
     var defaults = {
         "appid": "",
-        "webmap": "",
-        "oauthappid": null,
+        "webmap": "25660c0facdb419191c8b2dec5da74d7", // "" 
+        "oauthappid": null, //"AFTKRmv16wj14N3z",
         //Enter the url to the proxy if needed by the applcation. See the 'Using the proxy page' help topic for details
         //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
         "proxyurl": "",
@@ -18,12 +18,11 @@ define([], function () {
         "serviceUnavailableTitle": "Outside Utility Service Area",
         "serviceUnavailableMessage": "The utility does not provide service to the selected location",
         "zoomLevel": 16,
-        "storeLocation": true,
+        "storeLocation": false,
         "serviceRequestLayerName": "Request Tracking",
         "serviceRequestLayerAvailibiltyField": "REQSTATUS",
         "serviceRequestLayerAvailibiltyFieldValueAvail": "Intersected",
-        "serviceRequestLayerAvailibiltyFieldValueNotAvail": "Not Intersected",
-       
+        "serviceRequestLayerAvailibiltyFieldValueNotAvail": "Not Intersected"
 
     };
     return defaults;

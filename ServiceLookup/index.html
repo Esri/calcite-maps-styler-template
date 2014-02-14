@@ -20,9 +20,7 @@
     <div id="mapDiv" dir="ltr"></div>
 
     <div id="LocateButton"></div>
-    <div id="HomeButton"></div>
-
-
+ 
     <script type="text/javascript">
         var package_path = location.pathname.replace(/\/[^/]+$/, '');//window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
         var dojoConfig = {
@@ -40,7 +38,7 @@
             }
             , {
                 name: "templateConfig",
-                location: package_path.substr(0, package_path.lastIndexOf('/'))
+                location: package_path//package_path.substr(0, package_path.lastIndexOf('/'))
 
             }
             ]

@@ -228,12 +228,51 @@ function (
                         }
                     }
                     if (this.config.storeLocation == true) {
+                        if (this.config.serviceRequestLayerName.id != undefined) {
+                            if (layer.id == String.trim(this.config.serviceRequestLayerName.id)) {
 
-                        if (layer.title == String.trim(this.config.serviceRequestLayerName)) {
+                                this.serviceRequestLayerName = layer.layerObject;
+                                console.log("Service Request Layer set");
+                                var fnd = false;
 
-                            this.serviceRequestLayerName = layer.layerObject;
-                            console.log("Service Request Layer set");
+                                array.forEach( this.config.serviceRequestLayerName.fields, function (field) {
+                                    if (field.id == "serviceRequestLayerAvailibiltyField") {
+                                        fnd = true;
+                                       
+                                        this.config.serviceRequestLayerAvailibiltyField = field.fields[0];
 
+                                    }
+                                }, this);
+
+                                if (fnd == false) {
+                                    alert(this.config.i18n.error.fieldNotFound + ": " + this.config.serviceRequestLayerAvailibiltyField);
+
+                                    console.log("Field not found.");
+
+                                }
+                            }
+                        } else {
+                            if (layer.title == String.trim(this.config.serviceRequestLayerName)) {
+
+                                this.serviceRequestLayerName = layer.layerObject;
+                                console.log("Service Request Layer set");
+                                var fnd = false;
+
+                                array.forEach(this.serviceRequestLayerName.fields, function (field) {
+                                    if (field.name == this.config.serviceRequestLayerAvailibiltyField) {
+                                        fnd = true;
+
+
+                                    }
+                                }, this);
+
+                                if (fnd == false) {
+                                    alert(this.config.i18n.error.fieldNotFound + ": " + this.config.serviceRequestLayerAvailibiltyField);
+
+                                    console.log("Field not found.");
+
+                                }
+                            }
                         }
                     }
 
@@ -264,32 +303,19 @@ function (
                 }
 
             }
-
+          
             if (this.serviceRequestLayerName === undefined && this.config.storeLocation == true) {
-                alert(this.config.i18n.error.layerNotFound + ": " + this.config.serviceRequestLayerName);
-
+                if (this.config.serviceRequestLayerName.id != undefined) {
+                    alert(this.config.i18n.error.layerNotFound + ": " + this.config.serviceRequestLayerName.id);
+                }
+                else {
+                    alert(this.config.i18n.error.layerNotFound + ": " + this.config.serviceRequestLayerName);
+                }
                 console.log("Layer name not found.");
 
 
             }
-            else if (this.config.storeLocation == true) {
-                var fnd = false;
-
-                array.forEach(this.serviceRequestLayerName.fields, function (field) {
-                    if (field.name == this.config.serviceRequestLayerAvailibiltyField) {
-                        fnd = true;
-
-
-                    }
-                }, this);
-
-                if (fnd == false) {
-                    alert(this.config.i18n.error.fieldNotFound + ": " + this.config.serviceRequestLayerAvailibiltyField);
-
-                    console.log("Field not found.");
-
-                }
-            }
+            
 
         },
 
@@ -509,12 +535,19 @@ function (
 
                             editGraphic = new Graphic(this.event, this.editSymbolAvailable, resultFeature, this.popupTemplate);
                             featureArray.push(editGraphic);
+                            this.map.infoWindow.highlight = false;
+                            this.map.infoWindow._highlighted = undefined
+
                             this.map.graphics.add(editGraphic);
 
                             this.map.infoWindow.setFeatures(featureArray);
                             this.map.infoWindow.show(editGraphic.geometry);
                             this.map.infoWindow.resize();
-                            //
+                             //
+                            //if (this.map.graphics.graphics.length > 1)
+                            //{
+                            //    this.map.graphics.graphics[1].visible = false;
+                            //}
                             if (this.config.storeLocation == true) {
                                 atts[this.config.serviceRequestLayerAvailibiltyField] = this.config.serviceRequestLayerAvailibiltyFieldValueAvail;
 
@@ -528,9 +561,17 @@ function (
             }
         },
         _addToMap: function (evt) {
+            if (this.lookupLayers === undefined)
+                return;
+
+            if (this.lookupLayers == null)
+                return;
+            if (this.lookupLayers.length == 0)
+                return;
+
             dojo.style("loader", "display", "block");
             this.map.infoWindow.hide();
-
+            this.map.infoWindow.highlight = false;
             this.map.graphics.clear();
 
             //query to determine popup 
