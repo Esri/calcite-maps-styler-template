@@ -5,7 +5,7 @@ define({
 				editMe: "Edit me !"
 			},
 			builderPanel: {
-				panelHeader: "APPLICATION CONFIGURATION",
+				panelHeader: "%TPL_NAME% Builder",
 				buttonSave: "SAVE",
 				buttonShare: "SHARE",
 				buttonSettings: "SETTINGS",
