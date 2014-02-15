@@ -45,15 +45,16 @@ define([
                     rendererSummarize: 'summarize'
                 };          
                 // if we have a layer title or layer id
-                if (this.config.summaryLayerTitle || this.config.summaryLayerId) {
+                if (this.config.summaryLayer && this.config.summaryLayer.id) {
                     // get layer by id/title
                     this._aoiLayer = this._getAOILayer({
                         map: this.map,
                         layers: this.layers,
-                        title: this.config.summaryLayerTitle,
-                        id: this.config.summaryLayerId
+                        id: this.config.summaryLayer.id
                     });
                 }
+                // set layer title
+                this._setImpactLayerTitle();
                 // get layer infos
                 this._getLayerInfos();
                 // out fields
@@ -120,13 +121,13 @@ define([
                     }));
                 }
                 // description
-                if (this.config.showAreaDescription) {
-                    this._setAreaDescription(this.config.areaDescription || this.item.snippet);
+                if (this.config.enableSummary) {
+                    this._setSummary(this.config.summary || this.item.snippet);
                 }
             },
-            _setAreaDescription: function (description) {
+            _setSummary: function (description) {
                 // map title node
-                var node = dom.byId('areaDescription');
+                var node = dom.byId('summary');
                 if (node) {
                     // set title
                     node.innerHTML = description;
@@ -169,6 +170,15 @@ define([
                     }
                 }
             },
+            _setImpactLayerTitle: function(){
+                // set title of header to layer title
+                if(this._impactAreaTitle){
+                    var node = dom.byId('impact_area_title');
+                    if(node){
+                        node.innerHTML = this._impactAreaTitle;
+                    }
+                }  
+            },
             // get layer
             _getAOILayer: function (obj) {
                 var mapLayer, layer, i;
@@ -178,16 +188,10 @@ define([
                         layer = obj.layers[i];
                         if (layer.id === obj.id) {
                             mapLayer = obj.map.getLayer(layer.id);
-                            mapLayer.layerIndex = i;
-                            return mapLayer;
-                        }
-                    }
-                } else if (obj.title) {
-                    // use layer title
-                    for (i = 0; i < obj.layers.length; i++) {
-                        layer = obj.layers[i];
-                        if (layer.title.toLowerCase() === obj.title.toLowerCase()) {
-                            mapLayer = obj.map.getLayer(layer.id);
+                            console.log(mapLayer);
+                            if(mapLayer.arcgisProps && mapLayer.arcgisProps.title){
+                                this._impactAreaTitle = mapLayer.arcgisProps.title;   
+                            }
                             mapLayer.layerIndex = i;
                             return mapLayer;
                         }
@@ -296,7 +300,7 @@ define([
                     className: this.areaCSS.rendererMenu
                 });
                 // Entire area button in renderer list
-                if(this.config.showEntireAreaButton){
+                if(this.config.enableEntireAreaButton){
                     // create select all item
                     var selectAll = domConstruct.create('li', {
                         className: this.areaCSS.rendererMenuItem + " " + this.areaCSS.rendererSummarize

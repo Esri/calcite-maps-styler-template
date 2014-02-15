@@ -4,12 +4,15 @@ define({
             error: "Unable to create map"
         },
         general: {
+            map: "Map",
+            mapInfo: "Map Information",
             legend: "Legend",
-            aoi: "Area",
+            layers: "Layers",
             summarize: "Entire Area",
             share: "Share",
             about: "About",
-            noSearchResult: "No result found"
+            noSearchResult: "No result found",
+            impactArea: "Impact Area"
         }
     }),
     "ar": 1,

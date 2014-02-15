@@ -313,8 +313,10 @@ input[type=text]::-ms-clear {
     font-weight: 700;
     width: 100%;
 }
+.drawer-menu-1 .drawer-menu-buttons {
+    display: none;
+}
 .drawer-menu-buttons .item {
-    width: 50%;
     text-align: center;
     color: #97cbec;
     float: left;
@@ -324,9 +326,15 @@ input[type=text]::-ms-clear {
     user-select: none;
 }
 .esriRTL .drawer-menu-buttons .item {
-    float:right;
+    float: right;
 }
-.drawer-menu-buttons .item-only {
+.drawer-menu-3 .drawer-menu-buttons .item {
+    width: 33.3%;
+}
+.drawer-menu-2 .drawer-menu-buttons .item {
+    width: 50%;
+}
+.drawer-menu-1 .drawer-menu-buttons .item {
     width: 100%;
 }
 .drawer-menu-buttons .item-container {
@@ -335,24 +343,23 @@ input[type=text]::-ms-clear {
     padding: 7px 0;
 }
 .drawer-menu-buttons .item .title {
-    padding: 7px 0;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 90%;
-}
-.drawer-menu-buttons .item-first .title {
-    border-right: 1px solid #5fa8d4;
-}
-.esriRTL .drawer-menu-buttons .item-first .title {
-    border-right:0;
+    padding: 2px 0;
+    font-size: 24px;
+    line-height: normal;
     border-left: 1px solid #5fa8d4;
 }
-.drawer-menu-buttons .item-only .title {
-    border-right: 0;
+.esriRTL .drawer-menu-buttons .item .title {
+    border-left: 0;
+    border-right: 1px solid #5fa8d4;
 }
-.esriRTL .drawer-menu-buttons .item-only .title {
-    border-left:0;   
+.drawer-menu-buttons .item-first .title {
+    border-left: 0;
+}
+.esriRTL .drawer-menu-buttons .item-first .title {
+    border-right: 0;
 }
 .drawer-menu-buttons .item-selected {
     color: #fff;
@@ -372,16 +379,44 @@ input[type=text]::-ms-clear {
     background: url(../images/selected-arrow.png) no-repeat center bottom;
 }
 .esriRTL .drawer-menu-buttons .item-selected .arrow {
-    left:auto;
-    right:0;
+    left: auto;
+    right: 0;
 }
-.drawer-menu-buttons .item-only .arrow {
-    display: none;
+/* Panels */
+
+.panel-title {
+    margin: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #333;
+}
+.panel-padding {
+    padding: 0 10px 10px 10px;
+    color: #666;
+}
+.panel-header {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 8px 12px 10px;
+    line-height: 18px;
+    color: #555;
+    background: #fff;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.esriRTL .panel-header {
+    padding: 12px 10px 12px 8px;
+}
+.panel-section {
+    border-top: 1px solid #e0e0e0;
+}
+.panel-summary {
+    color: #666;
+    padding: 0 10px 10px 10px;
+    line-height: 24px;
 }
 /* Misc */
-.panel-padding{
-    padding: 10px;
-}
 .clear {
     clear: both;
     display: block;
