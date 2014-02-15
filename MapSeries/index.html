@@ -124,8 +124,18 @@
 					loadCSS("app/viewer-min.css");
 			}
 
-			var path1 = location.pathname.replace(/\/[^/]+$/, '');
-			var path2 = location.pathname.replace(/\/[^/]+$/, '/');
+			var path1 = location.pathname.replace(/\/[^/]+$/, '/');
+			var path2 = location.pathname.replace(/\/[^/]+$/, '');
+			
+			// Check if the template is deployed on a Portal or AGOL, path contains (apps|home + one of the two template name)
+			// If is is commonConfig.js is loaded from the parent folder, otherwise it's loaded from the app folder
+			if( /(\/apps\/|\/home\/)(MapSeries\/)/.test(document.location.pathname) )
+				path2 = path2.substr(0,path2.lastIndexOf('/MapSeries'));
+			else if ( /(\/apps\/|\/home\/)(StorytellingBasic\/)/.test(document.location.pathname) )
+				path2 = path2.substr(0,path2.lastIndexOf('/StorytellingBasic'));
+			else
+				path2 = path2.replace(/\/+$/, '') + '/app';
+			
 			var dojoConfig = {
 				parseOnLoad: true,
 				isDebug: false,
@@ -134,25 +144,23 @@
 				packages: [
 					{
 						name: 'storymaps',
-						location: path2 + 'app/storymaps'
+						location: path1 + 'app/storymaps'
 					},
 					{
 						name: "templateConfig",
-						// If the template is deployed on a Portal (apps path contains /apps/Tpl/ or /home/Tpl/)
-						// commonConfig.js is loaded from the parent folder, otherwise it's loaded from the app folder
-						location: /(\/apps\/|\/home\/)(Tpl\/)/.test(document.location.pathname) ? path1.substr(0,path1.lastIndexOf('/Tpl')) : path1.replace(/\/+$/, '') + '/app'
+						location: path2
 					},
 					{
 						name: 'lib-app',
-						location: path2 + 'lib-app'
+						location: path1 + 'lib-app'
 					},
 					{
 						name: 'lib-build',
-						location: path2 + 'lib-build'
+						location: path1 + 'lib-build'
 					},
 					{
 						name: 'commonResources',
-						location: path2 + (app.isProduction ? 'resources/common' : 'app/storymaps/common/_resources/')
+						location: path1 + (app.isProduction ? 'resources/common' : 'app/storymaps/common/_resources/')
 					}
 				],
 				aliases: [
@@ -170,6 +178,10 @@
 		<style>
 			/* CUSTOM CSS RULES */
 		</style>
+		
+		<!-- Builder top panel is injected here -->
+		<div id="builderPanel" class="mainViewAboveMap hide"></div>		
+		
 		<div id="header" class="mainViewAboveMap">
 			<!-- Mobile header -->
 			<div id="headerMobile" class="firstDisplay">
@@ -206,8 +218,6 @@
 					</div>
 				</div>
 				<button type="button" class="switchBuilder btn"></button>
-				<!-- Builder top panel is injected here -->
-				<div id="builderPanel" class="hide"></div>
 			</div>
 		</div>
 
@@ -217,15 +227,9 @@
 
         <!-- Content -->
         <div id="contentPanel" class="mobileView">
-            <div id="mapPanel">
-                <!-- map -->
-                <!--<div id="mainMap">
-                    <div id="hoverInfo"></div>
-                </div>-->
-                <div id="tab-content" class="tab-content">
-                    <div id="mapTabContent0" class="tab-pane active">
-                        <div id="mainMap0" class="mapView"></div>
-                    </div>
+            <div id="mainMediaPanel" class="tab-content">
+                <div class="mainMediaContainer tab-pane active">
+                    <div class="mapContainer"></div>
                 </div>
             </div>
             <div id="sidePanel"></div>
@@ -244,11 +248,11 @@
 		</div>
 
         <!-- Add button -->
-		<div id="addBtn" style="position: absolute; top: 75px; left: 25px; border: 1px solid black; display: none;">
+		<div id="addBtn" style="position: absolute; top: 130px; left: 25px; display: none;">
 			<button type="button" class="btn builder-add">ADD</button>
 		</div>
         <!-- Organize button -->
-		<div id="organizeBtn" style="position: absolute; top: 75px; left: 90px; border: 1px solid black; display: none;">
+		<div id="organizeBtn" style="position: absolute; top: 130px; left: 90px; display: none;">
             <button type="button" class="btn builder-organize"><span class="glyphicon glyphicon-th-list"></span> ORGANIZE</button>
         </div>
 
@@ -323,7 +327,6 @@
 						"dojo/i18n!./resources/tpl/viewer/nls/template.js?v=" + app.version, 
 						"storymaps/common/ui/loadingIndicator/LoadingIndicator", 
 						"esri/urlUtils", 
-						"templateConfig/commonConfig.js?v=" + app.version,
 						"dojo/ready"
 					], function(
 						i18nViewer, 
@@ -339,7 +342,9 @@
 						
 					 	require([
 								"storymaps/common/Core", 
-								"storymaps/tpl/core/MainView"
+								"storymaps/tpl/core/MainView",
+								// TODO: If included in the first require, file is loaded twice (dojo.addOnLoad fix that)
+								"templateConfig/commonConfig.js?v=" + app.version
 							], function(
 								Core, 
 								MainView

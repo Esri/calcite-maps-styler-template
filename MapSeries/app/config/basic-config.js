@@ -54,8 +54,8 @@ app.cfg = {
 	// Builder direct creation
 	//
 	
-	// Text to be used as the browser page title during app creation
-	TPL_NAME: "TemplateName",
+	// Text to be used as the browser page title during app creation "Map Series" or "Storytelling Basic"
+	TPL_NAME: "Storytelling Basic",
 	WEBAPP_TAG: [],
 	WEBMAP_TAG: ["map"],
 	WEBAPP_KEYWORD: ["JavaScript", "Map", "Mapping Site", "Online Map", "Ready To Use", "selfConfigured", "Web Map", "Story Maps", "Tpl"],
