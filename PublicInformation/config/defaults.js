@@ -13,7 +13,7 @@ define([], function() {
         //you could define the default here and setup configuration settings to allow users to choose a different
         "title":"",
         "summary":"",
-        "defaultMenu":"featured",
+        "defaultPanel":"map",
         "enableSummary":true,
         "enableTitle":true,
         "enableLegendPanel": true,
@@ -28,8 +28,8 @@ define([], function() {
         "enableBookmarks": true,
         "enableOverviewMap":true,
         "openOverviewMap":false,
+        "defaultBasemap": "topo",
         "nextBasemap": "hybrid",
-        "currentBasemap": "topo",
         "hideNotesLayerPopups":true,
         "enableInstagram":true,
         "instagramChecked":false,
