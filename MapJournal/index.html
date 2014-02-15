@@ -115,7 +115,7 @@
 
 			loadCSS("//jsdev.arcgis.com/3.9/js/esri/css/esri.css", true);
 			// TODO
-			loadCSS("//jsdev.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css", true);	
+			loadCSS("//jsdev.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css", true);			
 
 			if( app.isProduction ) {
 				if ( app.isInBuilder )
@@ -124,8 +124,8 @@
 					loadCSS("app/viewer-min.css");
 			}
 
-			var path1 = location.pathname.replace(/\/[^/]+$/, '');
-			var path2 = location.pathname.replace(/\/[^/]+$/, '/');
+			var path1 = location.pathname.replace(/\/[^/]+$/, '/');
+			var path2 = location.pathname.replace(/\/[^/]+$/, '');
 			var dojoConfig = {
 				parseOnLoad: true,
 				isDebug: false,
@@ -134,25 +134,25 @@
 				packages: [
 					{
 						name: 'storymaps',
-						location: path2 + 'app/storymaps'
+						location: path1 + 'app/storymaps'
 					},
 					{
 						name: "templateConfig",
-						// If the template is deployed on a Portal (apps path contains /apps/Tpl/ or /home/Tpl/)
+						// If the template is deployed on a Portal (apps path contains /apps/MapJournal/ or /home/MapJournal/)
 						// commonConfig.js is loaded from the parent folder, otherwise it's loaded from the app folder
-						location: /(\/apps\/|\/home\/)(Tpl\/)/.test(document.location.pathname) ? path1.substr(0,path1.lastIndexOf('/Tpl')) : path1.replace(/\/+$/, '') + '/app'
+						location: /(\/apps\/|\/home\/)(MapJournal\/)/.test(document.location.pathname) ? path2.substr(0,path2.lastIndexOf('/MapJournal')) : path2.replace(/\/+$/, '') + '/app'
 					},
 					{
 						name: 'lib-app',
-						location: path2 + 'lib-app'
+						location: path1 + 'lib-app'
 					},
 					{
 						name: 'lib-build',
-						location: path2 + 'lib-build'
+						location: path1 + 'lib-build'
 					},
 					{
 						name: 'commonResources',
-						location: path2 + (app.isProduction ? 'resources/common' : 'app/storymaps/common/_resources/')
+						location: path1 + (app.isProduction ? 'resources/common' : 'app/storymaps/common/_resources/')
 					}
 				],
 				aliases: [
@@ -170,6 +170,9 @@
 		<style>
 			/* CUSTOM CSS RULES */
 		</style>
+
+		<!-- Builder top panel is injected here -->
+		<div id="builderPanel" class="hide mainViewAboveMap"></div>
 		
 		<!-- Header -->
 		<div id="header" class="mainViewAboveMap">
@@ -181,40 +184,39 @@
 				</div>
 				<div class="rightArea">
 					<div class="social">
-						<span class="msLink">
-							<a href="" target="_blank"></a>
-						</span>
+						<span class="link"></span>
 						<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
-						<i class="icon-twitter-1 shareIcon share_twitter"></i>
-						<i class="icon-link shareIcon share_bitly"></i>
+						<i class="shareIcon share_twitter icon-twitter-1"></i>
+						<i class="shareIcon share_bitly icon-link"></i>
+						
 					</div>
 					<div class="logo">
-						<a target="_blank">
-							<img alt="Esri - Home" class="headerLogoImg"/>
+						<a class="logoLink" target="_blank">
+							<img class="logoImg" />
 						</a>
 					</div>
 				</div>
 				<button type="button" class="switchBuilder btn"></button>
-				<!-- Builder top panel is injected here -->
-				<div id="builderPanel" class="hide"></div>
 			</div>
 		</div>
 
         <!-- Content -->
         <div id="contentPanel" class="mobileView">
 			<!-- Map -->
-			<div id="mapPanel">
-                <div id="mainMap" class="mapView">
-                    <div id="hoverInfo"></div>
-                </div>
-				<div id="overviewMap" style="position: absolute; left: 20px; bottom: 20px; width: 90px; height: 90px; border: 1px solid black; background-color: #FFF;">
-					TODO
+			<div id="mainMediaPanel">
+                <div class="mainMediaContainer">
+	                <div class="mapContainer">
+	                    <div id="hoverInfo"></div>
+	                </div>
+					<div class="overviewMap" style="position: absolute; left: 20px; bottom: 20px; width: 90px; height: 90px; border: 1px solid black; background-color: #FFF;">
+						TODO
+					</div>
 				</div>
             </div>
 			
 			<!-- Text panel of the Side Panel layout -->
 			<div id="sidePanel" class="mainViewSideMap sidePanel">
-				<div class="builder-command">
+				<div class="builder">
 					<button type="button" class="btn btn-small">Add</button>
 					<button type="button" class="btn btn-small">Organize</button>
 				</div>
@@ -234,16 +236,15 @@
 		
 		<div id="floatingPanel" class="floatingPanel">
 			<div class="header">
-				<a class="headerLink" href="//storymaps.esri.com" target="_blank">A story map</a>
-				&nbsp; 
+				<span class="link"></span>
 				<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
-				<i class="icon-twitter-1 shareIcon share_twitter"></i>
-				<i class="icon-link shareIcon share_bitly"></i>
-				<a class="logoLink" href="//www.esri.com" target="_blank">
-					<img class="logoImg" src="resources/tpl/viewer/icons/esri-logo.png" alt="Esri - Home">
+				<i class="shareIcon share_twitter icon-twitter-1"></i>
+				<i class="shareIcon share_bitly icon-link"></i>
+				<a class="logoLink" target="_blank">
+					<img class="logoImg" />
 				</a>
 			</div>
-			<div class="builder-command">
+			<div class="builder">
 				<button type="button" class="btn btn-small">Add</button>
 				<button type="button" class="btn btn-small">Organize</button>
 			</div>
@@ -267,7 +268,7 @@
 				</div>
 			</div>
 			<div class="social">
-				<a class="headerLink" href="//storymaps.esri.com" target="_blank">A story map</a>
+				<a class="headerLink" href="//storymaps.arcgis.com" target="_blank">A story map</a>
 				&nbsp; 
 				<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
 				<i class="icon-twitter-1 shareIcon share_twitter"></i>
@@ -344,7 +345,6 @@
 						"dojo/i18n!./resources/tpl/viewer/nls/template.js?v=" + app.version, 
 						"storymaps/common/ui/loadingIndicator/LoadingIndicator", 
 						"esri/urlUtils", 
-						"templateConfig/commonConfig.js?v=" + app.version,
 						"dojo/ready"
 					], function(
 						i18nViewer, 
@@ -360,7 +360,8 @@
 						
 					 	require([
 								"storymaps/common/Core", 
-								"storymaps/tpl/core/MainView"
+								"storymaps/tpl/core/MainView",
+								"templateConfig/commonConfig.js?v=" + app.version
 							], function(
 								Core, 
 								MainView
