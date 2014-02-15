@@ -1,9 +1,12 @@
-change report #20 at 02/14/2014 14:21:04.92
+change report #21 at 02/14/2014 16:20:44.38
 -
 for git branch
-develop
+dijit_holder
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M nls/template.js
+M  apps2/FindEditFilter.json
+M  apps2/Finder.json
+M  js2/lgonlineApp.js
+A  js2/lgonlineDijit.js
