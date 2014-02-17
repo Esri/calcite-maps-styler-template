@@ -1,10 +1,27 @@
 # public-information-map-template-js
 
-A fully configurable and responsive web mapping application that highlights areas of interest through data, map notes, and/or social content to a wide audience.
+![App](http://esri.github.io/public-information-map-template-js/images/item.png)
+
+This is a fully configurable public facing mapping application that highlights areas through authoritative data feeds and social content, allowing the public to tell a story.
 
 [View it live](http://esri.github.io/public-information-map-template-js/)
 
-![App](http://esri.github.io/public-information-map-template-js/images/item.png)
+The template can be configured using the following options:
+
+- **Map:** Choose the web map to use in your application.
+- **Interactive:** Map Notes: An author can describe areas on the map using a map notes layer.
+- **Responsive:** A side drawer is shown when its size can be accommodated. The responsive drawer can be toggled on or off by the user and allows the application to be embedded into blogs and websites.
+- **Navigation:** Home and Locate buttons add ease of map navigation.
+- **Content:** Choose to display geo-located content from Flickr, Twitter, Instagram or Webcams.travel.
+- **Summary:** Briefly describe your application in the "Area" panel.
+- **Keywords:** Use query keywords to search on Flickr or Twitter.
+- **Search:** Enable Searching for addresses and places.
+- **Share:** Share this application through Twitter, Facebook, Google+ or generate HTML for embedding in a blog or website.
+- **Basemap:** Enable toggling between two Esri basemaps.
+- **Layers:** Toggle visibility of layers.
+- **Legend:** Display a legend.
+- **Bookmarks:** Webmap bookmarks can be used to navigate the map.
+- **About:** Display information about the application. The dialog can also be set to open on startup.
 
 ## Instructions
 
@@ -20,6 +37,12 @@ A fully configurable and responsive web mapping application that highlights area
 * Notepad or HTML editor
 * A little background with Javascript
 * Experience with the [ArcGIS Javascript API](http://www.esri.com/) would help.
+
+## Webfonts
+
+This application uses a custom webfont created on [Fontello](http://fontello.com/). If you're hosting this application on your own server, make sure that it's configured to host the webfont files with the correct mime types. Some servers require a mime type set for these files to be able to serve them correctly. See the following URLs for more information. There is a zip archive of the webfont with it's fontello config in the "resources" folder in this repository.
+- [IIS Mime types](http://codingstill.com/2013/01/set-mime-types-for-web-fonts-in-iis/)
+- [Properly serve webfonts](http://blog.symbolset.com/properly-serve-webfonts)
 
 ## Resources
 

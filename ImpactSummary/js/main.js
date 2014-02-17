@@ -293,8 +293,6 @@ function(
             // init area panel
             this.initArea();
             this.startupArea();
-            // hide loading div
-            this._hideLoadingIndicator();
             // on body click containing underlay class
             on(document.body, '.dijitDialogUnderlay:click', function(){
                 // get all dialogs
@@ -317,6 +315,8 @@ function(
                     builder.startup();
                 }));
             }
+            // hide loading div
+            this._hideLoadingIndicator();
         },
         _checkMobileGeocoderVisibility: function () {
             if(this._mobileGeocoderIconNode && this._mobileSearchNode){
@@ -518,6 +518,8 @@ function(
                 } else {
                     alert("Unable to create map: " + error.message);
                 }
+                // hide loading div
+                this._hideLoadingIndicator();
             }));
         }
     });

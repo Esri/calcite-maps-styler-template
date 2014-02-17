@@ -85,8 +85,13 @@ define([
                     }
                     // if layer exists
                     if (this._aoiLayer) {
-                        // get highest value feature
-                        this._queryGreatestFeature();
+                        if(this.config.selectEntireAreaOnStart && this._selectAllNode){
+                            this._queryFeatures(this._selectAllNode, this._entireAreaValue, false);
+                        }
+                        else{
+                            // get highest value feature
+                            this._queryGreatestFeature();   
+                        }
                         // selected poly from graphics layer
                         on(this._selectedGraphics, 'click', lang.hitch(this, function (evt) {
                             this._hideInfoWindow();
@@ -224,7 +229,7 @@ define([
                     }
                 }));
             },
-            _queryFeatures: function (node, value) {
+            _queryFeatures: function (node, value, zoom) {
                 // show layer if invisible
                 if (!this._aoiLayer.visible) {
                     this._aoiLayer.setVisibility(true);
@@ -258,8 +263,11 @@ define([
                     // display geo stats
                     this._sb.set("features", fs.features);
                     this._selectFeatures(fs.features);
-                    // set extent for features
-                    this.map.setExtent(graphicsUtils.graphicsExtent(fs.features), true);
+                    // zoom to feature
+                    if(zoom){
+                        // set extent for features
+                        this.map.setExtent(graphicsUtils.graphicsExtent(fs.features), true);
+                    }
                 }), lang.hitch(this, function () {
                     // remove selected
                     this._clearSelected();
@@ -282,12 +290,12 @@ define([
                                 // wait for map to be resized
                                 setTimeout(lang.hitch(this, function () {
                                     // get features
-                                    this._queryFeatures(ct, value);
+                                    this._queryFeatures(ct, value, true);
                                 }), 250);
                             }));
                         } else {
                             // get features
-                            this._queryFeatures(ct, value);
+                            this._queryFeatures(ct, value, true);
                         }
                     }
                 }));
@@ -319,6 +327,8 @@ define([
                         value: this._entireAreaValue,
                         node: selectAll
                     });
+                    // select all node
+                    this._selectAllNode = selectAll;
                 }
                 // each renderer item
                 for (var i = 0; i < infos.length; i++) {
