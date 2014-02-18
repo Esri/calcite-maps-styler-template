@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Otsi",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "Š_Find_ä",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Praegune asukoht",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Esita parandus",  // Command button to submit a correction to the app's host
-            collect: "Lisa sisu kaardile",  // Command button to open a template picker to add features to the map
+            collect: "Š_Filter/Edit_ä",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtreeri kaardikihte",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Vaheta aluskaart",  // Command button to open a dialog box for switching basemaps
             share: "Jaga",  // Command button to open a dropdown menu for picking a type of sharing

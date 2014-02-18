@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Căutare",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "Ă_Find_ș",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Locaţie curentă",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Trimitere corecţie",  // Command button to submit a correction to the app's host
-            collect: "Adăugare conţinut în hartă",  // Command button to open a template picker to add features to the map
+            collect: "Ă_Filter/Edit_ș",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtrare straturi tematice de hartă",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Comutare hartă fundal",  // Command button to open a dialog box for switching basemaps
             share: "Partajare",  // Command button to open a dropdown menu for picking a type of sharing

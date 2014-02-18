@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Suchen",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "ä_Find_Ü",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Aktuelle Position",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Korrektur senden",  // Command button to submit a correction to the app's host
-            collect: "Inhalt zur Karte hinzufügen",  // Command button to open a template picker to add features to the map
+            collect: "ä_Filter/Edit_Ü",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Karten-Layer filtern",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Grundkarte wechseln",  // Command button to open a dialog box for switching basemaps
             share: "Freigeben",  // Command button to open a dropdown menu for picking a type of sharing

@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Ieškoti",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "Į_Find_š",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Esama padėtis",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Pateikti korekciją",  // Command button to submit a correction to the app's host
-            collect: "Pridėti turinį į žemėlapį",  // Command button to open a template picker to add features to the map
+            collect: "Į_Filter/Edit_š",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtruoti žemėlapio sluosnius",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Pakeisti pagrindo žemėlapį",  // Command button to open a dialog box for switching basemaps
             share: "Bendrinti",  // Command button to open a dropdown menu for picking a type of sharing

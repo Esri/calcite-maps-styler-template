@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Cerca",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "é_Find_È",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Posizione corrente",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Invia correzione",  // Command button to submit a correction to the app's host
-            collect: "Aggiungi contenuto alla mappa",  // Command button to open a template picker to add features to the map
+            collect: "é_Filter/Edit_È",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Layer mappa di filtro",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Cambia mappa di base",  // Command button to open a dialog box for switching basemaps
             share: "Condividi",  // Command button to open a dropdown menu for picking a type of sharing

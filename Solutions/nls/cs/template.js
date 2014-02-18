@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Hledat",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "Ř_Find_ů",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Aktuální umístění",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Odeslat korekci",  // Command button to submit a correction to the app's host
-            collect: "Přidat obsah do mapy",  // Command button to open a template picker to add features to the map
+            collect: "Ř_Filter/Edit_ů",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtrovat mapové vrstvy",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Přepnout podkladovou mapu",  // Command button to open a dialog box for switching basemaps
             share: "Sdílet",  // Command button to open a dropdown menu for picking a type of sharing

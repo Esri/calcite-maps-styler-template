@@ -9,15 +9,10 @@
             success: "한_Flagged_빠",
             loading: "한_Loading&hellip;_빠"
         },
-        area:{
-            mapNotes: "한_Notes_빠",
+        mapNotes:{
             notesUnavailable: "한_Description unavailable_빠",
             bookmarks: "한_Bookmarks_빠",
             untitledNote: "한_Untitled_빠"
-        },
-        layers: {
-            operational: "한_Operational_빠",
-            social: "한_Social_빠"
         },
         social: {
             flickr: "한_Flickr_빠",
@@ -25,6 +20,7 @@
             twitter: "한_Twitter_빠",
             twitterSettings: "한_Twitter Settings_빠",
             twitterUser: "한_Twitter Account_빠",
+            twitterSignIn: "한_Sign in to Twitter_빠",
             webcams: "한_Webcams_빠",
             instagram: "한_Instagram_빠",
             moreInfo: "한_More information_빠",
@@ -33,13 +29,16 @@
             flSettingsInfo: "한_Return results matching a photo's title, description or tags._빠",
             twSettingsInfo: "한_See whatâ€™s happening right now._빠",
             advancedOperators: "한_Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches._빠",
-            tweetsFilteredBy: "한_Tweets filtered by:_빠",
-            photosFilteredBy: "한_Photos filtered by:_빠"
+            tweetsFilteredBy: "한_tweets filtered by:_빠",
+            photosFilteredBy: "한_photos filtered by:_빠",
+            twitterAccountStatus: "한_Enable the Twitter layer to see your status._빠"
         },
         general: {
+            map: "한_Map_빠",
+            mapInfo: "한_Map Information_빠",
             legend: "한_Legend_빠",
-            aoi: "한_Area_빠",
-            summarize: "한_Entire Area_빠",
+            featured: "한_Featured Locations_빠",
+            layers: "한_Layers_빠",
             share: "한_Share_빠",
             about: "한_About_빠",
             noSearchResult: "한_No result found_빠",

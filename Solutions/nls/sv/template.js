@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Sök",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "Å_Find_ö",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Aktuell plats",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Skicka in rättelse",  // Command button to submit a correction to the app's host
-            collect: "Lägg till innehåll i kartan",  // Command button to open a template picker to add features to the map
+            collect: "Å_Filter/Edit_ö",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtrera kartlager",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Byt baskarta",  // Command button to open a dialog box for switching basemaps
             share: "Dela",  // Command button to open a dropdown menu for picking a type of sharing
