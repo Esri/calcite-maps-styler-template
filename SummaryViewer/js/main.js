@@ -239,13 +239,23 @@ define([
                 var fld = fields[i];
                 var fldType = fld.type;
                 if ((this.fieldTypes.indexOf(fldType) > -1) && (fld.name != layer.objectIdField)){
-                    var fldInfo = infos[i];
+                    var fldInfo = this.getFieldInfo(fld.name, infos);
                     if ((fldInfo.visible) && (!fld.domain))
                         array.push(fld.name);
                 }
             }
             
             return array;
+        },
+        
+        // get field info
+        getFieldInfo: function(name, infos) {
+            for (var i=0; i<infos.length; i++) {
+                var info = infos[i];
+                if (info.fieldName == name)
+                    return info;
+            }
+            return null;
         },
         
          // set layer
@@ -299,39 +309,55 @@ define([
             }
             var aliases = ["COUNT"];
             var i = 0;
+            var sumType = "";
             if (str.length > 0) {
                 if (this.config.sumFields != "") {
+                    sumType = "SUM: ";
+                    if (this.config.hideSummaryType)
+                        sumType = "";
                     sumFields= this.config.sumFields;
                     for (i=0; i<sumFields.length; i++) {
-                        aliases.push("SUM: " + this.getFieldAlias(sumFields[i]));
+                            aliases.push(sumType + this.getFieldAlias(sumFields[i]));
                     }
                 }
                     
                 if (this.config.avgFields != "") {
+                    sumType ="AVG: ";
+                    if (this.config.hideSummaryType)
+                        sumType = "";
                     avgFields = this.config.avgFields;
                     for (i=0; i<avgFields.length; i++) {
-                        aliases.push("AVG: " + this.getFieldAlias(avgFields[i]));
+                        aliases.push(sumType + this.getFieldAlias(avgFields[i]));
                     }
                 }
                     
                 if (this.config.minFields != "") {
+                    sumType ="MIN: ";
+                    if (this.config.hideSummaryType)
+                        sumType = "";
                     minFields = this.config.minFields;
                     for (i=0; i<minFields.length; i++) {
-                        aliases.push("MIN: " + this.getFieldAlias(minFields[i]));
+                        aliases.push(sumType + this.getFieldAlias(minFields[i]));
                     }
                 }
                     
                 if (this.config.maxFields != "") {
+                    sumType = "MAX: ";
+                    if (this.config.hideSummaryType)
+                        sumType = "";
                     maxFields = this.config.maxFields;
                     for (i=0; i<maxFields.length; i++) {
-                        aliases.push("MAX: " + this.getFieldAlias(maxFields[i]));
+                        aliases.push(sumType + this.getFieldAlias(maxFields[i]));
                     }
                 }
                     
             } else {
+                sumType = "SUM: ";
+                if (this.config.hideSummaryType)
+                    sumType = "";
                 sumFields = this.getSummaryFields(this.opLayer);
                 for (i=0; i<sumFields.length; i++) {
-                    aliases.push("SUM: " + this.getFieldAlias(sumFields[i]));
+                    aliases.push(sumType + this.getFieldAlias(sumFields[i]));
                 }
             }
                 
@@ -364,7 +390,10 @@ define([
             var w = domStyle.get("panelContainer", "width");
             this.visCount = Math.floor(w/220);
             this.fieldCount = this.fields.length;
-            this.pageCount = Math.ceil(this.fieldCount / this.visCount);
+            var count = this.fieldCount;
+            if (this.config.hideCount)
+                count -= 1;
+            this.pageCount = Math.ceil(count / this.visCount);
             var list = dom.byId("pages");
             list.innerHTML = "";
             if (this.pageCount > 1) {
@@ -535,13 +564,16 @@ define([
             var count = gra.attributes.Count;
             var data = gra.attributes.Data;
             var title = count + " Features";
-            if (count ==1)
+            if (count == 1)
                 title = count + " Feature";
             var sumData = this.summarizeAttributes(data); 
             var info = "";
             for (f=0; f<this.fieldCount; f++) {
-                //info += this.getAlias(this.fields[f]) + ": " + sumData[f] + "<br/><br/>";
-                info += this.aliases[f] + ": " + sumData[f] + "<br/><br/>";
+                if (f==0 && this.config.hideCount) {
+                    //skip
+                } else {
+                    info += this.aliases[f] + ": " + sumData[f] + "<br/><br/>";
+                }
             }
             this.map.infoWindow.setTitle(title);
             this.map.infoWindow.setContent(info);
@@ -635,6 +667,8 @@ define([
             var vis = this.visCount;
             for (var i=0; i<vis; i++) {
                 var fldIndex = this.page * vis + i;
+                if (this.config.hideCount)
+                    fldIndex += 1;
                 var p = dom.byId("panel"+i);
                 if (fldIndex < this.fieldCount) {
                     domStyle.set(p, "display", "block");
