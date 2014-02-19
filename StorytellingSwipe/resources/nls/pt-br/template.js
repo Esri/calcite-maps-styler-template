@@ -65,8 +65,8 @@
 				savingApplication: "Salvando aplicativo",
 				saveSuccess: "Aplicativo salvo com sucesso",
 				saveError: "Falha ao salvar, tente novamente",
-				saveError2: "ã_Save failed due to an invalid html tag in a name or description_Ç",
-				saveError3: "ã_The title can't be empty_Ç",
+				saveError2: "Falha ao salvar devido a uma tag de html inválida em um nome ou descrição",
+				saveError3: "O título não pode estar vazio",
 				signIn: "Registre-se com uma conta em",
 				signInTwo: "para salvar o aplicativo."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Cor do Cabeçalho"
 			},
 			initPopup: {
-				initHeader: "ã_Welcome to the Swipe/Spyglass Builder_Ç",
+				initHeader: "Bem-Vindo ao Builder de Oscilar/Luneta",
 				modalNext: "Avançar",
 				modalPrev: "Anterior",
 				modalApply: "Abrir o aplicativo"
@@ -208,7 +208,7 @@
 				close: "Fechar",
 				tab1: {
 					div1: "O modelo Oscilar/Luneta é projetado para comparar dois mapas da web separados ou duas camadas de um único mapa da web em um aplicativo da web atrativo, de fácil uso que pode ser utilizado em qualquer navegador da web em qualquer dispositivo, incluindo smartphones e tablets.",
-					div2: "ã_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._Ç",
+					div2: "Para informações adicionais sobre o modelo Oscilar/Luneta, incluindo exemplos criados por usuários, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visite o site da web Mapas Históricos</a>. Você também pode nos seguir pelo Twitter em <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Nós adoraríamos ouvir sua opinião! Se você tem uma pergunta, deseja solicitar uma nova feição ou se você localizou um erro, visite <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Como o proprietário do aplicativo, quando você está conectado no ArcGIS.com, o aplicativo inclui um botão para abrir o construtor interativo:",				
 				shareQ3: "Onde os dados estão armazenados?",
 				shareA3: "A configuração do Application é armazenada neste item do aplicativo da web</ a>.",
-				shareWarning: "ã_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Ç",
- 				shareWarningWith1: "ã_publicly_Ç",
- 				shareWarningWith2: "ã_publicly and with the Organization_Ç"
+				shareWarning: "O compartilhamento %WITH% foi desabilitada, pois você não é o proprietário do <a href='%LINK%' target='_blank'>mapa da web</a>.",
+ 				shareWarningWith1: "publicamente",
+ 				shareWarningWith2: "publicamente e com a Organização"
 			},
 			directCreation: {
 				header: "Bem-Vindo ao Builder de Oscilar/Luneta",
 				mapPickHeader: "Para iniciar, insira um ID de mapa da web válido ou utilize o botão de pesquisa para consultar mapas da web.",
 				launchBuilder: "Inciar Builder",
-				chooseWebmapLbl: "ã_Choose web map..._Ç",
-				explain2: "ã_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._Ç",
-				explain3: "ã_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._Ç",
-				webmapPlaceholder: "ã_Enter a web map id..._Ç"
+				chooseWebmapLbl: "Escolher mapa da web...",
+				explain2: "Para criar um mapa histórico do modelo Oscilar ou Luneta, utilize o botão abaixo para escolher o mapa da web existente do ArcGIS Online que você deseja utilizar. Alternativamente, você pode colar o ID do mapa da web no campo abaixo.",
+				explain3: "Se desejar utilizar dois mapas da web em seu mapa histórico, você será solicitado para o segundo mapa da web posteriormente, ao escolher esta opção.",
+				webmapPlaceholder: "Inserir um ID de mapa da web..."
 			}
 		},
 		configure: {

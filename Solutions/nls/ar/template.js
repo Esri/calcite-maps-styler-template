@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "لم يتم العثور على طبقة البحث في الخريطة",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "لم يتم العثور على هذا الحقل في طبقة بحث الخريطة",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "لم يتم العثور على تلك الحقول في طبقة البحث عن خريطة",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "بيت_This field does not exist in any of the map layers_لاحقة",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "هذا الحقل غير موجود في أي من طبقات الخريطة",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "تم إرسال المحتوى. شكرًا لك.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "يتعذر الوصول إلى تكوين التطبيق",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "يتعذر تشغيل التطبيق"  // Appears for any failure to build the user interface

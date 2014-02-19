@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "Layer di ricerca non trovato nella mappa",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Campo non trovato nel layer di ricerca della mappa",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "Campi non trovati nel layer di ricerca della mappa",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "é_This field does not exist in any of the map layers_È",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "Questo campo non esiste in nessuno dei layer mappa",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "I contenuti sono stati inviati. Grazie.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Impossibile accedere alla configurazione dell\'applicazione",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "Impossibile avviare l\'applicazione"  // Appears for any failure to build the user interface

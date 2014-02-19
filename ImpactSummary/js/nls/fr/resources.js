@@ -1,17 +1,17 @@
 ﻿define(
      ({
         map: {
-            error: "æ_Unable to create map_Â"
+            error: "Impossible de créer la carte"
         },
         general: {
             map: "æ_Map_Â",
             mapInfo: "æ_Map Information_Â",
-            legend: "æ_Legend_Â",
+            legend: "Légende",
             layers: "æ_Layers_Â",
-            summarize: "æ_Entire Area_Â",
-            share: "æ_Share_Â",
-            about: "æ_About_Â",
-            noSearchResult: "æ_No result found_Â",
+            summarize: "Périmètre entier",
+            share: "Partager",
+            about: "A propos",
+            noSearchResult: "Aucun résultat trouvé",
             impactArea: "æ_Impact Area_Â"
         }
     })

@@ -327,7 +327,7 @@
 				header: "Insira o e-mail ou ID de uma conta do Picasa ou Google+.",
 				userInputLbl: "Insira um e-mail ou ID",
 				signInMsg2: "Conta não encontrada",
-				signInMsg3: "ã_No public album_Ç",
+				signInMsg3: "Nenhum álbum público",
 				howToFind: "Como encontrar um ID de conta do Picasa ou Google+",
 				howToFind2: "Copie dígitos entre o primeiro e segundo \'/\' de qualquer página do Picasa ou G+"
 			},
@@ -526,9 +526,9 @@
 				shareA2div2: "Como o proprietário do aplicativo, quando você está conectado no ArcGIS.com, o aplicativo inclui um botão para abrir o construtor interativo:",				
 				shareQ3: "Onde os dados estão armazenados?",
 				shareA3: "A configuração da Apresentação é armazenada <a href='%LINK1%' target='_blank'>neste item do mapa da web</a> e <a href='%LINK2%' target='_blank'>neste item do aplicativo da web</a>. Se você já utilizou Flickr, Picasa, Facebook ou importação do YouTube, suas imagens e vídeos permanecem armazenados lá e não são duplicados no ArcGIS Online.",
-				shareWarning: "ã_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Ç",
-				shareWarningWith1: "ã_publicly_Ç",
-				shareWarningWith2: "ã_publicly and with the Organization_Ç"
+				shareWarning: "O compartilhamento %WITH% foi desabilitada, pois você não é o proprietário do <a href='%LINK%' target='_blank'>mapa da web</a>.",
+				shareWarningWith1: "publicamente",
+				shareWarningWith2: "publicamente e com a Organização"
 			}
         }
     })

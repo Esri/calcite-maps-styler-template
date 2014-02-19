@@ -1,17 +1,17 @@
 ﻿define(
      ({
         map: {
-            error: "ã_Unable to create map_Ç"
+            error: "Não foi possível criar o mapa"
         },
         general: {
             map: "ã_Map_Ç",
             mapInfo: "ã_Map Information_Ç",
-            legend: "ã_Legend_Ç",
+            legend: "Legenda",
             layers: "ã_Layers_Ç",
-            summarize: "ã_Entire Area_Ç",
-            share: "ã_Share_Ç",
-            about: "ã_About_Ç",
-            noSearchResult: "ã_No result found_Ç",
+            summarize: "Área Total",
+            share: "Partilhar",
+            about: "Sobre",
+            noSearchResult: "Não foram encontrados resultados",
             impactArea: "ã_Impact Area_Ç"
         }
     })

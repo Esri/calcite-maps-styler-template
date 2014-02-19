@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "Dette søgelag blev ikke fundet på kortet",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Dette felt blev ikke fundet i kortets søgelag",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "Ingen af disse felter blev fundet i kortsøgelaget",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "ø_This field does not exist in any of the map layers_å",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "Dette felt findes ikke i nogen af kortlagene",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Dit indhold er sendt. Tak.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Kunne ikke få adgang til applikationens konfiguration",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "Kunne ikke starte applikationen"  // Appears for any failure to build the user interface

@@ -327,7 +327,7 @@
 				header: "Ange e-postadress eller ID för ditt Picasa- eller Google+-konto.",
 				userInputLbl: "Ange e-postadress eller ID",
 				signInMsg2: "Det gick inte att hitta kontot",
-				signInMsg3: "Å_No public album_ö",
+				signInMsg3: "Inget offentligt album",
 				howToFind: "Så här hittar du ett konto-ID för Picasa eller Google+",
 				howToFind2: "Kopiera siffrorna mellan det första och andra '/'-tecknet på en Picasa- eller G+-sida"
 			},
@@ -526,9 +526,9 @@
 				shareA2div2: "Som ägare till applikationen kan du se en knapp som öppnar det interaktiva byggverktyget när du är inloggad på ArcGIS.com:",				
 				shareQ3: "Var lagras data?",
 				shareA3: "Kartturens konfigurering lagras i <a href='%LINK1%' target='_blank'>det här webbkartobjektet</a> och <a href='%LINK2%' target='_blank'>det här webbapplikationsobjeket</a>. Om du har importerat via Flickr, Picasa, Facebook eller YouTube, förblir dina bilder och videoklipp lagrade där och dupliceras inte i ArcGIS Online.",
-				shareWarning: "Å_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ö",
-				shareWarningWith1: "Å_publicly_ö",
-				shareWarningWith2: "Å_publicly and with the Organization_ö"
+				shareWarning: "Delning %WITH% har inaktiverats eftersom du inte är ägare till <a href='%LINK%' target='_blank'>webbkartan</a>.",
+				shareWarningWith1: "offentligt",
+				shareWarningWith2: "offentligt och med organisationen"
 			}
         }
     })

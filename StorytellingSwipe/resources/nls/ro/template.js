@@ -65,8 +65,8 @@
 				savingApplication: "Se salvează aplicaţia",
 				saveSuccess: "S-a reuşit salvarea aplicaţiei",
 				saveError: "Salvare nereuşită, încercaţi din nou",
-				saveError2: "Ă_Save failed due to an invalid html tag in a name or description_ș",
-				saveError3: "Ă_The title can't be empty_ș",
+				saveError2: "Salvare eşuată din cauza unei etichete html nevalide într-un nume sau o descriere",
+				saveError3: "Titlul nu poate fi necompletat",
 				signIn: "Conectaţi-vă la un cont în",
 				signInTwo: "pentru a salva aplicaţia."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Culoare antet"
 			},
 			initPopup: {
-				initHeader: "Ă_Welcome to the Swipe/Spyglass Builder_ș",
+				initHeader: "Bine aţi venit la aplicaţia de creare a instrumentului Preluare/Ochean",
 				modalNext: "Înainte",
 				modalPrev: "Anteriorul",
 				modalApply: "Deschidere aplicaţie"
@@ -208,7 +208,7 @@
 				close: "Închidere",
 				tab1: {
 					div1: "Şablonul Preluare/Ochean este conceput pentru a compara două hărţi web separate sau două straturi tematice ale unei singure hărţi web într-o aplicaţie web atractivă, uşor de utilizat, care se poate utiliza în orice browser web pe orice dispozitiv, inclusiv pe telefoane inteligente şi tablete.",
-					div2: "Ă_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ș",
+					div2: "Pentru informaţii suplimentare despre şablonul Preluare/Lunetă, inclusiv exemple create de utilizatori, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> vizitaţi site-ul web Hărţi informative</a>. De asemenea, ne puteţi urmări pe Twitter la adresa <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Ne-ar face plăcere să împărtăşiţi lucruri cu noi! Dacă aveţi o întrebare, doriţi să solicitaţi o caracteristică nouă sau credeţi că aţi găsit o defecţiune, vizitaţi <a href='http://links.esri.com/storymaps/forum' target='_blank'>Forumul utilizatorilor de hărţi informative</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "În calitate de proprietar al aplicaţiei, când sunteţi autentificat pe ArcGIS.com, aplicaţia include un buton pentru a deschide instrumentul de creare interactiv:",				
 				shareQ3: "Unde sunt stocate datele?",
 				shareA3: "Configuraţia aplicaţiei este stocată în acest element al aplicaţiei web</a>.",
-				shareWarning: "Ă_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ș",
- 				shareWarningWith1: "Ă_publicly_ș",
- 				shareWarningWith2: "Ă_publicly and with the Organization_ș"
+				shareWarning: "Partajarea %WITH% a fost dezactivată, deoarece nu mai sunteţi proprietarul <a href='%LINK%' target='_blank'>hărţii web</a>.",
+ 				shareWarningWith1: "public",
+ 				shareWarningWith2: "public şi cu Organizaţia"
 			},
 			directCreation: {
 				header: "Bine aţi venit la aplicaţia de creare a instrumentului Preluare/Ochean",
 				mapPickHeader: "Pentru a începe, introduceţi un ID corect al unei hărţi web sau utilizaţi butonul de căutare pentru a răsfoi hărţile web.",
 				launchBuilder: "Lansaţi aplicaţia de creare",
-				chooseWebmapLbl: "Ă_Choose web map..._ș",
-				explain2: "Ă_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ș",
-				explain3: "Ă_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ș",
-				webmapPlaceholder: "Ă_Enter a web map id..._ș"
+				chooseWebmapLbl: "Alegere hartă web...",
+				explain2: "Pentru a crea o hartă informativă de tip Preluare sau Lunetă, utilizaţi butonul de mai jos pentru a alege harta web ArcGIS Online pe care doriţi să o utilizaţi. Alternat, puteţi lipi ID-ul hărţii web în câmpul de mai jos.",
+				explain3: "Dacă doriţi să utilizaţi două hărţi web în harta informativă, vi se va solicita a doua hartă web mai târziu, când alegeţi opţiunea respectivă.",
+				webmapPlaceholder: "Introduceţi ID-ul hărţii web..."
 			}
 		},
 		configure: {

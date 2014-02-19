@@ -1,17 +1,17 @@
 ﻿define(
      ({
         map: {
-            error: "Å_Unable to create map_ö"
+            error: "Karttaa ei voi luoda"
         },
         general: {
             map: "Å_Map_ö",
             mapInfo: "Å_Map Information_ö",
-            legend: "Å_Legend_ö",
+            legend: "Selite",
             layers: "Å_Layers_ö",
-            summarize: "Å_Entire Area_ö",
-            share: "Å_Share_ö",
-            about: "Å_About_ö",
-            noSearchResult: "Å_No result found_ö",
+            summarize: "Koko alue",
+            share: "Jaa",
+            about: "Tietoja",
+            noSearchResult: "Tulosta ei löytynyt",
             impactArea: "Å_Impact Area_ö"
         }
     })

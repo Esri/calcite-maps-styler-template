@@ -65,8 +65,8 @@
 				savingApplication: "Applicatie opslaan",
 				saveSuccess: "Applicatie opgeslagen",
 				saveError: "Opslaan mislukt, probeer het opnieuw",
-				saveError2: "Ĳ_Save failed due to an invalid html tag in a name or description_ä",
-				saveError3: "Ĳ_The title can't be empty_ä",
+				saveError2: "Opslaan is mislukt vanwege een ongeldige HTML-tag in een naam of beschrijving",
+				saveError3: "De titel mag niet leeg zijn",
 				signIn: "Meld u aan met een account op",
 				signInTwo: "om de applicatie op te slaan."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Kleur header"
 			},
 			initPopup: {
-				initHeader: "Ĳ_Welcome to the Swipe/Spyglass Builder_ä",
+				initHeader: "Welkom bij de Swipe/Spyglass Builder",
 				modalNext: "Volgende",
 				modalPrev: "Vorige",
 				modalApply: "Open de app"
@@ -208,7 +208,7 @@
 				close: "Sluiten",
 				tab1: {
 					div1: "De template Swipe/Verrekijker is ontworpen om twee afzonderlijke webmaps of twee lagen van één webmap te vergelijken in een aantrekkelijke, gebruiksvriendelijke webapplicatie die kan worden gebruikt in elke webbrowser op elk apparaat, waaronder smartphones en tablets.",
-					div2: "Ĳ_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ä",
+					div2: "Voor meer informatie over de template Swipe/Verrekijker, inclusief voorbeelden die door gebruikers zijn gemaakt, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> gaat u naar de website met kaartverhalen van Esri</a>. U kunt ons ook volgen op Twitter op <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "We horen graag van u! Als u een vraag hebt, een nieuw object wilt aanvragen of problemen ondervindt, gaat u naar het <a href='http://links.esri.com/storymaps/forum' target='_blank'>gebruikersforum voor kaartverhalen</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Als u bent aangemeld bij ArcGIS.com als de eigenaar van de applicatie, bevat de applicatie een knop om de interactieve builder te openen:",				
 				shareQ3: "Waar zijn de gegevens opgeslagen?",
 				shareA3: "De applicatieconfiguratie wordt opgeslagen in dit webapplicatie-item</a>.",
-				shareWarning: "Ĳ_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ä",
- 				shareWarningWith1: "Ĳ_publicly_ä",
- 				shareWarningWith2: "Ĳ_publicly and with the Organization_ä"
+				shareWarning: "%WITH% delen is uitgeschakeld omdat u niet de eigenaar bent van de <a href='%LINK%' target='_blank'>webmap</a>.",
+ 				shareWarningWith1: "Openbaar",
+ 				shareWarningWith2: "Openbaar en met de organisatie"
 			},
 			directCreation: {
 				header: "Welkom bij de Swipe/Spyglass Builder",
 				mapPickHeader: "Als u wilt beginnen, voert u een geldige webmap-ID in of gebruikt u de zoekknop om door webmaps te bladeren.",
 				launchBuilder: "Builder starten",
-				chooseWebmapLbl: "Ĳ_Choose web map..._ä",
-				explain2: "Ĳ_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ä",
-				explain3: "Ĳ_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ä",
-				webmapPlaceholder: "Ĳ_Enter a web map id..._ä"
+				chooseWebmapLbl: "Webmap kiezen...",
+				explain2: "Als u een Swipe- of Verrekijker-kaartverhaal wilt maken, gebruikt u de onderstaande knop om de bestaande ArcGIS Online-webmap die u wilt gebruiken, te selecteren. Of u kunt ook de ID van de webmap in het onderstaande veld plakken.",
+				explain3: "Als u twee webmaps wilt gebruiken in uw kaartverhaal, wordt u om de tweede webmap gevraagd wanneer u die optie selecteert.",
+				webmapPlaceholder: "Een webmap-ID invoeren..."
 			}
 		},
 		configure: {

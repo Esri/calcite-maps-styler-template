@@ -65,8 +65,8 @@
 				savingApplication: "Sparar programmet",
 				saveSuccess: "Programmet har sparats",
 				saveError: "Det gick inte att spara, försök igen",
-				saveError2: "Å_Save failed due to an invalid html tag in a name or description_ö",
-				saveError3: "Å_The title can't be empty_ö",
+				saveError2: "Det gick inte att spara på grund av en ogiltig html-tagg i ett namn eller en beskrivning",
+				saveError3: "Titeln får inte vara tom",
 				signIn: "Logga in med ett konto på",
 				signInTwo: "och spara programmet."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Rubrikens färg"
 			},
 			initPopup: {
-				initHeader: "Å_Welcome to the Swipe/Spyglass Builder_ö",
+				initHeader: "Välkommen till byggverktyget för Svep/Kikare",
 				modalNext: "Nästa",
 				modalPrev: "Föregående",
 				modalApply: "Öppna applikationen"
@@ -208,7 +208,7 @@
 				close: "Stäng",
 				tab1: {
 					div1: "Mallen Svep/Kikare är utformad för att jämföra två separata webbkartor eller två lager i en webbkarta i en tilltalande och lättanvänd webbapplikation som kan användas i valfri webbläsare på alla enheter, inklusive smartphones och surfplattor.",
-					div2: "Å_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ö",
+					div2: "Ytterligare information om mallen Svep/Kikare, inklusive exempel som har skapats av användare, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> finns på webbplatsen med berättelsekartor</a>. Du kan även följa oss på Twitter på <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Vi vill gärna att du hör av dig! Om du undrar något, vill föreslå en ny funktion eller vill rapportera ett programfel är du välkommen att besöka <a href='http://links.esri.com/storymaps/forum' target='_blank'>användarforumet på Story Maps</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Som ägare till applikationen kan du se en knapp som öppnar det interaktiva byggverktyget när du är inloggad på ArcGIS.com:",				
 				shareQ3: "Var lagras data?",
 				shareA3: "Applikationens konfiguration sparas i det här webbapplikationsobjektet</a>.",
-				shareWarning: "Å_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ö",
- 				shareWarningWith1: "Å_publicly_ö",
- 				shareWarningWith2: "Å_publicly and with the Organization_ö"
+				shareWarning: "Delning %WITH% har inaktiverats efter som du inte är ägare till <a href='%LINK%' target='_blank'>webbkartan</a>.",
+ 				shareWarningWith1: "offentligt",
+ 				shareWarningWith2: "offentligt och med organisationen"
 			},
 			directCreation: {
 				header: "Välkommen till byggverktyget för Svep/Kikare",
 				mapPickHeader: "Du kan börja genom att ange ett giltigt webbkart-ID eller bläddra igenom webbkartorna med sökknappen.",
 				launchBuilder: "Starta byggverktyget",
-				chooseWebmapLbl: "Å_Choose web map..._ö",
-				explain2: "Å_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ö",
-				explain3: "Å_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ö",
-				webmapPlaceholder: "Å_Enter a web map id..._ö"
+				chooseWebmapLbl: "Välj webbkarta ...",
+				explain2: "Om du vill skapa en berättelsekarta för Svep eller Kikare använder du knappen nedan för att välja den befintliga ArcGIS Online-webbkarta du vill använda. Alternativt kan du klistra in webbkartans ID i fältet nedan.",
+				explain3: "Om du vill använda två webbkartor i berättelsekartan uppmanas du ange den andra webbkartan senare när du väljer det alternativet.",
+				webmapPlaceholder: "Ange ett webbkart-ID ..."
 			}
 		},
 		configure: {

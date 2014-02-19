@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "Esta camada de pesquisa não foi encontrada no mapa",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Este campo não foi encontrado na camada de pesquisa do mapa",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "Nenhum destes campos foi encontrado na camada de pesquisa do mapa",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "ã_This field does not exist in any of the map layers_Ç",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "O campo não existe em qualquer das camadas de mapa",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "O seu conteúdo foi submetido. Obrigado.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Não é possível aceder à configuração da aplicação",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "Impossível iniciar aplicação"  // Appears for any failure to build the user interface

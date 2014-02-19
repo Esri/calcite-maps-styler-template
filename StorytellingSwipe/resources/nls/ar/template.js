@@ -65,8 +65,8 @@
 				savingApplication: "حفظ التطبيق",
 				saveSuccess: "تم حفظ التطبيق بنجاح",
 				saveError: "حدث فشل أثناء الحفظ، يرجى المحاولة مرة أخرى",
-				saveError2: "بيت_Save failed due to an invalid html tag in a name or description_لاحقة",
-				saveError3: "بيت_The title can't be empty_لاحقة",
+				saveError2: "فشل الحفظ نظرًا لعلامة html غير الصحيحة في اسم أو وصف",
+				saveError3: "يتعذر أن يكون العنوان فارغًا",
 				signIn: "يرجى تسجيل الدخول بحساب داخل",
 				signInTwo: "لحفظ التطبيق"
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "لون رأس الصفحة"
 			},
 			initPopup: {
-				initHeader: "بيت_Welcome to the Swipe/Spyglass Builder_لاحقة",
+				initHeader: "مرحبًا بك في مُنشئ Swipe/Spyglass",
 				modalNext: "التالي",
 				modalPrev: "السابق",
 				modalApply: "فتح التطبيق"
@@ -208,7 +208,7 @@
 				close: "إغلاق",
 				tab1: {
 					div1: "يتم تصميم قالب Swipe/Spyglass لمقارنة خريطتي ويب منفصلتين أو طبقتي خريطة ويب مفردة في تطبيق ويب جذّاب سهل الاستخدام يمكن استخدامه في أي مستعرض ويب على أي جهاز، بما في ذلك الهواتف الذكية والحواسب اللوحية.",
-					div2: "بيت_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._لاحقة",
+					div2: "فيما يتعلق بالمعلومات الإضافية المتعلقة بقالب السحب، بما في ذلك الأمثلة التي يتم إنشائها بواسطة المستخدمين، <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> تفضل بزيارة موقع خرائط القصص على الويب</a>. يمكن اتباعنا على Twitter <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "نرغب في الاستماع إليك! سواء كان لديك سؤال، وترغب في طلب ميزة جديدة، أو تعتقد أنك وجدت خلل، يرجى زيارة <a href='http://links.esri.com/storymaps/forum' target='_blank'>منتدى مستخدمي خرائط القصة</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "بصفتك مالك التطبيق، عند تسجيل الدخول على ArcGIS.com، سيتضمن التطبيق زر لفتح المنشئ التفاعلي:",				
 				shareQ3: "أين يتم تخزين البيانات؟",
 				shareA3: "يتم تخزين تكوين التطبيق في عنصر تطبيق الويب</a>.",
-				shareWarning: "بيت_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._لاحقة",
- 				shareWarningWith1: "بيت_publicly_لاحقة",
- 				shareWarningWith2: "بيت_publicly and with the Organization_لاحقة"
+				shareWarning: "تم تعطيل مشاركة %WITH% وذلك لأنك ليس مالك <a href='%LINK%' target='_blank'>خريطة الويب</a>.",
+ 				shareWarningWith1: "علانية",
+ 				shareWarningWith2: "علانية ومع المنظمة"
 			},
 			directCreation: {
 				header: "مرحبًا بك في مُنشئ Swipe/Spyglass",
 				mapPickHeader: "لبدء الاستخدام، يرجى إدخال مُعرف خريطة ويب صحيح أو استخدام زر البحث لاستعراض خرائط الويب.",
 				launchBuilder: "تشغيل المُنشئ",
-				chooseWebmapLbl: "بيت_Choose web map..._لاحقة",
-				explain2: "بيت_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._لاحقة",
-				explain3: "بيت_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._لاحقة",
-				webmapPlaceholder: "بيت_Enter a web map id..._لاحقة"
+				chooseWebmapLbl: "اختيار خريطة الويب...",
+				explain2: "لإنشاء خريطة قصة السحب، استخدم الزر الموضح أدناه لاختيار خريطة ArcGIS Online الحالية على الويب. عوضًا عن ذلك، يمكن لصق مُعرف خريطة الويب داخل الحقل الموضح أدناه.",
+				explain3: "عند الرغبة في استخدام اثنان من خرائط الويب في خريطة الحكاية، ستطلب خريطة الويب الثانية فيما بعد عند اختيار هذا الخيار.",
+				webmapPlaceholder: "أدخل مُعرف خريطة الويب..."
 			}
 		},
 		configure: {

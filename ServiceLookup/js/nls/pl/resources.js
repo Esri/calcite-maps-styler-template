@@ -8,9 +8,9 @@
             defaultText: "Wprowadź swój adres"
         },
         error: {
-            layerNotFound: "ł_Layer is not in the webmap_ą",
+            layerNotFound: "Warstwa nie znajduje się na mapie internetowej",
             fieldNotFound: "Nie znaleziono pola.",
-            popupNotSet: "ł_Popup not enabled for this layer_ą"
+            popupNotSet: "Nie włączono okna podręcznego dla tej warstwy"
         },
         page: {
             title: "Wyszukiwanie usługi",

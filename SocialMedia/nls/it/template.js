@@ -67,7 +67,7 @@
                 "title": "Impostazioni",
                 "searchAll": "Cerca in tutti",
                 "usingThisKeyword": "Con parola/e chiave",
-                "search": "Ricerca",
+                "search": "Cerca",
                 "fromThePast": "Da precedente",
                 "today": "Giorno",
                 "this_week": "Settimana",

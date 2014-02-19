@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "Bu arama katmanı haritada bulunamadı",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Bu alan harita arama katmanında bulunamadı",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "Bu alanlardan hiçbiri harita arama katmanında bulunamadı",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "ı_This field does not exist in any of the map layers_İ",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "Bu alan harita katmanlarının hiçbirinde yok",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "İçeriğiniz teslim edildi. Teşekkür ederiz.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Uygulama yapılandırmasına erişilemiyor",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "Uygulama başlatılamıyor"  // Appears for any failure to build the user interface

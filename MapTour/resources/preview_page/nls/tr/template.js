@@ -12,7 +12,7 @@
 			list2: "Öykü noktası konumlarını değiştirmek için simge sürükleyip bırakma olanağı"
 		},
 		thirdPane: {
-			head: "Barındırılan harita turu şablonunu kullanmak için, ArcGIS Online web sunucusu görüntüleyicisinde bir harita yapıp (hiçbir katman içermesi gerekmez), bunu kaydedip, sonra Paylaş düğmesine tıklayarak başlarsınız. Paylaş diyalog kutusunda, 'Bir Web Uygulaması Yap' seçeneğini belirleyip sonra beliren şablon galerisinden Harita Turu şablonunu seçin ve gördüğünüz adımlar ile devam edin. Uygulamayı yapılandırdığınızda, etkileşimli düzenleyici otomatik olarak açılır.<br /><br />Harita turlarının kullanıcı arayüzünü geliştirmek veya yeni fonksiyonlar eklemek isteyen kullanıcılar şunları yapabilir:",
+			head: "Barındırılan harita turu şablonunu kullanmak için, ArcGIS Online web sunucusu görüntüleyicisinde bir harita yapıp (hiçbir katman içermesi gerekmez), bunu kaydedip, sonra Paylaş düğmesine tıklayarak başlarsınız. Paylaş diyalog kutusunda, \'Bir Web Uygulaması Yap\' seçeneğini belirleyip sonra beliren şablon galerisinden Harita Turu şablonunu seçin ve gördüğünüz adımlar ile devam edin. Uygulamayı yapılandırdığınızda, etkileşimli düzenleyici otomatik olarak açılır.<br /><br />Harita turlarının kullanıcı arayüzünü geliştirmek veya yeni fonksiyonlar eklemek isteyen kullanıcılar şunları yapabilir:",
 			list0: "<a href='http://storymaps.esri.com/templategallery/' target='_blank'>Öykü Haritaları şablon sayfasından</a> şablonu indirin ve ekli belgeleri uygulayın", 
 			list1: "Şablonu kendi web sunucunuzda veya üçüncü taraf bir sunucuda barındırın"
 		},

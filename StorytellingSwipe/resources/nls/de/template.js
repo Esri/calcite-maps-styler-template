@@ -65,8 +65,8 @@
 				savingApplication: "Anwendung wird gespeichert",
 				saveSuccess: "Anwendung wurde erfolgreich gespeichert",
 				saveError: "Speichern fehlgeschlagen, versuchen Sie es erneut",
-				saveError2: "ä_Save failed due to an invalid html tag in a name or description_Ü",
-				saveError3: "ä_The title can't be empty_Ü",
+				saveError2: "Fehler beim Speichern aufgrund eines ungültigen HTML-Tags in einem Namen oder einer Beschreibung",
+				saveError3: "Der Titel darf nicht leer sein",
 				signIn: "Melden Sie sich mit einem Konto an,",
 				signInTwo: "um die Anwendung zu speichern."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Kopfzeilenfarbe"
 			},
 			initPopup: {
-				initHeader: "ä_Welcome to the Swipe/Spyglass Builder_Ü",
+				initHeader: "Willkommen beim Ausblenden/Fernglas-Generator",
 				modalNext: "Weiter",
 				modalPrev: "Zurück",
 				modalApply: "App öffnen"
@@ -208,7 +208,7 @@
 				close: "Schließen",
 				tab1: {
 					div1: "Die Ausblenden/Fernglas-Vorlage, mit der zwei getrennte Webkarten oder zwei Layer einer einzelnen Webkarte in einer ansprechenden, benutzerfreundlichen Webanwendung verglichen werden können, die in jedem Webbrowser auf einem beliebigen Gerät, einschließlich Smartphones und Tablets, verwendet werden kann.",
-					div2: "ä_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._Ü",
+					div2: "Zusätzliche Informationen zur Ausblenden/Fernglas-Vorlage, darunter von Benutzern erstellte Beispiele, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> finden Sie auf der Story Maps-Website</a>. Sie können uns unter <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a> auch auf Twitter folgen.",
 					div3: "Wir freuen uns darauf, von Ihnen zu hören! Ob Sie eine Frage haben, ein neues Feature anfordern möchten oder einen Fehler gefunden haben, besuchen Sie das <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps-Benutzerforum</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Wenn Sie bei ArcGIS.com als Besitzer der Anwendung angemeldet sind, enthält die Anwendung eine Schaltfläche zum Öffnen des interaktiven Builders:",				
 				shareQ3: "Wo werden die Daten gespeichert?",
 				shareA3: "Die Anwendungskonfiguration wird in diesem Webanwendungselement gespeichert</a>.",
-				shareWarning: "ä_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Ü",
- 				shareWarningWith1: "ä_publicly_Ü",
- 				shareWarningWith2: "ä_publicly and with the Organization_Ü"
+				shareWarning: "Die Freigabe von %WITH% wurde deaktiviert, da Sie nicht der Besitzer der <a href='%LINK%' target='_blank'>Webkarte</a> sind.",
+ 				shareWarningWith1: "öffentlich",
+ 				shareWarningWith2: "öffentlich und für die Organisation"
 			},
 			directCreation: {
 				header: "Willkommen beim Ausblenden/Fernglas-Generator",
 				mapPickHeader: "Um zu beginnen, geben Sie eine gültige Webkarten-ID ein, oder verwenden Sie die Schaltfläche \"Suchen\", um Webkarten zu durchsuchen.",
 				launchBuilder: "Generator starten",
-				chooseWebmapLbl: "ä_Choose web map..._Ü",
-				explain2: "ä_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._Ü",
-				explain3: "ä_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._Ü",
-				webmapPlaceholder: "ä_Enter a web map id..._Ü"
+				chooseWebmapLbl: "Webkarte auswählen...",
+				explain2: "Um eine Ausblenden/Fernglas-Kartenvorlage zu erstellen, wählen Sie anhand der Schaltfläche unten die vorhandene ArcGIS Online-Webkarte aus, die Sie verwenden möchten. Es ist auch möglich, die ID der Webkarte in das Feld unten einzufügen.",
+				explain3: "Wenn Sie zwei Webkarten in der Kartenvorlage verwenden möchten, werden Sie bei Auswahl dieser Option später zur Eingabe der zweiten Webkarte aufgefordert.",
+				webmapPlaceholder: "Webkarten-ID eingeben..."
 			}
 		},
 		configure: {

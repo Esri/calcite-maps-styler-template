@@ -20,13 +20,13 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "Š_MMMM d, yyyy_ä",
-      yearPattern: "Š_yyyy_ä",
+      datePattern: "KKKK p, aaaa",
+      yearPattern: "aaaa",
       hourTimePattern: "h a",
       minuteTimePattern: "h:mm a",
       secondTimePattern: "h:m:s.SSS a",
       millisecondTimePattern:"h:m:ss.SSS a",
-      timeRange: "Š_${start_time} to ${end_time}_ä",
+      timeRange: "${start_time} kuni ${end_time}",
       timeRangeSingle: "<b>Ajavahemik:</b> ${time}"
     },
     legend: {

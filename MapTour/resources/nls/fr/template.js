@@ -327,7 +327,7 @@
 				header: "Saisissez votre adresse de messagerie ou l\'ID de votre compte Picasa ou Google+.",
 				userInputLbl: "Saisissez un e-mail ou un ID",
 				signInMsg2: "Compte introuvable",
-				signInMsg3: "æ_No public album_Â",
+				signInMsg3: "Pas d\'album public",
 				howToFind: "Comment trouver un ID de compte Picasa ou Google+",
 				howToFind2: "Copiez les chiffres compris entre la première et la deuxième barre oblique inverse \'/\' d\'une page Picasa ou G+"
 			},
@@ -410,7 +410,7 @@
 					div1: "Le modèle Map Tour est conçu pour présenter des informations géographiques lorsque vous ne disposez pas d\'éléments photographiques ou multimédias intéressants pour agrémenter l\'histoire que vous souhaitez raconter.",
 					div2: "Le modèle produit une application Web attractive et conviviale qui vous permet de présenter un ensemble réduit de lieux sur une carte au sein d\'une séquence numérotée dans laquelle les utilisateurs peuvent naviguer. Ce modèle est destiné à être utilisé dans tous navigateurs Web sur tous périphériques, dont les smartphones et les tablettes. <br /><br />Voici un exemple du genre d\'application que vous pouvez créer :",
 					div4: "<a href='http://storymaps.esri.com/stories/maptour-palmsprings' target='_blank'>Visite cartographique de Palm Springs</a>.",
-					div42: "Pour voir des exemples de visites cartographiques créées par d\'autres utilisateurs, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>consultez la galerie</a> sur le <a href='http://storymaps.esri.com/' target='_blank'>site Web des cartes de narration</a>. Vous pouvez également nous suivre sur Twitter à <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
+					div42: "Pour voir des exemples de visites cartographiques créées par d\'autres utilisateurs, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>consultez la galerie</a> sur le <a href='http://storymaps.esri.com/' target='_blank'>site Web des cartes de narration</a>. Vous pouvez également nous suivre sur Twitter à l\'adresse <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div5: "Nous aimerions avoir de vos nouvelles ! Pour poser une question, proposer une nouvelle fonctionnalité ou si vous pensez avoir trouvé un bogue, consultez le <a href='http://links.esri.com/storymaps/forum' target='_blank'>forum des utilisateurs des cartes de narration</a>."
 				},
 				tab2: {
@@ -436,7 +436,7 @@
 					div153: "Image",
 					div154: "Miniature",
 					div155: "Couleur ",
-					div16: "Si l\'application ne trouve pas de champs correspondants lors de l\'utilisation d'un service d\'entités, la visionneuse ne fonctionne pas tant que vous ne configurez pas les champs à utiliser dans le générateur. Les couches CSV et de fichiers de formes ajoutées à la carte Web doivent comporter tous les champs requis, sinon le générateur ne fonctionne pas.",
+					div16: "Si l\'application ne trouve pas de champs correspondants lors de l\'utilisation d\'un service d\'entités, la visionneuse ne fonctionne pas tant que vous ne configurez pas les champs à utiliser dans le générateur. Les couches CSV et de fichiers de formes ajoutées à la carte Web doivent comporter tous les champs requis, sinon le générateur ne fonctionne pas.",
 					div162: "Si vous utilisez un service d\'entités qui stocke les images sous la forme de pièces jointes, <b>seules les entités possédant deux pièces jointes seront utilisées</b>. La première pièce jointe définit la première image et la seconde définit la miniature.",
 					div17: "Les champs d\'image et de miniature sont obligatoires pour le service d\'entités comportant des pièces jointes. Si votre service a les pièces jointes activées, le générateur vous permet de charger les images en tant que pièces jointes. Dans le cas contraire, vous pourrez seulement modifier l\'URL de l\'image et de la miniature.",
 					div172: "Lorsqu\'ils existent, les champs d\'image et de miniature sont toujours utilisés et les pièces jointes au service d\'entités ne sont pas interrogées.",
@@ -526,9 +526,9 @@
 				shareA2div2: "En tant que propriétaire de l\'application, lorsque vous êtes connecté à ArcGIS.com, l\'application affiche un bouton permettant d\'ouvrir le générateur interactif :",				
 				shareQ3: "Où les données sont-elles stockées ?",
 				shareA3: "La configuration de la visite est enregistrée dans <a href='%LINK1%' target='_blank'>cet élément de carte Web</a> et <a href='%LINK2%' target='_blank'>cet élément d\'application Web</a>. Si vous avez utilisé une importation Flickr, Picasa, Facebook ou YouTube, vos images et vidéos y restent stockées et ne sont pas dupliquées dans ArcGIS Online.",
-				shareWarning: "æ_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Â",
-				shareWarningWith1: "æ_publicly_Â",
-				shareWarningWith2: "æ_publicly and with the Organization_Â"
+				shareWarning: "Le partage %WITH% a été désactivé, car vous ne possédez pas la <a href='%LINK%' target='_blank'>carte Web</a>.",
+				shareWarningWith1: "publiquement",
+				shareWarningWith2: "publiquement et avec l\'organisation"
 			}
         }
     })

@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "Deze zoeklaag is niet gevonden op de kaart",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Dit veld is niet gevonden in de zoeklaag van de kaart",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "Deze velden zijn niet gevonden in de zoeklaag van de kaart",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "Ĳ_This field does not exist in any of the map layers_ä",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "Dit veld bestaat in geen enkele van de kaartlagen",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Uw inhoud is verzonden. Dank u.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Geen toegang tot de configuratie van de applicatie",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "Kan de applicatie niet starten"  // Appears for any failure to build the user interface

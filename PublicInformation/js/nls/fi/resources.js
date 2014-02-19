@@ -1,34 +1,34 @@
 ﻿define(
      ({
         map: {
-            error: "Å_Unable to create map_ö"
+            error: "Karttaa ei voi luoda"
         },
         report: {
-            flag: "Å_Flag as innapropriate_ö",
-            error: "Å_Error_ö",
-            success: "Å_Flagged_ö",
-            loading: "Å_Loading&hellip;_ö"
+            flag: "Merkitse sopimattomaksi",
+            error: "Virhe",
+            success: "Merkitty",
+            loading: "Lataa&hellip;"
         },
         mapNotes:{
-            notesUnavailable: "Å_Description unavailable_ö",
-            bookmarks: "Å_Bookmarks_ö",
-            untitledNote: "Å_Untitled_ö"
+            notesUnavailable: "Kuvaus ei ole käytettävissä",
+            bookmarks: "Kirjanmerkit",
+            untitledNote: "Nimetön"
         },
         social: {
-            flickr: "Å_Flickr_ö",
-            flickrSettings: "Å_Flickr Settings_ö",
-            twitter: "Å_Twitter_ö",
-            twitterSettings: "Å_Twitter Settings_ö",
-            twitterUser: "Å_Twitter Account_ö",
+            flickr: "Flickr",
+            flickrSettings: "Flickr-asetukset",
+            twitter: "Twitter",
+            twitterSettings: "Twitter-asetukset",
+            twitterUser: "Twitter-tili",
             twitterSignIn: "Å_Sign in to Twitter_ö",
-            webcams: "Å_Webcams_ö",
-            instagram: "Å_Instagram_ö",
-            moreInfo: "Å_More information_ö",
-            searchTerms: "Å_Search Terms_ö",
-            search: "Å_Search_ö",
-            flSettingsInfo: "Å_Return results matching a photo's title, description or tags._ö",
-            twSettingsInfo: "Å_See whatâ€™s happening right now._ö",
-            advancedOperators: "Å_Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches._ö",
+            webcams: "Web-kamerat",
+            instagram: "Instagram",
+            moreInfo: "Lisätietoja",
+            searchTerms: "Hakutermit",
+            search: "Etsi",
+            flSettingsInfo: "Palauta valokuvan otsikkoa, kuvausta tai tunnisteita vastaavat tulokset.",
+            twSettingsInfo: "Katso, mitä tapahtuu juuri nyt.",
+            advancedOperators: "Vihje: käytä <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operaattoreita</a> tarkennettujen hakujen luonnissa.",
             tweetsFilteredBy: "Å_tweets filtered by:_ö",
             photosFilteredBy: "Å_photos filtered by:_ö",
             twitterAccountStatus: "Å_Enable the Twitter layer to see your status._ö"
@@ -36,15 +36,15 @@
         general: {
             map: "Å_Map_ö",
             mapInfo: "Å_Map Information_ö",
-            legend: "Å_Legend_ö",
+            legend: "Selite",
             featured: "Å_Featured Locations_ö",
             layers: "Å_Layers_ö",
-            share: "Å_Share_ö",
-            about: "Å_About_ö",
-            noSearchResult: "Å_No result found_ö",
-            switchAccount: "Å_Switch account_ö",
-            signIn: "Å_Sign in_ö",
-            settings: "Å_Settings_ö"
+            share: "Jaa",
+            about: "Tietoja",
+            noSearchResult: "Tulosta ei löytynyt",
+            switchAccount: "Vaihda tiliä",
+            signIn: "Kirjaudu sisään",
+            settings: "Asetukset"
         }
     })
 

@@ -1,34 +1,34 @@
 ﻿define(
      ({
         map: {
-            error: "å_Unable to create map_ø"
+            error: "Kan ikke opprette kart"
         },
         report: {
-            flag: "å_Flag as innapropriate_ø",
-            error: "å_Error_ø",
-            success: "å_Flagged_ø",
-            loading: "å_Loading&hellip;_ø"
+            flag: "Flagg som upassende",
+            error: "Feil",
+            success: "Flagget",
+            loading: "Laster inn&hellip;"
         },
         mapNotes:{
-            notesUnavailable: "å_Description unavailable_ø",
-            bookmarks: "å_Bookmarks_ø",
-            untitledNote: "å_Untitled_ø"
+            notesUnavailable: "Beskrivelse ikke tilgjengelig",
+            bookmarks: "Bokmerker",
+            untitledNote: "Uten navn"
         },
         social: {
-            flickr: "å_Flickr_ø",
-            flickrSettings: "å_Flickr Settings_ø",
-            twitter: "å_Twitter_ø",
-            twitterSettings: "å_Twitter Settings_ø",
-            twitterUser: "å_Twitter Account_ø",
+            flickr: "Flickr",
+            flickrSettings: "Flickr-innstillinger",
+            twitter: "Twitter",
+            twitterSettings: "Twitter-innstillinger",
+            twitterUser: "Twitter-konto",
             twitterSignIn: "å_Sign in to Twitter_ø",
-            webcams: "å_Webcams_ø",
-            instagram: "å_Instagram_ø",
-            moreInfo: "å_More information_ø",
-            searchTerms: "å_Search Terms_ø",
-            search: "å_Search_ø",
-            flSettingsInfo: "å_Return results matching a photo's title, description or tags._ø",
-            twSettingsInfo: "å_See whatâ€™s happening right now._ø",
-            advancedOperators: "å_Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches._ø",
+            webcams: "Webkameraer",
+            instagram: "Instagram",
+            moreInfo: "Mer informasjon",
+            searchTerms: "Søkeord",
+            search: "Søk",
+            flSettingsInfo: "Returner resultater som samsvarer med et bildes tittel, beskrivelse eller merker.",
+            twSettingsInfo: "Se hva som skjer akkurat nå.",
+            advancedOperators: "Tips: Bruk <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operatorer</a> til å opprette avanserte søk.",
             tweetsFilteredBy: "å_tweets filtered by:_ø",
             photosFilteredBy: "å_photos filtered by:_ø",
             twitterAccountStatus: "å_Enable the Twitter layer to see your status._ø"
@@ -36,15 +36,15 @@
         general: {
             map: "å_Map_ø",
             mapInfo: "å_Map Information_ø",
-            legend: "å_Legend_ø",
+            legend: "Tegnforklaring",
             featured: "å_Featured Locations_ø",
             layers: "å_Layers_ø",
-            share: "å_Share_ø",
-            about: "å_About_ø",
-            noSearchResult: "å_No result found_ø",
-            switchAccount: "å_Switch account_ø",
-            signIn: "å_Sign in_ø",
-            settings: "å_Settings_ø"
+            share: "Del",
+            about: "Om",
+            noSearchResult: "Fant ingen resultater",
+            switchAccount: "Bytt konto",
+            signIn: "Logg på",
+            settings: "Innstillinger"
         }
     })
 
