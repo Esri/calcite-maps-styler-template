@@ -125,7 +125,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.3-beta7';
+			var version = '1.3-beta8';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -855,10 +855,11 @@
 					 		loadingIndicator.init();
 							loadingIndicator.setMessage(i18n.viewer.loading.step1);
 							
-						 	require(["storymaps/core/Core", "storymaps/swipe/core/MainView"], function(Core, MainView){
-						 		var urlParams = urlUtils.urlToObject(document.location.search).query || {};
+						 	require(["storymaps/core/Core", "storymaps/swipe/core/MainView", "storymaps/utils/Helper"], function(Core, MainView, Helper){
+						 		var urlParams = Helper.getUrlParams();
+
 						 		var isInBuilderMode = urlParams.edit != null|| urlParams.fromScratch != null || urlParams.fromscratch != null;
-						 		
+
 						 		if (isInBuilderMode) {
 						 			require(["storymaps/builder/Builder", "storymaps/swipe/builder/BuilderView"], function(Builder, BuilderView) {
 						 				Core.init(new MainView(), Builder);
