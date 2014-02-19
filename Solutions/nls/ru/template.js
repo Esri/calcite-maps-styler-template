@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Поиск",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "Ж_Find_Я",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Текущее местоположение",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Закрепить исправление",  // Command button to submit a correction to the app's host
-            collect: "Добавить ресурсы на карту",  // Command button to open a template picker to add features to the map
+            collect: "Ж_Filter/Edit_Я",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Фильтрация слоев карты",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Переключить базовую карту",  // Command button to open a dialog box for switching basemaps
             share: "Общий доступ",  // Command button to open a dropdown menu for picking a type of sharing

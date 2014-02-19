@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Buscar",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "á_Find_Ó",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Ubicación actual",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Enviar corrección",  // Command button to submit a correction to the app's host
-            collect: "Agregar contenido al mapa",  // Command button to open a template picker to add features to the map
+            collect: "á_Filter/Edit_Ó",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtrar capas de mapa",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Cambiar mapa base",  // Command button to open a dialog box for switching basemaps
             share: "Compartir",  // Command button to open a dropdown menu for picking a type of sharing

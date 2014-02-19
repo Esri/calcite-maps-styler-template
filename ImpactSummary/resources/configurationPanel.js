@@ -10,39 +10,6 @@
          ]
       },
       {
-         "category":"<b>Choose Notes Layer</b>",
-         "fields":[
-            {
-               "type":"paragraph",
-               "value":"Select a map notes layer for an interactive notes experience."
-            },
-            {
-               "type":"layerAndFieldSelector",
-               "layerOptions":{
-                  "supportedTypes":[
-                     "FeatureCollection"
-                  ],
-                  "geometryTypes":[
-                     "esriGeometryPoint",
-                     "esriGeometryLine",
-                     "esriGeometryPolygon"
-                  ]
-               },
-               "fieldName":"notesLayer",
-               "label":"Map Notes Layer"
-            },
-            {
-               "type":"boolean",
-               "fieldName":"hideNotesLayerPopups",
-               "label":"Hide popups for this layer"
-            },
-            {
-               "type":"paragraph",
-               "value":"Hides info windows for the notes layer."
-            }
-         ]
-      },
-      {
          "category":"<b>General</b>",
          "fields":[
             {
@@ -150,24 +117,6 @@
                "fieldName":"enableShareDialog",
                "label":"Enable Share Dialog",
                "tooltip":"Enable Share Dialog"
-            },
-            {
-               "type":"boolean",
-               "fieldName":"enableBookmarks",
-               "label":"Enable Bookmarks",
-               "tooltip":"Enable Bookmarks"
-            },
-            {
-               "type":"boolean",
-               "fieldName":"enableOverviewMap",
-               "label":"Enable OverviewMap widget",
-               "tooltip":"Enable OverviewMap widget"
-            },
-            {
-               "type":"boolean",
-               "fieldName":"openOverviewMap",
-               "label":"Open Overview Map Widget by default",
-               "tooltip":"Open Overview Map Widget by default"
             }
          ]
       },
@@ -255,131 +204,12 @@
                ]
             }
          ]
-      },
-      {
-         "category":"<b>Instagram Options</b>",
-         "fields":[
-            {
-               "type":"boolean",
-               "fieldName":"enableInstagram",
-               "label":"Enable Instagram Layer",
-               "tooltip":"Enable Instagram Layer"
-            },
-            {
-               "type":"paragraph",
-               "value":"View Instagram photos on the map."
-            },
-            {
-               "type":"boolean",
-               "fieldName":"instagramVisible",
-               "label":"Visible",
-               "tooltip":"Check this box to make the layer visible by default."
-            },
-            {
-               "type":"paragraph",
-               "value":"Show this layer by default."
-            }
-         ]
-      },
-      {
-         "category":"<b>Flickr Options</b>",
-         "fields":[
-            {
-               "type":"boolean",
-               "fieldName":"enableFlickr",
-               "label":"Enable Flickr Layer",
-               "tooltip":"Enable Flickr Layer"
-            },
-            {
-               "type":"paragraph",
-               "value":"View Flickr photos on this map."
-            },
-            {
-               "type":"boolean",
-               "fieldName":"flickrVisible",
-               "label":"Visible",
-               "tooltip":"Check this box to make the layer visible by default."
-            },
-            {
-               "type":"paragraph",
-               "value":"Show this layer by default."
-            },
-            {
-               "type":"string",
-               "fieldName":"flickrSearch",
-               "label":"Search Keywords",
-               "tooltip":"Search Keywords",
-               "placeHolder":""
-            }
-         ]
-      },
-      {
-         "category":"<b>Twitter Options</b>",
-         "fields":[
-            {
-               "type":"boolean",
-               "fieldName":"enableTwitter",
-               "label":"Enable Twitter Layer",
-               "tooltip":"Enable Twitter Layer"
-            },
-            {
-               "type":"paragraph",
-               "value":"View Tweets on this map."
-            },
-            {
-               "type":"boolean",
-               "fieldName":"twitterVisible",
-               "label":"Visible",
-               "tooltip":"Check this box to make the layer visible by default."
-            },
-            {
-               "type":"paragraph",
-               "value":"Show this layer by default."
-            },
-            {
-               "type":"string",
-               "fieldName":"twitterSearch",
-               "label":"Search Keywords",
-               "tooltip":"Search Keywords",
-               "placeHolder":""
-            },
-            {
-               "type":"paragraph",
-               "value":"<a href=\"http://support.twitter.com/articles/71577-how-to-use-advanced-twitter-search\" target=\"_blank\">Advanced search</a>."
-            }
-         ]
-      },
-      {
-         "category":"<b>Webcams.travel Options</b>",
-         "fields":[
-            {
-               "type":"boolean",
-               "fieldName":"enableWebcams",
-               "label":"Enable Webcams Layer",
-               "tooltip":"Enable Webcams Layer"
-            },
-            {
-               "type":"paragraph",
-               "value":"View up-to-date webcam photos from <a href=\"http://www.webcams.travel/\" target=\"_blank\">Webcams.travel</a>."
-            },
-            {
-               "type":"boolean",
-               "fieldName":"webcamsVisible",
-               "label":"Visible",
-               "tooltip":"Check this box to make the layer visible by default."
-            },
-            {
-               "type":"paragraph",
-               "value":"Show this layer by default."
-            }
-         ]
       }
    ],
    "values":{
       "title":"",
       "enableSummary":true,
       "enableLegendPanel":true,
-      "hideNotesLayerPopups":true,
       "enableMapPanel":true,
       "enableHomeButton":true,
       "enableLocateButton":true,
@@ -387,20 +217,7 @@
       "enableAboutDialog":true,
       "showAboutOnLoad":false,
       "enableShareDialog":true,
-      "enableBookmarks":true,
-      "enableOverviewMap":true,
-      "openOverviewMap":false,
       "nextBasemap":"hybrid",
-      "defaultBasemap":"topo",
-      "enableInstagram":true,
-      "instagramVisible":false,
-      "enableFlickr":true,
-      "flickrVisible":false,
-      "flickrSearch":"",
-      "enableTwitter":true,
-      "twitterVisible":false,
-      "twitterSearch":"",
-      "enableWebcams":true,
-      "webcamsVisible":false
+      "defaultBasemap":"topo"
    }
 }

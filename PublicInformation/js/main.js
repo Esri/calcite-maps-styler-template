@@ -131,6 +131,18 @@ function(
                 this._mapLegend.startup();
             }
         },
+        _initTOC: function(){
+            // layers
+            var tocNode = dom.byId('TableOfContents');
+            if (tocNode) {
+                var tocLayers = this.socialLayers.concat(this.layers);
+                var toc = new TableOfContents({
+                    map: this.map,
+                    layers: tocLayers
+                }, tocNode);
+                toc.startup();
+            }
+        },
         _init: function () {
             // drawer size check
             this._drawer.resize();
@@ -176,6 +188,7 @@ function(
                 content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.general.legend + '</div>';
                 content += '<div class="' + this.css.panelContainer + '">';
                 content += '<div class="' + this.css.panelPadding + '">';
+                content += '<div id="twitter_legend_auth"></div>';
                 content += '<div id="LegendDiv"></div>';
                 content += '</div>';
                 content += '</div>';
@@ -304,20 +317,10 @@ function(
             this.initMapPanel();
             // startup legend
             this._initLegend();
-            // Legend table of contents
-            var legendNode = dom.byId('TableOfContents');
-            if (legendNode) {
-                var tocLayers = this.socialLayers.concat(this.layers);
-                var toc = new TableOfContents({
-                    map: this.map,
-                    layers: tocLayers
-                }, legendNode);
-                toc.startup();
-            }
+            // startup toc
+            this._initTOC();
             // set social dialogs
             this.configureSocial();
-            // hide loading div
-            this._hideLoadingIndicator();
             // on body click containing underlay class
             on(document.body, '.dijitDialogUnderlay:click', function(){
                 // get all dialogs
@@ -329,6 +332,8 @@ function(
                     w.hide(); 
                 });
             });
+            // hide loading div
+            this._hideLoadingIndicator();
         },
         _checkMobileGeocoderVisibility: function () {
             if(this._mobileGeocoderIconNode && this._mobileSearchNode){
@@ -530,6 +535,8 @@ function(
                 } else {
                     alert("Unable to create map: " + error.message);
                 }
+                // hide loading div
+                this._hideLoadingIndicator();
             }));
         }
     });

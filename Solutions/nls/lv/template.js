@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Meklēt",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "ķ_Find_ū",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Pašreizējais izvietojums",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Pieteikt korekciju",  // Command button to submit a correction to the app's host
-            collect: "Pievienot saturu kartei",  // Command button to open a template picker to add features to the map
+            collect: "ķ_Filter/Edit_ū",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtrēt kartes slāņus",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Pārslēgt pamatkarti",  // Command button to open a dialog box for switching basemaps
             share: "Koplietot",  // Command button to open a dropdown menu for picking a type of sharing

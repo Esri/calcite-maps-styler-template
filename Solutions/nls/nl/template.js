@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Zoeken",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "Ĳ_Find_ä",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Huidige locatie",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Correctie verzenden",  // Command button to submit a correction to the app's host
-            collect: "Content toevoegen aan kaart",  // Command button to open a template picker to add features to the map
+            collect: "Ĳ_Filter/Edit_ä",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Kaartlagen filteren",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Basiskaart wijzigen",  // Command button to open a dialog box for switching basemaps
             share: "Delen",  // Command button to open a dropdown menu for picking a type of sharing

@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "搜索",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "试_Find_验",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "当前位置",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "提交修正",  // Command button to submit a correction to the app's host
-            collect: "向地图添加内容",  // Command button to open a template picker to add features to the map
+            collect: "试_Filter/Edit_验",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "过滤地图图层",  // Explains purpose of type-in box affiliated with template picker
             basemap: "切换底图",  // Command button to open a dialog box for switching basemaps
             share: "共享",  // Command button to open a dropdown menu for picking a type of sharing

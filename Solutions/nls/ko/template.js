@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "검색",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "한_Find_빠",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "현재 위치",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "보정 제출",  // Command button to submit a correction to the app's host
-            collect: "맵에 컨텐츠 추가",  // Command button to open a template picker to add features to the map
+            collect: "한_Filter/Edit_빠",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "맵 레이어 필터링",  // Explains purpose of type-in box affiliated with template picker
             basemap: "베이스맵 전환",  // Command button to open a dialog box for switching basemaps
             share: "공유",  // Command button to open a dropdown menu for picking a type of sharing

@@ -1,11 +1,13 @@
+
 {
    "configurationSettings":[
       {
          "category":"<b>General Settings</b>",
          "fields":[
-         	{
-         		"type":"webmap"
-         	},
+            {
+                "type":"webmap",
+                "label":"Select a map"
+            },
             {
                "type":"string",
                "fieldName":"title",
@@ -88,6 +90,18 @@
                "fieldName":"cluster",
                "label":"Display summary as clusters ",
                "tooltip":"Summary layer points will be displayed as clusters"
+            },
+            {
+               "type":"boolean",
+               "fieldName":"hideCount",
+               "label":"Hide feature count",
+               "tooltip":"Hide feature count"
+            },
+            {
+               "type":"boolean",
+               "fieldName":"hideSummaryType",
+               "label":"Hide type of summary",
+               "tooltip":"Hide type of summary for each field"
             }
          ]
       }
@@ -96,6 +110,8 @@
       "title":"",
       "logo":"images/logo.png",
       "color":"#80ab00",
-      "cluster":true
+      "cluster":true,
+      "hideCount": false,
+      "hideSummaryType": false
    }
 }

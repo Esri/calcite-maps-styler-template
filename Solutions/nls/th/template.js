@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "ค้นหา",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "ก้_Find_ษฺ",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "ตำแหน่งปัจจุบัน",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "ส่งการแก้ไข",  // Command button to submit a correction to the app's host
-            collect: "เพิ่มข้อมูลในแผนที่",  // Command button to open a template picker to add features to the map
+            collect: "ก้_Filter/Edit_ษฺ",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "คัดกรองชั้นข้อมูลแผนที่",  // Explains purpose of type-in box affiliated with template picker
             basemap: "เปลี่ยนแผนที่ฐาน",  // Command button to open a dialog box for switching basemaps
             share: "แชร์",  // Command button to open a dropdown menu for picking a type of sharing

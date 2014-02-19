@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Wyszukaj",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "ł_Find_ą",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Bieżąca lokalizacja",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Wyślij korektę",  // Command button to submit a correction to the app's host
-            collect: "Dodaj zasoby do mapy",  // Command button to open a template picker to add features to the map
+            collect: "ł_Filter/Edit_ą",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtruj warstwy mapy",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Przełącz mapę bazową",  // Command button to open a dialog box for switching basemaps
             share: "Udostępnij",  // Command button to open a dropdown menu for picking a type of sharing

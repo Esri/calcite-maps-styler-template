@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "بحث",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "بيت_Find_لاحقة",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "الموقع الحالي",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "إرسال التصحيح",  // Command button to submit a correction to the app's host
-            collect: "إضافة محتوى إلى الخريطة",  // Command button to open a template picker to add features to the map
+            collect: "بيت_Filter/Edit_لاحقة",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "تنقية طبقات الخريطة",  // Explains purpose of type-in box affiliated with template picker
             basemap: "تبديل خريطة الأساس",  // Command button to open a dialog box for switching basemaps
             share: "مشاركة",  // Command button to open a dropdown menu for picking a type of sharing

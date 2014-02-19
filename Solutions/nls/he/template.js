@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "חפש",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "כן_Find_ש",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "מיקום נוכחי",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "שלח תיקון",  // Command button to submit a correction to the app's host
-            collect: "הוסף תוכן למפה",  // Command button to open a template picker to add features to the map
+            collect: "כן_Filter/Edit_ש",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "סנן שכבות מפה",  // Explains purpose of type-in box affiliated with template picker
             basemap: "החלף מפת בסיס",  // Command button to open a dialog box for switching basemaps
             share: "שיתוף",  // Command button to open a dropdown menu for picking a type of sharing

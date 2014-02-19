@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Ara",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "ı_Find_İ",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Geçerli Konum",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Düzeltmeyi gönder",  // Command button to submit a correction to the app's host
-            collect: "Haritaya içerik ekle",  // Command button to open a template picker to add features to the map
+            collect: "ı_Filter/Edit_İ",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Harita katmanlarını filtrele",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Altlık haritayı değiştir",  // Command button to open a dialog box for switching basemaps
             share: "Paylaş",  // Command button to open a dropdown menu for picking a type of sharing

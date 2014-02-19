@@ -9,15 +9,10 @@
             success: "æ_Flagged_Â",
             loading: "æ_Loading&hellip;_Â"
         },
-        area:{
-            mapNotes: "æ_Notes_Â",
+        mapNotes:{
             notesUnavailable: "æ_Description unavailable_Â",
             bookmarks: "æ_Bookmarks_Â",
             untitledNote: "æ_Untitled_Â"
-        },
-        layers: {
-            operational: "æ_Operational_Â",
-            social: "æ_Social_Â"
         },
         social: {
             flickr: "æ_Flickr_Â",
@@ -25,6 +20,7 @@
             twitter: "æ_Twitter_Â",
             twitterSettings: "æ_Twitter Settings_Â",
             twitterUser: "æ_Twitter Account_Â",
+            twitterSignIn: "æ_Sign in to Twitter_Â",
             webcams: "æ_Webcams_Â",
             instagram: "æ_Instagram_Â",
             moreInfo: "æ_More information_Â",
@@ -33,13 +29,16 @@
             flSettingsInfo: "æ_Return results matching a photo's title, description or tags._Â",
             twSettingsInfo: "æ_See whatâ€™s happening right now._Â",
             advancedOperators: "æ_Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches._Â",
-            tweetsFilteredBy: "æ_Tweets filtered by:_Â",
-            photosFilteredBy: "æ_Photos filtered by:_Â"
+            tweetsFilteredBy: "æ_tweets filtered by:_Â",
+            photosFilteredBy: "æ_photos filtered by:_Â",
+            twitterAccountStatus: "æ_Enable the Twitter layer to see your status._Â"
         },
         general: {
+            map: "æ_Map_Â",
+            mapInfo: "æ_Map Information_Â",
             legend: "æ_Legend_Â",
-            aoi: "æ_Area_Â",
-            summarize: "æ_Entire Area_Â",
+            featured: "æ_Featured Locations_Â",
+            layers: "æ_Layers_Â",
             share: "æ_Share_Â",
             about: "æ_About_Â",
             noSearchResult: "æ_No result found_Â",

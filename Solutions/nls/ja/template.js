@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "検索",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "須_Find_鷗",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "現在の位置",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "補正の送信",  // Command button to submit a correction to the app's host
-            collect: "コンテンツをマップに追加",  // Command button to open a template picker to add features to the map
+            collect: "須_Filter/Edit_鷗",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "マップ レイヤのフィルタ処理",  // Explains purpose of type-in box affiliated with template picker
             basemap: "ベースマップの切り替え",  // Command button to open a dialog box for switching basemaps
             share: "共有",  // Command button to open a dropdown menu for picking a type of sharing
