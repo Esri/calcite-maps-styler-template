@@ -53,8 +53,6 @@ define([
                         id: this.config.summaryLayer.id
                     });
                 }
-                // set layer title
-                this._setImpactLayerTitle();
                 // get layer infos
                 this._getLayerInfos();
                 // out fields
@@ -116,6 +114,8 @@ define([
                             }
                         }));
                     }
+                    // set layer title
+                    this._setImpactLayerTitle();
                     this._sb.show();
                         // drawer resize event
                     on(this._drawer, 'resize', lang.hitch(this, function () {
@@ -176,13 +176,20 @@ define([
                 }
             },
             _setImpactLayerTitle: function(){
+                var node;
                 // set title of header to layer title
-                if(this._impactAreaTitle){
-                    var node = dom.byId('impact_area_title');
+                if(this._impactAreaTitle && this._rendererNodes && this._rendererNodes.length){
+                    node = dom.byId('impact_area_title');
                     if(node){
                         node.innerHTML = this._impactAreaTitle;
                     }
-                }  
+                }
+                else{
+                    node = dom.byId('impact_area_section');
+                    if(node){
+                        node.innerHTML = '';
+                    }
+                }
             },
             // get layer
             _getAOILayer: function (obj) {

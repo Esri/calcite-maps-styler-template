@@ -157,8 +157,10 @@ function(
                 }
                 // show summary layer
                 if(this.config.summaryLayer && this.config.summaryLayer.id){
+                    content += '<div id="impact_area_section">';
                     content += '<div class="' + this.css.panelHeader + '"><span id="impact_area_title">' + this.config.i18n.general.impactArea + '</span></div>';
                     content += '<div id="renderer_menu"></div>';
+                    content += '</div>';
                 }
                 content += '</div>';
                 // menu
