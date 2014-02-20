@@ -65,8 +65,8 @@
 				savingApplication: "Guardando la aplicación",
 				saveSuccess: "La aplicación se ha guardado con éxito",
 				saveError: "Error al guardar. Inténtalo de nuevo",
-				saveError2: "á_Save failed due to an invalid html tag in a name or description_Ó",
-				saveError3: "á_The title can't be empty_Ó",
+				saveError2: "Error al guardar a causa de una etiqueta HTML no válida en un nombre o una descripción",
+				saveError3: "El título no puede estar vacío",
 				signIn: "Inicia sesión con una cuenta en",
 				signInTwo: "para guardar la aplicación."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Color del encabezado"
 			},
 			initPopup: {
-				initHeader: "á_Welcome to the Swipe/Spyglass Builder_Ó",
+				initHeader: "Bienvenido al builder de Comparativa/Catalejo",
 				modalNext: "Siguiente",
 				modalPrev: "Anterior",
 				modalApply: "Abrir la aplicación"
@@ -208,7 +208,7 @@
 				close: "Cerrar",
 				tab1: {
 					div1: "La plantilla Comparativa/Catalejo se ha diseñado para comparar dos mapas web o dos capas de un mismo mapa web en una aplicación web atractiva y fácil de usar que se puede utilizar en cualquier navegador web o dispositivo, incluidos los smartphones y las tabletas.",
-					div2: "á_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._Ó",
+					div2: "Si quieres obtener información adicional sobre la plantilla Comparativa/Catalejo, incluidos algunos ejemplos creados por los usuarios, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visita el sitio web de mapas de historias</a>. También puedes seguirnos en Twitter en <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Nos gusta mucho tener noticias tuyas. Tanto si tienes alguna pregunta, si deseas solicitar un nueva característica o si crees que has encontrado un error, visita el <a href='http://links.esri.com/storymaps/forum' target='_blank'>foro de usuarios de Story Maps</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Como propietario de la aplicación, cuando inicias sesión en ArcGIS.com, la aplicación incluye un botón para abrir el builder interactivo:",				
 				shareQ3: "¿Dónde se almacenan los datos?",
 				shareA3: "La configuración de la aplicación se almacena en este elemento de aplicación web</a>.",
-				shareWarning: "á_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Ó",
- 				shareWarningWith1: "á_publicly_Ó",
- 				shareWarningWith2: "á_publicly and with the Organization_Ó"
+				shareWarning: "Se ha deshabilitado la opción de compartir %WITH% porque no eres el propietario del <a href='%LINK%' target='_blank'>mapa web</a>.",
+ 				shareWarningWith1: "públicamente",
+ 				shareWarningWith2: "públicamente y con la organización"
 			},
 			directCreation: {
 				header: "Bienvenido al builder de Comparativa/Catalejo",
 				mapPickHeader: "Para empezar, escribe un Id. de mapa web válido o usa el botón de búsqueda para examinar mapas web.",
 				launchBuilder: "Iniciar Builder",
-				chooseWebmapLbl: "á_Choose web map..._Ó",
-				explain2: "á_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._Ó",
-				explain3: "á_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._Ó",
-				webmapPlaceholder: "á_Enter a web map id..._Ó"
+				chooseWebmapLbl: "Elegir mapa web...",
+				explain2: "Si vas a crear un mapa de historia de Comparativa o Catalejo, usa el botón siguiente para elegir el mapa web de ArcGIS Online que deseas utilizar. Si lo prefieres, puedes pegar el Id. del mapa web en el campo siguiente.",
+				explain3: "Si deseas usar dos mapas web en tu mapa de historia, se te pedirá el segundo mapa web más adelante cuando elijas esa opción.",
+				webmapPlaceholder: "Especificar un Id. de mapa web..."
 			}
 		},
 		configure: {

@@ -65,8 +65,8 @@
 				savingApplication: "Enregistrement de l\’application",
 				saveSuccess: "L\’application a été enregistrée",
 				saveError: "L\’enregistrement a échoué, réessayez",
-				saveError2: "æ_Save failed due to an invalid html tag in a name or description_Â",
-				saveError3: "æ_The title can't be empty_Â",
+				saveError2: "L\'enregistrement a échoué en raison d\'une balise HTML non valide dans un nom ou une description",
+				saveError3: "Le titre ne peut pas être vide",
 				signIn: "Connectez-vous avec un compte sur",
 				signInTwo: "pour enregistrer l\’application."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Couleur de l\'en-tête"
 			},
 			initPopup: {
-				initHeader: "æ_Welcome to the Swipe/Spyglass Builder_Â",
+				initHeader: "Bienvenue dans le générateur de balayages/longues-vues",
 				modalNext: "Suivant",
 				modalPrev: "Précédent",
 				modalApply: "Ouvrir l\'application"
@@ -208,7 +208,7 @@
 				close: "Fermer",
 				tab1: {
 					div1: "Le modèle Balayage/Longue-vue est conçu pour comparer deux cartes Web distinctes ou deux couches d\'une seule carte Web dans une application Web attrayante et simple d\'utilisation, qui peut être utilisée dans n\'importe quel navigateur de n\'importe quel périphérique, y compris les smartphones et tablettes.",
-					div2: "æ_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._Â",
+					div2: "Pour plus d\'informations sur le modèle Balayage/Longue-vue, notamment pour voir des exemples créés par les utilisateurs, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> consultez le site Web des cartes de narration</a>. Vous pouvez également nous suivre sur Twitter à l\'adresse <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Nous aimerions avoir de vos nouvelles ! Pour poser une question, proposer une nouvelle fonctionnalité ou si vous pensez avoir trouvé un bogue, consultez le <a href='http://links.esri.com/storymaps/forum' target='_blank'>forum des utilisateurs des cartes de narration</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "En tant que propriétaire de l\'application, lorsque vous êtes connecté à ArcGIS.com, l\'application affiche un bouton permettant d\'ouvrir le générateur interactif :",				
 				shareQ3: "Où les données sont-elles stockées ?",
 				shareA3: "La configuration de l\'application est stockée dans cet élément de l\'application Web</a>.",
-				shareWarning: "æ_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Â",
- 				shareWarningWith1: "æ_publicly_Â",
- 				shareWarningWith2: "æ_publicly and with the Organization_Â"
+				shareWarning: "Le partage %WITH% a été désactivé, car vous ne possédez pas la <a href='%LINK%' target='_blank'>carte Web</a>.",
+ 				shareWarningWith1: "publiquement",
+ 				shareWarningWith2: "publiquement et avec l\'organisation"
 			},
 			directCreation: {
 				header: "Bienvenue dans le générateur de balayages/longues-vues",
 				mapPickHeader: "Pour commencer, saisissez un ID de carte Web valide ou utilisez le bouton de recherche pour parcourir les cartes Web.",
 				launchBuilder: "Lancer le générateur",
-				chooseWebmapLbl: "æ_Choose web map..._Â",
-				explain2: "æ_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._Â",
-				explain3: "æ_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._Â",
-				webmapPlaceholder: "æ_Enter a web map id..._Â"
+				chooseWebmapLbl: "Choisir une carte Web...",
+				explain2: "Pour créer une carte de narration Balayage ou Longue-vue, utilisez le bouton ci-dessous pour choisir la carte Web ArcGIS Online existante que vous voulez utiliser. Vous pouvez également coller l\'ID de la carte Web dans le champ ci-dessous.",
+				explain3: "Si vous voulez utiliser deux cartes Web dans votre carte de narration, vous serez invité à choisir la seconde carte Web ultérieurement au moment de la sélection de cette option.",
+				webmapPlaceholder: "Entrer l\'ID d\'une carte Web..."
 			}
 		},
 		configure: {

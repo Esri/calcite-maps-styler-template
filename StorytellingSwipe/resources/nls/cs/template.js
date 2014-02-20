@@ -65,8 +65,8 @@
 				savingApplication: "Ukládání aplikace",
 				saveSuccess: "Aplikace byla úspěšně uložena",
 				saveError: "Ukládání se nezdařilo, zkuste to prosím znovu.",
-				saveError2: "Ř_Save failed due to an invalid html tag in a name or description_ů",
-				saveError3: "Ř_The title can't be empty_ů",
+				saveError2: "Ukládání selhalo kvůli neplatnému HTML tagu v názvu nebo popisu.",
+				saveError3: "Název nesmí být prázdný",
 				signIn: "Přihlaste se pomocí účtu na",
 				signInTwo: "pro uložení aplikace."
 			},
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "Zde se podívejte na příklad aplikace se sérií překrývání",
 				preview: "Náhled uživatelského rozhraní",
 				settingsLocateButtonExplain: "Tato funkcionalita je podporována na většině mobilních zařízení a stolních prohlížečů (včetně Internet Explorer 9+).",
-				settingsLocateButton: "Povolit tlačítko 'Hledat' v podporovaných prohlížečích",
+				settingsLocateButton: "Povolit tlačítko \'Hledat\' v podporovaných prohlížečích",
 				settingsAddressSearch: "Povolit nástroj pro vyhledávání adres"
 			},
 			settingsSwipePopup: {
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Barva záhlaví"
 			},
 			initPopup: {
-				initHeader: "Ř_Welcome to the Swipe/Spyglass Builder_ů",
+				initHeader: "Vítejte v nástroji pro tvorbu Překrývání/Lupy",
 				modalNext: "Další",
 				modalPrev: "Předchozí",
 				modalApply: "Otevřít aplikaci"
@@ -208,7 +208,7 @@
 				close: "Zavřít",
 				tab1: {
 					div1: "Šablona Překrývání/Lupa je navržena pro porovnání dvou různých webových map nebo dvou vrstev jedné webové mapy v atraktivní, snadno ovladatelné webové aplikaci, kterou lze použít v jakémkoli webovém prohlížeči na jakémkoli zařízení včetně chytrých telefonů a tabletů.",
-					div2: "Ř_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ů",
+					div2: "Pro více informací o šabloně Překrývání/Lupa a příklady vytvořené komunitou <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> navštivte stránku Mapy s příběhem</a>. Můžete nás také sledovat na Twitteru na <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Rádi od vás uslyšíme! Ať už máte otázku, chcete požádat o novou funkci nebo si myslíte, že jste našli chybu, navštivte prosím <a href='http://links.esri.com/storymaps/forum' target='_blank'>uživatelské fórum map s příběhem</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Když jste přihlášeni na webu ArcGIS.com jako majitel aplikace, tak aplikace obsahuje tlačítko pro otevření interaktivního nástroje pro tvorbu:",				
 				shareQ3: "Kde jsou uložena data?",
 				shareA3: "Konfigurace aplikace je uložena v této položce webové aplikace</a>.",
-				shareWarning: "Ř_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ů",
- 				shareWarningWith1: "Ř_publicly_ů",
- 				shareWarningWith2: "Ř_publicly and with the Organization_ů"
+				shareWarning: "Sdílení %WITH% bylo zakázáno, protože nejste vlastníkem <a href='%LINK%' target='_blank'>webové mapy</a>.",
+ 				shareWarningWith1: "veřejně",
+ 				shareWarningWith2: "veřejně a s organizací"
 			},
 			directCreation: {
 				header: "Vítejte v nástroji pro tvorbu Překrývání/Lupy",
 				mapPickHeader: "Pro začátek zadejte platný identifikátor webové mapy nebo použijte tlačítko vyhledávání k procházení webových map.",
 				launchBuilder: "Spustit nástroj pro tvorbu",
-				chooseWebmapLbl: "Ř_Choose web map..._ů",
-				explain2: "Ř_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ů",
-				explain3: "Ř_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ů",
-				webmapPlaceholder: "Ř_Enter a web map id..._ů"
+				chooseWebmapLbl: "Vybrat webovou mapu…",
+				explain2: "Chcete-li vytvořit mapu vyprávění s překrýváním nebo lupou, vyberte pomocí níže umístěného tlačítka existující webovou mapu ArcGIS Online, kterou chcete použít. Případně můžete do níže umístěného pole vložit ID této webové mapy.",
+				explain3: "Chcete-li v mapě vyprávění používat dvě webové mapy, budete na druhou mapu dotázáni později při volbě takové možnosti.",
+				webmapPlaceholder: "Zadejte ID webové mapy…"
 			}
 		},
 		configure: {

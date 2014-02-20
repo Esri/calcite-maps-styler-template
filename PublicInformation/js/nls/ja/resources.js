@@ -1,34 +1,34 @@
 ﻿define(
      ({
         map: {
-            error: "須_Unable to create map_鷗"
+            error: "マップを作成できません"
         },
         report: {
-            flag: "須_Flag as innapropriate_鷗",
-            error: "須_Error_鷗",
-            success: "須_Flagged_鷗",
-            loading: "須_Loading&hellip;_鷗"
+            flag: "不適切を示すフラグ",
+            error: "エラー",
+            success: "フラグ付き",
+            loading: "読み込んでいます..."
         },
         mapNotes:{
-            notesUnavailable: "須_Description unavailable_鷗",
-            bookmarks: "須_Bookmarks_鷗",
-            untitledNote: "須_Untitled_鷗"
+            notesUnavailable: "説明が利用できません",
+            bookmarks: "ブックマーク",
+            untitledNote: "無題"
         },
         social: {
-            flickr: "須_Flickr_鷗",
-            flickrSettings: "須_Flickr Settings_鷗",
-            twitter: "須_Twitter_鷗",
-            twitterSettings: "須_Twitter Settings_鷗",
-            twitterUser: "須_Twitter Account_鷗",
+            flickr: "Flickr",
+            flickrSettings: "Flickr の設定",
+            twitter: "Twitter",
+            twitterSettings: "Twitter の設定",
+            twitterUser: "Twitter のアカウント",
             twitterSignIn: "須_Sign in to Twitter_鷗",
-            webcams: "須_Webcams_鷗",
-            instagram: "須_Instagram_鷗",
-            moreInfo: "須_More information_鷗",
-            searchTerms: "須_Search Terms_鷗",
-            search: "須_Search_鷗",
-            flSettingsInfo: "須_Return results matching a photo's title, description or tags._鷗",
-            twSettingsInfo: "須_See whatâ€™s happening right now._鷗",
-            advancedOperators: "須_Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches._鷗",
+            webcams: "Web カメラ",
+            instagram: "Instagram",
+            moreInfo: "詳細情報",
+            searchTerms: "検索語句",
+            search: "検索",
+            flSettingsInfo: "写真のタイトル、説明、またはタグと一致する結果を返します。",
+            twSettingsInfo: "いま起きていることを見てみましょう。",
+            advancedOperators: "ヒント: <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">演算子</a>を使って、高度な検索ができます。",
             tweetsFilteredBy: "須_tweets filtered by:_鷗",
             photosFilteredBy: "須_photos filtered by:_鷗",
             twitterAccountStatus: "須_Enable the Twitter layer to see your status._鷗"
@@ -36,15 +36,15 @@
         general: {
             map: "須_Map_鷗",
             mapInfo: "須_Map Information_鷗",
-            legend: "須_Legend_鷗",
+            legend: "凡例",
             featured: "須_Featured Locations_鷗",
             layers: "須_Layers_鷗",
-            share: "須_Share_鷗",
-            about: "須_About_鷗",
-            noSearchResult: "須_No result found_鷗",
-            switchAccount: "須_Switch account_鷗",
-            signIn: "須_Sign in_鷗",
-            settings: "須_Settings_鷗"
+            share: "共有",
+            about: "情報",
+            noSearchResult: "結果が見つかりません",
+            switchAccount: "アカウントの切り替え",
+            signIn: "サイン イン",
+            settings: "設定"
         }
     })
 

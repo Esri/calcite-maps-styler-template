@@ -1,17 +1,17 @@
 ﻿define(
      ({
         map: {
-            error: "بيت_Unable to create map_لاحقة"
+            error: "يتعذر إنشاء الخريطة"
         },
         general: {
             map: "بيت_Map_لاحقة",
             mapInfo: "بيت_Map Information_لاحقة",
-            legend: "بيت_Legend_لاحقة",
+            legend: "مفتاح الخريطة",
             layers: "بيت_Layers_لاحقة",
-            summarize: "بيت_Entire Area_لاحقة",
-            share: "بيت_Share_لاحقة",
-            about: "بيت_About_لاحقة",
-            noSearchResult: "بيت_No result found_لاحقة",
+            summarize: "المنطقة الكلية",
+            share: "مشاركة",
+            about: "نبذة عن",
+            noSearchResult: "يتعذر إيجاد النتائج",
             impactArea: "بيت_Impact Area_لاحقة"
         }
     })

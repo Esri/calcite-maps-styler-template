@@ -8,9 +8,9 @@
             defaultText: "Saisissez votre adresse"
         },
         error: {
-            layerNotFound: "æ_Layer is not in the webmap_Â",
+            layerNotFound: "La couche ne se trouve pas dans la carte Web",
             fieldNotFound: "Champ introuvable",
-            popupNotSet: "æ_Popup not enabled for this layer_Â"
+            popupNotSet: "La fenêtre contextuelle n\'est pas activée pour cette couche"
         },
         page: {
             title: "Consultation de service",

@@ -65,8 +65,8 @@
 				savingApplication: "응용프로그램을 저장하는 중",
 				saveSuccess: "응용프로그램이 저장되었습니다.",
 				saveError: "저장하지 못했습니다. 다시 시도하세요.",
-				saveError2: "한_Save failed due to an invalid html tag in a name or description_빠",
-				saveError3: "한_The title can't be empty_빠",
+				saveError2: "이름 또는 설명의 잘못된 html 태그로 인해 저장하지 못했습니다.",
+				saveError3: "제목은 비워 둘 수 없습니다.",
 				signIn: "응용프로그램을 저장하려면",
 				signInTwo: "로그인 계정으로 로그인하세요."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "머리글 색상"
 			},
 			initPopup: {
-				initHeader: "한_Welcome to the Swipe/Spyglass Builder_빠",
+				initHeader: "스와이프/망원경 빌더 시작",
 				modalNext: "다음",
 				modalPrev: "이전",
 				modalApply: "앱 열기"
@@ -208,7 +208,7 @@
 				close: "닫기",
 				tab1: {
 					div1: "스와이프/망원경 템플릿은 스마트폰과 태블릿을 비롯한 모든 장치의 모든 웹 브라우저에서 사용 가능한 간편하고 효율적인 웹 응용프로그램에서 단일 웹 맵의 두 레이어 또는 두 개별 웹 맵을 비교하도록 설계되었습니다.",
-					div2: "한_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._빠",
+					div2: "사용자가 생성한 예시를 포함한 스와이프/확대 렌즈 템플릿에 대한 추가 정보는, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> 스토리 맵 웹 사이트를 방문하세요</a>. Twitter의 <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>에서 팔로잉할 수도 있습니다.",
 					div3: "여러분의 참여를 기다립니다. 질문이 있거나 새 기능이 필요하거나 버그가 확인된 경우 <a href='http://links.esri.com/storymaps/forum' target='_blank'>스토리 맵 사용자 포럼</a>을 방문해 주세요."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "응용프로그램의 소유자인 경우 ArcGIS.com에 로그인하면 대화형 빌더를 열 수 있는 버튼이 응용프로그램에 표시됩니다.",				
 				shareQ3: "데이터는 어디에 저장되나요?",
 				shareA3: "응용프로그램 구성은 이 웹 응용프로그램 항목에 저장됩니다</a>.",
-				shareWarning: "한_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._빠",
- 				shareWarningWith1: "한_publicly_빠",
- 				shareWarningWith2: "한_publicly and with the Organization_빠"
+				shareWarning: "<a href='%LINK%' target='_blank'>웹 맵</a>의 소유자가 아니므로 %WITH% 공유를 사용할 수 없습니다.",
+ 				shareWarningWith1: "공개",
+ 				shareWarningWith2: "기관에 공개"
 			},
 			directCreation: {
 				header: "스와이프/망원경 빌더 시작",
 				mapPickHeader: "시작하려면 유효한 웹 맵 ID를 입력하거나 검색 버튼을 사용하여 웹 맵을 찾으세요.",
 				launchBuilder: "빌더 시작",
-				chooseWebmapLbl: "한_Choose web map..._빠",
-				explain2: "한_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._빠",
-				explain3: "한_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._빠",
-				webmapPlaceholder: "한_Enter a web map id..._빠"
+				chooseWebmapLbl: "웹 맵을 선택합니다...",
+				explain2: "스와이프 또는 확대 렌즈 스토리 맵을 생성하려면 아래 버튼을 사용하여 사용할 기존 ArcGIS Online 웹 맵을 선택합니다. 또는 웹 맵의 ID를 아래 필드에 붙일 수도 있습니다.",
+				explain3: "스토리 맵에서 두 개의 웹 맵을 사용하려는 경우 나중에 해당 옵션을 선택할 때 두 번째 웹 맵에 대한 프롬프트가 표시됩니다.",
+				webmapPlaceholder: "웹 맵 ID를 입력합니다..."
 			}
 		},
 		configure: {

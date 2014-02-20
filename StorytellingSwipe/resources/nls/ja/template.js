@@ -65,8 +65,8 @@
 				savingApplication: "アプリケーションを保存しています",
 				saveSuccess: "アプリケーションは正常に保存されました",
 				saveError: "保存に失敗しました。もう一度やり直してください。",
-				saveError2: "須_Save failed due to an invalid html tag in a name or description_鷗",
-				saveError3: "須_The title can't be empty_鷗",
+				saveError2: "名前または説明に無効な html タグがあるため保存に失敗しました",
+				saveError3: "タイトルは必ず入力してください",
 				signIn: "アカウントでサイン インして",
 				signInTwo: "アプリケーションを保存してください。"
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "ヘッダーの色"
 			},
 			initPopup: {
-				initHeader: "須_Welcome to the Swipe/Spyglass Builder_鷗",
+				initHeader: "スワイプ/スパイグラス ビルダへようこそ",
 				modalNext: "次へ",
 				modalPrev: "前へ",
 				modalApply: "アプリケーションを開く"
@@ -208,7 +208,7 @@
 				close: "閉じる",
 				tab1: {
 					div1: "スワイプ/スパイグラス テンプレートは、スマートフォンやタブレットなど、あらゆるデバイスのあらゆる Web ブラウザで使用できる使いやすく魅力的なアプリケーションで、2 つの別々の Web マップまたは 1 つの Web マップの 2 つのレイヤを比較できるよう設計されています。",
-					div2: "須_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._鷗",
+					div2: "ユーザが作成した例を含むスワイプ/スパイグラス テンプレートの詳細については、<a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'>ストーリー マップ Web サイト</a>をご覧ください。また、<a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a> で Esri の Twitter をフォローすることもできます。",
 					div3: "みなさまのご参加をお待ちしています。質問がある場合、新しい機能を依頼する場合、あるいはバグを見つけた場合は、<a href='http://links.esri.com/storymaps/forum' target='_blank'>ストーリー マップ ユーザ フォーラム</a>をご覧ください。"
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "アプリケーションの所有者として ArcGIS.com にサイン インした場合、アプリケーションに対話型ビルダを開くボタンが含まれます。",				
 				shareQ3: "データの保存場所は？",
 				shareA3: "アプリケーション構成は、この Web アプリケーション アイテムに保存されます</a>。",
-				shareWarning: "須_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._鷗",
- 				shareWarningWith1: "須_publicly_鷗",
- 				shareWarningWith2: "須_publicly and with the Organization_鷗"
+				shareWarning: "<a href='%LINK%' target='_blank'>Web マップ</a>の所有者でないため、%WITH% の共有は無効化されています。",
+ 				shareWarningWith1: "パブリック",
+ 				shareWarningWith2: "パブリックおよび組織"
 			},
 			directCreation: {
 				header: "スワイプ/スパイグラス ビルダへようこそ",
 				mapPickHeader: "開始するには、有効な Web マップ ID を入力するか、または [検索] ボタンを使用して Web マップを参照してください。",
 				launchBuilder: "ビルダの開始",
-				chooseWebmapLbl: "須_Choose web map..._鷗",
-				explain2: "須_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._鷗",
-				explain3: "須_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._鷗",
-				webmapPlaceholder: "須_Enter a web map id..._鷗"
+				chooseWebmapLbl: "Web マップの選択...",
+				explain2: "スワイプまたはスパイグラス ストーリー マップを作成するには、下のボタンを使用して、使用する既存の ArcGIS Online Web マップを選択します。あるいは、Web マップの ID を下のフィールドに貼り付けることもできます。",
+				explain3: "ストーリー マップに Web マップを 2 つ使用する場合、そのオプションを選択するときに、2 番目のマップの入力を求められます。",
+				webmapPlaceholder: "Web マップ ID の入力..."
 			}
 		},
 		configure: {

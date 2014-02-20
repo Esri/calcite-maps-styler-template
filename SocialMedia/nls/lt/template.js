@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "timePattern": "hh:mm", // added 2.5.2013
-                "datePattern": "yyyy.MMM.d" // added 2.5.2013
+                "datePattern": "yyyy MMM dd" // added 2.5.2013
             },
             "applicationTitle": {
                 "PIM": "Viešos informacijos žemėlapis" // added 8.26.2013
@@ -108,7 +108,7 @@
                 "legend": "Legenda",
                 "legendTitle": "Rodyti legendą",
                 "basemap": "Pagrindo žemėlapis",
-                "basemapTitle": "Pakeisti pagrindo žėmėlapį",
+                "basemapTitle": "Pakeisti pagrindo žemėlapį",
                 "layers": "Sluoksniai",
                 "layersTitle": "Peržiūrėti sluoksnius",
                 "social": "Visuomeninė",
@@ -175,7 +175,7 @@
                 "large": "Didelis",
                 "custom": "Adaptuotas",
                 "embed": "Įterpti",
-                "instruction": "Norint įterpti žemėlapį į savo svetainę, kopijuokite ir įdėti šį HTML."
+                "instruction": "Norint įterpti žemėlapį į savo svetainę, kopijuokite ir įdėkite šį HTML."
             },
             "flickr": {
                 "title": "Flickr",

@@ -65,8 +65,8 @@
 				savingApplication: "Zapisywanie aplikacji",
 				saveSuccess: "Aplikacja została pomyślnie zapisana",
 				saveError: "Zapisywanie nie powiodło się, spróbuj ponownie",
-				saveError2: "ł_Save failed due to an invalid html tag in a name or description_ą",
-				saveError3: "ł_The title can't be empty_ą",
+				saveError2: "Próba zapisania nie powiodła się - błędny znacznik HTML w nazwie lub opisie",
+				saveError3: "Tytuł nie może być pusty",
 				signIn: "Zaloguj się na konto,",
 				signInTwo: "aby zapisać aplikację."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Kolor nagłówka"
 			},
 			initPopup: {
-				initHeader: "ł_Welcome to the Swipe/Spyglass Builder_ą",
+				initHeader: "Witamy w kreatorze szablonu Zwijanie/Luneta",
 				modalNext: "Dalej",
 				modalPrev: "Wstecz",
 				modalApply: "Otwórz aplikację"
@@ -208,7 +208,7 @@
 				close: "Zamknij",
 				tab1: {
 					div1: "Szablon Zwijanie/Luneta umożliwia porównywanie dwóch różnych map internetowych albo dwóch warstw pojedynczej mapy internetowej za pomocą atrakcyjnie wyglądającej i łatwej w obsłudze aplikacji internetowej. Aplikacji tej można używać w dowolnej przeglądarce i na każdym urządzeniu, w tym również na smartfonie i tablecie.",
-					div2: "ł_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ą",
+					div2: "Dodatkowe informacje dotyczące szablonu Zwijanie/Luneta, w tym przykłady stworzone przez użytkowników, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> znajdują się na stronie internetowej Mapy ze scenariuszem</a>. Możesz także śledzić nas w serwisie Twitter pod adresem <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Czekamy na wiadomości od Ciebie! Niezależnie od tego, czy masz pytanie, chcesz poprosić o nowy obiekt lub poinformować nas o znalezionym błędzie, odwiedź <a href='http://links.esri.com/storymaps/forum' target='_blank'>Forum użytkowników map opowiadań</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Kiedy właściciel aplikacji zaloguje się w serwisie ArcGIS.com, aplikacja zawiera przycisk do otwierania interaktywnego kreatora:",				
 				shareQ3: "Gdzie są przechowywane dane?",
 				shareA3: "Pliki konfiguracyjne aplikacji są zapisane w tym elemencie aplikacji internetowej</a>.",
-				shareWarning: "ł_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ą",
- 				shareWarningWith1: "ł_publicly_ą",
- 				shareWarningWith2: "ł_publicly and with the Organization_ą"
+				shareWarning: "Udostępnianie %WITH% zostało wyłączone, ponieważ nie jesteś właścicielem <a href='%LINK%' target='_blank'>mapy internetowej</a>.",
+ 				shareWarningWith1: "publicznie",
+ 				shareWarningWith2: "publicznie i instytucji"
 			},
 			directCreation: {
 				header: "Witamy w kreatorze szablonu Zwijanie/Luneta",
 				mapPickHeader: "Aby rozpocząć, podaj prawidłowy identyfikator mapy internetowej albo skorzystaj z przycisku Wyszukaj w celu przeszukania map internetowych.",
 				launchBuilder: "Kreator uruchamiania",
-				chooseWebmapLbl: "ł_Choose web map..._ą",
-				explain2: "ł_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ą",
-				explain3: "ł_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ą",
-				webmapPlaceholder: "ł_Enter a web map id..._ą"
+				chooseWebmapLbl: "Wybierz mapę internetową...",
+				explain2: "Aby utworzyć mapę ze scenariuszem Zwijanie lub Luneta, skorzystaj z poniższego przycisku i wybierz istniejącą mapę internetową ArcGIS Online, której chcesz użyć. Ewentualnie możesz wkleić do poniższego pola identyfikator mapy internetowej.",
+				explain3: "Jeżeli w ramach mapy ze scenariuszem chcesz użyć dwóch map internetowych, podczas wybierania tej opcji pojawi się później komunikat dotyczący drugiej mapy internetowej.",
+				webmapPlaceholder: "Wpisz identyfikator mapy internetowej..."
 			}
 		},
 		configure: {

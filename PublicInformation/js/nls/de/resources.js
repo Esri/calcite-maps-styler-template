@@ -1,34 +1,34 @@
 ﻿define(
      ({
         map: {
-            error: "ä_Unable to create map_Ü"
+            error: "Karte kann nicht erstellt werden"
         },
         report: {
-            flag: "ä_Flag as innapropriate_Ü",
-            error: "ä_Error_Ü",
-            success: "ä_Flagged_Ü",
-            loading: "ä_Loading&hellip;_Ü"
+            flag: "Als ungeeignet kennzeichnen",
+            error: "Fehler",
+            success: "Gekennzeichnet",
+            loading: "Wird geladen&hellip;"
         },
         mapNotes:{
-            notesUnavailable: "ä_Description unavailable_Ü",
-            bookmarks: "ä_Bookmarks_Ü",
-            untitledNote: "ä_Untitled_Ü"
+            notesUnavailable: "Keine Beschreibung verfügbar",
+            bookmarks: "Lesezeichen",
+            untitledNote: "Unbenannt"
         },
         social: {
-            flickr: "ä_Flickr_Ü",
-            flickrSettings: "ä_Flickr Settings_Ü",
-            twitter: "ä_Twitter_Ü",
-            twitterSettings: "ä_Twitter Settings_Ü",
-            twitterUser: "ä_Twitter Account_Ü",
+            flickr: "Flickr",
+            flickrSettings: "Flickr-Einstellungen",
+            twitter: "Twitter",
+            twitterSettings: "Twitter-Einstellungen",
+            twitterUser: "Twitter-Konto",
             twitterSignIn: "ä_Sign in to Twitter_Ü",
-            webcams: "ä_Webcams_Ü",
-            instagram: "ä_Instagram_Ü",
-            moreInfo: "ä_More information_Ü",
-            searchTerms: "ä_Search Terms_Ü",
-            search: "ä_Search_Ü",
-            flSettingsInfo: "ä_Return results matching a photo's title, description or tags._Ü",
-            twSettingsInfo: "ä_See whatâ€™s happening right now._Ü",
-            advancedOperators: "ä_Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches._Ü",
+            webcams: "Webcams",
+            instagram: "Instagram",
+            moreInfo: "Weitere Informationen",
+            searchTerms: "Suchbegriffe",
+            search: "Suchen",
+            flSettingsInfo: "Ergebnisse zurückgeben, die mit dem Titel, der Beschreibung oder den Tags eines Fotos übereinstimmen.",
+            twSettingsInfo: "Anzeigen, was jetzt gerade passiert.",
+            advancedOperators: "Tipp: Benutze <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">Operatoren</a> zur erweiterten Suche.",
             tweetsFilteredBy: "ä_tweets filtered by:_Ü",
             photosFilteredBy: "ä_photos filtered by:_Ü",
             twitterAccountStatus: "ä_Enable the Twitter layer to see your status._Ü"
@@ -36,15 +36,15 @@
         general: {
             map: "ä_Map_Ü",
             mapInfo: "ä_Map Information_Ü",
-            legend: "ä_Legend_Ü",
+            legend: "Legende",
             featured: "ä_Featured Locations_Ü",
             layers: "ä_Layers_Ü",
-            share: "ä_Share_Ü",
-            about: "ä_About_Ü",
-            noSearchResult: "ä_No result found_Ü",
-            switchAccount: "ä_Switch account_Ü",
-            signIn: "ä_Sign in_Ü",
-            settings: "ä_Settings_Ü"
+            share: "Freigeben",
+            about: "Info zu",
+            noSearchResult: "Kein Ergebnis gefunden",
+            switchAccount: "Konto wechseln",
+            signIn: "Anmelden",
+            settings: "Einstellungen"
         }
     })
 

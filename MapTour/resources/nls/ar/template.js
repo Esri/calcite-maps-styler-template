@@ -199,7 +199,7 @@
 				notJpg: "يرجى اختيار صورة jpeg للتحميل",
 				errorNoPhoto: "اختر الصورة للتحميل",
 				errorNoThumbnail: "اختر الصورة المُصغرة للتحميل",
-				errorInvalidPicUrl: "أدخل صورة صحيحة (تبدأ بـ http(s):// وتنتهي بـ jpg أو png أو gif أو bmp). يمكنك إنهاء عنوان URL بـ '#isImage' لتجاوز هذه القاعدة.",
+				errorInvalidPicUrl: "أدخل صورة صحيحة (تبدأ بـ http(s):// وتنتهي بـ jpg أو png أو gif أو bmp). يمكنك إنهاء عنوان URL بـ '\#isImage'\ لتجاوز هذه القاعدة.",
 				errorInvalidThumbUrl: "أدخل صورة مصغرة صحيحة (تبدأ بـ http(s):// وتنتهي بـ jpg أو png أو gif أو bmp).",
 				errorInvalidVideoUrl: "أدخل عنوان URL صحيح للفيديو (يبدأ بـ http(s)://(",
 				errorNoName: "ادخل اسم لنقطة الجولة",
@@ -327,7 +327,7 @@
 				header: "أدخل البريد الإلكتروني أو المعرف لـ Picasa أو Google + الحساب.",
 				userInputLbl: "أدخل بريد إلكتروني أو معرف",
 				signInMsg2: "لم يتم العثور على الحساب",
-				signInMsg3: "بيت_No public album_لاحقة",
+				signInMsg3: "لا يوجد ألبوم عام",
 				howToFind: "كيفية إيجاد Picasa أو Google+ أو معرف الحساب",
 				howToFind2: "نسخ الأرقام بين الأول والثاني \'/\'  لأي من Picasa او صفحة G+"
 			},
@@ -526,9 +526,9 @@
 				shareA2div2: "بصفتك مالك التطبيق، عند تسجيل الدخول على ArcGIS.com، سيتضمن التطبيق زر لفتح المنشئ التفاعلي:",				
 				shareQ3: "أين يتم تخزين البيانات؟",
 				shareA3: "يتم تخزين تكوين الجولة في <a href='%LINK1%' target='_blank'>عنصر خريطة الويب</a> و <a href='%LINK2%' target='_blank'>عنصر تطبيق الويب الحالي</a>. عند استخدام Flicker أو Picasa أو Facebook أو YouTube، ستظل الصور ومقاطع الفيديو مخزنة ولن تتكرر في ArcGIS Online.",
-				shareWarning: "بيت_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._لاحقة",
-				shareWarningWith1: "بيت_publicly_لاحقة",
-				shareWarningWith2: "بيت_publicly and with the Organization_لاحقة"
+				shareWarning: "تم تعطيل مشاركة %WITH% وذلك لأنك ليس مالك <a href='%LINK%' target='_blank'>خريطة الويب</a>.",
+				shareWarningWith1: "علانية",
+				shareWarningWith2: "علانية ومع المنظمة"
 			}
         }
     })

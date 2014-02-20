@@ -65,8 +65,8 @@
 				savingApplication: "保存应用程序",
 				saveSuccess: "应用程序保存成功",
 				saveError: "保存失败，请重试",
-				saveError2: "试_Save failed due to an invalid html tag in a name or description_验",
-				saveError3: "试_The title can't be empty_验",
+				saveError2: "由于名称或描述中存在无效 html 标签，因此保存失败",
+				saveError3: "标题不能为空",
 				signIn: "请使用帐户登录",
 				signInTwo: "保存应用程序。"
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "页眉颜色"
 			},
 			initPopup: {
-				initHeader: "试_Welcome to the Swipe/Spyglass Builder_验",
+				initHeader: "欢迎访问卷帘/望远镜构建器",
 				modalNext: "下一步",
 				modalPrev: "上一步",
 				modalApply: "打开应用程序"
@@ -207,13 +207,13 @@
 				title: "帮助",
 				close: "关闭",
 				tab1: {
-					div1: "卷帘/望远镜模板可创建一个简单易用而又吸引人的 Web 应用程序，可通过任意设备(包括智能手机和平板电脑)上的任意浏览器使用该应用程序，对两个单独的 Web 地图或一个 Web 地图中的两个图层进行比较。",
-					div2: "试_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._验",
+					div1: "卷帘/望远镜模板旨在通过一个简单易用而又吸引人的 Web 应用程序(可通过包括智能手机和平板电脑在内的任意设备上的任意 Web 浏览器使用该应用程序)，对两个单独的 Web 地图或一个 Web 地图中的两个图层进行比较。",
+					div2: "有关卷帘/望远镜模板的附加信息(包括用户创建的示例)，<a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'>请访问故事地图网站</a>。您也可以关注我们的 Twitter，<a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>。",
 					div3: "我们非常期待您的参与! 如果您有任何疑问、想要请求新特性或者发现漏洞，请访问<a href='http://links.esri.com/storymaps/forum' target='_blank'>故事地图用户论坛</a>。"
 				}
 			},
 			share: {
-				firstSaveTitle: "应用程序成功保存",
+				firstSaveTitle: "应用程序已成功保存",
 				firstSaveHeader: "您的应用程序现已保存到 ArcGIS Online 中。请阅读下面的常见问题解答。",
 				firstSaveA1: "如果您不熟悉 ArcGIS Online，或需要访问创作界面的快捷方式，则可以保存以下链接: %LINK1%",
 				firstSaveA1bis: "还可以在您的 <a href='%LINK2%' target='_blank'>ArcGIS Online 内容文件夹</a>中找到此应用程序。",
@@ -236,8 +236,8 @@
 				shareLinkHeader: "将应用程序共享给受众",
 				shareLinkOpen: "打开",
 				learnMore: "了解详细信息",
-				shareQ1Opt1: "如何将应用程序设置为私有?",
-				shareQ1Opt2: "如何将应用程序设置为私有或将其公开共享?",
+				shareQ1Opt1: "如何将应用程序私有化?",
+				shareQ1Opt2: "如何将应用程序私有化或将其公开共享?",
 				shareA1: "使用<a href='%LINK1%' target='_blank'>应用程序项目页面</a>中的 %SHAREIMG%。如果还希望取消共享 Web 地图，请使用 <a href='%LINK2%' target='_blank'>Web 地图项目页面</a>。",
 				shareA1bis: "如果还想要取消共享要素服务，请使用<a href='%LINK1%' target='_blank'>要素服务项目页面</a>。",
 				shareQ2: "如何在稍后对应用程序进行编辑?",
@@ -246,18 +246,18 @@
 				shareA2div2: "作为应用程序所有者，当您登录到 ArcGIS.com 后，可使用应用程序中的按钮来打开交互式构建器:",				
 				shareQ3: "数据存储位置在哪?",
 				shareA3: "应用程序配置存储在此 Web 应用程序项目中</a>。",
-				shareWarning: "试_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._验",
- 				shareWarningWith1: "试_publicly_验",
- 				shareWarningWith2: "试_publicly and with the Organization_验"
+				shareWarning: "已禁止共享 %WITH%，因为您不是 <a href='%LINK%' target='_blank'>webmap</a> 的所有者。",
+ 				shareWarningWith1: "公开",
+ 				shareWarningWith2: "公开并在组织内共享"
 			},
 			directCreation: {
 				header: "欢迎访问卷帘/望远镜构建器",
 				mapPickHeader: "要开始此过程，请输入有效的 Web 地图 id，或使用搜索按钮浏览 Web 地图。",
 				launchBuilder: "启动构建器",
-				chooseWebmapLbl: "试_Choose web map..._验",
-				explain2: "试_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._验",
-				explain3: "试_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._验",
-				webmapPlaceholder: "试_Enter a web map id..._验"
+				chooseWebmapLbl: "选择 Web 地图...",
+				explain2: "要创建卷帘或望远镜故事地图，请使用如下按钮选择想要使用的现有 ArcGIS Online Web 地图。或者，也可以将该 Web 地图的 ID 粘贴到如下字段中。",
+				explain3: "如果您想在故事地图中使用两个 Web 地图，系统会在您选择该选项后提示您提供另一个 Web 地图。",
+				webmapPlaceholder: "输入 Web 地图 ID..."
 			}
 		},
 		configure: {

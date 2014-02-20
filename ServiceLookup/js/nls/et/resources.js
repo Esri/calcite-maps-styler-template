@@ -8,9 +8,9 @@
             defaultText: "Sisesta oma aadress"
         },
         error: {
-            layerNotFound: "Š_Layer is not in the webmap_ä",
+            layerNotFound: "Kiht pole veebikaardil",
             fieldNotFound: "Välja ei leitud",
-            popupNotSet: "Š_Popup not enabled for this layer_ä"
+            popupNotSet: "Hüpikaken pole selle kihi jaoks lubatud"
         },
         page: {
             title: "Teenuse otsimine",

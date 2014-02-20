@@ -1,7 +1,7 @@
 ﻿define(
      ({
         map: {
-            error: "á_Unable to create map_Ó"
+            error: "No se puede crear el mapa"
         }
     })
 

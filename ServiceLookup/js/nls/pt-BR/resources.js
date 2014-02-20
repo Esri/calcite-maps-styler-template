@@ -8,9 +8,9 @@
             defaultText: "Insira seu endereço"
         },
         error: {
-            layerNotFound: "ã_Layer is not in the webmap_Ç",
+            layerNotFound: "A camada não está no mapa da web",
             fieldNotFound: "Campo não localizado",
-            popupNotSet: "ã_Popup not enabled for this layer_Ç"
+            popupNotSet: "O pop-up não está habilitado para esta camada"
         },
         page: {
             title: "Consultar Serviço",

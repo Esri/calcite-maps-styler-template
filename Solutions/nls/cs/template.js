@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "Tato vrstva vyhledávání nebyla v mapě nalezena.",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Toto pole nebylo ve vrstvě vyhledávání nalezeno.",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "Žádné z těchto polí nebylo ve vrstvě vyhledávání mapy nalezeno.",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "Ř_This field does not exist in any of the map layers_ů",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "Toto pole neexistuje v žádné mapové vrstvě.",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Váš obsah byl odeslán. Děkujeme.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Nelze získat přístup ke konfiguraci aplikace.",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "Aplikaci nelze spustit."  // Appears for any failure to build the user interface

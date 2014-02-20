@@ -14,8 +14,8 @@
       },
       geocoder: {
         selectAnother: "Izvēlieties citu izvietojumu",
-        notWhatYouWanted: "Nav tas, ko vēlējāties?",
-        currentLocation: "Pašreizējā atrašanās vieta",
+        notWhatYouWanted: "Vai vēlējāties ko citu?",
+        currentLocation: "Pašreizējais izvietojums",
         title: "Izvietojums"
       },
       sidePanel: {

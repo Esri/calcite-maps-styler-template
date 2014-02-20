@@ -15,7 +15,7 @@
       geocoder: {
         selectAnother: "Vali muu asukoht",
         notWhatYouWanted: "Ei ole see, mida soovisid?",
-        currentLocation: "Hetke asukoht",
+        currentLocation: "Praegune asukoht",
         title: "Asukoht"
       },
       sidePanel: {

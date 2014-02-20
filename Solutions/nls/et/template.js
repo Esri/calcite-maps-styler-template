@@ -54,11 +54,11 @@ define(
             geolocationTimeout: "Veebibrauser ei saanud praegust asukohta õigeaegselt",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "Seda otsitud kihti ei leitud kaardilt",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Seda välja ei leitud otsitud kaardikihilt",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "Ühtegi neist väljadest ei leitud kaardi otsingukihis",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "Š_This field does not exist in any of the map layers_ä",  // Appears when a field used in the configuration was not found in any map layer
-            yourContentSubmitted: "Teie sisu on sisestatud. Täname.",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "Rakenduse konfiguratsioonile ligipääs ebaõnnestus",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "Rakenduse käivitamine ebaõnnestus"  // Appears for any failure to build the user interface
+            allSearchFieldsMissing: "Kaardi otsingukihis ei leitud ühtki neist väljadest",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            fieldNotFound: "Seda välja pole ühelgi kaardikihil",  // Appears when a field used in the configuration was not found in any map layer
+            yourContentSubmitted: "Sisu on edastatud. Täname.",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "Rakenduse konfiguratsioonile ei pääse juurde",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "Rakenduse käivitamine nurjus"  // Appears for any failure to build the user interface
         }
     })
 );

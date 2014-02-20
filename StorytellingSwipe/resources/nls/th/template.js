@@ -65,8 +65,8 @@
 				savingApplication: "กำลังบันทึกแอพพลิเคชั่น",
 				saveSuccess: "บันทึกแอพพลิเคชั่นเรียบร้อยแล้ว",
 				saveError: "การบันทึกไม่สำเร็จ กรุณาลองใหม่อีกครั้ง",
-				saveError2: "ก้_Save failed due to an invalid html tag in a name or description_ษฺ",
-				saveError3: "ก้_The title can't be empty_ษฺ",
+				saveError2: "การบันทึกผิดพลาด เนื่องจาก html แท๊กไม่ถูกต้อง ในชื่อหรือคำอธิบาย",
+				saveError3: "หัวเรื่องไม่สามารถปล่อยว่างได้",
 				signIn: "กรุณาลงชื่อเข้าใช้",
 				signInTwo: "บันทึกแอพพลิเคชั่น"
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "สีของเฮดเดอร์"
 			},
 			initPopup: {
-				initHeader: "ก้_Welcome to the Swipe/Spyglass Builder_ษฺ",
+				initHeader: "ยินดีต้อนรับสู่ การสร้างแผนที่แบบ Swipe/Spyglass",
 				modalNext: "ต่อไป",
 				modalPrev: "ก่อนหน้า",
 				modalApply: "เปิด App"
@@ -208,7 +208,7 @@
 				close: "ปิด",
 				tab1: {
 					div1: "โครงร่างแบบ Swipe หรือ Spyglass ได้รับการออกแบบเพื่อใช้ในการเปรียบเทียบเว็บแมพ 2 ชิ้นที่อยู่แยกกัน หรือ ชั้นข้อมูล 2 ชั้นที่น่าสนใจที่อยู่บนเว็บแมพเดียว เว็บแอพพลิเคชั่นที่ง่ายต่อการใช้งานเพราะสามารถใช้กับเว็บบราวเซอร์ใดก็ได้ ผ่านทางอุปกรณ์สื่อสารใดก็ได้ ทั้งสมาร์ทโฟนและแท็บเล้ต",
-					div2: "ก้_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ษฺ",
+					div2: "สำหรับข้อมูลเพิ่มเติมของโครงร่างแบบเลื่อน/แบบแว่นขยาย,รวมทั้งตัวอย่างต่างๆ ที่สร้างโดยผู้ใช้งาน, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> เข้าชมเว็บไซต์ Story Maps ได้</a>. คุณสามารถติดตามเราได้ทางทวิตเตอร์ <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "เรามีความต้องการที่จะได้ยินจากคุณ! ถ้าคุณมีคำถาม, ต้องการเพิ่มฟีเจอร์ใหม่, หรือคิดว่าคุณพบ bug โปรดชม <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "หากเป็นเจ้าของโปรแกรม เมื่อคุณลงชื่อเข้าใช้ใน ArcGIS.com โปรแกรมจะเปิดหน้าและปุ่มสำหรับการพัฒนาให้",				
 				shareQ3: "ข้อมูลของคุณเก็บไว้ที่ใด?",
 				shareA3: "การตั้งค่าแอพพลิเคชั่นถูกจัดเก็บอยู่ในเว็บแอพพลิเคชั่นนี้</a>.",
-				shareWarning: "ก้_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ษฺ",
- 				shareWarningWith1: "ก้_publicly_ษฺ",
- 				shareWarningWith2: "ก้_publicly and with the Organization_ษฺ"
+				shareWarning: "การแชร์ %WITH% ไม่สามารถทำได้ เพราะว่าคุณไม่ใช่เจ้าของข้อมูล <a href='%LINK%' target='_blank'>webmap</a>.",
+ 				shareWarningWith1: "โดยสาธารณะ",
+ 				shareWarningWith2: "โดยสาธารณะและสำหรับองค์กร"
 			},
 			directCreation: {
 				header: "ยินดีต้อนรับสู่ การสร้างแผนที่แบบ Swipe/Spyglass",
 				mapPickHeader: "ในการเริ่มต้น โปรดใส่เลขรหัสที่ถูกต้องของเว็บแมพ หรือใช้ปุ่มค้นหาเพื่อเรียกดูเว็บแมพต่างๆ",
 				launchBuilder: "เริ่มใช้งานเครื่องมือสร้าง",
-				chooseWebmapLbl: "ก้_Choose web map..._ษฺ",
-				explain2: "ก้_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ษฺ",
-				explain3: "ก้_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ษฺ",
-				webmapPlaceholder: "ก้_Enter a web map id..._ษฺ"
+				chooseWebmapLbl: "เลือกเว็บแมพ...",
+				explain2: "ในการสร้างโครงร่างแผนที่ Story Map แบบเลื่อนหรือแบบแว่นขยาย ให้ใช้ปุ่มด้านล่างเพื่อเลือกเว็บแมพที่มีอยู่แล้วของ ArcGIS Online ที่คุณต้องการจะใช้งาน นอกจากนี้ ยังสามารถวาง ID ของเว็บแมพลงบนค่าฟิลด์ด้านล่าง",
+				explain3: "หากคุณต้องการใช้เว็บแมพ 2 ชิ้นในแผนที่ Story Map ของคุณ คุณจะพร้อมใช้งานเว็บแมพชิ้นที่สองได้เมื่อคุณเลือกตัวเลือกนั้นแล้ว",
+				webmapPlaceholder: "ใส่รหัส ID เว็บแมพ"
 			}
 		},
 		configure: {

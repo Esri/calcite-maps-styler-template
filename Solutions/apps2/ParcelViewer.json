@@ -139,7 +139,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 5b16f464e58049e9 2014-02-14 16:21:36 -0800"
+                "commit a8d993e2cca1f7ac 2014-02-19 12:32:09 -0800"
             ]
         }
     }, {
@@ -373,7 +373,7 @@
             "horizOffset": -2,
             "vertOffset": [2, -2],
             "searcher": "featureSearcher",
-            "showPrompt": "@prompts.search",
+            "showPrompt": "@tooltips.search",
             "resultsListBoxClass": "resultsListBox",
             "resultsListTableClass": "resultsListTable",
             "resultsListBodyClass": "resultsListBody",

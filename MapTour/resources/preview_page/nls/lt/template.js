@@ -1,8 +1,8 @@
 ﻿define(
 ({
 		firstPane: {
-			head: "<span class='highlightText'>Žemėlapio turo šablonas</span> įgalina visus ArcGIS Online paskyrų lygius, įskaitant nemokamą viešą paskyrą, kurti ir redaguoti vietovėmis paremtus pasakojimus kombintuojant vazidus, tekstą ir žemėlapį iš:",
-			list0: "Nuotraukos, laikomos pagrindiniuose interneto nuotraukų talpyklose: Fickr, Picasa ir Facebook arba bet kuriame interneto serveryje",
+			head: "<span class='highlightText'>Žemėlapio turo šablonas</span> įgalina visus ArcGIS Online paskyrų lygius, įskaitant nemokamą viešą paskyrą, kurti ir redaguoti vietovėmis paremtus pasakojimus kombinuojant vaizdus, tekstą ir žemėlapį iš:",
+			list0: "Nuotraukos, laikomos pagrindinėse interneto nuotraukų talpyklose, pvz., Flickr, Picasa ir Facebook, arba bet kurioje interneto svetainėje ar interneto serveryje",
 			list1: "Nuotraukos, dar nesaugomos internete, kurios bus saugomos kaip elementų paslaugų priedai (apribota tik ArcGIS for Organization vartotojams)"
 		},
 		secondPane: {

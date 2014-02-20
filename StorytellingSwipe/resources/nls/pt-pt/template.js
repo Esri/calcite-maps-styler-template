@@ -65,8 +65,8 @@
 				savingApplication: "A guardar a aplicação",
 				saveSuccess: "Aplicação guardada com sucesso",
 				saveError: "Falha ao guardar, tente novamente",
-				saveError2: "ã_Save failed due to an invalid html tag in a name or description_Ç",
-				saveError3: "ã_The title can't be empty_Ç",
+				saveError2: "Não foi guardado, falhou devido a uma palavra chave HTML inválida no nome ou a descrição",
+				saveError3: "O título não pode ser vazio",
 				signIn: "Inicie sessão com uma conta em",
 				signInTwo: "para guardar a aplicação."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Cor do Cabeçalho"
 			},
 			initPopup: {
-				initHeader: "ã_Welcome to the Swipe/Spyglass Builder_Ç",
+				initHeader: "Bem-vindo(a) ao Swipe/Spyglass Builder",
 				modalNext: "Seguinte",
 				modalPrev: "Anterior",
 				modalApply: "Abrir a aplicação"
@@ -208,7 +208,7 @@
 				close: "Fechar",
 				tab1: {
 					div1: "O modelo Swipe/Spyglassfoi concebido para comparar dois mapas web ou camadas, ou duas camadas de um único mapa numa aplicação web atrativa, fácil de utilizar, que pode ser utilizada em qualquer navegador web ou em qualquer dispositivo, incluindo smartphones e tablets.",
-					div2: "ã_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._Ç",
+					div2: "Para mais informações sobre o modelo de Varrimento/Lupa, incluindo exemplos criados por utilizadores, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visite o site web dos Story Maps</a>. Pode ainda seguir-nos no Twitter em <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Gostaríamos de ter notícias suas! Não hesite em partilhar a sua Apresentação de Mapa connosco:"
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Como proprietário da aplicação, quando inicia sessão no ArcGIS.com, a aplicação incluí um botão para abrir o construtor interativo:",				
 				shareQ3: "Onde estão guardados os dados?",
 				shareA3: "A configuração da aplicação encontra-se armazenada neste item de aplicação web</a>.",
-				shareWarning: "ã_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Ç",
- 				shareWarningWith1: "ã_publicly_Ç",
- 				shareWarningWith2: "ã_publicly and with the Organization_Ç"
+				shareWarning: "A partilha de %WITH% foi desativado porque não é o proprietário do <a href='%LINK%' target='_blank'>mapa web</a>.",
+ 				shareWarningWith1: "publicamente",
+ 				shareWarningWith2: "publicamente e com a Organização"
 			},
 			directCreation: {
 				header: "Bem-vindo(a) ao Swipe/Spyglass Builder",
 				mapPickHeader: "Para começar, por favor introduza um id de mapa válido ou utilize o botão procurar para procurar mapas web.",
 				launchBuilder: "Iniciar o Builder",
-				chooseWebmapLbl: "ã_Choose web map..._Ç",
-				explain2: "ã_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._Ç",
-				explain3: "ã_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._Ç",
-				webmapPlaceholder: "ã_Enter a web map id..._Ç"
+				chooseWebmapLbl: "Escolha o mapa web...",
+				explain2: "Para criar um story map de Varrimento ou Lupa, utilize o botão abaixo para escolher o mapa web ArcGIS Online existente que pretende utilizar. Em alternativa, pode colar a ID do mapa web no campo abaixo.",
+				explain3: "Caso queira utiliza dois mapas web no seu story map, será dirigido para a segunda camada de mapa ao selecionar essa opção.",
+				webmapPlaceholder: "Insira uma id de mapa web..."
 			}
 		},
 		configure: {

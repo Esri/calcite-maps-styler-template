@@ -1,34 +1,34 @@
 ﻿define(
      ({
         map: {
-            error: "כן_Unable to create map_ש"
+            error: "לא ניתן ליצור מפה"
         },
         report: {
-            flag: "כן_Flag as innapropriate_ש",
-            error: "כן_Error_ש",
-            success: "כן_Flagged_ש",
-            loading: "כן_Loading&hellip;_ש"
+            flag: "סמן כבלתי הולם",
+            error: "שגיאה",
+            success: "מסומן",
+            loading: "Loading&hellip;"
         },
         mapNotes:{
-            notesUnavailable: "כן_Description unavailable_ש",
-            bookmarks: "כן_Bookmarks_ש",
-            untitledNote: "כן_Untitled_ש"
+            notesUnavailable: "תאור לא זמין",
+            bookmarks: "סימניות",
+            untitledNote: "ללא כותרת"
         },
         social: {
-            flickr: "כן_Flickr_ש",
-            flickrSettings: "כן_Flickr Settings_ש",
-            twitter: "כן_Twitter_ש",
-            twitterSettings: "כן_Twitter Settings_ש",
-            twitterUser: "כן_Twitter Account_ש",
+            flickr: "Flickr",
+            flickrSettings: "הגדרות Flickr",
+            twitter: "טוויטר",
+            twitterSettings: "הגדרות טוויטר",
+            twitterUser: "חשבון טוויטר",
             twitterSignIn: "כן_Sign in to Twitter_ש",
-            webcams: "כן_Webcams_ש",
-            instagram: "כן_Instagram_ש",
-            moreInfo: "כן_More information_ש",
-            searchTerms: "כן_Search Terms_ש",
-            search: "כן_Search_ש",
-            flSettingsInfo: "כן_Return results matching a photo's title, description or tags._ש",
-            twSettingsInfo: "כן_See whatâ€™s happening right now._ש",
-            advancedOperators: "כן_Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches._ש",
+            webcams: "מצלמות רשת",
+            instagram: "אינסטגרם",
+            moreInfo: "עוד מידע",
+            searchTerms: "תנאי חיפוש",
+            search: "חפש",
+            flSettingsInfo: "התוצאות מתאימות לכותרת תמונה, תאור או תגיות.",
+            twSettingsInfo: "ראה מה קורה כעת.",
+            advancedOperators: "טיפ: השתמש <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">במנועים</a> ליצירת חיפושים מתקדמים.",
             tweetsFilteredBy: "כן_tweets filtered by:_ש",
             photosFilteredBy: "כן_photos filtered by:_ש",
             twitterAccountStatus: "כן_Enable the Twitter layer to see your status._ש"
@@ -36,15 +36,15 @@
         general: {
             map: "כן_Map_ש",
             mapInfo: "כן_Map Information_ש",
-            legend: "כן_Legend_ש",
+            legend: "מקרא",
             featured: "כן_Featured Locations_ש",
             layers: "כן_Layers_ש",
-            share: "כן_Share_ש",
-            about: "כן_About_ש",
-            noSearchResult: "כן_No result found_ש",
-            switchAccount: "כן_Switch account_ש",
-            signIn: "כן_Sign in_ש",
-            settings: "כן_Settings_ש"
+            share: "שיתוף",
+            about: "אודות",
+            noSearchResult: "לא נמצאו תוצאות",
+            switchAccount: "החלף חשבון",
+            signIn: "התחבר",
+            settings: "הגדרות"
         }
     })
 

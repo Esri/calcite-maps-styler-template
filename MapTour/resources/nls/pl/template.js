@@ -327,7 +327,7 @@
 				header: "Wprowadź adres e-mail lub identyfikator powiązany z Twoim kontem Picasa bądź Google+.",
 				userInputLbl: "Wprowadź adres e-mail lub identyfikator",
 				signInMsg2: "Nie odnaleziono konta",
-				signInMsg3: "ł_No public album_ą",
+				signInMsg3: "Brak albumów publicznych",
 				howToFind: "Jak znaleźć identyfikator konta Picasa lub Google+",
 				howToFind2: "Skopiuj cyfry znajdujące się między pierwszym a drugim znakiem „/” dowolnej strony Picasa lub G+"
 			},
@@ -526,9 +526,9 @@
 				shareA2div2: "Kiedy właściciel aplikacji zaloguje się w serwisie ArcGIS.com, aplikacja zawiera przycisk do otwierania interaktywnego kreatora:",				
 				shareQ3: "Gdzie są przechowywane dane?",
 				shareA3: "Konfiguracja wycieczki jest przechowywana w <a href='%LINK1%' target='_blank'>tym elemencie mapy internetowej</a> i <a href='%LINK2%' target='_blank'>tym elemencie aplikacji internetowej</a>. Jeżeli użyto importu danych z serwisu Flickr, Picasa, Facebook lub YouTube, zdjęcia i filmy wideo są tam nadal przechowywane i nie są duplikowane w serwisie ArcGIS Online.",
-				shareWarning: "ł_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ą",
-				shareWarningWith1: "ł_publicly_ą",
-				shareWarningWith2: "ł_publicly and with the Organization_ą"
+				shareWarning: "Udostępnianie %WITH% zostało wyłączone, ponieważ nie jesteś właścicielem <a href='%LINK%' target='_blank'>mapy internetowej</a>.",
+				shareWarningWith1: "publicznie",
+				shareWarningWith2: "publicznie i instytucji"
 			}
         }
     })

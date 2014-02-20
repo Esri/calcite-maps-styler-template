@@ -1,34 +1,34 @@
 ﻿define(
      ({
         map: {
-            error: "بيت_Unable to create map_لاحقة"
+            error: "يتعذر إنشاء الخريطة"
         },
         report: {
-            flag: "بيت_Flag as innapropriate_لاحقة",
-            error: "بيت_Error_لاحقة",
-            success: "بيت_Flagged_لاحقة",
-            loading: "بيت_Loading&hellip;_لاحقة"
+            flag: "العلامة غَيْرُ مُوَافِقة",
+            error: "خطأ",
+            success: "مُعلَّم",
+            loading: "تحميل&hellip"
         },
         mapNotes:{
-            notesUnavailable: "بيت_Description unavailable_لاحقة",
-            bookmarks: "بيت_Bookmarks_لاحقة",
-            untitledNote: "بيت_Untitled_لاحقة"
+            notesUnavailable: "الوصف غير متاح",
+            bookmarks: "إشارات مرجعية",
+            untitledNote: "بدون عنوان"
         },
         social: {
-            flickr: "بيت_Flickr_لاحقة",
-            flickrSettings: "بيت_Flickr Settings_لاحقة",
-            twitter: "بيت_Twitter_لاحقة",
-            twitterSettings: "بيت_Twitter Settings_لاحقة",
-            twitterUser: "بيت_Twitter Account_لاحقة",
+            flickr: "Flickr",
+            flickrSettings: "إعدادات Flicker",
+            twitter: "Twitter",
+            twitterSettings: "إعدادات Twitter",
+            twitterUser: "حساب Twitter",
             twitterSignIn: "بيت_Sign in to Twitter_لاحقة",
-            webcams: "بيت_Webcams_لاحقة",
-            instagram: "بيت_Instagram_لاحقة",
-            moreInfo: "بيت_More information_لاحقة",
-            searchTerms: "بيت_Search Terms_لاحقة",
-            search: "بيت_Search_لاحقة",
-            flSettingsInfo: "بيت_Return results matching a photo's title, description or tags._لاحقة",
-            twSettingsInfo: "بيت_See whatâ€™s happening right now._لاحقة",
-            advancedOperators: "بيت_Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches._لاحقة",
+            webcams: "كاميرات ويب",
+            instagram: "Instagram",
+            moreInfo: "المزيد من المعلومات",
+            searchTerms: "مصطلحات البحث",
+            search: "بحث",
+            flSettingsInfo: "إرجاع النتائج المتطابقة مع عنوان الصورة أو الوصف أو العلامات.",
+            twSettingsInfo: "رؤية ما يحدث€™الآن.",
+            advancedOperators: "تلميح:استخدم<a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">عوامل التشغيل</a>لإنشاء عمليات البحث المتقدمة.",
             tweetsFilteredBy: "بيت_tweets filtered by:_لاحقة",
             photosFilteredBy: "بيت_photos filtered by:_لاحقة",
             twitterAccountStatus: "بيت_Enable the Twitter layer to see your status._لاحقة"
@@ -36,15 +36,15 @@
         general: {
             map: "بيت_Map_لاحقة",
             mapInfo: "بيت_Map Information_لاحقة",
-            legend: "بيت_Legend_لاحقة",
+            legend: "مفتاح الخريطة",
             featured: "بيت_Featured Locations_لاحقة",
             layers: "بيت_Layers_لاحقة",
-            share: "بيت_Share_لاحقة",
-            about: "بيت_About_لاحقة",
-            noSearchResult: "بيت_No result found_لاحقة",
-            switchAccount: "بيت_Switch account_لاحقة",
-            signIn: "بيت_Sign in_لاحقة",
-            settings: "بيت_Settings_لاحقة"
+            share: "مشاركة",
+            about: "نبذة عن",
+            noSearchResult: "يتعذر إيجاد النتائج",
+            switchAccount: "حساب التبديل",
+            signIn: "تسجيل الدخول",
+            settings: "الإعدادات"
         }
     })
 
