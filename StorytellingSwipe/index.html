@@ -45,7 +45,7 @@
 				// Choose to swipe between two webmaps or between the layer of a single webmap
 				// can be overrided by using webmap= in URL
 				// e.g: ["WEBMAP_ID"] OR ["WEBMAP_ID_1", "WEBMAP_ID_2"]
-				webmaps: [/*"62702544d70648e593bc05d65180fd64"*/],
+				webmaps: ["d53d2591ebfc4b78b0befa6d2e270d46"/*"62702544d70648e593bc05d65180fd64"*/],
 				// If using one webmap, enter the layer index of the layer to be revealed. 
 				// Index is defined by the web map table of contents (0 is the top layer).
 				layerIndex: 1, 
@@ -125,7 +125,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.3-beta10';
+			var version = '1.3-beta11';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -790,7 +790,7 @@
 			}
 			
 			if( isProduction ) {
-				if( getUrlVar('edit')|| getUrlVar('fromScratch') || getUrlVar('fromscratch') )
+				if( getUrlVar('edit')|| getUrlVar('fromScratch') || getUrlVar('fromscratch') || getUrlVar('fromGallery') || getUrlVar('fromgallery'))
 					loadJS('app/swipe-builder-min.js');
 				else
 					loadJS('app/swipe-viewer-min.js');
