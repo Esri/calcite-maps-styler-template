@@ -72,6 +72,7 @@ define([
             //config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
             // any url parameters and any application specific configuration information.
+            //console.log(config);
             this.config = config;
             ready(lang.hitch(this, function() {
                 this.initUI();
@@ -311,7 +312,7 @@ define([
             var i = 0;
             var sumType = "";
             if (str.length > 0) {
-                if (this.config.sumFields != "") {
+                if (this.config.sumFields && this.config.sumFields.length >0) {
                     sumType = "SUM: ";
                     if (this.config.hideSummaryType)
                         sumType = "";
@@ -321,7 +322,7 @@ define([
                     }
                 }
                     
-                if (this.config.avgFields != "") {
+                if (this.config.avgFields && this.config.avgFields.length>0) {
                     sumType ="AVG: ";
                     if (this.config.hideSummaryType)
                         sumType = "";
@@ -331,7 +332,7 @@ define([
                     }
                 }
                     
-                if (this.config.minFields != "") {
+                if (this.config.minFields && this.config.minFields.length>0) {
                     sumType ="MIN: ";
                     if (this.config.hideSummaryType)
                         sumType = "";
@@ -341,7 +342,7 @@ define([
                     }
                 }
                     
-                if (this.config.maxFields != "") {
+                if (this.config.maxFields && this.config.maxFields.length>0) {
                     sumType = "MAX: ";
                     if (this.config.hideSummaryType)
                         sumType = "";
@@ -370,6 +371,7 @@ define([
             this.fields = fields;
             this.aliases = aliases;
             this.fieldCount = fields.length;
+            
         },
         
         // get field alias
