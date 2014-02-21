@@ -1,15 +1,13 @@
-change report #24 at 02/19/2014 12:30:18.92
+change report #26 at 02/21/2014 12:43:35.30
 -
 for git branch
-stricter_field_requirements
+popup_refinement
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
-M  apps2/ConstituentEngagement.json
-M  apps2/FindEditFilter.json
-M  apps2/Finder.json
-M  apps2/MyGovernmentServices.json
-M  apps2/ParcelViewer.json
-M  js2/lgonlineCommand.js
-M  nls/en/template.js
+ M apps2/FindEditFilter.json
+ M js2/lgonlineBase.js
+ M js2/lgonlineCommand.js
+ M js2/lgonlineEditing.js
+ M js2/lgonlineMap.js

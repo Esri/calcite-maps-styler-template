@@ -165,7 +165,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit a8d993e2cca1f7ac 2014-02-19 12:32:09 -0800"
+                "commit 0405a9c6a65dc746 2014-02-21 12:47:10 -0800"
             ]
         }
     }, {
@@ -228,8 +228,7 @@
             "rootId": "map",
             "rootClass": "mapContainer",
             "parentDiv": "contentFrame",
-            "fill": true,
-            "ignorePopups": true
+            "fill": true
         }
     }, {
         "classname": "js.LGSearchFeatureLayerMultiplexer",
@@ -269,7 +268,7 @@
             "dependencyId": "map",
             "lineHiliteColor": "#0000ff",
             "fillHiliteColor": [0, 0, 255, 0.1],
-            "showFeaturePopup": false
+            "showFeaturePopup": true
         }
     }, {
         "classname": "js.LGTitleBar",
