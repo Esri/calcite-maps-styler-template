@@ -60,10 +60,10 @@ define([
                 });
                 // event for each layer
                 this._noteLayerEvents();
-                // update note layer title
-                this._setNoteLayerTitle();
                 // place items to click
                 this._placeNoteItems();
+                // update note layer title
+                this._setNoteLayerTitle();
             },
             _noteLayerEvent: function(layer){
                 // on layer toggle
@@ -84,13 +84,20 @@ define([
                 }
             },
             _setNoteLayerTitle: function(){
+                var node;
                 // set title of header to layer title
-                if(this._notesLayerTitle){
-                    var node = dom.byId('map_notes_title');
+                if(this._notesLayerTitle && this.noteGraphics && this.noteGraphics.length){
+                    node = dom.byId('map_notes_title');
                     if(node){
                         node.innerHTML = this._notesLayerTitle;
                     }
-                }  
+                }
+                else{
+                    node = dom.byId('map_notes_section');
+                    if(node){
+                        node.innerHTML = '';
+                    }
+                }
             },
             _placeNoteItems: function(){
                 this.noteNodes = [];
