@@ -44,7 +44,7 @@
             "label": "Icon URL",
             "fieldName": "titleBar.iconUrl",
             "type": "string",
-            "tooltip": "Icon in top left corner of application. Icon dimensions should be XXX x XXX."
+            "tooltip": "Icon in top left corner of application. Icon should be 48px high."
         }, {
             "label": "Color Scheme:",
             "fieldName": "colorizer.theme",
@@ -110,24 +110,24 @@
             "label": "Hint",
             "fieldName": "searchBox.hint",
             "type": "string",
-            "tooltip": "Search title (e.g. Find a Pre-Incident Plan, Find a Park)"
+            "tooltip": "Search hint (e.g. Find a Pre-Incident Plan, Find a Park)"
         }, {
             "label": "Find Layers",
             "fieldName": "featureSearcher.searchLayerName",
             "type": "string",
-            "tooltip": "Comma-separated list of map layer names. Only values in these layers will be searched.",
+            "tooltip": "Comma-separated list of map layer names. Only values in these layers will be searched. One or many layers may be specified.",
             "placeholder": "Layer 1, Layer 2, …"
         }, {
             "label": "Find Fields",
             "fieldName": "featureSearcher.searchFields",
             "type": "string",
-            "tooltip": "Comma-separated list of Find Layer field names. Only values in these fields will be searched.",
+            "tooltip": "Comma-separated list of Find Layer field names. Only values in these fields will be searched. One or many fields may be specified.",
             "placeholder": "FIELD1, FIELD2, …"
         }, {
             "label": "Result Display Fields",
             "fieldName": "featureSearcher.displayFields",
             "type": "string",
-            "tooltip": "Comma-separated list of Find Layer field names. Values in these fields will be returned in the Find results list",
+            "tooltip": "Comma-separated list of Find Layer field names. Values in these fields will be returned in the Find results list. If the layer in which a result was found does not contain a field in this list, the Search Field value is returned.",
             "placeholder": "FIELD1, FIELD2, …"
         }]
     }, {
@@ -136,7 +136,7 @@
             "label": "Hint",
             "fieldName": "filter.hint1",
             "type": "string",
-            "tooltip": "Filter title ( e.g., Floor Number, Plan ID)"
+            "tooltip": "Filter hint ( e.g., Floor Number, Plan ID)"
         }, {
             "label": "Filter Field",
             "fieldName": "filter.fieldname1",
@@ -165,7 +165,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 996bfa4a6ae1c11d 2014-02-21 13:56:13 -0800"
+                "commit bff75008d4d3bf6f 2014-02-21 14:09:15 -0800"
             ]
         }
     }, {
@@ -267,8 +267,7 @@
             "parentDiv": "contentFrame",
             "dependencyId": "map",
             "lineHiliteColor": "#0000ff",
-            "fillHiliteColor": [0, 0, 255, 0.1],
-            "showFeaturePopup": true
+            "fillHiliteColor": [0, 0, 255, 0.1]
         }
     }, {
         "classname": "js.LGTitleBar",
@@ -356,7 +355,8 @@
             "horizOffset": -2,
             "vertOffset": [2, -2],
             "trigger": "basemap",
-            "dependencyId": "map"
+            "dependencyId": "map",
+            "webmapThumbnail": "images/webmap.png"
         }
     }, {
         "classname": "js.LGMapBasedMenuBox",

@@ -1,9 +1,10 @@
-change report #27 at 02/21/2014 13:54:33.96
+change report #28 at 02/21/2014 14:08:31.50
 -
 for git branch
-popup_refinement
+develop
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M js2/lgonlineEditing.js
+ M apps2/FindEditFilter.json
+ M apps2/Finder.json
