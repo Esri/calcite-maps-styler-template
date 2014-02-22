@@ -1,15 +1,10 @@
-change report #24 at 02/19/2014 12:30:18.92
+change report #28 at 02/21/2014 14:08:31.50
 -
 for git branch
-stricter_field_requirements
+develop
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
-M  apps2/ConstituentEngagement.json
-M  apps2/FindEditFilter.json
-M  apps2/Finder.json
-M  apps2/MyGovernmentServices.json
-M  apps2/ParcelViewer.json
-M  js2/lgonlineCommand.js
-M  nls/en/template.js
+ M apps2/FindEditFilter.json
+ M apps2/Finder.json
