@@ -201,14 +201,17 @@ define(
                   //get units if they aren't set in index.html
                     if(this.config.units === null){ //if units isn't null its been set in the defaults so template is downloaded. 
            
-                      if(response.user && response.user.units){ //user defined units
-                        this.config.units = response.user.units;
-                      }
-                      else if(response.units){ //org level units 
-                          this.config.units = response.units;
-                      }else{ //default to english 
-                          this.config.units = "english";
-                      }         
+                        this.config.units = "metric"
+                        if (response.user && response.user.units) { //user defined units
+                            this.config.units = response.user.units;
+                        } else if (response.units) { //org level units 
+                            this.config.units = response.units;
+                        } else if ((response.user && response.user.region && response.user.region === "US") || (response.user && !response.user.region && response.region === "US") || (response.user && !response.user.region && !response.region) || (!response.user && response.ipCntryCode === "US") || (!response.user && !response.ipCntryCode && kernel.locale === "en-us")){
+                            // use feet/miles only for the US and if nothing is set for a user
+                            this.config.units = "english";
+                        }
+
+                        
                     }
                             
                   //look for helper services and if they exist set them
