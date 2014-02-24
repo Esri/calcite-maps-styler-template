@@ -125,7 +125,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.3-beta13';
+			var version = '1.3-beta14';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -790,7 +790,7 @@
 			}
 			
 			if( isProduction ) {
-				if( getUrlVar('edit')|| getUrlVar('fromScratch') || getUrlVar('fromscratch') || getUrlVar('fromGallery') || getUrlVar('fromgallery'))
+				if( getUrlVar('edit')|| getUrlVar('fromScratch') || getUrlVar('fromscratch'))
 					loadJS('app/swipe-builder-min.js');
 				else
 					loadJS('app/swipe-viewer-min.js');
@@ -858,7 +858,7 @@
 						 	require(["storymaps/core/Core", "storymaps/swipe/core/MainView", "storymaps/utils/Helper"], function(Core, MainView, Helper){
 						 		var urlParams = Helper.getUrlParams();
 
-						 		var isInBuilderMode = urlParams.edit != null || urlParams.fromScratch != null || urlParams.fromscratch != null || urlParams.fromGallery != null || urlParams.fromgallery != null;
+						 		var isInBuilderMode = urlParams.edit != null || urlParams.fromScratch != null || urlParams.fromscratch != null;
 
 						 		if (isInBuilderMode) {
 						 			require(["storymaps/builder/Builder", "storymaps/swipe/builder/BuilderView"], function(Builder, BuilderView) {
