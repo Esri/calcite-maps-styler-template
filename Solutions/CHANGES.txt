@@ -1,10 +1,9 @@
-change report #28 at 02/21/2014 14:08:31.50
+change report #29 at 02/22/2014 20:09:27.80
 -
 for git branch
-develop
+enhance_filter_field_error_msging
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M apps2/FindEditFilter.json
- M apps2/Finder.json
+ M js2/lgonlineCommand.js
