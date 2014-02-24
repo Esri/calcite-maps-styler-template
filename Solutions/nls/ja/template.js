@@ -43,7 +43,7 @@ define(
             author: "作成者"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "検索:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "須_Find:_鷗",  // Appears before a search text field in dialog box for searching for a feature
             markup: "描画",  // Appears before a set of tools for drawing on the map
             mapLayers: "マップ レイヤ:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "検索レイヤ フィールド:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "このサイトには、現在の位置を取得する権限がありません。",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "ブラウザが現在の位置を取得できませんでした",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "ブラウザが現在の位置を適切な時間内に取得できませんでした",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "この検索レイヤは、マップ内に見つかりませんでした。",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
-            searchFieldMissing: "このフィールドは、マップ検索レイヤ内に見つかりませんでした。",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "これらのフィールドのいずれも、マップ検索レイヤ内に見つかりませんでした。",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            searchLayerMissing: "須_This find layer was not found in the map_鷗",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "須_This field was not found in the map find layer_鷗",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "須_None of these fields was found in the map find layer_鷗",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "このフィールドはマップ レイヤ内に存在しません",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "コンテンツが送信されました。",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "アプリケーションの構成にアクセスできません",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

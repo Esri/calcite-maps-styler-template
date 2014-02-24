@@ -27,8 +27,8 @@
             searchTerms: "Suchbegriffe",
             search: "Suchen",
             flSettingsInfo: "Ergebnisse zurückgeben, die mit dem Titel, der Beschreibung oder den Tags eines Fotos übereinstimmen.",
-            twSettingsInfo: "Anzeigen, was jetzt gerade passiert.",
-            advancedOperators: "Tipp: Benutze <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">Operatoren</a> zur erweiterten Suche.",
+            twSettingsInfo: "Sehen Sie, was jetzt gerade passiert.",
+            advancedOperators: "Tipp: Verwenden Sie <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">Operatoren</a> zur erweiterten Suche.",
             tweetsFilteredBy: "ä_tweets filtered by:_Ü",
             photosFilteredBy: "ä_photos filtered by:_Ü",
             twitterAccountStatus: "ä_Enable the Twitter layer to see your status._Ü"

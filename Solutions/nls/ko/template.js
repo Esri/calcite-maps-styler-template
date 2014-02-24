@@ -43,7 +43,7 @@ define(
             author: "작성자"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "검색:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "한_Find:_빠",  // Appears before a search text field in dialog box for searching for a feature
             markup: "그리기",  // Appears before a set of tools for drawing on the map
             mapLayers: "맵 레이어:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "검색 레이어 필드:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "이 사이트에는 현재 위치를 확인할 권한이 없습니다.",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "브라우저에서 현재 위치를 확인할 수 없습니다.",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "브라우저에서 적절한 시간 내에 현재 위치를 확인할 수 없습니다.",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "맵에서 이 검색 레이어를 찾을 수 없습니다.",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
-            searchFieldMissing: "맵 검색 레이어에서 이 필드를 찾을 수 없습니다.",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "맵 검색 레이어에서 해당 필드를 찾을 수 없습니다.",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            searchLayerMissing: "한_This find layer was not found in the map_빠",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "한_This field was not found in the map find layer_빠",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "한_None of these fields was found in the map find layer_빠",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "이 필드는 모든 맵 레이어에 존재하지 않습니다.",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "컨텐츠를 제출했습니다. 감사합니다.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "응용프로그램 구성에 접근할 수 없습니다.",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

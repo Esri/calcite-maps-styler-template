@@ -207,8 +207,8 @@
 				title: "Hilfe",
 				close: "Schließen",
 				tab1: {
-					div1: "Die Ausblenden/Fernglas-Vorlage, mit der zwei getrennte Webkarten oder zwei Layer einer einzelnen Webkarte in einer ansprechenden, benutzerfreundlichen Webanwendung verglichen werden können, die in jedem Webbrowser auf einem beliebigen Gerät, einschließlich Smartphones und Tablets, verwendet werden kann.",
-					div2: "Zusätzliche Informationen zur Ausblenden/Fernglas-Vorlage, darunter von Benutzern erstellte Beispiele, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> finden Sie auf der Story Maps-Website</a>. Sie können uns unter <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a> auch auf Twitter folgen.",
+					div1: "Mit der Vorlage Ausblenden/Fernglas können zwei getrennte Webkarten oder zwei Layer einer einzelnen Webkarte in einer ansprechenden, benutzerfreundlichen Webanwendung verglichen werden. Sie kann in jedem Webbrowser auf einem beliebigen Gerät, einschließlich Smartphones und Tablets verwendet werden.",
+					div2: "Zusätzliche Informationen zur Vorlage Ausblenden/Fernglas, darunter von Benutzern erstellte Beispiele, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> finden Sie auf der Story Maps-Website</a>. Sie können uns unter <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a> auch auf Twitter folgen.",
 					div3: "Wir freuen uns darauf, von Ihnen zu hören! Ob Sie eine Frage haben, ein neues Feature anfordern möchten oder einen Fehler gefunden haben, besuchen Sie das <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps-Benutzerforum</a>."
 				}
 			},
@@ -255,8 +255,8 @@
 				mapPickHeader: "Um zu beginnen, geben Sie eine gültige Webkarten-ID ein, oder verwenden Sie die Schaltfläche \"Suchen\", um Webkarten zu durchsuchen.",
 				launchBuilder: "Generator starten",
 				chooseWebmapLbl: "Webkarte auswählen...",
-				explain2: "Um eine Ausblenden/Fernglas-Kartenvorlage zu erstellen, wählen Sie anhand der Schaltfläche unten die vorhandene ArcGIS Online-Webkarte aus, die Sie verwenden möchten. Es ist auch möglich, die ID der Webkarte in das Feld unten einzufügen.",
-				explain3: "Wenn Sie zwei Webkarten in der Kartenvorlage verwenden möchten, werden Sie bei Auswahl dieser Option später zur Eingabe der zweiten Webkarte aufgefordert.",
+				explain2: "Um eine Story Map Ausblenden/Fernglas zu erstellen, wählen Sie anhand der Schaltfläche unten die vorhandene ArcGIS Online-Webkarte aus, die Sie verwenden möchten. Es ist auch möglich, die ID der Webkarte in das Feld unten einzufügen.",
+				explain3: "Wenn Sie zwei Webkarten in der Story Map verwenden möchten, werden Sie bei Auswahl dieser Option später zur Eingabe der zweiten Webkarte aufgefordert.",
 				webmapPlaceholder: "Webkarten-ID eingeben..."
 			}
 		},

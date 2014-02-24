@@ -43,7 +43,7 @@ define(
             author: "المؤلف"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "بحث:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "بيت_Find:_لاحقة",  // Appears before a search text field in dialog box for searching for a feature
             markup: "رسم",  // Appears before a set of tools for drawing on the map
             mapLayers: "طبقات الخريطة:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "حقول طبقة البحث:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "لا يحتوي الموقع على أذن للحصول على الموقع الحالي",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "لم يتمكن المتصفح للحصول على الموقع الحالي",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "لم يتمكن المتصفح من الحصول على الموقع الحالي داخل الحالة في وقتها",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "لم يتم العثور على طبقة البحث في الخريطة",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
-            searchFieldMissing: "لم يتم العثور على هذا الحقل في طبقة بحث الخريطة",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "لم يتم العثور على تلك الحقول في طبقة البحث عن خريطة",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            searchLayerMissing: "بيت_This find layer was not found in the map_لاحقة",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "بيت_This field was not found in the map find layer_لاحقة",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "بيت_None of these fields was found in the map find layer_لاحقة",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "هذا الحقل غير موجود في أي من طبقات الخريطة",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "تم إرسال المحتوى. شكرًا لك.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "يتعذر الوصول إلى تكوين التطبيق",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

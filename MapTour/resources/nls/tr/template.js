@@ -199,7 +199,7 @@
 				notJpg: "Yüklenecek jpeg uzantılı fotoğraf seçin",
 				errorNoPhoto: "Yüklenecek bir görüntü seçin",
 				errorNoThumbnail: "Yüklenecek bir küçük resim seçin",
-				errorInvalidPicUrl: "Geçerli bir resim girin. (http(s):// ile başlamalı, jpg, png, gif veya bmp ile bitmelidir.) Bu kuralı geçersiz kılmak için URL\'yi \'#isImage\' ile bitirebilirsiniz.",
+				errorInvalidPicUrl: "Geçerli resim girin. (http(s):// ile başlamalı, jpg, png, gif veya bmp ile bitmelidir.) Bu kuralı geçersiz kılmak için URL\'yi \'#isImage\' ile bitirebilirsiniz.",
 				errorInvalidThumbUrl: "Geçerli bir küçük resim girin. (http(s):// ile başlar, jpg, png, gif veya bmp ile biter.)",
 				errorInvalidVideoUrl: "Geçerli bir video URL\'si girin (http(s):// ile başlar)",
 				errorNoName: "Bu tur noktası için ad girin",
