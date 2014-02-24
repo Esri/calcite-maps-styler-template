@@ -43,7 +43,7 @@ define(
             author: "作者"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "搜索:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "试_Find:_验",  // Appears before a search text field in dialog box for searching for a feature
             markup: "绘图",  // Appears before a set of tools for drawing on the map
             mapLayers: "地图图层:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "搜索图层字段:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "该网站无权获取当前位置",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "浏览器无法获取当前位置",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "浏览器无法及时获取当前位置",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "在地图中未找到此搜索图层",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
-            searchFieldMissing: "在地图搜索图层中未找到此字段",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "在地图搜索图层中未找到这些字段",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            searchLayerMissing: "试_This find layer was not found in the map_验",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "试_This field was not found in the map find layer_验",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "试_None of these fields was found in the map find layer_验",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "此字段不存在于任何地图图层中",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "您的内容已提交。谢谢。",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "无法访问应用程序的配置",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

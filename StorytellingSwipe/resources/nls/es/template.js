@@ -133,7 +133,7 @@
 				settingsTabLayout: "Cambiar estilo",
 				settingsLayoutExplain: "Elige un estilo para la comparativa de mapas.",
 				settingsLayoutSwipe: "Barra vertical",
-				settingsLayoutSpyGlass: "Catalejo",
+				settingsLayoutSpyGlass: "Lupa",
 				settingsLayoutSelected: "Diseño seleccionado",
 				settingsLayoutSelect: "Selecciona este diseño",
 				settingsSaveConfirm: "Algunos de tus cambios requieren que guardes y vuelvas a cargar la aplicación"
@@ -142,18 +142,18 @@
 				settingsTabDataModel: "Tipo de comparación",
 				settingsDataModelExplainSwipe: "¿Qué quieres que comparen los usuarios?",
 				settingsDataModelExplainSwipe2: "",
-				settingsDataModelExplainSpyGlass: "Elige la capa o el mapa Web que aparecerá en el catalejo.",
+				settingsDataModelExplainSpyGlass: "Elige la capa o el mapa Web que aparecerá en la lupa.",
 				settingsDataModelOneMap: "Una capa en un mapa web",
 				settingsDataModel1Explain: "Selecciona la capa que quieras comparar",
 				settingsDataModel1Warning: "Si la capa está oculta por capas superiores, la comparativa de mapas no tendrá ningún efecto.",
-				settingsDataModel1SpyGlassExplain: "Selecciona la capa que aparecerá en el catalejo.",
+				settingsDataModel1SpyGlassExplain: "Selecciona la capa que aparecerá en la lupa.",
 				settingsDataModelTwoMaps: "Dos mapas Web",
 				settingsDataModelLayerIds: "ID de capa de mapa Web",
 				settingsDataModelSelected: "Tipo seleccionado",
 				settingsDataModelWebmapSwipeId1: "ID del mapa Web derecho",
 				settingsDataModelWebmapSwipeId2: "ID del mapa Web izquierdo",
 				settingsDataModelWebmapGlassId1: "ID del mapa Web principal",
-				settingsDataModelWebmapGlassId2: "ID del mapa Web de catalejo",
+				settingsDataModelWebmapGlassId2: "ID del mapa Web de la lupa",
 				settingsDataModelSelect: "Selecciona este tipo",
 				settingsDataModel2Explain: "Comparar con otro mapa Web.",
 				settingsDataModel2SpyGlassExplain: "Deja al descubierto otro mapa Web.",
@@ -186,12 +186,12 @@
 				settingsSwipePopupSwipe1: "Mapa izquierdo",
 				settingsSwipePopupSwipe2: "Mapa derecho",
 				settingsSwipePopupGlass1: "Mapa principal",
-				settingsSwipePopupGlass2: "Mapa de catalejo",
+				settingsSwipePopupGlass2: "Mapa de la lupa",
 				settingsSwipePopupTitle: "Título del encabezado",
 				settingsSwipePopupColor: "Color del encabezado"
 			},
 			initPopup: {
-				initHeader: "Bienvenido al builder de Comparativa/Catalejo",
+				initHeader: "Bienvenido al builder de Comparativa/Lupa",
 				modalNext: "Siguiente",
 				modalPrev: "Anterior",
 				modalApply: "Abrir la aplicación"
@@ -207,8 +207,8 @@
 				title: "Ayuda",
 				close: "Cerrar",
 				tab1: {
-					div1: "La plantilla Comparativa/Catalejo se ha diseñado para comparar dos mapas web o dos capas de un mismo mapa web en una aplicación web atractiva y fácil de usar que se puede utilizar en cualquier navegador web o dispositivo, incluidos los smartphones y las tabletas.",
-					div2: "Si quieres obtener información adicional sobre la plantilla Comparativa/Catalejo, incluidos algunos ejemplos creados por los usuarios, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visita el sitio web de mapas de historias</a>. También puedes seguirnos en Twitter en <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
+					div1: "La plantilla Comparativa/Lupa se ha diseñado para comparar dos mapas web o dos capas de un mismo mapa web en una aplicación web atractiva y fácil de usar que se puede utilizar en cualquier navegador web o dispositivo, incluidos los smartphones y las tablets.",
+					div2: "Si quieres obtener información adicional sobre la plantilla Comparativa/Lupa, incluidos algunos ejemplos creados por los usuarios, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visita el sitio web de Story Maps</a>. También puedes seguirnos en Twitter en <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Nos gusta mucho tener noticias tuyas. Tanto si tienes alguna pregunta, si deseas solicitar un nueva característica o si crees que has encontrado un error, visita el <a href='http://links.esri.com/storymaps/forum' target='_blank'>foro de usuarios de Story Maps</a>."
 				}
 			},
@@ -251,11 +251,11 @@
  				shareWarningWith2: "públicamente y con la organización"
 			},
 			directCreation: {
-				header: "Bienvenido al builder de Comparativa/Catalejo",
+				header: "Bienvenido al builder de Comparativa/Lupa",
 				mapPickHeader: "Para empezar, escribe un Id. de mapa web válido o usa el botón de búsqueda para examinar mapas web.",
 				launchBuilder: "Iniciar Builder",
 				chooseWebmapLbl: "Elegir mapa web...",
-				explain2: "Si vas a crear un mapa de historia de Comparativa o Catalejo, usa el botón siguiente para elegir el mapa web de ArcGIS Online que deseas utilizar. Si lo prefieres, puedes pegar el Id. del mapa web en el campo siguiente.",
+				explain2: "Si vas a crear un mapa de historia de Comparativa o Lupa, usa el botón siguiente para elegir el mapa web de ArcGIS Online que deseas utilizar. Si lo prefieres, puedes pegar el Id. del mapa web en el campo siguiente.",
 				explain3: "Si deseas usar dos mapas web en tu mapa de historia, se te pedirá el segundo mapa web más adelante cuando elijas esa opción.",
 				webmapPlaceholder: "Especificar un Id. de mapa web..."
 			}

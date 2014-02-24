@@ -43,7 +43,7 @@ define(
             author: "forfatter"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "Søg:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "ø_Find:_å",  // Appears before a search text field in dialog box for searching for a feature
             markup: "Tegn",  // Appears before a set of tools for drawing on the map
             mapLayers: "Kortlag:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "Søg i lag-felter:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "Dette sted har ikke rettigheder til at hente den aktuelle position",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Browseren kunne ikke hente den aktuelle position",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Browseren kunne ikke hente den aktuelle position i tide",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "Dette søgelag blev ikke fundet på kortet",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
-            searchFieldMissing: "Dette felt blev ikke fundet i kortets søgelag",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "Ingen af disse felter blev fundet i kortsøgelaget",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            searchLayerMissing: "ø_This find layer was not found in the map_å",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "ø_This field was not found in the map find layer_å",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "ø_None of these fields was found in the map find layer_å",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "Dette felt findes ikke i nogen af kortlagene",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Dit indhold er sendt. Tak.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Kunne ikke få adgang til applikationens konfiguration",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

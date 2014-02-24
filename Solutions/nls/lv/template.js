@@ -43,7 +43,7 @@ define(
             author: "autors"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "Meklēt:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "ķ_Find:_ū",  // Appears before a search text field in dialog box for searching for a feature
             markup: "Zīmēt",  // Appears before a set of tools for drawing on the map
             mapLayers: "Kartes slāņi:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "Meklēt slāņa laukus:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "Šai vietnei nav atļaujas, lai darbotos pašreizējā izvietojumā",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Pārlūks nevarēja iegūt pašreizējo izvietojumu",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Pārlūks nevarēja savlaicīgi iegūt pašreizējo izvietojumu",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "Meklētais slānis kartē netika atrasts",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
-            searchFieldMissing: "Lauks netika atrasts meklētajā kartes slānī",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "Neviens no šiem laukiem kartes meklēšanas slānī nav atrasts",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            searchLayerMissing: "ķ_This find layer was not found in the map_ū",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "ķ_This field was not found in the map find layer_ū",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "ķ_None of these fields was found in the map find layer_ū",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "Šis lauks nepastāv nevienā no kartes slāņiem",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Jūsu saturs ir iesniegts. Paldies!",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Nevar piekļūt lietotnes konfigurācijai",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

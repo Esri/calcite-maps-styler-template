@@ -84,15 +84,6 @@
             "type": "webmap",
             "tooltip": "Web map displayed in the application"
         }, {
-            "label": "Zoom Level",
-            "fieldName": "highlighter.highlightZoomLevel",
-            "type": "number",
-            "constraints": {
-                "min": 0,
-                "places": 0
-            },
-            "tooltip": "Map zoom level for viewing selected features"
-        }, {
             "label": "Alternate Basemap Group",
             "fieldName": "basemapBox.basemapgroupTitle",
             "type": "string",
@@ -129,6 +120,15 @@
             "type": "string",
             "tooltip": "Comma-separated list of Find Layer field names. Values in these fields will be returned in the Find results list. If the layer in which a result was found does not contain a field in this list, the Search Field value is returned.",
             "placeholder": "FIELD1, FIELD2, …"
+        }, {
+            "label": "Zoom Level",
+            "fieldName": "highlighter.highlightZoomLevel",
+            "type": "number",
+            "constraints": {
+                "min": 0,
+                "places": 0
+            },
+            "tooltip": "Map zoom level for viewing selected features"
         }]
     }, {
         "category": "<b>Filter & Edit Settings</b>",
@@ -165,7 +165,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit bff75008d4d3bf6f 2014-02-21 14:09:15 -0800"
+                "commit a702b25a64693db2 2014-02-24 12:53:43 -0800"
             ]
         }
     }, {

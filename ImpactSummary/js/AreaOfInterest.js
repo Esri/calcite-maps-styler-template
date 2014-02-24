@@ -164,7 +164,7 @@ define([
                                 // each renderer nodes
                                 for (i = 0; i < this._rendererNodes.length; i++) {
                                     // value matches
-                                    if (this._rendererNodes[i].value === value) {
+                                    if (this._rendererNodes[i].value.toString() === value.toString()) {
                                         // set selected
                                         domClass.add(this._rendererNodes[i].node, this.areaCSS.rendererSelected);
                                         break;
@@ -200,7 +200,6 @@ define([
                         layer = obj.layers[i];
                         if (layer.id === obj.id) {
                             mapLayer = obj.map.getLayer(layer.id);
-                            console.log(mapLayer);
                             if(mapLayer.arcgisProps && mapLayer.arcgisProps.title){
                                 this._impactAreaTitle = mapLayer.arcgisProps.title;   
                             }
@@ -214,8 +213,10 @@ define([
             _queryGreatestFeature: function () {
                 // features query
                 var q = new Query();
-                q.returnGeometry = false;
+                q.returnGeometry = true;
                 q.where = '1=1';
+                q.num = 1;
+                q.start = 0;
                 if(this._aoiOutFields){
                     q.outFields = this._aoiOutFields;
                 }

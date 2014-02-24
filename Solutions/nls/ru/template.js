@@ -43,7 +43,7 @@ define(
             author: "автор"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "Поиск:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Ж_Find:_Я",  // Appears before a search text field in dialog box for searching for a feature
             markup: "Рисование",  // Appears before a set of tools for drawing on the map
             mapLayers: "Слои карты:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "Поля слоя поиска:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "Этот сайт не имеет разрешения для получения текущего местоположения",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Браузер не смог получить текущее местоположение",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Браузер не смог вовремя получить текущее местоположение",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "Этот слой поиска не был найден на карте",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
-            searchFieldMissing: "Это поле не было найдено в слое поиска карты",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "Ни одно из этих полей в слое поиска не обнаружено",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            searchLayerMissing: "Ж_This find layer was not found in the map_Я",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "Ж_This field was not found in the map find layer_Я",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "Ж_None of these fields was found in the map find layer_Я",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "Данное поле не существует ни в одном из слоёв карты",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Ресурсы успешно добавлены. Спасибо.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Не удалось открыть конфигурацию приложения",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
