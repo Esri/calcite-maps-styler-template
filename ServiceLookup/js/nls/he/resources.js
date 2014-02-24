@@ -8,9 +8,9 @@
             defaultText: "הכנס את הכתובת שלך"
         },
         error: {
-            layerNotFound: "כן_Layer is not in the webmap_ש",
+            layerNotFound: "השכבה לא נימצאת ב webmap",
             fieldNotFound: "שדה לא נמצא",
-            popupNotSet: "כן_Popup not enabled for this layer_ש"
+            popupNotSet: "חלון קופץ לא אפשרי לשכבה זו."
         },
         page: {
             title: "בדיקת שירות",

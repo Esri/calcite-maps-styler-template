@@ -1,51 +1,50 @@
 ﻿define(
      ({
         map: {
-            error: "Ă_Unable to create map_ș"
+            error: "Imposibil de creat harta"
         },
         report: {
-            flag: "Ă_Flag as innapropriate_ș",
-            error: "Ă_Error_ș",
-            success: "Ă_Flagged_ș",
-            loading: "Ă_Loading&hellip;_ș"
+            flag: "Marcare drept inadecvat",
+            error: "Eroare",
+            success: "Marcat",
+            loading: "Se încarcă&hellip;"
         },
-        area:{
-            mapNotes: "Ă_Notes_ș",
-            notesUnavailable: "Ă_Description unavailable_ș",
-            bookmarks: "Ă_Bookmarks_ș",
-            untitledNote: "Ă_Untitled_ș"
-        },
-        layers: {
-            operational: "Ă_Operational_ș",
-            social: "Ă_Social_ș"
+        mapNotes:{
+            notesUnavailable: "Descriere indisponibilă",
+            bookmarks: "Semne de carte",
+            untitledNote: "Fără titlu"
         },
         social: {
-            flickr: "Ă_Flickr_ș",
-            flickrSettings: "Ă_Flickr Settings_ș",
-            twitter: "Ă_Twitter_ș",
-            twitterSettings: "Ă_Twitter Settings_ș",
-            twitterUser: "Ă_Twitter Account_ș",
-            webcams: "Ă_Webcams_ș",
-            instagram: "Ă_Instagram_ș",
-            moreInfo: "Ă_More information_ș",
-            searchTerms: "Ă_Search Terms_ș",
-            search: "Ă_Search_ș",
-            flSettingsInfo: "Ă_Return results matching a photo's title, description or tags._ș",
-            twSettingsInfo: "Ă_See whatâ€™s happening right now._ș",
-            advancedOperators: "Ă_Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches._ș",
-            tweetsFilteredBy: "Ă_Tweets filtered by:_ș",
-            photosFilteredBy: "Ă_Photos filtered by:_ș"
+            flickr: "Flickr",
+            flickrSettings: "Setări Flickr",
+            twitter: "Twitter",
+            twitterSettings: "Setări Twitter",
+            twitterUser: "Cont Twitter",
+            twitterSignIn: "Ă_Sign in to Twitter_ș",
+            webcams: "Camere web",
+            instagram: "Instagram",
+            moreInfo: "Informaţii suplimentare",
+            searchTerms: "Căutare termeni",
+            search: "Căutare",
+            flSettingsInfo: "Returnaţi rezultate care să corespundă titlului, descrierii sau etichetelor unei fotografii.",
+            twSettingsInfo: "Vedeţi ce se întâmplă în acest moment.",
+            advancedOperators: "Sfat: utilizaţi <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operatori</a> pentru a crea căutări avansate.",
+            tweetsFilteredBy: "Ă_tweets filtered by:_ș",
+            photosFilteredBy: "Ă_photos filtered by:_ș",
+            twitterAccountStatus: "Ă_Enable the Twitter layer to see your status._ș"
         },
         general: {
-            legend: "Ă_Legend_ș",
-            aoi: "Ă_Area_ș",
-            summarize: "Ă_Entire Area_ș",
-            share: "Ă_Share_ș",
-            about: "Ă_About_ș",
-            noSearchResult: "Ă_No result found_ș",
-            switchAccount: "Ă_Switch account_ș",
-            signIn: "Ă_Sign in_ș",
-            settings: "Ă_Settings_ș"
+            map: "Ă_Map_ș",
+            mapInfo: "Ă_Map Information_ș",
+            legend: "Legendă",
+            featured: "Ă_Featured Locations_ș",
+            layers: "Ă_Layers_ș",
+            share: "Partajare",
+            about: "Despre",
+            noSearchResult: "Niciun rezultat găsit",
+            switchAccount: "Comutare cont",
+            signIn: "Autentificaţi-vă",
+            settings: "Setări"
         }
     })
 

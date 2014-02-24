@@ -65,8 +65,8 @@
 				savingApplication: "שמירת אפליקציה",
 				saveSuccess: "שמירת אפליקציה בוצעה בהצלחה",
 				saveError: "שמירה נכשלה, יש לנסות שוב",
-				saveError2: "כן_Save failed due to an invalid html tag in a name or description_ש",
-				saveError3: "כן_The title can't be empty_ש",
+				saveError2: "השמירה נכשלה בשל תג HTML לא חוקי בשם או בתיאור",
+				saveError3: "הכותרת לא יכולה להיות ריקה",
 				signIn: "אנא התחבר עם חשבון ב",
 				signInTwo: "כדי לשמור את האפליקציה."
 			},
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "ראה כאן דוגמא לאלפליקציה עם סדרת ה-Swipe",
 				preview: "תצוגה מקדימה של UI",
 				settingsLocateButtonExplain: "פונקציונליות זו נתמכת ברוב המכשירים הניידים ובדפדפנים השולחניים (Internet Explorer 9).",
-				settingsLocateButton: "הפוך לפעיל את כפתור 'איתור' לדפדפנים נתמכים",
+				settingsLocateButton: "הפוך לפעיל את כפתור \'איתור\' לדפדפנים נתמכים",
 				settingsAddressSearch: "הפוך לפעיל כלי חיפוש כתובת"
 			},
 			settingsSwipePopup: {
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "צבע כותרת עליונה"
 			},
 			initPopup: {
-				initHeader: "כן_Welcome to the Swipe/Spyglass Builder_ש",
+				initHeader: "ברוך הבא ל Swipe/Spyglass Builder",
 				modalNext: "הבא",
 				modalPrev: "קודם",
 				modalApply: "פתח את האפליקציה"
@@ -208,7 +208,7 @@
 				close: "סגור",
 				tab1: {
 					div1: "תבנית ה Swipe/Spyglass  להשוואה בין שני web maps או בין שתי שכבות של web map בודד באופן, באפליקצית web קלה לשימוש בה ניתן להשתמש מכל דפדפן על כל מכשיר, כולל טלפונים חכמים וטאבלטים.",
-					div2: "כן_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ש",
+					div2: "למידע נוסף אודות תבנית Swipe/Spyglass כולל דוגמאות שנוצרו על ידי משתמשים, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> בקר באתר מפות הסיפור</a>. ניתן לעקוב גם  בטוויטר דרך <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "נשמח לשמוע ממך! בין אם יש לך שאלה, רוצה לבקש יכולת חדשה, או חושב שמצאת באג, אנא בקר ב- <a href='http://links.esri.com/storymaps/forum' target='_blank'>פורום המשתמשים של מפות סיפור</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל ArcGIS.com האפליקציה כוללת כפתור הפותח את הבונה האינטראקטיבי.",				
 				shareQ3: "היכן מאוחסן המידע?",
 				shareA3: "תצורת האפליקציה אינה שמורה בפריט  web application</a> זה.",
-				shareWarning: "כן_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ש",
- 				shareWarningWith1: "כן_publicly_ש",
- 				shareWarningWith2: "כן_publicly and with the Organization_ש"
+				shareWarning: "שיתוף עם %WITH% לא מתאפשר מכיוון שאינך הבעלים של <a href='%LINK%' target='_blank'>webmap</a>.",
+ 				shareWarningWith1: "ציבורי",
+ 				shareWarningWith2: "ציבורי וגם עם הארגון"
 			},
 			directCreation: {
 				header: "ברוך הבא ל Swipe/Spyglass Builder",
 				mapPickHeader: "כדי להתחיל, אנא בחר מזהה web map תקין, או השתמש בכפתור החיפוש כדי למצא web maps.",
 				launchBuilder: "התחל Builder",
-				chooseWebmapLbl: "כן_Choose web map..._ש",
-				explain2: "כן_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ש",
-				explain3: "כן_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ש",
-				webmapPlaceholder: "כן_Enter a web map id..._ש"
+				chooseWebmapLbl: "בחר web map...",
+				explain2: "ליצירת מפת סיפור מסוג Swipe או Spyglass, השתמש בכפתור למטה לבחירת  ArcGIS Online web map קיימת בה תרצה להשתמש. לחילופין ניתן להדביק ID של  web map לתוך השדה למטה.",
+				explain3: "אם ברצונך להשתמש בשתי  web maps במפת הסיפור שלך, תתבקש לבחור את ה-web map השנייה כאשר תבחר באפשרות הזו.",
+				webmapPlaceholder: "הכנס id של web map..."
 			}
 		},
 		configure: {

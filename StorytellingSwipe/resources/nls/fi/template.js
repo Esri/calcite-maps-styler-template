@@ -65,8 +65,8 @@
 				savingApplication: "Tallennetaan sovellusta",
 				saveSuccess: "Sovelluksen tallennus onnistui",
 				saveError: "Tallennus epäonnistui, yritä uudelleen",
-				saveError2: "Å_Save failed due to an invalid html tag in a name or description_ö",
-				saveError3: "Å_The title can't be empty_ö",
+				saveError2: "Tallennus epäonnistui nimen tai kuvauksen virheellisen HTML-tunnisteen takia",
+				saveError3: "Otsikko ei voi olla tyhjä",
 				signIn: "Kirjaudu sisään tilillä palvelussa",
 				signInTwo: "sovelluksen tallentamiseksi."
 			},
@@ -96,7 +96,7 @@
 				settingsLogoSocialExplain: "Mukauta ylätunnisteen oikean yläkulman linkki.",
 				settingsLogoSocialText: "Teksti",
 				settingsLogoSocialLink: "Linkki",
-				settingsLogoSocialDisabled: "Järjestelmänvalvoja on poistanut tämän toiminnon käytöstä."
+				settingsLogoSocialDisabled: "Pääkäyttäjä on poistanut tämän toiminnon käytöstä."
 			},
 			settingsExtent: {
 				settingsTabExtent: "Laajuus",
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Otsikon väri"
 			},
 			initPopup: {
-				initHeader: "Å_Welcome to the Swipe/Spyglass Builder_ö",
+				initHeader: "Tervetuloa käyttämään pyyhkäisyn/kiikarin luontitoimintoa",
 				modalNext: "Seuraava",
 				modalPrev: "Edellinen",
 				modalApply: "Avaa sovellus"
@@ -208,7 +208,7 @@
 				close: "Sulje",
 				tab1: {
 					div1: "Pyyhkäisy-/kiikarimallipohjan avulla voi vertailla kahta eri web-karttaa tai yhden web-kartan kahta karttatasoa kiinnostavassa ja helppokäyttöisessä web-sovelluksessa, jota voi käyttää minkä tahansa laitteen, kuten älypuhelimen tai tabletin, selaimella.",
-					div2: "Å_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ö",
+					div2: "Lisätietoja pyyhkäisy-/kiikarimallipohjasta ja muiden käyttäjien luomia esimerkkejä on saatavilla <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'>Story Maps -sivustossa</a>. Voit myös seurata meitä Twitterissä: <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Haluamme kuulla sinusta! Jos sinulla on kysymyksiä, ehdottaa uutta toimintoa tai luulet löytäneesi virheen, vieraile <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps -käyttäjäfoorumissa</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Koska olet sovelluksen omistaja, kun olet kirjautunut ArcGIS.com-sivustoon, sovelluksessa näkyy painike, jolla voita avata vuorovaikutteisen muodostusohjelman:",				
 				shareQ3: "Minne tiedot on tallennettu?",
 				shareA3: "Sovelluksen määritykset tallennetaan tähän web-sovelluskohteeseen</a>.",
-				shareWarning: "Å_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ö",
- 				shareWarningWith1: "Å_publicly_ö",
- 				shareWarningWith2: "Å_publicly and with the Organization_ö"
+				shareWarning: "Jakaminen kohteen %WITH% kanssa on poistettu käytöstä, koska et ole <a href='%LINK%' target='_blank'>Web-kartan</a> omistaja.",
+ 				shareWarningWith1: "julkisesti",
+ 				shareWarningWith2: "julkisesti ja organisaation kanssa"
 			},
 			directCreation: {
 				header: "Tervetuloa käyttämään pyyhkäisyn/kiikarin luontitoimintoa",
 				mapPickHeader: "Aloita antamalla kelvollinen web-kartan tunnus, tai selaa web-karttoja painamalla Etsi-painiketta.",
 				launchBuilder: "Käynnistä luontitoiminto",
-				chooseWebmapLbl: "Å_Choose web map..._ö",
-				explain2: "Å_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ö",
-				explain3: "Å_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ö",
-				webmapPlaceholder: "Å_Enter a web map id..._ö"
+				chooseWebmapLbl: "Valitse Web-kartta...",
+				explain2: "Voit luoda pyyhkäisy- tai kiikaritarinakartan valitsemalla olemassa olevan ArcGIS Online -Web-kartan, jota haluat käyttää, alla olevan painikkeen avulla. Voit vaihtoehtoisesti liittää Web-kartan tunnuksen alla olevaan kenttään.",
+				explain3: "Jos haluat käyttää kahta Web-karttaa tarinakartassasi, ohjelma kysyy toista Web-karttaa myöhemmin, kun valitset kyseisen vaihtoehdon.",
+				webmapPlaceholder: "Kirjoita Web-kartan tunnus..."
 			}
 		},
 		configure: {

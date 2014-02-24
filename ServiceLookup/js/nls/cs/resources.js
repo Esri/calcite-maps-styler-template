@@ -8,9 +8,9 @@
             defaultText: "Zadejte svou adresu"
         },
         error: {
-            layerNotFound: "Ř_Layer is not in the webmap_ů",
+            layerNotFound: "Vrstva není ve webové mapě",
             fieldNotFound: "Pole nenalezeno",
-            popupNotSet: "Ř_Popup not enabled for this layer_ů"
+            popupNotSet: "Vyskakovací okno není pro tuto vrstvu aktivováno"
         },
         page: {
             title: "Hledání služby",

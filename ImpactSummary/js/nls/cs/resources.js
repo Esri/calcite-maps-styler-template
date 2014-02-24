@@ -1,15 +1,18 @@
 ﻿define(
      ({
         map: {
-            error: "Ř_Unable to create map_ů"
+            error: "Nelze vytvořit mapu"
         },
         general: {
-            legend: "Ř_Legend_ů",
-            aoi: "Ř_Area_ů",
-            summarize: "Ř_Entire Area_ů",
-            share: "Ř_Share_ů",
-            about: "Ř_About_ů",
-            noSearchResult: "Ř_No result found_ů"
+            map: "Ř_Map_ů",
+            mapInfo: "Ř_Map Information_ů",
+            legend: "Legenda",
+            layers: "Ř_Layers_ů",
+            summarize: "Celá oblast",
+            share: "Sdílet",
+            about: "O aplikaci",
+            noSearchResult: "Nebyly nalezeny žádné výsledky.",
+            impactArea: "Ř_Impact Area_ů"
         }
     })
 

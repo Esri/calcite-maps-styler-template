@@ -65,8 +65,8 @@
 				savingApplication: "Gemmer applikation",
 				saveSuccess: "Applikation gemt med succes",
 				saveError: "Lagring mislykkedes, prøv igen",
-				saveError2: "ø_Save failed due to an invalid html tag in a name or description_å",
-				saveError3: "ø_The title can't be empty_å",
+				saveError2: "Lagring mislykkedes pga. en ugyldig html-kode i et navn eller beskrivelse",
+				saveError3: "Titlen kan ikke være tom",
 				signIn: "Log ind med en konto på",
 				signInTwo: "for at gemme applikationen."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Header-farve"
 			},
 			initPopup: {
-				initHeader: "ø_Welcome to the Swipe/Spyglass Builder_å",
+				initHeader: "Velkommen til Swipe/Kikkert-builder",
 				modalNext: "Næste",
 				modalPrev: "Forrige",
 				modalApply: "Åbn app\'en"
@@ -208,7 +208,7 @@
 				close: "Luk",
 				tab1: {
 					div1: "Skabelonen Swipe/Kikkert er beregnet til at sammenligne to forskellige webkort eller to lag på \ét webkort i en attraktive, brugervenlig webapplikation, som kan bruges i en vilkårlig browser eller på en vilkårlig enhed, herunder smartphone og tablets.",
-					div2: "ø_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._å",
+					div2: "Yderligere oplysninger om Swipe/Kikkert-skabelonen, inkl. eksempler oprettet af brugere, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> finder du på Story Maps-webstedet</a>. Du kan også følge os på Twitter på <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Vi vil meget gerne høre fra dig! Hvad enten du har spørgsmål, ønsker at bestille et nyt objekt eller mener, at du har fundet en fejl, vil vi bede dig om at besøge <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Når du som ejer af applikationen er logget ind på ArcGIS.com, indeholder applikationen en knap, der åbner det interaktive builder-program:",				
 				shareQ3: "Hvor er dataene gemt?",
 				shareA3: "Applikationens konfiguration gemmes i dette element med webapplikationer</a>.",
-				shareWarning: "ø_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._å",
- 				shareWarningWith1: "ø_publicly_å",
- 				shareWarningWith2: "ø_publicly and with the Organization_å"
+				shareWarning: "Deling %WITH% er blevet deaktiveret, fordi du ikke er ejer af <a href='%LINK%' target='_blank'>webkortet</a>.",
+ 				shareWarningWith1: "offentligt",
+ 				shareWarningWith2: "offentligt og med organiaationen"
 			},
 			directCreation: {
 				header: "Velkommen til Swipe/Kikkert-builder",
 				mapPickHeader: "Skriv et gyldigt webkort-id for at komme i gang, eller brug søgeknappen for at gennemse webkort.",
 				launchBuilder: "Start builderen",
-				chooseWebmapLbl: "ø_Choose web map..._å",
-				explain2: "ø_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._å",
-				explain3: "ø_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._å",
-				webmapPlaceholder: "ø_Enter a web map id..._å"
+				chooseWebmapLbl: "Vælg webkort...",
+				explain2: "Hvis du vil oprette et Swipe- eller Kikkert-historiekort, skal du bruge knappen nedenfor til at vælge det eksisterende ArcGIS Online-webkort du vil bruge. Alternativt kan du indsætte webkortets ID i feltet nedenfor.",
+				explain3: "Hvis du vil bruge to webkort i dit historiekort, vil du senere blive bedt om at angive det andet kort, når du vælger denne indstilling.",
+				webmapPlaceholder: "Indtast et webkort-ID..."
 			}
 		},
 		configure: {

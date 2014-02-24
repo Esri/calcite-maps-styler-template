@@ -131,6 +131,18 @@ function(
                 this._mapLegend.startup();
             }
         },
+        _initTOC: function(){
+            // layers
+            var tocNode = dom.byId('TableOfContents');
+            if (tocNode) {
+                var tocLayers = this.socialLayers.concat(this.layers);
+                var toc = new TableOfContents({
+                    map: this.map,
+                    layers: tocLayers
+                }, tocNode);
+                toc.startup();
+            }
+        },
         _init: function () {
             // drawer size check
             this._drawer.resize();
@@ -148,8 +160,10 @@ function(
                 }
                 // show notes layer and has one of required things for getting notes layer
                 if(this.config.notesLayer && this.config.notesLayer.id){
+                    content += '<div id="map_notes_section">';
                     content += '<div class="' + this.css.panelHeader + '"><span id="map_notes_title">' + this.config.i18n.general.featured + '</span></div>';
                     content += '<div class="' + this.css.panelSection + '" id="map_notes"></div>';
+                    content += '</div>';
                 }
                 // show bookmarks and has bookmarks
                 if(this.config.enableBookmarks && this.bookmarks && this.bookmarks.length){
@@ -176,6 +190,7 @@ function(
                 content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.general.legend + '</div>';
                 content += '<div class="' + this.css.panelContainer + '">';
                 content += '<div class="' + this.css.panelPadding + '">';
+                content += '<div id="twitter_legend_auth"></div>';
                 content += '<div id="LegendDiv"></div>';
                 content += '</div>';
                 content += '</div>';
@@ -243,7 +258,7 @@ function(
                     defaultBasemap: this.config.defaultBasemap
                 }, 'BasemapToggle');
                 BT.startup();
-                /* Start temporary until after JSAPI 3.9 is released */
+                /* Start temporary until after JSAPI 4.0 is released */
                 var layers = this.map.getLayersVisibleAtScale(this.map.getScale());
                 on.once(this.map, 'basemap-change', lang.hitch(this, function () {
                     for (var i = 0; i < layers.length; i++) {
@@ -253,7 +268,7 @@ function(
                         }
                     }
                 }));
-                /* END temporary until after JSAPI 3.9 is released */
+                /* END temporary until after JSAPI 4.0 is released */
             }
             // about dialog
             if (this.config.enableAboutDialog) {
@@ -304,20 +319,10 @@ function(
             this.initMapPanel();
             // startup legend
             this._initLegend();
-            // Legend table of contents
-            var legendNode = dom.byId('TableOfContents');
-            if (legendNode) {
-                var tocLayers = this.socialLayers.concat(this.layers);
-                var toc = new TableOfContents({
-                    map: this.map,
-                    layers: tocLayers
-                }, legendNode);
-                toc.startup();
-            }
+            // startup toc
+            this._initTOC();
             // set social dialogs
             this.configureSocial();
-            // hide loading div
-            this._hideLoadingIndicator();
             // on body click containing underlay class
             on(document.body, '.dijitDialogUnderlay:click', function(){
                 // get all dialogs
@@ -329,6 +334,8 @@ function(
                     w.hide(); 
                 });
             });
+            // hide loading div
+            this._hideLoadingIndicator();
         },
         _checkMobileGeocoderVisibility: function () {
             if(this._mobileGeocoderIconNode && this._mobileSearchNode){
@@ -530,6 +537,8 @@ function(
                 } else {
                     alert("Unable to create map: " + error.message);
                 }
+                // hide loading div
+                this._hideLoadingIndicator();
             }));
         }
     });

@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "搜索",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "试_Find_验",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "当前位置",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "提交修正",  // Command button to submit a correction to the app's host
-            collect: "向地图添加内容",  // Command button to open a template picker to add features to the map
+            collect: "试_Filter/Edit_验",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "过滤地图图层",  // Explains purpose of type-in box affiliated with template picker
             basemap: "切换底图",  // Command button to open a dialog box for switching basemaps
             share: "共享",  // Command button to open a dropdown menu for picking a type of sharing
@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "在地图中未找到此搜索图层",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "在地图搜索图层中未找到此字段",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "在地图搜索图层中未找到这些字段",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "试_This field does not exist in any of the map layers_验",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "此字段不存在于任何地图图层中",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "您的内容已提交。谢谢。",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "无法访问应用程序的配置",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "无法启动应用程序"  // Appears for any failure to build the user interface

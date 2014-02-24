@@ -17,11 +17,11 @@ define([], function() {
         "color": "#80ab00",
         //Counter specific parameters
         "summaryLayer":{
-            "id": "Production_Points_2401",
+            "id": "",
             "fields":[
                 {
                     "id": "filterField",
-                    "fields": ["Field_Disc"]
+                    "fields": []
                 },
                 {
                     "id": "sumFields",
@@ -42,6 +42,8 @@ define([], function() {
             ]
         },
         "cluster": true,
+        "hideCount": false,
+        "hideSummaryType": false,
         "bingmapskey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
         "sharinghost": location.protocol + "//" + "www.arcgis.com" //Defaults to arcgis.com. Set this value to your portal or organization host name. 
     };

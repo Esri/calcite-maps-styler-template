@@ -1,15 +1,18 @@
 ﻿define(
      ({
         map: {
-            error: "Ж_Unable to create map_Я"
+            error: "Не удалось создать карту"
         },
         general: {
-            legend: "Ж_Legend_Я",
-            aoi: "Ж_Area_Я",
-            summarize: "Ж_Entire Area_Я",
-            share: "Ж_Share_Я",
-            about: "Ж_About_Я",
-            noSearchResult: "Ж_No result found_Я"
+            map: "Ж_Map_Я",
+            mapInfo: "Ж_Map Information_Я",
+            legend: "Легенда",
+            layers: "Ж_Layers_Я",
+            summarize: "Вся область",
+            share: "Предоставить доступ",
+            about: "О",
+            noSearchResult: "Результатов не найдено",
+            impactArea: "Ж_Impact Area_Я"
         }
     })
 

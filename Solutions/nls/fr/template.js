@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Rechercher",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "æ_Find_Â",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Emplacement actuel",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Envoyer une correction",  // Command button to submit a correction to the app's host
-            collect: "Ajouter du contenu à la carte",  // Command button to open a template picker to add features to the map
+            collect: "æ_Filter/Edit_Â",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtrer les couches de carte",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Changer de fond de carte",  // Command button to open a dialog box for switching basemaps
             share: "Partager",  // Command button to open a dropdown menu for picking a type of sharing
@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "Cette couche de recherche n\'a pas été trouvée sur la carte",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Ce champ n\'a pas été trouvé dans la couche de recherche de la carte",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "Aucun de ces champs n\'a été trouvé dans la couche de recherche de la carte",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "æ_This field does not exist in any of the map layers_Â",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "Ce champ n\'existe dans aucune couche de la carte",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Votre contenu a été envoyé. Merci.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Impossible d\'accéder à la configuration de l\'application",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "Impossible de lancer l\'application"  // Appears for any failure to build the user interface

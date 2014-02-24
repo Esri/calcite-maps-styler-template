@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Søk",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "å_Find_ø",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Gjeldende plassering",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Send rettelse",  // Command button to submit a correction to the app's host
-            collect: "Legg til innhold på kart",  // Command button to open a template picker to add features to the map
+            collect: "å_Filter/Edit_ø",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtrer kartlag",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Bytt bakgrunnskart",  // Command button to open a dialog box for switching basemaps
             share: "Del",  // Command button to open a dropdown menu for picking a type of sharing
@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "Fant ikke dette søkelaget i kartet",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Fant ikke dette feltet i kartsøkelaget",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "Ingen av disse feltene ble funnet i kartsøkelaget",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "å_This field does not exist in any of the map layers_ø",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "Dette feltet finnes ikke i noen av kartlagene",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Innholdet ditt er sendt inn. Takk!",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Får ikke tilgang til programmets konfigurasjon",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "Kan ikke starte programmet"  // Appears for any failure to build the user interface

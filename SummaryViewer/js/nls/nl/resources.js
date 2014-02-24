@@ -1,7 +1,7 @@
 ﻿define(
      ({
         map: {
-            error: "Ĳ_Unable to create map_ä"
+            error: "Kan kaart niet maken"
         }
     })
 

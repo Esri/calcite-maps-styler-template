@@ -1,15 +1,18 @@
 ﻿define(
      ({
         map: {
-            error: "כן_Unable to create map_ש"
+            error: "לא ניתן ליצור מפה"
         },
         general: {
-            legend: "כן_Legend_ש",
-            aoi: "כן_Area_ש",
-            summarize: "כן_Entire Area_ש",
-            share: "כן_Share_ש",
-            about: "כן_About_ש",
-            noSearchResult: "כן_No result found_ש"
+            map: "כן_Map_ש",
+            mapInfo: "כן_Map Information_ש",
+            legend: "מקרא",
+            layers: "כן_Layers_ש",
+            summarize: "האזור כולו",
+            share: "שיתוף",
+            about: "אודות",
+            noSearchResult: "לא נמצאו תוצאות",
+            impactArea: "כן_Impact Area_ש"
         }
     })
 

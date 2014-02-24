@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "חפש",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "כן_Find_ש",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "מיקום נוכחי",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "שלח תיקון",  // Command button to submit a correction to the app's host
-            collect: "הוסף תוכן למפה",  // Command button to open a template picker to add features to the map
+            collect: "כן_Filter/Edit_ש",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "סנן שכבות מפה",  // Explains purpose of type-in box affiliated with template picker
             basemap: "החלף מפת בסיס",  // Command button to open a dialog box for switching basemaps
             share: "שיתוף",  // Command button to open a dropdown menu for picking a type of sharing
@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "שכבת חיפוש זו לא נמצאה במפה",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "שדה זה לא נמצא בשכבת חיפוש מפה",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "לא נמצא אף אחד מהשדות האלו בשכבת החיפוש",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "כן_This field does not exist in any of the map layers_ש",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "השדה הזה לא קיים באף שכבה במפה",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "התוכן שלך נשלח. תודה.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "לא ניתן לגשת לתצורת האפליקציה",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "לא ניתן להפעיל את האפליקציה"  // Appears for any failure to build the user interface

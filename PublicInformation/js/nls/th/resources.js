@@ -1,51 +1,50 @@
 ﻿define(
      ({
         map: {
-            error: "ก้_Unable to create map_ษฺ"
+            error: "ไม่สามารถสร้างแผนที่"
         },
         report: {
-            flag: "ก้_Flag as innapropriate_ษฺ",
-            error: "ก้_Error_ษฺ",
-            success: "ก้_Flagged_ษฺ",
-            loading: "ก้_Loading&hellip;_ษฺ"
+            flag: "ปักธงไม่เหมาะสม",
+            error: "ผิดพลาด",
+            success: "ปักธง",
+            loading: "กำลังโหลด;"
         },
-        area:{
-            mapNotes: "ก้_Notes_ษฺ",
-            notesUnavailable: "ก้_Description unavailable_ษฺ",
-            bookmarks: "ก้_Bookmarks_ษฺ",
-            untitledNote: "ก้_Untitled_ษฺ"
-        },
-        layers: {
-            operational: "ก้_Operational_ษฺ",
-            social: "ก้_Social_ษฺ"
+        mapNotes:{
+            notesUnavailable: "คำบรรยายไม่สามารถใช้งานได้",
+            bookmarks: "บุ๊คมาร์ค",
+            untitledNote: "ไม่มีชื่อ"
         },
         social: {
-            flickr: "ก้_Flickr_ษฺ",
-            flickrSettings: "ก้_Flickr Settings_ษฺ",
-            twitter: "ก้_Twitter_ษฺ",
-            twitterSettings: "ก้_Twitter Settings_ษฺ",
-            twitterUser: "ก้_Twitter Account_ษฺ",
-            webcams: "ก้_Webcams_ษฺ",
-            instagram: "ก้_Instagram_ษฺ",
-            moreInfo: "ก้_More information_ษฺ",
-            searchTerms: "ก้_Search Terms_ษฺ",
-            search: "ก้_Search_ษฺ",
-            flSettingsInfo: "ก้_Return results matching a photo's title, description or tags._ษฺ",
-            twSettingsInfo: "ก้_See whatâ€™s happening right now._ษฺ",
-            advancedOperators: "ก้_Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches._ษฺ",
-            tweetsFilteredBy: "ก้_Tweets filtered by:_ษฺ",
-            photosFilteredBy: "ก้_Photos filtered by:_ษฺ"
+            flickr: "ฟลิกเกอร์",
+            flickrSettings: "การตั้งค่า Flickr",
+            twitter: "ทวิตเตอร์",
+            twitterSettings: "การตั้งค่าทวีตเตอร์",
+            twitterUser: "บัญชีรายชื่อทวีตเตอร์",
+            twitterSignIn: "ก้_Sign in to Twitter_ษฺ",
+            webcams: "เว็บแคม",
+            instagram: "Instagram",
+            moreInfo: "ข้อมูลเพิ่มเติม",
+            searchTerms: "คำที่ใช้ค้นหา",
+            search: "ค้นหา",
+            flSettingsInfo: "ผลตอบแทนจากการจับคู่ภาพที่ชื่อคำอธิบายหรือแท็ก",
+            twSettingsInfo: "ดูว่าเกิดอะไรขึ้นตอนนี้",
+            advancedOperators: "Tip: ใช้ <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches.",
+            tweetsFilteredBy: "ก้_tweets filtered by:_ษฺ",
+            photosFilteredBy: "ก้_photos filtered by:_ษฺ",
+            twitterAccountStatus: "ก้_Enable the Twitter layer to see your status._ษฺ"
         },
         general: {
-            legend: "ก้_Legend_ษฺ",
-            aoi: "ก้_Area_ษฺ",
-            summarize: "ก้_Entire Area_ษฺ",
-            share: "ก้_Share_ษฺ",
-            about: "ก้_About_ษฺ",
-            noSearchResult: "ก้_No result found_ษฺ",
-            switchAccount: "ก้_Switch account_ษฺ",
-            signIn: "ก้_Sign in_ษฺ",
-            settings: "ก้_Settings_ษฺ"
+            map: "ก้_Map_ษฺ",
+            mapInfo: "ก้_Map Information_ษฺ",
+            legend: "สัญลักษณ์",
+            featured: "ก้_Featured Locations_ษฺ",
+            layers: "ก้_Layers_ษฺ",
+            share: "แบ่งปัน",
+            about: "เกี่ยวกับ",
+            noSearchResult: "ไม่พบผลลัพธ์",
+            switchAccount: "เปลี่ยนบัญชีผู้ใช้",
+            signIn: "เข้าระบบ",
+            settings: "การตั้งค่า"
         }
     })
 

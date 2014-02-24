@@ -45,13 +45,12 @@ define([
                     rendererSummarize: 'summarize'
                 };          
                 // if we have a layer title or layer id
-                if (this.config.summaryLayerTitle || this.config.summaryLayerId) {
+                if (this.config.summaryLayer && this.config.summaryLayer.id) {
                     // get layer by id/title
                     this._aoiLayer = this._getAOILayer({
                         map: this.map,
                         layers: this.layers,
-                        title: this.config.summaryLayerTitle,
-                        id: this.config.summaryLayerId
+                        id: this.config.summaryLayer.id
                     });
                 }
                 // get layer infos
@@ -84,8 +83,13 @@ define([
                     }
                     // if layer exists
                     if (this._aoiLayer) {
-                        // get highest value feature
-                        this._queryGreatestFeature();
+                        if(this.config.selectEntireAreaOnStart && this._selectAllNode){
+                            this._queryFeatures(this._selectAllNode, this._entireAreaValue, false);
+                        }
+                        else{
+                            // get highest value feature
+                            this._queryGreatestFeature();   
+                        }
                         // selected poly from graphics layer
                         on(this._selectedGraphics, 'click', lang.hitch(this, function (evt) {
                             this._hideInfoWindow();
@@ -110,6 +114,8 @@ define([
                             }
                         }));
                     }
+                    // set layer title
+                    this._setImpactLayerTitle();
                     this._sb.show();
                         // drawer resize event
                     on(this._drawer, 'resize', lang.hitch(this, function () {
@@ -120,13 +126,13 @@ define([
                     }));
                 }
                 // description
-                if (this.config.showAreaDescription) {
-                    this._setAreaDescription(this.config.areaDescription || this.item.snippet);
+                if (this.config.enableSummary) {
+                    this._setSummary(this.config.summary || this.item.snippet);
                 }
             },
-            _setAreaDescription: function (description) {
+            _setSummary: function (description) {
                 // map title node
-                var node = dom.byId('areaDescription');
+                var node = dom.byId('summary');
                 if (node) {
                     // set title
                     node.innerHTML = description;
@@ -169,6 +175,22 @@ define([
                     }
                 }
             },
+            _setImpactLayerTitle: function(){
+                var node;
+                // set title of header to layer title
+                if(this._impactAreaTitle && this._rendererNodes && this._rendererNodes.length){
+                    node = dom.byId('impact_area_title');
+                    if(node){
+                        node.innerHTML = this._impactAreaTitle;
+                    }
+                }
+                else{
+                    node = dom.byId('impact_area_section');
+                    if(node){
+                        node.innerHTML = '';
+                    }
+                }
+            },
             // get layer
             _getAOILayer: function (obj) {
                 var mapLayer, layer, i;
@@ -178,16 +200,10 @@ define([
                         layer = obj.layers[i];
                         if (layer.id === obj.id) {
                             mapLayer = obj.map.getLayer(layer.id);
-                            mapLayer.layerIndex = i;
-                            return mapLayer;
-                        }
-                    }
-                } else if (obj.title) {
-                    // use layer title
-                    for (i = 0; i < obj.layers.length; i++) {
-                        layer = obj.layers[i];
-                        if (layer.title.toLowerCase() === obj.title.toLowerCase()) {
-                            mapLayer = obj.map.getLayer(layer.id);
+                            console.log(mapLayer);
+                            if(mapLayer.arcgisProps && mapLayer.arcgisProps.title){
+                                this._impactAreaTitle = mapLayer.arcgisProps.title;   
+                            }
                             mapLayer.layerIndex = i;
                             return mapLayer;
                         }
@@ -220,7 +236,7 @@ define([
                     }
                 }));
             },
-            _queryFeatures: function (node, value) {
+            _queryFeatures: function (node, value, zoom) {
                 // show layer if invisible
                 if (!this._aoiLayer.visible) {
                     this._aoiLayer.setVisibility(true);
@@ -254,8 +270,11 @@ define([
                     // display geo stats
                     this._sb.set("features", fs.features);
                     this._selectFeatures(fs.features);
-                    // set extent for features
-                    this.map.setExtent(graphicsUtils.graphicsExtent(fs.features), true);
+                    // zoom to feature
+                    if(zoom){
+                        // set extent for features
+                        this.map.setExtent(graphicsUtils.graphicsExtent(fs.features), true);
+                    }
                 }), lang.hitch(this, function () {
                     // remove selected
                     this._clearSelected();
@@ -278,12 +297,12 @@ define([
                                 // wait for map to be resized
                                 setTimeout(lang.hitch(this, function () {
                                     // get features
-                                    this._queryFeatures(ct, value);
+                                    this._queryFeatures(ct, value, true);
                                 }), 250);
                             }));
                         } else {
                             // get features
-                            this._queryFeatures(ct, value);
+                            this._queryFeatures(ct, value, true);
                         }
                     }
                 }));
@@ -296,7 +315,7 @@ define([
                     className: this.areaCSS.rendererMenu
                 });
                 // Entire area button in renderer list
-                if(this.config.showEntireAreaButton){
+                if(this.config.enableEntireAreaButton){
                     // create select all item
                     var selectAll = domConstruct.create('li', {
                         className: this.areaCSS.rendererMenuItem + " " + this.areaCSS.rendererSummarize
@@ -315,6 +334,8 @@ define([
                         value: this._entireAreaValue,
                         node: selectAll
                     });
+                    // select all node
+                    this._selectAllNode = selectAll;
                 }
                 // each renderer item
                 for (var i = 0; i < infos.length; i++) {

@@ -1,51 +1,50 @@
 ﻿define(
      ({
         map: {
-            error: "æ_Unable to create map_Â"
+            error: "Impossible de créer la carte"
         },
         report: {
-            flag: "æ_Flag as innapropriate_Â",
-            error: "æ_Error_Â",
-            success: "æ_Flagged_Â",
-            loading: "æ_Loading&hellip;_Â"
+            flag: "Signaler comme inapproprié",
+            error: "Erreur",
+            success: "Signalé",
+            loading: "Chargement&hellip;"
         },
-        area:{
-            mapNotes: "æ_Notes_Â",
-            notesUnavailable: "æ_Description unavailable_Â",
-            bookmarks: "æ_Bookmarks_Â",
-            untitledNote: "æ_Untitled_Â"
-        },
-        layers: {
-            operational: "æ_Operational_Â",
-            social: "æ_Social_Â"
+        mapNotes:{
+            notesUnavailable: "Description indisponible",
+            bookmarks: "Géosignets",
+            untitledNote: "Sans titre"
         },
         social: {
-            flickr: "æ_Flickr_Â",
-            flickrSettings: "æ_Flickr Settings_Â",
-            twitter: "æ_Twitter_Â",
-            twitterSettings: "æ_Twitter Settings_Â",
-            twitterUser: "æ_Twitter Account_Â",
-            webcams: "æ_Webcams_Â",
-            instagram: "æ_Instagram_Â",
-            moreInfo: "æ_More information_Â",
-            searchTerms: "æ_Search Terms_Â",
-            search: "æ_Search_Â",
-            flSettingsInfo: "æ_Return results matching a photo's title, description or tags._Â",
-            twSettingsInfo: "æ_See whatâ€™s happening right now._Â",
-            advancedOperators: "æ_Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches._Â",
-            tweetsFilteredBy: "æ_Tweets filtered by:_Â",
-            photosFilteredBy: "æ_Photos filtered by:_Â"
+            flickr: "Flickr",
+            flickrSettings: "Paramètres Flickr",
+            twitter: "Twitter",
+            twitterSettings: "Paramètres Twitter",
+            twitterUser: "Compte Twitter",
+            twitterSignIn: "æ_Sign in to Twitter_Â",
+            webcams: "Webcams",
+            instagram: "Instagram",
+            moreInfo: "Plus d\'informations",
+            searchTerms: "Termes de recherche",
+            search: "Rechercher",
+            flSettingsInfo: "Générez des résultats correspondant au titre, à la description ou aux balises d\'une photo.",
+            twSettingsInfo: "Consultez l\'actualité.",
+            advancedOperators: "Conseil : utilisez les <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">opérateurs</a> pour élaborer des recherches avancées.",
+            tweetsFilteredBy: "æ_tweets filtered by:_Â",
+            photosFilteredBy: "æ_photos filtered by:_Â",
+            twitterAccountStatus: "æ_Enable the Twitter layer to see your status._Â"
         },
         general: {
-            legend: "æ_Legend_Â",
-            aoi: "æ_Area_Â",
-            summarize: "æ_Entire Area_Â",
-            share: "æ_Share_Â",
-            about: "æ_About_Â",
-            noSearchResult: "æ_No result found_Â",
-            switchAccount: "æ_Switch account_Â",
-            signIn: "æ_Sign in_Â",
-            settings: "æ_Settings_Â"
+            map: "æ_Map_Â",
+            mapInfo: "æ_Map Information_Â",
+            legend: "Légende",
+            featured: "æ_Featured Locations_Â",
+            layers: "æ_Layers_Â",
+            share: "Partager",
+            about: "A propos",
+            noSearchResult: "Aucun résultat trouvé",
+            switchAccount: "Changer de compte",
+            signIn: "Se connecter",
+            settings: "Paramètres"
         }
     })
 

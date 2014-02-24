@@ -1,15 +1,18 @@
 ﻿define(
      ({
         map: {
-            error: "ä_Unable to create map_Ü"
+            error: "Karte kann nicht erstellt werden"
         },
         general: {
-            legend: "ä_Legend_Ü",
-            aoi: "ä_Area_Ü",
-            summarize: "ä_Entire Area_Ü",
-            share: "ä_Share_Ü",
-            about: "ä_About_Ü",
-            noSearchResult: "ä_No result found_Ü"
+            map: "ä_Map_Ü",
+            mapInfo: "ä_Map Information_Ü",
+            legend: "Legende",
+            layers: "ä_Layers_Ü",
+            summarize: "Gesamtfläche",
+            share: "Freigeben",
+            about: "Info zu",
+            noSearchResult: "Kein Ergebnis gefunden",
+            impactArea: "ä_Impact Area_Ü"
         }
     })
 

@@ -58,7 +58,7 @@ define([
                     // Webcams
                     this._webcamsLayer = new WebcamsLayer({
                         map: this.map,
-                        visible: this.config.webcamsChecked,
+                        visible: this.config.webcamsVisible,
                         key: this.config.webcams_key
                     });
                     // add layer to map
@@ -79,7 +79,7 @@ define([
                     // Twitter
                     this._twitterLayer = new TwitterLayer({
                         map: this.map,
-                        visible: this.config.twitterChecked,
+                        visible: this.config.twitterVisible,
                         searchTerm: this.config.twitterSearch,
                         url: this.config.twitterUrl
                     });
@@ -104,7 +104,7 @@ define([
                     // Flickr
                     this._flickrLayer = new FlickrLayer({
                         map: this.map,
-                        visible: this.config.flickrChecked,
+                        visible: this.config.flickrVisible,
                         searchTerm: this.config.flickrSearch,
                         key: this.config.flickr_key
                     });
@@ -128,7 +128,7 @@ define([
                     // Instagram
                     this._instagramLayer = new InstagramLayer({
                         map: this.map,
-                        visible: this.config.instagramChecked,
+                        visible: this.config.instagramVisible,
                         key: this.config.instagram_key
                     });
                     // add layer to map
@@ -153,13 +153,16 @@ define([
                 if (this.config.bannedWordsService) {
                     this._createSMFBadWords();
                 }
-                // info window set flag button
-                on(this.map.infoWindow, 'set-features', lang.hitch(this, function () {
-                    this._featureChange();
-                }));
-                on(this.map.infoWindow, 'selection-change', lang.hitch(this, function () {
-                    this._featureChange();
-                }));
+                // if flag servers set
+                if (this.config.bannedUsersService && this.config.flagMailServer) {
+                    // info window set flag button
+                    on(this.map.infoWindow, 'set-features', lang.hitch(this, function () {
+                        this._featureChange();
+                    }));
+                    on(this.map.infoWindow, 'selection-change', lang.hitch(this, function () {
+                        this._featureChange();
+                    }));
+                }
                 // add social layers to legend
                 this.layerInfos = this.layerInfos.concat(this.socialLayerInfos);
             },
@@ -270,6 +273,7 @@ define([
                     // sign in/switch twitter node
                     this._twitterStatusNode = dom.byId('twitter_auth_status');
                     this._twitterStatus2Node = dom.byId('twitter_settings_auth');
+                    this._twitterStatus3Node = dom.byId('twitter_legend_auth');
                     // if node found
                     if (this._twitterStatusNode && this._twitterStatus2Node) {
                         // sign in click
@@ -280,18 +284,25 @@ define([
                         on(this._twitterStatus2Node, 'a:click', lang.hitch(this, function (evt) {
                             this._twitterSignIn(evt);
                         }));
+                        // sign in click
+                        on(this._twitterStatus3Node, 'a:click', lang.hitch(this, function (evt) {
+                            this._twitterSignIn(evt);
+                        }));
                         // authorize check
                         on(this._twitterLayer, 'authorize', lang.hitch(this, function (evt) {
-                            var status;
+                            var status, longStatus;
                             // user signed in
                             if (evt.authorized) {
                                 status = '<a class="' + this.socialCSS.authStatus + '">' +this.config.i18n.general.switchAccount + '</a>';
                                 this._twitterStatusNode.innerHTML = '';
                                 this._twitterStatus2Node.innerHTML = status;
+                                this._twitterStatus3Node.innerHTML = '';
                             } else {
                                 status = '<a class="' + this.socialCSS.authStatus + '"><span class="'+ this.socialCSS.iconAttention + '"></span>' + this.config.i18n.general.signIn + '</a>';
+                                longStatus = '<a class="' + this.socialCSS.authStatus + '"><span class="'+ this.socialCSS.iconAttention + '"></span>' + this.config.i18n.social.twitterSignIn + '</a>';
                                 this._twitterStatusNode.innerHTML = status;
                                 this._twitterStatus2Node.innerHTML = status;
+                                this._twitterStatus3Node.innerHTML = longStatus;
                             }
                         }));
                     }

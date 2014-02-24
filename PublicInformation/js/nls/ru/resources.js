@@ -1,51 +1,50 @@
 ﻿define(
      ({
         map: {
-            error: "Ж_Unable to create map_Я"
+            error: "Не удалось создать карту"
         },
         report: {
-            flag: "Ж_Flag as innapropriate_Я",
-            error: "Ж_Error_Я",
-            success: "Ж_Flagged_Я",
-            loading: "Ж_Loading&hellip;_Я"
+            flag: "Пометить как несоответствующий",
+            error: "Ошибка",
+            success: "Отмеченный",
+            loading: "Загрузка&hellip (Loading&hellip);"
         },
-        area:{
-            mapNotes: "Ж_Notes_Я",
-            notesUnavailable: "Ж_Description unavailable_Я",
-            bookmarks: "Ж_Bookmarks_Я",
-            untitledNote: "Ж_Untitled_Я"
-        },
-        layers: {
-            operational: "Ж_Operational_Я",
-            social: "Ж_Social_Я"
+        mapNotes:{
+            notesUnavailable: "Описание недоступно",
+            bookmarks: "Закладки",
+            untitledNote: "Без заголовка"
         },
         social: {
-            flickr: "Ж_Flickr_Я",
-            flickrSettings: "Ж_Flickr Settings_Я",
-            twitter: "Ж_Twitter_Я",
-            twitterSettings: "Ж_Twitter Settings_Я",
-            twitterUser: "Ж_Twitter Account_Я",
-            webcams: "Ж_Webcams_Я",
-            instagram: "Ж_Instagram_Я",
-            moreInfo: "Ж_More information_Я",
-            searchTerms: "Ж_Search Terms_Я",
-            search: "Ж_Search_Я",
-            flSettingsInfo: "Ж_Return results matching a photo's title, description or tags._Я",
-            twSettingsInfo: "Ж_See whatâ€™s happening right now._Я",
-            advancedOperators: "Ж_Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches._Я",
-            tweetsFilteredBy: "Ж_Tweets filtered by:_Я",
-            photosFilteredBy: "Ж_Photos filtered by:_Я"
+            flickr: "Flickr",
+            flickrSettings: "Настройки Flickr",
+            twitter: "Twitter",
+            twitterSettings: "Настройки Twitter",
+            twitterUser: "Учётная запись Twitter",
+            twitterSignIn: "Ж_Sign in to Twitter_Я",
+            webcams: "Веб-камеры",
+            instagram: "Instagram",
+            moreInfo: "Больше информации",
+            searchTerms: "Поиск терминов",
+            search: "Поиск",
+            flSettingsInfo: "Возвращает результаты соответствующие заголовку фотографий, описанию и тегам.",
+            twSettingsInfo: "Посмотрите, что случилось прямо сейчас.",
+            advancedOperators: "Подсказка: используйте <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> для создания усовершенствованных поисковых запросов.",
+            tweetsFilteredBy: "Ж_tweets filtered by:_Я",
+            photosFilteredBy: "Ж_photos filtered by:_Я",
+            twitterAccountStatus: "Ж_Enable the Twitter layer to see your status._Я"
         },
         general: {
-            legend: "Ж_Legend_Я",
-            aoi: "Ж_Area_Я",
-            summarize: "Ж_Entire Area_Я",
-            share: "Ж_Share_Я",
-            about: "Ж_About_Я",
-            noSearchResult: "Ж_No result found_Я",
-            switchAccount: "Ж_Switch account_Я",
-            signIn: "Ж_Sign in_Я",
-            settings: "Ж_Settings_Я"
+            map: "Ж_Map_Я",
+            mapInfo: "Ж_Map Information_Я",
+            legend: "Легенда",
+            featured: "Ж_Featured Locations_Я",
+            layers: "Ж_Layers_Я",
+            share: "Предоставить доступ",
+            about: "О",
+            noSearchResult: "Результатов не найдено",
+            switchAccount: "Переключить учетную запись",
+            signIn: "Войти",
+            settings: "Настройки"
         }
     })
 

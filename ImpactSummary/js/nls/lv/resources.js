@@ -1,15 +1,18 @@
 ﻿define(
      ({
         map: {
-            error: "ķ_Unable to create map_ū"
+            error: "Nevar izveidot karti"
         },
         general: {
-            legend: "ķ_Legend_ū",
-            aoi: "ķ_Area_ū",
-            summarize: "ķ_Entire Area_ū",
-            share: "ķ_Share_ū",
-            about: "ķ_About_ū",
-            noSearchResult: "ķ_No result found_ū"
+            map: "ķ_Map_ū",
+            mapInfo: "ķ_Map Information_ū",
+            legend: "Leģenda",
+            layers: "ķ_Layers_ū",
+            summarize: "Viss laukums",
+            share: "Koplietot",
+            about: "Par",
+            noSearchResult: "Nav atrasts neviens rezultāts",
+            impactArea: "ķ_Impact Area_ū"
         }
     })
 

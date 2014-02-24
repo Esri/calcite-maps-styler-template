@@ -1,15 +1,18 @@
 ﻿define(
      ({
         map: {
-            error: "ø_Unable to create map_å"
+            error: "Kan ikke oprette kort"
         },
         general: {
-            legend: "ø_Legend_å",
-            aoi: "ø_Area_å",
-            summarize: "ø_Entire Area_å",
-            share: "ø_Share_å",
-            about: "ø_About_å",
-            noSearchResult: "ø_No result found_å"
+            map: "ø_Map_å",
+            mapInfo: "ø_Map Information_å",
+            legend: "Signaturforklaring",
+            layers: "ø_Layers_å",
+            summarize: "Hele området",
+            share: "Del",
+            about: "Om",
+            noSearchResult: "Intet resultat fundet",
+            impactArea: "ø_Impact Area_å"
         }
     })
 

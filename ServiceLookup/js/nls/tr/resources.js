@@ -8,9 +8,9 @@
             defaultText: "Adresinizi girin"
         },
         error: {
-            layerNotFound: "ı_Layer is not in the webmap_İ",
+            layerNotFound: "Katman, web haritasında değil",
             fieldNotFound: "Alan bulunamadı",
-            popupNotSet: "ı_Popup not enabled for this layer_İ"
+            popupNotSet: "Açılır pencere bu katman için etkinleştirildi"
         },
         page: {
             title: "Servis Arama",

@@ -8,9 +8,9 @@
             defaultText: "Geben Sie Ihre Adresse ein"
         },
         error: {
-            layerNotFound: "ä_Layer is not in the webmap_Ü",
+            layerNotFound: "Layer ist nicht in der Webkarte enthalten",
             fieldNotFound: "Feld nicht gefunden",
-            popupNotSet: "ä_Popup not enabled for this layer_Ü"
+            popupNotSet: "Pop-up ist für diesen Layer nicht aktiviert"
         },
         page: {
             title: "Service-Suche",

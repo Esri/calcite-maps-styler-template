@@ -8,9 +8,9 @@
             defaultText: "Skriv inn adressen din"
         },
         error: {
-            layerNotFound: "å_Layer is not in the webmap_ø",
+            layerNotFound: "Laget er ikke i webkartet",
             fieldNotFound: "Fant ikke feltet",
-            popupNotSet: "å_Popup not enabled for this layer_ø"
+            popupNotSet: "Sprettoppvindu er ikke aktivert for dette laget"
         },
         page: {
             title: "Tjenesteopptegning",

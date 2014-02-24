@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Buscar",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "á_Find_Ó",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Ubicación actual",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Enviar corrección",  // Command button to submit a correction to the app's host
-            collect: "Agregar contenido al mapa",  // Command button to open a template picker to add features to the map
+            collect: "á_Filter/Edit_Ó",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtrar capas de mapa",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Cambiar mapa base",  // Command button to open a dialog box for switching basemaps
             share: "Compartir",  // Command button to open a dropdown menu for picking a type of sharing
@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "Esta capa de búsqueda no se ha encontrado en el mapa",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Este campo no se ha encontrado en la capa de búsqueda del mapa",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "Ninguno de estos campos se puede encontrar en la capa de búsqueda del mapa",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "á_This field does not exist in any of the map layers_Ó",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "Este campo no existe en ninguna de las capas de mapa",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Tu contenido se ha enviado. Gracias.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "No se puede acceder a la configuración de la aplicación",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "No se puede iniciar la aplicación"  // Appears for any failure to build the user interface

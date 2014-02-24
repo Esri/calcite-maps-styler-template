@@ -188,7 +188,7 @@
         "config": {
             "rootId": "addressSearcher",
             "parentDiv": "contentFrame",
-            "searchUrl": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Locators/TA_Address_NA_10/GeocodeServer",
+            "searchUrl": "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer",
             "addressParamName": "SingleLine",
             "minimumScore": 80,
             "validLocators": ["US_RoofTop", "US_Streets", "US_StreetName"],

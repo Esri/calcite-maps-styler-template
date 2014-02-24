@@ -65,8 +65,8 @@
 				savingApplication: "Salvataggio dell\'applicazione",
 				saveSuccess: "Salvataggio dell\'applicazione completato",
 				saveError: "Salvataggio non riuscito. Riprovare",
-				saveError2: "é_Save failed due to an invalid html tag in a name or description_È",
-				saveError3: "é_The title can't be empty_È",
+				saveError2: "Salvataggio non riuscito a causa di un tag HTML non valido in un nome o in una descrizione",
+				saveError3: "Specificare il titolo",
 				signIn: "Effettuare l\'accesso con un account su",
 				signInTwo: "per salvare l\'applicazione."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Colore intestazione"
 			},
 			initPopup: {
-				initHeader: "é_Welcome to the Swipe/Spyglass Builder_È",
+				initHeader: "Benvenuti al generatore Scorrimento con dito/Cannocchiale",
 				modalNext: "Avanti",
 				modalPrev: "Indietro",
 				modalApply: "Apri l\'app"
@@ -208,7 +208,7 @@
 				close: "Chiudi",
 				tab1: {
 					div1: "Il modello Scorrimento con dito/Cannocchiale consente di confrontare due mappe Web distinte o due layer di un\'unica mappa Web grazie a un\'applicazione Web interessante e di facile utilizzo che può essere eseguita in qualsiasi browser Web su qualsiasi dispositivo, inclusi smartphone e tablet.",
-					div2: "é_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._È",
+					div2: "Per ulteriori informazioni sul modello Scorrimento con dito/Cannocchiale, inclusi esempi creati dagli utenti, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'>visitare il sito Web delle mappe collegate a storie</a>. È anche possibile seguire Esri su Twitter all\'indirizzo <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Esri è lieta di ricevere commenti e suggerimenti degli utenti. Se si desidera porre una domanda, richiedere una nuova funzionalità o si ritiene di aver individuato un difetto nel software, visitare il <a href='http://links.esri.com/storymaps/forum' target='_blank'>forum degli utenti delle mappe collegate a storie</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "In quanto proprietari dell\'applicazione, all\'accesso in ArcGIS.com, l\'applicazione includerà un pulsante per aprire il generatore interattivo:",				
 				shareQ3: "Dove vengono memorizzati i dati?",
 				shareA3: "La configurazione dell\'applicazione è memorizzata in questo elemento applicazione Web</a>.",
-				shareWarning: "é_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._È",
- 				shareWarningWith1: "é_publicly_È",
- 				shareWarningWith2: "é_publicly and with the Organization_È"
+				shareWarning: "La condivisione %WITH% è stata disabilitata perché non si è proprietari della <a href='%LINK%' target='_blank'>mappa Web</a>.",
+ 				shareWarningWith1: "con il pubblico",
+ 				shareWarningWith2: "con il pubblico e con l\'organizzazione"
 			},
 			directCreation: {
 				header: "Benvenuti al generatore Scorrimento con dito/Cannocchiale",
 				mapPickHeader: "Per iniziare, immettere un ID mappa valido oppure utilizzare il pulsante Cerca per cercare mappe Web.",
 				launchBuilder: "Avvia generatore",
-				chooseWebmapLbl: "é_Choose web map..._È",
-				explain2: "é_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._È",
-				explain3: "é_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._È",
-				webmapPlaceholder: "é_Enter a web map id..._È"
+				chooseWebmapLbl: "Scegli mappa Web...",
+				explain2: "Per creare una mappa collegata a storie Scorrimento con dito o Cannocchiale, utilizzare il pulsante seguente per selezionare la mappa Web ArcGIS Online desiderata. In alternativa, è possibile incollare l\'ID della mappa Web nell\'apposito campo.",
+				explain3: "Se si desidera utilizzare due mappe Web nella mappa collegata a storie, la seconda mappa verrà richiesta più avanti quando si sceglie la relativa opzione.",
+				webmapPlaceholder: "Immetti un ID mappa Web..."
 			}
 		},
 		configure: {

@@ -65,8 +65,8 @@
 				savingApplication: "Lagrer applikasjonen",
 				saveSuccess: "Applikasjonen er lagret",
 				saveError: "Lagringen mislyktes. Prøv på nytt.",
-				saveError2: "å_Save failed due to an invalid html tag in a name or description_ø",
-				saveError3: "å_The title can't be empty_ø",
+				saveError2: "Lagring mislyktes på grunn av ugyldig HTML-kode i et navn eller en beskrivelse",
+				saveError3: "Tittelen må fylles ut",
 				signIn: "Logg på med en konto på",
 				signInTwo: "for å lagre applikasjonen."
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Farge på overskrift"
 			},
 			initPopup: {
-				initHeader: "å_Welcome to the Swipe/Spyglass Builder_ø",
+				initHeader: "Velkommen til byggeverktøyet for sveiping/forstørrelsesglass",
 				modalNext: "Neste",
 				modalPrev: "Forrige",
 				modalApply: "Åpne appen"
@@ -208,7 +208,7 @@
 				close: "Lukk",
 				tab1: {
 					div1: "Malen for sveiping/forstørrelsesglass er utviklet for å sammenligne to ulike nettkart eller to lag i ett enkelt nettkart i et flott og brukervennlig nettprogram som kan brukes i alle nettlesere på alle slags enheter, blant annet smarttelefoner og nettbrett.",
-					div2: "å_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ø",
+					div2: "Du finner mer informasjon om malen Sveiping/Forstørrelsesglass, blant annet eksempler opprettet av brukere, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> på webområdet med fortellingskart</a>. Du kan også følge oss på Twitter på <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Vi vil gjerne høre fra deg! Uansett om du har spørsmål, ønsker en ny funksjon eller tror du har funnet en feil, kan du besøke <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Når du har logget på ArcGIS.com som eier av programmet, får du tilgang til en knapp for å åpne det interaktive byggeverktøyet:",				
 				shareQ3: "Hvor lagres dataene?",
 				shareA3: "Programmets konfigurasjon er lagret i dette webprogramelementet</a>.",
-				shareWarning: "å_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ø",
- 				shareWarningWith1: "å_publicly_ø",
- 				shareWarningWith2: "å_publicly and with the Organization_ø"
+				shareWarning: "Deling av %WITH% er deaktivert fordi du ikke eier <a href='%LINK%' target='_blank'>webkartet</a>.",
+ 				shareWarningWith1: "offentlig",
+ 				shareWarningWith2: "offentlig og med organisasjonen"
 			},
 			directCreation: {
 				header: "Velkommen til byggeverktøyet for sveiping/forstørrelsesglass",
 				mapPickHeader: "Angi en gyldig nettkart-ID for å komme i gang, eller bruk søkeknappen for å bla igjennom nettkart.",
 				launchBuilder: "Start byggeverktøyet",
-				chooseWebmapLbl: "å_Choose web map..._ø",
-				explain2: "å_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._ø",
-				explain3: "å_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._ø",
-				webmapPlaceholder: "å_Enter a web map id..._ø"
+				chooseWebmapLbl: "Velg webkart...",
+				explain2: "Hvis du vil lage et fortellingskart for Sveiping eller Forstørrelsesglass, bruker du knappen nedenfor for å velge det eksisterende ArcGIS Online-kartet du vil bruke. Alternativt kan du lime inn ID-en til webkartet i feltet nedenfor.",
+				explain3: "Hvis du vil bruke to webkart i fortellingskartet ditt, blir du bedt om det andre webkartet senere, når du velger dette alternativet.",
+				webmapPlaceholder: "Angi en webkart-ID ..."
 			}
 		},
 		configure: {

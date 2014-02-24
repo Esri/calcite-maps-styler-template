@@ -327,7 +327,7 @@
 				header: "เพิ่มชื่ออีเมล์ของคุณหรือ Picasa ID หรือ บัญชี Google+",
 				userInputLbl: "เพิ่มอีเมล์หรือ ID",
 				signInMsg2: "ไม่พบชื่อบัญชี",
-				signInMsg3: "ก้_No public album_ษฺ",
+				signInMsg3: "ไม่มีแฟ้มภาพสาธารณะ",
 				howToFind: "วิธีการค้นหา Picasa หรือ บัญชี ID Google+",
 				howToFind2: "คัดลอกตัวเลขระหว่างลำดับที่หนึ่งและสอง  / ของ Picasa หรือ หน้า G+"
 			},
@@ -526,9 +526,9 @@
 				shareA2div2: "หากเป็นเจ้าของโปรแกรม เมื่อคุณลงชื่อเข้าใช้ใน ArcGIS.com โปรแกรมจะเปิดหน้าและปุ่มสำหรับการพัฒนาให้",				
 				shareQ3: "ข้อมูลของคุณเก็บไว้ที่ใด?",
 				shareA3: "การตั้งค่าทัวร์มีอยู่ใน <a href='%LINK1%' target='_blank'>รายการเว็บแมพนี้</a> และ <a href='%LINK2%' target='_blank'>รายการเว็บแมพนี้</a>. ถ้าคุณใช้  Flickr, Picasa, Facebook หรือนำเข้า  YouTube  รูปของคุณและวิดีโอของคุณยังคงเก็บอยู่ในและไม่ซ้ำซ้อนกับข้อมูลที่อยู่ใน ArcGIS Online",
-				shareWarning: "ก้_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ษฺ",
-				shareWarningWith1: "ก้_publicly_ษฺ",
-				shareWarningWith2: "ก้_publicly and with the Organization_ษฺ"
+				shareWarning: "แบ่งปัน %WITH%ถูกyou are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>.",
+				shareWarningWith1: "โดยสาธารณะ",
+				shareWarningWith2: "โดยสาธารณะและสำหรับองค์กร"
 			}
         }
     })

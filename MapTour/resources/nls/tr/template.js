@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Seçili düzen",
 				settingsLayoutSelect: "Bu düzeni seç",
 				settingsLayoutNote: "Video kullanan noktalarda, seçenek işaretlenmese bile döviz her zaman videonun altına yerleştirilir.",
-				settingsLayoutLocBtn: "'Bul' düğmesi ekle",
+				settingsLayoutLocBtn: "\'Bul\' düğmesi ekle",
 				settingsLayoutLocBtnHelp: "Bu işlevsellik çoğu mobil cihazda ve masaüstü tarayıcıda (Internet Explorer 9) desteklenir.",
 				settingsColorExplain: "Önceden tanımlı bir tema seçerek veya kendi temanızı oluşturarak görünümü değiştirin.",
 				settingsLabelColor: "Üstbilgi, içerik ve altbilgi renkleri",
@@ -199,7 +199,7 @@
 				notJpg: "Yüklenecek jpeg uzantılı fotoğraf seçin",
 				errorNoPhoto: "Yüklenecek bir görüntü seçin",
 				errorNoThumbnail: "Yüklenecek bir küçük resim seçin",
-				errorInvalidPicUrl: "Geçerli bir resim girin. (http(s):// ile başlamalı, jpg, png, gif veya bmp ile bitmelidir.) Bu kuralı geçersiz kılmak için URL\'yi '#isImage' ile bitirebilirsiniz.",
+				errorInvalidPicUrl: "Geçerli bir resim girin. (http(s):// ile başlamalı, jpg, png, gif veya bmp ile bitmelidir.) Bu kuralı geçersiz kılmak için URL\'yi \'#isImage\' ile bitirebilirsiniz.",
 				errorInvalidThumbUrl: "Geçerli bir küçük resim girin. (http(s):// ile başlar, jpg, png, gif veya bmp ile biter.)",
 				errorInvalidVideoUrl: "Geçerli bir video URL\'si girin (http(s):// ile başlar)",
 				errorNoName: "Bu tur noktası için ad girin",
@@ -318,7 +318,7 @@
 				header: "Facebook Kullanıcı Hesabınız ile kimlik doğrulayın veya bir Genel Sayfa kullanın. Facebook kullanıcı kimlik doğrulaması gerektirmeyen genel bir Harita Turu oluşturmak için, yorum yapmaya izin veren ve özel kalmayı tercih eden özel albümler kullanılabilir.",
 				leftHeader: "Facebook Kullanıcısı",
 				rightHeader: "Facebook Sayfası",
-				pageExplain: "Facebook sayfası, <b>esrigis</b> gibi genel bir marka/ürün veya ünlü kişiliktir. Sayfa adını sayfa URL\'sindeki ilk '/' karakterinden alabilirsiniz.",
+				pageExplain: "Facebook sayfası, <b>esrigis</b> gibi genel bir marka/ürün veya ünlü kişiliktir. Sayfa adını sayfa URL\'sindeki ilk \'/\' karakterinden alabilirsiniz.",
 				pageInputLbl: "Sayfa adı girin",
 				lookupMsgError: "Sayfa bulunamadı"
 			},
@@ -327,9 +327,9 @@
 				header: "E-posta adresinizi veya Picasa ya da Google+ hesabınızın kimliğini girin.",
 				userInputLbl: "E-posta veya kimlik girin",
 				signInMsg2: "Hesap bulunamadı",
-				signInMsg3: "ı_No public album_İ",
+				signInMsg3: "Genel albüm yok",
 				howToFind: "Picasa ya da Google+ hesabı kimliği nasıl bulunur",
-				howToFind2: "Herhangi bir Picasa ya da G+ sayfasının ilk ve ikinci '/' karakterleri arasındaki rakamları kopyalayın"
+				howToFind2: "Herhangi bir Picasa ya da G+ sayfasının ilk ve ikinci \'/\' karakterleri arasındaki rakamları kopyalayın"
 			},
 			viewCSV: {
 				title: "CSV içe aktarma",
@@ -425,7 +425,7 @@
 					div6: "Resimlerinizi ekler olarak depolayan veya harici resimlere başvuran <b>mevcut bir Detay Servisi\'ni tekrar kullanmanın yollarını arıyorsunuzdur</b>: Aşağıdaki ayrıntılı bölüme bakın.",
 					div7: "Harita Turu şablonunun <b>önceki bir sürümünün kullanıcısısınızdır</b> ve zaten resimlerinize ve küçük resimlerinize başvuran bir CSV\'niz vardır: Bu dosyayı içe aktarıp verilerinizi ayrıntılandırabilirsiniz. Derleyici yalnızca enlem/boylam alanlarını kullanan CSV\'leri destekler; adres tabanlı CSV\'ler web haritanız yoluyla kullanılmaya devam edebilir. (Aşağıdaki bölüme bakın.)",
 					div8: "Çevrimiçi fotoğraf paylaşma servislerinden içe aktarma",
-					div9: "İçe aktarma işlemi zaten barındırılmakta olan resimlere bunların URL\'lerini bir web haritası detay koleksiyonda depolayarak başvurur. Resimler ArcGIS Online\'da depolanamaz. Barındırılan resimlere erişilemiyorsa, bunlar Harita Turu\'nda kullanılamaz ve bir 'Resim kullanılamıyor' görüntüsü görürsünüz. Fotoğraf servisi sağlayıcınıza bağlı olarak Harita Turu resimlerini adını, açıklamasını ve konumunu içe aktaramayabilir. Bu öznitelikler web haritasında depolanır ve çevrimiçi servislerde yapılan düzenlemelerin hiçbiri Harita Turuna yansımaz.",
+					div9: "İçe aktarma işlemi zaten barındırılmakta olan resimlere bunların URL\'lerini bir web haritası detay koleksiyonda depolayarak başvurur. Resimler ArcGIS Online\'da depolanamaz. Barındırılan resimlere erişilemiyorsa, bunlar Harita Turu\'nda kullanılamaz ve bir \'Resim kullanılamıyor\' görüntüsü görürsünüz. Fotoğraf servisi sağlayıcınıza bağlı olarak Harita Turu resimlerini adını, açıklamasını ve konumunu içe aktaramayabilir. Bu öznitelikler web haritasında depolanır ve çevrimiçi servislerde yapılan düzenlemelerin hiçbiri Harita Turuna yansımaz.",
 					div10: "Resimleri bir web sunucusunda depolama",
 					div11: "Resimleri kendiniz barındırmayı seçerseniz, resimlerinizin küçük resimlerini el ile oluşturmanız gerekir. Küçük resim için tam çözünürlüklü resimleri kullanmak yetersiz performansla sonuçlanır. Bu nedenle bunu sizin için yapacak çevrimiçi bir fotoğraf paylaşma servisi veya bir detay servisi kullanmanızı öneririz.",
 					div12: "Mevcut bir Detay Servisi\'ni veya Shapefile\'ı kullanma",
@@ -494,7 +494,7 @@
 					div3: "Turunuzun ArcGIS.com hesabınızla oturum açmadığınızda da düzgün çalıştığından emin olun. Kullanacağınız URL izleyiciyi bir oturum açma sayfasına veya derleyici moduna yönlendirmemelidir.",
 					div4: "Turunuzun yatay yönlendirmede tutulan bir iPad\'de nasıl göründüğüne bakmak, bu popüler cihazda düzgün göründüğünden emin olmak için iyi bir fikirdir. Bu, altyazılarınızın resimleri çok fazla örtmediğinden emin olmanıza yardımcı olabilir. Ayrıca, altyazınızın ekrana sığıp sığmadığını ve kırpılmasına neden olacak kadar uzun olup olmadığını görmenize izin verir.",
 					div5a: "Arama için öneri",
-					div5b: "İnsanların ArcGIS Online\'da arama yaptıklarında Harita Turunuzu bulmasına yardımcı olmak için harita turunuzun uygulama öğesi sayfasına (web haritanızın öğe sayfasına değil) 'story map' etiketini, bunun yanı sıra da turun yapıldığı eyaletin veya ilin adı, ABD dışındaysa ülkenin adı ve 'public art', 'tourist guide' veya 'historic places' gibi tema etiketlerini eklemenizi öneririz. Bu etiketler, ayrıca, Esri\'de bize de galerilerimizde gösterebileceğimiz ve sosyal medyada tanıtabileceğimiz güzel yeni tur örnekleri bulmamız için yardımcı olur. Ayrıca, uygulama öğesi sayfanıza turun küçük bir ekran resmi veya içindeki resimlerden biri gibi hoş duran bir küçük resim grafiği yüklemenizi de öneririz. Harita turunuz bir ArcGIS Online galerisine eklenirse, otomatik olarak bu resim kullanılır."
+					div5b: "İnsanların ArcGIS Online\'da arama yaptıklarında Harita Turunuzu bulmasına yardımcı olmak için harita turunuzun uygulama öğesi sayfasına (web haritanızın öğe sayfasına değil) \'story map\' etiketini, bunun yanı sıra da turun yapıldığı eyaletin veya ilin adı, ABD dışındaysa ülkenin adı ve \'public art\', \'tourist guide\' veya \'historic places\' gibi tema etiketlerini eklemenizi öneririz. Bu etiketler, ayrıca, Esri\'de bize de galerilerimizde gösterebileceğimiz ve sosyal medyada tanıtabileceğimiz güzel yeni tur örnekleri bulmamız için yardımcı olur. Ayrıca, uygulama öğesi sayfanıza turun küçük bir ekran resmi veya içindeki resimlerden biri gibi hoş duran bir küçük resim grafiği yüklemenizi de öneririz. Harita turunuz bir ArcGIS Online galerisine eklenirse, otomatik olarak bu resim kullanılır."
 				}
 			},
 			share: {
@@ -526,9 +526,9 @@
 				shareA2div2: "Uygulamanın sahibi olarak ArcGIS.com\'da oturum açtığınızda, uygulamada etkileşimli derleyiciyi açmak için bir düğme bulunur:",				
 				shareQ3: "Veriler nerede saklanıyor?",
 				shareA3: "Tur yapılandırması <a href='%LINK1%' target='_blank'>bu web haritası öğesinde</a> ve <a href='%LINK2%' target='_blank'>bu web uygulaması öğesinde</a> saklanır. Flickr, Picasa, Facebook veya YouTube içe aktarma kullandıysanız, resimleriniz ve videolarınız orada saklanmaya devam eder ve ArcGIS Online\'a kopyalanmaz.",
-				shareWarning: "ı_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._İ",
-				shareWarningWith1: "ı_publicly_İ",
-				shareWarningWith2: "ı_publicly and with the Organization_İ"
+				shareWarning: "%WITH% ile paylaşma devre dışı bırakıldı çünkü <a href='%LINK%' target='_blank'>web haritasının</a> sahibi değilsiniz.",
+				shareWarningWith1: "genel ile",
+				shareWarningWith2: "genel ve Kuruluş ile"
 			}
         }
     })

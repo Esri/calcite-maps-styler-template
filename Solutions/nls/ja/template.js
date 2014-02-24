@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "検索",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "須_Find_鷗",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "現在の位置",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "補正の送信",  // Command button to submit a correction to the app's host
-            collect: "コンテンツをマップに追加",  // Command button to open a template picker to add features to the map
+            collect: "須_Filter/Edit_鷗",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "マップ レイヤのフィルタ処理",  // Explains purpose of type-in box affiliated with template picker
             basemap: "ベースマップの切り替え",  // Command button to open a dialog box for switching basemaps
             share: "共有",  // Command button to open a dropdown menu for picking a type of sharing
@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "この検索レイヤは、マップ内に見つかりませんでした。",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "このフィールドは、マップ検索レイヤ内に見つかりませんでした。",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "これらのフィールドのいずれも、マップ検索レイヤ内に見つかりませんでした。",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "須_This field does not exist in any of the map layers_鷗",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "このフィールドはマップ レイヤ内に存在しません",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "コンテンツが送信されました。",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "アプリケーションの構成にアクセスできません",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "アプリケーションが開始できません"  // Appears for any failure to build the user interface

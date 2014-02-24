@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Valyti",
-                "datePattern": "yyyy.MMM.d" // added 2.5.2013
+                "datePattern": "yyyy MMM dd" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Žemėlapio sukurti nepavyko",
@@ -92,7 +92,7 @@
                 "openInArcGIS": "Map Viewer",
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Savininkas:",
-                "switchBasemap": "Pakeisti pagrindo žėmėlapį",
+                "switchBasemap": "Pakeisti pagrindo žemėlapį",
 				"getMobileApp": "Gauti aplikaciją",
 				"constraintsHeading":"Naudojimo apribojimai",
 				"createdLabel":"Sukurtas",

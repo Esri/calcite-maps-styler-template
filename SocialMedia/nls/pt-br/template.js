@@ -7,7 +7,7 @@
                 "datePattern": "d\' de \'MMMM\' de \'yyyy" // added 2.5.2013
             },
             "applicationTitle": {
-                "PIM": "Mapa de Informações Público" // added 8.26.2013
+                "PIM": "Mapa de Informação Pública" // added 8.26.2013
             },
             "hashTagLabel": {
                 "hashTagFlickr": "#Tag utilizada para Flickr", // added 8.26.2013

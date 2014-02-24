@@ -65,8 +65,8 @@
 				savingApplication: "Сохранение приложения",
 				saveSuccess: "Приложение успешно сохранено",
 				saveError: "Сохранение не удалось, попробуйте еще раз",
-				saveError2: "Ж_Save failed due to an invalid html tag in a name or description_Я",
-				saveError3: "Ж_The title can't be empty_Я",
+				saveError2: "Ошибка при сохранении из-за недопустимого html-тега в имени или описании",
+				saveError3: "Заголовок не может быть пустым",
 				signIn: "Войдите с помощью учетной записи в",
 				signInTwo: "чтобы сохранить приложение."
 			},
@@ -158,7 +158,7 @@
 				settingsDataModel2Explain: "Спрятать под другой веб-картой.",
 				settingsDataModel2SpyGlassExplain: "Показать другую веб-карту.",
 				settingsDataModel2HelpTitle: "Как найти ID веб-карты?",
-				settingsDataModel2HelpContent: "Скопируйте и вставьте цифры, расположенные после знака '=' в URL веб-карты",
+				settingsDataModel2HelpContent: "Скопируйте и вставьте цифры, расположенные после знака \'=\' в URL веб-карты",
 				switchMaps: "Переключить карты",
 				browseWebMaps: "Обзор веб-карт"
 			},
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Цвет заголовка"
 			},
 			initPopup: {
-				initHeader: "Ж_Welcome to the Swipe/Spyglass Builder_Я",
+				initHeader: "Добро пожаловать в построитель шаблона Шторка/Подзорная труба",
 				modalNext: "Далее",
 				modalPrev: "Предыдущий",
 				modalApply: "Открыть приложение"
@@ -208,7 +208,7 @@
 				close: "Закрыть",
 				tab1: {
 					div1: "Шаблон Шторка/Подзорная труба предназначен для сравнения двух отдельных веб-карт или двух слоев одной веб-карты в удобном и простом в использовании приложении, которое может использоваться в любом браузере на любом устройстве, включая смартфоны и планшеты.",
-					div2: "Ж_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._Я",
+					div2: "Для получения дополнительной информации по шаблону Swipe/Spyglass, включая примеры, созданные пользователями, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> посетите веб-сайт Story Maps</a>. Вы также можете следовать за нами в Twitter на <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Мы будем рады вам! Если у вас есть вопросы, вы желаете предложить новую функцию, или вы нашли ошибку, пожалуйста, посетите <a href='http://links.esri.com/storymaps/forum' target='_blank'>Форум пользователей Story Maps</a>."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Как владелец приложения, при входе на ArcGIS.com вы увидите в нем кнопку для открытия интерактивного построителя:",				
 				shareQ3: "Где хранятся данные?",
 				shareA3: "Настройки приложения хранятся в элементе веб-приложения</a>.",
-				shareWarning: "Ж_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Я",
- 				shareWarningWith1: "Ж_publicly_Я",
- 				shareWarningWith2: "Ж_publicly and with the Organization_Я"
+				shareWarning: "Доступ к %WITH%  был отключен, потому что вы не являетесь владелецем <a href='%LINK%' target='_blank'>webmap</a>.",
+ 				shareWarningWith1: "публично",
+ 				shareWarningWith2: "публично и с Организацией"
 			},
 			directCreation: {
 				header: "Добро пожаловать в построитель шаблона Шторка/Подзорная труба",
 				mapPickHeader: "Сначала введите id веб-карты или выберите ее с помощью обзора веб-карт.",
 				launchBuilder: "Запустить построитель",
-				chooseWebmapLbl: "Ж_Choose web map..._Я",
-				explain2: "Ж_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._Я",
-				explain3: "Ж_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._Я",
-				webmapPlaceholder: "Ж_Enter a web map id..._Я"
+				chooseWebmapLbl: "Выберите веб-карту...",
+				explain2: "Чтобы создать карту-историю Swipe или Spyglass, используйте кнопку ниже, чтобы выбрать существующую веб-карту ArcGIS Online, которую вы хотите использовать. Кроме того, вы можете вставить идентификатор ID веб-карты в поле ниже.",
+				explain3: "Если вы хотите использовать две веб-карты в вашей карте-истории, то вы будете запрошены о второй веб-карте позже, когда выберете эту опцию.",
+				webmapPlaceholder: "Введите id веб-карты..."
 			}
 		},
 		configure: {

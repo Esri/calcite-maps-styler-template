@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "ค้นหา",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "ก้_Find_ษฺ",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "ตำแหน่งปัจจุบัน",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "ส่งการแก้ไข",  // Command button to submit a correction to the app's host
-            collect: "เพิ่มข้อมูลในแผนที่",  // Command button to open a template picker to add features to the map
+            collect: "ก้_Filter/Edit_ษฺ",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "คัดกรองชั้นข้อมูลแผนที่",  // Explains purpose of type-in box affiliated with template picker
             basemap: "เปลี่ยนแผนที่ฐาน",  // Command button to open a dialog box for switching basemaps
             share: "แชร์",  // Command button to open a dropdown menu for picking a type of sharing
@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "ไม่พบชั้นข้อมูลที่ค้นหาในแผนที่",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "ไม่พบฟิลด์ที่ค้นหาในชั้นข้อมูลของแผนที่",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "ไม่พบข้อมูลฟิลด์ใดๆ จากการค้นหาชั้นข้อมูลในแผนที่นี้",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "ก้_This field does not exist in any of the map layers_ษฺ",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "ฟิลด์นี้จะไม่อยู่ในที่ใด ๆ ของชั้นแผนที่",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "ข้อมูลของคุณได้ถูกส่งแล้ว ขอบคุณ",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "ไม่สามารถเข้าถึงการตั้งค่าของแอพพลิเคชั่นได้",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "ไม่สามารถเริ่มใช้แอพพลิเคชั่นได้"  // Appears for any failure to build the user interface

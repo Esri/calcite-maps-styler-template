@@ -1,7 +1,7 @@
 ﻿define(
      ({
         map: {
-            error: "ก้_Unable to create map_ษฺ"
+            error: "ไม่สามารถสร้างแผนที่"
         }
     })
 

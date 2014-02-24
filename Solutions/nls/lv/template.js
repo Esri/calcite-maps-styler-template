@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Meklēt",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "ķ_Find_ū",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Pašreizējais izvietojums",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Pieteikt korekciju",  // Command button to submit a correction to the app's host
-            collect: "Pievienot saturu kartei",  // Command button to open a template picker to add features to the map
+            collect: "ķ_Filter/Edit_ū",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtrēt kartes slāņus",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Pārslēgt pamatkarti",  // Command button to open a dialog box for switching basemaps
             share: "Koplietot",  // Command button to open a dropdown menu for picking a type of sharing
@@ -39,7 +39,7 @@ define(
             email: "epasts",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
             Twitter: "Twitter",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
-            title: "nosaukums",  // Shown as title hint in print specification box if a title hint is not configured
+            title: "virsraksts",  // Shown as title hint in print specification box if a title hint is not configured
             author: "autors"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
@@ -54,11 +54,11 @@ define(
             geolocationTimeout: "Pārlūks nevarēja savlaicīgi iegūt pašreizējo izvietojumu",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "Meklētais slānis kartē netika atrasts",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Lauks netika atrasts meklētajā kartes slānī",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
-            allSearchFieldsMissing: "Neviens no šiem laukiem netika konstatēts kartes meklēšanas slānī",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "ķ_This field does not exist in any of the map layers_ū",  // Appears when a field used in the configuration was not found in any map layer
-            yourContentSubmitted: "Jūsu saturs ir iesniegts. Paldies",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "Nervar piekļūt lietojumprogrammas konfigurācijai",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "Nevar uzsākt pieteikumu"  // Appears for any failure to build the user interface
+            allSearchFieldsMissing: "Neviens no šiem laukiem kartes meklēšanas slānī nav atrasts",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
+            fieldNotFound: "Šis lauks nepastāv nevienā no kartes slāņiem",  // Appears when a field used in the configuration was not found in any map layer
+            yourContentSubmitted: "Jūsu saturs ir iesniegts. Paldies!",  // Appears after content has been added to the map and successfully submitted to the server
+            noConfiguration: "Nevar piekļūt lietotnes konfigurācijai",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            unableToLaunchApp: "Nevar palaist lietotni"  // Appears for any failure to build the user interface
         }
     })
 );

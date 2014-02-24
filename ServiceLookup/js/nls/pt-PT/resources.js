@@ -8,9 +8,9 @@
             defaultText: "Introduza a sua morada"
         },
         error: {
-            layerNotFound: "ã_Layer is not in the webmap_Ç",
+            layerNotFound: "A Camada não está no mapa web.",
             fieldNotFound: "Campo não encontrado",
-            popupNotSet: "ã_Popup not enabled for this layer_Ç"
+            popupNotSet: "Janela pop-up não ativada nesta camada"
         },
         page: {
             title: "Verificação de Serviço",

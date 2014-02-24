@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Wyszukaj",  // Command button to open a dialog box for searching for a feature or an address (depending on app)
+            search: "ł_Find_ą",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Bieżąca lokalizacja",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Wyślij korektę",  // Command button to submit a correction to the app's host
-            collect: "Dodaj zasoby do mapy",  // Command button to open a template picker to add features to the map
+            collect: "ł_Filter/Edit_ą",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtruj warstwy mapy",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Przełącz mapę bazową",  // Command button to open a dialog box for switching basemaps
             share: "Udostępnij",  // Command button to open a dropdown menu for picking a type of sharing
@@ -55,7 +55,7 @@ define(
             searchLayerMissing: "Nie znaleziono wyszukiwanej warstwy na mapie",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the mapLayers prompt
             searchFieldMissing: "Nie znaleziono tego pola w wyszukiwanej warstwie mapy",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the layerFields prompt
             allSearchFieldsMissing: "Żadne z tych pól nie zostało znalezione w przeszukiwanej warstwie mapy.",  // Appears before a list of fields in the configured map search layer; shown when the app cannot find any of the fields that were configured for the search command; works with the layerFields prompt
-            fieldNotFound: "ł_This field does not exist in any of the map layers_ą",  // Appears when a field used in the configuration was not found in any map layer
+            fieldNotFound: "To pole nie istnieje w żadnej warstwie mapy",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Twoja zawartość została przesłana. Dziękujemy.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Nie można uzyskać dostępu do plików konfiguracyjnych aplikacji",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "Nie można uruchomić aplikacji"  // Appears for any failure to build the user interface

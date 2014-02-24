@@ -1,15 +1,18 @@
 ﻿define(
      ({
         map: {
-            error: "Ă_Unable to create map_ș"
+            error: "Imposibil de creat harta"
         },
         general: {
-            legend: "Ă_Legend_ș",
-            aoi: "Ă_Area_ș",
-            summarize: "Ă_Entire Area_ș",
-            share: "Ă_Share_ș",
-            about: "Ă_About_ș",
-            noSearchResult: "Ă_No result found_ș"
+            map: "Ă_Map_ș",
+            mapInfo: "Ă_Map Information_ș",
+            legend: "Legendă",
+            layers: "Ă_Layers_ș",
+            summarize: "Întreaga zonă",
+            share: "Partajare",
+            about: "Despre",
+            noSearchResult: "Niciun rezultat găsit",
+            impactArea: "Ă_Impact Area_ș"
         }
     })
 

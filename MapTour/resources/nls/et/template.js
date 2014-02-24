@@ -280,7 +280,7 @@
 			onlinePhotoSharingCommon: {
 				pictures: "pildid",
 				videos: "videod",
-				disabled: "See funktsionaalsus on administraatori poolt välja lülitatud",
+				disabled: "See funktsioon on administraatori poolt välja lülitatud",
 				disabledPortal: "Võimalus on blokeeritud Portal for ArcGIS lahenduses",
 				header1: "Teie pildid peavad olema jagatud avalikult.",
 				header2: "Importimine on limiteeritud esimeste %NB1% %MEDIA%.",
@@ -327,7 +327,7 @@
 				header: "Sisesta e-mail või oma Picasa ID või Google+ konto.",
 				userInputLbl: "Sisesta e-mail või ID",
 				signInMsg2: "Kontot ei leitud",
-				signInMsg3: "Š_No public album_ä",
+				signInMsg3: "Avalikku albumit pole",
 				howToFind: "Kuidas leida Picasa või Google+ konto ID-d",
 				howToFind2: "Kopeeri numbrikohad esimese ja teise \'/\' vahelt Picasa või G+ lehelt"
 			},
@@ -368,12 +368,12 @@
 			},
 			viewGeoTag: {
 				title: "Vali ja positsioneeri oma pildid/videod",
-				header: "Klikka või koputa piltidele, mida soovite nende paigutamiseks importida.",
+				header: "Klikkige või puudutage pilte, mida soovite nende paigutamiseks importida.",
 				headerMore: "Miks minu pildid/videod ei ole ruumiliselt paigutatud?",
 				headerExplain: "Kui piltidel on kehtiv asukoht, märgitakse need automaatselt kaardile ja teise saki all olevasse loendisse.<br /><br />Vaikimisi Picasa ega Flickr piltide EXIF metainfot ei kasutada, kontrolli Flickri/Picasa seadeid privaatsuse seadetest, et see võimaldada. Võib juhtuda, et pead kogu Flickri/Picasa impordi  uuesti läbi tegema.<br /><br />Facebookis pead liikuma igale pildile, aktiveerima Muuda ning valima asukoha soovituslike valikute vahel, mis põhinevad pildiandmete EXIF sisul.",
 				leftPanelTab1: "Paiguta",
 				leftPanelTab2: "Paigutatud",
-				clickOrTap: "Paigutamiseks klikka või koputa kaardile",
+				clickOrTap: "Paigutamiseks klikkige kaardil või puudutage kaarti",
 				clearLoc: "Tühista asukohad",
 				clickDrop: "Ära impordi",
 				footerImport: "Impordi",
@@ -526,9 +526,9 @@
 				shareA2div2: "Rakenduse omanikuna, ArcGIS.com sisselogituna, sisaldab rakendus nuppu interaktiivse looja avamiseks.",				
 				shareQ3: "Kus on andmed majutatud?",
 				shareA3: "Tuuri konfiguratsioon on salvestatud <a href='%LINK1%' target='_blank'>siin veebikaardi sisus</a> ja <a href='%LINK2%' target='_blank'>siin veebirakenduse sisus</a>.Kui olete kasutanud Flickr, Picasa, Facebook või YouTube importi, siis teie pildid ja videod säilitatakse seal ja ei ole kopeeritud ArcGIS Online keskkonda.",
-				shareWarning: "Š_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ä",
-				shareWarningWith1: "Š_publicly_ä",
-				shareWarningWith2: "Š_publicly and with the Organization_ä"
+				shareWarning: "%WITH% jagamine on keelatud, kuna te pole <a href='%LINK%' target='_blank'>veebikaardi</a> omanik.",
+				shareWarningWith1: "Avalikult",
+				shareWarningWith2: "Avalikult ja organisatsiooniga"
 			}
         }
     })

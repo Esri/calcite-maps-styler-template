@@ -1,15 +1,18 @@
 ﻿define(
      ({
         map: {
-            error: "Š_Unable to create map_ä"
+            error: "Kaarti ei saa luua"
         },
         general: {
-            legend: "Š_Legend_ä",
-            aoi: "Š_Area_ä",
-            summarize: "Š_Entire Area_ä",
-            share: "Š_Share_ä",
-            about: "Š_About_ä",
-            noSearchResult: "Š_No result found_ä"
+            map: "Š_Map_ä",
+            mapInfo: "Š_Map Information_ä",
+            legend: "Legend",
+            layers: "Š_Layers_ä",
+            summarize: "Kogu ala",
+            share: "Jaga",
+            about: "Info",
+            noSearchResult: "Tulemust ei leitud",
+            impactArea: "Š_Impact Area_ä"
         }
     })
 

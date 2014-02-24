@@ -27,15 +27,7 @@ input[type=text]::-ms-clear {
 .calcite a:active {
     color: #555;
 }
-.esriRtl label {
-    /*Example of a rule that will be applied if the app is viewed in a browser wtih a RTL locale like Hebrew or Arabic.*/
-}
 /* General Misc */
-
-.esriRTL .esriSimpleSliderTL {
-    left: auto;
-    right: 20px;
-}
 .toggle-grey {
     color: #999;
 }
@@ -88,7 +80,7 @@ input[type=text]::-ms-clear {
     color: #333;
 }
 .panel-padding {
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     color: #666;
 }
 .panel-header {
@@ -118,6 +110,10 @@ input[type=text]::-ms-clear {
 .twitter-auth-status {
     cursor: pointer;
 }
+#twitter_legend_auth a {
+    margin-bottom: 10px;
+    display: inline-block;
+}
 /* Map Panel */
 
 .bookmark-item,
@@ -128,7 +124,7 @@ input[type=text]::-ms-clear {
     height: 18px;
     font-size: 16px;
     cursor: pointer;
-    background: #f8f8f8;
+    background-color: #f8f8f8;
     background-position: 95% center;
     background-repeat: no-repeat;
 }
@@ -170,6 +166,7 @@ input[type=text]::-ms-clear {
     background-image: url(../images/ajax-loader.gif);
 }
 .note-selected .note-item {
+    background-color: #fff;
     border-left: 5px solid #007ac2;
     color: #007ac2;
     font-weight: 700;
