@@ -213,14 +213,16 @@ define([
           callbackParamName: "callback"
       }).then(lang.hitch(this, function(response) {
        
-          if(response.user && response.user.units){ //user defined units
-            this.config.units = response.user.units;
-          }
-          else if(response.units){ //org level units 
+          this.config.units = "metric"
+          if (response.user && response.user.units) { //user defined units
+              this.config.units = response.user.units;
+          } else if (response.units) { //org level units 
               this.config.units = response.units;
-          }else{ //default to english 
+          } else if ((response.user && response.user.region && response.user.region === "US") || (response.user && !response.user.region && response.region === "US") || (response.user && !response.user.region && !response.region) || (!response.user && response.ipCntryCode === "US") || (!response.user && !response.ipCntryCode && kernel.locale === "en-us")){
+              // use feet/miles only for the US and if nothing is set for a user
               this.config.units = "english";
           }
+
           this.config.helperServices = {};
           lang.mixin(this.config.helperServices, response.helperServices);
           //Let's set the geometry helper service to be the app default.  
