@@ -33,6 +33,73 @@
 
   }
 
+
+  #geocoderDiv {
+
+      position: absolute;
+
+      display: block;
+
+      z-index: 50;
+
+      top: 20px;
+
+      left: 74px;
+
+  }
+
+  .esriSimpleSliderDecrementButton:hover {
+
+      border-top: 1px solid #666;
+
+  }
+
+  .HomeButton .home {
+
+      background-image: url(../images/home.png);
+
+      padding: 0;
+
+      border-radius: 0;
+
+      border-bottom: 1px solid #666;
+
+      background-color: #FFF;
+
+  }
+
+  .HomeButton .home:hover {
+
+      background-color: #eee;
+
+      background-color: rgb(238, 238, 238);
+
+  }
+
+  .HomeButton .home:active {
+
+      background-color: #ddd;
+
+  }
+
+  #locateDiv {
+
+      position: absolute;
+
+      top: 125px;
+
+      left: 20px;
+
+      z-index: 50;
+
+  }
+
+  .LocateButton .zoomLocateButton {
+
+      background-color: #989898;
+
+  }
+
   #header {
 
       border: solid 1px #999;
@@ -247,7 +314,7 @@
 
   }
 
-  .headerButton: hover {
+  .headerButton:hover {
 
       background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #000000), color-stop(1, #45484d));
 
@@ -259,7 +326,7 @@
 
   }
 
-  .headerButton: active {
+  .headerButton:active {
 
       position: relative;
 
@@ -312,10 +379,10 @@
   }
 
   .filter {
+
       display: block;
 
   }
-
 
   .row input {
 
@@ -431,7 +498,7 @@
 
   #container.esriLtr .submitButton {
 
-     /* float: left;*/
+      /* float: left;*/
 
   }
 
@@ -451,7 +518,7 @@
 
   }
 
-  .submitButton: hover {
+  .submitButton:hover {
 
       border: 1px solid #999;
 
@@ -529,7 +596,7 @@
 
   }
 
- .row select {
+  .row select {
 
       max-width: 280px;
 

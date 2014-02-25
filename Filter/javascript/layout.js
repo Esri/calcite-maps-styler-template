@@ -6,12 +6,15 @@ dojo.require("esri.geometry.Extent");
 dojo.require("utilities.CreateContent");
 dojo.require("dojo.Deferred");
 dojo.require("dojo.DeferredList");
+dojo.require("esri.dijit.LocateButton");
+dojo.require("esri.dijit.HomeButton");
+dojo.require("esri.dijit.Geocoder");
 
 
 var map;
 var options;
 var appcontent;
-
+var allResults = null;
 function init(initOptions) {
 
     options = initOptions;
@@ -106,6 +109,8 @@ function createMap(itemInfo) {
              *Once the filter dialog has been created add it to the left (or floating mobile) panel
              */
             appcontent.setPanelContent(options.i18n.viewer.content_title, content, "340px");
+            
+            addWidgets();
         });
 
     }, function(error) {
@@ -114,6 +119,230 @@ function createMap(itemInfo) {
     });
 
 }
+function addWidgets(){
+    if(options.home_button){
+        var homeButton = new esri.dijit.HomeButton({
+            map: map
+        },dojo.create("div",{},dojo.query(".esriSimpleSliderIncrementButton")[0],"after"));
+        homeButton.startup();
+    }
+    
+    if(options.locate_button){
+        var locateDiv = dojo.create("div",{id:"locateDiv"}, "map");
+        var locationButton = new esri.dijit.LocateButton({
+            map: map
+        },locateDiv);
+        locationButton.startup();
+    }
+    
+    
+    if(options.geocoder){
+        createGeocoder();
+
+    }
+
+}
+function createGeocoder(){
+        //add the geocoder widget as a child of the map div. This widget
+        //is positioned using css. Search main.css for the geocoderDiv selector
+
+        var options = createGeocoderOptions();
+
+        var geocoderDiv = dojo.create("div",{id:"geocoderDiv"},"map");
+        var geocoder = new esri.dijit.Geocoder(options,geocoderDiv);
+
+
+        geocoder.startup();
+
+        geocoder.on("find-results", checkResults); 
+        geocoder.on("select", showGeocodingResult);
+        geocoder.on("auto-complete", clearGeocodeResults);
+        geocoder.on("clear", clearGeocodeResults);
+
+}
+function createGeocoderOptions(){
+            //Check for multiple geocoder support and setup options for geocoder widget. 
+            var hasEsri = false,
+                geocoders = dojo.clone(options.helperServices.geocode);
+
+            dojo.forEach(geocoders, function (geocoder, index) {
+                if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+                    hasEsri = true;
+                    geocoder.name = "Esri World Geocoder";
+                    geocoder.outFields = "Match_addr, stAddr, City";
+                    geocoder.singleLineFieldName = "Single Line";
+                    geocoder.esri = geocoder.placefinding = true;
+  
+                }
+
+            });
+            //only use geocoders with a singleLineFieldName that allow placefinding
+            geocoders = dojo.filter(geocoders, function (geocoder) {
+                return (esri.isDefined(geocoder.singleLineFieldName) && esri.isDefined(geocoder.placefinding) && geocoder.placefinding);
+            });
+            var esriIdx;
+            if (hasEsri) {
+                for (var i = 0; i < geocoders.length; i++) {
+                    if (esri.isDefined(geocoders[i].esri) && geocoders[i].esri === true) {
+                        esriIdx = i;
+                        break;
+                    }
+                }
+            }
+            var goptions = {
+                map: this.map,
+                autoNavigate: false,
+                theme: "simpleGeocoder",
+                autoComplete:hasEsri
+
+            }
+   
+   
+            if (hasEsri && esriIdx === 0) {
+
+                goptions.minCharacters = 0;
+                goptions.maxLocations = 5;
+                goptions.searchDelay = 100
+                goptions.arcgisGeocoder = geocoders.splice(0, 1)[0]; //geocoders[0];
+                if (geocoders.length > 0) {
+                    goptions.geocoders = geocoders;
+                }
+            } else {
+                //options.autoComplete = false;
+                goptions.arcgisGeocoder = false;
+                goptions.geocoders = geocoders;
+            }
+
+            return goptions;
+
+}
+function checkResults(geocodeResults){
+        allResults = null;
+        if (geocodeResults && geocodeResults.results && geocodeResults.results.results) {
+            geocodeResults.results = geocodeResults.results.results;
+        }
+        if ((!geocodeResults || !geocodeResults.results || !geocodeResults.results.length)) {
+            //No results
+            console.log("No results found");
+        } else if (geocodeResults) {
+            allResults = geocodeResults.results;
+        }
+
+}
+function clearGeocodeResults(){
+        if(map.infoWindow.isShowing){
+            map.infoWindow.hide();
+        }
+        allResults = null;
+
+
+}
+function showGeocodingResult(geocodeResult, pos) {
+    if (!esri.isDefined(pos)) {
+        pos = 0;
+    }
+
+    if (geocodeResult.result) {
+        geocodeResult = geocodeResult.result;
+    }
+
+    if (geocodeResult.extent) {
+        setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, geocodeResult.extent, geocodeResult, pos);
+    } else { //best view 
+        var bestView = map.extent.centerAt(geocodeResult.feature.geometry).expand(0.0625);
+        setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, bestView, geocodeResult, pos);
+    }
+}
+function setupInfoWindowAndZoom(content, geocodeLocation, newExtent, geocodeResult, pos) {
+    map.infoWindow.clearFeatures();
+
+    //Show info window
+    if (allResults && allResults.length > 1) {
+        //let's update the content to show additional results 
+        var currentLocationName = content;
+        var attr = allResults[pos].feature.attributes;
+        content = "<div id='geocodeCurrentResult' style='display:none;'><span style='font-weight:bold;'>";
+        content += "Current Location";
+        content += "</span></div>";
+        content += "<span>";
+
+        if (!attr.Match_addr) {
+            content += currentLocationName;
+        } else {
+            content += attr.Match_addr;
+            if (attr.stAddr && attr.City) {
+                content += " - " + attr.stAddr + ", " + attr.City;
+            } else if (attr.stAddr) {
+                content += " - " + attr.stAddr;
+            }
+        }
+
+        content += "</span>";
+        content += "<div id='geocodeWantOtherResults'>";
+        content += "<A onClick='showOtherResults();' href='#'>";
+
+        content += "Not what you wanted";
+        content += "</A>";
+        content += "</div>";
+        content += "<div id='geocodeOtherResults' style='display:none;'><span style='font-weight:bold;'>";
+        content += "Select another";
+        content += "</span><br/>";
+        for (var i = 0; i < allResults.length; i++) {
+            if (i !== pos) {
+                var result = allResults[i];
+                attr = result.feature.attributes;
+                content += "<A href='#' onClick='selectAnotherResult(" + i + ")'>";
+                if (!attr.Match_addr) {
+                    content += result.name;
+                } else {
+                    //content += result.feature.attributes.Place_addr ? (" - " + result.feature.attributes.Place_addr) : ""
+                    content += attr.Match_addr;
+                    if (attr.stAddr && attr.City) {
+                        content += " - " + attr.stAddr + ", " + attr.City;
+                    } else if (attr.stAddr) {
+                        content += " - " + attr.stAddr;
+                    }
+                }
+
+                content += "</A><br/>";
+            }
+        }
+        content += "</div>";
+
+    }
+
+    //display a popup for the result
+    map.infoWindow.setTitle("Location");
+    map.infoWindow.setContent(content);
+    //Ensure popups don't interfere with the editor window contents. 
+    var handler = dojo.connect(map.infoWindow, "onHide", function () {
+        dojo.disconnect(handler);
+        if (editorWidget) {
+            destroyEditor();
+            createEditor();
+        }
+    });
+
+    var location = new esri.geometry.Point(geocodeLocation.x, geocodeLocation.y, geocodeLocation.spatialReference);
+    var extentHandler = dojo.connect(map, "onExtentChange", function () {
+        map.infoWindow.show(location);
+        dojo.disconnect(extentHandler);
+    });
+
+    map.setExtent(newExtent);
+
+}
+function showOtherResults() {
+    dojo.style(dojo.byId("geocodeWantOtherResults"), "display", "none");
+    dojo.style(dojo.byId("geocodeCurrentResult"), "display", "block");
+    dojo.style(dojo.byId("geocodeOtherResults"), "display", "block");
+
+}
+
+function selectAnotherResult(pos) {
+    showGeocodingResult(allResults[pos], pos);
+}
+
 
 function buildFilterDialog(layers) {
     /*
@@ -157,7 +386,7 @@ function buildFilterDialog(layers) {
         var b = dojo.create("input", {
             type: "button",
             className: "submitButton",
-            value: options.i18n.viewer.button_text
+            value: options.button_text || options.i18n.viewer.button_text
         }, filterGroup, "last");
 
         dojo.connect(b, "onclick", dojo.hitch(this, function() {
