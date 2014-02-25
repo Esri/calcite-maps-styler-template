@@ -1071,7 +1071,7 @@ function addMeasurementWidget() {
         closable:false,
         id: "floater",
         //constrainToContainer: true,
-        style: "position:absolute;top:0;left:0;width:245px;height:175px;z-index:999!important;visibility:hidden;",      
+        style: "position:absolute;top:0;left:0;width:245px;height:175px;z-index:999!important;visibility:hidden;"    
     }, dojo.byId("floater"));
 
     fp.startup();
