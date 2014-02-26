@@ -1,4 +1,3 @@
-
 {
    "configurationSettings":[
       {
@@ -88,7 +87,7 @@
             {
                "type":"boolean",
                "fieldName":"cluster",
-               "label":"Display summary as clusters ",
+               "label":"Display point layer summary as clusters ",
                "tooltip":"Summary layer points will be displayed as clusters"
             },
             {
