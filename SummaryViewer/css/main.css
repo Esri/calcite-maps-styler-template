@@ -30,7 +30,7 @@ html, body {
 .esriSimpleSlider {
 	text-align: center;
 	color: #ffffff;
-	background-color: #80ab00;
+	background-color: #ffffff;
 	cursor: pointer;
 	-moz-opacity: 0.8;
 	-khtml-opacity: 0.8;
@@ -106,7 +106,7 @@ html, body {
 
 .bg {
 	display: block;
-	background-color: #80ab00;
+	background-color: #ffffff;
 	filter: alpha(opacity=80);
 	-moz-opacity: 0.80;
 	-khtml-opacity: 0.80;
