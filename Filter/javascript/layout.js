@@ -314,14 +314,7 @@ function setupInfoWindowAndZoom(content, geocodeLocation, newExtent, geocodeResu
     //display a popup for the result
     map.infoWindow.setTitle("Location");
     map.infoWindow.setContent(content);
-    //Ensure popups don't interfere with the editor window contents. 
-    var handler = dojo.connect(map.infoWindow, "onHide", function () {
-        dojo.disconnect(handler);
-        if (editorWidget) {
-            destroyEditor();
-            createEditor();
-        }
-    });
+
 
     var location = new esri.geometry.Point(geocodeLocation.x, geocodeLocation.y, geocodeLocation.spatialReference);
     var extentHandler = dojo.connect(map, "onExtentChange", function () {
