@@ -526,7 +526,7 @@
 				shareA2div2: "Как владелец приложения, при входе на ArcGIS.com вы увидите в нем кнопку для открытия интерактивного построителя:",				
 				shareQ3: "Где хранятся данные?",
 				shareA3: "Конфигурация тура хранится в <a href='%LINK1%' target='_blank'>этом элементе веб-карты</a> и <a href='%LINK2%' target='_blank'>этом элементе веб-приложения</a>. Если вы использовали импорт из Flickr, Picasa, Facebook или YouTube, изображения и видео остаются там же, они не дублируются в ArcGIS Online.",
-				shareWarning: "Доступ к %WITH%  был отключен, потому что вы не являетесь владелецем <a href='%LINK%' target='_blank'>webmap</a>.",
+				shareWarning: "Доступ к %WITH%  был отключен, потому что вы не являетесь владельцем <a href='%LINK%' target='_blank'>webmap</a>.",
 				shareWarningWith1: "публично",
 				shareWarningWith2: "публично и с Организацией"
 			}

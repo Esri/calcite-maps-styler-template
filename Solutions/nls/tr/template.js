@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "ı_Find_İ",  // Command button to open a dialog box for finding a feature or an address (depending on app)
+            search: "Bul",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Geçerli Konum",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Düzeltmeyi gönder",  // Command button to submit a correction to the app's host
-            collect: "ı_Filter/Edit_İ",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            collect: "Filtrele/Düzenle",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Harita katmanlarını filtrele",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Altlık haritayı değiştir",  // Command button to open a dialog box for switching basemaps
             share: "Paylaş",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,7 +43,7 @@ define(
             author: "yazar"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "ı_Find:_İ",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Bul:",  // Appears before a search text field in dialog box for searching for a feature
             markup: "Çiz",  // Appears before a set of tools for drawing on the map
             mapLayers: "Harita katmanları:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "Katman alanlarını ara:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "Bu sitenin geçerli konumu alma izni yok",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Tarayıcı geçerli konumu alamadı",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Tarayıcı geçerli konumu zamanında alamadı",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "ı_This find layer was not found in the map_İ",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
-            searchFieldMissing: "ı_This field was not found in the map find layer_İ",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
-            allSearchFieldsMissing: "ı_None of these fields was found in the map find layer_İ",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
+            searchLayerMissing: "Bu bulma katmanı haritada bulunamadı",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "Bu alan harita bulma katmanında bulunamadı",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "Bu alanlardan hiçbiri harita bulma katmanında bulunamadı",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "Bu alan harita katmanlarının hiçbirinde yok",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "İçeriğiniz teslim edildi. Teşekkür ederiz.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Uygulama yapılandırmasına erişilemiyor",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

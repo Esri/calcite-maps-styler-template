@@ -43,7 +43,7 @@ define(
             author: "ผู้แต่ง"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "ก้_Find:_ษฺ",  // Appears before a search text field in dialog box for searching for a feature
+            search: "ค้นหา:",  // Appears before a search text field in dialog box for searching for a feature
             markup: "วาด",  // Appears before a set of tools for drawing on the map
             mapLayers: "ชั้นข้อมูลของแผนที่:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "ค้นหาฟีลด์ของชั้นข้อมูล:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message

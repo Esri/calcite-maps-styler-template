@@ -34,11 +34,11 @@
             twitterAccountStatus: "å_Enable the Twitter layer to see your status._ø"
         },
         general: {
-            map: "å_Map_ø",
+            map: "Kart",
             mapInfo: "å_Map Information_ø",
             legend: "Tegnforklaring",
             featured: "å_Featured Locations_ø",
-            layers: "å_Layers_ø",
+            layers: "Lag",
             share: "Del",
             about: "Om",
             noSearchResult: "Fant ingen resultater",

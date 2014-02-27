@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Ă_Find_ș",  // Command button to open a dialog box for finding a feature or an address (depending on app)
+            search: "Căutare",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Locaţie curentă",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Trimitere corecţie",  // Command button to submit a correction to the app's host
-            collect: "Ă_Filter/Edit_ș",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            collect: "Filtrare/Editare",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtrare straturi tematice de hartă",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Comutare hartă fundal",  // Command button to open a dialog box for switching basemaps
             share: "Partajare",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,7 +43,7 @@ define(
             author: "autor"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "Ă_Find:_ș",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Găsire:",  // Appears before a search text field in dialog box for searching for a feature
             markup: "Trasare",  // Appears before a set of tools for drawing on the map
             mapLayers: "Straturi tematice hartă:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "Câmpuri strat tematic de căutare:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "Acest site nu are permisiunea de a obţine locaţia curentă",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Browserul nu a putut obţine locaţia curentă",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Browserul nu a putut obţine locaţia curentă la timp",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "Ă_This find layer was not found in the map_ș",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
-            searchFieldMissing: "Ă_This field was not found in the map find layer_ș",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
-            allSearchFieldsMissing: "Ă_None of these fields was found in the map find layer_ș",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
+            searchLayerMissing: "Acest strat tematic de căutare nu a fost găsit în hartă",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "Acest câmp nu a fost găsit în stratul tematic de căutare al hărţii",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "Niciunul dintre aceste câmpuri nu a fost găsit în stratul tematic de căutare al hărţii",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "Acest câmp nu există în niciunul din straturile tematice de hartă",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "S-a remis conţinutul dvs. Vă mulţumim.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Imposibil de accesat configuraţia aplicaţiei",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

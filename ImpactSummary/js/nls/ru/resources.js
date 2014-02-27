@@ -4,15 +4,15 @@
             error: "Не удалось создать карту"
         },
         general: {
-            map: "Ж_Map_Я",
-            mapInfo: "Ж_Map Information_Я",
+            map: "Карта",
+            mapInfo: "Информация карты",
             legend: "Легенда",
-            layers: "Ж_Layers_Я",
+            layers: "Слои",
             summarize: "Вся область",
             share: "Предоставить доступ",
             about: "О",
             noSearchResult: "Результатов не найдено",
-            impactArea: "Ж_Impact Area_Я"
+            impactArea: "Область влияния"
         }
     })
 

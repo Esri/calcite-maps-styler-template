@@ -4,15 +4,15 @@
             error: "Karte kann nicht erstellt werden"
         },
         general: {
-            map: "ä_Map_Ü",
-            mapInfo: "ä_Map Information_Ü",
+            map: "Karte",
+            mapInfo: "Karteninformationen",
             legend: "Legende",
-            layers: "ä_Layers_Ü",
+            layers: "Layer",
             summarize: "Gesamtfläche",
             share: "Freigeben",
             about: "Info zu",
             noSearchResult: "Kein Ergebnis gefunden",
-            impactArea: "ä_Impact Area_Ü"
+            impactArea: "Betroffenes Gebiet"
         }
     })
 

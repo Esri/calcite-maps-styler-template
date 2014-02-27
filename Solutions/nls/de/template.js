@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "ä_Find_Ü",  // Command button to open a dialog box for finding a feature or an address (depending on app)
+            search: "Suchen",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Aktuelle Position",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Korrektur senden",  // Command button to submit a correction to the app's host
-            collect: "ä_Filter/Edit_Ü",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            collect: "Filtern/Bearbeiten",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Karten-Layer filtern",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Grundkarte wechseln",  // Command button to open a dialog box for switching basemaps
             share: "Freigeben",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,7 +43,7 @@ define(
             author: "Autor"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "ä_Find:_Ü",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Suchen:",  // Appears before a search text field in dialog box for searching for a feature
             markup: "Zeichnen",  // Appears before a set of tools for drawing on the map
             mapLayers: "Karten-Layer:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "Felder des Such-Layers:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "Diese Site verfügt nicht über die Berechtigung, die aktuelle Position zu ermitteln",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Der Browser konnte die aktuelle Position nicht ermitteln",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Der Browser konnte die aktuelle Position nicht rechtzeitig ermitteln",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "ä_This find layer was not found in the map_Ü",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
-            searchFieldMissing: "ä_This field was not found in the map find layer_Ü",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
-            allSearchFieldsMissing: "ä_None of these fields was found in the map find layer_Ü",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
+            searchLayerMissing: "Der Such-Layer wurde nicht auf der Karte gefunden",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "Dieses Feld wurde nicht im Such-Layer für die Karte gefunden",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "Keines dieser Felder wurde im Such-Layer der Karte gefunden",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "Dieses Feld ist in keinem der Karten-Layer vorhanden",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Ihr Inhalt wurde gesendet. Vielen Dank.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Auf die Konfiguration der Anwendung kann nicht zugegriffen werden",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

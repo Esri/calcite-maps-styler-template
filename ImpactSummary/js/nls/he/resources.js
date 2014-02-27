@@ -4,15 +4,15 @@
             error: "לא ניתן ליצור מפה"
         },
         general: {
-            map: "כן_Map_ש",
-            mapInfo: "כן_Map Information_ש",
+            map: "מפה",
+            mapInfo: "מידע על המפה",
             legend: "מקרא",
-            layers: "כן_Layers_ש",
+            layers: "שכבות",
             summarize: "האזור כולו",
             share: "שיתוף",
             about: "אודות",
             noSearchResult: "לא נמצאו תוצאות",
-            impactArea: "כן_Impact Area_ש"
+            impactArea: "אזור השפעה"
         }
     })
 

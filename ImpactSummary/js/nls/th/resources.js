@@ -4,7 +4,7 @@
             error: "ไม่สามารถสร้างแผนที่"
         },
         general: {
-            map: "ก้_Map_ษฺ",
+            map: "แผนที่",
             mapInfo: "ก้_Map Information_ษฺ",
             legend: "สัญลักษณ์",
             layers: "ก้_Layers_ษฺ",

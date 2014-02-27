@@ -34,7 +34,7 @@
             twitterAccountStatus: "ก้_Enable the Twitter layer to see your status._ษฺ"
         },
         general: {
-            map: "ก้_Map_ษฺ",
+            map: "แผนที่",
             mapInfo: "ก้_Map Information_ษฺ",
             legend: "สัญลักษณ์",
             featured: "ก้_Featured Locations_ษฺ",

@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "ã_Find_Ç",  // Command button to open a dialog box for finding a feature or an address (depending on app)
+            search: "Localizar",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Local atual",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Enviar correção",  // Command button to submit a correction to the app's host
-            collect: "ã_Filter/Edit_Ç",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            collect: "Filtrar/Editar",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtrar camadas do mapa",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Trocar mapa base",  // Command button to open a dialog box for switching basemaps
             share: "Compartilhar",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,7 +43,7 @@ define(
             author: "autor"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "ã_Find:_Ç",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Localizar:",  // Appears before a search text field in dialog box for searching for a feature
             markup: "Desenhar",  // Appears before a set of tools for drawing on the map
             mapLayers: "Camadas do mapa:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "Pesquisar campos da camada:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "Este site não tem permissão para obter o local atual",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "O navegador não conseguiu obter o local atual",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "O navegador não conseguiu obter o local atual em um tempo útil",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "ã_This find layer was not found in the map_Ç",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
-            searchFieldMissing: "ã_This field was not found in the map find layer_Ç",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
-            allSearchFieldsMissing: "ã_None of these fields was found in the map find layer_Ç",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
+            searchLayerMissing: "Esta camada de localização não foi encontrada no mapa",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "Este campo não foi encontrado na camada de localização do mapa.",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "Nenhum destes campos foi encontrado na camada de localização do mapa",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "O campo não existe em quaisquer das camadas de mapa",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Seu conteúdo foi enviado. Obrigado.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Não foi possível acessar a configuração do aplicativo",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

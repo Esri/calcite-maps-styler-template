@@ -45,7 +45,7 @@
 				panelHeader: "КОНФИГУРАЦИЯ ПРИЛОЖЕНИЯ",
 				buttonSave: "СОХРАНИТЬ",
 				buttonHelp: "Справка",
-				buttonShare: "Опубликовать",
+				buttonShare: "Доступ",
 				buttonDiscard: "ОТМЕНА",
 				buttonSettings: "Настройки",
 				buttonView: "Режим просмотра",
@@ -246,7 +246,7 @@
 				shareA2div2: "Как владелец приложения, при входе на ArcGIS.com вы увидите в нем кнопку для открытия интерактивного построителя:",				
 				shareQ3: "Где хранятся данные?",
 				shareA3: "Настройки приложения хранятся в элементе веб-приложения</a>.",
-				shareWarning: "Доступ к %WITH%  был отключен, потому что вы не являетесь владелецем <a href='%LINK%' target='_blank'>webmap</a>.",
+				shareWarning: "Доступ к %WITH%  был отключен, потому что вы не являетесь владельцем <a href='%LINK%' target='_blank'>webmap</a>.",
  				shareWarningWith1: "публично",
  				shareWarningWith2: "публично и с Организацией"
 			},

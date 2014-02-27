@@ -216,7 +216,7 @@
 				firstSaveTitle: "Applicatie is opgeslagen",
 				firstSaveHeader: "Uw applicatie is nu opgeslagen in ArcGIS Online. Lees de volgende antwoorden op veelgestelde vragen.",
 				firstSaveA1: "Als u niet vertrouwd bent met ArcGIS Online of u zoekt een snelle manier om toegang te krijgen tot de ontwerpinterface, kunt u de volgende koppeling opslaan: %LINK1%",
-				firstSaveA1bis: "De applicatie is ook te vinden in uw <a href='%LINK2%' target='_blank'>ArcGIS Online-inhoudsmap</a>.",
+				firstSaveA1bis: "De applicatie is ook te vinden in uw <a href='%LINK2%' target='_blank'>ArcGIS Online-contentfolder</a>.",
 				firstSaveQ2: "Wordt mijn applicatie gedeeld?",
 				firstSaveA2: "Momenteel wordt uw applicatie niet gedeeld. Als u deze wilt delen, gebruikt u de knop DELEN.",
 				shareTitle: "Uw applicatie delen",

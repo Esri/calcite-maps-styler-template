@@ -25,7 +25,7 @@
     "legend": "מקרא"
   },
   errors: {
-    "webmap": "Web Map",
+    "webmap": "WebMap",
     "protocolMismatchError": "שגיאת חוסר התאמה בפרוטוקול ... להמשיך בכל זאת?",
     "problematicWebmap": "אנו נתקלים כעת בבעיות טכניות עם מפה זו: ",
     /* DO NOT REPLACE TEXT INSIDE CURLY BRACKETS */

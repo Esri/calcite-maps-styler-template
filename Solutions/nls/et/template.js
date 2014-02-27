@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Š_Find_ä",  // Command button to open a dialog box for finding a feature or an address (depending on app)
+            search: "Leia",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Praegune asukoht",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Esita parandus",  // Command button to submit a correction to the app's host
-            collect: "Š_Filter/Edit_ä",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            collect: "Filtreeri/muuda",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtreeri kaardikihte",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Vaheta aluskaart",  // Command button to open a dialog box for switching basemaps
             share: "Jaga",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,7 +43,7 @@ define(
             author: "autor"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "Š_Find:_ä",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Leia:",  // Appears before a search text field in dialog box for searching for a feature
             markup: "Joonista",  // Appears before a set of tools for drawing on the map
             mapLayers: "Kaardikihid:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "Otsi kihi väljadest:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "See lehekülg ei oma luba praeguse asukoha saamiseks",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Veebibrauser ei saanud praegust asukohta",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Veebibrauser ei saanud praegust asukohta õigeaegselt",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "Š_This find layer was not found in the map_ä",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
-            searchFieldMissing: "Š_This field was not found in the map find layer_ä",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
-            allSearchFieldsMissing: "Š_None of these fields was found in the map find layer_ä",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
+            searchLayerMissing: "Seda otsingukihti ei leitud kaardilt",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "Seda välja ei leitud kaardi otsingukihilt",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "Kaardi otsingukihis ei leitud ühtki nendest väljadest",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "Seda välja pole ühelgi kaardikihil",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Sisu on edastatud. Täname.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Rakenduse konfiguratsioonile ei pääse juurde",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

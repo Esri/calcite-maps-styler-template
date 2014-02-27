@@ -4,10 +4,10 @@
             error: "Kan kaart niet maken"
         },
         general: {
-            map: "Ĳ_Map_ä",
+            map: "Kaart",
             mapInfo: "Ĳ_Map Information_ä",
             legend: "Legenda",
-            layers: "Ĳ_Layers_ä",
+            layers: "Kaartlagen",
             summarize: "Volledig gebied",
             share: "Delen",
             about: "Over",
