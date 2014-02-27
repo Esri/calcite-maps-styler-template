@@ -26,6 +26,21 @@ define({
 				shareStatus3: "Application is shared within the organization",
 				shareStatus4: "Application is not shared"
 			},
+			addEditPopup: {
+				// Add
+				addEditPopupInputTitleLabel: "Title",
+				addPopupTitle: "Add",
+				addPopupDescription: "Add a new view to your series.",
+				addPopupButton: "ADD",
+				// Edit
+				editPopupTitle: "Edit",
+				editPopupDescription: "Edit the selected view",
+				editPopupButton: "APPLY",
+				// Add/Edit
+				addEditPopupCancelButton: "CANCEL",
+				addEditPopupMyContentBtn: "Select from my content",
+				addEditPopupConfigureWebMapBtn: "Configure"
+			},
 			share: {
 				firstSaveTitle: "Application successfully saved",
 				firstSaveHeader: "Your application is now saved in ArcGIS Online. Please read the following answers to frequent questions.",

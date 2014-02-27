@@ -65,7 +65,7 @@
 
 		<script type="text/javascript">
 			var app = {
-				version: 0.2,
+				version: '1.0-alpha1',
 				isProduction: true,
 				isInBuilder: false,
 				indexCfg: configOptions
@@ -113,10 +113,6 @@
 			app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') 
 								|| getUrlVar('fromscratch') || getUrlVar('fromGallery');
 
-			loadCSS("//jsdev.arcgis.com/3.9/js/esri/css/esri.css", true);
-			// TODO
-			loadCSS("//jsdev.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css", true);			
-
 			if( app.isProduction ) {
 				if ( app.isInBuilder )
 					loadCSS("app/builder-min.css");
@@ -124,6 +120,8 @@
 					loadCSS("app/viewer-min.css");
 			}
 
+			//var pathJSAPI = "//js.arcgis.com/3.8/";
+			var pathJSAPI = "//jsdev.arcgis.com/3.9/";
 			var path1 = location.pathname.replace(/\/[^/]+$/, '/');
 			var path2 = location.pathname.replace(/\/[^/]+$/, '');
 			
@@ -169,6 +167,9 @@
 					['underscore', 'lib-build/lodash']
 				]
 			};
+			
+			loadCSS(pathJSAPI + "js/esri/css/esri.css", true);
+			loadCSS(pathJSAPI + "/js/dojo/dijit/themes/claro/claro.css", true);	
 		</script>
 		<!--[if IE 7]>
 			<link rel="stylesheet" href="resources/common/font/storymaps-icons-ie7.css">
@@ -204,16 +205,15 @@
 				</div>
 				<div class="rightArea">
 					<div class="social">
-						<span class="msLink">
-							<a href="" target="_blank"></a>
-						</span>
+						<span class="linkContainer"></span>
 						<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
-						<i class="icon-twitter-1 shareIcon share_twitter"></i>
-						<i class="icon-link shareIcon share_bitly"></i>
+						<i class="shareIcon share_twitter icon-twitter-1"></i>
+						<i class="shareIcon share_bitly icon-link"></i>
+						
 					</div>
 					<div class="logo">
-						<a target="_blank">
-							<img alt="Esri - Home" class="headerLogoImg"/>
+						<a class="logoLink" target="_blank">
+							<img class="logoImg" />
 						</a>
 					</div>
 				</div>
@@ -221,6 +221,17 @@
 			</div>
 		</div>
 
+		<!-- Organize button -->
+		<div id="organizeBtn" style="float: right; display: none; margin-right: 0.5em;">
+            <button type="button" class="btn builder-organize"><span class="glyphicon glyphicon-th-list"></span> ORGANIZE</button>
+        </div>
+
+		<!-- Add button -->
+		<div id="addBtn" style="float: right; display: none; margin-right: 0.5em;">
+			<button type="button" class="btn builder-add">ADD</button>
+		</div>
+
+		<!-- Tab navigation bar -->
 		<div id="tabNavigation" class="mainViewAboveMap">
 			<ul class="nav nav-tabs tabArea"></ul>
 		</div>
@@ -228,11 +239,8 @@
         <!-- Content -->
         <div id="contentPanel" class="mobileView">
             <div id="mainMediaPanel" class="tab-content">
-                <div class="mainMediaContainer tab-pane active">
-                    <div class="mapContainer"></div>
-                </div>
+                <!-- Maps and media injected here -->
             </div>
-            <div id="sidePanel"></div>
         </div>
         <!-- /Content -->
 
@@ -246,15 +254,6 @@
 				<div class="carouselScroller"></div>
 			</div>
 		</div>
-
-        <!-- Add button -->
-		<div id="addBtn" style="position: absolute; top: 130px; left: 25px; display: none;">
-			<button type="button" class="btn builder-add">ADD</button>
-		</div>
-        <!-- Organize button -->
-		<div id="organizeBtn" style="position: absolute; top: 130px; left: 90px; display: none;">
-            <button type="button" class="btn builder-organize"><span class="glyphicon glyphicon-th-list"></span> ORGANIZE</button>
-        </div>
 
 		<!-- Loading -->
 		<div id="loadingOverlay" style="position: absolute; top: 0; left: 0;  z-index: 1100; width: 100%; height: 100%; overflow: hidden; background-color: #c2c2c2;"></div>
@@ -282,7 +281,7 @@
 		</div>
 		
 		<script type="text/javascript">
-			loadJS('//jsdev.arcgis.com/3.9/init.js', true);
+			loadJS(pathJSAPI + 'init.js', true);
 			loadJS('app/config.js');
 			
 			if( app.isProduction ) {
