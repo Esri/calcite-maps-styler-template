@@ -1231,17 +1231,9 @@ function hasEditableLayers(layers) {
             var eLayer = layer.layerObject;
 
             if (eLayer instanceof esri.layers.FeatureLayer && eLayer.isEditable()) {
-                if (eLayer.capabilities && eLayer.capabilities === "Query") {
-                    //is capabilities set to Query if so then editing was disabled in the web map so 
-                    //we won't add to editable layers.
-                } else {
                     layerInfos.push({
                         'featureLayer': eLayer
                     });
-                }
-
-
-
             }
 
         }
