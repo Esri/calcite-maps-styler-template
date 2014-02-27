@@ -10,7 +10,7 @@ define({
             layers: "Layers",
             rendererTitle: "Display information for this area",
             summarize: "Entire Area",
-            summarizeTitle: "Display summarized information for the all areas",
+            summarizeTitle: "Display summarized information for all areas",
             share: "Share",
             about: "About",
             noSearchResult: "No result found",
