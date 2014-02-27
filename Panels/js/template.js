@@ -18,6 +18,7 @@ define([
     "config/defaults",
     "templateConfig/commonConfig",
     "application/OAuthHelper"
+
 ],
     function (
         Evented,
@@ -76,7 +77,7 @@ define([
 
                 this._getLocalization()
                     .then(lang.hitch(this, this._queryApplicationConfiguration))
-                    .then(lang.hitch(this,this._queryWebMap))
+                    .then(lang.hitch(this,this._queryDisplayItem))
                     .then(lang.hitch(this,this._queryOrganizationInformation))
                     .then(lang.hitch(this, function(){
 
@@ -211,16 +212,16 @@ define([
                 }
                 return deferred.promise;
             },
-            _queryWebMap: function () {
-                //If there is an application id or web map item query arcgis.com using esri.arcgis.utils.getItem to get the item info.
-                // If the item info includes itemData.values then the app was configurable so overwrite the
-                // default values with the configured values. 
+            _queryDisplayItem: function () {
+                //Get details about the specified web map or group. If the group or web map is not shared publicly users will
+                //be prompted to log-in by the Identity Manager.
                 var deferred = new Deferred();
-                if (this.config.webmap) {
-                    arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
-                        //Users can set an application extent on the application item. If its set then 
-                        //let's overwrite the webmap's default extent. 
-                        if (this.config.appid && this.config.application_extent.length > 0) {
+                if (this.config.webmap || this.config.group) {
+                    var itemId = this.config.webmap || this.config.group;
+                    arcgisUtils.getItem(itemId).then(lang.hitch(this, function (itemInfo) {
+                        //ArcGIS.com allows you to set an application extent on the application item. Overwrite the 
+                        //existing web map extent with the application item extent when set. 
+                        if (this.config.appid && this.config.application_extent.length > 0 && itemInfo.item.extent) {
                             itemInfo.item.extent = [
                                 [
                                     parseFloat(this.config.application_extent[0][0]),
@@ -232,6 +233,7 @@ define([
                                 ]
                             ];
                         }
+                        //Set the itemInfo config option. This can be used when calling createMap instead of the webmap or group id 
                         this.config.itemInfo = itemInfo;
                         deferred.resolve();
                     }));
@@ -241,17 +243,22 @@ define([
                 return deferred.promise;
             },
             _queryApplicationConfiguration: function () {
-                //If there is an application id or web map item query arcgis.com using esri.arcgis.utils.getItem to get the item info.
-                // If the item info includes itemData.values then the app was configurable so overwrite the
-                // default values with the configured values. 
+                //Get the application configuration details using the application id. When the response contains
+                //itemData.values then we know the app contains configuration information. We'll use these values
+                //to overwrite the application defaults.
+
                 var deferred = new Deferred();
                 if (this.config.appid) {
                     arcgisUtils.getItem(this.config.appid).then(lang.hitch(this, function (response) {
                         if (response.item && response.itemData && response.itemData.values) {
                             //get app config values - we'll merge them with config later. 
                             this.appConfig = response.itemData.values;
-                            if(response.item.itemData.values.webmap && this.config.webmap){
-                                this.config.webmap = response.item.itemData.values.webmap;
+
+                            //Get the web map from the app values. But if there's a web url
+                            //parameter don't overwrite with the app value. 
+                            var webmapParam = this._createUrlParamsObject(["webmap"]);
+                            if(!esriLang.isDefined(webmapParam.webmap) && response.itemData.values.webmap && this.config.webmap){
+                                this.config.webmap = response.itemData.values.webmap;
                             }
                         }
                         //get the extent for the application item. This can be used to override the default web map extent
@@ -267,7 +274,11 @@ define([
             },
             _queryOrganizationInformation: function () {
                 var deferred = new Deferred();
-                //Get default helper services or if app hosted by portal or org get the specific settings for that organization.
+                //Query the ArcGIS.com organization. This is defined by the sharinghost that is specified. For example if you 
+                //are a member of an org you'll want to set the sharinghost to be http://<your org name>.arcgis.com. We query 
+                //the organization by making a self request to the org url which returns details specific to that organization. 
+                //Examples of the type of information returned are custom roles, units settings, helper services and more. 
+
                 esriRequest({
                     url: this.config.sharinghost + "/sharing/rest/portals/self",
                     content: {
@@ -275,9 +286,8 @@ define([
                     },
                     callbackParamName: "callback"
                 }).then(lang.hitch(this, function (response) {
-                    //get units 
+                    //get units defined by the org or the org user
                     this.orgConfig.units = "metric";
-                    //this.config.units = "metric"
                     if (response.user && response.user.units) { //user defined units
                         this.orgConfig.units = response.user.units;
                     } else if (response.units) { //org level units 
@@ -286,7 +296,7 @@ define([
                         // use feet/miles only for the US and if nothing is set for a user
                         this.orgConfig.units = "english";
                     }
-
+                    //Get the helper servcies (routing, print, locator etc)
                     this.orgConfig.helperServices = {};
                     lang.mixin(this.orgConfig.helperServices, response.helperServices);
 
@@ -294,10 +304,8 @@ define([
                     //are any custom roles defined in the organization? 
                     if(response.user && esriLang.isDefined(response.user.roleId)){
                         if(response.user.privileges){
-                         console.log(response.user.privileges);
+                          this.config.userPrivileges = response.user.privileges;
                         }
-
-
                     }
 
             
@@ -316,7 +324,7 @@ define([
                 //application default and configuration info has been applied. Currently these values 
                 //(center, basemap, theme) are only here as examples and can be removed if you don't plan on 
                 //supporting additional url parameters in your application. 
-                var paramItems = ['center', 'basemap', 'theme', 'webmap'];
+                var paramItems = ['center', 'basemap', 'theme'];
                 var mixinParams = this._createUrlParamsObject(paramItems);
                 lang.mixin(this.config, mixinParams);
             }
