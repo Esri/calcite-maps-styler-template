@@ -173,6 +173,7 @@ function createApp() {
         configOptions.displaySlider = false;
     }
 
+    var itemInfo = configOptions.itemInfo || configOptions.webmap;
 
     if (configOptions.gcsextent) {
         //make sure the extent is valid minx,miny,maxx,maxy
@@ -185,17 +186,15 @@ function createApp() {
                 getItem(configOptions.webmap);
             } else {
                 if (extArray.length == 4) {
-                    getItem(configOptions.webmap, extArray);
+                    getItem(itemInfo, extArray);
                 } else {
-                    createMap(configOptions.webmap);
+                    createMap(itemInfo);
                 }
             }
         }
-    }else if (configOptions.appid && configOptions.appextent.length > 0) {
-        var extent = [configOptions.appextent[0][0],configOptions.appextent[0][1], configOptions.appextent[1][0], configOptions.appextent[1][1]];
-        getItem(configOptions.webmap, extent);
-    } else {
-        createMap(configOptions.webmap);
+    }else{
+        createMap(itemInfo);
+
     }
 }
 
@@ -457,7 +456,15 @@ function initUI(response) {
 
     //do we have any editable layers - if not then set editable to false
     editLayers = hasEditableLayers(layers);
-    if (editLayers.length === 0) {
+    
+    //is the logged-in user allowed to edit? 
+    var editable = true;
+    if(esri.isDefined(configOptions.userPrivileges)){
+        if(dojo.indexOf(configOptions.userPrivileges, "features:user:edit") === -1){
+            editable = false;
+        }
+    }
+    if (editLayers.length === 0 || !editable) {
         configOptions.displayeditor = false;
     }
 

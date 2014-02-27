@@ -18,6 +18,7 @@
     var path_location = location.pathname.replace(/\/[^/]+$/, '');
     var dojoConfig = {
       parseOnLoad: true,
+      useDeferredInstrumentation: true,
       packages: [{
         name: "esriTemplate",
         location: path_location
@@ -39,11 +40,12 @@
     <script type="text/javascript">
       dojo.require("esri.layout");
     </script>
-
+ 
     <script type="text/javascript" src="javascript/layout.js">
     </script>
     <script type="text/javascript">
       dojo.require("utilities.App");
+      dojo.require("dojo.on");
       dojo.require("templateConfig.commonConfig");
  
 
@@ -173,10 +175,11 @@
         //embed = true means the margins will be collapsed to just include the map no title or links
         embed: false
       };
+        var supportsLocalization = true;
+        var app = new utilities.App(defaults, supportsLocalization);
+        dojo.on(app, "ready", function(config){
 
-        var app = new utilities.App(defaults);
-        app.init().then(function(options){
-            initMap(options);
+          initMap(config);
         });
 
       });
