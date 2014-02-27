@@ -47,11 +47,7 @@ define([
                 // if we have a layer title or layer id
                 if (this.config.summaryLayer && this.config.summaryLayer.id) {
                     // get layer by id/title
-                    this._aoiLayer = this._getAOILayer({
-                        map: this.map,
-                        layers: this.layers,
-                        id: this.config.summaryLayer.id
-                    });
+                    this._aoiLayer = this._getAOILayer(this.config.summaryLayer.id);
                 }
                 // get layer infos
                 this._getLayerInfos();
@@ -74,7 +70,7 @@ define([
                             id: "selectedArea",
                             visible: this._aoiLayer.visible
                         });
-                        this.map.addLayer(this._selectedGraphics, (this._aoiLayer.layerIndex + 1));
+                        this.map.addLayer(this._selectedGraphics, (this._impactLayerIndex + 1));
                     }
                     // renderer layer infos
                     if (this._aoiInfos) {
@@ -192,20 +188,17 @@ define([
                 }
             },
             // get layer
-            _getAOILayer: function (obj) {
-                var mapLayer, layer, i;
-                // if we have a layer id
-                if (obj.id) {
-                    for (i = 0; i < obj.layers.length; i++) {
-                        layer = obj.layers[i];
-                        if (layer.id === obj.id) {
-                            mapLayer = obj.map.getLayer(layer.id);
-                            if(mapLayer.arcgisProps && mapLayer.arcgisProps.title){
-                                this._impactAreaTitle = mapLayer.arcgisProps.title;   
-                            }
-                            mapLayer.layerIndex = i;
-                            return mapLayer;
+            _getAOILayer: function (id) {
+                if (id && this.layers && this.map) {
+                    var mapLayer = this.map.getLayer(id);
+                    if(mapLayer){
+                        if(mapLayer.arcgisProps && mapLayer.arcgisProps.title){
+                            this._impactAreaTitle = mapLayer.arcgisProps.title;   
                         }
+                        return mapLayer; 
+                    }
+                    else{
+                        return false;
                     }
                 }
                 return false;
@@ -319,6 +312,7 @@ define([
                 if(this.config.enableEntireAreaButton){
                     // create select all item
                     var selectAll = domConstruct.create('li', {
+                        title: this.config.i18n.general.summarizeTitle,
                         className: this.areaCSS.rendererMenuItem + " " + this.areaCSS.rendererSummarize
                     });
                     // create select all item container
@@ -342,6 +336,7 @@ define([
                 for (var i = 0; i < infos.length; i++) {
                     // create list item
                     var liItem = domConstruct.create('li', {
+                        title: this.config.i18n.general.rendererTitle,
                         className: this.areaCSS.rendererMenuItem
                     });
                     // symbol color

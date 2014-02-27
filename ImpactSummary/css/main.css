@@ -378,6 +378,12 @@ input[type=text]::-ms-clear {
     left: auto;
     right: 0;
 }
+.drawer-menu-buttons .icon-text{
+    font-size: 11px;
+    margin-bottom: 5px;
+    line-height: 11px;
+    height: 11px;
+}
 /* Panels */
 
 .panel-title {

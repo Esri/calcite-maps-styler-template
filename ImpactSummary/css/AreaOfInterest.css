@@ -42,6 +42,10 @@
     border-right-width: 16px;
     background-position: 5% center;
 }
+.menu-list li .item-container:hover{
+    color:#333;
+    background-color: #eee;
+}
 .menu-list .summarize .item-container {
     border-left-color: #007ac2;
 }
