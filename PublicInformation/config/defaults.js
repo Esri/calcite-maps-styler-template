@@ -13,7 +13,7 @@ define([], function() {
         //you could define the default here and setup configuration settings to allow users to choose a different
         "title":"",
         "summary":"",
-        "defaultPanel":"map",
+        "defaultPanel":"legend",
         "enableSummary":true,
         "enableTitle":true,
         "enableLegendPanel": true,

@@ -18,6 +18,7 @@ define([], function() {
         "defaultPanel":"map",
         "enableTitle":true,
         "enableEntireAreaButton": true,
+        "selectEntireAreaOnStart": true,
         "enableSummary":true,
         "enableMapPanel": true,
         "enableLegendPanel": true,
