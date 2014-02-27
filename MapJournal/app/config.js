@@ -76,10 +76,10 @@ app.cfg = {
 			thumbnail: "resources/tpl/builder/icons/builder-layout-side.png"
 		},
 		{
-			id: "floating",
+			id: "float",
 			title: "Floating Panel",
 			description: "Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop",
-			thumbnail: "resources/tpl/builder/icons/builder-layout-floating.png"
+			thumbnail: "resources/tpl/builder/icons/builder-layout-float.png"
 		},
 		{
 			id: "flow",
