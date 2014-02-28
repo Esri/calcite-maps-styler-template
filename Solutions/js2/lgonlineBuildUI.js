@@ -733,6 +733,15 @@ define("js/lgonlineBuildUI", ["dojo/on", "dojo/Deferred", "dojo/DeferredList", "
             }
             console.log("proxyUrl: " + config.proxyUrl);
 
+            // Check sign-in status
+            IdentityManager.checkSignInStatus(config.sharingUrl + "/sharing").then(lang.hitch(this,
+                function (credential) {
+                    return;
+                },
+                function (error) {
+                    return;
+                }));
+
             // Query for portal definition if we've an organization
             if (appLocation !== -1) {
                 req = esri.request({
