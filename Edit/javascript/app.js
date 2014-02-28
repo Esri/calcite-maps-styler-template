@@ -285,20 +285,6 @@ define([
                     lang.mixin(this.orgConfig.helperServices, response.helperServices);
 
 
-                    //Is there a custom basemap group defined (owner and title or id)
-                    var q = this._parseQuery(response.basemapGalleryGroupQuery);
-                    this.orgConfig.basemapgroup = {
-                        id: null,
-                        title: null,
-                        owner: null
-                    };
-                    if(q.id){
-                        this.orgConfig.basemapgroup.id = q.id;
-                     }else if(q.title && q.owner){
-                        this.orgConfig.basemapgroup.title = q.title;
-                        this.orgConfig.basemapgroup.owner = q.owner;
-                    }
-
                     //are any custom roles defined in the organization? 
                     if(response.user && esriLang.isDefined(response.user.roleId)){
                         if(response.user.privileges){
@@ -315,27 +301,6 @@ define([
                 return deferred.promise;
             },
 
-            _parseQuery: function(queryString){
-    
-               var regex = /(AND|OR)?\W*([a-z]+):/ig,
-                    fields = {},
-                    fieldName,
-                    fieldIndex,
-                    result = regex.exec(queryString);
-                while (result) {
-                  fieldName = result && result[2];
-                  fieldIndex = result ? (result.index + result[0].length) : -1;
-
-                  result = regex.exec(queryString);
-
-                  fields[fieldName] = queryString
-                                        .substring(fieldIndex, result ? result.index : queryString.length)
-                                        .replace(/^\s+|\s+$/g, "")
-                                        .replace(/\"/g,""); //remove extra quotes in title 
-            
-                }
-              return fields;             
-            },
             _queryUrlParams: function () {
                 //This function demonstrates how to handle additional custom url parameters. For example 
                 //if you want users to be able to specify lat/lon coordinates that define the map's center or 
