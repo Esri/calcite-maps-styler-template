@@ -89,24 +89,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4A6F1C', end
 .esriPopup{
 font-family:"helvetica neue",helvetica,arial,sans-serif;
 }
-.esriPopup .pointer.top {
-background-position: 0 -616px;
-}
-.esriPopup .pointer.topLeft {
-left: 0px; top: -43px; background-position: 0 -525px; width: 51px; height: 45px;
-}
 
-.esriPopup .pointer.topRight {
-right: 0px; top: -43px; background-position: 0 -707px; width: 51px; height: 45px;
-}
+
 .esriPopup .titlePane{
 background-color:#406919;
 border-style:none;
-}
-.esriPopup .titleButton,
-.esriPopup .pointer,
-.esriPopup .outerPointer,
-.esriPopup .esriViewPopup .gallery .mediaHandle,
-.esriPopup .esriViewPopup .gallery .mediaIcon{
-background: url(green/popup.png) no-repeat scroll 0 0 transparent;
 }
