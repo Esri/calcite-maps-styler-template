@@ -44,6 +44,7 @@
     <script type="text/javascript">
     dojo.require("utilities.app");
     dojo.require("templateConfig.commonConfig");
+    dojo.require("dojo.on");
 
 
     dojo.ready(function(){
@@ -58,11 +59,11 @@
             geocoder:true,
             helperServices: commonConfig.helperServices
         };
+        var supportsLocalization = true;
+        var app = new utilities.App(defaults, supportsLocalization);
+        dojo.on(app,"ready", function(config){
 
-
-        var app = new utilities.App(defaults);
-          app.init().then(function(options){
-            init(options);
+            init(config);
         });
     });
     </script>
