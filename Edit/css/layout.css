@@ -19,6 +19,45 @@
     #header {
      height:80px;
     }
+    .esriSimpleSliderDecrementButton:hover {
+    border-top: 1px solid #666;
+    }
+    .HomeButton .home{
+    background-image: url(../images/home.png);
+    padding:0;
+    border-radius: 0;
+    border-bottom: 1px solid #666;
+    background-color:#FFF;
+    }
+    .HomeButton .home:hover {
+    background-color:#eee;
+    background-color: rgb(238, 238, 238);
+    }
+
+    .HomeButton .home:active {
+    background-color:#ddd;
+    }
+    #locateDiv{
+    position: absolute;
+    top:125px;
+    left:20px;
+    z-index: 50;
+    }
+    .LocateButton .zoomLocateButton {
+    background-color: #989898;
+    }
+
+    .simpleGeocoder .esriGeocoderContainer{
+
+    }
+    .simpleGeocoder{
+    position:absolute;
+    display:block;
+    z-index:50;
+    top:20px;
+    left:74px;
+    }
+
 
     #title {
      font-size:24pt;

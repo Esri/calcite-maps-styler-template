@@ -53,6 +53,7 @@
         "dojo/dom-geometry",
         "utilities/app",
         "utilities/CreateContent",
+        "utilities/CreateGeocoder",
         "config/commonConfig",
         "dojo/_base/Deferred",
         "esri/dijit/editing/Editor",
@@ -79,7 +80,8 @@
             domConstruct, 
             domGeometry, 
             App, 
-            Content, 
+            Content,
+            CreateGeocoder, 
             config, 
             Deferred, 
             Editor, 
@@ -99,13 +101,18 @@
 
 
               var defaults = {
-                  webmap:"25977874c66c4c0a8dcc181506c6fb45",
-                  bingmapskey: config.bingMapsKey,
-                  sharingurl: "",
-                  theme: "blue",  //blue, green black
-                  proxyurl: "",
-                  helperServices:config.helperServices
+                  "webmap":"25977874c66c4c0a8dcc181506c6fb45",
+                  "bingmapskey": config.bingMapsKey,
+                  "sharingurl": "",
+                  "theme": "blue",  //blue, green black
+                  "proxyurl": "",
+                  "home_button": true,
+                  "locate_button": true,
+                  "geocoder": true,
+                  "helperServices":config.helperServices
               };
+
+
               var supportsLocalization = true;
               var app = new App(defaults,supportsLocalization);
               on(app, "ready", function(config){
@@ -179,7 +186,33 @@
                   }, false);
                 }
 
-              
+                 
+                  //add home button if enabled 
+                 if(window.options.home_button){//Add the home button to the small slider 
+                     require(["esri/dijit/HomeButton", "dojo/query"], lang.hitch(this,function(HomeButton,query){
+                        var homeButton = new HomeButton({
+                            map: window.map
+                        }, domConstruct.create("div",{},query(".esriSimpleSliderIncrementButton")[0], "after"));
+                        homeButton.startup();
+                    }));
+                 }
+
+                 //add address search if enabled 
+                 if(window.options.geocoder){
+                    var options = {
+                        map: window.map,
+                        config: window.options
+                    }
+                    var myGeocoder = new CreateGeocoder(options);
+                    if(myGeocoder.geocoder && myGeocoder.geocoder.domNode){
+                     domConstruct.place(myGeocoder.geocoder.domNode, "map", "last");
+                    }
+
+
+         
+                 }
+
+
                 var editableLayers = hasEditableLayers(response.itemInfo.itemData.operationalLayers);
 
                  //add field infos if applicable - this will contain hints if defined in the popup. Also added logic to hide fields that have visible = false. The popup takes 
@@ -295,23 +328,28 @@
                       }
 
 
-                  }
+                  }else{
+                    //add the location button for desktop if enabled. 
+                    if(window.options.locate_button){
+                      require(["esri/dijit/LocateButton"], lang.hitch(this,function(LocateButton){
+                          //add the location button as a child of the map div. This button
+                          //is positioned using css. Search main.css for the locateDiv selector
+                          var locateDiv = domConstruct.create("div",{id:"locateDiv"},"map");
+                          var locationButton = new LocateButton({
+                              map: window.map
+                          },locateDiv);
+                          locationButton.startup();
+                      }));
+                   }
 
-
-
-
-
-
+               }
 
                }));
 
-
-
-
-
-
-
             }
+
+
+
             function hasEditableLayers(layers){
                 var editableLayers = [];
                 array.forEach(layers, function(layer){
