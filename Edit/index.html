@@ -62,7 +62,8 @@
         "esri/symbols/SimpleMarkerSymbol",
         "esri/symbols/SimpleLineSymbol",
         "esri/dijit/Legend",
-        "esri/graphic"
+        "esri/graphic",
+        "esri/lang"
         ],
         function(
             parser, 
@@ -88,7 +89,8 @@
             SimpleMarkerSymbol,
             SimpleLineSymbol,
             Legend,
-            Graphic
+            Graphic,
+            esriLang
           ){
 
             
@@ -97,17 +99,18 @@
 
 
               var defaults = {
-                  webmap: "25977874c66c4c0a8dcc181506c6fb45",
+                  webmap:"25977874c66c4c0a8dcc181506c6fb45",
                   bingmapskey: config.bingMapsKey,
                   sharingurl: "",
                   theme: "blue",  //blue, green black
                   proxyurl: "",
                   helperServices:config.helperServices
               };
+              var supportsLocalization = true;
+              var app = new App(defaults,supportsLocalization);
+              on(app, "ready", function(config){
 
-               var app = new App(defaults);
-                    app.init().then(function(results){
-                     window.options = results;
+                 window.options = config;
 
 
                 //apply the specified theme
@@ -121,42 +124,21 @@
                   //Build the user interface for the application. In this case it's a simple app with a header, content and a left (or floating) panel
                   window.appcontent = new Content();
                   window.appcontent.createLayout().then(function(){
-                    arcgisUtils.getItem(window.options.webmap).then(lang.hitch(this, function (itemInfo) {
-                        //let's get the web map item and update the extent if needed. 
-                        if (window.options.appid && window.options.application_extent.length > 0) {
-                            itemInfo.item.extent = [
-                                [parseFloat(window.options.application_extent[0][0]), parseFloat(window.options.application_extent[0][1])],
-                                [parseFloat(window.options.application_extent[1][0]), parseFloat(window.options.application_extent[1][1])]
-                            ];
-                        }
-                        createMap(itemInfo);
-                    }));
-
-
+                    var itemInfo = window.options.itemInfo || window.options.webmap; 
+                    createMap(itemInfo);
                   });
-
-
 
 
               });
 
+
   
              function createMap(itemInfo){
-                  var mapOptions =  {};
                   var mapDeferred = arcgisUtils.createMap(itemInfo, "map", {
-                    mapOptions: mapOptions,
                     bingMapsKey: window.options.bingmapskey
                   });
                   mapDeferred.then(function(response){
         
-                    //disconnect the click event handler but hold on to it because we may want to reconnect later
-                    //we want the popup enabled when the map is created so we can read the popup info to find
-                    //out if any tooltip hints have been applied so we can apply to the editor window.
-                    window.handler = response.clickEventHandle;
-                    conn.disconnect(window.handler);
-
-
-
                     window.map = response.map;
 
 
@@ -187,10 +169,7 @@
 
 
             function initUI(response){
-
-                //does the web map contain any editable layers?
-               var layers =  response.itemInfo.itemData.operationalLayers;
-               
+ 
                var supportsOrientationChange = "onorientationchange" in window,
                 orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
                 //IE8 doesn't support addEventListener so check before calling
@@ -200,42 +179,12 @@
                   }, false);
                 }
 
-
-
-                var editableLayers = [];
-                array.forEach(layers, function(layer){
-
-                    if(layer &&  layer.layerObject ){
-
-                        var eLayer = layer.layerObject;
- 
-                        if(eLayer instanceof esri.layers.FeatureLayer && eLayer.isEditable()){
-                            if(eLayer.capabilities && eLayer.capabilities === "Query"){
-                              //is capabilities set to Query if so then editing was disabled in the web map so 
-                              //we won't add to editable layers.
-                            }else{
-                              editableLayers.push({'featureLayer' : eLayer});
-                            }
-     
-                        
-
-                        }
-
-                    }
-                });
-
-
-                var content = domConstruct.create("div",{id:"editorDiv"});
-                window.appcontent.setPanelContent(window.options.i18n.viewer.content_title , content , "240px").then(function(){
-
-                //if there are not any editable layers show message. If there are layers then build content for left panel.
-                if(editableLayers.length  < 1){
-                    dom.byId("editorDiv").innerHTML = window.options.i18n.viewer.errors.no_editable_layers_message;
-                }else{
+              
+                var editableLayers = hasEditableLayers(response.itemInfo.itemData.operationalLayers);
 
                  //add field infos if applicable - this will contain hints if defined in the popup. Also added logic to hide fields that have visible = false. The popup takes 
                  //care of this for the info window but not for the edit window. 
-                 array.forEach(editableLayers, function(layer){
+                 array.forEach(editableLayers, lang.hitch(this, function(layer){
                     if(layer.featureLayer && layer.featureLayer.infoTemplate && layer.featureLayer.infoTemplate.info && layer.featureLayer.infoTemplate.info.fieldInfos){
                         //only display visible fields 
                         var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
@@ -248,89 +197,139 @@
                         });
                         layer.fieldInfos = fieldInfos;
                     }
-                 });
+                 }));
+
+                //does the web map contain any editable layers and does the logged-in user have 
+                //edit permissions 
+                var editable = true;
+                var content_title = window.options.i18n.viewer.content_title;
+                if(esriLang.isDefined(window.options.userPrivileges)){
+                    if(array.indexOf(window.options.userPrivileges, "features:user:edit") === -1){
+                        editable = false;
+                        //change the title to legend 
+                        content_title = content_title = window.options.i18n.viewer.legend_title;
+                    }
+                }          
+
+
+                var content = domConstruct.create("div",{id:"editorDiv"});
+                //create the Legend or Editor 
+                window.appcontent.setPanelContent(content_title , content , "240px").then(lang.hitch(this,  function(){
+                    var editorWidget;
                     //need to create the panel for the mobile case
                     window.appcontent.showPanelContent();
                     window.map.reposition();
                     window.map.resize();
 
-                    //display the toolbar if the configuration option has been enabled and the site isn't mobile.
-                    var settings = {
-                      map: window.map,
-                      layerInfos: editableLayers,
-                      toolbarVisible: (window.options.displaytoolbar && !window.appcontent.isMobile) ? true : false
-                    };
+                    if(editableLayers === 0 || !editable){
 
-                    var params = {
-                      settings: settings
-                    };
 
-                    //create the editor, apply snapping and disable the tooltips for the template picker
-                    var editorWidget = new Editor(params, dom.byId('editorDiv'));
-                    var options = {snapKey:dojo.keys.copyKey};
+                        console.log(window.options.i18n.viewer.errors.no_editable_layers_message);
+                        var legend = new Legend({
+                          map: window.map,
+                          layerInfos: arcgisUtils.getLegendLayers(response)
+                        },dom.byId("editorDiv"));
+                      
+                        legend.startup();                      
+                            
+                    }else{ //can edit 
 
-                    window.map.enableSnapping();
-                    if(!dojo.isIE){
-                      adjustPopup();
-                    }
-
-                    editorWidget.templatePicker.showTooltip = false;
-
-                    editorWidget.startup();
-
-                   if(editorWidget.templatePicker.featureLayers.length === 0){
-        
-                      //no editable layers so let's hide the template picker and add the legend widget.
-                      domStyle.set(dom.byId("editorDiv"),"height","20px");
-                      query(".templatePicker").style("display","none");
-
-                      var legend = new Legend({
+                      //display the toolbar if the configuration option has been enabled and the site isn't mobile.
+                      var settings = {
                         map: window.map,
-                        layerInfos: arcgisUtils.getLegendLayers(response)
-                      },domConstruct.create("div",{id:"legendDiv",className:'esriLegend'},dom.byId("leftPane"), "last"));
-                    
-                      legend.startup();
- 
-                    }
+                        layerInfos: editableLayers,
+                        toolbarVisible: (window.options.displaytoolbar && !window.appcontent.isMobile) ? true : false
+                      };
+
+                      var params = {
+                        settings: settings
+                      };
+
+                      //create the editor, apply snapping and disable the tooltips for the template picker
+
+                      editorWidget = new Editor(params, dom.byId('editorDiv'));
+         
+                      editorWidget.startup();
 
 
-                    //if it's a mobile site you can add additional buttons to the header - geolocation is one option
-                    //that might make sense for mobile.
-                    if(window.appcontent.isMobile){
-                        window.appcontent.hidePanelContent();
+                      window.map.enableSnapping();
+                      if(!dojo.isIE){
+                        adjustPopup();
+                      }
 
-                        //add an additional  button to the header. This method accepts text and/or an image. If an image url is supplied that image
-                        //will be used as the button icon. Can add more that one button using the addMobileButton method. Additional buttons will
-                        //display on the right side.
-                        var btn = window.appcontent.addMobileButton("geo" , "images/gps.png");
-
-                        on(btn, "click", function(){
-                            if(navigator.geolocation){
-                                navigator.geolocation.getCurrentPosition(zoomToLocation, locationError);
-                            }
-
-                        });
-
-
-                        //when template picker selection changes close window
-                        conn.connect(editorWidget.templatePicker, "onSelectionChange", function(){
-                            window.appcontent.hidePanelContent();
-                        });
-                        //listen for info window and maximize
-                        conn.connect(window.map.infoWindow, "onShow", function(){
-                            window.map.infoWindow.maximize();
-                        });
-
+         
 
 
                     }
 
-                }
 
-                });
+                  if(window.appcontent.isMobile){
+
+                      //add an additional  button to the header. This method accepts text and/or an image. If an image url is supplied that image
+                      //will be used as the button icon. Can add more that one button using the addMobileButton method. Additional buttons will
+                      //display on the right side.
+                      var btn = window.appcontent.addMobileButton("geo" , "images/gps.png");                   
+
+                      on(btn, "click", function(){
+                          if(navigator.geolocation){
+                              navigator.geolocation.getCurrentPosition(zoomToLocation, locationError);
+                          }
+                      });
+
+  
+                       window.appcontent.hidePanelContent();  
+
+
+
+                    //listen for info window and maximize
+                     conn.connect(window.map.infoWindow, "onShow", function(){
+                        window.map.infoWindow.maximize();
+                      });
+
+                      //when template picker selection changes close window
+                      if(editorWidget && editorWidget.templatePicker){
+                        editorWidget.templatePicker.on("selection-change", lang.hitch(this,function(){
+                          window.appcontent.hidePanelContent();
+                        }));
+      
+                      }
+
+
+                  }
+
+
+
+
+
+
+
+               }));
+
+
+
+
+
+
 
             }
+            function hasEditableLayers(layers){
+                var editableLayers = [];
+                array.forEach(layers, function(layer){
 
+                    if(layer &&  layer.layerObject ){
+
+                        var eLayer = layer.layerObject;
+ 
+                        if(eLayer instanceof esri.layers.FeatureLayer && eLayer.isEditable()){
+
+                              editableLayers.push({'featureLayer' : eLayer})   
+
+                        }
+
+                    }
+                });
+                return editableLayers;
+            }
             function zoomToLocation(location){
               //Add  a graphic to the map to show the current location. Location is determined using geolocation api
               window.map.graphics.clear();
