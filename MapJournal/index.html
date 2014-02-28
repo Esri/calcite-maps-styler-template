@@ -65,7 +65,7 @@
 
 		<script type="text/javascript">
 			var app = {
-				version: '1.0-alpha1',
+				version: '1.0-alpha2',
 				isProduction: true,
 				isInBuilder: false,
 				indexCfg: configOptions
@@ -303,6 +303,8 @@
 			if( app.isProduction ) {
 				_ = {};
 
+				CKEDITOR_BASEPATH = 'resources/lib/ckeditor/';
+				
 				if ( app.isInBuilder )
 					loadJS('app/builder-min.js');
 				else

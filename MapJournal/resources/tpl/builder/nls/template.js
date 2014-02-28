@@ -46,6 +46,7 @@ define({
 				lblColAction: "Actions",
 				checkDisplayReverse: "Display entries in reverse order",
 				btnApply: "Apply",
+				btnApplyWarning: "Confirm suppression of %NB% entries",
 				btnCancel: "Cancel"
 			}
         }
