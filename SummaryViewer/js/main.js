@@ -127,8 +127,9 @@ define([
 
         //create a map based on the input web map id
         createWebMap : function() {
-
-            arcgisUtils.createMap(this.config.webmap, "mapDiv", {
+       
+            var itemInfo = this.config.itemInfo || this.config.webmap;
+            arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions : {
                     showAttribution: false
                 },
