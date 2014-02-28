@@ -42,6 +42,7 @@ dojo.require("esri.layout");
 </script>
 <script type="text/javascript">      
   dojo.require("utilities.app");
+  dojo.require("dojo.on");
   dojo.require("templateConfig.commonConfig");
 
 function init(){
@@ -64,11 +65,12 @@ var defaults = {
   bingmapskey: commonConfig.bingMapsKey,
   helperServices:commonConfig.helperServices    
 };
-
-  var app = new utilities.App(defaults);
-  app.init().then(function(options){
-    initMap(options);
+  var supportsLocalization = true;
+  var app = new utilities.App(defaults, supportsLocalization);
+  dojo.on(app, "ready", function(config){
+    initMap(config);
   });
+
 
 }
 //show map on load 
