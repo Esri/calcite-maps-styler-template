@@ -55,22 +55,9 @@ function (
             this.config = config;
             // document ready
             ready(lang.hitch(this, function () {
-                arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
-                    //let's get the web map item and update the extent if needed. 
-                    if (this.config.appid && this.config.application_extent.length > 0) {
-                        itemInfo.item.extent = [
-                            [
-                                parseFloat(this.config.application_extent[0][0]),
-                                parseFloat(this.config.application_extent[0][1])
-                            ],
-                            [
-                                parseFloat(this.config.application_extent[1][0]),
-                                parseFloat(this.config.application_extent[1][1])
-                            ]
-                        ];
-                    }
-                    this._createWebMap(itemInfo);
-                }));
+             //supply either the webmap id or, if available, the item info 
+                var itemInfo = this.config.itemInfo || this.config.webmap;
+                this._createWebMap(itemInfo);
             }));
         },
         _mapLoaded: function () {
@@ -170,6 +157,30 @@ function (
             // each geocoder
 
         },
+        _editingAllowed: function ()
+        {
+            if (this.config.editingAllows == null) {
+                if (this.config == null) {
+                    this.config.editingAllows = true;
+
+                }
+                if (this.config.userPrivileges == null) {
+                    this.config.editingAllows = true;
+
+                }
+                for (var key in this.config.userPrivileges) {
+                    if (this.config.userPrivileges[key] == "features:user:edit") {
+                        this.config.editingAllows = true;
+
+                    }
+                }
+
+                this.config.editingAllows = false;
+            }
+            
+            return this.config.editingAllows;
+
+        },
         _initMap: function () {
 
             console.log("InitMap");
@@ -227,7 +238,8 @@ function (
 
                         }
                     }
-                    if (this.config.storeLocation == true) {
+                    
+                    if (this.config.storeLocation == true && this._editingAllowed()) {
                         if (this.config.serviceRequestLayerName.id != undefined) {
                             if (layer.id == String.trim(this.config.serviceRequestLayerName.id)) {
 
@@ -304,7 +316,7 @@ function (
 
             }
           
-            if (this.serviceRequestLayerName === undefined && this.config.storeLocation == true) {
+            if (this.serviceRequestLayerName === undefined && this.config.storeLocation == true && this._editingAllowed()) {
                 if (this.config.serviceRequestLayerName.id != undefined) {
                     alert(this.config.i18n.error.layerNotFound + ": " + this.config.serviceRequestLayerName.id);
                 }
@@ -524,7 +536,7 @@ function (
                             this.map.infoWindow.setTitle(this.config.serviceUnavailableTitle);
                             this.map.infoWindow.setContent(this.config.serviceUnavailableMessage.replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'"));
                             this.map.infoWindow.show(editGraphic.geometry);
-                            if (this.config.storeLocation == true) {
+                            if (this.config.storeLocation == true && this._editingAllowed()) {
                                 atts[this.config.serviceRequestLayerAvailibiltyField] = this.config.serviceRequestLayerAvailibiltyFieldValueNotAvail;
                                 this._logRequest(this.event, atts);
                             }
@@ -548,7 +560,7 @@ function (
                             //{
                             //    this.map.graphics.graphics[1].visible = false;
                             //}
-                            if (this.config.storeLocation == true) {
+                            if (this.config.storeLocation == true && this._editingAllowed()) {
                                 atts[this.config.serviceRequestLayerAvailibiltyField] = this.config.serviceRequestLayerAvailibiltyFieldValueAvail;
 
                                 this._logRequest(this.event, atts);

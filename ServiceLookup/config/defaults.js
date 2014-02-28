@@ -11,7 +11,22 @@ define([], function () {
         "proxyurl": "",
         "bingMapsKey": "",  //Enter the url to your organizations bing maps key if you want to use bing basemaps
         "sharinghost": location.protocol + "//" + "www.arcgis.com", //Defaults to arcgis.com. Set this value to your portal or organization host name. 
-
+        "queryForOrg": true,
+        "units": null,
+        "helperServices": {
+            "geometry": {
+                "url": null
+            },
+            "printTask": {
+                "url": null
+            },
+            "elevationSync": {
+                "url": null
+            },
+            "geocode": [{
+                "url": null
+            }]
+        },
 
         "serviceAreaLayerNames": "Service Area",
         "popupTitle": "Service Information",
