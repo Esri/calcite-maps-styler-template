@@ -188,7 +188,9 @@
 
   display:none;
 }
-
+.mobile .esriPopup{
+  z-index:99;
+}
 
 @-webkit-keyframes pulse{
     0% { opacity:1.0;}
