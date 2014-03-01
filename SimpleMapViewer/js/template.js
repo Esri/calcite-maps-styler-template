@@ -159,10 +159,10 @@ define([
                 //check sign-in status 
                 IdentityManager.checkSignInStatus(this.config.sharinghost + "/sharing").then(lang.hitch(this,
                     function (credential) {
-                        deferred.resolve();
+                        return;
                     },
                     function (error) {
-                        deferred.resolve();
+                        return;
                     })
                 );
 
