@@ -127,9 +127,8 @@ define([
 
         //create a map based on the input web map id
         createWebMap : function() {
-       
             var itemInfo = this.config.itemInfo || this.config.webmap;
-            arcgisUtils.createMap(itemInfo, "mapDiv", {
+            arcgisUtils.createMap(this.config.itemInfo, "mapDiv", {
                 mapOptions : {
                     showAttribution: false
                 },
@@ -153,6 +152,7 @@ define([
                 
                 // process operational layers
                 this.opLayers = response.itemInfo.itemData.operationalLayers;
+         
                 
                 if (this.map.loaded) {
                     this.mapLoaded();
@@ -510,6 +510,7 @@ define([
                     }, list);
                 }
                 domStyle.set("panelFilter", "display", "block");
+                domStyle.set("panelMain", "width", "225px");
                 on(list, "change", lang.hitch(this, this.setFilter));
             }
         },

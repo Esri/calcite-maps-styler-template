@@ -76,6 +76,13 @@ html, body {
 	bottom: 120px;
 }
 
+.logo-sm {
+	position: absolute;
+	right: 0px;
+	bottom: 120px;
+}
+
+
 /* Navigation */
 
 .navigation {
@@ -130,6 +137,7 @@ html, body {
 .panelTitle {
 	position: absolute;
 	width: 500px;
+	max-width: 500px;
 	height: 50px;
 	left: 40px;
 	top: 10px;
@@ -142,33 +150,32 @@ html, body {
 }
 
 #panelLogo {
-	width: auto;
-	max-width: 60px;
+	width: 50px;
 	height: 50px;
 	overflow: hidden;
 	float: left;
 	line-height: 50px;
 	margin-left: 10px;
+	margin-right: 5px;
 }
 
 #panelMain {
-	width: 200px;
+	width: 425px;
 	height: 50px;
 	overflow: hidden;
-	float: left;
 	line-height: 50px;
-	margin-left: 5px;
 }
 
 #panelFilter {
 	position: absolute;
+	top: 10px;
+	right: 10px;
 	width: 200px;
 	height: 30px;
-	right: 10px;
-	top: 10px;
 	overflow: hidden;
 	background: url(../images/select.png) no-repeat;
 	display: none;
+	z-index: 200;
 }
 
 #panelFilter select {
@@ -186,11 +193,20 @@ html, body {
    	border: none;
    	border-radius: 0;
    	height: 30px;
+   	font-family: Arial;
    -webkit-appearance: none;
 }
 
-select option {
+option:checked {
+	color: #ffffff;
+	height: 30px;
+	line-height: 30px;
+	font-family: Arial;
+}
+
+option {
 	color: #000000;
+	font-family: Arial;
 }
 
 .panelBottom {
@@ -418,7 +434,7 @@ select option {
 @media only screen and (max-width: 700px) {
 	
 	.panelTitle {
-		width: 300px;
+		width: 280px;
 	}
 	   
 	#panelMain{
@@ -434,7 +450,7 @@ select option {
 @media only screen and (max-width: 500px) {
 	
 	.panelTitle {
-		width: 300px;
+		width: 280px;
 	}
 	   
 	#panelMain{
@@ -454,13 +470,9 @@ select option {
 @media only screen and (max-width: 400px) {
 	
 	.panelTitle {
-		width: 240px;
+		width: 280px;
 	}
-	
-	#panelLogo {
-		display: none;
-	}
-	   
+	  
 	#panelMain{
 		display: none;
 	}
@@ -474,3 +486,4 @@ select option {
 	}
 	
 }
+

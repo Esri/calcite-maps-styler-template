@@ -24,8 +24,7 @@
 		<div id="mapDiv" dir="ltr"></div>
 
 		<!-- Panel Title -->
-		<div id="bgTitle" class="panelTitle bg rounded shadow"></div>
-		<div class="panelTitle">
+		<div class="panelTitle  bg rounded shadow">
 			<div id="panelLogo"><img id="logo" src="images/logo.png" style="height:100%" />
 			</div>
 			<div id="panelMain">
@@ -34,7 +33,6 @@
 				<select id="selFilter">
 				</select>
 			</div>
-
 		</div>
 
 		<!-- Panel Bottom -->
@@ -107,7 +105,9 @@
             }]
             };
 		</script>
+
 		<script type="text/javascript" src="//jsdev.arcgis.com/3.9/"></script>
+		</script>
 		<script type="text/javascript">
             require(["dojo/on", "application/main", "application/template", "dojo/domReady!"], function(on, Main, Template) {
                 //create the template. This will take care of all the logic required for template applications
@@ -128,6 +128,10 @@
                 });
                 
             });
+		</script>
+	</body>
+</html>
+});
 		</script>
 	</body>
 </html>
