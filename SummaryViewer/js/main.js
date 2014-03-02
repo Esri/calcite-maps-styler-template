@@ -128,7 +128,7 @@ define([
         //create a map based on the input web map id
         createWebMap : function() {
             var itemInfo = this.config.itemInfo || this.config.webmap;
-            arcgisUtils.createMap(this.config.itemInfo, "mapDiv", {
+            arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions : {
                     showAttribution: false
                 },
@@ -152,7 +152,7 @@ define([
                 
                 // process operational layers
                 this.opLayers = response.itemInfo.itemData.operationalLayers;
-         
+                console.log(this.opLayers);
                 
                 if (this.map.loaded) {
                     this.mapLoaded();
@@ -191,12 +191,15 @@ define([
         
         // process operational layers
         processOperationalLayers: function() {
+            console.log(this.opLayers);
             var opLayerName = this.config.summaryLayer.id;
             var me = this;
             if (opLayerName != "") {
                 array.forEach(this.opLayers,function(layer){
-                    if (layer.featureCollection && layer.featureCollection.id == opLayerName) {
-                        me.opLayer = layer.featureCollection.layers[0].layerObject;
+                    //if (layer.featureCollection && layer.featureCollection.id == opLayerName) {
+                    if (layer.featureCollection) {
+                        if (layer.featureCollection.layers[0].id == opLayerName)
+                            me.opLayer = layer.featureCollection.layers[0].layerObject;
                     } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.id == opLayerName){
                         me.opLayer = layer.layerObject;
                     }
