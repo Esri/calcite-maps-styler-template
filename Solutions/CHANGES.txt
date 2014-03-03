@@ -1,34 +1,12 @@
-change report #33 at 02/24/2014 12:53:30.91
+change report #36 at 03/03/2014 15:26:48.49
 -
 for git branch
-release_3.2
+hotfix_graphics_selection
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
-M  nls/ar/template.js
-M  nls/cs/template.js
-M  nls/da/template.js
-M  nls/de/template.js
-M  nls/es/template.js
-M  nls/et/template.js
-M  nls/fi/template.js
-M  nls/fr/template.js
-M  nls/he/template.js
-M  nls/it/template.js
-M  nls/ja/template.js
-M  nls/ko/template.js
-M  nls/lt/template.js
-M  nls/lv/template.js
-M  nls/nb/template.js
-M  nls/nl/template.js
-M  nls/pl/template.js
-M  nls/pt-br/template.js
-M  nls/pt-pt/template.js
-M  nls/ro/template.js
-M  nls/ru/template.js
-M  nls/sv/template.js
-M  nls/template.js
-M  nls/th/template.js
-M  nls/tr/template.js
-M  nls/zh-cn/template.js
+ M apps2/FindEditFilter.json
+ M apps2/Finder.json
+ M js2/lgonlineCommand.js
+ M js2/lgonlineMap.js
