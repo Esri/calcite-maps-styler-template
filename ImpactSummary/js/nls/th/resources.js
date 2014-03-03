@@ -5,14 +5,14 @@
         },
         general: {
             map: "แผนที่",
-            mapInfo: "ก้_Map Information_ษฺ",
+            mapInfo: "ข้อมูลแผนที่",
             legend: "สัญลักษณ์",
-            layers: "ก้_Layers_ษฺ",
+            layers: "ชั้นข้อมูล",
             summarize: "พื้นที่ทั้งหมด",
             share: "แบ่งปัน",
             about: "เกี่ยวกับ",
             noSearchResult: "ไม่พบผลลัพธ์",
-            impactArea: "ก้_Impact Area_ษฺ"
+            impactArea: "พื้นที่ที่ได้รับผลกระทบ"
         }
     })
 

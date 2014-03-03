@@ -5,14 +5,14 @@
         },
         general: {
             map: "Kaart",
-            mapInfo: "Ĳ_Map Information_ä",
+            mapInfo: "Kaartinformatie",
             legend: "Legenda",
             layers: "Kaartlagen",
             summarize: "Volledig gebied",
             share: "Delen",
             about: "Over",
             noSearchResult: "Geen resultaat gevonden",
-            impactArea: "Ĳ_Impact Area_ä"
+            impactArea: "Impactgebied"
         }
     })
 

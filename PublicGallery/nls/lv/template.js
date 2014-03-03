@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Notīrīt",
-                "datePattern": "yyyy.MMM.d" // added 2.5.2013
+                "datePattern": "d.MMM.yyyy." // added 2.5.2013
             },
             "errors": {
                 "createMap": "Nevar izveidot karti",
@@ -95,7 +95,7 @@
                 "switchBasemap": "Pārslēgt pamatkarti",
 				"getMobileApp": "Darbojas lietotne",
 				"constraintsHeading":"Lietošanas ierobežojumi",
-				"createdLabel":"Izveidoja",
+				"createdLabel":"Izveidots",
 				"noDescription":"Bez apraksta.",
 				"detailsLabel":"Detaļas"
             },
