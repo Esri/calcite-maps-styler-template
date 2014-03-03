@@ -159,26 +159,29 @@ function (
         },
         _editingAllowed: function ()
         {
-            if (this.config.editingAllows == null) {
+            if (this.config.editingAllowed == null) {
+                this.config.editingAllowed = false;
+
                 if (this.config == null) {
-                    this.config.editingAllows = true;
+                    this.config.editingAllowed = true;
 
                 }
                 if (this.config.userPrivileges == null) {
-                    this.config.editingAllows = true;
+                    this.config.editingAllowed = true;
 
-                }
-                for (var key in this.config.userPrivileges) {
-                    if (this.config.userPrivileges[key] == "features:user:edit") {
-                        this.config.editingAllows = true;
+                } else {
+                    for (var key in this.config.userPrivileges) {
+                        if (this.config.userPrivileges[key] == "features:user:edit") {
+                            this.config.editingAllowed = true;
 
+                        }
                     }
                 }
 
-                this.config.editingAllows = false;
+                
             }
             
-            return this.config.editingAllows;
+            return this.config.editingAllowed;
 
         },
         _initMap: function () {

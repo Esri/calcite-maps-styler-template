@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Service Lookup</title>
     <meta charset="utf-8">
     <!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
-    <link rel="stylesheet" href="//jsdev.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
-    <link rel="stylesheet" href="//jsdev.arcgis.com/3.9/js/esri/css/esri.css">
+    <link rel="stylesheet" href="//js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="//js.arcgis.com/3.9/js/esri/css/esri.css">
     <!--Load any application specific styles-->
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -44,7 +44,7 @@
             ]
         };
     </script>
-    <script type="text/javascript" src="//jsdev.arcgis.com/3.9/"></script>
+    <script type="text/javascript" src="//js.arcgis.com/3.9/"></script>
     <script type="text/javascript">
         require([
             "dojo/on",
@@ -61,11 +61,7 @@
             //from the javascript/nls/resource files. 
             //Note that we've included a placeholder nls folder and a resource file with one error string
             //to show how to setup the strings file.
-            dojo.addOnLoad(pageReady);
-            function pageReady() {
-                esri.config.defaults.io.corsEnabledServers.push("localhost");
-
-            }
+            
             var supportsLocalization = true; //defaults to true
 
             var myTemplate = new Template(supportsLocalization);
