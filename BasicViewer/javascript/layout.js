@@ -1284,7 +1284,7 @@ function addEditor(editLayers) {
 
     //add this to the existing div
     dijit.byId('stackContainer').addChild(editCp);
-    navigateStack('editPanel');
+   // navigateStack('editPanel');
     //create the editor if the legend and details panels are hidden - otherwise the editor
     //will be created when the edit button is clicked.
     if ((configOptions.displaydetails === false) && (configOptions.displaylegend === false)) {
