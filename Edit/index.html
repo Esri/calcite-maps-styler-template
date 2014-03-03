@@ -290,11 +290,7 @@
                         adjustPopup();
                       }
 
-         
-
-
                     }
-
 
                   if(window.appcontent.isMobile){
 
@@ -309,18 +305,14 @@
                           }
                       });
 
-  
-                       window.appcontent.hidePanelContent();  
-
-
-
                     //listen for info window and maximize
-                     conn.connect(window.map.infoWindow, "onShow", function(){
+                     on(window.map.infoWindow, "show", function(){
                         window.map.infoWindow.maximize();
                       });
 
                       //when template picker selection changes close window
                       if(editorWidget && editorWidget.templatePicker){
+                        window.appcontent.hidePanelContent();
                         editorWidget.templatePicker.on("selection-change", lang.hitch(this,function(){
                           window.appcontent.hidePanelContent();
                         }));
@@ -329,6 +321,7 @@
 
 
                   }else{
+             
                     //add the location button for desktop if enabled. 
                     if(window.options.locate_button){
                       require(["esri/dijit/LocateButton"], lang.hitch(this,function(LocateButton){
