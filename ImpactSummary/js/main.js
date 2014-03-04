@@ -128,8 +128,6 @@ function(
             }
         },
         _init: function () {
-            // drawer size check
-            this._drawer.resize();
             // menu panels
             this.drawerMenus = [];
             var menuObj, content;
@@ -312,6 +310,11 @@ function(
             }
             // hide loading div
             this._hideLoadingIndicator();
+            setTimeout(lang.hitch(this, function(){
+                this._drawer.resize();    
+            }), 500);
+            // drawer size check
+            this._drawer.resize();
         },
         _checkMobileGeocoderVisibility: function () {
             if(this._mobileGeocoderIconNode && this._mobileSearchNode){

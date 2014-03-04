@@ -72,15 +72,15 @@ app.cfg = {
 		{
 			id: "side",
 			title: "Side Panel",
-			description: "This is the amazing Side Panel layout. blablablabla blablablabla blablablabla blablablabla",
+			description: "The text is displayed on a resizable panel at the left of the Map. Multiple entries can be displayed at the same time.",
 			thumbnail: "resources/tpl/builder/icons/builder-layout-side.png"
 		},
 		{
 			id: "float",
 			title: "Floating Panel",
-			description: "Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop. Plop",
+			description: "The text is displayed hover the Map. Entries are displayed one by one. The mouse wheel navigate the story.",
 			thumbnail: "resources/tpl/builder/icons/builder-layout-float.png"
-		},
+		}/*,
 		{
 			id: "flow",
 			title: "Flow",
@@ -92,7 +92,7 @@ app.cfg = {
 			title: "Presentation",
 			description: "Not implemented yet. Don't select.",
 			thumbnail: "resources/tpl/builder/icons/builder-layout-presentation.png"
-		}
+		}*/
 	],
 	
 	COLOR_SCHEMES:  [

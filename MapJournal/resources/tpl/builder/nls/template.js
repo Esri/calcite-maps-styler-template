@@ -18,7 +18,8 @@ define({
 				lblLayout: "Layout",
 				lblStorage: "Data storage",
 				prevBtn: "Back",
-				nextBtn: "Start"
+				nextBtn: "Next",
+				startBtn: "Start"
 			},
 			addEditPopup: {
 				btnTitle: "Add",

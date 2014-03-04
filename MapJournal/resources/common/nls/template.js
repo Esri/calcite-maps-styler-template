@@ -1,6 +1,9 @@
 define({
 	root: ({
 		common: {
+			common: {
+				edit: "Edit"
+			},
 			inlineFieldEdit: {
 				editMe: "Edit me !"
 			},
@@ -85,8 +88,8 @@ define({
 			},
 			settingsLayout: {
 				title: "Layout",
-				explain: "Select the layout you want to use.",
-				explainInit: "You will always be able to change the layout through the settings.",
+				explain: "What layout do you want to use?",
+				explainInit: "Change will be possible through the settings dialog.",
 				selected: "Selected layout",
 				select: "Select this layout"
 			},
