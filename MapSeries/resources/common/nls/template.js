@@ -39,7 +39,7 @@ define({
 				// Add/Edit
 				addEditPopupCancelButton: "CANCEL",
 				addEditPopupMyContentBtn: "Select from my content",
-				addEditPopupConfigureWebMapBtn: " Configure"
+				addEditPopupConfigureWebMapBtn: "Configure"
 			},
 			share: {
 				firstSaveTitle: "Application successfully saved",
