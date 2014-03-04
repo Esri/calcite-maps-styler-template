@@ -121,6 +121,9 @@ input[type=text]::-ms-clear {
     border: 0;
     overflow: hidden;
 }
+.app-loading .content-pane-left {
+    width: 280px;
+}
 .content-pane-left {
     width: 0px;
     max-width: 280px;
@@ -428,8 +431,10 @@ input[type=text]::-ms-clear {
     height: 0;
 }
 /* Loading */
-
-.loading-indicator {
+.loading-indicator{
+    display: none;
+}
+.app-loading .loading-indicator {
     height: 100%;
     width: 100%;
     display: block;

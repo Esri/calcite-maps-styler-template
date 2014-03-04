@@ -70,7 +70,8 @@ function(
                 iconList: "icon-list",
                 iconLayers: "icon-layers",
                 iconMap: "icon-map",
-                iconText: "icon-text"
+                iconText: "icon-text",
+                appLoading: "app-loading"
             };
             // mobile size switch domClass
             this._showDrawerSize = 850;
@@ -310,9 +311,6 @@ function(
             }
             // hide loading div
             this._hideLoadingIndicator();
-            setTimeout(lang.hitch(this, function(){
-                this._drawer.resize();    
-            }), 500);
             // drawer size check
             this._drawer.resize();
         },
@@ -484,10 +482,8 @@ function(
         },
         // hide map loading spinner
         _hideLoadingIndicator: function () {
-            var indicator = dom.byId("loadingIndicatorDiv");
-            if (indicator) {
-                domStyle.set(indicator, "display", "none");
-            }
+            // add loaded class
+            domClass.remove(document.body, this.css.appLoading);
         },
         _setLayerMode: function(itemInfo, id){
             // if we have a layer id
