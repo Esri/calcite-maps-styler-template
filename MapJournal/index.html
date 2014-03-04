@@ -56,7 +56,7 @@
 			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed 
 			//  on Portal for ArcGIS as /home/Tpl/ or /apps/Tpl/, that configuration is available in ../commonConfig.js
 		</script>
-		
+
 		<!--
 		
 			Edit below at your own risk
@@ -65,7 +65,7 @@
 
 		<script type="text/javascript">
 			var app = {
-				version: '1.0-alpha2',
+				version: '1.0-alpha3',
 				isProduction: true,
 				isInBuilder: false,
 				indexCfg: configOptions
@@ -110,8 +110,8 @@
 			    return vars[name];
 			}
 
-			//var pathJSAPI = "//js.arcgis.com/3.8/";
-			var pathJSAPI = "//jsdev.arcgis.com/3.9/";
+			var pathJSAPI = "//js.arcgis.com/3.9/";
+			//var pathJSAPI = "//jsdev.arcgis.com/3.9/";
 			var path1 = location.pathname.replace(/\/[^/]+$/, '/');
 			var path2 = location.pathname.replace(/\/[^/]+$/, '');
 			var dojoConfig = {
@@ -209,8 +209,8 @@
 			<!-- Text panel of the Side Panel layout -->
 			<div id="sidePanel" class="mainViewSideMap sidePanel">
 				<div class="builder">
-					<button type="button" class="btn btn-small builder-add"></button>
-					<button type="button" class="btn btn-small builder-organize"></button>
+					<button type="button" class="btn builder-add"></button>
+					<button type="button" class="btn builder-organize"></button>
 				</div>
 				<div class="entries">
 					<!-- entries injected here -->
@@ -237,8 +237,8 @@
 				</a>
 			</div>
 			<div class="builder">
-				<button type="button" class="btn btn-small builder-add"></button>
-				<button type="button" class="btn btn-small builder-organize"></button>
+				<button type="button" class="btn builder-add"></button>
+				<button type="button" class="btn builder-organize"></button>
 			</div>
 			<div class="entries">
 				<div class="swiper-container">
@@ -277,7 +277,7 @@
 		
 		<!-- Builder views are injected here -->
         <div class="modal fade" id="settingsPopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
-		<div class="modal fade" id="initPopup" role="dialog" data-backdrop="static"></div>
+		<div class="modal" id="initPopup" role="dialog" data-backdrop="static"></div>
 		<div class="modal fade" id="sharePopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
 		
 		<div class="modal fade addEditPopup" id="addEditPopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
@@ -303,8 +303,6 @@
 			if( app.isProduction ) {
 				_ = {};
 
-				CKEDITOR_BASEPATH = 'resources/lib/ckeditor/';
-				
 				if ( app.isInBuilder )
 					loadJS('app/builder-min.js');
 				else
@@ -370,14 +368,17 @@
 											"storymaps/common/builder/Builder", 
 											"storymaps/tpl/builder/BuilderView", 
 											"dojo/i18n!./resources/tpl/builder/nls/template.js?v=" + app.version,
+											"dojo/i18n!commonResources/nls/template.js?v=" + app.version,
 											"dojo/_base/lang"
 										], function(
 											Builder, 
 											BuilderView, 
-											i18nBuilder, 
+											i18nBuilder,
+											i18nCommon,
 											lang
 										){
 											lang.mixin(i18n, i18nBuilder);
+											lang.mixin(i18n, i18nCommon);
 											
 											var builderView = new BuilderView(Core);
 											var mainView = new MainView(builderView);
