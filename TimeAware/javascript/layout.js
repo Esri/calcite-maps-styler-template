@@ -21,8 +21,8 @@
      }
 
 
-
-     var mapDeferred = esri.arcgis.utils.createMap(configOptions.webmap, "map", {
+     var itemInfo = configOptions.itemInfo || configOptions.webmap;
+     var mapDeferred = esri.arcgis.utils.createMap(configOptions.itemInfo, "map", {
          mapOptions: {
              slider: true,
              sliderStyle: 'small',

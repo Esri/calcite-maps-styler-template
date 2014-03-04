@@ -4,15 +4,15 @@
             error: "Harita oluşturulamıyor"
         },
         general: {
-            map: "ı_Map_İ",
-            mapInfo: "ı_Map Information_İ",
+            map: "Harita",
+            mapInfo: "Harita Bilgileri",
             legend: "Gösterge",
-            layers: "ı_Layers_İ",
+            layers: "Katmanlar",
             summarize: "Tüm Alan",
             share: "Paylaş",
             about: "Hakkında",
             noSearchResult: "Hiçbir sonuç bulunamadı",
-            impactArea: "ı_Impact Area_İ"
+            impactArea: "Etki Alanı"
         }
     })
 

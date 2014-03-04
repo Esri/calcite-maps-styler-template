@@ -141,7 +141,7 @@
 				settingsLayoutSelected: "Vybrané rozvržení",
 				settingsLayoutSelect: "Zvolit toto rozvržení",
 				settingsLayoutNote: "Při používání videí na bodech bude pod videem vždy poutač, i když tato možnost není zaškrtnuta.",
-				settingsLayoutLocBtn: "Zobrazit tlačítko \'Hledat\'",
+				settingsLayoutLocBtn: "Zobrazit tlačítko \'Lokalizovat\'",
 				settingsLayoutLocBtnHelp: "Tato funkcionalita je podporována na většině mobilních zařízení a stolních prohlížečů (Internet Explorer 9).",
 				settingsColorExplain: "Změňte vzhled volbou přednastaveného motivu, nebo si vytvořte svůj vlastní.",
 				settingsLabelColor: "Barvy záhlaví, obsahu a zápatí",

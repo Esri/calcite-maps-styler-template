@@ -1,14 +1,6 @@
 define({
 	root: ({
 		builder: {
-			settingsLayout: {
-				title: "Layout",
-				explain: "Select the layout you want.",
-				layout1: "Layout 1",
-				layout2: "Layout 2",
-				selected: "Selected layout",
-				select: "Select this layout"
-			},
 			settingsLayoutOptions: {
 				title: "Layout options",
 				explain: "Select the layout settings.",
@@ -23,8 +15,39 @@ define({
 			},
 			initPopup: {
 				title: "Welcome to %TPL_NAME% Builder",
+				lblLayout: "Layout",
+				lblStorage: "Data storage",
 				prevBtn: "Back",
 				nextBtn: "Start"
+			},
+			addEditPopup: {
+				btnTitle: "Add",
+				titleAdd: "Add an entry",
+				titleEdit: "Edit an entry",
+				lblMainMedia: "Main Media",
+				lblText: "Text",
+				fieldTitle: "Title",
+				fieldPubDate: "Publication date",
+				helpPubDate: "Optional date at which the entry will become visible. Immediate when not specified.",
+				submitBtnAdd: "Add",
+				submitBtnEdit: "Edit",
+				cancelBtn: "Cancel"
+			},
+			organizePopup: {
+				btnTitle: "Organize",
+				title: "Organize",
+				lblHeader: "Use drag and drop to sort the story entries.",
+				lblPublished: "Published",
+				lblNotPublished: "Draft",
+				lblColTitle: "Title",
+				lblColCreaDate: "Creation date",
+				lblColPubDate: "Publication date",
+				lblColStatus: "Status",
+				lblColAction: "Actions",
+				checkDisplayReverse: "Display entries in reverse order",
+				btnApply: "Apply",
+				btnApplyWarning: "Confirm suppression of %NB% entries",
+				btnCancel: "Cancel"
 			}
         }
     }),

@@ -208,7 +208,7 @@
 				close: "Zamknij",
 				tab1: {
 					div1: "Szablon Zwijanie/Luneta umożliwia porównywanie dwóch różnych map internetowych albo dwóch warstw pojedynczej mapy internetowej za pomocą atrakcyjnie wyglądającej i łatwej w obsłudze aplikacji internetowej. Aplikacji tej można używać w dowolnej przeglądarce i na każdym urządzeniu, w tym również na smartfonie i tablecie.",
-					div2: "Dodatkowe informacje dotyczące szablonu Zwijanie/Luneta, w tym przykłady stworzone przez użytkowników, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> znajdują się na stronie internetowej Mapy ze scenariuszem</a>. Możesz także śledzić nas w serwisie Twitter pod adresem <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
+					div2: "Dodatkowe informacje dotyczące szablonu Zwijanie/Luneta, w tym przykłady stworzone przez użytkowników, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> znajdują się na stronie internetowej Map opowiadania</a>. Możesz także śledzić nas w serwisie Twitter pod adresem <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Czekamy na wiadomości od Ciebie! Niezależnie od tego, czy masz pytanie, chcesz poprosić o nowy obiekt lub poinformować nas o znalezionym błędzie, odwiedź <a href='http://links.esri.com/storymaps/forum' target='_blank'>Forum użytkowników map opowiadań</a>."
 				}
 			},
@@ -255,16 +255,16 @@
 				mapPickHeader: "Aby rozpocząć, podaj prawidłowy identyfikator mapy internetowej albo skorzystaj z przycisku Wyszukaj w celu przeszukania map internetowych.",
 				launchBuilder: "Kreator uruchamiania",
 				chooseWebmapLbl: "Wybierz mapę internetową...",
-				explain2: "Aby utworzyć mapę ze scenariuszem Zwijanie lub Luneta, skorzystaj z poniższego przycisku i wybierz istniejącą mapę internetową ArcGIS Online, której chcesz użyć. Ewentualnie możesz wkleić do poniższego pola identyfikator mapy internetowej.",
-				explain3: "Jeżeli w ramach mapy ze scenariuszem chcesz użyć dwóch map internetowych, podczas wybierania tej opcji pojawi się później komunikat dotyczący drugiej mapy internetowej.",
-				webmapPlaceholder: "Wpisz identyfikator mapy internetowej..."
+				explain2: "Aby utworzyć mapę opowiadania Zwijanie lub Luneta, skorzystaj z poniższego przycisku i wybierz istniejącą mapę internetową ArcGIS Online, której chcesz użyć. Ewentualnie możesz wkleić do poniższego pola identyfikator mapy internetowej.",
+				explain3: "Jeżeli w ramach mapy opowiadania chcesz użyć dwóch map internetowych, podczas wybierania tej opcji pojawi się później komunikat dotyczący drugiej mapy internetowej.",
+				webmapPlaceholder: "Wprowadź identyfikator mapy internetowej..."
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
 					organizationLabel: "Moja instytucja",
-					onlineLabel: "Serwis ArcGIS Online",
+					onlineLabel: "ArcGIS Online",
 					contentLabel: "Moje zasoby",
 					favoritesLabel: "Ulubione"
 				},

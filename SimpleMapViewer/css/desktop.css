@@ -53,6 +53,8 @@ body {
 }
 #leftPaneBody {
     margin: 0;
+    width:120%;
+    height:100%;
 }
 #leftPaneBody .panel_content {
     padding: 10px;

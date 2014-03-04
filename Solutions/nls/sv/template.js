@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "Å_Find_ö",  // Command button to open a dialog box for finding a feature or an address (depending on app)
+            search: "Sök",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Aktuell plats",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Skicka in rättelse",  // Command button to submit a correction to the app's host
-            collect: "Å_Filter/Edit_ö",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            collect: "Filtrera/redigera",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtrera kartlager",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Byt baskarta",  // Command button to open a dialog box for switching basemaps
             share: "Dela",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,7 +43,7 @@ define(
             author: "upphovsman"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "Å_Find:_ö",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Sök:",  // Appears before a search text field in dialog box for searching for a feature
             markup: "Rita",  // Appears before a set of tools for drawing on the map
             mapLayers: "Kartlager:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "Sök i lagerfälten:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "Den här webbplatsen har inte behörighet att hämta den aktuella platsen",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Webbläsaren kunde inte hämta den aktuella platsen",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Webbläsaren kunde inte hämta den aktuella platsen inom rimlig tid",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "Å_This find layer was not found in the map_ö",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
-            searchFieldMissing: "Å_This field was not found in the map find layer_ö",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
-            allSearchFieldsMissing: "Å_None of these fields was found in the map find layer_ö",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
+            searchLayerMissing: "Det här söklagret finns inte i kartan",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "Det här fältet finns inte i kartans söklager",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "Inget av dessa fält hittades i kartans söklager",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "Det här fältet finns inte i något av kartlagren",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Ditt innehåll har skickats in. Tack.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Det gick inte att få åtkomst till applikationens konfiguration",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

@@ -4,15 +4,15 @@
             error: "Karttaa ei voi luoda"
         },
         general: {
-            map: "Å_Map_ö",
-            mapInfo: "Å_Map Information_ö",
+            map: "Kartta",
+            mapInfo: "Kartan tiedot",
             legend: "Selite",
-            layers: "Å_Layers_ö",
+            layers: "Karttatasot",
             summarize: "Koko alue",
             share: "Jaa",
             about: "Tietoja",
             noSearchResult: "Tulosta ei löytynyt",
-            impactArea: "Å_Impact Area_ö"
+            impactArea: "Vaikutusalue"
         }
     })
 

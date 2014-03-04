@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "é_Find_È",  // Command button to open a dialog box for finding a feature or an address (depending on app)
+            search: "Trova",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Posizione corrente",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Invia correzione",  // Command button to submit a correction to the app's host
-            collect: "é_Filter/Edit_È",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            collect: "Filtra/Modifica",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Layer mappa di filtro",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Cambia mappa di base",  // Command button to open a dialog box for switching basemaps
             share: "Condividi",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,7 +43,7 @@ define(
             author: "autore"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "é_Find:_È",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Trova:",  // Appears before a search text field in dialog box for searching for a feature
             markup: "Disegna",  // Appears before a set of tools for drawing on the map
             mapLayers: "Layer mappa:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "Campi dei layer di ricerca:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "Il sito non è autorizzato a ottenere la posizione corrente",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Il browser non è in grado di ottenere la posizione corrente",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Il browser non è in grado di ottenere la posizione corrente in modo puntuale",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "é_This find layer was not found in the map_È",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
-            searchFieldMissing: "é_This field was not found in the map find layer_È",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
-            allSearchFieldsMissing: "é_None of these fields was found in the map find layer_È",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
+            searchLayerMissing: "Layer di ricerca non trovato nella mappa",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "Campo non trovato nel layer di ricerca della mappa",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "Campi non trovati nel layer di ricerca della mappa",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "Questo campo non esiste in nessuno dei layer mappa",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "I contenuti sono stati inviati. Grazie.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Impossibile accedere alla configurazione dell\'applicazione",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

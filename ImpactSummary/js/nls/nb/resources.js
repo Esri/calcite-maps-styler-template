@@ -4,15 +4,15 @@
             error: "Kan ikke opprette kart"
         },
         general: {
-            map: "å_Map_ø",
-            mapInfo: "å_Map Information_ø",
+            map: "Kart",
+            mapInfo: "Kartinformasjon",
             legend: "Tegnforklaring",
-            layers: "å_Layers_ø",
+            layers: "Lag",
             summarize: "Hele området",
             share: "Del",
             about: "Om",
             noSearchResult: "Fant ingen resultater",
-            impactArea: "å_Impact Area_ø"
+            impactArea: "Treffområde"
         }
     })
 

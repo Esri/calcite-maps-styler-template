@@ -100,7 +100,7 @@ input[type=text]::-ms-clear {
 .panel-section {
     border-top: 1px solid #e0e0e0;
 }
-.panel-summary {
+.panel-summary, .panel-description {
     color: #666;
     padding: 0 10px 10px 10px;
     line-height: 24px;
@@ -127,6 +127,11 @@ input[type=text]::-ms-clear {
     background-color: #f8f8f8;
     background-position: 95% center;
     background-repeat: no-repeat;
+}
+.bookmark-item:hover, .note-item:hover{
+    border-color: #666;
+    background-color: #eee;
+    color: #333;
 }
 .esriRTL .bookmark-item,
 .esriRTL .note-item {
@@ -317,7 +322,7 @@ input[type=text]::-ms-clear {
     -webkit-box-shadow: inset -1px 0 6px 0 rgba(0, 0, 0, 0.5);
     box-shadow: inset -1px 0 6px 0 rgba(0, 0, 0, 0.5);
     position: fixed;
-    z-index: 999;
+    z-index: 450;
     top: 0;
     left: 0;
     width: 280px;
@@ -436,7 +441,7 @@ input[type=text]::-ms-clear {
 .mobile-locate-box-hidden {
     display: none;
     position: absolute;
-    z-index: 999;
+    z-index: 460;
     left: 0;
     top: 35px;
     width: 100%;
@@ -542,6 +547,12 @@ input[type=text]::-ms-clear {
     left: auto;
     right: 0;
 }
+.drawer-menu-buttons .icon-text{
+    font-size: 11px;
+    margin-bottom: 5px;
+    line-height: 11px;
+    height: 11px;
+}
 /* Misc */
 
 .clear {
@@ -558,7 +569,7 @@ input[type=text]::-ms-clear {
     height: 100%;
     width: 100%;
     display: block;
-    z-index: 999;
+    z-index: 500;
     position: absolute;
     top: 0;
     left: 0;

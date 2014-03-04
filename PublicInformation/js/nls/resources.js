@@ -12,16 +12,19 @@ define({
         mapNotes:{
             notesUnavailable: "Description unavailable",
             bookmarks: "Bookmarks",
+            zoomTo: "Zoom to this location and find out more information.",
             untitledNote: "Untitled"
         },
         social: {
             flickr: "Flickr",
+            mediaLayers: "Media Layers",
+            mediaLayersDescription: "Show contributions from the public on the map.",
             flickrSettings: "Flickr Settings",
             twitter: "Twitter",
             twitterSettings: "Twitter Settings",
             twitterUser: "Twitter Account",
             twitterSignIn: "Sign in to Twitter",
-            webcams: "Webcams",
+            webcams: "Webcams.travel",
             instagram: "Instagram",
             moreInfo: "More information",
             searchTerms: "Search Terms",

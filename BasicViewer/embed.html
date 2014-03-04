@@ -3,12 +3,12 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
-    <link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.9/js/dojo/dijit/themes/claro/document.css">
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/dojo/dijit/themes/claro/document.css">
 
-    <link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.9/js/dojo/dojox/layout/resources/FloatingPane.css">
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/dojo/dojox/layout/resources/FloatingPane.css">
 
-    <link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.9/js/esri/css/esri.css" />
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/esri/css/esri.css" />
 
     <link rel="stylesheet" type="text/css" href="css/layout.css">
     <!--[if IE]>
@@ -33,24 +33,24 @@
       }]
     };
     </script>
-    <script type="text/javascript" src="//jsdev.arcgis.com/3.9/">
+    <script type="text/javascript" src="//js.arcgis.com/3.9/">
 
     </script>
     <script type="text/javascript">
       dojo.require("esri.layout");
     </script>
-    <script type="text/javascript" src="../../templateConfig.js"></script>
-    <script type="text/javascript" src="javascript/layout.js">
 
+    <script type="text/javascript" src="javascript/layout.js">
     </script>
     <script type="text/javascript">
       dojo.require("utilities.App");
+      dojo.require("dojo.on");
       dojo.require("templateConfig.commonConfig");
+ 
 
 
       var i18n;
       dojo.ready(function(){
-
         i18n = dojo.i18n.getLocalization("esriTemplate","template");
         var  defaults = {
         //The ID for the map from ArcGIS.com
@@ -168,9 +168,11 @@
         //embed = true means the margins will be collapsed to just include the map no title or links
         embed: true
       };
-        var app = new utilities.App(defaults);
-        app.init().then(function(options){
-            initMap(options);
+        var supportsLocalization = true;
+        var app = new utilities.App(defaults, supportsLocalization);
+        dojo.on(app, "ready", function(config){
+
+          initMap(config);
         });
 
       });

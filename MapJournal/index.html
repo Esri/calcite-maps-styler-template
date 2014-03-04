@@ -28,7 +28,7 @@
 			Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
 			https://github.com/Esri/TODO
 		-->
-
+		
 		<script type="text/javascript">
 			//----------------------------------------------------------------
 			//     Template configuration (ignored on Portal and development)
@@ -56,7 +56,7 @@
 			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed 
 			//  on Portal for ArcGIS as /home/Tpl/ or /apps/Tpl/, that configuration is available in ../commonConfig.js
 		</script>
-
+		
 		<!--
 		
 			Edit below at your own risk
@@ -65,7 +65,7 @@
 
 		<script type="text/javascript">
 			var app = {
-				version: 0.1,
+				version: '1.0-alpha2',
 				isProduction: true,
 				isInBuilder: false,
 				indexCfg: configOptions
@@ -110,20 +110,8 @@
 			    return vars[name];
 			}
 
-			app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') 
-								|| getUrlVar('fromscratch') || getUrlVar('fromGallery');
-
-			loadCSS("//jsdev.arcgis.com/3.9/js/esri/css/esri.css", true);
-			// TODO
-			loadCSS("//jsdev.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css", true);			
-
-			if( app.isProduction ) {
-				if ( app.isInBuilder )
-					loadCSS("app/builder-min.css");
-				else
-					loadCSS("app/viewer-min.css");
-			}
-
+			//var pathJSAPI = "//js.arcgis.com/3.8/";
+			var pathJSAPI = "//jsdev.arcgis.com/3.9/";
 			var path1 = location.pathname.replace(/\/[^/]+$/, '/');
 			var path2 = location.pathname.replace(/\/[^/]+$/, '');
 			var dojoConfig = {
@@ -156,11 +144,22 @@
 					}
 				],
 				aliases: [
-					//['i18n', 'dojo/i18n'],
 					['text', 'lib-build/text'],
 					['underscore', 'lib-build/lodash']
 				]
 			};
+			
+			app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fromscratch');
+			
+			loadCSS(pathJSAPI + "js/esri/css/esri.css", true);
+			loadCSS(pathJSAPI + "/js/dojo/dijit/themes/claro/claro.css", true);	
+
+			if( app.isProduction ) {
+				if ( app.isInBuilder )
+					loadCSS("app/builder-min.css");
+				else
+					loadCSS("app/viewer-min.css");
+			}
 		</script>
 		<!--[if IE 7]>
 			<link rel="stylesheet" href="resources/common/font/storymaps-icons-ie7.css">
@@ -184,7 +183,7 @@
 				</div>
 				<div class="rightArea">
 					<div class="social">
-						<span class="link"></span>
+						<span class="linkContainer"></span>
 						<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
 						<i class="shareIcon share_twitter icon-twitter-1"></i>
 						<i class="shareIcon share_bitly icon-link"></i>
@@ -204,21 +203,14 @@
         <div id="contentPanel" class="mobileView">
 			<!-- Map -->
 			<div id="mainMediaPanel">
-                <div class="mainMediaContainer">
-	                <div class="mapContainer">
-	                    <div id="hoverInfo"></div>
-	                </div>
-					<div class="overviewMap" style="position: absolute; left: 20px; bottom: 20px; width: 90px; height: 90px; border: 1px solid black; background-color: #FFF;">
-						TODO
-					</div>
-				</div>
+				<!-- Maps and media injected here -->
             </div>
 			
 			<!-- Text panel of the Side Panel layout -->
 			<div id="sidePanel" class="mainViewSideMap sidePanel">
 				<div class="builder">
-					<button type="button" class="btn btn-small">Add</button>
-					<button type="button" class="btn btn-small">Organize</button>
+					<button type="button" class="btn btn-small builder-add"></button>
+					<button type="button" class="btn btn-small builder-organize"></button>
 				</div>
 				<div class="entries">
 					<!-- entries injected here -->
@@ -236,7 +228,7 @@
 		
 		<div id="floatingPanel" class="floatingPanel">
 			<div class="header">
-				<span class="link"></span>
+				<span class="linkContainer"></span>
 				<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
 				<i class="shareIcon share_twitter icon-twitter-1"></i>
 				<i class="shareIcon share_bitly icon-link"></i>
@@ -245,8 +237,8 @@
 				</a>
 			</div>
 			<div class="builder">
-				<button type="button" class="btn btn-small">Add</button>
-				<button type="button" class="btn btn-small">Organize</button>
+				<button type="button" class="btn btn-small builder-add"></button>
+				<button type="button" class="btn btn-small builder-organize"></button>
 			</div>
 			<div class="entries">
 				<div class="swiper-container">
@@ -267,12 +259,14 @@
 					<!-- entries injected here -->
 				</div>
 			</div>
-			<div class="social">
-				<a class="headerLink" href="//storymaps.arcgis.com" target="_blank">A story map</a>
-				&nbsp; 
+			<div class="header">
+				<span class="linkContainer"></span>
 				<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
-				<i class="icon-twitter-1 shareIcon share_twitter"></i>
-				<i class="icon-link shareIcon share_bitly"></i>
+				<i class="shareIcon share_twitter icon-twitter-1"></i>
+				<i class="shareIcon share_bitly icon-link"></i>
+				<a class="logoLink" target="_blank">
+					<img class="logoImg" />
+				</a>
 			</div>
 		</div>
 
@@ -282,9 +276,12 @@
 		<div id="loadingMessage"></div>
 		
 		<!-- Builder views are injected here -->
-        <div class="modal fade" id="settingsPopup" role="dialog" data-backdrop="static" tabindex="-1" aria-hidden="true"></div>
+        <div class="modal fade" id="settingsPopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
 		<div class="modal fade" id="initPopup" role="dialog" data-backdrop="static"></div>
 		<div class="modal fade" id="sharePopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
+		
+		<div class="modal fade addEditPopup" id="addEditPopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
+		<div class="modal fade organizePopup" id="organizePopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
 		
 		<!-- Fatal error box -->
 		<div id="fatalError">
@@ -300,12 +297,14 @@
 		</div>
 		
 		<script type="text/javascript">
-			loadJS('//jsdev.arcgis.com/3.9/init.js', true);
+			loadJS(pathJSAPI + 'init.js', true);
 			loadJS('app/config.js');
 			
 			if( app.isProduction ) {
 				_ = {};
 
+				CKEDITOR_BASEPATH = 'resources/lib/ckeditor/';
+				
 				if ( app.isInBuilder )
 					loadJS('app/builder-min.js');
 				else

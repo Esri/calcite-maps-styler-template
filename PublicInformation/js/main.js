@@ -65,11 +65,13 @@ function(
                 panelHeader: "panel-header",
                 panelSection: "panel-section",
                 panelSummary: "panel-summary",
+                panelDescription: "panel-description",
                 pointerEvents: "pointer-events",
                 iconRight: "icon-right",
                 iconList: "icon-list",
                 iconLayers: "icon-layers",
                 iconMap: "icon-map",
+                iconText: "icon-text",
                 locateButtonTheme: "LocateButtonCalcite",
                 homebuttonTheme: "HomeButtonCalcite",
                 desktopGeocoderTheme: "geocoder-desktop",
@@ -97,23 +99,9 @@ function(
             }));
             // startup drawer
             this._drawer.startup();
-            // get item info
-            arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
-                //let's get the web map item and update the extent if needed. 
-                if (this.config.appid && this.config.application_extent.length > 0) {
-                    itemInfo.item.extent = [
-                        [
-                            parseFloat(this.config.application_extent[0][0]),
-                            parseFloat(this.config.application_extent[0][1])
-                        ],
-                        [
-                            parseFloat(this.config.application_extent[1][0]),
-                            parseFloat(this.config.application_extent[1][1])
-                        ]
-                    ];
-                }
-                this._createWebMap(itemInfo);
-            }));
+            //supply either the webmap id or, if available, the item info 
+            var itemInfo = this.config.itemInfo || this.config.webmap;
+            this._createWebMap(itemInfo);
         },
         // if pointer events are supported
         _pointerEventsSupport: function(){
@@ -133,19 +121,43 @@ function(
         },
         _initTOC: function(){
             // layers
-            var tocNode = dom.byId('TableOfContents');
+            var tocNode = dom.byId('TableOfContents'), tocLayers, toc;
             if (tocNode) {
-                var tocLayers = this.socialLayers.concat(this.layers);
-                var toc = new TableOfContents({
+                tocLayers = this.layers;
+                toc = new TableOfContents({
                     map: this.map,
                     layers: tocLayers
                 }, tocNode);
                 toc.startup();
             }
+            // if we have social layers
+            if (this.socialLayers && this.socialLayers.length) {
+                // add social specific html
+                var content = '';
+                content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.social.mediaLayers + '</div>';
+                content += '<div class="' + this.css.panelContainer + '">';
+                content += '<div class="' + this.css.panelDescription + '">' + this.config.i18n.social.mediaLayersDescription + '</div>';
+                content += '<div id="MediaTableOfContents"></div>';
+                content += '</div>';
+                // get node to insert
+                var node = dom.byId('social_media_layers');
+                if(node){
+                    node.innerHTML = content;
+                }
+                // get toc node for social layers
+                tocNode = dom.byId('MediaTableOfContents');
+                // if node exists
+                if(tocNode){
+                    tocLayers = this.socialLayers;
+                    toc = new TableOfContents({
+                        map: this.map,
+                        layers: tocLayers
+                    }, tocNode);
+                    toc.startup();    
+                }
+            }
         },
         _init: function () {
-            // drawer size check
-            this._drawer.resize();
             // menu panels
             this.drawerMenus = [];
             var content, menuObj;
@@ -174,7 +186,7 @@ function(
                 // menu info
                 menuObj = {
                     title: this.config.i18n.general.map,
-                    label: '<span class="' + this.css.iconMap + '"></span>',
+                    label: '<div class="' + this.css.iconMap + '"></div><div class="' + this.css.iconText + '">' + this.config.i18n.general.map + '</div>',
                     content: content
                 };
                 // map menu
@@ -197,7 +209,7 @@ function(
                 // menu info
                 menuObj = {
                     title: this.config.i18n.general.legend,
-                    label: '<span class="' + this.css.iconList + '"></span>',
+                    label: '<div class="' + this.css.iconList + '"></div><div class="' + this.css.iconText + '">' + this.config.i18n.general.legend + '</div>',
                     content: content
                 };
                 // legend menu
@@ -215,10 +227,11 @@ function(
                 content += '<div class="' + this.css.panelContainer + '">';
                 content += '<div id="TableOfContents"></div>';
                 content += '</div>';
+                content += '<div id="social_media_layers"></div>';
                 // menu info
                 menuObj = {
                     title: this.config.i18n.general.layers,
-                    label: '<span class="' + this.css.iconLayers + '"></span>',
+                    label: '<div class="' + this.css.iconLayers + '"></div><div class="' + this.css.iconText + '">' + this.config.i18n.general.layers + '</div>',
                     content: content
                 };
                 // layers menu
@@ -236,19 +249,25 @@ function(
             this._drawerMenu.startup();
             // locate button
             if (this.config.enableLocateButton) {
-                var LB = new LocateButton({
+                this._LB = new LocateButton({
                     map: this.map,
                     theme: this.css.locateButtonTheme
                 }, 'LocateButton');
-                LB.startup();
+                this._LB.startup();
             }
             // home button
             if (this.config.enableHomeButton) {
-                var HB = new HomeButton({
+                this._HB = new HomeButton({
                     map: this.map,
                     theme: this.css.homebuttonTheme
                 }, 'HomeButton');
-                HB.startup();
+                this._HB.startup();
+                // clear locate on home button
+                on(this._HB, 'home', lang.hitch(this, function(){
+                    if(this._LB){
+                        this._LB.clear();
+                    }
+                }));
             }
             // basemap toggle
             if (this.config.enableBasemapToggle) {
@@ -336,6 +355,12 @@ function(
             });
             // hide loading div
             this._hideLoadingIndicator();
+            // drawer size check
+            setTimeout(lang.hitch(this, function(){
+                this._drawer.resize();    
+            }), 500);
+            // drawer size check
+            this._drawer.resize();
         },
         _checkMobileGeocoderVisibility: function () {
             if(this._mobileGeocoderIconNode && this._mobileSearchNode){
@@ -373,54 +398,72 @@ function(
             window.document.title = title;
         },
         _createGeocoderOptions: function() {
-            var hasEsri = false,
-                esriIdx, options, geocoders = lang.clone(this.config.helperServices.geocode);
-            // each geocoder
-            array.forEach(geocoders, function (geocoder) {
-                if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
-                    hasEsri = true;
-                    geocoder.name = "Esri World Geocoder";
-                    geocoder.outFields = "Match_addr, stAddr, City";
-                    geocoder.singleLineFieldName = "Single Line";
-                    geocoder.esri = geocoder.placefinding = true;
-                }
-        
-            });
-            //only use geocoders with a singleLineFieldName that allow placefinding unless its custom
-            geocoders = array.filter(geocoders, function (geocoder) {
-                if (geocoder.name && geocoder.name === "Custom") {
-                    return (esriLang.isDefined(geocoder.singleLineFieldName));
-                } else {
-                    return (esriLang.isDefined(geocoder.singleLineFieldName) && esriLang.isDefined(geocoder.placefinding) && geocoder.placefinding);
-                }
-            });
-            if (hasEsri) {
-                for (var i = 0; i < geocoders.length; i++) {
-                    if (esriLang.isDefined(geocoders[i].esri) && geocoders[i].esri === true) {
-                        esriIdx = i;
-                        break;
-                    }
-                }
-            }
-            options = {
+            var hasEsri = false, esriIdx, geocoders = lang.clone(this.config.helperServices.geocode);
+            // default options
+            var options = {
                 map: this.map,
                 autoNavigate: true,
-                autoComplete: hasEsri
+                autoComplete: true,
+                arcgisGeocoder: true,
+                geocoders: null
             };
-            if (hasEsri) {
-                options.minCharacters = 0;
-                options.maxLocations = 5;
-                options.searchDelay = 100;
-            }
-            //If the World geocoder is primary enable auto complete 
-            if (hasEsri && esriIdx === 0) {
-                options.arcgisGeocoder = geocoders.splice(0, 1)[0]; //geocoders[0];
-                if (geocoders.length > 0) {
+            //only use geocoders with a url defined
+            geocoders = array.filter(geocoders, function (geocoder) {
+                if (geocoder.url) {
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            });
+            // at least 1 geocoder defined
+            if(geocoders.length){
+                // each geocoder
+                array.forEach(geocoders, function (geocoder) {
+                    // if esri geocoder
+                    if (geocoder.url && geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+                        hasEsri = true;
+                        geocoder.name = "Esri World Geocoder";
+                        geocoder.outFields = "Match_addr, stAddr, City";
+                        geocoder.singleLineFieldName = "Single Line";
+                        geocoder.esri = geocoder.placefinding = true;
+                    }
+                });
+                //only use geocoders with a singleLineFieldName that allow placefinding unless its custom
+                geocoders = array.filter(geocoders, function (geocoder) {
+                    if (geocoder.name && geocoder.name === "Custom") {
+                        return (esriLang.isDefined(geocoder.singleLineFieldName));
+                    } else {
+                        return (esriLang.isDefined(geocoder.singleLineFieldName) && esriLang.isDefined(geocoder.placefinding) && geocoder.placefinding);
+                    }
+                });
+                // if we have an esri geocoder
+                if (hasEsri) {
+                    for (var i = 0; i < geocoders.length; i++) {
+                        if (esriLang.isDefined(geocoders[i].esri) && geocoders[i].esri === true) {
+                            esriIdx = i;
+                            break;
+                        }
+                    }
+                }
+                // set autoComplete
+                options.autoComplete = hasEsri;
+                // set esri options
+                if (hasEsri) {
+                    options.minCharacters = 0;
+                    options.maxLocations = 5;
+                    options.searchDelay = 100;
+                }
+                //If the World geocoder is primary enable auto complete 
+                if (hasEsri && esriIdx === 0) {
+                    options.arcgisGeocoder = geocoders.splice(0, 1)[0]; //geocoders[0];
+                    if (geocoders.length > 0) {
+                        options.geocoders = geocoders;
+                    }
+                } else {
+                    options.arcgisGeocoder = false;
                     options.geocoders = geocoders;
                 }
-            } else {
-                options.arcgisGeocoder = false;
-                options.geocoders = geocoders;
             }
             return options;
         },

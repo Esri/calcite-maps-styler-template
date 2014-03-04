@@ -173,6 +173,7 @@ function createApp() {
         configOptions.displaySlider = false;
     }
 
+    var itemInfo = configOptions.itemInfo || configOptions.webmap;
 
     if (configOptions.gcsextent) {
         //make sure the extent is valid minx,miny,maxx,maxy
@@ -185,17 +186,15 @@ function createApp() {
                 getItem(configOptions.webmap);
             } else {
                 if (extArray.length == 4) {
-                    getItem(configOptions.webmap, extArray);
+                    getItem(itemInfo, extArray);
                 } else {
-                    createMap(configOptions.webmap);
+                    createMap(itemInfo);
                 }
             }
         }
-    }else if (configOptions.appid && configOptions.appextent.length > 0) {
-        var extent = [configOptions.appextent[0][0],configOptions.appextent[0][1], configOptions.appextent[1][0], configOptions.appextent[1][1]];
-        getItem(configOptions.webmap, extent);
-    } else {
-        createMap(configOptions.webmap);
+    }else{
+        createMap(itemInfo);
+
     }
 }
 
@@ -457,7 +456,15 @@ function initUI(response) {
 
     //do we have any editable layers - if not then set editable to false
     editLayers = hasEditableLayers(layers);
-    if (editLayers.length === 0) {
+    
+    //is the logged-in user allowed to edit? 
+    var editable = true;
+    if(esri.isDefined(configOptions.userPrivileges)){
+        if(dojo.indexOf(configOptions.userPrivileges, "features:user:edit") === -1){
+            editable = false;
+        }
+    }
+    if (editLayers.length === 0 || !editable) {
         configOptions.displayeditor = false;
     }
 
@@ -1071,7 +1078,7 @@ function addMeasurementWidget() {
         closable:false,
         id: "floater",
         //constrainToContainer: true,
-        style: "position:absolute;top:0;left:0;width:245px;height:175px;z-index:999!important;visibility:hidden;",      
+        style: "position:absolute;top:0;left:0;width:245px;height:175px;z-index:999!important;visibility:hidden;"    
     }, dojo.byId("floater"));
 
     fp.startup();
@@ -1231,17 +1238,9 @@ function hasEditableLayers(layers) {
             var eLayer = layer.layerObject;
 
             if (eLayer instanceof esri.layers.FeatureLayer && eLayer.isEditable()) {
-                if (eLayer.capabilities && eLayer.capabilities === "Query") {
-                    //is capabilities set to Query if so then editing was disabled in the web map so 
-                    //we won't add to editable layers.
-                } else {
                     layerInfos.push({
                         'featureLayer': eLayer
                     });
-                }
-
-
-
             }
 
         }
@@ -1285,7 +1284,7 @@ function addEditor(editLayers) {
 
     //add this to the existing div
     dijit.byId('stackContainer').addChild(editCp);
-    navigateStack('editPanel');
+   // navigateStack('editPanel');
     //create the editor if the legend and details panels are hidden - otherwise the editor
     //will be created when the edit button is clicked.
     if ((configOptions.displaydetails === false) && (configOptions.displaylegend === false)) {

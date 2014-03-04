@@ -4,15 +4,15 @@
             error: "يتعذر إنشاء الخريطة"
         },
         general: {
-            map: "بيت_Map_لاحقة",
-            mapInfo: "بيت_Map Information_لاحقة",
+            map: "خريطة",
+            mapInfo: "معلومات الخريطة",
             legend: "مفتاح الخريطة",
-            layers: "بيت_Layers_لاحقة",
+            layers: "طبقات",
             summarize: "المنطقة الكلية",
             share: "مشاركة",
             about: "نبذة عن",
             noSearchResult: "يتعذر إيجاد النتائج",
-            impactArea: "بيت_Impact Area_لاحقة"
+            impactArea: "منطقة التأثير"
         }
     })
 

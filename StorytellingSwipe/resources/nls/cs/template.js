@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "Zde se podívejte na příklad aplikace se sérií překrývání",
 				preview: "Náhled uživatelského rozhraní",
 				settingsLocateButtonExplain: "Tato funkcionalita je podporována na většině mobilních zařízení a stolních prohlížečů (včetně Internet Explorer 9+).",
-				settingsLocateButton: "Povolit tlačítko \'Hledat\' v podporovaných prohlížečích",
+				settingsLocateButton: "Povolit tlačítko \'Lokalizovat\' v podporovaných prohlížečích",
 				settingsAddressSearch: "Povolit nástroj pro vyhledávání adres"
 			},
 			settingsSwipePopup: {

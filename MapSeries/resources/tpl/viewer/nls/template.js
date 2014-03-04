@@ -31,10 +31,6 @@ define({
 				navMap: "Map",
 				navDetail: "Detail"
 			},
-			sidePanel: {
-				editTooltip: "Set the side panel description",
-				editMe: "Edit me!"
-			},
 			commonHeader: {
 				storymapsText: "A story map",
 				builderButton: "Edit",

@@ -9,6 +9,7 @@ define([
     "dojo/dom-construct", "dojo/dom-style", "dojo/dom", "dijit/registry",
     "dojo/on", "dojo/has", "dojo/sniff", "dojo/_base/window", "dojo/window",
     "dojo/dom-class", "dojo/dom-geometry", "dojo/dom-attr", "dojo/_base/fx",
+    "esri/dijit/PopupMobile", "esri/dijit/Popup",
     "dijit/layout/StackContainer", "dojox/mobile", "dojox/mobile/TabBar", "dojox/mobile/Heading", "dojox/mobile/ScrollableView",
     "dojox/mobile/deviceTheme"
 ], function (
@@ -20,7 +21,8 @@ define([
     ToolBarButton,
     BorderContainer, ContentPane,
     domConstruct, domStyle, dom, registry,
-    on, has, sniff, win, doc, domClass, domGeometry, domAttr, fx
+    on, has, sniff, win, doc, domClass, domGeometry, domAttr, fx,
+    PopupMobile, Popup
 ) {
     return declare("", null, {
         config: {},
@@ -60,7 +62,6 @@ define([
                 ss.rel = "stylesheet";
 
                 if (this.is_smartphone) {
-                    require(["esri/dijit/PopupMobile"], lang.hitch(this, function (PopupMobile) {
                         this.popup = new PopupMobile(null, domConstruct.create("div"));
 
                         if (sniff("android")) {
@@ -79,12 +80,10 @@ define([
 
                         this._buildMobile();
 
-                    }));
 
                 } else { //tablet or desktop
 
                     // desktop popup instead of mobile popoup
-                    require(['esri/dijit/Popup'], lang.hitch(this, function (Popup) {
                         this.popup = new Popup(null, domConstruct.create("div"));
 
                         if (this.is_tablet) {
@@ -95,9 +94,6 @@ define([
                             this._buildDesktop();
                         }
 
-
-
-                    }));
 
                 }
                 document.getElementsByTagName("head")[0].appendChild(ss);
@@ -132,18 +128,10 @@ define([
                 themeStyle.href = "css/" + this.config.theme + ".css";
                 document.getElementsByTagName("head")[0].appendChild(themeStyle);
 
-                arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
-                    //let's get the web map item and update the extent if needed. 
-                    if (this.config.appid && this.config.application_extent.length > 0) {
-                        itemInfo.item.extent = [
-                            [parseFloat(this.config.application_extent[0][0]), parseFloat(this.config.application_extent[0][1])],
-                            [parseFloat(this.config.application_extent[1][0]), parseFloat(this.config.application_extent[1][1])]
-                        ];
-                    }
-                    this._createWebMap(itemInfo);
-                }));
-
-
+                //supply either the webmap id or, if available, the item info 
+                var itemInfo = this.config.itemInfo || this.config.webmap;
+    
+                this._createWebMap(itemInfo);
 
 
             }));
@@ -267,6 +255,8 @@ define([
                 },
                 bingMapsKey: this.config.bingmapskey
             }).then(lang.hitch(this, function (response) {
+              this.map = response.map;
+
                 //Once the map is created we get access to the response which provides important info 
                 //such as the map, operational layers, popup info and more. 
                 this.config.title = this.config.title || response.itemInfo.item.title;
@@ -282,9 +272,10 @@ define([
                         dom.byId("footerText").innerHTML = this.config.i18n.viewer.footer.label + " " + this.config.owner;
                     }
                 }
-                this.map = response.map;
+  
 
                 if (this.map.loaded) {
+
                     // do something with the map
                     this._mapLoaded(response);
                 } else {

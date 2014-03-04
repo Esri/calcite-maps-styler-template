@@ -26,6 +26,22 @@ define({
 				shareStatus3: "Application is shared within the organization",
 				shareStatus4: "Application is not shared"
 			},
+			// TODO
+			addEditPopup: {
+				// Add
+				addEditPopupInputTitleLabel: "Title",
+				addPopupTitle: "Add",
+				addPopupDescription: "Add a new view to your series.",
+				addPopupButton: "ADD",
+				// Edit
+				editPopupTitle: "Edit",
+				editPopupDescription: "Edit the selected view",
+				editPopupButton: "APPLY",
+				// Add/Edit
+				addEditPopupCancelButton: "CANCEL",
+				addEditPopupMyContentBtn: "Select from my content",
+				addEditPopupConfigureWebMapBtn: " Configure"
+			},
 			share: {
 				firstSaveTitle: "Application successfully saved",
 				firstSaveHeader: "Your application is now saved in ArcGIS Online. Please read the following answers to frequent questions.",
@@ -67,6 +83,13 @@ define({
 				apply: "Apply",
 				tabError: "Please check for errors in all tabs"
 			},
+			settingsLayout: {
+				title: "Layout",
+				explain: "Select the layout you want to use.",
+				explainInit: "You will always be able to change the layout through the settings.",
+				selected: "Selected layout",
+				select: "Select this layout"
+			},
 			settingsTheme: {
 				title: "Theme",
 				explain: "Choose an app theme or define your own colors.",
@@ -84,9 +107,39 @@ define({
 				logoSocialText: "Text",
 				logoSocialLink: "Link",
 				logoSocialDisabled: "This feature has been disabled by the Administrator"
+			},
+			mediaSelector: {
+				lblMap: "Map",
+				lblPicture: "Picture",
+				lblVideo: "Video",
+				lblExternal: "External page"
+			},
+			webMapSelector: {
+				radioCurrentWebMap: "Current web map",
+				radioWebmapApp: "One of the other web map used in the application",
+				radioAnotherWebmap: "Another webmap",
+				btnSelect: "Select",
+				lblOr: "or",
+				fieldEnterWebmapId: "Enter a web map id",
+				btnConfigure: "Configure the Map"
 			}
-        }
-    }),
+		},
+		configure: {
+			mapdlg:{
+				items:{
+					organizationLabel: "My Organization",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "My Content",
+					favoritesLabel: "My Favorites"
+				},
+				title: "Select Web Map",
+				searchTitle: "Search",
+				ok: "Ok",
+				cancel: "Cancel",
+				placeholder: "Enter search term"
+			}
+		}
+	}),
 	"ar":1,
 	"cs":1,
 	"da":1,

@@ -132,14 +132,15 @@ define([
                 if(this.isMobile){
                    dom.byId("displayButton").innerHTML = title;
                    domConstruct.place(content, this.leftPanel);
+                   this.mainWindow.resize();
                    deferred.resolve();
                 }else{
                   this.leftPanel.set("content" , content);
                   this.leftPanel.set("style", {width: width});
+                  this.mainWindow.resize();
                   deferred.resolve();
                 }
        
-                 this.mainWindow.resize();
                  return deferred.promise;
             },
             updateButton: function(updatedTitle){

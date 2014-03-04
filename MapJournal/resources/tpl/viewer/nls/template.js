@@ -26,14 +26,14 @@ define({
 				notAuthorized: "You are not authorized to access this application",
 				noBuilderIE8: "The builder is not supported on Internet Explorer before version 9."
 			},
-			mobile: {
-				navList: "List",
-				navMap: "Map",
-				navDetail: "Detail"
-			},
 			sidePanel: {
 				editTooltip: "Set the side panel description",
 				editMe: "Edit me!"
+			},
+			mobileView: {
+				tapForDetails: "Tap for details",
+				swipeToExplore: "Swipe to explore",
+				tapForMap: "Tap to get back to Map"
 			},
 			commonHeader: {
 				storymapsText: "A story map",

@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "ł_Find_ą",  // Command button to open a dialog box for finding a feature or an address (depending on app)
+            search: "Znajdź",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Bieżąca lokalizacja",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Wyślij korektę",  // Command button to submit a correction to the app's host
-            collect: "ł_Filter/Edit_ą",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            collect: "Filtruj/Edytuj",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "Filtruj warstwy mapy",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Przełącz mapę bazową",  // Command button to open a dialog box for switching basemaps
             share: "Udostępnij",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,7 +43,7 @@ define(
             author: "autor"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "ł_Find:_ą",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Znajdź:",  // Appears before a search text field in dialog box for searching for a feature
             markup: "Narysuj",  // Appears before a set of tools for drawing on the map
             mapLayers: "Warstwy mapy:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "Pola wyszukiwania warstwy:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "Ta strona nie ma uprawnień do pobierania bieżącej lokalizacji",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Przeglądarka nie mogła pobrać bieżącej lokalizacji",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Przeglądarka nie mogła pobrać bieżącej lokalizacji w odpowiednim czasie",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "ł_This find layer was not found in the map_ą",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
-            searchFieldMissing: "ł_This field was not found in the map find layer_ą",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
-            allSearchFieldsMissing: "ł_None of these fields was found in the map find layer_ą",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
+            searchLayerMissing: "Nie znaleziono wyszukiwanej warstwy na mapie",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "Nie znaleziono tego pola w wyszukiwanej warstwie mapy",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "Żadne z tych pól nie zostało znalezione w wyszukiwanej warstwie mapy.",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "To pole nie istnieje w żadnej warstwie mapy",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Twoja zawartość została przesłana. Dziękujemy.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Nie można uzyskać dostępu do plików konfiguracyjnych aplikacji",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

@@ -217,7 +217,7 @@
 				firstSaveHeader: "您的应用程序现已保存到 ArcGIS Online 中。请阅读下面的常见问题解答。",
 				firstSaveA1: "如果您不熟悉 ArcGIS Online，或需要访问创作界面的快捷方式，则可以保存以下链接: %LINK1%",
 				firstSaveA1bis: "还可以在您的 <a href='%LINK2%' target='_blank'>ArcGIS Online 内容文件夹</a>中找到此应用程序。",
-				firstSaveQ2: "我的应用程序是否共享?",
+				firstSaveQ2: "我的应用程序是否已共享?",
 				firstSaveA2: "您的应用程序当前没有共享。要共享，请使用\“共享\”按钮。",
 				shareTitle: "共享您的应用程序",
 				sharePrivateHeader: "您的应用程序没有共享，是否希望将其共享?",

@@ -44,17 +44,9 @@ dojo.require("social.twitter");
         twitterLayer.clear();
       }
    });
-    esri.arcgis.utils.getItem(configOptions.webmap).then(dojo.hitch(this, function (itemInfo) {
-        //let's get the web map item and update the extent if needed. 
-        if (configOptions.appid && configOptions.application_extent.length > 0) {
-            itemInfo.item.extent = [
-                [parseFloat(configOptions.application_extent[0][0]), parseFloat(configOptions.application_extent[0][1])],
-                [parseFloat(configOptions.application_extent[1][0]), parseFloat(configOptions.application_extent[1][1])]
-            ];
-        }
-        createApp(itemInfo);
-    }));
 
+  var itemInfo = configOptions.itemInfo || configOptions.webmap;
+  createApp(itemInfo);
 
  }
 

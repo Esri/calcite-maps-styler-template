@@ -19,10 +19,10 @@
 define(
 ({
         tooltips: {
-            search: "כן_Find_ש",  // Command button to open a dialog box for finding a feature or an address (depending on app)
+            search: "כפתור לפתיחת דיאלוג למציאת ישות או כתובת (בהתאם לאפליקציה)",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "מיקום נוכחי",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "שלח תיקון",  // Command button to submit a correction to the app's host
-            collect: "כן_Filter/Edit_ש",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            collect: "כפתור לפתיחת פילטר ובורר תבנית להוספת ישויות למפה ולעריכתם מאוחר יותר",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             filter: "סנן שכבות מפה",  // Explains purpose of type-in box affiliated with template picker
             basemap: "החלף מפת בסיס",  // Command button to open a dialog box for switching basemaps
             share: "שיתוף",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,7 +43,7 @@ define(
             author: "מחבר"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "כן_Find:_ש",  // Appears before a search text field in dialog box for searching for a feature
+            search: "מצא:",  // Appears before a search text field in dialog box for searching for a feature
             markup: "צייר",  // Appears before a set of tools for drawing on the map
             mapLayers: "שכבות מפה:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
             layerFields: "שדות שכבת חיפוש:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
@@ -52,9 +52,9 @@ define(
             geolocationDenied: "לאתר זה אין הרשאה לקבל את המיקום הנוכחי",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "הדפדפן לא יכול לקבל את המיקום הנוכחי",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "הדפדפן לא יכול לקבל מיקום נוכחי בזמן סביר",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "כן_This find layer was not found in the map_ש",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
-            searchFieldMissing: "כן_This field was not found in the map find layer_ש",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
-            allSearchFieldsMissing: "כן_None of these fields was found in the map find layer_ש",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
+            searchLayerMissing: "מופיע לפני רשימה של שכבות מפה; מוצג כאשר לא מוגדרת שכבה לכפתור החיפוש באפליקציה; עובד עם בקשה להזנת שכבת מפה",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchFieldMissing: "מופיע לפני רשימת שדות בזמן הגדרת שכבת חיפוש למפה",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
+            allSearchFieldsMissing: "לא נמצא אף אחד מהשדות האלו בשכבת החיפוש; מוצג כאשר האפליקציה לא מוצאת אף שדה שהוגדר לפקודת החיפוש;",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "השדה הזה לא קיים באף שכבה במפה",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "התוכן שלך נשלח. תודה.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "לא ניתן לגשת לתצורת האפליקציה",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI

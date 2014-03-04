@@ -18,8 +18,8 @@
     <!-- Sets the style of the status bar for a web application when in standalone mode -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <title></title>
-    <link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
-    <link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.9/js/esri/css/esri.css" />
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/esri/css/esri.css" />
 
     <link rel="stylesheet"  href="css/layout.css"/>
     
@@ -37,13 +37,14 @@
         ]
       };
     </script>
-    <script type="text/javascript" src="//jsdev.arcgis.com/3.9"></script>
+    <script type="text/javascript" src="//js.arcgis.com/3.9"></script>
     <script type="text/javascript" src="javascript/layout.js"></script>
 
     
     <script type="text/javascript">
     dojo.require("utilities.app");
     dojo.require("templateConfig.commonConfig");
+    dojo.require("dojo.on");
 
 
     dojo.ready(function(){
@@ -53,13 +54,16 @@
             bingmapskey: commonConfig.bingMapsKey,
             sharingurl: "",
             proxyurl: "",
+            home_button:true,
+            locate_button:true,
+            geocoder:true,
             helperServices: commonConfig.helperServices
         };
+        var supportsLocalization = true;
+        var app = new utilities.App(defaults, supportsLocalization);
+        dojo.on(app,"ready", function(config){
 
-
-        var app = new utilities.App(defaults);
-          app.init().then(function(options){
-            init(options);
+            init(config);
         });
     });
     </script>

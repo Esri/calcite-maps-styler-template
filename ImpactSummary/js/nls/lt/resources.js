@@ -4,15 +4,15 @@
             error: "Žemėlapio sukurti nepavyko"
         },
         general: {
-            map: "Į_Map_š",
-            mapInfo: "Į_Map Information_š",
+            map: "Žemėlapis",
+            mapInfo: "Žemėlapio informacija",
             legend: "Legenda",
-            layers: "Į_Layers_š",
+            layers: "Sluoksniai",
             summarize: "Visas plotas",
             share: "Bendrinti",
             about: "Apie",
             noSearchResult: "Rezultatų nerasta",
-            impactArea: "Į_Impact Area_š"
+            impactArea: "Poveikio teritorija"
         }
     })
 

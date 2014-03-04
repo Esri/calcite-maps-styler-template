@@ -4,15 +4,15 @@
             error: "No se puede crear el mapa"
         },
         general: {
-            map: "á_Map_Ó",
-            mapInfo: "á_Map Information_Ó",
+            map: "Mapa",
+            mapInfo: "Información del mapa",
             legend: "Leyenda",
-            layers: "á_Layers_Ó",
+            layers: "Capas",
             summarize: "Área completa",
             share: "Compartir",
             about: "Acerca de",
             noSearchResult: "No se ha encontrado ningún resultado",
-            impactArea: "á_Impact Area_Ó"
+            impactArea: "Área de impacto"
         }
     })
 

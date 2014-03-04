@@ -65,8 +65,8 @@
 				savingApplication: "Uygulama kaydediliyor",
 				saveSuccess: "Uygulama başarıyla kaydedildi",
 				saveError: "Kaydetme başarısız; tekrar deneyin",
-				saveError2: "ı_Save failed due to an invalid html tag in a name or description_İ",
-				saveError3: "ı_The title can't be empty_İ",
+				saveError2: "Addaki veya açıklamadaki geçersiz bir html etiketi nedeniyle kaydetme başarısız oldu",
+				saveError3: "Başlık boş olamaz",
 				signIn: "Uygulamayı kaydetmek için",
 				signInTwo: "üzerindeki başka bir hesap ile oturum açın."
 			},
@@ -158,7 +158,7 @@
 				settingsDataModel2Explain: "Başka bir web haritasıyla swipe kullan.",
 				settingsDataModel2SpyGlassExplain: "Başka bir web haritasını ortaya çıkarın.",
 				settingsDataModel2HelpTitle: "Bir web haritasının kimliğini nasıl bulabilirim?",
-				settingsDataModel2HelpContent: "Web haritasının URL'sindeki '=' işaretinden sonraki rakamları kopyalayıp yapıştırın",
+				settingsDataModel2HelpContent: "Web haritasının URL\'sindeki \'=\' işaretinden sonraki rakamları kopyalayıp yapıştırın",
 				switchMaps: "Haritaları değiştir",
 				browseWebMaps: "Web haritalarına gözat"
 			},
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "Bir swipe serisi olan bir uygulama örneğini burada görebilirsiniz",
 				preview: "Kullanıcı arayüzü önizlemesi",
 				settingsLocateButtonExplain: "Bu işlevsellik çoğu mobil cihazda ve (Internet Explorer 9+ dahil) masaüstü tarayıcısında desteklenir.",
-				settingsLocateButton: "Desteklenen tarayıcılarda bir 'Konum Bul' düğmesini etkileştir",
+				settingsLocateButton: "Desteklenen tarayıcılarda \'Konum Bul\' düğmesini etkileştir",
 				settingsAddressSearch: "Adres arama aracını etkinleştir"
 			},
 			settingsSwipePopup: {
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Üstbilgi Rengi"
 			},
 			initPopup: {
-				initHeader: "ı_Welcome to the Swipe/Spyglass Builder_İ",
+				initHeader: "Swipe/Küçük Dürbün Derleyici\'ye Hoş Geldiniz",
 				modalNext: "Sonraki",
 				modalPrev: "Önceki",
 				modalApply: "Uygulamayı aç"
@@ -208,7 +208,7 @@
 				close: "Kapat",
 				tab1: {
 					div1: "Swipe/Küçük Dürbün şablonu iki ayrı web haritasını veya tek bir web haritasının iki katmanını akıllı telefonlar ve tabletler dahil herhangi bir cihazda herhangi bir web tarayıcısında kullanılabilecek çekici, kolay kullanılan bir web uygulamasında karşılaştırmak için tasarlanmıştır.",
-					div2: "ı_For additional information on the Swipe/Spyglass template, including examples created by users, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> visit the Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._İ",
+					div2: "Swipe/Küçük Dürbün şablonu hakkında, kullanıcıların oluşturduğu örnekler dahil ek bilgi için, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> Öykü Haritaları web sitesini ziyaret edin</a>. Bizi <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a> adresinden Twitter\'da izleyebilirsiniz.",
 					div3: "Bize yazmanızı istiyoruz! İster bir soru sormak istiyor, ister yeni bir özellik istiyor, ister bir hata bulduğunuzu düşünüyor olun, <a href='http://links.esri.com/storymaps/forum' target='_blank'>Öykü Haritaları Kullanıcı Forumu</a>\'nu ziyaret edin."
 				}
 			},
@@ -246,18 +246,18 @@
 				shareA2div2: "Uygulamanın sahibi olarak ArcGIS.com\'da oturum açtığınızda, uygulamada etkileşimli derleyiciyi açmak için bir düğme bulunur:",				
 				shareQ3: "Veriler nerede saklanıyor?",
 				shareA3: "Uygulama yapılandırması bu web uygulama öğesinde saklanır</a>.",
-				shareWarning: "ı_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._İ",
- 				shareWarningWith1: "ı_publicly_İ",
- 				shareWarningWith2: "ı_publicly and with the Organization_İ"
+				shareWarning: "%WITH% ile paylaşma devre dışı bırakıldı çünkü <a href='%LINK%' target='_blank'>web haritasının</a> sahibi değilsiniz.",
+ 				shareWarningWith1: "genel ile",
+ 				shareWarningWith2: "genel ve Kuruluş ile"
 			},
 			directCreation: {
 				header: "Swipe/Küçük Dürbün Derleyici\'ye Hoş Geldiniz",
 				mapPickHeader: "Başlamak için geçerli bir web haritası kimliği girin veya web haritalarına göz atmak için arama düğmesini kullanın.",
 				launchBuilder: "Derleyiciyi Başlat",
-				chooseWebmapLbl: "ı_Choose web map..._İ",
-				explain2: "ı_To create a Swipe or Spyglass story map, use the button below to choose the existing ArcGIS Online web map you want to use. Alternatively, you can paste the ID of the web map into the field below._İ",
-				explain3: "ı_If you want to use two web maps in your story map, you'll be prompted for the second web map later when you choose that option._İ",
-				webmapPlaceholder: "ı_Enter a web map id..._İ"
+				chooseWebmapLbl: "Web haritası seç...",
+				explain2: "Swipe veya Küçük Dürbün öykü haritası oluşturmak için, kullanmak istediğiniz mevcut ArcGIS Online web haritasını seçmek üzere aşağıdaki düğmeyi kullanın. Bunu yapmanın başka bir yolu da web haritasının kimliğini aşağıdaki alana yapıştırmaktır.",
+				explain3: "Öykü haritanızda iki web haritası kullanmak istiyorsanız, bu seçeneği belirlediğinizde daha sonra sizden ikinci web haritası istenir.",
+				webmapPlaceholder: "Web haritası kimliği girin..."
 			}
 		},
 		configure: {

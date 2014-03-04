@@ -4,15 +4,15 @@
             error: "Nelze vytvořit mapu"
         },
         general: {
-            map: "Ř_Map_ů",
-            mapInfo: "Ř_Map Information_ů",
+            map: "Mapa",
+            mapInfo: "Informace o mapě",
             legend: "Legenda",
-            layers: "Ř_Layers_ů",
+            layers: "Vrstvy",
             summarize: "Celá oblast",
             share: "Sdílet",
             about: "O aplikaci",
-            noSearchResult: "Nebyly nalezeny žádné výsledky.",
-            impactArea: "Ř_Impact Area_ů"
+            noSearchResult: "Nebyly nalezeny žádné výsledky",
+            impactArea: "Ovlivněná oblast"
         }
     })
 
