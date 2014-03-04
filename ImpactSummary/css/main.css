@@ -459,6 +459,9 @@ input[type=text]::-ms-clear {
     .app-title {
         max-width: 30%;
     }
+    .app-loading .content-pane-left {
+        width: 0px;
+    }
 }
 @media screen and (max-width: 600px) {
     .mobile-locate-box-hidden {
