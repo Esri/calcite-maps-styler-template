@@ -145,6 +145,12 @@
                     bingMapsKey: window.options.bingmapskey
                   });
                   mapDeferred.then(function(response){
+     
+                    //disconnect the click event handler but hold on to it because we may want to reconnect later
+                    //we want the popup enabled when the map is created so we can read the popup info to find
+                    //out if any tooltip hints have been applied so we can apply to the editor window.
+                    window.handler = response.clickEventHandle;
+                    conn.disconnect(window.handler);
         
                     window.map = response.map;
 
