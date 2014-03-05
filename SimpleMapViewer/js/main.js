@@ -113,13 +113,7 @@ define([
                     }, false));
 
 
-                } else {
-                    //IE
-                    window.attachEvent(orientationEvent, lang.hitch(this, function () {
-                        this._orientationChanged();
-                    }, false));
-
-                }
+                } 
 
                 //load styles for specified theme 
                 var themeStyle = document.createElement("link");
