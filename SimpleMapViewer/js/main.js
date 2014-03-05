@@ -299,8 +299,7 @@ define([
         _buildMobile: function () {
             var view = new View({
                 id: "container",
-                "selected": true,
-
+                "selected": true
             }).placeAt(win.body(), "first");
 
             //splitter
