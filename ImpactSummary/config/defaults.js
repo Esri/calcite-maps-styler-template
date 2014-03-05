@@ -15,6 +15,41 @@ define([], function() {
         //color theme.
         "title":"",
         "summary":"",
+        "summaryLayer":{
+            "id": "impact_area1375916377789_9168"
+        },
+        "summaryAttributes": [
+           {
+              "attribute":"TOTPOP_CY",
+              "label":"Population",
+              "dataSourceUrl": "",
+              "children":[
+                 {
+                    "attribute":"POP15_CY",
+                    "label":"Under 16"
+                 },
+                 {
+                    "attribute":"POP65U_CY",
+                    "label":"Over 64"
+                 }
+              ]
+           },
+           {
+              "attribute":"TOTHH_CY",
+              "label":"Households",
+              "dataSourceUrl": "",
+              "children":[
+                 {
+                    "attribute":"OWNER_CY",
+                    "label":"Owners"
+                 },
+                 {
+                    "attribute":"RENTER_CY",
+                    "label":"Renters"
+                 }
+              ]
+           }
+        ],
         "defaultPanel":"map",
         "enableTitle":true,
         "enableEntireAreaButton": true,
