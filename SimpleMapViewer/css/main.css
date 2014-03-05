@@ -18,6 +18,10 @@ html,body {
 #footer{
 	color:#333;
 }
+#mainWindow{
+	width:100%;
+	height:100%;
+}
 
 .mblFixedSplitter {
     width: 100%;
