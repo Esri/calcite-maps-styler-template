@@ -33,7 +33,7 @@ function (
     Graphic,
     Draw,
     SimpleMarkerSymbol,
-    GraphicsLayer,
+    GraphicsLayer,  
     QueryTask,
     Query,
     InfoTemplate,
@@ -173,6 +173,7 @@ function (
                     for (var key in this.config.userPrivileges) {
                         if (this.config.userPrivileges[key] == "features:user:edit") {
                             this.config.editingAllowed = true;
+                            return this.config.editingAllowed;
 
                         }
                     }
@@ -191,27 +192,27 @@ function (
                 this._extentChanged();
             }));
             document.title = this.config.i18n.page.title;
-            this.serviceAreaLayerNames = [],
-            this.popupMedia = [],
+            var serviceAreaLayerNames = [];
+            this.popupMedia = [];
 
-            this.serviceAreaLayerNames = this.config.serviceAreaLayerNames.split("|");
+            serviceAreaLayerNames = this.config.serviceAreaLayerNames.split("|");
             this.lookupLayers = [];
 
-            for (var f = 0, fl = this.serviceAreaLayerNames.length; f < fl; f++) {
+            for (var f = 0, fl = serviceAreaLayerNames.length; f < fl; f++) {
                 var layDetails = {};
 
                 array.forEach(this.layers, function (layer) {
 
-                    this.serviceAreaLayerNames[f] = String.trim(this.serviceAreaLayerNames[f])
+                    serviceAreaLayerNames[f] = String.trim(serviceAreaLayerNames[f])
                     if (layer.layerObject.layerInfos != null) {
                         array.forEach(layer.layerObject.layerInfos, function (subLyrs) {
-                            if (subLyrs.name == this.serviceAreaLayerNames[f]) {
+                            if (subLyrs.name == serviceAreaLayerNames[f]) {
                                 layDetails.name = subLyrs.name;
                                 layDetails.layerOrder = f;
 
                                 layDetails.url = layer.layerObject.url + "/" + subLyrs.id;
 
-                                console.log(this.serviceAreaLayerNames[f] + " " + "set");
+                                console.log(serviceAreaLayerNames[f] + " " + "set");
 
 
                                 if (layer.layers != null) {
@@ -231,7 +232,7 @@ function (
                     }
                     else {
 
-                        if (layer.title == this.serviceAreaLayerNames[f]) {
+                        if (layer.title == serviceAreaLayerNames[f]) {
                             layDetails.popupInfo = layer.popupInfo;
                             layDetails.name = layer.title;
                             layDetails.url = layer.layerObject.url;
@@ -299,6 +300,62 @@ function (
 
             }
 
+            var useLegacyConfig = false;
+
+            if (this.lookupLayers.length == 0 && this.config.serviceAreaLayerName != null)
+            {
+                var layDetails = {};
+
+                array.forEach(this.layers, function (layer) {
+
+                    this.config.serviceAreaLayerName = String.trim(this.config.serviceAreaLayerName)
+                    if (layer.layerObject.layerInfos != null) {
+                        array.forEach(layer.layerObject.layerInfos, function (subLyrs) {
+                            if (subLyrs.name == this.config.serviceAreaLayerName) {
+                                layDetails.name = subLyrs.name;
+                                layDetails.layerOrder = 0;
+
+                                layDetails.url = layer.layerObject.url + "/" + subLyrs.id;
+
+                                console.log(this.config.serviceAreaLayerName + " " + "set");
+
+
+                                if (layer.layers != null) {
+                                    array.forEach(layer.layers, function (popUp) {
+                                        if (subLyrs.id == popUp.id) {
+                                            layDetails.popupInfo = popUp.popupInfo
+                                        }
+                                    }, this);
+                                }
+                                if (layDetails.popupInfo == null) {
+                                    alert(this.config.i18n.error.popupNotSet + ": " + subLyrs.name);
+                                }
+                                this.lookupLayers.push(layDetails);
+                                useLegacyConfig = true;
+                            }
+                        }, this);
+                    }
+                    else {
+
+                        if (layer.title == this.config.serviceAreaLayerName) {
+                            layDetails.popupInfo = layer.popupInfo;
+                            layDetails.name = layer.title;
+                            layDetails.url = layer.layerObject.url;
+                            layDetails.layerOrder = 0;
+                            this.lookupLayers.push(layDetails);
+                            console.log(layer.title + " " + "set");
+                            useLegacyConfig = true;
+
+                        }
+                    }
+
+                
+
+
+                }, this);
+
+            }
+
 
             var allLayerNames = "";
             var layerTitles = [];
@@ -306,19 +363,24 @@ function (
 
                 allLayerNames += this.lookupLayers[f].name + ",";
             }
-
-            for (var n = 0, nl = this.serviceAreaLayerNames.length; n < nl; n++) {
-
-                if (allLayerNames.indexOf(this.serviceAreaLayerNames[n]) > -1) {
-
-                }
-
-                else {
-                    alert(this.config.i18n.error.layerNotFound + ":" + this.serviceAreaLayerNames[n]);
-                }
+            if (useLegacyConfig)
+            {
 
             }
-          
+            else
+            {
+                for (var n = 0, nl = serviceAreaLayerNames.length; n < nl; n++) {
+
+                    if (allLayerNames.indexOf(serviceAreaLayerNames[n]) > -1) {
+
+                    }
+
+                    else {
+                        alert(this.config.i18n.error.layerNotFound + ":" + serviceAreaLayerNames[n]);
+                    }
+
+                }
+            }
             if (this.serviceRequestLayerName === undefined && this.config.storeLocation == true && this._editingAllowed()) {
                 if (this.config.serviceRequestLayerName.id != undefined) {
                     alert(this.config.i18n.error.layerNotFound + ": " + this.config.serviceRequestLayerName.id);
