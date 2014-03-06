@@ -150,7 +150,7 @@
                     //we want the popup enabled when the map is created so we can read the popup info to find
                     //out if any tooltip hints have been applied so we can apply to the editor window.
                     window.handler = response.clickEventHandle;
-                    conn.disconnect(window.handler);
+             
         
                     window.map = response.map;
 
@@ -272,7 +272,8 @@
                         legend.startup();                      
                             
                     }else{ //can edit 
-
+                      //disconnect the popups 
+                       conn.disconnect(window.handler);
                       //display the toolbar if the configuration option has been enabled and the site isn't mobile.
                       var settings = {
                         map: window.map,
