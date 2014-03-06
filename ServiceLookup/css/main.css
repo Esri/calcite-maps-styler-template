@@ -96,3 +96,86 @@ html, body {
 .esriRTL label {
     /*Example of a rule that will be applied if the app is viewed in a browser wtih a RTL locale like Hebrew or Arabic.*/
 }
+
+
+
+.hzLine {
+border: none;
+border-top: 1px solid #333333;
+margin-top: 6px;
+margin-bottom: 6px;
+}
+
+.header {
+font-weight: bold;
+}
+.attTable {
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    border-bottom-color: rgb(128, 128, 128);
+    border-collapse: collapse;
+    border-left-color: rgb(128, 128, 128);
+    border-right-color: rgb(128, 128, 128);
+    border-top-color: rgb(128, 128, 128);
+    color: rgb(51, 51, 51);
+    direction: ltr;
+    display: table;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: 168px;
+    line-height: normal;
+    visibility: visible;
+    width: 310px;
+}
+.attrName {
+    border-collapse: collapse;
+color: rgb(136, 136, 136);
+direction: ltr;
+display: table-cell;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: 14px;
+line-height: normal;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+padding-bottom: 5px;
+padding-left: 2px;
+padding-right: 5px;
+padding-top: 2px;
+vertical-align: top;
+visibility: visible;
+width: 90px;
+
+}
+.attrValue{
+    border-collapse: collapse;
+color: rgb(51, 51, 51);
+direction: ltr;
+display: table-cell;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: 14px;
+line-height: normal;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+padding-bottom: 5px;
+padding-left: 2px;
+padding-right: 2px;
+padding-top: 2px;
+vertical-align: top;
+visibility: visible;
+width: 136px;
+}

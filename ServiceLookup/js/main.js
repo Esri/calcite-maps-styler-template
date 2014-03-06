@@ -517,47 +517,52 @@ function (
                                 popupTitle = result.Layer.popupInfo.title;
                                 mediaInfos = lang.clone(result.Layer.popupInfo.mediaInfos);
 
+                                var layFldTable ="";
+                              
+
                                 for (var g = 0, gl = layerFields.length; g < gl; g++) {
                                     if (mediaInfos != null) {
                                         array.forEach(mediaInfos, function (mediaInfo)
                                         {
                                             mediaInfo = this._processObject(mediaInfo, layerFields[g].fieldName, result.Layer.name,false);
                                           
-                                            //for (var key in mediaInfo) {
-                                            //    if (mediaInfo[key] instanceof Object) {
-                                            //        for (var keyInner in mediaInfo[key]) {
-                                            //            if (mediaInfo[key][keyInner] instanceof Object)
-                                            //            { }
-                                            //            else
-                                            //            {
-                                            //                mediaInfo[key][keyInner] = mediaInfo[key][keyInner].replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}")
-                                            //            }
-
-
-                                            //        }
-                                            //    }
-                                            //    else {
-                                            //        mediaInfo[key] = mediaInfo[key].replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}")
-                                            //    }
-                                               
                                             
                                         }, this)
                                     }
 
                                     if (result.Layer.popupInfo.description == null) {
+
                                         popupTitle = popupTitle.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
-                                        if (this.layerDescription == null) {
-                                            if (layerFields[g].visible == true) {
 
-                                                this.layerDescription = layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
-                                            }
-                                        }
-                                        else {
-                                            if (layerFields[g].visible == true) {
+                                        if (layerFields[g].visible == true) {
 
-                                                this.layerDescription = this.layerDescription + layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
+                                            //this.layerDescription = layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
+                                            layFldTable = layFldTable + "<tr valign=\"top\">";
+                                            if (layerFields[g].label != null)
+                                            {
+                                                layFldTable = layFldTable + "<td class=\"attrName\">" + layerFields[g].label + "</td>";
                                             }
+                                            else
+                                            {
+                                                layFldTable = layFldTable + "<td class=\"attrName\">" + layerFields[g].fieldName + "</td>";
+                                            }
+                                            layFldTable = layFldTable + "<td class=\"attrValue\">" +"{" + result.Layer.name + "_" + layerFields[g].fieldName + "}</td>";
+                                            layFldTable = layFldTable + "</tr>";
+
                                         }
+                                   
+                                        //if (this.layerDescription == null) {
+                                        //    if (layerFields[g].visible == true) {
+
+                                        //        this.layerDescription = layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
+                                        //    }
+                                        //}
+                                        //else {
+                                        //    if (layerFields[g].visible == true) {
+
+                                        //        this.layerDescription = this.layerDescription + layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
+                                        //    }
+                                        //}
                                     }
                                     else {
                                         this.layerDescription = this.layerDescription.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
@@ -566,13 +571,27 @@ function (
                                     layerFields[g].fieldName = result.Layer.name + "_" + layerFields[g].fieldName;
 
                                 }
+                                if (result.Layer.popupInfo.description == null) {
+                                    var popupTable = "<div>";
+                                    if (popupTitle != "")
+                                    {
+                                        popupTable = popupTable + "<div class=\"header\">" + popupTitle + "</div>";
+                                        popupTable = popupTable + "<div class=\"hzLine\"></div>";
+                                    }
+                                    popupTable = popupTable + "<table class=\"attrTable\" cellpadding=\"0px\" cellspacing=\"0px\">";
+                                    popupTable = popupTable + "<tbody>";
+                                    popupTable = popupTable + layFldTable;
 
+                                    popupTable = popupTable + "</tbody>";
 
+                                    popupTable = popupTable + "</div>";
+                                    this.layerDescription = popupTable;
+                                }
 
                                 allFields = allFields.concat(layerFields);
-                                if (result.Layer.popupInfo.description == null) {
-                                    this.layerDescription = popupTitle + "<br>" + this.layerDescription;
-                                }
+                                //if (result.Layer.popupInfo.description == null) {
+                                //    this.layerDescription = popupTitle + "<br>" + this.layerDescription;
+                                //}
                              
                                 mediaArray[result.Layer.layerOrder] = mediaInfos;
                                 popUpArray[result.Layer.layerOrder] = this.layerDescription;
@@ -582,7 +601,10 @@ function (
                             var finalMedArr = [];
 
                             array.forEach(popUpArray, function (descr) {
-                                allDescriptions = allDescriptions == "" ? descr : allDescriptions + descr;
+                                if (descr != null)
+                                {
+                                    allDescriptions = allDescriptions == "" ? descr : allDescriptions + descr;
+                                }
                             }, this)
                             array.forEach(mediaArray, function (mediaInfos) {
                                 finalMedArr.push.apply(finalMedArr, mediaInfos);
