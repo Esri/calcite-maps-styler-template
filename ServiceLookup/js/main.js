@@ -194,7 +194,7 @@ function (
             document.title = this.config.i18n.page.title;
             var serviceAreaLayerNames = [];
             this.popupMedia = [];
-
+            
             serviceAreaLayerNames = this.config.serviceAreaLayerNames.split("|");
             this.lookupLayers = [];
 
@@ -507,7 +507,8 @@ function (
 
                                 var resetFieldNames = resetFieldNames = result.Layer.popupInfo.fieldInfos;
                                 for (var r = 0, rl = resetFieldNames.length; r < rl; r++) {
-                                    resetFieldNames[r].fieldName = resetFieldNames[r].fieldName.replace(result.Layer.name + "_", "");
+                                         resetFieldNames[r].fieldName = resetFieldNames[r].fieldName.replace(result.Layer.name + "_", "");
+                                    
                                 }
 
                                 //result.Layer.popupInfo.fieldInfos;
@@ -546,10 +547,16 @@ function (
                                     if (result.Layer.popupInfo.description == null) {
                                         popupTitle = popupTitle.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
                                         if (this.layerDescription == null) {
-                                            this.layerDescription = layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
+                                            if (layerFields[g].visible == true) {
+
+                                                this.layerDescription = layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
+                                            }
                                         }
                                         else {
-                                            this.layerDescription = this.layerDescription + layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
+                                            if (layerFields[g].visible == true) {
+
+                                                this.layerDescription = this.layerDescription + layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
+                                            }
                                         }
                                     }
                                     else {
