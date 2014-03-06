@@ -99,14 +99,16 @@ html, body {
 
 
 
-.hzLine {
+.hzLinePopUp {
 border: none;
 border-top: 1px solid #333333;
 margin-top: 6px;
 margin-bottom: 6px;
+
+
 }
 
-.header {
+.headerPopUp {
 font-weight: bold;
 }
 .attTable {

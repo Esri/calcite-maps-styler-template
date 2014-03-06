@@ -513,7 +513,7 @@ function (
 
                                 //result.Layer.popupInfo.fieldInfos;
                                 var layerFields = result.Layer.popupInfo.fieldInfos;
-                                this.layerDescription = result.Layer.popupInfo.description;
+                                var layerDescription = result.Layer.popupInfo.description;
                                 popupTitle = result.Layer.popupInfo.title;
                                 mediaInfos = lang.clone(result.Layer.popupInfo.mediaInfos);
 
@@ -551,21 +551,9 @@ function (
 
                                         }
                                    
-                                        //if (this.layerDescription == null) {
-                                        //    if (layerFields[g].visible == true) {
-
-                                        //        this.layerDescription = layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
-                                        //    }
-                                        //}
-                                        //else {
-                                        //    if (layerFields[g].visible == true) {
-
-                                        //        this.layerDescription = this.layerDescription + layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
-                                        //    }
-                                        //}
                                     }
                                     else {
-                                        this.layerDescription = this.layerDescription.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
+                                        layerDescription = layerDescription.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
                                     }
                                     resultFeature[result.Layer.name + "_" + layerFields[g].fieldName] = result.results[0].attributes[layerFields[g].fieldName];
                                     layerFields[g].fieldName = result.Layer.name + "_" + layerFields[g].fieldName;
@@ -573,28 +561,42 @@ function (
                                 }
                                 if (result.Layer.popupInfo.description == null) {
                                     var popupTable = "<div>";
+                                    popupTable = popupTable + "<table class=\"attrTablePopUp\" cellpadding=\"0px\" cellspacing=\"0px\">";
+                                    popupTable = popupTable + "<tbody>";
+                                  
                                     if (popupTitle != "")
                                     {
-                                        popupTable = popupTable + "<div class=\"header\">" + popupTitle + "</div>";
-                                        popupTable = popupTable + "<div class=\"hzLine\"></div>";
+                                        //popupTable = popupTable + "<div class=\"headerPopUp\">" + popupTitle + "</div>";
+                                        //popupTable = popupTable + "<div class=\"hzLinePopUp\"></div>";
+
+
+                                        popupTable = popupTable + "<tr valign=\"top\">";
+                                        popupTable = popupTable + "<td colspan=\"2\"  class=\"headerPopUp\">" + popupTitle + "</td>";
+                                        
+                                        popupTable = popupTable + "</tr>";
+                                        popupTable = popupTable + "<tr>";
+                                        popupTable = popupTable + "<td colspan=\"2\"  class=\"hzLinePopUp\">" + "" + "</td>";
+
+                                        popupTable = popupTable + "</tr>";
+
+
                                     }
-                                    popupTable = popupTable + "<table class=\"attrTable\" cellpadding=\"0px\" cellspacing=\"0px\">";
-                                    popupTable = popupTable + "<tbody>";
+
                                     popupTable = popupTable + layFldTable;
 
+                                
+                                  
                                     popupTable = popupTable + "</tbody>";
 
                                     popupTable = popupTable + "</div>";
-                                    this.layerDescription = popupTable;
+                                    layerDescription = popupTable;
                                 }
 
                                 allFields = allFields.concat(layerFields);
-                                //if (result.Layer.popupInfo.description == null) {
-                                //    this.layerDescription = popupTitle + "<br>" + this.layerDescription;
-                                //}
+                              
                              
                                 mediaArray[result.Layer.layerOrder] = mediaInfos;
-                                popUpArray[result.Layer.layerOrder] = this.layerDescription;
+                                popUpArray[result.Layer.layerOrder] = layerDescription;
 
                             }, this)
 
