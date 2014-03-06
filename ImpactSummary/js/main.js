@@ -504,7 +504,9 @@ function(
         //create a map based on the input web map id
         _createWebMap: function (itemInfo) {
             // set impact layer mode to snapshot
-            itemInfo = this._setLayerMode(itemInfo, this.config.summaryLayer.id);
+            if(this.config.summaryLayer && this.config.summaryLayer.id){
+                itemInfo = this._setLayerMode(itemInfo, this.config.summaryLayer.id);   
+            }
             // popup dijit
             var customPopup = new Popup({}, domConstruct.create("div"));
             // add popup theme

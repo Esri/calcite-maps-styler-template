@@ -113,13 +113,7 @@ define([
                     }, false));
 
 
-                } else {
-                    //IE
-                    window.attachEvent(orientationEvent, lang.hitch(this, function () {
-                        this._orientationChanged();
-                    }, false));
-
-                }
+                } 
 
                 //load styles for specified theme 
                 var themeStyle = document.createElement("link");
@@ -330,11 +324,7 @@ define([
             var bc = new BorderContainer({
                 id: "mainWindow",
                 design: "headline",
-                gutters: false,
-                style: {
-                    height: "100%",
-                    width: "100%;"
-                }
+                gutters: false
             }).placeAt(win.body(), "first");
 
             // left content pane will hold the legend
