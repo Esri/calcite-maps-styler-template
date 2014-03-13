@@ -49,10 +49,10 @@ input[type=text]::-ms-clear {
     font-size: 18px;
 }
 .top-menu-right {
-    position: relative;
+   /* position: relative;*/
     top: 0;
     left: 0;
-    float: right;
+    /*float: right;*/
 }
 .esriRTL .top-menu-right{
     float:left;
@@ -233,7 +233,7 @@ input[type=text]::-ms-clear {
 }
 .esriRTL .geocoder-mobile{
     float:right;
-} 
+}
 .drawer-open .geocoder-mobile {
     width: 60%;
 }

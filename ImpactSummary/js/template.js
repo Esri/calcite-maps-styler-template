@@ -51,7 +51,7 @@ define([
                 this.config = defaults;
                 this.localize = supportsLocalization || false;
                 this._init().then(lang.hitch(this, function () {
-                    this.emit("ready", this.config);
+                    this.emit("ready", this.config, this.response);
                 }));
             },
             //Get URL parameters and set application defaults needed to query arcgis.com for
@@ -263,6 +263,9 @@ define([
                         if (response.item && response.item.extent) {
                             this.config.application_extent = response.item.extent;
                         }
+                        //Take "response" in a variable.it will be used in templateBuilder.js while Upadating item on AGOL.
+                        //So,instead of creating whole item again we can just change configuration parameters in item and then update the item.
+                        this.response = response;
                         deferred.resolve();
                     }));
                 } else {
@@ -305,8 +308,6 @@ define([
                           this.orgConfig.userPrivileges = response.user.privileges;
                         }
                     }
-
-            
                     deferred.resolve();
                 }), function (error) {
                     console.log(error);
@@ -322,7 +323,7 @@ define([
                 //application default and configuration info has been applied. Currently these values 
                 //(center, basemap, theme) are only here as examples and can be removed if you don't plan on 
                 //supporting additional url parameters in your application. 
-                var paramItems = ['center', 'basemap', 'theme'];
+                var paramItems = ['center', 'basemap', 'theme', 'edit'];
                 var mixinParams = this._createUrlParamsObject(paramItems);
                 lang.mixin(this.config, mixinParams);
             }

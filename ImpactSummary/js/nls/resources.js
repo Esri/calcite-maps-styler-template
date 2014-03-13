@@ -15,6 +15,34 @@ define({
             about: "About",
             noSearchResult: "No result found",
             impactArea: "Impact Area"
+        },
+        configure: {
+            mapdlg: {
+                items: {
+                    organizationLabel: "My Organization",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "My Content",
+                    favoritesLabel: "My Favorites"
+                },
+                title: "Select Web Map",
+                searchTitle: "Search",
+                ok: "Ok",
+                cancel: "Cancel",
+                placeholder: "Enter search term"
+            },
+            groupdlg: {
+                items: {
+                    organizationLabel: "My Organization",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "My Content",
+                    favoritesLabel: "My Favorites"
+                },
+                title: "Select Group",
+                searchTitle: "Search",
+                ok: "Ok",
+                cancel: "Cancel",
+                placeholder: "Enter search term"
+            }
         }
     }),
     "ar": 1,

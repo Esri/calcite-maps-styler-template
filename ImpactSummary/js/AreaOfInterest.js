@@ -43,7 +43,7 @@ define([
                     rendererLoading: 'loading-features',
                     rendererContainer: 'item-container',
                     rendererSummarize: 'summarize'
-                };          
+                };
                 // if we have a layer title or layer id
                 if (this.config.summaryLayer && this.config.summaryLayer.id) {
                     // get layer by id/title
@@ -59,7 +59,8 @@ define([
                 if (this._aoiLayer) {
                     this._sb = new StatsBlock({
                         config: this.config.summaryAttributes,
-                        direction: this.config.i18n.direction
+                        direction: this.config.i18n.direction,
+                        appConfig: this.config
                     }, dom.byId('geoData'));
                     this._sb.startup();
                     // init layer
@@ -84,7 +85,7 @@ define([
                         }
                         else{
                             // get highest value feature
-                            this._queryGreatestFeature();   
+                            this._queryGreatestFeature();
                         }
                         // selected poly from graphics layer
                         on(this._selectedGraphics, 'click', lang.hitch(this, function (evt) {
@@ -304,7 +305,7 @@ define([
             _createRendererItems: function (infos) {
                 // renderer node items created
                 this._rendererNodes = [];
-                // create list 
+                // create list
                 var ulList = domConstruct.create('ul', {
                     className: this.areaCSS.rendererMenu
                 });
@@ -385,6 +386,7 @@ define([
                         // renderer layer infos
                         var infos = renderer.infos;
                         if (infos && infos.length) {
+                            infos = (this.config.summaryAttributeOrder == "DESC") ? infos : infos.reverse();
                             this._multiple = true;
                             this._aoiInfos = infos;
                         }

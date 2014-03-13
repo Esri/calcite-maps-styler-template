@@ -20,33 +20,35 @@ define([], function() {
         },
         "summaryAttributes": [
            {
-              "attribute":"TOTPOP_CY",
-              "label":"Population",
+              "attribute":"",
+              "label":"Add Variable",
               "dataSourceUrl": "",
               "children":[
-                 {
-                    "attribute":"POP15_CY",
-                    "label":"Under 16"
-                 },
-                 {
-                    "attribute":"POP65U_CY",
-                    "label":"Over 64"
-                 }
+
               ]
            },
            {
-              "attribute":"TOTHH_CY",
-              "label":"Households",
+              "attribute":"",
+              "label":"Add Variable",
               "dataSourceUrl": "",
               "children":[
-                 {
-                    "attribute":"OWNER_CY",
-                    "label":"Owners"
-                 },
-                 {
-                    "attribute":"RENTER_CY",
-                    "label":"Renters"
-                 }
+
+              ]
+           },
+           {
+              "attribute":"",
+              "label": "Add Variable",
+              "dataSourceUrl": "",
+              "children":[
+
+              ]
+           },
+           {
+              "attribute":"",
+              "label": "Add Variable",
+              "dataSourceUrl": "",
+              "children":[
+
               ]
            }
         ],
