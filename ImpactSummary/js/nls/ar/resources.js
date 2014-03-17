@@ -1,19 +1,18 @@
-﻿define(
-     ({
+define({
+    root: ({
         map: {
-            error: "يتعذر إنشاء الخريطة"
+            error: "Unable to create map"
         },
         general: {
-            map: "خريطة",
-            mapInfo: "معلومات الخريطة",
-            legend: "مفتاح الخريطة",
-            layers: "طبقات",
-            summarize: "المنطقة الكلية",
-            share: "مشاركة",
-            about: "نبذة عن",
-            noSearchResult: "يتعذر إيجاد النتائج",
-            impactArea: "منطقة التأثير"
+            map: "Map",
+            mapInfo: "Map Information",
+            legend: "Legend",
+            layers: "Layers",
+            summarize: "Entire Area",
+            share: "Share",
+            about: "About",
+            noSearchResult: "No result found",
+            impactArea: "Impact Area"
         }
     })
-
-);
+});
