@@ -34,7 +34,7 @@ define([
     IdentityManager,
     GeometryService,
     defaults,
-    commonConfig
+    commonConfig,
     OAuthHelper
 ) {
     return declare([Evented], {
