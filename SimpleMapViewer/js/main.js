@@ -66,7 +66,7 @@ define([
 
                         if (sniff("android")) {
                             //android quirk in the android browser
-                            if (sniif("chrome")) {
+                            if (sniff("chrome")) {
                                 ss.href = "css/devices.css";
                             } else {
                                 ss.href = "css/iPhone.css";
