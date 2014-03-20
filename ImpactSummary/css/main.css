@@ -515,6 +515,19 @@ input[type=text]::-ms-clear {
     .mobile-locate-box-hidden {
         display: none!important;
     }
+    .content-pane-left {
+        max-width:200px;
+    }
+    .drawer-open .content-pane-left {
+        width: 200px;
+        overflow-x:auto;
+    }
+    .pointer-events .drawer-open-complete .content-pane-left:before {
+        width: 200px;
+    }
+    .drawer-menu-container {
+        width: 200px;
+    }
 }
 @media screen and (max-width: 800px) {
     .drawer-open .app-title {

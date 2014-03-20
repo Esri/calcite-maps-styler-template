@@ -5,12 +5,14 @@
     <meta charset="utf-8" />
     <!--Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional.-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- End Responsive -->
     <!-- Mobile -->
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <!-- End Mobile -->
     <!-- SEO -->
     <meta name="Keywords" content="Impact Summary Map, Area of Interest, Map, Esri" />
     <meta name="Description" content="This interactive map highlights your area of interest and shows an interactive report based on its location, allowing you to leverage your analysis work. The data presented in the boxes, at the bottom of the map, can be any integer data allowing you to answer new questions about locations that you cannot answer with maps alone. " />
@@ -22,11 +24,9 @@
     <!-- End Facebook -->
     <!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
     <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/esri/css/esri.css" />
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700" />
-    <!--Dojo Richtext editor requires claro css-->
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dijit/themes/claro/claro.css">
-    <!--End of claro css-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,700" />
     <!--Load any application specific styles-->
+    <link id="claroTheme" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/dijit.css" />
     <link rel="stylesheet" type="text/css" href="css/fontello.css" />
     <link rel="stylesheet" type="text/css" href="css/TableOfContents.css" />
@@ -41,10 +41,9 @@
     <link rel="stylesheet" type="text/css" href="css/AboutDialog.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/TemplateBuilder.css" />
-    <link rel="stylesheet" type="text/css" href="css/browseDialog.css" />
     <!--[if IE 7]><link rel="stylesheet" type="text/css" href="css/fontello-ie7.css" /><![endif]-->
 </head>
-<body class="claro calcite app-loading">
+<body class="calcite app-loading">
     <!--The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. -->
     <div class="loading-indicator"></div>
     <div id="bc_outer" class="border-container-outer">
@@ -125,32 +124,29 @@
                 //The config object contains the following properties: helper services, (optionally)
                 //i18n, appid, webmap and any custom values defined by the applcation.
                 //In this example we have one called theme.
-                if (config.appid == "") {
-                    alert("URL should contain Application id");
-                    return;
-                }
                 var signIn = new signInHelper();
-                var userDetails = signIn.getPortalUser();
-                if (userDetails) {
-                    dojo.currentLoggedInUser = userDetails.credential.userId;
-                }
-                else {
-                    signIn.createPortal().then(function (loggedInUser) {
-                        dojo.currentLoggedInUser = loggedInUser.username;
-                        if (config.edit) {
-                            if (signIn.userIsAppOwner(data)) {
-                                Main(config, data);
-                            }
-                            else {
-                                alert("Sorry, you dont have enough permissions to view this item");
-                            }
-                        }
-                        else {
+                if (config.appid) {
+                    var userDetails = signIn.getPortalUser();
+                    if (userDetails) {
+                        dojo.currentLoggedInUser = userDetails.email;
+                        dojo.token = userDetails.token;
+                        var canExcute = signIn.authenticateUser(config.edit, data);
+                        if (canExcute) {
                             Main(config, data);
                         }
-                    }, function error() {
-                        alert("Sign in Failed");
-                    });
+                    }
+                    else {
+                        signIn.createPortal().then(function (loggedInUser) {
+                            dojo.currentLoggedInUser = loggedInUser.username;
+                            var canExcute = signIn.authenticateUser(config.edit, data);
+                            if (canExcute) {
+                                Main(config, data);
+                            }
+                        });
+                    }
+                }
+                else {
+                    Main(config, data);
                 }
             });
         });

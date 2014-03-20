@@ -1,4 +1,5 @@
 define([
+  "dojo/Evented",
   "dojo/_base/declare",
   "dojo/_base/connect",
   "dojo/_base/lang",
@@ -16,12 +17,13 @@ define([
   "dijit/_TemplatedMixin",
   "dijit/_WidgetsInTemplateMixin",
   "dojo/text!application/dijit/templates/BrowseIdDlg.html",
+  "esri/request",
   "dijit/Dialog",
   "dijit/form/Select",
   "dijit/form/Button",
   "dijit/form/TextBox"
-], function (declare, connect, lang, dojoEvent, dom, keys, registry, on, query, domStyle, Grid, esriPortal, i18n, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, template) {
-    return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
+], function (Evented, declare, connect, lang, dojoEvent, dom, keys, registry, on, query, domStyle, Grid, esriPortal, i18n, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, template, esriRequest) {
+    return declare([Evented, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
         constructor: function (args) {
             lang.mixin(this, args);
@@ -62,9 +64,8 @@ define([
             this._filterSelectHandler = on(this._filterSelect, "change", lang.hitch(this, "doSearch"));
 
             var query = {};
-            var portalUser = this.portal.user;
-            if (portalUser.username) {
-                query.q = "owner: " + portalUser.username;
+            if (dojo.currentLoggedInUser) {
+                query.q = "owner: " + dojo.currentLoggedInUser;
             }
             if (this.galleryType === "webmap") {
                 query.q += ' type:"Web Map" -type:"Web Mapping Application"';
@@ -96,43 +97,52 @@ define([
         },
 
         doSearch: function () {
-            var filter = this._filterSelect.get("value"),
-            portalUser = this.portal.user;
-
-            var parameters = [];
-            if (this.searchText.getValue()) {
-                parameters["title"] = this.searchText.getValue();
-            }
-
-            if (filter === "org") {
-                parameters["orgid"] = portalUser.orgId;
-            }
-            if (filter === "content") {
-                parameters["owner"] = portalUser.username;
-            }
-            if (filter === "favorites") {
-                parameters["group"] = portalUser.favGroupId;
-            }
-            if (filter === "online" && this.galleryType === "group") {
-                var search = this.searchText.getValue();
-                if (search === "") {
-                    //Return all online groups. We need to provide a query param we can't just return all groups
-                    //so let's set the access to public in this case so we only see public groups.
-                    parameters["access"] = "public";
+            var filter = this._filterSelect.get("value"), portalUser = {};
+            esriRequest({
+                url: dojo.portal.url + "/sharing/rest/community/users/" + dojo.currentLoggedInUser,
+                content: {
+                    "f": "json"
+                },
+                callbackParamName: "callback"
+            }).then(lang.hitch(this, function (response) {
+                portalUser = response;
+                var parameters = [];
+                if (this.searchText.getValue()) {
+                    parameters["title"] = this.searchText.getValue();
                 }
-            }
-            if (this.galleryType === "webmap") {
-                parameters["type"] = '"Web Map" -type:"Web Mapping Application"';
-            }
-            var qs = "";
-            for (var key in parameters) {
-                var val = parameters[key];
-                qs += key + ":" + val + " ";
-            }
-            var query = {};
-            query.q = lang.trim(qs);
-            this._grid.set("query", query);
-            this._grid.refresh();
+
+                if (filter === "org") {
+                    parameters["orgid"] = portalUser.orgId;
+                }
+                if (filter === "content") {
+                    parameters["owner"] = portalUser.username;
+                }
+                if (filter === "favorites") {
+                    parameters["group"] = portalUser.favGroupId;
+                }
+                if (filter === "online" && this.galleryType === "group") {
+                    var search = this.searchText.getValue();
+                    if (search === "") {
+                        //Return all online groups. We need to provide a query param we can't just return all groups
+                        //so let's set the access to public in this case so we only see public groups.
+                        parameters["access"] = "public";
+                    }
+                }
+                if (this.galleryType === "webmap") {
+                    parameters["type"] = '"Web Map" -type:"Web Mapping Application"';
+                }
+                var qs = "";
+                for (var key in parameters) {
+                    var val = parameters[key];
+                    qs += key + ":" + val + " ";
+                }
+                var query = {};
+                query.q = lang.trim(qs);
+                this._grid.set("query", query);
+                this._grid.refresh();
+            }), function (error) {
+                console.log(error);
+            });
         },
 
         _onSearchClick: function (e) {
@@ -140,7 +150,6 @@ define([
             if (e != null && e.prefentDefault) {
                 e.preventDefault();
             }
-
             this.doSearch();
         },
         _onSearchBoxFocus: function (e) {

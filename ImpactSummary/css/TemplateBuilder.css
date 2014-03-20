@@ -20,6 +20,10 @@
         cursor: pointer;
 }
 
+.esriPreviousButton {
+        margin-right: 10px;
+}
+
 .esriButtonContainer {
         padding: 15px;
         float: left;
@@ -143,14 +147,14 @@
 }
 
 .editAreaDescriptionButtonContainer {
-        display:none;
+        display: none;
         float: right;
-        width: 100%;
+        width: 100px;
 }
 
 .editAreaDescriptionButton {
         float: right;
-        margin-right:14px;
+        margin-right: 14px;
 }
 
 .esriToolbarEditIcon {
@@ -400,9 +404,13 @@
 }
 
 .esriSubVariableButtonContainer {
-        width: 32%;
-        float: right;
         padding: 5px 10px;
+        width: 96%;
+}
+
+.esriNextPreviousButton {
+        margin-right: 10px;
+        float: right;
 }
 
 .esriSimpleTextArea {
@@ -417,6 +425,7 @@
         cursor: pointer;
         text-decoration: underline;
         color: #007ac2;
+        margin-right: 10px;
 }
 
 .esriSignInDialog {
@@ -570,35 +579,35 @@
         background-position: center center;
 }
 .esritopo {
-        background-image: url(http://js.arcgis.com/3.8/js/esri/dijit/images/basemaps/topo.jpg);
+        background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/topo.jpg);
 }
 
 .esristreets {
-        background-image: url(http://js.arcgis.com/3.8/js/esri/dijit/images/basemaps/streets.jpg);
+        background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/streets.jpg);
 }
 
 .esrihybrid {
-        background-image: url(http://js.arcgis.com/3.8/js/esri/dijit/images/basemaps/hybrid.jpg);
+        background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/hybrid.jpg);
 }
 
 .esrisatellite {
-        background-image: url(http://js.arcgis.com/3.8/js/esri/dijit/images/basemaps/satellite.jpg);
+        background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/satellite.jpg);
 }
 
 .esrigray {
-        background-image: url(http://js.arcgis.com/3.8/js/esri/dijit/images/basemaps/gray.jpg);
+        background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/gray.jpg);
 }
 
 .esriosm {
-        background-image: url(http://js.arcgis.com/3.8/js/esri/dijit/images/basemaps/osm.jpg);
+        background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/osm.jpg);
 }
 
 .esrioceans {
-        background-image: url(http://js.arcgis.com/3.8/js/esri/dijit/images/basemaps/oceans.jpg);
+        background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/oceans.jpg);
 }
 
 .esrinational-geographic {
-        background-image: url(http://js.arcgis.com/3.8/js/esri/dijit/images/basemaps/national-geographic.jpg);
+        background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/national-geographic.jpg);
 }
 
 .esriBasemapSwitchDivText {
@@ -672,5 +681,18 @@ input, select, label {
 }
 
 .claro .dijitDialogPaneActionBar {
-        background-color:transparent !important;
+        background-color: transparent !important;
+}
+
+.calcite .dialog-content .layer-settings-submit, .calcite .dijitButtonNode {
+        margin: 0px !important;
+}
+.claro .dijitSelect .dijitArrowButtonInner, .claro .dijitComboBox .dijitArrowButtonInner {
+        margin: 4px !important;
+}
+.claro .dijitTextArea, .claro .dijitInputField .dijitPlaceHolder {
+        padding: 4px 2px !important;
+}
+.claro .dijitSelect, .claro .dijitTextBox {
+        border: 1px solid #b5bcc7 !important;
 }

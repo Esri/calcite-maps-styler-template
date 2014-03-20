@@ -33,6 +33,7 @@ function (Evented, declare, lang, _WidgetBase, ContentPane, on, arcgisUtils, por
                     alert("Sign-in Failed");
                 });
             })));
+
             return deferred.promise;
         },
 
@@ -54,58 +55,25 @@ function (Evented, declare, lang, _WidgetBase, ContentPane, on, arcgisUtils, por
 						&& esriCookie.customBaseUrl
 						&& (esriCookie.urlKey + '.' + esriCookie.customBaseUrl).toLowerCase() != document.location.hostname.toLowerCase())
                 return;
-            return esriCookie ? esriCookie.email : null;
+            return esriCookie ? esriCookie : null;
         },
 
         userIsAppOwner: function (itemData) {
             return (itemData.item.owner == dojo.currentLoggedInUser);
         },
 
-        /* Below two functions will be used to set and get credentials if user is signd in */
-        loadCredentials: function () {
-            var idJson, idObject;
-
-            if (this.supports_local_storage()) {
-                // read from local storage
-                idJson = window.localStorage.getItem(this.cred);
-            } else {
-                // read from a cookie
-                idJson = dojo.cookie(this.cred);
+        authenticateUser: function (isEditMode, data) {
+            if (isEditMode) {
+                if (this.userIsAppOwner(data)) {
+                    return true;
+                }
+                else {
+                    alert("Sorry, you dont have enough permissions to view this item");
+                    return false;
+                }
             }
-
-            if (idJson && idJson != "null" && idJson.length > 4) {
-                idObject = dojo.fromJson(idJson);
-                esri.id.initialize(idObject);
-            } else {
-                // console.log("didn't find anything to load :(");
-            }
-        },
-
-        storeCredentials: function () {
-            // make sure there are some credentials to persist
-            if (esri.id.credentials.length === 0) {
-                return;
-            }
-
-            // serialize the ID manager state to a string
-            var idString = dojo.toJson(esri.id.toJson());
-            // store it client side
-            if (supports_local_storage()) {
-                // use local storage
-                window.localStorage.setItem(this.cred, idString);
-                // console.log("wrote to local storage");
-            } else {
-                // use a cookie
-                dojo.cookie(this.cred, idString, { expires: 1 });
-                // console.log("wrote a cookie :-/");
-            }
-        },
-
-        supports_local_storage: function () {
-            try {
-                return "localStorage" in window && window["localStorage"] !== null;
-            } catch (e) {
-                return false;
+            else {
+                return true;
             }
         }
     });

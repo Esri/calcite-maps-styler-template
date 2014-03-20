@@ -38,14 +38,13 @@ function (
     var Widget = declare([_WidgetBase], {
         declaredClass: "application.TemplateBuilder",
         //URL for updating Item
-        updateItemURL: "https://www.arcgis.com/sharing/content/users/${username}/items/${appid}/update",
         //Predefined keywords for basemap's available on AGOL
         availableBaseMaps: ["streets", "satellite", "hybrid", "topo", "gray", "oceans", "national-geographic", "osm"],
         unSavedChanges: false,
         previousConfigObj: null,
         configDialog: null,
         // lifecycle: 1
-        constructor: function (options) {
+        constructor: function(options) {
             // mix in settings and defaults
             var defaults = lang.mixin({}, this.options, options);
             // set properties
@@ -77,10 +76,9 @@ function (
             }, builderNode);
             // add pane to border container
             this.get("drawer")._borderContainer.addChild(builderContentPane);
-
+            this.get("drawer").resize();
             bulilderModeHelpText = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.builderModeHelpText, "class": this.css.rootContainer }, builderNode);
             // resize border container
-            this.get("drawer").resize();
             if (this.config.edit) {
                 this._showBuilderMode(builderNode);
             }
@@ -94,6 +92,25 @@ function (
                     window.location.href = newURL;
                 });
             }
+            this._loadCSS();
+            setTimeout(lang.hitch(this, function () {
+                this.get("drawer").resize();
+            }), 200);
+        },
+
+        _loadCSS: function () {
+            //Load claro css
+            if (dom.byId("claroTheme")) {
+                domAttr.set(dom.byId("claroTheme"), "href", location.protocol + "//js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css");
+            }
+            domClass.add(dojo.body(), "claro");
+            //Load browser dialog
+            var cssPath = "css";
+            var cssStyle = document.createElement('link');
+            cssStyle.rel = 'stylesheet';
+            cssStyle.type = 'text/css';
+            cssStyle.href = "css/browseDialog.css";
+            document.getElementsByTagName('head')[0].appendChild(cssStyle);
         },
 
         _showBuilderMode: function (builderNode) {
@@ -150,8 +167,9 @@ function (
             }
         },
 
-        //funcion to create Application settigns panel
-        //function creates Left,Right,Bottom panel
+        /* This section creates Application setting dialog which will be used to configureentire application at one go */
+        //function to create Application settigns panel
+        //function creates Left,Right,Basemap and Bottom panel
         _createAppSettingsPanel: function () {
 
             var settingsContainer, settingsDialog, bottomcontainer, saveButton;
@@ -163,7 +181,7 @@ function (
             this._createAppSettingBottomPanel(settingsContainer);
         },
 
-        //Store current application settings
+        //Store required settings into object which will be used to maintain the stat of application
         _storeCurrentAppSetting: function () {
             this.appSetting = {};
             this.appSetting["title"] = this.config.title;
@@ -178,7 +196,7 @@ function (
             this.appSetting["defaultBasemap"] = this.config.defaultBasemap;
         },
 
-        //Revert application settigns if user clicks cancel button
+        //Revert application settigns with previously stored object if user clicks cancel button
         _revertGlobalAppSetting: function () {
             for (key in this.appSetting) {
                 this.config[key] = this.appSetting[key];
@@ -210,7 +228,6 @@ function (
             appDijitInputContainer = this._createTextEditor(appDescriptionInputContainer, dijitValue);
             appDijitInputContainer.onLoadDeferred.then(lang.hitch(this, function () {
                 setTimeout(function () {
-                    appDijitInputContainer.focus;
                     appDijitInputContainer.execCommand('selectAll');
                     appDijitInputContainer.execCommand('fontName', "Lato ,sans-serif");
                 }, 300);
@@ -230,13 +247,13 @@ function (
 
         _createAppSettingsRightPanel: function (settingsContainer) {
             var rightSettingsContent = domConstruct.create("div", { "class": "esriSettingsRightContent" }, settingsContainer);
-            //First column for Rendererd Area
+            //create Rendererd Area column
             this._createFirstColumn(rightSettingsContent);
-            //Second column for configuring share dialog
+            //create share dialog column
             this._createSecondColumn(rightSettingsContent);
-            //Third column for configuring about dialog
+            //Create about dialog column
             this._createThirdColumn(rightSettingsContent);
-            //Fourth column for configuring basemap dialog
+            //Create basemap column
             this._createFourthColumn(rightSettingsContent);
         },
 
@@ -462,12 +479,14 @@ function (
             }));
         },
 
+        /*End of Application settings dialog*/
+
         _changeBasemap: function (domNode, currentValue, previousValue, basemapLabel) {
             domClass.replace(domNode, " esri" + currentValue, " esri" + previousValue);
             domAttr.set(basemapLabel, "innerHTML", currentValue);
         },
 
-        //fucntion to check button state
+        //function to check button state
         _checkButtonState: function (isButtonEnabled) {
             var buttonState = {};
             isButtonEnabled ? buttonState.class = "esriOnButton" : buttonState.class = "esriOffButton";
@@ -518,7 +537,6 @@ function (
         _showEditableUI: function () {
             this._createEditableTitle();
             this._createEditableAreaDescription();
-            //            this._editRendererMenu();
             this._editStatsPanel();
             this._createTooltip();
 
@@ -541,22 +559,9 @@ function (
             domStyle.set(container, "display", styleDisplay);
         },
 
-        //function to toggle show/about icon header
-        _toggleDialog: function (checkIcon, dialog, isShareDialog) {
-            if (domClass.contains(checkIcon, "esriCheckIcon")) {
-                domClass.replace(checkIcon, "esriUncheckIcon", "esriCheckIcon");
-                isShareDialog ? this.config.enableShareDialog = false : this.config.enableAboutDialog = false;
 
-            } else {
-                domClass.replace(checkIcon, "esriCheckIcon", "esriUncheckIcon");
-                isShareDialog ? this.config.enableShareDialog = true : this.config.enableAboutDialog = true;
-            }
-            this.unSavedChanges = true;
-            this._displayMessage();
-        },
-
-        //function to create configuration panel
         _createConfigurationPanel: function (isConfigurationPanel) {
+            //Function internally create configuration panel for webmap or layer
             content = this._createConfigurationPanelUI(isConfigurationPanel);
             if (!this.configDialog) {
                 this.configDialog = new Dialog({
@@ -583,11 +588,10 @@ function (
             return variableContainer;
         },
 
-        //function to create webmap configuration panel
+        //webmap configuration panel for users to select and add new webmap into application
         _createWebmapConfigurationPanel: function (fieldsetContainer) {
             var legendLabelWebmap, webmapLabel, webmapTitle, webmapTextBox, variableContainerBtn, innerButtonContainer,
             saveWebmapBtn, webmapNextBtn;
-            //legendLabelWebmap = domConstruct.create("div", { "class": "esriLegendLabelDiv" }, fieldsetContainer);
             webmapTitle = domConstruct.create("div", { innerHTML: string.substitute(nls.widgets.TemplateBuilder.selectMapMessage, { displaying: "displaying", webmapTitle: this.map.webmapTitle }), "class": "selectMapMessage" }, fieldsetContainer);
 
             var selectWebmapBtn = domConstruct.create("button", { innerHTML: nls.widgets.TemplateBuilder.changeWebmap, "class": "esriButton", "style": "float: right;" }, fieldsetContainer);
@@ -597,7 +601,7 @@ function (
             variableContainerBtn = domConstruct.create("div", { "class": "esriButtonConfig" }, fieldsetContainer);
             innerButtonContainer = domConstruct.create("div", { "class": "esriButtonInnerConfig" }, variableContainerBtn);
             saveWebmapBtn = domConstruct.create("button", { innerHTML: nls.widgets.TemplateBuilder.saveButtonText, "class": "esriButton esriSpaceStyle" }, innerButtonContainer);
-            webmapNextBtn = domConstruct.create("button", { innerHTML: nls.widgets.TemplateBuilder.nextButtonText, "class": "esriButton esriButtonColorEnable esriNextButton" }, innerButtonContainer);
+            webmapNextBtn = domConstruct.create("button", { innerHTML: nls.widgets.TemplateBuilder.webmapNextButtonText, "class": "esriButton esriButtonColorEnable esriNextButton" }, innerButtonContainer);
             on(saveWebmapBtn, "click", lang.hitch(this, function () {
                 var variableAttributes = {};
                 this.config.summaryAttributes = [];
@@ -609,14 +613,18 @@ function (
                     this.config.summaryAttributes.push(variableAttributes);
                     this.config.summaryLayer.id = "";
                 }
-                this._updateItem(false);
+                var newURL = location.href.split('&webmap');
+                if (newURL.length >= 2) {
+                    var newURL = newURL[0] + "&edit=true";
+                }
+                this._updateItem(false, newURL);
             }));
             on(webmapNextBtn, "click", lang.hitch(this, function () {
                 this._createConfigurationPanel(false);
             }));
         },
 
-        //function to create layer data configuration panel
+        //Populate all featurelayer into dropdown and allow user to change the impact layer
         _createLayerConfigurationPanel: function (fieldsetContainer) {
             var lagendLabelLayer, layerLabel, layerSelect, sourceLinkLabel, sourceLinkTextBox, layerSelectOption,
             configurationPanelButtonContainer, innerButtonContainer, configureSaveVariableButton;
@@ -629,7 +637,6 @@ function (
             layerSelectOption.text = nls.widgets.TemplateBuilder.selectLayer;
             layerSelect.appendChild(layerSelectOption);
             for (var i = 0; i < this.map.getLayersVisibleAtScale().length; i++) {
-                //allow only feature layer to be added to dropdown
                 if ((this.map.getLayersVisibleAtScale()[i].declaredClass == "esri.layers.FeatureLayer")) {
                     var layerSelectOption = domConstruct.create("option");
                     layerSelectOption.value = this.map.getLayersVisibleAtScale()[i].id;
@@ -651,12 +658,25 @@ function (
             }
             on(layerSelect, "change", lang.hitch(this, function (value) {
                 this.config.summaryLayer.id = value.currentTarget.value;
+                var variableAttributes = {};
+                this.config.summaryAttributes = [];
+                for (var i = 0; i < 4; i++) {
+                    variableAttributes["attribute"] = "";
+                    variableAttributes["label"] = "Add Variable";
+                    variableAttributes["dataSourceUrl"] = "";
+                    variableAttributes["children"] = {};
+                    this.config.summaryAttributes.push(variableAttributes);
+                }
             }));
             configurationPanelButtonContainer = domConstruct.create("div", { "class": "esriButtonConfig" }, fieldsetContainer);
             innerButtonContainer = domConstruct.create("div", { "class": "esriButtonInnerConfig" }, configurationPanelButtonContainer);
+            configurePreviousVariableButton = domConstruct.create("button", { innerHTML: nls.widgets.TemplateBuilder.previousButtonText, "class": "esriPreviousButton esriButton" }, innerButtonContainer);
             configureSaveVariableButton = domConstruct.create("button", { innerHTML: nls.widgets.TemplateBuilder.saveButtonText, "class": "esriButton" }, innerButtonContainer);
             on(configureSaveVariableButton, "click", lang.hitch(this, function () {
                 this._updateItem(false);
+            }));
+            on(configurePreviousVariableButton, "click", lang.hitch(this, function () {
+                this._createConfigurationPanel(true);
             }));
         },
 
@@ -722,7 +742,7 @@ function (
             domConstruct.place(editTitleIcon, appTitle, "after");
         },
 
-        //function to  edit area description
+        //Allows user to edit area description with dojo rich text editor
         _createEditableAreaDescription: function () {
             var areaDescription, editAreaDescriptionIcon, dijitEditorParentDiv;
             if (dom.byId("summary")) {
@@ -740,12 +760,6 @@ function (
                     var innerDiv = domConstruct.create("div", {}, null);
                     dijitEditorParentDiv = domConstruct.create("div", {}, areaDescription);
                     dijitInputContainer = this._createTextEditor(dijitEditorParentDiv, innerText);
-                    dijitInputContainer.onLoadDeferred.then(lang.hitch(this, function () {
-                        setTimeout(function () {
-                            dijitInputContainer.textbox.focus;
-                            dijitInputContainer.execCommand('selectAll');
-                        }, 300);
-                    }));
                     on(editAreaDescriptionButton, "click", lang.hitch(this, function () {
                         this._saveAppDescription(dijitInputContainer, editAreaDescriptionIcon, editAreaDescriptionButtonContainer, areaDescription);
                     }));
@@ -770,20 +784,7 @@ function (
             }
         },
 
-        //edit impact area renderers
-        _editRendererMenu: function () {
-            if (this.config.summaryAttributeOrder != "DESC") {
-                var rendererList = query(".menu-list")[0].getElementsByTagName("li");
-                var i = rendererList.length;
-                while (i--) {
-                    if (!domClass.contains(rendererList[i], "summarize")) {
-                        query(".menu-list")[0].appendChild(rendererList[i]);
-                    }
-                }
-            }
-        },
-
-        //function to  edit stats panel blocks
+        //edit and confiure stats panel
         _editStatsPanel: function () {
             var editpanelButton, statsPanel;
             statsPanel = query(".panel .count");
@@ -795,19 +796,21 @@ function (
                         domConstruct.destroy(query(".esriDataContainer")[0]);
                     }
                     //create panel which will allow user to add/update stats panel configuration
-                    this._createVariablePanel(evt.currentTarget);
+                    currentNodeIndex = domAttr.get(evt.currentTarget, "nodeIndex");
+                    this._createVariablePanel(currentNodeIndex);
+
                 }));
             }));
         },
 
         //function to create variable panel to add/update stats panel configuration
-        _createVariablePanel: function (editpanelButton) {
-            var parentAttributeName, populateSubVariables = false, currentNodeIndex, variableContainer, variableContent, closebtnContainer, labelContainer,
+        _createVariablePanel: function (currentNodeIndex) {
+            var parentAttributeName, populateSubVariables = false, variableContainer, variableContent, closebtnContainer, labelContainer,
             selectLabel, variableName, inputContainer, slectInputContainer, selectInput, variableInputContainer, variableInput, parentVariableOption,
             soureLinkContainer, sourceLinkLabel, soureLinkInputContainer, sourceLinkInputContent, sourceLinkInput, subVariableContainer,
-            subVariableLabel, subVariableInputContainer, subVariableContentContainer, buttonContainer, buttonSaveButton, subVariablePanelAnchor;
+            subVariableLabel, subVariableInputContainer, subVariableContentContainer, buttonContainer, buttonSaveButton,
+            subVariablePanelAnchor, leftButtonContainer, rightButtonContainer;
 
-            currentNodeIndex = domAttr.get(editpanelButton, "nodeIndex");
             variableContainer = domConstruct.create("div", { "class": "esriDataContainer" }, query(".content-pane-center")[0], "last");
             variableContent = domConstruct.create("div", { "class": "esriVariableContentContainer" }, variableContainer);
             closebtnContainer = domConstruct.create("div", { class: "esriVarPanelCloseButton icon-cancel-1", title: "Cancel" }, variableContent);
@@ -832,15 +835,15 @@ function (
                         query(".esriVariableSelectInput")[0].value = currentField.alias;
                     }
                 }));
-                if (evt.currentTarget.value == "Select Variable") {
+                if (evt.currentTarget.value == "Select A Variable") {
                     domConstruct.empty(subVariableContentContainer);
-                    query(".esriVariableSelectInput")[0].value = "Enter Label";
+                    query(".esriVariableSelectInput")[0].value = nls.widgets.TemplateBuilder.enterLabelText;
                     domClass.replace(buttonSaveButton, "esriButtonDisabled", "esriButtonEnabled" + currentNodeIndex);
                     if (domClass.contains(buttonSaveButton, "esriButtonDisabled")) {
-                        domStyle.set(delteButtonDiv, "display", "none");
+                        domStyle.set(deleteButtonDiv, "display", "none");
                     }
                     else {
-                        domStyle.set(delteButtonDiv, "display", "block");
+                        domStyle.set(deleteButtonDiv, "display", "block");
                     }
                     buttonSaveButton.disabled = true;
                     return;
@@ -848,10 +851,10 @@ function (
                 else {
                     domClass.replace(buttonSaveButton, "esriButtonEnabled" + currentNodeIndex, "esriButtonDisabled");
                     if (domClass.contains(buttonSaveButton, "esriButtonDisabled")) {
-                        domStyle.set(delteButtonDiv, "display", "none");
+                        domStyle.set(deleteButtonDiv, "display", "none");
                     }
                     else {
-                        domStyle.set(delteButtonDiv, "display", "block");
+                        domStyle.set(deleteButtonDiv, "display", "block");
                     }
                     buttonSaveButton.disabled = false;
                 }
@@ -874,7 +877,7 @@ function (
                 }
             }));
             variableInputContainer = domConstruct.create("div", { class: "esriVariableContent" }, inputContainer);
-            variableInput = domConstruct.create("input", { class: "esriVariableSelectInput", value: parentAttributeName ? parentAttributeName : "Enter Label" }, variableInputContainer);
+            variableInput = domConstruct.create("input", { class: "esriVariableSelectInput", value: parentAttributeName ? parentAttributeName : nls.widgets.TemplateBuilder.enterLabelText }, variableInputContainer);
 
             soureLinkContainer = domConstruct.create("div", { class: "esriVariableContainer" }, variableContent);
             sourceLinkLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.sourceLinkText }, soureLinkContainer);
@@ -893,6 +896,8 @@ function (
             }
 
             buttonContainer = domConstruct.create("div", { class: "esriSubVariableButtonContainer" }, variableContent);
+            rightButtonContainer = domConstruct.create("div", { "style": "float:right" }, buttonContainer);
+            leftButtonContainer = domConstruct.create("div", { "style": "float:left" }, buttonContainer);
             populateSubVariables ? buttonState = false : buttonState = true;
             buttonState ? buttonClass = "esriButtonDisabled" : buttonClass = "esriButtonEnabled" + currentNodeIndex;
             if (buttonClass == "esriButtonDisabled") {
@@ -901,21 +906,64 @@ function (
             else {
                 buttonVisibilty = "block";
             }
-            delteButtonDiv = domConstruct.create("div", { class: "esriClearButton", innerHTML: "Clear Data" }, buttonContainer);
-            domStyle.set(delteButtonDiv, "display", buttonVisibilty);
-            buttonSaveButton = domConstruct.create("button", { "style": "float:right", class: "esriButton " + buttonClass, innerHTML: nls.widgets.TemplateBuilder.subVariablePanelButtonText, disabled: buttonState }, buttonContainer);
-
+            nextButtonDiv = domConstruct.create("button", { class: "esriButton esriNextPreviousButton", innerHTML: nls.widgets.TemplateBuilder.nextButtonText }, leftButtonContainer);
+            previousButtonDiv = domConstruct.create("button", { class: "esriButton esriNextPreviousButton", innerHTML: nls.widgets.TemplateBuilder.prevButtonText }, leftButtonContainer);
+            deleteButtonDiv = domConstruct.create("div", { class: "esriClearButton", innerHTML: "Clear Data" }, rightButtonContainer);
+            domStyle.set(deleteButtonDiv, "display", buttonVisibilty);
+            buttonSaveButton = domConstruct.create("button", { "style": "float:right", class: "esriButton " + buttonClass, innerHTML: nls.widgets.TemplateBuilder.subVariablePanelButtonText, disabled: buttonState }, rightButtonContainer);
+            if (currentNodeIndex == 3) {
+                domStyle.set(nextButtonDiv, "display", "none");
+            }
+            if (currentNodeIndex == 0) {
+                domStyle.set(previousButtonDiv, "display", "none");
+            }
             on(buttonSaveButton, "click", lang.hitch(this, function () {
                 var ex = this._saveStatsPanelState(currentNodeIndex);
                 if (ex)
                     domConstruct.destroy(variableContainer);
             }));
-            on(delteButtonDiv, "click", lang.hitch(this, function () {
+            on(deleteButtonDiv, "click", lang.hitch(this, function () {
                 this._resetStatsPanelState(currentNodeIndex);
                 alert(nls.widgets.TemplateBuilder.alertMessage.resetVariableMessage);
                 domConstruct.destroy(variableContainer);
                 this.unSavedChanges = true;
                 this._displayMessage();
+            }));
+            on(nextButtonDiv, "click", lang.hitch(this, function () {
+                if (query(".esriVariableSelectInput")[0].value != nls.widgets.TemplateBuilder.enterLabelText) {
+                    var statsSaved = this._saveStatsPanelState(currentNodeIndex);
+                    if (!statsSaved) {
+                        return;
+                    }
+                }
+                if (query(".esriDataContainer").length) {
+                    domConstruct.destroy(query(".esriDataContainer")[0]);
+                }
+                if (currentNodeIndex < 3) {
+                    currentNodeIndex++;
+                    this._createVariablePanel(currentNodeIndex.toString());
+                }
+                if (currentNodeIndex == 3) {
+                    domStyle.set(nextButtonDiv, "display", "none");
+                }
+            }));
+            on(previousButtonDiv, "click", lang.hitch(this, function () {
+                if (query(".esriVariableSelectInput")[0].value != nls.widgets.TemplateBuilder.enterLabelText) {
+                    var statsSaved = this._saveStatsPanelState(currentNodeIndex);
+                    if (!statsSaved) {
+                        return;
+                    }
+                }
+                if (query(".esriDataContainer").length) {
+                    domConstruct.destroy(query(".esriDataContainer")[0]);
+                }
+                if (currentNodeIndex >= 0) {
+                    currentNodeIndex--;
+                    this._createVariablePanel(currentNodeIndex.toString());
+                }
+                if (currentNodeIndex == 0) {
+                    domStyle.set(previousButtonDiv, "display", "none");
+                }
             }));
 
             subVariablePanelAnchor = domConstruct.create("div", { "class": "esriDownArrow" }, variableContainer);
@@ -924,16 +972,17 @@ function (
 
         //function to populate sub variables and allow users to add/update the same
         _populateSubVariables: function (subVariableContentContainer, currentNodeIndex, parentAttributeName) {
-            var count = 0;
+            var count = 0, currentFieldAlias;
             array.forEach(this.map.getLayer(this.config.summaryLayer.id).fields, lang.hitch(this, function (currentField, index) {
                 var subVariableContentDiv, subVariableContentFirstDiv, checkBox, subVariableContentSecondDiv, label,
                 subVariableContentThirdDiv, inputText, checkBoxStatusClass;
                 checkBoxStatusClass = "esriUncheckIcon";
+                currentFieldAlias = "";
                 if (parentAttributeName != currentField.name && (currentField.type == "esriFieldTypeInteger" || currentField.type == "esriFieldTypeDouble")) {
                     for (var i = 0; i < this.config.summaryAttributes[currentNodeIndex].children.length; i++) {
                         if (currentField.name == this.config.summaryAttributes[currentNodeIndex].children[i].attribute) {
                             checkBoxStatusClass = "esriCheckIcon";
-                            currentField.alias = this.config.summaryAttributes[currentNodeIndex].children[i].label;
+                            currentFieldAlias = this.config.summaryAttributes[currentNodeIndex].children[i].label;
                             break;
                         }
                     }
@@ -948,7 +997,7 @@ function (
                     subVariableContentThirdDiv = domConstruct.create("div", { "class": " esriSubVariable esriThirdColumn " + className }, subVariableContentDiv);
                     inputText = domConstruct.create("input", { class: "esriVariableInput" }, subVariableContentThirdDiv);
                     domAttr.set(inputText, "index", count);
-                    inputText.value = currentField.alias;
+                    inputText.value = currentFieldAlias ? currentFieldAlias : currentField.alias;
                     count++;
                     on(checkBox, "click", function (evt) {
                         if (domClass.contains(checkBox, "esriCheckIcon")) {
@@ -1057,14 +1106,15 @@ function (
                 item: this.config.appid,
                 itemType: "text",
                 f: 'json',
+                token: dojo.token,
                 title: this.config.title,
                 text: JSON.stringify(this.response.itemData),
                 type: "Web Mapping Application",
                 overwrite: true
             });
-            updateUrl = string.substitute(this.updateItemURL, { username: dojo.currentLoggedInUser, appid: this.config.appid });
+            updateURL = dojo.portal.url + "/sharing/content/users/" + dojo.currentLoggedInUser + (this.response.item.ownerFolder ? ("/" + this.response.item.ownerFolder) : "") + "/items/" + this.config.appid + "/update";
             esriRequest({
-                url: updateUrl,
+                url: updateURL,
                 content: rqData,
                 handleAs: 'json'
             }, { usePost: true }).then(lang.hitch(this, function (result) {
