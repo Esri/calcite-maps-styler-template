@@ -43,7 +43,8 @@ define([], function() {
         "home_button": true,
         "basemap_option": "", //valid values are street, satellite, hybrid, topo, gray, oceans, national-geographic and osm
         "locate_button": true,
-        "geocoder": true
+        "geocoder": true,
+        "queryForOrg": true
     };
     return defaults;
 });
