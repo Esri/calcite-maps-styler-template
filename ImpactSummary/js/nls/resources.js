@@ -13,6 +13,7 @@ define({
             summarizeTitle: "Display summarized information for all areas",
             share: "Share",
             about: "About",
+            find: "Zip Code, city, etc.",
             noSearchResult: "No result found",
             impactArea: "Impact Area"
         },

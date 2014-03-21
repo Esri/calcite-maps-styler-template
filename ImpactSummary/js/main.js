@@ -47,12 +47,7 @@ function(
 ) {
     return declare("", [AreaOfInterest], {
         config: {},
-        constructor: function (config, data) {
-            //config will contain application and user defined info for the template such as i18n strings, the web map id
-            // and application id
-            // any url parameters and any application specific configuration information.
-            this.config = config;
-            this.data = data;
+        constructor: function () {
             // css classes
             this.css= {
                 mobileSearchDisplay: "mobile-locate-box-display",
@@ -73,7 +68,8 @@ function(
                 iconLayers: "icon-layers",
                 iconMap: "icon-map",
                 iconText: "icon-text",
-                appLoading: "app-loading"
+                appLoading: "app-loading",
+                appError: "app-error"
             };
             // mobile size switch domClass
             this._showDrawerSize = 850;
@@ -83,6 +79,13 @@ function(
             }
             // mobile size switch domClass
             this._showDrawerSize = 850;
+        },
+        startup: function(config){
+            //config will contain application and user defined info for the template such as i18n strings, the web map id
+            // and application id
+            // any url parameters and any application specific configuration information.
+            this.config = config;
+            this.data = config.appResponse;
             // drawer
             this._drawer = new Drawer({
                 direction: this.config.i18n.direction,
@@ -102,6 +105,21 @@ function(
             //supply either the webmap id or, if available, the item info
             var itemInfo = this.config.itemInfo || this.config.webmap;
             this._createWebMap(itemInfo);
+        },
+        reportError: function (error) {
+            // remove spinner
+            this._hideLoadingIndicator();
+            // add app error
+            domClass.add(document.body, this.css.appError);
+            // set message
+            var node = dom.byId('error_message');
+            if(node){
+                if (this.config && this.config.i18n) {
+                    node.innerHTML = this.config.i18n.map.error + ": " + error.message;
+                } else {
+                    node.innerHTML = "Unable to create map: " + error.message;
+                }
+            }
         },
         _pointerEventsSupport: function(){
             var element = document.createElement('x');
@@ -366,7 +384,9 @@ function(
                 map: this.map,
                 autoNavigate: true,
                 autoComplete: true,
-                arcgisGeocoder: true,
+                arcgisGeocoder: {
+                    placeholder: this.config.i18n.general.find
+                },
                 geocoders: null
             };
             //only use geocoders with a url defined
@@ -381,16 +401,18 @@ function(
             // at least 1 geocoder defined
             if(geocoders.length){
                 // each geocoder
-                array.forEach(geocoders, function (geocoder) {
+                array.forEach(geocoders, lang.hitch(this, function(geocoder) {
                     // if esri geocoder
                     if (geocoder.url && geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
                         hasEsri = true;
                         geocoder.name = "Esri World Geocoder";
                         geocoder.outFields = "Match_addr, stAddr, City";
                         geocoder.singleLineFieldName = "Single Line";
-                        geocoder.esri = geocoder.placefinding = true;
+                        geocoder.esri = true;
+                        geocoder.placefinding = true;
+                        geocoder.placeholder = this.config.i18n.general.find;
                     }
-                });
+                }));
                 //only use geocoders with a singleLineFieldName that allow placefinding unless its custom
                 geocoders = array.filter(geocoders, function (geocoder) {
                     if (geocoder.name && geocoder.name === "Custom") {

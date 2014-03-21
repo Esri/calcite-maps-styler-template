@@ -16,7 +16,7 @@ define({
     "summary": "",
     "defaultPanel": "map",
     "summaryLayer": {
-        "id": ""
+        "id": "impact_area1375916377789_9168"
     },
     "enableTitle": true,
     "enableEntireAreaButton": true,
@@ -81,8 +81,8 @@ define({
     //When true the template will query arcgis.com for default settings for helper services, units etc. If you
     //want to use custom settings for units or any of the helper services set queryForOrg to false then enter
     //default values for any items you need using the helper services and units properties.
-    "queryForOrg": false,
-    "localize": false,
+    "queryForOrg": true,
+    "localize": true,
     "units": null,
     "helperServices": {
         "geometry": {

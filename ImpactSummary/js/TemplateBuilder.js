@@ -173,7 +173,7 @@ function (
         _createAppSettingsPanel: function () {
 
             var settingsContainer, settingsDialog, bottomcontainer, saveButton;
-            settingsContainer = domConstruct.create("div", {}, null);
+            settingsContainer = domConstruct.create("div", { "class": "esriAppSettingPanelContainer" }, null);
             this._storeCurrentAppSetting();
             this._createAppSettingsLeftPanel(settingsContainer);
             this._createAppSettingsRightPanel(settingsContainer);
@@ -336,6 +336,12 @@ function (
                 this._revertGlobalAppSetting();
                 domAttr.set(dom.byId("title"), "innerHTML", this.appSetting.title);
                 domAttr.set(dom.byId("summary"), "innerHTML", this.appSetting.summary);
+                if (domStyle.get(query(".editAreaDescriptionButtonContainer")[0])) {
+                    if (domStyle.get(query(".editAreaDescriptionButtonContainer")[0], "display") == "block") {
+                        domStyle.set(query(".editAreaDescriptionButtonContainer")[0], "display", "none");
+                        domStyle.set(query(".editAreaDescriptionIcon")[0], "display", "block");
+                    }
+                }
             }));
             //create dialog and show entire application settings
             settingsDialog = new Dialog({
@@ -345,6 +351,10 @@ function (
                 draggable: false
             });
             on(settingsDialog, "hide", lang.hitch(this, function () {
+                if (query(".icon-info-circled-1")[0]) this._disableComponent(this.appSetting.enableAboutDialog, query(".icon-info-circled-1")[0]);
+                if (query(".icon-share")[0]) this._disableComponent(this.appSetting.enableShareDialog, query(".icon-share")[0]);
+                if (query(".BasemapToggle")[0]) this._disableComponent(this.appSetting.enableBasemapToggle, query(".BasemapToggle")[0]);
+                this._revertGlobalAppSetting();
                 settingsDialog.destroy();
             }));
             settingsDialog.setContent(settingsContainer);
@@ -1036,7 +1046,7 @@ function (
                 if (subVariableAttribute == "") {
                     validationRequire = true;
                 }
-                subVariableLabel = query(".esriVariableLabel")[columnIndex].innerText;
+                subVariableLabel = query(".esriVariableLabel")[columnIndex].innerHTML;
                 summaryAttributes.push({ "attribute": subVariableLabel, "label": subVariableAttribute });
             }));
             if (validationRequire) {

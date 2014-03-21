@@ -662,7 +662,7 @@
         margin-right: 10px;
 }
 
-input, select, label {
+.esriDataContainer input, select, label,.esriAppSettingPanelContainer input, select, label,.esriConfigurationPanel input, select, label {
         font-family: 'Lato' , sans-serif !important;
         color: #777 !important;
         font-size: 16px !important;
