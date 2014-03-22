@@ -130,7 +130,7 @@
                     if (userDetails) {
                         dojo.currentLoggedInUser = userDetails.email;
                         dojo.token = userDetails.token;
-                        var canExcute = signIn.authenticateUser(config.edit, data);
+                        var canExcute = signIn.authenticateUser(config.edit, config.appResponse);
                         if (canExcute) {
                             myApp.startup(config);
                         }
@@ -138,7 +138,7 @@
                     else {
                         signIn.createPortal().then(function (loggedInUser) {
                             dojo.currentLoggedInUser = loggedInUser.username;
-                            var canExcute = signIn.authenticateUser(config.edit, data);
+                            var canExcute = signIn.authenticateUser(config.edit, config.appResponse);
                             if (canExcute) {
                                 myApp.startup(config);
                             }
