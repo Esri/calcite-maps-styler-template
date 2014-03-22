@@ -109,7 +109,7 @@ define([
                 this.watch("embedSizes", this._setSizeOptions);
                 this.watch("embed", this._updateEmbed);
                 this.watch("bitlyUrl", this._updateBitlyUrl);
-                this.watch("useExtent", this._updateUrl);
+                this.watch("useExtent", this._useExtentChanged);
                 // classes
                 this.css = {
                     container: "button-container",
@@ -197,6 +197,10 @@ define([
             _useExtentUpdate: function () {
                 var value = domAttr.get(this._extentInput, 'checked');
                 this.set("useExtent", value);
+            },
+            _useExtentChanged: function(){
+                this._updateUrl();
+                this._shareLink();  
             },
             _removeEvents: function () {
                 if (this._events && this._events.length) {
@@ -407,7 +411,9 @@ define([
                     window.open(fullLink, 'share', true);
                 }
             },
-            _updateThemeWatch: function (attr, oldVal, newVal) {
+            _updateThemeWatch: function () {
+                var oldVal = arguments[1];
+                var newVal = arguments[2];
                 if (this.get("loaded")) {
                     domClass.remove(this.domNode, oldVal);
                     domClass.add(this.domNode, newVal);
