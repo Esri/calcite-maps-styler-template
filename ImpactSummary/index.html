@@ -134,6 +134,9 @@
                         if (canExcute) {
                             myApp.startup(config);
                         }
+                        else{
+                            myApp.reportError(new Error('Could not authenticate user'));
+                        }
                     }
                     else {
                         signIn.createPortal().then(function (loggedInUser) {
@@ -142,13 +145,17 @@
                             if (canExcute) {
                                 myApp.startup(config);
                             }
+                            else{
+                                myApp.reportError(new Error('Could not authenticate user'));
+                            }
+                        }, function(error){
+                            myApp.reportError(error);
                         });
                     }
                 }
                 else {
                     myApp.startup(config);
                 }
-                
             }, function(error) {
                 // something went wrong. Let's report it.
                 myApp.reportError(error);

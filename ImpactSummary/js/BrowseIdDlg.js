@@ -108,28 +108,28 @@ define([
                 portalUser = response;
                 var parameters = [];
                 if (this.searchText.getValue()) {
-                    parameters["title"] = this.searchText.getValue();
+                    parameters.title = this.searchText.getValue();
                 }
 
                 if (filter === "org") {
-                    parameters["orgid"] = portalUser.orgId;
+                    parameters.orgid = portalUser.orgId;
                 }
                 if (filter === "content") {
-                    parameters["owner"] = portalUser.username;
+                    parameters.owner = portalUser.username;
                 }
                 if (filter === "favorites") {
-                    parameters["group"] = portalUser.favGroupId;
+                    parameters.group = portalUser.favGroupId;
                 }
                 if (filter === "online" && this.galleryType === "group") {
                     var search = this.searchText.getValue();
                     if (search === "") {
                         //Return all online groups. We need to provide a query param we can't just return all groups
                         //so let's set the access to public in this case so we only see public groups.
-                        parameters["access"] = "public";
+                        parameters.access = "public";
                     }
                 }
                 if (this.galleryType === "webmap") {
-                    parameters["type"] = '"Web Map" -type:"Web Mapping Application"';
+                    parameters.type = '"Web Map" -type:"Web Mapping Application"';
                 }
                 var qs = "";
                 for (var key in parameters) {
@@ -147,7 +147,7 @@ define([
 
         _onSearchClick: function (e) {
             dojoEvent.stop(e);
-            if (e != null && e.prefentDefault) {
+            if (e !== null && e.prefentDefault) {
                 e.preventDefault();
             }
             this.doSearch();
@@ -156,7 +156,7 @@ define([
         },
 
         _onSearchBoxBlur: function (e) {
-            if (this.searchText.getValue() == "") {
+            if (this.searchText.getValue() === "") {
 
             }
         },

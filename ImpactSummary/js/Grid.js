@@ -124,7 +124,7 @@ define([
                   sort: this._sort
               }, this.domNode);
           },
-          _onGridRefresh: function (evt) {
+          _onGridRefresh: function () {
               this.emit("onRefresh", { currentPage: this._grid._currentPage });
               if (this._pagingLinks) {
                   query(".dgrid-navigation")[this._grid._total <= this._grid.rowsPerPage ? "addClass" : "removeClass"]("hide");
@@ -182,7 +182,13 @@ define([
 
           _setItemsAttr: function (items) {
               this._store = this._store || new Observable(Memory({ "data": items }));
-              this._store && this._store.setData ? this._store.setData(items) : this._store = new Observable(Memory({ "data": items }));
+              
+              if(this._store && this._store.setData){
+                  this._store.setData(items);
+              }
+              else{
+                  this._store = new Observable(Memory({ "data": items }));
+              }
               this.set("store", this._store);
               this.set("view", this._view);
           }

@@ -1,4 +1,4 @@
-﻿define([
+define([
     "dojo/Evented",
     "dojo/_base/declare",
     "dojo/_base/lang",
@@ -30,7 +30,7 @@ function (Evented, declare, lang, _WidgetBase, ContentPane, on, arcgisUtils, por
                 this._portal.signIn().then(function (loggedInUser) {
                     deferred.resolve(loggedInUser);
                 }, function (err) {
-                    alert("Sign-in Failed");
+                    deferred.reject(new Error("Sign-in Failed"));
                 });
             })));
 
@@ -51,9 +51,7 @@ function (Evented, declare, lang, _WidgetBase, ContentPane, on, arcgisUtils, por
                 return;
             esriCookie = JSON.parse(esriCookie.replace('"ssl":undefined', '"ssl":""'));
             // Cookie has to be set on the same organization
-            if (esriCookie.urlKey
-						&& esriCookie.customBaseUrl
-						&& (esriCookie.urlKey + '.' + esriCookie.customBaseUrl).toLowerCase() != document.location.hostname.toLowerCase())
+            if (esriCookie.urlKey && esriCookie.customBaseUrl && (esriCookie.urlKey + '.' + esriCookie.customBaseUrl).toLowerCase() != document.location.hostname.toLowerCase())
                 return;
             return esriCookie ? esriCookie : null;
         },

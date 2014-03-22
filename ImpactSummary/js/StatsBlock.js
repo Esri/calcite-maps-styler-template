@@ -184,10 +184,10 @@ function (
         _decPlaces: function(n) {
             // number not defined
             if (!n) {
-                if (n == 0) {
+                if (n === 0) {
                     n = 0;
                 }
-                else if (n == undefined) {
+                else if (n === undefined) {
                     //add "+" if no values are configured and user us in edit mode
                     if (this.appConfig.edit) {
                         n = "<b>+</b>";
@@ -212,6 +212,7 @@ function (
             return this._formatNumber(n, decPlaces);
         },
         _displayStats: function() {
+            var i, j, k;
             // get features to display
             var features = this.get("features");
             // if we have features
@@ -219,8 +220,8 @@ function (
                 // all config to summarize
                 var config = this.get("config");
                 this.newConfig = lang.clone(config);
-                for (var i = config.length - 1; i >= 0; i--) {
-                    if (config[i].attribute.trim() == "") {
+                for (i = config.length - 1; i >= 0; i--) {
+                    if (config[i].attribute.trim() === "") {
                         config.splice(i, 1);
                     }
                 }
@@ -235,7 +236,6 @@ function (
                     config = this.get("config");
                 }
                 var stats = {};
-                var i, j, k;
                 // each feature
                 for (i = 0; i < features.length; i++) {
                     // first feature
