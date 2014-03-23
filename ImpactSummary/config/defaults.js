@@ -36,40 +36,114 @@ define({
     "summaryAttributeOrder": "DESC",
     "bitlyLogin": "esri",
     "bitlyKey": "R_65fd9891cd882e2a96b99d4bda1be00e",
-    "summaryAttributes": [
-        {
-            "attribute": "",
-            "label": "Add Variable",
-            "dataSourceUrl": "",
-            "children": [
-
-              ]
-           },
-        {
-            "attribute": "",
-            "label": "Add Variable",
-            "dataSourceUrl": "",
-            "children": [
-
-              ]
-           },
-        {
-            "attribute": "",
-            "label": "Add Variable",
-            "dataSourceUrl": "",
-            "children": [
-
-              ]
-           },
-        {
-            "attribute": "",
-            "label": "Add Variable",
-            "dataSourceUrl": "",
-            "children": [
-
-              ]
-           }
-        ],
+    "summaryAttributes": [{
+        "attribute": "TOTPOP_CY",
+        "label": "Population",
+        "dataSourceUrl": "",
+        "children": [{
+            "attribute": "POP15_CY",
+            "label": "Under 16"
+        }, {
+            "attribute": "POP65U_CY",
+            "label": "Over 64"
+        }]
+    }, {
+        "attribute": "TOTHH_CY",
+        "label": "Households",
+        "dataSourceUrl": "",
+        "children": [{
+            "attribute": "OWNER_CY",
+            "label": "Owners"
+        }, {
+            "attribute": "RENTER_CY",
+            "label": "Renters"
+        }]
+    }, {
+        "attribute": "CIKR_Total",
+        "label": "Infrastructure",
+        "dataSourceUrl": "",
+        "children": [{
+            "attribute": "CIKR_AMTwr",
+            "label": "AM Towers"
+        }, {
+            "attribute": "CIKR_Dam",
+            "label": "Dams"
+        }, {
+            "attribute": "CIKR_Edu",
+            "label": "Education Facilities"
+        }, {
+            "attribute": "CIKR_ECC",
+            "label": "Emergency Communications Centers"
+        }, {
+            "attribute": "CIKR_FMTwr",
+            "label": "FM Towers"
+        }, {
+            "attribute": "CIKR_FrSta",
+            "label": "Fire Stations"
+        }, {
+            "attribute": "CIKR_Hzmt",
+            "label": "Hazmat Facilities"
+        }, {
+            "attribute": "CIKR_HCF",
+            "label": "Healthcare Facilities"
+        }, {
+            "attribute": "CIKR_PkIco",
+            "label": "Parks and Icons"
+        }, {
+            "attribute": "CIKR_Pol",
+            "label": "Police Stations"
+        }, {
+            "attribute": "CIKR_Port",
+            "label": "Port Facilities"
+        }, {
+            "attribute": "CIKR_Rsrvr",
+            "label": "Reservoirs"
+        }, {
+            "attribute": "CIKR_WWF",
+            "label": "Wastewater Facilities"
+        }, {
+            "attribute": "CIKR_Pwr",
+            "label": "Energy Facilities"
+        }]
+    }, {
+        "attribute": "BUS_Total",
+        "label": "Businesses",
+        "dataSourceUrl": "",
+        "children": [{
+            "attribute": "BUS_Banks",
+            "label": "Banks and Financial Services"
+        }, {
+            "attribute": "BUS_Hsptl",
+            "label": "Hospitals"
+        }, {
+            "attribute": "BUS_GrcStr",
+            "label": "Grocery and Convenience Stores"
+        }, {
+            "attribute": "BUS_PnTSvc",
+            "label": "Professional and Technical Services"
+        }, {
+            "attribute": "BUS_Safety",
+            "label": "Public Safety and Justice"
+        }, {
+            "attribute": "BUS_Util",
+            "label": "Utilities"
+        }, {
+            "attribute": "BUS_BldSpl",
+            "label": "Building Supplies"
+        }, {
+            "attribute": "BUS_GasStn",
+            "label": "Gas Stations"
+        }, {
+            "attribute": "BUS_DptStr",
+            "label": "Discount and Department Stores"
+        }, {
+            "attribute": "BUS_Ldging",
+            "label": "Lodging"
+        }, {
+            "attribute": "BUS_Other",
+            "label": "Other"
+        }]
+    }],
     //Enter the url to your organizations bing maps key if you want to use bing basemaps
     "bingmapskey": "",
     //Defaults to arcgis.com. Set this value to your portal or organization host name.

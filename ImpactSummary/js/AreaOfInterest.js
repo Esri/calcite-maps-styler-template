@@ -57,12 +57,10 @@ define([
             startupArea: function(){
                 // stats block
                 if (this._aoiLayer) {
-                    // safe copy for appResponse
-                    var configCopy = declare.safeMixin(this.config, {appResponse: 'true'});
                     this._sb = new StatsBlock({
                         config: this.config.summaryAttributes,
                         direction: this.config.i18n.direction,
-                        appConfig: configCopy
+                        appConfig: this.data
                     }, dom.byId('geoData'));
                     this._sb.startup();
                     // init layer

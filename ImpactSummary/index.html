@@ -130,9 +130,9 @@
                     if (userDetails) {
                         dojo.currentLoggedInUser = userDetails.email;
                         dojo.token = userDetails.token;
-                        var canExcute = signIn.authenticateUser(config.edit, config.appResponse);
+                        var canExcute = signIn.authenticateUser(config.edit, myTemplate.appResponse);
                         if (canExcute) {
-                            myApp.startup(config);
+                            myApp.startup(config, myTemplate.appResponse);
                         }
                         else{
                             myApp.reportError(new Error('Could not authenticate user'));
@@ -141,9 +141,9 @@
                     else {
                         signIn.createPortal().then(function (loggedInUser) {
                             dojo.currentLoggedInUser = loggedInUser.username;
-                            var canExcute = signIn.authenticateUser(config.edit, config.appResponse);
+                            var canExcute = signIn.authenticateUser(config.edit, myTemplate.appResponse);
                             if (canExcute) {
-                                myApp.startup(config);
+                                myApp.startup(config, myTemplate.appResponse);
                             }
                             else{
                                 myApp.reportError(new Error('Could not authenticate user'));

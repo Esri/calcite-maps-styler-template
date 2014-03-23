@@ -80,12 +80,12 @@ function(
             // mobile size switch domClass
             this._showDrawerSize = 850;
         },
-        startup: function(config){
+        startup: function(config, appResponse){
             //config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
             // any url parameters and any application specific configuration information.
             this.config = config;
-            this.data = config.appResponse;
+            this.data = appResponse;
             // drawer
             this._drawer = new Drawer({
                 direction: this.config.i18n.direction,
