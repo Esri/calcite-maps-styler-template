@@ -12,8 +12,16 @@ html,body {
 	width:100%;
 	height:100%;
 }
-
-
+#legendDiv{
+	color:#333;
+}
+#footer{
+	color:#333;
+}
+#mainWindow{
+	width:100%;
+	height:100%;
+}
 
 .mblFixedSplitter {
     width: 100%;

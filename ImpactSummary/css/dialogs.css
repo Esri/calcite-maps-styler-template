@@ -1,5 +1,5 @@
 .calcite .dijitDialog {
-    max-width: 550px;
+    max-width: 600px;
 }
 .calcite .dijitDialog,
 .calcite .dijitDialogTitle {
@@ -43,7 +43,7 @@
 }
 .calcite .dijitDialogPaneContent {
     max-height: 550px;
-    max-width: 530px;
+    max-width: 660px;
     overflow: auto;
     border: none;
     padding: 20px;

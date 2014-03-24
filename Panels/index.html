@@ -71,14 +71,12 @@
                 var supportsLocalization = true; //defaults to true
                 
                 var myTemplate = new Template(supportsLocalization);
-          
-                on(myTemplate, "ready", function(config) {
-
-                    //The config object contains the following properties: helper services, (optionally) 
-                    //i18n, appid, webmap and any custom values defined by the application. 
-                    //In this example we have one called theme. 
-                    Main(config);
+                myTemplate.startup().then(function(config){
+                    Main(config); 
+                },function(error){
+                    console.log(error);
                 });
+
           });
 
         });

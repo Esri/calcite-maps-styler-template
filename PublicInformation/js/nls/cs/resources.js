@@ -29,8 +29,8 @@
             flSettingsInfo: "Vrátí výsledky, které se shodují s názvem, popisem nebo klíčovými slovy fotografie.",
             twSettingsInfo: "Podívejte se, co se právě teď děje.",
             advancedOperators: "Tip: K vytváření pokročilých vyhledávání použijte <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a>.",
-            tweetsFilteredBy: "Tweety se filtrují podle:",
-            photosFilteredBy: "Fotografie se filtrují podle:",
+            tweetsFilteredBy: "tweety se filtrují podle:",
+            photosFilteredBy: "fotografie se filtrují podle:",
             twitterAccountStatus: "Chcete-li vidět váš stav, aktivujte vrstvu Twitter."
         },
         general: {

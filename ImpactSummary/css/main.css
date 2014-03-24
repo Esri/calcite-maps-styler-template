@@ -49,10 +49,10 @@ input[type=text]::-ms-clear {
     font-size: 18px;
 }
 .top-menu-right {
-    position: relative;
+   /* position: relative;*/
     top: 0;
     left: 0;
-    float: right;
+    /*float: right;*/
 }
 .esriRTL .top-menu-right{
     float:left;
@@ -233,7 +233,7 @@ input[type=text]::-ms-clear {
 }
 .esriRTL .geocoder-mobile{
     float:right;
-} 
+}
 .drawer-open .geocoder-mobile {
     width: 60%;
 }
@@ -431,22 +431,48 @@ input[type=text]::-ms-clear {
     height: 0;
 }
 /* Loading */
-.loading-indicator{
+
+.loading-indicator {
     display: none;
-}
-.app-loading .loading-indicator {
     height: 100%;
     width: 100%;
-    display: block;
     z-index: 500;
     position: absolute;
     top: 0;
     left: 0;
     overflow: hidden;
     background: #eee;
+    color: #666;
+}
+.loading-error {
+    display: none;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    margin: -50px 0 0 0;
+}
+.app-loading .loading-indicator {
+    display: block;
     background-position: center center;
     background-image: url(../images/ajax-loader.gif);
     background-repeat: no-repeat;
+}
+.app-error .loading-indicator {
+    display: block;
+}
+.app-error .loading-error {
+    display: block;
+}
+.app-error .loading-error .icon-emo-unhappy {
+    font-size: 50px;
+    line-height: 50px;
+}
+.app-error .loading-error .error-message-text {
+    margin: 10px 0 0 0;
 }
 /* Media Queries */
 
@@ -514,6 +540,19 @@ input[type=text]::-ms-clear {
     .top-menu-right,
     .mobile-locate-box-hidden {
         display: none!important;
+    }
+    .content-pane-left {
+        max-width:200px;
+    }
+    .drawer-open .content-pane-left {
+        width: 200px;
+        overflow-x:auto;
+    }
+    .pointer-events .drawer-open-complete .content-pane-left:before {
+        width: 200px;
+    }
+    .drawer-menu-container {
+        width: 200px;
     }
 }
 @media screen and (max-width: 800px) {

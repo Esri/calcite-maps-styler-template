@@ -9,7 +9,6 @@ define([
     "dojo/dom-attr",
     "dojo/dom-class",
     "application/TableOfContents",
-    "application/AboutDialog",
     "application/ShareDialog",
     "application/Drawer",
     "application/DrawerMenu",
@@ -19,7 +18,7 @@ define([
     "esri/dijit/Geocoder",
     "esri/dijit/Popup",
     "esri/dijit/Legend",
-    "application/MapPanel",
+    "application/About",
     "application/SocialLayers",
     "esri/dijit/OverviewMap",
     "dijit/registry",
@@ -36,25 +35,21 @@ function(
     domStyle,
     domAttr,
     domClass,
-    TableOfContents, AboutDialog, ShareDialog, Drawer, DrawerMenu,
+    TableOfContents, ShareDialog, Drawer, DrawerMenu,
     HomeButton, LocateButton, BasemapToggle,
     Geocoder,
     Popup,
     Legend,
-    MapPanel,
+    About,
     SocialLayers,
     OverviewMap,
     registry,
     array,
     esriLang
 ) {
-    return declare("", [MapPanel, SocialLayers], {
+    return declare("", [About, SocialLayers], {
         config: {},
-        constructor: function (config) {
-            //config will contain application and user defined info for the template such as i18n strings, the web map id
-            // and application id
-            // any url parameters and any application specific configuration information.
-            this.config = config;
+        constructor: function(){
             // css classes
             this.css = {
                 mobileSearchDisplay: "mobile-locate-box-display",
@@ -66,17 +61,20 @@ function(
                 panelSection: "panel-section",
                 panelSummary: "panel-summary",
                 panelDescription: "panel-description",
+                panelModified: "panel-modified-date",
+                panelMoreInfo: "panel-more-info",
                 pointerEvents: "pointer-events",
                 iconRight: "icon-right",
                 iconList: "icon-list",
                 iconLayers: "icon-layers",
-                iconMap: "icon-map",
+                iconAbout: "icon-info-circled-1",
                 iconText: "icon-text",
                 locateButtonTheme: "LocateButtonCalcite",
                 homebuttonTheme: "HomeButtonCalcite",
                 desktopGeocoderTheme: "geocoder-desktop",
                 mobileGeocoderTheme: "geocoder-mobile",
-                appLoading: "app-loading"
+                appLoading: "app-loading",
+                appError: "app-error"
             };
             // pointer event support
             if(this._pointerEventsSupport()){
@@ -84,25 +82,54 @@ function(
             }
             // mobile size switch domClass
             this._showDrawerSize = 850;
-            // drawer
-            this._drawer = new Drawer({
-                direction: this.config.i18n.direction,
-                showDrawerSize: this._showDrawerSize,
-                borderContainer: 'bc_outer',
-                contentPaneCenter: 'cp_outer_center',
-                contentPaneSide: 'cp_outer_left',
-                toggleButton: 'hamburger_button'
-            });
-            // drawer resize event
-            on(this._drawer, 'resize', lang.hitch(this, function () {
-                // check mobile button status
-                this._checkMobileGeocoderVisibility();
-            }));
-            // startup drawer
-            this._drawer.startup();
-            //supply either the webmap id or, if available, the item info 
-            var itemInfo = this.config.itemInfo || this.config.webmap;
-            this._createWebMap(itemInfo);
+        },
+        startup: function (config) {
+            // config will contain application and user defined info for the template such as i18n strings, the web map id
+            // and application id
+            // any url parameters and any application specific configuration information.
+            if (config) {
+                //config will contain application and user defined info for the template such as i18n strings, the web map id
+                // and application id
+                // any url parameters and any application specific configuration information.
+                this.config = config;
+                // drawer
+                this._drawer = new Drawer({
+                    direction: this.config.i18n.direction,
+                    showDrawerSize: this._showDrawerSize,
+                    borderContainer: 'bc_outer',
+                    contentPaneCenter: 'cp_outer_center',
+                    contentPaneSide: 'cp_outer_left',
+                    toggleButton: 'hamburger_button'
+                });
+                // drawer resize event
+                on(this._drawer, 'resize', lang.hitch(this, function () {
+                    // check mobile button status
+                    this._checkMobileGeocoderVisibility();
+                }));
+                // startup drawer
+                this._drawer.startup();
+                //supply either the webmap id or, if available, the item info 
+                var itemInfo = this.config.itemInfo || this.config.webmap;
+                this._createWebMap(itemInfo);
+            } else {
+                var error = new Error("Main:: Config is not defined");
+                this.reportError(error);
+            }
+        },
+        reportError: function (error) {
+            // remove spinner
+            this._hideLoadingIndicator();
+            // add app error
+            domClass.add(document.body, this.css.appError);
+            // set message
+            var node = dom.byId('error_message');
+            if(node){
+                if (this.config && this.config.i18n) {
+                    node.innerHTML = this.config.i18n.map.error + ": " + error.message;
+                } else {
+                    node.innerHTML = "Unable to create map: " + error.message;
+                }
+            }
         },
         // if pointer events are supported
         _pointerEventsSupport: function(){
@@ -163,13 +190,19 @@ function(
             this.drawerMenus = [];
             var content, menuObj;
             // map panel enabled
-            if (this.config.enableMapPanel) {
+            if (this.config.enableAboutPanel) {
                 content = '';
                 content += '<div class="' + this.css.panelContainer + '">';
                 // if summary enabled
-                if (this.config.enableSummary) {
-                    content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.general.mapInfo + '</div>';
+                if (this.config.enableSummaryInfo) {
+                    content += '<div class="' + this.css.panelHeader + '">' + this.config.title + '</div>';
                     content += '<div class="' + this.css.panelSummary + '" id="summary"></div>';
+                    if(this.config.enableModifiedDate){
+                        content += '<div class="' + this.css.panelModified + '" id="date_modified"></div>';
+                    }
+                    if(this.config.enableMoreInfo){
+                        content += '<div class="' + this.css.panelMoreInfo + '" id="more_info_link"></div>';
+                    }
                 }
                 // show notes layer and has one of required things for getting notes layer
                 if(this.config.notesLayer && this.config.notesLayer.id){
@@ -186,12 +219,12 @@ function(
                 content += '</div>';
                 // menu info
                 menuObj = {
-                    title: this.config.i18n.general.map,
-                    label: '<div class="' + this.css.iconMap + '"></div><div class="' + this.css.iconText + '">' + this.config.i18n.general.map + '</div>',
+                    title: this.config.i18n.general.about,
+                    label: '<div class="' + this.css.iconAbout + '"></div><div class="' + this.css.iconText + '">' + this.config.i18n.general.about + '</div>',
                     content: content
                 };
                 // map menu
-                if(this.config.defaultPanel === 'map'){
+                if(this.config.defaultPanel === 'about'){
                     this.drawerMenus.splice(0,0,menuObj);
                 }
                 else{
@@ -290,24 +323,13 @@ function(
                 }));
                 /* END temporary until after JSAPI 4.0 is released */
             }
-            // about dialog
-            if (this.config.enableAboutDialog) {
-                this._AboutDialog = new AboutDialog({
-                    theme: this.css.iconRight,
-                    item: this.item,
-                    sharinghost: this.config.sharinghost
-                }, 'AboutDialog');
-                this._AboutDialog.startup();
-                if(this.config.showAboutOnLoad){
-                    this._AboutDialog.open();
-                }
-            }
             // share dialog
             if (this.config.enableShareDialog) {
                 this._ShareDialog = new ShareDialog({
                     theme: this.css.iconRight,
                     bitlyLogin: this.config.bitlyLogin,
                     bitlyKey: this.config.bitlyKey,
+                    map: this.map,
                     image: this.config.sharinghost + '/sharing/rest/content/items/' + this.item.id + '/info/' + this.item.thumbnail,
                     title: this.config.title,
                     summary: this.item.snippet,
@@ -336,7 +358,7 @@ function(
             // startup social
             this.initSocial();
             // startup map panel
-            this.initMapPanel();
+            this.initAboutPanel();
             // startup legend
             this._initLegend();
             // startup toc
@@ -380,19 +402,21 @@ function(
                 domClass.replace(this._mobileGeocoderIconContainerNode, this.css.toggleBlue, this.css.toggleBlueOn);
             }
         },
-        _setTitle: function (title) {
+        _setTitle: function(title){
             // set config title
             this.config.title = title;
+            // window title
+            window.document.title = title;  
+        },
+        _setTitleBar: function () {
             // map title node
             var node = dom.byId('title');
             if (node) {
                 // set title
-                node.innerHTML = title;
+                node.innerHTML = this.config.title;
                 // title attribute
-                domAttr.set(node, "title", title);
+                domAttr.set(node, "title", this.config.title);
             }
-            // window title
-            window.document.title = title;
         },
         _createGeocoderOptions: function() {
             var hasEsri = false, esriIdx, geocoders = lang.clone(this.config.helperServices.geocode);
@@ -401,7 +425,9 @@ function(
                 map: this.map,
                 autoNavigate: true,
                 autoComplete: true,
-                arcgisGeocoder: true,
+                arcgisGeocoder: {
+                    placeholder: this.config.i18n.general.find
+                },
                 geocoders: null
             };
             //only use geocoders with a url defined
@@ -416,16 +442,18 @@ function(
             // at least 1 geocoder defined
             if(geocoders.length){
                 // each geocoder
-                array.forEach(geocoders, function (geocoder) {
+                array.forEach(geocoders, lang.hitch(this, function(geocoder) {
                     // if esri geocoder
                     if (geocoder.url && geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
                         hasEsri = true;
                         geocoder.name = "Esri World Geocoder";
                         geocoder.outFields = "Match_addr, stAddr, City";
                         geocoder.singleLineFieldName = "Single Line";
-                        geocoder.esri = geocoder.placefinding = true;
+                        geocoder.esri = true;
+                        geocoder.placefinding = true;
+                        geocoder.placeholder = this.config.i18n.general.find;
                     }
-                });
+                }));
                 //only use geocoders with a singleLineFieldName that allow placefinding unless its custom
                 geocoders = array.filter(geocoders, function (geocoder) {
                     if (geocoder.name && geocoder.name === "Custom") {
@@ -496,11 +524,13 @@ function(
                 this._hideMobileGeocoder();
             }));
             // keep geocoder values in sync
-            this._geocoder.watch("value", lang.hitch(this, function (name, oldValue, value) {
+            this._geocoder.watch("value", lang.hitch(this, function () {
+                var value = arguments[2];
                 this._mobileGeocoder.set("value", value);
             }));
             // keep geocoder values in sync
-            this._mobileGeocoder.watch("value", lang.hitch(this, function (name, oldValue, value) {
+            this._mobileGeocoder.watch("value", lang.hitch(this, function () {
+                var value = arguments[2];
                 this._geocoder.set("value", value);
             }));
             // geocoder nodes
@@ -536,6 +566,22 @@ function(
             var customPopup = new Popup({}, domConstruct.create("div"));
             // add popup theme
             domClass.add(customPopup.domNode, "calcite");
+            // set extent from URL Param
+            if(this.config.extent){
+                var e = this.config.extent.split(',');
+                if(e.length === 4){
+                    itemInfo.item.extent = [
+                        [
+                            parseFloat(e[0]),
+                            parseFloat(e[1])
+                        ],
+                        [
+                            parseFloat(e[2]),
+                            parseFloat(e[3])
+                        ]
+                    ];
+                }
+            }
             //can be defined for the popup like modifying the highlight symbol, margin etc.
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: {
@@ -554,10 +600,11 @@ function(
                 this.item = response.itemInfo.item;
                 this.bookmarks = response.itemInfo.itemData.bookmarks;
                 this.layerInfos = arcgisUtils.getLegendLayers(response);
-                // if title is enabled
-                if (this.config.enableTitle) {
-                    this._setTitle(this.config.title || response.itemInfo.item.title);
-                }
+                // window title and config title
+                this._setTitle(this.config.title || response.itemInfo.item.title);
+                // title bar title
+                this._setTitleBar();
+                // map loaded
                 if (this.map.loaded) {
                     this._init();
                 } else {
@@ -565,19 +612,7 @@ function(
                         this._init();
                     }));
                 }
-            }), lang.hitch(this, function (error) {
-                //an error occurred - notify the user. In this example we pull the string from the
-                //resource.js file located in the nls folder because we've set the application up
-                //for localization. If you don't need to support multiple languages you can hardcode the
-                //strings here and comment out the call in index.html to get the localization strings.
-                if (this.config && this.config.i18n) {
-                    alert(this.config.i18n.map.error + ": " + error.message);
-                } else {
-                    alert("Unable to create map: " + error.message);
-                }
-                // hide loading div
-                this._hideLoadingIndicator();
-            }));
+            }), this.reportError);
         }
     });
 });

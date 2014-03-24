@@ -1,12 +1,14 @@
-change report #36 at 03/03/2014 15:26:48.49
+change report #37 at 03/06/2014 11:57:34.41
 -
 for git branch
-hotfix_graphics_selection
+hotfix_redirect_to_tryit
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M apps2/FindEditFilter.json
- M apps2/Finder.json
- M js2/lgonlineCommand.js
- M js2/lgonlineMap.js
+M  apps2/FindEditFilter.json
+M  apps2/Finder.json
+M  doc/markdown/HowToHostAppOnYourServer.md
+M  doc/markdown/images/defaultFinderMap.png
+M  doc/markdown/images/understanding.png
+M  js2/lgonlineBuildUI.js

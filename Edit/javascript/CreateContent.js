@@ -2,6 +2,7 @@ define([
   "dojo/_base/declare", 
   "dojo/parser", 
   "dojo/_base/lang",
+  "dojo/_base/array",
   "dojo/string",
   "dojo/_base/window",
   "dojo/on",
@@ -11,6 +12,7 @@ define([
   "dojo/dom-class",
   "dojo/dom-construct",
   "esri/domUtils",
+  "esri/dijit/editing/Editor",
   "dijit/layout/BorderContainer",
   "dijit/layout/ContentPane"
   ],
@@ -18,6 +20,7 @@ define([
       declare, 
       parser, 
       lang, 
+      array,
       string, 
       win, 
       on, 
@@ -27,6 +30,7 @@ define([
       domClass, 
       domConstruct, 
       domUtils, 
+      Editor,
       BorderContainer, 
       ContentPane
       ){
@@ -37,8 +41,15 @@ define([
             header: null,
             mapPane: null,
             displayButton:null,
+            editableLayers:[],
+            options:null,
+            map: null,
+            handler: null,
             constructor: function(args){
              (has("touch") && window.innerWidth <= 360) ? this.isMobile = true : this.isMobile = false;
+              this.options = args;
+  
+      
             },
             createLayout: function(){
                 var deferred = new Deferred();
@@ -71,9 +82,16 @@ define([
 
                    //toggle the panel content when button is clicked 
                    on(this.displayButton, "click",lang.hitch(this, function () {
+                         var lp = dom.byId("leftPane");
+                         lp.style.display === "none" ? domUtils.show(lp) : domUtils.hide(lp);     
+
+                        //create the content (legend or editor) or toggle it 
                         //toggle the panel content 
-                          var lp = dom.byId("leftPane");
-                         lp.style.display === "none" ? domUtils.show(lp) : domUtils.hide(lp);
+                        if(!this.editorWidget){
+                          this.createEditor();
+  
+                        }
+
                       }));
                     content = h;
                   }
@@ -97,6 +115,7 @@ define([
                         id: "leftPane",
                         region: "left"
                     }).placeAt(this.mainWindow);
+
                  }else{
 
                   this.leftPanel = domConstruct.create("div",{
@@ -162,6 +181,87 @@ define([
                var lp = dom.byId("leftPane");
                domUtils.hide(lp);
               }
+            },
+            getEditableLayers: function(layers,map){
+              this.map = map;
+                array.forEach(layers, lang.hitch(this,function(layer){
+
+                    if(layer &&  layer.layerObject ){
+
+                        var eLayer = layer.layerObject;
+ 
+                        if(eLayer instanceof esri.layers.FeatureLayer && eLayer.isEditable()){
+
+                              this.editableLayers.push({'featureLayer' : eLayer})   
+
+                        }
+
+                    }
+                }));
+
+
+
+                 //add field infos if applicable - this will contain hints if defined in the popup. Also added logic to hide fields that have visible = false. The popup takes 
+                 //care of this for the info this but not for the edit this. 
+                 array.forEach(this.editableLayers, lang.hitch(this, function(layer){
+                    if(layer.featureLayer && layer.featureLayer.infoTemplate && layer.featureLayer.infoTemplate.info && layer.featureLayer.infoTemplate.info.fieldInfos){
+                        //only display visible fields 
+                        var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
+        
+                        var fieldInfos = [];
+                        array.forEach(fields, function(field){
+                          if(field.visible){
+                            fieldInfos.push(field);
+                          }
+                        });
+                        layer.fieldInfos = fieldInfos;
+                    }
+                 }));
+
+
+                return this.editableLayers         
+
+            },
+
+            createEditor: function(){
+      
+               //disconnect the popup handler
+                  if(this.handler){
+                    this.handler.remove();
+                  }
+
+                //display the toolbar if the configuration option has been enabled and the site isn't mobile.
+                var settings = {
+                  map: this.map,
+                  layerInfos: this.editableLayers,
+                  toolbarVisible: (this.options.displaytoolbar && !this.isMobile) ? true : false
+                };
+
+                var params = {
+                  settings: settings
+                };
+
+                //create the editor, apply snapping and disable the tooltips for the template picker
+
+                this.editorWidget = new Editor(params, domConstruct.create("div",{},dom.byId("editorDiv")));//dom.byId('editorDiv'));
+   
+                this.editorWidget.startup();
+
+                //when template picker selection changes close this
+                if(this.editorWidget && this.editorWidget.templatePicker && this.isMobile){
+                  this.editorWidget.templatePicker.on("selection-change", lang.hitch(this,function(){
+                    this.hidePanelContent();
+                  }));
+                }
+
+                this.map.enableSnapping();
+
+            },
+            destroyEditor: function(){
+              if(this.editorWidget){
+                this.editorWidget.destroy();
+              }
+              this.editorWidget = null;
             }
            });
         return CreateContent;

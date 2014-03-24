@@ -15,7 +15,9 @@ define([
     "dojo/dom-construct",
     "dojo/dom-class",
     "dojo/dom-style",
-    "dojo/dom-geometry"
+    "dojo/dom-geometry",
+    "dojo/topic",
+    "dojo/aspect"
 ],
 function (
     Evented,
@@ -26,7 +28,7 @@ function (
     on,
     dijitTemplate, i18n,
     number,
-    domConstruct, domClass, domStyle, domGeom
+    domConstruct, domClass, domStyle, domGeom, topic, aspect
 ) {
     var Widget = declare([_WidgetBase, _TemplatedMixin, Evented], {
         declaredClass: "esri.dijit.StatsBlock",
@@ -34,6 +36,7 @@ function (
         options: {
             features: null,
             config: null,
+            newConfig: null,
             stats: null,
             direction: 'ltr'
         },
@@ -181,7 +184,18 @@ function (
         _decPlaces: function(n) {
             // number not defined
             if (!n) {
-                n = 0;
+                if (n === 0) {
+                    n = 0;
+                }
+                else if (n === undefined) {
+                    //add "+" if no values are configured and user us in edit mode
+                    if (this.appConfig.edit) {
+                        n = "<b>+</b>";
+                    }
+                    else {
+                        n = 0;
+                    }
+                }
             }
             // format number according to length
             var decPlaces;
@@ -198,14 +212,30 @@ function (
             return this._formatNumber(n, decPlaces);
         },
         _displayStats: function() {
+            var i, j, k;
             // get features to display
             var features = this.get("features");
             // if we have features
             if (features && features.length) {
                 // all config to summarize
                 var config = this.get("config");
+                this.newConfig = lang.clone(config);
+                for (i = config.length - 1; i >= 0; i--) {
+                    if (config[i].attribute.trim() === "") {
+                        config.splice(i, 1);
+                    }
+                }
+                //checking wether to show only configured variables or to show all the four stats block
+                if (this.appConfig.edit) {
+                    this.set("config", this.newConfig);
+                    config = this.get("config");
+                    this.appConfig.summaryAttributes = this.newConfig;
+                }
+                else {
+                    this.set("config", config);
+                    config = this.get("config");
+                }
                 var stats = {};
-                var i, j, k;
                 // each feature
                 for (i = 0; i < features.length; i++) {
                     // first feature
@@ -252,9 +282,12 @@ function (
                 // create panel events
                 for (i = 0; i < this._nodes.length; i++) {
                     // if panel has children
-                    if(config[i].children && config[i].children.length){
-                        this._panelClickEvent(this._nodes[i].panel, i);
-                        this._panelCloseEvent(this._nodes[i].detailedPanelHeaderClose);
+                    if (config[i].children && config[i].children.length) {
+                        //Attach panelClick event only if user is in preview mode
+                        if (!this.appConfig.edit) {
+                            this._panelClickEvent(this._nodes[i].panel, i);
+                            this._panelCloseEvent(this._nodes[i].detailedPanelHeaderClose);
+                        }
                     }
                 }
                 // show geo stats
@@ -262,6 +295,7 @@ function (
             } else {
                 this.hide();
             }
+            topic.publish("createEditIcons");
         },
         _panelCloseEvent: function(node) {
             var expandedClick = on(node, 'click', lang.hitch(this, function() {
@@ -385,7 +419,7 @@ function (
                 // slider container
                 detailedContainer = domConstruct.create('div', {
                     className: this.css.divSliderContainer
-                });  
+                });
                 // paginate left
                 detailedLeft = domConstruct.create('div', {
                     className: this.css.divLeft
@@ -416,7 +450,7 @@ function (
                 detailedPaginationContainer = domConstruct.create('div', {
                     className: this.css.divPaginationContainer
                 });
-                domConstruct.place(detailedPaginationContainer, detailedInnerContainer, 'last');              
+                domConstruct.place(detailedPaginationContainer, detailedInnerContainer, 'last');
                 // pagination
                 detailedPagination = domConstruct.create('div', {
                     className: this.css.divPagination
@@ -713,7 +747,7 @@ function (
         _resizeSliders: function() {
             if(this._nodes && this._nodes.length){
                 // each panel
-                for(var i = 0; i < this._nodes.length; i++){  
+                for(var i = 0; i < this._nodes.length; i++){
                     // get data node
                     var dataNode = this._nodes[i].detailedData;
                     if(dataNode){
@@ -733,7 +767,6 @@ function (
                                 this._showSelectedPage(i, 0);
                             }
                         }
- 
                     }
                 }
             }

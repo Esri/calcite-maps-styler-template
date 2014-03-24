@@ -111,7 +111,7 @@ define([
             var config = {
                 digitsNumber : 17,
                 direction : Counter.ScrollDirection.Upwards,
-                characterSet : "0123456789., ",
+                characterSet : "0123456789.,- ",
                 charsImageUrl : "images/c.png",
                 markerImageUrl : "images/m.png"
             };

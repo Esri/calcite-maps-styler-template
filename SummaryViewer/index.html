@@ -1,138 +1,134 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Summary Viewer</title>
-		<meta charset="utf-8">
-		<!-- Mobile -->
-	    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-	    <meta name="apple-mobile-web-app-capable" content="yes" />
-	    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-	    <!-- End Mobile -->
-		<!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
-		<link rel="stylesheet" href="//js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
-		<link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/esri/css/esri.css">
-		<!--Load any application specific styles-->
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<!--<link rel="stylesheet" type="text/css" href="css/counter.css">-->
-		<!-- Application specific javascript files -->
-		<script type="text/javascript" src="js/c.js"></script>
-	</head>
-	<body class="claro">
+<head>
+	<title>Summary Viewer</title>
+	<meta charset="utf-8">
+	<!-- Mobile -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <!-- End Mobile -->
+	<!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
+	<link rel="stylesheet" href="//js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
+	<link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.9/js/esri/css/esri.css">
+	<!--Load any application specific styles-->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!--<link rel="stylesheet" type="text/css" href="css/counter.css">-->
+	<!-- Application specific javascript files -->
+	<script type="text/javascript" src="js/c.js"></script>
+</head>
+<body class="claro">
 
-		<!-- Map -->
-		<div id="mapDiv" dir="ltr"></div>
+	<!-- Map -->
+	<div id="mapDiv" dir="ltr"></div>
 
-		<!-- Panel Title -->
-		<div class="panelTitle  bg rounded shadow">
-			<div id="panelLogo"><img id="logo" src="images/logo.png" style="height:100%" />
-			</div>
-			<div id="panelMain">
-			</div>
-			<div id="panelFilter">
-				<select id="selFilter">
-				</select>
-			</div>
+	<!-- Panel Title -->
+	<div class="panelTitle  bg rounded shadow">
+		<div id="panelLogo"><img id="logo" src="images/logo.png" style="height:100%" />
 		</div>
+		<div id="panelMain">
+		</div>
+		<div id="panelFilter">
+			<select id="selFilter">
+			</select>
+		</div>
+	</div>
 
-		<!-- Panel Bottom -->
-		<div id="bgBottom" class="panelBottom bg shadow"></div>
-		<div class="panelBottom">
-			<!--Panel Container -->
-			<div id="panelContainer">
-				<div id="panel0" class="col">
-					<div id="title0" class="titleCounter">
-					</div>
-					<div id="counter0" class="counter"></div>
-					<div id="units0" class="units"></div>
+	<!-- Panel Bottom -->
+	<div id="bgBottom" class="panelBottom bg shadow"></div>
+	<div class="panelBottom">
+		<!--Panel Container -->
+		<div id="panelContainer">
+			<div id="panel0" class="col">
+				<div id="title0" class="titleCounter">
 				</div>
-				<div id="panel1" class="col line">
-					<div id="title1" class="titleCounter">
-					</div>
-					<div id="counter1" class="counter"></div>
-					<div id="units1" class="units"></div>
+				<div id="counter0" class="counter"></div>
+				<div id="units0" class="units"></div>
+			</div>
+			<div id="panel1" class="col line">
+				<div id="title1" class="titleCounter">
 				</div>
-				<div id="panel2" class="col line">
-					<div id="title2" class="titleCounter">
-					</div>
-					<div id="counter2" class="counter"></div>
-					<div id="units2" class="units"></div>
+				<div id="counter1" class="counter"></div>
+				<div id="units1" class="units"></div>
+			</div>
+			<div id="panel2" class="col line">
+				<div id="title2" class="titleCounter">
 				</div>
-				<div id="panel3" class="col line">
-					<div id="title3" class="titleCounter">
-					</div>
-					<div id="counter3" class="counter"></div>
-					<div id="units3" class="units"></div>
+				<div id="counter2" class="counter"></div>
+				<div id="units2" class="units"></div>
+			</div>
+			<div id="panel3" class="col line">
+				<div id="title3" class="titleCounter">
 				</div>
+				<div id="counter3" class="counter"></div>
+				<div id="units3" class="units"></div>
 			</div>
 		</div>
-		
-		<!-- Panel Bottom Nav -->
-		<div class="panelBottomNav">
-			<ul id="pages" class="navigation">
-			</ul>
+	</div>
+	
+	<!-- Panel Bottom Nav -->
+	<div class="panelBottomNav">
+		<ul id="pages" class="navigation">
+		</ul>
+	</div>
+	
+	<!-- Panel Message -->
+	<div id="panelMessage">
+		<span id="msgText"></span>
+		<img id="msgClose" src="images/close.png" />
+	</div>
+	
+	<!-- Panel Basemaps -->
+	<div id="panelBasemaps" class="panelBasemaps bg rounded shadow" >
+		<div id="basemapTitle"><img src="images/basemaps.png" title="Switch Base Map"/></div>
+		<div id="basemapContent">
+			<div id="basemapGallery" ></div>
 		</div>
-		
-		<!-- Panel Message -->
-		<div id="panelMessage">
-			<span id="msgText"></span>
-			<img id="msgClose" src="images/close.png" />
-		</div>
-		
-		<!-- Panel Basemaps -->
-		<div id="panelBasemaps" class="panelBasemaps bg rounded shadow" >
-			<div id="basemapTitle"><img src="images/basemaps.png" title="Switch Base Map"/></div>
-			<div id="basemapContent">
-				<div id="basemapGallery" ></div>
-			</div>
-		</div>
-		
+	</div>
+	
 
-		<script type="text/javascript">
-            var package_path = location.pathname.replace(/\/[^/]+$/, '');
-            var dojoConfig = {
-                // The locationPath logic below may look confusing but all its doing is
-                // enabling us to load the api from a CDN and load local modules from the correct location.
-                packages : [{
-                    name : "application",
-                    location : package_path + '/js'
-                }, {
-                    name : "config",
-                    location : package_path + '/config'
-                },{
-              	  name: "templateConfig",
-               	  location: package_path.substr(0,package_path.lastIndexOf('/'))
-            }]
-            };
-		</script>
+	<script type="text/javascript">
+        var package_path = location.pathname.replace(/\/[^/]+$/, '');
+        var dojoConfig = {
+            // The locationPath logic below may look confusing but all its doing is
+            // enabling us to load the api from a CDN and load local modules from the correct location.
+            packages : [{
+                name : "application",
+                location : package_path + '/js'
+            }, {
+                name : "config",
+                location : package_path + '/config'
+            },{
+          	  name: "templateConfig",
+           	  location: package_path.substr(0,package_path.lastIndexOf('/'))
+        }]
+        };
+	</script>
 
-		<script type="text/javascript" src="//js.arcgis.com/3.9/"></script>
-		</script>
-		<script type="text/javascript">
-            require(["dojo/on", "application/main", "application/template", "dojo/domReady!"], function(on, Main, Template) {
-                //create the template. This will take care of all the logic required for template applications
-                //If you need localization set the supportsLocalization value to true to get the localized strings
-                //from the javascript/nls/resource files.
-                //Note that we've included a placeholder nls folder and a resource file with one error string
-                //to show how to setup the strings file.
+	<script type="text/javascript" src="//js.arcgis.com/3.9/"></script>
+	</script>
+	<script type="text/javascript">
+        require(["dojo/on", "application/main", "application/template", "dojo/domReady!"], function(on, Main, Template) {
+            //create the template. This will take care of all the logic required for template applications
+            //If you need localization set the supportsLocalization value to true to get the localized strings
+            //from the javascript/nls/resource files.
+            //Note that we've included a placeholder nls folder and a resource file with one error string
+            //to show how to setup the strings file.
 
-                var supportsLocalization = false;
+            var supportsLocalization = false;
 
-                var myTemplate = new Template(supportsLocalization);
+            var myTemplate = new Template(supportsLocalization);
 
-                on(myTemplate, "ready", function(config) {
-                    //The config object contains the following properties: helper services, (optionally)
-                    //i18n, appid, webmap and any custom values defined by the application.
-                    //In this example we have one called theme.
-                    Main(config);
-                });
-                
+            on(myTemplate, "ready", function(config) {
+                //The config object contains the following properties: helper services, (optionally)
+                //i18n, appid, webmap and any custom values defined by the application.
+                //In this example we have one called theme.
+                Main(config);
             });
-		</script>
-	</body>
+            
+        });
+	</script>
+</body>
 </html>
-});
-		</script>
-	</body>
-</html>
-tml>
+

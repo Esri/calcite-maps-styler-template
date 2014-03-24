@@ -67,12 +67,12 @@
                "label":"Default Menu Panel",
                "options":[
                   {
-                     "label":"Map",
-                     "value":"map"
+                     "label":"About",
+                     "value":"about"
                   },
                   {
-                     "label":"layers",
-                     "value":"Layers"
+                     "label":"Layers",
+                     "value":"layers"
                   },
                   {
                      "label":"Legend",
@@ -87,15 +87,21 @@
          "fields":[
             {
                "type":"boolean",
-               "fieldName":"enableTitle",
-               "label":"Enable Title",
-               "tooltip":"Enable Title"
+               "fieldName":"enableSummaryInfo",
+               "label":"Enable Summary Information",
+               "tooltip":"Enable Summary Information"
             },
             {
                "type":"boolean",
-               "fieldName":"enableSummary",
-               "label":"Enable Summary Description",
-               "tooltip":"Enable Summary Description"
+               "fieldName":"enableModifiedDate",
+               "label":"Enable Modified date",
+               "tooltip":"Enable Modified date"
+            },
+            {
+               "type":"boolean",
+               "fieldName":"enableMoreInfo",
+               "label":"Enable More Information link",
+               "tooltip":"Enable More Information link"
             },
             {
                "type":"boolean",
@@ -105,9 +111,9 @@
             },
             {
                "type":"boolean",
-               "fieldName":"enableMapPanel",
-               "label":"Enable Map Panel",
-               "tooltip":"Enable Map Panel"
+               "fieldName":"enableAboutPanel",
+               "label":"Enable About Panel",
+               "tooltip":"Enable About Panel"
             },
             {
                "type":"boolean",
@@ -132,12 +138,6 @@
                "fieldName":"enableBasemapToggle",
                "label":"Enable Basemap Toggle",
                "tooltip":"Enable Basemap Toggle"
-            },
-            {
-               "type":"boolean",
-               "fieldName":"enableAboutDialog",
-               "label":"Enable About Dialog",
-               "tooltip":"Enable About Dialog"
             },
             {
                "type":"boolean",
@@ -377,14 +377,13 @@
    ],
    "values":{
       "title":"",
-      "enableSummary":true,
+      "enableSummaryInfo":true,
       "enableLegendPanel":true,
       "hideNotesLayerPopups":true,
-      "enableMapPanel":true,
+      "enableAboutPanel":true,
       "enableHomeButton":true,
       "enableLocateButton":true,
       "enableBasemapToggle":true,
-      "enableAboutDialog":true,
       "showAboutOnLoad":false,
       "enableShareDialog":true,
       "enableBookmarks":true,

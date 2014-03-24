@@ -37,10 +37,12 @@ define([
             geocoder:null,
             allResults: null,
             config:null,
+            content: null,
             constructor: function(args){
              this.map = args.map;
              this.config = args.config;
-             
+             this.content = args.content;
+
 
             var options = this._createGeocoderOptions();
             var geocoderDiv = domConstruct.create("div",{id:"geocoderDiv"});
@@ -156,6 +158,19 @@ define([
             this.map.infoWindow.setTitle("Location");
 
             this.map.infoWindow.setContent(content);
+
+
+            //ensure popups don't interfere with editor content 
+            on.once(map.infoWindow, "hide",lang.hitch(this,function(){
+                if(this.content.editorWidget){
+                    this.content.destroyEditor();
+                    if(!this.content.isMobile){
+                       this.content.createEditor();
+                    }
+
+
+                }
+            }));
             query(".li_item").forEach(lang.hitch(this, function(node){
                 on(node, "click", lang.hitch(this, function(){
                     if(node.id >= 0){
