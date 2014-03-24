@@ -170,6 +170,6 @@ define({
         },
         "geocode": [{
             "url": null
-           }]
+        }]
     }
 });

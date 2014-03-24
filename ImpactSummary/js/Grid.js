@@ -8,7 +8,7 @@ define([
   "dijit/_TemplatedMixin",
   "dijit/_WidgetsInTemplateMixin",
   "dgrid/Grid",
-  "application/_RefreshMixin",
+  "application/RefreshMixin",
   "dgrid/Selection",
   "dgrid/extensions/Pagination",
   "dojo/query",

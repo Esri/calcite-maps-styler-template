@@ -60,8 +60,8 @@ define([
                     this._sb = new StatsBlock({
                         config: this.config.summaryAttributes,
                         direction: this.config.i18n.direction,
-                        appConfig: this.data
-                    }, dom.byId('geoData'));
+                        appConfig: this.config //we need a config object here to check for edit mode and adding "+" variables
+                    }, dom.byId('geoData'));   //So, i think we need not need this.data l.e entire response
                     this._sb.startup();
                     // init layer
                     // layer found
@@ -194,9 +194,9 @@ define([
                     var mapLayer = this.map.getLayer(id);
                     if(mapLayer){
                         if(mapLayer.arcgisProps && mapLayer.arcgisProps.title){
-                            this._impactAreaTitle = mapLayer.arcgisProps.title;   
+                            this._impactAreaTitle = mapLayer.arcgisProps.title;
                         }
-                        return mapLayer; 
+                        return mapLayer;
                     }
                     else{
                         return false;
