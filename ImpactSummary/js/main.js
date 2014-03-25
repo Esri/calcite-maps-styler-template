@@ -80,12 +80,13 @@ function(
             // mobile size switch domClass
             this._showDrawerSize = 850;
         },
-        startup: function(config, appResponse){
+        startup: function (config, appResponse, userInfo) {
             //config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
             // any url parameters and any application specific configuration information.
             this.config = config;
             this.data = appResponse;
+            this.userInfo = userInfo;
             // drawer
             this._drawer = new Drawer({
                 direction: this.config.i18n.direction,
@@ -322,7 +323,7 @@ function(
             if (this.config.appid) {
                 var signIn = new signInHelper();
                 // builder mode
-                if (signIn.userIsAppOwner(this.data)) {
+                if (signIn.userIsAppOwner(this.data, this.userInfo)) {
                     // require module
                     require(["application/TemplateBuilder"], lang.hitch(this, function (TemplateBuilder) {
                         // create template builder
@@ -331,6 +332,7 @@ function(
                             config: this.config,
                             response: this.data,
                             layers: this.layers,
+                            userInfo: this.userInfo,
                             map: this.map
                         });
                         builder.startup();

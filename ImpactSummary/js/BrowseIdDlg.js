@@ -25,8 +25,9 @@ define([
 ], function (Evented, declare, connect, lang, dojoEvent, dom, keys, registry, on, query, domStyle, Grid, esriPortal, i18n, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, template, esriRequest) {
     return declare([Evented, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
-        constructor: function (args) {
+        constructor: function (args, userInfo) {
             lang.mixin(this, args);
+            this.userInfo = userInfo;
         },
         postMixInProperties: function () {
             this.inherited(arguments);
@@ -64,14 +65,14 @@ define([
             this._filterSelectHandler = on(this._filterSelect, "change", lang.hitch(this, "doSearch"));
 
             var query = {};
-            if (dojo.currentLoggedInUser) {
-                query.q = "owner: " + dojo.currentLoggedInUser;
+            if (this.userInfo.username) {
+                query.q = "owner: " + this.userInfo.username;
             }
             if (this.galleryType === "webmap") {
                 query.q += ' type:"Web Map" -type:"Web Mapping Application"';
             }
             this._grid = new Grid({
-                "portal": this.portal,
+                "portal": this.userInfo.portal,
                 "query": query,
                 "pagingLinks": true,
                 "galleryType": this.galleryType,
@@ -99,7 +100,7 @@ define([
         doSearch: function () {
             var filter = this._filterSelect.get("value"), portalUser = {};
             esriRequest({
-                url: dojo.portal.url + "/sharing/rest/community/users/" + dojo.currentLoggedInUser,
+                url: this.userInfo.portal.url + "/sharing/rest/community/users/" + this.userInfo.username,
                 content: {
                     "f": "json"
                 },

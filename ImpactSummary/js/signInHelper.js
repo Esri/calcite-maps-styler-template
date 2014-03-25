@@ -56,13 +56,13 @@ function (Evented, declare, lang, _WidgetBase, ContentPane, on, arcgisUtils, por
             return esriCookie ? esriCookie : null;
         },
 
-        userIsAppOwner: function (itemData) {
-            return (itemData.item.owner == dojo.currentLoggedInUser);
+        userIsAppOwner: function (itemData, userInfo) {
+            return (userInfo && itemData.item.owner == userInfo.username);
         },
 
-        authenticateUser: function (isEditMode, data) {
+        authenticateUser: function (isEditMode, data, userInfo) {
             if (isEditMode) {
-                if (this.userIsAppOwner(data)) {
+                if (this.userIsAppOwner(data, userInfo)) {
                     return true;
                 }
                 else {

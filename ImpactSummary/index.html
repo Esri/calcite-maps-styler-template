@@ -124,15 +124,16 @@
                 //The config object contains the following properties: helper services, (optionally)
                 //i18n, appid, webmap and any custom values defined by the applcation.
                 //In this example we have one called theme.
-                var signIn = new signInHelper();
-                if (config.appid) {
+                var signIn = new signInHelper(), userInfo = {};
+                if (config.appid && config.edit) {
                     var userDetails = signIn.getPortalUser();
                     if (userDetails) {
-                        dojo.currentLoggedInUser = userDetails.email;
-                        dojo.token = userDetails.token;
-                        var canExcute = signIn.authenticateUser(config.edit, myTemplate.appResponse);
+                        userInfo.username = userDetails.email;
+                        userInfo.token = userDetails.token;
+                        userInfo.portal = signIn.getPortal();
+                        var canExcute = signIn.authenticateUser(config.edit, myTemplate.appResponse, userInfo);
                         if (canExcute) {
-                            myApp.startup(config, myTemplate.appResponse);
+                            myApp.startup(config, myTemplate.appResponse, userInfo);
                         }
                         else{
                             myApp.reportError(new Error('Could not authenticate user'));
@@ -140,10 +141,12 @@
                     }
                     else {
                         signIn.createPortal().then(function (loggedInUser) {
-                            dojo.currentLoggedInUser = loggedInUser.username;
-                            var canExcute = signIn.authenticateUser(config.edit, myTemplate.appResponse);
+                            userInfo.username = loggedInUser.username;
+                            userInfo.token = loggedInUser.credential.token;
+                            userInfo.portal = signIn.getPortal();
+                            var canExcute = signIn.authenticateUser(config.edit, myTemplate.appResponse, userInfo);
                             if (canExcute) {
-                                myApp.startup(config, myTemplate.appResponse);
+                                myApp.startup(config, myTemplate.appResponse, userInfo);
                             }
                             else{
                                 myApp.reportError(new Error('Could not authenticate user'));

@@ -41,7 +41,8 @@ define({
                 "savingChangesMessage": "Saving Changes...",
                 "nextButtonText": "Next",
                 "prevButtonText": "Previous",
-                "enterLabelText":"Enter Label",
+                "enterLabelText": "Enter Label",
+                "layerHelpTextMessage": "This application requires a layer with numeric fields",
                 "alertMessage": {
                     "resetVariableMessage": "Are You sure you want to reset variable ?",
                     "emptyAppTitleMessage": "Application title cannot be empty",

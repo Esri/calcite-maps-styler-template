@@ -137,15 +137,18 @@ function (
                 if (this.unSavedChanges) {
                     isSaveRequire = confirm(nls.widgets.TemplateBuilder.alertMessage.saveChangesAlert);
                 }
-                isSaveRequire ? this._updateItem(false, newURL) : this._updateItem(true, newURL);
+                if (isSaveRequire)
+                    this._updateItem(false, newURL);
+                else
+                    this._updateItem(true, newURL);
             }));
 
             this._showEditableUI();
             browseParams = {
-                portal: dojo.portal,
+                portal: this.userInfo.portal,
                 galleryType: "webmap" //valid values are webmap or group
             };
-            this.browseDlg = new BrowseIdDlg(browseParams);
+            this.browseDlg = new BrowseIdDlg(browseParams, this.userInfo);
             on(this.browseDlg, "close", lang.hitch(this, function () {
                 if (this.browseDlg.get("selected") !== null && this.browseDlg.get("selectedWebmap") !== null) {
                     var currentWebmapTitle = string.substitute(nls.widgets.TemplateBuilder.loadMapMessage, { webmapTitle: this.browseDlg.get("selected") });
@@ -220,7 +223,7 @@ function (
             appDescriptionLabelContainer = domConstruct.create("div", { "class": "esriClear" }, leftSettingsContent);
             appDescriptionLabel = domConstruct.create("label", { innerHTML: nls.widgets.TemplateBuilder.appSettingsDescriptionText }, appDescriptionLabelContainer);
             appDescriptionInputContainer = domConstruct.create("div", { "class": "esriClear" }, leftSettingsContent);
-            dijitValue = this.config.summary ? this.config.summary : this.response ? this.response.item.snippet : "";
+            dijitValue = this.config.summary ? this.config.summary : " ";
             appDijitInputContainer = this._createTextEditor(appDescriptionInputContainer, dijitValue);
             appDijitInputContainer.onLoadDeferred.then(lang.hitch(this, function () {
                 setTimeout(function () {
@@ -500,8 +503,14 @@ function (
         //function to check button state
         _checkButtonState: function (isButtonEnabled) {
             var buttonState = {};
-            isButtonEnabled ? buttonState.class = "esriOnButton" : buttonState.class = "esriOffButton";
-            isButtonEnabled ? buttonState.label = nls.widgets.TemplateBuilder.onButtonLabel : buttonState.label = nls.widgets.TemplateBuilder.offButtonLabel;
+            if (isButtonEnabled) {
+                buttonState.class = "esriOnButton";
+                buttonState.label = nls.widgets.TemplateBuilder.onButtonLabel;
+            }
+            else {
+                buttonState.class = "esriOffButton";
+                buttonState.label = nls.widgets.TemplateBuilder.offButtonLabel;
+            }
             return buttonState;
         },
 
@@ -637,12 +646,12 @@ function (
 
         //Populate all featurelayer into dropdown and allow user to change the impact layer
         _createLayerConfigurationPanel: function (fieldsetContainer) {
-            var layerLabel, layerSelect, layerSelectOption,
-            configurePreviousVariableButton, layerHelperText, legendLabeldiv, configurationPanelButtonContainer, innerButtonContainer, configureSaveVariableButton;
+            var layerLabel, layerSelect, layerSelectOption, configurePreviousVariableButton, layerHelperText, legendLabeldiv,
+                configurationPanelButtonContainer, innerButtonContainer, configureSaveVariableButton;
             legendLabeldiv = domConstruct.create("div", { "class": "esriLegendLabelDiv" }, fieldsetContainer);
             layerLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.layerLabelText, "class": "esriSettingsLabel" }, legendLabeldiv);
             layerSelect = domConstruct.create("select", { "class": "esriSelect" }, legendLabeldiv);
-            layerHelperText = domConstruct.create("div", { "class": "esriLayerHelpText", innerHTML: "This application requires a polygon layer with numeric fields" }, fieldsetContainer);
+            layerHelperText = domConstruct.create("div", { "class": "esriLayerHelpText", innerHTML: nls.widgets.TemplateBuilder.layerHelpTextMessage }, fieldsetContainer);
             layerSelectOption = domConstruct.create("option");
             layerSelectOption.value = "";
             layerSelectOption.text = nls.widgets.TemplateBuilder.selectLayer;
@@ -801,6 +810,7 @@ function (
             statsPanel = query(".panel .count");
             array.forEach(statsPanel, lang.hitch(this, function (panel, index) {
                 domAttr.set(panel, "nodeIndex", index);
+                domStyle.set(panel, "cursor", "pointer");
                 on(panel, "click", lang.hitch(this, function (evt) {
                     evt.stopPropagation();
                     if (query(".esriDataContainer").length) {
@@ -910,8 +920,15 @@ function (
             buttonContainer = domConstruct.create("div", { "class": "esriSubVariableButtonContainer" }, variableContent);
             rightButtonContainer = domConstruct.create("div", { "style": "float:right" }, buttonContainer);
             leftButtonContainer = domConstruct.create("div", { "style": "float:left" }, buttonContainer);
-            populateSubVariables ? buttonState = false : buttonState = true;
-            buttonState ? buttonClass = "esriButtonDisabled" : buttonClass = "esriButtonEnabled" + currentNodeIndex;
+            if (populateSubVariables) {
+                buttonState = false;
+                buttonClass = "esriButtonEnabled" + currentNodeIndex;
+            }
+            else {
+                buttonState = true;
+                buttonClass = "esriButtonDisabled";
+            }
+
             if (buttonClass == "esriButtonDisabled") {
                 buttonVisibilty = "none";
             }
@@ -998,7 +1015,10 @@ function (
                             break;
                         }
                     }
-                    count % 2 !== 0 ? className = "esriRowEvenColor" : className = "";
+                    if (count % 2 !== 0)
+                        className = "esriRowEvenColor";
+                    else
+                        className = "";
                     subVariableContentDiv = domConstruct.create("div", { "class": "esriSubVariableContainer" }, subVariableContentContainer);
                     subVariableContentFirstDiv = domConstruct.create("div", { "class": " esriSubVariable esriFirstColumn " + className }, subVariableContentDiv);
                     checkBox = domConstruct.create("div", { "class": "esriCheckBoxIcon" + " " + checkBoxStatusClass }, subVariableContentFirstDiv);
@@ -1105,7 +1125,11 @@ function (
         _updateItem: function (isRollBackRequired, newURL) {
             //Here we are using the response,so we dont need to create whole item again.
             //we are just modifying required parameters.
-            isRollBackRequired ? this.config = this.previousConfigObj : this.config = this.config;
+            if (isRollBackRequired)
+                this.config = this.previousConfigObj;
+            else
+                this.config = this.config;
+
             delete this.config.i18n;
             if (this.config.edit) {
                 delete this.config.edit;
@@ -1118,13 +1142,13 @@ function (
                 item: this.config.appid,
                 itemType: "text",
                 f: 'json',
-                token: dojo.token,
+                token: this.userInfo.token,
                 title: this.config.title,
                 text: JSON.stringify(this.response.itemData),
                 type: "Web Mapping Application",
                 overwrite: true
             });
-            var updateURL = dojo.portal.url + "/sharing/content/users/" + dojo.currentLoggedInUser + (this.response.item.ownerFolder ? ("/" + this.response.item.ownerFolder) : "") + "/items/" + this.config.appid + "/update";
+            var updateURL = this.userInfo.portal.url + "/sharing/content/users/" + this.userInfo.username + (this.response.item.ownerFolder ? ("/" + this.response.item.ownerFolder) : "") + "/items/" + this.config.appid + "/update";
             esriRequest({
                 url: updateURL,
                 content: rqData,
