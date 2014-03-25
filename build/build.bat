@@ -58,6 +58,7 @@ mkdir %BUILD_OUTPUT%\Panels
 mkdir %BUILD_OUTPUT%\PanelsLegend
 mkdir %BUILD_OUTPUT%\PublicGallery
 mkdir %BUILD_OUTPUT%\ServiceLookup
+mkdir %BUILD_OUTPUT%\InformationLookup
 mkdir %BUILD_OUTPUT%\SimpleMapViewer
 mkdir %BUILD_OUTPUT%\SocialMedia
 mkdir %BUILD_OUTPUT%\Solutions
@@ -122,6 +123,7 @@ xcopy %TEMPLATES_ROOT%\archive\Swipe                            %BUILD_OUTPUT%\O
 xcopy %TEMPLATES_ROOT%\archive\GPX                              %BUILD_OUTPUT%\OnePane\gpx                          /E /Y
 xcopy %TEMPLATES_ROOT%\PublicGallery                            %BUILD_OUTPUT%\PublicGallery                        /E /Y
 xcopy %TEMPLATES_ROOT%\ServiceLookup                            %BUILD_OUTPUT%\ServiceLookup                        /E /Y
+xcopy %TEMPLATES_ROOT%\ServiceLookup                            %BUILD_OUTPUT%\InformationLookup                    /E /Y
 xcopy %TEMPLATES_ROOT%\SimpleMapViewer                          %BUILD_OUTPUT%\SimpleMapViewer                      /E /Y
 xcopy %TEMPLATES_ROOT%\SocialMedia                              %BUILD_OUTPUT%\SocialMedia                          /E /Y
 xcopy %TEMPLATES_ROOT%\Solutions                                %BUILD_OUTPUT%\Solutions                            /E /Y
