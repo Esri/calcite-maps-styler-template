@@ -1,14 +1,10 @@
-change report #37 at 03/06/2014 11:57:34.41
+change report #35 at 03/02/2014 11:17:53.28
 -
 for git branch
-hotfix_redirect_to_tryit
+upgrade_amd
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
-M  apps2/FindEditFilter.json
-M  apps2/Finder.json
-M  doc/markdown/HowToHostAppOnYourServer.md
-M  doc/markdown/images/defaultFinderMap.png
-M  doc/markdown/images/understanding.png
-M  js2/lgonlineBuildUI.js
+ M js2/lgonlineDrawing.js
+ M js2/lgonlineEditing.js

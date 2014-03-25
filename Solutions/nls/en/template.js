@@ -23,6 +23,7 @@ define(
             locate: "Current location",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Submit correction",  // Command button to submit a correction to the app's host
             collect: "Filter/Edit",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            dijitLegend: "Show the legend",  //Display the legend
             filter: "Filter map layers",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Switch basemap",  // Command button to open a dialog box for switching basemaps
             share: "Share",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,10 +44,10 @@ define(
             author: "author"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "Find:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Find:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "Draw",  // Appears before a set of tools for drawing on the map
-            mapLayers: "Map layers:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
-            layerFields: "Search layer fields:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
+            mapLayers: "Map layers:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
+            layerFields: "Find layer fields:"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "This site does not have permission to get the current location",  // Shown when the browser does not permit the app to get the current geographical position
