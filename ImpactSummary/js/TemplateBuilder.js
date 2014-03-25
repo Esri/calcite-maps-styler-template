@@ -98,7 +98,7 @@ function (
             if (dom.byId("claroTheme")) {
                 domAttr.set(dom.byId("claroTheme"), "href", location.protocol + "//js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css");
             }
-            domClass.add(dojo.body(), "claro");
+            domClass.add(document.body, "claro");
             //Load browser dialog
             var cssStyle = document.createElement('link');
             cssStyle.rel = 'stylesheet';
@@ -702,7 +702,7 @@ function (
 
         _createBaseMapSelectPanel: function () {
             var baseMapSelectPanel, currentBaseMapOption, nextBaseMap, nextBaseMapLabel;
-            baseMapSelectPanel = domConstruct.create("div", { "class": "esriSelectBasemapPanel" }, dojo.body());
+            baseMapSelectPanel = domConstruct.create("div", { "class": "esriSelectBasemapPanel" }, document.body);
             nextBaseMapLabel = domConstruct.create("div", { innerHTML: "Next Basemap" }, baseMapSelectPanel);
             nextBaseMap = domConstruct.create("select", { "class": "esriBaseMapSelect" }, baseMapSelectPanel);
             //Loop all the available basemaps

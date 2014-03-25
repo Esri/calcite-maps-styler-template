@@ -18,7 +18,6 @@ function (Evented, declare, lang, _WidgetBase, ContentPane, on, arcgisUtils, por
         constructor: function () {
             var portalURL = this._getPortalURL();
             this._portal = new portal.Portal(this._getPortalURL());
-            dojo.portal = this._portal;
         },
 
         createPortal: function () {
