@@ -13,7 +13,7 @@ define({
             popupNotSet: "Popup not enabled for this layer"
         },
         page: {
-            title: "Service Lookup",
+            title: "Information Lookup",
         }
     }),
     "ar": 1,
