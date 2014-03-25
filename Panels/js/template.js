@@ -70,7 +70,7 @@ define([
             // the application configuration has been applied so that the url parameters overwrite any
             // configured settings. It's up to the application developer to update the application to take 
             // advantage of these parameters. 
-            var paramItems = ["webmap", "appid", "group", "oauthappid"];
+            var paramItems = ["webmap", "appid", "group", "oauthappid","theme"];
             var mixinParams = this._createUrlParamsObject(paramItems);
             // config defaults <- standard url params
             // we need the webmap, appid, group and oauthappid to query for the data
