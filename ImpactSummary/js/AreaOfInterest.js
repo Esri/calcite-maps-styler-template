@@ -144,7 +144,7 @@ define([
                         // selected line symbol
                         var sls = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), 2);
                         // selected fill symbol
-                        var symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, sls, new Color([0, 255, 255, 0]));
+                        var symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_BACKWARD_DIAGONAL, sls, new Color([0, 255, 255, 0]));
                         // selected graphic
                         var g = new Graphic(features[i].geometry, symbol, features[i].attributes, null);
                         if (g) {
