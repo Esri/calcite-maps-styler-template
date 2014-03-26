@@ -23,6 +23,7 @@ define(
             locate: "현재 위치",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "보정 제출",  // Command button to submit a correction to the app's host
             collect: "필터/편집",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            dijitLegend: "한_Show the legend_빠",  //Display the legend
             filter: "맵 레이어 필터링",  // Explains purpose of type-in box affiliated with template picker
             basemap: "베이스맵 전환",  // Command button to open a dialog box for switching basemaps
             share: "공유",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,10 +44,10 @@ define(
             author: "작성자"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "찾기:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "찾기:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "그리기",  // Appears before a set of tools for drawing on the map
-            mapLayers: "맵 레이어:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
-            layerFields: "검색 레이어 필드:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
+            mapLayers: "맵 레이어:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
+            layerFields: "한_Find layer fields:_빠"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "이 사이트에는 현재 위치를 확인할 권한이 없습니다.",  // Shown when the browser does not permit the app to get the current geographical position

@@ -43,7 +43,7 @@
 				"numRatings": "Vertinimai",
 				"avgRating": "Vid. vertinimas",
 				"numComments": "Komentarai",
-				"numViews": "Peržiūras"
+				"numViews": "Peržiūros"
 			},
 			"comments":{
 				"commentsHeader": "Komentarai",

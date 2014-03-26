@@ -23,6 +23,7 @@ define(
             locate: "Gjeldende plassering",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Send rettelse",  // Command button to submit a correction to the app's host
             collect: "Filtrer/rediger",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            dijitLegend: "å_Show the legend_ø",  //Display the legend
             filter: "Filtrer kartlag",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Bytt bakgrunnskart",  // Command button to open a dialog box for switching basemaps
             share: "Del",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,10 +44,10 @@ define(
             author: "oppretter"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "Søk etter:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Søk etter:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "Tegn",  // Appears before a set of tools for drawing on the map
-            mapLayers: "Kartlag:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
-            layerFields: "Søk i lagfelt:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
+            mapLayers: "Kartlag:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
+            layerFields: "å_Find layer fields:_ø"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "Dette området har ikke tillatelse til å hente gjeldende plassering",  // Shown when the browser does not permit the app to get the current geographical position

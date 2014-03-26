@@ -23,6 +23,7 @@ define(
             locate: "Emplacement actuel",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Envoyer une correction",  // Command button to submit a correction to the app's host
             collect: "Filtrer/Modifier",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            dijitLegend: "æ_Show the legend_Â",  //Display the legend
             filter: "Filtrer les couches de carte",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Changer de fond de carte",  // Command button to open a dialog box for switching basemaps
             share: "Partager",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,10 +44,10 @@ define(
             author: "auteur"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "Rechercher :",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Rechercher :",  // Appears before a find text field in dialog box for searching for a feature
             markup: "Dessiner",  // Appears before a set of tools for drawing on the map
-            mapLayers: "Couches de carte :",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
-            layerFields: "Champs de la couche de recherche :"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
+            mapLayers: "Couches de carte :",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
+            layerFields: "æ_Find layer fields:_Â"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "Ce site ne détient pas d\'autorisation pour obtenir l\'emplacement actuel",  // Shown when the browser does not permit the app to get the current geographical position

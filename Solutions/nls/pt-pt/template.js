@@ -23,6 +23,7 @@ define(
             locate: "Localização atual",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Enviar correção",  // Command button to submit a correction to the app's host
             collect: "Filtrar/Editar",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            dijitLegend: "ã_Show the legend_Ç",  //Display the legend
             filter: "Filtrar camadas do mapa",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Mudar mapa base",  // Command button to open a dialog box for switching basemaps
             share: "Partilhar",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,10 +44,10 @@ define(
             author: "autor"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "Localizar:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Localizar:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "Desenhar",  // Appears before a set of tools for drawing on the map
-            mapLayers: "Camadas do mapa:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
-            layerFields: "Pesquisar campos de camada:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
+            mapLayers: "Camadas do mapa:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
+            layerFields: "ã_Find layer fields:_Ç"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "Este site não tem permissão para obter a localização atual",  // Shown when the browser does not permit the app to get the current geographical position

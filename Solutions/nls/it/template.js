@@ -23,6 +23,7 @@ define(
             locate: "Posizione corrente",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Invia correzione",  // Command button to submit a correction to the app's host
             collect: "Filtra/Modifica",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            dijitLegend: "é_Show the legend_È",  //Display the legend
             filter: "Layer mappa di filtro",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Cambia mappa di base",  // Command button to open a dialog box for switching basemaps
             share: "Condividi",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,10 +44,10 @@ define(
             author: "autore"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "Trova:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Trova:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "Disegna",  // Appears before a set of tools for drawing on the map
-            mapLayers: "Layer mappa:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
-            layerFields: "Campi dei layer di ricerca:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
+            mapLayers: "Layer mappa:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
+            layerFields: "é_Find layer fields:_È"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "Il sito non è autorizzato a ottenere la posizione corrente",  // Shown when the browser does not permit the app to get the current geographical position

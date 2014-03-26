@@ -1,49 +1,57 @@
-define({
-    root: ({
+﻿define(
+     ({
         map: {
-            error: "Unable to create map"
+            error: "يتعذر إنشاء الخريطة"
         },
         report: {
-            flag: "Flag as innapropriate",
-            error: "Error",
-            success: "Flagged",
-            loading: "Loading&hellip;"
+            flag: "العلامة غَيْرُ مُوَافِقة",
+            error: "خطأ",
+            success: "مُعلَّم",
+            loading: "تحميل&hellip"
         },
         mapNotes:{
-            notesUnavailable: "Description unavailable",
-            bookmarks: "Bookmarks",
-            untitledNote: "Untitled"
+            notesUnavailable: "الوصف غير متاح",
+            bookmarks: "إشارات مرجعية",
+            zoomTo: "بيت_Zoom to this location and find out more information._لاحقة",
+            untitledNote: "بدون عنوان"
         },
         social: {
             flickr: "Flickr",
-            flickrSettings: "Flickr Settings",
+            mediaLayers: "بيت_Media Layers_لاحقة",
+            mediaLayersDescription: "بيت_Show contributions from the public on the map._لاحقة",
+            flickrSettings: "إعدادات Flicker",
             twitter: "Twitter",
-            twitterSettings: "Twitter Settings",
-            twitterUser: "Twitter Account",
-            webcams: "Webcams",
+            twitterSettings: "إعدادات Twitter",
+            twitterUser: "حساب Twitter",
+            twitterSignIn: "تسجيل الدخول إلى Twitter",
+            webcams: "بيت_Webcams.travel_لاحقة",
             instagram: "Instagram",
-            moreInfo: "More information",
-            searchTerms: "Search Terms",
-            search: "Search",
-            flSettingsInfo: "Return results matching a photo's title, description or tags.",
-            twSettingsInfo: "See what’s happening right now.",
-            advancedOperators: "Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches.",
-            tweetsFilteredBy: "tweets filtered by:",
-            photosFilteredBy: "photos filtered by:",
-            twitterAccountStatus: "Enable the Twitter layer to see your status."
+            moreInfo: "المزيد من المعلومات",
+            searchTerms: "مصطلحات البحث",
+            search: "بحث",
+            flSettingsInfo: "إرجاع النتائج المتطابقة مع عنوان الصورة أو الوصف أو العلامات.",
+            twSettingsInfo: "رؤية ما يحدث€™الآن.",
+            advancedOperators: "تلميح:استخدم<a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">عوامل التشغيل</a>لإنشاء عمليات البحث المتقدمة.",
+            tweetsFilteredBy: "يتم تنقية التغريدات بواسطة:",
+            photosFilteredBy: "يتم تنقية الصور بواسطة:",
+            twitterAccountStatus: "قم بتمكين طبقة Twitter لرؤية حالتك."
         },
         general: {
-            map: "Map",
-            mapInfo: "Map Information",
-            legend: "Legend",
-            featured: "Featured Locations",
-            layers: "Layers",
-            share: "Share",
-            about: "About",
-            noSearchResult: "No result found",
-            switchAccount: "Switch account",
-            signIn: "Sign in",
-            settings: "Settings"
+            map: "خريطة",
+            mapInfo: "معلومات الخريطة",
+            legend: "مفتاح الخريطة",
+            featured: "المواقع المتميزة",
+            layers: "طبقات",
+            share: "مشاركة",
+            about: "نبذة عن",
+            find: "بيت_Zip Code, city, etc._لاحقة",
+            moreInfo: "بيت_More information_لاحقة",
+            dateModified: "بيت_Last modified_لاحقة",
+            noSearchResult: "يتعذر إيجاد النتائج",
+            switchAccount: "حساب التبديل",
+            signIn: "تسجيل الدخول",
+            settings: "الإعدادات"
         }
     })
-});
+
+);

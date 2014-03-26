@@ -23,6 +23,7 @@ define(
             locate: "Praegune asukoht",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Esita parandus",  // Command button to submit a correction to the app's host
             collect: "Filtreeri/muuda",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            dijitLegend: "Š_Show the legend_ä",  //Display the legend
             filter: "Filtreeri kaardikihte",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Vaheta aluskaart",  // Command button to open a dialog box for switching basemaps
             share: "Jaga",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,10 +44,10 @@ define(
             author: "autor"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "Leia:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "Leia:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "Joonista",  // Appears before a set of tools for drawing on the map
-            mapLayers: "Kaardikihid:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
-            layerFields: "Otsi kihi väljadest:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
+            mapLayers: "Kaardikihid:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
+            layerFields: "Š_Find layer fields:_ä"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "See lehekülg ei oma luba praeguse asukoha saamiseks",  // Shown when the browser does not permit the app to get the current geographical position

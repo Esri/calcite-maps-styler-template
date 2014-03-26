@@ -23,6 +23,7 @@ define(
             locate: "当前位置",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "提交修正",  // Command button to submit a correction to the app's host
             collect: "过滤器/编辑",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            dijitLegend: "试_Show the legend_验",  //Display the legend
             filter: "过滤地图图层",  // Explains purpose of type-in box affiliated with template picker
             basemap: "切换底图",  // Command button to open a dialog box for switching basemaps
             share: "共享",  // Command button to open a dropdown menu for picking a type of sharing
@@ -43,10 +44,10 @@ define(
             author: "作者"  // Shown as author hint in print specification box if an author hint is not configured
         },
         prompts: {
-            search: "查找:",  // Appears before a search text field in dialog box for searching for a feature
+            search: "查找:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "绘图",  // Appears before a set of tools for drawing on the map
-            mapLayers: "地图图层:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the search command; works with the searchLayerMissing message
-            layerFields: "搜索图层字段:"  // Appears before a list of fields in the configured map search layer; shown when the app cannot find one or more of the fields that were configured for the search command; works with the searchFieldMissing message
+            mapLayers: "地图图层:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
+            layerFields: "试_Find layer fields:_验"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "该网站无权获取当前位置",  // Shown when the browser does not permit the app to get the current geographical position
