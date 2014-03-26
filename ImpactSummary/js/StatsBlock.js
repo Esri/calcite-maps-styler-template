@@ -16,8 +16,7 @@ define([
     "dojo/dom-class",
     "dojo/dom-style",
     "dojo/dom-geometry",
-    "dojo/topic",
-    "dojo/aspect"
+    "dojo/topic"
 ],
 function (
     Evented,
@@ -28,7 +27,7 @@ function (
     on,
     dijitTemplate, i18n,
     number,
-    domConstruct, domClass, domStyle, domGeom, topic, aspect
+    domConstruct, domClass, domStyle, domGeom, topic
 ) {
     var Widget = declare([_WidgetBase, _TemplatedMixin, Evented], {
         declaredClass: "esri.dijit.StatsBlock",
@@ -162,7 +161,12 @@ function (
             this.set("loaded", true);
             this.emit("load", {});
         },
-        _formatNumber: function(n, decPlaces) {
+        _formatNumber: function (n, decPlaces) {
+            var isNumberNegative = false, isNumberFormatted = false;
+            if (n < 0) {
+                isNumberNegative = true;
+                n = Math.abs(n);
+            }
             // format large numbers
             decPlaces = Math.pow(10, decPlaces);
             // thousand, million, billion, trillion.
@@ -170,14 +174,26 @@ function (
             for (var i = abbrev.length - 1; i >= 0; i--) {
                 var size = Math.pow(10, (i + 1) * 3);
                 if (size <= n) {
+                    if (isNumberNegative) {
+                        n = -n;
+                    }
                     n = Math.round(n * decPlaces / size) / decPlaces;
                     if ((n === 1000) && (i < abbrev.length - 1)) {
                         n = 1;
                         i++;
                     }
                     n += abbrev[i];
+                    isNumberFormatted = true;
                     break;
                 }
+            }
+            if (!isNumberFormatted && !isNaN(n)) {
+                if (isNumberNegative) {
+                    n = -n;
+                }
+                var numLength = n.toString().length;
+                if (numLength > 5)
+                    n = n.toPrecision(5);
             }
             return n;
         },
