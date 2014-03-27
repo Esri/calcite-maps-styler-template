@@ -4,7 +4,7 @@ define([], function() {
     //and url parameters.
     var defaults = {
         "appid": "",
-        "webmap": "55f15224d4da4b4e98504a4ff3a69119",
+        "webmap": "55f15224d4da4b4e98504a4ff3a69119", 
         "oauthappid": null, //"AFTKRmv16wj14N3z",
         //Group templates must support a group url parameter. This will contain the id of the group. 
         //group: "",
@@ -17,11 +17,11 @@ define([], function() {
         "color": "#80ab00",
         //Counter specific parameters
         "summaryLayer":{
-            "id": "",
+            "id": "Production_Points_2401",
             "fields":[
                 {
                     "id": "filterField",
-                    "fields": []
+                    "fields": ["Field_Disc"]
                 },
                 {
                     "id": "sumFields",
@@ -45,7 +45,9 @@ define([], function() {
         "hideCount": false,
         "hideSummaryType": false,
         "bingmapskey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
-        "sharinghost": location.protocol + "//" + "www.arcgis.com" //Defaults to arcgis.com. Set this value to your portal or organization host name. 
+        "sharinghost": location.protocol + "//" + "www.arcgis.com", //Defaults to arcgis.com. Set this value to your portal or organization host name. 
+        "localize": true,
+        "queryForOrg": true
     };
     return defaults;
 });

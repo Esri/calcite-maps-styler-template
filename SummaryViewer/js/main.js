@@ -13,6 +13,7 @@ define([
         "dojo/mouse",
         "esri/arcgis/utils", 
         "esri/dijit/BasemapGallery",
+        "esri/graphicsUtils",
         "esri/IdentityManager", 
         "esri/layers/FeatureLayer", 
         "esri/tasks/query",
@@ -34,6 +35,7 @@ define([
         mouse,
         arcgisUtils, 
         BasemapGallery,
+        graphicsUtils,
         IdentityManager, 
         FeatureLayer,
         Query,
@@ -127,8 +129,8 @@ define([
 
         //create a map based on the input web map id
         createWebMap : function() {
-            var itemInfo = this.config.itemInfo || this.config.webmap;
-            arcgisUtils.createMap(itemInfo, "mapDiv", {
+
+            arcgisUtils.createMap(this.config.webmap, "mapDiv", {
                 mapOptions : {
                     showAttribution: false
                 },
@@ -152,7 +154,7 @@ define([
                 
                 // process operational layers
                 this.opLayers = response.itemInfo.itemData.operationalLayers;
-                console.log(this.opLayers);
+         
                 
                 if (this.map.loaded) {
                     this.mapLoaded();
@@ -178,6 +180,7 @@ define([
         mapLoaded : function() {
             // Map is ready
             query(".esriSimpleSlider").style("backgroundColor", this.config.color);
+
             var basemapGallery = new BasemapGallery({
                 showArcGISBasemaps: true,
                 map: this.map
@@ -191,7 +194,7 @@ define([
         
         // process operational layers
         processOperationalLayers: function() {
-            console.log(this.opLayers);
+        
             var opLayerName = this.config.summaryLayer.id;
             var me = this;
             if (opLayerName != "") {
@@ -479,6 +482,7 @@ define([
                         statDef.outStatisticFieldName = "COUNT";
                         query.returnGeometry = false;
                         query.where = "1=1";
+                        query.orderByFields = [fld.name];
                         query.groupByFieldsForStatistics = [fld.name];
                         query.outStatistics = [ statDef ];
                         var me = this;
@@ -534,7 +538,6 @@ define([
             return null;            
         },
         
-        
         // set filter
         setFilter: function() {
             var list = dom.byId("selFilter");
@@ -544,6 +547,34 @@ define([
                 expr = this.config.filterField + " = '" + value + "'";
             if (value == "")
                 expr = null;
+            this.opLayer.setDefinitionExpression(expr);
+            if (expr) {
+               var query = new Query();
+               query.returnGeometry = true;
+               query.where = expr;
+               var me = this;
+               this.opLayer.queryFeatures(query, function(featureSet){
+                   var ext = graphicsUtils.graphicsExtent(featureSet.features);
+                   if (ext) {
+                      me.map.setExtent(ext.expand(2));
+                   } else {
+                      if (featureSet.features.length > 0)
+                        me.map.centerAt(featureSet.features[0].geometry);
+                   }
+               });
+            }
+        },
+        
+        // set filter old
+        setFilterOld: function() {
+            var list = dom.byId("selFilter");
+            var value = list.options[list.selectedIndex].value;
+            var expr = this.config.filterField + " = " + value;
+            if (this.filterString)
+                expr = this.config.filterField + " = '" + value + "'";
+            if (value == "")
+                expr = null;
+            this.zoomToFeatures = true;
             this.opLayer.setDefinitionExpression(expr);
         },
         
