@@ -56,6 +56,7 @@ define({
     //default values for any items you need using the helper services and units properties. 
     "queryForOrg": true,
     "localize": true,
+    "commonConfig": true,
     "urlItems": [
             "extent"
         ],
