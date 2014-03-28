@@ -4,7 +4,7 @@ define([], function() {
     //and url parameters.
     var defaults = {
         "appid": "",
-        "webmap": "de5ae0c2040c49d38e9ea0637454ac73", // "0eece0d5de2140e9a44d8050f943fd18", "de5ae0c2040c49d38e9ea0637454ac73"
+        "webmap": "6c4e81f90c4b4935945e9b623c5247e0", // "0eece0d5de2140e9a44d8050f943fd18", "de5ae0c2040c49d38e9ea0637454ac73"
         "oauthappid": null, //"AFTKRmv16wj14N3z",
         "title": "",
         "subtitle":"",
