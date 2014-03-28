@@ -886,7 +886,7 @@ function (
 
             //populate all fields of layer and append it to dropdown
             array.forEach(this.map.getLayer(this.config.summaryLayer.id).fields, lang.hitch(this, function (currentField) {
-                if (currentField.type == "esriFieldTypeInteger" || currentField.type == "esriFieldTypeDouble") {
+                if (currentField.type == "esriFieldTypeSmallInteger" || currentField.type == "esriFieldTypeInteger" || currentField.type == "esriFieldTypeSingle" || currentField.type == "esriFieldTypeDouble") {
                     parentVariableOption = domConstruct.create("option");
                     parentVariableOption.value = currentField.name;
                     parentVariableOption.text = currentField.name;
@@ -1007,7 +1007,7 @@ function (
                 subVariableContentThirdDiv, inputText, checkBoxStatusClass, className;
                 checkBoxStatusClass = "esriUncheckIcon";
                 currentFieldAlias = "";
-                if (parentAttributeName != currentField.name && (currentField.type == "esriFieldTypeInteger" || currentField.type == "esriFieldTypeDouble")) {
+                if (parentAttributeName != currentField.name && (currentField.type == "esriFieldTypeSmallInteger" || currentField.type == "esriFieldTypeInteger" || currentField.type == "esriFieldTypeSingle" || currentField.type == "esriFieldTypeDouble")) {
                     for (var i = 0; i < this.config.summaryAttributes[currentNodeIndex].children.length; i++) {
                         if (currentField.name == this.config.summaryAttributes[currentNodeIndex].children[i].attribute) {
                             checkBoxStatusClass = "esriCheckIcon";

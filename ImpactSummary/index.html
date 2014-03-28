@@ -115,7 +115,7 @@
             Main,
             signInHelper
         ){
-            // create the template. This will take care of all the logic required for template applications 
+            // create the template. This will take care of all the logic required for template applications
             var myTemplate = new Template();
             // create my main application. Start placing your logic in the main.js file.
             var myApp = new Main();
@@ -125,14 +125,14 @@
                 //i18n, appid, webmap and any custom values defined by the applcation.
                 //In this example we have one called theme.
                 var signIn = new signInHelper(), userInfo = {};
-                if (config.appid && config.edit) {
+                if (config.appid || config.edit) {
                     var userDetails = signIn.getPortalUser();
                     if (userDetails) {
                         userInfo.username = userDetails.email;
                         userInfo.token = userDetails.token;
                         userInfo.portal = signIn.getPortal();
-                        var canExcute = signIn.authenticateUser(config.edit, myTemplate.appResponse, userInfo);
-                        if (canExcute) {
+                        var canExecute = signIn.authenticateUser(config.edit, myTemplate.appResponse, userInfo);
+                        if (canExecute) {
                             myApp.startup(config, myTemplate.appResponse, userInfo);
                         }
                         else{
@@ -140,12 +140,13 @@
                         }
                     }
                     else {
+                        if (config.edit) {
                         signIn.createPortal().then(function (loggedInUser) {
                             userInfo.username = loggedInUser.username;
                             userInfo.token = loggedInUser.credential.token;
                             userInfo.portal = signIn.getPortal();
-                            var canExcute = signIn.authenticateUser(config.edit, myTemplate.appResponse, userInfo);
-                            if (canExcute) {
+                                var canExecute = signIn.authenticateUser(config.edit, myTemplate.appResponse, userInfo);
+                                if (canExecute) {
                                 myApp.startup(config, myTemplate.appResponse, userInfo);
                             }
                             else{
@@ -154,6 +155,10 @@
                         }, function(error){
                             myApp.reportError(error);
                         });
+                    }
+                        else {
+                            myApp.startup(config);
+                        }
                     }
                 }
                 else {
