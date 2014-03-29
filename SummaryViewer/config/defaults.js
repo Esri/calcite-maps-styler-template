@@ -17,11 +17,11 @@ define([], function() {
         "color": "#80ab00",
         //Counter specific parameters
         "summaryLayer":{
-            "id": "Production_Points_2401",
+            "id": "",
             "fields":[
                 {
                     "id": "filterField",
-                    "fields": ["Field_Disc"]
+                    "fields": [""]
                 },
                 {
                     "id": "sumFields",
