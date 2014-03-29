@@ -1,22 +1,27 @@
+
 {
-    "configurationSettings": [
-        {
-        "category": "<b>General Settings</b>",
-        "fields": [
+   "configurationSettings":[
+      {
+         "category":"<b>General Settings</b>",
+         "fields":[
             {
-                "type": "string",
-                "fieldName": "title",
-                "label": "Title",
-                "tooltip": "Title",
-                "placeHolder": "Title"
-            }, 
+                "type":"webmap",
+                "label":"Select a map"
+            },
             {
-                "type": "string",
-                "fieldName": "logo",
-                "label": "Logo URL",
-                "tooltip": "Logo",
-                "placeHolder": "Logo URL"
-            }, 
+               "type":"string",
+               "fieldName":"title",
+               "label":"Title",
+               "tooltip":"Title",
+               "placeHolder":"Title"
+            },
+            {
+               "type":"string",
+               "fieldName":"logo",
+               "label":"Logo URL",
+               "tooltip":"Logo",
+               "placeHolder":"Logo URL"
+            },
             {
                "type":"color",
                "fieldName":"color",
@@ -24,59 +29,89 @@
                "tooltip":"Color"
             },
             {
-               "type": "string",
-               "fieldName": "summaryLayer",
-               "label": "Summary Layer",
-               "tooltip": "Layer that will be summarized",
-               "placeHolder": "Layer Name"
+               "type":"layerAndFieldSelector",
+               "fields":[ 
+                    {
+                        "supportedTypes": ["esriFieldTypeSmallInteger", "esriFieldTypeInteger", "esriFieldTypeSingle", "esriFieldTypeDouble", "esriFieldTypeString"],
+                        "multipleSelection": false,
+                        "fieldName": "filterField",
+                        "label": "Field to filter features",
+                        "tooltip":"Field used to filter features"
+
+                    },{
+                        "supportedTypes": ["esriFieldTypeSmallInteger", "esriFieldTypeInteger", "esriFieldTypeSingle", "esriFieldTypeDouble"],
+                        "multipleSelection": true,
+                        "fieldName": "sumFields",
+                        "label": "Summary fields",
+                        "tooltip": "List of numeric fields where the sum will be displayed"
+
+                    },
+                    {
+                        "supportedTypes": ["esriFieldTypeSmallInteger", "esriFieldTypeInteger", "esriFieldTypeSingle", "esriFieldTypeDouble"],
+                        "multipleSelection": true,
+                        "fieldName": "avgFields",
+                        "label": "Average fields",
+                        "tooltip": "List of numeric fields where the average value will be displayed"
+
+                    },
+                    {
+                        "supportedTypes": ["esriFieldTypeSmallInteger", "esriFieldTypeInteger", "esriFieldTypeSingle", "esriFieldTypeDouble"],
+                        "multipleSelection": true,
+                        "fieldName": "minFields",
+                        "label": "Minimum fields",
+                        "tooltip": "List of numeric fields where the minimum value will be displayed"
+
+                    },
+                    {
+                        "supportedTypes": ["esriFieldTypeSmallInteger", "esriFieldTypeInteger", "esriFieldTypeSingle", "esriFieldTypeDouble"],
+                        "multipleSelection": true,
+                        "fieldName": "maxFields",
+                        "label": "Maximum fields",
+                        "tooltip": "List of numeric fields where the maximum value will be displayed"
+
+                    }  
+                  ],
+               "layerOptions":{
+                  "supportedTypes":[
+                     "FeatureLayer","FeatureCollection"
+                  ],      
+                  "geometryTypes":[
+                     "esriGeometryPoint",
+                     "esriGeometryLine",
+                     "esriGeometryPolygon"
+                  ]
+               },
+               "fieldName":"summaryLayer",
+               "label":"Summary layer",
+               "tooltip": "Layer that will be summarized"
             },
             {
-               "type": "string",
-               "fieldName": "filterField",
-               "label": "Filter Field",
-               "tooltip": "Field used to filter features",
-               "placeHolder": "Field Name"
+               "type":"boolean",
+               "fieldName":"cluster",
+               "label":"Display summary as clusters ",
+               "tooltip":"Summary layer points will be displayed as clusters"
             },
             {
-               "type": "string",
-               "fieldName": "sumFields",
-               "label": "Summary Fields",
-               "tooltip": "List of fields where the sum will be displayed",
-               "placeHolder": "Field_1,Field_2"
+               "type":"boolean",
+               "fieldName":"hideCount",
+               "label":"Hide feature count",
+               "tooltip":"Hide feature count"
             },
             {
-               "type": "string",
-               "fieldName": "avgFields",
-               "label": "Average Fields",
-               "tooltip": "List of fields where the average value will be displayed",
-               "placeHolder": "Field_1,Field_2"
-            },
-            {
-               "type": "string",
-               "fieldName": "minFields",
-               "label": "Minimum Fields",
-               "tooltip": "List of fields where the minimum value will be displayed",
-               "placeHolder": "Field_1,Field_2"
-            },
-            {
-               "type": "string",
-               "fieldName": "maxFields",
-               "label": "Maximum Fields",
-               "tooltip": "List of fields where the maximum value will be displayed",
-               "placeHolder": "Field_1,Field_2"
-            },
-            {
-               "type": "boolean",
-               "fieldName": "cluster",
-               "label": "Cluster Summary Layer",
-               "tooltip": "Summary layer points will be displayed as clusters"
-            },
-        ]
-    }],
-    "values": {
-        "title": "",
-        "logo": "images/logo.png",
-        "color": "#80ab00",
-        "cluster": true
-    }
+               "type":"boolean",
+               "fieldName":"hideSummaryType",
+               "label":"Hide type of summary",
+               "tooltip":"Hide type of summary for each field"
+            }
+         ]
+      }
+   ],
+   "values":{
+      "title":"",
+      "logo":"images/logo.png",
+      "color":"#80ab00",
+      "cluster":true,
+      "hideCount": false,
+      "hideSummaryType": false
+   }
 }
