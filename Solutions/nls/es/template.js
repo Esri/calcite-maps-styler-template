@@ -23,7 +23,7 @@ define(
             locate: "Ubicación actual",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Enviar corrección",  // Command button to submit a correction to the app's host
             collect: "Filtrar/Editar",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
-            dijitLegend: "á_Show the legend_Ó",  //Display the legend
+            dijitLegend: "Mostrar la leyenda",  //Display the legend
             filter: "Filtrar capas de mapa",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Cambiar mapa base",  // Command button to open a dialog box for switching basemaps
             share: "Compartir",  // Command button to open a dropdown menu for picking a type of sharing
@@ -47,7 +47,7 @@ define(
             search: "Buscar:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "Dibujar",  // Appears before a set of tools for drawing on the map
             mapLayers: "Capas de mapa:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
-            layerFields: "á_Find layer fields:_Ó"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
+            layerFields: "Campos de la capa de búsqueda:"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "Este sitio no tiene permiso para obtener la ubicación actual",  // Shown when the browser does not permit the app to get the current geographical position

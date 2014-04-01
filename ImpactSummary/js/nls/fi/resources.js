@@ -8,41 +8,41 @@
             mapInfo: "Kartan tiedot",
             legend: "Selite",
             layers: "Karttatasot",
-            rendererTitle: "Å_Display information for this area_ö",
+            rendererTitle: "Näytä tämän alueen tiedot",
             summarize: "Koko alue",
-            summarizeTitle: "Å_Display summarized information for all areas_ö",
+            summarizeTitle: "Näytä kaikkien alueiden yhteenvetotiedot",
             share: "Jaa",
             about: "Tietoja",
-            find: "Å_Zip Code, city, etc._ö",
+            find: "Postinumero, kaupunki jne.",
             noSearchResult: "Tulosta ei löytynyt",
             impactArea: "Vaikutusalue"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "Å_My Organization_ö",
-                    onlineLabel: "Å_ArcGIS Online_ö",
-                    contentLabel: "Å_My Content_ö",
-                    favoritesLabel: "Å_My Favorites_ö"
+                    organizationLabel: "Oma organisaatio",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Oma sisältö",
+                    favoritesLabel: "Omat suosikit"
                 },
-                title: "Å_Select Web Map_ö",
-                searchTitle: "Å_Search_ö",
-                ok: "Å_Ok_ö",
-                cancel: "Å_Cancel_ö",
-                placeholder: "Å_Enter search term_ö"
+                title: "Valitse Web-kartta",
+                searchTitle: "Etsi",
+                ok: "OK",
+                cancel: "Peruuta",
+                placeholder: "Anna hakuehto"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "Å_My Organization_ö",
-                    onlineLabel: "Å_ArcGIS Online_ö",
-                    contentLabel: "Å_My Content_ö",
-                    favoritesLabel: "Å_My Favorites_ö"
+                    organizationLabel: "Oma organisaatio",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Oma sisältö",
+                    favoritesLabel: "Omat suosikit"
                 },
-                title: "Å_Select Group_ö",
-                searchTitle: "Å_Search_ö",
-                ok: "Å_Ok_ö",
-                cancel: "Å_Cancel_ö",
-                placeholder: "Å_Enter search term_ö"
+                title: "Valitse ryhmä",
+                searchTitle: "Etsi",
+                ok: "OK",
+                cancel: "Peruuta",
+                placeholder: "Anna hakuehto"
             }
         }
     })

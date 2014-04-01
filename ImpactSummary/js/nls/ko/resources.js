@@ -8,41 +8,41 @@
             mapInfo: "맵 정보",
             legend: "범례",
             layers: "레이어",
-            rendererTitle: "한_Display information for this area_빠",
+            rendererTitle: "이 영역의 정보 표시",
             summarize: "전체 영역",
-            summarizeTitle: "한_Display summarized information for all areas_빠",
+            summarizeTitle: "모든 영역의 요약 정보 표시",
             share: "공유",
             about: "정보",
-            find: "한_Zip Code, city, etc._빠",
+            find: "우편 번호, 도시 등",
             noSearchResult: "결과가 없음",
             impactArea: "영향 영역"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "한_My Organization_빠",
-                    onlineLabel: "한_ArcGIS Online_빠",
-                    contentLabel: "한_My Content_빠",
-                    favoritesLabel: "한_My Favorites_빠"
+                    organizationLabel: "내 기관",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "내 컨텐츠",
+                    favoritesLabel: "내 즐겨찾기"
                 },
-                title: "한_Select Web Map_빠",
-                searchTitle: "한_Search_빠",
-                ok: "한_Ok_빠",
-                cancel: "한_Cancel_빠",
-                placeholder: "한_Enter search term_빠"
+                title: "웹 맵 선택",
+                searchTitle: "검색",
+                ok: "확인",
+                cancel: "취소",
+                placeholder: "검색어 입력"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "한_My Organization_빠",
-                    onlineLabel: "한_ArcGIS Online_빠",
-                    contentLabel: "한_My Content_빠",
-                    favoritesLabel: "한_My Favorites_빠"
+                    organizationLabel: "내 기관",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "내 컨텐츠",
+                    favoritesLabel: "내 즐겨찾기"
                 },
-                title: "한_Select Group_빠",
-                searchTitle: "한_Search_빠",
-                ok: "한_Ok_빠",
-                cancel: "한_Cancel_빠",
-                placeholder: "한_Enter search term_빠"
+                title: "그룹 선택",
+                searchTitle: "검색",
+                ok: "확인",
+                cancel: "취소",
+                placeholder: "검색어 입력"
             }
         }
     })

@@ -23,7 +23,7 @@ define(
             locate: "Geçerli Konum",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Düzeltmeyi gönder",  // Command button to submit a correction to the app's host
             collect: "Filtrele/Düzenle",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
-            dijitLegend: "ı_Show the legend_İ",  //Display the legend
+            dijitLegend: "Gösterimi göster",  //Display the legend
             filter: "Harita katmanlarını filtrele",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Altlık haritayı değiştir",  // Command button to open a dialog box for switching basemaps
             share: "Paylaş",  // Command button to open a dropdown menu for picking a type of sharing
@@ -47,7 +47,7 @@ define(
             search: "Bul:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "Çiz",  // Appears before a set of tools for drawing on the map
             mapLayers: "Harita katmanları:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
-            layerFields: "ı_Find layer fields:_İ"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
+            layerFields: "Katman alanlarını bul:"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "Bu sitenin geçerli konumu alma izni yok",  // Shown when the browser does not permit the app to get the current geographical position

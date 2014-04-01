@@ -13,7 +13,7 @@
             popupNotSet: "此图层未启用弹出窗口"
         },
         page: {
-            title: "“查找表”服务",
+            title: "服务查找",
         }
     })
 

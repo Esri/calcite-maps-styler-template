@@ -8,41 +8,41 @@
             mapInfo: "マップ情報",
             legend: "凡例",
             layers: "レイヤ",
-            rendererTitle: "須_Display information for this area_鷗",
+            rendererTitle: "このエリアの情報の表示",
             summarize: "エリア全体",
-            summarizeTitle: "須_Display summarized information for all areas_鷗",
+            summarizeTitle: "すべてのエリアの集計情報の表示",
             share: "共有",
             about: "情報",
-            find: "須_Zip Code, city, etc._鷗",
+            find: "郵便番号、市区町村など。",
             noSearchResult: "結果が見つかりません",
             impactArea: "影響のあるエリア"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "須_My Organization_鷗",
-                    onlineLabel: "須_ArcGIS Online_鷗",
-                    contentLabel: "須_My Content_鷗",
-                    favoritesLabel: "須_My Favorites_鷗"
+                    organizationLabel: "組織",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "マイ コンテンツ",
+                    favoritesLabel: "お気に入り"
                 },
-                title: "須_Select Web Map_鷗",
-                searchTitle: "須_Search_鷗",
-                ok: "須_Ok_鷗",
-                cancel: "須_Cancel_鷗",
-                placeholder: "須_Enter search term_鷗"
+                title: "Web マップの選択",
+                searchTitle: "検索",
+                ok: "OK",
+                cancel: "キャンセル",
+                placeholder: "検索語句の入力"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "須_My Organization_鷗",
-                    onlineLabel: "須_ArcGIS Online_鷗",
-                    contentLabel: "須_My Content_鷗",
-                    favoritesLabel: "須_My Favorites_鷗"
+                    organizationLabel: "組織",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "マイ コンテンツ",
+                    favoritesLabel: "お気に入り"
                 },
-                title: "須_Select Group_鷗",
-                searchTitle: "須_Search_鷗",
-                ok: "須_Ok_鷗",
-                cancel: "須_Cancel_鷗",
-                placeholder: "須_Enter search term_鷗"
+                title: "グループの選択",
+                searchTitle: "検索",
+                ok: "OK",
+                cancel: "キャンセル",
+                placeholder: "検索語句の入力"
             }
         }
     })

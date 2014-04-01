@@ -8,41 +8,41 @@
             mapInfo: "Информация карты",
             legend: "Легенда",
             layers: "Слои",
-            rendererTitle: "Ж_Display information for this area_Я",
+            rendererTitle: "Отобразить информацию для этой области",
             summarize: "Вся область",
-            summarizeTitle: "Ж_Display summarized information for all areas_Я",
+            summarizeTitle: "Отобразить сводную информацию по всем областям",
             share: "Предоставить доступ",
             about: "О",
-            find: "Ж_Zip Code, city, etc._Я",
+            find: "Индекс, город и т.д.",
             noSearchResult: "Результатов не найдено",
             impactArea: "Область влияния"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "Ж_My Organization_Я",
-                    onlineLabel: "Ж_ArcGIS Online_Я",
-                    contentLabel: "Ж_My Content_Я",
-                    favoritesLabel: "Ж_My Favorites_Я"
+                    organizationLabel: "Моя организация",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Мои ресурсы",
+                    favoritesLabel: "Мое избранное"
                 },
-                title: "Ж_Select Web Map_Я",
-                searchTitle: "Ж_Search_Я",
-                ok: "Ж_Ok_Я",
-                cancel: "Ж_Cancel_Я",
-                placeholder: "Ж_Enter search term_Я"
+                title: "Выберите веб-карту",
+                searchTitle: "Поиск",
+                ok: "Ok",
+                cancel: "Отмена",
+                placeholder: "Введите текст поиска"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "Ж_My Organization_Я",
-                    onlineLabel: "Ж_ArcGIS Online_Я",
-                    contentLabel: "Ж_My Content_Я",
-                    favoritesLabel: "Ж_My Favorites_Я"
+                    organizationLabel: "Моя организация",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Мои ресурсы",
+                    favoritesLabel: "Мое избранное"
                 },
-                title: "Ж_Select Group_Я",
-                searchTitle: "Ж_Search_Я",
-                ok: "Ж_Ok_Я",
-                cancel: "Ж_Cancel_Я",
-                placeholder: "Ж_Enter search term_Я"
+                title: "Выберите группу",
+                searchTitle: "Поиск",
+                ok: "Ok",
+                cancel: "Отмена",
+                placeholder: "Введите текст поиска"
             }
         }
     })

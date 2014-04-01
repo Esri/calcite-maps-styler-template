@@ -23,7 +23,7 @@ define(
             locate: "Esama padėtis",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Pateikti korekciją",  // Command button to submit a correction to the app's host
             collect: "Filtruoti/Keisti",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
-            dijitLegend: "Į_Show the legend_š",  //Display the legend
+            dijitLegend: "Rodyti legendą",  //Display the legend
             filter: "Filtruoti žemėlapio sluoksnius",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Pakeisti pagrindo žemėlapį",  // Command button to open a dialog box for switching basemaps
             share: "Bendrinti",  // Command button to open a dropdown menu for picking a type of sharing
@@ -47,7 +47,7 @@ define(
             search: "Ieškoti:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "Piešti",  // Appears before a set of tools for drawing on the map
             mapLayers: "Žemėlapio sluoksniai:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
-            layerFields: "Į_Find layer fields:_š"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
+            layerFields: "Ieškoti sluoksnio laukų:"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "Ši svetainė neturi teisės nustatyti esamą vietą",  // Shown when the browser does not permit the app to get the current geographical position

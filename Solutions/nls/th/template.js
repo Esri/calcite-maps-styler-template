@@ -23,7 +23,7 @@ define(
             locate: "ตำแหน่งปัจจุบัน",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "ส่งการแก้ไข",  // Command button to submit a correction to the app's host
             collect: "ตัวกรอง/แก้ไข",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
-            dijitLegend: "ก้_Show the legend_ษฺ",  //Display the legend
+            dijitLegend: "แสดงคำอธิบาย",  //Display the legend
             filter: "คัดกรองชั้นข้อมูลแผนที่",  // Explains purpose of type-in box affiliated with template picker
             basemap: "เปลี่ยนแผนที่ฐาน",  // Command button to open a dialog box for switching basemaps
             share: "แชร์",  // Command button to open a dropdown menu for picking a type of sharing
@@ -47,7 +47,7 @@ define(
             search: "ค้นหา:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "วาด",  // Appears before a set of tools for drawing on the map
             mapLayers: "ชั้นข้อมูลของแผนที่:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
-            layerFields: "ก้_Find layer fields:_ษฺ"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
+            layerFields: "ค้นหาฟิลด์ของชั้นข้อมูล"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "ไม่ได้รับอนุญาตให้ค้นหาตำแหน่งปัจจุบัน",  // Shown when the browser does not permit the app to get the current geographical position

@@ -266,7 +266,7 @@
 					organizationLabel: "Organizacija",
 					onlineLabel: "ArcGIS Online",
 					contentLabel: "Turinys",
-					favoritesLabel: "Mėgstamiausi"
+					favoritesLabel: "Mano Mėgstamiausi"
 				},
 				title: "Pasirinkti internetinį žemėlapį",
 				searchTitle: "Ieškoti",

@@ -8,41 +8,41 @@
             mapInfo: "Kaartinformatie",
             legend: "Legenda",
             layers: "Kaartlagen",
-            rendererTitle: "Ĳ_Display information for this area_ä",
+            rendererTitle: "Informatie weergeven voor dit gebied",
             summarize: "Volledig gebied",
-            summarizeTitle: "Ĳ_Display summarized information for all areas_ä",
+            summarizeTitle: "Samengevatte informatie weergeven voor alle gebieden",
             share: "Delen",
             about: "Over",
-            find: "Ĳ_Zip Code, city, etc._ä",
+            find: "Postcode, plaats enzovoort",
             noSearchResult: "Geen resultaat gevonden",
             impactArea: "Impactgebied"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "Ĳ_My Organization_ä",
-                    onlineLabel: "Ĳ_ArcGIS Online_ä",
-                    contentLabel: "Ĳ_My Content_ä",
-                    favoritesLabel: "Ĳ_My Favorites_ä"
+                    organizationLabel: "Mijn Organisatie",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Mijn Content",
+                    favoritesLabel: "Mijn Favorieten"
                 },
-                title: "Ĳ_Select Web Map_ä",
-                searchTitle: "Ĳ_Search_ä",
-                ok: "Ĳ_Ok_ä",
-                cancel: "Ĳ_Cancel_ä",
-                placeholder: "Ĳ_Enter search term_ä"
+                title: "Webmap selecteren",
+                searchTitle: "Zoeken",
+                ok: "OK",
+                cancel: "Annuleren",
+                placeholder: "Zoekterm invoeren"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "Ĳ_My Organization_ä",
-                    onlineLabel: "Ĳ_ArcGIS Online_ä",
-                    contentLabel: "Ĳ_My Content_ä",
-                    favoritesLabel: "Ĳ_My Favorites_ä"
+                    organizationLabel: "Mijn Organisatie",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Mijn Content",
+                    favoritesLabel: "Mijn Favorieten"
                 },
-                title: "Ĳ_Select Group_ä",
-                searchTitle: "Ĳ_Search_ä",
-                ok: "Ĳ_Ok_ä",
-                cancel: "Ĳ_Cancel_ä",
-                placeholder: "Ĳ_Enter search term_ä"
+                title: "Groep selecteren",
+                searchTitle: "Zoeken",
+                ok: "OK",
+                cancel: "Annuleren",
+                placeholder: "Zoekterm invoeren"
             }
         }
     })

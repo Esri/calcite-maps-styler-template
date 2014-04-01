@@ -8,41 +8,41 @@
             mapInfo: "地图信息",
             legend: "图例",
             layers: "图层",
-            rendererTitle: "试_Display information for this area_验",
+            rendererTitle: "显示该区域的信息",
             summarize: "整个区域",
-            summarizeTitle: "试_Display summarized information for all areas_验",
+            summarizeTitle: "显示所有区域的汇总信息",
             share: "共享",
             about: "关于",
-            find: "试_Zip Code, city, etc._验",
+            find: "邮政编码、城市等",
             noSearchResult: "未找到结果",
             impactArea: "影响区域"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "试_My Organization_验",
-                    onlineLabel: "试_ArcGIS Online_验",
-                    contentLabel: "试_My Content_验",
-                    favoritesLabel: "试_My Favorites_验"
+                    organizationLabel: "我的组织",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "我的内容",
+                    favoritesLabel: "我的收藏夹"
                 },
-                title: "试_Select Web Map_验",
-                searchTitle: "试_Search_验",
-                ok: "试_Ok_验",
-                cancel: "试_Cancel_验",
-                placeholder: "试_Enter search term_验"
+                title: "选择 Web 地图",
+                searchTitle: "搜索",
+                ok: "确定",
+                cancel: "取消",
+                placeholder: "输入搜索词"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "试_My Organization_验",
-                    onlineLabel: "试_ArcGIS Online_验",
-                    contentLabel: "试_My Content_验",
-                    favoritesLabel: "试_My Favorites_验"
+                    organizationLabel: "我的组织",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "我的内容",
+                    favoritesLabel: "我的收藏夹"
                 },
-                title: "试_Select Group_验",
-                searchTitle: "试_Search_验",
-                ok: "试_Ok_验",
-                cancel: "试_Cancel_验",
-                placeholder: "试_Enter search term_验"
+                title: "选择组",
+                searchTitle: "搜索",
+                ok: "确定",
+                cancel: "取消",
+                placeholder: "输入搜索词"
             }
         }
     })

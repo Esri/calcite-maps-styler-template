@@ -8,41 +8,41 @@
             mapInfo: "Informaţii hartă",
             legend: "Legendă",
             layers: "Straturi tematice",
-            rendererTitle: "Ă_Display information for this area_ș",
+            rendererTitle: "Afişare informaţii pentru această suprafaţă",
             summarize: "Întreaga zonă",
-            summarizeTitle: "Ă_Display summarized information for all areas_ș",
+            summarizeTitle: "Afişare informaţii rezumate pentru toate suprafeţele",
             share: "Partajare",
             about: "Despre",
-            find: "Ă_Zip Code, city, etc._ș",
+            find: "Cod zip, oraş etc.",
             noSearchResult: "Niciun rezultat găsit",
             impactArea: "Suprafaţă afectată"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "Ă_My Organization_ș",
-                    onlineLabel: "Ă_ArcGIS Online_ș",
-                    contentLabel: "Ă_My Content_ș",
-                    favoritesLabel: "Ă_My Favorites_ș"
+                    organizationLabel: "Organizaţia mea",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Resursele mele",
+                    favoritesLabel: "Preferinţele mele"
                 },
-                title: "Ă_Select Web Map_ș",
-                searchTitle: "Ă_Search_ș",
-                ok: "Ă_Ok_ș",
-                cancel: "Ă_Cancel_ș",
-                placeholder: "Ă_Enter search term_ș"
+                title: "Selectare hartă web",
+                searchTitle: "Căutare",
+                ok: "OK",
+                cancel: "Anulare",
+                placeholder: "Introducere termen de căutat"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "Ă_My Organization_ș",
-                    onlineLabel: "Ă_ArcGIS Online_ș",
-                    contentLabel: "Ă_My Content_ș",
-                    favoritesLabel: "Ă_My Favorites_ș"
+                    organizationLabel: "Organizaţia mea",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Resursele mele",
+                    favoritesLabel: "Preferinţele mele"
                 },
-                title: "Ă_Select Group_ș",
-                searchTitle: "Ă_Search_ș",
-                ok: "Ă_Ok_ș",
-                cancel: "Ă_Cancel_ș",
-                placeholder: "Ă_Enter search term_ș"
+                title: "Selectare grup",
+                searchTitle: "Căutare",
+                ok: "OK",
+                cancel: "Anulare",
+                placeholder: "Introducere termen de căutat"
             }
         }
     })

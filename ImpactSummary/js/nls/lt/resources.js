@@ -8,41 +8,41 @@
             mapInfo: "Žemėlapio informacija",
             legend: "Legenda",
             layers: "Sluoksniai",
-            rendererTitle: "Į_Display information for this area_š",
+            rendererTitle: "Rodyti šio ploto informaciją",
             summarize: "Visas plotas",
-            summarizeTitle: "Į_Display summarized information for all areas_š",
+            summarizeTitle: "Rodyti visų plotų suvestinę informaciją",
             share: "Bendrinti",
             about: "Apie",
-            find: "Į_Zip Code, city, etc._š",
+            find: "Pašto kodas, miestas, kt.",
             noSearchResult: "Rezultatų nerasta",
-            impactArea: "Poveikio teritorija"
+            impactArea: "Poveikio plotas"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "Į_My Organization_š",
-                    onlineLabel: "Į_ArcGIS Online_š",
-                    contentLabel: "Į_My Content_š",
-                    favoritesLabel: "Į_My Favorites_š"
+                    organizationLabel: "Mano organizacija",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Mano turinys",
+                    favoritesLabel: "Mano Mėgstamiausi"
                 },
-                title: "Į_Select Web Map_š",
-                searchTitle: "Į_Search_š",
-                ok: "Į_Ok_š",
-                cancel: "Į_Cancel_š",
-                placeholder: "Į_Enter search term_š"
+                title: "Pasirinkite internetinį žemėlapį",
+                searchTitle: "Ieškoti",
+                ok: "Gerai",
+                cancel: "Atšaukti",
+                placeholder: "Įveskite paieškos terminą"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "Į_My Organization_š",
-                    onlineLabel: "Į_ArcGIS Online_š",
-                    contentLabel: "Į_My Content_š",
-                    favoritesLabel: "Į_My Favorites_š"
+                    organizationLabel: "Mano organizacija",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Mano turinys",
+                    favoritesLabel: "Mano Mėgstamiausi"
                 },
-                title: "Į_Select Group_š",
-                searchTitle: "Į_Search_š",
-                ok: "Į_Ok_š",
-                cancel: "Į_Cancel_š",
-                placeholder: "Į_Enter search term_š"
+                title: "Pasirinkite grupę",
+                searchTitle: "Ieškoti",
+                ok: "Gerai",
+                cancel: "Atšaukti",
+                placeholder: "Įveskite paieškos terminą"
             }
         }
     })

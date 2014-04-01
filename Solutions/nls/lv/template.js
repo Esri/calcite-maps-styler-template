@@ -23,7 +23,7 @@ define(
             locate: "Pašreizējais izvietojums",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Pieteikt korekciju",  // Command button to submit a correction to the app's host
             collect: "Filtrēt/Rediģēt",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
-            dijitLegend: "ķ_Show the legend_ū",  //Display the legend
+            dijitLegend: "Parādīt leģendu",  //Display the legend
             filter: "Filtrēt kartes slāņus",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Pārslēgt pamatkarti",  // Command button to open a dialog box for switching basemaps
             share: "Koplietot",  // Command button to open a dropdown menu for picking a type of sharing
@@ -47,7 +47,7 @@ define(
             search: "Atrast:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "Zīmēt",  // Appears before a set of tools for drawing on the map
             mapLayers: "Kartes slāņi:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
-            layerFields: "ķ_Find layer fields:_ū"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
+            layerFields: "Atrast slāņa laukus:"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "Šai vietnei nav atļaujas, lai darbotos pašreizējā izvietojumā",  // Shown when the browser does not permit the app to get the current geographical position

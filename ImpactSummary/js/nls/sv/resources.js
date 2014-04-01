@@ -8,41 +8,41 @@
             mapInfo: "Kartinformation",
             legend: "Teckenförklaring",
             layers: "Lager",
-            rendererTitle: "Å_Display information for this area_ö",
+            rendererTitle: "Visa information för det här området",
             summarize: "Hela området",
-            summarizeTitle: "Å_Display summarized information for all areas_ö",
+            summarizeTitle: "Visa summerad information för alla områden",
             share: "Dela",
             about: "Om",
-            find: "Å_Zip Code, city, etc._ö",
+            find: "Postnummer, ort osv.",
             noSearchResult: "Inga resultat hittades",
             impactArea: "Inverkansområde"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "Å_My Organization_ö",
-                    onlineLabel: "Å_ArcGIS Online_ö",
-                    contentLabel: "Å_My Content_ö",
-                    favoritesLabel: "Å_My Favorites_ö"
+                    organizationLabel: "Min organisation",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Mitt innehåll",
+                    favoritesLabel: "Mina favoriter"
                 },
-                title: "Å_Select Web Map_ö",
-                searchTitle: "Å_Search_ö",
-                ok: "Å_Ok_ö",
-                cancel: "Å_Cancel_ö",
-                placeholder: "Å_Enter search term_ö"
+                title: "Välj webbkarta",
+                searchTitle: "Sök",
+                ok: "OK",
+                cancel: "Avbryt",
+                placeholder: "Ange sökterm"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "Å_My Organization_ö",
-                    onlineLabel: "Å_ArcGIS Online_ö",
-                    contentLabel: "Å_My Content_ö",
-                    favoritesLabel: "Å_My Favorites_ö"
+                    organizationLabel: "Min organisation",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Mitt innehåll",
+                    favoritesLabel: "Mina favoriter"
                 },
-                title: "Å_Select Group_ö",
-                searchTitle: "Å_Search_ö",
-                ok: "Å_Ok_ö",
-                cancel: "Å_Cancel_ö",
-                placeholder: "Å_Enter search term_ö"
+                title: "Välj grupp",
+                searchTitle: "Sök",
+                ok: "OK",
+                cancel: "Avbryt",
+                placeholder: "Ange sökterm"
             }
         }
     })

@@ -23,7 +23,7 @@ define(
             locate: "Local atual",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Enviar correção",  // Command button to submit a correction to the app's host
             collect: "Filtrar/Editar",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
-            dijitLegend: "ã_Show the legend_Ç",  //Display the legend
+            dijitLegend: "Mostrar a legenda",  //Display the legend
             filter: "Filtrar camadas do mapa",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Trocar mapa base",  // Command button to open a dialog box for switching basemaps
             share: "Compartilhar",  // Command button to open a dropdown menu for picking a type of sharing
@@ -47,7 +47,7 @@ define(
             search: "Localizar:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "Desenhar",  // Appears before a set of tools for drawing on the map
             mapLayers: "Camadas do mapa:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
-            layerFields: "ã_Find layer fields:_Ç"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
+            layerFields: "Localizar campos da camada:"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "Este site não tem permissão para obter o local atual",  // Shown when the browser does not permit the app to get the current geographical position

@@ -8,41 +8,41 @@
             mapInfo: "Informace o mapě",
             legend: "Legenda",
             layers: "Vrstvy",
-            rendererTitle: "Ř_Display information for this area_ů",
+            rendererTitle: "Zobrazovat informace pro tuto oblast",
             summarize: "Celá oblast",
-            summarizeTitle: "Ř_Display summarized information for all areas_ů",
+            summarizeTitle: "Zobrazovat souhrnné informace pro všechny oblasti",
             share: "Sdílet",
             about: "O aplikaci",
-            find: "Ř_Zip Code, city, etc._ů",
+            find: "PSČ, město atd.",
             noSearchResult: "Nebyly nalezeny žádné výsledky",
             impactArea: "Ovlivněná oblast"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "Ř_My Organization_ů",
-                    onlineLabel: "Ř_ArcGIS Online_ů",
-                    contentLabel: "Ř_My Content_ů",
-                    favoritesLabel: "Ř_My Favorites_ů"
+                    organizationLabel: "Moje organizace",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Můj obsah",
+                    favoritesLabel: "Moje oblíbené položky"
                 },
-                title: "Ř_Select Web Map_ů",
-                searchTitle: "Ř_Search_ů",
-                ok: "Ř_Ok_ů",
-                cancel: "Ř_Cancel_ů",
-                placeholder: "Ř_Enter search term_ů"
+                title: "Vybrat webovou mapu",
+                searchTitle: "Hledat",
+                ok: "OK",
+                cancel: "Storno",
+                placeholder: "Zadat vyhledávací výraz"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "Ř_My Organization_ů",
-                    onlineLabel: "Ř_ArcGIS Online_ů",
-                    contentLabel: "Ř_My Content_ů",
-                    favoritesLabel: "Ř_My Favorites_ů"
+                    organizationLabel: "Moje organizace",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Můj obsah",
+                    favoritesLabel: "Moje oblíbené položky"
                 },
-                title: "Ř_Select Group_ů",
-                searchTitle: "Ř_Search_ů",
-                ok: "Ř_Ok_ů",
-                cancel: "Ř_Cancel_ů",
-                placeholder: "Ř_Enter search term_ů"
+                title: "Vybrat skupinu",
+                searchTitle: "Hledat",
+                ok: "OK",
+                cancel: "Storno",
+                placeholder: "Zadat vyhledávací výraz"
             }
         }
     })

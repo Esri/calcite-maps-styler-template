@@ -8,41 +8,41 @@
             mapInfo: "מידע על המפה",
             legend: "מקרא",
             layers: "שכבות",
-            rendererTitle: "כן_Display information for this area_ש",
+            rendererTitle: "הצג מידע לאזור זה",
             summarize: "האזור כולו",
-            summarizeTitle: "כן_Display summarized information for all areas_ש",
+            summarizeTitle: "הצג מידע מסוכם לכל האזורים",
             share: "שיתוף",
             about: "אודות",
-            find: "כן_Zip Code, city, etc._ש",
+            find: "מיקוד, עיר ועוד.",
             noSearchResult: "לא נמצאו תוצאות",
             impactArea: "אזור השפעה"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "כן_My Organization_ש",
-                    onlineLabel: "כן_ArcGIS Online_ש",
-                    contentLabel: "כן_My Content_ש",
-                    favoritesLabel: "כן_My Favorites_ש"
+                    organizationLabel: "הארגון שלי",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "התוכן שלי",
+                    favoritesLabel: "המועדפים שלי"
                 },
-                title: "כן_Select Web Map_ש",
-                searchTitle: "כן_Search_ש",
-                ok: "כן_Ok_ש",
-                cancel: "כן_Cancel_ש",
-                placeholder: "כן_Enter search term_ש"
+                title: "בחר Web Map",
+                searchTitle: "חפש",
+                ok: "אישור",
+                cancel: "ביטול",
+                placeholder: "הכנס מונח לחיפוש"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "כן_My Organization_ש",
-                    onlineLabel: "כן_ArcGIS Online_ש",
-                    contentLabel: "כן_My Content_ש",
-                    favoritesLabel: "כן_My Favorites_ש"
+                    organizationLabel: "הארגון שלי",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "התוכן שלי",
+                    favoritesLabel: "המועדפים שלי"
                 },
-                title: "כן_Select Group_ש",
-                searchTitle: "כן_Search_ש",
-                ok: "כן_Ok_ש",
-                cancel: "כן_Cancel_ש",
-                placeholder: "כן_Enter search term_ש"
+                title: "בחר קבוצה",
+                searchTitle: "חפש",
+                ok: "אישור",
+                cancel: "ביטול",
+                placeholder: "הכנס מונח לחיפוש"
             }
         }
     })

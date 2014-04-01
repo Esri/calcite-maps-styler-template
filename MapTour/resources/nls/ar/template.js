@@ -199,7 +199,7 @@
 				notJpg: "يرجى اختيار صورة jpeg للتحميل",
 				errorNoPhoto: "اختر الصورة للتحميل",
 				errorNoThumbnail: "اختر الصورة المُصغرة للتحميل",
-				errorInvalidPicUrl: "أدخل صورة صحيحة (تبدأ بـ http(s):// وتنتهي بـ jpg أو png أو gif أو bmp). يمكنك إنهاء عنوان URL بـ '\#isImage'\ لتجاوز هذه القاعدة.",
+				errorInvalidPicUrl: "أدخل صورة صحيحة (تبدأ بـ http(s):// وتنتهي بـ jpg أو png أو gif أو bmp). يمكنك إنهاء عنوان URL بـ '#isImage' لتجاوز هذه القاعدة.",
 				errorInvalidThumbUrl: "أدخل صورة مصغرة صحيحة (تبدأ بـ http(s):// وتنتهي بـ jpg أو png أو gif أو bmp).",
 				errorInvalidVideoUrl: "أدخل عنوان URL صحيح للفيديو (يبدأ بـ http(s)://(",
 				errorNoName: "ادخل اسم لنقطة الجولة",

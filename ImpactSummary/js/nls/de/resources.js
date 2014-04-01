@@ -8,41 +8,41 @@
             mapInfo: "Karteninformationen",
             legend: "Legende",
             layers: "Layer",
-            rendererTitle: "ä_Display information for this area_Ü",
+            rendererTitle: "Informationen für diesen Bereich anzeigen",
             summarize: "Gesamtfläche",
-            summarizeTitle: "ä_Display summarized information for all areas_Ü",
+            summarizeTitle: "Zusammenfassende Informationen für alle Bereiche anzeigen",
             share: "Freigeben",
             about: "Info zu",
-            find: "ä_Zip Code, city, etc._Ü",
+            find: "Postleitzahl, Stadt usw.",
             noSearchResult: "Kein Ergebnis gefunden",
             impactArea: "Betroffenes Gebiet"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "ä_My Organization_Ü",
-                    onlineLabel: "ä_ArcGIS Online_Ü",
-                    contentLabel: "ä_My Content_Ü",
-                    favoritesLabel: "ä_My Favorites_Ü"
+                    organizationLabel: "Eigene Organisation",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Eigene Inhalte",
+                    favoritesLabel: "Eigene Favoriten"
                 },
-                title: "ä_Select Web Map_Ü",
-                searchTitle: "ä_Search_Ü",
-                ok: "ä_Ok_Ü",
-                cancel: "ä_Cancel_Ü",
-                placeholder: "ä_Enter search term_Ü"
+                title: "Webkarte auswählen",
+                searchTitle: "Suchen",
+                ok: "OK",
+                cancel: "Abbrechen",
+                placeholder: "Suchbegriff eingeben"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "ä_My Organization_Ü",
-                    onlineLabel: "ä_ArcGIS Online_Ü",
-                    contentLabel: "ä_My Content_Ü",
-                    favoritesLabel: "ä_My Favorites_Ü"
+                    organizationLabel: "Eigene Organisation",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Eigene Inhalte",
+                    favoritesLabel: "Eigene Favoriten"
                 },
-                title: "ä_Select Group_Ü",
-                searchTitle: "ä_Search_Ü",
-                ok: "ä_Ok_Ü",
-                cancel: "ä_Cancel_Ü",
-                placeholder: "ä_Enter search term_Ü"
+                title: "Gruppe auswählen",
+                searchTitle: "Suchen",
+                ok: "OK",
+                cancel: "Abbrechen",
+                placeholder: "Suchbegriff eingeben"
             }
         }
     })

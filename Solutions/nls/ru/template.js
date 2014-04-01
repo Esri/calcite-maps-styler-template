@@ -23,7 +23,7 @@ define(
             locate: "Текущее местоположение",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Закрепить исправление",  // Command button to submit a correction to the app's host
             collect: "Фильтр/Редактирование",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
-            dijitLegend: "Ж_Show the legend_Я",  //Display the legend
+            dijitLegend: "Показать легенду",  //Display the legend
             filter: "Фильтрация слоев карты",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Переключить базовую карту",  // Command button to open a dialog box for switching basemaps
             share: "Общий доступ",  // Command button to open a dropdown menu for picking a type of sharing
@@ -47,7 +47,7 @@ define(
             search: "Найти:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "Рисование",  // Appears before a set of tools for drawing on the map
             mapLayers: "Слои карты:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
-            layerFields: "Ж_Find layer fields:_Я"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
+            layerFields: "Найти поля слоя:"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "Этот сайт не имеет разрешения для получения текущего местоположения",  // Shown when the browser does not permit the app to get the current geographical position

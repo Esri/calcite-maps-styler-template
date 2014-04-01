@@ -8,41 +8,41 @@
             mapInfo: "Kartes informācija",
             legend: "Leģenda",
             layers: "Slāņi",
-            rendererTitle: "ķ_Display information for this area_ū",
+            rendererTitle: "Šī apgabala informācijas attēlojums",
             summarize: "Viss laukums",
-            summarizeTitle: "ķ_Display summarized information for all areas_ū",
+            summarizeTitle: "Apkopotās informācijas attēlojums visiem apgabaliem",
             share: "Koplietot",
             about: "Par",
-            find: "ķ_Zip Code, city, etc._ū",
+            find: "Pasta indekss, pilsēta utt.",
             noSearchResult: "Nav atrasts neviens rezultāts",
             impactArea: "Ietekmētā zona"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "ķ_My Organization_ū",
-                    onlineLabel: "ķ_ArcGIS Online_ū",
-                    contentLabel: "ķ_My Content_ū",
-                    favoritesLabel: "ķ_My Favorites_ū"
+                    organizationLabel: "Organizācija",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Mans saturs",
+                    favoritesLabel: "Mani favorīti"
                 },
-                title: "ķ_Select Web Map_ū",
-                searchTitle: "ķ_Search_ū",
-                ok: "ķ_Ok_ū",
-                cancel: "ķ_Cancel_ū",
-                placeholder: "ķ_Enter search term_ū"
+                title: "Izvēlēties web karti",
+                searchTitle: "Meklēšana",
+                ok: "Labi",
+                cancel: "Atcelt",
+                placeholder: "Ievadīt meklēšanas kritēriju"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "ķ_My Organization_ū",
-                    onlineLabel: "ķ_ArcGIS Online_ū",
-                    contentLabel: "ķ_My Content_ū",
-                    favoritesLabel: "ķ_My Favorites_ū"
+                    organizationLabel: "Organizācija",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Mans saturs",
+                    favoritesLabel: "Mani favorīti"
                 },
-                title: "ķ_Select Group_ū",
-                searchTitle: "ķ_Search_ū",
-                ok: "ķ_Ok_ū",
-                cancel: "ķ_Cancel_ū",
-                placeholder: "ķ_Enter search term_ū"
+                title: "Izvēlēties grupu",
+                searchTitle: "Meklēšana",
+                ok: "Labi",
+                cancel: "Atcelt",
+                placeholder: "Ievadīt meklēšanas kritēriju"
             }
         }
     })

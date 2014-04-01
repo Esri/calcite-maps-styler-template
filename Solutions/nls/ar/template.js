@@ -23,7 +23,7 @@ define(
             locate: "الموقع الحالي",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "إرسال التصحيح",  // Command button to submit a correction to the app's host
             collect: "تنقية/تحرير",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
-            dijitLegend: "بيت_Show the legend_لاحقة",  //Display the legend
+            dijitLegend: "إظهار وسيلة الإيضاح",  //Display the legend
             filter: "تنقية طبقات الخريطة",  // Explains purpose of type-in box affiliated with template picker
             basemap: "تبديل خريطة الأساس",  // Command button to open a dialog box for switching basemaps
             share: "مشاركة",  // Command button to open a dropdown menu for picking a type of sharing
@@ -47,7 +47,7 @@ define(
             search: "بحث:",  // Appears before a find text field in dialog box for searching for a feature
             markup: "رسم",  // Appears before a set of tools for drawing on the map
             mapLayers: "طبقات الخريطة:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
-            layerFields: "بيت_Find layer fields:_لاحقة"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
+            layerFields: "إيجاد حقول الطبقة:"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
         messages: {
             geolocationDenied: "لا يحتوي الموقع على أذن للحصول على الموقع الحالي",  // Shown when the browser does not permit the app to get the current geographical position

@@ -8,41 +8,41 @@
             mapInfo: "Informação do Mapa",
             legend: "Legenda",
             layers: "Camadas",
-            rendererTitle: "ã_Display information for this area_Ç",
+            rendererTitle: "Exibir informação para esta área",
             summarize: "Área Total",
-            summarizeTitle: "ã_Display summarized information for all areas_Ç",
+            summarizeTitle: "Exibir informação resumida para todas as áreas",
             share: "Partilhar",
             about: "Sobre",
-            find: "ã_Zip Code, city, etc._Ç",
+            find: "Código postal, cidade, etc.",
             noSearchResult: "Não foram encontrados resultados",
             impactArea: "Área de Impacto"
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "ã_My Organization_Ç",
-                    onlineLabel: "ã_ArcGIS Online_Ç",
-                    contentLabel: "ã_My Content_Ç",
-                    favoritesLabel: "ã_My Favorites_Ç"
+                    organizationLabel: "A Organização",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "O Meu Conteúdo",
+                    favoritesLabel: "Os Meus Favoritos"
                 },
-                title: "ã_Select Web Map_Ç",
-                searchTitle: "ã_Search_Ç",
-                ok: "ã_Ok_Ç",
-                cancel: "ã_Cancel_Ç",
-                placeholder: "ã_Enter search term_Ç"
+                title: "Selecionar Mapa Web",
+                searchTitle: "Pesquisar",
+                ok: "OK",
+                cancel: "Cancelar",
+                placeholder: "Introduza o termo a pesquisar"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "ã_My Organization_Ç",
-                    onlineLabel: "ã_ArcGIS Online_Ç",
-                    contentLabel: "ã_My Content_Ç",
-                    favoritesLabel: "ã_My Favorites_Ç"
+                    organizationLabel: "A Organização",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "O Meu Conteúdo",
+                    favoritesLabel: "Os Meus Favoritos"
                 },
-                title: "ã_Select Group_Ç",
-                searchTitle: "ã_Search_Ç",
-                ok: "ã_Ok_Ç",
-                cancel: "ã_Cancel_Ç",
-                placeholder: "ã_Enter search term_Ç"
+                title: "Selecionar Grupo",
+                searchTitle: "Pesquisar",
+                ok: "OK",
+                cancel: "Cancelar",
+                placeholder: "Introduza o termo a pesquisar"
             }
         }
     })
