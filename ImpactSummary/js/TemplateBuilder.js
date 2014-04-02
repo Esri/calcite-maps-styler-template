@@ -21,14 +21,15 @@ define([
     "dijit/TooltipDialog",
     "dijit/popup",
     "dijit/_editor/plugins/LinkDialog",
-    "application/BrowseIdDlg"
+    "application/BrowseIdDlg",
+    "esri/arcgis/utils"
 ],
 function (
     declare,
     lang,
     _WidgetBase,
     ContentPane,
-    dom, on, string, query, array, domConstruct, domClass, Dialog, esriRequest, domAttr, domStyle, nls, topic, keys, Editor, TooltipDialog, popup, LinkDialog, BrowseIdDlg) {
+    dom, on, string, query, array, domConstruct, domClass, Dialog, esriRequest, domAttr, domStyle, nls, topic, keys, Editor, TooltipDialog, popup, LinkDialog, BrowseIdDlg, arcgisUtils) {
     var Widget = declare([_WidgetBase], {
         declaredClass: "application.TemplateBuilder",
         //URL for updating Item
@@ -39,7 +40,7 @@ function (
         configDialog: null,
         browseDlg: null,
         // lifecycle: 1
-        constructor: function(options) {
+        constructor: function (options) {
             // mix in settings and defaults
             var defaults = lang.mixin({}, this.options, options);
             // set properties
@@ -54,7 +55,7 @@ function (
             this.previousConfigObj = lang.clone(defaults.config);
         },
         // start widget. called by user
-        startup: function() {
+        startup: function () {
 
             console.log('edit mode');
 
@@ -1148,25 +1149,28 @@ function (
                 type: "Web Mapping Application",
                 overwrite: true
             });
-            var updateURL = this.userInfo.portal.url + "/sharing/content/users/" + this.userInfo.username + (this.response.item.ownerFolder ? ("/" + this.response.item.ownerFolder) : "") + "/items/" + this.config.appid + "/update";
-            esriRequest({
-                url: updateURL,
-                content: rqData,
-                handleAs: 'json'
-            }, { usePost: true }).then(lang.hitch(this, function (result) {
-                if (result.success) {
-                    if (newURL) {
-                        window.location.href = newURL;
+
+            arcgisUtils.getItem(this.config.appid).then(lang.hitch(this, function (response) {
+                var updateURL = this.userInfo.portal.url + "/sharing/content/users/" + this.userInfo.username + (response.item.ownerFolder ? ("/" + response.item.ownerFolder) : "") + "/items/" + this.config.appid + "/update";
+                esriRequest({
+                    url: updateURL,
+                    content: rqData,
+                    handleAs: 'json'
+                }, { usePost: true }).then(lang.hitch(this, function (result) {
+                    if (result.success) {
+                        if (newURL) {
+                            window.location.href = newURL;
+                        }
+                        else if (!isRollBackRequired) {
+                            location.reload();
+                        }
+                        else {
+                        }
                     }
-                    else if (!isRollBackRequired) {
-                        location.reload();
-                    }
-                    else {
-                    }
-                }
-            }), function () {
-                alert(nls.widgets.TemplateBuilder.alertMessage.failMessage);
-            });
+                }), function () {
+                    alert(nls.widgets.TemplateBuilder.alertMessage.failMessage);
+                });
+            }));
         },
 
         _createTooltip: function () {
