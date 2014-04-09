@@ -3,6 +3,7 @@ define([
     "dojo/_base/array",
     "dojo/_base/lang",
     "dojo/_base/kernel",
+    "dojo/ready",
     "dojo/request/script",
     "dojo/Stateful",
     "dojo/Evented",
@@ -19,6 +20,7 @@ define([
 ],
 function (
     declare, array, lang, dojo,
+    ready,
     script,
     Stateful, Evented, on,
     locale,
@@ -153,19 +155,22 @@ function (
             });
             // add to map
             this.map.addLayer(this.featureLayer);
-            // query when map loads
-            if(this.map.loaded){
-                this._init();
-            }
-            else{
-                var onLoad = on.once(this.map, "load", lang.hitch(this, function () {
+            // dom ready
+            ready(lang.hitch(this, function(){
+                // query when map loads
+                if(this.map.loaded){
                     this._init();
-                }));
-                this._events.push(onLoad);
-            }
-            // loaded
-            this.set("loaded", true);
-            this.emit("load", {});
+                }
+                else{
+                    var onLoad = on.once(this.map, "load", lang.hitch(this, function () {
+                        this._init();
+                    }));
+                    this._events.push(onLoad);
+                }
+                // loaded
+                this.set("loaded", true);
+                this.emit("load", {});
+            }));
         },
         /* ---------------- */
         /* Public Events */
@@ -252,7 +257,7 @@ function (
                 this.update(0);
             }));
             this._events.push(visChange);
-            this.update(0);
+            this.update();
         },
         _parseURL: function (text) {
             return text.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function (url) {
