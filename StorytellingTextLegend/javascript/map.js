@@ -416,9 +416,9 @@ function mapLoaded() {
         duration: 500
     }).play();
 
-   /*setTimeout(function () {
+    setTimeout(function () {
         dojo.style(dojo.byId('mapBlind'), 'display', 'none');
-    }, 500);*/
+    }, 500);
     if (_timeProperties[0] == null) {
         dojo.fadeOut({
             node: dojo.byId("timeDisplay"),
@@ -431,9 +431,9 @@ function mapLoaded() {
             duration: 500
         }).play();
 
-        /*setTimeout(function () {
+        setTimeout(function () {
             dojo.style(dojo.byId('timeSliderBlind'), 'display', 'none');
-        }, 500);*/
+        }, 500);
     }
     mapsReady = true;
 
