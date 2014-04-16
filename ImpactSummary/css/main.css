@@ -44,9 +44,15 @@ input[type=text]::-ms-clear {
     color: #97cbec;
 }
 .button-container {
-    padding: 6px;
-    line-height: 22px;
-    font-size: 18px;
+    line-height: 44px;
+    height: 44px;
+    width: 44px;
+    text-align: center;
+    font-size: 22px;
+    *padding: 11px;
+    *width: auto;
+    *height: auto;
+    *line-height: 22px;
 }
 .top-menu-right {
    /* position: relative;*/
@@ -79,17 +85,23 @@ input[type=text]::-ms-clear {
     width: 100%;
     background: #fff;
     background: rgba(255, 255, 255, 0.9);
-    height: 34px;
+    height: 44px;
     border-bottom: 1px solid #ddd;
 }
-.esriRTL .top-bar{
-    left:auto;
-    right:0;
+.esriRTL .top-bar {
+    left: auto;
+    right: 0;
+}
+.top-menu-right {
+    margin-right: 5px;
+}
+.esriRTL .top-menu-right {
+    margin-right: 0;
+    margin-left: 5px;
 }
 .app-title {
     color: #007ac2;
-    padding: 6px 0;
-    line-height: 22px;
+    line-height: 44px;
     font-size: 18px;
     font-weight: 700;
     max-width: 40%;
@@ -98,20 +110,25 @@ input[type=text]::-ms-clear {
     overflow: hidden;
     float: left;
 }
-.esriRTL .app-title{
-    float:right;
+.esriRTL .app-title {
+    float: right;
 }
 .hamburger-button {
     float: left;
     padding: 0;
     margin: 0;
     cursor: pointer;
-    height: 34px;
-    font-size: 25px;
-    line-height: 34px;
+    height: 44px;
+    width: 44px;
+    font-size: 28px;
+    line-height: 44px;
+    *padding: 8px;
+    *width: auto;
+    *height: auto;
+    *line-height: 28px;
 }
-.esriRTL .hamburger-button{
-    float:right;
+.esriRTL .hamburger-button {
+    float: right;
 }
 .border-container-outer {
     width: 100%;
@@ -120,9 +137,6 @@ input[type=text]::-ms-clear {
     margin: 0;
     border: 0;
     overflow: hidden;
-}
-.app-loading .content-pane-left {
-    width: 280px;
 }
 .content-pane-left {
     width: 0px;
@@ -138,6 +152,9 @@ input[type=text]::-ms-clear {
     -ms-transition: width 250ms ease;
     -o-transition: width 250ms ease;
     transition: width 250ms ease;
+}
+.app-loading .content-pane-left {
+    width: 280px;
 }
 .drawer-open .content-pane-left {
     width: 280px;
@@ -187,13 +204,13 @@ input[type=text]::-ms-clear {
 }
 .BasemapToggle {
     position: absolute;
-    top: 55px;
+    top: 65px;
     right: 20px;
     z-index: 35;
 }
-.esriRTL .BasemapToggle{
-    right:auto;
-    left:20px;
+.esriRTL .BasemapToggle {
+    right: auto;
+    left: 20px;
 }
 .BasemapToggle .toggleButton {
     border: 1px solid #999;
@@ -209,17 +226,17 @@ input[type=text]::-ms-clear {
     border-radius: 1px 1px 0 0;
 }
 .BasemapToggle .basemapTitle {
-    color:#666;
+    color: #666;
 }
 .map-buttons {
     position: absolute;
-    top: 127px;
+    top: 137px;
     left: 20px;
     z-index: 35;
 }
-.esriRTL .map-buttons{
-    left:auto;
-    right:20px;
+.esriRTL .map-buttons {
+    left: auto;
+    right: 20px;
 }
 .HomeButtonCalcite {
     margin-top: 6px;
@@ -253,8 +270,8 @@ input[type=text]::-ms-clear {
     float: left;
     width: 60px;
     padding: 1px 0;
-    line-height: 30px;
-    height: 30px;
+    line-height: 36px;
+    height: 36px;
     color: #999;
     margin-left: 10px;
     font-size: 17px;
@@ -277,18 +294,18 @@ input[type=text]::-ms-clear {
     position: absolute;
     z-index: 460;
     left: 0;
-    top: 35px;
+    top: 45px;
     width: 100%;
 }
 .esriRTL .mobile-locate-box-hidden {
-    left:auto;
-    right:0;
+    left: auto;
+    right: 0;
 }
 .mobile-locate-box-hidden .mobile-search-container {
     padding: 5px 15px;
     background: #fff;
     background: rgba(255, 255, 255, 0.7);
-    height: 32px;
+    height: 36px;
 }
 /* Drawer Menu */
 
@@ -309,7 +326,6 @@ input[type=text]::-ms-clear {
     line-height: 18px;
     text-align: center;
     overflow: visible;
-    font-weight: 700;
     width: 100%;
 }
 .drawer-menu-1 .drawer-menu-buttons {
@@ -385,6 +401,7 @@ input[type=text]::-ms-clear {
     font-size: 11px;
     margin-bottom: 5px;
     line-height: 11px;
+    font-weight: 700;
     height: 11px;
 }
 /* Panels */
@@ -401,25 +418,33 @@ input[type=text]::-ms-clear {
 }
 .panel-header {
     font-size: 18px;
-    font-weight: bold;
-    padding: 12px 8px 12px 10px;
-    line-height: 18px;
+    font-weight: 700;
+    padding: 12px 10px 6px 10px;
+    line-height: 24px;
     color: #555;
     background: #fff;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-.esriRTL .panel-header {
-    padding: 12px 10px 12px 8px;
 }
 .panel-section {
     border-top: 1px solid #e0e0e0;
 }
-.panel-summary {
+.panel-more-info,
+.panel-modified-date,
+.panel-summary,
+.panel-description {
     color: #666;
-    padding: 0 10px 10px 10px;
     line-height: 24px;
+}
+.panel-modified-date,
+.panel-summary {
+    padding: 0 10px 5px 10px;
+}
+.panel-description,
+.panel-more-info {
+    padding: 0 10px 10px 10px;
+}
+.panel-modified-date {
+    font-size: 14px;
+    color: #999;
 }
 /* Misc */
 .clear {
@@ -494,7 +519,7 @@ input[type=text]::-ms-clear {
         display: none;
     }
     .app-title {
-        max-width: 35%;
+        max-width: 30%;
     }
 }
 @media only screen and (max-width: 510px) {
@@ -517,7 +542,7 @@ input[type=text]::-ms-clear {
         display: none!important;
     }
     .map-buttons {
-        top: 55px!important;
+        top: 65px!important;
         display: block!important;
     }
     .mobile-locate-box-display {
@@ -542,11 +567,11 @@ input[type=text]::-ms-clear {
         display: none!important;
     }
     .content-pane-left {
-        max-width:200px;
+        max-width: 200px;
     }
     .drawer-open .content-pane-left {
         width: 200px;
-        overflow-x:auto;
+        overflow-x: auto;
     }
     .pointer-events .drawer-open-complete .content-pane-left:before {
         width: 200px;
@@ -603,7 +628,7 @@ input[type=text]::-ms-clear {
         display: none!important;
     }
     .map-buttons {
-        top: 55px!important;
+        top: 65px!important;
         display: block!important;
     }
     .mobile-locate-box-display {
@@ -628,7 +653,7 @@ input[type=text]::-ms-clear {
         display: none!important;
     }
     .map-buttons {
-        top: 55px!important;
+        top: 65px!important;
         display: block!important;
     }
     .mobile-locate-box-display {
@@ -650,7 +675,7 @@ input[type=text]::-ms-clear {
         display: block!important;
     }
     .drawer-open .map-buttons {
-        top: 55px!important;
+        top: 65px!important;
         display: block!important;
     }
     .drawer-open .esriSimpleSlider,
@@ -678,7 +703,7 @@ input[type=text]::-ms-clear {
         display: block!important;
     }
     .map-buttons {
-        top: 55px!important;
+        top: 65px!important;
         display: block!important;
     }
     .esriSimpleSlider,

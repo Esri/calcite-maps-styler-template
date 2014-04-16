@@ -15,7 +15,9 @@ define({
             about: "About",
             find: "Zip Code, city, etc.",
             noSearchResult: "No result found",
-            impactArea: "Impact Area"
+            impactArea: "Impact Area",
+            dateModified: "Modified",
+            moreInfo: "Find out more",
         },
         configure: {
             mapdlg: {

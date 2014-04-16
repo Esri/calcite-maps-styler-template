@@ -9,7 +9,6 @@ define([
     "dojo/dom-attr",
     "dojo/dom-class",
     "application/TableOfContents",
-    "application/AboutDialog",
     "application/ShareDialog",
     "application/Drawer",
     "application/DrawerMenu",
@@ -23,9 +22,10 @@ define([
     "dijit/registry",
     "dojo/_base/array",
     "application/signInHelper",
-    "esri/lang"
+    "esri/lang",
+    "dojo/date/locale"
 ],
-function(
+function (
     declare,
     lang,
     arcgisUtils,
@@ -35,7 +35,7 @@ function(
     domStyle,
     domAttr,
     domClass,
-    TableOfContents, AboutDialog, ShareDialog, Drawer, DrawerMenu,
+    TableOfContents, ShareDialog, Drawer, DrawerMenu,
     HomeButton, LocateButton, BasemapToggle,
     Geocoder,
     Popup,
@@ -43,13 +43,13 @@ function(
     AreaOfInterest,
     registry,
     array, signInHelper,
-    esriLang
+    esriLang, locale
 ) {
     return declare("", [AreaOfInterest], {
         config: {},
         constructor: function () {
             // css classes
-            this.css= {
+            this.css = {
                 mobileSearchDisplay: "mobile-locate-box-display",
                 toggleBlue: 'toggle-grey',
                 toggleBlueOn: 'toggle-grey-on',
@@ -58,6 +58,8 @@ function(
                 panelHeader: "panel-header",
                 panelSection: "panel-section",
                 panelSummary: "panel-summary",
+                panelModified: "panel-modified-date",
+                panelMoreInfo: "panel-more-info",
                 pointerEvents: "pointer-events",
                 iconRight: "icon-right",
                 locateButtonTheme: "LocateButtonCalcite",
@@ -66,7 +68,8 @@ function(
                 mobileGeocoderTheme: "geocoder-mobile",
                 iconList: "icon-list",
                 iconLayers: "icon-layers",
-                iconMap: "icon-map",
+                //iconMap: "icon-map",
+                iconInfo: 'icon-info-circled-1',
                 iconText: "icon-text",
                 appLoading: "app-loading",
                 appError: "app-error"
@@ -74,7 +77,7 @@ function(
             // mobile size switch domClass
             this._showDrawerSize = 850;
             // pointer event support
-            if(this._pointerEventsSupport()){
+            if (this._pointerEventsSupport()) {
                 domClass.add(document.documentElement, this.css.pointerEvents);
             }
             // mobile size switch domClass
@@ -114,7 +117,7 @@ function(
             domClass.add(document.body, this.css.appError);
             // set message
             var node = dom.byId('error_message');
-            if(node){
+            if (node) {
                 if (this.config && this.config.i18n) {
                     node.innerHTML = this.config.i18n.map.error + ": " + error.message;
                 } else {
@@ -122,14 +125,14 @@ function(
                 }
             }
         },
-        _pointerEventsSupport: function(){
+        _pointerEventsSupport: function () {
             var element = document.createElement('x');
             element.style.cssText = 'pointer-events:auto';
             return element.style.pointerEvents === 'auto';
         },
-        _initLegend: function(){
+        _initLegend: function () {
             var legendNode = dom.byId('LegendDiv');
-            if(legendNode){
+            if (legendNode) {
                 this._mapLegend = new Legend({
                     map: this.map,
                     layerInfos: this.layerInfos
@@ -137,7 +140,7 @@ function(
                 this._mapLegend.startup();
             }
         },
-        _initTOC: function(){
+        _initTOC: function () {
             // layers
             var tocNode = dom.byId('TableOfContents');
             if (tocNode) {
@@ -152,18 +155,26 @@ function(
         _init: function () {
             // menu panels
             this.drawerMenus = [];
-            var menuObj, content;
+            var menuObj, content, mapPanelHeader;
+
             // multiple polygons
-            if (this.config.enableMapPanel) {
+            if (this.config.enableAboutPanel) {
+                mapPanelHeader = (this.config.title || this.config.itemInfo.item.title);
                 content = '';
                 content += '<div class="' + this.css.panelContainer + '">';
                 // if summary enabled
                 if (this.config.enableSummary) {
-                    content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.general.mapInfo + '</div>';
+                    content += '<div class="' + this.css.panelHeader + '" title=" ' + mapPanelHeader + '">' + mapPanelHeader + '</div>';
                     content += '<div class="' + this.css.panelSummary + '" id="summary"></div>';
                 }
+                if (this.config.enableModifiedDate) {
+                    content += '<div class="' + this.css.panelModified + '" id="date_modified"></div>';
+                }
+                if (this.config.enableMoreInfo) {
+                    content += '<div class="' + this.css.panelMoreInfo + '" id="more_info_link"></div>';
+                }
                 // show summary layer
-                if(this.config.summaryLayer && this.config.summaryLayer.id){
+                if (this.config.summaryLayer && this.config.summaryLayer.id) {
                     content += '<div id="impact_area_section">';
                     content += '<div class="' + this.css.panelHeader + '"><span id="impact_area_title">' + this.config.i18n.general.impactArea + '</span></div>';
                     content += '<div id="renderer_menu"></div>';
@@ -172,18 +183,19 @@ function(
                 content += '</div>';
                 // menu
                 menuObj = {
-                    title: this.config.i18n.general.map,
-                    label: '<div class="' + this.css.iconMap + '"></div><div class="' + this.css.iconText + '">' + this.config.i18n.general.map + '</div>',
+                    title: this.config.i18n.general.about,
+                    label: '<div class="' + this.css.iconInfo + '"></div><div class="' + this.css.iconText + '">' + this.config.i18n.general.about + '</div>',
                     content: content
                 };
                 // map menu
-                if(this.config.defaultPanel === 'map'){
-                    this.drawerMenus.splice(0,0,menuObj);
+                if (this.config.defaultPanel === 'about') {
+                    this.drawerMenus.splice(0, 0, menuObj);
                 }
-                else{
+                else {
                     this.drawerMenus.push(menuObj);
                 }
             }
+            // legend panel
             if (this.config.enableLegendPanel) {
                 content = '';
                 content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.general.legend + '</div>';
@@ -199,10 +211,10 @@ function(
                     content: content
                 };
                 // legend menu
-                if(this.config.defaultPanel === 'legend'){
-                    this.drawerMenus.splice(0,0,menuObj);
+                if (this.config.defaultPanel === 'legend') {
+                    this.drawerMenus.splice(0, 0, menuObj);
                 }
-                else{
+                else {
                     this.drawerMenus.push(menuObj);
                 }
             }
@@ -220,10 +232,10 @@ function(
                     content: content
                 };
                 // layers menu
-                if(this.config.defaultPanel === 'layers'){
-                    this.drawerMenus.splice(0,0,menuObj);
+                if (this.config.defaultPanel === 'layers') {
+                    this.drawerMenus.splice(0, 0, menuObj);
                 }
-                else{
+                else {
                     this.drawerMenus.push(menuObj);
                 }
             }
@@ -248,8 +260,8 @@ function(
                 }, 'HomeButton');
                 this._HB.startup();
                 // clear locate on home button
-                on(this._HB, 'home', lang.hitch(this, function(){
-                    if(this._LB){
+                on(this._HB, 'home', lang.hitch(this, function () {
+                    if (this._LB) {
                         this._LB.clear();
                     }
                 }));
@@ -273,18 +285,6 @@ function(
                     }
                 }));
                 /* END temporary until after JSAPI 4.0 is released */
-            }
-            // about dialog
-            if (this.config.enableAboutDialog) {
-                this._AboutDialog = new AboutDialog({
-                    theme: this.css.iconRight,
-                    item: this.item,
-                    sharinghost: this.config.sharinghost
-                }, 'AboutDialog');
-                this._AboutDialog.startup();
-                if(this.config.showAboutOnLoad){
-                    this._AboutDialog.open();
-                }
             }
             // share dialog
             if (this.config.enableShareDialog) {
@@ -310,13 +310,13 @@ function(
             this.initArea();
             this.startupArea();
             // on body click containing underlay class
-            on(document.body, '.dijitDialogUnderlay:click', function(){
+            on(document.body, '.dijitDialogUnderlay:click', function () {
                 // get all dialogs
-                var filtered = array.filter(registry.toArray(), function(w){
+                var filtered = array.filter(registry.toArray(), function (w) {
                     return w && w.declaredClass == "dijit.Dialog";
                 });
                 // hide all dialogs
-                array.forEach(filtered, function(w){
+                array.forEach(filtered, function (w) {
                     w.hide();
                 });
             });
@@ -343,9 +343,33 @@ function(
             this._hideLoadingIndicator();
             // drawer size check
             this._drawer.resize();
+            // modified date
+            if (this.config.enableModifiedDate) {
+                this._setModifiedDate();
+            }
+            // more information link
+            if (this.config.enableMoreInfo) {
+                this._moreInfoLink();
+            }
+        },
+        _setModifiedDate: function () {
+            var node = dom.byId('date_modified');
+            if (node && this.item && this.item.modified) {
+                // modified date
+                var m = new Date(this.item.modified);
+                var modifiedDate = locale.format(m, {});
+                // set date
+                node.innerHTML = this.config.i18n.general.dateModified + ' ' + modifiedDate;
+            }
+        },
+        _moreInfoLink: function () {
+            var node = dom.byId('more_info_link');
+            if (node && this.item && this.item.id) {
+                node.innerHTML = '<a target="_blank" href="' + this.config.sharinghost + "/home/item.html?id=" + this.item.id + '">' + this.config.i18n.general.moreInfo + '</a>';
+            }
         },
         _checkMobileGeocoderVisibility: function () {
-            if(this._mobileGeocoderIconNode && this._mobileSearchNode){
+            if (this._mobileGeocoderIconNode && this._mobileSearchNode) {
                 // check if mobile icon needs to be selected
                 if (domClass.contains(this._mobileGeocoderIconNode, this.css.toggleBlueOn)) {
                     domClass.add(this._mobileSearchNode, this.css.mobileSearchDisplay);
@@ -353,13 +377,13 @@ function(
             }
         },
         _showMobileGeocoder: function () {
-            if(this._mobileSearchNode && this._mobileGeocoderIconContainerNode){
+            if (this._mobileSearchNode && this._mobileGeocoderIconContainerNode) {
                 domClass.add(this._mobileSearchNode, this.css.mobileSearchDisplay);
                 domClass.replace(this._mobileGeocoderIconContainerNode, this.css.toggleBlueOn, this.css.toggleBlue);
             }
         },
         _hideMobileGeocoder: function () {
-            if(this._mobileSearchNode && this._mobileGeocoderIconContainerNode){
+            if (this._mobileSearchNode && this._mobileGeocoderIconContainerNode) {
                 domClass.remove(this._mobileSearchNode, this.css.mobileSearchDisplay);
                 domStyle.set(this._mobileSearchNode, "display", "none");
                 domClass.replace(this._mobileGeocoderIconContainerNode, this.css.toggleBlue, this.css.toggleBlueOn);
@@ -379,7 +403,7 @@ function(
             // window title
             window.document.title = title;
         },
-        _createGeocoderOptions: function() {
+        _createGeocoderOptions: function () {
             var hasEsri = false, esriIdx, geocoders = lang.clone(this.config.helperServices.geocode);
             // default options
             var options = {
@@ -396,14 +420,14 @@ function(
                 if (geocoder.url) {
                     return true;
                 }
-                else{
+                else {
                     return false;
                 }
             });
             // at least 1 geocoder defined
-            if(geocoders.length){
+            if (geocoders.length) {
                 // each geocoder
-                array.forEach(geocoders, lang.hitch(this, function(geocoder) {
+                array.forEach(geocoders, lang.hitch(this, function (geocoder) {
                     // if esri geocoder
                     if (geocoder.url && geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
                         hasEsri = true;
@@ -509,7 +533,7 @@ function(
                 }));
             }
             var closeMobileGeocoderNode = dom.byId("btnCloseGeocoder");
-            if(closeMobileGeocoderNode){
+            if (closeMobileGeocoderNode) {
                 // cancel mobile geocoder
                 on(closeMobileGeocoderNode, "click", lang.hitch(this, function () {
                     this._hideMobileGeocoder();
@@ -521,13 +545,13 @@ function(
             // add loaded class
             domClass.remove(document.body, this.css.appLoading);
         },
-        _setLayerMode: function(itemInfo, id){
+        _setLayerMode: function (itemInfo, id) {
             // if we have a layer id
             if (id && itemInfo && itemInfo.itemData && itemInfo.itemData.operationalLayers) {
                 for (var i = 0; i < itemInfo.itemData.operationalLayers.length; i++) {
                     if (itemInfo.itemData.operationalLayers[i].id === id) {
                         // set snapshot mode
-                        if(itemInfo.itemData.operationalLayers[i].hasOwnProperty('mode')){
+                        if (itemInfo.itemData.operationalLayers[i].hasOwnProperty('mode')) {
                             itemInfo.itemData.operationalLayers[i].mode = 0;
                         }
                         // record layer order index
@@ -540,7 +564,7 @@ function(
         //create a map based on the input web map id
         _createWebMap: function (itemInfo) {
             // set impact layer mode to snapshot
-            if(this.config.summaryLayer && this.config.summaryLayer.id){
+            if (this.config.summaryLayer && this.config.summaryLayer.id) {
                 itemInfo = this._setLayerMode(itemInfo, this.config.summaryLayer.id);
             }
             // popup dijit
@@ -548,9 +572,9 @@ function(
             // add popup theme
             domClass.add(customPopup.domNode, "calcite");
             // set extent from URL Param
-            if(this.config.extent){
+            if (this.config.extent) {
                 var e = this.config.extent.split(',');
-                if(e.length === 4){
+                if (e.length === 4) {
                     itemInfo.item.extent = [
                         [
                             parseFloat(e[0]),

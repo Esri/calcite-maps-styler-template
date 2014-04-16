@@ -31,8 +31,6 @@ define({
                 "appSettingsDescriptionText": "Application Description",
                 "appSetingsRendererAreaText":"Rendered Area",
                 "shareText":"Share",
-                "aboutText":"About",
-                "aboutDialogOnLoadText": "Open on Load",
                 "basemapText":"Basemap",
                 "basemapSelectionText":"Basemap Selection",
                 "secondaryBasemapText":"Secondary Basemap",

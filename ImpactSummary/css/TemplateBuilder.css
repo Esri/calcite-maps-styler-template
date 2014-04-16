@@ -121,7 +121,7 @@
         float: left;
         cursor: pointer;
         margin-left: 5px;
-        margin-top: 6px;
+        margin-top: 12px;
         background-size: 75%;
 }
 
@@ -484,7 +484,7 @@
         border-bottom: 1px solid #efefef;
         border-right: 1px solid #efefef;
         height: 25px;
-        padding: 12px 5px;
+        padding: 20px 5px;
 }
 .esriParentContainerStyleClm2 {
         float: left;
@@ -492,14 +492,14 @@
         border-bottom: 1px solid #efefef;
         border-right: 1px solid #efefef;
         height: 25px;
-        padding: 12px 5px;
+        padding: 20px 5px;
 }
 .esriParentContainerStyleClm3 {
         float: left;
         width: 34%;
         border-bottom: 1px solid #efefef;
         height: 25px;
-        padding: 12px 5px;
+        padding: 20px 5px;
 }
 .esriParentContainerStyleClmBrdNone {
         border-bottom: none;

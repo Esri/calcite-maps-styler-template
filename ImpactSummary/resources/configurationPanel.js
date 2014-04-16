@@ -72,7 +72,7 @@
             },
             {
                "type":"boolean",
-               "fieldName":"enableMapPanel",
+               "fieldName":"enableAboutPanel",
                "label":"Enable Map Panel",
                "tooltip":"Enable Map Panel"
             },
@@ -99,18 +99,6 @@
                "fieldName":"enableBasemapToggle",
                "label":"Enable Basemap Toggle",
                "tooltip":"Enable Basemap Toggle"
-            },
-            {
-               "type":"boolean",
-               "fieldName":"enableAboutDialog",
-               "label":"Enable About Dialog",
-               "tooltip":"Enable About Dialog"
-            },
-            {
-               "type":"boolean",
-               "fieldName":"showAboutOnLoad",
-               "label":"Show About Dialog on load",
-               "tooltip":"Show About Dialog on load"
             },
             {
                "type":"boolean",
@@ -210,12 +198,10 @@
       "title":"",
       "enableSummary":true,
       "enableLegendPanel":true,
-      "enableMapPanel":true,
+      "enableAboutPanel":true,
       "enableHomeButton":true,
       "enableLocateButton":true,
       "enableBasemapToggle":true,
-      "enableAboutDialog":true,
-      "showAboutOnLoad":false,
       "enableShareDialog":true,
       "nextBasemap":"hybrid",
       "defaultBasemap":"topo"

@@ -29,6 +29,39 @@ The template can be configured using the following options:
 3. Access the .html page.
 4. See the readme.html page for configuration options.
 
+## Data Layer Requirements
+The template requires a FeatureLayer with numeric attributes to show the data in the block panel over the map.
+
+## Configuring The Template
+This template has an application builder built into it. If you're using this template via ArcGIS.com, you can take advantage of this builder while logged into ArcGIS. If you are the owner of the application via the appid parameter, you will see an option to enter the builder mode and start configuring the template.
+
+If you are not using ArcGIS Online applications, you can configure this template using the defaults.js in the config folder. To configure the data layer, enter the FeatureLayer ID into the "summaryLayer":"id" property. You will need to know the ID of this layer. The ID of the layer can be seen in the webmap JSON response or by logging the FeatureLayer object to the console.
+
+Once you have the layer with the data configured, you can start entering which attributes you would like to show by editing the "summaryAttributes" property in the defaults.js.
+
+You can specify 1-4 main variables and each can have 0-many sub-variables that will be shown when the main variable is clicked. For the main variable, you can optionally link to a source for the data. Each variable can have a label for it as well.
+
+### Layer Example
+
+    "summaryLayer": {
+        "id": "THE_ID_OF_MY_LAYER"
+    },
+
+### Attributes example
+
+    "summaryAttributes": [{
+        "attribute": "MY_MAIN_VARIABLE",
+        "label": "My Variable",
+        "dataSourceUrl": "http://mydata.com/",
+        "children": [{
+            "attribute": "MY_RELATED_VARIABLE 1",
+            "label": "My Related Variable 1"
+        }, {
+            "attribute": "MY_RELATED_VARIABLE 2",
+            "label": "My Related Variable 2"
+        }]
+    }]
+
  [New to Github? Get started here.](https://github.com/)
 
 ## Requirements

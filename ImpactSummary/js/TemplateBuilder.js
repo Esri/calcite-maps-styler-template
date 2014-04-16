@@ -170,7 +170,6 @@ function (
         //function to create Application settigns panel
         //function creates Left,Right,Basemap and Bottom panel
         _createAppSettingsPanel: function () {
-
             var settingsContainer;
             settingsContainer = domConstruct.create("div", { "class": "esriAppSettingPanelContainer" }, null);
             this._storeCurrentAppSetting();
@@ -185,10 +184,8 @@ function (
             this.appSetting = {};
             this.appSetting.title = this.config.title;
             this.appSetting.summary = this.config.summary;
-            this.appSetting.enableAboutDialog = this.config.enableAboutDialog;
             this.appSetting.enableEntireAreaButton = this.config.enableEntireAreaButton;
             this.appSetting.summaryAttributeOrder = this.config.summaryAttributeOrder;
-            this.appSetting.showAboutOnLoad = this.config.showAboutOnLoad;
             this.appSetting.enableShareDialog = this.config.enableShareDialog;
             this.appSetting.enableBasemapToggle = this.config.enableBasemapToggle;
             this.appSetting.nextBasemap = this.config.nextBasemap;
@@ -251,10 +248,8 @@ function (
             this._createFirstColumn(rightSettingsContent);
             //create share dialog column
             this._createSecondColumn(rightSettingsContent);
-            //Create about dialog column
-            this._createThirdColumn(rightSettingsContent);
             //Create basemap column
-            this._createFourthColumn(rightSettingsContent);
+            this._createThirdColumn(rightSettingsContent);
         },
 
         _createAppSettingBasemapPanel: function (settingsContainer) {
@@ -329,7 +324,6 @@ function (
             }));
 
             on(cancelButton, "click", lang.hitch(this, function () {
-                if (query(".icon-info-circled-1")[0]) this._disableComponent(this.appSetting.enableAboutDialog, query(".icon-info-circled-1")[0]);
                 if (query(".icon-share")[0]) this._disableComponent(this.appSetting.enableShareDialog, query(".icon-share")[0]);
                 if (query(".BasemapToggle")[0]) this._disableComponent(this.appSetting.enableBasemapToggle, query(".BasemapToggle")[0]);
                 if (settingsDialog) {
@@ -353,7 +347,6 @@ function (
                 draggable: false
             });
             on(settingsDialog, "hide", lang.hitch(this, function () {
-                if (query(".icon-info-circled-1")[0]) this._disableComponent(this.appSetting.enableAboutDialog, query(".icon-info-circled-1")[0]);
                 if (query(".icon-share")[0]) this._disableComponent(this.appSetting.enableShareDialog, query(".icon-share")[0]);
                 if (query(".BasemapToggle")[0]) this._disableComponent(this.appSetting.enableBasemapToggle, query(".BasemapToggle")[0]);
                 this._revertGlobalAppSetting();
@@ -414,35 +407,6 @@ function (
         },
 
         _createThirdColumn: function (rightSettingsContent) {
-            var aboutContainer, aboutLabelContainer, aboutButtonContainer, aboutShowContainer, aboutOnOffButton, aboutOnOffButtonLabel,
-            currentState, currentClass, aboutShowInnerContainer, parameterStatus, abouttoggle, onOffButtondiv;
-            aboutContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
-            aboutLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, aboutContainer);
-            domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.aboutText }, aboutLabelContainer);
-            aboutButtonContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2" }, aboutContainer);
-            currentState = this._checkButtonState(this.config.enableAboutDialog);
-            aboutOnOffButtonLabel = domConstruct.create("div", { innerHTML: currentState.label, "class": "esriOnOffButtonLabel" }, aboutButtonContainer);
-            onOffButtondiv = domConstruct.create("div", { "class": "esriOnOffButtonDiv" }, aboutButtonContainer);
-            aboutOnOffButton = domConstruct.create("div", { "class": currentState.class }, onOffButtondiv);
-            on(aboutOnOffButton, "click", lang.hitch(this, function () {
-                parameterStatus = this._toggleButtonState(aboutOnOffButton, this.config.enableAboutDialog, aboutOnOffButtonLabel);
-                this.config.enableAboutDialog = parameterStatus;
-                if (query(".icon-info-circled-1")[0]) {
-                    this._disableComponent(parameterStatus, query(".icon-info-circled-1")[0]);
-                }
-            }));
-            aboutShowContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm3" }, aboutContainer);
-            aboutShowInnerContainer = domConstruct.create("div", { "class": "esriParentinner" }, aboutShowContainer);
-            domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.aboutDialogOnLoadText, "style": "float:left; margin-right:5px;" }, aboutShowInnerContainer);
-            currentClass = this.config.showAboutOnLoad ? "esriSelectIcon" : "esriDeselectIcon";
-            abouttoggle = domConstruct.create("div", { "class": currentClass }, aboutShowInnerContainer);
-            on(abouttoggle, "click", lang.hitch(this, function () {
-                parameterStatus = this._toggleCheckBoxSate(abouttoggle, this.config.showAboutOnLoad, aboutOnOffButton);
-                this.config.showAboutOnLoad = parameterStatus;
-            }));
-        },
-
-        _createFourthColumn: function (rightSettingsContent) {
             var basemapContainer, basemapLabelContainer, basemapLabel, basmapButtonContainer, parameterStatus, currentState,
             basemapOnOffButtonLabel, basemapOnOffButton, onOffButtondiv;
             basemapContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
@@ -1200,28 +1164,6 @@ function (
 
         _attachMouseEvents: function (myTooltipDialog) {
             var _this = this;
-            //tooltip for About dialog
-            on(dom.byId('AboutDialog'), "mouseover", function () {
-                var aboutDialogContent, aboutOnOfButton, aboutLoadtext, onLoadCheckIcon, parameterStatus, currentClass, currentState,
-                aboutlabel;
-                aboutDialogContent = domConstruct.create("div", { "class": "esriTooltipDialog" }, null);
-                currentState = _this._checkButtonState(_this.config.enableAboutDialog);
-                aboutlabel = domConstruct.create("div", { innerHTML: currentState.label, "class": "esriFloatLeftStyle esriToggleButtonClass" }, aboutDialogContent);
-                aboutOnOfButton = domConstruct.create("div", { "class": "esriFloatLeftStyle " + currentState.class }, aboutDialogContent);
-                aboutLoadtext = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.aboutDialogOnLoadText, "class": "esriFloatLeftlabel" }, aboutDialogContent);
-                currentClass = _this.config.showAboutOnLoad ? "esriSelectIcon" : "esriDeselectIcon";
-                onLoadCheckIcon = domConstruct.create("div", { "class": "esriFloatLeftStyle " + currentClass, "style": "margin-left:5px;" }, aboutDialogContent);
-                on(aboutOnOfButton, "click", function () {
-                    parameterStatus = _this._toggleButtonState(aboutOnOfButton, _this.config.enableAboutDialog, aboutlabel);
-                    _this.config.enableAboutDialog = parameterStatus;
-                    _this._disableComponent(parameterStatus, query(".icon-info-circled-1")[0]);
-                });
-                on(onLoadCheckIcon, "click", lang.hitch(this, function () {
-                    parameterStatus = _this._toggleCheckBoxSate(onLoadCheckIcon, _this.config.showAboutOnLoad, aboutOnOfButton);
-                    _this.config.showAboutOnLoad = parameterStatus;
-                }));
-                _this._displayTooltip(myTooltipDialog, aboutDialogContent, this, false);
-            });
             //tooltip for Share dialog
             on(dom.byId('ShareDialog'), "mouseover", function () {
                 var shareDialogContent, sharelabel, shareOnOfButton, currentState, parameterStatus;
