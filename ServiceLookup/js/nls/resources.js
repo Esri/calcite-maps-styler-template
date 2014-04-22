@@ -14,7 +14,12 @@ define({
         },
         page: {
             title: "Information Lookup",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
+
     }),
     "ar": 1,
     "cs": 1,
@@ -38,7 +43,7 @@ define({
     "ro": 1,
     "ru": 1,
     "sv": 1,
-    "th": 1,    
+    "th": 1,
     "tr": 1,
     "zh-cn": 1
 });
