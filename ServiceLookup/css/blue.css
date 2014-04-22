@@ -1,0 +1,67 @@
+﻿.divSplashScreenContainer
+{
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.65);
+    -pie-background: rgba(0,0,0,0.65);
+    behavior: url("styles/PIE.htc");
+    position: absolute;
+    z-index: 1003;
+    width: 100%;
+    height: 100%;
+}
+.divSplashScreenContent
+{
+    z-index: 1003;
+    background-color: #82b0f1;
+    text-align: left;
+    color:white;
+    font-size:16px;
+}
+
+.divSplashScreenDialogContent
+{
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 10px #fff;
+    -moz-box-shadow: 0 0 10px #fff;
+    -o-box-shadow: 0 0 10px #fff;
+    box-shadow: 0 0 10px #fff;
+    behavior: url("styles/PIE.htc");
+}
+
+.divSplashContainer
+{
+    overflow: hidden;
+    position: relative;
+}
+
+.divSplashContent
+{
+    padding-left: 10px;
+    overflow: hidden;
+    width: 90%;
+}
+
+.customButton
+{
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3c71ee), to(#454545)) !important;
+    background: -moz-linear-gradient(top, #3c71ee, #454545) !important;
+    background: -o-linear-gradient(#3c71ee, #454545) !important;
+    background: linear-gradient(#3c71ee, #454545) !important;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.customButtonInner
+{
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#888888', endColorstr='#454545');
+    width: 100%;
+    height: 100%;
+}
