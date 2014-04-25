@@ -142,7 +142,7 @@ xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\M
 xcopy %TEMPLATES_ROOT%\MapSeries\app\config\series-config.js    %BUILD_OUTPUT%\MapSeries\app\config.js*             /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\StorytellingBasic                    /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries\app\config\basic-config.js     %BUILD_OUTPUT%\StorytellingBasic\app\config.js*     /E /Y
-xcopy %TEMPLATES_ROOT%\bv_build                                 %BUILD_OUTPUT%\bv_build                             /E /Y
+xcopy %TEMPLATES_ROOT%\bv_build\src                             %BUILD_OUTPUT%\bv_build                             /E /Y
 xcopy %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\bv_build\commonConfig.js             /E /Y
 
 REM Finally copy assorted files in the root directory
