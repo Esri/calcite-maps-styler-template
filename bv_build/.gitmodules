@@ -1,0 +1,28 @@
+[submodule "src/js/dojo/dojo"]
+	path = src/js/dojo/dojo
+	url = git@devtopia:WebGIS/js-dojo.git
+	ignore = dirty
+[submodule "src/js/dojo/dijit"]
+	path = src/js/dojo/dijit
+	url = git@devtopia:WebGIS/js-dijit.git
+	ignore = dirty
+[submodule "src/js/dojo/dojox"]
+	path = src/js/dojo/dojox
+	url = git@devtopia:WebGIS/js-dojox.git
+	ignore = dirty
+[submodule "src/js/dojo/util"]
+	path = src/js/dojo/util
+	url = git@devtopia:WebGIS/js-util.git
+	ignore = dirty
+[submodule "src/js/xstyle"]
+	path = src/js/xstyle
+	url = git@devtopia:WebGIS/js-xstyle.git
+	ignore = dirty
+[submodule "src/js/put-selector"]
+	path = src/js/put-selector
+	url = git@devtopia:WebGIS/js-put-selector.git
+	ignore = dirty
+[submodule "src/js/dgrid"]
+	path = src/js/dgrid
+	url = git@devtopia:WebGIS/js-dgrid.git
+	ignore = dirty
