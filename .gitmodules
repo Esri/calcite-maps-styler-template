@@ -1,0 +1,9 @@
+[submodule "bv_build/src/javascript/dojo/dojo"]
+	path = bv_build/src/javascript/dojo/dojo
+	url = git@devtopia:WebGIS/js-dojo.git
+[submodule "bv_build/src/javascript/dojo/dijit"]
+	path = bv_build/src/javascript/dojo/dijit
+	url = git@devtopia:WebGIS/js-dijit.git
+[submodule "bv_build/src/javascript/dojo/dojox"]
+	path = bv_build/src/javascript/dojo/dojox
+	url = git@devtopia:WebGIS/js-dojox.git
