@@ -18,7 +18,8 @@ define([
     "esri/request",
     "esri/urlUtils",
     "dijit/Dialog",
-    "dojo/number"
+    "dojo/number",
+    "dojo/_base/event"
 ],
     function (
         Evented,
@@ -32,7 +33,8 @@ define([
         esriRequest,
         urlUtils,
         Dialog,
-        number
+        number,
+        event
     ) {
         var Widget = declare([_WidgetBase, _TemplatedMixin, Evented], {
             declaredClass: "esri.dijit.ShareDialog",
@@ -117,6 +119,7 @@ define([
                     button: "toggle-grey",
                     buttonSelected: "toggle-grey-on",
                     icon: "icon-share",
+                    linkIcon: "icon-link share-dialog-icon",
                     facebookIcon: "icon-facebook-squared-1 share-dialog-icon",
                     twitterIcon: "icon-twitter-1 share-dialog-icon",
                     gplusIcon: "icon-gplus share-dialog-icon",
@@ -147,7 +150,6 @@ define([
             },
             // connections/subscriptions will be cleaned up during the destroy() lifecycle phase
             destroy: function () {
-                this._removeEvents();
                 this.inherited(arguments);
             },
             /* ---------------- */
@@ -201,14 +203,6 @@ define([
             _useExtentChanged: function(){
                 this._updateUrl();
                 this._shareLink();  
-            },
-            _removeEvents: function () {
-                if (this._events && this._events.length) {
-                    for (var i = 0; i < this._events.length; i++) {
-                        this._events[i].remove();
-                    }
-                }
-                this._events = [];
             },
             _setSizeOptions: function () {
                 // clear select menu
@@ -280,10 +274,9 @@ define([
                 this._setEmbedCode();
                 // set url value
                 domAttr.set(this._shareMapUrlText, "value", url);
+                domAttr.set(this._linkButton, "href", url);
             },
             _init: function () {
-                // setup events
-                this._removeEvents();
                 // set sizes for select box
                 this._setSizeOptions();
                 // dialog
@@ -295,60 +288,59 @@ define([
                     this.set("dialog", dialog);
                 }
                 // dialog hide
-                var dialogHide = on(this.get("dialog"), 'hide', lang.hitch(this, function () {
+                this.own(on(this.get("dialog"), 'hide', lang.hitch(this, function () {
                     domClass.remove(this._buttonNode, this.css.buttonSelected);
-                }));
-                this._events.push(dialogHide);
+                })));
                 // set visible
                 this._visible();
                 // set embed url
                 this._updateUrl();
                 // select menu change
-                var selectChange = on(this._comboBoxNode, "change", lang.hitch(this, function (evt) {
+                this.own(on(this._comboBoxNode, "change", lang.hitch(this, function (evt) {
                     this.set("embedWidth", this.get("embedSizes")[parseInt(evt.currentTarget.value, 10)].width);
                     this.set("embedHeight", this.get("embedSizes")[parseInt(evt.currentTarget.value, 10)].height);
                     this._setEmbedCode();
-                }));
-                this._events.push(selectChange);
+                })));
                 // facebook click
-                var facebook = on(this._facebookButton, "click", lang.hitch(this, function () {
+                this.own(on(this._facebookButton, a11yclick, lang.hitch(this, function () {
                     this._configureShareLink(this.get("facebookURL"));
-                }));
-                this._events.push(facebook);
+                })));
                 // twitter click
-                var twitter = on(this._twitterButton, "click", lang.hitch(this, function () {
+                this.own(on(this._twitterButton, a11yclick, lang.hitch(this, function () {
                     this._configureShareLink(this.get("twitterURL"));
-                }));
-                this._events.push(twitter);
+                })));
                 // google plus click
-                var gplus = on(this._gpulsButton, "click", lang.hitch(this, function () {
+                this.own(on(this._gpulsButton, a11yclick, lang.hitch(this, function () {
                     this._configureShareLink(this.get("googlePlusURL"));
-                }));
-                this._events.push(gplus);
+                })));
                 // email click
-                var email = on(this._emailButton, "click", lang.hitch(this, function () {
+                this.own(on(this._emailButton, a11yclick, lang.hitch(this, function () {
                     this._configureShareLink(this.get("mailURL"), true);
-                }));
-                this._events.push(email);
+                })));
                 // link box click
-                var linkclick = on(this._shareMapUrlText, "click", lang.hitch(this, function () {
-                    this._shareMapUrlText.select();
+                this.own(on(this._shareMapUrlText, a11yclick, lang.hitch(this, function () {
+                    this._shareMapUrlText.setSelectionRange(0, 9999);
+                })));
+                // link box mouseup stop for touch devices
+                this.own(on(this._shareMapUrlText, 'mouseup', function (evt) {
+                    event.stop(evt);
                 }));
-                this._events.push(linkclick);
                 // embed box click
-                var embedclick = on(this._embedNode, "click", lang.hitch(this, function () {
-                    this._embedNode.select();
+                this.own(on(this._embedNode, a11yclick, lang.hitch(this, function () {
+                    this._embedNode.setSelectionRange(0, 9999);
+                })));
+                // embed box mouseup stop for touch devices
+                this.own(on(this._embedNode, 'mouseup', function (evt) {
+                    event.stop(evt);
                 }));
-                this._events.push(embedclick);
                 // rotate
-                var rotate = on(window, "orientationchange", lang.hitch(this, function () {
+                this.own(on(window, "orientationchange", lang.hitch(this, function () {
                     var open = this.get("dialog").get("open");
                     if (open) {
                         dialog.hide();
                         dialog.show();
                     }
-                }));
-                this._events.push(rotate);
+                })));
                 // loaded
                 this.set("loaded", true);
                 this.emit("load", {});
@@ -364,6 +356,7 @@ define([
                 var bitly = this.get("bitlyUrl");
                 if (bitly) {
                     domAttr.set(this._shareMapUrlText, "value", bitly);
+                    domAttr.set(this._linkButton, "href", bitly);
                 }
             },
             _shareLink: function () {
