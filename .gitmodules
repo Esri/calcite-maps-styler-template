@@ -7,3 +7,6 @@
 [submodule "bv_build/src/javascript/dojo/dojox"]
 	path = bv_build/src/javascript/dojo/dojox
 	url = git@devtopia:WebGIS/js-dojox.git
+[submodule "bv_build/src/javascript/dojo/util"]
+	path = bv_build/src/javascript/dojo/util
+	url = git@devtopia:WebGIS/js-util.git
