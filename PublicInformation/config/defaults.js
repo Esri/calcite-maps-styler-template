@@ -29,6 +29,8 @@ define({
     "enableMoreInfo": true,
     "defaultBasemap": "topo",
     "nextBasemap": "hybrid",
+    "swipeType":"vertical",
+    "swipeInvertPlacement":true,
     "hideNotesLayerPopups": true,
     "enableInstagram": true,
     "instagramVisible": false,
