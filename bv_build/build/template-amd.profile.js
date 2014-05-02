@@ -95,7 +95,7 @@ var profile = {
       'dom': 1,
       'host-browser': 1,
       'extend-dojo': 1,
-      'extend-esri': 0
+      'extend-esri': 1
     },
 
     // http://dojotoolkit.org/documentation/tutorials/1.8/build/
