@@ -36,6 +36,14 @@ var profile = {
         destLocation: "./dojo/dojox"
       },
       {
+        name:     "put-selector",
+        location: "../put-selector"
+      },
+      {
+        name:     "xstyle",
+        location: "../xstyle"
+      },
+      {
         name:     "esri",
         location: "../esri"
       },
