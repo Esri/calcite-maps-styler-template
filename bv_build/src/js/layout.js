@@ -1,4 +1,8 @@
-dojo.require("esri.widgets");
+dojo.require("dijit.layout.BorderContainer");
+dojo.require("dijit.form.ToggleButton");
+dojo.require("dijit.layout.StackContainer");
+dojo.require("dijit.layout.ContentPane");
+dojo.require("dijit.Toolbar");
 dojo.require("esri.arcgis.utils");
 dojo.require("dojox.layout.FloatingPane");
 dojo.require("dojo.dnd.move");
@@ -6,6 +10,40 @@ dojo.require("utilities.custommenu");
 dojo.require("esri.dijit.HomeButton");
 dojo.require("esri.dijit.LocateButton");
 dojo.require("apl.ElevationsChart.Pane");
+dojo.require("esri.dijit.Scalebar");
+dojo.require("esri.layers.FeatureLayer");
+dojo.require("esri.toolbars.draw");
+dojo.require("esri.toolbars.edit");
+dojo.require("esri.tasks.geometry");
+dojo.require("esri.dijit.AttributeInspector");
+dojo.require("esri.dijit.editing.Editor");
+dojo.require("esri.dijit.editing.TemplatePicker");
+dojo.require("esri.dijit.editing.SelectionHelper");
+dojo.require("esri.dijit.BasemapGallery");
+dojo.require("esri.dijit.Bookmarks");
+dojo.require("esri.dijit.Directions");
+dojo.require("esri.dijit.Gallery");
+dojo.require("esri.dijit.Gauge");
+dojo.require("esri.dijit.Geocoder");
+dojo.require("esri.dijit.InfoView");
+dojo.require("esri.dijit.InfoWindow");
+dojo.require("esri.dijit.Legend");
+dojo.require("esri.dijit.Measurement");
+dojo.require("esri.dijit.NavigationBar");
+dojo.require("esri.dijit.OverviewMap");
+dojo.require("esri.dijit.Popup");
+dojo.require("esri.dijit.PopupMobile");
+dojo.require("esri.dijit.Print");
+dojo.require("esri.dijit.Scalebar");
+dojo.require("esri.dijit.TimeSlider");
+dojo.require("esri.dijit.HomeButton");
+dojo.require("esri.dijit.LocateButton");
+dojo.require("dijit.Menu");
+dojo.require("dijit.form.DropDownButton");
+dojo.require("dijit.CheckedMenuItem");
+
+
+
 
 var map;
 var clickHandler, clickListener;
