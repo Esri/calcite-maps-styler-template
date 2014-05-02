@@ -7,3 +7,21 @@
 [submodule "bv_build/src/javascript/xstyle"]
 	path = bv_build/src/javascript/xstyle
 	url = git@devtopia:WebGIS/js-xstyle.git
+[submodule "bv_build/src/js/dojo/dojo"]
+	path = bv_build/src/js/dojo/dojo
+	url = git@devtopia:WebGIS/js-dojo.git
+[submodule "bv_build/src/js/dojo/dijit"]
+	path = bv_build/src/js/dojo/dijit
+	url = git@devtopia:WebGIS/js-dijit.git
+[submodule "bv_build/src/js/dojo/dojox"]
+	path = bv_build/src/js/dojo/dojox
+	url = git@devtopia:WebGIS/js-dojox.git
+[submodule "bv_build/src/js/dojo/util"]
+	path = bv_build/src/js/dojo/util
+	url = git@devtopia:WebGIS/js-util.git
+[submodule "bv_build/src/js/xstyle"]
+	path = bv_build/src/js/xstyle
+	url = git@devtopia:WebGIS/js-xstyle.git
+[submodule "bv_build/src/js/put-selector"]
+	path = bv_build/src/js/put-selector
+	url = git@devtopia:WebGIS/js-put-selector.git
