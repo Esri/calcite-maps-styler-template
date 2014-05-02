@@ -10,3 +10,9 @@
 [submodule "bv_build/src/javascript/dojo/util"]
 	path = bv_build/src/javascript/dojo/util
 	url = git@devtopia:WebGIS/js-util.git
+[submodule "bv_build/src/javascript/put-selector"]
+	path = bv_build/src/javascript/put-selector
+	url = git@devtopia:WebGIS/js-put-selector.git
+[submodule "bv_build/src/javascript/xstyle"]
+	path = bv_build/src/javascript/xstyle
+	url = git@devtopia:WebGIS/js-xstyle.git

@@ -15,21 +15,21 @@
       <link rel="stylesheet" type="text/css" href="css/ie.css" />
     <![endif]-->
 
-    <script src="javascript/dojoConfig.js"></script>
+    <script src="js/dojoConfig.js"></script>
     <script src="js/dojo/dojo/dojo.js"></script>
 
 
     </script>
-    <script type="text/javascript">
+    <script>
       dojo.require("esri.layout");
     </script>
  
-    <script type="text/javascript" src="javascript/layout.js">
+    <script src="js/layout.js">
     </script>
-    <script type="text/javascript">
+    <script>
       dojo.require("utilities.App");
       dojo.require("dojo.on");
-      dojo.require("esriTemplate.commonConfig");
+      dojo.require("utilities.commonConfig");
  
 
 
@@ -37,7 +37,7 @@
       dojo.ready(function(){
 
 
-        i18n = dojo.i18n.getLocalization("esriTemplate","template");
+        i18n = dojo.i18n.getLocalization("utilities","template");
         var  defaults = {
         //The ID for the map from ArcGIS.com
         webmap: "f5b13dbed07c46cdb783cf361833aa6b",
