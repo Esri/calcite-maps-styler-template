@@ -437,7 +437,7 @@ function (
                     geocoder.placeholder = this.config.i18n.geocoder.defaultText;
 
                 }else {
-                    geocoder.suggest = true;
+                   // geocoder.suggest = true;
                 }
                 //geocoder.searchExtent = this.map.extent;
             }, this);
