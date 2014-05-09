@@ -1490,7 +1490,7 @@ function createOptions() {
             hasEsri = true;
             geocoder.name = "Esri World Geocoder";
             geocoder.outFields = "Match_addr, stAddr, City";
-            geocoder.singleLineFieldName = "Single Line";
+            geocoder.singleLineFieldName = "SingleLine";
             geocoder.placeholder = (configOptions.placefinder.placeholder === "") ? i18n.tools.search.title : configOptions.placefinder.placeholder;
             geocoder.esri = geocoder.placefinding = true;
             if (configOptions.placefinder.currentExtent || configOptions.searchextent) {
