@@ -5,7 +5,7 @@ define({
             mouseToolTip: "Click on the map to check for service"
         },
         geocoder: {
-            defaultText: "Enter your address"
+            defaultText: "Enter an address or point of interest"
         },
         error: {
             layerNotFound: "Layer is not in the webmap",
