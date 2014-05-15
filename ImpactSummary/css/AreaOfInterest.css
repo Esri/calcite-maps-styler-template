@@ -85,7 +85,12 @@
     text-align: center;
     display: block;
     float: left;
+}
+.dark {
     color: #fff;
+}
+.light {
+    color: #333333;
 }
 .esriRTL .geo-data .panel {
     float: right;
@@ -130,22 +135,6 @@
 .geo-data .panel-expanded .data-source-url a {
     text-decoration: none;
 }
-.panel-expanded-container .theme_1 .panel-border {
-    border-bottom-color: #da4d1e;
-    border-bottom-color: rgba(218, 77, 30, 0.80);
-}
-.panel-expanded-container .theme_2 .panel-border {
-    border-bottom-color: #004575;
-    border-bottom-color: rgba(0, 69, 117, 0.80);
-}
-.panel-expanded-container .theme_3 .panel-border {
-    border-bottom-color: #35ac46;
-    border-bottom-color: rgba(42, 116, 51, 0.80);
-}
-.panel-expanded-container .theme_4 .panel-border {
-    border-bottom-color: #6b1978;
-    border-bottom-color: rgba(107, 25, 120, 0.80);
-}
 .geo-data .count {
     margin: 0;
     text-align: left;
@@ -173,81 +162,62 @@
     white-space: nowrap;
     overflow: hidden;
 }
-.geo-data .geo-panel .theme_1 .count {
+ .geo-data .geo-panel .light .count {
     background-color: #f36f20;
-    background-color: rgba(243, 111, 32, 0.80);
+    background-color: rgba(255, 255, 255, 0.90);
 }
-.geo-data .geo-panel .theme_1 .title,
-.theme_1 .background-color {
-    background-color: #da4d1e;
-    background-color: rgba(218, 77, 30, 0.80);
+.geo-data .geo-panel .light .title,
+.light .background-color {
+    background-color: #dbddd8;
+    background-color: rgba(220, 222, 217, 0.90);
 }
-.geo-data .geo-panel .panel-parent .theme_1:hover .count {
+.geo-data .geo-panel .panel-parent .light:hover .count {
     background-color: #f36f20;
-    background-color: rgba(243, 111, 32, 0.70);
+    background-color: rgba(255, 255, 255, 0.80);
 }
-.geo-data .geo-panel .panel-parent .theme_1:hover .title {
-    background-color: #da4d1e;
-    background-color: rgba(218, 77, 30, 0.70);
+.geo-data .geo-panel .panel-parent .light:hover .title {
+    background-color: #dbddd8;
+    background-color: rgba(220, 222, 217, 0.80);
 }
-.geo-data .geo-panel .theme_2 .count {
-    background-color: #007ac2;
-    background-color: rgba(0, 122, 194, 0.80);
+.geo-data .geo-panel .dark .count {
+    background-color: #1e1e1e;
+    background-color: rgba(30, 30, 30, 0.90);
 }
-.geo-data .geo-panel .theme_2 .title,
-.theme_2 .background-color {
-    background-color: #004575;
-    background-color: rgba(0, 69, 117, 0.80);
+.geo-data .geo-panel .dark .title,
+.dark .background-color {
+    background-color: #3c3c3c;
+    background-color: rgba(60, 60, 60, 0.90);
+    color: #fff;
 }
-.geo-data .geo-panel .panel-parent .theme_2:hover .count {
-    background-color: #007ac2;
-    background-color: rgba(0, 122, 194, 0.70);
+.geo-data .geo-panel .panel-parent .dark:hover .count {
+    background-color: #1e1e1e;
+    background-color: rgba(30, 30, 30, 0.80);
 }
-.geo-data .geo-panel .panel-parent .theme_2:hover .title {
-    background-color: #004575;
-    background-color: rgba(0, 69, 117, 0.70);
-}
-.geo-data .geo-panel .theme_3 .count {
-    background-color: #35ac46;
-    background-color: rgba(53, 172, 70, 0.80);
-}
-.geo-data .geo-panel .theme_3 .title,
-.theme_3 .background-color {
-    background-color: #2a7433;
-    background-color: rgba(42, 116, 51, 0.80);
-}
-.geo-data .geo-panel .panel-parent .theme_3:hover .count {
-    background-color: #35ac46;
-    background-color: rgba(53, 172, 70, 0.70);
-}
-.geo-data .geo-panel .panel-parent .theme_3:hover .title {
-    background-color: #2a7433;
-    background-color: rgba(42, 116, 51, 0.70);
-}
-.geo-data .geo-panel .theme_4 .count {
-    background-color: #8f499c;
-    background-color: rgba(143, 73, 156, 0.80);
-}
-.geo-data .geo-panel .theme_4 .title,
-.theme_4 .background-color {
-    background-color: #6b1978;
-    background-color: rgba(107, 25, 120, 0.80);
-}
-.geo-data .geo-panel .panel-parent .theme_4:hover .count {
-    background-color: #8f499c;
-    background-color: rgba(143, 73, 156, 0.70);
-}
-.geo-data .geo-panel .panel-parent .theme_4:hover .title {
-    background-color: #6b1978;
-    background-color: rgba(107, 25, 120, 0.70);
+.geo-data .geo-panel .panel-parent .dark:hover .title {
+    background-color: #3c3c3c;
+    background-color: rgba(60, 60, 60, 0.80);
 }
 .geo-panel {
     position: absolute;
     z-index: 2;
     bottom: 0;
     left: 50%;
-    width: 522px;
+    width: 526px;
+    overflow: hidden;
     margin-left: -263px;
+}
+.animate-geo-panel {
+        transition-property: height;
+        transition-duration: .15s;
+        -webkit-transition-property: height;
+        -webkit-transition-duration: .15s;
+        height: 92px !important;
+}
+.animate-geo-panel-none {
+        height: 0px;
+}
+.geo-data-open .geo-panel {
+        height: auto !important;
 }
 .animate-slider .panel-border {
     border: 1px solid #777;
@@ -255,13 +225,16 @@
     border-bottom: 3px solid;
 }
 .geo-panel-four .panel {
-    width: 25%;
+    width: 24.3%;
+    padding-right: 0.6%;
 }
 .geo-panel-three .panel {
-    width: 33.333%;
+    width: 32.7%;
+    padding-right: 0.6%;
 }
 .geo-panel-two .panel {
-    width: 50%;
+    width: 49.3%;
+    padding-right: 0.6%;
 }
 .geo-panel-one .panel {
     width: 100%;
@@ -277,7 +250,9 @@
     display: block;
 }
 .div-header-title {
-    color: #fff;
+    background-color: #dbddd8;
+    background-color: rgba(220, 222, 217, 0.90);
+    color: #5c5c5c;
     float: left;
     height: 25px;
     padding: 0 5px;

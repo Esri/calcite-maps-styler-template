@@ -31,9 +31,11 @@ define({
     "enableLocateButton": true,
     "enableBasemapToggle": true,
     "enableShareDialog": true,
+    "theme": "dark", //Valid parameters: "dark" and "light"
     "nextBasemap": "hybrid",
     "defaultBasemap": "topo",
     "summaryAttributeOrder": "DESC",
+    "zoomType": "No Zoom", //Valid parameters: "No Zoom","Zoom to Extent" and "Zoom to Scale"
     "bitlyLogin": "esri",
     "bitlyKey": "R_65fd9891cd882e2a96b99d4bda1be00e",
     "summaryAttributes": [{

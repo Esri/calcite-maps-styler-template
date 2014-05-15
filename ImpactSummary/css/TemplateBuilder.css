@@ -484,22 +484,24 @@
         border-bottom: 1px solid #efefef;
         border-right: 1px solid #efefef;
         height: 25px;
-        padding: 20px 5px;
+        padding: 10px 5px;
 }
 .esriParentContainerStyleClm2 {
         float: left;
-        width: 27%;
+        width: 30%;
         border-bottom: 1px solid #efefef;
         border-right: 1px solid #efefef;
         height: 25px;
-        padding: 20px 5px;
+        padding: 10px 5px;
+        text-align: center;
 }
 .esriParentContainerStyleClm3 {
         float: left;
-        width: 34%;
+        width: 30%;
         border-bottom: 1px solid #efefef;
         height: 25px;
-        padding: 20px 5px;
+        padding: 10px 5px;
+        text-align: center;
 }
 .esriParentContainerStyleClmBrdNone {
         border-bottom: none;
@@ -527,6 +529,8 @@
         margin-right: 10px;
 }
 .esriBasemapSwitchDivRight {
+        float: left;
+        margin-top: -3px;
 }
 
 .esriOffButton {
@@ -564,7 +568,6 @@
 
 .esriBasemapSelection {
         float: left;
-        height: 150px;
         width: 100%;
 }
 
@@ -695,4 +698,16 @@
 }
 .claro .dijitSelect, .claro .dijitTextBox {
         border: 1px solid #b5bcc7 !important;
+}
+.defaultBaseMapLeftContent
+{
+    width: 100%;
+    float: left;
+    padding-bottom:10px;
+}
+.esriZoomSelect, .themeSelect
+{
+    width: 92%;
+    height: 23px;
+    text-align: center;
 }

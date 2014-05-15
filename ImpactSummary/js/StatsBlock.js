@@ -31,7 +31,7 @@ function (
 ) {
     var Widget = declare([_WidgetBase, _TemplatedMixin, Evented], {
         declaredClass: "esri.dijit.StatsBlock",
-        templateString: dijitTemplate,
+        templateString: dijitTemplate, isAppLoad: true,
         options: {
             features: null,
             config: null,
@@ -47,6 +47,7 @@ function (
             this.set("config", defaults.config);
             this.set("stats", defaults.stats);
             this.set("direction", defaults.direction);
+            this.isAppLoad = true;
             this.watch("features", this._displayStats);
             // widget node
             this.domNode = srcRefNode;
@@ -99,12 +100,12 @@ function (
             };
             //set no of slide to display
             this.displayPageCount = 3;
-            this.blockThemes = ['theme_1', 'theme_2', 'theme_3', 'theme_4'];
             this._selectedPageIndex = [];
         },
         // start widget. called by user
         startup: function() {
             this._init();
+            this.blockThemes = this.appConfig.theme;
         },
         // connections/subscriptions will be cleaned up during the destroy() lifecycle phase
         destroy: function() {
@@ -155,6 +156,7 @@ function (
                 this.resize();
             }));
             this._widgetEvents.push(winResize);
+            this.isAppLoad = true;
             // setup events
             this._displayStats();
             // ready
@@ -200,7 +202,7 @@ function (
         _decPlaces: function(n) {
             // number not defined
             if (!n) {
-                if (n === 0) {
+                if (n === 0 || n === null) {
                     n = 0;
                 }
                 else if (n === undefined) {
@@ -293,6 +295,7 @@ function (
                 this.resize();
                 // if panel is expanded already
                 if (this._displayedContainer) {
+                    domClass.remove(this._geoPanelsNode, "animate-geo-panel");
                     this._showExpanded(this._displayedIndex);
                 }
                 // create panel events
@@ -311,6 +314,16 @@ function (
             } else {
                 this.hide();
             }
+            if (!this._displayedContainer && !this.isAppLoad) {
+                domClass.replace(this._geoPanelsNode, "animate-geo-panel-none", "animate-geo-panel");
+                setTimeout(lang.hitch(this, function () {
+                    domClass.replace(this._geoPanelsNode, "animate-geo-panel", "animate-geo-panel-none");
+                    setTimeout(lang.hitch(this, function () {
+                        domClass.remove(this._geoPanelsNode, "animate-geo-panel");
+                    }), 150);
+                }), 300);
+            }
+            this.isAppLoad = false;
             topic.publish("createEditIcons");
         },
         _panelCloseEvent: function(node) {
@@ -323,6 +336,8 @@ function (
             // panel click
             var panelClick = on(node, 'click', lang.hitch(this, function() {
                 this._showExpanded(index);
+                domClass.remove(this._geoPanelsNode, "animate-geo-panel");
+
             }));
             this._events.push(panelClick);
         },
@@ -343,7 +358,7 @@ function (
             domConstruct.place(panel, this._geoPanelsNode, 'last');
             // panel content holder
             panelContent = domConstruct.create('div', {
-                className: this.blockThemes[index]
+                className: this.blockThemes
             });
             domConstruct.place(panelContent, panel, 'last');
             // panel number
@@ -384,7 +399,7 @@ function (
             var detailedContainer, detailedLeft, detailedLeftArrow, detailedInnerContainer, detailedCarousel, detailedData, detailedPagination, detailedPaginationContainer, detailedRight, detailedRightArrow, detailedPanel, detailedPanelBorder, detailedPanelHeader, detailedPanelHeaderTitle, detailedPanelHeaderSpanTitle, detailedPanelHeaderSpanNumber, detailedPanelHeaderClose, detailedPanelHeaderClear, detailedOuterContainer, detailedDataSource, detailedDataSourceAnchor, clearExpandedPanels, clearDetailedContainer;
             // expanded panel container
             detailedPanel = domConstruct.create('div', {
-                className: this.css.statsPanelSelected + " " + this.blockThemes[index]
+                className: this.css.statsPanelSelected + " " + this.blockThemes + " " + index
             });
             domConstruct.place(detailedPanel, this._geoDataPanelsExpandedNode, 'last');
             // panel border
@@ -620,6 +635,7 @@ function (
             }
             // add class
             domClass.add(this._geoPanelsNode, parentClass);
+            domClass.add(this._geoPanelsNode, "animate-geo-panel");
             // remove old events
             this._removeEvents();
             // clear previous html

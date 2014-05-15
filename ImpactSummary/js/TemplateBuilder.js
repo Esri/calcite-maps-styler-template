@@ -35,6 +35,7 @@ function (
         //URL for updating Item
         //Predefined keywords for basemap's available on AGOL
         availableBaseMaps: ["streets", "satellite", "hybrid", "topo", "gray", "oceans", "national-geographic", "osm"],
+        availableThemes: ["dark", "light"],
         unSavedChanges: false,
         previousConfigObj: null,
         configDialog: null,
@@ -175,7 +176,6 @@ function (
             this._storeCurrentAppSetting();
             this._createAppSettingsLeftPanel(settingsContainer);
             this._createAppSettingsRightPanel(settingsContainer);
-            this._createAppSettingBasemapPanel(settingsContainer);
             this._createAppSettingBottomPanel(settingsContainer);
         },
 
@@ -240,6 +240,7 @@ function (
                     appDijitInputContainer.set("value", appDijitInputContainer.value);
                 }
             }));
+            this._createAppSettingBasemapPanel(leftSettingsContent);
         },
 
         _createAppSettingsRightPanel: function (settingsContainer) {
@@ -250,23 +251,35 @@ function (
             this._createSecondColumn(rightSettingsContent);
             //Create basemap column
             this._createThirdColumn(rightSettingsContent);
+            //Create builder settings to toggle Entire Area
+            this._createEntireAreaToggleButton(rightSettingsContent);
+            //Create builder settings to toggle About Panel
+            this._createAboutPanel(rightSettingsContent);
+            //Create builder settings to toggle Legend Panel
+            this._createLegendPanel(rightSettingsContent);
+            //Create builder settings to toggle Layers Panel
+            this._createLayersPanel(rightSettingsContent);
+            //Create builder settings to switch between light and dark theme
+            this._createFourthColumn(rightSettingsContent);
+
+            this._createZoomLevelSelectionPanel(rightSettingsContent);
         },
 
         _createAppSettingBasemapPanel: function (settingsContainer) {
-            var baseMapSelectionTemplate, basemapSelectionText, currentBaseMapContainer, basemapSwitchDivContainer,
+            var baseMapSelectionTemplate, basemapSelectionText, defaultBaseMapContainer, secondaryBasemapContainer, basemapSwitchDivContainer,
                 nextBasemapSwitchDivText, nextBasemapSelect, defaultBasemapSelect, defaultBasemapSiwtchDiv, defaultBasemapSiwtchDivText,
-                nextBasemapSwitchDiv, basemapText, selectDiv, style, currentBasemapContainer;
+                nextBasemapSwitchDiv, basemapText, selectDiv, style;
             style = this.config.enableBasemapToggle ? "visible" : "hidden";
             baseMapSelectionTemplate = domConstruct.create("div", { "class": "esriBasemapSelection", "style": "visibility:" + style }, settingsContainer);
             basemapSelectionText = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.basemapSelectionText, "class": "esriBasmapSelection" }, baseMapSelectionTemplate);
 
-            currentBaseMapContainer = domConstruct.create("div", { "class": "esriSettingsLeftContent" }, baseMapSelectionTemplate);
-            basemapSwitchDivContainer = domConstruct.create("div", { "class": "esriBasemapSwitchDivLeft" }, currentBaseMapContainer);
+            defaultBaseMapContainer = domConstruct.create("div", { "class": "defaultBaseMapLeftContent" }, baseMapSelectionTemplate);
+            basemapSwitchDivContainer = domConstruct.create("div", { "class": "esriBasemapSwitchDivLeft" }, defaultBaseMapContainer);
             defaultBasemapSiwtchDiv = domConstruct.create("div", { "class": "esriBasemapSwitchDiv esriBasicBasemapStyle " + "esri" + this.config.defaultBasemap }, basemapSwitchDivContainer);
             defaultBasemapSiwtchDivText = domConstruct.create("div", { innerHTML: this.config.defaultBasemap, "class": "esriBasemapSwitchDivText" }, basemapSwitchDivContainer);
 
-            basemapText = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.defaultBasemapText, "class": "esriBasemapSwitchDivRight" }, currentBaseMapContainer);
-            selectDiv = domConstruct.create("div", {}, currentBaseMapContainer);
+            basemapText = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.defaultBasemapText, "class": "esriBasemapSwitchDivRight" }, defaultBaseMapContainer);
+            selectDiv = domConstruct.create("div", {}, defaultBaseMapContainer);
             defaultBasemapSelect = domConstruct.create("select", {}, selectDiv);
             this.own(on(defaultBasemapSelect, "change", lang.hitch(this, function (evt) {
                 if (nextBasemapSelect.value != evt.currentTarget.value) {
@@ -279,13 +292,13 @@ function (
             })));
             this._createBasemapMenu(defaultBasemapSelect, this.config.defaultBasemap);
 
-            currentBasemapContainer = domConstruct.create("div", { "class": "esriSettingsRightContent" }, baseMapSelectionTemplate);
-            basemapSwitchDivContainer = domConstruct.create("div", { "class": "esriBasemapSwitchDivLeft" }, currentBasemapContainer);
+            secondaryBasemapContainer = domConstruct.create("div", { "class": "" }, baseMapSelectionTemplate);
+            basemapSwitchDivContainer = domConstruct.create("div", { "class": "esriBasemapSwitchDivLeft" }, secondaryBasemapContainer);
             nextBasemapSwitchDiv = domConstruct.create("div", { "class": "esriBasemapSwitchDiv esriBasicBasemapStyle " + "esri" + this.config.nextBasemap }, basemapSwitchDivContainer);
             nextBasemapSwitchDivText = domConstruct.create("div", { innerHTML: this.config.nextBasemap, "class": "esriBasemapSwitchDivText" }, basemapSwitchDivContainer);
 
-            basemapText = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.secondaryBasemapText, "class": "esriBasemapSwitchDivRight" }, currentBasemapContainer);
-            selectDiv = domConstruct.create("div", {}, currentBasemapContainer);
+            basemapText = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.secondaryBasemapText, "class": "esriBasemapSwitchDivRight" }, secondaryBasemapContainer);
+            selectDiv = domConstruct.create("div", {}, secondaryBasemapContainer);
             nextBasemapSelect = domConstruct.create("select", {}, selectDiv);
             this.own(on(nextBasemapSelect, "change", lang.hitch(this, function (evt) {
                 if (defaultBasemapSelect.value != evt.currentTarget.value) {
@@ -410,9 +423,9 @@ function (
             var basemapContainer, basemapLabelContainer, basemapLabel, basmapButtonContainer, parameterStatus, currentState,
             basemapOnOffButtonLabel, basemapOnOffButton, onOffButtondiv;
             basemapContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
-            basemapLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1 esriParentContainerStyleClmBrdNone" }, basemapContainer);
+            basemapLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1 " }, basemapContainer);
             basemapLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.basemapText }, basemapLabelContainer);
-            basmapButtonContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2 esriParentContainerStyleClmBrdNone" }, basemapContainer);
+            basmapButtonContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2" }, basemapContainer);
             currentState = this._checkButtonState(this.config.enableBasemapToggle);
             basemapOnOffButtonLabel = domConstruct.create("div", { innerHTML: currentState.label, "class": "esriOnOffButtonLabel" }, basmapButtonContainer);
             onOffButtondiv = domConstruct.create("div", { "class": "esriOnOffButtonDiv" }, basmapButtonContainer);
@@ -430,6 +443,146 @@ function (
                     query(".esriBasemapSelection")[0].style.visibility = "visible";
                 }
             }));
+            domConstruct.create("div", { "class": "esriParentContainerStyleClm3" }, basemapContainer);
+        },
+
+        _createEntireAreaToggleButton: function (rightSettingsContent) {
+            var entireAreaContainer, entireAreaLabelContainer, entireAreaLabel, entireAreaBtnContainer, onOffButtondiv, currentClass, onStartToggle,
+                currentState, areaOnOffButtonLabel, areaOnOffButton, parameterStatus, onStartContainer, onStartInnerContainer, onStartLabel;
+
+            entireAreaContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
+            entireAreaLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, entireAreaContainer);
+            entireAreaLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.entireAreaButton }, entireAreaLabelContainer);
+            entireAreaBtnContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2" }, entireAreaContainer);
+            currentState = this._checkButtonState(this.config.enableEntireAreaButton);
+            areaOnOffButtonLabel = domConstruct.create("div", { innerHTML: currentState.label, "class": "esriOnOffButtonLabel" }, entireAreaBtnContainer);
+            onOffButtondiv = domConstruct.create("div", { "class": "esriOnOffButtonDiv" }, entireAreaBtnContainer);
+            areaOnOffButton = domConstruct.create("div", { "class": currentState.class }, onOffButtondiv);
+            on(areaOnOffButton, "click", lang.hitch(this, function () {
+                parameterStatus = this._toggleButtonState(areaOnOffButton, this.config.enableEntireAreaButton, areaOnOffButtonLabel);
+                this.config.enableEntireAreaButton = parameterStatus;
+            }));
+            onStartContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm3" }, entireAreaContainer);
+            onStartInnerContainer = domConstruct.create("div", { "class": "esriParentinner" }, onStartContainer);
+            onStartLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.onStartLabel, "style": "float:left;margin-right:5px;" }, onStartInnerContainer);
+            currentClass = this.config.selectEntireAreaOnStart ? "esriSelectIcon" : "esriDeselectIcon";
+            onStartToggle = domConstruct.create("div", { "class": currentClass }, onStartInnerContainer);
+            on(onStartToggle, "click", lang.hitch(this, function () {
+                parameterStatus = this._toggleCheckBoxSate(onStartToggle, this.config.selectEntireAreaOnStart, areaOnOffButton);
+                this.config.selectEntireAreaOnStart = parameterStatus;
+            }));
+        },
+
+        _createAboutPanel: function (rightSettingsContent) {
+            var aboutPanelContainer, aboutPanelLabelContainer, aboutPanelLabel, aboutPanelBtnContainer, onOffButtondiv,
+                currentState, areaOnOffButtonLabel, areaOnOffButton, parameterStatus;
+
+            aboutPanelContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
+            aboutPanelLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, aboutPanelContainer);
+            aboutPanelLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.aboutPanel }, aboutPanelLabelContainer);
+            aboutPanelBtnContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2" }, aboutPanelContainer);
+            currentState = this._checkButtonState(this.config.enableAboutPanel);
+            areaOnOffButtonLabel = domConstruct.create("div", { innerHTML: currentState.label, "class": "esriOnOffButtonLabel" }, aboutPanelBtnContainer);
+            onOffButtondiv = domConstruct.create("div", { "class": "esriOnOffButtonDiv" }, aboutPanelBtnContainer);
+            areaOnOffButton = domConstruct.create("div", { "class": currentState.class }, onOffButtondiv);
+            on(areaOnOffButton, "click", lang.hitch(this, function () {
+                parameterStatus = this._toggleButtonState(areaOnOffButton, this.config.enableAboutPanel, areaOnOffButtonLabel);
+                this.config.enableAboutPanel = parameterStatus;
+            }));
+            domConstruct.create("div", { "class": "esriParentContainerStyleClm3" }, aboutPanelContainer);
+        },
+
+        _createLegendPanel: function (rightSettingsContent) {
+            var legendPanelContainer, legendPanelLabelContainer, legendPanelLabel, legendPanelBtnContainer, onOffButtondiv,
+                currentState, areaOnOffButtonLabel, areaOnOffButton, parameterStatus;
+
+            legendPanelContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
+            legendPanelLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, legendPanelContainer);
+            legendPanelLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.legendPanel }, legendPanelLabelContainer);
+            legendPanelBtnContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2" }, legendPanelContainer);
+            currentState = this._checkButtonState(this.config.enableLegendPanel);
+            areaOnOffButtonLabel = domConstruct.create("div", { innerHTML: currentState.label, "class": "esriOnOffButtonLabel" }, legendPanelBtnContainer);
+            onOffButtondiv = domConstruct.create("div", { "class": "esriOnOffButtonDiv" }, legendPanelBtnContainer);
+            areaOnOffButton = domConstruct.create("div", { "class": currentState.class }, onOffButtondiv);
+            on(areaOnOffButton, "click", lang.hitch(this, function () {
+                parameterStatus = this._toggleButtonState(areaOnOffButton, this.config.enableLegendPanel, areaOnOffButtonLabel);
+                this.config.enableLegendPanel = parameterStatus;
+            }));
+            domConstruct.create("div", { "class": "esriParentContainerStyleClm3" }, legendPanelContainer);
+        },
+
+        _createLayersPanel: function (rightSettingsContent) {
+            var layersPanelContainer, layersPanelLabelContainer, layersPanelLabel, layersPanelBtnContainer, onOffButtondiv,
+                currentState, areaOnOffButtonLabel, areaOnOffButton, parameterStatus;
+
+            layersPanelContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
+            layersPanelLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, layersPanelContainer);
+            layersPanelLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.layersPanel }, layersPanelLabelContainer);
+            layersPanelBtnContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2" }, layersPanelContainer);
+            currentState = this._checkButtonState(this.config.enableLayersPanel);
+            areaOnOffButtonLabel = domConstruct.create("div", { innerHTML: currentState.label, "class": "esriOnOffButtonLabel" }, layersPanelBtnContainer);
+            onOffButtondiv = domConstruct.create("div", { "class": "esriOnOffButtonDiv" }, layersPanelBtnContainer);
+            areaOnOffButton = domConstruct.create("div", { "class": currentState.class }, onOffButtondiv);
+            on(areaOnOffButton, "click", lang.hitch(this, function () {
+                parameterStatus = this._toggleButtonState(areaOnOffButton, this.config.enableLayersPanel, areaOnOffButtonLabel);
+                this.config.enableLayersPanel = parameterStatus;
+            }));
+            domConstruct.create("div", { "class": "esriParentContainerStyleClm3" }, layersPanelContainer);
+        },
+
+        _createFourthColumn: function (rightSettingsContent) {
+            var themeContainer, themeLabelContainer, themeLabel, themeSelectContainer, themeSelect;
+            themeContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
+            themeLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1 esriParentContainerStyleClmBrdNone" }, themeContainer);
+            themeLabel = domConstruct.create("div", { innerHTML: "Theme" }, themeLabelContainer);
+            themeSelectContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2 esriParentContainerStyleClmBrdNone" }, themeContainer);
+            themeSelect = domConstruct.create("select", { "class": "themeSelect" }, themeSelectContainer);
+            array.forEach(this.availableThemes, lang.hitch(this, function (theme) {
+                var themeOption = domConstruct.create("option");
+                themeOption.text = themeOption.value = theme;
+                if (this.config.theme == theme) {
+                    themeOption.selected = "selected";
+                }
+                themeSelect.appendChild(themeOption);
+            }));
+            this.own(on(themeSelect, "change", lang.hitch(this, function (evt) {
+                this.config.theme = evt.currentTarget.value;
+            })));
+            domConstruct.create("div", { "class": "esriParentContainerStyleClm3 esriParentContainerStyleClmBrdNone" }, themeContainer);
+        },
+
+        _createZoomLevelSelectionPanel: function (rightSettingsContent) {
+            var zoomLevelContainer, zoomLevelLabelContainer, zoomLevelLabel, themeSelectContainer, zoomLevelSelect;
+            zoomLevelContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
+            zoomLevelLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, zoomLevelContainer);
+            zoomLevelLabel = domConstruct.create("div", { innerHTML: "Zoom Level" }, zoomLevelLabelContainer);
+            themeSelectContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2 esriParentContainerStyleClmBrdNone" }, zoomLevelContainer);
+            zoomLevelSelect = domConstruct.create("select", { "class": "esriZoomSelect" }, themeSelectContainer);
+            var zoomToExtentOption = domConstruct.create("option");
+            zoomToExtentOption.text = zoomToExtentOption.value = "Zoom to extent";
+            zoomLevelSelect.appendChild(zoomToExtentOption);
+
+            var noZoomOption = domConstruct.create("option");
+            noZoomOption.text = noZoomOption.value = "No Zoom";
+            zoomLevelSelect.appendChild(noZoomOption);
+            if (this.config.zoomType == "Zoom to extent") {
+                zoomToExtentOption.selected = "selected";
+            } else {
+                noZoomOption.selected = "selected";
+            }
+            array.forEach(this.map.getLayer(this.map.layerIds[0]).tileInfo.lods, lang.hitch(this, function (lod, level) {
+                var number = this._decPlaces(lod.scale);
+                var zoomToLOD = domConstruct.create("option");
+                zoomToLOD.text = "1: " + number + " (level" + level + ")";
+                zoomToLOD.value = lod.scale;
+                zoomLevelSelect.appendChild(zoomToLOD);
+                if (this.config.zoomType == lod.scale) {
+                    zoomToLOD.selected = "selected";
+                }
+            }));
+            on(zoomLevelSelect, "change", lang.hitch(this, function (evt) {
+                this.config.zoomType = evt.currentTarget.value;
+            }));
         },
 
         //function to create and return text editor
@@ -438,7 +591,7 @@ function (
             dijitInputContainer = new Editor({
                 height: '250px',
                 required: true,
-                plugins: ['bold', 'italic', 'underline', 'createLink'],
+                plugins: ['bold', 'italic', 'underline', 'createLink', 'removeFormat'],
                 value: dijitValue
             }, appDescriptionInputContainer);
             dijitInputContainer.startup();
@@ -854,7 +1007,7 @@ function (
                 if (currentField.type == "esriFieldTypeSmallInteger" || currentField.type == "esriFieldTypeInteger" || currentField.type == "esriFieldTypeSingle" || currentField.type == "esriFieldTypeDouble") {
                     parentVariableOption = domConstruct.create("option");
                     parentVariableOption.value = currentField.name;
-                    parentVariableOption.text = currentField.name;
+                    parentVariableOption.text = currentField.alias + " (" + currentField.name + ")";
                     selectInput.appendChild(parentVariableOption);
                     if (this.config.summaryAttributes[currentNodeIndex].attribute == currentField.name) {
                         parentVariableOption.selected = "selected";
@@ -1241,6 +1394,65 @@ function (
             else {
                 domStyle.set(domNode, "opacity", "0.3");
             }
+        },
+
+        _formatNumber: function (n, decPlaces) {
+            var isNumberNegative = false, isNumberFormatted = false;
+            if (n < 0) {
+                isNumberNegative = true;
+                n = Math.abs(n);
+            }
+            // format large numbers
+            decPlaces = Math.pow(10, decPlaces);
+            // thousand, million, billion, trillion.
+            var abbrev = ["k", "m", "b", "t"];
+            for (var i = abbrev.length - 1; i >= 0; i--) {
+                var size = Math.pow(10, (i + 1) * 3);
+                if (size <= n) {
+                    if (isNumberNegative) {
+                        n = -n;
+                    }
+                    n = Math.round(n * decPlaces / size) / decPlaces;
+                    if ((n === 1000) && (i < abbrev.length - 1)) {
+                        n = 1;
+                        i++;
+                    }
+                    n += abbrev[i];
+                    isNumberFormatted = true;
+                    break;
+                }
+            }
+            if (!isNumberFormatted && !isNaN(n)) {
+                if (isNumberNegative) {
+                    n = -n;
+                }
+                var numLength = n.toString().length;
+                if (numLength > 5)
+                    n = n.toPrecision(5);
+            }
+            return n;
+        },
+
+        _decPlaces: function (n) {
+            // number not defined
+            if (!n) {
+                if (n === 0) {
+                    n = 0;
+                }
+            }
+            // format number according to length
+            var decPlaces;
+            var nStr = n.toString();
+            if (nStr.length >= 7) {
+                decPlaces = 1;
+            } else if (nStr.length >= 5) {
+                decPlaces = 0;
+            } else if (nStr.length === 4) {
+                return number.format(n);
+            } else {
+                decPlaces = 2;
+            }
+            return this._formatNumber(n, decPlaces);
         }
     });
     return Widget;
