@@ -3,10 +3,6 @@ app.cfg = {
 	// UI
 	//
 	
-	// Enable embed mode: disable header on desktop 
-	// Can also be set through url parameter ?embed
-	EMBED: false,
-	
 	// Header Logo
 	HEADER_LOGO_URL: "resources/tpl/viewer/icons/esri-logo.png",
 	HEADER_LOGO_TARGET: "http://www.esri.com",
@@ -24,41 +20,63 @@ app.cfg = {
 		}
 	},
 	
-	// TODO
-	COLORS: ["#444", "#FFF", "#1F1F1F"],
+	// Maximum number of sections
+	MAX_NB_SECTIONS: 99,
+	
+	// Side and Floating panel dot navigation group size
+	DOTNAV_GROUPSIZE: 15,
 	
 	// Add a 'zoom on my location' button under the +/home/- buttons
 	// For example this is not supported in IE 8
 	DISPLAY_LOCATE_BUTTON: false,
 	
 	TIMEOUT_VIEWER_LOAD: 12000,
-	TIMEOUT_VIEWER_REQUEST: 12000, /* TODO */
+	TIMEOUT_VIEWER_REQUEST: 12000,
 	TIMEOUT_BUILDER_REQUEST: 20000,
 	
-	//
-	// DATA
-	//
-	
-	// TODO
+	SECTION_ACTION_ZOOM_MAP_MARKER: "http://static.arcgis.com/images/Symbols/Basic/GreenShinyPin.png",
 	
 	//
 	// Builder
 	//
 	
-	HELP_URL: "http://storymapsdev.arcgis.com/en/app-list/map-tour/",
+	LAYOUTS: [
+  		{
+  			id: "side",
+  			thumbnail: "resources/tpl/builder/icons/builder-layout-side.png",
+  			liveApp: "http://elephantstory.wcs.org/",
+  			sizes: { small: '30%', medium: '40%', large: '50%' },
+  			positions: ["left", "right"],
+  			themes: [
+  			    {dotNav: "#777777", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000"},
+  				{dotNav: "#726458", panel: "#FFF8E9", media: "#C9C1B9", text: "#000000"},
+  				{dotNav: "#676C7F", panel: "#F9F9EF", media: "#424D51", text: "#000000"},
+  				{dotNav: "#5A5A5A", panel: "#000000", media: "#EEEEEE", text: "#FFFFFF"},
+  				{dotNav: "#68AAE1", panel: "#FFFFFF", media: "#E8E8DF", text: "#000000"},
+  				{dotNav: "#676C7E", panel: "#F9F9EF", media: "#C2E3EE", text: "#000000"}         
+  			]
+  		},
+  		{
+  			id: "float",
+  			thumbnail: "resources/tpl/builder/icons/builder-layout-float.png",
+  			liveApp: "http://storymaps.esri.com/stories/2013/china-highways/",
+  			sizes: { small: '25%', medium: '35%', large: '45%' },
+  			positions: ["right", "left"],
+  			themes: [
+  				{dotNav: "#000000", panel: "#000000", media: "#FFFFFF", text: "#FFFFFF"}
+  			]
+  		}
+  	],
+  	
+  	HELP_URL: "http://storymapsdev.arcgis.com/en/app-list/map-tour/",
 	
-	//
-	// Builder direct creation
-	//
-	
-	// Text to be used as the browser page title during app creation
-	TPL_NAME: "Map Journal",
-	WEBAPP_TAG: [],
-	WEBMAP_TAG: ["map"],
-	WEBAPP_KEYWORD: ["JavaScript", "Map", "Mapping Site", "Online Map", "Ready To Use", "selfConfigured", "Web Map", "Story Maps", "Tpl"],
-	WEBMAP_KEYWORD: ["ArcGIS Online", "Explorer Web Map", "Map", "Online Map", "Web Map", "Story Maps", "Tpl"],
-
-	// TODO
+	// Control the authorized data source (for initialization and import screen)
+	AUTHORIZED_IMPORT_SOURCE: {
+		flickr: true,
+		facebook: false,
+		picasa: false,
+		youtube: true
+	},
 	
 	// Online photo sharing services connection parameters
 	FLICKR_API_KEY: "750b36a2ac65a72e03cf9cef06d79f45",
@@ -68,39 +86,19 @@ app.cfg = {
 	// or set AUTHORIZED_IMPORT_SOURCE.facebook to false
 	FACEBOOK_APP_ID: "471023926309627",
 	
-	LAYOUTS: [
-		{
-			id: "side",
-			title: "Side Panel",
-			description: "The text is displayed on a resizable panel at the left of the Map. Multiple entries can be displayed at the same time.",
-			thumbnail: "resources/tpl/builder/icons/builder-layout-side.png"
-		},
-		{
-			id: "float",
-			title: "Floating Panel",
-			description: "The text is displayed hover the Map. Entries are displayed one by one. The mouse wheel navigate the story.",
-			thumbnail: "resources/tpl/builder/icons/builder-layout-float.png"
-		}/*,
-		{
-			id: "flow",
-			title: "Flow",
-			description: "Not implemented yet. Don't select.",
-			thumbnail: "resources/tpl/builder/icons/builder-layout-flow.png"
-		},
-		{
-			id: "presentation",
-			title: "Presentation",
-			description: "Not implemented yet. Don't select.",
-			thumbnail: "resources/tpl/builder/icons/builder-layout-presentation.png"
-		}*/
-	],
+	//
+	// Builder direct creation
+	//
 	
-	COLOR_SCHEMES:  [
-		// COLORS is added as the first item at runtime
-		{name: "Black", headerColor: "#000", middleColor: "#797979", footerColor: "#c2c2c2"},
-		{name: "Blue", headerColor: "#0e3867", middleColor: "#5d6f89", footerColor: "#9096a9"},
-		{name: "Green", headerColor: "#1a3606", middleColor: "#737c6c", footerColor: "#a8b09e"}
-	],
+	// Text to be used as the browser page title during app creation
+	TPL_NAME: "Map Journal",
+	WEBAPP_TAG: [],
+	WEBAPP_KEYWORD: ["JavaScript", "Map", "Mapping Site", "Online Map", "Ready To Use", "selfConfigured", "Web Map", "Story Maps", "MapJournal"],
+
+	//
+	// Portal configuration
+	//
+	
 	// Optional array of server that will leverage CORS (for developement or specific cross domain deployment)
 	CORS_SERVER: [],
 	

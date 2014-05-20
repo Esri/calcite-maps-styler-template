@@ -1,0 +1,126 @@
+define({
+	root: ({
+		commonCore: {
+			common: {
+				add: "Add",
+				edit: "Edit",
+				save: "Save",
+				next: "Next",
+				cancel: "Cancel",
+				back: "Back",
+				apply: "Apply",
+				close: "Close",
+				open: "Open",
+				start: "Start",
+				loading: "Loading"
+			},
+			inlineFieldEdit: {
+				editMe: "Edit me!"
+			},
+			builderPanel: {
+				panelHeader: "%TPL_NAME% Builder",
+				buttonSaving: "Saving",
+				buttonSaved: "Saved",
+				buttonShare: "Share",
+				buttonSettings: "Settings",
+				buttonHelp: "Help",
+				buttonPreview: "View Live",
+				tooltipFirstSave: "This functionality isn't available until the application is saved",
+				noPendingChange: "No pending change",
+				unSavedChangePlural: "Pending changes",
+				closeWithPendingChange: "Are you sure to want to confirm the action? Your changes will be lost.",
+				saveError: "Save failed, please try again",
+				shareStatus1: "Application has not been saved yet",
+				shareStatus2: "Application is shared publicly",
+				shareStatus3: "Application is shared within the organization",
+				shareStatus4: "Application is not shared"
+			},
+			share: {
+				firstSaveTitle: "Application successfully saved",
+				firstSaveHeader: "Your application is now saved in ArcGIS Online. Please read the following answers to frequent questions.",
+				firstSaveA1: "If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%",
+				firstSaveA1bis: "The application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>.",
+				firstSaveQ2: "Is my application shared?",
+				firstSaveA2: "Currently your application is not shared. To share it, use the SHARE button.",
+				shareTitle: "Share your application",
+				sharePrivateHeader: "Your application is not shared, would you like to share it?",
+				sharePrivateBtn1: "Share publicly",
+				sharePrivateBtn2: "Share with my Organization",
+				sharePrivateWarning: "Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>.",
+				sharePrivateWarningWith1: "publicly",
+				sharePrivateWarningWith2: "publicly and with the Organization",
+				sharePrivateProgress: "Sharing in progress...",
+				sharePrivateErr: "Sharing failed, try again or",
+				sharePrivateOk: "Sharing updated successfully, loading...",
+				/* TODO use */
+				sharePreviewAsUser: "Preview",
+				shareHeader1: "Your application is <strong>publicly accessible</strong>.",
+				shareHeader2: "Your application is accessible by your organization members (login is required).",
+				shareLinkHeader: "Share the application with your audience",
+				shareLinkCopy: "Copy",
+				shareLinkCopied: "Copied",
+				shareQ1Opt1: "How do I keep the application private?",
+				shareQ1Opt2: "How do I keep the application private or share it publicly?",
+				shareA1: "Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>.",
+				shareA1bis: "If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>.",
+				shareQ2: "How do I edit the application later?",
+				shareQ2bis: "How do I get back to the authoring interface?",
+				shareA2div1: "Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>.",
+				shareA2div2: "As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:",				
+				shareQ3: "Where is the data stored?",
+				shareA3: "Map Journal data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos haven't been duplicated in ArcGIS Online.",
+				learnMore: "Learn more"
+			},
+			settings: {
+				header: "Settings",
+				tabError: "Please check for errors in all tabs"
+			},
+			settingsLayout: {
+				title: "Layout",
+				explain: "What layout do you want to use?",
+				explainInit: "Change will be possible through the settings dialog.",
+				viewExample: "View a live example"
+			},
+			settingsTheme: {
+				title: "Theme"
+			},
+			settingsHeader: {
+				title: "Header",
+				logoEsri: "Esri logo",
+				logoNone: "No logo",
+				logoCustom: "Custom logo",
+				logoCustomPlaceholder: "URL (max 250x50 pixels)",
+				logoCustomTargetPlaceholder: "Click-through link",
+				logoSocialExplain: "Customize the header link.",
+				logoSocialText: "Text",
+				logoSocialLink: "Link",
+				logoSocialDisabled: "This feature has been disabled by the Administrator"
+			}
+		}
+	}),
+	"ar":1,
+	"cs":1,
+	"da":1,
+	"de":1,
+	"es":1,
+	"et":1,
+	"fi":1,
+	"fr":1,
+	"he":1,
+	"it":1,
+	"ja":1,
+	"ko":1,
+	"lt":1,
+	"lv":1,
+	"nl":1,
+	"nb":1,
+	"pl":1,
+	"pt-br":1,
+	"pt-pt":1,
+	"ro":1,
+	"ru":1,
+	"sv":1,
+	"th": 1,
+	"tr": 1,
+	"zh-cn":1
+});

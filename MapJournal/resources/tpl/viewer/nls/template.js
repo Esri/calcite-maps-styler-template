@@ -6,23 +6,22 @@ define({
 				step2: "Loading data",
 				step3: "Initializing",
 				loadBuilder: "Switching to builder",
-				redirectSignIn: "Redirecting to Sign-in page",
-				redirectSignIn2: "(you will be redirected here after sign-in)",
 				fail: "Sorry, loading failed",
 				failButton: "Retry"
 			},
+			signin: {
+				title: "Authentication is required",
+				explainViewer: "Please sign in with an account on %PORTAL_LINK% to access the application.",
+				explainBuilder: "Please sign in with an account on %PORTAL_LINK% to configure the application."
+			},
 			errors: {
 				boxTitle: "An error has occurred",
-				portalSelf: "Fatal error: Failed to get portal configuration",
 				invalidConfig: "Fatal error: Invalid configuration",
-				invalidConfigOwner: "Fatal error: Invalid configuration (authorized owner required)",
-				invalidConfigNoWebmap: "Fatal error: Invalid configuration (web map or application identifier not specified in index.html)",
+				invalidConfigNoApp: "Fatal error: Web Mapping Application identifier not specified in index.html",
 				createMap: "Unable to create map",
 				invalidApp: "Fatal error: The application cannot be loaded",
-				/* TODO: remove this two? */
-				noLayer: "The web map does not contain a valid data layer.",
-				noLayerMobile: "Welcome to the %TPL_NAME% web application. The application is not configured. The builder is not supported on mobile devices.",
-				noLayerView: "Welcome to the %TPL_NAME% web application.<br />The application is not configured yet.",
+				notConfiguredDesktop: "Welcome to the %TPL_NAME% web application.<br />The application is not configured yet.",
+				notConfiguredMobile: "Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices.",
 				notAuthorized: "You are not authorized to access this application",
 				noBuilderIE8: "The builder is not supported on Internet Explorer before version 9."
 			},
@@ -31,13 +30,28 @@ define({
 				swipeToExplore: "Swipe to explore",
 				tapForMap: "Tap to get back to Map"
 			},
-			commonHeader: {
+			floatLayout: {
+				scroll: "Scroll"
+			},
+			sideLayout: {
+				scroll: "Scroll down for more!"
+			},
+			mainStage: {
+				back: "Back"
+			},
+			headerFromCommon: {
 				storymapsText: "A story map",
 				builderButton: "Edit",
 				bitlyTooltip: "Get a short link to the application",
-				editMe: "Edit me!",
 				templateTitle: "Set template title",
-				templateSubtitle: "Set template subtitle"
+				templateSubtitle: "Set template subtitle",
+				share: "Share"
+			},
+			overviewFromCommon: {
+				title: "Overview Map",
+			},
+			legendFromCommon: {
+				title: "Legend"
 			}
         }
     }),
