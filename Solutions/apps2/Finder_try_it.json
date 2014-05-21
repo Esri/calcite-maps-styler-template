@@ -1,6 +1,6 @@
 {
     "license": [
-        " | Copyright 2013 Esri",
+        " | Copyright 2012 Esri",
         " |",
         " | Licensed under the Apache License, Version 2.0 (the 'License');",
         " | you may not use this file except in compliance with the License.",
@@ -16,21 +16,19 @@
     ],
 
     "values": {
-        "webmap": "796c572e6dcb4c88b77c024ae003bd88",
-        "titleBar.title": "Find, Edit, and Filter",
+        "webmap": "3c33240fbacd42339547a06a966dcbf7",
+        "titleBar.title": "Finder",
         "titleBar.iconUrl": "images/onlineapp.png",
-        "colorizer.theme": "Brick",
-        "filter.hint1": "Filter",
-        "filter.fieldname1": "",
-        "filter.value1": "",
-        "searchBox.hint": "Find",
-        "featureSearcher.searchLayerName": "",
-        "featureSearcher.searchFields": "",
-        "featureSearcher.displayFields": "",
+        "colorizer.theme": "DarkGray",
+        "searchBox.hint": "Parcel ID",
+        "featureSearcher.searchLayerName": "Tax Parcels",
+        "featureSearcher.searchFields": "PARCELID ",
+        "featureSearcher.displayFields": "SITEADDRESS ",
+        "highlighter.showFeaturePopup": true,
         "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
         "basemapBox.basemapgroupOwner": "",
-        "helpMessageBox.content": "Find, Edit, and Filter provides you with the ability to locate features, edit new and existing features, and filter the visible features based on an attribute. The filter also will define the default value in the filter field of newly created features."
+        "helpMessageBox.content": "Finder<hr><br>Finder (formerly known as Parcel Viewer) provides the general public and other interested parties access to searchable and interactive information such as property tax and assessment information or the locations of water access points.<br><br>To locate this information, click a feature on the map or search for the feature by address, name, or another identifier such as Parcel ID."
     },
 
     "configurationSettings": [{
@@ -101,7 +99,7 @@
             "label": "Hint",
             "fieldName": "searchBox.hint",
             "type": "string",
-            "tooltip": "Search hint (e.g. Find a Pre-Incident Plan, Find a Park)"
+            "tooltip": "Search hint (e.g. Find a Parcel, Find a Park)"
         }, {
             "label": "Find Layers",
             "fieldName": "featureSearcher.searchLayerName",
@@ -129,26 +127,11 @@
                 "places": 0
             },
             "tooltip": "Map zoom level for viewing selected features"
-        }]
-    }, {
-        "category": "<b>Filter & Edit Settings</b>",
-        "fields": [{
-            "label": "Hint",
-            "fieldName": "filter.hint1",
-            "type": "string",
-            "tooltip": "Filter hint ( e.g., Floor Number, Plan ID)"
         }, {
-            "label": "Filter Field",
-            "fieldName": "filter.fieldname1",
-            "type": "string",
-            "tooltip": "Field used to filter the features displayed in the map",
-            "placeholder": "Name of filtering field"
-        }, {
-            "label": "Default Value",
-            "fieldName": "filter.value1",
-            "type": "string",
-            "tooltip": "Initial filter value. If the map contains editable layers, this is also the initial default value for new features.",
-            "placeholder": "Initial filter value"
+            "label": "Show Popup for Selected Feature",
+            "fieldName": "highlighter.showFeaturePopup",
+            "type": "boolean",
+            "tooltip": "Enable to automatically open the popup for selected search result features."
         }]
     }, {
         "category": "<b>Application Help</b>",
@@ -165,7 +148,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit b68a9d02f4d52f4a 2014-03-25 14:36:15 -0700"
+                "commit cc1bfab8d76975b7 2014-05-21 15:26:35 -0700"
             ]
         }
     }, {
@@ -231,36 +214,6 @@
             "fill": true
         }
     }, {
-        "classname": "js.LGSearchFeatureLayerMultiplexer",
-        "config": {
-            "rootId": "featureSearcher",
-            "parentDiv": "contentFrame",
-            "dependencyId": "map",
-            "busyIndicator": "busyIndicator",
-            "publishPointsOnly": false,
-            "searchPattern": "%${1}%",
-            "caseInsensitiveSearch": true
-        }
-    }, {
-        "classname": "js.LGSearchBoxByText",
-        "styles": ".searchBox{display:none;width:200px;max-height:224px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .searchBox{border-radius:8px}.resultsListBox{width:96%;top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;bottom:4px}.lt-ie9 .resultsListBox{width:100%;height:182px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}",
-        "config": {
-            "rootId": "searchBox",
-            "trigger": "search",
-            "publish": "showFeature",
-            "parentDiv": "contentFrame",
-            "rootClass": "searchBox",
-            "horizOffset": -2,
-            "vertOffset": [2, -2],
-            "searcher": "featureSearcher",
-            "showPrompt": "@tooltips.search",
-            "resultsListBoxClass": "resultsListBox",
-            "resultsListTableClass": "resultsListTable",
-            "resultsListBodyClass": "resultsListBody",
-            "resultsListSearchingClass": "resultsListSearching",
-            "resultsListEntryClass": "resultsListEntry"
-        }
-    }, {
         "classname": "js.LGHighlighter",
         "config": {
             "rootId": "highlighter",
@@ -317,11 +270,74 @@
             "arrowClass": "commandPanelArrow"
         }
     }, {
+        "classname": "js.LGSearchFeatureLayerMultiplexer",
+        "config": {
+            "rootId": "featureSearcher",
+            "parentDiv": "contentFrame",
+            "dependencyId": "map",
+            "busyIndicator": "busyIndicator",
+            "publishPointsOnly": false,
+            "searchPattern": "%${1}%",
+            "caseInsensitiveSearch": true
+        }
+    }, {
         "classname": "js.LGLaunchUrl",
         "config": {
             "rootId": "launcher",
             "sameWinTrigger": "launch/parent",
             "newWinTrigger": "launch/blank"
+        }
+    }, {
+        "classname": "js.LGPrintMap",
+        "styles": ".absolute{position:absolute}.printMapBox{display:none;width:269px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .printMapBox{border-radius:8px}.printFormatsPanel{height:52px;margin:0px;padding:2px;overflow:hidden;text-align:center;vertical-align:middle}.pushbuttonOn{border:1px solid blue}.printDlogItem{margin:3px!important}",
+        "config": {
+            "rootId": "printMap",
+            "parentDiv": "contentFrame",
+            "rootClass": "printMapBox",
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "asynchronous": false,
+            "format": "PDF",
+            "preserveScale": true,
+            "title": "",
+            "author": "",
+            "orientationButtonClass": "commandButton printDlogItem",
+            "orientationButtonIconClass": "commandIcon",
+            "landscapeButtonIconUrl": "images/landscapeDoc.png",
+            "landscapeButtonTooltip": "@tooltips.landscape",
+            "landscapeServerSpec": "Letter ANSI A Landscape",
+            "portraitButtonIconUrl": "images/portraitDoc.png",
+            "portraitButtonTooltip": "@tooltips.portrait",
+            "portraitServerSpec": "Letter ANSI A Portrait",
+            "titleHint": null,
+            "titleHintDefault": "@labels.title",
+            "titleClass": "printDlogItem",
+            "authorHint": null,
+            "authorHintDefault": "@labels.author",
+            "authorClass": "printDlogItem",
+            "printButtonIconUrl": "images/print.png",
+            "printButtonClass": "commandButton printDlogItem",
+            "printButtonIconClass": "commandIcon",
+            "printButtonTooltip": "@tooltips.print",
+            "copyrightText": null,
+            "dependencyId": "map",
+            "trigger": "print",
+            "publishReady": "printingReady",
+            "publishWorking": "printing",
+            "publishPrintUrl": "printUrl"
+        }
+    }, {
+        "classname": "js.LGFetchPrintedMap",
+        "config": {
+            "rootId": "fetchPrintedMap",
+            "publish": "launch/blank",
+            "parentDiv": "contentFrame",
+            "dependencyId": "map",
+            "trigger": "fetchPrint",
+            "triggerPrintUrl": "printUrl",
+            "publishPrintAvailable": "printAvailable",
+            "publishPrintNotAvailable": "printNotAvailable",
+            "printAvailabilityTimeoutMinutes": 15
         }
     }, {
         "classname": "js.LGMessageBox",
@@ -371,38 +387,23 @@
             "dependencyId": "map"
         }
     }, {
-        "classname": "js.LGEditTemplatePickerWithDefaults",
-        "styles": ".templateArea{display:none;width:210px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .templateArea{border-radius:8px}.templatePickerHolder {position:absolute;right:5px;top:5px;left:5px;bottom:5px;overflow-x:hidden;overflow-y:auto;}",
+        "classname": "js.LGSearchBoxByText",
+        "styles": ".searchBox{display:none;width:200px;max-height:224px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .searchBox{border-radius:8px}.resultsListBox{width:96%;top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;bottom:4px}.lt-ie9 .resultsListBox{width:100%;height:182px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}",
         "config": {
-            "rootId": "iTemplateArea",
+            "rootId": "searchBox",
+            "trigger": "search",
+            "publish": "showFeature",
             "parentDiv": "contentFrame",
-            "rootClass": "templateArea",
-            "templatePickerHolderClass": "templatePickerHolder",
-            "templatePickerDivClass": "templatePickerDiv",
-            "colorizerId": "colorizer",
+            "rootClass": "searchBox",
             "horizOffset": -2,
-            "vertOffset": [56, -40],
-            "trigger": "markup",
-            "dependencyId": "map",
-            "listenForDefaultsTrigger": "floor"
-        }
-    }, {
-        "classname": "js.LGFilterLayers1WithDefaults",
-        "styles": ".filter{display:none;width:210px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .filter{border-radius:8px}",
-        "config": {
-            "rootId": "filter",
-            "tooltip": "@tooltips.filter",
-            "parentDiv": "contentFrame",
-            "rootClass": "filter",
-            "horizOffset": -2,
-            "vertOffset": 2,
-            "defnExpression": "${fieldname1}=${value1}",
-            "trigger": "markup",
-            "dependencyId": "map",
-            "broadcastDefaultsPublish": "floor",
-            "busyIndicator": "busyIndicator",
-            "nonieSwitchDelaySecs": "1.5",
-            "ieSwitchDelaySecs": "3.0"
+            "vertOffset": [2, -2],
+            "searcher": "featureSearcher",
+            "showPrompt": "@tooltips.search",
+            "resultsListBoxClass": "resultsListBox",
+            "resultsListTableClass": "resultsListTable",
+            "resultsListBodyClass": "resultsListBody",
+            "resultsListSearchingClass": "resultsListSearching",
+            "resultsListEntryClass": "resultsListEntry"
         }
     }, {
         "classname": "js.LGCommand",
@@ -415,18 +416,6 @@
             "iconClass": "commandIcon",
             "dependencyId": "featureSearcher",
             "publish": "search"
-        }
-    }, {
-        "classname": "js.LGCommand",
-        "config": {
-            "rootId": "markup",
-            "tooltip": "@tooltips.collect",
-            "iconUrl": "images/markup.png",
-            "parentDiv": "commandPanel",
-            "rootClass": "commandButton",
-            "iconClass": "commandIcon",
-            "dependencyId": "map",
-            "publish": "markup"
         }
     }, {
         "classname": "js.LGCommand",
@@ -490,6 +479,40 @@
             "rootClass": "commandTextButton",
             "iconClass": "commandIcon",
             "publish": "share/twitter"
+        }
+    }, {
+        "classname": "js.LGCommandToggle",
+        "config": {
+            "rootId": "print",
+            "tooltip": "@tooltips.print",
+            "iconUrl": "images/print.png",
+            "iconDisabledUrl": "images/printing.gif",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "publish": "print",
+            "dependencyId": "printMap",
+            "triggerEnable": "printingReady",
+            "triggerDisable": "printing",
+            "isVisible": false,
+            "isEnabled": true
+        }
+    }, {
+        "classname": "js.LGCommandToggle",
+        "config": {
+            "rootId": "fetchPrint",
+            "tooltip": "@tooltips.fetchPrint",
+            "iconUrl": "images/doc.png",
+            "iconDisabledUrl": "images/docDisabled.png",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "publish": "fetchPrint",
+            "triggerVisible": "printAvailable",
+            "triggerInvisible": "printNotAvailable",
+            "triggerEnable": "printingReady",
+            "triggerDisable": "printing",
+            "isVisible": false
         }
     }, {
         "classname": "js.LGCommand",

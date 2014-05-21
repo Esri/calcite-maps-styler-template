@@ -1,12 +1,10 @@
 /* 
 This source is a compressed form of part of the git commit 
-b68a9d02f4d52f4a 2014-03-25 14:36:15 -0700
+cc1bfab8d76975b7 2014-05-21 15:26:35 -0700
 Uncompressed source is available from https://github.com/Esri/local-government-online-apps 
 */ 
 /*
 
- | ArcGIS Solutions
- | Version 10.2
  | Copyright 2012 Esri
  |
  | Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,5 +19,5 @@ Uncompressed source is available from https://github.com/Esri/local-government-o
  | See the License for the specific language governing permissions and
  | limitations under the License.
 */
-require(["dojo/ready","dojo/Deferred","esri/map","dojo/i18n"],function(a,d){a(function(){String.prototype.trim||(String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g,"")});defaultAppUI||(defaultAppUI="apps2/GeneralMap");dojo.requireLocalization("esriTemplate","template");require(["dojo/ready","js/lgonlineBuildUI"],function(a){a(function(){function a(c){var b=dojo.i18n.getLocalization("esriTemplate","template");alert(1===c?b.messages.noConfiguration:b.messages.unableToLaunchApp)}var b=
+require(["dojo/ready","dojo/Deferred","esri/map","dojo/i18n"],function(a,d){a(function(){String.prototype.trim||(String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g,"")});defaultAppUI||(defaultAppUI="apps2/GeneralMap");dojo.requireLocalization("esriTemplate","resources");require(["dojo/ready","js/lgonlineBuildUI"],function(a){a(function(){function a(c){var b=dojo.i18n.getLocalization("esriTemplate","template");alert(1===c?b.messages.noConfiguration:b.messages.unableToLaunchApp)}var b=
 new d;require(["dojo/ready","js/lgonlineApp"],function(a){a(function(){b.resolve()})});(new js.LGUIBuilder(window.location.search,null,defaultAppUI)).ready.then(function(c){b.then(function(){c.launch().then(function(){dojo.fadeIn({node:"contentDiv",duration:500,onEnd:function(){dojo.removeClass("contentDiv","transparent");dojo.removeClass("pageBody","startupBkgd")}}).play();console.log("Application is ready")},function(){a(0)})})},function(){a(1)})})})})});

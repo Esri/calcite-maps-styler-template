@@ -1,12 +1,10 @@
 /* 
 This source is a compressed form of part of the git commit 
-b68a9d02f4d52f4a 2014-03-25 14:36:15 -0700
+cc1bfab8d76975b7 2014-05-21 15:26:35 -0700
 Uncompressed source is available from https://github.com/Esri/local-government-online-apps 
 */ 
 /*
 
- | ArcGIS Solutions
- | Version 10.2
  | Copyright 2012 Esri
  |
  | Licensed under the Apache License, Version 2.0 (the "License");

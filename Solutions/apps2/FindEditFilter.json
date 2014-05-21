@@ -16,18 +16,18 @@
     ],
 
     "values": {
-        "webmap": "b5dda2c5afda4b7cb77a07be97100a84",
-        "titleBar.title": "Pre-Incident Plans",
+        "webmap": "796c572e6dcb4c88b77c024ae003bd88",
+        "titleBar.title": "Find, Edit, and Filter",
         "titleBar.iconUrl": "images/onlineapp.png",
-        "colorizer.theme": "Dodger Blue",
-        "filter.hint1": "Floor #",
-        "filter.fieldname1": "FLOOR",
-        "filter.value1": "1",
-        "searchBox.hint": "Plan #",
-        "featureSearcher.searchLayerName": "Building Plans, Complex Plans",
-        "featureSearcher.searchFields": "COMPLEXID,PLANID,PLACENAME",
-        "featureSearcher.displayFields": "PLACENAME",
-        "highlighter.highlightZoomLevel": 18,
+        "colorizer.theme": "Brick",
+        "filter.hint1": "Filter",
+        "filter.fieldname1": "",
+        "filter.value1": "",
+        "searchBox.hint": "Find",
+        "featureSearcher.searchLayerName": "",
+        "featureSearcher.searchFields": "",
+        "featureSearcher.displayFields": "",
+        "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
         "basemapBox.basemapgroupOwner": "",
         "helpMessageBox.content": "Find, Edit, and Filter provides you with the ability to locate features, edit new and existing features, and filter the visible features based on an attribute. The filter also will define the default value in the filter field of newly created features."
@@ -165,7 +165,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit b68a9d02f4d52f4a 2014-03-25 14:36:15 -0700"
+                "commit cc1bfab8d76975b7 2014-05-21 15:26:35 -0700"
             ]
         }
     }, {
