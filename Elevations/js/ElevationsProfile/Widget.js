@@ -388,28 +388,40 @@ define([
                 // SET DEM RESOLUTION DETAILS //
                 this._sourceNode.innerHTML = lang.replace("{0}: {1}", [this.strings.chart.demResolution, profileFeature.attributes.DEMResolution]);
 
-                // GET PROFILE GEOMETRY //
-                var profileGeometry = profileFeature.geometry;
-                if (profileGeometry.paths.length > 0) {
-                  var profilePoints = profileGeometry.paths[0];
+       // GET PROFILE GEOMETRY //
+              var profileGeometry = profileFeature.geometry;
+              var allElevations = [];
+              var allDistances = [];
+   
+              if(profileGeometry.paths.length > 0) {
+                array.forEach(profileGeometry.paths, lang.hitch(this, function (profilePoints, pathIndex) {
+   
                   // ELEVATIONS //
                   var elevations = array.map(profilePoints, lang.hitch(this, function (coords, pointIndex) {
                     return {
                       x: ((coords.length > 3) ? coords[3] : (pointIndex * samplingDistance)),
-                      y: ((coords.length > 2) ? coords[2] : 0.0)
+                      y: ((coords.length > 2) ? coords[2] : 0.0),
+                      pathIdx: pathIndex,
+                      pointIdx: pointIndex
                     };
                   }));
                   // DISTANCES //
                   var distances = array.map(elevations, function (elevation) {
                     return elevation.x;
                   });
-                  // RESOLVE TASK //
-                  deferred.resolve({
-                    geometry: profileGeometry,
-                    elevations: elevations,
-                    distances: distances,
-                    samplingDistance: samplingDistance
-                  });
+   
+                  // AGGREGATE ELEVATIONS AND DISTANCES //
+                  allElevations = allElevations.concat(elevations);
+                  allDistances = allDistances.concat(distances);
+                }));
+   
+                // RESOLVE TASK //
+                deferred.resolve({
+                  geometry: profileGeometry,
+                  elevations: allElevations,
+                  distances: allDistances,
+                  samplingDistance: samplingDistance
+                });
                 } else {
                   deferred.reject(new Error(this.strings.errors.UnableToProcessResults));
                 }
@@ -760,9 +772,10 @@ define([
         }
 
         // SET GEOMETRY OF LOCATION GRAPHIC //
-        var pointIndex = (this.distances) ? array.indexOf(this.distances,chartObjectX) : -1;
-        if ((pointIndex >= 0) && (pointIndex < this.elevationData.length)) {
-          this.chartLocationGraphic.setGeometry(this.profilePolyline.getPoint(0, pointIndex));
+        var distanceIndex = (this.distances) ? array.indexOf(this.distances, chartObjectX) : -1;
+        if(distanceIndex >= 0) {
+          var elevData = this.elevationData[distanceIndex];
+          this.chartLocationGraphic.setGeometry(this.profilePolyline.getPoint(elevData.pathIdx, elevData.pointIdx));
         } else {
           this.chartLocationGraphic.setGeometry(null);
         }
