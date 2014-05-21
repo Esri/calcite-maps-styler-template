@@ -13,36 +13,6 @@ html, body {
     height: 100%;
 }
 
-#searchDiv {
-    display: block;
-    position: absolute;
-    z-index: 3;
-    top: 20px;
-    left: 75px;
-    width: 60%;
-}
-
-/*.LocateButton .zoomLocateButton {
-    background: url("../images/home_locate.png") no-repeat -30px 0;
-    background-image: url(http://cdn.arcgis.com/cdn/3684/js/esri/arcgisonline/map/css/images/home_locate.png);
-    padding: 2px;
-    width: 26px;
-    height: 26px;
-    background-color: #fff;
-    background-color: rgb(255, 255, 255);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-    border: 2px solid #666;
-}*/
-
-
 .loading-indicator {
     /* Loading status */
     display: none;
@@ -55,17 +25,20 @@ html, body {
     overflow: hidden;
     background: #fff;
 }
+
 .app-loading .loading-indicator,
 .app-error .loading-indicator {
     /* Show this class when loading or error */
     display: block;
 }
+
 .app-loading .loading-indicator {
     /* Loading image */
     background-position: center center;
     background-image: url(../images/preloader.gif);
     background-repeat: no-repeat;
 }
+
 .app-error .loading-message {
     /* Error status */
     background-position: top center;
@@ -79,44 +52,6 @@ html, body {
     left: 0;
     text-align: center;
 }
-#LocateButton {
-    position: absolute;
-    top: 95px;
-    left: 20px;
-    z-index: 50;
-}
-
-/* customize geocoder appearance */
-.simpleGeocoder, .simpleGeocoder .esriGeocoderContainer {
-    width: 100%;
-}
-
-    .simpleGeocoder .esriGeocoder {
-        height: 100%;
-    }
-
-        .simpleGeocoder .esriGeocoder input {
-            
-            /* Firefox */
-            width: -moz-calc(100% - 75px);
-            /* WebKit */
-            width: -webkit-calc(100% - 75px);
-            /* Opera */
-            width: -o-calc(100% - 75px);
-            /* Standard */
-            width: calc(100% - 75px);
-            padding-right:0;
-            margin-right:0;
-
-        }
-
-
-    .simpleGeocoder .esriGeocoderResult:hover,
-    .simpleGeocoder .esriGeocoderResultEven:focus,
-    .simpleGeocoder .esriGeocoderResultOdd:focus {
-        /* default is #EDEDED, use a light blue instead */
-        background-color: #B5DAEA;
-    }
 
 
 .esriRTL label {
@@ -126,17 +61,16 @@ html, body {
 
 
 .hzLinePopUp {
-border: none;
-border-top: 1px solid #333333;
-margin-top: 6px;
-margin-bottom: 6px;
-
-
+    border: none;
+    border-top: 1px solid #333333;
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 .headerPopUp {
-font-weight: bold;
+    font-weight: bold;
 }
+
 .attTable {
     -webkit-border-horizontal-spacing: 0px;
     -webkit-border-vertical-spacing: 0px;
@@ -155,48 +89,47 @@ font-weight: bold;
     visibility: visible;
     width: 310px;
 }
+
 .attrName {
     border-collapse: collapse;
-color: rgb(136, 136, 136);
-direction: ltr;
-display: table-cell;
-font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-font-size: 12px;
-font-style: normal;
-font-variant: normal;
-font-weight: normal;
-height: 14px;
-line-height: normal;
-margin: 0 0 0 0;
-padding: 2px 5px 5px 2px;
-vertical-align: top;
-visibility: visible;
-width: 90px;
+    color: rgb(136, 136, 136);
+    direction: ltr;
+    display: table-cell;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: 14px;
+    line-height: normal;
+    margin: 0 0 0 0;
+    padding: 2px 5px 5px 2px;
+    vertical-align: top;
+    visibility: visible;
+    width: 90px;
 }
 
-.attrValue{
+.attrValue {
     border-collapse: collapse;
-color: rgb(51, 51, 51);
-direction: ltr;
-display: table-cell;
-font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-font-size: 12px;
-font-style: normal;
-font-variant: normal;
-font-weight: normal;
-height: 14px;
-line-height: normal;
-margin: 0 0 0 0;
-padding: 2px 2px 5px 2px;
-
-vertical-align: top;
-visibility: visible;
-width: 136px;
+    color: rgb(51, 51, 51);
+    direction: ltr;
+    display: table-cell;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: 14px;
+    line-height: normal;
+    margin: 0 0 0 0;
+    padding: 2px 2px 5px 2px;
+    vertical-align: top;
+    visibility: visible;
+    width: 136px;
 }
 /*---------------------------------------------------------------------------------------------------------*/
 
-.showContainer
-{
+.showContainer {
     -webkit-transition: All 0.5s ease-in;
     -moz-transition: All 0.5s ease-in;
     -o-transition: All 0.5s ease-in;
@@ -208,8 +141,7 @@ width: 136px;
     transform: scale(1);
 }
 
-.hideContainer
-{
+.hideContainer {
     -webkit-transition: All 0.5s ease-in;
     -moz-transition: All 0.5s ease-in;
     -o-transition: All 0.5s ease-in;
@@ -221,8 +153,7 @@ width: 136px;
     transform: scale(0);
 }
 
-.opacityHideAnimation
-{
+.opacityHideAnimation {
     visibility: hidden;
     opacity: 0;
     -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s ease-in;
@@ -231,8 +162,7 @@ width: 136px;
     transition: visibility 0s linear 0.5s, opacity 0.5s ease-in;
 }
 
-.hideContainerHeight
-{
+.hideContainerHeight {
     overflow: hidden;
     -webkit-transition: height 0.5s ease-in;
     -moz-transition: height 0.5s ease-in;
@@ -241,8 +171,7 @@ width: 136px;
     height: 0;
 }
 
-.showContainerHeight
-{
+.showContainerHeight {
     overflow: hidden;
     -webkit-transition: height 0.5s ease-in;
     -moz-transition: height 0.5s ease-in;
@@ -250,4 +179,3 @@ width: 136px;
     transition: height 0.5s ease-in;
     height: 100%;
 }
-

@@ -26,7 +26,6 @@ define([
     "dojo/dom-class",
     "dojo/dom",
     "application/SplashScreen",
-    "application/Geocoder",
     "application/Common",
     "application/CombinedPopup"
 
@@ -38,11 +37,10 @@ function (
     lang,
     arcgisUtils,
     IdentityManager,
-    on,   
+    on,
     domClass,
     dom,
     SplashScreen,
-    Geocoder,
     Common,
     CombinedPopup
 ) {
@@ -65,7 +63,7 @@ function (
                         this.splash = new SplashScreen(this.map, this.config);
                         this.splash.startup();
                     }
-                   
+
                 }
                 catch (e) {
                     console.log(e.message);
@@ -79,10 +77,10 @@ function (
                 }));
             } else {
                 var error = new Error("Main:: Config is not defined");
-                this._reportError(error);
+                this.reportError(error);
             }
         },
-        _reportError: function (error) {
+        reportError: function (error) {
             // remove loading class from body
             domClass.remove(document.body, "app-loading");
             domClass.add(document.body, "app-error");
@@ -102,25 +100,30 @@ function (
         },
         _mapLoaded: function () {
             // Map is ready
-            console.log("map loaded");
-           
-            this.common = new Common(this.map,this.config);
-            this.common.checkingEditing();
-            this.common.addLocatorButton("LocateButton");
-            this.common.on("locate", lang.hitch(this, this._locate));
+            try {
+                console.log("map loaded");
 
-            this.GC = new Geocoder(this.map, this.config, "searchDiv");
-            this.GC.on("ready", lang.hitch(this, this._controlLoaded));
-            this.GC.on("select", lang.hitch(this, this._geocodeSelect));
-            this.GC.startup();
-         
-            this.popup = new CombinedPopup(this.map, this.config,this.layers,this.handler);
-            this.popup.on("popup-started", lang.hitch(this, this._showBusyIndicator));
-            this.popup.on("popup-complete", lang.hitch(this, this._hideBusyIndicator));
-            this.popup.startup();
+                this.common = new Common(this.map, this.config);
+                this.common.checkingEditing();
+                this.common.addLocatorButton("locateDiv");
+                this.common.on("locate", lang.hitch(this, this._locate));
 
-            this._hideBusyIndicator();
+                this.common.addGeocoder("searchDiv");
+                this.common.on("select", lang.hitch(this, this._geocodeSelect));
 
+                //this.common.addBaseMapGallery("basemapDiv");
+
+                this.popup = new CombinedPopup(this.map, this.config, this.layers, this.handler);
+                this.popup.on("popup-started", lang.hitch(this, this._showBusyIndicator));
+                this.popup.on("popup-complete", lang.hitch(this, this._hideBusyIndicator));
+                this.popup.startup();
+                this.popup.enableMapClick();
+
+                this._hideBusyIndicator();
+            }
+            catch (e) {
+                this.reportError(e);
+            }
         },
         _controlLoaded: function (evt) {
             console.log(evt.Name + " created");
@@ -132,20 +135,20 @@ function (
         _hideBusyIndicator: function () {
             domClass.remove(document.body, "app-loading");
         },
-        _geocodeSelect: function(result){
+        _geocodeSelect: function (result) {
             if (result.result != null) {
                 var pt = result.result.feature.geometry;
-             
+
                 this._popupAtLoc(pt);
             }
         },
         _locate: function (result) {
             if (result != null) {
-                
+
                 this._popupAtLoc(result);
-                
+
             }
-            
+
         },
         _popupAtLoc: function (point) {
             this.popup.showPopup(point);

@@ -5,7 +5,7 @@ define([], function () {
     //and url parameters.
     var defaults = {
         "appid": "",//
-        "webmap": "25660c0facdb419191c8b2dec5da74d7", // "" 
+        "webmap": "25660c0facdb419191c8b2dec5da74d7", 
        "oauthappid": null, //"AFTKRmv16wj14N3z",
 	    //Group templates must support a group url parameter. This will contain the id of the group.
 	    //group: "",
@@ -52,6 +52,8 @@ define([], function () {
 
         "serviceAreaLayerNames": "Service Area",
         "popupTitle": "Service Information",
+        "popupWidth": null,
+        "popupHeight": null,
         "serviceUnavailableTitle": "Outside Utility Service Area",
         "serviceUnavailableMessage": "The utility does not provide service to the selected location",
         "zoomLevel": 16,

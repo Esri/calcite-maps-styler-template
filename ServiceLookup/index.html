@@ -12,9 +12,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <!-- End Responsive -->
     <!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
-    <link rel="stylesheet" href="//jsdev.arcgis.com/3.10js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="//jsdev.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css">
     <link rel="stylesheet" href="//jsdev.arcgis.com/3.10/js/esri/css/esri.css">
     <!--Load any application specific styles-->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/combinedPopup.css">
+
     <link rel="stylesheet" href="css/main.css">
     <!--[if gte IE 9]>
       <style type="text/css">
@@ -32,47 +35,13 @@
     <div class="loading-indicator">
         <div class="loading-message" id="loading_message"></div>
     </div>
-    <div id="divSplashScreenContainer" class="divSplashScreenContainer" style="display: none;">
-        <table style="width: 100%; height: 100%;">
-            <tr align="center" valign="middle">
-                <td>
-                    <div id="divSplashScreenContent" class="divSplashScreenContent">
-                        <table style="width: 100%;">
-                            <tr>
-                                <td>
-                                    <div id="divSplashContainer" class="divSplashContainer" style="margin-top: 10px;">
-                                        <div id="divSplashContent" class="divSplashContent">
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="center">
-                                    <!--<div id ="customButton"></div>-->
-                                    <button id="splashButton" style="width: 125px; margin-top: 7px;" class="customButton">
-                                        <div class="customButtonInner">
-                                            <table style="width: 100%; height: 100%;">
-                                                <tr>
-                                                    <td align="center" valign="middle">
-                                                        <center id="buttonText">
-                                                            OK
-                                                        </center>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </button>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </div>
+    <div id="splash"></div>
+
+    <div id="searchDiv"></div>
+    <div id="locateDiv"></div>
+    <div id="basemapDiv"></div>
     <div id="mapDiv" dir="ltr"></div>
 
-    <div id="LocateButton"></div>
 
     <script type="text/javascript">
         var package_path = location.pathname.replace(/\/[^/]+$/, '');//window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));

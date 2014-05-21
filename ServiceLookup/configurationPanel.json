@@ -26,6 +26,21 @@
             "tooltip": "Popup title when service information is available"
         },
         {
+            "type":"number",
+            "fieldName":"popupWidth", 
+            "label": "Popup Width",
+            "tooltip": "Popup dialog width",
+            "constraints" :{"min":0,"places":0}
+        },
+        {
+            "type":"number",
+            "fieldName":"popupHeight", 
+            "label": "Popup Max Height",
+            "tooltip": "Popup dialog max height",
+            "constraints" :{"min":0,"places":0}
+        },
+         
+        {
             "type":"string",
             "fieldName":"serviceUnavailableTitle",
             "label":"Unavailable Popup Title:",
@@ -123,6 +138,8 @@
     "values":{
         "serviceAreaLayerNames": "Service Area",
         "popupTitle": "Service Information",
+        "popupWidth": null,
+        "popupHeight": null,
         "serviceUnavailableTitle": "Outside Utility Service Area",
         "serviceUnavailableMessage": "The utility does not provide service to the selected location",
         "zoomLevel": 16,

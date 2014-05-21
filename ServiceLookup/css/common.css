@@ -1,0 +1,88 @@
+﻿.basemapButton {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+     outline: 0;
+}
+.basemapButton .dijitTitlePaneTextNode .dijitTitlePaneTitleClosed .dijitClosed .dijitTitlePaneTitleFocus .dijitTitlePane {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+}
+
+.basemapButton .dijitTitlePaneTitle {
+  
+    background-color: rgba(255, 255, 255, 0.70);
+    color: #000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    outline: 0;
+}
+.locateButton {
+    position: absolute;
+    top: 92px;
+    left: 20px;
+    z-index: 50;
+}
+.locateButton .zoomLocateButton {
+    width:28px;
+    }
+.searchControl {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    left: 75px;
+    width: 60%;
+}
+
+/* customize geocoder appearance */
+.searchControl .simpleGeocoder{
+    width: 100%;
+}
+
+ .simpleGeocoder .esriGeocoderContainer {
+    width: 100%;
+}
+
+.searchControl .simpleGeocoder .esriGeocoder {
+    height: 100%;
+}
+
+.simpleGeocoder .esriGeocoder input {
+    /* Firefox */
+    width: -moz-calc(100% - 55px);
+    /* WebKit */
+    width: -webkit-calc(100% - 55px);
+    /* Opera */
+    width: -o-calc(100% - 55px);
+    /* Standard */
+    width: calc(100% - 55px);
+    padding-right: 0;
+    margin-right: 0;
+     overflow: hidden;
+}
+
+.simpleGeocoder .esriGeocoderResult:hover,
+.simpleGeocoder .esriGeocoderResultEven:focus,
+.simpleGeocoder .esriGeocoderResultOdd:focus {
+/* default is #EDEDED, use a light blue instead */
+    background-color: #B5DAEA;
+}
+
+
+

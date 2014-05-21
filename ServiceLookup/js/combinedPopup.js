@@ -17,7 +17,7 @@ define([
     "esri/tasks/query",
     "esri/dijit/PopupTemplate",
     "dojo/string"
-   
+
 ], function (
     Evented,
     dojo,
@@ -42,11 +42,18 @@ define([
         map: null,
         layers: null,
         handler: null,
-        constructor: function (map, config,layers,handler) {
+        options: {
+            showGraphic: true
+        },
+        constructor: function (map, config, layers, handler, options) {
             this.map = map;
             this.config = config;
             this.layers = layers;
             this.handler = handler;
+            var defaults = lang.mixin({}, this.options, options);
+            // properties
+            this.showGraphic = defaults.showGraphic;
+
         },
         startup: function () {
             //disconnect the popup handler
@@ -71,7 +78,9 @@ define([
             this.emit("popup-started", {});
             this.map.infoWindow.hide();
             this.map.infoWindow.highlight = false;
-            this.map.graphics.clear();
+            if (this.showGraphic === true) {
+                this.map.graphics.clear();
+            }
 
             //query to determine popup 
             var query = new Query();
@@ -83,6 +92,10 @@ define([
 
             this.event = evt;
             this.results = [];
+            if (this.lookupLayers == null) {
+                return null;
+            }
+
             this.defCnt = this.lookupLayers.length;
 
             for (var f = 0, fl = this.lookupLayers.length; f < fl; f++) {
@@ -101,7 +114,14 @@ define([
 
             }
         },
+        enableMapClick: function () {
+            this.toolbar.activate(Draw.POINT);
 
+        },
+        disableMapClick: function () {
+            this.toolbar.deactivate();
+
+        },
         _initPopup: function () {
 
             var serviceAreaLayerNames = [];
@@ -135,7 +155,14 @@ define([
                                     }, this);
                                 }
                                 if (layDetails.popupInfo == null) {
-                                    alert(this.config.i18n.error.popupNotSet + ": " + subLyrs.name);
+                                    if (this.config.i18n) {
+                                        if (this.config.i18n.error) {
+                                            if (this.config.i18n.error.popupNotSet) {
+                                                alert(this.config.i18n.error.popupNotSet + ": " + subLyrs.name);
+                                            }
+                                        }
+                                    }
+
                                 }
                                 this.lookupLayers.push(layDetails);
 
@@ -264,8 +291,20 @@ define([
                 for (var n = 0, nl = serviceAreaLayerNames.length; n < nl; n++) {
 
                     if (allLayerNames.indexOf(serviceAreaLayerNames[n]) < 0) {
+                        if (this.config.i18n) {
+                            if (this.config.i18n.error) {
+                                if (this.config.i18n.error.layerNotFound) {
+                                    alert(this.config.i18n.error.layerNotFound + ":" + serviceAreaLayerNames[n]);
+                                } else {
+                                    alert("Layer not found: " + serviceAreaLayerNames[n]);
+                                }
+                            } else {
+                                alert("Layer not found: " + serviceAreaLayerNames[n]);
+                            }
+                        } else {
+                            alert("Layer not found: " + serviceAreaLayerNames[n]);
+                        }
 
-                        alert(this.config.i18n.error.layerNotFound + ":" + serviceAreaLayerNames[n]);
                     }
 
                 }
@@ -286,7 +325,6 @@ define([
             this.toolbar.on("draw-end", lang.hitch(this, this._drawEnd));
             //esri.bundle.toolbars.draw.addPoint = this.config.i18n.map.mouseToolTip;
 
-            this.toolbar.activate(Draw.POINT);
 
         },
         _initGraphic: function () {
@@ -394,11 +432,11 @@ define([
                                     //this.layerDescription = layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
                                     layFldTable = layFldTable + "<tr valign='top'>";
                                     if (layerFields[g].label != null) {
-                                        layFldTable = layFldTable + "<td class='attrName'>" + layerFields[g].label + "</td>";
+                                        layFldTable = layFldTable + "<td class='popName'>" + layerFields[g].label + "</td>";
                                     } else {
-                                        layFldTable = layFldTable + "<td class='attrName'>" + layerFields[g].fieldName + "</td>";
+                                        layFldTable = layFldTable + "<td class='popName'>" + layerFields[g].fieldName + "</td>";
                                     }
-                                    layFldTable = layFldTable + "<td class='attrValue'>" + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}</td>";
+                                    layFldTable = layFldTable + "<td class='popValue'>" + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}</td>";
                                     layFldTable = layFldTable + "</tr>";
 
                                 }
@@ -411,8 +449,8 @@ define([
 
                         }
                         if (result.Layer.popupInfo.description === null) {
-                            var popupTable = "<div>";
-                            popupTable = popupTable + "<table class='attrTablePopUp' cellpadding='0px' cellspacing='0px'>";
+                            var popupTable = "<div class=''>";
+                            popupTable = popupTable + "<table class='popTable' cellpadding='0' cellspacing='0'>";
                             popupTable = popupTable + "<tbody>";
 
                             if (popupTitle !== "") {
@@ -462,14 +500,19 @@ define([
                     });
 
                 }
-
                 if (this.results.length === 0) {
                     var editGraphic = new Graphic(this.event, this.editSymbol, null, null);
-                    this.map.graphics.add(editGraphic);
-
+                    if (this.showGraphic === true) {
+                        this.map.graphics.add(editGraphic);
+                    }
                     this.map.infoWindow.setTitle(this.config.serviceUnavailableTitle);
                     this.map.infoWindow.setContent(this.config.serviceUnavailableMessage.replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'"));
                     this.map.infoWindow.show(editGraphic.geometry);
+                    if (this.config.popupWidth != null && this.config.popupHeight != null) {
+                        this.map.infoWindow.resize(this.config.popupWidth, this.config.popupHeight);
+                    } else {
+                        this.map.infoWindow.resize();
+                    }
                     if (this.config.storeLocation === true && this.config.editingAllowed) {
                         atts[this.config.serviceRequestLayerAvailibiltyField] = this.config.serviceRequestLayerAvailibiltyFieldValueNotAvail;
                         this._logRequest(this.event, atts);
@@ -482,22 +525,22 @@ define([
                     featureArray.push(editGraphic);
                     this.map.infoWindow.highlight = false;
                     this.map.infoWindow._highlighted = undefined;
+                    if (this.showGraphic === true) {
 
-                    this.map.graphics.add(editGraphic);
+                        this.map.graphics.add(editGraphic);
+                    }
 
                     this.map.infoWindow.setFeatures(featureArray);
                     this.map.infoWindow.show(editGraphic.geometry);
-                    this.map.infoWindow.resize();
-
-                    if (this.config.storeLocation === true && this.config.editingAllowed) {
-                        atts[this.config.serviceRequestLayerAvailibiltyField] = this.config.serviceRequestLayerAvailibiltyFieldValueAvail;
-
-                        this._logRequest(this.event, atts);
+                    if (this.config.popupWidth != null && this.config.popupHeight != null) {
+                        this.map.infoWindow.resize(this.config.popupWidth, this.config.popupHeight);
+                    } else {
+                        this.map.infoWindow.resize();
                     }
                 }
                 this.map.centerAndZoom(this.event, this.config.zoomLevel);
+
             }
-          
 
         },
         _processResults: function (features) {

@@ -1,0 +1,65 @@
+﻿.popTable {
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    border-color: rgb(128, 128, 128);
+    border-collapse: collapse;
+    color: rgb(51, 51, 51);
+    direction: ltr;
+    display: table;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: 63px;
+    line-height: normal;
+    width: 156px;
+}
+
+    .popTable .popName {
+        border-collapse: collapse;
+        color: rgb(136, 136, 136);
+        direction: ltr;
+        display: table-cell;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        height: 14px;
+        line-height: normal;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        padding-bottom: 5px;
+        padding-left: 2px;
+        padding-right: 5px;
+        padding-top: 2px;
+        vertical-align: top;
+        width: 113px;
+    }
+
+    .popTable .popValue {
+        border-collapse: collapse;
+        color: rgb(51, 51, 51);
+        direction: ltr;
+        display: table-cell;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        height: 14px;
+        line-height: normal;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        padding-bottom: 5px;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-top: 2px;
+        vertical-align: top;
+        width: 32px;
+    }
