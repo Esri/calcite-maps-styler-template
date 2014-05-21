@@ -7,7 +7,7 @@
 		
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
+		
 		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
 		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
 		
@@ -22,7 +22,7 @@
 		<meta property="og:title" content="Story Map Journal"/>
 		<meta property="og:description" content="This story map was created with the Story Map Journal application in ArcGIS Online."/>
 		<meta property="og:image" content="resources/common/icons/esri-globe.png"/>
-
+		
 		<!-- 
 			This template is released under the Apache License V2.0 by Esri http://www.esri.com/
 			Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
@@ -56,16 +56,16 @@
 			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed 
 			//  on Portal for ArcGIS as /home/Tpl/ or /apps/Tpl/, that configuration is available in ../commonConfig.js
 		</script>
-
+		
 		<!--
 		
 			Edit below at your own risk
 		
 		-->
-
+		
 		<script type="text/javascript">
 			var app = {
-				version: '1.0-alpha4',
+				version: '1.0-alpha5',
 				isProduction: true,
 				isInBuilder: false,
 				indexCfg: configOptions
@@ -80,7 +80,7 @@
 					
 				document.write("<script language='javascript' type='text/javascript' src='" + url + "'><\/script>");
 			}
-
+			
 			function loadCSS(url, isExternal)
 			{
 				if( isExternal ) 
@@ -97,19 +97,19 @@
 			
 			function getUrlVar(name)
 			{
-			    var vars = [], hash;
-			   	if( window.location.href.indexOf('?') == -1 ) return null;
-		
-			    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-			    for(var i = 0; i < hashes.length; i++){
-			        hash = hashes[i].split('=');
+				var vars = [], hash;
+				if( window.location.href.indexOf('?') == -1 ) return null;
+			
+				var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+				for(var i = 0; i < hashes.length; i++){
+					hash = hashes[i].split('=');
 					hash[0] = hash[0].split('#')[0];
-			        vars.push(hash[0]);
-			        vars[hash[0]] = (hash[1] == undefined) ? true : hash[1];
-			    }
-			    return vars[name];
+					vars.push(hash[0]);
+					vars[hash[0]] = (hash[1] == undefined) ? true : hash[1];
+				}
+				return vars[name];
 			}
-
+			
 			var pathJSAPI = "//jsdev.arcgis.com/3.10/";
 			//var pathJSAPI = "//js.arcgis.com/3.9/";
 			var path1 = location.pathname.replace(/\/[^/]+$/, '/');
@@ -154,7 +154,7 @@
 			loadCSS(pathJSAPI + "js/esri/css/esri.css", true);
 			loadCSS(pathJSAPI + "/js/dojo/dijit/themes/claro/claro.css", true);	
 			//loadCSS(pathJSAPI + "/js/dojo/dijit/themes/calcite/calcite.css", true);	
-
+			
 			if( app.isProduction ) {
 				if ( app.isInBuilder )
 					loadCSS("app/builder-min.css");
@@ -170,12 +170,12 @@
 		<style>
 			/* CUSTOM CSS RULES */
 		</style>
-
+		
 		<!-- Builder top panel is injected here -->
 		<div id="builderPanel" class="hide mainViewAboveMap"></div>
-
-        <!-- Content -->
-        <div id="contentPanel" class="mobileView">
+		
+		<!-- Content -->
+		<div id="contentPanel" class="mobileView">
 			<!-- Map -->
 			<div id="mainStagePanel">
 				<div class="medias">
@@ -231,8 +231,8 @@
 				<div class="firstAddExplain"></div>
 			</div>
 			
-        </div>
-        <!-- /Content -->
+		</div>
+		<!-- /Content -->
 		
 		<div id="floatingPanel" class="floatingPanel sectionPanel">
 			<div class="backdrop"></div>
@@ -271,7 +271,7 @@
 			<div class="builder-mask"></div>
 			<div class="firstAddExplain"></div>
 		</div>
-
+		
 		<!-- Mobile -->		
 		<div id="mobileView" class="floatingSwiper">
 			<div class="swiper-container">
@@ -291,7 +291,7 @@
 				</a>
 			</div>
 		</div>
-
+		
 		<!-- Loading -->
 		<div id="loadingOverlay" style="position: absolute; top: 0; left: 0;  z-index: 1100; width: 100%; height: 100%; overflow: hidden; background-color: #E5E5E5;"></div>
 		<div id="loadingIndicator"></div>
@@ -325,12 +325,12 @@
 		<script type="text/javascript">
 			loadJS(pathJSAPI + 'init.js', true);
 			loadJS('app/config.js');
-
+			
 			CKEDITOR_BASEPATH = app.isProduction ? 'resources/lib/ckeditor/' : 'lib-app/ckeditor/';
 			
 			if( app.isProduction ) {
 				_ = {};
-
+			
 				if ( app.isInBuilder )
 					loadJS('app/builder-min.js');
 				else
@@ -344,7 +344,7 @@
 				var _gaq = _gaq || [];
 				_gaq.push(['_setAccount', 'UA-26529417-1']);
 				_gaq.push(['_trackPageview']);
-
+				
 				(function() {
 					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -365,7 +365,7 @@
 			}
 			else {
 				define.amd.jQuery = true;
-
+			
 				require([
 						"dojo/i18n!./resources/tpl/viewer/nls/template.js?v=" + app.version, 
 						"storymaps/common/ui/loadingIndicator/LoadingIndicator", 
@@ -398,6 +398,7 @@
 											"dojo/i18n!./resources/tpl/builder/nls/template.js?v=" + app.version,
 											"dojo/i18n!commonResources/nls/core.js?v=" + app.version,
 											"dojo/i18n!commonResources/nls/media.js?v=" + app.version,
+											"dojo/i18n!commonResources/nls/webmap.js?v=" + app.version,
 											"dojo/i18n!commonResources/nls/mapcontrols.js?v=" + app.version,
 											"dojo/_base/lang"
 										], function(
@@ -406,12 +407,14 @@
 											i18nBuilder,
 											i18nCommonBuilder,
 											i18nCommonMedia,
+											i18nCommonWebmap,
 											i18nCommonMapControls,
 											lang
 										){
 											lang.mixin(i18n, i18nBuilder);
 											lang.mixin(i18n, i18nCommonBuilder);
 											lang.mixin(i18n, i18nCommonMedia);
+											lang.mixin(i18n, i18nCommonWebmap);
 											lang.mixin(i18n, i18nCommonMapControls);
 											
 											var builderView = new BuilderView(Core),

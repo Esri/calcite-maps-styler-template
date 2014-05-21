@@ -13,22 +13,6 @@ define({
 				userLookup: "Load albums",
 				notImplemented: "Not implemented yet."
 			},
-			webMapSelector: {
-				btnConfigure: "Configure the Map",
-				lblOverview: "Overview Map",
-				lblLegend: "Legend",
-				loadingTitle: "Loading title",
-				section: "Section",
-				sections: "Sections",
-				and: "and",
-				action: "Action in section",
-				actions: "Action in sectiions",
-				originalWebmap: "Web map used to published the Journal",
-				browseMaps: "Browse for Maps",
-				current: "Current web map",
-				select: "Select a web map",
-				newMap: "Newly selected web map"
-			},
 			imageSelector: {
 				lblStep1: "Choose the service",
 				lblStep2: "Select the media",
@@ -87,16 +71,6 @@ define({
 				lblPosition3Explain: "(won't crop)",
 				lblPosition4Explain: "(may distort)"
 			},
-			mapConfigure: {
-				btnReset: "Reset",
-				btnCancel: "Cancel",
-				tocTitle: "Map content",
-				tocExplain: "Select which layers will be shown",
-				tocSave: "Save Map content",
-				extentTitle: "Map position",
-				extentExplain: "Reposition and zoom the map to set how it will look when it loads for your readers",
-				extentSave: "Save Map position"
-			},
 			editorActionGeocode: {
 				lblTitle: "Locate an address or a place",
 				mapMarkerExplain: "User will see the Map Marker when clicking the link"
@@ -106,21 +80,6 @@ define({
 			},
 			editorInlineMedia: {
 				lblTitle: "Insert an image or a video"
-			}
-		},
-		configure: {
-			mapdlg:{
-				items:{
-					organizationLabel: "My Organization",
-					onlineLabel: "ArcGIS Online",
-					contentLabel: "My Content",
-					favoritesLabel: "My Favorites"
-				},
-				title: "Select Web Map",
-				searchTitle: "Search",
-				ok: "Ok",
-				cancel: "Cancel",
-				placeholder: "Enter search term or Web Map ID..."
 			}
 		}
 	}),

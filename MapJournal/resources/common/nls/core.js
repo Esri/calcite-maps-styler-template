@@ -12,7 +12,8 @@ define({
 				close: "Close",
 				open: "Open",
 				start: "Start",
-				loading: "Loading"
+				loading: "Loading",
+				disabledAdmin: "This feature has been disabled by the Administrator"
 			},
 			inlineFieldEdit: {
 				editMe: "Edit me!"
@@ -93,8 +94,7 @@ define({
 				logoCustomTargetPlaceholder: "Click-through link",
 				logoSocialExplain: "Customize the header link.",
 				logoSocialText: "Text",
-				logoSocialLink: "Link",
-				logoSocialDisabled: "This feature has been disabled by the Administrator"
+				logoSocialLink: "Link"
 			}
 		}
 	}),
