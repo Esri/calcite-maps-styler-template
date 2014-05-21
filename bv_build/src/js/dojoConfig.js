@@ -1,16 +1,42 @@
 var path_location = location.pathname.replace(/\/[^/]+$/, "");
 var dojoConfig = {
     parseOnLoad: true,
-    paths: {
-        esri: "../../esri"
-    },
-    packages: [
-    {
+    packages:[
+      {
+        name:         "dojo",
+        location:     "../dojo"
+      },
+      {
+        name:         "dijit",
+        location:     "../dijit"
+      },
+      {
+        name:         "dojox",
+        location:     "../dojox"
+      },
+      {
+        name:     "put-selector",
+        location: "../../put-selector"
+      },
+      {
+        name:     "xstyle",
+        location: "../../xstyle"
+      },
+      {
+        name:     "dgrid",
+        location: "../../dgrid"
+      },
+      {
+        name:     "esri",
+        location: "../../esri"
+      },
+      {
         name: "utilities",
-        location: path_location + "/js"
-    },
-    {
+        location: "../../utilities"
+      },
+      {
         name: "apl",
-        location: path_location + "/apl"
-    }]
+        location: "../../apl"
+      }
+    ]
 };

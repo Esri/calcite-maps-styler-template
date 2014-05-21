@@ -1,27 +1,40 @@
 [submodule "bv_build/src/javascript/dojo/dojo"]
 	path = bv_build/src/javascript/dojo/dojo
 	url = git@devtopia:WebGIS/js-dojo.git
+	ignore = dirty
 [submodule "bv_build/src/javascript/put-selector"]
 	path = bv_build/src/javascript/put-selector
 	url = git@devtopia:WebGIS/js-put-selector.git
+	ignore = dirty
 [submodule "bv_build/src/javascript/xstyle"]
 	path = bv_build/src/javascript/xstyle
 	url = git@devtopia:WebGIS/js-xstyle.git
+	ignore = dirty
 [submodule "bv_build/src/js/dojo/dojo"]
 	path = bv_build/src/js/dojo/dojo
 	url = git@devtopia:WebGIS/js-dojo.git
+	ignore = dirty
 [submodule "bv_build/src/js/dojo/dijit"]
 	path = bv_build/src/js/dojo/dijit
 	url = git@devtopia:WebGIS/js-dijit.git
+	ignore = dirty
 [submodule "bv_build/src/js/dojo/dojox"]
 	path = bv_build/src/js/dojo/dojox
 	url = git@devtopia:WebGIS/js-dojox.git
+	ignore = dirty
 [submodule "bv_build/src/js/dojo/util"]
 	path = bv_build/src/js/dojo/util
 	url = git@devtopia:WebGIS/js-util.git
+	ignore = dirty
 [submodule "bv_build/src/js/xstyle"]
 	path = bv_build/src/js/xstyle
 	url = git@devtopia:WebGIS/js-xstyle.git
+	ignore = dirty
 [submodule "bv_build/src/js/put-selector"]
 	path = bv_build/src/js/put-selector
 	url = git@devtopia:WebGIS/js-put-selector.git
+	ignore = dirty
+[submodule "bv_build/src/js/dgrid"]
+	path = bv_build/src/js/dgrid
+	url = git@devtopia.esri.com:WebGIS/js-dgrid.git
+	ignore = dirty

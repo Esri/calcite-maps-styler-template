@@ -4,68 +4,53 @@ echo ########## BUILD START TIME: %date% - %time% ##########
 
 SET TMPLT_ROOT=..
 SET TMPLT_SRC=%TMPLT_ROOT%\src
-
-SET JSAPI_SRC=..\..\..\arcgis-js-api\src
-
+SET JSAPI_SRC=..\..\..\js-api\src
+SET RELEASE=%TMPLT_SRC%\js\dojo\release
 SET BUILD_OUTPUT=%TMPLT_ROOT%\buildOutput
+SET BUILD_SCRIPTS=%TMPLT_SRC%\js\dojo\util\buildscripts
 
+rmdir /S /Q %RELEASE%
 rmdir /S /Q %BUILD_OUTPUT%
 mkdir %BUILD_OUTPUT%
 
-SET TEMP_DIR=%BUILD_OUTPUT%\temp
-SET TEMP_ESRI=%TEMP_DIR%\esri
-SET TEMP_DOJO=%TEMP_DIR%\dojo
-SET TEMP_RELEASE=%TEMP_DIR%\release
-
-mkdir %TEMP_DIR%
+REM Copy JSAPI source code i.e. "esri" AMD package
+SET TEMP_ESRI=%TMPLT_SRC%\js\esri
 mkdir %TEMP_ESRI%
-mkdir %TEMP_DOJO%
-
-
-xcopy %JSAPI_SRC%\js\esri           %TEMP_ESRI% /E /Y
-xcopy %TMPLT_SRC%\js\esri          %TEMP_ESRI% /E /Y
-xcopy %TMPLT_SRC%\js\dojo          %TEMP_DOJO% /E /Y
-
+xcopy %JSAPI_SRC%\js\esri %TEMP_ESRI% /E /Y
 
 REM ##########
 REM Run Build
 REM ##########
 
-SET BUILD_SCRIPTS=%TEMP_DOJO%\util\buildscripts
-
 SET VERSION=1.9.1
 
+REM There are better ways to use custom build profiles without
+REM copying them into /util/buildscripts/profiles/
 copy %TMPLT_ROOT%\build\template-amd.profile.js   %BUILD_SCRIPTS%\profiles
+copy %TMPLT_ROOT%\build\relocate-dojo.profile.js  %BUILD_SCRIPTS%\profiles
 
 cd %BUILD_SCRIPTS%
 
 REM Closure Compiler requires Java 6 or later
 
-java -Xmx1024m -classpath ..\shrinksafe\js.jar;..\shrinksafe\shrinksafe.jar;..\closureCompiler\compiler.jar org.mozilla.javascript.tools.shell.Main ../../dojo/dojo.js baseUrl=../../dojo load=build profile=template-amd
+java -Xmx1024m -classpath ..\shrinksafe\js.jar;..\shrinksafe\shrinksafe.jar;..\closureCompiler\compiler.jar org.mozilla.javascript.tools.shell.Main ../../dojo/dojo.js baseUrl=../../dojo load=build profile=template-amd profile=relocate-dojo action=release loader=xdomain version=%VERSION% releaseName=js optimize=closure layerOptimize=closure cssOptimize=comments copyTests=false internStrings=true
 
 cd ..\..\..\..\..\build
 
 REM ####################
 REM make release folders
 REM ####################
+
+REM Copy non-JS files from template source folder to the buildOutput
 mkdir %BUILD_OUTPUT%\css
 mkdir %BUILD_OUTPUT%\images
-mkdir %BUILD_OUTPUT%\apl
+xcopy %TMPLT_SRC%\css         %BUILD_OUTPUT%\css /E /Y
+xcopy %TMPLT_SRC%\images      %BUILD_OUTPUT%\images /E /Y
+copy /Y %TMPLT_SRC%\*.*       %BUILD_OUTPUT%
 
-
-
-copy /Y %TMPLT_SRC%\*.*            %BUILD_OUTPUT%
-
-xcopy %TMPLT_SRC%\images           %BUILD_OUTPUT%\images /E /Y
-
-copy /Y %TMPLT_SRC%\*.*            %BUILD_OUTPUT%
-xcopy %TMPLT_ROOT%\commonConfig.js %BUILD_OUTPUT%\commmonConfig.js /E /Y
-xcopy %TMPLT_SRC%\images 		   %BUILD_OUTPUT%\images /E /Y
-xcopy %TMPLT_SRC%\css              %BUILD_OUTPUT%\css /E /Y
-xcopy %TMPLT_SRC%\apl    		   %BUILD_OUTPUT%\apl /E /Y
-
-move /Y %TEMP_RELEASE%\js          %BUILD_OUTPUT%
-xcopy %TMPLT_SRC%\js     		   %BUILD_OUTPUT%\js /E /Y
+REM Copy JS files from template source folder to the buildOutput
+move /Y %RELEASE%\js          %BUILD_OUTPUT%
+copy /Y %TMPLT_SRC%\js\*.*    %BUILD_OUTPUT%\js
 
 REM ################################################################################
 REM Replace the path in files listed to location.protocol + '//' + [HOSTNAME_AND_PATH_TO_JSAPI]
@@ -78,10 +63,10 @@ REM ##########################################
 REM Delete uncompressed files from the build
 REM ##########################################
 
-del /S %BUILD_OUTPUT%\js\*.js.uncompressed.js
-REM ###del /S %BUILD_OUTPUT%\js\*.js.map
+del /S %BUILD_OUTPUT%\js\*.js.uncompressed.js > nul
+del /S %BUILD_OUTPUT%\js\*.js.map > nul
 
-rmdir /S /Q %TEMP_DIR%
+REM rmdir /S /Q %TEMP_DIR%
 
 echo ########## BUILD END TIME: %date% - %time% ##########
 
