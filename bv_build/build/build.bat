@@ -4,7 +4,7 @@ echo ########## BUILD START TIME: %date% - %time% ##########
 
 SET TMPLT_ROOT=..
 SET TMPLT_SRC=%TMPLT_ROOT%\src
-SET JSAPI_SRC=..\..\..\js-api\src
+SET JSAPI_SRC=..\..\..\arcgis-js-api\src
 SET RELEASE=%TMPLT_SRC%\js\dojo\release
 SET BUILD_OUTPUT=%TMPLT_ROOT%\buildOutput
 SET BUILD_SCRIPTS=%TMPLT_SRC%\js\dojo\util\buildscripts
