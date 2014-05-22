@@ -1,10 +1,10 @@
-change report #35 at 03/02/2014 11:17:53.28
+change report #34 at 02/26/2014 17:24:40.74
 -
 for git branch
-upgrade_amd
+add_login_check
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M js2/lgonlineDrawing.js
+ M js2/lgonlineBuildUI.js
  M js2/lgonlineEditing.js

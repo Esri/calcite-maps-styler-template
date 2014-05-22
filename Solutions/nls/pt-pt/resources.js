@@ -1,7 +1,5 @@
 ﻿/*global define */
 /*
- | ArcGIS Solutions
- | Version 10.2
  | Copyright 2012 Esri
  |
  | Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +15,7 @@
  | limitations under the License.
  */
 define(
-({
+    ({
         tooltips: {
             search: "Pesquisar",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Localização atual",  // Command button to zoom and pan to the current geographical position reported by the browser

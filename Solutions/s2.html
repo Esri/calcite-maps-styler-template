@@ -2,10 +2,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=7, IE=9, IE=10"/>
+    <!-- Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--
-     | ArcGIS Solutions
-     | Version 10.2
      | Copyright 2012 Esri
      |
      | Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,93 +19,97 @@
      | See the License for the specific language governing permissions and
      | limitations under the License.
     -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <!--[if IE]>
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="-1">
-    <![endif]-->
-    <link rel="dns-prefetch" href="//serverapi.arcgisonline.com" />
-
-    <title>ArcGIS Solutions online app</title>
+    <title></title>
     <meta name="description" content="ArcGIS Solutions online app">
-    <link rel="stylesheet" href="//js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css"/>
-    <link rel="stylesheet" href="//js.arcgis.com/3.9/js/esri/css/esri.css" />
-    <link rel="apple-touch-icon-precomposed" href="images/onlineapp.png" />
-    <style>
-        html, body {
-            height:100%;
-            font-size:100%;
-            font-family:sans-serif;
-        }
-        .fill {
-            margin:0;
-            padding:0;
-            width:100%;
-            height:100%;
-        }
-        .startupBkgd {
-            background-image:url("images/loading.gif");
-            background-position:center;
-            background-repeat:no-repeat;
-        }
-        .noJavaScriptMessage {
-            margin: 80px;
-            font-size: large;
-        }
-        .transparent {
-            opacity:0.0;filter:Alpha(opacity=0);
-        }
-        @media screen and (max-height:550px){.esriPopup .contentPane{max-height:300px}}
-        @media screen and (max-height:500px){.esriPopup .contentPane{max-height:250px}}
-        @media screen and (max-height:450px){.esriPopup .contentPane{max-height:200px}}
-        @media screen and (max-height:400px){.esriPopup .contentPane{max-height:150px}}
-        @media screen and (max-height:350px){.esriPopup .contentPane{max-height:100px}}
-        @media screen and (max-height:300px){.esriPopup .contentPane{max-height:50px}}
-    </style>
-
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- End Responsive -->
+    <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
+    <link rel="stylesheet" href="//jsdev.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="//jsdev.arcgis.com/3.10/js/esri/css/esri.css">
+    <!-- Load any application specific styles -->
+    <link rel="stylesheet" href="css/main.css">
 </head>
-<!--[if lt IE 9]><body id="pageBody" class="lt-ie9 claro fill startupBkgd"><![endif]-->
+<!--[if lt IE 9]><body id="pageBody" class="lt-ie9 claro fill app-loading"><![endif]-->
 <!--[if gt IE 8]><!-->
-<body id="pageBody" class="okIE claro fill startupBkgd">
+<body id="pageBody" class="okIE claro fill app-loading">
 <!--<![endif]-->
-    <div id="contentDiv" class="fill transparent"></div>
-    <noscript>
-        <div class="noJavaScriptMessage">
-            <span>This site requires JavaScript.</span>
-        </div>
-    </noscript>
-    <script>
-        var path_location = location.pathname.replace(/\/[^/]+$/, '');
+    <div class="loading-indicator">
+        <div class="loading-message" id="loading_message"></div>
+    </div>
+    <div id="contentDiv" class="fill transparent">
+        <noscript>
+            <div class="noJavaScriptMessage">
+                <span>This site requires JavaScript.</span>
+            </div>
+        </noscript>
+        <!-- The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. -->
+        <div id="mapDiv" dir="ltr"></div>
+    </div>
+    <script type="text/javascript">
+        var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
         var dojoConfig = {
+            async: true,
+            // The locationPath logic below may look confusing but all it's doing is
+            // enabling us to load the api from a CDN and load local modules from the correct location.
             packages: [{
-                name: "js",
-                location: path_location + '/js2'
-            },{
-                name: "esriTemplate",
-                location: path_location
-            },{
+                name: "launch",
+                location: package_path + '/js'
+            }, {
                 name: "config",
-                location: path_location + '/..'
-            }],
-            async: false,
-            parseOnLoad: false
+                location: package_path + '/config'
+            }, {
+                name: "arcgis_templates",
+                location: package_path + '/..'
+            }, {
+                name: "js",
+                location: package_path + '/js2'
+            },{
+                name: "app",
+                location: package_path + '/.'
+            }]
         };
-        document.ontouchmove = function(e) {e.preventDefault()};  // prevent mobile bounce
-        var defaultAppUI = "apps2/GeneralMap";
     </script>
-    <!--[if IE]>
-    <script>
-        // IE loads unreliably from cache
-        dojoConfig.cacheBust = true;
-    </script>
-    <![endif]-->
-    <!--[if lte IE 8]>
-    <script src="js2/json2.js"></script>
-    <![endif]-->
-    <script src="//js.arcgis.com/3.9/"></script>
+    <script type="text/javascript" src="//jsdev.arcgis.com/3.10/"></script>
     <script src="js2/libs.js"></script>
-    <script src="js2/lgonlineStart.js"></script>
+    <script type="text/javascript">
+        require([
+            "launch/template",
+            "launch/main"
+        ], function(
+            Template,
+            Main
+        ){
+            // create the template. This will take care of all the logic required for template applications
+            var myTemplate = new Template({
+                /*
+                webmap: true,
+                groupInfo: false,
+                groupItems: false,
+                groupParams: {
+                    sortField: "modified",
+                    sortOrder: "desc",
+                    num: 9,
+                    start: 0
+                }
+                */
+            });
+            // create my main application. Start placing your logic in the main.js file.
+            var myApp = new Main();
+            // start template
+            myTemplate.startup().then(function(config) {
+                // The config object contains the following properties: helper services, (optionally)
+                // i18n, appid, webmap and any custom values defined by the application.
+                // In this example we have one called theme.
+                myApp.startup(config);
+            }, function(error) {
+                // something went wrong. Let's report it.
+                myApp.reportError(error);
+            });
+        });
+    </script>
 </body>
 </html>

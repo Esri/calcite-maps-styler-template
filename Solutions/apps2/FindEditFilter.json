@@ -19,7 +19,7 @@
         "webmap": "796c572e6dcb4c88b77c024ae003bd88",
         "titleBar.title": "Find, Edit, and Filter",
         "titleBar.iconUrl": "images/onlineapp.png",
-        "colorizer.theme": "Brick",
+        "colorizer.theme": "EarthBrowns",
         "filter.hint1": "Filter",
         "filter.fieldname1": "",
         "filter.value1": "",
@@ -50,29 +50,23 @@
             "fieldName": "colorizer.theme",
             "type": "string",
             "options": [{
-                "label": "Dark Gray",
-                "value": "DarkGray"
+                "label": "Neutral Grays",
+                "value": "NeutralGrays"
             }, {
-                "label": "Dark Green",
-                "value": "DarkGreen"
+                "label": "Earth Browns",
+                "value": "EarthBrowns"
             }, {
-                "label": "Dodger Blue",
-                "value": "DodgerBlue"
+                "label": "Sea Blues",
+                "value": "SeaBlues"
             }, {
-                "label": "Gray",
-                "value": "Gray"
+                "label": "Natural Greens",
+                "value": "NaturalGreens"
             }, {
-                "label": "Brick",
-                "value": "Brick"
+                "label": "Warm Brights",
+                "value": "WarmBrights"
             }, {
-                "label": "Thistle",
-                "value": "Thistle"
-            }, {
-                "label": "Turquoise",
-                "value": "Turquoise"
-            }, {
-                "label": "Orange",
-                "value": "Orange"
+                "label": "Scenic Purples",
+                "value": "ScenicPurples"
             }],
             "tooltip": "Color of header bar and widget windows"
         }]
@@ -165,7 +159,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit cc1bfab8d76975b7 2014-05-21 15:26:35 -0700"
+                "commit 388b4cc4839c4b3f 2014-05-22 15:06:41 -0700"
             ]
         }
     }, {
@@ -174,29 +168,23 @@
             "rootId": "colorizer",
             "parentDiv": "contentDiv",
             "colorTable": [{
-                "theme": "DarkGray",
-                "colors": ["#fff", "#333333", "#5d5d5d", "#5d5d5d"]
+                "theme": "NeutralGrays",
+                "colors": ["#6e6e6e", "#fff", "#464646", "#b4b4b4"]
             }, {
-                "theme": "DarkGreen",
-                "colors": ["#fff", "DarkGreen", "#9bcd9b", "#9bcd9b"]
+                "theme": "EarthBrowns",
+                "colors": ["#7b4f1c", "#fff", "#523b20", "#b4b4b4"]
             }, {
-                "theme": "DodgerBlue",
-                "colors": ["#fff", "#104e8b", "#1a78d7", "#1a78d7"]
+                "theme": "SeaBlues",
+                "colors": ["#007ac2", "#fff", "#004575", "#b4b4b4"]
             }, {
-                "theme": "Gray",
-                "colors": ["#fff", "Gray", "#aaaaaa", "#aaaaaa"]
+                "theme": "NaturalGreens",
+                "colors": ["#35ac46", "#fff", "#2a7f33", "#b4b4b4"]
             }, {
-                "theme": "Brick",
-                "colors": ["#fff", "#9c661f", "#d89438", "#d89438"]
+                "theme": "WarmBrights",
+                "colors": ["#f36f20", "#fff", "#da4d1e", "#b4b4b4"]
             }, {
-                "theme": "Thistle",
-                "colors": ["#fff", "#8b7b8b", "#b3a8b3", "#b3a8b3"]
-            }, {
-                "theme": "Turquoise",
-                "colors": ["#fff", "#00868b", "#00dadf", "#00dadf"]
-            }, {
-                "theme": "Orange",
-                "colors": ["#fff", "#cd8500", "#ffb122", "#ffb122"]
+                "theme": "ScenicPurples",
+                "colors": ["#8f499c", "#fff", "#6b1978", "#b4b4b4"]
             }]
         }
     }, {
