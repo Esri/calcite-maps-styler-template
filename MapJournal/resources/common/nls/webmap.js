@@ -14,7 +14,7 @@ define({
 				and: "and",
 				action: "Action in section",
 				actions: "Action in sections",
-				originalWebmap: "Web map used to publish the Map Journal",
+				originalWebmap: "Web map used to publish the %TPL_NAME%",
 				browseMaps: "Browse for Maps",
 				current: "Current web map",
 				select: "Select a web map",

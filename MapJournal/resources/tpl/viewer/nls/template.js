@@ -28,7 +28,7 @@ define({
 			mobileView: {
 				tapForDetails: "Tap for details",
 				swipeToExplore: "Swipe to explore",
-				tapForMap: "Tap to get back to Map"
+				tapForMap: "Tap to get back to the Map"
 			},
 			floatLayout: {
 				scroll: "Scroll"

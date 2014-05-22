@@ -40,6 +40,7 @@ app.cfg = {
 	// Builder
 	//
 	
+	// Size and position of represent the value relative to the Map
 	LAYOUTS: [
   		{
   			id: "side",

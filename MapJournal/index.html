@@ -13,7 +13,7 @@
 		
 		<!-- 
 			To correctly reference your Journal in search engine:
-			 - create and fill out extensively an ArcGIS.com item that link to your final application
+			 - create and fill out extensively an ArcGIS Online item that link to your final application
 			 - edit the following four tags as well as the title tag above on line 4
 		-->
 		<meta name="description" content="This story map was created with the Esri Tpl application in ArcGIS Online.">
@@ -30,28 +30,15 @@
 		-->
 		
 		<script type="text/javascript">
-			//----------------------------------------------------------------
-			//     Template configuration (ignored on Portal and development)
-			//----------------------------------------------------------------
+			//-------------------------------------------------------------------------------------------
+			//     Template configuration (ignored on ArcGIS Online, Portal and during development)
+			//-------------------------------------------------------------------------------------------
 			var configOptions = {
-				// Enter either a web map ID or a web application ID
-				// - Using an application ID created through the interactive builder in ArcGIS.com allow to reuse 
-				//   the settings like the header configuration without having to edit any configuration here
-				// - Web map and application can be dynamically specified through url parameters (webmap and appid) 
-				//   if the authorizedOwners property is specified (see below)
-				// - If an application id is specified, the webmap configuration isn't used
-				webmap: "",
+				// Enter an application ID created through the Story Map Journal Builder 
 				appid: "",
-				// Optional list of authorized application or web map owners
-				// Has to be specified when using appid or webmap url parameters (e.g. ["user1"], ["user1", "user2"])
-				authorizedOwners: [""],
-				// The application header title, if no title is specified, the webmap's title is used
-				title: "",
-				// The application header subtitle, if not specified the ArcGIS.com web map's summary is used
-				subtitle: ""
 			};
 			// Optionally sharing and proxy URLs can be configured in app/tpl-config.js. This is only required  
-			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the template isn't deployed as /home/Tpl/ or /apps/Tpl/. 
+			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the template isn't deployed as /home/MapJournal/ or /apps/MapJournal/. 
 			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/commonConfig.js. This is only required 
 			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed 
 			//  on Portal for ArcGIS as /home/Tpl/ or /apps/Tpl/, that configuration is available in ../commonConfig.js
@@ -65,7 +52,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.0-alpha5',
+				version: '1.0-alpha6',
 				isProduction: true,
 				isInBuilder: false,
 				indexCfg: configOptions

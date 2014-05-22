@@ -15,7 +15,7 @@ define({
 			},
 			imageSelector: {
 				lblStep1: "Choose the service",
-				lblStep2: "Select the media",
+				lblStep2: "Select your media",
 				lblStep3: "Configure"
 			},
 			imageSelectorHome: {
@@ -72,14 +72,14 @@ define({
 				lblPosition4Explain: "(may distort)"
 			},
 			editorActionGeocode: {
-				lblTitle: "Locate an address or a place",
-				mapMarkerExplain: "User will see the Map Marker when clicking the link"
+				lblTitle: "Locate an address or place",
+				mapMarkerExplain: "User will see a map marker when clicking the link"
 			},
 			editorActionMedia: {
 				lblTitle: "Change the Main Stage media"
 			},
 			editorInlineMedia: {
-				lblTitle: "Insert an image or a video"
+				lblTitle: "Insert an image or video"
 			}
 		}
 	}),
