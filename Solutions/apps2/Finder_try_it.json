@@ -142,7 +142,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit dd65ace97c3b4212 2014-05-22 16:11:25 -0700"
+                "commit 4150f1ff6f995e72 2014-05-22 16:47:06 -0700"
             ]
         }
     }, {
@@ -359,8 +359,7 @@
             "horizOffset": -2,
             "vertOffset": [2, -2],
             "trigger": "basemap",
-            "dependencyId": "map",
-            "webmapThumbnail": "images/webmap.png"
+            "dependencyId": "map"
         }
     }, {
         "classname": "js.LGMapBasedMenuBox",

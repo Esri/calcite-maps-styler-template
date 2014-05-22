@@ -1,10 +1,16 @@
-change report #34 at 02/26/2014 17:24:40.74
+change report #41 at 05/22/2014 16:45:39.97
 -
 for git branch
-add_login_check
+webmap_thumbnail
 in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M js2/lgonlineBuildUI.js
- M js2/lgonlineEditing.js
+ M apps2/FindEditFilter.json
+ M apps2/FindEditFilter_try_it.json
+ M apps2/Finder.json
+ M apps2/Finder_try_it.json
+ M apps2/GeneralMap.json
+ M apps2/ParcelViewer.json
+ M doc/examples2/ShowLegend.json
+ M js2/lgonlineCommand.js
