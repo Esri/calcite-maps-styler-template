@@ -1,5 +1,5 @@
 [submodule "dojo/dojo"]
-	path = js/dojo/dojo
+	path = dojo/dojo
 	url = git@devtopia:WebGIS/js-dojo.git
 [submodule "put-selector"]
 	path = put-selector
