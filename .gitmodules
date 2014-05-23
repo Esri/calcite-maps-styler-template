@@ -1,21 +1,21 @@
-[submodule "dojo/dojo"]
-	path = dojo/dojo
+[submodule "js/dojo/dojo"]
+	path = js/dojo/dojo
 	url = git@devtopia:WebGIS/js-dojo.git
-[submodule "put-selector"]
-	path = put-selector
+[submodule "js/dojo/dijit"]
+	path = js/dojo/dijit
 	url = git@devtopia:WebGIS/js-put-selector.git
-[submodule "xstyle"]
-	path = xstyle
+[submodule "js/xstyle"]
+	path = js/xstyle
 	url = git@devtopia:WebGIS/js-xstyle.git
-[submodule "dojo/dijit"]
-	path = dojo/dijit
-	url = git@devtopia:WebGIS/js-dijit.git
-[submodule "dojo/dojox"]
-	path = dojo/dojox
+[submodule "js/put-selector"]
+	path = js/put-selector
+	url = git@devtopia:WebGIS/js-put-selector.git
+[submodule "js/dojo/dojox"]
+	path = js/dojo/dojox
 	url = git@devtopia:WebGIS/js-dojox.git
-[submodule "dojo/util"]
-	path = dojo/util
+[submodule "js/dojo/util"]
+	path = js/dojo/util
 	url = git@devtopia:WebGIS/js-util.git
-[submodule "dgrid"]
-	path = dgrid
+[submodule "js/dgrid"]
+	path = js/dgrid
 	url = git@devtopia:WebGIS/js-dgrid.git
