@@ -3,7 +3,7 @@
 	url = git@devtopia:WebGIS/js-dojo.git
 [submodule "js/dojo/dijit"]
 	path = js/dojo/dijit
-	url = git@devtopia:WebGIS/js-put-selector.git
+url=git@devtopia:WebGIS/js-dijit.git
 [submodule "js/xstyle"]
 	path = js/xstyle
 	url = git@devtopia:WebGIS/js-xstyle.git
