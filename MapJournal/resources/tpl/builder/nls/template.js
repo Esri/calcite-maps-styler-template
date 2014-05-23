@@ -30,16 +30,18 @@ define({
 				titleAdd: "Add Section",
 				titleEdit: "Edit Section",
 				step: "Step",
-				step1Explain: "Add a Map, Image, or Video to the Main Stage",
-				step2Explain: "Add content to the",
-				step1NextTooltip: "Enter the section title and select the Main Stage content to go to the next step",
-				step2NextTooltip: "Enter the section title and %LAYOUT-TYPE% content to add the section",
+				stepMainStageExplain: "Add a Map, Image, or Video to the Main Stage",
+				stepPanelExplain: "Add content to the",
+				stepMainStageNextTooltip: "Enter the section title and select the Main Stage content",
+				step2NextTooltip: "Enter the section title and %LAYOUT-TYPE% content",
+				stepNextTooltipNext: "to go to the next step",
+				stepNextTooltipAdd: "to add the section",
 				titlePlaceholder: "Section title...",
 			},
 			addEditViewText: {
 				editorPlaceholder: "Add text, links, and small graphics here.",
 				editorActionsTitle: "Main Stage Actions",
-				editorActionsHelpDescr: "Use these controls to coordinate the behavior of the main stage content with this section. For example, you may want to add a map marker on the map to show a specific location once the reader clicks this link in the story."
+				editorActionsHelpDescr: "Use these controls to create links that will change the main stage. For example, when the reader clicks a link you may want to zoom the Map to a specific location, display another web map or display an Image."
 			},
 			organizePopup: {
 				title: "Organize",

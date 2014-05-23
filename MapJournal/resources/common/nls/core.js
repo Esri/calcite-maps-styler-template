@@ -74,7 +74,7 @@ define({
 			settingsLayout: {
 				title: "Layout",
 				explain: "What layout do you want to use?",
-				explainInit: "Change will be possible through the settings dialog.",
+				explainInit: "If you don’t like your initial choice, change will be possible through the settings dialog.",
 				viewExample: "View a live example"
 			},
 			settingsTheme: {

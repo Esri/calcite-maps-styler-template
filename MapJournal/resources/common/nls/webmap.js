@@ -24,9 +24,9 @@ define({
 				tooltipLocation: "Define the Map location that will be used when your readers navigate to this section.",
 				tooltipContent: "Define the visible layers.",
 				tooltipPopup: "Choose a popup to be displayed when your readers navigate to this section.",
-				tooltipOverview: "Choose to display a tiny and lower scale Map in a corner.",
+				tooltipOverview: "Choose to display a tiny and smaller scale Map in a corner.",
 				tooltipLegend: "Choose to display the Map Legend.",
-				mapCfgInvite: "Use these controls to refine your Map!"
+				mapCfgInvite: "Use these controls to configure your Map"
 			},
 			configure: {
 				btnReset: "Reset",
