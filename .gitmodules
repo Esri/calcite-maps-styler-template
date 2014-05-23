@@ -38,3 +38,24 @@
 	path = bv_build/src/js/dgrid
 	url = git@devtopia.esri.com:WebGIS/js-dgrid.git
 	ignore = dirty
+[submodule "dojo/dojo"]
+	path = dojo/dojo
+	url = git@devtopia:WebGIS/js-dojo.git
+[submodule "put-selector"]
+	path = put-selector
+	url = git@devtopia:WebGIS/js-put-selector.git
+[submodule "xstyle"]
+	path = xstyle
+	url = git@devtopia:WebGIS/js-xstyle.git
+[submodule "dojo/dijit"]
+	path = dojo/dijit
+	url = git@devtopia:WebGIS/js-dijit.git
+[submodule "dojo/dojox"]
+	path = dojo/dojox
+	url = git@devtopia:WebGIS/js-dojox.git
+[submodule "dojo/util"]
+	path = dojo/util
+	url = git@devtopia:WebGIS/js-util.git
+[submodule "dgrid"]
+	path = dgrid
+	url = git@devtopia:WebGIS/js-dgrid.git
