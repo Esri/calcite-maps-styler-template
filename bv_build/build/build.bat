@@ -4,10 +4,11 @@ echo ########## BUILD START TIME: %date% - %time% ##########
 
 SET TMPLT_ROOT=..
 SET TMPLT_SRC=%TMPLT_ROOT%\src
+SET DOJO_SRC=..\..\js\dojo
 SET JSAPI_SRC=..\..\..\arcgis-js-api\src
-SET RELEASE=%TMPLT_SRC%\js\dojo\release
+SET RELEASE=%DOJO_SRC%\release
 SET BUILD_OUTPUT=%TMPLT_ROOT%\buildOutput
-SET BUILD_SCRIPTS=%TMPLT_SRC%\js\dojo\util\buildscripts
+SET BUILD_SCRIPTS=%DOJO_SRC%\util\buildscripts
 
 rmdir /S /Q %RELEASE%
 rmdir /S /Q %BUILD_OUTPUT%
@@ -35,7 +36,7 @@ REM Closure Compiler requires Java 6 or later
 
 java -Xmx1024m -classpath ..\shrinksafe\js.jar;..\shrinksafe\shrinksafe.jar;..\closureCompiler\compiler.jar org.mozilla.javascript.tools.shell.Main ../../dojo/dojo.js baseUrl=../../dojo load=build profile=template-amd profile=relocate-dojo action=release loader=xdomain version=%VERSION% releaseName=js optimize=closure layerOptimize=closure cssOptimize=comments copyTests=false internStrings=true
 
-cd ..\..\..\..\..\build
+cd ..\..\..\..\bv_build\build
 
 REM ####################
 REM make release folders
@@ -44,13 +45,16 @@ REM ####################
 REM Copy non-JS files from template source folder to the buildOutput
 mkdir %BUILD_OUTPUT%\css
 mkdir %BUILD_OUTPUT%\images
+
+
 xcopy %TMPLT_SRC%\css         %BUILD_OUTPUT%\css /E /Y
 xcopy %TMPLT_SRC%\images      %BUILD_OUTPUT%\images /E /Y
 copy /Y %TMPLT_SRC%\*.*       %BUILD_OUTPUT%
 
 REM Copy JS files from template source folder to the buildOutput
 move /Y %RELEASE%\js          %BUILD_OUTPUT%
-copy /Y %TMPLT_SRC%\js\*.*    %BUILD_OUTPUT%\js
+xcopy  %TMPLT_SRC%\js\*.*    %BUILD_OUTPUT%\js /E /Y
+
 
 REM ################################################################################
 REM Replace the path in files listed to location.protocol + '//' + [HOSTNAME_AND_PATH_TO_JSAPI]
