@@ -36,7 +36,8 @@ mkdir %BUILD_OUTPUT%\Legend
 mkdir %BUILD_OUTPUT%\Legend\Chrome                      
 mkdir %BUILD_OUTPUT%\Legend\pavement                        
 mkdir %BUILD_OUTPUT%\Legend\seaside                     
-mkdir %BUILD_OUTPUT%\Legend\main                        
+mkdir %BUILD_OUTPUT%\Legend\main          
+mkdir %BUILD_OUTPUT%\LocalPerspective
 mkdir %BUILD_OUTPUT%\MapCarousel
 mkdir %BUILD_OUTPUT%\MapTour
 mkdir %BUILD_OUTPUT%\OnePane
@@ -101,6 +102,7 @@ xcopy %TEMPLATES_ROOT%\archive\LegendChrome                     %BUILD_OUTPUT%\L
 xcopy %TEMPLATES_ROOT%\archive\LegendPavement                   %BUILD_OUTPUT%\Legend\pavement                      /E /Y
 xcopy %TEMPLATES_ROOT%\archive\LegendSeaside                    %BUILD_OUTPUT%\Legend\seaside                       /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Legend                           %BUILD_OUTPUT%\Legend\main                          /E /Y
+xcopy %TEMPLATES_ROOT%\LocalPerspective                         %BUILD_OUTPUT%\LocalPerspective                     /E /Y
 xcopy %TEMPLATES_ROOT%\MapCarousel                              %BUILD_OUTPUT%\MapCarousel                          /E /Y
 xcopy %TEMPLATES_ROOT%\MapTour                                  %BUILD_OUTPUT%\MapTour                              /E /Y
 xcopy %TEMPLATES_ROOT%\archive\OnePane                          %BUILD_OUTPUT%\OnePane\main                         /E /Y
