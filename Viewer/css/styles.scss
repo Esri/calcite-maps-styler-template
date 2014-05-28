@@ -35,11 +35,18 @@ $black-color:rgb(0,0,0);
         font-weight: $weight;
     }
 }
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
 
 /*Phones (520px) Small Tablets (720px)*/
 @mixin respond-to($breakpoint) {
     @media only screen and (min-width: $breakpoint + px) { @content; }
 }
+
 html, body {
     padding: 0;
     margin: 0;
@@ -105,13 +112,12 @@ html, body {
 }
 
 /* Esri Jvascript API*/
-#timeSliderLabel{
-    text-align:center;
-}
 .esriPopup .pointer.bottom , .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight{
     background: #f7f7f7 !important;
 }
-
+.esriPopupMaximized{
+   top:100px !important;
+}
 .esriSimpleSlider {
     text-align: center;
     color: #ffffff;
@@ -331,18 +337,34 @@ img{
     display: block;
 }
 
+.pageblank {
+    width: 0px;
+    height: 100%;
+}
+
 .pageContent {
     position: absolute;
     left:10px;
     right:10px;
     top: 90px;
-    bottom:5px;
+    bottom:10px;
     overflow:hidden;
     display:block;
     @include transparent($default-theme, 1);
     @include respond-to(820){
-        top: 5px;  
+        top: 10px;  
     }
+}
+
+/*Panel sizes*/
+.small{
+    height:40%;
+}
+.medium{
+    height:60%
+}
+.large{
+    height:100%;
 }
 
 .pageHeader {
@@ -467,6 +489,7 @@ img{
 #pageBody_time{
     padding-top:20px;
 }
+
 #panelTop {
     position: fixed;
     left:0px;
@@ -542,15 +565,11 @@ img{
 #panelMenu {
     float: right;
     margin-top: 10px;
-    margin-right:5px;
-    padding-right:4px;
-    padding-left:4px;
     height: 30px;
     width:30px;
     background: url(../images/menu.png) no-repeat;
     cursor: pointer;
     display: block;
-
     @include respond-to(720){
         display:none;
     }
@@ -599,7 +618,22 @@ img{
     margin-top: 3px;
 }
 
-/*Calcite updates keep list and submit issues to devtopia*/
+/*Calcite updates keep list and submit issues*/
+
+.calcite .esriPopup .titleButton.next{
+    background: url('../images/calcite_nav.png') no-repeat -42px -3px !important;
+    top:10px;
+    width: 8px;
+    height: 10px;
+    @include opacity(0.6);
+}
+.calcite .esriPopup .titleButton.prev {
+    background: url('../images/calcite_nav.png') no-repeat -57px -23px !important;
+    top:10px;
+    width: 8px;
+    height: 10px;
+    @include opacity(0.6);
+}
 .dijitMenuItemIconChar.dijitCheckedMenuItemIconChar {
     display: inline-block;
     visibility: hidden;

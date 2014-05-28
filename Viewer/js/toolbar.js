@@ -40,7 +40,7 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
             domConstruct.empty(pPages);
             // add blank page
             domConstruct.create("div", {
-                className: "page",
+                className: "pageblank",
                 id: "page_blank"
             }, pPages);
 
@@ -54,7 +54,7 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
         },
 
         //Create a tool and return the div where you can place content
-        createTool: function (tool) {
+        createTool: function (tool, panelClass) {
 
 
             var name = tool.name;
@@ -85,6 +85,8 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
                 className: "pageContent rounded shadow",
                 id: "pageContent_" + name
             }, page);
+
+            domClass.add(pageContent, panelClass);
 
             var pageHeader = domConstruct.create("div", {
                 id: "pageHeader_" + name,

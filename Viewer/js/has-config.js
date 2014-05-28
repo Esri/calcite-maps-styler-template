@@ -119,9 +119,8 @@ define(["dojo/has"], function (has) {
     has.add("share", function (g) {
         return getTool("share", g.config);
     });
-    has.add("time", function (g) {
-        return getTool("time", g.config);
-    }); /*Geolocation Feature Detection*/
+
+    /*Geolocation Feature Detection*/
     has.add("native-gelocation", function (g) {
         return has("native-navigator") && ("geolocation" in g.navigator);
     });

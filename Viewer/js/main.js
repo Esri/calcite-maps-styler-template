@@ -118,37 +118,34 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 for (var i = 0; i < this.config.tools.length; i++) {
                     switch (this.config.tools[i].name) {
                     case "legend":
-                        toolList.push(this._addLegend(this.config.tools[i], toolbar));
+                        toolList.push(this._addLegend(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "bookmarks":
-                        toolList.push(this._addBookmarks(this.config.tools[i], toolbar));
+                        toolList.push(this._addBookmarks(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "layers":
-                        toolList.push(this._addLayers(this.config.tools[i], toolbar));
+                        toolList.push(this._addLayers(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "basemap":
-                        toolList.push(this._addBasemapGallery(this.config.tools[i], toolbar));
+                        toolList.push(this._addBasemapGallery(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "overview":
-                        toolList.push(this._addOverviewMap(this.config.tools[i], toolbar));
+                        toolList.push(this._addOverviewMap(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "measure":
-                        toolList.push(this._addMeasure(this.config.tools[i], toolbar));
+                        toolList.push(this._addMeasure(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "edit":
-                        toolList.push(this._addEditor(this.config.tools[i], toolbar));
-                        break;
-                    case "time":
-                        toolList.push(this._addTime(this.config.tools[i], toolbar));
+                        toolList.push(this._addEditor(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "print":
-                        toolList.push(this._addPrint(this.config.tools[i], toolbar));
+                        toolList.push(this._addPrint(this.config.tools[i], toolbar, "small"));
                         break;
                     case "details":
-                        toolList.push(this._addDetails(this.config.tools[i], toolbar));
+                        toolList.push(this._addDetails(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "share":
-                        toolList.push(this._addShare(this.config.tools[i], toolbar));
+                        toolList.push(this._addShare(this.config.tools[i], toolbar, "medium"));
                         break;
                     default:
                         break;
@@ -175,7 +172,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
             }));
         },
-        _addBasemapGallery: function (tool, toolbar) {
+        _addBasemapGallery: function (tool, toolbar, panelClass) {
             //Add the basemap gallery to the toolbar. 
             var deferred = new Deferred();
             require(["application/has-config!basemap?esri/dijit/BasemapGallery"], lang.hitch(this, function (BasemapGallery) {
@@ -183,7 +180,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     deferred.resolve();
                     return;
                 }
-                var basemapDiv = toolbar.createTool(tool);
+                var basemapDiv = toolbar.createTool(tool, panelClass);
 
 
                 var basemap = new BasemapGallery({
@@ -205,7 +202,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             return deferred.promise;
         },
 
-        _addBookmarks: function (tool, toolbar) {
+        _addBookmarks: function (tool, toolbar, panelClass) {
             //Add the bookmarks tool to the toolbar. Only activated if the webmap contains bookmarks. 
             var deferred = new Deferred();
             if (this.config.response.itemInfo.itemData.bookmarks) {
@@ -215,7 +212,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         deferred.resolve();
                         return;
                     }
-                    var bookmarkDiv = toolbar.createTool(tool);
+                    var bookmarkDiv = toolbar.createTool(tool, panelClass);
                     var bookmarks = new Bookmarks({
                         map: this.map,
                         bookmarks: this.config.response.itemInfo.itemData.bookmarks
@@ -231,13 +228,13 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
             return deferred.promise;
         },
-        _addDetails: function (tool, toolbar) {
+        _addDetails: function (tool, toolbar, panelClass) {
             //Add the default map description panel 
             var deferred = new Deferred();
             if (has("details")) {
                 var description = this.config.response.itemInfo.item.description || this.config.response.itemInfo.item.snippet;
                 if (description) {
-                    var detailDiv = toolbar.createTool(tool);
+                    var detailDiv = toolbar.createTool(tool, panelClass);
                     detailDiv.innerHTML = description;
                 }
             }
@@ -246,7 +243,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             return deferred.promise;
 
         },
-        _addEditor: function (tool, toolbar) {
+        _addEditor: function (tool, toolbar, panelClass) {
 
             //Add the editor widget to the toolbar if the web map contains editable layers 
             var deferred = new Deferred();
@@ -258,7 +255,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         deferred.resolve();
                         return;
                     }
-                    var editorDiv = toolbar.createTool(tool);
+                    var editorDiv = toolbar.createTool(tool, panelClass);
 
 
                     //add field infos if necessary. Field infos will contain hints if defined in the popup and hide fields where visible is set
@@ -306,7 +303,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
             return deferred.promise;
         },
-        _addLayers: function (tool, toolbar) {
+        _addLayers: function (tool, toolbar, panelClass) {
             //Toggle layer visibility if web map has operational layers 
             var deferred = new Deferred();
 
@@ -322,7 +319,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         if (layerInfos.length > 0) {
                             layerInfos.reverse();
 
-                            var layersDiv = toolbar.createTool(tool);
+                            var layersDiv = toolbar.createTool(tool, panelClass);
 
                             var menu = new Menu({
                                 id: "layerMenu"
@@ -355,7 +352,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
             return deferred.promise;
         },
-        _addLegend: function (tool, toolbar) {
+        _addLegend: function (tool, toolbar, panelClass) {
             //Add the legend tool to the toolbar. Only activated if the web map has operational layers. 
             var deferred = new Deferred();
             var layers = arcgisUtils.getLegendLayers(this.config.response);
@@ -368,7 +365,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         deferred.resolve();
                         return;
                     }
-                    var legendDiv = toolbar.createTool(tool);
+                    var legendDiv = toolbar.createTool(tool, panelClass);
                     var legend = new Legend({
                         map: this.map
                     }, legendDiv);
@@ -381,7 +378,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             return deferred.promise;
         },
 
-        _addMeasure: function (tool, toolbar) {
+        _addMeasure: function (tool, toolbar, panelClass) {
             //Add the measure widget to the toolbar.
             var deferred = new Deferred();
             require(["application/has-config!measure?esri/dijit/Measurement"], lang.hitch(this, function (Measurement) {
@@ -389,7 +386,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     deferred.resolve();
                     return;
                 }
-                var measureDiv = toolbar.createTool(tool);
+                var measureDiv = toolbar.createTool(tool, panelClass);
                 var areaUnit = (this.config.units === "metric") ? "esriSquareKilometers" : "esriSquareMiles";
                 var lengthUnit = (this.config.units === "metric") ? "esriKilometers" : "esriMiles";
 
@@ -410,7 +407,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
             return deferred.promise;
         },
-        _addOverviewMap: function (tool, toolbar) {
+        _addOverviewMap: function (tool, toolbar, panelClass) {
             //Add the overview map to the toolbar 
             var deferred = new Deferred();
             require(["application/has-config!overview?esri/dijit/OverviewMap"], lang.hitch(this, function (OverviewMap) {
@@ -418,7 +415,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     deferred.resolve();
                     return;
                 }
-                var ovMapDiv = toolbar.createTool(tool);
+                var ovMapDiv = toolbar.createTool(tool, panelClass);
 
 
                 domStyle.set(ovMapDiv, {
@@ -430,7 +427,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 var ovMap = new OverviewMap({
                     id: "overviewMap",
                     map: this.map,
-                    height: this.map.height - 100
+                    height: this.map.height * 0.50
                 }, domConstruct.create("div", {}, ovMapDiv));
 
                 ovMap.startup();
@@ -463,7 +460,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
             return deferred.promise;
         },
-        _addPrint: function (tool, toolbar) {
+        _addPrint: function (tool, toolbar, panelClass) {
             //Add the print widget to the toolbar. TODO: test custom layouts. 
             var deferred = new Deferred();
 
@@ -526,7 +523,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                             label: this.config.i18n.tools.print.layouts.label4,
                             format: "PNG32"
                         }];
-                        var printDiv = toolbar.createTool(tool);
+                        var printDiv = toolbar.createTool(tool, panelClass);
                         var print = new Print({
                             map: this.map,
                             templates: templates,
@@ -575,7 +572,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                             return plate;
                         });
 
-                        var printDiv = toolbar.createTool(tool);
+                        var printDiv = toolbar.createTool(tool, panelClass);
                         var print = new Print({
                             map: this.map,
                             templates: templates,
@@ -597,10 +594,10 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
             return deferred.promise;
         },
-        _addShare: function (tool, toolbar) {
+        _addShare: function (tool, toolbar, panelClass) {
             //Add share links for facebook, twitter and direct linking. 
             if (has("share")) {
-                var shareDiv = toolbar.createTool(tool);
+                var shareDiv = toolbar.createTool(tool, panelClass);
 
                 var url = document.location.href;
 
@@ -616,73 +613,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             }
         },
 
-        _addTime: function (tool, toolbar) {
-            //Add the timeslider tool to the toolbar. Only activated if the webmap is time enabled. 
-            var deferred = new Deferred();
-            if (this.config.response.itemInfo.itemData.widgets && this.config.response.itemInfo.itemData.widgets.timeSlider) {
-
-                require(["application/has-config!time?esri/dijit/TimeSlider", "application/has-config!time?esri/TimeExtent"], lang.hitch(this, function (TimeSlider, TimeExtent) {
-                    if (!TimeSlider || !TimeExtent) {
-                        deferred.resolve();
-                        return;
-                    }
-                    var timeDiv = toolbar.createTool(tool);
-
-                    var timeProperties = this.config.response.itemInfo.itemData.widgets.timeSlider.properties;
-
-
-                    var startTime = timeProperties.startTime;
-                    var endTime = timeProperties.endTime;
-                    var fullTimeExtent = new TimeExtent(new Date(startTime), new Date(endTime));
-
-                    this.map.setTimeExtent(fullTimeExtent);
-
-
-                    //create a time slider and a label to hold date details and add to the floating time panel
-                    var timeSlider = new esri.dijit.TimeSlider({
-                        style: "width: 100%;",
-                        id: "timeSlider"
-                    }, domConstruct.create('div', {}, timeDiv));
-
-                    var timeSliderLabel = dojo.create('div', {
-                        id: 'timeSliderLabel'
-                    }, domConstruct.create("div", {}, timeDiv));
-
-
-
-
-                    this.map.setTimeSlider(timeSlider);
-                    //Set time slider properties 
-                    timeSlider.setThumbCount(timeProperties.thumbCount);
-                    timeSlider.setThumbMovingRate(timeProperties.thumbMovingRate);
-                    //define the number of stops
-                    if (timeProperties.numberOfStops) {
-                        timeSlider.createTimeStopsByCount(fullTimeExtent, timeProperties.numberOfStops);
-                    } else {
-                        timeSlider.createTimeStopsByTimeInterval(fullTimeExtent, timeProperties.timeStopInterval.interval, timeProperties.timeStopInterval.units);
-                    }
-                    //set the thumb index values if the count = 2
-                    if (timeSlider.thumbCount === 2) {
-                        timeSlider.setThumbIndexes([0, 1]);
-                    }
-                    timeSlider.on("time-extent-change", this._updateTimeSliderTitle);
-
-                    timeSlider.startup();
-
-                    deferred.resolve();
-
-                }));
-
-            } else {
-                deferred.resolve();
-            }
-
-            return deferred.promise;
-        },
-        _updateTimeSliderTitle: function (timeExtent) {
-            console.log("TODO Update Label")
-            dom.byId("timeSliderLabel").innerHTML = "Time Label will go here";
-        },
         _updateShareLinks: function (shareDiv, useExtent) {
             //If the use extent checkbox is enabled append the extent to the sharing url 
             var url = null,
@@ -841,14 +771,18 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             }
         },
         _enablePopups: function () {
-            if (this.popupListener) {
+            console.log(this.popupHandler);
+            if (this.popupListener && !this.popupHandler) {
+                console.log("Enabled");
                 this.popupHandler = this.map.on("click", this.popupListener);
             }
 
         },
         _disablePopups: function () {
             if (this.popupHandler) {
+                console.log("popup handler removed");
                 this.popupHandler.remove();
+                this.popupHandler = null;
             }
 
         },
@@ -864,6 +798,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 //Save the popup click handler and listener so we can enable/disable popups as needed 
                 this.popupHandler = response.clickEventHandle;
                 this.popupListener = response.clickEventListener;
+
 
                 //Set the application title
                 this.map = response.map;
