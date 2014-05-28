@@ -77,6 +77,7 @@ mkdir %BUILD_OUTPUT%\SummaryViewer
 mkdir %BUILD_OUTPUT%\MapJournal
 mkdir %BUILD_OUTPUT%\MapSeries
 mkdir %BUILD_OUTPUT%\StorytellingBasic
+mkdir %BUILD_OUTPUT%\Viewer
 mkdir %BUILD_OUTPUT%\bv_build
 
 xcopy %TEMPLATES_ROOT%\archive\CompareConfigure                 %BUILD_OUTPUT%\Compare\Configure                    /E /Y
@@ -144,8 +145,10 @@ xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\M
 xcopy %TEMPLATES_ROOT%\MapSeries\app\config\series-config.js    %BUILD_OUTPUT%\MapSeries\app\config.js*             /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\StorytellingBasic                    /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries\app\config\basic-config.js     %BUILD_OUTPUT%\StorytellingBasic\app\config.js*     /E /Y
-xcopy %TEMPLATES_ROOT%\bv_build\src                             %BUILD_OUTPUT%\bv_build                             /E /Y
 xcopy %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\bv_build\commonConfig.js             /E /Y
+xcopy %TEMPLATES_ROOT%\Viewer                             		%BUILD_OUTPUT%\Viewer                               /E /Y
+xcopy %TEMPLATES_ROOT%\bv_build\src                             %BUILD_OUTPUT%\bv_build                             /E /Y
+
 
 REM Finally copy assorted files in the root directory
 copy /Y %TEMPLATES_ROOT%\*.*  %BUILD_OUTPUT%
