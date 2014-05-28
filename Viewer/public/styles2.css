@@ -1,0 +1,232 @@
+/*http://stackoverflow.com/questions/6902944/sass-mixin-for-background-transparency-back-to-ie8*/
+
+/*Phones (520px) Small Tablets (720px)*/
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url('../fonts/helveticaneue.eot');
+  src: url('../fonts/helveticaneue.eot?#iefix') format('embedded-opentype'), url('../fonts/helveticaneue.woff') format('woff'), url('../fonts/helveticaneue.ttf') format('truetype'), url('../fonts/helveticaneue.svg#HelveticaNeue') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeueUltraLight";
+  src: url('../fonts/helveticaneueultralight.eot');
+  src: url('../fonts/helveticaneueultralight.eot?#iefix') format('embedded-opentype'), url('../fonts/helveticaneueultralight.woff') format('woff'), url('../fonts/helveticaneueultralight.ttf') format('truetype'), url('../fonts/helveticaneueultralight.svg#HelveticaNeueUltraLight') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
+
+#mapDiv {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.loading-indicator {
+  /* Loading status */
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.app-loading .loading-indicator {
+  /* Show this class when loading or error */
+  display: block;
+}
+
+.app-loading .loading-indicator {
+  /* Loading image */
+  background-position: center center;
+  background-image: url(../images/ajax-loader.gif);
+  background-repeat: no-repeat;
+}
+
+/* Esri Jvascript API*/
+
+/*custom tooltips for toolbar tools. Test on early IE*/
+
+/* Template */
+
+.bg {
+  display: block;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);
+  zoom: 1;
+}
+
+.rounded {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.shadow {
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+#panelContent {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 0px;
+  height: 100%;
+  display: block;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
+  zoom: 1;
+}
+
+#panelPages {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background-color: transparent;
+  background-color: rgba(255, 0, 0, 0.5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FF0000,endColorstr=#80FF0000);
+  zoom: 1;
+}
+
+#panelTop {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  color: #ffffff;
+  font-family: HelveticaNeueUltraLight;
+  font-size: 28px;
+  font-weight: normal;
+  padding: 0px;
+  display: block;
+  overflow: visible;
+  height: auto;
+}
+
+@media only screen and (min-width: 720px) {
+  #panelTop {
+    max-width: 500px;
+    left: 44px;
+    top: 10px;
+  }
+}
+
+#panelTitle {
+  height: 50px;
+  width: 100%;
+  float: left;
+  color: #ffffff;
+  padding: 0 5px 0 0;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#panelLogo {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  float: left;
+  line-height: 50px;
+  margin-left: 5px;
+}
+
+#panelText {
+  float: left;
+  margin-left: 5px;
+  height: 50px;
+  line-height: 50px;
+  display: none;
+}
+
+@media only screen and (min-width: 720px) {
+  #panelText {
+    display: block;
+  }
+}
+
+#panelSearch {
+  float: left;
+  margin: 10px 0 10px 5px;
+  width: 227px;
+  height: 30px;
+  /*overflow: hidden;*/
+}
+
+#panelTools {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  min-height: 30px;
+  width: 100%;
+  display: none;
+  clear: both;
+}
+
+@media only screen and (min-width: 720px) {
+  #panelTools {
+    display: block;
+  }
+}
+
+#panelMenu {
+  float: right;
+  margin-top: 10px;
+  margin-right: 5px;
+  padding-right: 4px;
+  padding-left: 4px;
+  height: 30px;
+  width: 30px;
+  background: url(../images/menu.png) no-repeat;
+  cursor: pointer;
+  display: block;
+}
+
+@media only screen and (min-width: 720px) {
+  #panelMenu {
+    display: none;
+  }
+}
+
+/*Added hover to match the out-of-the-box hover for the home and locate buttons*/
+
+#panelHome {
+  float: left;
+  width: 26px;
+  height: 26px;
+  margin-left: 2px;
+  margin-top: 3px;
+}
+
+#panelLocate {
+  float: left;
+  width: 26px;
+  height: 26px;
+  margin-left: 0px;
+  margin-top: 3px;
+}
+
+/*Calcite updates keep list and submit issues to devtopia*/

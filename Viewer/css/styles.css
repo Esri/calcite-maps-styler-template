@@ -1,0 +1,606 @@
+/*http://stackoverflow.com/questions/6902944/sass-mixin-for-background-transparency-back-to-ie8*/
+/*Phones (520px) Small Tablets (720px)*/
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif; }
+
+/* Fonts */
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url('../fonts/helveticaneue.eot');
+  src: url('../fonts/helveticaneue.eot?#iefix') format('embedded-opentype'), url('../fonts/helveticaneue.woff') format('woff'), url('../fonts/helveticaneue.ttf') format('truetype'), url('../fonts/helveticaneue.svg#HelveticaNeue') format('svg');
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "HelveticaNeueUltraLight";
+  src: url('../fonts/helveticaneueultralight.eot');
+  src: url('../fonts/helveticaneueultralight.eot?#iefix') format('embedded-opentype'), url('../fonts/helveticaneueultralight.woff') format('woff'), url('../fonts/helveticaneueultralight.ttf') format('truetype'), url('../fonts/helveticaneueultralight.svg#HelveticaNeueUltraLight') format('svg');
+  font-style: normal;
+  font-weight: normal; }
+
+#mapDiv {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%; }
+
+.loading-indicator {
+  /* Loading status */
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #fff; }
+
+.app-loading .loading-indicator, .app-error .loading-indicator {
+  /* Show this class when loading or error */
+  display: block; }
+
+.app-loading .loading-indicator {
+  /* Loading image */
+  background-position: center center;
+  background-image: url(../images/ajax-loader.gif);
+  background-repeat: no-repeat; }
+
+.app-error .loading-message {
+  /* Error status */
+  background-position: top center;
+  background-image: url(../images/error.png);
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 0;
+  text-align: center; }
+
+/* Esri Jvascript API*/
+#timeSliderLabel {
+  text-align: center; }
+
+.esriPopup .pointer.bottom, .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight {
+  background: #f7f7f7 !important; }
+
+.esriSimpleSlider {
+  text-align: center;
+  color: #ffffff;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);
+  zoom: 1;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: none; }
+
+@media only screen and (min-width: 720px) {
+  .esriSimpleSlider {
+    display: block; } }
+
+.esriSimpleSlider div {
+  width: 30px;
+  height: 40px;
+  font-size: 24px;
+  font-family: verdana, helvetica;
+  font-weight: bold;
+  line-height: 40px;
+  -webkit-user-select: none; }
+
+.esriSimpleSliderTL {
+  top: 10px;
+  left: 10px;
+  border: none; }
+
+.esriSimpleSliderDecrementButton:hover, .esriSimpleSliderIncrementButton:hover {
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+  zoom: 1; }
+
+.esriSimpleSliderIncrementButton {
+  border-bottom: solid 1px #ffffff !important; }
+
+.simpleGeocoder .esriGeocoder {
+  display: block;
+  width: 100%;
+  margin: 0;
+  border: transparent;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+  zoom: 1;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+
+.simpleGeocoder .esriGeocoderResults {
+  border: transparent;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+  zoom: 1; }
+
+.simpleGeocoder .esriGeocoderResult:hover, .simpleGeocoder .esriGeocoderResultEven:focus, .simpleGeocoder .esriGeocoderResultOdd:focus {
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
+  zoom: 1; }
+
+.simpleGeocoder .esriGeocoder input {
+  color: #FFF; }
+
+.simpleGeocoder .esriGeocoder input:focus {
+  color: #FFF; }
+
+.esriControlsBR {
+  position: absolute;
+  left: 0px;
+  bottom: 0px; }
+
+.logo-med {
+  position: absolute;
+  left: 0px;
+  bottom: 0px; }
+
+.logo-sm {
+  position: absolute;
+  left: 0px;
+  bottom: 0px; }
+
+.esriAttribution {
+  position: absolute;
+  left: 65px;
+  bottom: 5px; }
+
+.esriBookmarks {
+  border: none; }
+
+.esriBookmarkLabel {
+  font-size: 16px; }
+
+.esriBookmarkHighlight {
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
+  zoom: 1; }
+
+.esriBasemapGallery {
+  height: 600px; }
+
+.HomeButton .home {
+  top: 0px;
+  padding: 0px;
+  width: 26px;
+  height: 26px;
+  background-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  border-radius: 13px;
+  background-size: 14px 14px; }
+
+.LocateButton .zoomLocateButton {
+  padding: 0px;
+  width: 26px;
+  height: 26px;
+  background-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  border-radius: 13px; }
+
+/*Styles for the share dialog*/
+.share-input {
+  width: 90%;
+  font-size: 14px;
+  color: #777;
+  border: 1px solid #dcdcdc;
+  padding: 5px; }
+
+.share-input-check {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px; }
+
+.share-input-subheader {
+  margin-bottom: 5px; }
+
+.share-input-header {
+  font-size: 19px;
+  margin-bottom: 10px; }
+
+.share-input-buttons {
+  margin: 20px 5px 20px; }
+
+img {
+  border: 0; }
+
+/*custom tooltips for toolbar tools. Test on early IE*/
+[data-title]:hover:after {
+  content: attr(data-title);
+  padding: 4px 8px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  z-index: 99;
+  -webkit-box-shadow: 0px 0px 4px #222;
+  -moz-box-shadow: 0px 0px 4px #222;
+  box-shadow: 0px 0px 4px #222;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
+  zoom: 1; }
+
+/* Template */
+.bg {
+  display: block;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);
+  zoom: 1; }
+
+.rounded {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+
+.roundedTop {
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0; }
+
+.shadow {
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); }
+
+#panelContent {
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 0;
+  width: 0px;
+  height: 100%;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
+  zoom: 1; }
+
+@media only screen and (min-width: 820px) { }
+
+#panelPages {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background-color: transparent;
+  background-color: rgba(255, 0, 0, 0.5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FF0000,endColorstr=#80FF0000);
+  zoom: 1; }
+
+.page {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  margin-left: -300px;
+  display: block; }
+
+.pageContent {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 90px;
+  bottom: 5px;
+  overflow: hidden;
+  display: block;
+  background-color: transparent;
+  background-color: white;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF,endColorstr=#FFFFFFFF);
+  zoom: 1; }
+
+@media only screen and (min-width: 820px) {
+  .pageContent {
+    top: 5px; } }
+
+.pageHeader {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  display: block; }
+
+@media only screen and (min-width: 720px) {
+  .pageHeader {
+    height: 145px; } }
+
+.pageTitle {
+  position: absolute;
+  left: 80px;
+  top: 30px;
+  width: auto;
+  height: 20px;
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 20px;
+  overflow: hidden; }
+
+@media only screen and (min-width: 720px) {
+  .pageTitle {
+    position: relative;
+    left: 0px;
+    top: 5px;
+    width: 100%;
+    text-align: center; } }
+
+.pageHeaderImg {
+  position: absolute;
+  left: 5px;
+  margin-left: 0px;
+  top: 5px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  -ms-border-radius: 35px;
+  border-radius: 35px; }
+
+@media only screen and (min-width: 720px) {
+  .pageHeaderImg {
+    position: relative;
+    top: 16px;
+    margin: 0 auto;
+    width: 72px;
+    height: 72px;
+    border: 8px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 44px;
+    -moz-border-radius: 44px;
+    -ms-border-radius: 44px;
+    border-radius: 44px; } }
+
+.pageIcon {
+  position: absolute;
+  left: 11px;
+  top: 11px;
+  width: 40px;
+  height: 40px; }
+
+@media only screen and (min-width: 720px) {
+  .pageIcon {
+    width: 50px;
+    height: 50px;
+    left: 11px;
+    top: 11px; } }
+
+.pageClose {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: url(../images/close.png) no-repeat;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: block; }
+
+.pageUp {
+  position: absolute;
+  top: 27px;
+  right: 5px;
+  background: url(../images/up.png) no-repeat;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: block; }
+
+.pageDown {
+  position: absolute;
+  top: 49px;
+  right: 5px;
+  background: url(../images/down.png) no-repeat;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: block; }
+
+.pageBody {
+  position: relative;
+  top: 0;
+  bottom: 5px;
+  height: 100%;
+  width: 100%;
+  display: block;
+  color: #000000;
+  font-size: 1em;
+  padding: 0px;
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+#pageBody_details {
+  padding: 5px;
+  height: 80%;
+  width: 90%; }
+
+#pageBody_share {
+  padding: 5px; }
+
+#pageBody_time {
+  padding-top: 20px; }
+
+#panelTop {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  color: #ffffff;
+  font-family: HelveticaNeueUltraLight;
+  font-size: 28px;
+  font-weight: normal;
+  padding: 0px;
+  display: block;
+  overflow: visible;
+  height: auto; }
+
+@media only screen and (min-width: 720px) {
+  #panelTop {
+    max-width: 500px;
+    left: 44px;
+    top: 10px; } }
+
+#panelTitle {
+  height: 50px;
+  width: 100%;
+  float: left;
+  color: #ffffff;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+
+#panelLogo {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  float: left;
+  line-height: 50px;
+  margin-left: 5px; }
+
+#panelText {
+  float: left;
+  max-width: 200px;
+  overflow: hidden;
+  margin-left: 5px;
+  height: 50px;
+  line-height: 50px;
+  display: none; }
+
+@media only screen and (min-width: 720px) {
+  #panelText {
+    display: block; } }
+
+#panelSearch {
+  float: left;
+  margin: 10px 0 10px 5px;
+  width: 227px;
+  height: 30px; }
+
+#panelTools {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  min-height: 30px;
+  width: 100%;
+  display: block;
+  clear: both; }
+
+@media only screen and (min-width: 720px) {
+  #panelTools {
+    display: block !important; } }
+
+#panelMenu {
+  float: right;
+  margin-top: 10px;
+  margin-right: 5px;
+  padding-right: 4px;
+  padding-left: 4px;
+  height: 30px;
+  width: 30px;
+  background: url(../images/menu.png) no-repeat;
+  cursor: pointer;
+  display: block; }
+
+@media only screen and (min-width: 720px) {
+  #panelMenu {
+    display: none; } }
+
+.panelTool {
+  float: left;
+  width: 26px;
+  height: 26px;
+  margin-top: 2px;
+  text-align: center;
+  line-height: 26px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  border-radius: 13px; }
+
+/*Added hover to match the out-of-the-box hover for the home and locate buttons*/
+.panelTool:hover {
+  background-color: transparent;
+  background-color: rgba(102, 102, 102, 0.9);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6666666,endColorstr=#E6666666);
+  zoom: 1; }
+
+.panelToolActive {
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+  zoom: 1; }
+
+.tool {
+  margin: 1px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer; }
+
+#panelHome {
+  float: left;
+  width: 26px;
+  height: 26px;
+  margin-left: 2px;
+  margin-top: 3px; }
+
+#panelLocate {
+  float: left;
+  width: 26px;
+  height: 26px;
+  margin-left: 0px;
+  margin-top: 3px; }
+
+/*Calcite updates keep list and submit issues to devtopia*/
+.dijitMenuItemIconChar.dijitCheckedMenuItemIconChar {
+  display: inline-block;
+  visibility: hidden; }
+
+.calcite .dijitMenu {
+  border: none; }
+
+.dijitMenuItemLabel {
+  padding: 0; }
+
+.dijitChecked .dijitMenuItemIconChar.dijitCheckedMenuItemIconChar {
+  display: inline-block;
+  visibility: visible; }
+
+.dijitMenuItem:hover {
+  background-color: transparent;
+  background-color: rgba(93, 173, 221, 0.4);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#665DADDD,endColorstr=#665DADDD);
+  zoom: 1; }
+
+.dijitButtonNode {
+  margin: 0;
+  line-height: normal;
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap; }

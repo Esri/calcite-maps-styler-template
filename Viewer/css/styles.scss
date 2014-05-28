@@ -1,0 +1,633 @@
+$default-theme: rgb(255,255,255);
+$black-color:rgb(0,0,0);
+@mixin border-radius($radius:5px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+      -webkit-box-shadow:$top $left $blur $color #{$inset};
+      -moz-box-shadow:$top $left $blur $color #{$inset};
+      box-shadow:$top $left $blur $color #{$inset};
+}
+/*http://stackoverflow.com/questions/6902944/sass-mixin-for-background-transparency-back-to-ie8*/
+@mixin transparent($color, $alpha) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  background-color: transparent;
+  background-color: $rgba;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+  zoom: 1;
+}
+
+@mixin fontFace($family,$src,$weight: normal,$style: normal) {
+    @font-face {
+        font-family: $family;
+        src: url('#{$src}.eot'); // IE9 compat
+        src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+            url('#{$src}.woff') format('woff'), // standards
+            url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+            url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+
+        font-style: $style;
+        font-weight: $weight;
+    }
+}
+
+/*Phones (520px) Small Tablets (720px)*/
+@mixin respond-to($breakpoint) {
+    @media only screen and (min-width: $breakpoint + px) { @content; }
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fonts */
+@include fontFace("HelveticaNeue","../fonts/helveticaneue");
+@include fontFace("HelveticaNeueUltraLight","../fonts/helveticaneueultralight");
+
+#mapDiv {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.esriRTL label {
+  /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
+}
+
+.loading-indicator {
+  /* Loading status */
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: #fff;
+}
+
+.app-loading .loading-indicator, .app-error .loading-indicator {
+  /* Show this class when loading or error */
+    display: block;
+}
+
+.app-loading .loading-indicator {
+  /* Loading image */
+    background-position: center center;
+    background-image: url(../images/ajax-loader.gif);
+    background-repeat: no-repeat;
+}
+
+.app-error .loading-message {
+  /* Error status */
+    background-position: top center;
+    background-image: url(../images/error.png);
+    background-repeat: no-repeat;
+    padding-top: 60px;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 0;
+    text-align: center;
+}
+
+/* Esri Jvascript API*/
+#timeSliderLabel{
+    text-align:center;
+}
+.esriPopup .pointer.bottom , .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight{
+    background: #f7f7f7 !important;
+}
+
+.esriSimpleSlider {
+    text-align: center;
+    color: #ffffff;
+    @include transparent($default-theme, 0.80);
+    @include box-shadow (3px, 3px, 10px, rgba(0,0,0,0.3));
+    cursor: pointer;
+    display:none;
+    @include respond-to(720){
+        display:block;
+    }
+}
+
+.esriSimpleSlider div {
+    width: 30px;
+    height: 40px;
+    font-size: 24px;
+    font-family: verdana, helvetica;
+    font-weight: bold;
+    line-height: 40px;
+    -webkit-user-select: none;
+}
+
+.esriSimpleSliderTL {
+    top: 10px;
+    left: 10px;
+    border: none;
+}
+
+.esriSimpleSliderDecrementButton:hover, .esriSimpleSliderIncrementButton:hover {
+    @include transparent($black-color, 0.3);
+}
+
+.esriSimpleSliderIncrementButton {
+    border-bottom: solid 1px #ffffff !important;
+}
+
+.simpleGeocoder .esriGeocoder {
+    display: block;
+    width: 100%;
+    margin: 0;
+    border: transparent;
+    @include transparent($black-color, 0.3);
+    @include border-radius;
+
+}
+
+.simpleGeocoder .esriGeocoderResults {
+    border: transparent;
+    @include transparent($black-color, 0.6);
+
+}
+
+.simpleGeocoder .esriGeocoderResult:hover, .simpleGeocoder .esriGeocoderResultEven:focus, .simpleGeocoder .esriGeocoderResultOdd:focus {
+    @include transparent($black-color, 0.2);
+
+}
+
+.simpleGeocoder .esriGeocoder input {
+    color: #FFF;
+}
+
+.simpleGeocoder .esriGeocoder input:focus {
+    color: #FFF;
+}
+
+.esriControlsBR {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.logo-med {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.logo-sm {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.esriAttribution {
+    position: absolute;
+    left: 65px;
+    bottom: 5px;
+}
+
+.esriBookmarks {
+    border: none;
+}
+
+.esriBookmarkLabel {
+    font-size: 16px;
+}
+
+.esriBookmarkHighlight {
+    @include transparent($black-color, 0.2);
+
+}
+.esriBasemapGallery{
+    height:600px;
+}
+
+.HomeButton .home {
+    top: 0px;
+    padding: 0px;
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+    @include border-radius (13px);
+    background-size: 14px 14px;
+}
+
+.LocateButton .zoomLocateButton {
+    padding: 0px;
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+    @include border-radius(13px);
+}
+
+
+/*Styles for the share dialog*/
+.share-input{
+    width:90%;
+    font-size:14px;
+    color:#777;
+    border: 1px solid #dcdcdc;
+    padding:5px;
+}
+.share-input-check{
+    font-size:14px;
+    color:#777;
+    margin-bottom:20px;  
+}
+.share-input-subheader{
+     margin-bottom:5px; 
+}
+.share-input-header{
+    font-size:19px;
+    margin-bottom:10px;
+}
+.share-input-buttons{
+    margin:20px 5px 20px;
+}
+img{
+    border:0;
+}
+/*custom tooltips for toolbar tools. Test on early IE*/
+[data-title]:hover:after {
+    content: attr(data-title);
+    padding: 4px 8px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    z-index: 99;
+    @include box-shadow (0px, 0px, 4px, #222);
+    @include transparent($black-color, 0.5);
+}
+/* Template */
+
+.bg {
+    display: block;
+    @include transparent($default-theme, .80);
+}
+
+.rounded {
+    @include border-radius;
+}
+
+.roundedTop {
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.shadow {
+    @include box-shadow (3px, 3px, 10px, rgba($black-color,0.3));
+}
+
+#panelContent {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    @include transparent($black-color, 0.5);
+    @include respond-to(820){
+ 
+    }
+}
+
+#panelPages {
+    width: 100%;
+    height: 100%;
+    overflow:visible;
+    @include transparent(rgb(255,0,0), 0.5);
+}
+
+.page {
+    position: relative;
+    width: 300px;
+    height: 100%;
+    margin-left: -300px;
+    display: block;
+}
+
+.pageContent {
+    position: absolute;
+    left:10px;
+    right:10px;
+    top: 90px;
+    bottom:5px;
+    overflow:hidden;
+    display:block;
+    @include transparent($default-theme, 1);
+    @include respond-to(820){
+        top: 5px;  
+    }
+}
+
+.pageHeader {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    display: block;
+    @include respond-to(720){
+        height:145px;
+    }
+
+}
+.pageTitle {
+    position: absolute;
+    left: 80px;
+    top: 30px;
+    width : auto;
+    height: 20px;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 20px;
+    overflow:hidden;
+    @include respond-to(720){
+        position: relative;
+        left: 0px;
+        top: 5px;
+        width : 100%;
+        text-align: center;
+    }
+}
+
+.pageHeaderImg {
+    position:absolute;
+    left:5px;
+    margin-left:0px;
+    top:5px;
+    width:60px;
+    height:60px;
+    line-height:60px;
+    border: 5px solid rgba(0,0,0,0.1);
+    @include border-radius(35px);
+    @include respond-to(720){
+        position: relative;
+        top: 16px;
+        margin: 0 auto;
+        width: 72px;
+        height: 72px;
+        border: 8px solid rgba(0,0,0,0.2);
+        @include border-radius(44px);
+    }
+}
+
+.pageIcon {
+    position:absolute;
+    left:11px;
+    top:11px;
+    width:40px;
+    height:40px;
+    @include respond-to(720){
+        width: 50px;
+        height: 50px;
+        left:11px;
+        top:11px;
+    }
+}
+.pageClose {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: url(../images/close.png) no-repeat;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.pageUp {
+    position: absolute;
+    top: 27px;
+    right: 5px;
+    background: url(../images/up.png) no-repeat;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.pageDown {
+    position: absolute;
+    top: 49px;
+    right: 5px;
+    background: url(../images/down.png) no-repeat;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+
+.pageBody {
+    position: relative;
+    top: 0;
+    bottom: 5px;
+    height:100%;
+    width: 100%;
+    display: block;
+    color: #000000;
+    font-size: 1em;
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#pageBody_details{
+    padding:5px;
+    height:80%;
+    width:90%;
+}
+#pageBody_share{
+    padding:5px;
+}
+#pageBody_time{
+    padding-top:20px;
+}
+#panelTop {
+    position: fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    color: #ffffff;
+    font-family: HelveticaNeueUltraLight;
+    font-size: 28px;
+    font-weight: normal;
+    padding: 0px;
+    display: block;
+    overflow: visible;
+    height: auto;
+    @include respond-to(720){
+        max-width:500px;
+        left: 44px;
+        top: 10px;
+    }
+}
+
+#panelTitle {
+    height: 50px;
+    width:100%;
+    float: left;
+    color: #ffffff;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+
+#panelLogo {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    float: left;
+    line-height: 50px;
+    margin-left: 5px;
+}
+
+#panelText {
+    float: left;
+    max-width:200px;
+    overflow:hidden;
+    margin-left: 5px;
+    height: 50px;
+    line-height: 50px;
+    display:none;
+    @include respond-to(720){
+        display:block;
+    }
+}
+
+#panelSearch {
+    float: left;
+    margin: 10px 0 10px 5px;
+    width: 227px;
+    height: 30px;
+}
+
+#panelTools {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    min-height: 30px;
+    width: 100%;
+    display: block;
+    clear: both;
+    @include respond-to(720){
+        display:block !important;
+    }
+}
+
+
+#panelMenu {
+    float: right;
+    margin-top: 10px;
+    margin-right:5px;
+    padding-right:4px;
+    padding-left:4px;
+    height: 30px;
+    width:30px;
+    background: url(../images/menu.png) no-repeat;
+    cursor: pointer;
+    display: block;
+
+    @include respond-to(720){
+        display:none;
+    }
+}
+
+.panelTool {
+    float: left;
+    width: 26px;
+    height: 26px;
+    margin-top: 2px;
+    text-align: center;
+    line-height: 26px;
+    @include border-radius (13px);
+
+}
+
+/*Added hover to match the out-of-the-box hover for the home and locate buttons*/
+.panelTool:hover {
+    @include transparent (rgb(102,102,102), 0.9);
+}
+
+.panelToolActive {
+    @include transparent(rgb(0,0,0), 0.3);
+}
+
+.tool {
+    margin: 1px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+#panelHome {
+    float: left;
+    width: 26px;
+    height: 26px;
+    margin-left: 2px;
+    margin-top: 3px;
+}
+
+#panelLocate {
+    float: left;
+    width: 26px;
+    height: 26px;
+    margin-left: 0px;
+    margin-top: 3px;
+}
+
+/*Calcite updates keep list and submit issues to devtopia*/
+.dijitMenuItemIconChar.dijitCheckedMenuItemIconChar {
+    display: inline-block;
+    visibility: hidden;
+}
+.calcite .dijitMenu{
+    border:none;
+}
+.dijitMenuItemLabel{
+    padding:0;
+}
+
+.dijitChecked .dijitMenuItemIconChar.dijitCheckedMenuItemIconChar {
+    display: inline-block;
+    visibility: visible;
+}
+
+.dijitMenuItem:hover {
+    @include transparent(rgb(93,173,221),0.40);
+}
+
+.dijitButtonNode {
+    margin: 0;
+    line-height: normal;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+}
+
+  
+
+
