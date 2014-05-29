@@ -73,24 +73,17 @@ define([
          } else {
             this.filterFeatures();
          }
-         
-         // var query = new Query();
-         // query.units = "miles";
-         // query.distance = bufferDist;
-         // query.returnGeometry = true;
-         // query.geometry = location;
-         // var me = this;
-         // layer.queryFeatures(query, lang.hitch(me, me.resultsHandler), lang.hitch(me, me.errorHandler));
        },
        
       // query features
       queryFeatures : function() {
          var layer = this.pageObj.layer;
          var query = new Query();
-         query.units = "miles";
-         query.distance = this.bufferDist;
+         //query.units = "miles";
+         //query.distance = this.bufferDist;
          query.returnGeometry = true;
-         query.geometry = this.location;
+         //query.geometry = this.location;
+         query.geometry = this.pageObj.buffer;
          var me = this;
          layer.queryFeatures(query, lang.hitch(me, me.resultsHandler), lang.hitch(me, me.errorHandler));
       },
@@ -170,14 +163,17 @@ define([
                }, recLeftNum);
                on(recNum, "click", lang.hitch(this, this.zoomToLocation, loc));
                var recInfo = domConstruct.create("div", {
-                  class: "recInfo",
-                  innerHTML: this.getInfo(feature)
+                  class: "recInfo"
                }, rec);
                var recDistance = domConstruct.create("span", {
                   class: "recDistance",
-                  innerHTML: "<img src='images/car.png' /> " + Math.round(dist*100)/100 + " Miles"
+                  innerHTML: "<img src='images/car.png' /> " + Math.round(dist*100)/100 + " Miles<br/>"
                }, recInfo);
                on(recDistance, "click", lang.hitch(this, this.routeToLocation, loc));
+               var recInfoText = domConstruct.create("span", {
+                  innerHTML: this.getInfo(feature)
+               }, recInfo);
+               
             }
             
          }
@@ -197,11 +193,22 @@ define([
       // getFields
       getFields: function(layer) {
          var fields = [];
-         var fldInfos = layer.infoTemplate.info.fieldInfos;
-         for (var i=0; i<fldInfos.length; i++) {
-             var fld = fldInfos[i];
-             if (fld.visible)
-                 fields.push(fld.fieldName);
+         if(layer.infoTemplate) {
+            var fldInfos = layer.infoTemplate.info.fieldInfos;
+            for (var i=0; i<fldInfos.length; i++) {
+                var fld = fldInfos[i];
+                if (fld.visible)
+                    fields.push(fld.fieldName);
+            }
+         } else {
+            var fldTypes = "esriFieldTypeSmallInteger,esriFieldTypeInteger,esriFieldTypeSingle,esriFieldTypeDouble,esriFieldTypeString";
+            for (var i=0; i<layer.fields.length; i++) {
+               var fld = layer.fields[i];
+               var type = fld.type;
+               if (fldTypes.indexOf(type) > -1) {
+                  fields.push[fld];
+               }
+            }
          }
          return fields;
       },

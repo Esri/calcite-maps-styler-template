@@ -133,7 +133,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         toolList.push(this._addOverviewMap(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "measure":
-                        toolList.push(this._addMeasure(this.config.tools[i], toolbar, "medium"));
+                        toolList.push(this._addMeasure(this.config.tools[i], toolbar, "small"));
                         break;
                     case "edit":
                         toolList.push(this._addEditor(this.config.tools[i], toolbar, "medium"));
@@ -145,7 +145,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         toolList.push(this._addDetails(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "share":
-                        toolList.push(this._addShare(this.config.tools[i], toolbar, "medium"));
+                        toolList.push(this._addShare(this.config.tools[i], toolbar, "small"));
                         break;
                     default:
                         break;
@@ -423,11 +423,17 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     "width": "100%"
                 });
 
-                console.log(this.map);
+                var panelHeight = this.map.height;
+                if (panelClass === "small") {
+                    panelHeight = 250;
+                } else if (panelClass === "medium") {
+                    panelHeight = 350;
+                }
+
                 var ovMap = new OverviewMap({
                     id: "overviewMap",
                     map: this.map,
-                    height: this.map.height * 0.50
+                    height: panelHeight
                 }, domConstruct.create("div", {}, ovMapDiv));
 
                 ovMap.startup();

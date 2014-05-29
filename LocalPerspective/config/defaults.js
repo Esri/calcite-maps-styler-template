@@ -46,7 +46,7 @@ define({
     "colors": ["#0071ab", "#27a4d2", "#886197", "#8a2581", "#fc0055", "#c50143", "#db0111", "#ec5b02", "#efa602", "#dab900", "#80ab00", "#548901", "#049686", "#097096"],
     "logo" : "images/logo.png",
     "title": "Local Perspective",
-    "cycleColors": 1,
+    "cycleColors": 0,
     // **************************** //
     
     // ** LOCAL PERSPECTIVE PARAMETERS **//

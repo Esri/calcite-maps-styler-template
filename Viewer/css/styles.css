@@ -71,6 +71,9 @@ html, body {
 .esriPopupMaximized {
   top: 100px !important; }
 
+.esriPrintout a {
+  color: #5daddd; }
+
 .esriSimpleSlider {
   text-align: center;
   color: #ffffff;
@@ -278,17 +281,16 @@ img {
 
 #panelContent {
   position: absolute;
-  display: block;
-  right: 0;
+  right: 10px;
   top: 0;
   width: 0px;
   height: 100%;
+  display: block;
+  overflow: visible;
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.5);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
   zoom: 1; }
-
-@media only screen and (min-width: 820px) { }
 
 #panelPages {
   width: 100%;
@@ -300,11 +302,15 @@ img {
   zoom: 1; }
 
 .page {
+  overflow: visible;
   position: relative;
-  width: 300px;
+  width: 100%;
   height: 100%;
-  margin-left: -300px;
-  display: block; }
+  display: block;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
+  zoom: 1; }
 
 .pageblank {
   width: 0px;
@@ -314,10 +320,11 @@ img {
   position: absolute;
   left: 10px;
   right: 10px;
+  margin-left: -310px;
+  width: 300px;
   top: 90px;
-  bottom: 10px;
-  overflow: hidden;
   display: block;
+  overflow: hidden;
   background-color: transparent;
   background-color: white;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF,endColorstr=#FFFFFFFF);
@@ -329,10 +336,10 @@ img {
 
 /*Panel sizes*/
 .small {
-  height: 40%; }
+  height: 300px; }
 
 .medium {
-  height: 60%; }
+  height: 440px; }
 
 .large {
   height: 100%; }
@@ -340,13 +347,13 @@ img {
 .pageHeader {
   position: relative;
   width: 100%;
-  height: 100px;
+  height: 90px;
   text-align: center;
   display: block; }
 
 @media only screen and (min-width: 720px) {
   .pageHeader {
-    height: 145px; } }
+    height: 135px; } }
 
 .pageTitle {
   position: absolute;
@@ -441,19 +448,15 @@ img {
 .pageBody {
   position: relative;
   top: 0;
-  bottom: 5px;
-  height: 100%;
-  width: 100%;
   display: block;
+  width: 100%;
+  height: 100%;
   color: #000000;
-  font-size: 1em;
-  padding: 0px;
   overflow-x: hidden;
   overflow-y: auto; }
 
 #pageBody_details {
   padding: 5px;
-  height: 80%;
   width: 90%; }
 
 #pageBody_share {
@@ -631,3 +634,48 @@ img {
   vertical-align: middle;
   text-align: center;
   white-space: nowrap; }
+
+/*Print button styles*/
+.calcite .dijitToggleButton, .calcite .dijitButton, .calcite .dijitDropDownButton, .calcite .dijitComboButton {
+  padding: 0.5em 1em 0.5em !important;
+  line-height: 32px;
+  background: #d3d3d3;
+  /*#5daddd; calcite blue */
+  color: #fff;
+  padding: 0;
+  border: none;
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear; }
+
+.calcite .dijitToggleButton:hover, .calcite .dijitButton:hover, .calcite .dijitDropDownButton:hover, .calcite .dijitComboButton:hover {
+  background: #a9a9a9;
+  /*#4997d2; calcite hover */ }
+
+.calcite .dijitArrowButtonInner {
+  width: 16px;
+  height: 16px; }
+
+.calcite .dijitPopup {
+  border: solid 1px #d3d3d3; }
