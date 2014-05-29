@@ -99,6 +99,15 @@
 				"noDescription":"אין תיאור.",
 				"detailsLabel":"פרטים"
             },
+            "filterItems":{
+                "show": "כן_Show_ש",
+                "all": "כן_All Results_ש",
+                "maps": "כן_Maps_ש",
+                "layers": "כן_Layers_ש",
+                "applications": "כן_Applications_ש",
+                "tools": "כן_Tools_ש",
+                "files": "כן_Files_ש"
+            },
             "pagination": {
                 "previous": "קודם",
                 "next": "הבא",

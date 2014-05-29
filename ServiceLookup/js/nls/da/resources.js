@@ -5,7 +5,7 @@
             mouseToolTip: "Klik på kortet for at kontrollere tjenesten"
         },
         geocoder: {
-            defaultText: "Angiv din adresse"
+            defaultText: "ø_Enter an address or point of interest_å"
         },
         error: {
             layerNotFound: "Laget findes ikke i webkortet",
@@ -13,7 +13,11 @@
             popupNotSet: "Pop-ups er ikke aktiveret for dette lag"
         },
         page: {
-            title: "Tjenestesøgning",
+            title: "Informationssøgning",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

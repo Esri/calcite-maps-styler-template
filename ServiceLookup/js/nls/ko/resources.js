@@ -5,7 +5,7 @@
             mouseToolTip: "맵을 클릭하여 서비스를 확인하세요."
         },
         geocoder: {
-            defaultText: "주소 입력"
+            defaultText: "한_Enter an address or point of interest_빠"
         },
         error: {
             layerNotFound: "레이어가 웹 맵에 없습니다.",
@@ -13,7 +13,11 @@
             popupNotSet: "이 레이어에 팝업을 사용할 수 없습니다."
         },
         page: {
-            title: "서비스 조회",
+            title: "정보 조회",
+        },
+
+        splashscreen: {
+            buttonText: "확인",
         }
     })
 

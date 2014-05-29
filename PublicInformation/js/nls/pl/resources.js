@@ -34,7 +34,7 @@
             advancedOperators: "Wskazówka: w celu stworzenia procesów wyszukiwania zaawansowanego, skorzystaj z <a target="_blank" href="https://support.twitter.com/articles/71577-using-advanced-search">operatorów</a>.",
             tweetsFilteredBy: "Filtrowanie wpisów w serwisie Twitter według:",
             photosFilteredBy: "Filtrowanie zdjęć według:",
-            twitterAccountStatus: "Zezwól na to, aby warstwa Twittera widziała status użytkownika."
+            twitterAccountStatus: "Zezwól na to, aby status użytkownika był widoczny dla warstwy Twitter."
         },
         general: {
             map: "Mapa",

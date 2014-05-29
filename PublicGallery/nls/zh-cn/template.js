@@ -99,6 +99,15 @@
 				"noDescription":"无描述。",
 				"detailsLabel":"详细信息"
             },
+            "filterItems":{
+                "show": "试_Show_验",
+                "all": "试_All Results_验",
+                "maps": "试_Maps_验",
+                "layers": "试_Layers_验",
+                "applications": "试_Applications_验",
+                "tools": "试_Tools_验",
+                "files": "试_Files_验"
+            },
             "pagination": {
                 "previous": "上一页",
                 "next": "下一页",

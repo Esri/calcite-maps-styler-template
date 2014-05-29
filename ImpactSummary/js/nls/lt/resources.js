@@ -15,15 +15,17 @@
             about: "Apie",
             find: "Pašto kodas, miestas, kt.",
             noSearchResult: "Rezultatų nerasta",
-            impactArea: "Poveikio plotas"
+            impactArea: "Poveikio plotas",
+            dateModified: "Pakeista",
+            moreInfo: "Sužinokite daugiau",
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "Mano organizacija",
+                    organizationLabel: "Organizacija",
                     onlineLabel: "ArcGIS Online",
-                    contentLabel: "Mano turinys",
-                    favoritesLabel: "Mano Mėgstamiausi"
+                    contentLabel: "Turinys",
+                    favoritesLabel: "Mėgstamiausi"
                 },
                 title: "Pasirinkite internetinį žemėlapį",
                 searchTitle: "Ieškoti",
@@ -35,8 +37,8 @@
                 items: {
                     organizationLabel: "Mano organizacija",
                     onlineLabel: "ArcGIS Online",
-                    contentLabel: "Mano turinys",
-                    favoritesLabel: "Mano Mėgstamiausi"
+                    contentLabel: "Turinys",
+                    favoritesLabel: "Mėgstamiausi"
                 },
                 title: "Pasirinkite grupę",
                 searchTitle: "Ieškoti",

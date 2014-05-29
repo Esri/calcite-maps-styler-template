@@ -15,7 +15,9 @@
             about: "Hakkında",
             find: "Posta Kodu, şehir vb.",
             noSearchResult: "Hiçbir sonuç bulunamadı",
-            impactArea: "Etki Alanı"
+            impactArea: "Etki Alanı",
+            dateModified: "Değiştirilme",
+            moreInfo: "Daha fazlasını keşfedin",
         },
         configure: {
             mapdlg: {

@@ -15,7 +15,9 @@
             about: "Om",
             find: "Postnummer, ort osv.",
             noSearchResult: "Inga resultat hittades",
-            impactArea: "Inverkansområde"
+            impactArea: "Inverkansområde",
+            dateModified: "Ändrad",
+            moreInfo: "Ta reda på mer",
         },
         configure: {
             mapdlg: {

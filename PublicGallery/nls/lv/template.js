@@ -99,6 +99,15 @@
 				"noDescription":"Bez apraksta.",
 				"detailsLabel":"Detaļas"
             },
+            "filterItems":{
+                "show": "ķ_Show_ū",
+                "all": "ķ_All Results_ū",
+                "maps": "ķ_Maps_ū",
+                "layers": "ķ_Layers_ū",
+                "applications": "ķ_Applications_ū",
+                "tools": "ķ_Tools_ū",
+                "files": "ķ_Files_ū"
+            },
             "pagination": {
                 "previous": "Iepriekšējs",
                 "next": "Nākošais",

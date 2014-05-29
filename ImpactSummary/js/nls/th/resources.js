@@ -15,7 +15,9 @@
             about: "เกี่ยวกับ",
             find: "รหัสไปรษณีย์ ชื่อเมือง เป็นต้น",
             noSearchResult: "ไม่พบผลลัพธ์",
-            impactArea: "พื้นที่ที่ได้รับผลกระทบ"
+            impactArea: "พื้นที่ที่ได้รับผลกระทบ",
+            dateModified: "ปรับปรุง",
+            moreInfo: "ค้นหาเพิ่มเติม",
         },
         configure: {
             mapdlg: {

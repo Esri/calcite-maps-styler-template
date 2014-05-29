@@ -99,6 +99,15 @@
 				"noDescription":"لا يوجد وصف.",
 				"detailsLabel":"تفاصيل"
             },
+            "filterItems":{
+                "show": "بيت_Show_لاحقة",
+                "all": "بيت_All Results_لاحقة",
+                "maps": "بيت_Maps_لاحقة",
+                "layers": "بيت_Layers_لاحقة",
+                "applications": "بيت_Applications_لاحقة",
+                "tools": "بيت_Tools_لاحقة",
+                "files": "بيت_Files_لاحقة"
+            },
             "pagination": {
                 "previous": "السابق",
                 "next": "التالي",

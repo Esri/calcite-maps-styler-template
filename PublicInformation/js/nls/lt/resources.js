@@ -18,7 +18,7 @@
         social: {
             flickr: "Flickr",
             mediaLayers: "Įvairialypės informacijos sluoksniai",
-            mediaLayersDescription: "Žemėlapyje rodyti viešuosius duomenis.",
+            mediaLayersDescription: "Žemėlapyje rodyti visuomenės įvestus duomenis.",
             flickrSettings: "Flickr nustatymai",
             twitter: "Twitter",
             twitterSettings: "Twitter nustatymai",
@@ -46,7 +46,7 @@
             about: "Apie",
             find: "Pašto kodas, miestas, kt.",
             moreInfo: "Daugiau informacijos",
-            dateModified: "Paskutinio pakeitimo data",
+            dateModified: "Pakeitimo data",
             noSearchResult: "Rezultatų nerasta",
             switchAccount: "Perjungti paskyrą",
             signIn: "Prisijunkite",

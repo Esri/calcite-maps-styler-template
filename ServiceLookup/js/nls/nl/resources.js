@@ -5,7 +5,7 @@
             mouseToolTip: "Klik op de kaart om te controleren op service"
         },
         geocoder: {
-            defaultText: "Voer uw adres in"
+            defaultText: "Ĳ_Enter an address or point of interest_ä"
         },
         error: {
             layerNotFound: "Kaartlaag bevindt zich niet in de webmap",
@@ -13,7 +13,11 @@
             popupNotSet: "Pop-up is niet ingeschakeld voor deze kaartlaag"
         },
         page: {
-            title: "Service zoeken",
+            title: "Informatie zoeken",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

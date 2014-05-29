@@ -99,6 +99,15 @@
 				"noDescription":"설명 없음",
 				"detailsLabel":"세부정보"
             },
+            "filterItems":{
+                "show": "한_Show_빠",
+                "all": "한_All Results_빠",
+                "maps": "한_Maps_빠",
+                "layers": "한_Layers_빠",
+                "applications": "한_Applications_빠",
+                "tools": "한_Tools_빠",
+                "files": "한_Files_빠"
+            },
             "pagination": {
                 "previous": "이전",
                 "next": "다음",

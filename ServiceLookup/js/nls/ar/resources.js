@@ -5,7 +5,7 @@
             mouseToolTip: "انقر فوق الخريطة للتحقق من الخدمة"
         },
         geocoder: {
-            defaultText: "أدخل العنوان"
+            defaultText: "بيت_Enter an address or point of interest_لاحقة"
         },
         error: {
             layerNotFound: "الطبقة ليست موجودة في خريطة الويب",
@@ -13,7 +13,11 @@
             popupNotSet: "القائمة المنبثقة ليست ممكنة لهذه الطبقة"
         },
         page: {
-            title: "البحث عن الخدمة",
+            title: "البحث عن المعلومات",
+        },
+
+        splashscreen: {
+            buttonText: "موافق",
         }
     })
 

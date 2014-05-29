@@ -15,7 +15,9 @@
             about: "Despre",
             find: "Cod zip, oraş etc.",
             noSearchResult: "Niciun rezultat găsit",
-            impactArea: "Suprafaţă afectată"
+            impactArea: "Suprafaţă afectată",
+            dateModified: "Modificat",
+            moreInfo: "Găsire mai multe",
         },
         configure: {
             mapdlg: {

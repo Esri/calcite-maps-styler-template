@@ -15,7 +15,9 @@
             about: "Informacje o",
             find: "Kod pocztowy, miasto itd.",
             noSearchResult: "Nie znaleziono wyników",
-            impactArea: "Obszar wpływu"
+            impactArea: "Obszar wpływu",
+            dateModified: "Data modyfikacji",
+            moreInfo: "Dowiedz się więcej",
         },
         configure: {
             mapdlg: {
@@ -29,7 +31,7 @@
                 searchTitle: "Wyszukaj",
                 ok: "OK",
                 cancel: "Anuluj",
-                placeholder: "Wprowadź wyszukiwany zwrot"
+                placeholder: "Wprowadź wyszukiwane wyrażenie"
             },
             groupdlg: {
                 items: {
@@ -42,7 +44,7 @@
                 searchTitle: "Wyszukaj",
                 ok: "OK",
                 cancel: "Anuluj",
-                placeholder: "Wprowadź wyszukiwany zwrot"
+                placeholder: "Wprowadź wyszukiwane wyrażenie"
             }
         }
     })

@@ -25,7 +25,7 @@
                 "integersOnly": "Sellele väljale võid sisestada ainult täisarve.",
                 "nodesc": "Kirjeldus puudub.",
                 "notAvailable": "Ei ole kättesaadav", // added 8.26.2013
-                "outsideArea": "Olete hetkel väljaspoolt toetatud piirkonda", // added 8.26.2013
+                "outsideArea": "Olete hetkel väljaspool toetatud piirkonda", // added 8.26.2013
                 "geoLocationTimeOut": "Aegumine on ületatud. Võimetu teostama toimingut.", // added 8.26.2013
                 "positionUnavailable": "Asukoht ei ole kättesaadav", // added 8.26.2013
                 "permissionDenied": "Praegusele asukohale paigutamine on õigustega keelatud", // added 8.26.2013
@@ -143,7 +143,7 @@
                 "facebookHeader": "Jaga Facebookis",
                 "twitter": "Twitter",
                 "twitterHeader": "Jaga Twitteris",
-                "instructionHeader": "Kopperi/kleebi HTML oma veebilehele",
+                "instructionHeader": "Kopeeri/kleebi HTML oma veebilehele",
                 "preview": "Eelvaata ja kohanda"
             },
             "itemInfo": {

@@ -5,7 +5,7 @@
             mouseToolTip: "Kliknutím na mapu službu zkontrolujete."
         },
         geocoder: {
-            defaultText: "Zadejte svou adresu"
+            defaultText: "Ř_Enter an address or point of interest_ů"
         },
         error: {
             layerNotFound: "Vrstva není ve webové mapě",
@@ -13,7 +13,11 @@
             popupNotSet: "Vyskakovací okno není pro tuto vrstvu aktivováno"
         },
         page: {
-            title: "Hledání služby",
+            title: "Vyhledávání informací",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

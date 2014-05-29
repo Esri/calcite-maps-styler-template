@@ -15,7 +15,9 @@
             about: "Sobre",
             find: "Código Postal, cidade, etc.",
             noSearchResult: "Nenhum resultado encontrado",
-            impactArea: "Área de Impacto"
+            impactArea: "Área de Impacto",
+            dateModified: "Modificado",
+            moreInfo: "Saiba mais",
         },
         configure: {
             mapdlg: {

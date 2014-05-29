@@ -99,6 +99,15 @@
 				"noDescription":"Žádný popis.",
 				"detailsLabel":"Podrobnosti"
             },
+            "filterItems":{
+                "show": "Ř_Show_ů",
+                "all": "Ř_All Results_ů",
+                "maps": "Ř_Maps_ů",
+                "layers": "Ř_Layers_ů",
+                "applications": "Ř_Applications_ů",
+                "tools": "Ř_Tools_ů",
+                "files": "Ř_Files_ů"
+            },
             "pagination": {
                 "previous": "Předchozí",
                 "next": "Další",

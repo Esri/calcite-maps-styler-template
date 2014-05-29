@@ -325,7 +325,7 @@
 			viewPicasa: {
 				title: "Импорт из Picasa/Google+",
 				header: "Введите адрес эл.почты или ID учетной записи Picasa или Google+.",
-				userInputLbl: "Введите эл.почту или ID",
+				userInputLbl: "Введите эл. почту или ID",
 				signInMsg2: "Учетная запись не найдена",
 				signInMsg3: "Не общедоступный альбом",
 				howToFind: "Как найти ID учетной записи Picasa или Google+",

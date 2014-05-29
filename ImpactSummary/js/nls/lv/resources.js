@@ -15,7 +15,9 @@
             about: "Par",
             find: "Pasta indekss, pilsēta utt.",
             noSearchResult: "Nav atrasts neviens rezultāts",
-            impactArea: "Ietekmētā zona"
+            impactArea: "Ietekmētā zona",
+            dateModified: "Modificēts",
+            moreInfo: "Uzziniet vairāk",
         },
         configure: {
             mapdlg: {

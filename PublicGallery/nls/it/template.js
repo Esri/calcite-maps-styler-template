@@ -99,6 +99,15 @@
 				"noDescription":"Nessuna descrizione.",
 				"detailsLabel":"Dettagli"
             },
+            "filterItems":{
+                "show": "é_Show_È",
+                "all": "é_All Results_È",
+                "maps": "é_Maps_È",
+                "layers": "é_Layers_È",
+                "applications": "é_Applications_È",
+                "tools": "é_Tools_È",
+                "files": "é_Files_È"
+            },
             "pagination": {
                 "previous": "Indietro",
                 "next": "Avanti",

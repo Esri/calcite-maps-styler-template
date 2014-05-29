@@ -5,7 +5,7 @@
             mouseToolTip: "Clique no mapa para verificar por serviço"
         },
         geocoder: {
-            defaultText: "Insira seu endereço"
+            defaultText: "ã_Enter an address or point of interest_Ç"
         },
         error: {
             layerNotFound: "A camada não está no mapa da web",
@@ -13,7 +13,11 @@
             popupNotSet: "O pop-up não está habilitado para esta camada"
         },
         page: {
-            title: "Consultar Serviço",
+            title: "Consultar Informações",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

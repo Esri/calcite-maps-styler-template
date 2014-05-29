@@ -511,7 +511,7 @@
 				sharePrivateProgress: "Trwa udostępnianie...",
 				sharePrivateErr: "Udostępnianie nie powiodło się. Spróbuj ponownie lub",
 				sharePrivateOk: "Aktualizacja udostępniania powiodła się. Trwa wczytywanie...",
-				sharePreviewAsUser: "Ogólnie",
+				sharePreviewAsUser: "Podgląd",
 				shareHeader1: "Wycieczka jest <strong>dostępna publicznie</strong>.",
 				shareHeader2: "Wycieczka jest dostępna dla członków instytucji (wymagane jest logowanie).",
 				shareLinkHeader: "Udostępnij wycieczkę użytkownikom",

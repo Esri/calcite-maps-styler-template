@@ -15,7 +15,9 @@
             about: "Informazioni",
             find: "CAP, città e così via",
             noSearchResult: "Nessun risultato trovato",
-            impactArea: "Area di impatto"
+            impactArea: "Area di impatto",
+            dateModified: "Data modifica",
+            moreInfo: "Ulteriori informazioni",
         },
         configure: {
             mapdlg: {

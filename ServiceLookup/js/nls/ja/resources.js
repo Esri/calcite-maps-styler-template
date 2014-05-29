@@ -5,7 +5,7 @@
             mouseToolTip: "マップをクリックしてサービスをチェック"
         },
         geocoder: {
-            defaultText: "アドレスの入力"
+            defaultText: "須_Enter an address or point of interest_鷗"
         },
         error: {
             layerNotFound: "Web マップにレイヤがありません",
@@ -13,7 +13,11 @@
             popupNotSet: "このレイヤでポップアップは有効化されていません"
         },
         page: {
-            title: "サービス検索",
+            title: "情報検索",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

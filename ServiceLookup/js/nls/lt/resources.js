@@ -5,7 +5,7 @@
             mouseToolTip: "Spauskite ant žemėlapio, norėdami patikrinti paslaugą"
         },
         geocoder: {
-            defaultText: "Įveskite savo adresą"
+            defaultText: "Į_Enter an address or point of interest_š"
         },
         error: {
             layerNotFound: "Sluoksnio nėra internetiniame žemėlapyje",
@@ -13,7 +13,11 @@
             popupNotSet: "Šiam sluoksniui iškylantys langai neįjungti"
         },
         page: {
-            title: "Paslaugos peržvalga",
+            title: "Informacijos paieška",
+        },
+
+        splashscreen: {
+            buttonText: "Gerai",
         }
     })
 

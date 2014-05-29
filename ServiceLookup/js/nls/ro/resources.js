@@ -5,7 +5,7 @@
             mouseToolTip: "Faceţi clic pe hartă pentru a căuta servicii"
         },
         geocoder: {
-            defaultText: "Introduceţi-vă adresa"
+            defaultText: "Ă_Enter an address or point of interest_ș"
         },
         error: {
             layerNotFound: "Stratul tematic nu se găseşte pe harta Web",
@@ -13,7 +13,11 @@
             popupNotSet: "Funcţia pop-up nu este activată pentru acest strat tematic"
         },
         page: {
-            title: "Căutare serviciu",
+            title: "Căutare informaţii",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

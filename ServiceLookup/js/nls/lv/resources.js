@@ -5,7 +5,7 @@
             mouseToolTip: "Klikšķiniet uz kartes, lai pārbaudītu servisus"
         },
         geocoder: {
-            defaultText: "Ievadiet jūsu adresi"
+            defaultText: "ķ_Enter an address or point of interest_ū"
         },
         error: {
             layerNotFound: "Slānis neatrodas web kartē",
@@ -13,7 +13,11 @@
             popupNotSet: "Šim slānim nav iespējots uznirstošais ekrāns"
         },
         page: {
-            title: "Meklēt servisu",
+            title: "Informācijas meklēšana",
+        },
+
+        splashscreen: {
+            buttonText: "Labi",
         }
     })
 

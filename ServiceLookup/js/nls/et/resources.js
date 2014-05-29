@@ -5,7 +5,7 @@
             mouseToolTip: "Kliki kaardil teenuse kontrollimiseks"
         },
         geocoder: {
-            defaultText: "Sisesta oma aadress"
+            defaultText: "Š_Enter an address or point of interest_ä"
         },
         error: {
             layerNotFound: "Kiht pole veebikaardil",
@@ -13,7 +13,11 @@
             popupNotSet: "Hüpikaken pole selle kihi jaoks lubatud"
         },
         page: {
-            title: "Teenuse otsimine",
+            title: "Teabe otsimine",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

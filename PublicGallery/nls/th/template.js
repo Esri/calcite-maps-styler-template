@@ -99,6 +99,15 @@
 				"noDescription":"ไม่มีคำอธิบาย",
 				"detailsLabel":"รายละเอียด"
             },
+            "filterItems":{
+                "show": "ก้_Show_ษฺ",
+                "all": "ก้_All Results_ษฺ",
+                "maps": "ก้_Maps_ษฺ",
+                "layers": "ก้_Layers_ษฺ",
+                "applications": "ก้_Applications_ษฺ",
+                "tools": "ก้_Tools_ษฺ",
+                "files": "ก้_Files_ษฺ"
+            },
             "pagination": {
                 "previous": "ก่อนหน้า",
                 "next": "ถัดไป",

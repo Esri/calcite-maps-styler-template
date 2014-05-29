@@ -5,7 +5,7 @@
             mouseToolTip: "Servisi kontrol etmek için haritaya tıklayın"
         },
         geocoder: {
-            defaultText: "Adresinizi girin"
+            defaultText: "ı_Enter an address or point of interest_İ"
         },
         error: {
             layerNotFound: "Katman, web haritasında değil",
@@ -13,7 +13,11 @@
             popupNotSet: "Açılır pencere bu katman için etkinleştirildi"
         },
         page: {
-            title: "Servis Arama",
+            title: "Bilgi Arama",
+        },
+
+        splashscreen: {
+            buttonText: "Tamam",
         }
     })
 

@@ -5,7 +5,7 @@
             mouseToolTip: "Klicken Sie auf die Karte, um den Service zu überprüfen"
         },
         geocoder: {
-            defaultText: "Geben Sie Ihre Adresse ein"
+            defaultText: "ä_Enter an address or point of interest_Ü"
         },
         error: {
             layerNotFound: "Layer ist nicht in der Webkarte enthalten",
@@ -13,7 +13,11 @@
             popupNotSet: "Pop-up ist für diesen Layer nicht aktiviert"
         },
         page: {
-            title: "Service-Suche",
+            title: "Informationssuche",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

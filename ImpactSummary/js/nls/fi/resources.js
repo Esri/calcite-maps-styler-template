@@ -15,7 +15,9 @@
             about: "Tietoja",
             find: "Postinumero, kaupunki jne.",
             noSearchResult: "Tulosta ei löytynyt",
-            impactArea: "Vaikutusalue"
+            impactArea: "Vaikutusalue",
+            dateModified: "Muokattu",
+            moreInfo: "Lisätietoja",
         },
         configure: {
             mapdlg: {

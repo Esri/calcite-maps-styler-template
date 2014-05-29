@@ -99,6 +99,15 @@
 				"noDescription":"Ei kuvausta.",
 				"detailsLabel":"Yksityiskohdat"
             },
+            "filterItems":{
+                "show": "Å_Show_ö",
+                "all": "Å_All Results_ö",
+                "maps": "Å_Maps_ö",
+                "layers": "Å_Layers_ö",
+                "applications": "Å_Applications_ö",
+                "tools": "Å_Tools_ö",
+                "files": "Å_Files_ö"
+            },
             "pagination": {
                 "previous": "Edellinen",
                 "next": "Seuraava",

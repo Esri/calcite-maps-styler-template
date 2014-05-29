@@ -15,7 +15,9 @@
             about: "Om",
             find: "Postnummer, by, osv.",
             noSearchResult: "Fant ingen resultater",
-            impactArea: "Treffområde"
+            impactArea: "Treffområde",
+            dateModified: "Endret",
+            moreInfo: "Mer informasjon",
         },
         configure: {
             mapdlg: {

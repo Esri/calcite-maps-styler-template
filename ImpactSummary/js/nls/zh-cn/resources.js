@@ -15,7 +15,9 @@
             about: "关于",
             find: "邮政编码、城市等",
             noSearchResult: "未找到结果",
-            impactArea: "影响区域"
+            impactArea: "影响区域",
+            dateModified: "修改日期",
+            moreInfo: "查找详细信息",
         },
         configure: {
             mapdlg: {

@@ -5,7 +5,7 @@
             mouseToolTip: "Klicka på kartan för att kontrollera tjänsten"
         },
         geocoder: {
-            defaultText: "Ange din adress"
+            defaultText: "Å_Enter an address or point of interest_ö"
         },
         error: {
             layerNotFound: "Lagret finns inte i webbkartan",
@@ -13,7 +13,11 @@
             popupNotSet: "Popupfönster har inte aktiverats för det här lagret"
         },
         page: {
-            title: "Tjänstsökning",
+            title: "Informationssökning",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

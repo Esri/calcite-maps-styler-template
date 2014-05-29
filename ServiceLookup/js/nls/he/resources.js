@@ -5,7 +5,7 @@
             mouseToolTip: "הקש על המפה כדי לבדוק שירות"
         },
         geocoder: {
-            defaultText: "הכנס את הכתובת שלך"
+            defaultText: "כן_Enter an address or point of interest_ש"
         },
         error: {
             layerNotFound: "השכבה לא נימצאת ב webmap",
@@ -13,7 +13,11 @@
             popupNotSet: "חלון קופץ לא אפשרי לשכבה זו."
         },
         page: {
-            title: "בדיקת שירות",
+            title: "בדיקת מידע",
+        },
+
+        splashscreen: {
+            buttonText: "אישור",
         }
     })
 

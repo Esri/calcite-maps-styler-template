@@ -15,7 +15,9 @@
             about: "정보",
             find: "우편 번호, 도시 등",
             noSearchResult: "결과가 없음",
-            impactArea: "영향 영역"
+            impactArea: "영향 영역",
+            dateModified: "수정된 날짜",
+            moreInfo: "자세히 알아보기",
         },
         configure: {
             mapdlg: {

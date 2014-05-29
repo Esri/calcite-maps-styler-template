@@ -99,6 +99,15 @@
 				"noDescription":"Kirjeldus puudub.",
 				"detailsLabel":"Detailid"
             },
+            "filterItems":{
+                "show": "Š_Show_ä",
+                "all": "Š_All Results_ä",
+                "maps": "Š_Maps_ä",
+                "layers": "Š_Layers_ä",
+                "applications": "Š_Applications_ä",
+                "tools": "Š_Tools_ä",
+                "files": "Š_Files_ä"
+            },
             "pagination": {
                 "previous": "Eelmine",
                 "next": "Järgmine",

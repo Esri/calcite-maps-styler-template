@@ -5,7 +5,7 @@
             mouseToolTip: "Kliknij mapę, aby sprawdzić dostępność usługi"
         },
         geocoder: {
-            defaultText: "Wprowadź swój adres"
+            defaultText: "ł_Enter an address or point of interest_ą"
         },
         error: {
             layerNotFound: "Warstwa nie znajduje się na mapie internetowej",
@@ -13,7 +13,11 @@
             popupNotSet: "Nie włączono okna podręcznego dla tej warstwy"
         },
         page: {
-            title: "Wyszukiwanie usługi",
+            title: "Wyszukiwanie informacji",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

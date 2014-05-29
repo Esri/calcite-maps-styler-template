@@ -99,6 +99,15 @@
 				"noDescription":"Nicio descriere.",
 				"detailsLabel":"Detalii"
             },
+            "filterItems":{
+                "show": "Ă_Show_ș",
+                "all": "Ă_All Results_ș",
+                "maps": "Ă_Maps_ș",
+                "layers": "Ă_Layers_ș",
+                "applications": "Ă_Applications_ș",
+                "tools": "Ă_Tools_ș",
+                "files": "Ă_Files_ș"
+            },
             "pagination": {
                 "previous": "Înapoi",
                 "next": "Înainte",

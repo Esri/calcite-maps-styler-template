@@ -5,7 +5,7 @@
             mouseToolTip: "Klikk på kartet for å se eetter tjeneste"
         },
         geocoder: {
-            defaultText: "Skriv inn adressen din"
+            defaultText: "å_Enter an address or point of interest_ø"
         },
         error: {
             layerNotFound: "Laget er ikke i webkartet",
@@ -13,7 +13,11 @@
             popupNotSet: "Sprettoppvindu er ikke aktivert for dette laget"
         },
         page: {
-            title: "Tjenesteopptegning",
+            title: "Informasjonsoppslag",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

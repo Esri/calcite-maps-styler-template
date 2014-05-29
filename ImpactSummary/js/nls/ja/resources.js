@@ -15,7 +15,9 @@
             about: "情報",
             find: "郵便番号、市区町村など。",
             noSearchResult: "結果が見つかりません",
-            impactArea: "影響のあるエリア"
+            impactArea: "影響のあるエリア",
+            dateModified: "更新日",
+            moreInfo: "その他の検索",
         },
         configure: {
             mapdlg: {

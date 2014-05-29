@@ -99,6 +99,15 @@
 				"noDescription":"Açıklama yok.",
 				"detailsLabel":"Ayrıntılar"
             },
+            "filterItems":{
+                "show": "ı_Show_İ",
+                "all": "ı_All Results_İ",
+                "maps": "ı_Maps_İ",
+                "layers": "ı_Layers_İ",
+                "applications": "ı_Applications_İ",
+                "tools": "ı_Tools_İ",
+                "files": "ı_Files_İ"
+            },
             "pagination": {
                 "previous": "Önceki",
                 "next": "Sonraki",

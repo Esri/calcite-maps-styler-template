@@ -15,7 +15,9 @@
             about: "Info",
             find: "Postikood, linn jne.",
             noSearchResult: "Tulemust ei leitud",
-            impactArea: "Mõjuala"
+            impactArea: "Mõjuala",
+            dateModified: "Muudetud",
+            moreInfo: "Rohkem infot",
         },
         configure: {
             mapdlg: {

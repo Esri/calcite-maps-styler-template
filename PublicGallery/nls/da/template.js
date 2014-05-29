@@ -99,6 +99,15 @@
 				"noDescription":"Ingen beskrivelse",
 				"detailsLabel":"Detaljer"
             },
+            "filterItems":{
+                "show": "ø_Show_å",
+                "all": "ø_All Results_å",
+                "maps": "ø_Maps_å",
+                "layers": "ø_Layers_å",
+                "applications": "ø_Applications_å",
+                "tools": "ø_Tools_å",
+                "files": "ø_Files_å"
+            },
             "pagination": {
                 "previous": "Tidligere",
                 "next": "Næste",

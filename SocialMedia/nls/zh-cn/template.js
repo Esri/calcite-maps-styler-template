@@ -140,9 +140,9 @@
                 "menuTitle": "共享当前视图",
                 "shareHeader": "共享 web 应用程序链接",
                 "facebook": "Facebook",
-                "facebookHeader": "在 Facebook 上共享",
+                "facebookHeader": "共享至 Facebook",
                 "twitter": "Twitter",
-                "twitterHeader": "在 Twitter 上共享",
+                "twitterHeader": "共享至 Twitter",
                 "instructionHeader": "将 HTML 复制/粘贴到您的网页",
                 "preview": "预览和自定义"
             },
@@ -160,7 +160,7 @@
             },
             "social": {
                 "menuTitle": "社交媒体图层",
-                "screenName": "画面名称",
+                "screenName": "显示名",
                 "signIn": "登录",
                 "switchAccount": "切换帐户"
             },

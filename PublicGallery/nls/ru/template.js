@@ -99,6 +99,15 @@
 				"noDescription":"Описание отсутствует.",
 				"detailsLabel":"Детали"
             },
+            "filterItems":{
+                "show": "Ж_Show_Я",
+                "all": "Ж_All Results_Я",
+                "maps": "Ж_Maps_Я",
+                "layers": "Ж_Layers_Я",
+                "applications": "Ж_Applications_Я",
+                "tools": "Ж_Tools_Я",
+                "files": "Ж_Files_Я"
+            },
             "pagination": {
                 "previous": "Предыдущий",
                 "next": "Далее",

@@ -15,7 +15,9 @@
             about: "نبذة عن",
             find: "كود Zip والمدينة، وغير ذلك.",
             noSearchResult: "يتعذر إيجاد النتائج",
-            impactArea: "منطقة التأثير"
+            impactArea: "منطقة التأثير",
+            dateModified: "تم التعديل",
+            moreInfo: "إيجاد المزيد",
         },
         configure: {
             mapdlg: {

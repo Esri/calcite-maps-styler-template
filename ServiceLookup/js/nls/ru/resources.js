@@ -5,7 +5,7 @@
             mouseToolTip: "Щелкните на карте, чтобы проверить сервис"
         },
         geocoder: {
-            defaultText: "Введите ваш адрес"
+            defaultText: "Ж_Enter an address or point of interest_Я"
         },
         error: {
             layerNotFound: "Слой отсутствует в веб-карте",
@@ -13,7 +13,11 @@
             popupNotSet: "Всплывающие окна не включены для данного слоя"
         },
         page: {
-            title: "Поиск сервиса",
+            title: "Поиск сведений",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

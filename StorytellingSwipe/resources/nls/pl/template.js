@@ -230,7 +230,7 @@
 				shareStatus2: "Aplikacja jest udostępniania publicznie",
 				shareStatus3: "Aplikacja jest udostępniana w obrębie tej instytucji",
 				shareStatus4: "Aplikacja nie jest udostępniana",
-				sharePreviewAsUser: "Ogólnie",
+				sharePreviewAsUser: "Podgląd",
 				shareHeader1: "Aplikacja jest <strong>dostępna publicznie</strong>.",
 				shareHeader2: "Aplikacja jest dostępna dla członków instytucji (wymagane jest logowanie).",
 				shareLinkHeader: "Udostępnij aplikację odbiorcom",
@@ -272,7 +272,7 @@
 				searchTitle: "Wyszukaj",
 				ok: "OK",
 				cancel: "Anuluj",
-				placeholder: "Wprowadź hasło wyszukiwania"
+				placeholder: "Wprowadź wyszukiwane wyrażenie"
 			}
 		}
     })

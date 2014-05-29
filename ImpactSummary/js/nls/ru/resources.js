@@ -15,7 +15,9 @@
             about: "О",
             find: "Индекс, город и т.д.",
             noSearchResult: "Результатов не найдено",
-            impactArea: "Область влияния"
+            impactArea: "Область влияния",
+            dateModified: "Изменено",
+            moreInfo: "Узнать еще",
         },
         configure: {
             mapdlg: {

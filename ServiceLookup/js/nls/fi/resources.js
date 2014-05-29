@@ -5,7 +5,7 @@
             mouseToolTip: "Tarkista palvelu napsauttamalla karttaa"
         },
         geocoder: {
-            defaultText: "Anna osoitteesi"
+            defaultText: "Å_Enter an address or point of interest_ö"
         },
         error: {
             layerNotFound: "Karttataso ei ole Web-kartassa",
@@ -13,7 +13,11 @@
             popupNotSet: "Tämän karttatason ponnahdusikkunaa ei ole otettu käyttöön"
         },
         page: {
-            title: "Palvelusta haku",
+            title: "Tietohaku",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 
