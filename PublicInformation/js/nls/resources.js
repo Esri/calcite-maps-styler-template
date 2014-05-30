@@ -26,6 +26,14 @@ define({
             twitterSignIn: "Sign in to Twitter",
             webcams: "Webcams.travel",
             instagram: "Instagram",
+            youtube: "YouTube",
+            youtubeSettings: "YouTube Settings",
+            ytSettingsInfo: "View user-generated videos including network and professional content.",
+            ytTime: "Uploaded within the past",
+            today: "Day",
+            this_week: "Week",
+            this_month: "Month",
+            all_time: "All Time",
             moreInfo: "More information",
             searchTerms: "Search Terms",
             search: "Search",
@@ -34,6 +42,7 @@ define({
             advancedOperators: "Tip: use <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches.",
             tweetsFilteredBy: "tweets filtered by:",
             photosFilteredBy: "photos filtered by:",
+            videosFilteredBy: "videos filtered by:",
             twitterAccountStatus: "Enable the Twitter layer to see your status."
         },
         general: {

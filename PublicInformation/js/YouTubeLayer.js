@@ -30,7 +30,7 @@ define([
         Graphic,
         PictureMarkerSymbol
     ) {
-        return declare("application.FlickrLayer", [Stateful, Evented], {
+        return declare("modules.YouTubeLayer", [Stateful, Evented], {
             options: {
                 map: null,
                 filterUsers: [],
@@ -38,21 +38,20 @@ define([
                 autopage: true,
                 visible: true,
                 maxpage: 3,
-                limit: 100,
-                title: 'Flickr',
-                id: 'flickr',
+                limit: 50,
+                title: 'YouTube',
+                id: 'youtube',
+                searchTerm: '',
+                time: 'all_time', // this_week, this_month, today
                 datePattern: "MMM d, yyyy",
                 timePattern: "h:mma",
-                searchTerm: '',
                 minScale: null,
                 maxScale: null,
                 symbol: null,
                 infoTemplate: null,
-                dateFrom: '',
-                dateTo: '',
                 key: '',
-                baseurl: location.protocol === "https:" ? "https://secure.flickr.com/services/rest/" : "http://api.flickr.com/services/rest/",
-                refreshTime: 4000
+                refreshTime: 4000,
+                url: "https://gdata.youtube.com/feeds/api/videos",
             },
             constructor: function (options) {
                 // mixin options
@@ -70,47 +69,47 @@ define([
                 this.set("datePattern", defaults.datePattern);
                 this.set("timePattern", defaults.timePattern);
                 this.set("searchTerm", defaults.searchTerm);
+                this.set("time", defaults.time);
                 this.set("symbol", defaults.symbol);
                 this.set("infoTemplate", defaults.infoTemplate);
-                this.set("dateFrom", defaults.dateFrom);
-                this.set("dateTo", defaults.dateTo);
                 this.set("key", defaults.key);
+                this.set("url", defaults.url);
                 this.set("minScale", defaults.minScale);
                 this.set("maxScale", defaults.maxScale);
                 this.set("refreshTime", defaults.refreshTime);
                 this.set("graphics", []);
                 this.set("noGeo", []);
-                this.set("baseurl", defaults.baseurl);
                 // listeners
-                this.watch("searchTerm", this.update);
                 this.watch("visible", this._visible);
+                this.watch("searchTerm", this.update);
+                this.watch("time", this.update);
                 // private vars
                 this._deferreds = [];
                 this._events = [];
                 this._dataIds = {};
                 // classes
                 this._css = {
-                    container: "flickr-popup",
+                    container: "youtube-popup",
+                    title: "title",
+                    stats: "stats",
                     imageAnchor: "image-anchor",
                     image: "image",
-                    title: "title",
                     ownername: "ownername",
-                    ownerAnchor: "owner-anchor",
                     content: "content",
                     date: "date"
                 };
                 // map required
                 if (!this.map) {
-                    console.log('Flickr::Reference to esri.Map object required');
+                    console.log('YouTube::Reference to esri.Map object required');
                     return;
                 }
                 // default symbol
                 if (!this.symbol) {
-                    this.set("symbol", new PictureMarkerSymbol('images/map/flickr25x30.png', 25, 30).setOffset(0, 7));
+                    this.set("symbol", new PictureMarkerSymbol('images/map/youtube25x30.png', 25, 30).setOffset(0, 7));
                 }
                 // default infoTemplate
                 if (!this.infoTemplate) {
-                    this.set("infoTemplate", new InfoTemplate('Flickr', '<div class="' + this._css.container + '"><a tabindex="0" class="' + this._css.imageAnchor + '" href="${protocol}//www.flickr.com/photos/${owner}/${id}/in/photostream" target="_blank"><img class="' + this._css.image + '" width="${width_q}" height="${height_q}" src="${url_q}"></a><div class="' + this._css.title + '">${title}</div><div class="' + this._css.ownername + '"><a tabindex="0" href="${protocol}//www.flickr.com/photos/${owner}/" target="_blank">${ownername}</a></div><div class="' + this._css.content + '">${descriptionText}</div><div class="' + this._css.date + '">${dateformatted}</div></div>'));
+                    this.set("infoTemplate", new InfoTemplate('YouTube', '<div class="' + this._css.container + '"><div class="' + this._css.title + '">${video_title}</div><a tabindex="0" class="' + this._css.imageAnchor + '" href="${link}" target="_blank"><span class="' + this._css.stats + '">${seconds}</span><img class="' + this._css.image + '" width="${width}" height="${height}" src="${thumbnail}"></a><div class="' + this._css.content + '">${descriptionText}</div><div class="' + this._css.ownername + '"><a tabindex="0" href="${link}" target="_blank">${full_name}</a></div><div class="' + this._css.date + '">${dateformatted}</div></div>'));
                 }
                 // layer
                 this.featureCollection = {
@@ -264,19 +263,13 @@ define([
                 var map = this.map;
                 var extent = this.map.extent;
                 var center = extent.getCenter();
-                this.maxRadius = 600;
+                this.maxRadius = 621;
                 var radius = Math.min(this.maxRadius, Math.ceil(mathUtils.getLength(Point(extent.xmin, extent.ymin, map.spatialReference), Point(extent.xmax, extent.ymin, map.spatialReference)) * 3.281 / 5280 / 2));
-                var dist = (radius) / 2;
-                dist = dist * 10;
-                dist = (dist * 160.934).toFixed(3);
-                dist = parseFloat(dist);
-                var minPoint, maxPoint;
-                var geoPoint = Point(center.x, center.y, map.spatialReference);
-                minPoint = webMercatorUtils.webMercatorToGeographic(Point(geoPoint.x - dist, geoPoint.y - dist, map.spatialReference));
-                maxPoint = webMercatorUtils.webMercatorToGeographic(Point(geoPoint.x + dist, geoPoint.y + dist, map.spatialReference));
+                radius = Math.floor(radius);
                 return {
-                    minPoint: minPoint,
-                    maxPoint: maxPoint
+                    lat: Math.round(center.getLatitude() * 10000) / 10000,
+                    lng: Math.round(center.getLongitude() * 10000) / 10000,
+                    distance: radius
                 };
             },
             _constructQuery: function () {
@@ -286,45 +279,40 @@ define([
                 }
                 var radius = this._getRadius();
                 this.query = {
-                    bbox: radius.minPoint.x + "," + radius.minPoint.y + "," + radius.maxPoint.x + "," + radius.maxPoint.y,
-                    extras: "description, date_upload, owner_name, geo, url_q",
-                    per_page: this.limit,
-                    sort: 'date-posted-desc',
-                    safe_search: 2,
-                    content_type: 1,
-                    text: search,
-                    method: "flickr.photos.search",
-                    api_key: this.key,
-                    has_geo: 1,
-                    page: 1,
-                    format: "json"
+                    "q": search,
+                    "max-results": this.limit,
+                    "v": 2,
+                    "location": radius.lat + "," + radius.lng,
+                    "location-radius": radius.distance + "mi",
+                    "start-index": 1,
+                    "alt": "json",
+                    "time": this.time,
+                    "safeSearch": "moderate",
+                    "orderby": "published",
+                    "key": this.key
                 };
-                if (this.dateTo && this.dateFrom) {
-                    this.query.max_taken_date = Math.round(this.dateTo / 1000);
-                    this.query.min_taken_date = Math.round(this.dateFrom / 1000);
-                }
-                // make the actual Flickr API call
+                // make the actual API call
                 this.pageCount = 1;
-                this._sendRequest(this.baseurl, this.query);
+                this._sendRequest(this.url, this.query);
             },
             _sendRequest: function (url, content) {
-                // get the results from Flickr for each page
+                // get the results for each page
                 var deferred = esriRequest({
                     url: url,
                     handleAs: "json",
                     timeout: 10000,
                     content: content,
-                    callbackParamName: "jsoncallback",
+                    callbackParamName: "callback",
                     preventCache: true,
                     load: lang.hitch(this, function (data) {
-                        if (data.stat !== 'fail') {
-                            if (data.photos.photo.length > 0) {
+                        if (data.feed) {
+                            if (data.feed.entry && data.feed.entry.length > 0) {
                                 this._mapResults(data);
                                 // display results for multiple pages
-                                if ((this.autopage) && (this.maxpage > this.pageCount) && (data.photos.page < data.photos.pages) && (this.query)) {
+                                if ((this.autopage) && (this.maxpage > this.pageCount) && (data.feed.entry.length === this.limit) && (this.query)) {
                                     this.pageCount++;
-                                    this.query.page++;
-                                    this._sendRequest(this.baseurl, this.query);
+                                    this.query["start-index"] += this.limit;
+                                    this._sendRequest(this.url, this.query);
                                 } else {
                                     this._updateEnd();
                                 }
@@ -333,8 +321,8 @@ define([
                                 this._updateEnd();
                             }
                         } else {
-                            if (data.code === 100) {
-                                console.log('Flickr::' + data.code + ' - ' + this.title + ': ' + data.message);
+                            if (data.meta) {
+                                console.log('YouTube::' + data.meta.code + ' - ' + this.title + ': ' + data.meta.error_message);
                             }
                             // No results found, try another search term
                             this._updateEnd();
@@ -342,9 +330,9 @@ define([
                     }),
                     error: lang.hitch(this, function (e) {
                         if (deferred.canceled) {
-                            console.log('Flickr::Search Cancelled');
+                            console.log('YouTube::Search Cancelled');
                         } else {
-                            console.log('Flickr::Search error' + ": " + e.message.toString());
+                            console.log('YouTube::Search error' + ": " + e.message.toString());
                         }
                         this._error(e);
                     })
@@ -366,28 +354,34 @@ define([
             },
             _mapResults: function (j) {
                 if (j.error) {
-                    console.log("Flickr::_mapResults error: " + j.error);
+                    console.log("YouTube::_mapResults error: " + j.error);
                     this._error(j.error);
                     return;
                 }
                 var b = [];
                 var ng = [];
-                var k = j.photos.photo;
+                var k = j.feed.entry;
                 array.forEach(k, lang.hitch(this, function (result) {
                     // add social media type/id for filtering
                     result.smType = this.id;
-                    result.filterType = 4;
-                    result.filterContent = location.protocol + '//www.flickr.com/photos/' + result.owner + '/' + result.id + '/in/photostream';
-                    result.filterAuthor = result.owner;
+                    result.filterType = 3;
+                    result.filterContent = result.link[0].href;
+                    result.filterAuthor = result.author[0].yt$userId.$t;
                     // add date to result
-                    var date = new Date(parseInt(result.dateupload * 1000, 10));
+                    var date = new Date(result.published.$t);
                     result.dateformatted = this._formatDate(date);
-                    // text
-                    result.descriptionText = result.description._content;
                     // add location protocol to result
                     result.protocol = location.protocol;
+                    result.link = result.link[0].href;
+                    result.full_name = result.author[0].name.$t;
+                    result.video_title = result.title.$t;
+                    result.descriptionText = this._parseURL(result.media$group.media$description.$t);
+                    result.height = result.media$group.media$thumbnail[0].height;
+                    result.width = result.media$group.media$thumbnail[0].width;
+                    result.thumbnail = result.media$group.media$thumbnail[0].url;
+                    result.seconds = this._parseSeconds(result.media$group.yt$duration.seconds);
                     // eliminate geo photos which we already have on the map
-                    if (this._dataIds[result.id]) {
+                    if (this._dataIds[result.id.$t]) {
                         return;
                     }
                     // filter variable
@@ -396,7 +390,7 @@ define([
                     // check for filterd user
                     if (this.filterUsers && this.filterUsers.length) {
                         for (i = 0; i < this.filterUsers.length; i++) {
-                            if (this.filterUsers[i].toString() === result.owner.toString()) {
+                            if (this.filterUsers[i].toString() === result.author[0].yt$userId.$t.toString()) {
                                 filter = true;
                                 break;
                             }
@@ -405,11 +399,11 @@ define([
                     // check if contains bad word
                     if (!filter && this.filterWords && this.filterWords.length) {
                         for (i = 0; i < this.filterWords.length; i++) {
-                            if (this._findWordInText(this.filterWords[i], result.title)) {
+                            if (this._findWordInText(this.filterWords[i], result.title.$t)) {
                                 filter = true;
                                 break;
                             }
-                            if (this._findWordInText(this.filterWords[i], result.description._content)) {
+                            if (this._findWordInText(this.filterWords[i], result.media$group.media$description.$t)) {
                                 filter = true;
                                 break;
                             }
@@ -420,11 +414,15 @@ define([
                         //console.log('filtered', result);
                         return;
                     }
-                    this._dataIds[result.id] = true;
+                    this._dataIds[result.id.$t] = true;
                     var geoPoint = null;
-                    if (result.latitude) {
-                        var g = [result.latitude, result.longitude];
-                        geoPoint = Point(parseFloat(g[1]), parseFloat(g[0]));
+                    if (result.georss$where) {
+                        if (result.georss$where.gml$Point) {
+                            if (result.georss$where.gml$Point.gml$pos) {
+                                var g = result.georss$where.gml$Point.gml$pos.$t.split(' ');
+                                geoPoint = Point(parseFloat(g[1]), parseFloat(g[0]));
+                            }
+                        }
                     }
                     if (geoPoint && geoPoint.hasOwnProperty('x') && geoPoint.hasOwnProperty('y')) {
                         // convert the Point to WebMercator projection
@@ -450,6 +448,26 @@ define([
                 this.emit("update", {
                     graphics: b,
                     noGeo: ng
+                });
+            },
+            _parseSeconds: function (sec) {
+                var hr = Math.floor(sec / 3600);
+                var min = Math.floor((sec - (hr * 3600)) / 60);
+                sec -= ((hr * 3600) + (min * 60));
+                sec += '';
+                min += '';
+                while (min.length < 2) {
+                    min = '0' + min;
+                }
+                while (sec.length < 2) {
+                    sec = '0' + sec;
+                }
+                hr = (hr) ? ':' + hr : '';
+                return hr + min + ':' + sec;
+            },
+            _parseURL: function (text) {
+                return text.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function (url) {
+                    return '<a target="_blank" href="' + url + '">' + url + '</a>';
                 });
             },
             _visible: function () {

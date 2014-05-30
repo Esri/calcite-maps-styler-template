@@ -10,6 +10,7 @@ define([
     "application/FlickrLayer",
     "application/WebcamsLayer",
     "application/InstagramLayer",
+    "application/YouTubeLayer",
     "dojo/on",
     "esri/tasks/QueryTask",
     "esri/tasks/query",
@@ -29,6 +30,7 @@ define([
         FlickrLayer,
         WebcamsLayer,
         InstagramLayer,
+        YouTubeLayer,
         on,
         QueryTask,
         Query,
@@ -47,6 +49,7 @@ define([
                     layerSettingsInput: "layer-settings-input",
                     layerSettingsDescription: "layer-settings-description",
                     layerSettingsSubmit: "layer-settings-submit",
+                    layerSettingsSelect: "layer-settings-select",
                     authStatus: "twitter-auth-status",
                     clear: "clear"
                 };
@@ -70,6 +73,28 @@ define([
                     this.socialLayerInfos.push({
                         title: this.config.i18n.social.webcams,
                         layer: this._webcamsLayer.featureLayer
+                    });
+                }
+                // YouTube enabled
+                if(this.config.enableYouTube){
+                    // YouTube
+                    this._youtubeLayer = new YouTubeLayer({
+                        map: this.map,
+                        time: this.config.youtubeTime,
+                        visible: this.config.youtubeVisible,
+                        key: this.config.youtube_key
+                    });
+                    // legend info
+                    this.socialLayers.push({
+                        title: this.config.i18n.social.youtube,
+                        settings: 'youtube_cog',
+                        visibility: this._youtubeLayer.featureLayer.visible,
+                        layerObject: this._youtubeLayer.featureLayer
+                    });
+                    // legend info
+                    this.socialLayerInfos.push({
+                        title: this.config.i18n.social.youtube,
+                        layer: this._youtubeLayer.featureLayer
                     });
                 }
                 // twitter enabled
@@ -318,7 +343,77 @@ define([
                         this._updateTwitterFilter();
                     }));
                     this._updateTwitterFilter();
-                }  
+                }
+                if(this.config.enableYouTube){
+                    // Youtube Dialog
+                    var ytContent = '';
+                    ytContent += '<div class="' + this.socialCSS.dialogContent + '">';
+                    ytContent += '<div class="' + this.socialCSS.layerSettingsDescription + '">' + this.config.i18n.social.ytSettingsInfo + '</div>';
+                    ytContent += '<div class="' + this.socialCSS.layerSettingsHeader + '">' + this.config.i18n.social.searchTerms + '</div>';
+                    ytContent += '<input id="youtube_search_input" class="' + this.socialCSS.layerSettingsInput + '" type="text" value="' + this.config.youtubeSearch + '">';
+                    ytContent += '<div class="' + this.socialCSS.layerSettingsHeader + '">' + this.config.i18n.social.ytTime + '</div>';
+                    ytContent += '<div class="' + this.socialCSS.layerSettingsSelect + '"><select id="youtube_search_time">';
+                    ytContent += this._createYouTubeOption('all_time', this.config.i18n.social.all_time);
+                    ytContent += this._createYouTubeOption('this_month', this.config.i18n.social.this_month);
+                    ytContent += this._createYouTubeOption('this_week', this.config.i18n.social.this_week);
+                    ytContent += this._createYouTubeOption('today', this.config.i18n.social.today);
+                    ytContent += '</select></div>';
+                    ytContent += '<div id="youtube_search_submit" class="' + this.socialCSS.layerSettingsSubmit + '">' + this.config.i18n.social.search + '</div>';
+                    ytContent += '</div>';
+                    var youtubeDialogNode = domConstruct.create('div', {
+                        innerHTML: ytContent
+                    });
+                    // dialog node
+                    domConstruct.place(youtubeDialogNode, document.body, 'last');
+                    // dialog
+                    this._youtubeDialog = new Dialog({
+                        title: this.config.i18n.social.youtubeSettings,
+                        draggable: false
+                    }, youtubeDialogNode);
+                    // settings icon
+                    var youtubeCog = dom.byId('youtube_cog');
+                    if(youtubeCog){
+                        domAttr.set(youtubeCog, 'title', this.config.i18n.general.settings);
+                        on(youtubeCog, 'click', lang.hitch(this, function(evt){
+                            this._youtubeDialog.show();
+                            event.stop(evt);
+                        }));
+                    }
+                    // youtube settings search nodes
+                    var ytSearchNode = dom.byId('youtube_search_submit');
+                    var ytInputNode = dom.byId('youtube_search_input');
+                    if(ytSearchNode && ytInputNode){
+                        // youtube search button click
+                        on(ytSearchNode, 'click', lang.hitch(this, function(){
+                            this._updateYouTubeSearch(ytInputNode);
+                        }));
+                        // youtube search input keypress enter
+                        on(ytInputNode, 'keypress', lang.hitch(this, function(evt){
+                            var charOrCode = evt.charCode || evt.keyCode;
+                            switch (charOrCode) {
+                            case keys.ENTER:
+                                this._updateYouTubeSearch(ytInputNode);
+                                break;
+                            }
+                        }));
+                    }
+                    // youtube filtered by text
+                    this._youtubeLayer.watch("searchTerm", lang.hitch(this, function(){
+                        this._updateYouTubeFilter();
+                    }));
+                    this._updateYouTubeFilter();
+                }
+            },
+            _createYouTubeOption: function(value, text){
+                var html = '<option ';
+                html += 'value = "' + value + '"';
+                if(value === this.config.youtubeTime){
+                    html += ' selected';
+                }
+                html += '>';
+                html += text;
+                html += '</option>';
+                return html;
             },
             _setLayerInfoTitle: function(layer, title){
                 // update legend info for layer
@@ -354,6 +449,17 @@ define([
                 // set layerInfo title
                 this._setLayerInfoTitle(this._twitterLayer.featureLayer, newTitle);
             },
+            _updateYouTubeFilter: function(){
+                var newTitle;
+                if(this._youtubeLayer.get("searchTerm")){
+                    newTitle = this._youtubeLayer.title + ' ' + this.config.i18n.social.videosFilteredBy + ' ' + this._youtubeLayer.get("searchTerm");
+                }
+                else{
+                    newTitle = this._youtubeLayer.title;
+                }
+                // set layerInfo title
+                this._setLayerInfoTitle(this._youtubeLayer.featureLayer, newTitle);
+            },
             _updateTwitterSearch: function(inputNode){
                 this._twitterLayer.clear();
                 this._twitterLayer.show();
@@ -367,6 +473,17 @@ define([
                 this._flickrLayer.set('searchTerm', inputNode.value);
                 this._flickrLayer.update(0);
                 this._flickrDialog.hide();
+            },
+            _updateYouTubeSearch: function(inputNode){
+                this._youtubeLayer.clear();
+                this._youtubeLayer.show();
+                this._youtubeLayer.set('searchTerm', inputNode.value);
+                var ytSearchTime = dom.byId('youtube_search_time');
+                if(ytSearchTime){
+                    this._youtubeLayer.set('time', ytSearchTime.value);   
+                }
+                this._youtubeLayer.update(0);
+                this._youtubeDialog.hide();
             },
             _featureChange: function () {
                 if (this.map && this.map.infoWindow) {
@@ -473,8 +590,18 @@ define([
                                 badFlickrUsers.push(features[i].attributes.author);
                             }
                         }
-                        this._flickrLayer.set("filterUsers", badFlickrUsers);
-                        this._twitterLayer.set("filterUsers", badTwitterUsers);
+                        if(this._flickrLayer){
+                            this._flickrLayer.set("filterUsers", badFlickrUsers);
+                        }
+                        if(this._twitterLayer){
+                            this._twitterLayer.set("filterUsers", badTwitterUsers);
+                        }
+                        if(this._youtubeLayer){
+                            this._youtubeLayer.set("filterUsers", badTwitterUsers);
+                        }
+                        if(this._instagramLayer){
+                            this._instagramLayer.set("filterUsers", badTwitterUsers);
+                        }
                     }));
                 }
             },
@@ -490,8 +617,18 @@ define([
                         for (var i = 0; i < fset.features.length; i++) {
                             filterWords.push(fset.features[i].attributes.word);
                         }
-                        this._flickrLayer.set("filterWords", filterWords);
-                        this._twitterLayer.set("filterWords", filterWords);
+                        if(this._flickrLayer){
+                            this._flickrLayer.set("filterWords", filterWords);
+                        }
+                        if(this._twitterLayer){
+                            this._twitterLayer.set("filterWords", filterWords);
+                        }
+                        if(this._youtubeLayer){
+                            this._youtubeLayer.set("filterWords", filterWords);
+                        }
+                        if(this._instagramLayer){
+                            this._instagramLayer.set("filterWords", filterWords);
+                        }
                     }));
                 }
             },
