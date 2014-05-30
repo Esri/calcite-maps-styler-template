@@ -5,6 +5,7 @@ define([
     "dijit/layout/ContentPane",
     "dojo/dom",
     "dojo/on",
+    "dojo/number",
     "dojo/string",
     "dojo/query",
     "dojo/_base/array",
@@ -29,7 +30,7 @@ function (
     lang,
     _WidgetBase,
     ContentPane,
-    dom, on, string, query, array, domConstruct, domClass, Dialog, esriRequest, domAttr, domStyle, nls, topic, keys, Editor, TooltipDialog, popup, LinkDialog, BrowseIdDlg, arcgisUtils) {
+    dom, on, number, string, query, array, domConstruct, domClass, Dialog, esriRequest, domAttr, domStyle, nls, topic, keys, Editor, TooltipDialog, popup, LinkDialog, BrowseIdDlg, arcgisUtils) {
     var Widget = declare([_WidgetBase], {
         declaredClass: "application.TemplateBuilder",
         //URL for updating Item
