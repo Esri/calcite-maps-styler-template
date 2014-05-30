@@ -226,11 +226,11 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
             }
 
             this.scrollTimer = setTimeout(lang.hitch(this, this._snapScroll), 400);
+
         },
 
         // snap scroll
         _snapScroll: function () {
-
             if (this.map) {
                 this.map.reposition();
             }
@@ -243,7 +243,7 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
             if (num > 0) {
                 name = this.tools[num - 1];
             }
-            //this._updateTool(num);
+            this._updateTool(num);
             this._animateScroll(startPos, endPos);
         },
 
