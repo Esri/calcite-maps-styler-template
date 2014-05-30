@@ -41,7 +41,7 @@ define({
     "units": null,
     // ** UI SPECIFIC PARAMETERS ** //
     "color": "#80ab00",
-    "icons": "white", //black or white
+    "icons": "white", // currently white is the only option. 
     //Set of tools that will be added to the toolbar
     "tools": [
         {"name": "legend", "enabled": true}, 
@@ -69,7 +69,7 @@ define({
     //if you want users to be able to specify lat/lon coordinates that define the map's center or
     //specify an alternate basemap via a url parameter.
     "urlItems": [
-        "extent" 
+        "extent,color" 
     ],
     "helperServices": {
         "geometry": {

@@ -18,25 +18,46 @@ define(["dojo/has"], function (has) {
 
     /*App capabilities*/
     has.add("search", function (g) {
-        var search = false;
-        if (g.config.search) {
-            search = g.config.search;
+        var search = getTool("search", g.config);
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_search")){
+            search = g.config.tool_search;
         }
         return search;
     });
 
     /*Toolbar tools*/
     has.add("basemap", function (g) {
-        return getTool("basemap", g.config);
+        var basemap = getTool("basemap", g.config);
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_basemap")){
+            basemap = g.config.tool_basemap;
+        }
+        return basemap;
     });
     has.add("bookmarks", function (g) {
-        return getTool("bookmarks", g.config);
+        var bookmarks = getTool("bookmarks", g.config);
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_bookmarks")){
+            bookmarks = g.config.tool_bookmarks;
+        }
+        return bookmarks;
     });
     has.add("details", function (g) {
-        return getTool("details", g.config);
+        var details = getTool("details", g.config);
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_details")){
+            details = g.config.tool_details;
+        }
+        return details;
     });
     has.add("edit", function (g) {
-        return getTool("edit", g.config);
+        var edit = getTool("edit", g.config);
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_edit")){
+            edit = g.config.tool_edit;
+        }
+        return edit;
     });
     has.add("edit-toolbar", function (g) {
         var toolbar = false;
@@ -47,58 +68,92 @@ define(["dojo/has"], function (has) {
                 break;
             }
         }
+         //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_edit_toolbar")){
+            toolbar = g.config.tool_edit_toolbar;
+        }       
         return toolbar;
     });
     has.add("home", function (g) {
-        var home = false;
-        if (g.config.home) {
-            home = true;
+        var home = g.config.home || false;
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_home")){
+            home = g.config.tool_home;
         }
         return home;
     });
     has.add("layers", function (g) {
-        return getTool("layers", g.config);
+        var layers = getTool("layers", g.config);
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_layers")){
+            layers = g.config.tool_layers;
+        }
+        return layers;
     });
     has.add("legend", function (g) {
-        return getTool("legend", g.config);
+        var legend = getTool("legend", g.config);
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_legend")){
+            legend = g.config.tool_legend;
+        }
+        return legend;
     });
 
     has.add("locate", function (g) {
-        var location = false;
-        if (g.config.locate && has("native-gelocation")) {
-            location = true;
+        var location = has("native-gelocation");
+        if(location){
+            var location = g.config.locate || false;
+            if(g.config.hasOwnProperty("tool_locate")){
+                location = g.config.tool_locate;
+            }
         }
         return location;
     });
 
 
     has.add("measure", function (g) {
-        return getTool("measure", g.config);
+        var measure = getTool("measure", g.config);
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_measure")){
+            measure = g.config.tool_measure;
+        }
+        return measure;
     });
     has.add("overview", function (g) {
-        return getTool("overview", g.config);
+        var overview = getTool("overview", g.config);
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_overview")){
+            overview = g.config.tool_overview;
+        }
+        return overview;
     });
     has.add("print", function (g) {
-        var print = false;
-        if (getTool("print", g.config)) {
-            //is there also a print service defined? 
-            if (g.config.helperServices && g.config.helperServices.printTask && g.config.helperServices.printTask.url !== null) {
-                print = true;
+        var print = getTool("print", g.config);
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_print")){
+            print = g.config.tool_print;
+        }
+        if(print){
+            //is there a print service defined? If not set print to false 
+            if (g.config.helperServices.printTask.url === null) {
+                print = false;
             }
         }
+
         return print;
     });
 
     has.add("print-legend", function (g) {
         var printLegend = false;
-
         for (var i = 0; i < g.config.tools.length; i++) {
             if (g.config.tools[i].name === "print") {
-
                 printLegend = g.config.tools[i].legend;
-
                 break;
             }
+        }
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_print_legend")){
+            printLegend = g.config.tool_print_legend;
         }
         return printLegend;
     });
@@ -108,16 +163,23 @@ define(["dojo/has"], function (has) {
 
         for (var i = 0; i < g.config.tools.length; i++) {
             if (g.config.tools[i].name === "print") {
-
                 printLayouts = g.config.tools[i].layouts;
-
                 break;
             }
         }
+         //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_print_layouts")){
+            printLayouts = g.config.tool_print_layouts;
+        }       
         return printLayouts;
     });
     has.add("share", function (g) {
-        return getTool("share", g.config);
+        var share = getTool("share", g.config);
+        //overwrite the default with app settings 
+        if(g.config.hasOwnProperty("tool_share")){
+            share = g.config.tool_share;
+        }
+        return share;
     });
 
     /*Geolocation Feature Detection*/

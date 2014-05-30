@@ -4,7 +4,7 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
 
         map: null,
         tools: [],
-        toollist:[],
+        toollist: [],
         curTool: 0,
         scrollTimer: null,
         config: {},
@@ -74,7 +74,7 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
             }, pTool);
             on(pTool, "click", lang.hitch(this, this._toolClick, name));
             this.tools.push(name);
-        
+
 
 
             // add page

@@ -28,8 +28,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
         startup: function (config) {
             // config will contain application and user defined info for the template such as i18n strings, the web map id
-            // and application id
-            // any url parameters and any application specific configuration information.
+            // and application id and any url parameters and any application specific configuration information.
             if (config) {
                 this.config = config;
                 this.setColor();
@@ -106,7 +105,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 return;
             }
 
-
             //Add tools to the toolbar. The tools are listed in the defaults.js file 
             var toolbar = new Toolbar(this.config);
             toolbar.startup().then(lang.hitch(this, function () {
@@ -152,14 +150,11 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     }
                 }
 
-
                 all(toolList).then(lang.hitch(this, function (results) {
                     //Now that all the tools have been added to the toolbar we can add page naviagation
                     //to the toolbar panel, update the color theme and set the active tool. 
-
                     this._updateTheme();
-                   // toolbar.updateToolbar(this.config.tools);
-               
+                    // toolbar.updateToolbar(this.config.tools);
                     toolbar.updatePageNavigation();
                     toolbar.activateTool(this.config.activeTool);
                     on(toolbar, "updateTool", lang.hitch(this, function (name) {
@@ -170,9 +165,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         }
                     }));
                 }));
-
-
-
             }));
         },
         _addBasemapGallery: function (tool, toolbar, panelClass) {
@@ -184,8 +176,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     return;
                 }
                 var basemapDiv = toolbar.createTool(tool, panelClass);
-
-
                 var basemap = new BasemapGallery({
                     id: "basemapGallery",
                     map: this.map,
@@ -193,11 +183,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     portalUrl: this.config.sharinghost,
                     basemapGroup: this._getBasemapGroup()
                 }, domConstruct.create("div", {}, basemapDiv));
-
-
                 basemap.startup();
-
-
                 deferred.resolve();
 
             }));
@@ -241,7 +227,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     detailDiv.innerHTML = description;
                 }
             }
-
             deferred.resolve();
             return deferred.promise;
 
@@ -260,7 +245,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     }
                     var editorDiv = toolbar.createTool(tool, panelClass);
 
-
                     //add field infos if necessary. Field infos will contain hints if defined in the popup and hide fields where visible is set
                     //to false. The popup logic takes care of this for the info window but not the edit window. 
                     array.forEach(layers, lang.hitch(this, function (layer) {
@@ -275,7 +259,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                             });
                             layer.fieldInfos = fieldInfos;
                         }
-
                     }));
                     var settings = {
                         map: this.map,
@@ -288,22 +271,14 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
 
                     editor.startup();
-
-
-
                     deferred.resolve();
 
                 }));
-
 
             } else {
                 console.log("No Editable Layers");
                 deferred.resolve();
             }
-
-
-
-
             return deferred.promise;
         },
         _addLayers: function (tool, toolbar, panelClass) {
@@ -323,7 +298,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                             layerInfos.reverse();
 
                             var layersDiv = toolbar.createTool(tool, panelClass);
-
                             var menu = new Menu({
                                 id: "layerMenu"
                             }, domConstruct.create("div", {}, layersDiv)); //, layersDiv);
@@ -346,13 +320,12 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                             });
 
                         }
-
-
                         deferred.resolve();
                     }));
+                }else{
+                    deferred.resolve();
                 }
             }
-
             return deferred.promise;
         },
         _addLegend: function (tool, toolbar, panelClass) {
@@ -401,9 +374,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
                 measure.startup();
 
-
-
-
                 deferred.resolve();
 
             }));
@@ -441,16 +411,10 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
                 ovMap.startup();
 
-
                 on(this.map, "layer-add", lang.hitch(this, function (args) {
-                    //delete and re-create the overview map if the basemap gallery changes
-                    //ideally we would listen for the map's basemap-change event but that 
-                    //doesn't fire when using the basemap gallery to change maps.           
+                    //delete and re-create the overview map if the basemap gallery changes  
                     if (args.layer.hasOwnProperty("_basemapGalleryLayerType") && args.layer._basemapGalleryLayerType === "basemap") {
-
                         registry.byId("overviewMap").destroy();
-
-
                         var ovMap = new OverviewMap({
                             id: "overviewMap",
                             map: this.map,
@@ -461,8 +425,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         ovMap.startup();
                     }
                 }));
-
-
                 deferred.resolve();
 
             }));
@@ -497,7 +459,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
 
                 }
-
 
                 require(["application/has-config!print-layouts?esri/request", "application/has-config!print-layouts?esri/tasks/PrintTemplate"], lang.hitch(this, function (esriRequest, PrintTemplate) {
                     if (!esriRequest && !PrintTemplate) {
@@ -551,8 +512,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         },
                         "callbackParamName": "callback"
                     }).then(function (response) {
-
-
                         var layoutTemplate, templateNames, mapOnlyIndex, templates;
 
                         layoutTemplate = array.filter(response.parameters, function (param, idx) {
@@ -588,15 +547,10 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                             url: this.config.helperServices.printTask.url
                         }, printDiv);
                         print.startup();
-
                         deferred.resolve();
-
 
                     });
                 }));
-
-
-
 
             }));
 
@@ -652,26 +606,18 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
         },
         _getEditableLayers: function (layers) {
             var layerInfos = [];
-            dojo.forEach(layers, function (layer) {
+            array.forEach(layers, function (layer) {
 
                 if (layer && layer.layerObject) {
-
                     var eLayer = layer.layerObject;
-
                     if (eLayer instanceof FeatureLayer && eLayer.isEditable()) {
                         layerInfos.push({
                             "featureLayer": eLayer
                         });
                     }
-
                 }
             });
-
-
             return layerInfos;
-
-
-
         },
         _getVisibleLayers: function (layers) {
             //Function that creates the list of layers for the layers tool. 
@@ -720,24 +666,30 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
         _createMapUI: function () {
             // Add map specific widgets like the Home  and locate buttons. Also add the geocoder. 
             if (has("home")) {
-                domConstruct.create("panelHome",{id:"panelHome",innerHTML: "<div id='btnHome'></div>"}, dom.byId("panelTools"), 0);
+                domConstruct.create("panelHome", {
+                    id: "panelHome",
+                    innerHTML: "<div id='btnHome'></div>"
+                }, dom.byId("panelTools"), 0);
                 var home = new HomeButton({
                     map: this.map
                 }, dom.byId("btnHome"));
                 //add a tooltip
                 domAttr.set("btnHome", "data-title", this.config.i18n.tooltips["home"]);
                 home.startup();
-            } 
+            }
 
             if (has("locate")) {
-                domConstruct.create("panelHome",{id:"panelLocate",innerHTML: "<div id='btnLocate'></div>"}, dom.byId("panelTools"), 1);
+                domConstruct.create("panelHome", {
+                    id: "panelLocate",
+                    innerHTML: "<div id='btnLocate'></div>"
+                }, dom.byId("panelTools"), 1);
                 var geoLocate = new LocateButton({
                     map: this.map
                 }, dom.byId("btnLocate"));
                 domAttr.set("btnLocate", "data-title", this.config.i18n.tooltips["locate"]);
                 geoLocate.startup();
 
-            } 
+            }
 
             //Add the location search widget 
             require(["application/has-config!search?application/CreateGeocoder"], lang.hitch(this, function (CreateGeocoder) {
@@ -759,12 +711,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
         },
         _updateTheme: function () {
-            //TODO when support is added to the api update this code to set the popup sprite
-            //to the light or dark theme. If the config panel has white as the icons option
-            //use the light theme. If black use the dark. Light/dark define the color of the contents 
-            //of the popup title bar (navigation, restore, min, max)
             query(".bg").style("backgroundColor", this.color.toString());
-
             query(".esriPopup .pointer").style("backgroundColor", this.color.toString());
             query(".esriPopup .titlePane").style("backgroundColor", this.color.toString());
         },
@@ -777,16 +724,13 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             }
         },
         _enablePopups: function () {
-            console.log(this.popupHandler);
             if (this.popupListener && !this.popupHandler) {
-                console.log("Enabled");
                 this.popupHandler = this.map.on("click", this.popupListener);
             }
 
         },
         _disablePopups: function () {
             if (this.popupHandler) {
-                console.log("popup handler removed");
                 this.popupHandler.remove();
                 this.popupHandler = null;
             }
@@ -814,7 +758,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 dom.byId("panelText").innerHTML = title;
                 this.config.response = response;
                 window.config = this.config;
-
 
                 if (this.initExt !== null) {
                     this.map.setExtent(this.initExt);
