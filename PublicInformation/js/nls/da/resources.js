@@ -26,6 +26,14 @@
             twitterSignIn: "Log ind på Twitter",
             webcams: "Webcams",
             instagram: "Instagram",
+            youtube: "ø_YouTube_å",
+            youtubeSettings: "ø_YouTube Settings_å",
+            ytSettingsInfo: "ø_View user-generated videos including network and professional content._å",
+            ytTime: "ø_Uploaded within the past_å",
+            today: "ø_Day_å",
+            this_week: "ø_Week_å",
+            this_month: "ø_Month_å",
+            all_time: "ø_All Time_å",
             moreInfo: "Flere oplysninger",
             searchTerms: "Søgetermer",
             search: "Søg",
@@ -34,6 +42,7 @@
             advancedOperators: "Tip: brug <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operatorer</a> til at oprette avancerede søgninger.",
             tweetsFilteredBy: "tweets filtreret af:",
             photosFilteredBy: "fotos filtreret af:",
+            videosFilteredBy: "ø_videos filtered by:_å",
             twitterAccountStatus: "Aktiv\ér Twitter-laget til at se din status."
         },
         general: {

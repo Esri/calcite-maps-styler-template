@@ -26,6 +26,14 @@
             twitterSignIn: "Prisijungti Twitter",
             webcams: "Webcams.travel",
             instagram: "Instagram",
+            youtube: "Į_YouTube_š",
+            youtubeSettings: "Į_YouTube Settings_š",
+            ytSettingsInfo: "Į_View user-generated videos including network and professional content._š",
+            ytTime: "Į_Uploaded within the past_š",
+            today: "Į_Day_š",
+            this_week: "Į_Week_š",
+            this_month: "Į_Month_š",
+            all_time: "Į_All Time_š",
             moreInfo: "Daugiau informacijos",
             searchTerms: "Paieškos terminai",
             search: "Ieškoti",
@@ -34,6 +42,7 @@
             advancedOperators: "Patarimas: išplėstines ieškas kurkite naudodami <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operatorius</a>",
             tweetsFilteredBy: "tweet žinutės filtruojamos pagal:",
             photosFilteredBy: "fotografijos filtruojamos pagal:",
+            videosFilteredBy: "Į_videos filtered by:_š",
             twitterAccountStatus: "Įjunkite Twitter sluoksnį savo būsenos matymui."
         },
         general: {

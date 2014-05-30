@@ -26,6 +26,14 @@
             twitterSignIn: "Přihlásit se na Twitter",
             webcams: "Webcams.travel",
             instagram: "Instagram",
+            youtube: "Ř_YouTube_ů",
+            youtubeSettings: "Ř_YouTube Settings_ů",
+            ytSettingsInfo: "Ř_View user-generated videos including network and professional content._ů",
+            ytTime: "Ř_Uploaded within the past_ů",
+            today: "Ř_Day_ů",
+            this_week: "Ř_Week_ů",
+            this_month: "Ř_Month_ů",
+            all_time: "Ř_All Time_ů",
             moreInfo: "Další informace",
             searchTerms: "Hledané výrazy",
             search: "Hledat",
@@ -34,6 +42,7 @@
             advancedOperators: "Tip: K vytváření pokročilých vyhledávání použijte <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a>.",
             tweetsFilteredBy: "tweety se filtrují podle:",
             photosFilteredBy: "fotografie se filtrují podle:",
+            videosFilteredBy: "Ř_videos filtered by:_ů",
             twitterAccountStatus: "Chcete-li vidět váš stav, aktivujte vrstvu Twitter."
         },
         general: {

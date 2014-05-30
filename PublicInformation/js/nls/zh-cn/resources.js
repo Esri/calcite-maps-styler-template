@@ -26,6 +26,14 @@
             twitterSignIn: "登录到 Twitter",
             webcams: "Webcams.travel",
             instagram: "Instagram",
+            youtube: "试_YouTube_验",
+            youtubeSettings: "试_YouTube Settings_验",
+            ytSettingsInfo: "试_View user-generated videos including network and professional content._验",
+            ytTime: "试_Uploaded within the past_验",
+            today: "试_Day_验",
+            this_week: "试_Week_验",
+            this_month: "试_Month_验",
+            all_time: "试_All Time_验",
             moreInfo: "更多信息",
             searchTerms: "搜索词",
             search: "搜索",
@@ -34,6 +42,7 @@
             advancedOperators: "提示: 使用<a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">运算符</a>创建高级搜索",
             tweetsFilteredBy: "推文过滤依据:",
             photosFilteredBy: "照片过滤依据:",
+            videosFilteredBy: "试_videos filtered by:_验",
             twitterAccountStatus: "启用 Twitter 图层查看状态。"
         },
         general: {

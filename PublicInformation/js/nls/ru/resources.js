@@ -26,6 +26,14 @@
             twitterSignIn: "Вход в Twitter",
             webcams: "Webcams.travel",
             instagram: "Instagram",
+            youtube: "Ж_YouTube_Я",
+            youtubeSettings: "Ж_YouTube Settings_Я",
+            ytSettingsInfo: "Ж_View user-generated videos including network and professional content._Я",
+            ytTime: "Ж_Uploaded within the past_Я",
+            today: "Ж_Day_Я",
+            this_week: "Ж_Week_Я",
+            this_month: "Ж_Month_Я",
+            all_time: "Ж_All Time_Я",
             moreInfo: "Больше информации",
             searchTerms: "Поиск терминов",
             search: "Поиск",
@@ -34,6 +42,7 @@
             advancedOperators: "Подсказка: используйте <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> для создания усовершенствованных поисковых запросов.",
             tweetsFilteredBy: "твиты отфильтрованы по:",
             photosFilteredBy: "фотографии отфильтрованы по",
+            videosFilteredBy: "Ж_videos filtered by:_Я",
             twitterAccountStatus: "Включить слой Twitter для просмотра статусов."
         },
         general: {

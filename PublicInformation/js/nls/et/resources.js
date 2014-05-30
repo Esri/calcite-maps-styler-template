@@ -26,6 +26,14 @@
             twitterSignIn: "Logi sisse Twitterisse",
             webcams: "Webcams.travel",
             instagram: "Instagram",
+            youtube: "Š_YouTube_ä",
+            youtubeSettings: "Š_YouTube Settings_ä",
+            ytSettingsInfo: "Š_View user-generated videos including network and professional content._ä",
+            ytTime: "Š_Uploaded within the past_ä",
+            today: "Š_Day_ä",
+            this_week: "Š_Week_ä",
+            this_month: "Š_Month_ä",
+            all_time: "Š_All Time_ä",
             moreInfo: "Veel teavet",
             searchTerms: "Otsinguterminid",
             search: "Otsi",
@@ -34,6 +42,7 @@
             advancedOperators: "Näpunäide: kasutage täpsemate otsingute loomiseks <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">tehtemärke</a>.",
             tweetsFilteredBy: "säutsud on filtreeritud:",
             photosFilteredBy: "fotod on filtreeritud:",
+            videosFilteredBy: "Š_videos filtered by:_ä",
             twitterAccountStatus: "Luba Twitteri kihti, et näha enda staatust."
         },
         general: {

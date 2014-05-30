@@ -26,6 +26,14 @@
             twitterSignIn: "Twitter\'a giriş yap",
             webcams: "Webcams.travel",
             instagram: "Instagram",
+            youtube: "ı_YouTube_İ",
+            youtubeSettings: "ı_YouTube Settings_İ",
+            ytSettingsInfo: "ı_View user-generated videos including network and professional content._İ",
+            ytTime: "ı_Uploaded within the past_İ",
+            today: "ı_Day_İ",
+            this_week: "ı_Week_İ",
+            this_month: "ı_Month_İ",
+            all_time: "ı_All Time_İ",
             moreInfo: "Daha Fazla Bilgi",
             searchTerms: "Arama Terimleri",
             search: "Ara",
@@ -34,6 +42,7 @@
             advancedOperators: "İpucu: gelişmiş aramalar oluşturmak için <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">işleçler</a> kullanın.",
             tweetsFilteredBy: "tweet filtreleme ölçütü:",
             photosFilteredBy: "fotoğraf filtreleme ölçütü:",
+            videosFilteredBy: "ı_videos filtered by:_İ",
             twitterAccountStatus: "Durumunuzu görmek için Twitter katmanını etkinleştirin."
         },
         general: {

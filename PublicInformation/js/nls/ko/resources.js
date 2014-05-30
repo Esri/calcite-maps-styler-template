@@ -26,6 +26,14 @@
             twitterSignIn: "Twitter에 로그인",
             webcams: "Webcams.travel",
             instagram: "Instagram",
+            youtube: "한_YouTube_빠",
+            youtubeSettings: "한_YouTube Settings_빠",
+            ytSettingsInfo: "한_View user-generated videos including network and professional content._빠",
+            ytTime: "한_Uploaded within the past_빠",
+            today: "한_Day_빠",
+            this_week: "한_Week_빠",
+            this_month: "한_Month_빠",
+            all_time: "한_All Time_빠",
             moreInfo: "자세한 정보",
             searchTerms: "검색어",
             search: "검색",
@@ -34,6 +42,7 @@
             advancedOperators: "팁: 고급 검색을 하려면 <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">연산자</a>를 사용하세요.",
             tweetsFilteredBy: "트윗 필터링 기준:",
             photosFilteredBy: "사진 필터링 기준:",
+            videosFilteredBy: "한_videos filtered by:_빠",
             twitterAccountStatus: "상태를 보려면 Twitter 레이어를 활성화하세요."
         },
         general: {

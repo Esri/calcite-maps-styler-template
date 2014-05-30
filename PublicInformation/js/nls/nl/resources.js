@@ -26,6 +26,14 @@
             twitterSignIn: "Aanmelden bij Twitter",
             webcams: "Webcams.travel",
             instagram: "Instagram",
+            youtube: "Ĳ_YouTube_ä",
+            youtubeSettings: "Ĳ_YouTube Settings_ä",
+            ytSettingsInfo: "Ĳ_View user-generated videos including network and professional content._ä",
+            ytTime: "Ĳ_Uploaded within the past_ä",
+            today: "Ĳ_Day_ä",
+            this_week: "Ĳ_Week_ä",
+            this_month: "Ĳ_Month_ä",
+            all_time: "Ĳ_All Time_ä",
             moreInfo: "Meer informatie",
             searchTerms: "Zoektermen",
             search: "Zoeken",
@@ -34,6 +42,7 @@
             advancedOperators: "Tip: gebruik <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> om geavanceerde zoekopdrachten te maken.",
             tweetsFilteredBy: "tweets gefilterd op:",
             photosFilteredBy: "foto\'s gefilterd op:",
+            videosFilteredBy: "Ĳ_videos filtered by:_ä",
             twitterAccountStatus: "Schakel de Twitter-kaartlaag in om uw status te zien."
         },
         general: {

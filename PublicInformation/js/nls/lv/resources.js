@@ -26,6 +26,14 @@
             twitterSignIn: "Pierakstīties Twitter",
             webcams: "Tīmekļa kameras, ceļošana",
             instagram: "Instagram",
+            youtube: "ķ_YouTube_ū",
+            youtubeSettings: "ķ_YouTube Settings_ū",
+            ytSettingsInfo: "ķ_View user-generated videos including network and professional content._ū",
+            ytTime: "ķ_Uploaded within the past_ū",
+            today: "ķ_Day_ū",
+            this_week: "ķ_Week_ū",
+            this_month: "ķ_Month_ū",
+            all_time: "ķ_All Time_ū",
             moreInfo: "Vairāk informācijas",
             searchTerms: "Meklējamie vārdi",
             search: "Meklēt",
@@ -34,6 +42,7 @@
             advancedOperators: "Padoms: izmantojiet <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operatorus</a>, lai izveidotu detalizētu meklēšanu.",
             tweetsFilteredBy: "īsziņas filtrētas pēc:",
             photosFilteredBy: "fotogrāfijas filtrētas pēc:",
+            videosFilteredBy: "ķ_videos filtered by:_ū",
             twitterAccountStatus: "Iespējot Twitter slāni redzēt jūsu statusu."
         },
         general: {

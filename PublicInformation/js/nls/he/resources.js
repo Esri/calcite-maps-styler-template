@@ -26,6 +26,14 @@
             twitterSignIn: "התחבר לטוויטר",
             webcams: "מצלמות רשת.נסיעה",
             instagram: "אינסטגרם",
+            youtube: "כן_YouTube_ש",
+            youtubeSettings: "כן_YouTube Settings_ש",
+            ytSettingsInfo: "כן_View user-generated videos including network and professional content._ש",
+            ytTime: "כן_Uploaded within the past_ש",
+            today: "כן_Day_ש",
+            this_week: "כן_Week_ש",
+            this_month: "כן_Month_ש",
+            all_time: "כן_All Time_ש",
             moreInfo: "עוד מידע",
             searchTerms: "תנאי חיפוש",
             search: "חפש",
@@ -34,6 +42,7 @@
             advancedOperators: "טיפ: השתמש <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">במנועים</a> ליצירת חיפושים מתקדמים.",
             tweetsFilteredBy: "סינון ציוצים על ידי:",
             photosFilteredBy: "סינון תמונות על ידי:",
+            videosFilteredBy: "כן_videos filtered by:_ש",
             twitterAccountStatus: "אפשר את שכבת הציוצים כדי לראות את הסטטוס שלך."
         },
         general: {

@@ -26,6 +26,14 @@
             twitterSignIn: "Autentificare la Twitter",
             webcams: "Camere web. Călătorii",
             instagram: "Instagram",
+            youtube: "Ă_YouTube_ș",
+            youtubeSettings: "Ă_YouTube Settings_ș",
+            ytSettingsInfo: "Ă_View user-generated videos including network and professional content._ș",
+            ytTime: "Ă_Uploaded within the past_ș",
+            today: "Ă_Day_ș",
+            this_week: "Ă_Week_ș",
+            this_month: "Ă_Month_ș",
+            all_time: "Ă_All Time_ș",
             moreInfo: "Informaţii suplimentare",
             searchTerms: "Căutare termeni",
             search: "Căutare",
@@ -34,6 +42,7 @@
             advancedOperators: "Sfat: utilizaţi <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operatori</a> pentru a crea căutări avansate.",
             tweetsFilteredBy: "tweeturi filtrate după:",
             photosFilteredBy: "Fotografii filtrate după:",
+            videosFilteredBy: "Ă_videos filtered by:_ș",
             twitterAccountStatus: "Activaţi stratul tematic Twitter pentru a vă vedea starea."
         },
         general: {

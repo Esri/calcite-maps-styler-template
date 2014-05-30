@@ -26,6 +26,14 @@
             twitterSignIn: "Zaloguj się do serwisu Twitter",
             webcams: "Webcams.travel",
             instagram: "Instagram",
+            youtube: "ł_YouTube_ą",
+            youtubeSettings: "ł_YouTube Settings_ą",
+            ytSettingsInfo: "ł_View user-generated videos including network and professional content._ą",
+            ytTime: "ł_Uploaded within the past_ą",
+            today: "ł_Day_ą",
+            this_week: "ł_Week_ą",
+            this_month: "ł_Month_ą",
+            all_time: "ł_All Time_ą",
             moreInfo: "Dodatkowe informacje",
             searchTerms: "Słowa kluczowe",
             search: "Wyszukaj",
@@ -34,6 +42,7 @@
             advancedOperators: "Wskazówka: w celu stworzenia procesów wyszukiwania zaawansowanego, skorzystaj z <a target="_blank" href="https://support.twitter.com/articles/71577-using-advanced-search">operatorów</a>.",
             tweetsFilteredBy: "Filtrowanie wpisów w serwisie Twitter według:",
             photosFilteredBy: "Filtrowanie zdjęć według:",
+            videosFilteredBy: "ł_videos filtered by:_ą",
             twitterAccountStatus: "Zezwól na to, aby status użytkownika był widoczny dla warstwy Twitter."
         },
         general: {

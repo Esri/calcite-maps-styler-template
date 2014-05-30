@@ -26,6 +26,14 @@
             twitterSignIn: "ลงทะเบียนเข้าสู่ทวิตเตอร์",
             webcams: "เว็บแคม.ท่องเที่ยว",
             instagram: "Instagram",
+            youtube: "ก้_YouTube_ษฺ",
+            youtubeSettings: "ก้_YouTube Settings_ษฺ",
+            ytSettingsInfo: "ก้_View user-generated videos including network and professional content._ษฺ",
+            ytTime: "ก้_Uploaded within the past_ษฺ",
+            today: "ก้_Day_ษฺ",
+            this_week: "ก้_Week_ษฺ",
+            this_month: "ก้_Month_ษฺ",
+            all_time: "ก้_All Time_ษฺ",
             moreInfo: "ข้อมูลเพิ่มเติม",
             searchTerms: "คำที่ใช้ค้นหา",
             search: "ค้นหา",
@@ -34,6 +42,7 @@
             advancedOperators: "Tip: ใช้ <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a> for creating advanced searches.",
             tweetsFilteredBy: "กรองทวีตโดย:",
             photosFilteredBy: "กรองรูปภาพโดย:",
+            videosFilteredBy: "ก้_videos filtered by:_ษฺ",
             twitterAccountStatus: "กำหนดให้ชั้นข้อมูลทวิตเตอร์มองเห็นสถานะของคุณ"
         },
         general: {

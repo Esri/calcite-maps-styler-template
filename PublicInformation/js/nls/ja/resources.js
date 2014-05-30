@@ -26,6 +26,14 @@
             twitterSignIn: "Twitter にサイン イン",
             webcams: "観光用 Web カメラ",
             instagram: "Instagram",
+            youtube: "須_YouTube_鷗",
+            youtubeSettings: "須_YouTube Settings_鷗",
+            ytSettingsInfo: "須_View user-generated videos including network and professional content._鷗",
+            ytTime: "須_Uploaded within the past_鷗",
+            today: "須_Day_鷗",
+            this_week: "須_Week_鷗",
+            this_month: "須_Month_鷗",
+            all_time: "須_All Time_鷗",
             moreInfo: "詳細情報",
             searchTerms: "検索語句",
             search: "検索",
@@ -34,6 +42,7 @@
             advancedOperators: "ヒント: <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">演算子</a>を使って、高度な検索ができます。",
             tweetsFilteredBy: "ツイートのフィルタ:",
             photosFilteredBy: "写真のフィルタ:",
+            videosFilteredBy: "須_videos filtered by:_鷗",
             twitterAccountStatus: "Twitter レイヤでステータスを表示できるようにします。"
         },
         general: {

@@ -26,6 +26,14 @@
             twitterSignIn: "تسجيل الدخول إلى Twitter",
             webcams: "Webcams.travel",
             instagram: "Instagram",
+            youtube: "بيت_YouTube_لاحقة",
+            youtubeSettings: "بيت_YouTube Settings_لاحقة",
+            ytSettingsInfo: "بيت_View user-generated videos including network and professional content._لاحقة",
+            ytTime: "بيت_Uploaded within the past_لاحقة",
+            today: "بيت_Day_لاحقة",
+            this_week: "بيت_Week_لاحقة",
+            this_month: "بيت_Month_لاحقة",
+            all_time: "بيت_All Time_لاحقة",
             moreInfo: "المزيد من المعلومات",
             searchTerms: "مصطلحات البحث",
             search: "بحث",
@@ -34,6 +42,7 @@
             advancedOperators: "تلميح:استخدم<a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">عوامل التشغيل</a>لإنشاء عمليات البحث المتقدمة.",
             tweetsFilteredBy: "يتم تنقية التغريدات بواسطة:",
             photosFilteredBy: "يتم تنقية الصور بواسطة:",
+            videosFilteredBy: "بيت_videos filtered by:_لاحقة",
             twitterAccountStatus: "قم بتمكين طبقة Twitter لرؤية حالتك."
         },
         general: {
