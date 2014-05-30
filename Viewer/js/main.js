@@ -156,8 +156,11 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 all(toolList).then(lang.hitch(this, function (results) {
                     //Now that all the tools have been added to the toolbar we can add page naviagation
                     //to the toolbar panel, update the color theme and set the active tool. 
-                    toolbar.updatePageNavigation();
+
                     this._updateTheme();
+                   // toolbar.updateToolbar(this.config.tools);
+               
+                    toolbar.updatePageNavigation();
                     toolbar.activateTool(this.config.activeTool);
                     on(toolbar, "updateTool", lang.hitch(this, function (name) {
                         if (name === "measure" || name === "edit") {
@@ -717,27 +720,24 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
         _createMapUI: function () {
             // Add map specific widgets like the Home  and locate buttons. Also add the geocoder. 
             if (has("home")) {
+                domConstruct.create("panelHome",{id:"panelHome",innerHTML: "<div id='btnHome'></div>"}, dom.byId("panelTools"), 0);
                 var home = new HomeButton({
                     map: this.map
-                }, "btnHome");
+                }, dom.byId("btnHome"));
                 //add a tooltip
                 domAttr.set("btnHome", "data-title", this.config.i18n.tooltips["home"]);
                 home.startup();
-
-            } else {
-                domConstruct.destroy("panelHome");
-            }
+            } 
 
             if (has("locate")) {
+                domConstruct.create("panelHome",{id:"panelLocate",innerHTML: "<div id='btnLocate'></div>"}, dom.byId("panelTools"), 1);
                 var geoLocate = new LocateButton({
                     map: this.map
-                }, "btnLocate");
+                }, dom.byId("btnLocate"));
                 domAttr.set("btnLocate", "data-title", this.config.i18n.tooltips["locate"]);
                 geoLocate.startup();
 
-            } else {
-                domConstruct.destroy("panelLocate");
-            }
+            } 
 
             //Add the location search widget 
             require(["application/has-config!search?application/CreateGeocoder"], lang.hitch(this, function (CreateGeocoder) {
