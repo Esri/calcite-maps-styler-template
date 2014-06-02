@@ -57,7 +57,8 @@ define(
             fieldNotFound: "Ce champ n\'existe dans aucune couche de la carte",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Votre contenu a été envoyé. Merci.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Impossible d\'accéder à la configuration de l\'application",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "Impossible de lancer l\'application"  // Appears for any failure to build the user interface
+            unableToLaunchApp: "Impossible de lancer l\'application",  // Appears for any failure to build the user interface
+            printingHasStarted: "L'impression est en cours"  // Appears when printing is started to let user know that something is happening
         }
     })
 );

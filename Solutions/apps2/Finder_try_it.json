@@ -142,7 +142,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 4150f1ff6f995e72 2014-05-22 16:47:06 -0700"
+                "commit 0c871dccb2a12bee 2014-06-02 13:21:47 -0700"
             ]
         }
     }, {
@@ -152,22 +152,22 @@
             "parentDiv": "contentDiv",
             "colorTable": [{
                 "theme": "NeutralGrays",
-                "colors": ["#6e6e6e", "#fff", "#464646", "#b4b4b4"]
+                "colors": ["#969696", "#fff", "#464646", "#b4b4b4"]
             }, {
                 "theme": "EarthBrowns",
-                "colors": ["#7b4f1c", "#fff", "#523b20", "#b4b4b4"]
+                "colors": ["#be9969", "#fff", "#523b20", "#b4b4b4"]
             }, {
                 "theme": "SeaBlues",
-                "colors": ["#007ac2", "#fff", "#004575", "#b4b4b4"]
+                "colors": ["#00b9f2", "#fff", "#004575", "#b4b4b4"]
             }, {
                 "theme": "NaturalGreens",
-                "colors": ["#35ac46", "#fff", "#2a7f33", "#b4b4b4"]
+                "colors": ["#aad04b", "#fff", "#2a7f33", "#b4b4b4"]
             }, {
                 "theme": "WarmBrights",
-                "colors": ["#f36f20", "#fff", "#da4d1e", "#b4b4b4"]
+                "colors": ["#f89927", "#fff", "#da4d1e", "#b4b4b4"]
             }, {
                 "theme": "ScenicPurples",
-                "colors": ["#8f499c", "#fff", "#6b1978", "#b4b4b4"]
+                "colors": ["#b279b4", "#fff", "#6b1978", "#b4b4b4"]
             }]
         }
     }, {
@@ -291,10 +291,10 @@
             "author": "",
             "orientationButtonClass": "commandButton printDlogItem",
             "orientationButtonIconClass": "commandIcon",
-            "landscapeButtonIconUrl": "images/landscapeDoc.png",
+            "landscapeButtonIconJson": "[{'shape':{'type':'path','path':'m 31 27 0-18-5 0 0-5-25 0 0 23z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 31 9 27 4'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 28 13-25 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 28 15-25 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 13 17-10 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
             "landscapeButtonTooltip": "@tooltips.landscape",
             "landscapeServerSpec": "Letter ANSI A Landscape",
-            "portraitButtonIconUrl": "images/portraitDoc.png",
+            "portraitButtonIconJson": "[{'shape':{'type':'path','path':'m 5 1 18 0 0 5 5 0 0 25-23 0z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 23 1 5 5'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 9 19 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 16 19 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 13 10 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 11 19 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 18 15 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
             "portraitButtonTooltip": "@tooltips.portrait",
             "portraitServerSpec": "Letter ANSI A Portrait",
             "titleHint": null,
@@ -303,10 +303,11 @@
             "authorHint": null,
             "authorHintDefault": "@labels.author",
             "authorClass": "printDlogItem",
-            "printButtonIconUrl": "images/print.png",
+            "printButtonIconJson": "[{'shape':{'type':'path','path':'m 7 1c 6 0 12 0 19 0 0 3 0 6 0 9-6 0-12 0-19 0 0-3 0-6 0-9z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 19c 6 0 12 0 19 0 0 4 0 8 0 12-6 0-12 0-19 0 0-4 0-8 0-12z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'circle','cx':27,'cy':14,'r':1},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 6 10c-2 0-4-1-5 1 0 2 0 3 0 5 0 3 0 6 0 9 1 1 3 0 5 0l 0 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 26 10c 2 0 4-1 5 1 0 2 0 3 0 5 0 3 0 6 0 9-1 1-3 0-5 0l 0 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 22c 4 0 9 0 13 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 27c 4 0 9 0 13 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 24c 4 0 7 0 11 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
             "printButtonClass": "commandButton printDlogItem",
             "printButtonIconClass": "commandIcon",
             "printButtonTooltip": "@tooltips.print",
+            "iconColorizerId": "colorizer",
             "copyrightText": null,
             "dependencyId": "map",
             "trigger": "print",
@@ -321,7 +322,7 @@
             "publish": "launch/blank",
             "parentDiv": "contentFrame",
             "dependencyId": "map",
-            "trigger": "fetchPrint",
+            "trigger": "printingReady",
             "triggerPrintUrl": "printUrl",
             "publishPrintAvailable": "printAvailable",
             "publishPrintNotAvailable": "printNotAvailable",
@@ -337,6 +338,18 @@
             "horizOffset": -2,
             "vertOffset": [2, -2],
             "trigger": "help"
+        }
+    }, {
+        "classname": "js.LGSelfHidingMessageBox",
+        "config": {
+            "rootId": "printingNotificationMessageBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "helpMessageBox",
+            "content": "@messages.printingHasStarted",
+            "timeoutSeconds": 5,
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "trigger": "printing"
         }
     }, {
         "classname": "js.LGPublishEcho",
@@ -397,7 +410,8 @@
         "config": {
             "rootId": "search",
             "tooltip": "@tooltips.search",
-            "iconUrl": "images/search.png",
+            "iconJson": "[{'shape':{'type':'circle','cx':13,'cy':13,'r':10},'stroke':{'type':'stroke','color':{'r':255,'g':255,'b':255,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'line','x1':20,'y1':20,'x2':30,'y2':30},'stroke':{'type':'stroke','color':{'r':255,'g':255,'b':255,'a':0.25},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -409,7 +423,8 @@
         "config": {
             "rootId": "basemap",
             "tooltip": "@tooltips.basemap",
-            "iconUrl": "images/basemap.png",
+            "iconJson": "[{'shape':{'type':'path','path':'m 1 1c 4 0 8 0 13 0 0 4 0 8 0 13-4 0-8 0-13 0 0-4 0-8 0-13z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 3 5C 5 5 7 7 9 9 10 10 11 10 12 10'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 5 12C 5 10 5 7 6 6 8 6 9 4 9 3'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 9 12C 9 10 10 9 12 8'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 1 18c 4 0 8 0 13 0 0 4 0 8 0 13-4 0-8 0-13 0 0-4 0-8 0-13z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 3 28c 2 0 5-2 5-5 1-1 2-3 4-1'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 18 18c 4 0 8 0 13 0 0 4 0 8 0 13-4 0-8 0-13 0 0-4 0-8 0-13z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 20 22c 1 1 2 1 2 2-1-2 2-3 2-4'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 23 29c 1-2 1-4 2-7 1-2 3 0 3 2'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 18 1c 4 0 8 0 13 0 0 4 0 8 0 13-4 0-8 0-13 0 0-4 0-8 0-13z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 20 7c 2 2 6 0 6-2 0-1 1-1 1-2'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 26 12c 0-2 2-3 3-3'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -421,7 +436,8 @@
         "config": {
             "rootId": "share",
             "tooltip": "@tooltips.share",
-            "iconUrl": "images/share.png",
+            "iconJson": "[{'shape':{'type':'path','path':'M 16 2L 2 2 2 30 30 30 30 16'},'stroke':{'type':'stroke','style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 22 2L 30 2 30 10'},'stroke':{'type':'stroke','style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 30 2L 16 16'},'stroke':{'type':'stroke','style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -435,7 +451,7 @@
             "displayText": "@labels.email",
             "displayTextClass": "commandText",
             "tooltip": "@tooltips.shareViaEmail",
-            "iconUrl": "images/shareEmail.png",
+            "iconUrl": "images/shareEmail2.png",
             "parentDiv": "shareBox",
             "rootClass": "commandTextButton",
             "iconClass": "commandIcon",
@@ -448,7 +464,7 @@
             "displayText": "@labels.Facebook",
             "displayTextClass": "commandText",
             "tooltip": "@tooltips.shareViaFacebook",
-            "iconUrl": "images/shareFacebook.png",
+            "iconUrl": "images/shareFacebook2.png",
             "parentDiv": "shareBox",
             "rootClass": "commandTextButton",
             "iconClass": "commandIcon",
@@ -461,7 +477,7 @@
             "displayText": "@labels.Twitter",
             "displayTextClass": "commandText",
             "tooltip": "@tooltips.shareViaTwitter",
-            "iconUrl": "images/shareTwitter.png",
+            "iconUrl": "images/shareTwitter2.png",
             "parentDiv": "shareBox",
             "rootClass": "commandTextButton",
             "iconClass": "commandIcon",
@@ -472,8 +488,9 @@
         "config": {
             "rootId": "print",
             "tooltip": "@tooltips.print",
-            "iconUrl": "images/print.png",
-            "iconDisabledUrl": "images/printing.gif",
+            "iconJson": "[{'shape':{'type':'path','path':'m 7 1c 6 0 12 0 19 0 0 3 0 6 0 9-6 0-12 0-19 0 0-3 0-6 0-9z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 19c 6 0 12 0 19 0 0 4 0 8 0 12-6 0-12 0-19 0 0-4 0-8 0-12z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'circle','cx':27,'cy':14,'r':1},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 6 10c-2 0-4-1-5 1 0 2 0 3 0 5 0 3 0 6 0 9 1 1 3 0 5 0l 0 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 26 10c 2 0 4-1 5 1 0 2 0 3 0 5 0 3 0 6 0 9-1 1-3 0-5 0l 0 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 22c 4 0 9 0 13 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 27c 4 0 9 0 13 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 24c 4 0 7 0 11 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
+            "iconDisabledJson": "[{'shape':{'type':'path','path':'m 7 19c 6 0 12 0 19 0 0 4 0 8 0 12-6 0-12 0-19 0 0-4 0-8 0-12z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'circle','cx':27,'cy':14,'r':1},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 6 10c-2 0-4-1-5 1 0 2 0 3 0 5 0 3 0 6 0 9 1 1 3 0 5 0l 0 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 26 10c 2 0 4-1 5 1 0 2 0 3 0 5 0 3 0 6 0 9-1 1-3 0-5 0l 0 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 22c 4 0 9 0 13 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 27c 4 0 9 0 13 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 24c 4 0 7 0 11 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'circle','cx':16,'cy':9,'r':7},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 16 4 0 6'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 16 10 5 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -485,28 +502,12 @@
             "isEnabled": true
         }
     }, {
-        "classname": "js.LGCommandToggle",
-        "config": {
-            "rootId": "fetchPrint",
-            "tooltip": "@tooltips.fetchPrint",
-            "iconUrl": "images/doc.png",
-            "iconDisabledUrl": "images/docDisabled.png",
-            "parentDiv": "commandPanel",
-            "rootClass": "commandButton",
-            "iconClass": "commandIcon",
-            "publish": "fetchPrint",
-            "triggerVisible": "printAvailable",
-            "triggerInvisible": "printNotAvailable",
-            "triggerEnable": "printingReady",
-            "triggerDisable": "printing",
-            "isVisible": false
-        }
-    }, {
         "classname": "js.LGCommand",
         "config": {
             "rootId": "help",
             "tooltip": "@tooltips.help",
-            "iconUrl": "images/help.png",
+            "iconJson": "[{'shape':{'type':'path','path':'M 31 16C 31 24 24 32 15 31 8 31 1 24 1 17 1 10 5 4 11 2c 6-2 13 0 17 5 2 3 3 6 3 9z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 13 12c 0-3 4-4 6-2 2 2 0 4-1 6-1 1-2 2-1 4'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'circle','cx':17,'cy':23,'r':0.5},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",

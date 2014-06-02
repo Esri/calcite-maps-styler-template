@@ -159,7 +159,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 4150f1ff6f995e72 2014-05-22 16:47:06 -0700"
+                "commit 0c871dccb2a12bee 2014-06-02 13:21:47 -0700"
             ]
         }
     }, {
@@ -169,22 +169,22 @@
             "parentDiv": "contentDiv",
             "colorTable": [{
                 "theme": "NeutralGrays",
-                "colors": ["#6e6e6e", "#fff", "#464646", "#b4b4b4"]
+                "colors": ["#969696", "#fff", "#464646", "#b4b4b4"]
             }, {
                 "theme": "EarthBrowns",
-                "colors": ["#7b4f1c", "#fff", "#523b20", "#b4b4b4"]
+                "colors": ["#be9969", "#fff", "#523b20", "#b4b4b4"]
             }, {
                 "theme": "SeaBlues",
-                "colors": ["#007ac2", "#fff", "#004575", "#b4b4b4"]
+                "colors": ["#00b9f2", "#fff", "#004575", "#b4b4b4"]
             }, {
                 "theme": "NaturalGreens",
-                "colors": ["#35ac46", "#fff", "#2a7f33", "#b4b4b4"]
+                "colors": ["#aad04b", "#fff", "#2a7f33", "#b4b4b4"]
             }, {
                 "theme": "WarmBrights",
-                "colors": ["#f36f20", "#fff", "#da4d1e", "#b4b4b4"]
+                "colors": ["#f89927", "#fff", "#da4d1e", "#b4b4b4"]
             }, {
                 "theme": "ScenicPurples",
-                "colors": ["#8f499c", "#fff", "#6b1978", "#b4b4b4"]
+                "colors": ["#b279b4", "#fff", "#6b1978", "#b4b4b4"]
             }]
         }
     }, {
@@ -396,7 +396,8 @@
         "config": {
             "rootId": "search",
             "tooltip": "@tooltips.search",
-            "iconUrl": "images/search.png",
+            "iconJson": "[{'shape':{'type':'circle','cx':13,'cy':13,'r':10},'stroke':{'type':'stroke','color':{'r':255,'g':255,'b':255,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'line','x1':20,'y1':20,'x2':30,'y2':30},'stroke':{'type':'stroke','color':{'r':255,'g':255,'b':255,'a':0.25},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -408,7 +409,8 @@
         "config": {
             "rootId": "markup",
             "tooltip": "@tooltips.collect",
-            "iconUrl": "images/markup.png",
+            "iconJson": "[{'shape':{'type':'ellipse','cx':16,'cy':3,'rx':16,'ry':2},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 1 3C 5 9 10 15 14 22c 0 3 0 6 0 9'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 31 3C 27 9 22 15 18 22c 0 3 0 6 0 9'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 14 31c 1 0 3 0 4 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -420,7 +422,8 @@
         "config": {
             "rootId": "basemap",
             "tooltip": "@tooltips.basemap",
-            "iconUrl": "images/basemap.png",
+            "iconJson": "[{'shape':{'type':'path','path':'m 1 1c 4 0 8 0 13 0 0 4 0 8 0 13-4 0-8 0-13 0 0-4 0-8 0-13z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 3 5C 5 5 7 7 9 9 10 10 11 10 12 10'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 5 12C 5 10 5 7 6 6 8 6 9 4 9 3'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 9 12C 9 10 10 9 12 8'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 1 18c 4 0 8 0 13 0 0 4 0 8 0 13-4 0-8 0-13 0 0-4 0-8 0-13z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 3 28c 2 0 5-2 5-5 1-1 2-3 4-1'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 18 18c 4 0 8 0 13 0 0 4 0 8 0 13-4 0-8 0-13 0 0-4 0-8 0-13z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 20 22c 1 1 2 1 2 2-1-2 2-3 2-4'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 23 29c 1-2 1-4 2-7 1-2 3 0 3 2'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 18 1c 4 0 8 0 13 0 0 4 0 8 0 13-4 0-8 0-13 0 0-4 0-8 0-13z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 20 7c 2 2 6 0 6-2 0-1 1-1 1-2'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 26 12c 0-2 2-3 3-3'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -432,7 +435,8 @@
         "config": {
             "rootId": "share",
             "tooltip": "@tooltips.share",
-            "iconUrl": "images/share.png",
+            "iconJson": "[{'shape':{'type':'path','path':'M 16 2L 2 2 2 30 30 30 30 16'},'stroke':{'type':'stroke','style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 22 2L 30 2 30 10'},'stroke':{'type':'stroke','style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 30 2L 16 16'},'stroke':{'type':'stroke','style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
@@ -446,7 +450,7 @@
             "displayText": "@labels.email",
             "displayTextClass": "commandText",
             "tooltip": "@tooltips.shareViaEmail",
-            "iconUrl": "images/shareEmail.png",
+            "iconUrl": "images/shareEmail2.png",
             "parentDiv": "shareBox",
             "rootClass": "commandTextButton",
             "iconClass": "commandIcon",
@@ -459,7 +463,7 @@
             "displayText": "@labels.Facebook",
             "displayTextClass": "commandText",
             "tooltip": "@tooltips.shareViaFacebook",
-            "iconUrl": "images/shareFacebook.png",
+            "iconUrl": "images/shareFacebook2.png",
             "parentDiv": "shareBox",
             "rootClass": "commandTextButton",
             "iconClass": "commandIcon",
@@ -472,7 +476,7 @@
             "displayText": "@labels.Twitter",
             "displayTextClass": "commandText",
             "tooltip": "@tooltips.shareViaTwitter",
-            "iconUrl": "images/shareTwitter.png",
+            "iconUrl": "images/shareTwitter2.png",
             "parentDiv": "shareBox",
             "rootClass": "commandTextButton",
             "iconClass": "commandIcon",
@@ -483,7 +487,8 @@
         "config": {
             "rootId": "help",
             "tooltip": "@tooltips.help",
-            "iconUrl": "images/help.png",
+            "iconJson": "[{'shape':{'type':'path','path':'M 31 16C 31 24 24 32 15 31 8 31 1 24 1 17 1 10 5 4 11 2c 6-2 13 0 17 5 2 3 3 6 3 9z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 13 12c 0-3 4-4 6-2 2 2 0 4-1 6-1 1-2 2-1 4'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'circle','cx':17,'cy':23,'r':0.5},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
             "iconClass": "commandIcon",
