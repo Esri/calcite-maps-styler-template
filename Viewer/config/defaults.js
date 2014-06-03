@@ -50,7 +50,7 @@ define({
         {"name": "basemap", "enabled": true}, 
         {"name": "overview", "enabled": true},
         {"name": "measure", "enabled": true}, 
-        {"name": "edit", "enabled": true, "toolbar": true}, 
+        {"name": "edit", "enabled": true, "toolbar": false}, 
         {"name": "print", "enabled": true, "legend": false, "layouts":false, "format":"pdf"}, 
         {"name": "details", "enabled": true},
         {"name": "share", "enabled": true}
