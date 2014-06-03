@@ -18,9 +18,9 @@ define(["dojo/has"], function (has) {
 
     /*App capabilities*/
     has.add("search", function (g) {
-        var search = getTool("search", g.config);
+        var search = g.config.search || false;
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_search")){
+        if (g.config.hasOwnProperty("tool_search")) {
             search = g.config.tool_search;
         }
         return search;
