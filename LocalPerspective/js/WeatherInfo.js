@@ -171,15 +171,19 @@ define([
             }
                 
             // current
-            var temp = cur.temp_F;
+            var temp = cur["temp_"+this.config.weatherUnits];
             var code = cur.weatherCode;
             var w = this.weatherData[parseInt(code)];
             var rec = domConstruct.create("div", {
                class: "recWeather"
             }, content);
+            var nowStr = "now";
+            if (this.config && this.config.i18n) {
+               nowStr = this.config.i18n.days[nowStr];
+            }
             var recLeft = domConstruct.create("div", {
                class: "recLeft",
-               innerHTML: "NOW<br/><span class='num'>" + temp + "&deg;</span>"
+               innerHTML: nowStr.toUpperCase() + "<br/><span class='num'>" + temp + "&deg;</span>"
             }, rec);
             var recRight = domConstruct.create("div", {
                class: "recRight",
@@ -193,8 +197,8 @@ define([
          for (var i=0; i<weather.length; i++) {
             var cur = weather[i];
             var day = this.getDay(cur.date);
-            var tempMax = cur.tempMaxF;
-            var tempMin = cur.tempMinF;
+            var tempMax = cur["tempMax"+this.config.weatherUnits];
+            var tempMin = cur["tempMin"+this.config.weatherUnits];
             var code = cur.weatherCode;
             var w = this.weatherData[parseInt(code)];
             var rec = domConstruct.create("div", {
@@ -202,7 +206,7 @@ define([
             }, content);
             var recLeft = domConstruct.create("div", {
                class: "recLeft",
-               innerHTML: day + "<br/><span class='num'>" + tempMax + "&deg; - " + tempMin + "&deg;</span>"
+               innerHTML: day.toUpperCase() + "<br/><span class='num'>" + tempMax + "&deg; - " + tempMin + "&deg;</span>"
             }, rec);
             var recRight = domConstruct.create("div", {
                class: "recRight",
@@ -222,10 +226,13 @@ define([
       
       // get day
       getDay: function(dateString) {
-         var array = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+         var array = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
          var dtArray = dateString.split("-");
          var d = new Date(dtArray[0], dtArray[1]-1, dtArray[2]);
          var day = array[d.getDay()];
+         if (this.config && this.config.i18n) {
+            return this.config.i18n.days[day];
+         }
          return day;
       }
 		    

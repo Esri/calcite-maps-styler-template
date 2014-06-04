@@ -41,7 +41,7 @@ define([
         /**
         * create header panel
         *
-        * @param {string} dojo.configData.ApplicationSettings.applicationName Application name specified in configuration file
+        * @param {string} dojo.configData.values.applicationName Application name specified in configuration file
         *
         * @class
         * @name widgets/appHeader/appHeader
@@ -68,8 +68,8 @@ define([
             * @private
             * @memberOf widgets/appHeader/appHeader
             */
-            document.title = dojo.configData.ApplicationSettings.applicationName;
-            domAttr.set(this.applicationHeaderName, "innerHTML", dojo.configData.ApplicationSettings.applicationName);
+            document.title = dojo.configData.values.applicationName;
+            domAttr.set(this.applicationHeaderName, "innerHTML", dojo.configData.values.applicationName);
         },
 
         /**
@@ -99,19 +99,19 @@ define([
         */
         _loadApplicationHeaderIcon: function () {
             topic.publish("showProgressIndicator");
-            this._loadIcons("shortcut icon", dojo.configData.ApplicationSettings.applicationFavicon);
-            this._loadIcons("apple-touch-icon-precomposed", dojo.configData.ApplicationSettings.applicationIcon);
-            this._loadIcons("apple-touch-icon", dojo.configData.ApplicationSettings.applicationIcon);
+            this._loadIcons("shortcut icon", dojo.configData.values.applicationFavicon);
+            this._loadIcons("apple-touch-icon-precomposed", dojo.configData.values.applicationIcon);
+            this._loadIcons("apple-touch-icon", dojo.configData.values.applicationIcon);
             /**
             * applicationHeaderIcon contains application icon for header panel widgets
             * @member {img} applicationHeaderIcon
             * @private
             * @memberOf widgets/appHeader/appHeader
             */
-            if (dojo.configData.ApplicationSettings.applicationIcon.indexOf("http") === 0) {
-                domAttr.set(this.applicationHeaderIcon, "src", dojo.configData.ApplicationSettings.applicationIcon);
+            if (dojo.configData.values.applicationIcon.indexOf("http") === 0) {
+                domAttr.set(this.applicationHeaderIcon, "src", dojo.configData.values.applicationIcon);
             } else {
-                domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + dojo.configData.ApplicationSettings.applicationIcon);
+                domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + dojo.configData.values.applicationIcon);
             }
             this.own(on(this.applicationHeaderIcon, "click", lang.hitch(this, function () {
                 if (query(".esriCTitemDetails")[0]) {

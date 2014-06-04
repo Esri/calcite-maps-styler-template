@@ -89,7 +89,7 @@ define([
                             domClass.replace(query(".esriCTNoResults")[0], "displayNoneAll", "displayBlockAll");
                         }
                     }
-                    if (dojo.configData.ApplicationSettings.showTagCloud) {
+                    if (dojo.configData.values.showTagCloud) {
                         query(".esriCTPadding")[0].style.height = window.innerHeight - (domGeom.position(query(".sortByLabelMbl")[0]).h + domGeom.position(query(".esriCTCategoriesHeader")[0]).h + 40) + "px";
                     }
                     if (domClass.contains(query(".esriCTItemSearch")[0], "displayBlockAll")) {

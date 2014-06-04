@@ -97,7 +97,7 @@ define([
                         this._locateItems(this.autoResults, true);
                     }
                 }
-                if (dojo.configData.ApplicationSettings.enableAutoComplete) {
+                if (dojo.configData.values.enableAutoComplete) {
 
                     /**
                     * do not perform auto complete search if alphabets,
@@ -156,9 +156,9 @@ define([
 
 
             defObj = new Deferred();
-            dojo.queryString = this.txtItemSearch.value + ' AND group:("' + dojo.configData.ApplicationSettings.group + '")';
+            dojo.queryString = this.txtItemSearch.value + ' AND group:("' + dojo.configData.values.group + '")';
             queryString = dojo.queryString;
-            topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.ApplicationSettings.sortOrder.toLowerCase(), defObj);
+            topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
             defObj.then(function (data) {
                 var i;
 
@@ -204,8 +204,8 @@ define([
                 }
                 itemId = domAttr.get(this, "searchedItem");
                 defObj2 = new Deferred();
-                dojo.queryString = 'group:("' + dojo.configData.ApplicationSettings.group + '")' + ' AND (id: ("' + itemId + '"))';
-                topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.ApplicationSettings.sortOrder.toLowerCase(), defObj2);
+                dojo.queryString = 'group:("' + dojo.configData.values.group + '")' + ' AND (id: ("' + itemId + '"))';
+                topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj2);
                 defObj2.then(function (data) {
                     dojo.results = data.results;
                     topic.publish("createPods", data.results, true);
@@ -240,17 +240,17 @@ define([
                 }
             }
 
-            dojo.configData.ApplicationSettings.searchString = '';
-            dojo.configData.ApplicationSettings.searchType = '';
+            dojo.configData.values.searchString = '';
+            dojo.configData.values.searchType = '';
 
             if (flag) {
                 var defObj = new Deferred();
                 if (dojo.selectedTags !== "") {
-                    dojo.queryString = 'group:("' + dojo.configData.ApplicationSettings.group + '")' + ' AND (tags: ("' + dojo.selectedTags + '"))';
+                    dojo.queryString = 'group:("' + dojo.configData.values.group + '")' + ' AND (tags: ("' + dojo.selectedTags + '"))';
                 } else {
-                    dojo.queryString = 'group:("' + dojo.configData.ApplicationSettings.group + '")';
+                    dojo.queryString = 'group:("' + dojo.configData.values.group + '")';
                 }
-                topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.ApplicationSettings.sortOrder.toLowerCase(), defObj);
+                topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
                 defObj.then(function (data) {
                     if (data.total === 0) {
                         if (query(".esriCTInnerRightPanel")[0]) {
@@ -350,10 +350,10 @@ define([
             * @private
             * @memberOf widgets/locator/locator
             */
-            if (dojo.configData.ApplicationSettings.searchString) {
-                domAttr.set(this.txtItemSearch, "defaultItem", dojo.configData.ApplicationSettings.searchString);
+            if (dojo.configData.values.searchString) {
+                domAttr.set(this.txtItemSearch, "defaultItem", dojo.configData.values.searchString);
             } else {
-                domAttr.set(this.txtItemSearch, "defaultItem", dojo.configData.ApplicationSettings.itemSearchDefaultValue);
+                domAttr.set(this.txtItemSearch, "defaultItem", dojo.configData.values.itemSearchDefaultValue);
             }
             this.txtItemSearch.value = domAttr.get(this.txtItemSearch, "defaultItem");
         }

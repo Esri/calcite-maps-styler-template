@@ -15,8 +15,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/array", "dojo/_base/lang", "dojo/dom-class", "dojo/Deferred", "dojo/promise/all", "esri/arcgis/utils", "esri/urlUtils", "esri/request", "esri/config", "esri/lang", "esri/IdentityManager", "esri/tasks/GeometryService", "config/defaults", "application/OAuthHelper"], function (
-Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, urlUtils, esriRequest, esriConfig, esriLang, IdentityManager, GeometryService, defaults, OAuthHelper) {
+define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/array", "dojo/_base/lang", "dojo/dom-class", "dojo/Deferred", "dojo/promise/all", "esri/arcgis/utils", "esri/urlUtils", "esri/request", "esri/config", "esri/lang", "esri/IdentityManager", "esri/tasks/GeometryService", "config/defaults", "config/commonConfig", "application/OAuthHelper"], function (
+Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, urlUtils, esriRequest, esriConfig, esriLang, IdentityManager, GeometryService, defaults, commonConfig, OAuthHelper) {
     return declare([Evented], {
         config: {},
         orgConfig: {},
@@ -28,7 +28,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             // config will contain application and user defined info for the application such as i18n strings,
             // the web map id and application id, any url parameters and any application specific configuration
             // information.
-            this.config = defaults;
+            this.config = declare.safeMixin(defaults,commonConfig);
         },
         startup: function () {
             var deferred = this._init();
@@ -70,9 +70,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                 // get localization
                 i18n: this._getLocalization(),
                 // get application data
-                app: this._queryApplicationConfiguration(),
-                // common config file
-                common: this._getCommonConfig()
+                app: this._queryApplicationConfiguration()
             }).then(lang.hitch(this, function () {
                 // then execute these async
                 all({
@@ -98,19 +96,6 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                 }), deferred.reject);
             }), deferred.reject);
             // return promise
-            return deferred.promise;
-        },
-        _getCommonConfig: function () {
-            var deferred;
-            deferred = new Deferred();
-            if (this.config.commonConfig) {
-                require(["arcgis_templates/commonConfig"], lang.hitch(this, function (response) {
-                    this.commonConfig = response;
-                    deferred.resolve(true);
-                }));
-            } else {
-                deferred.resolve(true);
-            }
             return deferred.promise;
         },
         _createUrlParamsObject: function (items) {

@@ -391,6 +391,8 @@ html, body {
 	color: #ffffff;
 	line-height: 20px;
 	text-align: center;
+	overflow: hidden;
+	white-space:nowrap;
 }
 
 .pageCounter {
@@ -592,12 +594,12 @@ html, body {
 	left: 40px;
 	right: 0px;
 	top: 3px;
-	/*width: 80%;*/
 	height: 62px;
 	display: block;
 	font-size: 10px;
-	line-height: 12px;
+	line-height: 11px;
 	overflow: hidden;
+	white-space: nowrap;
 }
 
 .recDistance {

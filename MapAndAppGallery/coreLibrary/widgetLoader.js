@@ -44,7 +44,7 @@ define([
         startup: function () {
             /**
             * create an object with widgets specified in Header Widget Settings of configuration file
-            * @param {array} dojo.configData.AppHeaderWidgets Widgets specified in configuration file
+            * @param {array} dojo.appConfigData.AppHeaderWidgets Widgets specified in configuration file
             */
             this._applicationThemeLoader();
 
@@ -59,7 +59,7 @@ define([
         loadWidgets: function () {
             var widgets = {},
                 deferredArray = [];
-            array.forEach(dojo.configData.AppHeaderWidgets, function (widgetConfig) {
+            array.forEach(dojo.appConfigData.AppHeaderWidgets, function (widgetConfig) {
                 var deferred = new Deferred();
                 widgets[widgetConfig.WidgetPath] = null;
                 require([widgetConfig.WidgetPath], function (Widget) {
@@ -99,13 +99,13 @@ define([
             var def = new Deferred(), settings;
 
             settings = urlUtils.urlToObject(window.location.href);
-            lang.mixin(dojo.configData.ApplicationSettings, settings.query);
-            if (dojo.configData.ApplicationSettings.appid) {
-                arcgisUtils.getItem(dojo.configData.ApplicationSettings.appid).then(lang.hitch(this, function (response) {
+            lang.mixin(dojo.configData.values, settings.query);
+            if (dojo.configData.values.appid) {
+                arcgisUtils.getItem(dojo.configData.values.appid).then(lang.hitch(this, function (response) {
                     // check for false value strings
                     var appSettings = this.setFalseValues(response.itemData.values);
                     // set other config options from app id
-                    lang.mixin(dojo.configData.ApplicationSettings, appSettings);
+                    lang.mixin(dojo.configData.values, appSettings);
                     // callback function
                     this._applicationThemeLoader();
                     this.loadWidgets();
@@ -142,10 +142,10 @@ define([
 
         _applicationThemeLoader: function () {
             var rootNode = query("html")[0];
-            if (!dojo.configData.ApplicationSettings.theme) {
-                dojo.configData.ApplicationSettings.theme = "blueTheme";
+            if (!dojo.configData.values.theme) {
+                dojo.configData.values.theme = "blueTheme";
             }
-            domClass.add(rootNode, dojo.configData.ApplicationSettings.theme);
+            domClass.add(rootNode, dojo.configData.values.theme);
         }
 
     });

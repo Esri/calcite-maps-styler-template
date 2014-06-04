@@ -1,0 +1,7 @@
+/*In IE8 Legend and about won't be a clickable accordion. Instead they will always display open*/
+.ac-container input:checked + label:after{
+    background: none;  
+}
+.ac-container label{
+	cursor:default;
+}

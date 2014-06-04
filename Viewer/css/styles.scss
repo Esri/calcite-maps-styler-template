@@ -311,7 +311,6 @@ img{
 
 .bg {
     display: block;
-    @include transparent($default-theme, .80);
 }
 
 .rounded {

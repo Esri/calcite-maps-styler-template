@@ -214,6 +214,12 @@ define([
             if (this.config.proxyurl) {
                 esriConfig.defaults.io.proxyUrl = this.config.proxyurl;
                 esriConfig.defaults.io.alwaysUseProxy = false;
+
+                // Have the arcgisUrl go thru the proxy
+                urlUtils.addProxyRule({
+                    proxyUrl: this.config.proxyurl,
+                    urlPrefix: arcgisUtils.arcgisUrl
+                });
             }
         },
         _checkSignIn: function () {

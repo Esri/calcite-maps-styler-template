@@ -41,7 +41,7 @@ define([
             */
             this.domNode.title = nls.title.layoutBtnTitle;
             domAttr.set(this.layoutLabel, "innerHTML", nls.layoutText);
-            if (dojo.configData.ApplicationSettings.defaultLayout.toLowerCase() === "list") {
+            if (dojo.configData.values.defaultLayout.toLowerCase() === "list") {
                 domClass.add(this.layoutTitle, "icon-grid");
             } else {
                 domClass.add(this.layoutTitle, "icon-list");
