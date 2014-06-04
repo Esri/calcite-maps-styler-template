@@ -61,6 +61,7 @@ mkdir %BUILD_OUTPUT%\PublicGallery
 mkdir %BUILD_OUTPUT%\ServiceLookup
 mkdir %BUILD_OUTPUT%\InformationLookup
 mkdir %BUILD_OUTPUT%\SimpleMapViewer
+mkdir %BUILD_OUTPUT%\SimpleViewer
 mkdir %BUILD_OUTPUT%\SocialMedia
 mkdir %BUILD_OUTPUT%\Solutions
 mkdir %BUILD_OUTPUT%\StorytellingSwipe
