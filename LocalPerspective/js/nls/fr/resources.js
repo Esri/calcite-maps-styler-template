@@ -14,8 +14,18 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
-        map: {
-            error: "æ_Unable to create map_Â"
-        }
+define(( {
+   map : {
+      error : "Impossible de créer la carte"
+   },
+   days : {
+      now : "MAINTENANT",
+      sun : "DIMANCHE",
+      mon : "LUNDI",
+      tue : "MARDI",
+      wed : "MERCREDI",
+      thu : "JEUDI",
+      fri : "VENDREDI",
+      sat : "SAMEDI"
+   }
 }));
