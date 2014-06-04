@@ -510,9 +510,18 @@ font
 {
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 50%;
     display: inline-block;
     white-space: nowrap;
+}
+
+.esriCTGridItemTypeNoViews
+{
+    width: 100%;
+}
+
+.esriCTGridItemTypeViews
+{
+    width: 50%;
 }
 
 .esriCTNoResults
@@ -1021,7 +1030,7 @@ font
 .esriCTTabContainer
 {
     height: 100%;
-    padding: 0px 12px;
+    padding-left: 12px;
 }
 
 .esriCTTabBox
@@ -1034,7 +1043,7 @@ font
 
 .esriCTLegendContainer
 {
-    width: 97%;
+    width: 96.5%;
 }
 
 .esriMapGeoInfo
@@ -1072,7 +1081,7 @@ font
 {
     padding-top: 5px;
     float: left;
-    width: 182px;
+    width: 180px;
 }
 
 .esriCTSearchIconMap

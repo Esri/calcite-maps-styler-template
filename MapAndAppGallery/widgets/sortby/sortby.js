@@ -38,14 +38,14 @@ define([
 
         postCreate: function () {
             this.domNode.title = nls.title.sortByBtnTitle;
-            if (dojo.configData.ApplicationSettings.sortField === "modified") {
+            if (dojo.configData.values.sortField === "modified") {
                 domAttr.set(this.sortByLabel, "innerHTML", nls.sortByViewText);
             } else {
                 domAttr.set(this.sortByLabel, "innerHTML", nls.sortByDateText);
             }
             this.own(on(this.sortByLabel, "click", lang.hitch(this, function () {
                 topic.publish("showProgressIndicator");
-                if (dojo.sortBy === dojo.configData.ApplicationSettings.sortField) {
+                if (dojo.sortBy === dojo.configData.values.sortField) {
                     this._sortByDate(this.sortByLabel);
                 } else {
                     this._sortByViews(this.sortByLabel);
@@ -67,7 +67,7 @@ define([
         },
 
         _sortByViews: function (sortByLabel) {
-            dojo.sortBy = dojo.configData.ApplicationSettings.sortField;
+            dojo.sortBy = dojo.configData.values.sortField;
             this._sortPodOrder(dojo.sortBy, sortByLabel, nls.sortByDateText);
             domClass.remove(query(".esriCTListSelected")[0], "esriCTListSelected");
             domClass.add(query(".sortByViewMbl")[0], "esriCTListSelected");
@@ -75,7 +75,7 @@ define([
 
         _sortPodOrder: function (sortField, sortByLabel, text) {
             var defObj = new Deferred();
-            topic.publish("queryGroupItem", dojo.queryString, sortField, dojo.configData.ApplicationSettings.sortOrder.toLowerCase(), defObj);
+            topic.publish("queryGroupItem", dojo.queryString, sortField, dojo.configData.values.sortOrder.toLowerCase(), defObj);
             defObj.then(function (data) {
                 domAttr.set(sortByLabel, "innerHTML", text);
                 dojo.results = data.results;

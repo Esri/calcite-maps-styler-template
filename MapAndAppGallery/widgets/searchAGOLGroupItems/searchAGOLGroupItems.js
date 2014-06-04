@@ -47,7 +47,29 @@ define([
             // query to check access type of the group
             esriRequest({
                 // group rest URL
-                url: dojo.configData.ApplicationSettings.portalURL + '/sharing/rest/community/groups?q=' + dojo.configData.ApplicationSettings.group,
+                url: dojo.configData.values.portalURL + '/sharing/rest/portals/self',
+                content: {
+                    'f': 'json'
+                },
+                callbackParamName: 'callback',
+                load: lang.hitch(this, function (response) {
+                    dojo.locatorURL = response.helperServices.geocode[0].url;
+                    if (response.helperServices.geocode[0].suggest) {
+                        dojo.enableGeocodeSuggest = response.helperServices.geocode[0].suggest;
+                    } else {
+                        dojo.enableGeocodeSuggest = true;
+                    }
+                }),
+                error: function (response) {
+                    alert(response.message);
+                    topic.publish("hideProgressIndicator");
+                }
+            });
+
+            // query to check access type of the group
+            esriRequest({
+                // group rest URL
+                url: dojo.configData.values.portalURL + '/sharing/rest/community/groups?q=' + dojo.configData.values.group,
                 content: {
                     'f': 'json'
                 },
@@ -86,15 +108,15 @@ define([
             var def = new Deferred(), settings;
 
             settings = urlUtils.urlToObject(window.location.href);
-            lang.mixin(dojo.configData.ApplicationSettings, settings.query);
-            if (dojo.configData.ApplicationSettings.appid) {
-                arcgisUtils.getItem(dojo.configData.ApplicationSettings.appid).then(lang.hitch(this, function (response) {
+            lang.mixin(dojo.configData.values, settings.query);
+            if (dojo.configData.values.appid) {
+                arcgisUtils.getItem(dojo.configData.values.appid).then(lang.hitch(this, function (response) {
                     /**
                     * check for false value strings
                     */
                     var appSettings = this.setFalseValues(response.itemData.values);
                     // set other config options from app id
-                    lang.mixin(dojo.configData.ApplicationSettings, appSettings);
+                    lang.mixin(dojo.configData.values, appSettings);
                     def.resolve();
                     /**
                     * on error
@@ -141,7 +163,7 @@ define([
             /**
             * create portal
             */
-            this._portal = new portal.Portal(dojo.configData.ApplicationSettings.portalURL);
+            this._portal = new portal.Portal(dojo.configData.values.portalURL);
             /**
             * portal loaded
             */
@@ -160,7 +182,7 @@ define([
                 /**
                 * Settings
                 */
-                id_group: dojo.configData.ApplicationSettings.group
+                id_group: dojo.configData.values.group
             }).then(function (data) {
                 if (data) {
                     if (data.results.length > 0) {
@@ -196,8 +218,8 @@ define([
             /**
             * Set group description
             */
-            if (!dojo.configData.ApplicationSettings.groupDescription) {
-                dojo.configData.ApplicationSettings.groupDescription = groupInfo.description || "";
+            if (!dojo.configData.groupDescription) {
+                dojo.configData.groupDescription = groupInfo.description || "";
             }
             /**
             * Set group logo image
@@ -233,7 +255,7 @@ define([
             */
             esriRequest({
                 // group rest URL
-                url: dojo.configData.ApplicationSettings.portalURL + '/sharing/rest/community/groups/' + settings.id_group,
+                url: dojo.configData.values.portalURL + '/sharing/rest/community/groups/' + settings.id_group,
                 content: {
                     'f': settings.dataType
                 },
@@ -264,7 +286,7 @@ define([
             var params;
             if (!nextQuery) {
                 params = {
-                    q: queryString,
+                    q: queryString + '-type:\"Code Attachment\"',
                     num: 100, //should be in number format ex: 100
                     sortField: sortfields, //should be in string format
                     sortOrder: sortorder //should be in string format
@@ -326,8 +348,8 @@ define([
                     _self._portal.signIn().then(function (loggedInUser) {
                         topic.publish("showProgressIndicator");
                         if (loggedInUser) {
-                            if (!dojo.configData.ApplicationSettings.token) {
-                                dojo.configData.ApplicationSettings.token = loggedInUser.credential.token;
+                            if (!dojo.configData.values.token) {
+                                dojo.configData.values.token = loggedInUser.credential.token;
                             }
                             _self.queryGroup().then(lang.hitch(this, function () {
                                 var leftPanelObj = new LeftPanelCollection();
@@ -341,8 +363,8 @@ define([
                     });
                 } else {
                     _self._portal.signOut().then(function () {
-                        if (dojo.configData.ApplicationSettings.token) {
-                            dojo.configData.ApplicationSettings.token = null;
+                        if (dojo.configData.values.token) {
+                            dojo.configData.values.token = null;
                         }
                         domAttr.set(query(".signin")[0], "innerHTML", nls.signInText);
                         domClass.replace(query(".esriCTSignInIcon")[0], "icon-login", "icon-logout");
@@ -350,7 +372,7 @@ define([
                         /**
                         * query to check if the group has any public items to be displayed on sign out
                         */
-                        var queryString = 'group:("' + dojo.configData.ApplicationSettings.group + '")' + ' AND (access: ("' + "public" + '"))';
+                        var queryString = 'group:("' + dojo.configData.values.group + '")' + ' AND (access: ("' + "public" + '"))';
                         topic.publish("queryGroupItems", null, queryString);
                         def.resolve();
                     });
@@ -359,8 +381,8 @@ define([
                 _self._portal.signIn().then(function (loggedInUser) {
                     topic.publish("showProgressIndicator");
                     if (loggedInUser) {
-                        if (!dojo.configData.ApplicationSettings.token) {
-                            dojo.configData.ApplicationSettings.token = loggedInUser.credential.token;
+                        if (!dojo.configData.values.token) {
+                            dojo.configData.values.token = loggedInUser.credential.token;
                         }
                         _self.globalUser = loggedInUser;
                         def.resolve();

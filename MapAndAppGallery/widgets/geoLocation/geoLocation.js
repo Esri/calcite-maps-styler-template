@@ -61,7 +61,7 @@ define([
 
         _showCurrentLocation: function () {
             var mapPoint, self = this, currentBaseMap,
-                geometryServiceUrl = dojo.configData.ApplicationSettings.geometryService,
+                geometryServiceUrl = dojo.configData.values.geometryService,
                 geometryService = new GeometryService(geometryServiceUrl);
 
             /**
@@ -80,7 +80,7 @@ define([
                 * @param {object} newPoint Map point of device location in spatialReference of map
                 */
                 geometryService.project([mapPoint], self.map.spatialReference).then(function (newPoint) {
-                    currentBaseMap = self.map.getLayer(self.basemap);
+                    currentBaseMap = self.map.getLayer("defaultBasemap");
                     if (currentBaseMap.visible) {
                         if (!currentBaseMap.fullExtent.contains(newPoint[0])) {
                             alert(nls.errorMessages.invalidLocation);
@@ -88,7 +88,7 @@ define([
                         }
                     }
                     mapPoint = newPoint[0];
-                    self.map.centerAndZoom(mapPoint, dojo.configData.ApplicationSettings.zoomLevel);
+                    self.map.centerAndZoom(mapPoint, dojo.configData.values.zoomLevel);
                     self._addGraphic(mapPoint);
                 }, function (error) {
                     alert(nls.errorMessages.invalidProjection);
@@ -106,12 +106,12 @@ define([
         _addGraphic: function (mapPoint) {
             var geoLocationPushpin, locatorMarkupSymbol, graphic;
 
-            if (dojo.configData.ApplicationSettings.defaultLocatorSymbol.indexOf("http") === 0) {
-                geoLocationPushpin = dojo.configData.ApplicationSettings.defaultLocatorSymbol;
+            if (dojo.configData.values.defaultLocatorSymbol.indexOf("http") === 0) {
+                geoLocationPushpin = dojo.configData.values.defaultLocatorSymbol;
             } else {
-                geoLocationPushpin = dojoConfig.baseURL + dojo.configData.ApplicationSettings.defaultLocatorSymbol;
+                geoLocationPushpin = dojoConfig.baseURL + dojo.configData.values.defaultLocatorSymbol;
             }
-            locatorMarkupSymbol = new PictureMarkerSymbol(geoLocationPushpin, dojo.configData.ApplicationSettings.markupSymbolWidth, dojo.configData.ApplicationSettings.markupSymbolHeight);
+            locatorMarkupSymbol = new PictureMarkerSymbol(geoLocationPushpin, dojo.configData.values.markupSymbolWidth, dojo.configData.values.markupSymbolHeight);
             graphic = new Graphic(mapPoint, locatorMarkupSymbol, null, null);
             this.map.getLayer("esriGraphicsLayerMapSettings").clear();
             this.map.getLayer("esriGraphicsLayerMapSettings").add(graphic);

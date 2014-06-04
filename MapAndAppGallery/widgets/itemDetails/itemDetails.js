@@ -29,6 +29,7 @@ define([
     "dojo/dom-class",
     "dojo/on",
     "dojo/Deferred",
+    "dojo/DeferredList",
     "dojo/number",
     "dojo/topic",
     "esri/arcgis/utils",
@@ -45,9 +46,11 @@ define([
     "dojo/dom-style",
     "dojo/dom-geometry",
     "esri/request",
+    "esri/arcgis/utils",
     "esri/dijit/OverviewMap",
+    "esri/dijit/BasemapGallery",
     "./itemDetailsHelper"
-], function (declare, domConstruct, lang, array, domAttr, dom, template, nls, query, domClass, on, Deferred, number, topic, utils, Legend, Map, GeoLocation, BasemapGallery, ArcGISImageServiceLayer, ImageServiceParameters, Locator, string, GraphicsLayer, HomeButton, domStyle, domGeom, esriRequest, OverviewMap, itemDetailsHelper) {
+], function (declare, domConstruct, lang, array, domAttr, dom, template, nls, query, domClass, on, Deferred, DeferredList, number, topic, utils, Legend, Map, GeoLocation, BasemapGallery, ArcGISImageServiceLayer, ImageServiceParameters, Locator, string, GraphicsLayer, HomeButton, domStyle, domGeom, esriRequest, esriUtils, OverviewMap, ArcGISBasemapGallery, itemDetailsHelper) {
 
     return declare([itemDetailsHelper], {
         templateString: template,
@@ -64,22 +67,35 @@ define([
         *@name  widgets/itemDetails/itemDetails
         */
         startup: function () {
+            var basemapDeferred, applicationHeaderDiv;
             domClass.add(query(".esriCTGalleryContent")[0], "displayNoneAll");
             domClass.replace(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer", "esriCTCursorDefault");
-            var applicationHeaderDiv = dom.byId("esriCTParentDivContainer");
+            applicationHeaderDiv = dom.byId("esriCTParentDivContainer");
             domClass.replace(query(".esriCTMenuTabRight")[0], "displayNoneAll", "displayBlockAll");
             this.itemIcon.src = this.data.thumbnailUrl;
             domConstruct.place(this.itemDetailsLeftPanel, applicationHeaderDiv);
             domAttr.set(this.itemTitle, "innerHTML", this.data.title || "");
 
             domClass.add(query(".esriCTMenuTab")[0], "esriCTHeaderClick esriCTCursorPointer");
-
-            this._createMapLayers(this.data);
+            if (!dojo.configData.values.baseMapLayers) {
+                basemapDeferred = new Deferred();
+                this._fetchBasemapCollection(basemapDeferred);
+                basemapDeferred.then(lang.hitch(this, function (baseMapLayers) {
+                    if (baseMapLayers.length === 0) {
+                        alert(nls.errorMessages.noFullScreenSupport);
+                        return;
+                    }
+                    dojo.configData.values.baseMapLayers = baseMapLayers;
+                    this._createMapLayers(this.data);
+                }));
+            } else {
+                this._createMapLayers(this.data);
+            }
 
             this.own(on(query(".esriCTFullScreen")[0], "click", lang.hitch(this, function () {
                 this._toggleFullScreen();
             })));
-            domAttr.set(this.txtAddressSearch, "defaultAddress", dojo.configData.ApplicationSettings.locatorDefaultAddress);
+            domAttr.set(this.txtAddressSearch, "defaultAddress", dojo.configData.values.locatorDefaultAddress);
             domAttr.set(this.txtAddressSearch, "value", domAttr.get(this.txtAddressSearch, "defaultAddress"));
             this.own(on(this.divLegendLayer, "click", lang.hitch(this, function () {
                 this._slideLegendsPanel();
@@ -116,35 +132,201 @@ define([
             })));
 
             on(window, "resize", lang.hitch(this, function () {
-                if (query(".esriCTLegendContainer")[0]) {
-                    var legendContainerHeight, infoLegendContainerHeight;
-                    legendContainerHeight = dojo.window.getBox().h - (domGeom.position(query(".esriCTRightControlPanel")[0]).h + domGeom.position(query(".esriCTTabList")[0]).h + 90) + "px";
-                    infoLegendContainerHeight = dojo.window.getBox().h - (domGeom.position(query(".labelLegendTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelTopMap")[0]).h + 100) + "px";
-                    if (query(".esriMapGeoInfo")[0]) {
-                        if (domStyle.get(query(".esriMapGeoInfo")[0], "display") === "block") {
-                            domStyle.set(query(".esriCTLegendContainer")[0], "height", legendContainerHeight);
-                        } else {
-                            domStyle.set(query(".esriCTLegendContainer")[0], "height", infoLegendContainerHeight);
-                        }
-                    } else if (query(".esriCTBackToMapBtn")[0]) {
-                        if (domStyle.get(query(".esriCTBackToMapBtn")[0], "display") === "block") {
-                            domStyle.set(query(".esriCTLegendContainer")[0], "height", legendContainerHeight);
-                        } else {
-                            domStyle.set(query(".esriCTLegendContainer")[0], "height", infoLegendContainerHeight);
+                setTimeout(lang.hitch(this, function () {
+                    if (query(".esriCTLegendContainer")[0]) {
+                        var legendContainerHeight, infoLegendContainerHeight;
+                        legendContainerHeight = dojo.window.getBox().h - (domGeom.position(query(".esriCTRightControlPanel")[0]).h + 70) + "px";
+                        infoLegendContainerHeight = dojo.window.getBox().h - (domGeom.position(query(".labelLegendTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelTopMap")[0]).h + 90) + "px";
+                        if (query(".esriMapGeoInfo")[0]) {
+                            if (domStyle.get(query(".esriMapGeoInfo")[0], "display") === "block") {
+                                domStyle.set(query(".esriCTLegendContainer")[0], "height", legendContainerHeight);
+                            } else {
+                                domStyle.set(query(".esriCTLegendContainer")[0], "height", infoLegendContainerHeight);
+                            }
+                        } else if (query(".esriCTBackToMapBtn")[0]) {
+                            if (domStyle.get(query(".esriCTBackToMapBtn")[0], "display") === "block") {
+                                domStyle.set(query(".esriCTLegendContainer")[0], "height", legendContainerHeight);
+                            } else {
+                                domStyle.set(query(".esriCTLegendContainer")[0], "height", infoLegendContainerHeight);
+                            }
                         }
                     }
-                }
+                }), 100);
             }));
             /**
             * if showMapSearch flag is set to true in config file then show textbox for map search or hide the textbox
             */
-            if (dojo.configData.ApplicationSettings.showMapSearch) {
+            if (dojo.configData.values.showMapSearch) {
                 this.attachLocatorEvents();
             } else {
                 domStyle.set(query(".esriCTMapInput")[0], "display", "none");
             }
         },
 
+        _fetchBasemapCollection: function (basemapDeferred) {
+            var dListResult, groupUrl, searchUrl, webmapRequest, groupRequest, deferred, agolBasemapsCollection, thumbnailSrc, baseMapArray = [], deferredArray = [], self = this;
+            //If group owner & title are configured, create request to fetch the group id
+            if (dojo.configData.values.basemapGroupTitle && dojo.configData.values.basemapGroupOwner) {
+                groupUrl = dojo.configData.values.portalAPIURL + "community/groups?q=title:\"" + dojo.configData.values.basemapGroupTitle + "\" AND owner:" + dojo.configData.values.basemapGroupOwner + "&f=json";
+                groupRequest = esriRequest({
+                    url: groupUrl,
+                    callbackParamName: "callback"
+                });
+                groupRequest.then(function (groupInfo) {
+                    if (groupInfo.results.length === 0) {
+                        alert(nls.errorMessages.invalidBasemapQuery);
+                        return;
+                    }
+                    //Create request using group id to fetch all the items from that group
+                    searchUrl = dojo.configData.values.portalAPIURL + 'search?q=group:' + groupInfo.results[0].id + "&sortField=name&sortOrder=desc&num=50&f=json";
+                    webmapRequest = esriRequest({
+                        url: searchUrl,
+                        callbackParamName: "callback"
+                    });
+                    webmapRequest.then(function (groupInfo) {
+                        //Loop for each item in the group
+                        array.forEach(groupInfo.results, lang.hitch(this, function (info, index) {
+                            //If type is "Map Service", create the object and push it into "baseMapArray"
+                            if (info.type === "Map Service") {
+                                thumbnailSrc = (groupInfo.results[index].thumbnail === null) ? dojo.configData.values.noThumbnail : dojo.configData.values.portalAPIURL + "content/items/" + info.id + "/info/" + info.thumbnail;
+                                baseMapArray.push({
+                                    ThumbnailSource: thumbnailSrc,
+                                    Name: info.title,
+                                    MapURL: info.url
+                                });
+                                //If type is "Web Map", create requests to fetch all the items of the webmap (asynchronous request)
+                            } else if (info.type === "Web Map") {
+                                var mapDeferred = esriUtils.getItem(info.id);
+                                mapDeferred.then(lang.hitch(this, function () {
+                                    deferred = new Deferred();
+                                    deferred.resolve();
+                                }));
+                                deferredArray.push(mapDeferred);
+                            }
+                        }));
+                        dListResult = new DeferredList(deferredArray);
+                        dListResult.then(function (res) {
+                            //If result of webmaps are empty
+                            if (res.length === 0) {
+                                basemapDeferred.resolve(baseMapArray);
+                                return;
+                            }
+                            //Else for each items in the webmap, create the object and push it into "baseMapArray"
+                            array.forEach(res, function (data, innerIdx) {
+                                if (innerIdx === 0) {
+                                    self._storeUniqueBasemap(data[1], baseMapArray);
+                                } else {
+                                    self._filterRedundantBasemap(data[1], baseMapArray);
+                                }
+                                /*From second item onwards, first check if that item is already present in the "baseMapArray",
+                                then escape it, else push it into "baseMapArray" */
+
+                            });
+                            basemapDeferred.resolve(baseMapArray);
+                        });
+                    }, function (err) {
+                        alert(err.message);
+                    });
+                }, function (err) {
+                    alert(err.message);
+                });
+            } else {
+                //If group owner & title are not configured, fetch the basemap collections from AGOL using BasemapGallery widget
+                agolBasemapsCollection = new ArcGISBasemapGallery({
+                    showArcGISBasemaps: true
+                });
+                dojo.connect(agolBasemapsCollection, "onLoad", function () {
+                    //onLoad, loop through each basemaps in the basemap gallery and push it into "baseMapArray"
+                    deferred = new Deferred();
+                    self._fetchBasemapFromGallery(agolBasemapsCollection, baseMapArray, deferred);
+                    deferred.then(function () {
+                        basemapDeferred.resolve(baseMapArray);
+                    });
+
+                });
+            }
+        },
+        //If basemap layer is already present in the "baseMapArray", skip it
+        _filterRedundantBasemap: function (bmLayers, baseMapArray) {
+            var i, j, pushWebmap = false;
+            for (i = 0; i < baseMapArray.length; i++) {
+                for (j = 0; j < bmLayers.itemData.baseMap.baseMapLayers.length; j++) {
+                    if (bmLayers.itemData.baseMap.baseMapLayers[j] !== baseMapArray[i]) {
+                        pushWebmap = true;
+                    } else {
+                        pushWebmap = false;
+                    }
+                }
+            }
+            if (pushWebmap) {
+                this._storeUniqueBasemap(bmLayers, baseMapArray);
+            }
+        },
+
+        _storeUniqueBasemap: function (bmLayers, baseMapArray) {
+            var basemapLayersArray = [], thumbnailSrc;
+            //If array contains only single layer object, push it into "baseMapArray"
+            if (bmLayers.itemData.baseMap.baseMapLayers.length === 1) {
+                if (bmLayers.itemData.baseMap.baseMapLayers[0].url) {
+                    thumbnailSrc = (bmLayers.item.thumbnail === null) ? dojo.configData.values.noThumbnail : dojo.configData.values.portalAPIURL + "content/items/" + bmLayers.item.id + "/info/" + bmLayers.item.thumbnail;
+                    baseMapArray.push({
+                        ThumbnailSource: thumbnailSrc,
+                        Name: bmLayers.itemData.baseMap.title,
+                        MapURL: bmLayers.itemData.baseMap.baseMapLayers[0].url
+                    });
+                }
+            } else {
+                array.forEach(bmLayers.itemData.baseMap.baseMapLayers, lang.hitch(this, function (basemapLayers) {
+                    thumbnailSrc = (bmLayers.item.thumbnail === null) ? dojo.configData.values.noThumbnail : dojo.configData.values.portalAPIURL + "content/items/" + bmLayers.item.id + "/info/" + bmLayers.item.thumbnail;
+                    basemapLayersArray.push({
+                        ThumbnailSource: thumbnailSrc,
+                        Name: bmLayers.itemData.baseMap.title,
+                        MapURL: basemapLayers.url
+                    });
+                }));
+                baseMapArray.push(basemapLayersArray);
+            }
+            /*If array contains more than one layer object, loop through each layer, create object for each one of them
+            and push it into "basemapLayersArray", finally push "basemapLayersArray" into "baseMapArray" */
+
+        },
+
+        _fetchBasemapFromGallery: function (agolBasemapsCollection, baseMapArray, basemapDeferred) {
+            var deferred, dListResult, deferredArray = [];
+            array.forEach(agolBasemapsCollection.basemaps, lang.hitch(this, function (basemap) {
+                var basemapRequest, basemapLayersArray = [];
+                basemapRequest = basemap.getLayers();
+                basemapRequest.then(function () {
+                    //If array contains only single layer object, push it into "baseMapArray"
+                    if (basemap.layers.length === 1) {
+                        baseMapArray.push({
+                            ThumbnailSource: basemap.thumbnailUrl,
+                            Name: basemap.title,
+                            MapURL: basemap.layers[0].url
+                        });
+                    } else {
+                        array.forEach(basemap.layers, lang.hitch(this, function (basemapLayers) {
+                            basemapLayersArray.push({
+                                ThumbnailSource: basemap.thumbnailUrl,
+                                Name: basemap.title,
+                                MapURL: basemapLayers.url
+                            });
+                        }));
+                        baseMapArray.push(basemapLayersArray);
+                    }
+                    /*If array contains more than one layer object, loop through each layer, create object for each one of them
+                    and push it into "basemapLayersArray", finally push "basemapLayersArray" into "baseMapArray" */
+
+                    deferred = new Deferred();
+                    deferred.resolve();
+                });
+                deferredArray.push(basemapRequest);
+                dListResult = new DeferredList(deferredArray);
+                dListResult.then(function (res) {
+                    basemapDeferred.resolve(baseMapArray);
+                });
+            }));
+        },
         /**
         * Add and remove classes on switching tabs in tab container
         * @memberOf widgets/itemDetails/itemDetails
@@ -295,14 +477,17 @@ define([
         * @memberOf widgets/itemDetails/itemDetails
         */
         createLegend: function (layerObj, itemMap, legendDiv) {
+            var legendContainerHeight, infoLegendContainerHeight, legendDijit;
+            legendContainerHeight = dojo.window.getBox().h - (domGeom.position(query(".esriCTRightControlPanel")[0]).h + 70) + "px";
+            infoLegendContainerHeight = dojo.window.getBox().h - (domGeom.position(query(".labelLegendTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelTopMap")[0]).h + 90) + "px";
             if (query(".esriMapGeoInfo")[0]) {
                 if (domStyle.get(query(".esriMapGeoInfo")[0], "display") === "block") {
-                    query(".esriCTLegendContainer")[0].style.height = dojo.window.getBox().h - (domGeom.position(query(".esriCTRightControlPanel")[0]).h + domGeom.position(query(".esriCTTabList")[0]).h + 90) + "px";
+                    domStyle.set(query(".esriCTLegendContainer")[0], "height", legendContainerHeight);
                 } else {
-                    query(".esriCTLegendContainer")[0].style.height = dojo.window.getBox().h - (domGeom.position(query(".labelLegendTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelTopMap")[0]).h + 100) + "px";
+                    domStyle.set(query(".esriCTLegendContainer")[0], "height", infoLegendContainerHeight);
                 }
             }
-            var legendDijit = new Legend({
+            legendDijit = new Legend({
                 map: itemMap,
                 layerInfos: layerObj
             }, legendDiv);
@@ -318,11 +503,11 @@ define([
             var _self = this;
             utils.createMap(mapId, this.itemMap, {
                 mapOptions: {
-                    showAttribution: dojo.configData.ApplicationSettings.showAttribution,
+                    showAttribution: dojo.configData.values.showAttribution,
                     slider: true
                 }
             }).then(function (response) {
-                var i, layerInfo, graphicsLayer, home, geoLocation;
+                var i, layerInfo, graphicsLayer, home, geoLocation, basemapGallery;
 
                 layerInfo = utils.getLegendLayers(response);
                 _self.map = response.map;
@@ -334,7 +519,14 @@ define([
                 home = _self._addHomeButton();
                 domConstruct.place(home.domNode, query(".esriSimpleSliderIncrementButton")[0], "after");
                 home.startup();
-                if (dojo.configData.ApplicationSettings.showOverviewMap) {
+
+                if (dojo.configData.values.showBasemapGallery) {
+                    basemapGallery = new BasemapGallery({
+                        map: _self.map
+                    }, domConstruct.create("div", {}, null));
+                    basemapGallery.startup();
+                }
+                if (dojo.configData.values.showOverviewMap) {
                     //add overview map
                     _self._addOverviewMap(_self.map);
                 }
@@ -361,40 +553,42 @@ define([
         * @memberOf widgets/itemDetails/itemDetails
         */
         addLayerToMap: function (mapId, url, title, type, layers) {
-            var home, baseMapLayers, layer, basemapGallery;
+            var home, layer;
 
             topic.publish("showProgressIndicator");
             this.map = new Map(this.itemMap, {
                 zoom: 2,
-                showAttribution: dojo.configData.ApplicationSettings.showAttribution,
+                showAttribution: dojo.configData.values.showAttribution,
                 autoResize: true
             });
             home = this._addHomeButton();
-            /** if showBasemapGallery flag is set to true in config file
-            */
-            if (dojo.configData.ApplicationSettings.showBasemapGallery) {
-                /**add basemap widget
-                */
-                basemapGallery = new BasemapGallery({
-                    map: this.map
-                }, domConstruct.create("div", {}, null));
-                basemapGallery.startup();
+
+            if (dojo.configData.values.baseMapLayers[0].length > 1) {
+                array.forEach(dojo.configData.values.baseMapLayers[0], lang.hitch(this, function (basemapLayer, index) {
+                    layer = new esri.layers.ArcGISTiledMapServiceLayer(basemapLayer.MapURL, { id: "defaultBasemap" + index, visible: true });
+                    this.map.addLayer(layer);
+                }));
             } else {
-                /**add basemap layer
-                */
-                baseMapLayers = dojo.configData.BaseMapLayers;
-                layer = new esri.layers.ArcGISTiledMapServiceLayer(baseMapLayers[0].MapURL, { id: baseMapLayers[0].Key, visible: true });
+                layer = new esri.layers.ArcGISTiledMapServiceLayer(dojo.configData.values.baseMapLayers[0].MapURL, { id: "defaultBasemap", visible: true });
                 this.map.addLayer(layer);
             }
-            if (dojo.configData.ApplicationSettings.customLogoUrl && lang.trim(dojo.configData.ApplicationSettings.customLogoUrl).length !== 0) {
-                domConstruct.create("img", { "src": dojoConfig.baseURL + dojo.configData.ApplicationSettings.customLogoUrl, "class": "esriCTMapLogo" }, this.itemMap);
+
+            if (dojo.configData.values.customLogoUrl && lang.trim(dojo.configData.values.customLogoUrl).length !== 0) {
+                domConstruct.create("img", { "src": dojoConfig.baseURL + dojo.configData.values.customLogoUrl, "class": "esriCTMapLogo" }, this.itemMap);
             }
             this.map.on("load", lang.hitch(this, function () {
-                var i, graphicsLayer, geolocation, layerInfo = [], layerURL, j, flag;
-
+                var graphicsLayer, geolocation, layerInfo = [], layerURL, j, flag, basemapGallery;
+                /** if showBasemapGallery flag is set to true in config file
+                */
+                if (dojo.configData.values.showBasemapGallery) {
+                    basemapGallery = new BasemapGallery({
+                        map: this.map
+                    }, domConstruct.create("div", {}, null));
+                    basemapGallery.startup();
+                }
                 domConstruct.place(home.domNode, query(".esriSimpleSliderIncrementButton")[0], "after");
                 home.startup();
-                if (dojo.configData.ApplicationSettings.showOverviewMap) {
+                if (dojo.configData.values.showOverviewMap) {
                     /**add overview map
                     */
                     this._addOverviewMap(this.map);
@@ -404,16 +598,9 @@ define([
                 graphicsLayer = new GraphicsLayer();
                 graphicsLayer.id = this.tempGraphicsLayerId;
                 this.map.addLayer(graphicsLayer);
-                for (i in this.map._layers) {
-                    if (this.map._layers.hasOwnProperty(i)) {
-                        if (this.map._layers[i].visibleLayers) {
-                            this.basemapLayer = this.map._layers[i].id;
-                        }
-                    }
-                }
+
                 geolocation = new GeoLocation({
                     map: this.map,
-                    basemap: this.basemapLayer,
                     graphicsLayer: graphicsLayer
                 });
                 geolocation.startup();
@@ -698,7 +885,7 @@ define([
                 load: function (data) {
                     var geometryService, layerExtent;
 
-                    geometryService = new esri.tasks.GeometryService(dojo.configData.ApplicationSettings.geometryService);
+                    geometryService = new esri.tasks.GeometryService(dojo.configData.values.geometryService);
                     if (type) {
                         layerExtent = _self._createExtent(data.fullExtent);
                     } else {

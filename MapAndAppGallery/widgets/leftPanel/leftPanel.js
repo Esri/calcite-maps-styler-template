@@ -118,7 +118,7 @@ define([
         generateTagCloud: function (tagsCollection) {
             var fontSizeArray, tagCloudTags;
 
-            fontSizeArray = this._generateFontSize(dojo.configData.ApplicationSettings.tagCloudFontMinValue, dojo.configData.ApplicationSettings.tagCloudFontMaxValue, tagsCollection.length);
+            fontSizeArray = this._generateFontSize(dojo.configData.values.tagCloudFontMinValue, dojo.configData.values.tagCloudFontMaxValue, tagsCollection.length);
             tagCloudTags = this._mergeTags(tagsCollection, fontSizeArray);
             return tagCloudTags;
         },
@@ -187,7 +187,7 @@ define([
         nls: nls,
 
         startup: function () {
-            dojo.sortBy = dojo.configData.ApplicationSettings.sortField;
+            dojo.sortBy = dojo.configData.values.sortField;
             if (query(".esriCTSortText")[0]) {
                 if ((dojo.sortBy === "modified") && (query(".esriCTSortText")[0].innerHTML !== nls.sortByViewText)) {
                     domAttr.set(query(".esriCTSortText")[0], "innerHTML", nls.sortByViewText);
@@ -205,7 +205,7 @@ define([
             this._setGroupContent();
             this._expandGroupdescEvent(this.expandGroupDescription, this);
             this._queryGroupItems();
-            domAttr.set(this.leftPanelHeader, "innerHTML", dojo.configData.ApplicationSettings.applicationName);
+            domAttr.set(this.leftPanelHeader, "innerHTML", dojo.configData.values.applicationName);
             topic.subscribe("queryGroupItems", this._queryGroupItems);
         },
 
@@ -217,14 +217,14 @@ define([
             var _self = this, groupItems = [], defObj = new Deferred();
 
             if ((!nextQuery) && (!queryString)) {
-                dojo.queryString = 'group:("' + dojo.configData.ApplicationSettings.group + '")';
-                topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.ApplicationSettings.sortOrder.toLowerCase(), defObj);
+                dojo.queryString = 'group:("' + dojo.configData.values.group + '")';
+                topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
             } else if (!queryString) {
                 topic.publish("queryGroupItem", null, null, null, defObj, nextQuery);
             }
             if (queryString) {
                 dojo.queryString = queryString;
-                topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.ApplicationSettings.sortOrder.toLowerCase(), defObj);
+                topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
             }
 
             defObj.then(function (data) {
@@ -262,20 +262,20 @@ define([
 
             dojo.selectedTags = "";
             dojo.tagCloudArray = [];
-            if (dojo.configData.ApplicationSettings.showTagCloud) {
+            if (dojo.configData.values.showTagCloud) {
                 uniqueTags = new CollectUniqueTags();
                 tagsObj = uniqueTags.collectTags(results);
                 tagCloud = new TagCloudObj();
-                if (!dojo.configData.ApplicationSettings.tagCloudFontMinValue && !dojo.configData.ApplicationSettings.tagCloudFontMaxValue && dojo.configData.ApplicationSettings.tagCloudFontUnits) {
-                    dojo.configData.ApplicationSettings.tagCloudFontMinValue = 10;
-                    dojo.configData.ApplicationSettings.tagCloudFontMaxValue = 18;
-                    dojo.configData.ApplicationSettings.tagCloudFontUnits = "px";
+                if (!dojo.configData.values.tagCloudFontMinValue && !dojo.configData.values.tagCloudFontMaxValue && dojo.configData.values.tagCloudFontUnits) {
+                    dojo.configData.values.tagCloudFontMinValue = 10;
+                    dojo.configData.values.tagCloudFontMaxValue = 18;
+                    dojo.configData.values.tagCloudFontUnits = "px";
                 }
-                if (dojo.configData.ApplicationSettings.tagCloudFontMinValue > dojo.configData.ApplicationSettings.tagCloudFontMaxValue) {
+                if (dojo.configData.values.tagCloudFontMinValue > dojo.configData.values.tagCloudFontMaxValue) {
                     alert(nls.errorMessages.minfontSizeGreater);
                     return;
                 }
-                if (dojo.configData.ApplicationSettings.showTagCloud && tagsObj.groupItemsTagsdata) {
+                if (dojo.configData.values.showTagCloud && tagsObj.groupItemsTagsdata) {
                     domStyle.set(this.tagsCategoriesContent, "display", "block");
                     uniqueTags.setNodeValue(this.tagsCategories, nls.tagHeaderText);
 
@@ -284,22 +284,22 @@ define([
                 }
             }
             this._appendLeftPanel();
-            if (dojo.configData.ApplicationSettings.showTagCloud) {
+            if (dojo.configData.values.showTagCloud) {
                 tagContainerHeight = window.innerHeight - (domGeom.position(query(".esriCTCategoriesHeader")[0]).h + domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(this.groupPanel).h + 50) + "px";
                 domStyle.set(query(".esriCTPadding")[0], "height", tagContainerHeight);
             }
             defObj = new Deferred();
-            queryString = 'group:("' + dojo.configData.ApplicationSettings.group + '")';
+            queryString = 'group:("' + dojo.configData.values.group + '")';
             /**
             *if searchString exists in the config file, perform a default search with the specified string
             * @memberOf widgets/leftPanel/leftPanel
             */
-            if (dojo.configData.ApplicationSettings.searchString) {
+            if (dojo.configData.values.searchString) {
                 queryString += ' AND (';
-                queryString += ' title:' + dojo.configData.ApplicationSettings.searchString;
-                queryString += ' OR tags:' + dojo.configData.ApplicationSettings.searchString;
-                queryString += ' OR typeKeywords:' + dojo.configData.ApplicationSettings.searchString;
-                queryString += ' OR snippet:' + dojo.configData.ApplicationSettings.searchString;
+                queryString += ' title:' + dojo.configData.values.searchString;
+                queryString += ' OR tags:' + dojo.configData.values.searchString;
+                queryString += ' OR typeKeywords:' + dojo.configData.values.searchString;
+                queryString += ' OR snippet:' + dojo.configData.values.searchString;
                 queryString += ' ) ';
             }
 
@@ -307,13 +307,13 @@ define([
             * if searchType exists in the config file, perform a default type search with the specified string
             * @memberOf widgets/leftPanel/leftPanel
             */
-            if (dojo.configData.ApplicationSettings.searchType) {
-                queryString += ' AND type:' + dojo.configData.ApplicationSettings.searchType;
+            if (dojo.configData.values.searchType) {
+                queryString += ' AND type:' + dojo.configData.values.searchType;
             }
 
             dojo.queryString = queryString;
-            dojo.sortBy = dojo.configData.ApplicationSettings.sortField;
-            topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.ApplicationSettings.sortOrder.toLowerCase(), defObj);
+            dojo.sortBy = dojo.configData.values.sortField;
+            topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
             defObj.then(function (data) {
                 topic.publish("showProgressIndicator");
                 dojo.nextQuery = data.nextQueryParams;
@@ -335,7 +335,7 @@ define([
             for (i = 0; i < displayTags.length; i++) {
                 span = domConstruct.place(domConstruct.create('h3'), node);
                 domClass.add(span, "esriCTTagCloud");
-                domStyle.set(span, "fontSize", displayTags[i].fontSize + dojo.configData.ApplicationSettings.tagCloudFontUnits);
+                domStyle.set(span, "fontSize", displayTags[i].fontSize + dojo.configData.values.tagCloudFontUnits);
                 if (i !== (displayTags.length - 1)) {
                     domAttr.set(span, "innerHTML", displayTags[i].key + "  ");
                 } else {
@@ -400,8 +400,8 @@ define([
         */
         _queryRelatedTags: function (tagName) {
             var defObj = new Deferred();
-            dojo.queryString = 'group:("' + dojo.configData.ApplicationSettings.group + '")' + ' AND (tags: ("' + tagName + '"))';
-            topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.ApplicationSettings.sortOrder.toLowerCase(), defObj);
+            dojo.queryString = 'group:("' + dojo.configData.values.group + '")' + ' AND (tags: ("' + tagName + '"))';
+            topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
             defObj.then(lang.hitch(this, function (data) {
                 if (data.total === 0) {
                     this._createNoDataContainer();
@@ -465,8 +465,8 @@ define([
             if (dojo.configData.groupTitle) {
                 _self.setNodeText(_self.groupName, dojo.configData.groupTitle);
             }
-            if (dojo.configData.ApplicationSettings.groupDescription) {
-                _self.setNodeText(_self.groupDesc, dojo.configData.ApplicationSettings.groupDescription);
+            if (dojo.configData.groupDescription) {
+                _self.setNodeText(_self.groupDesc, dojo.configData.groupDescription);
                 if (query(_self.groupDesc).text().length > 400) {
                     domClass.add(_self.groupDesc, "esriCTLeftTextReadLess");
                     if (nls.expandGroupDescText) {
@@ -474,8 +474,8 @@ define([
                     }
                 }
             }
-            if (dojo.configData.ApplicationSettings.applicationName) {
-                _self.setNodeText(_self.groupDescPanelHeader, dojo.configData.ApplicationSettings.applicationName);
+            if (dojo.configData.values.applicationName) {
+                _self.setNodeText(_self.groupDescPanelHeader, dojo.configData.values.applicationName);
                 topic.publish("setGrpContent");
             }
         },
