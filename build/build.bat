@@ -105,6 +105,7 @@ xcopy %TEMPLATES_ROOT%\archive\LegendPavement                   %BUILD_OUTPUT%\L
 xcopy %TEMPLATES_ROOT%\archive\LegendSeaside                    %BUILD_OUTPUT%\Legend\seaside                       /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Legend                           %BUILD_OUTPUT%\Legend\main                          /E /Y
 xcopy %TEMPLATES_ROOT%\LocalPerspective                         %BUILD_OUTPUT%\LocalPerspective                     /E /Y
+xcopy %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\LocalPerspective\commonConfig.js     /E /Y
 xcopy %TEMPLATES_ROOT%\MapCarousel                              %BUILD_OUTPUT%\MapCarousel                          /E /Y
 xcopy %TEMPLATES_ROOT%\MapTour                                  %BUILD_OUTPUT%\MapTour                              /E /Y
 xcopy %TEMPLATES_ROOT%\archive\OnePane                          %BUILD_OUTPUT%\OnePane\main                         /E /Y
