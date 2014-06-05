@@ -22,7 +22,7 @@
         },
             {
                "type":"string",
-               "fieldName":"description",
+               "fieldName":"about",
                "label":"Description",
                "tooltip":"Enter content for the description panel",
                "stringFieldOption":"richtext"
