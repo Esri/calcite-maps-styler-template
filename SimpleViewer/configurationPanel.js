@@ -19,7 +19,15 @@
             "fieldName": "color",
             "tooltip": "Text color",
             "label": "Text Color:"
-        }]
+        },
+            {
+               "type":"string",
+               "fieldName":"description",
+               "label":"Description",
+               "tooltip":"Enter content for the description panel",
+               "stringFieldOption":"richtext"
+            }
+    ]
     },{
         "category": "Tools",
         "fields":[
