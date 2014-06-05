@@ -105,7 +105,6 @@ xcopy %TEMPLATES_ROOT%\archive\LegendPavement                   %BUILD_OUTPUT%\L
 xcopy %TEMPLATES_ROOT%\archive\LegendSeaside                    %BUILD_OUTPUT%\Legend\seaside                       /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Legend                           %BUILD_OUTPUT%\Legend\main                          /E /Y
 xcopy %TEMPLATES_ROOT%\LocalPerspective                         %BUILD_OUTPUT%\LocalPerspective                     /E /Y
-xcopy %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\LocalPerspective\config\commonConfig.js  /E /Y
 xcopy %TEMPLATES_ROOT%\MapCarousel                              %BUILD_OUTPUT%\MapCarousel                          /E /Y
 xcopy %TEMPLATES_ROOT%\MapTour                                  %BUILD_OUTPUT%\MapTour                              /E /Y
 xcopy %TEMPLATES_ROOT%\archive\OnePane                          %BUILD_OUTPUT%\OnePane\main                         /E /Y
@@ -131,7 +130,6 @@ xcopy %TEMPLATES_ROOT%\ServiceLookup                            %BUILD_OUTPUT%\S
 xcopy %TEMPLATES_ROOT%\ServiceLookup                            %BUILD_OUTPUT%\InformationLookup                    /E /Y
 xcopy %TEMPLATES_ROOT%\SimpleMapViewer                          %BUILD_OUTPUT%\SimpleMapViewer                      /E /Y
 xcopy %TEMPLATES_ROOT%\SimpleViewer                             %BUILD_OUTPUT%\SimpleViewer                         /E /Y
-xcopy %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\SimpleViewer\config\commonConfig.js         /E /Y
 xcopy %TEMPLATES_ROOT%\SocialMedia                              %BUILD_OUTPUT%\SocialMedia                          /E /Y
 xcopy %TEMPLATES_ROOT%\Solutions                                %BUILD_OUTPUT%\Solutions                            /E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingSwipe                        %BUILD_OUTPUT%\StorytellingSwipe                    /E /Y
@@ -149,15 +147,18 @@ xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\M
 xcopy %TEMPLATES_ROOT%\MapSeries\app\config\series-config.js    %BUILD_OUTPUT%\MapSeries\app\config.js*             /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\StorytellingBasic                    /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries\app\config\basic-config.js     %BUILD_OUTPUT%\StorytellingBasic\app\config.js*     /E /Y
-xcopy %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\bv_build\commonConfig.js             /E /Y
-xcopy %TEMPLATES_ROOT%\Viewer                             		  %BUILD_OUTPUT%\Viewer                               /E /Y
-xcopy %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\Viewer\config\commonConfig.js               /E /Y
+xcopy %TEMPLATES_ROOT%\Viewer                             		%BUILD_OUTPUT%\Viewer                               /E /Y
 xcopy %TEMPLATES_ROOT%\bv_build\src                             %BUILD_OUTPUT%\bv_build                             /E /Y
 
 
 REM Finally copy assorted files in the root directory
 copy /Y %TEMPLATES_ROOT%\*.*  %BUILD_OUTPUT%
 
+REM Copy the common config to the template config directory
+copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\Viewer\config\commonConfig.js        
+copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\bv_build\commonConfig.js             
+copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\SimpleViewer\config\commonConfig.js  
+copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\LocalPerspective\config\commonConfig.js  
 echo ########## BUILD END TIME: %date% - %time% ##########
 
 :END
