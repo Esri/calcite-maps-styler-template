@@ -95,16 +95,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
         // Create UI
         _createUI: function () {
 
-            //No tools are specified in the configuration so hide the panel and update the title area styles 
-            if (this.config.tools.length < 1) {
-                domConstruct.destroy("panelTools");
-                domStyle.set("panelContent", "display", "none");
-                domStyle.set("panelTitle", "border-bottom", "none");
-                domStyle.set("panelTop", "height", "52px");
-                this._updateTheme();
-                return;
-            }
-
             //Add tools to the toolbar. The tools are listed in the defaults.js file 
             var toolbar = new Toolbar(this.config);
             toolbar.startup().then(lang.hitch(this, function () {
@@ -151,6 +141,25 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 }
 
                 all(toolList).then(lang.hitch(this, function (results) {
+                    //If all the results are undefined and locate and home are also false we can hide the toolbar
+                    var tools = array.every(results, function (r) {
+                        return r === undefined;
+                    });
+                    var home = has("home");
+                    var locate = has("locate");
+
+                    //No tools are specified in the configuration so hide the panel and update the title area styles 
+                    if (tools && !home && !locate) {
+                        domConstruct.destroy("panelTools");
+                        domStyle.set("panelContent", "display", "none");
+                        domStyle.set("panelTitle", "border-bottom", "none");
+                        domStyle.set("panelTop", "height", "52px");
+                        this._updateTheme();
+                        return;
+                    }
+
+
+
                     //Now that all the tools have been added to the toolbar we can add page naviagation
                     //to the toolbar panel, update the color theme and set the active tool. 
                     this._updateTheme();
@@ -164,6 +173,9 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                             this._enablePopups();
                         }
                     }));
+
+
+
                 }));
             }));
         },
@@ -322,7 +334,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         }
                         deferred.resolve();
                     }));
-                }else{
+                } else {
                     deferred.resolve();
                 }
             }
@@ -418,7 +430,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         var ovMap = new OverviewMap({
                             id: "overviewMap",
                             map: this.map,
-                            height: this.map.height - 100,
+                            height: panelHeight,
                             visible: false
                         }, domConstruct.create("div", {}, ovMapDiv));
 
@@ -456,19 +468,11 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     if (legendLayers.length > 0) {
                         layoutOptions.legend = legendLayers;
                     }
-
-
                 }
 
                 require(["application/has-config!print-layouts?esri/request", "application/has-config!print-layouts?esri/tasks/PrintTemplate"], lang.hitch(this, function (esriRequest, PrintTemplate) {
                     if (!esriRequest && !PrintTemplate) {
-
                         //Use the default print templates 
-                        var layoutOptions = {
-                            "titleText": this.config.title,
-                            "scalebarUnit": this.config.units
-                        };
-
                         var templates = [{
                             layout: "Letter ANSI A Landscape",
                             layoutOptions: layoutOptions,
@@ -511,7 +515,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                             "f": "json"
                         },
                         "callbackParamName": "callback"
-                    }).then(function (response) {
+                    }).then(lang.hitch(this, function (response) {
                         var layoutTemplate, templateNames, mapOnlyIndex, templates;
 
                         layoutTemplate = array.filter(response.parameters, function (param, idx) {
@@ -549,7 +553,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         print.startup();
                         deferred.resolve();
 
-                    });
+                    }));
                 }));
 
             }));
@@ -714,6 +718,12 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             query(".bg").style("backgroundColor", this.color.toString());
             query(".esriPopup .pointer").style("backgroundColor", this.color.toString());
             query(".esriPopup .titlePane").style("backgroundColor", this.color.toString());
+
+            //Set the color to match the icon style. White is default so we just need to
+            //update if using black. 
+            if (this.config.icons === "black") {
+                query(".esriSimpleSlider").style("color", "#333");
+            }
         },
         _checkExtent: function () {
             var pt = this.map.extent.getCenter();
