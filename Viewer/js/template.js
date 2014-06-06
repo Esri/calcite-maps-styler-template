@@ -23,12 +23,11 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
         appConfig: {},
         urlConfig: {},
         customUrlConfig: {},
-        commonConfig: {},
         constructor: function () {
             // config will contain application and user defined info for the application such as i18n strings,
             // the web map id and application id, any url parameters and any application specific configuration
             // information.
-            this.config = declare.safeMixin(defaults,commonConfig);
+            this.config = declare.safeMixin(defaults, commonConfig);
         },
         startup: function () {
             var deferred = this._init();
@@ -54,7 +53,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             // the application configuration has been applied so that the url parameters overwrite any
             // configured settings. It's up to the application developer to update the application to take
             // advantage of these parameters.
-            paramItems = ["webmap", "appid", "group", "oauthappid", "color"];
+            paramItems = ["webmap", "appid", "group", "oauthappid", "color", "extent"];
             this.urlConfig = this._createUrlParamsObject(paramItems);
             // config defaults <- standard url params
             // we need the webmap, appid, group and oauthappid to query for the data

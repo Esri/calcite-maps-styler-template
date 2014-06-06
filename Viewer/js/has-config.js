@@ -30,7 +30,7 @@ define(["dojo/has"], function (has) {
     has.add("basemap", function (g) {
         var basemap = getTool("basemap", g.config);
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_basemap")){
+        if (g.config.hasOwnProperty("tool_basemap")) {
             basemap = g.config.tool_basemap;
         }
         return basemap;
@@ -38,7 +38,7 @@ define(["dojo/has"], function (has) {
     has.add("bookmarks", function (g) {
         var bookmarks = getTool("bookmarks", g.config);
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_bookmarks")){
+        if (g.config.hasOwnProperty("tool_bookmarks")) {
             bookmarks = g.config.tool_bookmarks;
         }
         return bookmarks;
@@ -46,7 +46,7 @@ define(["dojo/has"], function (has) {
     has.add("details", function (g) {
         var details = getTool("details", g.config);
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_details")){
+        if (g.config.hasOwnProperty("tool_details")) {
             details = g.config.tool_details;
         }
         return details;
@@ -54,7 +54,7 @@ define(["dojo/has"], function (has) {
     has.add("edit", function (g) {
         var edit = getTool("edit", g.config);
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_edit")){
+        if (g.config.hasOwnProperty("tool_edit")) {
             edit = g.config.tool_edit;
         }
         return edit;
@@ -68,16 +68,16 @@ define(["dojo/has"], function (has) {
                 break;
             }
         }
-         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_edit_toolbar")){
+        //overwrite the default with app settings 
+        if (g.config.hasOwnProperty("tool_edit_toolbar")) {
             toolbar = g.config.tool_edit_toolbar;
-        }       
+        }
         return toolbar;
     });
     has.add("home", function (g) {
         var home = g.config.home || false;
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_home")){
+        if (g.config.hasOwnProperty("tool_home")) {
             home = g.config.tool_home;
         }
         return home;
@@ -85,7 +85,7 @@ define(["dojo/has"], function (has) {
     has.add("layers", function (g) {
         var layers = getTool("layers", g.config);
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_layers")){
+        if (g.config.hasOwnProperty("tool_layers")) {
             layers = g.config.tool_layers;
         }
         return layers;
@@ -93,7 +93,7 @@ define(["dojo/has"], function (has) {
     has.add("legend", function (g) {
         var legend = getTool("legend", g.config);
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_legend")){
+        if (g.config.hasOwnProperty("tool_legend")) {
             legend = g.config.tool_legend;
         }
         return legend;
@@ -101,9 +101,9 @@ define(["dojo/has"], function (has) {
 
     has.add("locate", function (g) {
         var location = has("native-gelocation");
-        if(location){
-            var location = g.config.locate || false;
-            if(g.config.hasOwnProperty("tool_locate")){
+        if (location) {
+            location = g.config.locate || false;
+            if (g.config.hasOwnProperty("tool_locate")) {
                 location = g.config.tool_locate;
             }
         }
@@ -114,7 +114,7 @@ define(["dojo/has"], function (has) {
     has.add("measure", function (g) {
         var measure = getTool("measure", g.config);
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_measure")){
+        if (g.config.hasOwnProperty("tool_measure")) {
             measure = g.config.tool_measure;
         }
         return measure;
@@ -122,7 +122,7 @@ define(["dojo/has"], function (has) {
     has.add("overview", function (g) {
         var overview = getTool("overview", g.config);
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_overview")){
+        if (g.config.hasOwnProperty("tool_overview")) {
             overview = g.config.tool_overview;
         }
         return overview;
@@ -130,10 +130,10 @@ define(["dojo/has"], function (has) {
     has.add("print", function (g) {
         var print = getTool("print", g.config);
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_print")){
+        if (g.config.hasOwnProperty("tool_print")) {
             print = g.config.tool_print;
         }
-        if(print){
+        if (print) {
             //is there a print service defined? If not set print to false 
             if (g.config.helperServices.printTask.url === null) {
                 print = false;
@@ -152,7 +152,7 @@ define(["dojo/has"], function (has) {
             }
         }
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_print_legend")){
+        if (g.config.hasOwnProperty("tool_print_legend")) {
             printLegend = g.config.tool_print_legend;
         }
         return printLegend;
@@ -167,16 +167,16 @@ define(["dojo/has"], function (has) {
                 break;
             }
         }
-         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_print_layouts")){
+        //overwrite the default with app settings 
+        if (g.config.hasOwnProperty("tool_print_layouts")) {
             printLayouts = g.config.tool_print_layouts;
-        }       
+        }
         return printLayouts;
     });
     has.add("share", function (g) {
         var share = getTool("share", g.config);
         //overwrite the default with app settings 
-        if(g.config.hasOwnProperty("tool_share")){
+        if (g.config.hasOwnProperty("tool_share")) {
             share = g.config.tool_share;
         }
         return share;

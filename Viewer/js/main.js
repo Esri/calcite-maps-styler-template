@@ -20,6 +20,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
     return declare(null, {
         config: {},
         color: null,
+        theme: null,
         map: null,
         initExt: null,
         mapExt: null,
@@ -31,14 +32,16 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             // and application id and any url parameters and any application specific configuration information.
             if (config) {
                 this.config = config;
-                this.setColor();
-                // document ready
+                this.color = this.setColor(this.config.color);
+                this.theme = this.setColor(this.config.theme);
+                // document ready   
                 ready(lang.hitch(this, function () {
                     //supply either the webmap id or, if available, the item info
                     var itemInfo = this.config.itemInfo || this.config.webmap;
                     //If a custom extent is set as a url parameter handle that before creating the map 
                     if (this.config.extent) {
                         var extArray = decodeURIComponent(this.config.extent).split(",");
+                        console.log(extArray.length);
                         if (extArray.length === 4) {
                             itemInfo.item.extent = [
                                 [parseFloat(extArray[0]), parseFloat(extArray[1])],
@@ -78,16 +81,16 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             }
         },
 
-        setColor: function () {
-            var rgb = Color.fromHex(this.config.color).toRgb();
+        setColor: function (color) {
+            var rgb = Color.fromHex(color).toRgb();
             rgb.push(0.9);
-            this.color = Color.fromArray(rgb);
+            return Color.fromArray(rgb);
 
         },
 
         // Map is ready
         _mapLoaded: function () {
-            query(".esriSimpleSlider").style("backgroundColor", this.color.toString());
+            query(".esriSimpleSlider").style("backgroundColor", this.theme.toString());
             // remove loading class from body
             domClass.remove(document.body, "app-loading");
         },
@@ -115,7 +118,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         toolList.push(this._addLayers(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "basemap":
-                        toolList.push(this._addBasemapGallery(this.config.tools[i], toolbar, "medium"));
+                        toolList.push(this._addBasemapGallery(this.config.tools[i], toolbar, "large"));
                         break;
                     case "overview":
                         toolList.push(this._addOverviewMap(this.config.tools[i], toolbar, "medium"));
@@ -133,7 +136,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         toolList.push(this._addDetails(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "share":
-                        toolList.push(this._addShare(this.config.tools[i], toolbar, "small"));
+                        toolList.push(this._addShare(this.config.tools[i], toolbar, "large"));
                         break;
                     default:
                         break;
@@ -563,49 +566,30 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
         },
         _addShare: function (tool, toolbar, panelClass) {
             //Add share links for facebook, twitter and direct linking. 
-            if (has("share")) {
+            //Add the measure widget to the toolbar.
+            var deferred = new Deferred();
+            require(["application/has-config!share?application/ShareDialog"], lang.hitch(this, function (ShareDialog) {
+
+                if (!ShareDialog) {
+                    deferred.resolve();
+                    return;
+                }
                 var shareDiv = toolbar.createTool(tool, panelClass);
+                var shareDialog = new ShareDialog({
+                    bitlyLogin: this.config.bitlyLogin,
+                    bitlyKey: this.config.bitlyKey,
+                    map: this.map,
+                    image: this.config.sharinghost + "/sharing/rest/content/items/" + this.config.response.itemInfo.item.id + "/info/" + this.config.response.itemInfo.thumbnail,
+                    title: this.config.title,
+                    summary: this.config.response.itemInfo.snippet
+                }, shareDiv);
+                shareDialog.startup();
 
-                var url = document.location.href;
+                deferred.resolve();
 
-                this._updateShareLinks(shareDiv, false);
+            }));
 
-
-
-                on(dom.byId("shareCheck"), "click", lang.hitch(this, function () {
-                    var checked = dom.byId("shareCheck").checked;
-                    this._updateShareLinks(shareDiv, checked);
-                }));
-
-            }
-        },
-
-        _updateShareLinks: function (shareDiv, useExtent) {
-            //If the use extent checkbox is enabled append the extent to the sharing url 
-            var url = null,
-                extent = null,
-                appurl = null,
-                content = null;
-
-            appurl = document.location.href.split("?");
-            url = appurl[0];
-
-            if (useExtent) {
-                extent = JSON.stringify(this.map.extent.toJson());
-                url += "?extent=" + extent;
-            }
-            if (appurl[1]) {
-                url += "&" + appurl[1];
-            }
-            content = "<div class='share-input-header'>" + this.config.i18n.tools.share.label + "</div>";
-            content += "<input id='shareCheck' class='share-input-check' type='checkbox'> " + this.config.i18n.tools.share.extent + "</input>";
-            //Facebook and Twitter 
-            content += "<br/><a class='share-input-buttons' target='_blank' href='http://www.facebook.com/sharer.php?u=" + encodeURIComponent(url) + "&t=" + document.title + "'><img src='./images/facebookBtn.png'/></a>";
-            content += "<a class='share-input-buttons' target='_blank' href='http://www.twitter.com/home?status=" + document.title + " + " + encodeURIComponent(url) + "'><img src='./images/twitterBtn.png'/></a><br/>";
-
-            //Direct map link 
-            content += "<div class='share-input-subheader'>" + this.config.i18n.tools.share.link + "</div><input class='share-input' size=20 readonly value='" + url + "'</input>";
-            shareDiv.innerHTML = content;
+            return deferred.promise;
 
         },
         _getEditableLayers: function (layers) {
@@ -670,8 +654,9 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
         _createMapUI: function () {
             // Add map specific widgets like the Home  and locate buttons. Also add the geocoder. 
             if (has("home")) {
-                domConstruct.create("panelHome", {
+                domConstruct.create("div", {
                     id: "panelHome",
+                    className: "icon-color",
                     innerHTML: "<div id='btnHome'></div>"
                 }, dom.byId("panelTools"), 0);
                 var home = new HomeButton({
@@ -683,8 +668,9 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             }
 
             if (has("locate")) {
-                domConstruct.create("panelHome", {
+                domConstruct.create("div", {
                     id: "panelLocate",
+                    className: "icon-color",
                     innerHTML: "<div id='btnLocate'></div>"
                 }, dom.byId("panelTools"), 1);
                 var geoLocate = new LocateButton({
@@ -715,14 +701,21 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
         },
         _updateTheme: function () {
-            query(".bg").style("backgroundColor", this.color.toString());
-            query(".esriPopup .pointer").style("backgroundColor", this.color.toString());
-            query(".esriPopup .titlePane").style("backgroundColor", this.color.toString());
+            //Set the background color using the configured theme value 
+            query(".bg").style("backgroundColor", this.theme.toString());
+            query(".esriPopup .pointer").style("backgroundColor", this.theme.toString());
+            query(".esriPopup .titlePane").style("backgroundColor", this.theme.toString());
 
-            //Set the color to match the icon style. White is default so we just need to
-            //update if using black. 
+            //Set the font color using the configured color value 
+            query(".fc").style("color", this.color.toString());
+
+
+            //Set the Slider +/- color to match the icon style. Valid values are white and black
+            // White is default so we just need to update if using black. 
+            //Also update the menu icon to match the tool color. Default is white. 
             if (this.config.icons === "black") {
                 query(".esriSimpleSlider").style("color", "#333");
+                query(".icon-color").style("color", "#333");
             }
         },
         _checkExtent: function () {

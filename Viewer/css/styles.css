@@ -198,11 +198,22 @@ html, body {
   border-radius: 13px;
   background-size: 14px 14px; }
 
+.HomeButton .home:before {
+  content: "\e800";
+  font-size: 20px;
+  margin: 1px 3px;
+  position: absolute;
+  font-family: "tool-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none; }
+
 .LocateButton .zoomLocateButton {
-  padding: 0px;
-  width: 26px;
-  height: 26px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
   background-color: transparent;
+  background-image: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -212,28 +223,15 @@ html, body {
   -ms-border-radius: 13px;
   border-radius: 13px; }
 
-/*Styles for the share dialog*/
-.share-input {
-  width: 90%;
-  font-size: 14px;
-  color: #777;
-  border: 1px solid #dcdcdc;
-  padding: 5px; }
-
-.share-input-check {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 20px; }
-
-.share-input-subheader {
-  margin-bottom: 5px; }
-
-.share-input-header {
-  font-size: 19px;
-  margin-bottom: 10px; }
-
-.share-input-buttons {
-  margin: 20px 5px 20px; }
+.LocateButton .zoomLocateButton:before {
+  content: "\e80c";
+  font-size: 20px;
+  margin: 1px 3px;
+  position: absolute;
+  font-family: "tool-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none; }
 
 img {
   border: 0; }
@@ -257,11 +255,10 @@ img {
 
 /* Template */
 .bg {
-  display: block;
-  background-color: transparent;
-  background-color: rgba(255, 255, 255, 0.8);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);
-  zoom: 1; }
+  display: block; }
+
+.fc {
+  font-weight: bold; }
 
 .rounded {
   -webkit-border-radius: 5px;
@@ -280,6 +277,7 @@ img {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); }
 
 #panelContent {
+  font-family: Helvetica;
   position: absolute;
   right: 10px;
   top: 0;
@@ -342,7 +340,7 @@ img {
   height: 440px; }
 
 .large {
-  height: 100%; }
+  height: 540px; }
 
 .pageHeader {
   position: relative;
@@ -516,7 +514,7 @@ img {
 
 #panelSearch {
   float: left;
-  margin: 10px 0 10px 5px;
+  margin: 10px 0 10px 15px;
   width: 227px;
   height: 30px; }
 
@@ -536,10 +534,9 @@ img {
 #panelMenu {
   float: right;
   margin-top: 10px;
-  height: 30px;
-  width: 30px;
-  background: url(../images/menu.png) no-repeat;
+  margin-right: 4px;
   cursor: pointer;
+  color: #fff;
   display: block; }
 
 @media only screen and (min-width: 720px) {
@@ -635,7 +632,6 @@ img {
   text-align: center;
   white-space: nowrap; }
 
-/*Print button styles*/
 .calcite .dijitToggleButton, .calcite .dijitButton, .calcite .dijitDropDownButton, .calcite .dijitComboButton {
   padding: 0.5em 1em 0.5em !important;
   line-height: 32px;
@@ -679,3 +675,155 @@ img {
 
 .calcite .dijitPopup {
   border: solid 1px #d3d3d3; }
+
+/*Share Dialog updates*/
+.calcite .icon-container {
+  margin: 10px 0 20px; }
+
+.calcite .map-size-label {
+  float: left;
+  font-size: 15px;
+  margin: 0 5px 0 0; }
+
+.esriRTL .calcite .map-size-label {
+  float: right;
+  margin: 0 0 0 5px; }
+
+.calcite .share-dialog-icon {
+  font-size: 32px;
+  line-height: 32px;
+  float: left;
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  margin: 0 10px 0 0;
+  text-decoration: none;
+  display: block; }
+
+.calcite .share-dialog-icon:visited {
+  color: rgba(0, 0, 0, 0.5); }
+
+.esriRTL .calcite .share-dialog-icon {
+  float: right;
+  margin: 0 0 0 10px; }
+
+.calcite .share-dialog-icon:hover {
+  color: rgba(0, 0, 0, 0.8); }
+
+.calcite .share-map-url {
+  width: 50%;
+  min-width: 75%;
+  max-width: 90%;
+  height: 25px;
+  font-size: 14px;
+  color: #777;
+  border: 1px solid #dcdcdc;
+  margin: 0 0 20px; }
+
+.calcite .map-size-container {
+  margin: 0;
+  padding: 0 0 20px; }
+
+.calcite .embed-map-size-clear, .calcite .icon-clear {
+  clear: both; }
+
+.calcite .embed-map-size-dropdown {
+  float: left; }
+
+.esriRTL .calcite .embed-map-size-dropdown {
+  float: right; }
+
+.calcite .share-dialog-subheader {
+  font-size: 17px;
+  margin: 0 0 5px; }
+
+.calcite .share-dialog-textarea {
+  width: auto;
+  max-width: 90%;
+  width: 75%;
+  height: 75px;
+  font-size: 14px;
+  color: #777;
+  border: 1px solid #dcdcdc;
+  margin: 0 0 20px; }
+
+.calcite .share-dialog-extent {
+  margin: 0 0 15px 0; }
+
+/*Icon Fonts*/
+@font-face {
+  font-family: 'tool-icons';
+  src: url('../fonts/tool-icons.eot?8620619');
+  src: url('../fonts/tool-icons.eot?8620619#iefix') format('embedded-opentype'), url('../fonts/tool-icons.woff?8620619') format('woff'), url('../fonts/tool-icons.ttf?8620619') format('truetype'), url('../fonts/tool-icons.svg?8620619#tool-icons') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'tool-icons';
+    src: url('../fonts/tool-icons.svg?8620619#tool-icons') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "tool-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.icon-home-1:before {
+  content: '\e800'; }
+
+/* ' ' */
+.icon-menu:before {
+  content: '\e801'; }
+
+/* '' */
+.icon-twitter:before {
+  content: '\e802'; }
+
+/* '' */
+.icon-facebook-squared:before {
+  content: '\e803'; }
+
+/* '' */
+.icon-gplus:before {
+  content: '\e804'; }
+
+/* '' */
+.icon-mail-alt:before {
+  content: '\e805'; }
+
+/* '' */
+.icon-link:before {
+  content: '\e806'; }
+
+/* '' */
+.icon-buffer:before {
+  content: '\e80b'; }
+
+/* '' */
+.icon-target:before {
+  content: '\e80c'; }
+
+/* '' */

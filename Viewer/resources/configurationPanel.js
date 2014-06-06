@@ -11,9 +11,26 @@
             "tooltip": "Defaults to web map title"
         }, {
             "type": "color",
-            "fieldName": "color",
+            "fieldName": "theme",
             "tooltip": "Color theme to use",
-            "label": "Color Scheme:"
+            "label": "Color Theme:"
+        },{
+            "type": "color",
+            "fieldName": "color",
+            "tooltip": "Title bar text color",
+            "label": "Title Color:"
+        },{
+            "type": "string",
+            "fieldName": "icons",
+            "tooltip": "Icon color",
+            "label": "Icon color:",
+            "options": [{
+                "label": "White",
+                "value": "white"
+            },{
+                "label": "Black",
+                "value": "black"
+            }]
         }]
     },{
         "category": "Tools",
@@ -115,6 +132,9 @@
         ]
     }],
     "values": {
+        "icons": "white",
+        "color": "#fff",
+        "theme": "80ab00",
         "tool_print": true,
         "tool_print_layouts": false,
         "tool_print_legend": false,

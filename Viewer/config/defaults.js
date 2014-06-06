@@ -39,10 +39,15 @@ define({
     //to show how to setup the strings file.
     "localize": true,
     "units": null,
-    // ** UI SPECIFIC PARAMETERS ** //
-    "color": "#80ab00",
-    "icons": "white", // currently white is the only option. 
-    //Set of tools that will be added to the toolbar
+    //Theme defines the background color of the title area and tool dialog 
+    //Color defines the text color for the title and details. Note that 
+    //both these values must be specified as hex colors. 
+    "theme": "#80ab00",
+    "color": "#fff",
+    //Specify the tool icon color for the tools on the toolbar and the menu icon.
+    // Valid values are white and black.
+    "icons": "white", 
+    //Set of tools that will be added to the toolbar 
     "tools": [
         {"name": "legend", "enabled": true}, 
         {"name": "bookmarks", "enabled": true},
@@ -59,9 +64,9 @@ define({
     "activeTool": "legend",
     //Add the geocoding tool next to the title bar
     "search": true,
-    //Add the home button to the toolbar 
+    //Add the home extent button to the toolbar 
     "home": true,
-    //Add the geolocation button on the toolbar
+    //Add the geolocation button on the toolbar. Only displayed if browser supports geolocation
     "locate": true,
     //Specify a title for the application. If not provided the web map title is used. 
     "title": null, 
@@ -71,6 +76,9 @@ define({
     "urlItems": [
         "extent,color" 
     ],
+    //Replace these with your own bitly key
+    "bitlyLogin": "esrimarketing",
+    "bitlyKey": "R_52f84981da0e75b23aea2b3b20cbafbc",
     "helperServices": {
         "geometry": {
             "url": null
