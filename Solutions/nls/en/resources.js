@@ -57,8 +57,7 @@ define(
             fieldNotFound: "This field does not exist in any of the map layers",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "Your content has been submitted. Thank you.",  // Appears after content has been added to the map and successfully submitted to the server
             noConfiguration: "Unable to access application's configuration",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            unableToLaunchApp: "Unable to launch application",  // Appears for any failure to build the user interface
-            printingHasStarted: "Printing"  // "Printing in progress"--Appears when printing is started to let user know that something is happening
+            unableToLaunchApp: "Unable to launch application"  // Appears for any failure to build the user interface
         }
     })
 );

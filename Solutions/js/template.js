@@ -1,4 +1,4 @@
-﻿/*global define,require,console */
+﻿/*global define,require,console,jsapi_i18n=true */
 /*jslint browser:true,sloppy:true,nomen:true,plusplus:true */
 /*
  | Copyright 2014 Esri
@@ -31,6 +31,7 @@ define([
     "esri/IdentityManager",
     "esri/arcgis/Portal",
     "esri/tasks/GeometryService",
+    "dojo/i18n!esri/nls/jsapi",
     "config/defaults",
     "launch/OAuthHelper"
 ], function (
@@ -49,6 +50,7 @@ define([
     IdentityManager,
     esriPortal,
     GeometryService,
+    jsapiBundle,
     defaults,
     OAuthHelper
 ) {
@@ -69,6 +71,7 @@ define([
             this.options = lang.mixin(defaultOptions, options);
             // config will contain application and user defined info for the application such as i18n strings the web map id and application id, any url parameters and any application specific configuration information.
             this.config = defaults;
+            jsapi_i18n = jsapiBundle;
         },
         startup: function () {
             var deferred = this._init();
