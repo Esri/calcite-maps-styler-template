@@ -1,4 +1,4 @@
-﻿/*global define,require,console,jsapi_i18n=true */
+﻿/*global define,require,console,jsapi_i18n:true,package_path */
 /*jslint browser:true,sloppy:true,nomen:true,plusplus:true */
 /*
  | Copyright 2014 Esri

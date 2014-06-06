@@ -159,7 +159,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 503c5e878e4dc559 2014-06-06 10:11:31 -0700"
+                "commit 05c699d2668308c8 2014-06-06 11:44:53 -0700"
             ]
         }
     }, {
@@ -359,7 +359,7 @@
         }
     }, {
         "classname": "js.LGEditTemplatePickerWithDefaults",
-        "styles": ".templateArea{display:none;width:210px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .templateArea{border-radius:8px}.templatePickerHolder {position:absolute;right:5px;top:5px;left:5px;bottom:5px;overflow-x:hidden;overflow-y:auto;}",
+        "styles": ".templateArea{display:none;width:210px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}.templatePickerHolder {position:absolute;right:5px;top:5px;left:5px;bottom:5px;overflow-x:hidden;overflow-y:auto;}",
         "config": {
             "rootId": "iTemplateArea",
             "parentDiv": "contentFrame",
@@ -368,14 +368,14 @@
             "templatePickerDivClass": "templatePickerDiv",
             "colorizerId": "colorizer",
             "horizOffset": -2,
-            "vertOffset": [56, -40],
+            "vertOffset": [58, -40],
             "trigger": "markup",
             "dependencyId": "map",
             "listenForDefaultsTrigger": "floor"
         }
     }, {
         "classname": "js.LGFilterLayers1WithDefaults",
-        "styles": ".filter{display:none;width:210px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word}.okIE .filter{border-radius:8px}",
+        "styles": ".filter{display:none;width:210px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}",
         "config": {
             "rootId": "filter",
             "tooltip": "@tooltips.filter",
