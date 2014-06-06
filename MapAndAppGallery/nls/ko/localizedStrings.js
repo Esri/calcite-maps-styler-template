@@ -72,6 +72,7 @@ define({
     errorMessages: {
         emptyGroup: "한_The configured group is not having any data to perform query._빠",
         invalidSearch: "한_No results found._빠",
+        invalidBasemapQuery: "한_Unable to get basemaps group._빠",
         falseConfigParams: "한_Required configuration key values are either null or not exactly matching with layer attributes. This message may appear multiple times._빠",
         invalidLocation: "한_Current Location not found._빠",
         invalidProjection: "한_Unable to project current location on map._빠",

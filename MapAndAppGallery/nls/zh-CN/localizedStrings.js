@@ -72,6 +72,7 @@ define({
     errorMessages: {
         emptyGroup: "试_The configured group is not having any data to perform query._验",
         invalidSearch: "试_No results found._验",
+        invalidBasemapQuery: "试_Unable to get basemaps group._验",
         falseConfigParams: "试_Required configuration key values are either null or not exactly matching with layer attributes. This message may appear multiple times._验",
         invalidLocation: "试_Current Location not found._验",
         invalidProjection: "试_Unable to project current location on map._验",

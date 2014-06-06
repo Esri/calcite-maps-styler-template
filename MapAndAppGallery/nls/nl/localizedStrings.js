@@ -72,6 +72,7 @@ define({
     errorMessages: {
         emptyGroup: "Ĳ_The configured group is not having any data to perform query._ä",
         invalidSearch: "Ĳ_No results found._ä",
+        invalidBasemapQuery: "Ĳ_Unable to get basemaps group._ä",
         falseConfigParams: "Ĳ_Required configuration key values are either null or not exactly matching with layer attributes. This message may appear multiple times._ä",
         invalidLocation: "Ĳ_Current Location not found._ä",
         invalidProjection: "Ĳ_Unable to project current location on map._ä",

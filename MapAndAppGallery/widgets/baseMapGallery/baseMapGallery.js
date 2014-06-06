@@ -69,6 +69,9 @@ define([
             presentBaseMap = baseMapURL + 1;
             presentThumbNail = baseMapURL + 2;
             on(imgThumbnail, "click", lang.hitch(this, function () {
+                if (!dojo.configData.values.baseMapLayers[presentThumbNail]) {
+                    presentThumbNail = 0;
+                }
                 if (dojo.configData.values.baseMapLayers[presentThumbNail].length) {
                     imgThumbnail.src = dojo.configData.values.baseMapLayers[presentThumbNail][0].ThumbnailSource;
                 } else {

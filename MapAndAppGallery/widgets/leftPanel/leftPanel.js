@@ -185,6 +185,7 @@ define([
     declare("LeftPanelCollection", [_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Deferred], {
         templateString: template,
         nls: nls,
+        gallery: null,
 
         startup: function () {
             dojo.sortBy = dojo.configData.values.sortField;
@@ -207,6 +208,7 @@ define([
             this._queryGroupItems();
             domAttr.set(this.leftPanelHeader, "innerHTML", dojo.configData.values.applicationName);
             topic.subscribe("queryGroupItems", this._queryGroupItems);
+            topic.subscribe("queryItemPods", this._queryItemPods);
         },
 
         /*
@@ -258,7 +260,7 @@ define([
         * @memberOf widgets/leftPanel/leftPanel
         */
         _setLeftPanelContent: function (results) {
-            var uniqueTags, tagsObj, tagCloud, displayCategoryTags, defObj, queryString, tagContainerHeight;
+            var uniqueTags, tagsObj, tagCloud, displayCategoryTags, tagContainerHeight;
 
             dojo.selectedTags = "";
             dojo.tagCloudArray = [];
@@ -288,6 +290,11 @@ define([
                 tagContainerHeight = window.innerHeight - (domGeom.position(query(".esriCTCategoriesHeader")[0]).h + domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(this.groupPanel).h + 50) + "px";
                 domStyle.set(query(".esriCTPadding")[0], "height", tagContainerHeight);
             }
+            this._queryItemPods();
+        },
+
+        _queryItemPods: function (flag) {
+            var defObj, queryString;
             defObj = new Deferred();
             queryString = 'group:("' + dojo.configData.values.group + '")';
             /**
@@ -317,9 +324,12 @@ define([
             defObj.then(function (data) {
                 topic.publish("showProgressIndicator");
                 dojo.nextQuery = data.nextQueryParams;
-                var gallery = new ItemGallery();
+                if (this.gallery && this.gallery.destroy) {
+                    this.gallery.destroy();
+                }
+                this.gallery = new ItemGallery();
                 dojo.results = data.results;
-                gallery.createItemPods(data.results, false, data.total);
+                this.gallery.createItemPods(data.results, flag);
             }, function (err) {
                 alert(err.message);
             });

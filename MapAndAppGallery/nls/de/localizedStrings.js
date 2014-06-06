@@ -72,6 +72,7 @@ define({
     errorMessages: {
         emptyGroup: "ä_The configured group is not having any data to perform query._Ü",
         invalidSearch: "ä_No results found._Ü",
+        invalidBasemapQuery: "ä_Unable to get basemaps group._Ü",
         falseConfigParams: "ä_Required configuration key values are either null or not exactly matching with layer attributes. This message may appear multiple times._Ü",
         invalidLocation: "ä_Current Location not found._Ü",
         invalidProjection: "ä_Unable to project current location on map._Ü",
