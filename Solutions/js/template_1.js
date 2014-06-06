@@ -389,7 +389,7 @@ define([
             // 4. otherwise, we have an incomplete URL, which we'll resolve by using the the file-based template
             //    apps2/GeneralMap; if the URL contains webmap, we'll use it; otherwise, we use the webmap in
             //    apps2/GeneralMap
-            var filename, deferred = new Deferred();
+            var filename, deferred = new Deferred(), templateFileUrl;
 
             // 1. normal
             if (this.config.appid) {
@@ -445,8 +445,9 @@ define([
                 }
 
                 // Get the template file
+                templateFileUrl = package_path + "/" + filename + ".json";
                 esriRequest({
-                    url: filename + ".json",
+                    url: templateFileUrl,
                     handleAs: "json"
                 }).then(
                     lang.hitch(this, function (fileTemplate) {
