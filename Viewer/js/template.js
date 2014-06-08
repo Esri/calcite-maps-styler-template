@@ -65,7 +65,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             // execute these async
             all({
                 // check if signed in
-                auth: this._checkSignIn(),
+                //auth: this._checkSignIn(),
                 // get localization
                 i18n: this._getLocalization(),
                 // get application data

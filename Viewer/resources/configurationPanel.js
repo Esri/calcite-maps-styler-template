@@ -9,7 +9,12 @@
             "fieldName": "title",
             "type": "string",
             "tooltip": "Defaults to web map title"
-        }, {
+        },{
+            "label": "Title logo:",
+            "fieldName": "logo",
+            "type": "string",
+            "tooltip": "Defaults to sample logo"
+        },{
             "type": "color",
             "fieldName": "theme",
             "tooltip": "Color theme to use",
@@ -133,6 +138,7 @@
     }],
     "values": {
         "icons": "white",
+        "logo":  "images/logo.png",
         "color": "#fff",
         "theme": "80ab00",
         "tool_print": true,

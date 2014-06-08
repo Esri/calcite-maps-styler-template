@@ -284,7 +284,10 @@ html, body {
 
 }
 .esriBasemapGallery{
-    height:600px;
+    padding:20px 20px 80px 20px;
+}
+.legend{
+    padding-bottom:100px;
 }
 
 .HomeButton .home {
@@ -299,6 +302,7 @@ html, body {
     cursor: pointer;
     @include border-radius (13px);
     background-size: 14px 14px;
+    background-image:none;
 }
 .HomeButton .home:before{
     content:"\e800";
@@ -376,11 +380,12 @@ img{
     position: absolute;
     right: 10px;
     top: 0;
-    width: 0px;
     height: 100%;
+    width: 0px;
     display: block;
     overflow:visible;
     @include transparent($black-color, 0.5);
+
 }
 
 #panelPages {
@@ -414,15 +419,20 @@ img{
     top: 90px;
     display:block;
     overflow:hidden;
+    max-height:375px;
     @include transparent($default-theme, 1);
-    @include respond-to(820){
+    @include respond-to(600){
+        max-height:none;
+    }
+    @include respond-to(860){
         top:10px;
+        max-height:none;
     }
 }
 
 /*Panel sizes*/
 .small{
-    height:300px;
+    height:210px;
 }
 .medium{
     height:440px;
@@ -437,9 +447,9 @@ img{
     height: 90px;
     text-align: center;
     display: block;
-    @include respond-to(720){
+    /*@include respond-to(720){
         height:135px;
-    }
+    }*/
 
 }
 .pageTitle {
@@ -452,13 +462,13 @@ img{
     color: #ffffff;
     line-height: 20px;
     overflow:hidden;
-    @include respond-to(720){
+   /* @include respond-to(720){
         position: relative;
         left: 0px;
         top: 5px;
         width : 100%;
         text-align: center;
-    }
+    }*/
 }
 
 .pageHeaderImg {
@@ -471,7 +481,7 @@ img{
     line-height:60px;
     border: 5px solid rgba(0,0,0,0.1);
     @include border-radius(35px);
-    @include respond-to(720){
+   /* @include respond-to(720){
         position: relative;
         top: 16px;
         margin: 0 auto;
@@ -479,7 +489,7 @@ img{
         height: 72px;
         border: 8px solid rgba(0,0,0,0.2);
         @include border-radius(44px);
-    }
+    }*/
 }
 
 .pageIcon {
@@ -488,69 +498,76 @@ img{
     top:11px;
     width:40px;
     height:40px;
-    @include respond-to(720){
+   /* @include respond-to(720){
         width: 50px;
         height: 50px;
         left:11px;
         top:11px;
-    }
+    }*/
 }
+/*Test resize from 20 to 24*/
 .pageClose {
     position: absolute;
     right: 5px;
-    top: 5px;
+    top: 9px; /*was 5*/
     background: url(../images/close.png) no-repeat;
+    background-size:24px;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     display: block;
 }
 
 .pageUp {
     position: absolute;
-    top: 27px;
+    top: 35px; /*was 27*/
     right: 5px;
     background: url(../images/up.png) no-repeat;
+    background-size:24px;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     display: block;
 }
 
 .pageDown {
     position: absolute;
-    top: 49px;
+    top: 60px; /*was 49*/
     right: 5px;
     background: url(../images/down.png) no-repeat;
+    background-size:24px;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     display: block;
 }
 
 .pageBody {
     position:relative;
+    height:100%;
     top:0;
     display:block;
     width: 100%;
-    height:100%;
     color: #000000;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: auto; 
 }
 
+#pageBody_print{
+    padding:10px;
+}
+#pageBody_legend{
+    padding:20px;
+}
+
+#pageBody_share{
+    padding:5px 20px;
+    @include respond-to(720){
+        max-height:none;
+    }
+}
 #pageBody_details{
     padding:5px;
-    width:90%;
-}
-#pageBody_share{
-    padding:5px;
-}
-#pageBody_print{
-    
-}
-#pageBody_time{
-    padding-top:20px;
 }
 
 #panelTop {
@@ -566,10 +583,12 @@ img{
     display: block;
     overflow: visible;
     height: auto;
+    @include border-radius (0);
     @include respond-to(720){
         max-width:500px;
         left: 44px;
         top: 10px;
+        @include border-radius(5px);
     }
 }
 
@@ -590,15 +609,22 @@ img{
     line-height: 50px;
     margin-left: 5px;
 }
+#panelLogo img{
+    max-width:50px;
+    max-height:50px
+}
 
 #panelText {
     float: left;
-    max-width:200px;
+    max-width:196px;
     overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
     margin-left: 5px;
     height: 50px;
     line-height: 50px;
     display:none;
+    font-size:.9em;
     @include respond-to(720){
         display:block;
     }
@@ -606,9 +632,13 @@ img{
 
 #panelSearch {
     float: left;
-    margin: 10px 0 10px 15px;
+    margin: 10px 0 10px 4px;
     width: 227px;
     height: 30px;
+    @include respond-to(720){
+     margin: 10px 4px 10px 10px;
+     float:right;
+    }
 }
 
 #panelTools {
@@ -625,9 +655,10 @@ img{
 }
 
 #panelMenu {
-    float: right;
-    margin-top: 10px;
-    margin-right:4px;
+    position:absolute;
+    top:10px;
+    right:2px;
+    font-size:24px;
     cursor: pointer;
     color: #fff;
     display: block;
@@ -695,6 +726,9 @@ img{
     height: 10px;
     @include opacity(0.6);
 }
+.calcite .esriPopup .title{
+    font-weight:bold;
+}
 .dijitMenuItemIconChar.dijitCheckedMenuItemIconChar {
     display: inline-block;
     visibility: hidden;
@@ -714,7 +748,10 @@ img{
 .dijitMenuItem:hover {
     @include transparent(rgb(93,173,221),0.40);
 }
+.calcite .dijitMenuItemLabel {
+    max-width:250px;
 
+}
 .dijitButtonNode {
     margin: 0;
     line-height: normal;
@@ -756,7 +793,7 @@ img{
 /*Share Dialog updates*/
 
 .calcite .icon-container {
-    margin: 10px 0 20px;
+    margin: 10px 0 10px;
 }
 .calcite .map-size-label {
     float: left;
@@ -768,8 +805,10 @@ img{
     margin: 0 0 0 5px;
 }
 .calcite .share-dialog-icon {
-    font-size: 32px;
-    line-height: 32px;
+    /*font-size: 32px;
+    line-height: 32px;*/
+    font-size:30px;
+    line-height:30px;
     float: left;
     color: rgba(0, 0, 0, 0.3);;
     cursor: pointer;
@@ -789,13 +828,13 @@ img{
 }
 .calcite .share-map-url {
     width: 50%;
-    min-width: 75%;
+    min-width: 80%;
     max-width: 90%;
     height: 25px;
     font-size: 14px;
     color: #777;
     border: 1px solid #dcdcdc;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
 }
 .calcite .map-size-container {
     margin: 0;
@@ -813,17 +852,17 @@ img{
 }
 .calcite .share-dialog-subheader {
     font-size: 17px;
-    margin: 0 0 5px;
+    /*margin: 0 0 5px;*/
 }
 .calcite .share-dialog-textarea {
     width: auto;
     max-width: 90%;
-    width: 75%;
-    height: 75px;
+    width: 80%;
+    height: 50px;
     font-size: 14px;
     color: #777;
     border: 1px solid #dcdcdc;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
 }
 .calcite .share-dialog-extent {
     margin: 0 0 15px 0;
@@ -891,4 +930,5 @@ img{
 .icon-link:before { content: '\e806'; } /* '' */
 .icon-buffer:before { content: '\e80b'; } /* '' */
 .icon-target:before { content: '\e80c'; } /* '' */
+
 
