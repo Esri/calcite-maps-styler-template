@@ -14,12 +14,12 @@
         "| See the License for the specific language governing permissions and",
         "| limitations under the License."
     ],
-    
+
     "documentation":[
         "For help configuring this application, see:",
         "http://solutions.arcgis.com/local-government/help/maps-and-apps-gallery/"
      ],
-     
+
     "values": {
         "group": "03d0b3fe76494125ab404a2b87b40c5c",
         "appid": "",
@@ -57,14 +57,14 @@
         "showBasemapGallery": true,
         "basemapGroupTitle": "",
         "basemapGroupOwner": "",
-        "noThumbnail": "themes/images/notAvailable.png",
+        "noThumbnail": "themes/images/thumbnailNotAvailable.png",
         "portalAPIURL": "http://www.arcgis.com/sharing/rest/",
         "portalURL": "http://arcgis4localgov2.maps.arcgis.com",
         "geometryService": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
         "cityEngineWebSceneURL": "http://www.arcgis.com/apps/CEWebViewer/viewer.html?3dWebScene=",
         "proxyUrl": "/proxy/proxy.ashx"
     },
-    
+
     "configurationSettings": [
         {
             "category": "<b>Header</b>",
@@ -202,7 +202,7 @@
                         }
                     ],
                     "tooltip": "Open maps with this viewer."
-                },            
+                },
                 {
                     "label": "Zoom Level",
                     "fieldName": "zoomLevel",
