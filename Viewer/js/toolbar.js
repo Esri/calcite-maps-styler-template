@@ -5,6 +5,7 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
         map: null,
         tools: [],
         toollist: [],
+        snap: true,
         curTool: 0,
         scrollTimer: null,
         config: {},
@@ -34,19 +35,21 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
 
             deferred = new Deferred();
 
-            pTools = dom.byId("panelTools");
-            pMenu = dom.byId("panelMenu");
-            on(pMenu, "click", lang.hitch(this, this._menuClick));
-            pPages = dom.byId("panelPages");
-            domConstruct.empty(pPages);
+            on(window, "scroll", lang.hitch(this, this._windowScrolled));
+            on(window, "resize", lang.hitch(this, this._windowScrolled));
+
+            this.pTools = dom.byId("panelTools");
+            this.pMenu = dom.byId("panelMenu");
+            on(this.pMenu, "click", lang.hitch(this, this._menuClick));
+            this.pPages = dom.byId("panelPages");
+            domConstruct.empty(this.pPages);
             // add blank page
             domConstruct.create("div", {
                 className: "pageblank",
                 id: "page_blank"
-            }, pPages);
+            }, this.pPages);
 
-            on(window, "scroll", lang.hitch(this, this._windowScrolled));
-            on(window, "resize", lang.hitch(this, this._windowScrolled));
+
 
 
             deferred.resolve();
@@ -66,7 +69,7 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
                 "data-title": this.config.i18n.tooltips[name] || name,
                 // use tooltip text defined in nls file if available. 
                 id: "panelTool_" + name
-            }, pTools);
+            }, this.pTools);
 
             domConstruct.create("img", {
                 className: "tool",
@@ -81,7 +84,7 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
             var page = domConstruct.create("div", {
                 className: "page",
                 id: "page_" + name
-            }, pPages);
+            }, this.pPages);
 
             var pageContent = domConstruct.create("div", {
                 className: "pageContent rounded shadow",
@@ -154,7 +157,9 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
 
         // tool click
         _toolClick: function (name) {
+            console.log(name);
             this._showPage(name);
+
 
         },
 
@@ -171,6 +176,7 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
         _showPage: function (name) {
 
             var num = this._getPageNum(name) + 1;
+
             if (num != this.curTool) {
                 this._scrollToPage(num);
             } else {
@@ -198,66 +204,93 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
         //scroll to page
         _scrollToPage: function (num) {
             var box = html.getContentBox(dom.byId("panelContent"));
-            var startPos = this.curTool * box.h;
 
+            var startPos = this.curTool * box.h;
             var endPos = num * box.h;
             var diff = Math.abs(num - this.curTool);
+            this.snap = false;
             if (diff == 1) {
                 this._animateScroll(startPos, endPos);
             } else {
+                // window.pageYOffset = endPos;
                 document.body.scrollTop = endPos;
                 document.documentElement.scrollTop = endPos;
+                if (this.map) {
+                    this.map.reposition();
+                }
+                this.snap = true;
             }
             this.curTool = num;
-
-            var name = null;
-            if (num > 0) {
-                name = this.tools[num - 1];
-            }
             this._updateTool(num);
+
+
         },
 
         // window scrolled
         _windowScrolled: function (evt) {
             if (this.scrollTimer) {
-
                 clearTimeout(this.scrollTimer);
             }
-
-            this.scrollTimer = setTimeout(lang.hitch(this, this._snapScroll), 400);
-
+            if (this.snap === true) {
+                this.scrollTimer = setTimeout(lang.hitch(this, this._snapScroll), 300);
+            }
         },
 
         // snap scroll
         _snapScroll: function () {
-            if (this.map) {
-                this.map.reposition();
-            }
+
             var startPos = domGeometry.docScroll().y;
             var box = html.getContentBox(dom.byId("panelContent"));
-            var num = Math.round(startPos / box.h);
-            var endPos = num * box.h;
-            this.curTool = num;
-            var name = null;
-            if (num > 0) {
-                name = this.tools[num - 1];
+            var numActual = startPos / box.h;
+            var num = Math.round(numActual);
+
+            if (numActual > this.curTool) {
+                if (numActual - this.curTool > 0.2) {
+                    num = Math.ceil(startPos / box.h);
+                }
+                if (num > this.tools.length - 1) {
+                    num = this.tools.length - 1;
+                }
+            } else if (numActual < this.curPage) {
+                if (this.curTool - numActual > 0.2) {
+                    num = Math.floor(startPos / box.h);
+                }
+                if (num < 0) {
+                    num = 0;
+                }
             }
+            var endPos = num * box.h;
+
+            this.curTool = num;
+
             this._updateTool(num);
+
             this._animateScroll(startPos, endPos);
+
+
         },
 
         // animateScroll
         _animateScroll: function (start, end) {
+            var me = this;
 
             var anim = new fx.Animation({
                 duration: 500,
                 curve: [start, end]
             });
             on(anim, "Animate", function (v) {
+                // window.pageYOffset = v;
                 document.body.scrollTop = v;
                 document.documentElement.scrollTop = v;
-
             });
+
+            on(anim, "End", function () {
+                setTimeout(lang.hitch(me, me._resetSnap), 100);
+                if (me.map) {
+                    me.map.reposition();
+                }
+            });
+
             anim.play();
         },
 
@@ -275,7 +308,9 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
 
         },
 
-
+        _resetSnap: function () {
+            this.snap = true;
+        },
         // menu click
         _menuClick: function () {
             if (query("#panelTools").style("display") == "block") {

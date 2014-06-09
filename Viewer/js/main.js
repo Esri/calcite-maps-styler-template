@@ -41,7 +41,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     //If a custom extent is set as a url parameter handle that before creating the map 
                     if (this.config.extent) {
                         var extArray = decodeURIComponent(this.config.extent).split(",");
-                        console.log(extArray.length);
+
                         if (extArray.length === 4) {
                             itemInfo.item.extent = [
                                 [parseFloat(extArray[0]), parseFloat(extArray[1])],
@@ -166,7 +166,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     //Now that all the tools have been added to the toolbar we can add page naviagation
                     //to the toolbar panel, update the color theme and set the active tool. 
                     this._updateTheme();
-                    // toolbar.updateToolbar(this.config.tools);
                     toolbar.updatePageNavigation();
                     toolbar.activateTool(this.config.activeTool);
                     on(toolbar, "updateTool", lang.hitch(this, function (name) {
@@ -311,7 +310,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         var layerInfos = this._getVisibleLayers(layers);
                         if (layerInfos.length > 0) {
                             layerInfos.reverse();
-                            console.log(layerInfos.length);
+
                             //Use small panel class if layer layer is less than 5
                             if (layerInfos.length < 5) {
                                 panelClass = "small";
@@ -320,7 +319,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                             } else {
                                 panelClass = "large";
                             }
-                            console.log(panelClass);
+
                             var layersDiv = toolbar.createTool(tool, panelClass);
                             var menu = new Menu({
                                 id: "layerMenu"
@@ -367,11 +366,12 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         return;
                     }
                     var legendLength = 0;
-                    var legendSize = array.forEach(layers, lang.hitch(this, function (layer) {
+                    array.forEach(layers, lang.hitch(this, function (layer) {
                         if (layer.infos && layer.infos.length) {
-                            legendLength += layerInfos.length;
+                            legendLength += layer.infos.length;
                         }
                     }));
+
                     if (legendLength.length < 5) {
                         panelClass = "small";
                     } else if (legendLength.length < 15) {
@@ -379,7 +379,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     } else {
                         panelClass = "large";
                     }
-                    console.log("legend class" + panelClass);
+
                     var legendDiv = toolbar.createTool(tool, panelClass);
                     var legend = new Legend({
                         map: this.map
@@ -499,18 +499,19 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     }, domConstruct.create("div"));
 
                     var labelNode = domConstruct.create("label", {
-                        for: "legend_ck",
-                        innerHTML: "Include legend"
+                        "for": "legend_ck",
+                        "innerHTML": "Include legend"
                     }, domConstruct.create("div"));
                     domConstruct.place(legendNode, printDiv);
                     domConstruct.place(labelNode, printDiv);
 
 
                     on(legendNode, "change", lang.hitch(this, function (arg) {
+
+
                         if (legendNode.checked) {
-                            console.log("true");
                             var layers = arcgisUtils.getLegendLayers(this.config.response);
-                            legendLayers = array.map(layers, function (layer) {
+                            var legendLayers = array.map(layers, function (layer) {
                                 return {
                                     "layerId": layer.layer.id
                                 };
@@ -518,17 +519,15 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                             if (legendLayers.length > 0) {
                                 layoutOptions.legendLayers = legendLayers;
                             }
-                            console.log(layoutOptions);
                             array.forEach(print.templates, function (template) {
                                 template.layoutOptions = layoutOptions;
                             });
 
+
                         } else {
-                            console.log("false");
                             array.forEach(print.templates, function (template) {
-                                if (template.layoutOptions && template.layoutOptions.legend) {
-                                    template.layoutOptions.legend = [];
-                                    console.log(template.layoutOptions);
+                                if (template.layoutOptions && template.layoutOptions.legendLayers) {
+                                    template.layoutOptions.legendLayers = [];
                                 }
 
                             });
@@ -540,8 +539,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
                 require(["application/has-config!print-layouts?esri/request", "application/has-config!print-layouts?esri/tasks/PrintTemplate"], lang.hitch(this, function (esriRequest, PrintTemplate) {
                     if (!esriRequest && !PrintTemplate) {
-                        console.log("layoutOptions");
-                        console.log(layoutOptions);
                         //Use the default print templates 
                         var templates = [{
                             layout: "Letter ANSI A Landscape",
@@ -671,7 +668,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
         },
         _getEditableLayers: function (layers) {
             var layerInfos = [];
-            array.forEach(layers, function (layer) {
+            array.forEach(layers, lang.hitch(this, function (layer) {
 
                 if (layer && layer.layerObject) {
                     var eLayer = layer.layerObject;
@@ -681,13 +678,13 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         });
                     }
                 }
-            });
+            }));
             return layerInfos;
         },
         _getVisibleLayers: function (layers) {
             //Function that creates the list of layers for the layers tool. 
             var layerInfos = [];
-            array.forEach(layers, function (mapLayer) {
+            array.forEach(layers, lang.hitch(this, function (mapLayer) {
                 if (mapLayer.featureCollection && !mapLayer.layerObject) {
                     if (mapLayer.featureCollection.layers) {
                         //add the first layer in the layer collection... not all  - when we turn off the layers we'll 
@@ -707,7 +704,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         title: mapLayer.title
                     });
                 }
-            });
+            }));
             return layerInfos;
         },
 
@@ -733,27 +730,27 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             if (has("home")) {
                 domConstruct.create("div", {
                     id: "panelHome",
-                    className: "icon-color",
+                    className: "icon-color tool",
                     innerHTML: "<div id='btnHome'></div>"
                 }, dom.byId("panelTools"), 0);
                 var home = new HomeButton({
                     map: this.map
                 }, dom.byId("btnHome"));
                 //add a tooltip
-                domAttr.set("btnHome", "data-title", this.config.i18n.tooltips["home"]);
+                domAttr.set("btnHome", "data-title", this.config.i18n.tooltips.home);
                 home.startup();
             }
 
             if (has("locate")) {
                 domConstruct.create("div", {
                     id: "panelLocate",
-                    className: "icon-color",
+                    className: "icon-color tool",
                     innerHTML: "<div id='btnLocate'></div>"
                 }, dom.byId("panelTools"), 1);
                 var geoLocate = new LocateButton({
                     map: this.map
                 }, dom.byId("btnLocate"));
-                domAttr.set("btnLocate", "data-title", this.config.i18n.tooltips["locate"]);
+                domAttr.set("btnLocate", "data-title", this.config.i18n.tooltips.locate);
                 geoLocate.startup();
 
             }
@@ -826,6 +823,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
                 this.map = response.map;
 
+                this._updateTheme();
                 //Save the popup click handler and listener so we can enable/disable popups as needed 
                 this.popupHandler = response.clickEventHandle;
                 this.popupListener = response.clickEventListener;

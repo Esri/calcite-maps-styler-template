@@ -186,10 +186,11 @@ html, body {
   padding-bottom: 100px; }
 
 .HomeButton .home {
-  top: 0px;
-  padding: 0px;
-  width: 26px;
-  height: 26px;
+  padding: 0 !important;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 20px;
   background-color: transparent;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -202,20 +203,34 @@ html, body {
   background-size: 14px 14px;
   background-image: none; }
 
+.HomeButton .home:hover, .LocateButton .zoomLocateButton:hover {
+  background-color: none !important; }
+
 .HomeButton .home:before {
+  width: 24px;
+  height: 24px;
   content: "\e800";
-  font-size: 20px;
-  margin: 1px 3px;
   position: absolute;
   font-family: "tool-icons";
-  font-style: normal;
-  font-weight: normal;
+  text-align: center;
+  speak: none; }
+
+.LocateButton .zoomLocateButton:before {
+  content: "\e80c";
+  font-size: 20px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  font-family: "tool-icons";
+  text-align: center;
   speak: none; }
 
 .LocateButton .zoomLocateButton {
   padding: 0;
   width: 24px;
   height: 24px;
+  font-size: 20px;
+  line-height: 24px;
   background-color: transparent;
   background-image: none;
   -webkit-user-select: none;
@@ -226,16 +241,6 @@ html, body {
   -moz-border-radius: 13px;
   -ms-border-radius: 13px;
   border-radius: 13px; }
-
-.LocateButton .zoomLocateButton:before {
-  content: "\e80c";
-  font-size: 20px;
-  margin: 1px 3px;
-  position: absolute;
-  font-family: "tool-icons";
-  font-style: normal;
-  font-weight: normal;
-  speak: none; }
 
 img {
   border: 0; }
@@ -613,15 +618,15 @@ img {
 
 #panelHome {
   float: left;
-  width: 26px;
-  height: 26px;
-  margin-left: 2px;
+  width: 24px;
+  height: 24px;
+  margin-left: 1px;
   margin-top: 3px; }
 
 #panelLocate {
   float: left;
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   margin-left: 0px;
   margin-top: 3px; }
 
