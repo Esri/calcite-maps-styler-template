@@ -33,6 +33,7 @@ define([
       aliases : [],
       location : null,
       container : null,
+      pageObj : null,
 	
       constructor: function(config) {
          this.config = config;
@@ -41,10 +42,11 @@ define([
       },
     		
       // update for location
-      updateForLocation: function(location, bufferDist, container) {
+      updateForLocation: function(location, container, pageObj) {
          this.location = location;
          this.container = container;
          this.container.innerHTML = "<br/><br/><img src='images/ajax-loader.gif'/>";
+         this.pageObj = pageObj;
          
          var queryTask = new QueryTask(this.config.demographicsURL);
          var query = new Query();
@@ -57,10 +59,10 @@ define([
             statDef.outStatisticFieldName = fld;
             outStats.push(statDef);
          }
-         query.distance = bufferDist;
-         query.units = "miles";
+         //query.distance = bufferDist;
+         //query.units = "miles";
          query.returnGeometry = false;
-         query.geometry = location;
+         query.geometry = pageObj.buffer;
          query.outStatistics = outStats;
          var me = this;
          queryTask.execute(query, lang.hitch(me, me.resultsHandler), lang.hitch(me, me.errorHandler));
