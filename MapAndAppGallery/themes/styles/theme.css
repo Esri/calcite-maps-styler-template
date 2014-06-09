@@ -730,7 +730,7 @@ font
 
 .esriCTNoThumbnailImage
 {
-    background-image: url('../images/thumbnailNotAvailable.png');
+    background-image: url('../images/notAvailable.png');
     background-repeat: no-repeat;
     background-position: center center;
 }

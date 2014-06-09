@@ -55,7 +55,7 @@ define([
                 callbackParamName: 'callback',
                 load: lang.hitch(this, function (response) {
                     dojo.locatorURL = response.helperServices.geocode[0].url;
-                    // check if 'suggest' property is available for geocoder services
+                    // check if suggest property is available for geocoder services
                     if (response.helperServices.geocode[0].suggest) {
                         dojo.enableGeocodeSuggest = response.helperServices.geocode[0].suggest;
                     } else {
@@ -320,8 +320,7 @@ define([
                     if (e.httpCode === 498) {
                         defObj.resolve();
                         topic.publish("hideProgressIndicator");
-                        // invalidating token to invoke sign in dialog on timeout
-                        dojo.configData.values.token = dojo.configData.values.token + "invalid";
+                        dojo.configData.values.token = dojo.configData.values.token + "xyz";
                         topic.publish("portalSignIn", null, true);
                     } else {
                         defObj.resolve();
@@ -362,9 +361,6 @@ define([
             if (query(".signin")[0]) {
                 if (query(".signin")[0].innerHTML === nls.signInText) {
                     _self._portal.signIn().then(function (loggedInUser) {
-                        if (document.activeElement) {
-                            document.activeElement.blur();
-                        }
                         topic.publish("showProgressIndicator");
                         if (loggedInUser) {
                             if (!dojo.configData.values.token) {
