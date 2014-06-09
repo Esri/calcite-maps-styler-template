@@ -136,7 +136,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         toolList.push(this._addDetails(this.config.tools[i], toolbar, "medium"));
                         break;
                     case "share":
-                        toolList.push(this._addShare(this.config.tools[i], toolbar, "large"));
+                        toolList.push(this._addShare(this.config.tools[i], toolbar, "medium"));
                         break;
                     default:
                         break;
@@ -311,7 +311,16 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         var layerInfos = this._getVisibleLayers(layers);
                         if (layerInfos.length > 0) {
                             layerInfos.reverse();
-
+                            console.log(layerInfos.length);
+                            //Use small panel class if layer layer is less than 5
+                            if (layerInfos.length < 5) {
+                                panelClass = "small";
+                            } else if (layerInfos.length < 15) {
+                                panelClass = "medium";
+                            } else {
+                                panelClass = "large";
+                            }
+                            console.log(panelClass);
                             var layersDiv = toolbar.createTool(tool, panelClass);
                             var menu = new Menu({
                                 id: "layerMenu"
@@ -348,6 +357,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             var deferred = new Deferred();
             var layers = arcgisUtils.getLegendLayers(this.config.response);
 
+
             if (layers.length === 0) {
                 deferred.resolve();
             } else {
@@ -356,10 +366,25 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         deferred.resolve();
                         return;
                     }
+                    var legendLength = 0;
+                    var legendSize = array.forEach(layers, lang.hitch(this, function (layer) {
+                        if (layer.infos && layer.infos.length) {
+                            legendLength += layerInfos.length;
+                        }
+                    }));
+                    if (legendLength.length < 5) {
+                        panelClass = "small";
+                    } else if (legendLength.length < 15) {
+                        panelClass = "medium";
+                    } else {
+                        panelClass = "large";
+                    }
+                    console.log("legend class" + panelClass);
                     var legendDiv = toolbar.createTool(tool, panelClass);
                     var legend = new Legend({
                         map: this.map
-                    }, legendDiv);
+                    }, domConstruct.create("div", {}, legendDiv));
+                    domClass.add(legend.domNode, "legend");
                     legend.startup();
                     toolbar.activateTool(this.config.activeTool || "legend");
                     deferred.resolve();
@@ -448,33 +473,75 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
         },
         _addPrint: function (tool, toolbar, panelClass) {
             //Add the print widget to the toolbar. TODO: test custom layouts. 
-            var deferred = new Deferred();
+            var deferred = new Deferred(),
+                legendNode = null,
+                print = null;
+
 
             require(["application/has-config!print?esri/dijit/Print"], lang.hitch(this, function (Print) {
                 var layoutOptions = {
                     "titleText": this.config.title,
-                    "scalebarUnit": this.config.units
+                    "scalebarUnit": this.config.units,
+                    "legendLayers": []
                 };
                 if (!Print) {
                     deferred.resolve();
                     return;
                 }
 
+                var printDiv = toolbar.createTool(tool, panelClass);
                 if (has("print-legend")) {
-                    var legendLayers = [];
-                    var layers = arcgisUtils.getLegendLayers(this.config.response);
-                    legendLayers = array.map(layers, function (layer) {
-                        return {
-                            "layerId": layer.layer.id
-                        };
-                    });
-                    if (legendLayers.length > 0) {
-                        layoutOptions.legend = legendLayers;
-                    }
+                    legendNode = domConstruct.create("input", {
+                        id: "legend_ck",
+                        className: "css-checkbox",
+                        type: "checkbox",
+                        checked: false
+                    }, domConstruct.create("div"));
+
+                    var labelNode = domConstruct.create("label", {
+                        for: "legend_ck",
+                        innerHTML: "Include legend"
+                    }, domConstruct.create("div"));
+                    domConstruct.place(legendNode, printDiv);
+                    domConstruct.place(labelNode, printDiv);
+
+
+                    on(legendNode, "change", lang.hitch(this, function (arg) {
+                        if (legendNode.checked) {
+                            console.log("true");
+                            var layers = arcgisUtils.getLegendLayers(this.config.response);
+                            legendLayers = array.map(layers, function (layer) {
+                                return {
+                                    "layerId": layer.layer.id
+                                };
+                            });
+                            if (legendLayers.length > 0) {
+                                layoutOptions.legendLayers = legendLayers;
+                            }
+                            console.log(layoutOptions);
+                            array.forEach(print.templates, function (template) {
+                                template.layoutOptions = layoutOptions;
+                            });
+
+                        } else {
+                            console.log("false");
+                            array.forEach(print.templates, function (template) {
+                                if (template.layoutOptions && template.layoutOptions.legend) {
+                                    template.layoutOptions.legend = [];
+                                    console.log(template.layoutOptions);
+                                }
+
+                            });
+                        }
+
+
+                    }));
                 }
 
                 require(["application/has-config!print-layouts?esri/request", "application/has-config!print-layouts?esri/tasks/PrintTemplate"], lang.hitch(this, function (esriRequest, PrintTemplate) {
                     if (!esriRequest && !PrintTemplate) {
+                        console.log("layoutOptions");
+                        console.log(layoutOptions);
                         //Use the default print templates 
                         var templates = [{
                             layout: "Letter ANSI A Landscape",
@@ -500,13 +567,19 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                             label: this.config.i18n.tools.print.layouts.label4,
                             format: "PNG32"
                         }];
-                        var printDiv = toolbar.createTool(tool, panelClass);
-                        var print = new Print({
+
+
+
+                        print = new Print({
                             map: this.map,
                             templates: templates,
                             url: this.config.helperServices.printTask.url
-                        }, printDiv);
+                        }, domConstruct.create("div")); //domConstruct.create("div",{}),printDiv); 
+                        domConstruct.place(print.printDomNode, printDiv, "first");
+
                         print.startup();
+
+
 
                         deferred.resolve();
                         return;
@@ -547,12 +620,14 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                             return plate;
                         });
 
-                        var printDiv = toolbar.createTool(tool, panelClass);
-                        var print = new Print({
+
+                        print = new Print({
                             map: this.map,
                             templates: templates,
                             url: this.config.helperServices.printTask.url
-                        }, printDiv);
+                        }, domConstruct.create("div")); //domConstruct.create("div",{}),printDiv); 
+                        domConstruct.place(print.printDomNode, printDiv, "first");
+
                         print.startup();
                         deferred.resolve();
 
@@ -575,6 +650,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     return;
                 }
                 var shareDiv = toolbar.createTool(tool, panelClass);
+
                 var shareDialog = new ShareDialog({
                     bitlyLogin: this.config.bitlyLogin,
                     bitlyKey: this.config.bitlyKey,
@@ -583,6 +659,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     title: this.config.title,
                     summary: this.config.response.itemInfo.snippet
                 }, shareDiv);
+                domClass.add(shareDialog.domNode, "pageBody");
                 shareDialog.startup();
 
                 deferred.resolve();
@@ -708,14 +785,15 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
             //Set the font color using the configured color value 
             query(".fc").style("color", this.color.toString());
+            query(".calcite .esriPopup .titlePane").style("color", this.color.toString());
 
 
             //Set the Slider +/- color to match the icon style. Valid values are white and black
             // White is default so we just need to update if using black. 
             //Also update the menu icon to match the tool color. Default is white. 
             if (this.config.icons === "black") {
-                query(".esriSimpleSlider").style("color", "#333");
-                query(".icon-color").style("color", "#333");
+                query(".esriSimpleSlider").style("color", "#000");
+                query(".icon-color").style("color", "#000");
             }
         },
         _checkExtent: function () {
@@ -753,10 +831,19 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 this.popupListener = response.clickEventListener;
 
 
+                //Add a logo if provided
+                if (this.config.logo) {
+                    domConstruct.create("div", {
+                        id: "panelLogo",
+                        innerHTML: "<img id='logo' src=" + this.config.logo + "></>"
+                    }, dom.byId("panelTitle"), "first");
+                }
+
                 //Set the application title
                 this.map = response.map;
                 //Set the title - use the config value if provided. 
-                var title = this.config.title === null ? response.itemInfo.item.title : this.config.title;
+                var title = (this.config.title === null) ? response.itemInfo.item.title : this.config.title;
+                this.config.title = title;
                 document.title = title;
                 dom.byId("panelText").innerHTML = title;
                 this.config.response = response;

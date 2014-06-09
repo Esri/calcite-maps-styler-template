@@ -97,15 +97,14 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
 
 
             domConstruct.create("div", {
-                className: "pageTitle",
+                className: "pageTitle fc",
                 innerHTML: this.config.i18n.tooltips[name] || name
             }, pageHeader);
 
             domConstruct.create("div", {
                 className: "pageHeaderImg",
-                innerHTML: "<img class='pageIcon' src ='images/icons_white/" + name + ".png'/>"
+                innerHTML: "<img class='pageIcon' src ='images/icons_" + this.config.icons + "/" + name + ".png'/>"
             }, pageHeader);
-
 
 
             var pageBody = domConstruct.create("div", {

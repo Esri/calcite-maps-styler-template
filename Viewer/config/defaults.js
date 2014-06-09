@@ -46,7 +46,8 @@ define({
     "color": "#fff",
     //Specify the tool icon color for the tools on the toolbar and the menu icon.
     // Valid values are white and black.
-    "icons": "white", 
+    "icons": "white",
+    "logo": null, 
     //Set of tools that will be added to the toolbar 
     "tools": [
         {"name": "legend", "enabled": true}, 
@@ -56,7 +57,7 @@ define({
         {"name": "overview", "enabled": true},
         {"name": "measure", "enabled": true}, 
         {"name": "edit", "enabled": true, "toolbar": false}, 
-        {"name": "print", "enabled": true, "legend": false, "layouts":false, "format":"pdf"}, 
+        {"name": "print", "enabled": true, "legend": true, "layouts":false, "format":"pdf"}, 
         {"name": "details", "enabled": true},
         {"name": "share", "enabled": true}
     ], 
