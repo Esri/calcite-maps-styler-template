@@ -1204,8 +1204,11 @@ define([
       // get lifestyle info
       getLifestyleInfo : function (num) {
          var obj = this.tapestryData[num-1];
-         var info = "<span class='num'>" + obj["Name"] + "</span><br/>";
          
+         var info = "<p>Dominant lifestyle at selected location</p>";
+         
+         info += "<span class='num'>" + obj["Name"] + "</span><br/><br/>";
+
          info += "<span>Household Type: </span>" + obj["Household Type"] + "<br/>";
          info += "<span>Median Age: </span>" + obj["Median Age"] + "<br/>";
          info += "<span>Income: </span>" + obj["Income"] + "<br/>";
@@ -1219,7 +1222,9 @@ define([
          info += "<span>Media: </span>" + obj["Media"] + "<br/>";
          info += "<span>Vehicle: </span>" + obj["Vehicle"] + "<br/>";
          info += "<span class='tap'>Activities: </span>" + obj["Activities"] + "<br/>";
-         info += obj["Activities2"] + "<br/>";
+         info += obj["Activities2"] + "<br/><br/>";
+         
+         info += "<p><a target='_blank' href='http://www.esri.com/~/media/Files/Pdfs/data/esri_data/pdfs/tapestry-singles/segment" + num + ".pdf'>DETAILS</a></p>";
          
          return info;
       }

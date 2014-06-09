@@ -47,7 +47,6 @@ define([
       fields : [],
       infoTemplate : null,
       location : null,
-      bufferDist : null,
       container : null,
       pageObj : null,
 	
@@ -56,9 +55,8 @@ define([
       },
     		
       // update for location
-      updateForLocation: function(location, bufferDist, container, pageObj) {
+      updateForLocation: function(location, container, pageObj) {
          this.location = location;
-         this.bufferDist = bufferDist;
          this.container = container;
          this.container.innerHTML = "<br/><br/><img src='images/ajax-loader.gif'/>";
          this.pageObj = pageObj;

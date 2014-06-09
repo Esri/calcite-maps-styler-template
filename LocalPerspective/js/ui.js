@@ -162,37 +162,8 @@ define([
          var pages = [];
          var num = 0;
          pages.push({id: num, type: "blank", color: this._getPageColor(num), buffer:null, proximityFeatures: null, update:true});
-         if (this.config.showDemographics) {
-            num +=1;
-            pages.push({id:num, label: this.config.demographicsLabel, type:"demographics", color: this._getPageColor(num), buffer:null, proximityFeatures: null, update:true});
-            this.demographicsInfo = new DemographicsInfo(this.config);
-         }
-         if (this.config.showLifestyle) {
-            num +=1;
-            pages.push({id:num, label: this.config.lifestyleLabel, type:"lifestyle", color: this._getPageColor(num), buffer:null, proximityFeatures: null, update:true});
-            this.lifestyleInfo = new LifestyleInfo(this.config);
-         }
-         if (this.config.showWeather) {
-            num +=1;
-            pages.push({id:num, label: this.config.weatherLabel, type:"weather", color: this._getPageColor(num), buffer:null, proximityFeatures: null, update:true});
-            try {
-               if (this.config.weatherLayerURL_Tiled) {
-                  this.lyrWeather = new WebTiledLayer(this.config.weatherLayerURL_Tiled);
-                  this.lyrWeather.setOpacity(0.6);
-                  this.lyrWeather.setVisibility(false);
-                  this.map.addLayer(this.lyrWeather);
-               } else {
-                  if (this.config.weatherLayerURL_WMS) {
-                     this.lyrWeather = new WMSLayer(this.config.weatherLayerURL_WMS, {opacity: 0.5, format: "png", visibleLayers: [0]});
-                     this.lyrWeather.setVisibility(false);
-                     this.map.addLayer(this.lyrWeather);
-                  }
-               }
-            } catch(err) {
-               console.log("Unable to create weather layer: " + err);
-            }
-            this.weatherInfo = new WeatherInfo(this.config);
-         }
+         
+         // layers in web map
          this.proximityInfo = new ProximityInfo(this.config);
          this.proximityInfo.map = this.map;
          this.proximityInfo.on('updated', lang.hitch(this, this._updateProximityFeatures));
@@ -221,6 +192,44 @@ define([
                pages .push({id:num, label: lyrName, type:"proximity", color: me._getPageColor(num), layer: lyr, buffer:null, proximityFeatures: null, update:true, layerType: "Feature Layer"});
             }
          });
+         
+         // demographics
+         if (this.config.showDemographics) {
+            num +=1;
+            pages.push({id:num, label: this.config.demographicsLabel, type:"demographics", color: this._getPageColor(num), buffer:null, proximityFeatures: null, update:true});
+            this.demographicsInfo = new DemographicsInfo(this.config);
+         }
+         
+         // lifestyle
+         if (this.config.showLifestyle) {
+            num +=1;
+            pages.push({id:num, label: this.config.lifestyleLabel, type:"lifestyle", color: this._getPageColor(num), buffer:null, proximityFeatures: null, update:true});
+            this.lifestyleInfo = new LifestyleInfo(this.config);
+         }
+         
+         //weather
+         if (this.config.showWeather) {
+            num +=1;
+            pages.push({id:num, label: this.config.weatherLabel, type:"weather", color: this._getPageColor(num), buffer:null, proximityFeatures: null, update:true});
+            try {
+               if (this.config.weatherLayerURL_Tiled) {
+                  this.lyrWeather = new WebTiledLayer(this.config.weatherLayerURL_Tiled);
+                  this.lyrWeather.setOpacity(0.6);
+                  this.lyrWeather.setVisibility(false);
+                  this.map.addLayer(this.lyrWeather);
+               } else {
+                  if (this.config.weatherLayerURL_WMS) {
+                     this.lyrWeather = new WMSLayer(this.config.weatherLayerURL_WMS, {opacity: 0.5, format: "png", visibleLayers: [0]});
+                     this.lyrWeather.setVisibility(false);
+                     this.map.addLayer(this.lyrWeather);
+                  }
+               }
+            } catch(err) {
+               console.log("Unable to create weather layer: " + err);
+            }
+            this.weatherInfo = new WeatherInfo(this.config);
+         }
+         
          this.pages = pages;   
       },
       
@@ -287,6 +296,12 @@ define([
             
             // page slider
             if (type == "demographics" || type == "proximity") {
+                
+                var pageUnits = domConstruct.create('div', {
+                  class : 'pageUnits',
+                  innerHTML: this.config.distanceUnits.toUpperCase()
+               }, pageHeader);
+               
                var pageSlider = domConstruct.create('div', {
                   class : 'pageSlider',
                   innerHTML: "<div id='slider_" + id + "'></div>"
@@ -557,7 +572,12 @@ define([
          var pageObj = this.pages[this.curPage];
          if (pageObj.update && this.location) {
             pageObj.proximityFeatures = [];
-            this._bufferLocation(pageObj);
+            if (pageObj.type == "demographics" ||pageObj.type == "proximity") {
+               this._bufferLocation(pageObj);
+            } else{
+               this._performAnalysis(pageObj);
+            }
+            
          } else {
             this._renderResults(pageObj);
          }
@@ -633,8 +653,7 @@ define([
          var type = pageObj.type;
          switch (type) {
             case "demographics":
-               var dist = registry.byId("slider_"+ this.curPage).value;
-               this.demographicsInfo.updateForLocation(this.location, pageObj.buffer, container);
+               this.demographicsInfo.updateForLocation(this.location, container, pageObj);
                break;
             case "lifestyle":
                this.lifestyleInfo.updateForLocation(this.location, container);
@@ -643,9 +662,8 @@ define([
                this.weatherInfo.updateForLocation(this.location, container);
                break;
             case "proximity":
-               var dist = registry.byId("slider_"+ this.curPage).value;
                pageObj.proximityFeatures = null;
-               this.proximityInfo.updateForLocation(this.location, dist, container, pageObj);
+               this.proximityInfo.updateForLocation(this.location, container, pageObj);
                break;
          }
          if (type != "proximity") {
@@ -725,6 +743,7 @@ define([
             // location
             if (this.location) {
                var symLoc = new PictureMarkerSymbol('images/pin.png', 30, 30);
+               symLoc.setOffset(0,15);
                var graLoc = new Graphic(this.location, symLoc, {});
                graLoc.id = "location";
                this.map.graphics.add(graLoc);
