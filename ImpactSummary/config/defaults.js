@@ -150,15 +150,6 @@ define({
     "bingmapskey": "",
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
     "sharinghost": location.protocol + "//" + "www.arcgis.com",
-    "urlItems": [
-        "edit",
-        "extent"
-    ],
-    //When true the template will query arcgis.com for default settings for helper services, units etc. If you
-    //want to use custom settings for units or any of the helper services set queryForOrg to false then enter
-    //default values for any items you need using the helper services and units properties.
-    "queryForOrg": true,
-    "localize": true,
     "units": null,
     "helperServices": {
         "geometry": {
