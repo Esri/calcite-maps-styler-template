@@ -176,6 +176,7 @@ define("js/lgonlineOutput", [
          */
         setUpListeningForCommands: function () {
             // We ignore command activations--only close with timeout
+            return;
         },
 
         /**
