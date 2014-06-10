@@ -1,4 +1,3 @@
-/*http://stackoverflow.com/questions/6902944/sass-mixin-for-background-transparency-back-to-ie8*/
 /*Phones (520px) Small Tablets (720px)*/
 html, body {
   padding: 0;
@@ -110,6 +109,37 @@ input[type=checkbox]:checked.checkbox + .checkbox:before {
 
 .esriPrintout a {
   color: #5daddd; }
+
+.templatePicker {
+  border: none; }
+
+.esriMeasurement .areaIcon {
+  background-image: url(../images/area_measure.png);
+  width: 28px;
+  height: 28px; }
+
+.esriMeasurement .distanceIcon {
+  background-image: url(../images/dist_measure.png);
+  width: 28px;
+  height: 28px; }
+
+.esriMeasurement .locationIcon {
+  background-image: url(../images/dist_point.png);
+  width: 28px;
+  height: 28px; }
+
+.esriMeasurement .esriButtonHover .dijitButtonNode {
+  background: #a9a9a9; }
+
+.esriMeasurement .esriButtonChecked .dijitButtonNode {
+  background: #a9a9a9; }
+
+.esriMeasurement .esriButton .dijitButtonNode:hover {
+  background: #a9a9a9; }
+
+.locationIcon {
+  width: 32px;
+  height: 32px; }
 
 .esriSimpleSlider {
   text-align: center;
@@ -386,7 +416,7 @@ img {
 
 /*Panel sizes*/
 .small {
-  height: 210px; }
+  height: 235px; }
 
 .medium {
   height: 440px; }

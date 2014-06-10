@@ -157,7 +157,6 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
 
         // tool click
         _toolClick: function (name) {
-            console.log(name);
             this._showPage(name);
 
 

@@ -83,8 +83,17 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
         setColor: function (color) {
             var rgb = Color.fromHex(color).toRgb();
-            rgb.push(0.9);
-            return Color.fromArray(rgb);
+            var outputColor = null;
+            if (has("ie") < 9) {
+                outputColor = color;
+            } else {
+                //rgba supported so add 
+                rgb.push(0.9);
+                outputColor = Color.fromArray(rgb);
+
+            }
+
+            return outputColor;
 
         },
 
@@ -235,8 +244,20 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             //Add the default map description panel 
             var deferred = new Deferred();
             if (has("details")) {
-                var description = this.config.response.itemInfo.item.description || this.config.response.itemInfo.item.snippet;
+                var description = this.config.description || this.config.response.itemInfo.item.description || this.config.response.itemInfo.item.snippet;
                 if (description) {
+
+                    var descLength = description.length;
+                    //Change the panel class based on the string length
+                    if (descLength < 200) {
+                        panelClass = "small";
+                    } else if (descLength < 400) {
+                        panelClass = "medium";
+                    } else {
+                        panelClass = "large";
+                    }
+
+
                     var detailDiv = toolbar.createTool(tool, panelClass);
                     detailDiv.innerHTML = description;
                 }
@@ -778,12 +799,14 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
         },
         _updateTheme: function () {
+
             //Set the background color using the configured theme value 
             query(".bg").style("backgroundColor", this.theme.toString());
             query(".esriPopup .pointer").style("backgroundColor", this.theme.toString());
             query(".esriPopup .titlePane").style("backgroundColor", this.theme.toString());
 
-            //Set the font color using the configured color value 
+
+            //Set the font color using the configured color value   
             query(".fc").style("color", this.color.toString());
             query(".calcite .esriPopup .titlePane").style("color", this.color.toString());
 
@@ -795,6 +818,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 query(".esriSimpleSlider").style("color", "#000");
                 query(".icon-color").style("color", "#000");
             }
+
         },
         _checkExtent: function () {
             var pt = this.map.extent.getCenter();
