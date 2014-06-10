@@ -18,6 +18,16 @@ define({
     root: ({
         map: {
             error: "Unable to create map"
+        },
+        days: {
+           now: "NOW",
+           sun: "SUN",
+           mon: "MON",
+           tue: "TUE",
+           wed: "WED",
+           thu: "THU",
+           fri: "FRI",
+           sat: "SAT"
         }
     }),
     "fr": 1

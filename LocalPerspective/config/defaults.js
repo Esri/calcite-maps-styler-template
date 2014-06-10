@@ -42,13 +42,14 @@ define({
     
     // **************************** //
     // ** UI SPECIFIC PARAMETERS ** //
+    "cycleColors": 0,
     "color": "#80ab00",
     "colors": ["#0071ab", "#27a4d2", "#886197", "#8a2581", "#fc0055", "#c50143", "#db0111", "#ec5b02", "#efa602", "#dab900", "#80ab00", "#548901", "#049686", "#097096"],
     "logo" : "images/logo.png",
     "title": "Local Perspective",
-    "cycleColors": 0,
     // **************************** //
     
+    // **************************** //
     // ** LOCAL PERSPECTIVE PARAMETERS **//
     "showDemographics": true,
     "demographicsLabel": "Demographics",
@@ -61,11 +62,13 @@ define({
     "showWeather": true,
     "weatherLabel": "Weather",
     "weatherURL": "http://api.worldweatheronline.com/free/v1/weather.ashx?format=json&num_of_days=3&extra=localObsTime&key=63hkyhwzpks3a3kj9k9jdfeg", // URL to free weather API information with your access token
-    "weatherLayerURL": "http://gis.srh.noaa.gov/ArcGIS/services/RIDGERadar/MapServer/WMSServer", // URL for weather layer
+    "weatherLayerURL_Tiled" : "https://gisserver.accuweather.com/ESRITileServices2/tileRequest/AccuTileServices/LatestUSHiResRadar/N1dvRW9KUjNNK2tYWFp4Y1h6M2lCa2ZTRW5wMWJzeXdaamxIY3ZkRmcxVCs1YXdPaE1MckpBPT0=/MapServer/tile/{level}/{row}/{col}",
+    "weatherLayerURL_WMS": "http://gis.srh.noaa.gov/ArcGIS/services/RIDGERadar/MapServer/WMSServer", // URL for WMS weather layer.
+    "weatherUnits": "F", // options: F or C
     "showDirections": false,
     "directionsLabel": "Directions",
-    "directionsURL": "http://api.worldweatheronline.com/free/v1/weather.ashx?format=json&num_of_days=3&extra=localObsTime&key=63hkyhwzpks3a3kj9k9jdfeg",
-    "maxDistance": 10, //Miles to allow buffer
+    "directionsURL": null,
+    "distanceUnits": "miles", // options: miles or kilometers
     "defaultZoomLevel": 14,
     // **************************** //
     

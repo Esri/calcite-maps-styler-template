@@ -6,6 +6,11 @@ html, body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+a, a:hover, a:visited{
+	color: #bbbbbb;
+	text-decoration: none;
+}
+
 /* Fonts */
 
 @font-face {
@@ -391,6 +396,8 @@ html, body {
 	color: #ffffff;
 	line-height: 20px;
 	text-align: center;
+	overflow: hidden;
+	white-space:nowrap;
 }
 
 .pageCounter {
@@ -430,6 +437,22 @@ html, body {
 	background: url(../images/reverse.png) no-repeat;
 }
 
+.pageUnits {
+	position: absolute;
+	left: 50%;
+	margin-left: -90px;
+	bottom: 25px;
+	width: 180px;
+	height: 10px;
+	font-size: 8px;
+	color: #000000;
+	text-align: center;
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+	filter: alpha(opacity=50); 
+}
+
 .pageSlider {
 	position: absolute;
 	left: 50%;
@@ -440,6 +463,7 @@ html, body {
 	z-index: 200;
 	display: block;
 	background: url(../images/slider.png) no-repeat;
+	background-position:bottom;
 }
 
 .pageClose {
@@ -592,12 +616,12 @@ html, body {
 	left: 40px;
 	right: 0px;
 	top: 3px;
-	/*width: 80%;*/
 	height: 62px;
 	display: block;
 	font-size: 10px;
-	line-height: 12px;
+	line-height: 11px;
 	overflow: hidden;
+	white-space: nowrap;
 }
 
 .recDistance {
