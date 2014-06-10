@@ -322,7 +322,8 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
                             var layersDiv = toolbar.createTool(tool, panelClass);
                             var menu = new Menu({
-                                id: "layerMenu"
+                                id: "layerMenu",
+                                className: "layer-menu"
                             }, domConstruct.create("div", {}, layersDiv)); //, layersDiv);
                             array.forEach(layerInfos, function (layer) {
                                 menu.addChild(new CheckedMenuItem({
@@ -493,18 +494,20 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 if (has("print-legend")) {
                     legendNode = domConstruct.create("input", {
                         id: "legend_ck",
-                        className: "css-checkbox",
+                        className: "checkbox",
                         type: "checkbox",
                         checked: false
-                    }, domConstruct.create("div"));
+                    }, domConstruct.create("div", {
+                        "class": "checkbox"
+                    }));
 
                     var labelNode = domConstruct.create("label", {
                         "for": "legend_ck",
-                        "innerHTML": "Include legend"
+                        "className": "checkbox",
+                        "innerHTML": "  " + this.config.i18n.tools.print.legend
                     }, domConstruct.create("div"));
                     domConstruct.place(legendNode, printDiv);
                     domConstruct.place(labelNode, printDiv);
-
 
                     on(legendNode, "change", lang.hitch(this, function (arg) {
 

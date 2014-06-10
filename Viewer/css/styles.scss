@@ -170,6 +170,44 @@ html, body {
     text-align: center;
 }
 
+/*Styles for the print dialog checkbox*/
+.checkbox {
+    display: inline-block;
+    cursor: pointer;
+    margin-left:10px; 
+    line-height:18px;
+    padding:4px;
+}
+ input[type=checkbox].checkbox {
+    display:none; 
+}
+
+.checkbox:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align:middle;
+    background-color: #d3d3d3;
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 3px;
+}
+ input[type=checkbox]:checked.checkbox + .checkbox:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+}
+/*Layer list dialog*/
+.layer-menu{
+    width:100%;
+}
+.layer-menu .dijitMenuItem:hover{
+    background:#d3d3d3;
+}
+.layer-menu .dijitMenuItemSelected{
+    background:#d3d3d3;
+}
 /* Esri Jvascript API*/
 .esriPopup .pointer.bottom , .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight{
     background: #f7f7f7 !important;
@@ -716,6 +754,7 @@ img{
     margin-top: 3px;
 }
 
+
 /*Calcite updates keep list and submit issues*/
 
 .calcite .esriPopup .titleButton.next{
@@ -739,6 +778,7 @@ img{
     display: inline-block;
     visibility: hidden;
 }
+
 .calcite .dijitMenu{
     border:none;
 }
@@ -873,6 +913,34 @@ img{
 .calcite .share-dialog-extent {
     margin: 0 0 15px 0;
 }
+
+.share-dialog-checkbox {
+    display: inline-block;
+    cursor: pointer;
+    padding:8px;
+}
+ input[type=checkbox].share-dialog-checkbox {
+    display:none; 
+}
+
+.share-dialog-checkbox:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align:middle;
+    background-color: #d3d3d3;
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 3px;
+}
+
+ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+}
+
 /*Icon Fonts*/
 
 @font-face {
