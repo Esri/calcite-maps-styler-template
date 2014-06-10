@@ -21,24 +21,24 @@ define({
 				newMap: "Newly selected web map",
 				webmapDefault: "Web map default",
 				customCfg: "Custom configuration",
-				tooltipLocation: "Define the Map location that will be used when your readers navigate to this section.",
+				tooltipLocation: "Define the map location that will be used when your readers navigate to this section.",
 				tooltipContent: "Define the visible layers.",
 				tooltipPopup: "Choose a popup to be displayed when your readers navigate to this section.",
-				tooltipOverview: "Choose to display a tiny and smaller scale Map in a corner.",
-				tooltipLegend: "Choose to display the Map Legend.",
-				mapCfgInvite: "Use these controls to configure your Map"
+				tooltipOverview: "Display a small overview map along with the main map",
+				tooltipLegend: "Display the map legend on the map, helpful when the map has many layers and symbols.",
+				mapCfgInvite: "Use these controls to configure your map"
 			},
 			configure: {
 				btnReset: "Reset",
 				btnCancel: "Cancel",
 				tocTitle: "Map content",
 				tocExplain: "Select which layers will be shown.",
-				tocSave: "Save Map content",
+				tocSave: "Save map content",
 				extentTitle: "Map location",
 				extentExplain: "Pan and zoom the map to define how it will look for your readers.",
 				extentSave: "Save Map location",
 				popupTitle: "Map popup",
-				popupExplain: "Open the popup you want to be displayed when your readers navigate to this section.",
+				popupExplain: "Configure the look of the pop-up shown to readers",
 				popupSave: "Save the popup configuration",
 				hintNavigation: "Map navigation is disabled."
 			}

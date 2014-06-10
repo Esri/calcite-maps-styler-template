@@ -76,7 +76,7 @@ define({
 				mapMarkerExplain: "User will see a map marker when clicking the link"
 			},
 			editorActionMedia: {
-				lblTitle: "Change the Main Stage media"
+				lblTitle: "Change the Main Stage content"
 			},
 			editorInlineMedia: {
 				lblTitle: "Insert an image or video"

@@ -26,8 +26,8 @@ define({
 				buttonSettings: "Settings",
 				buttonHelp: "Help",
 				buttonPreview: "View Live",
-				tooltipFirstSave: "This functionality isn't available until the application is saved",
-				tooltipNotShared: "This functionality isn't available until the application is shared",
+				tooltipFirstSave: "This function is not available until the application is saved",
+				tooltipNotShared: "This function is not available until the application is shared",
 				noPendingChange: "No pending change",
 				unSavedChangePlural: "Pending changes",
 				closeWithPendingChange: "Are you sure to want to confirm this action? Your changes will be lost.",
@@ -39,7 +39,7 @@ define({
 			},
 			share: {
 				firstSaveTitle: "Application successfully saved",
-				firstSaveHeader: "Your application is now saved in %PORTAL% but it isn't shared yet.",
+				firstSaveHeader: "Your application is now saved in %PORTAL% but it is not shared yet.",
 				firstSavePreview: "Preview",
 				firstSaveShare: "Share",
 				firstSaveA1: "If you are not familiar with %PORTAL% or want a shortcut to access the builder interface, you can save the following link: %LINK1%",
@@ -65,16 +65,16 @@ define({
 				shareA2div1: "Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>.",
 				shareA2div2: "As the owner of the application, when you are signed in on %PORTAL%, the application includes a button to open the builder:",				
 				shareQ3: "Where is the data stored?",
-				shareA3: "%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos haven't been duplicated in %PORTAL%."
+				shareA3: "%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%."
 			},
 			settings: {
 				header: "Settings",
-				tabError: "Please check for errors in all tabs"
+				tabError: "Please check all tabs for errors"
 			},
 			settingsLayout: {
 				title: "Layout",
-				explain: "What layout do you want to use?",
-				explainInit: "If you don’t like your initial choice, change will be possible through the settings dialog.",
+				explain: "Which layout do you want to use?",
+				explainInit: "You can change the layout anytime from the settings panel.",
 				viewExample: "View a live example"
 			},
 			settingsTheme: {

@@ -69,7 +69,7 @@ app.cfg = {
   		}
   	],
   	
-  	HELP_URL: "http://storymapsdev.arcgis.com/en/app-list/map-tour/",
+  	HELP_URL: "http://storymaps.arcgis.com/en/app-list/map-journal/",
 	
 	// Control the authorized data source (for initialization and import screen)
 	AUTHORIZED_IMPORT_SOURCE: {

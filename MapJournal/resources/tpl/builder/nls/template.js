@@ -6,7 +6,7 @@ define({
 				sideTitle: "Side Panel",
 				sideDescr: "A layout for a text intensive story that excels at combining your photos, videos, and maps in a clear focused message.",
 				floatTitle: "Floating Panel",
-				floatDescr: "A layout that puts your cartography in focus while allowing a transparent short form text panel to help drive the story."
+				floatDescr: "A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story."
 			},
 			common: {
 				lblStatus1: "Published",
@@ -41,11 +41,11 @@ define({
 			addEditViewText: {
 				editorPlaceholder: "Add text, links, and small graphics here.",
 				editorActionsTitle: "Main Stage Actions",
-				editorActionsHelpDescr: "Use these controls to create links that will change the main stage. For example, when the reader clicks a link you may want to zoom the Map to a specific location, display another web map or display an Image."
+				editorActionsHelpDescr: "Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image."
 			},
 			organizePopup: {
 				title: "Organize",
-				lblHeader: "Drag and drop story sections to organize your content.",
+				lblHeader: "Drag and drop sections to organize your content.",
 				lblColTitle: "Title",
 				lblColPubDate: "Publication date",
 				lblColStatus: "Status",
@@ -60,16 +60,16 @@ define({
 				lblSettings: "Settings",
 				lblOrga: "Organize content",
 				lblEdit: "Edits",
-				lblPublish: "Publish",
+				lblPublish: "Share",
 				lblMore: "Want more?",
 				lblLink: "Visit the Story Maps website.",
 				content1Div1: "You can integrate a variety of styles when building your story. The <strong>%LAYOUT_TITLE%</strong> typically holds your text, images, and video while your maps tend go on the <strong>Main Stage</strong>. However, the %TPL_NAME% allows you to feature images, charts, and video within the main stage as well.",
-				content1Div2: "Adding sections allows you to truly customize your storytelling experience. As readers scroll down through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can load automatically to support your message.",
+				content1Div2: "Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message.",
 				content2Div1: "Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, and widths are all refined here.",
-				content2Div2: "You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to the world.",
-				content3Div1: "Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; so within Organize you can reorder or delete sections as you wish.",
+				content2Div2: "You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others.",
+				content3Div1: "Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish.",
 				content4Div1: "Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. You’ll use the edit functions many times as you develop your %TPL_NAME%!",
-				content5Div1: "Your %TPL_NAME% is saved to your %PORTAL% account, it is within %PORTAL% where you can decide whether the story is private, shared with just your organization, or open to the world. We even provide you with a shortened, stable URL so you can share easily."
+				content5Div1: "Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier."
 			},
 			landing: {
 				lblAdd: "Add the Home Section",
