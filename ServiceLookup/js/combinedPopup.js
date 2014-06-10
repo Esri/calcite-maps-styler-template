@@ -324,7 +324,7 @@ define([
             this.toolbar = new Draw(this.map, { showTooltips: false });
             this.toolbar.on("draw-end", lang.hitch(this, this._drawEnd));
             //esri.bundle.toolbars.draw.addPoint = this.config.i18n.map.mouseToolTip;
-
+            
 
         },
         _initGraphic: function () {
@@ -500,11 +500,14 @@ define([
                     });
 
                 }
+                var featureArray = [];
                 if (this.results.length === 0) {
                     var editGraphic = new Graphic(this.event, this.editSymbol, null, null);
                     if (this.showGraphic === true) {
                         this.map.graphics.add(editGraphic);
                     }
+                    featureArray.push(editGraphic);
+                    this.map.infoWindow.setFeatures(featureArray);
                     this.map.infoWindow.setTitle(this.config.serviceUnavailableTitle);
                     this.map.infoWindow.setContent(this.config.serviceUnavailableMessage.replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'"));
                     this.map.infoWindow.show(editGraphic.geometry);
@@ -519,7 +522,7 @@ define([
                     }
 
                 } else {
-                    var featureArray = [];
+                   
 
                     editGraphic = new Graphic(this.event, this.editSymbolAvailable, resultFeature, this.popupTemplate);
                     featureArray.push(editGraphic);
