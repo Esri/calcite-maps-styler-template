@@ -101,6 +101,7 @@ Evented, declare, lang, has, esriNS, _WidgetBase, a11yclick, _TemplatedMixin, on
                 shareDialogSubHeader: "share-dialog-subheader",
                 shareDialogTextarea: "share-dialog-textarea",
                 shareDialogExtent: "share-dialog-extent",
+                shareDialogExtentChk: "share-dialog-checkbox",
                 mapSizeContainer: "map-size-container",
                 embedMapSizeClear: "embed-map-size-clear",
                 iconClear: "icon-clear"

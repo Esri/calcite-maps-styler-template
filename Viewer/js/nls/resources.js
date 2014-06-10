@@ -26,7 +26,8 @@ define({
 			      "label2": 'Portrait (PDF)',
 			      "label3": 'Landscape (Image)',
 			      "label4": 'Portrait (Image)'
-			    }
+			    },
+			    "legend": "Add legend to output"
 			},
 			"share": {
 				"extent": "Use current map extent",
