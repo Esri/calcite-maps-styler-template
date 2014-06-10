@@ -23,6 +23,7 @@ mkdir %BUILD_OUTPUT%\Editor\Chrome
 mkdir %BUILD_OUTPUT%\ElevationsProfile
 mkdir %BUILD_OUTPUT%\Elevations
 mkdir %BUILD_OUTPUT%\Filter
+mkdir %BUILD_OUTPUT%\GeoForm
 mkdir %BUILD_OUTPUT%\HeaderFooter
 mkdir %BUILD_OUTPUT%\HeaderFooter\Chrome                
 mkdir %BUILD_OUTPUT%\HeaderFooter\pavement              
@@ -93,6 +94,7 @@ xcopy %TEMPLATES_ROOT%\Edit                                     %BUILD_OUTPUT%\E
 xcopy %TEMPLATES_ROOT%\archive\ElevationsProfile                %BUILD_OUTPUT%\ElevationsProfile                    /E /Y
 xcopy %TEMPLATES_ROOT%\Elevations                               %BUILD_OUTPUT%\Elevations                           /E /Y
 xcopy %TEMPLATES_ROOT%\Filter                                   %BUILD_OUTPUT%\Filter                               /E /Y
+xcopy %TEMPLATES_ROOT%\GeoForm                                  %BUILD_OUTPUT%\GeoForm                              /E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterChrome               %BUILD_OUTPUT%\HeaderFooter\Chrome                  /E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterPavement             %BUILD_OUTPUT%\HeaderFooter\pavement                /E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterSeaside              %BUILD_OUTPUT%\HeaderFooter\seaside                 /E /Y
