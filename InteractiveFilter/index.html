@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta charset="utf-8">
+    <!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
+    <link rel="stylesheet" href="//jsdev.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet"  href="//jsdev.arcgis.com/3.10/js/esri/css/esri.css">
+    <!--Load any application specific styles-->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/Drawer.css">
+</head>
+<body class="claro app-loading">
+   <!--The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. --> 
+       <div id="border_container" class="border-container-outer">
+        <div id="cp_left" class="content-pane-left">
+        </div>
+        <div id="cp_center" class="content-pane-center">
+            <div class="top-bar bg">
+                <i id="toggle_button" class="hamburger-button icon-menu fc"></i> 
+                <div id="title" class="top-bar-title"></div>
+                <div id="search" class="geocoder"></div>
+            </div>
+         <div id="mapDiv" dir="ltr"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+        var dojoConfig = {
+            // The locationPath logic below may look confusing but all its doing is 
+            // enabling us to load the api from a CDN and load local modules from the correct location.
+            packages: [{
+                name: "application",
+                location: package_path + '/js'
+            }, {
+                name: "config",
+                location: package_path + '/config'
+            }]
+        };
+    </script>
+    <script type="text/javascript" src="//jsdev.arcgis.com/3.10/"></script>
+    <script type="text/javascript">
+        require([
+            "dojo/on",
+            "application/main",
+            "application/template",
+            "dojo/domReady!"
+        ], function(
+            on,
+            Main,
+            Template
+        ){
+            //create the template. This will take care of all the logic required for template applications 
+            //If you need localization set the supportsLocalization value to true to get the localized strings 
+            //from the javascript/nls/resource files. 
+            //Note that we've included a placeholder nls folder and a resource file with one error string
+            //to show how to setup the strings file.
+            
+            var supportsLocalization = true; //defaults to true
+            
+            var myTemplate = new Template(supportsLocalization);
+            
+            on(myTemplate, "ready", function(config) {
+                //The config object contains the following properties: helper services, (optionally) 
+                //i18n, appid, webmap and any custom values defined by the application. 
+                //In this example we have one called theme. 
+                Main(config);
+            });
+        });
+    </script>   
+</body>
+</html>
