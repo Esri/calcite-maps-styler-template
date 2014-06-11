@@ -1,4 +1,4 @@
-define(["dojo/Evented", "dojo/parser", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/array", "dojo/_base/lang", "dojo/dom-class", "dojo/Deferred", "dojo/promise/all", "esri/arcgis/utils", "esri/urlUtils", "esri/request", "esri/config", "esri/lang", "esri/IdentityManager", "esri/tasks/GeometryService", "config/defaults", "application/OAuthHelper","config/commonConfig"
+define(["dojo/Evented", "dojo/parser", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/array", "dojo/_base/lang", "dojo/dom-class", "dojo/Deferred", "dojo/promise/all", "esri/arcgis/utils", "esri/urlUtils", "esri/request", "esri/config", "esri/lang", "esri/IdentityManager", "esri/tasks/GeometryService", "config/defaults", "application/OAuthHelper", "config/commonConfig"
 
 ], function (
 Evented, parser, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, urlUtils, esriRequest, esriConfig, esriLang, IdentityManager, GeometryService, defaults, OAuthHelper, commonConfig) {
@@ -11,7 +11,7 @@ Evented, parser, declare, kernel, array, lang, domClass, Deferred, all, arcgisUt
             //config will contain application and user defined info for the application such as i18n strings, 
             //the web map id and application id, any url parameters and any application specific configuration
             // information. 
-            this.config = declare.safeMixin(defaults,commonConfig);
+            this.config = declare.safeMixin(defaults, commonConfig);
             this.localize = supportsLocalization || false;
             this._init().then(lang.hitch(this, function () {
                 this.emit("ready", this.config);

@@ -99,7 +99,7 @@ define([
          299:["Moderate rain at times","shower2.png","shower2_night.png"],
          260:["Freezing fog","fog.png","fog_night.png"],
          248:["Fog","fog.png","fog_night.png"],
-         200:["Thundery outbreaks in nearby","tsstorm1.png","tsstorm1_night.png"],
+         200:["Thundery outbreaks in nearby","tstorm1.png","tstorm1_night.png"],
          179:["Patchy snow nearby","snow1.png","snow1_night.png"],
          176:["Patchy rain nearby","shower1.png","shower1_night.png"],
          143:["Mist","mist.png","mist_night.png"],

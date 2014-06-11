@@ -32,6 +32,8 @@ define([], function() {
         "about": null, 
         //When true the locate button is displayed on the map. 
         "locate": true,
+        //When true the home button is displayed on the map. 
+        "home": true,
         //When true the geocoder search box is displayed in the title area
         "search": true,
         "helperServices": {  

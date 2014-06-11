@@ -113,6 +113,7 @@ html,body {
     padding:2px 4px;
     right:8px;
 }
+
 .open-drawer{
  /*Hide geocoder for small screen sizes when drawer is open*/
     display:none;
@@ -127,11 +128,25 @@ html,body {
 #locateDiv{
     position: absolute;
     top:55px;
-    left:2px;
+    left:4px;
     z-index: 50;
     @include respond-to(850){
         top:130px;
     }
+}
+
+#homeDiv{
+  position:absolute;
+  top:100px;
+  left:4px;
+  z-index:50;
+  @include respond-to(850){
+    top:175px;
+  }
+}
+.esriSimpleSlider {
+    top: 55px;
+    left:4px;
 }
 @font-face {
   font-family: 'simple';

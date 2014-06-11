@@ -1,5 +1,5 @@
-define(["dojo/ready", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/Color", "esri/arcgis/utils", "dojo/on", "application/Drawer", "application/CreateGeocoder", "esri/dijit/Legend", "dojo/dom-class", "dojo/dom", "dojo/query", "dojo/dom-construct", "esri/dijit/LocateButton"], function (
-ready, declare, lang, Color, arcgisUtils, on, Drawer, CreateGeocoder, Legend, domClass, dom, query, domConstruct, LocateButton) {
+define(["dojo/ready", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/Color", "esri/arcgis/utils", "dojo/on", "dijit/registry", "application/Drawer", "application/CreateGeocoder", "esri/dijit/Legend", "dojo/dom-class", "dojo/dom", "dojo/query", "dojo/dom-construct", "esri/dijit/LocateButton", "esri/dijit/HomeButton"], function (
+ready, declare, lang, Color, arcgisUtils, on, registry, Drawer, CreateGeocoder, Legend, domClass, dom, query, domConstruct, LocateButton, HomeButton) {
     return declare("", null, {
         config: {},
         theme: null,
@@ -62,6 +62,16 @@ ready, declare, lang, Color, arcgisUtils, on, Drawer, CreateGeocoder, Legend, do
                 location.startup();
             }
 
+            //Add the home button if configured 
+            if (this.config.home) {
+                var homeButton = new HomeButton({
+                    map: this.map
+                }, domConstruct.create("div", {
+                    id: "homeDiv"
+                }, "mapDiv"));
+                homeButton.startup();
+            }
+
             //Define legend panel content 
             dom.byId("legend-label").innerHTML = this.config.i18n.tools.legend;
             var legend_div = domConstruct.create("div", {
@@ -95,7 +105,9 @@ ready, declare, lang, Color, arcgisUtils, on, Drawer, CreateGeocoder, Legend, do
             }).then(lang.hitch(this, function (response) {
 
                 //define the application title 
-                dom.byId("title").innerHTML = this.config.title || response.itemInfo.item.title;
+                var title = this.config.title || response.itemInfo.item.title;
+                dom.byId("title").innerHTML = title;
+                document.title = title;
 
 
                 this.map = response.map;
@@ -139,6 +151,8 @@ ready, declare, lang, Color, arcgisUtils, on, Drawer, CreateGeocoder, Legend, do
             query(".esriPopup .pointer").style("backgroundColor", this.theme.toString());
             query(".esriPopup .titlePane").style("backgroundColor", this.theme.toString());
             query(".esriPopup .titlePane").style("color", this.color.toString());
+
+            registry.byId("border_container").resize();
         }
     });
 });
