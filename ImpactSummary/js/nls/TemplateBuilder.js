@@ -46,6 +46,7 @@ define({
                 "nextButtonText": "Next",
                 "prevButtonText": "Previous",
                 "enterLabelText": "Enter Label",
+                "SelectedFeatureText": "Selected Feature",
                 "layerHelpTextMessage": "This application requires a layer with numeric fields",
                 "alertMessage": {
                     "resetVariableMessage": "Are You sure you want to reset variable ?",

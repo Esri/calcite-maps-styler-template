@@ -74,7 +74,7 @@ function (
                 animateSlider: "animate-slider",
                 divOuterSliderContainer: "outer-slider-container",
                 divHeader: "div-header",
-                bgColor: "background-color",
+                selectedDot: "selected-dot",
                 hTitle: "header-title",
                 hNumber: "header-number",
                 divHeaderTitle: "div-header-title",
@@ -96,7 +96,8 @@ function (
                 divPaginationContainer: "div-pagination-container",
                 divPagination: "div-pagination",
                 paginationDot: "pagination-dot",
-                clear: "clear"
+                clear: "clear",
+                selectedBackground: "selected-bgColor"
             };
             //set no of slide to display
             this.displayPageCount = 3;
@@ -329,6 +330,9 @@ function (
         _panelCloseEvent: function(node) {
             var expandedClick = on(node, 'click', lang.hitch(this, function() {
                 this._hideExpanded();
+                for (var i = 1; i < dojo.query('.panel').children('.light').length; i++) {
+                    domClass.remove(dojo.query('.panel').children('.light')[i], 'leftMargin');
+                }
             }));
             this._events.push(expandedClick);
         },
@@ -337,7 +341,12 @@ function (
             var panelClick = on(node, 'click', lang.hitch(this, function() {
                 this._showExpanded(index);
                 domClass.remove(this._geoPanelsNode, "animate-geo-panel");
-
+                domClass.add(dojo.query('.light').children('.title')[index], this.css.selectedBackground);
+                if (dojo.query('.panel').children('.light').length > 1) {
+                    for (var i = 1; i < dojo.query('.panel').children('.light').length; i++) {
+                        domClass.add(dojo.query('.panel').children('.light')[i], 'leftMargin');
+                    }
+                }
             }));
             this._events.push(panelClick);
         },
@@ -355,6 +364,9 @@ function (
             panel = domConstruct.create('div', {
                 className: this.css.statsPanel + " " + isParent
             });
+            if (index > 0) {
+                domClass.add(panel, 'blockLeftMargin');
+            }
             domConstruct.place(panel, this._geoPanelsNode, 'last');
             // panel content holder
             panelContent = domConstruct.create('div', {
@@ -414,7 +426,7 @@ function (
             domConstruct.place(detailedPanelHeader, detailedPanelBorder, 'last');
             // header title
             detailedPanelHeaderTitle = domConstruct.create('div', {
-                className: this.css.bgColor + " " + this.css.divHeaderTitle
+                className: this.css.selectedBackground + " " + this.css.divHeaderTitle
             });
             domConstruct.place(detailedPanelHeaderTitle, detailedPanelHeader, 'last');
             // header span title
@@ -703,7 +715,6 @@ function (
                     // if first dot
                     if (i === 0) {
                         // set selected
-                        domClass.add(spanPaginationDot, this.css.bgColor);
                         this._selectedPageIndex[index] = 0;
                     }
                     // place dot
@@ -754,10 +765,10 @@ function (
                 // if current selected
                 if (i === childIndex) {
                     // set selected class
-                    domClass.add(this._nodes[parentIndex].pagination[i], this.css.bgColor);
+                    domClass.add(this._nodes[parentIndex].pagination[i], this.css.selectedDot);
                 } else {
                     // remove selected class
-                    domClass.remove(this._nodes[parentIndex].pagination[i], this.css.bgColor);
+                    domClass.remove(this._nodes[parentIndex].pagination[i], this.css.selectedDot);
                 }
             }
             // reset arrow visibility
@@ -810,6 +821,7 @@ function (
                 // panel has children
                 if(config[index].children && config[index].children.length){
                     domClass.add(obj.panel, this.css.StatsPanelParent);
+                    domClass.remove(obj.panelTitle, this.css.selectedBackground);
                 }
                 domClass.remove(obj.detailedPanel, this.css.animateSlider);
             }));

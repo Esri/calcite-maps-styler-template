@@ -292,6 +292,9 @@ define([
                     } else if (minValue == maxValue) {
                         q.where = this._attributeField + ' = ' + maxValue;
                     }
+                    else if (minValue && !maxValue) {
+                        q.where = this._attributeField + ' = ' + minValue;
+                    }
                     //query features based on range of values(between minValue and maxValue)
                     else {
                         q.where = this._attributeField + ' > ' + minValue + ' AND ' + this._attributeField + ' <= ' + maxValue;

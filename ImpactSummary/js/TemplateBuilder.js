@@ -262,8 +262,8 @@ function (
             this._createLayersPanel(rightSettingsContent);
             //Create builder settings to switch between light and dark theme
             this._createFourthColumn(rightSettingsContent);
-
             this._createZoomLevelSelectionPanel(rightSettingsContent);
+            this._createFeatureSelectionPanel(rightSettingsContent);
         },
 
         _createAppSettingBasemapPanel: function (settingsContainer) {
@@ -534,9 +534,9 @@ function (
         _createFourthColumn: function (rightSettingsContent) {
             var themeContainer, themeLabelContainer, themeLabel, themeSelectContainer, themeSelect;
             themeContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
-            themeLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1 esriParentContainerStyleClmBrdNone" }, themeContainer);
+            themeLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, themeContainer);
             themeLabel = domConstruct.create("div", { innerHTML: "Theme" }, themeLabelContainer);
-            themeSelectContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2 esriParentContainerStyleClmBrdNone" }, themeContainer);
+            themeSelectContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2" }, themeContainer);
             themeSelect = domConstruct.create("select", { "class": "themeSelect" }, themeSelectContainer);
             array.forEach(this.availableThemes, lang.hitch(this, function (theme) {
                 var themeOption = domConstruct.create("option");
@@ -549,7 +549,7 @@ function (
             this.own(on(themeSelect, "change", lang.hitch(this, function (evt) {
                 this.config.theme = evt.currentTarget.value;
             })));
-            domConstruct.create("div", { "class": "esriParentContainerStyleClm3 esriParentContainerStyleClmBrdNone" }, themeContainer);
+            domConstruct.create("div", { "class": "esriParentContainerStyleClm3" }, themeContainer);
         },
 
         _createZoomLevelSelectionPanel: function (rightSettingsContent) {
@@ -557,7 +557,7 @@ function (
             zoomLevelContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
             zoomLevelLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, zoomLevelContainer);
             zoomLevelLabel = domConstruct.create("div", { innerHTML: "Zoom Level" }, zoomLevelLabelContainer);
-            themeSelectContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2 esriParentContainerStyleClmBrdNone" }, zoomLevelContainer);
+            themeSelectContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2" }, zoomLevelContainer);
             zoomLevelSelect = domConstruct.create("select", { "class": "esriZoomSelect" }, themeSelectContainer);
             var zoomToExtentOption = domConstruct.create("option");
             zoomToExtentOption.text = zoomToExtentOption.value = "Zoom to extent";
@@ -584,6 +584,23 @@ function (
             on(zoomLevelSelect, "change", lang.hitch(this, function (evt) {
                 this.config.zoomType = evt.currentTarget.value;
             }));
+            domConstruct.create("div", { "class": "esriParentContainerStyleClm3" }, zoomLevelContainer);
+        },
+
+        _createFeatureSelectionPanel: function (rightSettingsContent) {
+            var zoomLevelContainer, zoomLevelLabelContainer, zoomLevelLabel, themeSelectContainer, zoomLevelSelect;
+            zoomLevelContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
+            zoomLevelLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, zoomLevelContainer);
+            zoomLevelLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.SelectedFeatureText }, zoomLevelLabelContainer);
+            themeSelectContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2 esriParentContainerStyleClmBrdNone" }, zoomLevelContainer);
+            zoomLevelSelect = domConstruct.create("select", { "class": "esriZoomSelect" }, themeSelectContainer);
+            var opaqueOption = domConstruct.create("option");
+            opaqueOption.text = opaqueOption.value = "Opaque";
+            zoomLevelSelect.appendChild(opaqueOption);
+
+            var transparentOption = domConstruct.create("option");
+            transparentOption.text = transparentOption.value = "Transparent";
+            zoomLevelSelect.appendChild(transparentOption);
         },
 
         //function to create and return text editor

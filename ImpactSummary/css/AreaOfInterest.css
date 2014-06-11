@@ -86,11 +86,19 @@
     display: block;
     float: left;
 }
+.selected-dot
+{
+    background-color: #777 !important;
+}
 .dark {
     color: #fff;
 }
 .light {
     color: #333333;
+}
+.selected-bgColor
+{
+    background-color: #fff !important;
 }
 .esriRTL .geo-data .panel {
     float: right;
@@ -169,15 +177,11 @@
 .geo-data .geo-panel .light .title,
 .light .background-color {
     background-color: #dbddd8;
-    background-color: rgba(220, 222, 217, 0.90);
+    background-color: rgba(227, 227, 227, 0.90);
 }
 .geo-data .geo-panel .panel-parent .light:hover .count {
     background-color: #f36f20;
     background-color: rgba(255, 255, 255, 0.80);
-}
-.geo-data .geo-panel .panel-parent .light:hover .title {
-    background-color: #dbddd8;
-    background-color: rgba(220, 222, 217, 0.80);
 }
 .geo-data .geo-panel .dark .count {
     background-color: #1e1e1e;
@@ -201,8 +205,8 @@
     position: absolute;
     z-index: 2;
     bottom: 0;
-    left: 50%;
-    width: 526px;
+    left: 49.99%;
+    width: 524px;
     overflow: hidden;
     margin-left: -263px;
 }
@@ -225,16 +229,21 @@
     border-bottom: 3px solid;
 }
 .geo-panel-four .panel {
-    width: 24.3%;
-    padding-right: 0.6%;
+    width: 24.4%;
 }
 .geo-panel-three .panel {
-    width: 32.7%;
-    padding-right: 0.6%;
+    width: 32.8%;
 }
 .geo-panel-two .panel {
-    width: 49.3%;
-    padding-right: 0.6%;
+    width: 49.65%;
+}
+.leftMargin
+{
+    margin-left: 1%;
+}
+.blockLeftMargin
+{
+    margin-left: 0.7%;
 }
 .geo-panel-one .panel {
     width: 100%;
@@ -390,7 +399,7 @@
     float: left;
     width: 8px;
     height: 8px;
-    background-color: #777;
+    background-color: #DBDDD8;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
