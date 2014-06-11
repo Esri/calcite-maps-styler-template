@@ -760,8 +760,12 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 var home = new HomeButton({
                     map: this.map
                 }, dom.byId("btnHome"));
-                //add a tooltip
-                domAttr.set("btnHome", "data-title", this.config.i18n.tooltips.home);
+
+                if (!has("touch")) {
+                    //add a tooltip 
+                    domAttr.set("btnHome", "data-title", this.config.i18n.tooltips.home);
+                }
+
                 home.startup();
             }
 
@@ -774,7 +778,12 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 var geoLocate = new LocateButton({
                     map: this.map
                 }, dom.byId("btnLocate"));
-                domAttr.set("btnLocate", "data-title", this.config.i18n.tooltips.locate);
+                if (!has("touch")) {
+                    //add a tooltip 
+                    domAttr.set("btnLocate", "data-title", this.config.i18n.tooltips.locate);
+                }
+
+
                 geoLocate.startup();
 
             }

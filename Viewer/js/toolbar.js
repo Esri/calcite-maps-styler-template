@@ -1,5 +1,5 @@
-define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/fx", "dojo/_base/html", "dojo/_base/lang", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-geometry", "dojo/on", "dojo/query", "dojo/Deferred"], function (
-Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, query, Deferred) {
+define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/fx", "dojo/_base/html", "dojo/_base/lang", "dojo/has", "dojo/dom", "dojo/dom-class", "dojo/dom-attr", "dojo/dom-construct", "dojo/dom-geometry", "dojo/on", "dojo/query", "dojo/Deferred"], function (
+Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, domGeometry, on, query, Deferred) {
     return declare([Evented], {
 
         map: null,
@@ -59,17 +59,19 @@ Evented, declare, fx, html, lang, dom, domClass, domConstruct, domGeometry, on, 
 
         //Create a tool and return the div where you can place content
         createTool: function (tool, panelClass) {
-
-
             var name = tool.name;
 
             // add tool
             var pTool = domConstruct.create("div", {
                 className: "panelTool",
-                "data-title": this.config.i18n.tooltips[name] || name,
-                // use tooltip text defined in nls file if available. 
                 id: "panelTool_" + name
             }, this.pTools);
+
+            if (!has("touch")) {
+                //add a tooltip 
+                var tip = this.config.i18n.tooltips[name] || name;
+                domAttr.set(pTool, "data-title", tip);
+            }
 
             domConstruct.create("img", {
                 className: "tool",
