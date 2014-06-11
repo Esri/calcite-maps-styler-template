@@ -32,7 +32,7 @@
         "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
         "basemapBox.basemapgroupOwner": "",
-        "helpMessageBox.content": "Finder<hr><br>Finder (formerly known as Parcel Viewer) provides the general public and other interested parties access to searchable and interactive information such as property tax and assessment information or the locations of water access points.<br><br>To locate this information, click a feature on the map or search for the feature by address, name, or another identifier such as Parcel ID."
+        "helpMessageBox.content": "Finder<hr><br>Finder provides the general public and other interested parties access to searchable and interactive information such as property tax and assessment information or the locations of water access points.<br><br>To locate this information, click a feature on the map or search for the feature by address, name, or another identifier such as Parcel ID."
     },
 
     "configurationSettings": [{
@@ -146,7 +146,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 07f089b7a0ec9ed1 2014-06-10 15:28:16 -0700"
+                "commit 5cf7584d6a821309 2014-06-11 11:43:27 -0700"
             ]
         }
     }, {
