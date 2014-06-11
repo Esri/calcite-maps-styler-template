@@ -33,6 +33,7 @@ mkdir %BUILD_OUTPUT%\Identify
 mkdir %BUILD_OUTPUT%\Identify\Chrome                        
 mkdir %BUILD_OUTPUT%\Identify\Pavement                  
 mkdir %BUILD_OUTPUT%\Identify\Seaside                       
+mkdir %BUILD_OUTPUT%\InteractiveFilter   
 mkdir %BUILD_OUTPUT%\Legend
 mkdir %BUILD_OUTPUT%\Legend\Chrome                      
 mkdir %BUILD_OUTPUT%\Legend\pavement                        
@@ -99,6 +100,7 @@ xcopy %TEMPLATES_ROOT%\archive\HeaderFooterChrome               %BUILD_OUTPUT%\H
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterPavement             %BUILD_OUTPUT%\HeaderFooter\pavement                /E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterSeaside              %BUILD_OUTPUT%\HeaderFooter\seaside                 /E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooter                     %BUILD_OUTPUT%\HeaderFooter\main                    /E /Y
+xcopy %TEMPLATES_ROOT%\archive\InteractiveFilter                %BUILD_OUTPUT%\InteractiveFilter                    /E /Y
 xcopy %TEMPLATES_ROOT%\archive\IdentifyChrome                   %BUILD_OUTPUT%\Identify\Chrome                      /E /Y
 xcopy %TEMPLATES_ROOT%\archive\IdentifyPavement                 %BUILD_OUTPUT%\Identify\Pavement                    /E /Y
 xcopy %TEMPLATES_ROOT%\archive\IdentifySeaside                  %BUILD_OUTPUT%\Identify\Seaside                     /E /Y
@@ -161,6 +163,7 @@ copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%
 copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\bv_build\commonConfig.js             
 copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\SimpleViewer\config\commonConfig.js  
 copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\LocalPerspective\config\commonConfig.js  
+copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\InteractiveFilter\config\commonConfig.js  
 echo ########## BUILD END TIME: %date% - %time% ##########
 
 :END
