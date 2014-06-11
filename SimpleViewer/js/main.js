@@ -105,7 +105,9 @@ ready, declare, lang, Color, arcgisUtils, on, registry, Drawer, CreateGeocoder, 
             }).then(lang.hitch(this, function (response) {
 
                 //define the application title 
-                dom.byId("title").innerHTML = this.config.title || response.itemInfo.item.title;
+                var title = this.config.title || response.itemInfo.item.title;
+                dom.byId("title").innerHTML = title;
+                document.title = title;
 
 
                 this.map = response.map;
