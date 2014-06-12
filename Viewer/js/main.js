@@ -24,8 +24,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
         map: null,
         initExt: null,
         mapExt: null,
-        popupHandler: null,
-        popupListener: null,
 
         startup: function (config) {
             // config will contain application and user defined info for the template such as i18n strings, the web map id
@@ -842,31 +840,24 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             }
         },
         _enablePopups: function () {
-            if (this.popupListener && !this.popupHandler) {
-                this.popupHandler = this.map.on("click", this.popupListener);
-            }
+            this.map.setInfoWindowOnClick(true);
 
         },
         _disablePopups: function () {
-            if (this.popupHandler) {
-                this.popupHandler.remove();
-                this.popupHandler = null;
-            }
+            this.map.setInfoWindowOnClick(false);
 
         },
         _createWebMap: function (itemInfo) {
             // create a map based on the input web map id
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: {},
+                usePopupManager: true,
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
 
                 this.map = response.map;
 
                 this._updateTheme();
-                //Save the popup click handler and listener so we can enable/disable popups as needed 
-                this.popupHandler = response.clickEventHandle;
-                this.popupListener = response.clickEventListener;
 
 
                 //Add a logo if provided
