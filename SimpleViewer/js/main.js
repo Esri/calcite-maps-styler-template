@@ -101,6 +101,7 @@ ready, declare, lang, Color, arcgisUtils, on, registry, Drawer, CreateGeocoder, 
         _createWebMap: function (itemInfo) {
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: {},
+                usePopupManager: true,
                 bingMapsKey: this.config.bingmapskey
             }).then(lang.hitch(this, function (response) {
 

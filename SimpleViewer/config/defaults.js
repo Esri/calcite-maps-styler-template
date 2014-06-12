@@ -29,8 +29,8 @@ define([], function() {
         "title": null, 
         //Enter text here that will display in the about panel 
         //If not specified the web map description is used. 
-        "about": null, 
         //When true the locate button is displayed on the map. 
+        "about": null,
         "locate": true,
         //When true the home button is displayed on the map. 
         "home": true,

@@ -86,7 +86,9 @@ html,body {
         box-shadow 0.1s linear;*/
 
 }
-
+.simpleGeocoder .esriGeocoderMenu{
+    color: #333;
+}
 .ac-container input:checked ~ div.ac-medium{
     height: 20%;
 }
@@ -99,6 +101,7 @@ html,body {
 
 .panel_content{
     padding:4px;
+    max-width:$panel-width - 20;
 }
 .esriSimpleSlider{
     display:none;

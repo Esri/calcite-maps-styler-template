@@ -4,6 +4,7 @@ $border-color: #ddd;
 $font-color: #545454;
 $font-color-dark: #333;
 $font-color-light:#fff;
+$panel-width: 280px;
 
 
 @mixin fontFace($family,$src,$weight: normal,$style: normal) {
