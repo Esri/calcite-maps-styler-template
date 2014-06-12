@@ -75,7 +75,7 @@
       "home":true,
       "locate":true,
       "search":true,
-      "color":"#333",
-      "theme":"#aaa"
+      "color":"#fff",
+      "theme":"#666"
    }
 }
