@@ -100,7 +100,7 @@ xcopy %TEMPLATES_ROOT%\archive\HeaderFooterChrome               %BUILD_OUTPUT%\H
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterPavement             %BUILD_OUTPUT%\HeaderFooter\pavement                /E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterSeaside              %BUILD_OUTPUT%\HeaderFooter\seaside                 /E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooter                     %BUILD_OUTPUT%\HeaderFooter\main                    /E /Y
-xcopy %TEMPLATES_ROOT%\archive\InteractiveFilter                %BUILD_OUTPUT%\InteractiveFilter                    /E /Y
+xcopy %TEMPLATES_ROOT%\InteractiveFilter                        %BUILD_OUTPUT%\InteractiveFilter                    /E /Y
 xcopy %TEMPLATES_ROOT%\archive\IdentifyChrome                   %BUILD_OUTPUT%\Identify\Chrome                      /E /Y
 xcopy %TEMPLATES_ROOT%\archive\IdentifyPavement                 %BUILD_OUTPUT%\Identify\Pavement                    /E /Y
 xcopy %TEMPLATES_ROOT%\archive\IdentifySeaside                  %BUILD_OUTPUT%\Identify\Seaside                     /E /Y
