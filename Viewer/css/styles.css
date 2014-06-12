@@ -523,7 +523,8 @@ img {
     max-height: none; } }
 
 #pageBody_details {
-  padding: 5px; }
+  padding: 5px;
+  max-width: 290px; }
 
 #panelTop {
   position: fixed;

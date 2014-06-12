@@ -1,6 +1,7 @@
 $default-theme: rgb(255,255,255);
 $black-color:rgb(0,0,0);
 $default-font: #fff;
+$page-width: 300px;
 @mixin border-radius($radius:5px) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -492,7 +493,7 @@ img{
     left:10px;
     right:10px;
     margin-left: -310px;
-    width: 300px;
+    width: $page-width;
     top: 90px;
     display:block;
     overflow:hidden;
@@ -620,6 +621,7 @@ img{
 }
 #pageBody_details{
     padding:5px;
+    max-width: $page-width - 10;
 }
 
 #panelTop {

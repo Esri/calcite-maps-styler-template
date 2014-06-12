@@ -735,12 +735,12 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
         _getBasemapGroup: function () {
             //Get the id or owner and title for an organizations custom basemap group. 
             var basemapGroup = null;
-            if (this.config.basemapgroup.title && this.config.basemapgroup.owner) {
+            if (this.config.basemapgroup && this.config.basemapgroup.title && this.config.basemapgroup.owner) {
                 basemapGroup = {
                     "owner": this.config.basemapgroup.owner,
                     "title": this.config.basemapgroup.title
                 };
-            } else if (this.config.basemapgroup.id) {
+            } else if (this.config.basemapgroup && this.config.basemapgroup.id) {
                 basemapGroup = {
                     "id": this.config.basemapgroup.id
                 };
