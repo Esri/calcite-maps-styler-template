@@ -93,8 +93,8 @@ app.cfg = {
 	
 	// Text to be used as the browser page title during app creation
 	TPL_NAME: "Map Journal",
-	WEBAPP_TAG: [],
-	WEBAPP_KEYWORD: ["JavaScript", "Map", "Mapping Site", "Online Map", "Ready To Use", "selfConfigured", "Web Map", "Story Maps", "MapJournal"],
+	WEBAPP_TAG: ["Story Map", "Map Journal"],
+	WEBAPP_KEYWORD: ["JavaScript", "Map", "Mapping Site", "Online Map", "Ready To Use", "selfConfigured", "Web Map", "Story Map", "Story Maps", "MapJournal"],
 
 	//
 	// Portal configuration

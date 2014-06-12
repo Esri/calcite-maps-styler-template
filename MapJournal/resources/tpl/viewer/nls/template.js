@@ -1,6 +1,9 @@
 define({
 	root: ({
 		viewer: {
+			common: {
+				close: "Close"
+			},
 			loading: {
 				step1: "Loading application",
 				step2: "Loading data",
@@ -52,6 +55,14 @@ define({
 			},
 			legendFromCommon: {
 				title: "Legend"
+			},
+			shareFromCommon: {
+				copy: "Copy",
+				copied: "Copied",
+				open: "Open",
+				embed: "Embed in website",
+				embedExplain: "Use the following HTML code to embed the Journal in a website.",
+				size: "Size (width/height):"
 			}
         }
     }),
