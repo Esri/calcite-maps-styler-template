@@ -1,4 +1,196 @@
 /* Main Application */
+/* Drawer */
+.top-bar {
+  position: absolute;
+  z-index: 36;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 34px;
+  color: #333; }
+
+.esriRTL .top-bar {
+  left: auto;
+  right: 0; }
+
+.top-bar-title {
+  display: none;
+  font-size: 1.2em;
+  overflow: hidden;
+  margin-left: 40px;
+  margin-top: 6px;
+  max-width: 50%;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+@media only screen and (min-width: 760px) {
+  .top-bar-title {
+    display: block; } }
+
+.esriRTL .top-bar-title {
+  float: right;
+  padding-right: 10px; }
+
+.hamburger-button {
+  position: absolute;
+  top: 9px;
+  left: 2px;
+  cursor: pointer; }
+
+.hamburger-button:hover {
+  opacity: 0.3;
+  filter: alpha(opacity=30); }
+
+.esriRTL .hamburger-button {
+  float: right;
+  right: 5px; }
+
+.border-container-outer {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow: hidden; }
+
+/*Filter panel styles */
+legend {
+  background: none repeat scroll 0 0 transparent;
+  color: #003366;
+  font-size: 1.3 em;
+  font-weight: bold;
+  margin: 0.5em 0;
+  padding: 0 0.5 em; }
+
+.instructions {
+  margin: 0.5em 0;
+  color: #999; }
+
+#container {
+  margin: 0 auto;
+  padding: 1em;
+  text-align: left;
+  position: relative; }
+
+.content-pane-left {
+  width: 0px;
+  max-width: 290px;
+  height: 100%;
+  padding: 5px;
+  font-size: 1em;
+  margin: 0;
+  border: 0;
+  background: #fff;
+  overflow: hidden;
+  -webkit-transition: width 250ms ease;
+  -moz-transition: width 250ms ease;
+  -ms-transition: width 250ms ease;
+  -o-transition: width 250ms ease;
+  transition: width 250ms ease; }
+
+@media only screen and (min-width: 760px) {
+  .content-pane-left {
+    max-width: 340px; } }
+
+#container.esriRtl {
+  text-align: right; }
+
+.filter {
+  display: block; }
+
+.row input {
+  width: 250px; }
+
+@media only screen and (min-width: 760px) {
+  .row input {
+    max-width: 280px; } }
+
+.selectedFilter {
+  border: solid 1px #BBFFFF; }
+
+label {
+  width: 100%;
+  padding: 0 0.5em 0.4em 0; }
+
+#container.esriRtl label.hint {
+  text-align: right;
+  float: right; }
+
+.hint {
+  font-style: italic;
+  font-size: 9pt;
+  width: 100%;
+  padding: 0 1em 0.4em 0.5em;
+  text-align: left;
+  float: left;
+  color: #999; }
+
+#container.esriRtl .row {
+  text-align: right; }
+
+#container.esriLtr .row {
+  text-align: left; }
+
+.row {
+  padding: 0.4em;
+  width: 100%; }
+
+.clearBoth {
+  width: 100%;
+  height: 1px;
+  margin: 0 0 -1px;
+  clear: both; }
+
+input {
+  border-color: #555;
+  border-style: solid;
+  border-width: 1px;
+  color: #333;
+  padding: 1px;
+  width: 150px; }
+
+.loader {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  z-index: 100;
+  display: none; }
+
+.startLoader {
+  display: block; }
+
+.submitButton {
+  background: #6F6767;
+  border: none;
+  color: #FFFFFF;
+  font-size: 100%;
+  padding: 9px;
+  cursor: pointer; }
+
+.submitButton:hover {
+  background: #545454; }
+
+.app-loading .content-pane-left {
+  width: 0; }
+
+.drawer-open .content-pane-left {
+  width: 340px;
+  overflow: auto;
+  overflow-x: hidden;
+  padding: 5px;
+  border-right: 1px solid #ddd; }
+
+.esriRTL .drawer-open .content-pane-left {
+  border-right: 0;
+  border-left: 1px solid #ddd; }
+
+.content-pane-center {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
 html, body {
   padding: 0;
   margin: 0;
@@ -71,6 +263,9 @@ html, body {
 @media only screen and (min-width: 850px) {
   #homeDiv {
     top: 175px; } }
+
+.simpleGeocoder .esriGeocoderResults {
+  color: #333; }
 
 @font-face {
   font-family: 'simple';

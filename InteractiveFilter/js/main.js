@@ -314,6 +314,7 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
                     //Optionally define additional map config here for example you can 
                     //turn the slider off, display info windows, disable wraparound 180, slider position and more. 
                 },
+                usePopupManager: true,
                 bingMapsKey: this.config.bingmapskey
             }).then(lang.hitch(this, function (response) {
 

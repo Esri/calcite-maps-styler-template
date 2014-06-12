@@ -1,5 +1,6 @@
 /* Main Application */
 @import "template_mixin.scss";
+@import "Drawer.scss";
 html,body {
     padding: 0;
     margin: 0;
@@ -77,6 +78,9 @@ html,body {
   }
 }
 
+.simpleGeocoder .esriGeocoderResults{
+  color: #333;
+}
 
 @font-face {
   font-family: 'simple';
