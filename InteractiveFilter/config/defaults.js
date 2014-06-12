@@ -18,7 +18,7 @@ define([], function() {
         "color": "#fff",
         //Theme defines the background color of the title bar and also the background color of the popup
         //title bar. 
-        "theme": "#ff0000",
+        "theme": "#666",
         //Enter text here that will display in the title section. 
         //If not specified the web map title is used. 
         "title": null, 
