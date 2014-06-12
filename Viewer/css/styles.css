@@ -134,7 +134,7 @@ input[type=checkbox]:checked.checkbox + .checkbox:before {
 .esriMeasurement .esriButtonChecked .dijitButtonNode {
   background: #a9a9a9; }
 
-.esriMeasurement .esriButton .dijitButtonNode:hover {
+.no-touch .esriMeasurement .esriButton .dijitButtonNode:hover {
   background: #a9a9a9; }
 
 .locationIcon {
@@ -273,7 +273,7 @@ input[type=checkbox]:checked.checkbox + .checkbox:before {
   background-size: 14px 14px;
   background-image: none; }
 
-.HomeButton .home:hover, .LocateButton .zoomLocateButton:hover {
+.no-touch .HomeButton .home:hover, .LocateButton .zoomLocateButton:hover {
   background-color: none !important; }
 
 .HomeButton .home:before {
@@ -639,7 +639,7 @@ img {
   border-radius: 13px; }
 
 /*Added hover to match the out-of-the-box hover for the home and locate buttons*/
-.panelTool:hover {
+.no-touch .panelTool:hover {
   background-color: transparent;
   background-color: rgba(102, 102, 102, 0.9);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6666666,endColorstr=#E6666666);
@@ -705,7 +705,7 @@ img {
   display: inline-block;
   visibility: visible; }
 
-.dijitMenuItem:hover {
+.no-touch .dijitMenuItem:hover {
   background-color: transparent;
   background-color: rgba(93, 173, 221, 0.4);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#665DADDD,endColorstr=#665DADDD);

@@ -34,9 +34,13 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             var deferred;
 
             deferred = new Deferred();
+            if (!has("touch")) {
+                on(window, "scroll", lang.hitch(this, this._windowScrolled));
+                on(window, "resize", lang.hitch(this, this._windowScrolled));
+            } else {
 
-            on(window, "scroll", lang.hitch(this, this._windowScrolled));
-            on(window, "resize", lang.hitch(this, this._windowScrolled));
+                on(window, "orientationchange", lang.hitch(this, this._windowScrolled));
+            }
 
             this.pTools = dom.byId("panelTools");
             this.pMenu = dom.byId("panelMenu");
@@ -200,10 +204,12 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
         // close page
         _closePage: function () {
             this._scrollToPage(0);
+
         },
 
         //scroll to page
         _scrollToPage: function (num) {
+
             var box = html.getContentBox(dom.byId("panelContent"));
 
             var startPos = this.curTool * box.h;
@@ -213,9 +219,9 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             if (diff == 1) {
                 this._animateScroll(startPos, endPos);
             } else {
-                // window.pageYOffset = endPos;
                 document.body.scrollTop = endPos;
                 document.documentElement.scrollTop = endPos;
+
                 if (this.map) {
                     this.map.reposition();
                 }
@@ -229,6 +235,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
 
         // window scrolled
         _windowScrolled: function (evt) {
+
             if (this.scrollTimer) {
                 clearTimeout(this.scrollTimer);
             }
@@ -266,6 +273,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
 
             this._updateTool(num);
 
+
             this._animateScroll(startPos, endPos);
 
 
@@ -280,15 +288,18 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
                 curve: [start, end]
             });
             on(anim, "Animate", function (v) {
-                // window.pageYOffset = v;
+
                 document.body.scrollTop = v;
                 document.documentElement.scrollTop = v;
+
+
             });
 
             on(anim, "End", function () {
                 setTimeout(lang.hitch(me, me._resetSnap), 100);
                 if (me.map) {
                     me.map.reposition();
+
                 }
             });
 
@@ -297,6 +308,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
 
         // highlight the active tool on the toolbar
         _updateTool: function (num) {
+
             query(".panelTool").removeClass("panelToolActive");
 
             var name = this.tools[num - 1];
@@ -306,6 +318,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             }
 
             this.emit("updateTool", name);
+
 
         },
 

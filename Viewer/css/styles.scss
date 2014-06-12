@@ -242,7 +242,7 @@ html, body {
 .esriMeasurement .esriButtonChecked .dijitButtonNode{
     background: #a9a9a9;
 }
-.esriMeasurement .esriButton .dijitButtonNode:hover{
+.no-touch .esriMeasurement .esriButton .dijitButtonNode:hover{
     background: #a9a9a9;
 }
 
@@ -376,7 +376,7 @@ html, body {
     background-size: 14px 14px;
     background-image:none;
 }
-.HomeButton .home:hover, .LocateButton .zoomLocateButton:hover{
+.no-touch .HomeButton .home:hover, .LocateButton .zoomLocateButton:hover{
     background-color:none !important;
 }
 .HomeButton .home:before{
@@ -731,7 +731,7 @@ img{
 }
 
 /*Added hover to match the out-of-the-box hover for the home and locate buttons*/
-.panelTool:hover {
+.no-touch .panelTool:hover {
     @include transparent (rgb(102,102,102), 0.9);
 }
 
@@ -799,7 +799,7 @@ img{
     visibility: visible;
 }
 
-.dijitMenuItem:hover {
+.no-touch .dijitMenuItem:hover {
     @include transparent(rgb(93,173,221),0.40);
 }
 .calcite .dijitMenuItemLabel {

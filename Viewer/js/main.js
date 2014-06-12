@@ -764,6 +764,10 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 if (!has("touch")) {
                     //add a tooltip 
                     domAttr.set("btnHome", "data-title", this.config.i18n.tooltips.home);
+                } else {
+                    //remove no-touch class from body 
+                    domClass.remove(document.body, "no-touch");
+
                 }
 
                 home.startup();
