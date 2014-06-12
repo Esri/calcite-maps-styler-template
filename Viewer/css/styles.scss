@@ -358,7 +358,9 @@ html, body {
 .legend{
     padding-bottom:100px;
 }
-
+.simpleGeocoder .esriGeocoderMenu{
+    color: #333;
+}
 .HomeButton .home {
     padding:0 !important;
     width:24px;
@@ -522,9 +524,6 @@ img{
     height: 90px;
     text-align: center;
     display: block;
-    /*@include respond-to(720){
-        height:135px;
-    }*/
 
 }
 .pageTitle {
@@ -537,13 +536,6 @@ img{
     color: #ffffff;
     line-height: 20px;
     overflow:hidden;
-   /* @include respond-to(720){
-        position: relative;
-        left: 0px;
-        top: 5px;
-        width : 100%;
-        text-align: center;
-    }*/
 }
 
 .pageHeaderImg {
@@ -556,15 +548,6 @@ img{
     line-height:60px;
     border: 5px solid rgba(0,0,0,0.1);
     @include border-radius(35px);
-   /* @include respond-to(720){
-        position: relative;
-        top: 16px;
-        margin: 0 auto;
-        width: 72px;
-        height: 72px;
-        border: 8px solid rgba(0,0,0,0.2);
-        @include border-radius(44px);
-    }*/
 }
 
 .pageIcon {
@@ -573,21 +556,15 @@ img{
     top:11px;
     width:40px;
     height:40px;
-   /* @include respond-to(720){
-        width: 50px;
-        height: 50px;
-        left:11px;
-        top:11px;
-    }*/
 }
-/*Test resize from 20 to 24*/
+
 .pageClose {
+    cursor: pointer;
     position: absolute;
     right: 5px;
-    top: 9px; /*was 5*/
+    top: 9px; 
     background: url(../images/close.png) no-repeat;
     background-size:24px;
-    cursor: pointer;
     width: 24px;
     height: 24px;
     display: block;
@@ -595,7 +572,7 @@ img{
 
 .pageUp {
     position: absolute;
-    top: 35px; /*was 27*/
+    top: 35px; 
     right: 5px;
     background: url(../images/up.png) no-repeat;
     background-size:24px;
@@ -607,7 +584,7 @@ img{
 
 .pageDown {
     position: absolute;
-    top: 60px; /*was 49*/
+    top: 60px; 
     right: 5px;
     background: url(../images/down.png) no-repeat;
     background-size:24px;
