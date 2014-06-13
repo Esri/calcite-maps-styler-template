@@ -4,6 +4,7 @@ ready, declare, lang, Color, arcgisUtils, on, registry, Drawer, CreateGeocoder, 
         config: {},
         theme: null,
         color: null,
+        paneltheme: null,
         constructor: function (config) {
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
@@ -27,9 +28,27 @@ ready, declare, lang, Color, arcgisUtils, on, registry, Drawer, CreateGeocoder, 
             ready(lang.hitch(this, function () {
                 this.theme = this.setColor(this.config.theme);
                 this.color = this.setColor(this.config.color);
+                this.paneltheme = this.setColor(this.config.paneltheme);
                 //supply either the webmap id or, if available, the item info 
                 var itemInfo = this.config.itemInfo || this.config.webmap;
+
+                //If a custom extent is set as a url parameter handle that before creating the map 
+                if (this.config.extent) {
+                    var extArray = decodeURIComponent(this.config.extent).split(",");
+
+                    if (extArray.length === 4) {
+                        itemInfo.item.extent = [
+                            [parseFloat(extArray[0]), parseFloat(extArray[1])],
+                            [parseFloat(extArray[2]), parseFloat(extArray[3])]
+                        ];
+                    } else if (extArray.length === 5) {
+                        this.initExt = new Extent(JSON.parse(this.config.extent));
+
+                    }
+                }
                 this._createWebMap(itemInfo);
+
+
             }));
         },
         _mapLoaded: function () {
@@ -141,6 +160,8 @@ ready, declare, lang, Color, arcgisUtils, on, registry, Drawer, CreateGeocoder, 
             return Color.fromArray(rgb);
 
         },
+
+
         _updateTheme: function () {
             //Apply the configured theme to the template
             //Add the bg class to any elements that you want to display using the specified background color
@@ -148,10 +169,19 @@ ready, declare, lang, Color, arcgisUtils, on, registry, Drawer, CreateGeocoder, 
             query(".bg").style("backgroundColor", this.theme.toString());
             query(".bg").style("color", this.color.toString());
             query(".fc").style("color", this.color.toString());
-            //Style the popup title bar to use the theme color. 
+            query(".ac-container label:after").style("color", this.color.toString());
+
+
+            //Style the popup title bar to use the theme color.
             query(".esriPopup .pointer").style("backgroundColor", this.theme.toString());
             query(".esriPopup .titlePane").style("backgroundColor", this.theme.toString());
             query(".esriPopup .titlePane").style("color", this.color.toString());
+
+
+            //Query for the title areas in the drawer and  apply the panel theme. 
+            query(".ab").style("backgroundColor", this.paneltheme.toString());
+
+
 
             registry.byId("border_container").resize();
         }

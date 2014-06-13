@@ -12,10 +12,12 @@ define([], function() {
         //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
         "proxyurl": "",
         //Color defines the text color for the menu icon and title that appear in the title bar. 
-        "color": "#333",
+        "color": "#fff",
         //Theme defines the background color of the title bar and also the background color of the popup
         //title bar. 
-        "theme": "#aaa",
+        "theme": "#666",
+        //Specify the color used for the closeable drawer titles.  
+        "paneltheme": "#a3a3a3",
         "bingmapskey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
         //Defaults to arcgis.com. Set this value to your portal or organization host name.
         "sharinghost": location.protocol + "//" + "www.arcgis.com", 

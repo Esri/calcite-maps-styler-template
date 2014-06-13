@@ -34,7 +34,7 @@ html,body {
     line-height:33px;
     font-size:1.2em;
     font-weight:500;
-    @include transparent(rgb(212,212,212), 0.5); 
+    @include transparent(rgb(163,163,163), 0.5); 
 }
 .ac-container label:hover{
      @include transparent(rgb(189,189,189), 0.5);
@@ -42,13 +42,9 @@ html,body {
 .esriRTL .ac-container label{
     float:right;
 }
-.ac-container input:checked + label,
-.ac-container input:checked + label{
-  
-}
+
 .ac-container label:after,
 .ac-container input:checked + label:after{
-    color: #666;
     font-family: "simple";
     font-style: normal;
     font-weight: normal;
@@ -56,11 +52,14 @@ html,body {
     position: absolute;
     right: 13px;
     top: 7px;
+    cursor:pointer;
 }
 
 .ac-container input:checked + label:after{
     content: '\e804'; /*up arrow*/
+    cursor:pointer;
 }
+
 
 .ac-container input{
     display: none;
@@ -126,6 +125,9 @@ html,body {
     }
 }
 /* Esri Jvascript API*/
+.simpleGeocoder .esriGeocoderResult{
+  color:#333;
+}
 .esriPopup .pointer.bottom , .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight{
     background: #f7f7f7 !important;
 }
