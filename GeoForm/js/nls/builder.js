@@ -1,17 +1,18 @@
-﻿define({
+define({
     root: ({
         builder: {
             invalidWebmapSelectionAlert: "Selected webmap does not contain any feature server",
+            selectFieldsText:"Select Form Fields",
             selectThemeText: "Select Form Theme",
             fieldLabelPlaceHolder: "Label this field",
             fieldDescPlaceHolder: "Describe this field",
-            webmapText: "Webmap",
-            layerText: "Layer",
-            detailsText: "Details",
-            fieldsText: "Fields",
-            styleText: "Style",
-            previewText: "Preview",
-            publishText: "Publish",
+            webmapText: "1. Webmap",
+            layerText: "2. Layer",
+            detailsText: "3. Details",
+            fieldsText: "4. Fields",
+            styleText: "5. Style",
+            previewText: "6. Preview",
+            publishText: "7. Publish",
             titleText: "GeoForm Builder",
             descriptionText: "GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left.",
             btnPreviousText: "Previous",
@@ -32,8 +33,6 @@
             previewApplicationText: "Preview Application",
             saveApplicationText: "Save Application",
             saveText: "Save",
-            placeholderLatitude: "Latitude (Y)",
-            placeholderLongitude: "Longitude (X)",
             toggleNavigationText: "Toggle navigation",
             formPlaceholderText: "My Form",
             imageLogoPlaceholderText: "http://www.mysite.com/myimage.jpg",
@@ -43,28 +42,11 @@
             shareBuilderTextMessage: "You can start collecting information by sharing with others",
             shareDialogFormText: "Form Link",
             geoformTitleText: "Geo Form",
-            addressSearchText:"Your submission will appear here. You can drag the pin to correct the location.",
-
-            //Local string for user mode
-            defaultTitleText: "Default Title",
-            defaultDescriptionText: "Default Description",
-            geoFormGeneralTabText: "General",
-            locationInformationText: "Location Info",
-            myLocationText: "My Location",
-            addressText: "Address",
-            cooridnatesText: "Coordinates",
-            locationTabText: "Location",
-            enterCoordinatesPlaceholder: "Enter Coordinates",
-            submitButtonText: "Submit",
-            clearButtonText: "Clear",
-            fieldvalidationMessageAlertText: "Please enter a valid number",
-            formValidationMessageAlertText: "Please verify the form for errors and resubmit the form",
-            latlongValidationMessageAlert: "Please select x and y coordinates",
-            emptylatitudeAlertMessage:"Please enter Latitude",
-            emptylongitudeAlertMessage: "Please enter Longitude",
-            shareUserTitleMessage: "Thank you for your contribution!",
-            shareUserTextMessage: "Your entry has been submitted. Share with others using the following options"
+            layerTabText: "This is the layer that the GeoForm will be built from. The layer must be a feature service that is enabled for editing with sharing permissions appropriate for your audience.",
+            detailsTabText:"Use the Form Detail boxes below to customize the Title, add a custom logo, and provide a short description for your GeoForm audience.",
+            fieldsTabText:"Here you can select which fields will be visible to your GeoForm audience, edit the Labels they will see, and add a short Description to help with data entry.",
+            styleTabText: "Style your GeoForm using the themes below based on your preference.",
+            publishTabText: "If you are finished customizing your GeoForm, save the application and begin sharing with your audience. You can always return to this builder and continue customizing it based on feedback."
         }
-    }),
-    "fr": 1
+    })
 });
