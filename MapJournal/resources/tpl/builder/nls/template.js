@@ -50,7 +50,7 @@ define({
 				lblColPubDate: "Publication date",
 				lblColStatus: "Status",
 				checkDisplayReverse: "Display sections in reverse order",
-				btnApplyWarning: "Confirm suppression of %NB% sections",
+				btnApplyWarning: "Confirm deletion of %NB% section(s)",
 				deleteTooltip: "Delete",
 				firstSectionExplain: "(The home section cannot be moved)"
 			},

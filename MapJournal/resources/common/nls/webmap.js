@@ -2,10 +2,11 @@ define({
 	root: ({
 		commonWebmap: {
 			selector: {
+				lblWebMap: "Web map",
 				lblLocation: "Location",
 				lblContent: "Content",
 				lblPopup: "Popup",
-				lblControls: "Controls",
+				lblControls: "Extras",
 				lblOverview: "Overview Map",
 				lblLegend: "Legend",
 				loadingTitle: "Loading title",

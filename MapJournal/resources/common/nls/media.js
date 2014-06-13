@@ -2,8 +2,8 @@ define({
 	root: ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Select Media Type",
-				lblSelect2: "Select Content Type",
+				lblSelect1: "Media",
+				lblSelect2: "Content",
 				lblMap: "Map",
 				lblImage: "Image",
 				lblVideo: "Video",
