@@ -217,6 +217,17 @@ input[type=checkbox]:checked.checkbox + .checkbox:before {
 .simpleGeocoder .esriGeocoder input:focus {
   color: #FFF; }
 
+.simpleGeocoder .esriGeocoder .esriGeocoderMenuArrow {
+  background: none; }
+
+.simpleGeocoder .esriGeocoder .esriGeocoderMenuArrow:before {
+  content: "\e809";
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  color: #a8a8a8;
+  font-family: "tool-icons"; }
+
 .esriControlsBR {
   position: absolute;
   left: 0px;
@@ -868,8 +879,8 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
 /*Icon Fonts*/
 @font-face {
   font-family: 'tool-icons';
-  src: url('../fonts/tool-icons.eot?8620619');
-  src: url('../fonts/tool-icons.eot?8620619#iefix') format('embedded-opentype'), url('../fonts/tool-icons.woff?8620619') format('woff'), url('../fonts/tool-icons.ttf?8620619') format('truetype'), url('../fonts/tool-icons.svg?8620619#tool-icons') format('svg');
+  src: url('../fonts/tool-icons.eot?23344103');
+  src: url('../fonts/tool-icons.eot?23344103#iefix') format('embedded-opentype'), url('../fonts/tool-icons.woff?23344103') format('woff'), url('../fonts/tool-icons.ttf?23344103') format('truetype'), url('../fonts/tool-icons.svg?23344103#tool-icons') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -879,8 +890,7 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'tool-icons';
-    src: url('../fonts/tool-icons.svg?8620619#tool-icons') format('svg');
-  }
+    src: url('../fonts/tool-icons.svg?23344103#tool-icons') format('svg');  }
 }
 */
 [class^="icon-"]:before, [class*=" icon-"]:before {
@@ -943,3 +953,7 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
   content: '\e80c'; }
 
 /* '' */
+.icon-angle-down:before {
+  content: '\e809'; }
+
+/* '	' */

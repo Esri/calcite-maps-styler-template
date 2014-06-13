@@ -199,27 +199,30 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
 
 
             //If there is a valid search id and field defined add the feature layer to the geocoder array
-            if(this.config.searchLayer && this.config.searchLayer.id){
+            if (this.config.searchLayer && this.config.searchLayer.id) {
                 var layer, field, url, name;
-                    layer = this.map.getLayer(this.config.searchLayer.id);
-                    url = layer.url;
-                    name = layer.name;
-                    if(this.config.searchLayer.fields && this.config.searchLayer.fields.length > 0){
-                        if(this.config.searchLayer.fields[0].fields.length > 0){
-                            field = this.config.searchLayer.fields[0].fields[0];
-                        }
+                layer = this.map.getLayer(this.config.searchLayer.id);
+                url = layer.url;
+                name = layer.name;
+                if (this.config.searchLayer.fields && this.config.searchLayer.fields.length > 0) {
+                    if (this.config.searchLayer.fields[0].fields.length > 0) {
+                        field = this.config.searchLayer.fields[0].fields[0];
                     }
-                    if(url && name && field){
-                        geocoders.push({
-                            "name": name, 
-                            "url": url,
-                            "field": field,
-                            "outFields": "*",
-                            "type": "query"
-                        });
-                    }
+                }
+                if (url && name && field) {
+
+                    geocoders.push({
+                        "name": name,
+                        "url": url,
+                        "field": field,
+                        "outFields": "*",
+                        "type": "query"
+                    });
+                }
+
+
             }
-   
+
             if (hasEsri && esriIdx === 0) {
                 options.minCharacters = 0;
                 options.maxLocations = 5;

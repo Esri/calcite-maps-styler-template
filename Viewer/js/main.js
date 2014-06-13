@@ -13,8 +13,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/ready", "dojo/json", "dojo/_base/array", "dojo/_base/Color", "dojo/_base/declare", "dojo/_base/lang", "dojo/dom", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/Deferred", "dojo/promise/all", "dojo/query", "dijit/registry", "application/toolbar", "application/has-config", "esri/arcgis/utils", "esri/dijit/HomeButton", "esri/dijit/LocateButton", "esri/geometry/Extent", "esri/layers/FeatureLayer"], function (
-ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, domStyle, on, Deferred, all, query, registry, Toolbar, has, arcgisUtils, HomeButton, LocateButton, Extent, FeatureLayer) {
+define(["dojo/ready", "dojo/json", "dojo/_base/array", "dojo/_base/Color", "dojo/_base/declare", "dojo/_base/lang", "dojo/dom", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/Deferred", "dojo/promise/all", "dojo/query", "dijit/registry", "dijit/Menu", "dijit/CheckedMenuItem", "application/toolbar", "application/has-config", "esri/arcgis/utils", "esri/dijit/HomeButton", "esri/dijit/LocateButton", "esri/dijit/Legend", "esri/dijit/BasemapGallery", "esri/dijit/Measurement", "esri/dijit/OverviewMap", "esri/geometry/Extent", "esri/layers/FeatureLayer"], function (
+ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, domStyle, on, Deferred, all, query, registry, Menu, CheckedMenuItem, Toolbar, has, arcgisUtils, HomeButton, LocateButton, Legend, BasemapGallery, Measurement, OverviewMap, Extent, FeatureLayer) {
 
 
     return declare(null, {
@@ -168,19 +168,14 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         return;
                     }
 
-
-
                     //Now that all the tools have been added to the toolbar we can add page naviagation
                     //to the toolbar panel, update the color theme and set the active tool. 
                     this._updateTheme();
                     toolbar.updatePageNavigation();
                     toolbar.activateTool(this.config.activeTool);
                     on(toolbar, "updateTool", lang.hitch(this, function (name) {
-                        if (name === "measure" || name === "edit") {
-                            this._disablePopups();
-                        } else {
-                            this._enablePopups();
-                        }
+                        var activate = (name === "measure" || name === "edit") ? false : true;
+                        this.map.setInfoWindowOnClick(activate);
                     }));
 
 
@@ -191,11 +186,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
         _addBasemapGallery: function (tool, toolbar, panelClass) {
             //Add the basemap gallery to the toolbar. 
             var deferred = new Deferred();
-            require(["application/has-config!basemap?esri/dijit/BasemapGallery"], lang.hitch(this, function (BasemapGallery) {
-                if (!BasemapGallery) {
-                    deferred.resolve();
-                    return;
-                }
+            if (has("basemap")) {
                 var basemapDiv = toolbar.createTool(tool, panelClass);
                 var basemap = new BasemapGallery({
                     id: "basemapGallery",
@@ -205,10 +196,8 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     basemapGroup: this._getBasemapGroup()
                 }, domConstruct.create("div", {}, basemapDiv));
                 basemap.startup();
-                deferred.resolve();
-
-            }));
-
+            }
+            deferred.resolve();
             return deferred.promise;
         },
 
@@ -216,7 +205,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             //Add the bookmarks tool to the toolbar. Only activated if the webmap contains bookmarks. 
             var deferred = new Deferred();
             if (this.config.response.itemInfo.itemData.bookmarks) {
-
+                //Conditionally load this module since most apps won't have bookmarks
                 require(["application/has-config!bookmarks?esri/dijit/Bookmarks"], lang.hitch(this, function (Bookmarks) {
                     if (!Bookmarks) {
                         deferred.resolve();
@@ -244,7 +233,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             if (has("details")) {
                 var description = this.config.description || this.config.response.itemInfo.item.description || this.config.response.itemInfo.item.snippet;
                 if (description) {
-
                     var descLength = description.length;
                     //Change the panel class based on the string length
                     if (descLength < 200) {
@@ -254,7 +242,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     } else {
                         panelClass = "large";
                     }
-
 
                     var detailDiv = toolbar.createTool(tool, panelClass);
                     detailDiv.innerHTML = description;
@@ -324,47 +311,45 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 deferred.resolve();
             } else {
                 if (has("layers")) {
-                    require(["dijit/Menu", "dijit/CheckedMenuItem"], lang.hitch(this, function (Menu, CheckedMenuItem) {
-                        //Build a menu to display the layers in the web map. 
-                        var layerInfos = this._getVisibleLayers(layers);
-                        if (layerInfos.length > 0) {
-                            layerInfos.reverse();
+                    //Build a menu to display the layers in the web map. 
+                    var layerInfos = this._getVisibleLayers(layers);
+                    if (layerInfos.length > 0) {
+                        layerInfos.reverse();
 
-                            //Use small panel class if layer layer is less than 5
-                            if (layerInfos.length < 5) {
-                                panelClass = "small";
-                            } else if (layerInfos.length < 15) {
-                                panelClass = "medium";
-                            } else {
-                                panelClass = "large";
-                            }
-
-                            var layersDiv = toolbar.createTool(tool, panelClass);
-                            var menu = new Menu({
-                                id: "layerMenu",
-                                className: "layer-menu"
-                            }, domConstruct.create("div", {}, layersDiv)); //, layersDiv);
-                            array.forEach(layerInfos, function (layer) {
-                                menu.addChild(new CheckedMenuItem({
-                                    label: layer.title,
-                                    checked: layer.visible,
-                                    onChange: function () {
-
-                                        if (layer.layer.featureCollection) {
-                                            array.forEach(layer.layer.featureCollection.layers, function (layer) {
-                                                layer.layerObject.setVisibility(!layer.layerObject.visible);
-                                            });
-                                        } else {
-                                            layer.layer.setVisibility(!layer.layer.visible);
-                                        }
-                                    }
-                                }));
-
-                            });
-
+                        //Use small panel class if layer layer is less than 5
+                        if (layerInfos.length < 5) {
+                            panelClass = "small";
+                        } else if (layerInfos.length < 15) {
+                            panelClass = "medium";
+                        } else {
+                            panelClass = "large";
                         }
-                        deferred.resolve();
-                    }));
+
+                        var layersDiv = toolbar.createTool(tool, panelClass);
+                        var menu = new Menu({
+                            id: "layerMenu",
+                            className: "layer-menu"
+                        }, domConstruct.create("div", {}, layersDiv));
+                        array.forEach(layerInfos, function (layer) {
+                            menu.addChild(new CheckedMenuItem({
+                                label: layer.title,
+                                checked: layer.visible,
+                                onChange: function () {
+
+                                    if (layer.layer.featureCollection) {
+                                        array.forEach(layer.layer.featureCollection.layers, function (layer) {
+                                            layer.layerObject.setVisibility(!layer.layerObject.visible);
+                                        });
+                                    } else {
+                                        layer.layer.setVisibility(!layer.layer.visible);
+                                    }
+                                }
+                            }));
+
+                        });
+
+                    }
+                    deferred.resolve();
                 } else {
                     deferred.resolve();
                 }
@@ -380,11 +365,7 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             if (layers.length === 0) {
                 deferred.resolve();
             } else {
-                require(["application/has-config!legend?esri/dijit/Legend"], lang.hitch(this, function (Legend) {
-                    if (!Legend) {
-                        deferred.resolve();
-                        return;
-                    }
+                if (has("legend")) {
                     var legendLength = 0;
                     array.forEach(layers, lang.hitch(this, function (layer) {
                         if (layer.infos && layer.infos.length) {
@@ -407,9 +388,11 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                     domClass.add(legend.domNode, "legend");
                     legend.startup();
                     toolbar.activateTool(this.config.activeTool || "legend");
-                    deferred.resolve();
 
-                }));
+                }
+                deferred.resolve();
+
+
             }
             return deferred.promise;
         },
@@ -417,11 +400,8 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
         _addMeasure: function (tool, toolbar, panelClass) {
             //Add the measure widget to the toolbar.
             var deferred = new Deferred();
-            require(["application/has-config!measure?esri/dijit/Measurement"], lang.hitch(this, function (Measurement) {
-                if (!Measurement) {
-                    deferred.resolve();
-                    return;
-                }
+            if (has("measure")) {
+
                 var measureDiv = toolbar.createTool(tool, panelClass);
                 var areaUnit = (this.config.units === "metric") ? "esriSquareKilometers" : "esriSquareMiles";
                 var lengthUnit = (this.config.units === "metric") ? "esriKilometers" : "esriMiles";
@@ -434,20 +414,17 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
                 measure.startup();
 
-                deferred.resolve();
+            }
+            deferred.resolve();
 
-            }));
 
             return deferred.promise;
         },
         _addOverviewMap: function (tool, toolbar, panelClass) {
             //Add the overview map to the toolbar 
             var deferred = new Deferred();
-            require(["application/has-config!overview?esri/dijit/OverviewMap"], lang.hitch(this, function (OverviewMap) {
-                if (!OverviewMap) {
-                    deferred.resolve();
-                    return;
-                }
+
+            if (has("overview")) {
                 var ovMapDiv = toolbar.createTool(tool, panelClass);
 
 
@@ -485,9 +462,8 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                         ovMap.startup();
                     }
                 }));
-                deferred.resolve();
-
-            }));
+            }
+            deferred.resolve();
 
             return deferred.promise;
         },
@@ -839,18 +815,9 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 this.mapExt = this.map.extent;
             }
         },
-        _enablePopups: function () {
-            this.map.setInfoWindowOnClick(true);
-
-        },
-        _disablePopups: function () {
-            this.map.setInfoWindowOnClick(false);
-
-        },
         _createWebMap: function (itemInfo) {
             // create a map based on the input web map id
             arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: {},
                 usePopupManager: true,
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
