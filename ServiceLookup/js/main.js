@@ -25,9 +25,9 @@ define([
     "dojo/on",
     "dojo/dom-class",
     "dojo/dom",
-    "application/SplashScreen",
+    "application/splashscreen",
     "application/Common",
-    "application/CombinedPopup"
+    "application/combinedPopup"
 
 ],
 function (
@@ -111,7 +111,7 @@ function (
                 this.common.addGeocoder("searchDiv");
                 this.common.on("select", lang.hitch(this, this._geocodeSelect));
 
-                //this.common.addBaseMapGallery("basemapDiv");
+                this.common.addBaseMapGallery("basemapDiv");
 
                 this.popup = new CombinedPopup(this.map, this.config, this.layers, this.handler);
                 this.popup.on("popup-started", lang.hitch(this, this._showBusyIndicator));
@@ -161,7 +161,7 @@ function (
                     //Optionally define additional map config here for example you can 
                     //turn the slider off, display info windows, disable wraparound 180, slider position and more. 
                 },
-
+                usePopupManager: true,
                 bingMapsKey: this.config.bingMapsKey
             }).then(lang.hitch(this, function (response) {
                 //Once the map is created we get access to the response which provides important info 
