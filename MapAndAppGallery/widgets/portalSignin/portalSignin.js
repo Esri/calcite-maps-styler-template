@@ -18,7 +18,7 @@
 //============================================================================================================================//
 define([
     "dojo/_base/declare",
-    "dojo/text!./templates/PortalSignin.html",
+    "dojo/text!./templates/portalSignin.html",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "dijit/_WidgetsInTemplateMixin",
