@@ -21,6 +21,7 @@ define([
   "dojo/dom-geometry",
   "dojo/dom-style",
   "dojo/dom-class",
+  "dojo/query",
   "dojo/_base/Color",
   "dojo/colors",
   "dojo/fx/easing",
@@ -48,7 +49,7 @@ define([
   "dojo/i18n!./nls/strings",
   "dojo/text!./Widget.html",
   "xstyle!./css/style.css"
-], function (Evented, _WidgetBase, _OnDijitClickMixin, _TemplatedMixin, _WidgetsInTemplateMixin, on, aspect, declare, lang, Deferred, array, number, registry, Dialog, Toolbar, ContentPane, Button, ToggleButton, put, domGeometry, domStyle, domClass, Color, colors, easing, Chart, Default, Grid, Areas, MouseIndicator, TouchIndicator, ThreeD, esriConfig, esriSniff, esriRequest, Measurement, Geoprocessor, Polyline, SimpleLineSymbol, SimpleMarkerSymbol, Graphic, FeatureSet, LinearUnit, geodesicUtils, webMercatorUtils, Units, i18NStrings, dijitTemplate) {
+], function (Evented, _WidgetBase, _OnDijitClickMixin, _TemplatedMixin, _WidgetsInTemplateMixin, on, aspect, declare, lang, Deferred, array, number, registry, Dialog, Toolbar, ContentPane, Button, ToggleButton, put, domGeometry, domStyle, domClass,query, Color, colors, easing, Chart, Default, Grid, Areas, MouseIndicator, TouchIndicator, ThreeD, esriConfig, esriSniff, esriRequest, Measurement, Geoprocessor, Polyline, SimpleLineSymbol, SimpleMarkerSymbol, Graphic, FeatureSet, LinearUnit, geodesicUtils, webMercatorUtils, Units, i18NStrings, dijitTemplate) {
 
   /**
    *  ElevationsProfile
@@ -65,11 +66,13 @@ define([
      * @param srcRefNode
      */
     constructor: function (options, srcRefNode) {
-      //console.log("ElevationsProfile.constructor: ", options);
+
 
       this.loaded = false;
       this.domNode = srcRefNode || put('div#profileChartNode');
       this.strings = i18NStrings;
+
+ 
 
       // TODO: REMOVE TEST URL //
       if (!options.profileTaskUrl) {
@@ -147,6 +150,7 @@ define([
           on(this._closePaneBtn, 'click', lang.hitch(this, this._toggleMeasurePane)),
           aspect.after(registry.getEnclosingWidget(this.domNode), 'resize', lang.hitch(this, this._resizeChart), true)
       );
+
     },
 
     /**
@@ -321,7 +325,9 @@ define([
      */
     _showHelp: function (hide) {
       if (this._helpDlg) {
+        this._helpDlg.set("title",i18NStrings.display.elevationProfileTitle);
         this._helpDlg.show();
+
         if (hide) {
           setTimeout(lang.hitch(this, function () {
             this._helpDlg.hide();
@@ -596,7 +602,7 @@ define([
 
         // UPDATE CHART //
         this.profileChart.getAxis("y").opt.min = yMin;
-        this.profileChart.getAxis("y").opt.max = yMax;
+        this.profileChart.getAxis("y").opt.max = yMax; 
         this.profileChart.getAxis("y").opt.majorTickStep = yTickStep;
         this.profileChart.getAxis("x").opt.majorTickStep = (this.samplingDistance.distance * 20);
         this.profileChart.getAxis("y").opt.title = lang.replace(this.strings.chart.elevationTitleTemplate, [this._getDisplayUnits(true)]);
