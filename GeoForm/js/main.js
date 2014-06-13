@@ -7,6 +7,7 @@ define([
     "esri/arcgis/utils",
     "dojo/dom",
     "dojo/dom-class",
+    "dojo/dom-style",
     "dojo/on",
     "dojo/query",
     "application/bootstrapmap",
@@ -19,13 +20,14 @@ define([
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "dojo/text!application/dijit/templates/user.html",
-    "dojo/i18n!application/nls/builder",
+    "dojo/i18n!application/nls/user",
     "esri/geometry/webMercatorUtils",
     "esri/geometry/Point",
     "application/ShareDialog",
     "esri/graphic",
     "esri/symbols/PictureMarkerSymbol",
     "esri/toolbars/edit",
+    "dojo/i18n!esri/nls/jsapi",
     "dojo/domReady!"
 ], function (
     ready,
@@ -33,7 +35,7 @@ define([
     lang,
     arcgisUtils,
     dom,
-    domClass,
+    domClass, domStyle,
     on,
     query,
     bootstrapmap,
@@ -46,7 +48,7 @@ define([
     _WidgetBase,
     _TemplatedMixin,
     userTemplate,
-    nls, webMercatorUtils, Point, ShareDialog, Graphic, PictureMarkerSymbol, editToolbar) {
+    nls, webMercatorUtils, Point, ShareDialog, Graphic, PictureMarkerSymbol, editToolbar, esriBundle) {
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: userTemplate,
         nls: nls,
@@ -65,6 +67,7 @@ define([
                 // document ready
                 ready(lang.hitch(this, function () {
                     //supply either the webmap id or, if available, the item info
+                    domStyle.set(this.userMode, 'display', 'none');
                     var itemInfo = this.config.webmap;
                     this._setAppConfigurations(this.config.details);
                     this._createWebMap(itemInfo);
@@ -102,13 +105,10 @@ define([
                     }
                 }));
                 if (flag === true) {
-                    this._showErrorMessageDiv(nls.builder.formValidationMessageAlertText);
+                    this._showErrorMessageDiv(nls.user.formValidationMessageAlertText);
                 } else {
                     this._addFeatureToLayer(this.config);
                 }
-            }));
-            on(this.resetButton, "click", lang.hitch(this, function () {
-                this._clearFormFields();
             }));
         },
         reportError: function (error) {
@@ -133,6 +133,7 @@ define([
         _mapLoaded: function () {
             // remove loading class from body
             domClass.remove(document.body, "app-loading");
+            domStyle.set(this.userMode, 'display', 'block');
             // your code here!
             // get editable layer
             var layer = this.map.getLayer(this.config.form_layer.id);
@@ -148,17 +149,19 @@ define([
                 this.map.infoWindow.hide();
             }));
             on(this.editToolbar, "graphic-move-stop", lang.hitch(this, function (evt) {
-                this.map.infoWindow.setTitle(nls.builder.locationTabText);
-                this.map.infoWindow.setContent(nls.builder.addressSearchText);
+                this.map.infoWindow.setTitle(nls.user.locationTabText);
+                this.map.infoWindow.setContent(nls.user.addressSearchText);
                 this.map.infoWindow.show(evt.graphic.geometry);
             }));
-            var fields = layer.fields;
+            if (layer && layer.fields) {
+                var fields = layer.fields;
+            }
             on(this.map, 'click', lang.hitch(this, function (evt) {
                 this.addressGeometry = evt.mapPoint;
                 if (!evt.graphic) {
                     this.map.graphics.clear();
-                    this.map.infoWindow.setTitle(nls.builder.locationTabText);
-                    this.map.infoWindow.setContent(nls.builder.addressSearchText);
+                    this.map.infoWindow.setTitle(nls.user.locationTabText);
+                    this.map.infoWindow.setContent(nls.user.addressSearchText);
                     if (this.map.infoWindow.isShowing) {
                         this.map.infoWindow.hide();
                     }
@@ -168,15 +171,16 @@ define([
             }));
             on(this.map, 'mouse-move', lang.hitch(this, function (evt) {
                 var coords = this._calculateLatLong(evt);
-                domAttr.set(dojo.byId("latAddress"), "innerHTML", ("Y : " + coords[0].toFixed(5)));
-                domAttr.set(dojo.byId("longAddress"), "innerHTML", ("X : " + coords[1].toFixed(5)));
+                var coordinatesValue = nls.user.latitude + ': ' + coords[0].toFixed(5) + ', ';
+                coordinatesValue += '&nbsp;' + nls.user.longitude + ': ' + coords[1].toFixed(5);
+                domAttr.set(dojo.byId("coordinatesValue"), "innerHTML", coordinatesValue);
             }));
         },
         _setSymbol: function (point) {
             var symbolUrl, pictureMarkerSymbol, graphic;
             this.map.graphics.clear();
             symbolUrl = package_path + "/images/pushpin.png";
-            pictureMarkerSymbol = new PictureMarkerSymbol(symbolUrl, 32, 32);
+            pictureMarkerSymbol = new PictureMarkerSymbol(symbolUrl, 36, 36);
             graphic = new Graphic(point, pictureMarkerSymbol, null, null);
             this.map.graphics.add(graphic);
             this.map.centerAt(point);
@@ -204,8 +208,13 @@ define([
 
         //function to validate and create the form
         _createForm: function (fields) {
+            if (!this.map.getLayer(this.config.form_layer.id)) {
+                /* We will add a code to create error page which will show the error message*/
+                this._showErrorMessageDiv(nls.user.noLayerConfiguredMessage);
+                return;
+            }
             var formContent, labelContent, inputContent, selectOptions, helpBlock, fileUploadForm, fileInput,
-             matchingField, newAddedFields = [];
+             matchingField, newAddedFields = [], fieldname, fieldLabelText;
             array.forEach(this.map.getLayer(this.config.form_layer.id).fields, lang.hitch(this, function (layerField) {
                 matchingField = false;
                 array.forEach(fields, lang.hitch(this, function (currentField) {
@@ -233,16 +242,18 @@ define([
                 else {
                     formContent = domConstruct.create("div", { "class": "form-group geoFormQuestionare has-feedback" }, this.userForm);
                 }
-                labelContent = domConstruct.create("label", { class: "control-label" }, formContent);
                 if (currentField.isNewField) {
-                    labelContent.innerHTML = currentField.alias;
+                    fieldLabelText = currentField.alias;
+                    fieldname = currentField.name;
                 }
                 else {
-                    labelContent.innerHTML = currentField.fieldLabel;
+                    fieldLabelText = currentField.fieldLabel;
+                    fieldname = currentField.fieldName;
                 }
+                labelContent = domConstruct.create("label", { "for": fieldname, class: "control-label", innerHTML: fieldLabelText }, formContent);
                 //code to make select boxes in case of a coded value
                 if (currentField.domain) {
-                    inputContent = domConstruct.create("select", { "class": "form-control selectDomain", "fieldName": currentField.fieldName }, formContent);
+                    inputContent = domConstruct.create("select", { "class": "form-control selectDomain", "fieldName": fieldname }, formContent);
                     array.forEach(currentField.domain.codedValues, lang.hitch(this, function (currentOption) {
                         selectOptions = domConstruct.create("option", {}, inputContent);
                         selectOptions.text = currentOption.name;
@@ -252,27 +263,27 @@ define([
                 else {
                     switch (currentField.type) {
                         case "esriFieldTypeString":
-                            inputContent = domConstruct.create("input", { type: "text", "class": "form-control", "inputType": "String", "maxLength": currentField.length, "fieldName": currentField.fieldName }, formContent);
+                            inputContent = domConstruct.create("input", { type: "text", "class": "form-control", "inputType": "String", "maxLength": currentField.length, "fieldName": fieldname }, formContent);
                             domConstruct.create("span", { class: "glyphicon form-control-feedback" }, formContent);
                             break;
                         case "esriFieldTypeSmallInteger":
-                            inputContent = domConstruct.create("input", { type: "text", "class": "form-control", "inputType": "smallInteger", "fieldName": currentField.fieldName }, formContent);
+                            inputContent = domConstruct.create("input", { type: "text", "class": "form-control", "inputType": "smallInteger", "fieldName": fieldname }, formContent);
                             domConstruct.create("span", { class: "glyphicon form-control-feedback" }, formContent);
                             break;
                         case "esriFieldTypeInteger":
-                            inputContent = domConstruct.create("input", { type: "text", "class": "form-control", "inputType": "Integer", "fieldName": currentField.fieldName }, formContent);
+                            inputContent = domConstruct.create("input", { type: "text", "class": "form-control", "inputType": "Integer", "fieldName": fieldname }, formContent);
                             domConstruct.create("span", { class: "glyphicon form-control-feedback" }, formContent);
                             break;
                         case "esriFieldTypeSingle":
-                            inputContent = domConstruct.create("input", { type: "text", "class": "form-control", "inputType": "Single", "fieldName": currentField.fieldName }, formContent);
+                            inputContent = domConstruct.create("input", { type: "text", "class": "form-control", "inputType": "Single", "fieldName": fieldname }, formContent);
                             domConstruct.create("span", { class: "glyphicon form-control-feedback" }, formContent);
                             break;
                         case "esriFieldTypeDouble":
-                            inputContent = domConstruct.create("input", { type: "text", "class": "form-control", "inputType": "Double", "fieldName": currentField.fieldName }, formContent);
+                            inputContent = domConstruct.create("input", { type: "text", "class": "form-control", "inputType": "Double", "fieldName": fieldname }, formContent);
                             domConstruct.create("span", { class: "glyphicon form-control-feedback" }, formContent);
                             break;
                         case "esriFieldTypeDate":
-                            inputContent = domConstruct.create("input", { type: "text", "class": "form-control", "inputType": "Date", "fieldName": currentField.fieldName }, formContent);
+                            inputContent = domConstruct.create("input", { type: "text", "class": "form-control", "inputType": "Date", "fieldName": fieldname }, formContent);
                             domConstruct.create("span", { class: "glyphicon form-control-feedback" }, formContent);
                             $(inputContent).datepicker({
                                 onSelect: lang.hitch(this, function (evt, currentElement) {
@@ -284,6 +295,7 @@ define([
                             });
                             break;
                     }
+                    domAttr.set(inputContent, "id", fieldname);
                     //conditional check to attach keyup event to all the inputs except date and string field
                     //as validation is not required for date field and string fields max-length is already set
                     if (domAttr.get(inputContent, "inputType") !== "Date" || domAttr.get(inputContent, "inputType") !== "String") {
@@ -437,6 +449,7 @@ define([
                     // Optionally define additional map config here for example you can
                     // turn the slider off, display info windows, disable wraparound 180, slider position and more.
                 },
+                usePopupManager: true,
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
                 // Once the map is created we get access to the response which provides important info
@@ -477,16 +490,19 @@ define([
         _findLocation: function (evt) {
             if (evt.charCode === 13) {
                 if (this.XCoordinate.value === "") {
-                    alert(nls.builder.emptylatitudeAlertMessage);
+                    alert(nls.user.emptylatitudeAlertMessage);
                     return;
                 } else if (this.YCoordinate.value === "") {
-                    alert(nls.builder.emptylongitudeAlertMessage);
+                    alert(nls.user.emptylongitudeAlertMessage);
                     return;
                 }
                 this._locatePointOnMap(this.XCoordinate.value + "," + this.YCoordinate.value);
             }
         },
         _createLocateButton: function () {
+            
+            esriBundle.widgets.locateButton.locate.button = nls.user.findMyLocation;
+            
             var currentLocation = new LocateButton({
                 map: this.map,
                 theme: "btn btn-default"
@@ -498,8 +514,8 @@ define([
                     var pt = new Point(mapLocation[0], mapLocation[1], this.map.spatialReference);
                     this.addressGeometry = pt;
                     this._setSymbol(evt.graphic.geometry);
-                    this.map.infoWindow.setTitle('Location');
-                    this.map.infoWindow.setContent("address");
+                    this.map.infoWindow.setTitle(nls.user.myLocationTitleText);
+                    this.map.infoWindow.setContent(nls.user.addressSearchText);
                     this.map.infoWindow.show(this.addressGeometry);
                 }
             }));
@@ -521,8 +537,8 @@ define([
                 if (this.map.infoWindow.isShowing) {
                     this.map.infoWindow.hide();
                 }
-                this.map.infoWindow.setTitle(nls.builder.locationTabText);
-                this.map.infoWindow.setContent(nls.builder.addressSearchText);
+                this.map.infoWindow.setTitle(nls.user.locationTabText);
+                this.map.infoWindow.setContent(nls.user.addressSearchText);
                 this.map.infoWindow.show(evt.result.feature.geometry);
             }));
         },
@@ -554,15 +570,15 @@ define([
                     if (dom.byId("testForm") && dom.byId("testForm")[0].value !== "" && _self.map.getLayer(config.form_layer.id).hasAttachments) {
                         _self.map.getLayer(config.form_layer.id).addAttachment(addResults[0].objectId, dom.byId("testForm"), function () {
                         }, function (error) {
-                            _self.reportError(error);
+                            console.log(nls.user.addAttachmentFailedMessage);
                         });
                     }
                     _self._clearFormFields();
                 }, function (error) {
-                    _self.reportError(error);
+                    console.log(nls.user.addFeatureFailedMessage);
                 });
             } else {
-                this._showErrorMessageDiv(nls.builder.latlongValidationMessageAlert);
+                this._showErrorMessageDiv(nls.user.latlongValidationMessageAlert);
             }
         },
 
@@ -573,8 +589,8 @@ define([
                 var pt = new Point(mapLocation[0], mapLocation[1], this.map.spatialReference);
                 this.addressGeometry = pt;
                 this._setSymbol(this.addressGeometry);
-                this.map.infoWindow.setTitle(nls.builder.locationTabText);
-                this.map.infoWindow.setContent(nls.builder.addressSearchText);
+                this.map.infoWindow.setTitle(nls.user.locationTabText);
+                this.map.infoWindow.setContent(nls.user.addressSearchText);
                 if (this.map.infoWindow.isShowing) {
                     this.map.infoWindow.hide();
                 }
@@ -593,7 +609,7 @@ define([
                 bitlyLogin: this.config.bitlyLogin,
                 bitlyKey: this.config.bitlyKey,
                 image: this.config.sharinghost + '/sharing/rest/content/items/' + this.config.itemInfo.item.id + '/info/' + this.config.itemInfo.item.thumbnail,
-                title: this.config.details.Title || nls.builder.geoformTitleText,
+                title: this.config.details.Title || nls.user.geoformTitleText,
                 summary: this.config.details.Description,
                 hashtags: 'esriDSM'
             });
@@ -604,16 +620,16 @@ define([
         _addProgressBar: function () {
             var progressIndicatorContainer, progressIndicator;
             domConstruct.empty(query(".modal-body")[0]);
-            domAttr.set(dom.byId('myModalLabel'), "innerHTML", nls.builder.shareBuilderInProgressTitleMessage);
+            domAttr.set(dom.byId('myModalLabel'), "innerHTML", nls.user.shareBuilderInProgressTitleMessage);
             progressIndicatorContainer = domConstruct.create("div", { class: "progress progress-striped active progress-remove-margin" }, query(".modal-body")[0]);
-            progressIndicator = domConstruct.create("div", { class: "progress-bar progress-percent", innerHTML: nls.builder.shareBuilderProgressBarMessage }, progressIndicatorContainer);
+            progressIndicator = domConstruct.create("div", { class: "progress-bar progress-percent", innerHTML: nls.user.shareBuilderProgressBarMessage }, progressIndicatorContainer);
         },
         _createShareDlgContent: function () {
             var iconContainer, facebookIconHolder, twitterIconHolder, googlePlusIconHolder, mailIconHolder;
             domConstruct.empty(query(".modal-body")[0]);
-            domAttr.set(dom.byId('myModalLabel'), "innerHTML", nls.builder.shareUserTitleMessage);
+            domAttr.set(dom.byId('myModalLabel'), "innerHTML", nls.user.shareUserTitleMessage);
             iconContainer = domConstruct.create("div", { class: "iconContainer" }, query(".modal-body")[0]);
-            domConstruct.create("div", { class: "share-dialog-subheader", innerHTML: nls.builder.shareUserTextMessage }, iconContainer);
+            domConstruct.create("div", { class: "share-dialog-subheader", innerHTML: nls.user.shareUserTextMessage }, iconContainer);
             facebookIconHolder = domConstruct.create("div", { class: "iconContent" }, iconContainer);
             domConstruct.create("a", { class: "icon-facebook-sign iconClass", id: "facebookIcon" }, facebookIconHolder);
             twitterIconHolder = domConstruct.create("div", { class: "iconContent" }, iconContainer);
@@ -625,7 +641,7 @@ define([
             domConstruct.create("br", {}, iconContainer);
             domConstruct.create("br", {}, iconContainer);
             domConstruct.create("br", {}, iconContainer);
-            domConstruct.create("div", { class: "share-dialog-subheader", innerHTML: nls.builder.shareDialogFormText }, iconContainer);
+            domConstruct.create("div", { class: "share-dialog-subheader", innerHTML: nls.user.shareDialogFormText }, iconContainer);
             domConstruct.create("input", { type: "text", class: "share-map-url", id: "_shareMapUrlText" }, iconContainer);
         },
 
