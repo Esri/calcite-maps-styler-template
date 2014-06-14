@@ -5,7 +5,7 @@
             mouseToolTip: "Servisi kontrol etmek için haritaya tıklayın"
         },
         geocoder: {
-            defaultText: "ı_Enter an address or point of interest_İ"
+            defaultText: "Adres veya ilgi alanları girin"
         },
         error: {
             layerNotFound: "Katman, web haritasında değil",

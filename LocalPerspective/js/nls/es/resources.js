@@ -16,6 +16,16 @@
  */
 define(({
         map: {
-            error: "á_Unable to create map_Ó"
+            error: "No se puede crear el mapa"
+        },
+        days: {
+           now: "á_NOW_Ó",
+           sun: "á_SUN_Ó",
+           mon: "á_MON_Ó",
+           tue: "á_TUE_Ó",
+           wed: "á_WED_Ó",
+           thu: "á_THU_Ó",
+           fri: "á_FRI_Ó",
+           sat: "á_SAT_Ó"
         }
 }));

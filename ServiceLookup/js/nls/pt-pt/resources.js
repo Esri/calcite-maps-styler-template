@@ -5,7 +5,7 @@
             mouseToolTip: "Clique no mapa para verificar o serviço"
         },
         geocoder: {
-            defaultText: "ã_Enter an address or point of interest_Ç"
+            defaultText: "Introduza um endereço ou ponto de interesse"
         },
         error: {
             layerNotFound: "A Camada não está no mapa web.",

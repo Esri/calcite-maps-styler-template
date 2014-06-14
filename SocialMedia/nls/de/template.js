@@ -89,7 +89,7 @@
                 "menuTitle": "Ergebnisse&hellip;"
             },
             "places": {
-                "menuTitle": "Orte in Lesezeichen",
+                "menuTitle": "Lesezeichen für Orte",
                 "places": "Lesezeichen",
                 "placesTitle": "Orte als Lesezeichen hinzufügen",
                 "myLocation": "Meine aktuelle Position",

@@ -2,13 +2,13 @@
 	({
 		commonMapControls: {
 			common: {
-				settings: "ä_Settings_Ü",
-				openDefault: "ä_Open by default_Ü"
+				settings: "Einstellungen",
+				openDefault: "Standardmäßig öffnen"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "ä_Basemap_Ü",
-				expandFactorLabel: "ä_Expand Factor_Ü",
-				expandFactorPopover: "ä_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle._Ü"
+				basemapGalleryBtnLabel: "Grundkarte",
+				expandFactorLabel: "Faktor einblenden",
+				expandFactorPopover: "Das Verhältnis zwischen der Größe der Übersichtskarte und des Ausdehnungsrechtecks, das in der Übersichtskarte angezeigt wird. Der Standardwert ist 2, daher ist die Übersichtskarte mindestens doppelt so groß wie das Ausdehnungsrechteck."
 			}
 		}
 	})

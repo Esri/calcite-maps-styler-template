@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "Lukk"
+			},
 			loading: {
-				step1: "å_Loading application_ø",
-				step2: "å_Loading data_ø",
-				step3: "å_Initializing_ø",
-				loadBuilder: "å_Switching to builder_ø",
-				fail: "å_Sorry, loading failed_ø",
-				failButton: "å_Retry_ø"
+				step1: "Laster inn programmet",
+				step2: "Laster inn data",
+				step3: "Initialiserer",
+				loadBuilder: "Går over til byggeverktøyet",
+				fail: "Beklager, men innlastingen mislyktes",
+				failButton: "Prøv på nytt"
 			},
 			signin: {
-				title: "å_Authentication is required_ø",
-				explainViewer: "å_Please sign in with an account on %PORTAL_LINK% to access the application._ø",
-				explainBuilder: "å_Please sign in with an account on %PORTAL_LINK% to configure the application._ø"
+				title: "Krever godkjenning",
+				explainViewer: "Logg på med en konto på %PORTAL_LINK% for å få tilgang til programmet.",
+				explainBuilder: "Logg på med en konto på %PORTAL_LINK% for å konfigurere programmet."
 			},
 			errors: {
-				boxTitle: "å_An error has occurred_ø",
-				invalidConfig: "å_Fatal error: Invalid configuration_ø",
-				invalidConfigNoApp: "å_Fatal error: Web Mapping Application identifier not specified in index.html_ø",
-				createMap: "å_Unable to create map_ø",
-				invalidApp: "å_Fatal error: The application cannot be loaded_ø",
-				notConfiguredDesktop: "å_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._ø",
-				notConfiguredMobile: "å_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._ø",
-				notAuthorized: "å_You are not authorized to access this application_ø",
-				noBuilderIE8: "å_The builder is not supported on Internet Explorer before version 9._ø"
+				boxTitle: "Det har oppstått en feil",
+				invalidConfig: "Alvorlig feil: Ugyldig konfigurasjon",
+				invalidConfigNoApp: "Alvorlig feil: Identifikator for webkartprogram ikke angitt i index.html",
+				createMap: "Kan ikke opprette kart",
+				invalidApp: "Alvorlig feil: Kan ikke laste inn applikasjonen",
+				notConfiguredDesktop: "Velkommen til webprogrammet %TPL_NAME%.<br />Programmet er ikke konfigurert ennå.",
+				notConfiguredMobile: "Velkommen til webprogrammet %TPL_NAME%. Programmet er ikke konfigurert ennå, og byggeverktøyet støttes ikke på mobile enheter.",
+				notAuthorized: "Du har ikke tillatelse til å bruke denne applikasjonen",
+				noBuilderIE8: "Byggeverktøyet støttes ikke i versjoner av Internet Explorer som er eldre enn versjon 9."
 			},
 			mobileView: {
-				tapForDetails: "å_Tap for details_ø",
-				swipeToExplore: "å_Swipe to explore_ø",
-				tapForMap: "å_Tap to get back to the Map_ø"
+				tapForDetails: "Trykk for å se detaljer",
+				swipeToExplore: "Sveip for å utforske",
+				tapForMap: "Trykk for å gå tilbake til kartet"
 			},
 			floatLayout: {
-				scroll: "å_Scroll_ø"
+				scroll: "Rull"
 			},
 			sideLayout: {
-				scroll: "å_Scroll down for more!_ø"
+				scroll: "Rull nedover for å se mer!"
 			},
 			mainStage: {
-				back: "å_Back_ø"
+				back: "Bak"
 			},
 			headerFromCommon: {
-				storymapsText: "å_A story map_ø",
-				builderButton: "å_Edit_ø",
-				bitlyTooltip: "å_Get a short link to the application_ø",
-				templateTitle: "å_Set template title_ø",
-				templateSubtitle: "å_Set template subtitle_ø",
-				share: "å_Share_ø"
+				storymapsText: "Et fortellingskart",
+				builderButton: "Rediger",
+				bitlyTooltip: "Få en kort kobling til applikasjonen",
+				templateTitle: "Angi tittel på malen",
+				templateSubtitle: "Angi undertittel for malen",
+				share: "Del"
 			},
 			overviewFromCommon: {
-				title: "å_Overview Map_ø",
+				title: "Oversiktskart",
 			},
 			legendFromCommon: {
-				title: "å_Legend_ø"
+				title: "Tegnforklaring"
+			},
+			shareFromCommon: {
+				copy: "Kopier",
+				copied: "Kopiert",
+				open: "Åpne",
+				embed: "å_Embed in website_ø",
+				embedExplain: "å_Use the following HTML code to embed the Journal in a website._ø",
+				size: "Størrelse (bredde/høyde):"
 			}
         }
     })

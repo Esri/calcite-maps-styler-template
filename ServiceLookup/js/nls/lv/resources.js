@@ -5,7 +5,7 @@
             mouseToolTip: "Klikšķiniet uz kartes, lai pārbaudītu servisus"
         },
         geocoder: {
-            defaultText: "ķ_Enter an address or point of interest_ū"
+            defaultText: "Ievadiet adresi vai interešu punktu"
         },
         error: {
             layerNotFound: "Slānis neatrodas web kartē",

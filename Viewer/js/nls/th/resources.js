@@ -21,32 +21,33 @@ define(({
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'ก้_Landscape (PDF)_ษฺ',
-			      "label2": 'ก้_Portrait (PDF)_ษฺ',
-			      "label3": 'ก้_Landscape (Image)_ษฺ',
-			      "label4": 'ก้_Portrait (Image)_ษฺ'
-			    }
+			      "label1": 'แนวนอน (PDF)',
+			      "label2": 'แนวตั้ง (PDF)',
+			      "label3": 'แนวนอน (Image)',
+			      "label4": 'แนวตั้ง (Image)'
+			    },
+			    "legend": "ก้_Add legend to output_ษฺ"
 			},
 			"share": {
-				"extent": "ก้_Use current map extent_ษฺ",
-				"label": "ก้_Share this map_ษฺ",
-				"link": "ก้_Map Link_ษฺ",
+				"extent": "ใช้ขนาดของแแผนที่ปัจจุบัน",
+				"label": "แชร์แผนที่นี้",
+				"link": "เชื่อมโยงแผนที่",
 				"facebook": "ก้_Facebook_ษฺ",
-				"twitter": "ก้_Twitter_ษฺ"
+				"twitter": "ทวิตเตอร์"
 			}
         },
         "tooltips":{
-        	"home": "ก้_Default extent_ษฺ",
-        	"locate": "ก้_Find my location_ษฺ",
+        	"home": "ขนาดเริ่มต้น",
+        	"locate": "ค้นหาตำแหน่งของฉัน",
         	"legend": "ก้_Legend_ษฺ",
         	"bookmarks": "ก้_Bookmarks_ษฺ",
         	"layers": "ก้_Layers_ษฺ",
         	"basemap": "ก้_Basemap gallery_ษฺ",
         	"overview": "ก้_Overview map_ษฺ",
         	"measure": "ก้_Measure_ษฺ",
-        	"edit": "ก้_Edit_ษฺ",
-        	"time": "ก้_Time_ษฺ",
-        	"print": "ก้_Print_ษฺ",
+        	"edit": "แก้ไข",
+        	"time": "เวลา",
+        	"print": "พิมพ์",
         	"details": "ก้_Details_ษฺ",
         	"share": "ก้_Share_ษฺ"
         }

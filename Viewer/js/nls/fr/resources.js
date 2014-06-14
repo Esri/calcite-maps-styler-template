@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "æ_Unable to create map_Â"
+            "error": "Impossible de créer la carte"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'æ_Landscape (PDF)_Â',
-			      "label2": 'æ_Portrait (PDF)_Â',
-			      "label3": 'æ_Landscape (Image)_Â',
-			      "label4": 'æ_Portrait (Image)_Â'
-			    }
+			      "label1": 'Paysage (PDF)',
+			      "label2": 'Portrait (PDF)',
+			      "label3": 'Paysage (Image)',
+			      "label4": 'Portrait (Image)'
+			    },
+			    "legend": "æ_Add legend to output_Â"
 			},
 			"share": {
-				"extent": "æ_Use current map extent_Â",
-				"label": "æ_Share this map_Â",
-				"link": "æ_Map Link_Â",
-				"facebook": "æ_Facebook_Â",
-				"twitter": "æ_Twitter_Â"
+				"extent": "Utiliser l’étendue courante de la carte",
+				"label": "Partager cette carte",
+				"link": "Lien de la carte",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "æ_Default extent_Â",
-        	"locate": "æ_Find my location_Â",
-        	"legend": "æ_Legend_Â",
-        	"bookmarks": "æ_Bookmarks_Â",
-        	"layers": "æ_Layers_Â",
+        	"home": "Etendue par défaut",
+        	"locate": "Rechercher mon site",
+        	"legend": "Légende",
+        	"bookmarks": "Géosignets",
+        	"layers": "Couches",
         	"basemap": "æ_Basemap gallery_Â",
         	"overview": "æ_Overview map_Â",
-        	"measure": "æ_Measure_Â",
-        	"edit": "æ_Edit_Â",
-        	"time": "æ_Time_Â",
-        	"print": "æ_Print_Â",
-        	"details": "æ_Details_Â",
-        	"share": "æ_Share_Â"
+        	"measure": "Mesurer",
+        	"edit": "Modifier",
+        	"time": "Heure",
+        	"print": "Imprimer",
+        	"details": "Détails",
+        	"share": "Partager"
         }
 }));

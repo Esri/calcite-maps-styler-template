@@ -5,7 +5,7 @@
             mouseToolTip: "Klikk på kartet for å se eetter tjeneste"
         },
         geocoder: {
-            defaultText: "å_Enter an address or point of interest_ø"
+            defaultText: "Angi en adresse eller et interessepunkt"
         },
         error: {
             layerNotFound: "Laget er ikke i webkartet",

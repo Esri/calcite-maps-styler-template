@@ -16,6 +16,16 @@
  */
 define(({
         map: {
-            error: "试_Unable to create map_验"
+            error: "无法创建地图"
+        },
+        days: {
+           now: "试_NOW_验",
+           sun: "试_SUN_验",
+           mon: "试_MON_验",
+           tue: "试_TUE_验",
+           wed: "试_WED_验",
+           thu: "试_THU_验",
+           fri: "试_FRI_验",
+           sat: "试_SAT_验"
         }
 }));

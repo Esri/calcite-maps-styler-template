@@ -2,82 +2,82 @@
 	 ({
 		builder: {
 			layouts: {
-				mainStage: "Ă_Main Stage_ș",
-				sideTitle: "Ă_Side Panel_ș",
-				sideDescr: "Ă_A layout for a text intensive story that excels at combining your photos, videos, and maps in a clear focused message._ș",
-				floatTitle: "Ă_Floating Panel_ș",
-				floatDescr: "Ă_A layout that puts your cartography in focus while allowing a transparent short form text panel to help drive the story._ș"
+				mainStage: "Nivelul principal",
+				sideTitle: "Panou lateral",
+				sideDescr: "O configuraţie pentru o descriere cu mult text, care excelează în combinarea fotografiilor cu videoclipuri şi hărţi într-un mesaj cu un obiect clar.",
+				floatTitle: "Panou mobil",
+				floatDescr: "Ă_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._ș"
 			},
 			common: {
-				lblStatus1: "Ă_Published_ș",
-				lblStatus2: "Ă_Draft_ș",
-				lblStatus3: "Ă_Hidden_ș"
+				lblStatus1: "Publicat",
+				lblStatus2: "Schiţă",
+				lblStatus3: "Ascuns"
 			},
 			settingsLayoutOptions: {
-				title: "Ă_Layout options_ș",
-				cfgLeft: "Ă_Left_ș",
-				cfgRight: "Ă_Right_ș",
-				cfgSmall: "Ă_Small_ș",
-				cfgMedium: "Ă_Medium_ș",
-				cfgLarge: "Ă_Large_ș",
-				socialLinksLabel: "Ă_Display sharing links at the bottom of each section_ș",
-				socialLinksDescr: "Ă_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (Header Tab) and have them land at the start of the %TPL_NAME%._ș"
+				title: "Opţiuni configuraţie",
+				cfgLeft: "Stânga",
+				cfgRight: "Dreapta",
+				cfgSmall: "Mic",
+				cfgMedium: "Mediu",
+				cfgLarge: "Mare",
+				socialLinksLabel: "Afişare linkuri de partajare în partea de jos a fiecărei secţiuni",
+				socialLinksDescr: "Acest lucru le permite cititorilor să consulte şi să promoveze anumite secţiuni din %TPL_NAME%. De exemplu, dacă utilizaţi o pictogramă pentru partajare de secţiuni, cititorii vor ajunge în secţiunea %TPL_NAME% respectivă şi nu la începutul informaţiilor. Cititorii pot utiliza linkul pentru servicii de socializare din secţiunea pentru titlu pentru a promova întregul %TPL_NAME% (fila titlului) şi pot ajunge la începutul %TPL_NAME%."
 			},
 			initPopup: {
-				title: "Ă_Welcome to_ș"
+				title: "Bine aţi venit la"
 			},
 			addEditPopup: {
-				titleAdd: "Ă_Add Section_ș",
-				titleEdit: "Ă_Edit Section_ș",
-				step: "Ă_Step_ș",
-				stepMainStageExplain: "Ă_Add a Map, Image, or Video to the Main Stage_ș",
-				stepPanelExplain: "Ă_Add content to the_ș",
-				stepMainStageNextTooltip: "Ă_Enter the section title and select the Main Stage content_ș",
-				step2NextTooltip: "Ă_Enter the section title and %LAYOUT-TYPE% content_ș",
-				stepNextTooltipNext: "Ă_to go to the next step_ș",
-				stepNextTooltipAdd: "Ă_to add the section_ș",
-				titlePlaceholder: "Ă_Section title..._ș",
+				titleAdd: "Adăugare secţiune",
+				titleEdit: "Editare secţiune",
+				step: "Etapă",
+				stepMainStageExplain: "Adăugare hartă, imagine sau videoclip în nivelul principal",
+				stepPanelExplain: "Adăugare conţinut în",
+				stepMainStageNextTooltip: "Introduceţi titilul secţiunii şi selectaţi conţinutul pentru nivelul principal",
+				step2NextTooltip: "Introduceţi titlul secţiunii şi conţinutul %LAYOUT-TYPE%",
+				stepNextTooltipNext: "pentru a trece la paşii următori",
+				stepNextTooltipAdd: "pentru a adăuga secţiunea",
+				titlePlaceholder: "Titlu secţiune...",
 			},
 			addEditViewText: {
-				editorPlaceholder: "Ă_Add text, links, and small graphics here._ș",
-				editorActionsTitle: "Ă_Main Stage Actions_ș",
-				editorActionsHelpDescr: "Ă_Use these controls to create links that will change the main stage. For example, when the reader clicks a link you may want to zoom the Map to a specific location, display another web map or display an Image._ș"
+				editorPlaceholder: "Adăugaţi text, linkuri şi mici imagini aici.",
+				editorActionsTitle: "Acţiuni nivel principal",
+				editorActionsHelpDescr: "Utilizaţi aceste comenzi pentru a crea linkuri ce vor modifica nivelul principal. De exemplu, când un cititor face clic pe un link, puteţi dori să transfocaţi harta într-o anumită locaţie, să afişaţi altă hartă web sau să afişaţi o imagine."
 			},
 			organizePopup: {
-				title: "Ă_Organize_ș",
-				lblHeader: "Ă_Drag and drop story sections to organize your content._ș",
-				lblColTitle: "Ă_Title_ș",
-				lblColPubDate: "Ă_Publication date_ș",
-				lblColStatus: "Ă_Status_ș",
-				checkDisplayReverse: "Ă_Display sections in reverse order_ș",
-				btnApplyWarning: "Ă_Confirm suppression of %NB% sections_ș",
-				deleteTooltip: "Ă_Delete_ș",
-				firstSectionExplain: "Ă_(The home section cannot be moved)_ș"
+				title: "Organizare",
+				lblHeader: "Ă_Drag and drop sections to organize your content._ș",
+				lblColTitle: "Titlu",
+				lblColPubDate: "Data publicării",
+				lblColStatus: "Stare",
+				checkDisplayReverse: "Afişare secţiuni în ordine inversă",
+				btnApplyWarning: "Confirmare suprimare a %NB% secţiuni",
+				deleteTooltip: "Ştergere",
+				firstSectionExplain: "(Secţiunea din pagina principală nu poate fi eliminată)"
 			},
 			help: {
-				lblHelp: "Ă_Help_ș",
-				lblAdd: "Ă_Add Section_ș",
-				lblSettings: "Ă_Settings_ș",
-				lblOrga: "Ă_Organize content_ș",
-				lblEdit: "Ă_Edits_ș",
-				lblPublish: "Ă_Publish_ș",
-				lblMore: "Ă_Want more?_ș",
-				lblLink: "Ă_Visit the Story Maps website._ș",
-				content1Div1: "Ă_You can integrate a variety of styles when building your story. The <strong>%LAYOUT_TITLE%</strong> typically holds your text, images, and video while your maps tend go on the <strong>Main Stage</strong>. However, the %TPL_NAME% allows you to feature images, charts, and video within the main stage as well._ș",
-				content1Div2: "Ă_Adding sections allows you to truly customize your storytelling experience. As readers scroll down through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can load automatically to support your message._ș",
-				content2Div1: "Ă_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, and widths are all refined here._ș",
-				content2Div2: "Ă_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to the world._ș",
-				content3Div1: "Ă_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; so within Organize you can reorder or delete sections as you wish._ș",
-				content4Div1: "Ă_Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. Youâ€™ll use the edit functions many times as you develop your %TPL_NAME%!_ș",
-				content5Div1: "Ă_Your %TPL_NAME% is saved to your %PORTAL% account, it is within %PORTAL% where you can decide whether the story is private, shared with just your organization, or open to the world. We even provide you with a shortened, stable URL so you can share easily._ș"
+				lblHelp: "Ajutor",
+				lblAdd: "Adăugare secţiune",
+				lblSettings: "Setări",
+				lblOrga: "Organizare conţinut",
+				lblEdit: "Editări",
+				lblPublish: "Partajare",
+				lblMore: "Doriţi mai mult?",
+				lblLink: "Vizitaţi site-ul web cu hărţi informative.",
+				content1Div1: "La alcătuirea unei relatări, puteţi integra o multitudine de stiluri. <strong>%LAYOUT_TITLE%</strong> conţine de regulă text, imagini şi videoclipuri, în timp ce hărţile tind să se afle în <strong>Nivelul principal</strong>. Cu toate acestea, %TPL_NAME% vă permite să utilizaţi şi imagini de obiecte spaţiale, diagrame şi videoclipuri în nivelul principal.",
+				content1Div2: "Ă_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._ș",
+				content2Div1: "Aici puteţi ajusta modul în care se afişează %TPL_NAME%. Aici puteţi rafina scheme de culori, configuraţii şi dimensiuni.",
+				content2Div2: "Ă_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._ș",
+				content3Div1: "Conţinutul dvs. este organizat în secţiuni. Puteţi avea oricâte secţiuni doriţi (gândiţi-vă la acestea ca la nişte mini-capitole). Succesiunea acestor capitole este importantă; prin urmare, în Organizare puteţi reordona sau şterge secţiuni după cum doriţi.",
+				content4Div1: "Aţi găsit o greşeală sau doriţi să modificaţi materialul? Nicio problemă. Căutaţi în aplicaţie pictograma de editare pentru modifica conţinutul. Pe măsură ce dezvoltaţi %TPL_NAME%, veţi utiliza de multe ori funcţiile de editare!",
+				content5Div1: "Ă_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._ș"
 			},
 			landing: {
-				lblAdd: "Ă_Add the Home Section_ș",
-				lblOR: "Ă_Or_ș",
-				lblHelp: "Ă_Take a Tour_ș"
+				lblAdd: "Adăugare secţiune principală",
+				lblOR: "Sau",
+				lblHelp: "Efectuaţi un tur"
 			},
 			firstAddSplash: {
-				thisis: "Ă_This is the_ș"
+				thisis: "Aceasta este"
 			}
         }
     })

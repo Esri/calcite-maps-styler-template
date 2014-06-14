@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "Aizvērt"
+			},
 			loading: {
-				step1: "ķ_Loading application_ū",
-				step2: "ķ_Loading data_ū",
-				step3: "ķ_Initializing_ū",
-				loadBuilder: "ķ_Switching to builder_ū",
-				fail: "ķ_Sorry, loading failed_ū",
-				failButton: "ķ_Retry_ū"
+				step1: "Aplikācijas ielāde",
+				step2: "Datu ielāde",
+				step3: "Inicializēšana",
+				loadBuilder: "Pārslēgšanās uz veidotāju",
+				fail: "Diemžēl ielāde neizdevās",
+				failButton: "Atkārtot"
 			},
 			signin: {
-				title: "ķ_Authentication is required_ū",
-				explainViewer: "ķ_Please sign in with an account on %PORTAL_LINK% to access the application._ū",
-				explainBuilder: "ķ_Please sign in with an account on %PORTAL_LINK% to configure the application._ū"
+				title: "Nepieciešama autentifikācija",
+				explainViewer: "Lai piekļūtu aplikācijai, pierakstieties %PORTAL_LINK%, izmantojot kontu.",
+				explainBuilder: "Lai konfigurētu aplikāciju, pierakstieties %PORTAL_LINK%, izmantojot kontu."
 			},
 			errors: {
-				boxTitle: "ķ_An error has occurred_ū",
-				invalidConfig: "ķ_Fatal error: Invalid configuration_ū",
-				invalidConfigNoApp: "ķ_Fatal error: Web Mapping Application identifier not specified in index.html_ū",
-				createMap: "ķ_Unable to create map_ū",
-				invalidApp: "ķ_Fatal error: The application cannot be loaded_ū",
-				notConfiguredDesktop: "ķ_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._ū",
-				notConfiguredMobile: "ķ_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._ū",
-				notAuthorized: "ķ_You are not authorized to access this application_ū",
-				noBuilderIE8: "ķ_The builder is not supported on Internet Explorer before version 9._ū"
+				boxTitle: "Kļūda",
+				invalidConfig: "Fatāla kļūda: konfigurācijas neveiksme",
+				invalidConfigNoApp: "Fatāla kļūda: web kartēšanas aplikācijas identifikators nav norādīts index.html",
+				createMap: "Nevar izveidot karti",
+				invalidApp: "Fatāla kļūda: aplikāciju nevar ielādēt",
+				notConfiguredDesktop: "Laipni lūdzam web aplikācijā %TPL_NAME%.<br />Aplikācija vēl nav konfigurēta.",
+				notConfiguredMobile: "Laipni lūdzam web aplikācijā %TPL_NAME%. Aplikācija vēl nav konfigurēta un veidotājs vēl nav atbalstīts mobilajās ierīcēs.",
+				notAuthorized: "Jums nav tiesību piekļūt šai aplikācijai",
+				noBuilderIE8: "Pārlūkprogrammā Internet Explorer veidotājs tiek atbalstīts tikai, sākot ar 9. versiju."
 			},
 			mobileView: {
-				tapForDetails: "ķ_Tap for details_ū",
-				swipeToExplore: "ķ_Swipe to explore_ū",
-				tapForMap: "ķ_Tap to get back to the Map_ū"
+				tapForDetails: "Pieskarieties, lai iegūtu detalizētu informāciju",
+				swipeToExplore: "Pavelciet, lai izpētītu",
+				tapForMap: "Pieskarieties, lai atgrieztos atpakaļ kartē"
 			},
 			floatLayout: {
-				scroll: "ķ_Scroll_ū"
+				scroll: "Ritināt"
 			},
 			sideLayout: {
-				scroll: "ķ_Scroll down for more!_ū"
+				scroll: "Ritiniet uz leju, lai iegūtu vairāk informācijas."
 			},
 			mainStage: {
-				back: "ķ_Back_ū"
+				back: "Atpakaļ"
 			},
 			headerFromCommon: {
-				storymapsText: "ķ_A story map_ū",
-				builderButton: "ķ_Edit_ū",
-				bitlyTooltip: "ķ_Get a short link to the application_ū",
-				templateTitle: "ķ_Set template title_ū",
-				templateSubtitle: "ķ_Set template subtitle_ū",
-				share: "ķ_Share_ū"
+				storymapsText: "Stāstu karte",
+				builderButton: "Rediģēt",
+				bitlyTooltip: "Iegūstiet īso saiti uz aplikāciju",
+				templateTitle: "Iestatīt šablona virsrakstu",
+				templateSubtitle: "Iestatīt šablona apakšvirsrakstu",
+				share: "Koplietot"
 			},
 			overviewFromCommon: {
-				title: "ķ_Overview Map_ū",
+				title: "Pārskata karte",
 			},
 			legendFromCommon: {
-				title: "ķ_Legend_ū"
+				title: "Leģenda"
+			},
+			shareFromCommon: {
+				copy: "Kopēt",
+				copied: "Kopēts",
+				open: "Atvērt",
+				embed: "ķ_Embed in website_ū",
+				embedExplain: "ķ_Use the following HTML code to embed the Journal in a website._ū",
+				size: "Izmēri (platums/augstums):"
 			}
         }
     })

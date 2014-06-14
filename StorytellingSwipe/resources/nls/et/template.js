@@ -6,7 +6,7 @@
 				step2: "ANDMETE LAADIMINE",
 				step3: "LÄHTESTAMINE",
 				fail: "Vabandust, rullimisvahendi laadimine nurjus",
-				loadBuilder: "VAHETA KOOSTAJA TÜÜP",
+				loadBuilder: "VAHETA KOOSTAJA TÜÜP",				
 				redirectSignIn: "SUUNAN ÜMBER SISSELOGIMISE LEHELE",
 				redirectSignIn2: "(Teid suunatakse peale sisselogimist siia)",
 				failButton: "Proovi uuesti"
@@ -25,7 +25,7 @@
 				mapSave: "Viga veebikaardi salvestamisel",
 				notAuthorized: "Teil ei ole luba sellele rakendusele juurde pääseda",
 				conflictingProjectionsTitle: "Konfliktsed projektsioonid",
-				conflictingProjections: "Rullimine ei ole toetatud kahe erineva projektsiooniga veebikaardil. Palun avage seaded ja kasutage veebikaarti, mis kasutab esimese kaardiga samasugust projektsiooni.",
+				conflictingProjections: "Š_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ä",
 				cpButton: "Sulge"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: ", et salvestada rakendus."
 			},
 			header:{
-				editMe: "Muuda mind !",
+				editMe: "Š_Edit me!_ä",
 				templateTitle: "Määra mallile pealkiri",
 				templateSubtitle: "Määra mallile alampealkiri"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Määra küljepaneeli kirjeldus",
-				editMe: "Muuda mind !",
+				editMe: "Š_Edit me!_ä",
 				legendTitle: "Legend"
 			},
 			infoWindow: {
@@ -214,9 +214,9 @@
 			},
 			share: {
 				firstSaveTitle: "Rakendus on salvestatud",
-				firstSaveHeader: "Teie rakendus on nüüd salvestatud ArcGIS Online\'i keskkonda. Lugege järgnevate korduma kippuvate küsimuste vastuseid.",
+				firstSaveHeader: "Teie rakendus on nüüd salvestatud ArcGIS Online’i keskkonda. Lugege järgnevate korduma kippuvate küsimuste vastuseid.",
 				firstSaveA1: "Kui te ei ole tuttav ArcGIS Online keskkonnaga või soovite otseteed redigeerimise liidesele, siis võite salvestada järgmise lingi: %LINK1%",
-				firstSaveA1bis: "Rakenduse leiate samuti oma <a href='%LINK2%' target='_blank'>ArcGIS Online\'i sisu kaustast</a>.",
+				firstSaveA1bis: "Rakenduse leiate samuti oma <a href='%LINK2%' target='_blank'>ArcGIS Online’i sisu kaustast</a>.",
 				firstSaveQ2: "Kas minu rakendus on jagatud?",
 				firstSaveA2: "Hetkel pole teie rakendus jagatud. Selle jagamiseks kasutage nuppu JAGA.",
 				shareTitle: "Rakenduse jagamine",
@@ -255,7 +255,7 @@
 				mapPickHeader: "Alustamiseks sisestage veebikaardi id või kasutage otsingunuppu veebikaartide sirvimiseks.",
 				launchBuilder: "Käivita koostur",
 				chooseWebmapLbl: "Valige veebikaart...",
-				explain2: "Rullimise või pikksilma kaardiloo loomiseks kasutage allolevat nuppu kasutatava olemasoleva ArcGIS Online\'i veebikaardi valimiseks. Teiseks võimaluseks on veebikaardi ID kleepimine allpool olevale väljale.",
+				explain2: "Rullimise või pikksilma kaardiloo loomiseks kasutage allolevat nuppu kasutatava olemasoleva ArcGIS Online’i veebikaardi valimiseks. Teiseks võimaluseks on veebikaardi ID kleepimine allpool olevale väljale.",
 				explain3: "Kui soovite kaardiloos kasutada kahte veebikaarti, siis küsitakse selle valiku valimisel hiljem teist veebikaarti.",
 				webmapPlaceholder: "Sisestage kaardi id..."
 			}

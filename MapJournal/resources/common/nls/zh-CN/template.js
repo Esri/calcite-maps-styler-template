@@ -2,144 +2,144 @@
 	 ({
 		common: {
 			common: {
-				edit: "试_Edit_验"
+				edit: "编辑"
 			},
 			inlineFieldEdit: {
-				editMe: "试_Edit me !_验"
+				editMe: "编辑!"
 			},
 			builderPanel: {
-				panelHeader: "试_%TPL_NAME% Builder_验",
-				buttonSave: "试_SAVE_验",
-				buttonShare: "试_SHARE_验",
-				buttonSettings: "试_SETTINGS_验",
-				buttonHelp: "试_HELP_验",
-				noPendingChange: "试_No pending change_验",
-				unSavedChangeSingular: "试_1 unsaved change_验",
-				unSavedChangePlural: "试_unsaved changes_验",
-				popoverSaveWhenDone: "试_Don't forget to save when you are done_验",
-				closeWithPendingChange: "试_Are you sure to want to confirm the action ? Your changes will be lost._验",
-				ok: "试_Ok_验",
-				savingApplication: "试_Saving application_验",
-				saveError: "试_Save failed, please try again_验",
-				saveError3: "试_The title can't be empty_验",
+				panelHeader: "%TPL_NAME% 构建器",
+				buttonSave: "保存",
+				buttonShare: "共享",
+				buttonSettings: "设置",
+				buttonHelp: "帮助",
+				noPendingChange: "无待决的更改",
+				unSavedChangeSingular: "1 个未保存的更改",
+				unSavedChangePlural: "未保存的更改",
+				popoverSaveWhenDone: "完成后请不要忘记保存",
+				closeWithPendingChange: "确定要执行此操作吗? 您的更改将丢失。",
+				ok: "确定",
+				savingApplication: "保存应用程序",
+				saveError: "保存失败，请重试",
+				saveError3: "标题不能为空",
 				// TODO
-				signIn: "试_Please sign in with an account on_验",
-				shareStatus1: "试_Application is not saved_验",
-				shareStatus2: "试_Application is shared publicly_验",
-				shareStatus3: "试_Application is shared within the organization_验",
-				shareStatus4: "试_Application is not shared_验"
+				signIn: "请使用帐户登录",
+				shareStatus1: "应用程序未保存",
+				shareStatus2: "应用程序已公开共享",
+				shareStatus3: "应用程序已在组织中共享",
+				shareStatus4: "应用程序未共享"
 			},
 			// TODO
 			addEditPopup: {
 				// Add
-				addEditPopupInputTitleLabel: "试_Title_验",
-				addPopupTitle: "试_Add_验",
-				addPopupDescription: "试_Add a new view to your series._验",
-				addPopupButton: "试_ADD_验",
+				addEditPopupInputTitleLabel: "标题",
+				addPopupTitle: "添加",
+				addPopupDescription: "将新视图添加到系列中。",
+				addPopupButton: "添加",
 				// Edit
-				editPopupTitle: "试_Edit_验",
-				editPopupDescription: "试_Edit the selected view_验",
-				editPopupButton: "试_APPLY_验",
+				editPopupTitle: "编辑",
+				editPopupDescription: "编辑所选视图",
+				editPopupButton: "应用",
 				// Add/Edit
-				addEditPopupCancelButton: "试_CANCEL_验",
-				addEditPopupMyContentBtn: "试_Select from my content_验",
-				addEditPopupConfigureWebMapBtn: " 试_Configure_验"
+				addEditPopupCancelButton: "取消",
+				addEditPopupMyContentBtn: "从我的内容中选择",
+				addEditPopupConfigureWebMapBtn: " 配置"
 			},
 			share: {
-				firstSaveTitle: "试_Application successfully saved_验",
-				firstSaveHeader: "试_Your application is now saved in ArcGIS Online. Please read the following answers to frequent questions._验",
-				firstSaveA1: "试_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_验",
-				firstSaveA1bis: "试_The application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._验",
-				firstSaveQ2: "试_Is my application shared?_验",
-				firstSaveA2: "试_Currently your application is not shared. To share it, use the SHARE button._验",
-				shareTitle: "试_Share your application_验",
-				sharePrivateHeader: "试_Your application is not shared, would you like to share it?_验",
-				sharePrivateBtn1: "试_Share publicly_验",
-				sharePrivateBtn2: "试_Share with my Organization_验",
-				sharePrivateWarning: "试_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._验",
-				sharePrivateWarningWith1: "试_publicly_验",
-				sharePrivateWarningWith2: "试_publicly and with the Organization_验",
-				sharePrivateProgress: "试_Sharing in progress..._验",
-				sharePrivateErr: "试_Sharing failed, try again or_验",
-				sharePrivateOk: "试_Sharing updated successfully, loading..._验",
-				sharePreviewAsUser: "试_Preview_验",
-				shareHeader1: "试_Your application is <strong>publicly accessible</strong>._验",
-				shareHeader2: "试_Your application is accessible by your organization members (login is required)._验",
-				shareLinkHeader: "试_Share the application with your audience_验",
-				shareLinkOpen: "试_OPEN_验",
-				shareQ1Opt1: "试_How do I keep the application private?_验",
-				shareQ1Opt2: "试_How do I keep the application private or share it publicly?_验",
-				shareA1: "试_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._验",
-				shareA1bis: "试_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._验",
-				shareQ2: "试_How do I edit the application later?_验",
-				shareQ2bis: "试_How do I get back to the authoring interface?_验",
-				shareA2div1: "试_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._验",
-				shareA2div2: "试_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_验",				
-				shareQ3: "试_Where is the data stored?_验",
-				shareA3: "试_The application configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._验",
-				learnMore: "试_Learn more_验",
-				close: "试_Close_验"
+				firstSaveTitle: "应用程序已成功保存",
+				firstSaveHeader: "应用程序现已保存在 ArcGIS Online 中。请阅读以下常见问题的解答。",
+				firstSaveA1: "如果您不熟悉 ArcGIS Online，或需要访问创作界面的快捷方式，则可以保存以下链接: %LINK1%",
+				firstSaveA1bis: "还可在 <a href='%LINK2%' target='_blank'>ArcGIS Online 内容文件夹</a>中找到应用程序。",
+				firstSaveQ2: "应用程序是否已共享？",
+				firstSaveA2: "应用程序当前尚未共享。要进行共享，请使用\“共享\”按钮。",
+				shareTitle: "共享应用程序",
+				sharePrivateHeader: "应用程序尚未共享，是否要进行共享？",
+				sharePrivateBtn1: "公开共享",
+				sharePrivateBtn2: "与我的组织共享",
+				sharePrivateWarning: "已禁止共享 %WITH%，因为您不是 <a href='%LINK%' target='_blank'>webmap</a> 的所有者。",
+				sharePrivateWarningWith1: "公开",
+				sharePrivateWarningWith2: "公开并在组织内共享",
+				sharePrivateProgress: "正在进行共享...",
+				sharePrivateErr: "共享失败，请重试或",
+				sharePrivateOk: "共享更新成功，正在加载...",
+				sharePreviewAsUser: "预览",
+				shareHeader1: "应用程序<strong>可公开访问</strong>。",
+				shareHeader2: "组织成员（需要登录帐户）可访问应用程序。",
+				shareLinkHeader: "与受众共享应用程序",
+				shareLinkOpen: "打开",
+				shareQ1Opt1: "如何将应用程序私有化?",
+				shareQ1Opt2: "如何将应用程序私有化或公开共享？",
+				shareA1: "请使用<a href='%LINK1%' target='_blank'>应用程序项目页面</a>上的 %SHAREIMG%。如果还想要取消共享 web 地图，请使用 <a href='%LINK2%' target='_blank'>web 地图项目页面</a>。",
+				shareA1bis: "如果还想要取消共享要素服务，请使用<a href='%LINK1%' target='_blank'>要素服务项目页面</a>。",
+				shareQ2: "如何在稍后对应用程序进行编辑?",
+				shareQ2bis: "如何返回制作界面？",
+				shareA2div1: "保存并重新使用以下链接 %LINK1%，或使用<a href='%LINK2%' target='_blank'>应用程序项目页面</a>。",
+				shareA2div2: "作为应用程序所有者，当您登录到 ArcGIS.com 后，可使用应用程序中的按钮来打开交互式构建器:",				
+				shareQ3: "数据存储在哪儿？",
+				shareA3: "应用程序配置存储在<a href='%LINK1%' target='_blank'>此 webmap 项目</a>和<a href='%LINK2%' target='_blank'>此 web 应用程序项目</a>中。如果使用 Flickr、Picasa、Facebook 或 YouTube 进行导入，则图像和视频仍将存储在上述位置，并且不会复制到 ArcGIS Online。",
+				learnMore: "了解详细信息",
+				close: "关闭"
 			},
 			settings: {
-				header: "试_Application settings_验",
-				cancel: "试_Cancel_验",
-				apply: "试_Apply_验",
-				tabError: "试_Please check for errors in all tabs_验"
+				header: "应用程序设置",
+				cancel: "取消",
+				apply: "应用",
+				tabError: "请检查所有选项卡中的错误"
 			},
 			settingsLayout: {
-				title: "试_Layout_验",
-				explain: "试_What layout do you want to use?_验",
-				explainInit: "试_Change will be possible through the settings dialog._验",
-				selected: "试_Selected layout_验",
-				select: "试_Select this layout_验"
+				title: "布局",
+				explain: "希望使用哪种布局？",
+				explainInit: "可通过设置对话框进行更改。",
+				selected: "选中的布局",
+				select: "选择此布局"
 			},
 			settingsTheme: {
-				title: "试_Theme_验",
-				explain: "试_Choose an app theme or define your own colors._验",
-				label: "试_Header and side panel background colors_验"
+				title: "专题",
+				explain: "选择应用程序专题或定义自己的颜色。",
+				label: "页眉和侧面板背景颜色"
 			},
 			settingsHeader: {
-				title: "试_Header_验",
-				explain: "试_Customize the header logo (maximum is 250 x 50px)._验",
-				logoEsri: "试_Esri logo_验",
-				logoNone: "试_No logo_验",
-				logoCustom: "试_Custom logo_验",
-				logoCustomPlaceholder: "试_Image URL_验",
-				logoCustomTargetPlaceholder: "试_Click-through link_验",
-				logoSocialExplain: "试_Customize the header top right link._验",
-				logoSocialText: "试_Text_验",
-				logoSocialLink: "试_Link_验",
-				logoSocialDisabled: "试_This feature has been disabled by the Administrator_验"
+				title: "标题",
+				explain: "自定义页眉徽标(不超过 250 x 50px)。",
+				logoEsri: "Esri 徽标",
+				logoNone: "无徽标",
+				logoCustom: "自定义徽标",
+				logoCustomPlaceholder: "图像 URL",
+				logoCustomTargetPlaceholder: "点击链接",
+				logoSocialExplain: "自定义标题右上方的链接。",
+				logoSocialText: "文本",
+				logoSocialLink: "链接",
+				logoSocialDisabled: "此功能已被管理员禁用"
 			},
 			mediaSelector: {
-				lblMap: "试_Map_验",
-				lblPicture: "试_Picture_验",
-				lblVideo: "试_Video_验",
-				lblExternal: "试_External page_验"
+				lblMap: "地图",
+				lblPicture: "图片",
+				lblVideo: "视频",
+				lblExternal: "外部页面"
 			},
 			webMapSelector: {
-				radioCurrentWebMap: "试_Current web map_验",
-				radioWebmapApp: "试_One of the other web map used in the application_验",
-				radioAnotherWebmap: "试_Another webmap_验",
-				btnSelect: "试_Select_验",
-				lblOr: "试_or_验",
-				fieldEnterWebmapId: "试_Enter a web map id_验",
-				btnConfigure: "试_Configure the Map_验"
+				radioCurrentWebMap: "当前 web 地图",
+				radioWebmapApp: "用于应用程序的其他 web 地图之一",
+				radioAnotherWebmap: "其他 webmap",
+				btnSelect: "选择",
+				lblOr: "或者",
+				fieldEnterWebmapId: "输入 web 地图 id",
+				btnConfigure: "配置地图"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "试_My Organization_验",
-					onlineLabel: "试_ArcGIS Online_验",
-					contentLabel: "试_My Content_验",
-					favoritesLabel: "试_My Favorites_验"
+					organizationLabel: "我的组织",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "我的内容",
+					favoritesLabel: "我的收藏夹"
 				},
-				title: "试_Select Web Map_验",
-				searchTitle: "试_Search_验",
-				ok: "试_Ok_验",
-				cancel: "试_Cancel_验",
-				placeholder: "试_Enter search term_验"
+				title: "选择 Web 地图",
+				searchTitle: "搜索",
+				ok: "确定",
+				cancel: "取消",
+				placeholder: "输入搜索词"
 			}
 		}
 	})

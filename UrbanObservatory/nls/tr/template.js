@@ -22,7 +22,7 @@
     "selectMapPanel": "HARİTA PANELİNİ SEÇ",
     "noDescription": "[ AÇIKLAMA YOK ]",
     "themeNotAvailable": "Harita kullanılamıyor.",
-    "legend": "Gösterge"
+    "legend": "Gösterim"
   },
   errors: {
     "webmap": "WebMap",

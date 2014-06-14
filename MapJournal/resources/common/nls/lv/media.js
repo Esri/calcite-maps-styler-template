@@ -2,84 +2,84 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ķ_Select Media Type_ū",
-				lblSelect2: "ķ_Select Content Type_ū",
-				lblMap: "ķ_Map_ū",
-				lblImage: "ķ_Image_ū",
-				lblVideo: "ķ_Video_ū",
-				lblExternal: "ķ_Web page_ū",
-				disabled: "ķ_This feature has been disabled by the Administrator_ū",
-				url: "ķ_To manually enter the web address of an image_ū",
-				userLookup: "ķ_Load albums_ū",
-				notImplemented: "ķ_Not implemented yet._ū"
+				lblSelect1: "Izvēlēties medija tipu",
+				lblSelect2: "Izvēlēties satura tipu",
+				lblMap: "Karte",
+				lblImage: "Attēls",
+				lblVideo: "Video",
+				lblExternal: "Web lapa",
+				disabled: "Šo funkciju administrators ir atspējojis",
+				url: "Lai manuālie ievadītu attēla web adresi",
+				userLookup: "Ielādēt albumus",
+				notImplemented: "Vēl nav ieviests."
 			},
 			imageSelector: {
-				lblStep1: "ķ_Choose the service_ū",
-				lblStep2: "ķ_Select your media_ū",
-				lblStep3: "ķ_Configure_ū"
+				lblStep1: "Izvēlēties servisu",
+				lblStep2: "Izvēlēties mediju",
+				lblStep3: "Konfigurēt"
 			},
 			imageSelectorHome: {
-				explain: "ķ_Load images from social media, <br /> or directly from a URL_ū"
+				explain: "Ielādējiet attēlus no sociālajiem medijiem<br /> vai tieši no URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "ķ_User name_ū",
-				signInMsg2: "ķ_User not found_ū",
-				loadingFailed: "ķ_Loading failed_ū"
+				userInputLbl: "Lietotāja vārds",
+				signInMsg2: "Lietotājs nav atrasts",
+				loadingFailed: "Ielāde neizdevās"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "ķ_Facebook User_ū",
-				rightHeader: "ķ_Facebook Page_ū",
-				pageExplain: "ķ_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL._ū",
-				pageInputLbl: "ķ_Page name_ū",
-				lookupMsgError: "ķ_Page not found_ū"
+				leftHeader: "Facebook Lietotājs",
+				rightHeader: "Facebook Lapa",
+				pageExplain: "Facebook lapa ir publisks zīmols/produkts vai slavenība, piem., <b>esrigis</b>. Jūs varat saņemt lapas nosaukumu, pēc pirmās \'/\' lapas URL.",
+				pageInputLbl: "Lapas nosaukums",
+				lookupMsgError: "Lapa nav atrasta"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "ķ_Email or Picasa/Google+ ID_ū",
-				signInMsg2: "ķ_Account not found_ū",
-				signInMsg3: "ķ_No public album_ū",
-				howToFind: "ķ_How to find a Picasa or Google+ account ID_ū",
-				howToFind2: "ķ_Copy digits between the first and second '/' of any Picasa or G+ page_ū"
+				userInputLbl: "E-pasta adrese vai Picasa/Google+ ID",
+				signInMsg2: "Konts nav atrasts",
+				signInMsg3: "Nav publiska albuma",
+				howToFind: "Kā atrast Picasa vai Google+ konta ID",
+				howToFind2: "Kopēt ciparus starp pirmo un otro \'/\' no jebkura Picasa vai G+ lapa"
 			},
 			videoSelector: {
 				
 			},
 			videoSelectorYoutube: {
-				pageInputLbl: "ķ_User name_ū",
-				lookupMsgError: "ķ_User not found_ū",
-				howToFind: "ķ_How to find a YouTube user name_ū",
-				howToFind2: "ķ_User name is displayed under videos_ū",
-				found: "ķ_Found_ū",
-				noData: "ķ_No public videos found_ū"
+				pageInputLbl: "Lietotāja vārds",
+				lookupMsgError: "Lietotājs nav atrasts",
+				howToFind: "Kā atrast YouTube lietotāja vārdu",
+				howToFind2: "Lietotāja vārds ir attēlots zem video",
+				found: "Atrasts",
+				noData: "Nav atrasti publiski video"
 			},
 			mediaSelectorPicker: {
 				
 			},
 			mediaConfigure: {
-				lblURL: "ķ_URL_ū",
-				lblURLPH: "ķ_Media URL..._ū",
-				lblLabel: "ķ_Label_ū",
-				lblLabel1: "ķ_Caption_ū",
-				lblLabel2: "ķ_Hover text_ū",
-				lblLabel3: "ķ_None_ū",
-				lblLabelPH: "ķ_Enter some text..._ū",
-				lblPosition: "ķ_Position_ū",
-				lblPosition1: "ķ_Center_ū",
-				lblPosition2: "ķ_Fill_ū",
-				lblPosition3: "ķ_Fit_ū",
-				lblPosition4: "ķ_Stretch_ū",
-				lblPosition2Explain: "ķ_(may crop)_ū",
-				lblPosition3Explain: "ķ_(won't crop)_ū",
-				lblPosition4Explain: "ķ_(may distort)_ū"
+				lblURL: "URL",
+				lblURLPH: "Medija URL...",
+				lblLabel: "Kartes teksts",
+				lblLabel1: "Uzraksts",
+				lblLabel2: "Novietot virs teksta",
+				lblLabel3: "Neviens",
+				lblLabelPH: "Ievadiet tekstu...",
+				lblPosition: "Pozīcija",
+				lblPosition1: "Centrs",
+				lblPosition2: "Aizpildīt",
+				lblPosition3: "Ietilpināt",
+				lblPosition4: "Izstiept",
+				lblPosition2Explain: "(var apgriezt)",
+				lblPosition3Explain: "(netiks apgriezts)",
+				lblPosition4Explain: "(var tikt izkropļots)"
 			},
 			editorActionGeocode: {
-				lblTitle: "ķ_Locate an address or place_ū",
-				mapMarkerExplain: "ķ_User will see a map marker when clicking the link_ū"
+				lblTitle: "Adreses vai vietas noteikšana",
+				mapMarkerExplain: "Noklikšķinot uz saites, lietotājam tiks rādīts kartes punkts"
 			},
 			editorActionMedia: {
-				lblTitle: "ķ_Change the Main Stage media_ū"
+				lblTitle: "ķ_Change the Main Stage content_ū"
 			},
 			editorInlineMedia: {
-				lblTitle: "ķ_Insert an image or video_ū"
+				lblTitle: "Attēla vai video ievietošana"
 			}
 		}
 	})

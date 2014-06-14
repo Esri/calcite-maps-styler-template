@@ -16,6 +16,16 @@
  */
 define(({
         map: {
-            error: "Ĳ_Unable to create map_ä"
+            error: "Kan kaart niet maken"
+        },
+        days: {
+           now: "Ĳ_NOW_ä",
+           sun: "Ĳ_SUN_ä",
+           mon: "Ĳ_MON_ä",
+           tue: "Ĳ_TUE_ä",
+           wed: "Ĳ_WED_ä",
+           thu: "Ĳ_THU_ä",
+           fri: "Ĳ_FRI_ä",
+           sat: "Ĳ_SAT_ä"
         }
 }));

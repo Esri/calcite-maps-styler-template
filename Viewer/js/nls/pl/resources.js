@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "ł_Unable to create map_ą"
+            "error": "Nie można utworzyć mapy"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'ł_Landscape (PDF)_ą',
-			      "label2": 'ł_Portrait (PDF)_ą',
-			      "label3": 'ł_Landscape (Image)_ą',
-			      "label4": 'ł_Portrait (Image)_ą'
-			    }
+			      "label1": 'Poziomo (PDF)',
+			      "label2": 'Pionowo (PDF)',
+			      "label3": 'Poziomo (obraz)',
+			      "label4": 'Pionowo (obraz)'
+			    },
+			    "legend": "ł_Add legend to output_ą"
 			},
 			"share": {
-				"extent": "ł_Use current map extent_ą",
-				"label": "ł_Share this map_ą",
-				"link": "ł_Map Link_ą",
-				"facebook": "ł_Facebook_ą",
-				"twitter": "ł_Twitter_ą"
+				"extent": "Użyj bieżącego zasięgu mapy,",
+				"label": "Udostępnij tę mapę",
+				"link": "Łącze do mapy",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "ł_Default extent_ą",
-        	"locate": "ł_Find my location_ą",
-        	"legend": "ł_Legend_ą",
-        	"bookmarks": "ł_Bookmarks_ą",
-        	"layers": "ł_Layers_ą",
+        	"home": "Domyślny zakres",
+        	"locate": "Znajdź moją lokalizację",
+        	"legend": "Legenda",
+        	"bookmarks": "Zakładki",
+        	"layers": "Warstwy",
         	"basemap": "ł_Basemap gallery_ą",
         	"overview": "ł_Overview map_ą",
-        	"measure": "ł_Measure_ą",
+        	"measure": "Zmierz",
         	"edit": "ł_Edit_ą",
-        	"time": "ł_Time_ą",
-        	"print": "ł_Print_ą",
-        	"details": "ł_Details_ą",
-        	"share": "ł_Share_ą"
+        	"time": "Czas",
+        	"print": "Drukuj",
+        	"details": "Szczegóły",
+        	"share": "Udostępnij"
         }
 }));

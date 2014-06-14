@@ -2,13 +2,13 @@
 	({
 		commonMapControls: {
 			common: {
-				settings: "Ĳ_Settings_ä",
-				openDefault: "Ĳ_Open by default_ä"
+				settings: "Instellingen",
+				openDefault: "Standaard openen"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "Ĳ_Basemap_ä",
-				expandFactorLabel: "Ĳ_Expand Factor_ä",
-				expandFactorPopover: "Ĳ_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle._ä"
+				basemapGalleryBtnLabel: "Basiskaart",
+				expandFactorLabel: "Uitbreidingsfactor",
+				expandFactorPopover: "De verhouding tussen de grootte van de overzichtskaart en de rechthoek van het extent die op de overzichtskaart wordt weergegeven. De standaardwaarde is 2, wat betekent dat de overzichtskaart minstens twee keer zo groot is als de rechthoek van het extent."
 			}
 		}
 	})

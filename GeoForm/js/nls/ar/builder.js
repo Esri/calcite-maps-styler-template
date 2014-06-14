@@ -1,0 +1,57 @@
+﻿define(
+    ({
+        builder: {
+            invalidWebmapSelectionAlert: "بيت_Selected webmap does not contain any feature server_لاحقة",
+            selectThemeText: "بيت_Select Form Theme_لاحقة",
+            fieldLabelPlaceHolder: "بيت_Label this field_لاحقة",
+            fieldDescPlaceHolder: "بيت_Describe this field_لاحقة",
+            webmapText: "بيت_Webmap_لاحقة",
+            layerText: "بيت_Layer_لاحقة",
+            detailsText: "بيت_Details_لاحقة",
+            fieldsText: "حقول",
+            styleText: "بيت_Style_لاحقة",
+            previewText: "معاينة",
+            publishText: "نشر",
+            titleText: "بيت_GeoForm Builder_لاحقة",
+            descriptionText: "بيت_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._لاحقة",
+            btnPreviousText: "السابق",
+            btnNextText:"التالي",
+            webmapTabTitleText: "بيت_Choose a Webmap_لاحقة",
+            btnSelectWebmapText:"بيت_Select Webmap_لاحقة",
+            layerTabTitleText: "بيت_Select Editable Layer_لاحقة",
+            selectLayerLabelText:"بيت_Layer_لاحقة",
+            selectLayerDefaultOptionText:"تحديد الطبقة",
+            detailsTabTitleText:"بيت_Form Details_لاحقة",
+            detailTitleLabelText: "العنوان",
+            detailLogoLabelText: "بيت_Logo Image_لاحقة",
+            detailDescriptionLabelText: "بيت_Description_لاحقة",
+            fieldTabDisplayHeaderText: "عرض",
+            fieldTabFieldHeaderText: "بيت_Field_لاحقة",
+            fieldTabLabelHeaderText: "لافتة التسمية",
+            fieldTabTypeHeaderText: "نوع",
+            fieldTabDescriptionHeaderText: "بيت_Description_لاحقة",
+            previewApplicationText: "بيت_Preview Application_لاحقة",
+            saveApplicationText: "بيت_Save Application_لاحقة",
+            saveText: "حفظ",
+
+            //Local string for user mode
+            defaultTitleText: "بيت_Default Title_لاحقة",
+            defaultDescriptionText: "بيت_Default Description_لاحقة",
+            geoFormGeneralTabText: "عام",
+            locationInformationText: "بيت_Location Info_لاحقة",
+            myLocationText: "الموقع الخاص بي",
+            addressText: "العنوان",
+            cooridnatesText: "بيت_Coordinates_لاحقة",
+            locationTabText: "بيت_Location_لاحقة",
+            enterCoordinatesPlaceholder: "بيت_Enter Coordinates_لاحقة",
+            submitButtonText: "إرسال",
+            clearButtonText: "مسح",
+            fieldvalidationMessageAlertText: "بيت_Please enter a valid number_لاحقة",
+            formValidationMessageAlertText: "بيت_Please verify the form for errors and resubmit the form_لاحقة",
+            latlongValidationMessageAlert: "بيت_Please select x and y coordinates_لاحقة",
+            emptylatitudeAlertMessage:"بيت_Please enter Latitude_لاحقة",
+            emptylongitudeAlertMessage:"بيت_Please enter Longitude_لاحقة"
+        }
+    })
+    
+);

@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "关闭"
+			},
 			loading: {
-				step1: "试_Loading application_验",
-				step2: "试_Loading data_验",
-				step3: "试_Initializing_验",
-				loadBuilder: "试_Switching to builder_验",
-				fail: "试_Sorry, loading failed_验",
-				failButton: "试_Retry_验"
+				step1: "加载应用程序",
+				step2: "加载数据",
+				step3: "正在初始化",
+				loadBuilder: "切换到构建器",
+				fail: "抱歉，加载失败",
+				failButton: "重试"
 			},
 			signin: {
-				title: "试_Authentication is required_验",
-				explainViewer: "试_Please sign in with an account on %PORTAL_LINK% to access the application._验",
-				explainBuilder: "试_Please sign in with an account on %PORTAL_LINK% to configure the application._验"
+				title: "需要进行身份验证",
+				explainViewer: "请使用帐户登录 %PORTAL_LINK%，以访问应用程序。",
+				explainBuilder: "请使用帐户登录 %PORTAL_LINK%，以配置应用程序。"
 			},
 			errors: {
-				boxTitle: "试_An error has occurred_验",
-				invalidConfig: "试_Fatal error: Invalid configuration_验",
-				invalidConfigNoApp: "试_Fatal error: Web Mapping Application identifier not specified in index.html_验",
-				createMap: "试_Unable to create map_验",
-				invalidApp: "试_Fatal error: The application cannot be loaded_验",
-				notConfiguredDesktop: "试_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._验",
-				notConfiguredMobile: "试_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._验",
-				notAuthorized: "试_You are not authorized to access this application_验",
-				noBuilderIE8: "试_The builder is not supported on Internet Explorer before version 9._验"
+				boxTitle: "发生错误",
+				invalidConfig: "严重错误: 配置无效",
+				invalidConfigNoApp: "严重错误：未在 index.html 中指定 Web 制图应用程序标识符",
+				createMap: "无法创建地图",
+				invalidApp: "严重错误: 无法加载应用程序",
+				notConfiguredDesktop: "欢迎使用 %TPL_NAME% web 应用程序。<br />应用程序尚未配置。",
+				notConfiguredMobile: "欢迎使用 %TPL_NAME% web 应用程序。应用程序尚未配置，移动设备不支持构建器。",
+				notAuthorized: "您无权访问该应用程序",
+				noBuilderIE8: "Internet Explorer 9 之前的版本不支持构建器。"
 			},
 			mobileView: {
-				tapForDetails: "试_Tap for details_验",
-				swipeToExplore: "试_Swipe to explore_验",
-				tapForMap: "试_Tap to get back to the Map_验"
+				tapForDetails: "点击查看详细信息",
+				swipeToExplore: "滑动以进行浏览",
+				tapForMap: "点击以返回地图"
 			},
 			floatLayout: {
-				scroll: "试_Scroll_验"
+				scroll: "滚动"
 			},
 			sideLayout: {
-				scroll: "试_Scroll down for more!_验"
+				scroll: "向下滚动以查看更多信息！"
 			},
 			mainStage: {
-				back: "试_Back_验"
+				back: "返回"
 			},
 			headerFromCommon: {
-				storymapsText: "试_A story map_验",
-				builderButton: "试_Edit_验",
-				bitlyTooltip: "试_Get a short link to the application_验",
-				templateTitle: "试_Set template title_验",
-				templateSubtitle: "试_Set template subtitle_验",
-				share: "试_Share_验"
+				storymapsText: "故事地图",
+				builderButton: "编辑",
+				bitlyTooltip: "获取应用程序的短链接",
+				templateTitle: "设置模板标题",
+				templateSubtitle: "设置模板子标题",
+				share: "共享"
 			},
 			overviewFromCommon: {
-				title: "试_Overview Map_验",
+				title: "总览图",
 			},
 			legendFromCommon: {
-				title: "试_Legend_验"
+				title: "图例"
+			},
+			shareFromCommon: {
+				copy: "复制",
+				copied: "已复制",
+				open: "打开",
+				embed: "试_Embed in website_验",
+				embedExplain: "试_Use the following HTML code to embed the Journal in a website._验",
+				size: "大小(宽度/高度):"
 			}
         }
     })

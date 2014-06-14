@@ -6,7 +6,7 @@
 				step2: "CARREGAR DADOS",
 				step3: "INICIALIZAR",
 				fail: "Não foi possível carregar o Varrimento",
-				loadBuilder: "A MUDAR PARA O MODO DE BUILDER",
+				loadBuilder: "A MUDAR PARA O MODO DE BUILDER",				
 				redirectSignIn: "A REDIRECIONAR PARA A PÁGINA DE INÍCIO DE SESSÃO",
 				redirectSignIn2: "(será redirecionado para aqui depois de iniciar sessão)",
 				failButton: "Tentar Novamente"
@@ -25,7 +25,7 @@
 				mapSave: "Erro ao guardar o mapa web",
 				notAuthorized: "Não tem autorização para configurar esta aplicação",
 				conflictingProjectionsTitle: "Projeções em Conflito",
-				conflictingProjections: "A ferramenta de varrimento não suporta a utilização de dois mapas web com projeções diferentes. Abra as definições e utilize um mapa web que utilize uma projeção igual à do primeiro mapa.",
+				conflictingProjections: "ã_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._Ç",
 				cpButton: "Fechar"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "para guardar a aplicação."
 			},
 			header:{
-				editMe: "Editar-me!",
+				editMe: "ã_Edit me!_Ç",
 				templateTitle: "Definir título do modelo",
 				templateSubtitle: "Definir subtítulo do modelo"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Definir a descrição do painel lateral",
-				editMe: "Editar-me!",
+				editMe: "ã_Edit me!_Ç",
 				legendTitle: "Legenda"
 			},
 			infoWindow: {

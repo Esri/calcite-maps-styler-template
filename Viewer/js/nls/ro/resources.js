@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "Ă_Unable to create map_ș"
+            "error": "Imposibil de creat harta"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'Ă_Landscape (PDF)_ș',
-			      "label2": 'Ă_Portrait (PDF)_ș',
-			      "label3": 'Ă_Landscape (Image)_ș',
-			      "label4": 'Ă_Portrait (Image)_ș'
-			    }
+			      "label1": 'Peisaj (PDF)',
+			      "label2": 'Portret (PDF)',
+			      "label3": 'Peisaj (Imagine)',
+			      "label4": 'Portret (Imagine)'
+			    },
+			    "legend": "Ă_Add legend to output_ș"
 			},
 			"share": {
-				"extent": "Ă_Use current map extent_ș",
-				"label": "Ă_Share this map_ș",
-				"link": "Ă_Map Link_ș",
-				"facebook": "Ă_Facebook_ș",
-				"twitter": "Ă_Twitter_ș"
+				"extent": "Utilizare extindere curentă a hărţii",
+				"label": "Partajare această hartă",
+				"link": "Link către hartă",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "Ă_Default extent_ș",
-        	"locate": "Ă_Find my location_ș",
-        	"legend": "Ă_Legend_ș",
-        	"bookmarks": "Ă_Bookmarks_ș",
-        	"layers": "Ă_Layers_ș",
+        	"home": "Extindere implicită",
+        	"locate": "Găsire locaţie proprie",
+        	"legend": "Legendă",
+        	"bookmarks": "Semne de carte",
+        	"layers": "Straturi tematice",
         	"basemap": "Ă_Basemap gallery_ș",
         	"overview": "Ă_Overview map_ș",
-        	"measure": "Ă_Measure_ș",
-        	"edit": "Ă_Edit_ș",
-        	"time": "Ă_Time_ș",
-        	"print": "Ă_Print_ș",
-        	"details": "Ă_Details_ș",
-        	"share": "Ă_Share_ș"
+        	"measure": "Măsurare",
+        	"edit": "Editare",
+        	"time": "Timp",
+        	"print": "Imprimare",
+        	"details": "Detalii",
+        	"share": "Partajare"
         }
 }));

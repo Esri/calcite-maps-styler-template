@@ -5,7 +5,7 @@
             mouseToolTip: "Cliquez sur la carte pour vérifier la présence d\'un service"
         },
         geocoder: {
-            defaultText: "æ_Enter an address or point of interest_Â"
+            defaultText: "Saisissez une adresse ou un point d\'intérêt"
         },
         error: {
             layerNotFound: "La couche ne se trouve pas dans la carte Web",

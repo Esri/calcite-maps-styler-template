@@ -100,13 +100,13 @@
 				"detailsLabel":"Details"
             },
             "filterItems":{
-                "show": "Ĳ_Show_ä",
-                "all": "Ĳ_All Results_ä",
-                "maps": "Ĳ_Maps_ä",
-                "layers": "Ĳ_Layers_ä",
-                "applications": "Ĳ_Applications_ä",
-                "tools": "Ĳ_Tools_ä",
-                "files": "Ĳ_Files_ä"
+                "show": "Weergeven",
+                "all": "Alle resultaten",
+                "maps": "Kaarten",
+                "layers": "Kaartlagen",
+                "applications": "Applicaties",
+                "tools": "Tools",
+                "files": "Bestanden"
             },
             "pagination": {
                 "previous": "Vorige",

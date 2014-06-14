@@ -5,7 +5,7 @@
             mouseToolTip: "คลิกบนแผนที่เพื่อตรวจสอบเซอร์วิส"
         },
         geocoder: {
-            defaultText: "ก้_Enter an address or point of interest_ษฺ"
+            defaultText: "ใส่ที่อยู่หรือตำแหน่งที่สนใจ"
         },
         error: {
             layerNotFound: "ชั้นช้อมูลพื้นที่การให้บริการไม่ปรากฎในเว็บแมพ",

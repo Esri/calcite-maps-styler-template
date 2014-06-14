@@ -6,7 +6,7 @@
 				step2: "正在加载数据",
 				step3: "正在初始化",
 				fail: "抱歉，卷帘加载失败",
-				loadBuilder: "切换到构建器模式",
+				loadBuilder: "切换到构建器模式",				
 				redirectSignIn: "重定向到登录页面",
 				redirectSignIn2: "(登录后您将重定向到此处)",
 				failButton: "重试"
@@ -25,7 +25,7 @@
 				mapSave: "保存 web 地图时出错",
 				notAuthorized: "您无权访问该应用程序",
 				conflictingProjectionsTitle: "投影冲突",
-				conflictingProjections: "卷帘不支持两个具有不同投影的 web 地图。请打开设置并使用与首个 web 地图具有相同投影的 web 地图。",
+				conflictingProjections: "试_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._验",
 				cpButton: "关闭"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "保存应用程序。"
 			},
 			header:{
-				editMe: "编辑!",
+				editMe: "试_Edit me!_验",
 				templateTitle: "设置模板标题",
 				templateSubtitle: "设置模板子标题"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "设置侧面板描述",
-				editMe: "编辑!",
+				editMe: "试_Edit me!_验",
 				legendTitle: "图例"
 			},
 			infoWindow: {

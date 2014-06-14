@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "Fechar"
+			},
 			loading: {
-				step1: "ã_Loading application_Ç",
-				step2: "ã_Loading data_Ç",
-				step3: "ã_Initializing_Ç",
-				loadBuilder: "ã_Switching to builder_Ç",
-				fail: "ã_Sorry, loading failed_Ç",
-				failButton: "ã_Retry_Ç"
+				step1: "A carregar aplicação",
+				step2: "A carregar dados",
+				step3: "Inicializando",
+				loadBuilder: "Alternando para builder",
+				fail: "Lamentamos, o carregamento falhou",
+				failButton: "Tentar Novamente"
 			},
 			signin: {
-				title: "ã_Authentication is required_Ç",
-				explainViewer: "ã_Please sign in with an account on %PORTAL_LINK% to access the application._Ç",
-				explainBuilder: "ã_Please sign in with an account on %PORTAL_LINK% to configure the application._Ç"
+				title: "É necessária autenticação",
+				explainViewer: "Por favor inicie sessão com uma conta em %PORTAL_LINK% para aceder à aplicação.",
+				explainBuilder: "Por favor inicie sessão com uma conta em %PORTAL_LINK% para configurar a aplicação."
 			},
 			errors: {
-				boxTitle: "ã_An error has occurred_Ç",
-				invalidConfig: "ã_Fatal error: Invalid configuration_Ç",
-				invalidConfigNoApp: "ã_Fatal error: Web Mapping Application identifier not specified in index.html_Ç",
-				createMap: "ã_Unable to create map_Ç",
-				invalidApp: "ã_Fatal error: The application cannot be loaded_Ç",
-				notConfiguredDesktop: "ã_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._Ç",
-				notConfiguredMobile: "ã_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._Ç",
-				notAuthorized: "ã_You are not authorized to access this application_Ç",
-				noBuilderIE8: "ã_The builder is not supported on Internet Explorer before version 9._Ç"
+				boxTitle: "Ocorreu um erro",
+				invalidConfig: "Erro fatal: configuração não válida",
+				invalidConfigNoApp: "Erro fatal: o identificador da Aplicação de Cartografia não se encontra especificado em index.html",
+				createMap: "Não foi possível criar o mapa",
+				invalidApp: "Erro fatal: não é possível carregar a aplicação",
+				notConfiguredDesktop: "Bem-vindo à aplicação web %TPL_NAME% .<br />A aplicação ainda não se encontra confugurada.",
+				notConfiguredMobile: "Bem-vindo à aplicação web %TPL_NAME% . A aplicação ainda não se encontra configurada e o builder não é suportado em dispositivos móveis.",
+				notAuthorized: "Não tem autorização para configurar esta aplicação",
+				noBuilderIE8: "O builder não é suportado pelo Internet Explorer abaixo da versão 9."
 			},
 			mobileView: {
-				tapForDetails: "ã_Tap for details_Ç",
-				swipeToExplore: "ã_Swipe to explore_Ç",
-				tapForMap: "ã_Tap to get back to the Map_Ç"
+				tapForDetails: "Toque para aceder a detalhes",
+				swipeToExplore: "Deslize para explorar.",
+				tapForMap: "Toque para regressar ao mapa"
 			},
 			floatLayout: {
-				scroll: "ã_Scroll_Ç"
+				scroll: "Scroll"
 			},
 			sideLayout: {
-				scroll: "ã_Scroll down for more!_Ç"
+				scroll: "Faça scroll para ver mais!"
 			},
 			mainStage: {
-				back: "ã_Back_Ç"
+				back: "Retroceder"
 			},
 			headerFromCommon: {
-				storymapsText: "ã_A story map_Ç",
-				builderButton: "ã_Edit_Ç",
-				bitlyTooltip: "ã_Get a short link to the application_Ç",
-				templateTitle: "ã_Set template title_Ç",
-				templateSubtitle: "ã_Set template subtitle_Ç",
-				share: "ã_Share_Ç"
+				storymapsText: "Um mapa de história",
+				builderButton: "Editar",
+				bitlyTooltip: "Obter uma pequena ligação para a aplicação",
+				templateTitle: "Definir título do modelo",
+				templateSubtitle: "Definir subtítulo do modelo",
+				share: "Partilhar"
 			},
 			overviewFromCommon: {
-				title: "ã_Overview Map_Ç",
+				title: "Vista Geral do Mapa",
 			},
 			legendFromCommon: {
-				title: "ã_Legend_Ç"
+				title: "Legenda"
+			},
+			shareFromCommon: {
+				copy: "Copiar",
+				copied: "Copiado",
+				open: "Abrir",
+				embed: "ã_Embed in website_Ç",
+				embedExplain: "ã_Use the following HTML code to embed the Journal in a website._Ç",
+				size: "Tamanho (largura/altura):"
 			}
         }
     })

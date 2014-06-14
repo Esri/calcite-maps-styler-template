@@ -21,33 +21,34 @@ define(({
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'ä_Landscape (PDF)_Ü',
-			      "label2": 'ä_Portrait (PDF)_Ü',
-			      "label3": 'ä_Landscape (Image)_Ü',
-			      "label4": 'ä_Portrait (Image)_Ü'
-			    }
+			      "label1": 'Querformat (PDF)',
+			      "label2": 'Hochformat (PDF)',
+			      "label3": 'Querformat (Bild)',
+			      "label4": 'Hochformat (Bild)'
+			    },
+			    "legend": "ä_Add legend to output_Ü"
 			},
 			"share": {
-				"extent": "ä_Use current map extent_Ü",
-				"label": "ä_Share this map_Ü",
-				"link": "ä_Map Link_Ü",
-				"facebook": "ä_Facebook_Ü",
-				"twitter": "ä_Twitter_Ü"
+				"extent": "Aktuelle Kartenausdehnung verwenden",
+				"label": "Diese Karte freigeben",
+				"link": "Karten-Link",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "ä_Default extent_Ü",
-        	"locate": "ä_Find my location_Ü",
-        	"legend": "ä_Legend_Ü",
-        	"bookmarks": "ä_Bookmarks_Ü",
-        	"layers": "ä_Layers_Ü",
+        	"home": "Standardausdehnung",
+        	"locate": "Eigenen Standort suchen",
+        	"legend": "Legende",
+        	"bookmarks": "Lesezeichen",
+        	"layers": "Layer",
         	"basemap": "ä_Basemap gallery_Ü",
         	"overview": "ä_Overview map_Ü",
-        	"measure": "ä_Measure_Ü",
-        	"edit": "ä_Edit_Ü",
-        	"time": "ä_Time_Ü",
-        	"print": "ä_Print_Ü",
-        	"details": "ä_Details_Ü",
-        	"share": "ä_Share_Ü"
+        	"measure": "Messen",
+        	"edit": "Bearbeiten",
+        	"time": "Zeit",
+        	"print": "Drucken",
+        	"details": "Details",
+        	"share": "Freigeben"
         }
 }));

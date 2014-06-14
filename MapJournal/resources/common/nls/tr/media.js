@@ -2,84 +2,84 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ı_Select Media Type_İ",
-				lblSelect2: "ı_Select Content Type_İ",
-				lblMap: "ı_Map_İ",
-				lblImage: "ı_Image_İ",
-				lblVideo: "ı_Video_İ",
-				lblExternal: "ı_Web page_İ",
-				disabled: "ı_This feature has been disabled by the Administrator_İ",
-				url: "ı_To manually enter the web address of an image_İ",
-				userLookup: "ı_Load albums_İ",
-				notImplemented: "ı_Not implemented yet._İ"
+				lblSelect1: "Ortam Türü Seç",
+				lblSelect2: "İçerik Türü Seç",
+				lblMap: "Harita",
+				lblImage: "Görüntü",
+				lblVideo: "Video",
+				lblExternal: "Web sayfası",
+				disabled: "Bu özellik Yönetici tarafından devre dışı bırakıldı",
+				url: "Bir resmin web adresine manuel olarak girmek için",
+				userLookup: "Albüm yükle",
+				notImplemented: "Henüz uygulanmadı."
 			},
 			imageSelector: {
-				lblStep1: "ı_Choose the service_İ",
-				lblStep2: "ı_Select your media_İ",
-				lblStep3: "ı_Configure_İ"
+				lblStep1: "Servisi seç",
+				lblStep2: "Ortamınızı seçin",
+				lblStep3: "Yapılandır"
 			},
 			imageSelectorHome: {
-				explain: "ı_Load images from social media, <br /> or directly from a URL_İ"
+				explain: "Sosyal medyadan ya da doğrudan <br /> bir URL\'den resim yükle"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "ı_User name_İ",
-				signInMsg2: "ı_User not found_İ",
-				loadingFailed: "ı_Loading failed_İ"
+				userInputLbl: "Kullanıcı adı",
+				signInMsg2: "Kullanıcı bulunamadı",
+				loadingFailed: "Yükleme başarısız"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "ı_Facebook User_İ",
-				rightHeader: "ı_Facebook Page_İ",
-				pageExplain: "ı_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL._İ",
-				pageInputLbl: "ı_Page name_İ",
-				lookupMsgError: "ı_Page not found_İ"
+				leftHeader: "Facebook Kullanıcısı",
+				rightHeader: "Facebook Sayfası",
+				pageExplain: "Facebook sayfası, <b>esrigis</b> gibi genel bir marka/ürün veya ünlü kişiliktir. Sayfa adını sayfa URL\'sindeki ilk \'/\' karakterinden alabilirsiniz.",
+				pageInputLbl: "Sayfa adı",
+				lookupMsgError: "Sayfa bulunamadı"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "ı_Email or Picasa/Google+ ID_İ",
-				signInMsg2: "ı_Account not found_İ",
-				signInMsg3: "ı_No public album_İ",
-				howToFind: "ı_How to find a Picasa or Google+ account ID_İ",
-				howToFind2: "ı_Copy digits between the first and second '/' of any Picasa or G+ page_İ"
+				userInputLbl: "E-posta veya Picasa/Google+ ID",
+				signInMsg2: "Hesap bulunamadı",
+				signInMsg3: "Genel albüm yok",
+				howToFind: "Picasa ya da Google+ hesabı kimliği nasıl bulunur",
+				howToFind2: "Herhangi bir Picasa ya da G+ sayfasının ilk ve ikinci \'/\' karakterleri arasındaki rakamları kopyalayın"
 			},
 			videoSelector: {
 				
 			},
 			videoSelectorYoutube: {
-				pageInputLbl: "ı_User name_İ",
-				lookupMsgError: "ı_User not found_İ",
-				howToFind: "ı_How to find a YouTube user name_İ",
-				howToFind2: "ı_User name is displayed under videos_İ",
-				found: "ı_Found_İ",
-				noData: "ı_No public videos found_İ"
+				pageInputLbl: "Kullanıcı adı",
+				lookupMsgError: "Kullanıcı bulunamadı",
+				howToFind: "YouTube kullanıcı adı bulma",
+				howToFind2: "Kullanıcı adı bu videoların altında gösterilir",
+				found: "Bulundu",
+				noData: "Hiçbir genel video bulunamadı"
 			},
 			mediaSelectorPicker: {
 				
 			},
 			mediaConfigure: {
-				lblURL: "ı_URL_İ",
-				lblURLPH: "ı_Media URL..._İ",
-				lblLabel: "ı_Label_İ",
-				lblLabel1: "ı_Caption_İ",
-				lblLabel2: "ı_Hover text_İ",
-				lblLabel3: "ı_None_İ",
-				lblLabelPH: "ı_Enter some text..._İ",
-				lblPosition: "ı_Position_İ",
-				lblPosition1: "ı_Center_İ",
-				lblPosition2: "ı_Fill_İ",
-				lblPosition3: "ı_Fit_İ",
-				lblPosition4: "ı_Stretch_İ",
-				lblPosition2Explain: "ı_(may crop)_İ",
-				lblPosition3Explain: "ı_(won't crop)_İ",
-				lblPosition4Explain: "ı_(may distort)_İ"
+				lblURL: "URL",
+				lblURLPH: "Medya URL\'si...",
+				lblLabel: "Etiket",
+				lblLabel1: "Altyazı",
+				lblLabel2: "Metnin üzerinde gezin",
+				lblLabel3: "Hiçbiri",
+				lblLabelPH: "Metin girin...",
+				lblPosition: "Konum",
+				lblPosition1: "Merkez",
+				lblPosition2: "Dolgu",
+				lblPosition3: "Sığdır",
+				lblPosition4: "Esnet",
+				lblPosition2Explain: "(kırpılabilir)",
+				lblPosition3Explain: "(kırpılmaz)",
+				lblPosition4Explain: "(şekil değiştirebilir)"
 			},
 			editorActionGeocode: {
-				lblTitle: "ı_Locate an address or place_İ",
-				mapMarkerExplain: "ı_User will see a map marker when clicking the link_İ"
+				lblTitle: "Adres veya yer bul",
+				mapMarkerExplain: "Kullanıcı bağlantıya tıklarken bir harita işaretçisi görür"
 			},
 			editorActionMedia: {
-				lblTitle: "ı_Change the Main Stage media_İ"
+				lblTitle: "ı_Change the Main Stage content_İ"
 			},
 			editorInlineMedia: {
-				lblTitle: "ı_Insert an image or video_İ"
+				lblTitle: "Bir resim veya video ekle"
 			}
 		}
 	})

@@ -5,7 +5,7 @@
             mouseToolTip: "Spauskite ant žemėlapio, norėdami patikrinti paslaugą"
         },
         geocoder: {
-            defaultText: "Į_Enter an address or point of interest_š"
+            defaultText: "Įveskite adresą arba dominančią vietą"
         },
         error: {
             layerNotFound: "Sluoksnio nėra internetiniame žemėlapyje",

@@ -6,7 +6,7 @@
 				step2: "IELĀDĒ DATUS",
 				step3: "INICIALIZĒŠANA",
 				fail: "Diemžēl neizdevās pārvilkt ielādēšanu",
-				loadBuilder: "PĀRSLĒGT UZ BUILDER MODE",
+				loadBuilder: "PĀRSLĒGT UZ BUILDER MODE",				
 				redirectSignIn: "NOVIRZA UZ PIERAKSTĪŠANĀS LAPU",
 				redirectSignIn2: "(pēc pierakstīšanās jūs tiksiet novirzīts uz šejieni)",
 				failButton: "Atkārtot"
@@ -25,7 +25,7 @@
 				mapSave: "Kļūda, saglabājot web karti",
 				notAuthorized: "Jums nav atļauts piekļūt šai lietotnei",
 				conflictingProjectionsTitle: "Konfliktējošas projekcijas",
-				conflictingProjections: "Pārvilkt neatbalsta divu web karšu ar dažādām projekcijām lietošanu. Lūdzu, atveriet iestatījumus un izmantojiet web karti, kas izmanto to pašu projekciju nekā pirmā web karte.",
+				conflictingProjections: "ķ_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ū",
 				cpButton: "Aizvērt"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "lai saglabātu aplikāciju."
 			},
 			header:{
-				editMe: "Rediģē mani !",
+				editMe: "ķ_Edit me!_ū",
 				templateTitle: "Iestatīt šablona virsrakstu",
 				templateSubtitle: "Iestatīt šablona apakšvirsrakstu"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Iestatiet sānu paneļa aprakstu",
-				editMe: "Rediģē mani !",
+				editMe: "ķ_Edit me!_ū",
 				legendTitle: "Leģenda"
 			},
 			infoWindow: {

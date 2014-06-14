@@ -1,0 +1,57 @@
+﻿define(
+    ({
+        builder: {
+            invalidWebmapSelectionAlert: "ı_Selected webmap does not contain any feature server_İ",
+            selectThemeText: "ı_Select Form Theme_İ",
+            fieldLabelPlaceHolder: "ı_Label this field_İ",
+            fieldDescPlaceHolder: "ı_Describe this field_İ",
+            webmapText: "ı_Webmap_İ",
+            layerText: "Katman",
+            detailsText: "Ayrıntılar",
+            fieldsText: "Alanlar",
+            styleText: "ı_Style_İ",
+            previewText: "Önizleme",
+            publishText: "Yayınla",
+            titleText: "ı_GeoForm Builder_İ",
+            descriptionText: "ı_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._İ",
+            btnPreviousText: "Önceki",
+            btnNextText:"Sonraki",
+            webmapTabTitleText: "ı_Choose a Webmap_İ",
+            btnSelectWebmapText:"ı_Select Webmap_İ",
+            layerTabTitleText: "ı_Select Editable Layer_İ",
+            selectLayerLabelText:"Katman",
+            selectLayerDefaultOptionText:"Katman seç",
+            detailsTabTitleText:"ı_Form Details_İ",
+            detailTitleLabelText: "Başlık",
+            detailLogoLabelText: "ı_Logo Image_İ",
+            detailDescriptionLabelText: "Açıklama",
+            fieldTabDisplayHeaderText: "Görüntüle",
+            fieldTabFieldHeaderText: "Alan",
+            fieldTabLabelHeaderText: "Etiket",
+            fieldTabTypeHeaderText: "Tür",
+            fieldTabDescriptionHeaderText: "Açıklama",
+            previewApplicationText: "ı_Preview Application_İ",
+            saveApplicationText: "ı_Save Application_İ",
+            saveText: "Kaydet",
+
+            //Local string for user mode
+            defaultTitleText: "ı_Default Title_İ",
+            defaultDescriptionText: "ı_Default Description_İ",
+            geoFormGeneralTabText: "Genel",
+            locationInformationText: "ı_Location Info_İ",
+            myLocationText: "Konumum",
+            addressText: "Adres",
+            cooridnatesText: "ı_Coordinates_İ",
+            locationTabText: "Konum",
+            enterCoordinatesPlaceholder: "ı_Enter Coordinates_İ",
+            submitButtonText: "Gönder",
+            clearButtonText: "Temizle",
+            fieldvalidationMessageAlertText: "ı_Please enter a valid number_İ",
+            formValidationMessageAlertText: "ı_Please verify the form for errors and resubmit the form_İ",
+            latlongValidationMessageAlert: "ı_Please select x and y coordinates_İ",
+            emptylatitudeAlertMessage:"ı_Please enter Latitude_İ",
+            emptylongitudeAlertMessage:"ı_Please enter Longitude_İ"
+        }
+    })
+    
+);

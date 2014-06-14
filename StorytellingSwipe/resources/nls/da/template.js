@@ -6,7 +6,7 @@
 				step2: "INDLÆSER DATA",
 				step3: "STARTER",
 				fail: "Beklager, Swipe-indlæsning mislykkedes",
-				loadBuilder: "SKIFTER TIL BUILDER-TILSTAND",
+				loadBuilder: "SKIFTER TIL BUILDER-TILSTAND",				
 				redirectSignIn: "OMDIRIGERER TIL LOG IND-SIDE",
 				redirectSignIn2: "(du omdirigeres hertil efter login)",
 				failButton: "Prøv igen"
@@ -25,7 +25,7 @@
 				mapSave: "Fejl ved lagring af webkortet",
 				notAuthorized: "Du er ikke autoriseret til at få adgang til denne applikation",
 				conflictingProjectionsTitle: "Konfliktende projektioner",
-				conflictingProjections: "Swipe understøtter ikke, at man bruger to webkort med forskellige projektioner. Åbn indstillinger, og brug et webkort, der anvender den samme projektion som det første webkort.",
+				conflictingProjections: "ø_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._å",
 				cpButton: "Luk"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "for at gemme applikationen."
 			},
 			header:{
-				editMe: "Redigér mig!",
+				editMe: "ø_Edit me!_å",
 				templateTitle: "Indstil skabelontitel",
 				templateSubtitle: "Indstil skabelonundertitel"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Angiv beskrivelse til sidepanelet",
-				editMe: "Redigér mig!",
+				editMe: "ø_Edit me!_å",
 				legendTitle: "Signaturforklaring"
 			},
 			infoWindow: {

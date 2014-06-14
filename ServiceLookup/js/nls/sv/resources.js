@@ -5,7 +5,7 @@
             mouseToolTip: "Klicka på kartan för att kontrollera tjänsten"
         },
         geocoder: {
-            defaultText: "Å_Enter an address or point of interest_ö"
+            defaultText: "Ange en adress eller intressant plats"
         },
         error: {
             layerNotFound: "Lagret finns inte i webbkartan",

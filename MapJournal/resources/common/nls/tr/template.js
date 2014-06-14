@@ -2,144 +2,144 @@
 	 ({
 		common: {
 			common: {
-				edit: "ı_Edit_İ"
+				edit: "Düzenle"
 			},
 			inlineFieldEdit: {
-				editMe: "ı_Edit me !_İ"
+				editMe: "Beni düzenle !"
 			},
 			builderPanel: {
-				panelHeader: "ı_%TPL_NAME% Builder_İ",
-				buttonSave: "ı_SAVE_İ",
-				buttonShare: "ı_SHARE_İ",
-				buttonSettings: "ı_SETTINGS_İ",
-				buttonHelp: "ı_HELP_İ",
-				noPendingChange: "ı_No pending change_İ",
-				unSavedChangeSingular: "ı_1 unsaved change_İ",
-				unSavedChangePlural: "ı_unsaved changes_İ",
-				popoverSaveWhenDone: "ı_Don't forget to save when you are done_İ",
-				closeWithPendingChange: "ı_Are you sure to want to confirm the action ? Your changes will be lost._İ",
-				ok: "ı_Ok_İ",
-				savingApplication: "ı_Saving application_İ",
-				saveError: "ı_Save failed, please try again_İ",
-				saveError3: "ı_The title can't be empty_İ",
+				panelHeader: "%TPL_NAME% Builder",
+				buttonSave: "KAYDET",
+				buttonShare: "PAYLAŞ",
+				buttonSettings: "AYARLAR",
+				buttonHelp: "YARDIM",
+				noPendingChange: "Bekleyen değişiklik yok",
+				unSavedChangeSingular: "Kaydedilmemiş 1 değişiklik var",
+				unSavedChangePlural: "kaydedilmemiş değişiklikler",
+				popoverSaveWhenDone: "İşiniz bittiğinde kaydetmeyi unutmayın",
+				closeWithPendingChange: "Eylemi onaylamak istediğinizden emin misiniz? Değişiklikleriniz kaybolacak.",
+				ok: "Tamam",
+				savingApplication: "Uygulama kaydediliyor",
+				saveError: "Kaydetme başarısız; tekrar deneyin",
+				saveError3: "Başlık boş olamaz",
 				// TODO
-				signIn: "ı_Please sign in with an account on_İ",
-				shareStatus1: "ı_Application is not saved_İ",
-				shareStatus2: "ı_Application is shared publicly_İ",
-				shareStatus3: "ı_Application is shared within the organization_İ",
-				shareStatus4: "ı_Application is not shared_İ"
+				signIn: "Uygulamayı kaydetmek için",
+				shareStatus1: "Uygulama kaydedilmedi",
+				shareStatus2: "Uygulama herkesle paylaşılıyor",
+				shareStatus3: "Uygulama kuruluş içinde paylaşılıyor",
+				shareStatus4: "Uygulama paylaşılmıyor"
 			},
 			// TODO
 			addEditPopup: {
 				// Add
-				addEditPopupInputTitleLabel: "ı_Title_İ",
-				addPopupTitle: "ı_Add_İ",
-				addPopupDescription: "ı_Add a new view to your series._İ",
-				addPopupButton: "ı_ADD_İ",
+				addEditPopupInputTitleLabel: "Başlık",
+				addPopupTitle: "Ekle",
+				addPopupDescription: "Serinize yeni bir görünüm ekleyin.",
+				addPopupButton: "EKLE",
 				// Edit
-				editPopupTitle: "ı_Edit_İ",
-				editPopupDescription: "ı_Edit the selected view_İ",
-				editPopupButton: "ı_APPLY_İ",
+				editPopupTitle: "Düzenle",
+				editPopupDescription: "Seçilen görünümü düzenle",
+				editPopupButton: "UYGULA",
 				// Add/Edit
-				addEditPopupCancelButton: "ı_CANCEL_İ",
-				addEditPopupMyContentBtn: "ı_Select from my content_İ",
-				addEditPopupConfigureWebMapBtn: " ı_Configure_İ"
+				addEditPopupCancelButton: "İPTAL",
+				addEditPopupMyContentBtn: "İçeriğimden seç",
+				addEditPopupConfigureWebMapBtn: " Yapılandır"
 			},
 			share: {
-				firstSaveTitle: "ı_Application successfully saved_İ",
-				firstSaveHeader: "ı_Your application is now saved in ArcGIS Online. Please read the following answers to frequent questions._İ",
-				firstSaveA1: "ı_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_İ",
-				firstSaveA1bis: "ı_The application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._İ",
-				firstSaveQ2: "ı_Is my application shared?_İ",
-				firstSaveA2: "ı_Currently your application is not shared. To share it, use the SHARE button._İ",
-				shareTitle: "ı_Share your application_İ",
-				sharePrivateHeader: "ı_Your application is not shared, would you like to share it?_İ",
-				sharePrivateBtn1: "ı_Share publicly_İ",
-				sharePrivateBtn2: "ı_Share with my Organization_İ",
-				sharePrivateWarning: "ı_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._İ",
-				sharePrivateWarningWith1: "ı_publicly_İ",
-				sharePrivateWarningWith2: "ı_publicly and with the Organization_İ",
-				sharePrivateProgress: "ı_Sharing in progress..._İ",
-				sharePrivateErr: "ı_Sharing failed, try again or_İ",
-				sharePrivateOk: "ı_Sharing updated successfully, loading..._İ",
-				sharePreviewAsUser: "ı_Preview_İ",
-				shareHeader1: "ı_Your application is <strong>publicly accessible</strong>._İ",
-				shareHeader2: "ı_Your application is accessible by your organization members (login is required)._İ",
-				shareLinkHeader: "ı_Share the application with your audience_İ",
-				shareLinkOpen: "ı_OPEN_İ",
-				shareQ1Opt1: "ı_How do I keep the application private?_İ",
-				shareQ1Opt2: "ı_How do I keep the application private or share it publicly?_İ",
-				shareA1: "ı_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._İ",
-				shareA1bis: "ı_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._İ",
-				shareQ2: "ı_How do I edit the application later?_İ",
-				shareQ2bis: "ı_How do I get back to the authoring interface?_İ",
-				shareA2div1: "ı_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._İ",
-				shareA2div2: "ı_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_İ",				
-				shareQ3: "ı_Where is the data stored?_İ",
-				shareA3: "ı_The application configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._İ",
-				learnMore: "ı_Learn more_İ",
-				close: "ı_Close_İ"
+				firstSaveTitle: "Uygulama başarıyla kaydedildi",
+				firstSaveHeader: "Uygulamanız artık ArcGIS Online\'a kaydedildi. Aşağıdaki sık sorulan soruların yanıtlarını inceleyin.",
+				firstSaveA1: "ArcGIS Online\'ı iyi bilmiyorsanız veya hazırlama arayüzüne erişmek için bir kısayol istiyorsanız, şu bağlantıyı kaydedebilirsiniz: %LINK1%",
+				firstSaveA1bis: "Uygulamayı ayrıca <a href='%LINK2%' target='_blank'>ArcGIS Online içerik klasörünüzde</a> bulabilirsiniz.",
+				firstSaveQ2: "Uygulamam paylaştırıldı mı?",
+				firstSaveA2: "Uygulamanız şu anda paylaştırılmadı. Paylaştırmak için PAYLAŞ düğmesini kullanın.",
+				shareTitle: "Uygulamanızı paylaşın",
+				sharePrivateHeader: "Uygulamanız paylaştırılmadı, paylaştırmak ister misiniz?",
+				sharePrivateBtn1: "Herkesle paylaş",
+				sharePrivateBtn2: "Kuruluşumla Paylaş",
+				sharePrivateWarning: "%WITH% ile paylaşma devre dışı bırakıldı çünkü <a href='%LINK%' target='_blank'>web haritasının</a> sahibi değilsiniz.",
+				sharePrivateWarningWith1: "genel ile",
+				sharePrivateWarningWith2: "genel ve Kuruluş ile",
+				sharePrivateProgress: "Paylaşma sürüyor...",
+				sharePrivateErr: "Paylaşma başarısız, tekrar deneyin veya",
+				sharePrivateOk: "Paylaşma başarıyla güncellendi, yükleniyor...",
+				sharePreviewAsUser: "Önizleme",
+				shareHeader1: "Uygulamanız <strong>herkes tarafından erişilebilir</strong> durumda.",
+				shareHeader2: "Kuruluş üyelerinizin uygulamanıza erişimi var (oturum açılması gerekir).",
+				shareLinkHeader: "Uygulamayı kitlenizle paylaşın",
+				shareLinkOpen: "AÇ",
+				shareQ1Opt1: "Uygulamayı nasıl özel tutarım?",
+				shareQ1Opt2: "Uygulamayı nasıl özel tutabilir ya da herkesle paylaşabilirim?",
+				shareA1: "<a href='%LINK1%' target='_blank'>Uygulama öğesi sayfasında</a> %SHAREIMG% kullanın. Web haritasını paylaşmayı iptal etmek istiyorsanız, <a href='%LINK2%' target='_blank'>web harita öğesi sayfasını</a> kullanın.",
+				shareA1bis: "Detay Servisi\'ni paylaşmayı iptal etmek istiyorsanız, <a href='%LINK1%' target='_blank'>Detay Servisi öğesi sayfasını</a> kullanın.",
+				shareQ2: "Uygulamayı daha sonra nasıl düzenlerim?",
+				shareQ2bis: "Hazırlama arayüzüne nasıl geri dönerim?",
+				shareA2div1: "%LINK1% bağlantısını kaydedip tekrar kullanın veya <a href='%LINK2%' target='_blank'>uygulama öğesi sayfasını</a> kullanın.",
+				shareA2div2: "Uygulamanın sahibi olarak ArcGIS.com\'da oturum açtığınızda, uygulamada etkileşimli derleyiciyi açmak için bir düğme bulunur:",				
+				shareQ3: "Veriler nerede saklanıyor?",
+				shareA3: "Uygulama yapılandırması <a href='%LINK1%' target='_blank'>bu web haritası öğesinde</a> ve <a href='%LINK2%' target='_blank'>bu web uygulama öğesinde</a> saklanıyor. Flickr, Picasa, Facebook veya YouTube içe aktarma işlevi kullandıysanız, resimleriniz ve videolarınız orada saklanır ve ArcGIS Online\'da çoğaltılmaz.",
+				learnMore: "Daha fazla bilgi",
+				close: "Kapat"
 			},
 			settings: {
-				header: "ı_Application settings_İ",
-				cancel: "ı_Cancel_İ",
-				apply: "ı_Apply_İ",
-				tabError: "ı_Please check for errors in all tabs_İ"
+				header: "Uygulama ayarları",
+				cancel: "İptal",
+				apply: "Uygula",
+				tabError: "Tüm sekmelerdeki hataları kontrol etin"
 			},
 			settingsLayout: {
-				title: "ı_Layout_İ",
-				explain: "ı_What layout do you want to use?_İ",
-				explainInit: "ı_Change will be possible through the settings dialog._İ",
-				selected: "ı_Selected layout_İ",
-				select: "ı_Select this layout_İ"
+				title: "Düzen",
+				explain: "Hangi düzeni kullanmak istiyorsunuz?",
+				explainInit: "Ayarlar iletişim kutusundan değişiklik yapılabilir.",
+				selected: "Seçili düzen",
+				select: "Bu düzeni seç"
 			},
 			settingsTheme: {
-				title: "ı_Theme_İ",
-				explain: "ı_Choose an app theme or define your own colors._İ",
-				label: "ı_Header and side panel background colors_İ"
+				title: "Tema",
+				explain: "Uygulama teması seçin veya kendi renklerinizi tanımlayın.",
+				label: "Üstbilgi ve yan panel arka plan renkleri"
 			},
 			settingsHeader: {
-				title: "ı_Header_İ",
-				explain: "ı_Customize the header logo (maximum is 250 x 50px)._İ",
-				logoEsri: "ı_Esri logo_İ",
-				logoNone: "ı_No logo_İ",
-				logoCustom: "ı_Custom logo_İ",
-				logoCustomPlaceholder: "ı_Image URL_İ",
-				logoCustomTargetPlaceholder: "ı_Click-through link_İ",
-				logoSocialExplain: "ı_Customize the header top right link._İ",
-				logoSocialText: "ı_Text_İ",
-				logoSocialLink: "ı_Link_İ",
-				logoSocialDisabled: "ı_This feature has been disabled by the Administrator_İ"
+				title: "Üstbilgi",
+				explain: "Başlık logosunu (maksimum 250 x 50px) özelleştirin.",
+				logoEsri: "Esri logosu",
+				logoNone: "Logo yok",
+				logoCustom: "Özel logo",
+				logoCustomPlaceholder: "Görüntü URL\'si",
+				logoCustomTargetPlaceholder: "Tıklanabilir bağlantı",
+				logoSocialExplain: "Üstbilgi üst sağ bağlantısını özelleştirin.",
+				logoSocialText: "Metin",
+				logoSocialLink: "Bağlantı",
+				logoSocialDisabled: "Bu özellik Yönetici tarafından devre dışı bırakıldı"
 			},
 			mediaSelector: {
-				lblMap: "ı_Map_İ",
-				lblPicture: "ı_Picture_İ",
-				lblVideo: "ı_Video_İ",
-				lblExternal: "ı_External page_İ"
+				lblMap: "Harita",
+				lblPicture: "Resim",
+				lblVideo: "Video",
+				lblExternal: "Harici sayfa"
 			},
 			webMapSelector: {
-				radioCurrentWebMap: "ı_Current web map_İ",
-				radioWebmapApp: "ı_One of the other web map used in the application_İ",
-				radioAnotherWebmap: "ı_Another webmap_İ",
-				btnSelect: "ı_Select_İ",
-				lblOr: "ı_or_İ",
-				fieldEnterWebmapId: "ı_Enter a web map id_İ",
-				btnConfigure: "ı_Configure the Map_İ"
+				radioCurrentWebMap: "Geçerli web haritası",
+				radioWebmapApp: "Uygulamada kullanılan diğer web haritasından biri",
+				radioAnotherWebmap: "Başka bir web haritası",
+				btnSelect: "Seç",
+				lblOr: "veya",
+				fieldEnterWebmapId: "Bir web haritası kimliği gir",
+				btnConfigure: "Haritayı Yapılandır"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "ı_My Organization_İ",
-					onlineLabel: "ı_ArcGIS Online_İ",
-					contentLabel: "ı_My Content_İ",
-					favoritesLabel: "ı_My Favorites_İ"
+					organizationLabel: "Kuruluşum",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "İçeriğim",
+					favoritesLabel: "Favorilerim"
 				},
-				title: "ı_Select Web Map_İ",
-				searchTitle: "ı_Search_İ",
-				ok: "ı_Ok_İ",
-				cancel: "ı_Cancel_İ",
-				placeholder: "ı_Enter search term_İ"
+				title: "Web Haritası Seç",
+				searchTitle: "Ara",
+				ok: "Tamam",
+				cancel: "İptal",
+				placeholder: "Arama terimini gir"
 			}
 		}
 	})

@@ -9,7 +9,7 @@ define({
     },
     "details": {
         "Title": "Citizen Service Request Form",
-        "Logo": "images/GeoForm.png",
+        "Logo": "images/logo.png",
         "Description": "Use this form to make a request about Critical Issues, Issues that need to be resolved soon, or General Nuisances. Please specify the severity, what you are seeing, and any personal information you are willing to share. Feel free to add more details with the comment box or attach a photo. Finally - let us know you where when you saw the incident by using your location, typing in an address / coordinates, or simply put a point on the map."
     },
     "fields": [
@@ -39,8 +39,8 @@ define({
     }
     ],
     "theme": {
-        "themeName": "Readable",
-        "themeSrc": "themes/readable.css"
+        "themeName": "Bootstrap (Default)",
+        "themeSrc": "css/themes/default.css"
     },
     "oauthappid": null,
     //Enter the url to the proxy if needed by the applcation. See the "Using the proxy page" help topic for details

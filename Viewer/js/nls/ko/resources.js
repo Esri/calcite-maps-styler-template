@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "한_Unable to create map_빠"
+            "error": "맵을 생성할 수 없음"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": '한_Landscape (PDF)_빠',
-			      "label2": '한_Portrait (PDF)_빠',
-			      "label3": '한_Landscape (Image)_빠',
-			      "label4": '한_Portrait (Image)_빠'
-			    }
+			      "label1": '가로(PDF)',
+			      "label2": '세로(PDF)',
+			      "label3": '가로(Image)',
+			      "label4": '세로(Image)'
+			    },
+			    "legend": "한_Add legend to output_빠"
 			},
 			"share": {
-				"extent": "한_Use current map extent_빠",
-				"label": "한_Share this map_빠",
-				"link": "한_Map Link_빠",
-				"facebook": "한_Facebook_빠",
-				"twitter": "한_Twitter_빠"
+				"extent": "현재 맵 범위 사용",
+				"label": "이 맵 공유",
+				"link": "맵 링크",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "한_Default extent_빠",
-        	"locate": "한_Find my location_빠",
-        	"legend": "한_Legend_빠",
-        	"bookmarks": "한_Bookmarks_빠",
-        	"layers": "한_Layers_빠",
+        	"home": "기본 범위",
+        	"locate": "내 위치 찾기",
+        	"legend": "범례",
+        	"bookmarks": "책갈피",
+        	"layers": "레이어",
         	"basemap": "한_Basemap gallery_빠",
         	"overview": "한_Overview map_빠",
-        	"measure": "한_Measure_빠",
-        	"edit": "한_Edit_빠",
-        	"time": "한_Time_빠",
-        	"print": "한_Print_빠",
+        	"measure": "측정",
+        	"edit": "편집",
+        	"time": "시간",
+        	"print": "인쇄",
         	"details": "한_Details_빠",
-        	"share": "한_Share_빠"
+        	"share": "공유"
         }
 }));

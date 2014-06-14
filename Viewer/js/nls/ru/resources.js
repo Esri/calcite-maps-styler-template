@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "Ж_Unable to create map_Я"
+            "error": "Не удалось создать карту"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'Ж_Landscape (PDF)_Я',
-			      "label2": 'Ж_Portrait (PDF)_Я',
-			      "label3": 'Ж_Landscape (Image)_Я',
-			      "label4": 'Ж_Portrait (Image)_Я'
-			    }
+			      "label1": 'Альбомная (PDF)',
+			      "label2": 'Книжная (PDF)',
+			      "label3": 'Альбомная (Image)',
+			      "label4": 'Книжная (Image)'
+			    },
+			    "legend": "Ж_Add legend to output_Я"
 			},
 			"share": {
-				"extent": "Ж_Use current map extent_Я",
-				"label": "Ж_Share this map_Я",
-				"link": "Ж_Map Link_Я",
-				"facebook": "Ж_Facebook_Я",
-				"twitter": "Ж_Twitter_Я"
+				"extent": "Использовать текущий экстент карты",
+				"label": "Общий доступ к карте",
+				"link": "Ссылка на карту",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "Ж_Default extent_Я",
-        	"locate": "Ж_Find my location_Я",
-        	"legend": "Ж_Legend_Я",
-        	"bookmarks": "Ж_Bookmarks_Я",
-        	"layers": "Ж_Layers_Я",
+        	"home": "Экстент по умолчанию",
+        	"locate": "Найти мое местоположение",
+        	"legend": "Легенда",
+        	"bookmarks": "Закладки",
+        	"layers": "Слои",
         	"basemap": "Ж_Basemap gallery_Я",
         	"overview": "Ж_Overview map_Я",
-        	"measure": "Ж_Measure_Я",
-        	"edit": "Ж_Edit_Я",
-        	"time": "Ж_Time_Я",
-        	"print": "Ж_Print_Я",
-        	"details": "Ж_Details_Я",
+        	"measure": "Измерить",
+        	"edit": "Редактировать",
+        	"time": "Время",
+        	"print": "Печать",
+        	"details": "Детали",
         	"share": "Ж_Share_Я"
         }
 }));

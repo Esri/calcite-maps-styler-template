@@ -5,7 +5,7 @@
             mouseToolTip: "Kliki kaardil teenuse kontrollimiseks"
         },
         geocoder: {
-            defaultText: "Š_Enter an address or point of interest_ä"
+            defaultText: "Sisestage aadress või huvipunkt."
         },
         error: {
             layerNotFound: "Kiht pole veebikaardil",

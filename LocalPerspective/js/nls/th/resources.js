@@ -16,6 +16,16 @@
  */
 define(({
         map: {
-            error: "ก้_Unable to create map_ษฺ"
+            error: "ไม่สามารถสร้างแผนที่"
+        },
+        days: {
+           now: "ก้_NOW_ษฺ",
+           sun: "ก้_SUN_ษฺ",
+           mon: "ก้_MON_ษฺ",
+           tue: "ก้_TUE_ษฺ",
+           wed: "ก้_WED_ษฺ",
+           thu: "ก้_THU_ษฺ",
+           fri: "ก้_FRI_ษฺ",
+           sat: "ก้_SAT_ษฺ"
         }
 }));
