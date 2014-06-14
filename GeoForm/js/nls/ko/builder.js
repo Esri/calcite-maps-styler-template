@@ -1,0 +1,57 @@
+﻿define(
+    ({
+        builder: {
+            invalidWebmapSelectionAlert: "한_Selected webmap does not contain any feature server_빠",
+            selectThemeText: "한_Select Form Theme_빠",
+            fieldLabelPlaceHolder: "한_Label this field_빠",
+            fieldDescPlaceHolder: "한_Describe this field_빠",
+            webmapText: "한_Webmap_빠",
+            layerText: "레이어",
+            detailsText: "한_Details_빠",
+            fieldsText: "필드",
+            styleText: "한_Style_빠",
+            previewText: "미리보기",
+            publishText: "발행",
+            titleText: "한_GeoForm Builder_빠",
+            descriptionText: "한_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._빠",
+            btnPreviousText: "이전",
+            btnNextText:"다음",
+            webmapTabTitleText: "한_Choose a Webmap_빠",
+            btnSelectWebmapText:"한_Select Webmap_빠",
+            layerTabTitleText: "한_Select Editable Layer_빠",
+            selectLayerLabelText:"레이어",
+            selectLayerDefaultOptionText:"레이어 선택",
+            detailsTabTitleText:"한_Form Details_빠",
+            detailTitleLabelText: "제목",
+            detailLogoLabelText: "한_Logo Image_빠",
+            detailDescriptionLabelText: "설명",
+            fieldTabDisplayHeaderText: "디스플레이",
+            fieldTabFieldHeaderText: "필드",
+            fieldTabLabelHeaderText: "레이블",
+            fieldTabTypeHeaderText: "유형",
+            fieldTabDescriptionHeaderText: "설명",
+            previewApplicationText: "한_Preview Application_빠",
+            saveApplicationText: "한_Save Application_빠",
+            saveText: "저장",
+
+            //Local string for user mode
+            defaultTitleText: "한_Default Title_빠",
+            defaultDescriptionText: "한_Default Description_빠",
+            geoFormGeneralTabText: "일반",
+            locationInformationText: "한_Location Info_빠",
+            myLocationText: "내 위치",
+            addressText: "주소",
+            cooridnatesText: "한_Coordinates_빠",
+            locationTabText: "위치",
+            enterCoordinatesPlaceholder: "한_Enter Coordinates_빠",
+            submitButtonText: "한_Submit_빠",
+            clearButtonText: "지우기",
+            fieldvalidationMessageAlertText: "한_Please enter a valid number_빠",
+            formValidationMessageAlertText: "한_Please verify the form for errors and resubmit the form_빠",
+            latlongValidationMessageAlert: "한_Please select x and y coordinates_빠",
+            emptylatitudeAlertMessage:"한_Please enter Latitude_빠",
+            emptylongitudeAlertMessage:"한_Please enter Longitude_빠"
+        }
+    })
+    
+);

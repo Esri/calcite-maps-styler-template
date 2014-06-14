@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "Sluiten"
+			},
 			loading: {
-				step1: "Ĳ_Loading application_ä",
-				step2: "Ĳ_Loading data_ä",
-				step3: "Ĳ_Initializing_ä",
-				loadBuilder: "Ĳ_Switching to builder_ä",
-				fail: "Ĳ_Sorry, loading failed_ä",
-				failButton: "Ĳ_Retry_ä"
+				step1: "Applicatie laden",
+				step2: "Gegevens laden",
+				step3: "Initialiseren",
+				loadBuilder: "Overschakelen naar builder",
+				fail: "Het laden is mislukt",
+				failButton: "Opnieuw proberen"
 			},
 			signin: {
-				title: "Ĳ_Authentication is required_ä",
-				explainViewer: "Ĳ_Please sign in with an account on %PORTAL_LINK% to access the application._ä",
-				explainBuilder: "Ĳ_Please sign in with an account on %PORTAL_LINK% to configure the application._ä"
+				title: "Verificatie is vereist",
+				explainViewer: "Meld u aan met een account op %PORTAL_LINK% om toegang te krijgen tot de applicatie.",
+				explainBuilder: "Meld u aan met een account op %PORTAL_LINK% om de applicatie te configureren."
 			},
 			errors: {
-				boxTitle: "Ĳ_An error has occurred_ä",
-				invalidConfig: "Ĳ_Fatal error: Invalid configuration_ä",
-				invalidConfigNoApp: "Ĳ_Fatal error: Web Mapping Application identifier not specified in index.html_ä",
-				createMap: "Ĳ_Unable to create map_ä",
-				invalidApp: "Ĳ_Fatal error: The application cannot be loaded_ä",
-				notConfiguredDesktop: "Ĳ_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._ä",
-				notConfiguredMobile: "Ĳ_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._ä",
-				notAuthorized: "Ĳ_You are not authorized to access this application_ä",
-				noBuilderIE8: "Ĳ_The builder is not supported on Internet Explorer before version 9._ä"
+				boxTitle: "Er is een fout opgetreden",
+				invalidConfig: "Onherstelbare fout: ongeldige configuratie",
+				invalidConfigNoApp: "Onherstelbare fout: webmapapplicate-ID niet opgegeven in index.html",
+				createMap: "Kan kaart niet maken",
+				invalidApp: "Onherstelbare fout: de applicatie kan niet worden geladen",
+				notConfiguredDesktop: "Welkom bij de %TPL_NAME% -webapplicatie.<br />De applicatie is nog niet geconfigureerd.",
+				notConfiguredMobile: "Welkom bij de %TPL_NAME%-webapplicatie. De applicatie is nog niet geconfigureerd en de builder wordt niet ondersteund op mobiele apparaten.",
+				notAuthorized: "U bent niet gemachtigd om deze applicatie te openen",
+				noBuilderIE8: "De builder wordt niet ondersteund op eerdere versies dan Internet Explorer 9."
 			},
 			mobileView: {
-				tapForDetails: "Ĳ_Tap for details_ä",
-				swipeToExplore: "Ĳ_Swipe to explore_ä",
-				tapForMap: "Ĳ_Tap to get back to the Map_ä"
+				tapForDetails: "Tik voor details",
+				swipeToExplore: "Veeg om te verkennen",
+				tapForMap: "Tik om terug te gaan naar de kaart"
 			},
 			floatLayout: {
-				scroll: "Ĳ_Scroll_ä"
+				scroll: "Scrollen"
 			},
 			sideLayout: {
-				scroll: "Ĳ_Scroll down for more!_ä"
+				scroll: "Scrol naar beneden als u meer wilt zien."
 			},
 			mainStage: {
-				back: "Ĳ_Back_ä"
+				back: "Vorige"
 			},
 			headerFromCommon: {
-				storymapsText: "Ĳ_A story map_ä",
-				builderButton: "Ĳ_Edit_ä",
-				bitlyTooltip: "Ĳ_Get a short link to the application_ä",
-				templateTitle: "Ĳ_Set template title_ä",
-				templateSubtitle: "Ĳ_Set template subtitle_ä",
-				share: "Ĳ_Share_ä"
+				storymapsText: "Een kaartverhaal",
+				builderButton: "Bewerken",
+				bitlyTooltip: "Een korte koppeling naar de applicatie maken",
+				templateTitle: "Titel voor template instellen",
+				templateSubtitle: "Subtitel voor template instellen",
+				share: "Delen"
 			},
 			overviewFromCommon: {
-				title: "Ĳ_Overview Map_ä",
+				title: "Overzichtskaart",
 			},
 			legendFromCommon: {
-				title: "Ĳ_Legend_ä"
+				title: "Legenda"
+			},
+			shareFromCommon: {
+				copy: "Kopiëren",
+				copied: "Gekopieerd",
+				open: "Openen",
+				embed: "Ĳ_Embed in website_ä",
+				embedExplain: "Ĳ_Use the following HTML code to embed the Journal in a website._ä",
+				size: "Grootte (breedte/hoogte):"
 			}
         }
     })

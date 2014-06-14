@@ -1,0 +1,57 @@
+﻿define(
+    ({
+        builder: {
+            invalidWebmapSelectionAlert: "ก้_Selected webmap does not contain any feature server_ษฺ",
+            selectThemeText: "ก้_Select Form Theme_ษฺ",
+            fieldLabelPlaceHolder: "ก้_Label this field_ษฺ",
+            fieldDescPlaceHolder: "ก้_Describe this field_ษฺ",
+            webmapText: "ก้_Webmap_ษฺ",
+            layerText: "ชั้นข้อมูล",
+            detailsText: "ก้_Details_ษฺ",
+            fieldsText: "ฟิลด์",
+            styleText: "ก้_Style_ษฺ",
+            previewText: "ก้_Preview_ษฺ",
+            publishText: "ก้_Publish_ษฺ",
+            titleText: "ก้_GeoForm Builder_ษฺ",
+            descriptionText: "ก้_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._ษฺ",
+            btnPreviousText: "ก้_Previous_ษฺ",
+            btnNextText:"ก้_Next_ษฺ",
+            webmapTabTitleText: "ก้_Choose a Webmap_ษฺ",
+            btnSelectWebmapText:"ก้_Select Webmap_ษฺ",
+            layerTabTitleText: "ก้_Select Editable Layer_ษฺ",
+            selectLayerLabelText:"ชั้นข้อมูล",
+            selectLayerDefaultOptionText:"เลือกชั้นข้อมูล",
+            detailsTabTitleText:"ก้_Form Details_ษฺ",
+            detailTitleLabelText: "ก้_Title_ษฺ",
+            detailLogoLabelText: "ก้_Logo Image_ษฺ",
+            detailDescriptionLabelText: "ก้_Description_ษฺ",
+            fieldTabDisplayHeaderText: "แสดงผล",
+            fieldTabFieldHeaderText: "ก้_Field_ษฺ",
+            fieldTabLabelHeaderText: "ตัวอักษร",
+            fieldTabTypeHeaderText: "ก้_Type_ษฺ",
+            fieldTabDescriptionHeaderText: "ก้_Description_ษฺ",
+            previewApplicationText: "ก้_Preview Application_ษฺ",
+            saveApplicationText: "ก้_Save Application_ษฺ",
+            saveText: "ก้_Save_ษฺ",
+
+            //Local string for user mode
+            defaultTitleText: "ก้_Default Title_ษฺ",
+            defaultDescriptionText: "ก้_Default Description_ษฺ",
+            geoFormGeneralTabText: "ทั่วไป",
+            locationInformationText: "ก้_Location Info_ษฺ",
+            myLocationText: "ตำแหน่งของชั้น",
+            addressText: "ที่อยู่",
+            cooridnatesText: "ก้_Coordinates_ษฺ",
+            locationTabText: "ตำแหน่ง",
+            enterCoordinatesPlaceholder: "ก้_Enter Coordinates_ษฺ",
+            submitButtonText: "ก้_Submit_ษฺ",
+            clearButtonText: "ก้_Clear_ษฺ",
+            fieldvalidationMessageAlertText: "ก้_Please enter a valid number_ษฺ",
+            formValidationMessageAlertText: "ก้_Please verify the form for errors and resubmit the form_ษฺ",
+            latlongValidationMessageAlert: "ก้_Please select x and y coordinates_ษฺ",
+            emptylatitudeAlertMessage:"ก้_Please enter Latitude_ษฺ",
+            emptylongitudeAlertMessage:"ก้_Please enter Longitude_ษฺ"
+        }
+    })
+    
+);

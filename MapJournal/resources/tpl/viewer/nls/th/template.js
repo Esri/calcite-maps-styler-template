@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "ปิด"
+			},
 			loading: {
-				step1: "ก้_Loading application_ษฺ",
-				step2: "ก้_Loading data_ษฺ",
-				step3: "ก้_Initializing_ษฺ",
-				loadBuilder: "ก้_Switching to builder_ษฺ",
-				fail: "ก้_Sorry, loading failed_ษฺ",
-				failButton: "ก้_Retry_ษฺ"
+				step1: "กำลังโหลดโปรแกรม",
+				step2: "กำลังโหลดข้อมูล",
+				step3: "กำลังดำเนินการ",
+				loadBuilder: "ปรับเปลี่ยนการสร้าง",
+				fail: "ขออภัย การโหลดผิดพลาด",
+				failButton: "ลองใหม่"
 			},
 			signin: {
-				title: "ก้_Authentication is required_ษฺ",
-				explainViewer: "ก้_Please sign in with an account on %PORTAL_LINK% to access the application._ษฺ",
-				explainBuilder: "ก้_Please sign in with an account on %PORTAL_LINK% to configure the application._ษฺ"
+				title: "ต้องการยอมรับ",
+				explainViewer: "กรุณาเข้าสู่ระบบด้วยบัญชีผู้ใช้บน% PORTAL_LINK% ในการเข้าถึงแอพลิเคชัน",
+				explainBuilder: "กรุณาเข้าสู่ระบบด้วยบัญชีผู้ใช้บน PORTAL_LINK%% การกำหนดค่าโปรแกรมประยุกต์"
 			},
 			errors: {
-				boxTitle: "ก้_An error has occurred_ษฺ",
-				invalidConfig: "ก้_Fatal error: Invalid configuration_ษฺ",
-				invalidConfigNoApp: "ก้_Fatal error: Web Mapping Application identifier not specified in index.html_ษฺ",
-				createMap: "ก้_Unable to create map_ษฺ",
-				invalidApp: "ก้_Fatal error: The application cannot be loaded_ษฺ",
-				notConfiguredDesktop: "ก้_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._ษฺ",
-				notConfiguredMobile: "ก้_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._ษฺ",
-				notAuthorized: "ก้_You are not authorized to access this application_ษฺ",
-				noBuilderIE8: "ก้_The builder is not supported on Internet Explorer before version 9._ษฺ"
+				boxTitle: "เกิดข้อผิดพลาด",
+				invalidConfig: "ข้อผิดพลาดร้ายแรง: การตั้งค่าที่ไม่ถูกต้อง",
+				invalidConfigNoApp: "ข้อผิดพลาดร้ายแรง: เว็บแผนที่ระบุการใช้งานไม่ได้ระบุใน index.html",
+				createMap: "ไม่สามารถสร้างแผนที่",
+				invalidApp: "ข้อผิดพลาดร้ายแรง: โปรแกรมไม่สามารถโหลด",
+				notConfiguredDesktop: "ยินดีต้อนรับเข้าสู่โปรแกรมประยุกต์บนเว็บ% TPL_NAME%. <br /> โปรแกรมจะยังไม่ได้กำหนดค่า",
+				notConfiguredMobile: "ยินดีต้อนรับสู่โปรแกรมเว็บ TPL_NAME%% โปรแกรมไม่ได้กำหนดค่าและยังสร้างไม่ได้รับการสนับสนุนบนอุปกรณ์มือถือ",
+				notAuthorized: "คุณยังไม่ได้รับอนุญาตให้เข้าถึงโปรแกรมนี้",
+				noBuilderIE8: "สร้างไม่ได้รับการสนับสนุนบน Internet Explorer 9 รุ่นก่อน"
 			},
 			mobileView: {
-				tapForDetails: "ก้_Tap for details_ษฺ",
-				swipeToExplore: "ก้_Swipe to explore_ษฺ",
-				tapForMap: "ก้_Tap to get back to the Map_ษฺ"
+				tapForDetails: "เลือกสำหรับรายละเอียด",
+				swipeToExplore: "เลื่อนเพื่อดุรายละเอียด",
+				tapForMap: "แตะเพื่อกลับเข้าสู่แผนที่"
 			},
 			floatLayout: {
-				scroll: "ก้_Scroll_ษฺ"
+				scroll: "เลื่อน"
 			},
 			sideLayout: {
-				scroll: "ก้_Scroll down for more!_ษฺ"
+				scroll: "เลื่อนลงเพิ่มเติม"
 			},
 			mainStage: {
-				back: "ก้_Back_ษฺ"
+				back: "กลับ"
 			},
 			headerFromCommon: {
-				storymapsText: "ก้_A story map_ษฺ",
-				builderButton: "ก้_Edit_ษฺ",
-				bitlyTooltip: "ก้_Get a short link to the application_ษฺ",
-				templateTitle: "ก้_Set template title_ษฺ",
-				templateSubtitle: "ก้_Set template subtitle_ษฺ",
-				share: "ก้_Share_ษฺ"
+				storymapsText: "A story map",
+				builderButton: "แก้ไข",
+				bitlyTooltip: "รับลิ้งแบบสั้นสำหรับโปรแกรมนี้",
+				templateTitle: "ตั้งค่าหัวเรื่องเทมเพลต",
+				templateSubtitle: "ตั้งค่าชื่อรองของเทมเพลต",
+				share: "แบ่งปัน"
 			},
 			overviewFromCommon: {
-				title: "ก้_Overview Map_ษฺ",
+				title: "ภาพรวมของแผนที่",
 			},
 			legendFromCommon: {
-				title: "ก้_Legend_ษฺ"
+				title: "สัญลักษณ์"
+			},
+			shareFromCommon: {
+				copy: "คัดลอก",
+				copied: "คัดลอก",
+				open: "เปิด",
+				embed: "ก้_Embed in website_ษฺ",
+				embedExplain: "ก้_Use the following HTML code to embed the Journal in a website._ษฺ",
+				size: "ขนาด (กว้าง/สูง):"
 			}
         }
     })

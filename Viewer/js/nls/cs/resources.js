@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "Ř_Unable to create map_ů"
+            "error": "Nelze vytvořit mapu"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'Ř_Landscape (PDF)_ů',
-			      "label2": 'Ř_Portrait (PDF)_ů',
-			      "label3": 'Ř_Landscape (Image)_ů',
-			      "label4": 'Ř_Portrait (Image)_ů'
-			    }
+			      "label1": 'Na šířku (PDF)',
+			      "label2": 'Na výšku (PDF)',
+			      "label3": 'Na šířku (obrázek)',
+			      "label4": 'Na výšku (obrázek)'
+			    },
+			    "legend": "Ř_Add legend to output_ů"
 			},
 			"share": {
-				"extent": "Ř_Use current map extent_ů",
-				"label": "Ř_Share this map_ů",
-				"link": "Ř_Map Link_ů",
-				"facebook": "Ř_Facebook_ů",
-				"twitter": "Ř_Twitter_ů"
+				"extent": "Použít rozsah aktuální mapy",
+				"label": "Sdílet tuto mapu",
+				"link": "Odkaz na mapu",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "Ř_Default extent_ů",
-        	"locate": "Ř_Find my location_ů",
-        	"legend": "Ř_Legend_ů",
-        	"bookmarks": "Ř_Bookmarks_ů",
-        	"layers": "Ř_Layers_ů",
+        	"home": "Výchozí rozsah",
+        	"locate": "Najít moji polohu",
+        	"legend": "Legenda",
+        	"bookmarks": "Záložky",
+        	"layers": "Vrstvy",
         	"basemap": "Ř_Basemap gallery_ů",
         	"overview": "Ř_Overview map_ů",
-        	"measure": "Ř_Measure_ů",
+        	"measure": "Měření",
         	"edit": "Ř_Edit_ů",
-        	"time": "Ř_Time_ů",
-        	"print": "Ř_Print_ů",
-        	"details": "Ř_Details_ů",
-        	"share": "Ř_Share_ů"
+        	"time": "Čas",
+        	"print": "Tisk",
+        	"details": "Podrobnosti",
+        	"share": "Sdílet"
         }
 }));

@@ -5,7 +5,7 @@
             mouseToolTip: "Haz clic en el mapa para comprobar el servicio"
         },
         geocoder: {
-            defaultText: "á_Enter an address or point of interest_Ó"
+            defaultText: "Introduce una dirección o un punto de interés"
         },
         error: {
             layerNotFound: "La capa no está en el mapa web",

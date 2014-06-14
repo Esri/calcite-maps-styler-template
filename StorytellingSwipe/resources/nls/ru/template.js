@@ -6,7 +6,7 @@
 				step2: "ЗАГРУЗКА ДАННЫХ",
 				step3: "ИНИЦИАЛИЗАЦИЯ",
 				fail: "Загрузка инструмента Шторка (Swipe) не удалась",
-				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОНСТРУКТОРА",
+				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОНСТРУКТОРА",				
 				redirectSignIn: "ПЕРЕНАПРАВЛЕНИЕ НА СТРАНИЦУ ВХОДА",
 				redirectSignIn2: "(после входа вы будете перенаправлены сюда)",
 				failButton: "Повторить"
@@ -25,7 +25,7 @@
 				mapSave: "Ошибка при сохранении веб-карты",
 				notAuthorized: "Вы не авторизованы для доступа к данному приложению",
 				conflictingProjectionsTitle: "Конфликтующие проекции",
-				conflictingProjections: "Шторка не поддерживает использование двух веб-карт с различными проекциями. Откройте настройки и используйте веб-карту с той же проекцией, что и первая веб-карта.",
+				conflictingProjections: "Ж_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._Я",
 				cpButton: "Закрыть"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "чтобы сохранить приложение."
 			},
 			header:{
-				editMe: "Отредактируйте меня !",
+				editMe: "Ж_Edit me!_Я",
 				templateTitle: "Ввести заголовок шаблона",
 				templateSubtitle: "Ввести подзаголовок шаблона"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Укажите описание боковой панели",
-				editMe: "Отредактируйте меня !",
+				editMe: "Ж_Edit me!_Я",
 				legendTitle: "Легенда"
 			},
 			infoWindow: {

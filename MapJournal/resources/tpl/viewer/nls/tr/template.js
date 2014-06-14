@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "Kapat"
+			},
 			loading: {
-				step1: "ı_Loading application_İ",
-				step2: "ı_Loading data_İ",
-				step3: "ı_Initializing_İ",
-				loadBuilder: "ı_Switching to builder_İ",
-				fail: "ı_Sorry, loading failed_İ",
-				failButton: "ı_Retry_İ"
+				step1: "Uygulama yükleniyor",
+				step2: "Veriler yükleniyor",
+				step3: "Başlatılıyor",
+				loadBuilder: "Oluşturucuya geçiliyor",
+				fail: "Üzgünüz, yükleme başarısız oldu",
+				failButton: "Tekrar dene"
 			},
 			signin: {
-				title: "ı_Authentication is required_İ",
-				explainViewer: "ı_Please sign in with an account on %PORTAL_LINK% to access the application._İ",
-				explainBuilder: "ı_Please sign in with an account on %PORTAL_LINK% to configure the application._İ"
+				title: "Kimlik doğrulama gerekli",
+				explainViewer: "Uygulamaya erişmek için %PORTAL_LINK% üzerindeki bir hesapla oturum açın.",
+				explainBuilder: "Uygulamayı yapılandırmak için %PORTAL_LINK% üzerindeki bir hesapla oturum açın."
 			},
 			errors: {
-				boxTitle: "ı_An error has occurred_İ",
-				invalidConfig: "ı_Fatal error: Invalid configuration_İ",
-				invalidConfigNoApp: "ı_Fatal error: Web Mapping Application identifier not specified in index.html_İ",
-				createMap: "ı_Unable to create map_İ",
-				invalidApp: "ı_Fatal error: The application cannot be loaded_İ",
-				notConfiguredDesktop: "ı_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._İ",
-				notConfiguredMobile: "ı_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._İ",
-				notAuthorized: "ı_You are not authorized to access this application_İ",
-				noBuilderIE8: "ı_The builder is not supported on Internet Explorer before version 9._İ"
+				boxTitle: "Bir hata oluştu",
+				invalidConfig: "Onarılamaz: Geçersiz yapılandırma",
+				invalidConfigNoApp: "Onarılamaz hata: Web Mapping Application tanımlayıcısı index.html dosyasında tanımlı değil",
+				createMap: "Harita oluşturulamıyor",
+				invalidApp: "Onarılamaz hata: Uygulama yüklenemiyor",
+				notConfiguredDesktop: "%TPL_NAME% web uygulamasına hoş geldiniz.<br />Uygulama henüz yapılandırılmadı.",
+				notConfiguredMobile: "%TPL_NAME% web uygulamasına hoş geldiniz. Uygulama henüz yapılandırılmadı ve oluşturucu mobil cihazlarda desteklenmiyor.",
+				notAuthorized: "Bu uygulamaya erişim yetkiniz yok",
+				noBuilderIE8: "Oluşturucu Internet Explorer 9'dan önceki sürümlerinde desteklenmez."
 			},
 			mobileView: {
-				tapForDetails: "ı_Tap for details_İ",
-				swipeToExplore: "ı_Swipe to explore_İ",
-				tapForMap: "ı_Tap to get back to the Map_İ"
+				tapForDetails: "Ayrıntılar için dokunun",
+				swipeToExplore: "Keşfetmek için kaydırın",
+				tapForMap: "Haritaya geri dönmek için dokun"
 			},
 			floatLayout: {
-				scroll: "ı_Scroll_İ"
+				scroll: "Kaydır"
 			},
 			sideLayout: {
-				scroll: "ı_Scroll down for more!_İ"
+				scroll: "Daha fazlası için kaydır!"
 			},
 			mainStage: {
-				back: "ı_Back_İ"
+				back: "Geri"
 			},
 			headerFromCommon: {
-				storymapsText: "ı_A story map_İ",
-				builderButton: "ı_Edit_İ",
-				bitlyTooltip: "ı_Get a short link to the application_İ",
-				templateTitle: "ı_Set template title_İ",
-				templateSubtitle: "ı_Set template subtitle_İ",
-				share: "ı_Share_İ"
+				storymapsText: "Hikaye haritası",
+				builderButton: "Düzenle",
+				bitlyTooltip: "Uygulamaya bir kısa bağlantı alın",
+				templateTitle: "Şablon başlığını ayarla",
+				templateSubtitle: "Şablon altyazısını ayarla",
+				share: "Paylaş"
 			},
 			overviewFromCommon: {
-				title: "ı_Overview Map_İ",
+				title: "Genel Bakış Haritası",
 			},
 			legendFromCommon: {
-				title: "ı_Legend_İ"
+				title: "Gösterim"
+			},
+			shareFromCommon: {
+				copy: "Kopyala",
+				copied: "Kopyalandı",
+				open: "Aç",
+				embed: "ı_Embed in website_İ",
+				embedExplain: "ı_Use the following HTML code to embed the Journal in a website._İ",
+				size: "Boyut (genişlik/yükseklik):"
 			}
         }
     })

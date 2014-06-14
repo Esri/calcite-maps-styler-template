@@ -2,13 +2,13 @@
 	({
 		commonMapControls: {
 			common: {
-				settings: "ł_Settings_ą",
-				openDefault: "ł_Open by default_ą"
+				settings: "Ustawienia",
+				openDefault: "Otwieraj domyślnie"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "ł_Basemap_ą",
-				expandFactorLabel: "ł_Expand Factor_ą",
-				expandFactorPopover: "ł_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle._ą"
+				basemapGalleryBtnLabel: "Mapa bazowa",
+				expandFactorLabel: "Współczynnik powiększenia obrazu",
+				expandFactorPopover: "Stosunek wielkości mapy przeglądowej do pola zasięgu wyświetlanego na mapie przeglądowej. Domyślna wartość to 2, co oznacza, że mapa przeglądowa będzie przynajmniej dwa razy większa od pola zasięgu."
 			}
 		}
 	})

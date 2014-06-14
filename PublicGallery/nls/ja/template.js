@@ -100,13 +100,13 @@
 				"detailsLabel":"詳細"
             },
             "filterItems":{
-                "show": "須_Show_鷗",
-                "all": "須_All Results_鷗",
-                "maps": "須_Maps_鷗",
-                "layers": "須_Layers_鷗",
-                "applications": "須_Applications_鷗",
-                "tools": "須_Tools_鷗",
-                "files": "須_Files_鷗"
+                "show": "表示",
+                "all": "すべての結果",
+                "maps": "マップ",
+                "layers": "レイヤ",
+                "applications": "アプリケーション",
+                "tools": "ツール",
+                "files": "ファイル"
             },
             "pagination": {
                 "previous": "前へ",

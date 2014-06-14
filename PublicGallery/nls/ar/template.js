@@ -100,13 +100,13 @@
 				"detailsLabel":"تفاصيل"
             },
             "filterItems":{
-                "show": "بيت_Show_لاحقة",
-                "all": "بيت_All Results_لاحقة",
-                "maps": "بيت_Maps_لاحقة",
-                "layers": "بيت_Layers_لاحقة",
-                "applications": "بيت_Applications_لاحقة",
-                "tools": "بيت_Tools_لاحقة",
-                "files": "بيت_Files_لاحقة"
+                "show": "إظهار",
+                "all": "جميع النتائج",
+                "maps": "خرائط",
+                "layers": "طبقات",
+                "applications": "التطبيقات",
+                "tools": "أدوات",
+                "files": "ملفات"
             },
             "pagination": {
                 "previous": "السابق",

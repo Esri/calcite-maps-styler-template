@@ -5,7 +5,7 @@
             mouseToolTip: "单击地图以检查服务"
         },
         geocoder: {
-            defaultText: "试_Enter an address or point of interest_验"
+            defaultText: "输入地址或感兴趣点"
         },
         error: {
             layerNotFound: "图层不在 webmap 中",

@@ -20,9 +20,9 @@ define(
             search: "Søg",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Aktuel placering",  // Command button to zoom and pan to the current geographical position reported by the browser
             markup: "Send rettelse",  // Command button to submit a correction to the app's host
-            collect: "Filtrér/Redigér",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
+            collect: "Filtr\ér/Redig\ér",  // Command button to open a filter and template picker to add features to the map and to edit them afterwards
             dijitLegend: "Vis signaturforklaringen",  //Display the legend
-            filter: "Filtrér kortlag",  // Explains purpose of type-in box affiliated with template picker
+            filter: "Filtr\ér kortlag",  // Explains purpose of type-in box affiliated with template picker
             basemap: "Skift baggrundskort",  // Command button to open a dialog box for switching basemaps
             share: "Del",  // Command button to open a dropdown menu for picking a type of sharing
             shareViaEmail: "Del via e-mail",  // Command button to share the current map extents via email
@@ -52,6 +52,7 @@ define(
             geolocationUnavailable: "Browseren kunne ikke hente den aktuelle position",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Browseren kunne ikke hente den aktuelle position i tide",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "Dette søgelag blev ikke fundet i kortet",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchLayerNotSearchable: "ø_Fields could not be found for the map layer.<br><br>Verify that this layer exists at the root of the map Contents. Nested services, such as ArcGIS for Server dynamic map services, must be added to the map one layer at a time (including layer index number) to be used as Find Layers. Tiled services cannot be used as Find Layers._å",
             searchFieldMissing: "Dette felt blev ikke fundet i kortets søgelag",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
             allSearchFieldsMissing: "Ingen af disse felter blev fundet i kortets søgelag",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "Dette felt findes ikke i nogen af kortlagene",  // Appears when a field used in the configuration was not found in any map layer

@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "Cerrar"
+			},
 			loading: {
-				step1: "á_Loading application_Ó",
-				step2: "á_Loading data_Ó",
-				step3: "á_Initializing_Ó",
-				loadBuilder: "á_Switching to builder_Ó",
-				fail: "á_Sorry, loading failed_Ó",
-				failButton: "á_Retry_Ó"
+				step1: "Cargando aplicación",
+				step2: "Cargando datos",
+				step3: "Inicializando",
+				loadBuilder: "Cambiando a Builder",
+				fail: "Error al cargar",
+				failButton: "Reintentar"
 			},
 			signin: {
-				title: "á_Authentication is required_Ó",
-				explainViewer: "á_Please sign in with an account on %PORTAL_LINK% to access the application._Ó",
-				explainBuilder: "á_Please sign in with an account on %PORTAL_LINK% to configure the application._Ó"
+				title: "Se requiere autenticación",
+				explainViewer: "Inicia sesión con una cuenta en %PORTAL_LINK% para acceder a la aplicación.",
+				explainBuilder: "Inicia sesión con una cuenta en %PORTAL_LINK% para configurar la aplicación."
 			},
 			errors: {
-				boxTitle: "á_An error has occurred_Ó",
-				invalidConfig: "á_Fatal error: Invalid configuration_Ó",
-				invalidConfigNoApp: "á_Fatal error: Web Mapping Application identifier not specified in index.html_Ó",
-				createMap: "á_Unable to create map_Ó",
-				invalidApp: "á_Fatal error: The application cannot be loaded_Ó",
-				notConfiguredDesktop: "á_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._Ó",
-				notConfiguredMobile: "á_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._Ó",
-				notAuthorized: "á_You are not authorized to access this application_Ó",
-				noBuilderIE8: "á_The builder is not supported on Internet Explorer before version 9._Ó"
+				boxTitle: "Se ha producido un error",
+				invalidConfig: "Error muy grave: configuración no válida",
+				invalidConfigNoApp: "Error grave: no se ha especificado el identificador de la aplicación de representación cartográfica web en index.html",
+				createMap: "No se puede crear el mapa",
+				invalidApp: "Error muy grave: la aplicación no se puede cargar",
+				notConfiguredDesktop: "Bienvenido a la aplicación web %TPL_NAME%.<br />La aplicación no se ha configurado todavía.",
+				notConfiguredMobile: "Bienvenido a la aplicación web %TPL_NAME%. La aplicación no se ha configurado todavía y el Builder no es compatible con los dispositivos móviles.",
+				notAuthorized: "No tienes autorización para acceder a esta aplicación",
+				noBuilderIE8: "Builder no es compatible con las versiones de Internet Explorer anteriores a la 9."
 			},
 			mobileView: {
-				tapForDetails: "á_Tap for details_Ó",
-				swipeToExplore: "á_Swipe to explore_Ó",
-				tapForMap: "á_Tap to get back to the Map_Ó"
+				tapForDetails: "Tocar para ver detalles",
+				swipeToExplore: "Barrer para explorar",
+				tapForMap: "Tocar para volver al mapa"
 			},
 			floatLayout: {
-				scroll: "á_Scroll_Ó"
+				scroll: "Desplazar"
 			},
 			sideLayout: {
-				scroll: "á_Scroll down for more!_Ó"
+				scroll: "Desplázate hacia abajo para obtener más información"
 			},
 			mainStage: {
-				back: "á_Back_Ó"
+				back: "Atrás"
 			},
 			headerFromCommon: {
-				storymapsText: "á_A story map_Ó",
-				builderButton: "á_Edit_Ó",
-				bitlyTooltip: "á_Get a short link to the application_Ó",
-				templateTitle: "á_Set template title_Ó",
-				templateSubtitle: "á_Set template subtitle_Ó",
-				share: "á_Share_Ó"
+				storymapsText: "Un mapa de historias",
+				builderButton: "Editar",
+				bitlyTooltip: "Consigue un enlace corto a la aplicación",
+				templateTitle: "Establecer título de plantilla",
+				templateSubtitle: "Establecer subtítulo de plantilla",
+				share: "Compartir"
 			},
 			overviewFromCommon: {
-				title: "á_Overview Map_Ó",
+				title: "Mapa de vista general",
 			},
 			legendFromCommon: {
-				title: "á_Legend_Ó"
+				title: "Leyenda"
+			},
+			shareFromCommon: {
+				copy: "Copiar",
+				copied: "Copiado",
+				open: "Abrir",
+				embed: "á_Embed in website_Ó",
+				embedExplain: "á_Use the following HTML code to embed the Journal in a website._Ó",
+				size: "Tamaño (ancho/alto):"
 			}
         }
     })

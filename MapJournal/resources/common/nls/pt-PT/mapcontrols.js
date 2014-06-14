@@ -2,13 +2,13 @@
 	({
 		commonMapControls: {
 			common: {
-				settings: "ã_Settings_Ç",
-				openDefault: "ã_Open by default_Ç"
+				settings: "Configurações",
+				openDefault: "Abrir por defeito"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "ã_Basemap_Ç",
-				expandFactorLabel: "ã_Expand Factor_Ç",
-				expandFactorPopover: "ã_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle._Ç"
+				basemapGalleryBtnLabel: "Mapa Base",
+				expandFactorLabel: "Expandir Fator",
+				expandFactorPopover: "O rácio entre o tamanho do mapa de vista geral e o retângulo de extensão exibido no mapa de vista geral. O valor por defeito é 2, o que significa que o mapa de vista geral terá pelo menos duas vezes menos o tamanhodo retângulo de extensão."
 			}
 		}
 	})

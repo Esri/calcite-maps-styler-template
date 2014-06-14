@@ -2,13 +2,13 @@
 	({
 		commonMapControls: {
 			common: {
-				settings: "é_Settings_È",
-				openDefault: "é_Open by default_È"
+				settings: "Impostazioni",
+				openDefault: "Apri per impostazione predefinita"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "é_Basemap_È",
-				expandFactorLabel: "é_Expand Factor_È",
-				expandFactorPopover: "é_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle._È"
+				basemapGalleryBtnLabel: "Mappa di base",
+				expandFactorLabel: "Fattore di espansione",
+				expandFactorPopover: "Rapporto tra le dimensioni della mappa d\'insieme e il rettangolo di estensione visualizzato in tale mappa. Il valore predefinito è 2 e indica che le dimensioni della mappa d\'insieme saranno pari ad almeno il doppio di quelle del rettangolo di estensione."
 			}
 		}
 	})

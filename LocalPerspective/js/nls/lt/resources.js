@@ -16,6 +16,16 @@
  */
 define(({
         map: {
-            error: "Į_Unable to create map_š"
+            error: "Žemėlapio sukurti nepavyko"
+        },
+        days: {
+           now: "Į_NOW_š",
+           sun: "Į_SUN_š",
+           mon: "Į_MON_š",
+           tue: "Į_TUE_š",
+           wed: "Į_WED_š",
+           thu: "Į_THU_š",
+           fri: "Į_FRI_š",
+           sat: "Į_SAT_š"
         }
 }));

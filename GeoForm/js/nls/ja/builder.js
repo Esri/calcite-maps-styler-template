@@ -1,0 +1,57 @@
+﻿define(
+    ({
+        builder: {
+            invalidWebmapSelectionAlert: "須_Selected webmap does not contain any feature server_鷗",
+            selectThemeText: "須_Select Form Theme_鷗",
+            fieldLabelPlaceHolder: "須_Label this field_鷗",
+            fieldDescPlaceHolder: "須_Describe this field_鷗",
+            webmapText: "須_Webmap_鷗",
+            layerText: "レイヤ",
+            detailsText: "詳細",
+            fieldsText: "フィールド",
+            styleText: "須_Style_鷗",
+            previewText: "プレビュー",
+            publishText: "公開",
+            titleText: "須_GeoForm Builder_鷗",
+            descriptionText: "須_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._鷗",
+            btnPreviousText: "前へ",
+            btnNextText:"次へ",
+            webmapTabTitleText: "須_Choose a Webmap_鷗",
+            btnSelectWebmapText:"須_Select Webmap_鷗",
+            layerTabTitleText: "須_Select Editable Layer_鷗",
+            selectLayerLabelText:"レイヤ",
+            selectLayerDefaultOptionText:"レイヤの選択",
+            detailsTabTitleText:"須_Form Details_鷗",
+            detailTitleLabelText: "タイトル",
+            detailLogoLabelText: "須_Logo Image_鷗",
+            detailDescriptionLabelText: "説明",
+            fieldTabDisplayHeaderText: "表示",
+            fieldTabFieldHeaderText: "須_Field_鷗",
+            fieldTabLabelHeaderText: "ラベル",
+            fieldTabTypeHeaderText: "タイプ",
+            fieldTabDescriptionHeaderText: "説明",
+            previewApplicationText: "須_Preview Application_鷗",
+            saveApplicationText: "須_Save Application_鷗",
+            saveText: "保存",
+
+            //Local string for user mode
+            defaultTitleText: "須_Default Title_鷗",
+            defaultDescriptionText: "須_Default Description_鷗",
+            geoFormGeneralTabText: "一般",
+            locationInformationText: "須_Location Info_鷗",
+            myLocationText: "現在の場所",
+            addressText: "須_Address_鷗",
+            cooridnatesText: "須_Coordinates_鷗",
+            locationTabText: "位置",
+            enterCoordinatesPlaceholder: "須_Enter Coordinates_鷗",
+            submitButtonText: "送信",
+            clearButtonText: "消去",
+            fieldvalidationMessageAlertText: "須_Please enter a valid number_鷗",
+            formValidationMessageAlertText: "須_Please verify the form for errors and resubmit the form_鷗",
+            latlongValidationMessageAlert: "須_Please select x and y coordinates_鷗",
+            emptylatitudeAlertMessage:"須_Please enter Latitude_鷗",
+            emptylongitudeAlertMessage:"須_Please enter Longitude_鷗"
+        }
+    })
+    
+);

@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "Luk"
+			},
 			loading: {
-				step1: "ø_Loading application_å",
-				step2: "ø_Loading data_å",
-				step3: "ø_Initializing_å",
-				loadBuilder: "ø_Switching to builder_å",
-				fail: "ø_Sorry, loading failed_å",
-				failButton: "ø_Retry_å"
+				step1: "Indlæser applikation",
+				step2: "Indlæser data",
+				step3: "Initialiserer",
+				loadBuilder: "Skifter til builder-programmet",
+				fail: "Beklager, indlæsning mislykkedes",
+				failButton: "Prøv igen"
 			},
 			signin: {
-				title: "ø_Authentication is required_å",
-				explainViewer: "ø_Please sign in with an account on %PORTAL_LINK% to access the application._å",
-				explainBuilder: "ø_Please sign in with an account on %PORTAL_LINK% to configure the application._å"
+				title: "Godkendelse kræves",
+				explainViewer: "Log ind med en konto på %PORTAL_LINK% for at få adgang til applikationen.",
+				explainBuilder: "Log ind med en konto på %PORTAL_LINK% for at konfigurere applikationen."
 			},
 			errors: {
-				boxTitle: "ø_An error has occurred_å",
-				invalidConfig: "ø_Fatal error: Invalid configuration_å",
-				invalidConfigNoApp: "ø_Fatal error: Web Mapping Application identifier not specified in index.html_å",
-				createMap: "ø_Unable to create map_å",
-				invalidApp: "ø_Fatal error: The application cannot be loaded_å",
-				notConfiguredDesktop: "ø_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._å",
-				notConfiguredMobile: "ø_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._å",
-				notAuthorized: "ø_You are not authorized to access this application_å",
-				noBuilderIE8: "ø_The builder is not supported on Internet Explorer before version 9._å"
+				boxTitle: "Der opstod en fejl",
+				invalidConfig: "Uoprettelig fejl: Ugyldig konfiguration",
+				invalidConfigNoApp: "Uoprettelig fejl: Webkortapplikation-identifikator er ikke angivet i index.html",
+				createMap: "Kan ikke oprette kort",
+				invalidApp: "Uoprettelig fejl: Applikationen kan ikke indlæses",
+				notConfiguredDesktop: "Velkommen til webapplikationen %TPL_NAME%.<br />Applikationen er endnu ikke konfigureret.",
+				notConfiguredMobile: "Velkommen til webapplikationen %TPL_NAME%. Applikationen er endnu ikke konfigureret, og builder-programmet understøttes ikke på mobile enheder.",
+				notAuthorized: "Du er ikke autoriseret til at få adgang til denne applikation",
+				noBuilderIE8: "Builder-programmet understøttes ikke af Internet Explorer før version 9."
 			},
 			mobileView: {
-				tapForDetails: "ø_Tap for details_å",
-				swipeToExplore: "ø_Swipe to explore_å",
-				tapForMap: "ø_Tap to get back to the Map_å"
+				tapForDetails: "Tryk for at få oplysninger",
+				swipeToExplore: "Stryg med fingeren for at udforske",
+				tapForMap: "Tryk for at vende tilbage til kortet"
 			},
 			floatLayout: {
-				scroll: "ø_Scroll_å"
+				scroll: "Rul"
 			},
 			sideLayout: {
-				scroll: "ø_Scroll down for more!_å"
+				scroll: "Rul ned for at se mere!"
 			},
 			mainStage: {
-				back: "ø_Back_å"
+				back: "Tilbage"
 			},
 			headerFromCommon: {
-				storymapsText: "ø_A story map_å",
-				builderButton: "ø_Edit_å",
-				bitlyTooltip: "ø_Get a short link to the application_å",
-				templateTitle: "ø_Set template title_å",
-				templateSubtitle: "ø_Set template subtitle_å",
-				share: "ø_Share_å"
+				storymapsText: "Et historiekort",
+				builderButton: "Redigér",
+				bitlyTooltip: "Hent et kortere link til applikationen",
+				templateTitle: "Indstil skabelontitel",
+				templateSubtitle: "Indstil skabelonundertitel",
+				share: "Del"
 			},
 			overviewFromCommon: {
-				title: "ø_Overview Map_å",
+				title: "Oversigtskort",
 			},
 			legendFromCommon: {
-				title: "ø_Legend_å"
+				title: "Signaturforklaring"
+			},
+			shareFromCommon: {
+				copy: "Kopiér",
+				copied: "Kopieret",
+				open: "Åbn",
+				embed: "ø_Embed in website_å",
+				embedExplain: "ø_Use the following HTML code to embed the Journal in a website._å",
+				size: "Størrelse (bredde/højde):"
 			}
         }
     })

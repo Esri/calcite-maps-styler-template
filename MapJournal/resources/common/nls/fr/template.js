@@ -2,144 +2,144 @@
 	 ({
 		common: {
 			common: {
-				edit: "æ_Edit_Â"
+				edit: "Modifier"
 			},
 			inlineFieldEdit: {
-				editMe: "æ_Edit me !_Â"
+				editMe: "Modifier"
 			},
 			builderPanel: {
-				panelHeader: "æ_%TPL_NAME% Builder_Â",
-				buttonSave: "æ_SAVE_Â",
-				buttonShare: "æ_SHARE_Â",
-				buttonSettings: "æ_SETTINGS_Â",
-				buttonHelp: "æ_HELP_Â",
-				noPendingChange: "æ_No pending change_Â",
-				unSavedChangeSingular: "æ_1 unsaved change_Â",
-				unSavedChangePlural: "æ_unsaved changes_Â",
-				popoverSaveWhenDone: "æ_Don't forget to save when you are done_Â",
-				closeWithPendingChange: "æ_Are you sure to want to confirm the action ? Your changes will be lost._Â",
-				ok: "æ_Ok_Â",
-				savingApplication: "æ_Saving application_Â",
-				saveError: "æ_Save failed, please try again_Â",
-				saveError3: "æ_The title can't be empty_Â",
+				panelHeader: "Générateur %TPL_NAME%",
+				buttonSave: "ENREGISTRER",
+				buttonShare: "PARTAGER",
+				buttonSettings: "PARAMETRES",
+				buttonHelp: "AIDE",
+				noPendingChange: "Aucune modification en attente",
+				unSavedChangeSingular: "1 modification non enregistrée",
+				unSavedChangePlural: "modifications non enregistrées",
+				popoverSaveWhenDone: "N\’oubliez pas d\’enregistrer lorsque vous avez terminé",
+				closeWithPendingChange: "Voulez-vous vraiment confirmer l\’opération ? Vos modifications seront perdues.",
+				ok: "OK",
+				savingApplication: "Enregistrement de l\’application",
+				saveError: "L\’enregistrement a échoué, réessayez",
+				saveError3: "Le titre ne peut pas être vide",
 				// TODO
-				signIn: "æ_Please sign in with an account on_Â",
-				shareStatus1: "æ_Application is not saved_Â",
-				shareStatus2: "æ_Application is shared publicly_Â",
-				shareStatus3: "æ_Application is shared within the organization_Â",
-				shareStatus4: "æ_Application is not shared_Â"
+				signIn: "Connectez-vous avec un compte sur",
+				shareStatus1: "L\'application n\'est pas enregistrée",
+				shareStatus2: "L\'application est partagée publiquement",
+				shareStatus3: "L\'application est partagée au sein de l\'organisation",
+				shareStatus4: "L\'application n\'est pas partagée"
 			},
 			// TODO
 			addEditPopup: {
 				// Add
-				addEditPopupInputTitleLabel: "æ_Title_Â",
-				addPopupTitle: "æ_Add_Â",
-				addPopupDescription: "æ_Add a new view to your series._Â",
-				addPopupButton: "æ_ADD_Â",
+				addEditPopupInputTitleLabel: "Titre",
+				addPopupTitle: "Ajouter",
+				addPopupDescription: "Ajoutez une nouvelle vue à votre série.",
+				addPopupButton: "AJOUTER",
 				// Edit
-				editPopupTitle: "æ_Edit_Â",
-				editPopupDescription: "æ_Edit the selected view_Â",
-				editPopupButton: "æ_APPLY_Â",
+				editPopupTitle: "Modifier",
+				editPopupDescription: "Modifiez la vue sélectionnée.",
+				editPopupButton: "APPLIQUER",
 				// Add/Edit
-				addEditPopupCancelButton: "æ_CANCEL_Â",
-				addEditPopupMyContentBtn: "æ_Select from my content_Â",
-				addEditPopupConfigureWebMapBtn: " æ_Configure_Â"
+				addEditPopupCancelButton: "ANNULER",
+				addEditPopupMyContentBtn: "Sélectionner dans mon contenu",
+				addEditPopupConfigureWebMapBtn: " Configurer"
 			},
 			share: {
-				firstSaveTitle: "æ_Application successfully saved_Â",
-				firstSaveHeader: "æ_Your application is now saved in ArcGIS Online. Please read the following answers to frequent questions._Â",
-				firstSaveA1: "æ_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_Â",
-				firstSaveA1bis: "æ_The application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._Â",
-				firstSaveQ2: "æ_Is my application shared?_Â",
-				firstSaveA2: "æ_Currently your application is not shared. To share it, use the SHARE button._Â",
-				shareTitle: "æ_Share your application_Â",
-				sharePrivateHeader: "æ_Your application is not shared, would you like to share it?_Â",
-				sharePrivateBtn1: "æ_Share publicly_Â",
-				sharePrivateBtn2: "æ_Share with my Organization_Â",
-				sharePrivateWarning: "æ_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._Â",
-				sharePrivateWarningWith1: "æ_publicly_Â",
-				sharePrivateWarningWith2: "æ_publicly and with the Organization_Â",
-				sharePrivateProgress: "æ_Sharing in progress..._Â",
-				sharePrivateErr: "æ_Sharing failed, try again or_Â",
-				sharePrivateOk: "æ_Sharing updated successfully, loading..._Â",
-				sharePreviewAsUser: "æ_Preview_Â",
-				shareHeader1: "æ_Your application is <strong>publicly accessible</strong>._Â",
-				shareHeader2: "æ_Your application is accessible by your organization members (login is required)._Â",
-				shareLinkHeader: "æ_Share the application with your audience_Â",
-				shareLinkOpen: "æ_OPEN_Â",
-				shareQ1Opt1: "æ_How do I keep the application private?_Â",
-				shareQ1Opt2: "æ_How do I keep the application private or share it publicly?_Â",
-				shareA1: "æ_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._Â",
-				shareA1bis: "æ_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._Â",
-				shareQ2: "æ_How do I edit the application later?_Â",
-				shareQ2bis: "æ_How do I get back to the authoring interface?_Â",
-				shareA2div1: "æ_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._Â",
-				shareA2div2: "æ_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_Â",				
-				shareQ3: "æ_Where is the data stored?_Â",
-				shareA3: "æ_The application configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._Â",
-				learnMore: "æ_Learn more_Â",
-				close: "æ_Close_Â"
+				firstSaveTitle: "L\'application a été enregistrée",
+				firstSaveHeader: "Votre application est maintenant enregistrée dans ArcGIS Online. Lisez les réponses suivantes aux questions fréquentes.",
+				firstSaveA1: "Si vous n\'êtes pas familiarisé avec ArcGIS Online ou si vous voulez un raccourci pour accéder à l\'interface de création, vous pouvez enregistrer le lien suivant : %LINK1%",
+				firstSaveA1bis: "L\'application est également accessible dans votre <a href='%LINK2%' target='_blank'>dossier de contenu ArcGIS Online</a>.",
+				firstSaveQ2: "Mon application est-elle partagée ?",
+				firstSaveA2: "Votre application n\'est actuellement pas partagée. Pour la partager, utilisez le bouton PARTAGER.",
+				shareTitle: "Partager votre application",
+				sharePrivateHeader: "Votre application n\'est pas partagée. Voulez-vous la partager ?",
+				sharePrivateBtn1: "Partager publiquement",
+				sharePrivateBtn2: "Partager avec mon organisation",
+				sharePrivateWarning: "Le partage %WITH% a été désactivé, car vous ne possédez pas la <a href='%LINK%' target='_blank'>carte Web</a>.",
+				sharePrivateWarningWith1: "publiquement",
+				sharePrivateWarningWith2: "publiquement et avec l\'organisation",
+				sharePrivateProgress: "Partage en cours...",
+				sharePrivateErr: "Echec du partage, essayez à nouveau ou",
+				sharePrivateOk: "Partage mis à jour, en cours de chargement...",
+				sharePreviewAsUser: "Aperçu",
+				shareHeader1: "Votre application est <strong>accessible publiquement</strong>.",
+				shareHeader2: "Votre application est accessible aux membres de votre organisation (identifiant de connexion requis).",
+				shareLinkHeader: "Partager l\'application avec votre public",
+				shareLinkOpen: "OUVRIR",
+				shareQ1Opt1: "Comment préserver le caractère privé de l'\'application ?",
+				shareQ1Opt2: "Comment préserver le caractère privé de l\'application ou la partager publiquement ?",
+				shareA1: "Utilisez %SHAREIMG% sur <a href='%LINK1%' target='_blank'>la page des éléments de l\'application</a>. Si vous souhaitez également annuler le partage de la carte Web, utilisez <a href='%LINK2%' target='_blank'>la page des éléments de la carte Web</a>.",
+				shareA1bis: "Si vous souhaitez également annuler le partage du service d\'entités, utilisez <a href='%LINK1%' target='_blank'>la page des éléments du service d\'entités</a>.",
+				shareQ2: "Comment modifier l\'application ultérieurement ?",
+				shareQ2bis: "Comment revenir dans l\'interface de création ?",
+				shareA2div1: "Enregistrez et réutilisez le lien suivant %LINK1% ou utilisez <a href='%LINK2%' target='_blank'>la page des éléments de l\'application</a>.",
+				shareA2div2: "En tant que propriétaire de l\'application, lorsque vous êtes connecté à ArcGIS.com, l\'application affiche un bouton permettant d\'ouvrir le générateur interactif :",				
+				shareQ3: "Où les données sont-elles stockées ?",
+				shareA3: "La configuration de l\'application est stockée dans <a href='%LINK1%' target='_blank'>cet élément de l\'application</a> et <a href='%LINK2%' target='_blank'>cet élément de l\'application Web</a>. Si vous avez utilisé une importation Flickr, Picasa, Facebook ou YouTube, vos images et vidéos y restent stockées et ne sont pas dupliquées dans ArcGIS Online.",
+				learnMore: "En savoir plus",
+				close: "Fermer"
 			},
 			settings: {
-				header: "æ_Application settings_Â",
-				cancel: "æ_Cancel_Â",
-				apply: "æ_Apply_Â",
-				tabError: "æ_Please check for errors in all tabs_Â"
+				header: "Paramètres de l\’application",
+				cancel: "Annuler",
+				apply: "Appliquer",
+				tabError: "Recherchez des erreurs dans tous les onglets"
 			},
 			settingsLayout: {
-				title: "æ_Layout_Â",
-				explain: "æ_What layout do you want to use?_Â",
-				explainInit: "æ_Change will be possible through the settings dialog._Â",
-				selected: "æ_Selected layout_Â",
-				select: "æ_Select this layout_Â"
+				title: "Mise en page",
+				explain: "Quelle mise en page voulez-vous utiliser ?",
+				explainInit: "Une modification est possible via la boîte de dialogue Paramètres.",
+				selected: "Mise en page sélectionnée",
+				select: "Sélectionner cette mise en page"
 			},
 			settingsTheme: {
-				title: "æ_Theme_Â",
-				explain: "æ_Choose an app theme or define your own colors._Â",
-				label: "æ_Header and side panel background colors_Â"
+				title: "Thème",
+				explain: "Sélectionnez un thème d\'application ou définissez vos propres couleurs.",
+				label: "Couleurs d\'arrière-plan de l\'en-tête et des volets latéraux"
 			},
 			settingsHeader: {
-				title: "æ_Header_Â",
-				explain: "æ_Customize the header logo (maximum is 250 x 50px)._Â",
-				logoEsri: "æ_Esri logo_Â",
-				logoNone: "æ_No logo_Â",
-				logoCustom: "æ_Custom logo_Â",
-				logoCustomPlaceholder: "æ_Image URL_Â",
-				logoCustomTargetPlaceholder: "æ_Click-through link_Â",
-				logoSocialExplain: "æ_Customize the header top right link._Â",
-				logoSocialText: "æ_Text_Â",
-				logoSocialLink: "æ_Link_Â",
-				logoSocialDisabled: "æ_This feature has been disabled by the Administrator_Â"
+				title: "En-tête",
+				explain: "Personnalisez le logo d\’en-tête (250 x 50 px au maximum).",
+				logoEsri: "Logo Esri",
+				logoNone: "Aucun logo",
+				logoCustom: "Logo personnalisé",
+				logoCustomPlaceholder: "URL de l\’image",
+				logoCustomTargetPlaceholder: "Lien",
+				logoSocialExplain: "Personnalisez le lien d\’en-tête en haut à droite.",
+				logoSocialText: "Texte",
+				logoSocialLink: "Lien",
+				logoSocialDisabled: "Cette entité a été désactivée par l\'administrateur"
 			},
 			mediaSelector: {
-				lblMap: "æ_Map_Â",
-				lblPicture: "æ_Picture_Â",
-				lblVideo: "æ_Video_Â",
-				lblExternal: "æ_External page_Â"
+				lblMap: "Carte",
+				lblPicture: "Image",
+				lblVideo: "Vidéo",
+				lblExternal: "Page externe"
 			},
 			webMapSelector: {
-				radioCurrentWebMap: "æ_Current web map_Â",
-				radioWebmapApp: "æ_One of the other web map used in the application_Â",
-				radioAnotherWebmap: "æ_Another webmap_Â",
-				btnSelect: "æ_Select_Â",
-				lblOr: "æ_or_Â",
-				fieldEnterWebmapId: "æ_Enter a web map id_Â",
-				btnConfigure: "æ_Configure the Map_Â"
+				radioCurrentWebMap: "Carte Web actuelle",
+				radioWebmapApp: "Une des autres cartes Web utilisées dans l\'application",
+				radioAnotherWebmap: "Une autre carte Web",
+				btnSelect: "Sélectionner",
+				lblOr: "ou",
+				fieldEnterWebmapId: "Entrer l\'identifiant d\'une carte Web",
+				btnConfigure: "Configurer la carte"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "æ_My Organization_Â",
-					onlineLabel: "æ_ArcGIS Online_Â",
-					contentLabel: "æ_My Content_Â",
-					favoritesLabel: "æ_My Favorites_Â"
+					organizationLabel: "Mon organisation",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Mon contenu",
+					favoritesLabel: "Mes favoris"
 				},
-				title: "æ_Select Web Map_Â",
-				searchTitle: "æ_Search_Â",
-				ok: "æ_Ok_Â",
-				cancel: "æ_Cancel_Â",
-				placeholder: "æ_Enter search term_Â"
+				title: "Sélectionner une carte Web",
+				searchTitle: "Rechercher",
+				ok: "OK",
+				cancel: "Annuler",
+				placeholder: "Saisir un terme de recherche"
 			}
 		}
 	})

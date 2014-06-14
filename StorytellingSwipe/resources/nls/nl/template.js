@@ -6,7 +6,7 @@
 				step2: "GEGEVENS LADEN",
 				step3: "INITIALISEREN",
 				fail: "Laden Swipe mislukt",
-				loadBuilder: "OVERSCHAKELEN NAAR BUILDER MODUS",
+				loadBuilder: "OVERSCHAKELEN NAAR BUILDER MODUS",				
 				redirectSignIn: "OMLEIDEN NAAR AANMELDINGSPAGINA",
 				redirectSignIn2: "(na het aanmelden wordt u naar hier omgeleid)",
 				failButton: "Opnieuw proberen"
@@ -25,7 +25,7 @@
 				mapSave: "Fout bij het opslaan van de webmap",
 				notAuthorized: "U bent niet gemachtigd om deze applicatie te openen",
 				conflictingProjectionsTitle: "Conflicterende projecties",
-				conflictingProjections: "Swipe ondersteunt het gebruik van twee webmaps met verschillende projecties niet. Ga naar de instellingen en gebruik een webmap met dezelfde projectie als de eerste webmap.",
+				conflictingProjections: "Ĳ_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ä",
 				cpButton: "Sluiten"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "om de applicatie op te slaan."
 			},
 			header:{
-				editMe: "Bewerk me!",
+				editMe: "Ĳ_Edit me!_ä",
 				templateTitle: "Titel voor template instellen",
 				templateSubtitle: "Subtitel voor template instellen"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "De omschrijving voor het zijvenster instellen",
-				editMe: "Bewerk me!",
+				editMe: "Ĳ_Edit me!_ä",
 				legendTitle: "Legenda"
 			},
 			infoWindow: {

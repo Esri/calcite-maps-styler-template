@@ -6,7 +6,7 @@
 				step2: "LASTER INN DATA",
 				step3: "INITIALISERER",
 				fail: "Beklager, men innlasting av sveipeverktøyet mislyktes",
-				loadBuilder: "BYTTER TIL MODUS FOR BYGGEVERKTØY",
+				loadBuilder: "BYTTER TIL MODUS FOR BYGGEVERKTØY",				
 				redirectSignIn: "OMDIRIGERING TIL PÅLOGGINGSSIDEN",
 				redirectSignIn2: "(du blir omdirigert hit etter pålogging)",
 				failButton: "Prøv på nytt"
@@ -25,7 +25,7 @@
 				mapSave: "Feil under lagring av webkartet",
 				notAuthorized: "Du har ikke tillatelse til å bruke denne applikasjonen",
 				conflictingProjectionsTitle: "Projeksjonskonflikt",
-				conflictingProjections: "Swipe støtter ikke bruk av to webkart med ulik projeksjon. Åpne Innstillinger og bruk et webkart med samme projeksjon som det første webkartet.",
+				conflictingProjections: "å_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ø",
 				cpButton: "Lukk"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "for å lagre applikasjonen."
 			},
 			header:{
-				editMe: "Rediger meg!",
+				editMe: "å_Edit me!_ø",
 				templateTitle: "Angi tittel på malen",
 				templateSubtitle: "Angi undertittel for malen"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Angi beskrivelsen av sidepanelet",
-				editMe: "Rediger meg!",
+				editMe: "å_Edit me!_ø",
 				legendTitle: "Tegnforklaring"
 			},
 			infoWindow: {

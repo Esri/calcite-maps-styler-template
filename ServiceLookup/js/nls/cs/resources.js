@@ -5,7 +5,7 @@
             mouseToolTip: "Kliknutím na mapu službu zkontrolujete."
         },
         geocoder: {
-            defaultText: "Ř_Enter an address or point of interest_ů"
+            defaultText: "Zadejte adresu nebo bod zájmu"
         },
         error: {
             layerNotFound: "Vrstva není ve webové mapě",

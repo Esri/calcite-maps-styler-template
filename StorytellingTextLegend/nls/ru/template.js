@@ -18,7 +18,7 @@
       datePatterns:{
         datePattern: "ММММ д, гггг",
         yearPattern: "гггг",
-        hourTimePattern: "Ч",
+        hourTimePattern: "ч",
         minuteTimePattern: "ч:мм",
         secondTimePattern: "ч:мм:сс",
         millisecondTimePattern: "Ч:мм:сс:ммм"

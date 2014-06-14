@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "á_Unable to create map_Ó"
+            "error": "No se puede crear el mapa"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'á_Landscape (PDF)_Ó',
-			      "label2": 'á_Portrait (PDF)_Ó',
-			      "label3": 'á_Landscape (Image)_Ó',
-			      "label4": 'á_Portrait (Image)_Ó'
-			    }
+			      "label1": 'Horizontal (PDF)',
+			      "label2": 'Vertical (PDF)',
+			      "label3": 'Horizontal (Imagen)',
+			      "label4": 'Vertical (Imagen)'
+			    },
+			    "legend": "á_Add legend to output_Ó"
 			},
 			"share": {
-				"extent": "á_Use current map extent_Ó",
-				"label": "á_Share this map_Ó",
-				"link": "á_Map Link_Ó",
-				"facebook": "á_Facebook_Ó",
-				"twitter": "á_Twitter_Ó"
+				"extent": "Usar la extensión del mapa actual",
+				"label": "Compartir este mapa",
+				"link": "Enlace del mapa",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "á_Default extent_Ó",
-        	"locate": "á_Find my location_Ó",
-        	"legend": "á_Legend_Ó",
-        	"bookmarks": "á_Bookmarks_Ó",
-        	"layers": "á_Layers_Ó",
+        	"home": "Extensión predeterminada",
+        	"locate": "Buscar mi ubicación",
+        	"legend": "Leyenda",
+        	"bookmarks": "Marcadores",
+        	"layers": "Capas",
         	"basemap": "á_Basemap gallery_Ó",
         	"overview": "á_Overview map_Ó",
-        	"measure": "á_Measure_Ó",
-        	"edit": "á_Edit_Ó",
-        	"time": "á_Time_Ó",
-        	"print": "á_Print_Ó",
-        	"details": "á_Details_Ó",
-        	"share": "á_Share_Ó"
+        	"measure": "Medir",
+        	"edit": "Editar",
+        	"time": "Hora",
+        	"print": "Imprimir",
+        	"details": "Detalles",
+        	"share": "Compartir"
         }
 }));

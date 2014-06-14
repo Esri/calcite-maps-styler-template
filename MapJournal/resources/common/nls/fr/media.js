@@ -2,84 +2,84 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "æ_Select Media Type_Â",
-				lblSelect2: "æ_Select Content Type_Â",
-				lblMap: "æ_Map_Â",
-				lblImage: "æ_Image_Â",
-				lblVideo: "æ_Video_Â",
-				lblExternal: "æ_Web page_Â",
-				disabled: "æ_This feature has been disabled by the Administrator_Â",
-				url: "æ_To manually enter the web address of an image_Â",
-				userLookup: "æ_Load albums_Â",
-				notImplemented: "æ_Not implemented yet._Â"
+				lblSelect1: "Sélectionner le type de support",
+				lblSelect2: "Sélectionner le type de contenu",
+				lblMap: "Carte",
+				lblImage: "Image",
+				lblVideo: "Vidéo",
+				lblExternal: "Page Web",
+				disabled: "Cette entité a été désactivée par l\'administrateur",
+				url: "Pour entrer manuellement l\'adresse Web d\'une image",
+				userLookup: "Charger des albums",
+				notImplemented: "Fonction pas encore implémentée."
 			},
 			imageSelector: {
-				lblStep1: "æ_Choose the service_Â",
-				lblStep2: "æ_Select your media_Â",
-				lblStep3: "æ_Configure_Â"
+				lblStep1: "Choisir le service",
+				lblStep2: "Sélectionner le support",
+				lblStep3: "Configurer"
 			},
 			imageSelectorHome: {
-				explain: "æ_Load images from social media, <br /> or directly from a URL_Â"
+				explain: "Chargez les images à partir des réseaux sociaux <br /> ou directement à partir d\'une URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "æ_User name_Â",
-				signInMsg2: "æ_User not found_Â",
-				loadingFailed: "æ_Loading failed_Â"
+				userInputLbl: "Nom d\'utilisateur",
+				signInMsg2: "Utilisateur introuvable",
+				loadingFailed: "Echec du chargement"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "æ_Facebook User_Â",
-				rightHeader: "æ_Facebook Page_Â",
-				pageExplain: "æ_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL._Â",
-				pageInputLbl: "æ_Page name_Â",
-				lookupMsgError: "æ_Page not found_Â"
+				leftHeader: "Utilisateur de Facebook",
+				rightHeader: "Page Facebook",
+				pageExplain: "Une page Facebook est une marque, une célébrité ou un produit public, comme <b>esrigis</b>. Vous pouvez obtenir le nom de la page après la première barre oblique inverse \'/\' de l\'URL de la page.",
+				pageInputLbl: "Nom de page",
+				lookupMsgError: "Page introuvable"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "æ_Email or Picasa/Google+ ID_Â",
-				signInMsg2: "æ_Account not found_Â",
-				signInMsg3: "æ_No public album_Â",
-				howToFind: "æ_How to find a Picasa or Google+ account ID_Â",
-				howToFind2: "æ_Copy digits between the first and second '/' of any Picasa or G+ page_Â"
+				userInputLbl: "Adresse électronique ou identifiant Picasa/Google+",
+				signInMsg2: "Compte introuvable",
+				signInMsg3: "Pas d\'album public",
+				howToFind: "Comment trouver un ID de compte Picasa ou Google+",
+				howToFind2: "Copiez les chiffres compris entre la première et la deuxième barre oblique inverse \'/\' d\'une page Picasa ou G+"
 			},
 			videoSelector: {
 				
 			},
 			videoSelectorYoutube: {
-				pageInputLbl: "æ_User name_Â",
-				lookupMsgError: "æ_User not found_Â",
-				howToFind: "æ_How to find a YouTube user name_Â",
-				howToFind2: "æ_User name is displayed under videos_Â",
-				found: "æ_Found_Â",
-				noData: "æ_No public videos found_Â"
+				pageInputLbl: "Nom d\'utilisateur",
+				lookupMsgError: "Utilisateur introuvable",
+				howToFind: "Comment trouver un nom d\'utilisateur YouTube",
+				howToFind2: "Le nom d\'utilisateur est affiché sous les vidéos",
+				found: "Trouvés",
+				noData: "Aucune vidéo publique trouvée"
 			},
 			mediaSelectorPicker: {
 				
 			},
 			mediaConfigure: {
-				lblURL: "æ_URL_Â",
-				lblURLPH: "æ_Media URL..._Â",
-				lblLabel: "æ_Label_Â",
-				lblLabel1: "æ_Caption_Â",
-				lblLabel2: "æ_Hover text_Â",
-				lblLabel3: "æ_None_Â",
-				lblLabelPH: "æ_Enter some text..._Â",
-				lblPosition: "æ_Position_Â",
-				lblPosition1: "æ_Center_Â",
-				lblPosition2: "æ_Fill_Â",
-				lblPosition3: "æ_Fit_Â",
-				lblPosition4: "æ_Stretch_Â",
-				lblPosition2Explain: "æ_(may crop)_Â",
-				lblPosition3Explain: "æ_(won't crop)_Â",
-				lblPosition4Explain: "æ_(may distort)_Â"
+				lblURL: "URL",
+				lblURLPH: "URL du support...",
+				lblLabel: "Etiquette",
+				lblLabel1: "Légende",
+				lblLabel2: "Texte de pointage",
+				lblLabel3: "Aucun",
+				lblLabelPH: "Entrer du texte...",
+				lblPosition: "Position",
+				lblPosition1: "Centre",
+				lblPosition2: "Remplissage",
+				lblPosition3: "Ajuster",
+				lblPosition4: "Etirer",
+				lblPosition2Explain: "(peut être rognée)",
+				lblPosition3Explain: "(ne sera pas rognée)",
+				lblPosition4Explain: "(peut être déformée)"
 			},
 			editorActionGeocode: {
-				lblTitle: "æ_Locate an address or place_Â",
-				mapMarkerExplain: "æ_User will see a map marker when clicking the link_Â"
+				lblTitle: "Localiser une adresse ou un lieu",
+				mapMarkerExplain: "L\'utilisateur verra un symbole ponctuel cartographique en cliquant sur le lien"
 			},
 			editorActionMedia: {
-				lblTitle: "æ_Change the Main Stage media_Â"
+				lblTitle: "æ_Change the Main Stage content_Â"
 			},
 			editorInlineMedia: {
-				lblTitle: "æ_Insert an image or video_Â"
+				lblTitle: "Insérer une image ou une vidéo"
 			}
 		}
 	})

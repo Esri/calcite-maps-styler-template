@@ -6,7 +6,7 @@
 				step2: "DATEN WERDEN GELADEN",
 				step3: "WIRD INITIALISIERT",
 				fail: "\"Ausblenden\" konnte leider nicht geladen werden",
-				loadBuilder: "ES WIRD ZUM BUILDER-MODUS GEWECHSELT",
+				loadBuilder: "ES WIRD ZUM BUILDER-MODUS GEWECHSELT",				
 				redirectSignIn: "UMLEITUNG ZUR ANMELDESEITE",
 				redirectSignIn2: "(Sie werden nach der Anmeldung hierher umgeleitet)",
 				failButton: "Wiederholen"
@@ -25,7 +25,7 @@
 				mapSave: "Fehler beim Speichern der Webkarte",
 				notAuthorized: "Sie sind nicht autorisiert, auf diese Anwendung zuzugreifen",
 				conflictingProjectionsTitle: "In Konflikt stehende Projektionen",
-				conflictingProjections: "Für zwei Webkarten mit unterschiedlichen Projektionen kann \"Ausblenden\ nicht verwendet werden. Bitte gehen Sie zu den Einstellungen und wählen Sie eine Webkarte, die die gleiche Projektion wie die erste Webkarte aufweist.",
+				conflictingProjections: "ä_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._Ü",
 				cpButton: "Schließen"
 			},
 			mobileView: {
@@ -59,7 +59,7 @@
 				popoverOpenViewExplain: "Durch Öffnen des Viewers gehen alle nicht gespeicherten Änderungen verloren",
 				popoverOpenViewOk: "OK",
 				popoverOpenViewCancel: "Abbrechen",
-				popoverSaveWhenDone: "Denken Sie daran, nach Abschluss des Vorgangs eine Speicherung durchzuführen",
+				popoverSaveWhenDone: "Vergessen Sie nicht zu speichern, wenn Sie fertig sind",
 				closeWithPendingChange: "Möchten Sie die Aktion wirklich bestätigen? Ihre Änderungen gehen dabei verloren.",
 				gotIt: "OK",
 				savingApplication: "Anwendung wird gespeichert",
@@ -71,7 +71,7 @@
 				signInTwo: "um die Anwendung zu speichern."
 			},
 			header:{
-				editMe: "Bearbeiten!",
+				editMe: "ä_Edit me!_Ü",
 				templateTitle: "Vorlagentitel festlegen",
 				templateSubtitle: "Untertitel der Vorlage festlegen"
 			},
@@ -92,7 +92,7 @@
 				settingsLogoNone: "Kein Logo",
 				settingsLogoCustom: "Benutzerdefiniertes Logo",
 				settingsLogoCustomPlaceholder: "Bild-URL",
-				settingsLogoCustomTargetPlaceholder: "Link zum Durchklicken",
+				settingsLogoCustomTargetPlaceholder: "Ziel-URL",
 				settingsLogoSocialExplain: "Den Link rechts oben für die Kopfzeile anpassen.",
 				settingsLogoSocialText: "Text",
 				settingsLogoSocialLink: "Link",
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Beschreibung des Seitenfensters festlegen",
-				editMe: "Bearbeiten!",
+				editMe: "ä_Edit me!_Ü",
 				legendTitle: "Legende"
 			},
 			infoWindow: {
@@ -215,7 +215,7 @@
 			share: {
 				firstSaveTitle: "Anwendung wurde erfolgreich gespeichert",
 				firstSaveHeader: "Ihre Anwendung ist jetzt in ArcGIS Online gespeichert. Lesen Sie die folgenden Antworten auf häufig gestellte Fragen.",
-				firstSaveA1: "Wenn Sie nicht mit ArcGIS Online vertraut sind oder eine Verknüpfung für den Zugriff auf die Autor-Oberfläche wünschen, können Sie den folgenden Link speichern: %LINK1%",
+				firstSaveA1: "Wenn Sie nicht mit ArcGIS Online vertraut sind oder eine Verknüpfung für den Zugriff auf die Autoren-Oberfläche wünschen, können Sie den folgenden Link speichern: %LINK1%",
 				firstSaveA1bis: "Die Anwendung befindet sich außerdem in Ihrem <a href='%LINK2%' target='_blank'>ArcGIS Online-Inhaltsordner</a>.",
 				firstSaveQ2: "Ist meine Anwendung freigegeben?",
 				firstSaveA2: "Ihre Anwendung ist zurzeit nicht freigegeben. Um sie freizugeben, verwenden Sie die FREIGABE-Schaltfläche.",
@@ -238,11 +238,11 @@
 				learnMore: "Weitere Informationen",
 				shareQ1Opt1: "Wie bleibt die Anwendung privat?",
 				shareQ1Opt2: "Wie bleibt die Anwendung privat oder wie wird sie veröffentlicht?",
-				shareA1: "Verwenden Sie %SHAREIMG% auf <a href='%LINK1%' target='_blank'>der Seite der Anwendungselemente</a>. Wenn Sie die Freigabe der Webkarte aufheben möchten, verwenden Sie <a href='%LINK2%' target='_blank'>die Seite der Webkartenelemente</a>.",
-				shareA1bis: "Wenn Sie die Freigabe des Feature-Service aufheben möchten, verwenden Sie <a href='%LINK1%' target='_blank'>die Seite der Feature-Service-Elemente</a>.",
+				shareA1: "Verwenden Sie %SHAREIMG% auf <a href='%LINK1%' target='_blank'>der Elementseite der Anwendung</a>. Wenn Sie die Freigabe der Webkarte ebenfalls aufheben möchten, verwenden Sie <a href='%LINK2%' target='_blank'>die Elementseite der Webkarte</a>.",
+				shareA1bis: "Wenn Sie die Freigabe des Feature-Service ebenfalls aufheben möchten, verwenden Sie <a href='%LINK1%' target='_blank'>die Elementseite des Feature-Service</a>.",
 				shareQ2: "Wie kann ich die Anwendung später bearbeiten?",
-				shareQ2bis: "Wie kehre ich zur Autor-Oberfläche zurück?",
-				shareA2div1: "Speichern Sie den folgenden Link %LINK1%, und verwenden Sie ihn erneut, oder verwenden Sie <a href='%LINK2%' target='_blank'>die Seite der Anwendungselemente</a>.",
+				shareQ2bis: "Wie kehre ich zur Autoren-Oberfläche zurück?",
+				shareA2div1: "Speichern Sie den folgenden Link %LINK1%, und verwenden Sie ihn erneut, oder verwenden Sie <a href='%LINK2%' target='_blank'>die Elementseite der Anwendung</a>.",
 				shareA2div2: "Wenn Sie bei ArcGIS.com als Besitzer der Anwendung angemeldet sind, enthält die Anwendung eine Schaltfläche zum Öffnen des interaktiven Builders:",				
 				shareQ3: "Wo werden die Daten gespeichert?",
 				shareA3: "Die Anwendungskonfiguration wird in diesem Webanwendungselement gespeichert</a>.",

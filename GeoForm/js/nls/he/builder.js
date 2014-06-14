@@ -1,0 +1,57 @@
+﻿define(
+    ({
+        builder: {
+            invalidWebmapSelectionAlert: "כן_Selected webmap does not contain any feature server_ש",
+            selectThemeText: "כן_Select Form Theme_ש",
+            fieldLabelPlaceHolder: "כן_Label this field_ש",
+            fieldDescPlaceHolder: "כן_Describe this field_ש",
+            webmapText: "כן_Webmap_ש",
+            layerText: "שכבה",
+            detailsText: "פרטים",
+            fieldsText: "שדות",
+            styleText: "כן_Style_ש",
+            previewText: "תצוגה מקדימה",
+            publishText: "פרסם",
+            titleText: "כן_GeoForm Builder_ש",
+            descriptionText: "כן_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._ש",
+            btnPreviousText: "קודם",
+            btnNextText:"הבא",
+            webmapTabTitleText: "כן_Choose a Webmap_ש",
+            btnSelectWebmapText:"כן_Select Webmap_ש",
+            layerTabTitleText: "כן_Select Editable Layer_ש",
+            selectLayerLabelText:"שכבה",
+            selectLayerDefaultOptionText:"בחר שכבה",
+            detailsTabTitleText:"כן_Form Details_ש",
+            detailTitleLabelText: "כותרת",
+            detailLogoLabelText: "כן_Logo Image_ש",
+            detailDescriptionLabelText: "תיאור",
+            fieldTabDisplayHeaderText: "תצוגה",
+            fieldTabFieldHeaderText: "שדה",
+            fieldTabLabelHeaderText: "תווית",
+            fieldTabTypeHeaderText: "סוג",
+            fieldTabDescriptionHeaderText: "תיאור",
+            previewApplicationText: "כן_Preview Application_ש",
+            saveApplicationText: "כן_Save Application_ש",
+            saveText: "כן_Save_ש",
+
+            //Local string for user mode
+            defaultTitleText: "כן_Default Title_ש",
+            defaultDescriptionText: "כן_Default Description_ש",
+            geoFormGeneralTabText: "כללי",
+            locationInformationText: "כן_Location Info_ש",
+            myLocationText: "המיקום שלי",
+            addressText: "כתובת",
+            cooridnatesText: "כן_Coordinates_ש",
+            locationTabText: "מיקום",
+            enterCoordinatesPlaceholder: "כן_Enter Coordinates_ש",
+            submitButtonText: "כן_Submit_ש",
+            clearButtonText: "נקה",
+            fieldvalidationMessageAlertText: "כן_Please enter a valid number_ש",
+            formValidationMessageAlertText: "כן_Please verify the form for errors and resubmit the form_ש",
+            latlongValidationMessageAlert: "כן_Please select x and y coordinates_ש",
+            emptylatitudeAlertMessage:"כן_Please enter Latitude_ש",
+            emptylongitudeAlertMessage:"כן_Please enter Longitude_ש"
+        }
+    })
+    
+);

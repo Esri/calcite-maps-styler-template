@@ -5,7 +5,7 @@
             mouseToolTip: "انقر فوق الخريطة للتحقق من الخدمة"
         },
         geocoder: {
-            defaultText: "بيت_Enter an address or point of interest_لاحقة"
+            defaultText: "أدخل العنوان أو نقاط الاهتمام"
         },
         error: {
             layerNotFound: "الطبقة ليست موجودة في خريطة الويب",

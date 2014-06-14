@@ -2,13 +2,13 @@
 	({
 		commonMapControls: {
 			common: {
-				settings: "ก้_Settings_ษฺ",
-				openDefault: "ก้_Open by default_ษฺ"
+				settings: "การตั้งค่า",
+				openDefault: "เปิดแบบค่าเริ่มต้น"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "ก้_Basemap_ษฺ",
-				expandFactorLabel: "ก้_Expand Factor_ษฺ",
-				expandFactorPopover: "ก้_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle._ษฺ"
+				basemapGalleryBtnLabel: "แผนที่ฐาน",
+				expandFactorLabel: "ขยายปัจจัย",
+				expandFactorPopover: "อัตราส่วนระหว่างขนาดของแผนที่ภาพรวมและขอบเขตสี่เหลี่ยมผืนผ้าที่แสดงบนแผนที่ภาพรวม ค่าเริ่มต้นคือ 2 หมายถึงแผนที่ภาพรวมจะมีอย่างน้อยสองเท่าของขนาดของสี่เหลี่ยมผืนผ้า"
 			}
 		}
 	})

@@ -5,7 +5,7 @@
             mouseToolTip: "Klicken Sie auf die Karte, um den Service zu überprüfen"
         },
         geocoder: {
-            defaultText: "ä_Enter an address or point of interest_Ü"
+            defaultText: "Geben Sie eine Adresse oder einen Point of Interest ein"
         },
         error: {
             layerNotFound: "Layer ist nicht in der Webkarte enthalten",

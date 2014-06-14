@@ -18,11 +18,11 @@
 		location: "Konum"
 	},
 	toggles:{
-		legend: "Gösterge",
+		legend: "Gösterim",
 		description: "Açıklama"
 	},
 	sidePanel:{
-        legendHeader: "GÖSTERGE"
+        legendHeader: "GÖSTERİM"
     }
   }
 }

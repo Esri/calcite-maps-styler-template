@@ -1,7 +1,7 @@
 ﻿define(
   ({
     viewer: {
-      legend_title: "Gösterge",
+      legend_title: "Gösterim",
       content_title: "Düzenleyici",
       errors:{
         message: "Düzenleme uygulamasını oluşturmada sorun oluştu",

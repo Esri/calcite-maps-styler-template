@@ -6,7 +6,7 @@
 				step2: "데이터를 로드하는 중",
 				step3: "초기화하는 중",
 				fail: "죄송합니다. 스와이프를 로드하지 못했습니다.",
-				loadBuilder: "빌더 모드로 전환하는 중",
+				loadBuilder: "빌더 모드로 전환하는 중",				
 				redirectSignIn: "로그인 페이지로 이동하는 중",
 				redirectSignIn2: "(로그인 후 이 페이지로 다시 돌아옵니다.)",
 				failButton: "재시도"
@@ -25,7 +25,7 @@
 				mapSave: "웹 맵을 저장하는 동안 오류가 발생했습니다.",
 				notAuthorized: "이 응용프로그램에 액세스할 권한이 없습니다.",
 				conflictingProjectionsTitle: "투영 충돌",
-				conflictingProjections: "사용 중인 두 웹 맵의 투영이 서로 다른 경우에는 스와이프가 지원되지 않습니다. 설정을 열어 첫 번째 웹 맵과 같은 투영을 사용하는 웹 맵을 사용하세요.",
+				conflictingProjections: "한_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._빠",
 				cpButton: "닫기"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "로그인 계정으로 로그인하세요."
 			},
 			header:{
-				editMe: "편집!",
+				editMe: "한_Edit me!_빠",
 				templateTitle: "템플릿 제목 설정",
 				templateSubtitle: "템플릿 부제목 설정"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "사이드 패널 설명을 설정합니다.",
-				editMe: "편집!",
+				editMe: "한_Edit me!_빠",
 				legendTitle: "범례"
 			},
 			infoWindow: {

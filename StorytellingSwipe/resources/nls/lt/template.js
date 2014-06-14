@@ -6,7 +6,7 @@
 				step2: "ĮKELIAMI DUOMENYS",
 				step3: "PRADEDAMA",
 				fail: "Atsiprašome keitiklio krovimas nepavyko",
-				loadBuilder: "PERSIJUNGIAMA Į KŪRIMO REŽIMĄ",
+				loadBuilder: "PERSIJUNGIAMA Į KŪRIMO REŽIMĄ",				
 				redirectSignIn: "NUKREIPIAMA Į PRISIJUNGIMO PUSLAPĮ",
 				redirectSignIn2: "(jūs būsite nukreiptas čia po prisijungimo)",
 				failButton: "Pakartoti"
@@ -25,7 +25,7 @@
 				mapSave: "Klaida įrašant internetinį žemėlapį",
 				notAuthorized: "Neturite teisių pasiekti šią aplikaciją",
 				conflictingProjectionsTitle: "Nesuderinamos projekcijos",
-				conflictingProjections: "Keitiklis nepalaiko dviejų internetinių žemėlapių su skirtingomis projekcijomis. Atidarykite nustatymus ir naudokite internetinį žemėlapį, naudojantį tą pačią projekciją kaip ir pirmasis internetinis žemėlapis.",
+				conflictingProjections: "Į_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._š",
 				cpButton: "Užverti"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "aplikacijai įrašyti."
 			},
 			header:{
-				editMe: "Redaguok !",
+				editMe: "Į_Edit me!_š",
 				templateTitle: "Nustatyti šablono antraštę",
 				templateSubtitle: "Nustatyti šablono paantraštę"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Nustatyti šoninės panelės aprašą",
-				editMe: "Redaguok !",
+				editMe: "Į_Edit me!_š",
 				legendTitle: "Legenda"
 			},
 			infoWindow: {

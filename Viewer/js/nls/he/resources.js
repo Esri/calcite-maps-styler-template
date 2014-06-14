@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "כן_Unable to create map_ש"
+            "error": "לא ניתן ליצור מפה"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'כן_Landscape (PDF)_ש',
-			      "label2": 'כן_Portrait (PDF)_ש',
-			      "label3": 'כן_Landscape (Image)_ש',
-			      "label4": 'כן_Portrait (Image)_ש'
-			    }
+			      "label1": 'לרוחב (PDF)',
+			      "label2": 'לאורך (PDF)',
+			      "label3": 'לרוחב (Image)',
+			      "label4": 'לאורך (Image)'
+			    },
+			    "legend": "כן_Add legend to output_ש"
 			},
 			"share": {
-				"extent": "כן_Use current map extent_ש",
-				"label": "כן_Share this map_ש",
-				"link": "כן_Map Link_ש",
-				"facebook": "כן_Facebook_ש",
-				"twitter": "כן_Twitter_ש"
+				"extent": "השתמש בתיחום המפה הנוכחי",
+				"label": "שתף מפה זו",
+				"link": "קשר מפה",
+				"facebook": "פייסבוק",
+				"twitter": "טוויטר"
 			}
         },
         "tooltips":{
-        	"home": "כן_Default extent_ש",
-        	"locate": "כן_Find my location_ש",
-        	"legend": "כן_Legend_ש",
-        	"bookmarks": "כן_Bookmarks_ש",
-        	"layers": "כן_Layers_ש",
+        	"home": "תיחום ברירת המחדל",
+        	"locate": "מצא את המיקום שלי",
+        	"legend": "מקרא",
+        	"bookmarks": "סימניות",
+        	"layers": "שכבות",
         	"basemap": "כן_Basemap gallery_ש",
         	"overview": "כן_Overview map_ש",
-        	"measure": "כן_Measure_ש",
-        	"edit": "כן_Edit_ש",
-        	"time": "כן_Time_ש",
+        	"measure": "מדידה",
+        	"edit": "עריכה",
+        	"time": "זמן",
         	"print": "כן_Print_ש",
-        	"details": "כן_Details_ש",
+        	"details": "פרטים",
         	"share": "כן_Share_ש"
         }
 }));

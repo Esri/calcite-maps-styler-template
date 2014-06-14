@@ -20,11 +20,11 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "MMMM d, yyyy",
-      yearPattern: "yyyy",
-      hourTimePattern: "H",
-      minuteTimePattern: "H:mm",
-      secondTimePattern: "h:m:s.SSS a",
+      datePattern: "ММММ д, гггг",
+      yearPattern: "гггг",
+      hourTimePattern: "ч",
+      minuteTimePattern: "ч:мм",
+      secondTimePattern: "ч:м:с.SSS",
       millisecondTimePattern:"h:m:ss.SSS a",
       timeRange: "${start_time} до ${end_time}",
       timeRangeSingle: "<b>Временной диапазон:</b> ${time}"

@@ -1,0 +1,57 @@
+﻿define(
+    ({
+        builder: {
+            invalidWebmapSelectionAlert: "å_Selected webmap does not contain any feature server_ø",
+            selectThemeText: "å_Select Form Theme_ø",
+            fieldLabelPlaceHolder: "å_Label this field_ø",
+            fieldDescPlaceHolder: "å_Describe this field_ø",
+            webmapText: "å_Webmap_ø",
+            layerText: "Lag",
+            detailsText: "Detaljer",
+            fieldsText: "Felter",
+            styleText: "å_Style_ø",
+            previewText: "Forhåndsvisning",
+            publishText: "Mangfoldiggjør",
+            titleText: "å_GeoForm Builder_ø",
+            descriptionText: "å_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._ø",
+            btnPreviousText: "Forrige",
+            btnNextText:"Neste",
+            webmapTabTitleText: "å_Choose a Webmap_ø",
+            btnSelectWebmapText:"å_Select Webmap_ø",
+            layerTabTitleText: "å_Select Editable Layer_ø",
+            selectLayerLabelText:"Lag",
+            selectLayerDefaultOptionText:"Velg lag",
+            detailsTabTitleText:"å_Form Details_ø",
+            detailTitleLabelText: "Tittel",
+            detailLogoLabelText: "å_Logo Image_ø",
+            detailDescriptionLabelText: "Beskrivelse",
+            fieldTabDisplayHeaderText: "Vis",
+            fieldTabFieldHeaderText: "Felt",
+            fieldTabLabelHeaderText: "Etikett",
+            fieldTabTypeHeaderText: "Type",
+            fieldTabDescriptionHeaderText: "Beskrivelse",
+            previewApplicationText: "å_Preview Application_ø",
+            saveApplicationText: "å_Save Application_ø",
+            saveText: "Lagre",
+
+            //Local string for user mode
+            defaultTitleText: "å_Default Title_ø",
+            defaultDescriptionText: "å_Default Description_ø",
+            geoFormGeneralTabText: "Generelt",
+            locationInformationText: "å_Location Info_ø",
+            myLocationText: "Min lokasjon",
+            addressText: "Adresse",
+            cooridnatesText: "å_Coordinates_ø",
+            locationTabText: "å_Location_ø",
+            enterCoordinatesPlaceholder: "å_Enter Coordinates_ø",
+            submitButtonText: "Send inn",
+            clearButtonText: "Fjern",
+            fieldvalidationMessageAlertText: "å_Please enter a valid number_ø",
+            formValidationMessageAlertText: "å_Please verify the form for errors and resubmit the form_ø",
+            latlongValidationMessageAlert: "å_Please select x and y coordinates_ø",
+            emptylatitudeAlertMessage:"å_Please enter Latitude_ø",
+            emptylongitudeAlertMessage:"å_Please enter Longitude_ø"
+        }
+    })
+    
+);

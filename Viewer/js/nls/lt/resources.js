@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "Į_Unable to create map_š"
+            "error": "Žemėlapio sukurti nepavyko"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'Į_Landscape (PDF)_š',
-			      "label2": 'Į_Portrait (PDF)_š',
-			      "label3": 'Į_Landscape (Image)_š',
-			      "label4": 'Į_Portrait (Image)_š'
-			    }
+			      "label1": 'Gulsčiai (PDF)',
+			      "label2": 'Stačiai (PDF)',
+			      "label3": 'Gulsčiai (Paveikslėlis)',
+			      "label4": 'Stačiai (Paveikslėlis)'
+			    },
+			    "legend": "Į_Add legend to output_š"
 			},
 			"share": {
-				"extent": "Į_Use current map extent_š",
-				"label": "Į_Share this map_š",
-				"link": "Į_Map Link_š",
-				"facebook": "Į_Facebook_š",
-				"twitter": "Į_Twitter_š"
+				"extent": "Naudoti esamą žemėlapio aprėptį",
+				"label": "Bendrinti šį žemėlapį",
+				"link": "Žemėlapio nuoroda",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "Į_Default extent_š",
-        	"locate": "Į_Find my location_š",
-        	"legend": "Į_Legend_š",
-        	"bookmarks": "Į_Bookmarks_š",
-        	"layers": "Į_Layers_š",
+        	"home": "Standartinė aprėptis",
+        	"locate": "Rasti mano vietą",
+        	"legend": "Legenda",
+        	"bookmarks": "Žymės",
+        	"layers": "Sluoksniai",
         	"basemap": "Į_Basemap gallery_š",
         	"overview": "Į_Overview map_š",
-        	"measure": "Į_Measure_š",
-        	"edit": "Į_Edit_š",
-        	"time": "Į_Time_š",
-        	"print": "Į_Print_š",
-        	"details": "Į_Details_š",
-        	"share": "Į_Share_š"
+        	"measure": "Matuoti",
+        	"edit": "Redaguoti",
+        	"time": "Laikas",
+        	"print": "Spausdinti",
+        	"details": "Detali informacija",
+        	"share": "Bendrinti"
         }
 }));

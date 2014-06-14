@@ -100,13 +100,13 @@
 				"detailsLabel":"Detali informacija"
             },
             "filterItems":{
-                "show": "Į_Show_š",
-                "all": "Į_All Results_š",
-                "maps": "Į_Maps_š",
-                "layers": "Į_Layers_š",
-                "applications": "Į_Applications_š",
-                "tools": "Į_Tools_š",
-                "files": "Į_Files_š"
+                "show": "Rodyti",
+                "all": "Visi rezultatai",
+                "maps": "Žemėlapiai",
+                "layers": "Sluoksniai",
+                "applications": "Aplikacijos",
+                "tools": "Įrankiai",
+                "files": "Failai"
             },
             "pagination": {
                 "previous": "Ankstesnis",

@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "Å_Unable to create map_ö"
+            "error": "Karttaa ei voi luoda"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'Å_Landscape (PDF)_ö',
-			      "label2": 'Å_Portrait (PDF)_ö',
-			      "label3": 'Å_Landscape (Image)_ö',
-			      "label4": 'Å_Portrait (Image)_ö'
-			    }
+			      "label1": 'Maisema (PDF)',
+			      "label2": 'Muotokuva (PDF)',
+			      "label3": 'Maisema (kuva)',
+			      "label4": 'Muotokuva (kuva)'
+			    },
+			    "legend": "Å_Add legend to output_ö"
 			},
 			"share": {
-				"extent": "Å_Use current map extent_ö",
-				"label": "Å_Share this map_ö",
-				"link": "Å_Map Link_ö",
-				"facebook": "Å_Facebook_ö",
-				"twitter": "Å_Twitter_ö"
+				"extent": "Käytä nykyisen kartan laajuutta.",
+				"label": "Jaa tämä kartta",
+				"link": "Karttalinkki",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "Å_Default extent_ö",
-        	"locate": "Å_Find my location_ö",
-        	"legend": "Å_Legend_ö",
-        	"bookmarks": "Å_Bookmarks_ö",
-        	"layers": "Å_Layers_ö",
+        	"home": "Oletuslaajuus",
+        	"locate": "Etsi sijaintini",
+        	"legend": "Selite",
+        	"bookmarks": "Kirjanmerkit",
+        	"layers": "Karttatasot",
         	"basemap": "Å_Basemap gallery_ö",
         	"overview": "Å_Overview map_ö",
-        	"measure": "Å_Measure_ö",
-        	"edit": "Å_Edit_ö",
-        	"time": "Å_Time_ö",
-        	"print": "Å_Print_ö",
-        	"details": "Å_Details_ö",
-        	"share": "Å_Share_ö"
+        	"measure": "Mittaus",
+        	"edit": "Muokkaa",
+        	"time": "Kellonaika",
+        	"print": "Tulosta",
+        	"details": "Yksityiskohdat",
+        	"share": "Jaa"
         }
 }));

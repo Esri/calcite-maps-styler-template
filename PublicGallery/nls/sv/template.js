@@ -100,13 +100,13 @@
 				"detailsLabel":"Information"
             },
             "filterItems":{
-                "show": "Å_Show_ö",
-                "all": "Å_All Results_ö",
-                "maps": "Å_Maps_ö",
-                "layers": "Å_Layers_ö",
-                "applications": "Å_Applications_ö",
-                "tools": "Å_Tools_ö",
-                "files": "Å_Files_ö"
+                "show": "Visa",
+                "all": "Alla resultat",
+                "maps": "Kartor",
+                "layers": "Lager",
+                "applications": "Applikationer",
+                "tools": "Verktyg",
+                "files": "Filer"
             },
             "pagination": {
                 "previous": "Föregående",

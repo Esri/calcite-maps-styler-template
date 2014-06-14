@@ -16,6 +16,16 @@
  */
 define(({
         map: {
-            error: "한_Unable to create map_빠"
+            error: "맵을 생성할 수 없음"
+        },
+        days: {
+           now: "한_NOW_빠",
+           sun: "한_SUN_빠",
+           mon: "한_MON_빠",
+           tue: "한_TUE_빠",
+           wed: "한_WED_빠",
+           thu: "한_THU_빠",
+           fri: "한_FRI_빠",
+           sat: "한_SAT_빠"
         }
 }));

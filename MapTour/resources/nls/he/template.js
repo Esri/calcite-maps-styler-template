@@ -263,7 +263,7 @@
 			headerJS:{
 				editMe: "ערוך אותי !",
 				templateTitle: "קבע כותרת תבנית",
-				templateSubtitle: "קבע כיתובית לתבנית"
+				templateSubtitle: "קבע כותרת המשנה לתבנית"
 			},
 			crossFaderJS:{
 				setPicture: "קבע כותרת לתמונה",
@@ -410,7 +410,7 @@
 					div1: "תבנית הסיור הממופה עוצבה כך שתציג מידע גיאוגרפי עבור מקומות בהם יש אלמנטי צילום או מדיה שברצונך להכלילם בסיפור אותו אתה רוצה לספר.",
 					div2: "התבנית מייצרת אפליקצית אינטרנט אטרקטיבית ונוחה לשימוש, המאפשרת לך להציג סט נבחר של מקומות על ברצף ממוספר שדרכו משתמשים יכולים לדפדף. התבנית מעוצבת כך שניתן יהיה להשתמש בה בכל בכל דפדפן אינטרנט או כל מכשיר, כולל סמארטפונים וטאבלטים.  <br /><br />הנה דוגמה לסוג אפליקציה שאתה יכול ליצור:",
 					div4: "<a href='http://storymaps.esri.com/stories/maptour-palmsprings' target='_blank'>סיור ממופה בפאלם ספרינגס</a>.",
-					div42: "כדי לראות דוגמאות של סיורים ממופים שמשתמשים אחרים יצרו, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>בקר בגלריה</a> ב- <a href='http://storymaps.esri.com/' target='_blank'>אתר מפות סיפור</a>. ניתן גם לעקוב אחרינו בטוויטר ב <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
+					div42: "כן_To see examples of map tours that other users are creating, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>visit the gallery</a> on the <a href='http://storymaps.arcgis.com/' target='_blank'>Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ש",
 					div5: "נשמח לשמוע ממך! בין אם יש לך שאלה, רוצה לבקש יכולת חדשה, או חושב שמצאת באג, אנא בקר ב- <a href='http://links.esri.com/storymaps/forum' target='_blank'>פורום המשתמשים של מפות סיפור</a>."
 				},
 				tab2: {
@@ -418,9 +418,9 @@
 					div1: "הנושא המרכזי ששווה לשקול כאשר בונים סיור ממופה הוא בחירה היכן התמונות שלך יאוחסנו. הסיור הממופה יכול להשתמש בתמונות המאוחסנות בשירותי שיתוף תמונות גדולים, בכל שרת אינטרנט או כקישור לשירות ישויות.",
 					div1a: "ראה את החלק האחרון בלשונית זו למידע אודות פורמטים נתמכים של תמונות וסרטונים.",
 					div2: "כלי הבניה האינטראקטיבי נותן לך שתי אפשרויות לניהול התמונות בסיור הממופה שלך:",
-					div3: "<ul><li>ניתן להשתמש <b>בתמונות מהאינטרנט </b>או מאתרי שיתוף כגון Flickr, או מתמונות המאוחסנות באתר שלך. תמונות אלו יקושרו לסיור הממופה באמצעות ה-URLs שלהם.</li><li>ניתן גם <b>לטעון תמונות מהמחשב האישי שלך </b> ישירות לסיור הממופה. אופצית טעינה זו דורשת שיהיה לך חשבון מנוי ארגוני של ArcGIS Online ושתהיינה לך הרשאות פרסום או אדמיניסטרציה, מכיוון שנוצר עבורך באופן אוטומטי שירות ישויות מתארח שבו מאוחסנות התמונות שלך כקישורים.</li></ul>",
+					div3: "כן_<ul><li>You can use <b>photos that are already online</b>, such as images stored in a photo sharing site like Flickr, or images stored on your own website. These images will be referenced in your Map Tour via their URLs.</li><li>You can also <b>upload photos from your computer</b> directly into your Map Tour. This upload option requires that you have an ArcGIS for Organizations account and that you have Publisher or Administrator privileges, because a hosted feature service is automatically created for you in which your photos are stored as attachments.</li></ul>_ש",
 					div4: "השימושים העיקריים הם:",
-					div4b: "<b>התמונות שלך לא מאוחסנות</b>עדיין ויש לך חשבון של ArcGIS Online: שימוש בשירות ישויות מאוחסן היא הבחירה הטובה ביותר עבורך. בדומה לשירותי שיתוף תמונות ציבורי, נוכל למקסם את התמונות שלך בכדי ליצור טעינת תמונות מהירה ולך תהיה גישה לכל יכולות ניהול הנתונים והאדמיניסטרציה של פלטפורמת ה- ArcGIS.",
+					div4b: "כן_<b>Your photos are not hosted</b> yet and you have an ArcGIS for Organizations account: Using a hosted feature service is your best choice. Like public photo sharing services, we will optimize your pictures to create fast-loading images and you will have access to all administration and data management capabilities of the ArcGIS platform._ש",
 					div5: "<b>אינך חלק מארגון</b>: תחילה עליך לטעון את התמונות שלך לאתר שיתוף תמונות או לשרת האינטרנט שלך. לאחר מכן כלי הבניה יסייע לך להשתמש בתמונות הללו שימשיכו להיות מאוחסנים במיקום המקורי שלהם.",
 					div6: "<b>הינך מנסה להשתמש מחדש בשירות ישויות</b> המאחסן את התמונות שלך כקישורים או המתייחס לתמונות ממקור חיצוני: ראה את החלק המפורט שלהלן.",
 					div7: "<b>אתה משתמש בגרסה הקודמת</b> של תבנית הסיור הממופה וכבר יש לך קובץ CSV המקשר לתמונות והתמונות הממוזערות שלך: תוכל לייבא זאת וללטש את הנתונים שלך. כלי הבניה תומך רק ב- CSV המשתמש בשדות אורך/רוחב, ניתן יהיה להשתמש בכתובת מבוססת CSV ב- web map שלך (ראה להלן).",
@@ -525,7 +525,7 @@
 				shareA2div1: "שמור והשתמש שוב בקישור הבא %LINK1% או השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט האפליקציה</a>.",
 				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל ArcGIS.com האפליקציה כוללת כפתור הפותח את הבונה האינטראקטיבי.",				
 				shareQ3: "היכן מאוחסן המידע?",
-				shareA3: "תצורת הסיור מאוחסנת בתוך  <a href='%LINK1%' target='_blank'>this webmap item</a> וגם זה <a href='%LINK2%' target='_blank'> פריט האפליקציה</a>. אם ייבאת מתוך Flickr, Picasa, Facebook או YouTube התמונות והוידאו שלך נשארים מאוחסנים שם ואינם משוכפלים אל  ArcGIS Online.",
+				shareA3: "כן_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. Flickr, Picasa, and Facebook images and YouTube videos remain referenced at their respective sites and aren't duplicated in ArcGIS Online._ש",
 				shareWarning: "שיתוף עם %WITH% לא מתאפשר מכיוון שאינך הבעלים של <a href='%LINK%' target='_blank'>webmap</a>.",
 				shareWarningWith1: "ציבורי",
 				shareWarningWith2: "ציבורי וגם עם הארגון"

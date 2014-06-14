@@ -19,7 +19,7 @@
         title: "Konum"
       },
       sidePanel: {
-        title: "Gösterge",
+        title: "Gösterim",
         owner: "sahibi: ",
         modified: "Son Değiştirme: ",
         message: "Hiçbir işlem katmanı yok"
@@ -29,7 +29,7 @@
       },
       buttons: {
         about: "Hakkında",
-        legend: "Gösterge",
+        legend: "Gösterim",
         backBtn: "Geri",
         detailedDescriptionLabel: "Ayrıntılı Açıklama"
       }

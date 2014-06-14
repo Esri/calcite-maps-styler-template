@@ -2,84 +2,84 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ж_Select Media Type_Я",
-				lblSelect2: "Ж_Select Content Type_Я",
-				lblMap: "Ж_Map_Я",
-				lblImage: "Ж_Image_Я",
-				lblVideo: "Ж_Video_Я",
-				lblExternal: "Ж_Web page_Я",
-				disabled: "Ж_This feature has been disabled by the Administrator_Я",
-				url: "Ж_To manually enter the web address of an image_Я",
-				userLookup: "Ж_Load albums_Я",
-				notImplemented: "Ж_Not implemented yet._Я"
+				lblSelect1: "Выберите тип носителя",
+				lblSelect2: "Выберите тип ресурсов",
+				lblMap: "Карта",
+				lblImage: "Изображение",
+				lblVideo: "Видео",
+				lblExternal: "Веб-страница",
+				disabled: "Объект был отключен администратором",
+				url: "Чтобы вручную ввести веб-адрес изображения",
+				userLookup: "Загрузить альбомы",
+				notImplemented: "Еще не реализовано."
 			},
 			imageSelector: {
-				lblStep1: "Ж_Choose the service_Я",
-				lblStep2: "Ж_Select your media_Я",
-				lblStep3: "Ж_Configure_Я"
+				lblStep1: "Выберите услугу",
+				lblStep2: "Выберите ваши средства массовой информации",
+				lblStep3: "Настроить"
 			},
 			imageSelectorHome: {
-				explain: "Ж_Load images from social media, <br /> or directly from a URL_Я"
+				explain: "Загрузка изображения из социальных средств массовой информации,<br>или прямо из URL-адреса"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "Ж_User name_Я",
-				signInMsg2: "Ж_User not found_Я",
-				loadingFailed: "Ж_Loading failed_Я"
+				userInputLbl: "Имя пользователя",
+				signInMsg2: "Пользователь не найден",
+				loadingFailed: "Загрузка не удалась"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "Ж_Facebook User_Я",
-				rightHeader: "Ж_Facebook Page_Я",
-				pageExplain: "Ж_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL._Я",
-				pageInputLbl: "Ж_Page name_Я",
-				lookupMsgError: "Ж_Page not found_Я"
+				leftHeader: "Пользователь Facebook",
+				rightHeader: "Страница Facebook",
+				pageExplain: "Страница Facebook - это публичный продукт, как <b>esrigis</b>. Вы можете взять имя страницы, расположенное после первой косой черты \'/\' в URL страницы.",
+				pageInputLbl: "Имя страницы",
+				lookupMsgError: "Страница не найдена"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "Ж_Email or Picasa/Google+ ID_Я",
-				signInMsg2: "Ж_Account not found_Я",
-				signInMsg3: "Ж_No public album_Я",
-				howToFind: "Ж_How to find a Picasa or Google+ account ID_Я",
-				howToFind2: "Ж_Copy digits between the first and second '/' of any Picasa or G+ page_Я"
+				userInputLbl: "Электронная почта или Picasa / ID Google +",
+				signInMsg2: "Учетная запись не найдена",
+				signInMsg3: "Не общедоступный альбом",
+				howToFind: "Как найти ID учетной записи Picasa или Google+",
+				howToFind2: "Скопируйте цифры, расположенные между первой и второй косой чертой \'/\' любой страницы Picasa или G+"
 			},
 			videoSelector: {
 				
 			},
 			videoSelectorYoutube: {
-				pageInputLbl: "Ж_User name_Я",
-				lookupMsgError: "Ж_User not found_Я",
-				howToFind: "Ж_How to find a YouTube user name_Я",
-				howToFind2: "Ж_User name is displayed under videos_Я",
-				found: "Ж_Found_Я",
-				noData: "Ж_No public videos found_Я"
+				pageInputLbl: "Имя пользователя",
+				lookupMsgError: "Пользователь не найден",
+				howToFind: "Как найти имя пользователя YouTube",
+				howToFind2: "Имя пользователя отображается под видео",
+				found: "Найдено",
+				noData: "Общедоступных видео не найдено"
 			},
 			mediaSelectorPicker: {
 				
 			},
 			mediaConfigure: {
-				lblURL: "Ж_URL_Я",
-				lblURLPH: "Ж_Media URL..._Я",
-				lblLabel: "Ж_Label_Я",
-				lblLabel1: "Ж_Caption_Я",
-				lblLabel2: "Ж_Hover text_Я",
-				lblLabel3: "Ж_None_Я",
-				lblLabelPH: "Ж_Enter some text..._Я",
-				lblPosition: "Ж_Position_Я",
-				lblPosition1: "Ж_Center_Я",
-				lblPosition2: "Ж_Fill_Я",
-				lblPosition3: "Ж_Fit_Я",
-				lblPosition4: "Ж_Stretch_Я",
-				lblPosition2Explain: "Ж_(may crop)_Я",
-				lblPosition3Explain: "Ж_(won't crop)_Я",
-				lblPosition4Explain: "Ж_(may distort)_Я"
+				lblURL: "URL-адрес",
+				lblURLPH: "URL-адрес СМИ...",
+				lblLabel: "Надпись",
+				lblLabel1: "Заголовок",
+				lblLabel2: "Наведите курсор на текст",
+				lblLabel3: "Нет",
+				lblLabelPH: "Введите текст...",
+				lblPosition: "Положение",
+				lblPosition1: "По центру",
+				lblPosition2: "Заливка",
+				lblPosition3: "Разместить",
+				lblPosition4: "Растяжка",
+				lblPosition2Explain: "(может быть урезано)",
+				lblPosition3Explain: "(не будет урезаться)",
+				lblPosition4Explain: "(может исказиться)"
 			},
 			editorActionGeocode: {
-				lblTitle: "Ж_Locate an address or place_Я",
-				mapMarkerExplain: "Ж_User will see a map marker when clicking the link_Я"
+				lblTitle: "Найдите адрес или место",
+				mapMarkerExplain: "При нажатии на ссылку пользователь увидит маркер карты"
 			},
 			editorActionMedia: {
-				lblTitle: "Ж_Change the Main Stage media_Я"
+				lblTitle: "Ж_Change the Main Stage content_Я"
 			},
 			editorInlineMedia: {
-				lblTitle: "Ж_Insert an image or video_Я"
+				lblTitle: "Вставить изображение или видео"
 			}
 		}
 	})

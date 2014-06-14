@@ -1,0 +1,57 @@
+﻿define(
+    ({
+        builder: {
+            invalidWebmapSelectionAlert: "Ж_Selected webmap does not contain any feature server_Я",
+            selectThemeText: "Ж_Select Form Theme_Я",
+            fieldLabelPlaceHolder: "Ж_Label this field_Я",
+            fieldDescPlaceHolder: "Ж_Describe this field_Я",
+            webmapText: "Ж_Webmap_Я",
+            layerText: "Слой",
+            detailsText: "Детали",
+            fieldsText: "Поля",
+            styleText: "Ж_Style_Я",
+            previewText: "Просмотр",
+            publishText: "Опубликовать",
+            titleText: "Ж_GeoForm Builder_Я",
+            descriptionText: "Ж_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._Я",
+            btnPreviousText: "Ж_Previous_Я",
+            btnNextText:"Далее",
+            webmapTabTitleText: "Ж_Choose a Webmap_Я",
+            btnSelectWebmapText:"Ж_Select Webmap_Я",
+            layerTabTitleText: "Ж_Select Editable Layer_Я",
+            selectLayerLabelText:"Слой",
+            selectLayerDefaultOptionText:"Выбрать слой",
+            detailsTabTitleText:"Ж_Form Details_Я",
+            detailTitleLabelText: "Ж_Title_Я",
+            detailLogoLabelText: "Ж_Logo Image_Я",
+            detailDescriptionLabelText: "Описание",
+            fieldTabDisplayHeaderText: "Отображение",
+            fieldTabFieldHeaderText: "Поле",
+            fieldTabLabelHeaderText: "Надпись",
+            fieldTabTypeHeaderText: "Тип",
+            fieldTabDescriptionHeaderText: "Описание",
+            previewApplicationText: "Ж_Preview Application_Я",
+            saveApplicationText: "Ж_Save Application_Я",
+            saveText: "Сохранить",
+
+            //Local string for user mode
+            defaultTitleText: "Ж_Default Title_Я",
+            defaultDescriptionText: "Ж_Default Description_Я",
+            geoFormGeneralTabText: "Общие",
+            locationInformationText: "Ж_Location Info_Я",
+            myLocationText: "Мое местоположение",
+            addressText: "Адрес",
+            cooridnatesText: "Ж_Coordinates_Я",
+            locationTabText: "Местоположение",
+            enterCoordinatesPlaceholder: "Ж_Enter Coordinates_Я",
+            submitButtonText: "Отправить",
+            clearButtonText: "Очистить",
+            fieldvalidationMessageAlertText: "Ж_Please enter a valid number_Я",
+            formValidationMessageAlertText: "Ж_Please verify the form for errors and resubmit the form_Я",
+            latlongValidationMessageAlert: "Ж_Please select x and y coordinates_Я",
+            emptylatitudeAlertMessage:"Ж_Please enter Latitude_Я",
+            emptylongitudeAlertMessage:"Ж_Please enter Longitude_Я"
+        }
+    })
+    
+);

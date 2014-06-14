@@ -16,6 +16,16 @@
  */
 define(({
         map: {
-            error: "Š_Unable to create map_ä"
+            error: "Kaarti ei saa luua"
+        },
+        days: {
+           now: "Š_NOW_ä",
+           sun: "Š_SUN_ä",
+           mon: "Š_MON_ä",
+           tue: "Š_TUE_ä",
+           wed: "Š_WED_ä",
+           thu: "Š_THU_ä",
+           fri: "Š_FRI_ä",
+           sat: "Š_SAT_ä"
         }
 }));

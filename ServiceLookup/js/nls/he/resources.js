@@ -5,7 +5,7 @@
             mouseToolTip: "הקש על המפה כדי לבדוק שירות"
         },
         geocoder: {
-            defaultText: "כן_Enter an address or point of interest_ש"
+            defaultText: "הכנס כתובת או נקודת עניין"
         },
         error: {
             layerNotFound: "השכבה לא נימצאת ב webmap",

@@ -100,13 +100,13 @@
 				"detailsLabel":"세부정보"
             },
             "filterItems":{
-                "show": "한_Show_빠",
-                "all": "한_All Results_빠",
-                "maps": "한_Maps_빠",
-                "layers": "한_Layers_빠",
-                "applications": "한_Applications_빠",
-                "tools": "한_Tools_빠",
-                "files": "한_Files_빠"
+                "show": "표시",
+                "all": "모든 결과",
+                "maps": "맵",
+                "layers": "레이어",
+                "applications": "응용프로그램",
+                "tools": "도구",
+                "files": "파일"
             },
             "pagination": {
                 "previous": "이전",

@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "Zamknij"
+			},
 			loading: {
-				step1: "ł_Loading application_ą",
-				step2: "ł_Loading data_ą",
-				step3: "ł_Initializing_ą",
-				loadBuilder: "ł_Switching to builder_ą",
-				fail: "ł_Sorry, loading failed_ą",
-				failButton: "ł_Retry_ą"
+				step1: "Wczytanie aplikacji",
+				step2: "Wczytanie danych",
+				step3: "Inicjowanie",
+				loadBuilder: "Przełączanie do trybu kreatora",
+				fail: "Niestety, wczytywanie nie powiodło się",
+				failButton: "Ponów próbę"
 			},
 			signin: {
-				title: "ł_Authentication is required_ą",
-				explainViewer: "ł_Please sign in with an account on %PORTAL_LINK% to access the application._ą",
-				explainBuilder: "ł_Please sign in with an account on %PORTAL_LINK% to configure the application._ą"
+				title: "Wymagane jest uwierzytelnienie",
+				explainViewer: "Aby uzyskać dostęp do aplikacji, zaloguj się na konto w portalu %PORTAL_LINK%.",
+				explainBuilder: "Aby skonfigurować aplikację, zaloguj się na konto w portalu %PORTAL_LINK%."
 			},
 			errors: {
-				boxTitle: "ł_An error has occurred_ą",
-				invalidConfig: "ł_Fatal error: Invalid configuration_ą",
-				invalidConfigNoApp: "ł_Fatal error: Web Mapping Application identifier not specified in index.html_ą",
-				createMap: "ł_Unable to create map_ą",
-				invalidApp: "ł_Fatal error: The application cannot be loaded_ą",
-				notConfiguredDesktop: "ł_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._ą",
-				notConfiguredMobile: "ł_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._ą",
-				notAuthorized: "ł_You are not authorized to access this application_ą",
-				noBuilderIE8: "ł_The builder is not supported on Internet Explorer before version 9._ą"
+				boxTitle: "Wystąpił błąd",
+				invalidConfig: "Błąd krytyczny: Nieprawidłowa konfiguracja",
+				invalidConfigNoApp: "Błąd krytyczny: Identyfikator aplikacji map internetowych nie został określony w pliku index.html",
+				createMap: "Nie można utworzyć mapy",
+				invalidApp: "Błąd krytyczny: Nie można wczytać aplikacji",
+				notConfiguredDesktop: "Witamy w aplikacji internetowej %TPL_NAME%.<br />Aplikacja nie została jeszcze skonfigurowana.",
+				notConfiguredMobile: "Witamy w aplikacji internetowej %TPL_NAME%. Aplikacja nie została jeszcze skonfigurowana, a kreator nie jest obsługiwany na urządzeniach mobilnych.",
+				notAuthorized: "Nie masz uprawnień do uzyskania dostępu do tej aplikacji.",
+				noBuilderIE8: "Kreator nie jest obsługiwany w przeglądarce Internet Explorer w wersji starszej niż 9."
 			},
 			mobileView: {
-				tapForDetails: "ł_Tap for details_ą",
-				swipeToExplore: "ł_Swipe to explore_ą",
-				tapForMap: "ł_Tap to get back to the Map_ą"
+				tapForDetails: "Wskaż, aby uzyskać szczegółowe informacje",
+				swipeToExplore: "Przesuń, aby przejrzeć",
+				tapForMap: "Wskaż, aby powrócić do mapy"
 			},
 			floatLayout: {
-				scroll: "ł_Scroll_ą"
+				scroll: "Przewiń"
 			},
 			sideLayout: {
-				scroll: "ł_Scroll down for more!_ą"
+				scroll: "Przewiń w dół, aby uzyskać więcej informacji!"
 			},
 			mainStage: {
-				back: "ł_Back_ą"
+				back: "Wstecz"
 			},
 			headerFromCommon: {
-				storymapsText: "ł_A story map_ą",
-				builderButton: "ł_Edit_ą",
-				bitlyTooltip: "ł_Get a short link to the application_ą",
-				templateTitle: "ł_Set template title_ą",
-				templateSubtitle: "ł_Set template subtitle_ą",
-				share: "ł_Share_ą"
+				storymapsText: "Mapa z historią",
+				builderButton: "Edytuj",
+				bitlyTooltip: "Pobierz skrócone łącze do aplikacji",
+				templateTitle: "Ustaw tytuł szablonu",
+				templateSubtitle: "Ustaw podtytuł szablonu",
+				share: "Udostępnij"
 			},
 			overviewFromCommon: {
-				title: "ł_Overview Map_ą",
+				title: "Mapa przeglądowa",
 			},
 			legendFromCommon: {
-				title: "ł_Legend_ą"
+				title: "Legenda"
+			},
+			shareFromCommon: {
+				copy: "Kopiuj",
+				copied: "Skopiowane",
+				open: "Otwórz",
+				embed: "ł_Embed in website_ą",
+				embedExplain: "ł_Use the following HTML code to embed the Journal in a website._ą",
+				size: "Rozmiar (szerokość/wysokość):"
 			}
         }
     })
