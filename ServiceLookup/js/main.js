@@ -26,7 +26,7 @@ define([
     "dojo/dom-class",
     "dojo/dom",
     "application/splashscreen",
-    "application/Common",
+    "application/common",
     "application/combinedPopup"
 
 ],
