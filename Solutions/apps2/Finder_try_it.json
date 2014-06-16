@@ -146,7 +146,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 5cf7584d6a821309 2014-06-11 11:43:27 -0700"
+                "commit f00066582d93429a 2014-06-16 12:41:23 -0700"
             ]
         }
     }, {
@@ -241,7 +241,7 @@
     }, {
         "classname": "js.LGMapDijitContainer",
         "config": {
-            "rootId": "homeButton",
+            "rootId": "locateButton",
             "parentDiv": "map",
             "dependencyId": "map",
             "rootClass": "dijitContainer",

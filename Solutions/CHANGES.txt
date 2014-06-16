@@ -1,4 +1,4 @@
-change report #45 at 06/10/2014 15:27:20.93
+change report #46 at 06/16/2014 12:41:02.14
 -
 for git branch
 develop
@@ -6,6 +6,4 @@ in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M js2/lgonlineCommand.js
- M nls/en/resources.js
- M nls/resources.js
+ M s2.html

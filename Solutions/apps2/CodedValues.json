@@ -14,25 +14,21 @@
         " | See the License for the specific language governing permissions and",
         " | limitations under the License."
     ],
-    "documentation":[
-        "For help configuring this application, see:",
-        "http://solutions.arcgis.com/local-government/help/finder/, or",
-        "http://solutions.arcgis.com/state-government/help/finder/"
-     ],
+
     "values": {
-        "webmap": "3f46bb9925fd4d0cbda377c62529cf81",
-        "titleBar.title": "Numbers",
+        "webmap": "70430e570f0840b4a5eb8da09cfa82f1",
+        "titleBar.title": "Finder",
         "titleBar.iconUrl": "images/onlineapp.png",
-        "colorizer.theme": "WarmBrights",
-        "searchBox.hint": "",
-        "featureSearcher.searchLayerName": "CodedValues - Numbers",
-        "featureSearcher.searchFields": "Italian,French,Description",
+        "colorizer.theme": "SeaBlues",
+        "searchBox.hint": "a number from 1 to 5",
+        "featureSearcher.searchLayerName": "Numbers",
+        "featureSearcher.searchFields": "Italian,French",
         "featureSearcher.displayFields": "",
         "highlighter.showFeaturePopup": true,
         "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
         "basemapBox.basemapgroupOwner": "",
-        "helpMessageBox.content": "Finder<hr><br>Finder provides the general public and other interested parties access to searchable and interactive information such as property tax and assessment information or the locations of water access points.<br><br>To locate this information, click a feature on the map or search for the feature by address, name, or another identifier such as Parcel ID."
+        "helpMessageBox.content": "Finder<hr><br>Finder (formerly known as Parcel Viewer) provides the general public and other interested parties access to searchable and interactive information such as property tax and assessment information or the locations of water access points.<br><br>To locate this information, click a feature on the map or search for the feature by address, name, or another identifier such as Parcel ID."
     },
 
     "configurationSettings": [{
@@ -146,7 +142,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 5cf7584d6a821309 2014-06-11 11:43:27 -0700"
+                "@@@commit@@@"
             ]
         }
     }, {
@@ -156,22 +152,22 @@
             "parentDiv": "contentDiv",
             "colorTable": [{
                 "theme": "NeutralGrays",
-                "colors": ["#969696", "#fff", "#464646", "#d8d8d8"]
+                "colors": ["#969696", "#fff", "#464646", "#b4b4b4"]
             }, {
                 "theme": "EarthBrowns",
-                "colors": ["#be9969", "#fff", "#523b20", "#d8d8d8"]
+                "colors": ["#be9969", "#fff", "#523b20", "#b4b4b4"]
             }, {
                 "theme": "SeaBlues",
-                "colors": ["#00b9f2", "#fff", "#004575", "#d8d8d8"]
+                "colors": ["#00b9f2", "#fff", "#004575", "#b4b4b4"]
             }, {
                 "theme": "NaturalGreens",
-                "colors": ["#aad04b", "#fff", "#2a7f33", "#d8d8d8"]
+                "colors": ["#aad04b", "#fff", "#2a7f33", "#b4b4b4"]
             }, {
                 "theme": "WarmBrights",
-                "colors": ["#f89927", "#fff", "#da4d1e", "#d8d8d8"]
+                "colors": ["#f89927", "#fff", "#da4d1e", "#b4b4b4"]
             }, {
                 "theme": "ScenicPurples",
-                "colors": ["#b279b4", "#fff", "#6b1978", "#d8d8d8"]
+                "colors": ["#b279b4", "#fff", "#6b1978", "#b4b4b4"]
             }]
         }
     }, {
@@ -427,7 +423,7 @@
         "config": {
             "rootId": "basemap",
             "tooltip": "@tooltips.basemap",
-            "iconJson": "[{'shape':{'type':'rect','x':2,'y':2,'width':12,'height':12,'r':0},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'rect','x':18,'y':2,'width':12,'height':12,'r':0},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'rect','x':2,'y':18,'width':12,'height':12,'r':0},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'rect','x':18,'y':18,'width':12,'height':12,'r':0},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconJson": "[{'shape':{'type':'path','path':'m 1 1c 4 0 8 0 13 0 0 4 0 8 0 13-4 0-8 0-13 0 0-4 0-8 0-13z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 3 5C 5 5 7 7 9 9 10 10 11 10 12 10'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 5 12C 5 10 5 7 6 6 8 6 9 4 9 3'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 9 12C 9 10 10 9 12 8'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 1 18c 4 0 8 0 13 0 0 4 0 8 0 13-4 0-8 0-13 0 0-4 0-8 0-13z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 3 28c 2 0 5-2 5-5 1-1 2-3 4-1'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 18 18c 4 0 8 0 13 0 0 4 0 8 0 13-4 0-8 0-13 0 0-4 0-8 0-13z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 20 22c 1 1 2 1 2 2-1-2 2-3 2-4'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 23 29c 1-2 1-4 2-7 1-2 3 0 3 2'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 18 1c 4 0 8 0 13 0 0 4 0 8 0 13-4 0-8 0-13 0 0-4 0-8 0-13z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 20 7c 2 2 6 0 6-2 0-1 1-1 1-2'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 26 12c 0-2 2-3 3-3'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
             "iconColorizerId": "colorizer",
             "parentDiv": "commandPanel",
             "rootClass": "commandButton",
