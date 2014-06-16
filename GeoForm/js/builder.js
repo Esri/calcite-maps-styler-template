@@ -141,16 +141,21 @@ define([
             layerDefeeredList = new DeferredList(layerDefeeredListArr);
             layerDefeeredList.then(lang.hitch(this, function () {
                 if (dom.byId("selectLayer").options.length <= 1) {
-                    alert(nls.builder.invalidWebmapSelectionAlert);
+                    domAttr.set(dom.byId("selectLayer"), "disabled", true);
+                    this._showErrorMessageDiv(nls.builder.invalidWebmapSelectionAlert);
                     array.forEach(query(".navigationTabs"), lang.hitch(this, function (currentTab) {
                         attribute = currentTab.getAttribute("tab");
-                        if (attribute != "webmap") {
+                        if (attribute === "webmap" || attribute === "layer") {
+                            this._enableTab(currentTab);
+                        }
+                        else {
                             this._disableTab(currentTab);
                         }
                     }));
                 }
                 else {
                     array.forEach(query(".navigationTabs"), lang.hitch(this, function (currentTab) {
+                        domConstruct.empty(this.erroMessageDiv);
                         attribute = currentTab.getAttribute("tab");
                         if (((attribute == "publish" || attribute == "preview") && (query(".fieldCheckbox:checked").length === 0)) || (attribute == "fields" && dom.byId("selectLayer").value === "Select Layer")) {
                             this._disableTab(currentTab);
@@ -159,6 +164,7 @@ define([
                             this._enableTab(currentTab);
                         }
                     }));
+                    domAttr.set(dom.byId("selectLayer"), "disabled", false);
                 }
             }));
         },
@@ -434,7 +440,7 @@ define([
         _updateItem: function () {
             this.currentConfig.edit = "";
             lang.mixin(this.response.itemData.values, this.currentConfig);
-            delete this.response.itemData.values["itemInfo"];
+            delete this.response.itemData.values.itemInfo;
             this.response.item.tags = typeof (this.response.item.tags) == "object" ? this.response.item.tags.join(',') : this.response.item.tags;
             this.response.item.typeKeywords = typeof (this.response.item.typeKeywords) == "object" ? this.response.item.typeKeywords.join(',') : this.response.item.typeKeywords;
             var rqData = lang.mixin(this.response.item, {
@@ -536,6 +542,11 @@ define([
                     this._enableTab(currentTab);
                 }
             }));
+        },
+
+        _showErrorMessageDiv: function (errorMessage) {
+            domConstruct.empty(this.erroMessageDiv);
+            domConstruct.create("div", { "class": "alert alert-danger errorMessage", innerHTML: errorMessage }, this.erroMessageDiv);
         }
     });
 });

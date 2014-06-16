@@ -17,7 +17,10 @@
         </div>
     </div>
     <div class="row">
-        <div data-dojo-attach-point="erroMessageDiv"></div>
+        <div data-dojo-attach-point="erroMessageDiv" class="errorMessageDiv">
+        </div>
+    </div>
+    <div class="row">
         <div class="col-xs-12 col-sm-7">
             <h2>
                 ${nls.user.geoFormGeneralTabText}</h2>
@@ -37,17 +40,10 @@
             <form role="form" class="myLocationOptions">
                 <div class="tab-content">
                     <div id="myLocation" class="tab-pane active">
-                        <div class="form-group">
-                            <div>
-                                <div class="inline-block">
-                                    <div data-dojo-attach-point="myLocation" class="btn btn-default">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="geolocate_button" class="btn btn-default">${nls.user.findMyLocation}</div>
                     </div>
                     <div id="address" class="tab-pane">
-                        <div class="form-group">
+                        <div class="form-group geocoder-container">
                             <div data-dojo-attach-point="geocodeAddress">
                             </div>
                         </div>
@@ -85,8 +81,6 @@
                 <div class="submit-area">
                     <p>
                         ${nls.user.submitInstructions}</p>
-                   <!-- <button type="button" data-dojo-attach-point="submitButton" class="btn btn-primary ">
-                        ${nls.user.submitButtonText}</button>-->
                     <button type="button" data-dojo-attach-point="submitButton" data-loading-text="Loading..." class="btn btn-primary">
                         ${nls.user.submitButtonText}</button>
                 </div>

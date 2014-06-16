@@ -1,4 +1,4 @@
-﻿<div data-dojo-attach-point="authorMode">
+<div data-dojo-attach-point="authorMode">
     <nav class="visible-xs navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -97,6 +97,8 @@
                             ${nls.builder.layerTabText}</div>
                         <form role="form">
                         <div class="form-group">
+                            <div data-dojo-attach-point="erroMessageDiv">
+                            </div>
                             <label for="">
                                 ${nls.builder.selectLayerLabelText}</label>
                             <select id="selectLayer" class="form-control">
@@ -131,7 +133,7 @@
                             <label for="">
                                 ${nls.builder.detailDescriptionLabelText}
                             </label>
-                            <textarea class="form-control" id="detailDescriptionInput" rows="3"></textarea>
+                            <textarea class="form-control" id="detailDescriptionInput" rows="6"></textarea>
                         </div>
                         </form>
                         <p class="text-right">
