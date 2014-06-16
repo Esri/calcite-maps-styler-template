@@ -1,0 +1,57 @@
+﻿define(
+    ({
+        builder: {
+            invalidWebmapSelectionAlert: "ä_Selected webmap does not contain any feature server_Ü",
+            selectThemeText: "ä_Select Form Theme_Ü",
+            fieldLabelPlaceHolder: "ä_Label this field_Ü",
+            fieldDescPlaceHolder: "ä_Describe this field_Ü",
+            webmapText: "ä_Webmap_Ü",
+            layerText: "Layer",
+            detailsText: "Details",
+            fieldsText: "Felder",
+            styleText: "ä_Style_Ü",
+            previewText: "Vorschau",
+            publishText: "Veröffentlichen",
+            titleText: "ä_GeoForm Builder_Ü",
+            descriptionText: "ä_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._Ü",
+            btnPreviousText: "ä_Previous_Ü",
+            btnNextText:"ä_Next_Ü",
+            webmapTabTitleText: "ä_Choose a Webmap_Ü",
+            btnSelectWebmapText:"ä_Select Webmap_Ü",
+            layerTabTitleText: "ä_Select Editable Layer_Ü",
+            selectLayerLabelText:"Layer",
+            selectLayerDefaultOptionText:"Layer auswählen",
+            detailsTabTitleText:"ä_Form Details_Ü",
+            detailTitleLabelText: "Titel",
+            detailLogoLabelText: "ä_Logo Image_Ü",
+            detailDescriptionLabelText: "Beschreibung",
+            fieldTabDisplayHeaderText: "Anzeigen",
+            fieldTabFieldHeaderText: "Feld",
+            fieldTabLabelHeaderText: "Beschriftung",
+            fieldTabTypeHeaderText: "Typ",
+            fieldTabDescriptionHeaderText: "Beschreibung",
+            previewApplicationText: "ä_Preview Application_Ü",
+            saveApplicationText: "ä_Save Application_Ü",
+            saveText: "Speichern",
+
+            //Local string for user mode
+            defaultTitleText: "ä_Default Title_Ü",
+            defaultDescriptionText: "ä_Default Description_Ü",
+            geoFormGeneralTabText: "Allgemein",
+            locationInformationText: "ä_Location Info_Ü",
+            myLocationText: "Eigener Standort",
+            addressText: "Adresse",
+            cooridnatesText: "ä_Coordinates_Ü",
+            locationTabText: "Position",
+            enterCoordinatesPlaceholder: "ä_Enter Coordinates_Ü",
+            submitButtonText: "ä_Submit_Ü",
+            clearButtonText: "Löschen",
+            fieldvalidationMessageAlertText: "ä_Please enter a valid number_Ü",
+            formValidationMessageAlertText: "ä_Please verify the form for errors and resubmit the form_Ü",
+            latlongValidationMessageAlert: "ä_Please select x and y coordinates_Ü",
+            emptylatitudeAlertMessage:"ä_Please enter Latitude_Ü",
+            emptylongitudeAlertMessage:"ä_Please enter Longitude_Ü"
+        }
+    })
+    
+);

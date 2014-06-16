@@ -16,6 +16,16 @@
  */
 define(({
         map: {
-            error: "須_Unable to create map_鷗"
+            error: "マップを作成できません"
+        },
+        days: {
+           now: "須_NOW_鷗",
+           sun: "須_SUN_鷗",
+           mon: "須_MON_鷗",
+           tue: "須_TUE_鷗",
+           wed: "須_WED_鷗",
+           thu: "須_THU_鷗",
+           fri: "須_FRI_鷗",
+           sat: "須_SAT_鷗"
         }
 }));

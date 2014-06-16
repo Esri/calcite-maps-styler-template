@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "Stäng"
+			},
 			loading: {
-				step1: "Å_Loading application_ö",
-				step2: "Å_Loading data_ö",
-				step3: "Å_Initializing_ö",
-				loadBuilder: "Å_Switching to builder_ö",
-				fail: "Å_Sorry, loading failed_ö",
-				failButton: "Å_Retry_ö"
+				step1: "Läser in applikation",
+				step2: "Läser in data",
+				step3: "Initierar",
+				loadBuilder: "Växlar till byggverktyget",
+				fail: "Det gick inte att läsa in",
+				failButton: "Försök igen"
 			},
 			signin: {
-				title: "Å_Authentication is required_ö",
-				explainViewer: "Å_Please sign in with an account on %PORTAL_LINK% to access the application._ö",
-				explainBuilder: "Å_Please sign in with an account on %PORTAL_LINK% to configure the application._ö"
+				title: "Autentisering krävs",
+				explainViewer: "Logga in med ett konto på %PORTAL_LINK% om du vill få åtkomst till applikationen.",
+				explainBuilder: "Logga in med ett konto på %PORTAL_LINK% om du vill konfigurera applikationen."
 			},
 			errors: {
-				boxTitle: "Å_An error has occurred_ö",
-				invalidConfig: "Å_Fatal error: Invalid configuration_ö",
-				invalidConfigNoApp: "Å_Fatal error: Web Mapping Application identifier not specified in index.html_ö",
-				createMap: "Å_Unable to create map_ö",
-				invalidApp: "Å_Fatal error: The application cannot be loaded_ö",
-				notConfiguredDesktop: "Å_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._ö",
-				notConfiguredMobile: "Å_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._ö",
-				notAuthorized: "Å_You are not authorized to access this application_ö",
-				noBuilderIE8: "Å_The builder is not supported on Internet Explorer before version 9._ö"
+				boxTitle: "Ett fel har inträffat",
+				invalidConfig: "Allvarligt fel: ogiltig konfiguration",
+				invalidConfigNoApp: "Allvarligt fel: Webbkartapplikationens identifierare anges inte i index.html",
+				createMap: "Det gick inte att skapa kartan",
+				invalidApp: "Allvarligt fel: programmet kunde inte läsas in",
+				notConfiguredDesktop: "Välkommen till %TPL_NAME%-webbapplikationen.<br />Applikationen har inte konfigurerats ännu.",
+				notConfiguredMobile: "Välkommen till %TPL_NAME%-webbapplikationen. Applikationen har inte konfigurerats ännu och byggverktyget går inte att använda på mobila enheter.",
+				notAuthorized: "Du är inte behörig att konfigurera det här programmet",
+				noBuilderIE8: "Byggverktyget går inte att använda med tidigare versioner av Internet Explorer än version 9."
 			},
 			mobileView: {
-				tapForDetails: "Å_Tap for details_ö",
-				swipeToExplore: "Å_Swipe to explore_ö",
-				tapForMap: "Å_Tap to get back to the Map_ö"
+				tapForDetails: "Peka för information",
+				swipeToExplore: "Svep för att utforska",
+				tapForMap: "Peka för att återgå till kartan"
 			},
 			floatLayout: {
-				scroll: "Å_Scroll_ö"
+				scroll: "Bläddra"
 			},
 			sideLayout: {
-				scroll: "Å_Scroll down for more!_ö"
+				scroll: "Bläddra nedåt för att visa mer"
 			},
 			mainStage: {
-				back: "Å_Back_ö"
+				back: "Bakåt"
 			},
 			headerFromCommon: {
-				storymapsText: "Å_A story map_ö",
-				builderButton: "Å_Edit_ö",
-				bitlyTooltip: "Å_Get a short link to the application_ö",
-				templateTitle: "Å_Set template title_ö",
-				templateSubtitle: "Å_Set template subtitle_ö",
-				share: "Å_Share_ö"
+				storymapsText: "En berättelsekarta",
+				builderButton: "Redigera",
+				bitlyTooltip: "Hämta en kort länk till applikationen",
+				templateTitle: "Ange malltitel",
+				templateSubtitle: "Ange underrubrik för mallen",
+				share: "Dela"
 			},
 			overviewFromCommon: {
-				title: "Å_Overview Map_ö",
+				title: "Översiktskarta",
 			},
 			legendFromCommon: {
-				title: "Å_Legend_ö"
+				title: "Teckenförklaring"
+			},
+			shareFromCommon: {
+				copy: "Kopiera",
+				copied: "Kopierad",
+				open: "Öppna",
+				embed: "Å_Embed in website_ö",
+				embedExplain: "Å_Use the following HTML code to embed the Journal in a website._ö",
+				size: "Storlek (bredd/höjd):"
 			}
         }
     })

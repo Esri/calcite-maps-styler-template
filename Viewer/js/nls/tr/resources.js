@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "ı_Unable to create map_İ"
+            "error": "Harita oluşturulamıyor"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'ı_Landscape (PDF)_İ',
-			      "label2": 'ı_Portrait (PDF)_İ',
-			      "label3": 'ı_Landscape (Image)_İ',
-			      "label4": 'ı_Portrait (Image)_İ'
-			    }
+			      "label1": 'Yatay (PDF)',
+			      "label2": 'Dikey (PDF)',
+			      "label3": 'Yatay (Görüntü)',
+			      "label4": 'Dikey (Görüntü)'
+			    },
+			    "legend": "ı_Add legend to output_İ"
 			},
 			"share": {
-				"extent": "ı_Use current map extent_İ",
-				"label": "ı_Share this map_İ",
-				"link": "ı_Map Link_İ",
-				"facebook": "ı_Facebook_İ",
-				"twitter": "ı_Twitter_İ"
+				"extent": "Geçerli harita yayılımını kullan",
+				"label": "Bu haritayı paylaş",
+				"link": "Harita Bağlantısı",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "ı_Default extent_İ",
-        	"locate": "ı_Find my location_İ",
-        	"legend": "ı_Legend_İ",
-        	"bookmarks": "ı_Bookmarks_İ",
-        	"layers": "ı_Layers_İ",
+        	"home": "Varsayılan yayılım",
+        	"locate": "Konumumu bul",
+        	"legend": "Gösterim",
+        	"bookmarks": "Yer İşaretleri",
+        	"layers": "Katmanlar",
         	"basemap": "ı_Basemap gallery_İ",
         	"overview": "ı_Overview map_İ",
-        	"measure": "ı_Measure_İ",
-        	"edit": "ı_Edit_İ",
-        	"time": "ı_Time_İ",
-        	"print": "ı_Print_İ",
-        	"details": "ı_Details_İ",
-        	"share": "ı_Share_İ"
+        	"measure": "Ölç",
+        	"edit": "Düzenle",
+        	"time": "Zaman",
+        	"print": "Yazdır",
+        	"details": "Ayrıntılar",
+        	"share": "Paylaş"
         }
 }));

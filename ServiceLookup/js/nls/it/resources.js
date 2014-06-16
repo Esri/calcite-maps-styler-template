@@ -5,7 +5,7 @@
             mouseToolTip: "Fare clic sulla mappa per cercare il servizio"
         },
         geocoder: {
-            defaultText: "é_Enter an address or point of interest_È"
+            defaultText: "Immettere un indirizzo o un punto di interesse"
         },
         error: {
             layerNotFound: "Layer non incluso nella mappa Web",

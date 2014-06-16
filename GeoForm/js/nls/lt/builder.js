@@ -1,0 +1,57 @@
+﻿define(
+    ({
+        builder: {
+            invalidWebmapSelectionAlert: "Į_Selected webmap does not contain any feature server_š",
+            selectThemeText: "Į_Select Form Theme_š",
+            fieldLabelPlaceHolder: "Į_Label this field_š",
+            fieldDescPlaceHolder: "Į_Describe this field_š",
+            webmapText: "Į_Webmap_š",
+            layerText: "Sluoksnis",
+            detailsText: "Detali informacija",
+            fieldsText: "Laukai",
+            styleText: "Į_Style_š",
+            previewText: "Peržiūra",
+            publishText: "Publikuoti",
+            titleText: "Į_GeoForm Builder_š",
+            descriptionText: "Į_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._š",
+            btnPreviousText: "Ankstesnis",
+            btnNextText:"Į_Next_š",
+            webmapTabTitleText: "Į_Choose a Webmap_š",
+            btnSelectWebmapText:"Į_Select Webmap_š",
+            layerTabTitleText: "Į_Select Editable Layer_š",
+            selectLayerLabelText:"Sluoksnis",
+            selectLayerDefaultOptionText:"Pasirinkti sluoksnį",
+            detailsTabTitleText:"Į_Form Details_š",
+            detailTitleLabelText: "Pavadinimas",
+            detailLogoLabelText: "Į_Logo Image_š",
+            detailDescriptionLabelText: "Aprašas",
+            fieldTabDisplayHeaderText: "Rodyti",
+            fieldTabFieldHeaderText: "Laukas",
+            fieldTabLabelHeaderText: "Žymė",
+            fieldTabTypeHeaderText: "Tipas",
+            fieldTabDescriptionHeaderText: "Aprašas",
+            previewApplicationText: "Į_Preview Application_š",
+            saveApplicationText: "Į_Save Application_š",
+            saveText: "Įrašyti",
+
+            //Local string for user mode
+            defaultTitleText: "Į_Default Title_š",
+            defaultDescriptionText: "Į_Default Description_š",
+            geoFormGeneralTabText: "Į_General_š",
+            locationInformationText: "Į_Location Info_š",
+            myLocationText: "Mano vieta",
+            addressText: "Adresas",
+            cooridnatesText: "Į_Coordinates_š",
+            locationTabText: "Vieta",
+            enterCoordinatesPlaceholder: "Į_Enter Coordinates_š",
+            submitButtonText: "Pateikti",
+            clearButtonText: "Valyti",
+            fieldvalidationMessageAlertText: "Į_Please enter a valid number_š",
+            formValidationMessageAlertText: "Į_Please verify the form for errors and resubmit the form_š",
+            latlongValidationMessageAlert: "Į_Please select x and y coordinates_š",
+            emptylatitudeAlertMessage:"Į_Please enter Latitude_š",
+            emptylongitudeAlertMessage:"Į_Please enter Longitude_š"
+        }
+    })
+    
+);

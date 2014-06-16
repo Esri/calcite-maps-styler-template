@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "ķ_Unable to create map_ū"
+            "error": "Nevar izveidot karti"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'ķ_Landscape (PDF)_ū',
-			      "label2": 'ķ_Portrait (PDF)_ū',
-			      "label3": 'ķ_Landscape (Image)_ū',
-			      "label4": 'ķ_Portrait (Image)_ū'
-			    }
+			      "label1": 'Ainava (PDF)',
+			      "label2": 'Portrets (PDF)',
+			      "label3": 'Ainava (Attēls)',
+			      "label4": 'Portrets (Attēls)'
+			    },
+			    "legend": "ķ_Add legend to output_ū"
 			},
 			"share": {
-				"extent": "ķ_Use current map extent_ū",
-				"label": "ķ_Share this map_ū",
-				"link": "ķ_Map Link_ū",
-				"facebook": "ķ_Facebook_ū",
-				"twitter": "ķ_Twitter_ū"
+				"extent": "Lieto pašreizējo kartes pārklājumu",
+				"label": "Koplietot šo karti",
+				"link": "Kartes saite",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "ķ_Default extent_ū",
-        	"locate": "ķ_Find my location_ū",
-        	"legend": "ķ_Legend_ū",
-        	"bookmarks": "ķ_Bookmarks_ū",
-        	"layers": "ķ_Layers_ū",
+        	"home": "Noklusējuma pārklājums",
+        	"locate": "Atrast manu izvietojumu",
+        	"legend": "Leģenda",
+        	"bookmarks": "Grāmatzīmes",
+        	"layers": "Slāņi",
         	"basemap": "ķ_Basemap gallery_ū",
         	"overview": "ķ_Overview map_ū",
-        	"measure": "ķ_Measure_ū",
-        	"edit": "ķ_Edit_ū",
-        	"time": "ķ_Time_ū",
-        	"print": "ķ_Print_ū",
-        	"details": "ķ_Details_ū",
+        	"measure": "Izmērīt",
+        	"edit": "Rediģēt",
+        	"time": "Laiks",
+        	"print": "Drukāt",
+        	"details": "Detaļas",
         	"share": "ķ_Share_ū"
         }
 }));

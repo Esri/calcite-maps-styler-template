@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "須_Unable to create map_鷗"
+            "error": "マップを作成できません"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": '須_Landscape (PDF)_鷗',
-			      "label2": '須_Portrait (PDF)_鷗',
-			      "label3": '須_Landscape (Image)_鷗',
-			      "label4": '須_Portrait (Image)_鷗'
-			    }
+			      "label1": '横 (PDF)',
+			      "label2": '縦 (PDF)',
+			      "label3": '横 (画像)',
+			      "label4": '縦 (画像)'
+			    },
+			    "legend": "須_Add legend to output_鷗"
 			},
 			"share": {
-				"extent": "須_Use current map extent_鷗",
-				"label": "須_Share this map_鷗",
-				"link": "須_Map Link_鷗",
-				"facebook": "須_Facebook_鷗",
-				"twitter": "須_Twitter_鷗"
+				"extent": "現在のマップ範囲を使用",
+				"label": "このマップを共有",
+				"link": "マップ リンク",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "須_Default extent_鷗",
-        	"locate": "須_Find my location_鷗",
-        	"legend": "須_Legend_鷗",
-        	"bookmarks": "須_Bookmarks_鷗",
-        	"layers": "須_Layers_鷗",
+        	"home": "デフォルトの表示範囲",
+        	"locate": "現在の場所を検索",
+        	"legend": "凡例",
+        	"bookmarks": "ブックマーク",
+        	"layers": "レイヤ",
         	"basemap": "須_Basemap gallery_鷗",
         	"overview": "須_Overview map_鷗",
-        	"measure": "須_Measure_鷗",
-        	"edit": "須_Edit_鷗",
-        	"time": "須_Time_鷗",
-        	"print": "須_Print_鷗",
-        	"details": "須_Details_鷗",
-        	"share": "須_Share_鷗"
+        	"measure": "計測",
+        	"edit": "編集",
+        	"time": "時間",
+        	"print": "印刷",
+        	"details": "詳細",
+        	"share": "共有"
         }
 }));

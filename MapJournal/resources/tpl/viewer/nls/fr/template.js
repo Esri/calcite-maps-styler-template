@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "Fermer"
+			},
 			loading: {
-				step1: "æ_Loading application_Â",
-				step2: "æ_Loading data_Â",
-				step3: "æ_Initializing_Â",
-				loadBuilder: "æ_Switching to builder_Â",
-				fail: "æ_Sorry, loading failed_Â",
-				failButton: "æ_Retry_Â"
+				step1: "Chargement de l\'application",
+				step2: "Chargement des données",
+				step3: "Initialisation",
+				loadBuilder: "Accéder au générateur",
+				fail: "Le chargement a échoué",
+				failButton: "Réessayez"
 			},
 			signin: {
-				title: "æ_Authentication is required_Â",
-				explainViewer: "æ_Please sign in with an account on %PORTAL_LINK% to access the application._Â",
-				explainBuilder: "æ_Please sign in with an account on %PORTAL_LINK% to configure the application._Â"
+				title: "L\'authentification est nécessaire",
+				explainViewer: "Connectez-vous avec un compte sur %PORTAL_LINK% pour accéder à l\'application.",
+				explainBuilder: "Connectez-vous avec un compte sur %PORTAL_LINK% pour configurer l\'application."
 			},
 			errors: {
-				boxTitle: "æ_An error has occurred_Â",
-				invalidConfig: "æ_Fatal error: Invalid configuration_Â",
-				invalidConfigNoApp: "æ_Fatal error: Web Mapping Application identifier not specified in index.html_Â",
-				createMap: "æ_Unable to create map_Â",
-				invalidApp: "æ_Fatal error: The application cannot be loaded_Â",
-				notConfiguredDesktop: "æ_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._Â",
-				notConfiguredMobile: "æ_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._Â",
-				notAuthorized: "æ_You are not authorized to access this application_Â",
-				noBuilderIE8: "æ_The builder is not supported on Internet Explorer before version 9._Â"
+				boxTitle: "Une erreur s\’est produite",
+				invalidConfig: "Erreur fatale : configuration non valide",
+				invalidConfigNoApp: "Erreur fatale : identifiant de l\'application cartographique Web non spécifié dans index.html",
+				createMap: "Impossible de créer la carte",
+				invalidApp: "Erreur fatale : impossible de charger l\’application",
+				notConfiguredDesktop: "Bienvenue dans l\'application Web %TPL_NAME%.<br />L\'application n\'est pas encore configurée.",
+				notConfiguredMobile: "Bienvenue dans l\'application Web %TPL_NAME%. L\'application n\'est pas encore configurée et le générateur n\'est pas pris en charge sur les appareils mobiles.",
+				notAuthorized: "Vous n\’êtes pas autorisé à accéder à cette application",
+				noBuilderIE8: "Le générateur n\'est pas pris en charge dans Internet Explorer avant la version 9."
 			},
 			mobileView: {
-				tapForDetails: "æ_Tap for details_Â",
-				swipeToExplore: "æ_Swipe to explore_Â",
-				tapForMap: "æ_Tap to get back to the Map_Â"
+				tapForDetails: "Touchez pour obtenir des détails",
+				swipeToExplore: "Effectuez un mouvement de balayage pour explorer",
+				tapForMap: "Touchez pour revenir à la carte"
 			},
 			floatLayout: {
-				scroll: "æ_Scroll_Â"
+				scroll: "Défilement"
 			},
 			sideLayout: {
-				scroll: "æ_Scroll down for more!_Â"
+				scroll: "Faites défiler pour en savoir plus !"
 			},
 			mainStage: {
-				back: "æ_Back_Â"
+				back: "Retour"
 			},
 			headerFromCommon: {
-				storymapsText: "æ_A story map_Â",
-				builderButton: "æ_Edit_Â",
-				bitlyTooltip: "æ_Get a short link to the application_Â",
-				templateTitle: "æ_Set template title_Â",
-				templateSubtitle: "æ_Set template subtitle_Â",
-				share: "æ_Share_Â"
+				storymapsText: "Carte de narration",
+				builderButton: "Modifier",
+				bitlyTooltip: "Obtenir un lien court vers l\'application",
+				templateTitle: "Définir le titre du modèle",
+				templateSubtitle: "Définir le sous-titre du modèle",
+				share: "Partager"
 			},
 			overviewFromCommon: {
-				title: "æ_Overview Map_Â",
+				title: "Carte générale",
 			},
 			legendFromCommon: {
-				title: "æ_Legend_Â"
+				title: "Légende"
+			},
+			shareFromCommon: {
+				copy: "Copier",
+				copied: "Copié",
+				open: "Ouvrir",
+				embed: "æ_Embed in website_Â",
+				embedExplain: "æ_Use the following HTML code to embed the Journal in a website._Â",
+				size: "Taille (largeur/hauteur) :"
 			}
         }
     })

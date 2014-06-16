@@ -2,13 +2,13 @@
 	({
 		commonMapControls: {
 			common: {
-				settings: "Ж_Settings_Я",
-				openDefault: "Ж_Open by default_Я"
+				settings: "Настройки",
+				openDefault: "Открыть по умолчанию"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "Ж_Basemap_Я",
-				expandFactorLabel: "Ж_Expand Factor_Я",
-				expandFactorPopover: "Ж_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle._Я"
+				basemapGalleryBtnLabel: "Базовая карта",
+				expandFactorLabel: "Коэффициент",
+				expandFactorPopover: "Соотношение размера окна обзорной карты и рамки отображаемого в нем экстента карты. По умолчанию равно 2, это означает, что обзорная карта будет как минимум в 2 раза больше, чем размер рамки экстента."
 			}
 		}
 	})

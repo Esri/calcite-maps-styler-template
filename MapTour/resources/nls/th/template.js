@@ -410,7 +410,7 @@
 					div1: "แผนที่ทัวร์ออกแบบมาเพื่อให้นำเสนอข้อมูลทางภูมิศาสตร์  สถานที่ข้อมูลที่น่าสนใจหรือองค์ประกอบสื่อจากเรื่องราวที่ต้องการเล่า",
 					div2: "โครงร่างเท็มเพลตที่ช่วยในการสร้างเว็บแอพพลิเคชั่นให้สามารถใช้งานง่าย สวยงาม และน่าใช้ แล้วยังช่วยให้คุณนำเสนอข้อมูลแหล่งท่องเที่ยวที่น่าสนใจโดยไล่เรียงจากลำดับที่กำหนดไว้ ซึ่งโครงร่างนี้ ผู้ใช้งานสามารถเข้าถึงได้จากทุกเว็บบราวเซอร์ ผ่านทุกอุปกรณ์สื่อสาร ทั้งสมาร์ทโฟสและแท็บเล็ต <br /><br /> นี่คือตัวอย่างเว็บแอพพลิเคชั่นที่คุณสร้างขึ้นได้เอง",
 					div4: "<a href='http://storymaps.esri.com/stories/maptour-palmsprings' target='_blank'>แผนที่ทัวร์ที่ปาล์มสปริง</a>.",
-					div42: "ดูตัวอย่างแผนที่ทัวร์ที่คนอื่นได้สร้างเอาไว้ <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>visit the gallery</a> on the <a href='http://storymaps.esri.com/' target='_blank'>Story Maps website</a>. คุณสามารถติดตามเราได้ที่ Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
+					div42: "ก้_To see examples of map tours that other users are creating, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>visit the gallery</a> on the <a href='http://storymaps.arcgis.com/' target='_blank'>Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ษฺ",
 					div5: "เรามีความต้องการที่จะได้ยินจากคุณ! ถ้าคุณมีคำถาม, ต้องการเพิ่มฟีเจอร์ใหม่, หรือคิดว่าคุณพบ bug โปรดชม <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>."
 				},
 				tab2: {
@@ -418,9 +418,9 @@
 					div1: "องค์ประกอบหลักพิจารณาจากเมื่อกำลังสร้างแผนที่ทัวร์ ถูกเลือกรูปของคุณจะเก็บอยู่ที่ไหน แผนที่ทัวร์สามารถใช้รูปภาพที่เก็บอยู่ในรูปที่แบ่งให้บริการอยู่ หรือในบราวเซอร์ใดๆ หรือการแนบจากฟีเจอร์เซอร์วิส",
 					div1a: "ดูส่วนสุดท้ายของแถบ เพื่อดูรายละเอียดเกี่ยวกับการรองรับ นามสกุลของภาพและวิดีโอ",
 					div2: "หน้าผู้สร้างแบบโต้ตอบให้คุณ สองเงื่อนไขในการจัดการรูปภาพในทัวร์ของคุณ :",
-					div3: "<ul><li> คุณสามารถใช้ <b>รูปเป็นภาพออนไลน์แล้ว</b>, ตัวอย่างเช่นรูปที่แชร์ไปยังบน ฟริกเกอร์, หรือรูปที่เก็บอยู่บนเว็บไซต์ของคุณ. รูปเหล่านี้จะอ้างอิงไปยัง Map Tour ของคุณผ่านทาง URLs </li><li>คุณสามารถ <b>อัพโหลดรูปจากเครืองคอมพิวเตอร์ของคุณ</b>ตรงไปยัง Map Tourของคุณในส่วนนี้ คุณต้องเป็นสมาชิกใน ArcGIS Online หรือได้สิทธิจากผู้แบ่งปันหรือผู้ดูแลระบบ  เพราะว่าการนำฝากฟีเจอร์จะถูกสร้างและเก็บรูปภาพของคุณให้อัตโนมัติ</li></ul>",
+					div3: "ก้_<ul><li>You can use <b>photos that are already online</b>, such as images stored in a photo sharing site like Flickr, or images stored on your own website. These images will be referenced in your Map Tour via their URLs.</li><li>You can also <b>upload photos from your computer</b> directly into your Map Tour. This upload option requires that you have an ArcGIS for Organizations account and that you have Publisher or Administrator privileges, because a hosted feature service is automatically created for you in which your photos are stored as attachments.</li></ul>_ษฺ",
 					div4: "สาเหตุหลักของการใช้ :",
-					div4b: "<b>รูปของคุณยังไม่ได้ฝากไปยังเจ้าบ้าน</b> คุณได้สมัครสมาชิกใน  ArcGIS Online แล้วหรือยัง: การฝากข้อมูลฟีเจอร์เป็นเซอร์วิสเป็นทางเลือกที่ดีที่สุด เหมือนกับการแบ่งปันรูปไปยังสาธารณะ เราจะช่วยเพิ่มประสิทธิภาพ รูปของคุณแสดงผลได้เร็วขึ้น และคุณสามารถเข้าถึงผู้ดูแลระบบและความสามารถในการจัดการบนระบบปฏิบัติการของ ArcGIS",
+					div4b: "ก้_<b>Your photos are not hosted</b> yet and you have an ArcGIS for Organizations account: Using a hosted feature service is your best choice. Like public photo sharing services, we will optimize your pictures to create fast-loading images and you will have access to all administration and data management capabilities of the ArcGIS platform._ษฺ",
 					div5: "<b>คุณไม่ได้เป็นสมาชิกในองค์กร</b>: ครั้งแรกคุณต้องอัพโหลดรูปภาพของคุณหรือแชร์รูปไปยังเว็บไซต์ไปยังเว็บเซิร์ฟเวอร์ของคุณเอง ผู้ช่วยสร้างจะช่วยคุณสำหรับรูปภาพเพื่อจะทำต่อไปยังการโฮสต์ไปยังที่เดิม",
 					div6: "<b>คุณกำลังมองหาไฟล์ฟีเจอร์เซอร์วิสที่มีอยู่แล้ว </b> ซึ่งเก็บไฟล์รูปภาพที่แนบมาจากที่เก็บรูปภาพของคุณ :ดูรายละเอียดด้านล่าง.",
 					div7: "<b>คุณเป็นลูกค้าในเวอร์ชั่นก่อนหน้า </b>  โครงร่างแผนที่ทัวร์มีรูปจากไฟล์ CSV ในการอ้างอิงรูปและรูปขนาดเล็กเรียบร้อยแล้ว : คุณจะต้องนำเข้าและแก้ไขข้อมูลของคุณ  ในการสร้างรองรับไฟล์ CSV เท่านั้น ; สำหรับที่อยู่ สามารถทำต่อได้ในเว็บแมพของคุณ (ดูส่วนด้านล่าง).",
@@ -525,7 +525,7 @@
 				shareA2div1: "บันทึกและนำกลับมาใช้ตามลิ้ง %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>.",
 				shareA2div2: "หากเป็นเจ้าของโปรแกรม เมื่อคุณลงชื่อเข้าใช้ใน ArcGIS.com โปรแกรมจะเปิดหน้าและปุ่มสำหรับการพัฒนาให้",				
 				shareQ3: "ข้อมูลของคุณเก็บไว้ที่ใด?",
-				shareA3: "การตั้งค่าทัวร์มีอยู่ใน <a href='%LINK1%' target='_blank'>รายการเว็บแมพนี้</a> และ <a href='%LINK2%' target='_blank'>รายการเว็บแมพนี้</a>. ถ้าคุณใช้  Flickr, Picasa, Facebook หรือนำเข้า  YouTube  รูปของคุณและวิดีโอของคุณยังคงเก็บอยู่ในและไม่ซ้ำซ้อนกับข้อมูลที่อยู่ใน ArcGIS Online",
+				shareA3: "ก้_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. Flickr, Picasa, and Facebook images and YouTube videos remain referenced at their respective sites and aren't duplicated in ArcGIS Online._ษฺ",
 				shareWarning: "แบ่งปัน %WITH%ถูกyou are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>.",
 				shareWarningWith1: "โดยสาธารณะ",
 				shareWarningWith2: "โดยสาธารณะและสำหรับองค์กร"

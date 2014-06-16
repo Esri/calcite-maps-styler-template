@@ -1,0 +1,57 @@
+﻿define(
+    ({
+        builder: {
+            invalidWebmapSelectionAlert: "Å_Selected webmap does not contain any feature server_ö",
+            selectThemeText: "Å_Select Form Theme_ö",
+            fieldLabelPlaceHolder: "Å_Label this field_ö",
+            fieldDescPlaceHolder: "Å_Describe this field_ö",
+            webmapText: "Å_Webmap_ö",
+            layerText: "Karttataso",
+            detailsText: "Yksityiskohdat",
+            fieldsText: "Kentät",
+            styleText: "Å_Style_ö",
+            previewText: "Esikatselu",
+            publishText: "Julkaise",
+            titleText: "Å_GeoForm Builder_ö",
+            descriptionText: "Å_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._ö",
+            btnPreviousText: "Edellinen",
+            btnNextText:"Seuraava",
+            webmapTabTitleText: "Å_Choose a Webmap_ö",
+            btnSelectWebmapText:"Å_Select Webmap_ö",
+            layerTabTitleText: "Å_Select Editable Layer_ö",
+            selectLayerLabelText:"Karttataso",
+            selectLayerDefaultOptionText:"Valitse karttataso",
+            detailsTabTitleText:"Å_Form Details_ö",
+            detailTitleLabelText: "Otsikko",
+            detailLogoLabelText: "Å_Logo Image_ö",
+            detailDescriptionLabelText: "Kuvaus",
+            fieldTabDisplayHeaderText: "Näytä",
+            fieldTabFieldHeaderText: "Kenttä",
+            fieldTabLabelHeaderText: "Tunnusteksti",
+            fieldTabTypeHeaderText: "Tyyppi",
+            fieldTabDescriptionHeaderText: "Kuvaus",
+            previewApplicationText: "Å_Preview Application_ö",
+            saveApplicationText: "Å_Save Application_ö",
+            saveText: "Tallenna",
+
+            //Local string for user mode
+            defaultTitleText: "Å_Default Title_ö",
+            defaultDescriptionText: "Å_Default Description_ö",
+            geoFormGeneralTabText: "Yleinen",
+            locationInformationText: "Å_Location Info_ö",
+            myLocationText: "Oma sijainti",
+            addressText: "Osoite",
+            cooridnatesText: "Å_Coordinates_ö",
+            locationTabText: "Sijainti",
+            enterCoordinatesPlaceholder: "Å_Enter Coordinates_ö",
+            submitButtonText: "Lähetä",
+            clearButtonText: "Tyhjennä",
+            fieldvalidationMessageAlertText: "Å_Please enter a valid number_ö",
+            formValidationMessageAlertText: "Å_Please verify the form for errors and resubmit the form_ö",
+            latlongValidationMessageAlert: "Å_Please select x and y coordinates_ö",
+            emptylatitudeAlertMessage:"Å_Please enter Latitude_ö",
+            emptylongitudeAlertMessage:"Å_Please enter Longitude_ö"
+        }
+    })
+    
+);

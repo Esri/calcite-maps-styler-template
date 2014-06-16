@@ -1,0 +1,557 @@
+{
+    "license": [
+        " | Copyright 2012 Esri",
+        " |",
+        " | Licensed under the Apache License, Version 2.0 (the 'License');",
+        " | you may not use this file except in compliance with the License.",
+        " | You may obtain a copy of the License at",
+        " |",
+        " |    http://www.apache.org/licenses/LICENSE-2.0",
+        " |",
+        " | Unless required by applicable law or agreed to in writing, software",
+        " | distributed under the License is distributed on an 'AS IS' BASIS,",
+        " | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.",
+        " | See the License for the specific language governing permissions and",
+        " | limitations under the License."
+    ],
+    "documentation":[
+        "For help configuring this application, see:",
+        "http://solutions.arcgis.com/local-government/help/finder/, or",
+        "http://solutions.arcgis.com/state-government/help/finder/"
+     ],
+    "values": {
+        "webmap": "3f46bb9925fd4d0cbda377c62529cf81",
+        "titleBar.title": "Numbers",
+        "titleBar.iconUrl": "images/onlineapp.png",
+        "colorizer.theme": "WarmBrights",
+        "searchBox.hint": "",
+        "featureSearcher.searchLayerName": "CodedValues - Numbers",
+        "featureSearcher.searchFields": "Italian,French,Description",
+        "featureSearcher.displayFields": "",
+        "highlighter.showFeaturePopup": true,
+        "highlighter.highlightZoomLevel": 16,
+        "basemapBox.basemapgroupTitle": "",
+        "basemapBox.basemapgroupOwner": "",
+        "helpMessageBox.content": "Finder<hr><br>Finder provides the general public and other interested parties access to searchable and interactive information such as property tax and assessment information or the locations of water access points.<br><br>To locate this information, click a feature on the map or search for the feature by address, name, or another identifier such as Parcel ID."
+    },
+
+    "configurationSettings": [{
+        "category": "<b>Header</b>",
+        "fields": [{
+            "label": "Title",
+            "fieldName": "titleBar.title",
+            "type": "string",
+            "tooltip": "Application title displayed in header"
+        }, {
+            "label": "Icon URL",
+            "fieldName": "titleBar.iconUrl",
+            "type": "string",
+            "tooltip": "Icon in top left corner of application. Icon should be 48px high."
+        }, {
+            "label": "Color Scheme:",
+            "fieldName": "colorizer.theme",
+            "type": "string",
+            "options": [{
+                "label": "Neutral Grays",
+                "value": "NeutralGrays"
+            }, {
+                "label": "Earth Browns",
+                "value": "EarthBrowns"
+            }, {
+                "label": "Sea Blues",
+                "value": "SeaBlues"
+            }, {
+                "label": "Natural Greens",
+                "value": "NaturalGreens"
+            }, {
+                "label": "Warm Brights",
+                "value": "WarmBrights"
+            }, {
+                "label": "Scenic Purples",
+                "value": "ScenicPurples"
+            }],
+            "tooltip": "Color of header bar and widget windows"
+        }]
+    }, {
+        "category": "<b>Map Settings</b>",
+        "fields": [{
+            "label": "Select a map",
+            "fieldName": "webmap",
+            "type": "webmap",
+            "tooltip": "Web map displayed in the application"
+        }, {
+            "label": "Alternate Basemap Group",
+            "fieldName": "basemapBox.basemapgroupTitle",
+            "type": "string",
+            "tooltip": "Name of basemap group, or leave blank to use default organization basemap group",
+            "placeholder": "Organization basemaps"
+        }, {
+            "label": "Basemap Group Owner",
+            "fieldName": "basemapBox.basemapgroupOwner",
+            "type": "string",
+            "tooltip": "Username of basemap group owner"
+        }]
+    }, {
+        "category": "<b>Find Settings</b>",
+        "fields": [{
+            "label": "Hint",
+            "fieldName": "searchBox.hint",
+            "type": "string",
+            "tooltip": "Search hint (e.g. Find a Parcel, Find a Park)"
+        }, {
+            "label": "Find Layers",
+            "fieldName": "featureSearcher.searchLayerName",
+            "type": "string",
+            "tooltip": "Comma-separated list of map layer names. Only values in these layers will be searched. One or many layers may be specified.",
+            "placeholder": "Layer 1, Layer 2, …"
+        }, {
+            "label": "Find Fields",
+            "fieldName": "featureSearcher.searchFields",
+            "type": "string",
+            "tooltip": "Comma-separated list of Find Layer field names. Only values in these fields will be searched. One or many fields may be specified.",
+            "placeholder": "FIELD1, FIELD2, …"
+        }, {
+            "label": "Result Display Fields",
+            "fieldName": "featureSearcher.displayFields",
+            "type": "string",
+            "tooltip": "Comma-separated list of Find Layer field names. Values in these fields will be returned in the Find results list. If the layer in which a result was found does not contain a field in this list, the Search Field value is returned.",
+            "placeholder": "FIELD1, FIELD2, …"
+        }, {
+            "label": "Zoom Level",
+            "fieldName": "highlighter.highlightZoomLevel",
+            "type": "number",
+            "constraints": {
+                "min": 0,
+                "places": 0
+            },
+            "tooltip": "Map zoom level for viewing selected features"
+        }, {
+            "label": "Show Popup for Selected Feature",
+            "fieldName": "highlighter.showFeaturePopup",
+            "type": "boolean",
+            "tooltip": "Enable to automatically open the popup for selected search result features."
+        }]
+    }, {
+        "category": "<b>Application Help</b>",
+        "fields": [{
+            "label": "Help Text",
+            "fieldName": "helpMessageBox.content",
+            "type": "string",
+            "stringFieldOption": "textarea",
+            "tooltip": "Help text displayed to the end users of this application"
+        }]
+    }],
+
+    "ui": [{
+        "classname": "js.LGNotes",
+        "config": {
+            "notes": [
+                "commit 5cf7584d6a821309 2014-06-11 11:43:27 -0700"
+            ]
+        }
+    }, {
+        "classname": "js.LGColorizer",
+        "config": {
+            "rootId": "colorizer",
+            "parentDiv": "contentDiv",
+            "colorTable": [{
+                "theme": "NeutralGrays",
+                "colors": ["#969696", "#fff", "#464646", "#d8d8d8"]
+            }, {
+                "theme": "EarthBrowns",
+                "colors": ["#be9969", "#fff", "#523b20", "#d8d8d8"]
+            }, {
+                "theme": "SeaBlues",
+                "colors": ["#00b9f2", "#fff", "#004575", "#d8d8d8"]
+            }, {
+                "theme": "NaturalGreens",
+                "colors": ["#aad04b", "#fff", "#2a7f33", "#d8d8d8"]
+            }, {
+                "theme": "WarmBrights",
+                "colors": ["#f89927", "#fff", "#da4d1e", "#d8d8d8"]
+            }, {
+                "theme": "ScenicPurples",
+                "colors": ["#b279b4", "#fff", "#6b1978", "#d8d8d8"]
+            }]
+        }
+    }, {
+        "classname": "js.LGFrame",
+        "styles": ".appFrame{width:100%;height:100%;overflow:hidden;position:absolute}.frameHeader{width:100%;height:48px;padding:0px;overflow:hidden;position:absolute;border:1px solid lightgray}.frameContent{width:100%;padding:0px;position:absolute}",
+        "config": {
+            "rootId": "outerFrame",
+            "headerDivId": "headerFrame",
+            "contentDivId": "contentFrame",
+            "parentDiv": "contentDiv",
+            "rootClass": "appFrame",
+            "headerDivClass": "frameHeader",
+            "contentDivClass": "frameContent"
+        }
+    }, {
+        "classname": "js.LGBusy",
+        "styles": ".busyImage{display:none;background-image:url('images/loading.gif');width:80px;height:17px;position:absolute;z-index:100}",
+        "config": {
+            "rootId": "busyIndicator",
+            "parentDiv": "contentFrame",
+            "horizOffset": 0,
+            "vertOffset": 0,
+            "busyImageClass": "busyImage"
+        }
+    }, {
+        "classname": "js.LGMap",
+        "styles": ".mapContainer{margin:0px;padding:0px;overflow:hidden;position:absolute}.simpleInfoWindow .close{width:32px!important;height:32px!important;background-size:32px 32px;left:244px!important;top:-18px!important}.simpleInfoWindow .title{min-height:14px}",
+        "config": {
+            "rootId": "map",
+            "rootClass": "mapContainer",
+            "parentDiv": "contentFrame",
+            "fill": true
+        }
+    }, {
+        "classname": "js.LGHighlighter",
+        "config": {
+            "rootId": "highlighter",
+            "parentDiv": "contentFrame",
+            "dependencyId": "map",
+            "lineHiliteColor": "#0000ff",
+            "fillHiliteColor": [0, 0, 255, 0.1]
+        }
+    }, {
+        "classname": "js.LGTitleBar",
+        "styles": ".appTitleBar{height:40px;margin:0px;padding:2px;overflow:hidden;position:absolute}.titleIcon{height:44px;margin:-4px;padding:0px;float:left}.titleText{height:48px;margin:3px 3px 3px 12px;padding:0px;font-size:200%;vertical-align:middle;word-wrap:break-word;float:left}@media all and (max-width: 520px){.titleText{display:none}}",
+        "config": {
+            "rootId": "titleBar",
+            "parentDiv": "headerFrame",
+            "rootClass": "appTitleBar",
+            "horizOffset": 4,
+            "vertOffset": 0,
+            "iconClass": "titleIcon",
+            "titleClass": "titleText"
+        }
+    }, {
+        "classname": "js.LGMapDijitContainer",
+        "styles": ".dijitContainer{position:absolute;z-index:35;}",
+        "config": {
+            "rootId": "homeButton",
+            "parentDiv": "map",
+            "dependencyId": "map",
+            "rootClass": "dijitContainer",
+            "horizOffset": 19,
+            "vertOffset": 91,
+            "dijitAmd": "esri/dijit/HomeButton"
+        }
+    }, {
+        "classname": "js.LGMapDijitContainer",
+        "config": {
+            "rootId": "homeButton",
+            "parentDiv": "map",
+            "dependencyId": "map",
+            "rootClass": "dijitContainer",
+            "horizOffset": 19,
+            "vertOffset": 132,
+            "dijitAmd": "esri/dijit/LocateButton"
+        }
+    }, {
+        "classname": "js.LGGallery",
+        "styles": ".commandPanel{height:44px;margin:-3px;padding:0px;overflow:hidden;position:absolute;text-align:center;vertical-align:middle}.commandPanel table{border-spacing:0px}.commandPanelArrow{width:12px;height:48px;margin:4px;padding:0px;cursor:pointer;vertical-align:middle}.okIE .commandPanelArrow{border-radius:4px}.commandButton{width:44px;height:44px;text-align:center;cursor:pointer}.okIE .commandButton{border-radius:8px}.commandTextButton{width:100%;height:44px;cursor:pointer}.okIE .commandTextButton{border-radius:8px}.commandText{display:inline;height:32px;margin-left:2px;font-size:120%;overflow:hidden;vertical-align:bottom}.okIE .commandText{display:inline-block}.commandIcon{width:32px;height:32px;margin-top:6px}",
+        "config": {
+            "rootId": "commandPanel",
+            "parentDiv": "headerFrame",
+            "rootClass": "commandPanel",
+            "horizOffset": -4,
+            "vertOffset": 0,
+            "itemClass": "commandPanelItem",
+            "arrowClass": "commandPanelArrow"
+        }
+    }, {
+        "classname": "js.LGSearchFeatureLayerMultiplexer",
+        "config": {
+            "rootId": "featureSearcher",
+            "parentDiv": "contentFrame",
+            "dependencyId": "map",
+            "busyIndicator": "busyIndicator",
+            "publishPointsOnly": false,
+            "searchPattern": "%${1}%",
+            "caseInsensitiveSearch": true
+        }
+    }, {
+        "classname": "js.LGLaunchUrl",
+        "config": {
+            "rootId": "launcher",
+            "sameWinTrigger": "launch/parent",
+            "newWinTrigger": "launch/blank"
+        }
+    }, {
+        "classname": "js.LGPrintMap",
+        "styles": ".absolute{position:absolute}.printMapBox{display:none;width:269px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}.printFormatsPanel{height:52px;margin:0px;padding:2px;overflow:hidden;text-align:center;vertical-align:middle}.pushbuttonOn{border:1px solid blue}.printDlogItem{margin:3px!important}",
+        "config": {
+            "rootId": "printMap",
+            "parentDiv": "contentFrame",
+            "rootClass": "printMapBox",
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "asynchronous": false,
+            "format": "PDF",
+            "preserveScale": true,
+            "title": "",
+            "author": "",
+            "orientationButtonClass": "commandButton printDlogItem",
+            "orientationButtonIconClass": "commandIcon",
+            "landscapeButtonIconJson": "[{'shape':{'type':'path','path':'m 31 27 0-18-5 0 0-5-25 0 0 23z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 31 9 27 4'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 28 13-25 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 28 15-25 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 13 17-10 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
+            "landscapeButtonTooltip": "@tooltips.landscape",
+            "landscapeServerSpec": "Letter ANSI A Landscape",
+            "portraitButtonIconJson": "[{'shape':{'type':'path','path':'m 5 1 18 0 0 5 5 0 0 25-23 0z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 23 1 5 5'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 9 19 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 16 19 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 13 10 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 11 19 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 18 15 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
+            "portraitButtonTooltip": "@tooltips.portrait",
+            "portraitServerSpec": "Letter ANSI A Portrait",
+            "titleHint": null,
+            "titleHintDefault": "@labels.title",
+            "titleClass": "printDlogItem",
+            "authorHint": null,
+            "authorHintDefault": "@labels.author",
+            "authorClass": "printDlogItem",
+            "printButtonIconJson": "[{'shape':{'type':'path','path':'m 7 1c 6 0 12 0 19 0 0 3 0 6 0 9-6 0-12 0-19 0 0-3 0-6 0-9z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 19c 6 0 12 0 19 0 0 4 0 8 0 12-6 0-12 0-19 0 0-4 0-8 0-12z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'circle','cx':27,'cy':14,'r':1},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 6 10c-2 0-4-1-5 1 0 2 0 3 0 5 0 3 0 6 0 9 1 1 3 0 5 0l 0 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 26 10c 2 0 4-1 5 1 0 2 0 3 0 5 0 3 0 6 0 9-1 1-3 0-5 0l 0 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 22c 4 0 9 0 13 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 27c 4 0 9 0 13 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 24c 4 0 7 0 11 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
+            "printButtonClass": "commandButton printDlogItem",
+            "printButtonIconClass": "commandIcon",
+            "printButtonTooltip": "@tooltips.print",
+            "iconColorizerId": "colorizer",
+            "copyrightText": null,
+            "dependencyId": "map",
+            "trigger": "print",
+            "publishReady": "printingReady",
+            "publishWorking": "printing",
+            "publishPrintUrl": "printUrl"
+        }
+    }, {
+        "classname": "js.LGFetchPrintedMap",
+        "config": {
+            "rootId": "fetchPrintedMap",
+            "publish": "launch/blank",
+            "parentDiv": "contentFrame",
+            "dependencyId": "map",
+            "trigger": "printingReady",
+            "triggerPrintUrl": "printUrl",
+            "publishPrintAvailable": "printAvailable",
+            "publishPrintNotAvailable": "printNotAvailable",
+            "printAvailabilityTimeoutMinutes": 15
+        }
+    }, {
+        "classname": "js.LGMessageBox",
+        "styles": ".helpMessageBox{display:none;max-width:400px;max-height:300px;padding:16px;position:absolute;overflow:auto;z-index:40;word-wrap:break-word;border:1px solid lightgray}",
+        "config": {
+            "rootId": "helpMessageBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "helpMessageBox",
+            "horizOffset": -2,
+            "vertOffset": [2, -2],
+            "trigger": "help"
+        }
+    }, {
+        "classname": "js.LGSelfHidingMessageBox",
+        "config": {
+            "rootId": "printingNotificationMessageBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "helpMessageBox",
+            "content": "!widgets.print.NLS_printing",
+            "timeoutSeconds": 5,
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "trigger": "printing"
+        }
+    }, {
+        "classname": "js.LGPublishEcho",
+        "config": {
+            "rootId": "diagMessageBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "helpMessageBox",
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "trigger": "error"
+        }
+    }, {
+        "classname": "js.LGBasemapBox",
+        "styles": ".basemapBox{display:none;width:280px;max-height:244px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}.basemapGallery{width:96%;height:96%;padding:4px;overflow-y:auto;}.lt-ie9 .basemapGallery{height:220px}",
+        "config": {
+            "rootId": "basemapBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "basemapBox",
+            "galleryClass": "basemapGallery",
+            "horizOffset": -2,
+            "vertOffset": [2, -2],
+            "trigger": "basemap",
+            "dependencyId": "map"
+        }
+    }, {
+        "classname": "js.LGMapBasedMenuBox",
+        "styles": ".shareBox{display:none;width:140px;text-align:center;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}.shareCmdTextButton{width:44px;height:44px;cursor:pointer;display:inline-block}",
+        "config": {
+            "rootId": "shareBox",
+            "parentDiv": "contentFrame",
+            "rootClass": "shareBox",
+            "horizOffset": -2,
+            "vertOffset": 2,
+            "trigger": "share",
+            "dependencyId": "map"
+        }
+    }, {
+        "classname": "js.LGSearchBoxByText",
+        "styles": ".searchBox{display:none;width:200px;max-height:224px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}.resultsListBox{width:96%;top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;bottom:4px}.lt-ie9 .resultsListBox{width:100%;height:182px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}",
+        "config": {
+            "rootId": "searchBox",
+            "trigger": "search",
+            "publish": "showFeature",
+            "parentDiv": "contentFrame",
+            "rootClass": "searchBox",
+            "horizOffset": -2,
+            "vertOffset": [2, -2],
+            "searcher": "featureSearcher",
+            "showPrompt": "@tooltips.search",
+            "resultsListBoxClass": "resultsListBox",
+            "resultsListTableClass": "resultsListTable",
+            "resultsListBodyClass": "resultsListBody",
+            "resultsListSearchingClass": "resultsListSearching",
+            "resultsListEntryClass": "resultsListEntry"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "search",
+            "tooltip": "@tooltips.search",
+            "iconJson": "[{'shape':{'type':'circle','cx':13,'cy':13,'r':10},'stroke':{'type':'stroke','color':{'r':255,'g':255,'b':255,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'line','x1':20,'y1':20,'x2':30,'y2':30},'stroke':{'type':'stroke','color':{'r':255,'g':255,'b':255,'a':0.25},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "featureSearcher",
+            "publish": "search"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "basemap",
+            "tooltip": "@tooltips.basemap",
+            "iconJson": "[{'shape':{'type':'rect','x':2,'y':2,'width':12,'height':12,'r':0},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'rect','x':18,'y':2,'width':12,'height':12,'r':0},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'rect','x':2,'y':18,'width':12,'height':12,'r':0},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'rect','x':18,'y':18,'width':12,'height':12,'r':0},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "basemapBox",
+            "publish": "basemap"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "share",
+            "tooltip": "@tooltips.share",
+            "iconJson": "[{'shape':{'type':'path','path':'M 16 2L 2 2 2 30 30 30 30 16'},'stroke':{'type':'stroke','style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 22 2L 30 2 30 10'},'stroke':{'type':'stroke','style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'M 30 2L 16 16'},'stroke':{'type':'stroke','style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "shareBox",
+            "publish": "share"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "shareEmail",
+            "tooltip": "@tooltips.shareViaEmail",
+            "iconJson": "[{'shape':{'type':'path','path':'m 2 5 28 0 1 1 0 3L 16 16 1 8 1 6zm-1 7 0 15L 31 27 31 12 16 19 1 12'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
+            "parentDiv": "shareBox",
+            "rootClass": "shareCmdTextButton",
+            "iconClass": "commandIcon",
+            "publish": "share/email"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "shareFB",
+            "tooltip": "@tooltips.shareViaFacebook",
+            "iconJson": "[{'shape':{'type':'path','path':'M 18 31V 17h 5l 1-5H 18V 9c 0-2 0-3 3-3l 3 0V 1C 23 1 22 1 20 1 16 1 13 3 13 8V 12H 8v 5h 5V 31h 5z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
+            "parentDiv": "shareBox",
+            "rootClass": "shareCmdTextButton",
+            "iconClass": "commandIcon",
+            "publish": "share/facebook"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "shareTw",
+            "tooltip": "@tooltips.shareViaTwitter",
+            "iconJson": "[{'shape':{'type':'path','path':'M 31 7C 30 7 29 8 27 8 29 7 30 6 30 4 29 5 28 5 26 6 25 5 24 4 22 4c-3 0-6 3-6 6 0 0 0 1 0 1C 11 11 6 9 3 5 3 6 2 7 2 8c 0 2 1 4 3 5-1 0-2 0-3-1 0 0 0 0 0 0 0 3 2 5 5 6-1 0-1 0-2 0 0 0-1 0-1 0 1 2 3 4 6 4-2 2-5 3-8 3 0 0-1 0-1 0 3 2 6 3 9 3 11 0 18-9 18-18 0 0 0-1 0-1 1-1 2-2 3-3z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
+            "parentDiv": "shareBox",
+            "rootClass": "shareCmdTextButton",
+            "iconClass": "commandIcon",
+            "publish": "share/twitter"
+        }
+    }, {
+        "classname": "js.LGCommandToggle",
+        "config": {
+            "rootId": "print",
+            "tooltip": "@tooltips.print",
+            "iconJson": "[{'shape':{'type':'path','path':'m 7 1c 6 0 12 0 19 0 0 3 0 6 0 9-6 0-12 0-19 0 0-3 0-6 0-9z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 7 19c 6 0 12 0 19 0 0 4 0 8 0 12-6 0-12 0-19 0 0-4 0-8 0-12z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'circle','cx':27,'cy':14,'r':1},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 6 10c-2 0-4-1-5 1 0 2 0 3 0 5 0 3 0 6 0 9 1 1 3 0 5 0l 0 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 26 10c 2 0 4-1 5 1 0 2 0 3 0 5 0 3 0 6 0 9-1 1-3 0-5 0l 0 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 22c 4 0 9 0 13 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 27c 4 0 9 0 13 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 24c 4 0 7 0 11 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
+            "iconDisabledJson": "[{'shape':{'type':'path','path':'m 7 19c 6 0 12 0 19 0 0 4 0 8 0 12-6 0-12 0-19 0 0-4 0-8 0-12z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'circle','cx':27,'cy':14,'r':1},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 6 10c-2 0-4-1-5 1 0 2 0 3 0 5 0 3 0 6 0 9 1 1 3 0 5 0l 0 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 26 10c 2 0 4-1 5 1 0 2 0 3 0 5 0 3 0 6 0 9-1 1-3 0-5 0l 0 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 22c 4 0 9 0 13 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 27c 4 0 9 0 13 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 10 24c 4 0 7 0 11 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'circle','cx':16,'cy':9,'r':7},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 16 4 0 6'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 16 10 5 0'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':1,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "publish": "print",
+            "dependencyId": "printMap",
+            "triggerEnable": "printingReady",
+            "triggerDisable": "printing",
+            "isVisible": false,
+            "isEnabled": true
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "help",
+            "tooltip": "@tooltips.help",
+            "iconJson": "[{'shape':{'type':'path','path':'M 31 16C 31 24 24 32 15 31 8 31 1 24 1 17 1 10 5 4 11 2c 6-2 13 0 17 5 2 3 3 6 3 9z'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'path','path':'m 13 12c 0-3 4-4 6-2 2 2 0 4-1 6-1 1-2 2-1 4'},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'circle','cx':17,'cy':23,'r':0.5},'stroke':{'type':'stroke','color':{'r':0,'g':0,'b':0,'a':1},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "publish": "help"
+        }
+    }, {
+        "classname": "js.LGShareAppExtents",
+        "config": {
+            "rootId": "shareAppExtEmail",
+            "trigger": "share/email",
+            "publish": "launch/parent",
+            "subject": ".titleBar.title",
+            "tinyURLServiceURL": "",
+            "tinyURLResponseAttribute": "data.url",
+            "shareUrl": "mailto:%20?subject=${subject}&body=${url}",
+            "busyIndicator": "busyIndicator",
+            "dependencyId": "map"
+        }
+    }, {
+        "classname": "js.LGShareAppExtents",
+        "config": {
+            "rootId": "shareAppExtFB",
+            "trigger": "share/facebook",
+            "publish": "launch/blank",
+            "subject": ".titleBar.title",
+            "tinyURLServiceURL": "",
+            "tinyURLResponseAttribute": "data.url",
+            "shareUrl": "http://www.facebook.com/sharer.php?u=${url}&t=${subject}",
+            "busyIndicator": "busyIndicator",
+            "dependencyId": "map"
+        }
+    }, {
+        "classname": "js.LGShareAppExtents",
+        "config": {
+            "rootId": "shareAppExtTw",
+            "trigger": "share/twitter",
+            "publish": "launch/blank",
+            "subject": ".titleBar.title",
+            "tinyURLServiceURL": "",
+            "tinyURLResponseAttribute": "data.url",
+            "shareUrl": "http://twitter.com/home/?status=${subject} ${url}",
+            "busyIndicator": "busyIndicator",
+            "dependencyId": "map"
+        }
+    }]
+}

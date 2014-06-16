@@ -2,13 +2,13 @@
 	({
 		commonMapControls: {
 			common: {
-				settings: "須_Settings_鷗",
-				openDefault: "須_Open by default_鷗"
+				settings: "設定",
+				openDefault: "デフォルトで開く"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "須_Basemap_鷗",
-				expandFactorLabel: "須_Expand Factor_鷗",
-				expandFactorPopover: "須_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle._鷗"
+				basemapGalleryBtnLabel: "ベースマップ",
+				expandFactorLabel: "拡大係数",
+				expandFactorPopover: "概観図と概観図に表示される範囲矩形のサイズの比率です。デフォルト値は 2 で、概観図は矩形範囲の少なくとも 2 倍のサイズがあります。"
 			}
 		}
 	})

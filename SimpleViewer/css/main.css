@@ -10,7 +10,6 @@
   color: #333; }
 
 .esriRTL .top-bar {
-  left: auto;
   right: 0; }
 
 .top-bar-title {
@@ -120,8 +119,8 @@ html, body {
   font-size: 1.2em;
   font-weight: 500;
   background-color: transparent;
-  background-color: rgba(212, 212, 212, 0.5);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80D4D4D4,endColorstr=#80D4D4D4);
+  background-color: rgba(163, 163, 163, 0.5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80A3A3A3,endColorstr=#80A3A3A3);
   zoom: 1; }
 
 .ac-container label:hover {
@@ -134,7 +133,6 @@ html, body {
   float: right; }
 
 .ac-container label:after, .ac-container input:checked + label:after {
-  color: #666;
   font-family: "simple";
   font-style: normal;
   font-weight: normal;
@@ -142,11 +140,13 @@ html, body {
   /*down arrow*/
   position: absolute;
   right: 13px;
-  top: 7px; }
+  top: 7px;
+  cursor: pointer; }
 
 .ac-container input:checked + label:after {
   content: '\e804';
-  /*up arrow*/ }
+  /*up arrow*/
+  cursor: pointer; }
 
 .ac-container input {
   display: none; }
@@ -229,6 +229,9 @@ html, body {
     display: block; } }
 
 /* Esri Jvascript API*/
+.simpleGeocoder .esriGeocoderResult {
+  color: #333; }
+
 .esriPopup .pointer.bottom, .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight {
   background: #f7f7f7 !important; }
 

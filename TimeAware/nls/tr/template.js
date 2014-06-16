@@ -30,7 +30,7 @@
       timeRangeSingle: "<b>Saat Aralığı:</b> ${time}"
     },
     legend: {
-      label: "Gösterge",
+      label: "Gösterim",
       layerMessage: "Hiçbir operasyonel katman yok"
     }
   }

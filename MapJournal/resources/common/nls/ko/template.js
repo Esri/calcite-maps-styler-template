@@ -2,144 +2,144 @@
 	 ({
 		common: {
 			common: {
-				edit: "한_Edit_빠"
+				edit: "편집"
 			},
 			inlineFieldEdit: {
-				editMe: "한_Edit me !_빠"
+				editMe: "편집!"
 			},
 			builderPanel: {
-				panelHeader: "한_%TPL_NAME% Builder_빠",
-				buttonSave: "한_SAVE_빠",
-				buttonShare: "한_SHARE_빠",
-				buttonSettings: "한_SETTINGS_빠",
-				buttonHelp: "한_HELP_빠",
-				noPendingChange: "한_No pending change_빠",
-				unSavedChangeSingular: "한_1 unsaved change_빠",
-				unSavedChangePlural: "한_unsaved changes_빠",
-				popoverSaveWhenDone: "한_Don't forget to save when you are done_빠",
-				closeWithPendingChange: "한_Are you sure to want to confirm the action ? Your changes will be lost._빠",
-				ok: "한_Ok_빠",
-				savingApplication: "한_Saving application_빠",
-				saveError: "한_Save failed, please try again_빠",
-				saveError3: "한_The title can't be empty_빠",
+				panelHeader: "%TPL_NAME% 빌더",
+				buttonSave: "저장",
+				buttonShare: "공유",
+				buttonSettings: "설정",
+				buttonHelp: "도움말",
+				noPendingChange: "보류 중인 변경 사항 없음",
+				unSavedChangeSingular: "저장되지 않은 변경 사항 1개",
+				unSavedChangePlural: "저장되지 않은 변경 사항",
+				popoverSaveWhenDone: "작업을 마치면 저장하세요.",
+				closeWithPendingChange: "작업을 확인하시겠습니까? 변경 사항이 손실됩니다.",
+				ok: "확인",
+				savingApplication: "응용프로그램을 저장하는 중",
+				saveError: "저장하지 못했습니다. 다시 시도하세요.",
+				saveError3: "제목은 비워 둘 수 없습니다.",
 				// TODO
-				signIn: "한_Please sign in with an account on_빠",
-				shareStatus1: "한_Application is not saved_빠",
-				shareStatus2: "한_Application is shared publicly_빠",
-				shareStatus3: "한_Application is shared within the organization_빠",
-				shareStatus4: "한_Application is not shared_빠"
+				signIn: "응용프로그램을 저장하려면",
+				shareStatus1: "응용프로그램이 저장되지 않음",
+				shareStatus2: "응용프로그램이 공개적으로 공유됨",
+				shareStatus3: "응용프로그램이 기관 내에서 공유됨",
+				shareStatus4: "응용프로그램이 공유되지 않음"
 			},
 			// TODO
 			addEditPopup: {
 				// Add
-				addEditPopupInputTitleLabel: "한_Title_빠",
-				addPopupTitle: "한_Add_빠",
-				addPopupDescription: "한_Add a new view to your series._빠",
-				addPopupButton: "한_ADD_빠",
+				addEditPopupInputTitleLabel: "제목",
+				addPopupTitle: "추가",
+				addPopupDescription: "계열에 새 보기를 추가합니다.",
+				addPopupButton: "추가",
 				// Edit
-				editPopupTitle: "한_Edit_빠",
-				editPopupDescription: "한_Edit the selected view_빠",
-				editPopupButton: "한_APPLY_빠",
+				editPopupTitle: "편집",
+				editPopupDescription: "선택한 보기를 편집합니다.",
+				editPopupButton: "적용",
 				// Add/Edit
-				addEditPopupCancelButton: "한_CANCEL_빠",
-				addEditPopupMyContentBtn: "한_Select from my content_빠",
-				addEditPopupConfigureWebMapBtn: " 한_Configure_빠"
+				addEditPopupCancelButton: "취소",
+				addEditPopupMyContentBtn: "내 컨텐츠에서 선택",
+				addEditPopupConfigureWebMapBtn: " 구성"
 			},
 			share: {
-				firstSaveTitle: "한_Application successfully saved_빠",
-				firstSaveHeader: "한_Your application is now saved in ArcGIS Online. Please read the following answers to frequent questions._빠",
-				firstSaveA1: "한_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_빠",
-				firstSaveA1bis: "한_The application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._빠",
-				firstSaveQ2: "한_Is my application shared?_빠",
-				firstSaveA2: "한_Currently your application is not shared. To share it, use the SHARE button._빠",
-				shareTitle: "한_Share your application_빠",
-				sharePrivateHeader: "한_Your application is not shared, would you like to share it?_빠",
-				sharePrivateBtn1: "한_Share publicly_빠",
-				sharePrivateBtn2: "한_Share with my Organization_빠",
-				sharePrivateWarning: "한_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._빠",
-				sharePrivateWarningWith1: "한_publicly_빠",
-				sharePrivateWarningWith2: "한_publicly and with the Organization_빠",
-				sharePrivateProgress: "한_Sharing in progress..._빠",
-				sharePrivateErr: "한_Sharing failed, try again or_빠",
-				sharePrivateOk: "한_Sharing updated successfully, loading..._빠",
-				sharePreviewAsUser: "한_Preview_빠",
-				shareHeader1: "한_Your application is <strong>publicly accessible</strong>._빠",
-				shareHeader2: "한_Your application is accessible by your organization members (login is required)._빠",
-				shareLinkHeader: "한_Share the application with your audience_빠",
-				shareLinkOpen: "한_OPEN_빠",
-				shareQ1Opt1: "한_How do I keep the application private?_빠",
-				shareQ1Opt2: "한_How do I keep the application private or share it publicly?_빠",
-				shareA1: "한_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._빠",
-				shareA1bis: "한_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._빠",
-				shareQ2: "한_How do I edit the application later?_빠",
-				shareQ2bis: "한_How do I get back to the authoring interface?_빠",
-				shareA2div1: "한_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._빠",
-				shareA2div2: "한_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_빠",				
-				shareQ3: "한_Where is the data stored?_빠",
-				shareA3: "한_The application configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._빠",
-				learnMore: "한_Learn more_빠",
-				close: "한_Close_빠"
+				firstSaveTitle: "응용프로그램이 저장됨",
+				firstSaveHeader: "응용프로그램이 ArcGIS Online에 저장되었습니다. 다음 질문과 대답을 읽어보세요.",
+				firstSaveA1: "ArcGIS Online에 익숙하지 않거나 바로가기를 사용하여 작성 인터페이스에 액세스하려는 경우 다음 링크를 저장하면 됩니다. %LINK1%",
+				firstSaveA1bis: "<a href='%LINK2%' target='_blank'>ArcGIS Online 컨텐츠 폴더</a>에서도 응용프로그램을 찾을 수 있습니다.",
+				firstSaveQ2: "응용프로그램이 공유됩니까?",
+				firstSaveA2: "현재 응용프로그램이 공유되지 않습니다. 공유하려면 공유 버튼을 사용하세요.",
+				shareTitle: "응용프로그램 공유",
+				sharePrivateHeader: "응용프로그램이 공유되고 있지 않습니다. 공유하시겠습니까?",
+				sharePrivateBtn1: "공개적으로 공유",
+				sharePrivateBtn2: "내 기관과 공유",
+				sharePrivateWarning: "<a href='%LINK%' target='_blank'>웹 맵</a>의 소유자가 아니므로 %WITH% 공유를 사용할 수 없습니다.",
+				sharePrivateWarningWith1: "공개",
+				sharePrivateWarningWith2: "기관에 공개",
+				sharePrivateProgress: "공유 처리 중...",
+				sharePrivateErr: "공유에 실패했습니다. 다시 시도하거나",
+				sharePrivateOk: "공유가 업데이트되었습니다. 로그하는 중...",
+				sharePreviewAsUser: "미리보기",
+				shareHeader1: "응용프로그램에 <strong>공개적으로 접근 가능</strong>합니다.",
+				shareHeader2: "기관의 구성원이 응용프로그램에 접근할 수 있습니다(로그인 필요).",
+				shareLinkHeader: "대상 그룹과 응용프로그램 공유",
+				shareLinkOpen: "열기",
+				shareQ1Opt1: "응용프로그램을 비공개 상태로 유지하려면 어떻게 해야 합니까?",
+				shareQ1Opt2: "응용프로그램을 비공개 상태로 유지하거나 공개적으로 공유하려면 어떻게 해야 합니까?",
+				shareA1: "<a href='%LINK1%' target='_blank'>응용프로그램 항목 페이지</a>의 %SHAREIMG%을(를) 사용하세요. 웹 맵의 공유도 해제하려면 <a href='%LINK2%' target='_blank'>웹 맵 항목 페이지</a>를 사용하세요.",
+				shareA1bis: "피처 서비스의 공유도 해제하려면 <a href='%LINK1%' target='_blank'>피처 서비스 항목 페이지</a>를 사용하세요.",
+				shareQ2: "나중에 응용프로그램을 편집하려면 어떻게 해야 합니까?",
+				shareQ2bis: "작성 인터페이스로 돌아가는 방법",
+				shareA2div1: "%LINK1% 링크를 저장하여 다시 사용하거나 <a href='%LINK2%' target='_blank'>응용프로그램 항목 페이지</a>를 사용하세요.",
+				shareA2div2: "응용프로그램의 소유자인 경우 ArcGIS.com에 로그인하면 대화형 빌더를 열 수 있는 버튼이 응용프로그램에 표시됩니다.",				
+				shareQ3: "데이터는 어디에 저장되나요?",
+				shareA3: "응용프로그램 구성은 <a href='%LINK1%' target='_blank'>이 웹 맵 항목</a>과 <a href='%LINK2%' target='_blank'>이 웹 응용프로그램 항목</a>에 저장됩니다. Flickr, Picasa, Facebook 또는 YouTube 가져오기를 사용한 경우 이미지는 해당 위치에 저장된 상태로 유지되고 ArcGIS Online에서 복제되지 않습니다.",
+				learnMore: "자세한 정보",
+				close: "닫기"
 			},
 			settings: {
-				header: "한_Application settings_빠",
-				cancel: "한_Cancel_빠",
-				apply: "한_Apply_빠",
-				tabError: "한_Please check for errors in all tabs_빠"
+				header: "응용프로그램 설정",
+				cancel: "취소",
+				apply: "적용",
+				tabError: "모든 탭에서 오류를 확인하세요."
 			},
 			settingsLayout: {
-				title: "한_Layout_빠",
-				explain: "한_What layout do you want to use?_빠",
-				explainInit: "한_Change will be possible through the settings dialog._빠",
-				selected: "한_Selected layout_빠",
-				select: "한_Select this layout_빠"
+				title: "레이아웃",
+				explain: "어떤 레이아웃을 사용하시겠습니까?",
+				explainInit: "설정 대화상자를 통해 변경할 수 있습니다.",
+				selected: "선택한 레이아웃",
+				select: "이 레이아웃 선택"
 			},
 			settingsTheme: {
-				title: "한_Theme_빠",
-				explain: "한_Choose an app theme or define your own colors._빠",
-				label: "한_Header and side panel background colors_빠"
+				title: "테마",
+				explain: "앱 테마를 선택하거나 사용자 고유의 색상을 정의합니다.",
+				label: "헤더 및 사이드 패널 배경 색상"
 			},
 			settingsHeader: {
-				title: "한_Header_빠",
-				explain: "한_Customize the header logo (maximum is 250 x 50px)._빠",
-				logoEsri: "한_Esri logo_빠",
-				logoNone: "한_No logo_빠",
-				logoCustom: "한_Custom logo_빠",
-				logoCustomPlaceholder: "한_Image URL_빠",
-				logoCustomTargetPlaceholder: "한_Click-through link_빠",
-				logoSocialExplain: "한_Customize the header top right link._빠",
-				logoSocialText: "한_Text_빠",
-				logoSocialLink: "한_Link_빠",
-				logoSocialDisabled: "한_This feature has been disabled by the Administrator_빠"
+				title: "헤더",
+				explain: "머리글 로고를 사용자 지정합니다(최대 250x50 픽셀).",
+				logoEsri: "Esri 로고",
+				logoNone: "로고 없음",
+				logoCustom: "사용자 지정 로고",
+				logoCustomPlaceholder: "이미지 URL",
+				logoCustomTargetPlaceholder: "클릭 이동 링크",
+				logoSocialExplain: "헤더 오른쪽 상단 링크를 사용자 정의합니다.",
+				logoSocialText: "텍스트",
+				logoSocialLink: "링크",
+				logoSocialDisabled: "이 기능은 관리자가 사용하지 않도록 설정했습니다."
 			},
 			mediaSelector: {
-				lblMap: "한_Map_빠",
-				lblPicture: "한_Picture_빠",
-				lblVideo: "한_Video_빠",
-				lblExternal: "한_External page_빠"
+				lblMap: "맵",
+				lblPicture: "그림",
+				lblVideo: "동영상",
+				lblExternal: "외부 페이지"
 			},
 			webMapSelector: {
-				radioCurrentWebMap: "한_Current web map_빠",
-				radioWebmapApp: "한_One of the other web map used in the application_빠",
-				radioAnotherWebmap: "한_Another webmap_빠",
-				btnSelect: "한_Select_빠",
-				lblOr: "한_or_빠",
-				fieldEnterWebmapId: "한_Enter a web map id_빠",
-				btnConfigure: "한_Configure the Map_빠"
+				radioCurrentWebMap: "현재 웹 맵",
+				radioWebmapApp: "응용프로그램에서 사용된 다른 웹 맵 중 하나",
+				radioAnotherWebmap: "다른 웹 맵",
+				btnSelect: "선택",
+				lblOr: "또는",
+				fieldEnterWebmapId: "웹 맵 ID 입력",
+				btnConfigure: "맵 구성"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "한_My Organization_빠",
-					onlineLabel: "한_ArcGIS Online_빠",
-					contentLabel: "한_My Content_빠",
-					favoritesLabel: "한_My Favorites_빠"
+					organizationLabel: "내 기관",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "내 컨텐츠",
+					favoritesLabel: "내 즐겨찾기"
 				},
-				title: "한_Select Web Map_빠",
-				searchTitle: "한_Search_빠",
-				ok: "한_Ok_빠",
-				cancel: "한_Cancel_빠",
-				placeholder: "한_Enter search term_빠"
+				title: "웹 맵 선택",
+				searchTitle: "검색",
+				ok: "확인",
+				cancel: "취소",
+				placeholder: "검색어 입력"
 			}
 		}
 	})

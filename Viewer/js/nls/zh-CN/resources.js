@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "试_Unable to create map_验"
+            "error": "无法创建地图"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": '试_Landscape (PDF)_验',
-			      "label2": '试_Portrait (PDF)_验',
-			      "label3": '试_Landscape (Image)_验',
-			      "label4": '试_Portrait (Image)_验'
-			    }
+			      "label1": '横向(PDF)',
+			      "label2": '纵向(PDF)',
+			      "label3": '横向(图像)',
+			      "label4": '纵向(图像)'
+			    },
+			    "legend": "试_Add legend to output_验"
 			},
 			"share": {
-				"extent": "试_Use current map extent_验",
-				"label": "试_Share this map_验",
-				"link": "试_Map Link_验",
-				"facebook": "试_Facebook_验",
-				"twitter": "试_Twitter_验"
+				"extent": "使用当前地图范围",
+				"label": "共享此地图",
+				"link": "地图链接",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "试_Default extent_验",
-        	"locate": "试_Find my location_验",
-        	"legend": "试_Legend_验",
-        	"bookmarks": "试_Bookmarks_验",
-        	"layers": "试_Layers_验",
+        	"home": "默认范围",
+        	"locate": "查找我的位置",
+        	"legend": "图例",
+        	"bookmarks": "书签",
+        	"layers": "图层",
         	"basemap": "试_Basemap gallery_验",
         	"overview": "试_Overview map_验",
-        	"measure": "试_Measure_验",
-        	"edit": "试_Edit_验",
-        	"time": "试_Time_验",
-        	"print": "试_Print_验",
-        	"details": "试_Details_验",
-        	"share": "试_Share_验"
+        	"measure": "测量",
+        	"edit": "编辑",
+        	"time": "时间",
+        	"print": "打印",
+        	"details": "详细信息",
+        	"share": "共享"
         }
 }));

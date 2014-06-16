@@ -6,7 +6,7 @@
 				step2: "VERİLER YÜKLENİYOR",
 				step3: "BAŞLATILIYOR",
 				fail: "Özür dileriz; Swipe yüklenemedi",
-				loadBuilder: "DERLEYİCİ MODUNA GEÇİLİYOR",
+				loadBuilder: "DERLEYİCİ MODUNA GEÇİLİYOR",				
 				redirectSignIn: "OTURUM AÇMA SAYFASINA YÖNLENDİRİLİYOR",
 				redirectSignIn2: "(oturum açtıktan sonra buraya yeniden yönlendirileceksiniz)",
 				failButton: "Tekrar dene"
@@ -25,12 +25,12 @@
 				mapSave: "Web haritasını kaydederken hata oluştu",
 				notAuthorized: "Bu uygulamaya erişim yetkiniz yok",
 				conflictingProjectionsTitle: "Çelişen Projeksiyonlar",
-				conflictingProjections: "Swipe farklı projeksiyonları olan iki web haritasını desteklemez. Ayarları açın ve ilk web haritasıyla aynı projeksiyonu kullanan bir web haritası kullanın.",
+				conflictingProjections: "ı_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._İ",
 				cpButton: "Kapat"
 			},
 			mobileView: {
 				hideIntro: "GİRİŞİ GİZLE",
-				navLeft: "Gösterge",
+				navLeft: "Gösterim",
 				navMap: "Harita",
 				navRight: "Veri"
 			},
@@ -71,7 +71,7 @@
 				signInTwo: "üzerindeki başka bir hesap ile oturum açın."
 			},
 			header:{
-				editMe: "Beni düzenle !",
+				editMe: "ı_Edit me!_İ",
 				templateTitle: "Şablon başlığını ayarla",
 				templateSubtitle: "Şablon altyazısını ayarla"
 			},
@@ -122,8 +122,8 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Yan panel açıklamasını ayarlayın",
-				editMe: "Beni düzenle !",
-				legendTitle: "Gösterge"
+				editMe: "ı_Edit me!_İ",
+				legendTitle: "Gösterim"
 			},
 			infoWindow: {
 				noFeature: "Görüntülenecek veri yok",
@@ -171,7 +171,7 @@
 				settingsPopupDisable: "Açılan pencereyi etkinleştir",
 				settingsLocationSearchEnable: "Bulucu aramasını etkinleştir",
 				settingsGeolocatorEnable: "Coğrafi bulucuyu etkinleştir",
-				settingsLegendHelpContent: "Gösterge içeriğini netleştirmek için, ArcGIS.com web haritası görüntüleyicisi içindekiler tablosunu kullanın (Göstergede Gizle)",
+				settingsLegendHelpContent: "Gösterim içeriğini netleştirmek için, ArcGIS.com web haritası görüntüleyicisi içindekiler tablosunu kullanın (Göstergede Gizle)",
 				settingsSeriesHelpContent: "Swipe serisi, izleyiciye belirli bir yayılım için kılavuzluk eden ve yan panelde bir başlık ve açıklama metni gösteren sekmeli bir gezinme seçeneğidir.  İlk etkinleştirme sırasında web haritalarının yer işaretleri içe aktarılır ve seri çubuğunu önceden doldurmak için kullanılır.  Seri seçeneğini devre dışı bırakmak seri çubuğunu kapatır, ancak seri yapılandırması gelecekte kullanılmak üzere saklanır.", 
 				settingsSeriesHelpContent2: "Swipe serisi, beraberinde başlıklar ve metin ile seçili bir konum kümesi oluşturmanıza ve bunu düzenlemenize izin verir.  Web haritanızın yer işaretleri varsa, bunlar görüntülenir.  Seriyi devre dışı bırakabilirsiniz, ancak yapılandırma gelecekte kullanılmak üzere saklanır.",
 				settingsSeriesHelpLink: "Bir swipe serisi olan bir uygulama örneğini burada görebilirsiniz",

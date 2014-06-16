@@ -2,144 +2,144 @@
 	 ({
 		common: {
 			common: {
-				edit: "ķ_Edit_ū"
+				edit: "Rediģēt"
 			},
 			inlineFieldEdit: {
-				editMe: "ķ_Edit me !_ū"
+				editMe: "Rediģē mani !"
 			},
 			builderPanel: {
-				panelHeader: "ķ_%TPL_NAME% Builder_ū",
-				buttonSave: "ķ_SAVE_ū",
-				buttonShare: "ķ_SHARE_ū",
-				buttonSettings: "ķ_SETTINGS_ū",
-				buttonHelp: "ķ_HELP_ū",
-				noPendingChange: "ķ_No pending change_ū",
-				unSavedChangeSingular: "ķ_1 unsaved change_ū",
-				unSavedChangePlural: "ķ_unsaved changes_ū",
-				popoverSaveWhenDone: "ķ_Don't forget to save when you are done_ū",
-				closeWithPendingChange: "ķ_Are you sure to want to confirm the action ? Your changes will be lost._ū",
-				ok: "ķ_Ok_ū",
-				savingApplication: "ķ_Saving application_ū",
-				saveError: "ķ_Save failed, please try again_ū",
-				saveError3: "ķ_The title can't be empty_ū",
+				panelHeader: "%TPL_NAME% veidotājs",
+				buttonSave: "SAGLABĀT",
+				buttonShare: "KOPĪGOT",
+				buttonSettings: "IESTATĪJUMI",
+				buttonHelp: "PALĪDZĪBA",
+				noPendingChange: "Nav neizpildītu izmaiņu",
+				unSavedChangeSingular: "1 nesaglabāta izmaiņa",
+				unSavedChangePlural: "nesaglabātas izmaiņas",
+				popoverSaveWhenDone: "Neaizmirstiet saglabāt, kad jūs pabeidzat",
+				closeWithPendingChange: "Vai esat pārliecināts, ka vēlaties apstiprināt darbību? Jūsu izmaiņas tiks zaudētas.",
+				ok: "Labi",
+				savingApplication: "Saglabā aplikāciju",
+				saveError: "Saglabāt neizdevās, lūdzu, mēģiniet vēlreiz",
+				saveError3: "Virsraksts nevar būt tukšs",
 				// TODO
-				signIn: "ķ_Please sign in with an account on_ū",
-				shareStatus1: "ķ_Application is not saved_ū",
-				shareStatus2: "ķ_Application is shared publicly_ū",
-				shareStatus3: "ķ_Application is shared within the organization_ū",
-				shareStatus4: "ķ_Application is not shared_ū"
+				signIn: "Lūdzu, pierakstieties kontā uz",
+				shareStatus1: "Lietotne nav saglabāta",
+				shareStatus2: "Lietotne tiek publiski koplietota",
+				shareStatus3: "Lietotne tiek koplietota organizācijā",
+				shareStatus4: "Lietotne netiek koplietota"
 			},
 			// TODO
 			addEditPopup: {
 				// Add
-				addEditPopupInputTitleLabel: "ķ_Title_ū",
-				addPopupTitle: "ķ_Add_ū",
-				addPopupDescription: "ķ_Add a new view to your series._ū",
-				addPopupButton: "ķ_ADD_ū",
+				addEditPopupInputTitleLabel: "Virsraksts",
+				addPopupTitle: "Pievienot",
+				addPopupDescription: "Pievienojiet savām sērijām jaunu skatu.",
+				addPopupButton: "PIEVIENOT",
 				// Edit
-				editPopupTitle: "ķ_Edit_ū",
-				editPopupDescription: "ķ_Edit the selected view_ū",
-				editPopupButton: "ķ_APPLY_ū",
+				editPopupTitle: "Rediģēt",
+				editPopupDescription: "Rediģēt izvēlēto skatu",
+				editPopupButton: "LIETOT",
 				// Add/Edit
-				addEditPopupCancelButton: "ķ_CANCEL_ū",
-				addEditPopupMyContentBtn: "ķ_Select from my content_ū",
-				addEditPopupConfigureWebMapBtn: " ķ_Configure_ū"
+				addEditPopupCancelButton: "ATCELT",
+				addEditPopupMyContentBtn: "Izvēlēties no mana satura",
+				addEditPopupConfigureWebMapBtn: " Konfigurēt"
 			},
 			share: {
-				firstSaveTitle: "ķ_Application successfully saved_ū",
-				firstSaveHeader: "ķ_Your application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ū",
-				firstSaveA1: "ķ_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ū",
-				firstSaveA1bis: "ķ_The application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ū",
-				firstSaveQ2: "ķ_Is my application shared?_ū",
-				firstSaveA2: "ķ_Currently your application is not shared. To share it, use the SHARE button._ū",
-				shareTitle: "ķ_Share your application_ū",
-				sharePrivateHeader: "ķ_Your application is not shared, would you like to share it?_ū",
-				sharePrivateBtn1: "ķ_Share publicly_ū",
-				sharePrivateBtn2: "ķ_Share with my Organization_ū",
-				sharePrivateWarning: "ķ_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ū",
-				sharePrivateWarningWith1: "ķ_publicly_ū",
-				sharePrivateWarningWith2: "ķ_publicly and with the Organization_ū",
-				sharePrivateProgress: "ķ_Sharing in progress..._ū",
-				sharePrivateErr: "ķ_Sharing failed, try again or_ū",
-				sharePrivateOk: "ķ_Sharing updated successfully, loading..._ū",
-				sharePreviewAsUser: "ķ_Preview_ū",
-				shareHeader1: "ķ_Your application is <strong>publicly accessible</strong>._ū",
-				shareHeader2: "ķ_Your application is accessible by your organization members (login is required)._ū",
-				shareLinkHeader: "ķ_Share the application with your audience_ū",
-				shareLinkOpen: "ķ_OPEN_ū",
-				shareQ1Opt1: "ķ_How do I keep the application private?_ū",
-				shareQ1Opt2: "ķ_How do I keep the application private or share it publicly?_ū",
-				shareA1: "ķ_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._ū",
-				shareA1bis: "ķ_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ū",
-				shareQ2: "ķ_How do I edit the application later?_ū",
-				shareQ2bis: "ķ_How do I get back to the authoring interface?_ū",
-				shareA2div1: "ķ_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ū",
-				shareA2div2: "ķ_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ū",				
-				shareQ3: "ķ_Where is the data stored?_ū",
-				shareA3: "ķ_The application configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._ū",
-				learnMore: "ķ_Learn more_ū",
-				close: "ķ_Close_ū"
+				firstSaveTitle: "Lietotne veiksmīgi saglabāta",
+				firstSaveHeader: "Jūsu aplikācija tagad ir saglabāta ArcGIS Online. Izlasiet tālāk pieejamās atbildes uz bieži uzdotajiem jautājumiem.",
+				firstSaveA1: "Ja vēl neesat izmantojis ArcGIS Online vai vēlaties izveidot īsinājumikonu, lai piekļūtu autorēšanas saskarnei, varat saglabāt šādu saiti: %LINK1%",
+				firstSaveA1bis: "Aplikācija ir pieejama arī jūsu <a href='%LINK2%' target='_blank'>ArcGIS Online satura mapē</a>.",
+				firstSaveQ2: "Vai mana aplikācija ir koplietota?",
+				firstSaveA2: "Pašlaik jūsu aplikācija nav koplietota. Lai to koplietotu, izmantojiet pogu KOPLIETOT.",
+				shareTitle: "Koplietot jūsu aplikāciju",
+				sharePrivateHeader: "Jūsu aplikācija nav koplietota. Vai vēlaties to koplietot?",
+				sharePrivateBtn1: "Koplietot publiski",
+				sharePrivateBtn2: "Koplietot manā organizācijā",
+				sharePrivateWarning: "%WITH% koplietošana ir atspējota, jo jūs neesat <a href='%LINK%' target='_blank'>web kartes</a> īpašnieks.",
+				sharePrivateWarningWith1: "publiski",
+				sharePrivateWarningWith2: "publiski un organizācijā",
+				sharePrivateProgress: "Notiek koplietošana...",
+				sharePrivateErr: "Koplietošana neizdevās, mēģiniet vēlreiz vai",
+				sharePrivateOk: "Koplietošana ir veiksmīgi atjaunināta, notiek ielāde...",
+				sharePreviewAsUser: "Priekšskatījums",
+				shareHeader1: "Jūsu aplikācijai var <strong>piekļūt publiski</strong>.",
+				shareHeader2: "Jūsu aplikācijai var piekļūt jūsu organizācijas dalībnieki (ir jāpiesakās).",
+				shareLinkHeader: "Koplietojiet aplikāciju ar savu mērķauditoriju",
+				shareLinkOpen: "ATVĒRTS",
+				shareQ1Opt1: "Kā saglabāt aplikāciju privātu?",
+				shareQ1Opt2: "Kā saglabāt aplikāciju privātu vai koplietot to publiski?",
+				shareA1: "Izmantojiet %SHAREIMG% <a href='%LINK1%' target='_blank'>aplikācijas vienības lapā</a>. Ja jūs vēlaties pārtraukt koplietot web karti, izmantojiet <a href='%LINK2%' target='_blank'>web kartes vienības lapu</a>.",
+				shareA1bis: "Ja vēlaties arī atcelt elementu servisa koplietošanu, izmantojiet <a href='%LINK1%' target='_blank'>elementu servisa vienību lapu</a>.",
+				shareQ2: "Kā vēlāk var rediģēt aplikāciju?",
+				shareQ2bis: "Kā var nokļūt atpakaļ autorēšanas interfeisā?",
+				shareA2div1: "Saglabājiet un izmantojiet atkārtoti šo saiti %LINK1% vai izmantojiet <a href='%LINK2%' target='_blank'>aplikācijas vienību lapu</a>.",
+				shareA2div2: "Jūs esat aplikācijas īpašnieks, tāpēc, pierakstoties ArcGIS.com, aplikācijā ir pieejama poga, lai atvērtu interaktīvo veidotāju:",				
+				shareQ3: "Kur tiek glabāti dati?",
+				shareA3: "Aplikācijas konfigurācija tiek glabāta <a href='%LINK1%' target='_blank'>šajā web kartes vienībā</a> un <a href='%LINK2%' target='_blank'>šajā web aplikācijas vienībā</a>. Ja izmantojāt Flickr, Picasa, Facebook vai YouTube importēšanu, attēli un video tiek glabāti šajās vietās un netiek dublēti ArcGIS Online.",
+				learnMore: "Uzziniet vairāk",
+				close: "Aizvērt"
 			},
 			settings: {
-				header: "ķ_Application settings_ū",
-				cancel: "ķ_Cancel_ū",
-				apply: "ķ_Apply_ū",
-				tabError: "ķ_Please check for errors in all tabs_ū"
+				header: "Aplikācijas iestatījumi",
+				cancel: "Atcelt",
+				apply: "Lietot",
+				tabError: "Lūdzu pārbaudīt kļūdas visās cilnēs"
 			},
 			settingsLayout: {
-				title: "ķ_Layout_ū",
-				explain: "ķ_What layout do you want to use?_ū",
-				explainInit: "ķ_Change will be possible through the settings dialog._ū",
-				selected: "ķ_Selected layout_ū",
-				select: "ķ_Select this layout_ū"
+				title: "Izkārtojums",
+				explain: "Kādu izkārtojumu vēlaties izmantot?",
+				explainInit: "Izmaiņas varēs veikt, izmantojot iestatījumu dialogu.",
+				selected: "Izvēlētais izkārtojums",
+				select: "Izvēlieties šo izkārtojumu"
 			},
 			settingsTheme: {
-				title: "ķ_Theme_ū",
-				explain: "ķ_Choose an app theme or define your own colors._ū",
-				label: "ķ_Header and side panel background colors_ū"
+				title: "Tēma",
+				explain: "Izvēlieties lietotņu tēmu vai definējiet savas krāsas.",
+				label: "Galvenes un sānu paneļa fona krāsas"
 			},
 			settingsHeader: {
-				title: "ķ_Header_ū",
-				explain: "ķ_Customize the header logo (maximum is 250 x 50px)._ū",
-				logoEsri: "ķ_Esri logo_ū",
-				logoNone: "ķ_No logo_ū",
-				logoCustom: "ķ_Custom logo_ū",
-				logoCustomPlaceholder: "ķ_Image URL_ū",
-				logoCustomTargetPlaceholder: "ķ_Click-through link_ū",
-				logoSocialExplain: "ķ_Customize the header top right link._ū",
-				logoSocialText: "ķ_Text_ū",
-				logoSocialLink: "ķ_Link_ū",
-				logoSocialDisabled: "ķ_This feature has been disabled by the Administrator_ū"
+				title: "Galvene",
+				explain: "Pielāgot galvenes logotipu (maksimums  ir 250 x 50piks).",
+				logoEsri: "Esri logotips",
+				logoNone: "Nav logotipa",
+				logoCustom: "Pielāgots logotips",
+				logoCustomPlaceholder: "Attēla URL",
+				logoCustomTargetPlaceholder: "Klikšķis caur saiti",
+				logoSocialExplain: "Pielāgot galvenes labās augšējās saites.",
+				logoSocialText: "Teksts",
+				logoSocialLink: "Saite",
+				logoSocialDisabled: "Šo funkciju administrators ir atspējojis"
 			},
 			mediaSelector: {
-				lblMap: "ķ_Map_ū",
-				lblPicture: "ķ_Picture_ū",
-				lblVideo: "ķ_Video_ū",
-				lblExternal: "ķ_External page_ū"
+				lblMap: "Karte",
+				lblPicture: "Bilde",
+				lblVideo: "Video",
+				lblExternal: "Ārējā lapa"
 			},
 			webMapSelector: {
-				radioCurrentWebMap: "ķ_Current web map_ū",
-				radioWebmapApp: "ķ_One of the other web map used in the application_ū",
-				radioAnotherWebmap: "ķ_Another webmap_ū",
-				btnSelect: "ķ_Select_ū",
-				lblOr: "ķ_or_ū",
-				fieldEnterWebmapId: "ķ_Enter a web map id_ū",
-				btnConfigure: "ķ_Configure the Map_ū"
+				radioCurrentWebMap: "Pašreizējā web karte",
+				radioWebmapApp: "Kāda no citām aplikācijā izmantotajām web kartēm",
+				radioAnotherWebmap: "Cita web karte",
+				btnSelect: "Izvēlēties",
+				lblOr: "vai",
+				fieldEnterWebmapId: "Ievadīt web kartes ID",
+				btnConfigure: "Konfigurēt karti"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "ķ_My Organization_ū",
-					onlineLabel: "ķ_ArcGIS Online_ū",
-					contentLabel: "ķ_My Content_ū",
-					favoritesLabel: "ķ_My Favorites_ū"
+					organizationLabel: "Organizācija",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Mans saturs",
+					favoritesLabel: "Mani favorīti"
 				},
-				title: "ķ_Select Web Map_ū",
-				searchTitle: "ķ_Search_ū",
-				ok: "ķ_Ok_ū",
-				cancel: "ķ_Cancel_ū",
-				placeholder: "ķ_Enter search term_ū"
+				title: "Web kartes izvēle",
+				searchTitle: "Meklēšana",
+				ok: "Labi",
+				cancel: "Atcelt",
+				placeholder: "Ievadiet meklējamo vienumu"
 			}
 		}
 	})

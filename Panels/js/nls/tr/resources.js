@@ -3,7 +3,7 @@
   viewer:{
     main:{
       scaleBarUnits: "english", //"english (for miles) or "metric" (for km) - don't translate.
-      legendLabel: "Gösterge",
+      legendLabel: "Gösterim",
       descriptionLabel: "Açıklama"
     },
     errors:{

@@ -6,7 +6,7 @@
 				step2: "กำลังโหลดข้อมูล",
 				step3: "กำลังเริ่มต้นทำงาน",
 				fail: "ขออภัย โหลด Swipe ล้มเหลว",
-				loadBuilder: "กำลังเปลี่ยนไปที่โหมดการสร้าง",
+				loadBuilder: "กำลังเปลี่ยนไปที่โหมดการสร้าง",				
 				redirectSignIn: "กลับไปยังหน้าที่ลงชื่อใช้",
 				redirectSignIn2: "(คุณจะเปลี่ยนหน้าต่างนี้หลังจากลงชื่อเข้าใช้)",
 				failButton: "ลองใหม่"
@@ -25,7 +25,7 @@
 				mapSave: "เกิดข้อผิดพลาดในการบันทึกเว็บแมพ",
 				notAuthorized: "คุณไม่ได้รับอนุญาตให้เข้าถึงแอพพลิเคชั่นนี้",
 				conflictingProjectionsTitle: "การถ่ายภาพที่ไม่สัมพันธ์กัน",
-				conflictingProjections: "Swipe ไม่รองรับเว็บแมพที่มีโปรเจคชันต่างกัน กรุณาไปที่การตั้งค่าและเลือกใช้เว็บแมพที่มีโปรเจคชันเดียวกับเว็บแมพแรก",
+				conflictingProjections: "ก้_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ษฺ",
 				cpButton: "ปิด"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "บันทึกแอพพลิเคชั่น"
 			},
 			header:{
-				editMe: "แก้ไขฉัน !",
+				editMe: "ก้_Edit me!_ษฺ",
 				templateTitle: "ตั้งชื่อโครงร่าง",
 				templateSubtitle: "ตั้งชื่อโครงร่างรอง"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "ตั้งค่าคำอธิบายที่แถบด้านข้าง",
-				editMe: "แก้ไขฉัน !",
+				editMe: "ก้_Edit me!_ษฺ",
 				legendTitle: "คำอธิบายสัญลักษณ์"
 			},
 			infoWindow: {

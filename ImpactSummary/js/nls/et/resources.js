@@ -10,7 +10,7 @@
             layers: "Kihid",
             rendererTitle: "Kuva antud ala kohta infot",
             summarize: "Kogu ala",
-            summarizeTitle: "Kuva summeeritud infot kõigi alade kohta",
+            summarizeTitle: "Kuva summeeritud info kõigi alade kohta",
             share: "Jaga",
             about: "Info",
             find: "Postikood, linn jne.",

@@ -16,6 +16,16 @@
  */
 define(({
         map: {
-            error: "Ж_Unable to create map_Я"
+            error: "Не удалось создать карту"
+        },
+        days: {
+           now: "Ж_NOW_Я",
+           sun: "Ж_SUN_Я",
+           mon: "Ж_MON_Я",
+           tue: "Ж_TUE_Я",
+           wed: "Ж_WED_Я",
+           thu: "Ж_THU_Я",
+           fri: "Ж_FRI_Я",
+           sat: "Ж_SAT_Я"
         }
 }));

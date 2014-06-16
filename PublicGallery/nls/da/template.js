@@ -100,13 +100,13 @@
 				"detailsLabel":"Detaljer"
             },
             "filterItems":{
-                "show": "ø_Show_å",
-                "all": "ø_All Results_å",
-                "maps": "ø_Maps_å",
-                "layers": "ø_Layers_å",
-                "applications": "ø_Applications_å",
-                "tools": "ø_Tools_å",
-                "files": "ø_Files_å"
+                "show": "Vis",
+                "all": "Alle resultater",
+                "maps": "Kort",
+                "layers": "Lag",
+                "applications": "Applikationer",
+                "tools": "Værktøjer",
+                "files": "Filer"
             },
             "pagination": {
                 "previous": "Tidligere",

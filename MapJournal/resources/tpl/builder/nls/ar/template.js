@@ -2,82 +2,82 @@
 	 ({
 		builder: {
 			layouts: {
-				mainStage: "بيت_Main Stage_لاحقة",
-				sideTitle: "بيت_Side Panel_لاحقة",
-				sideDescr: "بيت_A layout for a text intensive story that excels at combining your photos, videos, and maps in a clear focused message._لاحقة",
-				floatTitle: "بيت_Floating Panel_لاحقة",
-				floatDescr: "بيت_A layout that puts your cartography in focus while allowing a transparent short form text panel to help drive the story._لاحقة"
+				mainStage: "المرحلة الأساسية",
+				sideTitle: "اللوحة الجانبية",
+				sideDescr: "التخطيط الطباعي للحكاية النصية التي تدمج الصور ومقاطع الفيديو والخرائط في رسائل واضحة.",
+				floatTitle: "اللوحة العائمة",
+				floatDescr: "بيت_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._لاحقة"
 			},
 			common: {
-				lblStatus1: "بيت_Published_لاحقة",
-				lblStatus2: "بيت_Draft_لاحقة",
-				lblStatus3: "بيت_Hidden_لاحقة"
+				lblStatus1: "تم النشر",
+				lblStatus2: "مسودة",
+				lblStatus3: "مخفي"
 			},
 			settingsLayoutOptions: {
-				title: "بيت_Layout options_لاحقة",
-				cfgLeft: "بيت_Left_لاحقة",
-				cfgRight: "بيت_Right_لاحقة",
-				cfgSmall: "بيت_Small_لاحقة",
-				cfgMedium: "بيت_Medium_لاحقة",
-				cfgLarge: "بيت_Large_لاحقة",
-				socialLinksLabel: "بيت_Display sharing links at the bottom of each section_لاحقة",
-				socialLinksDescr: "بيت_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (Header Tab) and have them land at the start of the %TPL_NAME%._لاحقة"
+				title: "خيارات التخطيط الطباعي",
+				cfgLeft: "يسار",
+				cfgRight: "يمين",
+				cfgSmall: "صغير",
+				cfgMedium: "متوسط",
+				cfgLarge: "كبير",
+				socialLinksLabel: "عرض مشاركة الروابط أسفل كل جزء",
+				socialLinksDescr: "يُمكن ذلك القراء من إرجاع المقاطع المحددة لـ %TPL_NAME%. مثال، عند استخدام رمز مشاركة المقاطع، سيقوم القراء بالوصول إلى مقطع %TPL_NAME% المحدد عوضًا عن بداية الحكاية. يمكن للقراء استخدام رابط الوسائط الاجتماعية في مقطع العنوان لترقية %TPL_NAME% (علامة تبويب العنوان) الكلية وكذلك الوصول إلى بداية %TPL_NAME%."
 			},
 			initPopup: {
-				title: "بيت_Welcome to_لاحقة"
+				title: "مرحبًا بك في"
 			},
 			addEditPopup: {
-				titleAdd: "بيت_Add Section_لاحقة",
-				titleEdit: "بيت_Edit Section_لاحقة",
-				step: "بيت_Step_لاحقة",
-				stepMainStageExplain: "بيت_Add a Map, Image, or Video to the Main Stage_لاحقة",
-				stepPanelExplain: "بيت_Add content to the_لاحقة",
-				stepMainStageNextTooltip: "بيت_Enter the section title and select the Main Stage content_لاحقة",
-				step2NextTooltip: "بيت_Enter the section title and %LAYOUT-TYPE% content_لاحقة",
-				stepNextTooltipNext: "بيت_to go to the next step_لاحقة",
-				stepNextTooltipAdd: "بيت_to add the section_لاحقة",
-				titlePlaceholder: "بيت_Section title..._لاحقة",
+				titleAdd: "إضافة مقطع",
+				titleEdit: "تحرير المقطع",
+				step: "خطوة",
+				stepMainStageExplain: "إضافة خريطة أو صورة أو مقطع فيديو إلى المرحلة الأساسية",
+				stepPanelExplain: "إضافة المحتويات إلى",
+				stepMainStageNextTooltip: "أدخل",
+				step2NextTooltip: "أدخل عنوان المقطع ومحتويات %LAYOUT-TYPE%",
+				stepNextTooltipNext: "للانتقال إلى الخطوة التالية",
+				stepNextTooltipAdd: "لإضافة المقطع",
+				titlePlaceholder: "عنوان المقطع...",
 			},
 			addEditViewText: {
-				editorPlaceholder: "بيت_Add text, links, and small graphics here._لاحقة",
-				editorActionsTitle: "بيت_Main Stage Actions_لاحقة",
-				editorActionsHelpDescr: "بيت_Use these controls to create links that will change the main stage. For example, when the reader clicks a link you may want to zoom the Map to a specific location, display another web map or display an Image._لاحقة"
+				editorPlaceholder: "إضافة النص والروابط والرسومات الصغيرة هنا.",
+				editorActionsTitle: "إجراءات المرحلة الأساسية",
+				editorActionsHelpDescr: "استخدام عناصر التحكم الحالية لإنشاء الروابط التي ستقوم بتغيير المرحلة الأساسية. مثال، عند نقر القارئ على الرابط المطلوب لتكبير الخريطة وصولا للموقع المحدد أو عرض خريطة ويب أخرى أو عرض الصورة."
 			},
 			organizePopup: {
-				title: "بيت_Organize_لاحقة",
-				lblHeader: "بيت_Drag and drop story sections to organize your content._لاحقة",
-				lblColTitle: "بيت_Title_لاحقة",
-				lblColPubDate: "بيت_Publication date_لاحقة",
-				lblColStatus: "بيت_Status_لاحقة",
-				checkDisplayReverse: "بيت_Display sections in reverse order_لاحقة",
-				btnApplyWarning: "بيت_Confirm suppression of %NB% sections_لاحقة",
-				deleteTooltip: "بيت_Delete_لاحقة",
-				firstSectionExplain: "بيت_(The home section cannot be moved)_لاحقة"
+				title: "ترتيب",
+				lblHeader: "بيت_Drag and drop sections to organize your content._لاحقة",
+				lblColTitle: "العنوان",
+				lblColPubDate: "تاريخ المنشور",
+				lblColStatus: "حالة",
+				checkDisplayReverse: "عرض المقاطع بترتيب عكسي",
+				btnApplyWarning: "تأكيد إزالة مقاطع %NB%",
+				deleteTooltip: "حذف",
+				firstSectionExplain: "(يتعذر نقل المقطع الأساسي)"
 			},
 			help: {
-				lblHelp: "بيت_Help_لاحقة",
-				lblAdd: "بيت_Add Section_لاحقة",
-				lblSettings: "بيت_Settings_لاحقة",
-				lblOrga: "بيت_Organize content_لاحقة",
-				lblEdit: "بيت_Edits_لاحقة",
-				lblPublish: "بيت_Publish_لاحقة",
-				lblMore: "بيت_Want more?_لاحقة",
-				lblLink: "بيت_Visit the Story Maps website._لاحقة",
-				content1Div1: "بيت_You can integrate a variety of styles when building your story. The <strong>%LAYOUT_TITLE%</strong> typically holds your text, images, and video while your maps tend go on the <strong>Main Stage</strong>. However, the %TPL_NAME% allows you to feature images, charts, and video within the main stage as well._لاحقة",
-				content1Div2: "بيت_Adding sections allows you to truly customize your storytelling experience. As readers scroll down through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can load automatically to support your message._لاحقة",
-				content2Div1: "بيت_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, and widths are all refined here._لاحقة",
-				content2Div2: "بيت_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to the world._لاحقة",
-				content3Div1: "بيت_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; so within Organize you can reorder or delete sections as you wish._لاحقة",
-				content4Div1: "بيت_Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. Youâ€™ll use the edit functions many times as you develop your %TPL_NAME%!_لاحقة",
-				content5Div1: "بيت_Your %TPL_NAME% is saved to your %PORTAL% account, it is within %PORTAL% where you can decide whether the story is private, shared with just your organization, or open to the world. We even provide you with a shortened, stable URL so you can share easily._لاحقة"
+				lblHelp: "تعليمات",
+				lblAdd: "إضافة مقطع",
+				lblSettings: "الإعدادات",
+				lblOrga: "تنظيم المحتويات",
+				lblEdit: "تحرير",
+				lblPublish: "مشاركة",
+				lblMore: "هل تريد المزيد؟",
+				lblLink: "تفضل بزيارة موقع خرائط الحكاية على الويب.",
+				content1Div1: "يمكن تكامل أنماط متعددة عند بناء الحكاية. يحتفظ <strong>%LAYOUT_TITLE%</strong> بالنصوص والصور ومقاطع الفيديو عند وصول الخرائط<strong>إلى المرحلة الأساسية</strong>. مع ذلك، يسمح %TPL_NAME% بتمييز الصور والمخططات ومقاطع الفيديو داخل المرحلة الاساسية أيضًا.",
+				content1Div2: "بيت_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._لاحقة",
+				content2Div1: "يمكن هنا ضبط مظهر %TPL_NAME%. ستتم تنقية أنظمة الألوان والتخطيطات وكذلك العروض.",
+				content2Div2: "بيت_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._لاحقة",
+				content3Div1: "يتم تنظيم المحتويات داخل المقاطع. يمكن الحصول على العديد من المقاطع كما تريد (بصفتها فصول صغيرة). مسار هذه الفصول هام جدًا، بذلك سيصبح من الممكن إعادة ترتيب بعض المقاطع أو حذفها كما تريد.",
+				content4Div1: "هل تم إيجاد خطأ أو ترغب في تغيير المواد التعليمية؟ لا. ابحث عن رمز تحرير في التطبيق للقيام بالتغييرات في المحتويات. ستقوم باستخدام وظائف التحرير عدة مرات عند تطوير %TPL_NAME%!",
+				content5Div1: "بيت_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._لاحقة"
 			},
 			landing: {
-				lblAdd: "بيت_Add the Home Section_لاحقة",
-				lblOR: "بيت_Or_لاحقة",
-				lblHelp: "بيت_Take a Tour_لاحقة"
+				lblAdd: "إضافة مقطع الصفحة الرئيسية",
+				lblOR: "أو",
+				lblHelp: "القيام بجولة"
 			},
 			firstAddSplash: {
-				thisis: "بيت_This is the_لاحقة"
+				thisis: "هذا هو"
 			}
         }
     })

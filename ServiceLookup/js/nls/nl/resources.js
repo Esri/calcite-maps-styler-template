@@ -5,7 +5,7 @@
             mouseToolTip: "Klik op de kaart om te controleren op service"
         },
         geocoder: {
-            defaultText: "Ĳ_Enter an address or point of interest_ä"
+            defaultText: "Voer een adres of een nuttige plaats in"
         },
         error: {
             layerNotFound: "Kaartlaag bevindt zich niet in de webmap",

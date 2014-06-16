@@ -1,96 +1,95 @@
 <div class="container" data-dojo-attach-point="userMode">
     <div class="row">
         <div class="col-xs-12">
-            <div data-dojo-attach-point="statusAlert">
+            <div data-dojo-attach-point="statusAlert"></div>
+
+            <div class="jumbotron">
+                <img data-dojo-attach-point="appLogo" alt="Logo" class="img-responsive img-rounded" />
+                <h1 data-dojo-attach-point="appTitle">
+                    ${nls.user.defaultTitleText}
+                </h1>
+                <p data-dojo-attach-point="appDescription">
+                    ${nls.user.defaultDescriptionText}
+                </p>
+                <div class="clearfix"></div>
             </div>
-            <div class="page-header">
-                <div class="media">
-                    <a class="pull-left">
-                        <img data-dojo-attach-point="appLogo" src="" alt="Logo"
-                            class="img-circle circleImageDimension" data-src="holder.js/140x140">
-                    </a>
-                    <div class="media-body">
-                        <h2 data-dojo-attach-point="appTitle">
-                            ${nls.builder.defaultTitleText}
-                        </h2>
-                        <p class="lead" data-dojo-attach-point="appDescription">
-                            ${nls.builder.defaultDescriptionText}
-                        </p>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
     <div class="row">
-    <div data-dojo-attach-point="erroMessageDiv"></div>
+        <div data-dojo-attach-point="erroMessageDiv"></div>
         <div class="col-xs-12 col-sm-7">
-            <h3>
-                ${nls.builder.geoFormGeneralTabText}</h3>
+            <h2>
+                ${nls.user.geoFormGeneralTabText}</h2>
             <form role="form" data-dojo-attach-point="userForm">
             </form>
         </div>
         <div class="col-xs-12 col-sm-5">
-            <h3>
-                ${nls.builder.locationInformationText}</h3>
+            <h2>
+                ${nls.user.locationInformationText}</h2>
+            <p>${nls.user.locationDescription}</p>
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#myLocation" data-toggle="tab">${nls.builder.myLocationText}</a>
+                <li class="active"><a href="#myLocation" data-toggle="tab">${nls.user.myLocationText}</a>
                 </li>
-                <li><a href="#address" data-toggle="tab">${nls.builder.addressText}</a> </li>
-                <li><a href="#coordinates" data-toggle="tab">${nls.builder.cooridnatesText}</a>
-                </li>
+                <li><a href="#address" data-toggle="tab">${nls.user.addressText}</a> </li>
+                <li><a href="#coordinates" data-toggle="tab">${nls.user.cooridnatesText}</a> </li>
             </ul>
             <form role="form" class="myLocationOptions">
-            <div class="tab-content">
-                <div id="myLocation" class="tab-pane active">
-                    <div class="form-group">
-                        <label for="">
-                            ${nls.builder.locationTabText}</label>
-                        <div data-dojo-attach-point="myLocation" class="btn btn-default">
+                <div class="tab-content">
+                    <div id="myLocation" class="tab-pane active">
+                        <div class="form-group">
+                            <div>
+                                <div class="inline-block">
+                                    <div data-dojo-attach-point="myLocation" class="btn btn-default">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="address" class="tab-pane">
-                    <div class="form-group">
-                        <label for="">
-                            ${nls.builder.locationTabText}</label>
-                        <div data-dojo-attach-point="geocodeAddress">
+                    <div id="address" class="tab-pane">
+                        <div class="form-group">
+                            <div data-dojo-attach-point="geocodeAddress">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="coordinates" class="tab-pane">
-                    <div data-dojo-attach-point="coordinatesContainer" class="form-group">
-                        <label for="">
-                            ${nls.builder.locationTabText}</label>
-                        <div>
+                    <div id="coordinates" class="tab-pane">
+                        <div data-dojo-attach-point="coordinatesContainer" class="form-group">
+                            <div>
                             <input data-dojo-attach-point="XCoordinate" class="form-control inputCoorninates clearfix"
-                                type="text" placeholder= "${nls.builder.placeholderLatitude}" />
+                                type="text" placeholder="${nls.user.placeholderLatitude}" />
                             <input data-dojo-attach-point="YCoordinate" class="form-control inputCoorninates clearfix"
-                                type="text" placeholder= "${nls.builder.placeholderLongitude}" />
+                                type="text" placeholder="${nls.user.placeholderLongitude}" />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </form>
             <div id="mapDiv">
             </div>
-               <div id="coordinatesContainer">
-                <span id="latAddress"></span><span id="longAddress"></span>
+            <div id="coordinatesContainer">
+                <span class="text-muted" id="coordinatesValue"></span>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-7">
-            <div data-dojo-attach-point="onlineStatus">
+            <div id="onlineStatus">
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
+            <h2>
+                ${nls.user.submitInformationText}</h2>
             <div class="form-group">
-                <button class="btn btn-primary" data-dojo-attach-point="submitButton">
-                    ${nls.builder.submitButtonText}</button>
-                <button type="reset" class="btn btn-default" data-dojo-attach-point="resetButton">
-                    ${nls.builder.clearButtonText}</button>
+                <div class="submit-area">
+                    <p>
+                        ${nls.user.submitInstructions}</p>
+                   <!-- <button type="button" data-dojo-attach-point="submitButton" class="btn btn-primary ">
+                        ${nls.user.submitButtonText}</button>-->
+                    <button type="button" data-dojo-attach-point="submitButton" data-loading-text="Loading..." class="btn btn-primary">
+                        ${nls.user.submitButtonText}</button>
+                </div>
             </div>
         </div>
     </div>

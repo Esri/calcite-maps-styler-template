@@ -6,7 +6,7 @@
         general: {
             map: "Harita",
             mapInfo: "Harita Bilgileri",
-            legend: "Gösterge",
+            legend: "Gösterim",
             layers: "Katmanlar",
             rendererTitle: "Bu alanla ilgili bilgileri görüntüle",
             summarize: "Tüm Alan",

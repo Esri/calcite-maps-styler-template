@@ -52,6 +52,7 @@ define(
             geolocationUnavailable: "浏览器无法获取当前位置",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "浏览器无法及时获取当前位置",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             searchLayerMissing: "在地图中未找到此查找图层",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            searchLayerNotSearchable: "试_Fields could not be found for the map layer.<br><br>Verify that this layer exists at the root of the map Contents. Nested services, such as ArcGIS for Server dynamic map services, must be added to the map one layer at a time (including layer index number) to be used as Find Layers. Tiled services cannot be used as Find Layers._验",
             searchFieldMissing: "在地图查找图层中未找到此字段",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
             allSearchFieldsMissing: "在地图查找图层中未找到这些字段",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "此字段不存在于任何地图图层中",  // Appears when a field used in the configuration was not found in any map layer

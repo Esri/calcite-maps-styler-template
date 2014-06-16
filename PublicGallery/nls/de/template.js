@@ -100,13 +100,13 @@
 				"detailsLabel":"Details"
             },
             "filterItems":{
-                "show": "ä_Show_Ü",
-                "all": "ä_All Results_Ü",
-                "maps": "ä_Maps_Ü",
-                "layers": "ä_Layers_Ü",
-                "applications": "ä_Applications_Ü",
-                "tools": "ä_Tools_Ü",
-                "files": "ä_Files_Ü"
+                "show": "Anzeigen",
+                "all": "Alle Ergebnisse",
+                "maps": "Karten",
+                "layers": "Layer",
+                "applications": "Anwendungen",
+                "tools": "Werkzeuge",
+                "files": "Dateien"
             },
             "pagination": {
                 "previous": "Zurück",

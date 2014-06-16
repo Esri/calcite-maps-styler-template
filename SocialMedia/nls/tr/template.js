@@ -34,7 +34,7 @@
                 "invalidSearch": "Geçersiz Arama" // added 8.26.2013
             },
             "legend": {
-                "menuTitle": "Gösterge"
+                "menuTitle": "Gösterim"
             },
             "search": {
                 "location": "Konum",
@@ -105,7 +105,7 @@
                 "access": "Erişim ve Kullanım Kısıtlamaları"
             },
             "buttons": {
-                "legend": "Gösterge",
+                "legend": "Gösterim",
                 "legendTitle": "Gösterimi Göster",
                 "basemap": "Altlık Harita",
                 "basemapTitle": "Altlık Haritayı Değiştir",

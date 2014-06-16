@@ -2,84 +2,84 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ă_Select Media Type_ș",
-				lblSelect2: "Ă_Select Content Type_ș",
-				lblMap: "Ă_Map_ș",
-				lblImage: "Ă_Image_ș",
-				lblVideo: "Ă_Video_ș",
-				lblExternal: "Ă_Web page_ș",
-				disabled: "Ă_This feature has been disabled by the Administrator_ș",
-				url: "Ă_To manually enter the web address of an image_ș",
-				userLookup: "Ă_Load albums_ș",
-				notImplemented: "Ă_Not implemented yet._ș"
+				lblSelect1: "Selectare tip media",
+				lblSelect2: "Selectare tip de conţinut",
+				lblMap: "Hartă",
+				lblImage: "Imagine",
+				lblVideo: "Video",
+				lblExternal: "Pagină web",
+				disabled: "Acest obiect spaţial a fost dezactivat de administrator",
+				url: "Pentru introducerea manuală a adresei web a unei imagini",
+				userLookup: "Încărcare albume",
+				notImplemented: "Neimplementat încă."
 			},
 			imageSelector: {
-				lblStep1: "Ă_Choose the service_ș",
-				lblStep2: "Ă_Select your media_ș",
-				lblStep3: "Ă_Configure_ș"
+				lblStep1: "Alegere serviciu",
+				lblStep2: "Selectare media",
+				lblStep3: "Configurare"
 			},
 			imageSelectorHome: {
-				explain: "Ă_Load images from social media, <br /> or directly from a URL_ș"
+				explain: "Încărcare imagini din servicii de socializare <br /> sau direct dintr-un URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "Ă_User name_ș",
-				signInMsg2: "Ă_User not found_ș",
-				loadingFailed: "Ă_Loading failed_ș"
+				userInputLbl: "Nume utilizator",
+				signInMsg2: "Utilizator negăsit",
+				loadingFailed: "Încărcare eşuată"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "Ă_Facebook User_ș",
-				rightHeader: "Ă_Facebook Page_ș",
-				pageExplain: "Ă_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL._ș",
-				pageInputLbl: "Ă_Page name_ș",
-				lookupMsgError: "Ă_Page not found_ș"
+				leftHeader: "Utilizator Facebook",
+				rightHeader: "Pagină Facebook",
+				pageExplain: "O pagină de Facebook este o marcă sau un produs public sau o celebritate precum <b>esrigis</b>. Puteţi prelua numele paginii după primul caracter „/” din URL-ul paginii.",
+				pageInputLbl: "Nume pagină",
+				lookupMsgError: "Pagină negăsită"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "Ă_Email or Picasa/Google+ ID_ș",
-				signInMsg2: "Ă_Account not found_ș",
-				signInMsg3: "Ă_No public album_ș",
-				howToFind: "Ă_How to find a Picasa or Google+ account ID_ș",
-				howToFind2: "Ă_Copy digits between the first and second '/' of any Picasa or G+ page_ș"
+				userInputLbl: "E-mail sau ID Picasa/Google+",
+				signInMsg2: "Cont negăsit",
+				signInMsg3: "Niciun album public",
+				howToFind: "Găsirea unui ID de cont Picasa sau Google+",
+				howToFind2: "Copiaţi cifrele dintre primul şi al doilea caracter „/” a unei pagini Picasa sau G+"
 			},
 			videoSelector: {
 				
 			},
 			videoSelectorYoutube: {
-				pageInputLbl: "Ă_User name_ș",
-				lookupMsgError: "Ă_User not found_ș",
-				howToFind: "Ă_How to find a YouTube user name_ș",
-				howToFind2: "Ă_User name is displayed under videos_ș",
-				found: "Ă_Found_ș",
-				noData: "Ă_No public videos found_ș"
+				pageInputLbl: "Nume utilizator",
+				lookupMsgError: "Utilizator negăsit",
+				howToFind: "Cum găsiţi un nume de utilizator YouTube",
+				howToFind2: "Numele de utilizator este afişat sub videoclipuri",
+				found: "Găsit",
+				noData: "Nu a fost găsit niciun videoclip public"
 			},
 			mediaSelectorPicker: {
 				
 			},
 			mediaConfigure: {
-				lblURL: "Ă_URL_ș",
-				lblURLPH: "Ă_Media URL..._ș",
-				lblLabel: "Ă_Label_ș",
-				lblLabel1: "Ă_Caption_ș",
-				lblLabel2: "Ă_Hover text_ș",
-				lblLabel3: "Ă_None_ș",
-				lblLabelPH: "Ă_Enter some text..._ș",
-				lblPosition: "Ă_Position_ș",
-				lblPosition1: "Ă_Center_ș",
-				lblPosition2: "Ă_Fill_ș",
-				lblPosition3: "Ă_Fit_ș",
-				lblPosition4: "Ă_Stretch_ș",
-				lblPosition2Explain: "Ă_(may crop)_ș",
-				lblPosition3Explain: "Ă_(won't crop)_ș",
-				lblPosition4Explain: "Ă_(may distort)_ș"
+				lblURL: "URL",
+				lblURLPH: "URL media...",
+				lblLabel: "Etichetă",
+				lblLabel1: "Subtitlu",
+				lblLabel2: "Text informativ",
+				lblLabel3: "Niciunul",
+				lblLabelPH: "Introduceţi text...",
+				lblPosition: "Poziţie",
+				lblPosition1: "Centru",
+				lblPosition2: "Umplere",
+				lblPosition3: "Potrivire",
+				lblPosition4: "Întindere",
+				lblPosition2Explain: "(poate fi decupat)",
+				lblPosition3Explain: "(nu poate fi decupat)",
+				lblPosition4Explain: "(poate fi distorsionat)"
 			},
 			editorActionGeocode: {
-				lblTitle: "Ă_Locate an address or place_ș",
-				mapMarkerExplain: "Ă_User will see a map marker when clicking the link_ș"
+				lblTitle: "Localizaţi o adresă sau un loc",
+				mapMarkerExplain: "Utilizatorul va vedea un marcaj pe hartă când va face clic pe link"
 			},
 			editorActionMedia: {
-				lblTitle: "Ă_Change the Main Stage media_ș"
+				lblTitle: "Ă_Change the Main Stage content_ș"
 			},
 			editorInlineMedia: {
-				lblTitle: "Ă_Insert an image or video_ș"
+				lblTitle: "Inserare imagine sau videoclip"
 			}
 		}
 	})

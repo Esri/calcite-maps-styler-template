@@ -2,84 +2,84 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ä_Select Media Type_Ü",
-				lblSelect2: "ä_Select Content Type_Ü",
-				lblMap: "ä_Map_Ü",
-				lblImage: "ä_Image_Ü",
-				lblVideo: "ä_Video_Ü",
-				lblExternal: "ä_Web page_Ü",
-				disabled: "ä_This feature has been disabled by the Administrator_Ü",
-				url: "ä_To manually enter the web address of an image_Ü",
-				userLookup: "ä_Load albums_Ü",
-				notImplemented: "ä_Not implemented yet._Ü"
+				lblSelect1: "Medientyp auswählen",
+				lblSelect2: "Inhaltstyp auswählen",
+				lblMap: "Karte",
+				lblImage: "Bild",
+				lblVideo: "Video",
+				lblExternal: "Webseite",
+				disabled: "Diese Funktion wurde vom Administrator deaktiviert",
+				url: "Zur manuellen Eingabe der Web-Adresse eines Bildes",
+				userLookup: "Alben laden",
+				notImplemented: "Noch nicht implementiert."
 			},
 			imageSelector: {
-				lblStep1: "ä_Choose the service_Ü",
-				lblStep2: "ä_Select your media_Ü",
-				lblStep3: "ä_Configure_Ü"
+				lblStep1: "Service auswählen",
+				lblStep2: "Medien auswählen",
+				lblStep3: "Konfigurieren"
 			},
 			imageSelectorHome: {
-				explain: "ä_Load images from social media, <br /> or directly from a URL_Ü"
+				explain: "Bilder über soziale Medien <br /> oder direkt über eine URL laden"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "ä_User name_Ü",
-				signInMsg2: "ä_User not found_Ü",
-				loadingFailed: "ä_Loading failed_Ü"
+				userInputLbl: "Benutzername",
+				signInMsg2: "Benutzer nicht gefunden",
+				loadingFailed: "Fehler beim Laden"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "ä_Facebook User_Ü",
-				rightHeader: "ä_Facebook Page_Ü",
-				pageExplain: "ä_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL._Ü",
-				pageInputLbl: "ä_Page name_Ü",
-				lookupMsgError: "ä_Page not found_Ü"
+				leftHeader: "Facebook-Benutzer",
+				rightHeader: "Facebook-Seite",
+				pageExplain: "Eine Facebook-Seite entspricht einer öffentlichen Marke/einem Produkt oder einer prominenten Person wie <b>esrigis</b>. Den Seitennamen können sie dem Text nach dem ersten Schrägstrich (\'/\') in der Seiten-URL entnehmen.",
+				pageInputLbl: "Seitenname",
+				lookupMsgError: "Seite nicht gefunden"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "ä_Email or Picasa/Google+ ID_Ü",
-				signInMsg2: "ä_Account not found_Ü",
-				signInMsg3: "ä_No public album_Ü",
-				howToFind: "ä_How to find a Picasa or Google+ account ID_Ü",
-				howToFind2: "ä_Copy digits between the first and second '/' of any Picasa or G+ page_Ü"
+				userInputLbl: "E-Mail-Adresse oder Picasa/Google+-ID",
+				signInMsg2: "Konto nicht gefunden",
+				signInMsg3: "Kein öffentliches Album",
+				howToFind: "So finden Sie eine Picasa- oder Google+-Konto-ID",
+				howToFind2: "Kopieren Sie die Ziffern zwischen dem ersten und zweiten Schrägstrich (\'/\') einer Picasa- oder G+-Seite"
 			},
 			videoSelector: {
 				
 			},
 			videoSelectorYoutube: {
-				pageInputLbl: "ä_User name_Ü",
-				lookupMsgError: "ä_User not found_Ü",
-				howToFind: "ä_How to find a YouTube user name_Ü",
-				howToFind2: "ä_User name is displayed under videos_Ü",
-				found: "ä_Found_Ü",
-				noData: "ä_No public videos found_Ü"
+				pageInputLbl: "Benutzername",
+				lookupMsgError: "Benutzer nicht gefunden",
+				howToFind: "So finden Sie einen Youtube-Benutzernamen",
+				howToFind2: "Benutzername wird unter Videos angezeigt",
+				found: "Gefunden",
+				noData: "Keine öffentlichen Videos gefunden"
 			},
 			mediaSelectorPicker: {
 				
 			},
 			mediaConfigure: {
-				lblURL: "ä_URL_Ü",
-				lblURLPH: "ä_Media URL..._Ü",
-				lblLabel: "ä_Label_Ü",
-				lblLabel1: "ä_Caption_Ü",
-				lblLabel2: "ä_Hover text_Ü",
-				lblLabel3: "ä_None_Ü",
-				lblLabelPH: "ä_Enter some text..._Ü",
-				lblPosition: "ä_Position_Ü",
-				lblPosition1: "ä_Center_Ü",
-				lblPosition2: "ä_Fill_Ü",
-				lblPosition3: "ä_Fit_Ü",
-				lblPosition4: "ä_Stretch_Ü",
-				lblPosition2Explain: "ä_(may crop)_Ü",
-				lblPosition3Explain: "ä_(won't crop)_Ü",
-				lblPosition4Explain: "ä_(may distort)_Ü"
+				lblURL: "URL",
+				lblURLPH: "Medien-URL...",
+				lblLabel: "Beschriftung",
+				lblLabel1: "Beschriftung",
+				lblLabel2: "Hovertext",
+				lblLabel3: "Keine",
+				lblLabelPH: "Text eingeben...",
+				lblPosition: "Position",
+				lblPosition1: "Zentrieren",
+				lblPosition2: "Füllung",
+				lblPosition3: "Einpassen",
+				lblPosition4: "Strecken",
+				lblPosition2Explain: "(Zuschneiden möglich)",
+				lblPosition3Explain: "(Zuschneiden nicht möglich)",
+				lblPosition4Explain: "(Verzerren möglich)"
 			},
 			editorActionGeocode: {
-				lblTitle: "ä_Locate an address or place_Ü",
-				mapMarkerExplain: "ä_User will see a map marker when clicking the link_Ü"
+				lblTitle: "Adresse oder Ort suchen",
+				mapMarkerExplain: "Beim Klicken auf den Link wird ein Karten-Marker angezeigt"
 			},
 			editorActionMedia: {
-				lblTitle: "ä_Change the Main Stage media_Ü"
+				lblTitle: "ä_Change the Main Stage content_Ü"
 			},
 			editorInlineMedia: {
-				lblTitle: "ä_Insert an image or video_Ü"
+				lblTitle: "Bild oder Video einfügen"
 			}
 		}
 	})

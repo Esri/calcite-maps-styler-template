@@ -21,33 +21,34 @@ define(({
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'بيت_Landscape (PDF)_لاحقة',
-			      "label2": 'بيت_Portrait (PDF)_لاحقة',
-			      "label3": 'بيت_Landscape (Image)_لاحقة',
-			      "label4": 'بيت_Portrait (Image)_لاحقة'
-			    }
+			      "label1": 'وضع أفقي (PDF)',
+			      "label2": 'وضع عمودي (PDF)',
+			      "label3": 'وضع أفقي (صورة)',
+			      "label4": 'وضع عمودي (صورة)'
+			    },
+			    "legend": "بيت_Add legend to output_لاحقة"
 			},
 			"share": {
-				"extent": "بيت_Use current map extent_لاحقة",
-				"label": "بيت_Share this map_لاحقة",
-				"link": "بيت_Map Link_لاحقة",
+				"extent": "استخدم مدى الخريطة الحالية",
+				"label": "مشاركة هذه الخريطة",
+				"link": "رابط الخريطة",
 				"facebook": "بيت_Facebook_لاحقة",
 				"twitter": "بيت_Twitter_لاحقة"
 			}
         },
         "tooltips":{
-        	"home": "بيت_Default extent_لاحقة",
-        	"locate": "بيت_Find my location_لاحقة",
-        	"legend": "بيت_Legend_لاحقة",
-        	"bookmarks": "بيت_Bookmarks_لاحقة",
-        	"layers": "بيت_Layers_لاحقة",
+        	"home": "النطاق الافتراضي",
+        	"locate": "العثور على الموقع الخاص بي",
+        	"legend": "مفتاح الخريطة",
+        	"bookmarks": "إشارات مرجعية",
+        	"layers": "طبقات",
         	"basemap": "بيت_Basemap gallery_لاحقة",
         	"overview": "بيت_Overview map_لاحقة",
-        	"measure": "بيت_Measure_لاحقة",
-        	"edit": "بيت_Edit_لاحقة",
-        	"time": "بيت_Time_لاحقة",
-        	"print": "بيت_Print_لاحقة",
+        	"measure": "قياس",
+        	"edit": "تحرير",
+        	"time": "الوقت",
+        	"print": "طباعة",
         	"details": "بيت_Details_لاحقة",
-        	"share": "بيت_Share_لاحقة"
+        	"share": "مشاركة"
         }
 }));

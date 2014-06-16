@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "Закрыть"
+			},
 			loading: {
-				step1: "Ж_Loading application_Я",
-				step2: "Ж_Loading data_Я",
-				step3: "Ж_Initializing_Я",
-				loadBuilder: "Ж_Switching to builder_Я",
-				fail: "Ж_Sorry, loading failed_Я",
-				failButton: "Ж_Retry_Я"
+				step1: "Загрузка приложения",
+				step2: "Загрузка данных",
+				step3: "Инициализация",
+				loadBuilder: "Открытие конструктора",
+				fail: "К сожалению, загрузка не удалась",
+				failButton: "Повторить"
 			},
 			signin: {
-				title: "Ж_Authentication is required_Я",
-				explainViewer: "Ж_Please sign in with an account on %PORTAL_LINK% to access the application._Я",
-				explainBuilder: "Ж_Please sign in with an account on %PORTAL_LINK% to configure the application._Я"
+				title: "Требуется аутентификация",
+				explainViewer: "Для доступа к приложению войдите на % PORTALLINK % под учетной записью.",
+				explainBuilder: "Для настройки приложения войдите на % PORTALLINK % под учетной записью."
 			},
 			errors: {
-				boxTitle: "Ж_An error has occurred_Я",
-				invalidConfig: "Ж_Fatal error: Invalid configuration_Я",
-				invalidConfigNoApp: "Ж_Fatal error: Web Mapping Application identifier not specified in index.html_Я",
-				createMap: "Ж_Unable to create map_Я",
-				invalidApp: "Ж_Fatal error: The application cannot be loaded_Я",
-				notConfiguredDesktop: "Ж_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._Я",
-				notConfiguredMobile: "Ж_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._Я",
-				notAuthorized: "Ж_You are not authorized to access this application_Я",
-				noBuilderIE8: "Ж_The builder is not supported on Internet Explorer before version 9._Я"
+				boxTitle: "Произошла ошибка",
+				invalidConfig: "Критическая ошибка: недопустимая конфигурация",
+				invalidConfigNoApp: "Фатальная ошибка: в index.html не указан идентификатор Web Mapping Application",
+				createMap: "Не удалось создать карту",
+				invalidApp: "Критическая ошибка: не удается загрузить приложение",
+				notConfiguredDesktop: "Добро пожаловать в веб-приложение %TPL_NAME%.<br />Приложение еще не настроено.",
+				notConfiguredMobile: "Добро пожаловать в веб-приложение %TPL_NAME%. Приложение ещё не настроено. Конструктор не поддерживается на мобильных устройствах.",
+				notAuthorized: "Вы не авторизованы для доступа к данному приложению",
+				noBuilderIE8: "Конструктор не поддерживается в браузере Internet Explorer версий ранее 9."
 			},
 			mobileView: {
-				tapForDetails: "Ж_Tap for details_Я",
-				swipeToExplore: "Ж_Swipe to explore_Я",
-				tapForMap: "Ж_Tap to get back to the Map_Я"
+				tapForDetails: "Коснитесь для подробной информации",
+				swipeToExplore: "Проведите для поиска",
+				tapForMap: "Коснитесь, чтобы вернуться к карте"
 			},
 			floatLayout: {
-				scroll: "Ж_Scroll_Я"
+				scroll: "Прокрутите"
 			},
 			sideLayout: {
-				scroll: "Ж_Scroll down for more!_Я"
+				scroll: "Прокрутите вниз, чтобы увидеть больше!"
 			},
 			mainStage: {
-				back: "Ж_Back_Я"
+				back: "Назад"
 			},
 			headerFromCommon: {
-				storymapsText: "Ж_A story map_Я",
-				builderButton: "Ж_Edit_Я",
-				bitlyTooltip: "Ж_Get a short link to the application_Я",
-				templateTitle: "Ж_Set template title_Я",
-				templateSubtitle: "Ж_Set template subtitle_Я",
-				share: "Ж_Share_Я"
+				storymapsText: "Карта истории",
+				builderButton: "Редактировать",
+				bitlyTooltip: "Получить короткую ссылку на приложение",
+				templateTitle: "Ввести заголовок шаблона",
+				templateSubtitle: "Ввести подзаголовок шаблона",
+				share: "Общий доступ"
 			},
 			overviewFromCommon: {
-				title: "Ж_Overview Map_Я",
+				title: "Обзорная карта",
 			},
 			legendFromCommon: {
-				title: "Ж_Legend_Я"
+				title: "Легенда"
+			},
+			shareFromCommon: {
+				copy: "Копировать",
+				copied: "Скопировано",
+				open: "Открыть",
+				embed: "Ж_Embed in website_Я",
+				embedExplain: "Ж_Use the following HTML code to embed the Journal in a website._Я",
+				size: "Размер (ширина/высота):"
 			}
         }
     })

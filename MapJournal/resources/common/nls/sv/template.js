@@ -2,144 +2,144 @@
 	 ({
 		common: {
 			common: {
-				edit: "Å_Edit_ö"
+				edit: "Redigera"
 			},
 			inlineFieldEdit: {
-				editMe: "Å_Edit me !_ö"
+				editMe: "Redigera mig!"
 			},
 			builderPanel: {
-				panelHeader: "Å_%TPL_NAME% Builder_ö",
-				buttonSave: "Å_SAVE_ö",
-				buttonShare: "Å_SHARE_ö",
-				buttonSettings: "Å_SETTINGS_ö",
-				buttonHelp: "Å_HELP_ö",
-				noPendingChange: "Å_No pending change_ö",
-				unSavedChangeSingular: "Å_1 unsaved change_ö",
-				unSavedChangePlural: "Å_unsaved changes_ö",
-				popoverSaveWhenDone: "Å_Don't forget to save when you are done_ö",
-				closeWithPendingChange: "Å_Are you sure to want to confirm the action ? Your changes will be lost._ö",
-				ok: "Å_Ok_ö",
-				savingApplication: "Å_Saving application_ö",
-				saveError: "Å_Save failed, please try again_ö",
-				saveError3: "Å_The title can't be empty_ö",
+				panelHeader: "Byggverktyget %TPL_NAME%",
+				buttonSave: "SPARA",
+				buttonShare: "DELA",
+				buttonSettings: "INSTÄLLNINGAR",
+				buttonHelp: "HJÄLP",
+				noPendingChange: "Ingen väntande ändring",
+				unSavedChangeSingular: "1 osparad ändring",
+				unSavedChangePlural: "osparade ändringar",
+				popoverSaveWhenDone: "Glöm inte att spara när du är klar",
+				closeWithPendingChange: "Vill du bekräfta åtgärden? Du kommer att förlora dina ändringar.",
+				ok: "OK",
+				savingApplication: "Sparar programmet",
+				saveError: "Det gick inte att spara, försök igen",
+				saveError3: "Titeln får inte vara tom",
 				// TODO
-				signIn: "Å_Please sign in with an account on_ö",
-				shareStatus1: "Å_Application is not saved_ö",
-				shareStatus2: "Å_Application is shared publicly_ö",
-				shareStatus3: "Å_Application is shared within the organization_ö",
-				shareStatus4: "Å_Application is not shared_ö"
+				signIn: "Logga in med ett konto på",
+				shareStatus1: "Applikationen har inte sparats",
+				shareStatus2: "Applikationen delas offentligt",
+				shareStatus3: "Applikationen delas inom organisationen",
+				shareStatus4: "Applikationen delas inte"
 			},
 			// TODO
 			addEditPopup: {
 				// Add
-				addEditPopupInputTitleLabel: "Å_Title_ö",
-				addPopupTitle: "Å_Add_ö",
-				addPopupDescription: "Å_Add a new view to your series._ö",
-				addPopupButton: "Å_ADD_ö",
+				addEditPopupInputTitleLabel: "Titel",
+				addPopupTitle: "Lägg till",
+				addPopupDescription: "Lägg till en ny vy i serien.",
+				addPopupButton: "LÄGG TILL",
 				// Edit
-				editPopupTitle: "Å_Edit_ö",
-				editPopupDescription: "Å_Edit the selected view_ö",
-				editPopupButton: "Å_APPLY_ö",
+				editPopupTitle: "Redigera",
+				editPopupDescription: "Redigera den valda vyn",
+				editPopupButton: "TILLÄMPA",
 				// Add/Edit
-				addEditPopupCancelButton: "Å_CANCEL_ö",
-				addEditPopupMyContentBtn: "Å_Select from my content_ö",
-				addEditPopupConfigureWebMapBtn: " Å_Configure_ö"
+				addEditPopupCancelButton: "AVBRYT",
+				addEditPopupMyContentBtn: "Välj i mitt innehåll",
+				addEditPopupConfigureWebMapBtn: " Konfigurera"
 			},
 			share: {
-				firstSaveTitle: "Å_Application successfully saved_ö",
-				firstSaveHeader: "Å_Your application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ö",
-				firstSaveA1: "Å_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ö",
-				firstSaveA1bis: "Å_The application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ö",
-				firstSaveQ2: "Å_Is my application shared?_ö",
-				firstSaveA2: "Å_Currently your application is not shared. To share it, use the SHARE button._ö",
-				shareTitle: "Å_Share your application_ö",
-				sharePrivateHeader: "Å_Your application is not shared, would you like to share it?_ö",
-				sharePrivateBtn1: "Å_Share publicly_ö",
-				sharePrivateBtn2: "Å_Share with my Organization_ö",
-				sharePrivateWarning: "Å_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ö",
-				sharePrivateWarningWith1: "Å_publicly_ö",
-				sharePrivateWarningWith2: "Å_publicly and with the Organization_ö",
-				sharePrivateProgress: "Å_Sharing in progress..._ö",
-				sharePrivateErr: "Å_Sharing failed, try again or_ö",
-				sharePrivateOk: "Å_Sharing updated successfully, loading..._ö",
-				sharePreviewAsUser: "Å_Preview_ö",
-				shareHeader1: "Å_Your application is <strong>publicly accessible</strong>._ö",
-				shareHeader2: "Å_Your application is accessible by your organization members (login is required)._ö",
-				shareLinkHeader: "Å_Share the application with your audience_ö",
-				shareLinkOpen: "Å_OPEN_ö",
-				shareQ1Opt1: "Å_How do I keep the application private?_ö",
-				shareQ1Opt2: "Å_How do I keep the application private or share it publicly?_ö",
-				shareA1: "Å_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._ö",
-				shareA1bis: "Å_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ö",
-				shareQ2: "Å_How do I edit the application later?_ö",
-				shareQ2bis: "Å_How do I get back to the authoring interface?_ö",
-				shareA2div1: "Å_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ö",
-				shareA2div2: "Å_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ö",				
-				shareQ3: "Å_Where is the data stored?_ö",
-				shareA3: "Å_The application configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._ö",
-				learnMore: "Å_Learn more_ö",
-				close: "Å_Close_ö"
+				firstSaveTitle: "Applikationen har sparats",
+				firstSaveHeader: "Din applikation har sparats i ArcGIS Online. Läs följande svar på vanliga frågor.",
+				firstSaveA1: "Om du inte är bekant med ArcGIS Online eller vill ha en genväg till skapargränssnittet kan du spara följande länk: %LINK1%",
+				firstSaveA1bis: "Applikationen finns även i din <a href='%LINK2%' target='_blank'>ArcGIS Online-innehållsmapp</a>.",
+				firstSaveQ2: "Delas min applikation?",
+				firstSaveA2: "För tillfället delas inte din applikation. Du kan dela den med knappen DELA.",
+				shareTitle: "Dela din applikation",
+				sharePrivateHeader: "Din applikation delas inte. Vill du dela den?",
+				sharePrivateBtn1: "Dela offentligt",
+				sharePrivateBtn2: "Dela med min organisation",
+				sharePrivateWarning: "Delning %WITH% har inaktiverats efter som du inte är ägare till <a href='%LINK%' target='_blank'>webbkartan</a>.",
+				sharePrivateWarningWith1: "offentligt",
+				sharePrivateWarningWith2: "offentligt och med organisationen",
+				sharePrivateProgress: "Delning pågår ...",
+				sharePrivateErr: "Det gick inte att dela. Försök igen eller",
+				sharePrivateOk: "Delningen har uppdaterats, laddar ...",
+				sharePreviewAsUser: "Förhandsgranska",
+				shareHeader1: "Applikationen är <strong>publikt tillgänglig</strong>.",
+				shareHeader2: "Applikationen är tillgänglig för organisationens medlemmar (inloggning krävs).",
+				shareLinkHeader: "Dela applikationen med din publik",
+				shareLinkOpen: "ÖPPNA",
+				shareQ1Opt1: "Hur behåller jag applikationen privat?",
+				shareQ1Opt2: "Hur behåller jag applikationen privat eller delar den offentligt?",
+				shareA1: "Använd %SHAREIMG% on <a href='%LINK1%' target='_blank'>applikationens objektsida</a>. Du kan även inaktivera delning av webbkartan på <a href='%LINK2%' target='_blank'>webbkartans objektsida</a>.",
+				shareA1bis: "Du kan också inaktivera delning av geoobjekttjänsten på <a href='%LINK1%' target='_blank'>geoobjekttjänstens objektsida</a>.",
+				shareQ2: "Hur redigerar jag applikationen senare?",
+				shareQ2bis: "Hur kommer jag tillbaka till redigeringsgränssnittet?",
+				shareA2div1: "Spara följande länk och använd den senare: %LINK1%, eller gå via <a href='%LINK2%' target='_blank'>applikationens objektsida</a>.",
+				shareA2div2: "Som ägare till applikationen kan du se en knapp som öppnar det interaktiva byggverktyget när du är inloggad på ArcGIS.com:",				
+				shareQ3: "Var lagras data?",
+				shareA3: "Apllikationens konfiguration lagras i <a href='%LINK1%' target='_blank'>det här webbkartobjektet</a> och <a href='%LINK2%' target='_blank'>det här webbapplikationsobjektet</a>. Om du har använt import via Flickr, Picasa, Facebook eller YouTube förblir dina bilder och videoklipp lagrade där och dupliceras inte i ArcGIS Online.",
+				learnMore: "Läs mer",
+				close: "Stäng"
 			},
 			settings: {
-				header: "Å_Application settings_ö",
-				cancel: "Å_Cancel_ö",
-				apply: "Å_Apply_ö",
-				tabError: "Å_Please check for errors in all tabs_ö"
+				header: "Programinställningar",
+				cancel: "Avbryt",
+				apply: "Använd",
+				tabError: "Sök efter fel i alla flikar"
 			},
 			settingsLayout: {
-				title: "Å_Layout_ö",
-				explain: "Å_What layout do you want to use?_ö",
-				explainInit: "Å_Change will be possible through the settings dialog._ö",
-				selected: "Å_Selected layout_ö",
-				select: "Å_Select this layout_ö"
+				title: "Layout",
+				explain: "Vilken layout vill du använda?",
+				explainInit: "Du kan göra ändringar via inställningsdialogrutan.",
+				selected: "Markerad layout",
+				select: "Markera denna layout"
 			},
 			settingsTheme: {
-				title: "Å_Theme_ö",
-				explain: "Å_Choose an app theme or define your own colors._ö",
-				label: "Å_Header and side panel background colors_ö"
+				title: "Tema",
+				explain: "Välj ett applikationstema eller definiera egna färger.",
+				label: "Bakgrundsfärg för rubrik och sidopanel"
 			},
 			settingsHeader: {
-				title: "Å_Header_ö",
-				explain: "Å_Customize the header logo (maximum is 250 x 50px)._ö",
-				logoEsri: "Å_Esri logo_ö",
-				logoNone: "Å_No logo_ö",
-				logoCustom: "Å_Custom logo_ö",
-				logoCustomPlaceholder: "Å_Image URL_ö",
-				logoCustomTargetPlaceholder: "Å_Click-through link_ö",
-				logoSocialExplain: "Å_Customize the header top right link._ö",
-				logoSocialText: "Å_Text_ö",
-				logoSocialLink: "Å_Link_ö",
-				logoSocialDisabled: "Å_This feature has been disabled by the Administrator_ö"
+				title: "Rubrik",
+				explain: "Anpassa rubriklogotypen (maxstorlek är 250 x 50 px).",
+				logoEsri: "Esris logotyp",
+				logoNone: "Ingen logotyp",
+				logoCustom: "Egen logotyp",
+				logoCustomPlaceholder: "Bild-URL",
+				logoCustomTargetPlaceholder: "Genomklickningslänkar",
+				logoSocialExplain: "Anpassa den övre högra rubriklänken.",
+				logoSocialText: "Text",
+				logoSocialLink: "Länk",
+				logoSocialDisabled: "Den här funktionen har inaktiverats av administratören"
 			},
 			mediaSelector: {
-				lblMap: "Å_Map_ö",
-				lblPicture: "Å_Picture_ö",
-				lblVideo: "Å_Video_ö",
-				lblExternal: "Å_External page_ö"
+				lblMap: "Karta",
+				lblPicture: "Bild",
+				lblVideo: "Video",
+				lblExternal: "Extern sida"
 			},
 			webMapSelector: {
-				radioCurrentWebMap: "Å_Current web map_ö",
-				radioWebmapApp: "Å_One of the other web map used in the application_ö",
-				radioAnotherWebmap: "Å_Another webmap_ö",
-				btnSelect: "Å_Select_ö",
-				lblOr: "Å_or_ö",
-				fieldEnterWebmapId: "Å_Enter a web map id_ö",
-				btnConfigure: "Å_Configure the Map_ö"
+				radioCurrentWebMap: "Aktuell webbkarta",
+				radioWebmapApp: "En av de andra webbkartor som används i applikationen",
+				radioAnotherWebmap: "En annan webbkarta",
+				btnSelect: "Välj",
+				lblOr: "eller",
+				fieldEnterWebmapId: "Ange ett webbkart-ID",
+				btnConfigure: "Konfigurera kartan"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "Å_My Organization_ö",
-					onlineLabel: "Å_ArcGIS Online_ö",
-					contentLabel: "Å_My Content_ö",
-					favoritesLabel: "Å_My Favorites_ö"
+					organizationLabel: "Min organisation",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Mitt innehåll",
+					favoritesLabel: "Mina favoriter"
 				},
-				title: "Å_Select Web Map_ö",
-				searchTitle: "Å_Search_ö",
-				ok: "Å_Ok_ö",
-				cancel: "Å_Cancel_ö",
-				placeholder: "Å_Enter search term_ö"
+				title: "Välj webbkarta",
+				searchTitle: "Sök",
+				ok: "OK",
+				cancel: "Avbryt",
+				placeholder: "Ange sökterm"
 			}
 		}
 	})

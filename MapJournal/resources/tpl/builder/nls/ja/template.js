@@ -2,82 +2,82 @@
 	 ({
 		builder: {
 			layouts: {
-				mainStage: "須_Main Stage_鷗",
-				sideTitle: "須_Side Panel_鷗",
-				sideDescr: "須_A layout for a text intensive story that excels at combining your photos, videos, and maps in a clear focused message._鷗",
-				floatTitle: "須_Floating Panel_鷗",
-				floatDescr: "須_A layout that puts your cartography in focus while allowing a transparent short form text panel to help drive the story._鷗"
+				mainStage: "メイン ステージ",
+				sideTitle: "サイド パネル",
+				sideDescr: "テキスト中心のストーリー用のレイアウトで、写真、ビデオ、マップを組み合わせて的を絞った明快なメッセージを作成することができます。",
+				floatTitle: "フローティング パネル",
+				floatDescr: "須_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._鷗"
 			},
 			common: {
-				lblStatus1: "須_Published_鷗",
-				lblStatus2: "須_Draft_鷗",
-				lblStatus3: "須_Hidden_鷗"
+				lblStatus1: "公開済み",
+				lblStatus2: "ドラフト",
+				lblStatus3: "非表示"
 			},
 			settingsLayoutOptions: {
-				title: "須_Layout options_鷗",
-				cfgLeft: "須_Left_鷗",
-				cfgRight: "須_Right_鷗",
-				cfgSmall: "須_Small_鷗",
-				cfgMedium: "須_Medium_鷗",
-				cfgLarge: "須_Large_鷗",
-				socialLinksLabel: "須_Display sharing links at the bottom of each section_鷗",
-				socialLinksDescr: "須_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (Header Tab) and have them land at the start of the %TPL_NAME%._鷗"
+				title: "レイアウト オプション",
+				cfgLeft: "左",
+				cfgRight: "右",
+				cfgSmall: "小",
+				cfgMedium: "中",
+				cfgLarge: "大",
+				socialLinksLabel: "各セクションの下部に共有リンクを表示",
+				socialLinksDescr: "これを使用して、ユーザに %TPL_NAME% の特定のセクションを参照させたり推奨することができます。たとえば、セクションの共有アイコンを使用すると、ユーザはストーリーの最初ではなく、%TPL_NAME% の特定のセクションに移動します。ユーザは、タイトル セクションのソーシャル メディア リンクを使用して、%TPL_NAME% 全体 (ヘッダー タブ) を推奨し、%TPL_NAME% の冒頭に移動させることができます。"
 			},
 			initPopup: {
-				title: "須_Welcome to_鷗"
+				title: "ようこそ"
 			},
 			addEditPopup: {
-				titleAdd: "須_Add Section_鷗",
-				titleEdit: "須_Edit Section_鷗",
-				step: "須_Step_鷗",
-				stepMainStageExplain: "須_Add a Map, Image, or Video to the Main Stage_鷗",
-				stepPanelExplain: "須_Add content to the_鷗",
-				stepMainStageNextTooltip: "須_Enter the section title and select the Main Stage content_鷗",
-				step2NextTooltip: "須_Enter the section title and %LAYOUT-TYPE% content_鷗",
-				stepNextTooltipNext: "須_to go to the next step_鷗",
-				stepNextTooltipAdd: "須_to add the section_鷗",
-				titlePlaceholder: "須_Section title..._鷗",
+				titleAdd: "セクションの追加",
+				titleEdit: "セクションの編集",
+				step: "ステップ",
+				stepMainStageExplain: "マップ、画像、またはビデオをメイン ステージに追加",
+				stepPanelExplain: "コンテンツの追加",
+				stepMainStageNextTooltip: "セクション タイトルとメイン ステージのコンテンツを入力",
+				step2NextTooltip: "セクション タイトルと %LAYOUT-TYPE% のコンテンツを入力",
+				stepNextTooltipNext: "次のステップに進みます。",
+				stepNextTooltipAdd: "セクションに追加します。",
+				titlePlaceholder: "セクション タイトル...",
 			},
 			addEditViewText: {
-				editorPlaceholder: "須_Add text, links, and small graphics here._鷗",
-				editorActionsTitle: "須_Main Stage Actions_鷗",
-				editorActionsHelpDescr: "須_Use these controls to create links that will change the main stage. For example, when the reader clicks a link you may want to zoom the Map to a specific location, display another web map or display an Image._鷗"
+				editorPlaceholder: "テキスト、リンク、小さなグラフィックスをここに追加します。",
+				editorActionsTitle: "メイン ステージ アクション",
+				editorActionsHelpDescr: "これらのコントロールを使用して、メイン ステージを変更するリンクを作成します。たとえば、ユーザがリンクをクリックしたときに、マップを特定の位置にズームしたり、別の Web マップを表示したり、画像を表示したりします。"
 			},
 			organizePopup: {
-				title: "須_Organize_鷗",
-				lblHeader: "須_Drag and drop story sections to organize your content._鷗",
-				lblColTitle: "須_Title_鷗",
-				lblColPubDate: "須_Publication date_鷗",
-				lblColStatus: "須_Status_鷗",
-				checkDisplayReverse: "須_Display sections in reverse order_鷗",
-				btnApplyWarning: "須_Confirm suppression of %NB% sections_鷗",
-				deleteTooltip: "須_Delete_鷗",
-				firstSectionExplain: "須_(The home section cannot be moved)_鷗"
+				title: "整理",
+				lblHeader: "須_Drag and drop sections to organize your content._鷗",
+				lblColTitle: "タイトル",
+				lblColPubDate: "公開日",
+				lblColStatus: "ステータス",
+				checkDisplayReverse: "セクションを逆順に表示",
+				btnApplyWarning: "%NB% セクションの非表示を確認",
+				deleteTooltip: "削除",
+				firstSectionExplain: "(ホーム セクションを移動できません)"
 			},
 			help: {
-				lblHelp: "須_Help_鷗",
-				lblAdd: "須_Add Section_鷗",
-				lblSettings: "須_Settings_鷗",
-				lblOrga: "須_Organize content_鷗",
-				lblEdit: "須_Edits_鷗",
-				lblPublish: "須_Publish_鷗",
-				lblMore: "須_Want more?_鷗",
-				lblLink: "須_Visit the Story Maps website._鷗",
-				content1Div1: "須_You can integrate a variety of styles when building your story. The <strong>%LAYOUT_TITLE%</strong> typically holds your text, images, and video while your maps tend go on the <strong>Main Stage</strong>. However, the %TPL_NAME% allows you to feature images, charts, and video within the main stage as well._鷗",
-				content1Div2: "須_Adding sections allows you to truly customize your storytelling experience. As readers scroll down through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can load automatically to support your message._鷗",
-				content2Div1: "須_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, and widths are all refined here._鷗",
-				content2Div2: "須_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to the world._鷗",
-				content3Div1: "須_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; so within Organize you can reorder or delete sections as you wish._鷗",
-				content4Div1: "須_Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. Youâ€™ll use the edit functions many times as you develop your %TPL_NAME%!_鷗",
-				content5Div1: "須_Your %TPL_NAME% is saved to your %PORTAL% account, it is within %PORTAL% where you can decide whether the story is private, shared with just your organization, or open to the world. We even provide you with a shortened, stable URL so you can share easily._鷗"
+				lblHelp: "ヘルプ",
+				lblAdd: "セクションの追加",
+				lblSettings: "設定",
+				lblOrga: "コンテンツの整理",
+				lblEdit: "編集",
+				lblPublish: "共有",
+				lblMore: "詳細",
+				lblLink: "ストーリー マップ Web サイトに移動します。",
+				content1Div1: "さまざまなスタイルを統合してストーリーを作成することができます。通常、<strong>%LAYOUT_TITLE%</strong> にはテキスト、画像、ビデオが含まれ、マップは<strong>メイン ステージ</strong>に配置されることが多いですが、%TPL_NAME% を使用すると、ユーザはメイン ステージ内にも注目の画像、チャート、ビデオを表示することができます。",
+				content1Div2: "須_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._鷗",
+				content2Div1: "ここで %TPL_NAME% の外観を調整できます。ここでは、配色、レイアウト、およびウィジェットをすべて調整できます。",
+				content2Div2: "須_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._鷗",
+				content3Div1: "コンテンツは複数のセクションに整理されています。セクションは (小さな章のように考えて) 必要な数だけ作成できます。それらの章の流れは重要です。そのため、[整理] の中で、必要に応じてセクションの順序を変更したり削除したりできます。",
+				content4Div1: "間違いを見つけた場合やマテリアルを変更したい場合でも簡単に編集できます。コンテンツを変更するには、アプリケーションに表示されている編集アイコンを使用します。%TPL_NAME% の開発では、編集機能を多く使用します。",
+				content5Div1: "須_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._鷗"
 			},
 			landing: {
-				lblAdd: "須_Add the Home Section_鷗",
-				lblOR: "須_Or_鷗",
-				lblHelp: "須_Take a Tour_鷗"
+				lblAdd: "ホーム セクションの追加",
+				lblOR: "または",
+				lblHelp: "ツアーの開始"
 			},
 			firstAddSplash: {
-				thisis: "須_This is the_鷗"
+				thisis: "これは"
 			}
         }
     })

@@ -2,84 +2,84 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "试_Select Media Type_验",
-				lblSelect2: "试_Select Content Type_验",
-				lblMap: "试_Map_验",
-				lblImage: "试_Image_验",
-				lblVideo: "试_Video_验",
-				lblExternal: "试_Web page_验",
-				disabled: "试_This feature has been disabled by the Administrator_验",
-				url: "试_To manually enter the web address of an image_验",
-				userLookup: "试_Load albums_验",
-				notImplemented: "试_Not implemented yet._验"
+				lblSelect1: "选择媒体类型",
+				lblSelect2: "选择内容类型",
+				lblMap: "地图",
+				lblImage: "图像",
+				lblVideo: "视频",
+				lblExternal: "Web 页面",
+				disabled: "此功能已被管理员禁用",
+				url: "要手动输入图像的 web 地址",
+				userLookup: "加载图片集",
+				notImplemented: "尚未实现。"
 			},
 			imageSelector: {
-				lblStep1: "试_Choose the service_验",
-				lblStep2: "试_Select your media_验",
-				lblStep3: "试_Configure_验"
+				lblStep1: "选择服务",
+				lblStep2: "选择媒体",
+				lblStep3: "配置"
 			},
 			imageSelectorHome: {
-				explain: "试_Load images from social media, <br /> or directly from a URL_验"
+				explain: "从社交媒体加载图像，<br /> 或直接从 URL 进行加载"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "试_User name_验",
-				signInMsg2: "试_User not found_验",
-				loadingFailed: "试_Loading failed_验"
+				userInputLbl: "用户名",
+				signInMsg2: "未找到用户",
+				loadingFailed: "加载失败"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "试_Facebook User_验",
-				rightHeader: "试_Facebook Page_验",
-				pageExplain: "试_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL._验",
-				pageInputLbl: "试_Page name_验",
-				lookupMsgError: "试_Page not found_验"
+				leftHeader: "Facebook 用户",
+				rightHeader: "Facebook 页面",
+				pageExplain: "Facebook 页面属于公共品牌/产品或像 <b>esrigis</b> 一样的名品。可以在页面 URL 的第一个\“/\”后面获得页面名称。",
+				pageInputLbl: "页面名称",
+				lookupMsgError: "未找到页面"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "试_Email or Picasa/Google+ ID_验",
-				signInMsg2: "试_Account not found_验",
-				signInMsg3: "试_No public album_验",
-				howToFind: "试_How to find a Picasa or Google+ account ID_验",
-				howToFind2: "试_Copy digits between the first and second '/' of any Picasa or G+ page_验"
+				userInputLbl: "电子邮件或 Picasa/Google+ ID",
+				signInMsg2: "未找到帐户",
+				signInMsg3: "无公共图片集",
+				howToFind: "如何查找 Picasa 或 Google+ 帐户 ID",
+				howToFind2: "复制任何 Picasa 或 G+ 页面的第一个和第二个\“/\”之间的数字"
 			},
 			videoSelector: {
 				
 			},
 			videoSelectorYoutube: {
-				pageInputLbl: "试_User name_验",
-				lookupMsgError: "试_User not found_验",
-				howToFind: "试_How to find a YouTube user name_验",
-				howToFind2: "试_User name is displayed under videos_验",
-				found: "试_Found_验",
-				noData: "试_No public videos found_验"
+				pageInputLbl: "用户名",
+				lookupMsgError: "未找到用户",
+				howToFind: "如何查找 YouTube 用户名",
+				howToFind2: "用户名显示在视频下方",
+				found: "已找到",
+				noData: "未找到公开视频"
 			},
 			mediaSelectorPicker: {
 				
 			},
 			mediaConfigure: {
-				lblURL: "试_URL_验",
-				lblURLPH: "试_Media URL..._验",
-				lblLabel: "试_Label_验",
-				lblLabel1: "试_Caption_验",
-				lblLabel2: "试_Hover text_验",
-				lblLabel3: "试_None_验",
-				lblLabelPH: "试_Enter some text..._验",
-				lblPosition: "试_Position_验",
-				lblPosition1: "试_Center_验",
-				lblPosition2: "试_Fill_验",
-				lblPosition3: "试_Fit_验",
-				lblPosition4: "试_Stretch_验",
-				lblPosition2Explain: "试_(may crop)_验",
-				lblPosition3Explain: "试_(won't crop)_验",
-				lblPosition4Explain: "试_(may distort)_验"
+				lblURL: "URL",
+				lblURLPH: "媒体 URL...",
+				lblLabel: "标注",
+				lblLabel1: "说明文字",
+				lblLabel2: "悬停文本",
+				lblLabel3: "无",
+				lblLabelPH: "请输入文本...",
+				lblPosition: "位置",
+				lblPosition1: "居中",
+				lblPosition2: "填充",
+				lblPosition3: "适应",
+				lblPosition4: "拉伸",
+				lblPosition2Explain: "（可裁切）",
+				lblPosition3Explain: "（不裁切）",
+				lblPosition4Explain: "（可变形）"
 			},
 			editorActionGeocode: {
-				lblTitle: "试_Locate an address or place_验",
-				mapMarkerExplain: "试_User will see a map marker when clicking the link_验"
+				lblTitle: "定位地址或地点",
+				mapMarkerExplain: "用户在单击链接时会看到地图标记"
 			},
 			editorActionMedia: {
-				lblTitle: "试_Change the Main Stage media_验"
+				lblTitle: "试_Change the Main Stage content_验"
 			},
 			editorInlineMedia: {
-				lblTitle: "试_Insert an image or video_验"
+				lblTitle: "插入图像或视频"
 			}
 		}
 	})

@@ -1,0 +1,57 @@
+﻿define(
+    ({
+        builder: {
+            invalidWebmapSelectionAlert: "Š_Selected webmap does not contain any feature server_ä",
+            selectThemeText: "Š_Select Form Theme_ä",
+            fieldLabelPlaceHolder: "Š_Label this field_ä",
+            fieldDescPlaceHolder: "Š_Describe this field_ä",
+            webmapText: "Š_Webmap_ä",
+            layerText: "Kiht",
+            detailsText: "Detailid",
+            fieldsText: "Väljad",
+            styleText: "Š_Style_ä",
+            previewText: "Eelvaade",
+            publishText: "Publitseeri",
+            titleText: "Š_GeoForm Builder_ä",
+            descriptionText: "Š_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._ä",
+            btnPreviousText: "Eelmine",
+            btnNextText:"Järgmine",
+            webmapTabTitleText: "Š_Choose a Webmap_ä",
+            btnSelectWebmapText:"Š_Select Webmap_ä",
+            layerTabTitleText: "Š_Select Editable Layer_ä",
+            selectLayerLabelText:"Kiht",
+            selectLayerDefaultOptionText:"Vali kiht",
+            detailsTabTitleText:"Š_Form Details_ä",
+            detailTitleLabelText: "Pealkiri",
+            detailLogoLabelText: "Š_Logo Image_ä",
+            detailDescriptionLabelText: "Kirjeldus",
+            fieldTabDisplayHeaderText: "Kuva",
+            fieldTabFieldHeaderText: "Väli",
+            fieldTabLabelHeaderText: "Silt",
+            fieldTabTypeHeaderText: "Tüüp",
+            fieldTabDescriptionHeaderText: "Kirjeldus",
+            previewApplicationText: "Š_Preview Application_ä",
+            saveApplicationText: "Š_Save Application_ä",
+            saveText: "Salvesta",
+
+            //Local string for user mode
+            defaultTitleText: "Š_Default Title_ä",
+            defaultDescriptionText: "Š_Default Description_ä",
+            geoFormGeneralTabText: "Üldine",
+            locationInformationText: "Š_Location Info_ä",
+            myLocationText: "Minu asukoht",
+            addressText: "Aadress",
+            cooridnatesText: "Š_Coordinates_ä",
+            locationTabText: "Asukoht",
+            enterCoordinatesPlaceholder: "Š_Enter Coordinates_ä",
+            submitButtonText: "Š_Submit_ä",
+            clearButtonText: "Puhasta",
+            fieldvalidationMessageAlertText: "Š_Please enter a valid number_ä",
+            formValidationMessageAlertText: "Š_Please verify the form for errors and resubmit the form_ä",
+            latlongValidationMessageAlert: "Š_Please select x and y coordinates_ä",
+            emptylatitudeAlertMessage:"Š_Please enter Latitude_ä",
+            emptylongitudeAlertMessage:"Š_Please enter Longitude_ä"
+        }
+    })
+    
+);

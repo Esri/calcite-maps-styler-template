@@ -2,82 +2,82 @@
 	 ({
 		builder: {
 			layouts: {
-				mainStage: "Å_Main Stage_ö",
-				sideTitle: "Å_Side Panel_ö",
-				sideDescr: "Å_A layout for a text intensive story that excels at combining your photos, videos, and maps in a clear focused message._ö",
-				floatTitle: "Å_Floating Panel_ö",
-				floatDescr: "Å_A layout that puts your cartography in focus while allowing a transparent short form text panel to help drive the story._ö"
+				mainStage: "Huvudscen",
+				sideTitle: "Sidopanel",
+				sideDescr: "En layout för en textintensiv berättelse som passar utmärkt när du vill kombinera bilder, videoklipp och kartor till ett tydligt fokuserat meddelande.",
+				floatTitle: "Flytande panel",
+				floatDescr: "Å_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._ö"
 			},
 			common: {
-				lblStatus1: "Å_Published_ö",
-				lblStatus2: "Å_Draft_ö",
-				lblStatus3: "Å_Hidden_ö"
+				lblStatus1: "Publicerad",
+				lblStatus2: "Utkast",
+				lblStatus3: "Dold"
 			},
 			settingsLayoutOptions: {
-				title: "Å_Layout options_ö",
-				cfgLeft: "Å_Left_ö",
-				cfgRight: "Å_Right_ö",
-				cfgSmall: "Å_Small_ö",
-				cfgMedium: "Å_Medium_ö",
-				cfgLarge: "Å_Large_ö",
-				socialLinksLabel: "Å_Display sharing links at the bottom of each section_ö",
-				socialLinksDescr: "Å_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (Header Tab) and have them land at the start of the %TPL_NAME%._ö"
+				title: "Layoutalternativ",
+				cfgLeft: "Vänster",
+				cfgRight: "Höger",
+				cfgSmall: "Liten",
+				cfgMedium: "Medium",
+				cfgLarge: "Stor",
+				socialLinksLabel: "Visa delningslänkar längst ned i varje avsnitt",
+				socialLinksDescr: "Detta gör att användaren kan referera till och framhålla specifika avsnitt av din %TPL_NAME%. Om du till exempel använder en ikon för avsnittsdelning kommer användaren till det specifika %TPL_NAME%-avsnittet i stället för till början av berättelsen. Användarna kan använda länken till sociala media i rubrikavsnittet för att framhålla hela din %TPL_NAME% (rubrikfliken) och komma till början av %TPL_NAME%."
 			},
 			initPopup: {
-				title: "Å_Welcome to_ö"
+				title: "Välkommen till"
 			},
 			addEditPopup: {
-				titleAdd: "Å_Add Section_ö",
-				titleEdit: "Å_Edit Section_ö",
-				step: "Å_Step_ö",
-				stepMainStageExplain: "Å_Add a Map, Image, or Video to the Main Stage_ö",
-				stepPanelExplain: "Å_Add content to the_ö",
-				stepMainStageNextTooltip: "Å_Enter the section title and select the Main Stage content_ö",
-				step2NextTooltip: "Å_Enter the section title and %LAYOUT-TYPE% content_ö",
-				stepNextTooltipNext: "Å_to go to the next step_ö",
-				stepNextTooltipAdd: "Å_to add the section_ö",
-				titlePlaceholder: "Å_Section title..._ö",
+				titleAdd: "Lägg till avsnitt",
+				titleEdit: "Redigera avsnitt",
+				step: "Steg",
+				stepMainStageExplain: "Lägg till en karta, en bild eller ett videoklipp till huvudscenen",
+				stepPanelExplain: "Lägg till innehåll till",
+				stepMainStageNextTooltip: "Ange avsnittets rubrik och välj innehåll för huvudscenen",
+				step2NextTooltip: "Ange avsnittets rubrik och %LAYOUT-TYPE%-innehåll",
+				stepNextTooltipNext: "för att gå till nästa steg",
+				stepNextTooltipAdd: "för att lägga till avsnittet",
+				titlePlaceholder: "Avsnittets rubrik ...",
 			},
 			addEditViewText: {
-				editorPlaceholder: "Å_Add text, links, and small graphics here._ö",
-				editorActionsTitle: "Å_Main Stage Actions_ö",
-				editorActionsHelpDescr: "Å_Use these controls to create links that will change the main stage. For example, when the reader clicks a link you may want to zoom the Map to a specific location, display another web map or display an Image._ö"
+				editorPlaceholder: "Lägg till texter, länkar och små bilder här.",
+				editorActionsTitle: "Åtgärder på huvudscenen",
+				editorActionsHelpDescr: "Använd dessa kontroller för att skapa länkar som förändrar huvudscenen. Om användaren till exempel klickar på en länk kan du låta kartan zoomas in till en viss plats, visa en annan webbkarta eller visa en bild."
 			},
 			organizePopup: {
-				title: "Å_Organize_ö",
-				lblHeader: "Å_Drag and drop story sections to organize your content._ö",
-				lblColTitle: "Å_Title_ö",
-				lblColPubDate: "Å_Publication date_ö",
-				lblColStatus: "Å_Status_ö",
-				checkDisplayReverse: "Å_Display sections in reverse order_ö",
-				btnApplyWarning: "Å_Confirm suppression of %NB% sections_ö",
-				deleteTooltip: "Å_Delete_ö",
-				firstSectionExplain: "Å_(The home section cannot be moved)_ö"
+				title: "Organisera",
+				lblHeader: "Å_Drag and drop sections to organize your content._ö",
+				lblColTitle: "Titel",
+				lblColPubDate: "Publiceringsdatum",
+				lblColStatus: "Status",
+				checkDisplayReverse: "Visa avsnitten i omvänd ordning",
+				btnApplyWarning: "Bekräfta nedhållning av %NB%-avsnitt",
+				deleteTooltip: "Ta bort",
+				firstSectionExplain: "(Startasvsnittet går inte att flytta)"
 			},
 			help: {
-				lblHelp: "Å_Help_ö",
-				lblAdd: "Å_Add Section_ö",
-				lblSettings: "Å_Settings_ö",
-				lblOrga: "Å_Organize content_ö",
-				lblEdit: "Å_Edits_ö",
-				lblPublish: "Å_Publish_ö",
-				lblMore: "Å_Want more?_ö",
-				lblLink: "Å_Visit the Story Maps website._ö",
-				content1Div1: "Å_You can integrate a variety of styles when building your story. The <strong>%LAYOUT_TITLE%</strong> typically holds your text, images, and video while your maps tend go on the <strong>Main Stage</strong>. However, the %TPL_NAME% allows you to feature images, charts, and video within the main stage as well._ö",
-				content1Div2: "Å_Adding sections allows you to truly customize your storytelling experience. As readers scroll down through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can load automatically to support your message._ö",
-				content2Div1: "Å_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, and widths are all refined here._ö",
-				content2Div2: "Å_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to the world._ö",
-				content3Div1: "Å_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; so within Organize you can reorder or delete sections as you wish._ö",
-				content4Div1: "Å_Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. Youâ€™ll use the edit functions many times as you develop your %TPL_NAME%!_ö",
-				content5Div1: "Å_Your %TPL_NAME% is saved to your %PORTAL% account, it is within %PORTAL% where you can decide whether the story is private, shared with just your organization, or open to the world. We even provide you with a shortened, stable URL so you can share easily._ö"
+				lblHelp: "Hjälp",
+				lblAdd: "Lägg till avsnitt",
+				lblSettings: "Inställningar",
+				lblOrga: "Ordna innehåll",
+				lblEdit: "Ändringar",
+				lblPublish: "Dela",
+				lblMore: "Vill du ha mer?",
+				lblLink: "Besök webbplatsen för berättelsekartor.",
+				content1Div1: "Du kan integrera flera olika stilar när du skapar din berättelse. <strong>%LAYOUT_TITLE%</strong> innehåller text, bilder och videoklipp medan kartorna oftast hamnar i <strong>huvudscenen</strong>. Med %TPL_NAME% kan du dock ta med bilder, tabeller och videoklipp även i huvudscenen.",
+				content1Div2: "Å_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._ö",
+				content2Div1: "Här kan du ändra utseendet för %TPL_NAME%. Färgscheman, layout och bredd anges här.",
+				content2Div2: "Å_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._ö",
+				content3Div1: "Ditt innehåll är ordnat i avsnitt. Du kan ha så många avsnitt du vill (tänk dig dem som minikapitel). Flödet för kapitlen är viktigt, så med Organisera kan du ändra ordning på eller ta bort avsnitt som du vill.",
+				content4Div1: "Har du hittat ett fel eller vill du ändra ditt material? Inga problem. Titta efter redigeringsikonen i appen om du vill göra ändringar i innehållet. Du kommer att använda redigeringsfunktionerna många gånger medan du utvecklar din %TPL_NAME%!",
+				content5Div1: "Å_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._ö"
 			},
 			landing: {
-				lblAdd: "Å_Add the Home Section_ö",
-				lblOR: "Å_Or_ö",
-				lblHelp: "Å_Take a Tour_ö"
+				lblAdd: "Lägg till startavsnittet",
+				lblOR: "Or",
+				lblHelp: "Ta en rundtur"
 			},
 			firstAddSplash: {
-				thisis: "Å_This is the_ö"
+				thisis: "Det här är"
 			}
         }
     })

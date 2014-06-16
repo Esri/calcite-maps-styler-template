@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "å_Unable to create map_ø"
+            "error": "Kan ikke opprette kart"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'å_Landscape (PDF)_ø',
-			      "label2": 'å_Portrait (PDF)_ø',
-			      "label3": 'å_Landscape (Image)_ø',
-			      "label4": 'å_Portrait (Image)_ø'
-			    }
+			      "label1": 'Liggende (PDF)',
+			      "label2": 'Stående (PDF)',
+			      "label3": 'Liggende (bilde)',
+			      "label4": 'Stående (bilde)'
+			    },
+			    "legend": "å_Add legend to output_ø"
 			},
 			"share": {
-				"extent": "å_Use current map extent_ø",
-				"label": "å_Share this map_ø",
-				"link": "å_Map Link_ø",
-				"facebook": "å_Facebook_ø",
-				"twitter": "å_Twitter_ø"
+				"extent": "Bruk gjeldende kartutstrekning",
+				"label": "Del dette kartet",
+				"link": "Kartkobling",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "å_Default extent_ø",
-        	"locate": "å_Find my location_ø",
-        	"legend": "å_Legend_ø",
-        	"bookmarks": "å_Bookmarks_ø",
-        	"layers": "å_Layers_ø",
+        	"home": "Standard utstrekning",
+        	"locate": "Finn min lokasjon",
+        	"legend": "Tegnforklaring",
+        	"bookmarks": "Bokmerker",
+        	"layers": "Lag",
         	"basemap": "å_Basemap gallery_ø",
         	"overview": "å_Overview map_ø",
-        	"measure": "å_Measure_ø",
-        	"edit": "å_Edit_ø",
-        	"time": "å_Time_ø",
-        	"print": "å_Print_ø",
-        	"details": "å_Details_ø",
-        	"share": "å_Share_ø"
+        	"measure": "Mål",
+        	"edit": "Rediger",
+        	"time": "Tid",
+        	"print": "Skriv ut",
+        	"details": "Detaljer",
+        	"share": "Del"
         }
 }));

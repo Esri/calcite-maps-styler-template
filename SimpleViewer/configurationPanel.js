@@ -19,8 +19,13 @@
             "fieldName": "color",
             "tooltip": "Text color",
             "label": "Text Color:"
+        },{
+            "type": "color",
+            "fieldName": "paneltheme",
+            "tooltip": "Color theme for the drawer",
+            "label": "Drawer Title Theme:"
         },
-            {
+        {
                "type":"string",
                "fieldName":"about",
                "label":"Description",
@@ -49,7 +54,10 @@
     }],
     "values": {
         "search": true,
-        "locate": true
+        "locate": true,
+        "color": "#fff",
+        "theme": "#666",
+        "paneltheme": "a3a3a3"
 
     }
 }

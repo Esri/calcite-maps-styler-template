@@ -2,84 +2,84 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "بيت_Select Media Type_لاحقة",
-				lblSelect2: "بيت_Select Content Type_لاحقة",
-				lblMap: "بيت_Map_لاحقة",
-				lblImage: "بيت_Image_لاحقة",
-				lblVideo: "بيت_Video_لاحقة",
-				lblExternal: "بيت_Web page_لاحقة",
-				disabled: "بيت_This feature has been disabled by the Administrator_لاحقة",
-				url: "بيت_To manually enter the web address of an image_لاحقة",
-				userLookup: "بيت_Load albums_لاحقة",
-				notImplemented: "بيت_Not implemented yet._لاحقة"
+				lblSelect1: "تحديد نوع الوسائط",
+				lblSelect2: "تحديد نوع المحتويات",
+				lblMap: "خريطة",
+				lblImage: "صورة",
+				lblVideo: "فيديو",
+				lblExternal: "صفحة الويب",
+				disabled: "لقد تم تعطيل هذا المعلم بواسطة المدير",
+				url: "لإدخال عناوين الصورة على الويب يدويًا",
+				userLookup: "تحميل الألبومات",
+				notImplemented: "لم يتم تنفيذها بعد."
 			},
 			imageSelector: {
-				lblStep1: "بيت_Choose the service_لاحقة",
-				lblStep2: "بيت_Select your media_لاحقة",
-				lblStep3: "بيت_Configure_لاحقة"
+				lblStep1: "اختيار الخدمة",
+				lblStep2: "تحديد الوسائط",
+				lblStep3: "تكوين"
 			},
 			imageSelectorHome: {
-				explain: "بيت_Load images from social media, <br /> or directly from a URL_لاحقة"
+				explain: "تحميل الصور من الوسائط الاجتماعية أو <br /> مباشرًة من عنوان URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "بيت_User name_لاحقة",
-				signInMsg2: "بيت_User not found_لاحقة",
-				loadingFailed: "بيت_Loading failed_لاحقة"
+				userInputLbl: "اسم المستخدم",
+				signInMsg2: "لم يتم العثور على المستخدم",
+				loadingFailed: "فشل التحميل"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "بيت_Facebook User_لاحقة",
-				rightHeader: "بيت_Facebook Page_لاحقة",
-				pageExplain: "بيت_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL._لاحقة",
-				pageInputLbl: "بيت_Page name_لاحقة",
-				lookupMsgError: "بيت_Page not found_لاحقة"
+				leftHeader: "مستخدم Facebook",
+				rightHeader: "صفحة Facebook",
+				pageExplain: "تكون صفحة Facebook علامة تجارية/منتج عام أو تكون ذات شهرة مثل <b>esrigis</b>. يمكنك الحصول على اسم الصفحة بعد  \'/\' الأول في عنوان URL للصفحة.",
+				pageInputLbl: "اسم الصفحة",
+				lookupMsgError: "لم يتم العثور على الصفحة"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "بيت_Email or Picasa/Google+ ID_لاحقة",
-				signInMsg2: "بيت_Account not found_لاحقة",
-				signInMsg3: "بيت_No public album_لاحقة",
-				howToFind: "بيت_How to find a Picasa or Google+ account ID_لاحقة",
-				howToFind2: "بيت_Copy digits between the first and second '/' of any Picasa or G+ page_لاحقة"
+				userInputLbl: "البريد الإلكتروني أو Picasa/Google+ ID",
+				signInMsg2: "لم يتم العثور على الحساب",
+				signInMsg3: "لا يوجد ألبوم عام",
+				howToFind: "كيفية إيجاد Picasa أو Google+ أو معرف الحساب",
+				howToFind2: "نسخ الأرقام بين الأول والثاني \'/\'  لأي من Picasa او صفحة G+"
 			},
 			videoSelector: {
 				
 			},
 			videoSelectorYoutube: {
-				pageInputLbl: "بيت_User name_لاحقة",
-				lookupMsgError: "بيت_User not found_لاحقة",
-				howToFind: "بيت_How to find a YouTube user name_لاحقة",
-				howToFind2: "بيت_User name is displayed under videos_لاحقة",
-				found: "بيت_Found_لاحقة",
-				noData: "بيت_No public videos found_لاحقة"
+				pageInputLbl: "اسم المستخدم",
+				lookupMsgError: "لم يتم العثور على المستخدم",
+				howToFind: "كيفية إيجاد اسم مستخدم YouTube",
+				howToFind2: "يتم عرض اسم المستخدم أسفل الفيديوهات",
+				found: "تم العثور",
+				noData: "لم يتم العثور على الفيديوهات العامة"
 			},
 			mediaSelectorPicker: {
 				
 			},
 			mediaConfigure: {
-				lblURL: "بيت_URL_لاحقة",
-				lblURLPH: "بيت_Media URL..._لاحقة",
-				lblLabel: "بيت_Label_لاحقة",
-				lblLabel1: "بيت_Caption_لاحقة",
-				lblLabel2: "بيت_Hover text_لاحقة",
-				lblLabel3: "بيت_None_لاحقة",
-				lblLabelPH: "بيت_Enter some text..._لاحقة",
-				lblPosition: "بيت_Position_لاحقة",
-				lblPosition1: "بيت_Center_لاحقة",
-				lblPosition2: "بيت_Fill_لاحقة",
-				lblPosition3: "بيت_Fit_لاحقة",
-				lblPosition4: "بيت_Stretch_لاحقة",
-				lblPosition2Explain: "بيت_(may crop)_لاحقة",
-				lblPosition3Explain: "بيت_(won't crop)_لاحقة",
-				lblPosition4Explain: "بيت_(may distort)_لاحقة"
+				lblURL: "محدد موقع معلومات (URL)",
+				lblURLPH: "عنوان URL للوسائط...",
+				lblLabel: "لافتة التسمية",
+				lblLabel1: "تسمية وضيحية",
+				lblLabel2: "التحويم حول النص",
+				lblLabel3: "بلا",
+				lblLabelPH: "إدخال النص...",
+				lblPosition: "الموضع",
+				lblPosition1: "المركز",
+				lblPosition2: "تعبئة",
+				lblPosition3: "احتواء",
+				lblPosition4: "توسيع",
+				lblPosition2Explain: "(يمكن القص)",
+				lblPosition3Explain: "(لا يتم القص)",
+				lblPosition4Explain: "(يمكن الإتلاف)"
 			},
 			editorActionGeocode: {
-				lblTitle: "بيت_Locate an address or place_لاحقة",
-				mapMarkerExplain: "بيت_User will see a map marker when clicking the link_لاحقة"
+				lblTitle: "تحديد موقع العنوان أو المكان",
+				mapMarkerExplain: "سيرى المستخدم علامة الخريطة عند النقر على الرابط"
 			},
 			editorActionMedia: {
-				lblTitle: "بيت_Change the Main Stage media_لاحقة"
+				lblTitle: "بيت_Change the Main Stage content_لاحقة"
 			},
 			editorInlineMedia: {
-				lblTitle: "بيت_Insert an image or video_لاحقة"
+				lblTitle: "إدراج صورة أو مقطع فيديو"
 			}
 		}
 	})

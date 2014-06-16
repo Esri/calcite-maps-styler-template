@@ -17,8 +17,8 @@
                 "noMapsFound": "Hiçbir harita bulunamadı."
             },
             "sidePanel": {
-                "title": "Gösterge",
-                "legendButton": "Gösterge",
+                "title": "Gösterim",
+                "legendButton": "Gösterim",
 				"layersButton": "Katmanlar", // new
                 "legendButtonTitle": "Harita Gösterimi",
                 "aboutButton": "Hakkında",
@@ -100,13 +100,13 @@
 				"detailsLabel":"Ayrıntılar"
             },
             "filterItems":{
-                "show": "ı_Show_İ",
-                "all": "ı_All Results_İ",
-                "maps": "ı_Maps_İ",
-                "layers": "ı_Layers_İ",
-                "applications": "ı_Applications_İ",
-                "tools": "ı_Tools_İ",
-                "files": "ı_Files_İ"
+                "show": "Göster",
+                "all": "Tüm Sonuçlar",
+                "maps": "Haritalar",
+                "layers": "Katmanlar",
+                "applications": "Uygulamalar",
+                "tools": "Araçlar",
+                "files": "Dosyalar"
             },
             "pagination": {
                 "previous": "Önceki",

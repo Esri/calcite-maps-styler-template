@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "é_Unable to create map_È"
+            "error": "Impossibile creare la mappa"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'é_Landscape (PDF)_È',
-			      "label2": 'é_Portrait (PDF)_È',
-			      "label3": 'é_Landscape (Image)_È',
-			      "label4": 'é_Portrait (Image)_È'
-			    }
+			      "label1": 'Orizzontale (PDF)',
+			      "label2": 'Verticale (PDF)',
+			      "label3": 'Orizzontale (immagine)',
+			      "label4": 'Verticale (immagine)'
+			    },
+			    "legend": "é_Add legend to output_È"
 			},
 			"share": {
-				"extent": "é_Use current map extent_È",
-				"label": "é_Share this map_È",
-				"link": "é_Map Link_È",
-				"facebook": "é_Facebook_È",
-				"twitter": "é_Twitter_È"
+				"extent": "Usa estensione mappa corrente",
+				"label": "Condividi la mappa",
+				"link": "Collegamento a mappa",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "é_Default extent_È",
-        	"locate": "é_Find my location_È",
-        	"legend": "é_Legend_È",
-        	"bookmarks": "é_Bookmarks_È",
-        	"layers": "é_Layers_È",
+        	"home": "Estensione predefinita",
+        	"locate": "Trova posizione personale",
+        	"legend": "Legenda",
+        	"bookmarks": "Segnalibri",
+        	"layers": "Layer",
         	"basemap": "é_Basemap gallery_È",
         	"overview": "é_Overview map_È",
-        	"measure": "é_Measure_È",
+        	"measure": "Misura",
         	"edit": "é_Edit_È",
-        	"time": "é_Time_È",
-        	"print": "é_Print_È",
-        	"details": "é_Details_È",
-        	"share": "é_Share_È"
+        	"time": "Data/Ora",
+        	"print": "Stampa",
+        	"details": "Dettagli",
+        	"share": "Condividi"
         }
 }));

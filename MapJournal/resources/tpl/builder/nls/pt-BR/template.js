@@ -2,82 +2,82 @@
 	 ({
 		builder: {
 			layouts: {
-				mainStage: "ã_Main Stage_Ç",
-				sideTitle: "ã_Side Panel_Ç",
-				sideDescr: "ã_A layout for a text intensive story that excels at combining your photos, videos, and maps in a clear focused message._Ç",
-				floatTitle: "ã_Floating Panel_Ç",
-				floatDescr: "ã_A layout that puts your cartography in focus while allowing a transparent short form text panel to help drive the story._Ç"
+				mainStage: "Nível Principal",
+				sideTitle: "Painel Lateral",
+				sideDescr: "Um layout para uma história de texto intensivo que se destaca na combinação de suas fotos, vídeos e mapas em uma mensagem clara focada.",
+				floatTitle: "Painel Flutuante",
+				floatDescr: "ã_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._Ç"
 			},
 			common: {
-				lblStatus1: "ã_Published_Ç",
-				lblStatus2: "ã_Draft_Ç",
-				lblStatus3: "ã_Hidden_Ç"
+				lblStatus1: "Publicado",
+				lblStatus2: "Rascunho",
+				lblStatus3: "Oculto"
 			},
 			settingsLayoutOptions: {
-				title: "ã_Layout options_Ç",
-				cfgLeft: "ã_Left_Ç",
-				cfgRight: "ã_Right_Ç",
-				cfgSmall: "ã_Small_Ç",
-				cfgMedium: "ã_Medium_Ç",
-				cfgLarge: "ã_Large_Ç",
-				socialLinksLabel: "ã_Display sharing links at the bottom of each section_Ç",
-				socialLinksDescr: "ã_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (Header Tab) and have them land at the start of the %TPL_NAME%._Ç"
+				title: "Opções de Layout",
+				cfgLeft: "Esquerda",
+				cfgRight: "Direita",
+				cfgSmall: "Pequeno",
+				cfgMedium: "Médio",
+				cfgLarge: "Grande",
+				socialLinksLabel: "Exibir links de compartilhamento na parte inferior de cada seção",
+				socialLinksDescr: "Isto permite que os leitores façam referência e promovam seções específicas do seu %TPL_NAME%. Por exemplo, se você utilizar um ícone para compartilhar seções, os leitores verificarão a seção %TPL_NAME% específica, ao invés do começo da sua história. Seus leitores podem utilizar o link de mídia social na seção de título para promover o seu %TPL_NAME% inteiro (Guia Cabeçalho) e tê-lo no início do %TPL_NAME%."
 			},
 			initPopup: {
-				title: "ã_Welcome to_Ç"
+				title: "Bem-Vindo ao"
 			},
 			addEditPopup: {
-				titleAdd: "ã_Add Section_Ç",
-				titleEdit: "ã_Edit Section_Ç",
-				step: "ã_Step_Ç",
-				stepMainStageExplain: "ã_Add a Map, Image, or Video to the Main Stage_Ç",
-				stepPanelExplain: "ã_Add content to the_Ç",
-				stepMainStageNextTooltip: "ã_Enter the section title and select the Main Stage content_Ç",
-				step2NextTooltip: "ã_Enter the section title and %LAYOUT-TYPE% content_Ç",
-				stepNextTooltipNext: "ã_to go to the next step_Ç",
-				stepNextTooltipAdd: "ã_to add the section_Ç",
-				titlePlaceholder: "ã_Section title..._Ç",
+				titleAdd: "Adicionar Seção",
+				titleEdit: "Editar Seção",
+				step: "Intervalo",
+				stepMainStageExplain: "Adicione um Mapa, Imagem ou Vídeo no Nível Principal",
+				stepPanelExplain: "Adicionar conteúdo no",
+				stepMainStageNextTooltip: "Insira o título da seção e selecione o conteúdo do Nível Principal",
+				step2NextTooltip: "Insira o título da seção e conteúdo do %LAYOUT-TYPE%",
+				stepNextTooltipNext: "para ir para a próxima etapa",
+				stepNextTooltipAdd: "para adicionar a seção",
+				titlePlaceholder: "Título da seção...",
 			},
 			addEditViewText: {
-				editorPlaceholder: "ã_Add text, links, and small graphics here._Ç",
-				editorActionsTitle: "ã_Main Stage Actions_Ç",
-				editorActionsHelpDescr: "ã_Use these controls to create links that will change the main stage. For example, when the reader clicks a link you may want to zoom the Map to a specific location, display another web map or display an Image._Ç"
+				editorPlaceholder: "Adicione texto, links e pequenos gráficos aqui.",
+				editorActionsTitle: "Ações do Nível Principal",
+				editorActionsHelpDescr: "Utilize estes controles para criar links que vão mudar o nível principal. Por exemplo, quando o leitor clicar em um link, você pode desejar zoom no mapa em local específico, exibir um outro mapa da web ou exibir uma imagem."
 			},
 			organizePopup: {
-				title: "ã_Organize_Ç",
-				lblHeader: "ã_Drag and drop story sections to organize your content._Ç",
-				lblColTitle: "ã_Title_Ç",
-				lblColPubDate: "ã_Publication date_Ç",
-				lblColStatus: "ã_Status_Ç",
-				checkDisplayReverse: "ã_Display sections in reverse order_Ç",
-				btnApplyWarning: "ã_Confirm suppression of %NB% sections_Ç",
-				deleteTooltip: "ã_Delete_Ç",
-				firstSectionExplain: "ã_(The home section cannot be moved)_Ç"
+				title: "Organizar",
+				lblHeader: "ã_Drag and drop sections to organize your content._Ç",
+				lblColTitle: "Título",
+				lblColPubDate: "Data da publicação",
+				lblColStatus: "Status",
+				checkDisplayReverse: "Exibir seções em ordem inversa",
+				btnApplyWarning: "Confirmar supressão das seções %NB%",
+				deleteTooltip: "Excluir",
+				firstSectionExplain: "(A seção local não pode ser movida)"
 			},
 			help: {
-				lblHelp: "ã_Help_Ç",
-				lblAdd: "ã_Add Section_Ç",
-				lblSettings: "ã_Settings_Ç",
-				lblOrga: "ã_Organize content_Ç",
-				lblEdit: "ã_Edits_Ç",
-				lblPublish: "ã_Publish_Ç",
-				lblMore: "ã_Want more?_Ç",
-				lblLink: "ã_Visit the Story Maps website._Ç",
-				content1Div1: "ã_You can integrate a variety of styles when building your story. The <strong>%LAYOUT_TITLE%</strong> typically holds your text, images, and video while your maps tend go on the <strong>Main Stage</strong>. However, the %TPL_NAME% allows you to feature images, charts, and video within the main stage as well._Ç",
-				content1Div2: "ã_Adding sections allows you to truly customize your storytelling experience. As readers scroll down through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can load automatically to support your message._Ç",
-				content2Div1: "ã_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, and widths are all refined here._Ç",
-				content2Div2: "ã_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to the world._Ç",
-				content3Div1: "ã_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; so within Organize you can reorder or delete sections as you wish._Ç",
-				content4Div1: "ã_Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. Youâ€™ll use the edit functions many times as you develop your %TPL_NAME%!_Ç",
-				content5Div1: "ã_Your %TPL_NAME% is saved to your %PORTAL% account, it is within %PORTAL% where you can decide whether the story is private, shared with just your organization, or open to the world. We even provide you with a shortened, stable URL so you can share easily._Ç"
+				lblHelp: "Ajuda",
+				lblAdd: "Adicionar Seção",
+				lblSettings: "Configurações",
+				lblOrga: "Organizar conteúdo",
+				lblEdit: "Edições",
+				lblPublish: "Compartilhar",
+				lblMore: "Deseja mais?",
+				lblLink: "Visite o site da web de Mapas Históricos.",
+				content1Div1: "Você pode integrar uma variedade de estilos na construção da sua história. O <strong>% LAYOUT_TITLE% </ strong> normalmente tem o seu texto, imagens e vídeo enquanto seus mapas tendem a ir para o<strong> Nível Principal</ strong>. No entanto, o% TPL_NAME% também permite a você apresentar imagens, gráficos e vídeos dentro do nível principal.",
+				content1Div2: "ã_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._Ç",
+				content2Div1: "Aqui é onde você pode ajustar o visual do seu%TPL_NAME%. Os esquemas de cores, layouts e larguras são todos refinados aqui.",
+				content2Div2: "ã_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._Ç",
+				content3Div1: "Seu conteúdo está organizado em seções. Você pode ter várias seções que desejar (pense nelas como mini capítulos). O fluxo destes capítulos é importante; então dentro de Organizar você pode reordenar ou excluir seções como desejar.",
+				content4Div1: "Encontrou um erro ou deseja alterar o seu material? Não se preocupe. Procure o ícone de edição em todo o aplicativo para fazer alterações no seu conteúdo. Você utilizará as funções de edição várias vezes conforme desenvolver o seu %TPL_NAME%!",
+				content5Div1: "ã_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._Ç"
 			},
 			landing: {
-				lblAdd: "ã_Add the Home Section_Ç",
-				lblOR: "ã_Or_Ç",
-				lblHelp: "ã_Take a Tour_Ç"
+				lblAdd: "Adicionar a Seção Local",
+				lblOR: "Ou",
+				lblHelp: "Obter uma Apresentação"
 			},
 			firstAddSplash: {
-				thisis: "ã_This is the_Ç"
+				thisis: "Esta é o"
 			}
         }
     })

@@ -2,144 +2,144 @@
 	 ({
 		common: {
 			common: {
-				edit: "Ă_Edit_ș"
+				edit: "Editare"
 			},
 			inlineFieldEdit: {
-				editMe: "Ă_Edit me !_ș"
+				editMe: "Editează-mă!"
 			},
 			builderPanel: {
-				panelHeader: "Ă_%TPL_NAME% Builder_ș",
-				buttonSave: "Ă_SAVE_ș",
-				buttonShare: "Ă_SHARE_ș",
-				buttonSettings: "Ă_SETTINGS_ș",
-				buttonHelp: "Ă_HELP_ș",
-				noPendingChange: "Ă_No pending change_ș",
-				unSavedChangeSingular: "Ă_1 unsaved change_ș",
-				unSavedChangePlural: "Ă_unsaved changes_ș",
-				popoverSaveWhenDone: "Ă_Don't forget to save when you are done_ș",
-				closeWithPendingChange: "Ă_Are you sure to want to confirm the action ? Your changes will be lost._ș",
-				ok: "Ă_Ok_ș",
-				savingApplication: "Ă_Saving application_ș",
-				saveError: "Ă_Save failed, please try again_ș",
-				saveError3: "Ă_The title can't be empty_ș",
+				panelHeader: "Builder %TPL_NAME%",
+				buttonSave: "SALVARE",
+				buttonShare: "PARTAJARE",
+				buttonSettings: "SETĂRI",
+				buttonHelp: "AJUTOR",
+				noPendingChange: "Nicio modificare în aşteptare",
+				unSavedChangeSingular: "O modificare nesalvată",
+				unSavedChangePlural: "modificări nesalvate",
+				popoverSaveWhenDone: "Nu uitaţi să salvaţi când aţi terminat",
+				closeWithPendingChange: "Sigur confirmaţi acţiunea? Se vor pierde modificările.",
+				ok: "OK",
+				savingApplication: "Se salvează aplicaţia",
+				saveError: "Salvare nereuşită, încercaţi din nou",
+				saveError3: "Titlul nu poate fi necompletat",
 				// TODO
-				signIn: "Ă_Please sign in with an account on_ș",
-				shareStatus1: "Ă_Application is not saved_ș",
-				shareStatus2: "Ă_Application is shared publicly_ș",
-				shareStatus3: "Ă_Application is shared within the organization_ș",
-				shareStatus4: "Ă_Application is not shared_ș"
+				signIn: "Conectaţi-vă la un cont în",
+				shareStatus1: "Aplicaţia nu este salvată",
+				shareStatus2: "Aplicaţia nu este partajată public",
+				shareStatus3: "Aplicaţia este partajată în cadrul organizaţiei",
+				shareStatus4: "Aplicaţia nu este partajată"
 			},
 			// TODO
 			addEditPopup: {
 				// Add
-				addEditPopupInputTitleLabel: "Ă_Title_ș",
-				addPopupTitle: "Ă_Add_ș",
-				addPopupDescription: "Ă_Add a new view to your series._ș",
-				addPopupButton: "Ă_ADD_ș",
+				addEditPopupInputTitleLabel: "Titlu",
+				addPopupTitle: "Adăugare",
+				addPopupDescription: "Adăugaţi o vizualizare nouă pentru serie.",
+				addPopupButton: "ADĂUGARE",
 				// Edit
-				editPopupTitle: "Ă_Edit_ș",
-				editPopupDescription: "Ă_Edit the selected view_ș",
-				editPopupButton: "Ă_APPLY_ș",
+				editPopupTitle: "Editare",
+				editPopupDescription: "Editare vizualizare selectată",
+				editPopupButton: "APLICARE",
 				// Add/Edit
-				addEditPopupCancelButton: "Ă_CANCEL_ș",
-				addEditPopupMyContentBtn: "Ă_Select from my content_ș",
-				addEditPopupConfigureWebMapBtn: " Ă_Configure_ș"
+				addEditPopupCancelButton: "ANULARE",
+				addEditPopupMyContentBtn: "Selectare din resursele mele",
+				addEditPopupConfigureWebMapBtn: " Configurare"
 			},
 			share: {
-				firstSaveTitle: "Ă_Application successfully saved_ș",
-				firstSaveHeader: "Ă_Your application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ș",
-				firstSaveA1: "Ă_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ș",
-				firstSaveA1bis: "Ă_The application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ș",
-				firstSaveQ2: "Ă_Is my application shared?_ș",
-				firstSaveA2: "Ă_Currently your application is not shared. To share it, use the SHARE button._ș",
-				shareTitle: "Ă_Share your application_ș",
-				sharePrivateHeader: "Ă_Your application is not shared, would you like to share it?_ș",
-				sharePrivateBtn1: "Ă_Share publicly_ș",
-				sharePrivateBtn2: "Ă_Share with my Organization_ș",
-				sharePrivateWarning: "Ă_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ș",
-				sharePrivateWarningWith1: "Ă_publicly_ș",
-				sharePrivateWarningWith2: "Ă_publicly and with the Organization_ș",
-				sharePrivateProgress: "Ă_Sharing in progress..._ș",
-				sharePrivateErr: "Ă_Sharing failed, try again or_ș",
-				sharePrivateOk: "Ă_Sharing updated successfully, loading..._ș",
-				sharePreviewAsUser: "Ă_Preview_ș",
-				shareHeader1: "Ă_Your application is <strong>publicly accessible</strong>._ș",
-				shareHeader2: "Ă_Your application is accessible by your organization members (login is required)._ș",
-				shareLinkHeader: "Ă_Share the application with your audience_ș",
-				shareLinkOpen: "Ă_OPEN_ș",
-				shareQ1Opt1: "Ă_How do I keep the application private?_ș",
-				shareQ1Opt2: "Ă_How do I keep the application private or share it publicly?_ș",
-				shareA1: "Ă_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._ș",
-				shareA1bis: "Ă_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ș",
-				shareQ2: "Ă_How do I edit the application later?_ș",
-				shareQ2bis: "Ă_How do I get back to the authoring interface?_ș",
-				shareA2div1: "Ă_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ș",
-				shareA2div2: "Ă_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ș",				
-				shareQ3: "Ă_Where is the data stored?_ș",
-				shareA3: "Ă_The application configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._ș",
-				learnMore: "Ă_Learn more_ș",
-				close: "Ă_Close_ș"
+				firstSaveTitle: "S-a reuşit salvarea aplicaţiei",
+				firstSaveHeader: "Aplicaţia dvs. este acum salvată în ArcGIS Online.Citiţi următoarele răspunsuri la întrebări frecvente.",
+				firstSaveA1: "Dacă nu sunteţi familiarizat cu ArcGIS Online sau doriţi o comandă rapidă pentru a accesa interfaţa de creare, puteţi salva următorul link: %LINK1%",
+				firstSaveA1bis: "Aplicaţia poate fi găsită şi în <a href='%LINK2%' target='_blank'>directorul de resurse ArcGIS Online</a>.",
+				firstSaveQ2: "Aplicaţia mea este partajată?",
+				firstSaveA2: "În prezent, aplicaţia dvs. nu este partajată. Pentru a o partaja, utilizaţi butonul Partajare.",
+				shareTitle: "Partajare aplicaţie",
+				sharePrivateHeader: "Aplicaţia nu este partajată, doriţi să o partajaţi?",
+				sharePrivateBtn1: "Partajare în mod public",
+				sharePrivateBtn2: "Partajare cu organizaţia mea",
+				sharePrivateWarning: "Partajarea %WITH% a fost dezactivată, deoarece nu mai sunteţi proprietarul <a href='%LINK%' target='_blank'>hărţii web</a>.",
+				sharePrivateWarningWith1: "public",
+				sharePrivateWarningWith2: "public şi cu Organizaţia",
+				sharePrivateProgress: "Partajare în curs...",
+				sharePrivateErr: "Partajare nereuşită, încercaţi din nou sau",
+				sharePrivateOk: "Partajare actualizată cu succes, se încarcă...",
+				sharePreviewAsUser: "Previzualizare",
+				shareHeader1: "Aplicaţia este <strong>accesibilă public</strong>.",
+				shareHeader2: "Aplicaţia poate fi accesată de membrii organizaţiei (necesită autentificare).",
+				shareLinkHeader: "Partajare aplicaţie cu audienţa",
+				shareLinkOpen: "DESCHIDERE",
+				shareQ1Opt1: "Cum menţin aplicaţia privată?",
+				shareQ1Opt2: "Cum menţin aplicaţia privată sau o partajez public?",
+				shareA1: "Utilizaţi %SHAREIMG% în <a href='%LINK1%' target='_blank'>pagina de element corespunzătoare aplicaţiei</a>. Dacă doriţi şi să anulaţi partajarea hărţii web, utilizaţi <a href='%LINK2%' target='_blank'>pagina de element corespunzătoare hărţii web</a>.",
+				shareA1bis: "De asemenea, dacă doriţi să anulaţi partajarea serviciului de obiecte spaţiale, utilizaţi <a href='%LINK1%' target='_blank'>pagina de element corespunzătoare serviciului de obiecte spaţiale</a>.",
+				shareQ2: "Cum editez aplicaţia mai târziu?",
+				shareQ2bis: "Cum revin la interfaţa de creare?",
+				shareA2div1: "Salvaţi şi utilizaţi din nou următorul link, %LINK1%, sau utilizaţi <a href='%LINK2%' target='_blank'>pagina de element corespunzătoare aplicaţiei</a>.",
+				shareA2div2: "În calitate de proprietar al aplicaţiei, când sunteţi autentificat pe ArcGIS.com, aplicaţia include un buton pentru a deschide instrumentul de creare interactiv:",				
+				shareQ3: "Unde sunt stocate datele?",
+				shareA3: "Configuraţia aplicaţiei este stocată în <a href='%LINK1%' target='_blank'>acest element din harta web</a> şi în <a href='%LINK2%' target='_blank'>acest element din aplicaţia web</a>. Dacă aţi utilizat importul din Flickr, Picasa, Facebook sau YouTube, imaginile şi videoclipurile dvs. rămân stocate acolo şi nu sunt duplicate în ArcGIS Online.",
+				learnMore: "Învăţaţi mai mult",
+				close: "Închidere"
 			},
 			settings: {
-				header: "Ă_Application settings_ș",
-				cancel: "Ă_Cancel_ș",
-				apply: "Ă_Apply_ș",
-				tabError: "Ă_Please check for errors in all tabs_ș"
+				header: "Setări aplicaţie",
+				cancel: "Anulare",
+				apply: "Aplicare",
+				tabError: "Verificaţi erorile în toate filele"
 			},
 			settingsLayout: {
-				title: "Ă_Layout_ș",
-				explain: "Ă_What layout do you want to use?_ș",
-				explainInit: "Ă_Change will be possible through the settings dialog._ș",
-				selected: "Ă_Selected layout_ș",
-				select: "Ă_Select this layout_ș"
+				title: "Configuraţie",
+				explain: "Ce strat tematic doriţi să utilizaţi?",
+				explainInit: "Modificarea va fi posibilă prin dialogul pentru setări.",
+				selected: "Configuraţie selectată",
+				select: "Selectaţi această configuraţie"
 			},
 			settingsTheme: {
-				title: "Ă_Theme_ș",
-				explain: "Ă_Choose an app theme or define your own colors._ș",
-				label: "Ă_Header and side panel background colors_ș"
+				title: "Temă",
+				explain: "Alegeţi o temă pentru aplicaţie sau definiţi propriile dvs. culori.",
+				label: "Culorile pentru fundalul antetului şi panoului lateral"
 			},
 			settingsHeader: {
-				title: "Ă_Header_ș",
-				explain: "Ă_Customize the header logo (maximum is 250 x 50px)._ș",
-				logoEsri: "Ă_Esri logo_ș",
-				logoNone: "Ă_No logo_ș",
-				logoCustom: "Ă_Custom logo_ș",
-				logoCustomPlaceholder: "Ă_Image URL_ș",
-				logoCustomTargetPlaceholder: "Ă_Click-through link_ș",
-				logoSocialExplain: "Ă_Customize the header top right link._ș",
-				logoSocialText: "Ă_Text_ș",
-				logoSocialLink: "Ă_Link_ș",
-				logoSocialDisabled: "Ă_This feature has been disabled by the Administrator_ș"
+				title: "Antet",
+				explain: "Particularizaţi sigla antetului (maximum 250 x 50px).",
+				logoEsri: "Sigla Esri",
+				logoNone: "Fără siglă",
+				logoCustom: "Siglă particularizată",
+				logoCustomPlaceholder: "Adresă URL imagine",
+				logoCustomTargetPlaceholder: "Link de accesare cu clic",
+				logoSocialExplain: "Personalizaţi linkul din colţul din dreapta sus al antetului.",
+				logoSocialText: "Text",
+				logoSocialLink: "Link",
+				logoSocialDisabled: "Acest obiect spaţial a fost dezactivat de administrator"
 			},
 			mediaSelector: {
-				lblMap: "Ă_Map_ș",
-				lblPicture: "Ă_Picture_ș",
-				lblVideo: "Ă_Video_ș",
-				lblExternal: "Ă_External page_ș"
+				lblMap: "Hartă",
+				lblPicture: "Fotografie",
+				lblVideo: "Video",
+				lblExternal: "Pagină externă"
 			},
 			webMapSelector: {
-				radioCurrentWebMap: "Ă_Current web map_ș",
-				radioWebmapApp: "Ă_One of the other web map used in the application_ș",
-				radioAnotherWebmap: "Ă_Another webmap_ș",
-				btnSelect: "Ă_Select_ș",
-				lblOr: "Ă_or_ș",
-				fieldEnterWebmapId: "Ă_Enter a web map id_ș",
-				btnConfigure: "Ă_Configure the Map_ș"
+				radioCurrentWebMap: "Hartă web actuală",
+				radioWebmapApp: "Una din celelalte hărţi web utilizate în aplicaţie",
+				radioAnotherWebmap: "Altă hartă web",
+				btnSelect: "Selectare",
+				lblOr: "sau",
+				fieldEnterWebmapId: "Introducere ID hartă web",
+				btnConfigure: "Configuraţi harta"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "Ă_My Organization_ș",
-					onlineLabel: "Ă_ArcGIS Online_ș",
-					contentLabel: "Ă_My Content_ș",
-					favoritesLabel: "Ă_My Favorites_ș"
+					organizationLabel: "Organizaţia mea",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Resursele mele",
+					favoritesLabel: "Preferinţele mele"
 				},
-				title: "Ă_Select Web Map_ș",
-				searchTitle: "Ă_Search_ș",
-				ok: "Ă_Ok_ș",
-				cancel: "Ă_Cancel_ș",
-				placeholder: "Ă_Enter search term_ș"
+				title: "Selectare hartă web",
+				searchTitle: "Căutare",
+				ok: "OK",
+				cancel: "Anulare",
+				placeholder: "Introducere termen de căutare"
 			}
 		}
 	})

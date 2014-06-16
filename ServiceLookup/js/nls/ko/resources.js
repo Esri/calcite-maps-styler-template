@@ -5,7 +5,7 @@
             mouseToolTip: "맵을 클릭하여 서비스를 확인하세요."
         },
         geocoder: {
-            defaultText: "한_Enter an address or point of interest_빠"
+            defaultText: "주소 또는 관심 지점 입력"
         },
         error: {
             layerNotFound: "레이어가 웹 맵에 없습니다.",

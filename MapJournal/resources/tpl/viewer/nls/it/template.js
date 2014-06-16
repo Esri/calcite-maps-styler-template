@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "Chiudi"
+			},
 			loading: {
-				step1: "é_Loading application_È",
-				step2: "é_Loading data_È",
-				step3: "é_Initializing_È",
-				loadBuilder: "é_Switching to builder_È",
-				fail: "é_Sorry, loading failed_È",
-				failButton: "é_Retry_È"
+				step1: "Caricamento applicazione",
+				step2: "Caricamento dati",
+				step3: "Inizializzazione in corso",
+				loadBuilder: "Passaggio al generatore",
+				fail: "Caricamento non riuscito",
+				failButton: "Riprova"
 			},
 			signin: {
-				title: "é_Authentication is required_È",
-				explainViewer: "é_Please sign in with an account on %PORTAL_LINK% to access the application._È",
-				explainBuilder: "é_Please sign in with an account on %PORTAL_LINK% to configure the application._È"
+				title: "Autenticazione obbligatoria",
+				explainViewer: "Per accedere all\'applicazione, accedere con un account disponibile in %PORTAL_LINK%.",
+				explainBuilder: "Per configurare l\'applicazione, accedere con un account disponibile in %PORTAL_LINK%."
 			},
 			errors: {
-				boxTitle: "é_An error has occurred_È",
-				invalidConfig: "é_Fatal error: Invalid configuration_È",
-				invalidConfigNoApp: "é_Fatal error: Web Mapping Application identifier not specified in index.html_È",
-				createMap: "é_Unable to create map_È",
-				invalidApp: "é_Fatal error: The application cannot be loaded_È",
-				notConfiguredDesktop: "é_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._È",
-				notConfiguredMobile: "é_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._È",
-				notAuthorized: "é_You are not authorized to access this application_È",
-				noBuilderIE8: "é_The builder is not supported on Internet Explorer before version 9._È"
+				boxTitle: "Si è verificato un errore",
+				invalidConfig: "Errore irreversibile: configurazione non valida",
+				invalidConfigNoApp: "Errore irreversibile: identificatore dell\'applicazione di mappatura Web non specificato in index.html",
+				createMap: "Impossibile creare la mappa",
+				invalidApp: "Errore irreversibile: impossibile caricare l\'applicazione",
+				notConfiguredDesktop: "Benvenuti all\'applicazione Web %TPL_NAME%.<br />L\'applicazione non è ancora configurata.",
+				notConfiguredMobile: "Benvenuti all\'applicazione Web %TPL_NAME%. L\'applicazione non è ancora configurata e il generatore non è supportato su dispositivi mobili.",
+				notAuthorized: "L\'utente non è autorizzato ad accedere a questa applicazione",
+				noBuilderIE8: "Il generatore non è supportato nelle versioni di Internet Explorer precedenti alla versione 9."
 			},
 			mobileView: {
-				tapForDetails: "é_Tap for details_È",
-				swipeToExplore: "é_Swipe to explore_È",
-				tapForMap: "é_Tap to get back to the Map_È"
+				tapForDetails: "Toccare per i dettagli",
+				swipeToExplore: "Scorrere con un dito per esplorare",
+				tapForMap: "Toccare per tornare alla mappa"
 			},
 			floatLayout: {
-				scroll: "é_Scroll_È"
+				scroll: "Scorrimento"
 			},
 			sideLayout: {
-				scroll: "é_Scroll down for more!_È"
+				scroll: "Scorrere verso il basso per altre informazioni"
 			},
 			mainStage: {
-				back: "é_Back_È"
+				back: "Indietro"
 			},
 			headerFromCommon: {
-				storymapsText: "é_A story map_È",
-				builderButton: "é_Edit_È",
-				bitlyTooltip: "é_Get a short link to the application_È",
-				templateTitle: "é_Set template title_È",
-				templateSubtitle: "é_Set template subtitle_È",
-				share: "é_Share_È"
+				storymapsText: "Mappa collegata a una storia",
+				builderButton: "Modifica",
+				bitlyTooltip: "Ottieni un collegamento breve all\'applicazione",
+				templateTitle: "Imposta titolo modello",
+				templateSubtitle: "Imposta sottotitolo modello",
+				share: "Condividi"
 			},
 			overviewFromCommon: {
-				title: "é_Overview Map_È",
+				title: "Mappa d\'insieme",
 			},
 			legendFromCommon: {
-				title: "é_Legend_È"
+				title: "Legenda"
+			},
+			shareFromCommon: {
+				copy: "Copia",
+				copied: "Copiato",
+				open: "Apri",
+				embed: "é_Embed in website_È",
+				embedExplain: "é_Use the following HTML code to embed the Journal in a website._È",
+				size: "Dimensioni (larghezza/altezza):"
 			}
         }
     })

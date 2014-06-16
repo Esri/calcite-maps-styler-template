@@ -2,144 +2,144 @@
 	 ({
 		common: {
 			common: {
-				edit: "Ř_Edit_ů"
+				edit: "Editovat"
 			},
 			inlineFieldEdit: {
-				editMe: "Ř_Edit me !_ů"
+				editMe: "Edituj mě!"
 			},
 			builderPanel: {
-				panelHeader: "Ř_%TPL_NAME% Builder_ů",
-				buttonSave: "Ř_SAVE_ů",
-				buttonShare: "Ř_SHARE_ů",
-				buttonSettings: "Ř_SETTINGS_ů",
-				buttonHelp: "Ř_HELP_ů",
-				noPendingChange: "Ř_No pending change_ů",
-				unSavedChangeSingular: "Ř_1 unsaved change_ů",
-				unSavedChangePlural: "Ř_unsaved changes_ů",
-				popoverSaveWhenDone: "Ř_Don't forget to save when you are done_ů",
-				closeWithPendingChange: "Ř_Are you sure to want to confirm the action ? Your changes will be lost._ů",
-				ok: "Ř_Ok_ů",
-				savingApplication: "Ř_Saving application_ů",
-				saveError: "Ř_Save failed, please try again_ů",
-				saveError3: "Ř_The title can't be empty_ů",
+				panelHeader: "Nástroj pro tvorbu %TPL_NAME%",
+				buttonSave: "ULOŽIT",
+				buttonShare: "SDÍLET",
+				buttonSettings: "NASTAVENÍ",
+				buttonHelp: "NÁPOVĚDA",
+				noPendingChange: "Žádná neuložená změna",
+				unSavedChangeSingular: "1 neuložená změna",
+				unSavedChangePlural: "neuložených změn",
+				popoverSaveWhenDone: "Až budete hotovi, nezapomeňte provedené změny uložit.",
+				closeWithPendingChange: "Opravdu chcete potvrdit tuto akci? Vaše změny budou ztraceny.",
+				ok: "OK",
+				savingApplication: "Ukládání aplikace",
+				saveError: "Uložení se nezdařilo, zkuste to prosím znovu.",
+				saveError3: "Název nesmí být prázdný",
 				// TODO
-				signIn: "Ř_Please sign in with an account on_ů",
-				shareStatus1: "Ř_Application is not saved_ů",
-				shareStatus2: "Ř_Application is shared publicly_ů",
-				shareStatus3: "Ř_Application is shared within the organization_ů",
-				shareStatus4: "Ř_Application is not shared_ů"
+				signIn: "Přihlaste se pomocí účtu na",
+				shareStatus1: "Aplikace není uložena.",
+				shareStatus2: "Aplikace je sdílená veřejně.",
+				shareStatus3: "Aplikace je sdílená v rámci organizace.",
+				shareStatus4: "Aplikace není sdílená."
 			},
 			// TODO
 			addEditPopup: {
 				// Add
-				addEditPopupInputTitleLabel: "Ř_Title_ů",
-				addPopupTitle: "Ř_Add_ů",
-				addPopupDescription: "Ř_Add a new view to your series._ů",
-				addPopupButton: "Ř_ADD_ů",
+				addEditPopupInputTitleLabel: "Nadpis",
+				addPopupTitle: "Přidat",
+				addPopupDescription: "Umožňuje přidat do série nové zobrazení.",
+				addPopupButton: "PŘIDAT",
 				// Edit
-				editPopupTitle: "Ř_Edit_ů",
-				editPopupDescription: "Ř_Edit the selected view_ů",
-				editPopupButton: "Ř_APPLY_ů",
+				editPopupTitle: "Editovat",
+				editPopupDescription: "Upravit vybrané zobrazení",
+				editPopupButton: "POUŽÍT",
 				// Add/Edit
-				addEditPopupCancelButton: "Ř_CANCEL_ů",
-				addEditPopupMyContentBtn: "Ř_Select from my content_ů",
-				addEditPopupConfigureWebMapBtn: " Ř_Configure_ů"
+				addEditPopupCancelButton: "ZRUŠIT",
+				addEditPopupMyContentBtn: "Vybrat z mého obsahu",
+				addEditPopupConfigureWebMapBtn: " Konfigurovat"
 			},
 			share: {
-				firstSaveTitle: "Ř_Application successfully saved_ů",
-				firstSaveHeader: "Ř_Your application is now saved in ArcGIS Online. Please read the following answers to frequent questions._ů",
-				firstSaveA1: "Ř_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_ů",
-				firstSaveA1bis: "Ř_The application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._ů",
-				firstSaveQ2: "Ř_Is my application shared?_ů",
-				firstSaveA2: "Ř_Currently your application is not shared. To share it, use the SHARE button._ů",
-				shareTitle: "Ř_Share your application_ů",
-				sharePrivateHeader: "Ř_Your application is not shared, would you like to share it?_ů",
-				sharePrivateBtn1: "Ř_Share publicly_ů",
-				sharePrivateBtn2: "Ř_Share with my Organization_ů",
-				sharePrivateWarning: "Ř_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ů",
-				sharePrivateWarningWith1: "Ř_publicly_ů",
-				sharePrivateWarningWith2: "Ř_publicly and with the Organization_ů",
-				sharePrivateProgress: "Ř_Sharing in progress..._ů",
-				sharePrivateErr: "Ř_Sharing failed, try again or_ů",
-				sharePrivateOk: "Ř_Sharing updated successfully, loading..._ů",
-				sharePreviewAsUser: "Ř_Preview_ů",
-				shareHeader1: "Ř_Your application is <strong>publicly accessible</strong>._ů",
-				shareHeader2: "Ř_Your application is accessible by your organization members (login is required)._ů",
-				shareLinkHeader: "Ř_Share the application with your audience_ů",
-				shareLinkOpen: "Ř_OPEN_ů",
-				shareQ1Opt1: "Ř_How do I keep the application private?_ů",
-				shareQ1Opt2: "Ř_How do I keep the application private or share it publicly?_ů",
-				shareA1: "Ř_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._ů",
-				shareA1bis: "Ř_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._ů",
-				shareQ2: "Ř_How do I edit the application later?_ů",
-				shareQ2bis: "Ř_How do I get back to the authoring interface?_ů",
-				shareA2div1: "Ř_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._ů",
-				shareA2div2: "Ř_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_ů",				
-				shareQ3: "Ř_Where is the data stored?_ů",
-				shareA3: "Ř_The application configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._ů",
-				learnMore: "Ř_Learn more_ů",
-				close: "Ř_Close_ů"
+				firstSaveTitle: "Aplikace úspěšně uložena",
+				firstSaveHeader: "Vaše aplikace je nyní uložena ve službě ArcGIS Online. Přečtěte si následující odpovědi na časté dotazy.",
+				firstSaveA1: "Pokud nejste obeznámeni s ArcGIS Online nebo chcete zkratku pro přístup do autorského rozhraní, můžete si uložit následující odkaz: %LINK1%",
+				firstSaveA1bis: "Aplikaci naleznete i ve své <a href='%LINK2%' target='_blank'>složce s obsahem ArcGIS Online</a>.",
+				firstSaveQ2: "Je moje aplikace sdílena?",
+				firstSaveA2: "Vaše aplikace momentálně není sdílena. Pokud ji chcete sdílet, stiskněte tlačítko SDÍLET.",
+				shareTitle: "Sdílet aplikaci",
+				sharePrivateHeader: "Vaše aplikace není sdílena, chcete ji sdílet?",
+				sharePrivateBtn1: "Sdílet veřejně",
+				sharePrivateBtn2: "Sdílet s mou organizací",
+				sharePrivateWarning: "Sdílení %WITH% bylo zakázáno, protože nejste vlastníkem <a href='%LINK%' target='_blank'>webové mapy</a>.",
+				sharePrivateWarningWith1: "veřejně",
+				sharePrivateWarningWith2: "veřejně a s organizací",
+				sharePrivateProgress: "Probíhá sdílení…",
+				sharePrivateErr: "Sdílení se nezdařilo, zkuste to znovu nebo",
+				sharePrivateOk: "Sdílení bylo úspěšně aktualizováno, probíhá nahrávání…",
+				sharePreviewAsUser: "Náhled",
+				shareHeader1: "Vaše aplikace je <strong>veřejně přístupná</strong>.",
+				shareHeader2: "Vaše aplikace je přístupná členům vaší organizace (je vyžadováno přihlášení).",
+				shareLinkHeader: "Sdílejte aplikaci se svým publikem.",
+				shareLinkOpen: "OTEVŘÍT",
+				shareQ1Opt1: "Jak lze aplikaci ponechat jako soukromou?",
+				shareQ1Opt2: "Jak lze aplikaci ponechat jako soukromou nebo ji veřejně sdílet?",
+				shareA1: "Použijte %SHAREIMG% on <a href='%LINK1%' target='_blank'>stránku položek aplikace</a>. Pokud chcete také zrušit sdílení webové mapy, použijte <a href='%LINK2%' target='_blank'>stránku položek webové mapy</a>.",
+				shareA1bis: "Pokud chcete také zrušit sdílení služby Feature Service, použijte <a href='%LINK1%' target='_blank'>stránku položek služby Feature Service</a>.",
+				shareQ2: "Jak mohu aplikaci později upravovat?",
+				shareQ2bis: "Jak se vrátím do autorského rozhraní?",
+				shareA2div1: "Uložte si pro budoucí použití tento odkaz %LINK1% nebo použijte <a href='%LINK2%' target='_blank'>stránku položek aplikace</a>.",
+				shareA2div2: "Když jste přihlášeni na webu ArcGIS.com jako majitel aplikace, tak aplikace obsahuje tlačítko pro otevření interaktivního nástroje pro tvorbu:",				
+				shareQ3: "Kde jsou uložena data?",
+				shareA3: "Konfigurace aplikace je uložena v <a href='%LINK1%' target='_blank'>této položce webové mapy</a> a <a href='%LINK2%' target='_blank'>této položce webové aplikace</a>. Pokud jste použili import ze služeb Flickr, Picasa, Facebook nebo YouTube, vaše obrázky a videa zůstanou uloženy v těchto službách a nebudou duplikovány v ArcGIS Online.",
+				learnMore: "Více informací",
+				close: "Zavřít"
 			},
 			settings: {
-				header: "Ř_Application settings_ů",
-				cancel: "Ř_Cancel_ů",
-				apply: "Ř_Apply_ů",
-				tabError: "Ř_Please check for errors in all tabs_ů"
+				header: "Nastavení aplikace",
+				cancel: "Storno",
+				apply: "Použít",
+				tabError: "Zkontrolujte prosím, nejsou-li v záložkách chyby."
 			},
 			settingsLayout: {
-				title: "Ř_Layout_ů",
-				explain: "Ř_What layout do you want to use?_ů",
-				explainInit: "Ř_Change will be possible through the settings dialog._ů",
-				selected: "Ř_Selected layout_ů",
-				select: "Ř_Select this layout_ů"
+				title: "Rozvržení",
+				explain: "Jaké rozvržení chcete použít?",
+				explainInit: "Změnu bude možné provést v dialogu nastavení.",
+				selected: "Vybrané rozvržení",
+				select: "Vybrat toto rozvržení"
 			},
 			settingsTheme: {
-				title: "Ř_Theme_ů",
-				explain: "Ř_Choose an app theme or define your own colors._ů",
-				label: "Ř_Header and side panel background colors_ů"
+				title: "Motiv",
+				explain: "Vyberte motiv aplikace nebo vyberte vlastní barvy.",
+				label: "Barvy pozadí postranního panelu a záhlaví"
 			},
 			settingsHeader: {
-				title: "Ř_Header_ů",
-				explain: "Ř_Customize the header logo (maximum is 250 x 50px)._ů",
-				logoEsri: "Ř_Esri logo_ů",
-				logoNone: "Ř_No logo_ů",
-				logoCustom: "Ř_Custom logo_ů",
-				logoCustomPlaceholder: "Ř_Image URL_ů",
-				logoCustomTargetPlaceholder: "Ř_Click-through link_ů",
-				logoSocialExplain: "Ř_Customize the header top right link._ů",
-				logoSocialText: "Ř_Text_ů",
-				logoSocialLink: "Ř_Link_ů",
-				logoSocialDisabled: "Ř_This feature has been disabled by the Administrator_ů"
+				title: "Záhlaví",
+				explain: "Přizpůsobit logo záhlaví (maximum je 250 × 50 px).",
+				logoEsri: "Logo Esri",
+				logoNone: "Bez loga",
+				logoCustom: "Vlastní logo",
+				logoCustomPlaceholder: "URL obrázku",
+				logoCustomTargetPlaceholder: "Odkaz při kliknutí na obrázek",
+				logoSocialExplain: "Umožňuje přizpůsobit pravý horní odkaz v záhlaví.",
+				logoSocialText: "Text",
+				logoSocialLink: "Odkaz",
+				logoSocialDisabled: "Tato funkce byla zakázána administrátorem."
 			},
 			mediaSelector: {
-				lblMap: "Ř_Map_ů",
-				lblPicture: "Ř_Picture_ů",
-				lblVideo: "Ř_Video_ů",
-				lblExternal: "Ř_External page_ů"
+				lblMap: "Mapa",
+				lblPicture: "Obrázek",
+				lblVideo: "Video",
+				lblExternal: "Externí stránka"
 			},
 			webMapSelector: {
-				radioCurrentWebMap: "Ř_Current web map_ů",
-				radioWebmapApp: "Ř_One of the other web map used in the application_ů",
-				radioAnotherWebmap: "Ř_Another webmap_ů",
-				btnSelect: "Ř_Select_ů",
-				lblOr: "Ř_or_ů",
-				fieldEnterWebmapId: "Ř_Enter a web map id_ů",
-				btnConfigure: "Ř_Configure the Map_ů"
+				radioCurrentWebMap: "Současná webová mapa",
+				radioWebmapApp: "Jedna z ostatních webových map použitých v aplikaci",
+				radioAnotherWebmap: "Jiná webová mapa",
+				btnSelect: "Vybrat",
+				lblOr: "nebo",
+				fieldEnterWebmapId: "Zadejte identifikátor webové mapy",
+				btnConfigure: "Konfigurovat mapu"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "Ř_My Organization_ů",
-					onlineLabel: "Ř_ArcGIS Online_ů",
-					contentLabel: "Ř_My Content_ů",
-					favoritesLabel: "Ř_My Favorites_ů"
+					organizationLabel: "Moje organizace",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "Můj obsah",
+					favoritesLabel: "Moje oblíbené"
 				},
-				title: "Ř_Select Web Map_ů",
-				searchTitle: "Ř_Search_ů",
-				ok: "Ř_Ok_ů",
-				cancel: "Ř_Cancel_ů",
-				placeholder: "Ř_Enter search term_ů"
+				title: "Vybrat webovou mapu",
+				searchTitle: "Hledat",
+				ok: "OK",
+				cancel: "Storno",
+				placeholder: "Zadat vyhledávací výraz"
 			}
 		}
 	})

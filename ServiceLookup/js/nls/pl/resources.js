@@ -5,7 +5,7 @@
             mouseToolTip: "Kliknij mapę, aby sprawdzić dostępność usługi"
         },
         geocoder: {
-            defaultText: "ł_Enter an address or point of interest_ą"
+            defaultText: "Wprowadź adres lub punkt POI"
         },
         error: {
             layerNotFound: "Warstwa nie znajduje się na mapie internetowej",

@@ -5,7 +5,7 @@
             mouseToolTip: "マップをクリックしてサービスをチェック"
         },
         geocoder: {
-            defaultText: "須_Enter an address or point of interest_鷗"
+            defaultText: "アドレスまたは対象ポイントの入力"
         },
         error: {
             layerNotFound: "Web マップにレイヤがありません",

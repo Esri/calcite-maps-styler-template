@@ -5,7 +5,7 @@
             mouseToolTip: "Tarkista palvelu napsauttamalla karttaa"
         },
         geocoder: {
-            defaultText: "Å_Enter an address or point of interest_ö"
+            defaultText: "Anna osoite tai kiinnostava paikka"
         },
         error: {
             layerNotFound: "Karttataso ei ole Web-kartassa",

@@ -21,33 +21,34 @@ define(({
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'Š_Landscape (PDF)_ä',
-			      "label2": 'Š_Portrait (PDF)_ä',
-			      "label3": 'Š_Landscape (Image)_ä',
-			      "label4": 'Š_Portrait (Image)_ä'
-			    }
+			      "label1": 'Horisontaalpaigutus (PDF)',
+			      "label2": 'Vertikaalpaigutus (PDF)',
+			      "label3": 'Horisontaalpaigutus (Pilt)',
+			      "label4": 'Vertikaalpaigutus (Pilt)'
+			    },
+			    "legend": "Š_Add legend to output_ä"
 			},
 			"share": {
-				"extent": "Š_Use current map extent_ä",
-				"label": "Š_Share this map_ä",
-				"link": "Š_Map Link_ä",
-				"facebook": "Š_Facebook_ä",
-				"twitter": "Š_Twitter_ä"
+				"extent": "Kasuta praeguse kaardi ulatust",
+				"label": "Jaga seda kaarti",
+				"link": "Kaardi link",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "Š_Default extent_ä",
-        	"locate": "Š_Find my location_ä",
-        	"legend": "Š_Legend_ä",
-        	"bookmarks": "Š_Bookmarks_ä",
-        	"layers": "Š_Layers_ä",
+        	"home": "Vaikimisi kuvaulatus",
+        	"locate": "Leia minu asukoht",
+        	"legend": "Legend",
+        	"bookmarks": "Järjehoidjad",
+        	"layers": "Kihid",
         	"basemap": "Š_Basemap gallery_ä",
         	"overview": "Š_Overview map_ä",
-        	"measure": "Š_Measure_ä",
-        	"edit": "Š_Edit_ä",
-        	"time": "Š_Time_ä",
-        	"print": "Š_Print_ä",
-        	"details": "Š_Details_ä",
-        	"share": "Š_Share_ä"
+        	"measure": "Mõõda",
+        	"edit": "Muuda",
+        	"time": "Aeg",
+        	"print": "Prindi",
+        	"details": "Detailid",
+        	"share": "Jaga"
         }
 }));

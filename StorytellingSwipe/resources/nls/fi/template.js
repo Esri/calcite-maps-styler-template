@@ -6,7 +6,7 @@
 				step2: "LADATAAN DATAA",
 				step3: "KÄYNNISTETÄÄN",
 				fail: "Pyyhkäisyn lataus epäonnistui",
-				loadBuilder: "VAIHDETAAN MUODOSTUSOHJELMAN TILAAN",
+				loadBuilder: "VAIHDETAAN MUODOSTUSOHJELMAN TILAAN",				
 				redirectSignIn: "OHJATAAN SISÄÄNKIRJAUTUMISSIVULLE",
 				redirectSignIn2: "(sinut ohjataan tänne sisäänkirjautumisen jälkeen)",
 				failButton: "Yritä uudelleen"
@@ -25,7 +25,7 @@
 				mapSave: "Virhe tallennettaessa Web-karttaa",
 				notAuthorized: "Sinulla ei ole tämän sovelluksen käyttöoikeuksia",
 				conflictingProjectionsTitle: "Ristiriitaa aiheuttavat projektiot",
-				conflictingProjections: "Pyyhkäisysovellus ei tue projektioiltaan eroavien web-karttojen käyttämistä. Avaa asetukset ja ota käyttöön sellainen web-kartta, joka käyttää samaa projektiota kuin ensimmäinen web-kartta.",
+				conflictingProjections: "Å_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ö",
 				cpButton: "Sulje"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "sovelluksen tallentamiseksi."
 			},
 			header:{
-				editMe: "Muokkaa minua!",
+				editMe: "Å_Edit me!_ö",
 				templateTitle: "Määritä mallin nimi",
 				templateSubtitle: "Määritä mallin alaotsikko"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Aseta sivupaneelin kuvaus",
-				editMe: "Muokkaa minua!",
+				editMe: "Å_Edit me!_ö",
 				legendTitle: "Selite"
 			},
 			infoWindow: {

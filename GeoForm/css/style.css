@@ -2,6 +2,7 @@
     width:100%;
     height: 200px;
 }
+
 .preview-frame{
     width: 100%;
     height: 200px;
@@ -16,7 +17,17 @@
         background-repeat: no-repeat;
 }
 
+#coordinatesContainer{
+    margin-bottom: 20px;
+}
 
+.inline-block{
+    display: inline-block;
+}
+
+.submit-area{
+    margin-bottom: 40px;
+}
 .loading-indicator {
     display: none;
     height: 100%;
@@ -146,11 +157,6 @@
         display: inline-table !important;
 }
 
-.circleImageDimension {
-        height: 140px;
-        width: 140px;
-}
-
 .myLocationOptions{
         padding:20px 0px;
 }
@@ -159,10 +165,6 @@
         margin-top:10px;
 }
 
-#longAddress
-{
-    float: right;
-}
 .has-feedback .form-control {
     padding-right: 10px !important;
 }
@@ -185,4 +187,9 @@ input::-ms-clear {
 }
 .tableDimension{
     min-width: 180px;
+}
+
+.descriptionText {
+    font-size:18px;
+    margin-bottom:10px;
 }

@@ -2,84 +2,84 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ř_Select Media Type_ů",
-				lblSelect2: "Ř_Select Content Type_ů",
-				lblMap: "Ř_Map_ů",
-				lblImage: "Ř_Image_ů",
-				lblVideo: "Ř_Video_ů",
-				lblExternal: "Ř_Web page_ů",
-				disabled: "Ř_This feature has been disabled by the Administrator_ů",
-				url: "Ř_To manually enter the web address of an image_ů",
-				userLookup: "Ř_Load albums_ů",
-				notImplemented: "Ř_Not implemented yet._ů"
+				lblSelect1: "Vybrat typ média",
+				lblSelect2: "Vybrat typ obsahu",
+				lblMap: "Mapa",
+				lblImage: "Obrázek",
+				lblVideo: "Video",
+				lblExternal: "Webová stránka",
+				disabled: "Tato funkce byla zakázána administrátorem.",
+				url: "Umožňuje manuálně vložit webovou adresu obrázku.",
+				userLookup: "Nahrát alba",
+				notImplemented: "Dosud není implementováno."
 			},
 			imageSelector: {
-				lblStep1: "Ř_Choose the service_ů",
-				lblStep2: "Ř_Select your media_ů",
-				lblStep3: "Ř_Configure_ů"
+				lblStep1: "Vyberte službu.",
+				lblStep2: "Vyberte svá média.",
+				lblStep3: "Konfigurovat"
 			},
 			imageSelectorHome: {
-				explain: "Ř_Load images from social media, <br /> or directly from a URL_ů"
+				explain: "Nahrajte obrázky ze sociálních médií <br /> nebo přímo z adresy URL."
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "Ř_User name_ů",
-				signInMsg2: "Ř_User not found_ů",
-				loadingFailed: "Ř_Loading failed_ů"
+				userInputLbl: "Uživatelské jméno",
+				signInMsg2: "Uživatel nenalezen",
+				loadingFailed: "Nahrávání se nezdařilo."
 			},
 			imageSelectorFacebook: {
-				leftHeader: "Ř_Facebook User_ů",
-				rightHeader: "Ř_Facebook Page_ů",
-				pageExplain: "Ř_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL._ů",
-				pageInputLbl: "Ř_Page name_ů",
-				lookupMsgError: "Ř_Page not found_ů"
+				leftHeader: "Uživatel služby Facebook",
+				rightHeader: "Stránka služby Facebook",
+				pageExplain: "Stránka služby Facebook představuje veřejnou značku či službu nebo známou osobnost, jako je například <b>esrigis</b>. Název stránky začíná za prvním lomítkem (/) v URL adrese stránky.",
+				pageInputLbl: "Název stránky",
+				lookupMsgError: "Stránka nenalezena"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "Ř_Email or Picasa/Google+ ID_ů",
-				signInMsg2: "Ř_Account not found_ů",
-				signInMsg3: "Ř_No public album_ů",
-				howToFind: "Ř_How to find a Picasa or Google+ account ID_ů",
-				howToFind2: "Ř_Copy digits between the first and second '/' of any Picasa or G+ page_ů"
+				userInputLbl: "E-mail nebo identifikátor Picasa/Google+",
+				signInMsg2: "Účet nenalezen",
+				signInMsg3: "Žádné veřejné album",
+				howToFind: "Jak najít identifikátor účtu Picasa nebo Google+",
+				howToFind2: "Zkopírujte číslice mezi prvním a druhým lomítkem (/) libovolné stránky služeb Picasa nebo Google+."
 			},
 			videoSelector: {
 				
 			},
 			videoSelectorYoutube: {
-				pageInputLbl: "Ř_User name_ů",
-				lookupMsgError: "Ř_User not found_ů",
-				howToFind: "Ř_How to find a YouTube user name_ů",
-				howToFind2: "Ř_User name is displayed under videos_ů",
-				found: "Ř_Found_ů",
-				noData: "Ř_No public videos found_ů"
+				pageInputLbl: "Uživatelské jméno",
+				lookupMsgError: "Uživatel nenalezen",
+				howToFind: "Jak najít uživatelské jméno YouTube",
+				howToFind2: "Uživatelské jméno se zobrazuje pod videi",
+				found: "Nalezeno",
+				noData: "Nenalezena žádná veřejná videa"
 			},
 			mediaSelectorPicker: {
 				
 			},
 			mediaConfigure: {
-				lblURL: "Ř_URL_ů",
-				lblURLPH: "Ř_Media URL..._ů",
-				lblLabel: "Ř_Label_ů",
-				lblLabel1: "Ř_Caption_ů",
-				lblLabel2: "Ř_Hover text_ů",
-				lblLabel3: "Ř_None_ů",
-				lblLabelPH: "Ř_Enter some text..._ů",
-				lblPosition: "Ř_Position_ů",
-				lblPosition1: "Ř_Center_ů",
-				lblPosition2: "Ř_Fill_ů",
-				lblPosition3: "Ř_Fit_ů",
-				lblPosition4: "Ř_Stretch_ů",
-				lblPosition2Explain: "Ř_(may crop)_ů",
-				lblPosition3Explain: "Ř_(won't crop)_ů",
-				lblPosition4Explain: "Ř_(may distort)_ů"
+				lblURL: "URL",
+				lblURLPH: "Adresa URL média...",
+				lblLabel: "Štítek",
+				lblLabel1: "Popisek",
+				lblLabel2: "Přejeďte ukazatelem myši přes text.",
+				lblLabel3: "Žádné",
+				lblLabelPH: "Napište nějaký text...",
+				lblPosition: "Pozice",
+				lblPosition1: "Na střed",
+				lblPosition2: "Vyplnit",
+				lblPosition3: "Přizpůsobit",
+				lblPosition4: "Roztáhnout",
+				lblPosition2Explain: "(může dojít k ořezu)",
+				lblPosition3Explain: "(nedojde k ořezu)",
+				lblPosition4Explain: "(může dojít ke zkreslení)"
 			},
 			editorActionGeocode: {
-				lblTitle: "Ř_Locate an address or place_ů",
-				mapMarkerExplain: "Ř_User will see a map marker when clicking the link_ů"
+				lblTitle: "Najít adresu nebo místo",
+				mapMarkerExplain: "Uživatel při kliknutí na odkaz uvidí mapovou značku."
 			},
 			editorActionMedia: {
-				lblTitle: "Ř_Change the Main Stage media_ů"
+				lblTitle: "Ř_Change the Main Stage content_ů"
 			},
 			editorInlineMedia: {
-				lblTitle: "Ř_Insert an image or video_ů"
+				lblTitle: "Vložit obrázek nebo video"
 			}
 		}
 	})

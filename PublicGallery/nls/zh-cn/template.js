@@ -100,13 +100,13 @@
 				"detailsLabel":"详细信息"
             },
             "filterItems":{
-                "show": "试_Show_验",
-                "all": "试_All Results_验",
-                "maps": "试_Maps_验",
-                "layers": "试_Layers_验",
-                "applications": "试_Applications_验",
-                "tools": "试_Tools_验",
-                "files": "试_Files_验"
+                "show": "显示",
+                "all": "所有结果",
+                "maps": "地图",
+                "layers": "图层",
+                "applications": "应用程序",
+                "tools": "工具",
+                "files": "文件"
             },
             "pagination": {
                 "previous": "上一页",

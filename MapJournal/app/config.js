@@ -49,12 +49,12 @@ app.cfg = {
   			sizes: { small: '30%', medium: '40%', large: '50%' },
   			positions: ["left", "right"],
   			themes: [
-  			    {dotNav: "#777777", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000"},
-  				{dotNav: "#726458", panel: "#FFF8E9", media: "#C9C1B9", text: "#000000"},
-  				{dotNav: "#676C7F", panel: "#F9F9EF", media: "#424D51", text: "#000000"},
-  				{dotNav: "#5A5A5A", panel: "#000000", media: "#EEEEEE", text: "#FFFFFF"},
-  				{dotNav: "#68AAE1", panel: "#FFFFFF", media: "#E8E8DF", text: "#000000"},
-  				{dotNav: "#676C7E", panel: "#F9F9EF", media: "#C2E3EE", text: "#000000"}         
+  			    {dotNav: "#777777", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000", textLink: "#555", esriLogo: "black"},
+  				{dotNav: "#726458", panel: "#FFF8E9", media: "#C9C1B9", text: "#000000", textLink: "#555", esriLogo: "black"},
+  				{dotNav: "#676C7F", panel: "#F9F9EF", media: "#424D51", text: "#000000", textLink: "#555", esriLogo: "black"},
+  				{dotNav: "#5A5A5A", panel: "#000000", media: "#EEEEEE", text: "#FFFFFF", textLink: "#DDD", esriLogo: "white"},
+  				{dotNav: "#68AAE1", panel: "#FFFFFF", media: "#E8E8DF", text: "#000000", textLink: "#555", esriLogo: "black"},
+  				{dotNav: "#676C7E", panel: "#F9F9EF", media: "#C2E3EE", text: "#000000", textLink: "#555", esriLogo: "black"}         
   			]
   		},
   		{
@@ -64,7 +64,7 @@ app.cfg = {
   			sizes: { small: '25%', medium: '35%', large: '45%' },
   			positions: ["right", "left"],
   			themes: [
-  				{dotNav: "#000000", panel: "#000000", media: "#FFFFFF", text: "#FFFFFF"}
+  				{dotNav: "#000000", panel: "#000000", media: "#FFFFFF", text: "#FFFFFF", textLink: "#DDD", esriLogo: "white"}
   			]
   		}
   	],

@@ -1,57 +1,68 @@
 ﻿define(
 	 ({
 		viewer: {
+			common: {
+				close: "סגור"
+			},
 			loading: {
-				step1: "כן_Loading application_ש",
-				step2: "כן_Loading data_ש",
-				step3: "כן_Initializing_ש",
-				loadBuilder: "כן_Switching to builder_ש",
-				fail: "כן_Sorry, loading failed_ש",
-				failButton: "כן_Retry_ש"
+				step1: "טען אפליקציה",
+				step2: "טעינת נתונים",
+				step3: "מאתחל",
+				loadBuilder: "עבור למצב בנייה",
+				fail: "מצטערים, הטעינה נכשלה",
+				failButton: "נסה שוב"
 			},
 			signin: {
-				title: "כן_Authentication is required_ש",
-				explainViewer: "כן_Please sign in with an account on %PORTAL_LINK% to access the application._ש",
-				explainBuilder: "כן_Please sign in with an account on %PORTAL_LINK% to configure the application._ש"
+				title: "נדרש אימות",
+				explainViewer: "אנא התחבר עם %PORTAL_LINK% כדי לגשת לאפליקציה.",
+				explainBuilder: "אנא התחבר עם %PORTAL_LINK% כדי להגדיר את האפליקציה."
 			},
 			errors: {
-				boxTitle: "כן_An error has occurred_ש",
-				invalidConfig: "כן_Fatal error: Invalid configuration_ש",
-				invalidConfigNoApp: "כן_Fatal error: Web Mapping Application identifier not specified in index.html_ש",
-				createMap: "כן_Unable to create map_ש",
-				invalidApp: "כן_Fatal error: The application cannot be loaded_ש",
-				notConfiguredDesktop: "כן_Welcome to the %TPL_NAME% web application.<br />The application is not configured yet._ש",
-				notConfiguredMobile: "כן_Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices._ש",
-				notAuthorized: "כן_You are not authorized to access this application_ש",
-				noBuilderIE8: "כן_The builder is not supported on Internet Explorer before version 9._ש"
+				boxTitle: "אירעה שגיאה",
+				invalidConfig: "שגיאה קריטית: קביעת תצורה לא תקינה",
+				invalidConfigNoApp: "שגיאה חמורה: מזהה Web Mapping Application לא מצויין ב- index.html",
+				createMap: "לא ניתן ליצור מפה",
+				invalidApp: "שגיאה קריטית: לא ניתן לטעון את האפליקציה",
+				notConfiguredDesktop: "ברוכים הבאים לאפליקצית ה- web של %TPL_NAME%.<br />טרם נקבעה תצורה לאפליקציה.",
+				notConfiguredMobile: "ברוכים הבאים לאפליקצית web מסוג %TPL_NAME%. לא נקבעה תצורה לאפליקציה וכלי הבנייה לא נתמך במכשיריים ניידים.",
+				notAuthorized: "אינך מורשה לגשת לאפליקציה זו",
+				noBuilderIE8: "כלי הבניה לא נתמך ב- Internet Explorer טרם גרסה 9."
 			},
 			mobileView: {
-				tapForDetails: "כן_Tap for details_ש",
-				swipeToExplore: "כן_Swipe to explore_ש",
-				tapForMap: "כן_Tap to get back to the Map_ש"
+				tapForDetails: "הקש לקבלת פרטים",
+				swipeToExplore: "Swipe כדי לחקור",
+				tapForMap: "הקש כדי לחזור למפה"
 			},
 			floatLayout: {
-				scroll: "כן_Scroll_ש"
+				scroll: "גלול"
 			},
 			sideLayout: {
-				scroll: "כן_Scroll down for more!_ש"
+				scroll: "גלול למטה כדי לצפות בעוד!"
 			},
 			mainStage: {
-				back: "כן_Back_ש"
+				back: "חזור"
 			},
 			headerFromCommon: {
-				storymapsText: "כן_A story map_ש",
-				builderButton: "כן_Edit_ש",
-				bitlyTooltip: "כן_Get a short link to the application_ש",
-				templateTitle: "כן_Set template title_ש",
-				templateSubtitle: "כן_Set template subtitle_ש",
-				share: "כן_Share_ש"
+				storymapsText: "מפת סיפור",
+				builderButton: "עריכה",
+				bitlyTooltip: "קבל קישור קצר לאפליקציה",
+				templateTitle: "קבע כותרת תבנית",
+				templateSubtitle: "קבע כותרת משנה לתבנית",
+				share: "שתף"
 			},
 			overviewFromCommon: {
-				title: "כן_Overview Map_ש",
+				title: "מפת תצוגה מקדימה",
 			},
 			legendFromCommon: {
-				title: "כן_Legend_ש"
+				title: "מקרא"
+			},
+			shareFromCommon: {
+				copy: "העתק",
+				copied: "הועתק",
+				open: "פתח",
+				embed: "כן_Embed in website_ש",
+				embedExplain: "כן_Use the following HTML code to embed the Journal in a website._ש",
+				size: "גודל (רוחב/גובה):"
 			}
         }
     })

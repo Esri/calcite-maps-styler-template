@@ -2,84 +2,84 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "כן_Select Media Type_ש",
-				lblSelect2: "כן_Select Content Type_ש",
-				lblMap: "כן_Map_ש",
-				lblImage: "כן_Image_ש",
-				lblVideo: "כן_Video_ש",
-				lblExternal: "כן_Web page_ש",
-				disabled: "כן_This feature has been disabled by the Administrator_ש",
-				url: "כן_To manually enter the web address of an image_ש",
-				userLookup: "כן_Load albums_ש",
-				notImplemented: "כן_Not implemented yet._ש"
+				lblSelect1: "בחר סוג מדיה",
+				lblSelect2: "בחר סוג תוכן",
+				lblMap: "מפה",
+				lblImage: "תמונה",
+				lblVideo: "וידאו",
+				lblExternal: "דף אינטרנט",
+				disabled: "תכונה זו הוגדרה כלא זמינה על ידי המנהל",
+				url: "בכדי להכניס באופן ידני כתובת אינטרנט או תמונה",
+				userLookup: "טען אלבומים",
+				notImplemented: "לא נתמך כעת."
 			},
 			imageSelector: {
-				lblStep1: "כן_Choose the service_ש",
-				lblStep2: "כן_Select your media_ש",
-				lblStep3: "כן_Configure_ש"
+				lblStep1: "בחר את השירות",
+				lblStep2: "בחר את המדיה שלך",
+				lblStep3: "קבע תצורה"
 			},
 			imageSelectorHome: {
-				explain: "כן_Load images from social media, <br /> or directly from a URL_ש"
+				explain: "טען תמונות ממדיה חברתית, <br /> או באופן ישיר מ- URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "כן_User name_ש",
-				signInMsg2: "כן_User not found_ש",
-				loadingFailed: "כן_Loading failed_ש"
+				userInputLbl: "שם משתמש",
+				signInMsg2: "משתמש לא נמצא",
+				loadingFailed: "טעינה נכשלה"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "כן_Facebook User_ש",
-				rightHeader: "כן_Facebook Page_ש",
-				pageExplain: "כן_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL._ש",
-				pageInputLbl: "כן_Page name_ש",
-				lookupMsgError: "כן_Page not found_ש"
+				leftHeader: "משתמש פייסבוק",
+				rightHeader: "עמוד פייסבוק",
+				pageExplain: "A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the firstq'\/'\ in the page URL.",
+				pageInputLbl: "שם דף",
+				lookupMsgError: "עמוד לא נמצא"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "כן_Email or Picasa/Google+ ID_ש",
-				signInMsg2: "כן_Account not found_ש",
-				signInMsg3: "כן_No public album_ש",
-				howToFind: "כן_How to find a Picasa or Google+ account ID_ש",
-				howToFind2: "כן_Copy digits between the first and second '/' of any Picasa or G+ page_ש"
+				userInputLbl: "אמייל או Picasa/Google+ ID",
+				signInMsg2: "חשבון לא נמצא",
+				signInMsg3: "אין אלבום ציבורי",
+				howToFind: "כיצד למצוא את ה- ID של חשבון ה- Picasa או Google+",
+				howToFind2: "העתק תווים בין ה \'/\'  הראשון לשני של כל עמוד Picasa או G+"
 			},
 			videoSelector: {
 				
 			},
 			videoSelectorYoutube: {
-				pageInputLbl: "כן_User name_ש",
-				lookupMsgError: "כן_User not found_ש",
-				howToFind: "כן_How to find a YouTube user name_ש",
-				howToFind2: "כן_User name is displayed under videos_ש",
-				found: "כן_Found_ש",
-				noData: "כן_No public videos found_ש"
+				pageInputLbl: "שם משתמש",
+				lookupMsgError: "משתמש לא נמצא",
+				howToFind: "איך למצוא שם משתמש ב-YouTube",
+				howToFind2: "שם המשתמש מוצג תחת קטעי וידאו",
+				found: "נמצא",
+				noData: "לא נמצאו סרטונים ציבוריים"
 			},
 			mediaSelectorPicker: {
 				
 			},
 			mediaConfigure: {
-				lblURL: "כן_URL_ש",
-				lblURLPH: "כן_Media URL..._ש",
-				lblLabel: "כן_Label_ש",
-				lblLabel1: "כן_Caption_ש",
-				lblLabel2: "כן_Hover text_ש",
-				lblLabel3: "כן_None_ש",
-				lblLabelPH: "כן_Enter some text..._ש",
-				lblPosition: "כן_Position_ש",
-				lblPosition1: "כן_Center_ש",
-				lblPosition2: "כן_Fill_ש",
-				lblPosition3: "כן_Fit_ש",
-				lblPosition4: "כן_Stretch_ש",
-				lblPosition2Explain: "כן_(may crop)_ש",
-				lblPosition3Explain: "כן_(won't crop)_ש",
-				lblPosition4Explain: "כן_(may distort)_ש"
+				lblURL: "URL",
+				lblURLPH: "URL של המדיה...",
+				lblLabel: "תווית",
+				lblLabel1: "כותרת",
+				lblLabel2: "טקסט מוצג בריחוף",
+				lblLabel3: "ללא",
+				lblLabelPH: "הכנס טקסט כלשהו...",
+				lblPosition: "מיקום",
+				lblPosition1: "מרכז",
+				lblPosition2: "מילוי",
+				lblPosition3: "מותאם",
+				lblPosition4: "מתיחה",
+				lblPosition2Explain: "(יכול להחתך)",
+				lblPosition3Explain: "(לא יכול להחתך)",
+				lblPosition4Explain: "(יכול להתעוות)"
 			},
 			editorActionGeocode: {
-				lblTitle: "כן_Locate an address or place_ש",
-				mapMarkerExplain: "כן_User will see a map marker when clicking the link_ש"
+				lblTitle: "אתר כתובת או מקום",
+				mapMarkerExplain: "המשתמש יראה סימן מפה בעת לחיצה על הקישור"
 			},
 			editorActionMedia: {
-				lblTitle: "כן_Change the Main Stage media_ש"
+				lblTitle: "כן_Change the Main Stage content_ש"
 			},
 			editorInlineMedia: {
-				lblTitle: "כן_Insert an image or video_ש"
+				lblTitle: "הכנס תמונה או קטע וידאו"
 			}
 		}
 	})

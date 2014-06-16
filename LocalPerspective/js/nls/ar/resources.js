@@ -16,6 +16,16 @@
  */
 define(({
         map: {
-            error: "بيت_Unable to create map_لاحقة"
+            error: "يتعذر إنشاء الخريطة"
+        },
+        days: {
+           now: "بيت_NOW_لاحقة",
+           sun: "بيت_SUN_لاحقة",
+           mon: "بيت_MON_لاحقة",
+           tue: "بيت_TUE_لاحقة",
+           wed: "بيت_WED_لاحقة",
+           thu: "بيت_THU_لاحقة",
+           fri: "بيت_FRI_لاحقة",
+           sat: "بيت_SAT_لاحقة"
         }
 }));

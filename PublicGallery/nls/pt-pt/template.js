@@ -100,13 +100,13 @@
 				"detailsLabel":"Detalhes"
             },
             "filterItems":{
-                "show": "ã_Show_Ç",
-                "all": "ã_All Results_Ç",
-                "maps": "ã_Maps_Ç",
-                "layers": "ã_Layers_Ç",
-                "applications": "ã_Applications_Ç",
-                "tools": "ã_Tools_Ç",
-                "files": "ã_Files_Ç"
+                "show": "Mostrar",
+                "all": "Todos os Resultados",
+                "maps": "Mapas",
+                "layers": "Camadas",
+                "applications": "Aplicações",
+                "tools": "Ferramentas",
+                "files": "Ficheiros"
             },
             "pagination": {
                 "previous": "Anterior",

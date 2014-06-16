@@ -16,6 +16,16 @@
  */
 define(({
         map: {
-            error: "כן_Unable to create map_ש"
+            error: "לא ניתן ליצור מפה"
+        },
+        days: {
+           now: "כן_NOW_ש",
+           sun: "כן_SUN_ש",
+           mon: "כן_MON_ש",
+           tue: "כן_TUE_ש",
+           wed: "כן_WED_ש",
+           thu: "כן_THU_ש",
+           fri: "כן_FRI_ש",
+           sat: "כן_SAT_ש"
         }
 }));

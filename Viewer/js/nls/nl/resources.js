@@ -16,38 +16,39 @@
  */
 define(({
         "map": {
-            "error": "Ĳ_Unable to create map_ä"
+            "error": "Kan kaart niet maken"
         },
         "tools":{
 	    	"print": {
 			    "layouts":{
-			      "label1": 'Ĳ_Landscape (PDF)_ä',
-			      "label2": 'Ĳ_Portrait (PDF)_ä',
-			      "label3": 'Ĳ_Landscape (Image)_ä',
-			      "label4": 'Ĳ_Portrait (Image)_ä'
-			    }
+			      "label1": 'Liggend (PDF)',
+			      "label2": 'Staand (PDF)',
+			      "label3": 'Liggend (afbeelding)',
+			      "label4": 'Staand (afbeelding)'
+			    },
+			    "legend": "Ĳ_Add legend to output_ä"
 			},
 			"share": {
-				"extent": "Ĳ_Use current map extent_ä",
-				"label": "Ĳ_Share this map_ä",
-				"link": "Ĳ_Map Link_ä",
-				"facebook": "Ĳ_Facebook_ä",
-				"twitter": "Ĳ_Twitter_ä"
+				"extent": "Huidige extent van de kaart gebruiken",
+				"label": "Deze kaart delen",
+				"link": "Kaartkoppeling",
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
-        	"home": "Ĳ_Default extent_ä",
-        	"locate": "Ĳ_Find my location_ä",
-        	"legend": "Ĳ_Legend_ä",
-        	"bookmarks": "Ĳ_Bookmarks_ä",
-        	"layers": "Ĳ_Layers_ä",
+        	"home": "Standaardextent",
+        	"locate": "Mijn locatie zoeken",
+        	"legend": "Legenda",
+        	"bookmarks": "Bladwijzers",
+        	"layers": "Kaartlagen",
         	"basemap": "Ĳ_Basemap gallery_ä",
         	"overview": "Ĳ_Overview map_ä",
-        	"measure": "Ĳ_Measure_ä",
-        	"edit": "Ĳ_Edit_ä",
-        	"time": "Ĳ_Time_ä",
-        	"print": "Ĳ_Print_ä",
-        	"details": "Ĳ_Details_ä",
-        	"share": "Ĳ_Share_ä"
+        	"measure": "Meten",
+        	"edit": "Bewerken",
+        	"time": "Tijd",
+        	"print": "Afdrukken",
+        	"details": "Details",
+        	"share": "Delen"
         }
 }));

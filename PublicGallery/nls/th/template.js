@@ -100,13 +100,13 @@
 				"detailsLabel":"รายละเอียด"
             },
             "filterItems":{
-                "show": "ก้_Show_ษฺ",
-                "all": "ก้_All Results_ษฺ",
-                "maps": "ก้_Maps_ษฺ",
-                "layers": "ก้_Layers_ษฺ",
-                "applications": "ก้_Applications_ษฺ",
-                "tools": "ก้_Tools_ษฺ",
-                "files": "ก้_Files_ษฺ"
+                "show": "แสดง",
+                "all": "ผลลัพธ์ทั้งหมด",
+                "maps": "แผนที่",
+                "layers": "ชั้นข้อมูล",
+                "applications": "โปรแกรมประยุกต์",
+                "tools": "เครื่องมือ",
+                "files": "ไฟล์"
             },
             "pagination": {
                 "previous": "ก่อนหน้า",

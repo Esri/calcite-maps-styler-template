@@ -2,144 +2,144 @@
 	 ({
 		common: {
 			common: {
-				edit: "بيت_Edit_لاحقة"
+				edit: "تحرير"
 			},
 			inlineFieldEdit: {
-				editMe: "بيت_Edit me !_لاحقة"
+				editMe: "حررني !"
 			},
 			builderPanel: {
-				panelHeader: "بيت_%TPL_NAME% Builder_لاحقة",
-				buttonSave: "بيت_SAVE_لاحقة",
-				buttonShare: "بيت_SHARE_لاحقة",
-				buttonSettings: "بيت_SETTINGS_لاحقة",
-				buttonHelp: "بيت_HELP_لاحقة",
-				noPendingChange: "بيت_No pending change_لاحقة",
-				unSavedChangeSingular: "بيت_1 unsaved change_لاحقة",
-				unSavedChangePlural: "بيت_unsaved changes_لاحقة",
-				popoverSaveWhenDone: "بيت_Don't forget to save when you are done_لاحقة",
-				closeWithPendingChange: "بيت_Are you sure to want to confirm the action ? Your changes will be lost._لاحقة",
-				ok: "بيت_Ok_لاحقة",
-				savingApplication: "بيت_Saving application_لاحقة",
-				saveError: "بيت_Save failed, please try again_لاحقة",
-				saveError3: "بيت_The title can't be empty_لاحقة",
+				panelHeader: "%TPL_NAME% Builder",
+				buttonSave: "حفظ",
+				buttonShare: "مشاركة",
+				buttonSettings: "إعدادات",
+				buttonHelp: "تعليمات",
+				noPendingChange: "لا يوجد تغيير معلق",
+				unSavedChangeSingular: "1 تغيير غير محفوظ",
+				unSavedChangePlural: "تغييرات غير محفوظة",
+				popoverSaveWhenDone: "لا تنسى الحفظ بعد الانتهاء",
+				closeWithPendingChange: "هل تريد تأكيد الإجراء؟ سوف تخسر جميع التغييرات.",
+				ok: "موافق",
+				savingApplication: "حفظ التطبيق",
+				saveError: "حدث فشل أثناء الحفظ، يرجى المحاولة مرة أخرى",
+				saveError3: "يتعذر أن يكون العنوان فارغًا",
 				// TODO
-				signIn: "بيت_Please sign in with an account on_لاحقة",
-				shareStatus1: "بيت_Application is not saved_لاحقة",
-				shareStatus2: "بيت_Application is shared publicly_لاحقة",
-				shareStatus3: "بيت_Application is shared within the organization_لاحقة",
-				shareStatus4: "بيت_Application is not shared_لاحقة"
+				signIn: "يرجى تسجيل الدخول بحساب داخل",
+				shareStatus1: "لم يتم حفظ التطبيق",
+				shareStatus2: "تمت مشاركة التطبيق مع الجميع",
+				shareStatus3: "تمت مشاركة التطبيق في المؤسسة",
+				shareStatus4: "لم يتم مشاركة التطبيق"
 			},
 			// TODO
 			addEditPopup: {
 				// Add
-				addEditPopupInputTitleLabel: "بيت_Title_لاحقة",
-				addPopupTitle: "بيت_Add_لاحقة",
-				addPopupDescription: "بيت_Add a new view to your series._لاحقة",
-				addPopupButton: "بيت_ADD_لاحقة",
+				addEditPopupInputTitleLabel: "العنوان",
+				addPopupTitle: "إضافة",
+				addPopupDescription: "إضافة عرض جديد إلى السلاسل.",
+				addPopupButton: "إضافة",
 				// Edit
-				editPopupTitle: "بيت_Edit_لاحقة",
-				editPopupDescription: "بيت_Edit the selected view_لاحقة",
-				editPopupButton: "بيت_APPLY_لاحقة",
+				editPopupTitle: "تحرير",
+				editPopupDescription: "تحرير العرض المحدد",
+				editPopupButton: "تطبيق",
 				// Add/Edit
-				addEditPopupCancelButton: "بيت_CANCEL_لاحقة",
-				addEditPopupMyContentBtn: "بيت_Select from my content_لاحقة",
-				addEditPopupConfigureWebMapBtn: " بيت_Configure_لاحقة"
+				addEditPopupCancelButton: "إلغاء الأمر",
+				addEditPopupMyContentBtn: "تحديد من المحتويات",
+				addEditPopupConfigureWebMapBtn: " تكوين"
 			},
 			share: {
-				firstSaveTitle: "بيت_Application successfully saved_لاحقة",
-				firstSaveHeader: "بيت_Your application is now saved in ArcGIS Online. Please read the following answers to frequent questions._لاحقة",
-				firstSaveA1: "بيت_If you are not familiar with ArcGIS Online or want a shortcut to access the authoring interface, you can save the following link: %LINK1%_لاحقة",
-				firstSaveA1bis: "بيت_The application can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>._لاحقة",
-				firstSaveQ2: "بيت_Is my application shared?_لاحقة",
-				firstSaveA2: "بيت_Currently your application is not shared. To share it, use the SHARE button._لاحقة",
-				shareTitle: "بيت_Share your application_لاحقة",
-				sharePrivateHeader: "بيت_Your application is not shared, would you like to share it?_لاحقة",
-				sharePrivateBtn1: "بيت_Share publicly_لاحقة",
-				sharePrivateBtn2: "بيت_Share with my Organization_لاحقة",
-				sharePrivateWarning: "بيت_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._لاحقة",
-				sharePrivateWarningWith1: "بيت_publicly_لاحقة",
-				sharePrivateWarningWith2: "بيت_publicly and with the Organization_لاحقة",
-				sharePrivateProgress: "بيت_Sharing in progress..._لاحقة",
-				sharePrivateErr: "بيت_Sharing failed, try again or_لاحقة",
-				sharePrivateOk: "بيت_Sharing updated successfully, loading..._لاحقة",
-				sharePreviewAsUser: "بيت_Preview_لاحقة",
-				shareHeader1: "بيت_Your application is <strong>publicly accessible</strong>._لاحقة",
-				shareHeader2: "بيت_Your application is accessible by your organization members (login is required)._لاحقة",
-				shareLinkHeader: "بيت_Share the application with your audience_لاحقة",
-				shareLinkOpen: "بيت_OPEN_لاحقة",
-				shareQ1Opt1: "بيت_How do I keep the application private?_لاحقة",
-				shareQ1Opt2: "بيت_How do I keep the application private or share it publicly?_لاحقة",
-				shareA1: "بيت_Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>. If you also want to unshare the webmap, use <a href='%LINK2%' target='_blank'>the webmap item page</a>._لاحقة",
-				shareA1bis: "بيت_If you also want to unshare the Feature Service, use <a href='%LINK1%' target='_blank'>the Feature Service item page</a>._لاحقة",
-				shareQ2: "بيت_How do I edit the application later?_لاحقة",
-				shareQ2bis: "بيت_How do I get back to the authoring interface?_لاحقة",
-				shareA2div1: "بيت_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>._لاحقة",
-				shareA2div2: "بيت_As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:_لاحقة",				
-				shareQ3: "بيت_Where is the data stored?_لاحقة",
-				shareA3: "بيت_The application configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos remains stored there and aren't duplicated in ArcGIS Online._لاحقة",
-				learnMore: "بيت_Learn more_لاحقة",
-				close: "بيت_Close_لاحقة"
+				firstSaveTitle: "تم حفظ التطبيق بنجاح",
+				firstSaveHeader: "يتم الآن حفظ التطبيق في ArcGIS Online. الرجاء قراءة إجابات الأسئلة التالية.",
+				firstSaveA1: "إذا لم تكن متألف مع ArcGIS Online أو ترغب في الحصول على الاختصار للوصول إلى واجهة التأليف، يمكن حفظ الرابط التالي: %LINK1%",
+				firstSaveA1bis: "يمكن أيضًا إيجاد التطبيق في <a href='%LINK2%' target='_blank'>مجلد محتويات ArcGIS Online</a>.",
+				firstSaveQ2: "هل تمت مشاركة التطبيق؟",
+				firstSaveA2: "حاليًا التطبيق غير مشترك. لمشاركته، استخدم زر مشاركة.",
+				shareTitle: "مشاركة التطبيق",
+				sharePrivateHeader: "لم تتم مشاركة التطبيق، هل تريد مشاركته؟",
+				sharePrivateBtn1: "مشاركتها بشكل عام",
+				sharePrivateBtn2: "مشاركتها مع المنظمة",
+				sharePrivateWarning: "تم تعطيل مشاركة %WITH% وذلك لأنك ليس مالك <a href='%LINK%' target='_blank'>خريطة الويب</a>.",
+				sharePrivateWarningWith1: "علانية",
+				sharePrivateWarningWith2: "علانية ومع المنظمة",
+				sharePrivateProgress: "المشاركة قيد التقدم...",
+				sharePrivateErr: "فشلت المشاركة، أعد المحاولة مرة أخرى أو",
+				sharePrivateOk: "تم تحديث المشاركة بنجاح، جارِ التحميل...",
+				sharePreviewAsUser: "معاينة",
+				shareHeader1: "يمكن الوصول إلى التطبيق<strong>من قبل الجميع</strong>.",
+				shareHeader2: "يمكن الوصول إلى التطبيق من قبل أعضاء المؤسسة (يلزم تسجيل الدخول).",
+				shareLinkHeader: "شارك التطبيق مع الحضور",
+				shareLinkOpen: "فتح",
+				shareQ1Opt1: "كيف يمكن الاحتفاظ بخصوصية التطبيق؟",
+				shareQ1Opt2: "كيف يمكن الاحتفاظ بخصوصية التطبيق أو مشاركته مع الجميع؟",
+				shareA1: "استخدم %SHAREIMG% على <a href='%LINK1%' target='_blank'>صفحة عنصر التطبيق</a>. إذا كنت ترغب أيضًا في عدم مشاركة خريطة الويب، استخدم <a href='%LINK2%' target='_blank'>صفحة عنصر خريطة الويب</a>.",
+				shareA1bis: "إذا كنت ترغب أيضًا في عدم مشاركة خدمة المعلم، استخدم <a href='%LINK1%' target='_blank'>صفحة عنصر خدمة المعلم</a>.",
+				shareQ2: "كيف يمكن تحرير التطبيق فيما بعد؟",
+				shareQ2bis: "كيف يمكنني الحصول على العودة إلى واجهة التأليف؟",
+				shareA2div1: "احفظ الرابط التالي وقم بإعادة استخدامه %LINK1% أو استخدم <a href='%LINK2%' target='_blank'>صفحة عنصر التطبيق</a>.",
+				shareA2div2: "بصفتك مالك التطبيق، عند تسجيل الدخول على ArcGIS.com، سيتضمن التطبيق زر لفتح المنشئ التفاعلي:",				
+				shareQ3: "أين يتم تخزين البيانات؟",
+				shareA3: "تكوين التطبيق مُخزن في <a href='%LINK1%' target='_blank'>عنصر خريطة الويب</a> و <a href='%LINK2%' target='_blank'>عنصر تطبيق الويب الحالي</a>. عند استخدام Flickr أو Picasa أو Facebook أو YouTube، ستظل الصور ومقاطع الفيديو مُخزنة ولن يتم تكرارها في ArcGIS Online.",
+				learnMore: "تعلم المزيد",
+				close: "إغلاق"
 			},
 			settings: {
-				header: "بيت_Application settings_لاحقة",
-				cancel: "بيت_Cancel_لاحقة",
-				apply: "بيت_Apply_لاحقة",
-				tabError: "بيت_Please check for errors in all tabs_لاحقة"
+				header: "إعدادات التطبيق",
+				cancel: "إلغاء الأمر",
+				apply: "تطبيق",
+				tabError: "يرجي التحقق من وجود أخطاء في جميع علامات التبويب"
 			},
 			settingsLayout: {
-				title: "بيت_Layout_لاحقة",
-				explain: "بيت_What layout do you want to use?_لاحقة",
-				explainInit: "بيت_Change will be possible through the settings dialog._لاحقة",
-				selected: "بيت_Selected layout_لاحقة",
-				select: "بيت_Select this layout_لاحقة"
+				title: "المخطط",
+				explain: "ما هو التخطيط الطباعي الذي تريد استخدامه؟",
+				explainInit: "سيصبح التغيير متاح خلال حوار الإعدادات.",
+				selected: "مخطط محدد",
+				select: "حدد هذا المخطط"
 			},
 			settingsTheme: {
-				title: "بيت_Theme_لاحقة",
-				explain: "بيت_Choose an app theme or define your own colors._لاحقة",
-				label: "بيت_Header and side panel background colors_لاحقة"
+				title: "سمة",
+				explain: "اختر سمة التطبيق أو قم بتعريف الألوان الخاصة بك.",
+				label: "ألوان خلفية اللوحة الجانبية والعنوان"
 			},
 			settingsHeader: {
-				title: "بيت_Header_لاحقة",
-				explain: "بيت_Customize the header logo (maximum is 250 x 50px)._لاحقة",
-				logoEsri: "بيت_Esri logo_لاحقة",
-				logoNone: "بيت_No logo_لاحقة",
-				logoCustom: "بيت_Custom logo_لاحقة",
-				logoCustomPlaceholder: "بيت_Image URL_لاحقة",
-				logoCustomTargetPlaceholder: "بيت_Click-through link_لاحقة",
-				logoSocialExplain: "بيت_Customize the header top right link._لاحقة",
-				logoSocialText: "بيت_Text_لاحقة",
-				logoSocialLink: "بيت_Link_لاحقة",
-				logoSocialDisabled: "بيت_This feature has been disabled by the Administrator_لاحقة"
+				title: "رأس الصفحة",
+				explain: "تخصيص شعار (الحد الأقصى 250 x 50 px).",
+				logoEsri: "شعار Esri",
+				logoNone: "لا يوجد شعار",
+				logoCustom: "تخصيص الشعار",
+				logoCustomPlaceholder: "عنوان URL للصورة",
+				logoCustomTargetPlaceholder: "انقر فوق الرابط",
+				logoSocialExplain: "تخصيص عنوان الرابط الموجود أعلى اليمين.",
+				logoSocialText: "النص",
+				logoSocialLink: "رابط",
+				logoSocialDisabled: "لقد تم تعطيل هذا المعلم بواسطة المدير"
 			},
 			mediaSelector: {
-				lblMap: "بيت_Map_لاحقة",
-				lblPicture: "بيت_Picture_لاحقة",
-				lblVideo: "بيت_Video_لاحقة",
-				lblExternal: "بيت_External page_لاحقة"
+				lblMap: "خريطة",
+				lblPicture: "الصورة",
+				lblVideo: "فيديو",
+				lblExternal: "الصفحة الخارجية"
 			},
 			webMapSelector: {
-				radioCurrentWebMap: "بيت_Current web map_لاحقة",
-				radioWebmapApp: "بيت_One of the other web map used in the application_لاحقة",
-				radioAnotherWebmap: "بيت_Another webmap_لاحقة",
-				btnSelect: "بيت_Select_لاحقة",
-				lblOr: "بيت_or_لاحقة",
-				fieldEnterWebmapId: "بيت_Enter a web map id_لاحقة",
-				btnConfigure: "بيت_Configure the Map_لاحقة"
+				radioCurrentWebMap: "خريطة الويب الحالية",
+				radioWebmapApp: "أحد خرائط الويب الأخرى المستخدمة في التطبيق",
+				radioAnotherWebmap: "خريطة ويب أخرى",
+				btnSelect: "تحديد",
+				lblOr: "أو",
+				fieldEnterWebmapId: "أدخل مُعرف خريطة الويب",
+				btnConfigure: "تكوين الخريطة"
 			}
 		},
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "بيت_My Organization_لاحقة",
-					onlineLabel: "بيت_ArcGIS Online_لاحقة",
-					contentLabel: "بيت_My Content_لاحقة",
-					favoritesLabel: "بيت_My Favorites_لاحقة"
+					organizationLabel: "المؤسسة",
+					onlineLabel: "ArcGIS Online",
+					contentLabel: "المحتوى",
+					favoritesLabel: "المفضلات"
 				},
-				title: "بيت_Select Web Map_لاحقة",
-				searchTitle: "بيت_Search_لاحقة",
-				ok: "بيت_Ok_لاحقة",
-				cancel: "بيت_Cancel_لاحقة",
-				placeholder: "بيت_Enter search term_لاحقة"
+				title: "تحديد خريطة الويب",
+				searchTitle: "بحث",
+				ok: "موافق",
+				cancel: "إلغاء الأمر",
+				placeholder: "إدخال مصطلحات البحث"
 			}
 		}
 	})

@@ -272,7 +272,7 @@ Evented, parser, declare, kernel, array, lang, domClass, Deferred, all, arcgisUt
             //application default and configuration info has been applied. Currently these values 
             //(center, basemap, theme) are only here as examples and can be removed if you don't plan on 
             //supporting additional url parameters in your application. 
-            var paramItems = ["center", "basemap", "theme"];
+            var paramItems = ["center", "basemap", "theme", "extent"];
             var mixinParams = this._createUrlParamsObject(paramItems);
             lang.mixin(this.config, mixinParams);
         }
