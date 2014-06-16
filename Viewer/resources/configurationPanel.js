@@ -59,24 +59,7 @@
       {
          "category":"Tools",
          "fields":[
-            {
-               "type": "layerAndFieldSelector",
-               "fields": [
-                  {
-                     "supportedTypes": ["esriFieldTypeString"],
-                     "multipleSelection": false,
-                     "fieldName": "searchField",
-                     "label": "Search field"
-                  }
-               ],
-               "layerOptions": {
-                  "supportedTypes": [
-                     "FeatureLayer"
-                  ]
-               },
-               "fieldName": "searchLayer",
-               "label": "Select search layer"
-            },
+
             {
                "type":"boolean",
                "fieldName":"tool_search",

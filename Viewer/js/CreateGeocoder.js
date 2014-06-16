@@ -197,29 +197,38 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
                 autoComplete: hasEsri
             };
 
+            //Display the Esri Geocoder? 
+            var showEsriGeocoder;
+            if (geocoders.splice(0, 1)[0]) {
+                showEsriGeocoder = true;
+            } else {
+                showEsriGeocoder = false;
+            }
 
             //If there is a valid search id and field defined add the feature layer to the geocoder array
-            if (this.config.searchLayer && this.config.searchLayer.id) {
-                var layer, field, url, name;
-                layer = this.map.getLayer(this.config.searchLayer.id);
-                url = layer.url;
-                name = layer.name;
-                if (this.config.searchLayer.fields && this.config.searchLayer.fields.length > 0) {
-                    if (this.config.searchLayer.fields[0].fields.length > 0) {
-                        field = this.config.searchLayer.fields[0].fields[0];
-                    }
+            if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
+                var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
+                if (searchOptions.disablePlaceFinder) {
+                    showEsriGeocoder = searchOptions.disablePlaceFinder;
                 }
-                if (url && name && field) {
+                array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
+                    var layer = this.map.getLayer(searchLayer.id);
+                    var url = layer.url;
+                    if(searchLayer.subLayer){
+                        url = url + "/" + searchLayer.subLayer;
+                    }
+                    var field = searchLayer.field.name;
+                    var name = searchLayer.id;
 
                     geocoders.push({
                         "name": name,
                         "url": url,
                         "field": field,
+                        "placeholder": searchOptions.hintText,
                         "outFields": "*",
                         "type": "query"
                     });
-                }
-
+                }));
 
             }
 
@@ -227,12 +236,12 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
                 options.minCharacters = 0;
                 options.maxLocations = 5;
                 options.searchDelay = 100;
-                options.arcgisGeocoder = geocoders.splice(0, 1)[0];
+                options.arcgisGeocoder = showEsriGeocoder; //geocoders.splice(0, 1)[0];
                 if (geocoders.length > 0) {
                     options.geocoders = geocoders;
                 }
             } else {
-                options.arcgisGeocoder = false;
+                options.arcgisGeocoder = showEsriGeocoder; //false;
                 options.geocoders = geocoders;
             }
 
