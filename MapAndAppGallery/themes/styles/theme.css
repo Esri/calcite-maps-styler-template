@@ -707,7 +707,9 @@ font
 .icon-gps
 {
     font-weight: bold;
-    margin-left: -6px;
+    width: 32px;
+    height: 31px;
+    margin-left: -0.1em;
 }
 
 .esriCTEyeIcon
@@ -964,7 +966,7 @@ font
     position: fixed;
     background: #fff;
     height: 100%;
-    width: 75%;
+    width: 100%;
 }
 
 .esriCTInnerLeftPanelTopMap
@@ -1094,13 +1096,6 @@ font
 
 .esriCTMapGeoLocation
 {
-    float: left;
-    margin-top: 9px;
-    width: 28px;
-    height: 28px;
-    margin-right: 7px;
-    margin-left: 11px;
-    background-color: #fff;
 }
 
 .esriCTDivLayerContainer
@@ -1136,16 +1131,6 @@ font
     box-shadow: 0 0 5px #666;
     behavior: url("PIE.htc");
     border: 4px solid #fff;
-}
-
-.esriCTFullScreen
-{
-    float: right;
-    margin-top: 9px;
-    margin-left: 6px;
-    width: 28px;
-    height: 28px;
-    background-color: #fff;
 }
 
 .esriCTIconContainer
@@ -1472,7 +1457,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 
 .blueTheme .esriCTRatingStarIconColor
 {
-    color: #007AC2;
+    color: #007ac2;
 }
 
 .blueTheme .esriCTMenuTabRight div span
@@ -1483,12 +1468,14 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 
 .blueTheme input
 {
-    border: 1px solid #007AC2;
+    border: 1px solid #007ac2;
 }
 
 .blueTheme .esriCTMapIcons, .blueTheme .esriCTGeolocationIcon
 {
-    color: #007ac2;
+    color: white;
+    background-color: #007ac2;
+    overflow:hidden;
 }
 
 .blueTheme .esriCTAutoSuggest
@@ -1507,7 +1494,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 
 .blueTheme .esriCTLeftPanelHeader
 {
-    color: #7453a4;
+    color: #007ac2;
 }
 
 .blueTheme .esriCTLeftText div span
@@ -1537,14 +1524,14 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 
 .blueTheme .esriCTMenuTab
 {
-    background: none repeat scroll 0 0 #007AC2;
-    border-bottom: 1px solid #007AC2;
+    background: none repeat scroll 0 0 #007ac2;
+    border-bottom: 1px solid #007ac2;
 }
 
 .blueTheme .esriCTMenuTabRightMap
 {
-    background: none repeat scroll 0 0 #007AC2;
-    border-bottom: 1px solid #007AC2;
+    background: none repeat scroll 0 0 #007ac2;
+    border-bottom: 1px solid #007ac2;
 }
 
 .blueTheme .esriCTTagCloudHighlight
@@ -1605,7 +1592,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 
 .blueTheme .dijitDialogTitleBar
 {
-    background-color: #007AC2;
+    background-color: #007ac2;
 }
 
 .blueTheme .esriCTExpand, .blueTheme .esriCTMoreInfo
@@ -1655,7 +1642,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 
 .blueTheme .dijitDialogUnderlay
 {
-    background: #4169e1;
+    background: #007ac2;
     opacity: 0.55;
 }
 
@@ -1669,29 +1656,15 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     color: #007ac2;
 }
 
-/* End of Blue theme Styles */
+/* End of Blue Theme Styles */
 
 /* Green Theme Styles */
 
-.greenTheme
-{
-    display: block;
-}
+/* Top menu */
 
-.greenTheme input
-{
-    border: 1px solid #028d6a;
-}
-
-.greenTheme .esriCTLeftPanelHeader
+.greenTheme .esriCTRatingStarIconColor
 {
     color: #028d6a;
-}
-
-.greenTheme .esriCTMenuTab
-{
-    background: none repeat scroll 0 0 #028d6a;
-    border-bottom: 1px solid #028d6a;
 }
 
 .greenTheme .esriCTMenuTabRight div span
@@ -1700,26 +1673,48 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     cursor: pointer;
 }
 
-.greenTheme .esriCTSharingTag
+.greenTheme input
 {
-    background: #028d6a;
-    color: #fff;
+    border: 1px solid #028d6a;
 }
 
-.greenTheme .esriCTTagCloudHighlight
+.greenTheme .esriCTMapIcons, .greenTheme .esriCTGeolocationIcon
 {
-    color: #fff;
-    background: #028d6a;
-    padding: 3px 20px 3px 10px;
-    border-radius: 3px;
-    margin: 2px;
-    background-image: url('../images/close.png') !important;
-    background-position: right;
-    background-repeat: no-repeat;
-    display: inline-block;
+    color: white;
+    background-color: #028d6a;
+    overflow:hidden;
 }
 
-.greenTheme .esriCTLeftText div p
+.greenTheme .esriCTAutoSuggest
+{
+    border-left: 1px solid #028d6a;
+    border-right: 1px solid #028d6a;
+    border-bottom: 1px solid #028d6a;
+}
+
+/* Left panel */
+
+.greenTheme
+{
+    display: block;
+}
+
+.greenTheme .esriCTLeftPanelHeader
+{
+    color: #028d6a;
+}
+
+.greenTheme .esriCTLeftText div span
+{
+    color: #6e6e6e;
+}
+
+.greenTheme .esriCTReviewHeader
+{
+    color: #028d6a;
+}
+
+.greenTheme .esriCTListAppTitle
 {
     color: #028d6a;
 }
@@ -1737,43 +1732,64 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 .greenTheme .esriCTMenuTab
 {
     background: none repeat scroll 0 0 #028d6a;
+    border-bottom: 1px solid #028d6a;
+}
+
+.greenTheme .esriCTMenuTabRightMap
+{
+    background: none repeat scroll 0 0 #028d6a;
+    border-bottom: 1px solid #028d6a;
+}
+
+.greenTheme .esriCTTagCloudHighlight
+{
+    color: #fff;
+    background: #028d6a;
+    padding: 3px 20px 3px 10px;
+    border-radius: 3px;
+    margin: 2px;
+    background-image: url('../images/close.png') !important;
+    background-position: right;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.greenTheme .esriCTSharingTag
+{
+    background: #028d6a;
+    color: #fff;
+}
+
+.esriCTListAppContent
+{
+    border-bottom: 1px solid #e4e4e4;
 }
 
 .greenTheme .esriCTComments, .esriCTComments
 {
-    color: #028d6a;
-}
-.greenTheme .esriCTRatingStarIconColor
-{
-    color: #028d6a;
+    color: #ccc;
 }
 
-.greenTheme .esriCTMapIcons, .greenTheme .esriCTGeolocationIcon
-{
-    color: #028d6a;
-}
-
-.greenTheme .esriCTAutoSuggest
-{
-    border-left: 1px solid #028d6a;
-    border-right: 1px solid #028d6a;
-    border-bottom: 1px solid #028d6a;
-}
-/* Item details page */
+/* Item details page styles */
 
 .greenTheme .esriCTDetailsMap img
 {
     border: 1px solid #028d6a;
 }
 
-.greenTheme .esriCTReviewHeader
+.greenTheme .esriCTButtonPrimary
 {
-    color: #028d6a;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #cacaca;
+    border-radius: 2px 2px 2px 2px;
 }
+
+/* Tab container */
 
 .greenTheme .esriCTGalleryName
 {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .greenTheme .esriCTEyeNumViews span.view
@@ -1807,11 +1823,6 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     color: #028d6a;
 }
 
-.greenTheme .esriCTListAppTitle
-{
-    color: #028d6a;
-}
-
 .greenTheme .dijitButton
 {
     border: 1px solid #028d6a;
@@ -1838,7 +1849,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 
 .greenTheme .dijitDialogUnderlay
 {
-    background: #028d6a;
+    background: #028d6a
     opacity: 0.55;
 }
 
@@ -1852,42 +1863,15 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     color: #028d6a;
 }
 
-/* End of green Theme Styles */
+/* End of Green Theme Styles */
 
-/* Red Theme Styles*/
+/* Red Theme Styles */
 
-.redTheme
-{
-    display: block;
-}
+/* Top menu */
 
-.redTheme input
-{
-    border: 1px solid #800000;
-}
-
-.redTheme .esriCTLeftPanelHeader
+.redTheme .esriCTRatingStarIconColor
 {
     color: #800000;
-}
-
-.redTheme .esriCTTagCloudHighlight
-{
-    color: #fff;
-    background: #800000;
-    padding: 3px 20px 3px 10px;
-    border-radius: 3px;
-    margin: 2px;
-    background-image: url('../images/close.png') !important;
-    background-position: right;
-    background-repeat: no-repeat;
-    display: inline-block;
-}
-
-.redTheme .esriCTMenuTab
-{
-    background: none repeat scroll 0 0 #800000;
-    border-bottom: 1px solid #800000;
 }
 
 .redTheme .esriCTMenuTabRight div span
@@ -1896,10 +1880,50 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     cursor: pointer;
 }
 
-.redTheme .esriCTSharingTag
+.redTheme input
 {
-    background: #800000;
-    color: #fff;
+    border: 1px solid #800000;
+}
+
+.redTheme .esriCTMapIcons, .redTheme .esriCTGeolocationIcon
+{
+    color: white;
+    background-color: #800000;
+    overflow:hidden;
+}
+
+.redTheme .esriCTAutoSuggest
+{
+    border-left: 1px solid #800000;
+    border-right: 1px solid #800000;
+    border-bottom: 1px solid #800000;
+}
+
+/* Left panel */
+
+.redTheme
+{
+    display: block;
+}
+
+.redTheme .esriCTLeftPanelHeader
+{
+    color: #800000;
+}
+
+.redTheme .esriCTLeftText div span
+{
+    color: #6e6e6e;
+}
+
+.redTheme .esriCTReviewHeader
+{
+    color: #800000;
+}
+
+.redTheme .esriCTListAppTitle
+{
+    color: #800000;
 }
 
 .redTheme .esriCTAppImage
@@ -1915,46 +1939,64 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 .redTheme .esriCTMenuTab
 {
     background: none repeat scroll 0 0 #800000;
+    border-bottom: 1px solid #800000;
+}
+
+.redTheme .esriCTMenuTabRightMap
+{
+    background: none repeat scroll 0 0 #800000;
+    border-bottom: 1px solid #800000;
+}
+
+.redTheme .esriCTTagCloudHighlight
+{
+    color: #fff;
+    background: #800000;
+    padding: 3px 20px 3px 10px;
+    border-radius: 3px;
+    margin: 2px;
+    background-image: url('../images/close.png') !important;
+    background-position: right;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.redTheme .esriCTSharingTag
+{
+    background: #800000;
+    color: #fff;
+}
+
+.esriCTListAppContent
+{
+    border-bottom: 1px solid #e4e4e4;
 }
 
 .redTheme .esriCTComments, .esriCTComments
 {
-    color: #800000;
+    color: #ccc;
 }
 
-.redTheme .esriCTRatingStarIconColor
-{
-    color: #800000;
-}
-
-.redTheme .esriCTMapIcons, .redTheme .esriCTGeolocationIcon
-{
-    color: #800000;
-}
-
-.redTheme .esriCTAutoSuggest
-{
-    border-left: 1px solid #800000;
-    border-right: 1px solid #800000;
-    border-bottom: 1px solid #800000;
-}
-/* Item details page */
+/* Item details page styles */
 
 .redTheme .esriCTDetailsMap img
 {
     border: 1px solid #800000;
 }
 
-.redTheme .esriCTReviewHeader
+.redTheme .esriCTButtonPrimary
 {
-    color: #800000;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #cacaca;
+    border-radius: 2px 2px 2px 2px;
 }
 
-/* Tab container theme for map view */
+/* Tab container */
 
 .redTheme .esriCTGalleryName
 {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .redTheme .esriCTEyeNumViews span.view
@@ -1984,11 +2026,6 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 }
 
 .redTheme .esriCTLeftText div span a
-{
-    color: #800000;
-}
-
-.redTheme .esriCTListAppTitle
 {
     color: #800000;
 }
@@ -2033,7 +2070,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     color: #800000;
 }
 
-/* End of red theme styles */
+/* End of Red Theme Styles */
 
 /* Loading indicator Styles */
 
@@ -2105,6 +2142,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     font-weight: normal !important;
     width: 32px;
     height: 31px;
+    overflow: hidden;
 }
 
 .HomeButton .home, .HomeButton .home:hover
@@ -2125,65 +2163,3 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 }
 
 /* End of Slider styles */
-
-/* Popup styles */
-
-.dijitStretch
-{
-    float: left;
-    padding: 4px 0;
-}
-
-.esriPopup .titleButton
-{
-    background-image: url('../images/imgPopup.png') !important;
-    top: 8px !important;
-}
-
-.esriPopup .titlePane
-{
-    line-height: 40px !important;
-}
-
-.esriPopup .titleButton.close, .esriPopup .titleButton.maximize, .esriPopup .titleButton.next, .esriPopup .titleButton.prev, .esriPopup .titleButton.restore
-{
-    width: 20px !important;
-    height: 20px !important;
-}
-
-.esriPopup .titleButton.close
-{
-    right: 8px !important;
-}
-
-.esriPopup .titleButton.maximize
-{
-    top: 12px !important;
-    background-position: 0 -251px !important;
-    right: 45px !important;
-}
-
-.esriPopup .titleButton.restore
-{
-    background-position: 0 -779px !important;
-    right: 45px !important;
-    top: 9px !important;
-}
-
-.esriPopup .titleButton.prev
-{
-    background-position: 0 -221px !important;
-    right: 94px !important;
-}
-
-.esriPopup .titleButton.next
-{
-    right: 76px !important;
-}
-
-.esriCTItemUnavailable
-{
-    display: none;
-}
-
-/* End of Popup styles */

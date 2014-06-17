@@ -92,9 +92,6 @@ define([
                 this._createMapLayers(this.data);
             }
 
-            this.own(on(query(".esriCTFullScreen")[0], "click", lang.hitch(this, function () {
-                this._toggleFullScreen();
-            })));
             domAttr.set(this.txtAddressSearch, "defaultAddress", dojo.configData.values.locatorDefaultAddress);
             domAttr.set(this.txtAddressSearch, "value", domAttr.get(this.txtAddressSearch, "defaultAddress"));
             this.own(on(this.divLegendLayer, "click", lang.hitch(this, function () {

@@ -45,11 +45,12 @@ define([
             * if browser is not supported, geolocation widget is not created
             */
             if (Modernizr.geolocation) {
-                this.domNode = domConstruct.create("div", { "class": "esriCTMapGeoLocation", "title": nls.title.geolocationBtnTitle }, query(".esriCTIconContainer")[0]);
+                this.domNode = domConstruct.create("div", { "class": "esriCTMapGeoLocation", "title": nls.title.geolocationBtnTitle });
                 domConstruct.create("span", { "class": "icon-gps esriCTGeolocationIcon" }, this.domNode);
                 this.own(on(this.domNode, "click", lang.hitch(this, function () {
                     this._showCurrentLocation();
                 })));
+                domConstruct.place(this.domNode, query(".esriSimpleSliderDecrementButton")[0], "after");
             }
         },
 
