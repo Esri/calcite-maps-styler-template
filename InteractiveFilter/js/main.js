@@ -1,5 +1,5 @@
-define(["dojo/ready", "dojo/_base/declare", "dojo/dom", "dojo/Deferred", "dojo/promise/all", "dojo/number", "dojo/_base/Color", "dojo/query", "dojo/_base/lang", "dojo/_base/array", "dojo/dom-construct", "dijit/registry", "esri/arcgis/utils", "esri/request", "dojo/on", "application/Drawer", "application/CreateGeocoder", "dojo/dom-class", "esri/dijit/LocateButton", "esri/dijit/HomeButton"], function (
-ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstruct, registry, arcgisUtils, esriRequest, on, Drawer, CreateGeocoder, domClass, LocateButton, HomeButton) {
+define(["dojo/ready", "dojo/_base/declare", "dojo/dom", "dojo/Deferred", "dojo/promise/all", "dojo/number", "dojo/_base/Color", "dojo/query", "dojo/_base/lang", "dojo/_base/array", "dojo/dom-construct", "dijit/registry", "dojo/has", "dojo/sniff", "esri/arcgis/utils", "esri/request", "dojo/on", "application/Drawer", "application/CreateGeocoder", "dojo/dom-class", "esri/dijit/LocateButton", "esri/dijit/HomeButton"], function (
+ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstruct, registry, has, sniff, arcgisUtils, esriRequest, on, Drawer, CreateGeocoder, domClass, LocateButton, HomeButton) {
     return declare("", null, {
         config: {},
         theme: null,
@@ -350,11 +350,18 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
             }));
         },
         setColor: function (value) {
+            var colorValue = null;
             var rgb = Color.fromHex(value).toRgb();
-            rgb.push(0.9);
-            return Color.fromArray(rgb);
+            if (has("ie") == 8) {
+                colorValue = value;
+            } else {
+                rgb.push(0.9);
+                colorValue = Color.fromArray(rgb);
+            }
+            return colorValue;
 
         },
+
         _updateTheme: function () {
             //Apply the configured theme to the template
             //Add the bg class to any elements that you want to display using the specified background color
