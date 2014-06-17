@@ -430,7 +430,7 @@ img {
 
 /*Panel sizes*/
 .small {
-  height: 235px; }
+  height: 295px; }
 
 .medium {
   height: 440px; }
@@ -543,7 +543,7 @@ img {
   top: 0px;
   width: 100%;
   color: #ffffff;
-  font-family: HelveticaNeueUltraLight;
+  font-family: "HelveticaNeueUltraLight", Arial, "Lucida Grande", sans-serif;
   font-size: 28px;
   font-weight: normal;
   padding: 0px;
