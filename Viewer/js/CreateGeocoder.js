@@ -198,23 +198,23 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
             };
 
             //Display the Esri Geocoder? 
-            var showEsriGeocoder;
+/* var showEsriGeocoder;
             if (geocoders.splice(0, 1)[0]) {
                 showEsriGeocoder = true;
             } else {
                 showEsriGeocoder = false;
-            }
+            }*/
 
             //If there is a valid search id and field defined add the feature layer to the geocoder array
             if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
                 var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
-                if (searchOptions.disablePlaceFinder) {
+/*if (searchOptions.disablePlaceFinder) {
                     showEsriGeocoder = searchOptions.disablePlaceFinder;
-                }
+                }*/
                 array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
                     var layer = this.map.getLayer(searchLayer.id);
                     var url = layer.url;
-                    if(searchLayer.subLayer){
+                    if (searchLayer.subLayer) {
                         url = url + "/" + searchLayer.subLayer;
                     }
                     var field = searchLayer.field.name;
@@ -236,12 +236,12 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
                 options.minCharacters = 0;
                 options.maxLocations = 5;
                 options.searchDelay = 100;
-                options.arcgisGeocoder = showEsriGeocoder; //geocoders.splice(0, 1)[0];
+                options.arcgisGeocoder = geocoders.splice(0, 1)[0];
                 if (geocoders.length > 0) {
                     options.geocoders = geocoders;
                 }
             } else {
-                options.arcgisGeocoder = showEsriGeocoder; //false;
+                options.arcgisGeocoder = false;
                 options.geocoders = geocoders;
             }
 
