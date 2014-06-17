@@ -267,6 +267,9 @@ html, body {
 .simpleGeocoder .esriGeocoderResults {
   color: #333; }
 
+.simpleGeocoder .esriGeocoderResult {
+  color: #333; }
+
 @font-face {
   font-family: 'simple';
   src: url('../font/simple.eot?14672126');
