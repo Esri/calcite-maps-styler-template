@@ -16,7 +16,9 @@ define([
     "dojo/dom-class",
     "dojo/dom-style",
     "dojo/dom-geometry",
-    "dojo/topic"
+    "dojo/topic",
+    "dojo/query",
+    "dojo/NodeList-traverse"
 ],
 function (
     Evented,
@@ -27,7 +29,7 @@ function (
     on,
     dijitTemplate, i18n,
     number,
-    domConstruct, domClass, domStyle, domGeom, topic
+    domConstruct, domClass, domStyle, domGeom, topic, query
 ) {
     var Widget = declare([_WidgetBase, _TemplatedMixin, Evented], {
         declaredClass: "esri.dijit.StatsBlock",
@@ -97,7 +99,7 @@ function (
                 divPagination: "div-pagination",
                 paginationDot: "pagination-dot",
                 clear: "clear",
-                selectedBackground: "selected-bgColor"
+                selectedBackground: ""
             };
             //set no of slide to display
             this.displayPageCount = 3;
@@ -107,6 +109,11 @@ function (
         startup: function() {
             this._init();
             this.blockThemes = this.appConfig.theme;
+            if (this.appConfig.theme === "dark") {
+                this.css.selectedBackground = "selected-bgColorDark";
+            } else {
+                this.css.selectedBackground = "selected-bgColorLight";
+            }
         },
         // connections/subscriptions will be cleaned up during the destroy() lifecycle phase
         destroy: function() {
@@ -330,8 +337,8 @@ function (
         _panelCloseEvent: function(node) {
             var expandedClick = on(node, 'click', lang.hitch(this, function() {
                 this._hideExpanded();
-                for (var i = 1; i < dojo.query('.panel').children('.light').length; i++) {
-                    domClass.remove(dojo.query('.panel').children('.light')[i], 'leftMargin');
+                for (var i = 1; i < dojo.query('.panel').children('.' + this.appConfig.theme).length; i++) {
+                    domClass.remove(dojo.query('.panel').children('.' + this.appConfig.theme)[i], 'leftMargin');
                 }
             }));
             this._events.push(expandedClick);
@@ -341,10 +348,10 @@ function (
             var panelClick = on(node, 'click', lang.hitch(this, function() {
                 this._showExpanded(index);
                 domClass.remove(this._geoPanelsNode, "animate-geo-panel");
-                domClass.add(dojo.query('.light').children('.title')[index], this.css.selectedBackground);
-                if (dojo.query('.panel').children('.light').length > 1) {
-                    for (var i = 1; i < dojo.query('.panel').children('.light').length; i++) {
-                        domClass.add(dojo.query('.panel').children('.light')[i], 'leftMargin');
+                domClass.add(dojo.query('.' + this.appConfig.theme).children('.title')[index], this.css.selectedBackground);
+                if (dojo.query('.panel').children('.' + this.appConfig.theme).length > 1) {
+                    for (var i = 1; i < dojo.query('.panel').children('.' + this.appConfig.theme).length; i++) {
+                        domClass.add(dojo.query('.panel').children('.' + this.appConfig.theme)[i], 'leftMargin');
                     }
                 }
             }));

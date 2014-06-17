@@ -58,9 +58,7 @@ function (
         },
         // start widget. called by user
         startup: function () {
-
             console.log('edit mode');
-
             // builder mode class to body
             domClass.add(document.body, this.css.builderMode);
             // builder node
@@ -330,10 +328,10 @@ function (
                     domAttr.set(dom.byId("title"), "innerHTML", this.config.title);
                     domAttr.set(dom.byId("title"), "title", this.config.title);
                     domAttr.set(dom.byId("summary"), "innerHTML", this.config.summary);
-                    if (domStyle.get(query(".editAreaDescriptionButtonContainer")[0], "display") == "block") {
-                        domStyle.set(query(".editAreaDescriptionButtonContainer")[0], "display", "none");
-                        domStyle.set(query(".editAreaDescriptionIcon")[0], "display", "block");
-                    }
+                        if (query(".editAreaDescriptionButtonContainer")[0] && domStyle.get(query(".editAreaDescriptionButtonContainer")[0], "display") == "block") {
+                            domStyle.set(query(".editAreaDescriptionButtonContainer")[0], "display", "none");
+                            domStyle.set(query(".editAreaDescriptionIcon")[0], "display", "block");
+                        }
                 }), 0);
             }));
 
