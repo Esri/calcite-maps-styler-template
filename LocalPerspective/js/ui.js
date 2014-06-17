@@ -245,43 +245,43 @@ define([
          if (type == "blank") {
             
             var page = domConstruct.create('div', {
-               class : 'pageblank',
                id : 'page_' + id
             }, pPages);
+            domClass.add(page, 'pageblank');
             
             // page menu
             var pageMenu = domConstruct.create('div', {
-               class : 'pageMenu bg rounded shadow',
                id : 'pageMenu',
                innerHTML : '<img src="images/menu.png" />'
             }, page);
+            domClass.add(pageMenu, 'pageMenu bg rounded shadow');
             on(pageMenu, 'click', lang.hitch(this, this._showPage, 1));
             
          } else {
             
             // page
             var page = domConstruct.create('div', {
-               class : 'page',
                id : 'page_' + id
             }, pPages);
+            domClass.add(page, 'page');
          
             // page content
             var pageContent = domConstruct.create('div', {
-               class : 'pageContent rounded shadow',
                id : 'pageContent_' + id
             }, page);
+            domClass.add(pageContent, 'pageContent rounded shadow');
    
             // page header
             var pageHeader = domConstruct.create('div', {
-               class : 'pageHeader roundedTop',
                style : 'background-color:'+ options.color
             }, pageContent);
+            domClass.add(pageHeader, 'pageHeader roundedTop');
             
             // page title
             var pageTitle = domConstruct.create('div', {
-               class : 'pageTitle',
                innerHTML : label
             }, pageHeader);
+            domClass.add(pageTitle, 'pageTitle');
    
             // page counter
             var content = "0";
@@ -289,23 +289,23 @@ define([
                content = "<img class='pageIcon' src='images/" + type + ".png'/>";
             }
             var pageCounter = domConstruct.create('div', {
-               class : 'pageCounter',
                id: 'pageCounter_'+id,
                innerHTML : content
             }, pageHeader);
+            domClass.add(pageCounter, 'pageCounter');
             
             // page slider
             if (type == "demographics" || type == "proximity") {
                 
                 var pageUnits = domConstruct.create('div', {
-                  class : 'pageUnits',
                   innerHTML: this.config.distanceUnits.toUpperCase()
                }, pageHeader);
+               domClass.add(pageUnits, 'pageUnits');
                
                var pageSlider = domConstruct.create('div', {
-                  class : 'pageSlider',
                   innerHTML: "<div id='slider_" + id + "'></div>"
                }, pageHeader);
+               domClass.add(pageSlider, 'pageSlider');
             
                // slider
                var sliderH = new HorizontalSlider({
@@ -322,34 +322,34 @@ define([
             
             // page close
             var pageClose = domConstruct.create('div', {
-                class: 'pageClose'
             }, pageHeader);
             on(pageClose, 'click', lang.hitch(this, this._closePage));
+            domClass.add(pageClose, 'pageClose');
             
             // page up
             var pageUp = domConstruct.create('div', {
-                class: 'pageUp'
             }, pageHeader);
             on(pageUp, 'click', lang.hitch(this, this._showPreviousPage, id));
+            domClass.add(pageUp, 'pageUp');
             
             // page down
             if (id < this.pages.length-1) {
                var pageDown = domConstruct.create('div', {
-                   class: 'pageDown'
                }, pageHeader);
+               domClass.add(pageDown, 'pageDown');
                on(pageDown, 'click', lang.hitch(this, this._showNextPage, id));
             }
             
             // page body
             var pageBody = domConstruct.create('div', {
-               class : 'pageBody',
                id : "pageBody_" + id
             }, pageContent);
+            domClass.add(pageBody, 'pageBody');
             
             if (id == this.pages.length-1) {
                   var pageClear = domConstruct.create('div', {
-                  class : 'pageClear'
-               }, page);
+                  }, page);
+                  domClass.add(pageClear, 'pageClear');
             }
             
          }
@@ -362,56 +362,56 @@ define([
          var container = dom.byId("panelDirections");
          // page
          var page = domConstruct.create('div', {
-            class : 'page'
          }, container);
+         domClass.add(page, 'page');
       
          // page content
          var pageContent = domConstruct.create('div', {
-            class : 'pageContent rounded shadow'
          }, page);
+         domClass.add(pageContent, 'pageContent rounded shadow');
 
          // page header
          var color = this._getPageColor(this.pages.length+1);
          var pageHeader = domConstruct.create('div', {
-            class : 'pageHeader roundedTop',
             id : 'pageHeaderDir',
             style : 'background-color:#ffffff'
          }, pageContent);
+         domClass.add(pageHeader, 'pageHeader roundedTop');
          
          // page title
          var pageTitle = domConstruct.create('div', {
-            class : 'pageTitle',
             innerHTML : this.config.directionsLabel.toUpperCase()
          }, pageHeader);
+         domClass.add(pageTitle, 'pageTitle');
 
          // page counter
          var pageCounter = domConstruct.create('div', {
-            class : 'pageCounter',
             innerHTML : "<img class='pageIcon' src='images/directions.png'/>"
          }, pageHeader);
+         domClass.add(pageCounter, 'pageCounter');
          
          // reverse directions
          var pageReverseDir = domConstruct.create('div', {
-            class : 'pageReverseDir'
          }, pageHeader);
+         domClass.add(pageReverseDir, 'pageReverseDir');
          on(pageReverseDir, 'click', lang.hitch(this, this._reverseDirections));
          
          // page close
          var pageClose = domConstruct.create('div', {
-             class: 'pageClose'
          }, pageHeader);
+         domClass.add(pageClose, 'pageClose');
          on(pageClose, 'click', lang.hitch(this, this._toggleDirections));
         
          // page body
          var pageBody = domConstruct.create('div', {
-            class : 'pageBody'
          }, pageContent);
+         domClass.add(pageBody, 'pageBody');
          
          // directions
          var pageDir = domConstruct.create("div", {
-              class: "resultsContent",
               id: "pageDir"
          }, pageBody);
+         domClass.add(pageDir, 'resultsContent');
          var units = "esriMiles";
          if (this.config.distanceUnits == "kilometers")
             units = "esriKilometers";

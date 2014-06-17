@@ -13,6 +13,7 @@ define([
         "dojo/mouse",
         "esri/arcgis/utils", 
         "esri/dijit/BasemapGallery",
+        "esri/graphic",
         "esri/graphicsUtils",
         "esri/IdentityManager", 
         "esri/layers/FeatureLayer", 
@@ -35,6 +36,7 @@ define([
         mouse,
         arcgisUtils, 
         BasemapGallery,
+        Graphic,
         graphicsUtils,
         IdentityManager, 
         FeatureLayer,
@@ -52,6 +54,7 @@ define([
       opLayers : [],
       opLayer : null,
       opFeatureCollection : false,
+      opFeatures : [],
       opSignal : null,
       sumFields : [],
       avgFields : [],
@@ -160,7 +163,7 @@ define([
 
             // process operational layers
             this.opLayers = response.itemInfo.itemData.operationalLayers;
-            console.log(this.opLayers);
+            //console.log(this.opLayers);
 
             if (this.map.loaded) {
                this.mapLoaded();
@@ -208,6 +211,7 @@ define([
                      if (layer.featureCollection.layers[i].id == opLayerName) {
                         me.opFeatureCollection = true;
                         me.opLayer = layer.featureCollection.layers[i].layerObject;
+                        me.opFeatures = me.opLayer.graphics.slice(0);
                      }
                   }
                } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.id == opLayerName) {
@@ -234,6 +238,7 @@ define([
                   var flds = this.getSummaryFields(layer.featureCollection.layers[l].layerObject);
                   if (flds.length > 0) {
                      this.opFeatureCollection = true;
+                     this.opFeatures  = layer.featureCollection.layers[l].layerObject.graphics.slice(0);
                      return layer.featureCollection.layers[l].layerObject;
                   }
                }
@@ -578,20 +583,22 @@ define([
          var list = dom.byId("selFilter");
          var value = list.options[list.selectedIndex].value;
          if (this.opFeatureCollection) {
-            var graphics = this.opLayer.graphics;
-            var features = [];
+
+            var graphics = this.opFeatures;
+            this.opLayer.clear();
             for (var i = 0; i < graphics.length; i++) {
                var g = graphics[i];
-               if (g.attributes[this.config.filterField] == value) {
-                  features.push(g);
-               }
+               if ((g.attributes[this.config.filterField] == value) || (value == "")){
+                  var newg = new Graphic(g.geometry, g.symbol, g.attributes);
+                  this.opLayer.add(newg);
+               } 
             }
-            var ext = graphicsUtils.graphicsExtent(features);
+            var ext = graphicsUtils.graphicsExtent(this.opLayer.graphics);
             if (ext) {
                this.map.setExtent(ext.expand(2));
             } else {
-               if (features.length > 0)
-                  this.map.centerAt(features[0].geometry);
+               if (this.opLayer.graphics.length > 0)
+                  this.map.centerAt(this.opLayer.graphics[0].geometry);
             }
          } else {
             var expr = this.config.filterField + " = " + value;
