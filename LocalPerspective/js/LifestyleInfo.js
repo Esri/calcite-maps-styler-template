@@ -1179,7 +1179,6 @@ define([
          this.container.innerHTML = "";
          
          var content = domConstruct.create("div", {
-                 //class: "resultsContent"
          }, this.container);
          domClass.add(content, 'resultsContent');
              
@@ -1188,7 +1187,6 @@ define([
             var domtap = feature.attributes.DOMTAP;
             var info = this.getLifestyleInfo(parseInt(domtap));
             var div = domConstruct.create("div", {
-                 //class: "recLifestyle",
                  innerHTML: info
              }, content);
              domClass.add(div, 'recLifestyle');
