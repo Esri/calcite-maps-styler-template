@@ -157,7 +157,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
         setColor: function (value) {
             var colorValue = null;
             var rgb = Color.fromHex(value).toRgb();
-            console.log(value);
+
             if (has("ie") == 8) {
                 colorValue = value;
             } else {
