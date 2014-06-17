@@ -197,33 +197,35 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
                 autoComplete: hasEsri
             };
 
-            //Display the Esri Geocoder? 
-/* var showEsriGeocoder;
-            if (geocoders.splice(0, 1)[0]) {
-                showEsriGeocoder = true;
-            } else {
-                showEsriGeocoder = false;
-            }*/
 
             //If there is a valid search id and field defined add the feature layer to the geocoder array
             if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
                 var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
-/*if (searchOptions.disablePlaceFinder) {
-                    showEsriGeocoder = searchOptions.disablePlaceFinder;
-                }*/
-                array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
-                    var layer = this.map.getLayer(searchLayer.id);
-                    var url = layer.url;
-                    if (searchLayer.subLayer) {
-                        url = url + "/" + searchLayer.subLayer;
-                    }
-                    var field = searchLayer.field.name;
-                    var name = searchLayer.id;
 
+
+                array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
+                    var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
+                    var layer = null;
+                    array.forEach(operationalLayers, function (opLayer) {
+                        if (opLayer.id === searchLayer.id) {
+                            layer = opLayer;
+                        }
+                    });
+
+                    var url = layer.url;
+                    var field = searchLayer.field.name;
+                    var name = layer.title;
+                    if (esriLang.isDefined(searchLayer.subLayer)) {
+                        url = url + "/" + searchLayer.subLayer;
+                        if (esriLang.isDefined(layer.layerObject.layerInfos[searchLayer.subLayer])) {
+                            name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
+                        }
+                    }
                     geocoders.push({
                         "name": name,
                         "url": url,
                         "field": field,
+                        "exactMatch": (searchLayer.field.exactMatch || false),
                         "placeholder": searchOptions.hintText,
                         "outFields": "*",
                         "type": "query"
