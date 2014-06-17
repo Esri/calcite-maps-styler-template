@@ -74,8 +74,9 @@ define([
          this.container.innerHTML = "";
          
          var content = domConstruct.create("div", {
-                 class: "resultsContent"
+                 //class: "resultsContent"
          }, this.container);
+         domClass.add(content, 'resutsContent');
              
          if (results.features.length > 0) {
             var feature = results.features[0];
@@ -83,9 +84,10 @@ define([
                var fld = this.fields[i];
                var alias = this.aliases[i];
                var div = domConstruct.create("div", {
-                 class: "recDemographics",
+                 //class: "recDemographics",
                  innerHTML: alias + "<br/><span class='num'>" + number.format(feature.attributes[fld]) + "</span>"
-             }, content);
+               }, content);
+               domClass.add(div, 'recDemographics');
             }
             
          }

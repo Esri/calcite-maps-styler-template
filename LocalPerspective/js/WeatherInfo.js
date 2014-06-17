@@ -145,8 +145,9 @@ define([
          this.container.innerHTML = "";
          
          var content = domConstruct.create("div", {
-                 class: "resultsContent"
+                 //class: "resultsContent"
          }, this.container);
+         domClass.add(content, 'resutsContent');
          
          var data = results.data;
          var current = data.current_condition;
@@ -175,20 +176,23 @@ define([
             var code = cur.weatherCode;
             var w = this.weatherData[parseInt(code)];
             var rec = domConstruct.create("div", {
-               class: "recWeather"
+               //class: "recWeather"
             }, content);
+            domClass.add(rec, 'recWeather');
             var nowStr = "now";
             if (this.config && this.config.i18n) {
                nowStr = this.config.i18n.days[nowStr];
             }
             var recLeft = domConstruct.create("div", {
-               class: "recLeft",
+               //class: "recLeft",
                innerHTML: nowStr.toUpperCase() + "<br/><span class='num'>" + temp + "&deg;</span>"
             }, rec);
+            domClass.add(recLeft, 'recLeft');
             var recRight = domConstruct.create("div", {
-               class: "recRight",
+               //class: "recRight",
                innerHTML: "<img class='imgWeather' src='images/w/" + w[timeInfo] + "' />"
             }, rec);
+            domClass.add(recRight, 'recRight');
                 
                 
          }
@@ -202,16 +206,19 @@ define([
             var code = cur.weatherCode;
             var w = this.weatherData[parseInt(code)];
             var rec = domConstruct.create("div", {
-               class: "recWeather"
+               //class: "recWeather"
             }, content);
+            domClass.add(rec, 'recWeather');
             var recLeft = domConstruct.create("div", {
-               class: "recLeft",
+               //class: "recLeft",
                innerHTML: day.toUpperCase() + "<br/><span class='num'>" + tempMax + "&deg; - " + tempMin + "&deg;</span>"
             }, rec);
+            domClass.add(recLeft, 'recLeft');
             var recRight = domConstruct.create("div", {
-               class: "recRight",
+               //class: "recRight",
                innerHTML: "<img class='imgWeather' src='images/w/" + w[timeInfo] + "' />"
             }, rec);
+            domClass.add(recRight, 'recRight');
          }
             
       },
