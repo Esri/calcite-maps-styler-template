@@ -1,5 +1,5 @@
-define(["dojo/ready", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/Color", "esri/arcgis/utils", "dojo/on", "dijit/registry", "application/Drawer", "application/CreateGeocoder", "esri/dijit/Legend", "dojo/dom-class", "dojo/dom", "dojo/query", "dojo/dom-construct", "esri/dijit/LocateButton", "esri/dijit/HomeButton"], function (
-ready, declare, lang, Color, arcgisUtils, on, registry, Drawer, CreateGeocoder, Legend, domClass, dom, query, domConstruct, LocateButton, HomeButton) {
+define(["dojo/ready", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/Color", "esri/arcgis/utils", "dojo/on", "dojo/has", "dojo/sniff", "dijit/registry", "application/Drawer", "application/CreateGeocoder", "esri/dijit/Legend", "dojo/dom-class", "dojo/dom", "dojo/query", "dojo/dom-construct", "esri/dijit/LocateButton", "esri/dijit/HomeButton"], function (
+ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, CreateGeocoder, Legend, domClass, dom, query, domConstruct, LocateButton, HomeButton) {
     return declare("", null, {
         config: {},
         theme: null,
@@ -155,9 +155,16 @@ ready, declare, lang, Color, arcgisUtils, on, registry, Drawer, CreateGeocoder, 
             }));
         },
         setColor: function (value) {
+            var colorValue = null;
             var rgb = Color.fromHex(value).toRgb();
-            rgb.push(0.9);
-            return Color.fromArray(rgb);
+            console.log(value);
+            if (has("ie") == 8) {
+                colorValue = value;
+            } else {
+                rgb.push(0.9);
+                colorValue = Color.fromArray(rgb);
+            }
+            return colorValue;
 
         },
 

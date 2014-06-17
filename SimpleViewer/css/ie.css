@@ -1,29 +1,22 @@
-.ac-container input:checked+label:after,open*/ .ac-container input:checked+label:after{background:0 0}.ac-container label{cursor:default} cursor: default
+.ac-container input:checked + label:after {
+    content: none;
 }
 
-cursor: default
+.ac-container label {
+    cursor: default;
 }
 
-cursor: default
+.esriSimpleSlider {
+    display: block;
 }
 
-cursor: default
+#homeDiv {
+    position: absolute;
+    top: 125px;
+    left: 4px;
+    z-index: 50;
 }
 
-cursor: default
-}
-
-cursor: default
-}
-
-cursor: default
-}
-
-cursor: default
-}
-
-cursor: default
-}
-
-cursor: default
+#search {
+    display: block;
 }
