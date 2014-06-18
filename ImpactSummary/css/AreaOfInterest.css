@@ -102,6 +102,7 @@
 }
 .selected-bgColorDark
 {
+    background-color:#ccc !important;
     background-color:rgba(205,205,205,0.9) !important;
     color:Black !important;
 }

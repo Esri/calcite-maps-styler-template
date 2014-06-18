@@ -209,7 +209,7 @@ function (
             appTitleInputContainer = domConstruct.create("div", { "class": "esriClear" }, leftSettingsContent);
             appTitleInput = domConstruct.create("input", { "style": "width:89%;", value: this.config.title || this.response.itemData.values.title }, appTitleInputContainer);
             on(appTitleInput, "blur", lang.hitch(this, function () {
-                if (appTitleInput.value.trim() === "") {
+                if (lang.trim(appTitleInput.value) === "") {
                     alert(nls.widgets.TemplateBuilder.alertMessage.emptyAppTitleMessage);
                     appTitleInput.value = dom.byId("title").innerHTML;
                 }
@@ -881,7 +881,7 @@ function (
 
         _saveAppTitle: function (appTitle, titleInputBox, editTitleIcon) {
             domConstruct.empty(appTitle);
-            if (titleInputBox.value.trim() !== "") {
+            if (lang.trim(titleInputBox.value) !== "") {
                 appTitle.innerHTML = titleInputBox.value;
                 appTitle.title = appTitle.innerHTML;
                 this.config.title = appTitle.title;
@@ -924,7 +924,7 @@ function (
         _saveAppDescription: function (dijitInputContainer, editAreaDescriptionIcon, editAreaDescriptionButtonContainer, areaDescription) {
             if (dijitInputContainer.get("value") !== "") {
                 domConstruct.empty(areaDescription);
-                var innerText = dijitInputContainer.get("value").trim();
+                var innerText = lang.trim(dijitInputContainer.get("value"));
                 domStyle.set(editAreaDescriptionIcon, "display", "block");
                 domStyle.set(editAreaDescriptionButtonContainer, "display", "none");
                 domAttr.set(areaDescription, "innerHTML", innerText);

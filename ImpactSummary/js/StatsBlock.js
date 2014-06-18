@@ -247,7 +247,7 @@ function (
                 var config = this.get("config");
                 this.newConfig = lang.clone(config);
                 for (i = config.length - 1; i >= 0; i--) {
-                    if (config[i].attribute.trim() === "") {
+                    if (lang.trim(config[i].attribute) === "") {
                         config.splice(i, 1);
                     }
                 }
@@ -337,8 +337,8 @@ function (
         _panelCloseEvent: function(node) {
             var expandedClick = on(node, 'click', lang.hitch(this, function() {
                 this._hideExpanded();
-                for (var i = 1; i < dojo.query('.panel').children('.' + this.appConfig.theme).length; i++) {
-                    domClass.remove(dojo.query('.panel').children('.' + this.appConfig.theme)[i], 'leftMargin');
+                for (var i = 1; i < query('.panel').children('.' + this.appConfig.theme).length; i++) {
+                    domClass.remove(query('.panel').children('.' + this.appConfig.theme)[i], 'leftMargin');
                 }
             }));
             this._events.push(expandedClick);
@@ -348,10 +348,10 @@ function (
             var panelClick = on(node, 'click', lang.hitch(this, function() {
                 this._showExpanded(index);
                 domClass.remove(this._geoPanelsNode, "animate-geo-panel");
-                domClass.add(dojo.query('.' + this.appConfig.theme).children('.title')[index], this.css.selectedBackground);
-                if (dojo.query('.panel').children('.' + this.appConfig.theme).length > 1) {
-                    for (var i = 1; i < dojo.query('.panel').children('.' + this.appConfig.theme).length; i++) {
-                        domClass.add(dojo.query('.panel').children('.' + this.appConfig.theme)[i], 'leftMargin');
+                domClass.add(query('.' + this.appConfig.theme).children('.title')[index], this.css.selectedBackground);
+                if (query('.panel').children('.' + this.appConfig.theme).length > 1) {
+                    for (var i = 1; i < query('.panel').children('.' + this.appConfig.theme).length; i++) {
+                        domClass.add(query('.panel').children('.' + this.appConfig.theme)[i], 'leftMargin');
                     }
                 }
             }));
