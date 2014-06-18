@@ -11,6 +11,7 @@ a, a:hover, a:visited{
 	text-decoration: none;
 }
 
+
 /* Fonts */
 
 @font-face {
@@ -149,11 +150,11 @@ a, a:hover, a:visited{
 }
 
 .simpleGeocoder .esriGeocoder input {
-	color: #FFF;
+	color: #bbbbbb;
 }
 
 .simpleGeocoder .esriGeocoder input:focus {
-	color: #FFF;
+	color: #bbbbbb;
 }
 
 .esriControlsBR {
@@ -376,6 +377,7 @@ a, a:hover, a:visited{
 	overflow: hidden;
 	display: block;
 	background-color: rgba(255,255,255,1);
+	background-color: #ffffff;
 }
 
 .pageHeader {
