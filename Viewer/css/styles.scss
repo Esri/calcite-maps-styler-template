@@ -218,7 +218,11 @@ html, body {
 .esriPrintout a{
     color:#5daddd;
 }
-
+.esriPrint{
+    position:absolute;
+    top:40px;
+    left:15px;
+}
 .templatePicker{
     border:none;
 }
@@ -331,7 +335,10 @@ html, body {
     font-family: "tool-icons";
 }
 
-
+.esriMeasurement .esriMeasurementResultLabel{
+    text-align:left;
+    font-weight:500;
+}
 .esriControlsBR {
     position: absolute;
     left: 0px;
@@ -469,7 +476,7 @@ img{
 }
 
 #panelContent {
-    font-family: Helvetica;
+    font-family: Helvetica, Arial, sans-serif;
     position: absolute;
     right: 10px;
     top: 0;
@@ -645,9 +652,10 @@ img{
     top:0px;
     width:100%;
     color: #ffffff;
-    font-family: "HelveticaNeueUltraLight", Arial, "Lucida Grande", sans-serif; 
+    font-family: "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; 
+    font-weight:100; 
+    font-stretch:normal;
     font-size: 28px;
-    font-weight: normal;
     padding: 0px;
     display: block;
     overflow: visible;

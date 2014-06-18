@@ -110,6 +110,11 @@ input[type=checkbox]:checked.checkbox + .checkbox:before {
 .esriPrintout a {
   color: #5daddd; }
 
+.esriPrint {
+  position: absolute;
+  top: 40px;
+  left: 15px; }
+
 .templatePicker {
   border: none; }
 
@@ -227,6 +232,10 @@ input[type=checkbox]:checked.checkbox + .checkbox:before {
   font-size: 16px;
   color: #a8a8a8;
   font-family: "tool-icons"; }
+
+.esriMeasurement .esriMeasurementResultLabel {
+  text-align: left;
+  font-weight: 500; }
 
 .esriControlsBR {
   position: absolute;
@@ -367,7 +376,7 @@ img {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); }
 
 #panelContent {
-  font-family: Helvetica;
+  font-family: Helvetica, Arial, sans-serif;
   position: absolute;
   right: 10px;
   top: 0;
@@ -543,9 +552,10 @@ img {
   top: 0px;
   width: 100%;
   color: #ffffff;
-  font-family: "HelveticaNeueUltraLight", Arial, "Lucida Grande", sans-serif;
+  font-family: "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif;
+  font-weight: 100;
+  font-stretch: normal;
   font-size: 28px;
-  font-weight: normal;
   padding: 0px;
   display: block;
   overflow: visible;
