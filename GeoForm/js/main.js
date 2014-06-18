@@ -213,7 +213,7 @@ define([
         _setSymbol: function (point) {
             var symbolUrl, pictureMarkerSymbol, graphic;
             this.map.graphics.clear();
-            symbolUrl = "./images/pushpin.png";
+            symbolUrl = "./images/pins/purple.png";
             pictureMarkerSymbol = new PictureMarkerSymbol(symbolUrl, 36, 36);
             graphic = new Graphic(point, pictureMarkerSymbol, null, null);
             this.map.graphics.add(graphic);
@@ -655,8 +655,10 @@ define([
                     this.map.infoWindow.show(this.addressGeometry);
                 }), 500);
                 domClass.remove(this.coordinatesContainer, "has-error");
+                domClass.remove(this.coordinatesContainer2, "has-error");
             } else {
                 domClass.add(this.coordinatesContainer, "has-error");
+                domClass.add(this.coordinatesContainer2, "has-error");
             }
         },
 
