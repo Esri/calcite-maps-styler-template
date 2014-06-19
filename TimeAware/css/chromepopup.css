@@ -1,36 +1,4 @@
-﻿  .esriPopup.chrome .titleButton,
-  .esriPopup.chrome .pointer,
-  .esriPopup.chrome .outerPointer,
-  .esriPopup.chrome .esriViewPopup .gallery .mediaHandle,
-  .esriPopup.chrome .esriViewPopup .gallery .mediaIcon {
-    background-image: url(../images/popup_sprite_chrome.png);
-  }
-  
-  .esriPopup.chrome .titleButton {
-    top: 4px;
-  }
-  
-  .esriPopup.chrome .titleButton.maximize,
-  .esriPopup.chrome .titleButton.restore {
-    top: 6px;
-  }
-  
-  .esriPopup.chrome .pointer.top {
-    background-position: 0 -616px;
-  }
-  
-  .esriPopup.chrome .pointer.topLeft {
-    left: 0px; top: -43px; background-position: 0 -525px; width: 51px; height: 45px;
-  }
-  
-  .esriPopup.chrome .pointer.topRight {
-    right: 0px; top: -43px; background-position: 0 -707px; width: 51px; height: 45px;
-  }
-  
-  .esriPopup.chrome .pointer.bottomLeft,
-  .esriPopup.chrome .pointer.bottomRight { 
-    bottom: -44px; 
-  }
+
   
   .esriPopup.chrome .contentPane,
   .esriPopup.chrome .actionsPane {
@@ -50,4 +18,10 @@
   }
   .esriPopup.chrome a {
     color: #336699;
+  }
+  .esriPopup .outerPointer, .esriPopup .pointer.bottom{
+    background-color: #DAE4EF;
+  }
+  .esriPopup .pointer.top{
+    background-color: #666666;
   }
