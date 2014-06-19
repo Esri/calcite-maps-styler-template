@@ -83,6 +83,7 @@ define([
          if (config) {
             this.config = config;
             this.setColor();
+            this.setProtocolHandler();
             // document ready
             ready(lang.hitch(this, function() {
                //supply either the webmap id or, if available, the item info
@@ -129,6 +130,16 @@ define([
             this.config.color = this.config.colors[0];
          }
          this.color = this.config.color;
+      },
+      
+      // set protocol handler
+      setProtocolHandler : function() {
+         esri.id.setProtocolErrorHandler(function() {
+            console.log("protocol");
+            if (window.confirm("Your browser is not CORS enabled. You need to redirect to HTTPS. Continue?")) {
+               window.location = window.location.href.replace("http:", "https:");
+            }
+         });
       },
 
       // Create web map based on the input web map id
