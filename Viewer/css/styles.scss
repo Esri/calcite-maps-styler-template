@@ -205,6 +205,7 @@ html, body {
 .layer-menu .dijitMenuItem:hover{
     background:#d3d3d3;
 }
+
 .layer-menu .dijitMenuItemSelected{
     background:#d3d3d3;
 }
@@ -288,6 +289,7 @@ html, body {
     @include transparent($black-color, 0.3);
 }
 
+
 .esriSimpleSliderIncrementButton {
     border-bottom: solid 1px #ffffff !important;
 }
@@ -310,18 +312,11 @@ html, body {
 
 }
 
-.simpleGeocoder .esriGeocoderResult:hover, .simpleGeocoder .esriGeocoderResultEven:focus, .simpleGeocoder .esriGeocoderResultOdd:focus {
-    @include transparent($black-color, 0.2);
-
-}
-
 .simpleGeocoder .esriGeocoder input {
     color: #FFF;
 }
 
-.simpleGeocoder .esriGeocoder input:focus {
-    color: #FFF;
-}
+
 
 .simpleGeocoder .esriGeocoder .esriGeocoderMenuArrow{
     background:none;
@@ -401,7 +396,6 @@ html, body {
     background-color:none !important;
 }
 
-
 .HomeButton .home:before{
     width:24px;
     height:24px;
@@ -453,6 +447,7 @@ img{
     @include box-shadow (0px, 0px, 4px, #222);
     @include transparent($black-color, 0.5);
 }
+
 /* Template */
 
 .bg {
@@ -519,9 +514,10 @@ img{
     top: 90px;
     display:block;
     overflow:hidden;
-    max-height:375px;
+    max-height:305px;
     @include transparent($default-theme, 1);
     @include respond-to(600){
+        top:100px;
         max-height:none;
     }
     @include respond-to(860){
@@ -637,6 +633,7 @@ img{
 
 #pageBody_share{
     padding:5px 20px;
+    overflow-y:auto;
     @include respond-to(720){
         max-height:none;
     }
@@ -652,7 +649,7 @@ img{
     top:0px;
     width:100%;
     color: #ffffff;
-    font-family: "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; 
+    font-family: "HelveticaNeue-UltraLight", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "Helvetica Neue", "Arial", sans-serif; 
     font-weight:100; 
     font-stretch:normal;
     font-size: 28px;
@@ -827,6 +824,7 @@ img{
 .no-touch .dijitMenuItem:hover {
     @include transparent(rgb(93,173,221),0.40);
 }
+
 .calcite .dijitMenuItemLabel {
     max-width:250px;
 
@@ -861,6 +859,7 @@ img{
 .calcite .dijitToggleButton:hover, .calcite .dijitButton:hover, .calcite .dijitDropDownButton:hover, .calcite .dijitComboButton:hover {
   background: #a9a9a9; /*#4997d2; calcite hover */
 }
+
 .calcite .dijitArrowButtonInner{
     width: 16px;
     height:16px;
@@ -873,6 +872,10 @@ img{
 
 .calcite .icon-container {
     margin: 10px 0 10px;
+    display:none;
+    @include respond-to(720){
+        display:block;
+    }
 }
 .calcite .map-size-label {
     float: left;
@@ -905,6 +908,7 @@ img{
 .calcite .share-dialog-icon:hover {
     color:rgba(0, 0, 0, 0.8);
 }
+
 .calcite .share-map-url {
     width: 50%;
     min-width: 80%;
@@ -931,7 +935,10 @@ img{
 }
 .calcite .share-dialog-subheader {
     font-size: 17px;
-    /*margin: 0 0 5px;*/
+    display:none;
+    @include respond-to(720){
+        display:block;
+    }
 }
 .calcite .share-dialog-textarea {
     width: auto;
@@ -944,7 +951,7 @@ img{
     margin: 0 0 10px;
 }
 .calcite .share-dialog-extent {
-    margin: 0 0 15px 0;
+    /*margin: 0 0 15px 0;*/
 }
 
 .share-dialog-checkbox {

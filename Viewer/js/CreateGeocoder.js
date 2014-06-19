@@ -48,6 +48,15 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
         },
         showGeocodingResult: function (geocodeResult, pos) {
 
+            var featureSearch = false;
+            if (geocodeResult.target && geocodeResult.target.activeGeocoder) { //switch to type when Matt adds
+                var activeGeocoder = geocodeResult.target.activeGeocoder;
+                if (esriLang.isDefined(activeGeocoder.type)) {
+                    if (activeGeocoder.type === "query") {
+                        featureSearch = true;
+                    }
+                }
+            }
             if (!esriLang.isDefined(pos)) {
                 pos = 0;
             }
@@ -55,8 +64,12 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
             if (geocodeResult.result) {
                 geocodeResult = geocodeResult.result;
             }
+            if (featureSearch) {
+                console.log(geocodeResult);
+                console.log(geocodeResult.feature.getLayer());
 
-            if (geocodeResult.extent) {
+
+            } else if (geocodeResult.extent) {
                 this.setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, geocodeResult.extent, geocodeResult, pos);
             } else { //best view 
                 var bestView = this.map.extent.centerAt(geocodeResult.feature.geometry).expand(0.0625);
@@ -206,9 +219,10 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
                 array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
                     var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
                     var layer = null;
-                    array.forEach(operationalLayers, function (opLayer) {
+                    array.some(operationalLayers, function (opLayer) {
                         if (opLayer.id === searchLayer.id) {
                             layer = opLayer;
+                            return true;
                         }
                     });
 
@@ -217,9 +231,13 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
                     var name = layer.title;
                     if (esriLang.isDefined(searchLayer.subLayer)) {
                         url = url + "/" + searchLayer.subLayer;
-                        if (esriLang.isDefined(layer.layerObject.layerInfos[searchLayer.subLayer])) {
-                            name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
-                        }
+                        array.some(layer.layerObject.layerInfos, function (info) {
+                            if (info.id == searchLayer.subLayer) {
+                                name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
+                                return true;
+                            }
+
+                        });
                     }
                     geocoders.push({
                         "name": name,
@@ -228,6 +246,7 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
                         "exactMatch": (searchLayer.field.exactMatch || false),
                         "placeholder": searchOptions.hintText,
                         "outFields": "*",
+                        //field
                         "type": "query"
                     });
                 }));

@@ -210,16 +210,7 @@ input[type=checkbox]:checked.checkbox + .checkbox:before {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
   zoom: 1; }
 
-.simpleGeocoder .esriGeocoderResult:hover, .simpleGeocoder .esriGeocoderResultEven:focus, .simpleGeocoder .esriGeocoderResultOdd:focus {
-  background-color: transparent;
-  background-color: rgba(0, 0, 0, 0.2);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
-  zoom: 1; }
-
 .simpleGeocoder .esriGeocoder input {
-  color: #FFF; }
-
-.simpleGeocoder .esriGeocoder input:focus {
   color: #FFF; }
 
 .simpleGeocoder .esriGeocoder .esriGeocoderMenuArrow {
@@ -422,7 +413,7 @@ img {
   top: 90px;
   display: block;
   overflow: hidden;
-  max-height: 375px;
+  max-height: 305px;
   background-color: transparent;
   background-color: white;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF,endColorstr=#FFFFFFFF);
@@ -430,6 +421,7 @@ img {
 
 @media only screen and (min-width: 600px) {
   .pageContent {
+    top: 100px;
     max-height: none; } }
 
 @media only screen and (min-width: 860px) {
@@ -536,7 +528,8 @@ img {
   padding: 20px; }
 
 #pageBody_share {
-  padding: 5px 20px; }
+  padding: 5px 20px;
+  overflow-y: auto; }
 
 @media only screen and (min-width: 720px) {
   #pageBody_share {
@@ -552,7 +545,7 @@ img {
   top: 0px;
   width: 100%;
   color: #ffffff;
-  font-family: "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif;
+  font-family: "HelveticaNeue-UltraLight", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "Helvetica Neue", "Arial", sans-serif;
   font-weight: 100;
   font-stretch: normal;
   font-size: 28px;
@@ -789,7 +782,12 @@ img {
 
 /*Share Dialog updates*/
 .calcite .icon-container {
-  margin: 10px 0 10px; }
+  margin: 10px 0 10px;
+  display: none; }
+
+@media only screen and (min-width: 720px) {
+  .calcite .icon-container {
+    display: block; } }
 
 .calcite .map-size-label {
   float: left;
@@ -847,7 +845,11 @@ img {
 
 .calcite .share-dialog-subheader {
   font-size: 17px;
-  /*margin: 0 0 5px;*/ }
+  display: none; }
+
+@media only screen and (min-width: 720px) {
+  .calcite .share-dialog-subheader {
+    display: block; } }
 
 .calcite .share-dialog-textarea {
   width: auto;
@@ -858,9 +860,6 @@ img {
   color: #777;
   border: 1px solid #dcdcdc;
   margin: 0 0 10px; }
-
-.calcite .share-dialog-extent {
-  margin: 0 0 15px 0; }
 
 .share-dialog-checkbox {
   display: inline-block;

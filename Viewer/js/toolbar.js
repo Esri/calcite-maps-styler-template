@@ -34,13 +34,10 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             var deferred;
 
             deferred = new Deferred();
-            if (!has("touch")) {
-                on(window, "scroll", lang.hitch(this, this._windowScrolled));
-                on(window, "resize", lang.hitch(this, this._windowScrolled));
-            } else {
 
-                on(window, "orientationchange", lang.hitch(this, this._windowScrolled));
-            }
+            // on(window, "scroll", lang.hitch(this, this._windowScrolled));
+            on(window, "resize", lang.hitch(this, this._windowScrolled));
+
 
             this.pTools = dom.byId("panelTools");
             this.pMenu = dom.byId("panelMenu");
@@ -52,9 +49,6 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
                 className: "pageblank",
                 id: "page_blank"
             }, this.pPages);
-
-
-
 
             deferred.resolve();
 
@@ -153,22 +147,33 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             domConstruct.place(content, "pageBody_" + name, "last");
         },
 
-        // activate tool
         activateTool: function (name) {
+            //this.curTool = this._getPageNum(name);
+            // this._showPage(name);
+            //Instead of scrolling to the tool just go there. 
+            var num = this._getPageNum(name) + 1;
+            var box = html.getContentBox(dom.byId("panelContent"));
 
-            this.curTool = this._getPageNum(name);
-            this._showPage(name);
+
+            var endPos = num * box.h;
+
+            document.body.scrollTop = endPos;
+            document.documentElement.scrollTop = endPos;
+
+            this._updateMap();
+
+
+            this.curTool = num;
+            this._updateTool(num);
+
+
 
         },
 
-        // tool click
         _toolClick: function (name) {
             this._showPage(name);
-
-
         },
 
-        // get page num
         _getPageNum: function (name) {
             for (var i = 0; i < this.tools.length; i++) {
                 if (this.tools[i] == name) {
@@ -177,9 +182,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             }
             return 0;
         },
-        // show page
         _showPage: function (name) {
-
             var num = this._getPageNum(name) + 1;
 
             if (num != this.curTool) {
@@ -188,26 +191,19 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
                 this._scrollToPage(0);
             }
         },
-
-        // show previous page
         _showPreviousPage: function (name) {
             var num = this._getPageNum(name);
             this._scrollToPage(num);
         },
 
-        // show next page
         _showNextPage: function (name) {
             var num = this._getPageNum(name) + 2;
             this._scrollToPage(num);
         },
 
-        // close page
         _closePage: function () {
             this._scrollToPage(0);
-
         },
-
-        //scroll to page
         _scrollToPage: function (num) {
 
             var box = html.getContentBox(dom.byId("panelContent"));
@@ -218,33 +214,30 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             this.snap = false;
             if (diff == 1) {
                 this._animateScroll(startPos, endPos);
+                this._updateMap();
             } else {
                 document.body.scrollTop = endPos;
                 document.documentElement.scrollTop = endPos;
 
-                if (this.map) {
-                    this.map.reposition();
-                }
+                this._updateMap();
                 this.snap = true;
             }
             this.curTool = num;
             this._updateTool(num);
 
 
+
         },
-
-        // window scrolled
         _windowScrolled: function (evt) {
-
             if (this.scrollTimer) {
                 clearTimeout(this.scrollTimer);
             }
             if (this.snap === true) {
                 this.scrollTimer = setTimeout(lang.hitch(this, this._snapScroll), 300);
+                this._updateMap();
             }
         },
 
-        // snap scroll
         _snapScroll: function () {
 
             var startPos = domGeometry.docScroll().y;
@@ -270,68 +263,61 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             var endPos = num * box.h;
 
             this.curTool = num;
-
             this._updateTool(num);
 
-
             this._animateScroll(startPos, endPos);
-
-
         },
 
-        // animateScroll
         _animateScroll: function (start, end) {
-            var me = this;
-
+            //var me = this;
             var anim = new fx.Animation({
                 duration: 500,
                 curve: [start, end]
             });
             on(anim, "Animate", function (v) {
-
                 document.body.scrollTop = v;
                 document.documentElement.scrollTop = v;
-
-
             });
 
-            on(anim, "End", function () {
-                setTimeout(lang.hitch(me, me._resetSnap), 100);
-                if (me.map) {
-                    me.map.reposition();
-
-                }
-            });
+            on(anim, "End", lang.hitch(this, function () {
+                setTimeout(lang.hitch(this, this._resetSnap), 100);
+                this._updateMap();
+            }));
 
             anim.play();
         },
 
         // highlight the active tool on the toolbar
         _updateTool: function (num) {
-
             query(".panelTool").removeClass("panelToolActive");
-
             var name = this.tools[num - 1];
-
             if (name) {
                 domClass.add("panelTool_" + name, "panelToolActive");
             }
-
             this.emit("updateTool", name);
 
-
+        },
+        _updateMap: function () {
+            if (this.map) {
+                this.map.resize();
+                this.map.reposition();
+            }
         },
 
         _resetSnap: function () {
             this.snap = true;
+
         },
         // menu click
         _menuClick: function () {
             if (query("#panelTools").style("display") == "block") {
                 query("#panelTools").style("display", "none");
+                this._closePage();
+
             } else {
                 query("#panelTools").style("display", "block");
             }
+            this._updateMap();
         }
     });
 });

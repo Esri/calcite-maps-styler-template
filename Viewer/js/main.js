@@ -13,8 +13,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/ready", "dojo/json", "dojo/_base/array", "dojo/_base/Color", "dojo/_base/declare", "dojo/_base/lang", "dojo/dom", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/Deferred", "dojo/promise/all", "dojo/query", "dijit/registry", "dijit/Menu", "dijit/CheckedMenuItem", "application/toolbar", "application/has-config", "esri/arcgis/utils", "esri/dijit/HomeButton", "esri/dijit/LocateButton", "esri/dijit/Legend", "esri/dijit/BasemapGallery", "esri/dijit/Measurement", "esri/dijit/OverviewMap", "esri/geometry/Extent", "esri/layers/FeatureLayer"], function (
-ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, domStyle, on, Deferred, all, query, registry, Menu, CheckedMenuItem, Toolbar, has, arcgisUtils, HomeButton, LocateButton, Legend, BasemapGallery, Measurement, OverviewMap, Extent, FeatureLayer) {
+define(["dojo/ready", "dojo/json", "dojo/_base/array", "dojo/_base/Color", "dojo/_base/declare", "dojo/_base/lang", "dojo/dom", "dojo/dom-geometry", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/Deferred", "dojo/promise/all", "dojo/query", "dijit/registry", "dijit/Menu", "dijit/CheckedMenuItem", "application/toolbar", "application/has-config", "esri/arcgis/utils", "esri/dijit/HomeButton", "esri/dijit/LocateButton", "esri/dijit/Legend", "esri/dijit/BasemapGallery", "esri/dijit/Measurement", "esri/dijit/OverviewMap", "esri/geometry/Extent", "esri/layers/FeatureLayer"], function (
+ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, domConstruct, domStyle, on, Deferred, all, query, registry, Menu, CheckedMenuItem, Toolbar, has, arcgisUtils, HomeButton, LocateButton, Legend, BasemapGallery, Measurement, OverviewMap, Extent, FeatureLayer) {
 
 
     return declare(null, {
@@ -100,6 +100,8 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
             query(".esriSimpleSlider").style("backgroundColor", this.theme.toString());
             // remove loading class from body
             domClass.remove(document.body, "app-loading");
+            on(window, "orientationchange", lang.hitch(this, this._adjustPopupSize));
+            this._adjustPopupSize();
         },
 
         // Create UI
@@ -567,9 +569,10 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
 
                         print = new Print({
                             map: this.map,
+                            id: "printButton",
                             templates: templates,
                             url: this.config.helperServices.printTask.url
-                        }, domConstruct.create("div")); //domConstruct.create("div",{}),printDiv); 
+                        }, domConstruct.create("div"));
                         domConstruct.place(print.printDomNode, printDiv, "first");
 
                         print.startup();
@@ -815,6 +818,24 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 this.mapExt = this.map.extent;
             }
         },
+        _adjustPopupSize: function () {
+            if (!this.map) {
+                return;
+            }
+            var box = domGeometry.getContentBox(this.map.container);
+
+            var width = 270,
+                height = 300,
+                newWidth = Math.round(box.w * 0.60),
+                newHeight = Math.round(box.h * 0.45);
+            if (newWidth < width) {
+                width = newWidth;
+            }
+            if (newHeight < height) {
+                height = newHeight;
+            }
+            this.map.infoWindow.resize(width, height);
+        },
         _createWebMap: function (itemInfo) {
             // create a map based on the input web map id
             arcgisUtils.createMap(itemInfo, "mapDiv", {
@@ -825,7 +846,6 @@ ready, JSON, array, Color, declare, lang, dom, domAttr, domClass, domConstruct, 
                 this.map = response.map;
 
                 this._updateTheme();
-
 
                 //Add a logo if provided
                 if (this.config.logo) {
