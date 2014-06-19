@@ -95,7 +95,7 @@ xcopy %TEMPLATES_ROOT%\archive\EditorChrome                     %BUILD_OUTPUT%\E
 xcopy %TEMPLATES_ROOT%\Edit                                     %BUILD_OUTPUT%\Edit                                 /E /Y
 xcopy %TEMPLATES_ROOT%\archive\ElevationsProfile                %BUILD_OUTPUT%\ElevationsProfile                    /E /Y
 xcopy %TEMPLATES_ROOT%\Elevations                               %BUILD_OUTPUT%\Elevations                           /E /Y
-xcopy %TEMPLATES_ROOT%\Filter                                   %BUILD_OUTPUT%\Filter                               /E /Y
+xcopy %TEMPLATES_ROOT%\archive\Filter                           %BUILD_OUTPUT%\Filter                               /E /Y
 xcopy %TEMPLATES_ROOT%\GeoForm                                  %BUILD_OUTPUT%\GeoForm                              /E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterChrome               %BUILD_OUTPUT%\HeaderFooter\Chrome                  /E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterPavement             %BUILD_OUTPUT%\HeaderFooter\pavement                /E /Y
@@ -134,7 +134,7 @@ xcopy %TEMPLATES_ROOT%\archive\GPX                              %BUILD_OUTPUT%\O
 xcopy %TEMPLATES_ROOT%\PublicGallery                            %BUILD_OUTPUT%\PublicGallery                        /E /Y
 xcopy %TEMPLATES_ROOT%\ServiceLookup                            %BUILD_OUTPUT%\ServiceLookup                        /E /Y
 xcopy %TEMPLATES_ROOT%\ServiceLookup                            %BUILD_OUTPUT%\InformationLookup                    /E /Y
-xcopy %TEMPLATES_ROOT%\SimpleMapViewer                          %BUILD_OUTPUT%\SimpleMapViewer                      /E /Y
+xcopy %TEMPLATES_ROOT%\archive\SimpleMapViewer                  %BUILD_OUTPUT%\SimpleMapViewer                      /E /Y
 xcopy %TEMPLATES_ROOT%\SimpleViewer                             %BUILD_OUTPUT%\SimpleViewer                         /E /Y
 xcopy %TEMPLATES_ROOT%\SocialMedia                              %BUILD_OUTPUT%\SocialMedia                          /E /Y
 xcopy %TEMPLATES_ROOT%\Solutions                                %BUILD_OUTPUT%\Solutions                            /E /Y
@@ -153,7 +153,7 @@ xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\M
 xcopy %TEMPLATES_ROOT%\MapSeries\app\config\series-config.js    %BUILD_OUTPUT%\MapSeries\app\config.js*             /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\StorytellingBasic                    /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries\app\config\basic-config.js     %BUILD_OUTPUT%\StorytellingBasic\app\config.js*     /E /Y
-xcopy %TEMPLATES_ROOT%\Viewer                             		%BUILD_OUTPUT%\Viewer                               /E /Y
+xcopy %TEMPLATES_ROOT%\Viewer                             	  	%BUILD_OUTPUT%\Viewer                               /E /Y
 xcopy %TEMPLATES_ROOT%\bv_build\src                             %BUILD_OUTPUT%\bv_build                             /E /Y
 
 
