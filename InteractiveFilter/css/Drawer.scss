@@ -155,12 +155,14 @@
   }
 
   input {
-      border-color: #555;
+      border-color: #ccc;
       border-style: solid;
       border-width: 1px;
       color: #333;
       padding: 1px;
       width: 150px;
+      padding:4px;
+      @include border-radius(4px);
   }
 
     .loader {

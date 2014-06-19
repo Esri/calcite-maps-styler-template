@@ -142,12 +142,17 @@ label {
   clear: both; }
 
 input {
-  border-color: #555;
+  border-color: #ccc;
   border-style: solid;
   border-width: 1px;
   color: #333;
   padding: 1px;
-  width: 150px; }
+  width: 150px;
+  padding: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px; }
 
 .loader {
   position: absolute;
@@ -161,7 +166,6 @@ input {
 
 .submitButton {
   border: none;
-  color: #FFFFFF;
   font-size: 100%;
   padding: 9px;
   cursor: pointer; }

@@ -6,6 +6,12 @@ $font-color-dark: #333;
 $font-color-light:#fff;
 $panel-width: 290px;
 
+@mixin border-radius($radius:5px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
 @mixin fontFace($family,$src,$weight: normal,$style: normal) {
     @font-face {
         font-family: $family;
