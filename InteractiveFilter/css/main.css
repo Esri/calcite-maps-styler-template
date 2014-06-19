@@ -174,7 +174,7 @@ input {
   width: 0; }
 
 .drawer-open .content-pane-left {
-  width: 340px;
+  width: 300px;
   overflow: auto;
   overflow-x: hidden;
   padding: 5px;

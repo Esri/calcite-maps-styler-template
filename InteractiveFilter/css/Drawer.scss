@@ -191,7 +191,7 @@
 }
 
 .drawer-open .content-pane-left {
-    width: 340px;
+    width: $drawer-width + 20;
     overflow: auto;
     overflow-x: hidden;
     padding:5px;
