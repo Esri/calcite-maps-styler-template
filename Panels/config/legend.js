@@ -7,7 +7,7 @@ define([], function() {
         //web map id value instead. The web map id is the id of the web map from ArcGIS Online that you
         //want to display in the application. 
         "appid": "",
-        "webmap": "c959f521c02f4f64abf4d39019c5ccd5", 
+        "webmap": "174966ecfd524979ac9a578d8ca404f2", 
         //Enter the url to the proxy if needed by the applcation. See the 'Using the proxy page' help topic for details
         //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
         "proxyurl": "",
