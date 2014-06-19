@@ -81,6 +81,7 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
                 }
 
                 registry.byId("cp_left").set("content", content);
+                this._updateTheme();
 
             }));
 
@@ -164,7 +165,7 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
                 //add an apply button to the layer filter group
                 var b = domConstruct.create("input", {
                     type: "button",
-                    className: "submitButton",
+                    className: "submitButton bg fc",
                     value: this.config.button_text || this.config.i18n.viewer.button_text
                 }, filterGroup, "last");
 
