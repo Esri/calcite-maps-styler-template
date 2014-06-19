@@ -146,7 +146,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit f00066582d93429a 2014-06-16 12:41:23 -0700"
+                "commit 723b7fe0fa994ac5 2014-06-19 14:23:05 -0700"
             ]
         }
     }, {
@@ -362,7 +362,7 @@
             "parentDiv": "contentFrame",
             "rootClass": "helpMessageBox",
             "horizOffset": -2,
-            "vertOffset": 2,
+            "vertOffset": [2, -2],
             "trigger": "error"
         }
     }, {

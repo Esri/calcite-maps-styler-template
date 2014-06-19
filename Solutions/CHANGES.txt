@@ -1,10 +1,15 @@
-change report #55 at 06/18/2014 11:40:33.83
+change report #56 at 06/19/2014 14:22:17.54
 -
 for git branch
 develop
 in repository local-government-online-apps
-140618090414061815231406180623
+140619084814061920171406191819
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M images/webmap.png
+M  apps2/FindEditFilter.json
+M  apps2/FindEditFilter_try_it.json
+M  apps2/Finder.json
+M  apps2/Finder_try_it.json
+M  apps2/GeneralMap.json
+M  apps2/ParcelViewer.json
