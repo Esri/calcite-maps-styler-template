@@ -507,8 +507,9 @@ define([
          this._changeColor(this.curPage, num);
          this.curPage = num;
          this._updatePage();
-         //this.snap = false;
-         this._animateScroll(startPos, endPos);
+         this.snap = false;
+         if (num != numActual)
+            this._animateScroll(startPos, endPos);
       },
       
       // animateScroll
@@ -523,7 +524,7 @@ define([
               document.documentElement.scrollTop = v;
           });
           on(anim, "End", function() {
-             setTimeout(lang.hitch(me, me._resetSnap), 100);
+             setTimeout(lang.hitch(me, me._resetSnap), 500);
              if (me.map)
                me.map.reposition();
           });
