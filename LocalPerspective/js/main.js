@@ -222,6 +222,10 @@ define([
       
        // Create UI
       _createUI : function() {
+         if (this.config.title != "")
+            dom.byId("panelText").innerHTML = this.config.title;
+         if (this.config.logo != "")
+            dom.byId("logo").src = this.config.logo;
          this.ui = new UI(this.config);
          this.ui.map = this.map;
          this.ui.startup();
@@ -229,12 +233,7 @@ define([
 
       // Update Theme
       _updateTheme : function() {
-         //TODO when support is added to the api update this code to set the popup sprite
-         //to the light or dark theme. If the config panel has white as the icons option
-         //use the light theme. If black use the dark. Light/dark define the color of the contents
-         //of the popup title bar (navigation, restore, min, max)
          query(".bg").style("backgroundColor", this.color.toString());
-         //query(".esriPopup .pointer").style("backgroundColor", this.color.toString());
          query(".esriPopup .titlePane").style("backgroundColor", this.color.toString());
       },
 
