@@ -313,10 +313,12 @@ html, body {
 }
 
 .simpleGeocoder .esriGeocoder input {
-    color: #FFF;
+    color: #FFF !important;
 }
 
-
+.simpleGeocoder .esriGeocoderResult:hover, .simpleGeocoder .esriGeocoderResultEven:focus, .simpleGeocoder .esriGeocoderResultOdd:focus {
+    @include transparent($black-color, 0.3);
+}
 
 .simpleGeocoder .esriGeocoder .esriGeocoderMenuArrow{
     background:none;
@@ -649,10 +651,6 @@ img{
     top:0px;
     width:100%;
     color: #ffffff;
-    font-family: "HelveticaNeue-UltraLight", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "Helvetica Neue", "Arial", sans-serif; 
-    font-weight:100; 
-    font-stretch:normal;
-    font-size: 28px;
     padding: 0px;
     display: block;
     overflow: visible;
@@ -673,6 +671,9 @@ img{
     color: #ffffff;
     display: block;
     border-bottom: 1px solid rgba(255,255,255,0.5);
+    font-family: "HelveticaNeue-UltraLight", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "Helvetica Neue", "Arial", sans-serif; 
+    font-weight:normal; 
+    font-size: 25px;
 }
 
 #panelLogo {

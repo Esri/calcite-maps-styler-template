@@ -211,7 +211,13 @@ input[type=checkbox]:checked.checkbox + .checkbox:before {
   zoom: 1; }
 
 .simpleGeocoder .esriGeocoder input {
-  color: #FFF; }
+  color: #FFF !important; }
+
+.simpleGeocoder .esriGeocoderResult:hover, .simpleGeocoder .esriGeocoderResultEven:focus, .simpleGeocoder .esriGeocoderResultOdd:focus {
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+  zoom: 1; }
 
 .simpleGeocoder .esriGeocoder .esriGeocoderMenuArrow {
   background: none; }
@@ -545,10 +551,6 @@ img {
   top: 0px;
   width: 100%;
   color: #ffffff;
-  font-family: "HelveticaNeue-UltraLight", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "Helvetica Neue", "Arial", sans-serif;
-  font-weight: 100;
-  font-stretch: normal;
-  font-size: 28px;
   padding: 0px;
   display: block;
   overflow: visible;
@@ -574,7 +576,10 @@ img {
   float: left;
   color: #ffffff;
   display: block;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  font-family: "HelveticaNeue-UltraLight", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "Helvetica Neue", "Arial", sans-serif;
+  font-weight: normal;
+  font-size: 25px; }
 
 #panelLogo {
   width: 50px;

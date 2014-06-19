@@ -1,10 +1,10 @@
 /*Create a geocoder widget
 Will display multiple  locators if organization has more than one locator defined
 Adds support for info window that allows users to find different search results */
-define(["dojo/_base/declare", "dojo/Deferred", "esri/dijit/Geocoder", "esri/geometry/Extent", "esri/geometry/Point", "esri/lang", "dojo/dom-construct", "dojo/dom", "dojo/dom-style", "dojo/on", "dijit/registry", "dojo/query", "dojo/_base/lang", "dojo/_base/array"
+define(["dojo/_base/declare", "dojo/Deferred", "esri/dijit/Geocoder", "esri/dijit/PopupTemplate", "esri/layers/FeatureLayer", "esri/geometry/Extent", "esri/geometry/Point", "esri/lang", "dojo/dom-construct", "dojo/dom", "dojo/dom-style", "dojo/on", "dijit/registry", "dojo/query", "dojo/_base/lang", "dojo/_base/array"
 
 ], function (
-declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyle, on, registry, query, lang, array
+declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLang, domConstruct, dom, domStyle, on, registry, query, lang, array
 
 ) {
     return declare(null, {
@@ -13,6 +13,8 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
         allResults: null,
         config: null,
         content: null,
+        geocoders: [],
+        geocodeFeatureLayers: {},
         constructor: function (args) {
             this.map = args.map;
             this.config = args.config;
@@ -34,7 +36,6 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
                 geocodeResults.results = geocodeResults.results.results;
             }
             if ((!geocodeResults || !geocodeResults.results || !geocodeResults.results.length)) {
-                //No results
                 console.log("No results found");
             } else if (geocodeResults) {
                 this.allResults = geocodeResults.results;
@@ -46,35 +47,112 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
             }
             this.allResults = null;
         },
-        showGeocodingResult: function (geocodeResult, pos) {
+        showGeocodingResult: function (result, pos) {
+            this.map.infoWindow.hide();
 
+            var bestView, anchorPoint;
+            var geocodeResult = result.result || result;
+            anchorPoint = geocodeResult.feature.geometry;
+            if (anchorPoint.type === "polygon") {
+                anchorPoint = anchorPoint.getCentroid();
+                bestView = geocodeResult.feature.geometry.getExtent().expand(1.1);
+            } else if (anchorPoint.type === "polyline") {
+                anchorPoint = anchorPoint.getPoint(0, 0);
+                bestView = geocodeResult.feature.geometry.getExtent().expand(1.1);
+            } else {
+                bestView = this.map.extent.centerAt(anchorPoint).expand(0.0625);
+            }
+
+
+            //Add feature search support 
             var featureSearch = false;
-            if (geocodeResult.target && geocodeResult.target.activeGeocoder) { //switch to type when Matt adds
-                var activeGeocoder = geocodeResult.target.activeGeocoder;
+            if (result.target && result.target.activeGeocoder) {
+                var activeGeocoder = result.target.activeGeocoder;
                 if (esriLang.isDefined(activeGeocoder.type)) {
                     if (activeGeocoder.type === "query") {
-                        featureSearch = true;
+                        //get the layer 
+                        if (activeGeocoder.layerId) {
+                            var layer = this.map.getLayer(activeGeocoder.layerId);
+                            if (activeGeocoder.subLayerId) {
+                                if (layer.infoTemplates && layer.infoTemplates[activeGeocoder.subLayerId]) {
+                                    geocodeResult.feature.infoTemplate = layer.infoTemplates[activeGeocoder.subLayerId].infoTemplate;
+                                    featureSearch = true;
+                                    this._getPopupFeatureLayer(layer, activeGeocoder.subLayerId, geocodeResult.feature.infoTemplate).then(lang.hitch(this, function (layerResult) {
+                                        //Info template defined so create a feature layer and display the popup
+                                        geocodeResult.feature._layer = layerResult;
+                                        this.map.infoWindow.setFeatures([geocodeResult.feature]);
+                                        this.map.infoWindow.show(anchorPoint);
+                                        this.map.setExtent(bestView);
+                                    }));
+                                } else {
+                                    //No info template defined so just show popup with info"
+                                    this.map.infoWindow.setTitle(activeGeocoder.name);
+                                    this.map.infoWindow.setContent(geocodeResult.name);
+                                    this.map.infoWindow.show(anchorPoint);
+                                    this.map.setExtent(bestView);
+                                    featureSearch = true;
+                                }
+                            } else {
+                                //Feature layer so get the popup info, associate it with the result, then display 
+                                if (layer.infoTemplate) {
+                                    geocodeResult.feature.infoTemplate = layer.infoTemplate;
+                                    geocodeResult.feature._layer = layer;
+                                    this.map.infoWindow.setFeatures([geocodeResult.feature]);
+                                    this.map.infoWindow.show(anchorPoint);
+                                    this.map.setExtent(bestView);
+                                    featureSearch = true;
+                                }
+                            }
+
+                        }
                     }
                 }
             }
+
+            if (featureSearch) {
+                return;
+            }
+
             if (!esriLang.isDefined(pos)) {
                 pos = 0;
             }
+            //Locator based geocode results handled here 
+            this.setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, bestView, geocodeResult, pos);
 
-            if (geocodeResult.result) {
-                geocodeResult = geocodeResult.result;
+        },
+        _getPopupFeatureLayer: function (mapLayer, subLayerId, popupInfo) {
+            var deferred = new Deferred();
+            if (this.geocodeFeatureLayers[mapLayer.id] && this.geocodeFeatureLayers[mapLayer.id][subLayerId]) {
+                //already have it 
+                deferred.resolve(this.geocodeFeatureLayers[mapLayer.id][subLayerId]);
             }
-            if (featureSearch) {
-                console.log(geocodeResult);
-                console.log(geocodeResult.feature.getLayer());
-
-
-            } else if (geocodeResult.extent) {
-                this.setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, geocodeResult.extent, geocodeResult, pos);
-            } else { //best view 
-                var bestView = this.map.extent.centerAt(geocodeResult.feature.geometry).expand(0.0625);
-                this.setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, bestView, geocodeResult, pos);
+            var url = mapLayer.url + "/" + subLayerId;
+            if (mapLayer.dynamicLayerInfos) {
+                array.some(mapLayer.dynamicLayerInfos, lang.hitch(this, function (dynLayerInfo) {
+                    if (dynLayerInfo.id === subLayerId) { //don't have this info but leaving for now
+                        url = mapLayer.url + "/" + dynLayerInfo.source.mapLayerId;
+                        return true;
+                    }
+                }));
             }
+            var params = {
+                mode: FeatureLayer.MODE_SELECTION,
+                outFields: ["*"],
+                infoTemplate: popupInfo && new PopupTemplate(popupInfo)
+            };
+            var layer = new FeatureLayer(url, params);
+
+            //save the layer for later 
+            this.geocodeFeatureLayers[mapLayer.id] = this.geocodeFeatureLayers[mapLayer.id] || {};
+            this.geocodeFeatureLayers[mapLayer.id][subLayerId] = layer;
+
+
+            deferred.resolve(layer);
+
+
+
+
+            return deferred.promise;
         },
         setupInfoWindowAndZoom: function (content, geocodeLocation, newExtent, geocodeResult, pos) {
             this.map.infoWindow.clearFeatures();
@@ -206,12 +284,16 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
             var options = {
                 map: this.map,
                 autoNavigate: false,
+                minCharacters: 0,
+                maxLocations: 5,
+                searchDelay: 100,
                 theme: "simpleGeocoder",
                 autoComplete: hasEsri
             };
 
 
             //If there is a valid search id and field defined add the feature layer to the geocoder array
+            var searchLayers = [];
             if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
                 var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
 
@@ -239,32 +321,34 @@ declare, Deferred, Geocoder, Extent, Point, esriLang, domConstruct, dom, domStyl
 
                         });
                     }
-                    geocoders.push({
+                    searchLayers.push({
                         "name": name,
                         "url": url,
                         "field": field,
                         "exactMatch": (searchLayer.field.exactMatch || false),
                         "placeholder": searchOptions.hintText,
                         "outFields": "*",
-                        //field
-                        "type": "query"
+                        "type": "query",
+                        "layerId": searchLayer.id,
+                        "subLayerId": parseInt(searchLayer.subLayer) || null
                     });
                 }));
 
             }
 
-            if (hasEsri && esriIdx === 0) {
-                options.minCharacters = 0;
-                options.maxLocations = 5;
-                options.searchDelay = 100;
-                options.arcgisGeocoder = geocoders.splice(0, 1)[0];
-                if (geocoders.length > 0) {
-                    options.geocoders = geocoders;
-                }
-            } else {
+
+            if (hasEsri && esriIdx === 0) { // Esri geocoder is primary
                 options.arcgisGeocoder = false;
-                options.geocoders = geocoders;
+                if (geocoders.length > 0) {
+                    options.geocoders = searchLayers.length ? searchLayers.concat(geocoders) : geocoders;
+                } else if (searchLayers.length > 0) {
+                    options.geocoders = searchLayers;
+                }
+            } else { // Esri geocoder is not primary
+                options.arcgisGeocoder = false;
+                options.geocoders = searchLayers.length ? searchLayers.concat(geocoders) : geocoders;
             }
+
 
             return options;
         }
