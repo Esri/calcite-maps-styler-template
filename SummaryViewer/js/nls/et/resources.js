@@ -4,5 +4,4 @@
             error: "Kaarti ei saa luua"
         }
     })
-
 );

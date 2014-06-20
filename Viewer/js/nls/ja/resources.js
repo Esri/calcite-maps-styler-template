@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "マップを作成できません"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": '横 (画像)',
 			      "label4": '縦 (画像)'
 			    },
-			    "legend": "須_Add legend to output_鷗"
+			    "legend": "凡例を出力に追加"
 			},
 			"share": {
 				"extent": "現在のマップ範囲を使用",
@@ -42,8 +43,8 @@ define(({
         	"legend": "凡例",
         	"bookmarks": "ブックマーク",
         	"layers": "レイヤ",
-        	"basemap": "須_Basemap gallery_鷗",
-        	"overview": "須_Overview map_鷗",
+        	"basemap": "ベースマップ ギャラリー",
+        	"overview": "概観図",
         	"measure": "計測",
         	"edit": "編集",
         	"time": "時間",
@@ -51,4 +52,6 @@ define(({
         	"details": "詳細",
         	"share": "共有"
         }
-}));
+    })
+
+);

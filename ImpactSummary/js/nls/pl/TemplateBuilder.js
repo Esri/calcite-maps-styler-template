@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Przejdź do trybu kreatora",
@@ -46,13 +46,13 @@
                 "nextButtonText": "Dalej",
                 "prevButtonText": "Wstecz",
                 "enterLabelText": "Wprowadź etykietę",
-                "SelectedFeatureText": "ł_Selected Feature_ą",
+                "SelectedFeatureText": "Wybrany obiekt",
                 "layerHelpTextMessage": "W tej aplikacji wymagana jest warstwa z polami numerycznymi.",
                 "alertMessage": {
                     "resetVariableMessage": "Czy na pewno chcesz zresetować zmienną?",
                     "emptyAppTitleMessage": "Pole Tytuł aplikacji nie może być puste.",
                     "emptyDescriptionMessage": "Pole Opis nie może być puste.",
-                    "maxVariableSelection": "Nie można wybrać ponad 25 zmiennych podrzędnych.",
+                    "maxVariableSelection": "Nie można wybrać więcej niż 25 zmiennych podrzędnych.",
                     "signInFail" : "Logowanie nie powiodło się",
                     "itemUpdateMessage": "Element został zaktualizowany",
                     "unsavedChangesMessage": "Niezapisane zmiany",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

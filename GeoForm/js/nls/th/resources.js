@@ -4,7 +4,7 @@
             error: "ก้_Unable to create map_ษฺ"
         },
         onlineStatus: {
-            online: "ก้_A connection to the server can be made._ษฺ",
+            online: "ก้_You are currently online._ษฺ",
             offline: "ก้_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._ษฺ",
             reconnecting: "ก้_Reconnecting&hellip;_ษฺ"
         },
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

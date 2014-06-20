@@ -6,7 +6,7 @@
 				sideTitle: "Postranní panel",
 				sideDescr: "Rozvržení pro příběh s velkým množstvím textu, které umožňuje snadno zkombinovat fotografie, videa a mapy do jasně zaměřeného sdělení.",
 				floatTitle: "Plovoucí panel",
-				floatDescr: "Ř_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._ů"
+				floatDescr: "Rozvržení, které soustředí pozornost na vaše mapy a zároveň díky průhlednému krátkému textovému panelu pomáhá vyprávět příběh."
 			},
 			common: {
 				lblStatus1: "Publikované",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "Sem přidejte text, odkazy a malé obrázky.",
 				editorActionsTitle: "Akce hlavní úrovně",
-				editorActionsHelpDescr: "Pomocí těchto ovládacích prvků můžete vytvářet odkazy, které změní hlavní úroveň. Když například čtenář klikne na odkaz, můžete přiblížit mapu na konkrétní umístění, zobrazit jinou webovou mapu nebo obrázek."
+				editorActionsHelpDescr: "Ř_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ů"
 			},
 			organizePopup: {
 				title: "Organizovat",
-				lblHeader: "Ř_Drag and drop sections to organize your content._ů",
+				lblHeader: "Zorganizujte svůj obsah kliknutím a přetažením částí.",
 				lblColTitle: "Nadpis",
 				lblColPubDate: "Datum zveřejnění",
 				lblColStatus: "Stav",
 				checkDisplayReverse: "Zobrazit části v opačném pořadí",
-				btnApplyWarning: "Potvrdit potlačení %NB% částí",
+				btnApplyWarning: "Ř_Confirm deletion of %NB% section(s)_ů",
 				deleteTooltip: "Smazat",
 				firstSectionExplain: "(Domovskou část nelze přemístit)"
 			},
@@ -64,12 +64,12 @@
 				lblMore: "Chcete více?",
 				lblLink: "Navštivte webové stránky map s příběhem.",
 				content1Div1: "Při vytváření příběhu do něj můžete integrovat množství stylů. <strong>%LAYOUT_TITLE%</strong> většinou obsahuje text, obrázky a videa, zatímco mapy jsou zpravidla umístěny na <strong>hlavní úrovni</strong>. %TPL_NAME% vám nicméně umožňuje vkládat obrázky, grafy a videa i na hlavní úroveň.",
-				content1Div2: "Ř_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._ů",
+				content1Div2: "Přidáváním částí si můžete příběh skutečně přizpůsobit podle svých představ. Zatímco čtenáři procházejí text %LAYOUT_TITLE%, mapa na hlavní úrovni se může posouvat nebo přibližovat na klíčové body nebo se mohou automaticky aktivovat nové mapy a obrázky zdůrazňující vaše sdělení.",
 				content2Div1: "Zde můžete upravit vzhled %TPL_NAME%. Barevná schémata, rozvržení a šířky je možno nastavovat zde.",
-				content2Div2: "Ř_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._ů",
-				content3Div1: "Váš obsah je rozdělen do částí. Můžete jich mít libovolný počet (berte je jako malé kapitoly). Je důležité, jak kapitoly plynou za sebou, a proto je v části Organizovat můžete libovolně přeřazovat a odstraňovat.",
+				content2Div2: "Můžete také přidat odkazy pro sdílení na Facebooku, Twitteru a Bitly, aby čtenáři mohli %TPL_NAME% snadno šířit mezi ostatní.",
+				content3Div1: "Ř_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ů",
 				content4Div1: "Našli jste chybu nebo chcete změnit svůj materiál? Žádný problém. Hledejte v aplikaci ikonu úprav, která vám umožní změnit obsah. Funkce úprav použijete při vytváření %TPL_NAME% mnohokrát!",
-				content5Div1: "Ř_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._ů"
+				content5Div1: "%TPL_NAME% se ukládá do vašeho účtu %PORTAL%. Ve výchozím nastavení se ukládá soukromě, můžete se ale rozhodnout sdílet jej s organizací nebo s veřejností. Sdělíme vám i zkrácenou adresu URL umožňující snadnější sdílení."
 			},
 			landing: {
 				lblAdd: "Přidat do domovské části",

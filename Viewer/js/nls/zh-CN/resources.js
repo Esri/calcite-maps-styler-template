@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "无法创建地图"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": '横向(图像)',
 			      "label4": '纵向(图像)'
 			    },
-			    "legend": "试_Add legend to output_验"
+			    "legend": "向输出添加图例"
 			},
 			"share": {
 				"extent": "使用当前地图范围",
@@ -42,8 +43,8 @@ define(({
         	"legend": "图例",
         	"bookmarks": "书签",
         	"layers": "图层",
-        	"basemap": "试_Basemap gallery_验",
-        	"overview": "试_Overview map_验",
+        	"basemap": "底图库",
+        	"overview": "鹰眼图",
         	"measure": "测量",
         	"edit": "编辑",
         	"time": "时间",
@@ -51,4 +52,6 @@ define(({
         	"details": "详细信息",
         	"share": "共享"
         }
-}));
+    })
+
+);

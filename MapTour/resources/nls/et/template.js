@@ -410,7 +410,7 @@
 					div1: "Kaardi tuuri mall on loodud geograafilise teabe esitamiseks kujul, kus siduvaks elemendiks on jutustatavale loole fotod või muu meedia sisu.",
 					div2: "Mall loob atraktiivse ja lihtsasti kasutatava veebirakenduse, mille abil saate väikesel hulgal paiku numbrilises järjestuses kaardil esitada. Mall on välja töötatud mistahes tüüpi veebibrauseris või nutiseadmes kasutamiseks. <br /><br />Siin on näide rakendusest, mille sarnast saate ka ise luua:",
 					div4: "<a href='http://storymaps.esri.com/stories/maptour-palmsprings' target='_blank'>Palm Springs kaardituur</a>.",
-					div42: "Š_To see examples of map tours that other users are creating, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>visit the gallery</a> on the <a href='http://storymaps.arcgis.com/' target='_blank'>Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ä",
+					div42: "Kui soovite vaadata näiteid teiste kasutajate loodavatest kaardituuridest, külastage <a href='http://storymaps.arcgis.com/' target='_blank'>kaardilugude veebisaidil</a> asuvat <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>galeriid</a>. Samuti saate meid jälgida Twitteri kanalis <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div5: "Ootame tagasisidet!  Kui teil on küsimusi, soovite küsida uusi võimalusi või arvate, et olete leidnud vea, siis palun külastage meid <a href='http://links.esri.com/storymaps/forum' target='_blank'>Kaardilugide kasutajate foorumis</a>."
 				},
 				tab2: {
@@ -418,9 +418,9 @@
 					div1: "Kaardi tuuri loomisel tuleb eelkõige silmas pidada kohta, kuhu pildid salvestatakse. Kaardi tuuri loomisel saab kasutada pilte, mis asuvad peamistes fotopankades, mistahes veebiserveris või objektiteenuste manustena.",
 					div1a: "Vaata selle vahelehe viimast sektsiooni piltide ja videote toetatud formaatide osas.",
 					div2: "Interaktiivne koostaja käib tuuri piltide haldamisega seoses välja kaks valikut:",
-					div3: "Š_<ul><li>You can use <b>photos that are already online</b>, such as images stored in a photo sharing site like Flickr, or images stored on your own website. These images will be referenced in your Map Tour via their URLs.</li><li>You can also <b>upload photos from your computer</b> directly into your Map Tour. This upload option requires that you have an ArcGIS for Organizations account and that you have Publisher or Administrator privileges, because a hosted feature service is automatically created for you in which your photos are stored as attachments.</li></ul>_ä",
+					div3: "<ul><li>Saate kasutada <b>veebis olevaid fotosid</b> (nt fotojagamissaidil Flickr või teie enda veebilehel talletatavaid pilte). Nendele piltidele viidatakse teie kaardituuril URL-ide kaudu.</li><li>Samuti saate <b>oma arvutist pilte üles laadida</b>. Selle üleslaadimissuvandi kasutamiseks peab teil olema teenuse ArcGIS for Organizations konto ning avaldaja- või administraatoriõigused, kuna teie jaoks luuakse automaatselt majutatav objektiteenus, kus teie fotosid talletatakse manustena.</li></ul>",
 					div4: "Peamised kasutusjuhud on:",
-					div4b: "Š_<b>Your photos are not hosted</b> yet and you have an ArcGIS for Organizations account: Using a hosted feature service is your best choice. Like public photo sharing services, we will optimize your pictures to create fast-loading images and you will have access to all administration and data management capabilities of the ArcGIS platform._ä",
+					div4b: "<b>Teie fotosid ei majutata</b> veel ja teil on teenuse ArcGIS for Organizations konto. Kõige mõistlikum oleks kasutada majutatavat objektiteenust. Sarnaselt avalike fotojagamisteenustega optimeeritakse ka siin pildid selliselt, et neid saab kiiresti üles laadida, ning teil on juurdepääs ArcGIS-i platvormi administraatori- ja andmehaldusfunktsioonidele.",
 					div5: "<b>Te ei ole organisatsiooni liige</b>: esmalt pead pildid laadima fotode jagamise keskkonda või enda veebiserverisse. Seejärel aitab Teid tuuri looja, et saaksite kasutada neid pilte, mida jätkuvalt algses asukohas hoitakse.",
 					div6: "<b>Otsid olemasoleva objektiteenuse korduvkasutust,</b> mis hoiaks pilte manustena või viitaks välistele asukohtadele: vaata täpsustavat lõiku allpool.",
 					div7: "<b>Oled varasema versiooni kaardi tuuri malli kasutaja</b> ja seal on juba CSV, mis viitab sinu piltidele ja pisipiltidele: sul on võimalus importida ja täiustada oma andmeid. Tuuri looja toetab vaid CSV faili, mis sisaldab pikkuse ja laiuse veergu, aadressipõhist CSV faili saab samuti kasutada sinu veebikaardi kaudu (vt lõiku allpool).",
@@ -525,7 +525,7 @@
 				shareA2div1: "Salvestage ja taaskasutage järgnevat linki %LINK1% või kasutage <a href='%LINK2%' target='_blank'>rakenduse sisu lehte</a>.",
 				shareA2div2: "Rakenduse omanikuna, ArcGIS.com sisselogituna, sisaldab rakendus nuppu interaktiivse looja avamiseks.",				
 				shareQ3: "Kus on andmed majutatud?",
-				shareA3: "Š_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. Flickr, Picasa, and Facebook images and YouTube videos remain referenced at their respective sites and aren't duplicated in ArcGIS Online._ä",
+				shareA3: "Tuuri konfiguratsioon on salvestatud <a href='%LINK1%' target='_blank'>selle veebikaardi sisus</a> ja <a href='%LINK2%' target='_blank'>selle veebirakenduse sisus</a>. Flickri, Picasa ja Facebooki piltidele ning YouTube'i videotele viidatakse endisel nende vastavatel saitidel ja neid ei kopeerita ArcGIS Online\'i keskkonda.",
 				shareWarning: "%WITH% jagamine on keelatud, kuna te pole <a href='%LINK%' target='_blank'>veebikaardi</a> omanik.",
 				shareWarningWith1: "Avalikult",
 				shareWarningWith2: "Avalikult ja organisatsiooniga"

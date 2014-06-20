@@ -1,19 +1,20 @@
 ﻿define(
-    ({
+     ({
         builder: {
-            invalidWebmapSelectionAlert: "כן_Selected webmap does not contain any feature server_ש",
+            invalidWebmapSelectionAlert: "כן_The selected webmap does not contain a valid layer to use. Please add an editable FeatureLayer into your webmap to continue._ש",
+            selectFieldsText:"כן_Select Form Fields_ש",
             selectThemeText: "כן_Select Form Theme_ש",
             fieldLabelPlaceHolder: "כן_Label this field_ש",
             fieldDescPlaceHolder: "כן_Describe this field_ש",
-            webmapText: "כן_Webmap_ש",
-            layerText: "שכבה",
-            detailsText: "פרטים",
-            fieldsText: "שדות",
-            styleText: "כן_Style_ש",
-            previewText: "תצוגה מקדימה",
-            publishText: "פרסם",
+            webmapText: "כן_1. Webmap_ש",
+            layerText: "כן_2. Layer_ש",
+            detailsText: "כן_3. Details_ש",
+            fieldsText: "כן_4. Fields_ש",
+            styleText: "כן_5. Style_ש",
+            previewText: "כן_6. Preview_ש",
+            publishText: "כן_7. Publish_ש",
             titleText: "כן_GeoForm Builder_ש",
-            descriptionText: "כן_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._ש",
+            descriptionText: "כן_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a mapâ€™s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._ש",
             btnPreviousText: "קודם",
             btnNextText:"הבא",
             webmapTabTitleText: "כן_Choose a Webmap_ש",
@@ -25,7 +26,6 @@
             detailTitleLabelText: "כותרת",
             detailLogoLabelText: "כן_Logo Image_ש",
             detailDescriptionLabelText: "תיאור",
-            fieldTabDisplayHeaderText: "תצוגה",
             fieldTabFieldHeaderText: "שדה",
             fieldTabLabelHeaderText: "תווית",
             fieldTabTypeHeaderText: "סוג",
@@ -33,25 +33,20 @@
             previewApplicationText: "כן_Preview Application_ש",
             saveApplicationText: "כן_Save Application_ש",
             saveText: "כן_Save_ש",
-
-            //Local string for user mode
-            defaultTitleText: "כן_Default Title_ש",
-            defaultDescriptionText: "כן_Default Description_ש",
-            geoFormGeneralTabText: "כללי",
-            locationInformationText: "כן_Location Info_ש",
-            myLocationText: "המיקום שלי",
-            addressText: "כתובת",
-            cooridnatesText: "כן_Coordinates_ש",
-            locationTabText: "מיקום",
-            enterCoordinatesPlaceholder: "כן_Enter Coordinates_ש",
-            submitButtonText: "כן_Submit_ש",
-            clearButtonText: "נקה",
-            fieldvalidationMessageAlertText: "כן_Please enter a valid number_ש",
-            formValidationMessageAlertText: "כן_Please verify the form for errors and resubmit the form_ש",
-            latlongValidationMessageAlert: "כן_Please select x and y coordinates_ש",
-            emptylatitudeAlertMessage:"כן_Please enter Latitude_ש",
-            emptylongitudeAlertMessage:"כן_Please enter Longitude_ש"
+            toggleNavigationText: "כן_Toggle navigation_ש",
+            formPlaceholderText: "כן_My Form_ש",
+            imageLogoPlaceholderText: "כן_http://www.mysite.com/myimage.png_ש",
+            shareBuilderInProgressTitleMessage: "כן_Publishing GeoForm_ש",
+            shareBuilderProgressBarMessage:"כן_Please Wait..._ש",
+            shareBuilderTitleMessage: "כן_Your GeoForm has been updated & published!_ש",
+            shareBuilderTextMessage: "כן_You can start collecting information by sharing with others_ש",
+            shareDialogFormText: "כן_Form Link_ש",
+            geoformTitleText: "כן_Geo Form_ש",
+            layerTabText: "כן_This is the layer that the GeoForm will be built from. The layer must be a feature service that is enabled for editing with sharing permissions appropriate for your audience._ש",
+            detailsTabText:"כן_Use the Form Detail boxes below to customize the Title, add a custom logo, and provide a short description for your GeoForm audience._ש",
+            fieldsTabText:"כן_Here you can select which fields will be visible to your GeoForm audience, edit the Labels they will see, and add a short Description to help with data entry._ש",
+            styleTabText: "כן_Style your GeoForm using the themes below based on your preference._ש",
+            publishTabText: "כן_If you are finished customizing your GeoForm, save the application and begin sharing with your audience. You can always return to this builder and continue customizing it based on feedback._ש"
         }
     })
-    
 );

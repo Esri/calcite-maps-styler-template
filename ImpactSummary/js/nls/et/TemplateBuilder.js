@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Sisene koostajasse",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Järgmine",
                 "prevButtonText": "Eelmine",
                 "enterLabelText": "Sisesta silt",
-                "SelectedFeatureText": "Š_Selected Feature_ä",
+                "SelectedFeatureText": "Valitud objekt",
                 "layerHelpTextMessage": "See rakendus nõuab numbriväljadega kihti",
                 "alertMessage": {
                     "resetVariableMessage": "Olete kindel, et soovite muutujat lähtestada ?",
@@ -58,10 +58,11 @@
                     "unsavedChangesMessage": "Salvestamata muudatused",
                     "failMessage": "Objekti ei õnnestunud edukalt uuendada",
                     "saveChangesAlert": "Kas soovite muudatused salvestada ?",
-                    "variableLabelValidation": "Muutuja silt ei saa olla TÜHI",
+                    "variableLabelValidation": "Muutuja märgis ei saa olla TÜHI",
                     "subVariableLabelValidation": "Alammuutuja silt ei saa olla TÜHI"
                     }
             }
         }
     })
-});
+
+);

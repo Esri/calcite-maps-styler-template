@@ -14,9 +14,10 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
-            "error": "ä_Unable to create map_Ü"
+            "error": "Karte kann nicht erstellt werden"
         },
         "tools":{
 	    	"print": {
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Querformat (Bild)',
 			      "label4": 'Hochformat (Bild)'
 			    },
-			    "legend": "ä_Add legend to output_Ü"
+			    "legend": "Legende zu Ausgabe hinzufügen"
 			},
 			"share": {
 				"extent": "Aktuelle Kartenausdehnung verwenden",
@@ -42,8 +43,8 @@ define(({
         	"legend": "Legende",
         	"bookmarks": "Lesezeichen",
         	"layers": "Layer",
-        	"basemap": "ä_Basemap gallery_Ü",
-        	"overview": "ä_Overview map_Ü",
+        	"basemap": "Grundkarten-Galerie",
+        	"overview": "Übersichtskarte",
         	"measure": "Messen",
         	"edit": "Bearbeiten",
         	"time": "Zeit",
@@ -51,4 +52,6 @@ define(({
         	"details": "Details",
         	"share": "Freigeben"
         }
-}));
+    })
+
+);

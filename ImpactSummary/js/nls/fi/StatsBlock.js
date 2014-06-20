@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "StatsBlock": {
             "close": "sulje",
             "next": "Seuraava",
@@ -7,4 +7,5 @@
             "source":"Aineistolähde"
         }
     })
-});
+    
+);

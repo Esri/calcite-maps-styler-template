@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "No se puede crear el mapa"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Horizontal (Imagen)',
 			      "label4": 'Vertical (Imagen)'
 			    },
-			    "legend": "á_Add legend to output_Ó"
+			    "legend": "Agregar leyenda a la salida"
 			},
 			"share": {
 				"extent": "Usar la extensión del mapa actual",
@@ -42,8 +43,8 @@ define(({
         	"legend": "Leyenda",
         	"bookmarks": "Marcadores",
         	"layers": "Capas",
-        	"basemap": "á_Basemap gallery_Ó",
-        	"overview": "á_Overview map_Ó",
+        	"basemap": "Galería de mapas base",
+        	"overview": "Mapa de vista general",
         	"measure": "Medir",
         	"edit": "Editar",
         	"time": "Hora",
@@ -51,4 +52,6 @@ define(({
         	"details": "Detalles",
         	"share": "Compartir"
         }
-}));
+    })
+
+);

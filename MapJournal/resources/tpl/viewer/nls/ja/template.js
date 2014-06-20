@@ -60,8 +60,8 @@
 				copy: "コピー",
 				copied: "コピー",
 				open: "開く",
-				embed: "須_Embed in website_鷗",
-				embedExplain: "須_Use the following HTML code to embed the Journal in a website._鷗",
+				embed: "Web サイトに埋め込む",
+				embedExplain: "ジャーナルを Web サイトに埋め込むには、次の HTML コードを使用します。",
 				size: "サイズ (幅/高さ):"
 			}
         }

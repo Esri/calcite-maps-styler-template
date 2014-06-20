@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "إدخال المُنشئ",
@@ -46,7 +46,7 @@
                 "nextButtonText": "التالي",
                 "prevButtonText": "السابق",
                 "enterLabelText": "أدخل لافتة التسمية",
-                "SelectedFeatureText": "بيت_Selected Feature_لاحقة",
+                "SelectedFeatureText": "المعالم المحددة",
                 "layerHelpTextMessage": "يتطلب هذا التطبيق طبقة بها حقول عددية",
                 "alertMessage": {
                     "resetVariableMessage": "هل أنت متأكد من رغبتك في إعادة تعيين المتغير؟",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

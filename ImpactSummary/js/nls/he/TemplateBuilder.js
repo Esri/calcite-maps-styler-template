@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "הכנס לבונה",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

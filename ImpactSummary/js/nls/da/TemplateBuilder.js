@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Start Builder",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Næste",
                 "prevButtonText": "Forrige",
                 "enterLabelText": "Indtast etiket",
-                "SelectedFeatureText": "ø_Selected Feature_å",
+                "SelectedFeatureText": "Valgt objekt",
                 "layerHelpTextMessage": "Denne applikation kræver et lag med numeriske felter",
                 "alertMessage": {
                     "resetVariableMessage": "Er du sikker på, at du vil nulstille variabel?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

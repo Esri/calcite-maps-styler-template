@@ -60,8 +60,8 @@
 				copy: "Kopēt",
 				copied: "Kopēts",
 				open: "Atvērt",
-				embed: "ķ_Embed in website_ū",
-				embedExplain: "ķ_Use the following HTML code to embed the Journal in a website._ū",
+				embed: "Iegult tīmekļa vietnē",
+				embedExplain: "Izmantojiet šo HTML kodu, lai iegultu žurnālu tīmekļa vietnē.",
 				size: "Izmēri (platums/augstums):"
 			}
         }

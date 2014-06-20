@@ -4,5 +4,4 @@
             error: "Kan ikke oprette kort"
         }
     })
-
 );

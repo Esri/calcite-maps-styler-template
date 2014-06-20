@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "ไม่สามารถสร้างแผนที่"
         },
@@ -28,4 +29,6 @@ define(({
            fri: "ก้_FRI_ษฺ",
            sat: "ก้_SAT_ษฺ"
         }
-}));
+    })
+ 
+);

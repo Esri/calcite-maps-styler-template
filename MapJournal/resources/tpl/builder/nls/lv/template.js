@@ -6,7 +6,7 @@
 				sideTitle: "Sānu panelis",
 				sideDescr: "Izkārtojums ar tekstu bagātinātam stāstam, kurā skaidrā un precīzā ziņojumā ir profesionāli kombinēti fotoattēli, video un kartes.",
 				floatTitle: "Peldošais panelis",
-				floatDescr: "ķ_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._ū"
+				floatDescr: "Izkārtojums, kas pievērš uzmanību jūsu kartogrāfijai, vienlaikus stāsta pavēstīšanai piedāvājot caurspīdīgu īsa formāta teksta paneli."
 			},
 			common: {
 				lblStatus1: "Publicēts",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "Šeit pievienojiet tekstu, saites un maza izmēra grafikas.",
 				editorActionsTitle: "Galvenā posma darbības",
-				editorActionsHelpDescr: "Izmantojiet šīs vadīklas, lai izveidotu saites, kas tiks mainītas galvenajā posmā. Piemēram, kad lietotājs noklikšķinās uz saites, iespējams, vēlēsities mērogmainīt karti līdz konkrētam izvietojumam, parādīt citu web karti vai attēlu."
+				editorActionsHelpDescr: "ķ_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ū"
 			},
 			organizePopup: {
 				title: "Organizēšana",
-				lblHeader: "ķ_Drag and drop sections to organize your content._ū",
+				lblHeader: "Velciet un nometiet stāstījuma sadaļas, lai organizētu saturu.",
 				lblColTitle: "Virsraksts",
 				lblColPubDate: "Publicēšanas datums",
 				lblColStatus: "Statuss",
 				checkDisplayReverse: "Parādīt sadaļas apgrieztā secībā",
-				btnApplyWarning: "Apstipriniet %NB% sadaļu apspiešanu",
+				btnApplyWarning: "ķ_Confirm deletion of %NB% section(s)_ū",
 				deleteTooltip: "Dzēst",
 				firstSectionExplain: "(Sākuma sadaļu nevar pārvietot)"
 			},
@@ -60,16 +60,16 @@
 				lblSettings: "Iestatījumi",
 				lblOrga: "Organizēt saturu",
 				lblEdit: "Rediģējumi",
-				lblPublish: "ķ_Share_ū",
+				lblPublish: "Koplietošana",
 				lblMore: "Vai vēlaties uzzināt vairāk?",
 				lblLink: "Apmeklējiet Story Maps web vietni.",
 				content1Div1: "Veidojot stāstījumu, varat integrēt dažādus stilus. <strong>%LAYOUT_TITLE%</strong> parasti ir ietverts teksts, attēli un video, bet kartes parasti ir izvietotas <strong>galvenajā posmā</strong>. Tomēr %TPL_NAME% ļauj jums rādīt attēlus, diagrammas un video arī galvenajā posmā.",
-				content1Div2: "ķ_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._ū",
+				content1Div2: "Sadaļu pievienošana ļauj precīzi pielāgot stāstījuma iespējas. Kad lasītāji ritina jūsu tekstu %LAYOUT_TITLE%, karte galvenajā posmā var panoramēt vai tālummainīt līdz galvenajiem punktiem, vai jaunas kartes un attēlus var pārslēgt automātiski, lai atbalstītu jūsu ziņojumu.",
 				content2Div1: "Šeit varat pielāgot sava %TPL_NAME% izskatu. Šeit tiek uzlabotas visas krāsu shēmas, izkārtojumi un platumi.",
-				content2Div2: "ķ_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._ū",
-				content3Div1: "Jūsu izveidotais saturs ir sakārtots sadaļās. Varat izveidot tik sadaļu, cik vēlaties (iedomājieties, ka tās ir nelielas nodaļas). Šo nodaļu plūsma ir svarīga, tāpēc, izmantojot kārtošanas funkciju, sadaļas varat pēc vajadzības pārkārtot vai dzēst.",
+				content2Div2: "Koplietošanas saites varat arī pievienot vietnēs Facebook, Twitter un Bitly, lai lasītāji varētu viegli pavēstīt par jūsu %TPL_NAME% citiem lietotājiem.",
+				content3Div1: "ķ_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ū",
 				content4Div1: "Atradāt kļūdu vai vēlaties mainīt savus materiālus? Tas ir viegli paveicams! Lai saturā veiktu izmaiņas, aplikācijā atrodiet rediģēšanas ikonu. Izstrādājot %TPL_NAME%, rediģēšanas funkciju nāksies bieži izmantot.",
-				content5Div1: "ķ_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._ū"
+				content5Div1: "Jūsu %TPL_NAME% ir saglabāts jūsu portāla %PORTAL% kontā un ir konfidenciāls pēc noklusējuma. Varat izvēlēties to kopīgot ar savu organizāciju vai padarīt pieejamu visiem lietotājiem. Mēs pat nodrošināsim jums saīsinātu vietrādi URL, lai koplietošana būtu vienkārša."
 			},
 			landing: {
 				lblAdd: "Pievienot sākuma sadaļu",

@@ -14,9 +14,10 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
-            "error": "Å_Unable to create map_ö"
+            "error": "Det gick inte att skapa kartan"
         },
         "tools":{
 	    	"print": {
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Liggande (bild)',
 			      "label4": 'Stående (bild)'
 			    },
-			    "legend": "Å_Add legend to output_ö"
+			    "legend": "Lägg till teckenförklaring i utdata"
 			},
 			"share": {
 				"extent": "Använd aktuell kartutbredning",
@@ -42,8 +43,8 @@ define(({
         	"legend": "Teckenförklaring",
         	"bookmarks": "Bokmärken",
         	"layers": "Lager",
-        	"basemap": "Å_Basemap gallery_ö",
-        	"overview": "Å_Overview map_ö",
+        	"basemap": "Galleri för baskarta",
+        	"overview": "Översiktskarta",
         	"measure": "Mät",
         	"edit": "Redigera",
         	"time": "Tid",
@@ -51,4 +52,6 @@ define(({
         	"details": "Information",
         	"share": "Dela"
         }
-}));
+    })
+
+);

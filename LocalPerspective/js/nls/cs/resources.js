@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "Nelze vytvořit mapu"
         },
         days: {
-           now: "Ř_NOW_ů",
-           sun: "Ř_SUN_ů",
-           mon: "Ř_MON_ů",
-           tue: "Ř_TUE_ů",
-           wed: "Ř_WED_ů",
-           thu: "Ř_THU_ů",
-           fri: "Ř_FRI_ů",
-           sat: "Ř_SAT_ů"
+           now: "NYNÍ",
+           sun: "NE",
+           mon: "PO",
+           tue: "ÚT",
+           wed: "ST",
+           thu: "ČT",
+           fri: "PÁ",
+           sat: "SO"
         }
-}));
+    })
+ 
+);

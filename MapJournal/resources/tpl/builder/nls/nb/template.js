@@ -6,7 +6,7 @@
 				sideTitle: "Sidepanel",
 				sideDescr: "Et oppsett for en tekstintensiv historie som på en fremragende måte kombinerer bildene, videoene og kartene dine i en klar og fokusert melding.",
 				floatTitle: "Flytende panel",
-				floatDescr: "å_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._ø"
+				floatDescr: "Et oppsett som setter kartografien din i fokus, samtidig som et gjennomsiktig panel med en kort tekst bidrar til å fortelle historien."
 			},
 			common: {
 				lblStatus1: "Publisert",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "Legg til tekst, koblinger og små grafikkelementer her.",
 				editorActionsTitle: "Handlinger på hovedstadiet",
-				editorActionsHelpDescr: "Bruk disse kontrollene til å opprette koblinger som vil endre hovedstadiet. Når for eksempel leseren klikker på en kobling, kan det være lurt å zoome inn kartet til en bestemt lokasjon, vise et annet webkart eller vise et bilde."
+				editorActionsHelpDescr: "å_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ø"
 			},
 			organizePopup: {
 				title: "Organiser",
-				lblHeader: "å_Drag and drop sections to organize your content._ø",
+				lblHeader: "Dra og slipp seksjoner for å organisere innholdet.",
 				lblColTitle: "Tittel",
 				lblColPubDate: "Publiseringsdato",
 				lblColStatus: "Status",
 				checkDisplayReverse: "Vis seksjoner i omvendt rekkefølge",
-				btnApplyWarning: "Bekreft undertrykking av %NB% seksjoner",
+				btnApplyWarning: "å_Confirm deletion of %NB% section(s)_ø",
 				deleteTooltip: "Slett",
 				firstSectionExplain: "(Startseksjonen kan ikke flyttes)"
 			},
@@ -64,12 +64,12 @@
 				lblMore: "Vil du ha mer?",
 				lblLink: "Gå til webområdet for historiekart.",
 				content1Div1: "Du kan integrere en lang rekke ulike stiler når du bygger opp historien din. <strong>%LAYOUT_TITLE%</strong> inneholder vanligvis teksten din, bildene og videoene dine, mens kartene dine vanligvis havner på <strong>hovedstadiet</strong>. %TPL_NAME% gjør imidlertid at du kan ta med bilder, diagrammer og videoklipp på hovedstadiet, også.",
-				content1Div2: "å_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._ø",
+				content1Div2: "Ved å legge til seksjoner kan du virkelig tilpasse historieopplevelsen. Etter hvert som leserne ruller gjennom %LAYOUT_TITLE%-teksten din, kan du gjøre slik at de ser et kart på hovedstadiet der det panoreres eller zoomes inn til viktige punkter, eller det kan lastes inn nye kart og bilder automatisk for å underbygge budskapet ditt.",
 				content2Div1: "Her kan du justere hvordan %TPL_NAME% skal se ut. Du kan finjustere både farger, oppsett og bredde her.",
-				content2Div2: "å_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._ø",
-				content3Div1: "Innholdet ditt er organisert i seksjoner. Du kan ha så mange seksjoner du vil (se på dem som minikapitler). Flyten til disse kapitlene er viktig. Derfor kan du ved å klikke på Organiser endre rekkefølgen på seksjoner eller slette seksjoner hvis du ønsker.",
+				content2Div2: "I tillegg kan du legge til delingskoblinger til Facebook, Twitter og Bitly, slik at leserne enkelt kan fortelle andre om %TPL_NAME%.",
+				content3Div1: "å_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ø",
 				content4Div1: "Har du funnet en feil eller ønsker å endre materialet? Ikke noe problem. Se etter redigeringsikonet i programmet for å gjøre endringer av innholdet. Du kommer til å bruke redigeringsfunksjonene mange ganger etter hvert som du utvikler %TPL_NAME%!",
-				content5Div1: "å_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._ø"
+				content5Div1: "%TPL_NAME% lagres i %PORTAL%-kontoen din, og er som standard privat. Du kan bestemme om du vil dele den bare med organisasjonen eller om den skal være åpen for alle. Vi gir deg til og med en forkortet, stabil URL-adresse som du enkelt kan dele."
 			},
 			landing: {
 				lblAdd: "Legg til startseksjonen",

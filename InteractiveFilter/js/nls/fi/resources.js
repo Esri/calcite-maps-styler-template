@@ -1,5 +1,5 @@
 ﻿define(
- ({
+   ({
   	map: {
   		error: "Karttaa ei voi luoda"
   	},
@@ -9,11 +9,10 @@
       filterInstructions: "Suodata karttatasoa määrittämällä arvot.",
       filterOr: "Minkä tahansa seuraavista ehtolausekkeista on oltava tosi.",
       filterAnd: "Kaikkien seuraavien ehtolausekkeiden on oltava tosia.",
-      filterNo: "Web-kartta ei sisällä vuorovaikutteisia suodattimia.",
+      filterNo:  "Web map does not contain any interactive filters.",
       errors:{
         message: "Ongelma luotaessa suodatinsovellusta"
       }
     }
   })
-
 );

@@ -14,9 +14,10 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
-            "error": "بيت_Unable to create map_لاحقة"
+            "error": "يتعذر إنشاء الخريطة"
         },
         "tools":{
 	    	"print": {
@@ -26,14 +27,14 @@ define(({
 			      "label3": 'وضع أفقي (صورة)',
 			      "label4": 'وضع عمودي (صورة)'
 			    },
-			    "legend": "بيت_Add legend to output_لاحقة"
+			    "legend": "إضافة وسيلة الإيضاح إلى الناتج"
 			},
 			"share": {
 				"extent": "استخدم مدى الخريطة الحالية",
 				"label": "مشاركة هذه الخريطة",
 				"link": "رابط الخريطة",
-				"facebook": "بيت_Facebook_لاحقة",
-				"twitter": "بيت_Twitter_لاحقة"
+				"facebook": "Facebook",
+				"twitter": "Twitter"
 			}
         },
         "tooltips":{
@@ -42,13 +43,15 @@ define(({
         	"legend": "مفتاح الخريطة",
         	"bookmarks": "إشارات مرجعية",
         	"layers": "طبقات",
-        	"basemap": "بيت_Basemap gallery_لاحقة",
-        	"overview": "بيت_Overview map_لاحقة",
+        	"basemap": "معرض خريطة الأساس",
+        	"overview": "خريطة النظرة العامة",
         	"measure": "قياس",
         	"edit": "تحرير",
         	"time": "الوقت",
         	"print": "طباعة",
-        	"details": "بيت_Details_لاحقة",
+        	"details": "التفاصيل",
         	"share": "مشاركة"
         }
-}));
+    })
+
+);

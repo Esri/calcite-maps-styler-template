@@ -1,5 +1,5 @@
 ﻿define(
- ({
+   ({
   	map: {
   		error: "Harita oluşturulamıyor"
   	},
@@ -9,11 +9,10 @@
       filterInstructions: "Katmanı, değerler belirterek filtreleyin.",
       filterOr: "Aşağıdaki ifadelerden herhangi birinin doğru olması gerekir.",
       filterAnd: "Aşağıdaki ifadelerin tümünün doğru olması gerekir.",
-      filterNo: "Web haritası herhangi bir etkileşimli filtre içermiyor.",
+      filterNo:  "Web map does not contain any interactive filters.",
       errors:{
         message: "Filtre uygulaması oluşturmada sorun oluştu"
       }
     }
   })
-
 );

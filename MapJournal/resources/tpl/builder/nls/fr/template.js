@@ -6,7 +6,7 @@
 				sideTitle: "Volet latéral",
 				sideDescr: "Mise en page adaptée aux narrations textuelles intensives qui est idéale pour allier vos photos, vidéos et cartes dans un message clair et précis.",
 				floatTitle: "Volet flottant",
-				floatDescr: "æ_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._Â"
+				floatDescr: "Mise en page qui met l\'accent sur votre cartographie tout en laissant la place à un volet de texte bref transparent qui transmet le message."
 			},
 			common: {
 				lblStatus1: "Publiées",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "Ajoutez du texte, des liens et des graphiques de petite taille ici.",
 				editorActionsTitle: "Actions de la grande scène",
-				editorActionsHelpDescr: "Utilisez ces contrôles pour créer des liens qui modifient la grande scène. Par exemple, lorsque le lecteur clique sur un lien, vous pouvez déclencher un zoom sur un lieu spécifique de la carte, l\'affichage d\'une autre carte Web ou l\'affichage d\'une image."
+				editorActionsHelpDescr: "æ_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._Â"
 			},
 			organizePopup: {
 				title: "Organiser",
-				lblHeader: "æ_Drag and drop sections to organize your content._Â",
+				lblHeader: "Faites glisser et déplacez des sections pour organiser votre contenu.",
 				lblColTitle: "Titre",
 				lblColPubDate: "Date de publication",
 				lblColStatus: "Statut",
 				checkDisplayReverse: "Afficher les sections en ordre inverse",
-				btnApplyWarning: "Confirmer la suppression de %NB% sections",
+				btnApplyWarning: "æ_Confirm deletion of %NB% section(s)_Â",
 				deleteTooltip: "Supprimer",
 				firstSectionExplain: "(Impossible de déplacer la section d\'accueil)"
 			},
@@ -64,12 +64,12 @@
 				lblMore: "Vous souhaitez plus d\'informations ?",
 				lblLink: "Consultez le site Web des cartes de narration.",
 				content1Div1: "Vous pouvez intégrer différents styles lorsque vous élaborez votre narration. Le <strong>%LAYOUT_TITLE%</strong> contient généralement votre texte, vos images et vidéos tandis que vos cartes ont tendance à rejoindre la <strong>grande scène</strong>. Cependant, %TPL_NAME% vous permet de proposer des images, diagrammes et vidéos au sein de la grande scène également.",
-				content1Div2: "æ_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._Â",
+				content1Div2: "L\'ajout de sections vous permet de personnaliser réellement votre narration. Lorsque les lecteurs font défiler le texte de votre %LAYOUT_TITLE%, une carte sur la grande scène peut se déplacer et zoomer sur des points essentiels, ou de nouvelles cartes et images peuvent automatiquement apparaître pour appuyer votre point de vue.",
 				content2Div1: "Vous pouvez ici ajuster l\'apparence de votre %TPL_NAME%. Les combinaisons de couleurs, les mises en page et les largeurs sont précisées à cet emplacement.",
-				content2Div2: "æ_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._Â",
-				content3Div1: "Votre contenu est organisé en sections. Vous pouvez avoir autant de sections que vous voulez (considérez-les comme des minichapitres). Le flux de ces chapitres est important. Dans Organiser, vous pouvez agencer ou supprimer les sections comme bon vous semble.",
+				content2Div2: "Vous pouvez également ajouter des liens de partage vers Facebook, Twitter et Bitly afin que les lecteurs puissent facilement faire connaître votre %TPL_NAME% à d\'autres.",
+				content3Div1: "æ_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._Â",
 				content4Div1: "Vous avez trouvé une erreur ou souhaitez changer vos documents ? Aucun problème. Recherchez l\'icône de mise à jour dans l\'application pour apporter les modifications souhaitées à votre contenu. Vous utiliserez les fonctions de mise à jour à maintes reprises au cours du développement de votre %TPL_NAME% !",
-				content5Div1: "æ_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._Â"
+				content5Div1: "Votre %TPL_NAME% est enregistré dans votre compte %PORTAL% et privé par défaut. Vous pouvez le partager avec votre organisation ou l\'ouvrir au monde entier. Nous vous proposons même une URL abrégée afin de faciliter le partage."
 			},
 			landing: {
 				lblAdd: "Ajouter la section d\'accueil",

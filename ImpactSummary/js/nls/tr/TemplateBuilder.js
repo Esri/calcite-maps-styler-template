@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Builder\'a Gir",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Sonraki",
                 "prevButtonText": "Önceki",
                 "enterLabelText": "Etiket Gir",
-                "SelectedFeatureText": "ı_Selected Feature_İ",
+                "SelectedFeatureText": "Seçilen Özellikler",
                 "layerHelpTextMessage": "Bu uygulama için sayısal alanları olan bir katman gereklidir",
                 "alertMessage": {
                     "resetVariableMessage": "Değişkeni sıfırlamak istediğinizden emin misiniz?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

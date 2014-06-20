@@ -6,7 +6,7 @@
 				step2: "WCZYTYWANIE DANYCH",
 				step3: "INICJOWANIE",
 				fail: "Przepraszamy, wczytywanie narzędzia zwijania nie powiodło się",
-				loadBuilder: "PRZEŁĄCZANIE DO TRYBU KREATORA",				
+				loadBuilder: "PRZEŁĄCZANIE DO TRYBU KREATORA",
 				redirectSignIn: "PRZEKIEROWANIE DO STRONY LOGOWANIA",
 				redirectSignIn2: "(tutaj nastąpi przekierowanie po zalogowaniu)",
 				failButton: "Ponów próbę"
@@ -25,7 +25,7 @@
 				mapSave: "Błąd podczas zapisywania mapy internetowej",
 				notAuthorized: "Nie masz uprawnień do uzyskania dostępu do tej aplikacji.",
 				conflictingProjectionsTitle: "Konflikt odwzorowań",
-				conflictingProjections: "ł_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ą",
+				conflictingProjections: "Narzędzie zwijania nie obsługuje dwóch map internetowych o różnych odwzorowaniach. Przejdź do ustawień i wybierz mapę internetową o tym samym odwzorowaniu co pierwsza użyta mapa.",
 				cpButton: "Zamknij"
 			},
 			mobileView: {
@@ -60,7 +60,7 @@
 				popoverOpenViewOk: "OK",
 				popoverOpenViewCancel: "Anuluj",
 				popoverSaveWhenDone: "Nie zapomnij zapisać po zakończeniu pracy",
-				closeWithPendingChange: "Na pewno chcesz zatwierdzić czynność? Twoje zmiany zostaną utracone.",
+				closeWithPendingChange: "Na pewno chcesz zatwierdzić operację? Twoje zmiany zostaną utracone.",
 				gotIt: "OK",
 				savingApplication: "Zapisywanie aplikacji",
 				saveSuccess: "Aplikacja została pomyślnie zapisana",
@@ -71,7 +71,7 @@
 				signInTwo: "aby zapisać aplikację."
 			},
 			header:{
-				editMe: "ł_Edit me!_ą",
+				editMe: "Zmodyfikuj mnie!",
 				templateTitle: "Ustaw tytuł szablonu",
 				templateSubtitle: "Ustaw podtytuł szablonu"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Ustaw opis panelu bocznego",
-				editMe: "ł_Edit me!_ą",
+				editMe: "Zmodyfikuj mnie!",
 				legendTitle: "Legenda"
 			},
 			infoWindow: {

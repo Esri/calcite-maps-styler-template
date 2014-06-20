@@ -4,9 +4,9 @@
             error: "Не удалось создать карту"
         },
         onlineStatus: {
-            online: "Ж_A connection to the server can be made._Я",
-            offline: "Ж_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._Я",
-            reconnecting: "Ж_Reconnecting&hellip;_Я"
+            online: "Ж_You are currently online._Я",
+            offline: "В настоящее время вы работаете в автономном режиме. Форма представления будет сохранена локально до тех пор, пока не будет выполнено подключение к серверу.",
+            reconnecting: "Reconnecting&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

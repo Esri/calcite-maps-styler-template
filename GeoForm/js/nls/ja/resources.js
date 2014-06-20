@@ -4,9 +4,9 @@
             error: "マップを作成できません"
         },
         onlineStatus: {
-            online: "須_A connection to the server can be made._鷗",
-            offline: "須_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._鷗",
-            reconnecting: "須_Reconnecting&hellip;_鷗"
+            online: "須_You are currently online._鷗",
+            offline: "現在、オフラインで作業しています。フォームの送信は、サーバに接続できるようになるまでローカルに保存されます。",
+            reconnecting: "再接続しています&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

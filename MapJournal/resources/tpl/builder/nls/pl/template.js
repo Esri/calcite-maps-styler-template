@@ -6,7 +6,7 @@
 				sideTitle: "Panel boczny",
 				sideDescr: "Układ dla opowiadania z dużą ilością tekstu, doskonały do połączenia zdjęć, filmów wideo oraz map w przejrzystą prezentację.",
 				floatTitle: "Panel przestawny",
-				floatDescr: "ł_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._ą"
+				floatDescr: "Układ umożliwiający wyróżnienie map, którym towarzyszy przezroczysty panel z krótkimi informacjami tekstowymi pomagającymi w przedstawieniu opowiadania."
 			},
 			common: {
 				lblStatus1: "Opublikowane",
@@ -40,17 +40,17 @@
 			},
 			addEditViewText: {
 				editorPlaceholder: "Tutaj możesz dodać tekst, łącza oraz niewielkie elementy graficzne.",
-				editorActionsTitle: "Czynności w obszarze głównym",
-				editorActionsHelpDescr: "Użyj tych kontrolek do utworzenia łączy, które zmienią obszar główny. Na przykład, gdy użytkownik kliknie łącze, może nastąpić powiększenie mapy do określonej lokalizacji, wyświetlenie innej mapy internetowej lub wyświetlenie obrazu."
+				editorActionsTitle: "Operacje w obszarze głównym",
+				editorActionsHelpDescr: "ł_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ą"
 			},
 			organizePopup: {
 				title: "Organizuj",
-				lblHeader: "ł_Drag and drop sections to organize your content._ą",
+				lblHeader: "Przeciągaj i upuszczaj sekcje, aby zorganizować zawartość.",
 				lblColTitle: "Tytuł",
 				lblColPubDate: "Data publikacji",
 				lblColStatus: "Status",
 				checkDisplayReverse: "Wyświetlaj sekcje w odwrotnej kolejności",
-				btnApplyWarning: "Potwierdź wyłączenie %NB% sekcji",
+				btnApplyWarning: "ł_Confirm deletion of %NB% section(s)_ą",
 				deleteTooltip: "Usuń",
 				firstSectionExplain: "(Sekcji Start nie można przenieść)."
 			},
@@ -64,17 +64,17 @@
 				lblMore: "Chcesz mieć więcej możliwości?",
 				lblLink: "Odwiedź witrynę Story Maps.",
 				content1Div1: "Podczas tworzenia opowiadania możesz łączyć różne style. W układzie <strong>%LAYOUT_TITLE%</strong> zwykle znajduje się tekst, obrazy oraz filmy wideo, mapy natomiast są na ogół widoczne w <strong>obszarze głównym</strong>. Jednak aplikacja %TPL_NAME% pozwala również na umieszczenie w obszarze głównym także obrazów obiektów, diagramów i filmów wideo.",
-				content1Div2: "ł_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._ą",
+				content1Div2: "Dodanie sekcji umożliwia personalizację korzystania z aplikacji opowiadania. Możliwe jest dostosowanie aplikacji tak, aby podczas przewijania tekstu w układzie %LAYOUT_TITLE% mapa znajdująca się w obszarze głównym była przesuwana i powiększana do najważniejszych punktów lub automatycznie przełączane były nowe mapy i obrazy, stanowiące kontekst dla przekazywanych treści.",
 				content2Div1: "Tutaj możesz dostosować wygląd aplikacji %TPL_NAME%. Dostępne są tutaj szczegółowe ustawienia schematów kolorów, układów i szerokości.",
-				content2Div2: "ł_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._ą",
-				content3Div1: "Zawartość jest podzielona na sekcje. Liczba sekcji, które można dodać jest nieograniczona (sekcje są jak niewielkie rozdziały). Sposób i kolejność prezentacji rozdziałów są bardzo ważne. Na ekranie Organizuj można zmieniać kolejność sekcji lub usuwać je wedle uznania.",
-				content4Div1: "Aplikacja zawiera błąd lub chcesz zmienić materiały? Bez obaw. Odszukaj ikonę edycji w odpowiednim miejscu w aplikacji i zmodyfikuj zawartość. Podczas tworzenia aplikacji %TPL_NAME% konieczne może być wielokrotne korzystanie z funkcji edycji!",
-				content5Div1: "ł_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._ą"
+				content2Div2: "Możesz również dodać łącza udostępniania w serwisach Facebook, Twitter i Bitly, dzięki czemu użytkownicy będą mogli łatwo rozpowszechniać aplikację %TPL_NAME% wśród szerokiego grona odbiorców.",
+				content3Div1: "ł_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ą",
+				content4Div1: "Czy znaleziono błąd w aplikacji, czy chcesz zmienić materiały? Odszukaj ikonę edycji w odpowiednim miejscu w aplikacji i zmodyfikuj zawartość. Podczas tworzenia aplikacji %TPL_NAME% konieczne może być wielokrotne korzystanie z funkcji edycji!",
+				content5Div1: "Aplikacja %TPL_NAME% zostaje zapisana na koncie w portalu %PORTAL% i domyślnie zostaje oznaczona jako prywatna. Użytkownik może zadecydować, czy będzie ona udostępniona instytucji, czy też dostępna dla użytkowników z całego świata. W celu ułatwienia użytkownikom udostępniania zapewniamy im skrócony adres URL."
 			},
 			landing: {
 				lblAdd: "Dodaj sekcję Start",
 				lblOR: "Lub",
-				lblHelp: "Rozejrzyj się"
+				lblHelp: "Dowiedz się więcej"
 			},
 			firstAddSplash: {
 				thisis: "To jest"

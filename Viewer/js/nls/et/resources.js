@@ -14,9 +14,10 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
-            "error": "Š_Unable to create map_ä"
+            "error": "Kaardi loomine ebaõnnestus"
         },
         "tools":{
 	    	"print": {
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Horisontaalpaigutus (Pilt)',
 			      "label4": 'Vertikaalpaigutus (Pilt)'
 			    },
-			    "legend": "Š_Add legend to output_ä"
+			    "legend": "Lisa väljundile legend"
 			},
 			"share": {
 				"extent": "Kasuta praeguse kaardi ulatust",
@@ -42,8 +43,8 @@ define(({
         	"legend": "Legend",
         	"bookmarks": "Järjehoidjad",
         	"layers": "Kihid",
-        	"basemap": "Š_Basemap gallery_ä",
-        	"overview": "Š_Overview map_ä",
+        	"basemap": "Aluskaartide galerii",
+        	"overview": "Ülevaatekaart",
         	"measure": "Mõõda",
         	"edit": "Muuda",
         	"time": "Aeg",
@@ -51,4 +52,6 @@ define(({
         	"details": "Detailid",
         	"share": "Jaga"
         }
-}));
+    })
+
+);

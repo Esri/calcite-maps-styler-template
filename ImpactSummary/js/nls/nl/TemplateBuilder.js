@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Naar builder gaan",
@@ -18,7 +18,7 @@
                 "selectLayer": "Kaartlaag selecteren",
                 "applicationSettingText": "Applicatie-instellingen",
                 "summaryAttrAscendingOrderTooltip": "Oplopend",
-                "onStartLabel": "Op start",
+                "onStartLabel": "Bij opstarten",
                 "selectVariableText": "Een variabele selecteren",
                 "selectVariableDropdown": "Een variabele selecteren",
                 "label":"Label",
@@ -37,7 +37,7 @@
                 "secondaryBasemapText":"Secundaire basiskaart",
                 "defaultBasemapText": "Standaard basiskaart",
                 "entireAreaButton": "Volledig gebied",
-                "entireAreaOnStartButton": "Volledige gebied op start",
+                "entireAreaOnStartButton": "Volledige gebied bij opstarten",
                 "aboutPanel": "Deelvenster Informatie",
                 "legendPanel": "Deelvenster Legenda",
                 "layersPanel": "Deelvenster Kaartlagen",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Volgende",
                 "prevButtonText": "Vorige",
                 "enterLabelText": "Label invoeren",
-                "SelectedFeatureText": "Ĳ_Selected Feature_ä",
+                "SelectedFeatureText": "Geselecteerd object",
                 "layerHelpTextMessage": "Deze applicatie vereist een kaartlaag met numerieke velden",
                 "alertMessage": {
                     "resetVariableMessage": "Weet u zeker dat u de variabele wilt opnieuw instellen?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

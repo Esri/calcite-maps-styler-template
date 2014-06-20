@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonMapControls: {
 			common: {
 				settings: "Nastavení",

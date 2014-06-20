@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "Harita oluşturulamıyor"
         },
         days: {
-           now: "ı_NOW_İ",
-           sun: "ı_SUN_İ",
-           mon: "ı_MON_İ",
-           tue: "ı_TUE_İ",
-           wed: "ı_WED_İ",
-           thu: "ı_THU_İ",
-           fri: "ı_FRI_İ",
-           sat: "ı_SAT_İ"
+           now: "ŞİMDİ",
+           sun: "PAZ",
+           mon: "PTS",
+           tue: "SAL",
+           wed: "ÇAR",
+           thu: "PER",
+           fri: "CUM",
+           sat: "CTS"
         }
-}));
+    })
+ 
+);

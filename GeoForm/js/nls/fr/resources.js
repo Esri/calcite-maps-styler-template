@@ -4,16 +4,16 @@
             error: "Impossible de créer la carte"
         },
         onlineStatus: {
-            online: "æ_A connection to the server can be made._Â",
-            offline: "æ_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._Â",
-            reconnecting: "æ_Reconnecting&hellip;_Â"
+            online: "æ_You are currently online._Â",
+            offline: "Vous travaillez actuellement en mode hors connexion. Les envois de formulaires seront enregistrés localement jusqu\'à l\'établissement d\'une connexion au serveur.",
+            reconnecting: "Reconnexion&hellip;"
         },
 	 configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "æ_My Organization_Â",
+                    organizationLabel: "Mon organisation",
                     onlineLabel: "ArcGIS Online",
-                    contentLabel: "æ_My Content_Â",
+                    contentLabel: "Mon contenu",
                     favoritesLabel: "Mes favoris"
                 },
                 title: "Sélectionner une carte Web",
@@ -24,12 +24,12 @@
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "æ_My Organization_Â",
+                    organizationLabel: "Mon organisation",
                     onlineLabel: "ArcGIS Online",
-                    contentLabel: "æ_My Content_Â",
+                    contentLabel: "Mon contenu",
                     favoritesLabel: "Mes favoris"
                 },
-                title: "æ_Select Group_Â",
+                title: "Sélectionner un groupe",
                 searchTitle: "Rechercher",
                 ok: "OK",
                 cancel: "Annuler",
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

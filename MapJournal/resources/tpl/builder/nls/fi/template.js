@@ -6,7 +6,7 @@
 				sideTitle: "Sivupaneeli",
 				sideDescr: "Paljon tekstiä sisältävän tarinan asettelu, joka erottuu muista siten, että se yhdistää valokuvat, videot ja kartat yhdeksi selkeäksi kohdennetuksi viestiksi.",
 				floatTitle: "Irrallinen ruutu",
-				floatDescr: "Å_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._ö"
+				floatDescr: "Asettelu, joka korostaa kartografiaa, kun lyhytmuotoinen tarina näkyy läpinäkyvässä tekstiruudussa."
 			},
 			common: {
 				lblStatus1: "Julkaistut",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "Lisää tähän tekstiä, linkkejä ja pieniä kuvia.",
 				editorActionsTitle: "Päävaiheen toiminnot",
-				editorActionsHelpDescr: "Näiden kontrollien avulla voit luoda linkkejä, jotka muuttavat päävaihetta. Kun lukija napsauttaa esimerkiksi linkkiä, haluat ehkä tarkentaa karttaa tiettyyn sijaintiin, tuoda näkyviin toisen Web-kartan tai kuvan."
+				editorActionsHelpDescr: "Å_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ö"
 			},
 			organizePopup: {
 				title: "Järjestä",
-				lblHeader: "Å_Drag and drop sections to organize your content._ö",
+				lblHeader: "Järjestä sisältösi vetämällä ja pudottamalla osia.",
 				lblColTitle: "Otsikko",
 				lblColPubDate: "Julkaisupäivämäärä",
 				lblColStatus: "Tila",
 				checkDisplayReverse: "Näytä osat käänteisessä järjestyksessä",
-				btnApplyWarning: "Vahvista %NB% osan ohitus",
+				btnApplyWarning: "Å_Confirm deletion of %NB% section(s)_ö",
 				deleteTooltip: "Poista",
 				firstSectionExplain: "(Kotisivuosaa ei voi siirtää)"
 			},
@@ -64,12 +64,12 @@
 				lblMore: "Haluatko lisää?",
 				lblLink: "Siirry Tarinakartat-sivustoon.",
 				content1Div1: "Voit integroida useita tyylejä, kun muodostat tarinaasi. <strong>%LAYOUT_TITLE%</strong> sisältää tavallisesti tekstin, kuvat ja videot, kun kartat ovat yleensä <strong>päävaiheessa</strong>. Tarinassa %TPL_NAME% voit kuitenkin esitellä kuvia, kaavioita ja videoita myös päävaiheessa.",
-				content1Div2: "Å_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._ö",
+				content1Div2: "Lisäämällä osia voit mukauttaa kattavasti tarinankerrontakokemustasi. Kun lukijat vierittävät tyylin %LAYOUT_TITLE% mukaista tekstiäsi, voit tehostaa viestiäsi vierittämällä päävaiheen karttaa tai tarkentamalla tärkeisiin pisteisiin tai kytkemällä uudet kartat ja kuvat näkymään automaattisesti.",
 				content2Div1: "Tässä voit säätää sitä, miltä %TPL_NAME% näyttää. Värimalleja, asetteluja ja leveyksiä säädetään tässä.",
-				content2Div2: "Å_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._ö",
-				content3Div1: "Sisältösi on jaettu osiin. Voit lisätä niin monta osaa kuin haluat (ajattele, että ne ovat lyhyitä kappaleita). Kappaleiden virta on tärkeä. Järjestä-näkymässä voit järjestää osia uudelleen tai poistaa niitä.",
+				content2Div2: "Voit myös lisätä jaettavia linkkejä Facebookiin, Twitteriin ja Bitlyyn, jotta lukijat voivat helposti levittää %TPL_NAME% -tarinasi muille.",
+				content3Div1: "Å_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ö",
 				content4Div1: "Löysitkö virheen vai haluatko muuttaa aineistoasi? Ei huolta. Etsi muokkauskuvaketta sovelluksesta tehdäksesi muutoksia sisältöösi. Käytät muokkaustoimintoja useita kertoja, kun kehität tarinaa %TPL_NAME%.",
-				content5Div1: "Å_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._ö"
+				content5Div1: "Tarinasi %TPL_NAME% on tallennettu portaalin %PORTAL% tiliin, ja se on oletusarvoisesti yksityinen. Voit päätää jakaa sen organisaatiosi kanssa tai määrittää sen kaikille avoimeksi. Järjestelmä määrittää tarinallesi myös lyhennetyn URL-osoitteen, jotta voit jakaa sen helposti."
 			},
 			landing: {
 				lblAdd: "Lisää Kotisivu-osa",

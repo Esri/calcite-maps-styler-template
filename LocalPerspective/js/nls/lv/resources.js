@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "Nevar izveidot karti"
         },
         days: {
-           now: "ķ_NOW_ū",
-           sun: "ķ_SUN_ū",
-           mon: "ķ_MON_ū",
-           tue: "ķ_TUE_ū",
-           wed: "ķ_WED_ū",
-           thu: "ķ_THU_ū",
-           fri: "ķ_FRI_ū",
-           sat: "ķ_SAT_ū"
+           now: "TAGAD",
+           sun: "SV",
+           mon: "PR",
+           tue: "OT",
+           wed: "TR",
+           thu: "CE",
+           fri: "PK",
+           sat: "SE"
         }
-}));
+    })
+ 
+);

@@ -1,19 +1,18 @@
 ﻿define(
- ({
+   ({
   	map: {
   		error: "Žemėlapio sukurti nepavyko"
   	},
     viewer: {
       content_title: "Filtruoti",
-      button_text: "Į_Apply_š",
+      button_text: "Taikyti",
       filterInstructions: "Filtruokite sluoksnį nurodydami reikšmes",
       filterOr: "Turi būti tenkinama bent viena šių sąlygų",
       filterAnd: "Turi būti tenkinamos šios sąlygos.",
-      filterNo: "Internetiniame žemėlapyje nėra interaktyvių filtrų.",
+      filterNo:  "Web map does not contain any interactive filters.",
       errors:{
         message: "Nepavyko sukurti filtrų aplikacijos"
       }
     }
   })
-
 );

@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "미디어 유형 선택",
-				lblSelect2: "컨텐츠 유형 선택",
+				lblSelect1: "한_Media_빠",
+				lblSelect2: "한_Content_빠",
 				lblMap: "맵",
 				lblImage: "이미지",
 				lblVideo: "동영상",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "링크를 클릭하면 맵 표식이 표시됩니다."
 			},
 			editorActionMedia: {
-				lblTitle: "한_Change the Main Stage content_빠"
+				lblTitle: "기본 단계 컨텐츠 변경"
 			},
 			editorInlineMedia: {
 				lblTitle: "이미지 또는 동영상 삽입"

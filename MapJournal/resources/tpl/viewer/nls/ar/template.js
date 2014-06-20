@@ -60,8 +60,8 @@
 				copy: "نسخ",
 				copied: "تم النسخ",
 				open: "فتح",
-				embed: "بيت_Embed in website_لاحقة",
-				embedExplain: "بيت_Use the following HTML code to embed the Journal in a website._لاحقة",
+				embed: "التضمين في موقع الويب",
+				embedExplain: "استخدام كود HTML التالي لتضمين الدفاتر اليومية في موقع الويب.",
 				size: "الحجم (الاتساع/الارتفاع):"
 			}
         }

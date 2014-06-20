@@ -6,7 +6,7 @@
 				sideTitle: "Šoninis skydelis",
 				sideDescr: "Maketas, skirtas pasakojimui, kuriame daug teksto, iliustruoto nuotraukų, vaizdų ir žemėlapių deriniu, skirtu žiniai perteikti.",
 				floatTitle: "Slankusis skydelis",
-				floatDescr: "Į_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._š"
+				floatDescr: "Maketas, kuriame akcentuojama kartografija, o skaidrus trumpo teksto skydelis padeda perteikti pasakojimą."
 			},
 			common: {
 				lblStatus1: "Publikuota",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "Čia pridėkite teksto, nuorodų ir mažų grafinių elementų.",
 				editorActionsTitle: "Pagrindinės srities veiksmai",
-				editorActionsHelpDescr: "Naudodami šiuos valdiklius kurkite nuorodas, pakeisiančias pagrindinę sritį. Pvz., galbūt norėsite, kad skaitytojui paspaudus nuorodą  žemėlapis išdidintų į konkrečią vieta, rodomas kitas internetinis žemėlapis ar vaizdas."
+				editorActionsHelpDescr: "Į_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._š"
 			},
 			organizePopup: {
 				title: "Tvarkyti",
-				lblHeader: "Į_Drag and drop sections to organize your content._š",
+				lblHeader: "Nuvilkite skiltis į norimas vietas ir sutvarkykite turinį.",
 				lblColTitle: "Pavadinimas",
 				lblColPubDate: "Publikavimo data",
 				lblColStatus: "Būsena",
 				checkDisplayReverse: "Rodyti skiltis atvirkštine tvarka",
-				btnApplyWarning: "Patvirtinkite %NB% skilčių paslėpimą",
+				btnApplyWarning: "Į_Confirm deletion of %NB% section(s)_š",
 				deleteTooltip: "Pašalinti",
 				firstSectionExplain: "(Pagrindinės skilties perkelti negalima)"
 			},
@@ -64,12 +64,12 @@
 				lblMore: "Norite daugiau?",
 				lblLink: "Apsilankykite pristatomųjų žemėlapių svetainėje.",
 				content1Div1: "Kurdami pasakojimą galite integruoti įvairius stilius. Paprastai <strong>%LAYOUT_TITLE%</strong> pateikiami tekstas, vaizdai ir video, o žemėlapiai dažniausiai būna <strong>pagrindinėje srityje</strong>. Tačiau, naudodami %TPL_NAME%, ir pagrindinėje srityje galite pridėti vaizdų, diagramų ir video.",
-				content1Div2: "Į_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._š",
+				content1Div2: "Pridėdami skilčių galite labai įvairiai adaptuoti savo pasakojimą. Kai skaitytojai slinks %LAYOUT_TITLE% tekstu, gali būti prastumiamas pagrindinėje srityje esantis žemėlapis ir keičiamas jo mastelis, kad būtų rodomi pagrindiniai taškai arba gali būti automatiškai perjungiami nauji žemėlapiai ir vaizdai, sustiprinantys jūsų pasakojimo įspūdį.",
 				content2Div1: "Čia galite koreguoti, kaip atrodys %TPL_NAME%. Čia priderinamos spalvų schemos, maketai ir pločiai.",
-				content2Div2: "Į_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._š",
-				content3Div1: "Turinys tvarkomas dalijant į skiltis. Gali būti kiek tik norite skilčių (galvokite apie jas, kaip apie mažus skyrius). Svarbus šių skyrių srautas; todėl dalyje Tvarkymas galite keisti skilčių išdėstymo tvarką arba jas panaikinti, kaip norite.",
+				content2Div2: "Be to, galite pridėti Facebook, Twitter ir Bitly bendrinimo nuorodas, kad skaitytojai galėtų lengvai išplatinti %TPL_NAME% kitiems.",
+				content3Div1: "Į_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._š",
 				content4Div1: "Radote klaidą ar norite pakeisti duomenis? Nesirūpinkite. Norėdami pakeisti turinį, ieškokite aplikacijos redagavimo piktogramos. Kurdami %TPL_NAME% daug kartų naudosite redagavimo funkcijas!",
-				content5Div1: "Į_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._š"
+				content5Div1: "%TPL_NAME% išsaugomas %PORTAL% paskyroje ir pagal numatytuosius nustatymus yra privatus. Galite nuspręsti, ar bendrinti jį organizacijoje, ar pateikti visam pasauliui. Kad galėtumėte lengvai bendrinti, mes netgi pateikiame sutrumpintą URL."
 			},
 			landing: {
 				lblAdd: "Pridėti pagrindinę skiltį",

@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "ก้_Unable to create map_ษฺ"
         },
@@ -51,4 +52,6 @@ define(({
         	"details": "ก้_Details_ษฺ",
         	"share": "ก้_Share_ษฺ"
         }
-}));
+    })
+
+);

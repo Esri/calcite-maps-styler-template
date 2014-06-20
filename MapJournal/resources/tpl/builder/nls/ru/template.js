@@ -6,7 +6,7 @@
 				sideTitle: "Боковая панель",
 				sideDescr: "Компоновка с доминированием текста, содержащая фотографии, видео и карты, чтобы обратить основное внимание на тему.",
 				floatTitle: "Открепленная панель",
-				floatDescr: "Ж_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._Я"
+				floatDescr: "Компоновка, которая делает акцент на картографию, предоставляя прозрачную панель краткого текста, помогающего передать историю."
 			},
 			common: {
 				lblStatus1: "Опубликованные",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "Добавьте здесь текст, ссылки и небольшие графики.",
 				editorActionsTitle: "Действия основной площадки",
-				editorActionsHelpDescr: "Используйте эти элементы управления для создания ссылок, которые будут изменять основную площадку. Например, когда читатель щелкает ссылку, карта может приблизиться к определенному местоположению, может отобразиться другая веб-карта или изображение."
+				editorActionsHelpDescr: "Ж_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._Я"
 			},
 			organizePopup: {
 				title: "Организовать",
-				lblHeader: "Ж_Drag and drop sections to organize your content._Я",
+				lblHeader: "Перетаскивайте разделы для организации ваших ресурсов.",
 				lblColTitle: "Название",
 				lblColPubDate: "Дата публикации",
 				lblColStatus: "Статус",
 				checkDisplayReverse: "Отображать разделы в обратном порядке",
-				btnApplyWarning: "Подтвердите свертывание %NB% разделов",
+				btnApplyWarning: "Ж_Confirm deletion of %NB% section(s)_Я",
 				deleteTooltip: "Удалить",
 				firstSectionExplain: "(Главный раздел нельзя переместить)"
 			},
@@ -60,16 +60,16 @@
 				lblSettings: "Настройки",
 				lblOrga: "Организовать ресурсы",
 				lblEdit: "Изменения",
-				lblPublish: "Ж_Share_Я",
+				lblPublish: "Общий доступ",
 				lblMore: "Хотите узнать больше?",
 				lblLink: "Посетите веб-сайт Карты историй.",
 				content1Div1: "В процессе создания вашей истории вы можете интегрировать множество стилей. Компоновка <strong>%LAYOUT_TITLE%</strong> обычно содержит текст, изображения и видео, а для карт применяется <strong>Основная площадка</strong>. Однако %TPL_NAME% позволяет встраивать также изображения, таблицы и видео в основную площадку.",
-				content1Div2: "Ж_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._Я",
+				content1Div2: "Добавление разделов позволяет чётко настроить представление вашей истории. Читатели просматривают текст  %LAYOUT_TITLE%, карту на основной площадке можно масштабировать и перемещать, новые карты и изображения автоматически переключаются для поддержки вашего сообщения.",
 				content2Div1: "Здесь вы можете указать, как должен выглядеть ваш %TPL_NAME%. Цветовые схемы, компоновки и отступы настраиваются здесь.",
-				content2Div2: "Ж_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._Я",
-				content3Div1: "Ваши ресурсы организованны по разделам. Вы можете создавать любое количество разделов (глав истории). Последовательность изложения этих глав не менее важна; с помощью инструмента Организовать вы можете задать любой порядок следования и удалить ненужные главы.",
+				content2Div2: "Вы также можете добавить ссылки на Facebook, Twitter и Bitly, с помощью которых ваш %TPL_NAME% станет известен другим.",
+				content3Div1: "Ж_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._Я",
 				content4Div1: "Нашли ошибку или хотите внести изменения? Нет проблем! Чтобы изменить данные, нажмите значок Изменить в вашем приложении. В процессе создания вашего%TPL_NAME% функции редактирования будут применяться очень часто.",
-				content5Div1: "Ж_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._Я"
+				content5Div1: "%TPL_NAME% сохранен в вашей учетной записи %PORTAL%, частной по умолчанию. Вы можете открыть общий доступ для вашей организации или для всего мира. Мы создаём для вас короткий постоянный URL, чтобы вам было проще поделиться историей."
 			},
 			landing: {
 				lblAdd: "Добавить главный раздел",

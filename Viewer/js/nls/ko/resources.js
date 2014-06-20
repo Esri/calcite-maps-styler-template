@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "맵을 생성할 수 없음"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": '가로(Image)',
 			      "label4": '세로(Image)'
 			    },
-			    "legend": "한_Add legend to output_빠"
+			    "legend": "출력에 범례 추가"
 			},
 			"share": {
 				"extent": "현재 맵 범위 사용",
@@ -42,13 +43,15 @@ define(({
         	"legend": "범례",
         	"bookmarks": "책갈피",
         	"layers": "레이어",
-        	"basemap": "한_Basemap gallery_빠",
-        	"overview": "한_Overview map_빠",
+        	"basemap": "베이스맵 갤러리",
+        	"overview": "개요보기 맵",
         	"measure": "측정",
         	"edit": "편집",
         	"time": "시간",
         	"print": "인쇄",
-        	"details": "한_Details_빠",
+        	"details": "세부정보",
         	"share": "공유"
         }
-}));
+    })
+
+);

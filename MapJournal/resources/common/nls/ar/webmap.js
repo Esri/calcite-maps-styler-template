@@ -2,10 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
+				lblWebMap: "بيت_Web map_لاحقة",
 				lblLocation: "الموقع",
 				lblContent: "المحتوى",
 				lblPopup: "القائمة المنبثقة",
-				lblControls: "عناصر التحكم",
+				lblControls: "بيت_Extras_لاحقة",
 				lblOverview: "خريطة النظرة العامة",
 				lblLegend: "مفتاح الخريطة",
 				loadingTitle: "تحميل العنوان",
@@ -21,24 +22,24 @@
 				newMap: "خريطة الويب المحددة حديثًا",
 				webmapDefault: "خريطة الويب الافتراضية",
 				customCfg: "التكوين المخصص",
-				tooltipLocation: "تعريف موقع الخريطة التي سيتم استخدامها عند انتقال القراء إلى هذا المقطع.",
+				tooltipLocation: "بيت_Define the map location that will be used when your readers navigate to this section._لاحقة",
 				tooltipContent: "تعريف الطبقات المرئية.",
 				tooltipPopup: "اختيار العناصر المنبثقة لعرضها عند انتقال القراء إلى هذا المقطع.",
-				tooltipOverview: "بيت_Display a small overview map along with the main map_لاحقة",
-				tooltipLegend: "بيت_Display the map legend on the map, helpful when the map has many layers and symbols._لاحقة",
-				mapCfgInvite: "استخدام عناصر التحكم الحالية لتكوين الخريطة"
+				tooltipOverview: "عرض خريطة النظرة العامة الصغيرة مع الخريطة الأساسية",
+				tooltipLegend: "عرض وسيلة إيضاح الخريطة على الخريطة وتكون مفيدة عند حصول الخريطة على العديد من الطبقات والرموز.",
+				mapCfgInvite: "بيت_Use these controls to configure your map_لاحقة"
 			},
 			configure: {
 				btnReset: "إعادة تعيين",
 				btnCancel: "إلغاء الأمر",
 				tocTitle: "محتويات الخريطة",
 				tocExplain: "تحديد اي الطبقات سيتم إظهارها.",
-				tocSave: "حفظ محتويات الخريطة",
+				tocSave: "بيت_Save map content_لاحقة",
 				extentTitle: "موقع الخريطة",
 				extentExplain: "تحريك الخريطة وتكبيرها لتحديد كيفية ظهورها للقراء.",
 				extentSave: "حفظ موقع الخريطة",
 				popupTitle: "العناصر المنبثقة للخريطة",
-				popupExplain: "بيت_Configure the look of the pop-up shown to readers_لاحقة",
+				popupExplain: "تكوين مظهر العناصر المنبثقة للقُراء",
 				popupSave: "حفظ تكوين العناصر المنبثقة",
 				hintNavigation: "انتقال الخريطة مُعطل."
 			}

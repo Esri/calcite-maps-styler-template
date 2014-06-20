@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Valige meediumitüüp",
-				lblSelect2: "Valige sisutüüp",
+				lblSelect1: "Š_Media_ä",
+				lblSelect2: "Š_Content_ä",
 				lblMap: "Kaart",
 				lblImage: "Pilt",
 				lblVideo: "Video",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "Kasutajad näevad lingi klõpsamisel kaardil tähist"
 			},
 			editorActionMedia: {
-				lblTitle: "Š_Change the Main Stage content_ä"
+				lblTitle: "Põhietapi sisu muutmine"
 			},
 			editorInlineMedia: {
 				lblTitle: "Pildi või video lisamine"

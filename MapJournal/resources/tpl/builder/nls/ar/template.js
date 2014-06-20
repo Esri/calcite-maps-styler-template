@@ -6,7 +6,7 @@
 				sideTitle: "اللوحة الجانبية",
 				sideDescr: "التخطيط الطباعي للحكاية النصية التي تدمج الصور ومقاطع الفيديو والخرائط في رسائل واضحة.",
 				floatTitle: "اللوحة العائمة",
-				floatDescr: "بيت_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._لاحقة"
+				floatDescr: "التخطيط الطباعي الذي يضع الخرائط في وضع التركيز أثناء السماح بشفافية لوحة نص النموذج القصير للمساعدة في تبادل القصص."
 			},
 			common: {
 				lblStatus1: "تم النشر",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "إضافة النص والروابط والرسومات الصغيرة هنا.",
 				editorActionsTitle: "إجراءات المرحلة الأساسية",
-				editorActionsHelpDescr: "استخدام عناصر التحكم الحالية لإنشاء الروابط التي ستقوم بتغيير المرحلة الأساسية. مثال، عند نقر القارئ على الرابط المطلوب لتكبير الخريطة وصولا للموقع المحدد أو عرض خريطة ويب أخرى أو عرض الصورة."
+				editorActionsHelpDescr: "بيت_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._لاحقة"
 			},
 			organizePopup: {
 				title: "ترتيب",
-				lblHeader: "بيت_Drag and drop sections to organize your content._لاحقة",
+				lblHeader: "سحب وإفلات المقاطع لتنظيم المحتويات.",
 				lblColTitle: "العنوان",
 				lblColPubDate: "تاريخ المنشور",
 				lblColStatus: "حالة",
 				checkDisplayReverse: "عرض المقاطع بترتيب عكسي",
-				btnApplyWarning: "تأكيد إزالة مقاطع %NB%",
+				btnApplyWarning: "بيت_Confirm deletion of %NB% section(s)_لاحقة",
 				deleteTooltip: "حذف",
 				firstSectionExplain: "(يتعذر نقل المقطع الأساسي)"
 			},
@@ -64,12 +64,12 @@
 				lblMore: "هل تريد المزيد؟",
 				lblLink: "تفضل بزيارة موقع خرائط الحكاية على الويب.",
 				content1Div1: "يمكن تكامل أنماط متعددة عند بناء الحكاية. يحتفظ <strong>%LAYOUT_TITLE%</strong> بالنصوص والصور ومقاطع الفيديو عند وصول الخرائط<strong>إلى المرحلة الأساسية</strong>. مع ذلك، يسمح %TPL_NAME% بتمييز الصور والمخططات ومقاطع الفيديو داخل المرحلة الاساسية أيضًا.",
-				content1Div2: "بيت_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._لاحقة",
+				content1Div2: "تسمح إضافة المقاطع بتخصيص خبرة تبادل القصص. بصفتك من القُراء قم بالتمرير خلال نصوص %LAYOUT_TITLE% أو يمكن تحريك أو تكبير الخريطة على المرحلة الأساسية أو يمكن للخرائط والصور الجديدة التبديل تلقائيًا لدعم الرسالة.",
 				content2Div1: "يمكن هنا ضبط مظهر %TPL_NAME%. ستتم تنقية أنظمة الألوان والتخطيطات وكذلك العروض.",
-				content2Div2: "بيت_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._لاحقة",
-				content3Div1: "يتم تنظيم المحتويات داخل المقاطع. يمكن الحصول على العديد من المقاطع كما تريد (بصفتها فصول صغيرة). مسار هذه الفصول هام جدًا، بذلك سيصبح من الممكن إعادة ترتيب بعض المقاطع أو حذفها كما تريد.",
+				content2Div2: "يمكن أيضًا مشاركة الروابط على Facebook وTwitter ليتمكن القُراء من نشر %TPL_NAME% للآخرين بسهولة.",
+				content3Div1: "بيت_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._لاحقة",
 				content4Div1: "هل تم إيجاد خطأ أو ترغب في تغيير المواد التعليمية؟ لا. ابحث عن رمز تحرير في التطبيق للقيام بالتغييرات في المحتويات. ستقوم باستخدام وظائف التحرير عدة مرات عند تطوير %TPL_NAME%!",
-				content5Div1: "بيت_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._لاحقة"
+				content5Div1: "يتم حفظ %TPL_NAME% على حساب %PORTAL% افتراضيًا. يمكن إقرار مشاركته مع المؤسسة أو فتحه على العالم. سندعمك بعنوان URL لتتمكن من مشاركته بشكل أسهل."
 			},
 			landing: {
 				lblAdd: "إضافة مقطع الصفحة الرئيسية",

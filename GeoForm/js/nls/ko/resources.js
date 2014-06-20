@@ -4,9 +4,9 @@
             error: "맵을 생성할 수 없음"
         },
         onlineStatus: {
-            online: "한_A connection to the server can be made._빠",
-            offline: "한_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._빠",
-            reconnecting: "한_Reconnecting&hellip;_빠"
+            online: "한_You are currently online._빠",
+            offline: "현재 오프라인 상태에서 작업 중입니다. 서버에 대한 연결이 생성될 때까지는 양식 제출이 로컬에 저장됩니다.",
+            reconnecting: "다시 연결 중&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

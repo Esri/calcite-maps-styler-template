@@ -60,8 +60,8 @@
 				copy: "Kopiëren",
 				copied: "Gekopieerd",
 				open: "Openen",
-				embed: "Ĳ_Embed in website_ä",
-				embedExplain: "Ĳ_Use the following HTML code to embed the Journal in a website._ä",
+				embed: "Inbedden in website",
+				embedExplain: "Gebruik de volgende HTML-code om het journaal in te bedden in een website.",
 				size: "Grootte (breedte/hoogte):"
 			}
         }

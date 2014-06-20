@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Kan ikke opprette kart"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Liggende (bilde)',
 			      "label4": 'Stående (bilde)'
 			    },
-			    "legend": "å_Add legend to output_ø"
+			    "legend": "Legg til kartforklaring i resultatet"
 			},
 			"share": {
 				"extent": "Bruk gjeldende kartutstrekning",
@@ -42,8 +43,8 @@ define(({
         	"legend": "Tegnforklaring",
         	"bookmarks": "Bokmerker",
         	"layers": "Lag",
-        	"basemap": "å_Basemap gallery_ø",
-        	"overview": "å_Overview map_ø",
+        	"basemap": "Bakgrunnskartgalleri",
+        	"overview": "Oversiktskart",
         	"measure": "Mål",
         	"edit": "Rediger",
         	"time": "Tid",
@@ -51,4 +52,6 @@ define(({
         	"details": "Detaljer",
         	"share": "Del"
         }
-}));
+    })
+
+);

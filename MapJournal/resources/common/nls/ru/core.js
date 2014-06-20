@@ -26,8 +26,8 @@
 				buttonSettings: "Настройки",
 				buttonHelp: "Справка",
 				buttonPreview: "Просмотр текущего",
-				tooltipFirstSave: "Ж_This function is not available until the application is saved_Я",
-				tooltipNotShared: "Ж_This function is not available until the application is shared_Я",
+				tooltipFirstSave: "Эта функциональность недоступна, пока приложение не будет сохранено.",
+				tooltipNotShared: "Эта функциональность недоступна, пока приложение не будет опубликовано.",
 				noPendingChange: "Нет предполагаемых изменений",
 				unSavedChangePlural: "Ожидание изменений",
 				closeWithPendingChange: "Вы действительно хотите подтвердить это действие? Все изменения будут потеряны.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Приложение успешно сохранено",
-				firstSaveHeader: "Ж_Your application is now saved in %PORTAL% but it is not shared yet._Я",
+				firstSaveHeader: "Ваше приложение было сохранено на %PORTAL% , но пока оно не опубликовано.",
 				firstSavePreview: "Просмотр",
 				firstSaveShare: "Общий доступ",
 				firstSaveA1: "Если вы не знакомы с %PORTAL% или хотите получить ссылку на интерфейс конструктора, сохраните эту ссылку: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Сохраните и используйте повторно следующую ссылку %LINK1% или обратитесь к<a href='%LINK2%' target='_blank'>странице элемента приложения</a>.",
 				shareA2div2: "Если вы владелец приложения, то при входе на %PORTAL% вы увидите кнопку для открытия конструктора:",				
 				shareQ3: "Где хранятся данные?",
-				shareA3: "Ж_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._Я"
+				shareA3: "Данные и конфигурация %TPL_NAME% сохраняются в <a href='%LINK2%' target='_blank'>этого элемента веб-приложения</a>. Если вы использовали Flickr, Picasa, Facebook или YouTube для импорта, то ваши изображения и видео не дублировались на %PORTAL%."
 			},
 			settings: {
 				header: "Настройки",
-				tabError: "Ж_Please check all tabs for errors_Я"
+				tabError: "Проверьте все закладки на наличие ошибок"
 			},
 			settingsLayout: {
 				title: "Компоновка",
-				explain: "Ж_Which layout do you want to use?_Я",
-				explainInit: "Ж_You can change the layout anytime from the settings panel._Я",
+				explain: "Какой формат вы хотите использовать?",
+				explainInit: "Вы можете изменить формат в любое время на панели настроек.",
 				viewExample: "Посмотреть пример из жизни"
 			},
 			settingsTheme: {

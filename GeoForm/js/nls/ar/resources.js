@@ -1,41 +1,40 @@
 ﻿define(
      ({
         map: {
-            error: "بيت_Unable to create map_لاحقة"
+            error: "يتعذر إنشاء الخريطة"
         },
         onlineStatus: {
-            online: "بيت_A connection to the server can be made._لاحقة",
-            offline: "بيت_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._لاحقة",
-            reconnecting: "بيت_Reconnecting&hellip;_لاحقة"
+            online: "بيت_You are currently online._لاحقة",
+            offline: "أنت الآن غير مُتصل بالإنترنت. سيتم حفظ عمليات الإرسال محليًا حتى يتم إنشاء الاتصال بالخادم.",
+            reconnecting: "إعادة الاتصال&hellip;"
         },
 	 configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "بيت_My Organization_لاحقة",
+                    organizationLabel: "المؤسسة",
                     onlineLabel: "ArcGIS Online",
                     contentLabel: "المحتوى",
-                    favoritesLabel: "بيت_My Favorites_لاحقة"
+                    favoritesLabel: "المفضلات"
                 },
                 title: "تحديد خريطة الويب",
-                searchTitle: "بيت_Search_لاحقة",
+                searchTitle: "البحث",
                 ok: "موافق",
-                cancel: "بيت_Cancel_لاحقة",
-                placeholder: "بيت_Enter search term_لاحقة"
+                cancel: "إلغاء",
+                placeholder: "أدخل مصطلح البحث"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "بيت_My Organization_لاحقة",
+                    organizationLabel: "المؤسسة",
                     onlineLabel: "ArcGIS Online",
                     contentLabel: "المحتوى",
-                    favoritesLabel: "بيت_My Favorites_لاحقة"
+                    favoritesLabel: "المفضلات"
                 },
-                title: "بيت_Select Group_لاحقة",
-                searchTitle: "بيت_Search_لاحقة",
+                title: "تحديد المجموعة",
+                searchTitle: "البحث",
                 ok: "موافق",
-                cancel: "بيت_Cancel_لاحقة",
-                placeholder: "بيت_Enter search term_لاحقة"
+                cancel: "إلغاء",
+                placeholder: "أدخل مصطلح البحث"
             }
         }
     })
-    
 );

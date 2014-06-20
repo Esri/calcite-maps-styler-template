@@ -327,7 +327,7 @@
 				header: "הכנס כתובת דואר אלקטורני או את ה- ID של חשבון שלך ב- Picasa או Google+.",
 				userInputLbl: "הכנס כתובת דואר אלקטורני או ID",
 				signInMsg2: "חשבון לא נמצא",
-				signInMsg3: "אין אלבום ציבורי",
+				signInMsg3: "כן_No public album_ש",
 				howToFind: "כיצד למצוא את ה- ID של חשבון ה- Picasa או Google+",
 				howToFind2: "העתק תווים בין ה \'/\'  הראשון לשני של כל עמוד Picasa או G+"
 			},
@@ -526,9 +526,9 @@
 				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל ArcGIS.com האפליקציה כוללת כפתור הפותח את הבונה האינטראקטיבי.",				
 				shareQ3: "היכן מאוחסן המידע?",
 				shareA3: "כן_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. Flickr, Picasa, and Facebook images and YouTube videos remain referenced at their respective sites and aren't duplicated in ArcGIS Online._ש",
-				shareWarning: "שיתוף עם %WITH% לא מתאפשר מכיוון שאינך הבעלים של <a href='%LINK%' target='_blank'>webmap</a>.",
-				shareWarningWith1: "ציבורי",
-				shareWarningWith2: "ציבורי וגם עם הארגון"
+				shareWarning: "כן_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ש",
+				shareWarningWith1: "כן_publicly_ש",
+				shareWarningWith2: "כן_publicly and with the Organization_ש"
 			}
         }
     })

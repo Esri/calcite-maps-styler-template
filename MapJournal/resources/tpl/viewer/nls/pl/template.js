@@ -6,7 +6,7 @@
 			},
 			loading: {
 				step1: "Wczytanie aplikacji",
-				step2: "Wczytanie danych",
+				step2: "Wczytywanie danych",
 				step3: "Inicjowanie",
 				loadBuilder: "Przełączanie do trybu kreatora",
 				fail: "Niestety, wczytywanie nie powiodło się",
@@ -60,8 +60,8 @@
 				copy: "Kopiuj",
 				copied: "Skopiowane",
 				open: "Otwórz",
-				embed: "ł_Embed in website_ą",
-				embedExplain: "ł_Use the following HTML code to embed the Journal in a website._ą",
+				embed: "Osadzanie w witrynie internetowej",
+				embedExplain: "Aby umieścić Dziennik w witrynie, skorzystaj z poniższego kodu HTML.",
 				size: "Rozmiar (szerokość/wysokość):"
 			}
         }

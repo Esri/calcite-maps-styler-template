@@ -4,14 +4,14 @@
             error: "Karttaa ei voi luoda"
         },
         onlineStatus: {
-            online: "Å_A connection to the server can be made._ö",
-            offline: "Å_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._ö",
-            reconnecting: "Å_Reconnecting&hellip;_ö"
+            online: "Å_You are currently online._ö",
+            offline: "Työskentelet tällä hetkellä offline-tilassa. Lomakkeiden lähetykset tallennetaan paikallisesti, kunnes palvelinyhteys voidaan muodostaa.",
+            reconnecting: "Muodostetaan yhteyttä uudelleen&hellip;"
         },
 	 configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "Å_My Organization_ö",
+                    organizationLabel: "Organisaationi",
                     onlineLabel: "ArcGIS Online",
                     contentLabel: "Oma sisältö",
                     favoritesLabel: "Omat suosikit"
@@ -24,7 +24,7 @@
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "Å_My Organization_ö",
+                    organizationLabel: "Organisaationi",
                     onlineLabel: "ArcGIS Online",
                     contentLabel: "Oma sisältö",
                     favoritesLabel: "Omat suosikit"
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

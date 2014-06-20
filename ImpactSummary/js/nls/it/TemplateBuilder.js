@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Accedi al generatore",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Avanti",
                 "prevButtonText": "Indietro",
                 "enterLabelText": "Immetti etichetta",
-                "SelectedFeatureText": "é_Selected Feature_È",
+                "SelectedFeatureText": "Feature selezionata",
                 "layerHelpTextMessage": "Per l\'applicazione è richiesto un layer con campi numerici",
                 "alertMessage": {
                     "resetVariableMessage": "Reimpostare la variabile?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

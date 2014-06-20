@@ -1,5 +1,5 @@
 ﻿define(
- ({
+   ({
   	map: {
   		error: "Kan ikke opprette kart"
   	},
@@ -9,11 +9,10 @@
       filterInstructions: "Filtrer laget ved å angi verdier.",
       filterOr: "Ett av disse uttrykkene må være sant.",
       filterAnd: "Alle disse uttrykkene må være sanne.",
-      filterNo: "Webkartet inneholder ingen interaktive filtre.",
+      filterNo:  "Web map does not contain any interactive filters.",
       errors:{
         message: "Problem med å opprette filterapplikasjonen"
       }
     }
   })
-
 );

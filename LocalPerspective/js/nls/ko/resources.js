@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "맵을 생성할 수 없음"
         },
         days: {
-           now: "한_NOW_빠",
-           sun: "한_SUN_빠",
-           mon: "한_MON_빠",
-           tue: "한_TUE_빠",
-           wed: "한_WED_빠",
-           thu: "한_THU_빠",
-           fri: "한_FRI_빠",
-           sat: "한_SAT_빠"
+           now: "지금",
+           sun: "일",
+           mon: "월",
+           tue: "화",
+           wed: "수",
+           thu: "목",
+           fri: "금",
+           sat: "토"
         }
-}));
+    })
+ 
+);

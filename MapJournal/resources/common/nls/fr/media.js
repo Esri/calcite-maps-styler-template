@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Sélectionner le type de support",
-				lblSelect2: "Sélectionner le type de contenu",
+				lblSelect1: "æ_Media_Â",
+				lblSelect2: "æ_Content_Â",
 				lblMap: "Carte",
 				lblImage: "Image",
 				lblVideo: "Vidéo",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "L\'utilisateur verra un symbole ponctuel cartographique en cliquant sur le lien"
 			},
 			editorActionMedia: {
-				lblTitle: "æ_Change the Main Stage content_Â"
+				lblTitle: "Modifier le contenu de la grande scène"
 			},
 			editorInlineMedia: {
 				lblTitle: "Insérer une image ou une vidéo"

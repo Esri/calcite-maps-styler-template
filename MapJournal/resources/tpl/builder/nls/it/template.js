@@ -6,7 +6,7 @@
 				sideTitle: "Pannello laterale",
 				sideDescr: "Layout per storie ricche di testo che combina in modo ottimale foto, video e mappe in un messaggio perfettamente mirato.",
 				floatTitle: "Pannello mobile",
-				floatDescr: "é_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._È"
+				floatDescr: "Layout per dare maggiore risalto alla cartografia includendo un pannello trasparente per testo breve in cui inserire indicazioni utili per la storia."
 			},
 			common: {
 				lblStatus1: "Pubblicato",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "Aggiungere qui testo, collegamenti ed elementi grafici di piccole dimensioni.",
 				editorActionsTitle: "Azioni visualizzazione principale",
-				editorActionsHelpDescr: "Utilizzare questi controlli per creare collegamenti che consentono di cambiare la visualizzazione principale. Ad esempio, quando il lettore fa clic su un collegamento, è possibile fare in modo che venga applicato lo zoom a una posizione specifica della mappa oppure che venga visualizzata un\'altra mappa Web o un\'immagine."
+				editorActionsHelpDescr: "é_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._È"
 			},
 			organizePopup: {
 				title: "Organizza",
-				lblHeader: "é_Drag and drop sections to organize your content._È",
+				lblHeader: "Trascinare e rilasciare le sezioni per organizzare i contenuti.",
 				lblColTitle: "Titolo",
 				lblColPubDate: "Data di pubblicazione",
 				lblColStatus: "Stato",
 				checkDisplayReverse: "Visualizza le sezioni in ordine inverso",
-				btnApplyWarning: "Conferma eliminazione di %NB% sezioni",
+				btnApplyWarning: "é_Confirm deletion of %NB% section(s)_È",
 				deleteTooltip: "Elimina",
 				firstSectionExplain: "(La prima sezione non può essere spostata)"
 			},
@@ -62,14 +62,14 @@
 				lblEdit: "Modifiche",
 				lblPublish: "Condividi",
 				lblMore: "Ulteriori informazioni?",
-				lblLink: "Visitare il sito Web delle story Map.",
+				lblLink: "Visitare il sito Web delle story map.",
 				content1Div1: "Quando si crea la storia, è possibile integrare diversi stili. Lo stile di <strong>%LAYOUT_TITLE%</strong> è quello utilizzato in genere per testo, immagini e video per le mappe nella <strong>visualizzazione principale</strong>. %TPL_NAME% consente inoltre di inserire nella visualizzazione principale anche immagini, grafici e video.",
-				content1Div2: "é_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._È",
+				content1Div2: "Per personalizzare l\'esperienza di storytelling, è possibile aggiungere sezioni. In tal modo quando i lettori scorrono il testo di %LAYOUT_TITLE%, una mappa nella visualizzazione principale viene ridotta/ingrandita per indicare i punti chiave oppure vengono attivate/disattivate automaticamente nuove mappe e immagini a supporto del messaggio.",
 				content2Div1: "In questa finestra è possibile modificare l\'aspetto di %TPL_NAME% ridefinendo combinazioni colori, layout e larghezze.",
-				content2Div2: "é_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._È",
-				content3Div1: "I contenuti sono organizzati in sezioni, paragonabili a minicapitoli. È possibile disporre del numero di sezioni desiderato. Il flusso delle sezioni è importante, pertanto in Organizza è possibile riordinarle o eliminarle secondo necessità.",
+				content2Div2: "È anche possibile condividere collegamenti in Facebook, Twitter e Bitly per consentire ai lettori di contribuire alla diffusione di %TPL_NAME%.",
+				content3Div1: "é_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._È",
 				content4Div1: "È stato individuato un errore o si desidera modificare il materiale? Nessun problema. Grazie all\'icona di modifica presente nell\'applicazione, è possibile apportare modifiche ai contenuti. Durante lo sviluppo di %TPL_NAME% le funzioni di modifica verranno utilizzate spessissimo.",
-				content5Div1: "é_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._È"
+				content5Div1: "%TPL_NAME% viene salvato nell\'account %PORTAL% ed è privato per impostazione predefinita. È possibile decidere di condividerlo con l\'organizzazione o con tutti. Viene inoltre fornito un URL breve per facilitarne la condivisione."
 			},
 			landing: {
 				lblAdd: "Aggiungi a prima sezione",

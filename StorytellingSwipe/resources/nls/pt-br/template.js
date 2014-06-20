@@ -6,7 +6,7 @@
 				step2: "CARREGANDO DADOS",
 				step3: "INICIALIZANDO",
 				fail: "Desculpe, falha ao carregar a ferramenta Oscilar",
-				loadBuilder: "TROCANDO PARA MODO DO CONSTRUTOR",				
+				loadBuilder: "TROCANDO PARA MODO DO CONSTRUTOR",
 				redirectSignIn: "REDIRECIONANDO PARA PÁGINA DE REGISTRO",
 				redirectSignIn2: "(você será redirecionado aqui após registrar)",
 				failButton: "Tentar Novamente"
@@ -25,7 +25,7 @@
 				mapSave: "Erro ao salvar o mapa da web",
 				notAuthorized: "Você não está autorizado para acessar este aplicativo.",
 				conflictingProjectionsTitle: "Projeções em Conflito",
-				conflictingProjections: "ã_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._Ç",
+				conflictingProjections: "A ferramenta Oscilar não suporta dois mapas da web com projeções diferentes. Abra as configurações e utilize um mapa da web que utiliza a mesma projeção que o primeiro mapa da web.",
 				cpButton: "Fechar"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "para salvar o aplicativo."
 			},
 			header:{
-				editMe: "ã_Edit me!_Ç",
+				editMe: "Editar-me !",
 				templateTitle: "Configurar título do modelo",
 				templateSubtitle: "Configurar subtítulo do modelo"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Configure a descrição do painel lateral",
-				editMe: "ã_Edit me!_Ç",
+				editMe: "Editar-me !",
 				legendTitle: "Legenda"
 			},
 			infoWindow: {

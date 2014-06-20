@@ -1,12 +1,12 @@
 ﻿define(
      ({
         map: {
-            error: "ä_Unable to create map_Ü"
+            error: "Karte kann nicht erstellt werden"
         },
         onlineStatus: {
-            online: "ä_A connection to the server can be made._Ü",
-            offline: "ä_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._Ü",
-            reconnecting: "ä_Reconnecting&hellip;_Ü"
+            online: "ä_You are currently online._Ü",
+            offline: "Sie arbeiten derzeit offline. Gesendete Formulare werden lokal gespeichert, bis eine Verbindung mit dem Server hergestellt werden kann.",
+            reconnecting: "Verbindung erneut herstellen&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

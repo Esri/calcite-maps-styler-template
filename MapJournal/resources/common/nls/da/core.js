@@ -16,7 +16,7 @@
 				disabledAdmin: "Dette objekt er blevet deaktiveret af administratoren"
 			},
 			inlineFieldEdit: {
-				editMe: "Redig\ér mig!"
+				editMe: "Redigér mig!"
 			},
 			builderPanel: {
 				panelHeader: "%TPL_NAME% Builder",
@@ -26,8 +26,8 @@
 				buttonSettings: "Indstillinger",
 				buttonHelp: "Hjælp",
 				buttonPreview: "Vis Live",
-				tooltipFirstSave: "ø_This function is not available until the application is saved_å",
-				tooltipNotShared: "ø_This function is not available until the application is shared_å",
+				tooltipFirstSave: "Denne funktion er ikke tilgængelig, før applikationen er gemt",
+				tooltipNotShared: "Denne funktion er ikke tilgængelig, før applikationen er delt",
 				noPendingChange: "Ingen ventende ændringer",
 				unSavedChangePlural: "Ventende ændringer",
 				closeWithPendingChange: "Er du sikker på, at du vil bekræfte denne handling? Dine ændringer vil gå tabt.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Applikationen er gemt",
-				firstSaveHeader: "ø_Your application is now saved in %PORTAL% but it is not shared yet._å",
+				firstSaveHeader: "Din applikation er nu blevet gemt i %PORTAL%, men den er endnu ikke blevet delt.",
 				firstSavePreview: "Forhåndsvisning",
 				firstSaveShare: "Del",
 				firstSaveA1: "Hvis du ikke er fortrolig med %PORTAL% eller ønsker en genvej til at få adgang til builder-grænsefladen, kan du gemme dette link: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Gem og genbrug følgende link %LINK1%, eller brug <a href='%LINK2%' target='_blank'>applikationens elementoplysningsside</a>.",
 				shareA2div2: "Når du som ejer af applikationen er logget ind på %PORTAL%, indeholder applikationen en knap til åbning af builder-programmet:",				
 				shareQ3: "Hvor er dataene gemt?",
-				shareA3: "ø_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._å"
+				shareA3: "%TPL_NAME%-data og -konfiguration er gemt i <a href='%LINK2%' target='_blank'>dette webapplikationselement</a>. Hvis du har brugt Flickr-, Picasa-, Facebook- eller YouTube-import, er dine billeder og videoer ikke blevet duplikeret i %PORTAL%."
 			},
 			settings: {
 				header: "Indstillinger",
-				tabError: "ø_Please check all tabs for errors_å"
+				tabError: "Kontrollér alle faner for fejl"
 			},
 			settingsLayout: {
 				title: "Layout",
-				explain: "ø_Which layout do you want to use?_å",
-				explainInit: "ø_You can change the layout anytime from the settings panel._å",
+				explain: "Hvilket layout ønsker du at bruge?",
+				explainInit: "Du kan på et hvilket som helst tidspunkt ændre layoutet fra indstillingspanelet.",
 				viewExample: "Vis et live-eksempel"
 			},
 			settingsTheme: {

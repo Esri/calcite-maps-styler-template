@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "Impossibile creare la mappa"
         },
         days: {
-           now: "é_NOW_È",
-           sun: "é_SUN_È",
-           mon: "é_MON_È",
-           tue: "é_TUE_È",
-           wed: "é_WED_È",
-           thu: "é_THU_È",
-           fri: "é_FRI_È",
-           sat: "é_SAT_È"
+           now: "ORA",
+           sun: "DOM",
+           mon: "LUN",
+           tue: "MAR",
+           wed: "MER",
+           thu: "GIO",
+           fri: "VEN",
+           sat: "SAB"
         }
-}));
+    })
+ 
+);

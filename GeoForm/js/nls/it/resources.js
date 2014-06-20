@@ -4,9 +4,9 @@
             error: "Impossibile creare la mappa"
         },
         onlineStatus: {
-            online: "é_A connection to the server can be made._È",
-            offline: "é_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._È",
-            reconnecting: "é_Reconnecting&hellip;_È"
+            online: "é_You are currently online._È",
+            offline: "Al momento è attiva la modalità offline. Gli invii di moduli verranno salvati in locale finché non sarà possibile stabilire una connessione al server.",
+            reconnecting: "Riconnessione in corso&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

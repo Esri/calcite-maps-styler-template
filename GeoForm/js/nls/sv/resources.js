@@ -1,12 +1,12 @@
 ﻿define(
      ({
         map: {
-            error: "Å_Unable to create map_ö"
+            error: "Det gick inte att skapa kartan"
         },
         onlineStatus: {
-            online: "Å_A connection to the server can be made._ö",
-            offline: "Å_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._ö",
-            reconnecting: "Å_Reconnecting&hellip;_ö"
+            online: "Å_You are currently online._ö",
+            offline: "Du arbetar just nu offline. Inskickade formulär sparas lokalt tills det går att ansluta till servern.",
+            reconnecting: "Återansluter&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

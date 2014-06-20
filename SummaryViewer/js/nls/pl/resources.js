@@ -4,5 +4,4 @@
             error: "Nie można utworzyć mapy"
         }
     })
-
 );

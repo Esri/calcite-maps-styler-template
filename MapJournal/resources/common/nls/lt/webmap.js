@@ -2,10 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
+				lblWebMap: "Į_Web map_š",
 				lblLocation: "Vieta",
 				lblContent: "Turinys",
 				lblPopup: "Iškylantis langas",
-				lblControls: "Valdikliai",
+				lblControls: "Į_Extras_š",
 				lblOverview: "Apžvalgos žemėlapis",
 				lblLegend: "Legenda",
 				loadingTitle: "Įkeliamas pavadinimas",
@@ -21,24 +22,24 @@
 				newMap: "Naujai pasirinktas internetinis žemėlapis",
 				webmapDefault: "Numatytasis internetinis žemėlapis",
 				customCfg: "Adaptuota konfigūracija",
-				tooltipLocation: "Nustatykite žemėlapio vietą, kuri bus naudojama, kai skaitytojai pereis į šią skiltį.",
+				tooltipLocation: "Į_Define the map location that will be used when your readers navigate to this section._š",
 				tooltipContent: "Nustatykite matomus sluoksnius.",
 				tooltipPopup: "Pasirinkite iškylantį langą, kuris bus rodomas, kai skaitytojai pereis į šią skiltį.",
-				tooltipOverview: "Į_Display a small overview map along with the main map_š",
-				tooltipLegend: "Į_Display the map legend on the map, helpful when the map has many layers and symbols._š",
-				mapCfgInvite: "Konfigūruokite žemėlapį naudodami šiuos valdiklius"
+				tooltipOverview: "Kartu su pagrindiniu žemėlapiu rodyti mažą apžvalgos žemėlapį",
+				tooltipLegend: "Žemėlapyje rodyti žemėlapio legendą. Tai naudinga, kai žemėlapyje yra daug sluoksnių ir simbolių.",
+				mapCfgInvite: "Į_Use these controls to configure your map_š"
 			},
 			configure: {
 				btnReset: "Atkurti",
 				btnCancel: "Atšaukti",
 				tocTitle: "Žemėlapio turinys",
 				tocExplain: "Pasirinkite, kurie sluoksniai bus rodomi.",
-				tocSave: "Išsaugoti žemėlapio turinį",
+				tocSave: "Į_Save map content_š",
 				extentTitle: "Žemėlapio vieta",
 				extentExplain: "Perstumkite žemėlapį ir keiskite jo mastelį, kad nustatytumėte, kaip jis atrodys skaitytojams.",
 				extentSave: "Išsaugoti žemėlapio vietą",
 				popupTitle: "Žemėlapio iškylantis langas",
-				popupExplain: "Į_Configure the look of the pop-up shown to readers_š",
+				popupExplain: "Konfigūruoti skaitytojams rodomą iškylantį langą",
 				popupSave: "Išsaugoti iškylančio lango konfigūraciją",
 				hintNavigation: "Žemėlapio navigacija išjungta."
 			}

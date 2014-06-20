@@ -26,8 +26,8 @@
 				buttonSettings: "Einstellungen",
 				buttonHelp: "Hilfe",
 				buttonPreview: "Live anzeigen",
-				tooltipFirstSave: "ä_This function is not available until the application is saved_Ü",
-				tooltipNotShared: "ä_This function is not available until the application is shared_Ü",
+				tooltipFirstSave: "Diese Funktion ist erst verfügbar, wenn die Anwendung gespeichert wird",
+				tooltipNotShared: "Diese Funktion ist erst verfügbar, wenn die Anwendung freigegeben wird",
 				noPendingChange: "Keine ausstehende Änderung",
 				unSavedChangePlural: "Ausstehende Änderungen",
 				closeWithPendingChange: "Möchten Sie die Aktion wirklich bestätigen? Ihre Änderungen gehen dabei verloren.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Anwendung wurde erfolgreich gespeichert",
-				firstSaveHeader: "ä_Your application is now saved in %PORTAL% but it is not shared yet._Ü",
+				firstSaveHeader: "Ihre Anwendung ist jetzt in %PORTAL% gespeichert, wurde aber noch nicht freigegeben.",
 				firstSavePreview: "Vorschau",
 				firstSaveShare: "Freigeben",
 				firstSaveA1: "Wenn Sie nicht mit %PORTAL% vertraut sind oder eine Verknüpfung für den Zugriff auf die Builder-Oberfläche wünschen, können Sie den folgenden Link speichern: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Speichern Sie den folgenden Link %LINK1%, und verwenden Sie ihn erneut, oder verwenden Sie <a href='%LINK2%' target='_blank'>die Elementseite der Anwendung</a>.",
 				shareA2div2: "Wenn Sie bei %PORTAL% als Besitzer der Anwendung angemeldet sind, enthält die Anwendung eine Schaltfläche zum Öffnen des interaktiven Builders:",				
 				shareQ3: "Wo werden die Daten gespeichert?",
-				shareA3: "ä_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._Ü"
+				shareA3: "Die Daten und Konfiguration für %TPL_NAME% sind in <a href='%LINK2%' target='_blank'>diesem Webanwendungselement</a> gespeichert. Bei Verwendung der Importfunktion von Flickr, Picasa, Facebook oder YouTube bleiben Ihre Bilder und Videos dort gespeichert und werden nicht in %PORTAL% dupliziert."
 			},
 			settings: {
 				header: "Einstellungen",
-				tabError: "ä_Please check all tabs for errors_Ü"
+				tabError: "Überprüfen Sie alle Registerkarten auf Fehler"
 			},
 			settingsLayout: {
 				title: "Layout",
-				explain: "ä_Which layout do you want to use?_Ü",
-				explainInit: "ä_You can change the layout anytime from the settings panel._Ü",
+				explain: "Welches Layout möchten Sie verwenden?",
+				explainInit: "Das Layout kann jederzeit im Fenster \"Einstellungen\" geändert werden.",
 				viewExample: "Live-Beispiel anzeigen"
 			},
 			settingsTheme: {

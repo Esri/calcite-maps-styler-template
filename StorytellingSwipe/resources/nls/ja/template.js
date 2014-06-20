@@ -6,7 +6,7 @@
 				step2: "データを読み込んでいます",
 				step3: "初期化",
 				fail: "スワイプの読み込みに失敗しました",
-				loadBuilder: "ビルダ モードへの切り替え",				
+				loadBuilder: "ビルダ モードへの切り替え",
 				redirectSignIn: "サイン イン ページへのリダイレクト",
 				redirectSignIn2: "(サイン イン後にここにリダイレクトされます)",
 				failButton: "再試行"
@@ -25,7 +25,7 @@
 				mapSave: "Web マップの保存中にエラーが発生しました",
 				notAuthorized: "このアプリケーションにアクセスする権限がありません",
 				conflictingProjectionsTitle: "投影法の競合",
-				conflictingProjections: "須_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._鷗",
+				conflictingProjections: "スワイプでは、投影法の異なる 2 つの Web マップを使用できません。設定を開き、最初の Web マップと投影法が同じである Web マップを使用してください。",
 				cpButton: "閉じる"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "アプリケーションを保存してください。"
 			},
 			header:{
-				editMe: "須_Edit me!_鷗",
+				editMe: "編集",
 				templateTitle: "テンプレートのタイトルの設定",
 				templateSubtitle: "テンプレートのサブタイトルの設定"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "サイド パネルの説明を設定",
-				editMe: "須_Edit me!_鷗",
+				editMe: "編集",
 				legendTitle: "凡例"
 			},
 			infoWindow: {

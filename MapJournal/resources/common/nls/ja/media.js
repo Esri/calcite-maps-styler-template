@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "メディア タイプの選択",
-				lblSelect2: "コンテンツ タイプの選択",
+				lblSelect1: "須_Media_鷗",
+				lblSelect2: "須_Content_鷗",
 				lblMap: "マップ",
 				lblImage: "画像",
 				lblVideo: "ビデオ",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "リンクをクリックすると、マップ マーカーが表示されます"
 			},
 			editorActionMedia: {
-				lblTitle: "須_Change the Main Stage content_鷗"
+				lblTitle: "メイン ステージのコンテンツを変更"
 			},
 			editorInlineMedia: {
 				lblTitle: "画像またはビデオの挿入"

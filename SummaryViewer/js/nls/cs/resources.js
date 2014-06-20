@@ -4,5 +4,4 @@
             error: "Nelze vytvořit mapu"
         }
     })
-
 );

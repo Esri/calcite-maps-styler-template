@@ -1,7 +1,7 @@
 ﻿define(
- ({
+   ({
   	map: {
-  		error: "بيت_Unable to create map_لاحقة"
+  		error: "يتعذر إنشاء الخريطة"
   	},
     viewer: {
       content_title: "مُنقي",
@@ -9,11 +9,10 @@
       filterInstructions: "تنقية الطبقة بتحديد القيم.",
       filterOr: "يجب أن يكون أحد التعبيرات التالية صحيحًا.",
       filterAnd: "يجب أن تكون جميع التعبيرات التالية صحيحة.",
-      filterNo: "لا تحتوي خريطة الويب على أي عوامل تنقية تفاعلية.",
+      filterNo:  "Web map does not contain any interactive filters.",
       errors:{
         message: "حدثت مشكلة أثناء إنشاء تطبيقات المُنقيات"
       }
     }
   })
-
 );

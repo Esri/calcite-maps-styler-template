@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Välj mediatyp",
-				lblSelect2: "Välj innehållstyp",
+				lblSelect1: "Å_Media_ö",
+				lblSelect2: "Å_Content_ö",
 				lblMap: "Karta",
 				lblImage: "Bild",
 				lblVideo: "Video",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "Användare ser en kartmarkör när de klickar på länken"
 			},
 			editorActionMedia: {
-				lblTitle: "Å_Change the Main Stage content_ö"
+				lblTitle: "Ändra innehåll för huvudscenen"
 			},
 			editorInlineMedia: {
 				lblTitle: "Infoga en bild eller ett videoklipp"

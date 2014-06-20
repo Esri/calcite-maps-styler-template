@@ -4,9 +4,9 @@
             error: "Kan ikke oprette kort"
         },
         onlineStatus: {
-            online: "ø_A connection to the server can be made._å",
-            offline: "ø_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._å",
-            reconnecting: "ø_Reconnecting&hellip;_å"
+            online: "ø_You are currently online._å",
+            offline: "Du arbejder offline på nuværende tidspunkt. Formularafsendelser vil blive gemt lokalt, indtil der oprettes forbindelse til serveren.",
+            reconnecting: "Opretter forbindelse igen&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -19,7 +19,7 @@
                 title: "Vælg webkort",
                 searchTitle: "Søg",
                 ok: "OK",
-                cancel: "ø_Cancel_å",
+                cancel: "Annullér",
                 placeholder: "Angiv søgeterm"
             },
             groupdlg: {
@@ -32,10 +32,9 @@
                 title: "Vælg gruppe",
                 searchTitle: "Søg",
                 ok: "OK",
-                cancel: "ø_Cancel_å",
+                cancel: "Annullér",
                 placeholder: "Angiv søgeterm"
             }
         }
     })
-    
 );

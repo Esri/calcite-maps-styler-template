@@ -4,5 +4,4 @@
             error: "Impossibile creare la mappa"
         }
     })
-
 );

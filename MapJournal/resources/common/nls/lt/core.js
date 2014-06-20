@@ -26,8 +26,8 @@
 				buttonSettings: "Nuostatos",
 				buttonHelp: "Pagalba",
 				buttonPreview: "Peržiūrėti veikiančią",
-				tooltipFirstSave: "Į_This function is not available until the application is saved_š",
-				tooltipNotShared: "Į_This function is not available until the application is shared_š",
+				tooltipFirstSave: "Kol aplikacija neišsaugota, ši funkcija nepasiekiama",
+				tooltipNotShared: "Kol aplikacija nebendrinama, ši funkcija nepasiekiama",
 				noPendingChange: "Laukiančių pakeitimų nėra",
 				unSavedChangePlural: "Nepatvirtinti pakeitimai",
 				closeWithPendingChange: "Ar tikrai norite patvirtinti šį veiksmą? Pakeitimai bus prarasti.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Aplikacija išsaugota",
-				firstSaveHeader: "Į_Your application is now saved in %PORTAL% but it is not shared yet._š",
+				firstSaveHeader: "Dabar aplikacija išsaugota %PORTAL%, bet dar nėra bendrinama.",
 				firstSavePreview: "Peržiūra",
 				firstSaveShare: "Bendrinti",
 				firstSaveA1: "Jei dar nedirbote su %PORTAL% arba norite greitai patekti į kūrimo priemonės sąsają, galite išsaugoti šią nuorodą: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Išsaugokite ir pernaudokite šią nuorodą %LINK1% arba naudokite <a href='%LINK2%' target='_blank'>aplikacijos elemento puslapį</a>.",
 				shareA2div2: "Kaip aplikacijos savininkas, kai prisijungiate prie %PORTAL%, aplikacija turės kūrimo priemonės atvėrimo mygtuką:",				
 				shareQ3: "Kur laikomi duomenys?",
-				shareA3: "Į_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._š"
+				shareA3: "%TPL_NAME% duomenys ir konfigūracija saugomi <a href='%LINK2%' target='_blank'>šiame internetinės aplikacijos elemente</a>. Jei naudojote Flickr, Picasa, Facebook ar YouTube importavimą, vaizdų ir video dublikatų %PORTAL% nebus."
 			},
 			settings: {
 				header: "Nuostatos",
-				tabError: "Į_Please check all tabs for errors_š"
+				tabError: "Patikrinkite ar skirtukuose nėra klaidų"
 			},
 			settingsLayout: {
 				title: "Maketas",
-				explain: "Į_Which layout do you want to use?_š",
-				explainInit: "Į_You can change the layout anytime from the settings panel._š",
+				explain: "Kurį maketą norite naudoti?",
+				explainInit: "Nustatymų skyde maketą galite pakeisti bet kuriuo metu.",
 				viewExample: "Peržiūrėti veikiantį pavyzdį"
 			},
 			settingsTheme: {

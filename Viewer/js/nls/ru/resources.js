@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Не удалось создать карту"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Альбомная (Image)',
 			      "label4": 'Книжная (Image)'
 			    },
-			    "legend": "Ж_Add legend to output_Я"
+			    "legend": "Добавить легенду в выходные данные"
 			},
 			"share": {
 				"extent": "Использовать текущий экстент карты",
@@ -42,13 +43,15 @@ define(({
         	"legend": "Легенда",
         	"bookmarks": "Закладки",
         	"layers": "Слои",
-        	"basemap": "Ж_Basemap gallery_Я",
-        	"overview": "Ж_Overview map_Я",
+        	"basemap": "Галерея базовых карт",
+        	"overview": "Обзорная карта",
         	"measure": "Измерить",
         	"edit": "Редактировать",
         	"time": "Время",
         	"print": "Печать",
         	"details": "Детали",
-        	"share": "Ж_Share_Я"
+        	"share": "Общий доступ"
         }
-}));
+    })
+
+);

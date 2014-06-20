@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "无法创建地图"
         },
         days: {
-           now: "试_NOW_验",
-           sun: "试_SUN_验",
-           mon: "试_MON_验",
-           tue: "试_TUE_验",
-           wed: "试_WED_验",
-           thu: "试_THU_验",
-           fri: "试_FRI_验",
-           sat: "试_SAT_验"
+           now: "现在",
+           sun: "周日",
+           mon: "周一",
+           tue: "周二",
+           wed: "周三",
+           thu: "周四",
+           fri: "周五",
+           sat: "周六"
         }
-}));
+    })
+ 
+);

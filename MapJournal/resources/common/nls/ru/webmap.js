@@ -2,10 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
+				lblWebMap: "Ж_Web map_Я",
 				lblLocation: "Местоположение",
 				lblContent: "Содержание",
 				lblPopup: "Всплывающее окно",
-				lblControls: "Элементы управления",
+				lblControls: "Ж_Extras_Я",
 				lblOverview: "Обзорная карта",
 				lblLegend: "Легенда",
 				loadingTitle: "Название загрузки",
@@ -21,24 +22,24 @@
 				newMap: "Вновь выбранная веб-карта",
 				webmapDefault: "Веб-карта по умолчанию",
 				customCfg: "Пользовательская конфигурация",
-				tooltipLocation: "Определите местоположение на карте, которое будет открыто при обращении к данному разделу.",
+				tooltipLocation: "Ж_Define the map location that will be used when your readers navigate to this section._Я",
 				tooltipContent: "Определите видимые слои.",
 				tooltipPopup: "Выберите всплывающее окно, которое будет открываться при переходе в данный раздел.",
-				tooltipOverview: "Ж_Display a small overview map along with the main map_Я",
-				tooltipLegend: "Ж_Display the map legend on the map, helpful when the map has many layers and symbols._Я",
-				mapCfgInvite: "Используйте эти элементы управления для настройки вашей карты"
+				tooltipOverview: "Отобразите маленькую обзорную карту вместе с основной картой",
+				tooltipLegend: "Отобразите легенду карты на самой карте, что пригодится, если на карте много слоев и символов.",
+				mapCfgInvite: "Ж_Use these controls to configure your map_Я"
 			},
 			configure: {
 				btnReset: "Сбросить",
 				btnCancel: "Отмена",
 				tocTitle: "Содержание карты",
 				tocExplain: "Выберите, какие слои будут отображаться.",
-				tocSave: "Сохранить содержание карты",
+				tocSave: "Ж_Save map content_Я",
 				extentTitle: "Местоположение карты",
 				extentExplain: "Переместите и измените масштаб карты, чтобы просмотреть, как она будет выглядеть для читателей.",
 				extentSave: "Сохранение местоположение на карте",
 				popupTitle: "Всплывающее окно карты",
-				popupExplain: "Ж_Configure the look of the pop-up shown to readers_Я",
+				popupExplain: "Настройте вид всплывающих окон, показываемых читателям",
 				popupSave: "Сохраните конфигурацию всплывающего окна",
 				hintNavigation: "Навигация по карте отключена."
 			}

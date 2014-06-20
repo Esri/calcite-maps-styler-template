@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Selectare tip media",
-				lblSelect2: "Selectare tip de conţinut",
+				lblSelect1: "Ă_Media_ș",
+				lblSelect2: "Ă_Content_ș",
 				lblMap: "Hartă",
 				lblImage: "Imagine",
 				lblVideo: "Video",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "Utilizatorul va vedea un marcaj pe hartă când va face clic pe link"
 			},
 			editorActionMedia: {
-				lblTitle: "Ă_Change the Main Stage content_ș"
+				lblTitle: "Modificare conţinut pentru Nivelul principal"
 			},
 			editorInlineMedia: {
 				lblTitle: "Inserare imagine sau videoclip"

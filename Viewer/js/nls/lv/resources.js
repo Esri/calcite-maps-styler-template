@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Nevar izveidot karti"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Ainava (Attēls)',
 			      "label4": 'Portrets (Attēls)'
 			    },
-			    "legend": "ķ_Add legend to output_ū"
+			    "legend": "Pievienot apzīmējumus izvadei"
 			},
 			"share": {
 				"extent": "Lieto pašreizējo kartes pārklājumu",
@@ -42,13 +43,15 @@ define(({
         	"legend": "Leģenda",
         	"bookmarks": "Grāmatzīmes",
         	"layers": "Slāņi",
-        	"basemap": "ķ_Basemap gallery_ū",
-        	"overview": "ķ_Overview map_ū",
+        	"basemap": "Pamatkartes galerija",
+        	"overview": "Pārskatīt karti",
         	"measure": "Izmērīt",
         	"edit": "Rediģēt",
         	"time": "Laiks",
         	"print": "Drukāt",
         	"details": "Detaļas",
-        	"share": "ķ_Share_ū"
+        	"share": "Koplietošana"
         }
-}));
+    })
+
+);

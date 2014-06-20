@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Impossible de créer la carte"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Paysage (Image)',
 			      "label4": 'Portrait (Image)'
 			    },
-			    "legend": "æ_Add legend to output_Â"
+			    "legend": "Ajouter la légende à la sortie"
 			},
 			"share": {
 				"extent": "Utiliser l’étendue courante de la carte",
@@ -42,8 +43,8 @@ define(({
         	"legend": "Légende",
         	"bookmarks": "Géosignets",
         	"layers": "Couches",
-        	"basemap": "æ_Basemap gallery_Â",
-        	"overview": "æ_Overview map_Â",
+        	"basemap": "Galerie de fonds de carte",
+        	"overview": "Carte générale",
         	"measure": "Mesurer",
         	"edit": "Modifier",
         	"time": "Heure",
@@ -51,4 +52,6 @@ define(({
         	"details": "Détails",
         	"share": "Partager"
         }
-}));
+    })
+
+);

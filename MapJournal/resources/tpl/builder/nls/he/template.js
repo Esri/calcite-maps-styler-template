@@ -41,7 +41,7 @@
 			addEditViewText: {
 				editorPlaceholder: "הוסף כאן טקסט, קישורים וכמות מוגבלת של גרפיקה",
 				editorActionsTitle: "פעולות של השלב העיקרי",
-				editorActionsHelpDescr: "השתמש בפקדים אלו כדי ליצור קישורים שישנו את השלב העיקרי. לדוגמא, כאשר הקורא לוחץ על קישור ייתכן שתרצה להגדיל את תצוגת מפה למיקום ספציפי, להציג  web map אחר או להציג תמונה."
+				editorActionsHelpDescr: "כן_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ש"
 			},
 			organizePopup: {
 				title: "ארגן",
@@ -50,7 +50,7 @@
 				lblColPubDate: "תאריך הפצה",
 				lblColStatus: "סטטוס",
 				checkDisplayReverse: "הצג קטעים בסדר הפוך",
-				btnApplyWarning: "אשר הדחקת %NB% קטעים",
+				btnApplyWarning: "כן_Confirm deletion of %NB% section(s)_ש",
 				deleteTooltip: "מחק",
 				firstSectionExplain: "(לא ניתן להעביר את קטע הבית)"
 			},
@@ -67,7 +67,7 @@
 				content1Div2: "כן_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._ש",
 				content2Div1: "כאן הוא מקום שבו אתה יכול להתאים את מראה ה- %TPL_NAME%. כאן ניתן לעדן את סכימות הצבעים, תצוגות המפה ועובי של פריטים שונים.",
 				content2Div2: "כן_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._ש",
-				content3Div1: "התוכן שלך מאורגן בקטעים. אתה יכול לקבל קטעים רבים ככל שתרצה חשוב עליהם כמו פרקים קטנים).הזרימה של פרקים אלה היא חשובה; לכן בתוך ארגן אתה יכול לסדר מחדש או למחוק קטעים כרצונך.",
+				content3Div1: "כן_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ש",
 				content4Div1: "מצאת שגיאות או רוצה לשנות את החומר שלך? אל דאגה. חפש את סמל העריכה באפליקציה כדי לבצע שינויים בתוכן שלך. אתה יכול להשתמש בפונקצית העריכה פעמים רבות בעת שאתה מפתח את ה-  %TPL_NAME% שלך!",
 				content5Div1: "כן_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._ש"
 			},

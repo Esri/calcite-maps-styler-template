@@ -6,7 +6,7 @@
 				step2: "CHARGEMENT DES DONNEES",
 				step3: "INITIALISATION",
 				fail: "Echec de chargement du balayage",
-				loadBuilder: "PASSAGE EN MODE DE GENERATEUR",				
+				loadBuilder: "PASSAGE EN MODE DE GENERATEUR",
 				redirectSignIn: "REDIRECTION VERS LA PAGE DE CONNEXION",
 				redirectSignIn2: "(vous serez redirigé vers cette page une fois connecté)",
 				failButton: "Réessayez"
@@ -25,7 +25,7 @@
 				mapSave: "Erreur d\’enregistrement de la carte Web",
 				notAuthorized: "Vous n\’êtes pas autorisé à accéder à cette application",
 				conflictingProjectionsTitle: "Projections conflictuelles",
-				conflictingProjections: "æ_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._Â",
+				conflictingProjections: "Le balayage ne prend pas en charge l\'utilisation de deux cartes Web avec des projections différentes. Ouvrez les paramètres et utilisez une carte Web dotée de la même projection que la première carte Web.",
 				cpButton: "Fermer"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "pour enregistrer l\’application."
 			},
 			header:{
-				editMe: "æ_Edit me!_Â",
+				editMe: "Modifier",
 				templateTitle: "Définir le titre du modèle",
 				templateSubtitle: "Définir le sous-titre du modèle"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Définissez la description du volet latéral",
-				editMe: "æ_Edit me!_Â",
+				editMe: "Modifier",
 				legendTitle: "Légende"
 			},
 			infoWindow: {

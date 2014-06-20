@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "StatsBlock": {
             "close": "Zavřít",
             "next": "Další",
@@ -7,4 +7,5 @@
             "source":"Datový zdroj"
         }
     })
-});
+    
+);

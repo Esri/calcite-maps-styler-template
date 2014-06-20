@@ -26,8 +26,8 @@
 				buttonSettings: "Innstillinger",
 				buttonHelp: "Hjelp",
 				buttonPreview: "Vis i sanntid",
-				tooltipFirstSave: "å_This function is not available until the application is saved_ø",
-				tooltipNotShared: "å_This function is not available until the application is shared_ø",
+				tooltipFirstSave: "Denne funksjonen er ikke tilgjengelig før programmet er lagret",
+				tooltipNotShared: "Denne funksjonen er ikke tilgjengelig før programmet er delt",
 				noPendingChange: "Ingen ventende endring",
 				unSavedChangePlural: "Ventende endringer",
 				closeWithPendingChange: "Er du sikker på at du vil bekrefte denne handlingen? Du mister endringene du har gjort.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Programmet er lagret",
-				firstSaveHeader: "å_Your application is now saved in %PORTAL% but it is not shared yet._ø",
+				firstSaveHeader: "Programmet er nå lagret i %PORTAL%, men er ikke delt ennå.",
 				firstSavePreview: "Forhåndsvisning",
 				firstSaveShare: "Del",
 				firstSaveA1: "Hvis du ikke er kjent med %PORTAL% eller vil opprette en snarvei til grensesnittet for byggeren, kan du lagre følgende kobling: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Lagre og bruk følgende kobling på nytt, %LINK1% eller bruk <a href='%LINK2%' target='_blank'>siden for programelementer</a>.",
 				shareA2div2: "Når du som eier av programmet har logget på %PORTAL%, får du tilgang til en knapp for å åpne byggeverktøyet:",				
 				shareQ3: "Hvor lagres dataene?",
-				shareA3: "å_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._ø"
+				shareA3: "%TPL_NAME%-data og -konfigurasjon er lagret i <a href='%LINK2%' target='_blank'>dette webprogramelementet</a>. Hvis du har importert fra Flickr, Picasa, Facebook eller YouTube, har ikke bildene og videoene dine blitt duplisert i %PORTAL%."
 			},
 			settings: {
 				header: "Innstillinger",
-				tabError: "å_Please check all tabs for errors_ø"
+				tabError: "Se etter feil i alle faner"
 			},
 			settingsLayout: {
 				title: "Utforming",
-				explain: "å_Which layout do you want to use?_ø",
-				explainInit: "å_You can change the layout anytime from the settings panel._ø",
+				explain: "Hva slags oppsett vil du bruke?",
+				explainInit: "Du kan når som helst endre oppsettet fra innstillingspanelet.",
 				viewExample: "Vis et eksempel i sanntid"
 			},
 			settingsTheme: {

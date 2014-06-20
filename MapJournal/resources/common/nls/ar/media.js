@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "تحديد نوع الوسائط",
-				lblSelect2: "تحديد نوع المحتويات",
+				lblSelect1: "بيت_Media_لاحقة",
+				lblSelect2: "بيت_Content_لاحقة",
 				lblMap: "خريطة",
 				lblImage: "صورة",
 				lblVideo: "فيديو",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "سيرى المستخدم علامة الخريطة عند النقر على الرابط"
 			},
 			editorActionMedia: {
-				lblTitle: "بيت_Change the Main Stage content_لاحقة"
+				lblTitle: "تغيير محتويات المرحلة الأساسية"
 			},
 			editorInlineMedia: {
 				lblTitle: "إدراج صورة أو مقطع فيديو"

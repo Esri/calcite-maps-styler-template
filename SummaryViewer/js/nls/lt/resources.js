@@ -4,5 +4,4 @@
             error: "Žemėlapio sukurti nepavyko"
         }
     })
-
 );

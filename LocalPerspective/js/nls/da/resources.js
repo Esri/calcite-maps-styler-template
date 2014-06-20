@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "Kan ikke oprette kort"
         },
         days: {
-           now: "ø_NOW_å",
-           sun: "ø_SUN_å",
-           mon: "ø_MON_å",
-           tue: "ø_TUE_å",
-           wed: "ø_WED_å",
-           thu: "ø_THU_å",
-           fri: "ø_FRI_å",
-           sat: "ø_SAT_å"
+           now: "NU",
+           sun: "SØN",
+           mon: "MAN",
+           tue: "TIR",
+           wed: "ONS",
+           thu: "TOR",
+           fri: "FRE",
+           sat: "LØR"
         }
-}));
+    })
+ 
+);

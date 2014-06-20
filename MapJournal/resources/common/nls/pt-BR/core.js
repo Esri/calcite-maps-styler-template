@@ -16,7 +16,7 @@
 				disabledAdmin: "Este recurso foi desabilitado pelo Administrador"
 			},
 			inlineFieldEdit: {
-				editMe: "Edite- me!"
+				editMe: "Editar- me!"
 			},
 			builderPanel: {
 				panelHeader: "Construtor %TPL_NAME%",
@@ -26,8 +26,8 @@
 				buttonSettings: "Configurações",
 				buttonHelp: "Ajuda",
 				buttonPreview: "Visualizar Ao Vivo",
-				tooltipFirstSave: "ã_This function is not available until the application is saved_Ç",
-				tooltipNotShared: "ã_This function is not available until the application is shared_Ç",
+				tooltipFirstSave: "Esta funcionalidade não fica disponível até que o aplicativo seja salvo",
+				tooltipNotShared: "Esta funcionalidade não fica disponível até que o aplicativo seja compartilhado",
 				noPendingChange: "Nenhuma alteração pendente",
 				unSavedChangePlural: "Alterações pendentes",
 				closeWithPendingChange: "Você tem certeza que deseja confirmar esta ação? Suas alterações serão perdidas.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Application salvo com sucesso",
-				firstSaveHeader: "ã_Your application is now saved in %PORTAL% but it is not shared yet._Ç",
+				firstSaveHeader: "O aplicativo agora está salvo no %PORTAL%, mas ainda não está compartilhado.",
 				firstSavePreview: "Visualizar",
 				firstSaveShare: "Compartilhar",
 				firstSaveA1: "Se você não estiver familiarizado com %PORTAL% ou deseja um atalho para acessar a interface do construtor, você poderá salvar o link a seguir:% LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Salve e reutilize a link seguinte %LINK1% ou utilize <a href='%LINK2%' target='_blank'>a página de item do aplicativo</a>.",
 				shareA2div2: "Como o proprietário do aplicativo, quando você estiver conectado em% PORTAL%, o aplicativo incluirá um botão para abrir o construtor:",				
 				shareQ3: "Onde os dados estão armazenados?",
-				shareA3: "ã_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._Ç"
+				shareA3: "Configuração e dados do %TPL_NAME% são armazenados <a href='%LINK2%' target='_blank'>neste item de aplicativo da web</a>. Se você utilizou importação do Flickr, Picasa, Facebook ou YouTube, suas imagens e vídeos não foram duplicados no %PORTAL%."
 			},
 			settings: {
 				header: "Configurações",
-				tabError: "ã_Please check all tabs for errors_Ç"
+				tabError: "Verifique todas as guias por erros"
 			},
 			settingsLayout: {
 				title: "Layout",
-				explain: "ã_Which layout do you want to use?_Ç",
-				explainInit: "ã_You can change the layout anytime from the settings panel._Ç",
+				explain: "Qual layout você deseja utilizar?",
+				explainInit: "Você pode alterar o layout a qualquer momento no painel de configurações.",
 				viewExample: "Visualizar um exemplo ao vivo"
 			},
 			settingsTheme: {

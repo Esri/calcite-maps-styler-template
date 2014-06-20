@@ -26,8 +26,8 @@
 				buttonSettings: "الإعدادات",
 				buttonHelp: "تعليمات",
 				buttonPreview: "عرض مباشر",
-				tooltipFirstSave: "بيت_This function is not available until the application is saved_لاحقة",
-				tooltipNotShared: "بيت_This function is not available until the application is shared_لاحقة",
+				tooltipFirstSave: "تكون هذه الوظيفة غير متاحة حتى يتم حفظ التطبيق",
+				tooltipNotShared: "تكون هذه الوظيفة غير متاحة حتى تتم مشاركة التطبيق",
 				noPendingChange: "لا يوجد تغيير معلق",
 				unSavedChangePlural: "تغييرات معلقة",
 				closeWithPendingChange: "هل أنت متأكد من تأكيد هذا الإجراء؟ سيتم فقدان التغييرات.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "تم حفظ التطبيق بنجاح",
-				firstSaveHeader: "بيت_Your application is now saved in %PORTAL% but it is not shared yet._لاحقة",
+				firstSaveHeader: "يتم حفظ التطبيق الآن في %PORTAL% لكن لم تتم مشاركته بعد.",
 				firstSavePreview: "معاينة",
 				firstSaveShare: "مشاركة",
 				firstSaveA1: "غذا لم تكن مُتألف مع %PORTAL% أو تريد اختصار للوصول إلى واجهة عرض المُنشئ، سيصبح بالإمكان حفظ الرابط التالي: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "احفظ الرابط التالي وقم بإعادة استخدامه %LINK1% أو استخدم <a href='%LINK2%' target='_blank'>صفحة عنصر التطبيق</a>.",
 				shareA2div2: "بصفتك مالك التطبيق، عند تسجيل الدخول على %PORTAL%، سيتضمن التطبيق زر لفتح المُنشئ:",				
 				shareQ3: "أين يتم تخزين البيانات؟",
-				shareA3: "بيت_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._لاحقة"
+				shareA3: "%TPL_NAME%يتم تخزين البيانات والتكوين في <a href='%LINK2%' target='_blank'>عنصر تطبيق الويب الحالي</a>. عند استخدام Flickr أو Picasa أو Facebook أو استيراد YouTube، فلن يتم تكرار الصور ومقاطع الفيديو في %PORTAL%."
 			},
 			settings: {
 				header: "الإعدادات",
-				tabError: "بيت_Please check all tabs for errors_لاحقة"
+				tabError: "الرجاء التحقق من جميع علامات التبويب لاكتشاف الأخطاء"
 			},
 			settingsLayout: {
 				title: "المخطط",
-				explain: "بيت_Which layout do you want to use?_لاحقة",
-				explainInit: "بيت_You can change the layout anytime from the settings panel._لاحقة",
+				explain: "أي التخطيطات الطباعية تريد استخدامها؟",
+				explainInit: "يمكن تغيير التخطيط الطباعي في أي وقت من لوحة الإعدادات.",
 				viewExample: "عرض مثال حي"
 			},
 			settingsTheme: {

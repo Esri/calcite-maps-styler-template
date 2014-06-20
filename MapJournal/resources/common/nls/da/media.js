@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Vælg medietype",
-				lblSelect2: "Vælg indholdstype",
+				lblSelect1: "ø_Media_å",
+				lblSelect2: "ø_Content_å",
 				lblMap: "Kort",
 				lblImage: "Billede",
 				lblVideo: "Video",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "Brugeren får vist en kortmarkør ved at klikke på linket"
 			},
 			editorActionMedia: {
-				lblTitle: "ø_Change the Main Stage content_å"
+				lblTitle: "Redigér indholdet i hovedområdet"
 			},
 			editorInlineMedia: {
 				lblTitle: "Indsæt et billede eller en video"

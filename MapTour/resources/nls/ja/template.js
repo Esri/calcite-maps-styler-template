@@ -410,7 +410,7 @@
 					div1: "マップ ツアー テンプレートは、説得力のある写真またはメディア エレメントが存在する地理情報を、伝えたいストーリーで表示するために設計されています。",
 					div2: "このテンプレートを使用して、魅力的な使いやすい Web アプリケーションを作成できます。そのWeb アプリケーションでは、番号の順序でマップ上に小規模な一連の場所が表示され、その順序で参照できます。このテンプレートは、スマートフォンやタブレットなど、任意のデバイス上の任意の Web ブラウザで使用するように設計されています。<br /><br />作成できるアプリケーションの例を次に示します。",
 					div4: "<a href='http://storymaps.esri.com/stories/maptour-palmsprings' target='_blank'>パームスプリングス マップ ツアー</a>。",
-					div42: "須_To see examples of map tours that other users are creating, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>visit the gallery</a> on the <a href='http://storymaps.arcgis.com/' target='_blank'>Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._鷗",
+					div42: "他のユーザが作成しているマップ ツアーの例を表示するには、<a href='http://storymaps.arcgis.com/' target='_blank'>ストーリー マップ Web サイト</a>の<a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>ギャラリーに移動します</a>。また、<a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a> で Esri の Twitter をフォローすることもできます。",
 					div5: "みなさまのご参加をお待ちしています。質問がある場合、新しい機能を依頼する場合、あるいはバグを見つけた場合は、<a href='http://links.esri.com/storymaps/forum' target='_blank'>ストーリー マップ ユーザ フォーラム</a>をご覧ください。"
 				},
 				tab2: {
@@ -418,9 +418,9 @@
 					div1: "マップ ツアーを作成する際に考慮する主な点は、写真の保存場所の選択です。マップ ツアーには、主要な写真共有サービスや任意の Web サーバに保存された写真、またはフィーチャ サービスのアタッチメントとして保存された写真を使用できます。",
 					div1a: "サポートされている写真の形式とビデオの詳細については、このタブの最後のセクションをご参照ください。",
 					div2: "対話型ビルダでは、マップ ツアーで画像を処理するための次の 2 つのオプションが提供されます。",
-					div3: "須_<ul><li>You can use <b>photos that are already online</b>, such as images stored in a photo sharing site like Flickr, or images stored on your own website. These images will be referenced in your Map Tour via their URLs.</li><li>You can also <b>upload photos from your computer</b> directly into your Map Tour. This upload option requires that you have an ArcGIS for Organizations account and that you have Publisher or Administrator privileges, because a hosted feature service is automatically created for you in which your photos are stored as attachments.</li></ul>_鷗",
+					div3: "<ul><li>Flickr のような写真共有サイトに保存された画像や、独自の Web サイトに保存された画像などの、<b>すでにオンラインに存在する写真</b>を使用できます。それらの画像は、URL を使用してマップ ツアーで参照されます。</li><li><b>写真をコンピュータから直接マップ ツアーにアップロードする</b>こともできます。このアップロードのオプションを使用するには、ArcGIS for Organizations アカウントを所有し、公開者権限または管理者権限を持っている必要があります。これは、ホスト フィーチャ サービスが自動的に作成され、写真がアタッチメントとしてそのフィーチャ サービスに保存されるためです。</li></ul>",
 					div4: "主なユース ケースは次のとおりです。",
-					div4b: "須_<b>Your photos are not hosted</b> yet and you have an ArcGIS for Organizations account: Using a hosted feature service is your best choice. Like public photo sharing services, we will optimize your pictures to create fast-loading images and you will have access to all administration and data management capabilities of the ArcGIS platform._鷗",
+					div4b: "<b>写真がまだホストされず</b>、ArcGIS for Organizations アカウントを保有している: 最良の選択は、ホスト フィーチャ サービスを使用することです。公開写真共有サービスのように、写真が最適化され、高速な読み込み画像が作成されます。ArcGIS プラットフォームのすべての管理機能およびデータ管理機能にアクセスできます。",
 					div5: "<b>組織サイトのメンバーではない</b>: まず、写真共有 Web サイトまたは独自の Web サーバに写真をアップロードする必要があります。ビルダを介してそれらの写真を使用します。それらの写真は、元の場所で引き続きホストされます。",
 					div6: "写真をアタッチメントとして保存しているか、外部の写真を参照している<b>既存のフィーチャ サービスを再利用しようとしている</b>: 詳細は、下のセクションを参照してください。",
 					div7: "マップ ツアー テンプレートの<b>以前のバージョンを使用しており</b>、写真とサムネイルを参照する CSV がすでに存在する: その CSV をインポートしてデータを改善できます。ビルダは、緯度/経度フィールドを使用する CSV のみをサポートします。アドレスベース CSV は、Web マップを使用して引き続き使用できます (下のセクションを参照)。",
@@ -525,7 +525,7 @@
 				shareA2div1: "次のリンク %LINK1% を保存および再利用するか、<a href='%LINK2%' target='_blank'>アプリケーション アイテム ページ</a>を使用します。",
 				shareA2div2: "アプリケーションの所有者として ArcGIS.com にサイン インした場合、アプリケーションに対話型ビルダを開くボタンが含まれます。",				
 				shareQ3: "データの保存場所は？",
-				shareA3: "須_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. Flickr, Picasa, and Facebook images and YouTube videos remain referenced at their respective sites and aren't duplicated in ArcGIS Online._鷗",
+				shareA3: "ツアーの構成は、<a href='%LINK1%' target='_blank'>この Web アイテム</a>と<a href='%LINK2%' target='_blank'>この Web アプリケーション アイテム</a>に保存されます。Flickr、Picasa、および Facebook の画像と YouTube ビデオはそのまま各サイトで参照され、ArcGIS Online に複製されることはありません。",
 				shareWarning: "<a href='%LINK%' target='_blank'>Web マップ</a>の所有者でないため、%WITH% の共有は無効化されています。",
 				shareWarningWith1: "パブリック",
 				shareWarningWith2: "パブリックおよび組織"

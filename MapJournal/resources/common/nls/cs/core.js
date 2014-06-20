@@ -26,8 +26,8 @@
 				buttonSettings: "Nastavení",
 				buttonHelp: "Nápověda",
 				buttonPreview: "Živý náhled",
-				tooltipFirstSave: "Ř_This function is not available until the application is saved_ů",
-				tooltipNotShared: "Ř_This function is not available until the application is shared_ů",
+				tooltipFirstSave: "Tato funkce nebude k dispozici, dokud aplikaci neuložíte.",
+				tooltipNotShared: "Tato funkce nebude k dispozici, dokud aplikaci nebudete sdílet.",
 				noPendingChange: "Žádná neuložená změna",
 				unSavedChangePlural: "Neuložené změny",
 				closeWithPendingChange: "Opravdu chcete potvrdit tuto akci? Vaše změny budou ztraceny.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Aplikace úspěšně uložena",
-				firstSaveHeader: "Ř_Your application is now saved in %PORTAL% but it is not shared yet._ů",
+				firstSaveHeader: "Vaše aplikace je nyní uložena v %PORTAL%, ještě však není sdílena.",
 				firstSavePreview: "Náhled",
 				firstSaveShare: "Sdílet",
 				firstSaveA1: "Pokud se nevyznáte v %PORTAL% nebo chcete zkratku pro přístup do rozhraní nástroje pro tvorbu, můžete si uložit následující odkaz: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Uložte si pro budoucí použití tento odkaz %LINK1% nebo použijte <a href='%LINK2%' target='_blank'>stránku položek aplikace</a>.",
 				shareA2div2: "Protože jste jejím vlastníkem, obsahuje aplikace po přihlášení do %PORTAL% tlačítko umožňující otevřít nástroj pro tvorbu.",				
 				shareQ3: "Kde jsou uložena data?",
-				shareA3: "Ř_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._ů"
+				shareA3: "Data a konfigurace %TPL_NAME% jsou uloženy v <a href='%LINK2%' target='_blank'>této položce webové aplikace</a>. Pokud jste použili import služeb Flickr, Picasa, Facebook nebo YouTube, vaše obrázky a videa nejsou duplikovány v %PORTAL%."
 			},
 			settings: {
 				header: "Nastavení",
-				tabError: "Ř_Please check all tabs for errors_ů"
+				tabError: "Zkontrolujte prosím, nejsou-li v záložkách chyby."
 			},
 			settingsLayout: {
 				title: "Rozvržení",
-				explain: "Ř_Which layout do you want to use?_ů",
-				explainInit: "Ř_You can change the layout anytime from the settings panel._ů",
+				explain: "Jaké rozvržení chcete použít?",
+				explainInit: "Rozvržení můžete kdykoli změnit v panelu nastavení.",
 				viewExample: "Zobrazit živý příklad"
 			},
 			settingsTheme: {

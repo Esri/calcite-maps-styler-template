@@ -26,8 +26,8 @@
 				buttonSettings: "Ustawienia",
 				buttonHelp: "Pomoc",
 				buttonPreview: "Wyświetl dane dynamiczne",
-				tooltipFirstSave: "ł_This function is not available until the application is saved_ą",
-				tooltipNotShared: "ł_This function is not available until the application is shared_ą",
+				tooltipFirstSave: "Z tej funkcji można skorzystać dopiero po zapisaniu aplikacji.",
+				tooltipNotShared: "Z tej funkcji można skorzystać dopiero po udostępnieniu aplikacji.",
 				noPendingChange: "Brak oczekujących zmian",
 				unSavedChangePlural: "Oczekujące zmiany",
 				closeWithPendingChange: "Czy na pewno chcesz potwierdzić tę czynność? Zmiany zostaną utracone.",
@@ -39,11 +39,11 @@
 			},
 			share: {
 				firstSaveTitle: "Aplikacja zapisana pomyślnie",
-				firstSaveHeader: "ł_Your application is now saved in %PORTAL% but it is not shared yet._ą",
+				firstSaveHeader: "Aplikacja została zapisana w portalu %PORTAL%, jednak nie została jeszcze udostępniona.",
 				firstSavePreview: "Ogólnie",
 				firstSaveShare: "Udostępnij",
 				firstSaveA1: "Jeżeli nie znasz jeszcze portalu %PORTAL% lub chcesz szybko uzyskać dostęp do interfejsu kreatora, możesz zapisać następujące łącze: %LINK1%",
-				firstSaveA1bis: "Aplikację można również znaleźć w Twoim <a href='%LINK2%' target='_blank'>folderze zawartości w portalu %PORTAL%</a>.",
+				firstSaveA1bis: "Aplikację można również znaleźć w Twoim <a href='%LINK2%' target='_blank'>folderze zasobów w portalu %PORTAL%</a>.",
 				shareTitle: "Udostępnij swoją aplikację",
 				sharePrivateHeader: "Aplikacja nie jest udostępniona, czy chcesz ją udostępnić?",
 				sharePrivateBtn1: "Udostępnij publicznie",
@@ -65,17 +65,17 @@
 				shareA2div1: "Zapisz i użyj ponownie następującego łącza %LINK1% lub <a href='%LINK2%' target='_blank'>strony elementu aplikacji</a>.",
 				shareA2div2: "Po zalogowaniu w portalu %PORTAL% właściciel aplikacji widzi w jej oknie przycisk umożliwiający uruchomienie kreatora:",				
 				shareQ3: "Gdzie są przechowywane dane?",
-				shareA3: "ł_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._ą"
+				shareA3: "Dane oraz konfiguracja aplikacji %TPL_NAME% są przechowywane w <a href='%LINK2%' target='_blank'>tej aplikacji internetowej</a>. Jeżeli skorzystano z opcji importu danych z serwisu Flickr, Picasa, Facebook lub YouTube, obrazy i filmy wideo nie zostały skopiowane do portalu %PORTAL."
 			},
 			settings: {
 				header: "Ustawienia",
-				tabError: "ł_Please check all tabs for errors_ą"
+				tabError: "Sprawdź, czy poszczególne karty nie zawierają błędnych danych"
 			},
 			settingsLayout: {
 				title: "Układ",
-				explain: "ł_Which layout do you want to use?_ą",
-				explainInit: "ł_You can change the layout anytime from the settings panel._ą",
-				viewExample: "Wyświetl dynamiczny przykład"
+				explain: "Jakiego układu chcesz użyć?",
+				explainInit: "Zmian układu możesz dokonać w dowolnej chwili w oknie dialogowym ustawień.",
+				viewExample: "Wyświetl przykład online"
 			},
 			settingsTheme: {
 				title: "Motyw"

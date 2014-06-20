@@ -9,7 +9,7 @@
 				step2: "데이터를 로드하는 중",
 				step3: "초기화하는 중",
 				loadBuilder: "빌더로 전환하는 중",
-				fail: "죄송하지만 로드하지 못했습니다.",
+				fail: "죄송합니다. 로드하지 못했습니다.",
 				failButton: "재시도"
 			},
 			signin: {
@@ -60,8 +60,8 @@
 				copy: "복사",
 				copied: "복사됨",
 				open: "열기",
-				embed: "한_Embed in website_빠",
-				embedExplain: "한_Use the following HTML code to embed the Journal in a website._빠",
+				embed: "웹 사이트에 포함",
+				embedExplain: "다음 HTML 코드를 사용하여 저널을 웹 사이트에 포함시킵니다.",
 				size: "크기(너비/높이):"
 			}
         }

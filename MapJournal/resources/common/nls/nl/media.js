@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Mediatype selecteren",
-				lblSelect2: "Inhoudstype selecteren",
+				lblSelect1: "Ĳ_Media_ä",
+				lblSelect2: "Ĳ_Content_ä",
 				lblMap: "Kaart",
 				lblImage: "Afbeelding",
 				lblVideo: "Video",
@@ -73,10 +73,10 @@
 			},
 			editorActionGeocode: {
 				lblTitle: "Een adres of plaats zoeken",
-				mapMarkerExplain: "De gebruiker ziet een kaartmarkering wanneer hij/zijn op de koppeling klikt"
+				mapMarkerExplain: "De gebruiker ziet een kaartmarkering wanneer hij/zij op de koppeling klikt"
 			},
 			editorActionMedia: {
-				lblTitle: "Ĳ_Change the Main Stage content_ä"
+				lblTitle: "De inhoud van het hoofdvenster wijzigen"
 			},
 			editorInlineMedia: {
 				lblTitle: "Een afbeelding of video invoegen"

@@ -6,7 +6,7 @@
 				step2: "טעינת מידע",
 				step3: "מתחיל",
 				fail: "סליחה, אך טעינת כלי ה- swipe נכשלה",
-				loadBuilder: "החלפה למצב בניה",				
+				loadBuilder: "החלפה למצב בניה",
 				redirectSignIn: "הפניה לדף ההתחברות",
 				redirectSignIn2: "(תופנה מחדש לאחר ההתחברות)",
 				failButton: "נסה שוב"

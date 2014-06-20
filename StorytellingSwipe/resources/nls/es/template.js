@@ -6,7 +6,7 @@
 				step2: "CARGANDO DATOS",
 				step3: "INICIALIZANDO",
 				fail: "La carga de la comparativa de mapas ha fallado",
-				loadBuilder: "CAMBIANDO A MODO DE BUILDER",				
+				loadBuilder: "CAMBIANDO A MODO DE BUILDER",
 				redirectSignIn: "REDIRIGIENDO A LA PÁGINA DE INICIO DE SESIÓN",
 				redirectSignIn2: "(se te redirigirá aquí después del inicio de sesión)",
 				failButton: "Reintentar"
@@ -25,7 +25,7 @@
 				mapSave: "Error al guardar el mapa web",
 				notAuthorized: "No tienes autorización para acceder a esta aplicación",
 				conflictingProjectionsTitle: "Conflicto de proyecciones",
-				conflictingProjections: "á_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._Ó",
+				conflictingProjections: "La comparativa de mapas no admite el uso de dos mapas web con distintas proyecciones. Abre los ajustes y utiliza un mapa web que use la misma proyección que el primer mapa web.",
 				cpButton: "Cerrar"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "para guardar la aplicación."
 			},
 			header:{
-				editMe: "á_Edit me!_Ó",
+				editMe: "¡Modifícame!",
 				templateTitle: "Establecer título de plantilla",
 				templateSubtitle: "Establecer subtítulo de plantilla"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Establecer la descripción del panel lateral",
-				editMe: "á_Edit me!_Ó",
+				editMe: "¡Modifícame!",
 				legendTitle: "Leyenda"
 			},
 			infoWindow: {

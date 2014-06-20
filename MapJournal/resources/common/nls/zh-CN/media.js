@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "选择媒体类型",
-				lblSelect2: "选择内容类型",
+				lblSelect1: "试_Media_验",
+				lblSelect2: "试_Content_验",
 				lblMap: "地图",
 				lblImage: "图像",
 				lblVideo: "视频",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "用户在单击链接时会看到地图标记"
 			},
 			editorActionMedia: {
-				lblTitle: "试_Change the Main Stage content_验"
+				lblTitle: "更改主要阶段内容"
 			},
 			editorInlineMedia: {
 				lblTitle: "插入图像或视频"

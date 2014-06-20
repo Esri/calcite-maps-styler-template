@@ -26,8 +26,8 @@
 				buttonSettings: "Configuración",
 				buttonHelp: "Ayuda",
 				buttonPreview: "Ver en directo",
-				tooltipFirstSave: "á_This function is not available until the application is saved_Ó",
-				tooltipNotShared: "á_This function is not available until the application is shared_Ó",
+				tooltipFirstSave: "Esta función no está disponible hasta que se guarda la aplicación",
+				tooltipNotShared: "Esta función no está disponible hasta que se comparte la aplicación",
 				noPendingChange: "Sin cambios pendientes",
 				unSavedChangePlural: "Cambios pendientes",
 				closeWithPendingChange: "¿Estás seguro de que deseas confirmar esta acción? Los cambios se perderán.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "La aplicación se ha guardado correctamente",
-				firstSaveHeader: "á_Your application is now saved in %PORTAL% but it is not shared yet._Ó",
+				firstSaveHeader: "La aplicación se ha guardado en %PORTAL%, pero aún no se ha compartido.",
 				firstSavePreview: "Presentación preliminar",
 				firstSaveShare: "Compartir",
 				firstSaveA1: "Si no estás familiarizado con %PORTAL% o necesitas un acceso directo para acceder a la interfaz del Builder, puedes guardar el vínculo siguiente: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Guarda y vuelve a usar el siguiente vínculo %LINK1% o utiliza la <a href='%LINK2%' target='_blank'>página de elementos de la aplicación</a>.",
 				shareA2div2: "Como propietario de la aplicación, cuando inicias sesión en %PORTAL%, la aplicación incluye un botón para abrir el Builder:",				
 				shareQ3: "¿Dónde se almacenan los datos?",
-				shareA3: "á_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._Ó"
+				shareA3: "Los datos y la configuración de %TPL_NAME% están almacenados en <a href='%LINK2%' target='_blank'>este elemento de aplicación web</a>. Si has usado la importación de Flickr, Picasa, Facebook o YouTube, tus imágenes y tus vídeos no se habrán duplicado en %PORTAL%."
 			},
 			settings: {
 				header: "Configuración",
-				tabError: "á_Please check all tabs for errors_Ó"
+				tabError: "Comprueba todas las pestañas para ver si hay errores"
 			},
 			settingsLayout: {
 				title: "Diseño",
-				explain: "á_Which layout do you want to use?_Ó",
-				explainInit: "á_You can change the layout anytime from the settings panel._Ó",
+				explain: "¿Qué diseño deseas usar?",
+				explainInit: "Puedes cambiar el diseño en cualquier momento en el panel de configuración.",
 				viewExample: "Ver un ejemplo en directo"
 			},
 			settingsTheme: {

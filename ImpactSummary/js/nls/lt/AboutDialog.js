@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "AboutDialog": {
                 "title": "Apie",
@@ -12,4 +12,4 @@
             }
         }
     })
-});
+);

@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "StatsBlock": {
             "close": "aizvērt",
             "next": "Tālāk",
@@ -7,4 +7,5 @@
             "source":"Datu avots"
         }
     })
-});
+    
+);

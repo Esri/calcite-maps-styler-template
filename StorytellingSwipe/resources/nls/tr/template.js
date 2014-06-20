@@ -6,7 +6,7 @@
 				step2: "VERİLER YÜKLENİYOR",
 				step3: "BAŞLATILIYOR",
 				fail: "Özür dileriz; Swipe yüklenemedi",
-				loadBuilder: "DERLEYİCİ MODUNA GEÇİLİYOR",				
+				loadBuilder: "DERLEYİCİ MODUNA GEÇİLİYOR",
 				redirectSignIn: "OTURUM AÇMA SAYFASINA YÖNLENDİRİLİYOR",
 				redirectSignIn2: "(oturum açtıktan sonra buraya yeniden yönlendirileceksiniz)",
 				failButton: "Tekrar dene"
@@ -25,7 +25,7 @@
 				mapSave: "Web haritasını kaydederken hata oluştu",
 				notAuthorized: "Bu uygulamaya erişim yetkiniz yok",
 				conflictingProjectionsTitle: "Çelişen Projeksiyonlar",
-				conflictingProjections: "ı_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._İ",
+				conflictingProjections: "Swipe farklı projeksiyonları olan iki web haritasını desteklemez. Ayarları açın ve ilk web haritasıyla aynı projeksiyonu kullanan bir web haritası kullanın.",
 				cpButton: "Kapat"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "üzerindeki başka bir hesap ile oturum açın."
 			},
 			header:{
-				editMe: "ı_Edit me!_İ",
+				editMe: "Beni düzenle!",
 				templateTitle: "Şablon başlığını ayarla",
 				templateSubtitle: "Şablon altyazısını ayarla"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Yan panel açıklamasını ayarlayın",
-				editMe: "ı_Edit me!_İ",
+				editMe: "Beni düzenle!",
 				legendTitle: "Gösterim"
 			},
 			infoWindow: {

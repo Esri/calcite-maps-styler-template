@@ -6,7 +6,7 @@
 				sideTitle: "Panel lateral",
 				sideDescr: "Diseño de una historia con una gran cantidad de texto que permite combinar fotos, vídeos y mapas en un mensaje claro y definido.",
 				floatTitle: "Panel flotante",
-				floatDescr: "á_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._Ó"
+				floatDescr: "Diseño que centra la atención en la cartografía y permite usar un panel de texto corto y transparente para ayudar a contar la historia."
 			},
 			common: {
 				lblStatus1: "Publicado",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "Agrega aquí texto, vínculos y gráficos pequeños.",
 				editorActionsTitle: "Acciones del escenario principal",
-				editorActionsHelpDescr: "Usa estos controles para crear vínculos que cambien el escenario principal. Por ejemplo, cuando el lector hace clic en un vínculo, puedes hacer zoom a una ubicación concreta del mapa o mostrar otro mapa web o una imagen."
+				editorActionsHelpDescr: "á_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._Ó"
 			},
 			organizePopup: {
 				title: "Organizar",
-				lblHeader: "á_Drag and drop sections to organize your content._Ó",
+				lblHeader: "Arrastra y suelta secciones para organizar el contenido.",
 				lblColTitle: "Título",
 				lblColPubDate: "Fecha de publicación",
 				lblColStatus: "Estado",
 				checkDisplayReverse: "Mostrar secciones en orden inverso",
-				btnApplyWarning: "Confirmar la desactivación de las secciones de %NB%",
+				btnApplyWarning: "á_Confirm deletion of %NB% section(s)_Ó",
 				deleteTooltip: "Eliminar",
 				firstSectionExplain: "(La sección de inicio no se puede mover)."
 			},
@@ -64,12 +64,12 @@
 				lblMore: "¿Necesitas más información?",
 				lblLink: "Visita el sitio web de Story Maps.",
 				content1Div1: "Puedes integrar diversos estilos al crear tu historia. El <strong>%LAYOUT_TITLE%</strong> alberga normalmente el texto, las imágenes y los vídeos, mientras que los mapas suelen estar en el <strong>escenario principal</strong>. Sin embargo, el %TPL_NAME% también permite mostrar imágenes, gráficos y vídeos en el escenario principal.",
-				content1Div2: "á_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._Ó",
+				content1Div2: "Agregar secciones te permite personalizar de verdad tu experiencia narrativa. A medida que los lectores se desplazan por el texto de tu %LAYOUT_TITLE%, en el escenario principal un mapa puede desplazarse o aplicar el zoom a los puntos clave, o pueden activarse automáticamente nuevos mapas e imágenes para reforzar tu mensaje.",
 				content2Div1: "Aquí puedes ajustar el aspecto de tu %TPL_NAME%. Los esquemas de color, los diseños y las anchuras se definen aquí.",
-				content2Div2: "á_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._Ó",
-				content3Div1: "Tu contenido se organiza en secciones. Puedes tener tantas secciones como desees (puedes entenderlas como mini capítulos). El flujo de estos capítulos es importante. En Organizar puedes reordenar o eliminar secciones según tus necesidades.",
+				content2Div2: "También puedes agregar vínculos para compartir en Facebook, Twitter y Bitly con el fin de que los lectores puedan divulgar fácilmente tu %TPL_NAME% entre otros usuarios.",
+				content3Div1: "á_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._Ó",
 				content4Div1: "¿Has descubierto un error o deseas cambiar el material? No hay problema: busca el icono de edición en la aplicación para realizar cambios en el contenido. Usarás las funciones de edición muchas veces durante el desarrollo de tu %TPL_NAME%.",
-				content5Div1: "á_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._Ó"
+				content5Div1: "Tu %TPL_NAME% está guardada en la cuenta de %PORTAL% y, de manera predeterminada, es privada. Puedes optar por compartirla solo con tu organización o por abrirla al mundo. Te proporcionamos incluso una URL abreviada para que puedas compartirla con más facilidad."
 			},
 			landing: {
 				lblAdd: "Agregar sección de inicio",

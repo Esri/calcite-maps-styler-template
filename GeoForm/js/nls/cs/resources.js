@@ -4,9 +4,9 @@
             error: "Nelze vytvořit mapu"
         },
         onlineStatus: {
-            online: "Ř_A connection to the server can be made._ů",
-            offline: "Ř_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._ů",
-            reconnecting: "Ř_Reconnecting&hellip;_ů"
+            online: "Ř_You are currently online._ů",
+            offline: "Právě pracujete v režimu offline. Zaslané formuláře budou uloženy na místní počítač, dokud nebude navázáno spojení se serverem.",
+            reconnecting: "Obnovuje se připojení&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -14,7 +14,7 @@
                     organizationLabel: "Moje organizace",
                     onlineLabel: "ArcGIS Online",
                     contentLabel: "Můj obsah",
-                    favoritesLabel: "Ř_My Favorites_ů"
+                    favoritesLabel: "Moje oblíbené"
                 },
                 title: "Vybrat webovou mapu",
                 searchTitle: "Hledat",
@@ -27,7 +27,7 @@
                     organizationLabel: "Moje organizace",
                     onlineLabel: "ArcGIS Online",
                     contentLabel: "Můj obsah",
-                    favoritesLabel: "Ř_My Favorites_ů"
+                    favoritesLabel: "Moje oblíbené"
                 },
                 title: "Vybrat skupinu",
                 searchTitle: "Hledat",
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

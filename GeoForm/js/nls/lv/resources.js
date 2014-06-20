@@ -4,38 +4,37 @@
             error: "Nevar izveidot karti"
         },
         onlineStatus: {
-            online: "ķ_A connection to the server can be made._ū",
-            offline: "ķ_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._ū",
-            reconnecting: "ķ_Reconnecting&hellip;_ū"
+            online: "ķ_You are currently online._ū",
+            offline: "Jūs pašreiz strādājat bezsaistē. Iesniegtās formas tiks saglabātas lokāli, līdz tiks izveidots savienojums ar serveri.",
+            reconnecting: "Notiek atkārtota savienošana&hellip;"
         },
 	 configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "ķ_My Organization_ū",
+                    organizationLabel: "Organizācija",
                     onlineLabel: "ArcGIS Online",
-                    contentLabel: "ķ_My Content_ū",
+                    contentLabel: "Mans saturs",
                     favoritesLabel: "Mani favorīti"
                 },
-                title: "ķ_Select Web Map_ū",
-                searchTitle: "ķ_Search_ū",
+                title: "Izvēlēties web karti",
+                searchTitle: "Meklēšana",
                 ok: "Labi",
                 cancel: "Atcelt",
-                placeholder: "ķ_Enter search term_ū"
+                placeholder: "Ievadīt meklēšanas kritēriju"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "ķ_My Organization_ū",
+                    organizationLabel: "Organizācija",
                     onlineLabel: "ArcGIS Online",
-                    contentLabel: "ķ_My Content_ū",
+                    contentLabel: "Mans saturs",
                     favoritesLabel: "Mani favorīti"
                 },
-                title: "ķ_Select Group_ū",
-                searchTitle: "ķ_Search_ū",
+                title: "Atlasīt grupu",
+                searchTitle: "Meklēšana",
                 ok: "Labi",
                 cancel: "Atcelt",
-                placeholder: "ķ_Enter search term_ū"
+                placeholder: "Ievadīt meklēšanas kritēriju"
             }
         }
     })
-    
 );

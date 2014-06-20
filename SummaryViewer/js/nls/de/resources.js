@@ -4,5 +4,4 @@
             error: "Karte kann nicht erstellt werden"
         }
     })
-
 );

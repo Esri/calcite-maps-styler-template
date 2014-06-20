@@ -2,10 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
+				lblWebMap: "한_Web map_빠",
 				lblLocation: "위치",
 				lblContent: "컨텐츠",
 				lblPopup: "팝업",
-				lblControls: "컨트롤",
+				lblControls: "한_Extras_빠",
 				lblOverview: "개요 맵",
 				lblLegend: "범례",
 				loadingTitle: "제목을 로드하는 중",
@@ -21,26 +22,26 @@
 				newMap: "새로 선택한 웹 맵",
 				webmapDefault: "웹 맵 기본값",
 				customCfg: "사용자 정의 구성",
-				tooltipLocation: "사용자가 이 섹션으로 이동할 때 사용할 맵 위치를 정의합니다.",
+				tooltipLocation: "한_Define the map location that will be used when your readers navigate to this section._빠",
 				tooltipContent: "가시 레이어를 정의합니다.",
 				tooltipPopup: "사용자가 이 섹션으로 이동할 때 표시할 팝업을 선택합니다.",
-				tooltipOverview: "한_Display a small overview map along with the main map_빠",
-				tooltipLegend: "한_Display the map legend on the map, helpful when the map has many layers and symbols._빠",
-				mapCfgInvite: "이 컨트롤을 사용하여 맵을 구성합니다."
+				tooltipOverview: "주 맵과 함께 소형 개요보기 맵 표시",
+				tooltipLegend: "레이어 및 심볼이 맵에 많이 포함되어 있는 경우에 유용한 맵 범례를 맵에 표시합니다.",
+				mapCfgInvite: "한_Use these controls to configure your map_빠"
 			},
 			configure: {
 				btnReset: "재설정",
 				btnCancel: "취소",
 				tocTitle: "맵 컨텐츠",
 				tocExplain: "표시할 레이어를 선택합니다.",
-				tocSave: "맵 컨텐츠 저장",
+				tocSave: "한_Save map content_빠",
 				extentTitle: "맵 위치",
 				extentExplain: "맵을 이동 및 확대/축소하여 사용자에게 표시되는 모양을 정의합니다.",
 				extentSave: "맵 위치 저장",
 				popupTitle: "맵 팝업",
-				popupExplain: "한_Configure the look of the pop-up shown to readers_빠",
+				popupExplain: "사용자에게 표시될 팝업 모양 구성",
 				popupSave: "팝업 구성 저장",
-				hintNavigation: "맵 탐색이 비활성화되어 있습니다."
+				hintNavigation: "맵 탐색을 사용할 수 없습니다."
 			}
 		},
 		configure: {

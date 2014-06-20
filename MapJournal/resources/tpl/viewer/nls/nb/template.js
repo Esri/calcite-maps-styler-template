@@ -60,8 +60,8 @@
 				copy: "Kopier",
 				copied: "Kopiert",
 				open: "Åpne",
-				embed: "å_Embed in website_ø",
-				embedExplain: "å_Use the following HTML code to embed the Journal in a website._ø",
+				embed: "bygge inn på webområde",
+				embedExplain: "Bruk følgende HTML-kode for å bygge inn dagboken på en nettside.",
 				size: "Størrelse (bredde/høyde):"
 			}
         }

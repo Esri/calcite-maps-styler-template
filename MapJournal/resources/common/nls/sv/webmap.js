@@ -2,10 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
+				lblWebMap: "Å_Web map_ö",
 				lblLocation: "Plats",
 				lblContent: "Innehåll",
 				lblPopup: "Popup-fönster",
-				lblControls: "Kontroller",
+				lblControls: "Å_Extras_ö",
 				lblOverview: "Översiktskarta",
 				lblLegend: "Teckenförklaring",
 				loadingTitle: "Läser in titel",
@@ -21,24 +22,24 @@
 				newMap: "Nyligen vald webbkarta",
 				webmapDefault: "Standardwebbkarta",
 				customCfg: "Anpassad konfiguration",
-				tooltipLocation: "Definiera vilken kartplats som ska användas när användarna navigerar till det här avsnittet.",
+				tooltipLocation: "Å_Define the map location that will be used when your readers navigate to this section._ö",
 				tooltipContent: "Definiera synliga lager.",
 				tooltipPopup: "Välj ett popupfönster som ska visas när användarna navigerar till det här avsnittet.",
-				tooltipOverview: "Å_Display a small overview map along with the main map_ö",
-				tooltipLegend: "Å_Display the map legend on the map, helpful when the map has many layers and symbols._ö",
-				mapCfgInvite: "Konfigurera kartan med dessa kontroller"
+				tooltipOverview: "Visa en liten översiktskarta tillsammans med huvudkartan.",
+				tooltipLegend: "Visa en teckenförklaring på kartan, vilket kan vara användbart om den innehåller många lager och symboler.",
+				mapCfgInvite: "Å_Use these controls to configure your map_ö"
 			},
 			configure: {
 				btnReset: "Återställ",
 				btnCancel: "Avbryt",
 				tocTitle: "Kartinnehåll",
 				tocExplain: "Välj vilka lager som ska visas.",
-				tocSave: "Spara kartinnehåll",
+				tocSave: "Å_Save map content_ö",
 				extentTitle: "Kartplats",
 				extentExplain: "Panorera och zooma kartan för att definiera hur användarna ska se den.",
 				extentSave: "Spara kartplats",
 				popupTitle: "Kartpopupfönster",
-				popupExplain: "Å_Configure the look of the pop-up shown to readers_ö",
+				popupExplain: "Konfigurera hur popupfönstret visas för användarna",
 				popupSave: "Spara konfigurationen av popupfönstret",
 				hintNavigation: "Kartnavigeringen är inaktiverad."
 			}

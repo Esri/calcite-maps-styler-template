@@ -6,7 +6,7 @@
 				step2: "SE ÎNCARCĂ DATELE",
 				step3: "INIŢIALIZARE",
 				fail: "Ne pare rău, încărcarea Swipe a eşuat",
-				loadBuilder: "SE COMUTĂ LA MODUL INSTRUMENT DE CĂUTARE",				
+				loadBuilder: "SE COMUTĂ LA MODUL INSTRUMENT DE CĂUTARE",
 				redirectSignIn: "REDIRECȚIONARE LA PAGINA DE AUTENTIFICARE",
 				redirectSignIn2: "(veţi fi redirecţionat aici după autentificare)",
 				failButton: "Reîncercare"
@@ -25,7 +25,7 @@
 				mapSave: "Eroare la salvarea hărţii web",
 				notAuthorized: "Nu sunteţi autorizat pentru a accesa această aplicaţie",
 				conflictingProjectionsTitle: "Proiecţii în conflict",
-				conflictingProjections: "Ă_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ș",
+				conflictingProjections: "Instrumentul de preluare nu suportă utilizarea a două hărţi cu proiecţii diferite. Deschideţi setările şi utilizaţi o hartă web care foloseşte aceeaşi proiecţie ca şi prima hartă web.",
 				cpButton: "Închidere"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "pentru a salva aplicaţia."
 			},
 			header:{
-				editMe: "Ă_Edit me!_ș",
+				editMe: "Editează-mă!",
 				templateTitle: "Setare titlu şablon",
 				templateSubtitle: "Setare subtitlu şablon"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Setare descrierea panou lateral",
-				editMe: "Ă_Edit me!_ș",
+				editMe: "Editează-mă!",
 				legendTitle: "Legendă"
 			},
 			infoWindow: {

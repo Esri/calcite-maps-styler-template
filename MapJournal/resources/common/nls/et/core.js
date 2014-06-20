@@ -26,8 +26,8 @@
 				buttonSettings: "Seaded",
 				buttonHelp: "Abi",
 				buttonPreview: "Kuva reaalajas",
-				tooltipFirstSave: "Š_This function is not available until the application is saved_ä",
-				tooltipNotShared: "Š_This function is not available until the application is shared_ä",
+				tooltipFirstSave: "See funktsioon on saadaval alles pärast rakenduse salvestamist",
+				tooltipNotShared: "See funktsioon on saadaval alles pärast rakenduse jagamist",
 				noPendingChange: "Ühtegi muudatust ei ole ootel",
 				unSavedChangePlural: "Ootel muudatused",
 				closeWithPendingChange: "Kas olete kindel, et soovite tegevuse kinnitada? Teie tehtud muudatused lähevad kaotsi.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Rakendus on salvestatud",
-				firstSaveHeader: "Š_Your application is now saved in %PORTAL% but it is not shared yet._ä",
+				firstSaveHeader: "Teie rakendus on nüüd salvestatud kohta %PORTAL%, kuid seda pole veel jagatud.",
 				firstSavePreview: "Eelvaade",
 				firstSaveShare: "Jaga",
 				firstSaveA1: "Kui %PORTAL% pole teile tuttav või kui soovite otseteed koosturiliidesesse, võite salvestada järgmise lingi: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Salvestage ja taaskasutage järgnevat linki %LINK1% või kasutage <a href='%LINK2%' target='_blank'>rakenduse sisu lehte</a>.",
 				shareA2div2: "Kui olete rakenduse omanikuna lehel %PORTAL% sisse logitud, sisaldab rakendus nuppu interaktiivse koosturi avamiseks.",				
 				shareQ3: "Kus andmed talletatakse?",
-				shareA3: "Š_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._ä"
+				shareA3: "%TPL_NAME%: andmed ja konfiguratsioon talletatakse <a href='%LINK2%' target='_blank'>selles veebirakenduse üksuses</a>. Kui olete kasutanud Flickri, Picasa, Facebooki või YouTube\'i importi, pole teie pilte ja videoid portaali %PORTAL% kopeeritud."
 			},
 			settings: {
 				header: "Seaded",
-				tabError: "Š_Please check all tabs for errors_ä"
+				tabError: "Palun kontrollige vigu kõigil vahekaartidel"
 			},
 			settingsLayout: {
 				title: "Kujundus",
-				explain: "Š_Which layout do you want to use?_ä",
-				explainInit: "Š_You can change the layout anytime from the settings panel._ä",
+				explain: "Millist paigutust soovite kasutada?",
+				explainInit: "Saate paigutust igal ajal sätete paneeli kaudu muuta.",
 				viewExample: "Kuva reaalajas näide"
 			},
 			settingsTheme: {

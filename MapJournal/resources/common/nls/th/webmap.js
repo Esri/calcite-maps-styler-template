@@ -2,10 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
+				lblWebMap: "ก้_Web map_ษฺ",
 				lblLocation: "ตำแหน่ง",
 				lblContent: "เนื้อหา",
 				lblPopup: "ป๊อปอัพ",
-				lblControls: "ควบคุม",
+				lblControls: "ก้_Extras_ษฺ",
 				lblOverview: "ภาพรวมของแผนที่",
 				lblLegend: "สัญลักษณ์",
 				loadingTitle: "กำลังโหลดหัวเรื่อง",
@@ -21,19 +22,19 @@
 				newMap: "เลือกเว็บแมพใหม่",
 				webmapDefault: "เว็บแมพเริ่มต้น",
 				customCfg: "ปรับการตั้งค่า",
-				tooltipLocation: "กำหนดสถานแผนที่ที่จะนำมาใช้เมื่อผู้อ่านของคุณนำทางไปยังส่วนนี้",
+				tooltipLocation: "ก้_Define the map location that will be used when your readers navigate to this section._ษฺ",
 				tooltipContent: "กำหนดระยะการมองเห็นชั้นข้อมูล",
 				tooltipPopup: "เลือกป๊อปอัพเพื่อแสดงเมื่อคุณนำทางไปยังส่วนนี้",
 				tooltipOverview: "ก้_Display a small overview map along with the main map_ษฺ",
 				tooltipLegend: "ก้_Display the map legend on the map, helpful when the map has many layers and symbols._ษฺ",
-				mapCfgInvite: "ใช้การควบคุมการตั้งค่าแผนที่ของคุณ"
+				mapCfgInvite: "ก้_Use these controls to configure your map_ษฺ"
 			},
 			configure: {
 				btnReset: "รีเซ็ต",
 				btnCancel: "ยกเลิก",
 				tocTitle: "รายการแผนที่",
 				tocExplain: "เลือกชั้นข้อมูลที่จะแสดง",
-				tocSave: "บันทึกรายการแผนที่",
+				tocSave: "ก้_Save map content_ษฺ",
 				extentTitle: "ตำแหน่งแผนที่",
 				extentExplain: "เลือกและขยายแผนที่ตามที่กำหนด วิธีการมองหาผู้อ่าน",
 				extentSave: "บันทึกตำแหน่งแผนที่",

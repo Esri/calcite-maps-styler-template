@@ -6,7 +6,7 @@
 				sideTitle: "Panou lateral",
 				sideDescr: "O configuraţie pentru o descriere cu mult text, care excelează în combinarea fotografiilor cu videoclipuri şi hărţi într-un mesaj cu un obiect clar.",
 				floatTitle: "Panou mobil",
-				floatDescr: "Ă_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._ș"
+				floatDescr: "O configuraţie care pune accentul pe cartografie, permiţând şi un panoul transparent cu un text în formă scurtă pentru a ajuta la relatarea informaţiilor."
 			},
 			common: {
 				lblStatus1: "Publicat",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "Adăugaţi text, linkuri şi mici imagini aici.",
 				editorActionsTitle: "Acţiuni nivel principal",
-				editorActionsHelpDescr: "Utilizaţi aceste comenzi pentru a crea linkuri ce vor modifica nivelul principal. De exemplu, când un cititor face clic pe un link, puteţi dori să transfocaţi harta într-o anumită locaţie, să afişaţi altă hartă web sau să afişaţi o imagine."
+				editorActionsHelpDescr: "Ă_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ș"
 			},
 			organizePopup: {
 				title: "Organizare",
-				lblHeader: "Ă_Drag and drop sections to organize your content._ș",
+				lblHeader: "Trageţi şi plasaţi secţiuni pentru a vă organiza conţinutul.",
 				lblColTitle: "Titlu",
 				lblColPubDate: "Data publicării",
 				lblColStatus: "Stare",
 				checkDisplayReverse: "Afişare secţiuni în ordine inversă",
-				btnApplyWarning: "Confirmare suprimare a %NB% secţiuni",
+				btnApplyWarning: "Ă_Confirm deletion of %NB% section(s)_ș",
 				deleteTooltip: "Ştergere",
 				firstSectionExplain: "(Secţiunea din pagina principală nu poate fi eliminată)"
 			},
@@ -64,12 +64,12 @@
 				lblMore: "Doriţi mai mult?",
 				lblLink: "Vizitaţi site-ul web cu hărţi informative.",
 				content1Div1: "La alcătuirea unei relatări, puteţi integra o multitudine de stiluri. <strong>%LAYOUT_TITLE%</strong> conţine de regulă text, imagini şi videoclipuri, în timp ce hărţile tind să se afle în <strong>Nivelul principal</strong>. Cu toate acestea, %TPL_NAME% vă permite să utilizaţi şi imagini de obiecte spaţiale, diagrame şi videoclipuri în nivelul principal.",
-				content1Div2: "Ă_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._ș",
+				content1Div2: "Adăugarea de secţiuni vă permite să vă particularizaţi cu adevărat experienţa de relatare. Pe măsură ce cititorii derulează textul %LAYOUT_TITLE%, o hartă din Nivelul principal poate fi panoramată sau transfocată în punctele cheie sau noi hărţi şi imagini pot fi comutate automat în sprijinul mesajului.",
 				content2Div1: "Aici puteţi ajusta modul în care se afişează %TPL_NAME%. Aici puteţi rafina scheme de culori, configuraţii şi dimensiuni.",
-				content2Div2: "Ă_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._ș",
-				content3Div1: "Conţinutul dvs. este organizat în secţiuni. Puteţi avea oricâte secţiuni doriţi (gândiţi-vă la acestea ca la nişte mini-capitole). Succesiunea acestor capitole este importantă; prin urmare, în Organizare puteţi reordona sau şterge secţiuni după cum doriţi.",
+				content2Div2: "De asemenea, puteţi adăuga linkuri către Facebook, Twitter şi Bitly, astfel încât cititorii să poată răspândi uşor %TPL_NAME% către alţii.",
+				content3Div1: "Ă_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ș",
 				content4Div1: "Aţi găsit o greşeală sau doriţi să modificaţi materialul? Nicio problemă. Căutaţi în aplicaţie pictograma de editare pentru modifica conţinutul. Pe măsură ce dezvoltaţi %TPL_NAME%, veţi utiliza de multe ori funcţiile de editare!",
-				content5Div1: "Ă_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._ș"
+				content5Div1: "%TPL_NAME% este salvat în contul dvs. %PORTAL% şi este privat în mod implicit. Dvs. puteţi decide să partajaţi relatarea în cadrul organizaţiei sau să o deschideţi publicului larg. Vă oferim chiar şi o adresă URL stabilă, scurtată, pe care să o puteţi partaja mai uşor."
 			},
 			landing: {
 				lblAdd: "Adăugare secţiune principală",

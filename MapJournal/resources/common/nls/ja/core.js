@@ -26,8 +26,8 @@
 				buttonSettings: "設定",
 				buttonHelp: "ヘルプ",
 				buttonPreview: "最新表示",
-				tooltipFirstSave: "須_This function is not available until the application is saved_鷗",
-				tooltipNotShared: "須_This function is not available until the application is shared_鷗",
+				tooltipFirstSave: "この機能はアプリケーションを保存するまで利用できません",
+				tooltipNotShared: "この機能はアプリケーションを共有するまで利用できません",
 				noPendingChange: "保留中の変更はありません",
 				unSavedChangePlural: "保留中の変更",
 				closeWithPendingChange: "このアクションを確認しますか？変更内容は失われます。",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "アプリケーションが保存されました",
-				firstSaveHeader: "須_Your application is now saved in %PORTAL% but it is not shared yet._鷗",
+				firstSaveHeader: "アプリケーションが %PORTAL% に保存されましたが、まだ共有されていません。",
 				firstSavePreview: "プレビュー",
 				firstSaveShare: "共有",
 				firstSaveA1: "%PORTAL% の操作に慣れていない、またはビルダ インタフェースに簡単にアクセスしたい場合は、次のリンクを保存できます: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "次のリンク %LINK1% を保存および再利用するか、<a href='%LINK2%' target='_blank'>アプリケーション アイテム ページ</a>を使用します。",
 				shareA2div2: "アプリケーションの所有者として %PORTAL% にサイン インした場合、アプリケーションにビルダを開くボタンが含まれます。",				
 				shareQ3: "データの保存場所は？",
-				shareA3: "須_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._鷗"
+				shareA3: "%TPL_NAME% のデータと構成は、<a href='%LINK2%' target='_blank'>この Web アプリケーション アイテム</a>に保存されます。Flickr、Picasa、Facebook、または YouTube のインポートを使用した場合、画像とビデオは %PORTAL% に複製されていません。"
 			},
 			settings: {
 				header: "設定",
-				tabError: "須_Please check all tabs for errors_鷗"
+				tabError: "すべてのタブでエラーを確認してください"
 			},
 			settingsLayout: {
 				title: "レイアウト",
-				explain: "須_Which layout do you want to use?_鷗",
-				explainInit: "須_You can change the layout anytime from the settings panel._鷗",
+				explain: "使用するレイアウト",
+				explainInit: "レイアウトは、設定パネルからいつでも変更できます。",
 				viewExample: "最新例を表示"
 			},
 			settingsTheme: {

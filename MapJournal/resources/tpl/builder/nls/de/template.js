@@ -6,7 +6,7 @@
 				sideTitle: "Seitenfenster",
 				sideDescr: "Ein Layout für einen umfangreichen Text, der sich durch die Kombination von Fotos, Videos und Karten in einer klar fokussierten Botschaft auszeichnet.",
 				floatTitle: "Unverankertes Fenster",
-				floatDescr: "ä_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._Ü"
+				floatDescr: "Ein Layout, das die Kartografie in den Mittelpunkt stellt, während die Informationen über ein transparentes Fenster mit Text in Kurzform visualisiert werden."
 			},
 			common: {
 				lblStatus1: "Veröffentlicht",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "Text, Links und kleine Grafiken hier hinzufügen.",
 				editorActionsTitle: "Aktionen der Hauptanzeige",
-				editorActionsHelpDescr: "Verwenden Sie diese Steuerelemente, um Links zu erstellen, die die Hauptanzeige ändern. Wenn der Leser beispielsweise auf einen Link klickt, können Sie auf der Karte auf eine bestimmte Position zoomen, eine andere Webkarte oder ein Bild anzeigen."
+				editorActionsHelpDescr: "ä_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._Ü"
 			},
 			organizePopup: {
 				title: "Organisieren",
-				lblHeader: "ä_Drag and drop sections to organize your content._Ü",
+				lblHeader: "Inhalte durch Ziehen und Ablegen von Abschnitten organisieren.",
 				lblColTitle: "Titel",
 				lblColPubDate: "Veröffentlichungsdatum",
 				lblColStatus: "Status",
 				checkDisplayReverse: "Abschnitte in umgekehrter Reihenfolge anzeigen",
-				btnApplyWarning: "Unterdrückung von %NB%-Abschnitten bestätigen",
+				btnApplyWarning: "ä_Confirm deletion of %NB% section(s)_Ü",
 				deleteTooltip: "Löschen",
 				firstSectionExplain: "(Der Startseitenabschnitt kann nicht verschoben werden)"
 			},
@@ -64,12 +64,12 @@
 				lblMore: "Sie wünschen weitere Informationen?",
 				lblLink: "Besuchen Sie die Story Maps-Website.",
 				content1Div1: "Sie können eine Vielzahl von Styles zur Vermittlung von Informationen integrieren. Der <strong>%LAYOUT_TITLE%</strong> enthält in der Regel Ihren Text, Ihre Bilder und Videos, während Ihre Karten sich meist in der <strong>Hauptanzeige</strong> befinden. Mit %TPL_NAME% können Bilder, Diagramme und Videos jedoch auch in der Hauptanzeige dargestellt werden.",
-				content1Div2: "ä_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._Ü",
+				content1Div2: "Sie können das Storytelling anpassen, indem Sie Abschnitte hinzufügen. Wenn Leser einen Bildlauf durch Ihren %LAYOUT_TITLE%-Text durchführen, kann eine Karte in der Hauptanzeige zu Schlüsselpunkten schwenken oder darauf zoomen oder können neue Karten und Bilder automatisch gewechselt werden, um Ihre Botschaft zu unterstreichen.",
 				content2Div1: "Hier können Sie das Erscheinungsbild für %TPL_NAME% festlegen. Alle Farbschemen, Layouts und Breiten werden hier optimiert.",
-				content2Div2: "ä_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._Ü",
-				content3Div1: "Inhalte werden in Abschnitten organisiert. Die Anzahl der Abschnitte ist beliebig (sie sind vergleichbar mit kleinen Kapiteln). Der Ablauf dieser Kapitel ist wichtig. Daher können Abschnitte mit \"Organisieren\" nach Wunsch neu angeordnet und gelöscht werden.",
+				content2Div2: "Sie können Freigabe-Links auch zu Facebook, Twitter und Bitly hinzufügen, um die problemlose Verteilung von %TPL_NAME% durch Ihre Leser zu ermöglichen.",
+				content3Div1: "ä_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._Ü",
 				content4Div1: "Sie haben einen Fehler gefunden oder möchten Änderungen vornehmen? Keine Sorge. Suchen Sie das Bearbeitungssymbol in der App, um Inhalte zu ändern. Sie werden die Bearbeitungsfunktionen beim Entwickeln von %TPL_NAME% häufig verwenden!",
-				content5Div1: "ä_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._Ü"
+				content5Div1: "%TPL_NAME% wird standardmäßig in Ihrem %PORTAL%-Konto und privat gespeichert. Sie können festlegen, ob die Informationen für Ihre Organisation freigegeben oder weltweit zugänglich sind. Wir stellen sogar eine gekürzte URL für eine problemlose Freigabe bereit."
 			},
 			landing: {
 				lblAdd: "Startseitenabschnitt hinzufügen",

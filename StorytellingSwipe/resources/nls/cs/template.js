@@ -6,7 +6,7 @@
 				step2: "NAHRÁVÁNÍ DAT",
 				step3: "INICIALIZACE",
 				fail: "Nepodařilo se načíst nástroj překrývání.",
-				loadBuilder: "PŘEPÍNÁNÍ DO REŽIMU TVORBY",				
+				loadBuilder: "PŘEPÍNÁNÍ DO REŽIMU TVORBY",
 				redirectSignIn: "PROBÍHÁ PŘESMĚROVÁNÍ NA PŘIHLAŠOVACÍ STRÁNKU",
 				redirectSignIn2: "(budete sem přesměrováni po přihlášení)",
 				failButton: "Zkusit znovu"
@@ -25,7 +25,7 @@
 				mapSave: "Chyba při ukládání webové mapy",
 				notAuthorized: "Nemáte oprávnění k přístupu do této aplikace.",
 				conflictingProjectionsTitle: "Konfliktní projekce",
-				conflictingProjections: "Ř_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ů",
+				conflictingProjections: "Překrývání nepodporuje používání dvou webových map s různými projekcemi. Otevřete nastavení a použijte webovou mapu, která využívá stejnou projekci jako první webová mapa.",
 				cpButton: "Zavřít"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "pro uložení aplikace."
 			},
 			header:{
-				editMe: "Ř_Edit me!_ů",
+				editMe: "Edituj mě!",
 				templateTitle: "Nastavit název šablony",
 				templateSubtitle: "Nastavit podnadpis šablony"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Nastavit popis postranního panelu",
-				editMe: "Ř_Edit me!_ů",
+				editMe: "Edituj mě!",
 				legendTitle: "Legenda"
 			},
 			infoWindow: {

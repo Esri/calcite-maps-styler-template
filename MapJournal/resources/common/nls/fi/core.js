@@ -26,8 +26,8 @@
 				buttonSettings: "Asetukset",
 				buttonHelp: "Ohje",
 				buttonPreview: "Näytä reaaliaikaisesti",
-				tooltipFirstSave: "Å_This function is not available until the application is saved_ö",
-				tooltipNotShared: "Å_This function is not available until the application is shared_ö",
+				tooltipFirstSave: "Tämä toiminto ei ole käytettävissä, ennen kuin sovellus on tallennettu",
+				tooltipNotShared: "Tämä toiminto ei ole käytettävissä, ennen kuin sovellus on jaettu",
 				noPendingChange: "Ei odottavaa muutosta",
 				unSavedChangePlural: "Odottavat muutokset",
 				closeWithPendingChange: "Haluatko varmasti vahvistaa tämän toiminnon? Menetät tekemäsi muutokset.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Sovellus on tallennettu",
-				firstSaveHeader: "Å_Your application is now saved in %PORTAL% but it is not shared yet._ö",
+				firstSaveHeader: "Sovelluksesi on nyt tallennettu portaaliin %PORTAL%, mutta sovellusta ei ole vielä jaettu.",
 				firstSavePreview: "Esikatselu",
 				firstSaveShare: "Jaa",
 				firstSaveA1: "Jos et tunnet %PORTAL%a tai haluat pikavalinnan, jonka avulla pääsee luontitoiminnon käyttöliittymään, voit tallentaa seuraavan linkin: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Tallenna ja käytä uudelleen seuraavaa linkkiä %LINK1% tai käytä <a href='%LINK2%' target='_blank'>sovelluskohteen sivua</a>.",
 				shareA2div2: "Koska olet sovelluksen omistaja, kun olet kirjautunut %PORTAL%-sivustoon, sovelluksessa näkyy painike, jolla voita avata luontitoiminnon:",				
 				shareQ3: "Minne tiedot on tallennettu?",
-				shareA3: "Å_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._ö"
+				shareA3: "Tarinan %TPL_NAME% aineisto ja määritykset tallennetaan <a href='%LINK2%' target='_blank'>tähän Web-sovelluskohteeseen</a>. Kierroksen määritykset tallennetaan <a href='%LINK1%' target='_blank'>tähän Web-karttakohteeseen</a> ja <a href='%LINK2%' target='_blank'>tähän web-sovelluskohteeseen</a>. Jos olet käyttänyt Flickr-, Picasa-, Facebook- tai YouTube-tuontia, kuviasi ja videoitasi ei kopioida portaaliin %PORTAL%."
 			},
 			settings: {
 				header: "Asetukset",
-				tabError: "Å_Please check all tabs for errors_ö"
+				tabError: "Tarkista virheet kaikista välilehdistä"
 			},
 			settingsLayout: {
 				title: "Asettelu",
-				explain: "Å_Which layout do you want to use?_ö",
-				explainInit: "Å_You can change the layout anytime from the settings panel._ö",
+				explain: "Mitä asettelua haluat käyttää?",
+				explainInit: "Voit muuttaa asettelua asetuspaneelin kautta milloin tahansa.",
 				viewExample: "Katsele reaaliaikaista esimerkkiä"
 			},
 			settingsTheme: {

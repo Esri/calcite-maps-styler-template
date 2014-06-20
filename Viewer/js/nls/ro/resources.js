@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Imposibil de creat harta"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Peisaj (Imagine)',
 			      "label4": 'Portret (Imagine)'
 			    },
-			    "legend": "Ă_Add legend to output_ș"
+			    "legend": "Adăugare legendă în rezultate"
 			},
 			"share": {
 				"extent": "Utilizare extindere curentă a hărţii",
@@ -42,8 +43,8 @@ define(({
         	"legend": "Legendă",
         	"bookmarks": "Semne de carte",
         	"layers": "Straturi tematice",
-        	"basemap": "Ă_Basemap gallery_ș",
-        	"overview": "Ă_Overview map_ș",
+        	"basemap": "Galerie de hărţi fundal",
+        	"overview": "Hartă de prezentare generală",
         	"measure": "Măsurare",
         	"edit": "Editare",
         	"time": "Timp",
@@ -51,4 +52,6 @@ define(({
         	"details": "Detalii",
         	"share": "Partajare"
         }
-}));
+    })
+
+);

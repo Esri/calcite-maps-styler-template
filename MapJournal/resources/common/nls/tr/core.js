@@ -26,8 +26,8 @@
 				buttonSettings: "Ayarlar",
 				buttonHelp: "Yardım",
 				buttonPreview: "Canlı Görünüm",
-				tooltipFirstSave: "ı_This function is not available until the application is saved_İ",
-				tooltipNotShared: "ı_This function is not available until the application is shared_İ",
+				tooltipFirstSave: "Bu işlev, uygulama kaydedilinceye kadar kullanılamaz",
+				tooltipNotShared: "Bu işlev, uygulama paylaştırılıncaya kadar kullanılamaz",
 				noPendingChange: "Bekleyen değişiklik yok",
 				unSavedChangePlural: "Bekleyen değişiklikler",
 				closeWithPendingChange: "Bu eylemi onaylamak istediğinizden emin misiniz? Değişiklikleriniz silinecek.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Uygulama başarıyla kaydedildi",
-				firstSaveHeader: "ı_Your application is now saved in %PORTAL% but it is not shared yet._İ",
+				firstSaveHeader: "Uygulamanız %PORTAL% üzerinde kaydedildi, ancak henüz paylaştırılmadı.",
 				firstSavePreview: "Önizleme",
 				firstSaveShare: "Paylaş",
 				firstSaveA1: "%PORTAL% üzerinde daha önce işlem yapmadıysanız veya oluşturucu arayüzü erişimi için bir kısayol kullanmak isterseniz, aşağıdaki bağlantıyı kaydedebilirsiniz: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "%LINK1% bağlantısını kaydedip tekrar kullanın veya <a href='%LINK2%' target='_blank'>uygulama öğesi sayfasını</a> kullanın.",
 				shareA2div2: "Uygulamanın sahibi olarak %PORTAL% üzerinde oturum açtığınızda, uygulamada bir oluşturucu açma düğmesi görüntülenir:",				
 				shareQ3: "Veriler nerede saklanıyor?",
-				shareA3: "ı_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._İ"
+				shareA3: "%TPL_NAME% verileri ve yapılandırması <a href='%LINK2%' target='_blank'>bu web uygulama öğesinde</a> saklanır. Flickr, Picasa, Facebook veya YouTube içe aktarma işlevi kullandıysanız, resim ve videolarınız %PORTAL% içinde çoğaltılmamış demektir."
 			},
 			settings: {
 				header: "Ayarlar",
-				tabError: "ı_Please check all tabs for errors_İ"
+				tabError: "Tüm sekmelerdeki hataları kontrol edin"
 			},
 			settingsLayout: {
 				title: "Düzen",
-				explain: "ı_Which layout do you want to use?_İ",
-				explainInit: "ı_You can change the layout anytime from the settings panel._İ",
+				explain: "Hangi düzeni kullanmak istiyorsunuz?",
+				explainInit: "Ayarlar panelinden düzeni istediğiniz zaman değiştirebilirsiniz.",
 				viewExample: "Canlı örnek görüntüle"
 			},
 			settingsTheme: {

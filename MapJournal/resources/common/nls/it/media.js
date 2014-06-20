@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Seleziona il tipo di file multimediale",
-				lblSelect2: "Seleziona il tipo di contenuti",
+				lblSelect1: "é_Media_È",
+				lblSelect2: "é_Content_È",
 				lblMap: "Mappa",
 				lblImage: "Immagine",
 				lblVideo: "Video",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "Quando l\'utente fa clic sul collegamento, verrà visualizzato un marcatore di mappa"
 			},
 			editorActionMedia: {
-				lblTitle: "é_Change the Main Stage content_È"
+				lblTitle: "Cambia contenuti per Visualizzazione principale"
 			},
 			editorInlineMedia: {
 				lblTitle: "Inserisci immagine o video"

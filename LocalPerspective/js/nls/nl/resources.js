@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "Kan kaart niet maken"
         },
         days: {
-           now: "Ĳ_NOW_ä",
-           sun: "Ĳ_SUN_ä",
-           mon: "Ĳ_MON_ä",
-           tue: "Ĳ_TUE_ä",
-           wed: "Ĳ_WED_ä",
-           thu: "Ĳ_THU_ä",
-           fri: "Ĳ_FRI_ä",
-           sat: "Ĳ_SAT_ä"
+           now: "NU",
+           sun: "ZON",
+           mon: "MAA",
+           tue: "DIN",
+           wed: "WOE",
+           thu: "DON",
+           fri: "VRIJ",
+           sat: "ZAT"
         }
-}));
+    })
+ 
+);

@@ -6,7 +6,7 @@
 				step2: "ANDMETE LAADIMINE",
 				step3: "LÄHTESTAMINE",
 				fail: "Vabandust, rullimisvahendi laadimine nurjus",
-				loadBuilder: "VAHETA KOOSTAJA TÜÜP",				
+				loadBuilder: "VAHETA KOOSTAJA TÜÜP",
 				redirectSignIn: "SUUNAN ÜMBER SISSELOGIMISE LEHELE",
 				redirectSignIn2: "(Teid suunatakse peale sisselogimist siia)",
 				failButton: "Proovi uuesti"
@@ -25,7 +25,7 @@
 				mapSave: "Viga veebikaardi salvestamisel",
 				notAuthorized: "Teil ei ole luba sellele rakendusele juurde pääseda",
 				conflictingProjectionsTitle: "Konfliktsed projektsioonid",
-				conflictingProjections: "Š_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ä",
+				conflictingProjections: "Rullimisel ei toetata kahe erineva projektsiooniga veebikaardi kasutamist. Avage sätte ja kasutage veebikaarti, mis kasutab samasugust projektsiooni nagu esimene kaart.",
 				cpButton: "Sulge"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: ", et salvestada rakendus."
 			},
 			header:{
-				editMe: "Š_Edit me!_ä",
+				editMe: "Muuda mind !",
 				templateTitle: "Määra mallile pealkiri",
 				templateSubtitle: "Määra mallile alampealkiri"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Määra küljepaneeli kirjeldus",
-				editMe: "Š_Edit me!_ä",
+				editMe: "Muuda mind !",
 				legendTitle: "Legend"
 			},
 			infoWindow: {

@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Nie można utworzyć mapy"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Poziomo (obraz)',
 			      "label4": 'Pionowo (obraz)'
 			    },
-			    "legend": "ł_Add legend to output_ą"
+			    "legend": "Dodaj legendę do danych wynikowych"
 			},
 			"share": {
 				"extent": "Użyj bieżącego zasięgu mapy,",
@@ -42,13 +43,15 @@ define(({
         	"legend": "Legenda",
         	"bookmarks": "Zakładki",
         	"layers": "Warstwy",
-        	"basemap": "ł_Basemap gallery_ą",
-        	"overview": "ł_Overview map_ą",
+        	"basemap": "Galeria map bazowych",
+        	"overview": "Przegląd mapy",
         	"measure": "Zmierz",
-        	"edit": "ł_Edit_ą",
+        	"edit": "Edytuj",
         	"time": "Czas",
         	"print": "Drukuj",
         	"details": "Szczegóły",
         	"share": "Udostępnij"
         }
-}));
+    })
+
+);

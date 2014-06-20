@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Выберите тип носителя",
-				lblSelect2: "Выберите тип ресурсов",
+				lblSelect1: "Ж_Media_Я",
+				lblSelect2: "Ж_Content_Я",
 				lblMap: "Карта",
 				lblImage: "Изображение",
 				lblVideo: "Видео",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "При нажатии на ссылку пользователь увидит маркер карты"
 			},
 			editorActionMedia: {
-				lblTitle: "Ж_Change the Main Stage content_Я"
+				lblTitle: "Изменить ресурсы основной площадки"
 			},
 			editorInlineMedia: {
 				lblTitle: "Вставить изображение или видео"

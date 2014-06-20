@@ -4,9 +4,9 @@
             error: "Nie można utworzyć mapy"
         },
         onlineStatus: {
-            online: "ł_A connection to the server can be made._ą",
-            offline: "ł_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._ą",
-            reconnecting: "ł_Reconnecting&hellip;_ą"
+            online: "ł_You are currently online._ą",
+            offline: "Aktualnie pracujesz w trybie offline. Formularze zgłoszeniowe będą zapisywane lokalnie do momentu, gdy będzie mogło zostać nawiązane połączenie z serwerem.",
+            reconnecting: "Ponowne łączenie&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -14,9 +14,9 @@
                     organizationLabel: "Moja instytucja",
                     onlineLabel: "ArcGIS Online",
                     contentLabel: "Moje zasoby",
-                    favoritesLabel: "ł_My Favorites_ą"
+                    favoritesLabel: "Moje ulubione"
                 },
-                title: "ł_Select Web Map_ą",
+                title: "Wybierz mapę internetową",
                 searchTitle: "Wyszukaj",
                 ok: "OK",
                 cancel: "Anuluj",
@@ -27,9 +27,9 @@
                     organizationLabel: "Moja instytucja",
                     onlineLabel: "ArcGIS Online",
                     contentLabel: "Moje zasoby",
-                    favoritesLabel: "ł_My Favorites_ą"
+                    favoritesLabel: "Moje ulubione"
                 },
-                title: "ł_Select Group_ą",
+                title: "Wybierz grupę",
                 searchTitle: "Wyszukaj",
                 ok: "OK",
                 cancel: "Anuluj",
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

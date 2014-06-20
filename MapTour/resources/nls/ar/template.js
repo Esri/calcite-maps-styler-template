@@ -410,7 +410,7 @@
 					div1: "يتم تصميم قالب جولة الخريطة لتقديم المعلومات الجغرافية حيث يوجد عنصر فوتوغرافي أو وسائط مقنع بالقصة التي تحكي عنها.",
 					div2: "ينتج القالب تطبيق تفاعلي وجاهز للاستخدام يسمح بتقديم مجموعة صغيرة من الأماكن على الخريطة بتتابع تعداد رقمي حيث يمكن استعراضه من قبل المستخدمين. يتم تصميم القالب لاستخدامه في أي مستعرض ويب على أي جهاز، بما في ذلك الهواتف الذكية والأجهزة اللوحية. <br /><br />فيما يلي مثال على نوع التطبيق الذي تقوم بإنشائه:",
 					div4: "<a href='http://storymaps.esri.com/stories/maptour-palmsprings' target='_blank'>جولة لخريطة ينابيع النخيل</a>.",
-					div42: "بيت_To see examples of map tours that other users are creating, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>visit the gallery</a> on the <a href='http://storymaps.arcgis.com/' target='_blank'>Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._لاحقة",
+					div42: "لرؤية أمثلة على جولات الخريطة التي يقوم الآخرون بإنشائها، <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>تفضل بزيارة المعرض</a> على<a href='http://storymaps.arcgis.com/' target='_blank'>موقع خرائط القصص على الويب</a>. يمكن اتباعنا على Twitter على <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div5: "نرغب في الاستماع إليك! سواء كان لديك سؤال، وترغب في طلب ميزة جديدة، أو تعتقد أنك وجدت خلل، يرجى زيارة <a href='http://links.esri.com/storymaps/forum' target='_blank'>منتدى مستخدمي خرائط القصة</a>."
 				},
 				tab2: {
@@ -418,9 +418,9 @@
 					div1: "العنصر الأساسي الذي يجب أخذه في الاعتبار عند بناء جولة الخريطة هو اختيار مكان تخزين الصور. يمكن لجولة الخريطة استخدام الصور المخزنة على خدمات مشاركة الصور على أي خادم ويب أو كمرفقات في خدمة معلم.",
 					div1a: "راجع الجزء الأخير من علامة التبويب للحصول على التفاصيل المتعلقة بتنسيقات الصور والفيديوهات المدعومة.",
 					div2: "يمنحك المنشئ التفاعلي خيارين لمعالجة الصور في جولة الخريطة:",
-					div3: "بيت_<ul><li>You can use <b>photos that are already online</b>, such as images stored in a photo sharing site like Flickr, or images stored on your own website. These images will be referenced in your Map Tour via their URLs.</li><li>You can also <b>upload photos from your computer</b> directly into your Map Tour. This upload option requires that you have an ArcGIS for Organizations account and that you have Publisher or Administrator privileges, because a hosted feature service is automatically created for you in which your photos are stored as attachments.</li></ul>_لاحقة",
+					div3: "<ul><li>يمكن استخدام<b>الصور المتصلة بالفعل بشبكة الإنترنت</b>، مثل الصور المُخزنة في مواقع مشاركة الصور مثل Flicker أو الصور المُخزنة على مواقع الويب. سيتم إرجاع هذه الصور في جولة الخريطة بواسطة عناوين URL.</li><li>يمكن أيضًا <b>تحميل الصور من الكمبيوتر</b> مُباشرًة داخل جولة الويب. يتطلب خيار التحميل الحصول على حساب ArcGIS for Organizations حيث الحصول على امتيازات الناشر أو المسئول وذلك بسبب إنشاء خدمة المعالم المستضافة تلقائيًا حيث يتم تخزين الصور كمرفقات. </li></ul>",
 					div4: "حالات الاستخدام الأساسية هي:",
-					div4b: "بيت_<b>Your photos are not hosted</b> yet and you have an ArcGIS for Organizations account: Using a hosted feature service is your best choice. Like public photo sharing services, we will optimize your pictures to create fast-loading images and you will have access to all administration and data management capabilities of the ArcGIS platform._لاحقة",
+					div4b: "<b>لم تتم استضافة الصور</b> بعد ولديك حساب على ArcGIS for Organizations: يعتبر استخدام خدمة المعالم المُستضافة هو افضل خيار لك. مثل خدمات مشاركة الصور العامة، سنقوم بتحسين الصور لإنشاء الصور وسيصبح لديك إمكانية الوصول إلى جميع إمكانات الإدارة وإدارة البيانات للنظام الأساسي ArcGIS.",
 					div5: "<b>أنت ليس عضوًا في أي منظمة</b>: يجب عليك أولا تحميل الصور على موقع مشاركة الصور على الويب أو على خادم الويب. وسيساعدك المُنشئ في استخدام هذه الصور التي تستمر استضافتها على الموقع الأصلي.",
 					div6: "<b>تريد إعادة استخدام خدمة المعالم الحالية</b>التي تقوم بتخزين الصور كمرفقات أو التي تقوم بإسناد الصور الخارجية: راجع المقطع المُفصل الموضح أدناه.",
 					div7: "<b>أنت تستخدم إصدارًا سابقًا</b>من قالب جولة الخريطة ولديك بالفعل CSV الذي يقوم بإسناد الصور والصور المصغرة: ستصبح قادرًا على استيرادهم وتنقية البيانات. يدعم المنشئ ملفات CSV فقط التي تستخدم حقول خطوط الطول/دوائر العرض: يمكن متابعة ملفات CSV التي تعمد على العنوان لاستخدامها في خرائط الويب (راجع المقطع الموضح أدناه).",
@@ -525,7 +525,7 @@
 				shareA2div1: "احفظ الرابط التالي وقم بإعادة استخدامه %LINK1% أو استخدم <a href='%LINK2%' target='_blank'>صفحة عنصر التطبيق</a>.",
 				shareA2div2: "بصفتك مالك التطبيق، عند تسجيل الدخول على ArcGIS.com، سيتضمن التطبيق زر لفتح المنشئ التفاعلي:",				
 				shareQ3: "أين يتم تخزين البيانات؟",
-				shareA3: "بيت_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. Flickr, Picasa, and Facebook images and YouTube videos remain referenced at their respective sites and aren't duplicated in ArcGIS Online._لاحقة",
+				shareA3: "يتم تخزين تكوين الجولة في <a href='%LINK1%' target='_blank'>عنصر خريطة الويب</a> و <a href='%LINK2%' target='_blank'>عنصر تطيق الويب</a>. يتم إرجاع صور Flicker وPicasa وFacebook ومقاطع فيديو YouTube في المواقع الخاصة ولن يتم تكرارها في ArcGIS Online.",
 				shareWarning: "تم تعطيل مشاركة %WITH% وذلك لأنك ليس مالك <a href='%LINK%' target='_blank'>خريطة الويب</a>.",
 				shareWarningWith1: "علانية",
 				shareWarningWith2: "علانية ومع المنظمة"

@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "マップを作成できません"
         },
         days: {
-           now: "須_NOW_鷗",
-           sun: "須_SUN_鷗",
-           mon: "須_MON_鷗",
-           tue: "須_TUE_鷗",
-           wed: "須_WED_鷗",
-           thu: "須_THU_鷗",
-           fri: "須_FRI_鷗",
-           sat: "須_SAT_鷗"
+           now: "現在",
+           sun: "日",
+           mon: "月",
+           tue: "火",
+           wed: "水",
+           thu: "木",
+           fri: "金",
+           sat: "土"
         }
-}));
+    })
+ 
+);

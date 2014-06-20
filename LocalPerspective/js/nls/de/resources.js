@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "Karte kann nicht erstellt werden"
         },
         days: {
-           now: "ä_NOW_Ü",
-           sun: "ä_SUN_Ü",
-           mon: "ä_MON_Ü",
-           tue: "ä_TUE_Ü",
-           wed: "ä_WED_Ü",
-           thu: "ä_THU_Ü",
-           fri: "ä_FRI_Ü",
-           sat: "ä_SAT_Ü"
+           now: "JETZT",
+           sun: "SO",
+           mon: "MO",
+           tue: "DI",
+           wed: "MI",
+           thu: "DO",
+           fri: "FR",
+           sat: "SA"
         }
-}));
+    })
+ 
+);

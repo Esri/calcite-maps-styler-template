@@ -4,5 +4,4 @@
             error: "Harita oluşturulamıyor"
         }
     })
-
 );

@@ -4,9 +4,9 @@
             error: "Não foi possível criar o mapa"
         },
         onlineStatus: {
-            online: "ã_A connection to the server can be made._Ç",
-            offline: "ã_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._Ç",
-            reconnecting: "ã_Reconnecting&hellip;_Ç"
+            online: "ã_You are currently online._Ç",
+            offline: "De momento, está a trabalhar em modo offline. Submissões de formulários serão guardadas localmente até que possa ser estabelecida uma ligação com o servidor. until a connection to the server can be made.",
+            reconnecting: "Reconectando&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -18,9 +18,9 @@
                 },
                 title: "Selecionar Mapa Web",
                 searchTitle: "Pesquisar",
-                ok: "ã_Ok_Ç",
+                ok: "Ok",
                 cancel: "Cancelar",
-                placeholder: "ã_Enter search term_Ç"
+                placeholder: "Introduza termo de pesquisa"
             },
             groupdlg: {
                 items: {
@@ -31,11 +31,10 @@
                 },
                 title: "Selecionar Grupo",
                 searchTitle: "Pesquisar",
-                ok: "ã_Ok_Ç",
+                ok: "Ok",
                 cancel: "Cancelar",
-                placeholder: "ã_Enter search term_Ç"
+                placeholder: "Introduza termo de pesquisa"
             }
         }
     })
-    
 );

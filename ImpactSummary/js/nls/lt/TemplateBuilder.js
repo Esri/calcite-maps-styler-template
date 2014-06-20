@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Atidaryti kūrimo įrankį",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Kitas",
                 "prevButtonText": "Ankstesnis",
                 "enterLabelText": "Įvesti žymę",
-                "SelectedFeatureText": "Į_Selected Feature_š",
+                "SelectedFeatureText": "Pasirinktas elementas",
                 "layerHelpTextMessage": "Šiai aplikacijai būtinas sluoksnis su skaitiniais laukais",
                 "alertMessage": {
                     "resetVariableMessage": "Ar tikrai norite iš naujo nustatyti kintamąjį?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

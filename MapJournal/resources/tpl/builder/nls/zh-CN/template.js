@@ -6,7 +6,7 @@
 				sideTitle: "侧面板",
 				sideDescr: "文本密集型故事的布局可将照片、视频和地图组合在重点明确的消息中。",
 				floatTitle: "浮动面板",
-				floatDescr: "试_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._验"
+				floatDescr: "以制图为重点，同时允许采用格式简单明了的文本面板来帮助讲述故事发展的布局。"
 			},
 			common: {
 				lblStatus1: "已发布",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "在此添加文本、链接和小图形。",
 				editorActionsTitle: "主要阶段操作",
-				editorActionsHelpDescr: "使用这些控件来创建将更改主要阶段的链接。例如，当读者单击某链接时，您会希望地图缩放至特定位置，显示其他 web 地图或显示图像。"
+				editorActionsHelpDescr: "试_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._验"
 			},
 			organizePopup: {
 				title: "组织",
-				lblHeader: "试_Drag and drop sections to organize your content._验",
+				lblHeader: "拖放节以对内容进行组织。",
 				lblColTitle: "标题",
 				lblColPubDate: "发布日期",
 				lblColStatus: "状态",
 				checkDisplayReverse: "以相反顺序显示节",
-				btnApplyWarning: "确认禁止显示 %NB% 节",
+				btnApplyWarning: "试_Confirm deletion of %NB% section(s)_验",
 				deleteTooltip: "删除",
 				firstSectionExplain: "（无法移动主目录节）"
 			},
@@ -64,12 +64,12 @@
 				lblMore: "是否想了解更多信息？",
 				lblLink: "访问故事地图网站。",
 				content1Div1: "构建故事时，可集成各种风格。<strong>%LAYOUT_TITLE%</strong> 通常在地图要发布在<strong>主要阶段</strong>时会保留文本、图像和视频。但 %TPL_NAME% 也可以在主要阶段中展示图像、图表和视频。",
-				content1Div2: "试_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._验",
+				content1Div2: "添加节可以使您真正自定义提供信息的经验。在读者滚动 %LAYOUT_TITLE% 文本时，主要阶段上的地图可平移或缩放至关键点或新地图，图像也可以自动切换以支持消息。",
 				content2Div1: "此处可调整 %TPL_NAME% 的外观。配色方案、布局和宽度均在此处进行优化。",
-				content2Div2: "试_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._验",
-				content3Div1: "您的内容按节进行组织。您可拥有任意数量的节(可将其视为微型章节)。这些章节的流动十分重要；这样便可在组织内根据需要重新排序或删除节。",
+				content2Div2: "还可添加 Facebook、Twitter 和 Bitly 的共享链接，这样读者便可轻松将 %TPL_NAME% 传播给其他人。",
+				content3Div1: "试_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._验",
 				content4Div1: "发现错误或希望更改材料？别担心。在整个应用程序中查找编辑图标，以对内容进行更改。在开发 %TPL_NAME% 时将多次使用编辑功能！",
-				content5Div1: "试_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._验"
+				content5Div1: "%TPL_NAME% 将保存在 %PORTAL% 帐户中，默认为私有。您可以决定是与组织共享，还是向全世界开放。我们甚至还为您提供简化的 URL，以便您轻松进行共享。"
 			},
 			landing: {
 				lblAdd: "添加主目录节",

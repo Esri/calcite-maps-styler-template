@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "빌더 시작",
@@ -46,7 +46,7 @@
                 "nextButtonText": "다음",
                 "prevButtonText": "이전",
                 "enterLabelText": "레이블 입력",
-                "SelectedFeatureText": "한_Selected Feature_빠",
+                "SelectedFeatureText": "선택한 피처",
                 "layerHelpTextMessage": "이 응용프로그램에는 숫자 필드가 포함된 레이어가 필요합니다.",
                 "alertMessage": {
                     "resetVariableMessage": "변수를 재설정하시겠습니까?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

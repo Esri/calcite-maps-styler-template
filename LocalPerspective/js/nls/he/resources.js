@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "לא ניתן ליצור מפה"
         },
@@ -28,4 +29,6 @@ define(({
            fri: "כן_FRI_ש",
            sat: "כן_SAT_ש"
         }
-}));
+    })
+ 
+);

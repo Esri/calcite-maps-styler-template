@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Accesare builder",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Următor",
                 "prevButtonText": "Anterior",
                 "enterLabelText": "Introducere etichetă",
-                "SelectedFeatureText": "Ă_Selected Feature_ș",
+                "SelectedFeatureText": "Obiect spaţial selectat",
                 "layerHelpTextMessage": "Această aplicaţie necesită un strat tematic cu câmpuri numerice",
                 "alertMessage": {
                     "resetVariableMessage": "Sigur doriţi să resetaţi variabila?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

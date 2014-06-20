@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "Nie można utworzyć mapy"
         },
         days: {
-           now: "ł_NOW_ą",
-           sun: "ł_SUN_ą",
-           mon: "ł_MON_ą",
-           tue: "ł_TUE_ą",
-           wed: "ł_WED_ą",
-           thu: "ł_THU_ą",
-           fri: "ł_FRI_ą",
-           sat: "ł_SAT_ą"
+           now: "TERAZ",
+           sun: "NIEDZ",
+           mon: "PON",
+           tue: "WT",
+           wed: "ŚR",
+           thu: "CZW",
+           fri: "PT",
+           sat: "SOB"
         }
-}));
+    })
+ 
+);

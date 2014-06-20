@@ -26,8 +26,8 @@
 				buttonSettings: "设置",
 				buttonHelp: "帮助",
 				buttonPreview: "实时查看",
-				tooltipFirstSave: "试_This function is not available until the application is saved_验",
-				tooltipNotShared: "试_This function is not available until the application is shared_验",
+				tooltipFirstSave: "应用程序保存后，此功能才可用",
+				tooltipNotShared: "应用程序共享后，此功能才可用",
 				noPendingChange: "无待决的更改",
 				unSavedChangePlural: "待决更改",
 				closeWithPendingChange: "是否确定要确认此操作？您的更改将丢失。",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "应用程序已成功保存",
-				firstSaveHeader: "试_Your application is now saved in %PORTAL% but it is not shared yet._验",
+				firstSaveHeader: "应用程序现已保存在 %PORTAL% 中，但尚未进行共享。",
 				firstSavePreview: "预览",
 				firstSaveShare: "共享",
 				firstSaveA1: "如果不熟悉 %PORTAL% 或需要使用快捷方式来访问构建器界面，则可以保存以下链接：%LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "保存并重新使用以下链接 %LINK1%，或使用<a href='%LINK2%' target='_blank'>应用程序项目页面</a>。",
 				shareA2div2: "作为应用程序所有者，登录到 %PORTAL% 后，应用程序将包括用于打开构建器的按钮：",				
 				shareQ3: "数据的存储位置在哪里？",
-				shareA3: "试_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._验"
+				shareA3: "%TPL_NAME% 数据和配置均存储在<a href='%LINK2%' target='_blank'>此 web 应用程序项目</a>中。如果已使用 Flickr、Picasa、Facebook 或 YouTube 进行导入，则图像和视频不会复制到 %PORTAL% 中。"
 			},
 			settings: {
 				header: "设置",
-				tabError: "试_Please check all tabs for errors_验"
+				tabError: "请检查所有选项卡中的错误"
 			},
 			settingsLayout: {
 				title: "布局",
-				explain: "试_Which layout do you want to use?_验",
-				explainInit: "试_You can change the layout anytime from the settings panel._验",
+				explain: "想要使用哪种布局？",
+				explainInit: "可随时在设置面板中更改布局。",
 				viewExample: "查看实时示例"
 			},
 			settingsTheme: {

@@ -4,5 +4,4 @@
             error: "Kan kaart niet maken"
         }
     })
-
 );

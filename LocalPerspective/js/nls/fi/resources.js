@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "Karttaa ei voi luoda"
         },
         days: {
-           now: "Å_NOW_ö",
-           sun: "Å_SUN_ö",
-           mon: "Å_MON_ö",
-           tue: "Å_TUE_ö",
-           wed: "Å_WED_ö",
-           thu: "Å_THU_ö",
-           fri: "Å_FRI_ö",
-           sat: "Å_SAT_ö"
+           now: "NYT",
+           sun: "SU",
+           mon: "MA",
+           tue: "TI",
+           wed: "KE",
+           thu: "TO",
+           fri: "PE",
+           sat: "LA"
         }
-}));
+    })
+ 
+);

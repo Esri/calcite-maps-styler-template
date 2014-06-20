@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "Kaarti ei saa luua"
         },
         days: {
-           now: "Š_NOW_ä",
-           sun: "Š_SUN_ä",
-           mon: "Š_MON_ä",
-           tue: "Š_TUE_ä",
-           wed: "Š_WED_ä",
-           thu: "Š_THU_ä",
-           fri: "Š_FRI_ä",
-           sat: "Š_SAT_ä"
+           now: "KOHE",
+           sun: "P",
+           mon: "E",
+           tue: "T",
+           wed: "K",
+           thu: "N",
+           fri: "R",
+           sat: "L"
         }
-}));
+    })
+ 
+);

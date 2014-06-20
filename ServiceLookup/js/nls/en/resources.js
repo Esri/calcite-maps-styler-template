@@ -5,14 +5,19 @@ define(
             mouseToolTip: "Click on the map to check for service"
         },
         geocoder: {
-            defaultText: "Enter your address"
+            defaultText: "Enter an address or point of interest"
         },
         error: {
-            layerNotFound: "Service Area Layer is not in the webmap",
-            fieldNotFound: "Field not found"
+            layerNotFound: "Layer is not in the webmap",
+            fieldNotFound: "Field not found",
+            popupNotSet: "Popup not enabled for this layer"
         },
         page: {
-            title: "Service Lookup",
+            title: "Information Lookup",
+        },
+
+        splashscreen: {
+            buttonText: "OK",
         }
     })
 

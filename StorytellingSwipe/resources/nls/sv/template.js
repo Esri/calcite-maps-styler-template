@@ -6,7 +6,7 @@
 				step2: "LÄSER IN DATA",
 				step3: "INITIERAR",
 				fail: "Det gick inte att hämta svep",
-				loadBuilder: "VÄXLAR TILL BYGGLÄGET",				
+				loadBuilder: "VÄXLAR TILL BYGGLÄGET",
 				redirectSignIn: "OMDIRIGERAR TILL INLOGGNINGSSIDAN",
 				redirectSignIn2: "(du omdirigeras hit efter inloggning)",
 				failButton: "Försök igen"
@@ -25,7 +25,7 @@
 				mapSave: "Det uppstod ett fel när webbkartan skulle sparas",
 				notAuthorized: "Du är inte behörig att konfigurera det här programmet",
 				conflictingProjectionsTitle: "Projektionerna är i konflikt",
-				conflictingProjections: "Å_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ö",
+				conflictingProjections: "Svep går inte att använda med två webbkartor som har olika projektioner. Öppna inställningarna och använd en webbkarta med samma projektion som den första webbkartan.",
 				cpButton: "Stäng"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "och spara programmet."
 			},
 			header:{
-				editMe: "Å_Edit me!_ö",
+				editMe: "Redigera mig!",
 				templateTitle: "Ange malltitel",
 				templateSubtitle: "Ange underrubrik för mallen"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Ange sidopanelbeskrivningen",
-				editMe: "Å_Edit me!_ö",
+				editMe: "Redigera mig!",
 				legendTitle: "Teckenförklaring"
 			},
 			infoWindow: {

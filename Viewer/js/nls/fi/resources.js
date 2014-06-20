@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Karttaa ei voi luoda"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Maisema (kuva)',
 			      "label4": 'Muotokuva (kuva)'
 			    },
-			    "legend": "Å_Add legend to output_ö"
+			    "legend": "Lisää selite tulokseen"
 			},
 			"share": {
 				"extent": "Käytä nykyisen kartan laajuutta.",
@@ -42,8 +43,8 @@ define(({
         	"legend": "Selite",
         	"bookmarks": "Kirjanmerkit",
         	"layers": "Karttatasot",
-        	"basemap": "Å_Basemap gallery_ö",
-        	"overview": "Å_Overview map_ö",
+        	"basemap": "Taustakarttagalleria",
+        	"overview": "Yleiskatsauskartta",
         	"measure": "Mittaus",
         	"edit": "Muokkaa",
         	"time": "Kellonaika",
@@ -51,4 +52,6 @@ define(({
         	"details": "Yksityiskohdat",
         	"share": "Jaa"
         }
-}));
+    })
+
+);

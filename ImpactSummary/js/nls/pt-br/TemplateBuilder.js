@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Entrar no Construtor",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Avançar",
                 "prevButtonText": "Anterior",
                 "enterLabelText": "Inserir Rótulo",
-                "SelectedFeatureText": "ã_Selected Feature_Ç",
+                "SelectedFeatureText": "Feição Selecionada",
                 "layerHelpTextMessage": "Este aplicativo exige uma camada com campos numéricos",
                 "alertMessage": {
                     "resetVariableMessage": "Tem certeza que deseja redefinir a variável ?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

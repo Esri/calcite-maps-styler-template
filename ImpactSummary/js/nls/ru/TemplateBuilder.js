@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Войти в Builder",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Далее",
                 "prevButtonText": "Назад",
                 "enterLabelText": "Введите надпись",
-                "SelectedFeatureText": "Ж_Selected Feature_Я",
+                "SelectedFeatureText": "Выбранный объект",
                 "layerHelpTextMessage": "Приложению требуется слой с числовыми полями",
                 "alertMessage": {
                     "resetVariableMessage": "Вы уверены, что хотите сбросить переменную?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

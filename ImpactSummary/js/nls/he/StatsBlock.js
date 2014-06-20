@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "StatsBlock": {
             "close": "סגור",
             "next": "הבא",
@@ -7,4 +7,5 @@
             "source":"מקור הנתונים"
         }
     })
-});
+    
+);

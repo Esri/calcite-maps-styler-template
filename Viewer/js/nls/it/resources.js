@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Impossibile creare la mappa"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Orizzontale (immagine)',
 			      "label4": 'Verticale (immagine)'
 			    },
-			    "legend": "é_Add legend to output_È"
+			    "legend": "Aggiungi legenda all\'output"
 			},
 			"share": {
 				"extent": "Usa estensione mappa corrente",
@@ -42,13 +43,15 @@ define(({
         	"legend": "Legenda",
         	"bookmarks": "Segnalibri",
         	"layers": "Layer",
-        	"basemap": "é_Basemap gallery_È",
-        	"overview": "é_Overview map_È",
+        	"basemap": "Galleria di mappe di base",
+        	"overview": "Mappa d\'insieme",
         	"measure": "Misura",
-        	"edit": "é_Edit_È",
+        	"edit": "Modifica",
         	"time": "Data/Ora",
         	"print": "Stampa",
         	"details": "Dettagli",
         	"share": "Condividi"
         }
-}));
+    })
+
+);

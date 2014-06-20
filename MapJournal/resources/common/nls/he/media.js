@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "בחר סוג מדיה",
-				lblSelect2: "בחר סוג תוכן",
+				lblSelect1: "כן_Media_ש",
+				lblSelect2: "כן_Content_ש",
 				lblMap: "מפה",
 				lblImage: "תמונה",
 				lblVideo: "וידאו",

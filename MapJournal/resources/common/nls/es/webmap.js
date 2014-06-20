@@ -2,10 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
+				lblWebMap: "á_Web map_Ó",
 				lblLocation: "Ubicación",
 				lblContent: "Contenido",
 				lblPopup: "Menú emergente",
-				lblControls: "Controles",
+				lblControls: "á_Extras_Ó",
 				lblOverview: "Mapa de vista general",
 				lblLegend: "Leyenda",
 				loadingTitle: "Cargando título",
@@ -21,24 +22,24 @@
 				newMap: "Mapa web que se acaba de seleccionar",
 				webmapDefault: "Valor por defecto de mapa web",
 				customCfg: "Configuración personalizada",
-				tooltipLocation: "Define la ubicación del mapa que se utilizará cuando los lectores naveguen a esta sección.",
+				tooltipLocation: "á_Define the map location that will be used when your readers navigate to this section._Ó",
 				tooltipContent: "Define las capas visibles.",
 				tooltipPopup: "Elige una ventana emergente que se mostrará cuando los lectores naveguen a esta sección.",
-				tooltipOverview: "á_Display a small overview map along with the main map_Ó",
-				tooltipLegend: "á_Display the map legend on the map, helpful when the map has many layers and symbols._Ó",
-				mapCfgInvite: "Usa estos controles para configurar el mapa"
+				tooltipOverview: "Muestra un pequeño mapa de vista general junto con el mapa principal",
+				tooltipLegend: "Muestra la leyenda del mapa en el mapa, algo que resulta útil cuando el mapa tiene muchos símbolos y capas.",
+				mapCfgInvite: "á_Use these controls to configure your map_Ó"
 			},
 			configure: {
 				btnReset: "Reiniciar",
 				btnCancel: "Cancelar",
 				tocTitle: "Contenido del mapa",
 				tocExplain: "Selecciona las capas que se mostrarán.",
-				tocSave: "Guardar contenido del mapa",
+				tocSave: "á_Save map content_Ó",
 				extentTitle: "Ubicación del mapa",
 				extentExplain: "Desplázate y haz zoom por el mapa para definir cómo lo verán los lectores.",
 				extentSave: "Guardar ubicación del mapa",
 				popupTitle: "Ventana emergente del mapa",
-				popupExplain: "á_Configure the look of the pop-up shown to readers_Ó",
+				popupExplain: "Configura el aspecto que tendrá la ventana emergente mostrada a los lectores",
 				popupSave: "Guardar la configuración de la ventana emergente",
 				hintNavigation: "La navegación del mapa se ha deshabilitado."
 			}

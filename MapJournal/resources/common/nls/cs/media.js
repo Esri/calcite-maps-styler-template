@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Vybrat typ média",
-				lblSelect2: "Vybrat typ obsahu",
+				lblSelect1: "Ř_Media_ů",
+				lblSelect2: "Ř_Content_ů",
 				lblMap: "Mapa",
 				lblImage: "Obrázek",
 				lblVideo: "Video",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "Uživatel při kliknutí na odkaz uvidí mapovou značku."
 			},
 			editorActionMedia: {
-				lblTitle: "Ř_Change the Main Stage content_ů"
+				lblTitle: "Změnit obsah hlavní úrovně"
 			},
 			editorInlineMedia: {
 				lblTitle: "Vložit obrázek nebo video"

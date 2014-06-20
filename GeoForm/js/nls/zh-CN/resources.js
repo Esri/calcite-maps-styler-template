@@ -4,9 +4,9 @@
             error: "无法创建地图"
         },
         onlineStatus: {
-            online: "试_A connection to the server can be made._验",
-            offline: "试_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._验",
-            reconnecting: "试_Reconnecting&hellip;_验"
+            online: "试_You are currently online._验",
+            offline: "您目前正在离线工作。连接到服务器之前，提交的表单将保存在本地。",
+            reconnecting: "重新连接&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

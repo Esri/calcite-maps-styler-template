@@ -127,7 +127,7 @@
                 "bookmarks": "Bogmærker", // added 8.26.2013
                 "noBookmarks": "Ingen bogmærker", // added 8.26.2013
                 "layerVisible": "Lagsynlighed", // added 8.26.2013
-                "flagAppropriate": "Mark\ér som upassende", // added 8.26.2013
+                "flagAppropriate": "Markér som upassende", // added 8.26.2013
                 "flatReporting": "rapporterer", // added 8.26.2013
                 "zoomToLabel": "Zoom til", // added 8.26.2013
                 "contentFlagged": "Indhold markeret", // added 8.26.2013

@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ortam Türü Seç",
-				lblSelect2: "İçerik Türü Seç",
+				lblSelect1: "ı_Media_İ",
+				lblSelect2: "ı_Content_İ",
 				lblMap: "Harita",
 				lblImage: "Görüntü",
 				lblVideo: "Video",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "Kullanıcı bağlantıya tıklarken bir harita işaretçisi görür"
 			},
 			editorActionMedia: {
-				lblTitle: "ı_Change the Main Stage content_İ"
+				lblTitle: "Ana Aşama içeriğini değiştir"
 			},
 			editorInlineMedia: {
 				lblTitle: "Bir resim veya video ekle"

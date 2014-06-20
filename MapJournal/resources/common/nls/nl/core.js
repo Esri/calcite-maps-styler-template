@@ -26,8 +26,8 @@
 				buttonSettings: "Instellingen",
 				buttonHelp: "Help",
 				buttonPreview: "Live weergeven",
-				tooltipFirstSave: "Ĳ_This function is not available until the application is saved_ä",
-				tooltipNotShared: "Ĳ_This function is not available until the application is shared_ä",
+				tooltipFirstSave: "Deze functie is niet beschikbaar totdat de applicatie wordt opgeslagen",
+				tooltipNotShared: "Deze functie is niet beschikbaar totdat de applicatie wordt gedeeld",
 				noPendingChange: "Geen wijziging in behandeling",
 				unSavedChangePlural: "Wijzigingen in behandeling",
 				closeWithPendingChange: "Weet u zeker dat u deze actie wilt bevestigen? Uw wijzigingen gaan verloren.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Applicatie is opgeslagen",
-				firstSaveHeader: "Ĳ_Your application is now saved in %PORTAL% but it is not shared yet._ä",
+				firstSaveHeader: "Uw applicatie is nu opgeslagen in %PORTAL%, maar is nog niet gedeeld.",
 				firstSavePreview: "Voorbeeld",
 				firstSaveShare: "Delen",
 				firstSaveA1: "Als u vertrouwd bent met %PORTAL% of u wilt een snelkoppeling om toegang te krijgen tot de builderinterface, kunt u de volgende koppeling opslaan: %LINK1%",
@@ -65,17 +65,17 @@
 				shareA2div1: "Sla de volgende koppeling op %LINK1% en gebruik deze opnieuw of gebruik <a href='%LINK2%' target='_blank'>de applicatie-itempagina</a>.",
 				shareA2div2: "Als u bent aangemeld bij %PORTAL% als de eigenaar van de applicatie, bevat de applicatie een knop om de builder te openen:",				
 				shareQ3: "Waar zijn de gegevens opgeslagen?",
-				shareA3: "Ĳ_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._ä"
+				shareA3: "%TPL_NAME%-gegevens en configuratie worden opgeslagen in <a href='%LINK2%' target='_blank'>dit webapplicatie-item</a>. Als u importeren van Flickr, Picasa, Facebook of YouTube hebt gebruikt, worden uw afbeeldingen en video\'s niet gedupliceerd in %PORTAL%."
 			},
 			settings: {
 				header: "Instellingen",
-				tabError: "Ĳ_Please check all tabs for errors_ä"
+				tabError: "Controleer alle tabbladen op fouten"
 			},
 			settingsLayout: {
 				title: "Lay-out",
-				explain: "Ĳ_Which layout do you want to use?_ä",
-				explainInit: "Ĳ_You can change the layout anytime from the settings panel._ä",
-				viewExample: "Een livevoorbeeld weergeven"
+				explain: "Welke lay-out wilt u gebruiken?",
+				explainInit: "U kunt de lay-out altijd wijzigen in het deelvenster Instellingen.",
+				viewExample: "Een live voorbeeld weergeven"
 			},
 			settingsTheme: {
 				title: "Thema"

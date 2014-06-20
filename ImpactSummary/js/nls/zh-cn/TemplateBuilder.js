@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "进入构建器",
@@ -46,7 +46,7 @@
                 "nextButtonText": "下一步",
                 "prevButtonText": "上一步",
                 "enterLabelText": "输入标注",
-                "SelectedFeatureText": "试_Selected Feature_验",
+                "SelectedFeatureText": "所选要素",
                 "layerHelpTextMessage": "此应用程序需要包含数值字段的图层",
                 "alertMessage": {
                     "resetVariableMessage": "确定要重置变量?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

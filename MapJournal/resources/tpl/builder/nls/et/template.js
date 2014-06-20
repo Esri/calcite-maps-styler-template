@@ -6,7 +6,7 @@
 				sideTitle: "Külgpaneel",
 				sideDescr: "Ohtra tekstiga loo jaoks sobiv paigutus, kus saate oma fotod, videod ja kaardid kombineerida ühtseks selget sõnumit kandvaks artikliks.",
 				floatTitle: "Ujupaneel",
-				floatDescr: "Š_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._ä"
+				floatDescr: "Paigutus, mis tõmbab tähelepanu kaartidele, võimaldades samas läbipaistva lühitekstipaneeli kaudu sisu jutustada."
 			},
 			common: {
 				lblStatus1: "Avaldatud",
@@ -41,16 +41,16 @@
 			addEditViewText: {
 				editorPlaceholder: "Siia saate lisada teksti, lingid ja väiksemad pildid.",
 				editorActionsTitle: "Põhilava toimingud",
-				editorActionsHelpDescr: "Nende juhtelementide abil saate luua põhilava muutvad lingid. Näiteks võite soovida, et kui lugeja klõpsab kindlat linki, kuvatakse kaardil suuremana kindel asukoht, kuvatakse mõni muu veebikaart või kuvatakse pilt."
+				editorActionsHelpDescr: "Š_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ä"
 			},
 			organizePopup: {
 				title: "Paiguta",
-				lblHeader: "Š_Drag and drop sections to organize your content._ä",
+				lblHeader: "Sisu korraldamiseks lohistage loo jaotised soovitud kohta.",
 				lblColTitle: "Pealkiri",
 				lblColPubDate: "Avaldamiskuupäev",
 				lblColStatus: "Staatus",
 				checkDisplayReverse: "Kuva jaotised pöördjärjestuses",
-				btnApplyWarning: "Kinnita %NB% jaotise alistamine",
+				btnApplyWarning: "Š_Confirm deletion of %NB% section(s)_ä",
 				deleteTooltip: "Kustuta",
 				firstSectionExplain: "(Kodujaotist ei saa teisaldada)"
 			},
@@ -64,12 +64,12 @@
 				lblMore: "Kas sellest ei piisa?",
 				lblLink: "Külastage kaardilugude veebisaiti.",
 				content1Div1: "Artikli koostamisel saate kaasata mitmesuguseid laade. <strong>%LAYOUT_TITLE%</strong> sisaldab enamasti teksti, pilte ja videoid, kaardid aga asuvad <strong>põhilaval</strong>. %TPL_NAME% lubab teil siiski ka pilte, diagramme ja videot põhilaval kasutada.",
-				content1Div2: "Š_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._ä",
+				content1Div2: "Jaotiste lisamisega saate oma loo jutustada täpselt nii, nagu soovite. Kui lugeja liigub jaotise %LAYOUT_TITLE% tekstis kerides allapoole, saab põhilaval kaarti liigutada või olulisi kohti suuremana näidata; samuti saab teie sõnumi toetamiseks automaatselt uusi kaarte ja pilte sisse ja välja lülitada.",
 				content2Div1: "Siin saate kohandada malli %TPL_NAME% ilmet. Muu hulgas saate siin määratleda värviskeemid, paigutused ja laiused.",
-				content2Div2: "Š_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._ä",
-				content3Div1: "Sisu korraldatakse jaotistena. Jaotiste arv pole piiratud (võite neid käsitleda miniatuursete peatükkidena). Kuna nende peatükkide voog peaks olema sujuv, saate korraldamisaknas jaotiste järjestust muuta või jaotisi ka kustutada.",
+				content2Div2: "Samuti saate lisada Facebooki, Twitteri ja Bitly kaudu jagamise lingid, et lugejad saaksid teie malli %TPL_NAME% mugavalt edasi levitada.",
+				content3Div1: "Š_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ä",
 				content4Div1: "Kas olete leidnud vea või soovite materjali muuta? Ärge muretsege. Rakenduse muutmisikooni kaudu saate sisu igal ajal muuta. Muutmisvõimaluste kasutamist tuleb teil malli %TPL_NAME% väljatöötamisel kindlasti ohtralt ette!",
-				content5Div1: "Š_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._ä"
+				content5Div1: "%TPL_NAME% salvestatakse teie portaali %PORTAL% kontole ja see on vaikimisi privaatne. Te saate valida, kas soovite seda jagada üksnes oma organisatsiooni piires või kogu maailmaga. Selleks, et seda oleks mugavam jagada, anname teile ka lühikese püsilingi."
 			},
 			landing: {
 				lblAdd: "Lisa avalehe jaotis",

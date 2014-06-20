@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Přejít do nástroje pro tvorbu",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Další",
                 "prevButtonText": "Předchozí",
                 "enterLabelText": "Zadat štítek",
-                "SelectedFeatureText": "Ř_Selected Feature_ů",
+                "SelectedFeatureText": "Vybraný prvek",
                 "layerHelpTextMessage": "Tato aplikace vyžaduje vrstvu s číselnými poli.",
                 "alertMessage": {
                     "resetVariableMessage": "Opravdu chcete obnovit proměnnou?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

@@ -10,14 +10,14 @@
         error: {
             layerNotFound: "השכבה לא נימצאת ב webmap",
             fieldNotFound: "שדה לא נמצא",
-            popupNotSet: "חלון קופץ לא אפשרי לשכבה זו."
+            popupNotSet: "כן_Popup not enabled for this layer_ש"
         },
         page: {
             title: "בדיקת מידע",
         },
 
         splashscreen: {
-            buttonText: "אישור",
+            buttonText: "כן_OK_ש",
         }
     })
 

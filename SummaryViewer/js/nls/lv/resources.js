@@ -4,5 +4,4 @@
             error: "Nevar izveidot karti"
         }
     })
-
 );

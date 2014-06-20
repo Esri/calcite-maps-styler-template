@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Pasirinkite įvairialypės informacijos tipą",
-				lblSelect2: "Pasirinkite turinio tipą",
+				lblSelect1: "Į_Media_š",
+				lblSelect2: "Į_Content_š",
 				lblMap: "Žemėlapis",
 				lblImage: "Paveikslėlis",
 				lblVideo: "Video",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "Spustelėjęs nuorodą, vartotojas matys žemėlapio žymeklį"
 			},
 			editorActionMedia: {
-				lblTitle: "Į_Change the Main Stage content_š"
+				lblTitle: "Keisti pagrindinės srities turinį"
 			},
 			editorInlineMedia: {
 				lblTitle: "Įterpti vaizdą arba video"

@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Siirry luontitoimintoon",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Seuraava",
                 "prevButtonText": "Edellinen",
                 "enterLabelText": "Anna tunnusteksti",
-                "SelectedFeatureText": "Å_Selected Feature_ö",
+                "SelectedFeatureText": "Valittu kohde",
                 "layerHelpTextMessage": "Tämä sovellus edellyttää numerokenttiä sisältävän karttatason",
                 "alertMessage": {
                     "resetVariableMessage": "Haluatko varmasti nollata muuttujan?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

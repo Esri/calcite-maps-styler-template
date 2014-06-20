@@ -26,8 +26,8 @@
 				buttonSettings: "Configurações",
 				buttonHelp: "Ajuda",
 				buttonPreview: "Ver ao Vivo",
-				tooltipFirstSave: "ã_This function is not available until the application is saved_Ç",
-				tooltipNotShared: "ã_This function is not available until the application is shared_Ç",
+				tooltipFirstSave: "Esta funcionalidade não se encontra disponível até que a aplicação seja guardada",
+				tooltipNotShared: "Esta funcionalidade não se encontra disponível até que a aplicação seja partilhada",
 				noPendingChange: "Nenhuma alteração pendente",
 				unSavedChangePlural: "Alterações pendentes",
 				closeWithPendingChange: "Tem a certeza que pretende confirmar esta ação? As suas alterações serão perdidas.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Aplicação guardada com sucesso",
-				firstSaveHeader: "ã_Your application is now saved in %PORTAL% but it is not shared yet._Ç",
+				firstSaveHeader: "A sua aplicação está agora guardada em %PORTAL% mas ainda não se encontra partilhada.",
 				firstSavePreview: "Pré-Visualizar",
 				firstSaveShare: "Partilhar",
 				firstSaveA1: "Se não tem familiaridade com %PORTAL% ou pretende um atalho para aceder ao interface do builder, pode guardar a seguinte ligação: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Guarde e reutilize a seguinte ligação %LINK1% ou utilize <a href='%LINK2%' target='_blank'>a página de detalhes do item</a>.",
 				shareA2div2: "Como proprietário da aplicação, quando tem sessão iniciada no %PORTAL%, a aplicação inclui um botão para abrir o builder:",				
 				shareQ3: "Onde estão guardados os dados?",
-				shareA3: "ã_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._Ç"
+				shareA3: "Os dados e configuração do %TPL_NAME% encontram-e armazenados <a href='%LINK2%' target='_blank'>neste item de aplicação web</a>. Se importou  do Flickr, Picasa, Facebook ou YouTube , as suas imagens e vídeos não foram duplicados no %PORTAL%."
 			},
 			settings: {
 				header: "Configurações",
-				tabError: "ã_Please check all tabs for errors_Ç"
+				tabError: "Verifique todos os separadores para ver se existem erros"
 			},
 			settingsLayout: {
 				title: "Layout",
-				explain: "ã_Which layout do you want to use?_Ç",
-				explainInit: "ã_You can change the layout anytime from the settings panel._Ç",
+				explain: "Que layout pretende utilizar?",
+				explainInit: "Pode efetuar alterações em qualquer momento no painel de definições.",
 				viewExample: "Ver um exemplo em tempo real"
 			},
 			settingsTheme: {

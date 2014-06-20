@@ -2,10 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
+				lblWebMap: "é_Web map_È",
 				lblLocation: "Posizione",
 				lblContent: "Contenuti",
 				lblPopup: "Popup",
-				lblControls: "Controlli",
+				lblControls: "é_Extras_È",
 				lblOverview: "Mappa d\'insieme",
 				lblLegend: "Legenda",
 				loadingTitle: "Caricamento titolo in corso",
@@ -21,24 +22,24 @@
 				newMap: "Nuova mappa Web selezionata",
 				webmapDefault: "Predefinite mappa Web",
 				customCfg: "Configurazione personalizzata",
-				tooltipLocation: "Definisce la posizione della mappa che verrà utilizzata quando i lettori passano a questa sezione.",
+				tooltipLocation: "é_Define the map location that will be used when your readers navigate to this section._È",
 				tooltipContent: "Definisce i layer visibili.",
 				tooltipPopup: "Consente di scegliere un popup da visualizzare quando i lettori passano a questa sezione.",
-				tooltipOverview: "é_Display a small overview map along with the main map_È",
-				tooltipLegend: "é_Display the map legend on the map, helpful when the map has many layers and symbols._È",
-				mapCfgInvite: "Utilizzare questi controlli per configurare la mappa"
+				tooltipOverview: "Consente di visualizzare una piccola mappa d\'insieme insieme alla mappa principale.",
+				tooltipLegend: "Consente di visualizzare la legenda della mappa, utile quando la mappa contiene numerosi layer e simboli.",
+				mapCfgInvite: "é_Use these controls to configure your map_È"
 			},
 			configure: {
 				btnReset: "Reimposta",
 				btnCancel: "Annulla",
 				tocTitle: "Contenuti mappa",
 				tocExplain: "Consente di selezionare i layer che verranno visualizzati.",
-				tocSave: "Salva contenuti mappa",
+				tocSave: "é_Save map content_È",
 				extentTitle: "Posizione mappa",
 				extentExplain: "Consente di applicare pan e zoom alla mappa per definirne l\'aspetto per i lettori.",
 				extentSave: "Salva posizione mappa",
 				popupTitle: "Popup mappa",
-				popupExplain: "é_Configure the look of the pop-up shown to readers_È",
+				popupExplain: "Consente di configurare l\'aspetto del popup visualizzato ai lettori.",
 				popupSave: "Salva la configurazione del popup",
 				hintNavigation: "Navigazione mappa disabilitata."
 			}
@@ -55,7 +56,7 @@
 				searchTitle: "Cerca",
 				ok: "OK",
 				cancel: "Annulla",
-				placeholder: "Immetti termine di ricerca o ID mappa Web..."
+				placeholder: "Immettere termine di ricerca o ID mappa Web..."
 			}
 		}
 	})

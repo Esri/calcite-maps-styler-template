@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "ビルダの開始",
@@ -46,7 +46,7 @@
                 "nextButtonText": "次へ",
                 "prevButtonText": "前へ",
                 "enterLabelText": "ラベルの入力",
-                "SelectedFeatureText": "須_Selected Feature_鷗",
+                "SelectedFeatureText": "選択されたフィーチャ",
                 "layerHelpTextMessage": "このアプリケーションには数値フィールドを持つレイヤが必要です",
                 "alertMessage": {
                     "resetVariableMessage": "変数をリセットしますか？",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

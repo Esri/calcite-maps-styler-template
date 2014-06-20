@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Selecionar Tipo de Mídia",
-				lblSelect2: "Selecionar Tipo de Conteúdo",
+				lblSelect1: "ã_Media_Ç",
+				lblSelect2: "ã_Content_Ç",
 				lblMap: "Mapa",
 				lblImage: "Imagem",
 				lblVideo: "Vídeo",
@@ -72,11 +72,11 @@
 				lblPosition4Explain: "(pode distorcer)"
 			},
 			editorActionGeocode: {
-				lblTitle: "Localizae um endereço ou lugar",
+				lblTitle: "Localize um endereço ou lugar",
 				mapMarkerExplain: "Usuários visualizarão um marcador de mapa ao clicar no link"
 			},
 			editorActionMedia: {
-				lblTitle: "ã_Change the Main Stage content_Ç"
+				lblTitle: "Altere o conteúdo do Nível Principal"
 			},
 			editorInlineMedia: {
 				lblTitle: "Insira uma imagem ou vídeo"

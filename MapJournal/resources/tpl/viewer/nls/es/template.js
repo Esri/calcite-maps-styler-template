@@ -60,8 +60,8 @@
 				copy: "Copiar",
 				copied: "Copiado",
 				open: "Abrir",
-				embed: "á_Embed in website_Ó",
-				embedExplain: "á_Use the following HTML code to embed the Journal in a website._Ó",
+				embed: "Integrar en sitio web",
+				embedExplain: "Usa el siguiente código HTML para integrar el diario en un sitio web.",
 				size: "Tamaño (ancho/alto):"
 			}
         }

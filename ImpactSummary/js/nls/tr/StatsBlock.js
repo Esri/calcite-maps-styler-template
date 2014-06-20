@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "StatsBlock": {
             "close": "kapat",
             "next": "Sonraki",
@@ -7,4 +7,5 @@
             "source":"Veri kaynağı"
         }
     })
-});
+    
+);

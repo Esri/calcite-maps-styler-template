@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Izvēlēties medija tipu",
-				lblSelect2: "Izvēlēties satura tipu",
+				lblSelect1: "ķ_Media_ū",
+				lblSelect2: "ķ_Content_ū",
 				lblMap: "Karte",
 				lblImage: "Attēls",
 				lblVideo: "Video",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "Noklikšķinot uz saites, lietotājam tiks rādīts kartes punkts"
 			},
 			editorActionMedia: {
-				lblTitle: "ķ_Change the Main Stage content_ū"
+				lblTitle: "Galvenā posma satura maiņa"
 			},
 			editorInlineMedia: {
 				lblTitle: "Attēla vai video ievietošana"

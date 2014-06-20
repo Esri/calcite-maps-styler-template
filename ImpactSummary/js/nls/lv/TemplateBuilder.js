@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Atvērt veidotāju",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Tālāk",
                 "prevButtonText": "Iepriekšējs",
                 "enterLabelText": "Ievadīt kartes aprakstu",
-                "SelectedFeatureText": "ķ_Selected Feature_ū",
+                "SelectedFeatureText": "Atlasītais elements",
                 "layerHelpTextMessage": "Šai aplikācijai nepieciešams slānis ar ciparu laukiem",
                 "alertMessage": {
                     "resetVariableMessage": "Vai tiešām vēlaties atiestatīt mainīgo?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

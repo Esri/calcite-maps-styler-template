@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "StatsBlock": {
             "close": "uždaryti",
             "next": "Kitas",
@@ -7,4 +7,5 @@
             "source":"Duomenų šaltinis"
         }
     })
-});
+    
+);

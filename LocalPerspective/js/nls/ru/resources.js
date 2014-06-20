@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "Не удалось создать карту"
         },
         days: {
-           now: "Ж_NOW_Я",
-           sun: "Ж_SUN_Я",
-           mon: "Ж_MON_Я",
-           tue: "Ж_TUE_Я",
-           wed: "Ж_WED_Я",
-           thu: "Ж_THU_Я",
-           fri: "Ж_FRI_Я",
-           sat: "Ж_SAT_Я"
+           now: "СЕЙЧАС",
+           sun: "ВС",
+           mon: "ПН",
+           tue: "ВТ",
+           wed: "СР",
+           thu: "ЧТ",
+           fri: "ПТ",
+           sat: "СБ"
         }
-}));
+    })
+ 
+);

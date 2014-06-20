@@ -4,9 +4,9 @@
             error: "Kan kaart niet maken"
         },
         onlineStatus: {
-            online: "Ĳ_A connection to the server can be made._ä",
-            offline: "Ĳ_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._ä",
-            reconnecting: "Ĳ_Reconnecting&hellip;_ä"
+            online: "Ĳ_You are currently online._ä",
+            offline: "U werkt momenteel offline. Uw in te dienen formulieren worden lokaal opgeslagen totdat er een verbinding met de server kan worden gemaakt.",
+            reconnecting: "Opnieuw verbinding maken&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

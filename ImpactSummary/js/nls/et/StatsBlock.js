@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "StatsBlock": {
             "close": "sulge",
             "next": "Järgmine",
@@ -7,4 +7,5 @@
             "source":"Andmeallikas"
         }
     })
-});
+    
+);

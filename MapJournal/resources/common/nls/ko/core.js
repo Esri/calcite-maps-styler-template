@@ -26,8 +26,8 @@
 				buttonSettings: "설정",
 				buttonHelp: "도움말",
 				buttonPreview: "라이브 보기",
-				tooltipFirstSave: "한_This function is not available until the application is saved_빠",
-				tooltipNotShared: "한_This function is not available until the application is shared_빠",
+				tooltipFirstSave: "이 기능을 사용하려면 먼저 응용프로그램을 저장해야 합니다.",
+				tooltipNotShared: "이 기능을 사용하려면 먼저 응용프로그램을 공유해야 합니다.",
 				noPendingChange: "보류 중인 변경 사항 없음",
 				unSavedChangePlural: "보류 중인 변경 내용",
 				closeWithPendingChange: "이 작업을 확인하시겠습니까? 변경 내용이 손실됩니다.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "응용프로그램이 저장됨",
-				firstSaveHeader: "한_Your application is now saved in %PORTAL% but it is not shared yet._빠",
+				firstSaveHeader: "응용프로그램을 %PORTAL%에 저장했지만 아직 공유하지 않았습니다.",
 				firstSavePreview: "미리보기",
 				firstSaveShare: "공유",
 				firstSaveA1: "%PORTAL%에 익숙하지 않거나 바로가기를 통해 빌더 인터페이스에 접근하려면 다음 링크를 저장하면 됩니다. %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "%LINK1% 링크를 저장하여 다시 사용하거나 <a href='%LINK2%' target='_blank'>응용프로그램 항목 페이지</a>를 사용하세요.",
 				shareA2div2: "응용프로그램의 소유자인 경우 %PORTAL%에 로그인하면 빌더를 열 수 있는 버튼이 응용프로그램에 표시됩니다.",				
 				shareQ3: "데이터는 어디에 저장되나요?",
-				shareA3: "한_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._빠"
+				shareA3: "%TPL_NAME% 데이터 및 구성은 <a href='%LINK2%' target='_blank'>이 웹 응용프로그램 항목</a>에 저장됩니다. Flickr, Picasa, Facebook 또는 YouTube 가져오기를 사용한 경우 이미지와 동영상은 %PORTAL%에 복제되지 않습니다."
 			},
 			settings: {
 				header: "설정",
-				tabError: "한_Please check all tabs for errors_빠"
+				tabError: "모든 탭에서 오류를 확인하세요."
 			},
 			settingsLayout: {
 				title: "레이아웃",
-				explain: "한_Which layout do you want to use?_빠",
-				explainInit: "한_You can change the layout anytime from the settings panel._빠",
+				explain: "어떤 레이아웃을 사용하시겠습니까?",
+				explainInit: "언제든지 설정 패널에서 레이아웃을 변경할 수 있습니다.",
 				viewExample: "라이브 예 보기"
 			},
 			settingsTheme: {

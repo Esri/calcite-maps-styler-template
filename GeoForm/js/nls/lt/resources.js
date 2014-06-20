@@ -4,38 +4,37 @@
             error: "Žemėlapio sukurti nepavyko"
         },
         onlineStatus: {
-            online: "Į_A connection to the server can be made._š",
-            offline: "Į_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._š",
-            reconnecting: "Į_Reconnecting&hellip;_š"
+            online: "Į_You are currently online._š",
+            offline: "Dabar dirbate atsijungę. Kol bus užmegztas ryšys su serveriu, formų turinys bus saugomas lokaliai.",
+            reconnecting: "Prisijungiama iš naujo&hellip;"
         },
 	 configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "Į_My Organization_š",
+                    organizationLabel: "Organizacija",
                     onlineLabel: "ArcGIS Online",
                     contentLabel: "Turinys",
                     favoritesLabel: "Mėgstamiausi"
                 },
-                title: "Į_Select Web Map_š",
+                title: "Pasirinkite internetinį žemėlapį",
                 searchTitle: "Ieškoti",
                 ok: "Gerai",
                 cancel: "Atšaukti",
-                placeholder: "Į_Enter search term_š"
+                placeholder: "Įveskite paieškos terminą"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "Į_My Organization_š",
+                    organizationLabel: "Organizacija",
                     onlineLabel: "ArcGIS Online",
                     contentLabel: "Turinys",
                     favoritesLabel: "Mėgstamiausi"
                 },
-                title: "Į_Select Group_š",
+                title: "Pasirinkti grupę",
                 searchTitle: "Ieškoti",
                 ok: "Gerai",
                 cancel: "Atšaukti",
-                placeholder: "Į_Enter search term_š"
+                placeholder: "Įveskite paieškos terminą"
             }
         }
     })
-    
 );

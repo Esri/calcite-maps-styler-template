@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Kan kaart niet maken"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Liggend (afbeelding)',
 			      "label4": 'Staand (afbeelding)'
 			    },
-			    "legend": "Ĳ_Add legend to output_ä"
+			    "legend": "Legenda toevoegen aan uitvoer"
 			},
 			"share": {
 				"extent": "Huidige extent van de kaart gebruiken",
@@ -42,8 +43,8 @@ define(({
         	"legend": "Legenda",
         	"bookmarks": "Bladwijzers",
         	"layers": "Kaartlagen",
-        	"basemap": "Ĳ_Basemap gallery_ä",
-        	"overview": "Ĳ_Overview map_ä",
+        	"basemap": "basiskaartgalerij",
+        	"overview": "Overzichtskaart",
         	"measure": "Meten",
         	"edit": "Bewerken",
         	"time": "Tijd",
@@ -51,4 +52,6 @@ define(({
         	"details": "Details",
         	"share": "Delen"
         }
-}));
+    })
+
+);

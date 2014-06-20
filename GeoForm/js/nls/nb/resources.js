@@ -4,9 +4,9 @@
             error: "Kan ikke opprette kart"
         },
         onlineStatus: {
-            online: "å_A connection to the server can be made._ø",
-            offline: "å_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._ø",
-            reconnecting: "å_Reconnecting&hellip;_ø"
+            online: "å_You are currently online._ø",
+            offline: "Du jobber nå frakoblet. Svar på skjemaene blir lagret lokalt til det kan opprettes en forbindelse til serveren.",
+            reconnecting: "Kobler til på nytt&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

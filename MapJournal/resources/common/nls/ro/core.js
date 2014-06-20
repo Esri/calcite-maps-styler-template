@@ -26,8 +26,8 @@
 				buttonSettings: "Setări",
 				buttonHelp: "Ajutor",
 				buttonPreview: "Vizualizare live",
-				tooltipFirstSave: "Ă_This function is not available until the application is saved_ș",
-				tooltipNotShared: "Ă_This function is not available until the application is shared_ș",
+				tooltipFirstSave: "Această funcţie nu este disponibilă decât după salvarea aplicaţiei",
+				tooltipNotShared: "Această funcţie nu este disponibilă decât după partajarea aplicaţiei",
 				noPendingChange: "Nicio modificare în aşteptare",
 				unSavedChangePlural: "Modificări în aşteptare",
 				closeWithPendingChange: "Sigur doriţi să confirmaţi această acţiune? Modificările dvs. se vor pierde.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "S-a reuşit salvarea aplicaţiei",
-				firstSaveHeader: "Ă_Your application is now saved in %PORTAL% but it is not shared yet._ș",
+				firstSaveHeader: "Aplicaţia este acum salvată în %PORTAL%, însă nu este partajată încă.",
 				firstSavePreview: "Previzualizare",
 				firstSaveShare: "Partajare",
 				firstSaveA1: "Dacă nu sunteţi familiarizat cu %PORTAL% sau dacă doriţi o comandă rapidă pentru accesarea interfeţei builderului, puteţi salva următorul link: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Salvaţi şi utilizaţi din nou următorul link, %LINK1%, sau utilizaţi <a href='%LINK2%' target='_blank'>pagina de element corespunzătoare aplicaţiei</a>.",
 				shareA2div2: "În calitate de proprietar al aplicaţiei, când vă autentificaţi în %PORTAL%, aplicaţia include un buton pentru deschiderea builderului:",				
 				shareQ3: "Unde sunt stocate datele?",
-				shareA3: "Ă_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._ș"
+				shareA3: "Datele şi configuraţia %TPL_NAME% sunt stocate în <a href='%LINK2%' target='_blank'>acest element de tip aplicaţie web</a>. Dacă aţi utilizat importul din Flickr, Picasa, Facebook sau YouTube, imaginile şi videoclipurile dvs. nu au fost duplicate în %PORTAL%."
 			},
 			settings: {
 				header: "Setări",
-				tabError: "Ă_Please check all tabs for errors_ș"
+				tabError: "Verificaţi erorile în toate filele"
 			},
 			settingsLayout: {
 				title: "Configuraţie",
-				explain: "Ă_Which layout do you want to use?_ș",
-				explainInit: "Ă_You can change the layout anytime from the settings panel._ș",
+				explain: "Ce strat tematic doriţi să utilizaţi?",
+				explainInit: "Puteţi modifica aspectul în orice moment, din panoul de setări.",
 				viewExample: "Vizualizaţi un exemplu live"
 			},
 			settingsTheme: {

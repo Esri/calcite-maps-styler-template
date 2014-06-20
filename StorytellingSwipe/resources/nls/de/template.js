@@ -6,7 +6,7 @@
 				step2: "DATEN WERDEN GELADEN",
 				step3: "WIRD INITIALISIERT",
 				fail: "\"Ausblenden\" konnte leider nicht geladen werden",
-				loadBuilder: "ES WIRD ZUM BUILDER-MODUS GEWECHSELT",				
+				loadBuilder: "ES WIRD ZUM BUILDER-MODUS GEWECHSELT",
 				redirectSignIn: "UMLEITUNG ZUR ANMELDESEITE",
 				redirectSignIn2: "(Sie werden nach der Anmeldung hierher umgeleitet)",
 				failButton: "Wiederholen"
@@ -25,7 +25,7 @@
 				mapSave: "Fehler beim Speichern der Webkarte",
 				notAuthorized: "Sie sind nicht autorisiert, auf diese Anwendung zuzugreifen",
 				conflictingProjectionsTitle: "In Konflikt stehende Projektionen",
-				conflictingProjections: "ä_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._Ü",
+				conflictingProjections: "Für zwei Webkarten mit unterschiedlichen Projektionen kann \"Ausblenden\ nicht verwendet werden. Bitte gehen Sie zu den Einstellungen und wählen Sie eine Webkarte, die die gleiche Projektion wie die erste Webkarte aufweist.",
 				cpButton: "Schließen"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "um die Anwendung zu speichern."
 			},
 			header:{
-				editMe: "ä_Edit me!_Ü",
+				editMe: "Bearbeiten!",
 				templateTitle: "Vorlagentitel festlegen",
 				templateSubtitle: "Untertitel der Vorlage festlegen"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Beschreibung des Seitenfensters festlegen",
-				editMe: "ä_Edit me!_Ü",
+				editMe: "Bearbeiten!",
 				legendTitle: "Legende"
 			},
 			infoWindow: {

@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Kan ikke oprette kort"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'På langs (billede)',
 			      "label4": 'På højkant (billede)'
 			    },
-			    "legend": "ø_Add legend to output_å"
+			    "legend": "Føj signaturforklaring til output"
 			},
 			"share": {
 				"extent": "Gem aktuelt kortområde",
@@ -42,13 +43,15 @@ define(({
         	"legend": "Signaturforklaring",
         	"bookmarks": "Bogmærker",
         	"layers": "Lag",
-        	"basemap": "ø_Basemap gallery_å",
-        	"overview": "ø_Overview map_å",
-        	"measure": "ø_Measure_å",
-        	"edit": "ø_Edit_å",
+        	"basemap": "Baggrundskortgalleri",
+        	"overview": "Oversigtskort",
+        	"measure": "Mål",
+        	"edit": "Redigér",
         	"time": "Tid",
         	"print": "Udskriv",
-        	"details": "ø_Details_å",
+        	"details": "Detajler",
         	"share": "Del"
         }
-}));
+    })
+
+);

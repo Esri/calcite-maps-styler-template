@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Žemėlapio sukurti nepavyko"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Gulsčiai (Paveikslėlis)',
 			      "label4": 'Stačiai (Paveikslėlis)'
 			    },
-			    "legend": "Į_Add legend to output_š"
+			    "legend": "Į išvestį pridėti legendą"
 			},
 			"share": {
 				"extent": "Naudoti esamą žemėlapio aprėptį",
@@ -42,8 +43,8 @@ define(({
         	"legend": "Legenda",
         	"bookmarks": "Žymės",
         	"layers": "Sluoksniai",
-        	"basemap": "Į_Basemap gallery_š",
-        	"overview": "Į_Overview map_š",
+        	"basemap": "Pagrindo žemėlapių galerija",
+        	"overview": "Apžvalgos žemėlapis",
         	"measure": "Matuoti",
         	"edit": "Redaguoti",
         	"time": "Laikas",
@@ -51,4 +52,6 @@ define(({
         	"details": "Detali informacija",
         	"share": "Bendrinti"
         }
-}));
+    })
+
+);

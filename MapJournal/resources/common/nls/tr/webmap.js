@@ -2,10 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
+				lblWebMap: "ı_Web map_İ",
 				lblLocation: "Konum",
 				lblContent: "İçerik",
 				lblPopup: "Açılır Menü",
-				lblControls: "Denetimler",
+				lblControls: "ı_Extras_İ",
 				lblOverview: "Genel Bakış Haritası",
 				lblLegend: "Gösterim",
 				loadingTitle: "Başlık yükleniyor",
@@ -21,24 +22,24 @@
 				newMap: "Yeni seçilen web haritası",
 				webmapDefault: "Web haritası varsayılanı",
 				customCfg: "Özel yapılandırma",
-				tooltipLocation: "Okuyucularınız bu bölüme geldiğinde kullanılacak Harita konumunu tanımlayın.",
+				tooltipLocation: "ı_Define the map location that will be used when your readers navigate to this section._İ",
 				tooltipContent: "Görünür katmanları tanımlayın.",
 				tooltipPopup: "Okuyucularınız bu bölüme geldiğinde görüntülenecek bir açılır pencere seçin.",
-				tooltipOverview: "ı_Display a small overview map along with the main map_İ",
-				tooltipLegend: "ı_Display the map legend on the map, helpful when the map has many layers and symbols._İ",
-				mapCfgInvite: "Haritanızı yapılandırmak için şu denetimleri kullanın"
+				tooltipOverview: "Ana harita boyunca küçük bir genel bakış haritası görüntüle.",
+				tooltipLegend: "Harita gösterimini harita üzerinde görüntüleyin, haritada bir çok katman ve sembol olduğunda yararlıdır.",
+				mapCfgInvite: "ı_Use these controls to configure your map_İ"
 			},
 			configure: {
 				btnReset: "Sıfırla",
 				btnCancel: "İptal",
 				tocTitle: "Harita içeriği",
 				tocExplain: "Gösterilecek katmanları seçin.",
-				tocSave: "Harita içeriğini kaydedin",
+				tocSave: "ı_Save map content_İ",
 				extentTitle: "Harita konumu",
 				extentExplain: "Okuyucularınıza görüntüleneceği biçimi tanımlamak için haritayı genişletin ve yakınlaştırın.",
 				extentSave: "Harita konumunu kaydet",
 				popupTitle: "Harita açılır penceresi",
-				popupExplain: "ı_Configure the look of the pop-up shown to readers_İ",
+				popupExplain: "Okuyucular görüntülenen açılır pencerenin görünümünü yapılandırın.",
 				popupSave: "Açılır pencere yapılandırmasını kaydet",
 				hintNavigation: "Harita navigasyonu devre dışı bırakıldı."
 			}

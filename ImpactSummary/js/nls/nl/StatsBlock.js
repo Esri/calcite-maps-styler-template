@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "StatsBlock": {
             "close": "sluiten",
             "next": "Volgende",
@@ -7,4 +7,5 @@
             "source":"Gegevensbron"
         }
     })
-});
+    
+);

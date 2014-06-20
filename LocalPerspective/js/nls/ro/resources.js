@@ -14,18 +14,21 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         map: {
             error: "Imposibil de creat harta"
         },
         days: {
-           now: "Ă_NOW_ș",
-           sun: "Ă_SUN_ș",
-           mon: "Ă_MON_ș",
-           tue: "Ă_TUE_ș",
-           wed: "Ă_WED_ș",
-           thu: "Ă_THU_ș",
-           fri: "Ă_FRI_ș",
-           sat: "Ă_SAT_ș"
+           now: "ACUM",
+           sun: "DUM",
+           mon: "LUN",
+           tue: "MAR",
+           wed: "MIE",
+           thu: "JOI",
+           fri: "VIN",
+           sat: "SÂM"
         }
-}));
+    })
+ 
+);

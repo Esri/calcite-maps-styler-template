@@ -6,7 +6,7 @@
 				step2: "CARICAMENTO DATI",
 				step3: "INIZIALIZZAZIONE IN CORSO",
 				fail: "Caricamento scorrimento con dito non riuscito",
-				loadBuilder: "PASSAGGIO A MODALITÀ GENERATORE",				
+				loadBuilder: "PASSAGGIO A MODALITÀ GENERATORE",
 				redirectSignIn: "REINDIRIZZAMENTO ALLA PAGINA DI ACCESSO",
 				redirectSignIn2: "(pagina alla quale si verrà reindirizzati dopo l\'accesso)",
 				failButton: "Riprova"
@@ -25,7 +25,7 @@
 				mapSave: "Errore durante il salvataggio della mappa Web",
 				notAuthorized: "L\'utente non è autorizzato ad accedere a questa applicazione",
 				conflictingProjectionsTitle: "Proiezioni in conflitto",
-				conflictingProjections: "é_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._È",
+				conflictingProjections: "Scorrimento non supportato in caso di utilizzo di due mappe Web con proiezioni differenti. Aprire la pagina delle impostazioni e utilizzare una mappa Web con proiezione uguale alla prima mappa Web.",
 				cpButton: "Chiudi"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "per salvare l\'applicazione."
 			},
 			header:{
-				editMe: "é_Edit me!_È",
+				editMe: "Modifica utente",
 				templateTitle: "Imposta titolo modello",
 				templateSubtitle: "Imposta sottotitolo modello"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Impostare la descrizione del pannello laterale",
-				editMe: "é_Edit me!_È",
+				editMe: "Modifica utente",
 				legendTitle: "Legenda"
 			},
 			infoWindow: {

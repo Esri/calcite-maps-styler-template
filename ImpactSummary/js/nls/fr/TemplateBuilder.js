@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Utiliser le générateur",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Suivant",
                 "prevButtonText": "Précédent",
                 "enterLabelText": "Entrer l\'étiquette",
-                "SelectedFeatureText": "æ_Selected Feature_Â",
+                "SelectedFeatureText": "Entité sélectionnée",
                 "layerHelpTextMessage": "Cette application nécessite une couche avec des champs numériques",
                 "alertMessage": {
                     "resetVariableMessage": "Voulez-vous vraiment réinitialiser la variable ?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

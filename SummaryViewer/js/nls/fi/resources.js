@@ -4,5 +4,4 @@
             error: "Karttaa ei voi luoda"
         }
     })
-
 );

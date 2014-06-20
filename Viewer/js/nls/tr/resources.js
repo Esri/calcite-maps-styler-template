@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Harita oluşturulamıyor"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Yatay (Görüntü)',
 			      "label4": 'Dikey (Görüntü)'
 			    },
-			    "legend": "ı_Add legend to output_İ"
+			    "legend": "Çıkışa gösterim ekle"
 			},
 			"share": {
 				"extent": "Geçerli harita yayılımını kullan",
@@ -42,8 +43,8 @@ define(({
         	"legend": "Gösterim",
         	"bookmarks": "Yer İşaretleri",
         	"layers": "Katmanlar",
-        	"basemap": "ı_Basemap gallery_İ",
-        	"overview": "ı_Overview map_İ",
+        	"basemap": "Altlık haritası galerisi",
+        	"overview": "Genel bakış haritası",
         	"measure": "Ölç",
         	"edit": "Düzenle",
         	"time": "Zaman",
@@ -51,4 +52,6 @@ define(({
         	"details": "Ayrıntılar",
         	"share": "Paylaş"
         }
-}));
+    })
+
+);

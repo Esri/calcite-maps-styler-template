@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
+define(
+     ({
         "map": {
             "error": "Nelze vytvořit mapu"
         },
@@ -26,7 +27,7 @@ define(({
 			      "label3": 'Na šířku (obrázek)',
 			      "label4": 'Na výšku (obrázek)'
 			    },
-			    "legend": "Ř_Add legend to output_ů"
+			    "legend": "Přidat legendu do výstupu"
 			},
 			"share": {
 				"extent": "Použít rozsah aktuální mapy",
@@ -42,13 +43,15 @@ define(({
         	"legend": "Legenda",
         	"bookmarks": "Záložky",
         	"layers": "Vrstvy",
-        	"basemap": "Ř_Basemap gallery_ů",
-        	"overview": "Ř_Overview map_ů",
+        	"basemap": "Galerie podkladových map",
+        	"overview": "Mapa přehledu",
         	"measure": "Měření",
-        	"edit": "Ř_Edit_ů",
+        	"edit": "Upravit",
         	"time": "Čas",
         	"print": "Tisk",
         	"details": "Podrobnosti",
         	"share": "Sdílet"
         }
-}));
+    })
+
+);

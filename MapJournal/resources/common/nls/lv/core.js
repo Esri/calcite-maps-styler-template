@@ -26,8 +26,8 @@
 				buttonSettings: "Iestatījumi",
 				buttonHelp: "Palīdzība",
 				buttonPreview: "Skatīt tiešraidē",
-				tooltipFirstSave: "ķ_This function is not available until the application is saved_ū",
-				tooltipNotShared: "ķ_This function is not available until the application is shared_ū",
+				tooltipFirstSave: "Šī funkcionalitāte būs pieejama tikai pēc aplikācijas saglabāšanas",
+				tooltipNotShared: "Šī funkcionalitāte būs pieejama tikai pēc aplikācijas kopīgošanas",
 				noPendingChange: "Nav neizpildītu izmaiņu",
 				unSavedChangePlural: "Gaida izmaiņas",
 				closeWithPendingChange: "Vai tiešām vēlaties apstiprināt šo darbību? Jūsu veiktās izmaiņas tiks zaudētas.",
@@ -39,7 +39,7 @@
 			},
 			share: {
 				firstSaveTitle: "Lietotne veiksmīgi saglabāta",
-				firstSaveHeader: "ķ_Your application is now saved in %PORTAL% but it is not shared yet._ū",
+				firstSaveHeader: "Jūsu aplikācija tagad  ir saglabāta portālā %PORTAL%, bet vēl nav kopīgota.",
 				firstSavePreview: "Priekšskatījums",
 				firstSaveShare: "Koplietot",
 				firstSaveA1: "Ja vēl neesat izmantojis %PORTAL% vai vēlaties izveidot īsinājumikonu, lai piekļūtu veidotāja saskarnei, varat saglabāt šādu saiti: %LINK1%",
@@ -65,16 +65,16 @@
 				shareA2div1: "Saglabājiet un izmantojiet atkārtoti šo saiti %LINK1% vai izmantojiet <a href='%LINK2%' target='_blank'>aplikācijas vienību lapu</a>.",
 				shareA2div2: "Ja jūs kā aplikācijas īpašnieks pierakstāties portālā %PORTAL%, aplikācijā būs iekļauta poga, lai atvērtu veidotāju:",				
 				shareQ3: "Kur tiek glabāti dati?",
-				shareA3: "ķ_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._ū"
+				shareA3: "%TPL_NAME% dati un konfigurācija tiek glabāti <a href='%LINK2%' target='_blank'>šajā tīmekļa aplikācijas elementā</a>. Ja izmantojāt Flickr, Picasa, Facebook vai YouTube importēšanu, jūsu attēli un video nav dublēti portālā %PORTAL%."
 			},
 			settings: {
 				header: "Iestatījumi",
-				tabError: "ķ_Please check all tabs for errors_ū"
+				tabError: "Lūdzu, pārbaudiet visas cilnes, vai nav kļūdu"
 			},
 			settingsLayout: {
 				title: "Izkārtojums",
-				explain: "ķ_Which layout do you want to use?_ū",
-				explainInit: "ķ_You can change the layout anytime from the settings panel._ū",
+				explain: "Kādu izkārtojumu vēlaties izmantot?",
+				explainInit: "Varat mainīt izkārtojumu jebkurā laikā iestatījumu panelī.",
 				viewExample: "Skatiet piemēru tiešraidē"
 			},
 			settingsTheme: {

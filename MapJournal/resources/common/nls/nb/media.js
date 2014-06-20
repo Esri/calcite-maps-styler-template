@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Velg medietype",
-				lblSelect2: "Velg innholdstype",
+				lblSelect1: "å_Media_ø",
+				lblSelect2: "å_Content_ø",
 				lblMap: "Kart",
 				lblImage: "Bilde",
 				lblVideo: "Video",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "Brukeren ser en kartmarkør når han/hun klikker på koblingen"
 			},
 			editorActionMedia: {
-				lblTitle: "å_Change the Main Stage content_ø"
+				lblTitle: "Endre innholdet for hovedstadiet"
 			},
 			editorInlineMedia: {
 				lblTitle: "Sett inn et bilde eller en video"

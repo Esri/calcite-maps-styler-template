@@ -6,7 +6,7 @@
 				step2: "تحميل البيانات",
 				step3: "تهيئة",
 				fail: "للأسف، فشل تحميل السحب",
-				loadBuilder: "التبديل إلى وضع المُنشيء",				
+				loadBuilder: "التبديل إلى وضع المُنشيء",
 				redirectSignIn: "إعادة التوجيه لصفحة تسجيل الدخول",
 				redirectSignIn2: "(سيتم إعادة توجيهك هنا بعد تسجيل الدخول)",
 				failButton: "إعادة المحاولة"
@@ -25,7 +25,7 @@
 				mapSave: "خطأ أثناء حفظ خريطة الويب",
 				notAuthorized: "لست مخولاً لتكوين التطبيق للوصول إلى هذا التطبيق",
 				conflictingProjectionsTitle: "تعارض الإسقاطات",
-				conflictingProjections: "بيت_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._لاحقة",
+				conflictingProjections: "لا يدعم السحب استخدام اثنان من خرائط الويب ذات إسقاطات مختلفة. الرجاء فتح الإعدادات واستخدام خريطة الويب التي تستخدم نفس إسقاط خريطة الويب الأولى.",
 				cpButton: "إغلاق"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "لحفظ التطبيق"
 			},
 			header:{
-				editMe: "بيت_Edit me!_لاحقة",
+				editMe: "حررني!",
 				templateTitle: "تحديد عنوان القالب",
 				templateSubtitle: "تحديد العنوان الفرعي للقالب"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "تعيين وصف اللوحة الجانبية",
-				editMe: "بيت_Edit me!_لاحقة",
+				editMe: "حررني!",
 				legendTitle: "مفتاح الخريطة"
 			},
 			infoWindow: {

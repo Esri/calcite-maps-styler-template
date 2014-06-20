@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "เลือกรูปแบบของมีเดีย",
-				lblSelect2: "เลือกชนิดของเนื้อหา",
+				lblSelect1: "ก้_Media_ษฺ",
+				lblSelect2: "ก้_Content_ษฺ",
 				lblMap: "แผนที่",
 				lblImage: "รูปภาพ",
 				lblVideo: "วิดีโอ",

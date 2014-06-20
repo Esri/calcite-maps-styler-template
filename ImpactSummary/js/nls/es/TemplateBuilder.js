@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Entrar en Builder",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Siguiente",
                 "prevButtonText": "Anterior",
                 "enterLabelText": "Introducir etiqueta",
-                "SelectedFeatureText": "á_Selected Feature_Ó",
+                "SelectedFeatureText": "Entidad seleccionada",
                 "layerHelpTextMessage": "Esta aplicación necesita una capa con campos numéricos",
                 "alertMessage": {
                     "resetVariableMessage": "¿Estás seguro de que deseas restablecer la variable?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

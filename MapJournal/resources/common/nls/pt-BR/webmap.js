@@ -2,10 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
+				lblWebMap: "ã_Web map_Ç",
 				lblLocation: "Local",
 				lblContent: "Conteúdo",
 				lblPopup: "Pop-up",
-				lblControls: "Controles",
+				lblControls: "ã_Extras_Ç",
 				lblOverview: "Mapa de Visão Geral",
 				lblLegend: "Legenda",
 				loadingTitle: "Carregando título",
@@ -21,24 +22,24 @@
 				newMap: "Mapa da web recentemente selecionado",
 				webmapDefault: "Mapa da web padrão",
 				customCfg: "Configuração personalizada",
-				tooltipLocation: "Define a localização do Mapa que será utilizada quando seus leitores navegarem nesta seção.",
+				tooltipLocation: "ã_Define the map location that will be used when your readers navigate to this section._Ç",
 				tooltipContent: "Define a visibilidade das camadas.",
 				tooltipPopup: "Escolhe um pop-up a ser exibido quando seus leitores navegarem nesta seção.",
-				tooltipOverview: "ã_Display a small overview map along with the main map_Ç",
-				tooltipLegend: "ã_Display the map legend on the map, helpful when the map has many layers and symbols._Ç",
-				mapCfgInvite: "Utilize estes controles para configurar o Mapa"
+				tooltipOverview: "Exibe um pequeno mapa de visão geral junto com o principal mapa",
+				tooltipLegend: "Exibe a legenda no mapa, útil quando o mapa tem muitas camadas e símbolos.",
+				mapCfgInvite: "ã_Use these controls to configure your map_Ç"
 			},
 			configure: {
 				btnReset: "Redefinir",
 				btnCancel: "Cancelar",
 				tocTitle: "Conteúdo do mapa",
 				tocExplain: "Seleciona quais camadas serão msotradas.",
-				tocSave: "Salvar Conteúdo do Mapa",
+				tocSave: "ã_Save map content_Ç",
 				extentTitle: "Localização do mapa",
 				extentExplain: "Move e amplia o mapa para definir seu visual para os leitores.",
 				extentSave: "Salvar Localização do Mapa",
 				popupTitle: "Pop-Up do Mapa",
-				popupExplain: "ã_Configure the look of the pop-up shown to readers_Ç",
+				popupExplain: "Configura a aparência do pop-up mostrado para leitores",
 				popupSave: "Salve a configuração do pop-up",
 				hintNavigation: "A navegação do mapa está desabilitada."
 			}

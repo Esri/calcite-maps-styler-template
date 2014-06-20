@@ -4,7 +4,7 @@
             error: "לא ניתן ליצור מפה"
         },
         onlineStatus: {
-            online: "כן_A connection to the server can be made._ש",
+            online: "כן_You are currently online._ש",
             offline: "כן_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._ש",
             reconnecting: "כן_Reconnecting&hellip;_ש"
         },
@@ -37,5 +37,4 @@
             }
         }
     })
-    
 );

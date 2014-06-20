@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Valitse mediatyyppi",
-				lblSelect2: "Valitse sisältötyyppi",
+				lblSelect1: "Å_Media_ö",
+				lblSelect2: "Å_Content_ö",
 				lblMap: "Kartta",
 				lblImage: "Kuva",
 				lblVideo: "Video",
@@ -76,7 +76,7 @@
 				mapMarkerExplain: "Käyttäjä näkee karttamerkit napsauttaessaan linkkiä"
 			},
 			editorActionMedia: {
-				lblTitle: "Å_Change the Main Stage content_ö"
+				lblTitle: "Muuta päävaiheen sisältöä"
 			},
 			editorInlineMedia: {
 				lblTitle: "Lisää kuva tai video"

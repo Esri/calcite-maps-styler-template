@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Zum Builder wechseln",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Weiter",
                 "prevButtonText": "Zurück",
                 "enterLabelText": "Beschriftung eingeben",
-                "SelectedFeatureText": "ä_Selected Feature_Ü",
+                "SelectedFeatureText": "Ausgewähltes Feature",
                 "layerHelpTextMessage": "Für diese Anwendung ist ein Layer mit numerischen Feldern erforderlich",
                 "alertMessage": {
                     "resetVariableMessage": "Möchten Sie diese Variable wirklich zurücksetzen?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

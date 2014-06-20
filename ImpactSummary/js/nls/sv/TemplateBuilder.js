@@ -1,5 +1,5 @@
-﻿define({
-    "root": ({
+﻿define(
+     ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Öppna Builder",
@@ -46,7 +46,7 @@
                 "nextButtonText": "Nästa",
                 "prevButtonText": "Föregående",
                 "enterLabelText": "Ange etikett",
-                "SelectedFeatureText": "Å_Selected Feature_ö",
+                "SelectedFeatureText": "Valt geoobjekt",
                 "layerHelpTextMessage": "Programmet kräver ett lager med numeriska fält",
                 "alertMessage": {
                     "resetVariableMessage": "Vill du återställa variabeln?",
@@ -64,4 +64,5 @@
             }
         }
     })
-});
+
+);

@@ -4,5 +4,4 @@
             error: "Imposibil de creat harta"
         }
     })
-
 );

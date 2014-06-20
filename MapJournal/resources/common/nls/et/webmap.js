@@ -2,10 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
+				lblWebMap: "Š_Web map_ä",
 				lblLocation: "Asukoht",
 				lblContent: "Sisu",
 				lblPopup: "Hüpikaken",
-				lblControls: "Juhtelemendid",
+				lblControls: "Š_Extras_ä",
 				lblOverview: "Ülevaatekaart",
 				lblLegend: "Legend",
 				loadingTitle: "Pealkirja laadimine",
@@ -21,24 +22,24 @@
 				newMap: "Vastvalitud veebikaart",
 				webmapDefault: "Veebikaardi vaikeseade",
 				customCfg: "Kohandatud konfiguratsioon",
-				tooltipLocation: "Määratlege kaardil asukoht, mida kasutatakse, kui teie lugejad liiguvad sellesse jaotisse.",
+				tooltipLocation: "Š_Define the map location that will be used when your readers navigate to this section._ä",
 				tooltipContent: "Määratlege nähtavad kihid.",
 				tooltipPopup: "Valige hüpik, mis kuvatakse, kui teie lugejad liiguvad sellesse jaotisse.",
-				tooltipOverview: "Š_Display a small overview map along with the main map_ä",
-				tooltipLegend: "Š_Display the map legend on the map, helpful when the map has many layers and symbols._ä",
-				mapCfgInvite: "Nende juhtelementide abil saate kaardi konfigureerida."
+				tooltipOverview: "Kuva koos peamise kaardiga väike ülevaatekaart",
+				tooltipLegend: "Kuva kaardil legend, millest on abi siis, kui kaardil on palju kihte ja sümboleid.",
+				mapCfgInvite: "Š_Use these controls to configure your map_ä"
 			},
 			configure: {
 				btnReset: "Lähtesta",
 				btnCancel: "Tühista",
 				tocTitle: "Kaardi sisu",
 				tocExplain: "Valige kuvatavad kihid.",
-				tocSave: "Salvesta kaardi sisu",
+				tocSave: "Š_Save map content_ä",
 				extentTitle: "Kaardikoht",
 				extentExplain: "Saate kaarti liigutada ja suumida, et määrata selle kuvamine lugejatele.",
 				extentSave: "Salvesta kaardikoht",
 				popupTitle: "Kaardihüpik",
-				popupExplain: "Š_Configure the look of the pop-up shown to readers_ä",
+				popupExplain: "Seadista lugejatele kuvatava hüpikakna ilme",
 				popupSave: "Salvesta hüpiku konfiguratsioon",
 				hintNavigation: "Kaardil navigeerimine on välja lülitatud."
 			}
