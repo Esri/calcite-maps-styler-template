@@ -56,8 +56,8 @@
         "search": true,
         "locate": true,
         "color": "#2f4f4f",
-        "theme": "#5dadd",
-        "paneltheme": "ededed"
+        "theme": "#949494",
+        "paneltheme": "#ededed"
 
     }
 }
