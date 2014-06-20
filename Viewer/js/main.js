@@ -24,6 +24,9 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
         map: null,
         initExt: null,
         mapExt: null,
+        editorDiv: null,
+        editor: null,
+        editableLayers: null,
 
         startup: function (config) {
             // config will contain application and user defined info for the template such as i18n strings, the web map id
@@ -176,8 +179,19 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     toolbar.updatePageNavigation();
                     toolbar.activateTool(this.config.activeTool);
                     on(toolbar, "updateTool", lang.hitch(this, function (name) {
-                        var activate = (name === "measure" || name === "edit") ? false : true;
-                        this.map.setInfoWindowOnClick(activate);
+                        if (name === "measure") {
+                            this._destroyEditor();
+                            this.map.setInfoWindowOnClick(false);
+                        } else if (name === "edit") {
+                            this.map.setInfoWindowOnClick(false);
+                            this._createEditor();
+                        } else {
+                            //activate the popup and destroy editor if necessary
+                            this._destroyEditor();
+                            this.map.setInfoWindowOnClick(true);
+                        }
+                        //var activate = (name === "measure" || name === "edit") ? false : true;
+                        //this.map.setInfoWindowOnClick(activate);
                     }));
 
 
@@ -257,51 +271,66 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
             //Add the editor widget to the toolbar if the web map contains editable layers 
             var deferred = new Deferred();
-            var layers = this._getEditableLayers(this.config.response.itemInfo.itemData.operationalLayers);
-            if (layers.length > 0) {
+            this.editableLayers = this._getEditableLayers(this.config.response.itemInfo.itemData.operationalLayers);
+            if (this.editableLayers.length > 0) {
+                this.editorDiv = toolbar.createTool(tool, panelClass);
+                return this._createEditor();
 
-                require(["application/has-config!edit?esri/dijit/editing/Editor"], lang.hitch(this, function (Editor) {
-                    if (!Editor) {
-                        deferred.resolve();
-                        return;
-                    }
-                    var editorDiv = toolbar.createTool(tool, panelClass);
-
-                    //add field infos if necessary. Field infos will contain hints if defined in the popup and hide fields where visible is set
-                    //to false. The popup logic takes care of this for the info window but not the edit window. 
-                    array.forEach(layers, lang.hitch(this, function (layer) {
-                        if (layer.featureLayer && layer.featureLayer.infoTemplate && layer.featureLayer.infoTemplate.info && layer.featureLayer.infoTemplate.info.fieldInfos) {
-                            //only display visible fields 
-                            var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
-                            var fieldInfos = [];
-                            array.forEach(fields, function (field) {
-                                if (field.visible) {
-                                    fieldInfos.push(field);
-                                }
-                            });
-                            layer.fieldInfos = fieldInfos;
-                        }
-                    }));
-                    var settings = {
-                        map: this.map,
-                        layerInfos: layers,
-                        toolbarVisible: has("edit-toolbar")
-                    };
-                    var editor = new Editor({
-                        settings: settings
-                    }, editorDiv);
-
-
-                    editor.startup();
-                    deferred.resolve();
-
-                }));
 
             } else {
                 console.log("No Editable Layers");
                 deferred.resolve();
             }
             return deferred.promise;
+        },
+        _createEditor: function () {
+            var deferred = new Deferred();
+
+            require(["application/has-config!edit?esri/dijit/editing/Editor"], lang.hitch(this, function (Editor) {
+                if (!Editor) {
+                    deferred.resolve();
+                    return;
+                }
+
+
+                //add field infos if necessary. Field infos will contain hints if defined in the popup and hide fields where visible is set
+                //to false. The popup logic takes care of this for the info window but not the edit window. 
+                array.forEach(this.editableLayers, lang.hitch(this, function (layer) {
+                    if (layer.featureLayer && layer.featureLayer.infoTemplate && layer.featureLayer.infoTemplate.info && layer.featureLayer.infoTemplate.info.fieldInfos) {
+                        //only display visible fields 
+                        var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
+                        var fieldInfos = [];
+                        array.forEach(fields, function (field) {
+                            if (field.visible) {
+                                fieldInfos.push(field);
+                            }
+                        });
+                        layer.fieldInfos = fieldInfos;
+                    }
+                }));
+                var settings = {
+                    map: this.map,
+                    layerInfos: this.editableLayers,
+                    toolbarVisible: has("edit-toolbar")
+                };
+                this.editor = new Editor({
+                    settings: settings
+                }, domConstruct.create("div", {}, this.editorDiv));
+
+
+                this.editor.startup();
+                deferred.resolve();
+
+            }));
+            return deferred.promise;
+
+        },
+        _destroyEditor: function () {
+            if (this.editor) {
+                this.editor.destroy();
+                this.editor = null;
+            }
+
         },
         _addLayers: function (tool, toolbar, panelClass) {
             //Toggle layer visibility if web map has operational layers 
@@ -337,7 +366,6 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                                 label: layer.title,
                                 checked: layer.visible,
                                 onChange: function () {
-
                                     if (layer.layer.featureCollection) {
                                         array.forEach(layer.layer.featureCollection.layers, function (layer) {
                                             layer.layerObject.setVisibility(!layer.layerObject.visible);

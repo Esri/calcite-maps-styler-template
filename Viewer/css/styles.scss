@@ -210,6 +210,9 @@ html, body {
     background:#d3d3d3;
 }
 /* Esri Jvascript API*/
+.esriAttributeInspector .atiDeleteButton{
+    
+}
 .esriPopup .pointer.bottom , .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight{
     background: #f7f7f7 !important;
 }
@@ -837,10 +840,29 @@ img{
     text-align: center;
     white-space: nowrap;
 }
+.esriAttributeInspector .atiButton{
+        background-image:none;
+}
 
+.esriAttributeInspector .atiButton .dijitButtonNode{
+    padding:1em !important;
+    line-height:16px;
+    background: #d3d3d3;  /*#5daddd; calcite blue */
+    color: #fff;
+    padding: 0;
+    border: none;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative;
+    @include border-radius (4px);
+    @include box-sizing(border-box);
+    @include box-shadow (1px, 2px, 1px, rgba(0,0,0,0.3));
+    @include user-select(none);
+    @include transition(all, .5s, linear);
+}
 
-
-.calcite .dijitToggleButton, .calcite .dijitButton, .calcite .dijitDropDownButton, .calcite .dijitComboButton {
+.esriPrintButton{
     padding: .5em 1em .5em !important;
     line-height:32px;
     background: #d3d3d3;  /*#5daddd; calcite blue */
@@ -857,7 +879,8 @@ img{
     @include user-select(none);
     @include transition(all, .5s, linear);
 }
-.calcite .dijitToggleButton:hover, .calcite .dijitButton:hover, .calcite .dijitDropDownButton:hover, .calcite .dijitComboButton:hover {
+
+.esriPrintButton:hover{
   background: #a9a9a9; /*#4997d2; calcite hover */
 }
 

@@ -741,7 +741,43 @@ img {
   text-align: center;
   white-space: nowrap; }
 
-.calcite .dijitToggleButton, .calcite .dijitButton, .calcite .dijitDropDownButton, .calcite .dijitComboButton {
+.esriAttributeInspector .atiButton {
+  background-image: none; }
+
+.esriAttributeInspector .atiButton .dijitButtonNode {
+  padding: 1em !important;
+  line-height: 16px;
+  background: #d3d3d3;
+  /*#5daddd; calcite blue */
+  color: #fff;
+  padding: 0;
+  border: none;
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear; }
+
+.esriPrintButton {
   padding: 0.5em 1em 0.5em !important;
   line-height: 32px;
   background: #d3d3d3;
@@ -774,7 +810,7 @@ img {
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear; }
 
-.calcite .dijitToggleButton:hover, .calcite .dijitButton:hover, .calcite .dijitDropDownButton:hover, .calcite .dijitComboButton:hover {
+.esriPrintButton:hover {
   background: #a9a9a9;
   /*#4997d2; calcite hover */ }
 

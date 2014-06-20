@@ -150,7 +150,6 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             if (this.config.oauthappid) {
                 var oAuthInfo = new ArcGISOAuthInfo({
                     appId: this.config.oauthappid,
-                    portalUrl: this.config.sharinghost,
                     popup: true
                 });
                 IdentityManager.registerOAuthInfos([oAuthInfo]);
