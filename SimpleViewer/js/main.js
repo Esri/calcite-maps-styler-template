@@ -131,6 +131,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
 
 
                 this.map = response.map;
+                this.config.response = response;
 
                 // make sure map is loaded
                 if (this.map.loaded) {
