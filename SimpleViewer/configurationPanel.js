@@ -55,9 +55,9 @@
     "values": {
         "search": true,
         "locate": true,
-        "color": "#fff",
-        "theme": "#666",
-        "paneltheme": "a3a3a3"
+        "color": "#2f4f4f",
+        "theme": "#5dadd",
+        "paneltheme": "ededed"
 
     }
 }
