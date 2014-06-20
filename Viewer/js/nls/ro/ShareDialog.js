@@ -1,13 +1,13 @@
-define({
+ï»¿define({
     "root": ({
         "widgets": {
             "ShareDialog": {
                 "title": "Partajare",
-                "heading": "Partajare aceastã hartã",
-                "url": "Link cãtre hartã",
-                "embed": "Încorporare hartã",
-                "extent": "Partajare extindere curentã a hãrşii",
-                "size": "Dimensiune (lãşime/înãlşime):",
+                "heading": "Partajare aceastÄƒ hartÄƒ",
+                "url": "Link cÄƒtre hartÄƒ",
+                "embed": "Ãncorporare hartÄƒ",
+                "extent": "Partajare extindere curentÄƒ a hÄƒrÅ£ii",
+                "size": "Dimensiune (lÄƒÅ£ime/Ã®nÄƒlÅ£ime):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",

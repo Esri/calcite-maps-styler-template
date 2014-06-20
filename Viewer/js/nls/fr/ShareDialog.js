@@ -1,17 +1,17 @@
-define({
+ï»¿define({
     "root": ({
         "widgets": {
             "ShareDialog": {
                 "title": "Partager",
                 "heading": "Partager cette carte",
                 "url": "Lien de la carte",
-                "embed": "Intégrer la carte",
-                "extent": "Partager l\'étendue actuelle de la carte",
-                "size": "Taille (largeur/hauteur) :",
+                "embed": "IntÃ©grer la carte",
+                "extent": "Partager l\'Ã©tendue actuelle de la carte",
+                "size": "Taille (largeur/hauteur)Â :",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",
-                "emailTooltip": "Courrier électronique"
+                "emailTooltip": "Courrier Ã©lectronique"
             }
         }
     }),

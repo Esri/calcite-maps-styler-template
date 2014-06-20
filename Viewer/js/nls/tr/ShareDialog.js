@@ -1,13 +1,13 @@
-define({
+ï»¿define({
     "root": ({
         "widgets": {
             "ShareDialog": {
-                "title": "Paylaş",
-                "heading": "Bu haritayı paylaş",
-                "url": "Harita Bağlantısı",
-                "embed": "Haritayı Ekle",
-                "extent": "Geçerli harita uzantısını paylaş",
-                "size": "Boyut (genişlik/yükseklik):",
+                "title": "PaylaÅŸ",
+                "heading": "Bu haritayÄ± paylaÅŸ",
+                "url": "Harita BaÄŸlantÄ±sÄ±",
+                "embed": "HaritayÄ± Ekle",
+                "extent": "GeÃ§erli harita uzantÄ±sÄ±nÄ± paylaÅŸ",
+                "size": "Boyut (geniÅŸlik/yÃ¼kseklik):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",

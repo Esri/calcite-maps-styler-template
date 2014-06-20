@@ -1,17 +1,17 @@
-define({
+ï»¿define({
     "root": ({
         "widgets": {
             "ShareDialog": {
-                "title": "‹¤—L",
-                "heading": "‚±‚Ìƒ}ƒbƒv‚ğ‹¤—L",
-                "url": "ƒ}ƒbƒv ƒŠƒ“ƒN",
-                "embed": "ƒ}ƒbƒv‚Ì–„‚ß‚İ",
-                "extent": "Œ»İ‚Ìƒ}ƒbƒv”ÍˆÍ‚Ì‹¤—L",
-                "size": "ƒTƒCƒY (•/‚‚³):",
+                "title": "å…±æœ‰",
+                "heading": "ã“ã®ãƒãƒƒãƒ—ã‚’å…±æœ‰",
+                "url": "ãƒãƒƒãƒ— ãƒªãƒ³ã‚¯",
+                "embed": "ãƒãƒƒãƒ—ã®åŸ‹ã‚è¾¼ã¿",
+                "extent": "ç¾åœ¨ã®ãƒãƒƒãƒ—ç¯„å›²ã®å…±æœ‰",
+                "size": "ã‚µã‚¤ã‚º (å¹…/é«˜ã•):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google+",
-                "emailTooltip": "“dqƒ[ƒ‹"
+                "emailTooltip": "é›»å­ãƒ¡ãƒ¼ãƒ«"
             }
         }
     }),

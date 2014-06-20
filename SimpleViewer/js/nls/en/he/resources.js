@@ -1,11 +1,11 @@
-define(
+ο»Ώdefine(
    ({
         map: {
-            error: "λο_Unable to create map_ω"
+            error: "Χ›Χ_Unable to create map_Χ©"
         }, 
         tools: {
-        	legend: "λο_Legend_ω",
-        	 about: "λο_About_ω"
+        	legend: "Χ›Χ_Legend_Χ©",
+        	 about: "Χ›Χ_About_Χ©"
         }
     })
    

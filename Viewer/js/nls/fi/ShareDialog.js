@@ -1,9 +1,9 @@
-define({
+Ôªødefine({
     "root": ({
         "widgets": {
             "ShareDialog": {
                 "title": "Jaa",
-                "heading": "Jaa t‰m‰ kartta",
+                "heading": "Jaa t√§m√§ kartta",
                 "url": "Karttalinkki",
                 "embed": "Upota kartta",
                 "extent": "Jaa nykyisen kartan laajuus",
@@ -11,7 +11,7 @@ define({
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",
-                "emailTooltip": "S‰hkˆposti:"
+                "emailTooltip": "S√§hk√∂posti:"
             }
         }
     }),

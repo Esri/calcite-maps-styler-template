@@ -1,13 +1,13 @@
-define({
+ï»¿define({
     "root": ({
         "widgets": {
             "ShareDialog": {
-                "title": "Koplietoğana",
-                "heading": "Koplietot ğo karti",
+                "title": "KoplietoÅ¡ana",
+                "heading": "Koplietot Å¡o karti",
                 "url": "Kartes saite",
-                "embed": "Iedarinât karti",
-                "extent": "Koplietot pağreizçjo kartes pârklâjumu",
-                "size": "Izmçri (platums/augstums):",
+                "embed": "IedarinÄt karti",
+                "extent": "Koplietot paÅ¡reizÄ“jo kartes pÄrklÄjumu",
+                "size": "IzmÄ“ri (platums/augstums):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",

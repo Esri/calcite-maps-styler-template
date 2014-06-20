@@ -1,17 +1,17 @@
-define({
+ï»¿define({
     "root": ({
         "widgets": {
             "ShareDialog": {
                 "title": "Bendrinti",
-                "heading": "Bendrinti ðá þemëlapá",
-                "url": "Þemëlapio nuoroda",
-                "embed": "Áterpti þemëlapá",
-                "extent": "Bendrinti esamo þemëlapio aprëptá",
-                "size": "Dydis (plotis / aukðtis):",
+                "heading": "Bendrinti Å¡Ä¯ Å¾emÄ—lapÄ¯",
+                "url": "Å½emÄ—lapio nuoroda",
+                "embed": "Ä®terpti Å¾emÄ—lapÄ¯",
+                "extent": "Bendrinti esamo Å¾emÄ—lapio aprÄ—ptÄ¯",
+                "size": "Dydis (plotis / aukÅ¡tis):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",
-                "emailTooltip": "El. paðtas"
+                "emailTooltip": "El. paÅ¡tas"
             }
         }
     }),

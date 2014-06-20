@@ -1,15 +1,15 @@
-define({
+ο»Ώdefine({
     "root": ({
         "widgets": {
             "ShareDialog": {
-                "title": "λο_Share_ω",
-                "heading": "ωϊσ ξτδ ζε",
-                "url": "χωψ ξτδ",
-                "embed": "δθξς ΰϊ δξτδ",
-                "extent": "ωϊσ ΰϊ ϊιηεν δξτδ δπεληι",
-                "size": "βεγμ (ψεηα/βεαδ):",
-                "facebookTooltip": "τιιραεχ",
-                "twitterTooltip": "θεειθψ",
+                "title": "Χ›Χ_Share_Χ©",
+                "heading": "Χ©ΧªΧ£ ΧΧ¤Χ” Χ–Χ•",
+                "url": "Χ§Χ©Χ¨ ΧΧ¤Χ”",
+                "embed": "Χ”ΧΧΧΆ ΧΧª Χ”ΧΧ¤Χ”",
+                "extent": "Χ©ΧªΧ£ ΧΧª ΧªΧ™Χ—Χ•Χ Χ”ΧΧ¤Χ” Χ”Χ Χ•Χ›Χ—Χ™",
+                "size": "Χ’Χ•Χ“Χ (Χ¨Χ•Χ—Χ‘/Χ’Χ•Χ‘Χ”):",
+                "facebookTooltip": "Χ¤Χ™Χ™Χ΅Χ‘Χ•Χ§",
+                "twitterTooltip": "ΧΧ•Χ•Χ™ΧΧ¨",
                 "gplusTooltip": "Google Plus",
                 "emailTooltip": "Email"
             }

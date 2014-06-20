@@ -1,11 +1,11 @@
-define(
+ï»¿define(
    ({
         map: {
-            error: "á_Unable to create map_Ó"
+            error: "Ã¡_Unable to create map_Ã“"
         }, 
         tools: {
-        	legend: "á_Legend_Ó",
-        	 about: "á_About_Ó"
+        	legend: "Ã¡_Legend_Ã“",
+        	 about: "Ã¡_About_Ã“"
         }
     })
    

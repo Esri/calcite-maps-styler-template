@@ -1,13 +1,13 @@
-define({
+ï»¿define({
     "root": ({
         "widgets": {
             "ShareDialog": {
-                "title": "Sdílet",
-                "heading": "Sdílet tuto mapu",
+                "title": "SdÃ­let",
+                "heading": "SdÃ­let tuto mapu",
                 "url": "Odkaz na mapu",
-                "embed": "Vloit mapu",
-                "extent": "Sdílet souèasnı rozsah mapy",
-                "size": "Velikost (šíøka/vıška):",
+                "embed": "VloÅ¾it mapu",
+                "extent": "SdÃ­let souÄasnÃ½ rozsah mapy",
+                "size": "Velikost (Å¡Ã­Å™ka/vÃ½Å¡ka):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",

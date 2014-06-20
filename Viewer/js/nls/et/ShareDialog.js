@@ -1,4 +1,4 @@
-define({
+﻿define({
     "root": ({
         "widgets": {
             "ShareDialog": {
@@ -7,7 +7,7 @@ define({
                 "url": "Kaardi link",
                 "embed": "Lisa kaart",
                 "extent": "Jaga praeguse kaardi kuvaulatust",
-                "size": "Suurus (laius/k�rgus):",
+                "size": "Suurus (laius/kõrgus):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",

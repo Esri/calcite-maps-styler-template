@@ -1,13 +1,13 @@
-define({
+ï»¿define({
     "root": ({
         "widgets": {
             "ShareDialog": {
                 "title": "Del",
                 "heading": "Del dette kort",
                 "url": "Kort-link",
-                "embed": "Integrér kort",
-                "extent": "Del aktuelt kortområde",
-                "size": "Størrelse (bredde/højde):",
+                "embed": "IntegrÃ©r kort",
+                "extent": "Del aktuelt kortomrÃ¥de",
+                "size": "StÃ¸rrelse (bredde/hÃ¸jde):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",

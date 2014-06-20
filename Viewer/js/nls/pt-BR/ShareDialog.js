@@ -1,4 +1,4 @@
-define({
+﻿define({
     "root": ({
         "widgets": {
             "ShareDialog": {
@@ -6,7 +6,7 @@ define({
                 "heading": "Compartilhar este mapa",
                 "url": "Link do Mapa",
                 "embed": "Mapa Embutido",
-                "extent": "Compartilhar extens�o do mapa atual",
+                "extent": "Compartilhar extensão do mapa atual",
                 "size": "Tamanho (largura/altura):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",

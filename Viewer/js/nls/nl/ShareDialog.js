@@ -1,4 +1,4 @@
-define({
+﻿define({
     "root": ({
         "widgets": {
             "ShareDialog": {

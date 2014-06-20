@@ -1,4 +1,4 @@
-define({
+ï»¿define({
     "root": ({
         "widgets": {
             "ShareDialog": {
@@ -7,7 +7,7 @@ define({
                 "url": "Kartkobling",
                 "embed": "Bygg inn kart",
                 "extent": "Del gjeldende kartutstrekning",
-                "size": "Størrelse (bredde/høyde):",
+                "size": "StÃ¸rrelse (bredde/hÃ¸yde):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",

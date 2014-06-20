@@ -1,17 +1,17 @@
-define({
+Ôªødefine({
     "root": ({
         "widgets": {
             "ShareDialog": {
                 "title": "Partilhar",
                 "heading": "Partilhar este mapa",
-                "url": "LigaÁ„o de Mapa",
+                "url": "Liga√ß√£o de Mapa",
                 "embed": "Integrar Mapa",
-                "extent": "Partilhar a atual extens„o do mapa",
+                "extent": "Partilhar a atual extens√£o do mapa",
                 "size": "Tamanho (largura/altura):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",
-                "emailTooltip": "Correio EletrÛnico"
+                "emailTooltip": "Correio Eletr√≥nico"
             }
         }
     }),

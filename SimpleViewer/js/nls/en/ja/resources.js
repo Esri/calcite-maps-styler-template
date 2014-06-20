@@ -1,11 +1,11 @@
-define(
+﻿define(
    ({
         map: {
-            error: "�{_Unable to create map_?"
+            error: "須_Unable to create map_鷗"
         }, 
         tools: {
-        	legend: "�{_Legend_?",
-        	 about: "�{_About_?"
+        	legend: "須_Legend_鷗",
+        	 about: "須_About_鷗"
         }
     })
    

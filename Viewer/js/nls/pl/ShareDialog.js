@@ -1,13 +1,13 @@
-define({
+ï»¿define({
     "root": ({
         "widgets": {
             "ShareDialog": {
-                "title": "Udostêpnij",
-                "heading": "Udostêpnij tê mapê",
-                "url": "£¹cze do mapy",
-                "embed": "OsadŸ mapê",
-                "extent": "Udostêpnij bie¿¹cy zasiêg mapy",
-                "size": "Rozmiar (szerokoœæ/wysokoœæ):",
+                "title": "UdostÄ™pnij",
+                "heading": "UdostÄ™pnij tÄ™ mapÄ™",
+                "url": "ÅÄ…cze do mapy",
+                "embed": "OsadÅº mapÄ™",
+                "extent": "UdostÄ™pnij bieÅ¼Ä…cy zasiÄ™g mapy",
+                "size": "Rozmiar (szerokoÅ›Ä‡/wysokoÅ›Ä‡):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",
