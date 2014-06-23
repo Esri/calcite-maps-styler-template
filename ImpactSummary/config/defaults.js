@@ -164,5 +164,22 @@ define({
         "geocode": [{
             "url": null
         }]
-    }
+    },
+    "featuresTransparency": [{
+        "label": "Fully Transparent",
+        "value": 0
+    }, {
+        "label": "75% Transparent",
+        "value": 0.75
+    }, {
+        "label": "50% Transparent",
+        "value": 0.5
+    }, {
+        "label": "25% Transparent",
+        "value": 0.25
+    }, {
+        "label": "Fully Opaque",
+        "value": 1
+    }],
+    "featureCurrentTransparency": "Fully Opaque"
 });

@@ -55,15 +55,15 @@ input[type=text]::-ms-clear {
     *line-height: 22px;
 }
 .top-menu-right {
-   /* position: relative;*/
+    /* position: relative;*/
     top: 0;
     left: 0;
     /*float: right;*/
 }
-.esriRTL .top-menu-right{
-    float:left;
-    left:auto;
-    right:0;
+.esriRTL .top-menu-right {
+    float: left;
+    left: auto;
+    right: 0;
 }
 .icon-right {
     float: right;
@@ -72,8 +72,8 @@ input[type=text]::-ms-clear {
     padding: 0;
     margin: 0;
 }
-.esriRTL .icon-right{
-    float:left;
+.esriRTL .icon-right {
+    float: left;
 }
 /* Drawer */
 
@@ -163,8 +163,8 @@ input[type=text]::-ms-clear {
     border-right: 1px solid #ddd;
 }
 .esriRTL .drawer-open .content-pane-left {
-    border-right:0;
-    border-left:1px solid #ddd;
+    border-right: 0;
+    border-left: 1px solid #ddd;
 }
 .drawer-open-complete .content-pane-left:before {
     display: none;
@@ -183,8 +183,8 @@ input[type=text]::-ms-clear {
     pointer-events: none;
 }
 .esriRTL .drawer-open-complete .content-pane-left:before {
-    left:auto;
-    right:0;
+    left: auto;
+    right: 0;
 }
 .content-pane-center {
     width: 100%;
@@ -248,8 +248,8 @@ input[type=text]::-ms-clear {
     float: left;
     width: 75%;
 }
-.esriRTL .geocoder-mobile{
-    float:right;
+.esriRTL .geocoder-mobile {
+    float: right;
 }
 .drawer-open .geocoder-mobile {
     width: 60%;
@@ -278,10 +278,10 @@ input[type=text]::-ms-clear {
     cursor: pointer;
     text-align: center;
 }
-.esriRTL  .close-geocoder-button{
-    float:right;
-    margin-left:0;
-    margin-right:10px;
+.esriRTL .close-geocoder-button {
+    float: right;
+    margin-left: 0;
+    margin-right: 10px;
 }
 .close-geocoder-button:hover {
     color: #555;
@@ -397,7 +397,7 @@ input[type=text]::-ms-clear {
     left: auto;
     right: 0;
 }
-.drawer-menu-buttons .icon-text{
+.drawer-menu-buttons .icon-text {
     font-size: 11px;
     margin-bottom: 5px;
     line-height: 11px;
@@ -416,7 +416,7 @@ input[type=text]::-ms-clear {
     padding: 0 20px 10px 10px;
     color: #666;
 }
-.esriRTL .panel-padding{
+.esriRTL .panel-padding {
     padding: 0 10px 10px 20px;
 }
 .panel-header {
@@ -461,6 +461,7 @@ input[type=text]::-ms-clear {
     color: #999;
 }
 /* Misc */
+
 .clear {
     clear: both;
     display: block;

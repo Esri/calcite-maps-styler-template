@@ -31,7 +31,8 @@ define([
         SimpleFillSymbol, SimpleLineSymbol,
         Color,
         event,
-        Graphic, GraphicsLayer, graphicsUtils,
+        Graphic, GraphicsLayer,
+        graphicsUtils,
         Query,
         win
     ) {
@@ -46,6 +47,10 @@ define([
                     rendererContainer: 'item-container',
                     rendererSummarize: 'summarize'
                 };
+                this.previousFeatures = null;
+                this.entireAreaFeatures = null;
+                this.rendererInfo = null;
+                this.symbol = null;
                 // if we have a layer title or layer id
                 if (this.config.summaryLayer && this.config.summaryLayer.id) {
                     // get layer by id/title
@@ -65,7 +70,6 @@ define([
                         appConfig: this.config //we need a config object here to check for edit mode and adding "+" variables
                     }, dom.byId('geoData'));   //So, i think we need not need this.data l.e entire response
                     this._sb.startup();
-                    // init layer
                     // layer found
                     if (this._aoiLayer) {
                         // selected graphics layer
@@ -89,11 +93,6 @@ define([
                             // get highest value feature
                             this._queryGreatestFeature();
                         }
-                        // selected poly from graphics layer
-                        on(this._selectedGraphics, 'click', lang.hitch(this, function (evt) {
-                            this._hideInfoWindow();
-                            this._selectEvent(evt);
-                        }));
                         // selected poly from layer
                         on(this._aoiLayer, 'click', lang.hitch(this, function (evt) {
                             this._hideInfoWindow();
@@ -101,8 +100,6 @@ define([
                         }));
                         // layer show/hide
                         on(this._aoiLayer, 'visibility-change', lang.hitch(this, function (evt) {
-                            // set visibility of graphics layer
-                            this._selectedGraphics.setVisibility(evt.visible);
                             // if not visible
                             if (!evt.visible) {
                                 // hide stats
@@ -138,36 +135,70 @@ define([
                 }
             },
             _selectFeatures: function (features, value) {
-                var rendererInfo, sls;
+                var alpha, themeColor, sls, i;
+                this._selectedGraphics.clear();
+                themeColor = this.config.theme == "light" ? [255, 255, 255, 1] : [60, 60, 60, 0.9];
+                sls = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(themeColor), 2);
+                array.forEach(this.config.featuresTransparency, lang.hitch(this, function (transparency) {
+                    if (transparency.label == this.config.featureCurrentTransparency.label) {
+                        alpha = transparency.value;
+                    }
+                }));
                 if (features && features.length) {
-                    // add features to graphics layer
-                    this._selectedGraphics.clear();
+                    //set renderer info
                     array.some(this._aoiInfos, lang.hitch(this, function (renderer, index) {
-                        if (value == renderer.label) {
-                            rendererInfo = this._aoiInfos[index];
+                        if (value && value == renderer.label) {
+                            this.rendererInfo = this._aoiInfos[index];
                             return true;
                         }
                     }));
-                    // each selected feature
-                    for (var i = 0; i < features.length; i++) {
-                        var symbol;
-                        // selected line symbol
-                        var themeColor = this.config.theme == "light" ? [255, 255, 255, 1] : [60, 60, 60, 0.9];
-                        sls = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(themeColor), 2);
-                        if (rendererInfo) {
-                            var fillColor = new Color([rendererInfo.symbol.color.r, rendererInfo.symbol.color.g, rendererInfo.symbol.color.b, 1]);
-                            // selected fill symbol
-                            symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, sls, fillColor);
-                        } else {
-                            symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, sls, new Color([0, 255, 255, 0]));
-                        }
-                        // selected graphic
-                        var g = new Graphic(features[i].geometry, symbol, features[i].attributes, null);
-                        if (g) {
-                            // add graphic to layer
-                            this._selectedGraphics.add(g);
+                    if (this.previousFeatures == "Entire Area") {
+                        array.forEach(this.entireAreaFeatures, lang.hitch(this, function (feature) {
+                            array.some(this._aoiInfos, lang.hitch(this, function (renderer, idx) {
+                                var attributeField = feature.attributes[this._attributeField];
+                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField > renderer.minValue && attributeField <= renderer.maxValue)) {
+                                    feature.setSymbol(this._aoiInfos[idx].symbol);
+                                }
+                            }));
+                        }));
+                        this.previousFeatures = null;
+                    }
+                    //unselect previously selected features
+                    if (this.previousFeatures !== null) {
+                        for (i = 0; i < this.previousFeatures.length; i++) {
+                            if (this.rendererInfo) {
+                                this.symbol.color.a = this.rendererInfo.symbol.color.a;
+                                this.symbol.outline = this.rendererInfo.symbol.outline;
+                                this.previousFeatures[i].setSymbol(this.symbol);
+                            }
                         }
                     }
+                    if (value == "Entire Area") {
+                        this.entireAreaFeatures = features;
+                        array.forEach(features, lang.hitch(this, function (feature) {
+                            array.some(this._aoiInfos, lang.hitch(this, function (renderer, idx) {
+                                var attributeField = feature.attributes[this._attributeField];
+                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField > renderer.minValue && attributeField <= renderer.maxValue)) {
+                                    var tempSymbol = lang.clone(this._aoiInfos[idx].symbol);
+                                    tempSymbol.color.a = alpha;
+                                    var g = new Graphic(feature.geometry, sls, feature.attributes, null);
+                                    if (g) {
+                                        // add graphic to layer
+                                        this._selectedGraphics.add(g);
+                                    }
+                                    feature.setSymbol(tempSymbol);
+                                    return true;
+                                }
+                            }));
+                        }));
+                        this.previousFeatures = "Entire Area";
+                        return;
+                    }
+                    // each selected feature
+                    for (i = 0; i < features.length; i++) {
+                        this._createSymbol(features[i], alpha, sls);
+                    }
+                    this.previousFeatures = features;
                     // single fature
                     if (features.length === 1) {
                         // has attribute field for renderer
@@ -180,13 +211,13 @@ define([
                                     if (this._rendererNodes[i].value) {
                                         // value matches
                                         if (this._rendererNodes[i].value.toString() === fieldValue.toString()) {
-                                            this._highlightFeature(i, sls, features);
+                                            this._highlightFeature(features, alpha, sls, i);
                                             break;
                                         }
                                     } else {
                                         //for class break
                                         if ((fieldValue.toString() >= this._rendererNodes[i].minValue.toString()) && (fieldValue.toString() <= this._rendererNodes[i].maxValue)) {
-                                            this._highlightFeature(i, sls, features);
+                                            this._highlightFeature(features, alpha, sls, i);
                                             break;
                                         }
                                     }
@@ -196,20 +227,26 @@ define([
                     }
                 }
             },
-
-            _highlightFeature: function (i, sls, features) {
-                //set selected
-                domClass.add(this._rendererNodes[i].node, this.areaCSS.rendererSelected);
-                var rendererInfo = this._aoiInfos[i - 1];
-                this._selectedGraphics.clear();
-                var fillColor = new Color([rendererInfo.symbol.color.r, rendererInfo.symbol.color.g, rendererInfo.symbol.color.b, 1]);
-                // selected fill symbol;
-                var symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, sls, fillColor);
-                var g = new Graphic(features[0].geometry, symbol, features[0].attributes, null);
-                if (g) {
-                    // add graphic to layer
-                    this._selectedGraphics.add(g);
+            _createSymbol: function (feature, alpha, sls) {
+                var fillColor;
+                if (this.rendererInfo) {
+                    // set fill color
+                    fillColor = new Color([this.rendererInfo.symbol.color.r, this.rendererInfo.symbol.color.g, this.rendererInfo.symbol.color.b, alpha]);
+                    // set symbol
+                    this.symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, null, fillColor);
+                    // set feature symbol
+                    feature.setSymbol(this.symbol);
+                    var g = new Graphic(feature.geometry, sls, feature.attributes, null);
+                    if (g) {
+                        // add graphic to layer
+                        this._selectedGraphics.add(g);
+                    }
                 }
+            },
+            _highlightFeature: function (features, alpha, sls, i) {
+                domClass.add(this._rendererNodes[i].node, this.areaCSS.rendererSelected);
+                this.rendererInfo = this._aoiInfos[i - 1];
+                this._createSymbol(features[0], alpha, sls);
             },
             _setImpactLayerTitle: function(){
                 var node;
@@ -266,7 +303,7 @@ define([
                         this._sb.set("features", [fs.features[0]]);
                         this._sb.startup();
                         // selected features
-                        this._selectFeatures([fs.features[0]]);
+                        this._selectFeatures([fs.features[0]], fs.features[0].attributes[this._attributeField]);
                     }
                 }));
             },
@@ -488,7 +525,7 @@ define([
                 if (evt.graphic) {
                     this._clearSelected();
                     this._sb.set("features", [evt.graphic]);
-                    this._selectFeatures([evt.graphic]);
+                    this._selectFeatures([evt.graphic], evt.graphic.attributes[this._attributeField]);
                     event.stop(evt);
                 }
             },

@@ -344,7 +344,7 @@ function (
                 this._revertGlobalAppSetting();
                 domAttr.set(dom.byId("title"), "innerHTML", this.appSetting.title);
                 domAttr.set(dom.byId("summary"), "innerHTML", this.appSetting.summary);
-                if (domStyle.get(query(".editAreaDescriptionButtonContainer")[0])) {
+                if (query(".editAreaDescriptionButtonContainer")[0]) {
                     if (domStyle.get(query(".editAreaDescriptionButtonContainer")[0], "display") == "block") {
                         domStyle.set(query(".editAreaDescriptionButtonContainer")[0], "display", "none");
                         domStyle.set(query(".editAreaDescriptionIcon")[0], "display", "block");
@@ -586,19 +586,24 @@ function (
         },
 
         _createFeatureSelectionPanel: function (rightSettingsContent) {
-            var zoomLevelContainer, zoomLevelLabelContainer, zoomLevelLabel, themeSelectContainer, zoomLevelSelect;
-            zoomLevelContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
-            zoomLevelLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, zoomLevelContainer);
-            zoomLevelLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.SelectedFeatureText }, zoomLevelLabelContainer);
-            themeSelectContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2 esriParentContainerStyleClmBrdNone" }, zoomLevelContainer);
-            zoomLevelSelect = domConstruct.create("select", { "class": "esriZoomSelect" }, themeSelectContainer);
-            var opaqueOption = domConstruct.create("option");
-            opaqueOption.text = opaqueOption.value = "Opaque";
-            zoomLevelSelect.appendChild(opaqueOption);
-
-            var transparentOption = domConstruct.create("option");
-            transparentOption.text = transparentOption.value = "Transparent";
-            zoomLevelSelect.appendChild(transparentOption);
+            var featureTransparentOptionContainer, featureTransparentLabelContainer, featureTransparentLabel, transparentOptionsContainer, transparentSelect;
+            featureTransparentOptionContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
+            featureTransparentLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, featureTransparentOptionContainer);
+            featureTransparentLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.SelectedFeatureText }, featureTransparentLabelContainer);
+            transparentOptionsContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2 esriParentContainerStyleClmBrdNone" }, featureTransparentOptionContainer);
+            transparentSelect = domConstruct.create("select", { "class": "esriZoomSelect" }, transparentOptionsContainer);
+            array.forEach(this.config.featuresTransparency, lang.hitch(this, function (transparent) {
+                var transparentOption = domConstruct.create("option");
+                transparentOption.text = transparent.label;
+                transparentOption.value = transparent.value;
+                transparentSelect.appendChild(transparentOption);
+                if (this.config.featureCurrentTransparency.label == transparent.label) {
+                    transparentOption.selected = "selected";
+                }
+            }));
+            on(transparentSelect, "change", lang.hitch(this, function (evt) {
+                this.config.featureCurrentTransparency = this.config.featuresTransparency[evt.currentTarget.selectedIndex];
+            }));
         },
 
         //function to create and return text editor

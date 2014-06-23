@@ -1,35 +1,31 @@
 define([
-    "dojo/Evented",
     "dojo/_base/declare",
     "dojo/_base/lang",
     "dijit/_WidgetBase",
-    "dijit/layout/ContentPane",
     "dojo/on",
     "esri/arcgis/utils",
     "esri/arcgis/Portal",
     "dojo/Deferred",
     "dojo/cookie"
 ],
-function (Evented, declare, lang, _WidgetBase, ContentPane, on, arcgisUtils, portal, Deferred, cookie) {
+function (declare, lang, _WidgetBase, on, arcgisUtils, portal, Deferred, cookie) {
     var Widget = declare([_WidgetBase], {
         declaredClass: "application.signInHelper",
         _portal: null,
         cred: "esri_jsapi_id_manager_data",
         constructor: function () {
-            var portalURL = this._getPortalURL();
             this._portal = new portal.Portal(this._getPortalURL());
         },
 
         createPortal: function () {
             // create portal
             var deferred = new Deferred();
-            var _self = this;
             // portal loaded
             this.own(on(this._portal, "Load", lang.hitch(this, function () {
                 this._portal.signIn().then(function (loggedInUser) {
                     deferred.resolve(loggedInUser);
                 }, function (err) {
-                    deferred.reject(new Error("Sign-in Failed"));
+                    deferred.reject(err);
                 });
             })));
 
