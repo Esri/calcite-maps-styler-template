@@ -1,3 +1,4 @@
+@import "toc.scss";
 $default-theme: rgb(255,255,255);
 $black-color:rgb(0,0,0);
 $default-font: #fff;
@@ -171,18 +172,18 @@ html, body {
 }
 
 /*Styles for the print dialog checkbox*/
-.checkbox {
+#pageBody_print .checkbox {
     display: inline-block;
     cursor: pointer;
     margin-left:10px; 
     line-height:18px;
     padding:4px;
 }
- input[type=checkbox].checkbox {
+#pageBody_print input[type=checkbox].checkbox {
     display:none; 
 }
 
-.checkbox:before {
+#pageBody_print .checkbox:before {
     content: "";
     display: inline-block;
     width: 18px;
@@ -193,7 +194,7 @@ html, body {
     text-align: center;
     border-radius: 3px;
 }
- input[type=checkbox]:checked.checkbox + .checkbox:before {
+#pageBody_print input[type=checkbox]:checked.checkbox + .checkbox:before {
     content: "\2713";
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
     font-size: 15px;
@@ -366,7 +367,14 @@ html, body {
 .esriBookmarks {
     border: none;
 }
-
+.esriBookmarkItem{
+    width:$page-width;
+    background: #f8f8f8;
+    color:#555;
+    border-bottom:1px solid #e0e0e0;
+    @include user-select(none);    
+    padding:6px;
+}
 .esriBookmarkLabel {
     font-size: 16px;
 }
@@ -879,7 +887,9 @@ img{
     @include user-select(none);
     @include transition(all, .5s, linear);
 }
-
+.esriPrintButton .esriPrintButton{
+    background: #d3d3d3;  /*#5daddd; calcite blue */
+}
 .esriPrintButton:hover{
   background: #a9a9a9; /*#4997d2; calcite hover */
 }
@@ -1058,6 +1068,10 @@ img{
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
+
+
+
+
 .icon-home-1:before { content: '\e800'; } /* '' */
 .icon-menu:before { content: '\e801'; } /* '' */
 .icon-twitter:before { content: '\e802'; } /* '' */
@@ -1068,5 +1082,6 @@ img{
 .icon-buffer:before { content: '\e80b'; } /* '' */
 .icon-target:before { content: '\e80c'; } /* '' */
 .icon-angle-down:before { content: '\e809'; } /* '' */
+.icon-check-1:before {content: '\2713';} 
 
 
