@@ -13,8 +13,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/ready", "dojo/json", "dojo/_base/array", "dojo/_base/Color", "dojo/_base/declare", "dojo/_base/lang", "dojo/dom", "dojo/dom-geometry", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/Deferred", "dojo/promise/all", "dojo/query", "dijit/registry", "dijit/Menu", "dijit/CheckedMenuItem", "application/toolbar", "application/has-config", "esri/arcgis/utils", "esri/dijit/HomeButton", "esri/dijit/LocateButton", "esri/dijit/Legend", "esri/dijit/BasemapGallery", "esri/dijit/Measurement", "esri/dijit/OverviewMap", "esri/geometry/Extent", "esri/layers/FeatureLayer"], function (
-ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, domConstruct, domStyle, on, Deferred, all, query, registry, Menu, CheckedMenuItem, Toolbar, has, arcgisUtils, HomeButton, LocateButton, Legend, BasemapGallery, Measurement, OverviewMap, Extent, FeatureLayer) {
+define(["dojo/ready", "dojo/json", "dojo/_base/array", "dojo/_base/Color", "dojo/_base/declare", "dojo/_base/lang", "dojo/dom", "dojo/dom-geometry", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/Deferred", "dojo/promise/all", "dojo/query", "dijit/registry", "dijit/Menu", "dijit/CheckedMenuItem", "application/toolbar", "application/has-config", "esri/arcgis/utils", "esri/dijit/HomeButton", "esri/dijit/LocateButton", "esri/dijit/Legend", "esri/dijit/BasemapGallery", "esri/dijit/Measurement", "esri/dijit/OverviewMap", "esri/geometry/Extent", "esri/layers/FeatureLayer", "application/TableOfContents", "application/ShareDialog"], function (
+ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, domConstruct, domStyle, on, Deferred, all, query, registry, Menu, CheckedMenuItem, Toolbar, has, arcgisUtils, HomeButton, LocateButton, Legend, BasemapGallery, Measurement, OverviewMap, Extent, FeatureLayer, TableOfContents, ShareDialog) {
 
 
     return declare(null, {
@@ -109,7 +109,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
         // Create UI
         _createUI: function () {
-
+            domStyle.set("panelPages", "visibility", "hidden");
             //Add tools to the toolbar. The tools are listed in the defaults.js file 
             var toolbar = new Toolbar(this.config);
             toolbar.startup().then(lang.hitch(this, function () {
@@ -156,6 +156,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 }
 
                 all(toolList).then(lang.hitch(this, function (results) {
+
+
                     //If all the results are undefined and locate and home are also false we can hide the toolbar
                     var tools = array.every(results, function (r) {
                         return r === undefined;
@@ -176,8 +178,9 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     //Now that all the tools have been added to the toolbar we can add page naviagation
                     //to the toolbar panel, update the color theme and set the active tool. 
                     this._updateTheme();
-                    toolbar.updatePageNavigation();
                     toolbar.activateTool(this.config.activeTool);
+                    toolbar.updatePageNavigation();
+
                     on(toolbar, "updateTool", lang.hitch(this, function (name) {
                         if (name === "measure") {
                             this._destroyEditor();
@@ -190,11 +193,9 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             this._destroyEditor();
                             this.map.setInfoWindowOnClick(true);
                         }
-                        //var activate = (name === "measure" || name === "edit") ? false : true;
-                        //this.map.setInfoWindowOnClick(activate);
                     }));
 
-
+                    domStyle.set("panelPages", "visibility", "visible");
 
                 }));
             }));
@@ -275,8 +276,6 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             if (this.editableLayers.length > 0) {
                 this.editorDiv = toolbar.createTool(tool, panelClass);
                 return this._createEditor();
-
-
             } else {
                 console.log("No Editable Layers");
                 deferred.resolve();
@@ -285,7 +284,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
         },
         _createEditor: function () {
             var deferred = new Deferred();
-
+            //Dynamically load since many apps won't have editable layers 
             require(["application/has-config!edit?esri/dijit/editing/Editor"], lang.hitch(this, function (Editor) {
                 if (!Editor) {
                     deferred.resolve();
@@ -342,43 +341,25 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 deferred.resolve();
             } else {
                 if (has("layers")) {
-                    //Build a menu to display the layers in the web map. 
-                    var layerInfos = this._getVisibleLayers(layers);
-                    if (layerInfos.length > 0) {
-                        layerInfos.reverse();
 
-                        //Use small panel class if layer layer is less than 5
-                        if (layerInfos.length < 5) {
-                            panelClass = "small";
-                        } else if (layerInfos.length < 15) {
-                            panelClass = "medium";
-                        } else {
-                            panelClass = "large";
-                        }
 
-                        var layersDiv = toolbar.createTool(tool, panelClass);
-                        var menu = new Menu({
-                            id: "layerMenu",
-                            className: "layer-menu"
-                        }, domConstruct.create("div", {}, layersDiv));
-                        array.forEach(layerInfos, function (layer) {
-                            menu.addChild(new CheckedMenuItem({
-                                label: layer.title,
-                                checked: layer.visible,
-                                onChange: function () {
-                                    if (layer.layer.featureCollection) {
-                                        array.forEach(layer.layer.featureCollection.layers, function (layer) {
-                                            layer.layerObject.setVisibility(!layer.layerObject.visible);
-                                        });
-                                    } else {
-                                        layer.layer.setVisibility(!layer.layer.visible);
-                                    }
-                                }
-                            }));
-
-                        });
-
+                    //Use small panel class if layer layer is less than 5
+                    if (layers.length < 5) {
+                        panelClass = "small";
+                    } else if (layers.length < 15) {
+                        panelClass = "medium";
+                    } else {
+                        panelClass = "large";
                     }
+                    var layersDiv = toolbar.createTool(tool, panelClass);
+
+                    var toc = new TableOfContents({
+                        map: this.map,
+                        layers: layers
+                    }, domConstruct.create("div", {}, layersDiv));
+                    toc.startup();
+
+
                     deferred.resolve();
                 } else {
                     deferred.resolve();
@@ -669,12 +650,9 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             //Add share links for facebook, twitter and direct linking. 
             //Add the measure widget to the toolbar.
             var deferred = new Deferred();
-            require(["application/has-config!share?application/ShareDialog"], lang.hitch(this, function (ShareDialog) {
 
-                if (!ShareDialog) {
-                    deferred.resolve();
-                    return;
-                }
+            if (has("share")) {
+
                 var shareDiv = toolbar.createTool(tool, panelClass);
 
                 var shareDialog = new ShareDialog({
@@ -688,9 +666,9 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 domClass.add(shareDialog.domNode, "pageBody");
                 shareDialog.startup();
 
-                deferred.resolve();
 
-            }));
+            }
+            deferred.resolve();
 
             return deferred.promise;
 
@@ -710,32 +688,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             }));
             return layerInfos;
         },
-        _getVisibleLayers: function (layers) {
-            //Function that creates the list of layers for the layers tool. 
-            var layerInfos = [];
-            array.forEach(layers, lang.hitch(this, function (mapLayer) {
-                if (mapLayer.featureCollection && !mapLayer.layerObject) {
-                    if (mapLayer.featureCollection.layers) {
-                        //add the first layer in the layer collection... not all  - when we turn off the layers we'll 
-                        //turn them all off 
-                        if (mapLayer.featureCollection.layers) {
-                            layerInfos.push({
-                                "layer": mapLayer,
-                                "visible": mapLayer.visibility,
-                                "title": mapLayer.title
-                            });
-                        }
-                    }
-                } else if (mapLayer.layerObject) {
-                    layerInfos.push({
-                        layer: mapLayer.layerObject,
-                        visible: mapLayer.layerObject.visible,
-                        title: mapLayer.title
-                    });
-                }
-            }));
-            return layerInfos;
-        },
+
 
         _getBasemapGroup: function () {
             //Get the id or owner and title for an organizations custom basemap group. 
@@ -752,7 +705,6 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             }
             return basemapGroup;
         },
-
 
         _createMapUI: function () {
             // Add map specific widgets like the Home  and locate buttons. Also add the geocoder. 
