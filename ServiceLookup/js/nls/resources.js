@@ -18,6 +18,9 @@ define({
 
         splashscreen: {
             buttonText: "OK",
+        },
+        ui:{
+            basemapButton: "Basemap"
         }
 
     }),
