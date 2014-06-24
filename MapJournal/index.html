@@ -52,7 +52,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.0-alpha11',
+				version: '1.0-alpha12',
 				isProduction: true,
 				isInBuilder: false,
 				indexCfg: configOptions
@@ -102,7 +102,6 @@
 			var path1 = location.pathname.replace(/\/[^/]+$/, '/');
 			var path2 = location.pathname.replace(/\/[^/]+$/, '');
 			var dojoConfig = {
-				//locale: 'en',
 				parseOnLoad: true,
 				isDebug: false,
 				useDeferredInstrumentation: true,
@@ -177,6 +176,7 @@
 					</div>
 				</div>
 				<!-- Builder -->
+				<div id="builderQuotes"></div>
 				<div id="builderLanding"></div>
 				<div id="mainStageEdit"></div>
 				<div id="builderHelp"></div>
@@ -189,19 +189,29 @@
 					<!-- navigation dots -->
 				</div>
 				<div class="header">
-					<span class="linkContainer"></span>
-					<i class="shareIcon blackHover share_facebook icon-facebook-squared-1"></i>
-					<i class="shareIcon blackHover share_twitter icon-twitter-1"></i>
-					<i class="shareIcon blackHover share_bitly icon-link"></i>
-					<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
-					<a class="logoLink" target="_blank">
-						<img class="logoImg" />
-					</a>
+					<div class="linkSocialContainer">
+						<span class="linkContainer"></span>
+						<span class="shareBtns">
+							<i class="shareIcon blackHover share_facebook icon-facebook-squared-1"></i>
+							<i class="shareIcon blackHover share_twitter icon-twitter-1"></i>
+							<i class="shareIcon blackHover share_bitly icon-link"></i>
+							<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
+						</span>
+					</div>
+					<table class="logoContainer">
+						<tr>
+							<td class="logoWrapper">
+								<a class="logoLink" target="_blank">
+									<img class="logoImg"/>
+								</a>
+							</td>
+						</tr>
+					</table>
 				</div>
 				<div class="appTitle"></div>
 				<div class="separator"></div>
 				<div class="sectionsWrapper">
-					<div class="sections">
+					<div class="sections" tabindex="0">
 						<!-- sections injected here -->
 					</div>
 				</div>
@@ -227,14 +237,24 @@
 		<div id="floatingPanel" class="floatingPanel sectionPanel">
 			<div class="backdrop"></div>
 			<div class="header">
-				<span class="linkContainer"></span>
-				<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
-				<i class="shareIcon share_twitter icon-twitter-1"></i>
-				<i class="shareIcon share_bitly icon-link"></i>
-				<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
-				<a class="logoLink" target="_blank">
-					<img class="logoImg" />
-				</a>
+				<div class="linkSocialContainer">
+					<span class="linkContainer"></span>
+					<span class="shareBtns">
+						<i class="shareIcon blackHover share_facebook icon-facebook-squared-1"></i>
+						<i class="shareIcon blackHover share_twitter icon-twitter-1"></i>
+						<i class="shareIcon blackHover share_bitly icon-link"></i>
+					</span>
+					<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
+				</div>
+				<table class="logoContainer">
+					<tr>
+						<td class="logoWrapper">
+							<a class="logoLink" target="_blank">
+								<img class="logoImg"/>
+							</a>
+						</td>
+					</tr>
+				</table>
 			</div>
 			<div class="appTitle"></div>
 			<div class="separator"></div>
@@ -272,13 +292,14 @@
 			</div>
 			<div class="header">
 				<div class="backdrop"></div>
-				<span class="linkContainer"></span>
-				<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
-				<i class="shareIcon share_twitter icon-twitter-1"></i>
-				<i class="shareIcon share_bitly icon-link"></i>
-				<a class="logoLink" target="_blank">
-					<img class="logoImg" />
-				</a>
+				<div class="linkSocialContainer">
+					<span class="linkContainer"></span>
+					<span class="shareBtns">
+						<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
+						<i class="shareIcon share_twitter icon-twitter-1"></i>
+						<i class="shareIcon share_bitly icon-link"></i>
+					</span>
+				</div>
 			</div>
 		</div>
 		

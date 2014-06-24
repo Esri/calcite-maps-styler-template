@@ -34,7 +34,7 @@ app.cfg = {
 	TIMEOUT_VIEWER_REQUEST: 12000,
 	TIMEOUT_BUILDER_REQUEST: 20000,
 	
-	SECTION_ACTION_ZOOM_MAP_MARKER: "http://static.arcgis.com/images/Symbols/Basic/GreenShinyPin.png",
+	SECTION_ACTION_ZOOM_MAP_MARKER: "resources/tpl/viewer/icons/map-pin-circle-blue.png",
 	
 	//
 	// Builder
@@ -74,8 +74,8 @@ app.cfg = {
 	// Control the authorized data source (for initialization and import screen)
 	AUTHORIZED_IMPORT_SOURCE: {
 		flickr: true,
-		facebook: false,
-		picasa: false,
+		facebook: true,
+		picasa: true,
 		youtube: true
 	},
 	
@@ -85,7 +85,7 @@ app.cfg = {
 	// If used on another domain, user will have an error in the Facebook popup after login
 	// To use Facebook import on Portal for ArcGIS, create your own ID at https://developers.facebook.com/ 
 	// or set AUTHORIZED_IMPORT_SOURCE.facebook to false
-	FACEBOOK_APP_ID: "471023926309627",
+	FACEBOOK_APP_ID: "276669785846752",
 	
 	//
 	// Builder direct creation

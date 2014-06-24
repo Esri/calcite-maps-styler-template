@@ -27,16 +27,20 @@ define({
 				title: "Welcome to"
 			},
 			addEditPopup: {
+				disabled: "Add Section is disabled because the maximum number of allowed sections has been reached.",
 				titleAdd: "Add Section",
+				titleAddHome: "Add Home Section",
 				titleEdit: "Edit Section",
 				step: "Step",
-				stepMainStageExplain: "Add a Map, Image, or Video to the Main Stage",
-				stepPanelExplain: "Add content to the",
+				stepMainStageExplain: "Main Stage Content",
+				stepPanelExplain: "Content",
 				stepMainStageNextTooltip: "Enter the section title and select the Main Stage content",
 				step2NextTooltip: "Enter the section title and %LAYOUT-TYPE% content",
 				stepNextTooltipNext: "to go to the next step",
 				stepNextTooltipAdd: "to add the section",
-				titlePlaceholder: "Section title...",
+				firstAddExplain: "This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts.",
+				firstAddLeanMore: "Learn More",
+				titlePlaceholder: "Section title..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Add text, links, and small graphics here.",
@@ -54,6 +58,10 @@ define({
 				deleteTooltip: "Delete",
 				firstSectionExplain: "(The home section cannot be moved)"
 			},
+			exportData: {
+				btn: "Export content",
+				tooltip: "Use this button to export your content locally. This will open a new page that you can easily copy or save as a PDF.<br />Copying that page content in a word processor is the most effective way to recreate your Journal in case of an accidental deletion."
+			},
 			help: {
 				lblHelp: "Help",
 				lblAdd: "Add Section",
@@ -61,6 +69,7 @@ define({
 				lblOrga: "Organize content",
 				lblEdit: "Edits",
 				lblPublish: "Share",
+				lblTips: "Tips",
 				lblMore: "Want more?",
 				lblLink: "Visit the Story Maps website.",
 				content1Div1: "You can integrate a variety of styles when building your story. The <strong>%LAYOUT_TITLE%</strong> typically holds your text, images, and video while your maps tend go on the <strong>Main Stage</strong>. However, the %TPL_NAME% allows you to feature images, charts, and video within the main stage as well.",
@@ -69,10 +78,13 @@ define({
 				content2Div2: "You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others.",
 				content3Div1: "Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish.",
 				content4Div1: "Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. You’ll use the edit functions many times as you develop your %TPL_NAME%!",
-				content5Div1: "Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier."
+				content5Div1: "Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier.",
+				content6Div1: "The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal.",
+				content6Div2: "Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!"
 			},
 			landing: {
-				lblAdd: "Add the Home Section",
+				lblAdd: "What do you want to call your Map Journal?",
+				phAdd: "Enter your title...",
 				lblOR: "Or",
 				lblHelp: "Take a Tour"
 			},

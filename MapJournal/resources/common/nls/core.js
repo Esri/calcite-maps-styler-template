@@ -13,7 +13,9 @@ define({
 				open: "Open",
 				start: "Start",
 				loading: "Loading",
-				disabledAdmin: "This feature has been disabled by the Administrator"
+				disabledAdmin: "This feature has been disabled by the Administrator",
+				width: "Width",
+				height: "Height"
 			},
 			inlineFieldEdit: {
 				editMe: "Edit me!"
@@ -74,7 +76,7 @@ define({
 			settingsLayout: {
 				title: "Layout",
 				explain: "Which layout do you want to use?",
-				explainInit: "You can change the layout anytime from the settings panel.",
+				explainInit: "You can change the layout anytime from the settings dialog.",
 				viewExample: "View a live example"
 			},
 			settingsTheme: {

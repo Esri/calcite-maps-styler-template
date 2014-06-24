@@ -40,10 +40,17 @@ define({
 				howToFind: "How to find a Picasa or Google+ account ID",
 				howToFind2: "Copy digits between the first and second '/' of any Picasa or G+ page"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Check",
+				notFound: "Video not found",
+				found: "Video found",
+				select: "Select this video"
+			},
+			videoSelectorHome: {
+				other: "Other"
 			},
 			videoSelectorYoutube: {
+				url: "URL of a Youtube video",
 				pageInputLbl: "User name",
 				lookupMsgError: "User not found",
 				howToFind: "How to find a YouTube user name",
@@ -51,24 +58,42 @@ define({
 				found: "Found",
 				noData: "No public videos found"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "URL of a Vimeo video"
+			},
+			videoSelectorOther: {
+				explain1: "Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo).",
+				explain2: "Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%.",
+				explain3: "Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%.",
+				webpage: "Web page feature"
+			},
+			webpageSelectorHome: {
+				lblUrl: "Webpage URL",
+				lblEmbed: "Embed code",
+				lblOR: "OR",
+				lblError1: "Error, clear one of the two input fields.",
+				lblError2: "Embed code can only contain one <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Media URL...",
-				lblLabel: "Label",
+				lblURLPH: "An image URL should start with http:// and end with .jpg or .png",
+				lblLabel: "Image Caption",
 				lblLabel1: "Caption",
 				lblLabel2: "Hover text",
 				lblLabel3: "None",
 				lblLabelPH: "Enter some text...",
+				lblMaximize: "Include a maximize button in the corner of the image",
+				lblMaximizeHelp: "Recommended only for high quality photos",
 				lblPosition: "Position",
 				lblPosition1: "Center",
 				lblPosition2: "Fill",
 				lblPosition3: "Fit",
 				lblPosition4: "Stretch",
+				lblPosition5: "Custom",
+				tooltipDimension: "The value can be specified in 'px' or '%'",
 				lblPosition2Explain: "(may crop)",
 				lblPosition3Explain: "(won't crop)",
+				lblPosition3Explain2: "(width will always fit the panel)",
 				lblPosition4Explain: "(may distort)"
 			},
 			editorActionGeocode: {

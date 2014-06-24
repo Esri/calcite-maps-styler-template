@@ -26,7 +26,8 @@ define({
 				notConfiguredDesktop: "Welcome to the %TPL_NAME% web application.<br />The application is not configured yet.",
 				notConfiguredMobile: "Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices.",
 				notAuthorized: "You are not authorized to access this application",
-				noBuilderIE8: "The builder is not supported on Internet Explorer before version 9."
+				noBuilderIE8: "The builder is not supported on Internet Explorer before version 9.",
+				mapLoadingFail: "Something went wrong, the Map cannot be loaded."
 			},
 			mobileView: {
 				tapForDetails: "Tap for details",
@@ -51,7 +52,7 @@ define({
 				share: "Share"
 			},
 			overviewFromCommon: {
-				title: "Overview Map",
+				title: "Overview Map"
 			},
 			legendFromCommon: {
 				title: "Legend"
