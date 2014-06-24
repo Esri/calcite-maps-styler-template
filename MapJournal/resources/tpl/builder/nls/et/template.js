@@ -27,16 +27,20 @@
 				title: "Tere tulemast"
 			},
 			addEditPopup: {
+				disabled: "Š_Add Section is disabled because the maximum number of allowed sections has been reached._ä",
 				titleAdd: "Jaotise lisamine",
+				titleAddHome: "Š_Add Home Section_ä",
 				titleEdit: "Jaotise muutmine",
 				step: "Samm",
-				stepMainStageExplain: "Saate põhilavale lisada kaardi, pildi või video",
-				stepPanelExplain: "Saate lisada sisu:",
+				stepMainStageExplain: "Š_Main Stage Content_ä",
+				stepPanelExplain: "Š_Content_ä",
 				stepMainStageNextTooltip: "Sisestage jaotise nimi ja valige põhilava sisu",
 				step2NextTooltip: "Sisestage jaotise nimi ja %LAYOUT-TYPE% sisu",
 				stepNextTooltipNext: "järgmisesse etappi liikumiseks",
 				stepNextTooltipAdd: "jaotise lisamiseks",
-				titlePlaceholder: "Jaotise nimi...",
+				firstAddExplain: "Š_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._ä",
+				firstAddLeanMore: "Š_Learn More_ä",
+				titlePlaceholder: "Jaotise nimi..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Siia saate lisada teksti, lingid ja väiksemad pildid.",
@@ -54,6 +58,10 @@
 				deleteTooltip: "Kustuta",
 				firstSectionExplain: "(Kodujaotist ei saa teisaldada)"
 			},
+			exportData: {
+				btn: "Š_Export content_ä",
+				tooltip: "Š_Use this button to export your content locally. This will open a new page that you can easily copy or save as a PDF.<br />Copying that page content in a word processor is the most effective way to recreate your Journal in case of an accidental deletion._ä"
+			},
 			help: {
 				lblHelp: "Abi",
 				lblAdd: "Jaotise lisamine",
@@ -61,6 +69,7 @@
 				lblOrga: "Korralda sisu",
 				lblEdit: "Muudatused",
 				lblPublish: "Jaga",
+				lblTips: "Š_Tips_ä",
 				lblMore: "Kas sellest ei piisa?",
 				lblLink: "Külastage kaardilugude veebisaiti.",
 				content1Div1: "Artikli koostamisel saate kaasata mitmesuguseid laade. <strong>%LAYOUT_TITLE%</strong> sisaldab enamasti teksti, pilte ja videoid, kaardid aga asuvad <strong>põhilaval</strong>. %TPL_NAME% lubab teil siiski ka pilte, diagramme ja videot põhilaval kasutada.",
@@ -69,10 +78,13 @@
 				content2Div2: "Samuti saate lisada Facebooki, Twitteri ja Bitly kaudu jagamise lingid, et lugejad saaksid teie malli %TPL_NAME% mugavalt edasi levitada.",
 				content3Div1: "Š_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ä",
 				content4Div1: "Kas olete leidnud vea või soovite materjali muuta? Ärge muretsege. Rakenduse muutmisikooni kaudu saate sisu igal ajal muuta. Muutmisvõimaluste kasutamist tuleb teil malli %TPL_NAME% väljatöötamisel kindlasti ohtralt ette!",
-				content5Div1: "%TPL_NAME% salvestatakse teie portaali %PORTAL% kontole ja see on vaikimisi privaatne. Te saate valida, kas soovite seda jagada üksnes oma organisatsiooni piires või kogu maailmaga. Selleks, et seda oleks mugavam jagada, anname teile ka lühikese püsilingi."
+				content5Div1: "%TPL_NAME% salvestatakse teie portaali %PORTAL% kontole ja see on vaikimisi privaatne. Te saate valida, kas soovite seda jagada üksnes oma organisatsiooni piires või kogu maailmaga. Selleks, et seda oleks mugavam jagada, anname teile ka lühikese püsilingi.",
+				content6Div1: "Š_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._ä",
+				content6Div2: "Š_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_ä"
 			},
 			landing: {
-				lblAdd: "Lisa avalehe jaotis",
+				lblAdd: "Š_What do you want to call your Map Journal?_ä",
+				phAdd: "Š_Enter your title..._ä",
 				lblOR: "Või",
 				lblHelp: "Tutvu võimalustega"
 			},

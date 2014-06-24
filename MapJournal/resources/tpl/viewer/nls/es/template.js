@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Bienvenido a la aplicación web %TPL_NAME%.<br />La aplicación no se ha configurado todavía.",
 				notConfiguredMobile: "Bienvenido a la aplicación web %TPL_NAME%. La aplicación no se ha configurado todavía y el Builder no es compatible con los dispositivos móviles.",
 				notAuthorized: "No tienes autorización para acceder a esta aplicación",
-				noBuilderIE8: "Builder no es compatible con las versiones de Internet Explorer anteriores a la 9."
+				noBuilderIE8: "Builder no es compatible con las versiones de Internet Explorer anteriores a la 9.",
+				mapLoadingFail: "á_Something went wrong, the Map cannot be loaded._Ó"
 			},
 			mobileView: {
 				tapForDetails: "Tocar para ver detalles",
@@ -51,7 +52,7 @@
 				share: "Compartir"
 			},
 			overviewFromCommon: {
-				title: "Mapa de vista general",
+				title: "Mapa de vista general"
 			},
 			legendFromCommon: {
 				title: "Leyenda"

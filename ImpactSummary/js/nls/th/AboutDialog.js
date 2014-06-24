@@ -7,7 +7,7 @@
                 "itemInfoLink": "บน ArcGIS Online.",
                 "licenseHeader":"ใบอนุญาต",
                 "dateCreated":"สร้าง:",
-                "dateModified":"ปรับปรุงล่าสุด",
+                "dateModified":"ปรับปรุงครั้งสุดท้าย",
                 "moreInfoHeader":"ข้อมูลเพิ่มเติม"
             }
         }

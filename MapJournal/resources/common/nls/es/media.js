@@ -40,35 +40,60 @@
 				howToFind: "Cómo encontrar el ID de una cuenta Picasa or Google+",
 				howToFind2: "Copia los dígitos que hay entre la primera y la segunda \'/\' de cualquier página de Picasa o G+"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "á_Check_Ó",
+				notFound: "á_Video not found_Ó",
+				found: "á_Video found_Ó",
+				select: "á_Select this video_Ó"
+			},
+			videoSelectorHome: {
+				other: "á_Other_Ó"
 			},
 			videoSelectorYoutube: {
+				url: "á_URL of a Youtube video_Ó",
 				pageInputLbl: "Nombre de usuario",
 				lookupMsgError: "Usuario no encontrado",
 				howToFind: "Cómo encontrar un nombre de usuario de YouTube",
 				howToFind2: "El nombre de usuario se muestra bajo los vídeos",
-				found: "Encontrados",
+				found: "á_Found_Ó",
 				noData: "No se han encontrado vídeos públicos"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "á_URL of a Vimeo video_Ó"
+			},
+			videoSelectorOther: {
+				explain1: "á_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._Ó",
+				explain2: "á_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._Ó",
+				explain3: "á_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._Ó",
+				webpage: "á_Web page feature_Ó"
+			},
+			webpageSelectorHome: {
+				lblUrl: "á_Webpage URL_Ó",
+				lblEmbed: "á_Embed code_Ó",
+				lblOR: "á_OR_Ó",
+				lblError1: "á_Error, clear one of the two input fields._Ó",
+				lblError2: "á_Embed code can only contain one <iframe>_Ó"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "URL del medio...",
-				lblLabel: "Etiqueta",
+				lblURLPH: "á_An image URL should start with http:// and end with .jpg or .png_Ó",
+				lblLabel: "á_Image Caption_Ó",
 				lblLabel1: "Leyenda",
 				lblLabel2: "Texto de activación",
 				lblLabel3: "Ninguno",
 				lblLabelPH: "Introducir texto...",
+				lblMaximize: "á_Include a maximize button in the corner of the image_Ó",
+				lblMaximizeHelp: "á_Recommended only for high quality photos_Ó",
 				lblPosition: "Posición",
 				lblPosition1: "Centro",
 				lblPosition2: "Relleno",
 				lblPosition3: "Ajustar",
 				lblPosition4: "Estirar",
+				lblPosition5: "á_Custom_Ó",
+				tooltipDimension: "á_The value can be specified in 'px' or '%'_Ó",
 				lblPosition2Explain: "(puede recortarse)",
 				lblPosition3Explain: "(no se recortará)",
+				lblPosition3Explain2: "á_(width will always fit the panel)_Ó",
 				lblPosition4Explain: "(puede distorsionarse)"
 			},
 			editorActionGeocode: {

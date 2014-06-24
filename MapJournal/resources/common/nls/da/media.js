@@ -40,35 +40,60 @@
 				howToFind: "Sådan findes et Picasa- eller Google+ konto-ID",
 				howToFind2: "Kopier tal mellem første og anden \'\/\' på Picasa eller en G+-side"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "ø_Check_å",
+				notFound: "ø_Video not found_å",
+				found: "ø_Video found_å",
+				select: "ø_Select this video_å"
+			},
+			videoSelectorHome: {
+				other: "ø_Other_å"
 			},
 			videoSelectorYoutube: {
+				url: "ø_URL of a Youtube video_å",
 				pageInputLbl: "Brugernavn",
 				lookupMsgError: "Bruger ikke fundet",
 				howToFind: "Sådan finder du et YouTube-brugernavn",
 				howToFind2: "Brugernavnet vises under videoer",
-				found: "Fundet",
+				found: "ø_Found_å",
 				noData: "Ingen offentlige videoer fundet"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "ø_URL of a Vimeo video_å"
+			},
+			videoSelectorOther: {
+				explain1: "ø_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._å",
+				explain2: "ø_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._å",
+				explain3: "ø_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._å",
+				webpage: "ø_Web page feature_å"
+			},
+			webpageSelectorHome: {
+				lblUrl: "ø_Webpage URL_å",
+				lblEmbed: "ø_Embed code_å",
+				lblOR: "ø_OR_å",
+				lblError1: "ø_Error, clear one of the two input fields._å",
+				lblError2: "ø_Embed code can only contain one <iframe>_å"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Medie-URL...",
-				lblLabel: "Mærke",
+				lblURLPH: "ø_An image URL should start with http:// and end with .jpg or .png_å",
+				lblLabel: "ø_Image Caption_å",
 				lblLabel1: "Billedtekst",
 				lblLabel2: "Hold musen over teksten",
 				lblLabel3: "Ingen",
 				lblLabelPH: "Indtast noget tekst...",
+				lblMaximize: "ø_Include a maximize button in the corner of the image_å",
+				lblMaximizeHelp: "ø_Recommended only for high quality photos_å",
 				lblPosition: "Position",
 				lblPosition1: "Midt",
 				lblPosition2: "Fyld",
 				lblPosition3: "Tilpas",
 				lblPosition4: "Stræk",
+				lblPosition5: "ø_Custom_å",
+				tooltipDimension: "ø_The value can be specified in 'px' or '%'_å",
 				lblPosition2Explain: "(kan beskæres)",
 				lblPosition3Explain: "(kan ikke beskæres)",
+				lblPosition3Explain2: "ø_(width will always fit the panel)_å",
 				lblPosition4Explain: "(kan forvrænges)"
 			},
 			editorActionGeocode: {

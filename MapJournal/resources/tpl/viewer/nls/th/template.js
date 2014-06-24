@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "ยินดีต้อนรับเข้าสู่โปรแกรมประยุกต์บนเว็บ% TPL_NAME%. <br /> โปรแกรมจะยังไม่ได้กำหนดค่า",
 				notConfiguredMobile: "ยินดีต้อนรับสู่โปรแกรมเว็บ TPL_NAME%% โปรแกรมไม่ได้กำหนดค่าและยังสร้างไม่ได้รับการสนับสนุนบนอุปกรณ์มือถือ",
 				notAuthorized: "คุณยังไม่ได้รับอนุญาตให้เข้าถึงโปรแกรมนี้",
-				noBuilderIE8: "สร้างไม่ได้รับการสนับสนุนบน Internet Explorer 9 รุ่นก่อน"
+				noBuilderIE8: "สร้างไม่ได้รับการสนับสนุนบน Internet Explorer 9 รุ่นก่อน",
+				mapLoadingFail: "ก้_Something went wrong, the Map cannot be loaded._ษฺ"
 			},
 			mobileView: {
 				tapForDetails: "เลือกสำหรับรายละเอียด",
@@ -51,7 +52,7 @@
 				share: "แบ่งปัน"
 			},
 			overviewFromCommon: {
-				title: "ภาพรวมของแผนที่",
+				title: "ภาพรวมของแผนที่"
 			},
 			legendFromCommon: {
 				title: "สัญลักษณ์"
@@ -60,8 +61,8 @@
 				copy: "คัดลอก",
 				copied: "คัดลอก",
 				open: "เปิด",
-				embed: "ก้_Embed in website_ษฺ",
-				embedExplain: "ก้_Use the following HTML code to embed the Journal in a website._ษฺ",
+				embed: "ฝังลงในเว็บไซต์",
+				embedExplain: "ใช้รหัส HTML ต่อไปนี้ ในการฝังลงในเว็บไซต์การเดินทาง",
 				size: "ขนาด (กว้าง/สูง):"
 			}
         }

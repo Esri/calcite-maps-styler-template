@@ -17,14 +17,14 @@
             "errors": {
                 "createMap": "ไม่สามารถสร้างแผนที่ได้",
                 "general": "ข้อผิดพลาด",
-                "bingError": "การใช้งานแอพพลิเคชันนี้จะต้องมีคีย์ Bing Map ของคุณเอง",
+                "bingError": "การใช้งานแอพพลิเคชันนี้ คุณต้องมีคีย์ Bing Map ของตนเอง",
                 "noLegend": "ไม่มีคำอธิบายสัญลักษณ์แผนที่",
                 "heatmap": "บราวเซอร์นี้ไม่รองรับการใช้งานแผนที่แสดงความร้อน",
                 "noText": "กรุณาใส่ตำแหน่งที่ต้องการค้นหา",
                 "noLocation": "ไม่พบตำแหน่ง",
                 "integersOnly": "กรุณาใส่เฉพาะตัวเลขในฟิลด์นี้",
                 "nodesc": "ไม่มีคำอธิบาย",
-                "notAvailable": "ไม่พบข้อมูล", // added 8.26.2013
+                "notAvailable": "ไม่สามารถใช้ได้", // added 8.26.2013
                 "outsideArea": "ขณะนี้คุณอยู่นอกเขตพื้นที่บริการ", // added 8.26.2013
                 "geoLocationTimeOut": "หมดเวลา ไม่สามารถทำงานได้", // added 8.26.2013
                 "positionUnavailable": "ไม่พบตำแหน่ง", // added 8.26.2013
@@ -48,7 +48,7 @@
                 "menuTitle": "ค้นหาที่อยู่" // added 8.26.2013
             },
             "layer": {
-                "information": "ข้อมูล",
+                "information": "ข้อมูลข่าวสาร",
                 "transparency": "โปร่งแสง",
                 "searchSettings": "ค้นหาการตั้งค่า",
                 "filteredBy": "คัดกรองโดย:"
@@ -89,7 +89,7 @@
                 "menuTitle": "ผลลัพธ์&hellip;"
             },
             "places": {
-                "menuTitle": "สถานที่ที่บุ๊คมาร์คไว้",
+                "menuTitle": "สถานที่ที่บุคมาร์คไว้",
                 "places": "บุ๊คมาร์ค",
                 "placesTitle": "บุ๊คมาร์คสถานที่",
                 "myLocation": "ตำแหน่งปัจจุบันของฉัน",
@@ -142,7 +142,7 @@
                 "facebook": "เฟสบุค",
                 "facebookHeader": "แชร์บนเฟสบุค",
                 "twitter": "ทวิตเตอร์",
-                "twitterHeader": "แชร์บนทวิตเตอร์",
+                "twitterHeader": "แชร์ผ่านทวิตเตอร์",
                 "instructionHeader": "คัดลอก/วาง HTML บนเว็บเพจของคุณ",
                 "preview": "ดูตัวอย่างและปรับแต่ง"
             },
@@ -154,7 +154,7 @@
                 "viewsLabelPlural": "ยอดเข้าชม",
                 "commentsLabel": "แสดงความคิดเห็น",
                 "commentsLabelPlural": "ความคิดเห็น",
-                "modifiedLabel": "แก้ไขครั้งสุดท้ายเมื่อ",
+                "modifiedLabel": "ปรับปรุงครั้งสุดท้าย",
                 "by": "โดย",
                 "separator": ","
             },

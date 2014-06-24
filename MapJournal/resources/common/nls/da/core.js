@@ -13,7 +13,9 @@
 				open: "Åbn",
 				start: "Start",
 				loading: "Indlæser",
-				disabledAdmin: "Dette objekt er blevet deaktiveret af administratoren"
+				disabledAdmin: "Dette objekt er blevet deaktiveret af administratoren",
+				width: "ø_Width_å",
+				height: "ø_Height_å"
 			},
 			inlineFieldEdit: {
 				editMe: "Redigér mig!"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Layout",
 				explain: "Hvilket layout ønsker du at bruge?",
-				explainInit: "Du kan på et hvilket som helst tidspunkt ændre layoutet fra indstillingspanelet.",
+				explainInit: "ø_You can change the layout anytime from the settings dialog._å",
 				viewExample: "Vis et live-eksempel"
 			},
 			settingsTheme: {

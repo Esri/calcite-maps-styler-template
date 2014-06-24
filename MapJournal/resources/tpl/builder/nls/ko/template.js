@@ -27,16 +27,20 @@
 				title: "시작"
 			},
 			addEditPopup: {
+				disabled: "한_Add Section is disabled because the maximum number of allowed sections has been reached._빠",
 				titleAdd: "섹션 추가",
+				titleAddHome: "한_Add Home Section_빠",
 				titleEdit: "섹션 편집",
 				step: "단계",
-				stepMainStageExplain: "기본 단계에 맵, 이미지 또는 동영상 추가",
-				stepPanelExplain: "컨텐츠 추가",
+				stepMainStageExplain: "한_Main Stage Content_빠",
+				stepPanelExplain: "한_Content_빠",
 				stepMainStageNextTooltip: "섹션 제목을 입력하고 기본 단계 컨텐츠를 선택합니다.",
 				step2NextTooltip: "섹션 제목과 %LAYOUT-TYPE% 컨텐츠를 입력합니다.",
 				stepNextTooltipNext: "다음 단계로 이동하려면",
 				stepNextTooltipAdd: "섹션을 추가하려면",
-				titlePlaceholder: "섹션 제목...",
+				firstAddExplain: "한_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._빠",
+				firstAddLeanMore: "한_Learn More_빠",
+				titlePlaceholder: "섹션 제목..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "여기에 텍스트, 링크 및 작은 그래픽을 추가합니다.",
@@ -54,6 +58,10 @@
 				deleteTooltip: "삭제",
 				firstSectionExplain: "(홈 섹션은 이동할 수 없음)"
 			},
+			exportData: {
+				btn: "한_Export content_빠",
+				tooltip: "한_Use this button to export your content locally. This will open a new page that you can easily copy or save as a PDF.<br />Copying that page content in a word processor is the most effective way to recreate your Journal in case of an accidental deletion._빠"
+			},
 			help: {
 				lblHelp: "도움말",
 				lblAdd: "섹션 추가",
@@ -61,6 +69,7 @@
 				lblOrga: "컨텐츠 구성",
 				lblEdit: "편집",
 				lblPublish: "공유",
+				lblTips: "한_Tips_빠",
 				lblMore: "자세히 알아보시겠습니까?",
 				lblLink: "스토리 맵 웹 사이트를 방문하세요.",
 				content1Div1: "스토리를 작성할 때 다양한 스타일을 통합할 수 있습니다. <strong>%LAYOUT_TITLE%</strong>에는 일반적으로 텍스트, 이미지 및 동영상이 포함되고, 맵은 <strong>기본 단계</strong>로 이동합니다. 그러나 %TPL_NAME%을(를) 통해 이미지, 차트 및 동영상도 기본 단계에 포함할 수 있습니다.",
@@ -69,10 +78,13 @@
 				content2Div2: "사용자가 %TPL_NAME%을(를) 다른 사람에게 쉽게 퍼뜨릴 수 있도록 Facebook, Twitter 및 Bitly에 공유 링크를 추가할 수도 있습니다.",
 				content3Div1: "한_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._빠",
 				content4Div1: "실수를 발견했거나 자료를 변경하고 싶으십니까? 걱정하지 마세요. 앱 전체에서 편집 아이콘을 찾아 컨텐츠를 변경할 수 있습니다. %TPL_NAME%을(를) 개발할 때 원하는 만큼 편집 기능을 사용할 수 있습니다.",
-				content5Div1: "%TPL_NAME%은(는) %PORTAL% 계정에 저장되며 기본적으로 비공개 상태입니다. 사용자는 이 컨텐츠를 기관과만 공유할지 또는 세상에 공개할지를 결정할 수 있습니다. 짧은 URL도 제공되므로 더욱 쉽게 공유할 수 있습니다."
+				content5Div1: "%TPL_NAME%은(는) %PORTAL% 계정에 저장되며 기본적으로 비공개 상태입니다. 사용자는 이 컨텐츠를 기관과만 공유할지 또는 세상에 공개할지를 결정할 수 있습니다. 짧은 URL도 제공되므로 더욱 쉽게 공유할 수 있습니다.",
+				content6Div1: "한_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._빠",
+				content6Div2: "한_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_빠"
 			},
 			landing: {
-				lblAdd: "홈 섹션 추가",
+				lblAdd: "한_What do you want to call your Map Journal?_빠",
+				phAdd: "한_Enter your title..._빠",
 				lblOR: "또는",
 				lblHelp: "둘러보기"
 			},

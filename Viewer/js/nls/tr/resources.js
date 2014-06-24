@@ -27,7 +27,7 @@ define(
 			      "label3": 'Yatay (Görüntü)',
 			      "label4": 'Dikey (Görüntü)'
 			    },
-			    "legend": "Çıkışa gösterim ekle"
+			    "legend": "Çıktıya gösterim ekle"
 			},
 			"share": {
 				"extent": "Geçerli harita yayılımını kullan",

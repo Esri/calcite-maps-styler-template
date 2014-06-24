@@ -13,7 +13,9 @@
 				open: "Otevřít",
 				start: "Spustit",
 				loading: "Načítání",
-				disabledAdmin: "Tato funkce byla zakázána administrátorem"
+				disabledAdmin: "Tato funkce byla zakázána administrátorem",
+				width: "Ř_Width_ů",
+				height: "Ř_Height_ů"
 			},
 			inlineFieldEdit: {
 				editMe: "Edituj mě!"
@@ -26,8 +28,8 @@
 				buttonSettings: "Nastavení",
 				buttonHelp: "Nápověda",
 				buttonPreview: "Živý náhled",
-				tooltipFirstSave: "Tato funkce nebude k dispozici, dokud aplikaci neuložíte.",
-				tooltipNotShared: "Tato funkce nebude k dispozici, dokud aplikaci nebudete sdílet.",
+				tooltipFirstSave: "Tato funkce nebude k dispozici, dokud nebude aplikace uložena.",
+				tooltipNotShared: "Tato funkce není k dispozici, dokud aplikace nebude sdílena.",
 				noPendingChange: "Žádná neuložená změna",
 				unSavedChangePlural: "Neuložené změny",
 				closeWithPendingChange: "Opravdu chcete potvrdit tuto akci? Vaše změny budou ztraceny.",
@@ -65,7 +67,7 @@
 				shareA2div1: "Uložte si pro budoucí použití tento odkaz %LINK1% nebo použijte <a href='%LINK2%' target='_blank'>stránku položek aplikace</a>.",
 				shareA2div2: "Protože jste jejím vlastníkem, obsahuje aplikace po přihlášení do %PORTAL% tlačítko umožňující otevřít nástroj pro tvorbu.",				
 				shareQ3: "Kde jsou uložena data?",
-				shareA3: "Data a konfigurace %TPL_NAME% jsou uloženy v <a href='%LINK2%' target='_blank'>této položce webové aplikace</a>. Pokud jste použili import služeb Flickr, Picasa, Facebook nebo YouTube, vaše obrázky a videa nejsou duplikovány v %PORTAL%."
+				shareA3: "Data a konfigurace %TPL_NAME% jsou uložena v <a href='%LINK2%' target='_blank'>této položce webové aplikace</a>. Pokud jste použili import služeb Flickr, Picasa, Facebook nebo YouTube, vaše obrázky a videa nejsou duplikována v %PORTAL%."
 			},
 			settings: {
 				header: "Nastavení",
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Rozvržení",
 				explain: "Jaké rozvržení chcete použít?",
-				explainInit: "Rozvržení můžete kdykoli změnit v panelu nastavení.",
+				explainInit: "Ř_You can change the layout anytime from the settings dialog._ů",
 				viewExample: "Zobrazit živý příklad"
 			},
 			settingsTheme: {

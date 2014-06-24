@@ -1,11 +1,11 @@
 ﻿define(
    ({
   	map: {
-  		error: "ก้_Unable to create map_ษฺ"
+  		error: "ไม่สามารถสร้างแผนที่ได้"
   	},
     viewer: {
-      content_title: "ก้_Filter_ษฺ",
-      button_text: "ก้_Apply_ษฺ",
+      content_title: "กรอง",
+      button_text: "ประยุกต์ใช้",
       filterInstructions: "กรองชั้นข้อมูลด้วยการกำหนดค่าเฉพาะ",
       filterOr: "เงื่อนไขอย่างใดอย่างหนึ่งต้องเป็นจริง",
       filterAnd: "เงื่อนไขทั้งหมดต้องเป็นจริง",

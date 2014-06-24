@@ -5,8 +5,8 @@
         },
         onlineStatus: {
             online: "כן_You are currently online._ש",
-            offline: "כן_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._ש",
-            reconnecting: "כן_Reconnecting&hellip;_ש"
+            offline: "אתה עובד כרגע במצב לא מקוון. הטופס ישמר באופן מקומי עד שחיבור לשרת יכול להתבצע.",
+            reconnecting: "מתקשר מחש&hellip;"
         },
 	 configure: {
             mapdlg: {
@@ -17,7 +17,7 @@
                     favoritesLabel: "המועדפים שלי"
                 },
                 title: "בחר Web Map",
-                searchTitle: "כן_Search_ש",
+                searchTitle: "חפש",
                 ok: "אישור",
                 cancel: "ביטול",
                 placeholder: "הכנס מונח לחיפוש"
@@ -30,7 +30,7 @@
                     favoritesLabel: "המועדפים שלי"
                 },
                 title: "בחר קבוצה",
-                searchTitle: "כן_Search_ש",
+                searchTitle: "חפש",
                 ok: "אישור",
                 cancel: "ביטול",
                 placeholder: "הכנס מונח לחיפוש"

@@ -17,7 +17,7 @@
 define(
      ({
         "map": {
-            "error": "ก้_Unable to create map_ษฺ"
+            "error": "ไม่สามารถสร้างแผนที่ได้"
         },
         "tools":{
 	    	"print": {
@@ -27,30 +27,30 @@ define(
 			      "label3": 'แนวนอน (Image)',
 			      "label4": 'แนวตั้ง (Image)'
 			    },
-			    "legend": "ก้_Add legend to output_ษฺ"
+			    "legend": "เพิ่มคำอธิบายแผนที่ไปยังส่วนผลลัพธ์"
 			},
 			"share": {
 				"extent": "ใช้ขนาดของแแผนที่ปัจจุบัน",
 				"label": "แชร์แผนที่นี้",
 				"link": "เชื่อมโยงแผนที่",
-				"facebook": "ก้_Facebook_ษฺ",
+				"facebook": "เฟสบุค",
 				"twitter": "ทวิตเตอร์"
 			}
         },
         "tooltips":{
         	"home": "ขนาดเริ่มต้น",
         	"locate": "ค้นหาตำแหน่งของฉัน",
-        	"legend": "ก้_Legend_ษฺ",
-        	"bookmarks": "ก้_Bookmarks_ษฺ",
-        	"layers": "ก้_Layers_ษฺ",
-        	"basemap": "ก้_Basemap gallery_ษฺ",
-        	"overview": "ก้_Overview map_ษฺ",
-        	"measure": "ก้_Measure_ษฺ",
+        	"legend": "คำอธิบายแผนที่",
+        	"bookmarks": "บุคมาร์ค",
+        	"layers": "ชั้นข้อมูล",
+        	"basemap": "แกลเลอรีแผนที่ฐาน",
+        	"overview": "ดูภาพรวมแผนที่",
+        	"measure": "การวัด",
         	"edit": "แก้ไข",
         	"time": "เวลา",
         	"print": "พิมพ์",
-        	"details": "ก้_Details_ษฺ",
-        	"share": "ก้_Share_ษฺ"
+        	"details": "รายละเอียด",
+        	"share": "แชร์"
         }
     })
 

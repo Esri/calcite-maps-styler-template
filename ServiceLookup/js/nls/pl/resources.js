@@ -18,6 +18,9 @@
 
         splashscreen: {
             buttonText: "OK",
+        },
+        ui:{
+            basemapButton: "ł_Basemap_ą"
         }
     })
 

@@ -27,16 +27,20 @@
 				title: "مرحبًا بك في"
 			},
 			addEditPopup: {
+				disabled: "بيت_Add Section is disabled because the maximum number of allowed sections has been reached._لاحقة",
 				titleAdd: "إضافة مقطع",
+				titleAddHome: "بيت_Add Home Section_لاحقة",
 				titleEdit: "تحرير المقطع",
 				step: "خطوة",
-				stepMainStageExplain: "إضافة خريطة أو صورة أو مقطع فيديو إلى المرحلة الأساسية",
-				stepPanelExplain: "إضافة المحتويات إلى",
+				stepMainStageExplain: "بيت_Main Stage Content_لاحقة",
+				stepPanelExplain: "بيت_Content_لاحقة",
 				stepMainStageNextTooltip: "أدخل",
 				step2NextTooltip: "أدخل عنوان المقطع ومحتويات %LAYOUT-TYPE%",
 				stepNextTooltipNext: "للانتقال إلى الخطوة التالية",
 				stepNextTooltipAdd: "لإضافة المقطع",
-				titlePlaceholder: "عنوان المقطع...",
+				firstAddExplain: "بيت_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._لاحقة",
+				firstAddLeanMore: "بيت_Learn More_لاحقة",
+				titlePlaceholder: "عنوان المقطع..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "إضافة النص والروابط والرسومات الصغيرة هنا.",
@@ -54,6 +58,10 @@
 				deleteTooltip: "حذف",
 				firstSectionExplain: "(يتعذر نقل المقطع الأساسي)"
 			},
+			exportData: {
+				btn: "بيت_Export content_لاحقة",
+				tooltip: "بيت_Use this button to export your content locally. This will open a new page that you can easily copy or save as a PDF.<br />Copying that page content in a word processor is the most effective way to recreate your Journal in case of an accidental deletion._لاحقة"
+			},
 			help: {
 				lblHelp: "تعليمات",
 				lblAdd: "إضافة مقطع",
@@ -61,6 +69,7 @@
 				lblOrga: "تنظيم المحتويات",
 				lblEdit: "تحرير",
 				lblPublish: "مشاركة",
+				lblTips: "بيت_Tips_لاحقة",
 				lblMore: "هل تريد المزيد؟",
 				lblLink: "تفضل بزيارة موقع خرائط الحكاية على الويب.",
 				content1Div1: "يمكن تكامل أنماط متعددة عند بناء الحكاية. يحتفظ <strong>%LAYOUT_TITLE%</strong> بالنصوص والصور ومقاطع الفيديو عند وصول الخرائط<strong>إلى المرحلة الأساسية</strong>. مع ذلك، يسمح %TPL_NAME% بتمييز الصور والمخططات ومقاطع الفيديو داخل المرحلة الاساسية أيضًا.",
@@ -69,10 +78,13 @@
 				content2Div2: "يمكن أيضًا مشاركة الروابط على Facebook وTwitter ليتمكن القُراء من نشر %TPL_NAME% للآخرين بسهولة.",
 				content3Div1: "بيت_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._لاحقة",
 				content4Div1: "هل تم إيجاد خطأ أو ترغب في تغيير المواد التعليمية؟ لا. ابحث عن رمز تحرير في التطبيق للقيام بالتغييرات في المحتويات. ستقوم باستخدام وظائف التحرير عدة مرات عند تطوير %TPL_NAME%!",
-				content5Div1: "يتم حفظ %TPL_NAME% على حساب %PORTAL% افتراضيًا. يمكن إقرار مشاركته مع المؤسسة أو فتحه على العالم. سندعمك بعنوان URL لتتمكن من مشاركته بشكل أسهل."
+				content5Div1: "يتم حفظ %TPL_NAME% على حساب %PORTAL% افتراضيًا. يمكن إقرار مشاركته مع المؤسسة أو فتحه على العالم. سندعمك بعنوان URL لتتمكن من مشاركته بشكل أسهل.",
+				content6Div1: "بيت_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._لاحقة",
+				content6Div2: "بيت_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_لاحقة"
 			},
 			landing: {
-				lblAdd: "إضافة مقطع الصفحة الرئيسية",
+				lblAdd: "بيت_What do you want to call your Map Journal?_لاحقة",
+				phAdd: "بيت_Enter your title..._لاحقة",
 				lblOR: "أو",
 				lblHelp: "القيام بجولة"
 			},

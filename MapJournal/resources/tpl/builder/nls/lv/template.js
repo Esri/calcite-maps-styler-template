@@ -27,16 +27,20 @@
 				title: "Laipni lūdzam"
 			},
 			addEditPopup: {
+				disabled: "ķ_Add Section is disabled because the maximum number of allowed sections has been reached._ū",
 				titleAdd: "Pievienot sadaļu",
+				titleAddHome: "ķ_Add Home Section_ū",
 				titleEdit: "Sadaļas rediģēšana",
 				step: "Solis",
-				stepMainStageExplain: "Pievienot galvenajam posmam karti, attēlu vai video",
-				stepPanelExplain: "Pievienot saturu šim:",
+				stepMainStageExplain: "ķ_Main Stage Content_ū",
+				stepPanelExplain: "ķ_Content_ū",
 				stepMainStageNextTooltip: "Ievadiet sadaļas virsrakstu un izvēlieties galvenā posma saturu",
 				step2NextTooltip: "Ievadiet sadaļas virsrakstu un %LAYOUT-TYPE% saturu",
 				stepNextTooltipNext: "lai pārietu uz nākamo soli",
 				stepNextTooltipAdd: "lai pievienotu sadaļu",
-				titlePlaceholder: "Sadaļas virsraksts...",
+				firstAddExplain: "ķ_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._ū",
+				firstAddLeanMore: "ķ_Learn More_ū",
+				titlePlaceholder: "Sadaļas virsraksts..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Šeit pievienojiet tekstu, saites un maza izmēra grafikas.",
@@ -54,6 +58,10 @@
 				deleteTooltip: "Dzēst",
 				firstSectionExplain: "(Sākuma sadaļu nevar pārvietot)"
 			},
+			exportData: {
+				btn: "ķ_Export content_ū",
+				tooltip: "ķ_Use this button to export your content locally. This will open a new page that you can easily copy or save as a PDF.<br />Copying that page content in a word processor is the most effective way to recreate your Journal in case of an accidental deletion._ū"
+			},
 			help: {
 				lblHelp: "Palīdzība",
 				lblAdd: "Pievienot sadaļu",
@@ -61,6 +69,7 @@
 				lblOrga: "Organizēt saturu",
 				lblEdit: "Rediģējumi",
 				lblPublish: "Koplietošana",
+				lblTips: "ķ_Tips_ū",
 				lblMore: "Vai vēlaties uzzināt vairāk?",
 				lblLink: "Apmeklējiet Story Maps web vietni.",
 				content1Div1: "Veidojot stāstījumu, varat integrēt dažādus stilus. <strong>%LAYOUT_TITLE%</strong> parasti ir ietverts teksts, attēli un video, bet kartes parasti ir izvietotas <strong>galvenajā posmā</strong>. Tomēr %TPL_NAME% ļauj jums rādīt attēlus, diagrammas un video arī galvenajā posmā.",
@@ -69,10 +78,13 @@
 				content2Div2: "Koplietošanas saites varat arī pievienot vietnēs Facebook, Twitter un Bitly, lai lasītāji varētu viegli pavēstīt par jūsu %TPL_NAME% citiem lietotājiem.",
 				content3Div1: "ķ_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ū",
 				content4Div1: "Atradāt kļūdu vai vēlaties mainīt savus materiālus? Tas ir viegli paveicams! Lai saturā veiktu izmaiņas, aplikācijā atrodiet rediģēšanas ikonu. Izstrādājot %TPL_NAME%, rediģēšanas funkciju nāksies bieži izmantot.",
-				content5Div1: "Jūsu %TPL_NAME% ir saglabāts jūsu portāla %PORTAL% kontā un ir konfidenciāls pēc noklusējuma. Varat izvēlēties to kopīgot ar savu organizāciju vai padarīt pieejamu visiem lietotājiem. Mēs pat nodrošināsim jums saīsinātu vietrādi URL, lai koplietošana būtu vienkārša."
+				content5Div1: "Jūsu %TPL_NAME% ir saglabāts jūsu portāla %PORTAL% kontā un ir konfidenciāls pēc noklusējuma. Varat izvēlēties to kopīgot ar savu organizāciju vai padarīt pieejamu visiem lietotājiem. Mēs pat nodrošināsim jums saīsinātu vietrādi URL, lai koplietošana būtu vienkārša.",
+				content6Div1: "ķ_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._ū",
+				content6Div2: "ķ_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_ū"
 			},
 			landing: {
-				lblAdd: "Pievienot sākuma sadaļu",
+				lblAdd: "ķ_What do you want to call your Map Journal?_ū",
+				phAdd: "ķ_Enter your title..._ū",
 				lblOR: "Vai",
 				lblHelp: "Iepazīties"
 			},

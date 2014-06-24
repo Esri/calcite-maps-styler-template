@@ -40,35 +40,60 @@
 				howToFind: "Kaip surasti Picasa arba Google+ paskyros ID",
 				howToFind2: "Nukopijuokite skaičius tarp pirmo ir antro \'/\' bet kuriame Picasa ar G+ puslapyje"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Į_Check_š",
+				notFound: "Į_Video not found_š",
+				found: "Į_Video found_š",
+				select: "Į_Select this video_š"
+			},
+			videoSelectorHome: {
+				other: "Į_Other_š"
 			},
 			videoSelectorYoutube: {
+				url: "Į_URL of a Youtube video_š",
 				pageInputLbl: "Vartotojo vardas",
 				lookupMsgError: "Vartotojas nerastas",
 				howToFind: "Kaip rasti YouTube vartotojo vardą",
 				howToFind2: "Vartotojo vardas rodomas po video",
-				found: "Surasta",
+				found: "Į_Found_š",
 				noData: "Nerasta viešų video"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "Į_URL of a Vimeo video_š"
+			},
+			videoSelectorOther: {
+				explain1: "Į_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._š",
+				explain2: "Į_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._š",
+				explain3: "Į_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._š",
+				webpage: "Į_Web page feature_š"
+			},
+			webpageSelectorHome: {
+				lblUrl: "Į_Webpage URL_š",
+				lblEmbed: "Į_Embed code_š",
+				lblOR: "Į_OR_š",
+				lblError1: "Į_Error, clear one of the two input fields._š",
+				lblError2: "Į_Embed code can only contain one <iframe>_š"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Įvairialypės informacijos URL...",
-				lblLabel: "Žymė",
+				lblURLPH: "Į_An image URL should start with http:// and end with .jpg or .png_š",
+				lblLabel: "Į_Image Caption_š",
 				lblLabel1: "Antraštė",
 				lblLabel2: "Tekstas, rodomas užvedus",
 				lblLabel3: "Nėra",
 				lblLabelPH: "Įveskite tekstą...",
+				lblMaximize: "Į_Include a maximize button in the corner of the image_š",
+				lblMaximizeHelp: "Į_Recommended only for high quality photos_š",
 				lblPosition: "Padėtis",
 				lblPosition1: "Centruoti",
 				lblPosition2: "Užpildyti",
 				lblPosition3: "Talpinti",
 				lblPosition4: "Ištempti",
+				lblPosition5: "Į_Custom_š",
+				tooltipDimension: "Į_The value can be specified in 'px' or '%'_š",
 				lblPosition2Explain: "(gali būti apkarpoma)",
 				lblPosition3Explain: "(nebus apkarpoma)",
+				lblPosition3Explain2: "Į_(width will always fit the panel)_š",
 				lblPosition4Explain: "(gali būti iškraipoma)"
 			},
 			editorActionGeocode: {

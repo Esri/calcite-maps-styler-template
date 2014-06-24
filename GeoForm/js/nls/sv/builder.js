@@ -13,7 +13,7 @@
             styleText: "Å_5. Style_ö",
             previewText: "Å_6. Preview_ö",
             publishText: "Å_7. Publish_ö",
-            titleText: "GeoForm-byggverktyg",
+            titleText: "GeoForm-byggverktyget",
             descriptionText: "Å_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a mapâ€™s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._ö",
             btnPreviousText: "Föregående",
             btnNextText:"Nästa",

@@ -27,7 +27,7 @@ define(
 			      "label3": 'לרוחב (Image)',
 			      "label4": 'לאורך (Image)'
 			    },
-			    "legend": "כן_Add legend to output_ש"
+			    "legend": "הוסף מקרא לתוצאה"
 			},
 			"share": {
 				"extent": "השתמש בתיחום המפה הנוכחי",
@@ -43,14 +43,14 @@ define(
         	"legend": "מקרא",
         	"bookmarks": "סימניות",
         	"layers": "שכבות",
-        	"basemap": "כן_Basemap gallery_ש",
-        	"overview": "כן_Overview map_ש",
+        	"basemap": "גלרית מפות בסיס",
+        	"overview": "מפת תצוגה מקדימה",
         	"measure": "מדידה",
         	"edit": "עריכה",
         	"time": "זמן",
-        	"print": "כן_Print_ש",
+        	"print": "הדפס",
         	"details": "פרטים",
-        	"share": "כן_Share_ש"
+        	"share": "שתף"
         }
     })
 

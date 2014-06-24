@@ -2,7 +2,7 @@
     "root": ({
         "widgets": {
             "ShareDialog": {
-                "title": "כן_Share_ש",
+                "title": "שתף",
                 "heading": "שתף מפה זו",
                 "url": "קשר מפה",
                 "embed": "הטמע את המפה",

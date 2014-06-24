@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "%TPL_NAME% Web アプリケーションへようこそ。<br />このアプリケーションは、まだ構成されていません。",
 				notConfiguredMobile: "%TPL_NAME% Web アプリケーションへようこそ。このアプリケーションは、まだ構成されていません。ビルダは、モバイル デバイスではサポートされていません。",
 				notAuthorized: "このアプリケーションにアクセスする権限がありません",
-				noBuilderIE8: "ビルダは、バージョン 9 より前の Internet Explorer ではサポートされていません。"
+				noBuilderIE8: "ビルダは、バージョン 9 より前の Internet Explorer ではサポートされていません。",
+				mapLoadingFail: "須_Something went wrong, the Map cannot be loaded._鷗"
 			},
 			mobileView: {
 				tapForDetails: "タップして詳細を表示",
@@ -51,7 +52,7 @@
 				share: "共有"
 			},
 			overviewFromCommon: {
-				title: "概観図",
+				title: "概観図"
 			},
 			legendFromCommon: {
 				title: "凡例"

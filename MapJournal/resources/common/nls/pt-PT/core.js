@@ -13,7 +13,9 @@
 				open: "Abrir",
 				start: "Iniciar",
 				loading: "A carregar",
-				disabledAdmin: "Esta funcionalidade foi desativada pelo Admnistrador"
+				disabledAdmin: "Esta funcionalidade foi desativada pelo Admnistrador",
+				width: "ã_Width_Ç",
+				height: "ã_Height_Ç"
 			},
 			inlineFieldEdit: {
 				editMe: "Edite-me!"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Layout",
 				explain: "Que layout pretende utilizar?",
-				explainInit: "Pode efetuar alterações em qualquer momento no painel de definições.",
+				explainInit: "ã_You can change the layout anytime from the settings dialog._Ç",
 				viewExample: "Ver um exemplo em tempo real"
 			},
 			settingsTheme: {

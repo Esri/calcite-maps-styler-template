@@ -25,8 +25,8 @@
 				tooltipLocation: "כן_Define the map location that will be used when your readers navigate to this section._ש",
 				tooltipContent: "הגדר את השכבות הנראות.",
 				tooltipPopup: "הצג חלון קופץ שיוצג כאשר הקוראים שלך מנווטים לחלק הזה.",
-				tooltipOverview: "כן_Display a small overview map along with the main map_ש",
-				tooltipLegend: "כן_Display the map legend on the map, helpful when the map has many layers and symbols._ש",
+				tooltipOverview: "הצג מפת התמצאות קטנה יחד עם המפה הראשית",
+				tooltipLegend: "הצג את מקרא המפה על המפה. זה יכול להועיל כאשר יש למפה שכבות וסמלים רבים.",
 				mapCfgInvite: "כן_Use these controls to configure your map_ש"
 			},
 			configure: {
@@ -39,7 +39,7 @@
 				extentExplain: "הזז והתמקד במפה כדי לקבוע כיצד היא תראה לקוראים שלך.",
 				extentSave: "בחר את מיקום המפה",
 				popupTitle: "חלון מפה קופץ",
-				popupExplain: "כן_Configure the look of the pop-up shown to readers_ש",
+				popupExplain: "קבע את תצורת המראה של החלון הקופץ המוצג לקוראים",
 				popupSave: "שמור את הגדרות התצוגה של החלון הקופץ",
 				hintNavigation: "הניווט של המפה חסום."
 			}

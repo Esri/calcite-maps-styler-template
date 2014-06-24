@@ -18,6 +18,9 @@
 
         splashscreen: {
             buttonText: "确定",
+        },
+        ui:{
+            basemapButton: "试_Basemap_验"
         }
     })
 

@@ -27,16 +27,20 @@
 				title: "Witamy w"
 			},
 			addEditPopup: {
+				disabled: "ł_Add Section is disabled because the maximum number of allowed sections has been reached._ą",
 				titleAdd: "Dodaj sekcję",
+				titleAddHome: "ł_Add Home Section_ą",
 				titleEdit: "Edytuj sekcję",
 				step: "Etap",
-				stepMainStageExplain: "Dodaj mapę, obraz lub film wideo do obszaru głównego",
-				stepPanelExplain: "Dodaj zawartość do",
+				stepMainStageExplain: "ł_Main Stage Content_ą",
+				stepPanelExplain: "ł_Content_ą",
 				stepMainStageNextTooltip: "Wpisz tytuł sekcji i wybierz zawartość, która znajdzie się w obszarze głównym",
 				step2NextTooltip: "Wpisz tytuł sekcji i zawartość, która będzie wyświetlana w układzie %LAYOUT-TYPE%",
 				stepNextTooltipNext: "aby przejść do kolejnego etapu",
 				stepNextTooltipAdd: "aby dodać sekcję",
-				titlePlaceholder: "Tytuł sekcji",
+				firstAddExplain: "ł_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._ą",
+				firstAddLeanMore: "ł_Learn More_ą",
+				titlePlaceholder: "Tytuł sekcji"
 			},
 			addEditViewText: {
 				editorPlaceholder: "Tutaj możesz dodać tekst, łącza oraz niewielkie elementy graficzne.",
@@ -54,6 +58,10 @@
 				deleteTooltip: "Usuń",
 				firstSectionExplain: "(Sekcji Start nie można przenieść)."
 			},
+			exportData: {
+				btn: "ł_Export content_ą",
+				tooltip: "ł_Use this button to export your content locally. This will open a new page that you can easily copy or save as a PDF.<br />Copying that page content in a word processor is the most effective way to recreate your Journal in case of an accidental deletion._ą"
+			},
 			help: {
 				lblHelp: "Pomoc",
 				lblAdd: "Dodaj sekcję",
@@ -61,6 +69,7 @@
 				lblOrga: "Organizuj zawartość",
 				lblEdit: "Edycje",
 				lblPublish: "Udostępnij",
+				lblTips: "ł_Tips_ą",
 				lblMore: "Chcesz mieć więcej możliwości?",
 				lblLink: "Odwiedź witrynę Story Maps.",
 				content1Div1: "Podczas tworzenia opowiadania możesz łączyć różne style. W układzie <strong>%LAYOUT_TITLE%</strong> zwykle znajduje się tekst, obrazy oraz filmy wideo, mapy natomiast są na ogół widoczne w <strong>obszarze głównym</strong>. Jednak aplikacja %TPL_NAME% pozwala również na umieszczenie w obszarze głównym także obrazów obiektów, diagramów i filmów wideo.",
@@ -69,10 +78,13 @@
 				content2Div2: "Możesz również dodać łącza udostępniania w serwisach Facebook, Twitter i Bitly, dzięki czemu użytkownicy będą mogli łatwo rozpowszechniać aplikację %TPL_NAME% wśród szerokiego grona odbiorców.",
 				content3Div1: "ł_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ą",
 				content4Div1: "Czy znaleziono błąd w aplikacji, czy chcesz zmienić materiały? Odszukaj ikonę edycji w odpowiednim miejscu w aplikacji i zmodyfikuj zawartość. Podczas tworzenia aplikacji %TPL_NAME% konieczne może być wielokrotne korzystanie z funkcji edycji!",
-				content5Div1: "Aplikacja %TPL_NAME% zostaje zapisana na koncie w portalu %PORTAL% i domyślnie zostaje oznaczona jako prywatna. Użytkownik może zadecydować, czy będzie ona udostępniona instytucji, czy też dostępna dla użytkowników z całego świata. W celu ułatwienia użytkownikom udostępniania zapewniamy im skrócony adres URL."
+				content5Div1: "Aplikacja %TPL_NAME% zostaje zapisana na koncie w portalu %PORTAL% i domyślnie zostaje oznaczona jako prywatna. Użytkownik może zadecydować, czy będzie ona udostępniona instytucji, czy też dostępna dla użytkowników z całego świata. W celu ułatwienia użytkownikom udostępniania zapewniamy im skrócony adres URL.",
+				content6Div1: "ł_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._ą",
+				content6Div2: "ł_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_ą"
 			},
 			landing: {
-				lblAdd: "Dodaj sekcję Start",
+				lblAdd: "ł_What do you want to call your Map Journal?_ą",
+				phAdd: "ł_Enter your title..._ą",
 				lblOR: "Lub",
 				lblHelp: "Dowiedz się więcej"
 			},

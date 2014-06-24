@@ -18,6 +18,9 @@
 
         splashscreen: {
             buttonText: "Gerai",
+        },
+        ui:{
+            basemapButton: "Į_Basemap_š"
         }
     })
 

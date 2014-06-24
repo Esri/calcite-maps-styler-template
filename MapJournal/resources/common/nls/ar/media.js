@@ -40,35 +40,60 @@
 				howToFind: "كيفية إيجاد Picasa أو Google+ أو معرف الحساب",
 				howToFind2: "نسخ الأرقام بين الأول والثاني \'/\'  لأي من Picasa او صفحة G+"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "بيت_Check_لاحقة",
+				notFound: "بيت_Video not found_لاحقة",
+				found: "بيت_Video found_لاحقة",
+				select: "بيت_Select this video_لاحقة"
+			},
+			videoSelectorHome: {
+				other: "بيت_Other_لاحقة"
 			},
 			videoSelectorYoutube: {
+				url: "بيت_URL of a Youtube video_لاحقة",
 				pageInputLbl: "اسم المستخدم",
 				lookupMsgError: "لم يتم العثور على المستخدم",
 				howToFind: "كيفية إيجاد اسم مستخدم YouTube",
 				howToFind2: "يتم عرض اسم المستخدم أسفل الفيديوهات",
-				found: "تم العثور",
+				found: "بيت_Found_لاحقة",
 				noData: "لم يتم العثور على الفيديوهات العامة"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "بيت_URL of a Vimeo video_لاحقة"
+			},
+			videoSelectorOther: {
+				explain1: "بيت_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._لاحقة",
+				explain2: "بيت_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._لاحقة",
+				explain3: "بيت_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._لاحقة",
+				webpage: "بيت_Web page feature_لاحقة"
+			},
+			webpageSelectorHome: {
+				lblUrl: "بيت_Webpage URL_لاحقة",
+				lblEmbed: "بيت_Embed code_لاحقة",
+				lblOR: "بيت_OR_لاحقة",
+				lblError1: "بيت_Error, clear one of the two input fields._لاحقة",
+				lblError2: "بيت_Embed code can only contain one <iframe>_لاحقة"
 			},
 			mediaConfigure: {
 				lblURL: "محدد موقع معلومات (URL)",
-				lblURLPH: "عنوان URL للوسائط...",
-				lblLabel: "لافتة التسمية",
+				lblURLPH: "بيت_An image URL should start with http:// and end with .jpg or .png_لاحقة",
+				lblLabel: "بيت_Image Caption_لاحقة",
 				lblLabel1: "تسمية وضيحية",
 				lblLabel2: "التحويم حول النص",
 				lblLabel3: "بلا",
 				lblLabelPH: "إدخال النص...",
+				lblMaximize: "بيت_Include a maximize button in the corner of the image_لاحقة",
+				lblMaximizeHelp: "بيت_Recommended only for high quality photos_لاحقة",
 				lblPosition: "الموضع",
 				lblPosition1: "المركز",
 				lblPosition2: "تعبئة",
 				lblPosition3: "احتواء",
 				lblPosition4: "توسيع",
+				lblPosition5: "بيت_Custom_لاحقة",
+				tooltipDimension: "بيت_The value can be specified in 'px' or '%'_لاحقة",
 				lblPosition2Explain: "(يمكن القص)",
 				lblPosition3Explain: "(لا يتم القص)",
+				lblPosition3Explain2: "بيت_(width will always fit the panel)_لاحقة",
 				lblPosition4Explain: "(يمكن الإتلاف)"
 			},
 			editorActionGeocode: {

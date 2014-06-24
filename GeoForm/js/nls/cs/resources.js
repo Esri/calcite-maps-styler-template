@@ -5,7 +5,7 @@
         },
         onlineStatus: {
             online: "Ř_You are currently online._ů",
-            offline: "Právě pracujete v režimu offline. Zaslané formuláře budou uloženy na místní počítač, dokud nebude navázáno spojení se serverem.",
+            offline: "Právě pracujete v režimu offline. Odeslané formuláře budou uloženy na místní počítač, dokud nebude navázáno spojení se serverem.",
             reconnecting: "Obnovuje se připojení&hellip;"
         },
 	 configure: {

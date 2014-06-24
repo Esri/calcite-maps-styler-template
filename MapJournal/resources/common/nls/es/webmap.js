@@ -26,7 +26,7 @@
 				tooltipContent: "Define las capas visibles.",
 				tooltipPopup: "Elige una ventana emergente que se mostrará cuando los lectores naveguen a esta sección.",
 				tooltipOverview: "Muestra un pequeño mapa de vista general junto con el mapa principal",
-				tooltipLegend: "Muestra la leyenda del mapa en el mapa, algo que resulta útil cuando el mapa tiene muchos símbolos y capas.",
+				tooltipLegend: "Muestra la leyenda en el mapa, algo que resulta útil cuando el mapa tiene muchos símbolos y capas.",
 				mapCfgInvite: "á_Use these controls to configure your map_Ó"
 			},
 			configure: {

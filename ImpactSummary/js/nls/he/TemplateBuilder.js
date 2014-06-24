@@ -46,7 +46,7 @@
                 "nextButtonText": "הבא",
                 "prevButtonText": "קודם",
                 "enterLabelText": "הוסף תווית",
-                "SelectedFeatureText": "כן_Selected Feature_ש",
+                "SelectedFeatureText": "ישויות נבחרות",
                 "layerHelpTextMessage": "אפליקציה זו דורשת שכבה עם שדות מספריים",
                 "alertMessage": {
                     "resetVariableMessage": "האם אתה בטוח שברצונך לאתחל את המשתנים?",

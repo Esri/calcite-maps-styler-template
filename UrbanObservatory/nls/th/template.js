@@ -21,7 +21,7 @@
     "viewMapOnline": "ดูแผนที่นี้บน ArcGIS.com",
     "selectMapPanel": "เลือก",
     "noDescription": "[ไม่มีคำอธิบาย]",
-    "themeNotAvailable": "ไม่พบแผนที่นี้",
+    "themeNotAvailable": "ไม่สามารถใช้แผนที่ได้",
     "legend": "คำอธิบายสัญลักษณ์"
   },
   errors: {

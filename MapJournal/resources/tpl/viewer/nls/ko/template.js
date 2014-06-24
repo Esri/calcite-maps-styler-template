@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "%TPL_NAME% 웹 응용프로그램을 시작합니다.<br />응용프로그램이 아직 구성되지 않았습니다.",
 				notConfiguredMobile: "%TPL_NAME% 웹 응용프로그램을 시작합니다. 응용프로그램이 구성되지 않았으며, 빌더는 모바일 장치에서 지원되지 않습니다.",
 				notAuthorized: "이 응용프로그램에 액세스할 권한이 없습니다.",
-				noBuilderIE8: "Internet Explorer 9 이전 버전에서는 빌더가 지원되지 않습니다."
+				noBuilderIE8: "Internet Explorer 9 이전 버전에서는 빌더가 지원되지 않습니다.",
+				mapLoadingFail: "한_Something went wrong, the Map cannot be loaded._빠"
 			},
 			mobileView: {
 				tapForDetails: "세부정보를 보려면 누릅니다.",
@@ -51,7 +52,7 @@
 				share: "공유"
 			},
 			overviewFromCommon: {
-				title: "개요 맵",
+				title: "개요 맵"
 			},
 			legendFromCommon: {
 				title: "범례"
