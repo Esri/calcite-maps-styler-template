@@ -1,10 +1,13 @@
-change report #59 at 06/23/2014 14:25:02.70
+change report #60 at 06/24/2014 10:59:00.30
 -
 for git branch
 develop
 in repository local-government-online-apps
-140623103314062319581406201717
+140624160314062416491406231948
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M s2.html
+ M FindEditFilter.json
+ M FindEditFilter_try_it.json
+ M Finder.json
+ M Finder_try_it.json

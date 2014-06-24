@@ -114,7 +114,7 @@
             "label": "Result Display Fields",
             "fieldName": "featureSearcher.displayFields",
             "type": "string",
-            "tooltip": "Comma-separated list of Find Layer field names. Values in these fields will be returned in the Find results list. If the layer in which a result was found does not contain a field in this list, the Search Field value is returned.",
+            "tooltip": "Comma-separated list of Find Layer field names in the same order as the Find Layers to which they apply. Values in these fields will be returned in the results list. If the layer in which a result was found does not have a corresponding field in this list, the Fearch Field value is returned. Only one Result Display Field can be specified for each Find Layer.",
             "placeholder": "FIELD1, FIELD2, …"
         }, {
             "label": "Zoom Level",
@@ -146,7 +146,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit b1ba3fe707f416d2 2014-06-23 14:26:59 -0700"
+                "commit 652b67d62b160722 2014-06-24 11:01:38 -0700"
             ]
         }
     }, {
