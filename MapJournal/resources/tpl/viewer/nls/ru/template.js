@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Добро пожаловать в веб-приложение %TPL_NAME%.<br />Приложение еще не настроено.",
 				notConfiguredMobile: "Добро пожаловать в веб-приложение %TPL_NAME%. Приложение ещё не настроено. Конструктор не поддерживается на мобильных устройствах.",
 				notAuthorized: "Вы не авторизованы для доступа к данному приложению",
-				noBuilderIE8: "Конструктор не поддерживается в браузере Internet Explorer версий ранее 9."
+				noBuilderIE8: "Конструктор не поддерживается в браузере Internet Explorer версий ранее 9.",
+				mapLoadingFail: "Ж_Something went wrong, the Map cannot be loaded._Я"
 			},
 			mobileView: {
 				tapForDetails: "Коснитесь для подробной информации",
@@ -51,7 +52,7 @@
 				share: "Общий доступ"
 			},
 			overviewFromCommon: {
-				title: "Обзорная карта",
+				title: "Обзорная карта"
 			},
 			legendFromCommon: {
 				title: "Легенда"

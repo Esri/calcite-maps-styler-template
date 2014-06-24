@@ -27,16 +27,20 @@
 				title: "Velkommen til"
 			},
 			addEditPopup: {
+				disabled: "å_Add Section is disabled because the maximum number of allowed sections has been reached._ø",
 				titleAdd: "Legg til seksjon",
+				titleAddHome: "å_Add Home Section_ø",
 				titleEdit: "Rediger seksjon",
 				step: "Trinn",
-				stepMainStageExplain: "Legg til et kart, et bilde eller en video i hovedstadiet",
-				stepPanelExplain: "Legg til innhold i",
+				stepMainStageExplain: "å_Main Stage Content_ø",
+				stepPanelExplain: "å_Content_ø",
 				stepMainStageNextTooltip: "Angi seksjonstittelen, og velg innholdet i hovedstadiet",
 				step2NextTooltip: "Angi seksjonstittelen og %LAYOUT-TYPE%-innholdet",
 				stepNextTooltipNext: "for å gå til neste trinn",
 				stepNextTooltipAdd: "for å legge til seksjonen",
-				titlePlaceholder: "Seksjonstittel...",
+				firstAddExplain: "å_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._ø",
+				firstAddLeanMore: "å_Learn More_ø",
+				titlePlaceholder: "Seksjonstittel..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Legg til tekst, koblinger og små grafikkelementer her.",
@@ -54,6 +58,10 @@
 				deleteTooltip: "Slett",
 				firstSectionExplain: "(Startseksjonen kan ikke flyttes)"
 			},
+			exportData: {
+				btn: "å_Export content_ø",
+				tooltip: "å_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._ø"
+			},
 			help: {
 				lblHelp: "Hjelp",
 				lblAdd: "Legg til seksjon",
@@ -61,6 +69,7 @@
 				lblOrga: "Organiser innhold",
 				lblEdit: "Redigeringer",
 				lblPublish: "Del",
+				lblTips: "å_Tips_ø",
 				lblMore: "Vil du ha mer?",
 				lblLink: "Gå til webområdet for historiekart.",
 				content1Div1: "Du kan integrere en lang rekke ulike stiler når du bygger opp historien din. <strong>%LAYOUT_TITLE%</strong> inneholder vanligvis teksten din, bildene og videoene dine, mens kartene dine vanligvis havner på <strong>hovedstadiet</strong>. %TPL_NAME% gjør imidlertid at du kan ta med bilder, diagrammer og videoklipp på hovedstadiet, også.",
@@ -69,10 +78,13 @@
 				content2Div2: "I tillegg kan du legge til delingskoblinger til Facebook, Twitter og Bitly, slik at leserne enkelt kan fortelle andre om %TPL_NAME%.",
 				content3Div1: "å_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ø",
 				content4Div1: "Har du funnet en feil eller ønsker å endre materialet? Ikke noe problem. Se etter redigeringsikonet i programmet for å gjøre endringer av innholdet. Du kommer til å bruke redigeringsfunksjonene mange ganger etter hvert som du utvikler %TPL_NAME%!",
-				content5Div1: "%TPL_NAME% lagres i %PORTAL%-kontoen din, og er som standard privat. Du kan bestemme om du vil dele den bare med organisasjonen eller om den skal være åpen for alle. Vi gir deg til og med en forkortet, stabil URL-adresse som du enkelt kan dele."
+				content5Div1: "%TPL_NAME% lagres i %PORTAL%-kontoen din, og er som standard privat. Du kan bestemme om du vil dele den bare med organisasjonen eller om den skal være åpen for alle. Vi gir deg til og med en forkortet, stabil URL-adresse som du enkelt kan dele.",
+				content6Div1: "å_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._ø",
+				content6Div2: "å_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_ø"
 			},
 			landing: {
-				lblAdd: "Legg til startseksjonen",
+				lblAdd: "å_What do you want to call your Map Journal?_ø",
+				phAdd: "å_Enter your title..._ø",
 				lblOR: "Eller",
 				lblHelp: "Få en omvisning"
 			},

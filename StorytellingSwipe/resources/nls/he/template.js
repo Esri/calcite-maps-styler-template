@@ -25,7 +25,7 @@
 				mapSave: "שגיאה בשמירת ה- web map",
 				notAuthorized: "אינך מורשה לגשת לאפליקציה זו",
 				conflictingProjectionsTitle: "היטלים סותרים",
-				conflictingProjections: "כן_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ש",
+				conflictingProjections: "כלי ה- Swipe לא ישים כאשר ישנם היטלים שונים לשני webmaps. אנא פתח את ההגדרות והשתמש ב- webmap שמשתמשת באותו היטל של ה- webmap הראשון.",
 				cpButton: "סגור"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "כדי לשמור את האפליקציה."
 			},
 			header:{
-				editMe: "כן_Edit me!_ש",
+				editMe: "ערוך אותי!",
 				templateTitle: "קבע כותרת תבנית",
 				templateSubtitle: "קבע כותרת משנה לתבנית"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "קבע את תיאור הפאנל הצידי",
-				editMe: "כן_Edit me!_ש",
+				editMe: "ערוך אותי!",
 				legendTitle: "מקרא"
 			},
 			infoWindow: {

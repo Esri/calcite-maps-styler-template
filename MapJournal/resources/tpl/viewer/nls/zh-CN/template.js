@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "欢迎使用 %TPL_NAME% web 应用程序。<br />应用程序尚未配置。",
 				notConfiguredMobile: "欢迎使用 %TPL_NAME% web 应用程序。应用程序尚未配置，移动设备不支持构建器。",
 				notAuthorized: "您无权访问该应用程序",
-				noBuilderIE8: "Internet Explorer 9 之前的版本不支持构建器。"
+				noBuilderIE8: "Internet Explorer 9 之前的版本不支持构建器。",
+				mapLoadingFail: "试_Something went wrong, the Map cannot be loaded._验"
 			},
 			mobileView: {
 				tapForDetails: "点击查看详细信息",
@@ -51,7 +52,7 @@
 				share: "共享"
 			},
 			overviewFromCommon: {
-				title: "总览图",
+				title: "总览图"
 			},
 			legendFromCommon: {
 				title: "图例"

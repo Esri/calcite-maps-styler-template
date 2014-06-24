@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Välkommen till %TPL_NAME%-webbapplikationen.<br />Applikationen har inte konfigurerats ännu.",
 				notConfiguredMobile: "Välkommen till %TPL_NAME%-webbapplikationen. Applikationen har inte konfigurerats ännu och byggverktyget går inte att använda på mobila enheter.",
 				notAuthorized: "Du är inte behörig att konfigurera det här programmet",
-				noBuilderIE8: "Byggverktyget går inte att använda med tidigare versioner av Internet Explorer än version 9."
+				noBuilderIE8: "Byggverktyget går inte att använda med tidigare versioner av Internet Explorer än version 9.",
+				mapLoadingFail: "Å_Something went wrong, the Map cannot be loaded._ö"
 			},
 			mobileView: {
 				tapForDetails: "Peka för information",
@@ -51,7 +52,7 @@
 				share: "Dela"
 			},
 			overviewFromCommon: {
-				title: "Översiktskarta",
+				title: "Översiktskarta"
 			},
 			legendFromCommon: {
 				title: "Teckenförklaring"

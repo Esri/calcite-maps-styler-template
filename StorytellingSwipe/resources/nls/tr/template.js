@@ -25,7 +25,7 @@
 				mapSave: "Web haritasını kaydederken hata oluştu",
 				notAuthorized: "Bu uygulamaya erişim yetkiniz yok",
 				conflictingProjectionsTitle: "Çelişen Projeksiyonlar",
-				conflictingProjections: "Swipe farklı projeksiyonları olan iki web haritasını desteklemez. Ayarları açın ve ilk web haritasıyla aynı projeksiyonu kullanan bir web haritası kullanın.",
+				conflictingProjections: "Sıyır, farklı projeksiyonları olan iki web haritasını desteklemez. Ayarları açın ve ilk web haritasıyla aynı projeksiyonu kullanan bir web haritası kullanın.",
 				cpButton: "Kapat"
 			},
 			mobileView: {

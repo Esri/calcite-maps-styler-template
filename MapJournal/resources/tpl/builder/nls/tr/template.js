@@ -6,7 +6,7 @@
 				sideTitle: "Kenar Panosu",
 				sideDescr: "Fotoğraflarınızı, videolarınızı ve haritalarınızı açık ve net bir mesajda mükemmel biçimde birleştiren metin yoğun hikaye düzeni.",
 				floatTitle: "Kayar Pano",
-				floatDescr: "Kartografinizi odağa koyarken, öykü anlamına yardımcı olan saydam kısa formlu bir metin paneline izin veren bir düzen."
+				floatDescr: "Kartografinizi odağa koyarken, öykü anlamına yardımcı olan saydam kısa formlu bir metin paneline izin veren bir çıktı görünümü."
 			},
 			common: {
 				lblStatus1: "Yayınlananlar",
@@ -27,16 +27,20 @@
 				title: "Hoş Geldiniz"
 			},
 			addEditPopup: {
+				disabled: "ı_Add Section is disabled because the maximum number of allowed sections has been reached._İ",
 				titleAdd: "Bölüm Ekle",
+				titleAddHome: "ı_Add Home Section_İ",
 				titleEdit: "Bölüm Düzenle",
 				step: "Adım",
-				stepMainStageExplain: "Ana Aşamaya Harita, Resim veya Video ekle",
-				stepPanelExplain: "Şuraya içerik ekle",
+				stepMainStageExplain: "ı_Main Stage Content_İ",
+				stepPanelExplain: "ı_Content_İ",
 				stepMainStageNextTooltip: "Bölüm başlığı gir ve Ana Aşama içeriğini belirle",
 				step2NextTooltip: "Bölüm başlığını ve %LAYOUT-TYPE% içeriğini gir",
 				stepNextTooltipNext: "sonraki adıma gitmek için",
 				stepNextTooltipAdd: "bölüm eklemek için",
-				titlePlaceholder: "Bölüm başlığı...",
+				firstAddExplain: "ı_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._İ",
+				firstAddLeanMore: "ı_Learn More_İ",
+				titlePlaceholder: "Bölüm başlığı..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Buraya metin, bağlantı ve küçük grafikler ekleyin.",
@@ -54,6 +58,10 @@
 				deleteTooltip: "Sil",
 				firstSectionExplain: "(Ana sayfa bölümü taşınamaz)"
 			},
+			exportData: {
+				btn: "ı_Export content_İ",
+				tooltip: "ı_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._İ"
+			},
 			help: {
 				lblHelp: "Yardım",
 				lblAdd: "Bölüm Ekle",
@@ -61,6 +69,7 @@
 				lblOrga: "İçeriği düzenle",
 				lblEdit: "Düzenlemeler",
 				lblPublish: "Paylaş",
+				lblTips: "ı_Tips_İ",
 				lblMore: "Daha çok mu istiyorsunuz?",
 				lblLink: "Story Maps web sitesini ziyaret edin.",
 				content1Div1: "Hikayenizi oluştururken çeşitli stiller kullanabilirsiniz. <strong>%LAYOUT_TITLE%</strong> genellikle metninizi, resimlerinizi ve videonuzu saklar, haritalarınız ise <strong>Ana Aşama</strong> içindedir. Bununla birlikte %TPL_NAME%, size resimleri, grafikleri ve videoyu da ana aşama içinde gösterme olanağı tanır.",
@@ -69,10 +78,13 @@
 				content2Div2: "Ayrıca Facebook, Twitter ve Bitly paylaşım bağlantıları ekleyerek, okuyucularınızın %TPL_NAME% adınızı kolayca diğerlerine yaymasını sağlayabilirsiniz.",
 				content3Div1: "ı_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._İ",
 				content4Div1: "Bir hata mı buldunuz ya da malzemenizi mi değiştirmek istiyorsunuz? Hiç sorun değil. İçeriğinizde değişiklik yapmak için uygulama içinde düzenle simgesini arayın. %TPL_NAME% uygulamanızı geliştirirken düzenleme işlevlerini çok sık kullanacaksınız!",
-				content5Div1: "%TPL_NAME% adınız %PORTAL% hesabınıza kaydedilir ve varsayılan olarak özeldir. Bunu organizasyonunuzla paylaşmayı seçebilir ya da dünyaya açabilirsiniz. Hatta size sunduğumuz kısaltılmış bir URL ile kolayca paylaşabilirsiniz."
+				content5Div1: "%TPL_NAME% adınız %PORTAL% hesabınıza kaydedilir ve varsayılan olarak özeldir. Bunu organizasyonunuzla paylaşmayı seçebilir ya da dünyaya açabilirsiniz. Hatta size sunduğumuz kısaltılmış bir URL ile kolayca paylaşabilirsiniz.",
+				content6Div1: "ı_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._İ",
+				content6Div2: "ı_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_İ"
 			},
 			landing: {
-				lblAdd: "Ana Sayfa Bölümünü Ekle",
+				lblAdd: "ı_What do you want to call your Map Journal?_İ",
+				phAdd: "ı_Enter your title..._İ",
 				lblOR: "Veya",
 				lblHelp: "Tanıtım Gezisi"
 			},

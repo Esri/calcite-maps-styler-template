@@ -17,7 +17,7 @@
             descriptionText: "ı_GeoForm is a configurable template for form-based data editing of a <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Feature Service</a>. This application allows users to enter data through a form instead of a mapâ€™s pop-up while leveraging the power of the <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> and editable Feature Services. Use this builder to customize and deploy your GeoForm following the steps on the left._İ",
             btnPreviousText: "Önceki",
             btnNextText:"Sonraki",
-            webmapTabTitleText: "Bir Web Haritası seç",
+            webmapTabTitleText: "Web Haritası seç",
             btnSelectWebmapText:"Web haritası seç",
             layerTabTitleText: "Düzenlenebilir Katman Seç",
             selectLayerLabelText:"Katman",

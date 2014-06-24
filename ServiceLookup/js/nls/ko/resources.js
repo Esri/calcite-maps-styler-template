@@ -18,6 +18,9 @@
 
         splashscreen: {
             buttonText: "확인",
+        },
+        ui:{
+            basemapButton: "한_Basemap_빠"
         }
     })
 

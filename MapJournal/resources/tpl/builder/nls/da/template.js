@@ -27,16 +27,20 @@
 				title: "Velkommen til"
 			},
 			addEditPopup: {
+				disabled: "ø_Add Section is disabled because the maximum number of allowed sections has been reached._å",
 				titleAdd: "Tilføj sektion",
+				titleAddHome: "ø_Add Home Section_å",
 				titleEdit: "Redigér sektion",
 				step: "Trin",
-				stepMainStageExplain: "Føj et kort, billede eller en video til hovedområdet",
-				stepPanelExplain: "Føj indhold til",
+				stepMainStageExplain: "ø_Main Stage Content_å",
+				stepPanelExplain: "ø_Content_å",
 				stepMainStageNextTooltip: "Indtast sektionstitlen, og vælg indholdet til hovedområdet",
 				step2NextTooltip: "Indtast sektionstitlen og %LAYOUT-TYPE%-indholdet",
 				stepNextTooltipNext: "for at gå til næste trin",
 				stepNextTooltipAdd: "for at tilføje sektionen",
-				titlePlaceholder: "Sektionstitel...",
+				firstAddExplain: "ø_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._å",
+				firstAddLeanMore: "ø_Learn More_å",
+				titlePlaceholder: "Sektionstitel..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Tilføj tekst, links og små billeder her.",
@@ -54,6 +58,10 @@
 				deleteTooltip: "Slet",
 				firstSectionExplain: "(Startsektionen kan ikke flyttes)"
 			},
+			exportData: {
+				btn: "ø_Export content_å",
+				tooltip: "ø_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._å"
+			},
 			help: {
 				lblHelp: "Hjælp",
 				lblAdd: "Tilføj sektion",
@@ -61,6 +69,7 @@
 				lblOrga: "Organisér indhold",
 				lblEdit: "Redigeringer",
 				lblPublish: "Del",
+				lblTips: "ø_Tips_å",
 				lblMore: "Ønsker du mere?",
 				lblLink: "Besøg Story Maps-webstedet.",
 				content1Div1: "Du kan integrere en række forskellige typografier, når du skaber din historie. <strong>%LAYOUT_TITLE%</strong> indeholder typisk din tekst, dine billeder og videoer, mens dine kort ofte befinder sig i <strong>hovedområdet</strong>. Men %TPL_NAME% gør det også muligt for dig at bringe billeder, diagrammer og videoer i hovedområdet.",
@@ -69,10 +78,13 @@
 				content2Div2: "Du kan også føje delings-links til Facebook, Twitter og Bitly, så læserne nemt kan udbrede din %TPL_NAME% til andre.",
 				content3Div1: "ø_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._å",
 				content4Div1: "Har du fundet en fejl, eller ønsker du at redigere i dit materiale? Ingen grund til bekymring. Se efter redigeringsikonet i hele app’en for at foretage ændringer i dit indhold. Du vil komme til at bruge redigeringsfunktionerne mange gange, mens du udvikler din %TPL_NAME%!",
-				content5Div1: "Din %TPL_NAME% et blevet gemt på din %PORTAL%-konto og som standard sat til privat. Du kan beslutte at dele den med din organisation eller åbne den for hele verden. Vi giver dig endda en afkortet URL, så det bliver nemmere for dig at dele."
+				content5Div1: "Din %TPL_NAME% et blevet gemt på din %PORTAL%-konto og som standard sat til privat. Du kan beslutte at dele den med din organisation eller åbne den for hele verden. Vi giver dig endda en afkortet URL, så det bliver nemmere for dig at dele.",
+				content6Div1: "ø_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._å",
+				content6Div2: "ø_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_å"
 			},
 			landing: {
-				lblAdd: "Tilføj startsektionen",
+				lblAdd: "ø_What do you want to call your Map Journal?_å",
+				phAdd: "ø_Enter your title..._å",
 				lblOR: "Eller",
 				lblHelp: "Tag en tur"
 			},

@@ -46,7 +46,7 @@
                 "nextButtonText": "Sonraki",
                 "prevButtonText": "Önceki",
                 "enterLabelText": "Etiket Gir",
-                "SelectedFeatureText": "Seçilen Özellikler",
+                "SelectedFeatureText": "Seçilen Detaylar",
                 "layerHelpTextMessage": "Bu uygulama için sayısal alanları olan bir katman gereklidir",
                 "alertMessage": {
                     "resetVariableMessage": "Değişkeni sıfırlamak istediğinizden emin misiniz?",

@@ -6,7 +6,7 @@
         onlineStatus: {
             online: "Ж_You are currently online._Я",
             offline: "В настоящее время вы работаете в автономном режиме. Форма представления будет сохранена локально до тех пор, пока не будет выполнено подключение к серверу.",
-            reconnecting: "Reconnecting&hellip;"
+            reconnecting: "Повторное подключение&hellip;"
         },
 	 configure: {
             mapdlg: {

@@ -13,7 +13,9 @@
 				open: "Deschidere",
 				start: "Pornire",
 				loading: "Se încarcă",
-				disabledAdmin: "Acest obiect spaţial a fost dezactivat de administrator"
+				disabledAdmin: "Acest obiect spaţial a fost dezactivat de administrator",
+				width: "Ă_Width_ș",
+				height: "Ă_Height_ș"
 			},
 			inlineFieldEdit: {
 				editMe: "Editează-mă!"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Configuraţie",
 				explain: "Ce strat tematic doriţi să utilizaţi?",
-				explainInit: "Puteţi modifica aspectul în orice moment, din panoul de setări.",
+				explainInit: "Ă_You can change the layout anytime from the settings dialog._ș",
 				viewExample: "Vizualizaţi un exemplu live"
 			},
 			settingsTheme: {

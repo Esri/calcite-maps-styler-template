@@ -6,7 +6,7 @@
 				sideTitle: "侧面板",
 				sideDescr: "文本密集型故事的布局可将照片、视频和地图组合在重点明确的消息中。",
 				floatTitle: "浮动面板",
-				floatDescr: "以制图为重点，同时允许采用格式简单明了的文本面板来帮助讲述故事发展的布局。"
+				floatDescr: "一种布局，以制图为重点，同时借助格式简单明了的文本面板来讲述故事。"
 			},
 			common: {
 				lblStatus1: "已发布",
@@ -27,16 +27,20 @@
 				title: "欢迎使用"
 			},
 			addEditPopup: {
+				disabled: "试_Add Section is disabled because the maximum number of allowed sections has been reached._验",
 				titleAdd: "添加节",
+				titleAddHome: "试_Add Home Section_验",
 				titleEdit: "编辑节",
 				step: "步骤",
-				stepMainStageExplain: "将地图、图像或视频添加到主要阶段",
-				stepPanelExplain: "添加内容至",
+				stepMainStageExplain: "试_Main Stage Content_验",
+				stepPanelExplain: "试_Content_验",
 				stepMainStageNextTooltip: "输入节标题并选择主要阶段内容",
 				step2NextTooltip: "输入节标题和 %LAYOUT-TYPE% 内容",
 				stepNextTooltipNext: "要进行下一步",
 				stepNextTooltipAdd: "要添加节",
-				titlePlaceholder: "节标题...",
+				firstAddExplain: "试_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._验",
+				firstAddLeanMore: "试_Learn More_验",
+				titlePlaceholder: "节标题..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "在此添加文本、链接和小图形。",
@@ -54,6 +58,10 @@
 				deleteTooltip: "删除",
 				firstSectionExplain: "（无法移动主目录节）"
 			},
+			exportData: {
+				btn: "试_Export content_验",
+				tooltip: "试_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._验"
+			},
 			help: {
 				lblHelp: "帮助",
 				lblAdd: "添加节",
@@ -61,18 +69,22 @@
 				lblOrga: "组织内容",
 				lblEdit: "编辑",
 				lblPublish: "共享",
+				lblTips: "试_Tips_验",
 				lblMore: "是否想了解更多信息？",
 				lblLink: "访问故事地图网站。",
 				content1Div1: "构建故事时，可集成各种风格。<strong>%LAYOUT_TITLE%</strong> 通常在地图要发布在<strong>主要阶段</strong>时会保留文本、图像和视频。但 %TPL_NAME% 也可以在主要阶段中展示图像、图表和视频。",
 				content1Div2: "添加节可以使您真正自定义提供信息的经验。在读者滚动 %LAYOUT_TITLE% 文本时，主要阶段上的地图可平移或缩放至关键点或新地图，图像也可以自动切换以支持消息。",
 				content2Div1: "此处可调整 %TPL_NAME% 的外观。配色方案、布局和宽度均在此处进行优化。",
-				content2Div2: "还可添加 Facebook、Twitter 和 Bitly 的共享链接，这样读者便可轻松将 %TPL_NAME% 传播给其他人。",
+				content2Div2: "还可添加至 Facebook、Twitter 和 Bitly 的共享链接，这样读者便可轻松将 %TPL_NAME% 共享给其他人。",
 				content3Div1: "试_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._验",
 				content4Div1: "发现错误或希望更改材料？别担心。在整个应用程序中查找编辑图标，以对内容进行更改。在开发 %TPL_NAME% 时将多次使用编辑功能！",
-				content5Div1: "%TPL_NAME% 将保存在 %PORTAL% 帐户中，默认为私有。您可以决定是与组织共享，还是向全世界开放。我们甚至还为您提供简化的 URL，以便您轻松进行共享。"
+				content5Div1: "%TPL_NAME% 将保存在 %PORTAL% 帐户中，默认为私有。您可以决定是与组织共享，还是向全世界开放。我们甚至还为您提供简化的 URL，以便您轻松进行共享。",
+				content6Div1: "试_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._验",
+				content6Div2: "试_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_验"
 			},
 			landing: {
-				lblAdd: "添加主目录节",
+				lblAdd: "试_What do you want to call your Map Journal?_验",
+				phAdd: "试_Enter your title..._验",
 				lblOR: "或",
 				lblHelp: "浏览"
 			},

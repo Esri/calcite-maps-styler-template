@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Bine aţi venit la aplicaţia web %TPL_NAME%.<br />Aplicaţia nu este configurată încă.",
 				notConfiguredMobile: "Bine aţi venit la aplicaţia web %TPL_NAME%. Aplicaţia nu este configurată încă, iar builderul nu este suportat p dispozitive mobile.",
 				notAuthorized: "Nu sunteţi autorizat pentru a accesa această aplicaţie",
-				noBuilderIE8: "Builderul nu este suportat în versiunile Internet Explorer anterioare versiunii 9."
+				noBuilderIE8: "Builderul nu este suportat în versiunile Internet Explorer anterioare versiunii 9.",
+				mapLoadingFail: "Ă_Something went wrong, the Map cannot be loaded._ș"
 			},
 			mobileView: {
 				tapForDetails: "Atingeţi pentru detalii",
@@ -51,7 +52,7 @@
 				share: "Partajare"
 			},
 			overviewFromCommon: {
-				title: "Hartă de prezentare generală",
+				title: "Hartă de prezentare generală"
 			},
 			legendFromCommon: {
 				title: "Legendă"

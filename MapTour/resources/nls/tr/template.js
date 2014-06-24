@@ -410,7 +410,7 @@
 					div1: "Harita Turu şablonu, anlatmak istediğiniz öykü açısından ilgi uyandıracak bir fotoğraf veya medya öğesi olduğunda coğrafi bilgi sunmak için tasarlanmıştır.",
 					div2: "Şablon, az sayıda yeri kullanıcıların içinde gezinebileceği numaralı bir sırada sunmanıza izin veren çekici, kullanımı kolay bir web uygulaması üretir. Şablon, akıllı telefonlar ve tabletler gibi bir cihazdaki bir web tarayıcısında kullanılmak üzere tasarlanmıştır. <br /><br />Oluşturmak istediğiniz türde bir uygulamaya bir örneği şurada bulabilirsiniz:",
 					div4: "<a href='http://storymaps.esri.com/stories/maptour-palmsprings' target='_blank'>Palm Springs Harita Turu</a>.",
-					div42: "Başka kullanıcıların oluşturmakta olduğu harita turu örneklerini görmek için, <a href='http://storymaps.arcgis.com/' target='_blank'>Öykü Haritaları web sitesindeki</a> <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>galeriyi ziyaret edin</a>. Bizi Twitter\'da <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a> adresinden izleyebilirsiniz.",
+					div42: "Başka kullanıcıların oluşturmakta olduğu harita turu örneklerini görmek için, <a href='http://storymaps.arcgis.com/' target='_blank'>Anlatı Haritaları web sitesindeki</a> <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>galeriyi ziyaret edin</a>. Bizi Twitter\'da <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a> adresinden izleyebilirsiniz.",
 					div5: "Bize yazmanızı istiyoruz! İster bir soru sormak istiyor, ister yeni bir özellik istiyor, ister bir hata bulduğunuzu düşünüyor olun, <a href='http://links.esri.com/storymaps/forum' target='_blank'>Öykü Haritaları Kullanıcı Forumu</a>\'nu ziyaret edin."
 				},
 				tab2: {

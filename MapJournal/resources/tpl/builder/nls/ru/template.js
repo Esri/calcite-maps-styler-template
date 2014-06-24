@@ -27,16 +27,20 @@
 				title: "Добро пожаловать"
 			},
 			addEditPopup: {
+				disabled: "Ж_Add Section is disabled because the maximum number of allowed sections has been reached._Я",
 				titleAdd: "Добавить раздел",
+				titleAddHome: "Ж_Add Home Section_Я",
 				titleEdit: "Изменить раздел",
 				step: "Шаг",
-				stepMainStageExplain: "Добавить карты, изображения или видео на главную площадку",
-				stepPanelExplain: "Добавить ресурсы на",
+				stepMainStageExplain: "Ж_Main Stage Content_Я",
+				stepPanelExplain: "Ж_Content_Я",
 				stepMainStageNextTooltip: "Введите название раздела и выберите ресурсы основной площадки",
 				step2NextTooltip: "Введите название раздела и ресурсы %LAYOUT-TYPE%",
 				stepNextTooltipNext: "чтобы перейти к следующему шагу",
 				stepNextTooltipAdd: "чтобы добавить раздел",
-				titlePlaceholder: "Название раздела...",
+				firstAddExplain: "Ж_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._Я",
+				firstAddLeanMore: "Ж_Learn More_Я",
+				titlePlaceholder: "Название раздела..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Добавьте здесь текст, ссылки и небольшие графики.",
@@ -54,6 +58,10 @@
 				deleteTooltip: "Удалить",
 				firstSectionExplain: "(Главный раздел нельзя переместить)"
 			},
+			exportData: {
+				btn: "Ж_Export content_Я",
+				tooltip: "Ж_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._Я"
+			},
 			help: {
 				lblHelp: "Справка",
 				lblAdd: "Добавить раздел",
@@ -61,6 +69,7 @@
 				lblOrga: "Организовать ресурсы",
 				lblEdit: "Изменения",
 				lblPublish: "Общий доступ",
+				lblTips: "Ж_Tips_Я",
 				lblMore: "Хотите узнать больше?",
 				lblLink: "Посетите веб-сайт Карты историй.",
 				content1Div1: "В процессе создания вашей истории вы можете интегрировать множество стилей. Компоновка <strong>%LAYOUT_TITLE%</strong> обычно содержит текст, изображения и видео, а для карт применяется <strong>Основная площадка</strong>. Однако %TPL_NAME% позволяет встраивать также изображения, таблицы и видео в основную площадку.",
@@ -69,10 +78,13 @@
 				content2Div2: "Вы также можете добавить ссылки на Facebook, Twitter и Bitly, с помощью которых ваш %TPL_NAME% станет известен другим.",
 				content3Div1: "Ж_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._Я",
 				content4Div1: "Нашли ошибку или хотите внести изменения? Нет проблем! Чтобы изменить данные, нажмите значок Изменить в вашем приложении. В процессе создания вашего%TPL_NAME% функции редактирования будут применяться очень часто.",
-				content5Div1: "%TPL_NAME% сохранен в вашей учетной записи %PORTAL%, частной по умолчанию. Вы можете открыть общий доступ для вашей организации или для всего мира. Мы создаём для вас короткий постоянный URL, чтобы вам было проще поделиться историей."
+				content5Div1: "%TPL_NAME% сохранен в вашей учетной записи %PORTAL%, частной по умолчанию. Вы можете открыть общий доступ для вашей организации или для всего мира. Мы создаём для вас короткий постоянный URL, чтобы вам было проще поделиться историей.",
+				content6Div1: "Ж_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._Я",
+				content6Div2: "Ж_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_Я"
 			},
 			landing: {
-				lblAdd: "Добавить главный раздел",
+				lblAdd: "Ж_What do you want to call your Map Journal?_Я",
+				phAdd: "Ж_Enter your title..._Я",
 				lblOR: "Или",
 				lblHelp: "Ознакомительный тур"
 			},

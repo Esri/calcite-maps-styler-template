@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "ברוכים הבאים לאפליקצית ה- web של %TPL_NAME%.<br />טרם נקבעה תצורה לאפליקציה.",
 				notConfiguredMobile: "ברוכים הבאים לאפליקצית web מסוג %TPL_NAME%. לא נקבעה תצורה לאפליקציה וכלי הבנייה לא נתמך במכשיריים ניידים.",
 				notAuthorized: "אינך מורשה לגשת לאפליקציה זו",
-				noBuilderIE8: "כלי הבניה לא נתמך ב- Internet Explorer טרם גרסה 9."
+				noBuilderIE8: "כלי הבניה לא נתמך ב- Internet Explorer טרם גרסה 9.",
+				mapLoadingFail: "כן_Something went wrong, the Map cannot be loaded._ש"
 			},
 			mobileView: {
 				tapForDetails: "הקש לקבלת פרטים",
@@ -51,7 +52,7 @@
 				share: "שתף"
 			},
 			overviewFromCommon: {
-				title: "מפת תצוגה מקדימה",
+				title: "מפת תצוגה מקדימה"
 			},
 			legendFromCommon: {
 				title: "מקרא"
@@ -60,8 +61,8 @@
 				copy: "העתק",
 				copied: "הועתק",
 				open: "פתח",
-				embed: "כן_Embed in website_ש",
-				embedExplain: "כן_Use the following HTML code to embed the Journal in a website._ש",
+				embed: "הטמע באתר האינטרנט",
+				embedExplain: "השתמש בקוד ה-  HTML הבא כדי להטמיע את ה- Journal באתר.",
 				size: "גודל (רוחב/גובה):"
 			}
         }

@@ -18,6 +18,9 @@
 
         splashscreen: {
             buttonText: "موافق",
+        },
+        ui:{
+            basemapButton: "بيت_Basemap_لاحقة"
         }
     })
 

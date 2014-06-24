@@ -40,35 +40,60 @@
 				howToFind: "Picasa- tai Google+-tilitunnuksen etsiminen",
 				howToFind2: "Kopioi minkä tahansa Picasa- tai Google+-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Å_Check_ö",
+				notFound: "Å_Video not found_ö",
+				found: "Å_Video found_ö",
+				select: "Å_Select this video_ö"
+			},
+			videoSelectorHome: {
+				other: "Å_Other_ö"
 			},
 			videoSelectorYoutube: {
+				url: "Å_URL of a Youtube video_ö",
 				pageInputLbl: "Käyttäjätunnus",
 				lookupMsgError: "Käyttäjää ei löydy",
 				howToFind: "YouTube-käyttäjätunnuksen etsiminen",
 				howToFind2: "Käyttäjätunnus näkyy videoissa",
-				found: "Löytyi",
+				found: "Å_Found_ö",
 				noData: "Yhtään julkista videota ei löytynyt"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "Å_URL of a Vimeo video_ö"
+			},
+			videoSelectorOther: {
+				explain1: "Å_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._ö",
+				explain2: "Å_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._ö",
+				explain3: "Å_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._ö",
+				webpage: "Å_Web page feature_ö"
+			},
+			webpageSelectorHome: {
+				lblUrl: "Å_Webpage URL_ö",
+				lblEmbed: "Å_Embed code_ö",
+				lblOR: "Å_OR_ö",
+				lblError1: "Å_Error, clear one of the two input fields._ö",
+				lblError2: "Å_Embed code can only contain one <iframe>_ö"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Median URL-osoite...",
-				lblLabel: "Tunnusteksti",
+				lblURLPH: "Å_An image URL should start with http:// and end with .jpg or .png_ö",
+				lblLabel: "Å_Image Caption_ö",
 				lblLabel1: "Seloste",
 				lblLabel2: "Kohoteksti",
 				lblLabel3: "Ei mitään",
 				lblLabelPH: "Kirjoita vähän tekstiä...",
+				lblMaximize: "Å_Include a maximize button in the corner of the image_ö",
+				lblMaximizeHelp: "Å_Recommended only for high quality photos_ö",
 				lblPosition: "Sijainti",
 				lblPosition1: "Keskikohta",
 				lblPosition2: "Täytä",
 				lblPosition3: "Sovita",
 				lblPosition4: "Venytä",
+				lblPosition5: "Å_Custom_ö",
+				tooltipDimension: "Å_The value can be specified in 'px' or '%'_ö",
 				lblPosition2Explain: "(voi rajautua)",
 				lblPosition3Explain: "(ei rajaudu)",
+				lblPosition3Explain2: "Å_(width will always fit the panel)_ö",
 				lblPosition4Explain: "(voi vääristyä)"
 			},
 			editorActionGeocode: {

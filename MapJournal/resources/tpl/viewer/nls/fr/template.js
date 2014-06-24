@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Bienvenue dans l\'application Web %TPL_NAME%.<br />L\'application n\'est pas encore configurée.",
 				notConfiguredMobile: "Bienvenue dans l\'application Web %TPL_NAME%. L\'application n\'est pas encore configurée et le générateur n\'est pas pris en charge sur les appareils mobiles.",
 				notAuthorized: "Vous n\’êtes pas autorisé à accéder à cette application",
-				noBuilderIE8: "Le générateur n\'est pas pris en charge dans Internet Explorer avant la version 9."
+				noBuilderIE8: "Le générateur n\'est pas pris en charge dans Internet Explorer avant la version 9.",
+				mapLoadingFail: "æ_Something went wrong, the Map cannot be loaded._Â"
 			},
 			mobileView: {
 				tapForDetails: "Touchez pour obtenir des détails",
@@ -51,7 +52,7 @@
 				share: "Partager"
 			},
 			overviewFromCommon: {
-				title: "Carte générale",
+				title: "Carte générale"
 			},
 			legendFromCommon: {
 				title: "Légende"

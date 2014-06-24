@@ -13,7 +13,9 @@
 				open: "Abrir",
 				start: "Inicio",
 				loading: "Cargando",
-				disabledAdmin: "El administrador ha deshabilitado esta entidad"
+				disabledAdmin: "El administrador ha deshabilitado esta entidad",
+				width: "á_Width_Ó",
+				height: "á_Height_Ó"
 			},
 			inlineFieldEdit: {
 				editMe: "¡Edítame!"
@@ -65,7 +67,7 @@
 				shareA2div1: "Guarda y vuelve a usar el siguiente vínculo %LINK1% o utiliza la <a href='%LINK2%' target='_blank'>página de elementos de la aplicación</a>.",
 				shareA2div2: "Como propietario de la aplicación, cuando inicias sesión en %PORTAL%, la aplicación incluye un botón para abrir el Builder:",				
 				shareQ3: "¿Dónde se almacenan los datos?",
-				shareA3: "Los datos y la configuración de %TPL_NAME% están almacenados en <a href='%LINK2%' target='_blank'>este elemento de aplicación web</a>. Si has usado la importación de Flickr, Picasa, Facebook o YouTube, tus imágenes y tus vídeos no se habrán duplicado en %PORTAL%."
+				shareA3: "Los datos y la configuración de %TPL_NAME% están almacenados en <a href='%LINK2%' target='_blank'>este elemento de aplicación web</a>. Si has importado desde Flickr, Picasa, Facebook o YouTube, tus imágenes y tus vídeos no se habrán duplicado en %PORTAL%."
 			},
 			settings: {
 				header: "Configuración",
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Diseño",
 				explain: "¿Qué diseño deseas usar?",
-				explainInit: "Puedes cambiar el diseño en cualquier momento en el panel de configuración.",
+				explainInit: "á_You can change the layout anytime from the settings dialog._Ó",
 				viewExample: "Ver un ejemplo en directo"
 			},
 			settingsTheme: {

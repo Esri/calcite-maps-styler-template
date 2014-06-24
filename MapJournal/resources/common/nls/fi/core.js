@@ -13,7 +13,9 @@
 				open: "Avaa",
 				start: "Aloitus",
 				loading: "Ladataan",
-				disabledAdmin: "Pääkäyttäjä on poistanut tämän toiminnon käytöstä."
+				disabledAdmin: "Pääkäyttäjä on poistanut tämän toiminnon käytöstä.",
+				width: "Å_Width_ö",
+				height: "Å_Height_ö"
 			},
 			inlineFieldEdit: {
 				editMe: "Muokkaa minua!"
@@ -39,7 +41,7 @@
 			},
 			share: {
 				firstSaveTitle: "Sovellus on tallennettu",
-				firstSaveHeader: "Sovelluksesi on nyt tallennettu portaaliin %PORTAL%, mutta sovellusta ei ole vielä jaettu.",
+				firstSaveHeader: "Sovelluksesi on nyt tallennettu portaaliin %PORTAL%, mutta sitä ei ole vielä jaettu.",
 				firstSavePreview: "Esikatselu",
 				firstSaveShare: "Jaa",
 				firstSaveA1: "Jos et tunnet %PORTAL%a tai haluat pikavalinnan, jonka avulla pääsee luontitoiminnon käyttöliittymään, voit tallentaa seuraavan linkin: %LINK1%",
@@ -65,7 +67,7 @@
 				shareA2div1: "Tallenna ja käytä uudelleen seuraavaa linkkiä %LINK1% tai käytä <a href='%LINK2%' target='_blank'>sovelluskohteen sivua</a>.",
 				shareA2div2: "Koska olet sovelluksen omistaja, kun olet kirjautunut %PORTAL%-sivustoon, sovelluksessa näkyy painike, jolla voita avata luontitoiminnon:",				
 				shareQ3: "Minne tiedot on tallennettu?",
-				shareA3: "Tarinan %TPL_NAME% aineisto ja määritykset tallennetaan <a href='%LINK2%' target='_blank'>tähän Web-sovelluskohteeseen</a>. Kierroksen määritykset tallennetaan <a href='%LINK1%' target='_blank'>tähän Web-karttakohteeseen</a> ja <a href='%LINK2%' target='_blank'>tähän web-sovelluskohteeseen</a>. Jos olet käyttänyt Flickr-, Picasa-, Facebook- tai YouTube-tuontia, kuviasi ja videoitasi ei kopioida portaaliin %PORTAL%."
+				shareA3: "Tarinan %TPL_NAME% aineisto ja määritykset tallennetaan <a href='%LINK2%' target='_blank'>tähän Web-sovelluskohteeseen</a>. Jos olet käyttänyt Flickr-, Picasa-, Facebook- tai YouTube-tuontia, kuviasi ja videoitasi ei kopioida portaaliin %PORTAL%."
 			},
 			settings: {
 				header: "Asetukset",
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Asettelu",
 				explain: "Mitä asettelua haluat käyttää?",
-				explainInit: "Voit muuttaa asettelua asetuspaneelin kautta milloin tahansa.",
+				explainInit: "Å_You can change the layout anytime from the settings dialog._ö",
 				viewExample: "Katsele reaaliaikaista esimerkkiä"
 			},
 			settingsTheme: {

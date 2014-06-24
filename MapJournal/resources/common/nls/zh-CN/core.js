@@ -13,7 +13,9 @@
 				open: "打开",
 				start: "开始",
 				loading: "正在加载",
-				disabledAdmin: "此功能已被管理员禁用"
+				disabledAdmin: "此功能已被管理员禁用",
+				width: "试_Width_验",
+				height: "试_Height_验"
 			},
 			inlineFieldEdit: {
 				editMe: "编辑！"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "布局",
 				explain: "想要使用哪种布局？",
-				explainInit: "可随时在设置面板中更改布局。",
+				explainInit: "试_You can change the layout anytime from the settings dialog._验",
 				viewExample: "查看实时示例"
 			},
 			settingsTheme: {

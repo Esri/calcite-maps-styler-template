@@ -72,7 +72,7 @@ define({
         errorMessages: {
             emptyGroup: "אין לקבוצה שהוגדרה נתונים בכדי לבצע את השאילתא.",
             invalidSearch: "לא נמצאו תוצאות.",
-            invalidBasemapQuery: "כן_Unable to get basemaps group._ש",
+            invalidBasemapQuery: "לא ניתן לקבל קבוצת מפות בסיס.",
             falseConfigParams: "ערכי מפתחות קונפיגורציה נדרשים ריקים או לא תואמים למאפייני השכבה. הודעה זו עלולה להופיע מספר פעמים.",
             invalidLocation: "המיקום הנוכחי לא נמצא.",
             invalidProjection: "לא ניתן להטיל את המיקום הנוכחי במפה.",

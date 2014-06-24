@@ -1,39 +1,39 @@
 ﻿define(
      ({
         map: {
-            error: "ก้_Unable to create map_ษฺ"
+            error: "ไม่สามารถสร้างแผนที่ได้"
         },
         onlineStatus: {
             online: "ก้_You are currently online._ษฺ",
-            offline: "ก้_You are currently working offline. Form submissions will be saved locally until a connection to the server can be made._ษฺ",
-            reconnecting: "ก้_Reconnecting&hellip;_ษฺ"
+            offline: "คุณกำลังทำงานแบบออฟไลน์ การส่งแบบฟอร์มจะถูกบันทึกไว้ที่เครื่องจนกว่าการเชื่อมต่อกับเซิร์ฟเวอร์จะสามารถทำได้",
+            reconnecting: "กำลังเชื่อมต่อใหม่&hellip;"
         },
 	 configure: {
             mapdlg: {
                 items: {
                     organizationLabel: "องค์กรของฉัน",
                     onlineLabel: "ArcGIS Online",
-                    contentLabel: "ก้_My Content_ษฺ",
-                    favoritesLabel: "ก้_My Favorites_ษฺ"
+                    contentLabel: "เนื้อหาของฉัน",
+                    favoritesLabel: "รายการโปรดของฉัน"
                 },
                 title: "เลือกเว็บแมพ",
                 searchTitle: "ค้นหา",
-                ok: "ก้_Ok_ษฺ",
+                ok: "ตกลง",
                 cancel: "ยกเลิก",
-                placeholder: "ก้_Enter search term_ษฺ"
+                placeholder: "ใส่เงื่อนไขการค้นหา"
             },
             groupdlg: {
                 items: {
                     organizationLabel: "องค์กรของฉัน",
                     onlineLabel: "ArcGIS Online",
-                    contentLabel: "ก้_My Content_ษฺ",
-                    favoritesLabel: "ก้_My Favorites_ษฺ"
+                    contentLabel: "เนื้อหาของฉัน",
+                    favoritesLabel: "รายการโปรดของฉัน"
                 },
                 title: "เลือกกลุ่ม",
                 searchTitle: "ค้นหา",
-                ok: "ก้_Ok_ษฺ",
+                ok: "ตกลง",
                 cancel: "ยกเลิก",
-                placeholder: "ก้_Enter search term_ษฺ"
+                placeholder: "ใส่เงื่อนไขการค้นหา"
             }
         }
     })

@@ -27,16 +27,20 @@
 				title: "Welkom bij"
 			},
 			addEditPopup: {
+				disabled: "Ĳ_Add Section is disabled because the maximum number of allowed sections has been reached._ä",
 				titleAdd: "Sectie toevoegen",
+				titleAddHome: "Ĳ_Add Home Section_ä",
 				titleEdit: "Sectie bewerken",
 				step: "Stap",
-				stepMainStageExplain: "Een kaart, afbeelding of video toevoegen aan het hoofdvenster",
-				stepPanelExplain: "Inhoud toevoegen aan de",
+				stepMainStageExplain: "Ĳ_Main Stage Content_ä",
+				stepPanelExplain: "Ĳ_Content_ä",
 				stepMainStageNextTooltip: "Voer de sectietitel in en selecteer de inhoud van het hoofdvenster",
 				step2NextTooltip: "Voer de sectietitel en inhoud van %LAYOUT-TYPE% in",
 				stepNextTooltipNext: "om naar de volgende stap te gaan",
 				stepNextTooltipAdd: "om de sectie toe te voegen",
-				titlePlaceholder: "Sectietitel...",
+				firstAddExplain: "Ĳ_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._ä",
+				firstAddLeanMore: "Ĳ_Learn More_ä",
+				titlePlaceholder: "Sectietitel..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Voeg hier tekst, koppelingen en kleine afbeeldingen toe.",
@@ -54,6 +58,10 @@
 				deleteTooltip: "Verwijderen",
 				firstSectionExplain: "(De sectie Home kan niet worden verplaatst)"
 			},
+			exportData: {
+				btn: "Ĳ_Export content_ä",
+				tooltip: "Ĳ_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._ä"
+			},
 			help: {
 				lblHelp: "Help",
 				lblAdd: "Sectie toevoegen",
@@ -61,6 +69,7 @@
 				lblOrga: "Inhoud ordenen",
 				lblEdit: "Bewerkingen",
 				lblPublish: "Delen",
+				lblTips: "Ĳ_Tips_ä",
 				lblMore: "Wilt u meer?",
 				lblLink: "Ga naar de website met kaartverhalen.",
 				content1Div1: "U kunt verschillende stijlen integreren wanneer u uw verhaal opbouwt. De <strong>%LAYOUT_TITLE%</strong> bevat doorgaans uw tekst, afbeeldingen en video terwijl uw kaarten gewoonlijk op het <strong>Hoofdvenster</strong> staan. Met de %TPL_NAME% kunt u echter ook afbeeldingen, diagrammen en video opnemen in het hoofdvenster.",
@@ -69,10 +78,13 @@
 				content2Div2: "U kunt ook koppelingen om te delen naar Facebook, Twitter en Bitly toevoegen, zodat lezers uw %TPL_NAME% gemakkelijk met anderen kunnen delen.",
 				content3Div1: "Ĳ_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ä",
 				content4Div1: "Hebt u een fout gevonden of wilt u uw materiaal wijzigen? Geen probleem. Zoek naar het bewerkingspictogram dat overal in de app beschikbaar is om wijzigingen in uw inhoud uit te voeren. U zult de bewerkingsfuncties vaak gebruiken wanneer u uw %TPL_NAME% ontwikkelt.",
-				content5Div1: "Uw %TPL_NAME% wordt opgeslagen op uw %PORTAL%-account en is standaard privé. U kunt beslissen om dit met uw organisatie te delen of met de hele wereld. We bieden u zelfs een verkorte URL zodat het delen nog makkelijker gaat."
+				content5Div1: "Uw %TPL_NAME% wordt opgeslagen op uw %PORTAL%-account en is standaard privé. U kunt beslissen om dit met uw organisatie te delen of met de hele wereld. We bieden u zelfs een verkorte URL zodat het delen nog makkelijker gaat.",
+				content6Div1: "Ĳ_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._ä",
+				content6Div2: "Ĳ_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_ä"
 			},
 			landing: {
-				lblAdd: "De sectie Home toevoegen",
+				lblAdd: "Ĳ_What do you want to call your Map Journal?_ä",
+				phAdd: "Ĳ_Enter your title..._ä",
 				lblOR: "Of",
 				lblHelp: "Volg een rondleiding"
 			},

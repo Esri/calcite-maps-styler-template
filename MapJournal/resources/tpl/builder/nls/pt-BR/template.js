@@ -27,16 +27,20 @@
 				title: "Bem-Vindo ao"
 			},
 			addEditPopup: {
+				disabled: "ã_Add Section is disabled because the maximum number of allowed sections has been reached._Ç",
 				titleAdd: "Adicionar Seção",
+				titleAddHome: "ã_Add Home Section_Ç",
 				titleEdit: "Editar Seção",
 				step: "Intervalo",
-				stepMainStageExplain: "Adicione um Mapa, Imagem ou Vídeo no Nível Principal",
-				stepPanelExplain: "Adicionar conteúdo no",
+				stepMainStageExplain: "ã_Main Stage Content_Ç",
+				stepPanelExplain: "ã_Content_Ç",
 				stepMainStageNextTooltip: "Insira o título da seção e selecione o conteúdo do Nível Principal",
 				step2NextTooltip: "Insira o título da seção e conteúdo do %LAYOUT-TYPE%",
 				stepNextTooltipNext: "para ir para a próxima etapa",
 				stepNextTooltipAdd: "para adicionar a seção",
-				titlePlaceholder: "Título da seção...",
+				firstAddExplain: "ã_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._Ç",
+				firstAddLeanMore: "ã_Learn More_Ç",
+				titlePlaceholder: "Título da seção..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Adicione texto, links e pequenos gráficos aqui.",
@@ -54,6 +58,10 @@
 				deleteTooltip: "Excluir",
 				firstSectionExplain: "(A seção local não pode ser movida)"
 			},
+			exportData: {
+				btn: "ã_Export content_Ç",
+				tooltip: "ã_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._Ç"
+			},
 			help: {
 				lblHelp: "Ajuda",
 				lblAdd: "Adicionar Seção",
@@ -61,6 +69,7 @@
 				lblOrga: "Organizar conteúdo",
 				lblEdit: "Edições",
 				lblPublish: "Compartilhar",
+				lblTips: "ã_Tips_Ç",
 				lblMore: "Deseja mais?",
 				lblLink: "Visite o site da web de Mapas Históricos.",
 				content1Div1: "Você pode integrar uma variedade de estilos na construção da sua história. O <strong>% LAYOUT_TITLE% </ strong> normalmente tem o seu texto, imagens e vídeo enquanto seus mapas tendem a ir para o<strong> Nível Principal</ strong>. No entanto, o% TPL_NAME% também permite a você apresentar imagens, gráficos e vídeos dentro do nível principal.",
@@ -69,10 +78,13 @@
 				content2Div2: "Você também pode adicionar links de compartilhamento para Facebook, Twitter e Bitly, assim os leitores podem facilmente espalhar seu%TPL_NAME% para todos.",
 				content3Div1: "ã_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._Ç",
 				content4Div1: "Encontrou um erro ou deseja alterar o seu material? Não se preocupe. Procure o ícone de edição em todo o aplicativo para fazer alterações no seu conteúdo. Você utilizará as funções de edição várias vezes conforme desenvolver o seu %TPL_NAME%!",
-				content5Div1: "Seu%TPL_NAME% é salvo na sua conta %PORTAL%, e privado por padrão. Você pode decidir compartilhá-lo com sua organização, ou abrí-lo para o mundo. Até lhe oferecemos uma URL mais curta, estável para que você possa compartilhá-la facilmente."
+				content5Div1: "Seu%TPL_NAME% é salvo na sua conta %PORTAL%, e privado por padrão. Você pode decidir compartilhá-lo com sua organização, ou abrí-lo para o mundo. Até lhe oferecemos uma URL mais curta, estável para que você possa compartilhá-la facilmente.",
+				content6Div1: "ã_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._Ç",
+				content6Div2: "ã_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_Ç"
 			},
 			landing: {
-				lblAdd: "Adicionar a Seção Local",
+				lblAdd: "ã_What do you want to call your Map Journal?_Ç",
+				phAdd: "ã_Enter your title..._Ç",
 				lblOR: "Ou",
 				lblHelp: "Obter uma Apresentação"
 			},

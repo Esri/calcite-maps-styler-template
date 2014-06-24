@@ -30,7 +30,7 @@ define(
 			    "legend": "Přidat legendu do výstupu"
 			},
 			"share": {
-				"extent": "Použít rozsah aktuální mapy",
+				"extent": "Použít aktuální rozsah mapy",
 				"label": "Sdílet tuto mapu",
 				"link": "Odkaz na mapu",
 				"facebook": "Facebook",
@@ -44,7 +44,7 @@ define(
         	"bookmarks": "Záložky",
         	"layers": "Vrstvy",
         	"basemap": "Galerie podkladových map",
-        	"overview": "Mapa přehledu",
+        	"overview": "Přehledová mapa",
         	"measure": "Měření",
         	"edit": "Upravit",
         	"time": "Čas",

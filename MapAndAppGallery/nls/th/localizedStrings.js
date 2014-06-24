@@ -45,7 +45,7 @@ define({
         itemDetailsInfoTab: "ข้อมูล",
         tagsText: "แท็กส์",
         sizeText: "ขนาด",
-        accessConstraintsText: "การเข้าถึงและการใช้งานแบบจำกัด",
+        accessConstraintsText: "การเข้าถึงและข้อจำกัด",
         numberOfCommentsText: "ความคิดเห็น",
         numberOfRatingsText: "คะแนน",
         numberOfViewsText: "ยอดเข้าชม",
@@ -72,7 +72,7 @@ define({
         errorMessages: {
             emptyGroup: "กลุ่มการกำหนดค่าไม่ได้มีข้อมูลใด ๆ ที่จะดำเนินการแบบสอบถาม",
             invalidSearch: "ไม่พบข้อมูล",
-            invalidBasemapQuery: "ก้_Unable to get basemaps group._ษฺ",
+            invalidBasemapQuery: "ไม่สามารถใช้งานกลุ่มแผนที่ฐานได้",
             falseConfigParams: "ค่าหลักต้องการการกำหนดค่าที่จำเป็นต้องมี ทั้งไม่มีค่าหรือไม่ว่าการจับคู่ที่มีกับคุณลักษณะชั้นข้อมูล ข้อความนี้อาจปรากฏขึ้นหลายครั้ง",
             invalidLocation: "ไม่พบตำแหน่งปัจจุบัน",
             invalidProjection: "ไม่สามารถกำหนดตำแหน่งปัจจุบันบนแผนที่",

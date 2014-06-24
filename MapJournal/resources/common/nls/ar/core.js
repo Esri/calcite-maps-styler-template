@@ -13,7 +13,9 @@
 				open: "فتح",
 				start: "بدء",
 				loading: "تحميل",
-				disabledAdmin: "لقد تم تعطيل هذا المعلم بواسطة المدير"
+				disabledAdmin: "لقد تم تعطيل هذا المعلم بواسطة المدير",
+				width: "بيت_Width_لاحقة",
+				height: "بيت_Height_لاحقة"
 			},
 			inlineFieldEdit: {
 				editMe: "التحرير!"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "المخطط",
 				explain: "أي التخطيطات الطباعية تريد استخدامها؟",
-				explainInit: "يمكن تغيير التخطيط الطباعي في أي وقت من لوحة الإعدادات.",
+				explainInit: "بيت_You can change the layout anytime from the settings dialog._لاحقة",
 				viewExample: "عرض مثال حي"
 			},
 			settingsTheme: {
