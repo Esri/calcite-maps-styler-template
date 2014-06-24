@@ -1,13 +1,16 @@
-change report #60 at 06/24/2014 10:59:00.30
+change report #61 at 06/24/2014 14:26:21.74
 -
 for git branch
-develop
+release_3.4
 in repository local-government-online-apps
-140624160314062416491406231948
+140624160314062420021406231948
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M FindEditFilter.json
- M FindEditFilter_try_it.json
- M Finder.json
- M Finder_try_it.json
+ M nls/cs/resources.js
+ M nls/de/resources.js
+ M nls/es/resources.js
+ M nls/fi/resources.js
+ M nls/he/resources.js
+ M nls/th/resources.js
+ M nls/tr/resources.js
