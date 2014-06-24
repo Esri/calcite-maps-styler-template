@@ -60,7 +60,7 @@
 			},
 			exportData: {
 				btn: "æ_Export content_Â",
-				tooltip: "æ_Use this button to export your content locally. This will open a new page that you can easily copy or save as a PDF.<br />Copying that page content in a word processor is the most effective way to recreate your Journal in case of an accidental deletion._Â"
+				tooltip: "æ_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._Â"
 			},
 			help: {
 				lblHelp: "Aide",
