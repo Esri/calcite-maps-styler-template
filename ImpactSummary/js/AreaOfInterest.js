@@ -137,7 +137,7 @@ define([
             _selectFeatures: function (features, value) {
                 var alpha, themeColor, sls, i;
                 this._selectedGraphics.clear();
-                themeColor = this.config.theme == "light" ? [255, 255, 255, 1] : [60, 60, 60, 0.9];
+                themeColor = [0, 255, 255, 1];
                 sls = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(themeColor), 2);
                 array.forEach(this.config.featuresTransparency, lang.hitch(this, function (transparency) {
                     if (transparency.label == this.config.featureCurrentTransparency.label) {
