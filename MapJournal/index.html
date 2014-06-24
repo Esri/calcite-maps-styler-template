@@ -52,7 +52,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.0-alpha12',
+				version: '1.0-alpha13',
 				isProduction: true,
 				isInBuilder: false,
 				indexCfg: configOptions
@@ -98,7 +98,6 @@
 			}
 			
 			var pathJSAPI = "//jsdev.arcgis.com/3.10/";
-			//var pathJSAPI = "//js.arcgis.com/3.9/";
 			var path1 = location.pathname.replace(/\/[^/]+$/, '/');
 			var path2 = location.pathname.replace(/\/[^/]+$/, '');
 			var dojoConfig = {
@@ -140,7 +139,6 @@
 			
 			loadCSS(pathJSAPI + "js/esri/css/esri.css", true);
 			loadCSS(pathJSAPI + "/js/dojo/dijit/themes/claro/claro.css", true);	
-			//loadCSS(pathJSAPI + "/js/dojo/dijit/themes/calcite/calcite.css", true);	
 			
 			if( app.isProduction ) {
 				if ( app.isInBuilder )

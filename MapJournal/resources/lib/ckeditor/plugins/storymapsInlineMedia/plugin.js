@@ -19,10 +19,11 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 						type: "image",
 						image: {
 							url: mediaImg.attr('src'),
-							titleDisplay: caption && caption.length ? 'caption' : 'hover',
+							//titleDisplay: caption && caption.length ? 'caption' : 'hover',
 							title: title,
 							width: mediaImg.attr('width'),
-							height: mediaImg.attr('height')
+							height: mediaImg.attr('height'),
+							activateFullScreen: mediaImg.parents("image-container").hasClass("activate-fullscreen")
 						}
 					};
 				}
@@ -30,12 +31,24 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 				topic.publish("EDITOR-OPEN-INLINE-MEDIA", {
 					selectedMedia: media,
 					editorCallback: function(cfg){
-						var outputEl,
-							imgHTML = '<div class="btn-fullscreen-container"><img src="" /></div>',
-							captionHTML = '<figure class="caption">' + imgHTML + '<figcaption></figcaption>' + '</figure>';
+						var outputEl = "",
+							mediaTpl = "",
+							captionTpl = "";
 						
-						if ( cfg.titleDisplay == 'caption' ) {
-							outputEl = CKEDITOR.dom.element.createFromHtml(captionHTML, editor.document);
+						if ( cfg.type == "image" ) {
+							var fullScreenOpt = cfg.activateFullScreen ? 'activate-fullscreen' : '';
+							mediaTpl = '<div class="image-container ' + fullScreenOpt + '"><img src="" /></div>';
+							captionTpl = '<figure class="caption">' + mediaTpl + '<figcaption></figcaption>' + '</figure>';
+						}
+						else {
+							mediaTpl = '<div class="iframe-container"><iframe src="" frameborder="0" allowfullscreen="1"/></iframe></div>';
+							//captionTpl = '<figure class="caption">' + mediaTpl + '<figcaption></figcaption>' + '</figure>';
+						}
+						
+						// TODO that big logic should not be needed
+						// Caption
+						if ( cfg.title ) {
+							outputEl = CKEDITOR.dom.element.createFromHtml(captionTpl, editor.document);
 							$(outputEl.getChildren().$).eq(0).children().attr({
 								'src': cfg.url,
 								// TODO test on small size image ; what to do with the commented dialog in configure?
@@ -45,13 +58,18 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 							outputEl.getChildren().$[1].innerHTML = cfg.title;
 						}
 						else {
-							outputEl = CKEDITOR.dom.element.createFromHtml(imgHTML, editor.document);
+							outputEl = CKEDITOR.dom.element.createFromHtml(mediaTpl, editor.document);
 							outputEl.getChildren().$[0].setAttribute('src', cfg.url);
 							// TODO
 							outputEl.getChildren().$[0].setAttribute('width', '100%'); //cfg.width);
 							//outputEl.getChildren().$[0].setAttribute('height', cfg.height);
-							if ( cfg.titleDisplay == 'hover' )
+							if ( cfg.type == "image" && cfg.titleDisplay == 'hover' )
 								outputEl.getChildren().$[0].setAttribute('title', cfg.title);
+							
+							if ( cfg.type == "video" ) {
+								outputEl.getChildren().$[0].setAttribute('width', cfg.width || '100%');
+								outputEl.getChildren().$[0].setAttribute('height', cfg.height || '');
+							}
 						}
 						
 						var sel = editor.getSelection(),
