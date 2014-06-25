@@ -799,20 +799,6 @@ img{
 
 /*Calcite updates keep list and submit issues*/
 
-.calcite .esriPopup .titleButton.next{
-    background: url('../images/calcite_nav.png') no-repeat -42px -3px !important;
-    top:10px;
-    width: 8px;
-    height: 10px;
-    @include opacity(0.6);
-}
-.calcite .esriPopup .titleButton.prev {
-    background: url('../images/calcite_nav.png') no-repeat -57px -23px !important;
-    top:10px;
-    width: 8px;
-    height: 10px;
-    @include opacity(0.6);
-}
 .calcite .esriPopup .title{
     font-weight:bold;
 }
