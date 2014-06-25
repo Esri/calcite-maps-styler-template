@@ -806,8 +806,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
             var width = 270,
                 height = 300,
-                newWidth = Math.round(box.w * 0.60),
-                newHeight = Math.round(box.h * 0.45);
+                newWidth = Math.round(box.w * 0.50),
+                newHeight = Math.round(box.h * 0.35);
             if (newWidth < width) {
                 width = newWidth;
             }
