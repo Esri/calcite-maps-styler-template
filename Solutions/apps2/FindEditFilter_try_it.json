@@ -20,7 +20,7 @@
     ],
     "values": {
         "webmap": "b5dda2c5afda4b7cb77a07be97100a84",
-        "titleBar.title": "Pre-Incident Plans",
+        "titleBar.title": "Find, Edit, and Filter Try-It",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "EarthBrowns",
         "filter.hint1": "Floor #",
@@ -162,7 +162,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 4a5d68b0e2de9b51 2014-06-25 14:36:26 -0700"
+                "commit ee77f0a520e0cbb7 2014-06-25 16:02:47 -0700"
             ]
         }
     }, {

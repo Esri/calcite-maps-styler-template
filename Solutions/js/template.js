@@ -15,7 +15,7 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-/* commit 4a5d68b0e2de9b51 2014-06-25 14:36:26 -0700 */
+/* commit ee77f0a520e0cbb7 2014-06-25 16:02:47 -0700 */
 define([
     "dojo/_base/declare",
     "dojo/_base/kernel",
@@ -511,6 +511,8 @@ define([
                     },
                     callbackParamName: "callback"
                 }).then(lang.hitch(this, function (response) {
+                    var q;
+
                     // get units defined by the org or the org user
                     this.orgConfig.units = "metric";
                     if (response.user && response.user.units) { //user defined units
@@ -520,6 +522,19 @@ define([
                     } else if ((response.user && response.user.region && response.user.region === "US") || (response.user && !response.user.region && response.region === "US") || (response.user && !response.user.region && !response.region) || (!response.user && response.ipCntryCode === "US") || (!response.user && !response.ipCntryCode && kernel.locale === "en-us")) {
                         // use feet/miles only for the US and if nothing is set for a user
                         this.orgConfig.units = "english";
+                    }
+                    //Is there a custom basemap group defined (owner and title or id)
+                    q = this._parseQuery(response.basemapGalleryGroupQuery);
+                    this.orgConfig.basemapgroup = {
+                        id: null,
+                        title: null,
+                        owner: null
+                    };
+                    if (q.id) {
+                        this.orgConfig.basemapgroup.id = q.id;
+                    } else if (q.title && q.owner) {
+                        this.orgConfig.basemapgroup.title = q.title;
+                        this.orgConfig.basemapgroup.owner = q.owner;
                     }
                     // Get the helper services (routing, print, locator etc)
                     this.orgConfig.helperServices = response.helperServices;
@@ -540,6 +555,25 @@ define([
                 deferred.resolve();
             }
             return deferred.promise;
+        },
+        _parseQuery: function (queryString) {
+            var regex = /(AND|OR)?\W*([a-z]+):/ig,
+                fields = {},
+                fieldName,
+                fieldIndex,
+                result = regex.exec(queryString);
+            while (result) {
+                fieldName = result && result[2];
+                fieldIndex = result ? (result.index + result[0].length) : -1;
+
+                result = regex.exec(queryString);
+
+                fields[fieldName] = queryString
+                    .substring(fieldIndex, result ? result.index : queryString.length)
+                    .replace(/^\s+|\s+$/g, "")
+                    .replace(/\"/g, ""); //remove extra quotes in title
+            }
+            return fields;
         },
         _queryUrlParams: function () {
             // This function demonstrates how to handle additional custom url parameters. For example

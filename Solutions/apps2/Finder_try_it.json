@@ -21,7 +21,7 @@
      ],
     "values": {
         "webmap": "3c33240fbacd42339547a06a966dcbf7",
-        "titleBar.title": "Finder",
+        "titleBar.title": "Finder Try-It",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "SeaBlues",
         "searchBox.hint": "Parcel ID",
@@ -146,7 +146,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 4a5d68b0e2de9b51 2014-06-25 14:36:26 -0700"
+                "commit ee77f0a520e0cbb7 2014-06-25 16:02:47 -0700"
             ]
         }
     }, {
