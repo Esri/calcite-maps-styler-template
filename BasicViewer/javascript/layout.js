@@ -1873,7 +1873,8 @@ function createTimeSlider(timeProperties) {
     //create a time slider and a label to hold date details and add to the floating time panel
     var timeSlider = new esri.dijit.TimeSlider({
         style: "width: 100%;",
-        id: "timeSlider"
+        id: "timeSlider",
+        loop: true
     }, dojo.create('div'));
 
     var timeSliderLabel = dojo.create('div', {
