@@ -2,8 +2,8 @@ define({
     //Default configuration settings for the applciation. This is where you"ll define things like a bing maps key,
     //default web map, default app color theme and more. These values can be overwritten by template configuration settings
     //and url parameters.
-    "appid": "be338760de9249f8b15df22a8e4ee586",
-    "webmap": "",
+    "appid": "",
+    "webmap": "0c5cb13c4fc54b28bb26a125221ed96f",
     "form_layer": {
         "id": ""
     },
@@ -13,10 +13,7 @@ define({
         "Description": ""
     },
     "fields": [],
-    "theme": {
-        "themeName": "Bootstrap (Default)",
-        "themeSrc": "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap-theme.min.css"
-    },
+    "theme": "bootstrap", // options: bootstrap, cerulian, cyborg, darkly, journal, readable
     "oauthappid": null,
     //Enter the url to the proxy if needed by the applcation. See the "Using the proxy page" help topic for details
     // //developers.arcgis.com/en/javascript/jshelp/ags_proxy.html

@@ -215,8 +215,12 @@ define([
                                             break;
                                         }
                                     } else {
+                                        if (this._rendererNodes[i].minValue == this._rendererNodes[i].maxValue && fieldValue.toString() == this._rendererNodes[i].maxValue) {
+                                            this._highlightFeature(features, alpha, sls, i);
+                                            break;
+                                        }
                                         //for class break
-                                        if ((fieldValue.toString() >= this._rendererNodes[i].minValue.toString()) && (fieldValue.toString() <= this._rendererNodes[i].maxValue)) {
+                                        else if ((fieldValue.toString() > this._rendererNodes[i].minValue.toString()) && (fieldValue.toString() <= this._rendererNodes[i].maxValue)) {
                                             this._highlightFeature(features, alpha, sls, i);
                                             break;
                                         }

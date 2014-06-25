@@ -1,35 +1,34 @@
 define([
-    "dojo/Evented",
     "dojo/_base/declare",
     "dojo/_base/lang",
+    "dojo/dom-class",
     "dijit/_WidgetBase",
-    "dijit/layout/ContentPane",
     "dojo/on",
     "esri/arcgis/utils",
     "esri/arcgis/Portal",
     "dojo/Deferred",
-    "dojo/cookie"
+    "dojo/cookie",
+    "dojo/dom-construct",
+    "dojo/i18n!application/nls/builder"
 ],
-function (Evented, declare, lang, _WidgetBase, ContentPane, on, arcgisUtils, portal, Deferred, cookie) {
+function (declare, lang, domClass, _WidgetBase, on, arcgisUtils, portal, Deferred, cookie, domConstruct, nls) {
     var Widget = declare([_WidgetBase], {
         declaredClass: "application.signInHelper",
         _portal: null,
         cred: "esri_jsapi_id_manager_data",
         constructor: function () {
-            var portalURL = this._getPortalURL();
             this._portal = new portal.Portal(this._getPortalURL());
         },
 
         createPortal: function () {
             // create portal
             var deferred = new Deferred();
-            var _self = this;
             // portal loaded
             this.own(on(this._portal, "Load", lang.hitch(this, function () {
                 this._portal.signIn().then(function (loggedInUser) {
                     deferred.resolve(loggedInUser);
                 }, function (err) {
-                    deferred.reject(new Error("Sign-in Failed"));
+                    deferred.reject(err);
                 });
             })));
 
@@ -65,7 +64,20 @@ function (Evented, declare, lang, _WidgetBase, ContentPane, on, arcgisUtils, por
                     return true;
                 }
                 else {
-                    alert("Sorry, you dont have enough permissions to view this item");
+                    // remove loading class from body
+                    domClass.remove(document.body, "app-loading");
+                    domClass.add(document.body, "app-error");
+                    // an error occurred - notify the user. In this example we pull the string from the
+                    // resource.js file located in the nls folder because we've set the application up
+                    // for localization. If you don't need to support multiple languages you can hardcode the
+                    // strings here and comment out the call in index.html to get the localization strings.
+                    // set message
+                    //We found some changes here and it was not working so we have modified the code
+                    var signInErrorMessageDiv = domConstruct.create("div", { class: "signIn-error-message" }, document.body);
+                    var node = domConstruct.create("div", { className: "alert alert-danger errorMessage", innerHTML: nls.builder.invalidUser }, signInErrorMessageDiv);
+                    if (node) {
+                        node.innerHTML = nls.builder.invalidUser;
+                    }
                     return false;
                 }
             }

@@ -1,4 +1,4 @@
-/*global $,define,document */
+/*global $,define,document,Storage */
 /*jslint sloppy:true,nomen:true */
 define([
     "dojo/ready",
@@ -25,10 +25,11 @@ define([
     "esri/geometry/webMercatorUtils",
     "esri/geometry/Point",
     "application/ShareDialog",
+    "application/localStorageHelper",
     "esri/graphic",
     "esri/symbols/PictureMarkerSymbol",
     "esri/toolbars/edit",
-    "dojo/i18n!esri/nls/jsapi",
+    "application/themes",
     "dojo/NodeList-traverse",
     "dojo/domReady!"
 ], function (
@@ -51,7 +52,7 @@ define([
     _TemplatedMixin,
     modalTemplate,
     userTemplate,
-    nls, webMercatorUtils, Point, ShareDialog, Graphic, PictureMarkerSymbol, editToolbar, esriBundle) {
+    nls, webMercatorUtils, Point, ShareDialog, localStorageHelper, Graphic, PictureMarkerSymbol, editToolbar, theme) {
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: userTemplate,
         nls: nls,
@@ -59,7 +60,10 @@ define([
         map: null,
         addressGeometry: null,
         editToolbar: null,
+        themes: theme,
+        localStorageSupport: null,
         constructor: function () {
+
         },
         startup: function (config, response, isPreview, node) {
             // config will contain application and user defined info for the template such as i18n strings, the web map id
@@ -67,6 +71,7 @@ define([
             // any url parameters and any application specific configuration information.
             if (config) {
                 this.config = config;
+                this.localStorageSupport = new localStorageHelper();
                 // document ready
                 ready(lang.hitch(this, function () {
                     // modal i18n
@@ -75,33 +80,31 @@ define([
                     domConstruct.place(modalTemplate, document.body, 'last');
                     //supply either the webmap id or, if available, the item info
                     domStyle.set(this.userMode, 'display', 'none');
-                    var itemInfo = this.config.itemInfo || this.config.webmap;
-                    this._setAppConfigurations(this.config.details);
-                    // window title
-                    if(this.config.details && this.config.details.Title){
-                        window.document.title = this.config.details.Title;
-                    }
-                    this._createWebMap(itemInfo);
                     if (isPreview) {
-                        if (typeof (Storage) !== "undefined") {
+                        var cssStyle;
+                        if (this.localStorageSupport.supportsStorage()) {
                             localStorage.setItem("geoform_config", JSON.stringify(config));
                         }
-                        
-                        
-                        
-                        var cssStyle = domConstruct.create('link',{
-                            rel: 'stylesheet',
-                            type: 'text/css',
-                            href: window.location.href.split("index.html")[0] + this.config.theme.themeSrc
-                        });
-                        node.src = window.location.href.split("&")[0];
+                        array.forEach(this.themes, lang.hitch(this, function (currentTheme) {
+                            if (this.config.theme == currentTheme.id) {
+                                cssStyle = domConstruct.create('link', {
+                                    rel: 'stylesheet',
+                                    type: 'text/css',
+                                    href: currentTheme.url
+                                });
+                                node.src = window.location.href.split("&")[0];
+                            }
+                        }));
+                        this._createWebMap(this.config.webmap);
                         node.onload = function () {
                             domConstruct.place(cssStyle, $("#iframeContainer").contents().find('head')[0], "last");
                         };
                     }
                     else {
-                        this._switchStyle(this.config.theme.themeSrc);
+                        this._switchStyle(this.config.theme);
                         dom.byId("parentContainter").appendChild(this.userMode);
+                        var itemInfo = this.config.itemInfo || this.config.webmap;
+                        this._createWebMap(itemInfo);
                     }
                 }));
             } else {
@@ -116,11 +119,20 @@ define([
                 array.forEach(query(".geoFormQuestionare"), lang.hitch(this, function (currentField) {
                     //TODO chk for mandatroy fields
                     //to check for errors in form before submitting.
+                    //condition check to filter out radio fields
+                    if ((query(".form-control", currentField)[0])) {
                     //if condition to check for conditions where mandatory fields are kept empty or the entered values are erroneous.
                     if ((query(".form-control", currentField)[0].value === "" && domClass.contains(currentField, "mandatory")) || domClass.contains(currentField, "has-error")) {
                         //need to check if this condition can be removed
                         //this._validateField(currentField, false);
                         erroneousFields.push(currentField);
+                        }
+                    }
+                    //handle errors in radio fields here.
+                    else {
+                        if (domClass.contains(currentField, "mandatory") && query(".radioInput:checked", currentField).length === 0) {
+                            erroneousFields.push(currentField);
+                        }
                     }
                 }));
 
@@ -128,7 +140,10 @@ define([
                     errorMessage = "1. " + nls.user.formValidationMessageAlertText + "\n <ul>";
 
                     array.forEach(erroneousFields, function (erroneousField) {
-                        errorMessage += "<li><a href='#" + erroneousField.childNodes[0].id + "'>" + erroneousField.childNodes[0].innerHTML.split("*")[0] + "</a></li>";
+                        if (query(".form-control", erroneousField).length !== 0 && query(".form-control", erroneousField)[0].placeholder !== "")
+                            errorMessage += "<li><a href='#" + erroneousField.childNodes[0].id + "'>" + erroneousField.childNodes[0].innerHTML.split("*")[0] + "</a>. " + nls.user.validationFormatTypeSubstring + query(".form-control", erroneousField)[0].placeholder + "</li>";
+                        else
+                            errorMessage += "<li><a href='#" + erroneousField.childNodes[0].id + "'>" + erroneousField.childNodes[0].innerHTML.split("*")[0] + "</a></li>";
                     });
                     errorMessage += "</ul>";
 
@@ -186,9 +201,6 @@ define([
                 this.map.infoWindow.setContent(nls.user.addressSearchText);
                 this.map.infoWindow.show(evt.graphic.geometry);
             }));
-            if (layer && layer.fields) {
-                var fields = layer.fields;
-            }
             on(this.map, 'click', lang.hitch(this, function (evt) {
                 this.addressGeometry = evt.mapPoint;
                 if (!evt.graphic) {
@@ -245,14 +257,17 @@ define([
         },
 
         //function to set the theme for application
-        _switchStyle: function (cssSrc) {
-            dom.byId("themeLink").href = cssSrc;
+        _switchStyle: function (themeName) {
+            array.forEach(this.themes, lang.hitch(this, function (currentTheme) {
+                if (themeName == currentTheme.id) {
+                    dom.byId("themeLink").href = currentTheme.url;
+                }
+            }));
         },
 
         //function to validate and create the form
         _createForm: function (fields) {
-            var formContent, labelContent, inputContent, selectOptions, helpBlock, fileUploadForm, fileInput,
-             matchingField, newAddedFields = [], fieldname, fieldLabelText, requireField;
+            var formContent, labelContent, inputContent, selectOptions, helpBlock, fileUploadForm, fileInput, matchingField, newAddedFields = [], fieldname, fieldLabelText, requireField, sortedArray;
             if (!this.map.getLayer(this.config.form_layer.id)) {
                 this._showErrorMessageDiv(nls.user.noLayerConfiguredMessage);
                 array.some(query(".row"), lang.hitch(this, function (currentNode) {
@@ -269,6 +284,7 @@ define([
             }
             array.forEach(this.map.getLayer(this.config.form_layer.id).fields, lang.hitch(this, function (layerField) {
                 matchingField = false;
+                sortedArray = [];
                 array.forEach(fields, lang.hitch(this, function (currentField) {
                     if (layerField.name == currentField.fieldName && currentField.visible) {
                         //code to put aestrik mark for mandatory fields
@@ -286,8 +302,26 @@ define([
                     }
                 }
             }));
-            array.forEach(newAddedFields, lang.hitch(this, function(currentField, index) {
-                //code to put aestrik mark for mandatory fields and also to give it a mandatory class.
+            array.forEach(fields, lang.hitch(this, function (sortedElement) {
+                array.some(newAddedFields, lang.hitch(this, function (newElement) {
+                    var fName = newElement.name ? newElement.name : newElement.fieldName;
+                    if (this.config.appid) {
+                        if (sortedElement.fieldName == fName) {
+                            sortedArray.push(newElement);
+                            return true;
+                        }
+                    }
+                    else {
+                        if (sortedElement.name == fName) {
+                            sortedArray.push(newElement);
+                            return true;
+                        }
+                    }
+                }));
+            }));
+            array.forEach(sortedArray, lang.hitch(this, function (currentField, index) {
+                var radioContainer, radioContent, inputLabel;
+                //code to put asterisk mark for mandatory fields and also to give it a mandatory class.
                 if (!currentField.nullable) {
                     formContent = domConstruct.create("div", {className: "form-group has-feedback geoFormQuestionare mandatory" }, this.userForm);
                     requireField = domConstruct.create("div", {className: 'text-danger requireFieldStyle', innerHTML: "*" }, formContent);
@@ -308,13 +342,24 @@ define([
                     domConstruct.place(requireField, labelContent, "after");
                 }
                 //code to make select boxes in case of a coded value
+                //code to make select boxes in case of a coded value
                 if (currentField.domain) {
-                    inputContent = domConstruct.create("select", {className: "form-control selectDomain", "id": fieldname }, formContent);
-                    array.forEach(currentField.domain.codedValues, lang.hitch(this, function (currentOption) {
-                        selectOptions = domConstruct.create("option", {}, inputContent);
-                        selectOptions.text = currentOption.name;
-                        selectOptions.value = currentOption.code;
-                    }));
+                    if (currentField.domain.codedValues.length > 2) {
+                        inputContent = domConstruct.create("select", { className: "form-control selectDomain", "id": fieldname }, formContent);
+                        array.forEach(currentField.domain.codedValues, lang.hitch(this, function (currentOption) {
+                            selectOptions = domConstruct.create("option", {}, inputContent);
+                            selectOptions.text = currentOption.name;
+                            selectOptions.value = currentOption.code;
+                        }));
+                    }
+                    else {
+                        radioContainer = domConstruct.create("div", { className: "radioContainer" }, formContent);
+                        array.forEach(currentField.domain.codedValues, lang.hitch(this, function (currentOption) {
+                            radioContent = domConstruct.create("div", { className: "radio" }, radioContainer);
+                            inputLabel = domConstruct.create("label", { innerHTML: currentOption.name, "for": currentOption.code + fieldname }, radioContent);
+                            inputContent = domConstruct.create("input", { "id": currentOption.code + fieldname, className: "radioInput", type: "radio", name: fieldname, value: currentOption.code }, inputLabel);
+                        }));
+                    }
                 }
                 else {
                     switch (currentField.type) {
@@ -323,25 +368,26 @@ define([
                             domConstruct.create("span", { className: "glyphicon form-control-feedback" }, formContent);
                             break;
                         case "esriFieldTypeSmallInteger":
-                            inputContent = domConstruct.create("input", { type: "text",className: "form-control", "inputType": "smallInteger", "id": fieldname }, formContent);
+                            inputContent = domConstruct.create("input", { type: "text", className: "form-control", placeholder: nls.user.integerFormat, "inputType": "smallInteger", "id": fieldname }, formContent);
                             domConstruct.create("span", { className: "glyphicon form-control-feedback" }, formContent);
                             break;
                         case "esriFieldTypeInteger":
-                            inputContent = domConstruct.create("input", { type: "text",className: "form-control", "inputType": "Integer", "id": fieldname }, formContent);
+                            inputContent = domConstruct.create("input", { type: "text", className: "form-control", placeholder: nls.user.integerFormat, "inputType": "Integer", "id": fieldname }, formContent);
                             domConstruct.create("span", { className: "glyphicon form-control-feedback" }, formContent);
                             break;
                         case "esriFieldTypeSingle":
-                            inputContent = domConstruct.create("input", { type: "text",className: "form-control", "inputType": "Single", "id": fieldname }, formContent);
+                            inputContent = domConstruct.create("input", { type: "text", className: "form-control", placeholder: nls.user.floatFormat, "inputType": "Single", "id": fieldname }, formContent);
                             domConstruct.create("span", { className: "glyphicon form-control-feedback" }, formContent);
                             break;
                         case "esriFieldTypeDouble":
-                            inputContent = domConstruct.create("input", { type: "text",className: "form-control", "inputType": "Double", "id": fieldname }, formContent);
+                            inputContent = domConstruct.create("input", { type: "text", className: "form-control", placeholder: nls.user.floatFormat, "inputType": "Double", "id": fieldname }, formContent);
                             domConstruct.create("span", { className: "glyphicon form-control-feedback" }, formContent);
                             break;
                         case "esriFieldTypeDate":
-                            inputContent = domConstruct.create("input", { type: "text",className: "form-control", "inputType": "Date", "id": fieldname }, formContent);
+                            inputContent = domConstruct.create("input", { type: "text", className: "form-control", placeholder: nls.user.dateFormat, "inputType": "Date", "id": fieldname }, formContent);
                             domConstruct.create("span", { className: "glyphicon form-control-feedback" }, formContent);
                             $(inputContent).datepicker({
+                                format: "mm/dd/yyyy",
                                 onSelect: lang.hitch(this, function (evt, currentElement) {
                                     domClass.remove(currentElement.input[0].parentElement, "has-error");
                                     domClass.remove(query("span", currentElement.input[0].parentElement)[0], "glyphicon-remove");
@@ -351,7 +397,10 @@ define([
                             });
                             break;
                     }
-
+                    //If present fetch default values
+                    if (currentField.defaultValue) {
+                        domAttr.set(inputContent, "value", currentField.defaultValue);
+                    }
                     //conditional check to attach keyup event to all the inputs except date and string field
                     //as validation is not required for date field and string fields max-length is already set
                     if (domAttr.get(inputContent, "inputType") !== "Date" || domAttr.get(inputContent, "inputType") !== "String") {
@@ -467,11 +516,16 @@ define([
                     domAttr.set(currentInput, "value", "");
                     domClass.remove(node, "has-error");
                     domClass.remove(node, "has-success");
-                    domClass.remove(query("span", node)[0], "glyphicon-ok");
-                    domClass.remove(query("span", node)[0], "glyphicon-remove");
+                    if (query("span", node)[0]) {
+                        domClass.remove(query("span", node)[0], "glyphicon-ok");
+                        domClass.remove(query("span", node)[0], "glyphicon-remove");
+                    }
                 } else {
                     currentInput.options[0].selected = true;
                 }
+            });
+            array.forEach(query(".radioInput:checked"), function (currentField) {
+                domAttr.set(currentField, "checked", false);
             });
         },
         _validateUserInput: function (isValidInput, node, inputValue, iskeyPress) {
@@ -516,6 +570,15 @@ define([
                 this.map = response.map;
                 this.map.resize();
                 this.map.reposition();
+                //Check for the appid if it is not present load entire application with webmap defaults
+                if (!this.config.appid && this.config.webmap) {
+                    this._setWebmapDefaults();
+                }
+                this._setAppConfigurations(this.config.details);
+                // window title
+                if (this.config.details && this.config.details.Title) {
+                    window.document.title = this.config.details.Title;
+                }
                 this.map.on("pan-end", lang.hitch(this, function () {
                     this.map.resize();
                     this.map.reposition();
@@ -546,10 +609,10 @@ define([
         _findLocation: function (evt) {
             if (evt.charCode === 13) {
                 if (this.XCoordinate.value === "") {
-                    alert(nls.user.emptylatitudeAlertMessage);
+                    this._showErrorMessageDiv(nls.user.emptylatitudeAlertMessage);
                     return;
                 } else if (this.YCoordinate.value === "") {
-                    alert(nls.user.emptylongitudeAlertMessage);
+                    this._showErrorMessageDiv(nls.user.emptylongitudeAlertMessage);
                     return;
                 }
                 this._locatePointOnMap(this.XCoordinate.value + "," + this.YCoordinate.value);
@@ -605,10 +668,18 @@ define([
             var featureData = new Graphic();
             featureData.attributes = {};
             if (this.addressGeometry) {
+                //condition to filter out radio inputs
                 array.forEach(query(".geoFormQuestionare .form-control"), function (currentField) {
                     var key = domAttr.get(currentField, "id");
-                    var value = currentField.value.trim();
+                    var value = lang.trim(currentField.value);
                     featureData.attributes[key] = value;
+                });
+                array.forEach(query(".geoFormQuestionare .radioContainer"), function (currentField) {
+                    if (query(".radioInput:checked", currentField).length !== 0) {
+                        var key = query(".radioInput:checked", currentField)[0].name;
+                        var value = lang.trim(query(".radioInput:checked", currentField)[0].value);
+                        featureData.attributes[key] = value;
+                    }
                 });
                 featureData.geometry = {};
                 featureData.geometry = new Point(Number(this.addressGeometry.x), Number(this.addressGeometry.y), this.map.spatialReference);
@@ -618,6 +689,7 @@ define([
                     if (_self.map.infoWindow.isShowing) {
                         _self.map.infoWindow.hide();
                     }
+                    _self.map.getLayer(config.form_layer.id).setEditable(false);
                     domConstruct.destroy(query(".errorMessage")[0]);
                     _self._openShareDialog();
                     $("#myModal").modal('show');
@@ -706,6 +778,23 @@ define([
         _resetButton: function () {
             var btn = $(this.submitButton);
             btn.button('reset');
+        },
+
+        _setWebmapDefaults: function () {
+            this.config.details.Title = this.config.itemInfo.item.title;
+            this.config.details.Description = this.config.itemInfo.item.snippet;
+            if (this.config.itemInfo.item.thumbnail) {
+                this.config.details.Logo = this.config.sharinghost + "/sharing/rest/content/items/" + this.config.webmap + '/info/' + this.config.itemInfo.item.thumbnail;
+            } else {
+                this.config.details.Logo = "./images/default.png";
+            }
+            array.some(this.config.itemInfo.itemData.operationalLayers, lang.hitch(this, function (currentLayer) {
+                if (currentLayer.url.split("/")[currentLayer.url.split("/").length - 2] == "FeatureServer") {
+                    this.config.form_layer.id = currentLayer.id;
+                    this.config.fields = this.map.getLayer(this.config.form_layer.id).fields;
+                    return true;
+                }
+            }));
         }
     });
 });
