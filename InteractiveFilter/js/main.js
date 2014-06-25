@@ -321,7 +321,7 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
 
                 this.map = response.map;
                 this.config.response = response;
-
+                domClass.add(this.map.infoWindow.domNode, "light");
                 //define the application title 
                 var title = this.config.title || response.itemInfo.item.title;
                 dom.byId("title").innerHTML = title;
@@ -374,6 +374,7 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
             query(".esriPopup .pointer").style("backgroundColor", this.theme.toString());
             query(".esriPopup .titlePane").style("backgroundColor", this.theme.toString());
             query(".esriPopup .titlePane").style("color", this.color.toString());
+            query(".esriPopup. .titleButton").style("color", this.color.toString());
 
             registry.byId("border_container").resize();
         }
