@@ -1740,8 +1740,6 @@ function hasTemporalLayer(layers) {
     for (var i = 0; i < layers.length; i++) {
         var layer = layers[i];
         if (layer.layerObject) {
-            console.log(layer.layerObject);
-
             if (layer.layerObject.timeInfo && layer.layerObject.timeInfo.timeExtent && layer.layerObject.visible) {
                 timeLayers.push(layer.layerObject);
             }
