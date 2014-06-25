@@ -447,6 +447,11 @@ define([
                     // Get application's file-based template
                     filename = this.config.app;
 
+                    // If we're running in the hosted environment without an appid, the file-based UIs are for previewing
+                    if (this.config.commonConfig) {
+                        filename += "_try_it";
+                    }
+
                 // 4. missing URL parameters
                 } else {
                     // Get apps2/GeneralMap file
@@ -462,8 +467,9 @@ define([
                         this.appConfig.ui = fileTemplate.ui || {};
                         this.appConfig.appValues = fileTemplate.values || {};
 
-                        // Webmap from URL overrides any default webmap from the file-based template
-                        if (!this.config.webmap) {
+                        // If we're running in the hosted environment without an appid or if no webmap id was
+                        // supplied in the URL, use the webmap in the file
+                        if (this.config.commonConfig || !this.config.webmap) {
                             this.config.webmap = fileTemplate.values.webmap;
                         }
 

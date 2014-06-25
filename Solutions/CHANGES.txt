@@ -1,16 +1,10 @@
-change report #61 at 06/24/2014 14:26:21.74
+change report #63 at 06/25/2014 11:10:10.84
 -
 for git branch
 release_3.4
 in repository local-government-online-apps
-140624160314062420021406231948
+140625091914062512561406242059
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M nls/cs/resources.js
- M nls/de/resources.js
- M nls/es/resources.js
- M nls/fi/resources.js
- M nls/he/resources.js
- M nls/th/resources.js
- M nls/tr/resources.js
+ M js/template.js
