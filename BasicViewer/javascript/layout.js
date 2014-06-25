@@ -1740,7 +1740,7 @@ function hasTemporalLayer(layers) {
     for (var i = 0; i < layers.length; i++) {
         var layer = layers[i];
         if (layer.layerObject) {
-            if (layer.layerObject.timeInfo && layer.layerObject.visible) {
+            if (layer.layerObject.timeInfo && layer.layerObject.timeInfo.timeExtent && layer.layerObject.visible) {
                 timeLayers.push(layer.layerObject);
             }
         }
@@ -1873,7 +1873,8 @@ function createTimeSlider(timeProperties) {
     //create a time slider and a label to hold date details and add to the floating time panel
     var timeSlider = new esri.dijit.TimeSlider({
         style: "width: 100%;",
-        id: "timeSlider"
+        id: "timeSlider",
+        loop: true
     }, dojo.create('div'));
 
     var timeSliderLabel = dojo.create('div', {

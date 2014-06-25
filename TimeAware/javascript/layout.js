@@ -98,7 +98,8 @@
          map.setTimeExtent(fullTimeExtent);
          //create the slider
          timeSlider = new esri.dijit.TimeSlider({
-             style: "width: 100%;"
+             style: "width: 100%;",
+             loop: true
          }, dojo.byId("timeSliderDiv"));
 
          map.setTimeSlider(timeSlider);
