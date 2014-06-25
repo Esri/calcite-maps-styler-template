@@ -778,7 +778,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
             //Set the font color using the configured color value   
             query(".fc").style("color", this.color.toString());
-            query(".calcite .esriPopup .titlePane").style("color", this.color.toString());
+            query(".esriPopup .titlePane").style("color", this.color.toString());
+            query(".esriPopup. .titleButton").style("color", this.color.toString());
 
 
             //Set the Slider +/- color to match the icon style. Valid values are white and black
@@ -824,7 +825,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             }).then(lang.hitch(this, function (response) {
 
                 this.map = response.map;
-
+                domClass.add(this.map.infoWindow.domNode, "light");
                 this._updateTheme();
 
                 //Add a logo if provided

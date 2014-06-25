@@ -224,7 +224,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
 
         },
         _windowScrolled: function (evt) {
-        
+
             if (this.scrollTimer) {
                 clearTimeout(this.scrollTimer);
             }
@@ -309,7 +309,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             this.snap = true;
 
         },
-        
+
         // menu click
         _menuClick: function () {
             if (query("#panelTools").style("display") == "block") {
