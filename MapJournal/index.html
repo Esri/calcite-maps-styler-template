@@ -52,7 +52,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.0-alpha13',
+				version: '1.0-alpha14',
 				isProduction: true,
 				isInBuilder: false,
 				indexCfg: configOptions
@@ -138,7 +138,7 @@
 			app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fromscratch');
 			
 			loadCSS(pathJSAPI + "js/esri/css/esri.css", true);
-			loadCSS(pathJSAPI + "/js/dojo/dijit/themes/claro/claro.css", true);	
+			loadCSS(pathJSAPI + "js/dojo/dijit/themes/claro/claro.css", true);	
 			
 			if( app.isProduction ) {
 				if ( app.isInBuilder )
@@ -149,6 +149,7 @@
 		</script>
 		<!--[if IE 7]>
 			<link rel="stylesheet" href="resources/common/font/storymaps-icons-ie7.css">
+			<link rel="stylesheet" href="resources/tpl/viewer/font/float-layout-font-ie7.css">
 		<![endif]-->
 	</head>
 	<body class="claro">
@@ -167,17 +168,17 @@
 					<!-- Maps and media injected here -->
             	</div>
 				<!-- Back button -->
-				<div class="mediaBackContainer">
+				<div class="mediaBackContainer centerAlignOnFloat">
 					<div class="backButton">
 						<div class="backArrow"></div>
 						<span class="backLbl"></span>
 					</div>
 				</div>
 				<!-- Builder -->
-				<div id="builderQuotes"></div>
-				<div id="builderLanding"></div>
+				<div id="builderQuotes" class="centerAlignOnFloat"></div>
+				<div id="builderLanding" class="centerAlignOnFloat"></div>
 				<div id="mainStageEdit"></div>
-				<div id="builderHelp"></div>
+				<div id="builderHelp" class="centerAlignOnFloat"></div>
 				<div class="firstAddExplain"></div>
 			</div>
 			
