@@ -5,7 +5,8 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 		var inlineMediaExec = function(isEditing)
 		{
 			var path = editor.elementPath(),
-				elemIsImg = path.lastElement.getName() == "span" && $(path.lastElement.$).data('cke-display-name') == 'image';
+				elemIsImg = path.lastElement.getName() == "span" && $(path.lastElement.$).data('cke-display-name') == 'image',
+				elemIsFrame = path.lastElement.getName() == "img" && $(path.lastElement.$).data('ckeRealElementType') == 'iframe';
 			
 			require(["dojo/topic"], function(topic){
 				var media = null;
@@ -27,11 +28,40 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 						}
 					};
 				}
+				else if ( elemIsFrame ) {
+					var mediaIframe = $(path.lastElement.$),
+						mediaContainer = mediaIframe.parent(),
+						isVideo = mediaContainer.hasClass("mj-video-by-url"),
+						isFrameByUrl = mediaContainer.hasClass("mj-frame-by-url"),
+						frameStr = decodeURIComponent(mediaIframe.data('ckeRealelement'));
+					
+					if ( isVideo ) {
+						media = {
+							type: "video",
+							video: { }
+						};
+					}
+					else {
+						media = {
+							type: "webpage",
+							webpage: { }
+						};
+					}
+					
+					media[media.type] = {
+						url: isVideo || isFrameByUrl ? $(frameStr).attr('src') : null,
+						frameTag: isVideo || isFrameByUrl ? null : frameStr
+						/*width: mediaImg.attr('width'),
+						height: mediaImg.attr('height')*/
+					};
+				}
 				
 				topic.publish("EDITOR-OPEN-INLINE-MEDIA", {
 					selectedMedia: media,
 					editorCallback: function(cfg){
-						var outputEl = "",
+						var DEFAULT_WIDTH = '100%',
+							//DEFAULT_HEIGHT = [250,400,500],
+							outputEl = "",
 							mediaTpl = "",
 							captionTpl = "";
 						
@@ -41,33 +71,44 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 							captionTpl = '<figure class="caption">' + mediaTpl + '<figcaption></figcaption>' + '</figure>';
 						}
 						else {
-							mediaTpl = '<div class="iframe-container"><iframe src="" frameborder="0" allowfullscreen="1"/></iframe></div>';
-							//captionTpl = '<figure class="caption">' + mediaTpl + '<figcaption></figcaption>' + '</figure>';
+							var editTag = "mj-video-by-url";
+							
+							if ( cfg.type == "webpage" && cfg.frameTag )
+								editTag = "mj-frame-by-frametag";
+							else if ( cfg.type == "webpage" )
+								editTag = "mj-frame-by-url";
+							
+							mediaTpl = '<div class="iframe-container ' + editTag + '"><iframe src="" frameborder="0" allowfullscreen="1"/></iframe></div>';
+							
+							if ( cfg.type == "webpage" && cfg.frameTag ) {
+								mediaTpl = '<div class="iframe-container ' + editTag + '">' + cfg.frameTag + '</div>';
+							}
 						}
 						
-						// TODO that big logic should not be needed
-						// Caption
+						// Media with caption (image only)
 						if ( cfg.title ) {
 							outputEl = CKEDITOR.dom.element.createFromHtml(captionTpl, editor.document);
 							$(outputEl.getChildren().$).eq(0).children().attr({
 								'src': cfg.url,
-								// TODO test on small size image ; what to do with the commented dialog in configure?
-								'width': '100%' //cfg.width,
+								'width': DEFAULT_WIDTH
 								//'height': cfg.height
 							});
 							outputEl.getChildren().$[1].innerHTML = cfg.title;
 						}
+						// Media without caption (image, video, embed)
 						else {
 							outputEl = CKEDITOR.dom.element.createFromHtml(mediaTpl, editor.document);
-							outputEl.getChildren().$[0].setAttribute('src', cfg.url);
-							// TODO
-							outputEl.getChildren().$[0].setAttribute('width', '100%'); //cfg.width);
-							//outputEl.getChildren().$[0].setAttribute('height', cfg.height);
+							
+							if ( ! (cfg.type == "webpage" && cfg.frameTag) )
+								outputEl.getChildren().$[0].setAttribute('src', cfg.url);
+							
+							outputEl.getChildren().$[0].setAttribute('width', DEFAULT_WIDTH);
+							
 							if ( cfg.type == "image" && cfg.titleDisplay == 'hover' )
 								outputEl.getChildren().$[0].setAttribute('title', cfg.title);
 							
-							if ( cfg.type == "video" ) {
-								outputEl.getChildren().$[0].setAttribute('width', cfg.width || '100%');
+							if ( cfg.type == "video" || cfg.type == "webpage" ) {
+								outputEl.getChildren().$[0].setAttribute('width', cfg.width || DEFAULT_WIDTH);
 								outputEl.getChildren().$[0].setAttribute('height', cfg.height || '');
 							}
 						}
