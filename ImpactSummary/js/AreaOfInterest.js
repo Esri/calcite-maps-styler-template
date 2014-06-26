@@ -140,7 +140,7 @@ define([
                 themeColor = [0, 255, 255, 1];
                 sls = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(themeColor), 2);
                 array.forEach(this.config.featuresTransparency, lang.hitch(this, function (transparency) {
-                    if (transparency.label == this.config.featureCurrentTransparency.label) {
+                    if (transparency.label == this.config.featureCurrentTransparency) {
                         alpha = transparency.value;
                     }
                 }));
@@ -351,7 +351,7 @@ define([
                     domClass.remove(ct, this.areaCSS.rendererLoading);
                     // display geo stats
                     this._sb.set("features", fs.features);
-                    this._selectFeatures(fs.features, node.textContent);
+                    this._selectFeatures(fs.features, node.textContent || node.innerText);
                     // zoom to feature
                     this._zoomToFeature(this.config.zoomType, fs);
 
@@ -458,8 +458,6 @@ define([
                             node: liItem
                         });
                     }
-                    // var value = infos[i].maxValue || infos[i].value || "";
-
                     // place item
                     domConstruct.place(liItem, ulList, 'last');
                 }

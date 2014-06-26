@@ -597,12 +597,12 @@ function (
                 transparentOption.text = transparent.label;
                 transparentOption.value = transparent.value;
                 transparentSelect.appendChild(transparentOption);
-                if (this.config.featureCurrentTransparency.label == transparent.label) {
+                if (this.config.featureCurrentTransparency == transparent.label) {
                     transparentOption.selected = "selected";
                 }
             }));
             on(transparentSelect, "change", lang.hitch(this, function (evt) {
-                this.config.featureCurrentTransparency = this.config.featuresTransparency[evt.currentTarget.selectedIndex];
+                this.config.featureCurrentTransparency = this.config.featuresTransparency[evt.currentTarget.selectedIndex].label;
             }));
         },
 
