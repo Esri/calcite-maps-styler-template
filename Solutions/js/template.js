@@ -15,7 +15,7 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-/* commit ee77f0a520e0cbb7 2014-06-25 16:02:47 -0700 */
+/* commit 2fd274cb6d335303 2014-06-26 13:58:30 -0700 */
 define([
     "dojo/_base/declare",
     "dojo/_base/kernel",
@@ -24,6 +24,7 @@ define([
     "dojo/dom-class",
     "dojo/Deferred",
     "dojo/promise/all",
+    "dojo/request/xhr",
     "esri/arcgis/utils",
     "esri/urlUtils",
     "esri/request",
@@ -43,6 +44,7 @@ define([
     domClass,
     Deferred,
     all,
+    xhr,
     arcgisUtils,
     urlUtils,
     esriRequest,
@@ -460,10 +462,7 @@ define([
                 }
 
                 // Get the template file
-                esriRequest({
-                    url: filename + ".json",
-                    handleAs: "json"
-                }).then(
+                this.loadJSONFile(filename).then(
                     lang.hitch(this, function (fileTemplate) {
                         this.appConfig.ui = fileTemplate.ui || {};
                         this.appConfig.appValues = fileTemplate.values || {};
@@ -584,6 +583,28 @@ define([
             // (center, basemap, theme) are only here as examples and can be removed if you don't plan on
             // supporting additional url parameters in your application.
             this.customUrlConfig.urlValues = this._createUrlParamsObject(this.config.urlItems);
+        },
+        /**
+         * Loads JSON from a file.
+         * @param {string} url The URL of the JSON file
+         * @return {Deferred} Provides a way to test the success or
+         *         failure of loading the file
+         */
+        loadJSONFile: function (url) {
+            var done = new Deferred();
+
+            xhr(url + ".json", {
+                handleAs: "json"
+            }).then(
+                function (uiSpec) {
+                    done.resolve(uiSpec);
+                },
+                function (err) {
+                    done.reject(err);
+                }
+            );
+
+            return done;
         }
     });
 });
