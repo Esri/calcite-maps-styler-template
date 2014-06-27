@@ -53,7 +53,7 @@ copy /Y %TMPLT_SRC%\*.*       %BUILD_OUTPUT%
 
 REM Copy JS files from template source folder to the buildOutput
 move /Y %RELEASE%\js          %BUILD_OUTPUT%
-xcopy  %TMPLT_SRC%\js\*.*    %BUILD_OUTPUT%\js /E /Y
+xcopy  %TMPLT_SRC%\js\*.*     %BUILD_OUTPUT%\js /E /Y
 
 
 REM ################################################################################
