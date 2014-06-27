@@ -50,9 +50,10 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 					
 					media[media.type] = {
 						url: isVideo || isFrameByUrl ? $(frameStr).attr('src') : null,
-						frameTag: isVideo || isFrameByUrl ? null : frameStr
-						/*width: mediaImg.attr('width'),
-						height: mediaImg.attr('height')*/
+						frameTag: isVideo || isFrameByUrl ? null : frameStr,
+						display: mediaContainer.hasClass("custom") ? "custom" : "fit",
+						width: $(frameStr).attr('width'),
+						height: $(frameStr).attr('height')
 					};
 				}
 				
@@ -60,7 +61,6 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 					selectedMedia: media,
 					editorCallback: function(cfg){
 						var DEFAULT_WIDTH = '100%',
-							//DEFAULT_HEIGHT = [250,400,500],
 							outputEl = "",
 							mediaTpl = "",
 							captionTpl = "";
@@ -77,6 +77,9 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 								editTag = "mj-frame-by-frametag";
 							else if ( cfg.type == "webpage" )
 								editTag = "mj-frame-by-url";
+							
+							// Fit or custom
+							editTag += " " + (! cfg.width && ! cfg.height ? "fit" : "custom");
 							
 							mediaTpl = '<div class="iframe-container ' + editTag + '"><iframe src="" frameborder="0" allowfullscreen="1"/></iframe></div>';
 							

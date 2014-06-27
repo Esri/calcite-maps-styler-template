@@ -60,7 +60,7 @@ define({
 			},
 			exportData: {
 				btn: "Export content",
-				tooltip: "Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor."
+				tooltip: "Exporting your content allows you to view and create a back-up of your content should you accidentally delete it. Simply copy and paste the content from the page into any word processor."
 			},
 			help: {
 				lblHelp: "Help",
@@ -78,7 +78,7 @@ define({
 				content2Div2: "You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others.",
 				content3Div1: "Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish.",
 				content4Div1: "Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. You’ll use the edit functions many times as you develop your %TPL_NAME%!",
-				content5Div1: "Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier.",
+				content5Div1: "Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it more easily.",
 				content6Div1: "The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal.",
 				content6Div2: "Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!"
 			},
