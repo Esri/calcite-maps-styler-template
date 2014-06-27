@@ -4,7 +4,7 @@
             error: "Não foi possível criar o mapa"
         },
         onlineStatus: {
-            online: "ã_You are currently online._Ç",
+            online: "Você está atualmente online.",
             offline: "Você está trabalhando offline. Envios de formulários serão salvos localmente até que uma conexão com o servidor possa ser feita.",
             reconnecting: "Reconectando&hellip;"
         },

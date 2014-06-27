@@ -14,8 +14,8 @@
 				start: "Inicio",
 				loading: "Cargando",
 				disabledAdmin: "El administrador ha deshabilitado esta entidad",
-				width: "á_Width_Ó",
-				height: "á_Height_Ó"
+				width: "Ancho",
+				height: "Altura"
 			},
 			inlineFieldEdit: {
 				editMe: "¡Edítame!"
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "Diseño",
 				explain: "¿Qué diseño deseas usar?",
-				explainInit: "á_You can change the layout anytime from the settings dialog._Ó",
+				explainInit: "Puedes cambiar el diseño en cualquier momento desde el cuadro de diálogo de configuración.",
 				viewExample: "Ver un ejemplo en directo"
 			},
 			settingsTheme: {

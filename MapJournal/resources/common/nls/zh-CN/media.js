@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "试_Media_验",
-				lblSelect2: "试_Content_验",
+				lblSelect1: "媒体",
+				lblSelect2: "内容",
 				lblMap: "地图",
 				lblImage: "图像",
 				lblVideo: "视频",
@@ -41,59 +41,59 @@
 				howToFind2: "复制任何 Picasa 或 G+ 页面的第一个和第二个\“/\”之间的数字"
 			},
 			videoSelectorCommon: {
-				check: "试_Check_验",
-				notFound: "试_Video not found_验",
-				found: "试_Video found_验",
-				select: "试_Select this video_验"
+				check: "选中",
+				notFound: "未找到视频",
+				found: "已找到视频",
+				select: "选择此视频"
 			},
 			videoSelectorHome: {
-				other: "试_Other_验"
+				other: "其他"
 			},
 			videoSelectorYoutube: {
-				url: "试_URL of a Youtube video_验",
+				url: "Youtube 视频的 URL",
 				pageInputLbl: "用户名",
 				lookupMsgError: "未找到用户",
 				howToFind: "如何查找 YouTube 用户名",
 				howToFind2: "用户名显示在视频下方",
-				found: "试_Found_验",
+				found: "已找到",
 				noData: "未找到公开视频"
 			},
 			videoSelectorVimeo: {
-				url: "试_URL of a Vimeo video_验"
+				url: "Vimeo 视频的 URL"
 			},
 			videoSelectorOther: {
-				explain1: "试_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._验",
-				explain2: "试_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._验",
-				explain3: "试_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._验",
-				webpage: "试_Web page feature_验"
+				explain1: "地图日志无法播放原始视频(如 avi、mpeg)，但可以播放带有内置播放器的托管视频文件(如 YouTube 或 Vimeo)。",
+				explain2: "大多数在线视频托管服务均提供此功能，您必须查找此选项以嵌入视频，复制给定代码并使用 %WEBPAGE%。",
+				explain3: "或者，如果您希望自己托管视频，则可以创建使用视频播放器(如 %EXAMPLE%)的 HTML 页面，托管此页面并同样使用 %WEBPAGE%。",
+				webpage: "网页要素"
 			},
 			webpageSelectorHome: {
-				lblUrl: "试_Webpage URL_验",
-				lblEmbed: "试_Embed code_验",
-				lblOR: "试_OR_验",
-				lblError1: "试_Error, clear one of the two input fields._验",
-				lblError2: "试_Embed code can only contain one <iframe>_验"
+				lblUrl: "网页 URL",
+				lblEmbed: "嵌入代码",
+				lblOR: "或",
+				lblError1: "错误，清除两个输入字段中的一个。",
+				lblError2: "嵌入代码仅可包含一个 <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "试_An image URL should start with http:// and end with .jpg or .png_验",
-				lblLabel: "试_Image Caption_验",
+				lblURLPH: "影像 URL 应该以 http:// 开始，以 .jpg 或 .png 结束",
+				lblLabel: "影像标题",
 				lblLabel1: "说明文字",
 				lblLabel2: "悬停文本",
 				lblLabel3: "无",
 				lblLabelPH: "请输入文本...",
-				lblMaximize: "试_Include a maximize button in the corner of the image_验",
-				lblMaximizeHelp: "试_Recommended only for high quality photos_验",
+				lblMaximize: "在影像拐角位置放置一个最大化按钮",
+				lblMaximizeHelp: "建议仅用于高质量照片",
 				lblPosition: "位置",
 				lblPosition1: "居中",
 				lblPosition2: "填充",
 				lblPosition3: "适应",
 				lblPosition4: "拉伸",
-				lblPosition5: "试_Custom_验",
-				tooltipDimension: "试_The value can be specified in 'px' or '%'_验",
+				lblPosition5: "自定义",
+				tooltipDimension: "可以“px”或“%”指定值",
 				lblPosition2Explain: "（可裁切）",
 				lblPosition3Explain: "（不裁切）",
-				lblPosition3Explain2: "试_(width will always fit the panel)_验",
+				lblPosition3Explain2: "(宽度将始终适应面板)",
 				lblPosition4Explain: "（可变形）"
 			},
 			editorActionGeocode: {

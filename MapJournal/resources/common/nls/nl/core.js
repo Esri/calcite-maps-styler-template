@@ -14,8 +14,8 @@
 				start: "Start",
 				loading: "Laden",
 				disabledAdmin: "Deze functie is uitgeschakeld door de beheerder",
-				width: "Ĳ_Width_ä",
-				height: "Ĳ_Height_ä"
+				width: "Breedte",
+				height: "Hoogte"
 			},
 			inlineFieldEdit: {
 				editMe: "Bewerk me!"
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "Lay-out",
 				explain: "Welke lay-out wilt u gebruiken?",
-				explainInit: "Ĳ_You can change the layout anytime from the settings dialog._ä",
+				explainInit: "U kunt de lay-out altijd wijzigen in het dialoogvenster Instellingen.",
 				viewExample: "Een live voorbeeld weergeven"
 			},
 			settingsTheme: {

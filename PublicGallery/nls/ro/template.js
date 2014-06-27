@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "clearSearch": "Golire",
-                "datePattern": "ll.zz.aaaa" // added 2.5.2013
+                "datePattern": "d. MMM yyyy" // added 2.5.2013
             },
             "errors": {
                 "createMap": "Imposibil de creat harta",

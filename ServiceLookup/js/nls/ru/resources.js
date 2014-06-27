@@ -20,7 +20,7 @@
             buttonText: "OK",
         },
         ui:{
-            basemapButton: "Ж_Basemap_Я"
+            basemapButton: "Базовая карта"
         }
     })
 

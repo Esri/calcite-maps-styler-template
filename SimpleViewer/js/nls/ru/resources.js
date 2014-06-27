@@ -1,11 +1,11 @@
 ﻿define(
    ({
         map: {
-            error: "Ж_Unable to create map_Я"
+            error: "Не удалось создать карту"
         }, 
         tools: {
-        	legend: "Ж_Legend_Я",
-        	 about: "Ж_About_Я"
+        	legend: "Легенда",
+        	 about: "О"
         }
     })
    

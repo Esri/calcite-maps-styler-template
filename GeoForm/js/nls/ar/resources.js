@@ -4,7 +4,7 @@
             error: "يتعذر إنشاء الخريطة"
         },
         onlineStatus: {
-            online: "بيت_You are currently online._لاحقة",
+            online: "أنت متصل حاليًا.",
             offline: "أنت الآن غير مُتصل بالإنترنت. سيتم حفظ عمليات الإرسال محليًا حتى يتم إنشاء الاتصال بالخادم.",
             reconnecting: "إعادة الاتصال&hellip;"
         },

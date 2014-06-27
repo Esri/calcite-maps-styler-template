@@ -20,7 +20,7 @@
             buttonText: "OK",
         },
         ui:{
-            basemapButton: "須_Basemap_鷗"
+            basemapButton: "ベースマップ"
         }
     })
 

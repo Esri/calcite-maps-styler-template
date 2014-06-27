@@ -27,25 +27,25 @@
 				title: "Vítejte v"
 			},
 			addEditPopup: {
-				disabled: "Ř_Add Section is disabled because the maximum number of allowed sections has been reached._ů",
+				disabled: "Funkce Přidat Část je vypnuta, protože bylo dosaženo maximálního počtu povolených částí.",
 				titleAdd: "Přidat část",
-				titleAddHome: "Ř_Add Home Section_ů",
+				titleAddHome: "Přidat domovskou část",
 				titleEdit: "Upravit část",
 				step: "Krok",
-				stepMainStageExplain: "Ř_Main Stage Content_ů",
-				stepPanelExplain: "Ř_Content_ů",
+				stepMainStageExplain: "Obsah hlavní úrovně",
+				stepPanelExplain: "Obsah",
 				stepMainStageNextTooltip: "Zadejte nadpis části a vyberte obsah hlavní úrovně.",
 				step2NextTooltip: "Zadejte nadpis části a obsah %LAYOUT-TYPE%.",
 				stepNextTooltipNext: "chcete-li přejít na další krok",
 				stepNextTooltipAdd: "chcete-li přidat část",
-				firstAddExplain: "Ř_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._ů",
-				firstAddLeanMore: "Ř_Learn More_ů",
+				firstAddExplain: "První část je vaše domovská část. Berte ji jako „obálku“ svého příběhu. Nadpis, který jste právě zadali, se zde zobrazí velkým písmem.",
+				firstAddLeanMore: "Další informace",
 				titlePlaceholder: "Nadpis části..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Sem přidejte text, odkazy a malé obrázky.",
 				editorActionsTitle: "Akce hlavní úrovně",
-				editorActionsHelpDescr: "Ř_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ů"
+				editorActionsHelpDescr: "Pomocí těchto ovládacích prvků můžete vytvářet odkazy, které změní hlavní úroveň. Když například čtenář klikne na odkaz, můžete přiblížit mapu na konkrétní umístění, zobrazit jinou webovou mapu nebo obrázek."
 			},
 			organizePopup: {
 				title: "Organizovat",
@@ -54,13 +54,13 @@
 				lblColPubDate: "Datum zveřejnění",
 				lblColStatus: "Stav",
 				checkDisplayReverse: "Zobrazit části v opačném pořadí",
-				btnApplyWarning: "Ř_Confirm deletion of %NB% section(s)_ů",
+				btnApplyWarning: "Potvrdit smazání %NB% částí",
 				deleteTooltip: "Smazat",
 				firstSectionExplain: "(Domovskou část nelze přemístit)"
 			},
 			exportData: {
-				btn: "Ř_Export content_ů",
-				tooltip: "Ř_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._ů"
+				btn: "Exportovat obsah",
+				tooltip: "Exportování obsahu vám umožní prohlížet a vytvářet zálohu deníku pro případ, že ho omylem smažete. Obsah stránky jednoduše zkopírujte a vložte do jakéhokoli textového editoru."
 			},
 			help: {
 				lblHelp: "Nápověda",
@@ -69,22 +69,22 @@
 				lblOrga: "Zorganizovat obsah",
 				lblEdit: "Úpravy",
 				lblPublish: "Sdílet",
-				lblTips: "Ř_Tips_ů",
+				lblTips: "Tipy",
 				lblMore: "Chcete více?",
 				lblLink: "Navštivte webové stránky map s příběhem.",
 				content1Div1: "Při vytváření příběhu do něj můžete integrovat množství stylů. <strong>%LAYOUT_TITLE%</strong> většinou obsahuje text, obrázky a videa, zatímco mapy jsou zpravidla umístěny na <strong>hlavní úrovni</strong>. %TPL_NAME% vám nicméně umožňuje vkládat obrázky, grafy a videa i na hlavní úroveň.",
 				content1Div2: "Přidáváním částí si můžete obsah mapy přizpůsobit podle svých představ. Stejně jako čtenáři procházejí text %LAYOUT_TITLE%, mapa na hlavní úrovni se může posouvat nebo přibližovat na klíčové body, nebo se mohou automaticky aktivovat nové mapy a obrázky zdůrazňující vaši zprávu.",
 				content2Div1: "Zde můžete upravit vzhled %TPL_NAME%. Barevná schémata, rozvržení a šířky je možno nastavovat zde.",
 				content2Div2: "Můžete také přidat odkazy pro sdílení na Facebooku, Twitteru a Bitly, aby čtenáři mohli %TPL_NAME% snadno šířit mezi ostatní.",
-				content3Div1: "Ř_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ů",
+				content3Div1: "Váš obsah je rozdělen do částí. Můžete jich mít libovolný počet (berte je jako malé kapitoly). Je důležité, jak kapitoly plynou za sebou, a proto je v části Organizovat můžete libovolně přeřazovat a odstraňovat.",
 				content4Div1: "Našli jste chybu nebo chcete změnit svůj materiál? Žádný problém. Hledejte v aplikaci ikonu úprav, která vám umožní změnit obsah. Funkce úprav použijete při vytváření %TPL_NAME% mnohokrát!",
 				content5Div1: "%TPL_NAME% se ukládá do vašeho %PORTAL% účtu (ve výchozím nastavení se ukládá soukromě). Můžete se ale rozhodnout sdílet jej v rámci organizací, nebo veřejně. Sdělíme vám i zkrácenou adresu URL umožňující snadnější sdílení.",
-				content6Div1: "Ř_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._ů",
-				content6Div2: "Ř_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_ů"
+				content6Div1: "Nadpis domovské části je také nadpisem vašeho deníku. Domovská část je prakticky „obálkou“ vašeho příběhu. Nadpis domovské části zůstane viditelný, zatímco budou čtenáři procházet váš deník.",
+				content6Div2: "Vaše rozvržení %LAYOUT_TITLE% nemusí tvořit jen text. Můžete použít i fotografie a videa, abyste příběh oživili a rozdělili dlouhé bloky textu!"
 			},
 			landing: {
-				lblAdd: "Ř_What do you want to call your Map Journal?_ů",
-				phAdd: "Ř_Enter your title..._ů",
+				lblAdd: "Jak chcete svůj Mapový deník nazvat?",
+				phAdd: "Zadejte nadpis...",
 				lblOR: "Nebo",
 				lblHelp: "Prohlídka"
 			},

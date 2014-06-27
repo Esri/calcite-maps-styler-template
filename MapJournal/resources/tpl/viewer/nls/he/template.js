@@ -27,7 +27,7 @@
 				notConfiguredMobile: "ברוכים הבאים לאפליקצית web מסוג %TPL_NAME%. לא נקבעה תצורה לאפליקציה וכלי הבנייה לא נתמך במכשיריים ניידים.",
 				notAuthorized: "אינך מורשה לגשת לאפליקציה זו",
 				noBuilderIE8: "כלי הבניה לא נתמך ב- Internet Explorer טרם גרסה 9.",
-				mapLoadingFail: "כן_Something went wrong, the Map cannot be loaded._ש"
+				mapLoadingFail: "משהו השתבש, המפה לא נטענת."
 			},
 			mobileView: {
 				tapForDetails: "הקש לקבלת פרטים",

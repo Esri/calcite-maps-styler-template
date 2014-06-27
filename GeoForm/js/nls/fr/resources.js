@@ -4,7 +4,7 @@
             error: "Impossible de créer la carte"
         },
         onlineStatus: {
-            online: "æ_You are currently online._Â",
+            online: "Vous êtes actuellement en mode hors connexion.",
             offline: "Vous travaillez actuellement en mode hors connexion. Les envois de formulaires seront enregistrés localement jusqu\'à l\'établissement d\'une connexion au serveur.",
             reconnecting: "Reconnexion&hellip;"
         },

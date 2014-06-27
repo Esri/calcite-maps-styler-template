@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "ı_Web map_İ",
+				lblWebMap: "Web haritası",
 				lblLocation: "Konum",
 				lblContent: "İçerik",
 				lblPopup: "Açılır Menü",
-				lblControls: "ı_Extras_İ",
+				lblControls: "Ekstralar",
 				lblOverview: "Genel Bakış Haritası",
 				lblLegend: "Gösterim",
 				loadingTitle: "Başlık yükleniyor",
@@ -22,19 +22,19 @@
 				newMap: "Yeni seçilen web haritası",
 				webmapDefault: "Web haritası varsayılanı",
 				customCfg: "Özel yapılandırma",
-				tooltipLocation: "ı_Define the map location that will be used when your readers navigate to this section._İ",
+				tooltipLocation: "Okuyucularınız bu bölüme geldiğinde kullanılacak harita konumunu tanımlayın.",
 				tooltipContent: "Görünür katmanları tanımlayın.",
 				tooltipPopup: "Okuyucularınız bu bölüme geldiğinde görüntülenecek bir açılır pencere seçin.",
 				tooltipOverview: "Ana harita boyunca küçük bir genel bakış haritası görüntüle.",
 				tooltipLegend: "Harita gösterimini harita üzerinde görüntüleyin, haritada bir çok katman ve sembol olduğunda yararlıdır.",
-				mapCfgInvite: "ı_Use these controls to configure your map_İ"
+				mapCfgInvite: "Haritanızı yapılandırmak için şu denetimleri kullanın"
 			},
 			configure: {
 				btnReset: "Sıfırla",
 				btnCancel: "İptal",
 				tocTitle: "Harita içeriği",
 				tocExplain: "Gösterilecek katmanları seçin.",
-				tocSave: "ı_Save map content_İ",
+				tocSave: "Harita içeriğini kaydedin",
 				extentTitle: "Harita konumu",
 				extentExplain: "Okuyucularınıza görüntüleneceği biçimi tanımlamak için haritayı genişletin ve yakınlaştırın.",
 				extentSave: "Harita konumunu kaydet",

@@ -14,8 +14,8 @@
 				start: "Начало",
 				loading: "Загрузка",
 				disabledAdmin: "Объект был отключен администратором",
-				width: "Ж_Width_Я",
-				height: "Ж_Height_Я"
+				width: "Ширина",
+				height: "Высота"
 			},
 			inlineFieldEdit: {
 				editMe: "Отредактируйте меня!"
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "Компоновка",
 				explain: "Какой формат вы хотите использовать?",
-				explainInit: "Ж_You can change the layout anytime from the settings dialog._Я",
+				explainInit: "Вы можете изменить формат в любое время в диалоговом окне настроек.",
 				viewExample: "Посмотреть пример из жизни"
 			},
 			settingsTheme: {

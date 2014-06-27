@@ -27,25 +27,25 @@
 				title: "Hoş Geldiniz"
 			},
 			addEditPopup: {
-				disabled: "ı_Add Section is disabled because the maximum number of allowed sections has been reached._İ",
+				disabled: "Bölüm Ekle özelliği devre dışı çünkü maksimum izin verilen bölüm sayısı aşılmış.",
 				titleAdd: "Bölüm Ekle",
-				titleAddHome: "ı_Add Home Section_İ",
+				titleAddHome: "Ana Bölüm Ekle",
 				titleEdit: "Bölüm Düzenle",
 				step: "Adım",
-				stepMainStageExplain: "ı_Main Stage Content_İ",
-				stepPanelExplain: "ı_Content_İ",
+				stepMainStageExplain: "Ana Aşama İçeriği",
+				stepPanelExplain: "İçerik",
 				stepMainStageNextTooltip: "Bölüm başlığı gir ve Ana Aşama içeriğini belirle",
 				step2NextTooltip: "Bölüm başlığını ve %LAYOUT-TYPE% içeriğini gir",
 				stepNextTooltipNext: "sonraki adıma gitmek için",
 				stepNextTooltipAdd: "bölüm eklemek için",
-				firstAddExplain: "ı_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._İ",
-				firstAddLeanMore: "ı_Learn More_İ",
+				firstAddExplain: "Bu birinci bölüm Ana Bölümünüzdür, bunu öykünüzün 'kapak sayfası' olarak düşünün. Henüz tanımladığınız başlık büyük yazı tipinde görüntülenecektir.",
+				firstAddLeanMore: "Daha Fazla Bilgi",
 				titlePlaceholder: "Bölüm başlığı..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Buraya metin, bağlantı ve küçük grafikler ekleyin.",
 				editorActionsTitle: "Ana Aşama Eylemleri",
-				editorActionsHelpDescr: "ı_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._İ"
+				editorActionsHelpDescr: "Bu denetimleri kullanarak ana aşamayı değiştirecek bağlantıları oluşturun. Örneğin, okuyucu bir bağlantıya tıkladığında haritayı belirli bir konuma yakınlaştırmak, başka bir web haritası görüntülemek veya bir resim göstermek isteyebilirsiniz."
 			},
 			organizePopup: {
 				title: "Düzenle",
@@ -54,13 +54,13 @@
 				lblColPubDate: "Yayımlanma tarihi",
 				lblColStatus: "Durum",
 				checkDisplayReverse: "Bölümleri ters sırada göster",
-				btnApplyWarning: "ı_Confirm deletion of %NB% section(s)_İ",
+				btnApplyWarning: "%NB% bölümlerinin silinmesini onayla",
 				deleteTooltip: "Sil",
 				firstSectionExplain: "(Ana sayfa bölümü taşınamaz)"
 			},
 			exportData: {
-				btn: "ı_Export content_İ",
-				tooltip: "ı_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._İ"
+				btn: "İçeriği dışa aktar",
+				tooltip: "İçeriğin dışa aktarılması yanlışlıkla silmeniz halinde Bülteninizin bir yedeğini oluşturmanız ve görüntülemenizi sağlar. İçerik sayfasını kopyalayıp herhangi bir kelime işlemcisine yapıştırmanız yeterlidir."
 			},
 			help: {
 				lblHelp: "Yardım",
@@ -69,22 +69,22 @@
 				lblOrga: "İçeriği düzenle",
 				lblEdit: "Düzenlemeler",
 				lblPublish: "Paylaş",
-				lblTips: "ı_Tips_İ",
+				lblTips: "İpuçları",
 				lblMore: "Daha çok mu istiyorsunuz?",
 				lblLink: "Story Maps web sitesini ziyaret edin.",
 				content1Div1: "Hikayenizi oluştururken çeşitli stiller kullanabilirsiniz. <strong>%LAYOUT_TITLE%</strong> genellikle metninizi, resimlerinizi ve videonuzu saklar, haritalarınız ise <strong>Ana Aşama</strong> içindedir. Bununla birlikte %TPL_NAME%, size resimleri, grafikleri ve videoyu da ana aşama içinde gösterme olanağı tanır.",
 				content1Div2: "Bölüm ekleme, hikaye aktarma deneyiminizi gerçek anlamda özelleştirmenize olanak tanır. Okuyucular %LAYOUT_TITLE% metninizde ilerledikçe, Ana Aşama üzerindeki bir harita temel noktalara genişleyerek veya yakınlaşarak ya da yeni haritalara ve resimlere otomatik geçiş yaparak mesajınızı destekler.",
 				content2Div1: "%TPL_NAME% görünümünü ayarlayacağınız yer işte burasıdır. Renk şemalarının, düzenlerin ve genişliklerin tamamı burada hassaslaştırılır.",
 				content2Div2: "Ayrıca Facebook, Twitter ve Bitly paylaşım bağlantıları ekleyerek, okuyucularınızın %TPL_NAME% adınızı kolayca diğerlerine yaymasını sağlayabilirsiniz.",
-				content3Div1: "ı_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._İ",
+				content3Div1: "İçeriğiniz bölümlere ayrılmıştır. İstediğiniz kadar çok bölüm oluşturabilirsiniz (bunları alt bölümler olarak düşünün). Bu alt bölümlerin akışı önemlidir; bölümleri Düzenle içinden istediğiniz gibi yeniden sıralayabilir veya silebilirsiniz.",
 				content4Div1: "Bir hata mı buldunuz ya da malzemenizi mi değiştirmek istiyorsunuz? Hiç sorun değil. İçeriğinizde değişiklik yapmak için uygulama içinde düzenle simgesini arayın. %TPL_NAME% uygulamanızı geliştirirken düzenleme işlevlerini çok sık kullanacaksınız!",
 				content5Div1: "%TPL_NAME% adınız %PORTAL% hesabınıza kaydedilir ve varsayılan olarak özeldir. Bunu organizasyonunuzla paylaşmayı seçebilir ya da dünyaya açabilirsiniz. Hatta size sunduğumuz kısaltılmış bir URL ile kolayca paylaşabilirsiniz.",
-				content6Div1: "ı_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._İ",
-				content6Div2: "ı_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_İ"
+				content6Div1: "Ana bölümünüzün başlığı ayrıca Bülteninizin de başlığıdır; Ana bölümünüzü öykünüzün 'kapak sayfası' olarak düşünün. Ana Bölüm başlığı okuyucularınızın Bültene geldiğinde görünür olacaktır.",
+				content6Div2: "%LAYOUT_TITLE% başlığınız yalnızca metin olmak zorunda değildir, fotoğraflar ve videolar da ekleyerek öyküyü daha canlı hale getirebilir ve uzun metin kısımlarını ayırabilirsiniz!"
 			},
 			landing: {
-				lblAdd: "ı_What do you want to call your Map Journal?_İ",
-				phAdd: "ı_Enter your title..._İ",
+				lblAdd: "Harita Bülteninize ne ad vermek istersiniz?",
+				phAdd: "Başlığınızı girin...",
 				lblOR: "Veya",
 				lblHelp: "Tanıtım Gezisi"
 			},

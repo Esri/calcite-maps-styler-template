@@ -4,7 +4,7 @@
             error: "マップを作成できません"
         },
         onlineStatus: {
-            online: "須_You are currently online._鷗",
+            online: "現在オンラインです。",
             offline: "現在、オフラインで作業しています。フォームの送信は、サーバに接続できるようになるまでローカルに保存されます。",
             reconnecting: "再接続しています&hellip;"
         },

@@ -27,7 +27,7 @@
 				notConfiguredMobile: "Willkommen bei der %TPL_NAME% Webanwendung. Die Anwendung ist noch nicht konfiguriert und der Builder wird auf mobilen Geräten nicht unterstützt.",
 				notAuthorized: "Sie sind nicht autorisiert, auf diese Anwendung zuzugreifen",
 				noBuilderIE8: "Der Builder wird von Internet Explorer vor Version 9 nicht unterstützt.",
-				mapLoadingFail: "ä_Something went wrong, the Map cannot be loaded._Ü"
+				mapLoadingFail: "Ein Fehler ist aufgetreten. Die Karte kann nicht geladen werden."
 			},
 			mobileView: {
 				tapForDetails: "Zum Anzeigen von Details tippen",

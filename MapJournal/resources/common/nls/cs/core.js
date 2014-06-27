@@ -14,8 +14,8 @@
 				start: "Spustit",
 				loading: "Načítání",
 				disabledAdmin: "Tato funkce byla zakázána administrátorem",
-				width: "Ř_Width_ů",
-				height: "Ř_Height_ů"
+				width: "Šířka",
+				height: "Výška"
 			},
 			inlineFieldEdit: {
 				editMe: "Edituj mě!"
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "Rozvržení",
 				explain: "Jaké rozvržení chcete použít?",
-				explainInit: "Ř_You can change the layout anytime from the settings dialog._ů",
+				explainInit: "Rozvržení můžete kdykoli změnit v dialogu nastavení.",
 				viewExample: "Zobrazit živý příklad"
 			},
 			settingsTheme: {

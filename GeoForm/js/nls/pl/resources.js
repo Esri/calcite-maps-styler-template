@@ -4,7 +4,7 @@
             error: "Nie można utworzyć mapy"
         },
         onlineStatus: {
-            online: "ł_You are currently online._ą",
+            online: "Twoje połączenie jest obecnie aktywne.",
             offline: "Aktualnie pracujesz w trybie offline. Formularze zgłoszeniowe będą zapisywane lokalnie do momentu, gdy będzie mogło zostać nawiązane połączenie z serwerem.",
             reconnecting: "Ponowne łączenie&hellip;"
         },

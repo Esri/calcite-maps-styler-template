@@ -1,11 +1,11 @@
 ﻿define(
    ({
         map: {
-            error: "한_Unable to create map_빠"
+            error: "맵을 생성할 수 없음"
         }, 
         tools: {
-        	legend: "한_Legend_빠",
-        	 about: "한_About_빠"
+        	legend: "범례",
+        	 about: "정보"
         }
     })
    

@@ -4,7 +4,7 @@
             error: "Kan kaart niet maken"
         },
         onlineStatus: {
-            online: "Ĳ_You are currently online._ä",
+            online: "U bent momenteel online",
             offline: "U werkt momenteel offline. Uw in te dienen formulieren worden lokaal opgeslagen totdat er een verbinding met de server kan worden gemaakt.",
             reconnecting: "Opnieuw verbinding maken&hellip;"
         },

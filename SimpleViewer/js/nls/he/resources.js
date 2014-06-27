@@ -1,11 +1,11 @@
 ﻿define(
    ({
         map: {
-            error: "כן_Unable to create map_ש"
+            error: "לא ניתן ליצור מפה"
         }, 
         tools: {
-        	legend: "כן_Legend_ש",
-        	 about: "כן_About_ש"
+        	legend: "מקרא",
+        	 about: "אודות"
         }
     })
    

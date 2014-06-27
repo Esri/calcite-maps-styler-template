@@ -27,7 +27,7 @@
 				notConfiguredMobile: "Bine aţi venit la aplicaţia web %TPL_NAME%. Aplicaţia nu este configurată încă, iar builderul nu este suportat p dispozitive mobile.",
 				notAuthorized: "Nu sunteţi autorizat pentru a accesa această aplicaţie",
 				noBuilderIE8: "Builderul nu este suportat în versiunile Internet Explorer anterioare versiunii 9.",
-				mapLoadingFail: "Ă_Something went wrong, the Map cannot be loaded._ș"
+				mapLoadingFail: "Ceva nu a mers bine şi harta nu poate fi încărcată."
 			},
 			mobileView: {
 				tapForDetails: "Atingeţi pentru detalii",

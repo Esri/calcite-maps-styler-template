@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ă_Media_ș",
-				lblSelect2: "Ă_Content_ș",
+				lblSelect1: "Media",
+				lblSelect2: "Conţinut",
 				lblMap: "Hartă",
 				lblImage: "Imagine",
 				lblVideo: "Video",
@@ -41,59 +41,59 @@
 				howToFind2: "Copiaţi cifrele dintre primul şi al doilea caracter „/” a unei pagini Picasa sau G+"
 			},
 			videoSelectorCommon: {
-				check: "Ă_Check_ș",
-				notFound: "Ă_Video not found_ș",
-				found: "Ă_Video found_ș",
-				select: "Ă_Select this video_ș"
+				check: "Bifaţi",
+				notFound: "Clip video negăsit",
+				found: "Clip video găsit",
+				select: "Selectaţi acest clip video"
 			},
 			videoSelectorHome: {
-				other: "Ă_Other_ș"
+				other: "Altul"
 			},
 			videoSelectorYoutube: {
-				url: "Ă_URL of a Youtube video_ș",
+				url: "URL al unui clip video de pe Youtube",
 				pageInputLbl: "Nume utilizator",
 				lookupMsgError: "Utilizator negăsit",
 				howToFind: "Cum găsiţi un nume de utilizator YouTube",
 				howToFind2: "Numele de utilizator este afişat sub videoclipuri",
-				found: "Ă_Found_ș",
+				found: "Găsit",
 				noData: "Nu a fost găsit niciun videoclip public"
 			},
 			videoSelectorVimeo: {
-				url: "Ă_URL of a Vimeo video_ș"
+				url: "URL al unui clip video de pe Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Ă_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._ș",
-				explain2: "Ă_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._ș",
-				explain3: "Ă_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._ș",
-				webpage: "Ă_Web page feature_ș"
+				explain1: "Jurnalul hărţii nu poate reda clipuri video brute (de ex., avi, mpeg) însă poate reda fişiere video găzduite, care au aplicaţii de redare încorporate (de ex., YouTube sau Vimeo).",
+				explain2: "Majoritatea serviciilor de găzduire video online oferă această funcţie; trebuie să găsiţi opţiunea de a încorpora clipul video, copiaţi codul dat şi utilizaţi %WEBPAGE%.",
+				explain3: "Alternativ, dacă doriţi să găzduiţi voi înşivă clipul video, puteţi crea o pagină HTML care să utilizeze o aplicaţie de redare video, cum ar fi %EXAMPLE%, găzduiţi pagina şi utilizaţi %WEBPAGE%.",
+				webpage: "Obiect spaţial pagină web"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Ă_Webpage URL_ș",
-				lblEmbed: "Ă_Embed code_ș",
-				lblOR: "Ă_OR_ș",
-				lblError1: "Ă_Error, clear one of the two input fields._ș",
-				lblError2: "Ă_Embed code can only contain one <iframe>_ș"
+				lblUrl: "URL pagină web",
+				lblEmbed: "Încorporare cod",
+				lblOR: "SAU",
+				lblError1: "Eroare, eliminaţi unul sau două câmpuri de intrare.",
+				lblError2: "Codul încorporat poate conţine numai un <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Ă_An image URL should start with http:// and end with .jpg or .png_ș",
-				lblLabel: "Ă_Image Caption_ș",
+				lblURLPH: "Un URL de imagine trebuie să înceapă cu http:// şi să se încheie cu .jpg sau .png",
+				lblLabel: "Subtitlu imagine",
 				lblLabel1: "Subtitlu",
 				lblLabel2: "Text informativ",
 				lblLabel3: "Niciunul",
 				lblLabelPH: "Introduceţi text...",
-				lblMaximize: "Ă_Include a maximize button in the corner of the image_ș",
-				lblMaximizeHelp: "Ă_Recommended only for high quality photos_ș",
+				lblMaximize: "Includeţi un buton de maximizare în colţul imaginii",
+				lblMaximizeHelp: "Recomandat numai pentru fotografii la calitate ridicată",
 				lblPosition: "Poziţie",
 				lblPosition1: "Centru",
 				lblPosition2: "Umplere",
 				lblPosition3: "Potrivire",
 				lblPosition4: "Întindere",
-				lblPosition5: "Ă_Custom_ș",
-				tooltipDimension: "Ă_The value can be specified in 'px' or '%'_ș",
+				lblPosition5: "Particularizat",
+				tooltipDimension: "Valoarea poate fi specificată în „px” sau „%”",
 				lblPosition2Explain: "(poate fi decupat)",
 				lblPosition3Explain: "(nu poate fi decupat)",
-				lblPosition3Explain2: "Ă_(width will always fit the panel)_ș",
+				lblPosition3Explain2: "(lăţimea va corespunde întotdeauna panoului)",
 				lblPosition4Explain: "(poate fi distorsionat)"
 			},
 			editorActionGeocode: {

@@ -1,11 +1,11 @@
 ﻿define(
    ({
         map: {
-            error: "بيت_Unable to create map_لاحقة"
+            error: "تعذر إنشاء خريطة"
         }, 
         tools: {
-        	legend: "بيت_Legend_لاحقة",
-        	 about: "بيت_About_لاحقة"
+        	legend: "وسيلة الإيضاح",
+        	 about: "حول"
         }
     })
    

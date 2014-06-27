@@ -20,7 +20,7 @@
             buttonText: "확인",
         },
         ui:{
-            basemapButton: "한_Basemap_빠"
+            basemapButton: "베이스맵"
         }
     })
 

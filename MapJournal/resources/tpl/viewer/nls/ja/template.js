@@ -27,7 +27,7 @@
 				notConfiguredMobile: "%TPL_NAME% Web アプリケーションへようこそ。このアプリケーションは、まだ構成されていません。ビルダは、モバイル デバイスではサポートされていません。",
 				notAuthorized: "このアプリケーションにアクセスする権限がありません",
 				noBuilderIE8: "ビルダは、バージョン 9 より前の Internet Explorer ではサポートされていません。",
-				mapLoadingFail: "須_Something went wrong, the Map cannot be loaded._鷗"
+				mapLoadingFail: "問題が発生しました。マップを読み込めません。"
 			},
 			mobileView: {
 				tapForDetails: "タップして詳細を表示",

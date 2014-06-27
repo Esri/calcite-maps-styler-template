@@ -14,8 +14,8 @@
 				start: "Iniciar",
 				loading: "Carregando",
 				disabledAdmin: "Este recurso foi desabilitado pelo Administrador",
-				width: "ã_Width_Ç",
-				height: "ã_Height_Ç"
+				width: "Largura",
+				height: "Altura"
 			},
 			inlineFieldEdit: {
 				editMe: "Editar- me!"
@@ -27,7 +27,7 @@
 				buttonShare: "Compartilhar",
 				buttonSettings: "Configurações",
 				buttonHelp: "Ajuda",
-				buttonPreview: "Visualizar Ao Vivo",
+				buttonPreview: "Visualizar em Tempo Real",
 				tooltipFirstSave: "Esta funcionalidade não fica disponível até que o aplicativo seja salvo",
 				tooltipNotShared: "Esta funcionalidade não fica disponível até que o aplicativo seja compartilhado",
 				noPendingChange: "Nenhuma alteração pendente",
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "Layout",
 				explain: "Qual layout você deseja utilizar?",
-				explainInit: "ã_You can change the layout anytime from the settings dialog._Ç",
+				explainInit: "Você pode alterar o layout a qualquer momento no diálogo de configurações.",
 				viewExample: "Visualizar um exemplo ao vivo"
 			},
 			settingsTheme: {

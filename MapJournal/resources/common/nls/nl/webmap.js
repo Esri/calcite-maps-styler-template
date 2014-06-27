@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Ĳ_Web map_ä",
+				lblWebMap: "Webkaart",
 				lblLocation: "Locatie",
 				lblContent: "Inhoud",
 				lblPopup: "Pop-up",
-				lblControls: "Ĳ_Extras_ä",
+				lblControls: "Extra\'s",
 				lblOverview: "Overzichtskaart",
 				lblLegend: "Legenda",
 				loadingTitle: "Titel laden",
@@ -22,19 +22,19 @@
 				newMap: "Nieuw geselecteerde webmap",
 				webmapDefault: "Standaard webmap",
 				customCfg: "Aangepaste configuratie",
-				tooltipLocation: "Ĳ_Define the map location that will be used when your readers navigate to this section._ä",
+				tooltipLocation: "Definieer de kaartlocatie die zal worden gebruikt wanneer uw lezers naar deze sectie gaan.",
 				tooltipContent: "Definieer de zichtbare kaartlagen.",
 				tooltipPopup: "Kies een pop-up die moet worden weergegeven wanneer uw lezers naar deze sectie gaan.",
 				tooltipOverview: "Geef een kleine overzichtskaart weer samen met de hoofdkaart",
 				tooltipLegend: "Geef de kaartlegenda weer op de kaart. Dit is handig als de kaart verschillende lagen en symbolen heeft.",
-				mapCfgInvite: "Ĳ_Use these controls to configure your map_ä"
+				mapCfgInvite: "Gebruik deze bedieningselementen om uw kaart te configureren"
 			},
 			configure: {
 				btnReset: "Opnieuw instellen",
 				btnCancel: "Annuleren",
 				tocTitle: "Kaartinhoud",
 				tocExplain: "Selecteer welke kaartlagen zullen worden weergegeven.",
-				tocSave: "Ĳ_Save map content_ä",
+				tocSave: "Kaartinhoud opslaan",
 				extentTitle: "Kaartlocatie",
 				extentExplain: "Pan en zoom op de kaart om te definiëren hoe deze eruit zal zien voor uw lezers.",
 				extentSave: "Kaartlocatie opslaan",

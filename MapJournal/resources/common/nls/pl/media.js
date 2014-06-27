@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ł_Media_ą",
-				lblSelect2: "ł_Content_ą",
+				lblSelect1: "Multimedia",
+				lblSelect2: "Zasoby",
 				lblMap: "Mapa",
 				lblImage: "Obraz",
 				lblVideo: "Wideo",
@@ -41,59 +41,59 @@
 				howToFind2: "Skopiuj cyfry znajdujące się między pierwszym a drugim znakiem „/” dowolnej strony Picasa lub G+"
 			},
 			videoSelectorCommon: {
-				check: "ł_Check_ą",
-				notFound: "ł_Video not found_ą",
-				found: "ł_Video found_ą",
-				select: "ł_Select this video_ą"
+				check: "Zaznacz",
+				notFound: "Nie znaleziono pliku wideo",
+				found: "Znaleziono plik wideo",
+				select: "Wybierz ten plik wideo"
 			},
 			videoSelectorHome: {
-				other: "ł_Other_ą"
+				other: "Inny"
 			},
 			videoSelectorYoutube: {
-				url: "ł_URL of a Youtube video_ą",
+				url: "Adres URL pliku wideo dostępnego w serwisie YouTube",
 				pageInputLbl: "Nazwa użytkownika",
 				lookupMsgError: "Nie odnaleziono użytkownika",
 				howToFind: "Odszukiwanie nazwy użytkownika serwisu You Tube",
 				howToFind2: "Nazwa użytkownika jest wyświetlana pod każdym filmem",
-				found: "ł_Found_ą",
+				found: "Znaleziono",
 				noData: "Nie znaleziono żadnych filmów publicznych"
 			},
 			videoSelectorVimeo: {
-				url: "ł_URL of a Vimeo video_ą"
+				url: "Adres URL pliku wideo dostępnego w serwisie Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "ł_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._ą",
-				explain2: "ł_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._ą",
-				explain3: "ł_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._ą",
-				webpage: "ł_Web page feature_ą"
+				explain1: "Dziennik mapy nie jest w stanie odtwarzać surowych plików wideo (np. w formacie avi, mpeg), ale może odtwarzać hostowane pliki wideo, w które wbudowane są odtwarzacze (np. pliki dostępne w serwisie YouTube lub Vimeo).",
+				explain2: "Funkcja ta jest udostępniana w ramach większości usług hostowania plików wideo w Internecie, konieczne jest znalezienie opcji wbudowywania pliku wideo, skopiowanie danego kodu oraz skorzystanie z witryny %WEBPAGE%.",
+				explain3: "Ewentualnie, jeżeli użytkownik chce samodzielnie hostować plik wideo, może utworzyć stronę HTML, w ramach której wykorzystywany będzie odtwarzacz plików wideo, taki jak %EXAMPLE%, hostować tę stronę, a także skorzystać z witryny %WEBPAGE%.",
+				webpage: "Obiekt witryny internetowej"
 			},
 			webpageSelectorHome: {
-				lblUrl: "ł_Webpage URL_ą",
-				lblEmbed: "ł_Embed code_ą",
-				lblOR: "ł_OR_ą",
-				lblError1: "ł_Error, clear one of the two input fields._ą",
-				lblError2: "ł_Embed code can only contain one <iframe>_ą"
+				lblUrl: "Adres URL witryny internetowej",
+				lblEmbed: "Kod wbudowania",
+				lblOR: "LUB",
+				lblError1: "Błąd, wyczyść jedno z dwóch pól danych wejściowych.",
+				lblError2: "Kod wbudowania może zawierać tylko jedną <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "ł_An image URL should start with http:// and end with .jpg or .png_ą",
-				lblLabel: "ł_Image Caption_ą",
+				lblURLPH: "Adres URL obrazu powinien zaczynać się od http:// i kończyć na .jpg lub .png",
+				lblLabel: "Legenda do obrazu",
 				lblLabel1: "Podpis",
 				lblLabel2: "Aktywuj tekst",
 				lblLabel3: "Brak",
 				lblLabelPH: "Wprowadź tekst",
-				lblMaximize: "ł_Include a maximize button in the corner of the image_ą",
-				lblMaximizeHelp: "ł_Recommended only for high quality photos_ą",
+				lblMaximize: "Wstaw przycisk maksymalizacji w rogu obrazu",
+				lblMaximizeHelp: "Zalecany tylko w przypadku zdjęć o wysokiej jakości",
 				lblPosition: "Położenie",
 				lblPosition1: "Wyśrodkuj",
 				lblPosition2: "Wypełnij",
 				lblPosition3: "Dopasuj",
 				lblPosition4: "Rozciągnij",
-				lblPosition5: "ł_Custom_ą",
-				tooltipDimension: "ł_The value can be specified in 'px' or '%'_ą",
+				lblPosition5: "Niestandardowy",
+				tooltipDimension: "Wartość można podać w „px” lub „%”",
 				lblPosition2Explain: "(obraz może zostać przycięty)",
 				lblPosition3Explain: "(obraz nie zostanie przycięty)",
-				lblPosition3Explain2: "ł_(width will always fit the panel)_ą",
+				lblPosition3Explain2: "(szerokość będzie zawsze dopasowana do panelu)",
 				lblPosition4Explain: "(obraz może zostać zniekształcony)"
 			},
 			editorActionGeocode: {

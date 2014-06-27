@@ -20,7 +20,7 @@
             buttonText: "אישור",
         },
         ui:{
-            basemapButton: "כן_Basemap_ש"
+            basemapButton: "מפת בסיס"
         }
     })
 

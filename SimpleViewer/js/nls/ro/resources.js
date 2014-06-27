@@ -1,11 +1,11 @@
 ﻿define(
    ({
         map: {
-            error: "Ă_Unable to create map_ș"
+            error: "Nu se poate crea harta"
         }, 
         tools: {
-        	legend: "Ă_Legend_ș",
-        	 about: "Ă_About_ș"
+        	legend: "Legendă",
+        	 about: "Despre"
         }
     })
    

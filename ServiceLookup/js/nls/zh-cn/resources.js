@@ -20,7 +20,7 @@
             buttonText: "确定",
         },
         ui:{
-            basemapButton: "试_Basemap_验"
+            basemapButton: "底图"
         }
     })
 

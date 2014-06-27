@@ -27,7 +27,7 @@
 				notConfiguredMobile: "Bienvenido a la aplicación web %TPL_NAME%. La aplicación no se ha configurado todavía y el Builder no es compatible con los dispositivos móviles.",
 				notAuthorized: "No tienes autorización para acceder a esta aplicación",
 				noBuilderIE8: "Builder no es compatible con las versiones de Internet Explorer anteriores a la 9.",
-				mapLoadingFail: "á_Something went wrong, the Map cannot be loaded._Ó"
+				mapLoadingFail: "Se ha producido un error, no se puede cargar el mapa."
 			},
 			mobileView: {
 				tapForDetails: "Tocar para ver detalles",

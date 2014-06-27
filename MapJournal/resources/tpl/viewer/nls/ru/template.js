@@ -27,7 +27,7 @@
 				notConfiguredMobile: "Добро пожаловать в веб-приложение %TPL_NAME%. Приложение ещё не настроено. Конструктор не поддерживается на мобильных устройствах.",
 				notAuthorized: "Вы не авторизованы для доступа к данному приложению",
 				noBuilderIE8: "Конструктор не поддерживается в браузере Internet Explorer версий ранее 9.",
-				mapLoadingFail: "Ж_Something went wrong, the Map cannot be loaded._Я"
+				mapLoadingFail: "Что-то пошло не так, карта не может быть загружена."
 			},
 			mobileView: {
 				tapForDetails: "Коснитесь для подробной информации",
