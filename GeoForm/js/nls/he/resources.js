@@ -4,7 +4,7 @@
             error: "לא ניתן ליצור מפה"
         },
         onlineStatus: {
-            online: "כן_You are currently online._ש",
+            online: "אתה נמצא כרגע באינטרנט.",
             offline: "אתה עובד כרגע במצב לא מקוון. הטופס ישמר באופן מקומי עד שחיבור לשרת יכול להתבצע.",
             reconnecting: "מתקשר מחש&hellip;"
         },

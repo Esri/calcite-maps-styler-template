@@ -20,7 +20,7 @@
             buttonText: "Tamam",
         },
         ui:{
-            basemapButton: "ı_Basemap_İ"
+            basemapButton: "Altlık Haritası"
         }
     })
 

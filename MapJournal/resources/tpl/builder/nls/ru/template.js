@@ -27,25 +27,25 @@
 				title: "Добро пожаловать"
 			},
 			addEditPopup: {
-				disabled: "Ж_Add Section is disabled because the maximum number of allowed sections has been reached._Я",
+				disabled: "Функция Добавить раздел отключена, поскольку достигнуто максимально допустимое число разделов.",
 				titleAdd: "Добавить раздел",
-				titleAddHome: "Ж_Add Home Section_Я",
+				titleAddHome: "Добавить домашний раздел",
 				titleEdit: "Изменить раздел",
 				step: "Шаг",
-				stepMainStageExplain: "Ж_Main Stage Content_Я",
-				stepPanelExplain: "Ж_Content_Я",
+				stepMainStageExplain: "Ресурсы главной площадки",
+				stepPanelExplain: "Ресурсы",
 				stepMainStageNextTooltip: "Введите название раздела и выберите ресурсы основной площадки",
 				step2NextTooltip: "Введите название раздела и ресурсы %LAYOUT-TYPE%",
 				stepNextTooltipNext: "чтобы перейти к следующему шагу",
 				stepNextTooltipAdd: "чтобы добавить раздел",
-				firstAddExplain: "Ж_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._Я",
-				firstAddLeanMore: "Ж_Learn More_Я",
+				firstAddExplain: "Первый раздел является вашим Главным (стартовым) разделом, как обложка для вашей истории. Указанный заголовок будет отображаться крупным шрифтом.",
+				firstAddLeanMore: "Подробнее",
 				titlePlaceholder: "Название раздела..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Добавьте здесь текст, ссылки и небольшие графики.",
 				editorActionsTitle: "Действия основной площадки",
-				editorActionsHelpDescr: "Ж_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._Я"
+				editorActionsHelpDescr: "Используйте эти элементы управления для создания ссылок, которые будут изменять основную площадку. Например, когда читатель щелкает ссылку, карта может приблизиться к определенному местоположению, может отобразиться другая веб-карта или изображение."
 			},
 			organizePopup: {
 				title: "Организовать",
@@ -54,13 +54,13 @@
 				lblColPubDate: "Дата публикации",
 				lblColStatus: "Статус",
 				checkDisplayReverse: "Отображать разделы в обратном порядке",
-				btnApplyWarning: "Ж_Confirm deletion of %NB% section(s)_Я",
+				btnApplyWarning: "Подтвердите удаление разделов %NB%",
 				deleteTooltip: "Удалить",
 				firstSectionExplain: "(Главный раздел нельзя переместить)"
 			},
 			exportData: {
-				btn: "Ж_Export content_Я",
-				tooltip: "Ж_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._Я"
+				btn: "Экспорт ресурсов",
+				tooltip: "Экспорт ваших ресурсов позволяет просматривать и создавать резервные копии вашего Журнала, который может случайно быть удалён. Просто скопируйте и вставьте содержимое страницы в любой текстовый процессор."
 			},
 			help: {
 				lblHelp: "Справка",
@@ -69,22 +69,22 @@
 				lblOrga: "Организовать ресурсы",
 				lblEdit: "Изменения",
 				lblPublish: "Общий доступ",
-				lblTips: "Ж_Tips_Я",
+				lblTips: "Подсказки",
 				lblMore: "Хотите узнать больше?",
 				lblLink: "Посетите веб-сайт Карты историй.",
 				content1Div1: "В процессе создания вашей истории вы можете интегрировать множество стилей. Компоновка <strong>%LAYOUT_TITLE%</strong> обычно содержит текст, изображения и видео, а для карт применяется <strong>Основная площадка</strong>. Однако %TPL_NAME% позволяет встраивать также изображения, таблицы и видео в основную площадку.",
 				content1Div2: "Добавление разделов позволяет чётко настроить представление вашей истории. Читатели просматривают текст  %LAYOUT_TITLE%, карту на основной площадке можно масштабировать и перемещать, новые карты и изображения автоматически переключаются для поддержки вашего сообщения.",
 				content2Div1: "Здесь вы можете указать, как должен выглядеть ваш %TPL_NAME%. Цветовые схемы, компоновки и отступы настраиваются здесь.",
 				content2Div2: "Вы также можете добавить ссылки на Facebook, Twitter и Bitly, с помощью которых ваш %TPL_NAME% станет известен другим.",
-				content3Div1: "Ж_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._Я",
+				content3Div1: "Ваши ресурсы организованны по разделам. Вы можете создавать любое количество разделов (глав истории). Последовательность изложения этих глав не менее важна; с помощью инструмента Организовать вы можете задать любой порядок следования и удалить ненужные главы.",
 				content4Div1: "Нашли ошибку или хотите внести изменения? Нет проблем! Чтобы изменить данные, нажмите значок Изменить в вашем приложении. В процессе создания вашего%TPL_NAME% функции редактирования будут применяться очень часто.",
 				content5Div1: "%TPL_NAME% сохранен в вашей учетной записи %PORTAL%, частной по умолчанию. Вы можете открыть общий доступ для вашей организации или для всего мира. Мы создаём для вас короткий постоянный URL, чтобы вам было проще поделиться историей.",
-				content6Div1: "Ж_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._Я",
-				content6Div2: "Ж_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_Я"
+				content6Div1: "Заголовок вашего Главного раздела также является заголовком журнала; Главный раздел можно сравнить с обложкой вашей истории. Заголовок Главного раздела виден с любой страницы Журнала.",
+				content6Div2: "В вашем %LAYOUT_TITLE% может быть не только текст, но и фотографии и видео, чтобы сделать историю более красочной и оживить длинные тексты разделов."
 			},
 			landing: {
-				lblAdd: "Ж_What do you want to call your Map Journal?_Я",
-				phAdd: "Ж_Enter your title..._Я",
+				lblAdd: "Что называется Журналом карт?",
+				phAdd: "Введите ваш заголовок...",
 				lblOR: "Или",
 				lblHelp: "Ознакомительный тур"
 			},

@@ -27,25 +27,25 @@
 				title: "Witamy w"
 			},
 			addEditPopup: {
-				disabled: "ł_Add Section is disabled because the maximum number of allowed sections has been reached._ą",
+				disabled: "Opcja Dodaj sekcję jest wyłączona, ponieważ osiągnięto maksymalną liczbę dozwolonych sekcji.",
 				titleAdd: "Dodaj sekcję",
-				titleAddHome: "ł_Add Home Section_ą",
+				titleAddHome: "Dodaj sekcję Start",
 				titleEdit: "Edytuj sekcję",
 				step: "Etap",
-				stepMainStageExplain: "ł_Main Stage Content_ą",
-				stepPanelExplain: "ł_Content_ą",
+				stepMainStageExplain: "Zasoby obszaru głównego",
+				stepPanelExplain: "Zasoby",
 				stepMainStageNextTooltip: "Wpisz tytuł sekcji i wybierz zawartość, która znajdzie się w obszarze głównym",
 				step2NextTooltip: "Wpisz tytuł sekcji i zawartość, która będzie wyświetlana w układzie %LAYOUT-TYPE%",
 				stepNextTooltipNext: "aby przejść do kolejnego etapu",
 				stepNextTooltipAdd: "aby dodać sekcję",
-				firstAddExplain: "ł_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._ą",
-				firstAddLeanMore: "ł_Learn More_ą",
+				firstAddExplain: "Pierwsza sekcja to sekcja Start, którą należy postrzegać jako „okładkę” swojej historii. Tytuł, który właśnie podałeś, będzie wyświetlony dużą czcionką.",
+				firstAddLeanMore: "Dowiedz się więcej",
 				titlePlaceholder: "Tytuł sekcji"
 			},
 			addEditViewText: {
 				editorPlaceholder: "Tutaj możesz dodać tekst, łącza oraz niewielkie elementy graficzne.",
 				editorActionsTitle: "Operacje w obszarze głównym",
-				editorActionsHelpDescr: "ł_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ą"
+				editorActionsHelpDescr: "Użyj tych kontrolek do utworzenia łączy, które zmienią obszar główny. Na przykład, gdy użytkownik kliknie łącze, może nastąpić powiększenie mapy do określonej lokalizacji, wyświetlenie innej mapy internetowej lub wyświetlenie obrazu."
 			},
 			organizePopup: {
 				title: "Organizuj",
@@ -54,13 +54,13 @@
 				lblColPubDate: "Data publikacji",
 				lblColStatus: "Status",
 				checkDisplayReverse: "Wyświetlaj sekcje w odwrotnej kolejności",
-				btnApplyWarning: "ł_Confirm deletion of %NB% section(s)_ą",
+				btnApplyWarning: "Potwierdź usunięcie %NB% sekcji",
 				deleteTooltip: "Usuń",
 				firstSectionExplain: "(Sekcji Start nie można przenieść)."
 			},
 			exportData: {
-				btn: "ł_Export content_ą",
-				tooltip: "ł_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._ą"
+				btn: "Eksportuj zasoby",
+				tooltip: "Dzięki eksportowaniu zasobów możesz przeglądać i utworzyć kopię zapasową swojego Dziennika na wypadek, gdyby został on przez przypadek usunięty. Wystarczy skopiować zawartość strony i wkleić ją do dowolnego edytora procesu."
 			},
 			help: {
 				lblHelp: "Pomoc",
@@ -69,22 +69,22 @@
 				lblOrga: "Organizuj zawartość",
 				lblEdit: "Edycje",
 				lblPublish: "Udostępnij",
-				lblTips: "ł_Tips_ą",
+				lblTips: "Wskazówki",
 				lblMore: "Chcesz mieć więcej możliwości?",
 				lblLink: "Odwiedź witrynę Story Maps.",
 				content1Div1: "Podczas tworzenia opowiadania możesz łączyć różne style. W układzie <strong>%LAYOUT_TITLE%</strong> zwykle znajduje się tekst, obrazy oraz filmy wideo, mapy natomiast są na ogół widoczne w <strong>obszarze głównym</strong>. Jednak aplikacja %TPL_NAME% pozwala również na umieszczenie w obszarze głównym także obrazów obiektów, diagramów i filmów wideo.",
 				content1Div2: "Dodanie sekcji umożliwia personalizację korzystania z aplikacji opowiadania. Możliwe jest dostosowanie aplikacji tak, aby podczas przewijania tekstu w układzie %LAYOUT_TITLE% mapa znajdująca się w obszarze głównym była przesuwana i powiększana do najważniejszych punktów lub automatycznie przełączane były nowe mapy i obrazy, stanowiące kontekst dla przekazywanych treści.",
 				content2Div1: "Tutaj możesz dostosować wygląd aplikacji %TPL_NAME%. Dostępne są tutaj szczegółowe ustawienia schematów kolorów, układów i szerokości.",
 				content2Div2: "Możesz również dodać łącza udostępniania w serwisach Facebook, Twitter i Bitly, dzięki czemu użytkownicy będą mogli łatwo rozpowszechniać aplikację %TPL_NAME% wśród szerokiego grona odbiorców.",
-				content3Div1: "ł_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ą",
+				content3Div1: "Zawartość jest podzielona na sekcje. Liczba sekcji, które można dodać jest nieograniczona (sekcje są w postaci niewielkich rozdziałów). Sposób i kolejność prezentacji rozdziałów są bardzo ważne. Na ekranie Organizuj można zmieniać kolejność sekcji lub usuwać je wedle uznania.",
 				content4Div1: "Czy znaleziono błąd w aplikacji, czy chcesz zmienić materiały? Odszukaj ikonę edycji w odpowiednim miejscu w aplikacji i zmodyfikuj zawartość. Podczas tworzenia aplikacji %TPL_NAME% konieczne może być wielokrotne korzystanie z funkcji edycji!",
 				content5Div1: "Aplikacja %TPL_NAME% zostaje zapisana na koncie w portalu %PORTAL% i domyślnie zostaje oznaczona jako prywatna. Użytkownik może zadecydować, czy będzie ona udostępniona instytucji, czy też dostępna dla użytkowników z całego świata. W celu ułatwienia użytkownikom udostępniania zapewniamy im skrócony adres URL.",
-				content6Div1: "ł_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._ą",
-				content6Div2: "ł_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_ą"
+				content6Div1: "Tytuł sekcji Start jest także tytułem Twojego Dziennika; sekcję Start należy postrzegać jako „okładkę” swojej historii. Tytuł sekcji Start będzie widoczny, gdy użytkownicy będą poruszali się po Dzienniku.",
+				content6Div2: "%LAYOUT_TITLE% nie musi mieć wyłącznie formy tekstowej, pomyśl o dodaniu zdjęć, dzięki którym ożywisz historię oraz o podzieleniu długiego tekstu!"
 			},
 			landing: {
-				lblAdd: "ł_What do you want to call your Map Journal?_ą",
-				phAdd: "ł_Enter your title..._ą",
+				lblAdd: "Jak chcesz nazwać Dziennik mapy?",
+				phAdd: "Wpisz tytuł...",
 				lblOR: "Lub",
 				lblHelp: "Dowiedz się więcej"
 			},

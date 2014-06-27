@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "بيت_Media_لاحقة",
-				lblSelect2: "بيت_Content_لاحقة",
+				lblSelect1: "الوسائط",
+				lblSelect2: "المحتوى",
 				lblMap: "خريطة",
 				lblImage: "صورة",
 				lblVideo: "فيديو",
@@ -41,59 +41,59 @@
 				howToFind2: "نسخ الأرقام بين الأول والثاني \'/\'  لأي من Picasa او صفحة G+"
 			},
 			videoSelectorCommon: {
-				check: "بيت_Check_لاحقة",
-				notFound: "بيت_Video not found_لاحقة",
-				found: "بيت_Video found_لاحقة",
-				select: "بيت_Select this video_لاحقة"
+				check: "فحص",
+				notFound: "لم يتم العثور على الفيديو",
+				found: "تم العثور على الفيديو",
+				select: "حدد الفيديو الحالي"
 			},
 			videoSelectorHome: {
-				other: "بيت_Other_لاحقة"
+				other: "أخرى"
 			},
 			videoSelectorYoutube: {
-				url: "بيت_URL of a Youtube video_لاحقة",
+				url: "عنوان URL لفيديو اليوتيوب",
 				pageInputLbl: "اسم المستخدم",
 				lookupMsgError: "لم يتم العثور على المستخدم",
 				howToFind: "كيفية إيجاد اسم مستخدم YouTube",
 				howToFind2: "يتم عرض اسم المستخدم أسفل الفيديوهات",
-				found: "بيت_Found_لاحقة",
+				found: "تم العثور",
 				noData: "لم يتم العثور على الفيديوهات العامة"
 			},
 			videoSelectorVimeo: {
-				url: "بيت_URL of a Vimeo video_لاحقة"
+				url: "عنوان URL لفيديو Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "بيت_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._لاحقة",
-				explain2: "بيت_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._لاحقة",
-				explain3: "بيت_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._لاحقة",
-				webpage: "بيت_Web page feature_لاحقة"
+				explain1: "يتعذر على تخطيط الجريدة صفّ مقاطع الفيديو (مثل avi وmpeg)، إلا أنه يمكنه تشغيل ملفات فيديو مُستضافة ذات مُشغلات مدمجة (مثل YouTube أو Vimeo).",
+				explain2: "توفر معظم خدمات استضافة الفيديو على الإنترنت تلك الميزة، ويمكنك العثور على خيار تضمين هذا الفيديو ونسخ الكود المُعطى واستخدام %WEBPAGE%.",
+				explain3: "وبدلاً من ذلك، إذا أردت استضافة الفيديو بنفسك، يمكنك إنشاء صفحة HTML تستخدم مُشغل فيديو مثل %EXAMPLE% وتستضيف الصفحة وتستخدم %WEBPAGE%.",
+				webpage: "معالم صفحة الويب"
 			},
 			webpageSelectorHome: {
-				lblUrl: "بيت_Webpage URL_لاحقة",
-				lblEmbed: "بيت_Embed code_لاحقة",
-				lblOR: "بيت_OR_لاحقة",
-				lblError1: "بيت_Error, clear one of the two input fields._لاحقة",
-				lblError2: "بيت_Embed code can only contain one <iframe>_لاحقة"
+				lblUrl: "عنوان URL لصفحة الويب",
+				lblEmbed: "تضمين كود",
+				lblOR: "أو",
+				lblError1: "خطأ، امسح أحد حقلي الإدخال.",
+				lblError2: "يمكن أن تحتوي عملية تضمين كود على أحد <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "محدد موقع معلومات (URL)",
-				lblURLPH: "بيت_An image URL should start with http:// and end with .jpg or .png_لاحقة",
-				lblLabel: "بيت_Image Caption_لاحقة",
+				lblURLPH: "يجب أن يبدأ عنوان URL للصورة بـ http:// و ينتهي بـ .jpg أو .png",
+				lblLabel: "التسمية التوضيحية الصورة",
 				lblLabel1: "تسمية وضيحية",
 				lblLabel2: "التحويم حول النص",
 				lblLabel3: "بلا",
 				lblLabelPH: "إدخال النص...",
-				lblMaximize: "بيت_Include a maximize button in the corner of the image_لاحقة",
-				lblMaximizeHelp: "بيت_Recommended only for high quality photos_لاحقة",
+				lblMaximize: "تشمل زر تكبير في زاوية الصورة",
+				lblMaximizeHelp: "يكون مفضل فقط للصور عالية الجودة",
 				lblPosition: "الموضع",
 				lblPosition1: "المركز",
 				lblPosition2: "تعبئة",
 				lblPosition3: "احتواء",
 				lblPosition4: "توسيع",
-				lblPosition5: "بيت_Custom_لاحقة",
-				tooltipDimension: "بيت_The value can be specified in 'px' or '%'_لاحقة",
+				lblPosition5: "مخصص",
+				tooltipDimension: "يمكن تحديد القيمة بـ 'px' أو '%'",
 				lblPosition2Explain: "(يمكن القص)",
 				lblPosition3Explain: "(لا يتم القص)",
-				lblPosition3Explain2: "بيت_(width will always fit the panel)_لاحقة",
+				lblPosition3Explain2: "(سوف يناسب دائما العرض اللوحة)",
 				lblPosition4Explain: "(يمكن الإتلاف)"
 			},
 			editorActionGeocode: {

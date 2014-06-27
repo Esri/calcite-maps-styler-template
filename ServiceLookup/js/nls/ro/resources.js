@@ -20,7 +20,7 @@
             buttonText: "OK",
         },
         ui:{
-            basemapButton: "Ă_Basemap_ș"
+            basemapButton: "Hartă fundal"
         }
     })
 

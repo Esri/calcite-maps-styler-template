@@ -20,7 +20,7 @@
             buttonText: "OK",
         },
         ui:{
-            basemapButton: "Ř_Basemap_ů"
+            basemapButton: "Podkladová mapa"
         }
     })
 

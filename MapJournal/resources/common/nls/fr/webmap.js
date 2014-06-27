@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "æ_Web map_Â",
+				lblWebMap: "Carte Web",
 				lblLocation: "Emplacement",
 				lblContent: "Contenu",
 				lblPopup: "Fenêtre contextuelle",
-				lblControls: "æ_Extras_Â",
+				lblControls: "Suppléments",
 				lblOverview: "Carte générale",
 				lblLegend: "Légende",
 				loadingTitle: "Chargement du titre",
@@ -22,19 +22,19 @@
 				newMap: "Nouvelle carte Web sélectionnée",
 				webmapDefault: "Carte Web par défaut",
 				customCfg: "Configuration personnalisée",
-				tooltipLocation: "æ_Define the map location that will be used when your readers navigate to this section._Â",
+				tooltipLocation: "Définissez l\'emplacement sur la carte qui sera utilisé lorsque vos lecteurs accéderont à cette section.",
 				tooltipContent: "Définissez les couches visibles.",
 				tooltipPopup: "Choisissez la fenêtre contextuelle à afficher lorsque vos lecteurs accéderont à cette section.",
 				tooltipOverview: "Affichez une petite carte générale avec la carte principale.",
 				tooltipLegend: "Affichez la légende de la carte, qui est utile lorsque la carte comporte beaucoup de couches et de symboles.",
-				mapCfgInvite: "æ_Use these controls to configure your map_Â"
+				mapCfgInvite: "Utilisez ces contrôles pour configurer la carte"
 			},
 			configure: {
 				btnReset: "Réinitialiser",
 				btnCancel: "Annuler",
 				tocTitle: "Contenu de la carte",
 				tocExplain: "Sélectionnez les couches à afficher.",
-				tocSave: "æ_Save map content_Â",
+				tocSave: "Enregistrer le contenu de la carte",
 				extentTitle: "Emplacement sur la carte",
 				extentExplain: "Déplacez la carte et appliquez un zoom pour définir son apparence pour vos lecteurs.",
 				extentSave: "Enregistrer l\'emplacement sur la carte",

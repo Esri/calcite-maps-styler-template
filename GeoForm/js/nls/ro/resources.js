@@ -4,7 +4,7 @@
             error: "Imposibil de creat harta"
         },
         onlineStatus: {
-            online: "Ă_You are currently online._ș",
+            online: "În prezent sunteţi online.",
             offline: "În prezent, lucraţi offline. Trimiterea formularelor va fi salvată local până când se va putea stabili o conexiune la server.",
             reconnecting: "Se reconectează&hellip;"
         },

@@ -14,8 +14,8 @@
 				start: "התחלה",
 				loading: "טוען",
 				disabledAdmin: "תכונה זו הוגדרה כלא זמינה על ידי המנהל",
-				width: "כן_Width_ש",
-				height: "כן_Height_ש"
+				width: "רוחב",
+				height: "גובה"
 			},
 			inlineFieldEdit: {
 				editMe: "ערוך אותי!"
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "תצוגה",
 				explain: "באיזו תצוגה תרצה להשתמש?",
-				explainInit: "כן_You can change the layout anytime from the settings dialog._ש",
+				explainInit: "אתה יכול לשנות את כל עת את סידור המפה מתוך דיאלוג ההגדרות.",
 				viewExample: "הצג דוגמה חיה"
 			},
 			settingsTheme: {

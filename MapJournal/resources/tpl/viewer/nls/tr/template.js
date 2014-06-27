@@ -27,7 +27,7 @@
 				notConfiguredMobile: "%TPL_NAME% web uygulamasına hoş geldiniz. Uygulama henüz yapılandırılmadı ve oluşturucu mobil cihazlarda desteklenmiyor.",
 				notAuthorized: "Bu uygulamaya erişim yetkiniz yok",
 				noBuilderIE8: "Oluşturucu Internet Explorer 9'dan önceki sürümlerinde desteklenmez.",
-				mapLoadingFail: "ı_Something went wrong, the Map cannot be loaded._İ"
+				mapLoadingFail: "Bir şeyler yanlış gitti, Harita yüklenemiyor."
 			},
 			mobileView: {
 				tapForDetails: "Ayrıntılar için dokunun",

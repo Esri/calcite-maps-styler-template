@@ -27,7 +27,7 @@
 				notConfiguredMobile: "Welkom bij de %TPL_NAME%-webapplicatie. De applicatie is nog niet geconfigureerd en de builder wordt niet ondersteund op mobiele apparaten.",
 				notAuthorized: "U bent niet gemachtigd om deze applicatie te openen",
 				noBuilderIE8: "De builder wordt niet ondersteund op eerdere versies dan Internet Explorer 9.",
-				mapLoadingFail: "Ĳ_Something went wrong, the Map cannot be loaded._ä"
+				mapLoadingFail: "Er is iets fout gegaan, de kaart kan niet worden geladen."
 			},
 			mobileView: {
 				tapForDetails: "Tik voor details",

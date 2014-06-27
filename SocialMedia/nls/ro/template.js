@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "timePattern": "h:mma", // added 2.5.2013
-                "datePattern": "ll.zz.aaaa" // added 2.5.2013
+                "datePattern": "d. MMM yyyy" // added 2.5.2013
             },
             "applicationTitle": {
                 "PIM": "Hartă de informare publică" // added 8.26.2013

@@ -27,7 +27,7 @@
 				notConfiguredMobile: "مرحبًا بك في تطبيق الويب %TPL_NAME%. لم يتم تكوين التطبيق بعد والمُنشئ غير مدعوم على أجهزة الجوال.",
 				notAuthorized: "لست مخولاً لتكوين التطبيق للوصول إلى هذا التطبيق",
 				noBuilderIE8: "المُنشئ غير مدعوم على Internet Explorer الإصدار السابق للإصدار 9.",
-				mapLoadingFail: "بيت_Something went wrong, the Map cannot be loaded._لاحقة"
+				mapLoadingFail: "حدث خطأ ما، يتعذر تحميل الخريطة."
 			},
 			mobileView: {
 				tapForDetails: "الضغط للحصول على التفاصيل",

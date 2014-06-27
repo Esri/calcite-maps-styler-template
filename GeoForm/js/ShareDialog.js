@@ -98,7 +98,7 @@ define([
             },
             _shareLink: function () {
                 if (this.get("bitlyAPI") && this.get("bitlyLogin") && this.get("bitlyKey")) {
-                    var currentUrl = this.get("url");
+                    var currentUrl = this.get("url").split("&edit")[0];
                     // not already shortened
                     if (currentUrl !== this._shortened) {
                         // set shortened
@@ -146,7 +146,7 @@ define([
                 this._shortened = null;
                 // no bitly shortened
                 this.set("bitlyUrl", null);
-                  var url = this.get("url"),
+                var url = this.get("url"),
                     useSeparator;
                 // get url params
                 var urlObject = urlUtils.urlToObject(window.location.href);
@@ -166,6 +166,7 @@ define([
                         url += i + '=' + urlObject.query[i];
                     }
                 }
+                url = url.split("&edit")[0];
                 // update url
                 this.set("url", url);
                 // set url value

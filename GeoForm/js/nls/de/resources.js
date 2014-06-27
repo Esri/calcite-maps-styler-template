@@ -4,7 +4,7 @@
             error: "Karte kann nicht erstellt werden"
         },
         onlineStatus: {
-            online: "ä_You are currently online._Ü",
+            online: "Sie sind zurzeit online.",
             offline: "Sie arbeiten derzeit offline. Gesendete Formulare werden lokal gespeichert, bis eine Verbindung mit dem Server hergestellt werden kann.",
             reconnecting: "Verbindung erneut herstellen&hellip;"
         },

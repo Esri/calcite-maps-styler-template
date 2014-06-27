@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ı_Media_İ",
-				lblSelect2: "ı_Content_İ",
+				lblSelect1: "Ortam",
+				lblSelect2: "İçerik",
 				lblMap: "Harita",
 				lblImage: "Görüntü",
 				lblVideo: "Video",
@@ -41,59 +41,59 @@
 				howToFind2: "Herhangi bir Picasa ya da G+ sayfasının ilk ve ikinci \'/\' karakterleri arasındaki rakamları kopyalayın"
 			},
 			videoSelectorCommon: {
-				check: "ı_Check_İ",
-				notFound: "ı_Video not found_İ",
-				found: "ı_Video found_İ",
-				select: "ı_Select this video_İ"
+				check: "Kontrol",
+				notFound: "Video bulunamadı",
+				found: "Video bulundu",
+				select: "Bu videoyu seç"
 			},
 			videoSelectorHome: {
-				other: "ı_Other_İ"
+				other: "Diğer"
 			},
 			videoSelectorYoutube: {
-				url: "ı_URL of a Youtube video_İ",
+				url: "Bir Youtube videosu URL\'si",
 				pageInputLbl: "Kullanıcı adı",
 				lookupMsgError: "Kullanıcı bulunamadı",
 				howToFind: "YouTube kullanıcı adı bulma",
 				howToFind2: "Kullanıcı adı bu videoların altında gösterilir",
-				found: "ı_Found_İ",
+				found: "Bulundu",
 				noData: "Hiçbir genel video bulunamadı"
 			},
 			videoSelectorVimeo: {
-				url: "ı_URL of a Vimeo video_İ"
+				url: "Bir Vimeo videosu URL\'si"
 			},
 			videoSelectorOther: {
-				explain1: "ı_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._İ",
-				explain2: "ı_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._İ",
-				explain3: "ı_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._İ",
-				webpage: "ı_Web page feature_İ"
+				explain1: "Harita Bülteni ham videoları (avi, mpeg gibi) oynatamaz ancak dahili oynatıcıları (YouTube ya da Vimeo gibi) olan barındırılan video dosyalarını oynatabilir.",
+				explain2: "Çoğu çevrimiçi video barındırma hizmeti bu özelliği sunar, videoyu gömmek için geçerli seçeneği bulmalı, verilen kodu kopyalamalı ve %WEBPAGE% kullanmalısınız.",
+				explain3: "Alternatif olarak videoyu kendiniz barındırmak istiyorsanız, %EXAMPLE% gibi bir video oynatıcı kullanan bir HTML sayfası oluşturabilir, sayfayı barındırabilir ve ayrıca %WEBPAGE% kullanabilirsiniz.",
+				webpage: "Web sayfası özelliği"
 			},
 			webpageSelectorHome: {
-				lblUrl: "ı_Webpage URL_İ",
-				lblEmbed: "ı_Embed code_İ",
-				lblOR: "ı_OR_İ",
-				lblError1: "ı_Error, clear one of the two input fields._İ",
-				lblError2: "ı_Embed code can only contain one <iframe>_İ"
+				lblUrl: "Web sayfası URL\'si",
+				lblEmbed: "Kod ekle",
+				lblOR: "YA DA",
+				lblError1: "Hata, iki giriş alanından birini silin.",
+				lblError2: "Gömülü kod yalnızca <iframe> içerebilir"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "ı_An image URL should start with http:// and end with .jpg or .png_İ",
-				lblLabel: "ı_Image Caption_İ",
+				lblURLPH: "Bir görüntü URL\'si http:// ile başlamalı ve .jpg ya da .png ile bitmelidir",
+				lblLabel: "Görüntü Alt Yazısı",
 				lblLabel1: "Altyazı",
 				lblLabel2: "Metnin üzerinde gezin",
 				lblLabel3: "Hiçbiri",
 				lblLabelPH: "Metin girin...",
-				lblMaximize: "ı_Include a maximize button in the corner of the image_İ",
-				lblMaximizeHelp: "ı_Recommended only for high quality photos_İ",
+				lblMaximize: "Görüntünün köşesinde bir büyütme düğmesi dahil et",
+				lblMaximizeHelp: "Yalnızca yüksek kaliteli fotoğraflar için önerilir",
 				lblPosition: "Konum",
 				lblPosition1: "Merkez",
 				lblPosition2: "Dolgu",
 				lblPosition3: "Sığdır",
 				lblPosition4: "Esnet",
-				lblPosition5: "ı_Custom_İ",
-				tooltipDimension: "ı_The value can be specified in 'px' or '%'_İ",
+				lblPosition5: "Özel",
+				tooltipDimension: "Değer 'px' ya da '%' cinsinden belirtilebilir",
 				lblPosition2Explain: "(kırpılabilir)",
 				lblPosition3Explain: "(kırpılmaz)",
-				lblPosition3Explain2: "ı_(width will always fit the panel)_İ",
+				lblPosition3Explain2: "(genişlik her zaman panele sığacaktır)",
 				lblPosition4Explain: "(şekil değiştirebilir)"
 			},
 			editorActionGeocode: {

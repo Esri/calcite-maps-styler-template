@@ -4,7 +4,7 @@
             error: "Nelze vytvořit mapu"
         },
         onlineStatus: {
-            online: "Ř_You are currently online._ů",
+            online: "Momentálně jste online.",
             offline: "Právě pracujete v režimu offline. Odeslané formuláře budou uloženy na místní počítač, dokud nebude navázáno spojení se serverem.",
             reconnecting: "Obnovuje se připojení&hellip;"
         },

@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ж_Media_Я",
-				lblSelect2: "Ж_Content_Я",
+				lblSelect1: "Медиа",
+				lblSelect2: "Ресурсы",
 				lblMap: "Карта",
 				lblImage: "Изображение",
 				lblVideo: "Видео",
@@ -41,59 +41,59 @@
 				howToFind2: "Скопируйте цифры, расположенные между первой и второй косой чертой \'/\' любой страницы Picasa или G+"
 			},
 			videoSelectorCommon: {
-				check: "Ж_Check_Я",
-				notFound: "Ж_Video not found_Я",
-				found: "Ж_Video found_Я",
-				select: "Ж_Select this video_Я"
+				check: "Проверить",
+				notFound: "Видео не найдено",
+				found: "Видео найдено",
+				select: "Выбрать это видео"
 			},
 			videoSelectorHome: {
-				other: "Ж_Other_Я"
+				other: "Другие"
 			},
 			videoSelectorYoutube: {
-				url: "Ж_URL of a Youtube video_Я",
+				url: "URL видео на Youtube",
 				pageInputLbl: "Имя пользователя",
 				lookupMsgError: "Пользователь не найден",
 				howToFind: "Как найти имя пользователя YouTube",
 				howToFind2: "Имя пользователя отображается под видео",
-				found: "Ж_Found_Я",
+				found: "Найдено",
 				noData: "Общедоступных видео не найдено"
 			},
 			videoSelectorVimeo: {
-				url: "Ж_URL of a Vimeo video_Я"
+				url: "URL видео на Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Ж_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._Я",
-				explain2: "Ж_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._Я",
-				explain3: "Ж_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._Я",
-				webpage: "Ж_Web page feature_Я"
+				explain1: "Map Journal не может проигрывать необработанное видео (например, формата avi, mpeg), но он может проигрывать размещенные видео-файлы, которые содержат встроенные видео-плейеры (YouTube или Vimeo).",
+				explain2: "Большинство сервисов для размещения видео-роликов позволяют использовать эту функцию. Вам необходимо найти соответствующую опцию, скопировать код и использовать в %WEBPAGE%.",
+				explain3: "Или вы можете разместить видео самостоятельно, затем создать страницу HTML, которая использует видео-плейер, например %EXAMPLE% и разместить ссылку на эту страницу на %WEBPAGE%.",
+				webpage: "Функция веб-страницы"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Ж_Webpage URL_Я",
-				lblEmbed: "Ж_Embed code_Я",
-				lblOR: "Ж_OR_Я",
-				lblError1: "Ж_Error, clear one of the two input fields._Я",
-				lblError2: "Ж_Embed code can only contain one <iframe>_Я"
+				lblUrl: "URL веб-страницы",
+				lblEmbed: "Встроенный код",
+				lblOR: "ИЛИ",
+				lblError1: "Ошибка, очистите одно из двух входных полей.",
+				lblError2: "Внедренный код может содержать только один <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL-адрес",
-				lblURLPH: "Ж_An image URL should start with http:// and end with .jpg or .png_Я",
-				lblLabel: "Ж_Image Caption_Я",
+				lblURLPH: "URL-адрес изображения должен начинаться с http:// и заканчиваться .jpg или .png",
+				lblLabel: "Заголовок изображения",
 				lblLabel1: "Заголовок",
 				lblLabel2: "Наведите курсор на текст",
 				lblLabel3: "Нет",
 				lblLabelPH: "Введите текст...",
-				lblMaximize: "Ж_Include a maximize button in the corner of the image_Я",
-				lblMaximizeHelp: "Ж_Recommended only for high quality photos_Я",
+				lblMaximize: "Добавить кнопку увеличения размера до максимального в угол изображения",
+				lblMaximizeHelp: "Рекомендуется только для фотографий высокого качества",
 				lblPosition: "Положение",
 				lblPosition1: "По центру",
 				lblPosition2: "Заливка",
 				lblPosition3: "Разместить",
 				lblPosition4: "Растяжка",
-				lblPosition5: "Ж_Custom_Я",
-				tooltipDimension: "Ж_The value can be specified in 'px' or '%'_Я",
+				lblPosition5: "Настраиваемый",
+				tooltipDimension: "Значение можно задать в 'px' или '%'",
 				lblPosition2Explain: "(может быть урезано)",
 				lblPosition3Explain: "(не будет урезаться)",
-				lblPosition3Explain2: "Ж_(width will always fit the panel)_Я",
+				lblPosition3Explain2: "(ширина всегда будет соответствовать панели)",
 				lblPosition4Explain: "(может исказиться)"
 			},
 			editorActionGeocode: {

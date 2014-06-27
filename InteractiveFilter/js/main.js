@@ -62,6 +62,14 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
                             filterLayers.push(this._getLayerFields(sublayer));
                         }
                     }));
+                } else if (layer.layerDefinition && layer.itemId) {
+                    //is there an associated item in the web map response
+                    if (this.config.response.itemInfo && this.config.response.itemInfo.relatedItemsData && this.config.response.itemInfo.relatedItemsData[layer.itemId]) {
+                        var item = this.config.response.itemInfo.relatedItemsData[layer.itemId];
+                        layer.definitionEditor = item.definitionEditor;
+                        filterLayers.push(this._getLayerFields(layer));
+                    }
+
                 }
 
             }));
@@ -212,6 +220,12 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
                         var mapLayer = this.map.getLayer(layer.layerId);
                         this._stopIndicator(mapLayer);
                         mapLayer.setLayerDefinitions(layerDef);
+                    } else if (layer.layerObject && layer.definitionEditor) { //Image service 
+                        this._stopIndicator(layer.layerObject);
+                        // remove loading class
+                        domClass.remove(document.body, "app-loading");
+                        layer.layerObject.setDefinitionExpression(defExp);
+
                     }
 
                 }));

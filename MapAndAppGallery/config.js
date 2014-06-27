@@ -73,19 +73,13 @@
                     "label": "Title",
                     "fieldName": "applicationName",
                     "type": "string",
-                    "tooltip": "Application name."
+                    "tooltip": "Application title displayed in header"
                 },
                 {
                     "label": "Icon URL",
                     "fieldName": "applicationIcon",
                     "type": "string",
-                    "tooltip": "URL for the application logo image."
-                },
-                {
-                    "label": "Bookmark Icon URL",
-                    "fieldName": "applicationFavicon",
-                    "type": "string",
-                    "tooltip": "URL for the favicon logo image."
+                    "tooltip": "Icon in top left corner of application. Icon should be 48px high."
                 },
                 {
                     "label": "Color Scheme",
@@ -105,7 +99,7 @@
                             "value": "greenTheme"
                         }
                     ],
-                    "tooltip": "Color theme to use."
+                    "tooltip": "Color of header bar and widget windows"
                 }
             ]
         },
@@ -114,7 +108,8 @@
             "fields": [
                 {
                     "type": "group",
-                    "label": "SELECT GROUP"
+                    "label": "SELECT GROUP",
+                    "tooltip": "Group displayed in the application"
                 },
                 {
                     "label": "Default Layout",
@@ -130,7 +125,7 @@
                             "value": "list"
                         }
                     ],
-                    "tooltip": "Whether to use grid view or list view as the default layout."
+                    "tooltip": "Default layout of gallery contents"
                 },
                 {
                     "label": "Sort By",
@@ -146,7 +141,7 @@
                             "value": "numViews"
                         }
                     ],
-                    "tooltip": "Field to sort the group items by."
+                    "tooltip": "Default sort method for gallery contents"
                 },
                 {
                     "label": "Sort Order",
@@ -162,25 +157,25 @@
                             "value": "asc"
                         }
                     ],
-                    "tooltip": "Order to sort the group field."
+                    "tooltip": "Sorting order of gallery contents"
                 },
                 {
                     "label": "Default Search Value",
                     "fieldName": "itemSearchDefaultValue",
                     "type": "string",
-                    "tooltip": "Item search default value"
+                    "tooltip": "Default value for searching gallery content"
                 },
                 {
                     "label": "Show Tag Cloud",
                     "fieldName": "showTagCloud",
                     "type": "boolean",
-                    "tooltip": "Enable or disable category tag cloud."
+                    "tooltip": "Enable to show a tag cloud for filtering gallery content"
                 },
                 {
                     "label": "Show Item Details",
                     "fieldName": "useItemPage",
                     "type": "boolean",
-                    "tooltip": "Enable or disable item page."
+                    "tooltip": "Enable to show the item details page when an item is selected"
                 }
             ]
         },
@@ -201,31 +196,31 @@
                             "value": "arcgis"
                         }
                     ],
-                    "tooltip": "Open maps with this viewer."
+                    "tooltip": "Choose a viewer for opening maps"
                 },
                 {
                     "label": "Zoom Level",
                     "fieldName": "zoomLevel",
                     "type": "number",
-                    "tooltip": "Zoom level for the map."
+                    "tooltip": "Map zoom level for viewing selected features"
                 },
                 {
                     "label": "Default Address",
                     "fieldName": "locatorDefaultAddress",
                     "type": "string",
-                    "tooltip": "Default address to search."
+                    "tooltip": "Default address for the map search"
                 },
                 {
                     "label": "Alternate Basemap Group",
                     "fieldName": "basemapGroupTitle",
                     "type": "string",
-                    "tooltip": "Basemap Group Title"
+                    "tooltip": "Name of basemap group, or leave blank to use default organization basemap group"
                 },
                 {
                     "label": "Basemap Group Owner",
                     "fieldName": "basemapGroupOwner",
                     "type": "string",
-                    "tooltip": "Basemap Group Owner"
+                    "tooltip": "Username of basemap group owner"
                 }
             ]
         }

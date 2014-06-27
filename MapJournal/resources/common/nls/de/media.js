@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ä_Media_Ü",
-				lblSelect2: "ä_Content_Ü",
+				lblSelect1: "Medien",
+				lblSelect2: "Inhalt",
 				lblMap: "Karte",
 				lblImage: "Bild",
 				lblVideo: "Video",
@@ -41,59 +41,59 @@
 				howToFind2: "Kopieren Sie die Ziffern zwischen dem ersten und zweiten Schrägstrich (\'/\') einer Picasa- oder G+-Seite"
 			},
 			videoSelectorCommon: {
-				check: "ä_Check_Ü",
-				notFound: "ä_Video not found_Ü",
-				found: "ä_Video found_Ü",
-				select: "ä_Select this video_Ü"
+				check: "Aktivieren",
+				notFound: "Video nicht gefunden",
+				found: "Video gefunden",
+				select: "Dieses Video auswählen"
 			},
 			videoSelectorHome: {
-				other: "ä_Other_Ü"
+				other: "Andere"
 			},
 			videoSelectorYoutube: {
-				url: "ä_URL of a Youtube video_Ü",
+				url: "URL eines Youtube-Videos",
 				pageInputLbl: "Benutzername",
 				lookupMsgError: "Benutzer nicht gefunden",
 				howToFind: "So finden Sie einen Youtube-Benutzernamen",
 				howToFind2: "Benutzername wird unter Videos angezeigt",
-				found: "ä_Found_Ü",
+				found: "Gefunden",
 				noData: "Keine öffentlichen Videos gefunden"
 			},
 			videoSelectorVimeo: {
-				url: "ä_URL of a Vimeo video_Ü"
+				url: "URL eines Vimeo-Videos"
 			},
 			videoSelectorOther: {
-				explain1: "ä_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._Ü",
-				explain2: "ä_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._Ü",
-				explain3: "ä_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._Ü",
-				webpage: "ä_Web page feature_Ü"
+				explain1: "Karten-Journal kann keine unverarbeiteten Videos (z. B. avi, mpeg), jedoch gehostete Videodateien mit integrierten Playern (z. B. YouTube oder Vimeo) wiedergeben.",
+				explain2: "Diese Funktion wird von den meisten Online-Services, die Videos hosten, bereitgestellt. Sie müssen die Option zum Einbetten des Videos suchen, den angegebenen Code kopieren und %WEBPAGE% verwenden.",
+				explain3: "Wenn Sie das Video selbst hosten möchten, können Sie auch eine HTML-Seite erstellen, die eine Videoabspielfunktion wie %EXAMPLE% verwendet, diese Seite hosten und %WEBPAGE% verwenden.",
+				webpage: "Webseitenfunktion"
 			},
 			webpageSelectorHome: {
-				lblUrl: "ä_Webpage URL_Ü",
-				lblEmbed: "ä_Embed code_Ü",
-				lblOR: "ä_OR_Ü",
-				lblError1: "ä_Error, clear one of the two input fields._Ü",
-				lblError2: "ä_Embed code can only contain one <iframe>_Ü"
+				lblUrl: "Webseiten-URL",
+				lblEmbed: "Einbindungscode",
+				lblOR: "ODER",
+				lblError1: "Fehler - löschen Sie eines der beiden Eingabefelder.",
+				lblError2: "Einbindungscode darf nur ein <iframe> enthalten"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "ä_An image URL should start with http:// and end with .jpg or .png_Ü",
-				lblLabel: "ä_Image Caption_Ü",
+				lblURLPH: "Eine Bild-URL muss mit \"http://\" beginnen und mit \".jpg\" oder \".png\" enden",
+				lblLabel: "Bildbeschriftung",
 				lblLabel1: "Beschriftung",
 				lblLabel2: "Hovertext",
 				lblLabel3: "Keine",
 				lblLabelPH: "Text eingeben...",
-				lblMaximize: "ä_Include a maximize button in the corner of the image_Ü",
-				lblMaximizeHelp: "ä_Recommended only for high quality photos_Ü",
+				lblMaximize: "Fügen Sie eine Schaltfläche zum Maximieren in die Ecke des Bildes ein",
+				lblMaximizeHelp: "Nur für Fotos mit hoher Qualität empfohlen",
 				lblPosition: "Position",
 				lblPosition1: "Zentrieren",
 				lblPosition2: "Füllung",
 				lblPosition3: "Einpassen",
 				lblPosition4: "Strecken",
-				lblPosition5: "ä_Custom_Ü",
-				tooltipDimension: "ä_The value can be specified in 'px' or '%'_Ü",
+				lblPosition5: "Benutzerdefiniert",
+				tooltipDimension: "Der Wert kann in \"Px\" oder \"%\" angegeben werden",
 				lblPosition2Explain: "(Zuschneiden möglich)",
 				lblPosition3Explain: "(Zuschneiden nicht möglich)",
-				lblPosition3Explain2: "ä_(width will always fit the panel)_Ü",
+				lblPosition3Explain2: "(Breite ist immer an das Fenster angepasst)",
 				lblPosition4Explain: "(Verzerren möglich)"
 			},
 			editorActionGeocode: {

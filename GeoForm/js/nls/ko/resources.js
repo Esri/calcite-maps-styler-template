@@ -4,7 +4,7 @@
             error: "맵을 생성할 수 없음"
         },
         onlineStatus: {
-            online: "한_You are currently online._빠",
+            online: "현재 온라인 상태입니다.",
             offline: "현재 오프라인 상태에서 작업 중입니다. 서버에 대한 연결이 생성될 때까지는 양식 제출이 로컬에 저장됩니다.",
             reconnecting: "다시 연결 중&hellip;"
         },

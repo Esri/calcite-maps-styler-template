@@ -27,7 +27,7 @@
 				notConfiguredMobile: "Bienvenue dans l\'application Web %TPL_NAME%. L\'application n\'est pas encore configurée et le générateur n\'est pas pris en charge sur les appareils mobiles.",
 				notAuthorized: "Vous n\’êtes pas autorisé à accéder à cette application",
 				noBuilderIE8: "Le générateur n\'est pas pris en charge dans Internet Explorer avant la version 9.",
-				mapLoadingFail: "æ_Something went wrong, the Map cannot be loaded._Â"
+				mapLoadingFail: "Un problème s\'est produit. Chargement de la carte impossible."
 			},
 			mobileView: {
 				tapForDetails: "Touchez pour obtenir des détails",

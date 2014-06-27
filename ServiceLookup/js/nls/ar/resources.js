@@ -20,7 +20,7 @@
             buttonText: "موافق",
         },
         ui:{
-            basemapButton: "بيت_Basemap_لاحقة"
+            basemapButton: "خريطة أساس"
         }
     })
 

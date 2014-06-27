@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ĳ_Media_ä",
-				lblSelect2: "Ĳ_Content_ä",
+				lblSelect1: "Media",
+				lblSelect2: "Inhoud",
 				lblMap: "Kaart",
 				lblImage: "Afbeelding",
 				lblVideo: "Video",
@@ -41,59 +41,59 @@
 				howToFind2: "Kopieer getallen tussen de eerste en tweede \'/\' van een pagina van Picasa of G+"
 			},
 			videoSelectorCommon: {
-				check: "Ĳ_Check_ä",
-				notFound: "Ĳ_Video not found_ä",
-				found: "Ĳ_Video found_ä",
-				select: "Ĳ_Select this video_ä"
+				check: "Controleren",
+				notFound: "Video niet gevonden",
+				found: "Video gevonden",
+				select: "Deze video selecteren"
 			},
 			videoSelectorHome: {
-				other: "Ĳ_Other_ä"
+				other: "Anders"
 			},
 			videoSelectorYoutube: {
-				url: "Ĳ_URL of a Youtube video_ä",
+				url: "URL van een Youtube-video",
 				pageInputLbl: "Gebruikersnaam",
 				lookupMsgError: "Gebruiker niet gevonden",
 				howToFind: "Hoe een YouTube-gebruikersnaam vinden",
 				howToFind2: "Gebruikersnaam wordt weergegeven onder video\'s",
-				found: "Ĳ_Found_ä",
+				found: "Gevonden",
 				noData: "Geen openbare video\'s gevonden"
 			},
 			videoSelectorVimeo: {
-				url: "Ĳ_URL of a Vimeo video_ä"
+				url: "URL van een Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "Ĳ_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._ä",
-				explain2: "Ĳ_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._ä",
-				explain3: "Ĳ_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._ä",
-				webpage: "Ĳ_Web page feature_ä"
+				explain1: "Map Journal kan geen onbewerkte video afspelen (zoals avi of mpeg), maar het kan wel gehoste videobestenden met ingebouwde spelers afspelen (zoals YouTube of Vimeo).",
+				explain2: "De meeste online videoservices bieden deze functie. U moet de optie vinden om de video in te kunnen sluiten, de verstrekte code kopieren en de %WEBPAGE% gebruiken.",
+				explain3: "Als u de video zelf wilt hosten, kunt u een HTML-pagina maken die een videospeler gebruikt zoals %EXAMPLE%. Host die pagina en gebruik tevens de %WEBPAGE%.",
+				webpage: "Functie webpagina"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Ĳ_Webpage URL_ä",
-				lblEmbed: "Ĳ_Embed code_ä",
-				lblOR: "Ĳ_OR_ä",
-				lblError1: "Ĳ_Error, clear one of the two input fields._ä",
-				lblError2: "Ĳ_Embed code can only contain one <iframe>_ä"
+				lblUrl: "URL webpagina",
+				lblEmbed: "code insluiten",
+				lblOR: "OF",
+				lblError1: "Fout: maak een van de twee velden leeg.",
+				lblError2: "Code insluiten kan maar 1 <iframe> bevatten"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Ĳ_An image URL should start with http:// and end with .jpg or .png_ä",
-				lblLabel: "Ĳ_Image Caption_ä",
+				lblURLPH: "Een afbeeldings-URL moet beginnen met http:// en met .jpg of .png eindigen",
+				lblLabel: "Bijschrift afbeelding",
 				lblLabel1: "Bijschrift",
 				lblLabel2: "Over tekst bewegen",
 				lblLabel3: "Geen",
 				lblLabelPH: "Voer wat tekst in...",
-				lblMaximize: "Ĳ_Include a maximize button in the corner of the image_ä",
-				lblMaximizeHelp: "Ĳ_Recommended only for high quality photos_ä",
+				lblMaximize: "Sluit een knop voor maximum in de hoek van de afbeelding in",
+				lblMaximizeHelp: "Alleen aanbevolen voor foto\'s van hoge kwaliteit",
 				lblPosition: "Positie",
 				lblPosition1: "Centreren",
 				lblPosition2: "Vulling",
 				lblPosition3: "Passend maken",
 				lblPosition4: "Uitrekken",
-				lblPosition5: "Ĳ_Custom_ä",
-				tooltipDimension: "Ĳ_The value can be specified in 'px' or '%'_ä",
+				lblPosition5: "Aangepast",
+				tooltipDimension: "De waarde kan in 'px' of '%' worden gespecificeerd",
 				lblPosition2Explain: "(kan worden bijgesneden)",
 				lblPosition3Explain: "(wordt niet bijgesneden)",
-				lblPosition3Explain2: "Ĳ_(width will always fit the panel)_ä",
+				lblPosition3Explain2: "(breedte past altijd in het deelvenster)",
 				lblPosition4Explain: "(kan worden vervormd)"
 			},
 			editorActionGeocode: {

@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "metric",
                 "timePattern": "hh:mm", // added 2.5.2013
-                "datePattern": "MMM d, rrrr" // added 2.5.2013
+                "datePattern": "MMM d, yyyy" // added 2.5.2013
             },
             "applicationTitle": {
                 "PIM": "Publiczna mapa informacyjna" // added 8.26.2013

@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "כן_Web map_ש",
+				lblWebMap: "Web map",
 				lblLocation: "מיקום",
 				lblContent: "תוכן",
 				lblPopup: "Popup",
-				lblControls: "כן_Extras_ש",
+				lblControls: "תוספות",
 				lblOverview: "מפת תצוגה מקדימה",
 				lblLegend: "מקרא",
 				loadingTitle: "טוען כותרת",
@@ -22,19 +22,19 @@
 				newMap: "ה-web map שנבחרה אחרונה",
 				webmapDefault: "web map ברירת המחדל",
 				customCfg: "הגדרות מותאמות",
-				tooltipLocation: "כן_Define the map location that will be used when your readers navigate to this section._ש",
+				tooltipLocation: "הגדר את מיקום המפה שיעשה בו שימוש כאשר הקוראים שלך מנווטים לחלק הזה.",
 				tooltipContent: "הגדר את השכבות הנראות.",
 				tooltipPopup: "הצג חלון קופץ שיוצג כאשר הקוראים שלך מנווטים לחלק הזה.",
 				tooltipOverview: "הצג מפת התמצאות קטנה יחד עם המפה הראשית",
 				tooltipLegend: "הצג את מקרא המפה על המפה. זה יכול להועיל כאשר יש למפה שכבות וסמלים רבים.",
-				mapCfgInvite: "כן_Use these controls to configure your map_ש"
+				mapCfgInvite: "השתמש בפקדים הללו לקבוע את תצורת המפה שלך"
 			},
 			configure: {
 				btnReset: "אפס",
 				btnCancel: "ביטול",
 				tocTitle: "תכולת המפה",
 				tocExplain: "בחר איזו שכבה תוצג",
-				tocSave: "כן_Save map content_ש",
+				tocSave: "שמור את תוכן המפה",
 				extentTitle: "מיקום המפה",
 				extentExplain: "הזז והתמקד במפה כדי לקבוע כיצד היא תראה לקוראים שלך.",
 				extentSave: "בחר את מיקום המפה",

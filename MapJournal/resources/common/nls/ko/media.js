@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "한_Media_빠",
-				lblSelect2: "한_Content_빠",
+				lblSelect1: "미디어",
+				lblSelect2: "컨텐츠",
 				lblMap: "맵",
 				lblImage: "이미지",
 				lblVideo: "동영상",
@@ -41,59 +41,59 @@
 				howToFind2: "Picasa 또는 G+ 페이지의 첫 번째 '/'와 두 번째 '/' 사이의 숫자 복사"
 			},
 			videoSelectorCommon: {
-				check: "한_Check_빠",
-				notFound: "한_Video not found_빠",
-				found: "한_Video found_빠",
-				select: "한_Select this video_빠"
+				check: "확인",
+				notFound: "비디오를 찾을 수 없음",
+				found: "비디오를 찾음",
+				select: "이 비디오 선택"
 			},
 			videoSelectorHome: {
-				other: "한_Other_빠"
+				other: "기타"
 			},
 			videoSelectorYoutube: {
-				url: "한_URL of a Youtube video_빠",
+				url: "Youtube 비디오 URL",
 				pageInputLbl: "사용자 이름",
 				lookupMsgError: "사용자를 찾을 수 없습니다.",
 				howToFind: "YouTube 사용자 이름을 찾는 방법",
 				howToFind2: "동영상 아래에 사용자 이름 표시",
-				found: "한_Found_빠",
+				found: "찾음",
 				noData: "공개된 동영상 없음"
 			},
 			videoSelectorVimeo: {
-				url: "한_URL of a Vimeo video_빠"
+				url: "Vimeo 비디오 URL"
 			},
 			videoSelectorOther: {
-				explain1: "한_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._빠",
-				explain2: "한_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._빠",
-				explain3: "한_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._빠",
-				webpage: "한_Web page feature_빠"
+				explain1: "맵 저널은 원시 비디오(예: avi, mpeg)를 재생할 수 없지만 내장 플레이어(예: YouTube 또는 Vimeo)가 있는 호스팅 비디오 파일은 재생할 수 있습니다.",
+				explain2: "대부분의 온라인 비디오 호스팅 서비스는 해당 피처를 제공하므로, 비디오를 포함할 옵션을 찾고 제공된 코드를 복사하고 %WEBPAGE%을(를) 사용해야 합니다.",
+				explain3: "또는, 직접 비디오를 호스팅하려면 %EXAMPLE% 등의 비디오 플레이어를 사용하는 HTML 페이지를 생성하고 해당 페이지를 호스팅하고 %WEBPAGE%을(를) 사용할 수도 있습니다.",
+				webpage: "웹 페이지 피처"
 			},
 			webpageSelectorHome: {
-				lblUrl: "한_Webpage URL_빠",
-				lblEmbed: "한_Embed code_빠",
-				lblOR: "한_OR_빠",
-				lblError1: "한_Error, clear one of the two input fields._빠",
-				lblError2: "한_Embed code can only contain one <iframe>_빠"
+				lblUrl: "웹 페이지 URL",
+				lblEmbed: "코드 포함",
+				lblOR: "또는",
+				lblError1: "오류가 발생했습니다. 두 개의 입력 필드 중 하나를 지우세요.",
+				lblError2: "코드 포함에는 하나의 <iframe>만 포함 가능"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "한_An image URL should start with http:// and end with .jpg or .png_빠",
-				lblLabel: "한_Image Caption_빠",
+				lblURLPH: "이미지 URL은 http://로 시작하고 .jpg 또는 .png로 끝나야 함",
+				lblLabel: "이미지 캡션",
 				lblLabel1: "캡션",
 				lblLabel2: "텍스트 가리키기",
 				lblLabel3: "없음",
 				lblLabelPH: "일부 텍스트 입력...",
-				lblMaximize: "한_Include a maximize button in the corner of the image_빠",
-				lblMaximizeHelp: "한_Recommended only for high quality photos_빠",
+				lblMaximize: "이미지 모서리에 최대화 버튼 포함",
+				lblMaximizeHelp: "고화질 사진에만 권장됨",
 				lblPosition: "위치",
 				lblPosition1: "가운데",
 				lblPosition2: "채우기",
 				lblPosition3: "맞춤",
 				lblPosition4: "늘이기",
-				lblPosition5: "한_Custom_빠",
-				tooltipDimension: "한_The value can be specified in 'px' or '%'_빠",
+				lblPosition5: "사용자 지정",
+				tooltipDimension: "값은 'px' 또는 '%'로 지정할 수 있음",
 				lblPosition2Explain: "(잘릴 수 있음)",
 				lblPosition3Explain: "(잘리지 않음)",
-				lblPosition3Explain2: "한_(width will always fit the panel)_빠",
+				lblPosition3Explain2: "(너비는 항상 패널에 맞춤)",
 				lblPosition4Explain: "(왜곡될 수 있음)"
 			},
 			editorActionGeocode: {

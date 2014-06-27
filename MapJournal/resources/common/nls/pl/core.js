@@ -14,8 +14,8 @@
 				start: "Początek",
 				loading: "Wczytywanie",
 				disabledAdmin: "Opcja ta została wyłączona przez Administratora",
-				width: "ł_Width_ą",
-				height: "ł_Height_ą"
+				width: "Szerokość",
+				height: "Wysokość"
 			},
 			inlineFieldEdit: {
 				editMe: "Przeprowadź edycję"
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "Układ",
 				explain: "Jakiego układu chcesz użyć?",
-				explainInit: "ł_You can change the layout anytime from the settings dialog._ą",
+				explainInit: "Zmian układu możesz dokonać w dowolnej chwili w oknie dialogowym ustawień.",
 				viewExample: "Wyświetl przykład online"
 			},
 			settingsTheme: {

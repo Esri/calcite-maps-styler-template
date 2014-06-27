@@ -1,4 +1,4 @@
-﻿/*global define,console */
+/*global define,console */
 /*jslint browser:true,sloppy:true,unparam:true,regexp:true */
 /*
  | Copyright 2014 Esri
@@ -181,10 +181,10 @@ define([
             helper = this;
             IdentityManager.signIn = function (url, serverInfo) {
                 return (serverInfo.server.indexOf(".arcgis.com") !== -1) ?
-                        // OAuth flow
-                        helper.signIn() :
-                        // generateToken flow
-                        signInMethod.apply(this, arguments);
+                    // OAuth flow
+                    helper.signIn() :
+                    // generateToken flow
+                    signInMethod.apply(this, arguments);
             };
         }
     };

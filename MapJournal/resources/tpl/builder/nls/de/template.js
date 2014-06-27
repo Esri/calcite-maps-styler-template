@@ -27,25 +27,25 @@
 				title: "Willkommen bei"
 			},
 			addEditPopup: {
-				disabled: "ä_Add Section is disabled because the maximum number of allowed sections has been reached._Ü",
+				disabled: "\"Abschnitt hinzufügen\" ist deaktiviert, da die maximale Anzahl zulässiger Abschnitte erreicht ist.",
 				titleAdd: "Abschnitt hinzufügen",
-				titleAddHome: "ä_Add Home Section_Ü",
+				titleAddHome: "Startseitenabschnitt hinzufügen",
 				titleEdit: "Abschnitt bearbeiten",
 				step: "Step",
-				stepMainStageExplain: "ä_Main Stage Content_Ü",
-				stepPanelExplain: "ä_Content_Ü",
+				stepMainStageExplain: "Inhalt der Hauptanzeige",
+				stepPanelExplain: "Inhalt",
 				stepMainStageNextTooltip: "Den Abschnittstitel eingeben und den Inhalt der Hauptanzeige auswählen",
 				step2NextTooltip: "Den Abschnittstitel und den %LAYOUT-TYPE%-Inhalt eingeben",
 				stepNextTooltipNext: "um mit dem nächsten Schritt fortzufahren",
 				stepNextTooltipAdd: "um den Abschnitt hinzuzufügen",
-				firstAddExplain: "ä_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._Ü",
-				firstAddLeanMore: "ä_Learn More_Ü",
+				firstAddExplain: "Dieser erste Abschnitt ist Ihr Startseitenabschnitt und kann als \"Deckblatt\" Ihrer Informationen betrachtet werden. Der Titel, den Sie gerade definiert haben, wird in einer großen Schriftgröße dargestellt.",
+				firstAddLeanMore: "Weitere Informationen",
 				titlePlaceholder: "Abschnittstitel..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Text, Links und kleine Grafiken hier hinzufügen.",
 				editorActionsTitle: "Aktionen der Hauptanzeige",
-				editorActionsHelpDescr: "ä_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._Ü"
+				editorActionsHelpDescr: "Verwenden Sie diese Steuerelemente, um Links zu erstellen, die die Hauptanzeige ändern. Wenn der Leser beispielsweise auf einen Link klickt, können Sie auf der Karte auf eine bestimmte Position zoomen, eine andere Webkarte oder ein Bild anzeigen."
 			},
 			organizePopup: {
 				title: "Organisieren",
@@ -54,13 +54,13 @@
 				lblColPubDate: "Veröffentlichungsdatum",
 				lblColStatus: "Status",
 				checkDisplayReverse: "Abschnitte in umgekehrter Reihenfolge anzeigen",
-				btnApplyWarning: "ä_Confirm deletion of %NB% section(s)_Ü",
+				btnApplyWarning: "Löschen von %NB%-Abschnitten bestätigen",
 				deleteTooltip: "Löschen",
 				firstSectionExplain: "(Der Startseitenabschnitt kann nicht verschoben werden)"
 			},
 			exportData: {
-				btn: "ä_Export content_Ü",
-				tooltip: "ä_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._Ü"
+				btn: "Inhalt exportieren",
+				tooltip: "Durch das Exportieren Ihrer Inhalte können Sie eine Sicherung Ihres Journals anzeigen und erstellen, falls sie es versehentlich gelöscht haben. Kopieren Sie einfach den Inhalt der Seite, und fügen Sie ihn in ein beliebiges Textverarbeitungsprogramm ein."
 			},
 			help: {
 				lblHelp: "Hilfe",
@@ -69,22 +69,22 @@
 				lblOrga: "Inhalt organisieren",
 				lblEdit: "Änderungen",
 				lblPublish: "Freigeben",
-				lblTips: "ä_Tips_Ü",
+				lblTips: "Tipps",
 				lblMore: "Sie wünschen weitere Informationen?",
 				lblLink: "Besuchen Sie die Story Maps-Website.",
 				content1Div1: "Sie können eine Vielzahl von Styles zur Vermittlung von Informationen integrieren. Der <strong>%LAYOUT_TITLE%</strong> enthält in der Regel Ihren Text, Ihre Bilder und Videos, während Ihre Karten sich meist in der <strong>Hauptanzeige</strong> befinden. Mit %TPL_NAME% können Bilder, Diagramme und Videos jedoch auch in der Hauptanzeige dargestellt werden.",
 				content1Div2: "Sie können das Storytelling anpassen, indem Sie Abschnitte hinzufügen. Wenn Leser einen Bildlauf durch Ihren %LAYOUT_TITLE%-Text durchführen, kann eine Karte in der Hauptanzeige zu Schlüsselpunkten schwenken oder darauf zoomen oder es können neue Karten und Bilder automatisch gewechselt werden, um Ihre Botschaft zu unterstreichen.",
 				content2Div1: "Hier können Sie das Erscheinungsbild für %TPL_NAME% festlegen. Alle Farbschemen, Layouts und Breiten werden hier optimiert.",
 				content2Div2: "Sie können Freigabe-Links auch zu Facebook, Twitter und Bitly hinzufügen, um die problemlose Verteilung von %TPL_NAME% durch Ihre Leser zu ermöglichen.",
-				content3Div1: "ä_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._Ü",
+				content3Div1: "Inhalte werden in Abschnitten organisiert. Die Anzahl der Abschnitte ist beliebig (sie sind vergleichbar mit kleinen Kapiteln). Der Ablauf dieser Kapitel ist wichtig. Abschnitte können mit \"Organisieren\" nach Wunsch neu angeordnet und gelöscht werden.",
 				content4Div1: "Sie haben einen Fehler gefunden oder möchten Änderungen vornehmen? Keine Sorge. Suchen Sie das Bearbeitungssymbol in der App, um Inhalte zu ändern. Sie werden die Bearbeitungsfunktionen beim Entwickeln von %TPL_NAME% häufig verwenden!",
 				content5Div1: "%TPL_NAME% wird standardmäßig in Ihrem %PORTAL%-Konto und privat gespeichert. Sie können festlegen, ob die Informationen für Ihre Organisation freigegeben oder weltweit zugänglich sind. Wir stellen sogar eine gekürzte URL für eine problemlose Freigabe bereit.",
-				content6Div1: "ä_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._Ü",
-				content6Div2: "ä_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_Ü"
+				content6Div1: "Der Titel Ihres Startseitenabschnitts ist gleichzeitig der Titel Ihres Journals. Der Startseitenabschnitt kann als \"Deckblatt\" Ihrer Informationen betrachtet werden. Der Titel des Startseitenabschnitts bleibt sichtbar, wenn Ihre Leser im Journal navigieren.",
+				content6Div2: "Ihr %LAYOUT_TITLE% muss nicht nur aus Text bestehen, Sie können auch Fotos und Videos einbeziehen, um Ihre Informationen lebendig zu gestalten und lange Textabschnitte zu unterbrechen!"
 			},
 			landing: {
-				lblAdd: "ä_What do you want to call your Map Journal?_Ü",
-				phAdd: "ä_Enter your title..._Ü",
+				lblAdd: "Welchen Namen möchten Sie Ihrem Karten-Journal geben?",
+				phAdd: "Geben Sie den Titel ein...",
 				lblOR: "Oder",
 				lblHelp: "Einführung"
 			},

@@ -278,7 +278,8 @@ define([
             return deferred.promise;
         },
         queryGroupItems: function (options) {
-            var deferred = new Deferred(), error, defaultParams, params;
+            var deferred = new Deferred(),
+                error, defaultParams, params;
             // If we want to get the group info
             if (this.templateConfig.queryForGroupItems) {
                 if (this.config.group) {
@@ -311,7 +312,8 @@ define([
             return deferred.promise;
         },
         _queryGroupInfo: function () {
-            var deferred = new Deferred(), error, params;
+            var deferred = new Deferred(),
+                error, params;
             // If we want to get the group info
             if (this.templateConfig.queryForGroupInfo) {
                 if (this.config.group) {

@@ -29,17 +29,17 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/Deferred", "dojo/on
                 emitError.call(this, err);
             }
             return Deferred.when(
-        result,
-            // success callback instead of `null` in _StoreMixin:
-        lang.hitch(this, function () {
-            // fire 'refresh' event
-            listen.emit(this.domNode, "refresh", {
-                cancelable: true,
-                bubbles: true
-            });
-        }),
-        lang.hitch(this, emitError)
-      );
+                result,
+                // success callback instead of `null` in _StoreMixin:
+                lang.hitch(this, function () {
+                    // fire 'refresh' event
+                    listen.emit(this.domNode, "refresh", {
+                        cancelable: true,
+                        bubbles: true
+                    });
+                }),
+                lang.hitch(this, emitError)
+            );
         }
     });
 

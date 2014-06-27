@@ -89,7 +89,7 @@
                 "menuTitle": "Résultats&hellip;"
             },
             "places": {
-                "menuTitle": "Sites avec géosignet",
+                "menuTitle": "Lieux enregistrés",
                 "places": "Géosignets",
                 "placesTitle": "Ajouter un géosignet aux sites",
                 "myLocation": "Mon emplacement actuel",

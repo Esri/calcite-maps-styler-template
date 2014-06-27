@@ -4,7 +4,7 @@
             error: "无法创建地图"
         },
         onlineStatus: {
-            online: "试_You are currently online._验",
+            online: "您的当前状态为在线。",
             offline: "您目前正在离线工作。连接到服务器之前，提交的表单将保存在本地。",
             reconnecting: "重新连接&hellip;"
         },

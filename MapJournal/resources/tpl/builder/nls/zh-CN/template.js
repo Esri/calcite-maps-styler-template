@@ -27,25 +27,25 @@
 				title: "欢迎使用"
 			},
 			addEditPopup: {
-				disabled: "试_Add Section is disabled because the maximum number of allowed sections has been reached._验",
+				disabled: "由于允许的部分已达到最大数量，因此禁用“添加部分”。",
 				titleAdd: "添加节",
-				titleAddHome: "试_Add Home Section_验",
+				titleAddHome: "添加主目录部分",
 				titleEdit: "编辑节",
 				step: "步骤",
-				stepMainStageExplain: "试_Main Stage Content_验",
-				stepPanelExplain: "试_Content_验",
+				stepMainStageExplain: "主要阶段内容",
+				stepPanelExplain: "内容",
 				stepMainStageNextTooltip: "输入节标题并选择主要阶段内容",
 				step2NextTooltip: "输入节标题和 %LAYOUT-TYPE% 内容",
 				stepNextTooltipNext: "要进行下一步",
 				stepNextTooltipAdd: "要添加节",
-				firstAddExplain: "试_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._验",
-				firstAddLeanMore: "试_Learn More_验",
+				firstAddExplain: "第一部分是主目录部分，可将其看做故事“封面”。刚刚定义的标题将显示为大号字体。",
+				firstAddLeanMore: "了解详细信息",
 				titlePlaceholder: "节标题..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "在此添加文本、链接和小图形。",
 				editorActionsTitle: "主要阶段操作",
-				editorActionsHelpDescr: "试_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._验"
+				editorActionsHelpDescr: "使用这些控件来创建将更改主要阶段的链接。例如，当读者单击某链接时，您会希望地图缩放至特定位置，显示其他 Web 地图或显示图像。"
 			},
 			organizePopup: {
 				title: "组织",
@@ -54,13 +54,13 @@
 				lblColPubDate: "发布日期",
 				lblColStatus: "状态",
 				checkDisplayReverse: "以相反顺序显示节",
-				btnApplyWarning: "试_Confirm deletion of %NB% section(s)_验",
+				btnApplyWarning: "确认删除 %NB% 个部分",
 				deleteTooltip: "删除",
 				firstSectionExplain: "（无法移动主目录节）"
 			},
 			exportData: {
-				btn: "试_Export content_验",
-				tooltip: "试_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._验"
+				btn: "导出内容",
+				tooltip: "如果您意外删除日志，您可以通过导出内容来查看并创建日志备份。只需将内容、页面内容复制粘贴至任意文字处理器中。"
 			},
 			help: {
 				lblHelp: "帮助",
@@ -69,22 +69,22 @@
 				lblOrga: "组织内容",
 				lblEdit: "编辑",
 				lblPublish: "共享",
-				lblTips: "试_Tips_验",
+				lblTips: "提示",
 				lblMore: "是否想了解更多信息？",
 				lblLink: "访问故事地图网站。",
 				content1Div1: "构建故事时，可集成各种风格。<strong>%LAYOUT_TITLE%</strong> 通常在地图要发布在<strong>主要阶段</strong>时会保留文本、图像和视频。但 %TPL_NAME% 也可以在主要阶段中展示图像、图表和视频。",
 				content1Div2: "添加节可以使您真正自定义提供信息的经验。在读者滚动 %LAYOUT_TITLE% 文本时，主要阶段上的地图可平移或缩放至关键点或新地图，图像也可以自动切换以支持消息。",
 				content2Div1: "此处可调整 %TPL_NAME% 的外观。配色方案、布局和宽度均在此处进行优化。",
 				content2Div2: "还可添加至 Facebook、Twitter 和 Bitly 的共享链接，这样读者便可轻松将 %TPL_NAME% 共享给其他人。",
-				content3Div1: "试_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._验",
+				content3Div1: "您的内容将组织成部分。您可拥有任意数量的部分(可将其视为微型章节)。这些章节流十分重要；可在组织内根据需要重新排序或删除部分。",
 				content4Div1: "发现错误或希望更改材料？别担心。在整个应用程序中查找编辑图标，以对内容进行更改。在开发 %TPL_NAME% 时将多次使用编辑功能！",
 				content5Div1: "%TPL_NAME% 将保存在 %PORTAL% 帐户中，默认为私有。您可以决定是与组织共享，还是向全世界开放。我们甚至还为您提供简化的 URL，以便您轻松进行共享。",
-				content6Div1: "试_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._验",
-				content6Div2: "试_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_验"
+				content6Div1: "主目录部分的标题也是您日志的标题; 将主目录部分当做故事“封面”。读者导航日志时主目录节标题仍然可见。",
+				content6Div2: "您的 %LAYOUT_TITLE% 无需仅包含文字，可考虑将照片和视频包含在内以更加生动地展现故事并断开长篇文本部分!"
 			},
 			landing: {
-				lblAdd: "试_What do you want to call your Map Journal?_验",
-				phAdd: "试_Enter your title..._验",
+				lblAdd: "若要调用地图日志需要执行什么操作?",
+				phAdd: "输入标题...",
 				lblOR: "或",
 				lblHelp: "浏览"
 			},

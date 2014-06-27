@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "須_Web map_鷗",
+				lblWebMap: "Web マップ",
 				lblLocation: "位置",
 				lblContent: "コンテンツ",
 				lblPopup: "ポップアップ",
-				lblControls: "須_Extras_鷗",
+				lblControls: "その他",
 				lblOverview: "概観図",
 				lblLegend: "凡例",
 				loadingTitle: "タイトルを読み込んでいます",
@@ -22,19 +22,19 @@
 				newMap: "新しく選択した Web マップ",
 				webmapDefault: "Web マップのデフォルト",
 				customCfg: "カスタム構成",
-				tooltipLocation: "須_Define the map location that will be used when your readers navigate to this section._鷗",
+				tooltipLocation: "ユーザがこのセクションに移動したときに使用されるマップ位置を定義します。",
 				tooltipContent: "表示レイヤを定義します。",
 				tooltipPopup: "ユーザがこのセクションに移動したときに表示されるポップアップを選択します。",
 				tooltipOverview: "小さな概観図をメイン マップとともに表示します",
 				tooltipLegend: "マップの凡例をマップ上に表示します。マップに多くのレイヤとシンボルが存在する場合に役立ちます。",
-				mapCfgInvite: "須_Use these controls to configure your map_鷗"
+				mapCfgInvite: "これらのコントロールを使用してマップを構成"
 			},
 			configure: {
 				btnReset: "リセット",
 				btnCancel: "キャンセル",
 				tocTitle: "マップ コンテンツ",
 				tocExplain: "表示するレイヤを選択します。",
-				tocSave: "須_Save map content_鷗",
+				tocSave: "マップ コンテンツの保存",
 				extentTitle: "マップ位置",
 				extentExplain: "マップを移動および拡大/縮小して、ユーザに対する外観を定義します。",
 				extentSave: "マップ位置の保存",

@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "ä_Web map_Ü",
+				lblWebMap: "Webkarte",
 				lblLocation: "Position",
 				lblContent: "Inhalt",
 				lblPopup: "Pop-up",
-				lblControls: "ä_Extras_Ü",
+				lblControls: "Extras",
 				lblOverview: "Übersichtskarte",
 				lblLegend: "Legende",
 				loadingTitle: "Titel wird geladen",
@@ -22,19 +22,19 @@
 				newMap: "Neu ausgewählte Webkarte",
 				webmapDefault: "Webkartenstandard",
 				customCfg: "Benutzerdefinierte Konfiguration",
-				tooltipLocation: "ä_Define the map location that will be used when your readers navigate to this section._Ü",
+				tooltipLocation: "Die Kartenposition definieren, die verwendet wird, wenn Leser zu diesem Abschnitt navigieren.",
 				tooltipContent: "Die sichtbaren Layer definieren.",
 				tooltipPopup: "Ein Pop-up auswählen, das angezeigt werden soll, wenn Leser zu diesem Abschnitt navigieren.",
 				tooltipOverview: "Eine kleine Übersichtskarte mit der Hauptkarte anzeigen",
 				tooltipLegend: "Die Kartenlegende auf der Karte anzeigen. Dies ist hilfreich, wenn die Karte mehrere Layer und Symbole aufweist.",
-				mapCfgInvite: "ä_Use these controls to configure your map_Ü"
+				mapCfgInvite: "Konfigurieren Sie die Karte mit diesen Steuerelementen"
 			},
 			configure: {
 				btnReset: "Zurücksetzen",
 				btnCancel: "Abbrechen",
 				tocTitle: "Karteninhalt",
 				tocExplain: "Legen Sie fest, welche Layer angezeigt werden sollen.",
-				tocSave: "ä_Save map content_Ü",
+				tocSave: "Karteninhalt speichern",
 				extentTitle: "Kartenposition",
 				extentExplain: "Die Karten schwenken und zoomen, um zu definieren, wie Sie Lesern angezeigt wird.",
 				extentSave: "Kartenposition speichern",

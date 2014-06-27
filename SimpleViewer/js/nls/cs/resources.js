@@ -1,11 +1,11 @@
 ﻿define(
    ({
         map: {
-            error: "Ř_Unable to create map_ů"
+            error: "Nelze vytvořit mapu."
         }, 
         tools: {
-        	legend: "Ř_Legend_ů",
-        	 about: "Ř_About_ů"
+        	legend: "Legenda",
+        	 about: "O aplikaci"
         }
     })
    

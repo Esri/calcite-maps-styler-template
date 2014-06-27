@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ř_Media_ů",
-				lblSelect2: "Ř_Content_ů",
+				lblSelect1: "Média",
+				lblSelect2: "Obsah",
 				lblMap: "Mapa",
 				lblImage: "Obrázek",
 				lblVideo: "Video",
@@ -41,59 +41,59 @@
 				howToFind2: "Zkopírujte číslice mezi prvním a druhým lomítkem (/) libovolné stránky služeb Picasa nebo Google+."
 			},
 			videoSelectorCommon: {
-				check: "Ř_Check_ů",
-				notFound: "Ř_Video not found_ů",
-				found: "Ř_Video found_ů",
-				select: "Ř_Select this video_ů"
+				check: "Kontrola",
+				notFound: "Video nebylo nalezeno.",
+				found: "Video bylo nalezeno.",
+				select: "Vybrat toto video"
 			},
 			videoSelectorHome: {
-				other: "Ř_Other_ů"
+				other: "Jiné"
 			},
 			videoSelectorYoutube: {
-				url: "Ř_URL of a Youtube video_ů",
+				url: "Adresa URL videa ve službě YouTube",
 				pageInputLbl: "Uživatelské jméno",
 				lookupMsgError: "Uživatel nenalezen",
 				howToFind: "Jak najít uživatelské jméno YouTube",
 				howToFind2: "Uživatelské jméno se zobrazuje pod videi",
-				found: "Ř_Found_ů",
+				found: "Nalezeno",
 				noData: "Nenalezena žádná veřejná videa"
 			},
 			videoSelectorVimeo: {
-				url: "Ř_URL of a Vimeo video_ů"
+				url: "Adresa URL videa ve službě Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Ř_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._ů",
-				explain2: "Ř_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._ů",
-				explain3: "Ř_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._ů",
-				webpage: "Ř_Web page feature_ů"
+				explain1: "Mapový deník nedokáže přehrávat videa v původním formátu (tj. avi, mpeg), ale dokáže přehrávat hostované videosoubory s vestavěným přehrávačem (tj. YouTube nebo Vimeo).",
+				explain2: "Tuto funkci nabízí většina online služeb pro hostování videa. Musíte najít možnost pro vložení videa, zkopírovat uvedený kód a použít %WEBPAGE%.",
+				explain3: "Video také můžete hostovat sami. Stačí vytvořit HTML stránku, která používá videopřehrávač, jako je %EXAMPLE%, tuto stránku hostovat a také použít %WEBPAGE%.",
+				webpage: "Prvek webové stránky"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Ř_Webpage URL_ů",
-				lblEmbed: "Ř_Embed code_ů",
-				lblOR: "Ř_OR_ů",
-				lblError1: "Ř_Error, clear one of the two input fields._ů",
-				lblError2: "Ř_Embed code can only contain one <iframe>_ů"
+				lblUrl: "Adresa URL webové stránky",
+				lblEmbed: "Kód vložení",
+				lblOR: "NEBO",
+				lblError1: "Chyba, vymažte jedno ze dvou vstupních polí.",
+				lblError2: "Kód vložení může obsahovat pouze jeden prvek <iframe>."
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Ř_An image URL should start with http:// and end with .jpg or .png_ů",
-				lblLabel: "Ř_Image Caption_ů",
+				lblURLPH: "Adresa URL obrázku by měla začínat řetězcem http:// a končit .jpg nebo .png.",
+				lblLabel: "Titulek obrázku",
 				lblLabel1: "Popisek",
 				lblLabel2: "Přejeďte ukazatelem myši přes text.",
 				lblLabel3: "Žádné",
 				lblLabelPH: "Napište nějaký text...",
-				lblMaximize: "Ř_Include a maximize button in the corner of the image_ů",
-				lblMaximizeHelp: "Ř_Recommended only for high quality photos_ů",
+				lblMaximize: "Zobrazit v rohu obrázku tlačítko pro zvětšení",
+				lblMaximizeHelp: "Doporučeno pouze pro fotografie ve vysoké kvalitě",
 				lblPosition: "Pozice",
 				lblPosition1: "Na střed",
 				lblPosition2: "Vyplnit",
 				lblPosition3: "Přizpůsobit",
 				lblPosition4: "Roztáhnout",
-				lblPosition5: "Ř_Custom_ů",
-				tooltipDimension: "Ř_The value can be specified in 'px' or '%'_ů",
+				lblPosition5: "Vlastní",
+				tooltipDimension: "Hodnotu lze uvést v 'px' nebo '%'",
 				lblPosition2Explain: "(může dojít k ořezu)",
 				lblPosition3Explain: "(nedojde k ořezu)",
-				lblPosition3Explain2: "Ř_(width will always fit the panel)_ů",
+				lblPosition3Explain2: "(šířka se vždy přizpůsobí panelu)",
 				lblPosition4Explain: "(může dojít ke zkreslení)"
 			},
 			editorActionGeocode: {
