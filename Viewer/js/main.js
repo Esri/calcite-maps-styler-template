@@ -156,21 +156,24 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 }
 
                 all(toolList).then(lang.hitch(this, function (results) {
+                 
 
-
-                    //If all the results are undefined and locate and home are also false we can hide the toolbar
-                    var tools = array.every(results, function (r) {
-                        return r === undefined;
+                    //If all the results are false and locate and home are also false we can hide the toolbar
+                    var tools = array.some(results, function (r) {
+                        return r;
                     });
+             
                     var home = has("home");
                     var locate = has("locate");
 
+                  
                     //No tools are specified in the configuration so hide the panel and update the title area styles 
-                    if (tools && !home && !locate) {
+                    if (!tools && !home && !locate) {
                         domConstruct.destroy("panelTools");
                         domStyle.set("panelContent", "display", "none");
                         domStyle.set("panelTitle", "border-bottom", "none");
                         domStyle.set("panelTop", "height", "52px");
+                        query(".esriSimpleSlider").addClass("notools");
                         this._updateTheme();
                         return;
                     }
@@ -213,8 +216,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     basemapGroup: this._getBasemapGroup()
                 }, domConstruct.create("div", {}, basemapDiv));
                 basemap.startup();
+                deferred.resolve(true);
+            } else {
+                deferred.resolve(false);
             }
-            deferred.resolve();
+
             return deferred.promise;
         },
 
@@ -225,7 +231,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 //Conditionally load this module since most apps won't have bookmarks
                 require(["application/has-config!bookmarks?esri/dijit/Bookmarks"], lang.hitch(this, function (Bookmarks) {
                     if (!Bookmarks) {
-                        deferred.resolve();
+                        deferred.resolve(false);
                         return;
                     }
                     var bookmarkDiv = toolbar.createTool(tool, panelClass);
@@ -234,12 +240,12 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         bookmarks: this.config.response.itemInfo.itemData.bookmarks
                     }, bookmarkDiv);
 
-                    deferred.resolve();
+                    deferred.resolve(true);
 
                 }));
 
             } else {
-                deferred.resolve();
+                deferred.resolve(false);
             }
 
             return deferred.promise;
@@ -263,8 +269,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     var detailDiv = toolbar.createTool(tool, panelClass);
                     detailDiv.innerHTML = description;
                 }
+                deferred.resolve(true);
+            } else {
+                deferred.resolve(false);
             }
-            deferred.resolve();
+
             return deferred.promise;
 
         },
@@ -278,7 +287,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 return this._createEditor();
             } else {
                 console.log("No Editable Layers");
-                deferred.resolve();
+                deferred.resolve(false);
             }
             return deferred.promise;
         },
@@ -287,7 +296,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             //Dynamically load since many apps won't have editable layers 
             require(["application/has-config!edit?esri/dijit/editing/Editor"], lang.hitch(this, function (Editor) {
                 if (!Editor) {
-                    deferred.resolve();
+                    deferred.resolve(false);
                     return;
                 }
 
@@ -318,7 +327,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
 
                 this.editor.startup();
-                deferred.resolve();
+                deferred.resolve(true);
 
             }));
             return deferred.promise;
@@ -338,7 +347,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             var layers = this.config.response.itemInfo.itemData.operationalLayers;
 
             if (layers.length === 0) {
-                deferred.resolve();
+                deferred.resolve(false);
             } else {
                 if (has("layers")) {
 
@@ -360,9 +369,9 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     toc.startup();
 
 
-                    deferred.resolve();
+                    deferred.resolve(true);
                 } else {
-                    deferred.resolve();
+                    deferred.resolve(false);
                 }
             }
             return deferred.promise;
@@ -374,7 +383,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
 
             if (layers.length === 0) {
-                deferred.resolve();
+                deferred.resolve(false);
             } else {
                 if (has("legend")) {
                     var legendLength = 0;
@@ -399,9 +408,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     domClass.add(legend.domNode, "legend");
                     legend.startup();
                     toolbar.activateTool(this.config.activeTool || "legend");
+                    deferred.resolve(true);
 
+                } else {
+                    deferred.resolve(false);
                 }
-                deferred.resolve();
 
 
             }
@@ -424,9 +435,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 }, domConstruct.create("div", {}, measureDiv));
 
                 measure.startup();
-
+                deferred.resolve(true);
+            } else {
+                deferred.resolve(false);
             }
-            deferred.resolve();
+
 
 
             return deferred.promise;
@@ -473,8 +486,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         ovMap.startup();
                     }
                 }));
+                deferred.resolve(true);
+            } else {
+                deferred.resolve(false);
             }
-            deferred.resolve();
+
 
             return deferred.promise;
         },
@@ -492,7 +508,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     "legendLayers": []
                 };
                 if (!Print) {
-                    deferred.resolve();
+                    deferred.resolve(false);
                     return;
                 }
 
@@ -588,7 +604,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
 
 
-                        deferred.resolve();
+                        deferred.resolve(true);
                         return;
                     }
 
@@ -636,7 +652,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         domConstruct.place(print.printDomNode, printDiv, "first");
 
                         print.startup();
-                        deferred.resolve();
+                        deferred.resolve(true);
 
                     }));
                 }));
@@ -666,9 +682,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 domClass.add(shareDialog.domNode, "pageBody");
                 shareDialog.startup();
 
-
+                deferred.resolve(true);
+            } else {
+                deferred.resolve(false);
             }
-            deferred.resolve();
+
 
             return deferred.promise;
 
