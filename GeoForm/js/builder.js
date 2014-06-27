@@ -41,8 +41,7 @@ define([
         themes: theme,
         localStorageSupport: null,
 
-        constructor: function () {
-        },
+        constructor: function () {},
 
         startup: function (config, userInfo, response) {
             dom.byId("parentContainter").appendChild(this.authorMode);
@@ -96,8 +95,7 @@ define([
                             this._disableTab(currentTab);
                         }
                     }));
-                }
-                else {
+                } else {
                     array.forEach(query(".navigationTabs"), lang.hitch(this, function (currentTab) {
                         if (domAttr.get(currentTab, "tab") == "fields" || ((domAttr.get(currentTab, "tab") === "preview" || domAttr.get(currentTab, "tab") === "publish") && query(".fieldCheckbox:checked").length !== 0)) {
                             this._enableTab(currentTab);
@@ -125,9 +123,9 @@ define([
                     require([
                        "application/main"
                       ], function (userMode) {
-                          var index = new userMode();
-                          index.startup(_self.currentConfig, _self.response, true, query(".preview-frame")[0]);
-                      });
+                        var index = new userMode();
+                        index.startup(_self.currentConfig, _self.response, true, query(".preview-frame")[0]);
+                    });
                 } else {
                     localStorage.clear();
                 }
@@ -136,7 +134,8 @@ define([
 
         //function will validate and add operational layers in dropdown
         _addOperationalLayers: function () {
-            var layerDefeeredListArr = [], layerDefeeredList, attribute;
+            var layerDefeeredListArr = [],
+                layerDefeeredList, attribute;
             this._clearLayerOptions();
             array.forEach(this.currentConfig.itemInfo.itemData.operationalLayers, lang.hitch(this, function (currentLayer) {
                 if (currentLayer.url && currentLayer.url.split("/")[currentLayer.url.split("/").length - 2].toLowerCase() == "featureserver") {
@@ -152,20 +151,17 @@ define([
                         attribute = currentTab.getAttribute("tab");
                         if (attribute === "webmap" || attribute === "layer") {
                             this._enableTab(currentTab);
-                        }
-                        else {
+                        } else {
                             this._disableTab(currentTab);
                         }
                     }));
-                }
-                else {
+                } else {
                     array.forEach(query(".navigationTabs"), lang.hitch(this, function (currentTab) {
                         domConstruct.empty(this.erroMessageDiv);
                         attribute = currentTab.getAttribute("tab");
                         if (((attribute == "publish" || attribute == "preview") && (query(".fieldCheckbox:checked").length === 0)) || (attribute == "fields" && dom.byId("selectLayer").value === "Select Layer")) {
                             this._disableTab(currentTab);
-                        }
-                        else {
+                        } else {
                             this._enableTab(currentTab);
                         }
                     }));
@@ -185,10 +181,23 @@ define([
         _populateThemes: function () {
             var themesRadioButton, themesDivContainer, themesDivContent, themesLabel, themeThumbnail;
             array.forEach(this.themes, lang.hitch(this, function (currentTheme) {
-                themesDivContainer = domConstruct.create("div", { className: "col-md-4" }, this.stylesList);
-                themesDivContent = domConstruct.create("div", { className: "radio" }, themesDivContainer);
-                themesLabel = domConstruct.create("label", { innerHTML: currentTheme.name, "for": currentTheme.id }, themesDivContent);
-                themesRadioButton = domConstruct.create("input", { type: "radio", id: currentTheme.id, name: "themesRadio", themeName: currentTheme.id, themeUrl: currentTheme.url }, themesLabel);
+                themesDivContainer = domConstruct.create("div", {
+                    className: "col-md-4"
+                }, this.stylesList);
+                themesDivContent = domConstruct.create("div", {
+                    className: "radio"
+                }, themesDivContainer);
+                themesLabel = domConstruct.create("label", {
+                    innerHTML: currentTheme.name,
+                    "for": currentTheme.id
+                }, themesDivContent);
+                themesRadioButton = domConstruct.create("input", {
+                    type: "radio",
+                    id: currentTheme.id,
+                    name: "themesRadio",
+                    themeName: currentTheme.id,
+                    themeUrl: currentTheme.url
+                }, themesLabel);
                 if (currentTheme.id == this.currentConfig.theme) {
                     themesRadioButton.checked = true;
                 }
@@ -196,8 +205,13 @@ define([
                     this._configureTheme(evt);
                 }));
                 domConstruct.create("br", {}, themesLabel);
-                themeThumbnail = domConstruct.create("img", { src: currentTheme.thumbnail, className: "themeThubnail" }, themesLabel);
-                on(themeThumbnail, "click", function () { window.open(currentTheme.refUrl); });
+                themeThumbnail = domConstruct.create("img", {
+                    src: currentTheme.thumbnail,
+                    className: "themeThubnail"
+                }, themesLabel);
+                on(themeThumbnail, "click", function () {
+                    window.open(currentTheme.refUrl);
+                });
             }));
         },
 
@@ -208,8 +222,12 @@ define([
 
         //function will populate all editable fields with validations
         _populateFields: function (layerName) {
-            var configuredFields = [], configuredFieldName = [], fieldRow, fieldName, fieldLabel, fieldLabelInput, fieldDescription, fieldDescriptionInput, fieldCheckBox,
-            fieldCheckBoxInput, currentIndex = 0, layerIndex, fieldDNDIndicatorTD, fieldDNDIndicatorIcon, matchingField = false, newAddedFields = [];
+            var configuredFields = [],
+                configuredFieldName = [],
+                fieldRow, fieldName, fieldLabel, fieldLabelInput, fieldDescription, fieldDescriptionInput, fieldCheckBox,
+                fieldCheckBoxInput, currentIndex = 0,
+                layerIndex, fieldDNDIndicatorTD, fieldDNDIndicatorIcon, matchingField = false,
+                newAddedFields = [];
             if (this.geoFormFieldsTable) {
                 domConstruct.empty(this.geoFormFieldsTable);
             }
@@ -247,29 +265,53 @@ define([
             }
 
             array.forEach(newAddedFields, lang.hitch(this, function (currentField) {
-                fieldRow = domConstruct.create("tr", { rowIndex: currentIndex }, this.geoFormFieldsTable);
+                fieldRow = domConstruct.create("tr", {
+                    rowIndex: currentIndex
+                }, this.geoFormFieldsTable);
                 domAttr.set(fieldRow, "visibleProp", currentField.visible);
                 fieldDNDIndicatorTD = domConstruct.create("td", {}, fieldRow);
-                fieldDNDIndicatorIcon = domConstruct.create("span", { className: "ui-icon ui-icon-arrowthick-2-n-s" }, fieldDNDIndicatorTD);
+                fieldDNDIndicatorIcon = domConstruct.create("span", {
+                    className: "ui-icon ui-icon-arrowthick-2-n-s"
+                }, fieldDNDIndicatorTD);
                 fieldCheckBox = domConstruct.create("td", {}, fieldRow);
-                fieldCheckBoxInput = domConstruct.create("input", { className: "fieldCheckbox", type: "checkbox", index: currentIndex }, fieldCheckBox);
+                fieldCheckBoxInput = domConstruct.create("input", {
+                    className: "fieldCheckbox",
+                    type: "checkbox",
+                    index: currentIndex
+                }, fieldCheckBox);
                 domAttr.set(fieldCheckBoxInput, "checked", currentField.visible);
 
                 on(fieldCheckBoxInput, "change", lang.hitch(this, function () {
                     if (query(".fieldCheckbox:checked").length == query(".fieldCheckbox").length) {
                         this.selectAll.checked = true;
-                    }
-                    else {
+                    } else {
                         this.selectAll.checked = false;
                     }
                     this._getFieldCheckboxState();
                 }));
 
-                fieldName = domConstruct.create("td", { className: "fieldName layerFieldsName", innerHTML: currentField.name, index: currentIndex }, fieldRow);
-                fieldLabel = domConstruct.create("td", { className: "tableDimension" }, fieldRow);
-                fieldLabelInput = domConstruct.create("input", { className: "form-control fieldLabel", index: currentIndex, placeholder: nls.builder.fieldLabelPlaceHolder, value: currentField.alias }, fieldLabel);
-                fieldDescription = domConstruct.create("td", { className: "tableDimension" }, fieldRow);
-                fieldDescriptionInput = domConstruct.create("input", { className: "form-control fieldDescription", placeholder: nls.builder.fieldDescPlaceHolder, value: "" }, fieldDescription);
+                fieldName = domConstruct.create("td", {
+                    className: "fieldName layerFieldsName",
+                    innerHTML: currentField.name,
+                    index: currentIndex
+                }, fieldRow);
+                fieldLabel = domConstruct.create("td", {
+                    className: "tableDimension"
+                }, fieldRow);
+                fieldLabelInput = domConstruct.create("input", {
+                    className: "form-control fieldLabel",
+                    index: currentIndex,
+                    placeholder: nls.builder.fieldLabelPlaceHolder,
+                    value: currentField.alias
+                }, fieldLabel);
+                fieldDescription = domConstruct.create("td", {
+                    className: "tableDimension"
+                }, fieldRow);
+                fieldDescriptionInput = domConstruct.create("input", {
+                    className: "form-control fieldDescription",
+                    placeholder: nls.builder.fieldDescPlaceHolder,
+                    value: ""
+                }, fieldDescription);
                 if (this.currentConfig.itemInfo.itemData.operationalLayers[layerIndex].popupInfo) {
                     array.forEach(this.currentConfig.itemInfo.itemData.operationalLayers[layerIndex].popupInfo.fieldInfos, function (currentFieldPopupInfo) {
                         if (currentFieldPopupInfo.fieldName == currentField.name) {
@@ -291,13 +333,11 @@ define([
             }));
             if (query(".fieldCheckbox:checked").length == query(".fieldCheckbox").length) {
                 this.selectAll.checked = true;
-            }
-            else {
+            } else {
                 this.selectAll.checked = false;
             }
             $(document).ready(function () {
-                $("#tbodyDND").sortable({
-                });
+                $("#tbodyDND").sortable({});
             });
         },
 
@@ -319,13 +359,15 @@ define([
                     token: this.userInfo.token,
                     f: 'json'
                 }
-            }, { usePost: true }).then(lang.hitch(this, function (result) {
-                this._validateFeatureServer(result, layerUrl, layerId);
-                layerDeferred.resolve(true);
-            }),
-            function () {
-                layerDeferred.resolve(true);
-            });
+            }, {
+                usePost: true
+            }).then(lang.hitch(this, function (result) {
+                    this._validateFeatureServer(result, layerUrl, layerId);
+                    layerDeferred.resolve(true);
+                }),
+                function () {
+                    layerDeferred.resolve(true);
+                });
             return layerDeferred.promise;
         },
 
@@ -357,12 +399,13 @@ define([
             on(this.browseDlg, "close", lang.hitch(this, function () {
                 if (this.browseDlg.get("selected") !== null && this.browseDlg.get("selectedWebmap") !== null) {
                     if (this.browseDlg.get("selectedWebmap").thumbnailUrl) {
-                        domAttr.set(query(".img-thumbnail")[0], "src", this.browseDlg.get("selectedWebmap").thumbnailUrl.split("?token")[0]);
-                        this.currentConfig.webmapThumbnailUrl = this.browseDlg.get("selectedWebmap").thumbnailUrl.split("?token")[0];
+                        domAttr.set(query(".img-thumbnail")[0], "src", this.browseDlg.get("selectedWebmap").thumbnailUrl);
+                        this.currentConfig.webmapThumbnailUrl = this.browseDlg.get("selectedWebmap").thumbnailUrl;
                     } else {
                         domAttr.set(query(".img-thumbnail")[0], "src", "./images/default.png");
                     }
                     this.currentConfig.webmap = this.browseDlg.get("selectedWebmap").id;
+                    dom.byId("webmapLink").href = this.userInfo.portal.url + "/home/webmap/viewer.html?webmap=" + this.currentConfig.webmap;
                     var btn = $(dom.byId("selectWebmapBtn"));
                     btn.button('loading');
                     arcgisUtils.getItem(this.currentConfig.webmap).then(lang.hitch(this, function (itemInfo) {
@@ -387,6 +430,7 @@ define([
             } else {
                 domAttr.set(query(".img-thumbnail")[0], "src", "./images/default.png");
             }
+            dom.byId("webmapLink").href = this.userInfo.portal.url + "/home/webmap/viewer.html?webmap=" + this.currentConfig.webmap;
         },
 
         //function to load the css on runtime
@@ -413,39 +457,41 @@ define([
         _updateAppConfiguration: function (prevNavigationTab) {
             var _self = this;
             switch (prevNavigationTab) {
-                case "webmap":
-                    break;
-                case "details":
-                    this.currentConfig.details.Title = dom.byId("detailTitleInput").value;
-                    this.currentConfig.details.Logo = dom.byId("detailLogoInput").value;
-                    this.currentConfig.details.Description = dom.byId("detailDescriptionInput").value;
-                    break;
-                case "fields":
-                    this.currentConfig.fields.length = 0;
-                    var index, fieldName, fieldLabel, fieldDescription, layerName, visible, defaultValue;
-                    layerName = dom.byId("selectLayer").value;
-                    array.forEach($("#tableDND")[0].rows, lang.hitch(this, function (currentRow) {
-                        if (currentRow.getAttribute("rowIndex")) {
-                            index = currentRow.getAttribute("rowIndex");
-                            fieldName = query(".layerFieldsName", currentRow)[0].innerHTML;
-                            array.some(this.fieldInfo[this.currentConfig.form_layer.id].Fields, function (currentField) {
-                                if (currentField.name == fieldName) {
-                                    defaultValue = currentField.defaultValue;
-                                    return true;
-                                }
-                            });
-                            fieldLabel = query(".fieldLabel", currentRow)[0].value;
-                            fieldDescription = query(".fieldDescription", currentRow)[0].value;
-                            visible = query(".fieldCheckbox", currentRow)[0].checked;
-                            _self.currentConfig.fields.push({
-                                fieldName: fieldName, fieldLabel: fieldLabel,
-                                fieldDescription: fieldDescription,
-                                visible: visible, defaultValue: defaultValue
-                            });
-                        }
-                    }));
-                    break;
-                default:
+            case "webmap":
+                break;
+            case "details":
+                this.currentConfig.details.Title = dom.byId("detailTitleInput").value;
+                this.currentConfig.details.Logo = dom.byId("detailLogoInput").value;
+                this.currentConfig.details.Description = dom.byId("detailDescriptionInput").value;
+                break;
+            case "fields":
+                this.currentConfig.fields.length = 0;
+                var index, fieldName, fieldLabel, fieldDescription, layerName, visible, defaultValue;
+                layerName = dom.byId("selectLayer").value;
+                array.forEach($("#tableDND")[0].rows, lang.hitch(this, function (currentRow) {
+                    if (currentRow.getAttribute("rowIndex")) {
+                        index = currentRow.getAttribute("rowIndex");
+                        fieldName = query(".layerFieldsName", currentRow)[0].innerHTML;
+                        array.some(this.fieldInfo[this.currentConfig.form_layer.id].Fields, function (currentField) {
+                            if (currentField.name == fieldName) {
+                                defaultValue = currentField.defaultValue;
+                                return true;
+                            }
+                        });
+                        fieldLabel = query(".fieldLabel", currentRow)[0].value;
+                        fieldDescription = query(".fieldDescription", currentRow)[0].value;
+                        visible = query(".fieldCheckbox", currentRow)[0].checked;
+                        _self.currentConfig.fields.push({
+                            fieldName: fieldName,
+                            fieldLabel: fieldLabel,
+                            fieldDescription: fieldDescription,
+                            visible: visible,
+                            defaultValue: defaultValue
+                        });
+                    }
+                }));
+                break;
+            default:
             }
         },
 
@@ -475,7 +521,9 @@ define([
                     url: updateURL,
                     content: rqData,
                     handleAs: 'json'
-                }, { usePost: true }).then(lang.hitch(this, function (result) {
+                }, {
+                    usePost: true
+                }).then(lang.hitch(this, function (result) {
                     if (result.success) {
                         this._createShareDlgContent();
                         this._ShareDialog = new ShareDialog({
@@ -499,28 +547,65 @@ define([
             var progressIndicatorContainer, progressIndicator;
             domConstruct.empty(query(".modal-body")[0]);
             domAttr.set(dom.byId('myModalLabel'), "innerHTML", nls.builder.shareBuilderInProgressTitleMessage);
-            progressIndicatorContainer = domConstruct.create("div", { className: "progress progress-striped active progress-remove-margin" }, query(".modal-body")[0]);
-            progressIndicator = domConstruct.create("div", { className: "progress-bar progress-percent", innerHTML: nls.builder.shareBuilderProgressBarMessage }, progressIndicatorContainer);
+            progressIndicatorContainer = domConstruct.create("div", {
+                className: "progress progress-striped active progress-remove-margin"
+            }, query(".modal-body")[0]);
+            progressIndicator = domConstruct.create("div", {
+                className: "progress-bar progress-percent",
+                innerHTML: nls.builder.shareBuilderProgressBarMessage
+            }, progressIndicatorContainer);
         },
         _createShareDlgContent: function () {
             var iconContainer, facebookIconHolder, twitterIconHolder, googlePlusIconHolder, mailIconHolder;
             domConstruct.empty(query(".modal-body")[0]);
             domAttr.set(dom.byId('myModalLabel'), "innerHTML", nls.builder.shareBuilderTitleMessage);
-            iconContainer = domConstruct.create("div", { className: "iconContainer" }, query(".modal-body")[0]);
-            domConstruct.create("div", { className: "share-dialog-subheader", innerHTML: nls.builder.shareBuilderTextMessage }, iconContainer);
-            facebookIconHolder = domConstruct.create("div", { className: "iconContent" }, iconContainer);
-            domConstruct.create("a", { className: "icon-facebook-sign iconClass", id: "facebookIcon" }, facebookIconHolder);
-            twitterIconHolder = domConstruct.create("div", { className: "iconContent" }, iconContainer);
-            domConstruct.create("a", { className: "icon-twitter-sign iconClass", id: "twitterIcon" }, twitterIconHolder);
-            googlePlusIconHolder = domConstruct.create("div", { className: "iconContent" }, iconContainer);
-            domConstruct.create("a", { className: "icon-google-plus-sign iconClass", id: "google-plusIcon" }, googlePlusIconHolder);
-            mailIconHolder = domConstruct.create("div", { className: "iconContent" }, iconContainer);
-            domConstruct.create("a", { className: "icon-envelope iconClass", id: "mailIcon" }, mailIconHolder);
+            iconContainer = domConstruct.create("div", {
+                className: "iconContainer"
+            }, query(".modal-body")[0]);
+            domConstruct.create("div", {
+                className: "share-dialog-subheader",
+                innerHTML: nls.builder.shareBuilderTextMessage
+            }, iconContainer);
+            facebookIconHolder = domConstruct.create("div", {
+                className: "iconContent"
+            }, iconContainer);
+            domConstruct.create("a", {
+                className: "fa fa-facebook-square iconClass",
+                id: "facebookIcon"
+            }, facebookIconHolder);
+            twitterIconHolder = domConstruct.create("div", {
+                className: "iconContent"
+            }, iconContainer);
+            domConstruct.create("a", {
+                className: "fa fa-twitter-square iconClass",
+                id: "twitterIcon"
+            }, twitterIconHolder);
+            googlePlusIconHolder = domConstruct.create("div", {
+                className: "iconContent"
+            }, iconContainer);
+            domConstruct.create("a", {
+                className: "fa fa-google-plus-square iconClass",
+                id: "google-plusIcon"
+            }, googlePlusIconHolder);
+            mailIconHolder = domConstruct.create("div", {
+                className: "iconContent"
+            }, iconContainer);
+            domConstruct.create("a", {
+                className: "fa fa-envelope iconClass",
+                id: "mailIcon"
+            }, mailIconHolder);
             domConstruct.create("br", {}, iconContainer);
             domConstruct.create("br", {}, iconContainer);
             domConstruct.create("br", {}, iconContainer);
-            domConstruct.create("div", { className: "share-dialog-subheader", innerHTML: nls.builder.shareDialogFormText }, iconContainer);
-            domConstruct.create("input", { type: "text", className: "share-map-url", id: "_shareMapUrlText" }, iconContainer);
+            domConstruct.create("div", {
+                className: "share-dialog-subheader",
+                innerHTML: nls.builder.shareDialogFormText
+            }, iconContainer);
+            domConstruct.create("input", {
+                type: "text",
+                className: "share-map-url",
+                id: "_shareMapUrlText"
+            }, iconContainer);
         },
         //function to enable the tab passed in input parameter
         _enableTab: function (currentTab) {
@@ -528,8 +613,7 @@ define([
                 return;
             if (domClass.contains(currentTab, "btn")) {
                 domClass.remove(currentTab, "disabled");
-            }
-            else {
+            } else {
                 domClass.remove(currentTab.parentNode, "disabled");
             }
             domAttr.set(currentTab, "data-toggle", "tab");
@@ -539,8 +623,7 @@ define([
         _disableTab: function (currentTab) {
             if (domClass.contains(currentTab, "btn")) {
                 domClass.add(currentTab, "disabled");
-            }
-            else {
+            } else {
                 domClass.add(currentTab.parentNode, "disabled");
             }
             domAttr.set(currentTab, "data-toggle", "");
@@ -550,8 +633,7 @@ define([
             array.forEach(query(".navigationTabs"), lang.hitch(this, function (currentTab) {
                 if ((domAttr.get(currentTab, "tab") === "preview" || domAttr.get(currentTab, "tab") === "publish") && (query(".fieldCheckbox:checked").length === 0)) {
                     this._disableTab(currentTab);
-                }
-                else {
+                } else {
                     this._enableTab(currentTab);
                 }
             }));
@@ -559,7 +641,10 @@ define([
 
         _showErrorMessageDiv: function (errorMessage) {
             domConstruct.empty(this.erroMessageDiv);
-            domConstruct.create("div", { className: "alert alert-danger errorMessage", innerHTML: errorMessage }, this.erroMessageDiv);
+            domConstruct.create("div", {
+                className: "alert alert-danger errorMessage",
+                innerHTML: errorMessage
+            }, this.erroMessageDiv);
         }
     });
 });

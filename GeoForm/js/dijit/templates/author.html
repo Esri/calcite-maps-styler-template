@@ -65,9 +65,12 @@
                 <div class="tab-content">
                     <div id="webmap" class="tab-pane active">
                         <h2>${nls.builder.webmapTabTitleText}</h2>
-                        <img class="img-thumbnail" src="" />
-                        <br />
-                        <button type="button" id="selectWebmapBtn" class="select-webmap-button btn btn-default" data-loading-text='<i class="icon-spin icon-refresh"></i> ${nls.builder.btnSelectWebmapText}'>${nls.builder.btnSelectWebmapText}</button>
+                        <div class="webmap-thumb-container">
+                            <a title="${nls.builder.viewWebmap}" id="webmapLink" class="webmap-thumb" target="_blank">
+                                <img alt="${nls.builder.viewWebmap}" class="img-thumbnail" />
+                            </a>
+                        </div>
+                        <button type="button" id="selectWebmapBtn" class="select-webmap-button btn btn-default" data-loading-text="${nls.builder.btnSelectWebmapTextLoading}">${nls.builder.btnSelectWebmapText}</button>
                         <p class="text-right"><a href="#" class="btn btn-primary nexttab navigationTabs" tab="layer">${nls.builder.btnNextText}</a>
                         </p>
                     </div>
@@ -98,7 +101,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="detailLogoInput">${nls.builder.detailLogoLabelText}</label>
-                                <input type="text" class="form-control" id="detailLogoInput" placeholder="${nls.builder.imageLogoPlaceholderText}">
+                                <input type="url" class="form-control" id="detailLogoInput" placeholder="${nls.builder.imageLogoPlaceholderText}">
                             </div>
                             <div class="form-group">
                                 <label for="detailDescriptionInput">${nls.builder.detailDescriptionLabelText}</label>

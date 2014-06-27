@@ -15,9 +15,6 @@
 
 .app-loading .loading-indicator {
     display: block;
-    background-position: center center;
-    background-image: url(../images/ajax-loader.gif);
-    background-repeat: no-repeat;
 }
 .submit-area {
     margin-bottom: 40px;
@@ -31,23 +28,43 @@
     top: 0;
     left: 0;
     overflow: hidden;
-    background: #eee;
-    color: #666;
+    background: #fff;
+    color: #000;
     opacity: 1;
 }
-
-.signIn-error-message {
-    width: 100%;
+.loading-error {
+    display: none;
+    width: 30%;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    margin: -20px 0 0 -15%;
+    font-size: 16px;
+    line-height: normal;
+}
+.icon-loading {
+    width: 40px;
+    height: 40px;
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 50%;
     overflow: hidden;
-    margin-top:-40px;
+    margin: -20px 0 0 -20px;
+    font-size: 40px;
+    line-height: 40px;
 }
-.signIn-error-message  div.alert{
-    text-align:center !important;
+.app-error .icon-loading {
+    display: none;
 }
-
+.app-error .loading-indicator {
+    display: block;
+}
+.app-error .loading-error {
+    display: block;
+}
 .table > thead > tr > th,
 .table > tbody > tr > th,
 .table > tfoot > tr > th,
@@ -67,7 +84,7 @@
 
 @media (min-width: 480px) {
     .map-div {
-        height: 200px!important;
+        height: 250px!important;
     }
     .preview-frame {
         height: 400px;
@@ -77,7 +94,7 @@
 
 @media (min-width: 768px) {
     .map-div {
-        height: 300px!important;
+        height: 350px!important;
     }
     .preview-frame {
         height: 500px;
@@ -87,7 +104,7 @@
 
 @media (min-width: 992px) {
     .map-div {
-        height: 400px!important;
+        height: 450px!important;
     }
     .preview-frame {
         height: 500px;
@@ -197,6 +214,7 @@ input::-ms-clear {
     display: inline-block;
 }
 /* fix for popup close */
+
 .titlePane .close,
 .titlePane .close:hover {
     float: none;
@@ -205,6 +223,12 @@ input::-ms-clear {
     font-weight: normal;
     text-shadow: none;
 }
-.submit-container{
-  display: inline-block;
+.submit-container {
+    display: inline-block;
+}
+.webmap-thumb {
+    display: inline-block;
+}
+.webmap-thumb-container {
+    margin-bottom: 5px;
 }
