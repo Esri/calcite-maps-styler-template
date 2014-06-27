@@ -1,10 +1,10 @@
-change report #66 at 06/26/2014 13:49:41.92
+change report #72 at 06/27/2014  7:24:03.33
 -
 for git branch
 release_3.4
 in repository local-government-online-apps
-140626084914062619481406242059
+140627091914062712561406270105
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M js/template.js
+ M js2/lgonlineCommand.js
