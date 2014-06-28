@@ -252,7 +252,7 @@ define([
 
             deferred = new Deferred();
             if (this.config.localize) {
-                require(["dojo/i18n!app/nls/localizedStrings"], lang.hitch(this, function (appBundle) {
+                require(["dojo/i18n!app/nls/resources"], lang.hitch(this, function (appBundle) {
                     // Get the localization strings for the template and store in an i18n variable. Also determine if the
                     // application is in a right-to-left language like Arabic or Hebrew.
                     this.config.i18n = appBundle || {};

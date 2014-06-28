@@ -16,7 +16,7 @@
  | limitations under the License.
  */
 define({
-    "commonConfig": false, // common config
+    "commonConfig": true,
     //Default configuration settings for the application. This is where you'll define things like a bing maps key,
     "oauthappid": null, //"AFTKRmv16wj14N3z",
     //Group templates must support a group url parameter. This will contain the id of the group.
