@@ -150,7 +150,12 @@ define([
             if (this.options.groupInfo || this.options.groupItems) {
                 this.portal = new esriPortal.Portal(this.config.sharinghost);
                 this.portal.on("load", function () {
-                    deferred.resolve();
+                    this.portal.signIn().then(lang.hitch(this, function(loggedInUser) {
+                        if (loggedInUser) {
+                            this.globalUser = loggedInUser;
+                        }
+                        deferred.resolve();
+                    }));
                 });
             } else {
                 deferred.resolve();
