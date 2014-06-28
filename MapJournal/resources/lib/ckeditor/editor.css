@@ -41,9 +41,11 @@ body
 	margin: 20px;
 }
 
+/*
 body.error-no-content {
 	color: #F00 !important;	
 }
+*/
 
 p {
 	margin: 0;
