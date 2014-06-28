@@ -1,0 +1,3 @@
+Proxy program is from repository https://github.com/Esri/resource-proxy release "resource-proxy-1.0", DotNet version
+proxy.ashx file date:
+04/14/2014 10:24
