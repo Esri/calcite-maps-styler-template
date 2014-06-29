@@ -32,6 +32,7 @@ define([
     "dojo/dom",
     "dojo/dom-class",
     "dojo/on",
+    "dojo/query",
     //"launch/widgetLoader",
     "config/appIncludes",
     "esri/config",
@@ -52,6 +53,7 @@ define([
     dom,
     domClass,
     on,
+    query,
     //WidgetLoader,
     appIncludesConfig,
     esriConfig,
@@ -79,7 +81,15 @@ define([
                         }).then(
                             lang.hitch(this, function (jsondata) {
                                 dojo.configData = jsondata;
+                                lang.mixin(dojo.configData.values,
+                                    this.setFalseValues(this.config.itemData.values));
+
                                 dojo.appConfigData = appIncludesConfig;
+
+
+                                //var applicationWidgetLoader = new WidgetLoader();
+                                //applicationWidgetLoader.startup();
+
 
                                 this._applicationThemeLoader();
 
@@ -141,6 +151,24 @@ define([
                     domClass.remove("contentDiv", "transparent");
                 }
             }).play();
+        },
+
+        setFalseValues: function (obj) {
+            var key;
+
+            // for each key
+            for (key in obj) {
+                // if not a prototype
+                if (obj.hasOwnProperty(key)) {
+                    // if is a false value string
+                    if (typeof obj[key] === 'string' && (obj[key].toLowerCase() === 'false' || obj[key].toLowerCase() === 'null' || obj[key].toLowerCase() === 'undefined')) {
+                        // set to false bool type
+                        obj[key] = false;
+                    }
+                }
+            }
+            // return object
+            return obj;
         },
 
         _applicationThemeLoader: function () {
