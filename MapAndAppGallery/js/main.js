@@ -26,6 +26,7 @@ define([
     "dojo/promise/all",
     "dojo/dom-construct",
     "dojo/topic",
+    "dojo/request/xhr",
     "esri/dijit/Popup",
     "esri/arcgis/utils",
     "dojo/dom",
@@ -45,6 +46,7 @@ define([
     all,
     domConstruct,
     topic,
+    xhr,
     Popup,
     arcgisUtils,
     dom,
@@ -66,42 +68,32 @@ define([
 
                 // document ready
                 ready(lang.hitch(this, function () {
-
-
-
                     try {
-
                         /**
                         * load application configuration settings from configuration file
                         * create an object of widget loader class
                         */
-
                         var url = dojoConfig.baseURL + "/config/config.js";
-                        esriRequest({
-                            url: url,
-                            handleAs: "json",
-                            load: function (jsondata) {
+                        xhr(url, {
+                            handleAs: "json"
+                        }).then(
+                            lang.hitch(this, function (jsondata) {
                                 dojo.configData = jsondata;
                                 dojo.appConfigData = appIncludesConfig;
-                                //var applicationWidgetLoader = new WidgetLoader();
-                                //applicationWidgetLoader.startup();
 
-                            },
-                            error: function (err) {
+                                this._applicationThemeLoader();
+
+
+
+
+                            }),
+                            function (err) {
                                 alert(err.message);
                             }
-                        });
+                        );
                     } catch (ex) {
                         alert(ex.message);
                     }
-
-
-
-
-
-
-
-                    return false;
                 }));
 
             } else {
@@ -149,6 +141,14 @@ define([
                     domClass.remove("contentDiv", "transparent");
                 }
             }).play();
+        },
+
+        _applicationThemeLoader: function () {
+            var rootNode = query("html")[0];
+            if (!dojo.configData.values.theme) {
+                dojo.configData.values.theme = "blueTheme";
+            }
+            domClass.add(rootNode, dojo.configData.values.theme);
         }
     });
 });
