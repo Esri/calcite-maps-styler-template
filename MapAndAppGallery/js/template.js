@@ -149,14 +149,14 @@ define([
             var deferred = new Deferred();
             if (this.options.groupInfo || this.options.groupItems) {
                 this.portal = new esriPortal.Portal(this.config.sharinghost);
-                this.portal.on("load", function () {
+                this.portal.on("load", lang.hitch(this, function () {
                     this.portal.signIn().then(lang.hitch(this, function(loggedInUser) {
                         if (loggedInUser) {
                             this.globalUser = loggedInUser;
                         }
                         deferred.resolve();
                     }));
-                });
+                }));
             } else {
                 deferred.resolve();
             }

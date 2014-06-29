@@ -31,7 +31,7 @@ define([
     "dojo/dom",
     "dojo/dom-class",
     "dojo/on",
-    "launch/widgetLoader",
+    //"launch/widgetLoader",
     "config/appIncludes",
     "esri/config",
     "esri/request"
@@ -50,7 +50,7 @@ define([
     dom,
     domClass,
     on,
-    WidgetLoader,
+    //WidgetLoader,
     appIncludesConfig,
     esriConfig,
     esriRequest
@@ -76,19 +76,16 @@ define([
                         * create an object of widget loader class
                         */
 
-                        var url = dojoConfig.baseURL + "/config.js";
+                        var url = dojoConfig.baseURL + "/config/config.js";
                         esriRequest({
                             url: url,
                             handleAs: "json",
                             load: function (jsondata) {
                                 dojo.configData = jsondata;
                                 dojo.appConfigData = appIncludesConfig;
-                                var applicationWidgetLoader = new WidgetLoader();
-                                applicationWidgetLoader.startup();
+                                //var applicationWidgetLoader = new WidgetLoader();
+                                //applicationWidgetLoader.startup();
 
-                                esriConfig.defaults.io.proxyUrl = dojoConfig.baseURL + dojo.configData.values.proxyUrl;
-                                esriConfig.defaults.io.alwaysUseProxy = false;
-                                esriConfig.defaults.io.timeout = 180000;
                             },
                             error: function (err) {
                                 alert(err.message);
