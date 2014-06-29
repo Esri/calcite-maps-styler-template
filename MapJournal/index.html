@@ -52,7 +52,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.0-alpha17',
+				version: '1.0-alpha18',
 				isProduction: true,
 				isInBuilder: false,
 				indexCfg: configOptions
@@ -114,7 +114,7 @@
 						name: "templateConfig",
 						// If the template is deployed on a Portal (apps path contains /apps/MapJournal/ or /home/MapJournal/)
 						// commonConfig.js is loaded from the parent folder, otherwise it's loaded from the app folder
-						location: (/(\/)([a-zA-Z0-9]+(\/))*(apps\/|\/home\/)([a-zA-Z0-9]+\/)/).test(document.location.pathname) ? path2.substr(0,path2.lastIndexOf('/MapJournal')) : path2.replace(/\/+$/, '') + '/app'
+						location: (/(\/)([a-zA-Z0-9]+(\/))*(apps\/|home\/)([a-zA-Z0-9]+\/)/).test(document.location.pathname) ? path2.substr(0,path2.lastIndexOf('/MapJournal')) : path2.replace(/\/+$/, '') + '/app'
 					},
 					{
 						name: 'lib-app',
@@ -167,6 +167,7 @@
 				<div class="medias">
 					<!-- Maps and media injected here -->
             	</div>
+            	<div class="loadingIndicator"></div>
 				<!-- Back button -->
 				<div class="mediaBackContainer centerAlignOnFloatOverMap">
 					<div class="backButton">
