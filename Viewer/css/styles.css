@@ -200,7 +200,22 @@ html, body {
 .layer-menu .dijitMenuItemSelected {
   background: #d3d3d3; }
 
-/* Esri Jvascript API*/
+/* Esri Javascript API*/
+.esriEditor .esriDrawingToolbar {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 35%;
+  border-bottom: none;
+  border-right: none;
+  border-left: none; }
+
+@media only screen and (min-width: 720px) {
+  .esriEditor .esriDrawingToolbar {
+    bottom: 25%;
+    right: 0;
+    left: 0; } }
+
 .esriPopup .pointer.bottom, .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight {
   background: #f7f7f7 !important; }
 
