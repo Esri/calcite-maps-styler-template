@@ -33,10 +33,12 @@ define([
     "dojo/dom-class",
     "dojo/on",
     "dojo/query",
-    //"launch/widgetLoader",
     "config/appIncludes",
+    "widgets/appHeader/appHeader",
+    "widgets/searchAGOLGroupItems/searchAGOLGroupItems",
     "esri/config",
-    "esri/request"
+    "esri/request",
+    "widgets/leftPanel/leftPanel"
 ], function (
     ready,
     array,
@@ -54,8 +56,9 @@ define([
     domClass,
     on,
     query,
-    //WidgetLoader,
     appIncludesConfig,
+    AppHeader,
+    PortalSignin,
     esriConfig,
     esriRequest
 ) {
@@ -83,19 +86,23 @@ define([
                                 dojo.configData = jsondata;
                                 lang.mixin(dojo.configData.values,
                                     this.setFalseValues(this.config.itemData.values));
-
                                 dojo.appConfigData = appIncludesConfig;
+                                dojo.nls = this.config.i18n;
 
 
-                                //var applicationWidgetLoader = new WidgetLoader();
-                                //applicationWidgetLoader.startup();
+                                var portalSigninWidgetLoader = new PortalSignin();
+                                portalSigninWidgetLoader.fetchAppIdSettings().then(lang.hitch(this, function () {
+                                    portalSigninWidgetLoader.initializePortal();
+                                    this._applicationThemeLoader();
+                                    this.loadWidgets();
+                                }));
 
 
-                                this._applicationThemeLoader();
+/*
+                                var leftPanelObj = new LeftPanelCollection();
+                                leftPanelObj.startup();
 
-
-
-
+*/
                             }),
                             function (err) {
                                 alert(err.message);
@@ -111,6 +118,44 @@ define([
                 this.reportError(error);
             }
         },
+
+        loadWidgets: function () {
+            var widgets = {},
+                deferredArray = [];
+            array.forEach(dojo.appConfigData.AppHeaderWidgets, function (widgetConfig) {
+                var deferred = new Deferred();
+                widgets[widgetConfig.WidgetPath] = null;
+                require([widgetConfig.WidgetPath], function (Widget) {
+                    widgets[widgetConfig.WidgetPath] = new Widget();
+                    deferred.resolve(widgetConfig.WidgetPath);
+                });
+                deferredArray.push(deferred.promise);
+            });
+            all(deferredArray).then(lang.hitch(this, function () {
+
+                try {
+                    /**
+                    * create application header
+                    */
+                    this._createApplicationHeader(widgets);
+
+                } catch (ex) {
+                    alert(dojo.nls.errorMessages.widgetNotLoaded);
+                    topic.publish("hideProgressIndicator");
+                }
+            }));
+        },
+
+        /**
+        * create application header
+        * @param {object} widgets Contain widgets to be displayed in header panel
+        * @memberOf coreLibrary/widgetLoader
+        */
+        _createApplicationHeader: function (widgets) {
+            var applicationHeader = new AppHeader();
+            applicationHeader.loadHeaderWidgets(widgets);
+        },
+
         reportError: function (error) {
             // remove loading class from body
             domClass.remove(document.body, "app-loading");
