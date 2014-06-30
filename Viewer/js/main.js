@@ -282,13 +282,18 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             //Add the editor widget to the toolbar if the web map contains editable layers 
             var deferred = new Deferred();
             this.editableLayers = this._getEditableLayers(this.config.response.itemInfo.itemData.operationalLayers);
-            if (this.editableLayers.length > 0) {
-                this.editorDiv = toolbar.createTool(tool, panelClass);
-                return this._createEditor();
-            } else {
-                console.log("No Editable Layers");
+            if(has("edit") && this.editableLayers.length > 0){
+                if (this.editableLayers.length > 0) {
+                    this.editorDiv = toolbar.createTool(tool, panelClass);
+                    return this._createEditor();
+                } else {
+                    console.log("No Editable Layers");
+                    deferred.resolve(false);
+                }
+            }else{
                 deferred.resolve(false);
             }
+
             return deferred.promise;
         },
         _createEditor: function () {
