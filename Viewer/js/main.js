@@ -156,17 +156,17 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 }
 
                 all(toolList).then(lang.hitch(this, function (results) {
-                 
+
 
                     //If all the results are false and locate and home are also false we can hide the toolbar
                     var tools = array.some(results, function (r) {
                         return r;
                     });
-             
+
                     var home = has("home");
                     var locate = has("locate");
 
-                  
+
                     //No tools are specified in the configuration so hide the panel and update the title area styles 
                     if (!tools && !home && !locate) {
                         domConstruct.destroy("panelTools");
@@ -189,6 +189,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             this._destroyEditor();
                             this.map.setInfoWindowOnClick(false);
                         } else if (name === "edit") {
+                            this._destroyEditor();
                             this.map.setInfoWindowOnClick(false);
                             this._createEditor();
                         } else {
@@ -282,7 +283,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             //Add the editor widget to the toolbar if the web map contains editable layers 
             var deferred = new Deferred();
             this.editableLayers = this._getEditableLayers(this.config.response.itemInfo.itemData.operationalLayers);
-            if(has("edit") && this.editableLayers.length > 0){
+            if (has("edit") && this.editableLayers.length > 0) {
                 if (this.editableLayers.length > 0) {
                     this.editorDiv = toolbar.createTool(tool, panelClass);
                     return this._createEditor();
@@ -290,7 +291,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     console.log("No Editable Layers");
                     deferred.resolve(false);
                 }
-            }else{
+            } else {
                 deferred.resolve(false);
             }
 
