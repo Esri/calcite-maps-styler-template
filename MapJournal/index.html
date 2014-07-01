@@ -52,7 +52,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.0-alpha18',
+				version: '1.0-beta',
 				isProduction: true,
 				isInBuilder: false,
 				indexCfg: configOptions
@@ -97,7 +97,7 @@
 				return vars[name];
 			}
 			
-			var pathJSAPI = "//jsdev.arcgis.com/3.10/";
+			var pathJSAPI = "//js.arcgis.com/3.10/";
 			var path1 = location.pathname.replace(/\/[^/]+$/, '/');
 			var path2 = location.pathname.replace(/\/[^/]+$/, '');
 			var dojoConfig = {
@@ -243,8 +243,8 @@
 						<i class="shareIcon blackHover share_facebook icon-facebook-squared-1"></i>
 						<i class="shareIcon blackHover share_twitter icon-twitter-1"></i>
 						<i class="shareIcon blackHover share_bitly icon-link"></i>
+						<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
 					</span>
-					<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
 				</div>
 				<table class="logoContainer">
 					<tr>
