@@ -153,12 +153,14 @@ figure
 	max-width: 100%; 
 }
 
+/* Storymaps */
 figure img {
-	max-width: 100%; /* TODO not in original css */
+	max-width: 100%;
 }
 
+/* Storymaps */
 img {
-	max-width: 100%; /* TODO not in original css */
+	max-width: 100%;
 }
 
 figure figcaption
