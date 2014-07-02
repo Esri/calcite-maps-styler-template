@@ -27,25 +27,25 @@
 				title: "Velkommen til"
 			},
 			addEditPopup: {
-				disabled: "å_Add Section is disabled because the maximum number of allowed sections has been reached._ø",
+				disabled: "Legg til seksjon er deaktivert fordi det maksimale antallet tillatte seksjoner er nådd.",
 				titleAdd: "Legg til seksjon",
-				titleAddHome: "å_Add Home Section_ø",
+				titleAddHome: "Legg til Hjem-seksjon",
 				titleEdit: "Rediger seksjon",
 				step: "Trinn",
-				stepMainStageExplain: "å_Main Stage Content_ø",
-				stepPanelExplain: "å_Content_ø",
+				stepMainStageExplain: "Hovedstadieinnhold",
+				stepPanelExplain: "Innhold",
 				stepMainStageNextTooltip: "Angi seksjonstittelen, og velg innholdet i hovedstadiet",
 				step2NextTooltip: "Angi seksjonstittelen og %LAYOUT-TYPE%-innholdet",
 				stepNextTooltipNext: "for å gå til neste trinn",
 				stepNextTooltipAdd: "for å legge til seksjonen",
-				firstAddExplain: "å_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._ø",
-				firstAddLeanMore: "å_Learn More_ø",
+				firstAddExplain: "Den første seksjonen er Hjem-seksjonen. Tenk på den seksjonen som omslaget i fortellingen. Tittelen du nettopp definerte, vises med store skrifttyper.",
+				firstAddLeanMore: "Finn ut mer",
 				titlePlaceholder: "Seksjonstittel..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Legg til tekst, koblinger og små grafikkelementer her.",
 				editorActionsTitle: "Handlinger på hovedstadiet",
-				editorActionsHelpDescr: "å_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ø"
+				editorActionsHelpDescr: "Bruk disse kontrollene til å opprette koblinger som vil endre hovedstadiet. Når for eksempel leseren klikker på en kobling, kan det være lurt å zoome inn kartet til en bestemt lokasjon, vise et annet webkart eller vise et bilde."
 			},
 			organizePopup: {
 				title: "Organiser",
@@ -54,13 +54,13 @@
 				lblColPubDate: "Publiseringsdato",
 				lblColStatus: "Status",
 				checkDisplayReverse: "Vis seksjoner i omvendt rekkefølge",
-				btnApplyWarning: "å_Confirm deletion of %NB% section(s)_ø",
+				btnApplyWarning: "Bekreft sletting av %NB% seksjon(er)",
 				deleteTooltip: "Slett",
 				firstSectionExplain: "(Startseksjonen kan ikke flyttes)"
 			},
 			exportData: {
-				btn: "å_Export content_ø",
-				tooltip: "å_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._ø"
+				btn: "Eksporter innhold",
+				tooltip: "Eksport av innholde gjør at du kan se på og lage en sikkerhetskopi av historikken hvis du skulle komme til å slette den. Bare kopier og lim inn innholdet fra sideinnholdet til en tekstbehandler."
 			},
 			help: {
 				lblHelp: "Hjelp",
@@ -69,22 +69,22 @@
 				lblOrga: "Organiser innhold",
 				lblEdit: "Redigeringer",
 				lblPublish: "Del",
-				lblTips: "å_Tips_ø",
+				lblTips: "Tips",
 				lblMore: "Vil du ha mer?",
 				lblLink: "Gå til webområdet for historiekart.",
 				content1Div1: "Du kan integrere en lang rekke ulike stiler når du bygger opp historien din. <strong>%LAYOUT_TITLE%</strong> inneholder vanligvis teksten din, bildene og videoene dine, mens kartene dine vanligvis havner på <strong>hovedstadiet</strong>. %TPL_NAME% gjør imidlertid at du kan ta med bilder, diagrammer og videoklipp på hovedstadiet, også.",
 				content1Div2: "Ved å legge til seksjoner kan du virkelig tilpasse historieopplevelsen. Etter hvert som leserne ruller gjennom %LAYOUT_TITLE%-teksten din, kan du gjøre slik at de ser et kart på hovedstadiet der det panoreres eller zoomes inn til viktige punkter, eller det kan lastes inn nye kart og bilder automatisk for å underbygge budskapet ditt.",
 				content2Div1: "Her kan du justere hvordan %TPL_NAME% skal se ut. Du kan finjustere både farger, oppsett og bredde her.",
 				content2Div2: "I tillegg kan du legge til delingskoblinger til Facebook, Twitter og Bitly, slik at leserne enkelt kan fortelle andre om %TPL_NAME%.",
-				content3Div1: "å_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ø",
+				content3Div1: "Innholdet ditt er organisert i seksjoner. Du kan ha så mange seksjoner du vil (se på dem som minikapitler). Flyten til disse kapitlene er viktig. Derfor kan du ved å klikke på Organiser endre rekkefølgen på seksjoner eller slette seksjoner hvis du ønsker.",
 				content4Div1: "Har du funnet en feil eller ønsker å endre materialet? Ikke noe problem. Se etter redigeringsikonet i programmet for å gjøre endringer av innholdet. Du kommer til å bruke redigeringsfunksjonene mange ganger etter hvert som du utvikler %TPL_NAME%!",
 				content5Div1: "%TPL_NAME% lagres i %PORTAL%-kontoen din, og er som standard privat. Du kan bestemme om du vil dele den bare med organisasjonen eller om den skal være åpen for alle. Vi gir deg til og med en forkortet, stabil URL-adresse som du enkelt kan dele.",
-				content6Div1: "å_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._ø",
-				content6Div2: "å_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_ø"
+				content6Div1: "Tittelen på Hjem-seksjonen er også tittelen på historikken; tenk på Hjem-seksjonen som omslaget på fortellingen. Hjem-seksjonen forblir synlig når leserne navigerer i historiekartet.",
+				content6Div2: "Din %LAYOUT_TITLE% må ikke bare være tekst, så vurder å bruke bilder og videoer for å gjøre fortellingen levende, og å bryte opp store deler med tekst!"
 			},
 			landing: {
-				lblAdd: "å_What do you want to call your Map Journal?_ø",
-				phAdd: "å_Enter your title..._ø",
+				lblAdd: "Hva vil du kalle historiekartet?",
+				phAdd: "Skriv inn tittelen...",
 				lblOR: "Eller",
 				lblHelp: "Få en omvisning"
 			},

@@ -33,20 +33,20 @@
             previewApplicationText: "Vorschau der Anwendung anzeigen",
             saveApplicationText: "Anwendung speichern",
             saveText: "Speichern",
-            toggleNavigationText: "Navigation umschalten",
+            toggleNavigationText: "Navigation ein-/ausschalten",
             formPlaceholderText: "Eigenes Formular",
             imageLogoPlaceholderText: "http://www.mysite.com/myimage.png",
             shareBuilderInProgressTitleMessage: "GeoForm wird veröffentlicht",
             shareBuilderProgressBarMessage:"Bitte warten...",
             shareBuilderTitleMessage: "GeoForm wurde aktualisiert und veröffentlicht!",
-            shareBuilderTextMessage: "Sie können mit der Erfassung von Informationen beginnen, indem Sie Elemente für andere Benutzer freigeben",
+            shareBuilderTextMessage: "Sie können mit der Erfassung von Informationen beginnen, indem Sie es für andere Benutzer freigeben",
             shareDialogFormText: "Formular-Link",
-            geoformTitleText: "Geo-Formular",
-            layerTabText: "Dies ist der Layer, aus dem die GeoForm-Vorlage erstellt wird. Der Layer muss ein Feature-Service sein, der für die Bearbeitung mit Freigabeberechtigungen aktiviert ist, die für Ihre Zielgruppe geeignet sind.",
+            geoformTitleText: "GeoForm",
+            layerTabText: "Dies ist der Layer, aus dem die GeoForm erstellt wird. Der Layer muss ein Feature-Service sein, für den die Bearbeitung aktiviert ist, und dessen Freigabeberechtigungen für Ihre Zielgruppe geeignet sind.",
             detailsTabText:"Verwenden Sie die Formulardetailfelder, um den Titel anzupassen, ein benutzerdefiniertes Logo hinzuzufügen und eine kurze Beschreibung Ihrer GeoForm-Zielgruppe bereitzustellen.",
-            fieldsTabText:"Hier können Sie festlegen, welche Felder für Ihre GeoForm-Zielgruppe sichtbar sind, die Beschriftungen bearbeiten, die sie sehen können, und eine kurze Beschreibung hinzufügen, um die Dateneingabe zu vereinfachen.",
+            fieldsTabText:"Hier können Sie festlegen welche Felder für Ihre GeoForm-Zielgruppe sichtbar sind, die Beschriftungen bearbeiten, die sie sehen können, und eine kurze Beschreibung hinzufügen, um die Dateneingabe zu vereinfachen.",
             styleTabText: "Legen Sie das GeoForm-Design anhand der folgenden Themen nach Ihren Vorlieben fest.",
-            publishTabText: "Wenn Sie Ihre GeoForm-Vorlage angepasst haben, speichern Sie die Anwendung, und starten Sie die Freigabe für Ihre Zielgruppe. Sie können jederzeit zu diesem Builder zurückkehren und die Anpassung je nach Feedback fortsetzen."
+            publishTabText: "Wenn Sie Ihre GeoForm-Vorlage angepasst haben, speichern Sie die Anwendung, und teilen Sie diese mit Ihrer Zielgruppe. Sie können jederzeit zu diesem Assistenten zurückkehren und die Anpassung je nach Feedback fortsetzen."
         }
     })
 );

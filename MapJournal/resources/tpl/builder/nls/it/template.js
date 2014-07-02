@@ -27,25 +27,25 @@
 				title: "Benvenuti a"
 			},
 			addEditPopup: {
-				disabled: "é_Add Section is disabled because the maximum number of allowed sections has been reached._È",
+				disabled: "Aggiungi sezione è disabilitato perché è stato raggiunto il numero massimo di sezioni consentite.",
 				titleAdd: "Aggiungi sezione",
-				titleAddHome: "é_Add Home Section_È",
+				titleAddHome: "Aggiungi prima sezione",
 				titleEdit: "Modifica sezione",
 				step: "Procedura",
-				stepMainStageExplain: "é_Main Stage Content_È",
-				stepPanelExplain: "é_Content_È",
+				stepMainStageExplain: "Contenuti visualizzazione principale",
+				stepPanelExplain: "Contenuti",
 				stepMainStageNextTooltip: "Immettere il titolo della sezione e selezionare i contenuti della visualizzazione principale",
 				step2NextTooltip: "Immettere il titolo della sezione e i contenuti di tipo %LAYOUT-TYPE%",
 				stepNextTooltipNext: "per continuare con il passo successivo",
 				stepNextTooltipAdd: "per aggiungere la sezione",
-				firstAddExplain: "é_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._È",
-				firstAddLeanMore: "é_Learn More_È",
+				firstAddExplain: "Questa prima sezione è paragonabile alla \"copertina\" della storia. Il titolo definito verrà visualizzato con caratteri di grandi dimensioni.",
+				firstAddLeanMore: "Ulteriori informazioni",
 				titlePlaceholder: "Titolo sezione..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Aggiungere qui testo, collegamenti ed elementi grafici di piccole dimensioni.",
 				editorActionsTitle: "Azioni visualizzazione principale",
-				editorActionsHelpDescr: "é_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._È"
+				editorActionsHelpDescr: "Utilizzare questi controlli per creare collegamenti che consentono di cambiare la visualizzazione principale. Ad esempio, quando il lettore fa clic su un collegamento, è possibile fare in modo che venga applicato lo zoom a una posizione specifica della mappa oppure che venga visualizzata un\'altra mappa Web o un\'immagine."
 			},
 			organizePopup: {
 				title: "Organizza",
@@ -54,13 +54,13 @@
 				lblColPubDate: "Data di pubblicazione",
 				lblColStatus: "Stato",
 				checkDisplayReverse: "Visualizza le sezioni in ordine inverso",
-				btnApplyWarning: "é_Confirm deletion of %NB% section(s)_È",
+				btnApplyWarning: "Conferma eliminazione di %NB% sezioni",
 				deleteTooltip: "Elimina",
 				firstSectionExplain: "(La prima sezione non può essere spostata)"
 			},
 			exportData: {
-				btn: "é_Export content_È",
-				tooltip: "é_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._È"
+				btn: "Esporta contenuti",
+				tooltip: "L\'esportazione dei contenuti consente di visualizzare e creare un backup del diario in caso di eliminazione accidentale. È sufficiente copiare e incollare i contenuti della pagina in qualsiasi elaboratore di testi."
 			},
 			help: {
 				lblHelp: "Guida",
@@ -69,22 +69,22 @@
 				lblOrga: "Organizza contenuti",
 				lblEdit: "Modifiche",
 				lblPublish: "Condividi",
-				lblTips: "é_Tips_È",
+				lblTips: "Suggerimenti",
 				lblMore: "Ulteriori informazioni?",
 				lblLink: "Visitare il sito Web delle story map.",
 				content1Div1: "Quando si crea la storia, è possibile integrare diversi stili. Lo stile di <strong>%LAYOUT_TITLE%</strong> è quello utilizzato in genere per testo, immagini e video per le mappe nella <strong>visualizzazione principale</strong>. %TPL_NAME% consente inoltre di inserire nella visualizzazione principale anche immagini, grafici e video.",
 				content1Div2: "Per personalizzare l\'esperienza di storytelling, è possibile aggiungere sezioni. In tal modo quando i lettori scorrono il testo di %LAYOUT_TITLE%, una mappa nella visualizzazione principale viene ridotta/ingrandita per indicare i punti chiave oppure vengono attivate/disattivate automaticamente nuove mappe e immagini a supporto del messaggio.",
 				content2Div1: "In questa finestra è possibile modificare l\'aspetto di %TPL_NAME% ridefinendo combinazioni colori, layout e larghezze.",
 				content2Div2: "È anche possibile condividere collegamenti in Facebook, Twitter e Bitly per consentire ai lettori di contribuire alla diffusione di %TPL_NAME%.",
-				content3Div1: "é_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._È",
+				content3Div1: "I contenuti sono organizzati in sezioni, paragonabili a minicapitoli. È possibile disporre del numero di sezioni desiderato. Il flusso delle sezioni è importante. In Organizza è possibile riordinarle o eliminarle secondo necessità.",
 				content4Div1: "È stato individuato un errore o si desidera modificare il materiale? Nessun problema. Grazie all\'icona di modifica presente nell\'applicazione, è possibile apportare modifiche ai contenuti. Durante lo sviluppo di %TPL_NAME% le funzioni di modifica verranno utilizzate spessissimo.",
 				content5Div1: "%TPL_NAME% viene salvato nell\'account %PORTAL% ed è privato per impostazione predefinita. È possibile decidere di condividerlo con l\'organizzazione o con tutti. Viene inoltre fornito un URL breve per facilitarne la condivisione.",
-				content6Div1: "é_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._È",
-				content6Div2: "é_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_È"
+				content6Div1: "Il titolo della prima sezione è anche il titolo del diario. La prima sezione è paragonabile alla \"copertina\" della propria storia. Il titolo della prima sezione resta visibile quando i lettori si spostano nel diario.",
+				content6Div2: "%LAYOUT_TITLE% non deve comprendere solo testo. Valutare l\'inserimento di foto e video per rendere più interessante la storia e suddividere le sezioni di testo particolarmente lunghe."
 			},
 			landing: {
-				lblAdd: "é_What do you want to call your Map Journal?_È",
-				phAdd: "é_Enter your title..._È",
+				lblAdd: "Come si desidera chiamare il Diario mappa?",
+				phAdd: "Immettere il titolo...",
 				lblOR: "Oppure",
 				lblHelp: "Tour"
 			},

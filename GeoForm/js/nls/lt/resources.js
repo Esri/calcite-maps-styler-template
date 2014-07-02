@@ -4,7 +4,7 @@
             error: "Žemėlapio sukurti nepavyko"
         },
         onlineStatus: {
-            online: "Į_You are currently online._š",
+            online: "Dabar esate prisijungę.",
             offline: "Dabar dirbate atsijungę. Kol bus užmegztas ryšys su serveriu, formų turinys bus saugomas lokaliai.",
             reconnecting: "Prisijungiama iš naujo&hellip;"
         },

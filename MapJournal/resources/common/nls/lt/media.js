@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Į_Media_š",
-				lblSelect2: "Į_Content_š",
+				lblSelect1: "Daugialypė informacija",
+				lblSelect2: "Turinys",
 				lblMap: "Žemėlapis",
 				lblImage: "Paveikslėlis",
 				lblVideo: "Video",
@@ -41,59 +41,59 @@
 				howToFind2: "Nukopijuokite skaičius tarp pirmo ir antro \'/\' bet kuriame Picasa ar G+ puslapyje"
 			},
 			videoSelectorCommon: {
-				check: "Į_Check_š",
-				notFound: "Į_Video not found_š",
-				found: "Į_Video found_š",
-				select: "Į_Select this video_š"
+				check: "Tikrinti",
+				notFound: "Vaizdo įrašas nerastas",
+				found: "Vaizdo įrašas surastas",
+				select: "Pasirinkite šį vaizdo įrašą"
 			},
 			videoSelectorHome: {
-				other: "Į_Other_š"
+				other: "Kita"
 			},
 			videoSelectorYoutube: {
-				url: "Į_URL of a Youtube video_š",
+				url: "Youtube vaizdo įrašo URL",
 				pageInputLbl: "Vartotojo vardas",
 				lookupMsgError: "Vartotojas nerastas",
 				howToFind: "Kaip rasti YouTube vartotojo vardą",
 				howToFind2: "Vartotojo vardas rodomas po video",
-				found: "Į_Found_š",
+				found: "Rasta",
 				noData: "Nerasta viešų video"
 			},
 			videoSelectorVimeo: {
-				url: "Į_URL of a Vimeo video_š"
+				url: "Vimeo vaizdo įrašo URL"
 			},
 			videoSelectorOther: {
-				explain1: "Į_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._š",
-				explain2: "Į_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._š",
-				explain3: "Į_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._š",
-				webpage: "Į_Web page feature_š"
+				explain1: "Žemėlapių žurnalas negali paleisti neapdorotų vaizdo įrašų (pvz., avi, mpeg), bet jis gali leisti patalpintus vaizdo įrašų failus, kuriuose yra integruoti leistuvai (pvz., YouTube ar Vimeo).",
+				explain2: "Dauguma vaizdo įrašų talpinimo paslaugų siūlo tokią funkciją, tereikia rasti vaizdo įrašo integravimo parinktį, nukopijuoti pateiktą kodą ir naudoti %WEBPAGE%.",
+				explain3: "Be to, jei norite patalpinti vaizdo įrašą patys, galite sukurti HTML puslapį, kuriame būtų naudojamas vaizdo leistuvas, pvz., %EXAMPLE%, patalpinti tą puslapį ir taip pat naudoti %WEBPAGE%.",
+				webpage: "Tinklalapio elementas"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Į_Webpage URL_š",
-				lblEmbed: "Į_Embed code_š",
-				lblOR: "Į_OR_š",
-				lblError1: "Į_Error, clear one of the two input fields._š",
-				lblError2: "Į_Embed code can only contain one <iframe>_š"
+				lblUrl: "Tinklalapio URL",
+				lblEmbed: "Įterpimo kodas",
+				lblOR: "ARBA",
+				lblError1: "Klaida, išvalykite vieną iš dviejų įvesties laukų.",
+				lblError2: "Įterpimo kode gali būti tik vienas <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Į_An image URL should start with http:// and end with .jpg or .png_š",
-				lblLabel: "Į_Image Caption_š",
+				lblURLPH: "Paveikslėlio URL turi prasidėti http:// ir baigtis .jpg arba .png",
+				lblLabel: "Paveikslėlio antraštė",
 				lblLabel1: "Antraštė",
 				lblLabel2: "Tekstas, rodomas užvedus",
 				lblLabel3: "Nėra",
 				lblLabelPH: "Įveskite tekstą...",
-				lblMaximize: "Į_Include a maximize button in the corner of the image_š",
-				lblMaximizeHelp: "Į_Recommended only for high quality photos_š",
+				lblMaximize: "Paveikslėlio kampe įtraukti maksimizavimo mygtuką",
+				lblMaximizeHelp: "Rekomenduojama tik aukštos raiškos nuotraukoms",
 				lblPosition: "Padėtis",
 				lblPosition1: "Centruoti",
 				lblPosition2: "Užpildyti",
 				lblPosition3: "Talpinti",
 				lblPosition4: "Ištempti",
-				lblPosition5: "Į_Custom_š",
-				tooltipDimension: "Į_The value can be specified in 'px' or '%'_š",
+				lblPosition5: "Adaptuota",
+				tooltipDimension: "Reikšmę galima nurodyti piks. arba %",
 				lblPosition2Explain: "(gali būti apkarpoma)",
 				lblPosition3Explain: "(nebus apkarpoma)",
-				lblPosition3Explain2: "Į_(width will always fit the panel)_š",
+				lblPosition3Explain2: "(plotis visada atitiks skydą)",
 				lblPosition4Explain: "(gali būti iškraipoma)"
 			},
 			editorActionGeocode: {

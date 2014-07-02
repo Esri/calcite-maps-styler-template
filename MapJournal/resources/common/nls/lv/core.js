@@ -14,8 +14,8 @@
 				start: "Starts",
 				loading: "Ielādē",
 				disabledAdmin: "Šo funkciju administrators ir atspējojis",
-				width: "ķ_Width_ū",
-				height: "ķ_Height_ū"
+				width: "Platums",
+				height: "Augstums"
 			},
 			inlineFieldEdit: {
 				editMe: "Rediģē mani!"
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "Izkārtojums",
 				explain: "Kādu izkārtojumu vēlaties izmantot?",
-				explainInit: "ķ_You can change the layout anytime from the settings dialog._ū",
+				explainInit: "Varat mainīt izkārtojumu jebkurā laikā iestatījumu dialoglodziņā.",
 				viewExample: "Skatiet piemēru tiešraidē"
 			},
 			settingsTheme: {

@@ -20,7 +20,7 @@
             buttonText: "ตกลง",
         },
         ui:{
-            basemapButton: "ก้_Basemap_ษฺ"
+            basemapButton: "แผนที่ฐาน"
         }
     })
 

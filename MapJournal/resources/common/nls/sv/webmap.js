@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Å_Web map_ö",
+				lblWebMap: "Webbkarta",
 				lblLocation: "Plats",
 				lblContent: "Innehåll",
 				lblPopup: "Popup-fönster",
-				lblControls: "Å_Extras_ö",
+				lblControls: "Extra",
 				lblOverview: "Översiktskarta",
 				lblLegend: "Teckenförklaring",
 				loadingTitle: "Läser in titel",
@@ -22,19 +22,19 @@
 				newMap: "Nyligen vald webbkarta",
 				webmapDefault: "Standardwebbkarta",
 				customCfg: "Anpassad konfiguration",
-				tooltipLocation: "Å_Define the map location that will be used when your readers navigate to this section._ö",
+				tooltipLocation: "Definiera vilken kartplats som ska användas när användarna navigerar till det här avsnittet.",
 				tooltipContent: "Definiera synliga lager.",
 				tooltipPopup: "Välj ett popupfönster som ska visas när användarna navigerar till det här avsnittet.",
 				tooltipOverview: "Visa en liten översiktskarta tillsammans med huvudkartan.",
 				tooltipLegend: "Visa en teckenförklaring på kartan, vilket kan vara användbart om den innehåller många lager och symboler.",
-				mapCfgInvite: "Å_Use these controls to configure your map_ö"
+				mapCfgInvite: "Konfigurera kartan med dessa kontroller"
 			},
 			configure: {
 				btnReset: "Återställ",
 				btnCancel: "Avbryt",
 				tocTitle: "Kartinnehåll",
 				tocExplain: "Välj vilka lager som ska visas.",
-				tocSave: "Å_Save map content_ö",
+				tocSave: "Spara kartinnehåll",
 				extentTitle: "Kartplats",
 				extentExplain: "Panorera och zooma kartan för att definiera hur användarna ska se den.",
 				extentSave: "Spara kartplats",

@@ -21,7 +21,7 @@
 				cfgMedium: "Średni",
 				cfgLarge: "Duży",
 				socialLinksLabel: "Wyświetlaj łącza do udostępniania u dołu każdej sekcji",
-				socialLinksDescr: "Umożliwia to użytkownikom tworzenie odnośników do określonych sekcji aplikacji %TPL_NAME% i ich promowanie. Na przykład, jeżeli użyjesz ikony udostępniania sekcji, użytkownicy zostaną przekierowani do określonej sekcji aplikacji %TPL_NAME%, zamiast początku opowiadania. Użytkownicy mogą skorzystać z łącza mediów społecznościowych w sekcji tytułu, aby promować całą aplikację %TPL_NAME% (Karta nagłówka) — w tym przypadku użytkownicy są przekierowywani na początek aplikacji %TPL_NAME%."
+				socialLinksDescr: "Umożliwia to użytkownikom tworzenie odnośników do określonych sekcji aplikacji %TPL_NAME% i ich promowanie. Na przykład, jeżeli użyjesz ikony udostępniania sekcji, użytkownicy zostaną przekierowani do określonej sekcji aplikacji %TPL_NAME%, zamiast do początku opowiadania. Użytkownicy mogą skorzystać z łącza mediów społecznościowych w sekcji tytułu, aby promować całą aplikację %TPL_NAME% (Karta nagłówka) — w tym przypadku użytkownicy są przekierowywani do początku aplikacji %TPL_NAME%."
 			},
 			initPopup: {
 				title: "Witamy w"
@@ -32,8 +32,8 @@
 				titleAddHome: "Dodaj sekcję Start",
 				titleEdit: "Edytuj sekcję",
 				step: "Etap",
-				stepMainStageExplain: "Zasoby obszaru głównego",
-				stepPanelExplain: "Zasoby",
+				stepMainStageExplain: "Zawartość obszaru głównego",
+				stepPanelExplain: "Zawartość",
 				stepMainStageNextTooltip: "Wpisz tytuł sekcji i wybierz zawartość, która znajdzie się w obszarze głównym",
 				step2NextTooltip: "Wpisz tytuł sekcji i zawartość, która będzie wyświetlana w układzie %LAYOUT-TYPE%",
 				stepNextTooltipNext: "aby przejść do kolejnego etapu",
@@ -60,7 +60,7 @@
 			},
 			exportData: {
 				btn: "Eksportuj zasoby",
-				tooltip: "Dzięki eksportowaniu zasobów możesz przeglądać i utworzyć kopię zapasową swojego Dziennika na wypadek, gdyby został on przez przypadek usunięty. Wystarczy skopiować zawartość strony i wkleić ją do dowolnego edytora procesu."
+				tooltip: "Dzięki eksportowaniu zawartości możesz przeglądać i utworzyć kopię zapasową swojego Dziennika na wypadek, gdyby został on przez przypadek usunięty. Wystarczy skopiować zawartość strony i wkleić ją do dowolnego edytora tekstu."
 			},
 			help: {
 				lblHelp: "Pomoc",
@@ -79,8 +79,8 @@
 				content3Div1: "Zawartość jest podzielona na sekcje. Liczba sekcji, które można dodać jest nieograniczona (sekcje są w postaci niewielkich rozdziałów). Sposób i kolejność prezentacji rozdziałów są bardzo ważne. Na ekranie Organizuj można zmieniać kolejność sekcji lub usuwać je wedle uznania.",
 				content4Div1: "Czy znaleziono błąd w aplikacji, czy chcesz zmienić materiały? Odszukaj ikonę edycji w odpowiednim miejscu w aplikacji i zmodyfikuj zawartość. Podczas tworzenia aplikacji %TPL_NAME% konieczne może być wielokrotne korzystanie z funkcji edycji!",
 				content5Div1: "Aplikacja %TPL_NAME% zostaje zapisana na koncie w portalu %PORTAL% i domyślnie zostaje oznaczona jako prywatna. Użytkownik może zadecydować, czy będzie ona udostępniona instytucji, czy też dostępna dla użytkowników z całego świata. W celu ułatwienia użytkownikom udostępniania zapewniamy im skrócony adres URL.",
-				content6Div1: "Tytuł sekcji Start jest także tytułem Twojego Dziennika; sekcję Start należy postrzegać jako „okładkę” swojej historii. Tytuł sekcji Start będzie widoczny, gdy użytkownicy będą poruszali się po Dzienniku.",
-				content6Div2: "%LAYOUT_TITLE% nie musi mieć wyłącznie formy tekstowej, pomyśl o dodaniu zdjęć, dzięki którym ożywisz historię oraz o podzieleniu długiego tekstu!"
+				content6Div1: "Tytuł sekcji Start jest także tytułem Twojego Dziennika; sekcję Start należy postrzegać jako „okładkę” swojego opowiadania. Tytuł sekcji Start będzie widoczny, gdy użytkownicy będą poruszali się po Dzienniku.",
+				content6Div2: "%LAYOUT_TITLE% nie musi mieć wyłącznie formy tekstowej, pomyśl o dodaniu zdjęć, dzięki którym ożywisz opowiadanie oraz o podzieleniu długiego tekstu!"
 			},
 			landing: {
 				lblAdd: "Jak chcesz nazwać Dziennik mapy?",

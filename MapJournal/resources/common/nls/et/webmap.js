@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Š_Web map_ä",
+				lblWebMap: "Veebikaart",
 				lblLocation: "Asukoht",
 				lblContent: "Sisu",
 				lblPopup: "Hüpikaken",
-				lblControls: "Š_Extras_ä",
+				lblControls: "Lisandid",
 				lblOverview: "Ülevaatekaart",
 				lblLegend: "Legend",
 				loadingTitle: "Pealkirja laadimine",
@@ -22,19 +22,19 @@
 				newMap: "Vastvalitud veebikaart",
 				webmapDefault: "Veebikaardi vaikeseade",
 				customCfg: "Kohandatud konfiguratsioon",
-				tooltipLocation: "Š_Define the map location that will be used when your readers navigate to this section._ä",
+				tooltipLocation: "Määratlege kaardil asukoht, mida kasutatakse, kui teie lugejad liiguvad sellesse jaotisse.",
 				tooltipContent: "Määratlege nähtavad kihid.",
 				tooltipPopup: "Valige hüpik, mis kuvatakse, kui teie lugejad liiguvad sellesse jaotisse.",
 				tooltipOverview: "Kuva koos peamise kaardiga väike ülevaatekaart",
 				tooltipLegend: "Kuva kaardil legend, millest on abi siis, kui kaardil on palju kihte ja sümboleid.",
-				mapCfgInvite: "Š_Use these controls to configure your map_ä"
+				mapCfgInvite: "Nende juhtelementide abil saate kaardi konfigureerida"
 			},
 			configure: {
 				btnReset: "Lähtesta",
 				btnCancel: "Tühista",
 				tocTitle: "Kaardi sisu",
 				tocExplain: "Valige kuvatavad kihid.",
-				tocSave: "Š_Save map content_ä",
+				tocSave: "Salvesta kaardi sisu",
 				extentTitle: "Kaardikoht",
 				extentExplain: "Saate kaarti liigutada ja suumida, et määrata selle kuvamine lugejatele.",
 				extentSave: "Salvesta kaardikoht",

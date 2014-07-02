@@ -2,7 +2,7 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Medio",
+				lblSelect1: "Medios",
 				lblSelect2: "Contenido",
 				lblMap: "Mapa",
 				lblImage: "Imagen",

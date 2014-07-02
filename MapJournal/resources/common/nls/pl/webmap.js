@@ -22,7 +22,7 @@
 				newMap: "Nowo wybrana mapa internetowa",
 				webmapDefault: "Domyślne ustawienia mapy",
 				customCfg: "Konfiguracja niestandardowa",
-				tooltipLocation: "Określ lokalizację na mapie, która będzie używana, gdy oglądający ją użytkownicy przejdą do tej sekcji.",
+				tooltipLocation: "Określ lokalizację na mapie, która będzie używana, gdy przeglądający ją użytkownicy przejdą do tej sekcji.",
 				tooltipContent: "Określ widoczne warstwy.",
 				tooltipPopup: "Wybierz okno podręczne, które ma być wyświetlane po przejściu użytkowników do tej sekcji.",
 				tooltipOverview: "Wyświetl w rogu niewielką mapę przeglądową razem z mapą główną",
@@ -56,7 +56,7 @@
 				searchTitle: "Wyszukaj",
 				ok: "OK",
 				cancel: "Anuluj",
-				placeholder: "Wpisz wyszukiwany zwrot lub identyfikator mapy internetowej"
+				placeholder: "Wpisz wyszukiwany hasło lub identyfikator mapy internetowej"
 			}
 		}
 	})

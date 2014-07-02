@@ -14,8 +14,8 @@
 				start: "Aloitus",
 				loading: "Ladataan",
 				disabledAdmin: "Pääkäyttäjä on poistanut tämän toiminnon käytöstä.",
-				width: "Å_Width_ö",
-				height: "Å_Height_ö"
+				width: "Leveys",
+				height: "Korkeus"
 			},
 			inlineFieldEdit: {
 				editMe: "Muokkaa minua!"
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "Asettelu",
 				explain: "Mitä asettelua haluat käyttää?",
-				explainInit: "Å_You can change the layout anytime from the settings dialog._ö",
+				explainInit: "Voit muuttaa asettelua asetusvalintaikkunan kautta milloin tahansa.",
 				viewExample: "Katsele reaaliaikaista esimerkkiä"
 			},
 			settingsTheme: {

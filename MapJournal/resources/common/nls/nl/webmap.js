@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Webkaart",
+				lblWebMap: "Webmap",
 				lblLocation: "Locatie",
 				lblContent: "Inhoud",
 				lblPopup: "Pop-up",
@@ -20,7 +20,7 @@
 				current: "Huidige webmap",
 				select: "Een webmap selecteren",
 				newMap: "Nieuw geselecteerde webmap",
-				webmapDefault: "Standaard webmap",
+				webmapDefault: "Standaard van webmap",
 				customCfg: "Aangepaste configuratie",
 				tooltipLocation: "Definieer de kaartlocatie die zal worden gebruikt wanneer uw lezers naar deze sectie gaan.",
 				tooltipContent: "Definieer de zichtbare kaartlagen.",

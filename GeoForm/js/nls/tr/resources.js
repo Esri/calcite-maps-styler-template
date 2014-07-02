@@ -4,7 +4,7 @@
             error: "Harita oluşturulamıyor"
         },
         onlineStatus: {
-            online: "Şu anda çevrimiçisiniz.",
+            online: "Şu anda çevrim içi durumundasınız.",
             offline: "Şu anda çevrimdışı çalışıyorsunuz. Form iletimleri, sunucu ile bir bağlantı kurulana kadar yerel olarak kaydedilecek.",
             reconnecting: "Yeniden bağlanıyor&hellip;"
         },

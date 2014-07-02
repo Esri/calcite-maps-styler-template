@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ø_Media_å",
-				lblSelect2: "ø_Content_å",
+				lblSelect1: "Medier",
+				lblSelect2: "Indhold",
 				lblMap: "Kort",
 				lblImage: "Billede",
 				lblVideo: "Video",
@@ -41,59 +41,59 @@
 				howToFind2: "Kopier tal mellem første og anden \'\/\' på Picasa eller en G+-side"
 			},
 			videoSelectorCommon: {
-				check: "ø_Check_å",
-				notFound: "ø_Video not found_å",
-				found: "ø_Video found_å",
-				select: "ø_Select this video_å"
+				check: "Kontroll\ér",
+				notFound: "Video ikke fundet",
+				found: "Video fundet",
+				select: "Vælg denne video"
 			},
 			videoSelectorHome: {
-				other: "ø_Other_å"
+				other: "Andet"
 			},
 			videoSelectorYoutube: {
-				url: "ø_URL of a Youtube video_å",
+				url: "URL til en Youtube-video",
 				pageInputLbl: "Brugernavn",
 				lookupMsgError: "Bruger ikke fundet",
 				howToFind: "Sådan finder du et YouTube-brugernavn",
 				howToFind2: "Brugernavnet vises under videoer",
-				found: "ø_Found_å",
+				found: "Fundet",
 				noData: "Ingen offentlige videoer fundet"
 			},
 			videoSelectorVimeo: {
-				url: "ø_URL of a Vimeo video_å"
+				url: "URL til en Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "ø_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._å",
-				explain2: "ø_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._å",
-				explain3: "ø_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._å",
-				webpage: "ø_Web page feature_å"
+				explain1: "Kortjournal kan ikke afspille \"rå\" videoer (f.eks. avi, mpeg), men app\'en kan afspille \"hostede\" videofiler, der har indbyggede afspillere (f.eks. YouTube eller Vimeo).",
+				explain2: "De fleste online-videoværtstjenester tilbyder denne funktion. Du skal finde indstillingen til indlejring af videoen, kopiere den givne kode og bruge %WEBPAGE%.",
+				explain3: "Hvis du ønsker selv at være vært for videoen, kan du også oprette en HTML-side, der bruger en videoafspiller som %EXAMPLE%, være vært for den pågældende side og også bruge %WEBPAGE%.",
+				webpage: "Websideobjekt"
 			},
 			webpageSelectorHome: {
-				lblUrl: "ø_Webpage URL_å",
-				lblEmbed: "ø_Embed code_å",
-				lblOR: "ø_OR_å",
-				lblError1: "ø_Error, clear one of the two input fields._å",
-				lblError2: "ø_Embed code can only contain one <iframe>_å"
+				lblUrl: "Webside-URL",
+				lblEmbed: "Indlejr kode",
+				lblOR: "ELLER",
+				lblError1: "Fejl. Ryd et af de to indtastningsfelter.",
+				lblError2: "Indlejret kode kan kun indeholde \én <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "ø_An image URL should start with http:// and end with .jpg or .png_å",
-				lblLabel: "ø_Image Caption_å",
+				lblURLPH: "En billede-URL skal starte med http:// og slutte med .jpg eller .png",
+				lblLabel: "Billedtekst",
 				lblLabel1: "Billedtekst",
 				lblLabel2: "Hold musen over teksten",
 				lblLabel3: "Ingen",
 				lblLabelPH: "Indtast noget tekst...",
-				lblMaximize: "ø_Include a maximize button in the corner of the image_å",
-				lblMaximizeHelp: "ø_Recommended only for high quality photos_å",
+				lblMaximize: "Medtag en maksim\ér-knap i hjørnet af billedet",
+				lblMaximizeHelp: "Anbefales kun for højkvalitetsfotos",
 				lblPosition: "Position",
 				lblPosition1: "Midt",
 				lblPosition2: "Fyld",
 				lblPosition3: "Tilpas",
 				lblPosition4: "Stræk",
-				lblPosition5: "ø_Custom_å",
-				tooltipDimension: "ø_The value can be specified in 'px' or '%'_å",
+				lblPosition5: "Tilpasset",
+				tooltipDimension: "Værdien kan angives i \'px\' eller \'%\'",
 				lblPosition2Explain: "(kan beskæres)",
 				lblPosition3Explain: "(kan ikke beskæres)",
-				lblPosition3Explain2: "ø_(width will always fit the panel)_å",
+				lblPosition3Explain2: "(bredden vil altid passe til panelet)",
 				lblPosition4Explain: "(kan forvrænges)"
 			},
 			editorActionGeocode: {

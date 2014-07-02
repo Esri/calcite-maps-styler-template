@@ -1,11 +1,11 @@
 ﻿define(
    ({
         map: {
-            error: "ã_Unable to create map_Ç"
+            error: "Impossível criar mapa"
         }, 
         tools: {
-        	legend: "ã_Legend_Ç",
-        	 about: "ã_About_Ç"
+        	legend: "Legenda",
+        	 about: "Sobre"
         }
     })
    

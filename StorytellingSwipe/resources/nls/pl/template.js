@@ -71,7 +71,7 @@
 				signInTwo: "aby zapisać aplikację."
 			},
 			header:{
-				editMe: "Zmodyfikuj mnie!",
+				editMe: "Edytuj!",
 				templateTitle: "Ustaw tytuł szablonu",
 				templateSubtitle: "Ustaw podtytuł szablonu"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Ustaw opis panelu bocznego",
-				editMe: "Zmodyfikuj mnie!",
+				editMe: "Edytuj!",
 				legendTitle: "Legenda"
 			},
 			infoWindow: {

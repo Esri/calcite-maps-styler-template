@@ -5,7 +5,7 @@
         },
         onlineStatus: {
             online: "Twoje połączenie jest obecnie aktywne.",
-            offline: "Aktualnie pracujesz w trybie offline. Formularze zgłoszeniowe będą zapisywane lokalnie do momentu, gdy będzie mogło zostać nawiązane połączenie z serwerem.",
+            offline: "Aktualnie pracujesz w trybie offline. Formularze zgłoszeniowe będą zapisywane lokalnie do momentu, gdy nawiązane zostanie połączenie z serwerem.",
             reconnecting: "Ponowne łączenie&hellip;"
         },
 	 configure: {

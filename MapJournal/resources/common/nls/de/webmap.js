@@ -22,7 +22,7 @@
 				newMap: "Neu ausgewählte Webkarte",
 				webmapDefault: "Webkartenstandard",
 				customCfg: "Benutzerdefinierte Konfiguration",
-				tooltipLocation: "Die Kartenposition definieren, die verwendet wird, wenn Leser zu diesem Abschnitt navigieren.",
+				tooltipLocation: "Definieren Sie die Kartenposition, die verwendet wird, wenn Leser zu diesem Abschnitt navigieren.",
 				tooltipContent: "Die sichtbaren Layer definieren.",
 				tooltipPopup: "Ein Pop-up auswählen, das angezeigt werden soll, wenn Leser zu diesem Abschnitt navigieren.",
 				tooltipOverview: "Eine kleine Übersichtskarte mit der Hauptkarte anzeigen",

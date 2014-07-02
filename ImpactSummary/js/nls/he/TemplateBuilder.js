@@ -2,8 +2,8 @@
      ({
         "widgets": {
             "TemplateBuilder": {
-                "enterBuilderButtonText": "הכנס לבונה",
-                "exitBuilderButtonText": "צא מהבונה",
+                "enterBuilderButtonText": "הכנס לאשף הבנייה",
+                "exitBuilderButtonText": "צא מאשף הבנייה",
                 "enterBuilderModeHelpText": "הכנס למוד בניה להגדרת האפלירציה",
                 "builderModeHelpText": "תבנית מוד הבניה",
                 "webmapCaption": "מפה",
@@ -38,9 +38,9 @@
                 "defaultBasemapText": "מפת בסיס ברירת מחדל",
                 "entireAreaButton": "האזור כולו",
                 "entireAreaOnStartButton": "האזור כולו בהתחלה",
-                "aboutPanel": "אודות הפאנל",
-                "legendPanel": "פאנל מקרא",
-                "layersPanel": "פאנל שכבות",
+                "aboutPanel": "אודות הפנל",
+                "legendPanel": "פנל מקרא",
+                "layersPanel": "פנל שכבות",
                 "dataConfigurationButtonText": "תצורת המידע",
                 "savingChangesMessage": "שומר שינויים...",
                 "nextButtonText": "הבא",

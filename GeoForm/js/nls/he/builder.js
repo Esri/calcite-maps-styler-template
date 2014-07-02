@@ -14,7 +14,7 @@
             previewText: "6. תצוגה מקדימה",
             publishText: "7. פרסם",
             titleText: "כלי בניה ל- GeoForm",
-            descriptionText: "GeoForm הוא תבנית אפליקציה לעריכת מידע של <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>שירות ישויות</a> מבוסס טפסים.  אפליקציה זו מאפשרת למשתמשים להכניס מידע דרך טופס במקום חלונות קופצים תוך מינוף הכוח של <a target='_blank'  href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> ושירותי ישויות הניתנים לעריכה. השתמש בבונה זה כדי לפרוס את ה- GeoForm שלך לפי השלבים  המפורטים.",
+            descriptionText: "GeoForm הוא תבנית אפליקציה לעריכת מידע של <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>שירות ישויות</a> מבוסס טפסים.   אפליקציה זו מאפשרת למשתמשים להכניס מידע דרך טופס במקום חלונות קופצים תוך מינוף הכוח של <a target='_blank'   href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Web Map</a> ושירותי ישויות הניתנים לעריכה. השתמש באשף הבנייה כדי לפרוס את ה- GeoForm שלך לפי השלבים   המפורטים.",
             btnPreviousText: "קודם",
             btnNextText:"הבא",
             webmapTabTitleText: "בחר Webmap",
@@ -46,7 +46,7 @@
             detailsTabText:"השתמש בתיבות פרטי טופס למטה כדי להתאים את הכותרת, להוסיף לוגו מותאם ולספק תאור קצר לקהל של GeoForm שלך.",
             fieldsTabText:"כאן אתה יכול לבחור אלו שדות יוצגו לקהל ה-GeoForm שלך, לערוך את התוויות שהם יראו ולהוסיף תאור קצר שיעזור עם הכנסת מידע.",
             styleTabText: "סגנן את ה-GeoForm שלך תוך שימוש ב-themes למטה בהתאם להעדפות שלך.",
-            publishTabText: "אם סיימת להתאים את ה-GeoForm שלך, שמור את האפליקציה והתחל לשתף אותה עם הקהל שלך. אתה יכול תמיד לחזור לבונה הזה ולהמשיך להתאים אותה בהתאם למשוב."
+            publishTabText: "אם סיימת להתאים את ה-GeoForm שלך, שמור את האפליקציה והתחל לשתף אותה עם הקהל שלך. אתה יכול תמיד לחזור לאשף בנייה הזה ולהמשיך להתאים אותה בהתאם למשוב."
         }
     })
 );

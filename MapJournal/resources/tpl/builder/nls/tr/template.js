@@ -60,7 +60,7 @@
 			},
 			exportData: {
 				btn: "İçeriği dışa aktar",
-				tooltip: "İçeriğin dışa aktarılması yanlışlıkla silmeniz halinde Bülteninizin bir yedeğini oluşturmanız ve görüntülemenizi sağlar. İçerik sayfasını kopyalayıp herhangi bir kelime işlemcisine yapıştırmanız yeterlidir."
+				tooltip: "İçeriğin dışa aktarılması,  Bülteninizin yanlışlıkla silmeniz gibi durumlarda onun bir yedeğini oluşturmanıza ve görüntülemenize imkan sağlar. İçerik sayfasını kopyalayıp herhangi bir kelime işlemcisine yapıştırmanız yeterlidir."
 			},
 			help: {
 				lblHelp: "Yardım",

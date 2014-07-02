@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "ã_Web map_Ç",
+				lblWebMap: "Mapa web",
 				lblLocation: "Local",
 				lblContent: "Conteúdo",
 				lblPopup: "Janela Pop-up",
-				lblControls: "ã_Extras_Ç",
+				lblControls: "Extras",
 				lblOverview: "Vista Geral do Mapa",
 				lblLegend: "Legenda",
 				loadingTitle: "Carregando título",
@@ -22,19 +22,19 @@
 				newMap: "Novo mapa web selecionado",
 				webmapDefault: "Mapa web por defeito",
 				customCfg: "Configuração personalizada",
-				tooltipLocation: "ã_Define the map location that will be used when your readers navigate to this section._Ç",
+				tooltipLocation: "Defina a localização de mapa que será utilizada quando os seus leitores navegarem para esta secção.",
 				tooltipContent: "Definir as camadas visíveis.",
 				tooltipPopup: "Escolha uma janela popup a ser exibida quando os seus leitores navegarem para esta secção.",
 				tooltipOverview: "Exiba um pequeno mapa de vista geral juntamente com o mapa principal.",
 				tooltipLegend: "Exiba a legenda de mapa no mapa, útil quando o mapa tem muitas camadas e símbolos.",
-				mapCfgInvite: "ã_Use these controls to configure your map_Ç"
+				mapCfgInvite: "Utilize estes controlos para configurar o seu mapa"
 			},
 			configure: {
 				btnReset: "Repor definições padrão",
 				btnCancel: "Cancelar",
 				tocTitle: "Conteúdo do mapa",
 				tocExplain: "Escolha as camadas que serão exibidas.",
-				tocSave: "ã_Save map content_Ç",
+				tocSave: "Guardar conteúdo do mapa",
 				extentTitle: "Localização do Mapa",
 				extentExplain: "Mova e amplie o mapa para definir como este aparecerá aos leitores.",
 				extentSave: "Guardar localização do Mapa",

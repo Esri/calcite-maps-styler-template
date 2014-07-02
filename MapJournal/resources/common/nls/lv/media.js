@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ķ_Media_ū",
-				lblSelect2: "ķ_Content_ū",
+				lblSelect1: "Medijs",
+				lblSelect2: "Saturs",
 				lblMap: "Karte",
 				lblImage: "Attēls",
 				lblVideo: "Video",
@@ -41,59 +41,59 @@
 				howToFind2: "Kopēt ciparus starp pirmo un otro \'/\' no jebkura Picasa vai G+ lapa"
 			},
 			videoSelectorCommon: {
-				check: "ķ_Check_ū",
-				notFound: "ķ_Video not found_ū",
-				found: "ķ_Video found_ū",
-				select: "ķ_Select this video_ū"
+				check: "Pārbaudīt",
+				notFound: "Video nav atrasts",
+				found: "Video atrasts",
+				select: "Atlasīt šo video"
 			},
 			videoSelectorHome: {
-				other: "ķ_Other_ū"
+				other: "Cits"
 			},
 			videoSelectorYoutube: {
-				url: "ķ_URL of a Youtube video_ū",
+				url: "Youtube video URL",
 				pageInputLbl: "Lietotāja vārds",
 				lookupMsgError: "Lietotājs nav atrasts",
 				howToFind: "Kā atrast YouTube lietotāja vārdu",
 				howToFind2: "Lietotāja vārds ir attēlots zem video",
-				found: "ķ_Found_ū",
+				found: "Atrasts",
 				noData: "Nav atrasti publiski video"
 			},
 			videoSelectorVimeo: {
-				url: "ķ_URL of a Vimeo video_ū"
+				url: "Vimeo video URL"
 			},
 			videoSelectorOther: {
-				explain1: "ķ_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._ū",
-				explain2: "ķ_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._ū",
-				explain3: "ķ_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._ū",
-				webpage: "ķ_Web page feature_ū"
+				explain1: "Karšu žurnāls nevar atskaņot neapstrādātus video (piemēram, avi, mpeg), bet var atskaņot mitinātus video failus ar iebūvētiem atskaņotājiem (piemēram, YouTube vai Vimeo).",
+				explain2: "Lielākā daļa video mitināšanas pakalpojumu piedāvā šo funkciju, jums ir jāatrod iespēja iegult video, nokopēt saņemto kodu un izmantot %WEBPAGE%.",
+				explain3: "Ja video vēlaties mitināt pats, varat arī izveidot HTML lapu, kurā tiek izmantots video atskaņotājs (piemēram, %EXAMPLE%), mitināt šo lapu un arī izmantot %WEBPAGE%.",
+				webpage: "Web lapas funkcija"
 			},
 			webpageSelectorHome: {
-				lblUrl: "ķ_Webpage URL_ū",
-				lblEmbed: "ķ_Embed code_ū",
-				lblOR: "ķ_OR_ū",
-				lblError1: "ķ_Error, clear one of the two input fields._ū",
-				lblError2: "ķ_Embed code can only contain one <iframe>_ū"
+				lblUrl: "Web lapas URL",
+				lblEmbed: "Iegult kodu",
+				lblOR: "VAI",
+				lblError1: "Kļūda, notīriet vienu no diviem ievades laukiem.",
+				lblError2: "Iegultais kods var saturēt tikai vienu <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "ķ_An image URL should start with http:// and end with .jpg or .png_ū",
-				lblLabel: "ķ_Image Caption_ū",
+				lblURLPH: "Attēla URL ir jāsākas ar http:// un jābeidzas ar .jpg vai .png",
+				lblLabel: "Attēla teksts",
 				lblLabel1: "Uzraksts",
 				lblLabel2: "Novietot virs teksta",
 				lblLabel3: "Neviens",
 				lblLabelPH: "Ievadiet tekstu...",
-				lblMaximize: "ķ_Include a maximize button in the corner of the image_ū",
-				lblMaximizeHelp: "ķ_Recommended only for high quality photos_ū",
+				lblMaximize: "Attēla stūrī iekļaut maksimizēšanas pogu",
+				lblMaximizeHelp: "Ieteicams tikai augstas kvalitātes foto",
 				lblPosition: "Pozīcija",
 				lblPosition1: "Centrs",
 				lblPosition2: "Aizpildīt",
 				lblPosition3: "Ietilpināt",
 				lblPosition4: "Izstiept",
-				lblPosition5: "ķ_Custom_ū",
-				tooltipDimension: "ķ_The value can be specified in 'px' or '%'_ū",
+				lblPosition5: "Pielāgots",
+				tooltipDimension: "Vērtību var norādīt \'px\' vai \'%\'",
 				lblPosition2Explain: "(var apgriezt)",
 				lblPosition3Explain: "(netiks apgriezts)",
-				lblPosition3Explain2: "ķ_(width will always fit the panel)_ū",
+				lblPosition3Explain2: "(platums vienmēr atbildīs panelim)",
 				lblPosition4Explain: "(var tikt izkropļots)"
 			},
 			editorActionGeocode: {

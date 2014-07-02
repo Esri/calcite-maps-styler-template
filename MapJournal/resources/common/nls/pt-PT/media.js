@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ã_Media_Ç",
-				lblSelect2: "ã_Content_Ç",
+				lblSelect1: "Media",
+				lblSelect2: "Conteúdo",
 				lblMap: "Mapa",
 				lblImage: "Imagem",
 				lblVideo: "Vídeo",
@@ -41,59 +41,59 @@
 				howToFind2: "Copiar os dígitos que estão entre a primeira e a segunda barra ( / ) de qualquer página Picasa ou G+"
 			},
 			videoSelectorCommon: {
-				check: "ã_Check_Ç",
-				notFound: "ã_Video not found_Ç",
-				found: "ã_Video found_Ç",
-				select: "ã_Select this video_Ç"
+				check: "Verificar",
+				notFound: "Vídeo não encontrado",
+				found: "Vídeo encontrado",
+				select: "Selecionar este vídeo"
 			},
 			videoSelectorHome: {
-				other: "ã_Other_Ç"
+				other: "Outros"
 			},
 			videoSelectorYoutube: {
-				url: "ã_URL of a Youtube video_Ç",
+				url: "URL de um vídeo do Youtube",
 				pageInputLbl: "Nome de utilizador",
 				lookupMsgError: "Utilizador não encontrado",
 				howToFind: "Como encontrar um nome de utilizador do YouTube",
 				howToFind2: "Nome de utilizador é exibido nos vídeos",
-				found: "ã_Found_Ç",
+				found: "Encontrado",
 				noData: "Não há vídeos públicos encontrados"
 			},
 			videoSelectorVimeo: {
-				url: "ã_URL of a Vimeo video_Ç"
+				url: "URL de um vídeo do Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "ã_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._Ç",
-				explain2: "ã_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._Ç",
-				explain3: "ã_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._Ç",
-				webpage: "ã_Web page feature_Ç"
+				explain1: "O Jornal de Mapas não pode reproduzir vídeos em formato raw (ex: avi, mpeg), mas pode reproduzir ficheiro de vídeo alojados que tenham  but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo).",
+				explain2: "A maior parte dos serviços online de alojamento de video oferecem essa possibilidade, tem de encontrar a opção para incorporar vídeo, copiar o código e utilizar %WEBPAGE%.",
+				explain3: "Em alternativa, se pretender alojar o vídeo, pode criar uma página HTML que utilize um leitor de vídeo como %EXAMPLE%, alojar essa página e também utilizar o %WEBPAGE%.",
+				webpage: "Elemento de página web"
 			},
 			webpageSelectorHome: {
-				lblUrl: "ã_Webpage URL_Ç",
-				lblEmbed: "ã_Embed code_Ç",
-				lblOR: "ã_OR_Ç",
-				lblError1: "ã_Error, clear one of the two input fields._Ç",
-				lblError2: "ã_Embed code can only contain one <iframe>_Ç"
+				lblUrl: "URL de página web",
+				lblEmbed: "Incorporar código",
+				lblOR: "OU",
+				lblError1: "Erro, limpe um dos dois campos de entrada.",
+				lblError2: "O código de incorporação pode conter apenas um <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "ã_An image URL should start with http:// and end with .jpg or .png_Ç",
-				lblLabel: "ã_Image Caption_Ç",
+				lblURLPH: "Um URL de imagem deve começar com http:// e terminar com .jpg ou .png",
+				lblLabel: "Legenda de Imagem",
 				lblLabel1: "Legenda",
 				lblLabel2: "Passe sobre o texto",
 				lblLabel3: "Nenhum",
 				lblLabelPH: "Introduza algum texto...",
-				lblMaximize: "ã_Include a maximize button in the corner of the image_Ç",
-				lblMaximizeHelp: "ã_Recommended only for high quality photos_Ç",
+				lblMaximize: "Incluir um botão de maximizar no canto da imagem",
+				lblMaximizeHelp: "Recomendado apenas para fotografias de alta qualidade",
 				lblPosition: "Posição",
 				lblPosition1: "Centrar",
 				lblPosition2: "Preencher",
 				lblPosition3: "Adaptar",
 				lblPosition4: "Esticar",
-				lblPosition5: "ã_Custom_Ç",
-				tooltipDimension: "ã_The value can be specified in 'px' or '%'_Ç",
+				lblPosition5: "Personalizar",
+				tooltipDimension: "O valor pode ser especificado em 'px' ou '%'",
 				lblPosition2Explain: "(pode recortar)",
 				lblPosition3Explain: "(não é possível recortar)",
-				lblPosition3Explain2: "ã_(width will always fit the panel)_Ç",
+				lblPosition3Explain2: "(a largura será sempre ajustada ao painel)",
 				lblPosition4Explain: "(pode distorcer)"
 			},
 			editorActionGeocode: {

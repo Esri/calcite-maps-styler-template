@@ -89,7 +89,7 @@
 				logoCustom: "Aangepast logo",
 				logoCustomPlaceholder: "URL (max. 250x50 pixels)",
 				logoCustomTargetPlaceholder: "Doorklikkoppeling",
-				logoSocialExplain: "Pas de koptekstkoppeling aan.",
+				logoSocialExplain: "Pas de koppeling voor de koptekst aan.",
 				logoSocialText: "Tekst",
 				logoSocialLink: "Koppeling"
 			}

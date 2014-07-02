@@ -27,7 +27,7 @@
 				notConfiguredMobile: "Tervetuloa tarinan %TPL_NAME% Web-sovellukseen. Sovellusta ei ole vielä määritetty, eivätkä mobiililaitteet tue luontitoimintoa.",
 				notAuthorized: "Sinulla ei ole tämän sovelluksen käyttöoikeuksia",
 				noBuilderIE8: "Luontitoimintoa ei tueta Internet Explorerin versiota 9 edeltävissä versioissa.",
-				mapLoadingFail: "Å_Something went wrong, the Map cannot be loaded._ö"
+				mapLoadingFail: "Jotain meni pieleen, ja karttaa ei voi ladata."
 			},
 			mobileView: {
 				tapForDetails: "Saat tiedot näkyviin napauttamalla",

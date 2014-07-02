@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Å_Media_ö",
-				lblSelect2: "Å_Content_ö",
+				lblSelect1: "Media",
+				lblSelect2: "Innehåll",
 				lblMap: "Karta",
 				lblImage: "Bild",
 				lblVideo: "Video",
@@ -41,59 +41,59 @@
 				howToFind2: "Kopiera siffrorna mellan det första och andra '/'-tecknet på en Picasa- eller G+-sida"
 			},
 			videoSelectorCommon: {
-				check: "Å_Check_ö",
-				notFound: "Å_Video not found_ö",
-				found: "Å_Video found_ö",
-				select: "Å_Select this video_ö"
+				check: "Kontroll",
+				notFound: "Det gick inte att hitta videon",
+				found: "Video hittad",
+				select: "Välj den här videon"
 			},
 			videoSelectorHome: {
-				other: "Å_Other_ö"
+				other: "Annat"
 			},
 			videoSelectorYoutube: {
-				url: "Å_URL of a Youtube video_ö",
+				url: "URL till en Youtube-video",
 				pageInputLbl: "Användarnamn",
 				lookupMsgError: "Det gick inte att hitta användaren",
 				howToFind: "Så här hittar du ett YouTube-användarnamn",
 				howToFind2: "Användarnamnet visas under videoklippen",
-				found: "Å_Found_ö",
+				found: "Hittade",
 				noData: "Inga offentliga videoklipp hittades"
 			},
 			videoSelectorVimeo: {
-				url: "Å_URL of a Vimeo video_ö"
+				url: "URL till en Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "Å_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._ö",
-				explain2: "Å_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._ö",
-				explain3: "Å_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._ö",
-				webpage: "Å_Web page feature_ö"
+				explain1: "Kartjournalen kan inte spela upp obearbetade videoklipp (till exempel avi och mpeg), men kan spela driftade videofiler som har inbyggda spelare (till exempel YouTube eller Vimeo).",
+				explain2: "De flesta tjänster som driftar videoklipp online erbjuder den här funktionen. Du måste hitta alternativet för att bädda in videon, kopiera den angivna koden och använda %WEBPAGE%.",
+				explain3: "Om du själv vill drifta videon kan du skapa en HTML-sida som använder en videospelare som %EXAMPLE%, drifta sidan och använda %WEBPAGE%.",
+				webpage: "Webbsidefunktion"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Å_Webpage URL_ö",
-				lblEmbed: "Å_Embed code_ö",
-				lblOR: "Å_OR_ö",
-				lblError1: "Å_Error, clear one of the two input fields._ö",
-				lblError2: "Å_Embed code can only contain one <iframe>_ö"
+				lblUrl: "Webbsidans URL",
+				lblEmbed: "Bädda in kod",
+				lblOR: "ELLER",
+				lblError1: "Fel, rensa ett av de båda inmatningsfälten.",
+				lblError2: "Inbäddad kod kan endast innehålla en <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Å_An image URL should start with http:// and end with .jpg or .png_ö",
-				lblLabel: "Å_Image Caption_ö",
+				lblURLPH: "En bild-URL bör börja med http:// och slutar med .jpg eller .png",
+				lblLabel: "Bildtext",
 				lblLabel1: "Bildtext",
 				lblLabel2: "Hovringstext",
 				lblLabel3: "Inga",
 				lblLabelPH: "Ange text ...",
-				lblMaximize: "Å_Include a maximize button in the corner of the image_ö",
-				lblMaximizeHelp: "Å_Recommended only for high quality photos_ö",
+				lblMaximize: "Ta med knappen Maximera i hörnet av bilden",
+				lblMaximizeHelp: "Rekommenderas endast för bilder av hög kvalitet",
 				lblPosition: "Position",
 				lblPosition1: "Centrera",
 				lblPosition2: "Fyllning",
 				lblPosition3: "Anpassa",
 				lblPosition4: "Sträck",
-				lblPosition5: "Å_Custom_ö",
-				tooltipDimension: "Å_The value can be specified in 'px' or '%'_ö",
+				lblPosition5: "Anpassad",
+				tooltipDimension: "Värdet kan anges i \"px\" eller \"%\"",
 				lblPosition2Explain: "(kan beskäras)",
 				lblPosition3Explain: "(kan inte beskäras)",
-				lblPosition3Explain2: "Å_(width will always fit the panel)_ö",
+				lblPosition3Explain2: "(bredden kommer alltid att fylla rutan)",
 				lblPosition4Explain: "(kan förvrängas)"
 			},
 			editorActionGeocode: {

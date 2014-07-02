@@ -52,7 +52,7 @@
 				share: "שתף"
 			},
 			overviewFromCommon: {
-				title: "מפת תצוגה מקדימה"
+				title: "מפת התמצאות"
 			},
 			legendFromCommon: {
 				title: "מקרא"

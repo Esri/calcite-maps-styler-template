@@ -22,7 +22,7 @@
             shareUserTextMessage: "Se ha enviado la entrada. Compártelo con otros usuarios utilizando las opciones siguientes",
             addAttachmentFailedMessage: "No se puede agregar el anexo a la capa",
             addFeatureFailedMessage: "No se puede agregar la entidad a la capa",
-            noLayerConfiguredMessage: "Vaya, no hay nada que mostrar. Para empezar a capturar envíos de formularios, configura este formulario geográfico y selecciona una capa de servicio de entidades editable para utilizarla.",
+            noLayerConfiguredMessage: "Vaya, no hay nada que mostrar. Para empezar a recopilar envíos de formularios, configura este formulario geográfico y selecciona una capa de servicio de entidades editable para utilizarla.",
             placeholderLatitude: "Latitud (Y)",
             placeholderLongitude: "Longitud (X)",
             latitude: "Latitud",
@@ -31,7 +31,7 @@
             myLocationTitleText: 'Mi ubicación',
             addressSearchText: "Tu envío aparecerá aquí. Puedes arrastrar la chincheta para corregir la ubicación.",
             shareDialogFormText: "Vínculo de formulario",
-            shareBuilderProgressBarMessage:"Espere..."
+            shareBuilderProgressBarMessage:"Espera..."
         }
     })
 );

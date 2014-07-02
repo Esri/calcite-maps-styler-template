@@ -16,12 +16,12 @@
         legendHeader: "LEGEND"
       },
       datePatterns:{
-        datePattern: "MMMM d, yyyy",
+        datePattern: "d. MMMM yyyy",
         yearPattern: "yyyy",
-        hourTimePattern: "h a",
-        minuteTimePattern: "h:mm a",
-        secondTimePattern: "h:mm:ss a",
-        millisecondTimePattern: "h:mm:ss:SSS a"
+        hourTimePattern: "H",
+        minuteTimePattern: "h:mm",
+        secondTimePattern: "h:mm:ss",
+        millisecondTimePattern: "h:mm:ss:SSS"
       }
     }
 })

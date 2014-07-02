@@ -44,7 +44,7 @@ define(
         	"bookmarks": "סימניות",
         	"layers": "שכבות",
         	"basemap": "גלרית מפות בסיס",
-        	"overview": "מפת תצוגה מקדימה",
+        	"overview": "מפת התמצאות",
         	"measure": "מדידה",
         	"edit": "עריכה",
         	"time": "זמן",

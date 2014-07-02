@@ -32,7 +32,7 @@
 				titleAddHome: "Agregar sección de inicio",
 				titleEdit: "Editar sección",
 				step: "Paso",
-				stepMainStageExplain: "Contenido de escenario principal",
+				stepMainStageExplain: "Contenido del escenario principal",
 				stepPanelExplain: "Contenido",
 				stepMainStageNextTooltip: "Introducir el título de la sección y seleccionar el contenido del escenario principal",
 				step2NextTooltip: "Introducir el título de la sección y el contenido de %LAYOUT-TYPE%",

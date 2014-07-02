@@ -8,7 +8,7 @@
                 "licenseHeader":"רשיון",
                 "dateCreated":"נוצרה:",
                 "dateModified":"שונה לאחרונה",
-                "moreInfoHeader":"עוד מידע"
+                "moreInfoHeader":"מידע נוסף"
             }
         }
     })

@@ -46,7 +46,7 @@
 		share:{
 			label: "Jaga kaart:",
 			email:{
-				title: "E-mail",
+				title: "e-mail",
 				label: "E-mail"
 			},
 			twitter:{

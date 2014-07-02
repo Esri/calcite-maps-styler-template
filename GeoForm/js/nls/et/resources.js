@@ -4,7 +4,7 @@
             error: "Kaardi loomine ebaõnnestus"
         },
         onlineStatus: {
-            online: "Š_You are currently online._ä",
+            online: "Olete hetkel veebirežiimis.",
             offline: "Töötate praegu võrguühenduseta režiimis. Esitatud vormid salvestatakse kohalikult, kuni serveriga luuakse ühendus.",
             reconnecting: "Ühenduse taastamine&hellip;"
         },

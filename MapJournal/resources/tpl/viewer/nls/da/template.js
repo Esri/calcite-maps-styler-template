@@ -27,7 +27,7 @@
 				notConfiguredMobile: "Velkommen til webapplikationen %TPL_NAME%. Applikationen er endnu ikke konfigureret, og builder-programmet understøttes ikke på mobile enheder.",
 				notAuthorized: "Du er ikke autoriseret til at få adgang til denne applikation",
 				noBuilderIE8: "Builder-programmet understøttes ikke af Internet Explorer før version 9.",
-				mapLoadingFail: "ø_Something went wrong, the Map cannot be loaded._å"
+				mapLoadingFail: "Noget er gået galt, kortet kan ikke indlæses."
 			},
 			mobileView: {
 				tapForDetails: "Tryk for at få oplysninger",

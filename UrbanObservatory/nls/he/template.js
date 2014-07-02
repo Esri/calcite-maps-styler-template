@@ -19,7 +19,7 @@
     },
     "socialMediaMessage":"השווה 16 ערים גלובליות באמצעות מפות כשפה משותפת. חווה #UrbanObservatory",
     "viewMapOnline": "צפה במפה זו ב ArcGIS.com",
-    "selectMapPanel": "בחר פאנל מפה",
+    "selectMapPanel": "בחר פנל מפה",
     "noDescription": "[ לא קיים תאור ]",
     "themeNotAvailable": "המפה לא זמינה.",
     "legend": "מקרא"

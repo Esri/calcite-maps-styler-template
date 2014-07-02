@@ -14,8 +14,8 @@
 				start: "Algus",
 				loading: "Laen",
 				disabledAdmin: "See funktsioon on administraatori poolt välja lülitatud",
-				width: "Š_Width_ä",
-				height: "Š_Height_ä"
+				width: "Laius",
+				height: "Kõrgus"
 			},
 			inlineFieldEdit: {
 				editMe: "Muuda mind!"
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "Kujundus",
 				explain: "Millist paigutust soovite kasutada?",
-				explainInit: "Š_You can change the layout anytime from the settings dialog._ä",
+				explainInit: "Saate paigutust igal ajal seadete dialoogiakna kaudu muuta.",
 				viewExample: "Kuva reaalajas näide"
 			},
 			settingsTheme: {

@@ -20,7 +20,7 @@
             buttonText: "OK",
         },
         ui:{
-            basemapButton: "é_Basemap_È"
+            basemapButton: "Mappa di base"
         }
     })
 

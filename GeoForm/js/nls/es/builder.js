@@ -1,7 +1,7 @@
 ﻿define(
      ({
         builder: {
-            invalidWebmapSelectionAlert: "El mapa web seleccionado no contiene una capa válida para utilizarla. Agrega FeatureLayer editable en el mapa web para continuar.",
+            invalidWebmapSelectionAlert: "El mapa web seleccionado no contiene una capa válida para utilizarla. Agrega una capa de entidades editable en el mapa web para continuar.",
             selectFieldsText:"Seleccionar campos de formulario",
             selectThemeText: "Seleccionar tema del formulario",
             fieldLabelPlaceHolder: "Etiquetar este campo",
@@ -13,8 +13,8 @@
             styleText: "5. Estilo",
             previewText: "6. Vista previa",
             publishText: "7. Publicar",
-            titleText: "GeoForm Builder",
-            descriptionText: "Formulario geográfico es una plantilla configurable para la edición de los datos basados en formularios de un <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>servicio de entidades</a>. Esta aplicación permite a los usuarios introducir datos por medio de un formulario en lugar de hacerlo con una ventana emergente del mapaâ€™, aprovechando así la eficacia del <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>mapa web</a> y los servicios de entidades editables. Usa este generador para personalizar e implementar tu formulario geográfico siguiendo los pasos de la izquierda.",
+            titleText: "Formulario geográfico",
+            descriptionText: "Formulario geográfico es una plantilla configurable para la edición de los datos basados en formularios de un <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>servicio de entidades</a>. Esta aplicación permite a los usuarios introducir datos por medio de un formulario en lugar de hacerlo con una ventana emergente del mapaâ€™, aprovechando así la eficacia del <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>mapa web</a> y los servicios de entidades editables. Usa este builder para personalizar e implementar tu formulario geográfico siguiendo los pasos de la izquierda.",
             btnPreviousText: "Anterior",
             btnNextText:"Siguiente",
             webmapTabTitleText: "Elegir un mapa web",
@@ -37,16 +37,16 @@
             formPlaceholderText: "Mi formulario",
             imageLogoPlaceholderText: "http://www.mysite.com/myimage.png",
             shareBuilderInProgressTitleMessage: "Publicando formulario geográfico",
-            shareBuilderProgressBarMessage:"Espere...",
+            shareBuilderProgressBarMessage:"Espera...",
             shareBuilderTitleMessage: "El formulario geográfico se ha actualizado y publicado.",
-            shareBuilderTextMessage: "Puedes empezar a capturar información compartiéndolo con otros",
+            shareBuilderTextMessage: "Puedes empezar a recopilar información compartiéndolo con otros",
             shareDialogFormText: "Vínculo de formulario",
             geoformTitleText: "Formulario geográfico",
-            layerTabText: "Esta es la capa a partir de la cual se creará el formulario geográfico. Esta capa debe ser un servicio de entidades activado para su edición y con permisos de uso compartido adecuados según el público.",
+            layerTabText: "Esta es la capa a partir de la cual se creará el formulario geográfico. Esta capa debe ser un servicio de entidades habilitado para su edición y con permisos de uso compartido adecuados.",
             detailsTabText:"Utiliza los cuadros de detalle de formulario de abajo para personalizar el título, agrega un logotipo personalizado e indica una breve descripción dirigida al público del formulario geográfico.",
-            fieldsTabText:"Aquí puedes seleccionar los campos que estarán visibles para el público del formulario geográfico, editar las etiquetas que verán y agregar una breve descripción para facilitar la entrada de datos.",
+            fieldsTabText:"Aquí puedes seleccionar los campos que estarán visibles para el público, editar las etiquetas que verán y agregar una breve descripción para facilitar la entrada de datos.",
             styleTabText: "Aplica estilo a tu formulario geográfico utilizando los temas de abajo, según tus preferencias.",
-            publishTabText: "Cuando hayas terminado de personalizar tu formulario geográfico, guarda la aplicación y empieza a compartirlo con el público. Siempre puedes volver a este creador para seguir personalizándolo según los comentarios que hayas ido recibiendo."
+            publishTabText: "Cuando hayas terminado de personalizar tu formulario geográfico, guarda la aplicación y empieza a compartirlo con el público. Siempre puedes volver a este builder para seguir personalizándolo según los comentarios que hayas ido recibiendo."
         }
     })
 );

@@ -22,7 +22,7 @@
             shareUserTextMessage: "Girişiniz gönderildi. Aşağıdaki seçenekleri kullanarak başkaları ile paylaşın",
             addAttachmentFailedMessage: "Eklenti katmana eklenemiyor",
             addFeatureFailedMessage: "Özellik katmana eklenemiyor",
-            noLayerConfiguredMessage: "Eyvah! Burada görecek bir şey yok. Form gönderimlerini toplamaya başlamak amacıyla bu GeoForm\'u yapılandırın ve kullanmak için düzenlenebilir bir Özellik Hizmeti katmanı seçin.",
+            noLayerConfiguredMessage: "Eyvah! Burada görecek bir şey yok. Form gönderimlerini toplamaya başlamak amacıyla bu GeoForm\'u yapılandırın ve kullanmak için düzenlenebilir bir Detay Servisi katmanı seçin.",
             placeholderLatitude: "Enlem (Y)",
             placeholderLongitude: "Boylam (X)",
             latitude: "Enlem",

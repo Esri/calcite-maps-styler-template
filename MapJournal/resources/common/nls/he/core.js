@@ -27,7 +27,7 @@
 				buttonShare: "שתף",
 				buttonSettings: "הגדרות",
 				buttonHelp: "עזרה",
-				buttonPreview: "תצוגה חיה",
+				buttonPreview: "תצוגה דינמית",
 				tooltipFirstSave: "פוקציה זו לא זמינה עד לשמירת האפליקציה",
 				tooltipNotShared: "פונקציה זו אינה זמינה עד לשיתוף האפליקציה",
 				noPendingChange: "אין שינוי לביצוע",
@@ -80,7 +80,7 @@
 				viewExample: "הצג דוגמה חיה"
 			},
 			settingsTheme: {
-				title: "נושא"
+				title: "עיצוב"
 			},
 			settingsHeader: {
 				title: "כותרת עליונה",

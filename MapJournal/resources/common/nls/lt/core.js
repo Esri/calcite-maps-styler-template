@@ -14,8 +14,8 @@
 				start: "Pradėti",
 				loading: "Kraunama",
 				disabledAdmin: "Šią funkciją išjungė Administratorius",
-				width: "Į_Width_š",
-				height: "Į_Height_š"
+				width: "Plotis",
+				height: "Aukštis"
 			},
 			inlineFieldEdit: {
 				editMe: "Redaguoti mane!"
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "Maketas",
 				explain: "Kurį maketą norite naudoti?",
-				explainInit: "Į_You can change the layout anytime from the settings dialog._š",
+				explainInit: "Nustatymų dialogo lange maketą galite pakeisti bet kuriuo metu.",
 				viewExample: "Peržiūrėti veikiantį pavyzdį"
 			},
 			settingsTheme: {

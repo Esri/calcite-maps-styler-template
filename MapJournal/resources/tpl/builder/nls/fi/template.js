@@ -27,25 +27,25 @@
 				title: "Tervetuloa"
 			},
 			addEditPopup: {
-				disabled: "Å_Add Section is disabled because the maximum number of allowed sections has been reached._ö",
+				disabled: "Lisää osa -toiminto on pois käytöstä, koska on saavutettu sallittujen osien enimmäismäärä.",
 				titleAdd: "Lisää osa",
-				titleAddHome: "Å_Add Home Section_ö",
+				titleAddHome: "Lisää Kotisivu-osa",
 				titleEdit: "Muokkaa osaa",
 				step: "Vaihe",
-				stepMainStageExplain: "Å_Main Stage Content_ö",
-				stepPanelExplain: "Å_Content_ö",
+				stepMainStageExplain: "Päävaiheen sisältö",
+				stepPanelExplain: "Sisältö",
 				stepMainStageNextTooltip: "Kirjoita osan otsikko ja valitse päävaiheen sisältö",
 				step2NextTooltip: "Kirjoita osan otsikko ja taiton %LAYOUT-TYPE% sisältö",
 				stepNextTooltipNext: "siirry seuraavaan vaiheeseen",
 				stepNextTooltipAdd: "osan lisäystä varten",
-				firstAddExplain: "Å_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._ö",
-				firstAddLeanMore: "Å_Learn More_ö",
+				firstAddExplain: "Ensimmäinen osa on Kotisivu-osa, joka on ikään kuin tarinasi kansilehti. Juuri määrittämäsi otsikko näytetään suurella fontilla.",
+				firstAddLeanMore: "Lisätietoja",
 				titlePlaceholder: "Osan otsikko..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Lisää tähän tekstiä, linkkejä ja pieniä kuvia.",
 				editorActionsTitle: "Päävaiheen toiminnot",
-				editorActionsHelpDescr: "Å_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ö"
+				editorActionsHelpDescr: "Näiden kontrollien avulla voit luoda linkkejä, jotka muuttavat päävaihetta. Kun lukija napsauttaa esimerkiksi linkkiä, haluat ehkä tarkentaa karttaa tiettyyn sijaintiin, tuoda näkyviin toisen Web-kartan tai kuvan."
 			},
 			organizePopup: {
 				title: "Järjestä",
@@ -54,13 +54,13 @@
 				lblColPubDate: "Julkaisupäivämäärä",
 				lblColStatus: "Tila",
 				checkDisplayReverse: "Näytä osat käänteisessä järjestyksessä",
-				btnApplyWarning: "Å_Confirm deletion of %NB% section(s)_ö",
+				btnApplyWarning: "Vahvista %NB% osan poisto",
 				deleteTooltip: "Poista",
 				firstSectionExplain: "(Kotisivuosaa ei voi siirtää)"
 			},
 			exportData: {
-				btn: "Å_Export content_ö",
-				tooltip: "Å_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._ö"
+				btn: "Vie sisältö",
+				tooltip: "Sisällön viemisen avulla voit tarkastella ja luoda päiväkirjan varmuuskopion, jos se poistetaan vahingossa. Sinun tarvitsee vain kopioida ja liittää sivun sisältö johonkin tekstinkäsittelyohjelmaan."
 			},
 			help: {
 				lblHelp: "Ohje",
@@ -69,22 +69,22 @@
 				lblOrga: "Järjestä sisältö",
 				lblEdit: "Muokkaukset",
 				lblPublish: "Jaa",
-				lblTips: "Å_Tips_ö",
+				lblTips: "Vinkkejä",
 				lblMore: "Haluatko lisää?",
 				lblLink: "Siirry Tarinakartat-sivustoon.",
 				content1Div1: "Voit integroida useita tyylejä, kun muodostat tarinaasi. <strong>%LAYOUT_TITLE%</strong> sisältää tavallisesti tekstin, kuvat ja videot, kun kartat ovat yleensä <strong>päävaiheessa</strong>. Tarinassa %TPL_NAME% voit kuitenkin esitellä kuvia, kaavioita ja videoita myös päävaiheessa.",
 				content1Div2: "Lisäämällä osioita voit mukauttaa kattavasti tarinankerrontakokemustasi. Kun lukijat vierittävät tyylin %LAYOUT_TITLE% mukaista tekstiäsi, voit tehostaa viestiäsi vierittämällä päävaiheen karttaa tai tarkentamalla tärkeisiin pisteisiin tai kytkemällä uudet kartat ja kuvat näkymään automaattisesti.",
 				content2Div1: "Tässä voit säätää sitä, miltä %TPL_NAME% näyttää. Värimalleja, asetteluja ja leveyksiä säädetään tässä.",
 				content2Div2: "Voit myös lisätä jaettavia linkkejä Facebookiin, Twitteriin ja Bitlyyn, jotta lukijat voivat helposti levittää %TPL_NAME% -tarinasi muille.",
-				content3Div1: "Å_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ö",
+				content3Div1: "Sisältösi on jaettu osiin. Voit lisätä niin monta osaa kuin haluat (ajattele, että ne ovat lyhyitä kappaleita). Kappaleiden virta on tärkeä. Järjestä-näkymässä voit järjestää osia uudelleen tai poistaa niitä.",
 				content4Div1: "Löysitkö virheen vai haluatko muuttaa aineistoasi? Ei huolta. Etsi muokkauskuvaketta sovelluksesta tehdäksesi muutoksia sisältöösi. Käytät muokkaustoimintoja useita kertoja, kun kehität tarinaa %TPL_NAME%.",
 				content5Div1: "Tarinasi %TPL_NAME% on tallennettu portaalin %PORTAL% tiliin, ja se on oletusarvoisesti yksityinen. Voit jakaa sen organisaatiosi kanssa tai määrittää sen kaikille avoimeksi. Järjestelmä määrittää tarinallesi myös lyhennetyn URL-osoitteen, jotta voit jakaa sen helposti.",
-				content6Div1: "Å_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._ö",
-				content6Div2: "Å_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_ö"
+				content6Div1: "Kotisivu-osan otsikko on myös päiväkirjasi otsikko; Kotisivu-osa on ikään kuin tarinasi kansilehti. Kotisivu-osan otsikko pysyy näkyvissä, kun lukijasi selaavat päiväkirjaa.",
+				content6Div2: "%LAYOUT_TITLE%-asettelusi ei tarvitse olla vain tekstiä, vaan voit harkita valokuvien ja videoiden sisällyttämistä tarinan elävöittämiseksi ja pitkien tekstiosuuksien katkaisemiseksi!"
 			},
 			landing: {
-				lblAdd: "Å_What do you want to call your Map Journal?_ö",
-				phAdd: "Å_Enter your title..._ö",
+				lblAdd: "Millä nimellä haluat kutsua karttapäiväkirjaasi?",
+				phAdd: "Anna otsikko...",
 				lblOR: "Tai",
 				lblHelp: "Käy kierroksella"
 			},

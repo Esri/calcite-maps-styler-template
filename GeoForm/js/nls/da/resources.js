@@ -4,7 +4,7 @@
             error: "Kan ikke oprette kort"
         },
         onlineStatus: {
-            online: "ø_You are currently online._å",
+            online: "Der er online lige nu.",
             offline: "Du arbejder offline på nuværende tidspunkt. Formularafsendelser vil blive gemt lokalt, indtil der oprettes forbindelse til serveren.",
             reconnecting: "Opretter forbindelse igen&hellip;"
         },
