@@ -131,9 +131,29 @@ function (
             }));
 
             on(previewModeButton, "click", lang.hitch(this, function () {
-                var isSaveRequire, currentURL, newURL;
-                currentURL = location.href.split("&edit");
-                newURL = currentURL[0];
+                var isSaveRequire, currentURL, newURL, firstIndex, nextIndex, editSubstring;
+                if (location.href.search("&edit") == -1) {
+                    firstIndex = location.href.search("edit");
+                    nextIndex = location.href.search("&");
+                    if (nextIndex == -1) {
+                        currentURL = location.href.split("?edit");
+                        newURL = currentURL[0];
+                    } else {
+                        editSubstring = location.href.slice(firstIndex, nextIndex + 1);
+                        newURL = location.href.replace(editSubstring, "");
+                    }
+                } else {
+                    firstIndex = location.href.search("&edit");
+                    nextIndex = location.href.lastIndexOf("&");
+                    if (firstIndex !== nextIndex) {
+                        editSubstring = location.href.slice(firstIndex, nextIndex);
+                        newURL = location.href.replace(editSubstring, "");
+                    } else {
+                        currentURL = location.href.split("&edit");
+                        newURL = currentURL[0];
+                    }
+                }
+
                 this.previousConfigObj.edit = "";
                 if (this.unSavedChanges) {
                     isSaveRequire = confirm(nls.widgets.TemplateBuilder.alertMessage.saveChangesAlert);
@@ -189,6 +209,14 @@ function (
             this.appSetting.enableBasemapToggle = this.config.enableBasemapToggle;
             this.appSetting.nextBasemap = this.config.nextBasemap;
             this.appSetting.defaultBasemap = this.config.defaultBasemap;
+            this.appSetting.enableAboutPanel = this.config.enableAboutPanel;
+            this.appSetting.enableLegendPanel = this.config.enableLegendPanel;
+            this.appSetting.enableLayersPanel = this.config.enableLayersPanel;
+            this.appSetting.theme = this.config.theme;
+            this.appSetting.zoomType = this.config.zoomType;
+            this.appSetting.featuresTransparency = this.config.featuresTransparency;
+            this.appSetting.featureCurrentTransparency = this.config.featureCurrentTransparency;
+
         },
 
         //Revert application settigns with previously stored object if user clicks cancel button

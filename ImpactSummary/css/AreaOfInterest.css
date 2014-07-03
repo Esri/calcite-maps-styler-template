@@ -96,7 +96,7 @@
     background-color: #fff !important;
 }
 .selected-bgColorDark {
-    background-color: #ccc !important;
+    background-color: #CDCDCD !important;
     background-color: rgba(205, 205, 205, 0.9) !important;
     color: Black !important;
 }
@@ -171,16 +171,16 @@
     overflow: hidden;
 }
 .geo-data .geo-panel .light .count {
-    background-color: #f36f20;
+    background-color: #fff;
     background-color: rgba(255, 255, 255, 0.90);
 }
 .geo-data .geo-panel .light .title,
 .light .background-color {
-    background-color: #dbddd8;
+    background-color: #E3E3E3;
     background-color: rgba(227, 227, 227, 0.90);
 }
 .geo-data .geo-panel .panel-parent .light:hover .count {
-    background-color: #f36f20;
+    background-color: #fff;
     background-color: rgba(255, 255, 255, 0.80);
 }
 .geo-data .geo-panel .dark .count {
