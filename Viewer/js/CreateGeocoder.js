@@ -1,10 +1,10 @@
 /*Create a geocoder widget
 Will display multiple  locators if organization has more than one locator defined
 Adds support for info window that allows users to find different search results */
-define(["dojo/_base/declare", "dojo/_base/json", "dojo/Deferred", "esri/dijit/Geocoder", "esri/dijit/PopupTemplate", "esri/layers/FeatureLayer", "esri/geometry/Extent", "esri/geometry/Point", "esri/lang", "dojo/dom-construct", "dojo/dom", "dojo/dom-style", "dojo/on", "dijit/registry", "dojo/query", "dojo/_base/lang", "dojo/_base/array"
+define(["dojo/_base/declare", "dojo/Deferred", "esri/dijit/Geocoder", "esri/dijit/PopupTemplate", "esri/layers/FeatureLayer", "esri/geometry/Extent", "esri/geometry/Point", "esri/lang", "dojo/dom-construct", "dojo/dom", "dojo/dom-style", "dojo/on", "dijit/registry", "dojo/query", "dojo/_base/lang", "dojo/_base/array"
 
 ], function (
-declare, dojoJson, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLang, domConstruct, dom, domStyle, on, registry, query, lang, array
+declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLang, domConstruct, dom, domStyle, on, registry, query, lang, array
 
 ) {
     return declare(null, {
@@ -155,7 +155,7 @@ declare, dojoJson, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Poin
                     //save the layer for later 
                     this.geocodeFeatureLayers[mapLayer.id] = this.geocodeFeatureLayers[mapLayer.id] || {};
                     this.geocodeFeatureLayers[mapLayer.id][subLayerId] = layer;
-             
+
                     deferred.resolve(layer);
 
                 }), function(error){
