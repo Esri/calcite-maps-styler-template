@@ -96,8 +96,11 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
             var legend_div = domConstruct.create("div", {
                 className: "panel_content"
             }, dom.byId("legendDiv"));
+            var layerInfo = arcgisUtils.getLegendLayers(this.config.response);
+
             var legend = new Legend({
-                map: this.map
+                map: this.map,
+                layerInfos: layerInfo
             }, legend_div);
             legend.startup();
 
