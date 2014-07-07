@@ -551,9 +551,13 @@ define([
                         this.map.setExtent(graphicsUtils.graphicsExtent(fs.features), true);
                         break;
                     default:
-                        this.map.setScale(type);
-                        this.map.centerAt(graphicsUtils.graphicsExtent(fs.features).getCenter());
-                        break;
+                        if (this.previousFeatures == "Entire Area") {
+                            this.map.setExtent(graphicsUtils.graphicsExtent(fs.features), true);
+                        } else {
+                            this.map.setScale(type);
+                            this.map.centerAt(graphicsUtils.graphicsExtent(fs.features).getCenter());
+                            break;
+                        }
                 }
             }
         });
