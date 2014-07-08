@@ -1,11 +1,10 @@
-change report #74 at 06/30/2014  9:58:27.61
+change report #76 at 07/07/2014 21:51:34.08
 -
 for git branch
-release_3.4
+hotfix_search_outfields
 in repository local-government-online-apps
-140630111314063015491406271800
+140707104914070723551407011704
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M s1.html
- M s2.html
+ M js2/lgonlineCommand.js
