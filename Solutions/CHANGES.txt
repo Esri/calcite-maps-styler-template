@@ -1,4 +1,4 @@
-change report #76 at 07/07/2014 21:51:34.08
+change report #79 at 07/08/2014  1:23:50.27
 -
 for git branch
 hotfix_search_outfields
@@ -7,4 +7,4 @@ in repository local-government-online-apps
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M js2/lgonlineCommand.js
+ M nls/pl/resources.js
