@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Š_Media_ä",
-				lblSelect2: "Š_Content_ä",
+				lblSelect1: "Meedia",
+				lblSelect2: "Sisu",
 				lblMap: "Kaart",
 				lblImage: "Pilt",
 				lblVideo: "Video",
@@ -41,59 +41,59 @@
 				howToFind2: "Kopeeri numbrikohad esimese ja teise \'/\' vahelt Picasa või G+ lehelt"
 			},
 			videoSelectorCommon: {
-				check: "Š_Check_ä",
-				notFound: "Š_Video not found_ä",
-				found: "Š_Video found_ä",
-				select: "Š_Select this video_ä"
+				check: "Kontrolli",
+				notFound: "Videot ei leitud",
+				found: "Video leiti",
+				select: "Vali see video"
 			},
 			videoSelectorHome: {
-				other: "Š_Other_ä"
+				other: "Muu"
 			},
 			videoSelectorYoutube: {
-				url: "Š_URL of a Youtube video_ä",
+				url: "Youtube'i video URL",
 				pageInputLbl: "Kasutajanimi",
 				lookupMsgError: "Kasutajat ei leitud",
 				howToFind: "Kuidas leida YouTube’i kasutajanime",
 				howToFind2: "Kasutajanime kuvatakse videote all",
-				found: "Š_Found_ä",
+				found: "Leitud",
 				noData: "Avalikke videoid ei leitud"
 			},
 			videoSelectorVimeo: {
-				url: "Š_URL of a Vimeo video_ä"
+				url: "Vimeo video URL"
 			},
 			videoSelectorOther: {
-				explain1: "Š_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._ä",
-				explain2: "Š_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._ä",
-				explain3: "Š_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._ä",
-				webpage: "Š_Web page feature_ä"
+				explain1: "Kaardiajakiri ei saa esitada töötlemata videoid (nt avi, mpeg), kuid saab esitada majutatud videoid sisseehitatud pleierites (nt YouTube või Vimeo).",
+				explain2: "Enamik veebis olevaid videomajutusteenuseid pakuvad seda funktsiooni. Peate leidma video lisamise võimaluse, kopeerima antud koodi ja kasutama veebilehte %WEBPAGE%.",
+				explain3: "Kui soovite videot ise majutada, saate luua HTML-lehe, mis kasutab näiteks videopleierit %EXAMPLE%, selle lehe majutada ning kasutada ka veebilehte %WEBPAGE%.",
+				webpage: "Veebilehe funktsioon"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Š_Webpage URL_ä",
-				lblEmbed: "Š_Embed code_ä",
-				lblOR: "Š_OR_ä",
-				lblError1: "Š_Error, clear one of the two input fields._ä",
-				lblError2: "Š_Embed code can only contain one <iframe>_ä"
+				lblUrl: "Veebilehe URL",
+				lblEmbed: "Lisa kood",
+				lblOR: "VÕI",
+				lblError1: "Viga, tühjendage üks kahest sisendväljast.",
+				lblError2: "Lisatud kood võib sisaldada ainult ühte <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Š_An image URL should start with http:// and end with .jpg or .png_ä",
-				lblLabel: "Š_Image Caption_ä",
+				lblURLPH: "Pildi URL-i alguses peaks olema http:// ja lõpus laiend .jpg või .png",
+				lblLabel: "Pildi alapealkiri",
 				lblLabel1: "Alapealkiri",
 				lblLabel2: "Hõljuktekst",
 				lblLabel3: "Pole",
 				lblLabelPH: "Sisestage teksti...",
-				lblMaximize: "Š_Include a maximize button in the corner of the image_ä",
-				lblMaximizeHelp: "Š_Recommended only for high quality photos_ä",
+				lblMaximize: "Lisa pildi nurka maksimeerimise nupp",
+				lblMaximizeHelp: "Soovitatud ainult kvaliteetsete piltide puhul",
 				lblPosition: "Paigutus",
 				lblPosition1: "Keskele",
 				lblPosition2: "Täida",
 				lblPosition3: "Sobita",
 				lblPosition4: "Venita",
-				lblPosition5: "Š_Custom_ä",
-				tooltipDimension: "Š_The value can be specified in 'px' or '%'_ä",
+				lblPosition5: "Kohandatud",
+				tooltipDimension: "Väärtuse ühikuks võib olla px või %",
 				lblPosition2Explain: "(võib kärpida)",
 				lblPosition3Explain: "(ei kärbita)",
-				lblPosition3Explain2: "Š_(width will always fit the panel)_ä",
+				lblPosition3Explain2: "(laius on alati paneelile vastav)",
 				lblPosition4Explain: "(võib moonutada)"
 			},
 			editorActionGeocode: {

@@ -104,9 +104,11 @@ define([
                             if (!evt.visible) {
                                 // hide stats
                                 this._sb.hide();
+                                this.map.getLayer("selectedArea").hide();
                             } else {
                                 // show stats
                                 this._sb.show();
+                                this.map.getLayer("selectedArea").show();
                             }
                         }));
                     }
@@ -156,7 +158,7 @@ define([
                         array.forEach(this.entireAreaFeatures, lang.hitch(this, function (feature) {
                             array.some(this._aoiInfos, lang.hitch(this, function (renderer, idx) {
                                 var attributeField = feature.attributes[this._attributeField];
-                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField > renderer.minValue && attributeField <= renderer.maxValue)) {
+                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField >= renderer.minValue && attributeField <= renderer.maxValue)) {
                                     feature.setSymbol(this._aoiInfos[idx].symbol);
                                 }
                             }));
@@ -178,7 +180,7 @@ define([
                         array.forEach(features, lang.hitch(this, function (feature) {
                             array.some(this._aoiInfos, lang.hitch(this, function (renderer, idx) {
                                 var attributeField = feature.attributes[this._attributeField];
-                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField > renderer.minValue && attributeField <= renderer.maxValue)) {
+                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField >= renderer.minValue && attributeField <= renderer.maxValue)) {
                                     var tempSymbol = lang.clone(this._aoiInfos[idx].symbol);
                                     tempSymbol.color.a = alpha;
                                     var g = new Graphic(feature.geometry, sls, feature.attributes, null);
@@ -249,7 +251,11 @@ define([
             },
             _highlightFeature: function (features, alpha, sls, i) {
                 domClass.add(this._rendererNodes[i].node, this.areaCSS.rendererSelected);
-                this.rendererInfo = this._aoiInfos[i - 1];
+                if (this.config.enableEntireAreaButton) {
+                    this.rendererInfo = this._aoiInfos[i - 1];
+                } else {
+                    this.rendererInfo = this._aoiInfos[i];
+                }
                 this._createSymbol(features[0], alpha, sls);
             },
             _setImpactLayerTitle: function(){
@@ -545,9 +551,13 @@ define([
                         this.map.setExtent(graphicsUtils.graphicsExtent(fs.features), true);
                         break;
                     default:
-                        this.map.setScale(type);
-                        this.map.centerAt(graphicsUtils.graphicsExtent(fs.features).getCenter());
-                        break;
+                        if (this.previousFeatures == "Entire Area") {
+                            this.map.setExtent(graphicsUtils.graphicsExtent(fs.features), true);
+                        } else {
+                            this.map.setScale(type);
+                            this.map.centerAt(graphicsUtils.graphicsExtent(fs.features).getCenter());
+                            break;
+                        }
                 }
             }
         });

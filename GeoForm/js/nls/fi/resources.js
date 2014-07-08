@@ -4,7 +4,7 @@
             error: "Karttaa ei voi luoda"
         },
         onlineStatus: {
-            online: "Å_You are currently online._ö",
+            online: "Olet tällä hetkellä online-tilassa.",
             offline: "Työskentelet tällä hetkellä offline-tilassa. Lomakkeiden lähetykset tallennetaan paikallisesti, kunnes palvelinyhteys voidaan muodostaa.",
             reconnecting: "Muodostetaan yhteyttä uudelleen&hellip;"
         },

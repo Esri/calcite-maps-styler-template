@@ -20,7 +20,7 @@
             buttonText: "Labi",
         },
         ui:{
-            basemapButton: "ķ_Basemap_ū"
+            basemapButton: "Pamatkarte"
         }
     })
 

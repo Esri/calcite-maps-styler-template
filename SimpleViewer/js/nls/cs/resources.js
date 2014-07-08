@@ -1,7 +1,7 @@
 ﻿define(
    ({
         map: {
-            error: "Nelze vytvořit mapu."
+            error: "Nelze vytvořit mapu"
         }, 
         tools: {
         	legend: "Legenda",

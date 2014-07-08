@@ -86,7 +86,7 @@
                 "enterFullscreen": "מבט מסך מלא",
                 "exitFullscreen": "צא ממסך מלא",
                 "arcgisLink": "פרטי פריט",
-                "moreInformation": "עוד מידע",
+                "moreInformation": "מידע נוסף",
                 "geoLocateTitle": "השתמש במיקום נוכחי",
                 "openInMobile": "פתח באפליקציה של המכשיר נייד",
                 "openInArcGIS": "Map Viewer",

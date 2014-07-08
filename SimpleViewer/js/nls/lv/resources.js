@@ -1,11 +1,11 @@
 ﻿define(
    ({
         map: {
-            error: "ķ_Unable to create map_ū"
+            error: "Nevar izveidot karti"
         }, 
         tools: {
-        	legend: "ķ_Legend_ū",
-        	 about: "ķ_About_ū"
+        	legend: "Apzīmējumi",
+        	 about: "Par"
         }
     })
    

@@ -4,7 +4,7 @@
             error: "Kan ikke opprette kart"
         },
         onlineStatus: {
-            online: "å_You are currently online._ø",
+            online: "Du er for tiden pålogget.",
             offline: "Du jobber nå frakoblet. Svar på skjemaene blir lagret lokalt til det kan opprettes en forbindelse til serveren.",
             reconnecting: "Kobler til på nytt&hellip;"
         },

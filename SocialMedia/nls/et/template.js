@@ -4,7 +4,7 @@
             "main": {
                 "scaleBarUnits": "inglise",
                 "timePattern": "h:mma", // added 2.5.2013
-                "datePattern": "MMM d, yyyy" // added 2.5.2013
+                "datePattern": "d. MMMM yyyy" // added 2.5.2013
             },
             "applicationTitle": {
                 "PIM": "Avaliku infoga kaart" // added 8.26.2013

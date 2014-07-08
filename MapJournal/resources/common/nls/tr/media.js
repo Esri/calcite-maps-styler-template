@@ -62,7 +62,7 @@
 				url: "Bir Vimeo videosu URL\'si"
 			},
 			videoSelectorOther: {
-				explain1: "Harita Bülteni ham videoları (avi, mpeg gibi) oynatamaz ancak dahili oynatıcıları (YouTube ya da Vimeo gibi) olan barındırılan video dosyalarını oynatabilir.",
+				explain1: "Harita Bülteni ham videoları (avi, mpeg gibi) oynatamaz ancak dahili oynatıcıları  olan (YouTube ya da Vimeo gibi) video dosyalarını oynatabilir.",
 				explain2: "Çoğu çevrimiçi video barındırma hizmeti bu özelliği sunar, videoyu gömmek için geçerli seçeneği bulmalı, verilen kodu kopyalamalı ve %WEBPAGE% kullanmalısınız.",
 				explain3: "Alternatif olarak videoyu kendiniz barındırmak istiyorsanız, %EXAMPLE% gibi bir video oynatıcı kullanan bir HTML sayfası oluşturabilir, sayfayı barındırabilir ve ayrıca %WEBPAGE% kullanabilirsiniz.",
 				webpage: "Web sayfası özelliği"

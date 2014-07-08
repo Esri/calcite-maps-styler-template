@@ -1,11 +1,11 @@
 ﻿define(
    ({
         map: {
-            error: "ก้_Unable to create map_ษฺ"
+            error: "ไม่สามารถสร้างแผนที่ได้"
         }, 
         tools: {
-        	legend: "ก้_Legend_ษฺ",
-        	 about: "ก้_About_ษฺ"
+        	legend: "คำอธิบายแผนที่",
+        	 about: "เกี่ยวกับ"
         }
     })
    

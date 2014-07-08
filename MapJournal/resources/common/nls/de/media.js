@@ -62,27 +62,27 @@
 				url: "URL eines Vimeo-Videos"
 			},
 			videoSelectorOther: {
-				explain1: "Karten-Journal kann keine unverarbeiteten Videos (z. B. avi, mpeg), jedoch gehostete Videodateien mit integrierten Playern (z. B. YouTube oder Vimeo) wiedergeben.",
+				explain1: "Map Journal kann keine unverarbeiteten Videos (z. B. avi, mpeg), jedoch gehostete Videodateien mit integrierten Playern (z. B. YouTube oder Vimeo) wiedergeben.",
 				explain2: "Diese Funktion wird von den meisten Online-Services, die Videos hosten, bereitgestellt. Sie müssen die Option zum Einbetten des Videos suchen, den angegebenen Code kopieren und %WEBPAGE% verwenden.",
-				explain3: "Wenn Sie das Video selbst hosten möchten, können Sie auch eine HTML-Seite erstellen, die eine Videoabspielfunktion wie %EXAMPLE% verwendet, diese Seite hosten und %WEBPAGE% verwenden.",
+				explain3: "Wenn Sie das Video selbst hosten möchten, können Sie auch eine HTML-Seite erstellen, die einen Videoplayer wie %EXAMPLE% verwendet, diese Seite hosten und %WEBPAGE% verwenden.",
 				webpage: "Webseitenfunktion"
 			},
 			webpageSelectorHome: {
 				lblUrl: "Webseiten-URL",
-				lblEmbed: "Einbindungscode",
+				lblEmbed: "Eingebundener Code",
 				lblOR: "ODER",
-				lblError1: "Fehler - löschen Sie eines der beiden Eingabefelder.",
-				lblError2: "Einbindungscode darf nur ein <iframe> enthalten"
+				lblError1: "Fehler - löschen Sie den Inhalt eines der beiden Eingabefelder.",
+				lblError2: "Der eingebundene Code darf nur ein <iframe> enthalten"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Eine Bild-URL muss mit \"http://\" beginnen und mit \".jpg\" oder \".png\" enden",
-				lblLabel: "Bildbeschriftung",
+				lblLabel: "Bildüberschrift",
 				lblLabel1: "Beschriftung",
 				lblLabel2: "Hovertext",
 				lblLabel3: "Keine",
 				lblLabelPH: "Text eingeben...",
-				lblMaximize: "Fügen Sie eine Schaltfläche zum Maximieren in die Ecke des Bildes ein",
+				lblMaximize: "Fügen Sie eine Schaltfläche zum Maximieren in der Ecke des Bildes ein",
 				lblMaximizeHelp: "Nur für Fotos mit hoher Qualität empfohlen",
 				lblPosition: "Position",
 				lblPosition1: "Zentrieren",
@@ -93,7 +93,7 @@
 				tooltipDimension: "Der Wert kann in \"Px\" oder \"%\" angegeben werden",
 				lblPosition2Explain: "(Zuschneiden möglich)",
 				lblPosition3Explain: "(Zuschneiden nicht möglich)",
-				lblPosition3Explain2: "(Breite ist immer an das Fenster angepasst)",
+				lblPosition3Explain2: "(Breite wird immer an das Fenster angepasst)",
 				lblPosition4Explain: "(Verzerren möglich)"
 			},
 			editorActionGeocode: {

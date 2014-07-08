@@ -1,7 +1,7 @@
 ﻿define(
    ({
         map: {
-            error: "Map kan niet gemaakt worden"
+            error: "Kaart kan niet gemaakt worden"
         }, 
         tools: {
         	legend: "Legenda",

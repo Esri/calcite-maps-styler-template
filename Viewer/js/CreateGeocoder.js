@@ -78,11 +78,19 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                                     geocodeResult.feature.infoTemplate = layer.infoTemplates[activeGeocoder.subLayerId].infoTemplate;
                                     featureSearch = true;
                                     this._getPopupFeatureLayer(layer, activeGeocoder.subLayerId, geocodeResult.feature.infoTemplate).then(lang.hitch(this, function (layerResult) {
+                                        if(!layerResult){
+                                            return;
+                                        }
+
                                         //Info template defined so create a feature layer and display the popup
-                                        geocodeResult.feature._layer = layerResult;
-                                        this.map.infoWindow.setFeatures([geocodeResult.feature]);
-                                        this.map.infoWindow.show(anchorPoint);
-                                        this.map.setExtent(bestView);
+                                
+                                        if(layerResult.infoTemplate){
+                                            geocodeResult.feature._layer = layerResult;
+
+                                            this.map.infoWindow.setFeatures([geocodeResult.feature]);
+                                            this.map.infoWindow.show(anchorPoint);
+                                            this.map.setExtent(bestView);
+                                        }
                                     }));
                                 } else {
                                     //No info template defined so just show popup with info"
@@ -121,37 +129,42 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
 
         },
         _getPopupFeatureLayer: function (mapLayer, subLayerId, popupInfo) {
+ 
             var deferred = new Deferred();
             if (this.geocodeFeatureLayers[mapLayer.id] && this.geocodeFeatureLayers[mapLayer.id][subLayerId]) {
                 //already have it 
                 deferred.resolve(this.geocodeFeatureLayers[mapLayer.id][subLayerId]);
+            }else{
+                var url = mapLayer.url + "/" + subLayerId;
+                if (mapLayer.dynamicLayerInfos) {
+                    array.some(mapLayer.dynamicLayerInfos, lang.hitch(this, function (dynLayerInfo) {
+                        if (dynLayerInfo.id === subLayerId) { //don't have this info but leaving for now
+                            url = mapLayer.url + "/" + dynLayerInfo.source.mapLayerId;
+                            return true;
+                        }
+                    }));
+                }
+
+                var params = {
+                    mode: FeatureLayer.MODE_SELECTION,
+                    outFields: ["*"],
+                    infoTemplate: popupInfo && popupInfo.info && new PopupTemplate(popupInfo.info) 
+                };
+                var layer = new FeatureLayer(url, params);
+                layer.on("load", lang.hitch(this, function(){
+                    //save the layer for later 
+                    this.geocodeFeatureLayers[mapLayer.id] = this.geocodeFeatureLayers[mapLayer.id] || {};
+                    this.geocodeFeatureLayers[mapLayer.id][subLayerId] = layer;
+
+                    deferred.resolve(layer);
+
+                }), function(error){
+                    deferred.resolve(null);
+                });
+
             }
-            var url = mapLayer.url + "/" + subLayerId;
-            if (mapLayer.dynamicLayerInfos) {
-                array.some(mapLayer.dynamicLayerInfos, lang.hitch(this, function (dynLayerInfo) {
-                    if (dynLayerInfo.id === subLayerId) { //don't have this info but leaving for now
-                        url = mapLayer.url + "/" + dynLayerInfo.source.mapLayerId;
-                        return true;
-                    }
-                }));
-            }
-            var params = {
-                mode: FeatureLayer.MODE_SELECTION,
-                outFields: ["*"],
-                infoTemplate: popupInfo && new PopupTemplate(popupInfo)
-            };
-            var layer = new FeatureLayer(url, params);
-
-            //save the layer for later 
-            this.geocodeFeatureLayers[mapLayer.id] = this.geocodeFeatureLayers[mapLayer.id] || {};
-            this.geocodeFeatureLayers[mapLayer.id][subLayerId] = layer;
-
-
-            deferred.resolve(layer);
-
-
-
-
+  
+     
             return deferred.promise;
         },
         setupInfoWindowAndZoom: function (content, geocodeLocation, newExtent, geocodeResult, pos) {

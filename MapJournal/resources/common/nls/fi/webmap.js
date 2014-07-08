@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Å_Web map_ö",
+				lblWebMap: "Web-kartta",
 				lblLocation: "Sijainti",
 				lblContent: "Sisältö",
 				lblPopup: "Popup",
-				lblControls: "Å_Extras_ö",
+				lblControls: "Ylimääräinen sisältö",
 				lblOverview: "Yleiskatsauskartta",
 				lblLegend: "Selite",
 				loadingTitle: "Ladataan otsikkoa",
@@ -22,19 +22,19 @@
 				newMap: "Äskettäin valittu Web-kartta",
 				webmapDefault: "Web-kartan oletusarvo",
 				customCfg: "Mukautettu konfiguraatio",
-				tooltipLocation: "Å_Define the map location that will be used when your readers navigate to this section._ö",
+				tooltipLocation: "Määritä karttasijainti, jota käytetään, kun lukijat siirtyvät tähän osaan.",
 				tooltipContent: "Määritä näkyvät karttatasot.",
 				tooltipPopup: "Valitse ponnahdusikkuna, joka näytetään, kun lukijat siirtyvät tähän osaan.",
 				tooltipOverview: "Näytä pieni yleiskatsauskartta pääkartan ohessa",
 				tooltipLegend: "Tuo näkyviin kartan selite karttaan. Se on hyödyllinen apuominaisuus, kun kartassa on useita karttatasoja ja symboleja.",
-				mapCfgInvite: "Å_Use these controls to configure your map_ö"
+				mapCfgInvite: "Määritä karttasi näiden säätimien avulla"
 			},
 			configure: {
 				btnReset: "Palauta",
 				btnCancel: "Peruuta",
 				tocTitle: "Kartan sisältö",
 				tocExplain: "Valitse näytettävät karttatasot.",
-				tocSave: "Å_Save map content_ö",
+				tocSave: "Tallenna kartan sisältö",
 				extentTitle: "Karttasijainti",
 				extentExplain: "Vieritä ja tarkenna karttaa määrittääksesi, miten lukijasi sen näkevät.",
 				extentSave: "Tallenna karttasijainti",

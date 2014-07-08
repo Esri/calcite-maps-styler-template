@@ -4,7 +4,7 @@
             error: "Impossibile creare la mappa"
         },
         onlineStatus: {
-            online: "é_You are currently online._È",
+            online: "Si è attualmente online.",
             offline: "Al momento è attiva la modalità offline. Gli invii di moduli verranno salvati in locale finché non sarà possibile stabilire una connessione al server.",
             reconnecting: "Riconnessione in corso&hellip;"
         },

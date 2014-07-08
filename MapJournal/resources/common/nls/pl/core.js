@@ -32,7 +32,7 @@
 				tooltipNotShared: "Z tej funkcji można skorzystać dopiero po udostępnieniu aplikacji.",
 				noPendingChange: "Brak oczekujących zmian",
 				unSavedChangePlural: "Oczekujące zmiany",
-				closeWithPendingChange: "Czy na pewno chcesz potwierdzić tę czynność? Zmiany zostaną utracone.",
+				closeWithPendingChange: "Czy na pewno chcesz potwierdzić tę operację? Zmiany zostaną utracone.",
 				saveError: "Zapisywanie nie powiodło się, spróbuj ponownie",
 				shareStatus1: "Aplikacja nie została jeszcze zapisana.",
 				shareStatus2: "Aplikacja jest udostępniania publicznie",
@@ -42,7 +42,7 @@
 			share: {
 				firstSaveTitle: "Aplikacja zapisana pomyślnie",
 				firstSaveHeader: "Aplikacja została zapisana w portalu %PORTAL%, jednak nie została jeszcze udostępniona.",
-				firstSavePreview: "Ogólnie",
+				firstSavePreview: "Podgląd",
 				firstSaveShare: "Udostępnij",
 				firstSaveA1: "Jeżeli nie znasz jeszcze portalu %PORTAL% lub chcesz szybko uzyskać dostęp do interfejsu kreatora, możesz zapisać następujące łącze: %LINK1%",
 				firstSaveA1bis: "Aplikację można również znaleźć w Twoim <a href='%LINK2%' target='_blank'>folderze zasobów w portalu %PORTAL%</a>.",
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "Układ",
 				explain: "Jakiego układu chcesz użyć?",
-				explainInit: "Zmian układu możesz dokonać w dowolnej chwili w oknie dialogowym ustawień.",
+				explainInit: "W oknie dialogowym ustawień możesz zmienić układ możesz w dowolnej chwili.",
 				viewExample: "Wyświetl przykład online"
 			},
 			settingsTheme: {

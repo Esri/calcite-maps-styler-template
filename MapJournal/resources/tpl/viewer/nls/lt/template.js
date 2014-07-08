@@ -27,7 +27,7 @@
 				notConfiguredMobile: "Sveiki atvykę į %TPL_NAME% interneto aplikaciją. Aplikacija dar nesukonfigūruota, o kūrimo priemonė mobiliuosiuose prietaisuose neveikia.",
 				notAuthorized: "Neturite teisių pasiekti šią aplikaciją",
 				noBuilderIE8: "Kūrimo priemonė neveikia ankstesnėse nei „Internet Explorer 9“ versijose.",
-				mapLoadingFail: "Į_Something went wrong, the Map cannot be loaded._š"
+				mapLoadingFail: "Įvyko klaida ir žemėlapio įkelti nepavyko."
 			},
 			mobileView: {
 				tapForDetails: "Išsamiai informacijai bakstelėkite",

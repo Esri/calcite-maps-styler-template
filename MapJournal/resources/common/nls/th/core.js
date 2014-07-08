@@ -14,8 +14,8 @@
 				start: "เริ่ม",
 				loading: "กำลังโหลด",
 				disabledAdmin: "คุณลักษณะนี้ได้ถูกปิดใช้งานโดยผู้ดูแลระบบ",
-				width: "ก้_Width_ษฺ",
-				height: "ก้_Height_ษฺ"
+				width: "ความกว้าง",
+				height: "ความสูง"
 			},
 			inlineFieldEdit: {
 				editMe: "แก้ไขฉัน!"
@@ -76,7 +76,7 @@
 			settingsLayout: {
 				title: "แบบร่าง",
 				explain: "คุณต้องการใช้รูปแบบโครงสร้างแบบใด?",
-				explainInit: "ก้_You can change the layout anytime from the settings dialog._ษฺ",
+				explainInit: "คุณสามารถแก้ไขโครงร่างได้ตลอดเวลาจากการตั้งค่าที่กล่องโต้ตอบ",
 				viewExample: "ดูเป็นตัวอย่างจริง"
 			},
 			settingsTheme: {

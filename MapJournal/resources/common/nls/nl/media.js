@@ -3,7 +3,7 @@
 		commonMedia: {
 			mediaSelector: {
 				lblSelect1: "Media",
-				lblSelect2: "Inhoud",
+				lblSelect2: "Content",
 				lblMap: "Kaart",
 				lblImage: "Afbeelding",
 				lblVideo: "Video",
@@ -62,17 +62,17 @@
 				url: "URL van een Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "Map Journal kan geen onbewerkte video afspelen (zoals avi of mpeg), maar het kan wel gehoste videobestenden met ingebouwde spelers afspelen (zoals YouTube of Vimeo).",
+				explain1: "Kaartjournaal kan geen onbewerkte video afspelen (zoals avi of mpeg), maar het kan wel gehoste videobestanden met ingebouwde spelers afspelen (zoals YouTube of Vimeo).",
 				explain2: "De meeste online videoservices bieden deze functie. U moet de optie vinden om de video in te kunnen sluiten, de verstrekte code kopieren en de %WEBPAGE% gebruiken.",
 				explain3: "Als u de video zelf wilt hosten, kunt u een HTML-pagina maken die een videospeler gebruikt zoals %EXAMPLE%. Host die pagina en gebruik tevens de %WEBPAGE%.",
 				webpage: "Functie webpagina"
 			},
 			webpageSelectorHome: {
 				lblUrl: "URL webpagina",
-				lblEmbed: "code insluiten",
+				lblEmbed: "Code voor inbedden",
 				lblOR: "OF",
 				lblError1: "Fout: maak een van de twee velden leeg.",
-				lblError2: "Code insluiten kan maar 1 <iframe> bevatten"
+				lblError2: "Code inbedden kan maar 1 <iframe> bevatten"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
@@ -82,7 +82,7 @@
 				lblLabel2: "Over tekst bewegen",
 				lblLabel3: "Geen",
 				lblLabelPH: "Voer wat tekst in...",
-				lblMaximize: "Sluit een knop voor maximum in de hoek van de afbeelding in",
+				lblMaximize: "Sluit een knop voor maximaliseren in de hoek van de afbeelding in",
 				lblMaximizeHelp: "Alleen aanbevolen voor foto\'s van hoge kwaliteit",
 				lblPosition: "Positie",
 				lblPosition1: "Centreren",

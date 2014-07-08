@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Å_Media_ö",
-				lblSelect2: "Å_Content_ö",
+				lblSelect1: "Media",
+				lblSelect2: "Sisältö",
 				lblMap: "Kartta",
 				lblImage: "Kuva",
 				lblVideo: "Video",
@@ -41,59 +41,59 @@
 				howToFind2: "Kopioi minkä tahansa Picasa- tai Google+-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
 			},
 			videoSelectorCommon: {
-				check: "Å_Check_ö",
-				notFound: "Å_Video not found_ö",
-				found: "Å_Video found_ö",
-				select: "Å_Select this video_ö"
+				check: "Valitse",
+				notFound: "Videota ei löydy",
+				found: "Video löytyi",
+				select: "Valitse tämä video"
 			},
 			videoSelectorHome: {
-				other: "Å_Other_ö"
+				other: "Muu"
 			},
 			videoSelectorYoutube: {
-				url: "Å_URL of a Youtube video_ö",
+				url: "Youtube-videon URL-osoite",
 				pageInputLbl: "Käyttäjätunnus",
 				lookupMsgError: "Käyttäjää ei löydy",
 				howToFind: "YouTube-käyttäjätunnuksen etsiminen",
 				howToFind2: "Käyttäjätunnus näkyy videoissa",
-				found: "Å_Found_ö",
+				found: "Löytyi",
 				noData: "Yhtään julkista videota ei löytynyt"
 			},
 			videoSelectorVimeo: {
-				url: "Å_URL of a Vimeo video_ö"
+				url: "Vimeo-videon URL-osoite"
 			},
 			videoSelectorOther: {
-				explain1: "Å_Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._ö",
-				explain2: "Å_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%._ö",
-				explain3: "Å_Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._ö",
-				webpage: "Å_Web page feature_ö"
+				explain1: "Karttapäiväkirja ei voi toistaa raakavideoita (esim. avi- ja mpeg-muotoisia), mutta sillä voi toistaa isännöityjä videotiedostoja, joissa on sisäänrakennettuja soittimia (esim. YouTube tai Vimeo).",
+				explain2: "Useimmissa online-videoisännöintipalveluissa voi käyttää kyseistä ominaisuutta, ja sinun on etsittävä videon upotusvalinta, kopioitava annettu koodi ja käytettävä sivustoa %WEBPAGE%.",
+				explain3: "Jos taas haluat isännöidä itse videota, voit luoda HTML-sivun, joka käyttää videosoitinta (esim. %EXAMPLE%), isännöidä tätä sivua ja käyttää myös sivustoa %WEBPAGE%.",
+				webpage: "Web-sivukohde"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Å_Webpage URL_ö",
-				lblEmbed: "Å_Embed code_ö",
-				lblOR: "Å_OR_ö",
-				lblError1: "Å_Error, clear one of the two input fields._ö",
-				lblError2: "Å_Embed code can only contain one <iframe>_ö"
+				lblUrl: "Web-sivun URL-osoite",
+				lblEmbed: "Upotuskoodi",
+				lblOR: "TAI",
+				lblError1: "Virhe, tyhjennä toinen kahdesta lähtöaineistokentästä.",
+				lblError2: "Upotuskoodi voi sisältää vain yhden merkkijonon <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Å_An image URL should start with http:// and end with .jpg or .png_ö",
-				lblLabel: "Å_Image Caption_ö",
+				lblURLPH: "Kuvan URL-osoitteen on alettava merkkijonolla http:// ja loputtava tarkenteeseen .jpg tai .png",
+				lblLabel: "Kuvan seloste",
 				lblLabel1: "Seloste",
 				lblLabel2: "Kohoteksti",
 				lblLabel3: "Ei mitään",
 				lblLabelPH: "Kirjoita vähän tekstiä...",
-				lblMaximize: "Å_Include a maximize button in the corner of the image_ö",
-				lblMaximizeHelp: "Å_Recommended only for high quality photos_ö",
+				lblMaximize: "Sisällytä suurennuspainike kuvan kulmaan",
+				lblMaximizeHelp: "Suositellaan vain korkealaatuisille valokuville",
 				lblPosition: "Sijainti",
 				lblPosition1: "Keskikohta",
 				lblPosition2: "Täytä",
 				lblPosition3: "Sovita",
 				lblPosition4: "Venytä",
-				lblPosition5: "Å_Custom_ö",
-				tooltipDimension: "Å_The value can be specified in 'px' or '%'_ö",
+				lblPosition5: "Mukautettu",
+				tooltipDimension: "Arvo voidaan määrittää px (pikseli)- tai %-yksiköissä",
 				lblPosition2Explain: "(voi rajautua)",
 				lblPosition3Explain: "(ei rajaudu)",
-				lblPosition3Explain2: "Å_(width will always fit the panel)_ö",
+				lblPosition3Explain2: "(leveys sopii aina paneeliin)",
 				lblPosition4Explain: "(voi vääristyä)"
 			},
 			editorActionGeocode: {

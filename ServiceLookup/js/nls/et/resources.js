@@ -20,7 +20,7 @@
             buttonText: "OK",
         },
         ui:{
-            basemapButton: "Š_Basemap_ä"
+            basemapButton: "Aluskaart"
         }
     })
 

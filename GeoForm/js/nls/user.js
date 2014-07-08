@@ -6,7 +6,7 @@ define({
             submitInformationText: "3. Complete Form",
             submitInstructions: "Add this information to the map.",
             myLocationText: "GPS",
-            locationDescription: "Select a location for your submission using one of the following options or by or by clicking/tapping the map.",
+            locationDescription: "Select a location for your submission using one of the following options or by clicking/tapping the map.",
             addressText: "Search",
             cooridnatesText: "Coordinates",
             locationTabText: "Location",
@@ -34,8 +34,8 @@ define({
             shareDialogFormText: "Form Link",
             close: "Close",
             dateFormat: "mm/dd/yyyy",
-            integerFormat: "1234",
-            floatFormat: "1.234",
+            integerFormat: "Enter a number",
+            floatFormat: "Enter a decimal number",
             invalidLatLong: "Please enter valid Latitude and Longitude"
         }
     })

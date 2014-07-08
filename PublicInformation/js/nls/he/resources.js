@@ -36,7 +36,7 @@
             this_week: "שבוע",
             this_month: "חודש",
             all_time: "כל עת",
-            moreInfo: "עוד מידע",
+            moreInfo: "מידע נוסף",
             searchTerms: "תנאי חיפוש",
             search: "חפש",
             flSettingsInfo: "התוצאות מתאימות לכותרת תמונה, תאור או תגיות.",

@@ -27,7 +27,7 @@
 				notConfiguredMobile: "Tere tulemast malli %TPL_NAME% veebirakendusse. Rakendus pole veel konfigureeritud ja mobiilseadmed ei toeta koosturit.",
 				notAuthorized: "Teil ei ole luba sellele rakendusele juurde pääseda",
 				noBuilderIE8: "Brauserist Internet Explorer 9 varasemad versioonid ei toeta koosturit.",
-				mapLoadingFail: "Š_Something went wrong, the Map cannot be loaded._ä"
+				mapLoadingFail: "Midagi läks valesti, kaarti ei saa laadida."
 			},
 			mobileView: {
 				tapForDetails: "Üksikasjade kuvamiseks puudutage",

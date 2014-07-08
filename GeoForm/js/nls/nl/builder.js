@@ -1,12 +1,12 @@
 ﻿define(
      ({
         builder: {
-            invalidWebmapSelectionAlert: "De geselecteerde webkaart bevat geen geldige laag die gebruikt kan worden. Voeg een bewerkbare Featurelaag toe aan uw webkaart om verder te gaan.",
-            selectFieldsText:"Vormvelden selecteren",
-            selectThemeText: "Vormthema selecteren",
+            invalidWebmapSelectionAlert: "De geselecteerde webmap bevat geen geldige laag die gebruikt kan worden. Voeg een bewerkbare Featurelaag toe aan uw webmap om verder te gaan.",
+            selectFieldsText:"Velden voor formulier selecteren",
+            selectThemeText: "Thema voor formulier selecteren",
             fieldLabelPlaceHolder: "Label toevoegen aan dit veld",
             fieldDescPlaceHolder: "Dit veld beschrijven",
-            webmapText: "1. Webkaart",
+            webmapText: "1. Webmap",
             layerText: "2. Laag",
             detailsText: "3. Details",
             fieldsText: "4. Velden",

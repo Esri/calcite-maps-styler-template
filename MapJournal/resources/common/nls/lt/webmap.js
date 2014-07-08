@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Į_Web map_š",
+				lblWebMap: "Internetinis žemėlapis",
 				lblLocation: "Vieta",
 				lblContent: "Turinys",
 				lblPopup: "Iškylantis langas",
-				lblControls: "Į_Extras_š",
+				lblControls: "Priedai",
 				lblOverview: "Apžvalgos žemėlapis",
 				lblLegend: "Legenda",
 				loadingTitle: "Įkeliamas pavadinimas",
@@ -22,19 +22,19 @@
 				newMap: "Naujai pasirinktas internetinis žemėlapis",
 				webmapDefault: "Numatytasis internetinis žemėlapis",
 				customCfg: "Adaptuota konfigūracija",
-				tooltipLocation: "Į_Define the map location that will be used when your readers navigate to this section._š",
+				tooltipLocation: "Nustatykite žemėlapio vietą, kuri bus naudojama, kai skaitytojai pereis į šią skiltį.",
 				tooltipContent: "Nustatykite matomus sluoksnius.",
 				tooltipPopup: "Pasirinkite iškylantį langą, kuris bus rodomas, kai skaitytojai pereis į šią skiltį.",
 				tooltipOverview: "Kartu su pagrindiniu žemėlapiu rodyti mažą apžvalgos žemėlapį",
 				tooltipLegend: "Žemėlapyje rodyti žemėlapio legendą. Tai naudinga, kai žemėlapyje yra daug sluoksnių ir simbolių.",
-				mapCfgInvite: "Į_Use these controls to configure your map_š"
+				mapCfgInvite: "Konfigūruokite žemėlapį naudodami šiuos valdiklius"
 			},
 			configure: {
 				btnReset: "Atkurti",
 				btnCancel: "Atšaukti",
 				tocTitle: "Žemėlapio turinys",
 				tocExplain: "Pasirinkite, kurie sluoksniai bus rodomi.",
-				tocSave: "Į_Save map content_š",
+				tocSave: "Išsaugoti žemėlapio turinį",
 				extentTitle: "Žemėlapio vieta",
 				extentExplain: "Perstumkite žemėlapį ir keiskite jo mastelį, kad nustatytumėte, kaip jis atrodys skaitytojams.",
 				extentSave: "Išsaugoti žemėlapio vietą",

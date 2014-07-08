@@ -27,25 +27,25 @@
 				title: "Bem-vindo a"
 			},
 			addEditPopup: {
-				disabled: "ã_Add Section is disabled because the maximum number of allowed sections has been reached._Ç",
+				disabled: "Adicionar Secção encontra-se desativado porque o número máximo de secções permitidas foi atingido.",
 				titleAdd: "Adicionar Secção",
-				titleAddHome: "ã_Add Home Section_Ç",
+				titleAddHome: "Adicionar Secção Inicial",
 				titleEdit: "Editar Secção",
 				step: "Passo",
-				stepMainStageExplain: "ã_Main Stage Content_Ç",
-				stepPanelExplain: "ã_Content_Ç",
+				stepMainStageExplain: "Conteúdo do Ecrã Principal",
+				stepPanelExplain: "Conteúdo",
 				stepMainStageNextTooltip: "Introduza o título da secção e selecione o conteúdo do Ecrã Principal",
 				step2NextTooltip: "Introduza o título da secção e conteúdo %LAYOUT-TYPE%",
 				stepNextTooltipNext: "para ir para o próximo passo",
 				stepNextTooltipAdd: "para adicionar a secção",
-				firstAddExplain: "ã_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts._Ç",
-				firstAddLeanMore: "ã_Learn More_Ç",
+				firstAddExplain: "Esta primeira secção é a sua Secção Inicial. Pense nela como a 'capa' da sua história. O título que acabou de definir será exibido em letras grandes.",
+				firstAddLeanMore: "Saber Mais",
 				titlePlaceholder: "Título da secção..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Adicione texto, ligações epequenos gráficos aqui.",
 				editorActionsTitle: "Ações do Ecrã Principal",
-				editorActionsHelpDescr: "ã_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._Ç"
+				editorActionsHelpDescr: "Utilize estes controlos para criar ligações que irão alterar o ecrã principal. Por exemplo, quando o leitor clica numa ligação, poderá querer ampliar o mapa para uma localização específica, exibir outro mapa web ou exibir uma Imagem."
 			},
 			organizePopup: {
 				title: "Organizar",
@@ -54,13 +54,13 @@
 				lblColPubDate: "Data de publicação",
 				lblColStatus: "Estado",
 				checkDisplayReverse: "Exibir secções em ordem inversa.",
-				btnApplyWarning: "ã_Confirm deletion of %NB% section(s)_Ç",
+				btnApplyWarning: "Confirmar a supressão de %NB% secções",
 				deleteTooltip: "Eliminar",
 				firstSectionExplain: "(A secção inicial não pode ser movida)"
 			},
 			exportData: {
-				btn: "ã_Export content_Ç",
-				tooltip: "ã_Exporting your content allows you to view and create a back-up of your Journal should you accidentally delete it. Simply copy, paste, the content the page content into any word processor._Ç"
+				btn: "Exportar Conteúdo",
+				tooltip: "Exportar o seu conteúdo permite-lhe visualizar e criar uma cópia de segurança do seu Jornal, caso o elimine acidentalmente. Simplesmente copie, cole, o conteúdo da página para qualquer processador de texto."
 			},
 			help: {
 				lblHelp: "Ajuda",
@@ -69,22 +69,22 @@
 				lblOrga: "Organizar conteúdo",
 				lblEdit: "Edições",
 				lblPublish: "Partilhar",
-				lblTips: "ã_Tips_Ç",
+				lblTips: "Dicas",
 				lblMore: "Quer mais?",
 				lblLink: "Visite o site web Story Maps.",
 				content1Div1: "Pode integrar vários estilos ao construir a sua história. O <strong>%LAYOUT_TITLE%</strong> contém tipicamente o seu texto, imagens e vídeo, enquanto os seus mapas tendem a estar no <strong>Ecrã Principal</strong>. No entanto, o %TPL_NAME% permite-lhe também apresentar imagens, gráficos e vídeos no ecrã principal.",
 				content1Div2: "Adicionar secções permite-lhe verdadeiramente personalizar a sua experiência de storytelling. À medida que os leitores fazem scroll para baixo no seu texto %LAYOUT_TITLE%, um mapa no Ecrã Principal permite mover ou ampliar para pontos importantes, ou novos mapas e imagens podem ser automaticamente carregados para enfatizar a sua mensagem.",
 				content2Div1: "Aqui está onde pode ajustar o aspeto do seu %TPL_NAME%. Esquemas de cores, layouts elarguras são refinados aqui.",
 				content2Div2: "Pode ainda adicionar ligações de partilha no Facebook, Twitter e Bitly para que os leitores possam facilmente partilhar o seu %TPL_NAME% com outros.",
-				content3Div1: "ã_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._Ç",
+				content3Div1: "O seu conteúdo é organizado em secções. Pode ter quantas secções pretender (pense nelas como mini-capítulos). O fluxo desses capítulos é importante; em Organizar, pode reordenar ou eliminar secções à sua vontade.",
 				content4Div1: "Encontrou um erro ou pretende alterar o seu material? Sem problema. Procure o ícone de edição em toda a sua aplicação para efetuar alterações ao seu conteúdo. Utilizará as funções de edição muitas vezes à medida que desenvolve o seu %TPL_NAME%!",
 				content5Div1: "O seu %TPL_NAME% encontra-se guardado na conta do seu %PORTAL% e éprivado por defeito. Pode decidir partilhá-lo com a sua organização ou abri-lo ao mundo. Até lhe fornecemos um URL curto para poder partilhar facilmente.",
-				content6Div1: "ã_The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal._Ç",
-				content6Div2: "ã_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!_Ç"
+				content6Div1: "O título da sua Secção Inicial é também o título do seu Jornal; pense na sua secção inicial como a 'capa' da sua história. O título da Secção Inicial manter-se-á visível quando os seus leitores navegarem pelo Jornal.",
+				content6Div2: "O seu %LAYOUT_TITLE% não tem de ter apenas texto. Considere incluir fotografias e vídeos para ajudar a dar vida à história e para quebrar secções longas de texto!"
 			},
 			landing: {
-				lblAdd: "ã_What do you want to call your Map Journal?_Ç",
-				phAdd: "ã_Enter your title..._Ç",
+				lblAdd: "Que nome pretende dar ao seu Jornal de Mapa?",
+				phAdd: "Introduza o título...",
 				lblOR: "Ou",
 				lblHelp: "Fazer uma visita guiada"
 			},

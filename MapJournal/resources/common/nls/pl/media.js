@@ -9,7 +9,7 @@
 				lblVideo: "Wideo",
 				lblExternal: "Strona internetowa",
 				disabled: "Opcja ta została wyłączona przez Administratora",
-				url: "W celu ręcznego wprowadzenia adresu internetowego obrazu",
+				url: "W celu manualnego wprowadzenia adresu internetowego obrazu",
 				userLookup: "Wczytaj albumy",
 				notImplemented: "Jeszcze nie wprowadzone"
 			},
@@ -53,7 +53,7 @@
 				url: "Adres URL pliku wideo dostępnego w serwisie YouTube",
 				pageInputLbl: "Nazwa użytkownika",
 				lookupMsgError: "Nie odnaleziono użytkownika",
-				howToFind: "Odszukiwanie nazwy użytkownika serwisu You Tube",
+				howToFind: "Wyszukiwanie nazwy użytkownika serwisu YouTube",
 				howToFind2: "Nazwa użytkownika jest wyświetlana pod każdym filmem",
 				found: "Znaleziono",
 				noData: "Nie znaleziono żadnych filmów publicznych"
@@ -63,16 +63,16 @@
 			},
 			videoSelectorOther: {
 				explain1: "Dziennik mapy nie jest w stanie odtwarzać surowych plików wideo (np. w formacie avi, mpeg), ale może odtwarzać hostowane pliki wideo, w które wbudowane są odtwarzacze (np. pliki dostępne w serwisie YouTube lub Vimeo).",
-				explain2: "Funkcja ta jest udostępniana w ramach większości usług hostowania plików wideo w Internecie, konieczne jest znalezienie opcji wbudowywania pliku wideo, skopiowanie danego kodu oraz skorzystanie z witryny %WEBPAGE%.",
+				explain2: "Funkcja ta jest udostępniana w ramach większości usług hostowania plików wideo w Internecie, konieczne jest znalezienie opcji osadzenia pliku wideo, skopiowanie danego kodu oraz skorzystanie z witryny %WEBPAGE%.",
 				explain3: "Ewentualnie, jeżeli użytkownik chce samodzielnie hostować plik wideo, może utworzyć stronę HTML, w ramach której wykorzystywany będzie odtwarzacz plików wideo, taki jak %EXAMPLE%, hostować tę stronę, a także skorzystać z witryny %WEBPAGE%.",
 				webpage: "Obiekt witryny internetowej"
 			},
 			webpageSelectorHome: {
 				lblUrl: "Adres URL witryny internetowej",
-				lblEmbed: "Kod wbudowania",
+				lblEmbed: "Kod do osadzenia",
 				lblOR: "LUB",
 				lblError1: "Błąd, wyczyść jedno z dwóch pól danych wejściowych.",
-				lblError2: "Kod wbudowania może zawierać tylko jedną <iframe>"
+				lblError2: "Kod do osadzenia może zawierać tylko jedną ramkę<iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",

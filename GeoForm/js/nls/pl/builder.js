@@ -1,11 +1,11 @@
 ﻿define(
      ({
         builder: {
-            invalidWebmapSelectionAlert: "Wybrana mapa internetowa nie zawiera prawidłowej warstwy, której można by użyć. Należy dodać edytowalną FeatureLayer do mapy internetowej, aby móc przejść dalej.",
+            invalidWebmapSelectionAlert: "Wybrana mapa internetowa nie zawiera prawidłowej warstwy, której może byc użyta. Aby przejść dalej, należy dodać edytowalną warstwę obiektów do mapy internetowej.",
             selectFieldsText:"Wybierz pola formularza",
             selectThemeText: "Wybierz motyw formularza",
             fieldLabelPlaceHolder: "Oznacz etykietą to pole",
-            fieldDescPlaceHolder: "Stwórz opis tego pola",
+            fieldDescPlaceHolder: "Utwórz opis do tego pola",
             webmapText: "1. Mapa internetowa",
             layerText: "2. Warstwa",
             detailsText: "3. Szczegóły",
@@ -13,8 +13,8 @@
             styleText: "5. Styl",
             previewText: "6. Podgląd",
             publishText: "7. Publikuj",
-            titleText: "Kreator formularzy GeoForm",
-            descriptionText: "GeoForm jest  konfigurowalnym szablonem do edycji danych w oparciu o formularz dla <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Usługi obiektowej</a>. Dzięki tej aplikacji użytkownik może wprowadzać dane do formularza zamiast do okna podręcznego mapy korzystając z możliwości <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Mapy internetowej</a> oraz edytowalnej Usługi obiektowej. Ten kreator przeznaczony jest do dostosowywania i wdrażania formularzy GeoForm, wystarczy w tym celu wykonać po kolei etapy znajdujące się po lewej stronie.",
+            titleText: "Kreator formularzy geograficznych",
+            descriptionText: "Formularz geograficzny jest  konfigurowalnym szablonem do edycji danych w oparciu o formularz dla <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000'>Usługi obiektowej</a>. Dzięki tej aplikacji użytkownik może wprowadzać dane do formularza zamiast do okna podręcznego mapy korzystając z możliwości <a target='_blank' href='http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000'>Mapy internetowej</a> oraz edytowalnej Usługi obiektowej. Ten kreator przeznaczony jest do dostosowywania i wdrażania formularzy geograficznych, wystarczy w tym celu wykonać po kolei etapy znajdujące się po lewej stronie.",
             btnPreviousText: "Wstecz",
             btnNextText:"Dalej",
             webmapTabTitleText: "Wybierz mapę internetową",
@@ -36,17 +36,17 @@
             toggleNavigationText: "Przełącz nawigację",
             formPlaceholderText: "Mój formularz",
             imageLogoPlaceholderText: "http://www.mysite.com/myimage.png",
-            shareBuilderInProgressTitleMessage: "Publikowanie formularza GeoForm",
+            shareBuilderInProgressTitleMessage: "Publikowanie formularza geograficznego",
             shareBuilderProgressBarMessage:"Proszę czekać...",
-            shareBuilderTitleMessage: "Formularz GeoForm został zaktualizowany i opublikowany!",
-            shareBuilderTextMessage: "Można zacząć zbierać informacje, udostępniając go innym osobom",
+            shareBuilderTitleMessage: "Formularz geograficzney został zaktualizowany i opublikowany!",
+            shareBuilderTextMessage: "Można zacząć zbierać informacje, udostępniając je innym osobom",
             shareDialogFormText: "Łącze do formularza",
             geoformTitleText: "Geo Form",
-            layerTabText: "Jest to warstwa, na podstawie której będzie tworzony formularz GeoForm. Warstwa musi być usługą obiektową, dla której włączone są opcje edycji w ramach uprawnień do publikowania, dostosowaną do odbiorców.",
-            detailsTabText:"Za pomocą poniższych pól Szczegółów formularza należy podać niestandardowy Tytuł, dodać niestandardowe logo oraz podać krótki opis dla odbiorców formularza GeoForm.",
-            fieldsTabText:"W tym miejscu można wybrać pola, które będą widoczne dla odbiorców formularza GeoForm, przeprowadzić edycję Etykiet, które będą widzieli, a także dodać krótki Opis ułatwiający wprowadzanie danych.",
-            styleTabText: "Za pomocą poniższych motywów formularzowi GeoForm można nadać wybrany przez siebie styl.",
-            publishTabText: "Po zakończeniu dostosowywania formularza GeoForm należy zapisać aplikację i zacząć udostępniać ją odbiorcom. Można zawsze powrócić do tego kreatora i wznowić dostosowywanie formularza w oparciu o uzyskane informacje zwrotne."
+            layerTabText: "Jest to warstwa, na podstawie której będzie tworzony formularz geograficzny. Warstwa musi być usługą obiektową, dla której włączone są opcje edycji w ramach uprawnień do publikowania, dostosowaną do odbiorców.",
+            detailsTabText:"Za pomocą poniższych pól Szczegółów formularza należy podać niestandardowy Tytuł, dodać niestandardowe logo oraz podać krótki opis dla odbiorców formularza geograficznego.",
+            fieldsTabText:"W tym miejscu można wybrać pola, które będą widoczne dla odbiorców formularza geograficznego, przeprowadzić edycję Etykiet, które będą widzieli, a także dodać krótki Opis ułatwiający wprowadzanie danych.",
+            styleTabText: "Za pomocą poniższych motywów dla formularza geograficznego może być nadany wybrany styl.",
+            publishTabText: "Po zakończeniu dostosowywania formularza geograficznego należy zapisać aplikację i zacząć udostępniać ją odbiorcom. Można zawsze powrócić do tego kreatora i wznowić dostosowywanie formularza w oparciu o uzyskane informacje zwrotne."
         }
     })
 );

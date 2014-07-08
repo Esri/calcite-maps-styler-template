@@ -42,8 +42,8 @@
 			},
 			videoSelectorCommon: {
 				check: "Kontrola",
-				notFound: "Video nebylo nalezeno.",
-				found: "Video bylo nalezeno.",
+				notFound: "Video nebylo nalezeno",
+				found: "Video bylo nalezeno",
 				select: "Vybrat toto video"
 			},
 			videoSelectorHome: {

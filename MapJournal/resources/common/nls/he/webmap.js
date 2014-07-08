@@ -7,7 +7,7 @@
 				lblContent: "תוכן",
 				lblPopup: "Popup",
 				lblControls: "תוספות",
-				lblOverview: "מפת תצוגה מקדימה",
+				lblOverview: "מפת התמצאות",
 				lblLegend: "מקרא",
 				loadingTitle: "טוען כותרת",
 				section: "חלק",

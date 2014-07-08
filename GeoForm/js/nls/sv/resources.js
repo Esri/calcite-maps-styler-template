@@ -4,7 +4,7 @@
             error: "Det gick inte att skapa kartan"
         },
         onlineStatus: {
-            online: "Å_You are currently online._ö",
+            online: "Du är online.",
             offline: "Du arbetar just nu offline. Inskickade formulär sparas lokalt tills det går att ansluta till servern.",
             reconnecting: "Återansluter&hellip;"
         },

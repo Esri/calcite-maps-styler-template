@@ -66,8 +66,11 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
                     //is there an associated item in the web map response
                     if (this.config.response.itemInfo && this.config.response.itemInfo.relatedItemsData && this.config.response.itemInfo.relatedItemsData[layer.itemId]) {
                         var item = this.config.response.itemInfo.relatedItemsData[layer.itemId];
-                        layer.definitionEditor = item.definitionEditor;
-                        filterLayers.push(this._getLayerFields(layer));
+                        if(item.definitionEditor){
+                            layer.definitionEditor = item.definitionEditor;
+                            filterLayers.push(this._getLayerFields(layer));
+                        }
+
                     }
 
                 }

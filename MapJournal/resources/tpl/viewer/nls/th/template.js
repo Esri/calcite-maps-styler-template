@@ -27,7 +27,7 @@
 				notConfiguredMobile: "ยินดีต้อนรับสู่โปรแกรมเว็บ TPL_NAME%% โปรแกรมไม่ได้กำหนดค่าและยังสร้างไม่ได้รับการสนับสนุนบนอุปกรณ์มือถือ",
 				notAuthorized: "คุณยังไม่ได้รับอนุญาตให้เข้าถึงโปรแกรมนี้",
 				noBuilderIE8: "สร้างไม่ได้รับการสนับสนุนบน Internet Explorer 9 รุ่นก่อน",
-				mapLoadingFail: "ก้_Something went wrong, the Map cannot be loaded._ษฺ"
+				mapLoadingFail: "มีข้อผิดพลาดบางประการ ไม่สามารถโหลดแผนที่ได้"
 			},
 			mobileView: {
 				tapForDetails: "เลือกสำหรับรายละเอียด",

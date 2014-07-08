@@ -1,11 +1,11 @@
 ﻿define(
    ({
         map: {
-            error: "Į_Unable to create map_š"
+            error: "Žemėlapio sukurti nepavyko"
         }, 
         tools: {
-        	legend: "Į_Legend_š",
-        	 about: "Į_About_š"
+        	legend: "Legenda",
+        	 about: "Apie"
         }
     })
    

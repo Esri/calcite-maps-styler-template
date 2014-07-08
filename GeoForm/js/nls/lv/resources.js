@@ -4,7 +4,7 @@
             error: "Nevar izveidot karti"
         },
         onlineStatus: {
-            online: "ķ_You are currently online._ū",
+            online: "Pašlaik esat tiešsaistē.",
             offline: "Jūs pašreiz strādājat bezsaistē. Iesniegtās formas tiks saglabātas lokāli, līdz tiks izveidots savienojums ar serveri.",
             reconnecting: "Notiek atkārtota savienošana&hellip;"
         },

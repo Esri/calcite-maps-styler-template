@@ -62,7 +62,7 @@
 				url: "URL של וידאו של Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Map Journal לא יכול להריץ וידאו גולמי (כגון avi, mpeg) אולם, הוא יכול להריץ קבצי וידאו המתארחים בנגנים (כגון יוטיוב, Vimeo).",
+				explain1: "חוברת מפות לא יכולה להציג וידאו גולמי (כגון avi, mpeg) אולם, היא יכולה להציג קבצי וידאו המתארחים בנגנים (כגון יוטיוב, Vimeo).",
 				explain2: "רוב שירותי הארוח של וידאו מאפשרים את היכולת הזו. אתה צריך למצוא את האפשרות לשבץ את הוידאו, להעתיק את הקוד המתאים ולהשתמש בתוך  %WEBPAGE%.",
 				explain3: "לחילופין, אם אתה רוצה לארח וידאו בעצמך, אתה יכול ליצור דף HTML המשתמש בצפיין וידאו כגון %EXAMPLE%, ארח דף זה וגם השתמש ב- %WEBPAGE%.",
 				webpage: "תכונות דף אינטרנט"
@@ -85,15 +85,15 @@
 				lblMaximize: "כלול את כפתור ה-maximize  בפינת התמונה",
 				lblMaximizeHelp: "מומלץ רק לתמונות באיכות גבוהה",
 				lblPosition: "מיקום",
-				lblPosition1: "מרכז",
-				lblPosition2: "מילוי",
+				lblPosition1: "ממורכז",
+				lblPosition2: "מלא",
 				lblPosition3: "מותאם",
-				lblPosition4: "מתיחה",
-				lblPosition5: "מותאם",
+				lblPosition4: "מתוח",
+				lblPosition5: "גודל מותאם",
 				tooltipDimension: "הערך יכול להיות מוגדר בתוך  'px' או '%'",
 				lblPosition2Explain: "(יכול להחתך)",
 				lblPosition3Explain: "(לא יכול להחתך)",
-				lblPosition3Explain2: "(רוחב תמיד יתאים לפאנל)",
+				lblPosition3Explain2: "(רוחב תמיד יתאים ללוח)",
 				lblPosition4Explain: "(יכול להתעוות)"
 			},
 			editorActionGeocode: {
@@ -101,7 +101,7 @@
 				mapMarkerExplain: "המשתמש יראה סימן מפה בעת לחיצה על הקישור"
 			},
 			editorActionMedia: {
-				lblTitle: "שנה את תוכן ה Main Stage"
+				lblTitle: "שנה את תוכן התצוגה הראשית"
 			},
 			editorInlineMedia: {
 				lblTitle: "הכנס תמונה או קטע וידאו"

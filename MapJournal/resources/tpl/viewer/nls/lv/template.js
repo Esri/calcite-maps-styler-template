@@ -27,7 +27,7 @@
 				notConfiguredMobile: "Laipni lūdzam web aplikācijā %TPL_NAME%. Aplikācija vēl nav konfigurēta un veidotājs vēl nav atbalstīts mobilajās ierīcēs.",
 				notAuthorized: "Jums nav tiesību piekļūt šai aplikācijai",
 				noBuilderIE8: "Pārlūkprogrammā Internet Explorer veidotājs tiek atbalstīts tikai, sākot ar 9. versiju.",
-				mapLoadingFail: "ķ_Something went wrong, the Map cannot be loaded._ū"
+				mapLoadingFail: "Kaut kas ir nogājis greizi, karti nevar ielādēt."
 			},
 			mobileView: {
 				tapForDetails: "Pieskarieties, lai iegūtu detalizētu informāciju",
