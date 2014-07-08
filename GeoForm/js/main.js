@@ -1,4 +1,4 @@
-/*global $,define,document,Storage */
+/*global $,define,document */
 /*jslint sloppy:true,nomen:true */
 define([
     "dojo/ready",
@@ -99,16 +99,16 @@ define([
                         }));
                         //Handle case where edit is first url parameter we'll use the same logic we used in sharedialog.js
                         var url = window.location.protocol + '//' + window.location.host + window.location.pathname;
-                        if(window.location.href.indexOf("?") > -1){
-                             var queryUrl = window.location.href;
-                             var urlParams = ioQuery.queryToObject(window.location.search.substring(1)),
+                        if (window.location.href.indexOf("?") > -1) {
+                            var queryUrl = window.location.href;
+                            var urlParams = ioQuery.queryToObject(window.location.search.substring(1)),
                                 newParams = lang.clone(urlParams);
-                             delete newParams.edit; //Remove edit parameter 
-                             url =  queryUrl.substring(0, queryUrl.indexOf("?") + 1) + ioQuery.objectToQuery(newParams);
-                        }                    
+                            delete newParams.edit; //Remove edit parameter 
+                            url = queryUrl.substring(0, queryUrl.indexOf("?") + 1) + ioQuery.objectToQuery(newParams);
+                        }
                         node.src = url;
 
-                    
+
                         node.onload = function () {
                             domConstruct.place(cssStyle, $("#iframeContainer").contents().find('head')[0], "last");
                         };
@@ -162,7 +162,7 @@ define([
 
                     //condition check to find whether the user has selected a point on map or not.
                     if (!this.addressGeometry) {
-                        errorMessage += "\n2. " + nls.user.latlongValidationMessageAlert;
+                        errorMessage += "\n2. " + nls.user.selectLocation;
                     }
                     this._showErrorMessageDiv(errorMessage);
                     btn.button('reset');
@@ -199,7 +199,7 @@ define([
             var layer = this.map.getLayer(this.config.form_layer.id);
             if (layer) {
                 // support basic offline editing
-                var handleOffline = new OfflineSupport({
+                OfflineSupport({
                     map: this.map,
                     layer: layer
                 });
@@ -215,14 +215,11 @@ define([
                 this.addressGeometry = evt.graphic.geometry;
             }));
             on(this.map, 'click', lang.hitch(this, function (evt) {
-                this.addressGeometry = evt.mapPoint;
                 if (!evt.graphic) {
-                    this.map.graphics.clear();
+                    this._clearSubmissionGraphic();
+                    this.addressGeometry = evt.mapPoint;
                     this.map.infoWindow.setTitle(nls.user.locationTabText);
                     this.map.infoWindow.setContent(nls.user.addressSearchText);
-                    if (this.map.infoWindow.isShowing) {
-                        this.map.infoWindow.hide();
-                    }
                     this.map.infoWindow.show(this.addressGeometry);
                     this._setSymbol(this.addressGeometry);
                 }
@@ -237,12 +234,10 @@ define([
         },
         _setSymbol: function (point) {
             var symbolUrl, pictureMarkerSymbol, graphic;
-            this.map.graphics.clear();
             symbolUrl = "./images/pins/purple.png";
             pictureMarkerSymbol = new PictureMarkerSymbol(symbolUrl, 36, 36).setOffset(10, 0);
             graphic = new Graphic(point, pictureMarkerSymbol, null, null);
             this.map.graphics.add(graphic);
-            this.map.centerAt(point);
             this.editToolbar.activate(editToolbar.MOVE, graphic, null);
         },
 
@@ -679,7 +674,8 @@ define([
                     this.map.resize();
                     this.map.reposition();
                 }));
-                var bsm = new bootstrapmap(this.map);
+                // bootstrap map functions
+                bootstrapmap(this.map);
                 this._createForm(this.config.fields);
                 this._createLocateButton();
                 this._createGeocoderButton();
@@ -688,6 +684,9 @@ define([
                 }));
                 on(this.YCoordinate, "keypress", lang.hitch(this, function (evt) {
                     this._findLocation(evt);
+                }));
+                on(this.cordsSubmit, "click", lang.hitch(this, function (evt) {
+                    this._evaluateCoordinates(evt);
                 }));
                 // make sure map is loaded
                 if (this.map.loaded) {
@@ -701,18 +700,21 @@ define([
                 }
             }), this.reportError);
         },
-
+        _evaluateCoordinates: function () {
+            this._clearSubmissionGraphic();
+            if (this.XCoordinate.value === "") {
+                this._showErrorMessageDiv(nls.user.emptylatitudeAlertMessage);
+                return;
+            } else if (this.YCoordinate.value === "") {
+                this._showErrorMessageDiv(nls.user.emptylongitudeAlertMessage);
+                return;
+            }
+            this._locatePointOnMap(this.XCoordinate.value + "," + this.YCoordinate.value);
+        },
         _findLocation: function (evt) {
             var keyCode = evt.charCode || evt.keyCode;
             if (keyCode === 13) {
-                if (this.XCoordinate.value === "") {
-                    this._showErrorMessageDiv(nls.user.emptylatitudeAlertMessage);
-                    return;
-                } else if (this.YCoordinate.value === "") {
-                    this._showErrorMessageDiv(nls.user.emptylongitudeAlertMessage);
-                    return;
-                }
-                this._locatePointOnMap(this.XCoordinate.value + "," + this.YCoordinate.value);
+                this._evaluateCoordinates();
             }
         },
         _createLocateButton: function () {
@@ -722,37 +724,64 @@ define([
             }, domConstruct.create('div'));
             currentLocation.startup();
             on(currentLocation, "locate", lang.hitch(this, function (evt) {
-                var pt = webMercatorUtils.geographicToWebMercator(evt.graphic.geometry);
-                evt.graphic.setGeometry(pt);
-                this.addressGeometry = pt;
-                this._setSymbol(evt.graphic.geometry);
-                this.map.infoWindow.setTitle(nls.user.myLocationTitleText);
-                this.map.infoWindow.setContent(nls.user.addressSearchText);
-                this.map.infoWindow.show(this.addressGeometry);
-                this._setSymbol(evt.graphic.geometry);
+                if (evt.error) {
+                    alert(nls.user.locationNotFound);
+                } else {
+                    var pt = webMercatorUtils.geographicToWebMercator(evt.graphic.geometry);
+                    evt.graphic.setGeometry(pt);
+                    this.addressGeometry = pt;
+                    this.map.infoWindow.setTitle(nls.user.myLocationTitleText);
+                    this.map.infoWindow.setContent(nls.user.addressSearchText);
+                    this.map.infoWindow.show(this.addressGeometry);
+                    this._setSymbol(evt.graphic.geometry);
+                }
+                $('#geolocate_button').button('reset');
             }));
             on(dom.byId('geolocate_button'), 'click', lang.hitch(this, function () {
-                this.map.infoWindow.hide();
+                this._clearSubmissionGraphic();
+                $('#geolocate_button').button('loading');
                 currentLocation.locate();
             }));
         },
-
+        _searchGeocoder: function () {
+            this._clearSubmissionGraphic();
+            var value = this.searchInput.value;
+            var node = dom.byId('geocoder_spinner');
+            if (value) {
+                domClass.remove(node, 'glyphicon glyphicon-search');
+                domClass.add(node, 'fa fa-spinner fa-spin');
+                this.geocodeAddress.find(value).then(lang.hitch(this, function (evt) {
+                    domClass.remove(node, 'fa fa-spinner fa-spin');
+                    domClass.add(node, 'glyphicon glyphicon-search');
+                    if (evt.results && evt.results.length) {
+                        this.geocodeAddress.select(evt.results[0]);
+                    } else {
+                        alert(nls.user.locationNotFound);
+                    }
+                }));
+            }
+        },
         _createGeocoderButton: function () {
-            var geocodeAddress = new Geocoder({
-                map: this.map,
-                autoComplete: true,
-                showResults: true
-            }, this.geocodeAddress);
-            geocodeAddress.startup();
+            this.geocodeAddress = new Geocoder({
+                map: this.map
+            }, domConstruct.create('div'));
+            this.geocodeAddress.startup();
 
-            on(geocodeAddress, "select", lang.hitch(this, function (evt) {
-                this.map.graphics.clear();
+            on(this.searchInput, 'keyup', lang.hitch(this, function (evt) {
+                var keyCode = evt.charCode || evt.keyCode;
+                if (keyCode === 13) {
+                    this._searchGeocoder();
+                }
+            }));
+
+            on(this.searchSubmit, 'click', lang.hitch(this, function () {
+                this._searchGeocoder();
+            }));
+
+            on(this.geocodeAddress, "select", lang.hitch(this, function (evt) {
                 this.addressGeometry = evt.result.feature.geometry;
                 this._setSymbol(evt.result.feature.geometry);
                 this.map.centerAt(evt.result.feature.geometry);
-                if (this.map.infoWindow.isShowing) {
-                    this.map.infoWindow.hide();
-                }
                 this.map.infoWindow.setTitle(nls.user.locationTabText);
                 this.map.infoWindow.setContent(nls.user.addressSearchText);
                 this.map.infoWindow.show(evt.result.feature.geometry);
@@ -787,10 +816,7 @@ define([
                 featureData.geometry = new Point(Number(this.addressGeometry.x), Number(this.addressGeometry.y), this.map.spatialReference);
                 //code for apply-edits
                 this.map.getLayer(config.form_layer.id).applyEdits([featureData], null, null, function (addResults) {
-                    _self.map.graphics.clear();
-                    if (_self.map.infoWindow.isShowing) {
-                        _self.map.infoWindow.hide();
-                    }
+                    _self._clearSubmissionGraphic();
                     _self.map.getLayer(config.form_layer.id).setEditable(false);
                     domConstruct.destroy(query(".errorMessage")[0]);
                     _self._openShareDialog();
@@ -808,25 +834,28 @@ define([
                 });
             } else {
                 this._resetButton();
-                this._showErrorMessageDiv(nls.user.latlongValidationMessageAlert);
+                this._showErrorMessageDiv(nls.user.selectLocation);
+            }
+        },
+        _clearSubmissionGraphic: function () {
+            this.addressGeometry = null;
+            this.map.graphics.clear();
+            if (this.map.infoWindow.isShowing) {
+                this.map.infoWindow.hide();
             }
         },
 
         _locatePointOnMap: function (coordinates) {
             var latLong = coordinates.split(",");
             if (latLong[0] >= -90 && latLong[0] <= 90 && latLong[1] >= -180 && latLong[1] <= 180) {
-                var mapLocation = webMercatorUtils.lngLatToXY(latLong[1], latLong[0], true);
-                var pt = new Point(mapLocation[0], mapLocation[1], this.map.spatialReference);
+                var mapLocation = new Point(latLong[1], latLong[0]);
+                var pt = webMercatorUtils.geographicToWebMercator(mapLocation);
                 this.addressGeometry = pt;
                 this._setSymbol(this.addressGeometry);
                 this.map.infoWindow.setTitle(nls.user.locationTabText);
                 this.map.infoWindow.setContent(nls.user.addressSearchText);
-                if (this.map.infoWindow.isShowing) {
-                    this.map.infoWindow.hide();
-                }
-                setTimeout(lang.hitch(this, function () {
-                    this.map.infoWindow.show(this.addressGeometry);
-                }), 500);
+                this.map.infoWindow.show(this.addressGeometry);
+                this.map.centerAt(this.addressGeometry);
                 domConstruct.empty(this.erroMessageDiv);
             } else {
                 this._showErrorMessageDiv(nls.user.invalidLatLong);
@@ -904,9 +933,11 @@ define([
             domConstruct.empty(this.erroMessageDiv);
             domConstruct.create("div", {
                 className: "alert alert-danger errorMessage",
+                id: "errorMessage",
                 innerHTML: errorMessage
             }, this.erroMessageDiv);
-            $(window).scrollTop(0);
+            window.location.hash = "#errorMessage";
+            this.map.resize();
         },
 
         _resetButton: function () {

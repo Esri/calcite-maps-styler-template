@@ -16,9 +16,9 @@ define({
             fieldvalidationMessageAlertText: "Please enter a valid number",
             formValidationMessageAlertText: "The following fields are required. Please enter the following fields before submission:",
             validationFormatTypeSubstring: "The expected format is ",
-            latlongValidationMessageAlert: "Please enter valid Latitude and Longitude in decimal degrees",
-            emptylatitudeAlertMessage: "Please enter Latitude",
-            emptylongitudeAlertMessage: "Please enter Longitude",
+            selectLocation: "Please select a location for your submission.",
+            emptylatitudeAlertMessage: "Please enter a latitude coordinate",
+            emptylongitudeAlertMessage: "Please enter a longitude coordinate",
             shareUserTitleMessage: "Thank you for your contribution!",
             shareUserTextMessage: "Your entry has been submitted. Share with others using the following options",
             addAttachmentFailedMessage: "Unable to add attachment to layer",
@@ -29,14 +29,17 @@ define({
             latitude: "Latitude",
             longitude: "Longitude",
             findMyLocation: "Find my location",
+            finding: "Locating&hellip;",
             myLocationTitleText: 'My Location',
             addressSearchText: "Your submission will appear here. You can drag the pin to correct the location.",
             shareDialogFormText: "Form Link",
             close: "Close",
             dateFormat: "mm/dd/yyyy",
             integerFormat: "Enter a number",
+            locationNotFound: "Location could not be found.",
             floatFormat: "Enter a decimal number",
-            invalidLatLong: "Please enter valid Latitude and Longitude"
+            setLocation: "Set location",
+            invalidLatLong: "Please enter valid latitude and longitude coordinates."
         }
     })
 });
