@@ -562,7 +562,7 @@ img {
   .pageContent {
     max-height: none; } }
 
-@media only screen and (min-width: 996px) {
+@media only screen and (min-width: 1074px) {
   .pageContent {
     top: 10px;
     max-height: none; } }
@@ -692,7 +692,7 @@ img {
   -ms-border-radius: 0;
   border-radius: 0; }
 
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 760px) {
   #panelTop {
     max-width: 650px;
     left: 44px;

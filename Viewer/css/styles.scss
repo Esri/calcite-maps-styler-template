@@ -555,8 +555,8 @@ img{
     @include respond-to(600){
         max-height:none;
     }
-    @include respond-to(996){
-        top:10px;
+    @include respond-to(1074){
+       top:10px;
         max-height:none;
     }
 }
@@ -689,7 +689,7 @@ img{
     overflow: visible;
     height: auto;
     @include border-radius (0);
-    @include respond-to(720){
+    @include respond-to(760){
         max-width:650px;
         left: 44px;
         top: 10px;
