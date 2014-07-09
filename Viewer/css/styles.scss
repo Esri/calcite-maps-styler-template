@@ -698,7 +698,7 @@ img{
 }
 .smallerTitle{
      @include respond-to(720){
-        max-width:500px !important;
+        max-width:520px !important;
     }   
 }
 #panelTitle {
