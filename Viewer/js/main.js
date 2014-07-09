@@ -777,6 +777,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             //Add the location search widget 
             require(["application/has-config!search?application/CreateGeocoder"], lang.hitch(this, function (CreateGeocoder) {
                 if (!CreateGeocoder) {
+                    //add class to make title area max-width smaller. Since geocoder isn't there we don't need extra space. 
+                    domClass.add("panelTop", "smallerTitle");
                     return;
                 }
 
@@ -865,6 +867,12 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 this.map = response.map;
                 //Set the title - use the config value if provided. 
                 var title = (this.config.title === null) ? response.itemInfo.item.title : this.config.title;
+                //if title is short make title area smaller
+                if (title && title.length && title.length < 26) {
+                    domClass.add("panelTop", "smallerTitle");
+                }
+
+
                 this.config.title = title;
                 document.title = title;
                 dom.byId("panelText").innerHTML = title;

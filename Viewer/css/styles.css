@@ -304,8 +304,8 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
   zoom: 1; }
 
-.esriSimpleSliderIncrementButton {
-  border-bottom: solid 1px #ffffff !important; }
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
+  border: none !important; }
 
 .simpleGeocoder .esriGeocoder {
   display: block;
@@ -549,10 +549,10 @@ img {
   right: 10px;
   margin-left: -310px;
   width: 300px;
-  top: 90px;
   display: block;
   overflow: hidden;
   max-height: 305px;
+  top: 100px;
   background-color: transparent;
   background-color: white;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF,endColorstr=#FFFFFFFF);
@@ -560,10 +560,9 @@ img {
 
 @media only screen and (min-width: 600px) {
   .pageContent {
-    top: 100px;
     max-height: none; } }
 
-@media only screen and (min-width: 860px) {
+@media only screen and (min-width: 996px) {
   .pageContent {
     top: 10px;
     max-height: none; } }
@@ -695,13 +694,17 @@ img {
 
 @media only screen and (min-width: 720px) {
   #panelTop {
-    max-width: 500px;
+    max-width: 650px;
     left: 44px;
     top: 10px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     border-radius: 5px; } }
+
+@media only screen and (min-width: 720px) {
+  .smallerTitle {
+    max-width: 500px !important; } }
 
 #panelTitle {
   height: 50px;
@@ -740,7 +743,8 @@ img {
 
 @media only screen and (min-width: 720px) {
   #panelText {
-    display: block; } }
+    display: block;
+    max-width: 400px; } }
 
 #panelSearch {
   float: left;

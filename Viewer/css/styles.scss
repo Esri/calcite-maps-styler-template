@@ -313,9 +313,12 @@ html, body {
     @include transparent($black-color, 0.3);
 }
 
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton{
+    border:none !important;
+}
 
 .esriSimpleSliderIncrementButton {
-    border-bottom: solid 1px #ffffff !important;
+   /*border-bottom: 1px solid rgba(255,255,255,0.5) !important;*/
 }
 
 .simpleGeocoder .esriGeocoder {
@@ -544,16 +547,15 @@ img{
     right:10px;
     margin-left: -310px;
     width: $page-width;
-    top: 90px;
     display:block;
     overflow:hidden;
     max-height:305px;
+    top:100px;
     @include transparent($default-theme, 1);
     @include respond-to(600){
-        top:100px;
         max-height:none;
     }
-    @include respond-to(860){
+    @include respond-to(996){
         top:10px;
         max-height:none;
     }
@@ -688,13 +690,17 @@ img{
     height: auto;
     @include border-radius (0);
     @include respond-to(720){
-        max-width:500px;
+        max-width:650px;
         left: 44px;
         top: 10px;
         @include border-radius(5px);
     }
 }
-
+.smallerTitle{
+     @include respond-to(720){
+        max-width:500px !important;
+    }   
+}
 #panelTitle {
     height: 50px;
     width:100%;
@@ -733,6 +739,7 @@ img{
     font-size:.9em;
     @include respond-to(720){
         display:block;
+        max-width:400px;
     }
 }
 
