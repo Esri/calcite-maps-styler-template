@@ -696,6 +696,11 @@ img{
         @include border-radius(5px);
     }
 }
+.largerTitle{
+     @include respond-to(720){
+        max-width:720px !important;
+    }   
+}
 .smallerTitle{
      @include respond-to(720){
         max-width:520px !important;

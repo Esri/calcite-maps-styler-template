@@ -703,6 +703,10 @@ img {
     border-radius: 5px; } }
 
 @media only screen and (min-width: 720px) {
+  .largerTitle {
+    max-width: 720px !important; } }
+
+@media only screen and (min-width: 720px) {
   .smallerTitle {
     max-width: 520px !important; } }
 

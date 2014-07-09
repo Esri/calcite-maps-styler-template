@@ -861,6 +861,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         id: "panelLogo",
                         innerHTML: "<img id='logo' src=" + this.config.logo + "></>"
                     }, dom.byId("panelTitle"), "first");
+                    domClass.add("panelTop", "largerTitle");
                 }
 
                 //Set the application title
@@ -868,7 +869,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 //Set the title - use the config value if provided. 
                 var title = (this.config.title === null) ? response.itemInfo.item.title : this.config.title;
                 //if title is short make title area smaller
-                if (title && title.length && title.length < 26) {
+                if (title && title.length && title.length < 26 && !this.config.logo) {
                     domClass.add("panelTop", "smallerTitle");
                 }
 
