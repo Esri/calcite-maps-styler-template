@@ -684,7 +684,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     map: this.map,
                     image: this.config.sharinghost + "/sharing/rest/content/items/" + this.config.response.itemInfo.item.id + "/info/" + this.config.response.itemInfo.thumbnail,
                     title: this.config.title,
-                    summary: this.config.response.itemInfo.snippet
+                    summary: this.config.response.itemInfo.item.snippet || ""
                 }, shareDiv);
                 domClass.add(shareDialog.domNode, "pageBody");
                 shareDialog.startup();
