@@ -663,7 +663,11 @@ img{
     padding:10px;
 }
 #pageBody_legend{
-    padding:20px;
+    padding-left:20px;
+    padding-top:20px;
+    padding-bottom:20px;
+    margin-right:30px;
+    max-width: $page-width - 20;
 }
 
 #pageBody_share{
@@ -675,7 +679,7 @@ img{
 }
 #pageBody_details{
     padding:5px;
-    max-width: $page-width - 10;
+    max-width: $page-width - 12;
 }
 
 #panelTop {
