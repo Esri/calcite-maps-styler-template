@@ -36,7 +36,7 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                 geocodeResults.results = geocodeResults.results.results;
             }
             if ((!geocodeResults || !geocodeResults.results || !geocodeResults.results.length)) {
-                console.log("No results found");
+                alert(this.config.i18n.tools.search.error);
             } else if (geocodeResults) {
                 this.allResults = geocodeResults.results;
             }
@@ -175,7 +175,7 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                 var currentLocationName = content;
                 var attr = this.allResults[pos].feature.attributes;
                 content = "<div id='geocodeCurrentResult' style='display:none;'><span style='font-weight:bold;'>";
-                content += "Current Location"; //this.config.i18n.viewer.main.search.currentLocation;
+                content += this.config.i18n.tools.search.currentLocation;
                 content += "</span></div>";
                 content += "<span>";
 
@@ -194,11 +194,11 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                 content += "<div id='geocodeWantOtherResults'>";
                 content += "<a id='results' style='cursor:pointer'>";
 
-                content += "Not what you wanted?"; //this.config.i18n.viewer.main.search.notWhatYouWanted;
+                content += this.config.i18n.tools.search.notWhatYouWanted;
                 content += "</a>";
                 content += "</div>";
                 content += "<div id='geocodeOtherResults' style='display:none;'><span style='font-weight:bold;'>";
-                content += "Select another location"; //this.config.i18n.viewer.main.search.selectAnother;
+                content += this.config.i18n.tools.search.selectAnother;
                 content += "</span><br/>";
                 for (var i = 0; i < this.allResults.length; i++) {
                     if (i !== pos) {
@@ -226,8 +226,8 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
             }
 
             //display a popup for the result
-            //this.config.i18n.viewer.main.search.popupTitle
-            this.map.infoWindow.setTitle("Location");
+
+            this.map.infoWindow.setTitle(this.config.i18n.tools.search.title);
 
             this.map.infoWindow.setContent(content);
 
@@ -247,11 +247,10 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
             }
 
             var location = new Point(geocodeLocation.x, geocodeLocation.y, geocodeLocation.spatialReference);
-            on.once(this.map, "extent-change", lang.hitch(this, function () {
+
+            this.map.setExtent(newExtent).then(lang.hitch(this, function(){
                 this.map.infoWindow.show(location);
             }));
-            this.map.setExtent(newExtent);
-
 
         },
         showOtherResults: function () {
@@ -269,7 +268,7 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
             var hasEsri = false,
                 geocoders = lang.clone(this.config.helperServices.geocode);
 
-            array.forEach(geocoders, function (geocoder, index) {
+            array.forEach(geocoders, lang.hitch(this, function (geocoder, index) {
 
                 if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
                     hasEsri = true;
@@ -277,9 +276,18 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                     geocoder.outFields = "Match_addr, stAddr, City";
                     geocoder.singleLineFieldName = "SingleLine";
                     geocoder.esri = geocoder.placefinding = true;
+                    //set local search if defined in config 
+                    if(this.config.searchExtent){
+                        geocoder.searchExtent = this.map.extent;
+                    }
+
+                    geocoder.localSearchOptions = {
+                        minScale: 300000,
+                        distance: 50000
+                    };
                 }
 
-            });
+            }));
             //only use geocoders with a singleLineFieldName that allow placefinding
             geocoders = array.filter(geocoders, function (geocoder) {
                 return (esriLang.isDefined(geocoder.singleLineFieldName) && esriLang.isDefined(geocoder.placefinding) && geocoder.placefinding);

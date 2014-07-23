@@ -66,6 +66,11 @@
                "label":"Address Finder"
             },
             {
+               "type": "boolean",
+               "fieldName": "searchExtent",
+               "label": "Prioritize search results in current extent."
+            },
+            {
                "type":"boolean",
                "fieldName":"tool_basemap",
                "label":"Basemap Gallery"
@@ -181,6 +186,7 @@
       "tool_edit_toolbar":false,
       "tool_bookmarks":true,
       "tool_basemap":true,
-      "tool_search":true
+      "tool_search":true,
+      "searchExtent": false
    }
 }

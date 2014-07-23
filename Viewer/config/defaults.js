@@ -63,8 +63,10 @@ define({
     ], 
     //Set the active tool on the toolbar. Note home and locate can't be the active tool. 
     "activeTool": "legend",
-    //Add the geocoding tool next to the title bar
+    //Add the geocoding tool next to the title bar. 
     "search": true,
+    //When searchExtent is true the locator will prioritize results within the current map extent.
+    "searchExtent": false,
     //Add the home extent button to the toolbar 
     "home": true,
     //Add the geolocation button on the toolbar. Only displayed if browser supports geolocation
