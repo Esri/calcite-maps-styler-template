@@ -1,4 +1,4 @@
-
+﻿
 define([
     "dojo/Evented",
     "dojo",
@@ -10,6 +10,8 @@ define([
     "dojo/_base/array",
     "dojo/on",
     "esri/geometry",
+    "esri/geometry/Extent",
+    "esri/geometry/Point",
     "esri/graphic",
     "esri/toolbars/draw",
     "esri/symbols/SimpleMarkerSymbol",
@@ -29,6 +31,8 @@ define([
     array,
     on,
     Geometry,
+    Extent,
+    Point,
     Graphic,
     Draw,
     SimpleMarkerSymbol,
@@ -64,6 +68,15 @@ define([
             this._createToolbar();
             this._initGraphic();
             this.emit("ready", { "Name": "CombinedPopup" });
+            if (this.config.location) {
+                var e = this.config.location.split(',');
+                if (e.length === 2) {
+                    var point = new Point(parseFloat(e[0]), parseFloat(e[1]), this.map.spatialReference);
+                    this.showPopup(point);
+                }
+
+            }
+
         },
         showPopup: function (evt) {
             if (this.lookupLayers === undefined) {
@@ -84,11 +97,7 @@ define([
 
             //query to determine popup 
             var query = new Query();
-            query.spatialRelationship = Query.SPATIAL_REL_INTERSECTS;
-            query.geometry = evt;
-            query.outSpatialReference = this.map.spatialReference;
-            query.geometryType = "esriGeometryPoint";
-            query.outFields = ["*"];
+            var queryTask;
 
             this.event = evt;
             this.results = [];
@@ -97,21 +106,59 @@ define([
             }
 
             this.defCnt = this.lookupLayers.length;
-
+            var queryDeferred;
             for (var f = 0, fl = this.lookupLayers.length; f < fl; f++) {
-                var queryTask = new QueryTask(this.lookupLayers[f].url);
-                this.queryDeferred = queryTask.execute(query);
-                this.queryDeferred.addCallback(lang.hitch(this, this._queryComplete(this.lookupLayers[f])));
+                if (this.lookupLayers[f].url == null) {
+                 f
+                    //precision 
+                    //var extent = new Extent({
+                    //    "xmin": evt.x - .00000001, "ymin": evt.y - .00000001, "xmax": evt.x + .00000001, "ymax": evt.y + .00000001,
+                    //    "spatialReference": evt.spatialReference
+                    //});
+                    var extent = new Extent({
+                        "xmin": evt.x , "ymin": evt.y , "xmax": evt.x , "ymax": evt.y ,
+                        "spatialReference": evt.spatialReference
+                    });
+                    query = new Query();
+                    query.geometry = extent;
+                    query.geometryType = "esriGeometryExtent";
+                    query.outFields = ["*"];
 
-                this.queryDeferred.addErrback(lang.hitch(this, function (error) {
-                    console.log(error);
-                    this.defCnt = this.defCnt - 1;
-                    if (this.defCnt === 0) {
-                        this._allQueriesComplate();
-                    }
 
-                }));
+                    queryDeferred = this.lookupLayers[f].layer.layerObject.queryFeatures(query);
+                    queryDeferred.addCallback(lang.hitch(this, this._queryComplete(this.lookupLayers[f])));
 
+                    queryDeferred.addErrback(lang.hitch(this, function (error) {
+                        console.log(error);
+                        this.defCnt = this.defCnt - 1;
+                        if (this.defCnt === 0) {
+                            this._allQueriesComplate();
+                        }
+
+                    }));
+                }
+                else {
+                    query = new Query();
+
+                    query.spatialRelationship = Query.SPATIAL_REL_INTERSECTS;
+                    query.geometry = evt;
+                    query.outSpatialReference = this.map.spatialReference;
+                    query.geometryType = "esriGeometryPoint";
+                    query.outFields = ["*"];
+
+                    queryTask = new QueryTask(this.lookupLayers[f].url);
+                    queryDeferred = queryTask.execute(query);
+                    queryDeferred.addCallback(lang.hitch(this, this._queryComplete(this.lookupLayers[f])));
+
+                    queryDeferred.addErrback(lang.hitch(this, function (error) {
+                        console.log(error);
+                        this.defCnt = this.defCnt - 1;
+                        if (this.defCnt === 0) {
+                            this._allQueriesComplate();
+                        }
+
+                    }));
+                }
             }
         },
         enableMapClick: function () {
@@ -134,11 +181,41 @@ define([
 
             for (f = 0, fl = serviceAreaLayerNames.length; f < fl; f++) {
                 layDetails = {};
+                serviceAreaLayerNames[f] = String.trim(serviceAreaLayerNames[f]);
 
                 array.forEach(this.layers, function (layer) {
 
-                    serviceAreaLayerNames[f] = String.trim(serviceAreaLayerNames[f]);
-                    if (layer.layerObject.layerInfos != null) {
+                    if (layer.featureCollection != null) {
+                        if (layer.featureCollection.layers != null) {
+                            array.forEach(layer.featureCollection.layers, function (subLyrs) {
+                                if (subLyrs.layerObject != null) {
+
+                                    if (layer.title == serviceAreaLayerNames[f]) {
+                                        layDetails.name = subLyrs.layerObject.name;
+                                        layDetails.layerOrder = f;
+                                        layDetails.url = subLyrs.layerObject.url;
+                                        layDetails.layer = subLyrs;
+                                        console.log(serviceAreaLayerNames[f] + " " + "set");
+
+                                        layDetails.popupInfo = subLyrs.popupInfo;
+                                        if (layDetails.popupInfo == null) {
+                                            if (this.config.i18n) {
+                                                if (this.config.i18n.error) {
+                                                    if (this.config.i18n.error.popupNotSet) {
+                                                        alert(this.config.i18n.error.popupNotSet + ": " + subLyrs.name);
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                        this.lookupLayers.push(layDetails);
+
+                                    }
+                                }
+                            }, this);
+                        }
+                    }
+                    else if (layer.layerObject.layerInfos != null) {
                         array.forEach(layer.layerObject.layerInfos, function (subLyrs) {
                             if (subLyrs.name == serviceAreaLayerNames[f]) {
                                 layDetails.name = subLyrs.name;
@@ -324,7 +401,7 @@ define([
             this.toolbar = new Draw(this.map, { showTooltips: false });
             this.toolbar.on("draw-end", lang.hitch(this, this._drawEnd));
             //esri.bundle.toolbars.draw.addPoint = this.config.i18n.map.mouseToolTip;
-            
+
 
         },
         _initGraphic: function () {
@@ -503,10 +580,14 @@ define([
                 var featureArray = [];
                 if (this.results.length === 0) {
                     var editGraphic = new Graphic(this.event, this.editSymbol, null, null);
+                    this.map.infoWindow.highlight = false;
+                    this.map.infoWindow._highlighted = undefined;
+
                     if (this.showGraphic === true) {
                         this.map.graphics.add(editGraphic);
                     }
                     featureArray.push(editGraphic);
+
                     this.map.infoWindow.setFeatures(featureArray);
                     this.map.infoWindow.setTitle(this.config.serviceUnavailableTitle);
                     this.map.infoWindow.setContent(this.config.serviceUnavailableMessage.replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'"));
@@ -522,7 +603,7 @@ define([
                     }
 
                 } else {
-                   
+
 
                     editGraphic = new Graphic(this.event, this.editSymbolAvailable, resultFeature, this.popupTemplate);
                     featureArray.push(editGraphic);
