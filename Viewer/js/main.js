@@ -526,7 +526,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 for (var i = 0; i < this.config.tools.length; i++) {
                     if (this.config.tools[i].name === "print") {
                         var f = this.config.tools[i].format;
-                        this.format = f.toLowerCase()
+                        this.format = f.toLowerCase();
                         break;
                     }
                 }
