@@ -680,6 +680,15 @@ img {
   #pageBody_share {
     max-height: none; } }
 
+#pageBody_bookmarks {
+  position: absolute;
+  top: 90px;
+  max-height: 70%; }
+
+@media only screen and (min-width: 720px) {
+  #pageBody_bookmarks {
+    max-height: 80%; } }
+
 #pageContent_details {
   padding-bottom: 100px; }
 

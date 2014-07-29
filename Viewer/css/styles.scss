@@ -677,6 +677,14 @@ img{
         max-height:none;
     }
 }
+#pageBody_bookmarks{
+    position:absolute;
+    top:90px;
+    max-height:70%;
+    @include respond-to(720){
+        max-height:80%;
+    }
+}
 #pageContent_details{
     padding-bottom:100px;
 }
@@ -684,6 +692,7 @@ img{
     padding:5px;
     max-width: $page-width - 12;
 }
+
 
 #panelTop {
     position: fixed;

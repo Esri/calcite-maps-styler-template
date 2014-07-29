@@ -239,7 +239,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     var bookmarks = new Bookmarks({
                         map: this.map,
                         bookmarks: this.config.response.itemInfo.itemData.bookmarks
-                    }, bookmarkDiv);
+                    }, domConstruct.create("div", {}, bookmarkDiv));
 
                     deferred.resolve(true);
 
@@ -530,12 +530,12 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         break;
                     }
                 }
-      
+
                 if (this.config.hasOwnProperty("tool_print_format")) {
                     this.format = this.config.tool_print_format.toLowerCase();
                 }
 
-      
+
                 if (has("print-legend")) {
                     legendNode = domConstruct.create("input", {
                         id: "legend_ck",
@@ -592,7 +592,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             layout: "Letter ANSI A Landscape",
                             layoutOptions: layoutOptions,
                             label: this.config.i18n.tools.print.layouts.label1,
-                            format: this.format                     },
+                            format: this.format
+                        },
                         {
                             layout: "Letter ANSI A Portrait",
                             layoutOptions: layoutOptions,
@@ -665,13 +666,13 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             plate.layoutOptions = layoutOptions;
                             return plate;
                         }));
-                 
+
 
                         print = new Print({
                             map: this.map,
                             templates: templates,
                             url: this.config.helperServices.printTask.url
-                        }, domConstruct.create("div")); 
+                        }, domConstruct.create("div"));
                         domConstruct.place(print.printDomNode, printDiv, "first");
 
                         print.startup();
