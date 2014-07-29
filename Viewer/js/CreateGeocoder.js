@@ -226,7 +226,6 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
             }
 
             //display a popup for the result
-
             this.map.infoWindow.setTitle(this.config.i18n.tools.search.title);
 
             this.map.infoWindow.setContent(content);
@@ -248,7 +247,7 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
 
             var location = new Point(geocodeLocation.x, geocodeLocation.y, geocodeLocation.spatialReference);
 
-            this.map.setExtent(newExtent).then(lang.hitch(this, function(){
+            this.map.setExtent(newExtent).then(lang.hitch(this, function () {
                 this.map.infoWindow.show(location);
             }));
 
@@ -277,7 +276,7 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                     geocoder.singleLineFieldName = "SingleLine";
                     geocoder.esri = geocoder.placefinding = true;
                     //set local search if defined in config 
-                    if(this.config.searchExtent){
+                    if (this.config.searchExtent) {
                         geocoder.searchExtent = this.map.extent;
                     }
 
