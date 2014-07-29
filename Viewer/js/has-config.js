@@ -173,6 +173,9 @@ define(["dojo/has"], function (has) {
         }
         return printLayouts;
     });
+
+
+
     has.add("share", function (g) {
         var share = getTool("share", g.config);
         //overwrite the default with app settings 

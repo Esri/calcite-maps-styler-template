@@ -29,10 +29,10 @@ define({
             },
 	    	"print": {
 			    "layouts":{
-			      "label1": 'Landscape (PDF)',
-			      "label2": 'Portrait (PDF)',
-			      "label3": 'Landscape (Image)',
-			      "label4": 'Portrait (Image)'
+			      "label1": 'Landscape',
+			      "label2": 'Portrait',
+			      "label3": 'Landscape',
+			      "label4": 'Portrait'
 			    },
 			    "legend": "Add legend to output"
 			},

@@ -520,6 +520,22 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 }
 
                 var printDiv = toolbar.createTool(tool, panelClass);
+
+                //get format
+                this.format = "PDF"; //default if nothing is specified 
+                for (var i = 0; i < this.config.tools.length; i++) {
+                    if (this.config.tools[i].name === "print") {
+                        var f = this.config.tools[i].format;
+                        this.format = f.toLowerCase()
+                        break;
+                    }
+                }
+      
+                if (this.config.hasOwnProperty("tool_print_format")) {
+                    this.format = this.config.tool_print_format.toLowerCase();
+                }
+
+      
                 if (has("print-legend")) {
                     legendNode = domConstruct.create("input", {
                         id: "legend_ck",
@@ -576,25 +592,24 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             layout: "Letter ANSI A Landscape",
                             layoutOptions: layoutOptions,
                             label: this.config.i18n.tools.print.layouts.label1,
-                            format: "PDF"
-                        },
+                            format: this.format                     },
                         {
                             layout: "Letter ANSI A Portrait",
                             layoutOptions: layoutOptions,
                             label: this.config.i18n.tools.print.layouts.label2,
-                            format: "PDF"
+                            format: this.format
                         },
                         {
                             layout: "Letter ANSI A Landscape",
                             layoutOptions: layoutOptions,
                             label: this.config.i18n.tools.print.layouts.label3,
-                            format: "PNG32"
+                            format: this.format
                         },
                         {
                             layout: "Letter ANSI A Portrait",
                             layoutOptions: layoutOptions,
                             label: this.config.i18n.tools.print.layouts.label4,
-                            format: "PNG32"
+                            format: this.format
                         }];
 
 
@@ -634,6 +649,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         }
                         templateNames = layoutTemplate[0].choiceList;
 
+
                         // remove the MAP_ONLY template then add it to the end of the list of templates 
                         mapOnlyIndex = array.indexOf(templateNames, "MAP_ONLY");
                         if (mapOnlyIndex > -1) {
@@ -642,20 +658,20 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         }
 
                         // create a print template for each choice
-                        templates = array.map(templateNames, function (name) {
+                        templates = array.map(templateNames, lang.hitch(this, function (name) {
                             var plate = new PrintTemplate();
                             plate.layout = plate.label = name;
-                            plate.format = "pdf";
+                            plate.format = this.format;
                             plate.layoutOptions = layoutOptions;
                             return plate;
-                        });
-
+                        }));
+                 
 
                         print = new Print({
                             map: this.map,
                             templates: templates,
                             url: this.config.helperServices.printTask.url
-                        }, domConstruct.create("div")); //domConstruct.create("div",{}),printDiv); 
+                        }, domConstruct.create("div")); 
                         domConstruct.place(print.printDomNode, printDiv, "first");
 
                         print.startup();

@@ -157,6 +157,15 @@
                "type":"boolean",
                "fieldName":"tool_print_layouts",
                "label":"Display all Layout Options"
+            },{
+               "type":"paragraph",
+               "value": "Specify the print format. Check your print service to see a list of valid values. The following values are valid for the default print service: PDF, PNG32, PNG8, JPG, GIF, EPS, SVG, SVGZ"
+            },{
+               "placeHolder":"Default value is PDF",
+               "label":"Format:",
+               "fieldName":"tool_print_format",
+               "type":"string",
+               "tooltip":"Defaults to PDF"
             },
             {
                "type":"boolean",
