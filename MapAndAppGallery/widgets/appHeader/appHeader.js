@@ -129,6 +129,12 @@ define([
             })));
         },
 
+        /**
+        * load Application shortcut icons
+        * @param {object} icon type
+        * @param {object} icon path
+        * @memberOf widgets/appHeader/appHeader
+        */
         _loadIcons: function (rel, iconPath) {
             var icon = domConstruct.create("link");
             icon.rel = rel;
@@ -141,10 +147,18 @@ define([
             document.getElementsByTagName('head')[0].appendChild(icon);
         },
 
+        /**
+        * show loading indicator
+        * @memberOf widgets/appHeader/appHeader
+        */
         showProgressIndicator: function () {
             domClass.replace(this.divLoadingIndicator, "displayBlockAll", "displayNoneAll");
         },
 
+        /**
+        * hide loading indicator
+        * @memberOf widgets/appHeader/appHeader
+        */
         hideProgressIndicator: function () {
             domClass.replace(this.divLoadingIndicator, "displayNoneAll", "displayBlockAll");
         }

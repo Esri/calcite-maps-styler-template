@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Sorteeri:",
         layoutBtnTitle: "Kujundus",
         signInBtnTitle: "Logi sisse",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geoasukoht"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "WMS-kihi koordinaatsüsteem ei vasta kaardi koordinaatsüsteemile.",
         noPublicItems: "Konfigureeritud rühmas pole avalikke üksusi.",
         emptyUsernamePassword: "Sisestage kasutajanimi ja parool.",
-        noFullScreenSupport: "Praegune brauser ei toeta täisekraanrežiimi."
+        noFullScreenSupport: "Praegune brauser ei toeta täisekraanrežiimi.",
+        notMemberOfOrg: "@et You are not a member of this organization"
     }
 });

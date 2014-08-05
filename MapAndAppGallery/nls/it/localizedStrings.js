@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Ordina per",
         layoutBtnTitle: "Layout",
         signInBtnTitle: "Accedi",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geoposizione"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "Il riferimento spaziale del layer WMS non corrisponde a quello della mappa.",
         noPublicItems: "Non sono disponibili elementi pubblici nel gruppo configurato.",
         emptyUsernamePassword: "Immettere nome utente e password.",
-        noFullScreenSupport: "Il browser in uso non supporta la modalità a schermo intero."
+        noFullScreenSupport: "Il browser in uso non supporta la modalità a schermo intero.",
+        notMemberOfOrg: "@it You are not a member of this organization"
     }
 });

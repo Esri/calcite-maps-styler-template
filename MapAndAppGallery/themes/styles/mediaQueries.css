@@ -13,10 +13,6 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-.esriCTItemUnavailable
-{
-    display: none;
-}
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2)
 {
@@ -26,7 +22,7 @@
     }
 }
 
-@media only screen and (min-device-width : 641px)
+@media only screen and (max-device-width : 641px)
 {
 
     html, body
@@ -57,7 +53,7 @@
 
 }
 
-@media screen and (min-width: 1024px)
+@media screen and (max-width: 1024px)
 {
     html, body
     {
@@ -108,13 +104,6 @@
 
 /* media query to handle map gallery header text in iPad devices */
 
-@media screen and (min-width: 768px) and (max-width: 1020px)
-{
-    .esriCTMenuTabLeft
-    {
-        width: 28% !important;
-    }
-}
 
 /*End of media query*/
 
@@ -179,11 +168,6 @@
     .esriCTMapLogo
     {
         position: fixed !important;
-    }
-
-    .esriCTMenuTabLeft
-    {
-        width: 47%;
     }
 
     .esriCTGalleryName
@@ -298,11 +282,6 @@
     .esriCTGalleryContent
     {
         width: 100% !important;
-    }
-
-    .esriCTMenuTabLeft
-    {
-        width: 100%;
     }
 
     .esriCTIETest
@@ -496,6 +475,7 @@
         display: table-cell;
         width: 100%;
     }
+
     .esriCTSearchInput
     {
         width: 95%;
@@ -784,16 +764,6 @@
         padding-left: 10px;
     }
 
-    .esriCTDownloadButton
-    {
-        display: none;
-    }
-
-    .esriCTItemUnavailable
-    {
-        display: block;
-    }
-
     .esriCTInnerRightPanel
     {
         margin-top: 96px;
@@ -884,6 +854,8 @@
     .blueTheme .esriCTMenuTabLeft
     {
         background: #fff;
+        color: #007AC2;
+        padding-right: 65px;
     }
 
     .blueTheme .esriCTGalleryName
@@ -974,6 +946,8 @@
     .greenTheme .esriCTMenuTabLeft
     {
         background: #fff;
+        color: #028d6a;
+        padding-right: 65px;
     }
 
     .greenTheme .esriCTGalleryName
@@ -1173,11 +1147,6 @@
         width: 100% !important;
     }
 
-    .esriCTMenuTabLeft
-    {
-        width: 100%;
-    }
-
     .esriCTSignIn
     {
         float: left;
@@ -1360,6 +1329,7 @@
         display: table-cell;
         width: 100%;
     }
+
     .esriCTSearchInput
     {
         width: 95%;
@@ -1656,16 +1626,6 @@
         padding-left: 10px;
     }
 
-    .esriCTDownloadButton
-    {
-        display: none;
-    }
-
-    .esriCTItemUnavailable
-    {
-        display: block;
-    }
-
     .esriCTInnerRightPanel
     {
         margin-top: 96px;
@@ -1847,6 +1807,8 @@
     .greenTheme .esriCTMenuTabLeft
     {
         background: #fff;
+        color: #028d6a;
+        padding-right: 65px;
     }
 
     .greenTheme .esriCTGalleryName
@@ -2127,16 +2089,6 @@
         padding-left: 10px;
     }
 
-    .esriCTDownloadButton
-    {
-        display: none;
-    }
-
-    .esriCTItemUnavailable
-    {
-        display: block;
-    }
-
     .esriCTInnerRightPanel
     {
         margin-top: 96px;
@@ -2214,16 +2166,6 @@
     #widget_dijit_form_ValidationTextBox_0
     {
         width: 99% !important;
-    }
-
-    .esriCTDownloadButton
-    {
-        display: none;
-    }
-
-    .esriCTItemUnavailable
-    {
-        display: block;
     }
 
     .esriMapGeoInfo

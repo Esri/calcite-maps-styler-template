@@ -102,8 +102,13 @@ font
 
 .esriCTMenuTabLeft
 {
-    float: left;
-    height: 48px;
+    font-size: 22px;
+    padding: 5px 0 5px 15px;
+    text-shadow: 0px 0px 1px #aaaaaa;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
 }
 
 .esriCTMenuTabRight
@@ -353,6 +358,7 @@ font
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 .esriCTInnerRightPaneldiv
@@ -375,7 +381,7 @@ font
 
 .esriCTAppImage
 {
-    padding-bottom: 60%;
+    padding-bottom: 65.5%;
     width: 100%;
     background-size: 100% 100% !important;
     background-position: top !important;
@@ -445,7 +451,7 @@ font
 {
     margin: 0 auto;
     float: left;
-    width: 182px;
+    width: 200px;
     margin-bottom: 20px;
 }
 
@@ -458,7 +464,7 @@ font
 
 .esriCTListContent
 {
-    margin-left: 200px;
+    margin-left: 220px;
 }
 
 .esriCTDivClear
@@ -565,7 +571,7 @@ font
 
 .esriCTAppHeadline
 {
-    min-height: 105px;
+    min-height: 125px;
     color: #6E6E6E;
     text-align: justify;
     padding-right: 10px;
@@ -573,7 +579,7 @@ font
 
 .esriCTAppHeadlineInner
 {
-    min-height: 90px;
+    min-height: 50px;
     color: #6E6E6E;
     text-align: justify;
     padding-right: 10px;
@@ -767,12 +773,12 @@ font
 .esriCTDetailsLeftPanel
 {
     float: left;
-    width: 182px;
+    width: 200px;
 }
 
 .esriCTDetailsRightPanel
 {
-    margin-left: 200px;
+    margin-left: 220px;
     background: #fff;
 }
 
@@ -799,8 +805,8 @@ font
 
 .esriCTDetailsMapImage
 {
-    width: 180px;
-    height: 122px;
+    width: 200px;
+    height: 133px;
 }
 
 .esriCTDetailsMapImage img
@@ -1199,7 +1205,8 @@ font
 {
     position: absolute;
     bottom: 5px;
-    left: 5px;
+    height: 35px;
+    width: auto;
 }
 
 /* End of map page Styles */
@@ -1470,7 +1477,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 {
     color: white;
     background-color: #007ac2;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .blueTheme .esriCTAutoSuggest
@@ -1682,7 +1689,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 {
     color: white;
     background-color: #028d6a;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .greenTheme .esriCTAutoSuggest
@@ -1854,8 +1861,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 
 .greenTheme .dijitDialogUnderlay
 {
-    background: #028d6a
-    opacity: 0.55;
+    background: #028d6a opacity: 0.55;
 }
 
 .greenTheme .esriCTSearchBtnMap
@@ -1894,7 +1900,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 {
     color: white;
     background-color: #800000;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .redTheme .esriCTAutoSuggest

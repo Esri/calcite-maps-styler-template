@@ -68,6 +68,7 @@ define({
             sortByBtnTitle: "Sort by",
             layoutBtnTitle: "Layout",
             signInBtnTitle: "Sign In",
+            signOutBtnTitle: "Sign Out",
             geolocationBtnTitle: "Geolocation"
         },
         errorMessages: {
@@ -84,7 +85,8 @@ define({
             wmsSpatialReferenceError: "Spatial reference of the WMS layer does not match with spatial reference of map.",
             noPublicItems: "There are no public items in the configured group.",
             emptyUsernamePassword: "Please enter Username and Password.",
-            noFullScreenSupport: "Current browser does not support full screen mode."
+            noFullScreenSupport: "Current browser does not support full screen mode.",
+            notMemberOfOrg: "You are not a member of this organization"
         }
     },
     "ar": 1,

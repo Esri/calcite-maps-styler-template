@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Sorteren op",
         layoutBtnTitle: "Lay-out",
         signInBtnTitle: "Aanmelden",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geografische locatie"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "Ruimtelijke referentie van de WMS-laag komt niet overeen met ruimtelijke referentie van de kaart.",
         noPublicItems: "Er zijn geen openbare items in de geconfigureerde groep.",
         emptyUsernamePassword: "Voer gebruikersnaam en wachtwoord in.",
-        noFullScreenSupport: "De huidige browser biedt geen ondersteuning voor de volledig-schermmodus."
+        noFullScreenSupport: "De huidige browser biedt geen ondersteuning voor de volledig-schermmodus.",
+        notMemberOfOrg: "@nl You are not a member of this organization"
     }
 });

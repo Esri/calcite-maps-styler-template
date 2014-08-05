@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Sortuj według",
         layoutBtnTitle: "Układ",
         signInBtnTitle: "Zaloguj się",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geolokalizacja"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "Odniesienie przestrzenne warstwy WMS nie jest zgodne z odniesieniem przestrzennym mapy.",
         noPublicItems: "Skonfigurowana grupa nie zawiera elementów publicznych.",
         emptyUsernamePassword: "Wprowadź nazwę użytkownika i hasło.",
-        noFullScreenSupport: "Używana obecnie przeglądarka nie obsługuje trybu pełnoekranowego."
+        noFullScreenSupport: "Używana obecnie przeglądarka nie obsługuje trybu pełnoekranowego.",
+        notMemberOfOrg: "@pl You are not a member of this organization"
     }
 });

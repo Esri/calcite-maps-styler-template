@@ -42,8 +42,13 @@ define([
 
         postCreate: function () {
             topic.subscribe("portalSignIn", lang.hitch(this, this.portalSignIn));
+            this._initializeApplication();
         },
 
+        /**
+        * check access type of the group and initialize portal
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
         initializePortal: function () {
             // query to check access type of the group
             esriRequest({
@@ -108,6 +113,27 @@ define([
             });
         },
 
+        _initializeApplication: function () {
+            var appLocation, instance;
+            // Check to see if the app is hosted or a portal. If the app is hosted or a portal set the
+            // sharing url and the proxy. Otherwise use the sharing url set it to arcgis.com.
+            // We know app is hosted (or portal) if it has /apps/ or /home/ in the url.
+            appLocation = location.pathname.indexOf("/apps/");
+            if (appLocation === -1) {
+                appLocation = location.pathname.indexOf("/home/");
+            }
+            // app is hosted and no sharing url is defined so let's figure it out.
+            if (appLocation !== -1) {
+                // hosted or portal
+                instance = location.pathname.substr(0, appLocation); //get the portal instance name
+                dojo.configData.values.portalURL = location.protocol + "//" + location.host + instance;
+            }
+        },
+
+        /**
+        * fetch app id settings if appid is configured in the config file
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
         fetchAppIdSettings: function () {
             var def = new Deferred(), settings;
 
@@ -135,6 +161,10 @@ define([
             return def;
         },
 
+        /**
+        * set false values
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
         setFalseValues: function (obj) {
             var key;
 
@@ -162,6 +192,10 @@ define([
             return obj;
         },
 
+        /**
+        * initialize the portal object
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
         createPortal: function () {
             var def = new Deferred();
             /**
@@ -177,6 +211,10 @@ define([
             return def;
         },
 
+        /**
+        * query group to fetch the group details
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
         queryGroup: function () {
             var _self = this, def = new Deferred();
             /**
@@ -206,12 +244,16 @@ define([
             return def;
         },
 
+        /**
+        * set group content like group title, description, etc.
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
         setGroupContent: function (groupInfo) {
             /**
             * set group id
             */
-            if (!dojo.configData.group) {
-                dojo.configData.group = groupInfo.id;
+            if (!dojo.configData.values.group) {
+                dojo.configData.values.group = groupInfo.id;
             }
             /**
             * Set group title
@@ -233,9 +275,10 @@ define([
             }
         },
 
-        /*------------------------------------*/
-        // query arcgis group info
-        /*------------------------------------*/
+        /**
+        * query arcgis group info
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
         queryAGOLGroupInfo: function (obj) {
             var _self = this, def = new Deferred(), settings;
 
@@ -290,6 +333,10 @@ define([
             return def;
         },
 
+        /**
+        * query group to fetch group items
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
         queryGroupForItems: function (queryString, sortfields, sortorder, deferedObj, nextQuery) {
             var params;
             if (!nextQuery) {
@@ -308,6 +355,10 @@ define([
             return deferedObj;
         },
 
+        /**
+        * query to fetch item details
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
         queryItemInfo: function (itemUrl, defObj) {
             esriRequest({
                 url: itemUrl,
@@ -333,6 +384,10 @@ define([
             return defObj;
         },
 
+        /**
+        * override sign-in container text
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
         setSignInContainerText: function () {
             var _self = this;
             setTimeout(function () {
@@ -354,6 +409,10 @@ define([
             }, 1000);
         },
 
+        /**
+        * performs sign in or sign out operation
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
         portalSignIn: function (def, flag) {
             var _self = this;
             if (!def) {
@@ -361,42 +420,56 @@ define([
             }
             if (query(".signin")[0]) {
                 if (query(".signin")[0].innerHTML === nls.signInText) {
-                    _self._portal.signIn().then(function (loggedInUser) {
-                        if (document.activeElement) {
-                            document.activeElement.blur();
-                        }
-                        topic.publish("showProgressIndicator");
-                        if (loggedInUser) {
-                            if (!dojo.configData.values.token) {
-                                dojo.configData.values.token = loggedInUser.credential.token;
+                    _self._portal = new portal.Portal(dojo.configData.values.portalURL);
+                    _self.own(on(_self._portal, "Load", function () {
+                        _self._portal.signIn().then(function (loggedInUser) {
+                            if (document.activeElement) {
+                                document.activeElement.blur();
                             }
-                            if (flag) {
-                                _self.queryGroup().then(lang.hitch(this, function () {
-                                    domClass.add(query(".esriCTMenuTabRight")[0], "displayBlockAll");
-                                    domClass.add(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
-                                    domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
-                                    domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
-                                    domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
-                                    topic.publish("queryItemPods");
-                                }));
-                            } else {
-                                _self.queryGroup().then(lang.hitch(this, function () {
-                                    var leftPanelObj = new LeftPanelCollection();
-                                    leftPanelObj.startup();
-                                }));
-                            }
+                            domAttr.set(query(".esriCTSignIn")[0], "title", nls.title.signOutBtnTitle);
+                            topic.publish("showProgressIndicator");
+                            if (loggedInUser) {
+                                if (!dojo.configData.values.token) {
+                                    dojo.configData.values.token = loggedInUser.credential.token;
+                                }
+                                if (flag) {
+                                    _self.queryGroup().then(lang.hitch(this, function () {
+                                        domClass.add(query(".esriCTMenuTabRight")[0], "displayBlockAll");
+                                        domClass.add(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
+                                        domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
+                                        domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
+                                        domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
+                                        topic.publish("queryItemPods");
+                                    }));
+                                } else {
+                                    _self.queryGroup().then(lang.hitch(this, function () {
+                                        var leftPanelObj = new LeftPanelCollection();
+                                        leftPanelObj.startup();
+                                    }));
+                                }
 
-                            domAttr.set(query(".signin")[0], "innerHTML", nls.signOutText);
-                            domClass.replace(query(".esriCTSignInIcon")[0], "icon-logout", "icon-login");
-                            _self.globalUser = loggedInUser;
-                            def.resolve();
-                        }
-                    });
+                                domAttr.set(query(".signin")[0], "innerHTML", nls.signOutText);
+                                domClass.replace(query(".esriCTSignInIcon")[0], "icon-logout", "icon-login");
+                                _self.globalUser = loggedInUser;
+                                def.resolve();
+                            }
+                        }, function (e) {
+                            if (e.httpCode === 403) {
+                                alert(nls.errorMessages.notMemberOfOrg);
+                            }
+                        });
+                    }));
                 } else {
                     _self._portal.signOut().then(function () {
                         if (dojo.configData.values.token) {
                             dojo.configData.values.token = null;
                         }
+                        if (dojo.isPrivateGroup) {
+                            dojo.configData.groupTitle = null;
+                            dojo.configData.groupDescription = null;
+                            dojo.configData.groupIcon = null;
+                        }
+
                         dojo.privateBaseMapGroup = false;
                         domAttr.set(query(".signin")[0], "innerHTML", nls.signInText);
                         domClass.replace(query(".esriCTSignInIcon")[0], "icon-login", "icon-logout");

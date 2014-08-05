@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "מיון על ידי",
         layoutBtnTitle: "תצוגה",
         signInBtnTitle: "התחבר",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "מיקום מרחבי"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "היחוס המרחבי של שכבת WMS לא תואם ליחוס המרחבי של המפה.",
         noPublicItems: "לא קיימים פריטים ציבוריים בקבוצה שהוגדרה.",
         emptyUsernamePassword: "אנא הקלד שם משתמש וסיסמה",
-        noFullScreenSupport: "הדפדפן הנוכחי אינו תומך במסך מלא."
+        noFullScreenSupport: "הדפדפן הנוכחי אינו תומך במסך מלא.",
+        notMemberOfOrg: "@he You are not a member of this organization"
     }
 });

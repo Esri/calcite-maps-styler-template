@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Sortera efter",
         layoutBtnTitle: "Layout",
         signInBtnTitle: "Logga in",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geolokalisering"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "Den geografiska referensen för WMS-lagret matchar inte kartans geografiska referens.",
         noPublicItems: "Det finns inga publika objekt i den konfigurerade gruppen.",
         emptyUsernamePassword: "Ange användarnamn och lösenord.",
-        noFullScreenSupport: "Den aktuella webbläsaren har inte stöd för helskärmsläge."
+        noFullScreenSupport: "Den aktuella webbläsaren har inte stöd för helskärmsläge.",
+        notMemberOfOrg: "@sv You are not a member of this organization"
     }
 });

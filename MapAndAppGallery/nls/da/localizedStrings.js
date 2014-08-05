@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Sortér efter",
         layoutBtnTitle: "Layout",
         signInBtnTitle: "Log ind",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geoplacering"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "Den spatiale reference for WMS-laget svarer ikke til kortets spatiale reference.",
         noPublicItems: "Der er ingen offentlige elementer i den konfigurerede gruppe.",
         emptyUsernamePassword: "Angiv brugernavn og adgangskode.",
-        noFullScreenSupport: "Den aktuelle browser understøtter ikke fuldskærmstilstand."
+        noFullScreenSupport: "Den aktuelle browser understøtter ikke fuldskærmstilstand.",
+        notMemberOfOrg: "@da You are not a member of this organization"
     }
 });

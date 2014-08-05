@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "الفرز حسب",
         layoutBtnTitle: "المخطط",
         signInBtnTitle: "تسجيل الدخول",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "الموقع الجغرافي"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "لا يتطابق الإسناد المكاني لطبقة WMS مع الإسناد المكاني للخريطة.",
         noPublicItems: "لا توجد عناصر عامة في المجموعة التي يتم تكوينها.",
         emptyUsernamePassword: "الرجاء إدخال اسم المستخدم وكلمة المرور.",
-        noFullScreenSupport: "لا يدعم المستعرض الحالي وضع ملء الشاشة."
+        noFullScreenSupport: "لا يدعم المستعرض الحالي وضع ملء الشاشة.",
+        notMemberOfOrg: "@ar You are not a member of this organization"
     }
 });

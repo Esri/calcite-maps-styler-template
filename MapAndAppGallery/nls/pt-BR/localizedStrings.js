@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Classificar por",
         layoutBtnTitle: "Layout",
         signInBtnTitle: "Entrar",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geolocalização"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "A referência espacial da camada WMS não corresponde à referência espacial do mapa.",
         noPublicItems: "Não há itens públicos no grupo configurado.",
         emptyUsernamePassword: "Insira um Nome de Usuário e Senha.",
-        noFullScreenSupport: "O navegador atual não suporta o modo de tela cheia."
+        noFullScreenSupport: "O navegador atual não suporta o modo de tela cheia.",
+        notMemberOfOrg: "@pt-BR You are not a member of this organization"
     }
 });

@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Rūšiuoti pagal",
         layoutBtnTitle: "Maketas",
         signInBtnTitle: "Prisijungti",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geolokacija"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "WMS sluoksnio erdvinė charakteristika neatitinka žemėlapio erdvinės charakteristikos.",
         noPublicItems: "Sukonfigūruotoje grupėje nėra viešų elementų.",
         emptyUsernamePassword: "Įveskite vartotojo vardą ir slaptažodį.",
-        noFullScreenSupport: "Esamoje naršyklėje viso ekrano režimas neveikia."
+        noFullScreenSupport: "Esamoje naršyklėje viso ekrano režimas neveikia.",
+        notMemberOfOrg: "@lt You are not a member of this organization"
     }
 });

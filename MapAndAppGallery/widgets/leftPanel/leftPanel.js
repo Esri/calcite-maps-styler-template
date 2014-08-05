@@ -112,7 +112,7 @@ define([
     declare("TagCloudObj", null, {
 
         /**
-        *Generate the Tag cloud based on the inputs provided
+        * Generate the Tag cloud based on the inputs provided
         * @memberOf widgets/leftPanel/leftPanel
         */
         generateTagCloud: function (tagsCollection) {
@@ -409,20 +409,48 @@ define([
         * @memberOf widgets/leftPanel/leftPanel
         */
         _queryRelatedTags: function (tagName) {
-            var defObj = new Deferred();
+            var defObj = new Deferred(), tagNameArray, i, resultFilter;
             dojo.queryString = 'group:("' + dojo.configData.values.group + '")' + ' AND (tags: ("' + tagName + '"))';
             topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
             defObj.then(lang.hitch(this, function (data) {
+                /**
+                * Perform exact match and remove unwanted items from results
+                */
+                tagNameArray = tagName.split('" AND "');
                 if (data.total === 0) {
                     this._createNoDataContainer();
-                } else {
+                } else if (tagNameArray.length === 1 && tagNameArray[0] === '') {
+                    /**
+                    * load all the results
+                    */
                     if (query(".esriCTNoResults")[0]) {
                         domConstruct.destroy(query(".esriCTNoResults")[0]);
                     }
+
                     domClass.replace(query(".esriCTInnerRightPanel")[0], "displayBlockAll", "displayNoneAll");
                     dojo.nextQuery = data.nextQueryParams;
                     dojo.results = data.results;
                     topic.publish("createPods", data.results, true);
+                } else {
+                    /**
+                    * Compare tagName with tags
+                    * Check if tag matches with the tags inside data.results.tags
+                    * If it does not match then skip it else add the result item to resultFilter array
+                    */
+                    resultFilter = [];
+                    for (i = 0; i < data.results.length; i++) {
+                        if (this._searchStringInArray(tagNameArray[0], data.results[i].tags)) {
+                            resultFilter.push(data.results[i]);
+                        }
+                    }
+                    if (query(".esriCTNoResults")[0]) {
+                        domConstruct.destroy(query(".esriCTNoResults")[0]);
+                    }
+
+                    domClass.replace(query(".esriCTInnerRightPanel")[0], "displayBlockAll", "displayNoneAll");
+                    dojo.nextQuery = data.nextQueryParams;
+                    dojo.results = resultFilter;
+                    topic.publish("createPods", resultFilter, true);
                 }
             }), function (err) {
                 alert(err.message);
@@ -430,6 +458,24 @@ define([
             });
         },
 
+        /**
+        * Comparing strings
+        * @memberOf widgets/leftPanel/leftPanel
+        */
+        _searchStringInArray: function (str, strArray) {
+            var j;
+            for (j = 0; j < strArray.length; j++) {
+                if (strArray[j] === str) {
+                    return true;
+                }
+            }
+            return false;
+        },
+
+        /**
+        * Create a container with a message when no results are returned for a query
+        * @memberOf widgets/leftPanel/leftPanel
+        */
         _createNoDataContainer: function () {
             if (query(".esriCTInnerRightPanel")[0]) {
                 domClass.replace(query(".esriCTInnerRightPanel")[0], "displayNoneAll", "displayBlockAll");
@@ -447,19 +493,30 @@ define([
         },
 
         /**
-        *Shrinks or expands the group description content on the left panel based on the click event
+        * Shrinks or expands the group description content on the left panel based on the click event
         * @memberOf widgets/leftPanel/leftPanel
         */
         _expandGroupdescEvent: function (node, _self) {
             node.onclick = function () {
+                var tagContainerHeight, descHeight, height;
                 if (this.innerHTML === nls.expandGroupDescText) {
                     domAttr.set(this, "innerHTML", nls.shrinkGroupDescText);
-                    var height = window.innerHeight - (domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelBottom")[0]).h + domGeom.position(query(".esriCTLogo")[0]).h + 50) + "px";
+                    descHeight = window.innerHeight / 5;
+                    height = window.innerHeight - (domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelBottom")[0]).h + domGeom.position(query(".esriCTLogo")[0]).h - descHeight) + "px";
                     domStyle.set(query(".esriCTLeftPanelDesc")[0], "maxHeight", height);
                 } else {
                     domAttr.set(this, "innerHTML", nls.expandGroupDescText);
                 }
                 domClass.toggle(_self.groupDesc, "esriCTLeftTextReadLess");
+                if (dojo.configData.values.showTagCloud) {
+                    if (domClass.contains(query(".esriCTSignIn")[0], "displayNone")) {
+                        tagContainerHeight = window.innerHeight - (domGeom.position(query(".sortByLabelMbl")[0]).h + domGeom.position(query(".esriCTCategoriesHeader")[0]).h) + "px";
+                        domStyle.set(query(".esriCTPadding")[0], "height", tagContainerHeight);
+                    } else {
+                        tagContainerHeight = window.innerHeight - (domGeom.position(query(".esriCTCategoriesHeader")[0]).h + domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelTop")[0]).h + 30) + "px";
+                        domStyle.set(query(".esriCTPadding")[0], "height", tagContainerHeight);
+                    }
+                }
             };
         },
 
@@ -491,7 +548,7 @@ define([
         },
 
         /**
-        *Used to set the innerHTML
+        * Used to set the innerHTML
         * @memberOf widgets/leftPanel/leftPanel
         */
         setNodeText: function (node, htmlString) {

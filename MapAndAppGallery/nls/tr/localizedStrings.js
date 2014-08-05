@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Şuna göre sırala:",
         layoutBtnTitle: "Düzen",
         signInBtnTitle: "Oturum Aç",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Coğrafi Konum"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "WMS katmanı mekansal başvurusu, haritanın mekansal başvurusu ile eşleşmiyor.",
         noPublicItems: "Yapılandırılan grupta genel öğe yok.",
         emptyUsernamePassword: "Kullanıcı Adı ve Şifre girin.",
-        noFullScreenSupport: "Geçerli tarayıcı tam ekran modunu desteklemiyor."
+        noFullScreenSupport: "Geçerli tarayıcı tam ekran modunu desteklemiyor.",
+        notMemberOfOrg: "@tr You are not a member of this organization"
     }
 });

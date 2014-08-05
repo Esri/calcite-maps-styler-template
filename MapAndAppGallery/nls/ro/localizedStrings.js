@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Sortare după",
         layoutBtnTitle: "Configuraţie",
         signInBtnTitle: "Autentificare",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geolocaţie"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "Referinţa spaţială a stratului tematic WMS nu corespunde cu referinţa spaţială a hărţii.",
         noPublicItems: "Nu există elemente publice în grupul configurat.",
         emptyUsernamePassword: "Introduceţi numele de utilizator şi parola.",
-        noFullScreenSupport: "Browserul actual nu suportă modul pe tot ecranul."
+        noFullScreenSupport: "Browserul actual nu suportă modul pe tot ecranul.",
+        notMemberOfOrg: "@ro You are not a member of this organization"
     }
 });

@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "排序方式",
         layoutBtnTitle: "布局",
         signInBtnTitle: "登录",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "地理位置"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "WMS 图层的空间参考与地图的空间参考不匹配。",
         noPublicItems: "已配置组中没有任何公共项目。",
         emptyUsernamePassword: "请输入用户名和密码。",
-        noFullScreenSupport: "当前浏览器不支持全屏模式。"
+        noFullScreenSupport: "当前浏览器不支持全屏模式。",
+        notMemberOfOrg: "@zh-CN You are not a member of this organization"
     }
 });

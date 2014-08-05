@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Kārtot pēc",
         layoutBtnTitle: "Izkārtojums",
         signInBtnTitle: "Pierakstīties",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Ģeoizvietojums"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "WMS slāņa telpiskā atsauce neatbilst kartes telpiskajai atsaucei.",
         noPublicItems: "Konfigurētajā grupā nav nevienas publiskas vienības.",
         emptyUsernamePassword: "Lūdzu, ievadiet lietotājvārdu un paroli.",
-        noFullScreenSupport: "Pašreizējā pārlūkā pilnekrāna režīms nav atbalstīts."
+        noFullScreenSupport: "Pašreizējā pārlūkā pilnekrāna režīms nav atbalstīts.",
+        notMemberOfOrg: "@lv You are not a member of this organization"
     }
 });

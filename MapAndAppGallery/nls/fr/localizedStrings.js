@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Trier par",
         layoutBtnTitle: "Mise en page",
         signInBtnTitle: "Se connecter",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Géolocalisation"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "La référence spatiale de la couche WMS ne correspond pas à la référence spatiale de la carte.",
         noPublicItems: "Le groupe configuré ne contient aucun élément public.",
         emptyUsernamePassword: "Entrez le nom d'utilisateur et le mot de passe.",
-        noFullScreenSupport: "Le navigateur actuel ne prend pas en charge le mode plein écran."
+        noFullScreenSupport: "Le navigateur actuel ne prend pas en charge le mode plein écran.",
+        notMemberOfOrg: "@fr You are not a member of this organization"
     }
 });

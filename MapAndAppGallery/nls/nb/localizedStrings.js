@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Sorter etter",
         layoutBtnTitle: "Utforming",
         signInBtnTitle: "Logg inn",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geolokasjon"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "WMS-lagets geografiske referanse samsvarer ikke med kartets geografiske referanse.",
         noPublicItems: "Det finnes ingen offentlige elementer i den konfigurerte gruppen.",
         emptyUsernamePassword: "Du må angi brukernavn og passord.",
-        noFullScreenSupport: "Den gjeldende webleseren støtter ikke fullskjermsmodus."
+        noFullScreenSupport: "Den gjeldende webleseren støtter ikke fullskjermsmodus.",
+        notMemberOfOrg: "@nb You are not a member of this organization"
     }
 });

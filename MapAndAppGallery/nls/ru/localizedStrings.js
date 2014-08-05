@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Сортировать по",
         layoutBtnTitle: "Компоновка",
         signInBtnTitle: "Войти",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Геолокация"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "Пространственная привязка слоя WMS не совпадает с привязкой карты.",
         noPublicItems: "В указанной группе нет публичных элементов.",
         emptyUsernamePassword: "Пожалуйста, введите Имя пользователя и Пароль.",
-        noFullScreenSupport: "Текущий браузер не поддерживает полноэкранный режим отображения."
+        noFullScreenSupport: "Текущий браузер не поддерживает полноэкранный режим отображения.",
+        notMemberOfOrg: "@ru You are not a member of this organization"
     }
 });

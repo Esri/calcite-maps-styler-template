@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Sortieren nach",
         layoutBtnTitle: "Layout",
         signInBtnTitle: "Anmelden",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geolocation"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "Raumbezug des WMS-Layers stimmt nicht mit dem Raumbezug der Karte überein.",
         noPublicItems: "Die konfigurierte Gruppe enthält keine öffentlichen Elemente.",
         emptyUsernamePassword: "Geben Sie den Benutzernamen und das Kennwort ein.",
-        noFullScreenSupport: "Vollbildmodus wird von aktuellem Browser nicht unterstützt."
+        noFullScreenSupport: "Vollbildmodus wird von aktuellem Browser nicht unterstützt.",
+        notMemberOfOrg: "@de You are not a member of this organization"
     }
 });

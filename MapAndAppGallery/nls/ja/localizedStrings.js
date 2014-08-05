@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "並べ替え",
         layoutBtnTitle: "レイアウト",
         signInBtnTitle: "サイン イン",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "ジオロケーション"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "WMS レイヤの空間参照がマップの空間参照と一致しません。",
         noPublicItems: "構成済みのグループにパブリック アイテムがありません。",
         emptyUsernamePassword: "ユーザ名とパスワードを入力してください。",
-        noFullScreenSupport: "現在のブラウザは、全画面モードをサポートしていません。"
+        noFullScreenSupport: "現在のブラウザは、全画面モードをサポートしていません。",
+        notMemberOfOrg: "@ja You are not a member of this organization"
     }
 });

@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Lajitteluperuste",
         layoutBtnTitle: "Asettelu",
         signInBtnTitle: "Kirjaudu sisään",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geosijainti"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "WMS-tason koordinaatistotieto ei vastaa kartan koordinaatistotietoa.",
         noPublicItems: "Määritetyssä ryhmässä ei ole julkisia kohteita.",
         emptyUsernamePassword: "Anna käyttäjätunnus ja salasana.",
-        noFullScreenSupport: "Nykyinen selain ei tue koko näytön tilaa."
+        noFullScreenSupport: "Nykyinen selain ei tue koko näytön tilaa.",
+        notMemberOfOrg: "@fi You are not a member of this organization"
     }
 });

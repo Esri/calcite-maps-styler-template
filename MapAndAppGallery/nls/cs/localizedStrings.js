@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Třídit podle",
         layoutBtnTitle: "Rozvržení",
         signInBtnTitle: "Přihlásit",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geolokace"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "Souřadnicový systém vrstvy WMS se neshoduje se souřadnicovým systémem mapy.",
         noPublicItems: "V konfigurované skupině nejsou žádné veřejné položky.",
         emptyUsernamePassword: "Zadejte uživatelské jméno a heslo.",
-        noFullScreenSupport: "Současný prohlížeč nepodporuje režim celé obrazovky."
+        noFullScreenSupport: "Současný prohlížeč nepodporuje režim celé obrazovky.",
+        notMemberOfOrg: "@cs You are not a member of this organization"
     }
 });

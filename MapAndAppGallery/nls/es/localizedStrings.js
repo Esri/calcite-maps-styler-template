@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "Ordenar por",
         layoutBtnTitle: "Diseño",
         signInBtnTitle: "Iniciar sesión",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "Geolocalización"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "La referencia espacial de la capa WMS no coincide con la referencia espacial del mapa.",
         noPublicItems: "No hay elementos públicos en el grupo configurado.",
         emptyUsernamePassword: "Introduce el nombre de usuario y la contraseña.",
-        noFullScreenSupport: "El navegador actual no es compatible con el modo de pantalla completa."
+        noFullScreenSupport: "El navegador actual no es compatible con el modo de pantalla completa.",
+        notMemberOfOrg: "@es You are not a member of this organization"
     }
 });

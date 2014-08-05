@@ -67,6 +67,7 @@ define({
         sortByBtnTitle: "จัดลำดับตาม",
         layoutBtnTitle: "แบบร่าง",
         signInBtnTitle: "ลงชื่อเข้า",
+        signOutBtnTitle: "Sign Out",
         geolocationBtnTitle: "ตำแหน่งเชิงพื้นที่"
     },
     errorMessages: {
@@ -83,6 +84,7 @@ define({
         wmsSpatialReferenceError: "ค่าอ้างอิงเชิงพื้นที่ของชั้นข้อมูล WMS ไม่สอดคล้องกับค่าอ้างอิงบนแผนที่",
         noPublicItems: "ไม่มีรายการสาธารณะในกลุ่มการกำหนดค่า",
         emptyUsernamePassword: "กรุณากรอกชื่อผู้ใช้งานและรหัสผ่าน",
-        noFullScreenSupport: "เบราว์เซอร์ปัจจุบันไม่สนับสนุนการแสดงผลแบบเต็มหน้าจอ"
+        noFullScreenSupport: "เบราว์เซอร์ปัจจุบันไม่สนับสนุนการแสดงผลแบบเต็มหน้าจอ",
+        notMemberOfOrg: "@th You are not a member of this organization"
     }
 });
