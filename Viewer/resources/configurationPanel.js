@@ -23,7 +23,7 @@
                "type":"string",
                "fieldName":"description",
                "label":"Details",
-               "placeHolder": "Defaults to web map description."
+               "placeHolder": "Defaults to web map description.",
                "tooltip":"Enter content for the details panel",
                "stringFieldOption":"richtext"
             },
