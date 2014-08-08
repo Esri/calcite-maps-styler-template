@@ -26,7 +26,6 @@
         "applicationName": "Gallery",
         "applicationIcon": "/themes/images/logo.png",
         "applicationFavicon": "/themes/images/favicon.ico",
-        "customLogoUrl": "",
         "theme": "blueTheme",
         "defaultLayout": "list",
         "sortField": "numViews",

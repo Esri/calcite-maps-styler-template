@@ -22,7 +22,7 @@
     }
 }
 
-@media only screen and (max-device-width : 641px)
+@media only screen and (min-device-width : 641px)
 {
 
     html, body
@@ -48,12 +48,12 @@
 
     .esriCTRightControlPanel
     {
-        width: 240px !important;
+        width: 240px;
     }
 
 }
 
-@media screen and (max-width: 1024px)
+@media screen and (min-device-width: 1024px)
 {
     html, body
     {
@@ -92,11 +92,6 @@
     }
 
     .esriControlsBR
-    {
-        position: fixed !important;
-    }
-
-    .esriCTMapLogo
     {
         position: fixed !important;
     }
@@ -147,7 +142,7 @@
 
     .esriCTItemSearch
     {
-        width: 180px;
+        width: 179px;
     }
 
     .esriCTApplicationBox
@@ -165,11 +160,6 @@
         position: fixed !important;
     }
 
-    .esriCTMapLogo
-    {
-        position: fixed !important;
-    }
-
     .esriCTGalleryName
     {
         width: 60%;
@@ -177,6 +167,30 @@
         overflow: hidden;
         display: inline-block;
         white-space: nowrap;
+    }
+}
+
+@media screen and (min-device-width: 1281px)
+{
+    html, body
+    {
+        font-size: 12px !important;
+    }
+
+    input
+    {
+        font-size: 12px !important;
+    }
+
+    textarea
+    {
+        font-size: 12px !important;
+    }
+
+    font
+    {
+        font-family: 'Lato' ,sans-serif !important;
+        font-size: 12px !important;
     }
 }
 
@@ -220,7 +234,7 @@
 
     .esriCTItemSearch
     {
-        width: 150px;
+        width: 149px;
     }
 
     .esriCTApplicationBox
@@ -244,11 +258,6 @@
     }
 
     .esriControlsBR
-    {
-        position: fixed !important;
-    }
-
-    .esriCTMapLogo
     {
         position: fixed !important;
     }
@@ -528,12 +537,6 @@
     }
 
     .esriControlsBR
-    {
-        position: fixed !important;
-        bottom: 5px !important;
-    }
-
-    .esriCTMapLogo
     {
         position: fixed !important;
         bottom: 5px !important;
@@ -1033,6 +1036,8 @@
     .redTheme .esriCTMenuTabLeft
     {
         background: #fff;
+        color: #800000;
+        padding-right: 65px;
     }
 
     .redTheme .esriCTGalleryName
@@ -1377,12 +1382,8 @@
 
     .esriControlsBR
     {
-        bottom: 54px !important;
-    }
-
-    .esriCTMapLogo
-    {
-        bottom: 54px;
+        position: fixed !important;
+        bottom: 5px !important;
     }
 
     .esriCTLegendTab
@@ -1711,6 +1712,8 @@
     .blueTheme .esriCTMenuTabLeft
     {
         background: #fff;
+        color: #007AC2;
+        padding-right: 65px;
     }
 
     .blueTheme .esriCTGalleryName
@@ -1894,6 +1897,8 @@
     .redTheme .esriCTMenuTabLeft
     {
         background: #fff;
+        color: #800000;
+        padding-right: 65px;
     }
 
     .redTheme .esriCTGalleryName

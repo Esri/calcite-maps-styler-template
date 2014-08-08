@@ -84,6 +84,7 @@ define([
                 domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
                 domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
                 domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
+                domClass.add(query(".esriCTBackBtn")[0], "displayNoneAll");
             })));
 
             on(window, "resize", lang.hitch(this, function () {
@@ -171,7 +172,7 @@ define([
             }
             this.own(on(divItemTitleText, "click", lang.hitch(this, function () {
                 topic.publish("showProgressIndicator");
-                this.showInfoPage(this, itemResult);
+                this.showInfoPage(this, itemResult, true);
             })));
         },
 
@@ -180,7 +181,7 @@ define([
         * @memberOf widgets/gallery/gallery
         */
         _createThumbnails: function (itemResult, divPodParent) {
-            var divThumbnail, divThumbnailImage, divTagContainer, divTagContent;
+            var divThumbnail, divThumbnailImage, divTagContainer, divTagContent, dataType;
 
             if (!dojo.gridView) {
                 divThumbnail = domConstruct.create('div', { "class": "esriCTImageContainerList" }, divPodParent);
@@ -202,6 +203,10 @@ define([
                 this._accessLogoType(itemResult, divTagContent);
             }
             this.own(on(divThumbnailImage, "click", lang.hitch(this, function () {
+                dataType = itemResult.type.toLowerCase();
+                if ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms")) {
+                    dojo.downloadWindow = window.open('', "_blank");
+                }
                 this.showInfoPage(this, itemResult, false);
             })));
         },
@@ -219,6 +224,9 @@ define([
                 if ((dataType === "map service") || (dataType === "web map") || (dataType === "feature service") || (dataType === "image service") || (dataType === "kml") || (dataType === "wms")) {
                     if (dojo.configData.values.useItemPage && flag) {
                         _self.showInfoPage(_self, itemResult, true);
+                        if (!(dataType === "web map")) {
+                            topic.publish("filterRedundantBasemap", itemResult);
+                        }
                     } else {
                         if ((dataType === "web map") && dojo.configData.values.mapViewer.toLowerCase() === "arcgis") {
                             topic.publish("hideProgressIndicator");
@@ -228,12 +236,21 @@ define([
                             itemDetails.startup();
                         }
                     }
+                    if (dojo.downloadWindow) {
+                        dojo.downloadWindow.close();
+                    }
                 } else {
                     topic.publish("hideProgressIndicator");
                     if (data.url) {
                         window.open(data.url, '_blank');
+                        if (dojo.downloadWindow) {
+                            dojo.downloadWindow.close();
+                        }
                     } else if (data.itemType.toLowerCase() === "file" && data.type.toLowerCase() === "cityengine web scene") {
                         window.open(dojo.configData.values.cityEngineWebSceneURL + data.id, '_blank');
+                        if (dojo.downloadWindow) {
+                            dojo.downloadWindow.close();
+                        }
                     } else if (data.itemType.toLowerCase() === "file") {
                         if (dojo.configData.values.token) {
                             tokenString2 = "?token=" + dojo.configData.values.token;
@@ -244,7 +261,7 @@ define([
                             _self.showInfoPage(_self, itemResult, true);
                         } else {
                             downloadPath = dojo.configData.values.portalURL + "/sharing/content/items/" + itemId + "/data" + tokenString2;
-                            window.open(downloadPath, '_blank');
+                            dojo.downloadWindow.location = downloadPath;
                         }
                     } else {
                         alert(nls.errorMessages.unableToOpenItem);
@@ -339,7 +356,7 @@ define([
         * @memberOf widgets/gallery/gallery
         */
         displayPanel: function (itemResult, _self, itemFlag) {
-            var numberOfComments, numberOfRatings, numberOfViews, itemReviewDetails, itemDescription, accessContainer, accessInfo, itemCommentDetails, itemViewDetails, itemText, containerHeight, dataArray, itemUrl, defObject, tokenString;
+            var numberOfComments, numberOfRatings, numberOfViews, itemReviewDetails, itemDescription, accessContainer, accessInfo, itemCommentDetails, itemViewDetails, itemText, containerHeight, dataArray, itemUrl, defObject, tokenString, dataType;
 
             if (dojo.configData.values.token) {
                 tokenString = "&token=" + dojo.configData.values.token;
@@ -373,6 +390,7 @@ define([
                     } else {
                         _self._showItemOverview(itemResult.id, itemResult.thumbnailUrl, itemResult, true, dataArray);
                     }
+
                     /**
                     * if showComments flag is set to true in config file
                     */
@@ -392,6 +410,7 @@ define([
                 domClass.replace(query(".esriCTMenuTabRight")[0], "displayNoneAll", "displayBlockAll");
                 domClass.replace(query(".esriCTInnerRightPanel")[0], "displayNoneAll", "displayBlockAll");
                 domClass.remove(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
+                domClass.remove(query(".esriCTBackBtn")[0], "displayNoneAll");
                 domConstruct.empty(_self.detailsContent);
                 domConstruct.empty(_self.ratingsContainer);
                 containerHeight = (window.innerHeight - domGeom.position(query(".esriCTMenuTab")[0]).h - 25) + "px";
@@ -441,6 +460,9 @@ define([
                     _self._btnTryItNowHandle.remove();
                 }
                 _self._btnTryItNowHandle = on(_self.btnTryItNow, "click", lang.hitch(this, function () {
+                    if (domAttr.get(_self.btnTryItNow, "innerHTML") === nls.downloadButtonText) {
+                        dojo.downloadWindow = window.open('', "_blank");
+                    }
                     this._showTryItNowView(_self.btnTryItNow, itemResult, _self, dataArray);
                 }));
 
@@ -451,6 +473,10 @@ define([
                     _self._appThumbnailClickHandle.remove();
                 }
                 _self._appThumbnailClickHandle = on(_self.appThumbnail, "click", lang.hitch(this, function () {
+                    dataType = itemResult.type.toLowerCase();
+                    if ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms")) {
+                        dojo.downloadWindow = window.open('', "_blank");
+                    }
                     this._showTryItNowView(_self.appThumbnail, itemResult, _self, dataArray);
                 }));
             }

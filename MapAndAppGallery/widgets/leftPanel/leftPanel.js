@@ -118,7 +118,7 @@ define([
         generateTagCloud: function (tagsCollection) {
             var fontSizeArray, tagCloudTags;
 
-            fontSizeArray = this._generateFontSize(dojo.configData.values.tagCloudFontMinValue, dojo.configData.values.tagCloudFontMaxValue, tagsCollection.length);
+            fontSizeArray = this._generateFontSize(dojo.configData.values.tagCloudFontMinValue, dojo.configData.values.tagCloudFontMaxValue, tagsCollection);
             tagCloudTags = this._mergeTags(tagsCollection, fontSizeArray);
             return tagCloudTags;
         },
@@ -140,13 +140,14 @@ define([
         * Generate the required font ranges for each and every tag in tag cloud
         * @memberOf widgets/leftPanel/leftPanel
         */
-        _generateFontSize: function (min, max, count) {
-            var i, diff, nextValue, fontSizeArray = [];
-
-            diff = ((max - min) / (count - 1));
-            fontSizeArray.push(min);
-            for (i = 1; i < count; i++) {
-                nextValue = fontSizeArray[i - 1] + diff;
+        _generateFontSize: function (min, max, tagsCollection) {
+            var i, nextValue, fontSizeArray = [];
+            for (i = 0; i < tagsCollection.length; i++) {
+                if (tagsCollection[i].value > 1) {
+                    nextValue = (tagsCollection[i].value / tagsCollection[0].value) * (max - min) + min;
+                } else {
+                    nextValue = min;
+                }
                 fontSizeArray.push(nextValue);
             }
             return fontSizeArray.sort(function (a, b) {
@@ -246,8 +247,9 @@ define([
                         _self._setLeftPanelContent(groupItems);
                     }
                 } else {
-                    if (queryString) {
+                    if (dojo.queryString) {
                         alert(nls.errorMessages.noPublicItems);
+                        topic.publish("hideProgressIndicator");
                     }
                 }
             }, function (err) {
@@ -302,12 +304,7 @@ define([
             * @memberOf widgets/leftPanel/leftPanel
             */
             if (dojo.configData.values.searchString) {
-                queryString += ' AND (';
-                queryString += ' title:' + dojo.configData.values.searchString;
-                queryString += ' OR tags:' + dojo.configData.values.searchString;
-                queryString += ' OR typeKeywords:' + dojo.configData.values.searchString;
-                queryString += ' OR snippet:' + dojo.configData.values.searchString;
-                queryString += ' ) ';
+                queryString += ' AND ' + dojo.configData.values.searchString + ' ';
             }
 
             /**
@@ -315,7 +312,7 @@ define([
             * @memberOf widgets/leftPanel/leftPanel
             */
             if (dojo.configData.values.searchType) {
-                queryString += ' AND type:' + dojo.configData.values.searchType;
+                queryString += ' AND ( type:' + dojo.configData.values.searchType + ' )';
             }
 
             dojo.queryString = queryString;

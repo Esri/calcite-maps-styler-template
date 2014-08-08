@@ -125,6 +125,7 @@ define([
                     domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
                     domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
                     domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
+                    domClass.add(query(".esriCTBackBtn")[0], "displayNoneAll");
                 }
             })));
         },

@@ -33,9 +33,10 @@ define([
     "esri/request",
     "esri/arcgis/utils",
     "esri/urlUtils",
+    "esri/IdentityManager",
     "widgets/leftPanel/leftPanel",
     "dojo/domReady!"
-], function (declare, _WidgetBase, portal, topic, lang, Deferred, nls, query, on, domAttr, domClass, domStyle, domGeom, esriRequest, arcgisUtils, urlUtils) {
+], function (declare, _WidgetBase, portal, topic, lang, Deferred, nls, query, on, domAttr, domClass, domStyle, domGeom, esriRequest, arcgisUtils, urlUtils, IdentityManager) {
 
     return declare([_WidgetBase], {
         nls: nls,
@@ -456,6 +457,7 @@ define([
                         }, function (e) {
                             if (e.httpCode === 403) {
                                 alert(nls.errorMessages.notMemberOfOrg);
+                                IdentityManager.credentials = [];
                             }
                         });
                     }));
