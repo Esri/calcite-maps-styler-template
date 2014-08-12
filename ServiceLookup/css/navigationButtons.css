@@ -1,0 +1,135 @@
+﻿.map-buttons {
+    position: absolute;
+    top: 95px;
+    left: 20px;
+    z-index: 35;
+}
+
+.LocateButtonLight {
+    margin-top: 6px;
+}
+
+    .LocateButtonLight span {
+        display: none;
+    }
+
+    .LocateButtonLight .zoomLocateButton {
+        background-position: center center;
+        background-image: url(../images/locate_dark2.png);
+        background-repeat: no-repeat;
+        width: 22px;
+        height: 22px;
+        padding: 4px;
+        display: inline-block;
+        background-color: #fff;
+        background-color: rgba(255,255,255,1);
+    }
+
+        .LocateButtonLight .zoomLocateButton:hover {
+            background-color: #eee;
+            color: #333;
+        }
+
+    .LocateButtonLight .locateContainer {
+        text-align: center;
+        background-color: #fff;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+        border: 1px solid #57585A;
+        color: #4c4c4c;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+    }
+
+        .LocateButtonLight .locateContainer:hover {
+            background-color: #eee;
+            color: #333;
+        }
+
+        .LocateButtonLight .locateContainer:active {
+            color: #007ac2;
+            background-color: #ddd;
+        }
+
+    .LocateButtonLight .loading:before {
+        content: '';
+        display: block;
+        position: relative;
+        width: 22px;
+        height: 22px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background-position: center center;
+        background-image: url(../images/ajax-loader.gif);
+        background-repeat: no-repeat;
+    }
+
+.HomeButtonLight {
+   margin-top: 0px;
+}
+
+    .HomeButtonLight span {
+        display: none;
+    }
+
+    .HomeButtonLight .homeContainer {
+        text-align: center;
+        background-color: #fff;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+        border: 1px solid #57585A;
+        color: #4c4c4c;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+    }
+    .HomeButtonLight .home {
+        width: 22px;
+        height: 22px;
+        padding: 4px;
+        display: inline-block;
+        background-position: center center;
+        background-image: url(../images/home.png);
+        background-repeat: no-repeat;
+        background-color: #fff;
+        background-color: rgba(255,255,255,1);
+    }
+
+    .HomeButtonLight .home:hover {
+        background-color: #eee;
+        color: #333;
+    }
+  
+    .HomeButtonLight .home:active {
+        color: #007ac2;
+        background-color: #ddd;
+    }
+    .HomeButtonLight .loading:before {
+        content: '';
+        display: block;
+        position: relative;
+        width: 22px;
+        height: 22px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background-position: center center;
+        background-image: url(../images/ajax-loader.gif);
+        background-repeat: no-repeat;
+    }

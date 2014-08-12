@@ -117,21 +117,21 @@
              "tooltip":"Message to display when application is loaded",
              "stringFieldOption": "richtext"
          },{
-               "type":"string",
-               "fieldName":"theme",
-               "tooltip":"Color scehma for the splash screen",
-               "label":"Splash Screen Theme:",
-               "options":[
-                  {
-                     "label":"Black",
-                     "value":"black"
-                  },
-                  {
-                     "label":"Blue",
-                     "value":"blue"
-                  }
-               ]
-            }
+             "type":"string",
+             "fieldName":"theme",
+             "tooltip":"Color scehma for the splash screen",
+             "label":"Splash Screen Theme:",
+             "options":[
+                {
+                    "label":"Black",
+                    "value":"black"
+                },
+                {
+                    "label":"Blue",
+                    "value":"blue"
+                }
+             ]
+         }
          
         ]
     }],

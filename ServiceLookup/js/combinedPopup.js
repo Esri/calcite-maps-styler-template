@@ -9,6 +9,7 @@ define([
     "dojo/_base/lang",
     "dojo/_base/array",
     "dojo/on",
+    "dojo/topic",
     "esri/geometry",
     "esri/geometry/Extent",
     "esri/geometry/Point",
@@ -30,6 +31,7 @@ define([
     lang,
     array,
     on,
+    topic,
     Geometry,
     Extent,
     Point,
@@ -64,18 +66,27 @@ define([
             if (this.handler != null) {
                 this.handler.remove();
             }
+            topic.subscribe("app/mapLocate", lang.hitch(this, this._mapLocate));
+
             this._initPopup();
             this._createToolbar();
             this._initGraphic();
+            this.map.infoWindow.on("hide", lang.hitch(this, this._infoHide));
+
             this.emit("ready", { "Name": "CombinedPopup" });
             if (this.config.location) {
-                var e = this.config.location.split(',');
+                var e = this.config.location.split(",");
                 if (e.length === 2) {
                     var point = new Point(parseFloat(e[0]), parseFloat(e[1]), this.map.spatialReference);
                     this.showPopup(point);
                 }
 
             }
+
+        },
+        _mapLocate: function () {   
+
+            this.showPopup(arguments[0]);
 
         },
         showPopup: function (evt) {
@@ -88,7 +99,7 @@ define([
             if (this.lookupLayers.length === 0) {
                 return;
             }
-            this.emit("popup-started", {});
+            topic.publish("app\toggleIndicator", true);
             this.map.infoWindow.hide();
             this.map.infoWindow.highlight = false;
             if (this.showGraphic === true) {
@@ -109,12 +120,6 @@ define([
             var queryDeferred;
             for (var f = 0, fl = this.lookupLayers.length; f < fl; f++) {
                 if (this.lookupLayers[f].url == null) {
-                 f
-                    //precision 
-                    //var extent = new Extent({
-                    //    "xmin": evt.x - .00000001, "ymin": evt.y - .00000001, "xmax": evt.x + .00000001, "ymax": evt.y + .00000001,
-                    //    "spatialReference": evt.spatialReference
-                    //});
                     var extent = new Extent({
                         "xmin": evt.x , "ymin": evt.y , "xmax": evt.x , "ymax": evt.y ,
                         "spatialReference": evt.spatialReference
@@ -123,7 +128,6 @@ define([
                     query.geometry = extent;
                     query.geometryType = "esriGeometryExtent";
                     query.outFields = ["*"];
-
 
                     queryDeferred = this.lookupLayers[f].layer.layerObject.queryFeatures(query);
                     queryDeferred.addCallback(lang.hitch(this, this._queryComplete(this.lookupLayers[f])));
@@ -136,8 +140,7 @@ define([
                         }
 
                     }));
-                }
-                else {
+                }else {
                     query = new Query();
 
                     query.spatialRelationship = Query.SPATIAL_REL_INTERSECTS;
@@ -169,11 +172,19 @@ define([
             this.toolbar.deactivate();
 
         },
+        _infoHide: function () {
+            if (this.map.graphics != null) {
+                this.map.graphics.clear();
+            }
+        },
         _initPopup: function () {
 
             var serviceAreaLayerNames = [];
             this.popupMedia = [];
 
+            if (String.trim(this.config.serviceAreaLayerNames) === "") {
+                alert("No layers defined in the config, the search box will not work");
+            }
             serviceAreaLayerNames = this.config.serviceAreaLayerNames.split("|");
             this.lookupLayers = [];
             var layDetails = {};
@@ -214,8 +225,7 @@ define([
                                 }
                             }, this);
                         }
-                    }
-                    else if (layer.layerObject.layerInfos != null) {
+                    }else if (layer.layerObject.layerInfos != null) {
                         array.forEach(layer.layerObject.layerInfos, function (subLyrs) {
                             if (subLyrs.name == serviceAreaLayerNames[f]) {
                                 layDetails.name = subLyrs.name;
@@ -400,8 +410,6 @@ define([
         _createToolbar: function () {
             this.toolbar = new Draw(this.map, { showTooltips: false });
             this.toolbar.on("draw-end", lang.hitch(this, this._drawEnd));
-            //esri.bundle.toolbars.draw.addPoint = this.config.i18n.map.mouseToolTip;
-
 
         },
         _initGraphic: function () {
@@ -417,7 +425,7 @@ define([
         },
         _processObject: function (obj, fieldName, layerName, matchName) {
             var matchForRec = matchName;
-
+            var re = null;
             for (var key in obj) {
                 if (key !== null) {
                     if (key == "type") {
@@ -438,7 +446,8 @@ define([
                             if (obj[key] == fieldName && (matchName || key == "normalizeField")) {
                                 obj[key] = layerName + "_" + fieldName;
                             } else {
-                                obj[key] = obj[key].replace("{" + fieldName + "}", "{" + layerName + "_" + fieldName + "}").replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'");
+                                re = new RegExp("{" + fieldName + "}", "g");
+                                obj[key] = obj[key].replace(re, "{" + layerName + "_" + fieldName + "}").replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'");
                             }
                         }
                     }
@@ -458,7 +467,7 @@ define([
                 this.defCnt = this.defCnt - 1;
                 if (this.defCnt === 0) {
                     this._allQueriesComplate();
-                    this.emit("popup-complete", {});
+                    topic.publish("app\toggleIndicator", false);
                 }
 
             };
@@ -466,6 +475,7 @@ define([
         _allQueriesComplate: function () {
             if (this.results != null) {
                 var atts = {};
+                var re = null;
                 if (this.results.length > 0) {
                     var allFields = [];
 
@@ -501,8 +511,9 @@ define([
                             }
 
                             if (result.Layer.popupInfo.description == null) {
+                                re = new RegExp("{" + layerFields[g].fieldName + "}", "g");
 
-                                popupTitle = popupTitle.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
+                                popupTitle = popupTitle.replace(re, "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
 
                                 if (layerFields[g].visible === true) {
 
@@ -519,7 +530,10 @@ define([
                                 }
 
                             } else {
-                                layerDescription = layerDescription.replace("{" + layerFields[g].fieldName + "}", "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
+                                re = new RegExp("{" + layerFields[g].fieldName + "}", "g");
+
+                                layerDescription = layerDescription.replace(re, "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
+
                             }
                             resultFeature[result.Layer.name + "_" + layerFields[g].fieldName] = result.results[0].attributes[layerFields[g].fieldName];
                             layerFields[g].fieldName = result.Layer.name + "_" + layerFields[g].fieldName;
@@ -594,7 +608,9 @@ define([
                     this.map.infoWindow.show(editGraphic.geometry);
                     if (this.config.popupWidth != null && this.config.popupHeight != null) {
                         this.map.infoWindow.resize(this.config.popupWidth, this.config.popupHeight);
-                    } else {
+                    }else if (this.config.popupWidth != null) {
+                        this.map.infoWindow.resize(this.config.popupWidth, this.map.infoWindow._maxHeight); 
+                    }else {
                         this.map.infoWindow.resize();
                     }
                     if (this.config.storeLocation === true && this.config.editingAllowed) {
@@ -603,7 +619,6 @@ define([
                     }
 
                 } else {
-
 
                     editGraphic = new Graphic(this.event, this.editSymbolAvailable, resultFeature, this.popupTemplate);
                     featureArray.push(editGraphic);
@@ -618,7 +633,10 @@ define([
                     this.map.infoWindow.show(editGraphic.geometry);
                     if (this.config.popupWidth != null && this.config.popupHeight != null) {
                         this.map.infoWindow.resize(this.config.popupWidth, this.config.popupHeight);
-                    } else {
+                    }else if (this.config.popupWidth != null) {
+                        this.map.infoWindow.resize(this.config.popupWidth, this.map.infoWindow._maxHeight);
+                        
+                    }else {
                         this.map.infoWindow.resize();
                     }
                     if (this.config.storeLocation === true && this.config.editingAllowed) {
