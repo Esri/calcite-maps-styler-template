@@ -61,6 +61,51 @@
          "category":"Tools",
          "fields":[  
             {  
+               "type":"string",
+               "fieldName":"activeTool",
+               "tooltip":"Active Tool",
+               "label":"Active Tool:",
+               "options":[  
+                  {
+                     "label": "None",
+                     "value": ""
+                  },
+                  {  
+                     "label":"Bookmarks",
+                     "value":"bookmarks"
+                  },{
+                     "label": "Basemap",
+                     "value": "basemap"
+                  },{
+                     "label": "Details",
+                     "value": "details"
+                  },{
+                     "label": "Edit",
+                     "value": "edit"
+                  },
+                  {  
+                     "label":"Layers",
+                     "value":"layers"
+                  },
+                  {  
+                     "label":"Legend",
+                     "value":"legend"
+                  },{
+                     "label": "Measure",
+                     "value": "measure"
+                  },{
+                     "label": "Overview",
+                     "value": "overview"
+                  },{
+                     "label": "Print",
+                     "value": "print"
+                  },{
+                     "label": "Share",
+                     "value": "share"
+                  }
+               ]
+            },
+            {  
                "type":"boolean",
                "fieldName":"tool_search",
                "label":"Address Finder"
@@ -182,6 +227,7 @@
       "logo":"images/logo.png",
       "color":"#fff",
       "theme":"80ab00",
+      "activeTool": "legend",
       "tool_print":true,
       "tool_print_layouts":false,
       "tool_print_legend":false,
