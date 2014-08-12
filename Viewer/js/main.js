@@ -183,7 +183,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     this._updateTheme();
                     
                     
-                   if(this.config.activeTool){
+                   if(this.config.activeTool !== ""){
                         toolbar.activateTool(this.config.activeTool);
                         toolbar.updatePageNavigation();
                     }else{
@@ -421,7 +421,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     }, domConstruct.create("div", {}, legendDiv));
                     domClass.add(legend.domNode, "legend");
                     legend.startup();
-                    if(this.config.activeTool){
+                    if(this.config.activeTool !== ""){
                      toolbar.activateTool(this.config.activeTool || "legend");
                     }
                     deferred.resolve(true);
