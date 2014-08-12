@@ -181,8 +181,15 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     //Now that all the tools have been added to the toolbar we can add page naviagation
                     //to the toolbar panel, update the color theme and set the active tool. 
                     this._updateTheme();
-                    toolbar.activateTool(this.config.activeTool);
-                    toolbar.updatePageNavigation();
+                    
+                    
+                   if(this.config.activeTool){
+                        toolbar.activateTool(this.config.activeTool);
+                        toolbar.updatePageNavigation();
+                    }else{
+                        toolbar._closePage();
+                    }
+          
 
                     on(toolbar, "updateTool", lang.hitch(this, function (name) {
                         if (name === "measure") {
@@ -414,7 +421,9 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     }, domConstruct.create("div", {}, legendDiv));
                     domClass.add(legend.domNode, "legend");
                     legend.startup();
-                    toolbar.activateTool(this.config.activeTool || "legend");
+                    if(this.config.activeTool){
+                     toolbar.activateTool(this.config.activeTool || "legend");
+                    }
                     deferred.resolve(true);
 
                 } else {
