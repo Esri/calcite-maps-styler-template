@@ -1,4 +1,4 @@
-﻿/*global define,dojo,esri,js,unescape,console,require */
+/*global define,dojo,esri,js,unescape,console,require,document,jsapi_i18n:true */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,evil:true,regexp:true */
 /*
  | Copyright 2014 Esri
@@ -15,60 +15,178 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-/* commit dcfe2692d1e95a4d 2014-07-08 01:24:16 -0700 */
-define([
-    "dojo/ready",
-    "dojo/_base/array",
-    "dojo/_base/declare",
-    "dojo/_base/lang",
-    "dojo/_base/fx",
-    "dojo/Deferred",
-    "dojo/promise/all",
-    "dojo/dom-construct",
-    "dojo/topic",
-    "esri/dijit/Popup",
-    "esri/arcgis/utils",
-    "dojo/dom",
-    "dojo/dom-class",
-    "dojo/on"
-], function (
-    ready,
-    array,
+//============================================================================================================================//
+define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom", "dojo/dom-class", "dojo/on",
+    "application/templateOptions", "dojo/Deferred", "dojo/request/xhr", "dojo/_base/array",
+    "dojo/_base/fx", "dojo/topic", "esri/lang", "dojo/i18n!esri/nls/jsapi",
+    "dojo/domReady!"], function (
     declare,
     lang,
-    fx,
-    Deferred,
-    all,
-    domConstruct,
-    topic,
-    Popup,
     arcgisUtils,
     dom,
     domClass,
-    on
+    on,
+    templateConfig,
+    Deferred,
+    xhr,
+    array,
+    fx,
+    topic,
+    esriLang,
+    jsapiBundle
 ) {
     return declare(null, {
         config: {},
-        startup: function (config) {
+        startup: function (config, appResponse) {
+            var filename, waitForUI = new Deferred(), uiSource = "none";
+
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
             // any url parameters and any application specific configuration information.
             if (config) {
                 this.config = config;
-                this.config.testpoint = this._checkTestpoint("TestFrameCallback");
+                jsapi_i18n = jsapiBundle;
+                this.config.SendToTest = this._checkTestpoint("SendToTest");
+                this.config.SaveToTest = this._checkTestpoint("SaveToTest");
 
-                // document ready
-                ready(lang.hitch(this, function () {
-                    //supply either the webmap id or, if available, the item info
-                    var itemInfo = this.config.itemInfo || this.config.webmap;
-                    this._createWebMap(itemInfo);
-                }));
+                // Testpoint #1: boilerplate configured
+                if (this.config.SendToTest) {
+                    window.external[this.config.SendToTest]("status 1. boilerplate configured");
+                    window.external[this.config.SendToTest]("json " + JSON.stringify(this.config, [
+                        "webmap", "appid", "group", "oauthappid", // template param items
+                        "proxyurl", "bingKey", "sharinghost", // defaults
+                        "appResponse", // response from appid query
+                        "app", "ex"  // templateOptions urlItems
+                    ]));
+                    window.external[this.config.SendToTest]("json " + JSON.stringify(this.config.helperServices.printTask, ["url"]));
+                    window.external[this.config.SendToTest]("json " + JSON.stringify(this.config.i18n, ["$locale", "direction"]));
+                    window.external[this.config.SendToTest]("json " + JSON.stringify(this.config.i18n.map, ["error"]));
+                    window.external[this.config.SendToTest]("json " + JSON.stringify(this.config.i18n.messages, ["unableToLaunchApp"]));
+                }
 
-                // Get the UI elements
+                // Get the UI elements code
                 this.uiElementsReady = this._getUIElements();
+
+                // The app recognizes three URL parameters for setting up its webmap and user interface:
+                // "webmap", "app", "appid". It uses the following rules to disambiguate the parameters:
+                // 1. if URL contains appid, it points to an AGOL app that contains a webmap id and a template id;
+                //    the latter contains the app's UI; this is the normal use of an AGOL application
+                // 2. otherwise, if the URL contains webmap and app, we have the webmap and app is the name of
+                //    the file-based template item containing the app's UI; this is the preview use of an AGOL
+                //    application
+                // 3. otherwise, if the URL contains app, it is the name of the file-based template item containing
+                //    the app's webmap and UI; this is the try-it use of an AGOL application
+                // 4. otherwise, we have an incomplete URL, which we'll resolve by using the the file-based template
+                //    apps2/GeneralMap; if the URL contains webmap, we'll use it; otherwise, we use the webmap in
+                //    apps2/GeneralMap
+                //
+                // Case #1 (appid)
+                if (esriLang.isDefined(this.config.appid) && esriLang.isDefined(appResponse)) {
+                    if (appResponse.itemData && appResponse.itemData.source) {
+                        // The webmap associated with the appid is the one that we want, not the one in
+                        // the URL as selected in the template.js
+                        if (appResponse.itemData.values && appResponse.itemData.values.webmap !== "") {
+                            this.config.webmap = appResponse.itemData.values.webmap;
+                        }
+
+                        // Get application's AGOL-based template
+                        arcgisUtils.getItem(appResponse.itemData.source).then(
+                            lang.hitch(this, function (templateResponse) {
+                                if (templateResponse.item && templateResponse.itemData && templateResponse.itemData.values) {
+                                    this.config.ui = templateResponse.itemData.ui || {};
+                                    this.config.appValues = templateResponse.itemData.values || {};
+                                    lang.mixin(this.config.appValues, appResponse.itemData.values || {});
+
+                                    uiSource = "Using app specification in " + this.config.appid;
+                                    waitForUI.resolve();
+                                } else {
+                                    waitForUI.reject(this._configurationError());
+                                }
+                            }),
+                            lang.hitch(this, function () {
+                                waitForUI.reject(this._configurationError());
+                            })
+                        );
+                    } else {
+                        waitForUI.reject(this._configurationError());
+                    }
+
+                } else {
+                    // Cases #2 & #3 (preview & try-it)
+                    if (this.config.app) {
+                        // Get application's file-based template
+                        filename = this.config.app;
+
+                        // If we're running in the hosted environment without an appid, the file-based UIs are for previewing
+                        if (templateConfig.queryForCommonConfig) {
+                            filename += "_try_it";
+                        }
+
+                    // Case #4 (missing URL parameters)
+                    } else {
+                        // Get apps2/GeneralMap file
+                        filename = "apps2/GeneralMap";
+                    }
+
+                    // Get the template file
+                    this._loadJSONFile(filename).then(
+                        lang.hitch(this, function (fileTemplate) {
+                            this.config.ui = fileTemplate.ui || {};
+                            this.config.appValues = fileTemplate.values || {};
+
+                            // If we're running in the hosted environment without an appid or if no webmap id was
+                            // supplied in the URL, use the webmap in the file
+                            if (templateConfig.queryForCommonConfig || !this.config.webmap) {
+                                this.config.webmap = fileTemplate.values.webmap;
+                            }
+                            uiSource = "Using app specification in " + filename;
+                            waitForUI.resolve();
+                        }),
+                        lang.hitch(this, function () {
+                            waitForUI.reject(this._configurationError());
+                        })
+                    );
+                }
+
+                // Wait for the UI definition to load
+                waitForUI.then(lang.hitch(this, function () {
+                    // Now that we have the webmap id, get its info
+                    var waitForWebmap = new Deferred();
+                    if (this.config.webmap) {
+                        arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
+                            this.config.itemInfo = itemInfo;
+                            waitForWebmap.resolve(itemInfo);
+                        }), function (error) {
+                            waitForWebmap.reject(error || new Error("Error retrieving webmap."));
+                        });
+                    } else {
+                        waitForWebmap.reject(new Error("Webmap undefined."));
+                    }
+
+                    // Now that we have the webmap info, create the map
+                    waitForWebmap.then(lang.hitch(this, function () {
+                        // For creating the webmap, supply either the webmap id or, if available, the item info
+                        var itemInfo = this.config.itemInfo || this.config.webmap;
+
+                        console.log(uiSource);
+                        // Testpoint #2: UI selected; ready to create map
+                        if (this.config.SendToTest) {
+                            window.external[this.config.SendToTest]("status 2. UI and webmap retrieved; ready to create map; " + uiSource);
+                            window.external[this.config.SendToTest]("json " + JSON.stringify(itemInfo.item, ["id", "owner", "title"]));
+                            window.external[this.config.SendToTest]("json " + JSON.stringify(itemInfo.itemData, ["applicationProperties"]));
+                        }
+
+                        // Create the webmap
+                        this._createWebMap(itemInfo);
+                    }), lang.hitch(this, function (error) {
+                        this.reportError(error || new Error("Error retrieving webmap."));
+                    }));
+
+                }), lang.hitch(this, function (error) {
+                    this.reportError(error || new Error("Error retrieving application configuration."));
+                }));
             } else {
-                var error = new Error("Unable to access application's configuration");
-                this.reportError(error);
+                this.reportError(new Error("Main:: Config is not defined"));
             }
         },
         reportError: function (error) {
@@ -83,11 +201,46 @@ define([
             var node = dom.byId("loading_message");
             if (node) {
                 if (this.config && this.config.i18n) {
-                    node.innerHTML = this.config.i18n.messages.unableToLaunchApp + ": " + error.message;
+                    node.innerHTML = this.config.i18n.map.error + ": " + error.message;
                 } else {
-                    node.innerHTML = "Unable to launch application: " + error.message;
+                    node.innerHTML = "Unable to create map: " + error.message;
                 }
             }
+        },
+
+        /**
+         * Loads JSON from a file.
+         * @param {string} url The URL of the JSON file
+         * @return {Deferred} Provides a way to test the success or
+         *         failure of loading the file
+         */
+        _loadJSONFile: function (url) {
+            var done = new Deferred();
+
+            xhr(url + ".json", {
+                handleAs: "json"
+            }).then(
+                function (uiSpec) {
+                    done.resolve(uiSpec);
+                },
+                function (err) {
+                    done.reject(err);
+                }
+            );
+
+            return done;
+        },
+
+        _configurationError: function (error) {
+            // Provide a backup configuration error message if an error parameter is not supplied
+            if (!error) {
+                if (this.config && this.config.i18n) {
+                    error = new Error(this.config.i18n.messages.noConfiguration);
+                } else {
+                    error = new Error("Unable to access application's configuration");
+                }
+            }
+            return error;
         },
 
         // Checks for the presence of an ActiveX callback in a way that both works and passes JSLint
@@ -108,9 +261,7 @@ define([
             var deferred = new Deferred();
 
             require(["js/lgonlineApp"], function () {
-                ready(function () {
-                    deferred.resolve(true);
-                });
+                deferred.resolve(true);
             });
 
             return deferred.promise;
@@ -276,37 +427,26 @@ define([
             console.log("Application id " + (this.config.appid || "(none)"));
             console.log("Webmap id " + (this.config.webmap || "(none)"));
 
+            // Testpoint #3: map constructed
+            if (this.config.SendToTest) {
+                window.external[this.config.SendToTest]("status 3. map constructed");
+                window.external[this.config.SendToTest]("json " + JSON.stringify(this.config, ["appid", "webmap"]));
+            }
+
             // When the UI elements are ready, we can build the UI
             this.uiElementsReady.then(
                 lang.hitch(this, function (results) {
+                    // Testpoint #4: UI elements ready
+                    if (this.config.SendToTest) {
+                        window.external[this.config.SendToTest]("status 4. UI elements ready");
+                        window.external[this.config.SendToTest]("json " + JSON.stringify(this.config.appValues));
+                    }
+
                     this.config.appValues = this._organizeConfigValues(this.config.appValues);
 
                     // Add in some useful content from creating the map
                     this.config.map = this.map;
                     this.config.mapInfo = this.mapInfo;
-
-                    // At this point, this.config contains
-                    //   app: name of file containing user interface (omitted if none)
-                    //   appValues: name-value pairs for publication-configurable parameters
-                    //   appid (omitted if none)
-                    //   bingKey or ""
-                    //   group or ""
-                    //   helperServices name-value pairs from organization
-                    //   i18n from nls/resources.js
-                    //   itemInfo about webmap
-                    //     item & itemData
-                    //   localize boolean indicating if i18n content should be brought in
-                    //   map from the response from createMap() in _createWebMap():
-                    //   mapInfo: clickEventHandle & clickEventListener from the response from createMap() in _createWebMap():
-                    //   oauthappid or null
-                    //   proxyurl or ""
-                    //   queryForOrg boolean
-                    //   sharinghost
-                    //   ui: the application's UI-building JSON script
-                    //   units string
-                    //   urlItems array of acceptable parameters in URL parameter filter from defaults.js
-                    //   urlValues: URL parameter-value pairs filtered by urlItems
-                    //   webmap: id of webmap
 
                     // Define the String.trim() method if missing (<= IE 8)
                     // By Pradeep Kumar Mishra
@@ -347,11 +487,10 @@ define([
                     console.log("Application is ready");
                     this._revealApp();
 
-                    // Provide feedback to test frame
-                    if (this.config.testpoint) {
-                        setTimeout(lang.hitch(this, function () {
-                            window.external[this.config.testpoint](1, JSON.stringify(this.config, ["app", "appid", "webmap"]));
-                        }), 2000);
+                    // Testpoint #5: UI constructed
+                    if (this.config.SendToTest) {
+                        window.external[this.config.SendToTest]("status 5. UI constructed");
+                        window.external[this.config.SendToTest]("status ready");
                     }
                 }),
                 lang.hitch(this, function (error) {
@@ -360,13 +499,11 @@ define([
                 })
             );
         },
+
         // create a map based on the input web map id
         _createWebMap: function (itemInfo) {
-            var popup = new Popup(null, domConstruct.create("div"));
             arcgisUtils.createMap(itemInfo, "mapDiv", {
-                ignorePopups: false,
                 mapOptions: {
-                    infoWindow: popup
                     // Optionally define additional map config here for example you can
                     // turn the slider off, display info windows, disable wraparound 180, slider position and more.
                 },
@@ -378,10 +515,6 @@ define([
                 // Here' we'll use it to update the application to match the specified color theme.
                 // console.log(this.config);
                 this.map = response.map;
-                this.mapInfo = {
-                    clickEventHandle: response.clickEventHandle,
-                    clickEventListener: response.clickEventListener
-                };
                 // make sure map is loaded
                 if (this.map.loaded) {
                     // do something with the map
