@@ -129,6 +129,7 @@ define([
                 instance = location.pathname.substr(0, appLocation); //get the portal instance name
                 dojo.configData.values.portalURL = location.protocol + "//" + location.host + instance;
             }
+            arcgisUtils.arcgisUrl = dojo.configData.values.portalURL + "/sharing/rest/content/items";
         },
 
         /**
@@ -146,6 +147,9 @@ define([
                     * check for false value strings
                     */
                     var appSettings = this.setFalseValues(response.itemData.values);
+                    if (IdentityManager.credentials[0]) {
+                        dojo.configData.values.token = IdentityManager.credentials[0].token;
+                    }
                     // set other config options from app id
                     lang.mixin(dojo.configData.values, appSettings);
                     def.resolve();
@@ -315,12 +319,15 @@ define([
                     q = 'id:"' + settings.id_group + '"';
                     params = {
                         q: q,
+                        token: dojo.configData.values.token,
                         f: settings.dataType
                     };
                     _self._portal.queryGroups(params).then(function (data) {
                         // fetch basemap group query for private items
                         dojo.privateBaseMapGroup = true;
-                        dojo.BaseMapGroupQuery = data.results[0].portal.basemapGalleryGroupQuery;
+                        if (data.results.length > 0) {
+                            dojo.BaseMapGroupQuery = data.results[0].portal.basemapGalleryGroupQuery;
+                        }
                         dojo.configData.values.baseMapLayers = null;
                         def.resolve(data);
                     });

@@ -1,20 +1,5 @@
-V 1.7–Fix for Reading basemaps from org basemap group, synchronous downloads, changes in basemap widget, removed redundant queries for appid
+V 1.8 - Fix for org basemap and portal URL #107
 
-Resolved following GitHub Issues:
+Resolved GitHub issues:
 #56 - Read basemap from org basemaps group
-#71 - Launch downloads synchronously
-#74 - Web map basemap widget only changes on 2nd rotation
-#80 - App has redundant queries for the app id
 #82 - Portal gets organization URLs from config instead of from organization
-#87 - Tag cloud font sizes not related to tag frequency
-#88 - Header/Title colors
-#89 - On changing the BasemapGroupTitle and BasemapGroupOwner for private group, basemap switcher does not change as expected
-#91 - 'Aborted' message is displayed when clicked on Cancel button of Sign In dialog
-#92 - Incorrect tool tip is displayed for 'Sign Out'
-#93 - Application is going into loop on clicking on application icon
-#94 - 'Item Search' tool tip is displayed for auto search results
-#95 - Gallery link is displayed on scrolling item info page
-#96 - Back to '< Gallery' link is missing on item info page
-#97 - Text cursor is overlapping on cancel and search icon of search text box
-#98 - App spins when accessing private group with all private content
-#100 - Unable to select/ deselect tags from settings panel after changing the orientation

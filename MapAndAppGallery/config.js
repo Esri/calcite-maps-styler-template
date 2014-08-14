@@ -57,7 +57,6 @@
         "basemapGroupTitle": "",
         "basemapGroupOwner": "",
         "noThumbnail": "themes/images/thumbnailNotAvailable.png",
-        "portalAPIURL": "http://www.arcgis.com/sharing/rest/",
         "portalURL": "http://arcgis4localgov2.maps.arcgis.com",
         "geometryService": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
         "cityEngineWebSceneURL": "http://www.arcgis.com/apps/CEWebViewer/viewer.html?3dWebScene=",
