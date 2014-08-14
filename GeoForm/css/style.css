@@ -1,18 +1,26 @@
-.map-div {
-    width: 100% !important;
-    height: 200px !important;
+.gf-map {
+    width: 100%;
+    height: 300px;
 }
 .preview-frame {
     width: 100%;
     height: 200px;
-    border: 1px solid #ccc;
+    border: 0;
 }
-.map .container {
-    height: 100% !important;
-    width: 100% !important;
+#mapDiv {
+    height: 100%;
+    width: 100%;
+}
+#pushpinSymbol {
+    background-repeat: no-repeat;
+    width:36px;
+    height: 36px;
 }
 /* Style for Loading Indicator*/
 
+.app-loading {
+    overflow: hidden;
+}
 .app-loading .loading-indicator {
     display: block;
 }
@@ -65,16 +73,16 @@
 .app-error .loading-error {
     display: block;
 }
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
-    vertical-align: middle !important;
+#geoform .table > thead > tr > th,
+#geoform .table > tbody > tr > th,
+#geoform .table > tfoot > tr > th,
+#geoform .table > thead > tr > td,
+#geoform .table > tbody > tr > td,
+#geoform .table > tfoot > tr > td {
+    vertical-align: middle;
 }
-.progress-remove-margin {
-    margin-bottom: 0px !important;
+#geoform .progress-remove-margin {
+    margin-bottom: 0px;
     margin-top: 10px;
 }
 .myDragClass {
@@ -83,8 +91,8 @@
 /* Extra Small Devices, Phones */
 
 @media (min-width: 480px) {
-    .map-div {
-        height: 250px!important;
+    .gf-map {
+        height: 300px;
     }
     .preview-frame {
         height: 400px;
@@ -93,8 +101,8 @@
 /* Small Devices, Tablets */
 
 @media (min-width: 768px) {
-    .map-div {
-        height: 350px!important;
+    .gf-map {
+        height: 350px;
     }
     .preview-frame {
         height: 500px;
@@ -103,8 +111,8 @@
 /* Medium Devices, Desktops */
 
 @media (min-width: 992px) {
-    .map-div {
-        height: 450px!important;
+    .gf-map {
+        height: 450px;
     }
     .preview-frame {
         height: 500px;
@@ -113,51 +121,32 @@
 /* Large Devices, Wide Screens */
 
 @media (min-width: 1200px) {
-    .map-div {
-        height: 500px!important;
+    .gf-map {
+        height: 500px;
     }
     .preview-frame {
         height: 600px;
     }
 }
-.esriGeocoderContainer {
-    width: 100% !important;
-}
-.simpleGeocoder .esriGeocoder input {
-    width: 80% !important;
-    height: 30px;
-}
-.simpleGeocoder .esriGeocoder .esriGeocoderSearch {
-    margin-top: 13px;
-}
-.simpleGeocoder .esriGeocoderHasValue .esriGeocoderReset {
-    margin-top: 13px !important;
-}
-.simpleGeocoder .esriGeocoder {
-    border: 1px solid #cccccc !important;
-}
-.iconClass {
-    font-size: 34px !important;
+#geoform .iconClass {
+    font-size: 34px;
     padding: 10px;
-    text-decoration: none !important;
+    text-decoration: none;
     color: #007ac2;
     cursor: pointer;
 }
 .iconContent {
     float: left;
 }
-.fieldCheckbox,
-.selectAllCheckbox {
+#geoform .fieldCheckbox,
+#geoform .selectAllCheckbox {
     margin-right: 5px;
     vertical-align: top;
-    margin-left: 8px !important;
+    margin-left: 8px;
 }
 .progress-percent {
     width: 100%;
     line-height: 50px;
-}
-.share-dialog-label {
-    display: initial;
 }
 .share-dialog-subheader {
     font-size: 19px;
@@ -173,7 +162,7 @@
     font-size: 14px;
     color: #777;
     border: 1px solid #dcdcdc;
-    margin: 0 7px 0px !important;
+    margin: 0 7px 0px;
 }
 .myLocationOptions {
     padding: 20px 0px;
@@ -181,20 +170,20 @@
 .select-webmap-button {
     margin-top: 10px;
 }
-.has-feedback .form-control {
-    padding-right: 10px !important;
+#geoform .has-feedback .form-control {
+    padding-right: 10px;
 }
 input::-ms-clear {
     display: none;
 }
-.esriSimpleSlider {
-    z-index: 0 !important;
+#geoform .esriSimpleSlider {
+    z-index: 0;
 }
-.layerFieldsName {
+#geoform .layerFieldsName {
     color: #555;
-    vertical-align: center !important;
+    vertical-align: center;
 }
-.themeThubnail {
+.themeThumbnail {
     width: 200px;
     height: 133px;
     border: 1px solid #555;
@@ -212,6 +201,7 @@ input::-ms-clear {
 }
 .requireFieldStyle {
     display: inline-block;
+    margin-left: 5px;
 }
 /* fix for popup close */
 
@@ -231,4 +221,57 @@ input::-ms-clear {
 }
 .webmap-thumb-container {
     margin-bottom: 5px;
+}
+/*** Esri Map ***/
+
+.map {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    max-height: 100%;
+    text-align: left;
+    overflow: hidden;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.map * {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.map > img {
+    text-align: left;
+}
+/*** Restyle Esri Zoomin-out ***/
+
+.esriSimpleSlider {
+    border: 1px solid #cccccc;
+    top: 15px;
+    left: 15px;
+}
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton,
+.esriSimpleSliderVertical .esriSimpleSliderDecrementButton {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+}
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
+    border-bottom: 1px solid #cccccc;
+}
+/*** Fix Bootstrap modal bug ***/
+
+body.modal-open,
+.modal-open .navbar-fixed-top,
+.modal-open .navbar-fixed-bottom {
+    margin-right: 0;
+    margin-top: 0;
+}
+.map-div table{
+    background: transparent;
+}
+.drag-cursor{
+    cursor: ns-resize;
 }
