@@ -32,7 +32,7 @@ define({
     //to show how to setup the strings file.
     "queryForLocale": true,
     // When true, this will query and mixin a common config file from the path specified in the index.html dojo packages
-    "queryForCommonConfig": false, //common config
+    "queryForCommonConfig": true,
     // These are the options specified for querying items within the group. Modify these to get more items. You can also call the public template.queryGroupItems() method with these options as a parameter.
     "groupParams": {
         "sortField": "modified",
