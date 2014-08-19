@@ -37,3 +37,8 @@ define([], function () {
 
     return config;
 });
+/* 
+This source is part of the git commit 
+aeec887e0a21b0eb 2014-08-19 12:39:49 -0700
+It is available from https://github.com/Esri/local-government-online-apps 
+*/ 
