@@ -133,6 +133,7 @@ define([
             
             // create content
             var content = domConstruct.create("div", {
+                 //class: "resultsContent"
             }, this.container);
             domClass.add(content, 'resultsContent');
              
@@ -155,7 +156,7 @@ define([
                   innerHTML: num
                }, recLeftNum);
                domClass.add(recNum, 'recNum');
-               on(recNum, "click", lang.hitch(this, this.zoomToLocation, pt));
+               on(recNum, "click", lang.hitch(this, this.zoomToLocation, gra, pt));
                var recInfo = domConstruct.create("div", {
                }, rec);
                 domClass.add(recInfo, 'recInfo');
@@ -166,7 +167,7 @@ define([
                var recDistance = domConstruct.create("span", {
                   innerHTML: infoDist
                }, recInfo);
-                domClass.add(recDistance, 'recDistance');
+               domClass.add(recDistance, 'recDistance');
                if (geom.type == "point")
                   on(recDistance, "click", lang.hitch(this, this.routeToLocation, pt));
                var recInfoText = domConstruct.create("span", {
@@ -249,7 +250,11 @@ define([
       },
       
       // zoom to location
-      zoomToLocation: function(loc) {
+      zoomToLocation: function(gra, loc) {
+         //var loc = gra.geometry;
+         var c = gra.getContent();
+         this.map.infoWindow.setContent(c);
+         this.map.infoWindow.show(loc);
          this.map.centerAndZoom(loc, this.config.defaultZoomLevel || 14);
       },
       

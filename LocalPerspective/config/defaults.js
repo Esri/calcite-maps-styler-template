@@ -73,6 +73,7 @@ define({
     "directionsURL": null,
     "distanceUnits": "miles", // options: miles or kilometers
     "defaultZoomLevel": 14,
+    "defaultToCenter": true,
     // **************************** //
     
     //This option demonstrates how to handle additional custom url parameters. For example

@@ -624,6 +624,7 @@ a, a:hover, a:visited{
 	line-height: 11px;
 	overflow: hidden;
 	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .recDistance {
@@ -680,7 +681,8 @@ a, a:hover, a:visited{
 	margin: 0;
 	width: 227px;
 	height: 30px;
-	overflow: hidden;
+	color: #6e6e6e;
+	/*overflow: hidden;*/
 }
 
 
