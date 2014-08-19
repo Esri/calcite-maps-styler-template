@@ -61,7 +61,8 @@ define({
         {"name": "details", "enabled": true},
         {"name": "share", "enabled": true}
     ], 
-    //Set the active tool on the toolbar. Note home and locate can't be the active tool. 
+    //Set the active tool on the toolbar. Note home and locate can't be the active tool.
+    //Set to "" to display no tools at startup
     "activeTool": "legend",
     //Add the geocoding tool next to the title bar. 
     "search": true,

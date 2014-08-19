@@ -171,7 +171,9 @@ define([
                             if (this.rendererInfo) {
                                 this.symbol.color.a = this.rendererInfo.symbol.color.a;
                                 this.symbol.outline = this.rendererInfo.symbol.outline;
-                                this.previousFeatures[i].setSymbol(this.symbol);
+                                if (this.previousFeatures[i].geometry.type !== "polyline") {
+                                    this.previousFeatures[i].setSymbol(this.symbol);
+                                }
                             }
                         }
                     }
@@ -241,7 +243,9 @@ define([
                     // set symbol
                     this.symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, null, fillColor);
                     // set feature symbol
-                    feature.setSymbol(this.symbol);
+                    if (feature.geometry.type !== "polyline") {
+                        feature.setSymbol(this.symbol);
+                    }
                     var g = new Graphic(feature.geometry, sls, feature.attributes, null);
                     if (g) {
                         // add graphic to layer

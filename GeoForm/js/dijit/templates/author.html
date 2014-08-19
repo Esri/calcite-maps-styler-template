@@ -23,6 +23,8 @@
                     </li>
                     <li><a href="#style" class="navigationTabs" tab="style" data-toggle="tab">${nls.builder.styleText}</a>
                     </li>
+                     <li><a href="#options" class="navigationTabs" tab="options" data-toggle="tab">${nls.builder.optionText}</a>
+                    </li>
                     <li><a href="#preview" class="navigationTabs" tab="preview" data-toggle="tab">${nls.builder.previewText}</a>
                     </li>
                     <li><a href="#save" class="navigationTabs" tab="publish" data-toggle="tab">${nls.builder.publishText}</a>
@@ -54,6 +56,8 @@
                     <li><a href="#fields" class="navigationTabs" tab="fields" data-toggle="tab">${nls.builder.fieldsText}</a>
                     </li>
                     <li><a href="#style" class="navigationTabs" tab="style" data-toggle="tab">${nls.builder.styleText}</a>
+                    </li>
+                    <li><a href="#options" class="navigationTabs" tab="options" data-toggle="tab">${nls.builder.optionText}</a>
                     </li>
                     <li><a href="#preview" class="navigationTabs" tab="preview" data-toggle="tab">${nls.builder.previewText}</a>
                     </li>
@@ -104,7 +108,7 @@
                                 <input type="url" class="form-control" id="detailLogoInput" placeholder="${nls.builder.imageLogoPlaceholderText}">
                             </div>
                             <div class="form-group">
-                                <label for="detailDescriptionInput">${nls.builder.detailDescriptionLabelText}</label>
+                                <label for="detailDescriptionInput">${nls.builder.descriptionLabelText}</label>
                                 <textarea class="form-control" id="detailDescriptionInput" rows="6"></textarea>
                             </div>
                         </form>
@@ -126,14 +130,17 @@
                                             <input type="checkbox" data-dojo-attach-point="selectAll" class="selectAllCheckbox" />
                                         </th>
                                         <th>${nls.builder.fieldTabFieldHeaderText}</th>
-                                        <th>${nls.builder.fieldTabLabelHeaderText}
-                                        </th>
-                                        <th>${nls.builder.fieldTabDescriptionHeaderText}</th>
+                                        <th>${nls.builder.fieldTabLabelHeaderText}</th>
+                                        <th>${nls.builder.descriptionLabelText}</th>
+                                        <th>${nls.builder.fieldTabPlaceHolderHeaderText}</th>
+                                        <th>${nls.builder.fieldTabTypeHeaderText}</th>
                                     </tr>
                                 </thead>
                                 <tbody data-dojo-attach-point="geoFormFieldsTable" id="tbodyDND">
                                 </tbody>
                             </table>
+                        </div>
+                        <div data-dojo-attach-point="attachmentDetails" class="form-group">
                         </div>
                         <p class="text-right">
                             <a href="#" class="btn btn-default prevtab navigationTabs" tab="details">${nls.builder.btnPreviousText}</a>
@@ -141,17 +148,102 @@
                         </p>
                     </div>
                     <div id="style" class="tab-pane">
-                        <h2>${nls.builder.selectThemeText}</h2>
-                        <div class="descriptionText">${nls.builder.styleTabText}</div>
-                        <div class="row show-grid" data-dojo-attach-point="stylesList"></div>
+                        <h2>
+                            ${nls.builder.selectThemeText}</h2>
+                        <div class="descriptionText">
+                            ${nls.builder.styleTabText}</div>
+                        <div data-dojo-attach-point="stylesList">
+                            <select id="themeSelector" class="form-control">
+                            </select>
+                        </div>
+                        <div data-dojo-attach-point="thumbnailContainer"></div>
                         <p class="text-right">
                             <a href="#" class="btn btn-default prevtab navigationTabs" tab="fields">${nls.builder.btnPreviousText}</a>
                             <a href="#" class="btn btn-primary nexttab navigationTabs" tab="preview">${nls.builder.btnNextText}</a>
                         </p>
                     </div>
+                    <div id="options" class="tab-pane">
+                        <h2>
+                            ${nls.builder.optionsApplicationText}</h2>
+                        <input id="jumbotronOption" type="checkbox" value="Use Small Header" />
+                        <label for="jumbotronOption">
+                            ${nls.builder.smallHeader}</label>
+                        <div class="form-group">
+                            <div>
+                                <div class="help-block">
+                                    ${nls.builder.jumbotronDescription}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input id="shareOption" type="checkbox" value="share" />
+                            <label for="shareOption">
+                                ${nls.builder.shareGeoformText}</label>
+                            <div>
+                                <div class="help-block">
+                                    ${nls.builder.shareDescription}</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input id="defaultExtent" type="checkbox" value="share" />
+                            <label for="defaultExtent">
+                                ${nls.builder.defaultMapExtent}</label>
+                            <div>
+                                <div class="help-block">
+                                    ${nls.builder.defaultMapExtentDescription}</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pushpinInput">
+                                ${nls.builder.pushpinText}</label>
+                            <div class="form-inline">
+                            <div class="form-group">
+                                <div id="pushpinSymbol">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select id="pushpinInput" class="form-control">
+                                </select>
+                            </div>
+                                </div>
+                            <div>
+                                <div class="help-block">
+                                    ${nls.builder.pushpinOptionsDescription}</div>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    ${nls.builder.selectLocationText}</label>
+                                <div id="location_options">
+                                    <div class="checkbox">
+                                        <label for="myLocation"><input id="myLocation" type="checkbox" value="myLocation" />${nls.builder.myLocationText}</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="search"><input id="search" type="checkbox" value="searchLocation" />${nls.builder.searchText}</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="coordinates"><input id="coordinates" type="checkbox" value="coordinates" />${nls.builder.coordinatesText}</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="USMG/MGRS"><input id="USMG/MGRS" type="checkbox" value="USMG/MGRS" />${nls.builder.usng_mgrs}</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="UTM"><input id="UTM" type="checkbox" value="UTM" />${nls.builder.utm}</label>
+                                    </div>
+                                </div>
+                                <div class="help-block">
+                                    ${nls.builder.selectLocationSDescription}</div>
+                            </div>
+                        </div>
+                          <p class="text-right">
+                            <a href="#" class="btn btn-default prevtab navigationTabs" tab="style">${nls.builder.btnPreviousText}</a>
+                            <a href="#" class="btn btn-primary nexttab navigationTabs" tab="preview">${nls.builder.btnNextText}</a>
+                        </p>
+                    </div>
                     <div id="preview" class="tab-pane">
                         <h2>${nls.builder.previewApplicationText}</h2>
-                        <iframe class="preview-frame" id="iframeContainer"></iframe>
+                        <div class="panel panel-default">
+                            <iframe frameborder="0" scrolling="yes" class="preview-frame" id="iframeContainer"></iframe>
+                        </div>
                         <p class="text-right">
                             <a href="#" class="btn btn-default prevtab navigationTabs" tab="style">${nls.builder.btnPreviousText}</a>
                             <a href="#" class="btn btn-primary nexttab navigationTabs" tab="publish">${nls.builder.btnNextText}</a>
@@ -161,8 +253,10 @@
                         <h2>${nls.builder.saveApplicationText}</h2>
                         <div class="descriptionText">${nls.builder.publishTabText}</div>
                         <p class="">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" id="saveButton">${nls.builder.saveText}</button>
                             <a href="#" class="btn btn-default prevtab navigationTabs" tab="preview">${nls.builder.btnPreviousText}</a>
+                            <button id="done" type="button" class="btn btn-default">
+                                ${nls.builder.doneButtonText}</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" id="saveButton">${nls.builder.saveText}</button>
                         </p>
                     </div>
                 </div>

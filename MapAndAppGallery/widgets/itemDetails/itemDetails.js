@@ -61,6 +61,7 @@ define([
         mapPoint: null,
         map: null,
         mapExtent: null,
+        searchPortalURL: null,
         tempGraphicsLayerId: "esriGraphicsLayerMapSettings",
         /**
         *@class
@@ -87,6 +88,7 @@ define([
                 basemapDeferred.then(lang.hitch(this, function (baseMapLayers) {
                     if (baseMapLayers.length === 0) {
                         alert(nls.errorMessages.invalidBasemapQuery);
+                        topic.publish("hideProgressIndicator");
                         return;
                     }
                     dojo.configData.values.baseMapLayers = baseMapLayers;
@@ -166,13 +168,34 @@ define([
         },
 
         _fetchBasemapCollection: function (basemapDeferred) {
-            var groupUrl, deferred, agolBasemapsCollection, baseMapArray = [], self = this, tokenString;
+            var groupUrl, deferred, agolBasemapsCollection, baseMapArray = [], self = this, tokenString, basemapPortalURL, groupRequest;
             /**
             * If group owner & title are configured, create request to fetch the group id
             */
+            if (dojo.configData.values.token) {
+                tokenString = "&token=" + dojo.configData.values.token;
+            } else {
+                tokenString = '';
+            }
             if (dojo.configData.values.basemapGroupTitle && dojo.configData.values.basemapGroupOwner) {
-                groupUrl = dojo.configData.values.portalAPIURL + "community/groups?q=title:\"" + dojo.configData.values.basemapGroupTitle + "\" AND owner:" + dojo.configData.values.basemapGroupOwner + "&f=json";
-                this._fetchBaseMapLayers(groupUrl, basemapDeferred);
+                groupUrl = dojo.configData.values.portalURL + "/sharing/rest/community/groups?q=title:\"" + dojo.configData.values.basemapGroupTitle + "\" AND owner:" + dojo.configData.values.basemapGroupOwner + "&f=json";
+                groupRequest = esriRequest({
+                    url: groupUrl,
+                    callbackParamName: "callback"
+                });
+                groupRequest.then(function (groupInfo) {
+                    if (groupInfo.results.length === 0) {
+                        basemapPortalURL = "http://www.arcgis.com";
+                        groupUrl = basemapPortalURL + "/sharing/rest/community/groups?q=title:\"" + dojo.configData.values.basemapGroupTitle + "\" AND owner:" + dojo.configData.values.basemapGroupOwner + "&f=json";
+                        self.searchPortalURL = basemapPortalURL;
+                        self._fetchBaseMapLayers(groupUrl, basemapDeferred);
+                        esriUtils.arcgisUrl = basemapPortalURL + "/sharing/rest/content/items";
+                    } else {
+                        self._fetchBasemapDetails(basemapDeferred, dojo.configData.values.portalURL, groupInfo);
+                    }
+                }, function (err) {
+                    alert(err.message);
+                });
             } else if (!dojo.privateBaseMapGroup) {
                 /**
                 * If group owner & title are not configured, fetch the basemap collections from AGOL using BasemapGallery widget
@@ -192,18 +215,14 @@ define([
                 });
             } else if (dojo.privateBaseMapGroup) {
                 //If group owner & title are not configured and user is signed in to view the private items, create request to fetch basemap layers
-                if (dojo.configData.values.token) {
-                    tokenString = "&token=" + dojo.configData.values.token;
-                } else {
-                    tokenString = '';
-                }
-                groupUrl = dojo.configData.values.portalAPIURL + "community/groups?q=" + dojo.BaseMapGroupQuery + "&f=json" + tokenString;
+                groupUrl = dojo.configData.values.portalURL + "/sharing/rest/community/groups?q=" + dojo.BaseMapGroupQuery + "&f=json" + tokenString;
+                this.searchPortalURL = dojo.configData.values.portalURL;
                 this._fetchBaseMapLayers(groupUrl, basemapDeferred);
             }
         },
 
         _fetchBaseMapLayers: function (groupUrl, basemapDeferred) {
-            var dListResult, searchUrl, webmapRequest, groupRequest, deferred, thumbnailSrc, baseMapArray = [], deferredArray = [], self = this;
+            var groupRequest, self = this;
             groupRequest = esriRequest({
                 url: groupUrl,
                 callbackParamName: "callback"
@@ -211,68 +230,74 @@ define([
             groupRequest.then(function (groupInfo) {
                 if (groupInfo.results.length === 0) {
                     alert(nls.errorMessages.invalidBasemapQuery);
+                    topic.publish("hideProgressIndicator");
                     return;
                 }
-                /**
-                * Create request using group id to fetch all the items from that group
-                */
-                searchUrl = dojo.configData.values.portalAPIURL + 'search?q=group:' + groupInfo.results[0].id + "&sortField=name&sortOrder=desc&num=50&f=json";
-                webmapRequest = esriRequest({
-                    url: searchUrl,
-                    callbackParamName: "callback"
-                });
-                webmapRequest.then(function (groupInfo) {
-                    /**
-                    * Loop for each item in the group
-                    */
-                    array.forEach(groupInfo.results, lang.hitch(this, function (info, index) {
-                        /**
-                        * If type is "Map Service", create the object and push it into "baseMapArray"
-                        */
-                        if (info.type === "Map Service") {
-                            thumbnailSrc = (groupInfo.results[index].thumbnail === null) ? dojo.configData.values.noThumbnail : dojo.configData.values.portalAPIURL + "content/items/" + info.id + "/info/" + info.thumbnail;
-                            baseMapArray.push({
-                                ThumbnailSource: thumbnailSrc,
-                                Name: info.title,
-                                MapURL: info.url
-                            });
-                            /**
-                            * If type is "Web Map", create requests to fetch all the items of the webmap (asynchronous request)
-                            */
-                        } else if (info.type === "Web Map") {
-                            var mapDeferred = esriUtils.getItem(info.id);
-                            mapDeferred.then(lang.hitch(this, function () {
-                                deferred = new Deferred();
-                                deferred.resolve();
-                            }));
-                            deferredArray.push(mapDeferred);
-                        }
-                    }));
-                    if (deferredArray.length > 0) {
-                        dListResult = new DeferredList(deferredArray);
+                self._fetchBasemapDetails(basemapDeferred, groupInfo);
+            }, function (err) {
+                alert(err.message);
+            });
+        },
 
-                        dListResult.then(function (res) {
-                            /**
-                            *If result of webmaps are empty
-                            */
-                            if (res.length === 0) {
-                                basemapDeferred.resolve(baseMapArray);
-                                return;
-                            }
-                            /**
-                            * Else for each items in the webmap, create the object and push it into "baseMapArray"
-                            */
-                            array.forEach(res, function (data, innerIdx) {
-                                self._filterRedundantBasemap(data[1], baseMapArray, false);
-                            });
-                            basemapDeferred.resolve(baseMapArray);
+        _fetchBasemapDetails: function (basemapDeferred, groupInfo) {
+            var deferred, dListResult, webmapRequest, thumbnailSrc, searchUrl, deferredArray = [], baseMapArray = [], self = this;
+            /**
+            * Create request using group id to fetch all the items from that group
+            */
+            searchUrl = this.searchPortalURL + '/sharing/rest/search?q=group:' + groupInfo.results[0].id + "&sortField=name&sortOrder=desc&num=50&f=json";
+            webmapRequest = esriRequest({
+                url: searchUrl,
+                callbackParamName: "callback"
+            });
+            webmapRequest.then(function (groupInfo) {
+                /**
+                * Loop for each item in the group
+                */
+                array.forEach(groupInfo.results, lang.hitch(this, function (info, index) {
+                    /**
+                    * If type is "Map Service", create the object and push it into "baseMapArray"
+                    */
+                    if (info.type === "Map Service") {
+                        thumbnailSrc = (groupInfo.results[index].thumbnail === null) ? dojo.configData.values.noThumbnail : dojo.configData.values.portalURL + "/sharing/rest/content/items/" + info.id + "/info/" + info.thumbnail;
+                        baseMapArray.push({
+                            ThumbnailSource: thumbnailSrc,
+                            Name: info.title,
+                            MapURL: info.url
                         });
-                    } else {
-                        basemapDeferred.resolve(baseMapArray);
+                        /**
+                        * If type is "Web Map", create requests to fetch all the items of the webmap (asynchronous request)
+                        */
+                    } else if (info.type === "Web Map") {
+                        var mapDeferred = esriUtils.getItem(info.id);
+                        mapDeferred.then(lang.hitch(this, function (a) {
+                            deferred = new Deferred();
+                            deferred.resolve();
+                        }));
+                        deferredArray.push(mapDeferred);
                     }
-                }, function (err) {
-                    alert(err.message);
-                });
+                }));
+                if (deferredArray.length > 0) {
+                    dListResult = new DeferredList(deferredArray);
+
+                    dListResult.then(function (res) {
+                        /**
+                        *If result of webmaps are empty
+                        */
+                        if (res.length === 0) {
+                            basemapDeferred.resolve(baseMapArray);
+                            return;
+                        }
+                        /**
+                        * Else for each items in the webmap, create the object and push it into "baseMapArray"
+                        */
+                        array.forEach(res, function (data, innerIdx) {
+                            self._filterRedundantBasemap(data[1], baseMapArray, false);
+                        });
+                        basemapDeferred.resolve(baseMapArray);
+                    });
+                } else {
+                    basemapDeferred.resolve(baseMapArray);
+                }
             }, function (err) {
                 alert(err.message);
             });
@@ -304,7 +329,7 @@ define([
         */
         _filterRedundantBasemap: function (bmLayers, baseMapArray, isItemBasemap) {
             var i, bmLayerData, multiBasemap = [];
-            if (bmLayers.itemData) {
+            if (bmLayers.itemData.baseMap) {
                 bmLayerData = bmLayers.itemData.baseMap.baseMapLayers;
             } else {
                 bmLayerData = [];
@@ -316,7 +341,6 @@ define([
                     dojo.selectedBasemapIndex = baseMapArray.length;
                 }
                 if (bmLayerData.length === 1) {
-
                     this._setBasemapAttribute(baseMapArray, bmLayerData[0], bmLayers, isItemBasemap);
                 } else if (bmLayerData.length > 1) {
                     for (i = 0; i < bmLayerData.length; i++) {
@@ -396,7 +420,7 @@ define([
                 } else {
                     tokenString = '';
                 }
-                thumbnailSrc = (bmLayer.thumbnail === null) ? dojo.configData.values.noThumbnail : (dojo.configData.values.portalAPIURL + "content/items/" + bmLayer.id + "/info/" + bmLayer.thumbnail + tokenString);
+                thumbnailSrc = (bmLayer.thumbnail === null) ? dojo.configData.values.noThumbnail : (this.searchPortalURL + "/sharing/rest/content/items/" + bmLayer.id + "/info/" + bmLayer.thumbnail + tokenString);
                 baseMapArray.push({
                     ThumbnailSource: thumbnailSrc,
                     Name: bmLayer.title,
@@ -575,6 +599,7 @@ define([
                                 },
                                 error: function (err) {
                                     alert(err.message);
+                                    topic.publish("hideProgressIndicator");
                                 }
                             });
                         }
@@ -701,7 +726,9 @@ define([
             this.map.getLayer(basmap.id).id = defaultId;
             this.map._layers[defaultId] = this.map.getLayer(basmap.id);
             layerIndex = array.indexOf(this.map.layerIds, basmap.id);
-            delete this.map._layers[basmap.id];
+            if (layerIndex === -1) {
+                delete this.map._layers[basmap.id];
+            }
             this.map.layerIds[layerIndex] = defaultId;
         },
 

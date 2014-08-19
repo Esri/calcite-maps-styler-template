@@ -29,6 +29,7 @@
     <!-- End Responsive -->
     <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
     <link rel="stylesheet" href="//js.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="//js.arcgis.com/3.10/js/dgrid/css/dgrid.css">
     <link rel="stylesheet" href="//js.arcgis.com/3.10/js/esri/css/esri.css">
     <!-- Load any application specific styles -->
     <link rel="stylesheet" href="css/main.css">
@@ -56,7 +57,7 @@
             // The locationPath logic below may look confusing but all it's doing is
             // enabling us to load the api from a CDN and load local modules from the correct location.
             packages: [{
-                name: "launch",
+                name: "application",
                 location: package_path + '/js'
             }, {
                 name: "config",
@@ -67,9 +68,6 @@
             }, {
                 name: "js",
                 location: package_path + '/js2'
-            },{
-                name: "app",
-                location: package_path + '/.'
             }]
         };
         var jsapi_i18n = {};
@@ -83,26 +81,16 @@
     <script src="js2/libs.js"></script>
     <script type="text/javascript">
         require([
-            "launch/template",
-            "launch/main"
+            "application/templateOptions",
+            "application/template",
+            "application/main"
         ], function(
+            templateConfig,
             Template,
             Main
         ){
             // create the template. This will take care of all the logic required for template applications
-            var myTemplate = new Template({
-                /*
-                webmap: true,
-                groupInfo: false,
-                groupItems: false,
-                groupParams: {
-                    sortField: "modified",
-                    sortOrder: "desc",
-                    num: 9,
-                    start: 0
-                }
-                */
-            });
+            var myTemplate = new Template(templateConfig);
             // create my main application. Start placing your logic in the main.js file.
             var myApp = new Main();
             // start template
@@ -110,7 +98,7 @@
                 // The config object contains the following properties: helper services, (optionally)
                 // i18n, appid, webmap and any custom values defined by the application.
                 // In this example we have one called theme.
-                myApp.startup(config);
+                myApp.startup(config, myTemplate.appResponse);
             }, function(error) {
                 // something went wrong. Let's report it.
                 myApp.reportError(error);
