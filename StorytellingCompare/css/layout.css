@@ -1,9 +1,9 @@
- 	  html,body {
+      html,body {
       height:100%;
       width:100%;
       padding:0;
-	  margin:0;
-	  overflow:hidden;
+      margin:0;
+      overflow:hidden;
       }
 
       body {
@@ -16,36 +16,49 @@
 
       a {
       color:#555;
-	  font-weight:bold;
-	  text-decoration:none;
+      font-weight:bold;
+      text-decoration:none;
       }
 
-	  a:hover{
-	  text-decoration:underline;
-	  }
+      a:hover{
+      text-decoration:underline;
+      }
+     .tundra .dijitSplitContainer-dijitContentPane, .tundra .dijitBorderContainer-dijitContentPane {
+        padding: 0; // default in 3.11 is 5px
+     }
+     .tundra .dijitSplitContainer-child, .tundra .dijitBorderContainer-child {
+        border: none; //default in 3.11 is 1px border
+     }
 
+     #banner{
+        background-color: inherit; //matches previous color (not white)
+     }
+
+     #mainWindow{
+        padding:0; 
+     }
       #header {
       height:190px;
       background:#444;
-	  color:#fff;
+      color:#fff;
       margin:0;
       }
 
-	  #banner{
-	  height:120px;
-	  }
+      #banner{
+      height:120px;
+      }
 
       #headerText{
-	  padding-top:20px;
+      padding-top:20px;
       padding-left:25px;
-	  width:70%;
-	  float:left;
-	  }
+      width:70%;
+      float:left;
+      }
 
       #title {
-	  font-family:Arial, Helvetica, sans-serif;
+      font-family:Arial, Helvetica, sans-serif;
       font-size:20px;
-	  font-weight:bold;
+      font-weight:bold;
       text-align:left;
       white-space: nowrap;
       overflow: hidden;
@@ -55,272 +68,272 @@
 
       #subtitle {
       font-size:13px;
-	  margin-top:10px;
-	  height:45px;
+      margin-top:10px;
+      height:45px;
       overflow: hidden;
       }
 
-	  #controls{
-	  position:absolute;
-	  width:100%;
-	  height:27px;
-	  top:110px;
-	  background-color:#848484;
-	  font-family:Arial, Helvetica, sans-serif;
-	  color:#000;
-	  padding-left:25px;
-	  padding-top:5px;
-	  -webkit-touch-callout: none;
-	  -webkit-user-select: none;
-	  -khtml-user-select: none;
-	  -moz-user-select: none;
-	  -ms-user-select: none;
-	  -o-user-select: none;
-	  user-select: none;
-	  }
+      #controls{
+      position:absolute;
+      width:100%;
+      height:27px;
+      top:110px;
+      background-color:#848484;
+      font-family:Arial, Helvetica, sans-serif;
+      color:#000;
+      padding-left:25px;
+      padding-top:5px;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+      }
 
-	  #mapTitles{
-	  background-color:#444;
-	  height:45px;
-	  }
+      #mapTitles{
+      background-color:#444;
+      height:45px;
+      }
 
-	  .titleTab{
-	  padding:25px;
-	  padding-top:5px;
-	  padding-bottom:5px;
-	  font-family:Arial, Helvetica, sans-serif;
-	  font-weight:bold;
-	  }
+      .titleTab{
+      padding:25px;
+      padding-top:5px;
+      padding-bottom:5px;
+      font-family:Arial, Helvetica, sans-serif;
+      font-weight:bold;
+      }
 
-	  .titleCon{
-	  float:left;
-	  height:100%;
-	  border-left:1px solid #848484;
-	  }
+      .titleCon{
+      float:left;
+      height:100%;
+      border-left:1px solid #848484;
+      }
 
-	  #titleCon0{
-	  border:none;
-	  }
+      #titleCon0{
+      border:none;
+      }
 
-	  #titleCon2{
-	  float:right;
-	  margin-right:-1px;
-	  }
+      #titleCon2{
+      float:right;
+      margin-right:-1px;
+      }
 
-	  .checkboxToggle{
-	  cursor:pointer;
-	  }
+      .checkboxToggle{
+      cursor:pointer;
+      }
 
-	  .checkbox{
-	  background-image:url(../images/checked.png);
-	  background-repeat:no-repeat;
-	  height:15px;
-	  }
+      .checkbox{
+      background-image:url(../images/checked.png);
+      background-repeat:no-repeat;
+      height:15px;
+      }
 
-	  .checked{
-	  background-image:url(../images/checked.png);
-	  }
+      .checked{
+      background-image:url(../images/checked.png);
+      }
 
-	  .unchecked{
-	  background-image:url(../images/unchecked.png);
-	  }
+      .unchecked{
+      background-image:url(../images/unchecked.png);
+      }
 
-	  #logoArea{
-	  float:right;
-	  padding-top:25px;
-	  padding-right:25px;
-	  text-align:right;
-	  }
+      #logoArea{
+      float:right;
+      padding-top:25px;
+      padding-right:25px;
+      text-align:right;
+      }
 
-	  #social{
-	  margin-bottom:20px;
-	  }
+      #social{
+      margin-bottom:20px;
+      }
 
-	  #msLink{
-	  color:#fff;
-	  font-family:Arial, Helvetica, sans-serif;
-	  font-weight:bold;
-	  font-size:13px;
-	  outline:none;
-	  }
+      #msLink{
+      color:#fff;
+      font-family:Arial, Helvetica, sans-serif;
+      font-weight:bold;
+      font-size:13px;
+      outline:none;
+      }
 
-	  #logo{
-	  border:none;
-	  outline:none;
-	  }
+      #logo{
+      border:none;
+      outline:none;
+      }
 
-	  #logoImg{
-	  border:none;
-	  outline:none;
-	  }
+      #logoImg{
+      border:none;
+      outline:none;
+      }
 
       #tabLink {
       text-decoration:none;
       color:#444;
       }
 
-	  .mapCon{
-	  overflow:hidden;
-	  }
+      .mapCon{
+      overflow:hidden;
+      }
 
-	  .legendCon{
-	  display:none;
-	  width:100%;
-	  height:35%;
-	  background-color:#444;
-	  color:#fff;
-	  font-family:Arial, Helvetica, sans-serif;
-	  border-left:1px solid #848484;
-	  overflow:auto;
-	  .position:relative;
-	  }
+      .legendCon{
+      display:none;
+      width:100%;
+      height:35%;
+      background-color:#444;
+      color:#fff;
+      font-family:Arial, Helvetica, sans-serif;
+      border-left:1px solid #848484;
+      overflow:auto;
+      .position:relative;
+      }
 
-	  .legend{
+      .legend{
 
-	  padding:25px;
-	  padding-top:0;
-	  padding-bottom:5px;
-	  }
+      padding:25px;
+      padding-top:0;
+      padding-bottom:5px;
+      }
 
-	  #legendCon0{
-	  border:none;
-	  }
+      #legendCon0{
+      border:none;
+      }
 
-	  .map{
-	  width:100%;
-	  height:75%;
-	  border-left:1px solid #444;
-	  }
+      .map{
+      width:100%;
+      height:75%;
+      border-left:1px solid #444;
+      }
 
-	  .legToggle{
-	  position:absolute;
-	  padding:5px;
-	  background-color:#444;
-	  color:#fff;
-	  font-family:Arial, Helvetica, sans-serif;
-	  z-index:100;
-	  cursor:pointer;
-	  }
+      .legToggle{
+      position:absolute;
+      padding:5px;
+      background-color:#444;
+      color:#fff;
+      font-family:Arial, Helvetica, sans-serif;
+      z-index:100;
+      cursor:pointer;
+      }
 
-	  .desToggle{
-	  position:absolute;
-	  bottom:25%;
-	  padding:5px;
-	  background-color:#fff;
-	  color:#444;
-	  font-family:Arial, Helvetica, sans-serif;
-	  z-index:100;
-	  cursor:pointer;
-	  }
+      .desToggle{
+      position:absolute;
+      bottom:25%;
+      padding:5px;
+      background-color:#fff;
+      color:#444;
+      font-family:Arial, Helvetica, sans-serif;
+      z-index:100;
+      cursor:pointer;
+      }
 
-	  #mapDiv0{
-	  border:none;
-	  }
+      #mapDiv0{
+      border:none;
+      }
 
-	  .descriptionCon{
-	  width:100%;
-	  height:25%;
-	  border-left:1px solid #444;
-	  overflow:auto;
-	  }
+      .descriptionCon{
+      width:100%;
+      height:25%;
+      border-left:1px solid #444;
+      overflow:auto;
+      }
 
-	  .description{
-	  padding:15px;
-	  }
+      .description{
+      padding:15px;
+      }
 
-	  #discriptionCon0{
-	  border:none;
-	  }
+      #discriptionCon0{
+      border:none;
+      }
 
-	  .mapTitle{
-	  font-family:Arial, Helvetica, sans-serif;
-	  }
+      .mapTitle{
+      font-family:Arial, Helvetica, sans-serif;
+      }
 
-	  #timeCon{
-	  display:none;
-	  position:absolute;
-	  top:3%;
-	  z-index:2;
-	  }
+      #timeCon{
+      display:none;
+      position:absolute;
+      top:3%;
+      z-index:2;
+      }
 
-	  #time{
-	  background:#444;
-	  }
+      #time{
+      background:#444;
+      }
 
-	  #timeSliderLabel{
-	  color:#fff;
-	  text-align:center;
-	  padding:10px;
-	  font-size:16px;
-	  }
+      #timeSliderLabel{
+      color:#fff;
+      text-align:center;
+      padding:10px;
+      font-size:16px;
+      }
 
       .map .bingLogo-lg {
       left:18px !important;
       }
 
-	  g,v {
-	  cursor:pointer;
-	  }
+      g,v {
+      cursor:pointer;
+      }
 
-	  #loadingCon{
-	  position:absolute;
-	  z-index:99;
-	  width:100%;
+      #loadingCon{
+      position:absolute;
+      z-index:99;
+      width:100%;
       top:40%;
-	  text-align:center;
-	  }
+      text-align:center;
+      }
 
-	  #loadingDialog{
-	  margin:auto;
-	  background-color:#dadada;
-	  width:300px
-	  }
+      #loadingDialog{
+      margin:auto;
+      background-color:#dadada;
+      width:300px
+      }
 
-	  #loadingHeader{
-	  background-color:#444;
-	  color:#fff;
-	  padding-top:10px;
-	  padding-bottom:10px;
-	  width:300px;
-	  }
+      #loadingHeader{
+      background-color:#444;
+      color:#fff;
+      padding-top:10px;
+      padding-bottom:10px;
+      width:300px;
+      }
 
-	  #loading{
-	  padding-top:10px;
-	  }
+      #loading{
+      padding-top:10px;
+      }
 
-	  #loadingImg{
-	  margin-top:5px;
-	  padding-bottom:10px;
-	  }
+      #loadingImg{
+      margin-top:5px;
+      padding-bottom:10px;
+      }
 
-	  #timeSliderDivCon{
-	  margin-top:105px;
-	  }
+      #timeSliderDivCon{
+      margin-top:105px;
+      }
 
-	  .medCell{
-	  width:25px;
-	  }
+      .medCell{
+      width:25px;
+      }
 
-	  .medIcon{
-	  width:25px;
-	  cursor:pointer;
-	  }
+      .medIcon{
+      width:25px;
+      cursor:pointer;
+      }
 
-	  #tsTmp{
-	  width:80%;
-	  }
+      #tsTmp{
+      width:80%;
+      }
 
-	  .dijitRuleMark{
-	  border:1px solid #dadada;
-	  }
+      .dijitRuleMark{
+      border:1px solid #dadada;
+      }
 
-	  #mapDiv0_zoom_slider{
-	  display:none;
-	  }
+      #mapDiv0_zoom_slider{
+      display:none;
+      }
 
-	  #mapDiv1_zoom_slider{
-	  display:none;
-	  }
+      #mapDiv1_zoom_slider{
+      display:none;
+      }
 
       .esriRtl table{
       text-align:right;
@@ -345,5 +358,5 @@
       }
 
       .maximize{
-      	display:none;
+        display:none;
       }
