@@ -10,7 +10,8 @@ define({
         error: {
             layerNotFound: "Layer is not in the webmap",
             fieldNotFound: "Field not found",
-            popupNotSet: "Popup not enabled for this layer"
+            popupNotSet: "Popup not enabled for this layer",
+            noLayersSet: "No layers defined in the config, the search box will not work"
         },
         page: {
             title: "Information Lookup",
