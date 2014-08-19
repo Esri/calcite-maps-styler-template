@@ -1,4 +1,4 @@
-﻿
+
 define([
     "dojo/Evented",
     "dojo",
@@ -204,9 +204,7 @@ define([
                 serviceAreaLayerNames[f] = String.trim(serviceAreaLayerNames[f]);
 
                 array.forEach(this.layers, function (layer) {
-                    if (layer.errors != null){
-                        console.log(layer.errors.toString() );
-                    }
+
                     if (layer.featureCollection != null) {
                         if (layer.featureCollection.layers != null) {
                             array.forEach(layer.featureCollection.layers, function (subLyrs) {
@@ -267,19 +265,19 @@ define([
 
                                 }
                             }, this);
-                        }
-                    } else {
-                        if (layer.title == serviceAreaLayerNames[f]) {
-                            layDetails.popupInfo = layer.popupInfo;
-                            layDetails.name = layer.title;
-                            layDetails.url = layer.layerObject.url;
-                            layDetails.layerOrder = f;
-                            this.lookupLayers.push(layDetails);
-                            console.log(layer.title + " " + "set");
 
+                        } else {
+                            if (layer.title == serviceAreaLayerNames[f]) {
+                                layDetails.popupInfo = layer.popupInfo;
+                                layDetails.name = layer.title;
+                                layDetails.url = layer.layerObject.url;
+                                layDetails.layerOrder = f;
+                                this.lookupLayers.push(layDetails);
+                                console.log(layer.title + " " + "set");
+
+                            }
                         }
                     }
-
                     if (this.config.storeLocation === true && this.config.editingAllowed) {
                         var fnd = false;
 
