@@ -120,7 +120,7 @@ define([
          on (window, "resize", lang.hitch(this, this._windowScrolled));
          
          // info window
-         this.map.infoWindow.resize(180, 220);
+         this.map.infoWindow.resize(220, 220);
          
          // graphics layer click
          var gl = this.map.graphics;
@@ -645,6 +645,10 @@ define([
             pageObj.buffer = geometry;
          });
          this._performAnalysis(pageObj);
+         
+         var geom = results[0];
+         var ext = geom.getExtent();
+         this.map.setExtent(ext.expand(1.5));
       },
       
       // peform analysis

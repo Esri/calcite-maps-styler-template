@@ -35,7 +35,7 @@ define([
     "esri/dijit/HomeButton",
     "esri/dijit/Geocoder",
     "esri/dijit/LocateButton",
-    "esri/dijit/Legend"
+    "esri/urlUtils"
 ], function (
     ready,
     Color,
@@ -56,7 +56,7 @@ define([
     HomeButton,
     Geocoder,
     LocateButton,
-    Legend
+    urlUtils
 ) {
    
    return declare(null, {
@@ -84,6 +84,15 @@ define([
             this.config = config;
             this.setColor();
             this.setProtocolHandler();
+            // proxy rules
+            urlUtils.addProxyRule({
+               urlPrefix: "route.arcgis.com",
+               proxyUrl: this.config.proxyurl
+            });
+            urlUtils.addProxyRule({
+               urlPrefix: "traffic.arcgis.com",
+               proxyUrl: this.config.proxyurl
+            });
             // document ready
             ready(lang.hitch(this, function() {
                //supply either the webmap id or, if available, the item info
@@ -192,9 +201,12 @@ define([
 
          // geocoder
          var geocoder = new Geocoder({
-            map : this.map
+            map : this.map,
+            url: this.config.helperServices.geocode[0].url,
+            autoComplete : true
          }, "panelGeocoder");
          on(geocoder, "find-results", lang.hitch(this, this._geocoderResults));
+         on(geocoder, "select", lang.hitch(this, this._geocoderSelect));
          on(geocoder, "clear", lang.hitch(this, this._geocoderClear));
          geocoder.startup();
          
@@ -208,7 +220,8 @@ define([
          this._updateTheme();
          
          // set default location
-         this._setDefaultLocation();
+         if (this.config.defaultToCenter)
+            this._setDefaultLocation();
       },
       
       // geocoder results
@@ -218,6 +231,13 @@ define([
             var geom = result.feature.geometry;
             this.ui.setLocation(geom);
          }
+      },
+      
+      // geocoder select
+      _geocoderSelect : function(obj) {
+         var result = obj.result;
+         var geom = result.feature.geometry;
+         this.ui.setLocation(geom);
       },
       
       // geocoder clear

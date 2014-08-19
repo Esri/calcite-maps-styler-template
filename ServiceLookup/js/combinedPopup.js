@@ -1,4 +1,4 @@
-﻿
+
 define([
     "dojo/Evented",
     "dojo",
@@ -19,7 +19,8 @@ define([
     "esri/tasks/QueryTask",
     "esri/tasks/query",
     "esri/dijit/PopupTemplate",
-    "dojo/string"
+    "dojo/string",
+    "dojo/i18n!application/nls/resources"
 
 ], function (
     Evented,
@@ -41,7 +42,8 @@ define([
     QueryTask,
     Query,
     PopupTemplate,
-    String
+    String,
+    i18n
 ) {
     return declare([Evented], {
         config: {},
@@ -84,7 +86,7 @@ define([
             }
 
         },
-        _mapLocate: function () {   
+        _mapLocate: function () {
 
             this.showPopup(arguments[0]);
 
@@ -121,7 +123,7 @@ define([
             for (var f = 0, fl = this.lookupLayers.length; f < fl; f++) {
                 if (this.lookupLayers[f].url == null) {
                     var extent = new Extent({
-                        "xmin": evt.x , "ymin": evt.y , "xmax": evt.x , "ymax": evt.y ,
+                        "xmin": evt.x, "ymin": evt.y, "xmax": evt.x, "ymax": evt.y,
                         "spatialReference": evt.spatialReference
                     });
                     query = new Query();
@@ -140,7 +142,7 @@ define([
                         }
 
                     }));
-                }else {
+                } else {
                     query = new Query();
 
                     query.spatialRelationship = Query.SPATIAL_REL_INTERSECTS;
@@ -183,7 +185,14 @@ define([
             this.popupMedia = [];
 
             if (String.trim(this.config.serviceAreaLayerNames) === "") {
-                alert("No layers defined in the config, the search box will not work");
+                if (i18n) {
+                    if (i18n.error) {
+                        if (i18n.error.noLayersSet) {
+                            alert(i18n.error.noLayersSet);
+                        }
+                    }
+                }
+                alert();
             }
             serviceAreaLayerNames = this.config.serviceAreaLayerNames.split("|");
             this.lookupLayers = [];
@@ -210,10 +219,10 @@ define([
 
                                         layDetails.popupInfo = subLyrs.popupInfo;
                                         if (layDetails.popupInfo == null) {
-                                            if (this.config.i18n) {
-                                                if (this.config.i18n.error) {
-                                                    if (this.config.i18n.error.popupNotSet) {
-                                                        alert(this.config.i18n.error.popupNotSet + ": " + subLyrs.name);
+                                            if (i18n) {
+                                                if (i18n.error) {
+                                                    if (i18n.error.popupNotSet) {
+                                                        alert(i18n.error.popupNotSet + ": " + subLyrs.name);
                                                     }
                                                 }
                                             }
@@ -225,48 +234,50 @@ define([
                                 }
                             }, this);
                         }
-                    }else if (layer.layerObject.layerInfos != null) {
-                        array.forEach(layer.layerObject.layerInfos, function (subLyrs) {
-                            if (subLyrs.name == serviceAreaLayerNames[f]) {
-                                layDetails.name = subLyrs.name;
-                                layDetails.layerOrder = f;
-                                layDetails.url = layer.layerObject.url + "/" + subLyrs.id;
+                    } else if (layer.layerObject != null) {
+                        if (layer.layerObject.layerInfos != null) {
+                            array.forEach(layer.layerObject.layerInfos, function (subLyrs) {
+                                if (subLyrs.name == serviceAreaLayerNames[f]) {
+                                    layDetails.name = subLyrs.name;
+                                    layDetails.layerOrder = f;
+                                    layDetails.url = layer.layerObject.url + "/" + subLyrs.id;
 
-                                console.log(serviceAreaLayerNames[f] + " " + "set");
+                                    console.log(serviceAreaLayerNames[f] + " " + "set");
 
-                                if (layer.layers != null) {
-                                    array.forEach(layer.layers, function (popUp) {
-                                        if (subLyrs.id == popUp.id) {
-                                            layDetails.popupInfo = popUp.popupInfo;
-                                        }
-                                    }, this);
-                                }
-                                if (layDetails.popupInfo == null) {
-                                    if (this.config.i18n) {
-                                        if (this.config.i18n.error) {
-                                            if (this.config.i18n.error.popupNotSet) {
-                                                alert(this.config.i18n.error.popupNotSet + ": " + subLyrs.name);
+                                    if (layer.layers != null) {
+                                        array.forEach(layer.layers, function (popUp) {
+                                            if (subLyrs.id == popUp.id) {
+                                                layDetails.popupInfo = popUp.popupInfo;
+                                            }
+                                        }, this);
+                                    }
+                                    if (layDetails.popupInfo == null) {
+                                        if (i18n) {
+                                            if (i18n.error) {
+                                                if (i18n.error.popupNotSet) {
+                                                    alert(i18n.error.popupNotSet + ": " + subLyrs.name);
+                                                }
                                             }
                                         }
+
                                     }
+                                    this.lookupLayers.push(layDetails);
 
                                 }
+                            }, this);
+
+                        } else {
+                            if (layer.title == serviceAreaLayerNames[f]) {
+                                layDetails.popupInfo = layer.popupInfo;
+                                layDetails.name = layer.title;
+                                layDetails.url = layer.layerObject.url;
+                                layDetails.layerOrder = f;
                                 this.lookupLayers.push(layDetails);
+                                console.log(layer.title + " " + "set");
 
                             }
-                        }, this);
-                    } else {
-                        if (layer.title == serviceAreaLayerNames[f]) {
-                            layDetails.popupInfo = layer.popupInfo;
-                            layDetails.name = layer.title;
-                            layDetails.url = layer.layerObject.url;
-                            layDetails.layerOrder = f;
-                            this.lookupLayers.push(layDetails);
-                            console.log(layer.title + " " + "set");
-
                         }
                     }
-
                     if (this.config.storeLocation === true && this.config.editingAllowed) {
                         var fnd = false;
 
@@ -287,7 +298,7 @@ define([
                                 }, this);
 
                                 if (fnd === false) {
-                                    alert(this.config.i18n.error.fieldNotFound + ": " + this.config.serviceRequestLayerAvailibiltyField);
+                                    alert(i18n.error.fieldNotFound + ": " + this.config.serviceRequestLayerAvailibiltyField);
 
                                     console.log("Field not found.");
 
@@ -306,7 +317,7 @@ define([
                                 }, this);
 
                                 if (fnd === false) {
-                                    alert(this.config.i18n.error.fieldNotFound + ": " + this.config.serviceRequestLayerAvailibiltyField);
+                                    alert(i18n.error.fieldNotFound + ": " + this.config.serviceRequestLayerAvailibiltyField);
 
                                     console.log("Field not found.");
 
@@ -343,7 +354,7 @@ define([
                                     }, this);
                                 }
                                 if (layDetails.popupInfo == null) {
-                                    alert(this.config.i18n.error.popupNotSet + ": " + subLyrs.name);
+                                    alert(i18n.error.popupNotSet + ": " + subLyrs.name);
                                 }
                                 this.lookupLayers.push(layDetails);
                                 useLegacyConfig = true;
@@ -378,10 +389,10 @@ define([
                 for (var n = 0, nl = serviceAreaLayerNames.length; n < nl; n++) {
 
                     if (allLayerNames.indexOf(serviceAreaLayerNames[n]) < 0) {
-                        if (this.config.i18n) {
-                            if (this.config.i18n.error) {
-                                if (this.config.i18n.error.layerNotFound) {
-                                    alert(this.config.i18n.error.layerNotFound + ":" + serviceAreaLayerNames[n]);
+                        if (i18n) {
+                            if (i18n.error) {
+                                if (i18n.error.layerNotFound) {
+                                    alert(i18n.error.layerNotFound + ":" + serviceAreaLayerNames[n]);
                                 } else {
                                     alert("Layer not found: " + serviceAreaLayerNames[n]);
                                 }
@@ -398,9 +409,9 @@ define([
             }
             if (this.serviceRequestLayerName === undefined && this.config.storeLocation === true && this.config.editingAllowed) {
                 if (this.config.serviceRequestLayerName.id !== undefined) {
-                    alert(this.config.i18n.error.layerNotFound + ": " + this.config.serviceRequestLayerName.id);
+                    alert(i18n.error.layerNotFound + ": " + this.config.serviceRequestLayerName.id);
                 } else {
-                    alert(this.config.i18n.error.layerNotFound + ": " + this.config.serviceRequestLayerName);
+                    alert(i18n.error.layerNotFound + ": " + this.config.serviceRequestLayerName);
                 }
                 console.log("Layer name not found.");
 
@@ -608,9 +619,9 @@ define([
                     this.map.infoWindow.show(editGraphic.geometry);
                     if (this.config.popupWidth != null && this.config.popupHeight != null) {
                         this.map.infoWindow.resize(this.config.popupWidth, this.config.popupHeight);
-                    }else if (this.config.popupWidth != null) {
-                        this.map.infoWindow.resize(this.config.popupWidth, this.map.infoWindow._maxHeight); 
-                    }else {
+                    } else if (this.config.popupWidth != null) {
+                        this.map.infoWindow.resize(this.config.popupWidth, this.map.infoWindow._maxHeight);
+                    } else {
                         this.map.infoWindow.resize();
                     }
                     if (this.config.storeLocation === true && this.config.editingAllowed) {
@@ -633,10 +644,10 @@ define([
                     this.map.infoWindow.show(editGraphic.geometry);
                     if (this.config.popupWidth != null && this.config.popupHeight != null) {
                         this.map.infoWindow.resize(this.config.popupWidth, this.config.popupHeight);
-                    }else if (this.config.popupWidth != null) {
+                    } else if (this.config.popupWidth != null) {
                         this.map.infoWindow.resize(this.config.popupWidth, this.map.infoWindow._maxHeight);
-                        
-                    }else {
+
+                    } else {
                         this.map.infoWindow.resize();
                     }
                     if (this.config.storeLocation === true && this.config.editingAllowed) {
