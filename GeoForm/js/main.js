@@ -276,7 +276,7 @@ define([
                                 if (!this.addressGeometry) {
                                     errorMessage += "<li>" + string.substitute(nls.user.selectLocation, {
                                         openLink: '<a href="#select_location">',
-                                        closeLink: "</a>"
+                                        closeLink: '</a>'
                                     }) + "</li>";
                                 }
                                 errorMessage += "</ol>";
@@ -727,7 +727,7 @@ define([
                 }, userFormNode);
 
                 labelContent = domConstruct.create("label", {
-                    innerHTML: nls.user.attachment,
+                    innerHTML: this.config.attachmentLabel || nls.user.attachment,
                     "for": "geoFormAttachment"
                 }, formContent);
 
@@ -889,39 +889,49 @@ define([
                 on(dom.byId('cordsSubmit'), "click", lang.hitch(this, function (evt) {
                     this._evaluateCoordinates(evt);
                 }));
-
-                on(dom.byId('usng_mgrs_submit'), "click", lang.hitch(this, function () {
-                    this._clearSubmissionGraphic();
-                    var value = dom.byId('usng_mgrs_coord').value;
-                    var fn = coordinator('mgrs', 'latlong');
-                    var converted;
-                    try{
-                        converted = fn(value);
-                    }
-                    catch(e){
-                       this._coordinatesError('usng'); 
-                    }
-                    if(converted){
-                        this._locatePointOnMap(converted.latitude, converted.longitude, 'usng');
+                // USNG
+                on(dom.byId('usng_submit'), "click", lang.hitch(this, function () {
+                    this._convertUSNG();
+                }));
+                on(dom.byId('usng_coord'), "keypress", lang.hitch(this, function (evt) {
+                    var keyCode = evt.charCode || evt.keyCode;
+                    if (keyCode === 13) {
+                        this._convertUSNG();
                     }
                 }));
+                // MGRS
+                on(dom.byId('mgrs_submit'), "click", lang.hitch(this, function () {
+                    this._convertMGRS();
+                }));
+                on(dom.byId('mgrs_coord'), "keypress", lang.hitch(this, function (evt) {
+                    var keyCode = evt.charCode || evt.keyCode;
+                    if (keyCode === 13) {
+                        this._convertMGRS();
+                    }
+                }));
+                // UTM
                 on(dom.byId('utm_submit'), "click", lang.hitch(this, function () {
-                    this._clearSubmissionGraphic();
-                    var northing = parseFloat(dom.byId('utm_northing').value);
-                    var easting = parseFloat(dom.byId('utm_easting').value);
-                    var zone = parseInt(dom.byId('utm_zone_number').value, 10);
-                    var converted;
-                    var fn = coordinator('utm', 'latlong');
-                    try{
-                        converted = fn(northing, easting, zone);
-                    }
-                    catch(e){
-                        this._coordinatesError('utm');
-                    }
-                    if(converted){
-                        this._locatePointOnMap(converted.latitude, converted.longitude, 'utm');
+                    this._convertUTM();
+                }));
+                on(dom.byId('utm_northing'), "keypress", lang.hitch(this, function (evt) {
+                    var keyCode = evt.charCode || evt.keyCode;
+                    if (keyCode === 13) {
+                        this._convertUTM();
                     }
                 }));
+                on(dom.byId('utm_easting'), "keypress", lang.hitch(this, function (evt) {
+                    var keyCode = evt.charCode || evt.keyCode;
+                    if (keyCode === 13) {
+                        this._convertUTM();
+                    }
+                }));
+                on(dom.byId('utm_zone_number'), "keypress", lang.hitch(this, function (evt) {
+                    var keyCode = evt.charCode || evt.keyCode;
+                    if (keyCode === 13) {
+                        this._convertUTM();
+                    }
+                }));
+                // set location options
                 this._populateLocationsOptions();
                 // make sure map is loaded
                 if (this.map.loaded) {
@@ -935,22 +945,71 @@ define([
                 }
             }), this.reportError);
         },
-        _evaluateCoordinates: function () {
+        _convertUTM: function(){
             this._clearSubmissionGraphic();
-            if (dom.byId('lat_coord').value === "") {
+            var northing = parseFloat(dom.byId('utm_northing').value);
+            var easting = parseFloat(dom.byId('utm_easting').value);
+            var zone = parseInt(dom.byId('utm_zone_number').value, 10);
+            var converted;
+            var fn = coordinator('utm', 'latlong');
+            try{
+                converted = fn(northing, easting, zone);
+            }
+            catch(e){
+                this._coordinatesError('utm');
+            }
+            if(converted){
+                this._locatePointOnMap(converted.latitude, converted.longitude, 'utm');
+            }   
+        },
+        _convertUSNG: function(){
+            this._clearSubmissionGraphic();
+            var value = dom.byId('usng_coord').value;
+            var fn = coordinator('usng', 'latlong');
+            var converted;
+            try{
+                converted = fn(value);
+            }
+            catch(e){
+               this._coordinatesError('usng'); 
+            }
+            if(converted){
+                this._locatePointOnMap(converted.latitude, converted.longitude, 'usng');
+            }
+        },
+        _convertMGRS: function(){
+            this._clearSubmissionGraphic();
+            var value = dom.byId('mgrs_coord').value;
+            var fn = coordinator('mgrs', 'latlong');
+            var converted;
+            try{
+                converted = fn(value);
+            }
+            catch(e){
+               this._coordinatesError('mgrs'); 
+            }
+            if(converted){
+                this._locatePointOnMap(converted.latitude, converted.longitude, 'mgrs');
+            }
+        },
+        _evaluateCoordinates: function () {
+            var latNode = dom.byId('lat_coord');
+            var lngNode = dom.byId('lng_coord');
+            this._clearSubmissionGraphic();
+            if (latNode.value === "") {
                 this._showErrorMessageDiv(string.substitute(nls.user.emptylatitudeAlertMessage, {
                             openLink: '<a href="#lat_coord\">',
-                            closeLink: "</a>"
+                            closeLink: '</a>'
                         }));
                 return;
-            } else if (dom.byId('lng_coord').value === "") {
+            } else if (lngNode.value === "") {
                 this._showErrorMessageDiv(string.substitute(nls.user.emptylongitudeAlertMessage, {
                             openLink: '<a href="#lng_coord\">',
-                            closeLink: "</a>"
+                            closeLink: '</a>'
                         }));
                 return;
             }
-            this._locatePointOnMap(dom.byId('lat_coord').value, dom.byId('lng_coord').value, 'latlon');
+            this._locatePointOnMap(latNode.value, lngNode.value, 'latlon');
         },
         _findLocation: function (evt) {
             var keyCode = evt.charCode || evt.keyCode;
@@ -1143,7 +1202,7 @@ define([
                 errorMessage += '<p class="lead"><span class="glyphicon glyphicon-exclamation-sign"></span> ' + nls.user.requiredFields + '</p>';
                 errorMessage += '<p>' + string.substitute(nls.user.selectLocation, {
                     openLink: '<a href="#select_location">',
-                    closeLink: "</a>"
+                    closeLink: '</a>'
                 }) + '</p>';
                 this._showErrorMessageDiv(errorMessage);
             }
@@ -1161,20 +1220,26 @@ define([
                     case "utm":
                         this._showErrorMessageDiv(string.substitute(nls.user.invalidUTM, {
                             openLink: '<a href="#utm_northing">',
-                            closeLink: "</a>"
+                            closeLink: '</a>'
                         }));
                         break;
                     case "usng":
-                        this._showErrorMessageDiv(string.substitute(nls.user.invalidUSNGMGRS, {
-                            openLink: '<a href="#usng_mgrs_coord">',
-                            closeLink: "</a>"
+                        this._showErrorMessageDiv(string.substitute(nls.user.invalidUSNG, {
+                            openLink: '<a href="#usng_coord">',
+                            closeLink: '</a>'
+                        }));
+                        break;
+                    case "mgrs":
+                        this._showErrorMessageDiv(string.substitute(nls.user.invalidMGRS, {
+                            openLink: '<a href="#mgrs_coord">',
+                            closeLink: '</a>'
                         }));
                         break;
                     default:
                         this._showErrorMessageDiv(string.substitute(nls.user.invalidLatLong, {
                             latLink: '<a href="#lat_coord">',
                             lngLink: '<a href="#lng_coord">',
-                            closeLink: "</a>"
+                            closeLink: '</a>'
                         }));       
                 }   
         },

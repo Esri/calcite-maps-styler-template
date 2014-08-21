@@ -30,12 +30,14 @@ define({
     "enableSharing": true,
     "defaultMapExtent": true,
     "pushpinColor": "blue",
+    "attachmentLabel":"",
     "attachmentHelpText":"",
     "locationSearchOptions": {
         "enableMyLocation": true,
         "enableSearch": true,
         "enableLatLng": true,
-        "enableUSMGMGRS": false,
+        "enableUSNG": false,
+        "enableMGRS": false,
         "enableUTM": false
     },
     "helperServices": {
