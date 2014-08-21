@@ -2465,6 +2465,6 @@ define("js/lgonlineApp", ["dijit", "dijit/registry", "dojo/dom-construct", "dojo
 });
 /* 
 This source is part of the git commit 
-aeec887e0a21b0eb 2014-08-19 12:39:49 -0700
+b7f9f20a1ff07f26 2014-08-21 13:28:51 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 
