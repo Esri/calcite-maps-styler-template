@@ -516,7 +516,6 @@ img {
   height: 100%;
   width: 0px;
   display: block;
-  overflow: visible;
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.5);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
@@ -525,7 +524,6 @@ img {
 #panelPages {
   width: 100%;
   height: 100%;
-  overflow: visible;
   background-color: transparent;
   background-color: rgba(255, 0, 0, 0.5);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FF0000,endColorstr=#80FF0000);
@@ -668,8 +666,8 @@ img {
 #pageBody_legend {
   padding-left: 20px;
   padding-top: 20px;
-  padding-bottom: 20px;
   margin-right: 30px;
+  max-height: 80%;
   max-width: 280px; }
 
 #pageBody_share {
@@ -736,7 +734,7 @@ img {
   color: #ffffff;
   display: block;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  font-family: "HelveticaNeue-UltraLight", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "Helvetica Neue", "Arial", sans-serif;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
   font-weight: normal;
   font-size: 25px; }
 

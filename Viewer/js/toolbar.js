@@ -35,11 +35,8 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
 
             deferred = new Deferred();
 
-            on(window, "scroll", lang.hitch(this, this._windowScrolled));
-            on(window, "resize", lang.hitch(this, this._windowScrolled));
-
-
-
+            // on(window, "scroll", lang.hitch(this, this._windowScrolled));
+            //on(window, "resize", lang.hitch(this, this._windowScrolled));
             this.pTools = dom.byId("panelTools");
             this.pMenu = dom.byId("panelMenu");
             on(this.pMenu, "click", lang.hitch(this, this._menuClick));
@@ -260,7 +257,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
 
             this.curTool = num;
             this._updateTool(num);
-            //this.snap = false;
+     
             if (num != numActual) {
                 this._animateScroll(startPos, endPos);
             }
