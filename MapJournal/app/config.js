@@ -1,15 +1,23 @@
 app.cfg = {
 	//
-	// UI
+	// General UI
 	//
 	
-	// Header Logo
-	HEADER_LOGO_URL: "resources/tpl/viewer/icons/esri-logo.png",
-	HEADER_LOGO_TARGET: "http://www.esri.com",
-	// Header top right link
-	HEADER_LINK_TEXT: "A story map",
-	HEADER_LINK_URL: "http://storymaps.arcgis.com",
-	// Control display of Facebook and Twitter links
+	// Maximum number of sections
+	MAX_NB_SECTIONS: 99,
+	
+	// Side and Floating panel dot navigation group size
+	DOTNAV_GROUPSIZE: 15,
+	
+	TIMEOUT_VIEWER_LOAD: 5000,
+	TIMEOUT_VIEWER_REQUEST: 12000,
+	TIMEOUT_BUILDER_REQUEST: 20000,
+	
+	SECTION_ACTION_ZOOM_MAP_MARKER: "resources/tpl/viewer/icons/map-pin-circle-blue.png",
+	
+	// Control the social button configuration in builder
+	// If disabled author won't be able to activate them
+	// if disabled after a journal has been created, this will override the settings
 	HEADER_SOCIAL: {
 		facebook: true,
 		twitter: true,
@@ -20,24 +28,8 @@ app.cfg = {
 		}
 	},
 	
-	// Maximum number of sections
-	MAX_NB_SECTIONS: 99,
-	
-	// Side and Floating panel dot navigation group size
-	DOTNAV_GROUPSIZE: 15,
-	
-	// Add a 'zoom on my location' button under the +/home/- buttons
-	// For example this is not supported in IE 8
-	DISPLAY_LOCATE_BUTTON: false,
-	
-	TIMEOUT_VIEWER_LOAD: 12000,
-	TIMEOUT_VIEWER_REQUEST: 12000,
-	TIMEOUT_BUILDER_REQUEST: 20000,
-	
-	SECTION_ACTION_ZOOM_MAP_MARKER: "resources/tpl/viewer/icons/map-pin-circle-blue.png",
-	
 	//
-	// Builder
+	// Layouts
 	//
 	
 	// Size and position of represent the value relative to the Map
@@ -49,12 +41,12 @@ app.cfg = {
   			sizes: { small: '30%', medium: '40%', large: '50%' },
   			positions: ["left", "right"],
   			themes: [
-  			    {name: "side-default-1", dotNav: "#777777", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000", textLink: "#555", esriLogo: "black"},
-  				{name: "side-default-2", dotNav: "#726458", panel: "#FFF8E9", media: "#C9C1B9", text: "#000000", textLink: "#555", esriLogo: "black"},
-  				{name: "side-default-3", dotNav: "#676C7F", panel: "#F9F9EF", media: "#424D51", text: "#000000", textLink: "#555", esriLogo: "black"},
-  				{name: "side-default-4", dotNav: "#5A5A5A", panel: "#000000", media: "#EEEEEE", text: "#FFFFFF", textLink: "#DDD", esriLogo: "white"},
-  				{name: "side-default-5", dotNav: "#68AAE1", panel: "#FFFFFF", media: "#E8E8DF", text: "#000000", textLink: "#555", esriLogo: "black"},
-  				{name: "side-default-6", dotNav: "#676C7E", panel: "#F9F9EF", media: "#C2E3EE", text: "#000000", textLink: "#555", esriLogo: "black"}         
+  			    {name: "side-default-1", themeMajor: "white", dotNav: "#777777", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#444",    esriLogo: "black"},
+  				{name: "side-default-2", themeMajor: "white", dotNav: "#726458", panel: "#FFF8E9", media: "#C9C1B9", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#444",    esriLogo: "black"},
+  				{name: "side-default-3", themeMajor: "white", dotNav: "#676C7F", panel: "#F9F9EF", media: "#424D51", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#aaa",    esriLogo: "black"},
+  				{name: "side-default-4", themeMajor: "black", dotNav: "#5A5A5A", panel: "#000000", media: "#EEEEEE", text: "#FFFFFF", textLink: "#DDD", softText: "#FFF",    softBtn: "#AAA",    esriLogo: "white"},
+  				{name: "side-default-5", themeMajor: "white", dotNav: "#68AAE1", panel: "#FFFFFF", media: "#E8E8DF", text: "#000000", textLink: "#555", softText: "#FFF",    softBtn: "#4D4D4D", esriLogo: "black"},
+  				{name: "side-default-6", themeMajor: "white", dotNav: "#676C7E", panel: "#F9F9EF", media: "#C2E3EE", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#AAA",    esriLogo: "black"}
   			]
   		},
   		{
@@ -64,10 +56,14 @@ app.cfg = {
   			sizes: { small: '25%', medium: '35%', large: '45%' },
   			positions: ["right", "left"],
   			themes: [
-  				{name: "float-default-1", dotNav: "#000000", panel: "#000000", media: "#FFFFFF", text: "#FFFFFF", textLink: "#DDD", esriLogo: "white"}
+  				{name: "float-default-1", themeMajor: "black", dotNav: "#000000", panel: "#000000", media: "#FFFFFF", text: "#FFFFFF", textLink: "#DDD", softText: "#FFF",    softBtn: "#AAA", esriLogo: "white"}
   			]
   		}
   	],
+  	
+  	/*
+  	 * Builder
+  	 */
   	
   	HELP_URL: "http://storymaps.arcgis.com/en/app-list/map-journal/",
 	
@@ -94,7 +90,8 @@ app.cfg = {
 	// Text to be used as the browser page title during app creation
 	TPL_NAME: "Map Journal",
 	WEBAPP_TAG: ["Story Map", "Map Journal"],
-	WEBAPP_KEYWORD: ["JavaScript", "Map", "Mapping Site", "Online Map", "Ready To Use", "selfConfigured", "Web Map", "Story Map", "Story Maps", "MapJournal"],
+	WEBAPP_KEYWORD_GENERIC: ["JavaScript", "Map", "Mapping Site", "Online Map", "Ready To Use", "selfConfigured", "Web Map"],
+	WEBAPP_KEYWORD_APP: ["Story Map", "Story Maps", "MapJournal"],
 
 	//
 	// Portal configuration

@@ -11,7 +11,8 @@ define({
 				disabled: "This feature has been disabled by the Administrator",
 				url: "To manually enter the web address of an image",
 				userLookup: "Load albums",
-				notImplemented: "Not implemented yet."
+				notImplemented: "Not implemented yet.",
+				noData: "No public album found"
 			},
 			imageSelector: {
 				lblStep1: "Choose the service",
@@ -36,7 +37,6 @@ define({
 			imageSelectorPicasa: {
 				userInputLbl: "Email or Picasa/Google+ ID",
 				signInMsg2: "Account not found",
-				signInMsg3: "No public album",
 				howToFind: "How to find a Picasa or Google+ account ID",
 				howToFind2: "Copy digits between the first and second '/' of any Picasa or G+ page"
 			},
@@ -62,9 +62,9 @@ define({
 				url: "URL of a Vimeo video"
 			},
 			videoSelectorOther: {
-				explain1: "Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo).",
+				explain1: "The Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo).",
 				explain2: "Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%.",
-				explain3: "Alternatively, if you want host the video yourself, you can create an HTML page that use a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%.",
+				explain3: "Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%.",
 				webpage: "Web page feature"
 			},
 			webpageSelectorHome: {
@@ -72,11 +72,14 @@ define({
 				lblEmbed: "Embed code",
 				lblOR: "OR",
 				lblError1: "Error, clear one of the two input fields.",
-				lblError2: "Embed code can only contain one <iframe>"
+				lblError2: "Embed code can only contain one %IFRAMETAG%",
+				configure: "Configure"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "An image URL should start with http:// and end with .jpg or .png",
+				lblURLError: "This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work.",
+				lblURLCheck: "Checking image...",
 				lblLabel: "Image Caption",
 				lblLabel1: "Caption",
 				lblLabel2: "Hover text",
@@ -91,6 +94,7 @@ define({
 				lblPosition4: "Stretch",
 				lblPosition5: "Custom",
 				tooltipDimension: "The value can be specified in 'px' or '%'",
+				tooltipDimension2: "The value can be specified in 'px'",
 				lblPosition2Explain: "(may crop)",
 				lblPosition3Explain: "(won't crop)",
 				lblPosition3Explain2: "(width will always fit the panel)",
@@ -104,7 +108,7 @@ define({
 				lblTitle: "Change the Main Stage content"
 			},
 			editorInlineMedia: {
-				lblTitle: "Insert an image or video"
+				lblTitle: "Insert an image, video or web page"
 			}
 		}
 	}),

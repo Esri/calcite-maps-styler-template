@@ -9,8 +9,9 @@ define({
 				step2: "Loading data",
 				step3: "Initializing",
 				loadBuilder: "Switching to builder",
-				fail: "Sorry, loading failed",
-				failButton: "Retry"
+				long: "Map Journal is initializing",
+				long2: "Thanks for waiting",
+				failButton: "Reload the application"
 			},
 			signin: {
 				title: "Authentication is required",
@@ -21,18 +22,25 @@ define({
 				boxTitle: "An error has occurred",
 				invalidConfig: "Fatal error: Invalid configuration",
 				invalidConfigNoApp: "Fatal error: Web Mapping Application identifier not specified in index.html",
+				unspecifiedConfigOwner: "Fatal error: authorized owner hasn't been configured",
+				invalidConfigOwner: "Fatal error: application owner is not authorized",
 				createMap: "Unable to create map",
 				invalidApp: "Fatal error: The application cannot be loaded",
 				notConfiguredDesktop: "Welcome to the %TPL_NAME% web application.<br />The application is not configured yet.",
 				notConfiguredMobile: "Welcome to the %TPL_NAME% web application. The application is not configured yet and the builder is not supported on mobile devices.",
 				notAuthorized: "You are not authorized to access this application",
-				noBuilderIE8: "The builder is not supported on Internet Explorer before version 9.",
-				mapLoadingFail: "Something went wrong, the Map cannot be loaded."
+				noBuilderIE: "The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%",
+				noViewerIE: "This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>.",
+				mapLoadingFail: "Something went wrong, the Map cannot be loaded.",
+				signOut: "Sign Out"
 			},
 			mobileView: {
 				tapForDetails: "Tap for details",
+				clickForDetails: "Learn more",
 				swipeToExplore: "Swipe to explore",
-				tapForMap: "Tap to get back to the Map"
+				tapForMap: "Tap to get back to the Map",
+				clickForMap: "BACK TO MAP"
 			},
 			floatLayout: {
 				scroll: "Scroll"
@@ -62,7 +70,7 @@ define({
 				copied: "Copied",
 				open: "Open",
 				embed: "Embed in website",
-				embedExplain: "Use the following HTML code to embed the Journal in a website.",
+				embedExplain: "Use the following HTML code to embed the journal in a website.",
 				size: "Size (width/height):"
 			}
         }
