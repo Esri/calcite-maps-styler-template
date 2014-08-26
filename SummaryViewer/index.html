@@ -10,7 +10,7 @@
 	    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 	    <!-- End Mobile -->
 		<!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
-		<link rel="stylesheet" href="//js.arcgis.com/3.11/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" href="//jsdev.arcgis.com/3.11/dijit/themes/claro/claro.css">
 		<link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.11/esri/css/esri.css">
 		<!--Load any application specific styles-->
 		<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -87,9 +87,10 @@
 			</div>
 		</div>
 		
+
 		<script type="text/javascript">
             var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-            //console.log(package_path);
+         
             var dojoConfig = {
                 // The locationPath logic below may look confusing but all its doing is
                 // enabling us to load the api from a CDN and load local modules from the correct location.
@@ -98,14 +99,14 @@
                     location : package_path + '/js'
                 }, {
                     name : "templateConfig",
-                    location : package_path
+                    location : package_path//.substr(0,package_path.lastIndexOf('/')) //commented out for local updates
                 }, {
                     name : "config",
                     location : package_path + '/config'
                 }]
             };
 		</script>
-		<script type="text/javascript" src="//js.arcgis.com/3.9/"></script>
+		<script type="text/javascript" src="//jsdev.arcgis.com/3.11/"></script>
 		<script type="text/javascript">
             require(["dojo/on", "application/main", "application/template", "dojo/domReady!"], function(on, Main, Template) {
                 //create the template. This will take care of all the logic required for template applications
@@ -113,18 +114,11 @@
                 //from the javascript/nls/resource files.
                 //Note that we've included a placeholder nls folder and a resource file with one error string
                 //to show how to setup the strings file.
-
-                var supportsLocalization = false;
                 
-                var myTemplate = new Template(supportsLocalization);
-
-                on(myTemplate, "ready", function(config) {
-                    //The config object contains the following properties: helper services, (optionally)
-                    //i18n, appid, webmap and any custom values defined by the application.
-                    //In this example we have one called theme.
-                    Main(config);
+                var myTemplate = new Template();
+                myTemplate.startup().then(function(config){
+                	Main(config);
                 });
-                
             });
 		</script>
 	</body>
