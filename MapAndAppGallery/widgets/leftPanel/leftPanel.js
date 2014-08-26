@@ -208,7 +208,7 @@ define([
             this._expandGroupdescEvent(this.expandGroupDescription, this);
             this._queryGroupItems();
             domAttr.set(this.leftPanelHeader, "innerHTML", dojo.configData.values.applicationName);
-            topic.subscribe("queryGroupItems", this._queryGroupItems);
+            topic.subscribe("queryGroupItems", lang.hitch(this, this._queryGroupItems));
             topic.subscribe("queryItemPods", this._queryItemPods);
         },
 
@@ -217,7 +217,7 @@ define([
         * Store the item details in an array
         */
         _queryGroupItems: function (nextQuery, queryString) {
-            var _self = this, groupItems = [], defObj = new Deferred();
+            var groupItems = [], defObj = new Deferred();
 
             if ((!nextQuery) && (!queryString)) {
                 dojo.queryString = 'group:("' + dojo.configData.values.group + '")';
@@ -230,21 +230,18 @@ define([
                 topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
             }
 
-            defObj.then(function (data) {
+            defObj.then(lang.hitch(this, function (data) {
                 var i;
 
                 if (data.results.length > 0) {
+                    for (i = 0; i < data.results.length; i++) {
+                        groupItems.push(data.results[i]);
+                    }
                     if (data.nextQueryParams.start !== -1) {
-                        for (i = 0; i < data.results.length; i++) {
-                            groupItems.push(data.results[i]);
-                        }
-                        _self._queryGroupItems(data.nextQueryParams);
+                        this._queryGroupItems(data.nextQueryParams);
                     } else {
-                        for (i = 0; i < data.results.length; i++) {
-                            groupItems.push(data.results[i]);
-                        }
                         dojo.groupItems = groupItems;
-                        _self._setLeftPanelContent(groupItems);
+                        this._setLeftPanelContent(groupItems);
                     }
                 } else {
                     if (dojo.queryString) {
@@ -252,7 +249,7 @@ define([
                         topic.publish("hideProgressIndicator");
                     }
                 }
-            }, function (err) {
+            }), function (err) {
                 alert(err.message);
             });
         },
@@ -559,6 +556,9 @@ define([
         */
         _appendLeftPanel: function () {
             var applicationHeaderDiv = dom.byId("esriCTParentDivContainer");
+            if (query(".esriCTGalleryContent", dom.byId("esriCTParentDivContainer"))[0]) {
+                domConstruct.destroy(query(".esriCTGalleryContent", dom.byId("esriCTParentDivContainer"))[0]);
+            }
             domConstruct.place(this.galleryandPannels, applicationHeaderDiv);
         }
     });

@@ -23,6 +23,7 @@
     "values": {
         "group": "03d0b3fe76494125ab404a2b87b40c5c",
         "appid": "",
+        "oauthappid": "",
         "applicationName": "Gallery",
         "applicationIcon": "/themes/images/logo.png",
         "applicationFavicon": "/themes/images/favicon.ico",

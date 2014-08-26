@@ -341,6 +341,7 @@ font
 .esriCTCategories
 {
     line-height: normal;
+    word-wrap: break-word;
 }
 
 .esriCTCategories, .esriCTDetailsLeftPanelLabel, .esriCTReviewBold
@@ -2153,6 +2154,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     border: 0px solid #fff !important;
     top: 20px !important;
     left: 15px;
+    z-index: 1000 !important;
 }
 
 .esriSimpleSliderVertical .esriSimpleSliderIncrementButton, .esriSimpleSliderVertical .esriSimpleSliderDecrementButton

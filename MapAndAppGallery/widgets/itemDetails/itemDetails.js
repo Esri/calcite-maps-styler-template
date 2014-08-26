@@ -50,7 +50,7 @@ define([
     "esri/dijit/OverviewMap",
     "esri/dijit/BasemapGallery",
     "./itemDetailsHelper"
-], function (declare, domConstruct, lang, array, domAttr, dom, template, nls, query, domClass, on, Deferred, DeferredList, number, topic, utils, Legend, Map, GeoLocation, BasemapGallery, ArcGISImageServiceLayer, ImageServiceParameters, Locator, string, GraphicsLayer, HomeButton, domStyle, domGeom, esriRequest, esriUtils, OverviewMap, ArcGISBasemapGallery, itemDetailsHelper) {
+], function (declare, domConstruct, lang, array, domAttr, dom, template, nls, query, domClass, on, Deferred, DeferredList, number, topic, utils, Legend, Map, GeoLocation, BasemapGallery, ArcGISImageServiceLayer, ImageServiceParameters, Locator, string, GraphicsLayer, HomeButton, domStyle, domGeom, esriRequest, arcgisUtils, OverviewMap, ArcGISBasemapGallery, itemDetailsHelper) {
 
     return declare([itemDetailsHelper], {
         templateString: template,
@@ -188,10 +188,12 @@ define([
                         basemapPortalURL = "http://www.arcgis.com";
                         groupUrl = basemapPortalURL + "/sharing/rest/community/groups?q=title:\"" + dojo.configData.values.basemapGroupTitle + "\" AND owner:" + dojo.configData.values.basemapGroupOwner + "&f=json";
                         self.searchPortalURL = basemapPortalURL;
+                        arcgisUtils.arcgisUrl = basemapPortalURL + "/sharing/rest/content/items";
                         self._fetchBaseMapLayers(groupUrl, basemapDeferred);
-                        esriUtils.arcgisUrl = basemapPortalURL + "/sharing/rest/content/items";
                     } else {
-                        self._fetchBasemapDetails(basemapDeferred, dojo.configData.values.portalURL, groupInfo);
+                        arcgisUtils.arcgisUrl = dojo.configData.values.portalURL + "/sharing/rest/content/items";
+                        self.searchPortalURL = dojo.configData.values.portalURL;
+                        self._fetchBasemapDetails(basemapDeferred, groupInfo);
                     }
                 }, function (err) {
                     alert(err.message);
@@ -268,7 +270,7 @@ define([
                         * If type is "Web Map", create requests to fetch all the items of the webmap (asynchronous request)
                         */
                     } else if (info.type === "Web Map") {
-                        var mapDeferred = esriUtils.getItem(info.id);
+                        var mapDeferred = arcgisUtils.getItem(info.id);
                         mapDeferred.then(lang.hitch(this, function (a) {
                             deferred = new Deferred();
                             deferred.resolve();
@@ -653,7 +655,8 @@ define([
                 mapOptions: {
                     showAttribution: dojo.configData.values.showAttribution,
                     slider: true
-                }
+                },
+                geometryServiceURL: dojo.configData.values.geometryService
             }).then(function (response) {
                 var i, layerInfo, graphicsLayer, home, geoLocation, basemapGallery;
 
@@ -726,7 +729,7 @@ define([
             this.map.getLayer(basmap.id).id = defaultId;
             this.map._layers[defaultId] = this.map.getLayer(basmap.id);
             layerIndex = array.indexOf(this.map.layerIds, basmap.id);
-            if (layerIndex === -1) {
+            if (defaultId !== basmap.id) {
                 delete this.map._layers[basmap.id];
             }
             this.map.layerIds[layerIndex] = defaultId;

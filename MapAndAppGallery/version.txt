@@ -1,5 +1,4 @@
-V 1.8 - Fix for org basemap and portal URL #107
+V 1.8.1 - Added support for OAUTH #116
 
 Resolved GitHub issues:
-#56 - Read basemap from org basemaps group
-#82 - Portal gets organization URLs from config instead of from organization
+#53 - Add support for OAUTH

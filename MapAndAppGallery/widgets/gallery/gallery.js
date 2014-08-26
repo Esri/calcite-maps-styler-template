@@ -230,7 +230,7 @@ define([
                     } else {
                         if ((dataType === "web map") && dojo.configData.values.mapViewer.toLowerCase() === "arcgis") {
                             topic.publish("hideProgressIndicator");
-                            window.open(dojo.configData.values.portalURL + '/home/item.html?id=' + itemId, "_self");
+                            window.open(dojo.configData.values.portalURL + '/home/webmap/viewer.html?webmap=' + itemId, "_self");
                         } else {
                             itemDetails = new ItemDetails({ data: data });
                             itemDetails.startup();

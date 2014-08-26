@@ -37,7 +37,7 @@ define({
     dateTextMobile: "Date",
     appTypeText: "Type",
     appOwnerText: "Owner",
-    tryItButtonText: "Try it now",
+    tryItButtonText: "View",
     downloadButtonText: "Download",
     appDesText: "Description",
     reviewText: "Comments",
