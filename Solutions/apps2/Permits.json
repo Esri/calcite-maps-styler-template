@@ -20,14 +20,13 @@
         "http://solutions.arcgis.com/state-government/help/finder/"
      ],
     "values": {
-        "webmap": "d3df161ab8204e848b359d5f352b5b65",
-        "titleBar.title": "Finder",
+        "webmap": "12feb2fc939d41ad8fd81750b91fde18",
+        "titleBar.title": "Finder Try-It",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "SeaBlues",
-        "searchBox.hint": "",
-        "featureSearcher.searchLayerName": "",
-        "featureSearcher.searchFields": "",
-        "featureSearcher.displayFields": "",
+        "searchBox.hint": "number",
+        "featureSearcher.searchLayersString": "",
+        "featureSearcher.displayLayersString": "",
         "highlighter.showFeaturePopup": true,
         "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
@@ -99,23 +98,31 @@
             "type": "string",
             "tooltip": "Search hint (e.g. Find a Parcel, Find a Park)"
         }, {
-            "label": "Find Layers",
-            "fieldName": "featureSearcher.searchLayerName",
-            "type": "string",
-            "tooltip": "Comma-separated list of map layer names. Only values in these layers will be searched. One or many layers may be specified.",
-            "placeholder": "Layer 1, Layer 2, …"
+           "type": "multilayerandfieldselector",
+           "fieldOptions": {
+              "supportedTypes": ["esriFieldTypeString", "esriFieldTypeSmallInteger", "esriFieldTypeInteger"]
+           },
+           "layerOptions": {
+              "supportedTypes": [
+                "FeatureLayer"
+              ],
+               "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline"]
+           },
+           "fieldName": "featureSearcher.searchLayersString",
+           "label": "Find Layers and Fields"
         }, {
-            "label": "Find Fields",
-            "fieldName": "featureSearcher.searchFields",
-            "type": "string",
-            "tooltip": "Comma-separated list of Find Layer field names. Only values in these fields will be searched. One or many fields may be specified.",
-            "placeholder": "FIELD1, FIELD2, …"
-        }, {
-            "label": "Result Display Fields",
-            "fieldName": "featureSearcher.displayFields",
-            "type": "string",
-            "tooltip": "Comma-separated list of Find Layer field names in the same order as the Find Layers to which they apply. Values in these fields will be returned in the results list. If the layer in which a result was found does not have a corresponding field in this list, the Fearch Field value is returned. Only one Result Display Field can be specified for each Find Layer.",
-            "placeholder": "FIELD1, FIELD2, …"
+           "type": "multilayerandfieldselector",
+           "fieldOptions": {
+               "supportedTypes": ["esriFieldTypeString", "esriFieldTypeSmallInteger", "esriFieldTypeInteger"]
+           },
+           "layerOptions": {
+              "supportedTypes": [
+                "FeatureLayer"
+              ],
+              "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline"]
+           },
+           "fieldName": "featureSearcher.displayLayersString",
+           "label": "Result Display Layers and Fields"
         }, {
             "label": "Zoom Level",
             "fieldName": "highlighter.highlightZoomLevel",
@@ -146,7 +153,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "423cd1d5d657b985 2014-08-26 09:38:03 -0700"
+                "@@@commit@@@"
             ]
         }
     }, {
@@ -392,7 +399,7 @@
         }
     }, {
         "classname": "js.LGSearchBoxByText",
-        "styles": ".searchBox{display:none;width:200px;max-height:224px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}.resultsListBox{top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;left:4px;right:4px;bottom:4px;width:auto}.lt-ie9 .resultsListBox{width:100%;height:182px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}",
+        "styles": ".searchBox{display:none;width:280px;max-height:244px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}.resultsListBox{top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;left:4px;right:4px;bottom:4px;width:auto}.lt-ie9 .resultsListBox{width:100%;height:192px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}",
         "config": {
             "rootId": "searchBox",
             "trigger": "search",
@@ -555,4 +562,3 @@
         }
     }]
 }
-

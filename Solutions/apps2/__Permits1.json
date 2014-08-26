@@ -20,20 +20,13 @@
         "http://solutions.arcgis.com/state-government/help/finder/"
      ],
     "values": {
-        "webmap": "70430e570f0840b4a5eb8da09cfa82f1",
+        "webmap": "36e0c500b92c4b12b7a7844ce9f4bbdd",
         "titleBar.title": "Finder Try-It",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "SeaBlues",
         "searchBox.hint": "number",
-        "featureSearcher.searchLayerName": "Numbers",
-        "featureSearcher.searchFields": "Italian,French,Description",
-        "featureSearcher.displayFields": "",
-        "featureSearcher.searchLayerString": "[{\"id\": \"CodedValues_2288\",\"fields\": [\"Italian\", \"French\", \"Description\"],\"type\": \"FeatureLayer\"}]",
-        "featureSearcher.searchLayers": [{
-            "id": "CodedValues_2288",
-            "fields": ["Italian", "French", "Description"],
-            "type": "FeatureLayer"
-        }],
+        "featureSearcher.searchLayersString": "[{\"id\": \"Permits_6336\",\"fields\": [\"PERMITID\",\"PERMITTYPE\",\"APPLICANT\"],\"type\": \"FeatureLayer\"}, {\"id\": \"Permits_4651\",\"fields\": [\"NAME\",\"KEY_\"],\"type\": \"FeatureLayer\"}]",
+        "featureSearcher.displayLayersString": "[{\"id\": \"Permits_6336\",\"fields\": [\"PERMITID\",\"PERMITTYPE\",\"APPLICANT\"],\"type\": \"FeatureLayer\"}, {\"id\": \"Permits_4651\",\"fields\": [\"NAME\",\"KEY_\"],\"type\": \"FeatureLayer\"}]",
         "highlighter.showFeaturePopup": true,
         "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
@@ -105,17 +98,31 @@
             "type": "string",
             "tooltip": "Search hint (e.g. Find a Parcel, Find a Park)"
         }, {
-            "label": "Find Layers and Fields",
-            "fieldName": "featureSearcher.searchLayerString",
-            "type": "string",
-            "tooltip": "Layer and field structure",
-            "placeholder": "[{\"id\": \"CodedValues_2288\",\"fields\": [\"Italian\", \"French\", \"Description\"],\"type\": \"FeatureLayer\"}]"
+           "type": "multilayerandfieldselector",
+           "fieldOptions": {
+              "supportedTypes": ["esriFieldTypeString", "esriFieldTypeSmallInteger", "esriFieldTypeInteger"]
+           },
+           "layerOptions": {
+              "supportedTypes": [
+                "FeatureLayer"
+              ],
+               "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline"]
+           },
+           "fieldName": "featureSearcher.searchLayersString",
+           "label": "Find Layers and Fields"
         }, {
-            "label": "Result Display Fields",
-            "fieldName": "featureSearcher.displayFields",
-            "type": "string",
-            "tooltip": "Comma-separated list of Find Layer field names in the same order as the Find Layers to which they apply. Values in these fields will be returned in the results list. If the layer in which a result was found does not have a corresponding field in this list, the Fearch Field value is returned. Only one Result Display Field can be specified for each Find Layer.",
-            "placeholder": "FIELD1, FIELD2, …"
+           "type": "multilayerandfieldselector",
+           "fieldOptions": {
+               "supportedTypes": ["esriFieldTypeString", "esriFieldTypeSmallInteger", "esriFieldTypeInteger"]
+           },
+           "layerOptions": {
+              "supportedTypes": [
+                "FeatureLayer"
+              ],
+              "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline"]
+           },
+           "fieldName": "featureSearcher.displayLayersString",
+           "label": "Result Display Layers and Fields"
         }, {
             "label": "Zoom Level",
             "fieldName": "highlighter.highlightZoomLevel",
@@ -392,7 +399,7 @@
         }
     }, {
         "classname": "js.LGSearchBoxByText",
-        "styles": ".searchBox{display:none;width:280px;max-height:244px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}.resultsListBox{top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;left:4px;right:4px;bottom:4px;width:auto}.lt-ie9 .resultsListBox{width:100%;height:192px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}.dgrid-row-table{cursor:pointer}.field-col1{width:50px;}.field-col2{width:50px;}.field-col3{width:50px;}.field-col4{width:50px;}",
+        "styles": ".searchBox{display:none;width:280px;max-height:244px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}.resultsListBox{top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;left:4px;right:4px;bottom:4px;width:auto}.lt-ie9 .resultsListBox{width:100%;height:192px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}",
         "config": {
             "rootId": "searchBox",
             "trigger": "search",
@@ -407,8 +414,7 @@
             "resultsListTableClass": "resultsListTable",
             "resultsListBodyClass": "resultsListBody",
             "resultsListSearchingClass": "resultsListSearching",
-            "resultsListEntryClass": "resultsListEntry",
-            "displayResultsAs": "multiline"
+            "resultsListEntryClass": "resultsListEntry"
         }
     }, {
         "classname": "js.LGCommand",

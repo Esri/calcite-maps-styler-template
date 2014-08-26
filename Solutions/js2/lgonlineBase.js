@@ -334,6 +334,15 @@ define([
             return defaultValue;
         },
 
+        /** Determines if an object is an array.
+         *  @param {object} obj A JavaScript object to test
+         *  @return {boolean} True if the object is an array
+         * @memberOf js.LGObject#
+         */
+        isArray: function (obj) {
+            return Object.prototype.toString.call(obj) === '[object Array]';
+        },
+
         /**
          * Displays a message to the console, and, optionally, also
          * publishes it. If window.gLogMessageBox is defined, message is also
@@ -655,7 +664,6 @@ define([
         /**
          * Constructs an LGDependency.
          *
-         * @constructor
          * @class
          * @name js.LGDependency
          * @classdesc
@@ -784,6 +792,6 @@ define([
 });
 /* 
 This source is part of the git commit 
-b7f9f20a1ff07f26 2014-08-21 13:28:51 -0700
+423cd1d5d657b985 2014-08-26 09:38:03 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 

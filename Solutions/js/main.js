@@ -1,4 +1,4 @@
-/*global define,dojo,esri,js,unescape,console,require,document,jsapi_i18n:true */
+﻿/*global define,dojo,esri,js,unescape,console,require,jsapi_i18n:true */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,evil:true,regexp:true */
 /*
  | Copyright 2014 Esri
@@ -290,6 +290,14 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
             }).play();
         },
 
+        /**
+         * Converts an object with a two-part key into a structure.
+         * @param {object} flatValues Object with keys such as
+         *        "titleBar.title", "map.mapId", etc.
+         * @return {object} Object with keys such as "titleBar", "map",
+         *         etc., which contain subobjects such as "title" and
+         *         "mapId", respectively.
+         */
         _organizeConfigValues: function (flatValues) {
             var key,
                 twoPartKey,
@@ -307,7 +315,7 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
                         if (!structuredValues[twoPartKey[0]]) {
                             structuredValues[twoPartKey[0]] = {};
                         }
-                        structuredValues[twoPartKey[0]][twoPartKey[1]] = unescape(flatValues[key]);
+                        structuredValues[twoPartKey[0]][twoPartKey[1]] = flatValues[key];
                     }
                 }
             }
