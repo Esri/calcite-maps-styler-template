@@ -28,6 +28,11 @@
             "tooltip" : "Cycle colors for layers"
          }, {
             "type" : "boolean",
+            "fieldName" : "defaultToCenter",
+            "label" : "Use map center as default location",
+            "tooltip" : "Use map center as default location"
+         }, {
+            "type" : "boolean",
             "fieldName" : "showDemographics",
             "label" : "Show US demographics",
             "tooltip" : "Show US demographics"
@@ -78,6 +83,7 @@
       "logo" : "images/logo.png",
       "color" : "#80ab00",
       "cycleColors" : false,
+      "defaultToCenter" : true,
       "showDemograpics" : true,
       "showLifestyle" : true,
       "showWeather" : true,
