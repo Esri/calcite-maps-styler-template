@@ -17,7 +17,8 @@ var allResults = null;
 
 var measure;
 var ConstrainedFloatingPane;
-
+var timeFormats = ["shortDateShortTime","shortDateLEShortTime","shortDateShortTime24","shortDateLEShortTime24","shortDateLongTime",
+                           "shortDateLELongTime","shortDateLongTime24","shortDateLELongTime24"]
 function initMap(options) {
 /*Patch to fix issue with floating panes used to display the measure and time panel. They
    moved slightly each time the window was toggled due to this bug
@@ -1342,6 +1343,13 @@ function createEditor() {
                 var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
                 var fieldInfos = [];
                 dojo.forEach(fields, function(field) {
+                    //add support for editing time. 
+                    if (field.format && field.format.dateFormat && dojo.indexOf(timeFormats, field.format.dateFormat) > -1) { 
+                      field.format = {
+                        time: true
+                      };
+                     }
+
                     if (field.visible) {
                         fieldInfos.push(field);
                     }
