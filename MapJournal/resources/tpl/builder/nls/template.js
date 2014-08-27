@@ -24,7 +24,10 @@ define({
 				socialLinksDescr: "This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (Header Tab) and have them land at the start of the %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
-				title: "Fonts"
+				title: "Fonts",
+				defaultLbl: "Default",
+				sectionTitleLbl: "Section title",
+				sectionContentLbl: "Section content"
 			},
 			initPopup: {
 				title: "Welcome to"

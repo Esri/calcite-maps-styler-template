@@ -59,7 +59,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.1-08261',
+				version: '1.1-08262',
 				pathJSAPI: '//jsdev.arcgis.com/3.11/'
 			};
 		</script>
@@ -138,13 +138,18 @@
 			            	</div>
 			            	<div id="mainStageLoadingIndicator" class="loadingIndicator">
 			            	<div class="load-indicator icon-spin1 animate-spin"></div>
-								 <!--[if lte IE 10]>
-								 	<style>
-								 		.load-indicator { display: none; }
-								 		#loadingIndicator { opacity: 1.0; margin-top: -40px; }
-								 	</style>
-								    <img src="resources/tpl/viewer/icons/loading-light.gif" />
-							    <![endif]-->
+								<script>
+									// Alternate loader on IE
+									if (navigator.userAgent.indexOf('MSIE') !== -1 
+											|| navigator.appVersion.indexOf('Trident/') > 0) {
+										document.write('\
+											<style>\
+										 		.load-indicator { display: none; }\
+										 		#loadingIndicator { opacity: 1.0; margin-top: -40px; }\
+										 	</style>\
+										    <img src="resources/tpl/viewer/icons/loading-light.gif" />');
+									}
+								</script>
 			            	</div>
 							<!-- Back button -->
 							<div class="mediaBackContainer centerAlignOnFloatOverMap">
@@ -298,15 +303,6 @@
 				margin-left: -60px;
 				margin-top: -80px;
 				color: #000;
-				opacity: 0.0;
-				-webkit-animation: fadein 3s;
-				-moz-animation: fadein 3s;
-				-ms-animation: fadein 3s;
-				-o-animation: fadein 3s;
-				animation: fadein 3s;
-	            -webkit-animation-fill-mode: forwards;
-			    -moz-animation-fill-mode: forwards;
-				animation-fill-mode: forwards;
 			}
 			
 			.loadingIndicator.fadeOut {
@@ -334,16 +330,40 @@
 			@font-face{font-family:'fontello';src:url(resources/tpl/viewer/font/font/fontello.eot?22851922);src:url(resources/tpl/viewer/font/font/fontello.eot?22851922#iefix) format("embedded-opentype"),url(resources/tpl/viewer/font/font/fontello.woff?22851922) format("woff"),url(resources/tpl/viewer/font/font/fontello.ttf?22851922) format("truetype"),url(resources/tpl/viewer/font/font/fontello.svg?22851922#fontello) format("svg");font-weight:400;font-style:normal}[class^="icon-"]:before,[class*=" icon-"]:before{font-family:"fontello";font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em}.icon-spin1:before{content:'\e800'}.icon-link:before{content:'\e801'}.icon-facebook-squared:before{content:'\e802'}.icon-twitter:before{content:'\e803'}.animate-spin{-moz-animation:spin 2s infinite linear;-o-animation:spin 2s infinite linear;-webkit-animation:spin 2s infinite linear;animation:spin 2s infinite linear;display:inline-block}@-moz-keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@-webkit-keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@-o-keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@-ms-keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
 		</style>
 		
+		<script>
+			// Loading indicator get fade effect except in IE and FF
+			if ( ! (navigator.userAgent.indexOf('MSIE') !== -1 
+					|| navigator.appVersion.indexOf('Trident/') > 0
+					|| navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ) {
+				document.write('<style>.loadingIndicator {\
+					opacity: 0.0;\
+					-webkit-animation: fadein 3s;\
+					-moz-animation: fadein 3s;\
+					-ms-animation: fadein 3s;\
+					-o-animation: fadein 3s;\
+					animation: fadein 3s;\
+				          -webkit-animation-fill-mode: forwards;\
+				    -moz-animation-fill-mode: forwards;\
+					animation-fill-mode: forwards;\
+				}</style>');
+			}
+		</script>
+		
 		<div id="loadingOverlay"></div>
 		<div id="loadingIndicator" class="loadingIndicator">
 			<div class="load-indicator icon-spin1 animate-spin"></div>
-			 <!--[if lte IE 10]>
-			 	<style>
-			 		.load-indicator { display: none; }
-			 		#loadingIndicator { opacity: 1.0; margin-top: -40px; }
-			 	</style>
-			    <img src="resources/tpl/viewer/icons/loading-light.gif" />
-		    <![endif]-->
+			<script>
+				// Alternate loader on all IE
+				if (navigator.userAgent.indexOf('MSIE') !== -1 
+						|| navigator.appVersion.indexOf('Trident/') > 0) {
+					document.write('\
+						<style>\
+					 		.load-indicator { display: none; }\
+					 		#loadingIndicator { opacity: 1.0; margin-top: -40px; }\
+					 	</style>\
+					    <img src="resources/tpl/viewer/icons/loading-light.gif" />');
+				}
+			</script>
 		</div>
 		<div id="loadingMessage"></div>
 		
