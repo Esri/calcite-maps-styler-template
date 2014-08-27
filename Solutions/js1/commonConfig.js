@@ -39,6 +39,6 @@ define([], function () {
 });
 /* 
 This source is part of the git commit 
-423cd1d5d657b985 2014-08-26 09:38:03 -0700
+691fb9969ad4f04c 2014-08-27 11:02:40 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 

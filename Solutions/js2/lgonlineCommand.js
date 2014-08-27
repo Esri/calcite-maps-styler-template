@@ -2167,7 +2167,7 @@ define([
          * @override
          */
         createSearchersList: function () {
-            var pThis = this, deferralWaitList = [], featureLayerNames = [],
+            var pThis = this, deferralWaitList = [], featureLayerNames = [], featureSearchFields = [],
                 featureDisplayFields = [], i, searcherName, searcher;
             this.searchers = [];
 
@@ -2192,13 +2192,15 @@ define([
                     this.searchLayers = JSON.parse(this.searchLayersString);
                 } catch (ignore) {
                 }
-            } else if (this.searchLayerName && this.searchLayerName.length > 0 &&
-                       this.searchFields && this.searchFields.length > 0) {
-                featureLayerNames = this.searchLayerName.split(",");
+            } else if (this.searchLayerName && this.searchLayerName.length > 0) {
+                featureLayerNames = this.splitAndTrim(this.searchLayerName);
+                if (this.searchFields && this.searchFields.length > 0) {
+                    featureSearchFields = this.splitAndTrim(this.searchFields);
+                }
                 for (i = 0; i < featureLayerNames.length; i = i + 1) {
                     this.searchLayers.push({
-                        "id": featureLayerNames[i].trim(),
-                        "fields": this.searchFields.split(","),
+                        "id": featureLayerNames[i],
+                        "fields": featureSearchFields,
                         "type": "FeatureLayer"
                     });
                 }
@@ -2214,11 +2216,11 @@ define([
                 } catch (ignore) {
                 }
             } else if (this.displayFields && this.displayFields.length > 0) {
-                featureDisplayFields = this.displayFields.split(",");
+                featureDisplayFields = this.splitAndTrim(this.displayFields);
                 for (i = 0; i < this.searchLayers.length; i = i + 1) {
                     this.displayLayers.push({
                         "id": this.searchLayers[i].id,
-                        "fields": featureDisplayFields,
+                        "fields": featureDisplayFields[i] ? featureDisplayFields[i] : "",
                         "type": "FeatureLayer"
                     });
                 }
@@ -2260,6 +2262,21 @@ define([
             }
 
             return deferralWaitList;
+        },
+
+        /**
+         * Converts a comma-separated set of items into an array, trimming each.
+         * @param {string} commaSeparatedContent String of items to split
+         * @return {array} List of items
+         * @memberOf js.LGSearchFeatureLayerMultiplexer#
+         */
+        splitAndTrim: function (commaSeparatedContent) {
+            var splitArray, outArray = [];
+            splitArray = commaSeparatedContent.split(",");
+            array.forEach(splitArray, function (item) {
+                outArray.push(item.trim());
+            });
+            return outArray;
         },
 
         /**
@@ -3138,6 +3155,6 @@ define([
 });
 /* 
 This source is part of the git commit 
-423cd1d5d657b985 2014-08-26 09:38:03 -0700
+691fb9969ad4f04c 2014-08-27 11:02:40 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 
