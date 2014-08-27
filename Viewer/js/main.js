@@ -27,7 +27,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
         editorDiv: null,
         editor: null,
         editableLayers: null,
-
+        timeFormats: ["shortDateShortTime","shortDateLEShortTime","shortDateShortTime24","shortDateLEShortTime24","shortDateLongTime",
+                           "shortDateLELongTime","shortDateLongTime24","shortDateLELongTime24"], 
         startup: function (config) {
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id and any url parameters and any application specific configuration information.
@@ -321,11 +322,21 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         //only display visible fields 
                         var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
                         var fieldInfos = [];
-                        array.forEach(fields, function (field) {
+                        array.forEach(fields, lang.hitch(this, function (field) {
+
+                            //added support for editing date and time 
+                            if (field.format && field.format.dateFormat && array.indexOf(this.timeFormats, field.format.dateFormat) > -1) { 
+                              field.format = {
+                                time: true
+                              };
+                             }
+
                             if (field.visible) {
                                 fieldInfos.push(field);
                             }
-                        });
+                 
+                        }));
+                 
                         layer.fieldInfos = fieldInfos;
                     }
                 }));
