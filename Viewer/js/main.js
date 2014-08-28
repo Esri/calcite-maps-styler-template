@@ -904,7 +904,14 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 //Set the application title
                 this.map = response.map;
                 //Set the title - use the config value if provided. 
-                var title = (this.config.title === null) ? response.itemInfo.item.title : this.config.title;
+                //var title = (this.config.title === null) ? response.itemInfo.item.title : this.config.title;
+                var title;
+                if(this.config.title === null || this.config.title === ""){
+                     title = response.itemInfo.item.title;
+                }else{
+                    title = this.config.title;
+                }
+    
                 //if title is short make title area smaller
                 if (title && title.length && title.length === 0) {
                     domClass.add("panelTop", "smallerTitle");
