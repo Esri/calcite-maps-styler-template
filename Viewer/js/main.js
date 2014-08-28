@@ -456,7 +456,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
                 var measure = new Measurement({
                     map: this.map,
-                    defaultAreaLength: areaUnit,
+                    defaultAreaUnit: areaUnit,
                     defaultLengthUnit: lengthUnit
                 }, domConstruct.create("div", {}, measureDiv));
 
