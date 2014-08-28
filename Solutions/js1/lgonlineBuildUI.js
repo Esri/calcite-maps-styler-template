@@ -764,6 +764,6 @@ define("js/lgonlineBuildUI", ["dojo/_base/Deferred", "dojo/DeferredList", "esri/
 });
 /* 
 This source is part of the git commit 
-334d85d52dc04801 2014-08-27 17:38:43 -0700
+ab56ae62e3a000c0 2014-08-28 13:28:58 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 

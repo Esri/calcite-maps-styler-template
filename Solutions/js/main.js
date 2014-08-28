@@ -523,6 +523,10 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
                 // Here' we'll use it to update the application to match the specified color theme.
                 // console.log(this.config);
                 this.map = response.map;
+                this.mapInfo = {
+                    clickEventHandle: response.clickEventHandle,
+                    clickEventListener: response.clickEventListener
+                };
                 // make sure map is loaded
                 if (this.map.loaded) {
                     // do something with the map
