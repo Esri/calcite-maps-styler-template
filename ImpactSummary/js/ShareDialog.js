@@ -20,7 +20,8 @@ define([
     "esri/urlUtils",
     "dijit/Dialog",
     "dojo/number",
-    "dojo/_base/event"
+    "dojo/_base/event",
+    "dojo/io-query"
 ],
     function (
         Evented,
@@ -36,7 +37,8 @@ define([
         urlUtils,
         Dialog,
         number,
-        event
+        event,
+        ioQuery
     ) {
         var Widget = declare("esri.dijit.ShareDialog", [_WidgetBase, _TemplatedMixin, Evented], {
             templateString: dijitTemplate,
@@ -269,6 +271,14 @@ define([
                         url += i + '=' + urlObject.query[i];
                     }
                 }
+                //Remove edit=true from the query parameters
+                if (location.href.indexOf("?") > -1) {
+                    var queryUrl = location.href;
+                    var urlParams = ioQuery.queryToObject(window.location.search.substring(1)),
+                        newParams = lang.clone(urlParams);
+                    delete newParams.edit; //Remove edit parameter
+                    url = queryUrl.substring(0, queryUrl.indexOf("?") + 1) + ioQuery.objectToQuery(newParams);
+                }
                 // update url
                 this.set("url", url);
                 // reset embed code
@@ -363,6 +373,14 @@ define([
             _shareLink: function () {
                 if (this.get("bitlyAPI") && this.get("bitlyLogin") && this.get("bitlyKey")) {
                     var currentUrl = this.get("url");
+                    //Remove edit=true from the query parameters
+                    if (location.href.indexOf("?") > -1) {
+                        var queryUrl = location.href;
+                        var urlParams = ioQuery.queryToObject(window.location.search.substring(1)),
+                            newParams = lang.clone(urlParams);
+                        delete newParams.edit; //Remove edit parameter
+                        currentUrl = queryUrl.substring(0, queryUrl.indexOf("?") + 1) + ioQuery.objectToQuery(newParams);
+                    }
                     // not already shortened
                     if (currentUrl !== this._shortened) {
                         // set shortened

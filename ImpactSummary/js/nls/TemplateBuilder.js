@@ -49,7 +49,7 @@ define({
                 "SelectedFeatureText": "Selected Feature",
                 "layerHelpTextMessage": "This application requires a layer with numeric fields",
                 "alertMessage": {
-                    "resetVariableMessage": "Are You sure you want to reset variable ?",
+                    "resetVariableMessage": "Are you sure you want to reset variable?",
                     "emptyAppTitleMessage": "Application title cannot be empty",
                     "emptyDescriptionMessage": "Description cannot be empty",
                     "maxVariableSelection": "You cannot select more than 25 sub variables",
@@ -58,8 +58,8 @@ define({
                     "unsavedChangesMessage": "Unsaved Changes",
                     "failMessage": "Could not update the item sucessfully",
                     "saveChangesAlert": "Do you want to save the changes ?",
-                    "variableLabelValidation": "Variable label cannot be EMPTY",
-                    "subVariableLabelValidation": "Sub variable label cannot be EMPTY"
+                    "variableLabelValidation": "Variable label cannot be empty",
+                    "subVariableLabelValidation": "Sub variable label cannot be empty"
                     }
             }
         }
