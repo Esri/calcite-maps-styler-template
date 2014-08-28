@@ -1575,6 +1575,9 @@ define([
                 }
             }
 
+            // Default the Unicode identifier to the SQL-92 standard; PostgresSQL uses "U&"
+            this.unicodeIdentifier = this.unicodeIdentifier || "N";
+
             this.setUpWaitForDependency("js.LGSearchFeatureLayer");
         },
 
@@ -1834,10 +1837,10 @@ define([
             // Prepare the search term and the search query pattern for the desired casing handling
             if (this.caseInsensitiveSearch === true) {
                 processedSearchText = searchText.toUpperCase();
-                attributePattern = "UPPER(${0}) LIKE N'" + this.searchPattern + "'";
+                attributePattern = "UPPER(${0}) LIKE " + this.unicodeIdentifier + "'" + this.searchPattern + "'";
             } else {
                 processedSearchText = searchText;
-                attributePattern = "${0} LIKE N'" + this.searchPattern + "'";
+                attributePattern = "${0} LIKE " + this.unicodeIdentifier + "'" + this.searchPattern + "'";
             }
 
             // Escape single quotes, which are used to bound the search term in the query
@@ -2220,7 +2223,7 @@ define([
                 for (i = 0; i < this.searchLayers.length; i = i + 1) {
                     this.displayLayers.push({
                         "id": this.searchLayers[i].id,
-                        "fields": featureDisplayFields[i] ? featureDisplayFields[i] : "",
+                        "fields": featureDisplayFields[i] || "",
                         "type": "FeatureLayer"
                     });
                 }
@@ -2253,6 +2256,7 @@ define([
                     publishPointsOnly: this.publishPointsOnly,
                     searchPattern: this.searchPattern,
                     caseInsensitiveSearch: this.caseInsensitiveSearch,
+                    unicodeIdentifier: this.unicodeIdentifier,
                     searchLayerName: this.searchLayers[i].id,
                     searchFields: this.searchLayers[i].fields,
                     displayField: featureDisplayFields
@@ -3155,6 +3159,6 @@ define([
 });
 /* 
 This source is part of the git commit 
-691fb9969ad4f04c 2014-08-27 11:02:40 -0700
+334d85d52dc04801 2014-08-27 17:38:43 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 
