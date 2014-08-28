@@ -1,4 +1,12 @@
-V 1.8.1 - Added support for OAUTH #116
+V 1.8.3
 
 Resolved GitHub issues:
-#53 - Add support for OAUTH
+1.	53 - Add support for OAUTH
+2.	56 - Read basemap from org basemaps group
+3.	104 - Popup displays over navigation widget
+4.	106 - Opening non-web mercator map causes geometry service error
+5.	109 - Signing out of app causes errors in Firebug
+6.	112 - Credentials for private app/private group
+7.	115 - Change 'Try it now' button text to 'View' 
+8.	118 - Gallery thumbnail, Details page, and Download/View button should all perform same action
+9.	119 - OpenStreetMap issues

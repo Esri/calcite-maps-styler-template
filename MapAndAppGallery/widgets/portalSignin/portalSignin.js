@@ -66,7 +66,6 @@ define([
                     /**
                     *executed on clicking of the sign out button
                     */
-                    this.domNode.title = nls.title.signInBtnTitle;
                     defObj = new Deferred();
                     topic.publish("portalSignIn", defObj);
                     defObj.then(function () {

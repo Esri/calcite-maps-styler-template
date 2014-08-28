@@ -49,7 +49,7 @@ define([
         * @name widgets/locator/locator
         */
         postCreate: function () {
-            this.itemSearchIcon.title = nls.title.itemSearchBtnTitle;
+            this.domNode.title = nls.title.itemSearchBtnTitle;
             topic.subscribe("clearDefaultText", this._clearDefaultText);
             topic.subscribe("replaceDefaultText", this._replaceDefaultText);
             topic.subscribe("setDefaultTextboxValue", lang.hitch(this, this._setDefaultTextboxValue));

@@ -80,8 +80,6 @@ define([
             if (query(".esriCTMenuTabLeft")[0]) {
                 if (domClass.contains(query(".esriCTMenuTabLeft")[0], "displayBlock")) {
                     domClass.replace(query(".esriCTMenuTabLeft")[0], "displayNone", "displayBlock");
-                    domClass.replace(query(".esriCTHomeIcon")[0], "displayNone", "displayBlock");
-
                     if (query(".esriCTSignIn")[0]) {
                         domClass.replace(query(".esriCTSignIn")[0], "displayNone", "displayBlock");
                     }
@@ -100,7 +98,6 @@ define([
                     }
                 } else {
                     domClass.replace(query(".esriCTMenuTabLeft")[0], "displayBlock", "displayNone");
-                    domClass.replace(query(".esriCTHomeIcon")[0], "displayBlock", "displayNone");
                     if (query(".esriCTSignIn")[0]) {
                         domClass.replace(query(".esriCTSignIn")[0], "displayBlock", "displayNone");
                     }
