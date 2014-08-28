@@ -87,6 +87,6 @@ require(["dojo/ready", "dojo/_base/Deferred", "esri/map", "dojo/i18n"], function
 });
 /* 
 This source is part of the git commit 
-ab56ae62e3a000c0 2014-08-28 13:28:58 -0700
+84ee6c2ba416b893 2014-08-28 15:44:26 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 

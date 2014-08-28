@@ -1576,7 +1576,7 @@ define([
             }
 
             // Default the Unicode identifier to the SQL-92 standard; PostgresSQL uses "U&"
-            this.unicodeIdentifier = this.unicodeIdentifier || "N";
+            this.unicodeIdentifier = this.unicodeIdentifier || this.appConfig.defaultUnicodeIdentifier || "";
 
             this.setUpWaitForDependency("js.LGSearchFeatureLayer");
         },
@@ -2444,7 +2444,7 @@ define([
                                 }
                             }, function (error) {
                                 // Query failure
-                                pThis.log("LGSearchBoxByText_1: " + error.message);
+                                pThis.log("LGSearchBoxByText_1: " + (error.message || (error.details && error.details[0])));
 
                                 lastSearchString = "";  // so that we can quickly repeat this search
                                 pThis.displayResults.hideSearchingBusy();
@@ -3159,6 +3159,6 @@ define([
 });
 /* 
 This source is part of the git commit 
-ab56ae62e3a000c0 2014-08-28 13:28:58 -0700
+84ee6c2ba416b893 2014-08-28 15:44:26 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 
