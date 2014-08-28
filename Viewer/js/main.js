@@ -27,8 +27,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
         editorDiv: null,
         editor: null,
         editableLayers: null,
-        timeFormats: ["shortDateShortTime","shortDateLEShortTime","shortDateShortTime24","shortDateLEShortTime24","shortDateLongTime",
-                           "shortDateLELongTime","shortDateLongTime24","shortDateLELongTime24"], 
+        timeFormats: ["shortDateShortTime", "shortDateLEShortTime", "shortDateShortTime24", "shortDateLEShortTime24", "shortDateLongTime", "shortDateLELongTime", "shortDateLongTime24", "shortDateLELongTime24"],
         startup: function (config) {
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id and any url parameters and any application specific configuration information.
@@ -182,15 +181,15 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     //Now that all the tools have been added to the toolbar we can add page naviagation
                     //to the toolbar panel, update the color theme and set the active tool. 
                     this._updateTheme();
-                    
-                    
-                   if(this.config.activeTool !== ""){
+
+
+                    if (this.config.activeTool !== "") {
                         toolbar.activateTool(this.config.activeTool);
                         toolbar.updatePageNavigation();
-                    }else{
+                    } else {
                         toolbar._closePage();
                     }
-          
+
 
                     on(toolbar, "updateTool", lang.hitch(this, function (name) {
                         if (name === "measure") {
@@ -325,18 +324,18 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         array.forEach(fields, lang.hitch(this, function (field) {
 
                             //added support for editing date and time 
-                            if (field.format && field.format.dateFormat && array.indexOf(this.timeFormats, field.format.dateFormat) > -1) { 
-                              field.format = {
-                                time: true
-                              };
-                             }
+                            if (field.format && field.format.dateFormat && array.indexOf(this.timeFormats, field.format.dateFormat) > -1) {
+                                field.format = {
+                                    time: true
+                                };
+                            }
 
                             if (field.visible) {
                                 fieldInfos.push(field);
                             }
-                 
+
                         }));
-                 
+
                         layer.fieldInfos = fieldInfos;
                     }
                 }));
@@ -432,8 +431,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     }, domConstruct.create("div", {}, legendDiv));
                     domClass.add(legend.domNode, "legend");
                     legend.startup();
-                    if(this.config.activeTool !== ""){
-                     toolbar.activateTool(this.config.activeTool || "legend");
+                    if (this.config.activeTool !== "") {
+                        toolbar.activateTool(this.config.activeTool || "legend");
                     }
                     deferred.resolve(true);
 
@@ -792,6 +791,18 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 home.startup();
             }
 
+            require(["application/has-config!scalebar?esri/dijit/Scalebar"], lang.hitch(this, function (Scalebar) {
+                if (!Scalebar) {
+                    return;
+                }
+                var scalebar = new Scalebar({
+                    map: this.map,
+                    scalebarUnit: this.config.units
+                });
+                console.log(this.config.units);
+            }));
+
+
             if (has("locate")) {
                 domConstruct.create("div", {
                     id: "panelLocate",
@@ -906,12 +917,12 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 //Set the title - use the config value if provided. 
                 //var title = (this.config.title === null) ? response.itemInfo.item.title : this.config.title;
                 var title;
-                if(this.config.title === null || this.config.title === ""){
-                     title = response.itemInfo.item.title;
-                }else{
+                if (this.config.title === null || this.config.title === "") {
+                    title = response.itemInfo.item.title;
+                } else {
                     title = this.config.title;
                 }
-    
+
                 //if title is short make title area smaller
                 if (title && title.length && title.length === 0) {
                     domClass.add("panelTop", "smallerTitle");

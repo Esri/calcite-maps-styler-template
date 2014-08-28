@@ -413,7 +413,10 @@ html, body {
 .legend{
     padding-bottom:100px;
 }
-
+.scalebar_bottom-left {
+    left: 25px;
+    bottom: 40px;
+}
 .HomeButton .home {
     padding:0 !important;
     width:24px;
@@ -432,7 +435,10 @@ html, body {
 .no-touch .HomeButton .home:hover, .LocateButton .zoomLocateButton:hover{
     background-color:none !important;
 }
-
+.scalebar_bottom-left {
+    left: 25px;
+    bottom: 40px;
+}
 .HomeButton .home:before{
     width:24px;
     height:24px;

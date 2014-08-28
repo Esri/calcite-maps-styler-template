@@ -72,6 +72,8 @@ define({
     "home": true,
     //Add the geolocation button on the toolbar. Only displayed if browser supports geolocation
     "locate": true,
+    //When true display a scalebar on the map
+    "scalebar": false,
     //Specify a title for the application. If not provided the web map title is used. 
     "title": null, 
     //This option demonstrates how to handle additional custom url parameters. For example

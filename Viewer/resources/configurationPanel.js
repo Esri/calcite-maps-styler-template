@@ -137,6 +137,11 @@
             },
             {  
                "type":"boolean",
+               "fieldName":"scalebar",
+               "label":"Scalebar"
+            },
+            {  
+               "type":"boolean",
                "fieldName":"tool_layers",
                "label":"Layer List"
             },
@@ -228,6 +233,7 @@
       "color":"#fff",
       "theme":"80ab00",
       "activeTool": "legend",
+      "scalebar": false,
       "tool_print":true,
       "tool_print_layouts":false,
       "tool_print_legend":false,
