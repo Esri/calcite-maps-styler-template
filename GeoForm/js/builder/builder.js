@@ -16,8 +16,8 @@ define([
     "dojo/Deferred",
     "dojo/promise/all",
     "dojo/number",
-    "dojo/text!application/dijit/templates/modal.html",
-    "dojo/text!application/dijit/templates/author.html",
+    "dojo/text!views/modal.html",
+    "dojo/text!views/author.html",
     "application/builder/browseIdDlg",
     "application/ShareModal",
     "application/localStorageHelper",
@@ -95,7 +95,8 @@ define([
             // set to default theme. (first in array)
             dom.byId("themeLink").href = this.themes[0].url;
             // set author html
-            var authorHTML = string.substitute(authorTemplate, nls);
+            var combinedNLS = lang.mixin(nls, resources);
+            var authorHTML = string.substitute(authorTemplate, combinedNLS);
             dom.byId("parentContainter").innerHTML = authorHTML;
             this.buttonConflict = $.fn.button.noConflict();
             var $tabs = $('.tab-links li');
@@ -307,7 +308,6 @@ define([
                     this._configureTheme(currentTheme.id);
                 }
             }));
-            domConstruct.create("br", {}, dom.byId('stylesList'));
         },
 
         _populatePushpins: function () {
@@ -357,7 +357,7 @@ define([
                     imageAnchor = domConstruct.create("a", { "target": "_blank", "href": currentTheme.refUrl }, dom.byId('thumbnailContainer'));
                     themeThumbnail = domConstruct.create("img", {
                         src: currentTheme.thumbnail,
-                        className: "themeThumbnail img-responsive"
+                        className: "img-thumbnail img-responsive"
                     }, imageAnchor);
                     return true;
                 }
@@ -370,21 +370,18 @@ define([
                 configuredFieldName = [],
                 fieldRow, fieldName, fieldLabel, fieldLabelInput, fieldDescription, fieldDescriptionInput, fieldCheckBox,
                 fieldCheckBoxInput, layerIndex, fieldDNDIndicatorTD, fieldDNDIndicatorIcon, matchingField = false,
-                newAddedFields = [], sortedFields = [], fieldPlaceholder, fieldPlaceholderInput, fieldType;
+                newAddedFields = [], sortedFields = [], fieldPlaceholder, fieldPlaceholderInput, fieldType, typeSelect;
             var formFieldsNode = dom.byId('geoFormFieldsTable');
-            
             if (formFieldsNode) {
                 domConstruct.empty(formFieldsNode);
             }
-            
             var sortInstance = $(formFieldsNode).data("sortable");
             if(sortInstance){
                 sortInstance.destroy();
             }
             $(formFieldsNode).sortable();
-            
             array.forEach(this.currentConfig.fields, lang.hitch(this, function (currentField) {
-                configuredFieldName.push(currentField.fieldName);
+                configuredFieldName.push(currentField.name);
                 configuredFields.push(currentField);
             }));
 
@@ -399,7 +396,7 @@ define([
                 array.forEach(this.fieldInfo[layerName].Fields, lang.hitch(this, function (currentField) {
                     matchingField = false;
                     array.forEach(this.currentConfig.fields, lang.hitch(this, function (configLayerField) {
-                        if ((currentField.editable && configLayerField.fieldName == currentField.name)) {
+                        if ((currentField.editable && configLayerField.name == currentField.name)) {
                             matchingField = true;
                             if (!(currentField.type === "esriFieldTypeOID" || currentField.type === "esriFieldTypeGeometry" || currentField.type === "esriFieldTypeBlob" || currentField.type === "esriFieldTypeRaster" || currentField.type === "esriFieldTypeGUID" || currentField.type === "esriFieldTypeGlobalID" || currentField.type === "esriFieldTypeXML")) {
                                 newAddedFields.push(lang.mixin(currentField, configLayerField));
@@ -418,7 +415,7 @@ define([
 
             array.forEach(this.currentConfig.fields, lang.hitch(this, function (configField) {
                 array.some(newAddedFields, lang.hitch(this, function (currentField) {
-                    if (currentField.fieldName === configField.fieldName) {
+                    if (currentField.name === configField.name) {
                         sortedFields.push(currentField);
                         return true;
                     }
@@ -448,8 +445,13 @@ define([
                     type: "checkbox",
                     index: currentIndex
                 }, fieldCheckBox);
-                domAttr.set(fieldCheckBoxInput, "checked", currentField.visible);
-
+                if (currentField.name !== this.fieldInfo[layerName].typeIdField) {
+                    domAttr.set(fieldCheckBoxInput, "checked", currentField.visible);
+                }
+                else {
+                    domAttr.set(fieldCheckBoxInput, "checked", true);
+                    domAttr.set(fieldCheckBoxInput, "disabled", true);
+                }
                 on(fieldCheckBoxInput, "change", lang.hitch(this, function () {
                     if (query(".fieldCheckbox:checked").length == query(".fieldCheckbox").length) {
                         dom.byId('selectAll').checked = true;
@@ -465,24 +467,19 @@ define([
                     index: currentIndex
                 }, fieldRow);
                 fieldLabel = domConstruct.create("td", {
-                    className: "tableDimension"
                 }, fieldRow);
                 fieldLabelInput = domConstruct.create("input", {
                     className: "form-control fieldLabel",
                     index: currentIndex,
-                    placeholder: nls.builder.fieldLabelPlaceHolder,
                     value: currentField.alias
                 }, fieldLabel);
                 fieldDescription = domConstruct.create("td", {
-                    className: "tableDimension"
                 }, fieldRow);
                 fieldDescriptionInput = domConstruct.create("input", {
                     className: "form-control fieldDescription",
-                    placeholder: nls.builder.fieldDescPlaceHolder,
                     value: ""
                 }, fieldDescription);
                 fieldPlaceholder = domConstruct.create("td", {
-                    className: "tableDimension"
                 }, fieldRow);
 
                 if (!currentField.domain) {
@@ -490,15 +487,42 @@ define([
                         className: "form-control fieldPlaceholder",
                         index: currentIndex
                     }, fieldPlaceholder);
-                    if (currentField.placeHolder) {
-                        fieldPlaceholderInput.value = currentField.placeHolder;
+                    if (currentField.tooltip) {
+                        fieldPlaceholderInput.value = currentField.tooltip;
                     }
                 }
                 fieldType = domConstruct.create("td", {
-                    style: "min-width: 100px",
-                    className: "fieldSqlType",
-                    innerHTML: currentField.type.replace("esriFieldType", "")
                 }, fieldRow);
+                if (currentField.type === "esriFieldTypeDate") {
+                    return;
+                }
+                if ((currentField.domain && currentField.domain.codedValues) || (currentField.name === this.fieldInfo[layerName].typeIdField)) {
+                    if ((currentField.domain && currentField.domain.codedValues.length <= 4) || (this.fieldInfo[layerName].types && this.fieldInfo[layerName].types.length <= 4)) {
+                        typeSelect = domConstruct.create("select", { "class": "form-control displayType" }, fieldType);
+                        domConstruct.create("option", { innerHTML: nls.builder.selectMenuOption, value: "dropdown" }, typeSelect);
+                        domConstruct.create("option", { innerHTML: nls.builder.selectRadioOption, value: "radio" }, typeSelect);
+                    }
+                } else {
+                    if (!currentField.domain) {
+                        typeSelect = domConstruct.create("select", { "class": "form-control displayType" }, fieldType);
+                        if (currentField.type == "esriFieldTypeSmallInteger" || currentField.type == "esriFieldTypeInteger" || currentField.type == "esriFieldTypeSingle" || currentField.type == "esriFieldTypeDouble") {
+                            domConstruct.create("option", { innerHTML: nls.builder.selectTextOption, value: "textbox" }, typeSelect);
+                            domConstruct.create("option", { innerHTML: nls.builder.selectCheckboxOption, value: "checkbox" }, typeSelect);
+                        } else {
+                            if (currentField.type == "esriFieldTypeString") {
+                                domConstruct.create("option", { innerHTML: nls.builder.selectTextOption, value: "text" }, typeSelect);
+                                if (currentField.length >= 30) {
+                                    domConstruct.create("option", { innerHTML: nls.builder.selectMailOption, value: "email" }, typeSelect);
+                                    domConstruct.create("option", { innerHTML: nls.builder.selectUrlOption, value: "url" }, typeSelect);
+                                }
+                                domConstruct.create("option", { innerHTML: nls.builder.selectTextAreaOption, value: "textarea" }, typeSelect);
+                            }
+                        }
+                    }
+                }
+                if (currentField.displayType) {
+                    this._setSelectedDisplayText(currentField.displayType, typeSelect);
+                }
                 if (this.currentConfig.itemInfo.itemData.operationalLayers[layerIndex].popupInfo) {
                     array.forEach(this.currentConfig.itemInfo.itemData.operationalLayers[layerIndex].popupInfo.fieldInfos, function (currentFieldPopupInfo) {
                         if (currentFieldPopupInfo.fieldName == currentField.name) {
@@ -508,11 +532,7 @@ define([
                         }
                     });
                 }
-                if (currentField.isNewField) {
-                    domAttr.set(fieldLabelInput, "value", currentField.alias);
-                } else {
-                    domAttr.set(fieldLabelInput, "value", currentField.fieldLabel);
-                }
+                domAttr.set(fieldLabelInput, "value", currentField.alias);
                 if (currentField.fieldDescription) {
                     domAttr.set(fieldDescriptionInput, "value", currentField.fieldDescription);
                 }
@@ -522,20 +542,20 @@ define([
             } else {
                 dom.byId('selectAll').checked = false;
             }
-      
             this._updateAppConfiguration("fields");
             if (this.fieldInfo[layerName]) {
                 this._createAttachmentInput(this.fieldInfo[layerName].layerUrl);
             }
         },
 
-        //function to fetch the datatype of the field
-        _createFieldDataTypeOptions: function (currentField, fieldTypeSelect) {
-            var fieldTypeSelectOption;
-            fieldTypeSelectOption = domConstruct.create("option", {}, null);
-            fieldTypeSelectOption.text = currentField.type.split("esriFieldType")[1];
-            fieldTypeSelectOption.value = currentField.type.split("esriFieldType")[1];
-            fieldTypeSelect.appendChild(fieldTypeSelectOption);
+        //To make the configured type as selected
+        _setSelectedDisplayText: function (displayText, typeSelect) {
+            array.some(typeSelect.options, function (currentOption) {
+                if (currentOption.value == displayText) {
+                    domAttr.set(currentOption, 'selected', 'selected');
+                    return true;
+                }
+            });
         },
 
         //function to query layer in order to obtain all the information of layer
@@ -661,34 +681,35 @@ define([
                     break;
                 case "fields":
                     this.currentConfig.fields.length = 0;
-                    var index, fieldName, fieldLabel, fieldDescription, layerName, visible, defaultValue;
+                    var fieldName, fieldLabel, fieldDescription, layerName, visible, typeField;
                     layerName = dom.byId("selectLayer").value;
                     array.forEach($("#tableDND")[0].rows, lang.hitch(this, function (currentRow, currentFieldIndex) {
                         if (currentRow.getAttribute("rowIndex")) {
-                            index = currentRow.getAttribute("rowIndex");
                             fieldName = query(".layerFieldsName", currentRow)[0].innerHTML;
-                            for (var key in this.fieldInfo[this.currentConfig.form_layer.id].defaultValues) {
-                                if (key == fieldName) {
-                                    defaultValue = this.fieldInfo[this.currentConfig.form_layer.id].defaultValues[key];
-                                    break;
-                                }
-                            }
+
                             fieldLabel = query(".fieldLabel", currentRow)[0].value;
                             fieldDescription = query(".fieldDescription", currentRow)[0].value;
                             visible = query(".fieldCheckbox", currentRow)[0].checked;
+                            typeField = query(".fieldCheckbox", currentRow)[0].checked && query(".fieldCheckbox", currentRow)[0].disabled;
                             this.currentConfig.fields.push({
-                                fieldName: fieldName,
-                                fieldLabel: fieldLabel,
+                                name: fieldName,
+                                alias: fieldLabel,
                                 fieldDescription: fieldDescription,
                                 visible: visible,
-                                defaultValue: defaultValue
+                                typeField: typeField
                             });
                             if (query(".fieldPlaceholder", currentRow)[0] && query(".fieldPlaceholder", currentRow)[0].value) {
-                                this.currentConfig.fields[currentFieldIndex - 1].placeHolder = query(".fieldPlaceholder", currentRow)[0].value;
+                                this.currentConfig.fields[currentFieldIndex - 1].tooltip = query(".fieldPlaceholder", currentRow)[0].value;
+                            }
+                            if (query(".displayType", currentRow)[0]) {
+                                this.currentConfig.fields[currentFieldIndex - 1].displayType = query(".displayType", currentRow)[0].value;
                             }
                         }
 			if (dom.byId("attachmentDescription")) {
                             this.currentConfig.attachmentHelpText = dom.byId("attachmentDescription").value;
+                        }
+                        if (dom.byId("attachmentLabelInfo")) {
+                            this.currentConfig.attachmentLabel = dom.byId("attachmentLabelInfo").value;
                         }
                     }));
                     break;
@@ -700,6 +721,7 @@ define([
         _updateItem: function () {
             this.appSettings = {
                 "attachmentHelpText": this.currentConfig.attachmentHelpText,
+                "attachmentLabel": this.currentConfig.attachmentLabel,
                 "defaultMapExtent": this.currentConfig.defaultMapExtent,
                 "details": this.currentConfig.details,
                 "enableSharing": this.currentConfig.enableSharing,
@@ -781,21 +803,21 @@ define([
             }, iconContainer);
             if ($("#shareOption")[0].checked) {
                 facebookIconHolder = domConstruct.create("div", {
-                    className: "iconContent"
+                    className: "pull-left"
                 }, iconContainer);
                 domConstruct.create("a", {
                     className: "fa fa-facebook-square iconClass",
                     id: "facebookIcon"
                 }, facebookIconHolder);
                 twitterIconHolder = domConstruct.create("div", {
-                    className: "iconContent"
+                    className: "pull-left"
                 }, iconContainer);
                 domConstruct.create("a", {
                     className: "fa fa-twitter-square iconClass",
                     id: "twitterIcon"
                 }, twitterIconHolder);
                 googlePlusIconHolder = domConstruct.create("div", {
-                    className: "iconContent"
+                    className: "pull-left"
                 }, iconContainer);
                 domConstruct.create("a", {
                     className: "fa fa-google-plus-square iconClass",
@@ -803,7 +825,7 @@ define([
                 }, googlePlusIconHolder);
             }
             mailIconHolder = domConstruct.create("div", {
-                className: "iconContent"
+                className: "pull-left"
             }, iconContainer);
             domConstruct.create("a", {
                 className: "fa fa-envelope iconClass",
@@ -864,11 +886,16 @@ define([
         },
 
         _createAttachmentInput: function (layerUrl) {
+            var fLayer, attachmentDetails, attachmentLabel;
             domConstruct.empty(dom.byId('attachmentDetails'));
-            var fLayer = new FeatureLayer(layerUrl);
+            fLayer = new FeatureLayer(layerUrl);
             on(fLayer, 'load', lang.hitch(this, function () {
                 if (fLayer.hasAttachments) {
-                    var attachmentDetails = domConstruct.create("div", { "id": "attachmentDetails", "class": "form-group" }, dom.byId('attachmentDetails'));
+                    attachmentLabel = domConstruct.create("div", { "id": "attachmentLabel", "class": "form-group" }, dom.byId('attachmentDetails'));
+                    domConstruct.create("label", { "for": "attachmentLabel", "innerHTML": nls.builder.attachmentLabelText }, attachmentLabel);
+                    domConstruct.create("input", { "type": "text", "class": "form-control", "id": "attachmentLabelInfo", "value": this.currentConfig.attachmentLabel }, attachmentLabel);
+                    domConstruct.create("span", { "class": "attachmentHint", "innerHTML": nls.builder.attachmentLabelHint }, attachmentLabel);
+                    attachmentDetails = domConstruct.create("div", { "id": "attachmentDetails", "class": "form-group" }, dom.byId('attachmentDetails'));
                     domConstruct.create("label", { "for": "attachmentDescription", "innerHTML": nls.builder.attachmentDescription }, attachmentDetails);
                     domConstruct.create("input", { "type": "text", "class": "form-control", "id": "attachmentDescription", "value": this.currentConfig.attachmentHelpText }, attachmentDetails);
                     domConstruct.create("span", { "class": "attachmentHint", "innerHTML": nls.builder.attachmentHint }, attachmentDetails);

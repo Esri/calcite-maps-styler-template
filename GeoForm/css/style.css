@@ -10,11 +10,13 @@
 #mapDiv {
     height: 100%;
     width: 100%;
+    position: relative;
 }
 #pushpinSymbol {
     background-repeat: no-repeat;
-    width:36px;
+    width: 36px;
     height: 36px;
+    margin-left: 10px;
 }
 /* Style for Loading Indicator*/
 
@@ -85,9 +87,6 @@
     margin-bottom: 0px;
     margin-top: 10px;
 }
-.myDragClass {
-    background-color: gray;
-}
 /* Extra Small Devices, Phones */
 
 @media (min-width: 480px) {
@@ -135,15 +134,6 @@
     color: #007ac2;
     cursor: pointer;
 }
-.iconContent {
-    float: left;
-}
-#geoform .fieldCheckbox,
-#geoform .selectAllCheckbox {
-    margin-right: 5px;
-    vertical-align: top;
-    margin-left: 8px;
-}
 .progress-percent {
     width: 100%;
     line-height: 50px;
@@ -165,10 +155,7 @@
     margin: 0 7px 0px;
 }
 .myLocationOptions {
-    padding: 20px 0px;
-}
-.select-webmap-button {
-    margin-top: 10px;
+    padding: 20px 0;
 }
 #geoform .has-feedback .form-control {
     padding-right: 10px;
@@ -183,17 +170,11 @@ input::-ms-clear {
     color: #555;
     vertical-align: center;
 }
-.themeThumbnail {
-    width: 200px;
-    height: 133px;
-    border: 1px solid #555;
-}
 .tableDimension {
     min-width: 180px;
 }
-.descriptionText {
-    font-size: 18px;
-    margin-bottom: 10px;
+.tableDimension2 {
+    min-width: 100px;
 }
 .geocoder-container {
     position: relative;
@@ -202,6 +183,7 @@ input::-ms-clear {
 .requireFieldStyle {
     display: inline-block;
     margin-left: 5px;
+    font-weight: normal;
 }
 /* fix for popup close */
 
@@ -218,9 +200,6 @@ input::-ms-clear {
 }
 .webmap-thumb {
     display: inline-block;
-}
-.webmap-thumb-container {
-    margin-bottom: 5px;
 }
 /*** Esri Map ***/
 
@@ -269,9 +248,15 @@ body.modal-open,
     margin-right: 0;
     margin-top: 0;
 }
-.map-div table{
+.map-div table {
     background: transparent;
 }
-.drag-cursor{
+.drag-cursor {
     cursor: ns-resize;
+}
+#fullscreen {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
 }
