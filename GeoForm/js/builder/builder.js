@@ -17,19 +17,18 @@ define([
     "dojo/promise/all",
     "dojo/number",
     "dojo/text!views/modal.html",
-    "dojo/text!views/author.html",
+    "dojo/text!views/builder.html",
     "application/builder/browseIdDlg",
     "application/ShareModal",
     "application/localStorageHelper",
     "application/builder/signInHelper",
-    "dojo/i18n!application/nls/builder",
     "dojo/i18n!application/nls/resources",
     "esri/arcgis/utils",
     "application/themes",
     "application/pushpins",
     "esri/layers/FeatureLayer",
     "dojo/domReady!"
-], function (ready, declare, on, dom, esriRequest, array, domConstruct, domAttr, query, domClass, domStyle, lang, string, Deferred, all, number, modalTemplate, authorTemplate, BrowseIdDlg, ShareModal, localStorageHelper, signInHelper, nls, resources, arcgisUtils, theme, pushpins, FeatureLayer) {
+], function (ready, declare, on, dom, esriRequest, array, domConstruct, domAttr, query, domClass, domStyle, lang, string, Deferred, all, number, modalTemplate, builderTemplate, BrowseIdDlg, ShareModal, localStorageHelper, signInHelper, nls, arcgisUtils, theme, pushpins, FeatureLayer) {
     return declare([], {
         nls: nls,
         currentState: "webmap",
@@ -94,16 +93,20 @@ define([
         _initializeBuilder: function (config, userInfo, response) {
             // set to default theme. (first in array)
             dom.byId("themeLink").href = this.themes[0].url;
-            // set author html
-            var combinedNLS = lang.mixin(nls, resources);
-            var authorHTML = string.substitute(authorTemplate, combinedNLS);
-            dom.byId("parentContainter").innerHTML = authorHTML;
+            // set builder html
+            var builderHTML = string.substitute(builderTemplate, nls);
+            dom.byId("parentContainter").innerHTML = builderHTML;
+            dom.byId('builder_description').innerHTML = string.substitute(nls.builder.descriptionText, {
+                link1: "<a target=\"_blank\" href=\"http://resources.arcgis.com/en/help/main/10.1/index.html#//0154000002w8000000\">",
+                link2: "<a target=\"_blank\" href=\"http://resources.arcgis.com/en/help/main/10.1/index.html#//00sp0000001z000000\">",
+                closeLink: "</a>"
+            });
             this.buttonConflict = $.fn.button.noConflict();
             var $tabs = $('.tab-links li');
             domClass.add($('.navigationTabs')[0], "activeTab");
             // document ready
             ready(lang.hitch(this, function () {
-                modalTemplate = string.substitute(modalTemplate, resources);
+                modalTemplate = string.substitute(modalTemplate, nls);
                 // place modal code
                 domConstruct.place(modalTemplate, document.body, 'last');
             }));
@@ -250,7 +253,13 @@ define([
             all(layerListArray).then(lang.hitch(this, function () {
                 if (dom.byId("selectLayer").options.length <= 1) {
                     domAttr.set(dom.byId("selectLayer"), "disabled", true);
-                    this._showErrorMessageDiv(nls.builder.invalidWebmapSelectionAlert);
+                    var html = '';
+                    html += "<p>" + nls.builder.invalidWebmapSelectionAlert + "</p>";
+                    html += "<p>" + string.substitute(nls.builder.invalidWebmapSelectionAlert2, {
+                        openLink: "<a target=\"_blank\" href=\"http://resources.arcgis.com/en/help/main/10.2/index.html#//0154000002w8000000\">",
+                        closeLink: "</a>"
+                    }) + "</p>";
+                    this._showErrorMessageDiv(html);
                     array.forEach(query(".navigationTabs"), lang.hitch(this, function (currentTab) {
                         attribute = currentTab.getAttribute("tab");
                         if (attribute === "webmap" || attribute === "layer") {
@@ -320,7 +329,11 @@ define([
                 }
             }));
         },
-
+        
+        _locationInputChange: function(evt){
+            this.currentConfig.locationSearchOptions[domAttr.get(evt.currentTarget, "checkedField")] = evt.currentTarget.checked;
+        },
+        
         _populateLocations: function () {
             var currentInput, key, count = 0;
             for (key in this.currentConfig.locationSearchOptions) {
@@ -330,9 +343,7 @@ define([
                         currentInput.checked = true;
                     }
                     domAttr.set(currentInput, "checkedField", key);
-                    on(currentInput, "change", lang.hitch(this, function (evt) {
-                        this.currentConfig.locationSearchOptions[domAttr.get(evt.currentTarget, "checkedField")] = evt.currentTarget.checked;
-                    }));
+                    on(currentInput, "change", lang.hitch(this, this._locationInputChange));
                 }
                 count++;
             }
@@ -759,6 +770,9 @@ define([
                     usePost: true
                 }).then(lang.hitch(this, function (result) {
                     if (result.success) {
+                        if(this._ShareModal){
+                            this._ShareModal.destroy();   
+                        }
                         this._createShareDlgContent();
                         this._ShareModal = new ShareModal({
                             bitlyLogin: this.currentConfig.bitlyLogin,
@@ -791,57 +805,51 @@ define([
             }, progressIndicatorContainer);
         },
         _createShareDlgContent: function () {
-            var iconContainer, facebookIconHolder, twitterIconHolder, googlePlusIconHolder, mailIconHolder;
+            var iconContainer;
             domConstruct.empty($("#myModal .modal-body")[0]);
             domAttr.set(dom.byId('myModalLabel'), "innerHTML", nls.builder.shareBuilderTitleMessage);
             iconContainer = domConstruct.create("div", {
                 className: "iconContainer"
             }, $("#myModal .modal-body")[0]);
             domConstruct.create("div", {
-                className: "share-dialog-subheader",
-                innerHTML: nls.builder.shareBuilderTextMessage
+                className: "alert alert-success",
+                role: "alert",
+                innerHTML: nls.builder.shareBuilderSuccess
             }, iconContainer);
             if ($("#shareOption")[0].checked) {
-                facebookIconHolder = domConstruct.create("div", {
-                    className: "pull-left"
+                domConstruct.create("h3", {
+                    innerHTML: nls.user.shareThisForm
+                }, iconContainer);
+                domConstruct.create("p", {
+                    innerHTML: nls.user.shareUserTextMessage
                 }, iconContainer);
                 domConstruct.create("a", {
-                    className: "fa fa-facebook-square iconClass",
+                    className: "fa fa-facebook-square iconClass text-primary",
                     id: "facebookIcon"
-                }, facebookIconHolder);
-                twitterIconHolder = domConstruct.create("div", {
-                    className: "pull-left"
                 }, iconContainer);
                 domConstruct.create("a", {
-                    className: "fa fa-twitter-square iconClass",
+                    className: "fa fa-twitter-square iconClass text-primary",
                     id: "twitterIcon"
-                }, twitterIconHolder);
-                googlePlusIconHolder = domConstruct.create("div", {
-                    className: "pull-left"
                 }, iconContainer);
                 domConstruct.create("a", {
-                    className: "fa fa-google-plus-square iconClass",
+                    className: "fa fa-google-plus-square iconClass text-primary",
                     id: "google-plusIcon"
-                }, googlePlusIconHolder);
+                }, iconContainer);
             }
-            mailIconHolder = domConstruct.create("div", {
-                className: "pull-left"
-            }, iconContainer);
             domConstruct.create("a", {
-                className: "fa fa-envelope iconClass",
+                className: "fa fa-envelope iconClass text-primary",
                 id: "mailIcon"
-            }, mailIconHolder);
-            domConstruct.create("br", {}, iconContainer);
-            domConstruct.create("br", {}, iconContainer);
-            domConstruct.create("br", {}, iconContainer);
+            }, iconContainer);
             domConstruct.create("div", {
-                className: "share-dialog-subheader",
-                innerHTML: nls.builder.shareModalFormText
+                className: "clearfix"
+            }, iconContainer);
+            domConstruct.create("h3", {
+                innerHTML: nls.user.shareModalFormText
             }, iconContainer);
             domConstruct.create("input", {
                 type: "text",
-                className: "share-map-url",
-                id: "_shareMapUrlText"
+                className: "form-control",
+                id: "shareMapUrlText"
             }, iconContainer);
         },
         //function to enable the tab passed in input parameter

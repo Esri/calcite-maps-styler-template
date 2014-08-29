@@ -24,12 +24,14 @@ define([
     "dojo/i18n!application/nls/resources",
     "esri/geometry/webMercatorUtils",
     "esri/geometry/Point",
+    "esri/layers/GraphicsLayer",
     "application/ShareModal",
     "application/FullScreenMap",
     "application/localStorageHelper",
     "esri/graphic",
     "esri/symbols/PictureMarkerSymbol",
     "esri/toolbars/edit",
+    "esri/InfoTemplate",
     "esri/dijit/Popup",
     "application/themes",
     "application/pushpins",
@@ -57,7 +59,7 @@ define([
     Geocoder,
     modalTemplate,
     userTemplate,
-    nls, webMercatorUtils, Point, ShareModal, FullScreenMap, localStorageHelper, Graphic, PictureMarkerSymbol, editToolbar, Popup, theme, pushpins, coordinator, locale) {
+    nls, webMercatorUtils, Point, GraphicsLayer, ShareModal, FullScreenMap, localStorageHelper, Graphic, PictureMarkerSymbol, editToolbar, InfoTemplate, Popup, theme, pushpins, coordinator, locale) {
     return declare([], {
         nls: nls,
         config: {},
@@ -214,7 +216,7 @@ define([
                         };
                     } else {
                         // no theme set
-                        if(!this.config.theme){
+                        if (!this.config.theme) {
                             // lets use bootstrap theme!
                             this.config.theme = "bootstrap";
                         }
@@ -234,7 +236,7 @@ define([
                     }
 
                     var submitButtonNode = dom.byId('submitButton');
-                    if(submitButtonNode){
+                    if (submitButtonNode) {
                         on(submitButtonNode, "click", lang.hitch(this, function (evt) {
                             var btn = $(submitButtonNode);
                             btn.button('loading');
@@ -254,7 +256,7 @@ define([
                                 }
                                 //handle errors in radio and checkbox fields here.
                                 else {
-                                    if (domClass.contains(currentField, "mandatory") && query(".radioInput:checked", currentField).length === 0 && query(".checkboxContainer", currentField).length===0) {
+                                    if (domClass.contains(currentField, "mandatory") && query(".radioInput:checked", currentField).length === 0 && query(".checkboxContainer", currentField).length === 0) {
                                         erroneousFields.push(currentField);
                                     }
                                 }
@@ -266,9 +268,9 @@ define([
                                 errorMessage += "<ol>";
                                 errorMessage += "<li>" + nls.user.formValidationMessageAlertText + "\n <ul>";
                                 array.forEach(erroneousFields, function (erroneousField) {
-                                    if (query(".form-control", erroneousField).length !== 0 && query(".form-control", erroneousField)[0].placeholder){
+                                    if (query(".form-control", erroneousField).length !== 0 && query(".form-control", erroneousField)[0].placeholder) {
                                         errorMessage += "<li><a href='#" + erroneousField.childNodes[0].id + "'>" + erroneousField.childNodes[0].textContent.split(nls.user.requiredField)[0] + "</a>. " + query(".form-control", erroneousField)[0].placeholder + "</li>";
-                                    } else{
+                                    } else {
                                         errorMessage += "<li><a href='#" + erroneousField.childNodes[0].id + "'>" + erroneousField.childNodes[0].textContent.split(nls.user.requiredField)[0] + "</a></li>";
                                     }
                                 });
@@ -316,6 +318,9 @@ define([
         },
         // Map is ready
         _mapLoaded: function () {
+            // make graphics layer
+            this._gl = new GraphicsLayer();
+            this.map.addLayer(this._gl);
             // add border radius to map
             domClass.add(this.map.root, 'panel');
             // remove loading class from body
@@ -337,13 +342,16 @@ define([
             on(this.editToolbar, "graphic-move-stop", lang.hitch(this, function (evt) {
                 this.addressGeometry = evt.graphic.geometry;
             }));
+            // show info window on graphic click
+            on(this.editToolbar, "graphic-click", lang.hitch(this, function (evt) {
+                var graphic = evt.graphic;
+                this.map.infoWindow.setFeatures([graphic]);
+                this.map.infoWindow.show(graphic.geometry);
+            }));
             on(this.map, 'click', lang.hitch(this, function (evt) {
                 if (!evt.graphic) {
                     this._clearSubmissionGraphic();
                     this.addressGeometry = evt.mapPoint;
-                    this.map.infoWindow.setTitle(nls.user.locationPopupTitle);
-                    this.map.infoWindow.setContent(nls.user.addressSearchText);
-                    this.map.infoWindow.show(this.addressGeometry);
                     this._setSymbol(this.addressGeometry);
                 }
             }));
@@ -412,14 +420,19 @@ define([
             }
         },
         _setSymbol: function (point) {
-            var symbolUrl, pictureMarkerSymbol, graphic;
+            var symbolUrl, pictureMarkerSymbol, graphic, it;
             array.some(this.pins, lang.hitch(this, function (currentPin) {
                 if (this.config.pushpinColor == currentPin.id) {
                     symbolUrl = currentPin.url;
                     // create symbol and offset 10 to the left and 17 to the bottom so it points correctly
                     pictureMarkerSymbol = new PictureMarkerSymbol(symbolUrl, currentPin.width, currentPin.height).setOffset(currentPin.offset.x, currentPin.offset.y);
-                    graphic = new Graphic(point, pictureMarkerSymbol, null, null);
-                    this.map.graphics.add(graphic);
+                    it = new InfoTemplate(nls.user.locationPopupTitle, "${text}");
+                    graphic = new Graphic(point, pictureMarkerSymbol, {
+                        text: nls.user.addressSearchText
+                    }, it);
+                    this._gl.add(graphic);
+                    this.map.infoWindow.setFeatures([graphic]);
+                    this.map.infoWindow.show(graphic.geometry);
                     this.editToolbar.activate(editToolbar.MOVE, graphic, null);
                     return true;
                 }
@@ -465,7 +478,8 @@ define([
         //function to validate and create the form
         _createForm: function (fields) {
             var formContent, labelContent, inputContent, selectOptions, helpBlock, fileInput, matchingField, newAddedFields = [],
-                fieldname, fieldLabelText, sortedArray, radioButtonCounter = 0,checkboxContainer,checkboxContent, checkBoxCounter = 0;
+                fieldname, fieldLabelText, sortedArray, radioButtonCounter = 0,
+                checkboxContainer, checkboxContent, checkBoxCounter = 0;
             if (!this.map.getLayer(this.config.form_layer.id)) {
                 this._showErrorMessageDiv(nls.user.noLayerConfiguredMessage);
                 array.some(query(".row"), lang.hitch(this, function (currentNode) {
@@ -521,16 +535,14 @@ define([
             array.forEach(sortedArray, lang.hitch(this, function (currentField, index) {
                 var radioContainer, radioContent, inputLabel, radioInput, formContent, requireField, rangeHelpText;
                 //code to put asterisk mark for mandatory fields and also to give it a mandatory class.
-                formContent = domConstruct.create("div", {
-                }, userFormNode);
+                formContent = domConstruct.create("div", {}, userFormNode);
                 if ((!currentField.nullable || currentField.typeField) && currentField.displayType !== "checkbox") {
                     domClass.add(formContent, "form-group has-feedback geoFormQuestionare mandatory");
                     requireField = domConstruct.create("small", {
                         className: 'requireFieldStyle',
                         innerHTML: nls.user.requiredField
                     }, formContent);
-                }
-                else {
+                } else {
                     domClass.add(formContent, "form-group geoFormQuestionare has-feedback");
                 }
                 if (currentField.alias) {
@@ -684,8 +696,7 @@ define([
                             }
                             radioButtonCounter++;
                         }
-                    }
-                    else {
+                    } else {
                         //if field type is date
                         if (currentField.type == "esriFieldTypeDate") {
                             inputContent = domConstruct.create("input", {
@@ -695,8 +706,12 @@ define([
                             }, formContent);
                             $(inputContent).datetimepicker({
                                 useSeconds: false,
-                                maxDate: locale.format(new Date(currentField.domain.maxValue), { fullYear: true }),
-                                minDate: locale.format(new Date(currentField.domain.minValue), { fullYear: true })
+                                maxDate: locale.format(new Date(currentField.domain.maxValue), {
+                                    fullYear: true
+                                }),
+                                minDate: locale.format(new Date(currentField.domain.minValue), {
+                                    fullYear: true
+                                })
                             }).on("dp.hide", function (evt) {
                                 if (evt.currentTarget.value === "") {
                                     domClass.remove(evt.target.parentElement, "has-success");
@@ -708,7 +723,9 @@ define([
                             });
                             if (currentField.defaultValue) {
                                 var m = new Date(currentField.defaultValue);
-                                var rangeDefaultDate = locale.format(m, { fullYear: true });
+                                var rangeDefaultDate = locale.format(m, {
+                                    fullYear: true
+                                });
                                 $(inputContent).data("DateTimePicker").setDate(rangeDefaultDate);
                                 domClass.add(inputContent.parentNode, "has-success");
                             }
@@ -724,115 +741,114 @@ define([
                             rangeHelpText = this._setRangeForm(currentField, formContent, fieldname);
                         }
                     }
-                }
-                else {
+                } else {
                     //Condition to check if a checkbox is required for integer fields in user form
                     if (currentField.displayType && currentField.displayType === "checkbox") {
                         currentField.type = "binaryInteger";
                     }
                     switch (currentField.type) {
-                        case "esriFieldTypeString":
-                            if (currentField.displayType && currentField.displayType === "textarea") {
-                                inputContent = domConstruct.create("textarea", {
-                                    className: "form-control",
-                                    "data-input-type": "String",
-                                    "rows": 5,
-                                    "maxLength": currentField.length,
-                                    "id": fieldname
-                                }, formContent);
-                            } else {
-                                inputContent = domConstruct.create("input", {
-                                    type: "text",
-                                    className: "form-control",
-                                    "data-input-type": "String",
-                                    "maxLength": currentField.length,
-                                    "id": fieldname
-                                }, formContent);
-                            }
-                            break;
-                        case "binaryInteger":
-                            checkboxContainer = domConstruct.create("div", {
-                                className: "checkboxContainer"
-                            }, formContent);
-
-                            checkboxContent = domConstruct.create("div", {
-                                className: "checkbox"
-                            }, checkboxContainer);
-                            inputLabel = domConstruct.create("label", {
-                                "for": fieldname
-                            }, checkboxContent);
-                            inputContent = domConstruct.create("input", {
-                                className: "checkboxInput",
-                                type: "checkbox",
-                                "data-input-type": "binaryInteger",
-                                "id": fieldname
-                            }, inputLabel);
-                            domAttr.set(inputContent, "checkboxContainerIndex", checkBoxCounter);
-                            inputLabel.innerHTML += fieldLabelText;
-                            checkBoxCounter++;
-                            break;
-
-                        case "esriFieldTypeSmallInteger":
-                            inputContent = domConstruct.create("input", {
-                                type: "text",
+                    case "esriFieldTypeString":
+                        if (currentField.displayType && currentField.displayType === "textarea") {
+                            inputContent = domConstruct.create("textarea", {
                                 className: "form-control",
-                                "data-input-type": "SmallInteger",
-                                "id": fieldname,
-                                "pattern": "[0-9]*"
-                            }, formContent);
-                            break;
-                        case "esriFieldTypeInteger":
-                            inputContent = domConstruct.create("input", {
-                                type: "text",
-                                className: "form-control",
-                                "data-input-type": "Integer",
-                                "id": fieldname,
-                                "pattern": "[0-9]*"
-                            }, formContent);
-                            break;
-                        case "esriFieldTypeSingle":
-                            inputContent = domConstruct.create("input", {
-                                type: "text",
-                                className: "form-control",
-                                "data-input-type": "Single",
-                                "id": fieldname,
-                                "pattern": "[0-9]*"
-                            }, formContent);
-                            break;
-                        case "esriFieldTypeDouble":
-                            inputContent = domConstruct.create("input", {
-                                type: "text",
-                                className: "form-control",
-                                "data-input-type": "Double",
-                                "id": fieldname,
-                                step: ".1"
-                            }, formContent);
-                            break;
-                        case "esriFieldTypeDate":
-                            inputContent = domConstruct.create("input", {
-                                type: "text",
-                                value: "",
-                                className: "form-control hasDatetimepicker",
-                                "data-input-type": "Date",
+                                "data-input-type": "String",
+                                "rows": 5,
+                                "maxLength": currentField.length,
                                 "id": fieldname
                             }, formContent);
-                            $(inputContent).datetimepicker({
-                                useSeconds: false
-                            }).on('dp.change, dp.show', function (evt) {
-                                domClass.remove(evt.target.parentElement, "has-error");
-                                domClass.add(evt.target.parentElement, "has-success");
-                            }).on('dp.error', function (evt) {
-                                evt.target.value = '';
-                                $(this).data("DateTimePicker").hide();
+                        } else {
+                            inputContent = domConstruct.create("input", {
+                                type: "text",
+                                className: "form-control",
+                                "data-input-type": "String",
+                                "maxLength": currentField.length,
+                                "id": fieldname
+                            }, formContent);
+                        }
+                        break;
+                    case "binaryInteger":
+                        checkboxContainer = domConstruct.create("div", {
+                            className: "checkboxContainer"
+                        }, formContent);
+
+                        checkboxContent = domConstruct.create("div", {
+                            className: "checkbox"
+                        }, checkboxContainer);
+                        inputLabel = domConstruct.create("label", {
+                            "for": fieldname
+                        }, checkboxContent);
+                        inputContent = domConstruct.create("input", {
+                            className: "checkboxInput",
+                            type: "checkbox",
+                            "data-input-type": "binaryInteger",
+                            "id": fieldname
+                        }, inputLabel);
+                        domAttr.set(inputContent, "checkboxContainerIndex", checkBoxCounter);
+                        inputLabel.innerHTML += fieldLabelText;
+                        checkBoxCounter++;
+                        break;
+
+                    case "esriFieldTypeSmallInteger":
+                        inputContent = domConstruct.create("input", {
+                            type: "text",
+                            className: "form-control",
+                            "data-input-type": "SmallInteger",
+                            "id": fieldname,
+                            "pattern": "[0-9]*"
+                        }, formContent);
+                        break;
+                    case "esriFieldTypeInteger":
+                        inputContent = domConstruct.create("input", {
+                            type: "text",
+                            className: "form-control",
+                            "data-input-type": "Integer",
+                            "id": fieldname,
+                            "pattern": "[0-9]*"
+                        }, formContent);
+                        break;
+                    case "esriFieldTypeSingle":
+                        inputContent = domConstruct.create("input", {
+                            type: "text",
+                            className: "form-control",
+                            "data-input-type": "Single",
+                            "id": fieldname,
+                            "pattern": "[0-9]*"
+                        }, formContent);
+                        break;
+                    case "esriFieldTypeDouble":
+                        inputContent = domConstruct.create("input", {
+                            type: "text",
+                            className: "form-control",
+                            "data-input-type": "Double",
+                            "id": fieldname,
+                            step: ".1"
+                        }, formContent);
+                        break;
+                    case "esriFieldTypeDate":
+                        inputContent = domConstruct.create("input", {
+                            type: "text",
+                            value: "",
+                            className: "form-control hasDatetimepicker",
+                            "data-input-type": "Date",
+                            "id": fieldname
+                        }, formContent);
+                        $(inputContent).datetimepicker({
+                            useSeconds: false
+                        }).on('dp.change, dp.show', function (evt) {
+                            domClass.remove(evt.target.parentElement, "has-error");
+                            domClass.add(evt.target.parentElement, "has-success");
+                        }).on('dp.error', function (evt) {
+                            evt.target.value = '';
+                            $(this).data("DateTimePicker").hide();
+                            domClass.remove(evt.target.parentElement, "has-success");
+                            domClass.add(evt.target.parentElement, "has-error");
+                        }).on("dp.hide", function (evt) {
+                            if (evt.currentTarget.value === "") {
                                 domClass.remove(evt.target.parentElement, "has-success");
-                                domClass.add(evt.target.parentElement, "has-error");
-                            }).on("dp.hide", function (evt) {
-                                if (evt.currentTarget.value === "") {
-                                    domClass.remove(evt.target.parentElement, "has-success");
-                                    domClass.remove(evt.target.parentElement, "has-error");
-                                }
-                            });
-                            break;
+                                domClass.remove(evt.target.parentElement, "has-error");
+                            }
+                        });
+                        break;
                     }
                     //Add Placeholder if present
                     if (currentField.tooltip) {
@@ -899,7 +915,7 @@ define([
                     "capture": "camera",
                     "name": "attachment"
                 }, formContent);
-                if(this.config.attachmentHelpText){
+                if (this.config.attachmentHelpText) {
                     helpBlock = domConstruct.create("p", {
                         className: "help-block",
                         innerHTML: this.config.attachmentHelpText
@@ -948,8 +964,11 @@ define([
         },
 
         _validateField: function (currentNode, iskeyPress) {
-            var inputType, inputValue, displayType = null, node, typeCastedInputValue, decimal = /^[-+]?[0-9]+$/,
-                float = /^[-+]?[0-9]+\.[0-9]+$/, email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, url = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
+            var inputType, inputValue, displayType = null,
+                node, typeCastedInputValue, decimal = /^[-+]?[0-9]+$/,
+                float = /^[-+]?[0-9]+\.[0-9]+$/,
+                email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                url = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
             if (iskeyPress) {
                 inputValue = currentNode.currentTarget.value;
                 inputType = domAttr.get(currentNode.currentTarget, "data-input-type");
@@ -970,50 +989,49 @@ define([
                 node = query(".form-control", currentNode)[0].parentElement;
             }
             switch (inputType) {
-                case "String":
-                    if (inputValue.length !== 0 && ((displayType === "email" && inputValue.match(email)) || (displayType === "url" && inputValue.match(url)) || displayType === null) || displayType === "text" || displayType === "textarea") {
-                        this._validateUserInput(true, node, inputValue, iskeyPress);
-                    }
-                    else {
-                        this._validateUserInput(false, node, inputValue, iskeyPress);
-                    }
-                    break;
-                case "SmallInteger":
-                    typeCastedInputValue = parseInt(inputValue);
-                    if ((inputValue.match(decimal) && typeCastedInputValue > -32768 && typeCastedInputValue < 32767) && inputValue.length !== 0) {
-                        this._validateUserInput(true, node, inputValue);
-                    } else {
-                        this._validateUserInput(false, node, inputValue, iskeyPress);
-                    }
-                    break;
-                case "Integer":
-                    typeCastedInputValue = parseInt(inputValue);
-                    if ((inputValue.match(decimal) && typeCastedInputValue > -2147483648 && typeCastedInputValue <= 2147483647) && inputValue.length !== 0) {
-                        this._validateUserInput(true, node, inputValue, iskeyPress);
-                    } else {
-                        this._validateUserInput(false, node, inputValue, iskeyPress);
-                    }
-                    break;
-                case "Single":
-                    //zero of more occurence of (+-) at the start of expression
-                    //atleast one occurence of digits between o-9
-                    //occurence of .
-                    //atleast one occurence of digits between o-9 in the end
-                    typeCastedInputValue = parseFloat(inputValue);
-                    if (((inputValue.match(decimal) || inputValue.match(float)) && typeCastedInputValue > -3.4 * Math.pow(10, 38) && typeCastedInputValue < 1.2 * Math.pow(10, 38)) && inputValue.length !== 0) {
-                        this._validateUserInput(true, node, inputValue, iskeyPress);
-                    } else {
-                        this._validateUserInput(false, node, inputValue, iskeyPress);
-                    }
-                    break;
-                case "Double":
-                    typeCastedInputValue = parseFloat(inputValue);
-                    if (((inputValue.match(decimal) || inputValue.match(float)) && typeCastedInputValue > -2.2 * Math.pow(10, 308) && typeCastedInputValue < 1.8 * Math.pow(10, 38)) && inputValue.length !== 0) {
-                        this._validateUserInput(true, node, inputValue, iskeyPress);
-                    } else {
-                        this._validateUserInput(false, node, inputValue, iskeyPress);
-                    }
-                    break;
+            case "String":
+                if (inputValue.length !== 0 && ((displayType === "email" && inputValue.match(email)) || (displayType === "url" && inputValue.match(url)) || displayType === null) || displayType === "text" || displayType === "textarea") {
+                    this._validateUserInput(true, node, inputValue, iskeyPress);
+                } else {
+                    this._validateUserInput(false, node, inputValue, iskeyPress);
+                }
+                break;
+            case "SmallInteger":
+                typeCastedInputValue = parseInt(inputValue);
+                if ((inputValue.match(decimal) && typeCastedInputValue > -32768 && typeCastedInputValue < 32767) && inputValue.length !== 0) {
+                    this._validateUserInput(true, node, inputValue);
+                } else {
+                    this._validateUserInput(false, node, inputValue, iskeyPress);
+                }
+                break;
+            case "Integer":
+                typeCastedInputValue = parseInt(inputValue);
+                if ((inputValue.match(decimal) && typeCastedInputValue > -2147483648 && typeCastedInputValue <= 2147483647) && inputValue.length !== 0) {
+                    this._validateUserInput(true, node, inputValue, iskeyPress);
+                } else {
+                    this._validateUserInput(false, node, inputValue, iskeyPress);
+                }
+                break;
+            case "Single":
+                //zero of more occurence of (+-) at the start of expression
+                //atleast one occurence of digits between o-9
+                //occurence of .
+                //atleast one occurence of digits between o-9 in the end
+                typeCastedInputValue = parseFloat(inputValue);
+                if (((inputValue.match(decimal) || inputValue.match(float)) && typeCastedInputValue > -3.4 * Math.pow(10, 38) && typeCastedInputValue < 1.2 * Math.pow(10, 38)) && inputValue.length !== 0) {
+                    this._validateUserInput(true, node, inputValue, iskeyPress);
+                } else {
+                    this._validateUserInput(false, node, inputValue, iskeyPress);
+                }
+                break;
+            case "Double":
+                typeCastedInputValue = parseFloat(inputValue);
+                if (((inputValue.match(decimal) || inputValue.match(float)) && typeCastedInputValue > -2.2 * Math.pow(10, 308) && typeCastedInputValue < 1.8 * Math.pow(10, 38)) && inputValue.length !== 0) {
+                    this._validateUserInput(true, node, inputValue, iskeyPress);
+                } else {
+                    this._validateUserInput(false, node, inputValue, iskeyPress);
+                }
+                break;
             }
         },
         _clearFormFields: function () {
@@ -1161,50 +1179,47 @@ define([
                 }
             }), this.reportError);
         },
-        _convertUTM: function(){
+        _convertUTM: function () {
             this._clearSubmissionGraphic();
             var northing = parseFloat(dom.byId('utm_northing').value);
             var easting = parseFloat(dom.byId('utm_easting').value);
             var zone = parseInt(dom.byId('utm_zone_number').value, 10);
             var converted;
             var fn = coordinator('utm', 'latlong');
-            try{
+            try {
                 converted = fn(northing, easting, zone);
-            }
-            catch(e){
+            } catch (e) {
                 this._coordinatesError('utm');
             }
-            if(converted){
+            if (converted) {
                 this._locatePointOnMap(converted.latitude, converted.longitude, 'utm');
             }
         },
-        _convertUSNG: function(){
+        _convertUSNG: function () {
             this._clearSubmissionGraphic();
             var value = dom.byId('usng_coord').value;
             var fn = coordinator('usng', 'latlong');
             var converted;
-            try{
+            try {
                 converted = fn(value);
+            } catch (e) {
+                this._coordinatesError('usng');
             }
-            catch(e){
-               this._coordinatesError('usng');
-            }
-            if(converted){
+            if (converted) {
                 this._locatePointOnMap(converted.latitude, converted.longitude, 'usng');
             }
         },
-        _convertMGRS: function(){
+        _convertMGRS: function () {
             this._clearSubmissionGraphic();
             var value = dom.byId('mgrs_coord').value;
             var fn = coordinator('mgrs', 'latlong');
             var converted;
-            try{
+            try {
                 converted = fn(value);
+            } catch (e) {
+                this._coordinatesError('mgrs');
             }
-            catch(e){
-               this._coordinatesError('mgrs');
-            }
-            if(converted){
+            if (converted) {
                 this._locatePointOnMap(converted.latitude, converted.longitude, 'mgrs');
             }
         },
@@ -1214,15 +1229,15 @@ define([
             this._clearSubmissionGraphic();
             if (latNode.value === "") {
                 this._showErrorMessageDiv(string.substitute(nls.user.emptylatitudeAlertMessage, {
-                            openLink: '<a href="#lat_coord\">',
-                            closeLink: '</a>'
-                        }));
+                    openLink: '<a href="#lat_coord\">',
+                    closeLink: '</a>'
+                }));
                 return;
             } else if (lngNode.value === "") {
                 this._showErrorMessageDiv(string.substitute(nls.user.emptylongitudeAlertMessage, {
-                            openLink: '<a href="#lng_coord\">',
-                            closeLink: '</a>'
-                        }));
+                    openLink: '<a href="#lng_coord\">',
+                    closeLink: '</a>'
+                }));
                 return;
             }
             this._locatePointOnMap(latNode.value, lngNode.value, 'latlon');
@@ -1249,9 +1264,6 @@ define([
                     var pt = webMercatorUtils.geographicToWebMercator(evt.graphic.geometry);
                     evt.graphic.setGeometry(pt);
                     this.addressGeometry = pt;
-                    this.map.infoWindow.setTitle(nls.user.myLocationTitleText);
-                    this.map.infoWindow.setContent(nls.user.addressSearchText);
-                    this.map.infoWindow.show(this.addressGeometry);
                     this._setSymbol(evt.graphic.geometry);
                 }
                 $('#geolocate_button').button('reset');
@@ -1282,12 +1294,12 @@ define([
                 }));
             }
         },
-        _geocoderMenuItems: function(){
+        _geocoderMenuItems: function () {
             var html = '';
-            for(var i = 0; i < this.geocodeAddress._geocoders.length; i++){
+            for (var i = 0; i < this.geocodeAddress._geocoders.length; i++) {
                 var gc = this.geocodeAddress._geocoders[i];
                 var active = '';
-                if(i === this.geocodeAddress.activeGeocoderIndex){
+                if (i === this.geocodeAddress.activeGeocoderIndex) {
                     active = 'active';
                 }
                 html += '<li class="' + active + '"><a data-index="' + i + '" href="#">' + gc.name + '</a></li>';
@@ -1299,7 +1311,7 @@ define([
             var options = this._createGeocoderOptions();
             this.geocodeAddress = new Geocoder(options, domConstruct.create('div'));
             this.geocodeAddress.startup();
-            if(this.geocodeAddress._geocoders && this.geocodeAddress._geocoders.length > 1){
+            if (this.geocodeAddress._geocoders && this.geocodeAddress._geocoders.length > 1) {
                 var html = '';
                 html += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">';
                 html += '<span class="caret"></span>';
@@ -1330,12 +1342,9 @@ define([
             on(this.geocodeAddress, "select", lang.hitch(this, function (evt) {
                 this.addressGeometry = evt.result.feature.geometry;
                 this._setSymbol(evt.result.feature.geometry);
-                this.map.centerAt(evt.result.feature.geometry).then(lang.hitch(this, function(){
+                this.map.centerAt(evt.result.feature.geometry).then(lang.hitch(this, function () {
                     this._resizeMap();
                 }));
-                this.map.infoWindow.setTitle(nls.user.locationPopupTitle);
-                this.map.infoWindow.setContent(nls.user.addressSearchText);
-                this.map.infoWindow.show(evt.result.feature.geometry);
             }));
 
             on(this.geocodeAddress, "geocoder-select", lang.hitch(this, function () {
@@ -1343,8 +1352,8 @@ define([
                 this._geocoderMenuItems();
             }));
             var gcMenu = dom.byId('geocoder_menu');
-            if(gcMenu){
-                on(gcMenu, 'a:click', lang.hitch(this, function(evt){
+            if (gcMenu) {
+                on(gcMenu, 'a:click', lang.hitch(this, function (evt) {
                     var idx = parseInt(domAttr.get(evt.target, 'data-index'), 10);
                     this.geocodeAddress.set('activeGeocoderIndex', idx);
                     evt.preventDefault();
@@ -1391,6 +1400,7 @@ define([
                 //code for apply-edits
                 this.map.getLayer(config.form_layer.id).applyEdits([featureData], null, null, lang.hitch(this, function (addResults) {
                     this._clearSubmissionGraphic();
+                    this._clearFormFields();
                     this.map.getLayer(config.form_layer.id).setEditable(false);
                     domConstruct.destroy(query(".errorMessage")[0]);
                     if (!addResults[0].success) {
@@ -1401,7 +1411,6 @@ define([
                     if (this.config.defaultMapExtent) {
                         this.map.setExtent(this.defaultExtent);
                     }
-                    $("#myModal").modal('show');
                     this.map.getLayer(config.form_layer.id).refresh();
                     this._resetButton();
                     if (userFormNode[userFormNode.length - 1].value !== "" && this.map.getLayer(config.form_layer.id).hasAttachments) {
@@ -1409,7 +1418,7 @@ define([
                             console.log(nls.user.addAttachmentFailedMessage);
                         });
                     }
-                    this._clearFormFields();
+                    window.location.href = '#top';
                 }), lang.hitch(this, function () {
                     this._clearSubmissionGraphic();
                     this.map.getLayer(this.config.form_layer.id).setEditable(false);
@@ -1430,39 +1439,39 @@ define([
         },
         _clearSubmissionGraphic: function () {
             this.addressGeometry = null;
-            this.map.graphics.clear();
+            this._gl.clear();
             if (this.map.infoWindow.isShowing) {
                 this.map.infoWindow.hide();
             }
         },
 
-        _coordinatesError: function(type){
-            switch(type){
-                    case "utm":
-                        this._showErrorMessageDiv(string.substitute(nls.user.invalidUTM, {
-                            openLink: '<a href="#utm_northing">',
-                            closeLink: '</a>'
-                        }));
-                        break;
-                    case "usng":
-                        this._showErrorMessageDiv(string.substitute(nls.user.invalidUSNG, {
-                            openLink: '<a href="#usng_coord">',
-                            closeLink: '</a>'
-                        }));
-                        break;
-                    case "mgrs":
-                        this._showErrorMessageDiv(string.substitute(nls.user.invalidMGRS, {
-                            openLink: '<a href="#mgrs_coord">',
-                            closeLink: '</a>'
-                        }));
-                        break;
-                    default:
-                        this._showErrorMessageDiv(string.substitute(nls.user.invalidLatLong, {
-                            latLink: '<a href="#lat_coord">',
-                            lngLink: '<a href="#lng_coord">',
-                            closeLink: '</a>'
-                        }));
-                }
+        _coordinatesError: function (type) {
+            switch (type) {
+            case "utm":
+                this._showErrorMessageDiv(string.substitute(nls.user.invalidUTM, {
+                    openLink: '<a href="#utm_northing">',
+                    closeLink: '</a>'
+                }));
+                break;
+            case "usng":
+                this._showErrorMessageDiv(string.substitute(nls.user.invalidUSNG, {
+                    openLink: '<a href="#usng_coord">',
+                    closeLink: '</a>'
+                }));
+                break;
+            case "mgrs":
+                this._showErrorMessageDiv(string.substitute(nls.user.invalidMGRS, {
+                    openLink: '<a href="#mgrs_coord">',
+                    closeLink: '</a>'
+                }));
+                break;
+            default:
+                this._showErrorMessageDiv(string.substitute(nls.user.invalidLatLong, {
+                    latLink: '<a href="#lat_coord">',
+                    lngLink: '<a href="#lng_coord">',
+                    closeLink: '</a>'
+                }));
+            }
         },
 
         _locatePointOnMap: function (x, y, type) {
@@ -1471,10 +1480,7 @@ define([
                 var pt = webMercatorUtils.geographicToWebMercator(mapLocation);
                 this.addressGeometry = pt;
                 this._setSymbol(this.addressGeometry);
-                this.map.infoWindow.setTitle(nls.user.locationPopupTitle);
-                this.map.infoWindow.setContent(nls.user.addressSearchText);
-                this.map.infoWindow.show(this.addressGeometry);
-                this.map.centerAt(this.addressGeometry).then(lang.hitch(this, function(){
+                this.map.centerAt(this.addressGeometry).then(lang.hitch(this, function () {
                     this._resizeMap();
                 }));
                 var errorMessageNode = dom.byId('errorMessageDiv');
@@ -1485,6 +1491,9 @@ define([
         },
 
         _openShareModal: function () {
+            if (this._ShareModal) {
+                this._ShareModal.destroy();
+            }
             this._createShareDlgContent();
             this._ShareModal = new ShareModal({
                 bitlyLogin: this.config.bitlyLogin,
@@ -1503,8 +1512,7 @@ define([
             var errorMsgContainer;
             domConstruct.empty(query(".modal-body")[0]);
             domAttr.set(dom.byId('myModalLabel'), "innerHTML", nls.user.error);
-            errorMsgContainer = domConstruct.create("div", {
-            }, query(".modal-body")[0]);
+            errorMsgContainer = domConstruct.create("div", {}, query(".modal-body")[0]);
             domConstruct.create("div", {
                 className: "alert alert-danger errorMessage",
                 innerHTML: nls.user.applyEditsFailedMessage
@@ -1515,57 +1523,51 @@ define([
         },
 
         _createShareDlgContent: function () {
-            var iconContainer, facebookIconHolder, twitterIconHolder, googlePlusIconHolder, mailIconHolder;
+            var iconContainer;
             domConstruct.empty(query(".modal-body")[0]);
             domAttr.set(dom.byId('myModalLabel'), "innerHTML", nls.user.shareUserTitleMessage);
             iconContainer = domConstruct.create("div", {
                 className: "iconContainer"
             }, query(".modal-body")[0]);
             domConstruct.create("div", {
-                className: "share-dialog-subheader",
-                innerHTML: nls.user.shareUserTextMessage
+                className: "alert alert-success",
+                role: "alert",
+                innerHTML: nls.user.entrySubmitted
             }, iconContainer);
             if (this.config.enableSharing) {
-                facebookIconHolder = domConstruct.create("div", {
-                    className: "pull-left"
+                domConstruct.create("h3", {
+                    innerHTML: nls.user.shareThisForm
+                }, iconContainer);
+                domConstruct.create("p", {
+                    innerHTML: nls.user.shareUserTextMessage
                 }, iconContainer);
                 domConstruct.create("a", {
-                    className: "fa fa-facebook-square iconClass",
+                    className: "fa fa-facebook-square iconClass text-primary",
                     id: "facebookIcon"
-                }, facebookIconHolder);
-                twitterIconHolder = domConstruct.create("div", {
-                    className: "pull-left"
                 }, iconContainer);
                 domConstruct.create("a", {
-                    className: "fa fa-twitter-square iconClass",
+                    className: "fa fa-twitter-square iconClass text-primary",
                     id: "twitterIcon"
-                }, twitterIconHolder);
-                googlePlusIconHolder = domConstruct.create("div", {
-                    className: "pull-left"
                 }, iconContainer);
                 domConstruct.create("a", {
-                    className: "fa fa-google-plus-square iconClass",
+                    className: "fa fa-google-plus-square iconClass text-primary",
                     id: "google-plusIcon"
-                }, googlePlusIconHolder);
+                }, iconContainer);
             }
-            mailIconHolder = domConstruct.create("div", {
-                className: "pull-left"
-            }, iconContainer);
             domConstruct.create("a", {
-                className: "fa fa-envelope iconClass",
+                className: "fa fa-envelope iconClass text-primary",
                 id: "mailIcon"
-            }, mailIconHolder);
-            domConstruct.create("br", {}, iconContainer);
-            domConstruct.create("br", {}, iconContainer);
-            domConstruct.create("br", {}, iconContainer);
+            }, iconContainer);
             domConstruct.create("div", {
-                className: "share-dialog-subheader",
+                className: "clearfix"
+            }, iconContainer);
+            domConstruct.create("h3", {
                 innerHTML: nls.user.shareModalFormText
             }, iconContainer);
             domConstruct.create("input", {
                 type: "text",
-                className: "share-map-url",
-                id: "_shareMapUrlText"
+                className: "form-control",
+                id: "shareMapUrlText"
             }, iconContainer);
         },
 
@@ -1588,10 +1590,10 @@ define([
         },
 
         _setWebmapDefaults: function () {
-            if(this.config.details.Title !== false){
+            if (this.config.details.Title !== false) {
                 this.config.details.Title = this.config.itemInfo.item.title;
             }
-            if(this.config.details.Description !== false){
+            if (this.config.details.Description !== false) {
                 this.config.details.Description = this.config.itemInfo.item.snippet;
             }
             if (this.config.itemInfo.item.thumbnail && this.config.details.Logo !== false) {
@@ -1603,7 +1605,7 @@ define([
                 if (currentLayer.url.split("/")[currentLayer.url.split("/").length - 2] == "FeatureServer") {
                     this.config.form_layer.id = currentLayer.id;
                     // if fields not set or empty
-                    if(!this.config.fields || (this.config.fields && this.config.fields.length === 0)){
+                    if (!this.config.fields || (this.config.fields && this.config.fields.length === 0)) {
                         this.config.fields = this.map.getLayer(this.config.form_layer.id).fields;
                     }
                     return true;
@@ -1611,8 +1613,8 @@ define([
             }));
         },
 
-        _resizeMap: function(force){
-            if(this.map){
+        _resizeMap: function (force) {
+            if (this.map) {
                 this.map.reposition();
                 this.map.resize(force);
             }
@@ -1623,7 +1625,7 @@ define([
             var locationTabs = query(".nav-tabs li");
             var tabContents = query(".tab-pane");
             for (var key in this.config.locationSearchOptions) {
-                if(this.config.locationSearchOptions.hasOwnProperty(key)){
+                if (this.config.locationSearchOptions.hasOwnProperty(key)) {
                     if (!this.config.locationSearchOptions[key]) {
                         domStyle.set(locationTabs[count], 'display', 'none');
                     } else {
