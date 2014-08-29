@@ -94,11 +94,13 @@ define({
 				lblPosition4: "Stretch",
 				lblPosition5: "Custom",
 				tooltipDimension: "The value can be specified in 'px' or '%'",
-				tooltipDimension2: "The value can be specified in 'px'",
+				tooltipDimension2: "The value has to be specified in 'px'",
 				lblPosition2Explain: "(may crop)",
 				lblPosition3Explain: "(won't crop)",
 				lblPosition3Explain2: "(width will always fit the panel)",
-				lblPosition4Explain: "(may distort)"
+				lblPosition4Explain: "(may distort)",
+				unloadLbl: "Unload when reader navigates away to different section",
+				unloadHelp: "If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section."
 			},
 			editorActionGeocode: {
 				lblTitle: "Locate an address or place",

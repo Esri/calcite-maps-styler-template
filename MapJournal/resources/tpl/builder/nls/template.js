@@ -21,7 +21,7 @@ define({
 				cfgMedium: "Medium",
 				cfgLarge: "Large",
 				socialLinksLabel: "Display sharing links at the bottom of each section",
-				socialLinksDescr: "This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (Header Tab) and have them land at the start of the %TPL_NAME%."
+				socialLinksDescr: "This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "Fonts",

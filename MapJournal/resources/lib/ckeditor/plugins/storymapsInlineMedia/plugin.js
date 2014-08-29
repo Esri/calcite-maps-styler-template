@@ -75,6 +75,9 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 						width: mediaIframe.attr('width'),
 						height: mediaIframe.attr('height')
 					};
+					
+					if ( media.type == "webpage" )
+						media[media.type].unload = mediaIframe.attr('data-unload') === undefined || mediaIframe.attr('data-unload') == "true";
 				}
 				
 				topic.publish("EDITOR-OPEN-INLINE-MEDIA", {
@@ -134,6 +137,9 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 								outputEl.getChildren().$[0].setAttribute('width', cfg.width || DEFAULT_WIDTH);
 								outputEl.getChildren().$[0].setAttribute('height', cfg.height || '');
 							}
+							
+							if ( cfg.type == "webpage" )
+								outputEl.getChildren().$[0].setAttribute('data-unload', cfg.unload);
 						}
 						
 						var sel = editor.getSelection(),

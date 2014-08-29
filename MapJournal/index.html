@@ -59,7 +59,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.1-08262',
+				version: '1.1-0828',
 				pathJSAPI: '//jsdev.arcgis.com/3.11/'
 			};
 		</script>
@@ -135,22 +135,23 @@
 						<div id="mainStagePanelInner">
 							<div class="medias">
 								<!-- Maps and media injected here -->
-			            	</div>
-			            	<div id="mainStageLoadingIndicator" class="loadingIndicator">
-			            	<div class="load-indicator icon-spin1 animate-spin"></div>
+							</div>
+							<div id="mainStageLoadingIndicator" class="loadingIndicator">
+							<div class="load-indicator icon-spin1 animate-spin"></div>
 								<script>
-									// Alternate loader on IE
+									// Alternate loader on IE and FF
 									if (navigator.userAgent.indexOf('MSIE') !== -1 
-											|| navigator.appVersion.indexOf('Trident/') > 0) {
+											|| navigator.appVersion.indexOf('Trident/') > 0
+											|| navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 										document.write('\
 											<style>\
 										 		.load-indicator { display: none; }\
-										 		#loadingIndicator { opacity: 1.0; margin-top: -40px; }\
+										 		.loadingIndicator { opacity: 1.0; margin-top: -60px; margin-left: -32px; }\
 										 	</style>\
 										    <img src="resources/tpl/viewer/icons/loading-light.gif" />');
 									}
 								</script>
-			            	</div>
+							</div>
 							<!-- Back button -->
 							<div class="mediaBackContainer centerAlignOnFloatOverMap">
 								<div class="backButton">
@@ -224,7 +225,7 @@
 			<div class="firstAddExplain"></div>
 		</div>
 		
-		<!-- Mobile -->		
+		<!-- Mobile -->
 		<div id="mobileView" class="floatingSwiper">
 			<div class="swiper-container">
 				<div class="backdrop"></div>
@@ -285,11 +286,11 @@
 				-ms-animation: fadeout 1.1s;
 				-o-animation: fadeout 1.1s;
 				animation: fadeout 1.1s;
-	            -webkit-animation-fill-mode:forwards;
-			    -moz-animation-fill-mode:forwards;
+				-webkit-animation-fill-mode:forwards;
+				-moz-animation-fill-mode:forwards;
 				animation-fill-mode:forwards;
 			}
-
+			
 			#loadingIndicator {
 				position: fixed;
 				top: 50%;
@@ -312,8 +313,8 @@
 				-ms-animation: initial;
 				-o-animation: initial;
 				animation: initial;
-	            -webkit-animation-fill-mode: initial;
-			    -moz-animation-fill-mode: initial;
+				-webkit-animation-fill-mode: initial;
+				-moz-animation-fill-mode: initial;
 				animation-fill-mode: initial;
 			}
 			
@@ -331,7 +332,7 @@
 		</style>
 		
 		<script>
-			// Loading indicator get fade effect except in IE and FF
+			// Loading indicator get fade effect except on IE and FF
 			if ( ! (navigator.userAgent.indexOf('MSIE') !== -1 
 					|| navigator.appVersion.indexOf('Trident/') > 0
 					|| navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ) {
@@ -342,8 +343,8 @@
 					-ms-animation: fadein 3s;\
 					-o-animation: fadein 3s;\
 					animation: fadein 3s;\
-				          -webkit-animation-fill-mode: forwards;\
-				    -moz-animation-fill-mode: forwards;\
+					-webkit-animation-fill-mode: forwards;\
+					-moz-animation-fill-mode: forwards;\
 					animation-fill-mode: forwards;\
 				}</style>');
 			}
@@ -353,15 +354,16 @@
 		<div id="loadingIndicator" class="loadingIndicator">
 			<div class="load-indicator icon-spin1 animate-spin"></div>
 			<script>
-				// Alternate loader on all IE
+				// Alternate loader on IE and FF
 				if (navigator.userAgent.indexOf('MSIE') !== -1 
-						|| navigator.appVersion.indexOf('Trident/') > 0) {
+						|| navigator.appVersion.indexOf('Trident/') > 0
+						|| navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 					document.write('\
 						<style>\
 					 		.load-indicator { display: none; }\
-					 		#loadingIndicator { opacity: 1.0; margin-top: -40px; }\
+					 		.loadingIndicator { opacity: 1.0; margin-top: -60px; margin-left: -32px; }\
 					 	</style>\
-					    <img src="resources/tpl/viewer/icons/loading-light.gif" />');
+						<img src="resources/tpl/viewer/icons/loading-light.gif" />');
 				}
 			</script>
 		</div>
