@@ -25,9 +25,8 @@
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "SeaBlues",
         "searchBox.hint": "Parcel ID",
-        "featureSearcher.searchLayerName": "Tax Parcels",
-        "featureSearcher.searchFields": "PARCELID ",
-        "featureSearcher.displayFields": "SITEADDRESS ",
+        "featureSearcher.searchLayersString": "[{\"id\":\"TaxParcelTIL_9803\",\"fields\":[\"PARCELID\"],\"type\":\"FeatureLayer\"}]",
+        "featureSearcher.displayLayersString": "[{\"id\":\"TaxParcelTIL_9803\",\"fields\":[\"SITEADDRESS\"],\"type\":\"FeatureLayer\"}]",
         "highlighter.showFeaturePopup": true,
         "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
@@ -99,23 +98,27 @@
             "type": "string",
             "tooltip": "Search hint (e.g. Find a Parcel, Find a Park)"
         }, {
-            "label": "Find Layers",
-            "fieldName": "featureSearcher.searchLayerName",
-            "type": "string",
-            "tooltip": "Comma-separated list of map layer names. Only values in these layers will be searched. One or many layers may be specified.",
-            "placeholder": "Layer 1, Layer 2, …"
+            "label": "Find Layers and Fields",
+            "fieldName": "featureSearcher.searchLayersString",
+            "type": "multilayerandfieldselector",
+            "layerOptions": {
+                "supportedTypes": ["FeatureLayer"],
+                "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline", "esriGeometryPolygon"]
+            },
+            "fieldOptions": {
+                "supportedTypes": ["esriFieldTypeString", "esriFieldTypeSmallInteger", "esriFieldTypeInteger"]
+            }
         }, {
-            "label": "Find Fields",
-            "fieldName": "featureSearcher.searchFields",
-            "type": "string",
-            "tooltip": "Comma-separated list of Find Layer field names. Only values in these fields will be searched. One or many fields may be specified.",
-            "placeholder": "FIELD1, FIELD2, …"
-        }, {
-            "label": "Result Display Fields",
-            "fieldName": "featureSearcher.displayFields",
-            "type": "string",
-            "tooltip": "Comma-separated list of Find Layer field names in the same order as the Find Layers to which they apply. Values in these fields will be returned in the results list. If the layer in which a result was found does not have a corresponding field in this list, the Fearch Field value is returned. Only one Result Display Field can be specified for each Find Layer.",
-            "placeholder": "FIELD1, FIELD2, …"
+            "label": "Result Display Layers and Fields",
+            "fieldName": "featureSearcher.displayLayersString",
+            "type": "multilayerandfieldselector",
+            "layerOptions": {
+                "supportedTypes": ["FeatureLayer"],
+                "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline", "esriGeometryPolygon"]
+            },
+            "fieldOptions": {
+                "supportedTypes": ["esriFieldTypeString", "esriFieldTypeSmallInteger", "esriFieldTypeInteger"]
+            }
         }, {
             "label": "Zoom Level",
             "fieldName": "highlighter.highlightZoomLevel",
@@ -146,7 +149,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "84ee6c2ba416b893 2014-08-28 15:44:26 -0700"
+                "6d053afafdc8e6e6 2014-08-29 12:51:08 -0700"
             ]
         }
     }, {
