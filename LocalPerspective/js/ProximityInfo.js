@@ -45,6 +45,7 @@ define([
       config : null,
       map : null,
       fields : [],
+      dtFields : "",
       infoTemplate : null,
       location : null,
       container : null,
@@ -121,7 +122,7 @@ define([
                var dist = this.getDistance(pt);
                var newAttr = {DISTANCE: dist, POINT_LOCATION: pt};
                for (var f=0; f<this.fields.length; f++ ) {
-                   newAttr[this.fields[f]] = gra.attributes[this.fields[f]];
+                  newAttr[this.fields[f]] = gra.attributes[this.fields[f]];
                }
                gra.setAttributes(newAttr);
                gra.setInfoTemplate(this.infoTemplate);
@@ -159,7 +160,7 @@ define([
                on(recNum, "click", lang.hitch(this, this.zoomToLocation, gra, pt));
                var recInfo = domConstruct.create("div", {
                }, rec);
-                domClass.add(recInfo, 'recInfo');
+               domClass.add(recInfo, 'recInfo');
                var infoDist = "";
                if (geom.type == "point" && this.config.showDirections)
                   infoDist += "<img src='images/car.png' /> ";
@@ -210,16 +211,21 @@ define([
             var fldInfos = layer.infoTemplate.info.fieldInfos;
             for (var i=0; i<fldInfos.length; i++) {
                 var fld = fldInfos[i];
-                if (fld.visible)
-                    fields.push(fld.fieldName);
+                if (fld.visible) {
+                   fields.push(fld.fieldName);
+                   if(fld.format && fld.format.dateFormat)
+                     this.dtFields += fld.fieldName+",";
+                }
             }
          } else {
-            var fldTypes = "esriFieldTypeSmallInteger,esriFieldTypeInteger,esriFieldTypeSingle,esriFieldTypeDouble,esriFieldTypeString";
+            var fldTypes = "esriFieldTypeSmallInteger,esriFieldTypeInteger,esriFieldTypeSingle,esriFieldTypeDouble,esriFieldTypeString,esriFieldTypeDate";
             for (var i=0; i<layer.fields.length; i++) {
                var fld = layer.fields[i];
                var type = fld.type;
                if (fldTypes.indexOf(type) > -1) {
-                  fields.push[fld];
+                  fields.push[fld.name];
+                  if(type = "esriFieldTypeDate")
+                     this.dtFields += fld.name+",";
                }
             }
          }
@@ -233,11 +239,25 @@ define([
          var c = 0;
          for (var prop in attr) {
               if (prop != "DISTANCE" && prop !=  "POINT_LOCATION" && c < 3) {
-                  info += attr[prop] + "<br/>";
+                  if(this.dtFields.indexOf(prop+",") > -1) {
+                     info += new Date(attr[prop]).toLocaleString() + "<br/>";
+                  } else {
+                     info += attr[prop] + "<br/>";
+                  }
                   c += 1;
               }
          }
          return info;
+      },
+      
+      // is date field
+      isDateField : function(name) {
+         for (var i=0; i<this.pageObj.layer.fields.length; i++) {
+            var f = this.pageObj.layer.fields[i];
+            if(f.name == name && f.type == "esriFieldTypeDate")
+               return true;
+         }
+         return false;
       },
         
       // get distance
