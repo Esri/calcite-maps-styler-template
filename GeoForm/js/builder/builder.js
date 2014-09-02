@@ -197,7 +197,9 @@ define([
 
             on(dom.byId('selectAll'), "change", lang.hitch(this, function (evt) {
                 array.forEach(query(".fieldCheckbox"), lang.hitch(this, function (currentCheckBox) {
-                    currentCheckBox.checked = evt.currentTarget.checked;
+                    if (!currentCheckBox.disabled) {
+                        currentCheckBox.checked = evt.currentTarget.checked;
+                    }
                 }));
                 this._getFieldCheckboxState();
             }));
@@ -508,7 +510,7 @@ define([
                     return;
                 }
                 if ((currentField.domain && currentField.domain.codedValues) || (currentField.name === this.fieldInfo[layerName].typeIdField)) {
-                    if ((currentField.domain && currentField.domain.codedValues.length <= 4) || (this.fieldInfo[layerName].types && this.fieldInfo[layerName].types.length <= 4)) {
+                    if ((currentField.domain && currentField.domain.codedValues.length <= 4) || (currentField.name === this.fieldInfo[layerName].typeIdField && this.fieldInfo[layerName].types && this.fieldInfo[layerName].types.length <= 4)) {
                         typeSelect = domConstruct.create("select", { "class": "form-control displayType" }, fieldType);
                         domConstruct.create("option", { innerHTML: nls.builder.selectMenuOption, value: "dropdown" }, typeSelect);
                         domConstruct.create("option", { innerHTML: nls.builder.selectRadioOption, value: "radio" }, typeSelect);
@@ -596,6 +598,10 @@ define([
                 this.fieldInfo[layerId] = {};
                 this.fieldInfo[layerId].Fields = layer.fields;
                 this.fieldInfo[layerId].layerUrl = layer.url;
+                if (layer.typeIdField !== "") {
+                    this.fieldInfo[layerId].types = layer.types;
+                    this.fieldInfo[layerId].typeIdField = layer.typeIdField;
+                }
                 if (layerId == this.currentConfig.form_layer.id) {
                     this._populateFields(layerId);
                     filteredLayer.selected = "selected";
@@ -779,7 +785,7 @@ define([
                             bitlyKey: this.currentConfig.bitlyKey,
                             image: this.currentConfig.sharinghost + '/sharing/rest/content/items/' + this.currentConfig.itemInfo.item.id + '/info/' + this.currentConfig.itemInfo.item.thumbnail,
                             title: this.currentConfig.details.Title || nls.builder.geoformTitleText || '',
-                            summary: this.currentConfig.details.Description || '',
+                            summary: this.currentConfig.itemInfo.item.snippet || '',
                             hashtags: 'esriGeoForm',
                             shareOption: this.currentConfig.enableSharing
                         });
@@ -805,7 +811,7 @@ define([
             }, progressIndicatorContainer);
         },
         _createShareDlgContent: function () {
-            var iconContainer;
+            var iconContainer, group;
             domConstruct.empty($("#myModal .modal-body")[0]);
             domAttr.set(dom.byId('myModalLabel'), "innerHTML", nls.builder.shareBuilderTitleMessage);
             iconContainer = domConstruct.create("div", {
@@ -846,11 +852,18 @@ define([
             domConstruct.create("h3", {
                 innerHTML: nls.user.shareModalFormText
             }, iconContainer);
+            group = domConstruct.create("div", {
+                className: "input-group"
+            }, iconContainer);
+            domConstruct.create("span", {
+                className: "input-group-addon",
+                innerHTML: "<span class=\"glyphicon glyphicon-link\"></span>"
+            }, group);
             domConstruct.create("input", {
                 type: "text",
                 className: "form-control",
                 id: "shareMapUrlText"
-            }, iconContainer);
+            }, group);
         },
         //function to enable the tab passed in input parameter
         _enableTab: function (currentTab) {
