@@ -249,16 +249,6 @@ define([
          }
          return info;
       },
-      
-      // is date field
-      isDateField : function(name) {
-         for (var i=0; i<this.pageObj.layer.fields.length; i++) {
-            var f = this.pageObj.layer.fields[i];
-            if(f.name == name && f.type == "esriFieldTypeDate")
-               return true;
-         }
-         return false;
-      },
         
       // get distance
       getDistance: function(loc) {
