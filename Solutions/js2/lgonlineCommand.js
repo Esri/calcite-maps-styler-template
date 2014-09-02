@@ -1737,24 +1737,30 @@ define([
          * Reports layers that don't appear in the map.
          * @param {string} searchLayerName Name to report for search layer
          * @param {string} [reason] Error message; if omitted, "@messages.searchLayerMissing"
-         *        is used
+         *        is used if a searchLayerName is provided, "@messages.noSearchLayerConfigured"
+         *        otherwise
          * @memberOf js.LGSearchFeatureLayer#
          */
         showSearchLayerError: function (searchLayerName, reason) {
-            var message, searchLayer, pThis = this;
+            var message = "", searchLayer, pThis = this;
 
-            message = "\"" + (searchLayerName || "") + "\"<br>";
-            searchLayer = this.mapObj.getLayer(searchLayerName);
-            if (searchLayer && !this.isSearchableLayer(searchLayerName)) {
-                // For a search layer with no available fields, just show its name and
-                // some guidance about what to do
-                message += this.checkForSubstitution("@messages.searchLayerNotSearchable");
-
+            // Report the problematic layer (or lack thereof)
+            if (!searchLayerName) {
+                message += this.checkForSubstitution("@messages.noSearchLayerConfigured");
             } else {
-                if (!reason) {
-                    reason = this.checkForSubstitution("@messages.searchLayerMissing");
+                message += "\"" + searchLayerName + "\"<br>";
+                searchLayer = this.mapObj.getLayer(searchLayerName);
+                if (searchLayer && !this.isSearchableLayer(searchLayerName)) {
+                    // For a search layer with no available fields, just show its name and
+                    // some guidance about what to do
+                    message += this.checkForSubstitution("@messages.searchLayerNotSearchable");
+
+                } else {
+                    if (!reason) {
+                        reason = this.checkForSubstitution("@messages.searchLayerMissing");
+                    }
+                    message += reason;
                 }
-                message += reason;
             }
 
             // Add map layers to message
@@ -2318,24 +2324,30 @@ define([
          * Reports layers that don't appear in the map.
          * @param {string} searchLayerName Name to report for search layer
          * @param {string} [reason] Error message; if omitted, "@messages.searchLayerMissing"
-         *        is used
+         *        is used if a searchLayerName is provided, "@messages.noSearchLayerConfigured"
+         *        otherwise
          * @memberOf js.LGSearchFeatureLayerMultiplexer#
          */
         showSearchLayerError: function (searchLayerName, reason) {
-            var message, searchLayer, pThis = this;
+            var message = "", searchLayer, pThis = this;
 
-            message = "\"" + (searchLayerName || "") + "\"<br>";
-            searchLayer = this.mapObj.getLayer(searchLayerName);
-            if (searchLayer && !this.isSearchableLayer(searchLayerName)) {
-                // For a search layer with no available fields, just show its name and
-                // some guidance about what to do
-                message += this.checkForSubstitution("@messages.searchLayerNotSearchable");
-
+            // Report the problematic layer (or lack thereof)
+            if (!searchLayerName) {
+                message += this.checkForSubstitution("@messages.noSearchLayerConfigured");
             } else {
-                if (!reason) {
-                    reason = this.checkForSubstitution("@messages.searchLayerMissing");
+                message += "\"" + searchLayerName + "\"<br>";
+                searchLayer = this.mapObj.getLayer(searchLayerName);
+                if (searchLayer && !this.isSearchableLayer(searchLayerName)) {
+                    // For a search layer with no available fields, just show its name and
+                    // some guidance about what to do
+                    message += this.checkForSubstitution("@messages.searchLayerNotSearchable");
+
+                } else {
+                    if (!reason) {
+                        reason = this.checkForSubstitution("@messages.searchLayerMissing");
+                    }
+                    message += reason;
                 }
-                message += reason;
             }
 
             // Add map layers to message
@@ -3159,6 +3171,6 @@ define([
 });
 /* 
 This source is part of the git commit 
-6d053afafdc8e6e6 2014-08-29 12:51:08 -0700
+5e8776036f46a8a2 2014-09-02 07:17:15 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 
