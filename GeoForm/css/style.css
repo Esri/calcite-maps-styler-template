@@ -145,9 +145,6 @@
     width: 100%;
     line-height: 50px;
 }
-.myLocationOptions {
-    padding: 20px 0;
-}
 input::-ms-clear {
     display: none;
 }
@@ -237,10 +234,4 @@ body.modal-open,
 }
 .drag-cursor {
     cursor: ns-resize;
-}
-#fullscreen {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 999;
 }
