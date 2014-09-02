@@ -18,6 +18,9 @@
 
         splashscreen: {
             buttonText: "确定",
+        },
+        ui:{
+            basemapButton: "底图"
         }
     })
 

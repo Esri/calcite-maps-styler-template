@@ -13,7 +13,9 @@
 				open: "Öppna",
 				start: "Starta",
 				loading: "Läser in",
-				disabledAdmin: "Den här funktionen har inaktiverats av administratören"
+				disabledAdmin: "Den här funktionen har inaktiverats av administratören",
+				width: "Bredd",
+				height: "Höjd"
 			},
 			inlineFieldEdit: {
 				editMe: "Redigera mig!"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Layout",
 				explain: "Vilken layout vill du använda?",
-				explainInit: "Du kan byta layout när som helst via inställningspanelen.",
+				explainInit: "Du kan byta layout när som helst via inställningsdialogrutan.",
 				viewExample: "Visa ett liveexempel"
 			},
 			settingsTheme: {

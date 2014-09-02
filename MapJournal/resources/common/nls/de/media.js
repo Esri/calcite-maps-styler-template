@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ä_Media_Ü",
-				lblSelect2: "ä_Content_Ü",
+				lblSelect1: "Medien",
+				lblSelect2: "Inhalt",
 				lblMap: "Karte",
 				lblImage: "Bild",
 				lblVideo: "Video",
@@ -40,10 +40,17 @@
 				howToFind: "So finden Sie eine Picasa- oder Google+-Konto-ID",
 				howToFind2: "Kopieren Sie die Ziffern zwischen dem ersten und zweiten Schrägstrich (\'/\') einer Picasa- oder G+-Seite"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Aktivieren",
+				notFound: "Video nicht gefunden",
+				found: "Video gefunden",
+				select: "Dieses Video auswählen"
+			},
+			videoSelectorHome: {
+				other: "Andere"
 			},
 			videoSelectorYoutube: {
+				url: "URL eines Youtube-Videos",
 				pageInputLbl: "Benutzername",
 				lookupMsgError: "Benutzer nicht gefunden",
 				howToFind: "So finden Sie einen Youtube-Benutzernamen",
@@ -51,24 +58,42 @@
 				found: "Gefunden",
 				noData: "Keine öffentlichen Videos gefunden"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "URL eines Vimeo-Videos"
+			},
+			videoSelectorOther: {
+				explain1: "Map Journal kann keine unverarbeiteten Videos (z. B. avi, mpeg), jedoch gehostete Videodateien mit integrierten Playern (z. B. YouTube oder Vimeo) wiedergeben.",
+				explain2: "Diese Funktion wird von den meisten Online-Services, die Videos hosten, bereitgestellt. Sie müssen die Option zum Einbetten des Videos suchen, den angegebenen Code kopieren und %WEBPAGE% verwenden.",
+				explain3: "Wenn Sie das Video selbst hosten möchten, können Sie auch eine HTML-Seite erstellen, die einen Videoplayer wie %EXAMPLE% verwendet, diese Seite hosten und %WEBPAGE% verwenden.",
+				webpage: "Webseitenfunktion"
+			},
+			webpageSelectorHome: {
+				lblUrl: "Webseiten-URL",
+				lblEmbed: "Eingebundener Code",
+				lblOR: "ODER",
+				lblError1: "Fehler - löschen Sie den Inhalt eines der beiden Eingabefelder.",
+				lblError2: "Der eingebundene Code darf nur ein <iframe> enthalten"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Medien-URL...",
-				lblLabel: "Beschriftung",
+				lblURLPH: "Eine Bild-URL muss mit \"http://\" beginnen und mit \".jpg\" oder \".png\" enden",
+				lblLabel: "Bildüberschrift",
 				lblLabel1: "Beschriftung",
 				lblLabel2: "Hovertext",
 				lblLabel3: "Keine",
 				lblLabelPH: "Text eingeben...",
+				lblMaximize: "Fügen Sie eine Schaltfläche zum Maximieren in der Ecke des Bildes ein",
+				lblMaximizeHelp: "Nur für Fotos mit hoher Qualität empfohlen",
 				lblPosition: "Position",
 				lblPosition1: "Zentrieren",
 				lblPosition2: "Füllung",
 				lblPosition3: "Einpassen",
 				lblPosition4: "Strecken",
+				lblPosition5: "Benutzerdefiniert",
+				tooltipDimension: "Der Wert kann in \"Px\" oder \"%\" angegeben werden",
 				lblPosition2Explain: "(Zuschneiden möglich)",
 				lblPosition3Explain: "(Zuschneiden nicht möglich)",
+				lblPosition3Explain2: "(Breite wird immer an das Fenster angepasst)",
 				lblPosition4Explain: "(Verzerren möglich)"
 			},
 			editorActionGeocode: {

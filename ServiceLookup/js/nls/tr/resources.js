@@ -18,6 +18,9 @@
 
         splashscreen: {
             buttonText: "Tamam",
+        },
+        ui:{
+            basemapButton: "Altlık Haritası"
         }
     })
 

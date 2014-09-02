@@ -67,12 +67,13 @@ define({
             sortByBtnTitle: "מיון על ידי",
             layoutBtnTitle: "תצוגה",
             signInBtnTitle: "התחבר",
+            signOutBtnTitle: "כן_Sign Out_ש",
             geolocationBtnTitle: "מיקום מרחבי"
         },
         errorMessages: {
             emptyGroup: "אין לקבוצה שהוגדרה נתונים בכדי לבצע את השאילתא.",
             invalidSearch: "לא נמצאו תוצאות.",
-            invalidBasemapQuery: "כן_Unable to get basemaps group._ש",
+            invalidBasemapQuery: "לא ניתן לקבל קבוצת מפות בסיס.",
             falseConfigParams: "ערכי מפתחות קונפיגורציה נדרשים ריקים או לא תואמים למאפייני השכבה. הודעה זו עלולה להופיע מספר פעמים.",
             invalidLocation: "המיקום הנוכחי לא נמצא.",
             invalidProjection: "לא ניתן להטיל את המיקום הנוכחי במפה.",
@@ -81,8 +82,9 @@ define({
             layerNotFound: "לא ניתן לקבל נתונים מהשכבות.",
             unableToOpenItem: "לא ניתן לפתוח פריט.",
             wmsSpatialReferenceError: "היחוס המרחבי של שכבת WMS לא תואם ליחוס המרחבי של המפה.",
-            noPublicItems: "לא קיימים פריטים ציבוריים בקבוצה שהוגדרה.",
+            noPublicItems: "כן_There are no public items in the configured group or no items have been shared with this group yet._ש",
             emptyUsernamePassword: "אנא הקלד שם משתמש וסיסמה",
-            noFullScreenSupport: "הדפדפן הנוכחי אינו תומך במסך מלא."
+            noFullScreenSupport: "הדפדפן הנוכחי אינו תומך במסך מלא.",
+            notMemberOfOrg: "כן_You are not a member of this organization_ש"
         }
 });

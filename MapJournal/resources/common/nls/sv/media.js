@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Å_Media_ö",
-				lblSelect2: "Å_Content_ö",
+				lblSelect1: "Media",
+				lblSelect2: "Innehåll",
 				lblMap: "Karta",
 				lblImage: "Bild",
 				lblVideo: "Video",
@@ -40,10 +40,17 @@
 				howToFind: "Så här hittar du ett konto-ID för Picasa eller Google+",
 				howToFind2: "Kopiera siffrorna mellan det första och andra '/'-tecknet på en Picasa- eller G+-sida"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Kontroll",
+				notFound: "Det gick inte att hitta videon",
+				found: "Video hittad",
+				select: "Välj den här videon"
+			},
+			videoSelectorHome: {
+				other: "Annat"
 			},
 			videoSelectorYoutube: {
+				url: "URL till en Youtube-video",
 				pageInputLbl: "Användarnamn",
 				lookupMsgError: "Det gick inte att hitta användaren",
 				howToFind: "Så här hittar du ett YouTube-användarnamn",
@@ -51,24 +58,42 @@
 				found: "Hittade",
 				noData: "Inga offentliga videoklipp hittades"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "URL till en Vimeo-video"
+			},
+			videoSelectorOther: {
+				explain1: "Kartjournalen kan inte spela upp obearbetade videoklipp (till exempel avi och mpeg), men kan spela driftade videofiler som har inbyggda spelare (till exempel YouTube eller Vimeo).",
+				explain2: "De flesta tjänster som driftar videoklipp online erbjuder den här funktionen. Du måste hitta alternativet för att bädda in videon, kopiera den angivna koden och använda %WEBPAGE%.",
+				explain3: "Om du själv vill drifta videon kan du skapa en HTML-sida som använder en videospelare som %EXAMPLE%, drifta sidan och använda %WEBPAGE%.",
+				webpage: "Webbsidefunktion"
+			},
+			webpageSelectorHome: {
+				lblUrl: "Webbsidans URL",
+				lblEmbed: "Bädda in kod",
+				lblOR: "ELLER",
+				lblError1: "Fel, rensa ett av de båda inmatningsfälten.",
+				lblError2: "Inbäddad kod kan endast innehålla en <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Media-URL ...",
-				lblLabel: "Etikett",
+				lblURLPH: "En bild-URL bör börja med http:// och slutar med .jpg eller .png",
+				lblLabel: "Bildtext",
 				lblLabel1: "Bildtext",
 				lblLabel2: "Hovringstext",
 				lblLabel3: "Inga",
 				lblLabelPH: "Ange text ...",
+				lblMaximize: "Ta med knappen Maximera i hörnet av bilden",
+				lblMaximizeHelp: "Rekommenderas endast för bilder av hög kvalitet",
 				lblPosition: "Position",
 				lblPosition1: "Centrera",
 				lblPosition2: "Fyllning",
 				lblPosition3: "Anpassa",
 				lblPosition4: "Sträck",
+				lblPosition5: "Anpassad",
+				tooltipDimension: "Värdet kan anges i \"px\" eller \"%\"",
 				lblPosition2Explain: "(kan beskäras)",
 				lblPosition3Explain: "(kan inte beskäras)",
+				lblPosition3Explain2: "(bredden kommer alltid att fylla rutan)",
 				lblPosition4Explain: "(kan förvrängas)"
 			},
 			editorActionGeocode: {

@@ -13,7 +13,9 @@
 				open: "Aç",
 				start: "Başlangıç",
 				loading: "Yükleniyor",
-				disabledAdmin: "Bu özellik Yönetici tarafından devre dışı bırakıldı"
+				disabledAdmin: "Bu özellik Yönetici tarafından devre dışı bırakıldı",
+				width: "Genişlik",
+				height: "Yükseklik"
 			},
 			inlineFieldEdit: {
 				editMe: "Beni düzenle!"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Düzen",
 				explain: "Hangi düzeni kullanmak istiyorsunuz?",
-				explainInit: "Ayarlar panelinden düzeni istediğiniz zaman değiştirebilirsiniz.",
+				explainInit: "Ayarlar iletişim kutusunda düzeni istediğiniz zaman değiştirebilirsiniz.",
 				viewExample: "Canlı örnek görüntüle"
 			},
 			settingsTheme: {

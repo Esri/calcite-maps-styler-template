@@ -96,8 +96,11 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
             var legend_div = domConstruct.create("div", {
                 className: "panel_content"
             }, dom.byId("legendDiv"));
+            var layerInfo = arcgisUtils.getLegendLayers(this.config.response);
+
             var legend = new Legend({
-                map: this.map
+                map: this.map,
+                layerInfos: layerInfo
             }, legend_div);
             legend.startup();
 
@@ -131,6 +134,8 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
 
 
                 this.map = response.map;
+                domClass.add(this.map.infoWindow.domNode, "light");
+
                 this.config.response = response;
 
                 // make sure map is loaded
@@ -183,7 +188,11 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
             //Style the popup title bar to use the theme color.
             query(".esriPopup .pointer").style("backgroundColor", this.theme.toString());
             query(".esriPopup .titlePane").style("backgroundColor", this.theme.toString());
+
+
             query(".esriPopup .titlePane").style("color", this.color.toString());
+            query(".esriPopup. .titleButton").style("color", this.color.toString());
+
 
 
             //Query for the title areas in the drawer and  apply the panel theme. 

@@ -24,9 +24,7 @@ define(["dojo/has"], function (has) {
             search = g.config.tool_search;
         }
         return search;
-    });
-
-    /*Toolbar tools*/
+    }); /*Toolbar tools*/
     has.add("basemap", function (g) {
         var basemap = getTool("basemap", g.config);
         //overwrite the default with app settings 
@@ -73,6 +71,14 @@ define(["dojo/has"], function (has) {
             toolbar = g.config.tool_edit_toolbar;
         }
         return toolbar;
+    });
+    has.add("scalebar", function (g) {
+        var scalebar = g.config.scalebar || false;
+        //overwrite the default with app settings 
+        if (g.config.hasOwnProperty("scalebar")) {
+            scalebar = g.config.scalebar;
+        }
+        return scalebar;
     });
     has.add("home", function (g) {
         var home = g.config.home || false;
@@ -173,6 +179,9 @@ define(["dojo/has"], function (has) {
         }
         return printLayouts;
     });
+
+
+
     has.add("share", function (g) {
         var share = getTool("share", g.config);
         //overwrite the default with app settings 

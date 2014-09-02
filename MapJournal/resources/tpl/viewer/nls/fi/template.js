@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Tervetuloa tarinan %TPL_NAME% Web-sovellukseen.<br />Sovellusta ei ole vielä määritetty.",
 				notConfiguredMobile: "Tervetuloa tarinan %TPL_NAME% Web-sovellukseen. Sovellusta ei ole vielä määritetty, eivätkä mobiililaitteet tue luontitoimintoa.",
 				notAuthorized: "Sinulla ei ole tämän sovelluksen käyttöoikeuksia",
-				noBuilderIE8: "Luontitoimintoa ei tueta Internet Explorerin versiota 9 edeltävissä versioissa."
+				noBuilderIE8: "Luontitoimintoa ei tueta Internet Explorerin versiota 9 edeltävissä versioissa.",
+				mapLoadingFail: "Jotain meni pieleen, ja karttaa ei voi ladata."
 			},
 			mobileView: {
 				tapForDetails: "Saat tiedot näkyviin napauttamalla",
@@ -51,7 +52,7 @@
 				share: "Jaa"
 			},
 			overviewFromCommon: {
-				title: "Yleiskatsauskartta",
+				title: "Yleiskatsauskartta"
 			},
 			legendFromCommon: {
 				title: "Selite"

@@ -2,82 +2,94 @@
 	 ({
 		builder: {
 			layouts: {
-				mainStage: "שלב עיקרי",
-				sideTitle: "פאנל בצד",
-				sideDescr: "תצוגה לסיפור מלל אינטנסיבי שמצטיין בשילוב תמונות, קטעי הווידאו ומפות בהודעה ברורה וממוקדת.",
-				floatTitle: "פאנל צף",
-				floatDescr: "כן_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story._ש"
+				mainStage: "תצוגה ראשית",
+				sideTitle: "לוח צד",
+				sideDescr: "תצוגת סיפור המיועדת לשימוש נרחב בטקסט בשילוב וידאו, תמונות ומפות בצורה ברורה וממוקדת.",
+				floatTitle: "לוח צף",
+				floatDescr: "תצוגת מפה שמדגישה את הקרטוגרפיה ובמקביל לוח טקסט שקוף המסייע לספר סיפור."
 			},
 			common: {
-				lblStatus1: "פורסם",
+				lblStatus1: "מפורסם",
 				lblStatus2: "טיוטה",
 				lblStatus3: "מוסתר"
 			},
 			settingsLayoutOptions: {
-				title: "אפשרויות תצוגת המפה",
+				title: "אפשרויות עימוד",
 				cfgLeft: "שמאל",
 				cfgRight: "ימין",
 				cfgSmall: "קטן",
 				cfgMedium: "בינוני",
 				cfgLarge: "גדול",
-				socialLinksLabel: "הצג את הקישורים השיתופיים בחלק התחתון של כל קטע",
-				socialLinksDescr: "זה מאפשר לקוראים להתיחס ולקדם חלקים מסוימים של ה- %TPL_NAME% שלך. לדוגמא, אם אתה משתמש בסמל שיתוף קטעים, הקוראים יגיעו לקטע ספציפי ב- %TPL_NAME% במקום להגיע לתחילת הסיפור. הקוראים שלך יכולים להשתמש בקישור למדיות חברתיות  בקטע הכותרת כדי לקדם את כל ה- %TPL_NAME% (טאב הכותרת) ויעזור להם להגיע ל- %TPL_NAME%."
+				socialLinksLabel: "הצג את הקישורים המשותפים בחלק התחתון של כל קטע",
+				socialLinksDescr: "זה מאפשר לקוראים להתיחס ולקדם קטעים מסוימים של ה- %TPL_NAME% שלך. לדוגמא, אם אתה משתמש בסמל שיתוף חלקים, הקוראים יגיעו לחלק ספציפי ב- %TPL_NAME% במקום להגיע לתחילת הסיפור. הקוראים שלך יכולים להשתמש בקישור מדיה חברתית בכותרת החלק כדי לקדם את כל ה- %TPL_NAME% (לשונית הכותרת) כדי לעזור להם להגיע לתחילת ה- %TPL_NAME%."
 			},
 			initPopup: {
-				title: "ברועים הבאים ל-"
+				title: "ברוכים הבאים ל-"
 			},
 			addEditPopup: {
-				titleAdd: "הוסף קטע",
-				titleEdit: "ערוך קטע",
+				disabled: "לא ניתן להוסיף חלק חדש כיוון שמספר החלקים הגיע למספר המרבי המותר.",
+				titleAdd: "הוסף חלק",
+				titleAddHome: "הוסף חלק דף הבית",
+				titleEdit: "ערוך חלק",
 				step: "צעד",
-				stepMainStageExplain: "הוסף מפה, תמונה או קטע וידאו לשלב הראשי",
-				stepPanelExplain: "הוסף תוכן ל-",
-				stepMainStageNextTooltip: "הכנס כותרת הקטע ובחר את תכולת השלב העיקרי",
-				step2NextTooltip: "הכנס את כותרת הקטע ותכולת %LAYOUT-TYPE%",
+				stepMainStageExplain: "תוכן התצוגה הראשית",
+				stepPanelExplain: "תוכן",
+				stepMainStageNextTooltip: "הכנס את כותרת החלק ובחר את תכולת התצוגה הראשית",
+				step2NextTooltip: "הכנס את כותרת החלק ותכולת ה%LAYOUT-TYPE%",
 				stepNextTooltipNext: "התקדם לשלב הבא",
-				stepNextTooltipAdd: "להוספת הקטע",
-				titlePlaceholder: "כותרת הקטע...",
+				stepNextTooltipAdd: "להוספת החלק",
+				firstAddExplain: "החלק הראשון הוא דף הבית שלך, חשוב על זה כעל דף ראשי לסיפור שלך. הכותרת שהגדרת כעת תוצג בגופן גדול.",
+				firstAddLeanMore: "לימוד נוסף",
+				titlePlaceholder: "כותרת החלק..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "הוסף כאן טקסט, קישורים וכמות מוגבלת של גרפיקה",
-				editorActionsTitle: "פעולות של השלב העיקרי",
-				editorActionsHelpDescr: "כן_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._ש"
+				editorActionsTitle: "פעולות תצוגה ראשית",
+				editorActionsHelpDescr: "השתמש בפקדים הללו ליצור קישורים שישנו את התצוגה הראשית. לדוגמא, כאשר הקורא לוחץ על קישור אתה תרצה להתמקד במפה על מיקום ספציפי, להציג web map אחר או להציג תמונה."
 			},
 			organizePopup: {
 				title: "ארגן",
-				lblHeader: "כן_Drag and drop sections to organize your content._ש",
+				lblHeader: "גרור ושחרר חלקים כדי לארגן את התוכן שלך.",
 				lblColTitle: "כותרת",
 				lblColPubDate: "תאריך הפצה",
 				lblColStatus: "סטטוס",
-				checkDisplayReverse: "הצג קטעים בסדר הפוך",
-				btnApplyWarning: "כן_Confirm deletion of %NB% section(s)_ש",
+				checkDisplayReverse: "הצג חלקים בסדר הפוך",
+				btnApplyWarning: "אשר מחיקה של %NB% חלקים.",
 				deleteTooltip: "מחק",
-				firstSectionExplain: "(לא ניתן להעביר את קטע הבית)"
+				firstSectionExplain: "(לא ניתן להזיז את חלק דף הבית)"
+			},
+			exportData: {
+				btn: "יצוא תוכן",
+				tooltip: "יצוא התוכן שלך מאפשר לך לצפות וליצור גיבוי של החוברת שלך במקרה ותמחק אותה בטעות. העתק והדבק את תוכן הדף אל קובץ word."
 			},
 			help: {
 				lblHelp: "עזרה",
-				lblAdd: "הוסף קטע",
+				lblAdd: "הוסף חלק",
 				lblSettings: "הגדרות",
 				lblOrga: "ארגן תוכן",
 				lblEdit: "עריכה",
-				lblPublish: "כן_Share_ש",
+				lblPublish: "שתף",
+				lblTips: "טיפים",
 				lblMore: "נדרש עוד?",
 				lblLink: "בקר באתר סיפורי מפות",
-				content1Div1: "ניתן לשלב מגוון רחב של סגנונות בעת בניית הסיפור שלך. ה- <strong>%LAYOUT_TITLE%</strong> בדרך כלל מחזיק את הטקסט שלך, תמונות, ווידאו בזמן שהמפות שלך יועברו <strong>לשלב העיקרי</strong>. עם זאת, ה- %TPL_NAME% מאפשר לך לאפיין תמונות, תרשימים ווידאו בתוך השלב העיקרי גם כן.",
-				content1Div2: "כן_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message._ש",
-				content2Div1: "כאן הוא מקום שבו אתה יכול להתאים את מראה ה- %TPL_NAME%. כאן ניתן לעדן את סכימות הצבעים, תצוגות המפה ועובי של פריטים שונים.",
-				content2Div2: "כן_You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others._ש",
-				content3Div1: "כן_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._ש",
-				content4Div1: "מצאת שגיאות או רוצה לשנות את החומר שלך? אל דאגה. חפש את סמל העריכה באפליקציה כדי לבצע שינויים בתוכן שלך. אתה יכול להשתמש בפונקצית העריכה פעמים רבות בעת שאתה מפתח את ה-  %TPL_NAME% שלך!",
-				content5Div1: "כן_Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it easier._ש"
+				content1Div1: "ניתן לשלב מגוון סגנונות בעת בניית הסיפור שלך. ה- <strong>%LAYOUT_TITLE%</strong> בדרך כלל כולל את הטקסט שלך, וידאו ותמונות בזמן שהמפות שלך מתחלפות <strong>בתצוגה הראשית</strong>. עם זאת, ה- %TPL_NAME%  מאפשר לך להוסיף תמונות, וידאו ותרשימים גם בתוך התצוגה הראשית.",
+				content1Div2: "הוספת חלקים מאפשרת לך להתאים אישית את חויית הסיפור. כאשר הקוראים גוללים את הטקסט בתוך ה%LAYOUT_TITLE% המפה בתצוגה הראשית יכולה להתמקד לנקודות מפתח, ומפות ותמונות יכולות להתחלף באופן אוטומטי כדי לתמוך במסר שלך.",
+				content2Div1: "כאן הוא מקום שבו אתה יכול להתאים את תצוגת ה- %TPL_NAME%. כאן ניתן לעדן את סכימות הצבעים, תצוגות המפה ועובי הפריטים השונים.",
+				content2Div2: "אתה יכול גם להוסיף קישורי שיתוף לפייסבוק, טוויטר, ו- Bitly, כדי שקוראים יוכלו בקלות להפיץ את ה- %TPL_NAME% שלך לאחרים.",
+				content3Div1: "התוכן שלך מאורגן בחלקים. אתה יכול להגדיר חלקים רבים ככל שתרצה (חשוב עליהם כמו פרקים קטנים). המעבר בין הפרקים חשוב; בעזרת כלי זה באפשרותך לסדר מחדש או למחוק חלקים כרצונך.",
+				content4Div1: "מצאת שגיאה או רוצה לשנות את התוכן שלך? אל דאגה. חפש את סמל העריכה באפליקציה כדי לבצע שינויים בתוכן שלך. אתה יכול להשתמש ביכולות העריכה פעמים רבות בעת שאתה מפתח את ה-  %TPL_NAME% שלך!",
+				content5Div1: "%TPL_NAME% נשמר(ת) בחשבון ה- %PORTAL% פרטי כברירת מחדל. אתה יכול להחליט לחלוק אותו עם הארגון שלך, או לפתוח אותו לעולם. אנחנו אפילו מספקים לך  URL מקוצר, כך שתוכל לשתף אותו בצורה קלה יותר.",
+				content6Div1: "כותרת חלק דף הבית שלך היא גם כותרת החוברת; חשוב על חלק דף הבית שלך כעל העמוד הראשי של הסיפור שלך. כותרת חלק דף הבית שלך תוצג גם כאשר הקוראים ינווטו לחוברת.",
+				content6Div2: "ה%LAYOUT_TITLE% שלך לא חייב להכיל רק טקסט. שקול לכלול בתוכו גם וידאו ותמונות כדי להחיות את הסיפור ולגוון חלקי טקסט ארוכים."
 			},
 			landing: {
-				lblAdd: "הוסף את קטע הבית",
+				lblAdd: "כיצד אתה רוצה לקרוא לחוברת המפות שלך?",
+				phAdd: "הכנס את הכותרת שלך...",
 				lblOR: "או",
 				lblHelp: "סייר"
 			},
 			firstAddSplash: {
-				thisis: "זה הוא"
+				thisis: "זהו"
 			}
         }
     })

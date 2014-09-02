@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "á_Web map_Ó",
+				lblWebMap: "Mapa web",
 				lblLocation: "Ubicación",
 				lblContent: "Contenido",
 				lblPopup: "Menú emergente",
-				lblControls: "á_Extras_Ó",
+				lblControls: "Extras",
 				lblOverview: "Mapa de vista general",
 				lblLegend: "Leyenda",
 				loadingTitle: "Cargando título",
@@ -22,19 +22,19 @@
 				newMap: "Mapa web que se acaba de seleccionar",
 				webmapDefault: "Valor por defecto de mapa web",
 				customCfg: "Configuración personalizada",
-				tooltipLocation: "á_Define the map location that will be used when your readers navigate to this section._Ó",
+				tooltipLocation: "Define la ubicación del mapa que se utilizará cuando los lectores naveguen a esta sección.",
 				tooltipContent: "Define las capas visibles.",
 				tooltipPopup: "Elige una ventana emergente que se mostrará cuando los lectores naveguen a esta sección.",
 				tooltipOverview: "Muestra un pequeño mapa de vista general junto con el mapa principal",
-				tooltipLegend: "Muestra la leyenda del mapa en el mapa, algo que resulta útil cuando el mapa tiene muchos símbolos y capas.",
-				mapCfgInvite: "á_Use these controls to configure your map_Ó"
+				tooltipLegend: "Muestra la leyenda en el mapa, algo que resulta útil cuando el mapa tiene muchos símbolos y capas.",
+				mapCfgInvite: "Usa estos controles para configurar el mapa"
 			},
 			configure: {
 				btnReset: "Reiniciar",
 				btnCancel: "Cancelar",
 				tocTitle: "Contenido del mapa",
 				tocExplain: "Selecciona las capas que se mostrarán.",
-				tocSave: "á_Save map content_Ó",
+				tocSave: "Guardar contenido del mapa",
 				extentTitle: "Ubicación del mapa",
 				extentExplain: "Desplázate y haz zoom por el mapa para definir cómo lo verán los lectores.",
 				extentSave: "Guardar ubicación del mapa",

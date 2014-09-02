@@ -13,7 +13,9 @@
 				open: "فتح",
 				start: "بدء",
 				loading: "تحميل",
-				disabledAdmin: "لقد تم تعطيل هذا المعلم بواسطة المدير"
+				disabledAdmin: "لقد تم تعطيل هذا المعلم بواسطة المدير",
+				width: "العرض",
+				height: "الارتفاع"
 			},
 			inlineFieldEdit: {
 				editMe: "التحرير!"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "المخطط",
 				explain: "أي التخطيطات الطباعية تريد استخدامها؟",
-				explainInit: "يمكن تغيير التخطيط الطباعي في أي وقت من لوحة الإعدادات.",
+				explainInit: "يمكن تغيير التخطيط الطباعي في أي وقت من مربع حوار الإعدادات.",
 				viewExample: "عرض مثال حي"
 			},
 			settingsTheme: {

@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ă_Media_ș",
-				lblSelect2: "Ă_Content_ș",
+				lblSelect1: "Media",
+				lblSelect2: "Conţinut",
 				lblMap: "Hartă",
 				lblImage: "Imagine",
 				lblVideo: "Video",
@@ -40,10 +40,17 @@
 				howToFind: "Găsirea unui ID de cont Picasa sau Google+",
 				howToFind2: "Copiaţi cifrele dintre primul şi al doilea caracter „/” a unei pagini Picasa sau G+"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Bifaţi",
+				notFound: "Clip video negăsit",
+				found: "Clip video găsit",
+				select: "Selectaţi acest clip video"
+			},
+			videoSelectorHome: {
+				other: "Altul"
 			},
 			videoSelectorYoutube: {
+				url: "URL al unui clip video de pe Youtube",
 				pageInputLbl: "Nume utilizator",
 				lookupMsgError: "Utilizator negăsit",
 				howToFind: "Cum găsiţi un nume de utilizator YouTube",
@@ -51,24 +58,42 @@
 				found: "Găsit",
 				noData: "Nu a fost găsit niciun videoclip public"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "URL al unui clip video de pe Vimeo"
+			},
+			videoSelectorOther: {
+				explain1: "Jurnalul hărţii nu poate reda clipuri video brute (de ex., avi, mpeg) însă poate reda fişiere video găzduite, care au aplicaţii de redare încorporate (de ex., YouTube sau Vimeo).",
+				explain2: "Majoritatea serviciilor de găzduire video online oferă această funcţie; trebuie să găsiţi opţiunea de a încorpora clipul video, copiaţi codul dat şi utilizaţi %WEBPAGE%.",
+				explain3: "Alternativ, dacă doriţi să găzduiţi voi înşivă clipul video, puteţi crea o pagină HTML care să utilizeze o aplicaţie de redare video, cum ar fi %EXAMPLE%, găzduiţi pagina şi utilizaţi %WEBPAGE%.",
+				webpage: "Obiect spaţial pagină web"
+			},
+			webpageSelectorHome: {
+				lblUrl: "URL pagină web",
+				lblEmbed: "Încorporare cod",
+				lblOR: "SAU",
+				lblError1: "Eroare, eliminaţi unul sau două câmpuri de intrare.",
+				lblError2: "Codul încorporat poate conţine numai un <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "URL media...",
-				lblLabel: "Etichetă",
+				lblURLPH: "Un URL de imagine trebuie să înceapă cu http:// şi să se încheie cu .jpg sau .png",
+				lblLabel: "Subtitlu imagine",
 				lblLabel1: "Subtitlu",
 				lblLabel2: "Text informativ",
 				lblLabel3: "Niciunul",
 				lblLabelPH: "Introduceţi text...",
+				lblMaximize: "Includeţi un buton de maximizare în colţul imaginii",
+				lblMaximizeHelp: "Recomandat numai pentru fotografii la calitate ridicată",
 				lblPosition: "Poziţie",
 				lblPosition1: "Centru",
 				lblPosition2: "Umplere",
 				lblPosition3: "Potrivire",
 				lblPosition4: "Întindere",
+				lblPosition5: "Particularizat",
+				tooltipDimension: "Valoarea poate fi specificată în „px” sau „%”",
 				lblPosition2Explain: "(poate fi decupat)",
 				lblPosition3Explain: "(nu poate fi decupat)",
+				lblPosition3Explain2: "(lăţimea va corespunde întotdeauna panoului)",
 				lblPosition4Explain: "(poate fi distorsionat)"
 			},
 			editorActionGeocode: {

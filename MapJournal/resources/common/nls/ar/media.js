@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "بيت_Media_لاحقة",
-				lblSelect2: "بيت_Content_لاحقة",
+				lblSelect1: "الوسائط",
+				lblSelect2: "المحتوى",
 				lblMap: "خريطة",
 				lblImage: "صورة",
 				lblVideo: "فيديو",
@@ -40,10 +40,17 @@
 				howToFind: "كيفية إيجاد Picasa أو Google+ أو معرف الحساب",
 				howToFind2: "نسخ الأرقام بين الأول والثاني \'/\'  لأي من Picasa او صفحة G+"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "فحص",
+				notFound: "لم يتم العثور على الفيديو",
+				found: "تم العثور على الفيديو",
+				select: "حدد الفيديو الحالي"
+			},
+			videoSelectorHome: {
+				other: "أخرى"
 			},
 			videoSelectorYoutube: {
+				url: "عنوان URL لفيديو اليوتيوب",
 				pageInputLbl: "اسم المستخدم",
 				lookupMsgError: "لم يتم العثور على المستخدم",
 				howToFind: "كيفية إيجاد اسم مستخدم YouTube",
@@ -51,24 +58,42 @@
 				found: "تم العثور",
 				noData: "لم يتم العثور على الفيديوهات العامة"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "عنوان URL لفيديو Vimeo"
+			},
+			videoSelectorOther: {
+				explain1: "يتعذر على تخطيط الجريدة صفّ مقاطع الفيديو (مثل avi وmpeg)، إلا أنه يمكنه تشغيل ملفات فيديو مُستضافة ذات مُشغلات مدمجة (مثل YouTube أو Vimeo).",
+				explain2: "توفر معظم خدمات استضافة الفيديو على الإنترنت تلك الميزة، ويمكنك العثور على خيار تضمين هذا الفيديو ونسخ الكود المُعطى واستخدام %WEBPAGE%.",
+				explain3: "وبدلاً من ذلك، إذا أردت استضافة الفيديو بنفسك، يمكنك إنشاء صفحة HTML تستخدم مُشغل فيديو مثل %EXAMPLE% وتستضيف الصفحة وتستخدم %WEBPAGE%.",
+				webpage: "معالم صفحة الويب"
+			},
+			webpageSelectorHome: {
+				lblUrl: "عنوان URL لصفحة الويب",
+				lblEmbed: "تضمين كود",
+				lblOR: "أو",
+				lblError1: "خطأ، امسح أحد حقلي الإدخال.",
+				lblError2: "يمكن أن تحتوي عملية تضمين كود على أحد <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "محدد موقع معلومات (URL)",
-				lblURLPH: "عنوان URL للوسائط...",
-				lblLabel: "لافتة التسمية",
+				lblURLPH: "يجب أن يبدأ عنوان URL للصورة بـ http:// و ينتهي بـ .jpg أو .png",
+				lblLabel: "التسمية التوضيحية الصورة",
 				lblLabel1: "تسمية وضيحية",
 				lblLabel2: "التحويم حول النص",
 				lblLabel3: "بلا",
 				lblLabelPH: "إدخال النص...",
+				lblMaximize: "تشمل زر تكبير في زاوية الصورة",
+				lblMaximizeHelp: "يكون مفضل فقط للصور عالية الجودة",
 				lblPosition: "الموضع",
 				lblPosition1: "المركز",
 				lblPosition2: "تعبئة",
 				lblPosition3: "احتواء",
 				lblPosition4: "توسيع",
+				lblPosition5: "مخصص",
+				tooltipDimension: "يمكن تحديد القيمة بـ 'px' أو '%'",
 				lblPosition2Explain: "(يمكن القص)",
 				lblPosition3Explain: "(لا يتم القص)",
+				lblPosition3Explain2: "(سوف يناسب دائما العرض اللوحة)",
 				lblPosition4Explain: "(يمكن الإتلاف)"
 			},
 			editorActionGeocode: {

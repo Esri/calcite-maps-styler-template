@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "é_Web map_È",
+				lblWebMap: "Mappa Web",
 				lblLocation: "Posizione",
 				lblContent: "Contenuti",
 				lblPopup: "Popup",
-				lblControls: "é_Extras_È",
+				lblControls: "Extra",
 				lblOverview: "Mappa d\'insieme",
 				lblLegend: "Legenda",
 				loadingTitle: "Caricamento titolo in corso",
@@ -22,19 +22,19 @@
 				newMap: "Nuova mappa Web selezionata",
 				webmapDefault: "Predefinite mappa Web",
 				customCfg: "Configurazione personalizzata",
-				tooltipLocation: "é_Define the map location that will be used when your readers navigate to this section._È",
+				tooltipLocation: "Definisce la posizione della mappa che verrà utilizzata quando i lettori passano a questa sezione.",
 				tooltipContent: "Definisce i layer visibili.",
 				tooltipPopup: "Consente di scegliere un popup da visualizzare quando i lettori passano a questa sezione.",
 				tooltipOverview: "Consente di visualizzare una piccola mappa d\'insieme insieme alla mappa principale.",
 				tooltipLegend: "Consente di visualizzare la legenda della mappa, utile quando la mappa contiene numerosi layer e simboli.",
-				mapCfgInvite: "é_Use these controls to configure your map_È"
+				mapCfgInvite: "Utilizzare questi controlli per configurare la mappa"
 			},
 			configure: {
 				btnReset: "Reimposta",
 				btnCancel: "Annulla",
 				tocTitle: "Contenuti mappa",
 				tocExplain: "Consente di selezionare i layer che verranno visualizzati.",
-				tocSave: "é_Save map content_È",
+				tocSave: "Salva contenuti mappa",
 				extentTitle: "Posizione mappa",
 				extentExplain: "Consente di applicare pan e zoom alla mappa per definirne l\'aspetto per i lettori.",
 				extentSave: "Salva posizione mappa",

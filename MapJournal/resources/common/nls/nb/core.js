@@ -13,7 +13,9 @@
 				open: "Åpne",
 				start: "Start",
 				loading: "Laster inn",
-				disabledAdmin: "Administratoren har deaktivert denne funksjonen"
+				disabledAdmin: "Administratoren har deaktivert denne funksjonen",
+				width: "Bredde",
+				height: "Høyde"
 			},
 			inlineFieldEdit: {
 				editMe: "Rediger meg!"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Utforming",
 				explain: "Hva slags oppsett vil du bruke?",
-				explainInit: "Du kan når som helst endre oppsettet fra innstillingspanelet.",
+				explainInit: "Du kan når som helst endre oppsettet fra innstillingdialogen.",
 				viewExample: "Vis et eksempel i sanntid"
 			},
 			settingsTheme: {

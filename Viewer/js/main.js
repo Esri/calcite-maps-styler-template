@@ -27,7 +27,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
         editorDiv: null,
         editor: null,
         editableLayers: null,
-
+        timeFormats: ["shortDateShortTime", "shortDateLEShortTime", "shortDateShortTime24", "shortDateLEShortTime24", "shortDateLongTime", "shortDateLELongTime", "shortDateLongTime24", "shortDateLELongTime24"],
         startup: function (config) {
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id and any url parameters and any application specific configuration information.
@@ -158,19 +158,22 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 all(toolList).then(lang.hitch(this, function (results) {
 
 
-                    //If all the results are undefined and locate and home are also false we can hide the toolbar
-                    var tools = array.every(results, function (r) {
-                        return r === undefined;
+                    //If all the results are false and locate and home are also false we can hide the toolbar
+                    var tools = array.some(results, function (r) {
+                        return r;
                     });
+
                     var home = has("home");
                     var locate = has("locate");
 
+
                     //No tools are specified in the configuration so hide the panel and update the title area styles 
-                    if (tools && !home && !locate) {
+                    if (!tools && !home && !locate) {
                         domConstruct.destroy("panelTools");
                         domStyle.set("panelContent", "display", "none");
                         domStyle.set("panelTitle", "border-bottom", "none");
                         domStyle.set("panelTop", "height", "52px");
+                        query(".esriSimpleSlider").addClass("notools");
                         this._updateTheme();
                         return;
                     }
@@ -178,14 +181,22 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     //Now that all the tools have been added to the toolbar we can add page naviagation
                     //to the toolbar panel, update the color theme and set the active tool. 
                     this._updateTheme();
-                    toolbar.activateTool(this.config.activeTool);
-                    toolbar.updatePageNavigation();
+
+
+                    if (this.config.activeTool !== "") {
+                        toolbar.activateTool(this.config.activeTool);
+                        toolbar.updatePageNavigation();
+                    } else {
+                        toolbar._closePage();
+                    }
+
 
                     on(toolbar, "updateTool", lang.hitch(this, function (name) {
                         if (name === "measure") {
                             this._destroyEditor();
                             this.map.setInfoWindowOnClick(false);
                         } else if (name === "edit") {
+                            this._destroyEditor();
                             this.map.setInfoWindowOnClick(false);
                             this._createEditor();
                         } else {
@@ -213,8 +224,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     basemapGroup: this._getBasemapGroup()
                 }, domConstruct.create("div", {}, basemapDiv));
                 basemap.startup();
+                deferred.resolve(true);
+            } else {
+                deferred.resolve(false);
             }
-            deferred.resolve();
+
             return deferred.promise;
         },
 
@@ -225,21 +239,21 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 //Conditionally load this module since most apps won't have bookmarks
                 require(["application/has-config!bookmarks?esri/dijit/Bookmarks"], lang.hitch(this, function (Bookmarks) {
                     if (!Bookmarks) {
-                        deferred.resolve();
+                        deferred.resolve(false);
                         return;
                     }
                     var bookmarkDiv = toolbar.createTool(tool, panelClass);
                     var bookmarks = new Bookmarks({
                         map: this.map,
                         bookmarks: this.config.response.itemInfo.itemData.bookmarks
-                    }, bookmarkDiv);
+                    }, domConstruct.create("div", {}, bookmarkDiv));
 
-                    deferred.resolve();
+                    deferred.resolve(true);
 
                 }));
 
             } else {
-                deferred.resolve();
+                deferred.resolve(false);
             }
 
             return deferred.promise;
@@ -263,8 +277,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     var detailDiv = toolbar.createTool(tool, panelClass);
                     detailDiv.innerHTML = description;
                 }
+                deferred.resolve(true);
+            } else {
+                deferred.resolve(false);
             }
-            deferred.resolve();
+
             return deferred.promise;
 
         },
@@ -273,13 +290,18 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             //Add the editor widget to the toolbar if the web map contains editable layers 
             var deferred = new Deferred();
             this.editableLayers = this._getEditableLayers(this.config.response.itemInfo.itemData.operationalLayers);
-            if (this.editableLayers.length > 0) {
-                this.editorDiv = toolbar.createTool(tool, panelClass);
-                return this._createEditor();
+            if (has("edit") && this.editableLayers.length > 0) {
+                if (this.editableLayers.length > 0) {
+                    this.editorDiv = toolbar.createTool(tool, panelClass);
+                    return this._createEditor();
+                } else {
+                    console.log("No Editable Layers");
+                    deferred.resolve(false);
+                }
             } else {
-                console.log("No Editable Layers");
-                deferred.resolve();
+                deferred.resolve(false);
             }
+
             return deferred.promise;
         },
         _createEditor: function () {
@@ -287,7 +309,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             //Dynamically load since many apps won't have editable layers 
             require(["application/has-config!edit?esri/dijit/editing/Editor"], lang.hitch(this, function (Editor) {
                 if (!Editor) {
-                    deferred.resolve();
+                    deferred.resolve(false);
                     return;
                 }
 
@@ -299,11 +321,21 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         //only display visible fields 
                         var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
                         var fieldInfos = [];
-                        array.forEach(fields, function (field) {
+                        array.forEach(fields, lang.hitch(this, function (field) {
+
+                            //added support for editing date and time 
+                            if (field.format && field.format.dateFormat && array.indexOf(this.timeFormats, field.format.dateFormat) > -1) {
+                                field.format = {
+                                    time: true
+                                };
+                            }
+
                             if (field.visible) {
                                 fieldInfos.push(field);
                             }
-                        });
+
+                        }));
+
                         layer.fieldInfos = fieldInfos;
                     }
                 }));
@@ -318,7 +350,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
 
                 this.editor.startup();
-                deferred.resolve();
+                deferred.resolve(true);
 
             }));
             return deferred.promise;
@@ -338,7 +370,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             var layers = this.config.response.itemInfo.itemData.operationalLayers;
 
             if (layers.length === 0) {
-                deferred.resolve();
+                deferred.resolve(false);
             } else {
                 if (has("layers")) {
 
@@ -360,9 +392,9 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     toc.startup();
 
 
-                    deferred.resolve();
+                    deferred.resolve(true);
                 } else {
-                    deferred.resolve();
+                    deferred.resolve(false);
                 }
             }
             return deferred.promise;
@@ -374,7 +406,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
 
             if (layers.length === 0) {
-                deferred.resolve();
+                deferred.resolve(false);
             } else {
                 if (has("legend")) {
                     var legendLength = 0;
@@ -394,14 +426,19 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
                     var legendDiv = toolbar.createTool(tool, panelClass);
                     var legend = new Legend({
-                        map: this.map
+                        map: this.map,
+                        layerInfos: layers
                     }, domConstruct.create("div", {}, legendDiv));
                     domClass.add(legend.domNode, "legend");
                     legend.startup();
-                    toolbar.activateTool(this.config.activeTool || "legend");
+                    if (this.config.activeTool !== "") {
+                        toolbar.activateTool(this.config.activeTool || "legend");
+                    }
+                    deferred.resolve(true);
 
+                } else {
+                    deferred.resolve(false);
                 }
-                deferred.resolve();
 
 
             }
@@ -419,14 +456,16 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
                 var measure = new Measurement({
                     map: this.map,
-                    defaultAreaLength: areaUnit,
+                    defaultAreaUnit: areaUnit,
                     defaultLengthUnit: lengthUnit
                 }, domConstruct.create("div", {}, measureDiv));
 
                 measure.startup();
-
+                deferred.resolve(true);
+            } else {
+                deferred.resolve(false);
             }
-            deferred.resolve();
+
 
 
             return deferred.promise;
@@ -473,8 +512,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         ovMap.startup();
                     }
                 }));
+                deferred.resolve(true);
+            } else {
+                deferred.resolve(false);
             }
-            deferred.resolve();
+
 
             return deferred.promise;
         },
@@ -492,11 +534,27 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     "legendLayers": []
                 };
                 if (!Print) {
-                    deferred.resolve();
+                    deferred.resolve(false);
                     return;
                 }
 
                 var printDiv = toolbar.createTool(tool, panelClass);
+
+                //get format
+                this.format = "PDF"; //default if nothing is specified 
+                for (var i = 0; i < this.config.tools.length; i++) {
+                    if (this.config.tools[i].name === "print") {
+                        var f = this.config.tools[i].format;
+                        this.format = f.toLowerCase();
+                        break;
+                    }
+                }
+
+                if (this.config.hasOwnProperty("tool_print_format")) {
+                    this.format = this.config.tool_print_format.toLowerCase();
+                }
+
+
                 if (has("print-legend")) {
                     legendNode = domConstruct.create("input", {
                         id: "legend_ck",
@@ -553,25 +611,25 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             layout: "Letter ANSI A Landscape",
                             layoutOptions: layoutOptions,
                             label: this.config.i18n.tools.print.layouts.label1,
-                            format: "PDF"
+                            format: this.format
                         },
                         {
                             layout: "Letter ANSI A Portrait",
                             layoutOptions: layoutOptions,
                             label: this.config.i18n.tools.print.layouts.label2,
-                            format: "PDF"
+                            format: this.format
                         },
                         {
                             layout: "Letter ANSI A Landscape",
                             layoutOptions: layoutOptions,
                             label: this.config.i18n.tools.print.layouts.label3,
-                            format: "PNG32"
+                            format: this.format
                         },
                         {
                             layout: "Letter ANSI A Portrait",
                             layoutOptions: layoutOptions,
                             label: this.config.i18n.tools.print.layouts.label4,
-                            format: "PNG32"
+                            format: this.format
                         }];
 
 
@@ -588,7 +646,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
 
 
-                        deferred.resolve();
+                        deferred.resolve(true);
                         return;
                     }
 
@@ -611,6 +669,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         }
                         templateNames = layoutTemplate[0].choiceList;
 
+
                         // remove the MAP_ONLY template then add it to the end of the list of templates 
                         mapOnlyIndex = array.indexOf(templateNames, "MAP_ONLY");
                         if (mapOnlyIndex > -1) {
@@ -619,24 +678,24 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         }
 
                         // create a print template for each choice
-                        templates = array.map(templateNames, function (name) {
+                        templates = array.map(templateNames, lang.hitch(this, function (name) {
                             var plate = new PrintTemplate();
                             plate.layout = plate.label = name;
-                            plate.format = "pdf";
+                            plate.format = this.format;
                             plate.layoutOptions = layoutOptions;
                             return plate;
-                        });
+                        }));
 
 
                         print = new Print({
                             map: this.map,
                             templates: templates,
                             url: this.config.helperServices.printTask.url
-                        }, domConstruct.create("div")); //domConstruct.create("div",{}),printDiv); 
+                        }, domConstruct.create("div"));
                         domConstruct.place(print.printDomNode, printDiv, "first");
 
                         print.startup();
-                        deferred.resolve();
+                        deferred.resolve(true);
 
                     }));
                 }));
@@ -661,14 +720,16 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     map: this.map,
                     image: this.config.sharinghost + "/sharing/rest/content/items/" + this.config.response.itemInfo.item.id + "/info/" + this.config.response.itemInfo.thumbnail,
                     title: this.config.title,
-                    summary: this.config.response.itemInfo.snippet
+                    summary: this.config.response.itemInfo.item.snippet || ""
                 }, shareDiv);
                 domClass.add(shareDialog.domNode, "pageBody");
                 shareDialog.startup();
 
-
+                deferred.resolve(true);
+            } else {
+                deferred.resolve(false);
             }
-            deferred.resolve();
+
 
             return deferred.promise;
 
@@ -730,6 +791,18 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 home.startup();
             }
 
+            require(["application/has-config!scalebar?esri/dijit/Scalebar"], lang.hitch(this, function (Scalebar) {
+                if (!Scalebar) {
+                    return;
+                }
+                var scalebar = new Scalebar({
+                    map: this.map,
+                    scalebarUnit: this.config.units
+                });
+                console.log(this.config.units);
+            }));
+
+
             if (has("locate")) {
                 domConstruct.create("div", {
                     id: "panelLocate",
@@ -752,6 +825,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             //Add the location search widget 
             require(["application/has-config!search?application/CreateGeocoder"], lang.hitch(this, function (CreateGeocoder) {
                 if (!CreateGeocoder) {
+                    //add class to make title area max-width smaller. Since geocoder isn't there we don't need extra space. 
+                    domClass.add("panelTop", "smallerTitle");
                     return;
                 }
 
@@ -778,7 +853,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
             //Set the font color using the configured color value   
             query(".fc").style("color", this.color.toString());
-            query(".calcite .esriPopup .titlePane").style("color", this.color.toString());
+            query(".esriPopup .titlePane").style("color", this.color.toString());
+            query(".esriPopup. .titleButton").style("color", this.color.toString());
 
 
             //Set the Slider +/- color to match the icon style. Valid values are white and black
@@ -806,8 +882,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
             var width = 270,
                 height = 300,
-                newWidth = Math.round(box.w * 0.60),
-                newHeight = Math.round(box.h * 0.45);
+                newWidth = Math.round(box.w * 0.50),
+                newHeight = Math.round(box.h * 0.35);
             if (newWidth < width) {
                 width = newWidth;
             }
@@ -824,7 +900,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             }).then(lang.hitch(this, function (response) {
 
                 this.map = response.map;
-
+                domClass.add(this.map.infoWindow.domNode, "light");
                 this._updateTheme();
 
                 //Add a logo if provided
@@ -833,12 +909,28 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         id: "panelLogo",
                         innerHTML: "<img id='logo' src=" + this.config.logo + "></>"
                     }, dom.byId("panelTitle"), "first");
+                    domClass.add("panelTop", "largerTitle");
                 }
 
                 //Set the application title
                 this.map = response.map;
                 //Set the title - use the config value if provided. 
-                var title = (this.config.title === null) ? response.itemInfo.item.title : this.config.title;
+                //var title = (this.config.title === null) ? response.itemInfo.item.title : this.config.title;
+                var title;
+                if (this.config.title === null || this.config.title === "") {
+                    title = response.itemInfo.item.title;
+                } else {
+                    title = this.config.title;
+                }
+
+                //if title is short make title area smaller
+                if (title && title.length && title.length === 0) {
+                    domClass.add("panelTop", "smallerTitle");
+                } else if (title && title.length && title.length <= 22 && !this.config.logo) {
+                    domClass.add("panelTop", "smallerTitle");
+                }
+
+
                 this.config.title = title;
                 document.title = title;
                 dom.byId("panelText").innerHTML = title;

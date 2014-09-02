@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "é_Media_È",
-				lblSelect2: "é_Content_È",
+				lblSelect1: "Supporto",
+				lblSelect2: "Contenuti",
 				lblMap: "Mappa",
 				lblImage: "Immagine",
 				lblVideo: "Video",
@@ -40,10 +40,17 @@
 				howToFind: "Come trovare l\'ID di un account Picasa o Google+",
 				howToFind2: "Copiare le cifre tra il primo e il secondo \"/\" di qualsiasi pagina Picasa o G+"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Seleziona",
+				notFound: "Video non trovato",
+				found: "Video trovato",
+				select: "Seleziona questo video"
+			},
+			videoSelectorHome: {
+				other: "Altro"
 			},
 			videoSelectorYoutube: {
+				url: "URL di un video Youtube",
 				pageInputLbl: "Nome utente",
 				lookupMsgError: "Utente non trovato",
 				howToFind: "Come trovare un nome utente di YouTube",
@@ -51,24 +58,42 @@
 				found: "Trovato",
 				noData: "Nessun video pubblico trovato."
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "URL di un video Vimeo"
+			},
+			videoSelectorOther: {
+				explain1: "Diario mappa non può riprodurre video non elaborati (ad esempio, avi o mpeg) ma può riprodurre file video in hosting con lettori incorporati (ad esempio, YouTube o Vimeo).",
+				explain2: "La maggior parte dei servizi di hosting di video online offre tale feature. È necessario individuare l\'opzione per incorporare il video, copiare il codice specificato e utilizzare %WEBPAGE%.",
+				explain3: "In alternativa, se si desidera eseguire autonomamente l\'hosting del video, è possibile creare una pagina HTML che utilizza un lettore video come %EXAMPLE%, eseguire l\'hosting di tale pagina e utilizzare %WEBPAGE%.",
+				webpage: "Feature pagina Web"
+			},
+			webpageSelectorHome: {
+				lblUrl: "URL pagina Web",
+				lblEmbed: "Incorpora codice",
+				lblOR: "OPPURE",
+				lblError1: "Errore, cancellare uno dei due campi di input.",
+				lblError2: "Il codice incorporato può contenere un solo <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "URL file multimediale...",
-				lblLabel: "Etichetta",
+				lblURLPH: "Un URL di immagine deve iniziare con http:// e terminare con .jpg o .png",
+				lblLabel: "Didascalia immagine",
 				lblLabel1: "Didascalia",
 				lblLabel2: "Testo al passaggio del mouse",
 				lblLabel3: "Nessuno",
 				lblLabelPH: "Immettere un testo...",
+				lblMaximize: "Includere un pulsante Ingrandisci nell\'angolo dell\'immagine",
+				lblMaximizeHelp: "Consigliato solo per le foto di alta qualità",
 				lblPosition: "Posizione",
 				lblPosition1: "Al centro",
 				lblPosition2: "Riempimento",
 				lblPosition3: "Adatta",
 				lblPosition4: "Estendi",
+				lblPosition5: "Personalizza",
+				tooltipDimension: "Il valore può essere specificato come \'px\' o \'%\'",
 				lblPosition2Explain: "(possibile ritaglio)",
 				lblPosition3Explain: "(nessun ritaglio)",
+				lblPosition3Explain2: "(la larghezza viene sempre adattata al pannello)",
 				lblPosition4Explain: "(possibile distorsione)"
 			},
 			editorActionGeocode: {

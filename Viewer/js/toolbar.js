@@ -36,9 +36,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             deferred = new Deferred();
 
             // on(window, "scroll", lang.hitch(this, this._windowScrolled));
-            on(window, "resize", lang.hitch(this, this._windowScrolled));
-
-
+            //on(window, "resize", lang.hitch(this, this._windowScrolled));
             this.pTools = dom.byId("panelTools");
             this.pMenu = dom.byId("panelMenu");
             on(this.pMenu, "click", lang.hitch(this, this._menuClick));
@@ -148,8 +146,6 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
         },
 
         activateTool: function (name) {
-            //this.curTool = this._getPageNum(name);
-            // this._showPage(name);
             //Instead of scrolling to the tool just go there. 
             var num = this._getPageNum(name) + 1;
             var box = html.getContentBox(dom.byId("panelContent"));
@@ -214,21 +210,18 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             this.snap = false;
             if (diff == 1) {
                 this._animateScroll(startPos, endPos);
-                this._updateMap();
             } else {
                 document.body.scrollTop = endPos;
                 document.documentElement.scrollTop = endPos;
-
                 this._updateMap();
                 this.snap = true;
             }
             this.curTool = num;
             this._updateTool(num);
 
-
-
         },
         _windowScrolled: function (evt) {
+
             if (this.scrollTimer) {
                 clearTimeout(this.scrollTimer);
             }
@@ -264,8 +257,11 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
 
             this.curTool = num;
             this._updateTool(num);
+     
+            if (num != numActual) {
+                this._animateScroll(startPos, endPos);
+            }
 
-            this._animateScroll(startPos, endPos);
         },
 
         _animateScroll: function (start, end) {
@@ -280,7 +276,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             });
 
             on(anim, "End", lang.hitch(this, function () {
-                setTimeout(lang.hitch(this, this._resetSnap), 100);
+                setTimeout(lang.hitch(this, this._resetSnap), 500);
                 this._updateMap();
             }));
 
@@ -296,6 +292,8 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             }
             this.emit("updateTool", name);
 
+
+
         },
         _updateMap: function () {
             if (this.map) {
@@ -308,6 +306,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             this.snap = true;
 
         },
+
         // menu click
         _menuClick: function () {
             if (query("#panelTools").style("display") == "block") {

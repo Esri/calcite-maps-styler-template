@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Ř_Web map_ů",
+				lblWebMap: "Webová mapa",
 				lblLocation: "Umístění",
 				lblContent: "Obsah",
 				lblPopup: "Vyskakovací okno",
-				lblControls: "Ř_Extras_ů",
+				lblControls: "Doplňky",
 				lblOverview: "Mapa přehledu",
 				lblLegend: "Legenda",
 				loadingTitle: "Načítání nadpisu",
@@ -22,24 +22,24 @@
 				newMap: "Nově vybraná webová mapa",
 				webmapDefault: "Výchozí nastavení webové mapy",
 				customCfg: "Vlastní konfigurace",
-				tooltipLocation: "Ř_Define the map location that will be used when your readers navigate to this section._ů",
+				tooltipLocation: "Určete umístění mapy, které se použije, když čtenáři přejdou do této části.",
 				tooltipContent: "Určete viditelné vrstvy.",
 				tooltipPopup: "Zvolte vyskakovací okno, které se zobrazí, když čtenáři přejdou do této části.",
-				tooltipOverview: "Zobrazí spolu s hlavní mapou malou mapu přehledu.",
-				tooltipLegend: "Zobrazí legendu mapy na mapě. Užitečné v případě, že mapa obsahuje velké množství vrstev a symbolů.",
-				mapCfgInvite: "Ř_Use these controls to configure your map_ů"
+				tooltipOverview: "Zobrazí spolu s hlavní mapou, malou mapu přehledu.",
+				tooltipLegend: "Zobrazí v mapě její legendu. Užitečné v případě, kdy mapa obsahuje velké množství vrstev a symbolů.",
+				mapCfgInvite: "Pomocí těchto ovládacích prvků můžete konfigurovat mapu."
 			},
 			configure: {
 				btnReset: "Resetovat",
 				btnCancel: "Storno",
 				tocTitle: "Obsah mapy",
 				tocExplain: "Vyberte, které vrstvy se zobrazí.",
-				tocSave: "Ř_Save map content_ů",
+				tocSave: "Uložit obsah mapy",
 				extentTitle: "Umístění mapy",
 				extentExplain: "Pomocí posunutí a přiblížení mapy můžete nastavit, jak se zobrazí čtenářům.",
 				extentSave: "Uložit umístění mapy",
 				popupTitle: "Vyskakovací okno mapy",
-				popupExplain: "Umožňuje nastavit vzhled vyskakovacího okna, které se zobrazuje čtenářům.",
+				popupExplain: "Umožňuje nastavit vzhled vyskakovacího okna, které se zobrazuje uživatelům.",
 				popupSave: "Uložit konfiguraci vyskakovacího okna",
 				hintNavigation: "Navigace mapy je vypnuta."
 			}

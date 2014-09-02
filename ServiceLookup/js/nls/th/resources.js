@@ -10,14 +10,17 @@
         error: {
             layerNotFound: "ชั้นช้อมูลพื้นที่การให้บริการไม่ปรากฎในเว็บแมพ",
             fieldNotFound: "ไม่พบฟิลด์",
-            popupNotSet: "ก้_Popup not enabled for this layer_ษฺ"
+            popupNotSet: "ไม่ปรากฎกล่องหัวเรื่องของชั้นข้อมูล"
         },
         page: {
             title: "ข้อมูลในตาราง",
         },
 
         splashscreen: {
-            buttonText: "ก้_OK_ษฺ",
+            buttonText: "ตกลง",
+        },
+        ui:{
+            basemapButton: "แผนที่ฐาน"
         }
     })
 

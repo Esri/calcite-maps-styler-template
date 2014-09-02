@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "Sorteren op",
             layoutBtnTitle: "Lay-out",
             signInBtnTitle: "Aanmelden",
+            signOutBtnTitle: "Ĳ_Sign Out_ä",
             geolocationBtnTitle: "Geografische locatie"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "Kan geen gegevens ophalen van kaartlagen.",
             unableToOpenItem: "Kan item niet openen.",
             wmsSpatialReferenceError: "Ruimtelijke referentie van de WMS-laag komt niet overeen met ruimtelijke referentie van de kaart.",
-            noPublicItems: "Er zijn geen openbare items in de geconfigureerde groep.",
+            noPublicItems: "Ĳ_There are no public items in the configured group or no items have been shared with this group yet._ä",
             emptyUsernamePassword: "Voer gebruikersnaam en wachtwoord in.",
-            noFullScreenSupport: "De huidige browser biedt geen ondersteuning voor de volledig-schermmodus."
+            noFullScreenSupport: "De huidige browser biedt geen ondersteuning voor de volledig-schermmodus.",
+            notMemberOfOrg: "Ĳ_You are not a member of this organization_ä"
         }
 });

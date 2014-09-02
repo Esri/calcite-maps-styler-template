@@ -45,6 +45,8 @@ define([
             options:null,
             map: null,
             handler: null,
+            timeFormats: ["shortDateShortTime","shortDateLEShortTime","shortDateShortTime24","shortDateLEShortTime24","shortDateLongTime",
+                           "shortDateLELongTime","shortDateLongTime24","shortDateLELongTime24"], 
             constructor: function(args){
              (has("touch") && window.innerWidth <= 360) ? this.isMobile = true : this.isMobile = false;
               this.options = args;
@@ -229,6 +231,32 @@ define([
                   if(this.handler){
                     this.handler.remove();
                   }
+
+                //add field infos if necessary. Field infos will contain hints if defined in the popup and hide fields where visible is set
+                //to false. The popup logic takes care of this for the info window but not the edit window. 
+                array.forEach(this.editableLayers, lang.hitch(this, function (layer) {
+                    if (layer.featureLayer && layer.featureLayer.infoTemplate && layer.featureLayer.infoTemplate.info && layer.featureLayer.infoTemplate.info.fieldInfos) {
+                        //only display visible fields 
+                        var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
+                        var fieldInfos = [];
+                        array.forEach(fields, lang.hitch(this, function (field) {
+
+                            //added support for editing date and time 
+                            if (field.format && field.format.dateFormat && array.indexOf(this.timeFormats, field.format.dateFormat) > -1) { 
+                              field.format = {
+                                time: true
+                              };
+                             }
+
+                            if (field.visible) {
+                                fieldInfos.push(field);
+                            }
+                 
+                        }));
+                 
+                        layer.fieldInfos = fieldInfos;
+                    }
+                }));
 
                 //display the toolbar if the configuration option has been enabled and the site isn't mobile.
                 var settings = {

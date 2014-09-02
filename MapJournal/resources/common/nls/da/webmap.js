@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "ø_Web map_å",
+				lblWebMap: "Webkort",
 				lblLocation: "Position",
 				lblContent: "Indhold",
 				lblPopup: "Pop-up",
-				lblControls: "ø_Extras_å",
+				lblControls: "Ekstra",
 				lblOverview: "Oversigtskort",
 				lblLegend: "Signaturforklaring",
 				loadingTitle: "Indlæser titel",
@@ -22,19 +22,19 @@
 				newMap: "Webkort, der er valgt for nylig",
 				webmapDefault: "Standard-webkort",
 				customCfg: "Tilpasset konfiguration",
-				tooltipLocation: "ø_Define the map location that will be used when your readers navigate to this section._å",
+				tooltipLocation: "Defin\ér den kortposition, der skal bruges, når dine læsere navigerer til denne sektion.",
 				tooltipContent: "Definér synlige lag.",
 				tooltipPopup: "Vælg en pop-up, der skal vises, når dine læsere navigerer til denne sektion.",
 				tooltipOverview: "Få vist et lille oversigtskort sammen med hovedkortet.",
 				tooltipLegend: "Få vist signaturforklaringen på kortet. Dette er nyttigt, når kortet har mange lag og symboler.",
-				mapCfgInvite: "ø_Use these controls to configure your map_å"
+				mapCfgInvite: "Brug disse knapper til at konfigurere kortet"
 			},
 			configure: {
 				btnReset: "Nulstil",
 				btnCancel: "Annullér",
 				tocTitle: "Kortindhold",
 				tocExplain: "Vælg, hvilke lag de skal vises.",
-				tocSave: "ø_Save map content_å",
+				tocSave: "Gem kortindhold",
 				extentTitle: "Kortposition",
 				extentExplain: "Panorér og zoom kortet for at definere, hvordan det skal vises for læserne.",
 				extentSave: "Gem kortposition",

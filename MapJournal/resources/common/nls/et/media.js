@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Š_Media_ä",
-				lblSelect2: "Š_Content_ä",
+				lblSelect1: "Meedia",
+				lblSelect2: "Sisu",
 				lblMap: "Kaart",
 				lblImage: "Pilt",
 				lblVideo: "Video",
@@ -40,10 +40,17 @@
 				howToFind: "Kuidas leida Picasa või Google+ konto ID-d",
 				howToFind2: "Kopeeri numbrikohad esimese ja teise \'/\' vahelt Picasa või G+ lehelt"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Kontrolli",
+				notFound: "Videot ei leitud",
+				found: "Video leiti",
+				select: "Vali see video"
+			},
+			videoSelectorHome: {
+				other: "Muu"
 			},
 			videoSelectorYoutube: {
+				url: "Youtube'i video URL",
 				pageInputLbl: "Kasutajanimi",
 				lookupMsgError: "Kasutajat ei leitud",
 				howToFind: "Kuidas leida YouTube’i kasutajanime",
@@ -51,24 +58,42 @@
 				found: "Leitud",
 				noData: "Avalikke videoid ei leitud"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "Vimeo video URL"
+			},
+			videoSelectorOther: {
+				explain1: "Kaardiajakiri ei saa esitada töötlemata videoid (nt avi, mpeg), kuid saab esitada majutatud videoid sisseehitatud pleierites (nt YouTube või Vimeo).",
+				explain2: "Enamik veebis olevaid videomajutusteenuseid pakuvad seda funktsiooni. Peate leidma video lisamise võimaluse, kopeerima antud koodi ja kasutama veebilehte %WEBPAGE%.",
+				explain3: "Kui soovite videot ise majutada, saate luua HTML-lehe, mis kasutab näiteks videopleierit %EXAMPLE%, selle lehe majutada ning kasutada ka veebilehte %WEBPAGE%.",
+				webpage: "Veebilehe funktsioon"
+			},
+			webpageSelectorHome: {
+				lblUrl: "Veebilehe URL",
+				lblEmbed: "Lisa kood",
+				lblOR: "VÕI",
+				lblError1: "Viga, tühjendage üks kahest sisendväljast.",
+				lblError2: "Lisatud kood võib sisaldada ainult ühte <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Meediumi URL...",
-				lblLabel: "Silt",
+				lblURLPH: "Pildi URL-i alguses peaks olema http:// ja lõpus laiend .jpg või .png",
+				lblLabel: "Pildi alapealkiri",
 				lblLabel1: "Alapealkiri",
 				lblLabel2: "Hõljuktekst",
 				lblLabel3: "Pole",
 				lblLabelPH: "Sisestage teksti...",
+				lblMaximize: "Lisa pildi nurka maksimeerimise nupp",
+				lblMaximizeHelp: "Soovitatud ainult kvaliteetsete piltide puhul",
 				lblPosition: "Paigutus",
 				lblPosition1: "Keskele",
 				lblPosition2: "Täida",
 				lblPosition3: "Sobita",
 				lblPosition4: "Venita",
+				lblPosition5: "Kohandatud",
+				tooltipDimension: "Väärtuse ühikuks võib olla px või %",
 				lblPosition2Explain: "(võib kärpida)",
 				lblPosition3Explain: "(ei kärbita)",
+				lblPosition3Explain2: "(laius on alati paneelile vastav)",
 				lblPosition4Explain: "(võib moonutada)"
 			},
 			editorActionGeocode: {

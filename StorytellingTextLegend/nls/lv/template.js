@@ -16,7 +16,7 @@
         legendHeader: "LEĢENDA"
       },
       datePatterns:{
-        datePattern: "dd.MMMM.yyyy.",
+        datePattern: "dd.MM.yyyy.",
         yearPattern: "yyyy",
         hourTimePattern: "H a",
         minuteTimePattern: "HH:mm",

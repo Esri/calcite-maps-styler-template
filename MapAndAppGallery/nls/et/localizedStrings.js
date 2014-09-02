@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "Sorteeri:",
             layoutBtnTitle: "Kujundus",
             signInBtnTitle: "Logi sisse",
+            signOutBtnTitle: "Š_Sign Out_ä",
             geolocationBtnTitle: "Geoasukoht"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "Kihtidest ei saa andmeid tuua.",
             unableToOpenItem: "Üksust ei saa avada.",
             wmsSpatialReferenceError: "WMS-kihi koordinaatsüsteem ei vasta kaardi koordinaatsüsteemile.",
-            noPublicItems: "Konfigureeritud rühmas pole avalikke üksusi.",
+            noPublicItems: "Š_There are no public items in the configured group or no items have been shared with this group yet._ä",
             emptyUsernamePassword: "Sisestage kasutajanimi ja parool.",
-            noFullScreenSupport: "Praegune brauser ei toeta täisekraanrežiimi."
+            noFullScreenSupport: "Praegune brauser ei toeta täisekraanrežiimi.",
+            notMemberOfOrg: "Š_You are not a member of this organization_ä"
         }
 });

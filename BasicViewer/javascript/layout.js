@@ -17,7 +17,8 @@ var allResults = null;
 
 var measure;
 var ConstrainedFloatingPane;
-
+var timeFormats = ["shortDateShortTime","shortDateLEShortTime","shortDateShortTime24","shortDateLEShortTime24","shortDateLongTime",
+                           "shortDateLELongTime","shortDateLongTime24","shortDateLELongTime24"]
 function initMap(options) {
 /*Patch to fix issue with floating panes used to display the measure and time panel. They
    moved slightly each time the window was toggled due to this bug
@@ -1342,6 +1343,13 @@ function createEditor() {
                 var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
                 var fieldInfos = [];
                 dojo.forEach(fields, function(field) {
+                    //add support for editing time. 
+                    if (field.format && field.format.dateFormat && dojo.indexOf(timeFormats, field.format.dateFormat) > -1) { 
+                      field.format = {
+                        time: true
+                      };
+                     }
+
                     if (field.visible) {
                         fieldInfos.push(field);
                     }
@@ -1740,7 +1748,7 @@ function hasTemporalLayer(layers) {
     for (var i = 0; i < layers.length; i++) {
         var layer = layers[i];
         if (layer.layerObject) {
-            if (layer.layerObject.timeInfo && layer.layerObject.visible) {
+            if (layer.layerObject.timeInfo && layer.layerObject.timeInfo.timeExtent && layer.layerObject.visible) {
                 timeLayers.push(layer.layerObject);
             }
         }
@@ -1873,7 +1881,8 @@ function createTimeSlider(timeProperties) {
     //create a time slider and a label to hold date details and add to the floating time panel
     var timeSlider = new esri.dijit.TimeSlider({
         style: "width: 100%;",
-        id: "timeSlider"
+        id: "timeSlider",
+        loop: true
     }, dojo.create('div'));
 
     var timeSliderLabel = dojo.create('div', {

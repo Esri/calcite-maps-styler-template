@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Willkommen bei der %TPL_NAME% Webanwendung.<br />Die Anwendung ist noch nicht konfiguriert.",
 				notConfiguredMobile: "Willkommen bei der %TPL_NAME% Webanwendung. Die Anwendung ist noch nicht konfiguriert und der Builder wird auf mobilen Geräten nicht unterstützt.",
 				notAuthorized: "Sie sind nicht autorisiert, auf diese Anwendung zuzugreifen",
-				noBuilderIE8: "Der Builder wird von Internet Explorer vor Version 9 nicht unterstützt."
+				noBuilderIE8: "Der Builder wird von Internet Explorer vor Version 9 nicht unterstützt.",
+				mapLoadingFail: "Ein Fehler ist aufgetreten. Die Karte kann nicht geladen werden."
 			},
 			mobileView: {
 				tapForDetails: "Zum Anzeigen von Details tippen",
@@ -51,7 +52,7 @@
 				share: "Freigeben"
 			},
 			overviewFromCommon: {
-				title: "Übersichtskarte",
+				title: "Übersichtskarte"
 			},
 			legendFromCommon: {
 				title: "Legende"

@@ -760,11 +760,6 @@ font
     border-right: 1px solid #fff;
 }
 
-.esriCTCategoriesHeader
-{
-    color: #7453a4 !important;
-}
-
 /* End of gallery Styles */
 
 /* Item details page Styles */
@@ -1512,6 +1507,11 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     color: #007ac2;
 }
 
+.blueTheme .esriCTCategoriesHeader
+{
+    color: #007ac2 !important;
+}
+
 .blueTheme .esriCTAppImage
 {
     border: 1px solid #007ac2;
@@ -1719,6 +1719,11 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     color: #028d6a;
 }
 
+.greenTheme .esriCTCategoriesHeader
+{
+    color: #028d6a !important;
+}
+
 .greenTheme .esriCTAppImage
 {
     border: 1px solid #028d6a;
@@ -1924,6 +1929,11 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 .redTheme .esriCTListAppTitle
 {
     color: #800000;
+}
+
+.redTheme .esriCTCategoriesHeader
+{
+    color: #800000 !important;
 }
 
 .redTheme .esriCTAppImage

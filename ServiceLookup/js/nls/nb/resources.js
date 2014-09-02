@@ -18,6 +18,9 @@
 
         splashscreen: {
             buttonText: "OK",
+        },
+        ui:{
+            basemapButton: "Bakgrunnskart"
         }
     })
 

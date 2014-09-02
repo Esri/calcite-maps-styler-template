@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ı_Media_İ",
-				lblSelect2: "ı_Content_İ",
+				lblSelect1: "Ortam",
+				lblSelect2: "İçerik",
 				lblMap: "Harita",
 				lblImage: "Görüntü",
 				lblVideo: "Video",
@@ -40,10 +40,17 @@
 				howToFind: "Picasa ya da Google+ hesabı kimliği nasıl bulunur",
 				howToFind2: "Herhangi bir Picasa ya da G+ sayfasının ilk ve ikinci \'/\' karakterleri arasındaki rakamları kopyalayın"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Kontrol",
+				notFound: "Video bulunamadı",
+				found: "Video bulundu",
+				select: "Bu videoyu seç"
+			},
+			videoSelectorHome: {
+				other: "Diğer"
 			},
 			videoSelectorYoutube: {
+				url: "Bir Youtube videosu URL\'si",
 				pageInputLbl: "Kullanıcı adı",
 				lookupMsgError: "Kullanıcı bulunamadı",
 				howToFind: "YouTube kullanıcı adı bulma",
@@ -51,24 +58,42 @@
 				found: "Bulundu",
 				noData: "Hiçbir genel video bulunamadı"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "Bir Vimeo videosu URL\'si"
+			},
+			videoSelectorOther: {
+				explain1: "Harita Bülteni ham videoları (avi, mpeg gibi) oynatamaz ancak dahili oynatıcıları  olan (YouTube ya da Vimeo gibi) video dosyalarını oynatabilir.",
+				explain2: "Çoğu çevrimiçi video barındırma hizmeti bu özelliği sunar, videoyu gömmek için geçerli seçeneği bulmalı, verilen kodu kopyalamalı ve %WEBPAGE% kullanmalısınız.",
+				explain3: "Alternatif olarak videoyu kendiniz barındırmak istiyorsanız, %EXAMPLE% gibi bir video oynatıcı kullanan bir HTML sayfası oluşturabilir, sayfayı barındırabilir ve ayrıca %WEBPAGE% kullanabilirsiniz.",
+				webpage: "Web sayfası özelliği"
+			},
+			webpageSelectorHome: {
+				lblUrl: "Web sayfası URL\'si",
+				lblEmbed: "Kod ekle",
+				lblOR: "YA DA",
+				lblError1: "Hata, iki giriş alanından birini silin.",
+				lblError2: "Gömülü kod yalnızca <iframe> içerebilir"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Medya URL\'si...",
-				lblLabel: "Etiket",
+				lblURLPH: "Bir görüntü URL\'si http:// ile başlamalı ve .jpg ya da .png ile bitmelidir",
+				lblLabel: "Görüntü Alt Yazısı",
 				lblLabel1: "Altyazı",
 				lblLabel2: "Metnin üzerinde gezin",
 				lblLabel3: "Hiçbiri",
 				lblLabelPH: "Metin girin...",
+				lblMaximize: "Görüntünün köşesinde bir büyütme düğmesi dahil et",
+				lblMaximizeHelp: "Yalnızca yüksek kaliteli fotoğraflar için önerilir",
 				lblPosition: "Konum",
 				lblPosition1: "Merkez",
 				lblPosition2: "Dolgu",
 				lblPosition3: "Sığdır",
 				lblPosition4: "Esnet",
+				lblPosition5: "Özel",
+				tooltipDimension: "Değer 'px' ya da '%' cinsinden belirtilebilir",
 				lblPosition2Explain: "(kırpılabilir)",
 				lblPosition3Explain: "(kırpılmaz)",
+				lblPosition3Explain2: "(genişlik her zaman panele sığacaktır)",
 				lblPosition4Explain: "(şekil değiştirebilir)"
 			},
 			editorActionGeocode: {

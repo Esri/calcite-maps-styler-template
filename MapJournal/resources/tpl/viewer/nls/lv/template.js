@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Laipni lūdzam web aplikācijā %TPL_NAME%.<br />Aplikācija vēl nav konfigurēta.",
 				notConfiguredMobile: "Laipni lūdzam web aplikācijā %TPL_NAME%. Aplikācija vēl nav konfigurēta un veidotājs vēl nav atbalstīts mobilajās ierīcēs.",
 				notAuthorized: "Jums nav tiesību piekļūt šai aplikācijai",
-				noBuilderIE8: "Pārlūkprogrammā Internet Explorer veidotājs tiek atbalstīts tikai, sākot ar 9. versiju."
+				noBuilderIE8: "Pārlūkprogrammā Internet Explorer veidotājs tiek atbalstīts tikai, sākot ar 9. versiju.",
+				mapLoadingFail: "Kaut kas ir nogājis greizi, karti nevar ielādēt."
 			},
 			mobileView: {
 				tapForDetails: "Pieskarieties, lai iegūtu detalizētu informāciju",
@@ -51,7 +52,7 @@
 				share: "Koplietot"
 			},
 			overviewFromCommon: {
-				title: "Pārskata karte",
+				title: "Pārskata karte"
 			},
 			legendFromCommon: {
 				title: "Leģenda"

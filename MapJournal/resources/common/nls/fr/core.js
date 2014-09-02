@@ -13,7 +13,9 @@
 				open: "Ouvrir",
 				start: "Démarrer",
 				loading: "Chargement en cours",
-				disabledAdmin: "Cette entité a été désactivée par l\'administrateur"
+				disabledAdmin: "Cette entité a été désactivée par l\'administrateur",
+				width: "Largeur",
+				height: "Hauteur"
 			},
 			inlineFieldEdit: {
 				editMe: "Modifier"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Mise en page",
 				explain: "Quelle mise en page voulez-vous utiliser ?",
-				explainInit: "Vous pouvez modifier la mise en page à tout moment dans le volet des paramètres.",
+				explainInit: "Vous pouvez modifier la mise en page à tout moment dans la boîte de dialogue des paramètres.",
 				viewExample: "Voir un exemple en direct"
 			},
 			settingsTheme: {

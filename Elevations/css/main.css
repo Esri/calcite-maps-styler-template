@@ -18,6 +18,11 @@ a {
 
 /* UI container nodes */
 
+.claro .dijitSplitContainer-dijitContentPane, .claro .dijitBorderContainer-dijitContentPane {
+    background-color: inherit;
+}
+
+
 #topContainer {
   height : 60px;
 }

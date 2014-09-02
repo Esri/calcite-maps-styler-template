@@ -86,7 +86,7 @@
                 "enterFullscreen": "מבט מסך מלא",
                 "exitFullscreen": "צא ממסך מלא",
                 "arcgisLink": "פרטי פריט",
-                "moreInformation": "עוד מידע",
+                "moreInformation": "מידע נוסף",
                 "geoLocateTitle": "השתמש במיקום נוכחי",
                 "openInMobile": "פתח באפליקציה של המכשיר נייד",
                 "openInArcGIS": "Map Viewer",
@@ -100,13 +100,13 @@
 				"detailsLabel":"פרטים"
             },
             "filterItems":{
-                "show": "כן_Show_ש",
-                "all": "כן_All Results_ש",
-                "maps": "כן_Maps_ש",
-                "layers": "כן_Layers_ש",
-                "applications": "כן_Applications_ש",
-                "tools": "כן_Tools_ש",
-                "files": "כן_Files_ש"
+                "show": "הצג",
+                "all": "כל התוצאות",
+                "maps": "מפות",
+                "layers": "שכבות",
+                "applications": "אפליקציות",
+                "tools": "כלים",
+                "files": "קבצים"
             },
             "pagination": {
                 "previous": "קודם",

@@ -525,7 +525,7 @@
 				shareA2div1: "保存并重新使用以下链接 %LINK1%，或使用<a href='%LINK2%' target='_blank'>应用程序项目页面</a>。",
 				shareA2div2: "作为应用程序所有者，当您登录到 ArcGIS.com 后，可使用应用程序中的按钮来打开交互式构建器:",				
 				shareQ3: "数据存储位置在哪?",
-				shareA3: "浏览配置存储在<a href='%LINK1%' target='_blank'>此 webmap 项目</a>和<a href='%LINK2%' target='_blank'>此 web 应用程序项目</a>中。Flickr、Picasa 和 Facebook 图像以及 YouTube 视频仍可分别在其各自网站引用，并且不会复制到 ArcGIS Online。",
+				shareA3: "浏览配置存储在<a href='%LINK1%' target='_blank'>此 web 地图项目</a>和<a href='%LINK2%' target='_blank'>此 web 应用程序项目</a>中。Flickr、Picasa 和 Facebook 图像以及 YouTube 视频仍可分别在其各自网站引用，并且不会复制到 ArcGIS Online。",
 				shareWarning: "已禁止共享 %WITH%，因为您不是 <a href='%LINK%' target='_blank'>webmap</a> 的所有者。",
 				shareWarningWith1: "公开",
 				shareWarningWith2: "公开并在组织内共享"

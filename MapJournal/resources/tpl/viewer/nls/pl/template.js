@@ -5,7 +5,7 @@
 				close: "Zamknij"
 			},
 			loading: {
-				step1: "Wczytanie aplikacji",
+				step1: "Wczytywanie aplikacji",
 				step2: "Wczytywanie danych",
 				step3: "Inicjowanie",
 				loadBuilder: "Przełączanie do trybu kreatora",
@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Witamy w aplikacji internetowej %TPL_NAME%.<br />Aplikacja nie została jeszcze skonfigurowana.",
 				notConfiguredMobile: "Witamy w aplikacji internetowej %TPL_NAME%. Aplikacja nie została jeszcze skonfigurowana, a kreator nie jest obsługiwany na urządzeniach mobilnych.",
 				notAuthorized: "Nie masz uprawnień do uzyskania dostępu do tej aplikacji.",
-				noBuilderIE8: "Kreator nie jest obsługiwany w przeglądarce Internet Explorer w wersji starszej niż 9."
+				noBuilderIE8: "Kreator nie jest obsługiwany w przeglądarce Internet Explorer w wersji starszej niż 9.",
+				mapLoadingFail: "Wczytywanie mapy zakończyło się niepowodzeniem."
 			},
 			mobileView: {
 				tapForDetails: "Wskaż, aby uzyskać szczegółowe informacje",
@@ -43,7 +44,7 @@
 				back: "Wstecz"
 			},
 			headerFromCommon: {
-				storymapsText: "Mapa z historią",
+				storymapsText: "Mapa opowiadania",
 				builderButton: "Edytuj",
 				bitlyTooltip: "Pobierz skrócone łącze do aplikacji",
 				templateTitle: "Ustaw tytuł szablonu",
@@ -51,7 +52,7 @@
 				share: "Udostępnij"
 			},
 			overviewFromCommon: {
-				title: "Mapa przeglądowa",
+				title: "Mapa przeglądowa"
 			},
 			legendFromCommon: {
 				title: "Legenda"

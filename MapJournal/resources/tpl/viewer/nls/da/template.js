@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Velkommen til webapplikationen %TPL_NAME%.<br />Applikationen er endnu ikke konfigureret.",
 				notConfiguredMobile: "Velkommen til webapplikationen %TPL_NAME%. Applikationen er endnu ikke konfigureret, og builder-programmet understøttes ikke på mobile enheder.",
 				notAuthorized: "Du er ikke autoriseret til at få adgang til denne applikation",
-				noBuilderIE8: "Builder-programmet understøttes ikke af Internet Explorer før version 9."
+				noBuilderIE8: "Builder-programmet understøttes ikke af Internet Explorer før version 9.",
+				mapLoadingFail: "Noget er gået galt, kortet kan ikke indlæses."
 			},
 			mobileView: {
 				tapForDetails: "Tryk for at få oplysninger",
@@ -51,7 +52,7 @@
 				share: "Del"
 			},
 			overviewFromCommon: {
-				title: "Oversigtskort",
+				title: "Oversigtskort"
 			},
 			legendFromCommon: {
 				title: "Signaturforklaring"

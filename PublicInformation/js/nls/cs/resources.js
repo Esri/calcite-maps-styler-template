@@ -45,7 +45,7 @@
             advancedOperators: "Tip: K vytváření pokročilých vyhledávání použijte <a target=\"_blank\" href=\"https://support.twitter.com/articles/71577-using-advanced-search\">operators</a>.",
             tweetsFilteredBy: "tweety se filtrují podle:",
             photosFilteredBy: "fotografie se filtrují podle:",
-            videosFilteredBy: "videa se filtrují podle:",
+            videosFilteredBy: "videa se filtovaná podle:",
             twitterAccountStatus: "Chcete-li vidět váš stav, aktivujte vrstvu Twitter."
         },
         general: {

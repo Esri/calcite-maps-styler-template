@@ -45,7 +45,7 @@ define({
         itemDetailsInfoTab: "ข้อมูล",
         tagsText: "แท็กส์",
         sizeText: "ขนาด",
-        accessConstraintsText: "การเข้าถึงและการใช้งานแบบจำกัด",
+        accessConstraintsText: "การเข้าถึงและข้อจำกัด",
         numberOfCommentsText: "ความคิดเห็น",
         numberOfRatingsText: "คะแนน",
         numberOfViewsText: "ยอดเข้าชม",
@@ -67,12 +67,13 @@ define({
             sortByBtnTitle: "จัดลำดับตาม",
             layoutBtnTitle: "แบบร่าง",
             signInBtnTitle: "ลงชื่อเข้า",
+            signOutBtnTitle: "ก้_Sign Out_ษฺ",
             geolocationBtnTitle: "ตำแหน่งเชิงพื้นที่"
         },
         errorMessages: {
             emptyGroup: "กลุ่มการกำหนดค่าไม่ได้มีข้อมูลใด ๆ ที่จะดำเนินการแบบสอบถาม",
             invalidSearch: "ไม่พบข้อมูล",
-            invalidBasemapQuery: "ก้_Unable to get basemaps group._ษฺ",
+            invalidBasemapQuery: "ไม่สามารถใช้งานกลุ่มแผนที่ฐานได้",
             falseConfigParams: "ค่าหลักต้องการการกำหนดค่าที่จำเป็นต้องมี ทั้งไม่มีค่าหรือไม่ว่าการจับคู่ที่มีกับคุณลักษณะชั้นข้อมูล ข้อความนี้อาจปรากฏขึ้นหลายครั้ง",
             invalidLocation: "ไม่พบตำแหน่งปัจจุบัน",
             invalidProjection: "ไม่สามารถกำหนดตำแหน่งปัจจุบันบนแผนที่",
@@ -81,8 +82,9 @@ define({
             layerNotFound: "ไม่สามารถได้รับข้อมูลจากชั้นข้อมูล",
             unableToOpenItem: "ไม่สามารถเปิดรายการ",
             wmsSpatialReferenceError: "ค่าอ้างอิงเชิงพื้นที่ของชั้นข้อมูล WMS ไม่สอดคล้องกับค่าอ้างอิงบนแผนที่",
-            noPublicItems: "ไม่มีรายการสาธารณะในกลุ่มการกำหนดค่า",
+            noPublicItems: "ก้_There are no public items in the configured group or no items have been shared with this group yet._ษฺ",
             emptyUsernamePassword: "กรุณากรอกชื่อผู้ใช้งานและรหัสผ่าน",
-            noFullScreenSupport: "เบราว์เซอร์ปัจจุบันไม่สนับสนุนการแสดงผลแบบเต็มหน้าจอ"
+            noFullScreenSupport: "เบราว์เซอร์ปัจจุบันไม่สนับสนุนการแสดงผลแบบเต็มหน้าจอ",
+            notMemberOfOrg: "ก้_You are not a member of this organization_ษฺ"
         }
 });

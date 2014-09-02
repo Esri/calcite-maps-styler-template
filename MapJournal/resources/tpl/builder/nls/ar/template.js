@@ -27,21 +27,25 @@
 				title: "مرحبًا بك في"
 			},
 			addEditPopup: {
+				disabled: "يتم تعطيل إضافة المقطع نظرًا لأنه تم الوصول إلى العدد الأقصى المسموح به من المقاطع.",
 				titleAdd: "إضافة مقطع",
+				titleAddHome: "إضافة مقطع الصفحة الرئيسية",
 				titleEdit: "تحرير المقطع",
 				step: "خطوة",
-				stepMainStageExplain: "إضافة خريطة أو صورة أو مقطع فيديو إلى المرحلة الأساسية",
-				stepPanelExplain: "إضافة المحتويات إلى",
+				stepMainStageExplain: "محتوى المرحلة الأساسية",
+				stepPanelExplain: "المحتوى",
 				stepMainStageNextTooltip: "أدخل",
 				step2NextTooltip: "أدخل عنوان المقطع ومحتويات %LAYOUT-TYPE%",
 				stepNextTooltipNext: "للانتقال إلى الخطوة التالية",
 				stepNextTooltipAdd: "لإضافة المقطع",
-				titlePlaceholder: "عنوان المقطع...",
+				firstAddExplain: "الجزء الأول هو جزء الصفحة الرئيسية، واعتبره 'صفحة الغلاف' لموضوعك. وسيُعرَض العنوان الذي عرفته توًا بخطوط كبيرة.",
+				firstAddLeanMore: "تعلم المزيد",
+				titlePlaceholder: "عنوان المقطع..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "إضافة النص والروابط والرسومات الصغيرة هنا.",
 				editorActionsTitle: "إجراءات المرحلة الأساسية",
-				editorActionsHelpDescr: "بيت_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image._لاحقة"
+				editorActionsHelpDescr: "استخدم عناصر التحكم الحالية لإنشاء الروابط التي ستقوم بتغيير المرحلة الأساسية. مثال، عند نقر القارئ على الرابط المطلوب لتكبير الخريطة وصولا للموقع المحدد أو عرض خريطة ويب أخرى أو عرض الصورة."
 			},
 			organizePopup: {
 				title: "ترتيب",
@@ -50,9 +54,13 @@
 				lblColPubDate: "تاريخ المنشور",
 				lblColStatus: "حالة",
 				checkDisplayReverse: "عرض المقاطع بترتيب عكسي",
-				btnApplyWarning: "بيت_Confirm deletion of %NB% section(s)_لاحقة",
+				btnApplyWarning: "تأكيد حذف %NB% مقطع",
 				deleteTooltip: "حذف",
 				firstSectionExplain: "(يتعذر نقل المقطع الأساسي)"
+			},
+			exportData: {
+				btn: "تصدير المحتوى",
+				tooltip: "يتيح لك تصدير المحتوى عرض وإنشاء نسخة احتياطية من الجريدة إذا حذفتها عن غير قصد. ببساطة انسخ محتوى الصفحة والصقه في أي معالج للكلمات."
 			},
 			help: {
 				lblHelp: "تعليمات",
@@ -61,18 +69,22 @@
 				lblOrga: "تنظيم المحتويات",
 				lblEdit: "تحرير",
 				lblPublish: "مشاركة",
+				lblTips: "تلميحات",
 				lblMore: "هل تريد المزيد؟",
 				lblLink: "تفضل بزيارة موقع خرائط الحكاية على الويب.",
 				content1Div1: "يمكن تكامل أنماط متعددة عند بناء الحكاية. يحتفظ <strong>%LAYOUT_TITLE%</strong> بالنصوص والصور ومقاطع الفيديو عند وصول الخرائط<strong>إلى المرحلة الأساسية</strong>. مع ذلك، يسمح %TPL_NAME% بتمييز الصور والمخططات ومقاطع الفيديو داخل المرحلة الاساسية أيضًا.",
 				content1Div2: "تسمح إضافة المقاطع بتخصيص خبرة تبادل القصص. بصفتك من القُراء قم بالتمرير خلال نصوص %LAYOUT_TITLE% أو يمكن تحريك أو تكبير الخريطة على المرحلة الأساسية أو يمكن للخرائط والصور الجديدة التبديل تلقائيًا لدعم الرسالة.",
 				content2Div1: "يمكن هنا ضبط مظهر %TPL_NAME%. ستتم تنقية أنظمة الألوان والتخطيطات وكذلك العروض.",
 				content2Div2: "يمكن أيضًا مشاركة الروابط على Facebook وTwitter ليتمكن القُراء من نشر %TPL_NAME% للآخرين بسهولة.",
-				content3Div1: "بيت_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish._لاحقة",
+				content3Div1: "يتم تنظيم المحتويات داخل المقاطع. يمكن الحصول على العديد من المقاطع كما تريد (بصفتها فصول صغيرة). مسار هذه الفصول هام جدًا؛ بذلك سيصبح من الممكن إعادة ترتيب بعض المقاطع أو حذفها كما تريد.",
 				content4Div1: "هل تم إيجاد خطأ أو ترغب في تغيير المواد التعليمية؟ لا. ابحث عن رمز تحرير في التطبيق للقيام بالتغييرات في المحتويات. ستقوم باستخدام وظائف التحرير عدة مرات عند تطوير %TPL_NAME%!",
-				content5Div1: "يتم حفظ %TPL_NAME% على حساب %PORTAL% افتراضيًا. يمكن إقرار مشاركته مع المؤسسة أو فتحه على العالم. سندعمك بعنوان URL لتتمكن من مشاركته بشكل أسهل."
+				content5Div1: "يتم حفظ %TPL_NAME% على حساب %PORTAL% افتراضيًا. يمكن إقرار مشاركته مع المؤسسة أو فتحه على العالم. سندعمك بعنوان URL لتتمكن من مشاركته بشكل أسهل.",
+				content6Div1: "عنوان جزء الصفحة الرئيسية هو نفسه عنوان الجريدة، واعتبر جزء الصفحة الرئيسية هو 'صفحة غلاف' موضوعك. سيظل جزء الصفحة الرئيسية مرئيًا عند انتقال القُرّاء إلى الجريدة.",
+				content6Div2: "لا يجب أن يكون %LAYOUT_TITLE% نصًا فقط، وضع في اعتبارك تضمين صور ومقاطع فيديو للمساعدة في إضافة حياة إلى العنصر، وكذلك لتقسيم الأجزاء الطويلة للنص."
 			},
 			landing: {
-				lblAdd: "إضافة مقطع الصفحة الرئيسية",
+				lblAdd: "ماذا تريد لاستدعاء دفتر الخريطة؟",
+				phAdd: "أدخل عنوان...",
 				lblOR: "أو",
 				lblHelp: "القيام بجولة"
 			},

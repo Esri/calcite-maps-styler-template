@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "الفرز حسب",
             layoutBtnTitle: "المخطط",
             signInBtnTitle: "تسجيل الدخول",
+            signOutBtnTitle: "بيت_Sign Out_لاحقة",
             geolocationBtnTitle: "الموقع الجغرافي"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "يتعذر الحصول على الطبقات من الطبقات.",
             unableToOpenItem: "يتعذر فتح العنصر.",
             wmsSpatialReferenceError: "لا يتطابق الإسناد المكاني لطبقة WMS مع الإسناد المكاني للخريطة.",
-            noPublicItems: "لا توجد عناصر عامة في المجموعة التي يتم تكوينها.",
+            noPublicItems: "بيت_There are no public items in the configured group or no items have been shared with this group yet._لاحقة",
             emptyUsernamePassword: "الرجاء إدخال اسم المستخدم وكلمة المرور.",
-            noFullScreenSupport: "لا يدعم المستعرض الحالي وضع ملء الشاشة."
+            noFullScreenSupport: "لا يدعم المستعرض الحالي وضع ملء الشاشة.",
+            notMemberOfOrg: "بيت_You are not a member of this organization_لاحقة"
         }
 });

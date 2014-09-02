@@ -104,9 +104,11 @@ define([
                             if (!evt.visible) {
                                 // hide stats
                                 this._sb.hide();
+                                this.map.getLayer("selectedArea").hide();
                             } else {
                                 // show stats
                                 this._sb.show();
+                                this.map.getLayer("selectedArea").show();
                             }
                         }));
                     }
@@ -137,10 +139,10 @@ define([
             _selectFeatures: function (features, value) {
                 var alpha, themeColor, sls, i;
                 this._selectedGraphics.clear();
-                themeColor = this.config.theme == "light" ? [255, 255, 255, 1] : [60, 60, 60, 0.9];
+                themeColor = [0, 255, 255, 1];
                 sls = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(themeColor), 2);
                 array.forEach(this.config.featuresTransparency, lang.hitch(this, function (transparency) {
-                    if (transparency.label == this.config.featureCurrentTransparency.label) {
+                    if (transparency.label == this.config.featureCurrentTransparency) {
                         alpha = transparency.value;
                     }
                 }));
@@ -156,7 +158,7 @@ define([
                         array.forEach(this.entireAreaFeatures, lang.hitch(this, function (feature) {
                             array.some(this._aoiInfos, lang.hitch(this, function (renderer, idx) {
                                 var attributeField = feature.attributes[this._attributeField];
-                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField > renderer.minValue && attributeField <= renderer.maxValue)) {
+                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField >= renderer.minValue && attributeField <= renderer.maxValue)) {
                                     feature.setSymbol(this._aoiInfos[idx].symbol);
                                 }
                             }));
@@ -169,7 +171,9 @@ define([
                             if (this.rendererInfo) {
                                 this.symbol.color.a = this.rendererInfo.symbol.color.a;
                                 this.symbol.outline = this.rendererInfo.symbol.outline;
-                                this.previousFeatures[i].setSymbol(this.symbol);
+                                if (this.previousFeatures[i].geometry.type !== "polyline") {
+                                    this.previousFeatures[i].setSymbol(this.symbol);
+                                }
                             }
                         }
                     }
@@ -178,7 +182,7 @@ define([
                         array.forEach(features, lang.hitch(this, function (feature) {
                             array.some(this._aoiInfos, lang.hitch(this, function (renderer, idx) {
                                 var attributeField = feature.attributes[this._attributeField];
-                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField > renderer.minValue && attributeField <= renderer.maxValue)) {
+                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField >= renderer.minValue && attributeField <= renderer.maxValue)) {
                                     var tempSymbol = lang.clone(this._aoiInfos[idx].symbol);
                                     tempSymbol.color.a = alpha;
                                     var g = new Graphic(feature.geometry, sls, feature.attributes, null);
@@ -215,8 +219,12 @@ define([
                                             break;
                                         }
                                     } else {
+                                        if (this._rendererNodes[i].minValue == this._rendererNodes[i].maxValue && fieldValue.toString() == this._rendererNodes[i].maxValue) {
+                                            this._highlightFeature(features, alpha, sls, i);
+                                            break;
+                                        }
                                         //for class break
-                                        if ((fieldValue.toString() >= this._rendererNodes[i].minValue.toString()) && (fieldValue.toString() <= this._rendererNodes[i].maxValue)) {
+                                        else if ((fieldValue.toString() > this._rendererNodes[i].minValue.toString()) && (fieldValue.toString() <= this._rendererNodes[i].maxValue)) {
                                             this._highlightFeature(features, alpha, sls, i);
                                             break;
                                         }
@@ -235,7 +243,9 @@ define([
                     // set symbol
                     this.symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, null, fillColor);
                     // set feature symbol
-                    feature.setSymbol(this.symbol);
+                    if (feature.geometry.type !== "polyline") {
+                        feature.setSymbol(this.symbol);
+                    }
                     var g = new Graphic(feature.geometry, sls, feature.attributes, null);
                     if (g) {
                         // add graphic to layer
@@ -245,7 +255,11 @@ define([
             },
             _highlightFeature: function (features, alpha, sls, i) {
                 domClass.add(this._rendererNodes[i].node, this.areaCSS.rendererSelected);
-                this.rendererInfo = this._aoiInfos[i - 1];
+                if (this.config.enableEntireAreaButton) {
+                    this.rendererInfo = this._aoiInfos[i - 1];
+                } else {
+                    this.rendererInfo = this._aoiInfos[i];
+                }
                 this._createSymbol(features[0], alpha, sls);
             },
             _setImpactLayerTitle: function(){
@@ -347,7 +361,7 @@ define([
                     domClass.remove(ct, this.areaCSS.rendererLoading);
                     // display geo stats
                     this._sb.set("features", fs.features);
-                    this._selectFeatures(fs.features, node.textContent);
+                    this._selectFeatures(fs.features, node.textContent || node.innerText);
                     // zoom to feature
                     this._zoomToFeature(this.config.zoomType, fs);
 
@@ -454,8 +468,6 @@ define([
                             node: liItem
                         });
                     }
-                    // var value = infos[i].maxValue || infos[i].value || "";
-
                     // place item
                     domConstruct.place(liItem, ulList, 'last');
                 }
@@ -543,9 +555,13 @@ define([
                         this.map.setExtent(graphicsUtils.graphicsExtent(fs.features), true);
                         break;
                     default:
-                        this.map.setScale(type);
-                        this.map.centerAt(graphicsUtils.graphicsExtent(fs.features).getCenter());
-                        break;
+                        if (this.previousFeatures == "Entire Area") {
+                            this.map.setExtent(graphicsUtils.graphicsExtent(fs.features), true);
+                        } else {
+                            this.map.setScale(type);
+                            this.map.centerAt(graphicsUtils.graphicsExtent(fs.features).getCenter());
+                            break;
+                        }
                 }
             }
         });

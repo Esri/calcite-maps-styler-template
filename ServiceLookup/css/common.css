@@ -41,6 +41,7 @@
 .locateButton .zoomLocateButton {
     width:28px;
     }
+
 .searchControl {
     display: block;
     position: absolute;
@@ -49,40 +50,46 @@
     left: 75px;
     width: 60%;
 }
-
-/* customize geocoder appearance */
-.searchControl .simpleGeocoder{
-    width: 100%;
+.simpleGeocoder .esriGeocoderContainer {
+       width: 100%;
 }
-
- .simpleGeocoder .esriGeocoderContainer {
-    width: 100%;
-}
-
-.searchControl .simpleGeocoder .esriGeocoder {
-    height: 100%;
-}
-
-.simpleGeocoder .esriGeocoder input {
-    /* Firefox */
-    width: -moz-calc(100% - 55px);
-    /* WebKit */
-    width: -webkit-calc(100% - 55px);
+.simpleGeocoder .esriGeocoder input{
+     width: 80%;
+   /* Firefox */
+    width: -moz-calc(100% - 60px) !important;
+    /* WebKit */ 
+    width: -webkit-calc(100% - 60px) !important;
     /* Opera */
-    width: -o-calc(100% - 55px);
+    width: -o-calc(100% - 60px) !important;
     /* Standard */
-    width: calc(100% - 55px);
+    width: calc(100% - 60px) !important;
+}
+.esriGeocoder input {
+    width: 80%;
+     /* Firefox */
+    width: -moz-calc(100% - 60px) !important;
+    /* WebKit */ 
+    width: -webkit-calc(100% - 60px) !important;
+    /* Opera */
+    width: -o-calc(100% - 60px) !important;
+    /* Standard */
+    width: calc(100% - 60px) !important;
     padding-right: 0;
     margin-right: 0;
-     overflow: hidden;
+    overflow: hidden;
 }
 
-.simpleGeocoder .esriGeocoderResult:hover,
-.simpleGeocoder .esriGeocoderResultEven:focus,
-.simpleGeocoder .esriGeocoderResultOdd:focus {
-/* default is #EDEDED, use a light blue instead */
-    background-color: #B5DAEA;
+.simpleGeocoder .esriGeocoderMultiple  input {
+     /* Firefox */
+    width: 80%;
+    width: -moz-calc(100% - 80px) !important;
+    /* WebKit */ 
+    width: -webkit-calc(100% - 80px) !important;
+    /* Opera */
+    width: -o-calc(100% - 80px) !important;
+    /* Standard */
+    width: calc(100% - 80px) !important ;
+    padding-right: 0;
+    margin-right: 0;
+    overflow: hidden;
 }
-
-
-

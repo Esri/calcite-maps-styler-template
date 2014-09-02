@@ -55,7 +55,7 @@
                     "maxVariableSelection": "25 を超えるサブ変数は選択できません",
                     "signInFail" : "サインインできませんでした",
                     "itemUpdateMessage": "更新されたアイテム",
-                    "unsavedChangesMessage": "保存されていない変更",
+                    "unsavedChangesMessage": "変更が保存されていません",
                     "failMessage": "アイテムを正常に更新できませんでした",
                     "saveChangesAlert": "変更内容を保存しますか？",
                     "variableLabelValidation": "変数のラベルは空欄にできません",

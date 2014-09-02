@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Vítejte ve webové aplikaci %TPL_NAME%.<br />Aplikace ještě není nakonfigurována.",
 				notConfiguredMobile: "Vítejte ve webové aplikaci %TPL_NAME%. Aplikace ještě není nakonfigurována a nástroj pro tvorbu není podporován v mobilních zařízeních.",
 				notAuthorized: "Nemáte oprávnění k přístupu do této aplikace.",
-				noBuilderIE8: "Nástroj pro tvorbu není podporován ve verzích prohlížeče Internet Explorer starších než verze 9."
+				noBuilderIE8: "Nástroj pro tvorbu není podporován ve verzích prohlížeče Internet Explorer starších než verze 9.",
+				mapLoadingFail: "Něco se pokazilo, mapu nelze nahrát."
 			},
 			mobileView: {
 				tapForDetails: "Klepnutím zobrazíte podrobnosti.",
@@ -51,7 +52,7 @@
 				share: "Sdílet"
 			},
 			overviewFromCommon: {
-				title: "Mapa přehledu",
+				title: "Mapa přehledu"
 			},
 			legendFromCommon: {
 				title: "Legenda"
@@ -60,7 +61,7 @@
 				copy: "Kopírovat",
 				copied: "Zkopírováno",
 				open: "Otevřít",
-				embed: "Vložit do webových stránek",
+				embed: "Vložit do webové stránky",
 				embedExplain: "Chcete-li deník vložit do webových stránek, použijte následující kód HTML.",
 				size: "Velikost (šířka/výška):"
 			}

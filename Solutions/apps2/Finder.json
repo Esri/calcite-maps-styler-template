@@ -25,9 +25,8 @@
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "SeaBlues",
         "searchBox.hint": "",
-        "featureSearcher.searchLayerName": "",
-        "featureSearcher.searchFields": "",
-        "featureSearcher.displayFields": "",
+        "featureSearcher.searchLayersString": "[]",
+        "featureSearcher.displayLayersString": "[]",
         "highlighter.showFeaturePopup": true,
         "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
@@ -99,23 +98,27 @@
             "type": "string",
             "tooltip": "Search hint (e.g. Find a Parcel, Find a Park)"
         }, {
-            "label": "Find Layers",
-            "fieldName": "featureSearcher.searchLayerName",
-            "type": "string",
-            "tooltip": "Comma-separated list of map layer names. Only values in these layers will be searched. One or many layers may be specified.",
-            "placeholder": "Layer 1, Layer 2, …"
+            "label": "Find Layers and Fields",
+            "fieldName": "featureSearcher.searchLayersString",
+            "type": "multilayerandfieldselector",
+            "layerOptions": {
+                "supportedTypes": ["FeatureLayer"],
+                "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline", "esriGeometryPolygon"]
+            },
+            "fieldOptions": {
+                "supportedTypes": ["esriFieldTypeString", "esriFieldTypeSmallInteger", "esriFieldTypeInteger"]
+            }
         }, {
-            "label": "Find Fields",
-            "fieldName": "featureSearcher.searchFields",
-            "type": "string",
-            "tooltip": "Comma-separated list of Find Layer field names. Only values in these fields will be searched. One or many fields may be specified.",
-            "placeholder": "FIELD1, FIELD2, …"
-        }, {
-            "label": "Result Display Fields",
-            "fieldName": "featureSearcher.displayFields",
-            "type": "string",
-            "tooltip": "Comma-separated list of Find Layer field names. Values in these fields will be returned in the Find results list. If the layer in which a result was found does not contain a field in this list, the Search Field value is returned.",
-            "placeholder": "FIELD1, FIELD2, …"
+            "label": "Result Display Layers and Fields",
+            "fieldName": "featureSearcher.displayLayersString",
+            "type": "multilayerandfieldselector",
+            "layerOptions": {
+                "supportedTypes": ["FeatureLayer"],
+                "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline", "esriGeometryPolygon"]
+            },
+            "fieldOptions": {
+                "supportedTypes": ["esriFieldTypeString", "esriFieldTypeSmallInteger", "esriFieldTypeInteger"]
+            }
         }, {
             "label": "Zoom Level",
             "fieldName": "highlighter.highlightZoomLevel",
@@ -146,7 +149,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 77f37ea14490fbb8 2014-06-23 08:59:44 -0700"
+                "5e8776036f46a8a2 2014-09-02 07:17:15 -0700"
             ]
         }
     }, {
@@ -392,7 +395,7 @@
         }
     }, {
         "classname": "js.LGSearchBoxByText",
-        "styles": ".searchBox{display:none;width:200px;max-height:224px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}.resultsListBox{width:96%;top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;bottom:4px}.lt-ie9 .resultsListBox{width:100%;height:182px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}",
+        "styles": ".searchBox{display:none;width:200px;max-height:224px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}.resultsListBox{top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;left:4px;right:4px;bottom:4px;width:auto}.lt-ie9 .resultsListBox{width:100%;height:182px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}",
         "config": {
             "rootId": "searchBox",
             "trigger": "search",
@@ -555,3 +558,4 @@
         }
     }]
 }
+

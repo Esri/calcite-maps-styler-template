@@ -11,7 +11,8 @@ define({
 				disabled: "This feature has been disabled by the Administrator",
 				url: "To manually enter the web address of an image",
 				userLookup: "Load albums",
-				notImplemented: "Not implemented yet."
+				notImplemented: "Not implemented yet.",
+				noData: "No public album found"
 			},
 			imageSelector: {
 				lblStep1: "Choose the service",
@@ -36,14 +37,20 @@ define({
 			imageSelectorPicasa: {
 				userInputLbl: "Email or Picasa/Google+ ID",
 				signInMsg2: "Account not found",
-				signInMsg3: "No public album",
 				howToFind: "How to find a Picasa or Google+ account ID",
 				howToFind2: "Copy digits between the first and second '/' of any Picasa or G+ page"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Check",
+				notFound: "Video not found",
+				found: "Video found",
+				select: "Select this video"
+			},
+			videoSelectorHome: {
+				other: "Other"
 			},
 			videoSelectorYoutube: {
+				url: "URL of a Youtube video",
 				pageInputLbl: "User name",
 				lookupMsgError: "User not found",
 				howToFind: "How to find a YouTube user name",
@@ -51,25 +58,49 @@ define({
 				found: "Found",
 				noData: "No public videos found"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "URL of a Vimeo video"
+			},
+			videoSelectorOther: {
+				explain1: "The Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo).",
+				explain2: "Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%.",
+				explain3: "Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%.",
+				webpage: "Web page feature"
+			},
+			webpageSelectorHome: {
+				lblUrl: "Webpage URL",
+				lblEmbed: "Embed code",
+				lblOR: "OR",
+				lblError1: "Error, clear one of the two input fields.",
+				lblError2: "Embed code can only contain one %IFRAMETAG%",
+				configure: "Configure"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Media URL...",
-				lblLabel: "Label",
+				lblURLPH: "An image URL should start with http:// and end with .jpg or .png",
+				lblURLError: "This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work.",
+				lblURLCheck: "Checking image...",
+				lblLabel: "Image Caption",
 				lblLabel1: "Caption",
 				lblLabel2: "Hover text",
 				lblLabel3: "None",
 				lblLabelPH: "Enter some text...",
+				lblMaximize: "Include a maximize button in the corner of the image",
+				lblMaximizeHelp: "Recommended only for high quality photos",
 				lblPosition: "Position",
 				lblPosition1: "Center",
 				lblPosition2: "Fill",
 				lblPosition3: "Fit",
 				lblPosition4: "Stretch",
+				lblPosition5: "Custom",
+				tooltipDimension: "The value can be specified in 'px' or '%'",
+				tooltipDimension2: "The value has to be specified in 'px'",
 				lblPosition2Explain: "(may crop)",
 				lblPosition3Explain: "(won't crop)",
-				lblPosition4Explain: "(may distort)"
+				lblPosition3Explain2: "(width will always fit the panel)",
+				lblPosition4Explain: "(may distort)",
+				unloadLbl: "Unload when reader navigates away to different section",
+				unloadHelp: "If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section."
 			},
 			editorActionGeocode: {
 				lblTitle: "Locate an address or place",
@@ -79,7 +110,7 @@ define({
 				lblTitle: "Change the Main Stage content"
 			},
 			editorInlineMedia: {
-				lblTitle: "Insert an image or video"
+				lblTitle: "Insert an image, video or web page"
 			}
 		}
 	}),

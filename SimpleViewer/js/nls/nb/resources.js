@@ -1,11 +1,11 @@
 ﻿define(
    ({
         map: {
-            error: "å_Unable to create map_ø"
+            error: "Kan ikke opprette kart"
         }, 
         tools: {
-        	legend: "å_Legend_ø",
-        	 about: "å_About_ø"
+        	legend: "Tegnforklaring",
+        	 about: "Om"
         }
     })
    

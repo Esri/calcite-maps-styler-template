@@ -52,5 +52,5 @@ limitations under the License.
 
 A copy of the license is available in the repository's [license.txt](https://github.com/esri/information-lookup/blob/master/License.txt) file.
 
-[](Esri Tags: ArcGIS Web Mapping Service Public Utilities Water-Utility Utilities Water Gas Electric)
+[](Esri Tags: ArcGIS Web Mapping Service information Public Utilities Water-Utility Utilities Water Gas Electric)
 [](Esri Language: JavaScript)​

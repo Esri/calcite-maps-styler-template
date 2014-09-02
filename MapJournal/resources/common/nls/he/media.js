@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "כן_Media_ש",
-				lblSelect2: "כן_Content_ש",
+				lblSelect1: "מדיה",
+				lblSelect2: "תוכן",
 				lblMap: "מפה",
 				lblImage: "תמונה",
 				lblVideo: "וידאו",
@@ -40,10 +40,17 @@
 				howToFind: "כיצד למצוא את ה- ID של חשבון ה- Picasa או Google+",
 				howToFind2: "העתק תווים בין ה \'/\'  הראשון לשני של כל עמוד Picasa או G+"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "בדיקה",
+				notFound: "לא נמצא וידאו",
+				found: "נמצא וידאו",
+				select: "בחר וידאו זה"
+			},
+			videoSelectorHome: {
+				other: "אחר"
 			},
 			videoSelectorYoutube: {
+				url: "URL של וידאו של יוטיוב",
 				pageInputLbl: "שם משתמש",
 				lookupMsgError: "משתמש לא נמצא",
 				howToFind: "איך למצוא שם משתמש ב-YouTube",
@@ -51,24 +58,42 @@
 				found: "נמצא",
 				noData: "לא נמצאו סרטונים ציבוריים"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "URL של וידאו של Vimeo"
+			},
+			videoSelectorOther: {
+				explain1: "חוברת מפות לא יכולה להציג וידאו גולמי (כגון avi, mpeg) אולם, היא יכולה להציג קבצי וידאו המתארחים בנגנים (כגון יוטיוב, Vimeo).",
+				explain2: "רוב שירותי הארוח של וידאו מאפשרים את היכולת הזו. אתה צריך למצוא את האפשרות לשבץ את הוידאו, להעתיק את הקוד המתאים ולהשתמש בתוך  %WEBPAGE%.",
+				explain3: "לחילופין, אם אתה רוצה לארח וידאו בעצמך, אתה יכול ליצור דף HTML המשתמש בצפיין וידאו כגון %EXAMPLE%, ארח דף זה וגם השתמש ב- %WEBPAGE%.",
+				webpage: "תכונות דף אינטרנט"
+			},
+			webpageSelectorHome: {
+				lblUrl: "URL של דף האינטרנט",
+				lblEmbed: "קוד מוטמע",
+				lblOR: "או",
+				lblError1: "שגיאה, נקה אחד משני שדות הקלט.",
+				lblError2: "קוד מוטמע יכול להכיל רק <iframe> אחד"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "URL של המדיה...",
-				lblLabel: "תווית",
+				lblURLPH: "URL של תמונה צריך להתחיל עם http:// ולהסתיים עם .jpg או .png",
+				lblLabel: "תאור תמונה",
 				lblLabel1: "כותרת",
 				lblLabel2: "טקסט מוצג בריחוף",
 				lblLabel3: "ללא",
 				lblLabelPH: "הכנס טקסט כלשהו...",
+				lblMaximize: "כלול את כפתור ה-maximize  בפינת התמונה",
+				lblMaximizeHelp: "מומלץ רק לתמונות באיכות גבוהה",
 				lblPosition: "מיקום",
-				lblPosition1: "מרכז",
-				lblPosition2: "מילוי",
+				lblPosition1: "ממורכז",
+				lblPosition2: "מלא",
 				lblPosition3: "מותאם",
-				lblPosition4: "מתיחה",
+				lblPosition4: "מתוח",
+				lblPosition5: "גודל מותאם",
+				tooltipDimension: "הערך יכול להיות מוגדר בתוך  'px' או '%'",
 				lblPosition2Explain: "(יכול להחתך)",
 				lblPosition3Explain: "(לא יכול להחתך)",
+				lblPosition3Explain2: "(רוחב תמיד יתאים ללוח)",
 				lblPosition4Explain: "(יכול להתעוות)"
 			},
 			editorActionGeocode: {
@@ -76,7 +101,7 @@
 				mapMarkerExplain: "המשתמש יראה סימן מפה בעת לחיצה על הקישור"
 			},
 			editorActionMedia: {
-				lblTitle: "כן_Change the Main Stage content_ש"
+				lblTitle: "שנה את תוכן התצוגה הראשית"
 			},
 			editorInlineMedia: {
 				lblTitle: "הכנס תמונה או קטע וידאו"

@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "並べ替え",
             layoutBtnTitle: "レイアウト",
             signInBtnTitle: "サイン イン",
+            signOutBtnTitle: "須_Sign Out_鷗",
             geolocationBtnTitle: "ジオロケーション"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "レイヤからデータを取得できません。",
             unableToOpenItem: "アイテムを開けません。",
             wmsSpatialReferenceError: "WMS レイヤの空間参照がマップの空間参照と一致しません。",
-            noPublicItems: "構成済みのグループにパブリック アイテムがありません。",
+            noPublicItems: "須_There are no public items in the configured group or no items have been shared with this group yet._鷗",
             emptyUsernamePassword: "ユーザ名とパスワードを入力してください。",
-            noFullScreenSupport: "現在のブラウザは、全画面モードをサポートしていません。"
+            noFullScreenSupport: "現在のブラウザは、全画面モードをサポートしていません。",
+            notMemberOfOrg: "須_You are not a member of this organization_鷗"
         }
 });

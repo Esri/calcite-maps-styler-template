@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "%TPL_NAME% web uygulamasına hoş geldiniz.<br />Uygulama henüz yapılandırılmadı.",
 				notConfiguredMobile: "%TPL_NAME% web uygulamasına hoş geldiniz. Uygulama henüz yapılandırılmadı ve oluşturucu mobil cihazlarda desteklenmiyor.",
 				notAuthorized: "Bu uygulamaya erişim yetkiniz yok",
-				noBuilderIE8: "Oluşturucu Internet Explorer 9'dan önceki sürümlerinde desteklenmez."
+				noBuilderIE8: "Oluşturucu Internet Explorer 9'dan önceki sürümlerinde desteklenmez.",
+				mapLoadingFail: "Bir şeyler yanlış gitti, Harita yüklenemiyor."
 			},
 			mobileView: {
 				tapForDetails: "Ayrıntılar için dokunun",
@@ -51,7 +52,7 @@
 				share: "Paylaş"
 			},
 			overviewFromCommon: {
-				title: "Genel Bakış Haritası",
+				title: "Genel Bakış Haritası"
 			},
 			legendFromCommon: {
 				title: "Gösterim"
@@ -60,8 +61,8 @@
 				copy: "Kopyala",
 				copied: "Kopyalandı",
 				open: "Aç",
-				embed: "Web sitesine göm",
-				embedExplain: "Aşağıdaki HTML kodunu, Bülteni bir web sitesine gömmek için kullanın.",
+				embed: "Web sitesinin içine yerleştir",
+				embedExplain: "Bülteni bir web sitesi içine yerleştirmek için aşağıdaki HTML kodunu kullanın.",
 				size: "Boyut (genişlik/yükseklik):"
 			}
         }

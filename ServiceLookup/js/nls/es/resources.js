@@ -18,6 +18,9 @@
 
         splashscreen: {
             buttonText: "Aceptar",
+        },
+        ui:{
+            basemapButton: "Mapa base"
         }
     })
 

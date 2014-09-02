@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "å_Media_ø",
-				lblSelect2: "å_Content_ø",
+				lblSelect1: "Medier",
+				lblSelect2: "Innhold",
 				lblMap: "Kart",
 				lblImage: "Bilde",
 				lblVideo: "Video",
@@ -40,10 +40,17 @@
 				howToFind: "Slik finner du en konto-ID for Picasa eller Google+",
 				howToFind2: "Kopier tallene mellom første og andre/ på en tilfeldig side på Picasa eller G+"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Kontroller",
+				notFound: "Fant ikke videoen",
+				found: "Fant videoen",
+				select: "Velg denne videoen"
+			},
+			videoSelectorHome: {
+				other: "Annet"
 			},
 			videoSelectorYoutube: {
+				url: "Nettadressen for en Youtube-video",
 				pageInputLbl: "Brukernavn",
 				lookupMsgError: "Finner ikke bruker",
 				howToFind: "Slik finner du et YouTube-brukernavn",
@@ -51,24 +58,42 @@
 				found: "Funnet",
 				noData: "Finner ingen offentlige videoer"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "Nettadressen for en Vimeo-video"
+			},
+			videoSelectorOther: {
+				explain1: "Karthistorie kan ikke spille råvideoer (f.eks. avi og mpeg), men den kan spille av vertsbaserte videofiler som har innbygde spillere (f.eks. YouTube og Vimeo).",
+				explain2: "De fleste nettbaserte videovertstjenestene har denne funksjonen. Du må finne alternativet for å bygge inn videoen, kopiere den oppgitte koden og bruke %WEBPAGE%.",
+				explain3: "Du kan eventuelt være vert for videoen selv. Da må du lage en HTML-side som bruker en videospiller som %EXAMPLE%, være vert for den siden og også bruke %WEBPAGE%.",
+				webpage: "Nettsidefunksjon"
+			},
+			webpageSelectorHome: {
+				lblUrl: "Nettside-URL",
+				lblEmbed: "Bygg inn kode",
+				lblOR: "OR",
+				lblError1: "Feil, fjern ett av de to inndatafeltene.",
+				lblError2: "Innbygging av kode kan inneholde bare én <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Medie-URL...",
-				lblLabel: "Etikett",
+				lblURLPH: "En bilde-URL bør starte med http:// og slutte med .jpg eller .png",
+				lblLabel: "Bildetekst",
 				lblLabel1: "Undertekst",
 				lblLabel2: "Tekst med musepekeren over",
 				lblLabel3: "Ingen",
 				lblLabelPH: "Skriv inn noe tekst...",
+				lblMaximize: "Ta med en maksimeringsknapp i bildehjørnet",
+				lblMaximizeHelp: "Anbefales bare for bilder av høy kvalitet",
 				lblPosition: "Posisjon",
 				lblPosition1: "Midtstill",
 				lblPosition2: "Fyll",
 				lblPosition3: "Tilpass",
 				lblPosition4: "Strekk",
+				lblPosition5: "Tilpasset",
+				tooltipDimension: "Verdien kan angis i \'px\' eller \'%\'",
 				lblPosition2Explain: "(kan bli beskåret)",
 				lblPosition3Explain: "(blir ikke beskåret)",
+				lblPosition3Explain2: "(bredden passer alltid med panelet)",
 				lblPosition4Explain: "(kan bli forvrengt / vises skjevt)"
 			},
 			editorActionGeocode: {

@@ -62,6 +62,17 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
                             filterLayers.push(this._getLayerFields(sublayer));
                         }
                     }));
+                } else if (layer.layerDefinition && layer.itemId) {
+                    //is there an associated item in the web map response
+                    if (this.config.response.itemInfo && this.config.response.itemInfo.relatedItemsData && this.config.response.itemInfo.relatedItemsData[layer.itemId]) {
+                        var item = this.config.response.itemInfo.relatedItemsData[layer.itemId];
+                        if(item.definitionEditor){
+                            layer.definitionEditor = item.definitionEditor;
+                            filterLayers.push(this._getLayerFields(layer));
+                        }
+
+                    }
+
                 }
 
             }));
@@ -212,6 +223,12 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
                         var mapLayer = this.map.getLayer(layer.layerId);
                         this._stopIndicator(mapLayer);
                         mapLayer.setLayerDefinitions(layerDef);
+                    } else if (layer.layerObject && layer.definitionEditor) { //Image service 
+                        this._stopIndicator(layer.layerObject);
+                        // remove loading class
+                        domClass.remove(document.body, "app-loading");
+                        layer.layerObject.setDefinitionExpression(defExp);
+
                     }
 
                 }));
@@ -321,7 +338,7 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
 
                 this.map = response.map;
                 this.config.response = response;
-
+                domClass.add(this.map.infoWindow.domNode, "light");
                 //define the application title 
                 var title = this.config.title || response.itemInfo.item.title;
                 dom.byId("title").innerHTML = title;
@@ -374,6 +391,7 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
             query(".esriPopup .pointer").style("backgroundColor", this.theme.toString());
             query(".esriPopup .titlePane").style("backgroundColor", this.theme.toString());
             query(".esriPopup .titlePane").style("color", this.color.toString());
+            query(".esriPopup. .titleButton").style("color", this.color.toString());
 
             registry.byId("border_container").resize();
         }

@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "ķ_Web map_ū",
+				lblWebMap: "Web karte",
 				lblLocation: "Izvietojums",
 				lblContent: "Saturs",
 				lblPopup: "Uznirstošais logs",
-				lblControls: "ķ_Extras_ū",
+				lblControls: "Papildu",
 				lblOverview: "Pārskata karte",
 				lblLegend: "Leģenda",
 				loadingTitle: "Virsraksta ielāde",
@@ -22,19 +22,19 @@
 				newMap: "Nesen izvēlētā web karte",
 				webmapDefault: "Web kartes noklusējums",
 				customCfg: "Pielāgota konfigurācija",
-				tooltipLocation: "ķ_Define the map location that will be used when your readers navigate to this section._ū",
+				tooltipLocation: "Definējiet kartes izvietojumu, kas tiks izmantots, kad lasītāji naviģēs uz šo sadaļu.",
 				tooltipContent: "Definējiet redzamos slāņus.",
 				tooltipPopup: "Izvēlieties uznirstošo logu, kuru rādīt, kad lasītāji naviģē uz šo sadaļu.",
 				tooltipOverview: "Attēlot mazu pārskata karti blakus galvenajai kartei",
 				tooltipLegend: "Attēlojiet kartē apzīmējumus, kas ir noderīgi, ja kartē ir daudz slāņu un simbolu.",
-				mapCfgInvite: "ķ_Use these controls to configure your map_ū"
+				mapCfgInvite: "Izmantojiet šīs vadīklas, lai konfigurētu savu  karti"
 			},
 			configure: {
 				btnReset: "Atiestatīt",
 				btnCancel: "Atcelt",
 				tocTitle: "Kartes saturs",
 				tocExplain: "Izvēlieties, kuri slāņi tiks rādīti.",
-				tocSave: "ķ_Save map content_ū",
+				tocSave: "Saglabāt kartes saturu",
 				extentTitle: "Kartes izvietojums",
 				extentExplain: "Panoramējiet un mērogojiet karti, lai uzzinātu, kādu to redzēs jūsu lasītāji.",
 				extentSave: "Saglabāt kartes izvietojumu",

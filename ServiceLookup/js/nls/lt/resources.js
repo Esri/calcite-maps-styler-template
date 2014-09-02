@@ -18,6 +18,9 @@
 
         splashscreen: {
             buttonText: "Gerai",
+        },
+        ui:{
+            basemapButton: "Pagrindo žemėlapis"
         }
     })
 

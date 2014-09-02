@@ -166,7 +166,7 @@ parseUsername: function (text) {
 parseHashtag: function (text) {
     return text.replace(/[#]+[A-Za-z0-9-_]+/g, function (t) {
         var tag = t.replace("#", "%23");
-        return '<a target="_blank" href="' + location.protocol + '//search.twitter.com/search?q=' + tag + '">' + t + '</a>';
+        return '<a target="_blank" href="https://twitter.com/search?q=' + tag + '">' + t + '</a>';
     });
 },
 getPoints: function () {
@@ -482,7 +482,7 @@ mapResults: function (j) {
                     n = n.slice(7);
                     f = n.split(",");
                     geoPoint = new esri.geometry.Point(parseFloat(f[1]), parseFloat(f[0]));
-                } else if (n.indexOf("ÜT") > -1) {
+                } else if (n.indexOf("ÃœT") > -1) {
                     n = n.slice(3);
                     e = n.split(",");
                     geoPoint = new esri.geometry.Point(parseFloat(e[1]), parseFloat(e[0]));

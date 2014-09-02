@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "Sortuj według",
             layoutBtnTitle: "Układ",
             signInBtnTitle: "Zaloguj się",
+            signOutBtnTitle: "ł_Sign Out_ą",
             geolocationBtnTitle: "Geolokalizacja"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "Nie można pobrać danych z warstw.",
             unableToOpenItem: "Nie można otworzyć elementu.",
             wmsSpatialReferenceError: "Odniesienie przestrzenne warstwy WMS nie jest zgodne z odniesieniem przestrzennym mapy.",
-            noPublicItems: "Skonfigurowana grupa nie zawiera elementów publicznych.",
+            noPublicItems: "ł_There are no public items in the configured group or no items have been shared with this group yet._ą",
             emptyUsernamePassword: "Wprowadź nazwę użytkownika i hasło.",
-            noFullScreenSupport: "Używana obecnie przeglądarka nie obsługuje trybu pełnoekranowego."
+            noFullScreenSupport: "Używana obecnie przeglądarka nie obsługuje trybu pełnoekranowego.",
+            notMemberOfOrg: "ł_You are not a member of this organization_ą"
         }
 });

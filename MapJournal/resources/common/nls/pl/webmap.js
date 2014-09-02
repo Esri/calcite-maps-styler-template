@@ -2,11 +2,11 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "ł_Web map_ą",
+				lblWebMap: "Mapa internetowa",
 				lblLocation: "Lokalizacja",
 				lblContent: "Zawartość",
 				lblPopup: "Okno podręczne",
-				lblControls: "ł_Extras_ą",
+				lblControls: "Dodatki",
 				lblOverview: "Mapa przeglądowa",
 				lblLegend: "Legenda",
 				loadingTitle: "Wczytywanie tytułu",
@@ -22,19 +22,19 @@
 				newMap: "Nowo wybrana mapa internetowa",
 				webmapDefault: "Domyślne ustawienia mapy",
 				customCfg: "Konfiguracja niestandardowa",
-				tooltipLocation: "ł_Define the map location that will be used when your readers navigate to this section._ą",
+				tooltipLocation: "Określ lokalizację na mapie, która będzie używana, gdy przeglądający ją użytkownicy przejdą do tej sekcji.",
 				tooltipContent: "Określ widoczne warstwy.",
 				tooltipPopup: "Wybierz okno podręczne, które ma być wyświetlane po przejściu użytkowników do tej sekcji.",
 				tooltipOverview: "Wyświetl w rogu niewielką mapę przeglądową razem z mapą główną",
 				tooltipLegend: "Wyświetl legendę mapy, przydaje się ona, gdy mapa ma wiele warstw i symboli.",
-				mapCfgInvite: "ł_Use these controls to configure your map_ą"
+				mapCfgInvite: "Użyj tych kontrolek do konfiguracji mapy"
 			},
 			configure: {
 				btnReset: "Resetuj",
 				btnCancel: "Anuluj",
 				tocTitle: "Zawartość mapy",
 				tocExplain: "Wybierz warstwy, które będą wyświetlane.",
-				tocSave: "ł_Save map content_ą",
+				tocSave: "Zapisz zawartość mapy",
 				extentTitle: "Lokalizacja mapy",
 				extentExplain: "Przesuń i zmień powiększenie, aby zdefiniować wygląd mapy widoczny dla użytkowników.",
 				extentSave: "Zapisz lokalizację mapy",
@@ -56,7 +56,7 @@
 				searchTitle: "Wyszukaj",
 				ok: "OK",
 				cancel: "Anuluj",
-				placeholder: "Wpisz wyszukiwany zwrot lub identyfikator mapy internetowej"
+				placeholder: "Wpisz wyszukiwany hasło lub identyfikator mapy internetowej"
 			}
 		}
 	})

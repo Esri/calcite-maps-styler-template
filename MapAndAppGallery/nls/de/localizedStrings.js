@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "Sortieren nach",
             layoutBtnTitle: "Layout",
             signInBtnTitle: "Anmelden",
+            signOutBtnTitle: "ä_Sign Out_Ü",
             geolocationBtnTitle: "Geolocation"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "Daten können nicht aus Layer abgerufen werden.",
             unableToOpenItem: "Element kann nicht geöffnet werden.",
             wmsSpatialReferenceError: "Raumbezug des WMS-Layers stimmt nicht mit dem Raumbezug der Karte überein.",
-            noPublicItems: "Die konfigurierte Gruppe enthält keine öffentlichen Elemente.",
+            noPublicItems: "ä_There are no public items in the configured group or no items have been shared with this group yet._Ü",
             emptyUsernamePassword: "Geben Sie den Benutzernamen und das Kennwort ein.",
-            noFullScreenSupport: "Vollbildmodus wird von aktuellem Browser nicht unterstützt."
+            noFullScreenSupport: "Vollbildmodus wird von aktuellem Browser nicht unterstützt.",
+            notMemberOfOrg: "ä_You are not a member of this organization_Ü"
         }
 });

@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ж_Media_Я",
-				lblSelect2: "Ж_Content_Я",
+				lblSelect1: "Медиа",
+				lblSelect2: "Ресурсы",
 				lblMap: "Карта",
 				lblImage: "Изображение",
 				lblVideo: "Видео",
@@ -40,10 +40,17 @@
 				howToFind: "Как найти ID учетной записи Picasa или Google+",
 				howToFind2: "Скопируйте цифры, расположенные между первой и второй косой чертой \'/\' любой страницы Picasa или G+"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Проверить",
+				notFound: "Видео не найдено",
+				found: "Видео найдено",
+				select: "Выбрать это видео"
+			},
+			videoSelectorHome: {
+				other: "Другие"
 			},
 			videoSelectorYoutube: {
+				url: "URL видео на Youtube",
 				pageInputLbl: "Имя пользователя",
 				lookupMsgError: "Пользователь не найден",
 				howToFind: "Как найти имя пользователя YouTube",
@@ -51,24 +58,42 @@
 				found: "Найдено",
 				noData: "Общедоступных видео не найдено"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "URL видео на Vimeo"
+			},
+			videoSelectorOther: {
+				explain1: "Map Journal не может проигрывать необработанное видео (например, формата avi, mpeg), но он может проигрывать размещенные видео-файлы, которые содержат встроенные видео-плейеры (YouTube или Vimeo).",
+				explain2: "Большинство сервисов для размещения видео-роликов позволяют использовать эту функцию. Вам необходимо найти соответствующую опцию, скопировать код и использовать в %WEBPAGE%.",
+				explain3: "Или вы можете разместить видео самостоятельно, затем создать страницу HTML, которая использует видео-плейер, например %EXAMPLE% и разместить ссылку на эту страницу на %WEBPAGE%.",
+				webpage: "Функция веб-страницы"
+			},
+			webpageSelectorHome: {
+				lblUrl: "URL веб-страницы",
+				lblEmbed: "Встроенный код",
+				lblOR: "ИЛИ",
+				lblError1: "Ошибка, очистите одно из двух входных полей.",
+				lblError2: "Внедренный код может содержать только один <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL-адрес",
-				lblURLPH: "URL-адрес СМИ...",
-				lblLabel: "Надпись",
+				lblURLPH: "URL-адрес изображения должен начинаться с http:// и заканчиваться .jpg или .png",
+				lblLabel: "Заголовок изображения",
 				lblLabel1: "Заголовок",
 				lblLabel2: "Наведите курсор на текст",
 				lblLabel3: "Нет",
 				lblLabelPH: "Введите текст...",
+				lblMaximize: "Добавить кнопку увеличения размера до максимального в угол изображения",
+				lblMaximizeHelp: "Рекомендуется только для фотографий высокого качества",
 				lblPosition: "Положение",
 				lblPosition1: "По центру",
 				lblPosition2: "Заливка",
 				lblPosition3: "Разместить",
 				lblPosition4: "Растяжка",
+				lblPosition5: "Настраиваемый",
+				tooltipDimension: "Значение можно задать в 'px' или '%'",
 				lblPosition2Explain: "(может быть урезано)",
 				lblPosition3Explain: "(не будет урезаться)",
+				lblPosition3Explain2: "(ширина всегда будет соответствовать панели)",
 				lblPosition4Explain: "(может исказиться)"
 			},
 			editorActionGeocode: {

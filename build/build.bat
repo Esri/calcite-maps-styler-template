@@ -136,7 +136,7 @@ xcopy %TEMPLATES_ROOT%\ServiceLookup                            %BUILD_OUTPUT%\S
 xcopy %TEMPLATES_ROOT%\ServiceLookup                            %BUILD_OUTPUT%\InformationLookup                    /E /Y
 xcopy %TEMPLATES_ROOT%\archive\SimpleMapViewer                  %BUILD_OUTPUT%\SimpleMapViewer                      /E /Y
 xcopy %TEMPLATES_ROOT%\SimpleViewer                             %BUILD_OUTPUT%\SimpleViewer                         /E /Y
-xcopy %TEMPLATES_ROOT%\SocialMedia                              %BUILD_OUTPUT%\SocialMedia                          /E /Y
+xcopy %TEMPLATES_ROOT%\archive\SocialMedia                      %BUILD_OUTPUT%\SocialMedia                          /E /Y
 xcopy %TEMPLATES_ROOT%\Solutions                                %BUILD_OUTPUT%\Solutions                            /E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingSwipe                        %BUILD_OUTPUT%\StorytellingSwipe                    /E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingTextLegend                   %BUILD_OUTPUT%\StorytellingTextLegend               /E /Y

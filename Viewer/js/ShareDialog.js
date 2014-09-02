@@ -90,7 +90,7 @@ Evented, declare, lang, has, esriNS, _WidgetBase, a11yclick, _TemplatedMixin, on
                 icon: "icon-share",
                 linkIcon: "icon-link share-dialog-icon",
                 facebookIcon: "icon-facebook-squared share-dialog-icon",
-                twitterIcon: "icon-twitter- share-dialog-icon",
+                twitterIcon: "icon-twitter share-dialog-icon",
                 gplusIcon: "icon-gplus share-dialog-icon",
                 emailIcon: "icon-mail-alt share-dialog-icon",
                 mapSizeLabel: "map-size-label",
@@ -111,11 +111,13 @@ Evented, declare, lang, has, esriNS, _WidgetBase, a11yclick, _TemplatedMixin, on
         postCreate: function () {
             this.inherited(arguments);
             this._setExtentChecked();
+            this._shareLink();
             this.own(on(this._extentInput, a11yclick, lang.hitch(this, this._useExtentUpdate)));
         },
         // start widget. called by user
         startup: function () {
             this._init();
+
         },
         // connections/subscriptions will be cleaned up during the destroy() lifecycle phase
         destroy: function () {

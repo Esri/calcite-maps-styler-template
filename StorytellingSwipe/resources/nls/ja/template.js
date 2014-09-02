@@ -107,7 +107,7 @@
 				settingsExtentDrawBtn: "新しい範囲の描画",
 				settingsExtentModifyBtn: "現在の範囲の編集",
 				settingsExtentApplyBtn: "メイン マップに適用",
-				settingsExtentUseMainMap: "メイン マップ範囲の使用"
+				settingsExtentUseMainMap: "メイン マップ表示範囲の使用"
 			}
         },
 		swipe: {

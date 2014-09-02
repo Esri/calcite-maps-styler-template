@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Benvenuti all\'applicazione Web %TPL_NAME%.<br />L\'applicazione non è ancora configurata.",
 				notConfiguredMobile: "Benvenuti all\'applicazione Web %TPL_NAME%. L\'applicazione non è ancora configurata e il generatore non è supportato su dispositivi mobili.",
 				notAuthorized: "L\'utente non è autorizzato ad accedere a questa applicazione",
-				noBuilderIE8: "Il generatore non è supportato nelle versioni di Internet Explorer precedenti alla versione 9."
+				noBuilderIE8: "Il generatore non è supportato nelle versioni di Internet Explorer precedenti alla versione 9.",
+				mapLoadingFail: "Si è verificato un errore. Impossibile caricare la mappa."
 			},
 			mobileView: {
 				tapForDetails: "Toccare per i dettagli",
@@ -51,7 +52,7 @@
 				share: "Condividi"
 			},
 			overviewFromCommon: {
-				title: "Mappa d\'insieme",
+				title: "Mappa d\'insieme"
 			},
 			legendFromCommon: {
 				title: "Legenda"

@@ -13,7 +13,9 @@
 				open: "열기",
 				start: "시작",
 				loading: "로드 중",
-				disabledAdmin: "이 기능은 관리자가 사용하지 않도록 설정했습니다."
+				disabledAdmin: "이 기능은 관리자가 사용하지 않도록 설정했습니다.",
+				width: "너비",
+				height: "높이"
 			},
 			inlineFieldEdit: {
 				editMe: "편집!"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "레이아웃",
 				explain: "어떤 레이아웃을 사용하시겠습니까?",
-				explainInit: "언제든지 설정 패널에서 레이아웃을 변경할 수 있습니다.",
+				explainInit: "언제든지 설정 대화상자에서 레이아웃을 변경할 수 있습니다.",
 				viewExample: "라이브 예 보기"
 			},
 			settingsTheme: {

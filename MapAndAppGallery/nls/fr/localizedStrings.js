@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "Trier par",
             layoutBtnTitle: "Mise en page",
             signInBtnTitle: "Se connecter",
+            signOutBtnTitle: "æ_Sign Out_Â",
             geolocationBtnTitle: "Géolocalisation"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "Impossible d\'obtenir les données des couches.",
             unableToOpenItem: "Impossible d\'ouvrir l\'élément.",
             wmsSpatialReferenceError: "La référence spatiale de la couche WMS ne correspond pas à la référence spatiale de la carte.",
-            noPublicItems: "Le groupe configuré ne contient aucun élément public.",
+            noPublicItems: "æ_There are no public items in the configured group or no items have been shared with this group yet._Â",
             emptyUsernamePassword: "Entrez le nom d\'utilisateur et le mot de passe.",
-            noFullScreenSupport: "Le navigateur actuel ne prend pas en charge le mode plein écran."
+            noFullScreenSupport: "Le navigateur actuel ne prend pas en charge le mode plein écran.",
+            notMemberOfOrg: "æ_You are not a member of this organization_Â"
         }
 });

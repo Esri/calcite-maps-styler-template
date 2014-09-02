@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ķ_Media_ū",
-				lblSelect2: "ķ_Content_ū",
+				lblSelect1: "Medijs",
+				lblSelect2: "Saturs",
 				lblMap: "Karte",
 				lblImage: "Attēls",
 				lblVideo: "Video",
@@ -40,10 +40,17 @@
 				howToFind: "Kā atrast Picasa vai Google+ konta ID",
 				howToFind2: "Kopēt ciparus starp pirmo un otro \'/\' no jebkura Picasa vai G+ lapa"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Pārbaudīt",
+				notFound: "Video nav atrasts",
+				found: "Video atrasts",
+				select: "Atlasīt šo video"
+			},
+			videoSelectorHome: {
+				other: "Cits"
 			},
 			videoSelectorYoutube: {
+				url: "Youtube video URL",
 				pageInputLbl: "Lietotāja vārds",
 				lookupMsgError: "Lietotājs nav atrasts",
 				howToFind: "Kā atrast YouTube lietotāja vārdu",
@@ -51,24 +58,42 @@
 				found: "Atrasts",
 				noData: "Nav atrasti publiski video"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "Vimeo video URL"
+			},
+			videoSelectorOther: {
+				explain1: "Karšu žurnāls nevar atskaņot neapstrādātus video (piemēram, avi, mpeg), bet var atskaņot mitinātus video failus ar iebūvētiem atskaņotājiem (piemēram, YouTube vai Vimeo).",
+				explain2: "Lielākā daļa video mitināšanas pakalpojumu piedāvā šo funkciju, jums ir jāatrod iespēja iegult video, nokopēt saņemto kodu un izmantot %WEBPAGE%.",
+				explain3: "Ja video vēlaties mitināt pats, varat arī izveidot HTML lapu, kurā tiek izmantots video atskaņotājs (piemēram, %EXAMPLE%), mitināt šo lapu un arī izmantot %WEBPAGE%.",
+				webpage: "Web lapas funkcija"
+			},
+			webpageSelectorHome: {
+				lblUrl: "Web lapas URL",
+				lblEmbed: "Iegult kodu",
+				lblOR: "VAI",
+				lblError1: "Kļūda, notīriet vienu no diviem ievades laukiem.",
+				lblError2: "Iegultais kods var saturēt tikai vienu <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Medija URL...",
-				lblLabel: "Kartes teksts",
+				lblURLPH: "Attēla URL ir jāsākas ar http:// un jābeidzas ar .jpg vai .png",
+				lblLabel: "Attēla teksts",
 				lblLabel1: "Uzraksts",
 				lblLabel2: "Novietot virs teksta",
 				lblLabel3: "Neviens",
 				lblLabelPH: "Ievadiet tekstu...",
+				lblMaximize: "Attēla stūrī iekļaut maksimizēšanas pogu",
+				lblMaximizeHelp: "Ieteicams tikai augstas kvalitātes foto",
 				lblPosition: "Pozīcija",
 				lblPosition1: "Centrs",
 				lblPosition2: "Aizpildīt",
 				lblPosition3: "Ietilpināt",
 				lblPosition4: "Izstiept",
+				lblPosition5: "Pielāgots",
+				tooltipDimension: "Vērtību var norādīt \'px\' vai \'%\'",
 				lblPosition2Explain: "(var apgriezt)",
 				lblPosition3Explain: "(netiks apgriezts)",
+				lblPosition3Explain2: "(platums vienmēr atbildīs panelim)",
 				lblPosition4Explain: "(var tikt izkropļots)"
 			},
 			editorActionGeocode: {

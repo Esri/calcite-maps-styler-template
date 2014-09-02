@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ĳ_Media_ä",
-				lblSelect2: "Ĳ_Content_ä",
+				lblSelect1: "Media",
+				lblSelect2: "Content",
 				lblMap: "Kaart",
 				lblImage: "Afbeelding",
 				lblVideo: "Video",
@@ -40,10 +40,17 @@
 				howToFind: "Zoeken naar een Picasa- of Google+-account-ID",
 				howToFind2: "Kopieer getallen tussen de eerste en tweede \'/\' van een pagina van Picasa of G+"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Controleren",
+				notFound: "Video niet gevonden",
+				found: "Video gevonden",
+				select: "Deze video selecteren"
+			},
+			videoSelectorHome: {
+				other: "Anders"
 			},
 			videoSelectorYoutube: {
+				url: "URL van een Youtube-video",
 				pageInputLbl: "Gebruikersnaam",
 				lookupMsgError: "Gebruiker niet gevonden",
 				howToFind: "Hoe een YouTube-gebruikersnaam vinden",
@@ -51,24 +58,42 @@
 				found: "Gevonden",
 				noData: "Geen openbare video\'s gevonden"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "URL van een Vimeo-video"
+			},
+			videoSelectorOther: {
+				explain1: "Kaartjournaal kan geen onbewerkte video afspelen (zoals avi of mpeg), maar het kan wel gehoste videobestanden met ingebouwde spelers afspelen (zoals YouTube of Vimeo).",
+				explain2: "De meeste online videoservices bieden deze functie. U moet de optie vinden om de video in te kunnen sluiten, de verstrekte code kopieren en de %WEBPAGE% gebruiken.",
+				explain3: "Als u de video zelf wilt hosten, kunt u een HTML-pagina maken die een videospeler gebruikt zoals %EXAMPLE%. Host die pagina en gebruik tevens de %WEBPAGE%.",
+				webpage: "Functie webpagina"
+			},
+			webpageSelectorHome: {
+				lblUrl: "URL webpagina",
+				lblEmbed: "Code voor inbedden",
+				lblOR: "OF",
+				lblError1: "Fout: maak een van de twee velden leeg.",
+				lblError2: "Code inbedden kan maar 1 <iframe> bevatten"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Media-URL...",
-				lblLabel: "Label",
+				lblURLPH: "Een afbeeldings-URL moet beginnen met http:// en met .jpg of .png eindigen",
+				lblLabel: "Bijschrift afbeelding",
 				lblLabel1: "Bijschrift",
 				lblLabel2: "Over tekst bewegen",
 				lblLabel3: "Geen",
 				lblLabelPH: "Voer wat tekst in...",
+				lblMaximize: "Sluit een knop voor maximaliseren in de hoek van de afbeelding in",
+				lblMaximizeHelp: "Alleen aanbevolen voor foto\'s van hoge kwaliteit",
 				lblPosition: "Positie",
 				lblPosition1: "Centreren",
 				lblPosition2: "Vulling",
 				lblPosition3: "Passend maken",
 				lblPosition4: "Uitrekken",
+				lblPosition5: "Aangepast",
+				tooltipDimension: "De waarde kan in 'px' of '%' worden gespecificeerd",
 				lblPosition2Explain: "(kan worden bijgesneden)",
 				lblPosition3Explain: "(wordt niet bijgesneden)",
+				lblPosition3Explain2: "(breedte past altijd in het deelvenster)",
 				lblPosition4Explain: "(kan worden vervormd)"
 			},
 			editorActionGeocode: {

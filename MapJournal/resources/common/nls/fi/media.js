@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Å_Media_ö",
-				lblSelect2: "Å_Content_ö",
+				lblSelect1: "Media",
+				lblSelect2: "Sisältö",
 				lblMap: "Kartta",
 				lblImage: "Kuva",
 				lblVideo: "Video",
@@ -40,10 +40,17 @@
 				howToFind: "Picasa- tai Google+-tilitunnuksen etsiminen",
 				howToFind2: "Kopioi minkä tahansa Picasa- tai Google+-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Valitse",
+				notFound: "Videota ei löydy",
+				found: "Video löytyi",
+				select: "Valitse tämä video"
+			},
+			videoSelectorHome: {
+				other: "Muu"
 			},
 			videoSelectorYoutube: {
+				url: "Youtube-videon URL-osoite",
 				pageInputLbl: "Käyttäjätunnus",
 				lookupMsgError: "Käyttäjää ei löydy",
 				howToFind: "YouTube-käyttäjätunnuksen etsiminen",
@@ -51,24 +58,42 @@
 				found: "Löytyi",
 				noData: "Yhtään julkista videota ei löytynyt"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "Vimeo-videon URL-osoite"
+			},
+			videoSelectorOther: {
+				explain1: "Karttapäiväkirja ei voi toistaa raakavideoita (esim. avi- ja mpeg-muotoisia), mutta sillä voi toistaa isännöityjä videotiedostoja, joissa on sisäänrakennettuja soittimia (esim. YouTube tai Vimeo).",
+				explain2: "Useimmissa online-videoisännöintipalveluissa voi käyttää kyseistä ominaisuutta, ja sinun on etsittävä videon upotusvalinta, kopioitava annettu koodi ja käytettävä sivustoa %WEBPAGE%.",
+				explain3: "Jos taas haluat isännöidä itse videota, voit luoda HTML-sivun, joka käyttää videosoitinta (esim. %EXAMPLE%), isännöidä tätä sivua ja käyttää myös sivustoa %WEBPAGE%.",
+				webpage: "Web-sivukohde"
+			},
+			webpageSelectorHome: {
+				lblUrl: "Web-sivun URL-osoite",
+				lblEmbed: "Upotuskoodi",
+				lblOR: "TAI",
+				lblError1: "Virhe, tyhjennä toinen kahdesta lähtöaineistokentästä.",
+				lblError2: "Upotuskoodi voi sisältää vain yhden merkkijonon <iframe>"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Median URL-osoite...",
-				lblLabel: "Tunnusteksti",
+				lblURLPH: "Kuvan URL-osoitteen on alettava merkkijonolla http:// ja loputtava tarkenteeseen .jpg tai .png",
+				lblLabel: "Kuvan seloste",
 				lblLabel1: "Seloste",
 				lblLabel2: "Kohoteksti",
 				lblLabel3: "Ei mitään",
 				lblLabelPH: "Kirjoita vähän tekstiä...",
+				lblMaximize: "Sisällytä suurennuspainike kuvan kulmaan",
+				lblMaximizeHelp: "Suositellaan vain korkealaatuisille valokuville",
 				lblPosition: "Sijainti",
 				lblPosition1: "Keskikohta",
 				lblPosition2: "Täytä",
 				lblPosition3: "Sovita",
 				lblPosition4: "Venytä",
+				lblPosition5: "Mukautettu",
+				tooltipDimension: "Arvo voidaan määrittää px (pikseli)- tai %-yksiköissä",
 				lblPosition2Explain: "(voi rajautua)",
 				lblPosition3Explain: "(ei rajaudu)",
+				lblPosition3Explain2: "(leveys sopii aina paneeliin)",
 				lblPosition4Explain: "(voi vääristyä)"
 			},
 			editorActionGeocode: {

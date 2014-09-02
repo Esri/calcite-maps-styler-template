@@ -13,7 +13,9 @@
 				open: "Openen",
 				start: "Start",
 				loading: "Laden",
-				disabledAdmin: "Deze functie is uitgeschakeld door de beheerder"
+				disabledAdmin: "Deze functie is uitgeschakeld door de beheerder",
+				width: "Breedte",
+				height: "Hoogte"
 			},
 			inlineFieldEdit: {
 				editMe: "Bewerk me!"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Lay-out",
 				explain: "Welke lay-out wilt u gebruiken?",
-				explainInit: "U kunt de lay-out altijd wijzigen in het deelvenster Instellingen.",
+				explainInit: "U kunt de lay-out altijd wijzigen in het dialoogvenster Instellingen.",
 				viewExample: "Een live voorbeeld weergeven"
 			},
 			settingsTheme: {
@@ -87,7 +89,7 @@
 				logoCustom: "Aangepast logo",
 				logoCustomPlaceholder: "URL (max. 250x50 pixels)",
 				logoCustomTargetPlaceholder: "Doorklikkoppeling",
-				logoSocialExplain: "Pas de koptekstkoppeling aan.",
+				logoSocialExplain: "Pas de koppeling voor de koptekst aan.",
 				logoSocialText: "Tekst",
 				logoSocialLink: "Koppeling"
 			}

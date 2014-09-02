@@ -2,8 +2,8 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ř_Media_ů",
-				lblSelect2: "Ř_Content_ů",
+				lblSelect1: "Média",
+				lblSelect2: "Obsah",
 				lblMap: "Mapa",
 				lblImage: "Obrázek",
 				lblVideo: "Video",
@@ -40,10 +40,17 @@
 				howToFind: "Jak najít identifikátor účtu Picasa nebo Google+",
 				howToFind2: "Zkopírujte číslice mezi prvním a druhým lomítkem (/) libovolné stránky služeb Picasa nebo Google+."
 			},
-			videoSelector: {
-				
+			videoSelectorCommon: {
+				check: "Kontrola",
+				notFound: "Video nebylo nalezeno",
+				found: "Video bylo nalezeno",
+				select: "Vybrat toto video"
+			},
+			videoSelectorHome: {
+				other: "Jiné"
 			},
 			videoSelectorYoutube: {
+				url: "Adresa URL videa ve službě YouTube",
 				pageInputLbl: "Uživatelské jméno",
 				lookupMsgError: "Uživatel nenalezen",
 				howToFind: "Jak najít uživatelské jméno YouTube",
@@ -51,24 +58,42 @@
 				found: "Nalezeno",
 				noData: "Nenalezena žádná veřejná videa"
 			},
-			mediaSelectorPicker: {
-				
+			videoSelectorVimeo: {
+				url: "Adresa URL videa ve službě Vimeo"
+			},
+			videoSelectorOther: {
+				explain1: "Mapový deník nedokáže přehrávat videa v původním formátu (tj. avi, mpeg), ale dokáže přehrávat hostované videosoubory s vestavěným přehrávačem (tj. YouTube nebo Vimeo).",
+				explain2: "Tuto funkci nabízí většina online služeb pro hostování videa. Musíte najít možnost pro vložení videa, zkopírovat uvedený kód a použít %WEBPAGE%.",
+				explain3: "Video také můžete hostovat sami. Stačí vytvořit HTML stránku, která používá videopřehrávač, jako je %EXAMPLE%, tuto stránku hostovat a také použít %WEBPAGE%.",
+				webpage: "Prvek webové stránky"
+			},
+			webpageSelectorHome: {
+				lblUrl: "Adresa URL webové stránky",
+				lblEmbed: "Kód vložení",
+				lblOR: "NEBO",
+				lblError1: "Chyba, vymažte jedno ze dvou vstupních polí.",
+				lblError2: "Kód vložení může obsahovat pouze jeden prvek <iframe>."
 			},
 			mediaConfigure: {
 				lblURL: "URL",
-				lblURLPH: "Adresa URL média...",
-				lblLabel: "Štítek",
+				lblURLPH: "Adresa URL obrázku by měla začínat řetězcem http:// a končit .jpg nebo .png.",
+				lblLabel: "Titulek obrázku",
 				lblLabel1: "Popisek",
 				lblLabel2: "Přejeďte ukazatelem myši přes text.",
 				lblLabel3: "Žádné",
 				lblLabelPH: "Napište nějaký text...",
+				lblMaximize: "Zobrazit v rohu obrázku tlačítko pro zvětšení",
+				lblMaximizeHelp: "Doporučeno pouze pro fotografie ve vysoké kvalitě",
 				lblPosition: "Pozice",
 				lblPosition1: "Na střed",
 				lblPosition2: "Vyplnit",
 				lblPosition3: "Přizpůsobit",
 				lblPosition4: "Roztáhnout",
+				lblPosition5: "Vlastní",
+				tooltipDimension: "Hodnotu lze uvést v 'px' nebo '%'",
 				lblPosition2Explain: "(může dojít k ořezu)",
 				lblPosition3Explain: "(nedojde k ořezu)",
+				lblPosition3Explain2: "(šířka se vždy přizpůsobí panelu)",
 				lblPosition4Explain: "(může dojít ke zkreslení)"
 			},
 			editorActionGeocode: {

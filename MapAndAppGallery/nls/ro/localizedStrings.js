@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "Sortare după",
             layoutBtnTitle: "Configuraţie",
             signInBtnTitle: "Autentificare",
+            signOutBtnTitle: "Ă_Sign Out_ș",
             geolocationBtnTitle: "Geolocaţie"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "Nu se pot obţine date de la straturile tematice.",
             unableToOpenItem: "Nu se poate deschide elementul.",
             wmsSpatialReferenceError: "Referinţa spaţială a stratului tematic WMS nu corespunde cu referinţa spaţială a hărţii.",
-            noPublicItems: "Nu există elemente publice în grupul configurat.",
+            noPublicItems: "Ă_There are no public items in the configured group or no items have been shared with this group yet._ș",
             emptyUsernamePassword: "Introduceţi numele de utilizator şi parola.",
-            noFullScreenSupport: "Browserul actual nu suportă modul pe tot ecranul."
+            noFullScreenSupport: "Browserul actual nu suportă modul pe tot ecranul.",
+            notMemberOfOrg: "Ă_You are not a member of this organization_ș"
         }
 });

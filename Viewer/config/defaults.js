@@ -19,7 +19,7 @@ define({
     //Default configuration settings for the application. This is where you'll define things like a bing maps key,
     //default web map, default app color theme and more. These values can be overwritten by template configuration settings and url parameters.
     "appid": "",
-    "webmap": "4a675e9bc2994a7594ffeec7aaefd749",
+    "webmap": "f5b13dbed07c46cdb783cf361833aa6b",
     "oauthappid": null, //"AFTKRmv16wj14N3z",
     //Group templates must support a group url parameter. This will contain the id of the group.
     //group: "",
@@ -61,14 +61,19 @@ define({
         {"name": "details", "enabled": true},
         {"name": "share", "enabled": true}
     ], 
-    //Set the active tool on the toolbar. Note home and locate can't be the active tool. 
+    //Set the active tool on the toolbar. Note home and locate can't be the active tool.
+    //Set to "" to display no tools at startup
     "activeTool": "legend",
-    //Add the geocoding tool next to the title bar
+    //Add the geocoding tool next to the title bar. 
     "search": true,
+    //When searchExtent is true the locator will prioritize results within the current map extent.
+    "searchExtent": false,
     //Add the home extent button to the toolbar 
     "home": true,
     //Add the geolocation button on the toolbar. Only displayed if browser supports geolocation
     "locate": true,
+    //When true display a scalebar on the map
+    "scalebar": false,
     //Specify a title for the application. If not provided the web map title is used. 
     "title": null, 
     //This option demonstrates how to handle additional custom url parameters. For example

@@ -13,7 +13,9 @@
 				open: "開く",
 				start: "開始",
 				loading: "読み込んでいます",
-				disabledAdmin: "この機能は、管理者によって無効にされています"
+				disabledAdmin: "この機能は、管理者によって無効にされています",
+				width: "幅",
+				height: "高さ"
 			},
 			inlineFieldEdit: {
 				editMe: "編集"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "レイアウト",
 				explain: "使用するレイアウト",
-				explainInit: "レイアウトは、設定パネルからいつでも変更できます。",
+				explainInit: "レイアウトは、設定ダイアログからいつでも変更できます。",
 				viewExample: "最新例を表示"
 			},
 			settingsTheme: {

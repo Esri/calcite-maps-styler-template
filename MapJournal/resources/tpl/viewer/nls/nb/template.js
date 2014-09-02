@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Velkommen til webprogrammet %TPL_NAME%.<br />Programmet er ikke konfigurert ennå.",
 				notConfiguredMobile: "Velkommen til webprogrammet %TPL_NAME%. Programmet er ikke konfigurert ennå, og byggeverktøyet støttes ikke på mobile enheter.",
 				notAuthorized: "Du har ikke tillatelse til å bruke denne applikasjonen",
-				noBuilderIE8: "Byggeverktøyet støttes ikke i versjoner av Internet Explorer som er eldre enn versjon 9."
+				noBuilderIE8: "Byggeverktøyet støttes ikke i versjoner av Internet Explorer som er eldre enn versjon 9.",
+				mapLoadingFail: "Noe gikk galt; kartet kan ikke lastes inn."
 			},
 			mobileView: {
 				tapForDetails: "Trykk for å se detaljer",
@@ -51,7 +52,7 @@
 				share: "Del"
 			},
 			overviewFromCommon: {
-				title: "Oversiktskart",
+				title: "Oversiktskart"
 			},
 			legendFromCommon: {
 				title: "Tegnforklaring"

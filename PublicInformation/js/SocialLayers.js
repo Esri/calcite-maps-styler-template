@@ -81,6 +81,7 @@ define([
                     this._youtubeLayer = new YouTubeLayer({
                         map: this.map,
                         time: this.config.youtubeTime,
+                        searchTerm: this.config.youtubeSearch,
                         visible: this.config.youtubeVisible,
                         key: this.config.youtube_key
                     });
@@ -126,6 +127,7 @@ define([
                     this._flickrLayer = new FlickrLayer({
                         map: this.map,
                         visible: this.config.flickrVisible,
+                        time: this.config.flickrTime,
                         searchTerm: this.config.flickrSearch,
                         key: this.config.flickr_key
                     });

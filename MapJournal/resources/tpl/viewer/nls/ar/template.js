@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "مرحبًا بك في تطبيق الويب %TPL_NAME%. <br />لم يتم تكوين التطبيق بعد.",
 				notConfiguredMobile: "مرحبًا بك في تطبيق الويب %TPL_NAME%. لم يتم تكوين التطبيق بعد والمُنشئ غير مدعوم على أجهزة الجوال.",
 				notAuthorized: "لست مخولاً لتكوين التطبيق للوصول إلى هذا التطبيق",
-				noBuilderIE8: "المُنشئ غير مدعوم على Internet Explorer الإصدار السابق للإصدار 9."
+				noBuilderIE8: "المُنشئ غير مدعوم على Internet Explorer الإصدار السابق للإصدار 9.",
+				mapLoadingFail: "حدث خطأ ما، يتعذر تحميل الخريطة."
 			},
 			mobileView: {
 				tapForDetails: "الضغط للحصول على التفاصيل",
@@ -51,7 +52,7 @@
 				share: "مشاركة"
 			},
 			overviewFromCommon: {
-				title: "خريطة النظرة العامة",
+				title: "خريطة النظرة العامة"
 			},
 			legendFromCommon: {
 				title: "مفتاح الخريطة"

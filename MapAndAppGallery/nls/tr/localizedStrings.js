@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "Şuna göre sırala:",
             layoutBtnTitle: "Düzen",
             signInBtnTitle: "Oturum Aç",
+            signOutBtnTitle: "ı_Sign Out_İ",
             geolocationBtnTitle: "Coğrafi Konum"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "Katmanlardan veri alınamıyor.",
             unableToOpenItem: "Öğe açılamıyor.",
             wmsSpatialReferenceError: "WMS katmanı mekansal başvurusu, haritanın mekansal başvurusu ile eşleşmiyor.",
-            noPublicItems: "Yapılandırılan grupta genel öğe yok.",
+            noPublicItems: "ı_There are no public items in the configured group or no items have been shared with this group yet._İ",
             emptyUsernamePassword: "Kullanıcı Adı ve Şifre girin.",
-            noFullScreenSupport: "Geçerli tarayıcı tam ekran modunu desteklemiyor."
+            noFullScreenSupport: "Geçerli tarayıcı tam ekran modunu desteklemiyor.",
+            notMemberOfOrg: "ı_You are not a member of this organization_İ"
         }
 });

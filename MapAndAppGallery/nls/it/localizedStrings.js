@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "Ordina per",
             layoutBtnTitle: "Layout",
             signInBtnTitle: "Accedi",
+            signOutBtnTitle: "é_Sign Out_È",
             geolocationBtnTitle: "Geoposizione"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "Impossibile ottenere dati dai layer.",
             unableToOpenItem: "Impossibile aprire l\'elemento.",
             wmsSpatialReferenceError: "Il riferimento spaziale del layer WMS non corrisponde a quello della mappa.",
-            noPublicItems: "Non sono disponibili elementi pubblici nel gruppo configurato.",
+            noPublicItems: "é_There are no public items in the configured group or no items have been shared with this group yet._È",
             emptyUsernamePassword: "Immettere nome utente e password.",
-            noFullScreenSupport: "Il browser in uso non supporta la modalità a schermo intero."
+            noFullScreenSupport: "Il browser in uso non supporta la modalità a schermo intero.",
+            notMemberOfOrg: "é_You are not a member of this organization_È"
         }
 });

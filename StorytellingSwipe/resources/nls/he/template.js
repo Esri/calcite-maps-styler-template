@@ -6,7 +6,7 @@
 				step2: "טעינת מידע",
 				step3: "מתחיל",
 				fail: "סליחה, אך טעינת כלי ה- swipe נכשלה",
-				loadBuilder: "החלפה למצב בניה",
+				loadBuilder: "מעבר למצב בניה",
 				redirectSignIn: "הפניה לדף ההתחברות",
 				redirectSignIn2: "(תופנה מחדש לאחר ההתחברות)",
 				failButton: "נסה שוב"
@@ -18,14 +18,14 @@
 				invalidConfigNoWebmap: "שגיאה קריטית: קביעת תצורה לא תקינה (לא הוגדר web map)",
 				createMap: "לא ניתן ליצור מפה",
 				invalidApp: "שגיאה קריטית: לא ניתן לטעון את האפליקציה",
-				initMobile: "ברוכים הבאים לאפליקצית ה- web של כלי ה- swipe. עדיין לא הוגדרה תצורה לאפליקציה. הבונה האינטראקטיבי לא נמתך במכשירים ניידים.",
-				noBuilderIE8: "הבונה האינטראקטיבי של ה- Swipe לא נתמך באינטרנט אקספלורר לפני גרסה 9.",
+				initMobile: "ברוכים הבאים לאפליקצית ה- web של כלי ה- swipe. עדיין לא הוגדרה תצורה לאפליקציה. אשף הבנייה האינטראקטיבי לא נתמך במכשירים ניידים.",
+				noBuilderIE8: "הבנאי האינטראקטיבי של ה- Swipe לא נתמך באינטרנט אקספלורר לפני גרסה 9.",
 				noLayerView: "ברוכים הבאים לאפליקצית ה- web של כלי ה- swipe. <br />עדיין לא הוגדרה תצורה לאפליקציה.",
 				appSave: "שגיאה בשמירת אפליקצית ה- web",
 				mapSave: "שגיאה בשמירת ה- web map",
 				notAuthorized: "אינך מורשה לגשת לאפליקציה זו",
 				conflictingProjectionsTitle: "היטלים סותרים",
-				conflictingProjections: "כן_Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map._ש",
+				conflictingProjections: "כלי ה- Swipe לא ישים כאשר ישנם היטלים שונים לשני webmaps. אנא פתח את ההגדרות והשתמש ב- webmap שמשתמשת באותו היטל של ה- webmap הראשון.",
 				cpButton: "סגור"
 			},
 			mobileView: {
@@ -71,7 +71,7 @@
 				signInTwo: "כדי לשמור את האפליקציה."
 			},
 			header:{
-				editMe: "כן_Edit me!_ש",
+				editMe: "ערוך אותי!",
 				templateTitle: "קבע כותרת תבנית",
 				templateSubtitle: "קבע כותרת משנה לתבנית"
 			},
@@ -83,7 +83,7 @@
 			settingsColors: {
 				settingsTabColor: "נושא",
 				settingsColorExplain: "בחר את נושא האפליקציה או הגדר את הצבעים שלך.",
-				settingsLabelColor: "צבעי כותרת עליונה ורקע הפאנל הצידי"
+				settingsLabelColor: "צבעי כותרת עליונה ורקע הפנל הצידי"
 			},
 			settingsHeader: {
 				settingsTabLogo: "כותרת עליונה",
@@ -121,8 +121,8 @@
 				noLegend: "אין מקרא לתצוגה"
 			},
 			swipeSidePanel: {
-				editTooltip: "קבע את תיאור הפאנל הצידי",
-				editMe: "כן_Edit me!_ש",
+				editTooltip: "קבע את תיאור הפנל הצידי",
+				editMe: "ערוך אותי!",
 				legendTitle: "מקרא"
 			},
 			infoWindow: {
@@ -172,7 +172,7 @@
 				settingsLocationSearchEnable: "הפעל חיפוש עיגון כתובות",
 				settingsGeolocatorEnable: "הפעל חיפוש מרחבי",
 				settingsLegendHelpContent: "כדי לעדן את תוכן המקרא, השתמש בתוכן העניינים של צפיין ה- ArcGIS.com web map (הסתר במקרא)",
-				settingsSeriesHelpContent: "Swipe להסדרות היא אפשרות ניווט באמצעות כרטיסיות שתדריך את הצופה לתיחום מסוים והצג הכותרת וטקסט תיאור בפאנל בצד. במהלך הפעלה ראשונית, סימניות מה- web map ייבוא וישמשו לאכלוס מראש של מוט הסדרה. הפסקת אפשרות הסדרה מכבה את מוט הסדרה, אבל תצורת הסדרות נשמרת לשימוש עתידי.", 
+				settingsSeriesHelpContent: "Swipe להסדרות היא אפשרות ניווט באמצעות כרטיסיות שתדריך את הצופה לתיחום מסוים והצג הכותרת וטקסט תיאור בפנל בצד. במהלך הפעלה ראשונית, סימניות מה- web map ייבוא וישמשו לאכלוס מראש של מוט הסדרה. הפסקת אפשרות הסדרה מכבה את מוט הסדרה, אבל תצורת הסדרות נשמרת לשימוש עתידי.", 
 				settingsSeriesHelpContent2: "סדרת ה-Swipe מאפשרת לך ליצור ולערוך מבחר מיקומים מלווים בכיתוביות כותרות וטקסט. אם ל- web map יש סימניות, הן יוצגו. אתה יכול לבטל את הסדרה, אך ההגדרות תישמרנה לשימוש עתידי.",
 				settingsSeriesHelpLink: "ראה כאן דוגמא לאלפליקציה עם סדרת ה-Swipe",
 				preview: "תצוגה מקדימה של UI",
@@ -241,9 +241,9 @@
 				shareA1: "השתמש ב- %SHAREIMG% ב- <a href='%LINK1%' target='_blank'>דף פריט האפליקציה</a>. אם אתה רוצה גם לבטל את שיתוף של ה- web map, השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט web map</a>.",
 				shareA1bis: "אם אתה רוצה לבטל גם את השיתוף לשירות הישויות, השתמש <a href='%LINK1%' target='_blank'>דף פריט שירות הישויות</a>.",
 				shareQ2: "כיצד אני יכול לערוך את האפליקציה מאוחר יותר?",
-				shareQ2bis: "כיצד אני יכול לחזור לממשק העריכה?",
+				shareQ2bis: "כיצד אני יכול לחזור לממשק הפרסום?",
 				shareA2div1: "שמור והשתמש שוב בקישור הבא %LINK1% או השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט האפליקציה</a>.",
-				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל ArcGIS.com האפליקציה כוללת כפתור הפותח את הבונה האינטראקטיבי.",				
+				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל ArcGIS.com האפליקציה כוללת כפתור הפותח את אשף הבנייה האינטראקטיבי.",				
 				shareQ3: "היכן מאוחסן המידע?",
 				shareA3: "תצורת האפליקציה אינה שמורה בפריט  web application</a> זה.",
 				shareWarning: "שיתוף עם %WITH% לא מתאפשר מכיוון שאינך הבעלים של <a href='%LINK%' target='_blank'>webmap</a>.",

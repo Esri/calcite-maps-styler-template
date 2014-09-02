@@ -1,5 +1,8 @@
 .TableOfContents {
-  width: 300px; }
+  position: relative;
+  width: 300px;
+  padding-bottom: 100px;
+  overflow: scroll; }
 
 .TableOfContents .toc-title {
   border-bottom: 1px solid #e0e0e0;
@@ -25,7 +28,7 @@
   text-overflow: ellipsis;
   width: 200px;
   white-space: nowrap;
-  overflow: hidden;
+  overflow-x: hidden;
   line-height: 16px;
   height: 16px;
   border: 1px solid transparent;
@@ -89,7 +92,7 @@
   margin-left: 0;
   margin-right: 4px; }
 
-@media screen and (max-width: 310px) {
+@media screen and (max-width: 300px) {
   .TableOfContents {
     width: auto; }
   .TableOfContents .toc-text {
@@ -200,7 +203,22 @@ html, body {
 .layer-menu .dijitMenuItemSelected {
   background: #d3d3d3; }
 
-/* Esri Jvascript API*/
+/* Esri Javascript API*/
+.esriEditor .esriDrawingToolbar {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 35%;
+  border-bottom: none;
+  border-right: none;
+  border-left: none; }
+
+@media only screen and (min-width: 720px) {
+  .esriEditor .esriDrawingToolbar {
+    bottom: 25%;
+    right: 0;
+    left: 0; } }
+
 .esriPopup .pointer.bottom, .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight {
   background: #f7f7f7 !important; }
 
@@ -272,6 +290,12 @@ html, body {
   line-height: 40px;
   -webkit-user-select: none; }
 
+.notools div {
+  width: 30px;
+  height: 30px;
+  line-height: 25px;
+  font-size: 24px; }
+
 .esriSimpleSliderTL {
   top: 10px;
   left: 10px;
@@ -283,8 +307,8 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
   zoom: 1; }
 
-.esriSimpleSliderIncrementButton {
-  border-bottom: solid 1px #ffffff !important; }
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
+  border: none !important; }
 
 .simpleGeocoder .esriGeocoder {
   display: block;
@@ -384,6 +408,10 @@ html, body {
 .legend {
   padding-bottom: 100px; }
 
+.scalebar_bottom-left {
+  left: 25px;
+  bottom: 40px; }
+
 .HomeButton .home {
   padding: 0 !important;
   width: 24px;
@@ -404,6 +432,10 @@ html, body {
 
 .no-touch .HomeButton .home:hover, .LocateButton .zoomLocateButton:hover {
   background-color: none !important; }
+
+.scalebar_bottom-left {
+  left: 25px;
+  bottom: 40px; }
 
 .HomeButton .home:before {
   width: 24px;
@@ -492,7 +524,6 @@ img {
   height: 100%;
   width: 0px;
   display: block;
-  overflow: visible;
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.5);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
@@ -501,7 +532,6 @@ img {
 #panelPages {
   width: 100%;
   height: 100%;
-  overflow: visible;
   background-color: transparent;
   background-color: rgba(255, 0, 0, 0.5);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FF0000,endColorstr=#80FF0000);
@@ -528,10 +558,10 @@ img {
   right: 10px;
   margin-left: -310px;
   width: 300px;
-  top: 90px;
   display: block;
   overflow: hidden;
   max-height: 305px;
+  top: 100px;
   background-color: transparent;
   background-color: white;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF,endColorstr=#FFFFFFFF);
@@ -539,10 +569,9 @@ img {
 
 @media only screen and (min-width: 600px) {
   .pageContent {
-    top: 100px;
     max-height: none; } }
 
-@media only screen and (min-width: 860px) {
+@media only screen and (min-width: 1074px) {
   .pageContent {
     top: 10px;
     max-height: none; } }
@@ -643,7 +672,11 @@ img {
   padding: 10px; }
 
 #pageBody_legend {
-  padding: 20px; }
+  padding-left: 20px;
+  padding-top: 20px;
+  margin-right: 30px;
+  max-height: 80%;
+  max-width: 280px; }
 
 #pageBody_share {
   padding: 5px 20px;
@@ -653,9 +686,21 @@ img {
   #pageBody_share {
     max-height: none; } }
 
+#pageBody_bookmarks {
+  position: absolute;
+  top: 90px;
+  max-height: 70%; }
+
+@media only screen and (min-width: 720px) {
+  #pageBody_bookmarks {
+    max-height: 80%; } }
+
+#pageContent_details {
+  padding-bottom: 100px; }
+
 #pageBody_details {
   padding: 5px;
-  max-width: 290px; }
+  max-width: 288px; }
 
 #panelTop {
   position: fixed;
@@ -672,15 +717,23 @@ img {
   -ms-border-radius: 0;
   border-radius: 0; }
 
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 760px) {
   #panelTop {
-    max-width: 500px;
+    max-width: 650px;
     left: 44px;
     top: 10px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     border-radius: 5px; } }
+
+@media only screen and (min-width: 720px) {
+  .largerTitle {
+    max-width: 720px !important; } }
+
+@media only screen and (min-width: 720px) {
+  .smallerTitle {
+    max-width: 520px !important; } }
 
 #panelTitle {
   height: 50px;
@@ -689,7 +742,7 @@ img {
   color: #ffffff;
   display: block;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  font-family: "HelveticaNeue-UltraLight", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "Helvetica Neue", "Arial", sans-serif;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
   font-weight: normal;
   font-size: 25px; }
 
@@ -719,7 +772,8 @@ img {
 
 @media only screen and (min-width: 720px) {
   #panelText {
-    display: block; } }
+    display: block;
+    max-width: 400px; } }
 
 #panelSearch {
   float: left;
@@ -804,22 +858,6 @@ img {
   margin-top: 3px; }
 
 /*Calcite updates keep list and submit issues*/
-.calcite .esriPopup .titleButton.next {
-  background: url('../images/calcite_nav.png') no-repeat -42px -3px !important;
-  top: 10px;
-  width: 8px;
-  height: 10px;
-  opacity: 0.6;
-  filter: alpha(opacity=60); }
-
-.calcite .esriPopup .titleButton.prev {
-  background: url('../images/calcite_nav.png') no-repeat -57px -23px !important;
-  top: 10px;
-  width: 8px;
-  height: 10px;
-  opacity: 0.6;
-  filter: alpha(opacity=60); }
-
 .calcite .esriPopup .title {
   font-weight: bold; }
 
@@ -1122,6 +1160,6 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
 .icon-angle-down:before {
   content: '\e809'; }
 
-/* '	' */
+/* '  ' */
 .icon-check-1:before {
   content: '\2713'; }

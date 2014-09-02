@@ -13,7 +13,9 @@
 				open: "Ava",
 				start: "Algus",
 				loading: "Laen",
-				disabledAdmin: "See funktsioon on administraatori poolt välja lülitatud"
+				disabledAdmin: "See funktsioon on administraatori poolt välja lülitatud",
+				width: "Laius",
+				height: "Kõrgus"
 			},
 			inlineFieldEdit: {
 				editMe: "Muuda mind!"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Kujundus",
 				explain: "Millist paigutust soovite kasutada?",
-				explainInit: "Saate paigutust igal ajal sätete paneeli kaudu muuta.",
+				explainInit: "Saate paigutust igal ajal seadete dialoogiakna kaudu muuta.",
 				viewExample: "Kuva reaalajas näide"
 			},
 			settingsTheme: {

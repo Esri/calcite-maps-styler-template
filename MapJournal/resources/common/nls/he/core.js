@@ -13,7 +13,9 @@
 				open: "פתח",
 				start: "התחלה",
 				loading: "טוען",
-				disabledAdmin: "תכונה זו הוגדרה כלא זמינה על ידי המנהל"
+				disabledAdmin: "תכונה זו הוגדרה כלא זמינה על ידי המנהל",
+				width: "רוחב",
+				height: "גובה"
 			},
 			inlineFieldEdit: {
 				editMe: "ערוך אותי!"
@@ -25,9 +27,9 @@
 				buttonShare: "שתף",
 				buttonSettings: "הגדרות",
 				buttonHelp: "עזרה",
-				buttonPreview: "תצוגה חיה",
-				tooltipFirstSave: "כן_This function is not available until the application is saved_ש",
-				tooltipNotShared: "כן_This function is not available until the application is shared_ש",
+				buttonPreview: "תצוגה דינמית",
+				tooltipFirstSave: "פוקציה זו לא זמינה עד לשמירת האפליקציה",
+				tooltipNotShared: "פונקציה זו אינה זמינה עד לשיתוף האפליקציה",
 				noPendingChange: "אין שינוי לביצוע",
 				unSavedChangePlural: "השינויים בהמתנה",
 				closeWithPendingChange: "האם הינך בטוח שברצונך לאשר פעולה זו? אתה עלול לאבד את השינויים שביצעת.",
@@ -39,7 +41,7 @@
 			},
 			share: {
 				firstSaveTitle: "האפליקציה נשמרה בהצלחה",
-				firstSaveHeader: "כן_Your application is now saved in %PORTAL% but it is not shared yet._ש",
+				firstSaveHeader: "האפליקציה שלך שמורה כעת ב %PORTAL% אך לא שותפה עדיין.",
 				firstSavePreview: "תצוגה מקדימה",
 				firstSaveShare: "שתף",
 				firstSaveA1: "אם אינך מכיר את %PORTAL% או שאתה מעוניין בקיצור דרך לממשק העריכה, אתה יכול לשמור את הלינק הבא: %LINK1%",
@@ -65,20 +67,20 @@
 				shareA2div1: "שמור והשתמש שוב בקישור הבא %LINK1% או השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט האפליקציה</a>.",
 				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל %PORTAL% האפליקציה כוללת כפתור הפותח את כלי הבניה.",				
 				shareQ3: "היכן מאוחסן המידע?",
-				shareA3: "כן_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._ש"
+				shareA3: "הנתונים וההגדרות של %TPL_NAME% מאוחסנות ב- <a href='%LINK2%' target='_blank'>פריט אפליקציה זה</a>. אם השתמשת ביבוא מ- Flickr, Picasa, Facebook או YouTube התמונות וקטעי הוידאו לא יוכפלו ב- %PORTAL%."
 			},
 			settings: {
 				header: "הגדרות",
-				tabError: "כן_Please check all tabs for errors_ש"
+				tabError: "אנא בדוק שגיאות בכל הלשוניות"
 			},
 			settingsLayout: {
 				title: "תצוגה",
-				explain: "כן_Which layout do you want to use?_ש",
-				explainInit: "כן_You can change the layout anytime from the settings panel._ש",
+				explain: "באיזו תצוגה תרצה להשתמש?",
+				explainInit: "אתה יכול לשנות את כל עת את סידור המפה מתוך דיאלוג ההגדרות.",
 				viewExample: "הצג דוגמה חיה"
 			},
 			settingsTheme: {
-				title: "נושא"
+				title: "עיצוב"
 			},
 			settingsHeader: {
 				title: "כותרת עליונה",

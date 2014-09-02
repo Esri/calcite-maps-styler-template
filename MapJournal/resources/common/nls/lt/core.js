@@ -13,7 +13,9 @@
 				open: "Atverti",
 				start: "Pradėti",
 				loading: "Kraunama",
-				disabledAdmin: "Šią funkciją išjungė Administratorius"
+				disabledAdmin: "Šią funkciją išjungė Administratorius",
+				width: "Plotis",
+				height: "Aukštis"
 			},
 			inlineFieldEdit: {
 				editMe: "Redaguoti mane!"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Maketas",
 				explain: "Kurį maketą norite naudoti?",
-				explainInit: "Nustatymų skyde maketą galite pakeisti bet kuriuo metu.",
+				explainInit: "Nustatymų dialogo lange maketą galite pakeisti bet kuriuo metu.",
 				viewExample: "Peržiūrėti veikiantį pavyzdį"
 			},
 			settingsTheme: {

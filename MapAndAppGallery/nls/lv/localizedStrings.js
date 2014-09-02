@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "Kārtot pēc",
             layoutBtnTitle: "Izkārtojums",
             signInBtnTitle: "Pierakstīties",
+            signOutBtnTitle: "ķ_Sign Out_ū",
             geolocationBtnTitle: "Ģeoizvietojums"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "Nevar iegūt datus no slāņiem.",
             unableToOpenItem: "Nevar atvērt vienību.",
             wmsSpatialReferenceError: "WMS slāņa telpiskā atsauce neatbilst kartes telpiskajai atsaucei.",
-            noPublicItems: "Konfigurētajā grupā nav nevienas publiskas vienības.",
+            noPublicItems: "ķ_There are no public items in the configured group or no items have been shared with this group yet._ū",
             emptyUsernamePassword: "Lūdzu, ievadiet lietotājvārdu un paroli.",
-            noFullScreenSupport: "Pašreizējā pārlūkā pilnekrāna režīms nav atbalstīts."
+            noFullScreenSupport: "Pašreizējā pārlūkā pilnekrāna režīms nav atbalstīts.",
+            notMemberOfOrg: "ķ_You are not a member of this organization_ū"
         }
 });

@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "정렬",
             layoutBtnTitle: "레이아웃",
             signInBtnTitle: "로그인",
+            signOutBtnTitle: "한_Sign Out_빠",
             geolocationBtnTitle: "지오로케이션"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "레이어에서 데이터를 가져올 수 없습니다.",
             unableToOpenItem: "항목을 열 수 없습니다.",
             wmsSpatialReferenceError: "WMS 레이어의 공간 참조가 맵의 공간 참조와 일치하지 않습니다.",
-            noPublicItems: "구성된 그룹에 공용 항목이 없습니다.",
+            noPublicItems: "한_There are no public items in the configured group or no items have been shared with this group yet._빠",
             emptyUsernamePassword: "사용자 이름과 패스워드를 입력하세요.",
-            noFullScreenSupport: "현재 브라우저에서 전체 화면 모드를 지원하지 않습니다."
+            noFullScreenSupport: "현재 브라우저에서 전체 화면 모드를 지원하지 않습니다.",
+            notMemberOfOrg: "한_You are not a member of this organization_빠"
         }
 });

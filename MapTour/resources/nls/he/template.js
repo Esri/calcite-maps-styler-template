@@ -62,7 +62,7 @@
 				buttonImportDisabled: "ייבוא לא אפשרי כאשר משתמשים בשירות ישויות עם קישורים",
 				dataEditionDisabled: "גרסת הנתונים אינה פעילה במקור נתוני CSV",
 				dataSourceWarning: "נתוני שכבת מפת הסיור השתנו. אם מזהה הישויות שונה, אתה צריך לאפס את הסדר וכן נקודות נסתרות דרך <b>ארגן</b>. אם שמות השדות שונו, אתה צריך לאפס את הגדרות השדות תחת <b>לשונית נתונים בהגדרות</b>.",
-				organizeWarning: "נקודה אחת או מספר נקודות שנוספו מחוץ לבונה האינטראקטיבית מוסתרות.",
+				organizeWarning: "נקודה אחת או מספר נקודות שנוספו מחוץ לאשף הבנייה האינטראקטיבי מוסתרות.",
 				dataPicError0a: "סיור זה כולל <b>%NB%</b> כתובות URL לא תקינות של תמונות.",
 				dataPicError0b: "יכול להיות שסיור זה כולל <b>%NB%</b> כתובות URL לא תקינות של תמונות.",
 				dataPicError1: "סיור ממופה דורש שסיומות כתובות URL יהיו מהסוגים הבאים: jp(e)g, .png, .gif או .bmp",
@@ -136,7 +136,7 @@
 				settingsTabExtent: "תיחום",
 				settingsTabZoom: "רמת התמקדות",
 				settingsLayoutExplain: "בחר את תצוגת האפליקציה שאתה רוצה.",
-				settingsLayoutProfessional: "תצוגה בעלת שלושה פאנלים",
+				settingsLayoutProfessional: "תצוגה בעלת שלושה פנלים",
 				settingsLayoutModern: "תצוגה משולבת",
 				settingsLayoutSelected: "תצוגה נבחרת",
 				settingsLayoutSelect: "בחר תצוגה זו",
@@ -327,7 +327,7 @@
 				header: "הכנס כתובת דואר אלקטורני או את ה- ID של חשבון שלך ב- Picasa או Google+.",
 				userInputLbl: "הכנס כתובת דואר אלקטורני או ID",
 				signInMsg2: "חשבון לא נמצא",
-				signInMsg3: "כן_No public album_ש",
+				signInMsg3: "אין אלבום ציבורי",
 				howToFind: "כיצד למצוא את ה- ID של חשבון ה- Picasa או Google+",
 				howToFind2: "העתק תווים בין ה \'/\'  הראשון לשני של כל עמוד Picasa או G+"
 			},
@@ -383,7 +383,7 @@
 				error: "ייבוא מיקום מרחבי תמונות נכשל, אין התייחסות למיקומים מרחביים."
 			},
 			initPopup: {
-				title: "ברוכים הבאים לבונה הסיור הממופה",
+				title: "ברוכים הבאים לאשף בניית הסיור הממופה",
 				prevBtn: "חזור",
 				nextBtn: "הבא"
 			},
@@ -410,7 +410,7 @@
 					div1: "תבנית הסיור הממופה עוצבה כך שתציג מידע גיאוגרפי עבור מקומות בהם יש אלמנטי צילום או מדיה שברצונך להכלילם בסיפור אותו אתה רוצה לספר.",
 					div2: "התבנית מייצרת אפליקצית אינטרנט אטרקטיבית ונוחה לשימוש, המאפשרת לך להציג סט נבחר של מקומות על ברצף ממוספר שדרכו משתמשים יכולים לדפדף. התבנית מעוצבת כך שניתן יהיה להשתמש בה בכל בכל דפדפן אינטרנט או כל מכשיר, כולל סמארטפונים וטאבלטים.  <br /><br />הנה דוגמה לסוג אפליקציה שאתה יכול ליצור:",
 					div4: "<a href='http://storymaps.esri.com/stories/maptour-palmsprings' target='_blank'>סיור ממופה בפאלם ספרינגס</a>.",
-					div42: "כן_To see examples of map tours that other users are creating, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>visit the gallery</a> on the <a href='http://storymaps.arcgis.com/' target='_blank'>Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>._ש",
+					div42: "כדי לראות דוגמאות של סיורים ממופים שמשתמשים אחרים יצרו, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>בקר בגלריה</a> ב- <a href='http://storymaps.arcgis.com/' target='_blank'>אתר מפות סיפור</a>. ניתן גם לעקוב אחרינו בטוויטר ב <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div5: "נשמח לשמוע ממך! בין אם יש לך שאלה, רוצה לבקש יכולת חדשה, או חושב שמצאת באג, אנא בקר ב- <a href='http://links.esri.com/storymaps/forum' target='_blank'>פורום המשתמשים של מפות סיפור</a>."
 				},
 				tab2: {
@@ -418,9 +418,9 @@
 					div1: "הנושא המרכזי ששווה לשקול כאשר בונים סיור ממופה הוא בחירה היכן התמונות שלך יאוחסנו. הסיור הממופה יכול להשתמש בתמונות המאוחסנות בשירותי שיתוף תמונות גדולים, בכל שרת אינטרנט או כקישור לשירות ישויות.",
 					div1a: "ראה את החלק האחרון בלשונית זו למידע אודות פורמטים נתמכים של תמונות וסרטונים.",
 					div2: "כלי הבניה האינטראקטיבי נותן לך שתי אפשרויות לניהול התמונות בסיור הממופה שלך:",
-					div3: "כן_<ul><li>You can use <b>photos that are already online</b>, such as images stored in a photo sharing site like Flickr, or images stored on your own website. These images will be referenced in your Map Tour via their URLs.</li><li>You can also <b>upload photos from your computer</b> directly into your Map Tour. This upload option requires that you have an ArcGIS for Organizations account and that you have Publisher or Administrator privileges, because a hosted feature service is automatically created for you in which your photos are stored as attachments.</li></ul>_ש",
+					div3: "<ul><li>ניתן להשתמש <b>בתמונות מהאינטרנט </b>או מאתרי שיתוף כגון Flickr, או מתמונות המאוחסנות באתר שלך. תמונות אלו יקושרו לסיור הממופה באמצעות ה-URLs שלהם.</li><li>ניתן גם <b>לטעון תמונות מהמחשב האישי שלך </b> ישירות לסיור הממופה. אופצית טעינה זו דורשת שיהיה לך חשבון ב- ArcGIS for Organizations ושתהיינה לך הרשאות פרסום או אדמיניסטרציה, מכיוון שנוצר עבורך באופן אוטומטי שירות ישויות מתארח שבו מאוחסנות התמונות שלך כקישורים.</li></ul>",
 					div4: "השימושים העיקריים הם:",
-					div4b: "כן_<b>Your photos are not hosted</b> yet and you have an ArcGIS for Organizations account: Using a hosted feature service is your best choice. Like public photo sharing services, we will optimize your pictures to create fast-loading images and you will have access to all administration and data management capabilities of the ArcGIS platform._ש",
+					div4b: "<b>התמונות שלך לא מאוחסנות</b>עדיין ויש לך חשבון ב- ArcGIS for Organizations: שימוש בשירות ישויות מאוחסן היא הבחירה הטובה ביותר עבורך. בדומה לשירותי שיתוף תמונות ציבורי, נוכל למקסם את התמונות שלך בכדי ליצור טעינת תמונות מהירה ולך תהיה גישה לכל יכולות ניהול הנתונים והאדמיניסטרציה של פלטפורמת ה- ArcGIS.",
 					div5: "<b>אינך חלק מארגון</b>: תחילה עליך לטעון את התמונות שלך לאתר שיתוף תמונות או לשרת האינטרנט שלך. לאחר מכן כלי הבניה יסייע לך להשתמש בתמונות הללו שימשיכו להיות מאוחסנים במיקום המקורי שלהם.",
 					div6: "<b>הינך מנסה להשתמש מחדש בשירות ישויות</b> המאחסן את התמונות שלך כקישורים או המתייחס לתמונות ממקור חיצוני: ראה את החלק המפורט שלהלן.",
 					div7: "<b>אתה משתמש בגרסה הקודמת</b> של תבנית הסיור הממופה וכבר יש לך קובץ CSV המקשר לתמונות והתמונות הממוזערות שלך: תוכל לייבא זאת וללטש את הנתונים שלך. כלי הבניה תומך רק ב- CSV המשתמש בשדות אורך/רוחב, ניתן יהיה להשתמש בכתובת מבוססת CSV ב- web map שלך (ראה להלן).",
@@ -455,8 +455,8 @@
 					div2: "אנו ממליצים שתשתמש בגרסה מתארחת למעט אם:",
 					div3: "<li>לא מציע התאמת UI שאתה מעוניין בה, דוגמת שימוש בתמונת רקע לכותרת עליונה.</li><li>אתה מפתח וברצונך לשדרג את האפליקציה.</li>",
 					div4: "ניתן להגדיר את הגרסה הזמינה להורדה באמצעות web map או  מזהה web mapping application. תרחישי השימוש העיקריים הם:",
-					div41: "אתה בונה את הסיור הממופה שלך באמצעות כלי הבניה האינטראקטיבי בסביבה מארחת וקובע את תצורת התבנית עם מזהה אפליקציית ה- web mapping. ההגדרות אותן תקבע בעזרת כלי הבניה האינטראקטיבי ייושמו.",
-					div42: "בנה את ה- web map שלך מחוץ לבונה האינטראקטיבי והגדר את התבנית באמצעות מזהה ה- web map. עליך לקרוא את התיעוד כדי ללמוד כיצד להתאים את התבנית.",
+					div41: "אתה בונה את הסיור הממופה שלך באמצעות אשף הבניה האינטראקטיבי בסביבה מארחת וקובע את תצורת התבנית עם מזהה אפליקציית ה- web mapping. ההגדרות אותן תקבע בעזרת אשף הבניה האינטראקטיבי ייושמו.",
+					div42: "בנה את ה- web map שלך מחוץ לאשף הבנייה האינטראקטיבי והגדר את התבנית באמצעות מזהה ה- web map. עליך לקרוא את התיעוד כדי ללמוד כיצד להתאים את התבנית.",
 					div43: "שים לב שכלי הבניה האינטראקטיבי זמין בגרסה מוכנה להורדה אך עם מספר מגבלות טכניות בדפדפנים דוגמת Internet Explorer בגרסאות ישנות מגרסה 10.",
 					div5: "בקר ב<a href='https://github.com/Esri/map-tour-storytelling-template-js' target='_blank'>GitHub project page</a>"
 				},
@@ -484,7 +484,7 @@
 				tab5: {
 					title: "פירסום",
 					div1: "כאשר אתה מסיים, אל תשכח לשתף את הסיור הממופה עם הקהל שלך באמצעות כפתור שתף או באמצעות עמוד תיאור האפליקציה ב ArcGIS Online.",
-					div2a: "משתף את הסיור באמצעות בונה הסיור",
+					div2a: "משתף את הסיור באמצעות אשף בניית הסיור",
 					div2b: "כפתור שתף יעדכן את פריטי האפליקציה ופריט ה- webmap. אם נתוני הסיור שלך מאוחסנים בפריט שירות ישויות, גם הוא יעודכן. אם הוספת שכבות אחרות באמצעות צפין מפת ArcGIS.com, אלו לא יעודכו. זה לעלול לגרום לכך שהסיור לא יהיה בשיתוף כפי לשאתה מצפה. פריטים שכבר יש להם את ההרשאות הנדרשות (או יותר) לא עודכנו.",
 					div2c: "משתך את הסיור באמצעות ArcGIS Online",
 					div2d: "כאשר אתה משתף את האפליקציה באמצעות ArcGIS Online, תדרש במידת הצורך לעדכן את המשאבים התלויים (web map, שירות ישויות, שכבת קישוט) שאינם משותפים באותה הדרך. אם הסיור הממופה ציבורי ואחד מהמשאבים שלך אינו משותף עם קהל היעד שלך, המשתמשים ינותבו לדף כניסת ArcGIS Online.",
@@ -521,14 +521,14 @@
 				shareA1: "השתמש ב- %SHAREIMG% ב- <a href='%LINK1%' target='_blank'>דף פריט האפליקציה</a>. אם אתה רוצה גם לבטל את שיתוף של ה- webmap, השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט webmap</a>.",
 				shareA1bis: "אם אתה רוצה לבטל גם את השיתוף לשירות הישויות, השתמש <a href='%LINK1%' target='_blank'>דף פריט שירות הישויות</a>.",
 				shareQ2: "כיצד ניתן לערוך את הסיור במועד מאוחר יותר?",
-				shareQ2bis: "כיצד אני יכול לחזור לממשק העריכה?",
+				shareQ2bis: "כיצד אני יכול לחזור לממשק הפרסום?",
 				shareA2div1: "שמור והשתמש שוב בקישור הבא %LINK1% או השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט האפליקציה</a>.",
-				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל ArcGIS.com האפליקציה כוללת כפתור הפותח את הבונה האינטראקטיבי.",				
+				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל ArcGIS.com האפליקציה כוללת כפתור הפותח את אשף הבנייה האינטראקטיבי.",				
 				shareQ3: "היכן מאוחסן המידע?",
-				shareA3: "כן_The Tour configuration is stored in <a href='%LINK1%' target='_blank'>this webmap item</a> and <a href='%LINK2%' target='_blank'>this web application item</a>. Flickr, Picasa, and Facebook images and YouTube videos remain referenced at their respective sites and aren't duplicated in ArcGIS Online._ש",
-				shareWarning: "כן_Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>._ש",
-				shareWarningWith1: "כן_publicly_ש",
-				shareWarningWith2: "כן_publicly and with the Organization_ש"
+				shareA3: "תצורת הסיור מאוחסנת בתוך  <a href='%LINK1%' target='_blank'>פריט webmap זה</a> וגם זה <a href='%LINK2%' target='_blank'> פריט האפליקציה</a>. אם ייבאת תמונות מתוך Flickr, Picasa, Facebook או קטעי וידאו מתוך YouTube התמונות והוידאו שלך יישארו כהפניה לאתרים שלהם והם אינם משוכפלים ב- ArcGIS Online.",
+				shareWarning: "שיתוף עם %WITH% לא מתאפשר מכיוון שאינך הבעלים של <a href='%LINK%' target='_blank'>webmap</a>.",
+				shareWarningWith1: "ציבורי",
+				shareWarningWith2: "ציבורי וגם עם הארגון"
 			}
         }
     })

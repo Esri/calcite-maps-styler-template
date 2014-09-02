@@ -26,7 +26,8 @@
 				notConfiguredDesktop: "Welkom bij de %TPL_NAME% -webapplicatie.<br />De applicatie is nog niet geconfigureerd.",
 				notConfiguredMobile: "Welkom bij de %TPL_NAME%-webapplicatie. De applicatie is nog niet geconfigureerd en de builder wordt niet ondersteund op mobiele apparaten.",
 				notAuthorized: "U bent niet gemachtigd om deze applicatie te openen",
-				noBuilderIE8: "De builder wordt niet ondersteund op eerdere versies dan Internet Explorer 9."
+				noBuilderIE8: "De builder wordt niet ondersteund op eerdere versies dan Internet Explorer 9.",
+				mapLoadingFail: "Er is iets fout gegaan, de kaart kan niet worden geladen."
 			},
 			mobileView: {
 				tapForDetails: "Tik voor details",
@@ -51,7 +52,7 @@
 				share: "Delen"
 			},
 			overviewFromCommon: {
-				title: "Overzichtskaart",
+				title: "Overzichtskaart"
 			},
 			legendFromCommon: {
 				title: "Legenda"

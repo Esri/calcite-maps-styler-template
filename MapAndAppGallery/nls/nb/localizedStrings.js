@@ -67,6 +67,7 @@ define({
             sortByBtnTitle: "Sorter etter",
             layoutBtnTitle: "Utforming",
             signInBtnTitle: "Logg inn",
+            signOutBtnTitle: "å_Sign Out_ø",
             geolocationBtnTitle: "Geolokasjon"
         },
         errorMessages: {
@@ -81,8 +82,9 @@ define({
             layerNotFound: "Kan ikke hente data fra lag.",
             unableToOpenItem: "Kan ikke åpne elementet.",
             wmsSpatialReferenceError: "WMS-lagets geografiske referanse samsvarer ikke med kartets geografiske referanse.",
-            noPublicItems: "Det finnes ingen offentlige elementer i den konfigurerte gruppen.",
+            noPublicItems: "å_There are no public items in the configured group or no items have been shared with this group yet._ø",
             emptyUsernamePassword: "Du må angi brukernavn og passord.",
-            noFullScreenSupport: "Den gjeldende webleseren støtter ikke fullskjermsmodus."
+            noFullScreenSupport: "Den gjeldende webleseren støtter ikke fullskjermsmodus.",
+            notMemberOfOrg: "å_You are not a member of this organization_ø"
         }
 });

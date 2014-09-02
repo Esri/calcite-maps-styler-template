@@ -20,14 +20,14 @@ define(
             error: "ไม่สามารถสร้างแผนที่"
         },
         days: {
-           now: "ก้_NOW_ษฺ",
-           sun: "ก้_SUN_ษฺ",
-           mon: "ก้_MON_ษฺ",
-           tue: "ก้_TUE_ษฺ",
-           wed: "ก้_WED_ษฺ",
-           thu: "ก้_THU_ษฺ",
-           fri: "ก้_FRI_ษฺ",
-           sat: "ก้_SAT_ษฺ"
+           now: "ขณะนี้",
+           sun: "อา.",
+           mon: "จ.",
+           tue: "อ.",
+           wed: "พ.",
+           thu: "พฤ.",
+           fri: "ศ.",
+           sat: "ส."
         }
     })
  

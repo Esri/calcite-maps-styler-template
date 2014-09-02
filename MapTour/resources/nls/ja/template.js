@@ -228,7 +228,7 @@
 				saveError2: "名前または説明に無効な html タグがあるため保存に失敗しました",
 				saveError3: "タイトルは必ず入力してください",
 				dragColorPicker: "移動するか<br />色を変更します",
-				dataWarningExtent: "Web マップの範囲外にデータがあります。これらのデータはツアー ポイントとして使用されません。使用するには、マップ範囲を変更します。",
+				dataWarningExtent: "Web マップの表示範囲外にデータがあります。これらのデータはツアー ポイントとして使用されません。使用するには、マップ表示範囲を変更します。",
 				dataWarningVisibi: "現在の Web マップの範囲では、マップ ツアー レイヤは表示されません。%MAPSIZE% のマップでマップ ツアー レイヤが表示されることを確認してください。",
 				dataWarningEdit: "Web マップの編集",
 				dataWarningClose: "閉じる",

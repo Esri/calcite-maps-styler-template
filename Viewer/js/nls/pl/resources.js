@@ -32,7 +32,7 @@ define(
 			"share": {
 				"extent": "Użyj bieżącego zasięgu mapy,",
 				"label": "Udostępnij tę mapę",
-				"link": "Łącze do mapy",
+				"link": "Łącze mapy",
 				"facebook": "Facebook",
 				"twitter": "Twitter"
 			}

@@ -18,6 +18,9 @@
 
         splashscreen: {
             buttonText: "Labi",
+        },
+        ui:{
+            basemapButton: "Pamatkarte"
         }
     })
 

@@ -13,7 +13,9 @@
 				open: "Apri",
 				start: "Avvia",
 				loading: "Caricamento in corso",
-				disabledAdmin: "Questa feature è stata disabilitata dall\'Amministratore"
+				disabledAdmin: "Questa feature è stata disabilitata dall\'Amministratore",
+				width: "Larghezza",
+				height: "Altezza"
 			},
 			inlineFieldEdit: {
 				editMe: "Modifica utente"
@@ -74,7 +76,7 @@
 			settingsLayout: {
 				title: "Layout",
 				explain: "Scegliere il layout da utilizzare.",
-				explainInit: "È possibile modificare il layout in qualsiasi momento nel pannello delle impostazioni.",
+				explainInit: "È possibile modificare il layout in qualsiasi momento nella finestra di dialogo delle impostazioni.",
 				viewExample: "Visualizza un esempio in tempo reale"
 			},
 			settingsTheme: {

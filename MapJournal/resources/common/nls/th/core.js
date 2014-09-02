@@ -13,7 +13,9 @@
 				open: "เปิด",
 				start: "เริ่ม",
 				loading: "กำลังโหลด",
-				disabledAdmin: "คุณลักษณะนี้ได้ถูกปิดใช้งานโดยผู้ดูแลระบบ"
+				disabledAdmin: "คุณลักษณะนี้ได้ถูกปิดใช้งานโดยผู้ดูแลระบบ",
+				width: "ความกว้าง",
+				height: "ความสูง"
 			},
 			inlineFieldEdit: {
 				editMe: "แก้ไขฉัน!"
@@ -26,8 +28,8 @@
 				buttonSettings: "การตั้งค่า",
 				buttonHelp: "ช่วยเหลือ",
 				buttonPreview: "ดูถ่ายทอดสด",
-				tooltipFirstSave: "ก้_This function is not available until the application is saved_ษฺ",
-				tooltipNotShared: "ก้_This function is not available until the application is shared_ษฺ",
+				tooltipFirstSave: "ฟังก์ชั่นนี้ไม่สามารถใช้ได้จนกว่าโปรแกรมจะถูกบันทึกไว้",
+				tooltipNotShared: "ฟังก์ชั่นนี้ไม่สามารถใช้ได้จนกว่าจะมีการประยุกต์ใช้ร่วมกัน",
 				noPendingChange: "ไม่มีการเปลี่ยนแปลง",
 				unSavedChangePlural: "อยู่ระหว่างการเปลี่ยนแปลง",
 				closeWithPendingChange: "คุณแน่ใจว่าจะต้องการที่จะยืนยันการดำเนินการนี้ การเปลี่ยนแปลงของคุณจะหายไป",
@@ -39,7 +41,7 @@
 			},
 			share: {
 				firstSaveTitle: "บันทึกแอพพลิเคชั่นเรียบร้อยแล้ว",
-				firstSaveHeader: "ก้_Your application is now saved in %PORTAL% but it is not shared yet._ษฺ",
+				firstSaveHeader: "โปรแกรมของคุณได้บันทึกลงใน %PORTAL% แต่ยังไม่ได้แบ่งปัน",
 				firstSavePreview: "แสดงตัวอย่าง",
 				firstSaveShare: "แบ่งปัน",
 				firstSaveA1: "หากคุณไม่คุ้นเคยกับ% PORTAL% หรือต้องการทางลัดในการเข้าถึงอินเตอร์เฟซการสร้างคุณสามารถบันทึกการเชื่อมโยงต่อไปนี้ Link1%%",
@@ -65,16 +67,16 @@
 				shareA2div1: "บันทึกและนำกลับมาใช้ตามลิ้ง %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>.",
 				shareA2div2: "ฐานะที่เป็นเจ้าของของโปรแกรมเมื่อคุณได้ลงนามใน% PORTAL% รวมถึงการประยุกต์ใช้เพื่อเปิดสร้าง:",				
 				shareQ3: "ข้อมูลของคุณเก็บไว้ที่ใด?",
-				shareA3: "ก้_%TPL_NAME% data and configuration are stored in <a href='%LINK2%' target='_blank'>this web application item</a>. If you have used Flickr, Picasa, Facebook or YouTube import, your images and videos have not been duplicated in %PORTAL%._ษฺ"
+				shareA3: "%TPL_NAME% ข้อมูลและการตั้งค่าที่เก็บใน <a href='%LINK2%' target='_blank'>รายการเว๊บแอพพลิเคชั่น</a> ถ้าคุณได้ใช้ Flickr, Picasa, Facebook หรือ YouTube นำเข้ารูปภาพและวิดีโอของคุณยังไม่ได้ทำซ้ำใน %PORTAL%."
 			},
 			settings: {
 				header: "การตั้งค่า",
-				tabError: "ก้_Please check all tabs for errors_ษฺ"
+				tabError: "กรุณาตรวจสอบความผิดพลาดในทุกๆ แถบ"
 			},
 			settingsLayout: {
 				title: "แบบร่าง",
-				explain: "ก้_Which layout do you want to use?_ษฺ",
-				explainInit: "ก้_You can change the layout anytime from the settings panel._ษฺ",
+				explain: "คุณต้องการใช้รูปแบบโครงสร้างแบบใด?",
+				explainInit: "คุณสามารถแก้ไขโครงร่างได้ตลอดเวลาจากการตั้งค่าที่กล่องโต้ตอบ",
 				viewExample: "ดูเป็นตัวอย่างจริง"
 			},
 			settingsTheme: {
