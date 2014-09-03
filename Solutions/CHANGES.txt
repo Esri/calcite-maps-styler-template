@@ -1,10 +1,11 @@
-change report #84 at 09/02/2014 16:07:52.60
+change report #85 at 09/03/2014 15:29:53.57
 -
 for git branch
-develop
+release_3.5
 in repository local-government-online-apps
-140902121014090222251409022205
+140903104814090319301409022205
 -
 changes in this branch since its last commit
  M CHANGES.txt
- M js2/lgonlineCommand.js
+M  config/defaults.js
+M  js2/lgonlineCommand.js
