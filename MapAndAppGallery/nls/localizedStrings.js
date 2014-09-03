@@ -38,7 +38,7 @@ define({
         dateTextMobile: "Date",
         appTypeText: "Type",
         appOwnerText: "Owner",
-        tryItButtonText: "Try it now",
+        tryItButtonText: "View",
         downloadButtonText: "Download",
         appDesText: "Description",
         reviewText: "Comments",
@@ -68,6 +68,7 @@ define({
             sortByBtnTitle: "Sort by",
             layoutBtnTitle: "Layout",
             signInBtnTitle: "Sign In",
+            signOutBtnTitle: "Sign Out",
             geolocationBtnTitle: "Geolocation"
         },
         errorMessages: {
@@ -82,9 +83,10 @@ define({
             layerNotFound: "Unable to get data from layers.",
             unableToOpenItem: "Unable to open item.",
             wmsSpatialReferenceError: "Spatial reference of the WMS layer does not match with spatial reference of map.",
-            noPublicItems: "There are no public items in the configured group.",
+            noPublicItems: "There are no public items in the configured group or no items have been shared with this group yet.",
             emptyUsernamePassword: "Please enter Username and Password.",
-            noFullScreenSupport: "Current browser does not support full screen mode."
+            noFullScreenSupport: "Current browser does not support full screen mode.",
+            notMemberOfOrg: "You are not a member of this organization"
         }
     },
     "ar": 1,

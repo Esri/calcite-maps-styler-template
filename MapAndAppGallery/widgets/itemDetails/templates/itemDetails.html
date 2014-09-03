@@ -3,9 +3,10 @@
         <div class="esriCTInnerLeftPanelTopMap">
             <div class="esriCTPadding">
                 <div class="esriCTLogo">
-                    <img data-dojo-attach-point="itemIcon" alt="Logo" />
+                    <div class="esriCTLogoContainer" data-dojo-attach-point="itemIcon">
+                    </div>
                 </div>
-                <div class="esriCTLeftPanelHeader">
+                <div class="esriCTLeftPanelHeader esriCTBreakWord">
                     <span data-dojo-attach-point="itemTitle"></span>
                 </div>
             </div>
@@ -41,15 +42,15 @@
         <div class="esriCTMapInput">
             <div class="esriCTSearchContainerDiv">
                 <div data-dojo-attach-point="divAddressContainer" class="esriCTSearch">
-                    <div class="esriCTSearchLocatorMap">
-                        <div class="esriCTSearchLocatorInputMap">
-                            <input data-dojo-attach-point="txtAddressSearch" class="esriCTSearchItemInput" type="text" />
-                        </div>
-                    </div>
                     <div class="esriCTSearchBtnMap">
                         <span class="esriCTClearInputMap icon-cancel" title="${nls.clearBtnTitle}" data-dojo-attach-point="hideMapText">
                         </span><span data-dojo-attach-point="addressSearchIcon" title="${nls.addressSearchBtnTitle}"
                             class="esriCTSearchIconMap icon-search esriCTCursorPointer"></span>
+                    </div>
+                    <div class="esriCTSearchLocatorMap">
+                        <div class="esriCTSearchLocatorInputMap">
+                            <input data-dojo-attach-point="txtAddressSearch" class="esriCTSearchItemInput" type="text" />
+                        </div>
                     </div>
                 </div>
                 <div class="esriCTAutoSuggest esriCTAddressSearch displayNoneAll" data-dojo-attach-point="autocompleteResults">

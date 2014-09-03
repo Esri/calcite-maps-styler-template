@@ -49,8 +49,9 @@ define([
         * @name widgets/locator/locator
         */
         postCreate: function () {
-            this.domNode.title = nls.title.itemSearchBtnTitle;
+            this.itemSearchIcon.title = nls.title.itemSearchBtnTitle;
             topic.subscribe("clearDefaultText", this._clearDefaultText);
+            topic.subscribe("hideText", lang.hitch(this, this._hideText));
             topic.subscribe("replaceDefaultText", this._replaceDefaultText);
             topic.subscribe("setDefaultTextboxValue", lang.hitch(this, this._setDefaultTextboxValue));
             domStyle.set(this.divAddressContainer, "display", "block");
@@ -82,6 +83,7 @@ define([
             })));
             this.own(on(this.hideText, "click", lang.hitch(this, function () {
                 this._hideText();
+                this._clearFilter(true);
             })));
         },
 
@@ -143,11 +145,11 @@ define([
         //Clears the text in the textbox
         _hideText: function () {
             this.txtItemSearch.value = '';
+            domStyle.set(this.hideText, "display", "none");
             domAttr.set(this.txtItemSearch, "defaultItem", this.txtItemSearch.value);
             if (domGeom.position(this.autoResults).h > 0) {
                 domClass.replace(this.autoResults, "displayNoneAll", "displayBlockAll");
             }
-            this._clearFilter(true);
         },
 
         //Locate the searched item

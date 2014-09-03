@@ -82,6 +82,7 @@ define([
 
             this.own(on(this.hideMapText, "click", lang.hitch(this, function () {
                 this.txtAddressSearch.value = '';
+                domStyle.set(this.hideMapText, "display", "none");
                 domAttr.set(this.txtAddressSearch, "defaultAddress", this.txtAddressSearch.value);
                 if (domGeom.position(this.autocompleteResults).h > 0) {
                     domClass.replace(this.autocompleteResults, "displayNoneAll", "displayBlockAll");
