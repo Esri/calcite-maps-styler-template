@@ -4,7 +4,7 @@ app.cfg = {
 	//
 	
 	// Maximum number of sections
-	MAX_NB_SECTIONS: 99,
+	MAX_NB_SECTIONS: 101,
 	
 	// Side and Floating panel dot navigation group size
 	DOTNAV_GROUPSIZE: 15,
@@ -65,7 +65,6 @@ app.cfg = {
 		sectionTitle: [
 			{ id: "default", 	lbl: "Open Sans", 				value: "font-family:'open_sansregular', sans-serif;" },
 			{ id: "arial", 		lbl: "Arial", 					value: "font-family:arial,helvetica,sans-serif;" },
-			{ id: "courier", 	lbl: "Courier New", 			value: "font-family:courier new,courier,monospace;" },
 			{ id: "georgia", 	lbl: "Georgia", 				value: "font-family:georgia,serif;" },
 			{ id: "lucida", 	lbl: "Lucida Sans Unicode", 	value: "font-family:lucida sans unicode,lucida grande,sans-serif;" },
 			{ id: "tahoma", 	lbl: "Tahoma", 					value: "font-family:tahoma,geneva,sans-serif;" },
@@ -76,7 +75,6 @@ app.cfg = {
 		sectionContent: [
 			{ id: "default", 	lbl: "Open Sans", 				value: "font-family:'open_sansregular', sans-serif;" },
 			{ id: "arial", 		lbl: "Arial", 					value: "font-family:arial,helvetica,sans-serif;" },
-			{ id: "courier", 	lbl: "Courier New", 			value: "font-family:courier new,courier,monospace;" },
 			{ id: "georgia", 	lbl: "Georgia", 				value: "font-family:georgia,serif;" },
 			{ id: "lucida", 	lbl: "Lucida Sans Unicode", 	value: "font-family:lucida sans unicode,lucida grande,sans-serif;" },
 			{ id: "tahoma", 	lbl: "Tahoma", 					value: "font-family:tahoma,geneva,sans-serif;" },
