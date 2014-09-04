@@ -70,7 +70,7 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 					
 					media[media.type] = {
 						url: isVideo || isFrameByUrl ? mediaIframe.attr('src') : null,
-						frameTag: isVideo || isFrameByUrl ? null : mediaContainer.prop('outerHTML'),
+						frameTag: isVideo || isFrameByUrl ? null : mediaIframe.prop('outerHTML'),
 						display: mediaContainer.hasClass("custom") ? "custom" : "fit",
 						width: mediaIframe.attr('width'),
 						height: mediaIframe.attr('height')
