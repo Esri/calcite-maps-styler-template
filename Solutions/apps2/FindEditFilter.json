@@ -167,7 +167,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 31ddf7e2c09535f6 2014-09-04 08:04:39 -0700"
+                "commit b9149fcab84916f6 2014-09-04 13:20:55 -0700"
             ]
         }
     }, {
@@ -534,7 +534,7 @@
             "subject": ".titleBar.title",
             "tinyURLServiceURL": "",
             "tinyURLResponseAttribute": "data.url",
-            "shareUrl": "http://twitter.com/home/?status=${subject} ${url}",
+            "shareUrl": "https://twitter.com/intent/tweet?url=${url}&text=${subject}",
             "busyIndicator": "busyIndicator",
             "dependencyId": "map"
         }
