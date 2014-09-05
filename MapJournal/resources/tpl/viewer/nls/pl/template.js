@@ -9,8 +9,9 @@
 				step2: "Wczytywanie danych",
 				step3: "Inicjowanie",
 				loadBuilder: "Przełączanie do trybu kreatora",
-				fail: "Niestety, wczytywanie nie powiodło się",
-				failButton: "Ponów próbę"
+				long: "Inicjalizacja Dziennika mapy",
+				long2: "Dziękujemy za cierpliwość",
+				failButton: "Ponownie wczytaj aplikację"
 			},
 			signin: {
 				title: "Wymagane jest uwierzytelnienie",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Wystąpił błąd",
-				invalidConfig: "Błąd krytyczny: Nieprawidłowa konfiguracja",
-				invalidConfigNoApp: "Błąd krytyczny: Identyfikator aplikacji map internetowych nie został określony w pliku index.html",
+				invalidConfig: "ł_Invalid configuration_ą",
+				invalidConfigNoApp: "ł_Web Mapping Application identifier not specified in index.html._ą",
+				unspecifiedConfigOwner: "ł_Authorized owner hasn't been configured._ą",
+				invalidConfigOwner: "ł_Application owner is not authorized._ą",
 				createMap: "Nie można utworzyć mapy",
-				invalidApp: "Błąd krytyczny: Nie można wczytać aplikacji",
-				notConfiguredDesktop: "Witamy w aplikacji internetowej %TPL_NAME%.<br />Aplikacja nie została jeszcze skonfigurowana.",
-				notConfiguredMobile: "Witamy w aplikacji internetowej %TPL_NAME%. Aplikacja nie została jeszcze skonfigurowana, a kreator nie jest obsługiwany na urządzeniach mobilnych.",
+				invalidApp: "ł_The %TPL_NAME% does not exist or is inaccessible._ą",
+				appLoadingFail: "ł_Something went wrong, the %TPL_NAME% did not load correctly._ą",
+				notConfiguredDesktop: "ł_The application is not configured yet._ą",
+				notConfiguredMobile: "ł_The %TPL_NAME% builder is not supported at this screen resolution._ą",
 				notAuthorized: "Nie masz uprawnień do uzyskania dostępu do tej aplikacji.",
-				noBuilderIE8: "Kreator nie jest obsługiwany w przeglądarce Internet Explorer w wersji starszej niż 9.",
-				mapLoadingFail: "Wczytywanie mapy zakończyło się niepowodzeniem."
+				noBuilderIE: "Kreator nie jest obsługiwany przez przeglądarkę Internet Explorer w wersji starszej niż %VERSION%. %UPGRADE%",
+				noViewerIE: "Ta aplikacja nie jest obsługiwana przez przeglądarkę Internet Explorer w wersji starszej niż %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Zaktualizuj przeglądarkę</a>.",
+				mapLoadingFail: "ł_Something went wrong, the Map did not load correctly._ą",
+				signOut: "Wyloguj się"
 			},
 			mobileView: {
 				tapForDetails: "Wskaż, aby uzyskać szczegółowe informacje",
+				clickForDetails: "Dowiedz się więcej",
 				swipeToExplore: "Przesuń, aby przejrzeć",
-				tapForMap: "Wskaż, aby powrócić do mapy"
+				tapForMap: "Wskaż, aby powrócić do mapy",
+				clickForMap: "POWRÓT DO MAPY"
 			},
 			floatLayout: {
 				scroll: "Przewiń"

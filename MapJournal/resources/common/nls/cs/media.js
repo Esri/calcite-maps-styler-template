@@ -11,7 +11,8 @@
 				disabled: "Tato funkce byla zakázána administrátorem.",
 				url: "Umožňuje manuálně vložit webovou adresu obrázku.",
 				userLookup: "Nahrát alba",
-				notImplemented: "Dosud není implementováno."
+				notImplemented: "Dosud není implementováno.",
+				noData: "Nebylo nalezeno žádné veřejné album."
 			},
 			imageSelector: {
 				lblStep1: "Vyberte službu.",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-mail nebo identifikátor Picasa/Google+",
 				signInMsg2: "Účet nenalezen",
-				signInMsg3: "Žádné veřejné album",
 				howToFind: "Jak najít identifikátor účtu Picasa nebo Google+",
 				howToFind2: "Zkopírujte číslice mezi prvním a druhým lomítkem (/) libovolné stránky služeb Picasa nebo Google+."
 			},
@@ -64,7 +64,7 @@
 			videoSelectorOther: {
 				explain1: "Mapový deník nedokáže přehrávat videa v původním formátu (tj. avi, mpeg), ale dokáže přehrávat hostované videosoubory s vestavěným přehrávačem (tj. YouTube nebo Vimeo).",
 				explain2: "Tuto funkci nabízí většina online služeb pro hostování videa. Musíte najít možnost pro vložení videa, zkopírovat uvedený kód a použít %WEBPAGE%.",
-				explain3: "Video také můžete hostovat sami. Stačí vytvořit HTML stránku, která používá videopřehrávač, jako je %EXAMPLE%, tuto stránku hostovat a také použít %WEBPAGE%.",
+				explain3: "Video také můžete hostovat sami. Stačí vytvořit HTML stránku, která používá videopřehrávač, jako je například %EXAMPLE%, hostovat danou stránku a také použít %WEBPAGE%.",
 				webpage: "Prvek webové stránky"
 			},
 			webpageSelectorHome: {
@@ -72,11 +72,14 @@
 				lblEmbed: "Kód vložení",
 				lblOR: "NEBO",
 				lblError1: "Chyba, vymažte jedno ze dvou vstupních polí.",
-				lblError2: "Kód vložení může obsahovat pouze jeden prvek <iframe>."
+				lblError2: "Kód vložení může obsahovat pouze jeden prvek %IFRAMETAG%.",
+				configure: "Konfigurovat"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Adresa URL obrázku by měla začínat řetězcem http:// a končit .jpg nebo .png.",
+				lblURLError: "Zdá se, že obrázek je neplatný. Zadejte prosím přímý odkaz na soubor obrázku (taková adresa URL obvykle končí příponou .jpg nebo .png). Odkazy na webové stránky obsahující obrázek nebudou fungovat.",
+				lblURLCheck: "Probíhá kontrola obrázku…",
 				lblLabel: "Titulek obrázku",
 				lblLabel1: "Popisek",
 				lblLabel2: "Přejeďte ukazatelem myši přes text.",
@@ -91,10 +94,13 @@
 				lblPosition4: "Roztáhnout",
 				lblPosition5: "Vlastní",
 				tooltipDimension: "Hodnotu lze uvést v 'px' nebo '%'",
+				tooltipDimension2: "Ř_The value has to be specified in 'px'_ů",
 				lblPosition2Explain: "(může dojít k ořezu)",
 				lblPosition3Explain: "(nedojde k ořezu)",
 				lblPosition3Explain2: "(šířka se vždy přizpůsobí panelu)",
-				lblPosition4Explain: "(může dojít ke zkreslení)"
+				lblPosition4Explain: "(může dojít ke zkreslení)",
+				unloadLbl: "Ř_Unload when reader navigates away to different section_ů",
+				unloadHelp: "Ř_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ů"
 			},
 			editorActionGeocode: {
 				lblTitle: "Najít adresu nebo místo",
@@ -104,7 +110,7 @@
 				lblTitle: "Změnit obsah hlavní úrovně"
 			},
 			editorInlineMedia: {
-				lblTitle: "Vložit obrázek nebo video"
+				lblTitle: "Vložit obrázek, video nebo webovou stránku"
 			}
 		}
 	})

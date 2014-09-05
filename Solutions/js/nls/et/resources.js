@@ -16,6 +16,9 @@
  */
 define(
     ({
+        map: {
+            error: "Kaardi loomine ebaõnnestus"
+        },
         tooltips: {
             search: "Leia",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Praegune asukoht",  // Command button to zoom and pan to the current geographical position reported by the browser
@@ -51,7 +54,8 @@ define(
             geolocationDenied: "See lehekülg ei oma luba praeguse asukoha saamiseks",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Veebibrauser ei saanud praegust asukohta",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Veebibrauser ei saanud praegust asukohta õigeaegselt",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            searchLayerMissing: "Seda otsingukihti ei leitud kaardilt",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
+            noSearchLayerConfigured: "Š_No find layer has been configured_ä",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
+            searchLayerMissing: "Seda otsingukihti kaardilt ei leitud",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "Kaardikihi välju ei leitud.<br><br>Veenduge, et see kiht on kaardi sisu juuretasemel olemas. Pesastatud teenused (nt ArcGIS for Serveri dünaamilised kaarditeenused) tuleb otsingukihina kasutamiseks lisada kaardile üks kiht korraga (sh kihi indeksinumber). Pildiüksuse teenuseid ei saa otsingukihtidena kasutada.",
             searchFieldMissing: "Seda välja ei leitud kaardi otsingukihilt",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
             allSearchFieldsMissing: "Kaardi otsingukihis ei leitud ühtki nendest väljadest",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt

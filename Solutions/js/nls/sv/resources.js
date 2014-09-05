@@ -16,6 +16,9 @@
  */
 define(
     ({
+        map: {
+            error: "Det gick inte att skapa kartan"
+        },
         tooltips: {
             search: "Sök",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Aktuell plats",  // Command button to zoom and pan to the current geographical position reported by the browser
@@ -51,6 +54,7 @@ define(
             geolocationDenied: "Den här webbplatsen har inte behörighet att hämta den aktuella platsen",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Webbläsaren kunde inte hämta den aktuella platsen",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Webbläsaren kunde inte hämta den aktuella platsen inom rimlig tid",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            noSearchLayerConfigured: "Å_No find layer has been configured_ö",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "Det här söklagret finns inte i kartan",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "Det gick inte att hitta fält för kartlagret.<br><br>Kontrollera att lagret finns i roten för kartinnehållet. Inbäddade tjänster, till exempel dynamiska karttjänster i ArcGIS for Server, måste läggas till i kartan ett lager i taget (inklusive lagerindexnummer) för att användas som söklager. Tiletjänster går inte att använda som söklager.",
             searchFieldMissing: "Det här fältet finns inte i kartans söklager",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt

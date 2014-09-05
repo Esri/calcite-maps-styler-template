@@ -37,7 +37,7 @@ define({
         dateTextMobile: "Дата",
         appTypeText: "Тип",
         appOwnerText: "Владелец",
-        tryItButtonText: "Попробуйте сейчас",
+        tryItButtonText: "Просмотр",
         downloadButtonText: "Загрузить",
         appDesText: "Описание",
         reviewText: "Комментарии",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "Сортировать по",
             layoutBtnTitle: "Компоновка",
             signInBtnTitle: "Войти",
-            signOutBtnTitle: "Ж_Sign Out_Я",
+            signOutBtnTitle: "Выйти",
             geolocationBtnTitle: "Геолокация"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "Невозможно получить данные слоёв.",
             unableToOpenItem: "Невозможно открыть элемент.",
             wmsSpatialReferenceError: "Пространственная привязка слоя WMS не совпадает с привязкой карты.",
-            noPublicItems: "Ж_There are no public items in the configured group or no items have been shared with this group yet._Я",
+            noPublicItems: "В указанной группе нет публичных элементов, или элементов, которые были опубликованы для этой группы ранее.",
             emptyUsernamePassword: "Пожалуйста, введите Имя пользователя и Пароль.",
             noFullScreenSupport: "Текущий браузер не поддерживает полноэкранный режим отображения.",
-            notMemberOfOrg: "Ж_You are not a member of this organization_Я"
+            notMemberOfOrg: "Вы не являетесь участником этой организации"
         }
 });

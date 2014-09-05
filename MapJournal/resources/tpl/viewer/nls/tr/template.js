@@ -9,8 +9,9 @@
 				step2: "Veriler yükleniyor",
 				step3: "Başlatılıyor",
 				loadBuilder: "Oluşturucuya geçiliyor",
-				fail: "Üzgünüz, yükleme başarısız oldu",
-				failButton: "Tekrar dene"
+				long: "Harita Bülteni başlatılıyor",
+				long2: "Beklendiğiniz için teşekkürler",
+				failButton: "Uygulamayı yeniden yükle"
 			},
 			signin: {
 				title: "Kimlik doğrulama gerekli",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Bir hata oluştu",
-				invalidConfig: "Onarılamaz: Geçersiz yapılandırma",
-				invalidConfigNoApp: "Onarılamaz hata: Web Mapping Application tanımlayıcısı index.html dosyasında tanımlı değil",
+				invalidConfig: "ı_Invalid configuration_İ",
+				invalidConfigNoApp: "ı_Web Mapping Application identifier not specified in index.html._İ",
+				unspecifiedConfigOwner: "ı_Authorized owner hasn't been configured._İ",
+				invalidConfigOwner: "ı_Application owner is not authorized._İ",
 				createMap: "Harita oluşturulamıyor",
-				invalidApp: "Onarılamaz hata: Uygulama yüklenemiyor",
-				notConfiguredDesktop: "%TPL_NAME% web uygulamasına hoş geldiniz.<br />Uygulama henüz yapılandırılmadı.",
-				notConfiguredMobile: "%TPL_NAME% web uygulamasına hoş geldiniz. Uygulama henüz yapılandırılmadı ve oluşturucu mobil cihazlarda desteklenmiyor.",
+				invalidApp: "ı_The %TPL_NAME% does not exist or is inaccessible._İ",
+				appLoadingFail: "ı_Something went wrong, the %TPL_NAME% did not load correctly._İ",
+				notConfiguredDesktop: "ı_The application is not configured yet._İ",
+				notConfiguredMobile: "ı_The %TPL_NAME% builder is not supported at this screen resolution._İ",
 				notAuthorized: "Bu uygulamaya erişim yetkiniz yok",
-				noBuilderIE8: "Oluşturucu Internet Explorer 9'dan önceki sürümlerinde desteklenmez.",
-				mapLoadingFail: "Bir şeyler yanlış gitti, Harita yüklenemiyor."
+				noBuilderIE: "Oluşturucu %VERSION% öncesindeki Internet Explorer sürümlerinde desteklenmiyor. %UPGRADE%",
+				noViewerIE: "Bu uygulama %VERSION% öncesindeki Internet Explorer sürümlerinde desteklenmiyor. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Tarayıcınızı güncelleyin</a>.",
+				mapLoadingFail: "ı_Something went wrong, the Map did not load correctly._İ",
+				signOut: "Oturumu Kapat"
 			},
 			mobileView: {
 				tapForDetails: "Ayrıntılar için dokunun",
+				clickForDetails: "Daha fazla bilgi",
 				swipeToExplore: "Keşfetmek için kaydırın",
-				tapForMap: "Haritaya geri dönmek için dokun"
+				tapForMap: "Haritaya geri dönmek için dokun",
+				clickForMap: "HARİTAYA GERİ DÖN"
 			},
 			floatLayout: {
 				scroll: "Kaydır"
@@ -62,7 +71,7 @@
 				copied: "Kopyalandı",
 				open: "Aç",
 				embed: "Web sitesinin içine yerleştir",
-				embedExplain: "Bülteni bir web sitesi içine yerleştirmek için aşağıdaki HTML kodunu kullanın.",
+				embedExplain: "Bülteni bir web sitesinin içine yerleştirmek için aşağıdaki HTML kodunu kullanın.",
 				size: "Boyut (genişlik/yükseklik):"
 			}
         }

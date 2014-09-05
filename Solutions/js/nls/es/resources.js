@@ -16,6 +16,9 @@
  */
 define(
     ({
+        map: {
+            error: "No se puede crear el mapa"
+        },
         tooltips: {
             search: "Buscar",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Ubicación actual",  // Command button to zoom and pan to the current geographical position reported by the browser
@@ -51,6 +54,7 @@ define(
             geolocationDenied: "Este sitio no tiene permiso para obtener la ubicación actual",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "El navegador no ha podido obtener la ubicación actual",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "El navegador no ha podido obtener la ubicación actual a su debido tiempo",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            noSearchLayerConfigured: "á_No find layer has been configured_Ó",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "Esta capa de búsqueda no se ha encontrado en el mapa",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "No se pueden encontrar campos para la capa de mapa.<br><br>Comprueba que esta capa existe en la raíz del contenido del mapa. Los servicios anidados, como los servicios de mapas dinámicos de ArcGIS for Server, se deben agregar al mapa capa a capa (incluido el número del índice de la capa) para usarlos como capas de búsqueda. Los servicios en teselas no se pueden usar como capas de búsqueda.",
             searchFieldMissing: "Este campo no se ha encontrado en la capa de búsqueda del mapa",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt

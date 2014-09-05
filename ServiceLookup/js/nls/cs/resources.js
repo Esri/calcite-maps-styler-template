@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Vrstva není ve webové mapě",
             fieldNotFound: "Pole nenalezeno",
-            popupNotSet: "Vyskakovací okno není pro tuto vrstvu aktivováno"
+            popupNotSet: "Vyskakovací okno není pro tuto vrstvu aktivováno",
+            noLayersSet: "V konfiguraci nejsou definovány žádné vrstvy, pole vyhledávání nebude fungovat."
         },
         page: {
             title: "Vyhledávání informací",

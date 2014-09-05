@@ -9,8 +9,9 @@
 				step2: "데이터를 로드하는 중",
 				step3: "초기화하는 중",
 				loadBuilder: "빌더로 전환하는 중",
-				fail: "죄송합니다. 로드하지 못했습니다.",
-				failButton: "재시도"
+				long: "맵 저널을 초기화하는 중",
+				long2: "기다려 주셔서 감사합니다.",
+				failButton: "응용프로그램 다시 로드"
 			},
 			signin: {
 				title: "인증 필요",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "오류가 발생했습니다.",
-				invalidConfig: "오류: 잘못된 구성",
-				invalidConfigNoApp: "오류: 웹 매핑 응용프로그램 식별자가 index.html에 지정되어 있지 않습니다.",
+				invalidConfig: "한_Invalid configuration_빠",
+				invalidConfigNoApp: "한_Web Mapping Application identifier not specified in index.html._빠",
+				unspecifiedConfigOwner: "한_Authorized owner hasn't been configured._빠",
+				invalidConfigOwner: "한_Application owner is not authorized._빠",
 				createMap: "맵을 생성할 수 없음",
-				invalidApp: "오류: 응용프로그램을 로드할 수 없습니다.",
-				notConfiguredDesktop: "%TPL_NAME% 웹 응용프로그램을 시작합니다.<br />응용프로그램이 아직 구성되지 않았습니다.",
-				notConfiguredMobile: "%TPL_NAME% 웹 응용프로그램을 시작합니다. 응용프로그램이 구성되지 않았으며, 빌더는 모바일 장치에서 지원되지 않습니다.",
+				invalidApp: "한_The %TPL_NAME% does not exist or is inaccessible._빠",
+				appLoadingFail: "한_Something went wrong, the %TPL_NAME% did not load correctly._빠",
+				notConfiguredDesktop: "한_The application is not configured yet._빠",
+				notConfiguredMobile: "한_The %TPL_NAME% builder is not supported at this screen resolution._빠",
 				notAuthorized: "이 응용프로그램에 액세스할 권한이 없습니다.",
-				noBuilderIE8: "Internet Explorer 9 이전 버전에서는 빌더가 지원되지 않습니다.",
-				mapLoadingFail: "오류가 발생하여 맵을 로드할 수 없습니다."
+				noBuilderIE: "이 빌더는 %VERSION%. %UPGRADE% 이전 버전의 Internet Explorer에서 지원되지 않습니다.",
+				noViewerIE: "이 응용프로그램은 %VERSION%. %UPGRADE% 이전 버전의 Internet Explorer에서 지원되지 않습니다.",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>브라우저를 업데이트하세요</a>.",
+				mapLoadingFail: "한_Something went wrong, the Map did not load correctly._빠",
+				signOut: "로그아웃"
 			},
 			mobileView: {
 				tapForDetails: "세부정보를 보려면 누릅니다.",
+				clickForDetails: "자세한 정보",
 				swipeToExplore: "쓸어 넘겨서 탐색",
-				tapForMap: "맵으로 돌아가려면 누릅니다."
+				tapForMap: "맵으로 돌아가려면 누릅니다.",
+				clickForMap: "맵으로 돌아가기"
 			},
 			floatLayout: {
 				scroll: "스크롤"

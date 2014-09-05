@@ -39,6 +39,12 @@
 				shareStatus3: "A aplicação é partilhada com a organização",
 				shareStatus4: "A aplicação não é partilhada"
 			},
+			saveError: {
+				title: "ã_Error saving the application_Ç",
+				err1Div1: "ã_The application can't be saved because you already have another item with the same name (see your <a class='linkagolroot' target='_blank'>content folder</a>)._Ç",
+				err1Div2: "ã_Please modify the Home Section title and save the application._Ç",
+				btnOk: "ã_Edit the Home Section title_Ç"
+			},
 			share: {
 				firstSaveTitle: "Aplicação guardada com sucesso",
 				firstSaveHeader: "A sua aplicação está agora guardada em %PORTAL% mas ainda não se encontra partilhada.",
@@ -60,6 +66,7 @@
 				shareHeader2: "A sua aplicação está acessível aos membros da sua organização (é necessário início de sessão).",
 				shareLinkCopy: "Copiar",
 				shareLinkCopied: "Copiado",
+				shareQ0: "ã_How do I embed the application in a website?_Ç",
 				shareQ1Opt1: "Como posso manter a aplicação privada?",
 				shareQ1Opt2: "Como posso manter a aplicação privada ou partilhá-la publicamente?",
 				shareA1: "Utilize %SHAREIMG% na <a href='%LINK1%' target='_blank'>página do item da aplicação</a>.",
@@ -74,16 +81,16 @@
 				tabError: "Verifique todos os separadores para ver se existem erros"
 			},
 			settingsLayout: {
-				title: "Layout",
+				title: "ã_Layout_Ç",
 				explain: "Que layout pretende utilizar?",
 				explainInit: "Pode alterar o layout em qualquer momento no painel de definições.",
 				viewExample: "Ver um exemplo em tempo real"
 			},
 			settingsTheme: {
-				title: "Tema"
+				title: "ã_Theme_Ç"
 			},
 			settingsHeader: {
-				title: "Cabeçalho",
+				title: "ã_Header_Ç",
 				logoEsri: "Logótipo Esri",
 				logoNone: "Sem logótipo",
 				logoCustom: "Logótipo personalizado",

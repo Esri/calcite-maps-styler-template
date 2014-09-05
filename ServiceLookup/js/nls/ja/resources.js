@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Web マップにレイヤがありません",
             fieldNotFound: "フィールドが見つかりません",
-            popupNotSet: "このレイヤでポップアップは有効化されていません"
+            popupNotSet: "このレイヤでポップアップは有効化されていません",
+            noLayersSet: "構成でレイヤが定義されていないため、検索ボックスが機能しません"
         },
         page: {
             title: "情報検索",

@@ -20,12 +20,19 @@ define(
             "error": "Não foi possível criar o mapa"
         },
         "tools":{
+            "search":{
+                "error": "ã_Location could not be found_Ç",
+                "notWhatYouWanted": "ã_Not what you wanted?_Ç",
+                "selectAnother": "ã_Select another location_Ç",
+                "currentLocation": "ã_Current Location_Ç",
+                "title": "ã_Location_Ç"
+            },
 	    	"print": {
 			    "layouts":{
-			      "label1": 'Paisagem (PDF)',
-			      "label2": 'Retrato (PDF)',
-			      "label3": 'Paisagem (imagem)',
-			      "label4": 'Retrato (imagem)'
+			      "label1": 'ã_Landscape_Ç',
+			      "label2": 'ã_Portrait_Ç',
+			      "label3": 'ã_Landscape_Ç',
+			      "label4": 'ã_Portrait_Ç'
 			    },
 			    "legend": "Adicionar legenda à saída"
 			},

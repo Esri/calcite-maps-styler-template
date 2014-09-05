@@ -11,7 +11,8 @@
 				disabled: "Объект был отключен администратором",
 				url: "Чтобы вручную ввести веб-адрес изображения",
 				userLookup: "Загрузить альбомы",
-				notImplemented: "Еще не реализовано."
+				notImplemented: "Еще не реализовано.",
+				noData: "Общедоступных альбомов не найдено"
 			},
 			imageSelector: {
 				lblStep1: "Выберите услугу",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "Электронная почта или Picasa / ID Google +",
 				signInMsg2: "Учетная запись не найдена",
-				signInMsg3: "Не общедоступный альбом",
 				howToFind: "Как найти ID учетной записи Picasa или Google+",
 				howToFind2: "Скопируйте цифры, расположенные между первой и второй косой чертой \'/\' любой страницы Picasa или G+"
 			},
@@ -72,11 +72,14 @@
 				lblEmbed: "Встроенный код",
 				lblOR: "ИЛИ",
 				lblError1: "Ошибка, очистите одно из двух входных полей.",
-				lblError2: "Внедренный код может содержать только один <iframe>"
+				lblError2: "Внедренный код может содержать только один %IFRAMETAG%",
+				configure: "Настроить"
 			},
 			mediaConfigure: {
 				lblURL: "URL-адрес",
 				lblURLPH: "URL-адрес изображения должен начинаться с http:// и заканчиваться .jpg или .png",
+				lblURLError: "Возможно изображение некорректно. Укажите прямую ссылку на файл изображения (URL скорей всего будет заканчиваться на .jpg или .png). Ссылка на веб-страницу, содержащую изображение, может не работать.",
+				lblURLCheck: "Проверка изображения...",
 				lblLabel: "Заголовок изображения",
 				lblLabel1: "Заголовок",
 				lblLabel2: "Наведите курсор на текст",
@@ -91,10 +94,13 @@
 				lblPosition4: "Растяжка",
 				lblPosition5: "Настраиваемый",
 				tooltipDimension: "Значение можно задать в 'px' или '%'",
+				tooltipDimension2: "Ж_The value has to be specified in 'px'_Я",
 				lblPosition2Explain: "(может быть урезано)",
 				lblPosition3Explain: "(не будет урезаться)",
 				lblPosition3Explain2: "(ширина всегда будет соответствовать панели)",
-				lblPosition4Explain: "(может исказиться)"
+				lblPosition4Explain: "(может исказиться)",
+				unloadLbl: "Ж_Unload when reader navigates away to different section_Я",
+				unloadHelp: "Ж_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._Я"
 			},
 			editorActionGeocode: {
 				lblTitle: "Найдите адрес или место",
@@ -104,7 +110,7 @@
 				lblTitle: "Изменить ресурсы основной площадки"
 			},
 			editorInlineMedia: {
-				lblTitle: "Вставить изображение или видео"
+				lblTitle: "Вставить изображение, видео или веб-страницу"
 			}
 		}
 	})

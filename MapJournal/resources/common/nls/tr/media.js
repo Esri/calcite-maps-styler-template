@@ -11,7 +11,8 @@
 				disabled: "Bu özellik Yönetici tarafından devre dışı bırakıldı",
 				url: "Bir resmin web adresine manuel olarak girmek için",
 				userLookup: "Albüm yükle",
-				notImplemented: "Henüz uygulanmadı."
+				notImplemented: "Henüz uygulanmadı.",
+				noData: "Hiçbir genel albüm bulunamadı"
 			},
 			imageSelector: {
 				lblStep1: "Servisi seç",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-posta veya Picasa/Google+ ID",
 				signInMsg2: "Hesap bulunamadı",
-				signInMsg3: "Genel albüm yok",
 				howToFind: "Picasa ya da Google+ hesabı kimliği nasıl bulunur",
 				howToFind2: "Herhangi bir Picasa ya da G+ sayfasının ilk ve ikinci \'/\' karakterleri arasındaki rakamları kopyalayın"
 			},
@@ -72,11 +72,14 @@
 				lblEmbed: "Kod ekle",
 				lblOR: "YA DA",
 				lblError1: "Hata, iki giriş alanından birini silin.",
-				lblError2: "Gömülü kod yalnızca <iframe> içerebilir"
+				lblError2: "İçe yerleştime kodu yalnızca bir %IFRAMETAG% içerebilir",
+				configure: "Yapılandır"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Bir görüntü URL\'si http:// ile başlamalı ve .jpg ya da .png ile bitmelidir",
+				lblURLError: "Bu görüntü geçerli gibi görünmüyor. Bir görüntü dosyasına bir doğrudan bağlantı belirtin (URL\'niz genelde .jpg ya da .png ile biter). Bir web sayfasının bağlantıları çalışmayan bir görüntü içeriyor.",
+				lblURLCheck: "Görüntü denetleniyor...",
 				lblLabel: "Görüntü Alt Yazısı",
 				lblLabel1: "Altyazı",
 				lblLabel2: "Metnin üzerinde gezin",
@@ -91,10 +94,13 @@
 				lblPosition4: "Esnet",
 				lblPosition5: "Özel",
 				tooltipDimension: "Değer 'px' ya da '%' cinsinden belirtilebilir",
+				tooltipDimension2: "ı_The value has to be specified in 'px'_İ",
 				lblPosition2Explain: "(kırpılabilir)",
 				lblPosition3Explain: "(kırpılmaz)",
 				lblPosition3Explain2: "(genişlik her zaman panele sığacaktır)",
-				lblPosition4Explain: "(şekil değiştirebilir)"
+				lblPosition4Explain: "(şekil değiştirebilir)",
+				unloadLbl: "ı_Unload when reader navigates away to different section_İ",
+				unloadHelp: "ı_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._İ"
 			},
 			editorActionGeocode: {
 				lblTitle: "Adres veya yer bul",
@@ -104,7 +110,7 @@
 				lblTitle: "Ana Aşama içeriğini değiştir"
 			},
 			editorInlineMedia: {
-				lblTitle: "Bir resim veya video ekle"
+				lblTitle: "Bir resim, video ya da web sayfası ekleme"
 			}
 		}
 	})

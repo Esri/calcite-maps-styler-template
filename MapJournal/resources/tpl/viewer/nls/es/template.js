@@ -9,8 +9,9 @@
 				step2: "Cargando datos",
 				step3: "Inicializando",
 				loadBuilder: "Cambiando a Builder",
-				fail: "Error al cargar",
-				failButton: "Reintentar"
+				long: "Map Journal se está inicializando",
+				long2: "Gracias por esperar",
+				failButton: "Volver a cargar la aplicación"
 			},
 			signin: {
 				title: "Se requiere autenticación",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Se ha producido un error",
-				invalidConfig: "Error muy grave: configuración no válida",
-				invalidConfigNoApp: "Error grave: no se ha especificado el identificador de la aplicación de representación cartográfica web en index.html",
+				invalidConfig: "á_Invalid configuration_Ó",
+				invalidConfigNoApp: "á_Web Mapping Application identifier not specified in index.html._Ó",
+				unspecifiedConfigOwner: "á_Authorized owner hasn't been configured._Ó",
+				invalidConfigOwner: "á_Application owner is not authorized._Ó",
 				createMap: "No se puede crear el mapa",
-				invalidApp: "Error muy grave: la aplicación no se puede cargar",
-				notConfiguredDesktop: "Bienvenido a la aplicación web %TPL_NAME%.<br />La aplicación no se ha configurado todavía.",
-				notConfiguredMobile: "Bienvenido a la aplicación web %TPL_NAME%. La aplicación no se ha configurado todavía y el Builder no es compatible con los dispositivos móviles.",
+				invalidApp: "á_The %TPL_NAME% does not exist or is inaccessible._Ó",
+				appLoadingFail: "á_Something went wrong, the %TPL_NAME% did not load correctly._Ó",
+				notConfiguredDesktop: "á_The application is not configured yet._Ó",
+				notConfiguredMobile: "á_The %TPL_NAME% builder is not supported at this screen resolution._Ó",
 				notAuthorized: "No tienes autorización para acceder a esta aplicación",
-				noBuilderIE8: "Builder no es compatible con las versiones de Internet Explorer anteriores a la 9.",
-				mapLoadingFail: "Se ha producido un error, no se puede cargar el mapa."
+				noBuilderIE: "El builder no es compatible con versiones de Internet Explorer anteriores a la %VERSION%. %UPGRADE%",
+				noViewerIE: "Esta aplicación no es compatible con versiones de Internet Explorer anteriores a la %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Actualiza tu navegador</a>.",
+				mapLoadingFail: "á_Something went wrong, the Map did not load correctly._Ó",
+				signOut: "Cerrar sesión"
 			},
 			mobileView: {
 				tapForDetails: "Tocar para ver detalles",
+				clickForDetails: "Más información",
 				swipeToExplore: "Barrer para explorar",
-				tapForMap: "Tocar para volver al mapa"
+				tapForMap: "Tocar para volver al mapa",
+				clickForMap: "VOLVER AL MAPA"
 			},
 			floatLayout: {
 				scroll: "Desplazar"

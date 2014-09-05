@@ -9,8 +9,9 @@
 				step2: "Gegevens laden",
 				step3: "Initialiseren",
 				loadBuilder: "Overschakelen naar builder",
-				fail: "Het laden is mislukt",
-				failButton: "Opnieuw proberen"
+				long: "Kaartjournaal wordt geïnitialiseerd",
+				long2: "Bedankt voor uw geduld",
+				failButton: "De applicatie opnieuw laden"
 			},
 			signin: {
 				title: "Verificatie is vereist",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Er is een fout opgetreden",
-				invalidConfig: "Onherstelbare fout: ongeldige configuratie",
-				invalidConfigNoApp: "Onherstelbare fout: webmapapplicate-ID niet opgegeven in index.html",
+				invalidConfig: "Ĳ_Invalid configuration_ä",
+				invalidConfigNoApp: "Ĳ_Web Mapping Application identifier not specified in index.html._ä",
+				unspecifiedConfigOwner: "Ĳ_Authorized owner hasn't been configured._ä",
+				invalidConfigOwner: "Ĳ_Application owner is not authorized._ä",
 				createMap: "Kan kaart niet maken",
-				invalidApp: "Onherstelbare fout: de applicatie kan niet worden geladen",
-				notConfiguredDesktop: "Welkom bij de %TPL_NAME% -webapplicatie.<br />De applicatie is nog niet geconfigureerd.",
-				notConfiguredMobile: "Welkom bij de %TPL_NAME%-webapplicatie. De applicatie is nog niet geconfigureerd en de builder wordt niet ondersteund op mobiele apparaten.",
+				invalidApp: "Ĳ_The %TPL_NAME% does not exist or is inaccessible._ä",
+				appLoadingFail: "Ĳ_Something went wrong, the %TPL_NAME% did not load correctly._ä",
+				notConfiguredDesktop: "Ĳ_The application is not configured yet._ä",
+				notConfiguredMobile: "Ĳ_The %TPL_NAME% builder is not supported at this screen resolution._ä",
 				notAuthorized: "U bent niet gemachtigd om deze applicatie te openen",
-				noBuilderIE8: "De builder wordt niet ondersteund op eerdere versies dan Internet Explorer 9.",
-				mapLoadingFail: "Er is iets fout gegaan, de kaart kan niet worden geladen."
+				noBuilderIE: "De builder wordt niet ondersteund op eerdere versies van Internet Explorer dan versie %VERSION%. %UPGRADE%",
+				noViewerIE: "Deze applicatie wordt niet ondersteund op eerdere versies van Internet Explorer dan versie %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Werk uw browser bij</a>.",
+				mapLoadingFail: "Ĳ_Something went wrong, the Map did not load correctly._ä",
+				signOut: "Afmelden"
 			},
 			mobileView: {
 				tapForDetails: "Tik voor details",
+				clickForDetails: "Meer weten",
 				swipeToExplore: "Veeg om te verkennen",
-				tapForMap: "Tik om terug te gaan naar de kaart"
+				tapForMap: "Tik om terug te gaan naar de kaart",
+				clickForMap: "TERUG NAAR KAART"
 			},
 			floatLayout: {
 				scroll: "Scrollen"
@@ -62,7 +71,7 @@
 				copied: "Gekopieerd",
 				open: "Openen",
 				embed: "Inbedden in website",
-				embedExplain: "Gebruik de volgende HTML-code om het journaal in te bedden in een website.",
+				embedExplain: "Gebruik de volgende HTML-code om het journaal in een website in te bedden.",
 				size: "Grootte (breedte/hoogte):"
 			}
         }

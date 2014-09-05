@@ -34,12 +34,13 @@
 				btnCancel: "ยกเลิก",
 				tocTitle: "รายการแผนที่",
 				tocExplain: "เลือกชั้นข้อมูลที่จะแสดง",
+				tocNoData: "ก้_No layer can be configured._ษฺ",
 				tocSave: "บันทึกสารบัญแผนที่",
 				extentTitle: "ตำแหน่งแผนที่",
 				extentExplain: "เลือกและขยายแผนที่ตามที่กำหนด วิธีการมองหาผู้อ่าน",
 				extentSave: "บันทึกตำแหน่งแผนที่",
 				popupTitle: "ป็อปอัพแผนที่",
-				popupExplain: "ปรับแต่งภาพลักษณ์ของกล่องข้อความ pop-up ที่จะแสดงให้ผู้ใช้งานเห็น",
+				popupExplain: "ก้_Click on a feature to open the popup you want to display._ษฺ",
 				popupSave: "บันทึกการตั้งค่าป็อปอัพ",
 				hintNavigation: "แผนที่นำทางถูกปิดใช้งาน"
 			}

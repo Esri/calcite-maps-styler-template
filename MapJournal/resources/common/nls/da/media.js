@@ -11,7 +11,8 @@
 				disabled: "Dette objekt er blevet deaktiveret af administratoren",
 				url: "Hvis du vil angive webadressen til et billede manuelt",
 				userLookup: "Indlæs albummer",
-				notImplemented: "Ikke implementeret endnu."
+				notImplemented: "Ikke implementeret endnu.",
+				noData: "Intet offentligt album fundet"
 			},
 			imageSelector: {
 				lblStep1: "Vælg tjeneste",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-mail eller Picasa/Google+ ID",
 				signInMsg2: "Kontoen kunne ikke findes",
-				signInMsg3: "Intet offentligt album",
 				howToFind: "Sådan findes et Picasa- eller Google+ konto-ID",
 				howToFind2: "Kopier tal mellem første og anden \'\/\' på Picasa eller en G+-side"
 			},
@@ -72,11 +72,14 @@
 				lblEmbed: "Indlejr kode",
 				lblOR: "ELLER",
 				lblError1: "Fejl. Ryd et af de to indtastningsfelter.",
-				lblError2: "Indlejret kode kan kun indeholde \én <iframe>"
+				lblError2: "Indlejret kode kan kun indeholde \én %IFRAMETAG%",
+				configure: "Konfigurér"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "En billede-URL skal starte med http:// og slutte med .jpg eller .png",
+				lblURLError: "Dette billede er tilsyneladende ikke gyldigt. Angiv et direkte link til en billedfil (din URL skal normalt slutte med .jpg eller .png). Links til en webside, der indeholder et billede, fungerer ikke.",
+				lblURLCheck: "Kontrollerer billedet...",
 				lblLabel: "Billedtekst",
 				lblLabel1: "Billedtekst",
 				lblLabel2: "Hold musen over teksten",
@@ -91,10 +94,13 @@
 				lblPosition4: "Stræk",
 				lblPosition5: "Tilpasset",
 				tooltipDimension: "Værdien kan angives i \'px\' eller \'%\'",
+				tooltipDimension2: "ø_The value has to be specified in 'px'_å",
 				lblPosition2Explain: "(kan beskæres)",
 				lblPosition3Explain: "(kan ikke beskæres)",
 				lblPosition3Explain2: "(bredden vil altid passe til panelet)",
-				lblPosition4Explain: "(kan forvrænges)"
+				lblPosition4Explain: "(kan forvrænges)",
+				unloadLbl: "ø_Unload when reader navigates away to different section_å",
+				unloadHelp: "ø_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._å"
 			},
 			editorActionGeocode: {
 				lblTitle: "Find en adresse eller et sted",
@@ -104,7 +110,7 @@
 				lblTitle: "Redigér indholdet i hovedområdet"
 			},
 			editorInlineMedia: {
-				lblTitle: "Indsæt et billede eller en video"
+				lblTitle: "Indsæt et billede, en video eller en webside"
 			}
 		}
 	})

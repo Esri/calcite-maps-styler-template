@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "השכבה לא נימצאת ב webmap",
             fieldNotFound: "שדה לא נמצא",
-            popupNotSet: "חלון קופץ לא אפשרי לשכבה זו."
+            popupNotSet: "חלון קופץ לא אפשרי לשכבה זו.",
+            noLayersSet: "לא הוגדרו שכבות בתצורה, תיבת החיפוש לא תפעל"
         },
         page: {
             title: "בדיקת מידע",

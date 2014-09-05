@@ -16,6 +16,9 @@
  */
 define(
     ({
+        map: {
+            error: "Kan ikke opprette kart"
+        },
         tooltips: {
             search: "Søk",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Gjeldende plassering",  // Command button to zoom and pan to the current geographical position reported by the browser
@@ -51,6 +54,7 @@ define(
             geolocationDenied: "Dette området har ikke tillatelse til å hente gjeldende plassering",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Nettleseren kunne ikke hente gjeldende plassering",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Nettleseren kunne ikke hente gjeldende plassering innen rimelig tid",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            noSearchLayerConfigured: "å_No find layer has been configured_ø",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "Fant ikke dette søkelaget i kartet",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "Fant ikke feltene for kartlaget.<br><br>Kontroller at dette laget eksisterer i roten i kartet Innhold. Flettede tjenester, f.eks. ArcGIS for Servers dynamiske karttjenester, må legges til kartet med ett lag om gangen (inkludert kartets indeksnummer) som skal brukes om Finn lag. Flisetjenestester kan ikke brukes som Finn lag.",
             searchFieldMissing: "Fant ikke dette feltet i kartsøkelaget",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt

@@ -16,6 +16,9 @@
  */
 define(
     ({
+        map: {
+            error: "Karte kann nicht erstellt werden"
+        },
         tooltips: {
             search: "Suchen",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Aktuelle Position",  // Command button to zoom and pan to the current geographical position reported by the browser
@@ -51,6 +54,7 @@ define(
             geolocationDenied: "Diese Site verfügt nicht über die Berechtigung, die aktuelle Position zu ermitteln",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Der Browser konnte die aktuelle Position nicht ermitteln",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Der Browser konnte die aktuelle Position nicht rechtzeitig ermitteln",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            noSearchLayerConfigured: "ä_No find layer has been configured_Ü",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "Der Such-Layer wurde nicht auf der Karte gefunden",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "Für den Karten-Layer wurden keine Felder gefunden.<br><br>Überprüfen Sie, ob dieser Layer im Stammverzeichnis des Karteninhalts vorhanden ist. Geschachtelte Services, wie dynamische Karten-Services von ArcGIS for Server, müssen den Layern der Karte jeweils einzeln hinzugefügt werden (einschließlich der Layer-Indexnummer), um als Such-Layer verwendet zu werden. Gekachelte Services können nicht als Such-Layer verwendet werden.",
             searchFieldMissing: "Dieses Feld wurde nicht im Such-Layer für die Karte gefunden",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt

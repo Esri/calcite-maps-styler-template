@@ -37,7 +37,7 @@ define({
         dateTextMobile: "תאריך",
         appTypeText: "סוג",
         appOwnerText: "יוצר",
-        tryItButtonText: "נסה עכשיו",
+        tryItButtonText: "צפה",
         downloadButtonText: "הורדה",
         appDesText: "תיאור",
         reviewText: "הערות",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "מיון על ידי",
             layoutBtnTitle: "תצוגה",
             signInBtnTitle: "התחבר",
-            signOutBtnTitle: "כן_Sign Out_ש",
+            signOutBtnTitle: "התנתק",
             geolocationBtnTitle: "מיקום מרחבי"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "לא ניתן לקבל נתונים מהשכבות.",
             unableToOpenItem: "לא ניתן לפתוח פריט.",
             wmsSpatialReferenceError: "היחוס המרחבי של שכבת WMS לא תואם ליחוס המרחבי של המפה.",
-            noPublicItems: "כן_There are no public items in the configured group or no items have been shared with this group yet._ש",
+            noPublicItems: "לא קיימים פריטים ציבוריים בקבוצה שהוגדרה או שלא שותפו עדיין פריטים עם קבוצה זו.",
             emptyUsernamePassword: "אנא הקלד שם משתמש וסיסמה",
             noFullScreenSupport: "הדפדפן הנוכחי אינו תומך במסך מלא.",
-            notMemberOfOrg: "כן_You are not a member of this organization_ש"
+            notMemberOfOrg: "אינך חבר בארגון זה"
         }
 });

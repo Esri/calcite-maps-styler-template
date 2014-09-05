@@ -37,7 +37,7 @@ define({
         dateTextMobile: "Datum",
         appTypeText: "Typ",
         appOwnerText: "Besitzer",
-        tryItButtonText: "Jetzt testen",
+        tryItButtonText: "Ansicht",
         downloadButtonText: "Herunterladen",
         appDesText: "Beschreibung",
         reviewText: "Kommentare",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "Sortieren nach",
             layoutBtnTitle: "Layout",
             signInBtnTitle: "Anmelden",
-            signOutBtnTitle: "ä_Sign Out_Ü",
+            signOutBtnTitle: "Abmelden",
             geolocationBtnTitle: "Geolocation"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "Daten können nicht aus Layer abgerufen werden.",
             unableToOpenItem: "Element kann nicht geöffnet werden.",
             wmsSpatialReferenceError: "Raumbezug des WMS-Layers stimmt nicht mit dem Raumbezug der Karte überein.",
-            noPublicItems: "ä_There are no public items in the configured group or no items have been shared with this group yet._Ü",
+            noPublicItems: "Die konfigurierte Gruppe enthält keine öffentlichen Elemente, oder es wurden noch keine Elemente für diese Gruppe freigegeben.",
             emptyUsernamePassword: "Geben Sie den Benutzernamen und das Kennwort ein.",
             noFullScreenSupport: "Vollbildmodus wird von aktuellem Browser nicht unterstützt.",
-            notMemberOfOrg: "ä_You are not a member of this organization_Ü"
+            notMemberOfOrg: "Sie sind kein Mitglied der Organisation"
         }
 });

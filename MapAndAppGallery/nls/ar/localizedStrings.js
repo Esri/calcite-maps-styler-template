@@ -37,7 +37,7 @@ define({
         dateTextMobile: "التاريخ",
         appTypeText: "نوع",
         appOwnerText: "المالك",
-        tryItButtonText: "جربها الآن",
+        tryItButtonText: "عرض",
         downloadButtonText: "تنزيل",
         appDesText: "الوصف",
         reviewText: "تعليقات",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "الفرز حسب",
             layoutBtnTitle: "المخطط",
             signInBtnTitle: "تسجيل الدخول",
-            signOutBtnTitle: "بيت_Sign Out_لاحقة",
+            signOutBtnTitle: "تسجيل الخروج",
             geolocationBtnTitle: "الموقع الجغرافي"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "يتعذر الحصول على الطبقات من الطبقات.",
             unableToOpenItem: "يتعذر فتح العنصر.",
             wmsSpatialReferenceError: "لا يتطابق الإسناد المكاني لطبقة WMS مع الإسناد المكاني للخريطة.",
-            noPublicItems: "بيت_There are no public items in the configured group or no items have been shared with this group yet._لاحقة",
+            noPublicItems: "لا توجد عناصر عامة في المجموعة التي تم تكوينها أو لم يتم مشاركة العناصر مع هذه المجموعة بعد.",
             emptyUsernamePassword: "الرجاء إدخال اسم المستخدم وكلمة المرور.",
             noFullScreenSupport: "لا يدعم المستعرض الحالي وضع ملء الشاشة.",
-            notMemberOfOrg: "بيت_You are not a member of this organization_لاحقة"
+            notMemberOfOrg: "لست عضو في هذه المؤسسة"
         }
 });

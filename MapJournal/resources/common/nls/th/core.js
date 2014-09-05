@@ -39,6 +39,12 @@
 				shareStatus3: "แอพพลิเคชั่นถุกแชร์ภายในองค์กร",
 				shareStatus4: "แอพพลิเคชั่นไม่ได้ถูกแชร์"
 			},
+			saveError: {
+				title: "ก้_Error saving the application_ษฺ",
+				err1Div1: "ก้_The application can't be saved because you already have another item with the same name (see your <a class='linkagolroot' target='_blank'>content folder</a>)._ษฺ",
+				err1Div2: "ก้_Please modify the Home Section title and save the application._ษฺ",
+				btnOk: "ก้_Edit the Home Section title_ษฺ"
+			},
 			share: {
 				firstSaveTitle: "บันทึกแอพพลิเคชั่นเรียบร้อยแล้ว",
 				firstSaveHeader: "โปรแกรมของคุณได้บันทึกลงใน %PORTAL% แต่ยังไม่ได้แบ่งปัน",
@@ -60,6 +66,7 @@
 				shareHeader2: "ใบสมัครของคุณสามารถเข้าถึงได้โดยสมาชิกขององค์กรของคุณ (ต้องเข้าสู่ระบบ)",
 				shareLinkCopy: "คัดลอก",
 				shareLinkCopied: "คัดลอก",
+				shareQ0: "ก้_How do I embed the application in a website?_ษฺ",
 				shareQ1Opt1: "ฉันจะเก็บโปรแกรมนี้เป็นส่วนตัวได้อย่างไร?",
 				shareQ1Opt2: "ฉันจะมีวิธีการประยุกต์ใช้ส่วนตัวหรือแบ่งปันต่อสาธารณชน?",
 				shareA1: "ใช้ %SHAREIMG% on <a href='%LINK1%' target='_blank'>หน้ารายการโปแกรมประยุกต์</a>.",
@@ -74,16 +81,16 @@
 				tabError: "กรุณาตรวจสอบความผิดพลาดในทุกๆ แถบ"
 			},
 			settingsLayout: {
-				title: "แบบร่าง",
+				title: "ก้_Layout_ษฺ",
 				explain: "คุณต้องการใช้รูปแบบโครงสร้างแบบใด?",
 				explainInit: "คุณสามารถแก้ไขโครงร่างได้ตลอดเวลาจากการตั้งค่าที่กล่องโต้ตอบ",
 				viewExample: "ดูเป็นตัวอย่างจริง"
 			},
 			settingsTheme: {
-				title: "หัวข้อ"
+				title: "ก้_Theme_ษฺ"
 			},
 			settingsHeader: {
-				title: "ส่วนหัว",
+				title: "ก้_Header_ษฺ",
 				logoEsri: "โลโก้ Esri",
 				logoNone: "ไม่มีโลโก้",
 				logoCustom: "แก้ไขโลโก้",

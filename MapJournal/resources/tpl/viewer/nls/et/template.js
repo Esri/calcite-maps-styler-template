@@ -8,9 +8,10 @@
 				step1: "Rakenduse laadimine",
 				step2: "Andmete laadimine",
 				step3: "Lähtestamine",
-				loadBuilder: "Koosturile lülitamine",
-				fail: "Kahjuks laadimine nurjus",
-				failButton: "Proovi uuesti"
+				loadBuilder: "Koostajale lülitamine",
+				long: "Kaardiajakirja lähtestamine",
+				long2: "Täname ootamast",
+				failButton: "Laadi rakendus uuesti"
 			},
 			signin: {
 				title: "Autentimine on nõutav",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Esines tõrge",
-				invalidConfig: "Fataalne viga: vigane konfiguratsioon",
-				invalidConfigNoApp: "Fataalne viga: veebikaardi rakenduse identifikaatorit pole failis index.html määratud",
+				invalidConfig: "Š_Invalid configuration_ä",
+				invalidConfigNoApp: "Š_Web Mapping Application identifier not specified in index.html._ä",
+				unspecifiedConfigOwner: "Š_Authorized owner hasn't been configured._ä",
+				invalidConfigOwner: "Š_Application owner is not authorized._ä",
 				createMap: "Kaarti ei saa luua",
-				invalidApp: "Fataalne viga: rakendust ei saa laadida",
-				notConfiguredDesktop: "Tere tulemast malli %TPL_NAME% veebirakendusse.<br />Rakendus pole veel konfigureeritud.",
-				notConfiguredMobile: "Tere tulemast malli %TPL_NAME% veebirakendusse. Rakendus pole veel konfigureeritud ja mobiilseadmed ei toeta koosturit.",
+				invalidApp: "Š_The %TPL_NAME% does not exist or is inaccessible._ä",
+				appLoadingFail: "Š_Something went wrong, the %TPL_NAME% did not load correctly._ä",
+				notConfiguredDesktop: "Š_The application is not configured yet._ä",
+				notConfiguredMobile: "Š_The %TPL_NAME% builder is not supported at this screen resolution._ä",
 				notAuthorized: "Teil ei ole luba sellele rakendusele juurde pääseda",
-				noBuilderIE8: "Brauserist Internet Explorer 9 varasemad versioonid ei toeta koosturit.",
-				mapLoadingFail: "Midagi läks valesti, kaarti ei saa laadida."
+				noBuilderIE: "Internet Exploreri versioonist %VERSION% varasemad versioonid ei toeta koostajat. %UPGRADE%",
+				noViewerIE: "Internet Explorer versioonist %VERSION% varasemad versioonid ei toeta seda rakendust. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Värskendage oma brauserit</a>.",
+				mapLoadingFail: "Š_Something went wrong, the Map did not load correctly._ä",
+				signOut: "Logi välja"
 			},
 			mobileView: {
 				tapForDetails: "Üksikasjade kuvamiseks puudutage",
-				swipeToExplore: "Uurimiseks nipsake",
-				tapForMap: "Kaardile naasmiseks puudutage"
+				clickForDetails: "Loe lähemalt",
+				swipeToExplore: "Uurimiseks svaipige",
+				tapForMap: "Kaardile naasmiseks puudutage",
+				clickForMap: "TAGASI KAARDI JUURDE"
 			},
 			floatLayout: {
 				scroll: "Keri"
@@ -62,7 +71,7 @@
 				copied: "Kopeeritud",
 				open: "Ava",
 				embed: "Lisa veebisaidile",
-				embedExplain: "Kasutage ajakirja veebisaidile lisamiseks HTML-koodi.",
+				embedExplain: "Kasutage ajakirja veebisaidile lisamiseks järgmist HTML-koodi.",
 				size: "Suurus (laius/kõrgus):"
 			}
         }

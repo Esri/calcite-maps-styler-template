@@ -9,8 +9,9 @@
 				step2: "Daten werden geladen",
 				step3: "Wird initialisiert",
 				loadBuilder: "Es wird zum Builder gewechselt",
-				fail: "Beim Laden ist ein Fehler aufgetreten",
-				failButton: "Wiederholen"
+				long: "Map Journal wird initialisiert",
+				long2: "Vielen Dank, dass Sie gewartet haben",
+				failButton: "Anwendung erneut laden"
 			},
 			signin: {
 				title: "Authentifizierung ist erforderlich",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Ein Fehler ist aufgetreten",
-				invalidConfig: "Schwerwiegender Fehler: Ungültige Konfiguration",
-				invalidConfigNoApp: "Schwerwiegender Fehler: Keine Web Mapping-Anwendungskennung in index.html angegeben",
+				invalidConfig: "ä_Invalid configuration_Ü",
+				invalidConfigNoApp: "ä_Web Mapping Application identifier not specified in index.html._Ü",
+				unspecifiedConfigOwner: "ä_Authorized owner hasn't been configured._Ü",
+				invalidConfigOwner: "ä_Application owner is not authorized._Ü",
 				createMap: "Karte kann nicht erstellt werden",
-				invalidApp: "Schwerwiegender Fehler: Die Anwendung kann nicht geladen werden",
-				notConfiguredDesktop: "Willkommen bei der %TPL_NAME% Webanwendung.<br />Die Anwendung ist noch nicht konfiguriert.",
-				notConfiguredMobile: "Willkommen bei der %TPL_NAME% Webanwendung. Die Anwendung ist noch nicht konfiguriert und der Builder wird auf mobilen Geräten nicht unterstützt.",
+				invalidApp: "ä_The %TPL_NAME% does not exist or is inaccessible._Ü",
+				appLoadingFail: "ä_Something went wrong, the %TPL_NAME% did not load correctly._Ü",
+				notConfiguredDesktop: "ä_The application is not configured yet._Ü",
+				notConfiguredMobile: "ä_The %TPL_NAME% builder is not supported at this screen resolution._Ü",
 				notAuthorized: "Sie sind nicht autorisiert, auf diese Anwendung zuzugreifen",
-				noBuilderIE8: "Der Builder wird von Internet Explorer vor Version 9 nicht unterstützt.",
-				mapLoadingFail: "Ein Fehler ist aufgetreten. Die Karte kann nicht geladen werden."
+				noBuilderIE: "Der Builder wird von Internet Explorer vor Version %VERSION% nicht unterstützt. %UPGRADE%",
+				noViewerIE: "Diese Anwendung wird von Internet Explorer vor Version %VERSION% nicht unterstützt. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Aktualisieren Sie Ihren Browser</a>.",
+				mapLoadingFail: "ä_Something went wrong, the Map did not load correctly._Ü",
+				signOut: "Abmelden"
 			},
 			mobileView: {
 				tapForDetails: "Zum Anzeigen von Details tippen",
+				clickForDetails: "Weitere Informationen",
 				swipeToExplore: "Zum Erkunden streichen",
-				tapForMap: "Zum Zurückkehren zur Karte tippen"
+				tapForMap: "Zum Zurückkehren zur Karte tippen",
+				clickForMap: "ZURÜCK ZUR KARTE"
 			},
 			floatLayout: {
 				scroll: "Bildlauf durchführen"

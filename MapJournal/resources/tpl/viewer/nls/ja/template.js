@@ -9,8 +9,9 @@
 				step2: "データを読み込んでいます",
 				step3: "初期化しています",
 				loadBuilder: "ビルダに切り替えています",
-				fail: "読み込みに失敗しました",
-				failButton: "再試行"
+				long: "マップ ジャーナルを初期化しています",
+				long2: "お待ちください",
+				failButton: "アプリケーションの再読み込み"
 			},
 			signin: {
 				title: "認証が必要です",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "エラーが発生しました",
-				invalidConfig: "致命的なエラー: 無効な構成",
-				invalidConfigNoApp: "致命的なエラー: Web マッピング アプリケーションの識別子が index.html で指定されていません",
+				invalidConfig: "須_Invalid configuration_鷗",
+				invalidConfigNoApp: "須_Web Mapping Application identifier not specified in index.html._鷗",
+				unspecifiedConfigOwner: "須_Authorized owner hasn't been configured._鷗",
+				invalidConfigOwner: "須_Application owner is not authorized._鷗",
 				createMap: "マップを作成できません",
-				invalidApp: "致命的なエラー: アプリケーションを読み込めません",
-				notConfiguredDesktop: "%TPL_NAME% Web アプリケーションへようこそ。<br />このアプリケーションは、まだ構成されていません。",
-				notConfiguredMobile: "%TPL_NAME% Web アプリケーションへようこそ。このアプリケーションは、まだ構成されていません。ビルダは、モバイル デバイスではサポートされていません。",
+				invalidApp: "須_The %TPL_NAME% does not exist or is inaccessible._鷗",
+				appLoadingFail: "須_Something went wrong, the %TPL_NAME% did not load correctly._鷗",
+				notConfiguredDesktop: "須_The application is not configured yet._鷗",
+				notConfiguredMobile: "須_The %TPL_NAME% builder is not supported at this screen resolution._鷗",
 				notAuthorized: "このアプリケーションにアクセスする権限がありません",
-				noBuilderIE8: "ビルダは、バージョン 9 より前の Internet Explorer ではサポートされていません。",
-				mapLoadingFail: "問題が発生しました。マップを読み込めません。"
+				noBuilderIE: "ビルダは、Internet Explorer %VERSION% より前のバージョンではサポートされていません。%アップグレード%",
+				noViewerIE: "このアプリケーションは、Internet Explorer %VERSION% より前のバージョンではサポートされていません。%アップグレード%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>ブラウザを更新してください</a>。",
+				mapLoadingFail: "須_Something went wrong, the Map did not load correctly._鷗",
+				signOut: "サイン アウト"
 			},
 			mobileView: {
 				tapForDetails: "タップして詳細を表示",
+				clickForDetails: "詳細",
 				swipeToExplore: "スワイプして探索",
-				tapForMap: "タップしてマップに戻る"
+				tapForMap: "タップしてマップに戻る",
+				clickForMap: "マップに戻る"
 			},
 			floatLayout: {
 				scroll: "スクロール"

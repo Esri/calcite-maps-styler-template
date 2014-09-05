@@ -11,7 +11,8 @@
 				disabled: "Šo funkciju administrators ir atspējojis",
 				url: "Lai manuālie ievadītu attēla web adresi",
 				userLookup: "Ielādēt albumus",
-				notImplemented: "Vēl nav ieviests."
+				notImplemented: "Vēl nav ieviests.",
+				noData: "Nav atrasts publisks albums"
 			},
 			imageSelector: {
 				lblStep1: "Izvēlēties servisu",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-pasta adrese vai Picasa/Google+ ID",
 				signInMsg2: "Konts nav atrasts",
-				signInMsg3: "Nav publiska albuma",
 				howToFind: "Kā atrast Picasa vai Google+ konta ID",
 				howToFind2: "Kopēt ciparus starp pirmo un otro \'/\' no jebkura Picasa vai G+ lapa"
 			},
@@ -62,9 +62,9 @@
 				url: "Vimeo video URL"
 			},
 			videoSelectorOther: {
-				explain1: "Karšu žurnāls nevar atskaņot neapstrādātus video (piemēram, avi, mpeg), bet var atskaņot mitinātus video failus ar iebūvētiem atskaņotājiem (piemēram, YouTube vai Vimeo).",
+				explain1: "Karšu žurnāls nevar atskaņot neapstrādātus video (piemēram, avi, mpeg), bet var atskaņot viesotus video failus ar iebūvētiem atskaņotājiem (piemēram, YouTube vai Vimeo).",
 				explain2: "Lielākā daļa video mitināšanas pakalpojumu piedāvā šo funkciju, jums ir jāatrod iespēja iegult video, nokopēt saņemto kodu un izmantot %WEBPAGE%.",
-				explain3: "Ja video vēlaties mitināt pats, varat arī izveidot HTML lapu, kurā tiek izmantots video atskaņotājs (piemēram, %EXAMPLE%), mitināt šo lapu un arī izmantot %WEBPAGE%.",
+				explain3: "Ja video vēlaties viesot pats, varat arī izveidot HTML lapu, kurā tiek izmantots video atskaņotājs (piemēram, %EXAMPLE%), viesot šo lapu un arī izmantot %WEBPAGE%.",
 				webpage: "Web lapas funkcija"
 			},
 			webpageSelectorHome: {
@@ -72,11 +72,14 @@
 				lblEmbed: "Iegult kodu",
 				lblOR: "VAI",
 				lblError1: "Kļūda, notīriet vienu no diviem ievades laukiem.",
-				lblError2: "Iegultais kods var saturēt tikai vienu <iframe>"
+				lblError2: "Iegultais kods var ietvert tikai vienu %IFRAMETAG%",
+				configure: "Konfigurēt"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Attēla URL ir jāsākas ar http:// un jābeidzas ar .jpg vai .png",
+				lblURLError: "Šķiet, ka šis attēls nav derīgs. Norādiet tiešu saiti uz attēla failu (jūsu vietrāža URL beigās parasti būs .jpg vai .png). Nedarbojas saites uz web lapu, kurā ir ietverts attēls.",
+				lblURLCheck: "Notiek attēla pārbaude...",
 				lblLabel: "Attēla teksts",
 				lblLabel1: "Uzraksts",
 				lblLabel2: "Novietot virs teksta",
@@ -91,10 +94,13 @@
 				lblPosition4: "Izstiept",
 				lblPosition5: "Pielāgots",
 				tooltipDimension: "Vērtību var norādīt \'px\' vai \'%\'",
+				tooltipDimension2: "ķ_The value has to be specified in 'px'_ū",
 				lblPosition2Explain: "(var apgriezt)",
 				lblPosition3Explain: "(netiks apgriezts)",
 				lblPosition3Explain2: "(platums vienmēr atbildīs panelim)",
-				lblPosition4Explain: "(var tikt izkropļots)"
+				lblPosition4Explain: "(var tikt izkropļots)",
+				unloadLbl: "ķ_Unload when reader navigates away to different section_ū",
+				unloadHelp: "ķ_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ū"
 			},
 			editorActionGeocode: {
 				lblTitle: "Adreses vai vietas noteikšana",
@@ -104,7 +110,7 @@
 				lblTitle: "Galvenā posma satura maiņa"
 			},
 			editorInlineMedia: {
-				lblTitle: "Attēla vai video ievietošana"
+				lblTitle: "Attēla, video vai web lapas ievietošana"
 			}
 		}
 	})

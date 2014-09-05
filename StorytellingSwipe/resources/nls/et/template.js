@@ -25,7 +25,7 @@
 				mapSave: "Viga veebikaardi salvestamisel",
 				notAuthorized: "Teil ei ole luba sellele rakendusele juurde pääseda",
 				conflictingProjectionsTitle: "Konfliktsed projektsioonid",
-				conflictingProjections: "Rullimisel ei toetata kahe erineva projektsiooniga veebikaardi kasutamist. Avage sätte ja kasutage veebikaarti, mis kasutab samasugust projektsiooni nagu esimene kaart.",
+				conflictingProjections: "Rullimisel ei toetata kahe erineva projektsiooniga veebikaardi kasutamist. Avage seaded ja kasutage veebikaarti, mis kasutab samasugust projektsiooni nagu esimene kaart.",
 				cpButton: "Sulge"
 			},
 			mobileView: {
@@ -65,7 +65,7 @@
 				savingApplication: "Salvestan rakenduse",
 				saveSuccess: "Rakenduse salvestamine õnnestus",
 				saveError: "Salvestamine ebaõnnestus, palun proovi uuesti",
-				saveError2: "Salvestamine nurjus vigase HTML-sildi tõttu nimes või kirjelduses",
+				saveError2: "Salvestamine nurjus vigase HTML-märgendi tõttu nimes või kirjelduses",
 				saveError3: "Pealkiri ei saa olla tühi",
 				signIn: "Palun logige konto kaudu sisse",
 				signInTwo: ", et salvestada rakendus."
@@ -191,7 +191,7 @@
 				settingsSwipePopupColor: "Päise värv"
 			},
 			initPopup: {
-				initHeader: "Tere tulemast koosturisse Võrdlus/pikksilm",
+				initHeader: "Tere tulemast koostajasse Võrdlus/pikksilm",
 				modalNext: "Järgmine",
 				modalPrev: "Eelmine",
 				modalApply: "Ava app"
@@ -240,10 +240,10 @@
 				shareQ1Opt2: "Kuidas saan hoida rakenduse privaatsena või jagada seda avalikult?",
 				shareA1: "Kasutage nuppu %SHAREIMG% <a href='%LINK1%' target='_blank'>rakenduse üksuse lehel</a>. Kui soovite tühistada ka veebikaardi jagamise, siis kasutage <a href='%LINK2%' target='_blank'>veebikaardi üksuse lehte</a>.",
 				shareA1bis: "Kui soovite jagamise eemaldada ka objektiteenuselt, kasutage <a href='%LINK1%' target='_blank'>objektiteenuse sisu lehte</a>.",
-				shareQ2: "Kuidas saab rakendust hiljem muuta?",
+				shareQ2: "Kuidas ma saan rakendust hiljem muuta?",
 				shareQ2bis: "Kuidas ma pääsen tagasi loomise liidesesse?",
 				shareA2div1: "Salvestage ja taaskasutage järgnevat linki %LINK1% või kasutage <a href='%LINK2%' target='_blank'>rakenduse sisu lehte</a>.",
-				shareA2div2: "Kui olete rakenduse omanikuna ArcGIS.com’i sisse logitud, sisaldab rakendus nuppu interaktiivse koosturi avamiseks.",				
+				shareA2div2: "Kui olete rakenduse omanikuna ArcGIS.com’i sisse logitud, sisaldab rakendus nuppu interaktiivse koostaja avamiseks.",				
 				shareQ3: "Kuhu on andmed majutatud?",
 				shareA3: "Rakenduse konfiguratsioon on salvestatud selles veebirakenduse üksuses</a>.",
 				shareWarning: "%WITH% jagamine on keelatud, kuna te pole <a href='%LINK%' target='_blank'>veebikaardi</a> omanik.",
@@ -253,7 +253,7 @@
 			directCreation: {
 				header: "Tere tulemast kasutama Rullimise/pikksilma koostajat",
 				mapPickHeader: "Alustamiseks sisestage veebikaardi id või kasutage otsingunuppu veebikaartide sirvimiseks.",
-				launchBuilder: "Käivita koostur",
+				launchBuilder: "Käivita koostaja",
 				chooseWebmapLbl: "Valige veebikaart...",
 				explain2: "Rullimise või pikksilma kaardiloo loomiseks kasutage allolevat nuppu kasutatava olemasoleva ArcGIS Online’i veebikaardi valimiseks. Teiseks võimaluseks on veebikaardi ID kleepimine allpool olevale väljale.",
 				explain3: "Kui soovite kaardiloos kasutada kahte veebikaarti, siis küsitakse selle valiku valimisel hiljem teist veebikaarti.",

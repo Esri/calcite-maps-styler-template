@@ -11,7 +11,8 @@
 				disabled: "תכונה זו הוגדרה כלא זמינה על ידי המנהל",
 				url: "בכדי להכניס באופן ידני כתובת אינטרנט או תמונה",
 				userLookup: "טען אלבומים",
-				notImplemented: "לא נתמך כעת."
+				notImplemented: "לא נתמך כעת.",
+				noData: "לא נמצא אלבום ציבורי"
 			},
 			imageSelector: {
 				lblStep1: "בחר את השירות",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "אמייל או Picasa/Google+ ID",
 				signInMsg2: "חשבון לא נמצא",
-				signInMsg3: "אין אלבום ציבורי",
 				howToFind: "כיצד למצוא את ה- ID של חשבון ה- Picasa או Google+",
 				howToFind2: "העתק תווים בין ה \'/\'  הראשון לשני של כל עמוד Picasa או G+"
 			},
@@ -62,9 +62,9 @@
 				url: "URL של וידאו של Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "חוברת מפות לא יכולה להציג וידאו גולמי (כגון avi, mpeg) אולם, היא יכולה להציג קבצי וידאו המתארחים בנגנים (כגון יוטיוב, Vimeo).",
+				explain1: "חוברת המפות לא יכולה להציג וידאו גולמי (כגון avi‏, mpeg) אולם היא יכולה להציג קבצי וידאו המתארחים בנגנים מובנים (כגון YouTube או Vimeo).",
 				explain2: "רוב שירותי הארוח של וידאו מאפשרים את היכולת הזו. אתה צריך למצוא את האפשרות לשבץ את הוידאו, להעתיק את הקוד המתאים ולהשתמש בתוך  %WEBPAGE%.",
-				explain3: "לחילופין, אם אתה רוצה לארח וידאו בעצמך, אתה יכול ליצור דף HTML המשתמש בצפיין וידאו כגון %EXAMPLE%, ארח דף זה וגם השתמש ב- %WEBPAGE%.",
+				explain3: "לחילופין, אם אתה רוצה לארח וידאו בעצמך, אתה יכול ליצור דף HTML המשתמש בנגן וידאו כגון %EXAMPLE%, לארח דף זה וגם להשתמש ב-%WEBPAGE%.",
 				webpage: "תכונות דף אינטרנט"
 			},
 			webpageSelectorHome: {
@@ -72,11 +72,14 @@
 				lblEmbed: "קוד מוטמע",
 				lblOR: "או",
 				lblError1: "שגיאה, נקה אחד משני שדות הקלט.",
-				lblError2: "קוד מוטמע יכול להכיל רק <iframe> אחד"
+				lblError2: "קוד מוטמע יכול להכיל רק %IFRAMETAG% אחד",
+				configure: "קבע תצורה"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "URL של תמונה צריך להתחיל עם http:// ולהסתיים עם .jpg או .png",
+				lblURLError: "תמונה זו אינה נראית חוקית. ציין קישור ישיר לקובץ תמונה (ה-URL שלך יסתיים בדרך כלל ב-‎.jpg או ‎.png). קישורים לדף אינטרנט שמכיל תמונה לא יפעלו.",
+				lblURLCheck: "בודק תמונה...",
 				lblLabel: "תאור תמונה",
 				lblLabel1: "כותרת",
 				lblLabel2: "טקסט מוצג בריחוף",
@@ -91,10 +94,13 @@
 				lblPosition4: "מתוח",
 				lblPosition5: "גודל מותאם",
 				tooltipDimension: "הערך יכול להיות מוגדר בתוך  'px' או '%'",
+				tooltipDimension2: "כן_The value has to be specified in 'px'_ש",
 				lblPosition2Explain: "(יכול להחתך)",
 				lblPosition3Explain: "(לא יכול להחתך)",
 				lblPosition3Explain2: "(רוחב תמיד יתאים ללוח)",
-				lblPosition4Explain: "(יכול להתעוות)"
+				lblPosition4Explain: "(יכול להתעוות)",
+				unloadLbl: "כן_Unload when reader navigates away to different section_ש",
+				unloadHelp: "כן_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ש"
 			},
 			editorActionGeocode: {
 				lblTitle: "אתר כתובת או מקום",
@@ -104,7 +110,7 @@
 				lblTitle: "שנה את תוכן התצוגה הראשית"
 			},
 			editorInlineMedia: {
-				lblTitle: "הכנס תמונה או קטע וידאו"
+				lblTitle: "הכנס תמונה, קטע וידאו או דף אינטרנט"
 			}
 		}
 	})

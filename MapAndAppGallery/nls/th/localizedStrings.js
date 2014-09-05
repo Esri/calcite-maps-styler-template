@@ -37,7 +37,7 @@ define({
         dateTextMobile: "วันที่",
         appTypeText: "ชนิด",
         appOwnerText: "เจ้าของ",
-        tryItButtonText: "ลองเดี๋ยวนี้",
+        tryItButtonText: "ก้_View_ษฺ",
         downloadButtonText: "ดาวน์โหลด",
         appDesText: "รายละเอียด",
         reviewText: "ความคิดเห็น",

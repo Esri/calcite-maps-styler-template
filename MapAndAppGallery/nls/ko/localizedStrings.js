@@ -37,7 +37,7 @@ define({
         dateTextMobile: "날짜",
         appTypeText: "유형",
         appOwnerText: "소유자",
-        tryItButtonText: "지금 평가판 사용",
+        tryItButtonText: "보기",
         downloadButtonText: "다운로드",
         appDesText: "설명",
         reviewText: "설명",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "정렬",
             layoutBtnTitle: "레이아웃",
             signInBtnTitle: "로그인",
-            signOutBtnTitle: "한_Sign Out_빠",
+            signOutBtnTitle: "로그아웃",
             geolocationBtnTitle: "지오로케이션"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "레이어에서 데이터를 가져올 수 없습니다.",
             unableToOpenItem: "항목을 열 수 없습니다.",
             wmsSpatialReferenceError: "WMS 레이어의 공간 참조가 맵의 공간 참조와 일치하지 않습니다.",
-            noPublicItems: "한_There are no public items in the configured group or no items have been shared with this group yet._빠",
+            noPublicItems: "구성된 그룹에 공용 항목이 없거나 이 그룹과 공유되는 항목이 아직 없습니다.",
             emptyUsernamePassword: "사용자 이름과 패스워드를 입력하세요.",
             noFullScreenSupport: "현재 브라우저에서 전체 화면 모드를 지원하지 않습니다.",
-            notMemberOfOrg: "한_You are not a member of this organization_빠"
+            notMemberOfOrg: "이 기관의 구성원이 아닙니다."
         }
 });

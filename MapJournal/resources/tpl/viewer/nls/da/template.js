@@ -9,8 +9,9 @@
 				step2: "Indlæser data",
 				step3: "Initialiserer",
 				loadBuilder: "Skifter til builder-programmet",
-				fail: "Beklager, indlæsning mislykkedes",
-				failButton: "Prøv igen"
+				long: "Kortjournal starter",
+				long2: "Tak, fordi du venter",
+				failButton: "Genindlæs programmet"
 			},
 			signin: {
 				title: "Godkendelse kræves",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Der opstod en fejl",
-				invalidConfig: "Uoprettelig fejl: Ugyldig konfiguration",
-				invalidConfigNoApp: "Uoprettelig fejl: Webkortapplikation-identifikator er ikke angivet i index.html",
+				invalidConfig: "ø_Invalid configuration_å",
+				invalidConfigNoApp: "ø_Web Mapping Application identifier not specified in index.html._å",
+				unspecifiedConfigOwner: "ø_Authorized owner hasn't been configured._å",
+				invalidConfigOwner: "ø_Application owner is not authorized._å",
 				createMap: "Kan ikke oprette kort",
-				invalidApp: "Uoprettelig fejl: Applikationen kan ikke indlæses",
-				notConfiguredDesktop: "Velkommen til webapplikationen %TPL_NAME%.<br />Applikationen er endnu ikke konfigureret.",
-				notConfiguredMobile: "Velkommen til webapplikationen %TPL_NAME%. Applikationen er endnu ikke konfigureret, og builder-programmet understøttes ikke på mobile enheder.",
+				invalidApp: "ø_The %TPL_NAME% does not exist or is inaccessible._å",
+				appLoadingFail: "ø_Something went wrong, the %TPL_NAME% did not load correctly._å",
+				notConfiguredDesktop: "ø_The application is not configured yet._å",
+				notConfiguredMobile: "ø_The %TPL_NAME% builder is not supported at this screen resolution._å",
 				notAuthorized: "Du er ikke autoriseret til at få adgang til denne applikation",
-				noBuilderIE8: "Builder-programmet understøttes ikke af Internet Explorer før version 9.",
-				mapLoadingFail: "Noget er gået galt, kortet kan ikke indlæses."
+				noBuilderIE: "Builder-programmet understøttes ikke i Internet Explorer før version %VERSION%. %UPGRADE%",
+				noViewerIE: "Denne applikation understøttes ikke i Internet Explorer før version %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Opdat\ér din browser</a>.",
+				mapLoadingFail: "ø_Something went wrong, the Map did not load correctly._å",
+				signOut: "Log ud"
 			},
 			mobileView: {
 				tapForDetails: "Tryk for at få oplysninger",
+				clickForDetails: "Find ud af mere",
 				swipeToExplore: "Stryg med fingeren for at udforske",
-				tapForMap: "Tryk for at vende tilbage til kortet"
+				tapForMap: "Tryk for at vende tilbage til kortet",
+				clickForMap: "TILBAGE TIL KORT"
 			},
 			floatLayout: {
 				scroll: "Rul"

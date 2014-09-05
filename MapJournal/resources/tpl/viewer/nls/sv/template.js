@@ -9,8 +9,9 @@
 				step2: "Läser in data",
 				step3: "Initierar",
 				loadBuilder: "Växlar till byggverktyget",
-				fail: "Det gick inte att läsa in",
-				failButton: "Försök igen"
+				long: "Kartjournalen initieras",
+				long2: "Tack för att du väntar",
+				failButton: "Läs in applikationen igen"
 			},
 			signin: {
 				title: "Autentisering krävs",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Ett fel har inträffat",
-				invalidConfig: "Allvarligt fel: ogiltig konfiguration",
-				invalidConfigNoApp: "Allvarligt fel: Webbkartapplikationens identifierare anges inte i index.html",
+				invalidConfig: "Å_Invalid configuration_ö",
+				invalidConfigNoApp: "Å_Web Mapping Application identifier not specified in index.html._ö",
+				unspecifiedConfigOwner: "Å_Authorized owner hasn't been configured._ö",
+				invalidConfigOwner: "Å_Application owner is not authorized._ö",
 				createMap: "Det gick inte att skapa kartan",
-				invalidApp: "Allvarligt fel: programmet kunde inte läsas in",
-				notConfiguredDesktop: "Välkommen till %TPL_NAME%-webbapplikationen.<br />Applikationen har inte konfigurerats ännu.",
-				notConfiguredMobile: "Välkommen till %TPL_NAME%-webbapplikationen. Applikationen har inte konfigurerats ännu och byggverktyget går inte att använda på mobila enheter.",
+				invalidApp: "Å_The %TPL_NAME% does not exist or is inaccessible._ö",
+				appLoadingFail: "Å_Something went wrong, the %TPL_NAME% did not load correctly._ö",
+				notConfiguredDesktop: "Å_The application is not configured yet._ö",
+				notConfiguredMobile: "Å_The %TPL_NAME% builder is not supported at this screen resolution._ö",
 				notAuthorized: "Du är inte behörig att konfigurera det här programmet",
-				noBuilderIE8: "Byggverktyget går inte att använda med tidigare versioner av Internet Explorer än version 9.",
-				mapLoadingFail: "Något gick fel, det går inte att läsa in kartan."
+				noBuilderIE: "Byggverktyget kan inte användas med Internet Explorer tidigare än version %VERSION%. %UPGRADE%",
+				noViewerIE: "Det här programmet kan inte användas med Internet Explorer tidigare än version %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Uppdatera din webbläsare</a>.",
+				mapLoadingFail: "Å_Something went wrong, the Map did not load correctly._ö",
+				signOut: "Logga ut"
 			},
 			mobileView: {
 				tapForDetails: "Peka för information",
+				clickForDetails: "Läs mer",
 				swipeToExplore: "Svep för att utforska",
-				tapForMap: "Peka för att återgå till kartan"
+				tapForMap: "Peka för att återgå till kartan",
+				clickForMap: "TILLBAKA TILL KARTAN"
 			},
 			floatLayout: {
 				scroll: "Bläddra"

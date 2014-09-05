@@ -9,8 +9,9 @@
 				step2: "Caricamento dati",
 				step3: "Inizializzazione in corso",
 				loadBuilder: "Passaggio al generatore",
-				fail: "Caricamento non riuscito",
-				failButton: "Riprova"
+				long: "Inizializzazione del Diario mappa in corso...",
+				long2: "Grazie per l\'attesa",
+				failButton: "Ricarica l\'applicazione"
 			},
 			signin: {
 				title: "Autenticazione obbligatoria",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Si è verificato un errore",
-				invalidConfig: "Errore irreversibile: configurazione non valida",
-				invalidConfigNoApp: "Errore irreversibile: identificatore dell\'applicazione di mappatura Web non specificato in index.html",
+				invalidConfig: "é_Invalid configuration_È",
+				invalidConfigNoApp: "é_Web Mapping Application identifier not specified in index.html._È",
+				unspecifiedConfigOwner: "é_Authorized owner hasn't been configured._È",
+				invalidConfigOwner: "é_Application owner is not authorized._È",
 				createMap: "Impossibile creare la mappa",
-				invalidApp: "Errore irreversibile: impossibile caricare l\'applicazione",
-				notConfiguredDesktop: "Benvenuti all\'applicazione Web %TPL_NAME%.<br />L\'applicazione non è ancora configurata.",
-				notConfiguredMobile: "Benvenuti all\'applicazione Web %TPL_NAME%. L\'applicazione non è ancora configurata e il generatore non è supportato su dispositivi mobili.",
+				invalidApp: "é_The %TPL_NAME% does not exist or is inaccessible._È",
+				appLoadingFail: "é_Something went wrong, the %TPL_NAME% did not load correctly._È",
+				notConfiguredDesktop: "é_The application is not configured yet._È",
+				notConfiguredMobile: "é_The %TPL_NAME% builder is not supported at this screen resolution._È",
 				notAuthorized: "L\'utente non è autorizzato ad accedere a questa applicazione",
-				noBuilderIE8: "Il generatore non è supportato nelle versioni di Internet Explorer precedenti alla versione 9.",
-				mapLoadingFail: "Si è verificato un errore. Impossibile caricare la mappa."
+				noBuilderIE: "Il generatore non è supportato nelle versioni di Internet Explorer precedenti alla versione %VERSION%. %UPGRADE%.",
+				noViewerIE: "Questa applicazione non è supportata nelle versioni di Internet Explorer precedenti alla versione %VERSION%. %UPGRADE%.",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Aggiornare il browser</a>.",
+				mapLoadingFail: "é_Something went wrong, the Map did not load correctly._È",
+				signOut: "Disconnetti"
 			},
 			mobileView: {
 				tapForDetails: "Toccare per i dettagli",
+				clickForDetails: "Ulteriori informazioni",
 				swipeToExplore: "Scorrere con un dito per esplorare",
-				tapForMap: "Toccare per tornare alla mappa"
+				tapForMap: "Toccare per tornare alla mappa",
+				clickForMap: "TORNA ALLA MAPPA"
 			},
 			floatLayout: {
 				scroll: "Scorrimento"

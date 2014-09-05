@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "A Camada não está no mapa web.",
             fieldNotFound: "Campo não encontrado",
-            popupNotSet: "Janela pop-up não ativada nesta camada"
+            popupNotSet: "Janela pop-up não ativada nesta camada",
+            noLayersSet: "ã_No layers defined in the config, the search box will not work_Ç"
         },
         page: {
             title: "Verificação de Informação",

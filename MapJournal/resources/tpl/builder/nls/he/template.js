@@ -21,10 +21,16 @@
 				cfgMedium: "בינוני",
 				cfgLarge: "גדול",
 				socialLinksLabel: "הצג את הקישורים המשותפים בחלק התחתון של כל קטע",
-				socialLinksDescr: "זה מאפשר לקוראים להתיחס ולקדם קטעים מסוימים של ה- %TPL_NAME% שלך. לדוגמא, אם אתה משתמש בסמל שיתוף חלקים, הקוראים יגיעו לחלק ספציפי ב- %TPL_NAME% במקום להגיע לתחילת הסיפור. הקוראים שלך יכולים להשתמש בקישור מדיה חברתית בכותרת החלק כדי לקדם את כל ה- %TPL_NAME% (לשונית הכותרת) כדי לעזור להם להגיע לתחילת ה- %TPL_NAME%."
+				socialLinksDescr: "כן_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._ש"
+			},
+			settingsLayoutFonts: {
+				title: "גופנים",
+				defaultLbl: "כן_Default_ש",
+				sectionTitleLbl: "כן_Section title_ש",
+				sectionContentLbl: "כן_Section content_ש"
 			},
 			initPopup: {
-				title: "ברוכים הבאים ל-"
+				title: "ברוכים הבאים אל"
 			},
 			addEditPopup: {
 				disabled: "לא ניתן להוסיף חלק חדש כיוון שמספר החלקים הגיע למספר המרבי המותר.",
@@ -35,6 +41,7 @@
 				stepMainStageExplain: "תוכן התצוגה הראשית",
 				stepPanelExplain: "תוכן",
 				stepMainStageNextTooltip: "הכנס את כותרת החלק ובחר את תכולת התצוגה הראשית",
+				stepMainStageNextTooltip2: "בחר את תוכן התצוגה הראשית",
 				step2NextTooltip: "הכנס את כותרת החלק ותכולת ה%LAYOUT-TYPE%",
 				stepNextTooltipNext: "התקדם לשלב הבא",
 				stepNextTooltipAdd: "להוספת החלק",
@@ -45,7 +52,8 @@
 			addEditViewText: {
 				editorPlaceholder: "הוסף כאן טקסט, קישורים וכמות מוגבלת של גרפיקה",
 				editorActionsTitle: "פעולות תצוגה ראשית",
-				editorActionsHelpDescr: "השתמש בפקדים הללו ליצור קישורים שישנו את התצוגה הראשית. לדוגמא, כאשר הקורא לוחץ על קישור אתה תרצה להתמקד במפה על מיקום ספציפי, להציג web map אחר או להציג תמונה."
+				editorActionsHelpDescr: "השתמש בפקדים הללו ליצור קישורים שישנו את התצוגה הראשית. לדוגמא, כאשר הקורא לוחץ על קישור אתה תרצה להתמקד במפה על מיקום ספציפי, להציג web map אחר או להציג תמונה.",
+				mainStageDisabled: "פעולות תצוגה ראשית אינן זמינות כאשר העורך בגודל המרבי"
 			},
 			organizePopup: {
 				title: "ארגן",
@@ -56,11 +64,14 @@
 				checkDisplayReverse: "הצג חלקים בסדר הפוך",
 				btnApplyWarning: "אשר מחיקה של %NB% חלקים.",
 				deleteTooltip: "מחק",
-				firstSectionExplain: "(לא ניתן להזיז את חלק דף הבית)"
+				firstSectionExplain: "(לא ניתן להזיז את חלק דף הבית)",
+				exportMainStage: "תוכן התצוגה הראשית",
+				exportPanel: "תוכן לוח",
+				exportActions: "פעולות תצוגה ראשית"
 			},
 			exportData: {
 				btn: "יצוא תוכן",
-				tooltip: "יצוא התוכן שלך מאפשר לך לצפות וליצור גיבוי של החוברת שלך במקרה ותמחק אותה בטעות. העתק והדבק את תוכן הדף אל קובץ word."
+				tooltip: "יצוא התוכן שלך מאפשר לך לצפות וליצור גיבוי של התוכן שלך במקרה ותמחק אותו בטעות. פשוט העתק והדבק את התוכן מהדף לכל מעבד תמלילים."
 			},
 			help: {
 				lblHelp: "עזרה",
@@ -71,14 +82,14 @@
 				lblPublish: "שתף",
 				lblTips: "טיפים",
 				lblMore: "נדרש עוד?",
-				lblLink: "בקר באתר סיפורי מפות",
+				lblLink: "בקר באתר מפות סיפור של Esri.",
 				content1Div1: "ניתן לשלב מגוון סגנונות בעת בניית הסיפור שלך. ה- <strong>%LAYOUT_TITLE%</strong> בדרך כלל כולל את הטקסט שלך, וידאו ותמונות בזמן שהמפות שלך מתחלפות <strong>בתצוגה הראשית</strong>. עם זאת, ה- %TPL_NAME%  מאפשר לך להוסיף תמונות, וידאו ותרשימים גם בתוך התצוגה הראשית.",
 				content1Div2: "הוספת חלקים מאפשרת לך להתאים אישית את חויית הסיפור. כאשר הקוראים גוללים את הטקסט בתוך ה%LAYOUT_TITLE% המפה בתצוגה הראשית יכולה להתמקד לנקודות מפתח, ומפות ותמונות יכולות להתחלף באופן אוטומטי כדי לתמוך במסר שלך.",
-				content2Div1: "כאן הוא מקום שבו אתה יכול להתאים את תצוגת ה- %TPL_NAME%. כאן ניתן לעדן את סכימות הצבעים, תצוגות המפה ועובי הפריטים השונים.",
+				content2Div1: "כן_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._ש",
 				content2Div2: "אתה יכול גם להוסיף קישורי שיתוף לפייסבוק, טוויטר, ו- Bitly, כדי שקוראים יוכלו בקלות להפיץ את ה- %TPL_NAME% שלך לאחרים.",
 				content3Div1: "התוכן שלך מאורגן בחלקים. אתה יכול להגדיר חלקים רבים ככל שתרצה (חשוב עליהם כמו פרקים קטנים). המעבר בין הפרקים חשוב; בעזרת כלי זה באפשרותך לסדר מחדש או למחוק חלקים כרצונך.",
 				content4Div1: "מצאת שגיאה או רוצה לשנות את התוכן שלך? אל דאגה. חפש את סמל העריכה באפליקציה כדי לבצע שינויים בתוכן שלך. אתה יכול להשתמש ביכולות העריכה פעמים רבות בעת שאתה מפתח את ה-  %TPL_NAME% שלך!",
-				content5Div1: "%TPL_NAME% נשמר(ת) בחשבון ה- %PORTAL% פרטי כברירת מחדל. אתה יכול להחליט לחלוק אותו עם הארגון שלך, או לפתוח אותו לעולם. אנחנו אפילו מספקים לך  URL מקוצר, כך שתוכל לשתף אותו בצורה קלה יותר.",
+				content5Div1: "%TPL_NAME% נשמר בחשבון ה-%PORTAL% והוא פרטי כברירת מחדל. אתה יכול להחליט לחלוק אותו עם הארגון שלך, או לפתוח אותו לעולם. אנחנו אפילו מספקים לך URL מקוצר, כך שתוכל לשתף אותו בצורה קלה יותר.",
 				content6Div1: "כותרת חלק דף הבית שלך היא גם כותרת החוברת; חשוב על חלק דף הבית שלך כעל העמוד הראשי של הסיפור שלך. כותרת חלק דף הבית שלך תוצג גם כאשר הקוראים ינווטו לחוברת.",
 				content6Div2: "ה%LAYOUT_TITLE% שלך לא חייב להכיל רק טקסט. שקול לכלול בתוכו גם וידאו ותמונות כדי להחיות את הסיפור ולגוון חלקי טקסט ארוכים."
 			},
@@ -89,7 +100,8 @@
 				lblHelp: "סייר"
 			},
 			firstAddSplash: {
-				thisis: "זהו"
+				thisis: "זהו",
+				lblMain: "זוהי התצוגה הראשית %BR%"
 			}
         }
     })

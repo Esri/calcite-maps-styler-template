@@ -16,6 +16,9 @@
  */
 define(
     ({
+        map: {
+            error: "Karttaa ei voi luoda"
+        },
         tooltips: {
             search: "Etsi",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Nykyinen sijainti",  // Command button to zoom and pan to the current geographical position reported by the browser
@@ -51,6 +54,7 @@ define(
             geolocationDenied: "Tällä sivustolla ei ole oikeutta nykyisen sijainnin hakemiseen",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Selain ei pystynyt hakemaan nykyistä sijaintia",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Selain ei pystynyt hakemaan nykyistä sijaintia ajoissa",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            noSearchLayerConfigured: "Å_No find layer has been configured_ö",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "Tätä hakukarttatasoa ei löytynyt kartasta",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "Kenttiä ei löytynyt karttatasolle.<br><br>Varmista, että tämä karttataso on olemassa karttasisällön juuressa. Sisäkkäiset palvelut, kuten ArcGIS for Server -dynaamiset karttapalvelut, on lisättävä karttaan karttataso kerrallaan (mukaan lukien karttatason indeksinumero), jotta niitä voidaan käyttää hakukarttatasoina. Tiilitettyjä palveluita ei voi käyttää hakukarttatasoina.",
             searchFieldMissing: "Tätä kenttää ei löydy kartan hakukarttatasosta",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
