@@ -375,9 +375,17 @@ define([
         },
         // create lat lon point
         _calculateLatLong: function (evt) {
-            // todo: assuming mercator. may need to project
-            var normalizedVal = webMercatorUtils.xyToLngLat(evt.mapPoint.x, evt.mapPoint.y);
-            return normalizedVal;
+            // return string
+            var str = '';
+            var sr = evt.mapPoint.spatialReference;
+            // if spatial ref is web mercator
+            if(sr.isWebMercator()){
+                // convert to lat/lon
+                var ll = webMercatorUtils.xyToLngLat(evt.mapPoint.x, evt.mapPoint.y);
+                // create string
+                str = nls.user.latitude + ': ' + ll[1].toFixed(5) + ', ' + '&nbsp;' + nls.user.longitude + ': ' + ll[0].toFixed(5);
+            }
+            return str;
         },
         //function to set the logo-path, application title and details
         _setAppConfigurations: function (appConfigurations) {
@@ -527,7 +535,7 @@ define([
         _createFormElements: function (currentField, index, referenceNode) {
             var radioContainer, fieldname, radioContent, inputContent, labelContent, fieldLabelText, selectOptions, inputLabel, radioInput, formContent, requireField, userFormNode,
                 checkboxContainer, checkboxContent, checkBoxCounter = 0,
-                helpBlock, rangeHelpText, inputGroupContainer, inputGroupAddOn;
+                helpBlock, rangeHelpText, inputGroupContainer;
             userFormNode = dom.byId('userForm');
             //code to put asterisk mark for mandatory fields and also to give it a mandatory class.
             formContent = domConstruct.create("div", {}, userFormNode);
@@ -558,7 +566,7 @@ define([
                     "for": fieldname,
                     className: "control-label",
                     innerHTML: fieldLabelText,
-                    id: fieldLabelText + "" + index
+                    id: fieldname + "" + index
                 }, formContent);
             }
             if (requireField && labelContent) {
@@ -704,11 +712,12 @@ define([
                 } else {
                     //if field type is date
                     if (currentField.type == "esriFieldTypeDate") {
+                        var inputRangeDateGroupContainer = this._addNotationIcon(formContent, "glyphicon-calendar");
                         inputContent = domConstruct.create("input", {
                             type: "text",
                             id: fieldname,
                             className: "form-control hasDatetimepicker"
-                        }, formContent);
+                        }, inputRangeDateGroupContainer);
                         $(inputContent).datetimepicker({
                             useSeconds: false,
                             maxDate: locale.format(new Date(currentField.domain.maxValue), {
@@ -718,13 +727,22 @@ define([
                                 fullYear: true
                             })
                         }).on("dp.hide", function (evt) {
+                            if ($(evt.currentTarget).data('DateTimePicker').getDate() === null) {
+                                domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
+                                domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
+                            }
                             if (evt.currentTarget.value === "") {
-                                domClass.remove(evt.target.parentElement, "has-success");
-                                domClass.remove(evt.target.parentElement, "has-error");
+                                domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
+                                domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
                             }
                         }).on("dp.change", function (evt) {
-                            domClass.add(evt.target.parentElement, "has-success");
-                            domClass.remove(evt.target.parentElement, "has-error");
+                            domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
+                            domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
+
+                            if ($(evt.currentTarget).data('DateTimePicker').getDate() === null) {
+                                domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
+                                domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
+                            }
                         });
                         if (currentField.defaultValue) {
                             var m = new Date(currentField.defaultValue);
@@ -763,25 +781,9 @@ define([
                         }, formContent);
                     } else {
                         if (currentField.displayType && currentField.displayType === "email") {
-                            inputGroupContainer = domConstruct.create("div", {
-                                className: "input-group"
-                            }, formContent);
-                            inputGroupAddOn = domConstruct.create("span", {
-                                className: "input-group-addon"
-                            }, inputGroupContainer);
-                            domConstruct.create("span", {
-                                className: "glyphicon glyphicon-envelope"
-                            }, inputGroupAddOn);
+                            inputGroupContainer = this._addNotationIcon(formContent, "glyphicon-envelope");
                         } else if (currentField.displayType && currentField.displayType === "url") {
-                            inputGroupContainer = domConstruct.create("div", {
-                                className: "input-group"
-                            }, formContent);
-                            inputGroupAddOn = domConstruct.create("span", {
-                                className: "input-group-addon"
-                            }, inputGroupContainer);
-                            domConstruct.create("span", {
-                                className: "glyphicon glyphicon-link"
-                            }, inputGroupAddOn);
+                            inputGroupContainer = this._addNotationIcon(formContent, "glyphicon-link");
                         }
                         inputContent = domConstruct.create("input", {
                             type: "text",
@@ -809,7 +811,7 @@ define([
                         "data-input-type": "binaryInteger",
                         "id": fieldname
                     }, inputLabel);
-                    domAttr.set(inputContent, "checkboxContainerIndex", checkBoxCounter);
+                    domAttr.set(inputContent, "data-checkbox-index", checkBoxCounter);
                     inputLabel.innerHTML += fieldLabelText;
                     checkBoxCounter++;
                     break;
@@ -851,27 +853,28 @@ define([
                     }, formContent);
                     break;
                 case "esriFieldTypeDate":
+                    var inputDateGroupContainer = this._addNotationIcon(formContent, "glyphicon-calendar");
                     inputContent = domConstruct.create("input", {
                         type: "text",
                         value: "",
                         className: "form-control hasDatetimepicker",
                         "data-input-type": "Date",
                         "id": fieldname
-                    }, formContent);
+                    }, inputDateGroupContainer);
                     $(inputContent).datetimepicker({
                         useSeconds: false
                     }).on('dp.change, dp.show', function (evt) {
-                        domClass.remove(evt.target.parentElement, "has-error");
-                        domClass.add(evt.target.parentElement, "has-success");
+                        domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
+                        domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
                     }).on('dp.error', function (evt) {
                         evt.target.value = '';
                         $(this).data("DateTimePicker").hide();
-                        domClass.remove(evt.target.parentElement, "has-success");
-                        domClass.add(evt.target.parentElement, "has-error");
+                        domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
+                        domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
                     }).on("dp.hide", function (evt) {
                         if (evt.currentTarget.value === "") {
-                            domClass.remove(evt.target.parentElement, "has-success");
-                            domClass.remove(evt.target.parentElement, "has-error");
+                            domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
+                            domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
                         }
                     });
                     break;
@@ -887,7 +890,7 @@ define([
                 }
                 //Add specific display type if present
                 if (currentField.displayType && currentField.displayType !== "") {
-                    domAttr.set(inputContent, "displayType", currentField.displayType);
+                    domAttr.set(inputContent, "data-display-type", currentField.displayType);
                 }
                 on(inputContent, "keyup", lang.hitch(this, function (evt) {
                     this._validateField(evt, true);
@@ -971,7 +974,8 @@ define([
                     if (!currentInput.isTypeDependent) {
                         return true;
                     }
-                    domConstruct.destroy(dom.byId(currentInput.name).parentNode);
+                    this._resetSubTypeFields(currentInput);
+                    this._resizeMap();
                 }));
                 return true;
             } else {
@@ -1045,11 +1049,16 @@ define([
                 }
                 //code to be executed when the input is already present
                 if (dom.byId(field.name)) {
-                    domConstruct.destroy(dom.byId(field.name).parentNode);
+                    this._resetSubTypeFields(field);
                 }
                 this._createFormElements(field, index, referenceNode);
-                referenceNode = dom.byId(field.name).parentNode;
+                if (field.type == "esriFieldTypeDate" || field.displayType == "url" || field.displayType == "email") {
+                    referenceNode = dom.byId(field.name).parentNode.parentNode;
+                } else {
+                    referenceNode = dom.byId(field.name).parentNode;
+                }
             }));
+            this._resizeMap();
         },
         // validate form field
         _validateField: function (currentNode, iskeyPress) {
@@ -1061,8 +1070,8 @@ define([
             if (iskeyPress) {
                 inputValue = currentNode.currentTarget.value;
                 inputType = domAttr.get(currentNode.currentTarget, "data-input-type");
-                if (domAttr.get(currentNode.currentTarget, "displayType") !== null) {
-                    displayType = domAttr.get(currentNode.currentTarget, "displayType");
+                if (domAttr.get(currentNode.currentTarget, "data-display-type") !== null) {
+                    displayType = domAttr.get(currentNode.currentTarget, "data-display-type");
                 }
                 //Since we are adding a new div inside formContent in case of email and url
                 //We need to traverse one step more
@@ -1078,8 +1087,8 @@ define([
             } else {
                 inputValue = query(".form-control", currentNode)[0].value;
                 inputType = domAttr.get(query(".form-control", currentNode)[0], "data-input-type");
-                if (domAttr.get(query(".form-control", currentNode)[0], "displayType") !== null) {
-                    displayType = domAttr.get(query(".form-control", currentNode)[0], "displayType");
+                if (domAttr.get(query(".form-control", currentNode)[0], "data-display-type") !== null) {
+                    displayType = domAttr.get(query(".form-control", currentNode)[0], "data-display-type");
                 }
                 node = query(".form-control", currentNode)[0].parentElement;
             }
@@ -1143,6 +1152,10 @@ define([
                     domClass.remove(node, "has-success");
                 }
             });
+            array.forEach(query(".geoFormQuestionare .input-group"), function (currentInput) {
+                domClass.remove(currentInput.parentElement, "has-error");
+                domClass.remove(currentInput.parentElement, "has-success");
+            });
             // each radio
             array.forEach(query(".geoFormQuestionare .radioContainer"), function (currentField) {
                 domClass.remove(currentField.parentNode, "has-success");
@@ -1154,7 +1167,7 @@ define([
             // each checkbox
             array.forEach(query(".checkboxInput:checked"), function (currentField) {
                 domAttr.set(currentField, "checked", false);
-                domClass.remove(query(".checkboxContainer")[domAttr.get(currentField, "checkboxContainerIndex")].parentNode, "has-success");
+                domClass.remove(query(".checkboxContainer")[domAttr.get(currentField, "data-checkbox-index")].parentNode, "has-success");
             });
             // clear attachment
             var attachNode = dom.byId("geoFormAttachment");
@@ -1199,12 +1212,11 @@ define([
                 this.map = response.map;
                 this.defaultExtent = this.map.extent;
                 this._resizeMap();
-                //Check for the appid if it is not present load entire application with webmap defaults
-                if (!this.config.appid && this.config.webmap) {
-                    this._setWebmapDefaults();
-                }
+                // webmap defaults
+                this._setWebmapDefaults();
                 // default layer
                 this._setLayerDefaults();
+                // set configuration
                 this._setAppConfigurations(this.config.details);
                 // window title
                 if (this.config.details && this.config.details.Title) {
@@ -1257,10 +1269,9 @@ define([
                 }));
                 // mouse move and click, show lat lon
                 on(this.map, 'mouse-move, click', lang.hitch(this, function (evt) {
+                    // get coords string
                     var coords = this._calculateLatLong(evt);
-                    var coordinatesValue = nls.user.latitude + ': ' + coords[1].toFixed(5) + ', ';
-                    coordinatesValue += '&nbsp;' + nls.user.longitude + ': ' + coords[0].toFixed(5);
-                    domAttr.set(dom.byId("coordinatesValue"), "innerHTML", coordinatesValue);
+                    domAttr.set(dom.byId("coordinatesValue"), "innerHTML", coords);
                 }));
                 // Add desireable touch behaviors here
                 if (this.map.hasOwnProperty("isScrollWheelZoom")) {
@@ -1835,6 +1846,11 @@ define([
             if (!this.config.form_layer || !this.config.form_layer.id) {
                 array.some(this.config.itemInfo.itemData.operationalLayers, lang.hitch(this, function (currentLayer) {
                     if (currentLayer.layerType && currentLayer.layerType === "ArcGISFeatureLayer") {
+                        // if no object present
+                        if (!this.config.form_layer) {
+                            this.config.form_layer = {};
+                        }
+                        // set id
                         this.config.form_layer.id = currentLayer.id;
                         return true;
                     }
@@ -1852,16 +1868,33 @@ define([
         },
         // set defaults for app settings
         _setWebmapDefaults: function () {
-            if (this.config.details.Title !== false) {
-                this.config.details.Title = this.config.itemInfo.item.title;
+            // if details not defined
+            if (!this.config.details) {
+                this.config.details = {};
             }
-            if (this.config.details.Description !== false) {
-                this.config.details.Description = this.config.itemInfo.item.snippet;
+            // if no app title
+            if (!this.config.details.Title) {
+                // if item
+                if (this.config.itemInfo && this.config.itemInfo.item) {
+                    // use webmap title
+                    this.config.details.Title = this.config.itemInfo.item.title;
+                }
             }
-            if (this.config.itemInfo.item.thumbnail && this.config.details.Logo !== false) {
-                this.config.details.Logo = this.config.sharinghost + "/sharing/rest/content/items/" + this.config.webmap + '/info/' + this.config.itemInfo.item.thumbnail;
-            } else {
-                this.config.details.Logo = false;
+            // if no app description
+            if (!this.config.details.Description) {
+                // if item
+                if (this.config.itemInfo && this.config.itemInfo.item) {
+                    // use webmap snippet
+                    this.config.details.Description = this.config.itemInfo.item.snippet;
+                }
+            }
+            // if no app logo
+            if (!this.config.details.Logo) {
+                // if item and thumb
+                if (this.config.itemInfo && this.config.itemInfo.item && this.config.itemInfo.item.thumbnail) {
+                    // use webmap logo
+                    this.config.details.Logo = this.config.sharinghost + "/sharing/rest/content/items/" + this.config.webmap + '/info/' + this.config.itemInfo.item.thumbnail;
+                }
             }
         },
         // resize map
@@ -1877,6 +1910,16 @@ define([
             var total = 0;
             var locationTabs = query("#location_pills li");
             var tabContents = query("#location_tabs .tab-pane");
+            if (!this.config.locationSearchOptions) {
+                this.config.locationSearchOptions = {
+                    "enableMyLocation": true,
+                    "enableSearch": true,
+                    "enableLatLng": true,
+                    "enableUSNG": false,
+                    "enableMGRS": false,
+                    "enableUTM": false
+                };
+            }
             for (var key in this.config.locationSearchOptions) {
                 if (this.config.locationSearchOptions.hasOwnProperty(key)) {
                     if (!this.config.locationSearchOptions[key]) {
@@ -1904,13 +1947,35 @@ define([
                     domStyle.set(node, 'display', 'none');
                 }
                 var panelNode = dom.byId('location_panel');
-                if(panelNode){
-                    domClass.remove(panelNode, 'panel panel-default');   
+                if (panelNode) {
+                    domClass.remove(panelNode, 'panel panel-default');
                 }
                 var panelBodyNode = dom.byId('location_panel_body');
-                if(panelBodyNode){
-                    domClass.remove(panelBodyNode, 'panel-body');   
+                if (panelBodyNode) {
+                    domClass.remove(panelBodyNode, 'panel-body');
                 }
+            }
+        },
+
+        _addNotationIcon: function (formContent, imageIconClass) {
+            var inputIconGroupContainer, inputIconGroupAddOn;
+            inputIconGroupContainer = domConstruct.create("div", {
+                className: "input-group"
+            }, formContent);
+            inputIconGroupAddOn = domConstruct.create("span", {
+                className: "input-group-addon"
+            }, inputIconGroupContainer);
+            domConstruct.create("span", {
+                className: "glyphicon " + imageIconClass
+            }, inputIconGroupAddOn);
+            return inputIconGroupContainer;
+        },
+
+        _resetSubTypeFields: function (currentInput) {
+            if (currentInput.type == "esriFieldTypeDate" || currentInput.displayType == "url" || currentInput.displayType == "email") {
+                domConstruct.destroy(dom.byId(currentInput.name).parentNode.parentNode);
+            } else {
+                domConstruct.destroy(dom.byId(currentInput.name).parentNode);
             }
         }
     });
