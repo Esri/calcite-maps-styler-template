@@ -2,7 +2,7 @@
      ({
         map: {
             error: "Não foi possível criar o mapa",
-            views: "ã_views._Ç"
+            views: "visualizações."
         },
         report: {
             flag: "Marcar como inapropriado",

@@ -12,7 +12,7 @@
 				url: "ในการป้อนที่อยู่เว็บของภาพด้วยตนเอง",
 				userLookup: "โหลดอัลบัม",
 				notImplemented: "ยังไม่ได้ดำเนินการ",
-				noData: "ก้_No public album found_ษฺ"
+				noData: "ไม่พบวิดีโอสาธารณะ"
 			},
 			imageSelector: {
 				lblStep1: "เลือกการบริการ",
@@ -56,15 +56,15 @@
 				howToFind: "วิธีการค้นหาชื่อ YouTube",
 				howToFind2: "ชื่อผู้ใช้ไม่แสดงอยู่ด้านล่างวิดีโอ",
 				found: "พบ",
-				noData: "ก้_No public videos found_ษฺ"
+				noData: "ไม่พบวิดีโอสาธารณะ"
 			},
 			videoSelectorVimeo: {
 				url: "URL ของวิดีโอจาก Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "ก้_The Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._ษฺ",
+				explain1: "แผนที่การเดินทางไม่สามารถเล่นไฟล์วิดีโอต้นฉบับได้ เช่น avi, mpeg ได้ แต่สามารถเล่นไฟล์วิดีโอที่ฝากไว้กับเว็บไซต์ต่างๆ เช่น  YouTube หรือ Vimeo ได้",
 				explain2: "วิดีโอออนไลน์บริการโฮสติ้งส่วนมากมีคุณสมบัติที่คุณจะต้องไปหาตัวเลือกที่จะฝังวิดีโอคัดลอกโค้ดที่กำหนดและใช้ %WEBPAGE%",
-				explain3: "ก้_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._ษฺ",
+				explain3: "หรือถ้าคุณต้องการโฮสต์วิดีโอตัวคุณเองคุณสามารถสร้างเพจ HTML ที่ใช้เครื่องเล่นวิดีโอ เช่น %EXAMPLE% เจ้าของหน้านั้นและยังใช้%WEBPAGE%",
 				webpage: "ฟีเจอร์ของหน้าเว็บ"
 			},
 			webpageSelectorHome: {
@@ -72,14 +72,14 @@
 				lblEmbed: "รหัสที่ฝัง",
 				lblOR: "หรือ",
 				lblError1: "ข้อผิดพลาด ยกเลิกหนึ่งในสองฟิลด์ที่นำเข้า",
-				lblError2: "ก้_Embed code can only contain one %IFRAMETAG%_ษฺ",
-				configure: "ก้_Configure_ษฺ"
+				lblError2: "รหัสที่ฝังสามารถมีได้เพียงชุดเดียวเท่านั้น %IFRAMETAG%",
+				configure: "การตั้งค่า"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "URL ของรูปภาพควรเริ่มต้นด้วย http:// และลงท้ายด้วย .jpg หรือ .png",
-				lblURLError: "ก้_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work._ษฺ",
-				lblURLCheck: "ก้_Checking image..._ษฺ",
+				lblURLError: "ไฟล์ภาพนี้ไม่ถูกต้อง กรุณากำหนดลิงค์ไปยังไฟล์ภาพโดยตรง ( URL ของคุณควรลงท้ายด้วย .jpg หรือ .png). ลิงค์ไปยังหน้าเว็บที่เก็บภาพไม่ถูกต้อง",
+				lblURLCheck: "กำลังตรวจสอบภาพ...",
 				lblLabel: "คำอธิบายรูปภาพ",
 				lblLabel1: "คำบรรยายภาพ",
 				lblLabel2: "เลื่อนข้อความ",
@@ -110,7 +110,7 @@
 				lblTitle: "เปลี่ยนเนื้อหาที่สือเวทีหลัก"
 			},
 			editorInlineMedia: {
-				lblTitle: "ก้_Insert an image, video or web page_ษฺ"
+				lblTitle: "เพิ่มภาพหรือวิดีโอ"
 			}
 		}
 	})

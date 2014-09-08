@@ -89,8 +89,8 @@
 				content2Div2: "Můžete také přidat odkazy pro sdílení na Facebooku, Twitteru a Bitly, aby čtenáři mohli %TPL_NAME% snadno šířit mezi ostatní.",
 				content3Div1: "Váš obsah je rozdělen do částí. Můžete jich mít libovolný počet (berte je jako malé kapitoly). Je důležité, jak kapitoly plynou za sebou, a proto je v části Organizovat můžete libovolně přeřazovat a odstraňovat.",
 				content4Div1: "Našli jste chybu nebo chcete změnit svůj materiál? Žádný problém. Hledejte v aplikaci ikonu úprav, která vám umožní změnit obsah. Funkce úprav použijete při vytváření %TPL_NAME% mnohokrát!",
-				content5Div1: "%TPL_NAME% se ve výchozím nastavení ukládá do vašeho účtu %PORTAL% a v soukromém režimu. Můžete se ale rozhodnout sdílet jej v rámci organizací, nebo veřejně. Sdělíme vám i zkrácenou adresu URL umožňující snadnější sdílení.",
-				content6Div1: "Nadpis domovské části je také nadpisem vašeho deníku. Domovská část je prakticky „obálkou“ vašeho příběhu. Nadpis domovské části zůstane viditelný, zatímco budou čtenáři procházet váš deník.",
+				content5Div1: "%TPL_NAME% se ve výchozím nastavení ukládá do vašeho účtu %PORTAL%, v soukromém režimu. Můžete se ale rozhodnout sdílet jej v rámci organizací, nebo veřejně. Sdělíme vám i zkrácenou adresu URL umožňující snadnější sdílení.",
+				content6Div1: "Nadpis domovské části je také nadpisem vašeho deníku. Domovská část je prakticky „obálkou“ vašeho příběhu. Nadpis domovské části zůstane viditelný, zatímco čtenáři budou procházet váš deník.",
 				content6Div2: "Vaše rozvržení %LAYOUT_TITLE% nemusí tvořit jen text. Můžete použít i fotografie a videa, abyste příběh oživili a rozdělili dlouhé bloky textu!"
 			},
 			landing: {

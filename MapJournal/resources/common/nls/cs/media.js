@@ -72,13 +72,13 @@
 				lblEmbed: "Kód vložení",
 				lblOR: "NEBO",
 				lblError1: "Chyba, vymažte jedno ze dvou vstupních polí.",
-				lblError2: "Kód vložení může obsahovat pouze jeden prvek %IFRAMETAG%.",
+				lblError2: "Vložený kód může obsahovat pouze jeden prvek %IFRAMETAG%.",
 				configure: "Konfigurovat"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Adresa URL obrázku by měla začínat řetězcem http:// a končit .jpg nebo .png.",
-				lblURLError: "Zdá se, že obrázek je neplatný. Zadejte prosím přímý odkaz na soubor obrázku (taková adresa URL obvykle končí příponou .jpg nebo .png). Odkazy na webové stránky obsahující obrázek nebudou fungovat.",
+				lblURLError: "Zdá se, že obrázek je neplatný. Zadejte prosím přímý odkaz na obrazový soubor (taková adresa URL obvykle končí příponou .jpg nebo .png). Odkazy na webové stránky obsahující obrázek nebudou fungovat.",
 				lblURLCheck: "Probíhá kontrola obrázku…",
 				lblLabel: "Titulek obrázku",
 				lblLabel1: "Popisek",
@@ -110,7 +110,7 @@
 				lblTitle: "Změnit obsah hlavní úrovně"
 			},
 			editorInlineMedia: {
-				lblTitle: "Vložit obrázek, video nebo webovou stránku"
+				lblTitle: "Vložit obrázek, video, nebo webovou stránku"
 			}
 		}
 	})

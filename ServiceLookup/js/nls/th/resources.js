@@ -11,7 +11,7 @@
             layerNotFound: "ชั้นช้อมูลพื้นที่การให้บริการไม่ปรากฎในเว็บแมพ",
             fieldNotFound: "ไม่พบฟิลด์",
             popupNotSet: "ไม่ปรากฎกล่องหัวเรื่องของชั้นข้อมูล",
-            noLayersSet: "ก้_No layers defined in the config, the search box will not work_ษฺ"
+            noLayersSet: "ไม่มีชั้นข้อมูลถูกกำหนด กล่องค้นหาไม่ทำงาน"
         },
         page: {
             title: "ข้อมูลในตาราง",

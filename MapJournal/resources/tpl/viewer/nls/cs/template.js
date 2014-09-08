@@ -32,16 +32,16 @@
 				notAuthorized: "Nemáte oprávnění k přístupu do této aplikace.",
 				noBuilderIE: "Nástroj pro tvorbu není podporován v aplikaci Internet Explorer ve verzi nižší než %VERSION%. %UPGRADE%",
 				noViewerIE: "Tato aplikace není podporována v prohlížeči Internet Explorer ve verzi nižší než %VERSION%. %UPGRADE%",
-				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Aktualizujte prohlížeč</a>.",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Prosím, aktualizujte prohlížeč</a>.",
 				mapLoadingFail: "Ř_Something went wrong, the Map did not load correctly._ů",
 				signOut: "Odhlásit"
 			},
 			mobileView: {
 				tapForDetails: "Klepnutím zobrazíte podrobnosti.",
-				clickForDetails: "Více informací",
+				clickForDetails: "Zjistit více",
 				swipeToExplore: "Přejeďte prstem, chcete-li zahájit prohlížení.",
 				tapForMap: "Klepnutím se vrátíte na mapu.",
-				clickForMap: "ZPĚT NA MAPU"
+				clickForMap: "ZPĚT DO MAPY"
 			},
 			floatLayout: {
 				scroll: "Posunout"

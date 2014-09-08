@@ -12,7 +12,7 @@
 				url: "Para inserir manualmente o endereço web de uma imagem",
 				userLookup: "Carregar álbuns",
 				notImplemented: "Ainda não implementado.",
-				noData: "ã_No public album found_Ç"
+				noData: "Não há vídeos públicos encontrados"
 			},
 			imageSelector: {
 				lblStep1: "Escolha o serviço",
@@ -56,15 +56,15 @@
 				howToFind: "Como encontrar um nome de utilizador do YouTube",
 				howToFind2: "Nome de utilizador é exibido nos vídeos",
 				found: "Encontrado",
-				noData: "ã_No public videos found_Ç"
+				noData: "Não há vídeos públicos encontrados"
 			},
 			videoSelectorVimeo: {
 				url: "URL de um vídeo do Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "ã_The Map Journal cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)._Ç",
+				explain1: "O Jornal de Mapa não pode reproduzir vídeos em formato raw (ex: avi, mpeg), mas pode reproduzir ficheiro de vídeo alojados que tenham  but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo).",
 				explain2: "A maior parte dos serviços online de alojamento de video oferecem essa possibilidade, tem de encontrar a opção para incorporar vídeo, copiar o código e utilizar %WEBPAGE%.",
-				explain3: "ã_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%._Ç",
+				explain3: "Em alternativa, se pretender alojar o vídeo, pode criar uma página HTML que utilize um leitor de vídeo como %EXAMPLE%, alojar essa página e também utilizar o %WEBPAGE%.",
 				webpage: "Elemento de página web"
 			},
 			webpageSelectorHome: {
@@ -72,14 +72,14 @@
 				lblEmbed: "Incorporar código",
 				lblOR: "OU",
 				lblError1: "Erro, limpe um dos dois campos de entrada.",
-				lblError2: "ã_Embed code can only contain one %IFRAMETAG%_Ç",
-				configure: "ã_Configure_Ç"
+				lblError2: "O código de incorporação pode conter apenas um %IFRAMETAG%",
+				configure: "Configurar"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Um URL de imagem deve começar com http:// e terminar com .jpg ou .png",
-				lblURLError: "ã_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work._Ç",
-				lblURLCheck: "ã_Checking image..._Ç",
+				lblURLError: "Esta imagem não aparenta ser válida. Por favor especifique uma ligação direta para um ficheiro de imagem (o seu URL geralmente termina em .jpg ou .png). Ligações para uma página web que contenha a imagem não irão funcionar.",
+				lblURLCheck: "A verificar imagem...",
 				lblLabel: "Legenda de Imagem",
 				lblLabel1: "Legenda",
 				lblLabel2: "Passe sobre o texto",
@@ -93,7 +93,7 @@
 				lblPosition3: "Adaptar",
 				lblPosition4: "Esticar",
 				lblPosition5: "Personalizar",
-				tooltipDimension: "O valor pode ser especificado em 'px' ou '%'",
+				tooltipDimension: "O valor pode ser especificado em pixéis ou percentagem",
 				tooltipDimension2: "ã_The value has to be specified in 'px'_Ç",
 				lblPosition2Explain: "(pode recortar)",
 				lblPosition3Explain: "(não é possível recortar)",
@@ -110,7 +110,7 @@
 				lblTitle: "Alterar o conteúdo do Ecrã Principal"
 			},
 			editorInlineMedia: {
-				lblTitle: "ã_Insert an image, video or web page_Ç"
+				lblTitle: "Inserir uma imagem, vídeo ou página web"
 			}
 		}
 	})

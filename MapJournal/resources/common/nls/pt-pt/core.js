@@ -40,10 +40,10 @@
 				shareStatus4: "A aplicação não é partilhada"
 			},
 			saveError: {
-				title: "ã_Error saving the application_Ç",
-				err1Div1: "ã_The application can't be saved because you already have another item with the same name (see your <a class='linkagolroot' target='_blank'>content folder</a>)._Ç",
-				err1Div2: "ã_Please modify the Home Section title and save the application._Ç",
-				btnOk: "ã_Edit the Home Section title_Ç"
+				title: "Erro ao guardar a aplicação",
+				err1Div1: "A aplicação não pode ser guardada porque já possui outro item com o mesmo nome (consulte a sua <a class='linkagolroot' target='_blank'>pasta de conteúdo</a>).",
+				err1Div2: "Por favor modifique o título da Seção da Página Inicial e guarde a aplicação.",
+				btnOk: "Editar o título da Seção da Página Inicial"
 			},
 			share: {
 				firstSaveTitle: "Aplicação guardada com sucesso",
@@ -66,7 +66,7 @@
 				shareHeader2: "A sua aplicação está acessível aos membros da sua organização (é necessário início de sessão).",
 				shareLinkCopy: "Copiar",
 				shareLinkCopied: "Copiado",
-				shareQ0: "ã_How do I embed the application in a website?_Ç",
+				shareQ0: "Como incorporar a aplicação num website?",
 				shareQ1Opt1: "Como posso manter a aplicação privada?",
 				shareQ1Opt2: "Como posso manter a aplicação privada ou partilhá-la publicamente?",
 				shareA1: "Utilize %SHAREIMG% na <a href='%LINK1%' target='_blank'>página do item da aplicação</a>.",
@@ -81,16 +81,16 @@
 				tabError: "Verifique todos os separadores para ver se existem erros"
 			},
 			settingsLayout: {
-				title: "ã_Layout_Ç",
+				title: "Layout",
 				explain: "Que layout pretende utilizar?",
 				explainInit: "Pode alterar o layout em qualquer momento no painel de definições.",
 				viewExample: "Ver um exemplo em tempo real"
 			},
 			settingsTheme: {
-				title: "ã_Theme_Ç"
+				title: "Tema"
 			},
 			settingsHeader: {
-				title: "ã_Header_Ç",
+				title: "Cabeçalho",
 				logoEsri: "Logótipo Esri",
 				logoNone: "Sem logótipo",
 				logoCustom: "Logótipo personalizado",

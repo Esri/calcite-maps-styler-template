@@ -37,7 +37,7 @@ define({
         dateTextMobile: "Data",
         appTypeText: "Tipo",
         appOwnerText: "Proprietário",
-        tryItButtonText: "ã_View_Ç",
+        tryItButtonText: "Ver",
         downloadButtonText: "Descarregar",
         appDesText: "Descrição",
         reviewText: "Comentários",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "Ordenar por",
             layoutBtnTitle: "Layout",
             signInBtnTitle: "Iniciar sessão",
-            signOutBtnTitle: "ã_Sign Out_Ç",
+            signOutBtnTitle: "Terminar sessão",
             geolocationBtnTitle: "Geolocalização"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "Impossível extrair dados de camadas.",
             unableToOpenItem: "Impossível abrir o item.",
             wmsSpatialReferenceError: "A referência espacial da camada WMS não corresponde à referência espacial do mapa.",
-            noPublicItems: "ã_There are no public items in the configured group or no items have been shared with this group yet._Ç",
+            noPublicItems: "Não há quaisquer itens públicos no grupo configurado.",
             emptyUsernamePassword: "Por favor, introduza o Nome de Utilizador e a Palavra-passe.",
             noFullScreenSupport: "O navegador atual não suporta o modo de ecrã inteiro.",
-            notMemberOfOrg: "ã_You are not a member of this organization_Ç"
+            notMemberOfOrg: "Você não é um membro desta organização"
         }
 });

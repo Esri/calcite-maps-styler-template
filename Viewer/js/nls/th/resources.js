@@ -21,18 +21,18 @@ define(
         },
         "tools":{
             "search":{
-                "error": "ก้_Location could not be found_ษฺ",
-                "notWhatYouWanted": "ก้_Not what you wanted?_ษฺ",
-                "selectAnother": "ก้_Select another location_ษฺ",
-                "currentLocation": "ก้_Current Location_ษฺ",
-                "title": "ก้_Location_ษฺ"
+                "error": "ไม่พบตำแหน่งนี้",
+                "notWhatYouWanted": "ไม่ใช่สิ่งที่คุณต้องการ",
+                "selectAnother": "เลือกตำแหน่งอื่น",
+                "currentLocation": "ตำแหน่งปัจจุบัน",
+                "title": "ตำแหน่ง"
             },
 	    	"print": {
 			    "layouts":{
-			      "label1": 'ก้_Landscape_ษฺ',
-			      "label2": 'ก้_Portrait_ษฺ',
-			      "label3": 'ก้_Landscape_ษฺ',
-			      "label4": 'ก้_Portrait_ษฺ'
+			      "label1": 'แนวนอน',
+			      "label2": 'แนวตั้ง',
+			      "label3": 'แนวนอน',
+			      "label4": 'แนวตั้ง'
 			    },
 			    "legend": "เพิ่มคำอธิบายแผนที่ไปยังส่วนผลลัพธ์"
 			},

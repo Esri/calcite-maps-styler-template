@@ -9,9 +9,9 @@
 				step2: "กำลังโหลดข้อมูล",
 				step3: "กำลังดำเนินการ",
 				loadBuilder: "ปรับเปลี่ยนการสร้าง",
-				long: "ก้_Map Journal is initializing_ษฺ",
-				long2: "ก้_Thanks for waiting_ษฺ",
-				failButton: "ก้_Reload the application_ษฺ"
+				long: "แมพเจอร์นัลกำลังเริ่ม",
+				long2: "ขอบคุณที่รอ",
+				failButton: "ลองใหม่"
 			},
 			signin: {
 				title: "ต้องการยอมรับ",
@@ -30,18 +30,18 @@
 				notConfiguredDesktop: "ก้_The application is not configured yet._ษฺ",
 				notConfiguredMobile: "ก้_The %TPL_NAME% builder is not supported at this screen resolution._ษฺ",
 				notAuthorized: "คุณยังไม่ได้รับอนุญาตให้เข้าถึงโปรแกรมนี้",
-				noBuilderIE: "ก้_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%_ษฺ",
-				noViewerIE: "ก้_This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%_ษฺ",
-				upgradeBrowser: "ก้_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>._ษฺ",
+				noBuilderIE: "ตัวสร้างที่ไม่ได้รับการสนับสนุนบน Internet Explorer ก่อนรุ่น %VERSION%  %UPGRADE%",
+				noViewerIE: "โปรแกรมประยุกต์ที่ไม่ได้รับการสนับสนุนบน Internet Explorer ก่อนรุ่น %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>กรุณาอัพเดทเบราว์เซอร์ของคุณ</a>.",
 				mapLoadingFail: "ก้_Something went wrong, the Map did not load correctly._ษฺ",
-				signOut: "ก้_Sign Out_ษฺ"
+				signOut: "ลงชื่อออก"
 			},
 			mobileView: {
 				tapForDetails: "เลือกสำหรับรายละเอียด",
-				clickForDetails: "ก้_Learn more_ษฺ",
+				clickForDetails: "ศึกษาเพิ่มเติม",
 				swipeToExplore: "เลื่อนเพื่อดุรายละเอียด",
 				tapForMap: "แตะเพื่อกลับเข้าสู่แผนที่",
-				clickForMap: "ก้_BACK TO MAP_ษฺ"
+				clickForMap: "กลับไปสู่แผนที่"
 			},
 			floatLayout: {
 				scroll: "เลื่อน"
@@ -71,7 +71,7 @@
 				copied: "คัดลอก",
 				open: "เปิด",
 				embed: "ฝังลงในเว็บไซต์",
-				embedExplain: "ก้_Use the following HTML code to embed the journal in a website._ษฺ",
+				embedExplain: "ใช้รหัส HTML ต่อไปนี้ ในการฝังลงในเว็บไซต์การเดินทาง",
 				size: "ขนาด (กว้าง/สูง):"
 			}
         }

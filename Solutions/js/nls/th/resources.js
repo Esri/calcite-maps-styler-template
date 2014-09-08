@@ -17,7 +17,7 @@
 define(
     ({
         map: {
-            error: "ก้_Unable to create map_ษฺ"
+            error: "ไม่สามารถสร้างแผนที่"
         },
         tooltips: {
             search: "ค้นหา",  // Command button to open a dialog box for finding a feature or an address (depending on app)

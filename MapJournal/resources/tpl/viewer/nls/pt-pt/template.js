@@ -9,9 +9,9 @@
 				step2: "A carregar dados",
 				step3: "Inicializando",
 				loadBuilder: "Alternando para builder",
-				long: "ã_Map Journal is initializing_Ç",
-				long2: "ã_Thanks for waiting_Ç",
-				failButton: "ã_Reload the application_Ç"
+				long: "O Jornal de Mapa está a inicializar",
+				long2: "Obrigado por aguardar",
+				failButton: "Tentar Novamente"
 			},
 			signin: {
 				title: "É necessária autenticação",
@@ -30,18 +30,18 @@
 				notConfiguredDesktop: "ã_The application is not configured yet._Ç",
 				notConfiguredMobile: "ã_The %TPL_NAME% builder is not supported at this screen resolution._Ç",
 				notAuthorized: "Não tem autorização para configurar esta aplicação",
-				noBuilderIE: "ã_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%_Ç",
-				noViewerIE: "ã_This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%_Ç",
-				upgradeBrowser: "ã_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>._Ç",
+				noBuilderIE: "O construtor não é suportado em versões de Internet Explorer anteriores a %VERSION%. %UPGRADE%",
+				noViewerIE: "Esta aplicação não é suportada em versões de Internet Explorer anteriores a %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Por favor atualize o seu browser</a>.",
 				mapLoadingFail: "ã_Something went wrong, the Map did not load correctly._Ç",
-				signOut: "ã_Sign Out_Ç"
+				signOut: "Terminar sessão"
 			},
 			mobileView: {
 				tapForDetails: "Toque para aceder a detalhes",
-				clickForDetails: "ã_Learn more_Ç",
+				clickForDetails: "Obtenha mais informações",
 				swipeToExplore: "Deslize para explorar.",
 				tapForMap: "Toque para regressar ao mapa",
-				clickForMap: "ã_BACK TO MAP_Ç"
+				clickForMap: "VOLTAR AO MAPA"
 			},
 			floatLayout: {
 				scroll: "Scroll"
@@ -71,7 +71,7 @@
 				copied: "Copiado",
 				open: "Abrir",
 				embed: "Incorporar em site web",
-				embedExplain: "ã_Use the following HTML code to embed the journal in a website._Ç",
+				embedExplain: "Utilize o seguinte código HTML para incorporar o Diário num site web.",
 				size: "Tamanho (largura/altura):"
 			}
         }
