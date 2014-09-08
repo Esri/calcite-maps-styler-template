@@ -1,16 +1,17 @@
 /*global $,define,document */
 /*jslint sloppy:true,nomen:true */
 define([
-    "dojo/ready",
     "dojo/_base/declare",
     "dojo/_base/lang",
     "dojo/string",
     "esri/arcgis/utils",
+    "esri/config",
     "esri/lang",
     "dojo/dom",
     "dojo/dom-class",
     "dojo/dom-style",
     "dojo/on",
+    "dojo/Deferred",
     "dojo/query",
     "dojo/io-query",
     "offline/OfflineSupport",
@@ -22,6 +23,7 @@ define([
     "dojo/text!views/modal.html",
     "dojo/text!views/user.html",
     "dojo/i18n!application/nls/resources",
+    "esri/tasks/ProjectParameters",
     "esri/geometry/webMercatorUtils",
     "esri/geometry/Point",
     "esri/layers/GraphicsLayer",
@@ -39,15 +41,16 @@ define([
     "dojo/NodeList-traverse",
     "dojo/domReady!"
 ], function (
-    ready,
     declare,
     lang,
     string,
     arcgisUtils,
+    esriConfig,
     esriLang,
     dom,
     domClass, domStyle,
     on,
+    Deferred,
     query,
     ioQuery,
     OfflineSupport,
@@ -58,7 +61,7 @@ define([
     Geocoder,
     modalTemplate,
     userTemplate,
-    nls, webMercatorUtils, Point, GraphicsLayer, ShareModal, localStorageHelper, Graphic, PictureMarkerSymbol, editToolbar, InfoTemplate, Popup, theme, pushpins, coordinator, locale) {
+    nls, ProjectParameters, webMercatorUtils, Point, GraphicsLayer, ShareModal, localStorageHelper, Graphic, PictureMarkerSymbol, editToolbar, InfoTemplate, Popup, theme, pushpins, coordinator, locale) {
     return declare([], {
         nls: nls,
         config: {},
@@ -177,123 +180,122 @@ define([
                 this.config = config;
                 // create localstorage helper
                 this.localStorageSupport = new localStorageHelper();
-                // document ready
-                ready(lang.hitch(this, function () {
-                    // modal i18n
-                    modalTemplate = string.substitute(modalTemplate, nls);
-                    // place modal code
-                    domConstruct.place(modalTemplate, document.body, 'last');
-                    //supply either the webmap id or, if available, the item info
-                    if (isPreview) {
-                        var cssStyle;
-                        // if local storage supported
-                        if (this.localStorageSupport.supportsStorage()) {
-                            localStorage.setItem("geoform_config", JSON.stringify(config));
-                        }
-                        // set theme to selected
-                        array.forEach(this.themes, lang.hitch(this, function (currentTheme) {
-                            if (this.config.theme == currentTheme.id) {
-                                cssStyle = domConstruct.create('link', {
-                                    rel: 'stylesheet',
-                                    type: 'text/css',
-                                    href: currentTheme.url
-                                });
-                            }
-                        }));
-                        //Handle case where edit is first url parameter we'll use the same logic we used in ShareModal.js
-                        var url = window.location.protocol + '//' + window.location.host + window.location.pathname;
-                        if (window.location.href.indexOf("?") > -1) {
-                            var queryUrl = window.location.href;
-                            var urlParams = ioQuery.queryToObject(window.location.search.substring(1)),
-                                newParams = lang.clone(urlParams);
-                            delete newParams.edit; //Remove edit parameter
-                            url = queryUrl.substring(0, queryUrl.indexOf("?") + 1) + ioQuery.objectToQuery(newParams);
-                        }
-                        node.src = url;
-                        // on iframe load
-                        node.onload = function () {
-                            var frame = document.getElementById("iframeContainer").contentWindow.document;
-                            domConstruct.place(cssStyle, frame.getElementsByTagName('head')[0], "last");
-                        };
-                    } else {
-                        // no theme set
-                        if (!this.config.theme) {
-                            // lets use bootstrap theme!
-                            this.config.theme = "bootstrap";
-                        }
-                        // set theme
-                        this._switchStyle(this.config.theme);
-                        var userHTML = string.substitute(userTemplate, nls);
-                        dom.byId("parentContainter").innerHTML = userHTML;
-                        // get item info from template
-                        var itemInfo = this.config.itemInfo || this.config.webmap;
-                        // create map
-                        this._createWebMap(itemInfo);
-                        // if small header is set
-                        if (this.config.useSmallHeader) {
-                            // remove class
-                            domClass.remove(dom.byId('jumbotronNode'), "jumbotron");
-                        }
-                    }
-                    // finished button
-                    var submitButtonNode = dom.byId('submitButton');
-                    if (submitButtonNode) {
-                        on(submitButtonNode, "click", lang.hitch(this, function () {
-                            var btn = $(submitButtonNode);
-                            btn.button('loading');
-                            var erroneousFields = [],
-                                errorMessage;
-                            array.forEach(query(".geoFormQuestionare"), lang.hitch(this, function (currentField) {
-                                //to check for errors in form before submitting.
-                                //condition check to filter out radio fields
-                                if ((query(".form-control", currentField)[0])) {
-                                    //if condition to check for conditions where mandatory fields are kept empty or the entered values are erroneous.
-                                    if ((query(".form-control", currentField)[0].value === "" && domClass.contains(currentField, "mandatory")) || domClass.contains(currentField, "has-error")) {
-                                        //need to check if this condition can be removed
-                                        //this._validateField(currentField, false);
-                                        erroneousFields.push(currentField);
-                                    }
-                                }
-                                //handle errors in radio and checkbox fields here.
-                                else {
-                                    if (domClass.contains(currentField, "mandatory") && query(".radioInput:checked", currentField).length === 0 && query(".checkboxContainer", currentField).length === 0) {
-                                        erroneousFields.push(currentField);
-                                    }
-                                }
-                            }));
-                            // if fields
-                            if (erroneousFields.length !== 0) {
-                                errorMessage = "";
-                                errorMessage += '<p class="lead"><span class="glyphicon glyphicon-exclamation-sign"></span> ' + nls.user.requiredFields + '</p>';
-                                errorMessage += "<ol>";
-                                errorMessage += "<li>" + nls.user.formValidationMessageAlertText + "\n <ul>";
-                                array.forEach(erroneousFields, function (erroneousField) {
-                                    if (query(".form-control", erroneousField).length !== 0 && query(".form-control", erroneousField)[0].placeholder) {
-                                        errorMessage += "<li><a href='#" + erroneousField.childNodes[0].id + "'>" + erroneousField.childNodes[0].textContent.split(nls.user.requiredField)[0] + "</a>. " + query(".form-control", erroneousField)[0].placeholder + "</li>";
-                                    } else {
-                                        errorMessage += "<li><a href='#" + erroneousField.childNodes[0].id + "'>" + erroneousField.childNodes[0].textContent.split(nls.user.requiredField)[0] + "</a></li>";
-                                    }
-                                });
-                                errorMessage += "</ul></li>";
-                                //condition check to find whether the user has selected a point on map or not.
-                                if (!this.addressGeometry) {
-                                    errorMessage += "<li>" + string.substitute(nls.user.selectLocation, {
-                                        openLink: '<a href="#select_location">',
-                                        closeLink: '</a>'
-                                    }) + "</li>";
-                                }
-                                errorMessage += "</ol>";
-                                this._showErrorMessageDiv(errorMessage);
-                                btn.button('reset');
-                            } else {
-                                this._addFeatureToLayer();
-                            }
-                        }));
-                    }
-                }));
+                // modal i18n
+                modalTemplate = string.substitute(modalTemplate, nls);
+                // place modal code
+                domConstruct.place(modalTemplate, document.body, 'last');
+                //supply either the webmap id or, if available, the item info
+                if (isPreview) {
+                    this._initPreview(node);
+                } else {
+                    this._init();
+                }
             } else {
                 var error = new Error("Main:: Config is not defined");
                 this.reportError(error);
+            }
+        },
+        _init: function () {
+            // no theme set
+            if (!this.config.theme) {
+                // lets use bootstrap theme!
+                this.config.theme = "bootstrap";
+            }
+            // set theme
+            this._switchStyle(this.config.theme);
+            var userHTML = string.substitute(userTemplate, nls);
+            dom.byId("parentContainter").innerHTML = userHTML;
+            // get item info from template
+            var itemInfo = this.config.itemInfo || this.config.webmap;
+            // create map
+            this._createWebMap(itemInfo);
+            // if small header is set
+            if (this.config.useSmallHeader) {
+                // remove class
+                domClass.remove(dom.byId('jumbotronNode'), "jumbotron");
+            }
+        },
+        _initPreview: function (node) {
+            var cssStyle;
+            // if local storage supported
+            if (this.localStorageSupport.supportsStorage()) {
+                localStorage.setItem("geoform_config", JSON.stringify(this.config));
+            }
+            // set theme to selected
+            array.forEach(this.themes, lang.hitch(this, function (currentTheme) {
+                if (this.config.theme == currentTheme.id) {
+                    cssStyle = domConstruct.create('link', {
+                        rel: 'stylesheet',
+                        type: 'text/css',
+                        href: currentTheme.url
+                    });
+                }
+            }));
+            //Handle case where edit is first url parameter we'll use the same logic we used in ShareModal.js
+            var url = window.location.protocol + '//' + window.location.host + window.location.pathname;
+            if (window.location.href.indexOf("?") > -1) {
+                var queryUrl = window.location.href;
+                var urlParams = ioQuery.queryToObject(window.location.search.substring(1)),
+                    newParams = lang.clone(urlParams);
+                delete newParams.edit; //Remove edit parameter
+                url = queryUrl.substring(0, queryUrl.indexOf("?") + 1) + ioQuery.objectToQuery(newParams);
+            }
+            node.src = url;
+            // on iframe load
+            node.onload = function () {
+                var frame = document.getElementById("iframeContainer").contentWindow.document;
+                domConstruct.place(cssStyle, frame.getElementsByTagName('head')[0], "last");
+            };
+        },
+        _submitForm: function () {
+            var btn = $('#submitButton');
+            btn.button('loading');
+            var erroneousFields = [],
+                errorMessage;
+            array.forEach(query(".geoFormQuestionare"), lang.hitch(this, function (currentField) {
+                //to check for errors in form before submitting.
+                //condition check to filter out radio fields
+                if ((query(".form-control", currentField)[0])) {
+                    //if condition to check for conditions where mandatory fields are kept empty or the entered values are erroneous.
+                    if ((query(".form-control", currentField)[0].value === "" && domClass.contains(currentField, "mandatory")) || domClass.contains(currentField, "has-error")) {
+                        //need to check if this condition can be removed
+                        //this._validateField(currentField, false);
+                        erroneousFields.push(currentField);
+                    }
+                }
+                //handle errors in radio and checkbox fields here.
+                else {
+                    if (domClass.contains(currentField, "mandatory") && query(".radioInput:checked", currentField).length === 0 && query(".checkboxContainer", currentField).length === 0) {
+                        erroneousFields.push(currentField);
+                    }
+                }
+            }));
+            // if fields
+            if (erroneousFields.length !== 0) {
+                errorMessage = "";
+                errorMessage += '<p class="lead"><span class="glyphicon glyphicon-exclamation-sign"></span> ' + nls.user.requiredFields + '</p>';
+                errorMessage += "<ol>";
+                errorMessage += "<li>" + nls.user.formValidationMessageAlertText + "\n <ul>";
+                array.forEach(erroneousFields, function (erroneousField) {
+                    if (query(".form-control", erroneousField).length !== 0 && query(".form-control", erroneousField)[0].placeholder) {
+                        errorMessage += "<li><a href='#" + erroneousField.childNodes[0].id + "'>" + erroneousField.childNodes[0].textContent.split(nls.user.requiredField)[0] + "</a>. " + query(".form-control", erroneousField)[0].placeholder + "</li>";
+                    } else {
+                        errorMessage += "<li><a href='#" + erroneousField.childNodes[0].id + "'>" + erroneousField.childNodes[0].textContent.split(nls.user.requiredField)[0] + "</a></li>";
+                    }
+                });
+                errorMessage += "</ul></li>";
+                //condition check to find whether the user has selected a point on map or not.
+                if (!this.addressGeometry) {
+                    errorMessage += "<li>" + string.substitute(nls.user.selectLocation, {
+                        openLink: '<a href="#select_location">',
+                        closeLink: '</a>'
+                    }) + "</li>";
+                }
+                errorMessage += "</ol>";
+                this._showErrorMessageDiv(errorMessage);
+                btn.button('reset');
+            } else {
+                this._addFeatureToLayer();
             }
         },
         reportError: function (error) {
@@ -377,13 +379,15 @@ define([
         _calculateLatLong: function (evt) {
             // return string
             var str = '';
-            var sr = evt.mapPoint.spatialReference;
             // if spatial ref is web mercator
-            if(sr.isWebMercator()){
-                // convert to lat/lon
-                var ll = webMercatorUtils.xyToLngLat(evt.mapPoint.x, evt.mapPoint.y);
-                // create string
-                str = nls.user.latitude + ': ' + ll[1].toFixed(5) + ', ' + '&nbsp;' + nls.user.longitude + ': ' + ll[0].toFixed(5);
+            if (evt && evt.mapPoint) {
+                // get lat/lng
+                var lat = evt.mapPoint.getLatitude();
+                var lng = evt.mapPoint.getLongitude();
+                if (lat && lng) {
+                    // create string
+                    str = nls.user.latitude + ': ' + lat.toFixed(5) + ', ' + '&nbsp;' + nls.user.longitude + ': ' + lng.toFixed(5);
+                }
             }
             return str;
         },
@@ -1211,7 +1215,6 @@ define([
                 // console.log(this.config);
                 this.map = response.map;
                 this.defaultExtent = this.map.extent;
-                this._resizeMap();
                 // webmap defaults
                 this._setWebmapDefaults();
                 // default layer
@@ -1297,7 +1300,6 @@ define([
                     this._resizeInfoWin();
                     this._centerPopup();
                 }));
-                this._resizeMap();
                 // Lat/Lng coordinate events
                 on(dom.byId('lat_coord'), "keypress", lang.hitch(this, function (evt) {
                     this._findLocation(evt);
@@ -1350,8 +1352,17 @@ define([
                         this._convertUTM();
                     }
                 }));
+                // finished button
+                var submitButtonNode = dom.byId('submitButton');
+                if (submitButtonNode) {
+                    on(submitButtonNode, "click", lang.hitch(this, function () {
+                        this._submitForm();
+                    }));
+                }
                 // set location options
                 this._populateLocationsOptions();
+                // resize map
+                this._resizeMap();
             }), this.reportError);
         },
         // utm to lat lon
@@ -1448,13 +1459,9 @@ define([
                 if (evt.error) {
                     alert(nls.user.locationNotFound);
                 } else {
-                    // convert to map
-                    // todo: assume mercator. may need to project?
-                    var pt = webMercatorUtils.geographicToWebMercator(evt.graphic.geometry);
-                    evt.graphic.setGeometry(pt);
-                    // set geometry and symbol
-                    this.addressGeometry = pt;
+                    this.addressGeometry = evt.graphic.geometry;
                     this._setSymbol(evt.graphic.geometry);
+                    this._resizeMap();
                 }
                 // reset button
                 $('#geolocate_button').button('reset');
@@ -1702,21 +1709,66 @@ define([
                 }));
             }
         },
+        _projectPoint: function (geometry) {
+            // this function takes a lat/lon (4326) point and converts it to map's spatial reference.
+            var def = new Deferred();
+            // maps spatial ref
+            var sr = this.map.spatialReference;
+            // map and point are both lat/lon
+            if (sr.wkid === 4326) {
+                def.resolve(geometry);
+            }
+            // map is mercator
+            else if (sr.isWebMercator()) {
+                // convert lat lon to mercator. No network request.
+                var pt = webMercatorUtils.geographicToWebMercator(geometry);
+                def.resolve(pt);
+            }
+            // map is something else & has geometry service
+            else if (esriConfig.defaults.geometryService) {
+                // project params
+                var params = new ProjectParameters();
+                params.geometries = [geometry];
+                params.outSR = this.map.spatialReference;
+                // use geometry service to convert lat lon to map format (network request)
+                esriConfig.defaults.geometryService.project(params).then(function (projectedPoints) {
+                    if (projectedPoints && projectedPoints.length) {
+                        def.resolve(projectedPoints[0]);
+                    } else {
+                        def.reject(new Error("GeoForm::Point was not projected."));
+                    }
+                }, function (error) {
+                    def.reject(error);
+                });
+            }
+            // cant do anything, leave lat/lon
+            else {
+                def.resolve(geometry);
+            }
+            return def;
+        },
         // put x,y point on map in mercator
         _locatePointOnMap: function (x, y, type) {
             if (x >= -90 && x <= 90 && y >= -180 && y <= 180) {
                 var mapLocation = new Point(y, x);
-                // todo: we're assuming mercator. may need to project
-                var pt = webMercatorUtils.geographicToWebMercator(mapLocation);
-                this.addressGeometry = pt;
-                // set point symbol
-                this._setSymbol(this.addressGeometry);
-                // center map at point and resize
-                this.map.centerAt(this.addressGeometry).then(lang.hitch(this, function () {
-                    this._resizeMap();
+                // convert point
+                this._projectPoint(mapLocation).then(lang.hitch(this, function (pt) {
+                    console.log(pt);
+                    if (pt) {
+                        this.addressGeometry = pt;
+                        // set point symbol
+                        this._setSymbol(pt);
+                        // center map at point and resize
+                        this.map.centerAt(pt).then(lang.hitch(this, function () {
+                            this._resizeMap();
+                        }));
+                        var errorMessageNode = dom.byId('errorMessageDiv');
+                        domConstruct.empty(errorMessageNode);
+                    }
+                }), lang.hitch(this, function (error) {
+                    console.log(error);
+                    this._coordinatesError(type);
                 }));
-                var errorMessageNode = dom.byId('errorMessageDiv');
-                domConstruct.empty(errorMessageNode);
             } else {
                 // display coordinates error
                 this._coordinatesError(type);
@@ -1956,7 +2008,6 @@ define([
                 }
             }
         },
-
         _addNotationIcon: function (formContent, imageIconClass) {
             var inputIconGroupContainer, inputIconGroupAddOn;
             inputIconGroupContainer = domConstruct.create("div", {
@@ -1970,7 +2021,6 @@ define([
             }, inputIconGroupAddOn);
             return inputIconGroupContainer;
         },
-
         _resetSubTypeFields: function (currentInput) {
             if (currentInput.type == "esriFieldTypeDate" || currentInput.displayType == "url" || currentInput.displayType == "email") {
                 domConstruct.destroy(dom.byId(currentInput.name).parentNode.parentNode);
