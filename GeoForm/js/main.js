@@ -747,6 +747,8 @@ define([
                                 domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
                                 domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
                             }
+                        }).on("dp.show", function (evt) {
+                            domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
                         });
                         if (currentField.defaultValue) {
                             var m = new Date(currentField.defaultValue);
@@ -754,7 +756,6 @@ define([
                                 fullYear: true
                             });
                             $(inputContent).data("DateTimePicker").setDate(rangeDefaultDate);
-                            domClass.add(inputContent.parentNode, "has-success");
                         }
                         rangeHelpText = string.substitute(nls.user.dateRangeHintMessage, {
                             minValue: locale.format(new Date(currentField.domain.minValue)),
@@ -926,7 +927,7 @@ define([
                 }
                 helpBlock = domConstruct.create("p", {
                     className: "help-block",
-                    innerHTML: lang.trim(helpHTML + rangeHelpText)
+                    innerHTML: lang.trim(helpHTML + " " + rangeHelpText)
                 }, formContent);
             }
         },
@@ -1106,7 +1107,7 @@ define([
                 break;
             case "SmallInteger":
                 typeCastedInputValue = parseInt(inputValue);
-                if ((inputValue.match(decimal) && typeCastedInputValue > -32768 && typeCastedInputValue < 32767) && inputValue.length !== 0) {
+                if ((inputValue.match(decimal) && typeCastedInputValue >= -32768 && typeCastedInputValue <= 32767) && inputValue.length !== 0) {
                     this._validateUserInput(true, node, inputValue);
                 } else {
                     this._validateUserInput(false, node, inputValue, iskeyPress);
@@ -1114,7 +1115,7 @@ define([
                 break;
             case "Integer":
                 typeCastedInputValue = parseInt(inputValue);
-                if ((inputValue.match(decimal) && typeCastedInputValue > -2147483648 && typeCastedInputValue <= 2147483647) && inputValue.length !== 0) {
+                if ((inputValue.match(decimal) && typeCastedInputValue >= -2147483648 && typeCastedInputValue <= 2147483647) && inputValue.length !== 0) {
                     this._validateUserInput(true, node, inputValue, iskeyPress);
                 } else {
                     this._validateUserInput(false, node, inputValue, iskeyPress);
@@ -1126,7 +1127,7 @@ define([
                 //occurence of .
                 //atleast one occurence of digits between o-9 in the end
                 typeCastedInputValue = parseFloat(inputValue);
-                if (((inputValue.match(decimal) || inputValue.match(float)) && typeCastedInputValue > -3.4 * Math.pow(10, 38) && typeCastedInputValue < 1.2 * Math.pow(10, 38)) && inputValue.length !== 0) {
+                if (((inputValue.match(decimal) || inputValue.match(float)) && typeCastedInputValue >= -3.4 * Math.pow(10, 38) && typeCastedInputValue <= 1.2 * Math.pow(10, 38)) && inputValue.length !== 0) {
                     this._validateUserInput(true, node, inputValue, iskeyPress);
                 } else {
                     this._validateUserInput(false, node, inputValue, iskeyPress);
@@ -1134,7 +1135,7 @@ define([
                 break;
             case "Double":
                 typeCastedInputValue = parseFloat(inputValue);
-                if (((inputValue.match(decimal) || inputValue.match(float)) && typeCastedInputValue > -2.2 * Math.pow(10, 308) && typeCastedInputValue < 1.8 * Math.pow(10, 38)) && inputValue.length !== 0) {
+                if (((inputValue.match(decimal) || inputValue.match(float)) && typeCastedInputValue >= -2.2 * Math.pow(10, 308) && typeCastedInputValue <= 1.8 * Math.pow(10, 38)) && inputValue.length !== 0) {
                     this._validateUserInput(true, node, inputValue, iskeyPress);
                 } else {
                     this._validateUserInput(false, node, inputValue, iskeyPress);
@@ -1366,6 +1367,13 @@ define([
                         this._toggleFullscreen();
                     }));
                 }
+                // fullscreen esc key
+                on(document.body, 'keyup', lang.hitch(this, function (evt) {
+                    var keyCode = evt.charCode || evt.keyCode;
+                    if (keyCode === 27) {
+                        this._toggleFullscreen(false);
+                    }
+                }));
                 // finished button
                 var submitButtonNode = dom.byId('submitButton');
                 if (submitButtonNode) {
@@ -1379,26 +1387,35 @@ define([
                 this._resizeMap();
             }), this.reportError);
         },
-        _toggleFullscreen: function (btn) {
+        _fullscreenState: function(){
             // get all nodes
             var mapNode = dom.byId('mapDiv');
             var fsContainerNode = dom.byId('fullscreen_container');
             var mapContainerNode = dom.byId('map_container');
             var btnNode = dom.byId('fullscreen_icon');
-            // swap classes
-            domClass.toggle(document.body, 'fullscreen');
-            domClass.toggle(btnNode, 'glyphicon-remove glyphicon-fullscreen');
             // if fullscreen
             if (domClass.contains(document.body, 'fullscreen')) {
+                // icon classes
+                domClass.add(btnNode, 'glyphicon-remove');
+                domClass.remove(btnNode, 'glyphicon-fullscreen');
                 // move map node and clear hash
                 domConstruct.place(mapNode, fsContainerNode);
                 window.location.hash = "";
             } else {
+                // icon classes
+                domClass.remove(btnNode, 'glyphicon-remove');
+                domClass.add(btnNode, 'glyphicon-fullscreen');
                 // move map node and set hash
                 domConstruct.place(mapNode, mapContainerNode);
                 window.location.hash = "#mapDiv";
             }
             this._resizeMap();
+        },
+        _toggleFullscreen: function (condition) {
+            // swap classes
+            domClass.toggle(document.body, 'fullscreen', condition);
+            // update state
+            this._fullscreenState();
         },
         // utm to lat lon
         _convertUTM: function () {
@@ -1654,6 +1671,14 @@ define([
                 featureData.geometry = new Point(Number(this.addressGeometry.x), Number(this.addressGeometry.y), this.map.spatialReference);
                 //code for apply-edits
                 this._formLayer.applyEdits([featureData], null, null, lang.hitch(this, function (addResults) {
+                    // Add attachment on success
+                    if (addResults[0].success) {
+                        if (userFormNode[userFormNode.length - 1].value !== "" && this._formLayer.hasAttachments) {
+                            this._formLayer.addAttachment(addResults[0].objectId, userFormNode, function () { }, function () {
+                                console.log(nls.user.addAttachmentFailedMessage);
+                            });
+                        }
+                    }
                     // remove graphic
                     this._clearSubmissionGraphic();
                     // reset form
@@ -1671,12 +1696,6 @@ define([
                     }
                     // reset submit button
                     this._resetButton();
-                    // if attachment failed
-                    if (userFormNode[userFormNode.length - 1].value !== "" && this._formLayer.hasAttachments) {
-                        this._formLayer.addAttachment(addResults[0].objectId, userFormNode, function () {}, function () {
-                            console.log(nls.user.addAttachmentFailedMessage);
-                        });
-                    }
                     window.location.href = '#top';
                     // After moving geoform to top, map was not getting resized properly.
                     // And pushpin was not getting placed correctly.
