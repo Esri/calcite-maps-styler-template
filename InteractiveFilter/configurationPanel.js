@@ -47,6 +47,43 @@
          ]
       },
       {
+         "category":"<b>Filter Options</b>",
+         "fields":[
+            {
+               "type":"paragraph",
+               "value":"Set Display dropdown to true if your app contains multiple filters and you want to display a dropdown list of the filters and allow application users to select and view the options for one filter at a time."
+            },
+            {
+               "type":"boolean",
+               "fieldName":"filterDropdown",
+               "label":"Display dropdown"
+            },
+            {
+               "type":"boolean",
+               "fieldName":"filterOnLoad",
+               "label":"Remove filters when app loads."
+            },
+            {
+              "type": "paragraph",
+              "value": "Display a zoom button that allows application users to zoom to the filtered results. Only applicable for hosted feature services"
+            },
+            {
+               "type":"boolean",
+               "fieldName":"displayZoom",
+               "label":"Display zoom button"
+            },
+            {
+              "type": "paragraph",
+              "value": "Display a clear button that allows application users to remove the applied filter."
+            },
+              {
+              "type": "boolean",
+              "fieldName": "displayClear",
+              "label": "Display clear button"
+            }
+         ]
+      },
+      {
          "category":"<b>Optional Widgets</b>",
          "fields":[
             {
@@ -76,6 +113,11 @@
       "locate":true,
       "search":true,
       "color":"#fff",
-      "theme":"#666"
+      "theme":"#666",
+      "filterDropdown":false,
+      "filterOnLoad": true,
+      "displayZoom": false,
+      "displayClear": false
+
    }
 }

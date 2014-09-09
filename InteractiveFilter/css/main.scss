@@ -87,40 +87,42 @@ html,body {
 
 @font-face {
   font-family: 'simple';
-  src: url('../font/simple.eot?14672126');
-  src: url('../font/simple.eot?14672126#iefix') format('embedded-opentype'),
-       url('../font/simple.woff?14672126') format('woff'),
-       url('../font/simple.ttf?14672126') format('truetype'),
-       url('../font/simple.svg?14672126#simple') format('svg');
+  src: url('../font/simple.eot?71494750');
+  src: url('../font/simple.eot?71494750#iefix') format('embedded-opentype'),
+       url('../font/simple.woff?71494750') format('woff'),
+       url('../font/simple.ttf?71494750') format('truetype'),
+       url('../font/simple.svg?71494750#simple') format('svg');
   font-weight: normal;
   font-style: normal;
 }
- 
+
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "simple";
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
- 
+
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-     
+
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
- 
+
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
- 
 
 }
- 
-.icon-menu:before { content: '\e801'; } /* '' */
+
+.icon-search:before { content: '\e800'; } /* '' */
+.icon-cancel:before { content: '\e801'; } /* '' */
+.icon-menu:before { content: '\e802'; } /* '' */
+.icon-buffer:before { content: '\e809'; } /* '' */
