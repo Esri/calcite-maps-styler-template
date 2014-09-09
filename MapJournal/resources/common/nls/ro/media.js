@@ -94,13 +94,13 @@
 				lblPosition4: "Întindere",
 				lblPosition5: "Particularizat",
 				tooltipDimension: "Valoarea poate fi specificată în „px” sau „%”",
-				tooltipDimension2: "Ă_The value has to be specified in 'px'_ș",
+				tooltipDimension2: "Valoarea trebuie să fie specificată în „px”",
 				lblPosition2Explain: "(poate fi decupat)",
 				lblPosition3Explain: "(nu poate fi decupat)",
 				lblPosition3Explain2: "(lăţimea va corespunde întotdeauna panoului)",
 				lblPosition4Explain: "(poate fi distorsionat)",
-				unloadLbl: "Ă_Unload when reader navigates away to different section_ș",
-				unloadHelp: "Ă_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ș"
+				unloadLbl: "Se revocă încărcare când cititorul trece în altă secţiune",
+				unloadHelp: "Dacă pagina web conţine materiale audio sau video, păstraţi această opţiune bifată pentru a opri redarea în momentul în care cititorul trece în altă secţiune. Debifaţi-o, de exemplu, pentru a continua redarea unei melodii când cititorul avansează în jurnal.<br />Dacă pagina web este o aplicaţie, debifaţi această opţiune pentru ca aplicaţia să nu fie nevoită să se încarce din nou când cititorul revine în secţiunea respectivă."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localizaţi o adresă sau un loc",

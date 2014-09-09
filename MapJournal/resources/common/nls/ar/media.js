@@ -94,13 +94,13 @@
 				lblPosition4: "توسيع",
 				lblPosition5: "مخصص",
 				tooltipDimension: "يمكن تحديد القيمة بـ 'px' أو '%'",
-				tooltipDimension2: "بيت_The value has to be specified in 'px'_لاحقة",
+				tooltipDimension2: "يجب تحديد القيمة 'بالبكسل'",
 				lblPosition2Explain: "(يمكن القص)",
 				lblPosition3Explain: "(لا يتم القص)",
 				lblPosition3Explain2: "(سوف يناسب دائما العرض اللوحة)",
 				lblPosition4Explain: "(يمكن الإتلاف)",
-				unloadLbl: "بيت_Unload when reader navigates away to different section_لاحقة",
-				unloadHelp: "بيت_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._لاحقة"
+				unloadLbl: "عدم التحميل عندما ينتقل القارئ بعيدًا إلى مقطع أخر.",
+				unloadHelp: "إذا كانت صفحة الويب تحتوي على وسائط صوت أو فيديو، احتفظ بتحديد هذا الخيار لإيقاف هذا المحتوى من التشغيل عندما ينتقل القارئ بعيدًا إلى مقطع أخر. قم بإلغاء التحديد مثلاً للاحتفاظ بتشغيل مسار الصوت عندما يتقدم القارئ من خلال دفتر اليومية.<br />إذا كانت صفحة الويب عبارة عن تطبيق، قم بإلغاء تحديد هذا الخيار وبالتالي لم يعاد تحميل التطبيق إذا رجع القارئ إلى هذا المقطع."
 			},
 			editorActionGeocode: {
 				lblTitle: "تحديد موقع العنوان أو المكان",

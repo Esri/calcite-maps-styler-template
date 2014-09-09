@@ -21,13 +21,13 @@
 				cfgMedium: "Střední",
 				cfgLarge: "Velké",
 				socialLinksLabel: "Zobrazit na konci každé části odkazy pro sdílení",
-				socialLinksDescr: "Ř_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._ů"
+				socialLinksDescr: "Tato možnost čtenářům umožňuje odkazovat na konkrétní části %TPL_NAME% a šířit je. Pokud například použijete ikonu pro sdílení částí, čtenáři se dostanou přímo na danou část %TPL_NAME% a nikoli na začátek příběhu. K šíření celého %TPL_NAME% mohou čtenáři použít odkaz na sociální média v titulní části (karta záhlaví), který vede na začátek %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "Písma",
-				defaultLbl: "Ř_Default_ů",
-				sectionTitleLbl: "Ř_Section title_ů",
-				sectionContentLbl: "Ř_Section content_ů"
+				defaultLbl: "Výchozí",
+				sectionTitleLbl: "Nadpis části",
+				sectionContentLbl: "Obsah části"
 			},
 			initPopup: {
 				title: "Vítejte v"
@@ -85,7 +85,7 @@
 				lblLink: "Navštivte web Esri věnovaný mapám s příběhem.",
 				content1Div1: "Při vytváření příběhu do něj můžete integrovat množství stylů. <strong>%LAYOUT_TITLE%</strong> většinou obsahuje text, obrázky a videa, zatímco mapy jsou zpravidla umístěny na <strong>hlavní úrovni</strong>. %TPL_NAME% vám nicméně umožňuje vkládat obrázky, grafy a videa i na hlavní úroveň.",
 				content1Div2: "Přidáváním částí si můžete obsah mapy přizpůsobit podle svých představ. Stejně jako čtenáři procházejí text %LAYOUT_TITLE%, mapa na hlavní úrovni se může posouvat nebo přibližovat na klíčové body, nebo se mohou automaticky aktivovat nové mapy a obrázky zdůrazňující vaši zprávu.",
-				content2Div1: "Ř_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._ů",
+				content2Div1: "Zde můžete upravit vzhled %TPL_NAME%. Barevná schémata, rozvržení, šířky a písma je možné nastavovat zde.",
 				content2Div2: "Můžete také přidat odkazy pro sdílení na Facebooku, Twitteru a Bitly, aby čtenáři mohli %TPL_NAME% snadno šířit mezi ostatní.",
 				content3Div1: "Váš obsah je rozdělen do částí. Můžete jich mít libovolný počet (berte je jako malé kapitoly). Je důležité, jak kapitoly plynou za sebou, a proto je v části Organizovat můžete libovolně přeřazovat a odstraňovat.",
 				content4Div1: "Našli jste chybu nebo chcete změnit svůj materiál? Žádný problém. Hledejte v aplikaci ikonu úprav, která vám umožní změnit obsah. Funkce úprav použijete při vytváření %TPL_NAME% mnohokrát!",

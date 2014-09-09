@@ -94,13 +94,13 @@
 				lblPosition4: "늘이기",
 				lblPosition5: "사용자 지정",
 				tooltipDimension: "값은 'px' 또는 '%'로 지정할 수 있음",
-				tooltipDimension2: "한_The value has to be specified in 'px'_빠",
+				tooltipDimension2: "'px' 단위로 값을 지정해야 함",
 				lblPosition2Explain: "(잘릴 수 있음)",
 				lblPosition3Explain: "(잘리지 않음)",
 				lblPosition3Explain2: "(너비는 항상 패널에 맞춤)",
 				lblPosition4Explain: "(왜곡될 수 있음)",
-				unloadLbl: "한_Unload when reader navigates away to different section_빠",
-				unloadHelp: "한_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._빠"
+				unloadLbl: "리더가 다른 섹션으로 이동 시 언로드",
+				unloadHelp: "웹 페이지에 오디오 또는 비디오 미디어가 있는 경우 이 옵션을 선택 상태로 유지하여 리더가 다른 섹션으로 이동 시 콘텐츠가 재생되는 것을 막으세요. 리더가 저널을 통해 진행할 때 사운드 트랙 재생을 유지하려면 옵션을 선택 해제하세요.<br />웹 페이지가 응용프로그램일 경우 리더가 해당 섹션으로 되돌아올 때 응용프로그램이 다시 로드되지 않도록 이 옵션을 선택 해제하세요."
 			},
 			editorActionGeocode: {
 				lblTitle: "주소 또는 장소 찾기",

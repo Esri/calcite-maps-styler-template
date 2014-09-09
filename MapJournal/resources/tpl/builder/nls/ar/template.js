@@ -21,13 +21,13 @@
 				cfgMedium: "متوسط",
 				cfgLarge: "كبير",
 				socialLinksLabel: "عرض مشاركة الروابط أسفل كل جزء",
-				socialLinksDescr: "بيت_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._لاحقة"
+				socialLinksDescr: "يُمكن ذلك القراء من إرجاع المقاطع المحددة من %TPL_NAME%. على سبيل المثال، عند استخدام مقاطع تشارك رمز، سيقوم القراء بالوصول إلى مقطع %TPL_NAME% المحدد عوضًا عن بداية القصة. يمكن للقراء استخدام رابط الوسائط الاجتماعية في مقطع العنوان لترقية %TPL_NAME% (علامة تبويب العنوان) الكلية وكذلك الوصول إلى بداية  %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "خطوط",
-				defaultLbl: "بيت_Default_لاحقة",
-				sectionTitleLbl: "بيت_Section title_لاحقة",
-				sectionContentLbl: "بيت_Section content_لاحقة"
+				defaultLbl: "الافتراضي",
+				sectionTitleLbl: "عنوان المقطع",
+				sectionContentLbl: "محتوى المقطع"
 			},
 			initPopup: {
 				title: "مرحباً بك في"
@@ -85,7 +85,7 @@
 				lblLink: "تفضل بزيارة موقع خرائط قصص Esri على الويب.",
 				content1Div1: "يمكن تكامل أنماط متعددة عند بناء الحكاية. يحتفظ <strong>%LAYOUT_TITLE%</strong> بالنصوص والصور ومقاطع الفيديو عند وصول الخرائط<strong>إلى المرحلة الأساسية</strong>. مع ذلك، يسمح %TPL_NAME% بتمييز الصور والمخططات ومقاطع الفيديو داخل المرحلة الاساسية أيضًا.",
 				content1Div2: "تسمح إضافة المقاطع بتخصيص خبرة تبادل القصص. بصفتك من القُراء قم بالتمرير خلال نصوص %LAYOUT_TITLE% أو يمكن تحريك أو تكبير الخريطة على المرحلة الأساسية أو يمكن للخرائط والصور الجديدة التبديل تلقائيًا لدعم الرسالة.",
-				content2Div1: "بيت_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._لاحقة",
+				content2Div1: "يمكن هنا ضبط مظاهر %TPL_NAME%. ستتم تنقية أنظمة الألوان والتخطيطات والعروض والخطوط.",
 				content2Div2: "يمكن أيضًا مشاركة الروابط على Facebook وTwitter ليتمكن القُراء من نشر %TPL_NAME% للآخرين بسهولة.",
 				content3Div1: "يتم تنظيم المحتويات داخل المقاطع. يمكن الحصول على العديد من المقاطع كما تريد (بصفتها فصول صغيرة). مسار هذه الفصول هام جدًا؛ بذلك سيصبح من الممكن إعادة ترتيب بعض المقاطع أو حذفها كما تريد.",
 				content4Div1: "هل تم إيجاد خطأ أو ترغب في تغيير المواد التعليمية؟ لا. ابحث عن رمز تحرير في التطبيق للقيام بالتغييرات في المحتويات. ستقوم باستخدام وظائف التحرير عدة مرات عند تطوير %TPL_NAME%!",

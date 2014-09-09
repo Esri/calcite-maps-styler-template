@@ -21,13 +21,13 @@
 				cfgMedium: "Mediu",
 				cfgLarge: "Mare",
 				socialLinksLabel: "Afişare linkuri de partajare în partea de jos a fiecărei secţiuni",
-				socialLinksDescr: "Ă_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._ș"
+				socialLinksDescr: "Acest lucru le permite cititorilor să consulte şi să promoveze anumite secţiuni din %TPL_NAME%. De exemplu, dacă utilizaţi o pictogramă pentru partajare de secţiuni, cititorii vor ajunge în secţiunea %TPL_NAME% respectivă şi nu la începutul informaţiilor. Cititorii pot utiliza linkul pentru servicii de socializare din secţiunea pentru titlu pentru a promova întregul %TPL_NAME% (fila titlului) şi pot ajunge la începutul %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "Fonturi",
-				defaultLbl: "Ă_Default_ș",
-				sectionTitleLbl: "Ă_Section title_ș",
-				sectionContentLbl: "Ă_Section content_ș"
+				defaultLbl: "Implicit",
+				sectionTitleLbl: "Titlu secţiune",
+				sectionContentLbl: "Conţinut secţiune"
 			},
 			initPopup: {
 				title: "Bine aţi venit la"
@@ -85,7 +85,7 @@
 				lblLink: "Vizitaţi site-ul web Esri cu hărţi informative.",
 				content1Div1: "La alcătuirea unei relatări, puteţi integra o multitudine de stiluri. <strong>%LAYOUT_TITLE%</strong> conţine de regulă text, imagini şi videoclipuri, în timp ce hărţile tind să se afle în <strong>Nivelul principal</strong>. Cu toate acestea, %TPL_NAME% vă permite să utilizaţi şi imagini de obiecte spaţiale, diagrame şi videoclipuri în nivelul principal.",
 				content1Div2: "Adăugarea de secţiuni vă permite să vă particularizaţi cu adevărat experienţa de relatare. Pe măsură ce cititorii derulează textul %LAYOUT_TITLE%, o hartă din Nivelul principal poate fi panoramată sau transfocată în punctele cheie sau noi hărţi şi imagini pot fi comutate automat în sprijinul mesajului.",
-				content2Div1: "Ă_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._ș",
+				content2Div1: "Aici puteţi ajusta modul în care se afişează %TPL_NAME%. Aici puteţi rafina scheme de culori, configuraţii, dimensiuni şi fonturi.",
 				content2Div2: "De asemenea, puteţi adăuga linkuri către Facebook, Twitter şi Bitly, astfel încât cititorii să poată răspândi uşor %TPL_NAME% către alţii.",
 				content3Div1: "Conţinutul dvs. este organizat în secţiuni. Puteţi avea oricâte secţiuni doriţi (gândiţi-vă la acestea ca la nişte mini-capitole). Succesiunea acestor capitole este importantă; în Organizare puteţi reordona sau şterge secţiuni după cum doriţi.",
 				content4Div1: "Aţi găsit o greşeală sau doriţi să modificaţi materialul? Nicio problemă. Căutaţi în aplicaţie pictograma de editare pentru modifica conţinutul. Pe măsură ce dezvoltaţi %TPL_NAME%, veţi utiliza de multe ori funcţiile de editare!",

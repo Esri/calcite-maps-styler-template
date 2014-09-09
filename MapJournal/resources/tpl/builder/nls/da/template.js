@@ -21,13 +21,13 @@
 				cfgMedium: "Mellem",
 				cfgLarge: "Stor",
 				socialLinksLabel: "Vis delings-links nederst i hver sektion",
-				socialLinksDescr: "ø_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._å"
+				socialLinksDescr: "Dette gør det muligt for læserne henvise til og fremhæve bestemte sektioner i din %TPL_NAME%. Hvis du f.eks. bruger et sektionsdelingsikon, vil læserne lande på den specifikke %TPL_NAME%-sektion i stedet for på begyndelsen af historien. Dine læsere kan bruge linket til sociale medier i titelsektionen til at fremhæve hele din %TPL_NAME% (header-fane) og få dem til at lande i starten af %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "Skrifttyper",
-				defaultLbl: "ø_Default_å",
-				sectionTitleLbl: "ø_Section title_å",
-				sectionContentLbl: "ø_Section content_å"
+				defaultLbl: "Standard",
+				sectionTitleLbl: "Sektionstitel",
+				sectionContentLbl: "Sektionsindhold"
 			},
 			initPopup: {
 				title: "Velkommen til"
@@ -85,7 +85,7 @@
 				lblLink: "Besøg Esri Story Maps-webstedet.",
 				content1Div1: "Du kan integrere en række forskellige typografier, når du skaber din historie. <strong>%LAYOUT_TITLE%</strong> indeholder typisk din tekst, dine billeder og videoer, mens dine kort ofte befinder sig i <strong>hovedområdet</strong>. Men %TPL_NAME% gør det også muligt for dig at bringe billeder, diagrammer og videoer i hovedområdet.",
 				content1Div2: "Ved at tilføje sektioner kan du virkelig tilpasse din historiefortælling. Som læser kan du rulle ned igennem din %LAYOUT_TITLE% tekst, et kort i hovedområdet kan panorere eller zoome til vigtige punkter, eller nye kort og billeder kan skifte automatisk for at understøtte dit budskab.",
-				content2Div1: "ø_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._å",
+				content2Div1: "Her kan du justere udseendet af %TPL_NAME%. Farveskemaer, layouts, bredder og skrifttyper kan alle forfines her.",
 				content2Div2: "Du kan også føje delings-links til Facebook, Twitter og Bitly, så læserne nemt kan udbrede din %TPL_NAME% til andre.",
 				content3Div1: "Dit indhold er organiseret i sektioner. Du kan have så mange sektioner, som du ønsker (tænk på dem som på mini-kapitler). Flowet i disse kapitler er vigtigt. Så inden for Organisér kan du ændre sektionsrækkefølge efter eget valg.",
 				content4Div1: "Har du fundet en fejl, eller ønsker du at redigere i dit materiale? Ingen grund til bekymring. Se efter redigeringsikonet i hele app’en for at foretage ændringer i dit indhold. Du vil komme til at bruge redigeringsfunktionerne mange gange, mens du udvikler din %TPL_NAME%!",

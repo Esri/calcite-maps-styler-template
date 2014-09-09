@@ -21,13 +21,13 @@
 				cfgMedium: "中",
 				cfgLarge: "大",
 				socialLinksLabel: "各セクションの下部に共有リンクを表示",
-				socialLinksDescr: "須_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._鷗"
+				socialLinksDescr: "これを使用して、ユーザに %TPL_NAME% の特定のセクションを参照させたり推奨することができます。たとえば、セクションの共有アイコンを使用すると、ユーザはストーリーの最初ではなく、%TPL_NAME% の特定のセクションに移動します。ユーザは、タイトル セクションのソーシャル メディア リンクを使用して、%TPL_NAME% 全体 (ヘッダー タブ) を推奨し、%TPL_NAME% の冒頭に移動させることができます。"
 			},
 			settingsLayoutFonts: {
 				title: "フォント",
-				defaultLbl: "須_Default_鷗",
-				sectionTitleLbl: "須_Section title_鷗",
-				sectionContentLbl: "須_Section content_鷗"
+				defaultLbl: "デフォルト",
+				sectionTitleLbl: "セクション タイトル",
+				sectionContentLbl: "セクション コンテンツ"
 			},
 			initPopup: {
 				title: "ようこそ"
@@ -85,7 +85,7 @@
 				lblLink: "Esri ストーリー マップ Web サイトに移動します。",
 				content1Div1: "さまざまなスタイルを統合してストーリーを作成することができます。通常、<strong>%LAYOUT_TITLE%</strong> にはテキスト、画像、ビデオが含まれ、マップは<strong>メイン ステージ</strong>に配置されることが多いですが、%TPL_NAME% を使用すると、ユーザはメイン ステージ内にも注目の画像、チャート、ビデオを表示することができます。",
 				content1Div2: "セクションを追加すると、ストーリーテリングを詳細にカスタマイズできます。ユーザが %LAYOUT_TITLE% のテキストをスクロールしたときに、メイン ステージ上のマップが画面移動または主要ポイントにズームしたり、新しいマップと画像を自動的に切り替えたりして、メッセージをサポートできます。",
-				content2Div1: "須_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._鷗",
+				content2Div1: "ここで %TPL_NAME% の外観を調整できます。ここでは、配色、レイアウト、幅、およびフォントをすべて調整できます。",
 				content2Div2: "また、リンクを Facebook、Twitter、および Bitly で共有して、ユーザが簡単に %TPL_NAME% を他のユーザに広めることもできます。",
 				content3Div1: "コンテンツは複数のセクションに整理されています。セクションは (小さな章のように考えて) 必要な数だけ作成できます。それらの章の流れは重要です。[整理] の中で、必要に応じてセクションの順序を変更したり削除したりできます。",
 				content4Div1: "間違いを見つけた場合やマテリアルを変更したい場合でも簡単に編集できます。コンテンツを変更するには、アプリケーションに表示されている編集アイコンを使用します。%TPL_NAME% の開発では、編集機能を多く使用します。",

@@ -94,13 +94,13 @@
 				lblPosition4: "拉伸",
 				lblPosition5: "自定义",
 				tooltipDimension: "可使用“px”或“%”指定值",
-				tooltipDimension2: "试_The value has to be specified in 'px'_验",
+				tooltipDimension2: "值必须在 'px'中指定",
 				lblPosition2Explain: "（可裁切）",
 				lblPosition3Explain: "（不裁切）",
 				lblPosition3Explain2: "(宽度将始终适应面板)",
 				lblPosition4Explain: "（可变形）",
-				unloadLbl: "试_Unload when reader navigates away to different section_验",
-				unloadHelp: "试_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._验"
+				unloadLbl: "读者定位到其他部分时进行卸载",
+				unloadHelp: "如果网页中包含音频或视频介质，请将该选项选中以在读者定位到其他部分时停止内容播放。取消选中该选项可使读者在浏览日志的同时持续播放音轨。<br />如果网页是应用程序，请取消选中该选项，则应用程序不必在读者返回此部分时重新加载。"
 			},
 			editorActionGeocode: {
 				lblTitle: "定位地址或地点",

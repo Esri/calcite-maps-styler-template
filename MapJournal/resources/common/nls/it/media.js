@@ -94,13 +94,13 @@
 				lblPosition4: "Estendi",
 				lblPosition5: "Personalizza",
 				tooltipDimension: "Il valore può essere specificato come \'px\' o \'%\'",
-				tooltipDimension2: "é_The value has to be specified in 'px'_È",
+				tooltipDimension2: "Il valore deve essere specificato in \'px\'",
 				lblPosition2Explain: "(possibile ritaglio)",
 				lblPosition3Explain: "(nessun ritaglio)",
 				lblPosition3Explain2: "(la larghezza viene sempre adattata al pannello)",
 				lblPosition4Explain: "(possibile distorsione)",
-				unloadLbl: "é_Unload when reader navigates away to different section_È",
-				unloadHelp: "é_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._È"
+				unloadLbl: "Scarica quando il lettore passa a una sezione diversa",
+				unloadHelp: "Se la pagina Web dispone di supporti audio o video, mantenere l\'opzione selezionata per arrestare la riproduzione del contenuto quando il lettore passa a una sezione diversa. Deselezionarla, per esempio, per mantenere la riproduzione di una colonna sonora mentre il lettore scorre nel diario.<br />Se la pagina Web è un\'applicazione, deselezionare l\'opzione in modo che l\'applicazione non venga ricaricata se il lettore torna alla sezione."
 			},
 			editorActionGeocode: {
 				lblTitle: "Trova un indirizzo o un luogo",

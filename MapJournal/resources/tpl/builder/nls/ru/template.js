@@ -21,13 +21,13 @@
 				cfgMedium: "Средний",
 				cfgLarge: "Большой",
 				socialLinksLabel: "Отображать ссылки на публикацию в нижней части каждого раздела",
-				socialLinksDescr: "Ж_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._Я"
+				socialLinksDescr: "Это дает возможность читателям, делать ссылки и повышать популярность отдельных разделов %TPL_NAME%.  Например, если вы используйте в разделе значок поделиться, читатели скорее обратятся к этому разделу %TPL_NAME%, чем нежели к началу. Они могут с помощью ссылок на социальные сети, расположенных у названия раздела, сделать известным весь %TPL_NAME% (закладка названия) и выполнить переход в начало %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "Шрифты",
-				defaultLbl: "Ж_Default_Я",
-				sectionTitleLbl: "Ж_Section title_Я",
-				sectionContentLbl: "Ж_Section content_Я"
+				defaultLbl: "По умолчанию",
+				sectionTitleLbl: "Название раздела",
+				sectionContentLbl: "Содержание раздела"
 			},
 			initPopup: {
 				title: "Добро пожаловать"
@@ -85,7 +85,7 @@
 				lblLink: "Посетите веб-сайт Esri Story Maps.",
 				content1Div1: "В процессе создания вашей истории вы можете интегрировать множество стилей. Компоновка <strong>%LAYOUT_TITLE%</strong> обычно содержит текст, изображения и видео, а для карт применяется <strong>Основная площадка</strong>. Однако %TPL_NAME% позволяет встраивать также изображения, таблицы и видео в основную площадку.",
 				content1Div2: "Добавление разделов позволяет чётко настроить представление вашей истории. Читатели просматривают текст  %LAYOUT_TITLE%, карту на основной площадке можно масштабировать и перемещать, новые карты и изображения автоматически переключаются для поддержки вашего сообщения.",
-				content2Div1: "Ж_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._Я",
+				content2Div1: "Здесь вы можете указать, как должен выглядеть ваш %TPL_NAME%. Цветовые схемы, компоновки, отступы и шрифты настраиваются здесь.",
 				content2Div2: "Вы также можете добавить ссылки на Facebook, Twitter и Bitly, с помощью которых ваш %TPL_NAME% станет известен другим.",
 				content3Div1: "Ваши ресурсы организованны по разделам. Вы можете создавать любое количество разделов (глав истории). Последовательность изложения этих глав не менее важна; с помощью инструмента Организовать вы можете задать любой порядок следования и удалить ненужные главы.",
 				content4Div1: "Нашли ошибку или хотите внести изменения? Нет проблем! Чтобы изменить данные, нажмите значок Изменить в вашем приложении. В процессе создания вашего%TPL_NAME% функции редактирования будут применяться очень часто.",

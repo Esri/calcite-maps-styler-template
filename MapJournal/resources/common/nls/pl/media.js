@@ -94,13 +94,13 @@
 				lblPosition4: "Rozciągnij",
 				lblPosition5: "Niestandardowy",
 				tooltipDimension: "Wartość można podać w „px” lub „%”",
-				tooltipDimension2: "ł_The value has to be specified in 'px'_ą",
+				tooltipDimension2: "Wartość należy podać w „px”",
 				lblPosition2Explain: "(obraz może zostać przycięty)",
 				lblPosition3Explain: "(obraz nie zostanie przycięty)",
 				lblPosition3Explain2: "(szerokość będzie zawsze dopasowana do panelu)",
 				lblPosition4Explain: "(obraz może zostać zniekształcony)",
-				unloadLbl: "ł_Unload when reader navigates away to different section_ą",
-				unloadHelp: "ł_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ą"
+				unloadLbl: "Usuń, gdy czytelnik przechodzi do innej sekcji",
+				unloadHelp: "Gdy na stronie internetowej udostępnione są materiały audio lub wideo, opcja ta powinna być zaznaczona, aby po przejściu czytelnika do innej sekcji odtwarzanie tych treści było przerywane. Opcję tę należy odznaczyć, aby na przykład podczas czytania czasopisma przez czytelnika odtwarzane były utwory muzyczne.<br />Jeżeli strona internetowa jest aplikacją, opcję tę należy odznaczyć, aby uniknąć ponownego wczytywania tej aplikacji, gdy czytelnik powróci do danej sekcji."
 			},
 			editorActionGeocode: {
 				lblTitle: "Lokalizuj adres lub miejsce",

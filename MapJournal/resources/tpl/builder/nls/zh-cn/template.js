@@ -21,13 +21,13 @@
 				cfgMedium: "中",
 				cfgLarge: "大",
 				socialLinksLabel: "在每节底部显示共享链接",
-				socialLinksDescr: "试_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._验"
+				socialLinksDescr: "这使读者可以引用并提升 %TPL_NAME% 的特定节。例如，如果使用节共享图标，读者将会定位到该特定 %TPL_NAME% 节，而并非定位到故事的开头。读者可使用标题节中的社交媒体链接来提升整个 %TPL_NAME%（标题选项卡）并定位到 %TPL_NAME% 的开头。"
 			},
 			settingsLayoutFonts: {
 				title: "字体",
-				defaultLbl: "试_Default_验",
-				sectionTitleLbl: "试_Section title_验",
-				sectionContentLbl: "试_Section content_验"
+				defaultLbl: "默认",
+				sectionTitleLbl: "章节标题",
+				sectionContentLbl: "章节内容"
 			},
 			initPopup: {
 				title: "欢迎使用"
@@ -85,7 +85,7 @@
 				lblLink: "访问 Esri Story Maps 网站。",
 				content1Div1: "构建故事时，可集成各种风格。<strong>%LAYOUT_TITLE%</strong> 通常在地图要发布在<strong>主要阶段</strong>时会保留文本、图像和视频。但 %TPL_NAME% 也可以在主要阶段中展示图像、图表和视频。",
 				content1Div2: "添加节可以使您真正自定义提供信息的经验。在读者滚动 %LAYOUT_TITLE% 文本时，主要阶段上的地图可平移或缩放至关键点或新地图，图像也可以自动切换以支持消息。",
-				content2Div1: "试_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._验",
+				content2Div1: "此处可调整 %TPL_NAME% 的外观。配色方案、布局、宽度和字体均在此处进行优化。",
 				content2Div2: "还可添加至 Facebook、Twitter 和 Bitly 的共享链接，这样读者便可轻松将 %TPL_NAME% 共享给其他人。",
 				content3Div1: "您的内容将组织成部分。您可拥有任意数量的部分(可将其视为微型章节)。这些章节流十分重要；可在组织内根据需要重新排序或删除部分。",
 				content4Div1: "发现错误或希望更改材料？别担心。在整个应用程序中查找编辑图标，以对内容进行更改。在开发 %TPL_NAME% 时将多次使用编辑功能！",

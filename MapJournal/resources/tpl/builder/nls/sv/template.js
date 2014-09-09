@@ -21,13 +21,13 @@
 				cfgMedium: "Medium",
 				cfgLarge: "Stor",
 				socialLinksLabel: "Visa delningslänkar längst ned i varje avsnitt",
-				socialLinksDescr: "Å_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._ö"
+				socialLinksDescr: "Detta gör att användaren kan referera till och framhålla specifika avsnitt av din %TPL_NAME%. Om du till exempel använder en ikon för avsnittsdelning kommer användaren till det specifika %TPL_NAME%-avsnittet i stället för till början av berättelsen. Användarna kan använda länken till sociala media i rubrikavsnittet för att framhålla hela din %TPL_NAME% (rubrikfliken) och komma till början av %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "Teckensnitt",
-				defaultLbl: "Å_Default_ö",
-				sectionTitleLbl: "Å_Section title_ö",
-				sectionContentLbl: "Å_Section content_ö"
+				defaultLbl: "Standard",
+				sectionTitleLbl: "Avsnittets rubrik",
+				sectionContentLbl: "Avsnittets innehåll"
 			},
 			initPopup: {
 				title: "Välkommen till"
@@ -85,7 +85,7 @@
 				lblLink: "Besök webbplatsen för Esris berättelsekartor.",
 				content1Div1: "Du kan integrera flera olika stilar när du skapar din berättelse. <strong>%LAYOUT_TITLE%</strong> innehåller text, bilder och videoklipp medan kartorna oftast hamnar i <strong>huvudscenen</strong>. Med %TPL_NAME% kan du dock ta med bilder, tabeller och videoklipp även i huvudscenen.",
 				content1Div2: "Genom att lägga till avsnitt kan du anpassa berättelseupplevelsen. När användarna bläddrar igenom %LAYOUT_TITLE%-texten kan en karta i huvudscenen panorera eller zooma till viktiga punkter, eller så kan nya kartor och bilder växlas automatiskt för att understryka ditt budskap.",
-				content2Div1: "Å_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._ö",
+				content2Div1: "Här kan du ändra utseendet för %TPL_NAME%. Färgscheman, layout, bredd och teckensnitt ställs in här.",
 				content2Div2: "Du kan även lägga till delningslänkar till Facebook, Twitter och Bitly så att användarna enkelt kan sprida din %TPL_NAME% till andra.",
 				content3Div1: "Ditt innehåll är ordnat i avsnitt. Du kan ha så många avsnitt du vill (tänk dig dem som minikapitel). Flödet för kapitlen är viktigt. Med Organisera kan du ändra ordning på eller ta bort avsnitt som du vill.",
 				content4Div1: "Har du hittat ett fel eller vill du ändra ditt material? Inga problem. Titta efter redigeringsikonen i appen om du vill göra ändringar i innehållet. Du kommer att använda redigeringsfunktionerna många gånger medan du utvecklar din %TPL_NAME%!",

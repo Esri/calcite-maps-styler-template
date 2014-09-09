@@ -21,13 +21,13 @@
 				cfgMedium: "Moyen",
 				cfgLarge: "Grand",
 				socialLinksLabel: "Afficher les liens de partage au bas de chaque section",
-				socialLinksDescr: "æ_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._Â"
+				socialLinksDescr: "Ceci permet aux lecteurs de référencer et de promouvoir des sections spécifiques de votre %TPL_NAME%. Par exemple, si vous utilisez une icône de partage des sections, les lecteurs accéderont directement à cette section de %TPL_NAME% spécifique et non au début de votre narration. Vos lecteurs peuvent utiliser le lien de réseau social dans la section de titre pour promouvoir l\'intégralité de votre %TPL_NAME% (onglet d\'en-tête) et faciliter l\'accès au début de %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "Polices",
-				defaultLbl: "æ_Default_Â",
-				sectionTitleLbl: "æ_Section title_Â",
-				sectionContentLbl: "æ_Section content_Â"
+				defaultLbl: "Paramètre par défaut",
+				sectionTitleLbl: "Titre de la section",
+				sectionContentLbl: "Contenu de la section"
 			},
 			initPopup: {
 				title: "Bienvenue dans"
@@ -85,7 +85,7 @@
 				lblLink: "Consultez le site Web des cartes de narration Esri.",
 				content1Div1: "Vous pouvez intégrer différents styles lorsque vous élaborez votre narration. Le <strong>%LAYOUT_TITLE%</strong> contient généralement votre texte, vos images et vidéos tandis que vos cartes ont tendance à rejoindre la <strong>grande scène</strong>. Cependant, %TPL_NAME% vous permet de proposer des images, diagrammes et vidéos au sein de la grande scène également.",
 				content1Div2: "L\'ajout de sections vous permet de personnaliser réellement votre narration. Lorsque les lecteurs font défiler le texte de votre %LAYOUT_TITLE%, une carte sur la grande scène peut se déplacer et zoomer sur des points essentiels, ou de nouvelles cartes et images peuvent automatiquement apparaître pour appuyer votre point de vue.",
-				content2Div1: "æ_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._Â",
+				content2Div1: "Vous pouvez ajuster ici l\'apparence de votre %TPL_NAME%. Les combinaisons de couleurs, les mises en page, les largeurs et les polices sont précisées à cet emplacement.",
 				content2Div2: "Vous pouvez également ajouter des liens de partage vers Facebook, Twitter et Bitly afin que les lecteurs puissent facilement faire connaître votre %TPL_NAME% à d\'autres.",
 				content3Div1: "Votre contenu est organisé en sections. Vous pouvez avoir autant de sections que vous voulez (considérez-les comme des mini chapitres). Le flux de ces chapitres est important. Dans Organiser, vous pouvez agencer ou supprimer les sections comme bon vous semble.",
 				content4Div1: "Vous avez trouvé une erreur ou souhaitez changer vos documents ? Aucun problème. Recherchez l\'icône de mise à jour dans l\'application pour apporter les modifications souhaitées à votre contenu. Vous utiliserez les fonctions de mise à jour à maintes reprises au cours du développement de votre %TPL_NAME% !",

@@ -21,13 +21,13 @@
 				cfgMedium: "Keskisuuri",
 				cfgLarge: "Suuri",
 				socialLinksLabel: "Näytä jakamislinkit kunkin osan alareunassa",
-				socialLinksDescr: "Å_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._ö"
+				socialLinksDescr: "Tämän toiminnon avulla lukijat voivat viitata tiettyihin tarinan %TPL_NAME% osiin tai mainostaa niitä. Jos käytät esimerkiksi osien jakamiskuvaketta, lukijat päätyvät tarinan %TPL_NAME% tiettyyn osaan eivätkä tarinan alkuun. Lukijat voivat käyttää otsikko-osan sosiaalisen median linkkiä koko tarinan %TPL_NAME% (Otsikko-välilehti) mainostamiseen, jolloin he päätyvät tarinan %TPL_NAME% alkuun."
 			},
 			settingsLayoutFonts: {
 				title: "Fontit",
-				defaultLbl: "Å_Default_ö",
-				sectionTitleLbl: "Å_Section title_ö",
-				sectionContentLbl: "Å_Section content_ö"
+				defaultLbl: "Oletusarvo",
+				sectionTitleLbl: "Osan otsikko",
+				sectionContentLbl: "Osan sisältö"
 			},
 			initPopup: {
 				title: "Tervetuloa"
@@ -85,7 +85,7 @@
 				lblLink: "Siirry Esrin Tarinakartat-sivustoon.",
 				content1Div1: "Voit integroida useita tyylejä, kun muodostat tarinaasi. <strong>%LAYOUT_TITLE%</strong> sisältää tavallisesti tekstin, kuvat ja videot, kun kartat ovat yleensä <strong>päävaiheessa</strong>. Tarinassa %TPL_NAME% voit kuitenkin esitellä kuvia, kaavioita ja videoita myös päävaiheessa.",
 				content1Div2: "Lisäämällä osioita voit mukauttaa kattavasti tarinankerrontakokemustasi. Kun lukijat vierittävät tyylin %LAYOUT_TITLE% mukaista tekstiäsi, voit tehostaa viestiäsi vierittämällä päävaiheen karttaa tai tarkentamalla tärkeisiin pisteisiin tai kytkemällä uudet kartat ja kuvat näkymään automaattisesti.",
-				content2Div1: "Å_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._ö",
+				content2Div1: "Tässä voit säätää sitä, miltä %TPL_NAME% näyttää. Värimalleja, asetteluja, leveyksiä ja fontteja säädetään tässä.",
 				content2Div2: "Voit myös lisätä jaettavia linkkejä Facebookiin, Twitteriin ja Bitlyyn, jotta lukijat voivat helposti levittää %TPL_NAME% -tarinasi muille.",
 				content3Div1: "Sisältösi on jaettu osiin. Voit lisätä niin monta osaa kuin haluat (ajattele, että ne ovat lyhyitä kappaleita). Kappaleiden virta on tärkeä. Järjestä-näkymässä voit järjestää osia uudelleen tai poistaa niitä.",
 				content4Div1: "Löysitkö virheen vai haluatko muuttaa aineistoasi? Ei huolta. Etsi muokkauskuvaketta sovelluksesta tehdäksesi muutoksia sisältöösi. Käytät muokkaustoimintoja useita kertoja, kun kehität tarinaa %TPL_NAME%.",

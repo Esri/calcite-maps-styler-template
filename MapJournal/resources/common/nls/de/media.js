@@ -94,13 +94,13 @@
 				lblPosition4: "Strecken",
 				lblPosition5: "Benutzerdefiniert",
 				tooltipDimension: "Der Wert kann in \"Px\" oder \"%\" angegeben werden",
-				tooltipDimension2: "ä_The value has to be specified in 'px'_Ü",
+				tooltipDimension2: "Der Wert muss in \"Px\" angegeben werden",
 				lblPosition2Explain: "(Zuschneiden möglich)",
 				lblPosition3Explain: "(Zuschneiden nicht möglich)",
 				lblPosition3Explain2: "(Breite wird immer an das Fenster angepasst)",
 				lblPosition4Explain: "(Verzerren möglich)",
-				unloadLbl: "ä_Unload when reader navigates away to different section_Ü",
-				unloadHelp: "ä_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._Ü"
+				unloadLbl: "Wird entladen, wenn Leser zu einem anderen Abschnitt navigiert",
+				unloadHelp: "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Abschnitt navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen während der Leser durch das Journal blättert.<br />Wenn die Webseite eine Anwendung ist, deaktivieren Sie diese Option, damit die Anwendung nicht erneut geladen wird, wenn der Leser zu diesem Abschnitt zurückkehrt."
 			},
 			editorActionGeocode: {
 				lblTitle: "Adresse oder Ort suchen",

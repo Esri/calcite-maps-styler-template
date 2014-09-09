@@ -41,7 +41,7 @@
 			},
 			saveError: {
 				title: "Chyba při ukládání aplikace",
-				err1Div1: "Aplikaci nelze uložit, protože již vlastníte položku se stejným názvem (viz vaše <a class='linkagolroot' target='_blank'>složka obsahu</a>).",
+				err1Div1: "Aplikaci nelze uložit, protože již máte uloženou položku se stejným názvem (viz vaše <a class='linkagolroot' target='_blank'>složka obsahu</a>).",
 				err1Div2: "Změňte název domovské části a uložte aplikaci.",
 				btnOk: "Upravit název domovské části"
 			},
@@ -81,7 +81,7 @@
 				tabError: "Zkontrolujte prosím, nejsou-li v záložkách chyby."
 			},
 			settingsLayout: {
-				title: "Rozvržení",
+				title: "Rozvržení stránky",
 				explain: "Jaké rozvržení chcete použít?",
 				explainInit: "Rozvržení můžete kdykoli změnit v dialogu nastavení.",
 				viewExample: "Zobrazit živý příklad"

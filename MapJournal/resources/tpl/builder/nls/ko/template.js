@@ -21,13 +21,13 @@
 				cfgMedium: "중간",
 				cfgLarge: "대",
 				socialLinksLabel: "각 섹션의 하단에 공유 링크 표시",
-				socialLinksDescr: "한_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._빠"
+				socialLinksDescr: "사용자가 %TPL_NAME%의 특정 섹션을 참조하고 홍보할 수 있도록 합니다. 예를 들어 섹션 공유 아이콘을 사용하는 경우 사용자는 스토리 시작 부분 대신 특정 %TPL_NAME% 섹션으로 이동합니다. 사용자는 제목 섹션에 있는 소셜 미디어 링크를 사용하여 전체 %TPL_NAME%(헤더 탭)을(를) 홍보하고 %TPL_NAME% 시작 부분에 둘 수 있습니다."
 			},
 			settingsLayoutFonts: {
 				title: "글꼴",
-				defaultLbl: "한_Default_빠",
-				sectionTitleLbl: "한_Section title_빠",
-				sectionContentLbl: "한_Section content_빠"
+				defaultLbl: "기본값",
+				sectionTitleLbl: "섹션 제목",
+				sectionContentLbl: "섹션 콘텐츠"
 			},
 			initPopup: {
 				title: "시작"
@@ -85,7 +85,7 @@
 				lblLink: "Esri 스토리 맵 웹 사이트를 방문하세요.",
 				content1Div1: "스토리를 작성할 때 다양한 스타일을 통합할 수 있습니다. <strong>%LAYOUT_TITLE%</strong>에는 일반적으로 텍스트, 이미지 및 동영상이 포함되고, 맵은 <strong>기본 단계</strong>로 이동합니다. 그러나 %TPL_NAME%을(를) 통해 이미지, 차트 및 동영상도 기본 단계에 포함할 수 있습니다.",
 				content1Div2: "섹션을 추가하면 스토리텔링 환경을 사용자 정의할 수 있습니다. 사용자가 %LAYOUT_TITLE% 텍스트를 스크롤하면 기본 단계의 맵이 주요 포인트로 이동 또는 확대/축소되거나, 새 맵 및 이미지가 자동으로 전환되어 메시지를 보완합니다.",
-				content2Div1: "한_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._빠",
+				content2Div1: "여기에서 %TPL_NAME%의 모양을 조정할 수 있습니다. 색 구성표, 레이아웃, 너비 및 폰트가 모두 여기에서 세부적으로 조정됩니다.",
 				content2Div2: "사용자가 %TPL_NAME%을(를) 다른 사람에게 쉽게 퍼뜨릴 수 있도록 Facebook, Twitter 및 Bitly에 공유 링크를 추가할 수도 있습니다.",
 				content3Div1: "콘텐츠는 섹션으로 구성됩니다. 원하는 수의 섹션(일종의 작은 챕터)을 만들 수 있습니다. 이러한 챕터의 흐름이 중요하며, 구성에서 원하는 대로 섹션을 삭제하거나 재정렬할 수 있습니다.",
 				content4Div1: "실수를 발견했거나 자료를 변경하고 싶으십니까? 걱정하지 마세요. 앱 전체에서 편집 아이콘을 찾아 콘텐츠를 변경할 수 있습니다. %TPL_NAME%을(를) 개발할 때 원하는 만큼 편집 기능을 사용할 수 있습니다.",

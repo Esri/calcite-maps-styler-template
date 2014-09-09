@@ -54,7 +54,7 @@ define(
             geolocationDenied: "이 사이트에는 현재 위치를 확인할 권한이 없습니다.",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "브라우저에서 현재 위치를 확인할 수 없습니다.",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "브라우저에서 적절한 시간 내에 현재 위치를 확인할 수 없습니다.",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            noSearchLayerConfigured: "한_No find layer has been configured_빠",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
+            noSearchLayerConfigured: "구성된 검색 레이어 없음",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "맵에서 이 찾기 레이어를 찾을 수 없습니다.",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "맵 레이어의 필드를 찾을 수 없습니다.<br><br>이 레이어가 맵 콘텐츠의 루트에 있는지 확인하세요. ArcGIS for Server 동적 맵 서비스 등의 중첩된 서비스는 한 번에 한 레이어가 인덱스 번호를 포함해 맵에 추가되어 찾기 레이어로 사용됩니다. 타일 서비스는 찾기 레이어로 사용할 수 없습니다.",
             searchFieldMissing: "맵 찾기 레이어에서 이 필드를 찾을 수 없습니다.",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt

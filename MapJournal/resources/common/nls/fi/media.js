@@ -94,13 +94,13 @@
 				lblPosition4: "Venytä",
 				lblPosition5: "Mukautettu",
 				tooltipDimension: "Arvo voidaan määrittää px (pikseli)- tai %-yksiköissä",
-				tooltipDimension2: "Å_The value has to be specified in 'px'_ö",
+				tooltipDimension2: "Arvo on määritettävä pikseleinä",
 				lblPosition2Explain: "(voi rajautua)",
 				lblPosition3Explain: "(ei rajaudu)",
 				lblPosition3Explain2: "(leveys sopii aina paneeliin)",
 				lblPosition4Explain: "(voi vääristyä)",
-				unloadLbl: "Å_Unload when reader navigates away to different section_ö",
-				unloadHelp: "Å_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ö"
+				unloadLbl: "Poista lataus, kun lukija siirtyy toiseen osaan",
+				unloadHelp: "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy toiseen osaan. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä päiväkirjassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta sovellus ei lataudu uudelleen, kun lukija palaa osaan."
 			},
 			editorActionGeocode: {
 				lblTitle: "Paikanna osoite tai paikka",

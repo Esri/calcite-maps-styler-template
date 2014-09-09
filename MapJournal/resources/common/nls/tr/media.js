@@ -94,13 +94,13 @@
 				lblPosition4: "Esnet",
 				lblPosition5: "Özel",
 				tooltipDimension: "Değer 'px' ya da '%' cinsinden belirtilebilir",
-				tooltipDimension2: "ı_The value has to be specified in 'px'_İ",
+				tooltipDimension2: "Değer //'px//' cinsinden belirtilmelidir",
 				lblPosition2Explain: "(kırpılabilir)",
 				lblPosition3Explain: "(kırpılmaz)",
 				lblPosition3Explain2: "(genişlik her zaman panele sığacaktır)",
 				lblPosition4Explain: "(şekil değiştirebilir)",
-				unloadLbl: "ı_Unload when reader navigates away to different section_İ",
-				unloadHelp: "ı_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._İ"
+				unloadLbl: "Okuyucu farklı bir bölüme gittiğinde yüklemeyi kaldır",
+				unloadHelp: "Web Sayfası ses ya da video ortamı içeriyorsa, okuyucu farklı bir bölüme giderken içeriğin oynatımını durdurmak için bu seçeneği işaretli bırakın. Okuyucu bülten boyunca ilerlerken örneğin bir seslendirmenin oynatılmasını sürdürmek için bunun işaretini kaldırın.<br />Web Sayfası bir uygulamaysa bu seçeneğin işaretini kaldırın, bu sayede okuyucu o bölüme geri döndüğünde uygulama yeniden yüklenmez."
 			},
 			editorActionGeocode: {
 				lblTitle: "Adres veya yer bul",

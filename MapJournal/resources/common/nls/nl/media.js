@@ -94,13 +94,13 @@
 				lblPosition4: "Uitrekken",
 				lblPosition5: "Aangepast",
 				tooltipDimension: "De waarde kan in 'px' of '%' worden gespecificeerd",
-				tooltipDimension2: "Ĳ_The value has to be specified in 'px'_ä",
+				tooltipDimension2: "De waarde moet worden opgegeven in \'px\'",
 				lblPosition2Explain: "(kan worden bijgesneden)",
 				lblPosition3Explain: "(wordt niet bijgesneden)",
 				lblPosition3Explain2: "(breedte past altijd in het deelvenster)",
 				lblPosition4Explain: "(kan worden vervormd)",
-				unloadLbl: "Ĳ_Unload when reader navigates away to different section_ä",
-				unloadHelp: "Ĳ_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ä"
+				unloadLbl: "Laden ongedaan maken als de lezer dit verlaat en naar een andere sectie gaat",
+				unloadHelp: "Als de webpagina audio of video bevat, laat u deze optie aangevinkt om het afspelen van deze inhoud te stoppen wanneer de lezer naar een andere sectie gaat. Vink de optie uit als u bijvoorbeeld wilt dat een soundtrack blijft spelen wanneer de lezer door het journaal bladert.<br />Als de webpagina een applicatie is, vinkt u deze optie uit zodat de applicatie niet opnieuw wordt geladen als de lezer terugkeert naar die sectie."
 			},
 			editorActionGeocode: {
 				lblTitle: "Een adres of plaats zoeken",

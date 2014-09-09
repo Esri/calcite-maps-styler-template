@@ -94,13 +94,13 @@
 				lblPosition4: "ストレッチ",
 				lblPosition5: "カスタム",
 				tooltipDimension: "値は「px」または「%」で指定できます",
-				tooltipDimension2: "須_The value has to be specified in 'px'_鷗",
+				tooltipDimension2: "値は「px」で指定する必要があります",
 				lblPosition2Explain: "(トリミングの可能性あり)",
 				lblPosition3Explain: "(トリミングなし)",
 				lblPosition3Explain2: "(幅は常にパネルに合わせて調整されます)",
 				lblPosition4Explain: "(歪みの可能性あり)",
-				unloadLbl: "須_Unload when reader navigates away to different section_鷗",
-				unloadHelp: "須_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._鷗"
+				unloadLbl: "ユーザが別のセクションに移動したときにアンロード",
+				unloadHelp: "Web ページにオーディオまたはビデオ メディアがある場合は、このオプションをオンのままにして、ユーザが別のセクションに移動したときに、そのコンテンツが再生されないようにします。ユーザがジャーナルの先に移動してもサウンドトラックを再生し続けるような場合は、このオプションをオフにします。<br />Web ページがアプリケーションの場合は、ユーザがそのセクションに戻ってもアプリケーションを再読み込みしないように、このオプションをオフにします。"
 			},
 			editorActionGeocode: {
 				lblTitle: "住所または位置の検索",

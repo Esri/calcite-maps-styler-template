@@ -94,13 +94,13 @@
 				lblPosition4: "Растяжка",
 				lblPosition5: "Настраиваемый",
 				tooltipDimension: "Значение можно задать в 'px' или '%'",
-				tooltipDimension2: "Ж_The value has to be specified in 'px'_Я",
+				tooltipDimension2: "Значение можно задать в 'px'",
 				lblPosition2Explain: "(может быть урезано)",
 				lblPosition3Explain: "(не будет урезаться)",
 				lblPosition3Explain2: "(ширина всегда будет соответствовать панели)",
 				lblPosition4Explain: "(может исказиться)",
-				unloadLbl: "Ж_Unload when reader navigates away to different section_Я",
-				unloadHelp: "Ж_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._Я"
+				unloadLbl: "Выгрузить, когда читатель перейдет в другой раздел",
+				unloadHelp: "Если на веб-странице есть аудио или видео медиа, храните эту опцию включенной, чтобы остановить проигрывание ресурса при переходе читателя в другой раздел. Отключите ее, например, чтобы саундтрек проигрывался, пока читатель перемещается по журналу.<br />Если веб страница является приложением, отключите эту опцию, чтобы приложение не перезагружалось при возврате читателя в этот раздел."
 			},
 			editorActionGeocode: {
 				lblTitle: "Найдите адрес или место",

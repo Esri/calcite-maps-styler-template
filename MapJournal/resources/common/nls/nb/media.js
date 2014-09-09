@@ -94,13 +94,13 @@
 				lblPosition4: "Strekk",
 				lblPosition5: "Tilpasset",
 				tooltipDimension: "Verdien kan angis i \'px\' eller \'%\'",
-				tooltipDimension2: "å_The value has to be specified in 'px'_ø",
+				tooltipDimension2: "Verdien må angis i piksler",
 				lblPosition2Explain: "(kan bli beskåret)",
 				lblPosition3Explain: "(blir ikke beskåret)",
 				lblPosition3Explain2: "(bredden passer alltid med panelet)",
 				lblPosition4Explain: "(kan bli forvrengt / vises skjevt)",
-				unloadLbl: "å_Unload when reader navigates away to different section_ø",
-				unloadHelp: "å_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ø"
+				unloadLbl: "Last ut når leseren navigerer til en annen del",
+				unloadHelp: "Hvis websiden inneholder lyd eller video, beholder du avmerkingen for dette alternativet slik at dette innholdet ikke spilles av når leseren navigerer til en annen del. Du kan fjerne avmerkingen hvis du for eksempel vil spille av et lydspor mens leseren går gjennom historien.<br />Hvis websiden er et program, fjerner du avmerkingen for dette alternativet slik at programmet ikke lastes inn på nytt hvis leseren kommer tilbake til delen."
 			},
 			editorActionGeocode: {
 				lblTitle: "Finn en adresse eller et sted",

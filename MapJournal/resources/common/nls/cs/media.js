@@ -94,13 +94,13 @@
 				lblPosition4: "Roztáhnout",
 				lblPosition5: "Vlastní",
 				tooltipDimension: "Hodnotu lze uvést v 'px' nebo '%'",
-				tooltipDimension2: "Ř_The value has to be specified in 'px'_ů",
+				tooltipDimension2: "Hodnota musí být uvedena v 'px'.",
 				lblPosition2Explain: "(může dojít k ořezu)",
 				lblPosition3Explain: "(nedojde k ořezu)",
 				lblPosition3Explain2: "(šířka se vždy přizpůsobí panelu)",
 				lblPosition4Explain: "(může dojít ke zkreslení)",
-				unloadLbl: "Ř_Unload when reader navigates away to different section_ů",
-				unloadHelp: "Ř_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ů"
+				unloadLbl: "Zrušit spuštění, když čtenář přejde do jiné části",
+				unloadHelp: "Pokud webová stránka obsahuje audio nebo video média, nechte tuto možnost zaškrtnutou, aby se přehrávání tohoto obsahu ukončilo, když čtenář přejde do jiné části. Zrušte její zaškrtnutí, pokud například chcete, aby hudební podkres hrál po celou dobu prohlížení deníku.<br />Pokud je webová stránka aplikací, zrušte zaškrtnutí této možnosti, aby se aplikace nespouštěla znovu, když se čtenář do této části vrátí."
 			},
 			editorActionGeocode: {
 				lblTitle: "Najít adresu nebo místo",
