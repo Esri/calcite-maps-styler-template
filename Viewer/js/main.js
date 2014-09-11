@@ -606,30 +606,30 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
                 require(["application/has-config!print-layouts?esri/request", "application/has-config!print-layouts?esri/tasks/PrintTemplate"], lang.hitch(this, function (esriRequest, PrintTemplate) {
                     if (!esriRequest && !PrintTemplate) {
-                        //Use the default print templates 
+                            //Use the default print templates 
                         var templates = [{
                             layout: "Letter ANSI A Landscape",
                             layoutOptions: layoutOptions,
-                            label: this.config.i18n.tools.print.layouts.label1,
+                            label: this.config.i18n.tools.print.layouts.label1 + " ( " + this.format + " )",
                             format: this.format
                         },
                         {
                             layout: "Letter ANSI A Portrait",
                             layoutOptions: layoutOptions,
-                            label: this.config.i18n.tools.print.layouts.label2,
+                            label: this.config.i18n.tools.print.layouts.label2 + " ( " + this.format + " )",
                             format: this.format
                         },
                         {
                             layout: "Letter ANSI A Landscape",
                             layoutOptions: layoutOptions,
-                            label: this.config.i18n.tools.print.layouts.label3,
-                            format: this.format
+                            label: this.config.i18n.tools.print.layouts.label3 + " ( image )",
+                            format: "PNG32"
                         },
                         {
                             layout: "Letter ANSI A Portrait",
                             layoutOptions: layoutOptions,
-                            label: this.config.i18n.tools.print.layouts.label4,
-                            format: this.format
+                            label: this.config.i18n.tools.print.layouts.label4 + " ( image )",
+                            format: "PNG32"
                         }];
 
 
