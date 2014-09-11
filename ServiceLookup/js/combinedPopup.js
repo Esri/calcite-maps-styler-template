@@ -1,4 +1,4 @@
-
+﻿
 define([
     "dojo/Evented",
     "dojo",
@@ -268,6 +268,16 @@ define([
 
                         } else {
                             if (layer.title == serviceAreaLayerNames[f]) {
+                                if (layer.popupInfo == null) {
+                                    if (i18n) {
+                                        if (i18n.error) {
+                                            if (i18n.error.popupNotSet) {
+                                                 alert(i18n.error.popupNotSet + ": " + layer.title);
+                                            }
+                                        }
+                                    }
+
+                                }
                                 layDetails.popupInfo = layer.popupInfo;
                                 layDetails.name = layer.title;
                                 layDetails.url = layer.layerObject.url;
@@ -498,86 +508,87 @@ define([
                     popUpArray.length = this.results.length;
                     mediaArray.length = this.results.length;
                     array.forEach(this.results, function (result) {
+                        if (result.Layer.popupInfo != null) {
+                            var resetFieldNames = result.Layer.popupInfo.fieldInfos;
+                            for (var r = 0, rl = resetFieldNames.length; r < rl; r++) {
+                                resetFieldNames[r].fieldName = resetFieldNames[r].fieldName.replace(result.Layer.name + "_", "");
 
-                        var resetFieldNames = result.Layer.popupInfo.fieldInfos;
-                        for (var r = 0, rl = resetFieldNames.length; r < rl; r++) {
-                            resetFieldNames[r].fieldName = resetFieldNames[r].fieldName.replace(result.Layer.name + "_", "");
-
-                        }
-
-                        //result.Layer.popupInfo.fieldInfos;
-                        var layerFields = result.Layer.popupInfo.fieldInfos;
-                        var layerDescription = result.Layer.popupInfo.description;
-                        var popupTitle = result.Layer.popupInfo.title;
-                        var mediaInfos = lang.clone(result.Layer.popupInfo.mediaInfos);
-
-                        var layFldTable = "";
-
-                        for (var g = 0, gl = layerFields.length; g < gl; g++) {
-                            if (mediaInfos != null) {
-                                array.forEach(mediaInfos, function (mediaInfo) {
-                                    mediaInfo = this._processObject(mediaInfo, layerFields[g].fieldName, result.Layer.name, false);
-
-                                }, this);
                             }
 
-                            if (result.Layer.popupInfo.description == null) {
-                                re = new RegExp("{" + layerFields[g].fieldName + "}", "g");
+                            //result.Layer.popupInfo.fieldInfos;
+                            var layerFields = result.Layer.popupInfo.fieldInfos;
+                            var layerDescription = result.Layer.popupInfo.description;
+                            var popupTitle = result.Layer.popupInfo.title;
+                            var mediaInfos = lang.clone(result.Layer.popupInfo.mediaInfos);
 
-                                popupTitle = popupTitle.replace(re, "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
+                            var layFldTable = "";
 
-                                if (layerFields[g].visible === true) {
+                            for (var g = 0, gl = layerFields.length; g < gl; g++) {
+                                if (mediaInfos != null) {
+                                    array.forEach(mediaInfos, function (mediaInfo) {
+                                        mediaInfo = this._processObject(mediaInfo, layerFields[g].fieldName, result.Layer.name, false);
 
-                                    //this.layerDescription = layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
-                                    layFldTable = layFldTable + "<tr valign='top'>";
-                                    if (layerFields[g].label != null) {
-                                        layFldTable = layFldTable + "<td class='popName'>" + layerFields[g].label + "</td>";
-                                    } else {
-                                        layFldTable = layFldTable + "<td class='popName'>" + layerFields[g].fieldName + "</td>";
-                                    }
-                                    layFldTable = layFldTable + "<td class='popValue'>" + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}</td>";
-                                    layFldTable = layFldTable + "</tr>";
-
+                                    }, this);
                                 }
 
-                            } else {
-                                re = new RegExp("{" + layerFields[g].fieldName + "}", "g");
+                                if (result.Layer.popupInfo.description == null) {
+                                    re = new RegExp("{" + layerFields[g].fieldName + "}", "g");
 
-                                layerDescription = layerDescription.replace(re, "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
+                                    popupTitle = popupTitle.replace(re, "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
+
+                                    if (layerFields[g].visible === true) {
+
+                                        //this.layerDescription = layerFields[g].fieldName + ": " + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}<br>";
+                                        layFldTable = layFldTable + "<tr valign='top'>";
+                                        if (layerFields[g].label != null) {
+                                            layFldTable = layFldTable + "<td class='popName'>" + layerFields[g].label + "</td>";
+                                        } else {
+                                            layFldTable = layFldTable + "<td class='popName'>" + layerFields[g].fieldName + "</td>";
+                                        }
+                                        layFldTable = layFldTable + "<td class='popValue'>" + "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}</td>";
+                                        layFldTable = layFldTable + "</tr>";
+
+                                    }
+
+                                } else {
+                                    re = new RegExp("{" + layerFields[g].fieldName + "}", "g");
+
+                                    layerDescription = layerDescription.replace(re, "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
+
+                                }
+                                resultFeature[result.Layer.name + "_" + layerFields[g].fieldName] = result.results[0].attributes[layerFields[g].fieldName];
+                                layerFields[g].fieldName = result.Layer.name + "_" + layerFields[g].fieldName;
 
                             }
-                            resultFeature[result.Layer.name + "_" + layerFields[g].fieldName] = result.results[0].attributes[layerFields[g].fieldName];
-                            layerFields[g].fieldName = result.Layer.name + "_" + layerFields[g].fieldName;
+                            if (result.Layer.popupInfo.description === null) {
+                                var popupTable = "<div class=''>";
+                                popupTable = popupTable + "<table class='popTable' cellpadding='0' cellspacing='0'>";
+                                popupTable = popupTable + "<tbody>";
 
-                        }
-                        if (result.Layer.popupInfo.description === null) {
-                            var popupTable = "<div class=''>";
-                            popupTable = popupTable + "<table class='popTable' cellpadding='0' cellspacing='0'>";
-                            popupTable = popupTable + "<tbody>";
+                                if (popupTitle !== "") {
 
-                            if (popupTitle !== "") {
+                                    popupTable = popupTable + "<tr valign='top'>";
+                                    popupTable = popupTable + "<td colspan='2'  class='headerPopUp'>" + popupTitle + "</td>";
 
-                                popupTable = popupTable + "<tr valign='top'>";
-                                popupTable = popupTable + "<td colspan='2'  class='headerPopUp'>" + popupTitle + "</td>";
+                                    popupTable = popupTable + "</tr>";
+                                    popupTable = popupTable + "<tr>";
+                                    popupTable = popupTable + "<td colspan='2' class='hzLinePopUp'></td>";
 
-                                popupTable = popupTable + "</tr>";
-                                popupTable = popupTable + "<tr>";
-                                popupTable = popupTable + "<td colspan='2' class='hzLinePopUp'></td>";
+                                    popupTable = popupTable + "</tr>";
+                                }
 
-                                popupTable = popupTable + "</tr>";
+                                popupTable = popupTable + layFldTable;
+                                popupTable = popupTable + "</tbody>";
+
+                                popupTable = popupTable + "</div>";
+                                layerDescription = popupTable;
                             }
 
-                            popupTable = popupTable + layFldTable;
-                            popupTable = popupTable + "</tbody>";
+                            allFields = allFields.concat(layerFields);
 
-                            popupTable = popupTable + "</div>";
-                            layerDescription = popupTable;
+                            mediaArray[result.Layer.layerOrder] = mediaInfos;
+                            popUpArray[result.Layer.layerOrder] = layerDescription;
                         }
-
-                        allFields = allFields.concat(layerFields);
-
-                        mediaArray[result.Layer.layerOrder] = mediaInfos;
-                        popUpArray[result.Layer.layerOrder] = layerDescription;
 
                     }, this);
 
