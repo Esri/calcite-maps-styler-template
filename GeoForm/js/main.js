@@ -14,7 +14,6 @@ define([
     "dojo/Deferred",
     "dojo/query",
     "dojo/io-query",
-    "offline/OfflineSupport",
     "dojo/_base/array",
     "dojo/dom-construct",
     "dojo/dom-attr",
@@ -53,7 +52,6 @@ define([
     Deferred,
     query,
     ioQuery,
-    OfflineSupport,
     array,
     domConstruct,
     domAttr,
@@ -238,6 +236,7 @@ define([
                 var urlParams = ioQuery.queryToObject(window.location.search.substring(1)),
                     newParams = lang.clone(urlParams);
                 delete newParams.edit; //Remove edit parameter
+                delete newParams.folderid; //Remove folderid parameter
                 url = queryUrl.substring(0, queryUrl.indexOf("?") + 1) + ioQuery.objectToQuery(newParams);
             }
             node.src = url;
@@ -1248,11 +1247,17 @@ define([
                 domClass.remove(document.body, "app-loading");
                 // editable layer
                 if (this._formLayer) {
-                    // support basic offline editing
-                    this._offlineSupport = new OfflineSupport({
-                        map: this.map,
-                        layer: this._formLayer
-                    });
+                    // if indexedDB is supported
+                    if(window.indexedDB){
+                        // get offline support
+                        require(["offline/OfflineSupport"], lang.hitch(this, function(OfflineSupport){
+                            // support basic offline editing
+                            this._offlineSupport = new OfflineSupport({
+                                map: this.map,
+                                layer: this._formLayer
+                            });
+                        }));   
+                    }
                 }
                 // drag point edit toolbar
                 this.editToolbar = new editToolbar(this.map);
@@ -1277,6 +1282,10 @@ define([
                         this.addressGeometry = evt.mapPoint;
                         this._setSymbol(this.addressGeometry);
                     }
+                }));
+                // map loaded
+                on(this.map, 'load', lang.hitch(this, function () {
+                    this._resizeMap();
                 }));
                 // mouse move and click, show lat lon
                 on(this.map, 'mouse-move, click', lang.hitch(this, function (evt) {
@@ -1398,6 +1407,7 @@ define([
                 // icon classes
                 domClass.add(btnNode, 'glyphicon-remove');
                 domClass.remove(btnNode, 'glyphicon-fullscreen');
+                domClass.remove(this.map.root, 'panel');
                 // move map node and clear hash
                 domConstruct.place(mapNode, fsContainerNode);
                 window.location.hash = "";
@@ -1405,6 +1415,7 @@ define([
                 // icon classes
                 domClass.remove(btnNode, 'glyphicon-remove');
                 domClass.add(btnNode, 'glyphicon-fullscreen');
+                domClass.add(this.map.root, 'panel');
                 // move map node and set hash
                 domConstruct.place(mapNode, mapContainerNode);
                 window.location.hash = "#mapDiv";
@@ -2060,6 +2071,8 @@ define([
                     domClass.remove(panelBodyNode, 'panel-body');
                 }
             }
+            // resize map
+            this._resizeMap();
         },
         _addNotationIcon: function (formContent, imageIconClass) {
             var inputIconGroupContainer, inputIconGroupAddOn;
