@@ -319,32 +319,35 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                             return true;
                         }
                     });
-                    if (layer.url) {
-                        var url = layer.url;
-                        var field = searchLayer.field.name;
-                        var name = layer.title;
-                        if (esriLang.isDefined(searchLayer.subLayer)) {
-                            url = url + "/" + searchLayer.subLayer;
-                            array.some(layer.layerObject.layerInfos, function (info) {
-                                if (info.id == searchLayer.subLayer) {
-                                    name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
-                                    return true;
-                                }
+                    if(layer && layer.hasOwnProperty("url")){
+                        if (layer.url) {
+                            var url = layer.url;
+                            var field = searchLayer.field.name;
+                            var name = layer.title;
+                            if (esriLang.isDefined(searchLayer.subLayer)) {
+                                url = url + "/" + searchLayer.subLayer;
+                                array.some(layer.layerObject.layerInfos, function (info) {
+                                    if (info.id == searchLayer.subLayer) {
+                                        name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
+                                        return true;
+                                    }
 
+                                });
+                            }
+                            searchLayers.push({
+                                "name": name,
+                                "url": url,
+                                "field": field,
+                                "exactMatch": (searchLayer.field.exactMatch || false),
+                                "placeholder": searchOptions.hintText,
+                                "outFields": "*",
+                                "type": "query",
+                                "layerId": searchLayer.id,
+                                "subLayerId": parseInt(searchLayer.subLayer) || null
                             });
-                        }
-                        searchLayers.push({
-                            "name": name,
-                            "url": url,
-                            "field": field,
-                            "exactMatch": (searchLayer.field.exactMatch || false),
-                            "placeholder": searchOptions.hintText,
-                            "outFields": "*",
-                            "type": "query",
-                            "layerId": searchLayer.id,
-                            "subLayerId": parseInt(searchLayer.subLayer) || null
-                        });
 
+                        }
+                            
                     }
 
                 }));
