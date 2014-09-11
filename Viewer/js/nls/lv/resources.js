@@ -22,7 +22,7 @@ define(
         "tools":{
             "search":{
                 "error": "Izvietojumu nevarēja atrast",
-                "notWhatYouWanted": "Vai tas nav tas, ko vēlējāties?",
+                "notWhatYouWanted": "Vai tas nav vajadzīgais?",
                 "selectAnother": "Izvēlieties citu izvietojumu",
                 "currentLocation": "Pašreizējais izvietojums",
                 "title": "Izvietojums"

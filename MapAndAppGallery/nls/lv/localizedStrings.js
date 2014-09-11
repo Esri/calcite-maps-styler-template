@@ -82,7 +82,7 @@ define({
             layerNotFound: "Nevar iegūt datus no slāņiem.",
             unableToOpenItem: "Nevar atvērt vienību.",
             wmsSpatialReferenceError: "WMS slāņa telpiskā atsauce neatbilst kartes telpiskajai atsaucei.",
-            noPublicItems: "Konfigurētajā grupā nav nevienas publiskas vienības, vai neviena vienība vēl nav koplietota ar šo grupu.",
+            noPublicItems: "Konfigurētajā grupā nav nevienas publiskas vienības vai arī ar šo grupu pagaidām nav kopīgota neviena vienība.",
             emptyUsernamePassword: "Lūdzu, ievadiet lietotājvārdu un paroli.",
             noFullScreenSupport: "Pašreizējā pārlūkā pilnekrāna režīms nav atbalstīts.",
             notMemberOfOrg: "Jūs neesat šīs organizācijas dalībnieks"

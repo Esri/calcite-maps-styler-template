@@ -72,13 +72,13 @@
 				lblEmbed: "Iegult kodu",
 				lblOR: "VAI",
 				lblError1: "Kļūda, notīriet vienu no diviem ievades laukiem.",
-				lblError2: "Iegultais kods var ietvert tikai vienu %IFRAMETAG%",
+				lblError2: "Iegultais kods var saturēt tikai vienu %IFRAMETAG%",
 				configure: "Konfigurēt"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Attēla URL ir jāsākas ar http:// un jābeidzas ar .jpg vai .png",
-				lblURLError: "Šķiet, ka šis attēls nav derīgs. Norādiet tiešu saiti uz attēla failu (jūsu vietrāža URL beigās parasti būs .jpg vai .png). Nedarbojas saites uz web lapu, kurā ir ietverts attēls.",
+				lblURLError: "Šķiet, ka šis attēls nav derīgs. Lūdzu, norādiet tiešu saiti uz attēla failu (parasti URL beidzas ar .jpg vai .png). Saites uz web lapu, kurā atrodas attēls, nedarbosies.",
 				lblURLCheck: "Notiek attēla pārbaude...",
 				lblLabel: "Attēla teksts",
 				lblLabel1: "Uzraksts",

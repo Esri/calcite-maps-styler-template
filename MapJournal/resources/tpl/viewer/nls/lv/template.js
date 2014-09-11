@@ -9,9 +9,9 @@
 				step2: "Datu ielāde",
 				step3: "Inicializēšana",
 				loadBuilder: "Pārslēgšanās uz veidotāju",
-				long: "Karšu žurnāls veic inicializēšanu",
-				long2: "Pateicamies, ka gaidījāt",
-				failButton: "Atkārtoti ielādēt lietotni"
+				long: "Karšu žurnāls tiek inicializēts",
+				long2: "Paldies, ka uzgaidījāt",
+				failButton: "Pārlādēt aplikāciju"
 			},
 			signin: {
 				title: "Nepieciešama autentifikācija",
@@ -30,9 +30,9 @@
 				notConfiguredDesktop: "ķ_The application is not configured yet._ū",
 				notConfiguredMobile: "ķ_The %TPL_NAME% builder is not supported at this screen resolution._ū",
 				notAuthorized: "Jums nav tiesību piekļūt šai aplikācijai",
-				noBuilderIE: "Veidotājs netiek atbalstīts Internet Explorer versijās, kas vecākas par %VERSION%. %UPGRADE%",
-				noViewerIE: "Šī lietotne netiek atbalstīta Internet Explorer versijās, kas vecākas par %VERSION%. %UPGRADE%",
-				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Atjauniniet savu pārlūku</a>.",
+				noBuilderIE: "Veidotājs netiek atbalstīts Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
+				noViewerIE: "Šī aplikācija netiek atbalstīta Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
 				mapLoadingFail: "ķ_Something went wrong, the Map did not load correctly._ū",
 				signOut: "Izrakstīties"
 			},

@@ -2,7 +2,7 @@
      ({
         map: {
             error: "Nevar izveidot kartes",
-            views: "skatus."
+            views: "skati."
         },
         report: {
             flag: "Atzīmēt kā nepiemērotu",

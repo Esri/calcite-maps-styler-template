@@ -21,13 +21,13 @@
 				cfgMedium: "Vidutinis",
 				cfgLarge: "Didelis",
 				socialLinksLabel: "Kiekvienos skilties apačioje rodomos bendrinimo nuorodos",
-				socialLinksDescr: "Į_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._š"
+				socialLinksDescr: "Skaitytojai gali nurodyti ir reklamuoti konkrečias jūsų %TPL_NAME% skiltis. Pvz., jei naudojate skilties bendrinimo piktogramą, skaitytojai bus nukreipti į konkrečią %TPL_NAME% skiltį, o ne į pasakojimo pradžią. Be to, skaitytojai gali naudoti pavadinimo skiltyje pateiktą socialinių tinklų nuorodą ir reklamuoti visą %TPL_NAME% (antraštės skirtukas), tada jie bus nukreipti į %TPL_NAME% pradžią."
 			},
 			settingsLayoutFonts: {
 				title: "Šriftai",
-				defaultLbl: "Į_Default_š",
-				sectionTitleLbl: "Į_Section title_š",
-				sectionContentLbl: "Į_Section content_š"
+				defaultLbl: "Numatytasis",
+				sectionTitleLbl: "Skilties pavadinimas",
+				sectionContentLbl: "Skilties turinys"
 			},
 			initPopup: {
 				title: "Sveiki atvykę"
@@ -85,7 +85,7 @@
 				lblLink: "Apsilankykite Esri pristatomųjų žemėlapių svetainėje.",
 				content1Div1: "Kurdami pasakojimą galite integruoti įvairius stilius. Paprastai <strong>%LAYOUT_TITLE%</strong> pateikiami tekstas, vaizdai ir video, o žemėlapiai dažniausiai būna <strong>pagrindinėje srityje</strong>. Tačiau, naudodami %TPL_NAME%, ir pagrindinėje srityje galite pridėti vaizdų, diagramų ir video.",
 				content1Div2: "Pridėdami skilčių galite labai įvairiai adaptuoti savo pasakojimą. Kai skaitytojai slinks %LAYOUT_TITLE% tekstu, gali būti prastumiamas pagrindinėje srityje esantis žemėlapis ir keičiamas jo mastelis, kad būtų rodomi pagrindiniai taškai arba gali būti automatiškai perjungiami nauji žemėlapiai ir vaizdai, sustiprinantys jūsų pasakojimo įspūdį.",
-				content2Div1: "Į_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._š",
+				content2Div1: "Čia galite koreguoti, kaip atrodys %TPL_NAME%. Čia priderinamos spalvų schemos, maketai, pločiai ir šriftai.",
 				content2Div2: "Be to, galite pridėti Facebook, Twitter ir Bitly bendrinimo nuorodas, kad skaitytojai galėtų lengvai išplatinti %TPL_NAME% kitiems.",
 				content3Div1: "Turinys tvarkomas dalijant į skiltis. Gali būti kiek tik norite skilčių (galvokite apie jas, kaip apie mažus skyrius). Svarbi šių skyrių seka; dalyje Tvarkymas galite keisti skilčių išdėstymo tvarką arba jas panaikinti, kaip norite.",
 				content4Div1: "Radote klaidą ar norite pakeisti duomenis? Nesirūpinkite. Norėdami pakeisti turinį, ieškokite aplikacijos redagavimo piktogramos. Kurdami %TPL_NAME% daug kartų naudosite redagavimo funkcijas!",

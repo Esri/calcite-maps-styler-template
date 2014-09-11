@@ -21,13 +21,13 @@
 				cfgMedium: "Keskmine",
 				cfgLarge: "Suur",
 				socialLinksLabel: "Kuva jagamise lingid iga jaotise allservas",
-				socialLinksDescr: "Š_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._ä"
+				socialLinksDescr: "Sel viisil saavad lugejad viidata teie malli %TPL_NAME% kindlatele jaotistele ja neid esile tõsta. Kui kasutate näiteks jaotiste jagamise ikooni, satub lugeja lehel %TPL_NAME% sellesse konkreetsesse jaotisse, mitte loo algusse. Tiitlijaotises asuva sotsiaalmeedia lingi kaudu saavad lugejad tervet teie lehte %TPL_NAME% (päisesakki) jagada nii, et uus lugeja viiakse lehe %TPL_NAME% algusse."
 			},
 			settingsLayoutFonts: {
 				title: "Fondid",
-				defaultLbl: "Š_Default_ä",
-				sectionTitleLbl: "Š_Section title_ä",
-				sectionContentLbl: "Š_Section content_ä"
+				defaultLbl: "Vaikimisi",
+				sectionTitleLbl: "Jaotise pealkiri",
+				sectionContentLbl: "Jaotise sisu"
 			},
 			initPopup: {
 				title: "Tere tulemast"
@@ -85,7 +85,7 @@
 				lblLink: "Külastage Esri kaardilugude veebisaiti.",
 				content1Div1: "Artikli koostamisel saate kaasata mitmesuguseid laade. <strong>%LAYOUT_TITLE%</strong> sisaldab enamasti teksti, pilte ja videoid, kaardid aga asuvad <strong>põhisektsioonis</strong>. %TPL_NAME% lubab teil siiski ka pilte, diagramme ja videot põhisektsioonis kasutada.",
 				content1Div2: "Jaotiste lisamisega saate oma loo jutustada täpselt nii, nagu soovite. Kui lugeja liigub jaotise %LAYOUT_TITLE% tekstis kerides allapoole, saate põhisektsioonis kaarti liigutada või olulisi kohti suuremana näidata; samuti saab Teie sõnumi toetamiseks automaatselt uusi kaarte ja pilte sisse ja välja lülitada.",
-				content2Div1: "Š_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._ä",
+				content2Div1: "Siin saate kohandada malli %TPL_NAME% ilmet. Muuhulgas saate siin määratleda värviskeemid, paigutused, laiused ja fondid.",
 				content2Div2: "Samuti saate lisada Facebooki, Twitteri ja Bitly kaudu jagamise lingid, et lugejad saaksid Teie malli %TPL_NAME% mugavalt edasi levitada.",
 				content3Div1: "Sisu korraldatakse jaotistena. Jaotiste arv pole piiratud (võite neid käsitleda miniatuursete peatükkidena). Kuna nende peatükkide voog peaks olema sujuv, saate korraldamisaknas jaotiste järjestust muuta või jaotisi ka kustutada.",
 				content4Div1: "Kas olete leidnud vea või soovite materjali muuta? Ärge muretsege. Rakenduse muutmisikooni kaudu saate sisu igal ajal muuta. Muutmisvõimaluste kasutamist tuleb teil malli %TPL_NAME% väljatöötamisel kindlasti ohtralt ette!",

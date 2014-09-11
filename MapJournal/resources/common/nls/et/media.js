@@ -94,13 +94,13 @@
 				lblPosition4: "Venita",
 				lblPosition5: "Kohandatud",
 				tooltipDimension: "Väärtuse ühikuks võib olla px või %",
-				tooltipDimension2: "Š_The value has to be specified in 'px'_ä",
+				tooltipDimension2: "Väärtuse ühikuks peab olema px",
 				lblPosition2Explain: "(võib kärpida)",
 				lblPosition3Explain: "(ei kärbita)",
 				lblPosition3Explain2: "(laius on alati paneelile vastav)",
 				lblPosition4Explain: "(võib moonutada)",
-				unloadLbl: "Š_Unload when reader navigates away to different section_ä",
-				unloadHelp: "Š_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ä"
+				unloadLbl: "Laadi maha, kui lugeja liigub teise jaotise juurde",
+				unloadHelp: "Kui veebileht sisaldab heli- või videosisu, märkige see valik, et takistada selle sisu esitamist siis, kui lugeja liigub teise jaotise juurde. Tühjendage see valik näiteks siis, kui soovite, et heliriba esitataks siis, kui lugeja läbi ajakirja liigub.<br />Kui veebileht on rakendus, tühjendage see valik, et rakendust ei laaditaks uuesti siis, kui lugeja sellesse jaotisesse naaseb."
 			},
 			editorActionGeocode: {
 				lblTitle: "Märgi aadress või asukoht",

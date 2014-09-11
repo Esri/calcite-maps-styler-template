@@ -40,7 +40,7 @@
 				extentExplain: "Panoramējiet un mērogojiet karti, lai uzzinātu, kādu to redzēs jūsu lasītāji.",
 				extentSave: "Saglabāt kartes izvietojumu",
 				popupTitle: "Kartes uznirstošais logs",
-				popupExplain: "Noklikšķiniet uz elementa, lai atvērtu to uznirstošo logu, kuru vēlaties parādīt.",
+				popupExplain: "Noklikšķiniet uz elementa, lai atvērtu uznirstošo logu, kuru vēlaties attēlot.",
 				popupSave: "Saglabāt uznirstošā loga konfigurāciju",
 				hintNavigation: "Kartes navigācija ir atspējota."
 			}

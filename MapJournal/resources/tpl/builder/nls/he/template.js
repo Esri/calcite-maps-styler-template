@@ -21,13 +21,13 @@
 				cfgMedium: "בינוני",
 				cfgLarge: "גדול",
 				socialLinksLabel: "הצג את הקישורים המשותפים בחלק התחתון של כל קטע",
-				socialLinksDescr: "כן_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._ש"
+				socialLinksDescr: "זה מאפשר לקוראים להפנות ולקדם מקטעים מסוימים של ה-%TPL_NAME% שלך. לדוגמה, אם אתה משתמש בסמל שיתוף מקטעים, הקוראים יגיעו למקטע ספציפי ב-%TPL_NAME% במקום להגיע לתחילת הסיפור. הקוראים שלך יוכלו להשתמש בקישור המדיה החברתית במקטע הכותרת כדי לקדם את כל ה-%TPL_NAME% (לשונית הכותרת) ולהגיע לתחילת ה-%TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "גופנים",
-				defaultLbl: "כן_Default_ש",
-				sectionTitleLbl: "כן_Section title_ש",
-				sectionContentLbl: "כן_Section content_ש"
+				defaultLbl: "ברירת מחדל",
+				sectionTitleLbl: "כותרת מקטע",
+				sectionContentLbl: "תוכן מקטע"
 			},
 			initPopup: {
 				title: "ברוכים הבאים אל"
@@ -85,7 +85,7 @@
 				lblLink: "בקר באתר מפות סיפור של Esri.",
 				content1Div1: "ניתן לשלב מגוון סגנונות בעת בניית הסיפור שלך. ה- <strong>%LAYOUT_TITLE%</strong> בדרך כלל כולל את הטקסט שלך, וידאו ותמונות בזמן שהמפות שלך מתחלפות <strong>בתצוגה הראשית</strong>. עם זאת, ה- %TPL_NAME%  מאפשר לך להוסיף תמונות, וידאו ותרשימים גם בתוך התצוגה הראשית.",
 				content1Div2: "הוספת חלקים מאפשרת לך להתאים אישית את חויית הסיפור. כאשר הקוראים גוללים את הטקסט בתוך ה%LAYOUT_TITLE% המפה בתצוגה הראשית יכולה להתמקד לנקודות מפתח, ומפות ותמונות יכולות להתחלף באופן אוטומטי כדי לתמוך במסר שלך.",
-				content2Div1: "כן_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._ש",
+				content2Div1: "זה המקום לשינוי מראה ה-%TPL_NAME%. כאן ניתן ללטש סכימות צבעים, פריסות, רוחב וגופנים.",
 				content2Div2: "אתה יכול גם להוסיף קישורי שיתוף לפייסבוק, טוויטר, ו- Bitly, כדי שקוראים יוכלו בקלות להפיץ את ה- %TPL_NAME% שלך לאחרים.",
 				content3Div1: "התוכן שלך מאורגן בחלקים. אתה יכול להגדיר חלקים רבים ככל שתרצה (חשוב עליהם כמו פרקים קטנים). המעבר בין הפרקים חשוב; בעזרת כלי זה באפשרותך לסדר מחדש או למחוק חלקים כרצונך.",
 				content4Div1: "מצאת שגיאה או רוצה לשנות את התוכן שלך? אל דאגה. חפש את סמל העריכה באפליקציה כדי לבצע שינויים בתוכן שלך. אתה יכול להשתמש ביכולות העריכה פעמים רבות בעת שאתה מפתח את ה-  %TPL_NAME% שלך!",

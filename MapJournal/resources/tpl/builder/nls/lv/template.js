@@ -25,7 +25,7 @@
 			},
 			settingsLayoutFonts: {
 				title: "Fonti",
-				defaultLbl: "ķ_Default_ū",
+				defaultLbl: "Noklusējums",
 				sectionTitleLbl: "ķ_Section title_ū",
 				sectionContentLbl: "ķ_Section content_ū"
 			},
@@ -41,7 +41,7 @@
 				stepMainStageExplain: "Galvenā posma saturs",
 				stepPanelExplain: "Saturs",
 				stepMainStageNextTooltip: "Ievadiet sadaļas virsrakstu un izvēlieties galvenā posma saturu",
-				stepMainStageNextTooltip2: "Izvēlieties galvenā posma saturu",
+				stepMainStageNextTooltip2: "Atlasiet galvenā posma saturu",
 				step2NextTooltip: "Ievadiet sadaļas virsrakstu un %LAYOUT-TYPE% saturu",
 				stepNextTooltipNext: "lai pārietu uz nākamo soli",
 				stepNextTooltipAdd: "lai pievienotu sadaļu",
@@ -53,7 +53,7 @@
 				editorPlaceholder: "Šeit pievienojiet tekstu, saites un maza izmēra grafikas.",
 				editorActionsTitle: "Galvenā posma darbības",
 				editorActionsHelpDescr: "Izmantojiet šīs vadīklas, lai izveidotu saites, kas tiks mainītas galvenajā posmā. Piemēram, kad lietotājs noklikšķinās uz saites, iespējams, vēlēsieties mērogmainīt karti līdz konkrētam izvietojumam, parādīt citu web karti vai attēlu.",
-				mainStageDisabled: "Kad redaktors ir maksimizēts, galvenā posma darbības tiek atspējotas"
+				mainStageDisabled: "Galvenā posma darbības ir atspējotas, ja redaktors ir maksimizēts"
 			},
 			organizePopup: {
 				title: "Organizē",
@@ -89,7 +89,7 @@
 				content2Div2: "Koplietošanas saites varat arī pievienot vietnēs Facebook, Twitter un Bitly, lai lasītāji varētu viegli pavēstīt par jūsu %TPL_NAME% citiem lietotājiem.",
 				content3Div1: "Jūsu izveidotais saturs ir sakārtots sadaļās. Varat izveidot tik sadaļu, cik vēlaties (iedomājieties, ka tās ir nelielas nodaļas). Šo nodaļu plūsma ir svarīga, tāpēc, izmantojot kārtošanas funkciju, sadaļas varat pēc vajadzības pārkārtot vai dzēst.",
 				content4Div1: "Atradāt kļūdu vai vēlaties mainīt savus materiālus? Tas ir viegli paveicams! Lai saturā veiktu izmaiņas, aplikācijā atrodiet rediģēšanas ikonu. Izstrādājot %TPL_NAME%, rediģēšanas funkciju nāksies bieži izmantot.",
-				content5Div1: "Jūsu %TPL_NAME% ir saglabāts jūsu portāla %PORTAL% kontā un ir konfidenciāls pēc noklusējuma. Varat izvēlēties to kopīgot ar savu organizāciju vai padarīt pieejamu visiem lietotājiem. Mēs pat nodrošināsim jums saīsinātu vietrādi URL, lai koplietošana būtu vienkāršāka.",
+				content5Div1: "Jūsu %TPL_NAME% ir saglabāts jūsu portāla %PORTAL% kontā un ir konfidenciāls pēc noklusējuma. Varat izvēlēties to kopīgot ar savu organizāciju vai padarīt pieejamu visiem lietotājiem. Mēs pat nodrošināsim jums saīsinātu vietrādi URL, lai kopīgošana būtu vienkāršāka.",
 				content6Div1: "Sākuma sadaļas virsraksts ir arī jūsu žurnāla virsraksts; iedomājieties, ka sākuma sadaļa ir jūsu stāstījuma titullapa. Kad lietotāji pārvietosies žurnālā, viņiem vienmēr būs redzams sākuma sadaļas virsraksts.",
 				content6Div2: "%LAYOUT_TITLE% nav jābūt tikai tekstam, apsveriet iespēju iekļaut foto un video, lai stāstu padarītu dzīvāku un sadalītu sīkāk garas teksta sadaļas."
 			},

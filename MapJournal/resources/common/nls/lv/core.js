@@ -40,10 +40,10 @@
 				shareStatus4: "Lietotne netiek koplietota"
 			},
 			saveError: {
-				title: "Saglabājot lietotni, radās kļūda",
-				err1Div1: "Lietotni nevar saglabāt, jo jums jau ir cita vienība ar tādu pašu nosaukumu (skatiet savu <a class='linkagolroot' target='_blank'>satura mapi</a>).",
-				err1Div2: "Modificējiet sākuma sadaļas virsrakstu un saglabājiet lietotni.",
-				btnOk: "Rediģējiet sākuma sadaļas virsrakstu"
+				title: "Saglabājot aplikāciju, radās kļūda",
+				err1Div1: "Aplikāciju nevar saglabāt, jo jums jau ir cita vienība ar tādu pašu nosaukumu (skatiet savu <a class='linkagolroot' target='_blank'>satura mapi</a>).",
+				err1Div2: "Lūdzu, modificējiet sadaļas Mājas nosaukumu un saglabājiet aplikāciju.",
+				btnOk: "Rediģēt sadaļas Mājas nosaukumu"
 			},
 			share: {
 				firstSaveTitle: "Lietotne veiksmīgi saglabāta",
@@ -66,7 +66,7 @@
 				shareHeader2: "Jūsu aplikācijai var piekļūt jūsu organizācijas dalībnieki (nepieciešama pieteikšanās).",
 				shareLinkCopy: "Kopēt",
 				shareLinkCopied: "Kopēts",
-				shareQ0: "Kā iegult lietotni web vietnē?",
+				shareQ0: "Kā iegult aplikāciju web vietnē?",
 				shareQ1Opt1: "Kā saglabāt aplikāciju privātu?",
 				shareQ1Opt2: "Kā saglabāt aplikāciju privātu vai koplietot to publiski?",
 				shareA1: "Izmantojiet %SHAREIMG% <a href='%LINK1%' target='_blank'>aplikācijas vienību lapā</a>.",

@@ -42,7 +42,7 @@
 			saveError: {
 				title: "Virhe tallennettaessa sovellusta",
 				err1Div1: "Sovellusta ei voi tallentaa, koska toisella kohteella on sama nimi (katso <a class='linkagolroot' target='_blank'>sisältökansio</a>).",
-				err1Div2: "Muokkaa Kotisiivu-osan otsikkoa ja tallenna sovellus.",
+				err1Div2: "Muokkaa Kotisivu-osan otsikkoa ja tallenna sovellus.",
 				btnOk: "Muokkaa Kotisivu-osan otsikkoa"
 			},
 			share: {

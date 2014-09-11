@@ -94,13 +94,13 @@
 				lblPosition4: "מתוח",
 				lblPosition5: "גודל מותאם",
 				tooltipDimension: "הערך יכול להיות מוגדר בתוך  'px' או '%'",
-				tooltipDimension2: "כן_The value has to be specified in 'px'_ש",
+				tooltipDimension2: "יש לציין את הערך ב-'px'",
 				lblPosition2Explain: "(יכול להחתך)",
 				lblPosition3Explain: "(לא יכול להחתך)",
 				lblPosition3Explain2: "(רוחב תמיד יתאים ללוח)",
 				lblPosition4Explain: "(יכול להתעוות)",
-				unloadLbl: "כן_Unload when reader navigates away to different section_ש",
-				unloadHelp: "כן_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ש"
+				unloadLbl: "בטל את הטעינה כשהקורא מנווט למקטע אחר",
+				unloadHelp: "אם דף האינטרנט מכיל מדיה של שמע או וידאו, השאר אפשרות זו מסומנת כדי למנוע הפעלת תוכן זה כשהקורא מנווט למקטע אחר. בטל את סימון האפשרות, למשל, כדי לגרום לפסקול להמשיך לנגן בזמן שהקורא מתקדם לאורך כתב העת.<br />אם דף האינטרנט הוא אפליקציה, בטל את סימון האפשרות כדי שהאפליקציה לא תיטען מחדש אם הקורא יחזור למקטע זה."
 			},
 			editorActionGeocode: {
 				lblTitle: "אתר כתובת או מקום",

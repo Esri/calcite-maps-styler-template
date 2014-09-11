@@ -94,13 +94,13 @@
 				lblPosition4: "Ištempti",
 				lblPosition5: "Adaptuota",
 				tooltipDimension: "Reikšmę galima nurodyti piks. arba %",
-				tooltipDimension2: "Į_The value has to be specified in 'px'_š",
+				tooltipDimension2: "Reikšmę reikia nurodyti piks.",
 				lblPosition2Explain: "(gali būti apkarpoma)",
 				lblPosition3Explain: "(nebus apkarpoma)",
 				lblPosition3Explain2: "(plotis visada atitiks skydą)",
 				lblPosition4Explain: "(gali būti iškraipoma)",
-				unloadLbl: "Į_Unload when reader navigates away to different section_š",
-				unloadHelp: "Į_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._š"
+				unloadLbl: "Iškelti, kai skaitytojas pereina tolyn į kitą skiltį",
+				unloadHelp: "Jeigu tinklalapyje yra garso arba vaizdo medija, palikite šią parinktį pažymėtą, kad sustabdytumėte turinio leidimą, kai skaitytojas pereina tolyn į kitą skiltį. Panaikinkite žymėjimą, pavyzdžiui, jei norite leisti garso takelį, kai skaitytojas varto žurnalą.<br />Jeigu tinklalapis yra aplikacija, panaikinkite šios parinkties žymėjimą, kad skaitytojui grįžus į šią skiltį aplikacija nebūtų įkeliama iš naujo."
 			},
 			editorActionGeocode: {
 				lblTitle: "Raskite adresą arba vietą",
