@@ -247,6 +247,12 @@ html, body {
 .templatePicker{
     border:none;
 }
+.esriMeasurement .esriMeasurementButtonPane{
+    padding-left:6px;
+}
+.esriMeasurement .esriMeasurementResultLabel{
+    padding-left:4px;
+}
 .esriMeasurement .areaIcon{
     background-image: url(../images/area_measure.png);
     width:28px;
@@ -674,7 +680,12 @@ img{
     max-height:80%;
     max-width: $page-width - 20;
 }
-
+#pageBody_basemap{
+    max-height:80%;
+}
+#pageBody_layers{
+    max-height:80%;
+}
 #pageBody_share{
     padding:5px 20px;
     overflow-y:auto;
