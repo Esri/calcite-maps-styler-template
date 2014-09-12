@@ -252,3 +252,13 @@ body.modal-open,
 .fullscreen .app-content {
     display: none;
 }
+/* fix for darkly datepicker in dropdown */
+
+.geoform-darkly .bootstrap-datetimepicker-widget {
+    color: #333;
+}
+/* fix for ie9 banner */
+
+#appLogo {
+    width: auto \9;
+}
