@@ -72,6 +72,7 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
                 //add a tooltip 
                 var tip = this.config.i18n.tooltips[name] || name;
                 domAttr.set(pTool, "data-title", tip);
+                domAttr.set(pTool, "title", tip);
             }
 
             domConstruct.create("img", {
