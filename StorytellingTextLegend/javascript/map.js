@@ -289,7 +289,7 @@ function initUI(response, index, map) {
             dojo.connect(timeSlider, 'onTimeExtentChange', function (timeExtent) {
 
                 var timeCon = dojo.query("#timeSliderDiv > table > tbody > tr > td");
-                dojo.place("<img id='playPause' class='timeControl' src='images/playIcon.png' alt='' onClick='animate()'>", timeCon[0], 'last');
+                dojo.place("<img id='playPause' class='timeControl' src='images/playIcon.png' alt='' onClick='setAnimationState()'>", timeCon[0], 'last');
                 dojo.place("<img id='prev' class='timeControl' src='images/prevIcon.png' alt='' onClick='prevTime()'>", timeCon[2], 'last');
                 dojo.place("<img id='next' class='timeControl' src='images/nextIcon.png' alt='' onClick='nextTime()'>", timeCon[3], 'last');
 
@@ -445,7 +445,7 @@ function mapLoaded() {
 }
 
 
-function animate() {
+function setAnimationState() {
     if (_timeProperties[cm] != null) {
         if (isPlaying == false) {
             isPlaying = true;
