@@ -56,23 +56,23 @@ define({
     //"demographicsURL": "http://services.arcgisonline.com/arcgis/rest/services/Demographics/USA_Percent_Under_18/MapServer/1",
     //"demographicsFields": "TOTPOP_CY,POPL18_CY,POP65U_CY",
     //"demographicsAliases": "2012 Total Population,2012 Population Under 18 Years,2012 Population Over 65 Years",
-    "demographicsURL": "http://services.arcgis.com/80hk79qB8z45zcHi/ArcGIS/rest/services/US_Block_Group_Points/FeatureServer/0",
+    "demographicsURL": location.protocol + "//services.arcgis.com/80hk79qB8z45zcHi/ArcGIS/rest/services/US_Block_Group_Points/FeatureServer/0",
     "demographicsFields": "POP2010,MALES,FEMALES,HSE_UNITS",
     "demographicsAliases": "2010 Total Population,Male Population,Female Population,Housing Units",
     "showLifestyle": true,
     "lifestyleLabel": "Lifestyle",
-    "lifestyleURL": "http://services.arcgisonline.com/arcgis/rest/services/Demographics/USA_Tapestry/MapServer/1",
+    "lifestyleURL": location.protocol + "//services.arcgisonline.com/arcgis/rest/services/Demographics/USA_Tapestry/MapServer/1",
     "showWeather": true,
     "weatherLabel": "Weather",
-    "weatherURL": "http://api.worldweatheronline.com/free/v1/weather.ashx?format=json&num_of_days=3&extra=localObsTime&key=63hkyhwzpks3a3kj9k9jdfeg", // URL to free weather API information with your access token
+    "weatherURL": location.protocol + "//api.worldweatheronline.com/free/v1/weather.ashx?format=json&num_of_days=3&extra=localObsTime&key=63hkyhwzpks3a3kj9k9jdfeg", // URL to free weather API information with your access token
     "weatherLayerURL_Tiled" : "https://gisserver.accuweather.com/ESRITileServices2/tileRequest/AccuTileServices/LatestUSHiResRadar/N1dvRW9KUjNNK2tYWFp4Y1h6M2lCa2ZTRW5wMWJzeXdaamxIY3ZkRmcxVCs1YXdPaE1MckpBPT0=/MapServer/tile/{level}/{row}/{col}",
-    "weatherLayerURL_WMS": "http://gis.srh.noaa.gov/ArcGIS/services/RIDGERadar/MapServer/WMSServer", // URL for WMS weather layer.
+    "weatherLayerURL_WMS": location.protocol + "//gis.srh.noaa.gov/ArcGIS/services/RIDGERadar/MapServer/WMSServer", // URL for WMS weather layer.
     "weatherUnits": "F", // options: F or C
     "showDirections": false,
     "directionsLabel": "Directions",
     "directionsURL": null,
     "distanceUnits": "miles", // options: miles or kilometers
-    "defaultDistance": 4,
+    "defaultDistance": 3,
     "defaultZoomLevel": 14,
     "defaultToCenter": true,
     // **************************** //
@@ -89,7 +89,7 @@ define({
     ],
     "helperServices": {
         "geometry": {
-            "url": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer"
+            "url": ""
         },
         "printTask": {
             "url": null
