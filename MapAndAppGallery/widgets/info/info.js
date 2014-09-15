@@ -45,6 +45,7 @@ define([
 
         /**
         * Slide in and out the right panel upon clicking the info icon. Only for smart phone devices.
+        * @memberOf widgets/info/info
         */
         _slideRightPanel: function () {
             domClass.add(query(".esriCTInnerLeftPanelBottom")[0], "displayNone");
@@ -70,9 +71,11 @@ define([
             if (query(".esriCTMenuTabLeft")[0]) {
                 if (domClass.contains(query(".esriCTMenuTabLeft")[0], "displayBlock")) {
                     domClass.replace(query(".esriCTMenuTabLeft")[0], "displayNone", "displayBlock");
+                    domClass.replace(query(".esriCTHomeIcon")[0], "displayNone", "displayBlock");
                     domClass.replace(query(".esriCTSignIn")[0], "displayNone", "displayBlock");
                 } else {
                     domClass.replace(query(".esriCTMenuTabLeft")[0], "displayBlock", "displayNone");
+                    domClass.replace(query(".esriCTHomeIcon")[0], "displayBlock", "displayNone");
                     domClass.replace(query(".esriCTSignIn")[0], "displayBlock", "displayNone");
                 }
             }

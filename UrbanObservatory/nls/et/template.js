@@ -33,7 +33,7 @@
     "mapHasNoLODs": "Sellel kaardil ei ole LODis defineeritud: ",
     "errorCreatingMap": "Viga kaardi loomisel: ",
     "cantFindWebmap": "Ei leia veebikaarti: ",
-    "alreadyLoadingCity": "Juba laen linna: "
+    "alreadyLoadingCity": "Juba laadin linna: "
   }
 
 }));

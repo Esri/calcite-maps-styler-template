@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "A camada não está no mapa da web",
             fieldNotFound: "Campo não localizado",
-            popupNotSet: "O pop-up não está habilitado para esta camada"
+            popupNotSet: "O pop-up não está habilitado para esta camada",
+            noLayersSet: "Não há camadas definidas na configuração, a caixa de pesquisa não funcionará"
         },
         page: {
             title: "Consultar Informações",

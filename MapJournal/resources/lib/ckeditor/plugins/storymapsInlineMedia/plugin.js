@@ -70,7 +70,7 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 					
 					media[media.type] = {
 						url: isVideo || isFrameByUrl ? mediaIframe.attr('src') : null,
-						frameTag: isVideo || isFrameByUrl ? null : mediaContainer.prop('outerHTML'),
+						frameTag: isVideo || isFrameByUrl ? null : mediaIframe.prop('outerHTML'),
 						display: mediaContainer.hasClass("custom") ? "custom" : "fit",
 						width: mediaIframe.attr('width'),
 						height: mediaIframe.attr('height')
@@ -116,8 +116,8 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 							outputEl = CKEDITOR.dom.element.createFromHtml(captionTpl, editor.document);
 							$(outputEl.getChildren().$).eq(0).children().attr({
 								'src': cfg.url,
-								'width': DEFAULT_WIDTH
-								//'height': cfg.height
+								'width': media && media.image && media.image.width ? media.image.width : DEFAULT_WIDTH,
+								'height': media && media.image && media.image.height ? media.image.height : null
 							});
 							outputEl.getChildren().$[1].innerHTML = cfg.title;
 						}
@@ -129,6 +129,12 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 								outputEl.getChildren().$[0].setAttribute('src', cfg.url);
 							
 							outputEl.getChildren().$[0].setAttribute('width', DEFAULT_WIDTH);
+							
+							// It's an image with a width/height (resized manually)
+							if ( media && media.image && media.image.width ) {
+								outputEl.getChildren().$[0].setAttribute('width', media.image.width);
+								outputEl.getChildren().$[0].setAttribute('height', media.image.height);
+							}
 							
 							if ( cfg.type == "image" && cfg.titleDisplay == 'hover' )
 								outputEl.getChildren().$[0].setAttribute('title', cfg.title);

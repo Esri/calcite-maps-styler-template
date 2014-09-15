@@ -25,6 +25,47 @@ The GeoForm template can be accessed via the ArcGIS template gallery or item det
 3. Access the .html page.
 4. See the readme.html page for configuration options.
 
+## Adding The Template To Your ArcGIS Online Organization
+
+See how you can [add this template to your organization](http://blogs.esri.com/esri/arcgis/2014/04/21/be-an-early-adopter/) as an early adopter.
+
+## More Information
+
+See the [ArcGIS Blog post](http://blogs.esri.com/esri/arcgis/2014/07/08/editing-via-pop-ups-got-you-down/) for additional informationa bout this application.
+
+## Offline Editing
+This template supports editing offline using the Esri [Offline Editor JS](https://github.com/Esri/offline-editor-js). For more information on web offline editing see the github project linked above.
+
+This template supports basic offline editing by saving the edits locally until a connection can be reestablished. As long as the browser window remains open or is reopened then the edits will get synched once an internet connection is restored.
+
+Attachments are stored locally as well.
+
+***IMPORTANT: If you want a full, robust offline solution then you should be using our ArcGIS Runtime SDKs for .NET, WPF, Java, iOS, Android and Qt.***
+
+## Limitations
+
+* Currently only supports point editable feature layers.
+* Offline editing only supports storing applyEdits and submitting upon reconnection.
+* Offline does not cache tiles or services. 
+
+## Requirements
+
+* Notepad or HTML editor
+* A little background with Javascript
+* Experience with the [ArcGIS Javascript API](http://www.esri.com/) would help.
+
+## Bootstrap
+
+This application uses the [Bootstrap](http://getbootstrap.com/) framework for CSS, layout, components and theming. [Bootstrap](https://github.com/twbs/bootstrap) on GitHub.
+
+## Configuring The Template
+
+This template includes an application builder. If you're using this template via ArcGIS.com, you can take advantage of this builder while logged into ArcGIS and by configuring the published application.
+
+If you are not using ArcGIS Online applications, you can configure this template by editing the defaults.js in the config folder.
+
+ [New to Github? Get started here.](https://github.com/)
+
 ## Configuring defaults.js
 
 This topic will explain how to configure some of the more advanced settings in defaults.js
@@ -75,7 +116,7 @@ Modified fields property
 
 #### Configuring Application Details
 
-The GeoForm title, description and logo can be customized. If they are left empty, they will use the webmap's default title, image and summary. If both are undefined, then the item will not show in the application.
+The GeoForm title, description and logo can be customized. If they are left empty, they will use the webmap's default title, image and summary. If both are empty or undefined, then the item will not show in the application.
 
     "details": {
         "Title": "My Custom Geoform",
@@ -83,13 +124,7 @@ The GeoForm title, description and logo can be customized. If they are left empt
         "Description": "Check out my GeoForm!"
     }
 
-If you don't want them to appear, set them to false.
-
-    "details": {
-        "Title": false,
-        "Logo": false,
-        "Description": false
-    }
+If you don't want them to appear, set both the application and webmap values to an empty string.
 
 #### Theme
 
@@ -141,46 +176,31 @@ Use this template in an ArcGIS organization or portal application by changing th
 
     "sharinghost": "http://myorg.maps.arcgis.com",
 
-## Adding The Template To Your ArcGIS Online Organization
+## Localizing the template
 
-See how you can [add this template to your organization](http://blogs.esri.com/esri/arcgis/2014/04/21/be-an-early-adopter/) as an early adopter.
+If you'd like to use this template with a language that is not currently supported, please follow these instructions to translate the template for a new locale.
 
-## Configuring The Template
+A language is loaded depending on what the browser's locale is set to and if the language is defined in the template.
 
-This template includes an application builder. If you're using this template via ArcGIS.com, you can take advantage of this builder while logged into ArcGIS and by configuring the published application.
+1. Modify the [/js/nls/resources.js](js/nls/resources.js) file to add a new language.
+    * Open up the file and scroll to the bottom. You will see a list of supported langauges by thier id string. such as '"ar": 1'.
+    * To add a new language, create a new property with the language code. This tells the template that the new language is available to be used.
+        ex: "fr":1,
+2. Create the folder in [/js/nls/](js/nls/) for the language. Make sure this name matches the language code.
+    ex: /js/nls/fr/
+3. Copy the [/js/nls/resources.js](js/nls/resources.js) file into your new language folder
+    ex: /js/nls/fr/resources.js
+4. Remove all the strings with '"locale": 1' from the copied file.
+5. Modify the language file and translate the strings into the new language.
+    ex: /js/nls/fr/resources.js - modified with strings changed
+    
+If you'd like your language to always be loaded no matter which browser locale the user is running you can modify the dojoConfig to add the locale you wish to load. This is located in the [/index.html](index.html) file near the top.
 
-If you are not using ArcGIS Online applications, you can configure this template by editing the defaults.js in the config folder.
-
- [New to Github? Get started here.](https://github.com/)
-
-## More Information
-
-See the [ArcGIS Blog post](http://blogs.esri.com/esri/arcgis/2014/07/08/editing-via-pop-ups-got-you-down/) for additional informationa bout this application.
-
-## Offline Editing
-This template supports editing offline using the Esri [Offline Editor JS](https://github.com/Esri/offline-editor-js). For more information on web offline editing see the github project linked above.
-
-This template supports basic offline editing by saving the edits locally until a connection can be reestablished. As long as the browser window remains open or is reopened then the edits will get synched once an internet connection is restored.
-
-Attachments are stored locally as well.
-
-***IMPORTANT: If you want a full, robust offline solution then you should be using our ArcGIS Runtime SDKs for .NET, WPF, Java, iOS, Android and Qt.***
-
-## Limitations
-
-* Currently only supports point editable feature layers.
-* Offline editing only supports storing applyEdits and submitting upon reconnection.
-* Offline does not cache tiles or services. 
-
-## Requirements
-
-* Notepad or HTML editor
-* A little background with Javascript
-* Experience with the [ArcGIS Javascript API](http://www.esri.com/) would help.
-
-## Bootstrap
-
-This application uses the [Bootstrap](http://getbootstrap.com/) framework for CSS, layout, components and theming. [Bootstrap](https://github.com/twbs/bootstrap) on GitHub.
+    var dojoConfig = {
+        locale: "fr"
+    };
+    
+See Dojo's [localization help](http://dojotoolkit.org/documentation/tutorials/1.10/i18n/) for more information.
 
 ## Resources
 

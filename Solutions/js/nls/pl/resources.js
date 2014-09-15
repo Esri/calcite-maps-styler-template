@@ -16,6 +16,9 @@
  */
 define(
     ({
+        map: {
+            error: "Nie można utworzyć mapy"
+        },
         tooltips: {
             search: "Znajdź",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Bieżąca lokalizacja",  // Command button to zoom and pan to the current geographical position reported by the browser
@@ -51,8 +54,9 @@ define(
             geolocationDenied: "Ta strona nie ma uprawnień do pobierania bieżącej lokalizacji",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Przeglądarka nie mogła pobrać bieżącej lokalizacji",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Przeglądarka nie mogła pobrać bieżącej lokalizacji w odpowiednim czasie",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            noSearchLayerConfigured: "Nie skonfigurowano warstwy wyszukiwania",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "Nie znaleziono wyszukiwanej warstwy na mapie",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
-            searchLayerNotSearchable: "Nie znaleziono pól dla tej warstwy mapy.<br><br>Upewnij się, że warstwa ta istnieje w głównej zawartości mapy. Zagnieżdżone usługi, takie jak usługi map dynamicznych ArcGIS for Server, należy dodawać do mapy po jednej warstwie  (łącznie z numerem indeksu warstwy), aby można je było wykorzystać w funkcji Znajdź warstwy. Usługi kafelkowe nie mogą być wykorzystywane w funkcji Znajdź warstwy.",
+            searchLayerNotSearchable: "Nie znaleziono pól dla tej warstwy mapy.<br><br>Upewnij się, że warstwa ta istnieje w głównej zawartości mapy. Zagnieżdżone usługi, takie jak usługi map dynamicznych ArcGIS for Server, należy dodawać do mapy po jednej warstwie (łącznie z numerem indeksu warstwy), aby można je było wykorzystać w funkcji Znajdź warstwy. Usługi kafelkowe nie mogą być wykorzystywane w funkcji Znajdź warstwy.",
             searchFieldMissing: "Nie znaleziono tego pola w wyszukiwanej warstwie mapy",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
             allSearchFieldsMissing: "Żadne z tych pól nie zostało znalezione w wyszukiwanej warstwie mapy.",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "To pole nie istnieje w żadnej warstwie mapy",  // Appears when a field used in the configuration was not found in any map layer

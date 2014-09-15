@@ -9,7 +9,7 @@
 			head: "<span class='highlightText'>Mall</span> sisaldab lihtsaid valmiskujul toimetamisvahendeid, mille kaudu:",
 			list0: "Saate kiiresti muuta pealkirju ja tekste", 
 			list1: "Vahendid selgitavate tekstide lisamiseks, kustutamiseks, peitmiseks ja nende järjekorra muutmiseks.",
-			list2: "Saad ikoonide haaramise ja lohistamise kaudu muuta selgitavate tekstide asukohta"
+			list2: "Saate ikoonide haaramise ja lohistamise kaudu muuta selgitavate tekstide asukohta"
 		},
 		thirdPane: {
 			head: "Majutatud kaardi tuuri malli kasutamiseks pead esmalt looma kaardi ArcGIS Online veebikaardi aknas (see ei pea sisaldama ühtegi kihti), salvestama selle ning seejärel klikkama nupule Jaga. Avanenud jagamise dialoogiaknas vali Loo Veebirakendus ja sealt edasi leida juba vastavast galeriist sobiv kaardi tuuri mall ning jätka vastavalt juhistele. Rakenduse seadistamisel avaneb interaktiivne muutmisaken automaatselt.<br /><br />Kasutajad, kes soovivad parendada tuuri sisu või lisada uusi funktsioone, saavad:",

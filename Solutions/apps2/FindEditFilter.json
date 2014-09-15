@@ -102,6 +102,7 @@
             "label": "Find Layers and Fields",
             "fieldName": "featureSearcher.searchLayersString",
             "type": "multilayerandfieldselector",
+            "tooltip": "Choose the layers - and the fields in those layers - to search",
             "layerOptions": {
                 "supportedTypes": ["FeatureLayer"],
                 "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline", "esriGeometryPolygon"]
@@ -110,9 +111,10 @@
                 "supportedTypes": ["esriFieldTypeString", "esriFieldTypeSmallInteger", "esriFieldTypeInteger"]
             }
         }, {
-            "label": "Result Display Layers and Fields",
+            "label": "Result Display Layers and Fields (optional)",
             "fieldName": "featureSearcher.displayLayersString",
             "type": "multilayerandfieldselector",
+            "tooltip": "Optionally, choose to return values from one or several fields in the search results. If no Result Display Layer is specified for a Find Layer, the Find Field value will be returned in the search results.",
             "layerOptions": {
                 "supportedTypes": ["FeatureLayer"],
                 "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline", "esriGeometryPolygon"]
@@ -165,7 +167,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "5e8776036f46a8a2 2014-09-02 07:17:15 -0700"
+                "commit fea82736b7cbb5bb 2014-09-05 15:35:57 -0700"
             ]
         }
     }, {
@@ -532,10 +534,9 @@
             "subject": ".titleBar.title",
             "tinyURLServiceURL": "",
             "tinyURLResponseAttribute": "data.url",
-            "shareUrl": "http://twitter.com/home/?status=${subject} ${url}",
+            "shareUrl": "https://twitter.com/intent/tweet?url=${url}&text=${subject}",
             "busyIndicator": "busyIndicator",
             "dependencyId": "map"
         }
     }]
 }
-

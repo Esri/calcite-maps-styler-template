@@ -11,7 +11,8 @@
 				disabled: "คุณลักษณะนี้ได้ถูกปิดใช้งานโดยผู้ดูแลระบบ",
 				url: "ในการป้อนที่อยู่เว็บของภาพด้วยตนเอง",
 				userLookup: "โหลดอัลบัม",
-				notImplemented: "ยังไม่ได้ดำเนินการ"
+				notImplemented: "ยังไม่ได้ดำเนินการ",
+				noData: "ไม่พบวิดีโอสาธารณะ"
 			},
 			imageSelector: {
 				lblStep1: "เลือกการบริการ",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "อีเมล์  หรือ  Picasa/Google+ ID",
 				signInMsg2: "ไม่พบชื่อบัญชี",
-				signInMsg3: "ไม่มีแฟ้มภาพสาธารณะ",
 				howToFind: "วิธีการค้นหา Picasa หรือ บัญชี ID Google+",
 				howToFind2: "คัดลอกตัวเลขระหว่างลำดับที่หนึ่งและสอง  / ของ Picasa หรือ หน้า G+"
 			},
@@ -72,11 +72,14 @@
 				lblEmbed: "รหัสที่ฝัง",
 				lblOR: "หรือ",
 				lblError1: "ข้อผิดพลาด ยกเลิกหนึ่งในสองฟิลด์ที่นำเข้า",
-				lblError2: "รหัสที่ฝังสามารถมีได้เพียงชุดเดียวเท่านั้น <iframe>"
+				lblError2: "รหัสที่ฝังสามารถมีได้เพียงชุดเดียวเท่านั้น %IFRAMETAG%",
+				configure: "การตั้งค่า"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "URL ของรูปภาพควรเริ่มต้นด้วย http:// และลงท้ายด้วย .jpg หรือ .png",
+				lblURLError: "ไฟล์ภาพนี้ไม่ถูกต้อง กรุณากำหนดลิงค์ไปยังไฟล์ภาพโดยตรง ( URL ของคุณควรลงท้ายด้วย .jpg หรือ .png). ลิงค์ไปยังหน้าเว็บที่เก็บภาพไม่ถูกต้อง",
+				lblURLCheck: "กำลังตรวจสอบภาพ...",
 				lblLabel: "คำอธิบายรูปภาพ",
 				lblLabel1: "คำบรรยายภาพ",
 				lblLabel2: "เลื่อนข้อความ",
@@ -91,10 +94,13 @@
 				lblPosition4: "ยืด",
 				lblPosition5: "ปรับแต่ง",
 				tooltipDimension: "ระบุค่าด้วย px หรือ %",
+				tooltipDimension2: "ก้_The value has to be specified in 'px'_ษฺ",
 				lblPosition2Explain: "(อาจจะตัด)",
 				lblPosition3Explain: "(ไม่ตัด)",
 				lblPosition3Explain2: "(ความกว้างจะต้องพอดีกับแผงข้อมูล)",
-				lblPosition4Explain: "(อาจจะเบี้ยว)"
+				lblPosition4Explain: "(อาจจะเบี้ยว)",
+				unloadLbl: "ก้_Unload when reader navigates away to different section_ษฺ",
+				unloadHelp: "ก้_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ษฺ"
 			},
 			editorActionGeocode: {
 				lblTitle: "ตำแหน่งของที่อยู่หรือสถานที่",

@@ -1,22 +1,21 @@
-/*global Offline */
+/*global Offline, O */
 define([
     "dojo/_base/declare",
     "dojo/_base/lang",
     "dojo/string",
     "dojo/on",
     "dojo/dom",
-    "offline/offlineFeaturesManager",
+    "esri/graphic",
     "dojo/i18n!application/nls/resources",
-    "offline/editsStore"
+    "offline/offline-edit-min"
 ], function (
     declare,
     lang,
     string,
     on,
     dom,
-    OfflineFeaturesManager,
-    i18n,
-    editsStore
+    Graphic,
+    i18n
 ) {
     return declare(null, {
         // create class
@@ -24,7 +23,7 @@ define([
             // save defaults
             this.defaults = options;
             // create offline manager
-            this.offlineFeaturesManager = new OfflineFeaturesManager();
+            this.offlineFeaturesManager = O.esri.Edit.OfflineFeaturesManager();
             // enable offline attachments
             this.offlineFeaturesManager.initAttachments();
             // once layer is loaded
@@ -62,20 +61,24 @@ define([
                 node.innerHTML = html;
             }
         },
-        
-        updateStatus: function(){
+
+        updateStatus: function () {
             var node = dom.byId('pending_edits');
             // clear html
             node.innerHTML = '';
+            // edit store
+            var es = new O.esri.Edit.EditStore(Graphic);
             // if we have edits
-            if(editsStore.hasPendingEdits()){
-                var edits = editsStore._retrieveEditsQueue();
+            if (es.hasPendingEdits()) {
+                var edits = es.retrieveEditsQueue();
                 var total = edits.length;
-                if(total){
+                if (total) {
                     var html = '';
                     html += '<div class="alert alert-warning" role="alert">';
                     html += '<span class="glyphicon glyphicon-signal"></span> ';
-                    html += string.substitute(i18n.onlineStatus.pending, {total: total});
+                    html += string.substitute(i18n.onlineStatus.pending, {
+                        total: total
+                    });
                     html += '</div>';
                     node.innerHTML = html;
                 }
@@ -100,19 +103,19 @@ define([
 
         // setup editing
         initEditor: function () {
-            
+
             // status for pending edits
-            this.offlineFeaturesManager.on(this.offlineFeaturesManager.events.EDITS_ENQUEUED, lang.hitch(this, function(){
+            this.offlineFeaturesManager.on(this.offlineFeaturesManager.events.EDITS_ENQUEUED, lang.hitch(this, function () {
                 this.updateStatus();
             }));
-            this.offlineFeaturesManager.on(this.offlineFeaturesManager.events.EDITS_SENT, lang.hitch(this, function(){
+            this.offlineFeaturesManager.on(this.offlineFeaturesManager.events.EDITS_SENT, lang.hitch(this, function () {
                 this.updateStatus();
             }));
-            this.offlineFeaturesManager.on(this.offlineFeaturesManager.events.ALL_EDITS_SENT, lang.hitch(this, function(){
+            this.offlineFeaturesManager.on(this.offlineFeaturesManager.events.ALL_EDITS_SENT, lang.hitch(this, function () {
                 this.updateStatus();
             }));
-            
-            
+
+
             /* handle errors that happen while storing offline edits */
             this.offlineFeaturesManager.on(this.offlineFeaturesManager.events.EDITS_ENQUEUED, function (results) {
                 var errors = Array.prototype.concat(
@@ -131,10 +134,10 @@ define([
                     console.log(errors);
                 }
             });
-            
+
             /* extend layer with offline detection functionality */
             this.offlineFeaturesManager.extend(this.defaults.layer);
-            
+
             // update indicator and check status
             this.updateConnectivityIndicator();
         }

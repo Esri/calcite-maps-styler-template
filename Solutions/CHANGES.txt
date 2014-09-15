@@ -1,0 +1,15 @@
+change report #87 at 09/04/2014 13:01:47.84
+-
+for git branch
+release_3.5
+in repository local-government-online-apps
+140904094814090419411409022205
+-
+changes in this branch since its last commit
+ M CHANGES.txt
+ M apps2/FindEditFilter.json
+ M apps2/FindEditFilter_try_it.json
+ M apps2/Finder.json
+ M apps2/Finder_try_it.json
+ M apps2/GeneralMap.json
+ M apps2/ParcelViewer.json

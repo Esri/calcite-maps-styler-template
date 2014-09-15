@@ -37,7 +37,7 @@ define({
         dateTextMobile: "Datum",
         appTypeText: "Typ",
         appOwnerText: "Ägare",
-        tryItButtonText: "Prova nu",
+        tryItButtonText: "Visa",
         downloadButtonText: "Hämta",
         appDesText: "Beskrivning",
         reviewText: "Kommentarer",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "Sortera efter",
             layoutBtnTitle: "Layout",
             signInBtnTitle: "Logga in",
-            signOutBtnTitle: "Å_Sign Out_ö",
+            signOutBtnTitle: "Logga ut",
             geolocationBtnTitle: "Geolokalisering"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "Det gick inte att hämta data från lager.",
             unableToOpenItem: "Det gick inte att öppna objektet.",
             wmsSpatialReferenceError: "Den geografiska referensen för WMS-lagret matchar inte kartans geografiska referens.",
-            noPublicItems: "Å_There are no public items in the configured group or no items have been shared with this group yet._ö",
+            noPublicItems: "Det finns inga publika objekt i den konfigurerade gruppen, eller så har inga objekt delats med gruppen ännu.",
             emptyUsernamePassword: "Ange användarnamn och lösenord.",
             noFullScreenSupport: "Den aktuella webbläsaren har inte stöd för helskärmsläge.",
-            notMemberOfOrg: "Å_You are not a member of this organization_ö"
+            notMemberOfOrg: "Du är inte medlem av den här organisationen"
         }
 });

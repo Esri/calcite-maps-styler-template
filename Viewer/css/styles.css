@@ -1,6 +1,6 @@
 .TableOfContents {
   position: relative;
-  width: 300px;
+  width: 297px;
   padding-bottom: 100px;
   overflow: scroll; }
 
@@ -16,7 +16,7 @@
   border-top: 1px solid #e0e0e0; }
 
 .TableOfContents .toc-title-container {
-  background: #f8f8f8;
+  background: none;
   color: #555;
   position: relative;
   zoom: 1; }
@@ -235,6 +235,12 @@ html, body {
 
 .templatePicker {
   border: none; }
+
+.esriMeasurement .esriMeasurementButtonPane {
+  padding-left: 6px; }
+
+.esriMeasurement .esriMeasurementResultLabel {
+  padding-left: 4px; }
 
 .esriMeasurement .areaIcon {
   background-image: url(../images/area_measure.png);
@@ -677,6 +683,12 @@ img {
   margin-right: 30px;
   max-height: 80%;
   max-width: 280px; }
+
+#pageBody_basemap {
+  max-height: 80%; }
+
+#pageBody_layers {
+  max-height: 80%; }
 
 #pageBody_share {
   padding: 5px 20px;
@@ -1160,6 +1172,6 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
 .icon-angle-down:before {
   content: '\e809'; }
 
-/* '  ' */
+/* '	' */
 .icon-check-1:before {
   content: '\2713'; }

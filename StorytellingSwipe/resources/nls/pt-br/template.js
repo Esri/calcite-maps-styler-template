@@ -42,7 +42,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "CONFIGURAÇÃO DO MAPA",
+				panelHeader: "CONFIGURAÇÃO DO APLICATIVO",
 				buttonSave: "SALVAR",
 				buttonHelp: "Ajuda",
 				buttonShare: "Compartilhar",
@@ -71,7 +71,7 @@
 				signInTwo: "para salvar o aplicativo."
 			},
 			header:{
-				editMe: "Editar-me !",
+				editMe: "Editar-me!",
 				templateTitle: "Configurar título do modelo",
 				templateSubtitle: "Configurar subtítulo do modelo"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "Configure a descrição do painel lateral",
-				editMe: "Editar-me !",
+				editMe: "Editar-me!",
 				legendTitle: "Legenda"
 			},
 			infoWindow: {
@@ -213,7 +213,7 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Application salvo com sucesso",
+				firstSaveTitle: "Aplicativo salvo com sucesso",
 				firstSaveHeader: "Seu Application está agora salvo no ArcGIS Online. Leia as seguintes respostas para perguntas mais frequentes.",
 				firstSaveA1: "Se você não estiver familiarizado com ArcGIS Online ou deseja um atalho para acessar a interface de criação, você pode salvar o seguinte link: %LINK1%",
 				firstSaveA1bis: "O Application também pode ser encontrado na sua <a href='%LINK2%' target='_blank'>pasta de conteúdo do ArcGIS Online</a>.",
@@ -226,16 +226,16 @@
 				sharePrivateProgress: "Compartilhamento em progresso...",
 				sharePrivateErr: "Falha ao compartilhar, tente novamente ou",
 				sharePrivateOk: "Compatilhando atualizados com sucesso, carregando...",
-				shareStatus1: "O Application não está salvo",
-				shareStatus2: "O Application está publicamente compartilhado",
-				shareStatus3: "O Application está compartilhado dentro da organização",
-				shareStatus4: "O Application não está compartilhado",
+				shareStatus1: "O aplicativo não está salvo",
+				shareStatus2: "O aplicativo está publicamente compartilhado",
+				shareStatus3: "O aplicativo está compartilhado dentro da organização",
+				shareStatus4: "O aplicativo não está compartilhado",
 				sharePreviewAsUser: "Visualizar",
 				shareHeader1: "Seu Application está <strong>publicamente acessível</strong>.",
 				shareHeader2: "Seu Application é acessível por seus membros da organização (registro é necessário).",
 				shareLinkHeader: "Compartilhe o Application com seu público",
 				shareLinkOpen: "ABRIR",
-				learnMore: "Obtenha mais informações",
+				learnMore: "Mais informações",
 				shareQ1Opt1: "Como eu mantenho o Application privado?",
 				shareQ1Opt2: "Como eu mantenho o Application privado ou compartilho publicamente?",
 				shareA1: "Utilize %SHAREIMG% na <a href='%LINK1%' target='_blank'>página de item do aplicativo</a>. Se você também desejar descompartilhar o mapa web, utilize <a href='%LINK2%' target='_blank'>página de item do mapa da web</a>.",

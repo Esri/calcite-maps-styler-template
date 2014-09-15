@@ -102,16 +102,15 @@ function (
             if (this.get("bitlyAPI") && this.get("bitlyLogin") && this.get("bitlyKey")) {
                 //Handle getting url param in _updateUrl
                 var currentUrl = this.get("url");
-
                 //Remove edit=true from the query parameters
                 if (location.href.indexOf("?") > -1) {
                     var queryUrl = location.href;
                     var urlParams = ioQuery.queryToObject(window.location.search.substring(1)),
                         newParams = lang.clone(urlParams);
                     delete newParams.edit; //Remove edit parameter
+                    delete newParams.folderid; //Remove folderid parameter
                     currentUrl = queryUrl.substring(0, queryUrl.indexOf("?") + 1) + ioQuery.objectToQuery(newParams);
                 }
-
                 // not already shortened
                 if (currentUrl !== this._shortened) {
                     // set shortened
@@ -162,10 +161,8 @@ function (
             // no bitly shortened
             this.set("bitlyUrl", null);
             var url = this.get("url");
-
             // create base url
             url = window.location.protocol + '//' + window.location.host + window.location.pathname;
-
             //Remove edit=true from the query parameters
             if (location.href.indexOf("?") > -1) {
                 var queryUrl = location.href;

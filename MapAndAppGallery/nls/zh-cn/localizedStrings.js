@@ -37,7 +37,7 @@ define({
         dateTextMobile: "日期",
         appTypeText: "类型",
         appOwnerText: "所有者",
-        tryItButtonText: "立即试用",
+        tryItButtonText: "查看",
         downloadButtonText: "下载",
         appDesText: "描述",
         reviewText: "评论",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "排序方式",
             layoutBtnTitle: "布局",
             signInBtnTitle: "登录",
-            signOutBtnTitle: "试_Sign Out_验",
+            signOutBtnTitle: "登出",
             geolocationBtnTitle: "地理位置"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "无法从图层获取数据。",
             unableToOpenItem: "无法打开项目。",
             wmsSpatialReferenceError: "WMS 图层的空间参考与地图的空间参考不匹配。",
-            noPublicItems: "试_There are no public items in the configured group or no items have been shared with this group yet._验",
+            noPublicItems: "已配置组中没有任何公共项目或尚未与该组共享任何项目。",
             emptyUsernamePassword: "请输入用户名和密码。",
             noFullScreenSupport: "当前浏览器不支持全屏模式。",
-            notMemberOfOrg: "试_You are not a member of this organization_验"
+            notMemberOfOrg: "您不是该组织成员"
         }
 });

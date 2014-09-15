@@ -37,7 +37,7 @@ define({
         dateTextMobile: "Päivämäärä",
         appTypeText: "Tyyppi",
         appOwnerText: "Omistaja",
-        tryItButtonText: "Kokeile sitä  nyt",
+        tryItButtonText: "Näytä",
         downloadButtonText: "Lataa",
         appDesText: "Kuvaus",
         reviewText: "Kommentit",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "Lajitteluperuste",
             layoutBtnTitle: "Asettelu",
             signInBtnTitle: "Kirjaudu sisään",
-            signOutBtnTitle: "Å_Sign Out_ö",
+            signOutBtnTitle: "Kirjaudu ulos",
             geolocationBtnTitle: "Geosijainti"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "Karttatasojen aineistoa ei voi noutaa.",
             unableToOpenItem: "Kohdetta ei voi avata.",
             wmsSpatialReferenceError: "WMS-tason koordinaatistotieto ei vastaa kartan koordinaatistotietoa.",
-            noPublicItems: "Å_There are no public items in the configured group or no items have been shared with this group yet._ö",
+            noPublicItems: "Määritetyssä ryhmässä ei ole julkisia kohteita tai kohteita ei ole vielä jaettu tämän ryhmän kanssa.",
             emptyUsernamePassword: "Anna käyttäjätunnus ja salasana.",
             noFullScreenSupport: "Nykyinen selain ei tue koko näytön tilaa.",
-            notMemberOfOrg: "Å_You are not a member of this organization_ö"
+            notMemberOfOrg: "Et ole tämän organisaation jäsen"
         }
 });

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Keywords" content="GeoForm, GeoForm Template, Template, Map, Esri">
     <meta name="description" content="GeoForm is a configurable template for form based data editing of a Feature Service. This application allows users to enter data through a form instead of a map’s pop-up while leveraging the power of the Web Map and editable Feature Services.">
     <meta name="author" content="esri">
@@ -12,27 +12,21 @@
     <meta property="og:title" content="GeoForm">
     <meta property="og:image" content="images/item.png">
     <meta property="og:site_name" content="esri">
-    <!-- Safari iOS - apps only -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- Chrome for Android -->
-    <meta name="mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="shortcut icon" href="images/favicon.ico">
     <title>GeoForm</title>
     <!-- Bootstrap core CSS -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.11/esri/css/esri.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" id="themeLink">
     <link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.11/dijit/themes/claro/claro.css">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/summernote/0.5.2/summernote.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
@@ -46,6 +40,7 @@
             </div>
         </div>
     </div>
+    <div id="fullscreen_container" class="fullscreen-container"></div>
     <div id="parentContainter" class="app-content"></div>
     <script type="text/javascript">
         var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
@@ -72,13 +67,13 @@
     </script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment-with-langs.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/summernote/0.5.2/summernote.min.js"></script>
     <script type="text/javascript" src="//jsdev.arcgis.com/3.11compact"></script>
     <script type="text/javascript" src="js/offline/offline.min.js"></script>
     <script type="text/javascript" src="js/offline/offlineOptions.js"></script>
     <script type="text/javascript" src="js/offline/IndexedDBShim.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         require(["application/templateOptions", "application/template", "application/main"], function (templateOptions, Template, Main) {
             // start template

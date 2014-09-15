@@ -37,7 +37,7 @@ define({
         dateTextMobile: "Dată",
         appTypeText: "Tip",
         appOwnerText: "Proprietar",
-        tryItButtonText: "ÎNCERCARE DIN NOU",
+        tryItButtonText: "Vizualizare",
         downloadButtonText: "Descărcare",
         appDesText: "Descriere",
         reviewText: "Comentarii",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "Sortare după",
             layoutBtnTitle: "Configuraţie",
             signInBtnTitle: "Autentificare",
-            signOutBtnTitle: "Ă_Sign Out_ș",
+            signOutBtnTitle: "Ieşire",
             geolocationBtnTitle: "Geolocaţie"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "Nu se pot obţine date de la straturile tematice.",
             unableToOpenItem: "Nu se poate deschide elementul.",
             wmsSpatialReferenceError: "Referinţa spaţială a stratului tematic WMS nu corespunde cu referinţa spaţială a hărţii.",
-            noPublicItems: "Ă_There are no public items in the configured group or no items have been shared with this group yet._ș",
+            noPublicItems: "Nu există elemente publice în grupul configurat sau niciun element nu a fost încă partajat cu grupul.",
             emptyUsernamePassword: "Introduceţi numele de utilizator şi parola.",
             noFullScreenSupport: "Browserul actual nu suportă modul pe tot ecranul.",
-            notMemberOfOrg: "Ă_You are not a member of this organization_ș"
+            notMemberOfOrg: "Nu sunteţi membru al acestei organizaţii"
         }
 });

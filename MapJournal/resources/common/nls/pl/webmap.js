@@ -34,12 +34,13 @@
 				btnCancel: "Anuluj",
 				tocTitle: "Zawartość mapy",
 				tocExplain: "Wybierz warstwy, które będą wyświetlane.",
+				tocNoData: "Brak warstw do konfiguracji.",
 				tocSave: "Zapisz zawartość mapy",
 				extentTitle: "Lokalizacja mapy",
 				extentExplain: "Przesuń i zmień powiększenie, aby zdefiniować wygląd mapy widoczny dla użytkowników.",
 				extentSave: "Zapisz lokalizację mapy",
 				popupTitle: "Okno podręczne mapy",
-				popupExplain: "Skonfiguruj wygląd okna podręcznego wyświetlanego przez użytkowników.",
+				popupExplain: "Kliknij obiekt, aby otworzyć pożądane okno podręczne.",
 				popupSave: "Zapisz konfigurację okna podręcznego",
 				hintNavigation: "Nawigacja mapy jest wyłączona."
 			}

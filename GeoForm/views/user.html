@@ -2,19 +2,24 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <img alt="" id="appLogo" class="img-responsive img-rounded" />
+                <img alt="" id="appLogo" class="img-responsive" />
+                <div class="clearfix"></div>
                 <h1 id="appTitle"></h1>
                 <p id="appDescription"></p>
                 <div class="clearfix"></div>
             </div>
+            <div class="clearfix"></div>
         </div>
     </div>
+    <div class="clearfix"></div>
 </div>
+<div class="clearfix"></div>
 <div class="container">
     <div class="row">
         <div class="col-xs-12 errorMessageDiv">
             <div id="errorMessageDiv"></div>
         </div>
+        <div class="clearfix"></div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-8">
@@ -22,26 +27,24 @@
             <form role="form" id="userForm"></form>
             <h2 id="select_location">${user.locationInformationText}</h2>
             <p>${user.locationDescription}</p>
-            <div id="location_row" class="row">
-                <div class="col-xs-12 col-sm-5 col-md-4">
-                    <div class="well well-sm">
-                        <ul class="nav nav-pills nav-stacked" id="location_pills">
-                            <li><a href="#myLocation" data-toggle="tab">${user.myLocationText}</a>
-                            </li>
-                            <li><a href="#address" data-toggle="tab">${user.addressText}</a>
-                            </li>
-                            <li><a href="#coordinates" data-toggle="tab">${user.geographic}</a>
-                            </li>
-                            <li><a href="#usng" data-toggle="tab">${user.usng}</a>
-                            </li>
-                            <li><a href="#mgrs" data-toggle="tab">${user.mgrs}</a>
-                            </li>
-                            <li><a href="#utm" data-toggle="tab">${user.utm}</a>
-                            </li>
-                        </ul>
-                    </div>
+            <div id="location_panel" class="panel panel-default">
+                <div class="panel-heading" id="location_nav">
+                    <ul class="nav nav-pills" id="location_pills">
+                        <li><a href="#myLocation" data-toggle="tab">${user.myLocationText}</a>
+                        </li>
+                        <li><a href="#address" data-toggle="tab">${user.addressText}</a>
+                        </li>
+                        <li><a href="#coordinates" data-toggle="tab">${user.geographic}</a>
+                        </li>
+                        <li><a href="#usng" data-toggle="tab">${user.usng}</a>
+                        </li>
+                        <li><a href="#mgrs" data-toggle="tab">${user.mgrs}</a>
+                        </li>
+                        <li><a href="#utm" data-toggle="tab">${user.utm}</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-xs-12 col-sm-7 col-md-8">
+                <div id="location_panel_body" class="panel-body">
                     <div id="location_tabs" class="tab-content">
                         <div id="myLocation" class="tab-pane">
                             <div class="form-group">
@@ -110,12 +113,11 @@
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <div class="clearfix"></div>
             </div>
             <div id="coordinatesContainer">
                 <small class="text-muted" id="coordinatesValue">&nbsp;</small>
             </div>
-            <div class="gf-map panel panel-default">
+            <div class="gf-map panel panel-default" id="map_container">
                 <div id="mapDiv" class="map-div"></div>
             </div>
             <h2>${user.submitInformationText}</h2>
@@ -129,10 +131,13 @@
                 </div>
             </div>
         </div>
+        <div class="clearfix"></div>
     </div>
+    <div class="clearfix"></div>
     <hr />
     <footer>
         <div class="panel-body text-center"><a href="#top">${user.backToTop}</a>
         </div>
     </footer>
 </div>
+<div class="clearfix"></div>

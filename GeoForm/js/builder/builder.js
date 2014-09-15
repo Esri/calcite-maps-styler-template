@@ -1,6 +1,5 @@
 /*global $ */
 define([
-   "dojo/ready",
    "dojo/_base/declare",
     "dojo/on",
     "dojo/dom",
@@ -28,7 +27,7 @@ define([
     "application/pushpins",
     "esri/layers/FeatureLayer",
     "dojo/domReady!"
-], function (ready, declare, on, dom, esriRequest, array, domConstruct, domAttr, query, domClass, domStyle, lang, string, Deferred, all, number, modalTemplate, builderTemplate, BrowseIdDlg, ShareModal, localStorageHelper, signInHelper, nls, arcgisUtils, theme, pushpins, FeatureLayer) {
+], function (declare, on, dom, esriRequest, array, domConstruct, domAttr, query, domClass, domStyle, lang, string, Deferred, all, number, modalTemplate, builderTemplate, BrowseIdDlg, ShareModal, localStorageHelper, signInHelper, nls, arcgisUtils, theme, pushpins, FeatureLayer) {
     return declare([], {
         nls: nls,
         currentState: "webmap",
@@ -51,16 +50,33 @@ define([
             this.config = config;
             this.response = response;
             this.onDemandResources = [
-            { "type": "script", "path": "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js" },
-            { "type": "css", "path": "css/browseDialog.css" },
-            { "type": "css", "path": "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.min.css" },
-            { "type": "script", "path": "//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js" }
-	        ];
+                {
+                    "type": "script",
+                    "path": "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"
+                },
+                {
+                    "type": "css",
+                    "path": "css/browseDialog.css"
+                },
+                {
+                    "type": "css",
+                    "path": this.themes[0].url
+                },
+                {
+                    "type": "css",
+                    "path": "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.min.css"
+                },
+                {
+                    "type": "script",
+                    "path": "//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"
+                }
+         ];
         },
 
         startup: function () {
             var def = new Deferred();
-            var signIn = new signInHelper(), userInfo = {};
+            var signIn = new signInHelper(),
+                userInfo = {};
             this.locationSearchOption = {
                 "enableMyLocation": true,
                 "enableSearch": true,
@@ -80,8 +96,7 @@ define([
                     this._setTabCaption();
                     domClass.remove(document.body, "app-loading");
                     def.resolve();
-                }
-                else {
+                } else {
                     def.reject(new Error("Invalid User"));
                 }
             }), lang.hitch(this, function (error) {
@@ -91,8 +106,6 @@ define([
         },
 
         _initializeBuilder: function (config, userInfo, response) {
-            // set to default theme. (first in array)
-            dom.byId("themeLink").href = this.themes[0].url;
             // set builder html
             var builderHTML = string.substitute(builderTemplate, nls);
             dom.byId("parentContainter").innerHTML = builderHTML;
@@ -104,12 +117,9 @@ define([
             this.buttonConflict = $.fn.button.noConflict();
             var $tabs = $('.tab-links li');
             domClass.add($('.navigationTabs')[0], "activeTab");
-            // document ready
-            ready(lang.hitch(this, function () {
-                modalTemplate = string.substitute(modalTemplate, nls);
-                // place modal code
-                domConstruct.place(modalTemplate, document.body, 'last');
-            }));
+            modalTemplate = string.substitute(modalTemplate, nls);
+            // place modal code
+            domConstruct.place(modalTemplate, document.body, 'last');
             $('.prevtab').on('click', lang.hitch(this, function () {
                 $tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').tab('show');
             }));
@@ -207,11 +217,23 @@ define([
                 this.currentConfig.pushpinColor = evt.currentTarget.value;
                 array.some(this.pins, lang.hitch(this, function (pin) {
                     if (pin.id === evt.currentTarget.value) {
-                        domStyle.set(dom.byId("pushpinSymbol"), { "backgroundImage": 'url(' + pin.url + ')' });
+                        domStyle.set(dom.byId("pushpinSymbol"), {
+                            "backgroundImage": 'url(' + pin.url + ')'
+                        });
                         return true;
                     }
                 }));
             }));
+            var appTitle = '';
+            // if app has a title
+            if (this.currentConfig.details && this.currentConfig.details.Title) {
+                // add title
+                appTitle += this.currentConfig.details.Title + ' - ';
+            }
+            // builder text
+            appTitle += nls.user.geoformTitleText + ' ' + nls.builder.titleText;
+            // set title
+            window.document.title = appTitle;
         },
 
         _setTabCaption: function () {
@@ -234,9 +256,9 @@ define([
                     require([
                        "application/main"
                       ], lang.hitch(this, function (userMode) {
-                          var index = new userMode();
-                          index.startup(this.currentConfig, this.response, true, dom.byId('iframeContainer'));
-                      }));
+                        var index = new userMode();
+                        index.startup(this.currentConfig, this.response, true, dom.byId('iframeContainer'));
+                    }));
                 } else {
                     localStorage.clear();
                 }
@@ -245,10 +267,11 @@ define([
 
         //function will validate and add operational layers in dropdown
         _addOperationalLayers: function () {
-            var layerListArray = [], attribute;
+            var layerListArray = [],
+                attribute;
             this._clearLayerOptions();
             array.forEach(this.currentConfig.itemInfo.itemData.operationalLayers, lang.hitch(this, function (currentLayer) {
-                if (currentLayer.url && currentLayer.url.split("/")[currentLayer.url.split("/").length - 2].toLowerCase() == "featureserver") {
+                if (currentLayer.layerType && currentLayer.layerType === "ArcGISFeatureLayer") {
                     layerListArray.push(this._queryLayer(currentLayer.url, currentLayer.id));
                 }
             }));
@@ -324,18 +347,23 @@ define([
         _populatePushpins: function () {
             var currentOption;
             array.forEach(this.pins, lang.hitch(this, function (currentPin) {
-                currentOption = domConstruct.create("option", { "value": currentPin.id, "innerHTML": currentPin.name }, dom.byId("pushpinInput"));
+                currentOption = domConstruct.create("option", {
+                    "value": currentPin.id,
+                    "innerHTML": currentPin.name
+                }, dom.byId("pushpinInput"));
                 if (currentOption.value == this.currentConfig.pushpinColor) {
                     currentOption.selected = "selected";
-                    domStyle.set(dom.byId("pushpinSymbol"), { "backgroundImage": 'url(' + currentPin.url + ')' });
+                    domStyle.set(dom.byId("pushpinSymbol"), {
+                        "backgroundImage": 'url(' + currentPin.url + ')'
+                    });
                 }
             }));
         },
-        
-        _locationInputChange: function(evt){
+
+        _locationInputChange: function (evt) {
             this.currentConfig.locationSearchOptions[domAttr.get(evt.currentTarget, "checkedField")] = evt.currentTarget.checked;
         },
-        
+
         _populateLocations: function () {
             var currentInput, key, count = 0;
             for (key in this.currentConfig.locationSearchOptions) {
@@ -367,9 +395,13 @@ define([
             array.some(this.themes, lang.hitch(this, function (currentTheme) {
                 if (currentTheme.id === selectedTheme) {
                     domConstruct.empty(dom.byId('thumbnailContainer'));
-                    imageAnchor = domConstruct.create("a", { "target": "_blank", "href": currentTheme.refUrl }, dom.byId('thumbnailContainer'));
+                    imageAnchor = domConstruct.create("a", {
+                        "target": "_blank",
+                        "href": currentTheme.refUrl
+                    }, dom.byId('thumbnailContainer'));
                     themeThumbnail = domConstruct.create("img", {
                         src: currentTheme.thumbnail,
+                        alt: "",
                         className: "img-thumbnail img-responsive"
                     }, imageAnchor);
                     return true;
@@ -383,13 +415,15 @@ define([
                 configuredFieldName = [],
                 fieldRow, fieldName, fieldLabel, fieldLabelInput, fieldDescription, fieldDescriptionInput, fieldCheckBox,
                 fieldCheckBoxInput, layerIndex, fieldDNDIndicatorTD, fieldDNDIndicatorIcon, matchingField = false,
-                newAddedFields = [], sortedFields = [], fieldPlaceholder, fieldPlaceholderInput, fieldType, typeSelect;
+                newAddedFields = [],
+                sortedFields = [],
+                fieldPlaceholder, fieldPlaceholderInput, fieldType, typeSelect;
             var formFieldsNode = dom.byId('geoFormFieldsTable');
             if (formFieldsNode) {
                 domConstruct.empty(formFieldsNode);
             }
             var sortInstance = $(formFieldsNode).data("sortable");
-            if(sortInstance){
+            if (sortInstance) {
                 sortInstance.destroy();
             }
             $(formFieldsNode).sortable();
@@ -460,8 +494,7 @@ define([
                 }, fieldCheckBox);
                 if (currentField.name !== this.fieldInfo[layerName].typeIdField) {
                     domAttr.set(fieldCheckBoxInput, "checked", currentField.visible);
-                }
-                else {
+                } else {
                     domAttr.set(fieldCheckBoxInput, "checked", true);
                     domAttr.set(fieldCheckBoxInput, "disabled", true);
                 }
@@ -479,21 +512,18 @@ define([
                     innerHTML: currentField.name,
                     index: currentIndex
                 }, fieldRow);
-                fieldLabel = domConstruct.create("td", {
-                }, fieldRow);
+                fieldLabel = domConstruct.create("td", {}, fieldRow);
                 fieldLabelInput = domConstruct.create("input", {
                     className: "form-control fieldLabel",
                     index: currentIndex,
                     value: currentField.alias
                 }, fieldLabel);
-                fieldDescription = domConstruct.create("td", {
-                }, fieldRow);
+                fieldDescription = domConstruct.create("td", {}, fieldRow);
                 fieldDescriptionInput = domConstruct.create("input", {
                     className: "form-control fieldDescription",
                     value: ""
                 }, fieldDescription);
-                fieldPlaceholder = domConstruct.create("td", {
-                }, fieldRow);
+                fieldPlaceholder = domConstruct.create("td", {}, fieldRow);
 
                 if (!currentField.domain) {
                     fieldPlaceholderInput = domConstruct.create("input", {
@@ -504,31 +534,58 @@ define([
                         fieldPlaceholderInput.value = currentField.tooltip;
                     }
                 }
-                fieldType = domConstruct.create("td", {
-                }, fieldRow);
+                fieldType = domConstruct.create("td", {}, fieldRow);
                 if (currentField.type === "esriFieldTypeDate") {
                     return;
                 }
                 if ((currentField.domain && currentField.domain.codedValues) || (currentField.name === this.fieldInfo[layerName].typeIdField)) {
-                    if ((currentField.domain && currentField.domain.codedValues.length <= 4) || (currentField.name === this.fieldInfo[layerName].typeIdField && this.fieldInfo[layerName].types && this.fieldInfo[layerName].types.length <= 4)) {
-                        typeSelect = domConstruct.create("select", { "class": "form-control displayType" }, fieldType);
-                        domConstruct.create("option", { innerHTML: nls.builder.selectMenuOption, value: "dropdown" }, typeSelect);
-                        domConstruct.create("option", { innerHTML: nls.builder.selectRadioOption, value: "radio" }, typeSelect);
+                    if ((currentField.domain && currentField.domain.codedValues && currentField.domain.codedValues.length <= 4) || (currentField.name === this.fieldInfo[layerName].typeIdField && this.fieldInfo[layerName].types && this.fieldInfo[layerName].types.length <= 4)) {
+                        typeSelect = domConstruct.create("select", {
+                            "class": "form-control displayType"
+                        }, fieldType);
+                        domConstruct.create("option", {
+                            innerHTML: nls.builder.selectMenuOption,
+                            value: "dropdown"
+                        }, typeSelect);
+                        domConstruct.create("option", {
+                            innerHTML: nls.builder.selectRadioOption,
+                            value: "radio"
+                        }, typeSelect);
                     }
                 } else {
                     if (!currentField.domain) {
-                        typeSelect = domConstruct.create("select", { "class": "form-control displayType" }, fieldType);
+                        typeSelect = domConstruct.create("select", {
+                            "class": "form-control displayType"
+                        }, fieldType);
                         if (currentField.type == "esriFieldTypeSmallInteger" || currentField.type == "esriFieldTypeInteger" || currentField.type == "esriFieldTypeSingle" || currentField.type == "esriFieldTypeDouble") {
-                            domConstruct.create("option", { innerHTML: nls.builder.selectTextOption, value: "textbox" }, typeSelect);
-                            domConstruct.create("option", { innerHTML: nls.builder.selectCheckboxOption, value: "checkbox" }, typeSelect);
+                            domConstruct.create("option", {
+                                innerHTML: nls.builder.selectTextOption,
+                                value: "textbox"
+                            }, typeSelect);
+                            domConstruct.create("option", {
+                                innerHTML: nls.builder.selectCheckboxOption,
+                                value: "checkbox"
+                            }, typeSelect);
                         } else {
                             if (currentField.type == "esriFieldTypeString") {
-                                domConstruct.create("option", { innerHTML: nls.builder.selectTextOption, value: "text" }, typeSelect);
+                                domConstruct.create("option", {
+                                    innerHTML: nls.builder.selectTextOption,
+                                    value: "text"
+                                }, typeSelect);
                                 if (currentField.length >= 30) {
-                                    domConstruct.create("option", { innerHTML: nls.builder.selectMailOption, value: "email" }, typeSelect);
-                                    domConstruct.create("option", { innerHTML: nls.builder.selectUrlOption, value: "url" }, typeSelect);
+                                    domConstruct.create("option", {
+                                        innerHTML: nls.builder.selectMailOption,
+                                        value: "email"
+                                    }, typeSelect);
+                                    domConstruct.create("option", {
+                                        innerHTML: nls.builder.selectUrlOption,
+                                        value: "url"
+                                    }, typeSelect);
                                 }
-                                domConstruct.create("option", { innerHTML: nls.builder.selectTextAreaOption, value: "textarea" }, typeSelect);
+                                domConstruct.create("option", {
+                                    innerHTML: nls.builder.selectTextAreaOption,
+                                    value: "textarea"
+                                }, typeSelect);
                             }
                         }
                     }
@@ -612,9 +669,10 @@ define([
         //function to allow user to udate/select webmap from the list
         _initWebmapSelection: function () {
             var browseParams = {
-                portal: this.userInfo.portal,
-                galleryType: "webmap" //valid values are webmap or group
-            }, webmapButton, bootstrapButton;
+                    portal: this.userInfo.portal,
+                    galleryType: "webmap" //valid values are webmap or group
+                },
+                webmapButton, bootstrapButton;
             this.browseDlg = new BrowseIdDlg(browseParams, this.userInfo);
             on(this.browseDlg, "close", lang.hitch(this, function () {
                 if (this.browseDlg.get("selected") !== null && this.browseDlg.get("selectedWebmap") !== null) {
@@ -658,19 +716,20 @@ define([
         //function to load the css/script dynamically
         _loadResources: function () {
             var cssStyle, scriptFile;
+            var head = query('head')[0];
+            var geoForm = dom.byId("geoform");
             array.forEach(this.onDemandResources, lang.hitch(this, function (currentResource) {
                 if (currentResource.type === "css") {
                     cssStyle = document.createElement('link');
                     cssStyle.rel = 'stylesheet';
                     cssStyle.type = 'text/css';
                     cssStyle.href = currentResource.path;
-                    document.getElementsByTagName('head')[0].appendChild(cssStyle);
-                }
-                else {
+                    domConstruct.place(cssStyle, head);
+                } else {
                     scriptFile = document.createElement('script');
                     scriptFile.type = "text/javascript";
                     scriptFile.src = currentResource.path;
-                    dom.byId("geoform").appendChild(scriptFile);
+                    domConstruct.place(scriptFile, geoForm);
                 }
             }));
 
@@ -689,48 +748,46 @@ define([
         //function takes the previous tab's details as input parameter and saves the setting to config
         _updateAppConfiguration: function (prevNavigationTab) {
             switch (prevNavigationTab) {
-                case "webmap":
-                    break;
-                case "details":
-                    this.currentConfig.details.Title = dom.byId("detailTitleInput").value;
-                    this.currentConfig.details.Logo = dom.byId("detailLogoInput").value;
-                    this.currentConfig.details.Description = $('#detailDescriptionInput').code();
-                    break;
-                case "fields":
-                    this.currentConfig.fields.length = 0;
-                    var fieldName, fieldLabel, fieldDescription, layerName, visible, typeField;
-                    layerName = dom.byId("selectLayer").value;
-                    array.forEach($("#tableDND")[0].rows, lang.hitch(this, function (currentRow, currentFieldIndex) {
-                        if (currentRow.getAttribute("rowIndex")) {
-                            fieldName = query(".layerFieldsName", currentRow)[0].innerHTML;
+            case "webmap":
+                break;
+            case "details":
+                this.currentConfig.details.Title = dom.byId("detailTitleInput").value;
+                this.currentConfig.details.Logo = dom.byId("detailLogoInput").value;
+                this.currentConfig.details.Description = $('#detailDescriptionInput').code();
+                break;
+            case "fields":
+                this.currentConfig.fields.length = 0;
+                var fieldName, fieldLabel, fieldDescription, layerName, visible;
+                layerName = dom.byId("selectLayer").value;
+                array.forEach($("#tableDND")[0].rows, lang.hitch(this, function (currentRow, currentFieldIndex) {
+                    if (currentRow.getAttribute("rowIndex")) {
+                        fieldName = query(".layerFieldsName", currentRow)[0].innerHTML;
 
-                            fieldLabel = query(".fieldLabel", currentRow)[0].value;
-                            fieldDescription = query(".fieldDescription", currentRow)[0].value;
-                            visible = query(".fieldCheckbox", currentRow)[0].checked;
-                            typeField = query(".fieldCheckbox", currentRow)[0].checked && query(".fieldCheckbox", currentRow)[0].disabled;
-                            this.currentConfig.fields.push({
-                                name: fieldName,
-                                alias: fieldLabel,
-                                fieldDescription: fieldDescription,
-                                visible: visible,
-                                typeField: typeField
-                            });
-                            if (query(".fieldPlaceholder", currentRow)[0] && query(".fieldPlaceholder", currentRow)[0].value) {
-                                this.currentConfig.fields[currentFieldIndex - 1].tooltip = query(".fieldPlaceholder", currentRow)[0].value;
-                            }
-                            if (query(".displayType", currentRow)[0]) {
-                                this.currentConfig.fields[currentFieldIndex - 1].displayType = query(".displayType", currentRow)[0].value;
-                            }
+                        fieldLabel = query(".fieldLabel", currentRow)[0].value;
+                        fieldDescription = query(".fieldDescription", currentRow)[0].value;
+                        visible = query(".fieldCheckbox", currentRow)[0].checked;
+                        this.currentConfig.fields.push({
+                            name: fieldName,
+                            alias: fieldLabel,
+                            fieldDescription: fieldDescription,
+                            visible: visible
+                        });
+                        if (query(".fieldPlaceholder", currentRow)[0] && query(".fieldPlaceholder", currentRow)[0].value) {
+                            this.currentConfig.fields[currentFieldIndex - 1].tooltip = query(".fieldPlaceholder", currentRow)[0].value;
                         }
-			if (dom.byId("attachmentDescription")) {
-                            this.currentConfig.attachmentHelpText = dom.byId("attachmentDescription").value;
+                        if (query(".displayType", currentRow)[0]) {
+                            this.currentConfig.fields[currentFieldIndex - 1].displayType = query(".displayType", currentRow)[0].value;
                         }
-                        if (dom.byId("attachmentLabelInfo")) {
-                            this.currentConfig.attachmentLabel = dom.byId("attachmentLabelInfo").value;
-                        }
-                    }));
-                    break;
-                default:
+                    }
+                    if (dom.byId("attachmentDescription")) {
+                        this.currentConfig.attachmentHelpText = dom.byId("attachmentDescription").value;
+                    }
+                    if (dom.byId("attachmentLabelInfo")) {
+                        this.currentConfig.attachmentLabel = dom.byId("attachmentLabelInfo").value;
+                    }
+                }));
+                break;
+            default:
             }
         },
 
@@ -776,8 +833,8 @@ define([
                     usePost: true
                 }).then(lang.hitch(this, function (result) {
                     if (result.success) {
-                        if(this._ShareModal){
-                            this._ShareModal.destroy();   
+                        if (this._ShareModal) {
+                            this._ShareModal.destroy();
                         }
                         this._createShareDlgContent();
                         this._ShareModal = new ShareModal({
@@ -912,14 +969,42 @@ define([
             fLayer = new FeatureLayer(layerUrl);
             on(fLayer, 'load', lang.hitch(this, function () {
                 if (fLayer.hasAttachments) {
-                    attachmentLabel = domConstruct.create("div", { "id": "attachmentLabel", "class": "form-group" }, dom.byId('attachmentDetails'));
-                    domConstruct.create("label", { "for": "attachmentLabel", "innerHTML": nls.builder.attachmentLabelText }, attachmentLabel);
-                    domConstruct.create("input", { "type": "text", "class": "form-control", "id": "attachmentLabelInfo", "value": this.currentConfig.attachmentLabel }, attachmentLabel);
-                    domConstruct.create("span", { "class": "attachmentHint", "innerHTML": nls.builder.attachmentLabelHint }, attachmentLabel);
-                    attachmentDetails = domConstruct.create("div", { "id": "attachmentDetails", "class": "form-group" }, dom.byId('attachmentDetails'));
-                    domConstruct.create("label", { "for": "attachmentDescription", "innerHTML": nls.builder.attachmentDescription }, attachmentDetails);
-                    domConstruct.create("input", { "type": "text", "class": "form-control", "id": "attachmentDescription", "value": this.currentConfig.attachmentHelpText }, attachmentDetails);
-                    domConstruct.create("span", { "class": "attachmentHint", "innerHTML": nls.builder.attachmentHint }, attachmentDetails);
+                    attachmentLabel = domConstruct.create("div", {
+                        "id": "attachmentLabel",
+                        "class": "form-group"
+                    }, dom.byId('attachmentDetails'));
+                    domConstruct.create("label", {
+                        "for": "attachmentLabel",
+                        "innerHTML": nls.builder.attachmentLabelText
+                    }, attachmentLabel);
+                    domConstruct.create("input", {
+                        "type": "text",
+                        "class": "form-control",
+                        "id": "attachmentLabelInfo",
+                        "value": this.currentConfig.attachmentLabel
+                    }, attachmentLabel);
+                    domConstruct.create("span", {
+                        "class": "attachmentHint",
+                        "innerHTML": nls.builder.attachmentLabelHint
+                    }, attachmentLabel);
+                    attachmentDetails = domConstruct.create("div", {
+                        "id": "attachmentDetails",
+                        "class": "form-group"
+                    }, dom.byId('attachmentDetails'));
+                    domConstruct.create("label", {
+                        "for": "attachmentDescription",
+                        "innerHTML": nls.builder.attachmentDescription
+                    }, attachmentDetails);
+                    domConstruct.create("input", {
+                        "type": "text",
+                        "class": "form-control",
+                        "id": "attachmentDescription",
+                        "value": this.currentConfig.attachmentHelpText
+                    }, attachmentDetails);
+                    domConstruct.create("span", {
+                        "class": "attachmentHint",
+                        "innerHTML": nls.builder.attachmentHint
+                    }, attachmentDetails);
                 }
             }));
         }

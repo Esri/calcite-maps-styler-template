@@ -16,6 +16,9 @@
  */
 define(
     ({
+        map: {
+            error: "Kan de kaart niet maken"
+        },
         tooltips: {
             search: "Zoeken",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Huidige locatie",  // Command button to zoom and pan to the current geographical position reported by the browser
@@ -51,6 +54,7 @@ define(
             geolocationDenied: "Deze site heeft geen toestemming om de huidige locatie op te halen",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "De browser kon de huidige locatie niet ophalen",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "De browser kon de huidige locatie niet tijdig ophalen",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            noSearchLayerConfigured: "Er is geen zoeklaag geconfigureerd",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "Deze zoeklaag is niet gevonden op de kaart",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "Er konden geen velden worden gevonden voor de kaartlaag.<br><br>Controleer of deze kaartlaag bestaat in de root van de kaartinhoud. Geneste services, zoals dynamische ArcGIS for Server-mapservices, moeten met één kaartlaag tegelijk aan de kaart worden toegevoegd (inclusief nummer van kaartlaagindex) om te worden gebruikt als Zoeklagen. Tiled services kunnen niet worden gebruikt als Zoeklagen.",
             searchFieldMissing: "Dit veld is niet gevonden in de zoeklaag van de kaart",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt

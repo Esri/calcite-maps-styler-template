@@ -8,7 +8,7 @@
             mapInfo: "Kaardi info",
             legend: "Legend",
             layers: "Kihid",
-            rendererTitle: "Kuva antud ala kohta infot",
+            rendererTitle: "Kuva selle ala kohta infot",
             summarize: "Kogu ala",
             summarizeTitle: "Kuva summeeritud info kõigi alade kohta",
             share: "Jaga",

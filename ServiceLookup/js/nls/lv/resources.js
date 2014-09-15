@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Slānis neatrodas web kartē",
             fieldNotFound: "Lauks netika atrasts",
-            popupNotSet: "Šim slānim nav iespējots uznirstošais ekrāns"
+            popupNotSet: "Šim slānim nav iespējots uznirstošais ekrāns",
+            noLayersSet: "Konfigurācijā nav definēti slāņi, meklēšanas lodziņš nedarbosies."
         },
         page: {
             title: "Informācijas meklēšana",

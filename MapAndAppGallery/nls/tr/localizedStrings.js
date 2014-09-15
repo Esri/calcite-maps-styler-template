@@ -37,7 +37,7 @@ define({
         dateTextMobile: "Tarih",
         appTypeText: "Tür",
         appOwnerText: "Sahip",
-        tryItButtonText: "Şimdi dene",
+        tryItButtonText: "Görünüm",
         downloadButtonText: "İndir",
         appDesText: "Açıklama",
         reviewText: "Yorumlar",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "Şuna göre sırala:",
             layoutBtnTitle: "Düzen",
             signInBtnTitle: "Oturum Aç",
-            signOutBtnTitle: "ı_Sign Out_İ",
+            signOutBtnTitle: "Oturumu Kapat",
             geolocationBtnTitle: "Coğrafi Konum"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "Katmanlardan veri alınamıyor.",
             unableToOpenItem: "Öğe açılamıyor.",
             wmsSpatialReferenceError: "WMS katmanı mekansal başvurusu, haritanın mekansal başvurusu ile eşleşmiyor.",
-            noPublicItems: "ı_There are no public items in the configured group or no items have been shared with this group yet._İ",
+            noPublicItems: "Yapılandırılan grupta herhangi bir genel öğe yok ya da bu grupla henüz bir öğe paylaşılmamış.",
             emptyUsernamePassword: "Kullanıcı Adı ve Şifre girin.",
             noFullScreenSupport: "Geçerli tarayıcı tam ekran modunu desteklemiyor.",
-            notMemberOfOrg: "ı_You are not a member of this organization_İ"
+            notMemberOfOrg: "Bu kuruluşun üyesi değilsiniz"
         }
 });

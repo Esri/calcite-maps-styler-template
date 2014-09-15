@@ -37,7 +37,7 @@ define({
         dateTextMobile: "Fecha",
         appTypeText: "Tipo",
         appOwnerText: "Propietario",
-        tryItButtonText: "Probar ahora",
+        tryItButtonText: "Ver",
         downloadButtonText: "Descargar",
         appDesText: "Descripción",
         reviewText: "Comentarios",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "Ordenar por",
             layoutBtnTitle: "Diseño",
             signInBtnTitle: "Iniciar sesión",
-            signOutBtnTitle: "á_Sign Out_Ó",
+            signOutBtnTitle: "Cerrar sesión",
             geolocationBtnTitle: "Geolocalización"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "No se pueden obtener datos de las capas.",
             unableToOpenItem: "No se puede abrir el elemento.",
             wmsSpatialReferenceError: "La referencia espacial de la capa WMS no coincide con la referencia espacial del mapa.",
-            noPublicItems: "á_There are no public items in the configured group or no items have been shared with this group yet._Ó",
+            noPublicItems: "No hay elementos públicos en el grupo configurado o todavía no se han compartido elementos con este grupo.",
             emptyUsernamePassword: "Introduce el nombre de usuario y la contraseña.",
             noFullScreenSupport: "El navegador actual no es compatible con el modo de pantalla completa.",
-            notMemberOfOrg: "á_You are not a member of this organization_Ó"
+            notMemberOfOrg: "No eres miembro de esta organización"
         }
 });

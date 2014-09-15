@@ -37,7 +37,7 @@ define({
         dateTextMobile: "Datum",
         appTypeText: "Typ",
         appOwnerText: "Vlastník",
-        tryItButtonText: "Vyzkoušet",
+        tryItButtonText: "Zobrazit",
         downloadButtonText: "Stáhnout",
         appDesText: "Popis",
         reviewText: "Poznámky",
@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "Třídit podle",
             layoutBtnTitle: "Rozvržení",
             signInBtnTitle: "Přihlásit",
-            signOutBtnTitle: "Ř_Sign Out_ů",
+            signOutBtnTitle: "Odhlásit",
             geolocationBtnTitle: "Geolokace"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "Nelze získat data z vrstev.",
             unableToOpenItem: "Nelze otevřít položku.",
             wmsSpatialReferenceError: "Souřadnicový systém vrstvy WMS se neshoduje se souřadnicovým systémem mapy.",
-            noPublicItems: "Ř_There are no public items in the configured group or no items have been shared with this group yet._ů",
+            noPublicItems: "V konfigurované skupině nejsou žádné veřejné položky, případně s touto skupinou ještě nejsou žádné položky sdíleny.",
             emptyUsernamePassword: "Zadejte uživatelské jméno a heslo.",
             noFullScreenSupport: "Současný prohlížeč nepodporuje režim celé obrazovky.",
-            notMemberOfOrg: "Ř_You are not a member of this organization_ů"
+            notMemberOfOrg: "Nejste členem této organizace."
         }
 });

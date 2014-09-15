@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Layer ist nicht in der Webkarte enthalten",
             fieldNotFound: "Feld nicht gefunden",
-            popupNotSet: "Pop-up ist für diesen Layer nicht aktiviert"
+            popupNotSet: "Pop-up ist für diesen Layer nicht aktiviert",
+            noLayersSet: "In der Konfiguration wurden keine Layer definiert; das Suchfeld funktioniert nicht"
         },
         page: {
             title: "Informationssuche",

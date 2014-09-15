@@ -67,7 +67,7 @@ define({
             sortByBtnTitle: "จัดลำดับตาม",
             layoutBtnTitle: "แบบร่าง",
             signInBtnTitle: "ลงชื่อเข้า",
-            signOutBtnTitle: "ก้_Sign Out_ษฺ",
+            signOutBtnTitle: "ลงชื่อออก",
             geolocationBtnTitle: "ตำแหน่งเชิงพื้นที่"
         },
         errorMessages: {
@@ -82,9 +82,9 @@ define({
             layerNotFound: "ไม่สามารถได้รับข้อมูลจากชั้นข้อมูล",
             unableToOpenItem: "ไม่สามารถเปิดรายการ",
             wmsSpatialReferenceError: "ค่าอ้างอิงเชิงพื้นที่ของชั้นข้อมูล WMS ไม่สอดคล้องกับค่าอ้างอิงบนแผนที่",
-            noPublicItems: "ก้_There are no public items in the configured group or no items have been shared with this group yet._ษฺ",
+            noPublicItems: "ไม่มีรายการสาธารณะในกลุ่มการกำหนดค่า",
             emptyUsernamePassword: "กรุณากรอกชื่อผู้ใช้งานและรหัสผ่าน",
             noFullScreenSupport: "เบราว์เซอร์ปัจจุบันไม่สนับสนุนการแสดงผลแบบเต็มหน้าจอ",
-            notMemberOfOrg: "ก้_You are not a member of this organization_ษฺ"
+            notMemberOfOrg: "คุณไม่ได้เป็นสมาชิกขององค์กรนี้"
         }
 });

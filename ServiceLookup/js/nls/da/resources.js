@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Laget findes ikke i webkortet",
             fieldNotFound: "Felt ikke fundet",
-            popupNotSet: "Pop-ups er ikke aktiveret for dette lag"
+            popupNotSet: "Pop-ups er ikke aktiveret for dette lag",
+            noLayersSet: "Der er ikke konfigureret lag i konfigurationen. Søgeboksen fungerer ikke"
         },
         page: {
             title: "Informationssøgning",

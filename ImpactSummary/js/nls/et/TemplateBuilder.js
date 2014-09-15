@@ -30,7 +30,7 @@
                 "appSettingsSaveCloseButtonText": "SALVESTA JA SULGE",
                 "appSettingsTitleText":"Rakenduse nimi",
                 "appSettingsDescriptionText": "Rakenduse kirjeldus",
-                "appSetingsRendererAreaText":"Kuvatud ala",
+                "appSetingsRendererAreaText":"Renderdatud ala",
                 "shareText":"Jaga",
                 "basemapText":"Aluskaart",
                 "basemapSelectionText":"Aluskaardi valik",
@@ -45,11 +45,11 @@
                 "savingChangesMessage": "Muudatuste salvestamine...",
                 "nextButtonText": "Järgmine",
                 "prevButtonText": "Eelmine",
-                "enterLabelText": "Sisesta silt",
+                "enterLabelText": "Sisesta märgis",
                 "SelectedFeatureText": "Valitud objekt",
                 "layerHelpTextMessage": "See rakendus nõuab numbriväljadega kihti",
                 "alertMessage": {
-                    "resetVariableMessage": "Olete kindel, et soovite muutujat lähtestada ?",
+                    "resetVariableMessage": "Kas olete kindel, et soovite muutuja lähtestada?",
                     "emptyAppTitleMessage": "Rakenduse nime väli ei saa olla tühi",
                     "emptyDescriptionMessage": "Kirjeldus ei saa olla tühi",
                     "maxVariableSelection": "Te ei saa valida rohkem kui 25 alammuutujat",
@@ -59,7 +59,7 @@
                     "failMessage": "Objekti ei õnnestunud edukalt uuendada",
                     "saveChangesAlert": "Kas soovite muudatused salvestada ?",
                     "variableLabelValidation": "Muutuja märgis ei saa olla TÜHI",
-                    "subVariableLabelValidation": "Alammuutuja silt ei saa olla TÜHI"
+                    "subVariableLabelValidation": "Alammuutuja märgis ei saa olla TÜHI"
                     }
             }
         }

@@ -16,6 +16,9 @@
  */
 define(
     ({
+        map: {
+            error: "ไม่สามารถสร้างแผนที่"
+        },
         tooltips: {
             search: "ค้นหา",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "ตำแหน่งปัจจุบัน",  // Command button to zoom and pan to the current geographical position reported by the browser
@@ -51,6 +54,7 @@ define(
             geolocationDenied: "ไม่ได้รับอนุญาตให้ค้นหาตำแหน่งปัจจุบัน",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "บราวเซอร์ไม่สามารถหาตำแหน่งปัจจุบันได้",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "บราวเซอร์ไม่สามารถหาตำแหน่งปัจจุบันได้ทันที",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            noSearchLayerConfigured: "ก้_No find layer has been configured_ษฺ",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "ไม่พบชั้นข้อมูลที่ต้องการค้นหาในแผนที่",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "ไม่พบฟิลด์ที่ค้นหาบนชั้นข้อมูลแผนที่ <br><br> ตรวจสอบว่าชั้นข้อมูลนี้อยู่ที่ส่วนเนื้อหาของแผนที่หรือไม่ เซอร์วิสที่ทับซ้อนกัน เช่น ArcGIS for Server dynamic map services ต้องเพิ่มไปยังแผนที่ 1 ชั้นข้อมูล (รวมถึงชั้นข้อมูลสารบัญ) เพื่อใช้สำหรับชั้นข้อมูลที่ค้นหา สำหรับไทล์เซอร์วิสไม่สามารถใช้เป็นชั้นข้อมูลที่ค้นหาได้",
             searchFieldMissing: "ไม่พบฟิลด์ที่ต้องการค้นหาในชั้นข้อมูลของแผนที่",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt

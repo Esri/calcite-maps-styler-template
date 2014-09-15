@@ -1,20 +1,20 @@
 ﻿define({
   display: {
-    elevationProfileTitle: "Профиль рельефа",
+      elevationProfileTitle: "Профиль рельефа",
     showMe: "показать",
     selectLine: "<b>Выберите</b> объект на карте.",
     popupRequirement: "Примечание: объект должен быть в слое с включенными всплывающими окнами.",
     digitizeDistanceMeasureTool: "Используйте инструменты группы <b>Измерение</b>.",
     selectFeatureHelpUrl: "http://help.arcgis.com/ru/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
     measureToolHelpUrl: "http://help.arcgis.com/ru/arcgisonline/help/index.html#//010q00000096000000",
-    hoverOver: "Наведите курсор мыши или щелкните график профиля рельефа для отображения высот и местоположений на карте."
+      hoverOver: "Наведите курсор, или коснитесь схемы профиля рельефа для отображения высот и показа местоположения на карте."
   },
   buttons: {
     measureLabel: "Измерить",
     helpLabel: "Справка"
   },
   chart: {
-    title: "Профиль рельефа",
+      title: "Профиль рельефа",
     demResolution:"Разрешение ЦМР",
     elevationTitleTemplate: "Высота в {0}",
     distanceTitleTemplate: "Расстояние в {0}",

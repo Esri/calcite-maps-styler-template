@@ -16,6 +16,9 @@
  */
 define(
     ({
+        map: {
+            error: "לא ניתן ליצור מפה"
+        },
         tooltips: {
             search: "מצא",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "מיקום נוכחי",  // Command button to zoom and pan to the current geographical position reported by the browser
@@ -51,6 +54,7 @@ define(
             geolocationDenied: "לאתר זה אין הרשאה לקבל את המיקום הנוכחי",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "הדפדפן לא יכול לקבל את המיקום הנוכחי",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "הדפדפן לא יכול לקבל מיקום נוכחי בזמן סביר",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            noSearchLayerConfigured: "לא הוגדרה שכבת חיפוש",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "מופיע לפני רשימה של שכבות מפה; מוצג כאשר לא מוגדרת שכבה לכפתור החיפוש באפליקציה; עובד עם בקשה להזנת שכבת מפה",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "לא ניתן למצא שדות בשכבת המפה.<br><br>בדוק אם שכבה זו קיימת במקור של תכולת המפה. שירותים מקוננים, כגון שירותים דינמיים של ArcGIS for Server , יש להוסיפם למפה אחד בכל פעם (כולל מספר האינדקס של השכבה) כדי שישמשו כשכבות לחיפוש. לא ניתן להשתמש בשירות אריחים כשכבות לחיפוש.",
             searchFieldMissing: "מופיע לפני רשימת שדות בזמן הגדרת שכבת חיפוש למפה",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt

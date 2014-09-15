@@ -1,5 +1,5 @@
-define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/fx", "dojo/_base/html", "dojo/_base/lang", "dojo/has", "dojo/dom", "dojo/dom-class", "dojo/dom-attr", "dojo/dom-construct", "dojo/dom-geometry", "dojo/on", "dojo/query", "dojo/Deferred"], function (
-Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, domGeometry, on, query, Deferred) {
+define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/window", "dojo/_base/fx", "dojo/_base/html", "dojo/_base/lang", "dojo/has", "dojo/dom", "dojo/dom-class", "dojo/dom-style", "dojo/dom-attr", "dojo/dom-construct", "dojo/dom-geometry", "dojo/on", "dojo/mouse", "dojo/query", "dojo/Deferred"], function (
+Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, domConstruct, domGeometry, on, mouse, query, Deferred) {
     return declare([Evented], {
 
         map: null,
@@ -35,12 +35,17 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
 
             deferred = new Deferred();
 
-            // on(window, "scroll", lang.hitch(this, this._windowScrolled));
-            //on(window, "resize", lang.hitch(this, this._windowScrolled));
             this.pTools = dom.byId("panelTools");
             this.pMenu = dom.byId("panelMenu");
             on(this.pMenu, "click", lang.hitch(this, this._menuClick));
             this.pPages = dom.byId("panelPages");
+            //Prevent body scroll when scrolling to the end of the panel content
+            on(this.pPages, mouse.enter, lang.hitch(this, function () {
+                domStyle.set(win.body(), "overflow", "hidden");
+            }));
+            on(this.pPages, mouse.leave, lang.hitch(this, function () {
+                domStyle.set(win.body(), "overflow", "");
+            }));
             domConstruct.empty(this.pPages);
             // add blank page
             domConstruct.create("div", {
@@ -67,6 +72,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
                 //add a tooltip 
                 var tip = this.config.i18n.tooltips[name] || name;
                 domAttr.set(pTool, "data-title", tip);
+                domAttr.set(pTool, "title", tip);
             }
 
             domConstruct.create("img", {
@@ -220,16 +226,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
             this._updateTool(num);
 
         },
-        _windowScrolled: function (evt) {
 
-            if (this.scrollTimer) {
-                clearTimeout(this.scrollTimer);
-            }
-            if (this.snap === true) {
-                this.scrollTimer = setTimeout(lang.hitch(this, this._snapScroll), 300);
-                this._updateMap();
-            }
-        },
 
         _snapScroll: function () {
 
@@ -257,7 +254,7 @@ Evented, declare, fx, html, lang, has, dom, domClass, domAttr, domConstruct, dom
 
             this.curTool = num;
             this._updateTool(num);
-     
+
             if (num != numActual) {
                 this._animateScroll(startPos, endPos);
             }

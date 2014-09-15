@@ -16,6 +16,9 @@
  */
 define(
     ({
+        map: {
+            error: "マップを作成できません"
+        },
         tooltips: {
             search: "検索",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "現在の位置",  // Command button to zoom and pan to the current geographical position reported by the browser
@@ -51,6 +54,7 @@ define(
             geolocationDenied: "このサイトには、現在の位置を取得する権限がありません。",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "ブラウザが現在の位置を取得できませんでした",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "ブラウザが現在の位置を適切な時間内に取得できませんでした",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            noSearchLayerConfigured: "検索レイヤが構成されていません",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "この検索レイヤは、マップ内に見つかりませんでした。",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "マップ レイヤのフィールドが見つかりませんでした。<br><br>このレイヤがマップ コンテンツのルートに存在することを確認してください。検索レイヤとして使用するレイヤを (レイヤのインデックス番号を含めて) 一度に 1 レイヤずつ追加して、ArcGIS for Server ダイナミック マップ サービスなどのネストされたサービスをマップに追加する必要があります。タイル サービスを検索レイヤとして使用することはできません。",
             searchFieldMissing: "このフィールドは、マップ検索レイヤ内に見つかりませんでした。",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt

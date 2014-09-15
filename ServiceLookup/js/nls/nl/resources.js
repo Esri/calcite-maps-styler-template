@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Kaartlaag bevindt zich niet in de webmap",
             fieldNotFound: "Veld niet gevonden",
-            popupNotSet: "Pop-up is niet ingeschakeld voor deze kaartlaag"
+            popupNotSet: "Pop-up is niet ingeschakeld voor deze kaartlaag",
+            noLayersSet: "Er zijn geen kaartlagen gedefinieerd in de configuratie, het zoekvak zal niet functioneren"
         },
         page: {
             title: "Informatie zoeken",

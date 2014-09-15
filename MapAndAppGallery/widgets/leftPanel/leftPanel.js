@@ -112,13 +112,13 @@ define([
     declare("TagCloudObj", null, {
 
         /**
-        *Generate the Tag cloud based on the inputs provided
+        * Generate the Tag cloud based on the inputs provided
         * @memberOf widgets/leftPanel/leftPanel
         */
         generateTagCloud: function (tagsCollection) {
             var fontSizeArray, tagCloudTags;
 
-            fontSizeArray = this._generateFontSize(dojo.configData.values.tagCloudFontMinValue, dojo.configData.values.tagCloudFontMaxValue, tagsCollection.length);
+            fontSizeArray = this._generateFontSize(dojo.configData.values.tagCloudFontMinValue, dojo.configData.values.tagCloudFontMaxValue, tagsCollection);
             tagCloudTags = this._mergeTags(tagsCollection, fontSizeArray);
             return tagCloudTags;
         },
@@ -140,13 +140,14 @@ define([
         * Generate the required font ranges for each and every tag in tag cloud
         * @memberOf widgets/leftPanel/leftPanel
         */
-        _generateFontSize: function (min, max, count) {
-            var i, diff, nextValue, fontSizeArray = [];
-
-            diff = ((max - min) / (count - 1));
-            fontSizeArray.push(min);
-            for (i = 1; i < count; i++) {
-                nextValue = fontSizeArray[i - 1] + diff;
+        _generateFontSize: function (min, max, tagsCollection) {
+            var i, nextValue, fontSizeArray = [];
+            for (i = 0; i < tagsCollection.length; i++) {
+                if (tagsCollection[i].value > 1) {
+                    nextValue = (tagsCollection[i].value / tagsCollection[0].value) * (max - min) + min;
+                } else {
+                    nextValue = min;
+                }
                 fontSizeArray.push(nextValue);
             }
             return fontSizeArray.sort(function (a, b) {
@@ -207,7 +208,7 @@ define([
             this._expandGroupdescEvent(this.expandGroupDescription, this);
             this._queryGroupItems();
             domAttr.set(this.leftPanelHeader, "innerHTML", dojo.configData.values.applicationName);
-            topic.subscribe("queryGroupItems", this._queryGroupItems);
+            topic.subscribe("queryGroupItems", lang.hitch(this, this._queryGroupItems));
             topic.subscribe("queryItemPods", this._queryItemPods);
         },
 
@@ -216,7 +217,7 @@ define([
         * Store the item details in an array
         */
         _queryGroupItems: function (nextQuery, queryString) {
-            var _self = this, groupItems = [], defObj = new Deferred();
+            var groupItems = [], defObj = new Deferred();
 
             if ((!nextQuery) && (!queryString)) {
                 dojo.queryString = 'group:("' + dojo.configData.values.group + '")';
@@ -229,28 +230,26 @@ define([
                 topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
             }
 
-            defObj.then(function (data) {
+            defObj.then(lang.hitch(this, function (data) {
                 var i;
 
                 if (data.results.length > 0) {
+                    for (i = 0; i < data.results.length; i++) {
+                        groupItems.push(data.results[i]);
+                    }
                     if (data.nextQueryParams.start !== -1) {
-                        for (i = 0; i < data.results.length; i++) {
-                            groupItems.push(data.results[i]);
-                        }
-                        _self._queryGroupItems(data.nextQueryParams);
+                        this._queryGroupItems(data.nextQueryParams);
                     } else {
-                        for (i = 0; i < data.results.length; i++) {
-                            groupItems.push(data.results[i]);
-                        }
                         dojo.groupItems = groupItems;
-                        _self._setLeftPanelContent(groupItems);
+                        this._setLeftPanelContent(groupItems);
                     }
                 } else {
-                    if (queryString) {
+                    if (dojo.queryString) {
                         alert(nls.errorMessages.noPublicItems);
+                        topic.publish("hideProgressIndicator");
                     }
                 }
-            }, function (err) {
+            }), function (err) {
                 alert(err.message);
             });
         },
@@ -302,12 +301,7 @@ define([
             * @memberOf widgets/leftPanel/leftPanel
             */
             if (dojo.configData.values.searchString) {
-                queryString += ' AND (';
-                queryString += ' title:' + dojo.configData.values.searchString;
-                queryString += ' OR tags:' + dojo.configData.values.searchString;
-                queryString += ' OR typeKeywords:' + dojo.configData.values.searchString;
-                queryString += ' OR snippet:' + dojo.configData.values.searchString;
-                queryString += ' ) ';
+                queryString += ' AND ' + dojo.configData.values.searchString + ' ';
             }
 
             /**
@@ -315,7 +309,7 @@ define([
             * @memberOf widgets/leftPanel/leftPanel
             */
             if (dojo.configData.values.searchType) {
-                queryString += ' AND type:' + dojo.configData.values.searchType;
+                queryString += ' AND ( type:' + dojo.configData.values.searchType + ' )';
             }
 
             dojo.queryString = queryString;
@@ -382,10 +376,7 @@ define([
                     domClass.add(this, "esriCTTagCloudHighlight");
                     dojo.tagCloudArray.push(val);
                 }
-
-                if (domGeom.position(query(".esriCTAutoSuggest")[0]).h > 0) {
-                    domClass.replace(query(".esriCTAutoSuggest")[0], "displayNoneAll", "displayBlockAll");
-                }
+                topic.publish("hideText");
 
                 if (dojo.selectedTags !== "") {
                     dojo.selectedTags = dojo.tagCloudArray.join('"' + " AND " + '"');
@@ -400,6 +391,7 @@ define([
                     domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
                     domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
                     domClass.replace(query(".esriCTApplicationIcon")[0], "esriCTCursorDefault", "esriCTCursorPointer");
+                    domClass.add(query(".esriCTBackBtn")[0], "displayNoneAll");
                 }
             };
         },
@@ -409,20 +401,48 @@ define([
         * @memberOf widgets/leftPanel/leftPanel
         */
         _queryRelatedTags: function (tagName) {
-            var defObj = new Deferred();
+            var defObj = new Deferred(), tagNameArray, i, resultFilter;
             dojo.queryString = 'group:("' + dojo.configData.values.group + '")' + ' AND (tags: ("' + tagName + '"))';
             topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
             defObj.then(lang.hitch(this, function (data) {
+                /**
+                * Perform exact match and remove unwanted items from results
+                */
+                tagNameArray = tagName.split('" AND "');
                 if (data.total === 0) {
                     this._createNoDataContainer();
-                } else {
+                } else if (tagNameArray.length === 1 && tagNameArray[0] === '') {
+                    /**
+                    * load all the results
+                    */
                     if (query(".esriCTNoResults")[0]) {
                         domConstruct.destroy(query(".esriCTNoResults")[0]);
                     }
+
                     domClass.replace(query(".esriCTInnerRightPanel")[0], "displayBlockAll", "displayNoneAll");
                     dojo.nextQuery = data.nextQueryParams;
                     dojo.results = data.results;
                     topic.publish("createPods", data.results, true);
+                } else {
+                    /**
+                    * Compare tagName with tags
+                    * Check if tag matches with the tags inside data.results.tags
+                    * If it does not match then skip it else add the result item to resultFilter array
+                    */
+                    resultFilter = [];
+                    for (i = 0; i < data.results.length; i++) {
+                        if (this._searchStringInArray(tagNameArray[0], data.results[i].tags)) {
+                            resultFilter.push(data.results[i]);
+                        }
+                    }
+                    if (query(".esriCTNoResults")[0]) {
+                        domConstruct.destroy(query(".esriCTNoResults")[0]);
+                    }
+
+                    domClass.replace(query(".esriCTInnerRightPanel")[0], "displayBlockAll", "displayNoneAll");
+                    dojo.nextQuery = data.nextQueryParams;
+                    dojo.results = resultFilter;
+                    topic.publish("createPods", resultFilter, true);
                 }
             }), function (err) {
                 alert(err.message);
@@ -430,6 +450,24 @@ define([
             });
         },
 
+        /**
+        * Comparing strings
+        * @memberOf widgets/leftPanel/leftPanel
+        */
+        _searchStringInArray: function (str, strArray) {
+            var j;
+            for (j = 0; j < strArray.length; j++) {
+                if (strArray[j] === str) {
+                    return true;
+                }
+            }
+            return false;
+        },
+
+        /**
+        * Create a container with a message when no results are returned for a query
+        * @memberOf widgets/leftPanel/leftPanel
+        */
         _createNoDataContainer: function () {
             if (query(".esriCTInnerRightPanel")[0]) {
                 domClass.replace(query(".esriCTInnerRightPanel")[0], "displayNoneAll", "displayBlockAll");
@@ -447,19 +485,30 @@ define([
         },
 
         /**
-        *Shrinks or expands the group description content on the left panel based on the click event
+        * Shrinks or expands the group description content on the left panel based on the click event
         * @memberOf widgets/leftPanel/leftPanel
         */
         _expandGroupdescEvent: function (node, _self) {
             node.onclick = function () {
+                var tagContainerHeight, descHeight, height;
                 if (this.innerHTML === nls.expandGroupDescText) {
                     domAttr.set(this, "innerHTML", nls.shrinkGroupDescText);
-                    var height = window.innerHeight - (domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelBottom")[0]).h + domGeom.position(query(".esriCTLogo")[0]).h + 50) + "px";
+                    descHeight = window.innerHeight / 5;
+                    height = window.innerHeight - (domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelBottom")[0]).h + domGeom.position(query(".esriCTLogo")[0]).h - descHeight) + "px";
                     domStyle.set(query(".esriCTLeftPanelDesc")[0], "maxHeight", height);
                 } else {
                     domAttr.set(this, "innerHTML", nls.expandGroupDescText);
                 }
                 domClass.toggle(_self.groupDesc, "esriCTLeftTextReadLess");
+                if (dojo.configData.values.showTagCloud) {
+                    if (domClass.contains(query(".esriCTSignIn")[0], "displayNone")) {
+                        tagContainerHeight = window.innerHeight - (domGeom.position(query(".sortByLabelMbl")[0]).h + domGeom.position(query(".esriCTCategoriesHeader")[0]).h) + "px";
+                        domStyle.set(query(".esriCTPadding")[0], "height", tagContainerHeight);
+                    } else {
+                        tagContainerHeight = window.innerHeight - (domGeom.position(query(".esriCTCategoriesHeader")[0]).h + domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelTop")[0]).h + 30) + "px";
+                        domStyle.set(query(".esriCTPadding")[0], "height", tagContainerHeight);
+                    }
+                }
             };
         },
 
@@ -491,7 +540,7 @@ define([
         },
 
         /**
-        *Used to set the innerHTML
+        * Used to set the innerHTML
         * @memberOf widgets/leftPanel/leftPanel
         */
         setNodeText: function (node, htmlString) {
@@ -505,6 +554,9 @@ define([
         */
         _appendLeftPanel: function () {
             var applicationHeaderDiv = dom.byId("esriCTParentDivContainer");
+            if (query(".esriCTGalleryContent", dom.byId("esriCTParentDivContainer"))[0]) {
+                domConstruct.destroy(query(".esriCTGalleryContent", dom.byId("esriCTParentDivContainer"))[0]);
+            }
             domConstruct.place(this.galleryandPannels, applicationHeaderDiv);
         }
     });

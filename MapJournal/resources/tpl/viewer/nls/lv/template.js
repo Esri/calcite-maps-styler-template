@@ -9,8 +9,9 @@
 				step2: "Datu ielāde",
 				step3: "Inicializēšana",
 				loadBuilder: "Pārslēgšanās uz veidotāju",
-				fail: "Diemžēl ielāde neizdevās",
-				failButton: "Atkārtot"
+				long: "Karšu žurnāls tiek inicializēts",
+				long2: "Paldies, ka uzgaidījāt",
+				failButton: "Pārlādēt aplikāciju"
 			},
 			signin: {
 				title: "Nepieciešama autentifikācija",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Kļūda",
-				invalidConfig: "Fatāla kļūda: konfigurācijas neveiksme",
-				invalidConfigNoApp: "Fatāla kļūda: web kartēšanas aplikācijas identifikators nav norādīts index.html",
+				invalidConfig: "ķ_Invalid configuration_ū",
+				invalidConfigNoApp: "ķ_Web Mapping Application identifier not specified in index.html._ū",
+				unspecifiedConfigOwner: "ķ_Authorized owner hasn't been configured._ū",
+				invalidConfigOwner: "ķ_Application owner is not authorized._ū",
 				createMap: "Nevar izveidot karti",
-				invalidApp: "Fatāla kļūda: aplikāciju nevar ielādēt",
-				notConfiguredDesktop: "Laipni lūdzam web aplikācijā %TPL_NAME%.<br />Aplikācija vēl nav konfigurēta.",
-				notConfiguredMobile: "Laipni lūdzam web aplikācijā %TPL_NAME%. Aplikācija vēl nav konfigurēta un veidotājs vēl nav atbalstīts mobilajās ierīcēs.",
+				invalidApp: "ķ_The %TPL_NAME% does not exist or is inaccessible._ū",
+				appLoadingFail: "ķ_Something went wrong, the %TPL_NAME% did not load correctly._ū",
+				notConfiguredDesktop: "ķ_The application is not configured yet._ū",
+				notConfiguredMobile: "ķ_The %TPL_NAME% builder is not supported at this screen resolution._ū",
 				notAuthorized: "Jums nav tiesību piekļūt šai aplikācijai",
-				noBuilderIE8: "Pārlūkprogrammā Internet Explorer veidotājs tiek atbalstīts tikai, sākot ar 9. versiju.",
-				mapLoadingFail: "Kaut kas ir nogājis greizi, karti nevar ielādēt."
+				noBuilderIE: "Veidotājs netiek atbalstīts Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
+				noViewerIE: "Šī aplikācija netiek atbalstīta Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
+				mapLoadingFail: "ķ_Something went wrong, the Map did not load correctly._ū",
+				signOut: "Izrakstīties"
 			},
 			mobileView: {
 				tapForDetails: "Pieskarieties, lai iegūtu detalizētu informāciju",
+				clickForDetails: "Uzziniet vairāk",
 				swipeToExplore: "Pavelciet, lai izpētītu",
-				tapForMap: "Pieskarieties, lai atgrieztos atpakaļ kartē"
+				tapForMap: "Pieskarieties, lai atgrieztos atpakaļ kartē",
+				clickForMap: "ATPAKAĻ UZ KARTI"
 			},
 			floatLayout: {
 				scroll: "Ritināt"
@@ -62,7 +71,7 @@
 				copied: "Kopēts",
 				open: "Atvērt",
 				embed: "Iegult tīmekļa vietnē",
-				embedExplain: "Izmantojiet šo HTML kodu, lai iegultu žurnālu tīmekļa vietnē.",
+				embedExplain: "Izmantojiet šo HTML kodu, lai iegultu žurnālu web vietnē.",
 				size: "Izmēri (platums/augstums):"
 			}
         }

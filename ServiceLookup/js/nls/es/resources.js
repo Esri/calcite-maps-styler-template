@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "La capa no está en el mapa web",
             fieldNotFound: "Campo no encontrado",
-            popupNotSet: "La ventana emergente no se ha habilitado para esta capa"
+            popupNotSet: "La ventana emergente no se ha habilitado para esta capa",
+            noLayersSet: "No se han definido capas en la configuración, el cuadro de búsqueda no funcionará"
         },
         page: {
             title: "Búsqueda de información",

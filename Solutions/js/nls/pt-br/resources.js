@@ -16,6 +16,9 @@
  */
 define(
     ({
+        map: {
+            error: "Não foi possível criar o mapa"
+        },
         tooltips: {
             search: "Localizar",  // Command button to open a dialog box for finding a feature or an address (depending on app)
             locate: "Local atual",  // Command button to zoom and pan to the current geographical position reported by the browser
@@ -51,6 +54,7 @@ define(
             geolocationDenied: "Este site não tem permissão para obter o local atual",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "O navegador não conseguiu obter o local atual",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "O navegador não conseguiu obter o local atual em um tempo útil",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
+            noSearchLayerConfigured: "ã_No find layer has been configured_Ç",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "Esta camada de localização não foi encontrada no mapa",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "Não foi possível localizar campos para a camada de mapa. <br> Verifique se esta camada existe na raiz de Conteúdo do mapa. Serviços aninhados, como serviços de mapa dinâmicos do ArcGIS for Server, devem ser adicionados no mapa, uma camada de cada vez (incluindo o número de índice da camada) para serem utilizados como Localizar Camadas. Serviços do mosaico não podem ser utilizados como Localizar Camadas.",
             searchFieldMissing: "Este campo não foi encontrado na camada de localização do mapa.",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt

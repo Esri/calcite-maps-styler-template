@@ -47,13 +47,14 @@ define([
             * @param {array} dojo.appConfigData.AppHeaderWidgets Widgets specified in configuration file
             */
             this._applicationThemeLoader();
-
+            var self = this, portalSigninWidgetLoader;
             // set app ID settings and call init after
-            var portalSigninWidgetLoader = new PortalSignin();
+            portalSigninWidgetLoader = new PortalSignin();
             portalSigninWidgetLoader.fetchAppIdSettings().then(function () {
                 portalSigninWidgetLoader.initializePortal();
+                self._applicationThemeLoader();
+                self.loadWidgets();
             });
-            this._setAppIdSettings();
         },
 
         loadWidgets: function () {
@@ -92,34 +93,6 @@ define([
         _createApplicationHeader: function (widgets) {
             var applicationHeader = new AppHeader();
             applicationHeader.loadHeaderWidgets(widgets);
-        },
-
-        // Query appid to fetch configuration settings
-        _setAppIdSettings: function () {
-            var def = new Deferred(), settings;
-
-            settings = urlUtils.urlToObject(window.location.href);
-            lang.mixin(dojo.configData.values, settings.query);
-            if (dojo.configData.values.appid) {
-                arcgisUtils.getItem(dojo.configData.values.appid).then(lang.hitch(this, function (response) {
-                    // check for false value strings
-                    var appSettings = this.setFalseValues(response.itemData.values);
-                    // set other config options from app id
-                    lang.mixin(dojo.configData.values, appSettings);
-                    // callback function
-                    this._applicationThemeLoader();
-                    this.loadWidgets();
-                    def.resolve();
-                    // on error
-                }), function (error) {
-                    alert(error.message);
-                    def.resolve();
-                });
-            } else {
-                this.loadWidgets();
-                def.resolve();
-            }
-            return def.promise;
         },
 
         setFalseValues: function (obj) {
