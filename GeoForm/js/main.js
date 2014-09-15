@@ -724,45 +724,13 @@ define([
                     //if field type is date
                     if (currentField.type == "esriFieldTypeDate") {
                         var inputRangeDateGroupContainer = this._addNotationIcon(formContent, "glyphicon-calendar");
-                        inputContent = domConstruct.create("input", {
-                            type: "text",
-                            id: fieldname,
-                            className: "form-control hasDatetimepicker"
-                        }, inputRangeDateGroupContainer);
-                        $(inputContent).datetimepicker({
-                            useSeconds: false,
-                            maxDate: locale.format(new Date(currentField.domain.maxValue), {
-                                fullYear: true
-                            }),
-                            minDate: locale.format(new Date(currentField.domain.minValue), {
-                                fullYear: true
-                            })
-                        }).on("dp.hide", function (evt) {
-                            if ($(evt.currentTarget).data('DateTimePicker').getDate() === null) {
-                                domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
-                                domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
-                            }
-                            if (evt.currentTarget.value === "") {
-                                domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
-                                domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
-                            }
-                        }).on("dp.change", function (evt) {
-                            domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
-                            domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
-
-                            if ($(evt.currentTarget).data('DateTimePicker').getDate() === null) {
-                                domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
-                                domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
-                            }
-                        }).on("dp.show", function (evt) {
-                            domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
-                        });
+                        this._createDateField(inputRangeDateGroupContainer, true, fieldname, currentField);
                         if (currentField.defaultValue) {
                             var m = new Date(currentField.defaultValue);
                             var rangeDefaultDate = locale.format(m, {
                                 fullYear: true
                             });
-                            $(inputContent).data("DateTimePicker").setDate(rangeDefaultDate);
+                            $(inputRangeDateGroupContainer).data("DateTimePicker").setDate(rangeDefaultDate);
                         }
                         rangeHelpText = string.substitute(nls.user.dateRangeHintMessage, {
                             minValue: locale.format(new Date(currentField.domain.minValue)),
@@ -866,29 +834,7 @@ define([
                     break;
                 case "esriFieldTypeDate":
                     var inputDateGroupContainer = this._addNotationIcon(formContent, "glyphicon-calendar");
-                    inputContent = domConstruct.create("input", {
-                        type: "text",
-                        value: "",
-                        className: "form-control hasDatetimepicker",
-                        "data-input-type": "Date",
-                        "id": fieldname
-                    }, inputDateGroupContainer);
-                    $(inputContent).datetimepicker({
-                        useSeconds: false
-                    }).on('dp.change, dp.show', function (evt) {
-                        domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
-                        domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
-                    }).on('dp.error', function (evt) {
-                        evt.target.value = '';
-                        $(this).data("DateTimePicker").hide();
-                        domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
-                        domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
-                    }).on("dp.hide", function (evt) {
-                        if (evt.currentTarget.value === "") {
-                            domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
-                            domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
-                        }
-                    });
+                    this._createDateField(inputDateGroupContainer, false, fieldname);
                     break;
                 }
                 //Add Placeholder if present
@@ -897,16 +843,25 @@ define([
                 }
                 //If present fetch default values
                 if (currentField.defaultValue) {
-                    domAttr.set(inputContent, "value", currentField.defaultValue);
-                    domClass.add(formContent, "has-success");
+                    if (currentField.type == "esriFieldTypeDate") {
+                        var defaultDate = locale.format(new Date(currentField.defaultValue), {
+                            fullYear: true
+                        });
+                        $(inputDateGroupContainer).data("DateTimePicker").setDate(defaultDate);
+                    } else {
+                        domAttr.set(inputContent, "value", currentField.defaultValue);
+                        domClass.add(formContent, "has-success");
+                    }
                 }
                 //Add specific display type if present
                 if (currentField.displayType && currentField.displayType !== "") {
                     domAttr.set(inputContent, "data-display-type", currentField.displayType);
                 }
-                on(inputContent, "keyup", lang.hitch(this, function (evt) {
-                    this._validateField(evt, true);
-                }));
+                if (currentField.type !== "esriFieldTypeDate") {
+                    on(inputContent, "keyup", lang.hitch(this, function (evt) {
+                        this._validateField(evt, true);
+                    }));
+                }
             }
             // if field is required and field exists
             if (!currentField.nullable && inputContent) {
@@ -1204,7 +1159,7 @@ define([
         },
         // create a map based on the input web map id
         _createWebMap: function (itemInfo) {
-            var popup = new Popup(null, domConstruct.create("div"));
+            var popup = new Popup({highlight: false}, domConstruct.create("div"));
             domClass.add(popup.domNode, 'light');
             var mapDiv = dom.byId('mapDiv');
             // fullscreen button HTML
@@ -1292,10 +1247,6 @@ define([
                         this._setSymbol(this.addressGeometry);
                     }
                 }));
-                // map loaded
-                on(this.map, 'load', lang.hitch(this, function () {
-                    this._resizeMap();
-                }));
                 // mouse move and click, show lat lon
                 on(this.map, 'mouse-move, click', lang.hitch(this, function (evt) {
                     // get coords string
@@ -1327,11 +1278,22 @@ define([
                     this._centerPopup();
                 }));
                 // Lat/Lng coordinate events
-                on(dom.byId('lat_coord'), "keypress", lang.hitch(this, function (evt) {
+                var latNode = dom.byId('lat_coord');
+                var lngNode = dom.byId('lng_coord');
+                on(latNode, "keypress", lang.hitch(this, function (evt) {
                     this._findLocation(evt);
+                    this._checkLocation(evt);
                 }));
-                on(dom.byId('lng_coord'), "keypress", lang.hitch(this, function (evt) {
+                on(lngNode, "keypress", lang.hitch(this, function (evt) {
                     this._findLocation(evt);
+                    this._checkLocation(evt);
+                }));
+                // lat/lng changed
+                on(latNode, "change", lang.hitch(this, function (evt) {
+                    this._checkLocation(evt);
+                }));
+                on(lngNode, "change", lang.hitch(this, function (evt) {
+                    this._checkLocation(evt);
                 }));
                 on(dom.byId('cordsSubmit'), "click", lang.hitch(this, function (evt) {
                     this._evaluateCoordinates(evt);
@@ -1403,7 +1365,35 @@ define([
                 this._populateLocationsOptions();
                 // resize map
                 this._resizeMap();
+                // load map
+                if (this.map.loaded) {
+                    this._mapLoaded();
+                } else {
+                    // map loaded
+                    on(this.map, 'load', lang.hitch(this, function () {
+                        this._mapLoaded();
+                    }));
+                }
             }), this.reportError);
+        },
+        _mapLoaded: function () {
+            var latNode = dom.byId('lat_coord');
+            var lngNode = dom.byId('lng_coord');
+            // resize map after a half second
+            setTimeout(lang.hitch(this, function () {
+                // set lat/lng to center value of map
+                var center = this.map.extent.getCenter();
+                var lat = center.getLatitude();
+                var lng = center.getLongitude();
+                if (lat && lng) {
+                    latNode.value = lat.toFixed(5);
+                    lngNode.value = lng.toFixed(5);
+                }
+                // enable/disable button
+                this._checkLocation();
+                // make sure map is correct
+                this._resizeMap();
+            }), 500);
         },
         _fullscreenState: function () {
             // get all nodes
@@ -1430,6 +1420,12 @@ define([
                 window.location.hash = "#mapDiv";
             }
             this._resizeMap();
+            // if current selected location
+            if (this.addressGeometry) {
+                setTimeout(lang.hitch(this, function () {
+                    this.map.centerAt(this.addressGeometry);
+                }), 500);
+            }
         },
         _toggleFullscreen: function (condition) {
             // swap classes
@@ -1504,6 +1500,17 @@ define([
             }
             // place on map
             this._locatePointOnMap(latNode.value, lngNode.value, 'latlon');
+        },
+        _checkLocation: function () {
+            // make sure lat and lon are both filled out to show button
+            var lat = dom.byId('lat_coord').value;
+            var lng = dom.byId('lng_coord').value;
+            var coord = dom.byId('cordsSubmit');
+            if (lat && lng) {
+                domAttr.remove(coord, 'disabled');
+            } else {
+                domAttr.set(coord, 'disabled', 'disabled');
+            }
         },
         // find location for coordinates
         _findLocation: function (evt) {
@@ -1663,7 +1670,7 @@ define([
                     if (currentField.value !== "") {
                         key = domAttr.get(currentField, "id");
                         if (domClass.contains(currentField, "hasDatetimepicker")) {
-                            var picker = $(currentField).data('DateTimePicker');
+                            var picker = $(currentField.parentNode).data('DateTimePicker');
                             var d = picker.getDate();
                             // need to get time of date in ms for service
                             value = d.valueOf();
@@ -2101,6 +2108,58 @@ define([
                 domConstruct.destroy(dom.byId(currentInput.name).parentNode.parentNode);
             } else {
                 domConstruct.destroy(dom.byId(currentInput.name).parentNode);
+            }
+        },
+
+        _createDateField: function (parentNode, isRangeField, fieldname, currentField) {
+            var dateInputField = domConstruct.create("input", {
+                type: "text",
+                value: "",
+                className: "form-control hasDatetimepicker",
+                "data-input-type": "Date",
+                "id": fieldname
+            }, parentNode);
+            on(dateInputField, "focus", function () {
+                $(this.parentElement).data("DateTimePicker").show();
+            });
+            on(dateInputField, "blur", function () {
+                $(this.parentElement).data("DateTimePicker").hide();
+            });
+            $(parentNode).datetimepicker({
+                useSeconds: false,
+                useStrict: false
+            }).on('dp.show', function (evt) {
+                var picker = $(this).data('DateTimePicker');
+                var selectedDate = picker.getDate();
+                if (selectedDate === null) {
+                    query("input", this)[0].value = "";
+                }
+                domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
+                domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
+                if (query("input", this)[0].value === "") {
+                    domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
+                }
+            }).on('dp.error', function (evt) {
+                evt.target.value = '';
+                domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
+                domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
+                $(this).data("DateTimePicker").hide();
+            }).on("dp.hide", function (evt) {
+                if (query("input", this)[0].value === "") {
+                    domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
+                    domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
+                }
+            }).on('dp.change', function (evt) {
+                domClass.add(query(evt.target).parents(".geoFormQuestionare")[0], "has-success");
+                domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
+            });
+            if (isRangeField) {
+                $(parentNode).data("DateTimePicker").setMaxDate(locale.format(new Date(currentField.domain.maxValue), {
+                    fullYear: true
+                }));
+                $(parentNode).data("DateTimePicker").setMinDate(locale.format(new Date(currentField.domain.minValue), {
+                    fullYear: true
+                }));
             }
         }
     });
