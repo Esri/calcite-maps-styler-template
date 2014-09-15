@@ -106,6 +106,7 @@ define([
                 i18n: this._getLocalization(),
                 // get application data
                 app: this._queryApplicationConfiguration()
+                
             }).then(lang.hitch(this, function () {
                 // then execute these async
                 all({

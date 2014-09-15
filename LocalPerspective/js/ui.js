@@ -308,6 +308,7 @@ define([
                domClass.add(pageSlider, 'pageSlider');
             
                // slider
+               // default to 3 if not specified or out of range
                var dist = 3;
                if (this.config.defaultDistance && this.config.defaultDistance > 0 && this.config.defaultDistance <11)
                   dist = this.config.defaultDistance;

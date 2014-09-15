@@ -655,8 +655,8 @@ a, a:hover, a:visited{
 
 #panelTitle {
 	height: 30px;
-	float: left;
 	color: #ffffff;
+	float: left;
 	padding: 0;
 	display: block;
 }
