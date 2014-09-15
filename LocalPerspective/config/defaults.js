@@ -89,7 +89,7 @@ define({
     ],
     "helperServices": {
         "geometry": {
-            "url": ""
+            "url": null
         },
         "printTask": {
             "url": null
