@@ -276,6 +276,7 @@ a, a:hover, a:visited{
 	border-radius: 2px;
 	-moz-border-radius: 2px;
 	height: 2px;
+	border: transparent;
 }
 
 .esriStopsContainer {
@@ -653,7 +654,6 @@ a, a:hover, a:visited{
 }
 
 #panelTitle {
-	max-width: 500px;
 	height: 30px;
 	float: left;
 	color: #ffffff;
@@ -673,6 +673,10 @@ a, a:hover, a:visited{
 	float: left;
 	height: 30px;
 	line-height: 30px;
+	overflow: hidden;
+	/*max-width: 220px;
+	text-overflow:ellipsis;
+	white-space:nowrap;*/
 	margin: 0 5px 0 5px;
 }
 

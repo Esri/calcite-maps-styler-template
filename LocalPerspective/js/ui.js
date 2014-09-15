@@ -308,8 +308,11 @@ define([
                domClass.add(pageSlider, 'pageSlider');
             
                // slider
+               var dist = 3;
+               if (this.config.defaultDistance && this.config.defaultDistance > 0 && this.config.defaultDistance <11)
+                  dist = this.config.defaultDistance;
                var sliderH = new HorizontalSlider({
-                  value: 3,
+                  value: dist,
                   minimum: 1,
                   maximum: 10,
                   intermediateChanges: false,
