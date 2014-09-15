@@ -351,40 +351,42 @@ define([
         },
         // set symbol for submitting location
         _setSymbol: function (point) {
-            var symbolUrl, pictureMarkerSymbol, graphic, it;
-            // use appropriate symbol pin image
-            array.some(this.pins, lang.hitch(this, function (currentPin) {
-                if (this.config.pushpinColor == currentPin.id) {
-                    symbolUrl = currentPin.url;
-                    // create symbol and offset 10 to the left and 17 to the bottom so it points correctly
-                    pictureMarkerSymbol = new PictureMarkerSymbol(symbolUrl, currentPin.width, currentPin.height).setOffset(currentPin.offset.x, currentPin.offset.y);
-                    // text info template
-                    it = new InfoTemplate(nls.user.locationPopupTitle, "${text}");
-                    // graphic for point
-                    graphic = new Graphic(point, pictureMarkerSymbol, {
-                        text: nls.user.addressSearchText
-                    }, it);
-                    // private geoform graphic identifier
-                    graphic._geoformGraphic = true;
-                    // add to graphics layer
-                    this._gl.add(graphic);
-                    // get current features
-                    var features = this.map.infoWindow.features || [];
-                    // remove existing geoform graphic(s)
-                    var filtered = array.filter(features, function (item) {
-                        return !item._geoformGraphic;
-                    });
-                    // add feature
-                    filtered.splice(0, 0, graphic);
-                    // set popup features
-                    this.map.infoWindow.setFeatures(filtered);
-                    // show popup
-                    this.map.infoWindow.show(graphic.geometry);
-                    // edit movable
-                    this.editToolbar.activate(editToolbar.MOVE, graphic, null);
-                    return true;
-                }
-            }));
+            if (this.map.infoWindow) {
+                var symbolUrl, pictureMarkerSymbol, graphic, it;
+                // use appropriate symbol pin image
+                array.some(this.pins, lang.hitch(this, function (currentPin) {
+                    if (this.config.pushpinColor == currentPin.id) {
+                        symbolUrl = currentPin.url;
+                        // create symbol and offset 10 to the left and 17 to the bottom so it points correctly
+                        pictureMarkerSymbol = new PictureMarkerSymbol(symbolUrl, currentPin.width, currentPin.height).setOffset(currentPin.offset.x, currentPin.offset.y);
+                        // text info template
+                        it = new InfoTemplate(nls.user.locationPopupTitle, "${text}");
+                        // graphic for point
+                        graphic = new Graphic(point, pictureMarkerSymbol, {
+                            text: nls.user.addressSearchText
+                        }, it);
+                        // private geoform graphic identifier
+                        graphic._geoformGraphic = true;
+                        // add to graphics layer
+                        this._gl.add(graphic);
+                        // get current features
+                        var features = this.map.infoWindow.features || [];
+                        // remove existing geoform graphic(s)
+                        var filtered = array.filter(features, function (item) {
+                            return !item._geoformGraphic;
+                        });
+                        // add feature
+                        filtered.splice(0, 0, graphic);
+                        // set popup features
+                        this.map.infoWindow.setFeatures(filtered);
+                        // show popup
+                        this.map.infoWindow.show(graphic.geometry);
+                        // edit movable
+                        this.editToolbar.activate(editToolbar.MOVE, graphic, null);
+                        return true;
+                    }
+                }));
+            }
         },
         // create lat lon point
         _calculateLatLong: function (evt) {
@@ -882,17 +884,16 @@ define([
             }
             var helpHTML;
             if (currentField.isNewField) {
-                array.forEach(this.config.itemInfo.itemData.operationalLayers, lang.hitch(this, function (currentLayer) {
-                    if (currentLayer.id == this.config.form_layer.id) {
-                        array.forEach(currentLayer.popupInfo.fieldInfos, function (currentFieldPopupInfo) {
-                            if (currentFieldPopupInfo.fieldName == currentField.name) {
-                                if (currentFieldPopupInfo.tooltip) {
-                                    helpHTML = currentFieldPopupInfo.tooltip;
-                                }
+                // make sure popup info and fields are defined
+                if (this._formLayer && this._formLayer.popupInfo && this._formLayer.popupInfo.fieldInfos) {
+                    array.forEach(this._formLayer.popupInfo.fieldInfos, function (currentFieldPopupInfo) {
+                        if (currentFieldPopupInfo.fieldName == currentField.name) {
+                            if (currentFieldPopupInfo.tooltip) {
+                                helpHTML = currentFieldPopupInfo.tooltip;
                             }
-                        });
-                    }
-                }));
+                        }
+                    });
+                }
             } else {
                 helpHTML = currentField.fieldDescription;
             }
@@ -1241,7 +1242,9 @@ define([
                 this.editToolbar = new editToolbar(this.map);
                 // start moving
                 on(this.editToolbar, "graphic-move-start", lang.hitch(this, function () {
-                    this.map.infoWindow.hide();
+                    if (this.map.infoWindow) {
+                        this.map.infoWindow.hide();
+                    }
                 }));
                 // stop moving
                 on(this.editToolbar, "graphic-move-stop", lang.hitch(this, function (evt) {
@@ -1250,8 +1253,10 @@ define([
                 // show info window on graphic click
                 on(this.editToolbar, "graphic-click", lang.hitch(this, function (evt) {
                     var graphic = evt.graphic;
-                    this.map.infoWindow.setFeatures([graphic]);
-                    this.map.infoWindow.show(graphic.geometry);
+                    if (graphic && this.map.infoWindow) {
+                        this.map.infoWindow.setFeatures([graphic]);
+                        this.map.infoWindow.show(graphic.geometry);
+                    }
                 }));
                 // map click
                 on(this.map, 'click', lang.hitch(this, function (evt) {
