@@ -32,7 +32,6 @@ define([
     "esri/IdentityManager",
     "esri/tasks/GeometryService",
     "config/defaults",
-    "config/commonConfig",
     "application/OAuthHelper"
 ], function (
     Evented,
@@ -51,7 +50,6 @@ define([
     IdentityManager,
     GeometryService,
     defaults,
-    commonConfig,
     OAuthHelper
 ) {
     return declare([Evented], {
@@ -65,7 +63,7 @@ define([
             // config will contain application and user defined info for the application such as i18n strings,
             // the web map id and application id, any url parameters and any application specific configuration
             // information.
-            this.config = declare.safeMixin(defaults,commonConfig);
+            this.config = defaults;
         },
         startup: function () {
             var deferred = this._init();
@@ -108,6 +106,7 @@ define([
                 i18n: this._getLocalization(),
                 // get application data
                 app: this._queryApplicationConfiguration()
+                
             }).then(lang.hitch(this, function () {
                 // then execute these async
                 all({
