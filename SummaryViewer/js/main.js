@@ -142,7 +142,8 @@ define([
 
          arcgisUtils.createMap(this.config.webmap, "mapDiv", {
             mapOptions : {
-               showAttribution : false
+               showAttribution : false,
+               editable : false
             },
             bingMapsKey : this.config.bingmapskey
          }).then(lang.hitch(this, function(response) {
@@ -583,7 +584,6 @@ define([
          var list = dom.byId("selFilter");
          var value = list.options[list.selectedIndex].value;
          if (this.opFeatureCollection) {
-
             var graphics = this.opFeatures;
             this.opLayer.clear();
             for (var i = 0; i < graphics.length; i++) {
