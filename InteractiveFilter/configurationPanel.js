@@ -61,7 +61,7 @@
             {
                "type":"boolean",
                "fieldName":"filterOnLoad",
-               "label":"Remove filters when app loads."
+               "label":"Apply filters when app loads."
             },
             {
               "type": "paragraph",
