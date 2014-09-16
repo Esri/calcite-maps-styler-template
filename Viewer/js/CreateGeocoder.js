@@ -326,7 +326,7 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                             return true;
                         }
                     });
-                    if(layer && layer.hasOwnProperty("url")){
+                    if (layer && layer.hasOwnProperty("url")) {
                         var url = layer.url;
                         var field = searchLayer.field.name;
                         var name = layer.title;
@@ -351,7 +351,7 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                             "layerId": searchLayer.id,
                             "subLayerId": parseInt(searchLayer.subLayer) || null
                         });
-              
+
                     }
 
                 }));

@@ -35,11 +35,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 this.config = config;
                 this.color = this.setColor(this.config.color);
                 this.theme = this.setColor(this.config.theme);
-                // document ready   
+                // document ready
                 ready(lang.hitch(this, function () {
                     //supply either the webmap id or, if available, the item info
                     var itemInfo = this.config.itemInfo || this.config.webmap;
-                    //If a custom extent is set as a url parameter handle that before creating the map 
+                    //If a custom extent is set as a url parameter handle that before creating the map
                     if (this.config.extent) {
                         var extArray = decodeURIComponent(this.config.extent).split(",");
 
@@ -88,7 +88,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             if (has("ie") < 9) {
                 outputColor = color;
             } else {
-                //rgba supported so add 
+                //rgba supported so add
                 rgb.push(0.9);
                 outputColor = Color.fromArray(rgb);
 
@@ -110,7 +110,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
         // Create UI
         _createUI: function () {
             domStyle.set("panelPages", "visibility", "hidden");
-            //Add tools to the toolbar. The tools are listed in the defaults.js file 
+            //Add tools to the toolbar. The tools are listed in the defaults.js file
             var toolbar = new Toolbar(this.config);
             toolbar.startup().then(lang.hitch(this, function () {
 
@@ -167,7 +167,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     var locate = has("locate");
 
 
-                    //No tools are specified in the configuration so hide the panel and update the title area styles 
+                    //No tools are specified in the configuration so hide the panel and update the title area styles
                     if (!tools && !home && !locate) {
                         domConstruct.destroy("panelTools");
                         domStyle.set("panelContent", "display", "none");
@@ -179,7 +179,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     }
 
                     //Now that all the tools have been added to the toolbar we can add page naviagation
-                    //to the toolbar panel, update the color theme and set the active tool. 
+                    //to the toolbar panel, update the color theme and set the active tool.
                     this._updateTheme();
 
 
@@ -212,7 +212,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             }));
         },
         _addBasemapGallery: function (tool, toolbar, panelClass) {
-            //Add the basemap gallery to the toolbar. 
+            //Add the basemap gallery to the toolbar.
             var deferred = new Deferred();
             if (has("basemap")) {
                 var basemapDiv = toolbar.createTool(tool, panelClass);
@@ -233,7 +233,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
         },
 
         _addBookmarks: function (tool, toolbar, panelClass) {
-            //Add the bookmarks tool to the toolbar. Only activated if the webmap contains bookmarks. 
+            //Add the bookmarks tool to the toolbar. Only activated if the webmap contains bookmarks.
             var deferred = new Deferred();
             if (this.config.response.itemInfo.itemData.bookmarks) {
                 //Conditionally load this module since most apps won't have bookmarks
@@ -259,7 +259,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             return deferred.promise;
         },
         _addDetails: function (tool, toolbar, panelClass) {
-            //Add the default map description panel 
+            //Add the default map description panel
             var deferred = new Deferred();
             if (has("details")) {
                 var description = this.config.description || this.config.response.itemInfo.item.description || this.config.response.itemInfo.item.snippet;
@@ -287,7 +287,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
         },
         _addEditor: function (tool, toolbar, panelClass) {
 
-            //Add the editor widget to the toolbar if the web map contains editable layers 
+            //Add the editor widget to the toolbar if the web map contains editable layers
             var deferred = new Deferred();
             this.editableLayers = this._getEditableLayers(this.config.response.itemInfo.itemData.operationalLayers);
             if (has("edit") && this.editableLayers.length > 0) {
@@ -306,7 +306,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
         },
         _createEditor: function () {
             var deferred = new Deferred();
-            //Dynamically load since many apps won't have editable layers 
+            //Dynamically load since many apps won't have editable layers
             require(["application/has-config!edit?esri/dijit/editing/Editor"], lang.hitch(this, function (Editor) {
                 if (!Editor) {
                     deferred.resolve(false);
@@ -315,15 +315,15 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
 
                 //add field infos if necessary. Field infos will contain hints if defined in the popup and hide fields where visible is set
-                //to false. The popup logic takes care of this for the info window but not the edit window. 
+                //to false. The popup logic takes care of this for the info window but not the edit window.
                 array.forEach(this.editableLayers, lang.hitch(this, function (layer) {
                     if (layer.featureLayer && layer.featureLayer.infoTemplate && layer.featureLayer.infoTemplate.info && layer.featureLayer.infoTemplate.info.fieldInfos) {
-                        //only display visible fields 
+                        //only display visible fields
                         var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
                         var fieldInfos = [];
                         array.forEach(fields, lang.hitch(this, function (field) {
 
-                            //added support for editing date and time 
+                            //added support for editing date and time
                             if (field.format && field.format.dateFormat && array.indexOf(this.timeFormats, field.format.dateFormat) > -1) {
                                 field.format = {
                                     time: true
@@ -364,7 +364,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
         },
         _addLayers: function (tool, toolbar, panelClass) {
-            //Toggle layer visibility if web map has operational layers 
+            //Toggle layer visibility if web map has operational layers
             var deferred = new Deferred();
 
             var layers = this.config.response.itemInfo.itemData.operationalLayers;
@@ -400,7 +400,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             return deferred.promise;
         },
         _addLegend: function (tool, toolbar, panelClass) {
-            //Add the legend tool to the toolbar. Only activated if the web map has operational layers. 
+            //Add the legend tool to the toolbar. Only activated if the web map has operational layers.
             var deferred = new Deferred();
             var layers = arcgisUtils.getLegendLayers(this.config.response);
 
@@ -471,7 +471,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             return deferred.promise;
         },
         _addOverviewMap: function (tool, toolbar, panelClass) {
-            //Add the overview map to the toolbar 
+            //Add the overview map to the toolbar
             var deferred = new Deferred();
 
             if (has("overview")) {
@@ -499,7 +499,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 ovMap.startup();
 
                 on(this.map, "layer-add", lang.hitch(this, function (args) {
-                    //delete and re-create the overview map if the basemap gallery changes  
+                    //delete and re-create the overview map if the basemap gallery changes
                     if (args.layer.hasOwnProperty("_basemapGalleryLayerType") && args.layer._basemapGalleryLayerType === "basemap") {
                         registry.byId("overviewMap").destroy();
                         var ovMap = new OverviewMap({
@@ -521,7 +521,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             return deferred.promise;
         },
         _addPrint: function (tool, toolbar, panelClass) {
-            //Add the print widget to the toolbar. TODO: test custom layouts. 
+            //Add the print widget to the toolbar. TODO: test custom layouts.
             var deferred = new Deferred(),
                 legendNode = null,
                 print = null;
@@ -541,7 +541,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 var printDiv = toolbar.createTool(tool, panelClass);
 
                 //get format
-                this.format = "PDF"; //default if nothing is specified 
+                this.format = "PDF"; //default if nothing is specified
                 for (var i = 0; i < this.config.tools.length; i++) {
                     if (this.config.tools[i].name === "print") {
                         var f = this.config.tools[i].format;
@@ -606,7 +606,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
                 require(["application/has-config!print-layouts?esri/request", "application/has-config!print-layouts?esri/tasks/PrintTemplate"], lang.hitch(this, function (esriRequest, PrintTemplate) {
                     if (!esriRequest && !PrintTemplate) {
-                            //Use the default print templates 
+                        //Use the default print templates
                         var templates = [{
                             layout: "Letter ANSI A Landscape",
                             layoutOptions: layoutOptions,
@@ -670,7 +670,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         templateNames = layoutTemplate[0].choiceList;
 
 
-                        // remove the MAP_ONLY template then add it to the end of the list of templates 
+                        // remove the MAP_ONLY template then add it to the end of the list of templates
                         mapOnlyIndex = array.indexOf(templateNames, "MAP_ONLY");
                         if (mapOnlyIndex > -1) {
                             var mapOnly = templateNames.splice(mapOnlyIndex, mapOnlyIndex + 1)[0];
@@ -706,7 +706,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             return deferred.promise;
         },
         _addShare: function (tool, toolbar, panelClass) {
-            //Add share links for facebook, twitter and direct linking. 
+            //Add share links for facebook, twitter and direct linking.
             //Add the measure widget to the toolbar.
             var deferred = new Deferred();
 
@@ -752,7 +752,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
 
         _getBasemapGroup: function () {
-            //Get the id or owner and title for an organizations custom basemap group. 
+            //Get the id or owner and title for an organizations custom basemap group.
             var basemapGroup = null;
             if (this.config.basemapgroup && this.config.basemapgroup.title && this.config.basemapgroup.owner) {
                 basemapGroup = {
@@ -768,7 +768,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
         },
 
         _createMapUI: function () {
-            // Add map specific widgets like the Home  and locate buttons. Also add the geocoder. 
+            // Add map specific widgets like the Home  and locate buttons. Also add the geocoder.
             if (has("home")) {
                 domConstruct.create("div", {
                     id: "panelHome",
@@ -780,10 +780,10 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 }, dom.byId("btnHome"));
 
                 if (!has("touch")) {
-                    //add a tooltip 
+                    //add a tooltip
                     domAttr.set("btnHome", "data-title", this.config.i18n.tooltips.home);
                 } else {
-                    //remove no-touch class from body 
+                    //remove no-touch class from body
                     domClass.remove(document.body, "no-touch");
 
                 }
@@ -799,7 +799,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     map: this.map,
                     scalebarUnit: this.config.units
                 });
-                console.log(this.config.units);
+
             }));
 
 
@@ -813,7 +813,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     map: this.map
                 }, dom.byId("btnLocate"));
                 if (!has("touch")) {
-                    //add a tooltip 
+                    //add a tooltip
                     domAttr.set("btnLocate", "data-title", this.config.i18n.tooltips.locate);
                 }
 
@@ -822,10 +822,10 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
             }
 
-            //Add the location search widget 
+            //Add the location search widget
             require(["application/has-config!search?application/CreateGeocoder"], lang.hitch(this, function (CreateGeocoder) {
                 if (!CreateGeocoder) {
-                    //add class to make title area max-width smaller. Since geocoder isn't there we don't need extra space. 
+                    //add class to make title area max-width smaller. Since geocoder isn't there we don't need extra space.
                     domClass.add("panelTop", "smallerTitle");
                     return;
                 }
@@ -839,27 +839,27 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 }
             }));
 
-            //create the tools 
+            //create the tools
             this._createUI();
 
         },
         _updateTheme: function () {
 
-            //Set the background color using the configured theme value 
+            //Set the background color using the configured theme value
             query(".bg").style("backgroundColor", this.theme.toString());
             query(".esriPopup .pointer").style("backgroundColor", this.theme.toString());
             query(".esriPopup .titlePane").style("backgroundColor", this.theme.toString());
 
 
-            //Set the font color using the configured color value   
+            //Set the font color using the configured color value
             query(".fc").style("color", this.color.toString());
             query(".esriPopup .titlePane").style("color", this.color.toString());
             query(".esriPopup. .titleButton").style("color", this.color.toString());
 
 
             //Set the Slider +/- color to match the icon style. Valid values are white and black
-            // White is default so we just need to update if using black. 
-            //Also update the menu icon to match the tool color. Default is white. 
+            // White is default so we just need to update if using black.
+            //Also update the menu icon to match the tool color. Default is white.
             if (this.config.icons === "black") {
                 query(".esriSimpleSlider").style("color", "#000");
                 query(".icon-color").style("color", "#000");
@@ -893,9 +893,12 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             this.map.infoWindow.resize(width, height);
         },
         _createWebMap: function (itemInfo) {
+
+            window.config = this.config;
             // create a map based on the input web map id
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 usePopupManager: true,
+                editable: has("edit"),   //is the app editable
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
 
@@ -914,7 +917,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
                 //Set the application title
                 this.map = response.map;
-                //Set the title - use the config value if provided. 
+                //Set the title - use the config value if provided.
                 //var title = (this.config.title === null) ? response.itemInfo.item.title : this.config.title;
                 var title;
                 if (this.config.title === null || this.config.title === "") {

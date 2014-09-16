@@ -175,12 +175,12 @@ html, body {
 #pageBody_print .checkbox {
     display: inline-block;
     cursor: pointer;
-    margin-left:10px; 
+    margin-left:10px;
     line-height:18px;
     padding:4px;
 }
 #pageBody_print input[type=checkbox].checkbox {
-    display:none; 
+    display:none;
 }
 
 #pageBody_print .checkbox:before {
@@ -228,7 +228,7 @@ html, body {
     }
 }
 .esriAttributeInspector .atiDeleteButton{
-    
+
 }
 .esriPopup .pointer.bottom , .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight{
     background: #f7f7f7 !important;
@@ -402,7 +402,7 @@ html, body {
     background: #f8f8f8;
     color:#555;
     border-bottom:1px solid #e0e0e0;
-    @include user-select(none);    
+    @include user-select(none);
     padding:6px;
 }
 .esriBookmarkLabel {
@@ -522,7 +522,7 @@ img{
 #panelContent {
     font-family: Helvetica, Arial, sans-serif;
     position: absolute;
-    right: 10px;
+    right: 15px;
     top: 0;
     height: 100%;
     width: 0px;
@@ -537,7 +537,7 @@ img{
     @include transparent(rgb(255,0,0), 0.5);
 }
 
-.page { 
+.page {
     overflow:visible;
     position:relative;
     width: 100%;
@@ -627,7 +627,7 @@ img{
     cursor: pointer;
     position: absolute;
     right: 5px;
-    top: 9px; 
+    top: 9px;
     background: url(../images/close.png) no-repeat;
     background-size:24px;
     width: 24px;
@@ -637,7 +637,7 @@ img{
 
 .pageUp {
     position: absolute;
-    top: 35px; 
+    top: 35px;
     right: 5px;
     background: url(../images/up.png) no-repeat;
     background-size:24px;
@@ -649,7 +649,7 @@ img{
 
 .pageDown {
     position: absolute;
-    top: 60px; 
+    top: 60px;
     right: 5px;
     background: url(../images/down.png) no-repeat;
     background-size:24px;
@@ -667,7 +667,7 @@ img{
     width: 100%;
     color: #000000;
     overflow-x: hidden;
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 
 #pageBody_print{
@@ -731,12 +731,12 @@ img{
 .largerTitle{
      @include respond-to(720){
         max-width:720px !important;
-    }   
+    }
 }
 .smallerTitle{
      @include respond-to(720){
         max-width:520px !important;
-    }   
+    }
 }
 #panelTitle {
     height: 50px;
@@ -745,8 +745,8 @@ img{
     color: #ffffff;
     display: block;
     border-bottom: 1px solid rgba(255,255,255,0.5);
-    font-family: "Helvetica Neue", "Arial", sans-serif; 
-    font-weight:normal; 
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+    font-weight:normal;
     font-size: 25px;
 }
 
@@ -1044,7 +1044,7 @@ img{
     padding:8px;
 }
  input[type=checkbox].share-dialog-checkbox {
-    display:none; 
+    display:none;
 }
 
 .share-dialog-checkbox:before {
@@ -1086,38 +1086,38 @@ img{
     src: url('../fonts/tool-icons.svg?23344103#tool-icons') format('svg');  }
 }
 */
- 
+
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "tool-icons";
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
- 
+
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-     
+
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
- 
+
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
- 
+
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
- 
+
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
- 
+
 
 
 
@@ -1132,6 +1132,4 @@ img{
 .icon-buffer:before { content: '\e80b'; } /* '' */
 .icon-target:before { content: '\e80c'; } /* '' */
 .icon-angle-down:before { content: '\e809'; } /* '' */
-.icon-check-1:before {content: '\2713';} 
-
-
+.icon-check-1:before {content: '\2713';}
