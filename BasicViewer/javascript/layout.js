@@ -49,7 +49,7 @@ dojox.layout.FloatingPane.prototype.show = function (callback) {
     };
 /*Extend the floating pane for the measure and time slider to constrain within the parent widget*/
     ConstrainedFloatingPane = dojo.declare(dojox.layout.FloatingPane, {
-    
+
         postCreate: function() {
             this.inherited(arguments);
             this.moveable = new dojo.dnd.move.constrainedMoveable(
@@ -62,16 +62,16 @@ dojox.layout.FloatingPane.prototype.show = function (callback) {
                             l: 0,
                             t: 0,
                             w: window.innerWidth,
-                            h: window.innerHeight                            
+                            h: window.innerHeight
                         };
-                        
+
                         return coordsWindow;
                     },
                     within: true
                 }
-            );                            
+            );
         }
-        
+
     });
 
       //fix for dojox/mobile bug https://bugs.dojotoolkit.org/ticket/17228
@@ -81,7 +81,7 @@ dojox.layout.FloatingPane.prototype.show = function (callback) {
 
 
     configOptions = options;
-    //handle config options with different name 
+    //handle config options with different name
     if (options.link1text !== undefined) configOptions.link1.text = options.link1text;
     if (options.link1url !== undefined) configOptions.link1.url = options.link1url;
     if (options.link2text !== undefined) configOptions.link2.text = options.link2text;
@@ -129,7 +129,7 @@ dojox.layout.FloatingPane.prototype.show = function (callback) {
 }
 
 function createApp() {
-    //load the specified theme 
+    //load the specified theme
     var ss = document.createElement("link");
     ss.type = "text/css";
     ss.rel = "stylesheet";
@@ -176,7 +176,7 @@ function createApp() {
         if (extent) {
 
             var extArray = decodeURIComponent(extent).split(",");
-        
+
             if(extArray.length === 4){
 
                 getItem(configOptions.webmap, extArray);
@@ -193,7 +193,7 @@ function createApp() {
 }
 
 function getItem(item, extArray) {
-    //get the item and update the extent then create the map 
+    //get the item and update the extent then create the map
     var deferred = esri.arcgis.utils.getItem(item);
 
     deferred.addCallback(function (itemInfo) {
@@ -214,11 +214,12 @@ function getItem(item, extArray) {
 function createMap(webmapitem) {
     if(configOptions.embed && configOptions.home){
         configOptions.displayslider = true;
-        
+
     }
     var mapDeferred = esri.arcgis.utils.createMap(webmapitem, "map", {
         mapOptions: {
             slider: configOptions.displayslider,
+            editable: configOptions.displayeditor,
             wrapAround180: !configOptions.constrainmapextent,
             showAttribution: true,
             //set wraparound to false if the extent is limited.
@@ -229,7 +230,7 @@ function createMap(webmapitem) {
     });
 
     mapDeferred.addCallback(function (response) {
-        //add webmap's description to details panel 
+        //add webmap's description to details panel
         if (configOptions.description === "") {
             if (response.itemInfo.item.description !== null) {
                 configOptions.description = response.itemInfo.item.description;
@@ -268,8 +269,8 @@ function createMap(webmapitem) {
             webmapExtent = response.map.extent.expand(1.5);
         }
 
-        //Create the search location tool. We do this here in case there's a location url param and if 
-        //so we'll zoom to it 
+        //Create the search location tool. We do this here in case there's a location url param and if
+        //so we'll zoom to it
         if (configOptions.displaysearch === true) {
             createSearchTool();
         } else {
@@ -308,20 +309,20 @@ function createMap(webmapitem) {
 
         map.setExtent(initialExtent);
 
-        //add the map widgets (home, locate) if specified 
+        //add the map widgets (home, locate) if specified
         if(configOptions.displaymapwidgets || configOptions.home){
 
                 var homeButton = new esri.dijit.HomeButton({
                     map: map
                 },dojo.create("div",{},dojo.query(".esriSimpleSliderIncrementButton")[0], "after"));//homeDiv);
-                homeButton.startup();        
+                homeButton.startup();
         }
         if(configOptions.displaymapwidgets || configOptions.locate){
                 var locateDiv = dojo.create("div",{id:"locateDiv"},"map");
                 var locationButton = new esri.dijit.LocateButton({
                     map: map
                 },locateDiv);
-                locationButton.startup();   
+                locationButton.startup();
         }
 
     });
@@ -405,7 +406,7 @@ function initUI(response) {
 
     if (configOptions.displayscalebar === true) {
         //add scalebar
-        //is the map embedded? If so set scalebar value to dual otherwise use the units 
+        //is the map embedded? If so set scalebar value to dual otherwise use the units
         var scalebarUnits;
         if(configOptions.embed){
             scalebarUnits = "dual";
@@ -455,8 +456,8 @@ function initUI(response) {
 
     //do we have any editable layers - if not then set editable to false
     editLayers = hasEditableLayers(layers);
-    
-    //is the logged-in user allowed to edit? 
+
+    //is the logged-in user allowed to edit?
     var editable = true;
     if(esri.isDefined(configOptions.userPrivileges)){
         if(dojo.indexOf(configOptions.userPrivileges, "features:user:edit") === -1){
@@ -553,12 +554,12 @@ function initUI(response) {
 
 
 
-    //add the time slider if the layers are time-aware 
+    //add the time slider if the layers are time-aware
     if (configOptions.displaytimeslider === true) {
         if (response.itemInfo.itemData.widgets && response.itemInfo.itemData.widgets.timeSlider) {
             addTimeSlider(response.itemInfo.itemData.widgets.timeSlider.properties);
         } else {
-            //check to see if we have time aware layers 
+            //check to see if we have time aware layers
             var timeLayers = hasTemporalLayer(layers);
             if (timeLayers.length > 0) {
                 //do we have time aware layers? If so create time properties
@@ -579,12 +580,12 @@ function initUI(response) {
         }
     }
 
-    //Display the share dialog if enabled 
+    //Display the share dialog if enabled
     if (configOptions.displayshare === true) {
         createSocialLinks();
     }
 
-    //resize the border container 
+    //resize the border container
     dijit.byId('bc').resize();
 
     resizeMap(); //resize the map in case any of the border elements have changed
@@ -594,7 +595,7 @@ function initUI(response) {
 
 
 function displayLeftPanel() {
-    //display the left panel if any of these options are enabled. 
+    //display the left panel if any of these options are enabled.
     var display = false;
     if (configOptions.displaydetails && configOptions.description !== '') {
         display = true;
@@ -616,7 +617,7 @@ function resizeMap() {
 }
 
 
-//select panels in the stack container. The stack container is used to organize content 
+//select panels in the stack container. The stack container is used to organize content
 //in the left panel (editor, legend, details)
 
 
@@ -624,10 +625,10 @@ function navigateStack(label) {
     //display the left panel if its hidden
     showLeftPanel();
 
-    //select the appropriate container 
+    //select the appropriate container
     dijit.byId('stackContainer').selectChild(label);
 
-    //hide or show the editor 
+    //hide or show the editor
     if (label === 'editPanel') {
         createEditor();
     } else {
@@ -650,8 +651,8 @@ function navigateStack(label) {
     toggleToolbarButtons(buttonLabel);
 }
 
-//Utility functions that handles showing and hiding the left panel. Hide occurs when 
-//the x (close) button is clicked. 
+//Utility functions that handles showing and hiding the left panel. Hide occurs when
+//the x (close) button is clicked.
 
 
 function showLeftPanel() {
@@ -698,7 +699,7 @@ function toggleToolbarButtons(label) {
 
 }
 
-//Create links for sharing the app via social networking 
+//Create links for sharing the app via social networking
 
 
 function updateLinkUrls() {
@@ -756,7 +757,7 @@ function getBasemapGroup() {
 }
 
 function addBasemapGalleryMenu() {
-    //This option is used for embedded maps so the gallery fits well with apps of smaller sizes. 
+    //This option is used for embedded maps so the gallery fits well with apps of smaller sizes.
     var ht = map.height / 2;
     var cp = new dijit.layout.ContentPane({
         id: 'basemapGallery',
@@ -816,7 +817,7 @@ function addBasemapGalleryMenu() {
 }
 
 
-//Add the basemap gallery widget to the application. 
+//Add the basemap gallery widget to the application.
 
 
 function addBasemapGallery() {
@@ -894,7 +895,7 @@ function addBookmarks(info) {
 
 }
 //Create a menu with a list of operational layers. Each menu item contains a check box
-//that allows users to toggle layer visibility. 
+//that allows users to toggle layer visibility.
 
 
 function addLayerList(layers) {
@@ -913,7 +914,7 @@ function addLayerList(layers) {
                 onChange: function () {
                     if (layer.layer.featureCollection) {
                         //turn off all the layers in the feature collection even
-                        //though only the  main layer is listed in the layer list 
+                        //though only the  main layer is listed in the layer list
                         dojo.forEach(layer.layer.featureCollection.layers, function (layer) {
                             layer.layerObject.setVisibility(!layer.layerObject.visible);
                         });
@@ -940,7 +941,7 @@ function addLayerList(layers) {
 
 //build a list of layers for the toggle layer list - this list
 //is slightly different than the legend because we don't want to list lines,points,areas etc for each
-//feature collection type. 
+//feature collection type.
 
 
 function buildLayerVisibleList(layers) {
@@ -948,8 +949,8 @@ function buildLayerVisibleList(layers) {
     dojo.forEach(layers, function (mapLayer, index) {
         if (mapLayer.featureCollection && !mapLayer.layerObject) {
             if (mapLayer.featureCollection.layers) {
-                //add the first layer in the layer collection... not all  - when we turn off the layers we'll 
-                //turn them all off 
+                //add the first layer in the layer collection... not all  - when we turn off the layers we'll
+                //turn them all off
                 if (mapLayer.featureCollection.layers) {
                     layerInfos.push({
                         "layer": mapLayer,
@@ -971,7 +972,7 @@ function buildLayerVisibleList(layers) {
 
 function addPrint(layers) {
 
-    //generate a list of legend layers if the configuration property is set to true 
+    //generate a list of legend layers if the configuration property is set to true
     var legendLayers = [];
     if (configOptions.displayprintlegend) {
         legendLayers = dojo.map(layers, function (layer) {
@@ -996,7 +997,7 @@ function addPrint(layers) {
         return layout;
     });
     if (configOptions.printlayout) { //when true use all print options
-        //get all the layouts from the service. 
+        //get all the layouts from the service.
         var printInfo = esri.request({
             url: configOptions.helperServices.printTask.url,
             content: {
@@ -1021,7 +1022,7 @@ function addPrint(layers) {
             }
             templateNames = layoutTemplate[0].choiceList;
 
-            // remove the MAP_ONLY template then add it to the end of the list of templates 
+            // remove the MAP_ONLY template then add it to the end of the list of templates
             mapOnlyIndex = dojo.indexOf(templateNames, "MAP_ONLY");
             if (mapOnlyIndex > -1) {
                 var mapOnly = templateNames.splice(mapOnlyIndex, mapOnlyIndex + 1)[0];
@@ -1066,7 +1067,7 @@ function updatePrint(templates) {
 
 
 function addMeasurementWidget() {
-    
+
 
 
 
@@ -1077,12 +1078,12 @@ function addMeasurementWidget() {
         closable:false,
         id: "floater",
         //constrainToContainer: true,
-        style: "position:absolute;top:0;left:0;width:245px;height:175px;z-index:999!important;visibility:hidden;"    
+        style: "position:absolute;top:0;left:0;width:245px;height:175px;z-index:999!important;visibility:hidden;"
     }, dojo.byId("floater"));
 
     fp.startup();
 
-   
+
 
  fp.startup();
 
@@ -1121,7 +1122,7 @@ function toggleMeasure() {
          dijit.byId('floater').show();
 
 
-        //if the editor widget exists popups are already disabled. 
+        //if the editor widget exists popups are already disabled.
         if (!editorWidget) {
             disablePopups(); //disable map popups otherwise they interfere with measure clicks
         } else {
@@ -1150,7 +1151,7 @@ function toggleMeasure() {
 
 function addOverview(isVisible) {
     //attachTo:bottom-right,bottom-left,top-right,top-left
-    //opacity: opacity of the extent rectangle - values between 0 and 1. 
+    //opacity: opacity of the extent rectangle - values between 0 and 1.
     //color: fill color of the extnet rectangle
     //maximizeButton: When true the maximize button is displayed
     //expand factor: The ratio between the size of the ov map and the extent rectangle.
@@ -1177,8 +1178,8 @@ function destroyOverview() {
     }
 }
 
-//Add the legend to the application - the legend will be 
-//added to the left panel of the application. 
+//Add the legend to the application - the legend will be
+//added to the left panel of the application.
 
 
 function addLegend(layerInfo) {
@@ -1225,7 +1226,7 @@ function addLegend(layerInfo) {
 
 }
 
-//Determine if the webmap has any editable layers  
+//Determine if the webmap has any editable layers
 
 
 function hasEditableLayers(layers) {
@@ -1257,7 +1258,7 @@ function hasEditableLayers(layers) {
 
 function addEditor(editLayers) {
 
-    //create the button that show/hides the editor 
+    //create the button that show/hides the editor
     var editTb = new dijit.form.ToggleButton({
         showLabel: true,
         label: i18n.tools.editor.label,
@@ -1267,13 +1268,13 @@ function addEditor(editLayers) {
         id: 'editButton'
     }, dojo.create('div'));
 
-    //add the editor button to the left side of the application toolbar 
+    //add the editor button to the left side of the application toolbar
     dojo.byId('webmap-toolbar-left').appendChild(editTb.domNode);
     dojo.connect(editTb, 'onClick', function () {
         navigateStack('editPanel');
     });
 
-    //create the content pane that holds the editor widget 
+    //create the content pane that holds the editor widget
     var editCp = new dijit.layout.ContentPane({
         title: i18n.tools.editor.title,
         selected: "true",
@@ -1291,7 +1292,7 @@ function addEditor(editLayers) {
     }
 }
 
-//Functions to create and destroy the editor. We do this each time the edit button is clicked. 
+//Functions to create and destroy the editor. We do this each time the edit button is clicked.
 
 
 
@@ -1304,7 +1305,7 @@ function destroyEditor() {
 
 }
 //Utility methods used to enable/disable popups. For example when users are measuring locations
-//on the map we want to turn popups off so they don't appear when users click to specify a measure area. 
+//on the map we want to turn popups off so they don't appear when users click to specify a measure area.
 
 
 function enablePopups() {
@@ -1333,18 +1334,18 @@ function createEditor() {
         var templateLayers = dojo.map(editLayers, function(layer) {
             return layer.featureLayer;
         });
-        //add field infos if applicable - this will contain hints if defined in the popup. Also added logic to hide fields that have visible = false. The popup takes 
-        //care of this for the info window but not for the edit window. 
+        //add field infos if applicable - this will contain hints if defined in the popup. Also added logic to hide fields that have visible = false. The popup takes
+        //care of this for the info window but not for the edit window.
         dojo.forEach(editLayerInfo, function(layer) {
 
 
             if (layer.featureLayer && layer.featureLayer.infoTemplate && layer.featureLayer.infoTemplate.info && layer.featureLayer.infoTemplate.info.fieldInfos) {
-                //only display visible fields 
+                //only display visible fields
                 var fields = layer.featureLayer.infoTemplate.info.fieldInfos;
                 var fieldInfos = [];
                 dojo.forEach(fields, function(field) {
-                    //add support for editing time. 
-                    if (field.format && field.format.dateFormat && dojo.indexOf(timeFormats, field.format.dateFormat) > -1) { 
+                    //add support for editing time.
+                    if (field.format && field.format.dateFormat && dojo.indexOf(timeFormats, field.format.dateFormat) > -1) {
                       field.format = {
                         time: true
                       };
@@ -1396,7 +1397,7 @@ function createEditor() {
 
 }
 function createSocialLinks() {
-    //extend the menu item so the </a> links are clickable 
+    //extend the menu item so the </a> links are clickable
     dojo.provide('dijit.anchorMenuItem');
 
     dojo.declare('dijit.anchorMenuItem', dijit.MenuItem, {
@@ -1405,7 +1406,7 @@ function createSocialLinks() {
         }
     });
     //create a dropdown button to display the menu
-    //build a menu with a list of sharing options 
+    //build a menu with a list of sharing options
     var menu = new dijit.Menu({
         id: 'socialMenu',
         style: 'display:none;'
@@ -1501,7 +1502,7 @@ function createOptions() {
         options.maxLocations = 5;
         options.searchDelay = 100;
     }
-    //If the World geocoder is primary enable auto complete 
+    //If the World geocoder is primary enable auto complete
     if (hasEsri && esriIdx === 0) {
         options.arcgisGeocoder = geocoders.splice(0, 1)[0]; //geocoders[0];
         if (geocoders.length > 0) {
@@ -1537,7 +1538,7 @@ function createSearchTool() {
     geocoder.startup();
     dojo.byId('webmap-toolbar-right').appendChild(geocoder.domNode);
 
-    //if location was set go there 
+    //if location was set go there
     if (configOptions.find) {
         geocoder.value = configOptions.find;
         allResults = null;
@@ -1591,7 +1592,7 @@ function showGeocodingResult(geocodeResult, pos) {
 
     if (geocodeResult.extent) {
         setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, geocodeResult.extent, geocodeResult, pos);
-    } else { //best view 
+    } else { //best view
         var bestView = map.extent.centerAt(geocodeResult.feature.geometry).expand(0.0625);
         setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, bestView, geocodeResult, pos);
     }
@@ -1602,7 +1603,7 @@ function setupInfoWindowAndZoom(content, geocodeLocation, newExtent, geocodeResu
 
     //Show info window
     if (allResults && allResults.length > 1) {
-        //let's update the content to show additional results 
+        //let's update the content to show additional results
         var currentLocationName = content;
         var attr = allResults[pos].feature.attributes;
         content = "<div id='geocodeCurrentResult' style='display:none;'><span style='font-weight:bold;'>";
@@ -1658,7 +1659,7 @@ function setupInfoWindowAndZoom(content, geocodeLocation, newExtent, geocodeResu
     //display a popup for the result
     map.infoWindow.setTitle(i18n.tools.search.popupTitle);
     map.infoWindow.setContent(content);
-    //Ensure popups don't interfere wtih the editor window contents. 
+    //Ensure popups don't interfere wtih the editor window contents.
     var handler = dojo.connect(map.infoWindow, "onHide", function () {
         dojo.disconnect(handler);
         if (editorWidget) {
@@ -1691,7 +1692,7 @@ function selectAnotherResult(pos) {
 
 
 
-//Add the time slider if the webmap has time-aware layers 
+//Add the time slider if the webmap has time-aware layers
 
 
 function addTimeSlider(timeProperties) {
@@ -1719,7 +1720,7 @@ function addTimeSlider(timeProperties) {
         }, '<a alt=${close_alt} title=${close_title} href="#" onClick="toggleTime(null);"><img  src="images/close.png"/></a>')
     }, titlePane);*/
 
-    //add a button to the toolbar to toggle the time display 
+    //add a button to the toolbar to toggle the time display
     var toggleButton = new dijit.form.ToggleButton({
         label: i18n.tools.time.label,
         title: i18n.tools.time.title,
@@ -1847,14 +1848,14 @@ function findDefaultTimeInterval(fullTimeExtent) {
 
 function toggleTime(timeProperties) {
     if (dojo.byId('timeFloater').style.visibility === 'hidden') {
-        //create and display the time slider 
+        //create and display the time slider
         createTimeSlider(timeProperties);
         dojo.style(dojo.byId("timeFloater"),"top", "0");
         dijit.byId('timeFloater').show();
         dijit.byId('mainWindow').resize();
         resizeMap();
     } else {
-        //stop the time slider if its playing then destroy and hide the time slider 
+        //stop the time slider if its playing then destroy and hide the time slider
         if (dijit.byId('timeSlider').playing) {
             dijit.byId('timeSlider').pause();
         }
@@ -1895,7 +1896,7 @@ function createTimeSlider(timeProperties) {
 
 
     map.setTimeSlider(timeSlider);
-    //Set time slider properties 
+    //Set time slider properties
     timeSlider.setThumbCount(timeProperties.thumbCount);
     timeSlider.setThumbMovingRate(timeProperties.thumbMovingRate);
     //define the number of stops
