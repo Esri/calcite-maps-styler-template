@@ -54,7 +54,7 @@ define([
                 summary: '',
                 hashtags: '',
                 mailURL: 'mailto:%20?subject=${title}&body=${summary}%20${url}',
-                facebookURL: "https://www.facebook.com/sharer/sharer.php?s=100&p[url]=${url}&p[images][0]=${image}&p[title]=${title}&p[summary]=${summary}",
+                facebookURL: "https://www.facebook.com/sharer/sharer.php?u=${url}",
                 twitterURL: "https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}",
                 googlePlusURL: "https://plus.google.com/share?url=${url}",
                 bitlyAPI: location.protocol === "https:" ? "https://api-ssl.bitly.com/v3/shorten" : "http://api.bit.ly/v3/shorten",
@@ -196,6 +196,12 @@ define([
             /* ---------------- */
             /* Private Functions */
             /* ---------------- */
+            _stripTags: function (str) {
+                var text = domConstruct.create("div", {
+                    innerHTML: str
+                }).textContent;
+                return text || '';
+            },
             _setExtentChecked: function () {
                 domAttr.set(this._extentInput, 'checked', this.get("useExtent"));
             },
@@ -203,9 +209,9 @@ define([
                 var value = domAttr.get(this._extentInput, 'checked');
                 this.set("useExtent", value);
             },
-            _useExtentChanged: function(){
+            _useExtentChanged: function () {
                 this._updateUrl();
-                this._shareLink();  
+                this._shareLink();
             },
             _setSizeOptions: function () {
                 // clear select menu
@@ -413,7 +419,7 @@ define([
                     url: encodeURIComponent(this.get("bitlyUrl") ? this.get("bitlyUrl") : this.get("url")),
                     image: encodeURIComponent(this.get("image")),
                     title: encodeURIComponent(this.get("title")),
-                    summary: encodeURIComponent(this.get("summary")),
+                    summary: encodeURIComponent(this._stripTags(this.get("summary"))),
                     hashtags: encodeURIComponent(this.get("hashtags"))
                 });
                 // email link
