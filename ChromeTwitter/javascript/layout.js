@@ -55,10 +55,11 @@ dojo.require("social.twitter");
     configOptions.bingmapskey = configOptions.bingMapsKey;
    }
 
-   //Display the webmap from arcgis.com 
+   //Display the webmap from arcgis.com
    var mapDeferred = esri.arcgis.utils.createMap(itemInfo, "map", {
      mapOptions: {
        sliderStyle:'small',
+       editable: false,
        nav: false,
        showAttribution:true
      },
@@ -76,7 +77,7 @@ dojo.require("social.twitter");
         });
         var def = twitterLayer.init();
         def.addCallback(function () {
-            //twitter layer created 
+            //twitter layer created
             if (twitterLayer.authenticated) {
                 //signed in so create swap-account link
                 enablePanel();
@@ -88,7 +89,7 @@ dojo.require("social.twitter");
                     }
                 }, "credentialsPanel");
 
-                //search if a keyword was specified 
+                //search if a keyword was specified
                if (configOptions.search !== "") {
                   var search = dojo.byId("twittersearch").value = configOptions.search;
                   searchTwitter(search);
@@ -96,7 +97,7 @@ dojo.require("social.twitter");
 
 
             } else {
-   
+
                 //create sign-in link
                 dojo.create("a", {
                     innerHTML: configOptions.i18n.tools.tweets.signIn,
@@ -117,14 +118,14 @@ dojo.require("social.twitter");
             });
 
             dojo.connect(twitterLayer, "authenticate", function () {
-                //Not signed in - display the sign-in form 
+                //Not signed in - display the sign-in form
                 openTwitterWindow(configOptions.twitterSignInUrl, true);
 
 
             });
 
             dojo.connect(twittersearch, "unauthenticate", function () {
-                //signed in          
+                //signed in
 
             });
 
@@ -156,7 +157,7 @@ dojo.require("social.twitter");
 
 
         });
-    
+
 
      if (configOptions.extent) {
        map.setExtent(new esri.geometry.Extent(dojo.fromJson(configOptions.extent)));
@@ -207,7 +208,7 @@ dojo.require("social.twitter");
      map: map,
      scalebarUnit: configOptions.i18n.viewer.main.scaleBarUnits //metric or english
    });
-  //update the facebook, email and twitter links when users click the Twitter dropdown 
+  //update the facebook, email and twitter links when users click the Twitter dropdown
   dojo.connect(dojo.byId('tweetLabel'),'onclick',createLinks);
   map.infoWindow.resize(290,200);
  }

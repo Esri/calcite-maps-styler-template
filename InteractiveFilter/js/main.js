@@ -414,6 +414,7 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
         _createWebMap: function (itemInfo) {
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: {
+                    editable: false
                     //Optionally define additional map config here for example you can
                     //turn the slider off, display info windows, disable wraparound 180, slider position and more.
                 },

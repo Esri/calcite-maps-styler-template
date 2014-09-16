@@ -1,5 +1,5 @@
 define([
-    "dojo/ready", 
+    "dojo/ready",
     "dojo/_base/declare",
     "dojo/dom-class",
     "dojo/dom-style",
@@ -20,9 +20,9 @@ define([
     "dijit/layout/LayoutContainer"
 ],
 function(
-    ready, 
-    declare, 
-    domClass, 
+    ready,
+    declare,
+    domClass,
     domStyle,
     dom,
     query,
@@ -46,36 +46,36 @@ function(
         constructor: function(config) {
             //config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
-            // any url parameters and any application specific configuration information. 
+            // any url parameters and any application specific configuration information.
             this.config = config;
             ready(lang.hitch(this, function() {
 
-                //load a color theme 
+                //load a color theme
                 var ss = document.createElement("link");
                 ss.type = "text/css";
                 ss.rel = "stylesheet";
                 ss.href = "css/" + this.config.theme + ".css";
                 document.getElementsByTagName("head")[0].appendChild(ss);
 
-                //supply either the webmap id or, if available, the item info 
+                //supply either the webmap id or, if available, the item info
                 var itemInfo = this.config.itemInfo || this.config.webmap;
 
                 this._createWebMap(itemInfo);
             }));
         },
         _mapLoaded: function() {
-          //apply the theme to the popups 
+          //apply the theme to the popups
           domClass.add(this.map.infoWindow.domNode,  this.config.theme);
 
-          //add the scalebar 
+          //add the scalebar
           var scalebar = new Scalebar({
             map: this.map,
-            scalebarUnit: this.config.units 
+            scalebarUnit: this.config.units
           });
 
 
-          //add optional widgets 
-         if(this.config.home_button){//Add the home button to the small slider 
+          //add optional widgets
+         if(this.config.home_button){//Add the home button to the small slider
              require(["esri/dijit/HomeButton", "dojo/query"], lang.hitch(this,function(HomeButton,query){
                 var homeButton = new HomeButton({
                     map: this.map
@@ -101,7 +101,7 @@ function(
 
         if(this.config.geocoder){
             this._createGeocoder();
-        }      
+        }
 
 
 
@@ -119,7 +119,7 @@ function(
 
                 geocoder.startup();
 
-                geocoder.on("find-results", lang.hitch(this, this.checkResults)); 
+                geocoder.on("find-results", lang.hitch(this, this.checkResults));
                 geocoder.on("select", lang.hitch(this, this.showGeocodingResult));
                 geocoder.on("auto-complete", lang.hitch(this, this.clearGeocodeResults));
                 geocoder.on("clear", lang.hitch(this, this.clearGeocodeResults));
@@ -158,17 +158,17 @@ function(
 
             if (geocodeResult.extent) {
                 this.setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, geocodeResult.extent, geocodeResult, pos);
-            } else { //best view 
+            } else { //best view
                 var bestView = this.map.extent.centerAt(geocodeResult.feature.geometry).expand(0.0625);
                 this.setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, bestView, geocodeResult, pos);
             }
-        },  
+        },
         setupInfoWindowAndZoom: function(content, geocodeLocation, newExtent, geocodeResult, pos) {
             this.map.infoWindow.clearFeatures();
 
             //Show info window
             if (this.allResults && this.allResults.length > 1) {
-                    //let's update the content to show additional results 
+                    //let's update the content to show additional results
                 var currentLocationName = content;
                 var attr = this.allResults[pos].feature.attributes;
                 content = "<div id='geocodeCurrentResult' style='display:none;'><span style='font-weight:bold;'>";
@@ -201,8 +201,8 @@ function(
                     if (i !== pos) {
                         var result = this.allResults[i];
                         attr = result.feature.attributes;
-                        content += "<a style='cursor:pointer' class='li_item' id=" + i + ">"; 
-               
+                        content += "<a style='cursor:pointer' class='li_item' id=" + i + ">";
+
                         if (!attr.Match_addr) {
                             content += result.name;
                         } else {
@@ -242,8 +242,8 @@ function(
                 }));
             }
 
-    
- 
+
+
 
 
 
@@ -254,9 +254,9 @@ function(
             this.map.setExtent(newExtent);
 
 
-        },      
+        },
         showOtherResults: function() {
-        
+
             domStyle.set(dom.byId("geocodeWantOtherResults"), "display", "none");
             domStyle.set(dom.byId("geocodeCurrentResult"), "display", "block");
             domStyle.set(dom.byId("geocodeOtherResults"), "display", "block");
@@ -266,7 +266,7 @@ function(
             this.showGeocodingResult(this.allResults[pos], pos);
         },
         _createGeocoderOptions: function(){
-            //Check for multiple geocoder support and setup options for geocoder widget. 
+            //Check for multiple geocoder support and setup options for geocoder widget.
             var hasEsri = false,
                 geocoders = lang.clone(this.config.helperServices.geocode);
 
@@ -277,7 +277,7 @@ function(
                     geocoder.outFields = "Match_addr, stAddr, City";
                     geocoder.singleLineFieldName = "SingleLine";
                     geocoder.esri = geocoder.placefinding = true;
-  
+
                 }
 
             });
@@ -301,8 +301,8 @@ function(
                 autoComplete:hasEsri
 
             }
-   
-   
+
+
             if (hasEsri && esriIdx === 0) {
 
                 options.minCharacters = 0;
@@ -326,36 +326,37 @@ function(
         _createWebMap: function(itemInfo) {
             arcgisUtils.createMap(itemInfo , "mapDiv", {
                 mapOptions: {
-                    //Optionally define additional map config here for example you can 
-                    //turn the slider off, display info windows, disable wraparound 180, slider position and more. 
+                  editable: false
+                    //Optionally define additional map config here for example you can
+                    //turn the slider off, display info windows, disable wraparound 180, slider position and more.
                 },
                 bingMapsKey: this.config.bingmapskey
             }).then(lang.hitch(this, function(response) {
-                //Once the map is created we get access to the response which provides important info 
+                //Once the map is created we get access to the response which provides important info
                 //such as the map, operational layers, popup info and more. This object will also contain
                 //any custom options you defined for the template. In this example that is the 'theme' property.
-                //Here' we'll use it to update the application to match the specified color theme.  
-   
+                //Here' we'll use it to update the application to match the specified color theme.
+
                this.map = response.map;
-               
-               
-           
-               //set the application title 
+
+
+
+               //set the application title
                document.title = this.config.title || response.itemInfo.item.title;
 
-               //Define the layout 
-               //Header 
+               //Define the layout
+               //Header
                 if(this.config.header){
-                    //add a header 
+                    //add a header
                     var title = (this.config.title) ?  this.config.title : response.itemInfo.item.title;
                     var subtitle = (this.config.subtitle) ? this.config.subtitle : response.itemInfo.item.snippet;
 
                     var content = esriLang.substitute({"title": title, "subtitle": subtitle}, "<div id='title'>${title}</div><div id='subtitle'>${subtitle}</div>")
                     this._addContentPane("header","top", content, null);
                 }
-                //Footer 
+                //Footer
                 if(this.config.footer){
-                   //add a footer 
+                   //add a footer
                     var footerText = (this.config.footer_text) ? this.config.footer_text : null;
                     if(footerText){
                         var footerContent = "<span>" + footerText + "</span>";
@@ -363,8 +364,8 @@ function(
                     }
                 }
 
-                //If both legend and description and same side then flip the legend to the other side. Consider alternatives here? 
-                //add a description 
+                //If both legend and description and same side then flip the legend to the other side. Consider alternatives here?
+                //add a description
                 if(this.config.description){
                     var descriptionContent = (this.config.description_content) ? this.config.description_content : response.itemInfo.item.description;
                     if(descriptionContent){
@@ -375,7 +376,7 @@ function(
                     }
 
                 }
-                //add a legend 
+                //add a legend
                 if(this.config.legend){
                    require(["esri/dijit/Legend"], lang.hitch(this,function(Legend){
                       var legendContent = "<div id='legendDiv'></div>";
@@ -385,7 +386,7 @@ function(
                         this.config.legend_side = (this.config.legend_side === "left") ? "right" : "left";
                       }
                       this._addContentPane("legendPane",this.config.legend_side,legendContent,"panel_content");
-         
+
                       var legend = new Legend({
                         map: this.map,
                         layerInfos: (arcgisUtils.getLegendLayers(response))
@@ -412,10 +413,10 @@ function(
 
 
             }), lang.hitch(this, function(error) {
-                //an error occurred - notify the user. In this example we pull the string from the 
-                //resource.js file located in the nls folder because we've set the application up 
-                //for localization. If you don't need to support mulitple languages you can hardcode the 
-                //strings here and comment out the call in index.html to get the localization strings. 
+                //an error occurred - notify the user. In this example we pull the string from the
+                //resource.js file located in the nls folder because we've set the application up
+                //for localization. If you don't need to support mulitple languages you can hardcode the
+                //strings here and comment out the call in index.html to get the localization strings.
                 if (this.config && this.config.i18n) {
                     alert(this.config.i18n.viewer.errors.createMap + ": " + error.message);
                 } else {
@@ -424,8 +425,8 @@ function(
             }));
         },
         _addContentPane: function(widgetId, region, content, customClass){
-  
-            //add content pane to the border container 
+
+            //add content pane to the border container
             var bc = registry.byId("mainWindow");
             var cp = new ContentPane({
                     id: widgetId,
@@ -433,13 +434,13 @@ function(
                     region: region,
                     content: content
             },domConstruct.create("div"));
-           
+
             if(customClass){
                 domClass.add(cp.domNode, customClass);
             }
 
             bc.addChild(cp);
-            
+
             return cp;
 
         }

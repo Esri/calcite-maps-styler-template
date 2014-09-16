@@ -13,7 +13,7 @@
 
 
 
-     //read the legend header text from the localized strings file 
+     //read the legend header text from the localized strings file
      dojo.byId('legendHeader').innerHTML = configOptions.i18n.tools.legend.label;
 
      if (configOptions.bingMapsKey) {
@@ -24,6 +24,7 @@
      var itemInfo = configOptions.itemInfo || configOptions.webmap;
      var mapDeferred = esri.arcgis.utils.createMap(configOptions.itemInfo, "map", {
          mapOptions: {
+             editable: false,
              slider: true,
              sliderStyle: 'small',
              nav: false,
@@ -69,7 +70,7 @@
  function initUI(response) {
      //add chrome theme for popup
      dojo.addClass(map.infoWindow.domNode, "chrome");
-     //add the scalebar 
+     //add the scalebar
      var scalebar = new esri.dijit.Scalebar({
          map: map,
          scalebarUnit: configOptions.i18n.viewer.main.scaleBarUnits //metric or english
@@ -103,7 +104,7 @@
          }, dojo.byId("timeSliderDiv"));
 
          map.setTimeSlider(timeSlider);
-         //Set time slider properties 
+         //Set time slider properties
          timeSlider.setThumbCount(timeProperties.thumbCount);
          timeSlider.setThumbMovingRate(timeProperties.thumbMovingRate);
          //define the number of stops

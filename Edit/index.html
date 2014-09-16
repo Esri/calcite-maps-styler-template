@@ -32,7 +32,7 @@
               location: path_location + '/javascript'
              },{
               name: "config",
-              location: path_location.substr(0,path_location.lastIndexOf('/')) 
+              location: path_location.substr(0,path_location.lastIndexOf('/'))
              }
         ]
       };
@@ -67,23 +67,23 @@
         "esri/lang"
         ],
         function(
-            parser, 
-            ready, 
-            lang, 
-            Color, 
-            dom, 
+            parser,
+            ready,
+            lang,
+            Color,
+            dom,
             query,
-            on, 
+            on,
             domStyle,
-            array, 
-            domConstruct, 
-            domGeometry, 
-            App, 
+            array,
+            domConstruct,
+            domGeometry,
+            App,
             Content,
-            CreateGeocoder, 
-            config, 
-            Deferred, 
-            arcgisUtils, 
+            CreateGeocoder,
+            config,
+            Deferred,
+            arcgisUtils,
             FeatureLayer,
             Point,
             SimpleMarkerSymbol,
@@ -93,7 +93,7 @@
             esriLang
           ){
 
-            
+
             ready (function() {
 
 
@@ -129,7 +129,7 @@
                   //Build the user interface for the application. In this case it's a simple app with a header, content and a left (or floating) panel
                   this.appcontent = new Content(this.options);
                   this.appcontent.createLayout().then(function(){
-                    var itemInfo = this.options.itemInfo || this.options.webmap; 
+                    var itemInfo = this.options.itemInfo || this.options.webmap;
                     createMap(itemInfo);
                   });
 
@@ -137,19 +137,22 @@
               }));
 
 
-  
+
              function createMap(itemInfo){
                   var mapDeferred = arcgisUtils.createMap(itemInfo, "map", {
-                    bingMapsKey: this.options.bingmapskey
+                    bingMapsKey: this.options.bingmapskey,
+                    mapOptions:{
+                      editable:false
+                    }
                   });
                   mapDeferred.then(function(response){
-     
+
                     //Hold on to the click event handler because we might want to disconnect popup clicks
-   
-   
+
+
                     this.appcontent.handler = response.clickEventHandle;
-       
-        
+
+
                     this.map = response.map;
 
 
@@ -160,7 +163,7 @@
                         dom.byId("subtitle").innerHTML =  this.options.subtitle || response.itemInfo.item.snippet || "";
                     }
 
- 
+
                    if(this.map.loaded){
                     initUI(response);
                    }else{
@@ -180,7 +183,7 @@
 
 
             function initUI(response){
- 
+
                var supportsOrientationChange = "onorientationchange" in this,
                 orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
                 //IE8 doesn't support addEventListener so check before calling
@@ -190,9 +193,9 @@
                   }, false);
                 }
 
-                 
-                  //add home button if enabled 
-                 if(this.options.home_button){//Add the home button to the small slider 
+
+                  //add home button if enabled
+                 if(this.options.home_button){//Add the home button to the small slider
                      require(["esri/dijit/HomeButton", "dojo/query"], lang.hitch(this,function(HomeButton,query){
                         var homeButton = new HomeButton({
                             map: this.map
@@ -201,7 +204,7 @@
                     }));
                  }
 
-                 //add address search if enabled 
+                 //add address search if enabled
                  if(this.options.geocoder){
                     var options = {
                         map: this.map,
@@ -218,24 +221,24 @@
 
 
    				 var content = domConstruct.create("div",{id:"editorDiv"});
-                //create the Legend or Editor 
+                //create the Legend or Editor
                 var editableLayers = this.appcontent.getEditableLayers(response.itemInfo.itemData.operationalLayers, this.map);
- 
-                //edit permissions 
+
+                //edit permissions
                 var editable = true;
                 var content_title = this.options.i18n.viewer.content_title;
                 if(esriLang.isDefined(this.options.userPrivileges)){
                     if(array.indexOf(this.options.userPrivileges, "features:user:edit") === -1){
                         editable = false;
-                        //change the title to legend 
+                        //change the title to legend
                         content_title = content_title = this.options.i18n.viewer.legend_title;
                     }
                 } else if(editableLayers.length === 0){
-                	//change the title to legend 
+                	//change the title to legend
                     content_title = content_title = this.options.i18n.viewer.legend_title;
                 }
                 this.appcontent.setPanelContent(content_title , content , "240px").then(lang.hitch(this,  function(){
-          
+
                     this.map.reposition();
                     this.map.resize();
 
@@ -248,10 +251,10 @@
                           map: this.map,
                           layerInfos: arcgisUtils.getLegendLayers(response)
                        },domConstruct.create("div",{},dom.byId("editorDiv")));
-                      
-                        legend.startup();                      
-                            
-                    }else{ //can edit 
+
+                        legend.startup();
+
+                    }else{ //can edit
     				  if(!this.appcontent.isMobile){
                     	this.appcontent.createEditor();
     				  }
@@ -261,7 +264,7 @@
 
                     }
 
-                    //add the location button if enabled. 
+                    //add the location button if enabled.
                     if(this.options.locate_button){
                       require(["esri/dijit/LocateButton"], lang.hitch(this,function(LocateButton){
                           //add the location button as a child of the map div. This button

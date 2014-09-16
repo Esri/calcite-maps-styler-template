@@ -897,8 +897,10 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             window.config = this.config;
             // create a map based on the input web map id
             arcgisUtils.createMap(itemInfo, "mapDiv", {
+                mapOptions:{
+                  editable: has("edit"),   //is the app editable
+                },
                 usePopupManager: true,
-                editable: has("edit"),   //is the app editable
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
 

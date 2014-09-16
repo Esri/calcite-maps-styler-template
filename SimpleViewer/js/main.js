@@ -8,7 +8,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
         constructor: function (config) {
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
-            // any url parameters and any application specific configuration information. 
+            // any url parameters and any application specific configuration information.
             this.config = config;
             // responsive drawer
             var rtl = (query(".esriRTL").length > 0) ? "rtl" : "ltr";
@@ -29,10 +29,10 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
                 this.theme = this.setColor(this.config.theme);
                 this.color = this.setColor(this.config.color);
                 this.paneltheme = this.setColor(this.config.paneltheme);
-                //supply either the webmap id or, if available, the item info 
+                //supply either the webmap id or, if available, the item info
                 var itemInfo = this.config.itemInfo || this.config.webmap;
 
-                //If a custom extent is set as a url parameter handle that before creating the map 
+                //If a custom extent is set as a url parameter handle that before creating the map
                 if (this.config.extent) {
                     var extArray = decodeURIComponent(this.config.extent).split(",");
 
@@ -58,7 +58,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
             domClass.remove(document.body, "app-loading");
 
 
-            //Add the geocoder if search is enabled 
+            //Add the geocoder if search is enabled
             if (this.config.search) {
                 var options = {
                     map: this.map,
@@ -71,7 +71,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
                 }
             }
 
-            //Add the location button if enabled 
+            //Add the location button if enabled
             if (this.config.locate) {
                 var location = new LocateButton({
                     map: this.map
@@ -81,7 +81,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
                 location.startup();
             }
 
-            //Add the home button if configured 
+            //Add the home button if configured
             if (this.config.home) {
                 var homeButton = new HomeButton({
                     map: this.map
@@ -91,7 +91,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
                 homeButton.startup();
             }
 
-            //Define legend panel content 
+            //Define legend panel content
             dom.byId("legend-label").innerHTML = this.config.i18n.tools.legend;
             var legend_div = domConstruct.create("div", {
                 className: "panel_content"
@@ -105,7 +105,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
             legend.startup();
 
 
-            //Define about panel content 
+            //Define about panel content
             var about_content = this.config.about || this.config.itemInfo.item.description;
             if (about_content !== null || about_content !== "") {
                 dom.byId("about-label").innerHTML = this.config.i18n.tools.about;
@@ -122,12 +122,14 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
         //create a map based on the input web map id
         _createWebMap: function (itemInfo) {
             arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: {},
+                mapOptions: {
+                  editable:false
+                },
                 usePopupManager: true,
                 bingMapsKey: this.config.bingmapskey
             }).then(lang.hitch(this, function (response) {
 
-                //define the application title 
+                //define the application title
                 var title = this.config.title || response.itemInfo.item.title;
                 dom.byId("title").innerHTML = title;
                 document.title = title;
@@ -149,10 +151,10 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
                     }));
                 }
             }), lang.hitch(this, function (error) {
-                //an error occurred - notify the user. In this example we pull the string from the 
-                //resource.js file located in the nls folder because we've set the application up 
+                //an error occurred - notify the user. In this example we pull the string from the
+                //resource.js file located in the nls folder because we've set the application up
                 //for localization. If you don't need to support multiple languages you can hardcode the
-                //strings here and comment out the call in index.html to get the localization strings. 
+                //strings here and comment out the call in index.html to get the localization strings.
                 if (this.config && this.config.i18n) {
                     alert(this.config.i18n.map.error + ": " + error.message);
                 } else {
@@ -178,7 +180,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
         _updateTheme: function () {
             //Apply the configured theme to the template
             //Add the bg class to any elements that you want to display using the specified background color
-            //Apply the fc class to elements that should display using the specified font color 
+            //Apply the fc class to elements that should display using the specified font color
             query(".bg").style("backgroundColor", this.theme.toString());
             query(".bg").style("color", this.color.toString());
             query(".fc").style("color", this.color.toString());
@@ -195,7 +197,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
 
 
 
-            //Query for the title areas in the drawer and  apply the panel theme. 
+            //Query for the title areas in the drawer and  apply the panel theme.
             query(".ab").style("backgroundColor", this.paneltheme.toString());
 
 

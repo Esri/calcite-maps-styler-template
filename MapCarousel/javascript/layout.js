@@ -14,9 +14,9 @@ var portal, items;
 var configOptions;
 var webmaps = [], map, currentMap = 0;
 
-dojo.ready( function(){             
+dojo.ready( function(){
   var defaults = {
-     "id": "908dd46e749d4565a17d2b646ace7b1a", //specfiy the group id 
+     "id": "908dd46e749d4565a17d2b646ace7b1a", //specfiy the group id
      "appid": "",
      "numitems":100, //100 is max value
      "bingmapskey": this.commonConfig.bingMapsKey,
@@ -34,19 +34,19 @@ dojo.ready( function(){
       }
       init();
     }));
-    
+
  });
 function init() {
-  
+
   document.title = configOptions.i18n.app.title;
 
-   //use esri.request to query the group - if group query fails identity manager will kick-in and get credentials.      
+   //use esri.request to query the group - if group query fails identity manager will kick-in and get credentials.
   esri.request({
     url: configOptions.sharinghost + '/sharing/rest/community/groups/' + configOptions.id,
     content: {'f':'json'},
     callbackParamName: 'callback',
     load: function (response) {
-      //load the portal      
+      //load the portal
       var signInRequired = (response.access !== 'public')? true : false;
       portal = new esri.arcgis.Portal(configOptions.sharinghost);
 
@@ -56,7 +56,7 @@ function init() {
 
     }
   });
-}       
+}
 
 
 function loadPortal(signInRequired) {
@@ -76,15 +76,15 @@ function loadPortal(signInRequired) {
       group.queryItems(queryParams).then(function (response) {
         if(response.results.length > 0){
         items = response.results;
-        //load the first map 
+        //load the first map
         createMap(items[0]);
-        //create thumbnail gallery 
+        //create thumbnail gallery
         createThumbs(items);
         }else{
           alert('This group does not contain any public web maps to display.');
-          esri.hide(dojo.byId('loadingImg'));  
+          esri.hide(dojo.byId('loadingImg'));
         }
-        
+
       });
     }else{
       alert('Group not found');
@@ -98,6 +98,7 @@ function createMap(item) {
     id: item.id
   }, dojo.byId('mainMap')), {
     mapOptions: {
+      editable: false,
       wrapAround180: true,
       showAttribution:true,
       slider: configOptions.mapwidgets
@@ -113,7 +114,7 @@ function createMap(item) {
     map.snippet = item.snippet;
     webmaps[currentMap] = map;
 
-    //add the home and locate buttons if mapwidgets is set to true 
+    //add the home and locate buttons if mapwidgets is set to true
     if(configOptions.mapwidgets){
        var thisMap = webmaps[currentMap];
 
@@ -152,14 +153,14 @@ function createThumbs(items) {
       var thumbnail = item.thumbnailUrl || "images/desktopapp.png"; //use default image if one is not provided
       var li = dojo.create('li', {
        innerHTML: '<img src="' + thumbnail + '"/><p class="ellipsis">' + item.title + '</p>'
-  
+
       }, frag);
       dojo.addClass(li, 'grid_2 gallery_grid');
 
 
     }
     dojo.connect(li, 'onclick', function () {
-      //close the thumbnail panel 
+      //close the thumbnail panel
       hideMap();
       esri.hide(dojo.byId('thumbnailContainer'));
       currentMap = index;
@@ -171,7 +172,7 @@ function createThumbs(items) {
 }
 
 function showMap() {
-  //animate the display of the next map to fade-in 
+  //animate the display of the next map to fade-in
   //increment the map count div
   var myMap = webmaps[currentMap];
   if (myMap && myMap.id) {
@@ -183,7 +184,7 @@ function showMap() {
     });
     anim.play();
   } else {
-    //create the map 
+    //create the map
     esri.show(dojo.byId('loadingImg'));
     createMap(items[currentMap]);
   }
@@ -199,11 +200,11 @@ function updateDetails(item) {
     total: items.length
   });
 
- 
+
 }
 
 function hideMap() {
-  //Fade out the previous map 
+  //Fade out the previous map
   var node = dojo.byId(webmaps[currentMap].id);
   esri.hide(node);
   dojo.byId('mapTitle').innerHTML = '';
@@ -217,7 +218,7 @@ function hideMap() {
 }
 
 function getNext() {
-  //hide the existing map 
+  //hide the existing map
   hideMap();
   (currentMap >= -1 && currentMap < (items.length - 1)) ? currentMap += 1 : currentMap = 0;
   showMap();
@@ -236,9 +237,8 @@ function toggleGallery() {
 }
 
 function resizeMap() {
-  //window resizes - resize current map 
+  //window resizes - resize current map
   if (webmaps.length > 0) {
     webmaps[currentMap].resize();
   }
 }
-
