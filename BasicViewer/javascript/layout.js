@@ -1491,10 +1491,15 @@ function createOptions() {
             }
         }
     }
+
+    var enableSuggest = hasEsri;
+    if (configOptions.placefinder.currentExtent || configOptions.searchextent) {
+        enableSuggest = false;
+    }
     var options = {
         map: map,
         autoNavigate: false,
-        autoComplete: hasEsri,
+        autoComplete: enableSuggest,
         theme: "simpleGeocoder"
     };
     if (hasEsri) {
