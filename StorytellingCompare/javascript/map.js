@@ -157,7 +157,6 @@ function setExtent() {
 }
 
 function hideLoader() {
-    bannerSetup();
     if (mapsLoaded == configOptions.webmaps.length) {
         $("#loadingCon").hide();
         syncMaps();
