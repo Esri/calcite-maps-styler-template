@@ -88,6 +88,7 @@ function createMap(j) {
             extent: mapExtent
         },
         ignorePopups: false,
+        editable: false,
         bingMapsKey: configOptions.bingmapskey
     });
 

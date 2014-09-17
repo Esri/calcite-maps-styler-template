@@ -149,6 +149,7 @@ function createMap() {
                 wrapAround180: true
             },
             ignorePopups: false,
+            editable: false,
             bingMapsKey: configOptions.bingmapskey
         }));
 
