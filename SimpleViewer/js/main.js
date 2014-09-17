@@ -123,8 +123,9 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
         _createWebMap: function (itemInfo) {
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: {
-                  editable:false
+
                 },
+                editable:false,
                 usePopupManager: true,
                 bingMapsKey: this.config.bingmapskey
             }).then(lang.hitch(this, function (response) {

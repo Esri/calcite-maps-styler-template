@@ -24,13 +24,13 @@
      var itemInfo = configOptions.itemInfo || configOptions.webmap;
      var mapDeferred = esri.arcgis.utils.createMap(configOptions.itemInfo, "map", {
          mapOptions: {
-             editable: false,
              slider: true,
              sliderStyle: 'small',
              nav: false,
              showAttribution: true,
              wrapAround180: true
          },
+         editable: false, 
          ignorePopups: false,
          bingMapsKey: configOptions.bingmapskey
      });

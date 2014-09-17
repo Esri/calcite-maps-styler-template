@@ -98,11 +98,11 @@ function createMap(item) {
     id: item.id
   }, dojo.byId('mainMap')), {
     mapOptions: {
-      editable: false,
       wrapAround180: true,
       showAttribution:true,
       slider: configOptions.mapwidgets
     },
+    editable: false,
     bingMapsKey: configOptions.bingmapskey
   });
   mapDeferred.addCallback(function (response) {

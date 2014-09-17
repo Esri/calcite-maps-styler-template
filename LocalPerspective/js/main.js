@@ -155,8 +155,8 @@ define([
       _createWebMap : function(itemInfo) {
          arcgisUtils.createMap(itemInfo, "mapDiv", {
             mapOptions : {
-               editable: false
             },
+            editable: false,
             bingMapsKey : this.config.bingKey
          }).then(lang.hitch(this, function(response) {
 

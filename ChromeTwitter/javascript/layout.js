@@ -59,10 +59,10 @@ dojo.require("social.twitter");
    var mapDeferred = esri.arcgis.utils.createMap(itemInfo, "map", {
      mapOptions: {
        sliderStyle:'small',
-       editable: false,
        nav: false,
        showAttribution:true
      },
+     editable: false,
      ignorePopups: false,
      bingMapsKey: configOptions.bingMapsKey
    });

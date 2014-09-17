@@ -41,9 +41,9 @@ define([
       // CREATE MAP FROM WEBMAP //
       arcgisUtils.createMap(this.config.webmap, "mapPane", {
         mapOptions: {
-          wrapAround180: true,
-          editable:false
+          wrapAround180: true
         },
+        editable: false,
         ignorePopups: false,
         bingMapsKey: this.config.bingmapskey
       }).then(lang.hitch(this, function (response) {

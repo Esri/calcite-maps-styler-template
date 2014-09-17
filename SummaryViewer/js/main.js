@@ -142,9 +142,9 @@ define([
 
          arcgisUtils.createMap(this.config.webmap, "mapDiv", {
             mapOptions : {
-               showAttribution : false,
-               editable : false
+               showAttribution : false
             },
+            editable: false,
             bingMapsKey : this.config.bingmapskey
          }).then(lang.hitch(this, function(response) {
 

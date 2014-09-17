@@ -148,6 +148,7 @@ function createMap() {
                 nav: false,
                 wrapAround180: true
             },
+            editable: false,
             ignorePopups: false,
             bingMapsKey: configOptions.bingmapskey
         }));

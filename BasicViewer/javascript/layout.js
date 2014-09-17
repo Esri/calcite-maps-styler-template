@@ -219,12 +219,12 @@ function createMap(webmapitem) {
     var mapDeferred = esri.arcgis.utils.createMap(webmapitem, "map", {
         mapOptions: {
             slider: configOptions.displayslider,
-            editable: configOptions.displayeditor,
             wrapAround180: !configOptions.constrainmapextent,
             showAttribution: true,
             //set wraparound to false if the extent is limited.
             logo: !configOptions.customlogo.image //hide esri logo if custom logo is provided
         },
+        editable: configOptions.displayeditor,
         ignorePopups: false,
         bingMapsKey: configOptions.bingmapskey
     });

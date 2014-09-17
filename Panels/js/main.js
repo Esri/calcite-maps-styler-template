@@ -326,10 +326,10 @@ function(
         _createWebMap: function(itemInfo) {
             arcgisUtils.createMap(itemInfo , "mapDiv", {
                 mapOptions: {
-                  editable: false
                     //Optionally define additional map config here for example you can
                     //turn the slider off, display info windows, disable wraparound 180, slider position and more.
                 },
+                editable: false,
                 bingMapsKey: this.config.bingmapskey
             }).then(lang.hitch(this, function(response) {
                 //Once the map is created we get access to the response which provides important info
