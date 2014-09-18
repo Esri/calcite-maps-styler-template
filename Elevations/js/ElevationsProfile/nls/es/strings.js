@@ -1,6 +1,6 @@
 ﻿define({
   display: {
-      elevationProfileTitle: "Perfil de elevaciones",
+      elevationProfileTitle: "Perfil de elevación",
     showMe: "mostrarme",
     selectLine: "<b>Selecciona</b> una entidad en el mapa.",
     popupRequirement: "NOTA: la entidad debe estar en una capa con las ventanas emergentes activadas.",
@@ -14,7 +14,7 @@
     helpLabel: "Ayuda"
   },
   chart: {
-      title: "Perfil de elevaciones",
+      title: "Perfil de elevación",
     demResolution:"Resolución DEM",
     elevationTitleTemplate: "Elevación en {0}",
     distanceTitleTemplate: "Distancia en {0}",

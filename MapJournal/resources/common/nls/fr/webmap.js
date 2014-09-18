@@ -7,7 +7,7 @@
 				lblContent: "Contenu",
 				lblPopup: "Fenêtre contextuelle",
 				lblControls: "Suppléments",
-				lblOverview: "Carte générale",
+				lblOverview: "Vue générale",
 				lblLegend: "Légende",
 				loadingTitle: "Chargement du titre",
 				section: "Section",
@@ -25,7 +25,7 @@
 				tooltipLocation: "Définissez l\'emplacement sur la carte qui sera utilisé lorsque vos lecteurs accéderont à cette section.",
 				tooltipContent: "Définissez les couches visibles.",
 				tooltipPopup: "Choisissez la fenêtre contextuelle à afficher lorsque vos lecteurs accéderont à cette section.",
-				tooltipOverview: "Affichez une petite carte générale avec la carte principale.",
+				tooltipOverview: "Affichez une petite vue générale avec la carte principale.",
 				tooltipLegend: "Affichez la légende de la carte, qui est utile lorsque la carte comporte beaucoup de couches et de symboles.",
 				mapCfgInvite: "Utilisez ces contrôles pour configurer la carte"
 			},

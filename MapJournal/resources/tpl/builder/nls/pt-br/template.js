@@ -21,13 +21,13 @@
 				cfgMedium: "Médio",
 				cfgLarge: "Grande",
 				socialLinksLabel: "Exibir links de compartilhamento na parte inferior de cada seção",
-				socialLinksDescr: "ã_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._Ç"
+				socialLinksDescr: "Isto permite que os leitores façam referência e promovam seções específicas do seu %TPL_NAME%. Por exemplo, se você utilizar um ícone para compartilhar seções, os leitores verificarão a seção %TPL_NAME% específica, ao invés do começo da sua história. Seus leitores podem utilizar o link de mídia social na seção de título para promover o seu %TPL_NAME% inteiro (guia cabeçalho) e tê-lo no início do %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "Fontes",
-				defaultLbl: "ã_Default_Ç",
-				sectionTitleLbl: "ã_Section title_Ç",
-				sectionContentLbl: "ã_Section content_Ç"
+				defaultLbl: "Padrão",
+				sectionTitleLbl: "Título da seção",
+				sectionContentLbl: "Conteúdo da seção"
 			},
 			initPopup: {
 				title: "Bem-Vindo ao"
@@ -85,7 +85,7 @@
 				lblLink: "Visite o site da web de Mapas Históricos da Esri.",
 				content1Div1: "Você pode integrar uma variedade de estilos na construção da sua história. O <strong>% LAYOUT_TITLE% </ strong> normalmente tem o seu texto, imagens e vídeo enquanto seus mapas tendem a ir para o<strong> Nível Principal</ strong>. No entanto, o% TPL_NAME% também permite a você apresentar imagens, gráficos e vídeos dentro do nível principal.",
 				content1Div2: "Adicionar seções permite a você personalizar verdadeiramente a sua experiência de contar histórias. Conforme os leitores rolam pelo seu texto %LAYOUT_TITLE%, um mapa no Nível Principal pode mover ou ampliar nos pontos-chaves ou novos mapas e imagens podem alternar automaticamente para suporte da sua mensagem.",
-				content2Div1: "ã_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._Ç",
+				content2Div1: "Aqui é onde você pode ajustar o visual do seu%TPL_NAME%. Os esquemas de cores, layouts, larguras e fontes são todos refinados aqui.",
 				content2Div2: "Você também pode adicionar links de compartilhamento para Facebook, Twitter e Bitly, assim os leitores podem facilmente espalhar seu%TPL_NAME% para todos.",
 				content3Div1: "Seu conteúdo está organizado em seções. Você pode ter várias seções que desejar (pense nelas como mini capítulos). O fluxo destes capítulos é importante; dentro de Organizar você pode reordenar ou excluir seções como desejar.",
 				content4Div1: "Encontrou um erro ou deseja alterar o seu material? Não se preocupe. Procure o ícone de edição em todo o aplicativo para fazer alterações no seu conteúdo. Você utilizará as funções de edição várias vezes conforme desenvolver o seu %TPL_NAME%!",

@@ -61,7 +61,7 @@
 				share: "Partager"
 			},
 			overviewFromCommon: {
-				title: "Carte générale"
+				title: "Vue générale"
 			},
 			legendFromCommon: {
 				title: "Légende"

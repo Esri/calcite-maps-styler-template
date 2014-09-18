@@ -65,7 +65,7 @@
             shareUserTextMessage: "Jūsu ieraksts ir iesniegts. Kopīgojiet ar citiem, izmantojot tālāk minētās iespējas.",
             addAttachmentFailedMessage: "Slānim nevar pievienot pielikumu",
             addFeatureFailedMessage: "Slānim nevar pievienot elementu",
-            noLayerConfiguredMessage: "Ak vai! Šeit nekā nav. Lai sāktu apkopot iesniegtās veidlapas, konfigurējiet GeoForm un atlasiet rediģējamu elementu servisu, kuru izmantot.",
+            noLayerConfiguredMessage: "ķ_An error occured loading or finding an editable feature layer. In order to display the form and start collecting submissions, add an editable Feature Layer to the Webmap._ū",
             placeholderLatitude: "Platums (Y)",
             placeholderLongitude: "Garums (X)",
             latitude: "Platums",

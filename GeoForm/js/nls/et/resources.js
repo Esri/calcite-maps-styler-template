@@ -65,7 +65,7 @@
             shareUserTextMessage: "Ärgitage teisi järgmiste valikute abil panust andma.",
             addAttachmentFailedMessage: "Manuse lisamine kihile ebaõnnestus",
             addFeatureFailedMessage: "Objekti lisamine kihile ebaõnnestus",
-            noLayerConfiguredMessage: "Oih! Siin ei ole midagi. Vormi edastuste kogumiseks seadistage see GeoForm ja valige muudetav objektiteenus, mida kasutada.",
+            noLayerConfiguredMessage: "Š_An error occured loading or finding an editable feature layer. In order to display the form and start collecting submissions, add an editable Feature Layer to the Webmap._ä",
             placeholderLatitude: "Laiuskraad (Y)",
             placeholderLongitude: "Pikkuskraad (X)",
             latitude: "Laiuskraad",

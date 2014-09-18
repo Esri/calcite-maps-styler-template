@@ -33,7 +33,7 @@
 				noBuilderIE: "Oluşturucu %VERSION% öncesindeki Internet Explorer sürümlerinde desteklenmiyor. %UPGRADE%",
 				noViewerIE: "Bu uygulama %VERSION% öncesindeki Internet Explorer sürümlerinde desteklenmiyor. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Tarayıcınızı güncelleyin</a>.",
-				mapLoadingFail: "Bir şeyler yanlış gitti, Harita düzgün şekilde yüklenmedi.",
+				mapLoadingFail: "Hata oluştu, Harita düzgün şekilde yüklenmedi.",
 				signOut: "Oturumu Kapat"
 			},
 			mobileView: {

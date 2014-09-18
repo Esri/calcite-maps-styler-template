@@ -7,7 +7,7 @@
     digitizeDistanceMeasureTool: "Použijte nástroje <b>Měření</b>.",
     selectFeatureHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
     measureToolHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000",
-      hoverOver: "Chcete-li v mapě zobrazit umístění s nadmořskými výškami, přesuňte ukazatel myši nad graf výškového profilu nebo se jej dotkněte."
+      hoverOver: "Chcete-li v mapě zobrazit nadmořskou výšku v určitém místě, přesuňte ukazatel myši nad graf výškového profilu, nebo se jej dotkněte."
   },
   buttons: {
     measureLabel: "Měření",

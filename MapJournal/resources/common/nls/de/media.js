@@ -99,7 +99,7 @@
 				lblPosition3Explain: "(Zuschneiden nicht möglich)",
 				lblPosition3Explain2: "(Breite wird immer an das Fenster angepasst)",
 				lblPosition4Explain: "(Verzerren möglich)",
-				unloadLbl: "Wird entladen, wenn Leser zu einem anderen Abschnitt navigiert",
+				unloadLbl: "Wird angehalten, wenn Leser zu einem anderen Abschnitt navigiert",
 				unloadHelp: "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Abschnitt navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen während der Leser durch das Journal blättert.<br />Wenn die Webseite eine Anwendung ist, deaktivieren Sie diese Option, damit die Anwendung nicht erneut geladen wird, wenn der Leser zu diesem Abschnitt zurückkehrt."
 			},
 			editorActionGeocode: {

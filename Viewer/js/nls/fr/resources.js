@@ -51,7 +51,7 @@ define(
         	"bookmarks": "Géosignets",
         	"layers": "Couches",
         	"basemap": "Galerie de fonds de carte",
-        	"overview": "Carte générale",
+        	"overview": "Vue générale",
         	"measure": "Mesurer",
         	"edit": "Modifier",
         	"time": "Heure",

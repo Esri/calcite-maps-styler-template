@@ -21,7 +21,7 @@
 				cfgMedium: "Střední",
 				cfgLarge: "Velké",
 				socialLinksLabel: "Zobrazit na konci každé části odkazy pro sdílení",
-				socialLinksDescr: "Tato možnost čtenářům umožňuje odkazovat na konkrétní části %TPL_NAME% a šířit je. Pokud například použijete ikonu pro sdílení částí, čtenáři se dostanou přímo na danou část %TPL_NAME% a nikoli na začátek příběhu. K šíření celého %TPL_NAME% mohou čtenáři použít odkaz na sociální média v titulní části (karta záhlaví), který vede na začátek %TPL_NAME%."
+				socialLinksDescr: "Tato možnost čtenářům umožňuje se odkazovat na konkrétní části %TPL_NAME% a šířit je. Pokud například použijete ikonu pro sdílení částí, čtenáři se dostanou přímo na danou část %TPL_NAME% a nikoli na začátek příběhu. K šíření celého %TPL_NAME% mohou čtenáři použít odkaz na sociální média v titulní části (karta záhlaví), který vede na začátek %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "Písma",

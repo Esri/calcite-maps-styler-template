@@ -21,7 +21,7 @@
 			errors: {
 				boxTitle: "Se ha producido un error",
 				invalidConfig: "Configuración no válida",
-				invalidConfigNoApp: "No se ha especificado el identificador de la aplicación de representación cartográfica en la red en index.html.",
+				invalidConfigNoApp: "No se ha especificado el identificador de la aplicación en index.html.",
 				unspecifiedConfigOwner: "El propietario autorizado no se ha configurado.",
 				invalidConfigOwner: "El propietario de la aplicación no está autorizado.",
 				createMap: "No se puede crear el mapa",

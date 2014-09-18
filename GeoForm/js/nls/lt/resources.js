@@ -65,7 +65,7 @@
             shareUserTextMessage: "Paskatinkite kitus prisidėti naudojant šias parinktis.",
             addAttachmentFailedMessage: "Prie sluoksnio pridėti priedo nepavyko",
             addFeatureFailedMessage: "Į sluoksnį elemento pridėti nepavyko",
-            noLayerConfiguredMessage: "Oi! Čia nieko nėra. Norėdami pradėti rinkti formų pateikimus, sukonfigūruokite šią GeoForm ir pasirinkite naudotiną redaguojamą  Elementų paslaugos sluoksnį.",
+            noLayerConfiguredMessage: "Į_An error occured loading or finding an editable feature layer. In order to display the form and start collecting submissions, add an editable Feature Layer to the Webmap._š",
             placeholderLatitude: "Platuma (Y)",
             placeholderLongitude: "Ilguma (X)",
             latitude: "Platuma",

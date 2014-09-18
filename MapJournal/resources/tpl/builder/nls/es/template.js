@@ -26,8 +26,8 @@
 			settingsLayoutFonts: {
 				title: "Fuentes",
 				defaultLbl: "Predeterminado",
-				sectionTitleLbl: "Título de sección",
-				sectionContentLbl: "Contenido de sección"
+				sectionTitleLbl: "Título de la sección",
+				sectionContentLbl: "Contenido de la sección"
 			},
 			initPopup: {
 				title: "Bienvenido a"
