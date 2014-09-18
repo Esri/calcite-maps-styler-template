@@ -150,7 +150,6 @@ function createMap() {
             },
             editable: false,
             ignorePopups: false,
-            editable: false,
             bingMapsKey: configOptions.bingmapskey
         }));
 
