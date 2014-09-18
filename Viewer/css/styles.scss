@@ -114,7 +114,9 @@ html, body {
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+.modal-scrollbar {
+    margin-right: 17px;
+}
 /* Fonts */
 @include fontFace("HelveticaNeue","../fonts/helveticaneue");
 @include fontFace("HelveticaNeueUltraLight","../fonts/helveticaneueultralight");
@@ -566,7 +568,7 @@ img{
     @include respond-to(600){
         max-height:none;
     }
-    @include respond-to(1074){
+    @include respond-to(1012){
        top:10px;
         max-height:none;
     }
