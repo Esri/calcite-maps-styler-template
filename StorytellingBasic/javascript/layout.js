@@ -62,7 +62,6 @@ var mapDeferred = esri.arcgis.utils.createMap(configOptions.webmap, "map", {
   },
   editable: false,
   ignorePopups: false,
-  editable: false,
   bingMapsKey: configOptions.bingmapskey
 });
 
