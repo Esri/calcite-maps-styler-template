@@ -4,6 +4,7 @@ dojo.require("dojox.layout.FloatingPane");
 dojo.require("dojo.dnd.move");
 dojo.require("utilities.custommenu");
 dojo.require("esri.dijit.HomeButton");
+dojo.require("esri.layers.FeatureLayer");
 dojo.require("esri.dijit.LocateButton");
 dojo.require("apl.ElevationsChart.Pane");
 

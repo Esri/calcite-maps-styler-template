@@ -13,6 +13,7 @@ define([
   "dojo/dom-construct",
   "esri/domUtils",
   "esri/dijit/editing/Editor",
+  "esri/layers/FeatureLayer",
   "dijit/layout/BorderContainer",
   "dijit/layout/ContentPane"
   ],
@@ -31,6 +32,7 @@ define([
       domConstruct, 
       domUtils, 
       Editor,
+      FeatureLayer,
       BorderContainer, 
       ContentPane
       ){
@@ -192,7 +194,7 @@ define([
 
                         var eLayer = layer.layerObject;
  
-                        if(eLayer instanceof esri.layers.FeatureLayer && eLayer.isEditable()){
+                        if(eLayer instanceof FeatureLayer && eLayer.isEditable()){
 
                               this.editableLayers.push({'featureLayer' : eLayer})   
 
