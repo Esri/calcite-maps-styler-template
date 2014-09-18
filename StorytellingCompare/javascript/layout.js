@@ -7,7 +7,7 @@
   var mouseDown = 0;
 
 	function bannerSetup(){
-		document.title = configOptions.title|| response.itemInfo.item.title || "";
+		document.title = configOptions.title || "";
         dojo.byId("title").innerHTML = configOptions.title || "";
 		dojo.byId("subtitle").innerHTML = configOptions.subtitle ||  "";
 		if (configOptions.description == false || configOptions.description == "false"){
@@ -36,6 +36,7 @@
 			$("#mapCon0").css('width','50%');
 			dijit.byId('mainWindow').resize();
 		}
+    	bannerSetup();
 		createMap(0);
 		createMap(1);
 		if (configOptions.webmaps.length == 3){
