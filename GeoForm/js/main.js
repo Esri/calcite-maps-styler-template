@@ -389,14 +389,14 @@ define([
             }
         },
         // create lat lon point
-        _calculateLatLong: function (evt) {
+        _calculateLatLong: function (pt) {
             // return string
             var str = '';
             // if spatial ref is web mercator
-            if (evt && evt.mapPoint) {
+            if (pt) {
                 // get lat/lng
-                var lat = evt.mapPoint.getLatitude();
-                var lng = evt.mapPoint.getLongitude();
+                var lat = pt.getLatitude();
+                var lng = pt.getLongitude();
                 if (lat && lng) {
                     // create string
                     str = nls.user.latitude + ': ' + lat.toFixed(5) + ', ' + '&nbsp;' + nls.user.longitude + ': ' + lng.toFixed(5);
@@ -1153,7 +1153,12 @@ define([
             // clear attachment
             var attachNode = dom.byId("geoFormAttachment");
             if (attachNode && attachNode.value) {
-                $(attachNode).replaceWith($(attachNode).clone(true));
+                //We are adding attachNode.value= "" again to clear the attachment text in Firefox
+                domAttr.set(attachNode, "value", "");
+                //Below line works in all the browsers except Firefox
+                //Since attachNode.value= "" was not working in IE8, we added this code to clear the attachment text
+                //This is just work around and we are searching for single solution which will work in all the browsers
+                $(dom.byId("geoFormAttachment")).replaceWith($(dom.byId("geoFormAttachment")).clone(true));
             }
         },
         // validate form input
@@ -1249,6 +1254,8 @@ define([
                 }));
                 // stop moving
                 on(this.editToolbar, "graphic-move-stop", lang.hitch(this, function (evt) {
+                    var locationCoords = this._calculateLatLong(evt.graphic.geometry);
+                    domAttr.set(dom.byId("coordinatesValue"), "innerHTML", locationCoords);
                     this.addressGeometry = evt.graphic.geometry;
                 }));
                 // show info window on graphic click
@@ -1268,10 +1275,10 @@ define([
                 // mouse move and click, show lat lon
                 on(this.map, 'mouse-move, click', lang.hitch(this, function (evt) {
                     // get coords string
-                    var coords = this._calculateLatLong(evt);
+                    var coords = this._calculateLatLong(evt.mapPoint);
                     domAttr.set(dom.byId("coordinatesValue"), "innerHTML", coords);
                 }));
-                // Add desireable touch behaviors here
+                // Add desirable touch behaviors here
                 if (this.map.hasOwnProperty("isScrollWheelZoom")) {
                     if (this.map.isScrollWheelZoom) {
                         this.map.enableScrollWheelZoom();
@@ -1531,8 +1538,8 @@ define([
         },
         _checkLatLng: function () {
             // make sure lat and lon are both filled out to show button
-            var lat = dom.byId('lat_coord').value;
-            var lng = dom.byId('lng_coord').value;
+            var lat = lang.trim(dom.byId('lat_coord').value);
+            var lng = lang.trim(dom.byId('lng_coord').value);
             var coord = dom.byId('cordsSubmit');
             if (lat && lng) {
                 domAttr.remove(coord, 'disabled');
