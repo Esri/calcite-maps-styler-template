@@ -47,14 +47,7 @@ define([
             * @param {array} dojo.appConfigData.AppHeaderWidgets Widgets specified in configuration file
             */
             this._applicationThemeLoader();
-            var self = this, portalSigninWidgetLoader;
-            // set app ID settings and call init after
-            portalSigninWidgetLoader = new PortalSignin();
-            portalSigninWidgetLoader.fetchAppIdSettings().then(function () {
-                portalSigninWidgetLoader.initializePortal();
-                self._applicationThemeLoader();
-                self.loadWidgets();
-            });
+            this.loadWidgets();
         },
 
         loadWidgets: function () {
@@ -78,7 +71,13 @@ define([
                     * create application header
                     */
                     this._createApplicationHeader(widgets);
-
+                    var self = this, portalSigninWidgetLoader;
+                    // set app ID settings and call init after
+                    portalSigninWidgetLoader = new PortalSignin();
+                    portalSigninWidgetLoader.fetchAppIdSettings().then(function () {
+                        portalSigninWidgetLoader.initializePortal();
+                        self._applicationThemeLoader();
+                    });
                 } catch (ex) {
                     alert(nls.errorMessages.widgetNotLoaded);
                 }
