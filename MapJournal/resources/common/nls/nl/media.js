@@ -85,7 +85,7 @@
 				lblLabel2: "Over tekst bewegen",
 				lblLabel3: "Geen",
 				lblLabelPH: "Voer wat tekst in...",
-				lblMaximize: "Sluit een knop voor maximaliseren in de hoek van de afbeelding in",
+				lblMaximize: "Voeg een knop voor maximaliseren in de hoek van de afbeelding toe",
 				lblMaximizeHelp: "Alleen aanbevolen voor foto\'s van hoge kwaliteit",
 				lblPosition: "Positie",
 				lblPosition1: "Centreren",
@@ -99,7 +99,7 @@
 				lblPosition3Explain: "(wordt niet bijgesneden)",
 				lblPosition3Explain2: "(breedte past altijd in het deelvenster)",
 				lblPosition4Explain: "(kan worden vervormd)",
-				unloadLbl: "Laden ongedaan maken als de lezer dit verlaat en naar een andere sectie gaat",
+				unloadLbl: "Laden ongedaan maken als de lezer naar een andere sectie gaat",
 				unloadHelp: "Als de webpagina audio of video bevat, laat u deze optie aangevinkt om het afspelen van deze inhoud te stoppen wanneer de lezer naar een andere sectie gaat. Vink de optie uit als u bijvoorbeeld wilt dat een soundtrack blijft spelen wanneer de lezer door het journaal bladert.<br />Als de webpagina een applicatie is, vinkt u deze optie uit zodat de applicatie niet opnieuw wordt geladen als de lezer terugkeert naar die sectie."
 			},
 			editorActionGeocode: {

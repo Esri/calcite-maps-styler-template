@@ -50,7 +50,7 @@
 				scroll: "Saat lisää tietoja näkyviin vierittämällä alaspäin."
 			},
 			mainStage: {
-				back: "Takaosa"
+				back: "Takaisin"
 			},
 			headerFromCommon: {
 				storymapsText: "Tarinakartta",

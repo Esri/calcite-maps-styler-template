@@ -83,7 +83,7 @@
 			settingsLayout: {
 				title: "Układ",
 				explain: "Jakiego układu chcesz użyć?",
-				explainInit: "W oknie dialogowym ustawień możesz zmienić układ możesz w dowolnej chwili.",
+				explainInit: "W oknie dialogowym ustawień możesz zmienić układ w dowolnej chwili.",
 				viewExample: "Wyświetl przykład online"
 			},
 			settingsTheme: {

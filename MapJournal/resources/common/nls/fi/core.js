@@ -7,7 +7,7 @@
 				save: "Tallenna",
 				next: "Seuraava",
 				cancel: "Peruuta",
-				back: "Takaosa",
+				back: "Takaisin",
 				apply: "Käytä",
 				close: "Sulje",
 				open: "Avaa",

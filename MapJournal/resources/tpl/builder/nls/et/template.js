@@ -5,11 +5,11 @@
 				mainStage: "Põhisektsioon",
 				sideTitle: "Külgpaneel",
 				sideDescr: "Ohtra tekstiga loo jaoks sobiv paigutus, kus saate oma fotod, videod ja kaardid kombineerida ühtseks selget sõnumit kandvaks artikliks.",
-				floatTitle: "Ujupaneel",
+				floatTitle: "Ujuv paneel",
 				floatDescr: "Paigutus, mis tõmbab tähelepanu kaartidele, võimaldades samas läbipaistva lühitekstipaneeli kaudu sisu jutustada."
 			},
 			common: {
-				lblStatus1: "Avaldatud",
+				lblStatus1: "Publitseeritud",
 				lblStatus2: "Mustand",
 				lblStatus3: "Peidetud"
 			},

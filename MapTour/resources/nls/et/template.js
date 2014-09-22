@@ -525,7 +525,7 @@
 				shareA2div1: "Salvestage ja taaskasutage järgnevat linki %LINK1% või kasutage <a href='%LINK2%' target='_blank'>rakenduse sisu lehte</a>.",
 				shareA2div2: "Rakenduse omanikuna, ArcGIS.com sisselogituna, sisaldab rakendus nuppu interaktiivse looja avamiseks.",				
 				shareQ3: "Kus on andmed majutatud?",
-				shareA3: "Tuuri konfiguratsioon on salvestatud <a href='%LINK1%' target='_blank'>selle veebikaardi sisus</a> ja <a href='%LINK2%' target='_blank'>selle veebirakenduse sisus</a>. Flickri, Picasa ja Facebooki piltidele ning YouTube'i videotele viidatakse endisel nende vastavatel saitidel ja neid ei kopeerita ArcGIS Online\'i keskkonda.",
+				shareA3: "Tuuri konfiguratsioon on salvestatud <a href='%LINK1%' target='_blank'>selle veebikaardi sisus</a> ja <a href='%LINK2%' target='_blank'>selle veebirakenduse sisus</a>. Flickri, Picasa ja Facebooki piltidele ning YouTube videotele viidatakse endisel nende vastavatel saitidel ja neid ei kopeerita ArcGIS Online keskkonda.",
 				shareWarning: "%WITH% jagamine on keelatud, kuna Te ei ole <a href='%LINK%' target='_blank'>veebikaardi</a> omanik.",
 				shareWarningWith1: "avalikult",
 				shareWarningWith2: "avalikult ja organisatsiooniga"

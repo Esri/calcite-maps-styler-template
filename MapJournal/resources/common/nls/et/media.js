@@ -50,7 +50,7 @@
 				other: "Muu"
 			},
 			videoSelectorYoutube: {
-				url: "Youtube'i video URL",
+				url: "Youtube video URL",
 				pageInputLbl: "Kasutajanimi",
 				lookupMsgError: "Kasutajat ei leitud",
 				howToFind: "Kuidas leida YouTube’i kasutajanime",

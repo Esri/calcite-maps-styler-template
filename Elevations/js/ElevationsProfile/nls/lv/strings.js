@@ -1,20 +1,20 @@
 ﻿define({
   display: {
-      elevationProfileTitle: "ķ_Elevations Profile_ū",
+      elevationProfileTitle: "Pacēluma profils",
     showMe: "parādiet man",
     selectLine: "<b>Izvēlēties</b> elementu kartē.",
     popupRequirement: "PIEZĪME: elementam jābūt slānī ar iespējotiem uznirstošajiem logiem.",
     digitizeDistanceMeasureTool: "Lietojiet <b>Mērīt</b> rīkus.",
     selectFeatureHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
     measureToolHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000",
-      hoverOver: "ķ_Hover over or touch the Elevations Profile chart to display elevations and show location on map._ū"
+      hoverOver: "Novietojiet kursoru virs pacēluma profila diagrammas vai pieskarieties pie tās, lai parādītu pacēlumus un rādītu izvietojumu kartē."
   },
   buttons: {
     measureLabel: "Izmērīt",
     helpLabel: "Palīdzība"
   },
   chart: {
-      title: "ķ_Elevations Profile_ū",
+      title: "Pacēluma profils",
     demResolution:"DEM izšķirtspēja",
     elevationTitleTemplate: "Pacēlums {0}",
     distanceTitleTemplate: "Distance {0}",

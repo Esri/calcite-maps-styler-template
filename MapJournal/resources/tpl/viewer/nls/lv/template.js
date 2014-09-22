@@ -20,20 +20,20 @@
 			},
 			errors: {
 				boxTitle: "Kļūda",
-				invalidConfig: "ķ_Invalid configuration_ū",
-				invalidConfigNoApp: "ķ_Web Mapping Application identifier not specified in index.html._ū",
-				unspecifiedConfigOwner: "ķ_Authorized owner hasn't been configured._ū",
-				invalidConfigOwner: "ķ_Application owner is not authorized._ū",
+				invalidConfig: "Nederīga konfigurācija",
+				invalidConfigNoApp: "Web kartēšanas aplikācijas identifikators nav norādīts šeit: index.html.",
+				unspecifiedConfigOwner: "Autorizētais īpašnieks nav konfigurēts.",
+				invalidConfigOwner: "Aplikācijas īpašnieks nav autorizēts.",
 				createMap: "Nevar izveidot karti",
-				invalidApp: "ķ_The %TPL_NAME% does not exist or is inaccessible._ū",
-				appLoadingFail: "ķ_Something went wrong, the %TPL_NAME% did not load correctly._ū",
-				notConfiguredDesktop: "ķ_The application is not configured yet._ū",
-				notConfiguredMobile: "ķ_The %TPL_NAME% builder is not supported at this screen resolution._ū",
+				invalidApp: "%TPL_NAME% nepastāv vai tai nevar piekļūt.",
+				appLoadingFail: "Radās kļūda, %TPL_NAME% netika ielādēta pareizi.",
+				notConfiguredDesktop: "Aplikācija vēl nav konfigurēta.",
+				notConfiguredMobile: "%TPL_NAME% veidotājs ekrānā ar šādu izšķirtspēju netiek atbalstīts.",
 				notAuthorized: "Jums nav tiesību piekļūt šai aplikācijai",
 				noBuilderIE: "Veidotājs netiek atbalstīts Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
 				noViewerIE: "Šī aplikācija netiek atbalstīta Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
-				mapLoadingFail: "ķ_Something went wrong, the Map did not load correctly._ū",
+				mapLoadingFail: "Diemžēl radās kļūda, karte netika ielādēta pareizi.",
 				signOut: "Izrakstīties"
 			},
 			mobileView: {
@@ -70,7 +70,7 @@
 				copy: "Kopēt",
 				copied: "Kopēts",
 				open: "Atvērt",
-				embed: "Iegult tīmekļa vietnē",
+				embed: "Iedarinār tīmekļa vietnē",
 				embedExplain: "Izmantojiet šo HTML kodu, lai iegultu žurnālu web vietnē.",
 				size: "Izmēri (platums/augstums):"
 			}

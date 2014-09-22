@@ -94,13 +94,13 @@
 				lblPosition4: "ยืด",
 				lblPosition5: "ปรับแต่ง",
 				tooltipDimension: "ระบุค่าด้วย px หรือ %",
-				tooltipDimension2: "ก้_The value has to be specified in 'px'_ษฺ",
+				tooltipDimension2: "The value has to be specified in 'px'",
 				lblPosition2Explain: "(อาจจะตัด)",
 				lblPosition3Explain: "(ไม่ตัด)",
 				lblPosition3Explain2: "(ความกว้างจะต้องพอดีกับแผงข้อมูล)",
 				lblPosition4Explain: "(อาจจะเบี้ยว)",
-				unloadLbl: "ก้_Unload when reader navigates away to different section_ษฺ",
-				unloadHelp: "ก้_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section._ษฺ"
+				unloadLbl: "Unload when reader navigates away to different section",
+				unloadHelp: "If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the journal.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section."
 			},
 			editorActionGeocode: {
 				lblTitle: "ตำแหน่งของที่อยู่หรือสถานที่",

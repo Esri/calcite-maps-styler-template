@@ -5,7 +5,7 @@
 				lblWebMap: "Web map",
 				lblLocation: "מיקום",
 				lblContent: "תוכן",
-				lblPopup: "Popup",
+				lblPopup: "חלון קופץ",
 				lblControls: "תוספות",
 				lblOverview: "מפת התמצאות",
 				lblLegend: "מקרא",
@@ -40,7 +40,7 @@
 				extentExplain: "הזז והתמקד במפה כדי לקבוע כיצד היא תראה לקוראים שלך.",
 				extentSave: "בחר את מיקום המפה",
 				popupTitle: "חלון מפה קופץ",
-				popupExplain: "לחץ על ישות כדי לפתוח את החלון המוקפץ שברצונך להציג.",
+				popupExplain: "לחץ על ישות כדי לפתוח את החלון הקופץ שברצונך להציג.",
 				popupSave: "שמור את הגדרות התצוגה של החלון הקופץ",
 				hintNavigation: "הניווט של המפה חסום."
 			}

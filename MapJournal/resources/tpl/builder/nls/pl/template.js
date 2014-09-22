@@ -47,7 +47,7 @@
 				stepNextTooltipAdd: "aby dodać sekcję",
 				firstAddExplain: "Pierwsza sekcja to sekcja Start, którą należy postrzegać jako „okładkę” swojej historii. Tytuł, który właśnie podałeś, będzie wyświetlony dużą czcionką.",
 				firstAddLeanMore: "Dowiedz się więcej",
-				titlePlaceholder: "Tytuł sekcji"
+				titlePlaceholder: "Tytuł sekcji..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Tutaj możesz dodać tekst, łącza oraz niewielkie elementy graficzne.",

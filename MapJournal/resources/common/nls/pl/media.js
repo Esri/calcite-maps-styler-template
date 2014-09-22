@@ -53,7 +53,7 @@
 				url: "Adres URL pliku wideo dostępnego w serwisie YouTube",
 				pageInputLbl: "Nazwa użytkownika",
 				lookupMsgError: "Nie odnaleziono użytkownika",
-				howToFind: "Wyszukiwanie nazwy użytkownika serwisu YouTube",
+				howToFind: "W jaki sposób wyszukać nazwę użytkownika serwisu YouTube",
 				howToFind2: "Nazwa użytkownika jest wyświetlana pod każdym filmem",
 				found: "Znaleziono",
 				noData: "Nie znaleziono żadnych filmów publicznych"

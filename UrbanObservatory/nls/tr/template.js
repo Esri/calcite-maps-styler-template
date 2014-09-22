@@ -29,7 +29,7 @@
     "protocolMismatchError": "Protokol eşleşmeme hatası...  Yine de devam edilsin mi?",
     "problematicWebmap": "Şu anda bu haritayla ilgili teknik sorunlar yaşıyoruz: ",
     /* DO NOT REPLACE TEXT INSIDE CURLY BRACKETS */
-    "invalidDefaultThemeTemplate": "Varsayılan tema '{theme}' '{groupName}' grup adında bulunmuyor.",
+    "invalidDefaultThemeTemplate": "Varsayılan tema \'{theme}\' \'{groupName}\' grup adında bulunmuyor.",
     "mapHasNoLODs": "Bu haritanın tanımlı hiçbir LOD\'si yok: ",
     "errorCreatingMap": "Harita oluşturulurken hata oluştu: ",
     "cantFindWebmap": "Web haritası bulunamıyor: ",

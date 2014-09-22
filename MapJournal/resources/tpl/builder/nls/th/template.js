@@ -21,13 +21,13 @@
 				cfgMedium: "กลาง",
 				cfgLarge: "ใหญ่",
 				socialLinksLabel: "การเชื่อมโยงที่แสดงร่วมกันที่ด้านล่างของแต่ละส่วน",
-				socialLinksDescr: "ก้_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%._ษฺ"
+				socialLinksDescr: "This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "ประเภทตัวอักษร",
-				defaultLbl: "ก้_Default_ษฺ",
-				sectionTitleLbl: "ก้_Section title_ษฺ",
-				sectionContentLbl: "ก้_Section content_ษฺ"
+				defaultLbl: "Default",
+				sectionTitleLbl: "Section title",
+				sectionContentLbl: "Section content"
 			},
 			initPopup: {
 				title: "ยินดีต้อนรับสู่"
@@ -85,7 +85,7 @@
 				lblLink: "เยี่ยมชมเว็บไซย์แผนที่เรื่องราว",
 				content1Div1: "คุณสามารถรวมความหลากหลายของรูปแบบที่เมื่อมีการสร้างเรื่องราวของคุณ<strong>% LAYOUT_TITLE% </ strong> โดยทั่วไปแล้วถือข้อความของคุณรูปภาพและวิดีโอในขณะที่แผนที่ของคุณมีแนวโน้มที่จะไปใน <strong> เวทีหลัก </ strong> อย่างไรก็ตาม% TPL_NAME% ช่วยให้คุณสามารถมีลักษณะภาพแผนภูมิและวิดีโอภายในเวทีหลักได้เป็นอย่างดี",
 				content1Div2: "กำลังเพิ่มส่วนที่ช่วยให้คุณสามารถปรับแต่งการเล่าเรื่องผ่าน Storytelling ให้ดีขึ้น ในฐานะที่เป็นผู้อ่านผ่าน% ข้อความ LAYOUT_TITLE% ของแผนที่บนเวทีหลักสามารถเลื่อนหรือขยายไปยังจุดสำคัญหรือแผนที่ใหม่และภาพที่สามารถโหลดโดยอัตโนมัติเพื่อสนับสนุนข้อความของคุณ",
-				content2Div1: "ก้_Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here._ษฺ",
+				content2Div1: "Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here.",
 				content2Div2: "คุณสามารถเพิ่มการแบ่งปันไปยังเฟสบุค ทวิตเตอร์ และ  Bitly ดังนั้นผู้อ่านสามารถกระจายได้ง่าย %TPL_NAME% ไปยังที่อื่นๆ",
 				content3Div1: "เนื้อหาของคุณจะถูกจัดแบ่งออกเป็นส่วนๆ คุณสามารถมีส่วนมากเท่าที่คุณต้องการ (คิดว่าพวกเขาชอบเนื้อหาส่วนย่อยๆ) กระบวนการทำงานของส่วนงานเหล่านี้ล้วนมีความสำคัญ ดังนั้นในการจัดระเบียบภายในองค์กร คุณสามารถเรียงลำดับหรือลบส่วนงานต่างๆ ตามที่คุณต้องการได้",
 				content4Div1: "พบความผิดพลาดหรือต้องการเปลี่ยนวัสดุของคุณหรือไม่ ไม่ต้องกังวล มองหาไอคอนแก้ไขตลอดทั้งการตรวจสอบการเปลี่ยนแปลงเนื้อหาของคุณ youâ€™? จะใช้ฟังก์ชั่นการแก้ไขหลายครั้งตามที่คุณพัฒนา TPL_NAME% ของ%!",

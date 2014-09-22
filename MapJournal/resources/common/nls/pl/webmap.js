@@ -57,7 +57,7 @@
 				searchTitle: "Wyszukaj",
 				ok: "OK",
 				cancel: "Anuluj",
-				placeholder: "Wpisz wyszukiwany hasło lub identyfikator mapy internetowej"
+				placeholder: "Wpisz wyszukiwane hasło lub identyfikator mapy internetowej..."
 			}
 		}
 	})

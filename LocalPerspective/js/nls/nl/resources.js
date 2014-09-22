@@ -21,13 +21,13 @@ define(
         },
         days: {
            now: "NU",
-           sun: "ZON",
-           mon: "MAA",
-           tue: "DIN",
-           wed: "WOE",
-           thu: "DON",
-           fri: "VRIJ",
-           sat: "ZAT"
+           sun: "ZO",
+           mon: "MA",
+           tue: "DI",
+           wed: "WO",
+           thu: "DO",
+           fri: "VR",
+           sat: "ZA"
         }
     })
  
