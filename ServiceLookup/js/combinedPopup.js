@@ -1,4 +1,4 @@
-﻿
+
 define([
     "dojo/Evented",
     "dojo",
@@ -211,7 +211,7 @@ define([
                                 if (subLyrs.layerObject != null) {
 
                                     if (layer.title == serviceAreaLayerNames[f]) {
-                                        layDetails.name = subLyrs.layerObject.name;
+                                        layDetails.name = layer.title;
                                         layDetails.layerOrder = f;
                                         layDetails.url = subLyrs.layerObject.url;
                                         layDetails.layer = subLyrs;
@@ -389,16 +389,18 @@ define([
             }
 
             var allLayerNames = "";
-
+            var layerNammesFound = [];
             for (f = 0, fl = this.lookupLayers.length; f < fl; f++) {
 
                 allLayerNames += this.lookupLayers[f].name + ",";
+                layerNammesFound.push(this.lookupLayers[f].name);
             }
+            
             if (!useLegacyConfig) {
 
                 for (var n = 0, nl = serviceAreaLayerNames.length; n < nl; n++) {
 
-                    if (allLayerNames.indexOf(serviceAreaLayerNames[n]) < 0) {
+                    if (dojo.indexOf(layerNammesFound,serviceAreaLayerNames[n]) < 0) {
                         if (i18n) {
                             if (i18n.error) {
                                 if (i18n.error.layerNotFound) {
