@@ -190,7 +190,7 @@ define([
             on(dom.byId("selectLayer"), "change", lang.hitch(this, function (evt) {
                 this.currentConfig.form_layer.id = evt.currentTarget.value;
                 this._populateFields(evt.currentTarget.value);
-                if (evt.currentTarget.value == nls.builder.selectLayerDefaultOptionText) {
+                if (evt.currentTarget.value === "") {
                     array.forEach(query(".navigationTabs"), lang.hitch(this, function (currentTab) {
                         if (domAttr.get(currentTab, "tab") == "fields" || domAttr.get(currentTab, "tab") == "preview" || domAttr.get(currentTab, "tab") == "publish" || domAttr.get(currentTab, "tab") == "options") {
                             this._disableTab(currentTab);
@@ -298,7 +298,7 @@ define([
                     array.forEach(query(".navigationTabs"), lang.hitch(this, function (currentTab) {
                         domConstruct.empty(errorNode);
                         attribute = currentTab.getAttribute("tab");
-                        if (((attribute == "publish" || attribute == "preview") && (query(".fieldCheckbox:checked").length === 0)) || (attribute == "fields" && dom.byId("selectLayer").value === nls.builder.selectLayerDefaultOptionText)) {
+                        if (((attribute == "publish" || attribute == "preview") && (query(".fieldCheckbox:checked").length === 0)) || (attribute == "fields" && dom.byId("selectLayer").value === "")) {
                             this._disableTab(currentTab);
                         } else {
                             this._enableTab(currentTab);
@@ -367,15 +367,17 @@ define([
         _populateLocations: function () {
             var currentInput, key, count = 0;
             for (key in this.currentConfig.locationSearchOptions) {
-                currentInput = query("input", dom.byId('location_options'))[count];
-                if (currentInput) {
-                    if (this.currentConfig.locationSearchOptions[key]) {
-                        currentInput.checked = true;
+                if (this.currentConfig.locationSearchOptions.hasOwnProperty(key)) {
+                    currentInput = query("input", dom.byId('location_options'))[count];
+                    if (currentInput) {
+                        if (this.currentConfig.locationSearchOptions[key]) {
+                            currentInput.checked = true;
+                        }
+                        domAttr.set(currentInput, "checkedField", key);
+                        on(currentInput, "change", lang.hitch(this, this._locationInputChange));
                     }
-                    domAttr.set(currentInput, "checkedField", key);
-                    on(currentInput, "change", lang.hitch(this, this._locationInputChange));
+                    count++;
                 }
-                count++;
             }
         },
 
@@ -744,7 +746,7 @@ define([
         _clearLayerOptions: function () {
             var i;
             for (i = dom.byId("selectLayer").options.length - 1; i >= 0; i--) {
-                if (dom.byId("selectLayer").options[i].value != nls.builder.selectLayerDefaultOptionText) {
+                if (dom.byId("selectLayer").options[i].value !== "") {
                     dom.byId("selectLayer").remove(i);
                 }
             }
