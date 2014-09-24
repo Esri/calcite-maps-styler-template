@@ -141,7 +141,7 @@
              function createMap(itemInfo){
                   var mapDeferred = arcgisUtils.createMap(itemInfo, "map", {
                     bingMapsKey: this.options.bingmapskey,
-                    editable: false
+                    editable: true
 
                   });
                   mapDeferred.then(function(response){
