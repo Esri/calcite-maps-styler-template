@@ -157,7 +157,7 @@ define([
                   innerHTML: num
                }, recLeftNum);
                domClass.add(recNum, 'recNum');
-               on(recNum, "click", lang.hitch(this, this.zoomToLocation, gra, pt));
+               on(recNum, "click", lang.hitch(this, this.zoomToLocation, feature));
                var recInfo = domConstruct.create("div", {
                }, rec);
                domClass.add(recInfo, 'recInfo');
@@ -260,8 +260,8 @@ define([
       },
       
       // zoom to location
-      zoomToLocation: function(gra, loc) {
-         //var loc = gra.geometry;
+      zoomToLocation: function(gra) {
+         var loc = gra.attributes.POINT_LOCATION;
          var c = gra.getContent();
          this.map.infoWindow.setContent(c);
          this.map.infoWindow.show(loc);
