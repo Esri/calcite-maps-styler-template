@@ -29,10 +29,6 @@ define({
     "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
     "sharinghost": location.protocol + "//" + "www.arcgis.com",
-    //When true the template will query arcgis.com for default settings for helper services, units etc. If you
-    //want to use custom settings for units or any of the helper services set queryForOrg to false then enter
-    //default values for any items you need using the helper services and units properties.
-    "queryForOrg": true,
     //If you need localization set the localize value to true to get the localized strings
     //from the javascript/nls/resource files.
     //Note that we've included a placeholder nls folder and a resource file with one error string
@@ -84,19 +80,5 @@ define({
     ],
     //Replace these with your own bitly key
     "bitlyLogin": "esrimarketing",
-    "bitlyKey": "R_52f84981da0e75b23aea2b3b20cbafbc",
-    "helperServices": {
-        "geometry": {
-            "url": null
-        },
-        "printTask": {
-            "url": null
-        },
-        "elevationSync": {
-            "url": null
-        },
-        "geocode": [{
-            "url": null
-        }]
-    }
+    "bitlyKey": "R_52f84981da0e75b23aea2b3b20cbafbc"
 });
