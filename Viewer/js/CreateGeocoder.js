@@ -293,9 +293,9 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                 }
 
             }));
-            //only use geocoders with a singleLineFieldName that allow placefinding
+            //only use geocoders with a singleLineFieldName 
             geocoders = array.filter(geocoders, function (geocoder) {
-                return (esriLang.isDefined(geocoder.singleLineFieldName) && esriLang.isDefined(geocoder.placefinding) && geocoder.placefinding);
+                return (esriLang.isDefined(geocoder.singleLineFieldName));
             });
             var esriIdx;
             if (hasEsri) {
