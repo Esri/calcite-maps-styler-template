@@ -6,7 +6,8 @@ define([], function () {
     "proxyurl": "",
     "bingmapskey": null,
     "sharinghost": "",
-    "scalebarUnits": "dual"
+    "scalebarUnits": "dual",
+    "geocoder": false
   };
   return defaults;
 });
