@@ -897,9 +897,9 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             window.config = this.config;
             // create a map based on the input web map id
             arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions:{
-                },
-                editable: has("edit"),   //is the app editable
+                mapOptions: {},
+                editable: has("edit"),
+                //is the app editable
                 usePopupManager: true,
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
@@ -931,7 +931,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 //if title is short make title area smaller
                 if (title && title.length && title.length === 0) {
                     domClass.add("panelTop", "smallerTitle");
-                } else if (title && title.length && title.length <= 22 && !this.config.logo) {
+                } else if (title && title.length && title.length <= 20 && !this.config.logo) {
                     domClass.add("panelTop", "smallerTitle");
                 }
 
