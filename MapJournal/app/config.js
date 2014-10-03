@@ -88,7 +88,7 @@ app.cfg = {
 	 * Builder
 	 */
 	
-	HELP_URL: "previewpage/preview.html",
+	HELP_URL: "http://storymaps.arcgis.com/en/app-list/map-journal/",
 	
 	// Control the authorized data source (for initialization and import screen)
 	AUTHORIZED_IMPORT_SOURCE: {
