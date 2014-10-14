@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Map Journal Template</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		
+		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
+		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
+		
+		<meta property="og:title" content="Map Tour"/>
+		<meta property="og:image" content="resources/icons/esri-logo.jpg"/>
+		<meta property="og:description" content="This story map was created with the Story Map Journal application in ArcGIS Online."/>
+		
+		<link rel="stylesheet" type="text/css" href="css/layout.css">
+		<script>
+			var dojoConfig = {
+				parseOnLoad: true,
+				isDebug: false,
+				packages: [
+					{
+						name: 'esriTemplate',
+						location: location.pathname.replace(/\/[^/]+$/, '/') + ''
+					}
+				]
+			};
+		</script>
+	</head>
+	<body>
+		<div id="content">
+
+			<div id="header">
+				<img id="titleImg" src="images/titleText.jpg" alt="Map Journal Template">
+				<a id="esri-logo" href="http://esri.com" target="_blank">Esri</a>
+			</div><!--/header-->
+
+			<table class="featurePane first">
+				<tr>
+					<td>
+						<img class="screenshot leftSide" src="images/mapJournal.jpg" alt="Map Journal Template Screenshot">
+					</td>
+					<td>
+						<p class="featureText"></p>
+						<ul class="featureList"></ul>
+					</td>
+				</tr>
+			</table>
+
+			<hr>
+
+			<table class="featurePane second">
+				<tr>
+					<td>
+						<p class="featureText"></p>
+						<ul class="featureList"></ul>
+					</td>
+					<td>
+						<img class="screenshot rightSide" src="images/builder.jpg" alt="Map Journal Edit Mode">
+					</td>
+				</tr>
+			</table>
+
+			<hr>
+
+			<div class="featurePane third">
+				<p class="featureText"></p>
+				<ul class="featureList"></ul>
+			</div>
+
+			<hr>
+
+			<table class="featurePane fourth">
+				<tr>
+					<td>
+						<img class="screenshot leftSide" src="images/storymaps.jpg" alt="StoryMaps Website">
+					</td>
+					<td>
+						<p class="featureText"></p>
+						<ul class="featureList"></ul>
+					</td>
+				</tr>
+			</table>
+
+			<hr>
+
+		</div><!--content-->
+
+		<div id="backgroundStripe">
+			<img id="backgroundImg" src="images/stripeImage.jpg" alt="">
+		</div>
+		
+		<script type="text/javascript" src="//js.arcgis.com/3.11compact/init.js"></script>
+		
+		<script type="text/javascript">
+			dojo.requireLocalization("esriTemplate", "template");
+			
+			function buildList(props)
+			{
+				var str = "";
+				for( var prop in props ){
+					if( prop.match(/^list[0-9]+/) )
+						str += "<li>" + props[prop] + "</li>"
+				}
+				return str;
+			}
+			
+			require(["esri/map", "dojo/domReady!"], function(){
+				i18n = dojo.i18n.getLocalization("esriTemplate", "template");
+				dojo.query(".featurePane.first .featureText")[0].innerHTML = i18n.firstPane.head;
+				dojo.query(".featurePane.first .featureList")[0].innerHTML = i18n.firstPane.content;
+				
+				dojo.query(".featurePane.second .featureText")[0].innerHTML = i18n.secondPane.head;
+				
+				dojo.query(".featurePane.third .featureText")[0].innerHTML = i18n.thirdPane.head;
+				
+				dojo.query(".featurePane.fourth .featureText")[0].innerHTML = i18n.fourthPane.head;
+				dojo.query(".featurePane.fourth .featureList")[0].innerHTML = buildList(i18n.fourthPane);
+				
+				dojo.query("#content")[0].style.display = "block";
+			});
+		</script>
+	</body>
+</html>
