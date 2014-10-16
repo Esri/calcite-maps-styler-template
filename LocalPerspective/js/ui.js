@@ -84,6 +84,7 @@ define([
       pages : [],
       pPages : null,
       curPage : 0,
+      prevPage : null,
       location : null,
       demographicsInfo : null,
       lifestyleInfo : null,
@@ -120,7 +121,7 @@ define([
          on (window, "resize", lang.hitch(this, this._windowScrolled));
          
          // info window
-         this.map.infoWindow.resize(220, 220);
+         //this.map.infoWindow.resize(220, 220);
          
          // graphics layer click
          var gl = this.map.graphics;
@@ -255,7 +256,7 @@ define([
                innerHTML : '<img src="images/menu.png" />'
             }, page);
             domClass.add(pageMenu, 'pageMenu bg rounded shadow');
-            on(pageMenu, 'click', lang.hitch(this, this._showPage, 1));
+            on(pageMenu, 'click', lang.hitch(this, this._showCurrentPage));
             
          } else {
             
@@ -350,11 +351,11 @@ define([
             }, pageContent);
             domClass.add(pageBody, 'pageBody');
             
-            if (id == this.pages.length-1) {
-                  var pageClear = domConstruct.create('div', {
-                  }, page);
-                  domClass.add(pageClear, 'pageClear');
-            }
+            // if (id == this.pages.length-1) {
+                  // var pageClear = domConstruct.create('div', {
+                  // }, page);
+                  // domClass.add(pageClear, 'pageClear');
+            // }
             
          }
 
@@ -432,6 +433,14 @@ define([
          
       },
       
+      // show current page
+      _showCurrentPage : function() {
+         var num = 1;
+         if (this.prevPage)
+            num = this.prevPage;
+         this._showPage(num);
+      },
+      
       // show page
       _showPage : function(num) {
          this._scrollToPage(num);
@@ -439,18 +448,21 @@ define([
       
       // show previous page
       _showPreviousPage : function(num) {
+         this.prevPage = null;
          var newnum = num-1;
          this._scrollToPage(newnum);
       },
       
       // show next page
       _showNextPage : function(num) {
+         this.prevPage = null;
          var newnum = num+1;
          this._scrollToPage(newnum);
       },
       
       // close page
       _closePage : function() {
+         this.prevPage = this.curPage;
          this._scrollToPage(0);
       },
       
@@ -507,11 +519,12 @@ define([
             if (num < 0)
                num = 0;
          }
+         console.log("scroll", numActual, num);
          var endPos = num*box.h;
          this._changeColor(this.curPage, num);
          this.curPage = num;
          this._updatePage();
-         this.snap = false;
+         //this.snap = false;
          if (num != numActual)
             this._animateScroll(startPos, endPos);
       },
@@ -573,18 +586,21 @@ define([
       
       // update page
       _updatePage : function() {
-         this.map.infoWindow.hide();
-         var pageObj = this.pages[this.curPage];
-         if (pageObj.update && this.location) {
-            pageObj.proximityFeatures = [];
-            if (pageObj.type == "demographics" ||pageObj.type == "proximity") {
-               this._bufferLocation(pageObj);
-            } else{
-               this._performAnalysis(pageObj);
+         if (!this.prevPage || this.curPage > 0) {
+            if (this.curPage != this.prevPage)
+               this.map.infoWindow.hide();
+            var pageObj = this.pages[this.curPage];
+            if (pageObj.update && this.location) {
+               pageObj.proximityFeatures = [];
+               if (pageObj.type == "demographics" ||pageObj.type == "proximity") {
+                  this._bufferLocation(pageObj);
+               } else{
+                  this._performAnalysis(pageObj);
+               }
+               
+            } else {
+               this._renderResults(pageObj);
             }
-            
-         } else {
-            this._renderResults(pageObj);
          }
       },
       

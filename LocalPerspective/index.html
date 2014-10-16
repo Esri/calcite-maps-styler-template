@@ -6,15 +6,15 @@
 		<!-- Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional. -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!-- Responsive -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="default">
 		<!-- End Responsive -->
 		<!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
 
-    	<link rel="stylesheet" href="//js.arcgis.com/3.11/dijit/themes/claro/claro.css">
-    	<link rel="stylesheet" href="//js.arcgis.com/3.11/esri/css/esri.css">
+        	<link rel="stylesheet" href="//js.arcgis.com/3.11/dijit/themes/claro/claro.css">
+        	<link rel="stylesheet" href="//js.arcgis.com/3.11/esri/css/esri.css">
 
 		<!-- Load any application specific styles -->
 		<link rel="stylesheet" href="css/main.css">
@@ -28,6 +28,8 @@
 		<!-- Map -->
 		<!-- The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. -->
 		<div id="mapDiv" dir="ltr"></div>
+		
+		<div id="panelPopup"></div>
 
 		<!-- Panel Content -->
 		<div id="panelContent">
@@ -35,22 +37,20 @@
 		</div>
 		
 		<!-- Panel Directions -->
-		<div id="panelDirections">
-			
-		</div>
+		<div id="panelDirections"></div>
 
 		<!-- Panel Top -->
 		<div id="panelTop" class="bg rounded shadow">
 			<!-- Panel Title -->
 			<div id="panelTitle">
-				<div id="panelLogo"><img id="logo" src="images/logo.png" style="height:100%" />
-				</div>
+				<div id="panelLogo"><img id="logo" src="images/logo.png" style="height:100%" /></div>
 				<div id="panelText">
 					Local Perspective
 				</div>
 				<div id="panelSearch">
 					<div id="panelGeocoder"></div>
 				</div>
+				<div id="btnLocate"></div>
 			</div>
 		</div>
 		

@@ -140,7 +140,7 @@ a, a:hover, a:visited{
 
 .simpleGeocoder .esriGeocoder {
 	display: block;
-	width: 100%;
+	width: 220px;
 	margin: 0;
 	/*border: 1px solid #57585A;*/
 	border: transparent;
@@ -199,21 +199,28 @@ a, a:hover, a:visited{
 	background-size: 14px 14px;
 }
 
+/* Locate */
+
 .LocateButton .zoomLocateButton {
 	padding: 0px;
-	width: 26px;
-	height: 26px;
+	width: 30px;
+	height: 30px;
 	background-color: transparent;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 	cursor: pointer;
-	-webkit-border-radius: 13px;
-	-moz-border-radius: 13px;
-	-o-border-radius: 13px;
-	border-radius: 13px;
-	background-size: 14px 14px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-o-border-radius: 15px;
+	border-radius: 15px;
+	background-size: 20px 20px;
+}
+
+.LocateButton .loading {
+	background: url(../images/loading.gif)no-repeat;
+	background-position: center center;
 }
 
 .sizer .titlePane{
@@ -362,8 +369,8 @@ a, a:hover, a:visited{
 
 .page {
 	position: relative;
-	width: 220px;
-	margin-left: -220px;
+	width: 320px;
+	margin-left: -320px;
 	height: 100%;
 	display: block;
 	background-color: rgba(0,0,0,0.15);
@@ -377,7 +384,6 @@ a, a:hover, a:visited{
 	bottom: 5px;
 	overflow: hidden;
 	display: block;
-	background-color: rgba(255,255,255,1);
 	background-color: #ffffff;
 }
 
@@ -590,6 +596,8 @@ a, a:hover, a:visited{
 	font-size: 11px;
 	line-height: 20px;
 	color: #6e6e6e;
+	background: url(../images/arrow.png)no-repeat;
+	background-position: right center;
 }
 
 .recLeftNum {
@@ -617,7 +625,7 @@ a, a:hover, a:visited{
 	position: absolute;
 	text-align: left;
 	left: 40px;
-	right: 0px;
+	right: 60px;
 	top: 3px;
 	height: 62px;
 	display: block;
@@ -626,10 +634,22 @@ a, a:hover, a:visited{
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	cursor: pointer;
 }
 
 .recDistance {
 	color: #bbbbbb;
+	cursor: pointer;
+}
+
+.recRoute {
+	position: absolute;
+	right: 30px;
+	top: 18px;
+	width: 30px;
+	height: 30px;
+	background: url(../images/car.png)no-repeat;
+	background-position: center center;
 	cursor: pointer;
 }
 
@@ -683,10 +703,16 @@ a, a:hover, a:visited{
 #panelSearch {
 	float: left;
 	margin: 0;
-	width: 227px;
+	width: 220px;
 	height: 30px;
 	color: #6e6e6e;
 	/*overflow: hidden;*/
+}
+
+#btnLocate {
+	float: left;
+	width: 30px;
+	height: 30px;
 }
 
 
@@ -695,6 +721,10 @@ a, a:hover, a:visited{
 
 @media only screen and (max-width: 700px) {
 	
+	html, body {
+		overflow-x: hidden!important;
+	}
+	
 	.esriSimpleSlider {
 		display: none;
 	}
@@ -709,39 +739,22 @@ a, a:hover, a:visited{
 	 
 }
 
-/* MEDIA SPECIFIC: SMALL TABLETS */
-
-@media only screen and (max-width: 500px) {
-	
-	.esriSimpleSlider {
-		display: none;
-	}
-	
-	#panelTop {
-		left: 10px;
-	}
-	
-	/*#panelLogo {
-		display: none;
-	}*/
-	
-	#panelText {
-		display: none;
-	}
-	 
-}
 
 
 /* MEDIA SPECIFIC: PHONES */
 
-@media only screen and (max-width: 470px) {
+@media only screen and (max-width: 500px) {
+	
+	html, body {
+		/*overflow-x: hidden;*/
+	}
 	
 	.esriSimpleSlider {
 		display: none;
 	}
 	
 	#panelTop {
-		left: 10px;
+		left: 5px;
 	}
 	
 	#panelLogo {
@@ -754,7 +767,7 @@ a, a:hover, a:visited{
 	
 	#panelContent {
 		position: absolute;
-		right: -100%;
+		left: -100%;
 		top: 0px;
 		width: 100%;
 		height: 100%;
@@ -762,14 +775,33 @@ a, a:hover, a:visited{
 		background-color: rgba(0,0,0,0.5);
 	}
 	
+	.pageblank {
+		width: 100%;
+		height: 100%;
+	}
+	
+	.pageMenu {
+		position: relative;
+		width: 30px;
+		height: 30px;
+		left: 200%;
+		margin-left: -50px;
+		top: 5px;
+		text-align: center;
+		padding: 5px;
+		cursor: pointer;
+	}
+	
 	.page {
 		position: relative;
 		width: 100%;
-		margin-left: -100%;
+		margin-left: 100%;
 		height: 100%;
 		display: block;
 		background-color: rgba(0,0,0,0.15);
 	}
+	
+	
 
 	.pageContent {
 		top: 60px;
@@ -786,7 +818,7 @@ a, a:hover, a:visited{
 	.pageTitle {
 		position: absolute;
 		left: 80px;
-		right: 30px;
+		right: 80px;
 		width: auto;
 		top: 30px;
 		height: 20px;
@@ -794,7 +826,7 @@ a, a:hover, a:visited{
 		color: #ffffff;
 		line-height: 20px;
 		overflow: hidden;
-		text-align: left;
+		text-align: center;
 	}
 		
 	.pageCounter {

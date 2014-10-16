@@ -77,11 +77,17 @@ define([
       // query features
       queryFeatures : function() {
          var layer = this.pageObj.layer;
+         var url = layer.url + "?ts=" + new Date().getTime();
+         console.log(url);
+         var queryTask = new QueryTask(url);
          var query = new Query();
+         query.outFields = ["*"];
          query.returnGeometry = true;
          query.geometry = this.pageObj.buffer;
+         query.spatialRelationship = Query.SPATIAL_REL_INTERSECTS;
          var me = this;
-         layer.queryFeatures(query, lang.hitch(me, me.resultsHandler), lang.hitch(me, me.errorHandler));
+         //layer.queryFeatures(query, lang.hitch(me, me.resultsHandler), lang.hitch(me, me.errorHandler));
+         queryTask.execute(query, lang.hitch(me, me.resultsHandler), lang.hitch(me, me.errorHandler));
       },
        
       // filter features
@@ -151,7 +157,7 @@ define([
                domClass.add(rec, 'recProximity');
                var recLeftNum = domConstruct.create("div", {
                }, rec);
-                domClass.add(recLeftNum, 'recLeftNum');
+               domClass.add(recLeftNum, 'recLeftNum');
                var recNum = domConstruct.create("div", {
                   style: "background-color:" + this.pageObj.color,
                   innerHTML: num
@@ -161,20 +167,22 @@ define([
                var recInfo = domConstruct.create("div", {
                }, rec);
                domClass.add(recInfo, 'recInfo');
-               var infoDist = "";
-               if (geom.type == "point" && this.config.showDirections)
-                  infoDist += "<img src='images/car.png' /> ";
-               infoDist  += Math.round(dist*100)/100 + " " + this.config.distanceUnits.toUpperCase() + "<br/>";
+               on(recInfo, "click", lang.hitch(this, this.zoomToLocation, feature));
+               var infoDist  = Math.round(dist*100)/100 + " " + this.config.distanceUnits.toUpperCase() + "<br/>";
                var recDistance = domConstruct.create("span", {
                   innerHTML: infoDist
                }, recInfo);
                domClass.add(recDistance, 'recDistance');
-               if (geom.type == "point")
-                  on(recDistance, "click", lang.hitch(this, this.routeToLocation, pt));
                var recInfoText = domConstruct.create("span", {
                   innerHTML: this.getInfo(feature)
                }, recInfo);
-               
+               // route
+               if (geom.type == "point" && this.config.showDirections) {
+                  var recRoute = domConstruct.create("div", {
+                  }, rec);
+                  domClass.add(recRoute, 'recRoute');
+                  on(recRoute, "click", lang.hitch(this, this.routeToLocation, pt));
+               }
             }
             
          }
@@ -234,6 +242,24 @@ define([
       
       // get info
       getInfo : function(gra) {
+         var attr = gra.attributes;
+         var info = "";
+         var c = 0;
+         for (var prop in attr) {
+              if (prop != "DISTANCE" && prop !=  "POINT_LOCATION" && c < 3) {
+                  if(this.dtFields.indexOf(prop+",") > -1) {
+                     info += new Date(attr[prop]).toLocaleString() + "<br/>";
+                  } else {
+                     info += attr[prop] + "<br/>";
+                  }
+                  c += 1;
+              }
+         }
+         return info;
+      },
+      
+      // get info old
+      getInfoOld : function(gra) {
          var attr = gra.attributes;
          var info = "";
          var c = 0;

@@ -35,6 +35,8 @@ define([
     "esri/dijit/HomeButton",
     "esri/dijit/Geocoder",
     "esri/dijit/LocateButton",
+    "esri/dijit/Popup",
+    "esri/symbols/SimpleMarkerSymbol",
     "esri/urlUtils"
 ], function (
     ready,
@@ -56,6 +58,8 @@ define([
     HomeButton,
     Geocoder,
     LocateButton,
+    Popup,
+    SimpleMarkerSymbol,
     urlUtils
 ) {
    
@@ -153,10 +157,18 @@ define([
 
       // Create web map based on the input web map id
       _createWebMap : function(itemInfo) {
+         // popup
+         var popupSym = new SimpleMarkerSymbol("circle", 2, null, new dojo.Color([0, 0, 0, 0.1]));
+         var popup = new Popup({
+            markerSymbol : popupSym,
+            anchor : "top"
+         }, dom.byId("panelPopup"));
+         
          arcgisUtils.createMap(itemInfo, "mapDiv", {
             mapOptions : {
+               editable: false,
+               infoWindow: popup
             },
-            editable: false,
             bingMapsKey : this.config.bingKey
          }).then(lang.hitch(this, function(response) {
 
@@ -194,11 +206,14 @@ define([
          // }, "btnHome");
          // home.startup();
 
-         // gelocate
-         // var geoLocate = new LocateButton({
-         // map : this.map
-         // }, "btnLocate");
-         //geoLocate.startup();
+         // geolocate
+         var geoLocate = new LocateButton({
+            map : this.map,
+            autoNavigate : false,
+            highlightLocation : false
+         }, "btnLocate");
+         on(geoLocate, "locate", lang.hitch(this, this._geoLocated));
+         geoLocate.startup();
 
          // geocoder
          var geocoder = new Geocoder({
@@ -223,6 +238,17 @@ define([
          // set default location
          if (this.config.defaultToCenter)
             this._setDefaultLocation();
+      },
+      
+      // geoLocated
+      _geoLocated : function(evt) {
+         if (evt.graphic) {
+            var geom = evt.graphic.geometry;
+            this.ui.setLocation(geom);
+         } else {
+            if (evt.error)
+               console.log(evt.error.message);
+         }
       },
       
       // geocoder results
