@@ -1,44 +1,22 @@
 /*global define,document,location,require */
 /*jslint sloppy:true,nomen:true,plusplus:true */
-define([
-    "dojo/Evented",
-    "dojo/_base/declare",
-    "dojo/_base/kernel",
-    "dojo/_base/array",
-    "dojo/_base/lang",
-    "dojo/dom-class",
-    "dojo/Deferred",
-    "dojo/promise/all",
-    "esri/arcgis/utils",
-    "esri/urlUtils",
-    "esri/request",
-    "esri/config",
-    "esri/lang",
-    "esri/IdentityManager",
-    "esri/tasks/GeometryService",
-    "config/defaults",
-    "templateConfig/commonConfig",
-    "application/OAuthHelper"
-], function (
-    Evented,
-    declare,
-    kernel,
-    array,
-    lang,
-    domClass,
-    Deferred,
-    all,
-    arcgisUtils,
-    urlUtils,
-    esriRequest,
-    esriConfig,
-    esriLang,
-    IdentityManager,
-    GeometryService,
-    defaults,
-    commonConfig,
-    OAuthHelper
-) {
+/*
+ | Copyright 2014 Esri
+ |
+ | Licensed under the Apache License, Version 2.0 (the "License");
+ | you may not use this file except in compliance with the License.
+ | You may obtain a copy of the License at
+ |
+ |    http://www.apache.org/licenses/LICENSE-2.0
+ |
+ | Unless required by applicable law or agreed to in writing, software
+ | distributed under the License is distributed on an "AS IS" BASIS,
+ | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ | See the License for the specific language governing permissions and
+ | limitations under the License.
+ */
+define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/array", "dojo/_base/lang", "dojo/dom-class", "dojo/Deferred", "dojo/promise/all", "esri/arcgis/utils", "esri/urlUtils", "esri/request", "esri/config", "esri/lang", "esri/IdentityManager", "esri/arcgis/Portal", "esri/arcgis/OAuthInfo", "esri/tasks/GeometryService", "config/defaults", "config/commonConfig"], function (
+Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, urlUtils, esriRequest, esriConfig, esriLang, IdentityManager, Portal, ArcGISOAuthInfo, GeometryService, defaults, commonConfig) {
     return declare([Evented], {
         config: {},
         orgConfig: {},
@@ -75,7 +53,7 @@ define([
             // the application configuration has been applied so that the url parameters overwrite any
             // configured settings. It's up to the application developer to update the application to take
             // advantage of these parameters.
-            paramItems = ["webmap", "appid", "group", "oauthappid"];
+            paramItems = ["webmap", "appid", "group", "oauthappid", "color", "extent"];
             this.urlConfig = this._createUrlParamsObject(paramItems);
             // config defaults <- standard url params
             // we need the webmap, appid, group and oauthappid to query for the data
@@ -103,16 +81,13 @@ define([
                     // Get any custom url params
                     this._queryUrlParams();
                     // mix in all the settings we got!
-                    // defaults <- organization <- application id config <- custom url params
-                    lang.mixin(this.config, this.orgConfig, this.appConfig, this.customUrlConfig, this.urlConfig);
+                    // defaults <- common config <- organization <- application id config <- custom url params <- standard url params
+                    lang.mixin(this.config, this.commonConfig, this.orgConfig, this.appConfig, this.customUrlConfig, this.urlConfig);
                     // Set the geometry helper service to be the app default.
                     if (this.config.helperServices && this.config.helperServices.geometry && this.config.helperServices.geometry.url) {
                         esriConfig.defaults.geometryService = new GeometryService(this.config.helperServices.geometry.url);
                     }
-                    // setup OAuth if oauth appid exists_initializeApplication
-                    if (this.config.oauthappid) {
-                        this._setupOAuth(this.config.oauthappid, this.config.sharinghost);
-                    }
+
                     deferred.resolve(this.config);
                 }), deferred.reject);
             }), deferred.reject);
@@ -120,7 +95,8 @@ define([
             return deferred.promise;
         },
         _createUrlParamsObject: function (items) {
-            var urlObject, obj = {}, i;
+            var urlObject, obj = {},
+                i;
 
             // retrieve url parameters. Templates all use url parameters to determine which arcgis.com
             // resource to work with.
@@ -157,14 +133,8 @@ define([
                 instance = location.pathname.substr(0, appLocation); //get the portal instance name
                 this.config.sharinghost = location.protocol + "//" + location.host + instance;
                 this.config.proxyurl = location.protocol + "//" + location.host + instance + "/sharing/proxy";
-            } else {
-                // setup OAuth if oauth appid exists. If we don't call it here before querying for appid
-                // the identity manager dialog will appear if the appid isn't publicly shared.
-                if (this.config.oauthappid) {
-                    this._setupOAuth(this.config.oauthappid, this.config.sharinghost);
-                }
             }
-            arcgisUtils.arcgisUrl = this.config.sharinghost + "/sharing/rest/content/items";
+            arcgisUtils.arcgisUrl = this.config.sharinghost + "/sharing/content/items";
             // Define the proxy url for the app
             if (this.config.proxyurl) {
                 esriConfig.defaults.io.proxyUrl = this.config.proxyurl;
@@ -173,23 +143,28 @@ define([
         },
         _checkSignIn: function () {
             var deferred, signedIn;
-
             deferred = new Deferred();
+
+
+            //If there's an oauth appid specified register it
+            if (this.config.oauthappid) {
+                var oAuthInfo = new ArcGISOAuthInfo({
+                    appId: this.config.oauthappid,
+                    popup: true
+                });
+                IdentityManager.registerOAuthInfos([oAuthInfo]);
+            }
+
+
             // check sign-in status
             signedIn = IdentityManager.checkSignInStatus(this.config.sharinghost + "/sharing");
             // resolve regardless of signed in or not.
             signedIn.promise.always(function () {
-                deferred.resolve(true);
+                deferred.resolve();
             });
             return deferred.promise;
         },
-        _setupOAuth: function (id, portal) {
-            OAuthHelper.init({
-                appId: id,
-                portal: portal,
-                expiration: (14 * 24 * 60) //2 weeks (in minutes)
-            });
-        },
+
         _getLocalization: function () {
             var deferred, dirNode, classes, rtlClasses;
 
@@ -243,13 +218,9 @@ define([
                     if (this.config.appid && this.config.application_extent.length > 0 && itemInfo.item.extent) {
                         itemInfo.item.extent = [
                             [
-                                parseFloat(this.config.application_extent[0][0]),
-                                parseFloat(this.config.application_extent[0][1])
-                            ],
+                            parseFloat(this.config.application_extent[0][0]), parseFloat(this.config.application_extent[0][1])],
                             [
-                                parseFloat(this.config.application_extent[1][0]),
-                                parseFloat(this.config.application_extent[1][1])
-                            ]
+                            parseFloat(this.config.application_extent[1][0]), parseFloat(this.config.application_extent[1][1])]
                         ];
                     }
                     // Set the itemInfo config option. This can be used when calling createMap instead of the webmap or group id
@@ -257,12 +228,12 @@ define([
                     deferred.resolve(true);
                 }), function (error) {
                     if (!error) {
-                        error = new Error("ApplicationBoilerplate:: Error retrieving display item.");
+                        error = new Error("Error retrieving display item.");
                     }
                     deferred.reject(error);
                 });
             } else {
-                error = new Error("ApplicationBoilerplate:: webmap or group undefined.");
+                error = new Error("webmap or group undefined.");
                 deferred.reject(error);
             }
             return deferred.promise;
@@ -282,8 +253,10 @@ define([
                         // Get the web map from the app values. But if there's a web url
                         // parameter don't overwrite with the app value.
                         var webmapParam = this._createUrlParamsObject(["webmap"]);
-                        if (!esriLang.isDefined(webmapParam.webmap) && response.itemData.values.webmap && this.config.webmap) {
-                            this.config.webmap = response.itemData.values.webmap;
+                        if (!esriLang.isDefined(webmapParam.webmap)) {
+                            if (response.itemData.values.webmap !== "") {
+                                this.config.webmap = response.itemData.values.webmap;
+                            }
                         }
                     }
                     // get the extent for the application item. This can be used to override the default web map extent
@@ -293,7 +266,7 @@ define([
                     deferred.resolve(true);
                 }), function (error) {
                     if (!error) {
-                        error = new Error("ApplicationBoilerplate:: Error retrieving application configuration.");
+                        error = new Error("Error retrieving application configuration.");
                     }
                     deferred.reject(error);
                 });
@@ -317,11 +290,6 @@ define([
                     },
                     callbackParamName: "callback"
                 }).then(lang.hitch(this, function (response) {
-                    
-                    //get the bing key if the organization has one 
-                    if(response.bingKey){
-                        this.orgConfig.bingmapskey = response.bingKey;
-                    }
                     // get units defined by the org or the org user
                     this.orgConfig.units = "metric";
                     if (response.user && response.user.units) { //user defined units
@@ -332,7 +300,23 @@ define([
                         // use feet/miles only for the US and if nothing is set for a user
                         this.orgConfig.units = "english";
                     }
-                    // Get the helper servcies (routing, print, locator etc)
+
+                    //Get the basemap group for the organization
+                    var q = this._parseQuery(response.basemapGalleryGroupQuery);
+                    this.orgConfig.basemapgroup = {
+                        id: null,
+                        title: null,
+                        owner: null
+                    };
+                    if (q.id) {
+                        this.orgConfig.basemapgroup.id = q.id;
+                    } else if (q.title && q.owner) {
+                        this.orgConfig.basemapgroup.title = q.title;
+                        this.orgConfig.basemapgroup.owner = q.owner;
+                    }
+
+
+                    // Get the helper services (routing, print, locator etc)
                     this.orgConfig.helperServices = response.helperServices;
                     // are any custom roles defined in the organization?
                     if (response.user && esriLang.isDefined(response.user.roleId)) {
@@ -343,7 +327,7 @@ define([
                     deferred.resolve(true);
                 }), function (error) {
                     if (!error) {
-                        error = new Error("ApplicationBoilerplate:: Error retrieving organization information.");
+                        error = new Error("Error retrieving organization information.");
                     }
                     deferred.reject(error);
                 });
@@ -361,6 +345,22 @@ define([
             // (center, basemap, theme) are only here as examples and can be removed if you don't plan on
             // supporting additional url parameters in your application.
             this.customUrlConfig = this._createUrlParamsObject(this.config.urlItems);
+
+        },
+        _parseQuery: function (queryString) {
+
+            var regex = /(AND|OR)?\W*([a-z]+):/ig,
+                fields = {},
+                fieldName, fieldIndex, result = regex.exec(queryString);
+            while (result) {
+                fieldName = result && result[2];
+                fieldIndex = result ? (result.index + result[0].length) : -1;
+
+                result = regex.exec(queryString);
+
+                fields[fieldName] = queryString.substring(fieldIndex, result ? result.index : queryString.length).replace(/^\s+|\s+$/g, "").replace(/\"/g, ""); //remove extra quotes in title
+            }
+            return fields;
         }
     });
 });
