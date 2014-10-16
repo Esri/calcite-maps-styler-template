@@ -142,9 +142,9 @@ define([
 
          arcgisUtils.createMap(this.config.webmap, "mapDiv", {
             mapOptions : {
-               showAttribution : false
+               showAttribution : false,
+               editable : false
             },
-            editable: false,
             bingMapsKey : this.config.bingmapskey
          }).then(lang.hitch(this, function(response) {
 
@@ -192,6 +192,8 @@ define([
          query(".esriSimpleSlider").style("backgroundColor", this.config.color);
          var basemapGallery = new BasemapGallery({
             showArcGISBasemaps : true,
+            portalUrl: this.config.sharinghost,
+            basemapsGroup: this._getBasemapGroup(),
             map : this.map
          }, "basemapGallery");
          basemapGallery.startup();
@@ -200,6 +202,23 @@ define([
          });
          this.processOperationalLayers();
       },
+     
+      // get basemap group
+      _getBasemapGroup: function () {
+            //Get the id or owner and title for an organizations custom basemap group.
+            var basemapGroup = null;
+            if (this.config.basemapgroup && this.config.basemapgroup.title && this.config.basemapgroup.owner) {
+                basemapGroup = {
+                    "owner": this.config.basemapgroup.owner,
+                    "title": this.config.basemapgroup.title
+                };
+            } else if (this.config.basemapgroup && this.config.basemapgroup.id) {
+                basemapGroup = {
+                    "id": this.config.basemapgroup.id
+                };
+            }
+            return basemapGroup;
+        },
 
       // process operational layers
       processOperationalLayers : function() {
