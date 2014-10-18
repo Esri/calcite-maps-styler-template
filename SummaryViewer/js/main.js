@@ -535,7 +535,7 @@ define([
                      var statDef = new StatisticDefinition();
                      statDef.statisticType = "count";
                      statDef.onStatisticField = fld.name;
-                     statDef.outStatisticFieldName = "COUNT";
+                     statDef.outStatisticFieldName = "RECCOUNT";
                      query.returnGeometry = false;
                      query.where = "1=1";
                      query.orderByFields = [fld.name];
