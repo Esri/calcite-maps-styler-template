@@ -40,6 +40,7 @@ mkdir %BUILD_OUTPUT%\Legend\pavement
 mkdir %BUILD_OUTPUT%\Legend\seaside                     
 mkdir %BUILD_OUTPUT%\Legend\main          
 mkdir %BUILD_OUTPUT%\LocalPerspective
+mkdir %BUILD_OUTPUT%\Locator
 mkdir %BUILD_OUTPUT%\MapCarousel
 mkdir %BUILD_OUTPUT%\MapTour
 mkdir %BUILD_OUTPUT%\MapAndAppGallery
@@ -154,6 +155,7 @@ xcopy %TEMPLATES_ROOT%\MapSeries\app\config\series-config.js    %BUILD_OUTPUT%\M
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\StorytellingBasic                    /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries\app\config\basic-config.js     %BUILD_OUTPUT%\StorytellingBasic\app\config.js*     /E /Y
 xcopy %TEMPLATES_ROOT%\Viewer                             	  	%BUILD_OUTPUT%\Viewer                               /E /Y
+xcopy %TEMPLATES_ROOT%\Locator                                  %BUILD_OUTPUT%\Locator                              /E /Y 
 xcopy %TEMPLATES_ROOT%\bv_build\src                             %BUILD_OUTPUT%\bv_build                             /E /Y
 
 
