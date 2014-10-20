@@ -140,7 +140,7 @@ a, a:hover, a:visited{
 
 .simpleGeocoder .esriGeocoder {
 	display: block;
-	width: 250px;
+	width: 100%;
 	margin: 0;
 	/*border: 1px solid #57585A;*/
 	border: transparent;
@@ -703,7 +703,7 @@ a, a:hover, a:visited{
 #panelSearch {
 	float: left;
 	margin: 0;
-	width: 250px;
+	width: 227px;
 	height: 30px;
 	color: #6e6e6e;
 	/*overflow: hidden;*/
