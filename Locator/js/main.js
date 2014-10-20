@@ -423,7 +423,7 @@ define([
          // if (this.config.routeUtility)
             // options.routeTaskURL = this.config.routeUtility;
          if (this.config.helperServices.routeTask)
-            options.routeTaskURL = this.config.helperServices.routeTask.url;
+            options.routeTaskUrl = this.config.helperServices.routeTask.url;
          this.dirWidget = new Directions(options, "resultsDirections");
          on(this.dirWidget, "directions-finish", lang.hitch(this, this._directionsFinished));
          this.dirWidget.startup();
