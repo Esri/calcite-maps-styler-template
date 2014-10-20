@@ -25,7 +25,6 @@ define([
     "dijit/_TemplatedMixin",
     "dijit/_WidgetsInTemplateMixin",
     "dojo/i18n!nls/localizedStrings",
-    "esri/geometry/Extent",
     "dojo/dom-class",
     "dojo/on",
     "dojo/topic",
@@ -33,9 +32,12 @@ define([
     "dojo/string",
     "dojo/dom-style",
     "dojo/dom-geometry",
+    "esri/geometry/Point",
+    "esri/graphic",
     "esri/request",
+    "esri/symbols/PictureMarkerSymbol",
     "dojo/text!./templates/itemDetails.html"
-], function (declare, domConstruct, lang, domAttr, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, nls, GeometryExtent, domClass, on, topic, Locator, string, domStyle, domGeom, esriRequest) {
+], function (declare, domConstruct, lang, domAttr, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, nls, domClass, on, topic, Locator, string, domStyle, domGeom, Point, Graphic, esriRequest, PictureMarkerSymbol) {
 
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         basemapLayer: null,
@@ -163,20 +165,22 @@ define([
         * @memberOf widgets/itemDetails/itemDetailsHelper
         */
         _suggestAddress: function () {
-            esriRequest({
-                url: dojo.locatorURL + '/suggest?text=' + this.txtAddressSearch.value + '&location=' + dojo.toJson(this.location),
-                content: {
-                    'f': 'json'
-                },
-                callbackParamName: 'callback',
-                load: lang.hitch(this, function (response) {
-                    this._showLocatedAddress(response.suggestions);
-                }),
-                error: function (response) {
-                    alert(response.message);
-                    topic.publish("hideProgressIndicator");
-                }
-            });
+            if (lang.trim(this.txtAddressSearch.value) !== '') {
+                esriRequest({
+                    url: dojo.locatorURL + '/suggest?text=' + this.txtAddressSearch.value + '&location=' + dojo.toJson(this.location),
+                    content: {
+                        'f': 'json'
+                    },
+                    callbackParamName: 'callback',
+                    load: lang.hitch(this, function (response) {
+                        this._showLocatedAddress(response.suggestions);
+                    }),
+                    error: function (response) {
+                        alert(response.message);
+                        topic.publish("hideProgressIndicator");
+                    }
+                });
+            }
         },
 
         _showLocatedAddress: function (candidates) {
@@ -260,7 +264,7 @@ define([
                 },
                 callbackParamName: 'callback',
                 load: lang.hitch(this, function (response) {
-                    this.mapPoint = new esri.geometry.Point(response.locations[0].feature.geometry.x, response.locations[0].feature.geometry.y, this.map.spatialReference);
+                    this.mapPoint = new Point(response.locations[0].feature.geometry.x, response.locations[0].feature.geometry.y, this.map.spatialReference);
                     this._locateAddressOnMap(this.mapPoint);
                 }),
                 error: function (response) {
@@ -284,8 +288,8 @@ define([
             } else {
                 geoLocationPushpin = dojoConfig.baseURL + dojo.configData.values.defaultLocatorSymbol;
             }
-            locatorMarkupSymbol = new esri.symbol.PictureMarkerSymbol(geoLocationPushpin, dojo.configData.values.markupSymbolWidth, dojo.configData.values.markupSymbolHeight);
-            graphic = new esri.Graphic(mapPoint, locatorMarkupSymbol, {}, null);
+            locatorMarkupSymbol = new PictureMarkerSymbol(geoLocationPushpin, dojo.configData.values.markupSymbolWidth, dojo.configData.values.markupSymbolHeight);
+            graphic = new Graphic(mapPoint, locatorMarkupSymbol, {}, null);
             this.map.getLayer("esriGraphicsLayerMapSettings").clear();
             this.map.getLayer("esriGraphicsLayerMapSettings").add(graphic);
         }

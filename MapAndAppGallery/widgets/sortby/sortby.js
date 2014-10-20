@@ -28,48 +28,74 @@ define([
     "dojo/topic",
     "dojo/Deferred",
     "dojo/dom-class",
+    "dojo/dom-construct",
     "dojo/dom-attr",
     "dojo/on"
-], function (declare, template, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, nls, query, lang, topic, Deferred, domClass, domAttr, on) {
+], function (declare, template, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, nls, query, lang, topic, Deferred, domClass, domConstruct, domAttr, on) {
 
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
         nls: nls,
 
         postCreate: function () {
+            var listSortMenu, sortMenuListViews, sortMenuListDate, sortMenuListTitle, i;
             this.domNode.title = nls.title.sortByBtnTitle;
-            if (dojo.configData.values.sortField === "modified") {
-                domAttr.set(this.sortByLabel, "innerHTML", nls.sortByViewText);
-            } else {
-                domAttr.set(this.sortByLabel, "innerHTML", nls.sortByDateText);
+            domAttr.set(this.sortByLabel, "innerHTML", nls.sortByText);
+            listSortMenu = domConstruct.create('ul', { "class": "listSortMenu" }, this.sortMenu);
+            sortMenuListViews = domConstruct.create('li', { "class": "list", "innerHTML": nls.sortByViewText, "sortValue": "numViews" }, listSortMenu);
+            sortMenuListDate = domConstruct.create('li', { "class": "list", "innerHTML": nls.sortByDateText, "sortValue": "modified" }, listSortMenu);
+            sortMenuListTitle = domConstruct.create('li', { "class": "list", "innerHTML": nls.sortByNameText, "sortValue": "title" }, listSortMenu);
+            for (i = 0; i < listSortMenu.children.length; i++) {
+                if (domAttr.get(listSortMenu.children[i], "sortValue") === dojo.configData.values.sortField) {
+                    domClass.add(listSortMenu.children[i], "esriCTSortMenuListSelected");
+                }
             }
             this.own(on(this.sortByLabel, "click", lang.hitch(this, function () {
-                topic.publish("showProgressIndicator");
-                if (dojo.sortBy === dojo.configData.values.sortField) {
-                    this._sortByDate(this.sortByLabel);
-                } else {
-                    this._sortByViews(this.sortByLabel);
-                }
+                domClass.toggle(this.sortMenu, "displayNoneAll");
             })));
-            topic.subscribe("sortByViews", lang.hitch(this, this._sortByViews));
-            topic.subscribe("sortByDate", lang.hitch(this, this._sortByDate));
+
+            this.own(on(sortMenuListViews, "click", lang.hitch(this, function () {
+                dojo.sortBy = "numViews";
+                this._sortPodOrder(sortMenuListViews);
+            })));
+
+            this.own(on(sortMenuListDate, "click", lang.hitch(this, function () {
+                dojo.sortBy = "modified";
+                this._sortPodOrder(sortMenuListDate);
+            })));
+
+            this.own(on(sortMenuListTitle, "click", lang.hitch(this, function () {
+                dojo.sortBy = "title";
+                this._sortPodOrder(sortMenuListTitle);
+            })));
+
+            topic.subscribe("sortGallery", lang.hitch(this, this._sortPodOrder));
+            topic.subscribe("selectedMenuItem", lang.hitch(this, this._selectedMenuItem));
         },
 
-        _sortByDate: function (sortByLabel) {
-            dojo.sortBy = "modified";
-            this._sortPodOrder(dojo.sortBy, sortByLabel, nls.sortByViewText);
+        _selectedMenuItem: function (sortMenuListItem, flag) {
+            if (flag) {
+                var listSortMenu = query(".listSortMenu"), i;
+                for (i = 0; i < listSortMenu.children.length; i++) {
+                    if (domAttr.get(listSortMenu.children[i], "sortValue") === dojo.configData.values.sortField) {
+                        domClass.add(listSortMenu.children[i], "esriCTSortMenuListSelected");
+                    }
+                }
+            }
+
+            if (sortMenuListItem) {
+                domClass.remove(query(".esriCTSortMenuListSelected")[0], "esriCTSortMenuListSelected");
+                domClass.add(sortMenuListItem, "esriCTSortMenuListSelected");
+            }
         },
 
-        _sortByViews: function (sortByLabel) {
-            dojo.sortBy = dojo.configData.values.sortField;
-            this._sortPodOrder(dojo.sortBy, sortByLabel, nls.sortByDateText);
-        },
-
-        _sortPodOrder: function (sortField, sortByLabel, text) {
+        _sortPodOrder: function (sortMenuListItem) {
             var defObj = new Deferred(), tagNameArray, i, j, resultFilter;
-            topic.publish("queryGroupItem", dojo.queryString, sortField, dojo.configData.values.sortOrder.toLowerCase(), defObj);
+            topic.publish("showProgressIndicator");
+            this._selectedMenuItem(sortMenuListItem, false);
+            domClass.add(this.sortMenu, "displayNoneAll");
+            topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
             defObj.then(function (data) {
-                domAttr.set(sortByLabel, "innerHTML", text);
                 if (data.results.length > 0) {
                     tagNameArray = dojo.selectedTags.split('" AND "');
                     if (tagNameArray.length > 0 && tagNameArray[0] !== "") {

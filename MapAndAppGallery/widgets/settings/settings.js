@@ -21,6 +21,7 @@ define([
     "dojo/_base/lang",
     "dojo/on",
     "dojo/text!./templates/settings.html",
+    "dojo/dom-attr",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "dijit/_WidgetsInTemplateMixin",
@@ -31,7 +32,7 @@ define([
     "dojo/dom-construct",
     "dojo/dom-geometry"
 
-], function (declare, lang, on, template, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, nls, query, domClass, topic, domConstruct, domGeom) {
+], function (declare, lang, on, template, domAttr, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, nls, query, domClass, topic, domConstruct, domGeom) {
 
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
@@ -41,22 +42,36 @@ define([
             this.domNode.title = nls.title.settingsBtnTitle;
             this.own(on(this.settingsIcon, "click", lang.hitch(this, function () {
                 if (query(".esriCTSortByContainer")[0].children.length <= 0) {
-                    var sortByTitle, sortMenu, listSortMenu, viewMbl, dateMbl;
+                    var sortByTitle, sortMenu, listSortMenu, viewMbl, dateMbl, titleMbl, i;
                     sortByTitle = domConstruct.create('div', { "class": "esriCTSortByTitle" }, query(".esriCTSortByContainer")[0]);
-                    domConstruct.create('div', { "class": "esriCTSortHeader", "innerHTML": nls.sortByTextMobile }, sortByTitle);
+                    domConstruct.create('div', { "class": "esriCTSortHeader", "innerHTML": nls.sortByText }, sortByTitle);
                     sortMenu = domConstruct.create('div', { "class": "esriCTSortMenu" }, sortByTitle);
                     listSortMenu = domConstruct.create('ul', {}, sortMenu);
-                    viewMbl = domConstruct.create('li', { "class": "sortByViewMbl esriCTListSelected", "innerHTML": nls.viewTextMobile }, listSortMenu);
-                    dateMbl = domConstruct.create('li', { "class": "sortByDateMbl", "innerHTML": nls.dateTextMobile }, listSortMenu);
+                    viewMbl = domConstruct.create('li', { "class": "sortByViewMbl", "innerHTML": nls.sortByViewText, "sortValue": "numViews" }, listSortMenu);
+                    dateMbl = domConstruct.create('li', { "class": "sortByDateMbl", "innerHTML": nls.sortByDateText, "sortValue": "modified" }, listSortMenu);
+                    titleMbl = domConstruct.create('li', { "class": "sortByNameMbl", "innerHTML": nls.sortByNameText, "sortValue": "title" }, listSortMenu);
+                    for (i = 0; i < listSortMenu.children.length; i++) {
+                        if (domAttr.get(listSortMenu.children[i], "sortValue") === dojo.sortBy) {
+                            domClass.add(listSortMenu.children[i], "esriCTListSelected");
+                        }
+                    }
                     this.own(on(viewMbl, "click", lang.hitch(this, function () {
-                        topic.publish("sortByViews", query(".esriCTMenulbl")[0]);
+                        dojo.sortBy = "numViews";
+                        topic.publish("sortGallery");
                         domClass.remove(query(".esriCTListSelected")[0], "esriCTListSelected");
                         domClass.add(query(".sortByViewMbl")[0], "esriCTListSelected");
                     })));
                     this.own(on(dateMbl, "click", lang.hitch(this, function () {
-                        topic.publish("sortByDate", query(".esriCTMenulbl")[0]);
+                        dojo.sortBy = "modified";
+                        topic.publish("sortGallery");
                         domClass.remove(query(".esriCTListSelected")[0], "esriCTListSelected");
                         domClass.add(query(".sortByDateMbl")[0], "esriCTListSelected");
+                    })));
+                    this.own(on(titleMbl, "click", lang.hitch(this, function () {
+                        dojo.sortBy = "title";
+                        topic.publish("sortGallery");
+                        domClass.remove(query(".esriCTListSelected")[0], "esriCTListSelected");
+                        domClass.add(query(".sortByNameMbl")[0], "esriCTListSelected");
                     })));
                 } else {
                     domConstruct.empty(query(".esriCTSortByContainer")[0]);
@@ -116,10 +131,6 @@ define([
                     if (domClass.contains(query(".esriCTItemSearch")[0], "displayBlockAll")) {
                         this.flag = true;
                         domClass.replace(query(".esriCTItemSearch")[0], "displayNoneAll", "displayBlockAll");
-                    }
-                    if (dojo.sortBy !== dojo.configData.values.sortField) {
-                        domClass.remove(query(".esriCTListSelected")[0], "esriCTListSelected");
-                        domClass.add(query(".sortByDateMbl")[0], "esriCTListSelected");
                     }
                 } else {
                     domClass.replace(query(".esriCTMenuTabLeft")[0], "displayBlock", "displayNone");

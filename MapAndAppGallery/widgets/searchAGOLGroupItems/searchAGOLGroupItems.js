@@ -31,6 +31,7 @@ define([
     "dojo/dom-class",
     "dojo/dom-style",
     "dojo/dom-geometry",
+    "dojo/dom-construct",
     "esri/request",
     "esri/arcgis/utils",
     "esri/urlUtils",
@@ -38,7 +39,7 @@ define([
     "esri/arcgis/OAuthInfo",
     "widgets/leftPanel/leftPanel",
     "dojo/domReady!"
-], function (declare, _WidgetBase, portal, topic, lang, Deferred, nls, query, on, dom, domAttr, domClass, domStyle, domGeom, esriRequest, arcgisUtils, urlUtils, IdentityManager, ArcGISOAuthInfo) {
+], function (declare, _WidgetBase, portal, topic, lang, Deferred, nls, query, on, dom, domAttr, domClass, domStyle, domGeom, domConstruct, esriRequest, arcgisUtils, urlUtils, IdentityManager, ArcGISOAuthInfo) {
 
     return declare([_WidgetBase], {
         nls: nls,
@@ -107,6 +108,7 @@ define([
                         this.createPortal().then(lang.hitch(this, function () {
                             topic.subscribe("queryGroupItem", dojo.hitch(this._portal, this.queryGroupForItems));
                             topic.subscribe("queryItemInfo", dojo.hitch(this._portal, this.queryItemInfo));
+                            this._setApplicationHeaderIcon();
                             var leftPanelObj = new LeftPanelCollection();
                             leftPanelObj.startup();
                         }));
@@ -172,7 +174,7 @@ define([
                     // check sign-in status
                     IdentityManager.checkSignInStatus(dojo.configData.values.portalURL).then(lang.hitch(this, function () {
                         this._setSignInBtnText();
-                    })).otherwise(function (err) {
+                    })).otherwise(function () {
                         // handle when user is not signed-in
                         query(".signin");
                     });
@@ -200,7 +202,7 @@ define([
         _setSignInBtnText: function () {
             this._portal = new portal.Portal(dojo.configData.values.portalURL);
             this.own(on(this._portal, "Load", lang.hitch(this, function () {
-                this._portal.signIn().then(function (loggedInUser) {
+                this._portal.signIn().then(function () {
                     domAttr.set(query(".esriCTSignIn")[0], "title", nls.title.signOutBtnTitle);
                     domAttr.set(query(".signin")[0], "innerHTML", nls.signOutText);
                     domClass.replace(query(".esriCTSignInIcon")[0], "icon-logout", "icon-login");
@@ -302,6 +304,10 @@ define([
             if (!dojo.configData.values.group) {
                 dojo.configData.values.group = groupInfo.id;
             }
+
+            if (!dojo.configData.values.applicationIcon) {
+                dojo.configData.values.applicationIcon = groupInfo.thumbnailUrl;
+            }
             /**
             * Set group title
             */
@@ -320,6 +326,64 @@ define([
             if (!dojo.configData.groupIcon) {
                 dojo.configData.groupIcon = groupInfo.thumbnailUrl || dojoConfig.baseURL + "/themes/images/groupNoImage.png";
             }
+            this._setApplicationHeaderIcon();
+        },
+
+        /**
+        * Set Application Header Icon
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
+        _setApplicationHeaderIcon: function () {
+            if (query(".esriCTApplicationIcon")[0]) {
+                if (dojo.configData.values.applicationIcon) {
+                    if (dojo.configData.values.applicationIcon.indexOf("http") === 0) {
+                        domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojo.configData.values.applicationIcon);
+                    } else {
+                        domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojoConfig.baseURL + dojo.configData.values.applicationIcon);
+                    }
+                } else {
+                    if (dojo.configData.values.noThumbnail.indexOf("http") === 0) {
+                        domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojo.configData.values.noThumbnail);
+                    } else {
+                        domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojoConfig.baseURL + "/" + dojo.configData.values.noThumbnail);
+                    }
+                }
+                this.own(on(query(".esriCTApplicationIcon")[0], "click", lang.hitch(this, function () {
+                    if (query(".esriCTitemDetails")[0]) {
+                        dojo.destroy(query(".esriCTitemDetails")[0]);
+                        domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
+                        domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
+                    }
+                    if (query(".esriCTInnerRightPanelDetails")[0] && (!query(".esriCTNoResults")[0])) {
+                        domClass.replace(query(".esriCTMenuTabRight")[0], "displayBlockAll", "displayNoneAll");
+                        domClass.add(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
+                        domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
+                        domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
+                        domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
+                    }
+                })));
+            }
+            this._loadIcons("shortcut icon", dojo.configData.values.applicationFavicon);
+            this._loadIcons("apple-touch-icon-precomposed", dojo.configData.values.applicationIcon);
+            this._loadIcons("apple-touch-icon", dojo.configData.values.applicationIcon);
+        },
+
+        /**
+        * load Application shortcut icons
+        * @param {object} icon type
+        * @param {object} icon path
+        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
+        */
+        _loadIcons: function (rel, iconPath) {
+            var icon = domConstruct.create("link");
+            icon.rel = rel;
+            icon.type = "image/x-icon";
+            if (iconPath.indexOf("http") === 0) {
+                icon.href = iconPath;
+            } else {
+                icon.href = dojoConfig.baseURL + iconPath;
+            }
+            document.getElementsByTagName('head')[0].appendChild(icon);
         },
 
         /**
@@ -354,7 +418,7 @@ define([
                     'f': settings.dataType
                 },
                 callbackParamName: 'callback',
-                load: function (response) {
+                load: function () {
                     var q, params;
 
                     // query
@@ -421,8 +485,8 @@ define([
                     if (e.httpCode === 498) {
                         defObj.resolve();
                         topic.publish("hideProgressIndicator");
-                        // invalidating token to invoke sign in dialog on timeout
-                        dojo.configData.values.token = dojo.configData.values.token + "invalid";
+                        // destroying credentials to invoke sign in dialog on timeout
+                        IdentityManager.destroyCredentials();
                         topic.publish("portalSignIn", null, true);
                     } else {
                         defObj.resolve();
@@ -489,6 +553,7 @@ define([
                                         domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
                                         domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
                                         domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
+                                        domClass.remove(query(".esriCTMenuTabLeft")[0], "esriCTCursorPointer");
                                         topic.publish("queryItemPods");
                                     }));
                                 } else {

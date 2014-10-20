@@ -224,23 +224,11 @@ define([
         * Clear the previously searched results
         * @memberOf widgets/locator/locator
         */
-        _clearFilter: function (flag, resultLength) {
+        _clearFilter: function (flag) {
             if (domClass.contains(this.txtItemSearch, "esriCTColorChange")) {
                 domClass.remove(this.txtItemSearch, "esriCTColorChange");
             }
             topic.publish("showProgressIndicator");
-            if (resultLength > 0) {
-                if (query(".esriCTNoResults")[0]) {
-                    domConstruct.destroy(query(".esriCTNoResults")[0]);
-                }
-                if (query(".esriCTInnerRightPanelDetails")[0]) {
-                    domClass.replace(query(".esriCTMenuTabRight")[0], "displayBlockAll", "displayNoneAll");
-                    domClass.add(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
-                    domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
-                    domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
-                    domClass.replace(query(".esriCTApplicationIcon")[0], "esriCTCursorDefault", "esriCTCursorPointer");
-                }
-            }
 
             dojo.configData.values.searchString = '';
             dojo.configData.values.searchType = '';
@@ -255,20 +243,18 @@ define([
                 topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
                 defObj.then(function (data) {
                     if (data.total === 0) {
-                        if (query(".esriCTInnerRightPanel")[0]) {
-                            domClass.replace(query(".esriCTInnerRightPanel")[0], "displayNoneAll", "displayBlockAll");
-                        }
+                        topic.publish("createNoDataContainer");
+                    } else {
                         if (query(".esriCTNoResults")[0]) {
                             domConstruct.destroy(query(".esriCTNoResults")[0]);
                         }
-                        domConstruct.create('div', { "class": "esriCTDivClear esriCTNoResults", "innerHTML": nls.noResultsText }, query(".esriCTRightPanel")[0]);
-                        if (domClass.contains(query(".esriCTInnerRightPanel")[0], "displayNone")) {
-                            domClass.replace(query(".esriCTNoResults")[0], "displayNoneAll", "displayBlockAll");
-                        } else {
-                            domClass.replace(query(".esriCTNoResults")[0], "displayBlockAll", "displayNoneAll");
+                        if (query(".esriCTInnerRightPanelDetails")[0]) {
+                            domClass.replace(query(".esriCTMenuTabRight")[0], "displayBlockAll", "displayNoneAll");
+                            domClass.add(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
+                            domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
+                            domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
+                            domClass.replace(query(".esriCTApplicationIcon")[0], "esriCTCursorDefault", "esriCTCursorPointer");
                         }
-                        topic.publish("hideProgressIndicator");
-                    } else {
                         dojo.nextQuery = data.nextQueryParams;
                         dojo.results = data.results;
                         topic.publish("createPods", data.results, true);

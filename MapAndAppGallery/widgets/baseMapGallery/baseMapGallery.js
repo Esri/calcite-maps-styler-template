@@ -85,7 +85,7 @@ define([
             var basemap, basemapLayers, basemapLayerId = "defaultBasemap";
             this.enableToggling = false;
             basemapLayers = dojo.configData.values.baseMapLayers[preLayerIndex];
-            this.map.onLayerRemove = lang.hitch(this, function (layer) {
+            this.map.onLayerRemove = lang.hitch(this, function () {
                 if (this.enableToggling) {
                     this._addBasemapLayerOnMap(basemapLayerId);
                 }
@@ -117,6 +117,9 @@ define([
         */
         _addBasemapLayerOnMap: function (basemapLayerId) {
             var layer, basemapLayers = dojo.configData.values.baseMapLayers[dojo.selectedBasemapIndex];
+            this.map.onLayerAdd = lang.hitch(this, function () {
+                this.enableToggling = true;
+            });
             if (basemapLayers.length) {
                 array.forEach(basemapLayers, lang.hitch(this, function (basemap, index) {
                     this.enableToggling = false;
@@ -132,10 +135,6 @@ define([
                 }
                 this.map.addLayer(layer, 0);
             }
-
-            this.map.onLayerAdd = lang.hitch(this, function (layer) {
-                this.enableToggling = true;
-            });
         },
 
         /**

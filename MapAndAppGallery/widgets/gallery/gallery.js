@@ -78,31 +78,56 @@ define([
                 });
             })));
 
-            this.own(on(query(".esriCTBackBtn")[0], "click", lang.hitch(this, function () {
-                domClass.add(query(".esriCTMenuTabRight")[0], "displayBlockAll");
-                domClass.add(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
-                domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
-                domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
-                domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
-                domClass.add(query(".esriCTBackBtn")[0], "displayNoneAll");
+            this.own(on(query(".esriCTMenuTabLeft")[0], "click", lang.hitch(this, function () {
+                if (query(".esriCTitemDetails")[0]) {
+                    dojo.destroy(query(".esriCTitemDetails")[0]);
+                    domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
+                    domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
+                    domClass.remove(query(".esriCTMenuTabLeft")[0], "esriCTCursorPointer");
+                }
+                if (query(".esriCTInnerRightPanelDetails")[0] && (!query(".esriCTNoResults")[0])) {
+                    domClass.replace(query(".esriCTMenuTabRight")[0], "displayBlockAll", "displayNoneAll");
+                    domClass.add(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
+                    domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
+                    domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
+                    domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
+                    domClass.remove(query(".esriCTMenuTabLeft")[0], "esriCTCursorPointer");
+                }
             })));
 
             on(window, "resize", lang.hitch(this, function () {
-                var leftPanelDescHeight, containerHeight, innerLeftPanelHeight, tagContainerHeight, descHeight;
+                var leftPanelDescHeight, containerHeight, innerLeftPanelHeight, tagContainerHeight, descHeight, descContainerHeight;
                 if (domClass.contains(query(".esriCTInnerLeftPanelBottom")[0], "esriCTInnerLeftPanelBottomShift")) {
                     innerLeftPanelHeight = dojo.window.getBox().h + "px";
                     domStyle.set(query(".esriCTInnerLeftPanelBottom")[0], "height", innerLeftPanelHeight);
                 }
-                if (domClass.contains(query(".esriCTInnerLeftPanelTop")[0], "displayBlock")) {
-                    descHeight = window.innerHeight / 5;
-                    leftPanelDescHeight = window.innerHeight - (domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelBottom")[0]).h + domGeom.position(query(".esriCTLogo")[0]).h - descHeight) + "px";
-                    domStyle.set(query(".esriCTLeftPanelDesc")[0], "maxHeight", leftPanelDescHeight);
+                if (dojo.configData.groupDescription) {
+                    if (domStyle.get(query(".esriCTSignInIcon")[0], "display") !== "none") {
+                        descHeight = window.innerHeight / 5;
+                        leftPanelDescHeight = window.innerHeight - (domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelBottom")[0]).h + domGeom.position(query(".esriCTLogo")[0]).h - descHeight) + "px";
+                        domStyle.set(query(".esriCTGroupDesc")[0], "height", leftPanelDescHeight);
+                    }
                 }
                 containerHeight = (window.innerHeight - domGeom.position(query(".esriCTMenuTab")[0]).h - 20) + "px";
                 domStyle.set(query(".esriCTInnerRightPanel")[0], "height", containerHeight);
+
+                if (dojo.configData.groupDescription) {
+                    if (domStyle.get(query(".esriCTSignInIcon")[0], "display") === "none") {
+                        domClass.remove(query(".esriCTGroupDesc")[0], "esriCTLeftTextReadLess");
+                        domStyle.set(query(".esriCTExpand")[0], "display", "none");
+                        descContainerHeight = window.innerHeight - (domGeom.position(query(".esriCTGalleryNameSample")[0]).h + domGeom.position(query(".esriCTLogo")[0]).h + 100) + "px";
+                        domStyle.set(query(".esriCTGroupDesc")[0], "height", descContainerHeight);
+                    } else {
+                        domStyle.set(query(".esriCTGroupDesc")[0], "height", "");
+                        if (query(query(".esriCTGroupDesc")[0]).text().length > 400) {
+                            domClass.add(query(".esriCTGroupDesc")[0], "esriCTLeftTextReadLess");
+                        }
+                        domStyle.set(query(".esriCTExpand")[0], "display", "block");
+                    }
+                }
                 if (dojo.configData.values.showTagCloud) {
                     if (domClass.contains(query(".esriCTSignIn")[0], "displayNone")) {
-                        tagContainerHeight = window.innerHeight - (domGeom.position(query(".sortByLabelMbl")[0]).h + domGeom.position(query(".esriCTCategoriesHeader")[0]).h) + "px";
+                        tagContainerHeight = window.innerHeight - (domGeom.position(query(".sortByLabelMbl")[0]).h + domGeom.position(query(".esriCTCategoriesHeader")[0]).h + 40) + "px";
                         domStyle.set(query(".esriCTPadding")[0], "height", tagContainerHeight);
                     } else {
                         tagContainerHeight = window.innerHeight - (domGeom.position(query(".esriCTCategoriesHeader")[0]).h + domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelTop")[0]).h + 30) + "px";
@@ -110,8 +135,8 @@ define([
                     }
                 }
             }));
-            var containerHeight = (window.innerHeight - domGeom.position(query(".esriCTMenuTab")[0]).h - 20) + "px";
-            domStyle.set(query(".esriCTInnerRightPanel")[0], "height", containerHeight);
+            var panelHeight = (window.innerHeight - domGeom.position(query(".esriCTMenuTab")[0]).h - 20) + "px";
+            domStyle.set(query(".esriCTInnerRightPanel")[0], "height", panelHeight);
         },
 
         /**
@@ -204,7 +229,7 @@ define([
             }
             this.own(on(divThumbnailImage, "click", lang.hitch(this, function () {
                 dataType = itemResult.type.toLowerCase();
-                if ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms")) {
+                if (((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms")) || (dataType === "operation view")) {
                     dojo.downloadWindow = window.open('', "_blank");
                 }
                 this.showInfoPage(this, itemResult, false);
@@ -216,7 +241,7 @@ define([
         * @memberOf widgets/gallery/gallery
         */
         _showItemOverview: function (itemId, thumbnailUrl, itemResult, data) {
-            var itemDetails, dataType, tokenString2, downloadPath;
+            var itemDetails, dataType, tokenString2, downloadPath, tokenString, itemUrl, defObject;
 
             if (data) {
                 data.thumbnailUrl = thumbnailUrl;
@@ -240,7 +265,7 @@ define([
                             dojo.downloadWindow.close();
                         }
                     } else if (data.itemType.toLowerCase() === "file" && data.type.toLowerCase() === "cityengine web scene") {
-                        window.open(dojo.configData.values.cityEngineWebSceneURL + data.id, '_blank');
+                        window.open(dojo.configData.values.portalURL + "/apps/CEWebViewer/viewer.html?3dWebScene=" + data.id, '_blank');
                         if (dojo.downloadWindow) {
                             dojo.downloadWindow.close();
                         }
@@ -252,6 +277,29 @@ define([
                         }
                         downloadPath = dojo.configData.values.portalURL + "/sharing/content/items/" + itemId + "/data" + tokenString2;
                         dojo.downloadWindow.location = downloadPath;
+                    } else if (dataType === "operation view" && data.itemType.toLowerCase() === "text") {
+                        if (dojo.configData.values.token) {
+                            tokenString = "&token=" + dojo.configData.values.token;
+                        } else {
+                            tokenString = '';
+                        }
+                        itemUrl = dojo.configData.values.portalURL + "/sharing/rest/content/items/" + data.id + "/data?f=json" + tokenString;
+                        defObject = new Deferred();
+                        topic.publish("queryItemInfo", itemUrl, defObject);
+                        defObject.then(lang.hitch(this, function (result) {
+                            if (dojo.configData.values.token) {
+                                tokenString = "?token=" + dojo.configData.values.token;
+                            } else {
+                                tokenString = '';
+                            }
+                            if (result.desktopLayout) {
+                                downloadPath = dojo.configData.values.portalURL + "opsdashboard/OperationsDashboard.application?open=" + data.id;
+                                dojo.downloadWindow.location = downloadPath;
+                            } else if (result.tabletLayout) {
+                                downloadPath = dojo.configData.values.portalURL + "apps/dashboard/index.html#/" + data.id;
+                                dojo.downloadWindow.location = downloadPath;
+                            }
+                        }));
                     } else {
                         alert(nls.errorMessages.unableToOpenItem);
                     }
@@ -360,6 +408,22 @@ define([
                     if (data.itemType === "file" && data.type.toLowerCase() !== "kml" && data.type.toLowerCase() !== "cityengine web scene") {
                         domAttr.set(_self.btnTryItNow, "innerHTML", nls.downloadButtonText);
                         domClass.add(_self.btnTryItNow, "esriCTDownloadButton");
+                    } else if (data.type.toLowerCase() === "operation view") {
+                        if (dojo.configData.values.token) {
+                            tokenString = "&token=" + dojo.configData.values.token;
+                        } else {
+                            tokenString = '';
+                        }
+                        itemUrl = dojo.configData.values.portalURL + "/sharing/content/items/" + data.id + "/data?f=json" + tokenString;
+                        defObject = new Deferred();
+                        topic.publish("queryItemInfo", itemUrl, defObject);
+                        defObject.then(lang.hitch(this, function (result) {
+                            if (result.desktopLayout) {
+                                domAttr.set(_self.btnTryItNow, "innerHTML", nls.downloadButtonText);
+                            } else if (result.tabletLayout) {
+                                domAttr.set(_self.btnTryItNow, "innerHTML", nls.tryItButtonText);
+                            }
+                        }));
                     } else {
                         domAttr.set(_self.btnTryItNow, "innerHTML", nls.tryItButtonText);
                         domClass.remove(_self.btnTryItNow, "esriCTDownloadButton");
@@ -396,10 +460,10 @@ define([
 
             if (itemFlag) {
                 domClass.replace(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer", "esriCTCursorDefault");
+                domClass.replace(query(".esriCTMenuTabLeft")[0], "esriCTCursorPointer", "esriCTCursorDefault");
                 domClass.replace(query(".esriCTMenuTabRight")[0], "displayNoneAll", "displayBlockAll");
                 domClass.replace(query(".esriCTInnerRightPanel")[0], "displayNoneAll", "displayBlockAll");
                 domClass.remove(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
-                domClass.remove(query(".esriCTBackBtn")[0], "displayNoneAll");
                 domConstruct.empty(_self.detailsContent);
                 domConstruct.empty(_self.ratingsContainer);
                 containerHeight = (window.innerHeight - domGeom.position(query(".esriCTMenuTab")[0]).h - 25) + "px";
@@ -450,7 +514,7 @@ define([
                     _self._btnTryItNowHandle.remove();
                 }
                 _self._btnTryItNowHandle = on(_self.btnTryItNow, "click", lang.hitch(this, function () {
-                    if (domAttr.get(_self.btnTryItNow, "innerHTML") === nls.downloadButtonText) {
+                    if ((domAttr.get(_self.btnTryItNow, "innerHTML") === nls.downloadButtonText) || (itemResult.type.toLowerCase() === "operation view")) {
                         dojo.downloadWindow = window.open('', "_blank");
                     }
                     this._showTryItNowView(_self.btnTryItNow, itemResult, _self, dataArray);
@@ -568,9 +632,9 @@ define([
                     }
                 } else {
                     divReview = domConstruct.create('div', { "class": "esriCTDivClear" }, reviewContainer);
-                    divReviewText = domConstruct.create('div', { "class": "esriCTBreakWord" }, divReview);
+                    domConstruct.create('div', { "class": "esriCTBreakWord" }, divReview);
                 }
-            }, function (err) {
+            }, function () {
                 var divReview;
                 divReview = domConstruct.create('div', { "class": "esriCTDivClear" }, reviewContainer);
                 domConstruct.create('div', { "class": "esriCTBreakWord" }, divReview);

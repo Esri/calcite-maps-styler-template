@@ -17,7 +17,7 @@
 
     "documentation":[
         "For help configuring this application, see:",
-        "http://solutions.arcgis.com/local-government/help/maps-and-apps-gallery/"
+        "http://links.esri.com/localgovernment/help/MapsAndAppsGallery"
      ],
 
     "values": {
@@ -59,7 +59,6 @@
         "noThumbnail": "themes/images/thumbnailNotAvailable.png",
         "portalURL": "http://arcgis4localgov2.maps.arcgis.com",
         "geometryService": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
-        "cityEngineWebSceneURL": "http://www.arcgis.com/apps/CEWebViewer/viewer.html?3dWebScene=",
         "proxyUrl": "/proxy/proxy.ashx"
     },
 

@@ -136,11 +136,6 @@ font
     margin-left: 15px;
 }
 
-.esriCTSortViews
-{
-    float: left;
-}
-
 .esriCTMenuTabRight div span
 {
     float: left;
@@ -273,6 +268,54 @@ font
     max-width: 100%;
 }
 
+.esriCTSortViews
+{
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.esriCTSortByMenu
+{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.esriCTSortViews ul
+{
+    color: #fff;
+    line-height: 38px;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.esriCTSortViews ul li
+{
+    float: none;
+    width: 100%;
+}
+
+.esriCTSortViews ul li.list
+{
+    text-align: left;
+    text-decoration: none;
+    text-indent: 38px;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+}
+
+.esriCTSortMenuListSelected
+{
+    background-image: url(../images/tickWhite.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
 /* End of application header Styles */
 
 /* Left Panel Styles */
@@ -287,6 +330,7 @@ font
 {
     overflow: auto;
     font-size: small;
+    word-wrap: break-word;
 }
 
 .esriCTInnerLeftPanelTop
@@ -303,7 +347,12 @@ font
 {
     float: left;
     width: 65px;
-    height:50px;
+    height: 50px;
+}
+
+.esriCTLogo img
+{
+    width: 65px;
 }
 
 .esriCTLogoContainer
@@ -1141,28 +1190,12 @@ font
     -moz-box-shadow: 0 0 5px #666;
     -webkit-box-shadow: 0 0 5px #666;
     box-shadow: 0 0 5px #666;
-    behavior: url("PIE.htc");
     border: 4px solid #fff;
 }
 
 .esriCTIconContainer
 {
     float: right;
-}
-
-.esriCTBackBtn
-{
-    position: absolute;
-    top: 0px;
-    z-index: 1000;
-    color: #fff;
-    padding-top: 12px;
-    cursor: pointer;
-}
-
-.esriCTBackBtnPosition
-{
-    right: 15px;
 }
 
 .esriCTBackToMapPosition
@@ -1667,6 +1700,11 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     color: #007ac2;
 }
 
+.blueTheme .esriCTSortViews ul
+{
+    background: #007ac2;
+}
+
 /* End of Blue Theme Styles */
 
 /* Green Theme Styles */
@@ -1885,6 +1923,10 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     color: #028d6a;
 }
 
+.greenTheme .esriCTSortViews ul
+{
+    background: #028d6a;
+}
 /* End of Green Theme Styles */
 
 /* Red Theme Styles */
@@ -2098,6 +2140,10 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     color: #800000;
 }
 
+.redTheme .esriCTSortViews ul
+{
+    background: #800000;
+}
 /* End of Red Theme Styles */
 
 /* Loading indicator Styles */

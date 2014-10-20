@@ -50,7 +50,7 @@ define([
         * Collect all the tags in an array
         * @memberOf widgets/leftPanel/leftPanel
         */
-        collectTags: function (results, prefixTag) {
+        collectTags: function (results) {
             var i, j, tagsObj, groupItemsTagsdata = [];
 
             for (i = 0; i < results.length; i++) {
@@ -189,12 +189,13 @@ define([
         gallery: null,
 
         startup: function () {
+            var i, listSortMenu;
             dojo.sortBy = dojo.configData.values.sortField;
-            if (query(".esriCTSortText")[0]) {
-                if ((dojo.sortBy === "modified") && (query(".esriCTSortText")[0].innerHTML !== nls.sortByViewText)) {
-                    domAttr.set(query(".esriCTSortText")[0], "innerHTML", nls.sortByViewText);
-                } else if ((dojo.sortBy === "numViews") && (query(".esriCTSortText")[0].innerHTML !== nls.sortByDateText)) {
-                    domAttr.set(query(".esriCTSortText")[0], "innerHTML", nls.sortByDateText);
+            listSortMenu = query(".listSortMenu")[0];
+            for (i = 0; i < listSortMenu.children.length; i++) {
+                if (domAttr.get(listSortMenu.children[i], "sortValue") === dojo.configData.values.sortField) {
+                    domClass.remove(query(".esriCTSortMenuListSelected")[0], "esriCTSortMenuListSelected");
+                    domClass.add(listSortMenu.children[i], "esriCTSortMenuListSelected");
                 }
             }
             if (dojo.gridView) {
@@ -209,6 +210,7 @@ define([
             this._queryGroupItems();
             domAttr.set(this.leftPanelHeader, "innerHTML", dojo.configData.values.applicationName);
             topic.subscribe("queryGroupItems", lang.hitch(this, this._queryGroupItems));
+            topic.subscribe("createNoDataContainer", lang.hitch(this, this._createNoDataContainer));
             topic.subscribe("queryItemPods", this._queryItemPods);
         },
 
@@ -391,7 +393,7 @@ define([
                     domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
                     domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
                     domClass.replace(query(".esriCTApplicationIcon")[0], "esriCTCursorDefault", "esriCTCursorPointer");
-                    domClass.add(query(".esriCTBackBtn")[0], "displayNoneAll");
+                    domClass.replace(query(".esriCTMenuTabLeft")[0], "esriCTCursorDefault", "esriCTCursorPointer");
                 }
             };
         },
@@ -431,18 +433,22 @@ define([
                     */
                     resultFilter = [];
                     for (i = 0; i < data.results.length; i++) {
-                        if (this._searchStringInArray(tagNameArray[0], data.results[i].tags)) {
+                        if (this._searchStringInArray(tagNameArray, data.results[i].tags)) {
                             resultFilter.push(data.results[i]);
                         }
                     }
-                    if (query(".esriCTNoResults")[0]) {
-                        domConstruct.destroy(query(".esriCTNoResults")[0]);
-                    }
+                    if (resultFilter.length > 0) {
+                        if (query(".esriCTNoResults")[0]) {
+                            domConstruct.destroy(query(".esriCTNoResults")[0]);
+                        }
 
-                    domClass.replace(query(".esriCTInnerRightPanel")[0], "displayBlockAll", "displayNoneAll");
-                    dojo.nextQuery = data.nextQueryParams;
-                    dojo.results = resultFilter;
-                    topic.publish("createPods", resultFilter, true);
+                        domClass.replace(query(".esriCTInnerRightPanel")[0], "displayBlockAll", "displayNoneAll");
+                        dojo.nextQuery = data.nextQueryParams;
+                        dojo.results = resultFilter;
+                        topic.publish("createPods", resultFilter, true);
+                    } else {
+                        this._createNoDataContainer();
+                    }
                 }
             }), function (err) {
                 alert(err.message);
@@ -454,11 +460,17 @@ define([
         * Comparing strings
         * @memberOf widgets/leftPanel/leftPanel
         */
-        _searchStringInArray: function (str, strArray) {
-            var j;
-            for (j = 0; j < strArray.length; j++) {
-                if (strArray[j] === str) {
-                    return true;
+        _searchStringInArray: function (tagNameArray, strArray) {
+            var i, j, matchCounter;
+            for (i = 0, matchCounter = 0; i < tagNameArray.length; i++) {
+                for (j = 0; j < strArray.length; j++) {
+                    if (strArray[j] === tagNameArray[i]) {
+                        matchCounter++;
+                        if (matchCounter === tagNameArray.length) {
+                            return true;
+                        }
+                        break;
+                    }
                 }
             }
             return false;
@@ -517,25 +529,29 @@ define([
         * @memberOf widgets/leftPanel/leftPanel
         */
         _setGroupContent: function () {
-            var _self = this;
+            var _self = this, groupPanelHeight;
             if (dojo.configData.groupIcon) {
                 _self.groupLogo.src = dojo.configData.groupIcon;
             }
             if (dojo.configData.groupTitle) {
                 _self.setNodeText(_self.groupName, dojo.configData.groupTitle);
             }
-            if (dojo.configData.groupDescription) {
-                _self.setNodeText(_self.groupDesc, dojo.configData.groupDescription);
-                if (query(_self.groupDesc).text().length > 400) {
-                    domClass.add(_self.groupDesc, "esriCTLeftTextReadLess");
-                    if (nls.expandGroupDescText) {
-                        _self.setNodeText(_self.expandGroupDescription, nls.expandGroupDescText);
-                    }
-                }
-            }
             if (dojo.configData.values.applicationName) {
                 _self.setNodeText(_self.groupDescPanelHeader, dojo.configData.values.applicationName);
-                topic.publish("setGrpContent");
+            }
+            if (dojo.configData.groupDescription) {
+                _self.setNodeText(_self.groupDesc, dojo.configData.groupDescription);
+                if (domStyle.get(query(".esriCTSignInIcon")[0], "display") === "none") {
+                    groupPanelHeight = window.innerHeight - (domGeom.position(_self.groupDescPanelHeader).h + domGeom.position(_self.groupLogo).h + 100) + "px";
+                    domStyle.set(_self.groupDesc, "height", groupPanelHeight);
+                } else {
+                    if (query(_self.groupDesc).text().length > 400) {
+                        domClass.add(_self.groupDesc, "esriCTLeftTextReadLess");
+                        if (nls.expandGroupDescText) {
+                            _self.setNodeText(_self.expandGroupDescription, nls.expandGroupDescText);
+                        }
+                    }
+                }
             }
         },
 
