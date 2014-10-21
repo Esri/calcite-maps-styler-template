@@ -16,6 +16,7 @@ dojo.require("social.twitter");
    tweetLabel.set('title', configOptions.i18n.tools.tweets.title);
    tweetLabel.set('label', configOptions.i18n.tools.tweets.label);
    dojo.byId('twittersearch').placeholder = configOptions.i18n.tools.tweets.search.placeholder;
+   dojo.byId("twittersearch").title = configOptions.i18n.tools.tweets.share.twitter.title;
    dojo.byId('emailImage').title = configOptions.i18n.tools.tweets.share.email.title;
    dojo.byId('emailImage').alt = configOptions.i18n.tools.tweets.share.email.label;
 
