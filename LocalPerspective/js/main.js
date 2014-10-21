@@ -220,6 +220,7 @@ define([
             map : this.map,
             //url: this.config.helperServices.geocode[0].url,
             geocoders: this.config.helperServices.geocode,
+            geocoderMenu: false,
             autoComplete : true
          }, "panelGeocoder");
          on(geocoder, "find-results", lang.hitch(this, this._geocoderResults));
