@@ -17,11 +17,13 @@ mkdir %BUILD_OUTPUT%\Compare\SideBySideViewer_Configure
 mkdir %BUILD_OUTPUT%\Compare\storytelling_compare
 mkdir %BUILD_OUTPUT%\Compare\storytelling_sidepanel  
 mkdir %BUILD_OUTPUT%\Compare\storytelling_tabbed  
+mkdir %BUILD_OUTPUT%\CompareMaps
 mkdir %BUILD_OUTPUT%\Edit
 mkdir %BUILD_OUTPUT%\Editor
 mkdir %BUILD_OUTPUT%\Editor\Chrome
 mkdir %BUILD_OUTPUT%\ElevationsProfile
 mkdir %BUILD_OUTPUT%\Elevations
+mkdir %BUILD_OUTPUT%\Embed
 mkdir %BUILD_OUTPUT%\Filter
 mkdir %BUILD_OUTPUT%\GeoForm
 mkdir %BUILD_OUTPUT%\HeaderFooter
@@ -91,11 +93,13 @@ xcopy %TEMPLATES_ROOT%\archive\CompareSearch                    %BUILD_OUTPUT%\C
 xcopy %TEMPLATES_ROOT%\archive\CompareSideBySideViewer          %BUILD_OUTPUT%\Compare\SideBySideViewer_Configure   /E /Y
 xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingSidepanel     %BUILD_OUTPUT%\Compare\storytelling_sidepanel       /E /Y
 xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingTabbed        %BUILD_OUTPUT%\Compare\storytelling_tabbed          /E /Y
+xcopy %TEMPLATES_ROOT%\Compare                                  %BUILD_OUTPUT%\CompareMaps                          /E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingCompare                      %BUILD_OUTPUT%\Compare\storytelling_compare         /E /Y
 xcopy %TEMPLATES_ROOT%\archive\EditorChrome                     %BUILD_OUTPUT%\Editor\Chrome                        /E /Y
 xcopy %TEMPLATES_ROOT%\Edit                                     %BUILD_OUTPUT%\Edit                                 /E /Y
 xcopy %TEMPLATES_ROOT%\archive\ElevationsProfile                %BUILD_OUTPUT%\ElevationsProfile                    /E /Y
 xcopy %TEMPLATES_ROOT%\Elevations                               %BUILD_OUTPUT%\Elevations                           /E /Y
+xcopy %TEMPLATES_ROOT%\Embed                                    %BUILD_OUTPUT%\Embed                                /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Filter                           %BUILD_OUTPUT%\Filter                               /E /Y
 xcopy %TEMPLATES_ROOT%\GeoForm                                  %BUILD_OUTPUT%\GeoForm                              /E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterChrome               %BUILD_OUTPUT%\HeaderFooter\Chrome                  /E /Y
