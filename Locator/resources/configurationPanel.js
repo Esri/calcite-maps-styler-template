@@ -70,14 +70,14 @@
                "placeHolder":""
             },
             {
-               "type":"string",
+               "type":"number",
                "fieldName":"latitude",
                "label":"Destination latitude",
                "tooltip":"Destination latitude",
                "placeHolder":""
             },
             {
-               "type":"string",
+               "type":"number",
                "fieldName":"longitude",
                "label":"Destination longitude",
                "tooltip":"Destination longitude",
