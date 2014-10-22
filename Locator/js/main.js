@@ -313,7 +313,7 @@ define([
                   for (var i = 0; i < layer.featureCollection.layers.length; i++) {
                      if (layer.featureCollection.layers[i].id == name) {
                         this.opLayer = layer.featureCollection.layers[i].layerObject;
-                        this.opFeatures = me.opLayer.graphics.slice(0);
+                        this.opFeatures = this.opLayer.graphics.slice(0);
                      }
                   }
                } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.id == name) {
