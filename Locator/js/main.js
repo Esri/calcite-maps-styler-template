@@ -644,21 +644,20 @@ define([
          // var pos = num*60 + 60;
          // if (num != this.selectedNum)
             // dom.byId("bodyFeatures").scrollTop = pos;
-         this._selectRecord(parseInt(num));
+         this._selectRecord(parseInt(num), false);
          event.stop(evt);
          this._switchView();
       },
       
       // Select Record
-      _selectRecord : function(num) {
+      _selectRecord : function(num, zoom) {
+         if(typeof(zoom)==='undefined') zoom = true;
          this._unselectRecords();
          if (num != this.selectedNum) {
-            var pos = num*60 + 60;
-            dom.byId("bodyFeatures").scrollTop = pos;
             this.selectedNum = num
             var gra = this.opFeatures[num];
             domClass.add("rec_"+num, "recOpened");
-            this._zoomToDestination(gra);
+            this._zoomToDestination(gra, zoom);
             var rec = dom.byId("rec_"+num);
             var recDetails = domConstruct.create("div", {
                id: "recDetails"
@@ -672,6 +671,8 @@ define([
             var content = gra.getContent();
             registry.byId("recPane").set("content", content);
             this._switchView();
+            var pos = num*60 + 60;
+            dom.byId("bodyFeatures").scrollTop = pos;
          } else {
             this.selectedNum = null;
          }
@@ -680,7 +681,7 @@ define([
       // Show Route
       _showRoute : function(num) {
          if (num != this.selectedNum) {
-            this._selectRecord(num);
+            this._selectRecord(num, false);
          }
          var gra = this.opFeatures[num];
          this._routeToDestination(gra);
@@ -692,7 +693,6 @@ define([
          if (registry.byId("recPane"))
             registry.byId("recPane").destroy();
          domConstruct.destroy("recDetails");
-            
          query(".recOpened").forEach(function(node, index, arr){
             domClass.remove(node, "recOpened");
          });
@@ -764,14 +764,16 @@ define([
       },
       
       // Zoom to destination
-      _zoomToDestination : function(gra) {
+      _zoomToDestination : function(gra, zoom) {
          var pt = gra.attributes.POINT_LOCATION;
-         var c = pt
-         if (this.map.width > 570) {
-            var offset = this.map.extent.getWidth() * 320 / this.map.width;
-            c = pt.offset(offset/2, 0);
+         if (zoom) {
+            var c = pt
+            if (this.map.width > 570) {
+               var offset = this.map.extent.getWidth() * 320 / this.map.width;
+               c = pt.offset(offset/2, 0);
+            }
+            this.map.centerAndZoom(c, this.config.defaultZoomLevel || 13);
          }
-         this.map.centerAndZoom(c, this.config.defaultZoomLevel || 13);
          var rgb = Color.fromString(this.color).toRgb();
          rgb.push(0.4);
          var symML = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color.fromArray(rgb), 10);
