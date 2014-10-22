@@ -50,6 +50,13 @@
                "label":"Destination layer",
                "tooltip": "Layer that will be used as destinations"
             },
+            {
+               "type":"string",
+               "fieldName":"routeUtility",
+               "label":"Route utility item (with stored credentials)",
+               "tooltip":"URL to route utility item",
+               "placeHolder":""
+            }
          ]
       },
       {
