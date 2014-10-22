@@ -1,0 +1,405 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#mapDiv {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+/*Navigation controls for popup when displayed in drawer*/
+#popupNav {
+  display: none;
+  float: right;
+}
+#nav_count {
+  padding-right: 3px;
+}
+.nav {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 18px;
+  color: #787878;
+}
+.loading-indicator {
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #fff;
+}
+.app-loading .loading-indicator,
+.app-error .loading-indicator {
+  display: block;
+}
+.app-loading .loading-indicator {
+  background-position: center center;
+  background-image: url("../images/ajax-loader.gif");
+  background-repeat: no-repeat;
+}
+.app-error .loading-message {
+  background-position: top center;
+  background-image: url("../images/error.png");
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 0;
+  text-align: center;
+}
+/*Without this style the popup zoom button doesn't display with calcite*/
+.calcite .actionsPane .action {
+  text-indent: 0;
+}
+/*Icon fonts for hamburger and nav arrows*/
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?73hgq7");
+  src: url("../fonts/icomoon.eot?#iefix73hgq7") format('embedded-opentype'), url("../fonts/icomoon.woff?73hgq7") format('woff'), url("../fonts/icomoon.ttf?73hgq7") format('truetype'), url("../fonts/icomoon.svg?73hgq7#icomoon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+/* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-location:before {
+  content: "\e600";
+}
+.icon-arrow-right {
+  cursor: pointer;
+}
+.icon-arrow-left {
+  cursor: pointer;
+}
+.icon-list:before {
+  content: "\e603";
+}
+.icon-arrow-left:before {
+  content: "\e601";
+}
+.icon-arrow-down:before {
+  content: "\e604";
+}
+.icon-arrow-up:before {
+  content: "\e605";
+}
+.icon-arrow-right:before {
+  content: "\e602";
+}
+.hamburger-button {
+  position: absolute;
+  left: 10px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  height: 42px;
+  width: 42px;
+  font-size: 30px;
+  line-height: 42px;
+  color: rgba(255,255,255,0.2);
+}
+.esriRTL .hamburger-button {
+  float: right;
+}
+/*Esri widgets*/
+.HomeButton {
+  border-bottom: 1px solid #57585a;
+  width: 30px;
+  height: 30px;
+}
+.HomeButton .home {
+  background: url("http://cdn.arcgis.com/cdn/5177/js/arcgisonline/map/css/images/home_locate.png") no-repeat 0 0;
+  width: 30px;
+  height: 30px;
+}
+.HomeButton .home:hover {
+  background-color: #eee;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.esriSimpleSlider {
+  top: 55px;
+  left: 10px;
+}
+.no-title .esriSimpleSlider {
+  top: 10px;
+}
+.no-title #basemap_gallery {
+  top: 10px;
+}
+#basemap_gallery {
+  position: absolute;
+  top: 55px;
+  left: 55px;
+  z-index: 50;
+}
+.BasemapToggle .toggleButton {
+  width: 45px;
+  height: 45px;
+}
+.BasemapToggle .basemapImage {
+  width: 45px;
+  height: 30px;
+}
+.BasemapToggle .basemapTitle {
+  width: 45px;
+}
+.simpleGeocoder {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 50;
+}
+/*If the screen size is max-width or smaller and the drawer is open hide the geocder.*/
+@media screen and (max-width: 540px) {
+  .drawer-open .simpleGeocoder {
+    display: none;
+  }
+}
+.top-bar {
+  position: absolute;
+  z-index: 36;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  background: rgba(0,0,0,0.3);
+  height: 44px;
+}
+.esriRTL .top-bar {
+  left: auto;
+  right: 0;
+}
+.top-menu-right {
+  margin-right: 5px;
+}
+.esriRTL .top-menu-right {
+  margin-right: 0;
+  margin-left: 5px;
+}
+.hide-toggle {
+  display: none;
+}
+.app-title {
+  color: #007ac2;
+  line-height: 44px;
+  font-size: 18px;
+  font-weight: 700;
+  max-width: 40%;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  float: left;
+}
+.esriRTL .app-title {
+  float: right;
+}
+/*Drawer*/
+.border-container-outer {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+}
+.content-pane-left {
+  width: 0px;
+  max-width: 280px;
+  height: 100%;
+  margin: 0;
+  border: none;
+  background: #fff;
+  overflow: hidden;
+  -webkit-transition: width 250ms ease;
+  -moz-transition: width 250ms ease;
+  -o-transition: width 250ms ease;
+  -ms-transition: width 250ms ease;
+  transition: width 250ms ease;
+}
+.app-loading .content-pane-left {
+  width: 280px;
+}
+.drawer-open .content-pane-left {
+  width: 280px;
+  overflow: auto;
+  overflow-x: hidden;
+  border-right: none;
+}
+.esriRTL .drawer-open .content-pane-left {
+  border-right: 0;
+  border-left: none;
+}
+.drawer-open-complete .content-pane-left:before {
+  display: none;
+}
+.pointer-events .drawer-open-complete .content-pane-left:before {
+  -webkit-box-shadow: inset -1px 0 6px 0 rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset -1px 0 6px 0 rgba(0,0,0,0.5);
+  box-shadow: inset -1px 0 6px 0 rgba(0,0,0,0.5);
+  position: fixed;
+  z-index: 450;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  content: '';
+  display: block;
+  pointer-events: none;
+}
+.esriRTL .drawer-open-complete .content-pane-left:before {
+  left: auto;
+  right: 0;
+}
+.content-pane-center {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+@media screen and (max-width: 850px) {
+  .app-loading .content-pane-left {
+    width: 0px;
+  }
+}
+/*Tabs*/
+.tabs {
+  height: 100%;
+  width: 100%;
+}
+:focus {
+  outline: none;
+}
+.dijitHidden {
+  display: none !important;
+}
+.dijitVisible {
+  display: block !important;
+  position: relative;
+}
+.dijitTabContainer {
+  z-index: 0;
+  overflow: visible;
+}
+.dijitTabContainerNoLayout {
+  width: 100%;
+}
+.dijitTabContainerTop-tabs {
+  z-index: 1;
+  overflow: visible !important;
+}
+.dijitTabController {
+  z-index: 1;
+}
+.dijitTabContainerTop-container {
+  z-index: 0;
+  overflow: hidden;
+  border: none;
+}
+.nowrapTabStrip {
+  width: 50000px;
+  display: block;
+  position: relative;
+  text-align: left;
+  z-index: 1;
+}
+.dijitTabListWrapper {
+  overflow: hidden;
+  z-index: 1;
+}
+.dijitTabContainerTop-tabs {
+  height: 44px;
+  background-color: #ccc;
+  border: none;
+}
+.dijitTab {
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+  z-index: 3;
+}
+.tab_1 .dijitTabContainerTop-tabs .dijitTab {
+  width: 260px;
+}
+.tab_2 .dijitTabContainerTop-tabs .dijitTab {
+  width: 121px;
+}
+.tab_3 .dijitTabContainerTop-tabs .dijitTab {
+  width: 73px;
+}
+.dijitTab * {
+  vertical-align: middle;
+}
+.dijitTabContainerTop-tabs .dijitTab {
+  top: 1px;
+}
+.dijitTabContainerTop-tabs .dijitTab {
+  display: inline-block;
+}
+.dijitTab .tabLabel {
+  min-height: 15px;
+  display: inline-block;
+}
+.calcite .dijitTabPaneWrapper {
+  background: #fff;
+}
+.calcite .dijitTabSpacer {
+  display: none;
+}
+.calcite .dijitTab {
+  background: #727272;
+  color: #fff;
+}
+.calcite .dijitTabHover {
+  background-color: #8b8b8b;
+}
+.calcite .dijitTabActive {
+  background: #595959;
+}
+.calcite .dijitTabChecked {
+  background: #595959;
+}
+.calcite .dijitTabDisabled {
+  background-color: #9b9b9b;
+}
+.calcite .dijitTabContainerTop-tabs .dijitTab {
+  top: 0;
+  margin-right: 1px;
+  padding: 12px 10px;
+  border-bottom-width: 0;
+  min-width: 60px;
+  text-align: center;
+}
