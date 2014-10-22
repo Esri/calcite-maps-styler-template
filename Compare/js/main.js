@@ -28,7 +28,12 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                 //get the default panel content from the config
                 this._updatePanelContent(this.config, registry.byId("detailContent"));
 
-                this.config.webmaps.push(this.config.webmap);
+                //Configured apps will have web map as an array. 
+                if(lang.isArray(this.config.webmap)){
+                    this.config.webmaps = this.config.webmap;
+                }else{
+                    this.config.webmaps.push(this.config.webmap);
+                }
 
                 this._createGrid();
 
