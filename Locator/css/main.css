@@ -264,6 +264,10 @@ hr {
 	background-image: url(../images/end.png) !important;
 }
 
+.esriRouteZoom:hover, .esriRouteZoom:focus{
+	background-color: #e6e6e6 !important;
+}
+
 /* Template */
 
 .bg {
@@ -459,32 +463,35 @@ hr {
 	height: 30px;
 }
 
-#panelInfo {
+#panelOrigin {
 	position: absolute;
 	left: 10px;
 	right: 50px;
 	top: 20px;
-	bottom: 30px;
+	height: 35px;
 	overflow: hidden;
 	text-overflow:ellipsis;
 	color: #ffffff;
 	font-size: 18px;
 	font-weight: 300;
 	text-align: left;
+	line-height: 30px;
+	border-bottom: 1px solid #ffffff;
 }
 
-#panelDistance {
+#panelDestination {
 	position: absolute;
 	left: 10px;
 	right: 50px;
-	top: 60px;
-	height: 30px;
+	top: 20px;
+	height: 70px;
 	overflow: hidden;
-	opacity:0.5;
-	filter:alpha(opacity=50);
-	font-size: 12px;
+	text-overflow:ellipsis;
+	color: #ffffff;
+	font-size: 18px;
 	font-weight: 300;
-	text-overflow: ellipsis;
+	text-align: left;
+	line-height: 30px;
 }
 
 .pageBody {

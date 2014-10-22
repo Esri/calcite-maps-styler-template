@@ -18,14 +18,11 @@ define(( {
    map : {
       error : "Impossible de créer la carte"
    },
-   days : {
-      now : "MAINTENANT",
-      sun : "DIMANCHE",
-      mon : "LUNDI",
-      tue : "MARDI",
-      wed : "MERCREDI",
-      thu : "JEUDI",
-      fri : "VENDREDI",
-      sat : "SAMEDI"
-   }
+   location: {
+     name: "Nom",
+     current: "Emplacement Actuel",
+     address: "Adresse",
+     latitude: "Latitude",
+     longitude: "Longitude"
+  }
 }));

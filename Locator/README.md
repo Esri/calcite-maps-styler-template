@@ -1,7 +1,7 @@
 locator
 =======================
 
-Locator is a configurable template for finding the nearest feature in a web map based and providing driving directions from a user selected location or address.
+Locator is a configurable template for finding the nearest feature and providing driving directions to th efeature from a user selected location or address.
 
 ![Screen Shot](http://coolmaps.esri.com/templates/Locator/images/thumb.png)
 

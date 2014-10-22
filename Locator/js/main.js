@@ -48,6 +48,7 @@ define([
     "esri/InfoTemplate",
     "esri/layers/GraphicsLayer",
     "esri/symbols/Font",
+    "esri/symbols/CartographicLineSymbol",
     "esri/symbols/PictureMarkerSymbol",
     "esri/symbols/SimpleFillSymbol",
     "esri/symbols/SimpleLineSymbol",
@@ -89,6 +90,7 @@ define([
     InfoTemplate,
     GraphicsLayer,
     Font,
+    CartographicLineSymbol,
     PictureMarkerSymbol,
     SimpleFillSymbol,
     SimpleLineSymbol,
@@ -355,6 +357,8 @@ define([
          if (!this.opLayer) {
             var title = this.config.destination || this.config.title;
             var content = "<hr/>Name: ${Name}<br/><br/>Address: ${Address}<br/><br/>Latitude: ${Latitude}<br/><br/>Longitude: ${Longitude}";
+            if (this.config && this.config.i18n)
+               contnet = "<hr/>" + this.config.i18n.location.name + ": ${Name}<br/><br/>" + this.config.i18n.location.address + ": ${Address}<br/><br/>" + this.config.i18n.location.latitude + ": ${Latitude}<br/><br/>" + this.config.i18n.location.longitude + ": ${Longitude}";
             var infoTemplate = new InfoTemplate(title, content);
          } else {
             var infoTemplate = this.opLayer.infoTemplate;
@@ -387,7 +391,9 @@ define([
          // geocoder
          this.geocoder = new Geocoder({
             map : this.map,
-            url: this.config.helperServices.geocode[0].url,
+            //url: this.config.helperServices.geocode[0].url,
+            geocoders: this.config.helperServices.geocode,
+            geocoderMenu: false,
             autoNavigate : false,
             autoComplete : true
          }, "panelGeocoder");
@@ -400,10 +406,13 @@ define([
          
          // directions
          var rgb = Color.fromString(this.color).toRgb();
+         var symL = new SimpleLineSymbol(SimpleLineSymbol.STYLE_NULL, new Color([0,0,0]), 0);
+         var sym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 1, symL, new Color([0,0,0,0]));
          var startSym = new PictureMarkerSymbol("images/start.png", 24, 24);
          var endSym = new PictureMarkerSymbol("images/end.png", 24, 24);
-         var routeSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([rgb[0], rgb[1], rgb[2], 0.8]), 6);
-         var segmentSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SHORTDOT, new Color([0,0,0,0.4]), 6); 
+         //var routeSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([rgb[0], rgb[1], rgb[2], 0.6]), 8);
+         var routeSym = new CartographicLineSymbol(CartographicLineSymbol.STYLE_SOLID, new Color([rgb[0], rgb[1], rgb[2], 0.4]), 8, CartographicLineSymbol.CAP_SQUARE, CartographicLineSymbol.JOIN_MITER, 4);
+         var segmentSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SHORTDOT, new Color([0,0,0,0.4]), 8); 
          var units = "esriMiles";
          if (this.config.distanceUnits == "kilometers")
             units = "esriKilometers";
@@ -415,15 +424,15 @@ define([
               alphabet: false,
               canModifyStops: false,
               dragging: false,
-              fromSymbol: startSym,
-              toSymbol: endSym,
+              fromSymbol: sym, //startSym,
+              toSymbol: sym, //endSym,
               routeSymbol: routeSym,
               segmentSymbol: segmentSym
          };
-         // if (this.config.routeUtility)
-            // options.routeTaskURL = this.config.routeUtility;
+         if (this.config.routeUtility)
+            options.routeTaskUrl = this.config.routeUtility;
          if (this.config.helperServices.routeTask)
-            options.routeTaskUrl = this.config.helperServices.routeTask.url;
+            options.routeTaskURL = this.config.helperServices.routeTask.url;
          this.dirWidget = new Directions(options, "resultsDirections");
          on(this.dirWidget, "directions-finish", lang.hitch(this, this._directionsFinished));
          this.dirWidget.startup();
@@ -478,52 +487,51 @@ define([
       
       // geoLocated
       _geoLocated : function(evt) {
+         var gra;
          if (evt.graphic) {
             var pt = evt.graphic.geometry;
-            this.origin = pt;
-            this._updateOrigin();
-            this.locator.locationToAddress(pt, 300, 
-               lang.hitch(this, function(result){
-                  if (result.address) {
-                      var address = result.address.Address;
-                      //dom.byId("panelGeocoder_input").value = address;
-                      //this.geocoder.inputNode.value = address;
-                  }
-               }), 
-               function(err){
-                  console.log(err.message);
-               });
+            var label = "Current Location";
+            if (this.config && this.config.i18n)
+               label = this.config.i18n.location.current;
+            var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
+            gra = new Graphic(pt, sym, {label: label});
          } else {
             if (evt.error)
                console.log(evt.error.message);
          }
+         this._updateOrigin(gra);
       },
       
       // geocoder results
       _geocoderResults : function(obj) {
+         var gra;
          if (obj.results.results.length > 0) {
             var result = obj.results.results[0];
-            this.origin = result.feature.geometry;
+            var pt = result.feature.geometry;
+            var label = result.feature.address;
+            var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
+            gra = new Graphic(pt, sym, {label: label});
          }
-         this._updateOrigin();
+         this._updateOrigin(gra);
       },
       
       // geocoder select
       _geocoderSelect : function(obj) {
          var result = obj.result;
-         this.origin = result.feature.geometry;
-         this._updateOrigin();
+         var pt = result.feature.geometry;
+         var label = result.name;
+         var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
+         var gra = new Graphic(pt, sym, {label: label});
+         this._updateOrigin(gra);
       },
       
       // geocoder clear
       _geocoderClear : function() {
-         if(this.geocoder.value != "") {
-            console.log("clear");
-            this.origin = null;
-            this._updateOrigin();
-         }
+         //if(this.geocoder.value != "") {
+            //this.origin = null;
+            this._updateOrigin(null);
+         //}
       },
-      
 
       
       // ** QUERY FUNCTIONS ** //
@@ -633,9 +641,9 @@ define([
          var gra  = evt.graphic;
          var num = gra.id;
          num = num.replace("R_", "").replace("T_", "");
-         var pos = num*60 + 60;
-         if (num != this.selectedNum)
-            dom.byId("bodyFeatures").scrollTop = pos;
+         // var pos = num*60 + 60;
+         // if (num != this.selectedNum)
+            // dom.byId("bodyFeatures").scrollTop = pos;
          this._selectRecord(parseInt(num));
          event.stop(evt);
          this._switchView();
@@ -645,11 +653,12 @@ define([
       _selectRecord : function(num) {
          this._unselectRecords();
          if (num != this.selectedNum) {
+            var pos = num*60 + 60;
+            dom.byId("bodyFeatures").scrollTop = pos;
             this.selectedNum = num
             var gra = this.opFeatures[num];
             domClass.add("rec_"+num, "recOpened");
             this._zoomToDestination(gra);
-            //this._animateScroll(true);
             var rec = dom.byId("rec_"+num);
             var recDetails = domConstruct.create("div", {
                id: "recDetails"
@@ -738,7 +747,7 @@ define([
       // Get distance
       _getDistance: function(loc) {
          var dist = 0;
-         dist = mathUtils.getLength(this.origin, loc) * 0.000621371;
+         dist = mathUtils.getLength(this.origin.geometry, loc) * 0.000621371;
          if (this.config.distanceUnits == "kilometers")
             dist = dist*1.60934;
          dist = Math.round(dist*10)/10;
@@ -756,15 +765,17 @@ define([
       
       // Zoom to destination
       _zoomToDestination : function(gra) {
-         //var c = gra.getContent();
          var pt = gra.attributes.POINT_LOCATION;
-         // this.map.infoWindow.setContent(c);
-         // this.map.infoWindow.show(pt);
-         this.map.centerAndZoom(pt, this.config.defaultZoomLevel || 13);
+         var c = pt
+         if (this.map.width > 570) {
+            var offset = this.map.extent.getWidth() * 320 / this.map.width;
+            c = pt.offset(offset/2, 0);
+         }
+         this.map.centerAndZoom(c, this.config.defaultZoomLevel || 13);
          var rgb = Color.fromString(this.color).toRgb();
          rgb.push(0.4);
          var symML = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color.fromArray(rgb), 10);
-         var symM = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 34, symML, new Color.fromArray([0,0,0,0]));
+         var symM = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 34, symML, new Color.fromArray([0,0,0,1]));
          this.hiLayer.clear();
          this.hiLayer.add(new Graphic(pt, symM, null));
       },
@@ -773,9 +784,9 @@ define([
       _routeToDestination : function(gra) {
          this._clearDirections();
          var pt = gra.geometry;
-         dom.byId("panelInfo").innerHTML = gra.getTitle();
+         dom.byId("panelDestination").innerHTML = gra.getTitle();
          this._showPage(2);
-         var def = this.dirWidget.addStops([this.origin, pt]);
+         var def = this.dirWidget.addStops([this.origin.geometry, pt]);
          def.then(lang.hitch(this, function(value){
               this.dirWidget.getDirections();
           }));
@@ -783,9 +794,13 @@ define([
       
       // Reverse Directions
       _reverseDirections : function() {
+         //var tOrigin = dom.byId("panelOrigin").innerHTML;
+         //var tDest = dom.byId("panelDestination").innerHTML;
          var stops = this.dirWidget.stops;
          stops.reverse();
          this._clearDirections();
+         //dom.byId("panelOrigin").innerHTML = tDest;
+         //dom.byId("panelDestination").innerHTML = tOrigin;
          var def = this.dirWidget.addStops(stops);
          def.then(lang.hitch(this, function(value){
               this.dirWidget.getDirections();
@@ -803,9 +818,11 @@ define([
          var gra = this.dirWidget.mergedRouteGraphic;
          var ext = gra.geometry.getExtent();
          var ext2 = ext;
-         if (this.map.width > 570)
-            ext2 = ext.offset(ext.getWidth()/3, 0);
-         this.map.setExtent(ext2.expand(2.5));
+         if (this.map.width > 570) {
+            var offset = ext.getWidth() * 320 / this.map.width;
+            ext2.update(ext.xmin, ext.ymin, ext.xmax+offset, ext.ymax, ext.spatialReference);
+         }
+         this.map.setExtent(ext2.expand(2));
          console.log(this.dirWidget.stops);
          
          var rgb = Color.fromString(this.color).toRgb();
@@ -821,18 +838,15 @@ define([
       },
       
       // Update Origin
-      _updateOrigin : function() {
+      _updateOrigin : function(gra) {
          this.map.graphics.clear();
          this._clearDirections();
+         this.origin = gra;
          if (this.origin) {
-            //var sym = new PictureMarkerSymbol('images/pin.png', 30, 30);
-            //sym.setOffset(0,15);
-            //var gra = new Graphic(this.origin, sym, {});
-            //this.map.graphics.add(gra);
+            this.map.graphics.add(gra);
             this._processDestinationFeatures();
             if (this.opFeatures.length > 0) {
                this._showRoute(0);
-               //this._routeToDestination(this.opFeatures[0]);
             }
                
          }

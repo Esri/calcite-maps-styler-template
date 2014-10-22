@@ -19,16 +19,13 @@ define({
         map: {
             error: "Unable to create map"
         },
-        days: {
-           now: "NOW",
-           sun: "SUN",
-           mon: "MON",
-           tue: "TUE",
-           wed: "WED",
-           thu: "THU",
-           fri: "FRI",
-           sat: "SAT"
+        location: {
+           name: "Name",
+           current: "Current Location",
+           address: "Address",
+           latitude: "Latitude",
+           longitude: "Longitude"
         }
     }),
-    "fr": 1
+    "fr": 0
 });
