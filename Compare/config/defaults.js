@@ -20,7 +20,7 @@ define({
     //default web map, default app color theme and more. These values can be overwritten by template configuration settings and url parameters.
     "appid": "",
     "webmap": "18f5afcaed8d47d0a36526b850f14f5e",
-    "webmaps": ["106d8ef38ae04a1eb120fa8645207a95","ba79af12ce584940a72eaabc711b6e88"],//,"4a675e9bc2994a7594ffeec7aaefd749"],
+    "webmaps": [],
     "oauthappid": null, //"AFTKRmv16wj14N3z",
     //Enter the url to the proxy if needed by the application. See the 'Using the proxy page' help topic for details
     //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
@@ -29,7 +29,7 @@ define({
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
     "sharinghost": location.protocol + "//" + "www.arcgis.com",
     "title": "Compare Maps",
-    "description": "This is a sample app that compares multiple maps.",
+    "description": "This is a sample app that compares multiple maps. You could put some cool info about the maps here",
     "home": true,
     "theme_color":"#575757",
     "theme_bg_color": "#fff",

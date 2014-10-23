@@ -17,7 +17,7 @@
  */
 define({
     // When true, the template will query arcgis.com for the webmap item.
-    "queryForWebmap": true,
+    "queryForWebmap": false,
     // When true, the template will query arcgis.com for the group's information.
     "queryForGroupInfo": false,
     // When true, the template will query arcgis.com for the items contained within the group
