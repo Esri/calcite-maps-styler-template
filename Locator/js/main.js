@@ -118,6 +118,7 @@ define([
       dirWidget : null,
       selectedNum: null,
       trackingPt :  null,
+      offset : 0,
 
 
       // Startup
@@ -185,7 +186,6 @@ define([
          style.type = 'text/css';
          style.innerHTML = '.bg {background-color: ' + this.color + '};';
          document.getElementsByTagName('head')[0].appendChild(style);
-         console.log("basemap",this.config.styleBasemap);
          if (this.config.styleBasemap == 1) {
             var style2 = document.createElement('style');
             style2.type = 'text/css';
@@ -197,7 +197,6 @@ define([
       // set protocol handler
       setProtocolHandler : function() {
          esri.id.setProtocolErrorHandler(function() {
-            console.log("protocol");
             if (window.confirm("Your browser is not CORS enabled. You need to redirect to HTTPS. Continue?")) {
                window.location = window.location.href.replace("http:", "https:");
             }
@@ -222,6 +221,7 @@ define([
             bingMapsKey : this.config.bingKey
          }).then(lang.hitch(this, function(response) {
 
+            
             this.map = response.map;
             this.initExt = this.map.extent;
             this.opLayers = response.itemInfo.itemData.operationalLayers;
@@ -239,6 +239,9 @@ define([
             this.locator = new Locator(this.config.helperServices.geocode[0].url);
             this.locator.outSpatialReference = this.map.spatialReference;
             
+            // calc offset
+            this._calculateOffset(response);
+            
             this._configureMapUI();
             // make sure map is loaded
             if (this.map.loaded) {
@@ -251,6 +254,14 @@ define([
                }));
             }
          }), this.reportError);
+      },
+      
+      // Calculate Offset
+      _calculateOffset : function(response) {
+         var lods = response.itemInfo.itemData.baseMap.baseMapLayers[0].layerObject.tileInfo.lods;
+         var lod = lods[this.config.defaultZoomLevel || 13];
+         var res = lod.resolution;
+         this.offset = res * 320;
       },
 
       // Map Loaded - Map is ready
@@ -278,7 +289,6 @@ define([
             this.locator.addressToLocations(options);
             this.locator.addressToLocations(options, 
                lang.hitch(this, function(evt){
-                  console.log(evt);
                   if (evt.length > 0) {
                      var candidate = evt[0];
                      var address = candidate.address;
@@ -436,7 +446,6 @@ define([
          this.dirWidget = new Directions(options, "resultsDirections");
          on(this.dirWidget, "directions-finish", lang.hitch(this, this._directionsFinished));
          this.dirWidget.startup();
-         console.log(this.dirWidget.routeTask);
          
          // configure ui
          this._configureUI();
@@ -781,8 +790,7 @@ define([
          if (zoom) {
             var c = pt
             if (this.map.width > 570) {
-               var offset = this.map.extent.getWidth() * 320 / this.map.width;
-               c = pt.offset(offset/2, 0);
+               c = pt.offset(this.offset/2, 0);
             }
             this.map.centerAndZoom(c, this.config.defaultZoomLevel || 13);
          }
@@ -837,7 +845,6 @@ define([
             ext2.update(ext.xmin, ext.ymin, ext.xmax+offset, ext.ymax, ext.spatialReference);
          }
          this.map.setExtent(ext2.expand(2));
-         console.log(this.dirWidget.stops);
          
          var rgb = Color.fromString(this.color).toRgb();
          rgb.push(0);
