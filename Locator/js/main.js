@@ -233,7 +233,7 @@ define([
             // destinations layer
             this.destLayer = new GraphicsLayer();
             this.map.addLayer(this.destLayer);
-            this.destLayer.on("click", lang.hitch(this, this._selectFeature))
+            this.destLayer.on("click", lang.hitch(this, this._selectFeature));
             
             // locator
             this.locator = new Locator(this.config.helperServices.geocode[0].url);
@@ -275,9 +275,10 @@ define([
       // Process Destinations
       _processDestinations : function() {
          this.opFeatures = [];
+         var pt, gra;
          if (this.config.longitude && this.config.latitude) {
-            var pt = new Point(parseFloat(this.config.longitude), parseFloat(this.config.latitude));
-            var gra = new Graphic(pt, null, {Name: this.config.destination, Latitude: this.config.latitude, Longitude: this.config.longitude});
+            pt = new Point(parseFloat(this.config.longitude), parseFloat(this.config.latitude));
+            gra = new Graphic(pt, null, {Name: this.config.destination, Latitude: this.config.latitude, Longitude: this.config.longitude});
             this.opFeatures.push(gra);
             this._setupTemplate();
             this._processDestinationFeatures();
@@ -292,8 +293,8 @@ define([
                   if (evt.length > 0) {
                      var candidate = evt[0];
                      var address = candidate.address;
-                     var pt = candidate.location;
-                     var gra = new Graphic(pt, null, {Name: this.config.destination, Address: address});
+                     pt = candidate.location;
+                     gra = new Graphic(pt, null, {Name: this.config.destination, Address: address});
                      this.opFeatures.push(gra);
                      this._setupTemplate();
                      this._processDestinationFeatures();
@@ -350,7 +351,7 @@ define([
          if (this.opLayers.length > 0) {
             var layer = this.opLayers[0];
             if (layer.featureCollection) {
-               for (var l = 0; l < layer.featureCollection.layers.length; l++) {
+               for (var l=0; l<layer.featureCollection.layers.length; l++) {
                   this.opFeatures  = layer.featureCollection.layers[l].layerObject.graphics.slice(0);
                   return layer.featureCollection.layers[l].layerObject;
                }
@@ -665,7 +666,7 @@ define([
          }
          this._unselectRecords();
          if (num != this.selectedNum) {
-            this.selectedNum = num
+            this.selectedNum = num;
             var gra = this.opFeatures[num];
             domClass.add("rec_"+num, "recOpened");
             this._zoomToDestination(gra, zoom);
