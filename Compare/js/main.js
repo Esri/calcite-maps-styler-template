@@ -20,20 +20,19 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
     return declare(null, {
         config: {},
         mapInfo: [],
-        panels: [],
         startup: function (config) {
             parser.parse();
             if (config) {
                 this.config = config;
                 //get the default panel content from the config
                 this._updatePanelContent(this.config, registry.byId("detailContent"));
-
                 //Configured apps will have web map as an array. 
                 if(lang.isArray(this.config.webmap)){
                     this.config.webmaps = this.config.webmap;
                 }else{
                     this.config.webmaps.push(this.config.webmap);
                 }
+  
 
                 this._createGrid();
 
@@ -180,33 +179,13 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                 return;
             }
 
+            //build the content 
+            selected.itemInfo.item.legendId = "legend_" + selected.map.id;
+            this._updatePanelContent(selected.itemInfo.item, pane, selected);
+    
 
-            if (typeof(this.panels[selected.map.id]) !== "undefined") {
-                //rehydrate the existing content
-                var content = this.panels[selected.map.id];
-                pane.set("content", content);
-                var title = "";
-                query(".panel_title").forEach(function (node) {
-                    title = node.innerHTML;
-                });
-                registry.byId("expandoPane").set("title", title);
+                
 
-            } else {
-                //build the content and save. 
-                selected.itemInfo.item.legendId = "legend_" + selected.map.id;
-                this._updatePanelContent(selected.itemInfo.item, pane);
-
-                var legendLayers = arcgisUtils.getLegendLayers(selected);
-
-                if (legendLayers && legendLayers.length > 0) {
-                    var legend = new Legend({
-                        map: selected.map,
-                        layerInfos: arcgisUtils.getLegendLayers(selected)
-                    }, selected.itemInfo.item.legendId);
-                    legend.startup();
-                }
-                this.panels[selected.map.id] = pane.get("content");
-            }
         },
         setColor: function (value) {
             var colorValue = null;
@@ -231,12 +210,28 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
             query(".dojoxExpandoIcon").style("color", color.toString()); //hamburger menu
             query(".dojoxExpandoTitleNode").style("color", color.toString()); //title 
         },
-        _updatePanelContent: function (details, pane) {
+        _updatePanelContent: function (details, pane, selected) {
             registry.byId("expandoPane").set("title", details.title);
             //details is an object with a title and description
             var template = "<div class='panel_title'>${title}</div><div class='panel_desc'>${description}</div><div id=${legendId}></div>";
             var content = esriLang.substitute(details, template);
             pane.set("content", content);
+            if(selected){
+                var legDiv = registry.byId(details.legendId);
+                if(legDiv){
+                    legDiv.destroy();
+                }
+                var legendLayers = arcgisUtils.getLegendLayers(selected);
+
+                if (legendLayers && legendLayers.length > 0) {
+                    var legend = new Legend({
+                        map: selected.map,
+                        layerInfos: arcgisUtils.getLegendLayers(selected)
+                    }, selected.itemInfo.item.legendId);
+                    legend.startup();
+
+                }
+            }
         },
         _resizeMap: function () {
             if (this.mapInfo && this.mapInfo.length === 0) {
@@ -251,6 +246,7 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                 map.resize();
                 map.reposition();
             }
+            registry.byId("bc").resize();
         }
     });
 });
