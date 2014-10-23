@@ -29,8 +29,7 @@ define({
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
     "sharinghost": location.protocol + "//" + "www.arcgis.com",
     "title": "Compare Maps",
-    "description": "This is a sample app that compares multiple maps. You could put some cool info about the maps here",
-    "home": true,
+    "description": "This is a sample app that compares multiple maps.",
     "theme_color":"#575757",
     "theme_bg_color": "#fff",
     //If your applcation needs to edit feature layer fields set this value to true. When false the map will
