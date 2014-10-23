@@ -651,7 +651,9 @@ define([
       
       // Select Record
       _selectRecord : function(num, zoom) {
-         if(typeof(zoom)==='undefined') zoom = true;
+         if(typeof(zoom)==='undefined') {
+            zoom = true;
+         }
          this._unselectRecords();
          if (num != this.selectedNum) {
             this.selectedNum = num
@@ -671,11 +673,21 @@ define([
             var content = gra.getContent();
             registry.byId("recPane").set("content", content);
             this._switchView();
-            var pos = num*60 + 60;
-            dom.byId("bodyFeatures").scrollTop = pos;
+            // var pos = num*60 + 60;
+            // dom.byId("bodyFeatures").scrollTop = pos;
+            if (!zoom)
+               this._updatePosition();
+            //setTimeout(lang.hitch(this, this._updatePosition), 600);
          } else {
             this.selectedNum = null;
          }
+      },
+      
+      // Update Position
+      _updatePosition : function() {
+         var num = this.selectedNum;
+         var pos = num*60;
+         dom.byId("bodyFeatures").scrollTop = pos;
       },
       
       // Show Route
