@@ -22,19 +22,12 @@ define({
     "webmap": "18f5afcaed8d47d0a36526b850f14f5e",
     "webmaps": ["106d8ef38ae04a1eb120fa8645207a95","ba79af12ce584940a72eaabc711b6e88"],//,"4a675e9bc2994a7594ffeec7aaefd749"],
     "oauthappid": null, //"AFTKRmv16wj14N3z",
-    //Group templates must support a group url parameter. This will contain the id of the group.
-    "group": "",
     //Enter the url to the proxy if needed by the application. See the 'Using the proxy page' help topic for details
     //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
     "proxyurl": "",
-    //Example of a template specific property. If your template had several color schemes
-    //you could define the default here and setup configuration settings to allow users to choose a different
-    //color theme.
-    "theme": "blue",
     "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
     "sharinghost": location.protocol + "//" + "www.arcgis.com",
-    "units": null,
     "title": "Compare Maps",
     "description": "This is a sample app that compares multiple maps. You could put some cool info about the maps here",
     "home": true,
