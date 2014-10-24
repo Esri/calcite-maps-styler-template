@@ -1,36 +1,26 @@
 define([
     'dojo/_base/declare', 
-    'dojo/_base/array', 
-    'dojo/_base/lang', 
     'dojo/_base/Color', 
     'dojo/_base/fx',
     'dojox/gfx/fx',
     'esri/geometry/geodesicUtils',
-    'esri/geometry/Point', 
-    'esri/geometry/Polyline',
     'esri/graphic', 
-    'esri/layers/GraphicsLayer', 
     'esri/symbols/SimpleMarkerSymbol', 
     'esri/symbols/SimpleLineSymbol'
 ], function(
     declare, 
-    array, 
-    lang, 
     Color, 
     fx,
     gfxFx,
     geodesicUtils,
-    Point, 
-    Polyline,
     Graphic, 
-    GraphicsLayer, 
     SimpleMarkerSymbol, 
     SimpleLineSymbol
 ) {
    
    var trackingPt = declare('TrackingPt', [Graphic], {
 
-      constructor : function(options) {
+      constructor : function() {
          this.type = "trackingpoint";
          this.delay = 1000;
       },
@@ -69,7 +59,6 @@ define([
          var rgbEnd = rgb.slice();
          rgbEnd.push(0.8);
          var shp = this.getShape();
-         var me = this;
          if (shp) {
             var anim = new gfxFx.animateFill({
                delay : delay,
@@ -112,7 +101,6 @@ define([
          var rgbEnd = rgb.slice();
          rgbEnd.push(0);
          var shp = this.getShape();
-         var me = this;
          if (shp) {
             var anim = new gfxFx.animateFill({
                shape : shp,
