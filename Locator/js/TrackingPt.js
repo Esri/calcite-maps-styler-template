@@ -143,6 +143,7 @@ define([
          this.sizeIn();
          this.fadeIn();
       }
+      
    });
 
    return trackingPt;
