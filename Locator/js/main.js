@@ -28,17 +28,14 @@ define([
     "dojo/dom-attr",
     "dojo/dom-class",
     "dojo/dom-construct",
-    "dojo/dom-geometry",
     "dojo/dom-style",
     "dojo/on",
     "dojo/query",
-    "dojo/window",
     "dijit/layout/ContentPane",
     "dijit/registry",
     "application/TrackingPt",
     "esri/arcgis/utils",
     "esri/dijit/Directions",
-    "esri/dijit/HomeButton",
     "esri/dijit/Geocoder",
     "esri/dijit/LocateButton",
     "esri/dijit/Popup",
@@ -70,17 +67,14 @@ define([
     domAttr,
     domClass,
     domConstruct,
-    domGeometry,
     domStyle,
     on,
     query,
-    win,
     ContentPane,
     registry,
     TrackingPt,
     arcgisUtils,
     Directions,
-    HomeButton,
     Geocoder,
     LocateButton,
     Popup,
@@ -207,7 +201,7 @@ define([
       _createWebMap : function(itemInfo) {
          
          // popup
-         var popupSym = new SimpleMarkerSymbol("circle", 2, null, new dojo.Color([0, 0, 0, 0.1]));
+         var popupSym = new SimpleMarkerSymbol("circle", 2, null, new Color([0, 0, 0, 0.1]));
          var popup = new Popup({
             markerSymbol : popupSym,
             anchor : "top"
@@ -365,14 +359,15 @@ define([
       
       // setup template
       _setupTemplate : function() {
+         var infoTemplate;
          if (!this.opLayer) {
             var title = this.config.destination || this.config.title;
             var content = "<hr/>Name: ${Name}<br/><br/>Address: ${Address}<br/><br/>Latitude: ${Latitude}<br/><br/>Longitude: ${Longitude}";
             if (this.config && this.config.i18n)
-               contnet = "<hr/>" + this.config.i18n.location.name + ": ${Name}<br/><br/>" + this.config.i18n.location.address + ": ${Address}<br/><br/>" + this.config.i18n.location.latitude + ": ${Latitude}<br/><br/>" + this.config.i18n.location.longitude + ": ${Longitude}";
-            var infoTemplate = new InfoTemplate(title, content);
+               content = "<hr/>" + this.config.i18n.location.name + ": ${Name}<br/><br/>" + this.config.i18n.location.address + ": ${Address}<br/><br/>" + this.config.i18n.location.latitude + ": ${Latitude}<br/><br/>" + this.config.i18n.location.longitude + ": ${Longitude}";
+            infoTemplate = new InfoTemplate(title, content);
          } else {
-            var infoTemplate = this.opLayer.infoTemplate;
+            infoTemplate = this.opLayer.infoTemplate;
          }
          this.infoTemplate = infoTemplate;
          this.destLayer.setInfoTemplate(infoTemplate);
@@ -419,8 +414,6 @@ define([
          var rgb = Color.fromString(this.color).toRgb();
          var symL = new SimpleLineSymbol(SimpleLineSymbol.STYLE_NULL, new Color([0,0,0]), 0);
          var sym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 1, symL, new Color([0,0,0,0]));
-         var startSym = new PictureMarkerSymbol("images/start.png", 24, 24);
-         var endSym = new PictureMarkerSymbol("images/end.png", 24, 24);
          //var routeSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([rgb[0], rgb[1], rgb[2], 0.6]), 8);
          var routeSym = new CartographicLineSymbol(CartographicLineSymbol.STYLE_SOLID, new Color([rgb[0], rgb[1], rgb[2], 0.4]), 8, CartographicLineSymbol.CAP_SQUARE, CartographicLineSymbol.JOIN_MITER, 4);
          var segmentSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SHORTDOT, new Color([0,0,0,0.4]), 8); 
@@ -435,8 +428,8 @@ define([
               alphabet: false,
               canModifyStops: false,
               dragging: false,
-              fromSymbol: sym, //startSym,
-              toSymbol: sym, //endSym,
+              fromSymbol: sym, 
+              toSymbol: sym, 
               routeSymbol: routeSym,
               segmentSymbol: segmentSym
          };
@@ -459,7 +452,7 @@ define([
       // Configure UI
       _configureUI : function() {
          // top
-         if (this.config.title != "")
+         if (this.config.title !== "")
             dom.byId("panelTitle").innerHTML = this.config.title;
          // features
          on(dom.byId("btnScrollFeatures"), "click", lang.hitch(this, this._toggleScroll));
@@ -578,8 +571,8 @@ define([
             var dist = null;
             if (this.origin)
                dist = this._getDistance(pt);
-            gra.attributes["POINT_LOCATION"] = pt;
-            gra.attributes["DISTANCE"] = dist;
+            gra.attributes.POINT_LOCATION = pt;
+            gra.attributes.DISTANCE = dist;
             gra.setInfoTemplate(this.infoTemplate);
          }));
          if (this.origin)
@@ -597,7 +590,6 @@ define([
          for (var i=0; i<features.length; i++) {
             var num = i+1;
             var gra = features[i];
-            var attr = gra.attributes;
             // rec
             var rec = domConstruct.create("div", {
                id: "rec_"+i
@@ -715,7 +707,7 @@ define([
          if (registry.byId("recPane"))
             registry.byId("recPane").destroy();
          domConstruct.destroy("recDetails");
-         query(".recOpened").forEach(function(node, index, arr){
+         query(".recOpened").forEach(function(node){
             domClass.remove(node, "recOpened");
          });
       },
@@ -760,7 +752,6 @@ define([
          if (geom.type == "polyline") {
             var pathNum = Math.floor(geom.paths.length/2);
             var ptNum = Math.floor(geom.paths[pathNum].length/2);
-            var coords = geom.getPoint(pathNum, ptNum);
             return geom.getPoint(pathNum, ptNum);
          }
          return geom.getExtent().getCenter();
@@ -789,7 +780,7 @@ define([
       _zoomToDestination : function(gra, zoom) {
          var pt = gra.attributes.POINT_LOCATION;
          if (zoom) {
-            var c = pt
+            var c = pt;
             if (this.map.width > 570) {
                c = pt.offset(this.offset/2, 0);
             }
@@ -810,7 +801,7 @@ define([
          dom.byId("panelDestination").innerHTML = gra.getTitle();
          this._showPage(2);
          var def = this.dirWidget.addStops([this.origin.geometry, pt]);
-         def.then(lang.hitch(this, function(value){
+         def.then(lang.hitch(this, function(){
               this.dirWidget.getDirections();
           }));
       },
@@ -825,7 +816,7 @@ define([
          //dom.byId("panelOrigin").innerHTML = tDest;
          //dom.byId("panelDestination").innerHTML = tOrigin;
          var def = this.dirWidget.addStops(stops);
-         def.then(lang.hitch(this, function(value){
+         def.then(lang.hitch(this, function(){
               this.dirWidget.getDirections();
           }));
       },
