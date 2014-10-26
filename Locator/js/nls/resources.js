@@ -16,16 +16,24 @@
  */
 define({
     root: ({
-        map: {
-            error: "Unable to create map"
+        "map" : {
+            "error" : "Unable to create map"
         },
-        location: {
-           name: "Name",
-           current: "Current Location",
-           address: "Address",
-           latitude: "Latitude",
-           longitude: "Longitude"
+        "location": {
+           "name" : "Name",
+           "current" : "Current Location",
+           "address" : "Address",
+           "latitude" : "Latitude",
+           "longitude" : "Longitude"
+        },
+        "tooltips": {
+         "toggle" : "Show/Hide",
+         "reset" : "Reset",
+         "locate" : "Find my location",
+         "directions" : "Directions",
+         "close" : "Close",
+         "reverse": "Reverse"
         }
     }),
-    "fr": 0
+    "fr": 1
 });

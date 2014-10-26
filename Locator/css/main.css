@@ -341,10 +341,6 @@ hr {
 	display: block;
 }
 
-#panelDirections {
-	display: none;
-}
-
 .pageHeader {
 	position: relative;
 	width: 100%;
@@ -376,20 +372,13 @@ hr {
 	float: left;
 	width: 24px;
 	height: 24px;
-	margin-left: 10px;
+	margin: 3px;
 	opacity:0.5;
 	filter:alpha(opacity=50);
 	cursor: pointer;
 }
 
-.btnClose {
-	float: right;
-	margin-left: 0px;
-	margin-right: 0px;
-	background: url(../images/close.png)no-repeat;
-}
-
-.btnScroll  {
+.btnToggle  {
 	position: absolute;
 	left: 50%;
 	margin-left: -12px;
@@ -397,31 +386,34 @@ hr {
 	display: none;
 }
 
+.btnReset{
+	position: absolute;
+	top: 10px;
+	right: 7px;
+	background: url(../images/reset.png)no-repeat;
+}
+
+.btnClose {
+	position: absolute;
+	top: 10px;
+	right: 7px;
+	background: url(../images/close.png)no-repeat;
+	display: none;
+}
+
 .btnReverse {
-	float: right;
-	margin-left: 0px;
-	margin-right: 0px;
+	position: absolute;
+	bottom: 10px;
+	right: 7px;
 	background: url(../images/reverse.png)no-repeat;
-}
-
-.btnCar {
-	float: left;
-	width: 48px;
-	height: 24px;
-	margin-left: 10px;
-	background: url(../images/mode_car.png)no-repeat;
-	cursor: pointer;
-}
-
-.btnWalk {
-	background: url(../images/mode_walk.png)no-repeat !important;
+	display: none;
 }
 
 #panelTitle {
 	position: absolute;
 	left: 10px;
-	right: 50px;
-	top: 20px;
+	right: 40px;
+	top: 10px;
 	height: 30px;
 	line-height: 30px;
 	overflow: hidden;
@@ -435,8 +427,8 @@ hr {
 #panelSearchBox {
 	position: absolute;
 	left: 10px;
-	right: 10px;
-	top: 60px;
+	right: 7px;
+	top: 45px;
 	height: 30px;
 	color: #ffffff;
 	display: block;
@@ -463,32 +455,16 @@ hr {
 	height: 30px;
 }
 
-#panelOrigin {
-	position: absolute;
-	left: 10px;
-	right: 50px;
-	top: 20px;
-	height: 35px;
-	overflow: hidden;
-	text-overflow:ellipsis;
-	color: #ffffff;
-	font-size: 18px;
-	font-weight: 300;
-	text-align: left;
-	line-height: 30px;
-	border-bottom: 1px solid #ffffff;
-}
-
 #panelDestination {
 	position: absolute;
 	left: 10px;
-	right: 50px;
-	top: 20px;
-	height: 70px;
+	right: 40px;
+	top: 80px;
+	height: 30px;
 	overflow: hidden;
 	text-overflow:ellipsis;
 	color: #ffffff;
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: 300;
 	text-align: left;
 	line-height: 30px;
@@ -501,12 +477,20 @@ hr {
 	width: 100%;
 	display: block;
 	color: #000000;
-	font-size: 10px;
+	font-size: 12px;
 	text-align: left;
 	padding: 0px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	
+}
+
+#bodyFeatures {
+	display: block;
+}
+
+#bodyDirections {
+	display: none;
 }
 
 .pageResults {
@@ -529,21 +513,23 @@ hr {
 	overflow: hidden;
 	transition: 0.2s linear;
 	-webkit-transition: 0.2s linear;
-	cursor: pointer;
+	background: url(../images/arrow.png)no-repeat;
+	background-position: right top;
 }
 
 .recOpened {
 	height: 260px;
 	overflow-y: auto;
+	background: none;
+	background-position: right top;
 	background-color: #e6e6e6;
 }
 
 .recClick {
 	position: absolute;
 	left: 0px;
-	right: 60px;
-	height: 100%;
-	z-index: 100;
+	right: 0px;
+	height: 60px;
 	cursor: pointer;
 }
 
@@ -560,6 +546,7 @@ hr {
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
+	cursor: pointer;
 }
 
 .recInfo {
@@ -567,14 +554,15 @@ hr {
 	text-align: left;
 	left: 50px;
 	right: 60px;
+	padding-right: 20px;
 	top: 10px;
 	font-size: 13px;
 	height: 30px;
 	line-height: 15px;
 	display: block;
 	overflow: hidden;
-	/*white-space: nowrap;*/
 	text-overflow: ellipsis;
+	cursor: pointer;
 }
 
 .recDist {
@@ -583,13 +571,14 @@ hr {
 	left: 50px;
 	right: 60px;
 	top: 40px;
-	height: 20px;
-	line-height: 20px;
+	height: 15px;
+	line-height: 15px;
 	font-size: 11px;
 	display: block;
 	overflow: hidden;
 	color: #888888;
 	font-weight: 300;
+	cursor: pointer;
 }
 
 .recRoute {
@@ -600,6 +589,7 @@ hr {
 	height: 30px;
 	background: url(../images/route.png)no-repeat;
 	background-position: center center;
+	cursor: pointer;
 }
 
 .recDetails {
@@ -642,7 +632,7 @@ hr {
 		z-index: 0;
 	}
 	
-	.btnScroll {
+	.btnToggle {
 		display: block;
 	}
 	

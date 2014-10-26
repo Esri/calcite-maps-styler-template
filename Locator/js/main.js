@@ -113,6 +113,7 @@ define([
       selectedNum: null,
       trackingPt :  null,
       offset : 0,
+      page : 0,
 
 
       // Startup
@@ -183,9 +184,15 @@ define([
          if (this.config.styleBasemap == 1) {
             var style2 = document.createElement('style');
             style2.type = 'text/css';
-            style2.innerHTML = '.layerTile {filter: url(css/filters.svg#grayscale); filter: gray; -webkit-filter: grayscale(1); -moz-opacity: 0.7; -khtml-opacity: 0.7; opacity: 0.7; filter: alpha(opacity=70);';
+            style2.innerHTML = '.layerTile {filter: url(css/filters.svg#grayscale); filter: gray; -webkit-filter: grayscale(1); -moz-opacity: 0.7; -khtml-opacity: 0.7; opacity: 0.7; filter: alpha(opacity=70);}';
             document.getElementsByTagName('head')[0].appendChild(style2);
          }
+         // rec opened
+         var recColor = Color.blendColors(Color.fromString("#ffffff"), Color.fromString(this.color), 0.2);
+         var style3 = document.createElement('style');
+         style3.type = 'text/css';
+         style3.innerHTML = '.recOpened {background-color:' + recColor.toCss() + ';}';
+         document.getElementsByTagName('head')[0].appendChild(style3); 
       },
       
       // set protocol handler
@@ -302,11 +309,6 @@ define([
          }
       },
       
-      // locator complete
-      showResults : function(evt) {
-         console.log(evt);
-      },
-      
       // Process Operational Layers
       _processOperationalLayers : function() {
          var name = null;
@@ -317,11 +319,13 @@ define([
                if (layer.featureCollection) {
                   for (var i = 0; i < layer.featureCollection.layers.length; i++) {
                      if (layer.featureCollection.layers[i].id == name) {
+                        this.destLayer.id = layer.title;
                         this.opLayer = layer.featureCollection.layers[i].layerObject;
                         this.opFeatures = this.opLayer.graphics.slice(0);
                      }
                   }
                } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.id == name) {
+                  this.destLayer.id = layer.title;
                   this.opFeatureLayer = true;
                   this.opLayer = layer.layerObject;
                }
@@ -344,6 +348,7 @@ define([
          this.opLayers.reverse();
          if (this.opLayers.length > 0) {
             var layer = this.opLayers[0];
+            this.destLayer.id = layer.title;
             if (layer.featureCollection) {
                for (var l=0; l<layer.featureCollection.layers.length; l++) {
                   this.opFeatures  = layer.featureCollection.layers[l].layerObject.graphics.slice(0);
@@ -451,15 +456,32 @@ define([
       
       // Configure UI
       _configureUI : function() {
+         
          // top
-         if (this.config.title !== "")
+         if (this.config.title !== "") {
+            document.title = this.config.title;
             dom.byId("panelTitle").innerHTML = this.config.title;
+         }
+         
          // features
-         on(dom.byId("btnScrollFeatures"), "click", lang.hitch(this, this._toggleScroll));
-         // directions
-         on(dom.byId("btnScrollDirections"), "click", lang.hitch(this, this._toggleScroll));
-         on(dom.byId("btnCloseDirections"), "click", lang.hitch(this, this._showPage, 1));
+         // toggle
+         var btnToggle = dom.byId("btnToggle");
+         if (this.config && this.config.i18n) {
+            btnToggle.title = this.config.i18n.tooltips.toggle;
+         }
+         on(btnToggle, "click", lang.hitch(this, this._toggleScroll));
+         // close
+         on(dom.byId("btnClose"), "click", lang.hitch(this, this._showPage, 0));
+         // reset
+         var btnReset = dom.byId("btnReset");
+         if (this.config && this.config.i18n) {
+            btnReset.title = this.config.i18n.tooltips.reset;
+         }
+         on(btnReset, "click", lang.hitch(this, this._resetApp));
+         // reverse
          on(dom.byId("btnReverse"), "click", lang.hitch(this, this._reverseDirections));
+        
+         
       },
 
       // Update Theme
@@ -468,21 +490,34 @@ define([
          query(".esriPopup .titlePane").style("backgroundColor", this.color.toString());
       },
       
+      // Reset App
+      _resetApp : function() {
+         this._unselectRecords();
+         this._updateOrigin(null);
+         this._processDestinationFeatures();
+      },
+      
       // Show Page
       _showPage : function(num) {
+         this.page = num;
          switch (num) {
             case 0:
+               this._clearDirections();
+               domStyle.set("bodyFeatures", "display", "block");
+               domStyle.set("bodyDirections", "display", "none");
+               domStyle.set("btnClose", "display", "none");
+               domStyle.set("btnReset", "display", "block");
+               domStyle.set("panelDestination", "display", "none");
                break;
             case 1:
-               this._clearDirections();
-               domStyle.set("panelFeatures", "display", "block");
-               domStyle.set("panelDirections", "display", "none");
-               break;
-            case 2:
-               domStyle.set("panelFeatures", "display", "none");
-               domStyle.set("panelDirections", "display", "block");
+               domStyle.set("bodyFeatures", "display", "none");
+               domStyle.set("bodyDirections", "display", "block");
+               domStyle.set("btnClose", "display", "block");
+               domStyle.set("btnReset", "display", "none");
+               domStyle.set("panelDestination", "display", "block");
                break;   
          }
+         this._updateRouteTools();
       },
       
       
@@ -569,14 +604,12 @@ define([
             if (geom.type != "point") 
                pt = this._getPointForGeometry(geom);
             var dist = null;
-            if (this.origin)
-               dist = this._getDistance(pt);
+            dist = this._getDistance(pt);
             gra.attributes.POINT_LOCATION = pt;
             gra.attributes.DISTANCE = dist;
             gra.setInfoTemplate(this.infoTemplate);
          }));
-         if (this.origin)
-            this.opFeatures.sort(this._compareDistance);
+         this.opFeatures.sort(this._compareDistance);
          this._updateDestinations();
       },
       
@@ -602,19 +635,25 @@ define([
             domClass.add(recNum, 'recNum');
             domClass.add(recNum, 'bg');
             // info
+            var info = gra.getTitle();
+            if (info === "" && this.opLayer) {
+               info = this.destLayer.id;
+            }
             var recInfo = domConstruct.create("div", {
                id: "recInfo_"+i,
-               innerHTML: gra.getTitle()
+               innerHTML: info
             }, rec);
             domClass.add(recInfo, 'recInfo');
             // distance
-            var dist = "";
-            if (gra.attributes.DISTANCE)
-               dist =  "~ " + gra.attributes.DISTANCE + " " + this.config.distanceUnits.toUpperCase();
-            var recDist = domConstruct.create("div", {
-               innerHTML: dist
-            }, rec);
-            domClass.add(recDist, 'recDist');
+            if (this.origin) {
+               var dist = "";
+               if (gra.attributes.DISTANCE)
+                  dist =  "~ " + gra.attributes.DISTANCE + " " + this.config.distanceUnits.toUpperCase();
+               var recDist = domConstruct.create("div", {
+                  innerHTML: dist
+               }, rec);
+               domClass.add(recDist, 'recDist');
+            }
             // click
             var recClick = domConstruct.create("div", {
             }, rec);
@@ -625,7 +664,8 @@ define([
                var recRoute = domConstruct.create("div", {
                }, rec);
                domClass.add(recRoute, 'recRoute');
-               on(recRoute, "click", lang.hitch(this, this._showRoute, i));
+               recRoute.select = lang.hitch(this, this._selectRoute);
+               on(recRoute, "click", lang.partial(recRoute.select, i));
             }
          }
          dom.byId("bodyFeatures").scrollTop = 0;
@@ -643,11 +683,9 @@ define([
          var gra  = evt.graphic;
          var num = gra.id;
          num = num.replace("R_", "").replace("T_", "");
-         // var pos = num*60 + 60;
-         // if (num != this.selectedNum)
-            // dom.byId("bodyFeatures").scrollTop = pos;
          this._selectRecord(parseInt(num), false);
          event.stop(evt);
+         this._showPage(0);
          this._switchView();
       },
       
@@ -658,47 +696,57 @@ define([
          }
          this._unselectRecords();
          if (num != this.selectedNum) {
-            this.selectedNum = num;
-            var gra = this.opFeatures[num];
-            domClass.add("rec_"+num, "recOpened");
-            this._zoomToDestination(gra, zoom);
-            var rec = dom.byId("rec_"+num);
-            var recDetails = domConstruct.create("div", {
-               id: "recDetails"
-            }, rec);
-            domClass.add(recDetails, "recDetails");
-            var cp = new ContentPane({
-               id: "recPane"
-            });
-            cp.placeAt('recDetails', 'last');
-            cp.startup();
-            var content = gra.getContent();
-            registry.byId("recPane").set("content", content);
-            this._switchView();
-            // var pos = num*60 + 60;
-            // dom.byId("bodyFeatures").scrollTop = pos;
-            if (!zoom)
-               this._updatePosition();
-            //setTimeout(lang.hitch(this, this._updatePosition), 600);
+            this._highlightRecord(num, zoom);
          } else {
             this.selectedNum = null;
          }
       },
       
-      // Update Position
-      _updatePosition : function() {
-         var num = this.selectedNum;
-         var pos = num*60;
-         dom.byId("bodyFeatures").scrollTop = pos;
+      // Highlight Record
+      _highlightRecord : function(num, zoom) {
+         this.selectedNum = num;
+         var gra = this.opFeatures[num];
+         domClass.add("rec_"+num, "recOpened");
+         this._zoomToDestination(gra, zoom);
+         var rec = dom.byId("rec_"+num);
+         var recDetails = domConstruct.create("div", {
+            id: "recDetails"
+         }, rec);
+         domClass.add(recDetails, "recDetails");
+         var cp = new ContentPane({
+            id: "recPane"
+         });
+         cp.placeAt('recDetails', 'last');
+         cp.startup();
+         var content = gra.getContent();
+         registry.byId("recPane").set("content", content);
+         this._switchView();
+         if (!zoom) {
+            dom.byId("bodyFeatures").scrollTop = 0;
+            setTimeout(lang.hitch(this, this._updatePosition), 300);
+         }
+      },
+      
+      // Select Route
+      _selectRoute : function(num, evt) {
+         event.stop(evt);
+         this._showRoute(num);
       },
       
       // Show Route
       _showRoute : function(num) {
-         if (num != this.selectedNum) {
-            this._selectRecord(num, false);
-         }
+         this._unselectRecords();
+         this._highlightRecord(num, false);
          var gra = this.opFeatures[num];
          this._routeToDestination(gra);
+      },
+      
+      // Update Position
+      _updatePosition : function() {
+         dom.byId("bodyFeatures").scrollTop = 0;
+         var num = this.selectedNum;
+         var pos = num*60;
+         dom.byId("bodyFeatures").scrollTop = pos;
       },
       
       // Unselect Records
@@ -759,8 +807,11 @@ define([
       
       // Get distance
       _getDistance: function(loc) {
+         var pt = this.map.extent.getCenter();
+         if (this.origin)
+            pt = this.origin.geometry;
          var dist = 0;
-         dist = mathUtils.getLength(this.origin.geometry, loc) * 0.000621371;
+         dist = mathUtils.getLength(pt, loc) * 0.000621371;
          if (this.config.distanceUnits == "kilometers")
             dist = dist*1.60934;
          dist = Math.round(dist*10)/10;
@@ -799,11 +850,13 @@ define([
          this._clearDirections();
          var pt = gra.geometry;
          dom.byId("panelDestination").innerHTML = gra.getTitle();
-         this._showPage(2);
-         var def = this.dirWidget.addStops([this.origin.geometry, pt]);
-         def.then(lang.hitch(this, function(){
-              this.dirWidget.getDirections();
-          }));
+         this._showPage(1);
+         if (this.origin){
+            var def = this.dirWidget.addStops([this.origin.geometry, pt]);
+            def.then(lang.hitch(this, function(){
+                 this.dirWidget.getDirections();
+             }));
+         }
       },
       
       // Reverse Directions
@@ -823,7 +876,6 @@ define([
       
       // Clear Directions
       _clearDirections : function() {
-         //this.dirWidget.removeStops();
          this.dirWidget.reset();
       },
       
@@ -857,11 +909,24 @@ define([
          this.origin = gra;
          if (this.origin) {
             this.map.graphics.add(gra);
-            this._processDestinationFeatures();
+            if (this.page === 0 && !this.selectedNum)
+               this._processDestinationFeatures();
             if (this.opFeatures.length > 0) {
-               this._showRoute(0);
+               var num = 0;
+               if (this.selectedNum)
+                  num = this.selectedNum;
+               this._showRoute(num);
             }
-               
+         }
+         this._updateRouteTools();
+      },
+      
+      // Update Route Tools
+      _updateRouteTools: function() {
+         if (this.page == 1 && this.origin) {
+            domStyle.set("btnReverse", "display", "block");
+         } else {
+            domStyle.set("btnReverse", "display", "none");
          }
       },
       

@@ -138,8 +138,6 @@ define([
       },
 
       updateSymbol : function() {
-         //this.show();
-         console.log(this);
          this.sizeIn();
          this.fadeIn();
       }

@@ -15,14 +15,22 @@
  | limitations under the License.
  */
 define(( {
-   map : {
-      error : "Impossible de créer la carte"
+   "map" : {
+      "error" : "Impossible de créer la carte"
    },
-   location: {
-     name: "Nom",
-     current: "Emplacement Actuel",
-     address: "Adresse",
-     latitude: "Latitude",
-     longitude: "Longitude"
-  }
+   "location" : {
+     "name" : "Nom",
+     "current" : "Emplacement Actuel",
+     "address" : "Adresse",
+     "latitude" : "Latitude",
+     "longitude" : "Longitude"
+  },
+  "tooltips" :{
+         "toggle" : "Show/Hide",
+         "reset" : "Reset",
+         "locate" : "Find my location",
+         "directions" : "Directions",
+         "close" : "Close",
+         "reverse": "Reverse"
+        }
 }));
