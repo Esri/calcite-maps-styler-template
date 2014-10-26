@@ -23,6 +23,8 @@ Display Basemap as Grayscale: Display the basemap as grayscale, so that data on 
 
 Destination Layer: Choose this option to include demographic information about the selected location.
 
+Route Utility Item: URL to route utility item (with stored credentials).
+
 #Optional
 
 The template can be configured using the following optional settings if no destination layer is specified:
