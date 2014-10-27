@@ -179,4 +179,7 @@ a {
   color : #eee !important;
 }
 
-
+.elevationsProfileMeasurePane .dijitDialogCloseIcon {
+  z-index : 99;
+}
+ 
