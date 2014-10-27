@@ -736,7 +736,7 @@ define([
       // Show Route
       _showRoute : function(num) {
          this._unselectRecords();
-         this._highlightRecord(num, false);
+         this._highlightRecord(num, true);
          var gra = this.opFeatures[num];
          this._routeToDestination(gra);
       },
