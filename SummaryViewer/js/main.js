@@ -15,8 +15,6 @@ define([
         "esri/dijit/BasemapGallery",
         "esri/graphic",
         "esri/graphicsUtils",
-        "esri/IdentityManager", 
-        "esri/layers/FeatureLayer", 
         "esri/tasks/query",
         "esri/tasks/StatisticDefinition",
         "application/ClusterLayer",
@@ -38,8 +36,6 @@ define([
         BasemapGallery,
         Graphic,
         graphicsUtils,
-        IdentityManager, 
-        FeatureLayer,
         Query,
         StatisticDefinition,
         ClusterLayer,
@@ -98,13 +94,26 @@ define([
 
       // load UI
       loadUI : function() {
+         var tip = "Close";
+         if (this.config && this.config.i18n) {
+            tip = this.config.i18n.tooltips.close;
+         }
          var msgClose = dom.byId("msgClose");
+         msgClose.alt = tip;
          on(msgClose, "click", this.closeMessage);
          query(".bg").style("backgroundColor", this.config.color);
+         
          if (this.config.logo)
             dom.byId("logo").src = this.config.logo;
          dom.byId("panelMain").innerHTML = this.config.title;
 
+         tip = "Switch base map";
+         if (this.config && this.config.i18n) {
+            tip = this.config.i18n.tooltips.switchbasemap;
+         }
+         dom.byId("basemap").alt = tip;
+         dom.byId("basemap").title = tip;
+         
          var basemapTitle = dom.byId("basemapTitle");
          on(basemapTitle, "click", function() {
             domClass.toggle("panelBasemaps", "panelBasemapsOn");
@@ -224,7 +233,7 @@ define([
       processOperationalLayers : function() {
          var opLayerName = this.config.summaryLayer.id;
          var me = this;
-         if (opLayerName != "") {
+         if (opLayerName !== "") {
             array.forEach(this.opLayers, function(layer) {
                if (layer.featureCollection) {
                   for (var i = 0; i < layer.featureCollection.layers.length; i++) {
@@ -317,7 +326,7 @@ define([
          this.loadPages();
 
          if (this.opLayer.geometryType == "esriGeometryPoint") {
-            if (this.config.cluster == true) {
+            if (this.config.cluster === true) {
                this.cluster = true;
                this.clusterLayer.setVisibility(true);
                this.opLayer.setOpacity(0.0001);
@@ -325,7 +334,7 @@ define([
             this.opLayer.setVisibility(true);
          }
 
-         if (this.fields.length == 0) {
+         if (this.fields.length === 0) {
             this.showMessage("No Numeric Attributes in Operational Layer");
          } else {
             this.closeMessage();
@@ -607,7 +616,7 @@ define([
             this.opLayer.clear();
             for (var i = 0; i < graphics.length; i++) {
                var g = graphics[i];
-               if ((g.attributes[this.config.filterField] == value) || (value == "")){
+               if ((g.attributes[this.config.filterField] == value) || (value === "")){
                   var newg = new Graphic(g.geometry, g.symbol, g.attributes);
                   this.opLayer.add(newg);
                } 
@@ -623,7 +632,7 @@ define([
             var expr = this.config.filterField + " = " + value;
             if (this.filterString)
                expr = this.config.filterField + " = '" + value + "'";
-            if (value == "")
+            if (value === "")
                expr = null;
             this.opLayer.setDefinitionExpression(expr);
             if (expr) {
@@ -671,8 +680,8 @@ define([
             title = count + " Feature";
          var sumData = this.summarizeAttributes(data);
          var info = "";
-         for ( f = 0; f < this.fieldCount; f++) {
-            if (f == 0 && this.config.hideCount) {
+         for ( var f = 0; f < this.fieldCount; f++) {
+            if (f === 0 && this.config.hideCount) {
                //skip
             } else {
                info += this.aliases[f] + ": " + sumData[f] + "<br/><br/>";
@@ -733,7 +742,7 @@ define([
             for ( f = 0; f < this.minFields.length; f++) {
                var fld = this.minFields[f].replace(/^\s+|\s+$/g, '');
                value = gra.attributes[fld];
-               if (i == 0) {
+               if (i === 0) {
                   minArray[f] = value;
                } else {
                   if (value < minArray[f])
@@ -752,7 +761,7 @@ define([
             for ( f = 0; f < this.maxFields.length; f++) {
                var fld = this.maxFields[f].replace(/^\s+|\s+$/g, '');
                value = gra.attributes[fld];
-               if (i == 0) {
+               if (i === 0) {
                   maxArray[f] = value;
                } else {
                   if (value > maxArray[f])
@@ -801,7 +810,7 @@ define([
          // num = Math.floor(value*10/ 1000000000)/10;
          // units = "BILLIONS";
          // }
-         if (value >= 10, 000, 000, 000, 000) {
+         if (value >= 10000000000000) {
             num = Math.floor(value * 10 / 1000000000000) / 10;
             units = "TRILLIONS";
          }

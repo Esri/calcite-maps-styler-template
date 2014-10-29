@@ -11,8 +11,8 @@
 	    <!-- End Mobile -->
 		<!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
 
-        <link rel="stylesheet"  href="//js.arcgis.com/3.11/dijit/themes/claro/claro.css">
-        <link rel="stylesheet"  href="//js.arcgis.com/3.11/esri/css/esri.css">
+        <link rel="stylesheet"  href="//jsdev.arcgis.com/3.12/dijit/themes/claro/claro.css">
+        <link rel="stylesheet"  href="//jsdev.arcgis.com/3.12/esri/css/esri.css">
 
 		<!--Load any application specific styles-->
 		<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -27,7 +27,7 @@
 
 		<!-- Panel Title -->
 		<div class="panelTitle  bg rounded shadow">
-			<div id="panelLogo"><img id="logo" src="images/logo.png" style="height:100%" />
+			<div id="panelLogo"><img id="logo" src="images/logo.png" style="height:100%" alt="Logo" />
 			</div>
 			<div id="panelMain">
 			</div>
@@ -78,12 +78,12 @@
 		<!-- Panel Message -->
 		<div id="panelMessage">
 			<span id="msgText"></span>
-			<img id="msgClose" src="images/close.png" />
+			<img id="msgClose" src="images/close.png" alt="Close" />
 		</div>
 		
 		<!-- Panel Basemaps -->
 		<div id="panelBasemaps" class="panelBasemaps bg rounded shadow" >
-			<div id="basemapTitle"><img src="images/basemaps.png" title="Switch Base Map"/></div>
+			<div id="basemapTitle"><img id="basemap" src="images/basemaps.png" title="Switch base map" alt="Switch base map"/></div>
 			<div id="basemapContent">
 				<div id="basemapGallery" ></div>
 			</div>
@@ -108,7 +108,7 @@
                 }]
             };
 		</script>
-		<script type="text/javascript" src="//js.arcgis.com/3.11/"></script>
+		<script type="text/javascript" src="//jsdev.arcgis.com/3.12/"></script>
 		<script type="text/javascript">
             require(["dojo/on", "application/main", "application/template", "dojo/domReady!"], function(on, Main, Template) {
                 //create the template. This will take care of all the logic required for template applications
