@@ -59,5 +59,6 @@ define({root:
 "sv":1,
 "tr":1,
 "th":1,
+"vi":1,
 "zh-cn":1
 });
