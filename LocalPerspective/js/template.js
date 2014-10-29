@@ -1,4 +1,4 @@
-﻿/*global define,document,location,require */
+/*global define,document,location,require */
 /*jslint sloppy:true,nomen:true,plusplus:true */
 /*
  | Copyright 2014 Esri
@@ -15,55 +15,19 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define([
-    "dojo/Evented",
-    "dojo/_base/declare",
-    "dojo/_base/kernel",
-    "dojo/_base/array",
-    "dojo/_base/lang",
-    "dojo/dom-class",
-    "dojo/Deferred",
-    "dojo/promise/all",
-    "esri/arcgis/utils",
-    "esri/urlUtils",
-    "esri/request",
-    "esri/config",
-    "esri/lang",
-    "esri/IdentityManager",
-    "esri/tasks/GeometryService",
-    "config/defaults",
-    "application/OAuthHelper"
-], function (
-    Evented,
-    declare,
-    kernel,
-    array,
-    lang,
-    domClass,
-    Deferred,
-    all,
-    arcgisUtils,
-    urlUtils,
-    esriRequest,
-    esriConfig,
-    esriLang,
-    IdentityManager,
-    GeometryService,
-    defaults,
-    OAuthHelper
-) {
+define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/array", "dojo/_base/lang", "dojo/dom-class", "dojo/Deferred", "dojo/promise/all", "esri/arcgis/utils", "esri/urlUtils", "esri/request", "esri/config", "esri/lang", "esri/IdentityManager", "esri/arcgis/Portal", "esri/arcgis/OAuthInfo", "esri/tasks/GeometryService", "config/defaults", "config/commonConfig"], function (
+Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, urlUtils, esriRequest, esriConfig, esriLang, IdentityManager, Portal, ArcGISOAuthInfo, GeometryService, defaults, commonConfig) {
     return declare([Evented], {
         config: {},
         orgConfig: {},
         appConfig: {},
         urlConfig: {},
         customUrlConfig: {},
-        commonConfig: {},
         constructor: function () {
             // config will contain application and user defined info for the application such as i18n strings,
             // the web map id and application id, any url parameters and any application specific configuration
             // information.
-            this.config = defaults;
+            this.config = declare.safeMixin(defaults, commonConfig);
         },
         startup: function () {
             var deferred = this._init();
@@ -89,7 +53,7 @@ define([
             // the application configuration has been applied so that the url parameters overwrite any
             // configured settings. It's up to the application developer to update the application to take
             // advantage of these parameters.
-            paramItems = ["webmap", "appid", "group", "oauthappid"];
+            paramItems = ["webmap", "appid", "group", "oauthappid", "color", "extent"];
             this.urlConfig = this._createUrlParamsObject(paramItems);
             // config defaults <- standard url params
             // we need the webmap, appid, group and oauthappid to query for the data
@@ -106,7 +70,6 @@ define([
                 i18n: this._getLocalization(),
                 // get application data
                 app: this._queryApplicationConfiguration()
-                
             }).then(lang.hitch(this, function () {
                 // then execute these async
                 all({
@@ -124,31 +87,16 @@ define([
                     if (this.config.helperServices && this.config.helperServices.geometry && this.config.helperServices.geometry.url) {
                         esriConfig.defaults.geometryService = new GeometryService(this.config.helperServices.geometry.url);
                     }
-                    // setup OAuth if oauth appid exists_initializeApplication
-                    if (this.config.oauthappid) {
-                        this._setupOAuth(this.config.oauthappid, this.config.sharinghost);
-                    }
+
                     deferred.resolve(this.config);
                 }), deferred.reject);
             }), deferred.reject);
             // return promise
             return deferred.promise;
         },
-        _getCommonConfig: function () {
-            var deferred;
-            deferred = new Deferred();
-            if (this.config.commonConfig) {
-                require(["arcgis_templates/commonConfig"], lang.hitch(this, function (response) {
-                    this.commonConfig = response;
-                    deferred.resolve(true);
-                }));
-            } else {
-                deferred.resolve(true);
-            }
-            return deferred.promise;
-        },
         _createUrlParamsObject: function (items) {
-            var urlObject, obj = {}, i;
+            var urlObject, obj = {},
+                i;
 
             // retrieve url parameters. Templates all use url parameters to determine which arcgis.com
             // resource to work with.
@@ -185,12 +133,6 @@ define([
                 instance = location.pathname.substr(0, appLocation); //get the portal instance name
                 this.config.sharinghost = location.protocol + "//" + location.host + instance;
                 this.config.proxyurl = location.protocol + "//" + location.host + instance + "/sharing/proxy";
-            } else {
-                // setup OAuth if oauth appid exists. If we don't call it here before querying for appid
-                // the identity manager dialog will appear if the appid isn't publicly shared.
-                if (this.config.oauthappid) {
-                    this._setupOAuth(this.config.oauthappid, this.config.sharinghost);
-                }
             }
             arcgisUtils.arcgisUrl = this.config.sharinghost + "/sharing/content/items";
             // Define the proxy url for the app
@@ -201,23 +143,28 @@ define([
         },
         _checkSignIn: function () {
             var deferred, signedIn;
-
             deferred = new Deferred();
+
+
+            //If there's an oauth appid specified register it
+            if (this.config.oauthappid) {
+                var oAuthInfo = new ArcGISOAuthInfo({
+                    appId: this.config.oauthappid,
+                    popup: true
+                });
+                IdentityManager.registerOAuthInfos([oAuthInfo]);
+            }
+
+
             // check sign-in status
             signedIn = IdentityManager.checkSignInStatus(this.config.sharinghost + "/sharing");
             // resolve regardless of signed in or not.
             signedIn.promise.always(function () {
-                deferred.resolve(true);
+                deferred.resolve();
             });
             return deferred.promise;
         },
-        _setupOAuth: function (id, portal) {
-            OAuthHelper.init({
-                appId: id,
-                portal: portal,
-                expiration: (14 * 24 * 60) //2 weeks (in minutes)
-            });
-        },
+
         _getLocalization: function () {
             var deferred, dirNode, classes, rtlClasses;
 
@@ -271,13 +218,9 @@ define([
                     if (this.config.appid && this.config.application_extent.length > 0 && itemInfo.item.extent) {
                         itemInfo.item.extent = [
                             [
-                                parseFloat(this.config.application_extent[0][0]),
-                                parseFloat(this.config.application_extent[0][1])
-                            ],
+                            parseFloat(this.config.application_extent[0][0]), parseFloat(this.config.application_extent[0][1])],
                             [
-                                parseFloat(this.config.application_extent[1][0]),
-                                parseFloat(this.config.application_extent[1][1])
-                            ]
+                            parseFloat(this.config.application_extent[1][0]), parseFloat(this.config.application_extent[1][1])]
                         ];
                     }
                     // Set the itemInfo config option. This can be used when calling createMap instead of the webmap or group id
@@ -357,6 +300,22 @@ define([
                         // use feet/miles only for the US and if nothing is set for a user
                         this.orgConfig.units = "english";
                     }
+
+                    //Get the basemap group for the organization
+                    var q = this._parseQuery(response.basemapGalleryGroupQuery);
+                    this.orgConfig.basemapgroup = {
+                        id: null,
+                        title: null,
+                        owner: null
+                    };
+                    if (q.id) {
+                        this.orgConfig.basemapgroup.id = q.id;
+                    } else if (q.title && q.owner) {
+                        this.orgConfig.basemapgroup.title = q.title;
+                        this.orgConfig.basemapgroup.owner = q.owner;
+                    }
+
+
                     // Get the helper services (routing, print, locator etc)
                     this.orgConfig.helperServices = response.helperServices;
                     // are any custom roles defined in the organization?
@@ -386,6 +345,22 @@ define([
             // (center, basemap, theme) are only here as examples and can be removed if you don't plan on
             // supporting additional url parameters in your application.
             this.customUrlConfig = this._createUrlParamsObject(this.config.urlItems);
+
+        },
+        _parseQuery: function (queryString) {
+
+            var regex = /(AND|OR)?\W*([a-z]+):/ig,
+                fields = {},
+                fieldName, fieldIndex, result = regex.exec(queryString);
+            while (result) {
+                fieldName = result && result[2];
+                fieldIndex = result ? (result.index + result[0].length) : -1;
+
+                result = regex.exec(queryString);
+
+                fields[fieldName] = queryString.substring(fieldIndex, result ? result.index : queryString.length).replace(/^\s+|\s+$/g, "").replace(/\"/g, ""); //remove extra quotes in title
+            }
+            return fields;
         }
     });
 });

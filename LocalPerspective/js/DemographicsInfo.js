@@ -1,25 +1,17 @@
 define([
         'dojo/_base/declare',
-        'dojo/_base/array',
         'dojo/_base/lang',
-        'dojo/_base/Color',
-        'dojo/dom', 
         'dojo/dom-class',
         'dojo/dom-construct',
-        'dojo/dom-style', 
         'dojo/number',
         'esri/tasks/query',
         'esri/tasks/QueryTask',
         'esri/tasks/StatisticDefinition'
 	],function(
         declare, 
-        array, 
         lang, 
-        Color,
-        dom, 
         domClass, 
         domConstruct, 
-        domStyle, 
         number,
         Query,
         QueryTask,
@@ -48,7 +40,8 @@ define([
          this.container.innerHTML = "<br/><br/><img src='images/ajax-loader.gif'/>";
          this.pageObj = pageObj;
          
-         var queryTask = new QueryTask(this.config.demographicsURL);
+         var url = this.config.demographicsURL + "?ts=" + new Date().getTime();
+         var queryTask = new QueryTask(url);
          var query = new Query();
          var outStats = [];
          for (var i=0; i<this.fields.length; i++) {
@@ -64,16 +57,16 @@ define([
          query.returnGeometry = false;
          query.geometry = pageObj.buffer;
          query.outStatistics = outStats;
-         var me = this;
-         queryTask.execute(query, lang.hitch(me, me.resultsHandler), lang.hitch(me, me.errorHandler));
+         queryTask.execute(query, lang.hitch(this, this._resultsHandler), lang.hitch(this, this._errorHandler));
        },
         	
     		    
       // results handler
-      resultsHandler: function(results) {
+      _resultsHandler: function(results) {
          this.container.innerHTML = "";
          
          var content = domConstruct.create("div", {
+                 //class: "resultsContent"
          }, this.container);
          domClass.add(content, 'resutsContent');
              
@@ -83,6 +76,7 @@ define([
                var fld = this.fields[i];
                var alias = this.aliases[i];
                var div = domConstruct.create("div", {
+                 //class: "recDemographics",
                  innerHTML: alias + "<br/><span class='num'>" + number.format(feature.attributes[fld]) + "</span>"
                }, content);
                domClass.add(div, 'recDemographics');
@@ -92,9 +86,9 @@ define([
       },
     
       // error handler
-      errorHandler: function(error) {
+      _errorHandler: function(error) {
          this.container.innerHTML = "";
-         var div = domConstruct.create("div", {
+         domConstruct.create("div", {
              innerHTML: error.message
          }, this.container);
       }

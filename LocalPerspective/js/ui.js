@@ -1,5 +1,20 @@
-/*global define,document,location,require */
-/*jslint sloppy:true,nomen:true,plusplus:true */
+/*global define,document */
+/*jslint sloppy:true,nomen:true */
+/*
+ | Copyright 2014 Esri
+ |
+ | Licensed under the Apache License, Version 2.0 (the "License");
+ | you may not use this file except in compliance with the License.
+ | You may obtain a copy of the License at
+ |
+ |    http://www.apache.org/licenses/LICENSE-2.0
+ |
+ | Unless required by applicable law or agreed to in writing, software
+ | distributed under the License is distributed on an "AS IS" BASIS,
+ | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ | See the License for the specific language governing permissions and
+ | limitations under the License.
+ */
 define([
     "dojo/Evented",
     "dojo/_base/array",
@@ -17,12 +32,12 @@ define([
     "dojo/fx",
     "dojo/on",
     "dojo/query",
-    "dojo/window",
     "dojo/Deferred",
     "dijit/form/HorizontalSlider",
     "dijit/registry",
     "esri/dijit/Directions",
     "esri/graphic",
+    "esri/layers/GraphicsLayer",
     "esri/layers/WebTiledLayer",
     "esri/layers/WMSLayer",
     "esri/symbols/Font",
@@ -54,12 +69,12 @@ define([
     coreFx,
     on,
     query,
-    win,
     Deferred,
     HorizontalSlider,
     registry,
     Directions,
     Graphic,
+    GraphicsLayer,
     WebTiledLayer,
     WMSLayer,
     Font,
@@ -78,6 +93,7 @@ define([
    
       map : null,
       lyrWeather : null,
+      lyrHighlight : null,
       scrollTimer : null,
       snap : true,
       config : {},
@@ -113,7 +129,7 @@ define([
       // init
       _init : function() {
          //Don't need deferred now setting it up just in case
-         var deferred, paramItems;
+         var deferred;
 
          deferred = new Deferred();
          
@@ -127,20 +143,20 @@ define([
          var gl = this.map.graphics;
          on(gl, 'click', lang.hitch(this, this._graphicClickHandler));
          
-         pPages = dom.byId("panelPages");
-         domConstruct.empty(pPages);
+         this.pPages = dom.byId("panelPages");
+         domConstruct.empty(this.pPages);
          
          // build page list
          this._buildPageList();
          
          // create pages
          for (var i=0; i<this.pages.length; i++) {
-            this.createPage(this.pages[i]);
+            this._createPage(this.pages[i]);
          }
          
          // create directions page
          if (this.config.showDirections)
-            this.createDirectionsPage();
+            this._createDirectionsPage();
          
          deferred.resolve();
 
@@ -165,16 +181,21 @@ define([
          pages.push({id: num, type: "blank", color: this._getPageColor(num), buffer:null, proximityFeatures: null, update:true});
          
          // layers in web map
-         this.proximityInfo = new ProximityInfo(this.config);
-         this.proximityInfo.map = this.map;
-         this.proximityInfo.on('updated', lang.hitch(this, this._updateProximityFeatures));
-         this.proximityInfo.on('route', lang.hitch(this, this._routeToLocation));
+         // this.proximityInfo = new ProximityInfo(this.config);
+         // this.proximityInfo.map = this.map;
+         // this.proximityInfo.on('updated', lang.hitch(this, this._updateProximityFeatures));
+         // this.proximityInfo.on('route', lang.hitch(this, this._routeToLocation));
          this.config.opLayers.reverse();
          var me = this;
-         array.forEach(this.config.opLayers, function(layer) {
+         array.forEach(this.config.opLayers, lang.hitch(this, function(layer) {
             var lyrId;
             var lyrName;
             var lyr;
+            var proxInfo = new ProximityInfo(this.config);
+            proxInfo.map = this.map;
+            proxInfo.on('updated', lang.hitch(this, this._updateProximityFeatures));
+            proxInfo.on('route', lang.hitch(this, this._routeToLocation));
+            proxInfo.on('highlight', lang.hitch(this, this._highlightFeature));
             if (layer.featureCollection) {
                for (var i=0; i<layer.featureCollection.layers.length; i++) {
                   lyrId = layer.featureCollection.layers[i].id;
@@ -182,7 +203,7 @@ define([
                   lyr = layer.featureCollection.layers[i].layerObject;
                   lyr.setVisibility(false);
                   num +=1;
-                  pages .push({id:num, label: lyrName, type:"proximity", color: me._getPageColor(num), layer: lyr, buffer:null, proximityFeatures: null, update:true, layerType: "Feature Collection"});
+                  pages .push({id:num, label: lyrName, type:"proximity", color: me._getPageColor(num), layer: lyr, buffer:null, proximityFeatures: null, update:true, layerType: "Feature Collection", proximityInfo: proxInfo});
                }
             } else if (layer.layerObject && layer.layerObject.type == "Feature Layer") {
                lyrId = layer.id;
@@ -190,9 +211,9 @@ define([
                lyr = layer.layerObject;
                lyr.setVisibility(false);
                num +=1;
-               pages .push({id:num, label: lyrName, type:"proximity", color: me._getPageColor(num), layer: lyr, buffer:null, proximityFeatures: null, update:true, layerType: "Feature Layer"});
+               pages .push({id:num, label: lyrName, type:"proximity", color: me._getPageColor(num), layer: lyr, buffer:null, proximityFeatures: null, update:true, layerType: "Feature Layer", proximityInfo: proxInfo});
             }
-         });
+         }));
          
          // demographics
          if (this.config.showDemographics) {
@@ -208,7 +229,7 @@ define([
             this.lifestyleInfo = new LifestyleInfo(this.config);
          }
          
-         //weather
+         // weather
          if (this.config.showWeather) {
             num +=1;
             pages.push({id:num, label: this.config.weatherLabel, type:"weather", color: this._getPageColor(num), buffer:null, proximityFeatures: null, update:true});
@@ -231,12 +252,18 @@ define([
             this.weatherInfo = new WeatherInfo(this.config);
          }
          
+         // highlight
+         this.lyrHighlight = new GraphicsLayer();
+         this.map.addLayer(this.lyrHighlight);
+         
          this.pages = pages;   
       },
       
       // create page
-      createPage : function(options) {
+      _createPage : function(options) {
 
+         var page;
+         var tip = "";
          var id = options.id;
          var type = options.type;
          var label = options.label;
@@ -245,25 +272,31 @@ define([
          
          if (type == "blank") {
             
-            var page = domConstruct.create('div', {
+            page = domConstruct.create('div', {
                id : 'page_' + id
-            }, pPages);
+            }, this.pPages);
             domClass.add(page, 'pageblank');
             
             // page menu
+            tip = "Menu";
+            if (this.config && this.config.i18n) {
+               tip = this.config.i18n.tooltips.menu;
+            }
             var pageMenu = domConstruct.create('div', {
                id : 'pageMenu',
-               innerHTML : '<img src="images/menu.png" />'
+               title : tip,
+               innerHTML : '<img src="images/menu.png" alt="Menu" />',
+               style : 'background-color:'+ options.color
             }, page);
-            domClass.add(pageMenu, 'pageMenu bg rounded shadow');
+            domClass.add(pageMenu, 'pageMenu rounded shadow');
             on(pageMenu, 'click', lang.hitch(this, this._showCurrentPage));
             
          } else {
             
             // page
-            var page = domConstruct.create('div', {
+            page = domConstruct.create('div', {
                id : 'page_' + id
-            }, pPages);
+            }, this.pPages);
             domClass.add(page, 'page');
          
             // page content
@@ -326,20 +359,35 @@ define([
             }
             
             // page close
+            tip = "Close";
+            if (this.config && this.config.i18n) {
+               tip = this.config.i18n.tooltips.close;
+            }
             var pageClose = domConstruct.create('div', {
+               title: tip
             }, pageHeader);
             on(pageClose, 'click', lang.hitch(this, this._closePage));
             domClass.add(pageClose, 'pageClose');
             
             // page up
+            tip = "Previous";
+            if (this.config && this.config.i18n) {
+               tip = this.config.i18n.tooltips.previous;
+            }
             var pageUp = domConstruct.create('div', {
+               title: tip
             }, pageHeader);
             on(pageUp, 'click', lang.hitch(this, this._showPreviousPage, id));
             domClass.add(pageUp, 'pageUp');
             
             // page down
             if (id < this.pages.length-1) {
+               tip = "Next";
+               if (this.config && this.config.i18n) {
+                  tip = this.config.i18n.tooltips.next;
+               }
                var pageDown = domConstruct.create('div', {
+                  title: tip
                }, pageHeader);
                domClass.add(pageDown, 'pageDown');
                on(pageDown, 'click', lang.hitch(this, this._showNextPage, id));
@@ -362,8 +410,9 @@ define([
       },
       
        // create directions page
-      createDirectionsPage : function() {
+      _createDirectionsPage : function() {
          
+         var tip = "";
          var container = dom.byId("panelDirections");
          // page
          var page = domConstruct.create('div', {
@@ -376,10 +425,10 @@ define([
          domClass.add(pageContent, 'pageContent rounded shadow');
 
          // page header
-         var color = this._getPageColor(this.pages.length+1);
+         //var color = this._getPageColor(this.pages.length+1);
          var pageHeader = domConstruct.create('div', {
-            id : 'pageHeaderDir',
-            style : 'background-color:#ffffff'
+            id : 'pageHeaderDir'
+            //style : 'background-color:#ffffff'
          }, pageContent);
          domClass.add(pageHeader, 'pageHeader roundedTop');
          
@@ -396,13 +445,23 @@ define([
          domClass.add(pageCounter, 'pageCounter');
          
          // reverse directions
+         tip = "Reverse";
+         if (this.config && this.config.i18n) {
+            tip = this.config.i18n.tooltips.reverse;
+         }
          var pageReverseDir = domConstruct.create('div', {
+            title: tip
          }, pageHeader);
          domClass.add(pageReverseDir, 'pageReverseDir');
          on(pageReverseDir, 'click', lang.hitch(this, this._reverseDirections));
          
          // page close
+         tip = "Close";
+         if (this.config && this.config.i18n) {
+            tip = this.config.i18n.tooltips.close;
+         }
          var pageClose = domConstruct.create('div', {
+            title: tip
          }, pageHeader);
          domClass.add(pageClose, 'pageClose');
          on(pageClose, 'click', lang.hitch(this, this._toggleDirections));
@@ -428,6 +487,8 @@ define([
          };
          if (this.config.helperServices.routeTask)
             options.routeTaskURL = this.config.helperServices.routeTask.url;
+         if (this.config.routeUtility)
+            options.routeTaskUrl = this.config.routeUtility;
          this.dirWidget = new Directions(options, "pageDir");
          this.dirWidget.startup();
          
@@ -489,16 +550,18 @@ define([
       },
       
        // window scrolled
-      _windowScrolled : function(evt) {
+      _windowScrolled : function() {
          if (this.scrollTimer)
             clearTimeout(this.scrollTimer);
-         if ((this.snap == true) && (this.dirMode == false)) {
+         if ((this.snap === true) && (this.dirMode === false)) {
             this.scrollTimer = setTimeout(lang.hitch(this, this._snapScroll), 300);
          }
       },
       
       // reset snap
       _resetSnap : function() {
+         if (this.scrollTimer)
+            clearTimeout(this.scrollTimer);
          this.snap = true;
       },
       
@@ -519,18 +582,18 @@ define([
             if (num < 0)
                num = 0;
          }
-         console.log("scroll", numActual, num);
          var endPos = num*box.h;
          this._changeColor(this.curPage, num);
          this.curPage = num;
          this._updatePage();
-         //this.snap = false;
+         //console.log("snapping", numActual, num, this.snap);
          if (num != numActual)
             this._animateScroll(startPos, endPos);
       },
       
       // animateScroll
       _animateScroll : function(start, end) {
+         this.snap = false;
          var me = this;
          var anim = new fx.Animation({
               duration: 500,
@@ -561,7 +624,7 @@ define([
             }
          }
          if (pt) {
-            if (this.curPage == 0) {
+            if (this.curPage === 0) {
                this._showPage(1);
                // change color
                this._changeColor(this.curPage, 1);
@@ -597,9 +660,10 @@ define([
                } else{
                   this._performAnalysis(pageObj);
                }
-               
             } else {
                this._renderResults(pageObj);
+               if (pageObj.type == "proximity")
+                  pageObj.proximityInfo.updateSelection();
             }
          }
       },
@@ -688,7 +752,7 @@ define([
                break;
             case "proximity":
                pageObj.proximityFeatures = null;
-               this.proximityInfo.updateForLocation(this.location, container, pageObj);
+               pageObj.proximityInfo.updateForLocation(this.location, container, pageObj);
                break;
          }
          if (type != "proximity") {
@@ -698,25 +762,48 @@ define([
       },
       
       // update proximity features
-      _updateProximityFeatures : function(event) {
+      _updateProximityFeatures : function() {
          var pageObj  = this.pages[this.curPage];
-         pageObj.proximityFeatures = event.data;
          this._renderResults(pageObj);
       },
       
       // graphic click handler
-      _graphicClickHandler : function(event) {
-         var gra = event.graphic;
+      _graphicClickHandler : function(evt) {
+         var pageObj;
+         var gra = evt.graphic;
+         dojoEvent.stop(evt);
+         var id = gra.id;
          if ((gra.id != "buffer") && (gra.id != "location")) {
-            this.map.infoWindow.setContent(gra.getContent());
-            this.map.infoWindow.show(event.mapPoint);
-            dojoEvent.stop(event);
+            if (id.indexOf("R_")>-1 || id.indexOf("T_")>-1) {
+               if (this.curPage == 0 && this.prevPage) {
+                  pageObj  = this.pages[this.prevPage];
+                  pageObj.proximityInfo.selectFeature(gra);
+                  this._showPage(this.prevPage);
+               } else {
+                  pageObj  = this.pages[this.curPage];
+                  pageObj.proximityInfo.selectFeature(gra);
+               }
+            }
+         }
+      },
+      
+      // highlight feature
+      _highlightFeature : function(event) {
+         this.lyrHighlight.clear();
+         if(event && event.data) {
+            var rgb = Color.fromString(this._getPageColor(this.curPage)).toRgb();
+            rgb.push(0.4);
+            var symML = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color.fromArray(rgb), 10);
+            var symM = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 34, symML, new Color.fromArray([0,0,0,1]));
+            var pt  = event.data.geometry;
+            this.lyrHighlight.add(new Graphic(pt, symM, null));
          }
       },
       
       // render results
       _renderResults : function(pageObj) {
             
+            this.lyrHighlight.clear();
             this.map.graphics.clear();
             
             // weather
@@ -759,9 +846,14 @@ define([
                    
                    var symText = new TextSymbol(num, fnt, "#ffffff");
                    symText.setOffset(0, -4);
+                   
+                   var graR = new Graphic(pt, symM, attr);
+                   graR.id = "R_" + i;
+                   var graT = new Graphic(pt, symText, attr);
+                   graT.id = "T_" + i;
                   
-                   this.map.graphics.add(new Graphic(pt, symM, attr, infoTemp));
-                   this.map.graphics.add(new Graphic(pt, symText, attr, infoTemp));
+                   this.map.graphics.add(graR);
+                   this.map.graphics.add(graT);
                }
             }
             
@@ -783,7 +875,7 @@ define([
             this.dirWidget.removeStops();
             this._toggleDirections();
             var def = this.dirWidget.addStops([this.location, pt]);
-            def.then(lang.hitch(this, function(value){
+            def.then(lang.hitch(this, function(){
                  this.dirWidget.getDirections();
              }));
         },
@@ -795,7 +887,7 @@ define([
             this.dirWidget.reset();
             this.dirWidget.removeStops();
             var def = this.dirWidget.addStops(stops);
-            def.then(lang.hitch(this, function(value){
+            def.then(lang.hitch(this, function(){
                  this.dirWidget.getDirections();
              }));
         },

@@ -1,21 +1,15 @@
 define([
         'dojo/_base/declare',
-        'dojo/_base/array',
         'dojo/_base/lang',
-        'dojo/dom', 
         'dojo/dom-class',
         'dojo/dom-construct',
-        'dojo/dom-style', 
         'esri/tasks/query',
         'esri/tasks/QueryTask'
 	],function(
         declare, 
-        array, 
         lang, 
-        dom, 
         domClass, 
         domConstruct, 
-        domStyle, 
         Query,
         QueryTask
 ){
@@ -1169,24 +1163,25 @@ define([
          query.returnGeometry = false;
          query.geometry = location;
          query.outFields = ["DOMTAP"];
-         var me = this;
-         queryTask.execute(query, lang.hitch(me, me.resultsHandler), lang.hitch(me, me.errorHandler));
+         queryTask.execute(query, lang.hitch(this, this._resultsHandler), lang.hitch(this, this._errorHandler));
        },
         	
     		    
       // results handler
-      resultsHandler: function(results) {
+      _resultsHandler: function(results) {
          this.container.innerHTML = "";
          
          var content = domConstruct.create("div", {
+                 //class: "resultsContent"
          }, this.container);
          domClass.add(content, 'resultsContent');
              
          if (results.features.length > 0) {
             var feature = results.features[0];
             var domtap = feature.attributes.DOMTAP;
-            var info = this.getLifestyleInfo(parseInt(domtap));
+            var info = this._getLifestyleInfo(parseInt(domtap));
             var div = domConstruct.create("div", {
+                 //class: "recLifestyle",
                  innerHTML: info
              }, content);
              domClass.add(div, 'recLifestyle');
@@ -1194,15 +1189,15 @@ define([
       },
     
       // error handler
-      errorHandler: function(error) {
+      _errorHandler: function(error) {
          this.container.innerHTML = "";
-         var div = domConstruct.create("div", {
+         domConstruct.create("div", {
              innerHTML: error.message
          }, this.container);
       },
       
       // get lifestyle info
-      getLifestyleInfo : function (num) {
+      _getLifestyleInfo : function (num) {
          var obj = this.tapestryData[num-1];
          
          var info = "<p>Dominant lifestyle at selected location</p>";

@@ -42,7 +42,7 @@ define({
     
     // **************************** //
     // ** UI SPECIFIC PARAMETERS ** //
-    "cycleColors": 0,
+    "cycleColors": 1,
     "color": "#80ab00",
     "colors": ["#0071ab", "#27a4d2", "#886197", "#8a2581", "#fc0055", "#c50143", "#db0111", "#ec5b02", "#efa602", "#dab900", "#80ab00", "#548901", "#049686", "#097096"],
     "logo" : "images/logo.png",
@@ -75,6 +75,11 @@ define({
     "defaultDistance": 3,
     "defaultZoomLevel": 14,
     "defaultToCenter": true,
+    // **************************** //
+    
+    // **************************** //
+    // ** UTILITY PARAMETERS     ** //
+    "routeUtility" : "http://utility.arcgis.com/usrsvcs/servers/4394c7efb65548519c9963adca849e8e/rest/services/World/Route/NAServer/Route_World",
     // **************************** //
     
     //This option demonstrates how to handle additional custom url parameters. For example

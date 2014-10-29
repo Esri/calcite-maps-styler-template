@@ -17,48 +17,38 @@
  */
 define([
     "dojo/ready",
+    "dojo/_base/array",
     "dojo/_base/Color",
     "dojo/_base/declare",
-    "dojo/_base/fx",
-    "dojo/_base/html",
     "dojo/_base/lang",
     "dojo/dom",
     "dojo/dom-class",
-    "dojo/dom-construct",
-    "dojo/dom-geometry",
-    "dojo/dom-style",
     "dojo/on",
     "dojo/query",
-    "dojo/window",
     "application/ui",
     "esri/arcgis/utils",
-    "esri/dijit/HomeButton",
     "esri/dijit/Geocoder",
     "esri/dijit/LocateButton",
     "esri/dijit/Popup",
+    "esri/lang",
     "esri/symbols/SimpleMarkerSymbol",
     "esri/urlUtils"
 ], function (
     ready,
+    array,
     Color,
     declare,
-    fx,
-    html,
     lang,
     dom,
     domClass,
-    domConstruct,
-    domGeometry,
-    domStyle,
     on,
     query,
-    win,
     UI,
     arcgisUtils,
-    HomeButton,
     Geocoder,
     LocateButton,
     Popup,
+    esriLang,
     SimpleMarkerSymbol,
     urlUtils
 ) {
@@ -86,8 +76,8 @@ define([
          // any url parameters and any application specific configuration information.
          if (config) {
             this.config = config;
-            this.setColor();
-            this.setProtocolHandler();
+            this._setColor();
+            this._setProtocolHandler();
             // proxy rules
             urlUtils.addProxyRule({
                urlPrefix: "route.arcgis.com",
@@ -138,15 +128,15 @@ define([
       },
 
       // Set Color
-      setColor : function() {
-         if (this.config.cycleColors == true) {
+      _setColor : function() {
+         if (this.config.cycleColors === true) {
             this.config.color = this.config.colors[0];
          }
          this.color = this.config.color;
       },
       
       // set protocol handler
-      setProtocolHandler : function() {
+      _setProtocolHandler : function() {
          esri.id.setProtocolErrorHandler(function() {
             console.log("protocol");
             if (window.confirm("Your browser is not CORS enabled. You need to redirect to HTTPS. Continue?")) {
@@ -158,7 +148,7 @@ define([
       // Create web map based on the input web map id
       _createWebMap : function(itemInfo) {
          // popup
-         var popupSym = new SimpleMarkerSymbol("circle", 2, null, new dojo.Color([0, 0, 0, 0.1]));
+         var popupSym = new SimpleMarkerSymbol("circle", 2, null, new Color.fromArray([0, 0, 0, 0.1]));
          var popup = new Popup({
             markerSymbol : popupSym,
             anchor : "top"
@@ -196,6 +186,46 @@ define([
          // remove loading class from body
          domClass.remove(document.body, "app-loading");
       },
+      
+      // Create Geocoder Options
+      _createGeocoderOptions: function () {
+            var hasEsri = false;
+            var geocoders = lang.clone(this.config.helperServices.geocode);
+            array.forEach(geocoders, lang.hitch(this, function (geocoder) {
+                if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+                    hasEsri = true;
+                    geocoder.name = "Esri World Geocoder";
+                    geocoder.outFields = "Match_addr, stAddr, City";
+                    geocoder.singleLineFieldName = "SingleLine";
+                    geocoder.esri = geocoder.placefinding = true;
+                }
+            }));
+            //only use geocoders with a singleLineFieldName 
+            geocoders = array.filter(geocoders, function (geocoder) {
+                return (esriLang.isDefined(geocoder.singleLineFieldName));
+            });
+            var esriIdx;
+            if (hasEsri) {
+                for (var i = 0; i < geocoders.length; i++) {
+                    if (esriLang.isDefined(geocoders[i].esri) && geocoders[i].esri === true) {
+                        esriIdx = i;
+                        break;
+                    }
+                }
+            }
+            var options = {
+                map: this.map,
+                autoNavigate: false,
+                autoComplete: hasEsri
+            };
+            if (hasEsri && esriIdx === 0 && geocoders.length === 1) { // Esri geocoder is primary
+                options.arcgisGeocoder = true;
+            } else { // Esri geocoder is not primary
+                options.arcgisGeocoder = false;
+                options.geocoders = geocoders;
+            }
+            return options;
+        },
 
       // Create Map UI
       _createMapUI : function() {
@@ -216,13 +246,8 @@ define([
          geoLocate.startup();
 
          // geocoder
-         var geocoder = new Geocoder({
-            map : this.map,
-            //url: this.config.helperServices.geocode[0].url,
-            geocoders: this.config.helperServices.geocode,
-            geocoderMenu: false,
-            autoComplete : true
-         }, "panelGeocoder");
+         var geocoderOptions = this._createGeocoderOptions();
+         var geocoder = new Geocoder(geocoderOptions, "panelGeocoder");
          on(geocoder, "find-results", lang.hitch(this, this._geocoderResults));
          on(geocoder, "select", lang.hitch(this, this._geocoderSelect));
          on(geocoder, "clear", lang.hitch(this, this._geocoderClear));
@@ -282,9 +307,10 @@ define([
       
        // Create UI
       _createUI : function() {
-         if (this.config.title != "")
+         if (this.config.title !== "")
+            document.title = this.config.title;
             dom.byId("panelText").innerHTML = this.config.title;
-         if (this.config.logo != "")
+         if (this.config.logo !== "")
             dom.byId("logo").src = this.config.logo;
          this.ui = new UI(this.config);
          this.ui.map = this.map;

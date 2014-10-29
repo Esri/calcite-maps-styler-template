@@ -1,5 +1,5 @@
 {
-   "configurationSettings" : [
+   "configurationSettings": [
       {
          "category" : "<b>Configure Template</b>",
          "fields" : [{
@@ -63,6 +63,12 @@
             "fieldName" : "showDirections",
             "label" : "Enable routing directions",
             "tooltip" : "Enable routing directions"
+         }, {
+            "type":"string",
+            "fieldName":"routeUtility",
+            "label":"Route utility item (with stored credentials)",
+            "tooltip":"URL to route utility item",
+            "placeHolder":""
          }, {
             "type" : "string",
             "fieldName" : "distanceUnits",
