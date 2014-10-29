@@ -334,20 +334,30 @@ define([
         * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
         */
         _setApplicationHeaderIcon: function () {
+            var appIcon;
             if (query(".esriCTApplicationIcon")[0]) {
                 if (dojo.configData.values.applicationIcon) {
                     if (dojo.configData.values.applicationIcon.indexOf("http") === 0) {
                         domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojo.configData.values.applicationIcon);
                     } else {
-                        domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojoConfig.baseURL + dojo.configData.values.applicationIcon);
+                        if (dojo.configData.values.applicationIcon.indexOf("/") === 0) {
+                            domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojoConfig.baseURL + dojo.configData.values.applicationIcon);
+                        } else {
+                            domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojoConfig.baseURL + "/" + dojo.configData.values.applicationIcon);
+                        }
                     }
                 } else {
                     if (dojo.configData.values.noThumbnail.indexOf("http") === 0) {
                         domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojo.configData.values.noThumbnail);
                     } else {
-                        domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojoConfig.baseURL + "/" + dojo.configData.values.noThumbnail);
+                        if (dojo.configData.values.noThumbnail.indexOf("/") === 0) {
+                            domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojoConfig.baseURL + dojo.configData.values.noThumbnail);
+                        } else {
+                            domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojoConfig.baseURL + "/" + dojo.configData.values.noThumbnail);
+                        }
                     }
                 }
+                appIcon = domAttr.get(query(".esriCTApplicationIcon")[0], "src");
                 this.own(on(query(".esriCTApplicationIcon")[0], "click", lang.hitch(this, function () {
                     if (query(".esriCTitemDetails")[0]) {
                         dojo.destroy(query(".esriCTitemDetails")[0]);
@@ -364,8 +374,8 @@ define([
                 })));
             }
             this._loadIcons("shortcut icon", dojo.configData.values.applicationFavicon);
-            this._loadIcons("apple-touch-icon-precomposed", dojo.configData.values.applicationIcon);
-            this._loadIcons("apple-touch-icon", dojo.configData.values.applicationIcon);
+            this._loadIcons("apple-touch-icon-precomposed", appIcon);
+            this._loadIcons("apple-touch-icon", appIcon);
         },
 
         /**
@@ -585,6 +595,8 @@ define([
                             dojo.configData.groupTitle = null;
                             dojo.configData.groupDescription = null;
                             dojo.configData.groupIcon = null;
+                            dojo.configData.values.applicationIcon = null;
+                            _self._setApplicationHeaderIcon();
                         }
 
                         dojo.privateBaseMapGroup = false;

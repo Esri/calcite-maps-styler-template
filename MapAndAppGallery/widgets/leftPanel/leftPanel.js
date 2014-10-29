@@ -198,13 +198,6 @@ define([
                     domClass.add(listSortMenu.children[i], "esriCTSortMenuListSelected");
                 }
             }
-            if (dojo.gridView) {
-                if (dojo.gridView && (domClass.contains(query(".icon-header")[0], "icon-list"))) {
-                    domClass.replace(query(".icon-header")[0], "icon-grid", "icon-list");
-                } else if ((!dojo.gridView) && (domClass.contains(query(".icon-header")[0], "icon-grid"))) {
-                    domClass.replace(query(".icon-header")[0], "icon-list", "icon-grid");
-                }
-            }
             this._setGroupContent();
             this._expandGroupdescEvent(this.expandGroupDescription, this);
             this._queryGroupItems();

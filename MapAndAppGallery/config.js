@@ -136,6 +136,10 @@
                         {
                             "label": "Number of Views",
                             "value": "numViews"
+                        },
+                        {
+                            "label": "Name",
+                            "value": "title"
                         }
                     ],
                     "tooltip": "Default sort method for gallery contents"

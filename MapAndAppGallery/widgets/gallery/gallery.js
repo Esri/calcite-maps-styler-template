@@ -50,8 +50,10 @@ define([
             this.own(topic.subscribe("createPods", lang.hitch(this, this.createItemPods)));
             if (dojo.configData.values.defaultLayout.toLowerCase() === "list") {
                 dojo.gridView = false;
+                domClass.replace(query(".icon-header")[0], "icon-grid", "icon-list");
             } else {
                 dojo.gridView = true;
+                domClass.replace(query(".icon-header")[0], "icon-list", "icon-grid");
             }
             if (query(".esriCTSignInIcon")[0]) {
                 if (domStyle.get(query(".esriCTSignInIcon")[0], "display") === "none") {
@@ -260,10 +262,7 @@ define([
                 } else {
                     topic.publish("hideProgressIndicator");
                     if (data.url) {
-                        window.open(data.url, '_blank');
-                        if (dojo.downloadWindow) {
-                            dojo.downloadWindow.close();
-                        }
+                        dojo.downloadWindow.location = data.url;
                     } else if (data.itemType.toLowerCase() === "file" && data.type.toLowerCase() === "cityengine web scene") {
                         window.open(dojo.configData.values.portalURL + "/apps/CEWebViewer/viewer.html?3dWebScene=" + data.id, '_blank');
                         if (dojo.downloadWindow) {
@@ -293,15 +292,18 @@ define([
                                 tokenString = '';
                             }
                             if (result.desktopLayout) {
-                                downloadPath = dojo.configData.values.portalURL + "opsdashboard/OperationsDashboard.application?open=" + data.id;
+                                downloadPath = dojo.configData.values.portalURL + "/opsdashboard/OperationsDashboard.application?open=" + data.id;
                                 dojo.downloadWindow.location = downloadPath;
                             } else if (result.tabletLayout) {
-                                downloadPath = dojo.configData.values.portalURL + "apps/dashboard/index.html#/" + data.id;
+                                downloadPath = dojo.configData.values.portalURL + "/apps/dashboard/index.html#/" + data.id;
                                 dojo.downloadWindow.location = downloadPath;
                             }
                         }));
                     } else {
                         alert(nls.errorMessages.unableToOpenItem);
+                        if (dojo.downloadWindow) {
+                            dojo.downloadWindow.close();
+                        }
                     }
                 }
             }
@@ -513,8 +515,9 @@ define([
                     */
                     _self._btnTryItNowHandle.remove();
                 }
+                dataType = itemResult.type.toLowerCase();
                 _self._btnTryItNowHandle = on(_self.btnTryItNow, "click", lang.hitch(this, function () {
-                    if ((domAttr.get(_self.btnTryItNow, "innerHTML") === nls.downloadButtonText) || (itemResult.type.toLowerCase() === "operation view")) {
+                    if ((domAttr.get(_self.btnTryItNow, "innerHTML") === nls.downloadButtonText) || ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms"))) {
                         dojo.downloadWindow = window.open('', "_blank");
                     }
                     this._showTryItNowView(_self.btnTryItNow, itemResult, _self, dataArray);
@@ -527,7 +530,6 @@ define([
                     _self._appThumbnailClickHandle.remove();
                 }
                 _self._appThumbnailClickHandle = on(_self.appThumbnail, "click", lang.hitch(this, function () {
-                    dataType = itemResult.type.toLowerCase();
                     if ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms")) {
                         dojo.downloadWindow = window.open('', "_blank");
                     }

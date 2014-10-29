@@ -860,8 +860,6 @@ define([
         */
         _addWMSLayer: function (map, mapId, url, title) {
             var wmsLayer;
-            esri.config.defaults.io.corsEnabledServers.push(url);
-
             wmsLayer = new WMSLayer(url, {
                 format: "png"
             });
