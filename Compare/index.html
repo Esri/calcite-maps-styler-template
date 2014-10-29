@@ -23,10 +23,8 @@
 <body class="claro app-loading">
     <div id="bc" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'sidebar', gutters:false">
         <div id="expandoPane" data-dojo-type="dojox/layout/ExpandoPane" class="bg" data-dojo-props="region:'left'">
-            <div id="detailPanel" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="gutters:false, splitter:true">
-                <div id="detailContent" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
-            </div>
-
+            <div id="headerContent"></div>
+            <div id="ac-container" class="ac-container"></div>
         </div>
         <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
             <div id="container" class="container">
@@ -63,7 +61,8 @@
             "application/main",
             "dijit/layout/BorderContainer",
             "dojox/layout/ExpandoPane",
-            "dijit/layout/ContentPane"
+            "dijit/layout/ContentPane",
+            "dijit/layout/AccordionContainer"
         ], function(
             templateConfig,
             Template,

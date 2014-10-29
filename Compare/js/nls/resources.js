@@ -26,7 +26,7 @@ define({
             },
             sync: {
                 label: "Sync Map Extent",
-                tooltip: "Sync map extent"
+                tooltip: "Sync to extent of this map"
             }
         }
     }),

@@ -15,17 +15,23 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/_base/declare", "dojo/_base/Color", "dojo/parser", "dojo/has", "dojo/query", "dijit/registry", "dojo/window", "dojo/promise/all", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom", "dojo/dom-construct", "dojo/dom-style", "dojo/dom-class", "dojo/on", "esri/dijit/Legend", "esri/dijit/HomeButton", "esri/lang", "dojo/domReady!"], function (
-declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, domConstruct, domStyle, domClass, on, Legend, HomeButton, esriLang) {
+define(["dojo/_base/declare", "dojo/_base/Color", "dojo/parser", "dojo/has", "dojo/query", "dijit/registry", "dojo/window", "dojo/promise/all", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom", "dojo/dom-attr", "dojo/dom-construct", "dojo/dom-style", "dojo/dom-class", "dojo/on", "esri/dijit/Legend", "esri/dijit/HomeButton", "esri/lang", "dijit/layout/ContentPane", "dojo/domReady!"], function (
+declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, domAttr, domConstruct, domStyle, domClass, on, Legend, HomeButton, esriLang, ContentPane) {
     return declare(null, {
         config: {},
         mapInfo: [],
+        handler:  null,
         startup: function (config) {
             parser.parse();
             if (config) {
                 this.config = config;
-                //get the default panel content from the config
-                this._updatePanelContent(this.config, registry.byId("detailContent"));
+
+                //set title and default app text. 
+                var header = dom.byId("headerContent").innerHTML = esriLang.substitute(this.config, "<div class='header_info'>${description}</div>");
+                registry.byId("expandoPane").set("title", this.config.title);
+       
+     
+
                 //Configured apps will have web map as an array. 
                 if(lang.isArray(this.config.webmap)){
                     this.config.webmaps = this.config.webmap;
@@ -99,6 +105,9 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                         var result = results[i];
                         this.mapInfo.push(result);
 
+                        //specify the popup theme
+                        domClass.add(result.map.infoWindow.domNode, "light");
+
                         //Enable the home extent button if configured
                         if (this.config.home) {
                             var id = "#map_" + i + " .esriSimpleSliderIncrementButton";
@@ -107,30 +116,39 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                             }, domConstruct.create("div", {}, query(id)[0], "after"));
                             home.startup();
                         }
-                        //Create an info icon for each map 
-                        //when clicked this will show legend and 
-                        //map details in left pane
-                        var info = domConstruct.create("span", {
-                            "class": "icon-info fg",
-                            "title": this.config.i18n.tools.info.tooltip,
-                            "click": lang.hitch(this, this._displayContent, result)
-                        }, result.map.id);
+
+                        result.itemInfo.item.legendId = "legend_" + result.map.id;
+                        this._updatePanelContent(result.itemInfo.item, result);
+
 
                         //Create a sync button for each map
                         //when clicked it will sync other maps to that extent. 
                         //if only one map don't enable
                         if (results && results.length > 1) {
-                            var sync = domConstruct.create("span", {
-                                "class": "icon-sync fg",
+                            var container = domConstruct.create("div",{
+                                "class": "icon-sync-container"
+                            },result.map.id + "_root");
+
+                            var sync = domConstruct.create("div", {
+                                "class": "icon-sync",
                                 "title": this.config.i18n.tools.sync.tooltip,
                                 "click": lang.hitch(this, this._syncMaps, result.map)
-                            }, result.map.id);
+                            }, container);
                         }
-
-
                     }
                 }
+                //open the first map's details 
+               /* if(this.mapInfo && this.mapInfo.length && this.mapInfo.length > 1){
+                    var mapid = this.mapInfo[0].map.id;
+                    var checkbox = dom.byId(mapid + "chk");
+                    if(has("ie") === 8){
+                        checkbox.setAttribute("checked", true);
+                        checkbox.value = "on";
+                    }
+                    domAttr.set(checkbox, "checked", true);
 
+                }*/
+   
                 //update theme
                 this._updateTheme();
             }));
@@ -154,38 +172,42 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
             }, "container");
             return row;
         },
-        _syncMaps: function (extent_map) {
-            for (var i = 0; i < this.mapInfo.length; i++) {
-                var map = this.mapInfo[i].map;
-                if (map.id !== extent_map.id) {
-                    map.setExtent(extent_map.extent);
-                }
+        _syncMaps: function (extent_map,evt) {
+            if(this.handler){
+                this.handler.remove();
             }
-        },
-        _displayContent: function (selected, evt) {
 
-            //remove the selected class from all the icons then 
-            //add to current one. 
+            //remove selected class from all icons then add to current one
             var sel = domClass.contains(evt.target, "icon-selected");
-            var pane = registry.byId("detailContent");
-            query(".icon-info").forEach(function (node) {
+            query(".icon-sync").forEach(function (node) {
+                console.log("remove");
                 domClass.remove(node, "icon-selected");
             });
 
             if (!sel) { //Toggle the selection capability 
                 domClass.add(evt.target, "icon-selected");
             } else {
-                this._updatePanelContent(this.config, pane);
+                if(this.handler){
+                    this.handler.remove();
+                }
                 return;
             }
 
-            //build the content 
-            selected.itemInfo.item.legendId = "legend_" + selected.map.id;
-            this._updatePanelContent(selected.itemInfo.item, pane, selected);
-    
+            for (var i = 0; i < this.mapInfo.length; i++) {
+                var map = this.mapInfo[i].map;
+                if (map.id !== extent_map.id) {
+                    map.setExtent(extent_map.extent);
+                }
+            }
+            this.handler = on(extent_map, "extent-change", lang.hitch(this, function(){
+                for (var i = 0; i < this.mapInfo.length; i++) {
+                    var map = this.mapInfo[i].map;
+                    if (map.id !== extent_map.id) {
+                        map.setExtent(extent_map.extent);
+                    }
+                }
 
-                
-
+            }));
         },
         setColor: function (value) {
             var colorValue = null;
@@ -206,32 +228,66 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
 
 
             query(".bg").style("backgroundColor", bgcolor.toString());
-            query(".fg").style("color", bgcolor.toString()); //icon color
+            query(".fg").style("color", color.toString()); //icon color
             query(".dojoxExpandoIcon").style("color", color.toString()); //hamburger menu
             query(".dojoxExpandoTitleNode").style("color", color.toString()); //title 
         },
-        _updatePanelContent: function (details, pane, selected) {
-            registry.byId("expandoPane").set("title", details.title);
-            //details is an object with a title and description
-            var template = "<div class='panel_title'>${title}</div><div class='panel_desc'>${description}</div><div id=${legendId}></div>";
+        _updatePanelContent: function (details, layer) {
+            var template = "<div class='panel_title'>${title}</div><div class='panel_desc'>${description}</div><div id=${legendId}></div>";           
             var content = esriLang.substitute(details, template);
-            pane.set("content", content);
-            if(selected){
-                var legDiv = registry.byId(details.legendId);
-                if(legDiv){
-                    legDiv.destroy();
-                }
-                var legendLayers = arcgisUtils.getLegendLayers(selected);
 
-                if (legendLayers && legendLayers.length > 0) {
-                    var legend = new Legend({
-                        map: selected.map,
-                        layerInfos: arcgisUtils.getLegendLayers(selected)
-                    }, selected.itemInfo.item.legendId);
-                    legend.startup();
+            //set the content
+            var accordionContainer = dom.byId("ac-container");
+            if(this.config.webmaps.length === 1){
+                //just set the content into the panel   
+                accordionContainer.innerHTML = content;
+            }else{
+                //create an accordion
+                var cont =  domConstruct.create("div",{
+                    "class": "acc-container"
+                },accordionContainer);
+                domConstruct.create("input",{
+                    "class": "checkInput",
+                    type: "checkbox",
+                    onclick: function(){
+                        if(has("ie") === 8){
+                          if(this.value === "on"){
+                            this.value = "off";
+                          }else{
+                            this.value = "on";
+                          }
+                          this.blur();
+                        }
+                    },
+                    id: layer.map.id + "chk"
+                },cont);
+     
+                domConstruct.create("label",{
+                    "for": layer.map.id + "chk",
+                    "innerHTML": "<div class='truncate'>" +  details.title + "</div><span class='arrow'></span>",
+                    "class": "ac-label ab fg"
+                }, cont);
+                domConstruct.create("div",{
+                    "class": "ac-medium article",
+                    innerHTML: content
+                },cont);
 
-                }
             }
+
+            //create the legend
+            var legDiv = registry.byId(details.legendId);
+            if(legDiv){
+                legDiv.destroy();
+            }
+            var legendLayers = arcgisUtils.getLegendLayers(layer);
+
+            if (legendLayers && legendLayers.length > 0) {
+                var legend = new Legend({
+                    map: layer.map,
+                    layerInfos: arcgisUtils.getLegendLayers(layer)
+                }, layer.itemInfo.item.legendId);
+                legend.startup();
+            } 
         },
         _resizeMap: function () {
             if (this.mapInfo && this.mapInfo.length === 0) {
