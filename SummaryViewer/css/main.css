@@ -186,25 +186,31 @@ html, body {
 	outline: transparent;
 	background: transparent;
 	width: 225px;
-   	padding: 0px 0px 0px 5px;
-   	color: #ffffff;
-   	font-size: 14px;
-   	line-height: 1;
-   	border: none;
-   	border-radius: 0;
-   	height: 30px;
-   	font-family: Arial;
+	padding: 0px 0px 0px 5px;
+	color: #ffffff;
+	font-size: 14px;
+	line-height: 1;
+	border: none;
+	border-radius: 0;
+	height: 30px;
+	font-family: Arial;
    -webkit-appearance: none;
 }
 
+select::-ms-value {
+	background: none;
+}
+
 option:checked {
-	color: #ffffff;
+	color: #efefef;
+	background: transparent;
 	height: 30px;
 	line-height: 30px;
 	font-family: Arial;
 }
 
 option {
+	background-color: #ffffff;
 	color: #000000;
 	font-family: Arial;
 }
