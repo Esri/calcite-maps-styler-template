@@ -181,16 +181,16 @@ define([
          pages.push({id: num, type: "blank", color: this._getPageColor(num), buffer:null, proximityFeatures: null, update:true});
          
          // layers in web map
-         // this.proximityInfo = new ProximityInfo(this.config);
-         // this.proximityInfo.map = this.map;
-         // this.proximityInfo.on('updated', lang.hitch(this, this._updateProximityFeatures));
-         // this.proximityInfo.on('route', lang.hitch(this, this._routeToLocation));
          this.config.opLayers.reverse();
          var me = this;
          array.forEach(this.config.opLayers, lang.hitch(this, function(layer) {
             var lyrId;
             var lyrName;
             var lyr;
+            var defExp;
+            if (layer.layerDefinition && layer.layerDefinition.definitionExpression) {
+               defExp = layer.layerDefinition.definitionExpression;
+            }
             var proxInfo = new ProximityInfo(this.config);
             proxInfo.map = this.map;
             proxInfo.on('updated', lang.hitch(this, this._updateProximityFeatures));
@@ -203,7 +203,7 @@ define([
                   lyr = layer.featureCollection.layers[i].layerObject;
                   lyr.setVisibility(false);
                   num +=1;
-                  pages .push({id:num, label: lyrName, type:"proximity", color: me._getPageColor(num), layer: lyr, buffer:null, proximityFeatures: null, update:true, layerType: "Feature Collection", proximityInfo: proxInfo});
+                  pages .push({id:num, label: lyrName, type:"proximity", color: me._getPageColor(num), layer: lyr, buffer:null, proximityFeatures: null, update:true, layerType: "Feature Collection", proximityInfo: proxInfo, defExp: defExp});
                }
             } else if (layer.layerObject && layer.layerObject.type == "Feature Layer") {
                lyrId = layer.id;
@@ -211,7 +211,7 @@ define([
                lyr = layer.layerObject;
                lyr.setVisibility(false);
                num +=1;
-               pages .push({id:num, label: lyrName, type:"proximity", color: me._getPageColor(num), layer: lyr, buffer:null, proximityFeatures: null, update:true, layerType: "Feature Layer", proximityInfo: proxInfo});
+               pages .push({id:num, label: lyrName, type:"proximity", color: me._getPageColor(num), layer: lyr, buffer:null, proximityFeatures: null, update:true, layerType: "Feature Layer", proximityInfo: proxInfo, defExp: defExp});
             }
          }));
          

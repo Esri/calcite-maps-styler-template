@@ -69,6 +69,8 @@ define([
          var query = new Query();
          query.outFields = ["*"];
          query.returnGeometry = true;
+         if (this.pageObj.defExp)
+            query.where = this.pageObj.defExp;
          query.geometry = this.pageObj.buffer;
          query.spatialRelationship = Query.SPATIAL_REL_INTERSECTS;
          queryTask.execute(query, lang.hitch(this, this._resultsHandler), lang.hitch(this, this._errorHandler));
