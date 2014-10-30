@@ -447,7 +447,6 @@ define([
          // geocoder
          var geocoderOptions = this._createGeocoderOptions();
          this.geocoder = new Geocoder(geocoderOptions, "panelGeocoder");
-         //on(this.geocoder, "find-results", lang.hitch(this, this._geocoderResults));
          on(this.geocoder, "select", lang.hitch(this, this._geocoderSelect));
          on(this.geocoder, "clear", lang.hitch(this, this._geocoderClear));
          this.geocoder.startup();
@@ -458,7 +457,6 @@ define([
          var rgb = Color.fromString(this.color).toRgb();
          var symL = new SimpleLineSymbol(SimpleLineSymbol.STYLE_NULL, new Color([0,0,0]), 0);
          var sym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 1, symL, new Color([0,0,0,0]));
-         //var routeSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([rgb[0], rgb[1], rgb[2], 0.6]), 8);
          var routeSym = new CartographicLineSymbol(CartographicLineSymbol.STYLE_SOLID, new Color([rgb[0], rgb[1], rgb[2], 0.4]), 8, CartographicLineSymbol.CAP_SQUARE, CartographicLineSymbol.JOIN_MITER, 4);
          var segmentSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SHORTDOT, new Color([0,0,0,0.4]), 8); 
          var units = "esriMiles";
@@ -475,6 +473,7 @@ define([
               dragging: false,
               fromSymbol: sym, 
               toSymbol: sym, 
+              stopSymbol: sym,
               routeSymbol: routeSym,
               segmentSymbol: segmentSym
          };
@@ -581,39 +580,19 @@ define([
          this._updateOrigin(gra, pt);
       },
       
-      // geocoder results
-      _geocoderResults : function(obj) {
-         //var gra;
-         //if (obj.results.results.length > 0) {
-            // var result = obj.results.results[0];
-            // var pt = result.feature.geometry;
-            // var label = result.feature.address;
-            // var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
-            // var gra = new Graphic(pt, sym, {label: label});
-            //console.log("geocoder results");
-            // this._updateOrigin(gra);
-         //}
-      },
-      
       // geocoder select
       _geocoderSelect : function(obj) {
-         //console.log("geocoder select", obj);
          var result = obj.result;
          var pt = result.feature.geometry;
          var label = result.name;
          var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
          var gra = new Graphic(pt, sym, {label: label});
-         //console.log(gra);
          this._updateOrigin(gra, result);
       },
       
       // geocoder clear
       _geocoderClear : function() {
-         //if(this.geocoder.value != "") {
-            //this.origin = null;
-            //console.log("geocoder clear");
-            this._updateOrigin(null, null);
-         //}
+         this._updateOrigin(null, null);
       },
 
       
@@ -780,8 +759,11 @@ define([
       
       // Show Route
       _showRoute : function(num) {
+         var zoom = true;
+         if (this.origin)
+            zoom = false;
          this._unselectRecords();
-         this._highlightRecord(num, true);
+         this._highlightRecord(num, zoom);
          var gra = this.opFeatures[num];
          this._routeToDestination(gra);
       },
@@ -897,12 +879,11 @@ define([
          var pt = gra.geometry;
          dom.byId("panelDestination").innerHTML = gra.getTitle();
          this._showPage(1);
-         if (this.origin){
+         if (this.originObj){
             this.dirWidget.removeStops();
             var def = this.dirWidget.addStops([this.originObj, pt]);
             def.then(lang.hitch(this, function(){
-               this.dirWidget.clearDirections();
-               this.dirWidget.getDirections();
+                 this.dirWidget.getDirections();
             }));
          }
       },
@@ -911,10 +892,9 @@ define([
       _reverseDirections : function() {
          var stops = this.dirWidget.stops;
          stops.reverse();
-         this._clearDirections();
+         this.dirWidget.clearDirections();
          var def = this.dirWidget.addStops(stops);
          def.then(lang.hitch(this, function(){
-              this.dirWidget.clearDirections();
               this.dirWidget.getDirections();
           }));
       },
@@ -922,11 +902,14 @@ define([
       // Clear Directions
       _clearDirections : function() {
          this.dirWidget.reset();
+         this.dirWidget.mergedRouteGraphic = undefined;
+         if (this.trackingPt)
+            this.map.graphics.remove(this.trackingPt);
       },
       
       // Directions Finished
       _directionsFinished : function() {
-         if (this.dirWidget.mergedRouteGraphic !== undefined) {
+         if (this.dirWidget.mergedRouteGraphic != undefined) {
             var gra = this.dirWidget.mergedRouteGraphic;
             var ext = gra.geometry.getExtent();
             var ext2 = ext;
@@ -947,15 +930,15 @@ define([
             this.map.graphics.add(this.trackingPt);
             setTimeout(lang.hitch(this, function(){this.trackingPt.updateSymbol();}), 2000);
          } else {
-            this.dirWidget.clearDirections();
+            setTimeout(lang.hitch(this, function(){this.dirWidget.removeStops();}), 2000);
             console.log("Error generating route");
          }
       },
       
       // Update Origin
       _updateOrigin : function(gra, obj) {
-         this.map.graphics.clear();
          this._clearDirections();
+         this.map.graphics.clear();
          this.origin = gra;
          this.originObj = obj;
          if (this.origin) {
@@ -969,6 +952,7 @@ define([
                this._showRoute(num);
             }
          }
+         
          this._updateRouteTools();
       },
       
