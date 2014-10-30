@@ -43,6 +43,7 @@ define([
     "esri/geometry/Point",
     "esri/graphic",
     "esri/InfoTemplate",
+    "esri/lang",
     "esri/layers/GraphicsLayer",
     "esri/symbols/Font",
     "esri/symbols/CartographicLineSymbol",
@@ -82,6 +83,7 @@ define([
     Point,
     Graphic,
     InfoTemplate,
+    esriLang,
     GraphicsLayer,
     Font,
     CartographicLineSymbol,
@@ -109,6 +111,7 @@ define([
       hiLayer : null,
       destLayer : null,
       origin : null,
+      originObj : null,
       dirWidget : null,
       selectedNum: null,
       trackingPt :  null,
@@ -123,8 +126,8 @@ define([
          // any url parameters and any application specific configuration information.
          if (config) {
             this.config = config;
-            this.setColor();
-            this.setProtocolHandler();
+            this._setColor();
+            this._setProtocolHandler();
             // proxy rules
             urlUtils.addProxyRule({
                urlPrefix: "route.arcgis.com",
@@ -175,7 +178,7 @@ define([
       },
 
       // Set Color
-      setColor : function() {
+      _setColor : function() {
          this.color = this.config.color;
          var style = document.createElement('style');
          style.type = 'text/css';
@@ -196,14 +199,14 @@ define([
       },
       
       // set protocol handler
-      setProtocolHandler : function() {
+      _setProtocolHandler : function() {
          esri.id.setProtocolErrorHandler(function() {
             if (window.confirm("Your browser is not CORS enabled. You need to redirect to HTTPS. Continue?")) {
                window.location = window.location.href.replace("http:", "https:");
             }
          });
       },
-
+      
       // Create web map based on the input web map id
       _createWebMap : function(itemInfo) {
          
@@ -222,6 +225,8 @@ define([
             bingMapsKey : this.config.bingKey
          }).then(lang.hitch(this, function(response) {
 
+            //var searchOptions = response.itemInfo.itemData.applicationProperties.viewing.search;
+            //console.log(searchOptions);
             
             this.map = response.map;
             this.initExt = this.map.extent;
@@ -381,6 +386,46 @@ define([
 
       // ** UI FUNCTIONS ** //
       
+      // Create Geocoder Options
+      _createGeocoderOptions: function () {
+            var hasEsri = false;
+            var geocoders = lang.clone(this.config.helperServices.geocode);
+            array.forEach(geocoders, lang.hitch(this, function (geocoder, index) {
+                if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+                    hasEsri = true;
+                    geocoder.name = "Esri World Geocoder";
+                    geocoder.outFields = "Match_addr, stAddr, City";
+                    geocoder.singleLineFieldName = "SingleLine";
+                    geocoder.esri = geocoder.placefinding = true;
+                }
+            }));
+            //only use geocoders with a singleLineFieldName 
+            geocoders = array.filter(geocoders, function (geocoder) {
+                return (esriLang.isDefined(geocoder.singleLineFieldName));
+            });
+            var esriIdx;
+            if (hasEsri) {
+                for (var i = 0; i < geocoders.length; i++) {
+                    if (esriLang.isDefined(geocoders[i].esri) && geocoders[i].esri === true) {
+                        esriIdx = i;
+                        break;
+                    }
+                }
+            }
+            var options = {
+                map: this.map,
+                autoNavigate: false,
+                autoComplete: hasEsri
+            };
+            if (hasEsri && esriIdx === 0 && geocoders.length === 1) { // Esri geocoder is primary
+                options.arcgisGeocoder = true;
+            } else { // Esri geocoder is not primary
+                options.arcgisGeocoder = false;
+                options.geocoders = geocoders;
+            }
+            return options;
+        },
+      
       // Configure Map UI
       _configureMapUI : function() {
 
@@ -400,15 +445,9 @@ define([
          geoLocate.startup();
 
          // geocoder
-         this.geocoder = new Geocoder({
-            map : this.map,
-            //url: this.config.helperServices.geocode[0].url,
-            geocoders: this.config.helperServices.geocode,
-            geocoderMenu: false,
-            autoNavigate : false,
-            autoComplete : true
-         }, "panelGeocoder");
-         on(this.geocoder, "find-results", lang.hitch(this, this._geocoderResults));
+         var geocoderOptions = this._createGeocoderOptions();
+         this.geocoder = new Geocoder(geocoderOptions, "panelGeocoder");
+         //on(this.geocoder, "find-results", lang.hitch(this, this._geocoderResults));
          on(this.geocoder, "select", lang.hitch(this, this._geocoderSelect));
          on(this.geocoder, "clear", lang.hitch(this, this._geocoderClear));
          this.geocoder.startup();
@@ -427,6 +466,7 @@ define([
             units = "esriKilometers";
          var options = {
               map: this.map,
+              maxStops: 2,
               showTravelModesOption: false,
               showTrafficOption: true,
               routeParams: {directionsLengthUnits: units},
@@ -438,10 +478,10 @@ define([
               routeSymbol: routeSym,
               segmentSymbol: segmentSym
          };
-         if (this.config.routeUtility)
-            options.routeTaskUrl = this.config.routeUtility;
          if (this.config.helperServices.routeTask)
             options.routeTaskURL = this.config.helperServices.routeTask.url;
+         if (this.config.routeUtility)
+            options.routeTaskUrl = this.config.routeUtility;
          this.dirWidget = new Directions(options, "resultsDirections");
          on(this.dirWidget, "directions-finish", lang.hitch(this, this._directionsFinished));
          this.dirWidget.startup();
@@ -493,7 +533,7 @@ define([
       // Reset App
       _resetApp : function() {
          this._unselectRecords();
-         this._updateOrigin(null);
+         this._updateOrigin(null, null);
          this._processDestinationFeatures();
       },
       
@@ -526,8 +566,9 @@ define([
       // geoLocated
       _geoLocated : function(evt) {
          var gra;
+         var pt;
          if (evt.graphic) {
-            var pt = evt.graphic.geometry;
+            pt = evt.graphic.geometry;
             var label = "Current Location";
             if (this.config && this.config.i18n)
                label = this.config.i18n.location.current;
@@ -537,37 +578,41 @@ define([
             if (evt.error)
                console.log(evt.error.message);
          }
-         this._updateOrigin(gra);
+         this._updateOrigin(gra, pt);
       },
       
       // geocoder results
       _geocoderResults : function(obj) {
-         var gra;
-         if (obj.results.results.length > 0) {
-            var result = obj.results.results[0];
-            var pt = result.feature.geometry;
-            var label = result.feature.address;
-            var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
-            gra = new Graphic(pt, sym, {label: label});
-         }
-         this._updateOrigin(gra);
+         //var gra;
+         //if (obj.results.results.length > 0) {
+            // var result = obj.results.results[0];
+            // var pt = result.feature.geometry;
+            // var label = result.feature.address;
+            // var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
+            // var gra = new Graphic(pt, sym, {label: label});
+            //console.log("geocoder results");
+            // this._updateOrigin(gra);
+         //}
       },
       
       // geocoder select
       _geocoderSelect : function(obj) {
+         //console.log("geocoder select", obj);
          var result = obj.result;
          var pt = result.feature.geometry;
          var label = result.name;
          var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
          var gra = new Graphic(pt, sym, {label: label});
-         this._updateOrigin(gra);
+         //console.log(gra);
+         this._updateOrigin(gra, result);
       },
       
       // geocoder clear
       _geocoderClear : function() {
          //if(this.geocoder.value != "") {
             //this.origin = null;
-            this._updateOrigin(null);
+            //console.log("geocoder clear");
+            this._updateOrigin(null, null);
          //}
       },
 
@@ -845,6 +890,7 @@ define([
          this.hiLayer.add(new Graphic(pt, symM, null));
       },
       
+      
       // Route to destination
       _routeToDestination : function(gra) {
          this._clearDirections();
@@ -852,24 +898,23 @@ define([
          dom.byId("panelDestination").innerHTML = gra.getTitle();
          this._showPage(1);
          if (this.origin){
-            var def = this.dirWidget.addStops([this.origin.geometry, pt]);
+            this.dirWidget.removeStops();
+            var def = this.dirWidget.addStops([this.originObj, pt]);
             def.then(lang.hitch(this, function(){
-                 this.dirWidget.getDirections();
-             }));
+               this.dirWidget.clearDirections();
+               this.dirWidget.getDirections();
+            }));
          }
       },
       
       // Reverse Directions
       _reverseDirections : function() {
-         //var tOrigin = dom.byId("panelOrigin").innerHTML;
-         //var tDest = dom.byId("panelDestination").innerHTML;
          var stops = this.dirWidget.stops;
          stops.reverse();
          this._clearDirections();
-         //dom.byId("panelOrigin").innerHTML = tDest;
-         //dom.byId("panelDestination").innerHTML = tOrigin;
          var def = this.dirWidget.addStops(stops);
          def.then(lang.hitch(this, function(){
+              this.dirWidget.clearDirections();
               this.dirWidget.getDirections();
           }));
       },
@@ -881,32 +926,38 @@ define([
       
       // Directions Finished
       _directionsFinished : function() {
-         var gra = this.dirWidget.mergedRouteGraphic;
-         var ext = gra.geometry.getExtent();
-         var ext2 = ext;
-         if (this.map.width > 570) {
-            var offset = ext.getWidth() * 320 / this.map.width;
-            ext2.update(ext.xmin, ext.ymin, ext.xmax+offset, ext.ymax, ext.spatialReference);
+         if (this.dirWidget.mergedRouteGraphic !== undefined) {
+            var gra = this.dirWidget.mergedRouteGraphic;
+            var ext = gra.geometry.getExtent();
+            var ext2 = ext;
+            if (this.map.width > 570) {
+               var offset = ext.getWidth() * 320 / this.map.width;
+               ext2.update(ext.xmin, ext.ymin, ext.xmax+offset, ext.ymax, ext.spatialReference);
+            }
+            this.map.setExtent(ext2.expand(2));
+            
+            var rgb = Color.fromString(this.color).toRgb();
+            rgb.push(0);
+            var symL = new SimpleLineSymbol(SimpleLineSymbol.STYLE_NULL, new Color.fromArray(rgb), 0);
+            var sym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 20, symL, Color.fromArray(rgb));
+            var pt = gra.geometry.getPoint(0,0);
+            if (this.trackingPt)
+               this.map.graphics.remove(this.trackingPt);
+            this.trackingPt = new TrackingPt(pt, sym, {color:this.color, route:gra.geometry});
+            this.map.graphics.add(this.trackingPt);
+            setTimeout(lang.hitch(this, function(){this.trackingPt.updateSymbol();}), 2000);
+         } else {
+            this.dirWidget.clearDirections();
+            console.log("Error generating route");
          }
-         this.map.setExtent(ext2.expand(2));
-         
-         var rgb = Color.fromString(this.color).toRgb();
-         rgb.push(0);
-         var symL = new SimpleLineSymbol(SimpleLineSymbol.STYLE_NULL, new Color.fromArray(rgb), 0);
-         var sym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 20, symL, Color.fromArray(rgb));
-         var pt = gra.geometry.getPoint(0,0);
-         if (this.trackingPt)
-            this.map.graphics.remove(this.trackingPt);
-         this.trackingPt = new TrackingPt(pt, sym, {color:this.color, route:gra.geometry});
-         this.map.graphics.add(this.trackingPt);
-         setTimeout(lang.hitch(this, function(){this.trackingPt.updateSymbol();}), 2000);
       },
       
       // Update Origin
-      _updateOrigin : function(gra) {
+      _updateOrigin : function(gra, obj) {
          this.map.graphics.clear();
          this._clearDirections();
          this.origin = gra;
+         this.originObj = obj;
          if (this.origin) {
             this.map.graphics.add(gra);
             if (this.page === 0 && !this.selectedNum)
