@@ -187,7 +187,7 @@ define([
          if (this.config.styleBasemap == 1) {
             var style2 = document.createElement('style');
             style2.type = 'text/css';
-            style2.innerHTML = '.layerTile {filter: url(css/filters.svg#grayscale); filter: gray; -webkit-filter: grayscale(1); -moz-opacity: 0.7; -khtml-opacity: 0.7; opacity: 0.7; filter: alpha(opacity=70);}';
+            style2.innerHTML = '.layerTile {filter: url(css/filters.svg#grayscale); filter: gray; -webkit-filter: grayscale(1); -ms-filter: grayscale(100%); -moz-opacity: 0.7; -khtml-opacity: 0.7; opacity: 0.7;}';
             document.getElementsByTagName('head')[0].appendChild(style2);
          }
          // rec opened
