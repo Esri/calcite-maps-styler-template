@@ -112,6 +112,7 @@ define([
       destLayer : null,
       origin : null,
       originObj : null,
+      geocoder : null,
       dirWidget : null,
       selectedNum: null,
       trackingPt :  null,
@@ -191,7 +192,7 @@ define([
             document.getElementsByTagName('head')[0].appendChild(style2);
          }
          // rec opened
-         var recColor = Color.blendColors(Color.fromString("#ffffff"), Color.fromString(this.color), 0.2);
+         var recColor = Color.blendColors(Color.fromString("#ffffff"), Color.fromString(this.color), 0.3);
          var style3 = document.createElement('style');
          style3.type = 'text/css';
          style3.innerHTML = '.recOpened {background-color:' + recColor.toCss() + ';}';
@@ -231,6 +232,7 @@ define([
             this.map = response.map;
             this.initExt = this.map.extent;
             this.opLayers = response.itemInfo.itemData.operationalLayers;
+            on(this.map, "click", lang.hitch(this, this._mapClickHandler));
             
             // hi layer
             this.hiLayer = new GraphicsLayer();
@@ -568,11 +570,22 @@ define([
          var pt;
          if (evt.graphic) {
             pt = evt.graphic.geometry;
-            var label = "Current Location";
-            if (this.config && this.config.i18n)
-               label = this.config.i18n.location.current;
-            var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
-            gra = new Graphic(pt, sym, {label: label});
+            this.locator.locationToAddress(pt, 500,
+               lang.hitch(this, function(result){
+                  if (result.address) {
+                     var label = result.address.Address;
+                     this.geocoder.set("value", label);
+                     var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
+                     var gra = new Graphic(pt, sym, {label: label});
+                     this._updateOrigin(gra, gra);
+                  }
+               }), 
+               lang.hitch(this, function(err){
+                  this._clearDirections();
+                  console.log(err.message);
+                  this.geocoder.set("value", "");
+               })
+            );
          } else {
             if (evt.error)
                console.log(evt.error.message);
@@ -684,8 +697,13 @@ define([
             domClass.add(recClick, 'recClick');
             on(recClick, "click", lang.hitch(this, this._selectRecord, i));
             // route
+            var tip = "Directions";
+            if (this.config && this.config.i18n) {
+               tip = this.config.i18n.tooltips.directions;
+            }
             if (gra.attributes.DISTANCE) {
                var recRoute = domConstruct.create("div", {
+                  title: tip
                }, rec);
                domClass.add(recRoute, 'recRoute');
                recRoute.select = lang.hitch(this, this._selectRoute);
@@ -893,6 +911,7 @@ define([
          var stops = this.dirWidget.stops;
          stops.reverse();
          this.dirWidget.clearDirections();
+         this.dirWidget.reset();
          var def = this.dirWidget.addStops(stops);
          def.then(lang.hitch(this, function(){
               this.dirWidget.getDirections();
@@ -989,6 +1008,48 @@ define([
               document.documentElement.scrollTop = v;
           });
           anim.play();
+      },
+      
+      // Map Click Handler
+      _mapClickHandler : function(evt) {
+         var pt = evt.mapPoint;
+         var content = "Use this location";
+         if (this.config && this.config.i18n) {
+            content = this.config.i18n.location.use;
+         }
+         var div = domConstruct.create("div", {
+            innerHTML: content
+         });
+         domClass.add(div, "useLocation");
+         on(div, "click", lang.hitch(this, this._useClickLocation, pt));
+         this.map.infoWindow.setContent(div);
+         this.map.infoWindow.show(pt);
+      },
+      
+      // Use Click Location
+      _useClickLocation : function(pt) {
+         this.map.infoWindow.hide();
+         this.locator.locationToAddress(pt, 500,
+            lang.hitch(this, function(result){
+               if (result.address) {
+                  var label = result.address.Address;
+                  this.geocoder.set("value", label);
+                  var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
+                  var gra = new Graphic(pt, sym, {label: label});
+                  this._updateOrigin(gra, gra);
+               }
+            }), 
+            lang.hitch(this, function(err){
+               this._clearDirections();
+               var content = "Unable to use this location";
+               if (this.config && this.config.i18n) {
+                  content = this.config.i18n.location.error;
+               }
+               this.geocoder.set("value", "");
+               this.map.infoWindow.setContent(content);
+               this.map.infoWindow.show(pt);
+            })
+         );
       }
       
       

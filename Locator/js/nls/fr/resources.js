@@ -23,7 +23,9 @@ define(( {
      "current" : "Emplacement Actuel",
      "address" : "Adresse",
      "latitude" : "Latitude",
-     "longitude" : "Longitude"
+     "longitude" : "Longitude",
+     "use" : "Utilisez ce lieu",
+     "error": "Impossible d'utiliser ce lieu"
   },
   "tooltips" :{
          "toggle" : "Show/Hide",

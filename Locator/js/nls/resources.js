@@ -24,7 +24,9 @@ define({
          "current" : "Current Location",
          "address" : "Address",
          "latitude" : "Latitude",
-         "longitude" : "Longitude"
+         "longitude" : "Longitude",
+         "use": "Use this location",
+         "error": "Unable to use this location"
       },
       "tooltips" : {
          "toggle" : "Show/Hide",
