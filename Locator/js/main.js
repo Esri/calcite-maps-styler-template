@@ -544,6 +544,7 @@ define([
          switch (num) {
             case 0:
                this._clearDirections();
+               dom.byId("panelTitle").innerHTML = this.config.title;
                domStyle.set("bodyFeatures", "display", "block");
                domStyle.set("bodyDirections", "display", "none");
                domStyle.set("btnClose", "display", "none");
@@ -551,6 +552,11 @@ define([
                domStyle.set("panelDestination", "display", "none");
                break;
             case 1:
+               var tip = "Directions";
+               if (this.config && this.config.i18n) {
+                  tip = this.config.i18n.tooltips.directions;
+               }
+               dom.byId("panelTitle").innerHTML = tip;
                domStyle.set("bodyFeatures", "display", "none");
                domStyle.set("bodyDirections", "display", "block");
                domStyle.set("btnClose", "display", "block");
