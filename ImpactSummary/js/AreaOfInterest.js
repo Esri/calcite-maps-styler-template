@@ -48,6 +48,7 @@ define([
                     rendererSummarize: 'summarize'
                 };
                 this.previousFeatures = null;
+                this.previousRendererInfo = null;
                 this.entireAreaFeatures = null;
                 this.rendererInfo = null;
                 this.symbol = null;
@@ -169,8 +170,8 @@ define([
                     if (this.previousFeatures !== null) {
                         for (i = 0; i < this.previousFeatures.length; i++) {
                             if (this.rendererInfo) {
-                                this.symbol.color.a = this.rendererInfo.symbol.color.a;
-                                this.symbol.outline = this.rendererInfo.symbol.outline;
+                                this.symbol.color.a = this.previousRendererInfo.symbol.color.a;
+                                this.symbol.outline = this.previousRendererInfo.symbol.outline;
                                 if (this.previousFeatures[i].geometry.type !== "polyline") {
                                     this.previousFeatures[i].setSymbol(this.symbol);
                                 }
@@ -202,7 +203,6 @@ define([
                     for (i = 0; i < features.length; i++) {
                         this._createSymbol(features[i], alpha, sls);
                     }
-                    this.previousFeatures = features;
                     // single fature
                     if (features.length === 1) {
                         // has attribute field for renderer
@@ -232,6 +232,10 @@ define([
                                 }
                             }
                         }
+                    }
+                    if (this.rendererInfo) {
+                        this.previousFeatures = features;
+                        this.previousRendererInfo = this.rendererInfo;
                     }
                 }
             },
