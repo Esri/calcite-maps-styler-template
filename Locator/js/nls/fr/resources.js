@@ -32,6 +32,7 @@ define(( {
          "reset" : "Reset",
          "locate" : "Find my location",
          "directions" : "Directions",
+         "filter" : "Filtre",
          "close" : "Close",
          "reverse": "Reverse"
         }
