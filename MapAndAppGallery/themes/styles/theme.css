@@ -363,11 +363,17 @@ font
     background-position-x: 0px !important; /*ie8*/
 }
 
-.esriCTLeftPanelHeader
+.esriCTLeftPanelHeaderMap
 {
     font-size: 18px;
     padding: 5px 0 5px 10px;
     margin-left: 65px;
+}
+
+.esriCTLeftPanelHeader
+{
+    font-size: 18px;
+    padding: 5px 0 5px 0px;
 }
 
 .esriCTLeftText div span
@@ -1530,7 +1536,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     display: block;
 }
 
-.blueTheme .esriCTLeftPanelHeader
+.blueTheme .esriCTLeftPanelHeader, .blueTheme .esriCTLeftPanelHeaderMap
 {
     color: #007ac2;
 }
@@ -1753,7 +1759,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     display: block;
 }
 
-.greenTheme .esriCTLeftPanelHeader
+.greenTheme .esriCTLeftPanelHeader, .greenTheme .esriCTLeftPanelHeaderMap
 {
     color: #028d6a;
 }
@@ -1970,7 +1976,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
     display: block;
 }
 
-.redTheme .esriCTLeftPanelHeader
+.redTheme .esriCTLeftPanelHeader, .redTheme .esriCTLeftPanelHeaderMap
 {
     color: #800000;
 }

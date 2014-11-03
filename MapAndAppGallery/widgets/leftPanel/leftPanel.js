@@ -499,7 +499,7 @@ define([
                 if (this.innerHTML === nls.expandGroupDescText) {
                     domAttr.set(this, "innerHTML", nls.shrinkGroupDescText);
                     descHeight = window.innerHeight / 5;
-                    height = window.innerHeight - (domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelBottom")[0]).h + domGeom.position(query(".esriCTLogo")[0]).h - descHeight) + "px";
+                    height = window.innerHeight - (domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelBottom")[0]).h - descHeight) + "px";
                     domStyle.set(query(".esriCTLeftPanelDesc")[0], "maxHeight", height);
                 } else {
                     domAttr.set(this, "innerHTML", nls.expandGroupDescText);
@@ -523,9 +523,6 @@ define([
         */
         _setGroupContent: function () {
             var _self = this, groupPanelHeight;
-            if (dojo.configData.groupIcon) {
-                _self.groupLogo.src = dojo.configData.groupIcon;
-            }
             if (dojo.configData.groupTitle) {
                 _self.setNodeText(_self.groupName, dojo.configData.groupTitle);
             }
@@ -535,7 +532,7 @@ define([
             if (dojo.configData.groupDescription) {
                 _self.setNodeText(_self.groupDesc, dojo.configData.groupDescription);
                 if (domStyle.get(query(".esriCTSignInIcon")[0], "display") === "none") {
-                    groupPanelHeight = window.innerHeight - (domGeom.position(_self.groupDescPanelHeader).h + domGeom.position(_self.groupLogo).h + 100) + "px";
+                    groupPanelHeight = window.innerHeight - (domGeom.position(_self.groupDescPanelHeader).h + 100) + "px";
                     domStyle.set(_self.groupDesc, "height", groupPanelHeight);
                 } else {
                     if (query(_self.groupDesc).text().length > 400) {

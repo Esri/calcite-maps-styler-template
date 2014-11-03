@@ -1,3 +1,1 @@
-V 1.11
-
-Resolved GitHub issues:
+V 1.12

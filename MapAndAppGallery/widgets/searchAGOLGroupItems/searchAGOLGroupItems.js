@@ -304,9 +304,11 @@ define([
             if (!dojo.configData.values.group) {
                 dojo.configData.values.group = groupInfo.id;
             }
-
+            /**
+            * Set group logo image
+            */
             if (!dojo.configData.values.applicationIcon) {
-                dojo.configData.values.applicationIcon = groupInfo.thumbnailUrl;
+                dojo.configData.groupIcon = groupInfo.thumbnailUrl;
             }
             /**
             * Set group title
@@ -319,12 +321,6 @@ define([
             */
             if (!dojo.configData.groupDescription) {
                 dojo.configData.groupDescription = groupInfo.description || "";
-            }
-            /**
-            * Set group logo image
-            */
-            if (!dojo.configData.groupIcon) {
-                dojo.configData.groupIcon = groupInfo.thumbnailUrl || dojoConfig.baseURL + "/themes/images/groupNoImage.png";
             }
             this._setApplicationHeaderIcon();
         },
@@ -346,16 +342,10 @@ define([
                             domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojoConfig.baseURL + "/" + dojo.configData.values.applicationIcon);
                         }
                     }
+                } else if (dojo.configData.groupIcon) {
+                    domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojo.configData.groupIcon);
                 } else {
-                    if (dojo.configData.values.noThumbnail.indexOf("http") === 0) {
-                        domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojo.configData.values.noThumbnail);
-                    } else {
-                        if (dojo.configData.values.noThumbnail.indexOf("/") === 0) {
-                            domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojoConfig.baseURL + dojo.configData.values.noThumbnail);
-                        } else {
-                            domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojoConfig.baseURL + "/" + dojo.configData.values.noThumbnail);
-                        }
-                    }
+                    domAttr.set(query(".esriCTApplicationIcon")[0], "src", dojoConfig.baseURL + "/themes/images/defaultLogo.png");
                 }
                 appIcon = domAttr.get(query(".esriCTApplicationIcon")[0], "src");
                 this.own(on(query(".esriCTApplicationIcon")[0], "click", lang.hitch(this, function () {
@@ -595,7 +585,6 @@ define([
                             dojo.configData.groupTitle = null;
                             dojo.configData.groupDescription = null;
                             dojo.configData.groupIcon = null;
-                            dojo.configData.values.applicationIcon = null;
                             _self._setApplicationHeaderIcon();
                         }
 

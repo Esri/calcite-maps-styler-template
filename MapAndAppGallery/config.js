@@ -1,4 +1,4 @@
-﻿{
+﻿try{
     "license":[
         "| Copyright 2014 Esri",
         "|",
@@ -25,7 +25,7 @@
         "appid": "",
         "oauthappid": "",
         "applicationName": "Gallery",
-        "applicationIcon": "/themes/images/logo.png",
+        "applicationIcon": "",
         "applicationFavicon": "/themes/images/favicon.ico",
         "theme": "blueTheme",
         "defaultLayout": "list",
@@ -49,7 +49,7 @@
         "showOverviewMap": false,
         "showMapSearch": true,
         "zoomLevel": "12",
-        "locatorDefaultAddress": "Lake Echo Rd Tracy City TN 37387",
+        "locatorDefaultAddress": "139 W Porter Ave Naperville IL 60540",
         "defaultLocatorSymbol": "/themes/images/redpushpin.png",
         "markupSymbolWidth": "35",
         "markupSymbolHeight": "35",
@@ -57,8 +57,8 @@
         "basemapGroupTitle": "",
         "basemapGroupOwner": "",
         "noThumbnail": "themes/images/thumbnailNotAvailable.png",
-        "portalURL": "http://arcgis4localgov2.maps.arcgis.com",
-        "geometryService": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
+        "portalURL": "",
+        "geometryService": "",
         "proxyUrl": "/proxy/proxy.ashx"
     },
 

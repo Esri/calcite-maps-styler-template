@@ -106,7 +106,7 @@ define([
                 if (dojo.configData.groupDescription) {
                     if (domStyle.get(query(".esriCTSignInIcon")[0], "display") !== "none") {
                         descHeight = window.innerHeight / 5;
-                        leftPanelDescHeight = window.innerHeight - (domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelBottom")[0]).h + domGeom.position(query(".esriCTLogo")[0]).h - descHeight) + "px";
+                        leftPanelDescHeight = window.innerHeight - (domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelBottom")[0]).h  - descHeight) + "px";
                         domStyle.set(query(".esriCTGroupDesc")[0], "height", leftPanelDescHeight);
                     }
                 }
@@ -117,7 +117,7 @@ define([
                     if (domStyle.get(query(".esriCTSignInIcon")[0], "display") === "none") {
                         domClass.remove(query(".esriCTGroupDesc")[0], "esriCTLeftTextReadLess");
                         domStyle.set(query(".esriCTExpand")[0], "display", "none");
-                        descContainerHeight = window.innerHeight - (domGeom.position(query(".esriCTGalleryNameSample")[0]).h + domGeom.position(query(".esriCTLogo")[0]).h + 100) + "px";
+                        descContainerHeight = window.innerHeight - (domGeom.position(query(".esriCTGalleryNameSample")[0]).h +  100) + "px";
                         domStyle.set(query(".esriCTGroupDesc")[0], "height", descContainerHeight);
                     } else {
                         domStyle.set(query(".esriCTGroupDesc")[0], "height", "");
@@ -264,10 +264,7 @@ define([
                     if (data.url) {
                         dojo.downloadWindow.location = data.url;
                     } else if (data.itemType.toLowerCase() === "file" && data.type.toLowerCase() === "cityengine web scene") {
-                        window.open(dojo.configData.values.portalURL + "/apps/CEWebViewer/viewer.html?3dWebScene=" + data.id, '_blank');
-                        if (dojo.downloadWindow) {
-                            dojo.downloadWindow.close();
-                        }
+                        dojo.downloadWindow.location = dojo.configData.values.portalURL + "/apps/CEWebViewer/viewer.html?3dWebScene=" + data.id;
                     } else if (data.itemType.toLowerCase() === "file") {
                         if (dojo.configData.values.token) {
                             tokenString2 = "?token=" + dojo.configData.values.token;

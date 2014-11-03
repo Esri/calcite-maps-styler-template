@@ -714,7 +714,7 @@
         left: -1px;
     }
 
-    .esriCTLeftPanelHeader
+    .esriCTLeftPanelHeader, .esriCTLeftPanelHeaderMap
     {
         padding: 15px 20px;
         margin-bottom: 10px;
@@ -1542,7 +1542,7 @@
         left: -1px;
     }
 
-    .esriCTLeftPanelHeader
+    .esriCTLeftPanelHeader, .esriCTLeftPanelHeaderMap
     {
         padding: 15px 20px;
         margin-bottom: 10px;

@@ -70,13 +70,13 @@ define([
                     /**
                     * create application header
                     */
-                    this._createApplicationHeader(widgets);
                     var self = this, portalSigninWidgetLoader;
                     // set app ID settings and call init after
                     portalSigninWidgetLoader = new PortalSignin();
                     portalSigninWidgetLoader.fetchAppIdSettings().then(function () {
                         portalSigninWidgetLoader.initializePortal();
                         self._applicationThemeLoader();
+                        self._createApplicationHeader(widgets);
                     });
                 } catch (ex) {
                     alert(nls.errorMessages.widgetNotLoaded);
