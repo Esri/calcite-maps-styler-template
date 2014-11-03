@@ -1,4 +1,4 @@
-﻿try{
+﻿{
     "license":[
         "| Copyright 2014 Esri",
         "|",
