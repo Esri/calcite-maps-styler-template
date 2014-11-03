@@ -222,7 +222,6 @@ define([
          arcgisUtils.createMap(itemInfo, "panelMap", {
             mapOptions : {
                editable : false,
-               ignorepopups : false,
                infoWindow : popup
             },
             bingMapsKey : this.config.bingKey
@@ -1028,20 +1027,21 @@ define([
       
       // Map Click Handler
       _mapClickHandler : function(evt) {
-         var pt = evt.mapPoint;
-         var content = "Use this location";
-         if (this.config && this.config.i18n) {
-            content = this.config.i18n.location.use;
+         if (evt.target.id == "panelMap_gc") {
+            var pt = evt.mapPoint;
+            var content = "Use this location";
+            if (this.config && this.config.i18n) {
+               content = this.config.i18n.location.use;
+            }
+            var div = domConstruct.create("div", {
+               innerHTML: content
+            });
+            domClass.add(div, "useLocation");
+            domClass.add(div, "rounded");
+            on(div, "click", lang.hitch(this, this._useClickLocation, pt));
+            this.map.infoWindow.setContent(div);
+            this.map.infoWindow.show(pt);
          }
-         var div = domConstruct.create("div", {
-            innerHTML: content
-         });
-         domClass.add(div, "useLocation");
-         domClass.add(div, "rounded");
-         on(div, "click", lang.hitch(this, this._useClickLocation, pt));
-         this.map.infoWindow.setContent(div);
-         this.map.infoWindow.show(pt);
-         //event.stop(evt);
       },
       
       // Use Click Location

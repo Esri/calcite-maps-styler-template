@@ -238,6 +238,7 @@ hr {
 }
 
 .esriPopup .contentPane {
+	font-size: 11px;
 	padding: 6px !important;
 	background-color: transparent !important;
 	color: #ffffff;
@@ -271,6 +272,10 @@ hr {
 
 .actionList {
 	display: none;
+}
+
+td.attrName {
+	color: #c8c8c8 !important;
 }
 
 /* Directions */
