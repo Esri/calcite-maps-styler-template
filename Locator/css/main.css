@@ -238,6 +238,7 @@ hr {
 }
 
 .esriPopup .contentPane {
+	padding: 6px !important;
 	background-color: transparent !important;
 	color: #ffffff;
 }
@@ -248,6 +249,7 @@ hr {
 
 .esriPopup {
 	font-size: 10pt !important;
+	font-weight: 300;
 }
 
 .esriPopup .pointer, 
@@ -261,6 +263,10 @@ hr {
 
 .esriPopup .titleButton.maximize {
 	display: none !important;
+}
+
+.actionsPane {
+	display: none;
 }
 
 .actionList {
@@ -643,7 +649,9 @@ hr {
 .useLocation {
 	height: 30px;
 	line-height: 30px;
-	background: url(../images/pin.png)no-repeat;
+	background-color: rgba(0,0,0,0.4);
+	background-image: url(../images/pin.png);
+	background-repeat: no-repeat;
 	padding-left: 35px;
 	cursor: pointer;
 }

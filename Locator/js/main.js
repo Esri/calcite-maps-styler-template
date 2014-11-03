@@ -105,6 +105,7 @@ define([
       locator : null,
       initExt : null,
       opLayers : [],
+      opLayerObj : null,
       opLayer : null,
       opFeatureLayer : false,
       opFeatures : [],
@@ -220,8 +221,9 @@ define([
          
          arcgisUtils.createMap(itemInfo, "panelMap", {
             mapOptions : {
-               editable: false,
-               infoWindow: popup
+               editable : false,
+               ignorepopups : false,
+               infoWindow : popup
             },
             bingMapsKey : this.config.bingKey
          }).then(lang.hitch(this, function(response) {
@@ -230,6 +232,7 @@ define([
             //console.log(searchOptions);
             
             this.map = response.map;
+            this.map.setInfoWindowOnClick(true);
             this.initExt = this.map.extent;
             this.opLayers = response.itemInfo.itemData.operationalLayers;
             on(this.map, "click", lang.hitch(this, this._mapClickHandler));
@@ -326,12 +329,14 @@ define([
                if (layer.featureCollection) {
                   for (var i = 0; i < layer.featureCollection.layers.length; i++) {
                      if (layer.featureCollection.layers[i].id == name) {
+                        this.opLayerObj = layer;
                         this.destLayer.id = layer.title;
                         this.opLayer = layer.featureCollection.layers[i].layerObject;
                         this.opFeatures = this.opLayer.graphics.slice(0);
                      }
                   }
                } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.id == name) {
+                  this.opLayerObj = layer;
                   this.destLayer.id = layer.title;
                   this.opFeatureLayer = true;
                   this.opLayer = layer.layerObject;
@@ -358,10 +363,12 @@ define([
             this.destLayer.id = layer.title;
             if (layer.featureCollection) {
                for (var l=0; l<layer.featureCollection.layers.length; l++) {
+                  this.opLayerObj = layer;
                   this.opFeatures  = layer.featureCollection.layers[l].layerObject.graphics.slice(0);
                   return layer.featureCollection.layers[l].layerObject;
                }
             } else if (layer.layerObject && layer.layerObject.type == "Feature Layer") {
+               this.opLayerObj = layer;
                this.opFeatureLayer = true;
                return layer.layerObject;
             }
@@ -521,7 +528,6 @@ define([
          on(btnReset, "click", lang.hitch(this, this._resetApp));
          // reverse
          on(dom.byId("btnReverse"), "click", lang.hitch(this, this._reverseDirections));
-        
          
       },
 
@@ -619,9 +625,13 @@ define([
       
       // Query Destinations
       _queryDestinations : function() {
+         var expr = "1=1";
+         // if (this.opLayerObj.layerDefinition && this.opLayerObj.layerDefinition.definitionExpression) {
+            // expr = this.opLayerObj.layerDefinition.definitionExpression;
+         // }
          var query = new Query();
          query.returnGeometry = true;
-         query.where = "1=1";
+         query.where = expr;
          // TO DO: verify if destinatins need to be limited to  default map extent;
          //query.geometry = this.map.extent;
          query.outFields = ["*"];
@@ -1027,9 +1037,11 @@ define([
             innerHTML: content
          });
          domClass.add(div, "useLocation");
+         domClass.add(div, "rounded");
          on(div, "click", lang.hitch(this, this._useClickLocation, pt));
          this.map.infoWindow.setContent(div);
          this.map.infoWindow.show(pt);
+         //event.stop(evt);
       },
       
       // Use Click Location
@@ -1047,6 +1059,7 @@ define([
             }), 
             lang.hitch(this, function(err){
                this._clearDirections();
+               console.log(err);
                var content = "Unable to use this location";
                if (this.config && this.config.i18n) {
                   content = this.config.i18n.location.error;
