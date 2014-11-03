@@ -274,7 +274,7 @@ hr {
 	display: none;
 }
 
-td.attrName {
+#panelPopup td.attrName {
 	color: #c8c8c8 !important;
 }
 

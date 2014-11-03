@@ -358,18 +358,26 @@ define([
       _getDefaultOperationalLayer : function() {
          this.opLayers.reverse();
          if (this.opLayers.length > 0) {
-            var layer = this.opLayers[0];
-            this.destLayer.id = layer.title;
-            if (layer.featureCollection) {
-               for (var l=0; l<layer.featureCollection.layers.length; l++) {
+            for (var i=0; i<this.opLayers.length; i++) {
+               var layer = this.opLayers[i];
+               if (layer.featureCollection) {
+                  var count = layer.featureCollection.layers.length;
+                  layer.featureCollection.layers.reverse();
+                  for (var j=0; j<count; j++) {
+                     var features = layer.featureCollection.layers[j].layerObject.graphics;
+                     if (features.length > 0) {
+                        this.destLayer.id = layer.title;
+                        this.opLayerObj = layer;
+                        this.opFeatures  = features.slice();
+                        return layer.featureCollection.layers[j].layerObject;
+                     }
+                  }
+               } else if (layer.layerObject && layer.layerObject.type == "Feature Layer") {
+                  this.destLayer.id = layer.title;
                   this.opLayerObj = layer;
-                  this.opFeatures  = layer.featureCollection.layers[l].layerObject.graphics.slice(0);
-                  return layer.featureCollection.layers[l].layerObject;
+                  this.opFeatureLayer = true;
+                  return layer.layerObject;
                }
-            } else if (layer.layerObject && layer.layerObject.type == "Feature Layer") {
-               this.opLayerObj = layer;
-               this.opFeatureLayer = true;
-               return layer.layerObject;
             }
          }
          return null;
