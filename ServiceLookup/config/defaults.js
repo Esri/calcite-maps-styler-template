@@ -4,8 +4,8 @@ define([], function () {
     //default web map, default app color theme and more. These values can be overwritten by template configuration settings
     //and url parameters.
     var defaults = {
-        "appid": "",//
-        "webmap": "f78d5c37c0e6428db2548f7f362b83a7",//"25660c0facdb419191c8b2dec5da74d7", // "" 
+        "appid": "",
+        "webmap": "25660c0facdb419191c8b2dec5da74d7",
         "oauthappid": null, //"AFTKRmv16wj14N3z",
         //Group templates must support a group url parameter. This will contain the id of the group.
         //group: "",
@@ -50,8 +50,7 @@ define([], function () {
             }]
         },
 
-        "serviceAreaLayerNames": "Trimming|Maintenance",
-        "serviceAreaLayerNamesSelector": null,//[{'id':'SystemImprovement_2905','fields':[],'type':'FeatureLayer'},{'id':'SystemImprovement_3770','fields':[],'type':'FeatureLayer'}]
+        "serviceAreaLayerNames": "Service Area",
         "popupTitle": "Service Information",
         "serviceUnavailableTitle": "Outside Utility Service Area",
         "serviceUnavailableMessage": "The utility does not provide service to the selected location",
