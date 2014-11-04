@@ -10,6 +10,7 @@ define([
     "dojo/_base/array",
     "dojo/on",
     "dojo/topic",
+    "dojo/json",
     "esri/geometry",
     "esri/geometry/Extent",
     "esri/geometry/Point",
@@ -33,6 +34,7 @@ define([
     array,
     on,
     topic,
+    JSON,
     Geometry,
     Extent,
     Point,
@@ -43,7 +45,7 @@ define([
     Query,
     PopupTemplate,
     String,
-    i18n
+    i18n    
 ) {
     return declare([Evented], {
         config: {},
@@ -183,8 +185,31 @@ define([
 
             var serviceAreaLayerNames = [];
             this.popupMedia = [];
+            if (this.config.serviceAreaLayerNamesSelector === null){
+                this.config.serviceAreaLayerNamesSelector = "";
+            }
+           
+            if (this.config.serviceAreaLayerNamesSelector != undefined) {
+                if (this.config.serviceAreaLayerNamesSelector != null) {
 
-            if (String.trim(this.config.serviceAreaLayerNames) === "") {
+                    if (String.trim(this.config.serviceAreaLayerNamesSelector) === "") {
+                        if (String.trim(this.config.serviceAreaLayerNames) === "") {
+                            if (i18n) {
+                                if (i18n.error) {
+                                    if (i18n.error.noLayersSet) {
+                                        alert(i18n.error.noLayersSet);
+                                    }
+                                }
+                            }
+                            alert();
+                        }
+                        else {
+                            serviceAreaLayerNames = this.config.serviceAreaLayerNames.split("|");
+                        }
+                    }
+                }
+            }
+            else if (String.trim(this.config.serviceAreaLayerNames) === "") {
                 if (i18n) {
                     if (i18n.error) {
                         if (i18n.error.noLayersSet) {
@@ -194,7 +219,19 @@ define([
                 }
                 alert();
             }
-            serviceAreaLayerNames = this.config.serviceAreaLayerNames.split("|");
+            else {
+                serviceAreaLayerNames = [];
+                layers = dojo.fromJson(this.config.serviceAreaLayerNamesSelector);
+                array.forEach(layers, function (layer) {
+                    serviceAreaLayerNames.push(layer.id);
+                });
+
+
+
+            }
+
+        
+         
             this.lookupLayers = [];
             var layDetails = {};
             var f = 0, fl = 0;
@@ -210,7 +247,8 @@ define([
                             array.forEach(layer.featureCollection.layers, function (subLyrs) {
                                 if (subLyrs.layerObject != null) {
 
-                                    if (layer.title == serviceAreaLayerNames[f]) {
+                                    if (layer.title == serviceAreaLayerNames[f] || layer.id == serviceAreaLayerNames[f]) {
+                                        serviceAreaLayerNames[f] = layer.title;
                                         layDetails.name = layer.title;
                                         layDetails.layerOrder = f;
                                         layDetails.url = subLyrs.layerObject.url;
@@ -237,7 +275,8 @@ define([
                     } else if (layer.layerObject != null) {
                         if (layer.layerObject.layerInfos != null) {
                             array.forEach(layer.layerObject.layerInfos, function (subLyrs) {
-                                if (subLyrs.name == serviceAreaLayerNames[f]) {
+                                if (subLyrs.name == serviceAreaLayerNames[f] || subLyrs.id == serviceAreaLayerNames[f]) {
+                                    serviceAreaLayerNames[f] = subLyrs.name;
                                     layDetails.name = subLyrs.name;
                                     layDetails.layerOrder = f;
                                     layDetails.url = layer.layerObject.url + "/" + subLyrs.id;
@@ -267,7 +306,8 @@ define([
                             }, this);
 
                         } else {
-                            if (layer.title == serviceAreaLayerNames[f]) {
+                            if (layer.title == serviceAreaLayerNames[f] || layer.id == serviceAreaLayerNames[f]) {
+                                serviceAreaLayerNames[f] = layer.title;
                                 if (layer.popupInfo == null) {
                                     if (i18n) {
                                         if (i18n.error) {
@@ -389,18 +429,18 @@ define([
             }
 
             var allLayerNames = "";
-            var layerNammesFound = [];
+            var layerNamesFound = [];
             for (f = 0, fl = this.lookupLayers.length; f < fl; f++) {
 
                 allLayerNames += this.lookupLayers[f].name + ",";
-                layerNammesFound.push(this.lookupLayers[f].name);
+                layerNamesFound.push(this.lookupLayers[f].name);
             }
             
             if (!useLegacyConfig) {
 
                 for (var n = 0, nl = serviceAreaLayerNames.length; n < nl; n++) {
 
-                    if (dojo.indexOf(layerNammesFound,serviceAreaLayerNames[n]) < 0) {
+                    if (dojo.indexOf(layerNamesFound,serviceAreaLayerNames[n]) < 0) {
                         if (i18n) {
                             if (i18n.error) {
                                 if (i18n.error.layerNotFound) {

@@ -4,8 +4,8 @@ define([], function () {
     //default web map, default app color theme and more. These values can be overwritten by template configuration settings
     //and url parameters.
     var defaults = {
-        "appid": "",
-        "webmap": "25660c0facdb419191c8b2dec5da74d7",
+        "appid": "",//
+        "webmap": "f78d5c37c0e6428db2548f7f362b83a7",//"25660c0facdb419191c8b2dec5da74d7", // "" 
         "oauthappid": null, //"AFTKRmv16wj14N3z",
         //Group templates must support a group url parameter. This will contain the id of the group.
         //group: "",
@@ -23,7 +23,7 @@ define([], function () {
         //want to use custom settings for units or any of the helper services set queryForOrg to false then enter
         //default values for any items you need using the helper services and units properties.
         "queryForOrg": true,
-        //If you need localization set the supportsLocali   zation value to true to get the localized strings
+        //If you need localization set the supportsLocalization value to true to get the localized strings
         //from the javascript/nls/resource files.
         //Note that we've included a placeholder nls folder and a resource file with one error string
         //to show how to setup the strings file.
@@ -50,7 +50,8 @@ define([], function () {
             }]
         },
 
-        "serviceAreaLayerNames": "Service Area",
+        "serviceAreaLayerNames": "Trimming|Maintenance",
+        "serviceAreaLayerNamesSelector": null,//[{'id':'SystemImprovement_2905','fields':[],'type':'FeatureLayer'},{'id':'SystemImprovement_3770','fields':[],'type':'FeatureLayer'}]
         "popupTitle": "Service Information",
         "serviceUnavailableTitle": "Outside Utility Service Area",
         "serviceUnavailableMessage": "The utility does not provide service to the selected location",
