@@ -223,7 +223,7 @@ hr {
 	-webkit-box-shadow: none !important;
 	border-radius: 0 !important;
 	-webkit-border-radius: 0 !important;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.6);
 	border: 1px solid #ffffff;
 }
 
@@ -433,6 +433,14 @@ hr {
 	background: url(../images/reset.png)no-repeat;
 }
 
+.btnFilter {
+	position: absolute;
+	top: 10px;
+	right: 37px;
+	background: url(../images/filter.png)no-repeat;
+	display: none;
+}
+
 .btnClose {
 	position: absolute;
 	top: 10px;
@@ -493,6 +501,25 @@ hr {
 	right: 0px;
 	width: 30px;
 	height: 30px;
+}
+
+#panelFilterBox {
+	position: absolute;
+	left: 10px;
+	right: 7px;
+	top: 45px;
+	height: 30px;
+	color: #ffffff;
+	display: none;
+}
+
+#panelFilter {
+	position: absolute;
+	left: 0px;
+	right: 40px;
+	display: block;
+	height: 30px;
+	color: #6e6e6e;
 }
 
 #panelDestination {

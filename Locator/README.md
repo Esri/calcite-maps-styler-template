@@ -1,11 +1,11 @@
-locator
+directions
 =======================
 
-Locator is a configurable template for finding the nearest feature and providing driving directions to the feature from a user selected location or address.
+Directions is a configurable template for providing turn by turn directions to features within a layer or a specific destination.
 
-![Screen Shot](http://coolmaps.esri.com/templates/Locator/images/thumb.png)
+![Screen Shot](http://coolmaps.esri.com/templates/Directions/images/thumb.png)
 
-[View it live] (http://coolmaps.esri.com/templates/Locator/)
+[View it live] (http://coolmaps.esri.com/templates/Directions/)
 
 #Features
 
@@ -64,7 +64,7 @@ Anyone and everyone is welcome to contribute.
 
 #Licensing 
 
-Copyright 2012 Esri
+Copyright 2014 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

@@ -97,7 +97,7 @@ define([
     urlUtils
 ) {
    
-   return declare(null, {
+      return declare(null, {
 
       config : {},
       color : null,
@@ -115,11 +115,11 @@ define([
       originObj : null,
       geocoder : null,
       dirWidget : null,
-      selectedNum: null,
-      trackingPt :  null,
+      selectedNum : null,
+      trackingPt : null,
       offset : 0,
       page : 0,
-
+      searchProps : null,
 
       // Startup
       startup : function(config) {
@@ -132,12 +132,12 @@ define([
             this._setProtocolHandler();
             // proxy rules
             urlUtils.addProxyRule({
-               urlPrefix: "route.arcgis.com",
-               proxyUrl: this.config.proxyurl
+               urlPrefix : "route.arcgis.com",
+               proxyUrl : this.config.proxyurl
             });
             urlUtils.addProxyRule({
-               urlPrefix: "traffic.arcgis.com",
-               proxyUrl: this.config.proxyurl
+               urlPrefix : "traffic.arcgis.com",
+               proxyUrl : this.config.proxyurl
             });
             // document ready
             ready(lang.hitch(this, function() {
@@ -197,9 +197,9 @@ define([
          var style3 = document.createElement('style');
          style3.type = 'text/css';
          style3.innerHTML = '.recOpened {background-color:' + recColor.toCss() + ';}';
-         document.getElementsByTagName('head')[0].appendChild(style3); 
+         document.getElementsByTagName('head')[0].appendChild(style3);
       },
-      
+
       // set protocol handler
       _setProtocolHandler : function() {
          esri.id.setProtocolErrorHandler(function() {
@@ -208,17 +208,17 @@ define([
             }
          });
       },
-      
+
       // Create web map based on the input web map id
       _createWebMap : function(itemInfo) {
-         
+
          // popup
          var popupSym = new SimpleMarkerSymbol("circle", 2, null, new Color([0, 0, 0, 0.1]));
          var popup = new Popup({
             markerSymbol : popupSym,
             anchor : "top"
          }, dom.byId("panelPopup"));
-         
+
          arcgisUtils.createMap(itemInfo, "panelMap", {
             mapOptions : {
                editable : false,
@@ -227,32 +227,32 @@ define([
             bingMapsKey : this.config.bingKey
          }).then(lang.hitch(this, function(response) {
 
-            //var searchOptions = response.itemInfo.itemData.applicationProperties.viewing.search;
-            //console.log(searchOptions);
-            
+            var appProps = response.itemInfo.itemData.applicationProperties;
+            if (appProps && appProps.viewing && appProps.viewing.search)
+               this.searchProps = appProps.viewing.search;
+
             this.map = response.map;
             this.map.setInfoWindowOnClick(true);
             this.initExt = this.map.extent;
             this.opLayers = response.itemInfo.itemData.operationalLayers;
             on(this.map, "click", lang.hitch(this, this._mapClickHandler));
-            
+
             // hi layer
             this.hiLayer = new GraphicsLayer();
             this.map.addLayer(this.hiLayer);
-            
+
             // destinations layer
             this.destLayer = new GraphicsLayer();
             this.map.addLayer(this.destLayer);
             this.destLayer.on("click", lang.hitch(this, this._selectFeature));
-            
+
             // locator
             this.locator = new Locator(this.config.helperServices.geocode[0].url);
             this.locator.outSpatialReference = this.map.spatialReference;
-            
+
             // calc offset
             this._calculateOffset(response);
-            
-            this._configureMapUI();
+
             // make sure map is loaded
             if (this.map.loaded) {
                // do something with the map
@@ -265,7 +265,7 @@ define([
             }
          }), this.reportError);
       },
-      
+
       // Calculate Offset
       _calculateOffset : function(response) {
          var lods = response.itemInfo.itemData.baseMap.baseMapLayers[0].layerObject.tileInfo.lods;
@@ -280,63 +280,68 @@ define([
          query(".esriSimpleSlider").style("backgroundColor", this.color.toString());
          domClass.remove(document.body, "app-loading");
          this._processDestinations();
+         this._configureMapUI();
       },
-      
+
       // Process Destinations
       _processDestinations : function() {
          this.opFeatures = [];
          var pt, gra;
          if (this.config.longitude && this.config.latitude) {
             pt = new Point(parseFloat(this.config.longitude), parseFloat(this.config.latitude));
-            gra = new Graphic(pt, null, {Name: this.config.destination, Latitude: this.config.latitude, Longitude: this.config.longitude});
+            gra = new Graphic(pt, null, {
+               Name : this.config.destination,
+               Latitude : this.config.latitude,
+               Longitude : this.config.longitude
+            });
             this.opFeatures.push(gra);
             this._setupTemplate();
             this._processDestinationFeatures();
          } else if (this.config.address) {
             var options = {
-               address: {"SingleLine": this.config.address}, 
-               outFields: ["Loc_name"]
+               address : {
+                  "SingleLine" : this.config.address
+               },
+               outFields : ["Loc_name"]
             };
             this.locator.addressToLocations(options);
-            this.locator.addressToLocations(options, 
-               lang.hitch(this, function(evt){
-                  if (evt.length > 0) {
-                     var candidate = evt[0];
-                     var address = candidate.address;
-                     pt = candidate.location;
-                     gra = new Graphic(pt, null, {Name: this.config.destination, Address: address});
-                     this.opFeatures.push(gra);
-                     this._setupTemplate();
-                     this._processDestinationFeatures();
-                  }
-               }), 
-               function(err){
-                  console.log(err.message);
-               });
+            this.locator.addressToLocations(options, lang.hitch(this, function(evt) {
+               if (evt.length > 0) {
+                  var candidate = evt[0];
+                  var address = candidate.address;
+                  pt = candidate.location;
+                  gra = new Graphic(pt, null, {
+                     Name : this.config.destination,
+                     Address : address
+                  });
+                  this.opFeatures.push(gra);
+                  this._setupTemplate();
+                  this._processDestinationFeatures();
+               }
+            }), function(err) {
+               console.log(err.message);
+            });
          } else {
             this._processOperationalLayers();
          }
       },
-      
+
       // Process Operational Layers
       _processOperationalLayers : function() {
-         var name = null;
-         if (this.config.destLayer)
-            name = this.config.destLayer.id;
-         if (name) {
+         if (this.config.destLayer) {
             array.forEach(this.opLayers, lang.hitch(this, function(layer) {
                if (layer.featureCollection) {
                   for (var i = 0; i < layer.featureCollection.layers.length; i++) {
-                     if (layer.featureCollection.layers[i].id == name) {
+                     if (layer.featureCollection.layers[i].id == this.config.destLayer.id) {
+                        this.config.destLayer.title = layer.title;
                         this.opLayerObj = layer;
-                        this.destLayer.id = layer.title;
                         this.opLayer = layer.featureCollection.layers[i].layerObject;
                         this.opFeatures = this.opLayer.graphics.slice(0);
                      }
                   }
-               } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.id == name) {
+               } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.id == this.config.destLayer.id) {
+                  this.config.destLayer.title = layer.title;
                   this.opLayerObj = layer;
-                  this.destLayer.id = layer.title;
                   this.opFeatureLayer = true;
                   this.opLayer = layer.layerObject;
                }
@@ -353,27 +358,27 @@ define([
             this._processDestinationFeatures();
          }
       },
-      
+
       // get default operational layer
       _getDefaultOperationalLayer : function() {
          this.opLayers.reverse();
          if (this.opLayers.length > 0) {
-            for (var i=0; i<this.opLayers.length; i++) {
+            for (var i = 0; i < this.opLayers.length; i++) {
                var layer = this.opLayers[i];
                if (layer.featureCollection) {
                   var count = layer.featureCollection.layers.length;
                   layer.featureCollection.layers.reverse();
-                  for (var j=0; j<count; j++) {
+                  for (var j = 0; j < count; j++) {
                      var features = layer.featureCollection.layers[j].layerObject.graphics;
                      if (features.length > 0) {
-                        this.destLayer.id = layer.title;
+                        this.config.destLayer = {id: layer.featureCollection.layers[j].id, title: layer.title};
                         this.opLayerObj = layer;
-                        this.opFeatures  = features.slice();
+                        this.opFeatures = features.slice();
                         return layer.featureCollection.layers[j].layerObject;
                      }
                   }
                } else if (layer.layerObject && layer.layerObject.type == "Feature Layer") {
-                  this.destLayer.id = layer.title;
+                  this.config.destLayer = {id: layer.id, title: layer.title};
                   this.opLayerObj = layer;
                   this.opFeatureLayer = true;
                   return layer.layerObject;
@@ -382,7 +387,7 @@ define([
          }
          return null;
       },
-      
+
       // setup template
       _setupTemplate : function() {
          var infoTemplate;
@@ -398,50 +403,103 @@ define([
          this.infoTemplate = infoTemplate;
          this.destLayer.setInfoTemplate(infoTemplate);
       },
-      
 
       // ** UI FUNCTIONS ** //
-      
+
       // Create Geocoder Options
-      _createGeocoderOptions: function () {
-            var hasEsri = false;
-            var geocoders = lang.clone(this.config.helperServices.geocode);
-            array.forEach(geocoders, lang.hitch(this, function (geocoder, index) {
-                if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
-                    hasEsri = true;
-                    geocoder.name = "Esri World Geocoder";
-                    geocoder.outFields = "Match_addr, stAddr, City";
-                    geocoder.singleLineFieldName = "SingleLine";
-                    geocoder.esri = geocoder.placefinding = true;
-                }
-            }));
-            //only use geocoders with a singleLineFieldName 
-            geocoders = array.filter(geocoders, function (geocoder) {
-                return (esriLang.isDefined(geocoder.singleLineFieldName));
-            });
-            var esriIdx;
-            if (hasEsri) {
-                for (var i = 0; i < geocoders.length; i++) {
-                    if (esriLang.isDefined(geocoders[i].esri) && geocoders[i].esri === true) {
-                        esriIdx = i;
-                        break;
-                    }
-                }
+      _createGeocoderOptions : function() {
+         var hasEsri = false;
+         var geocoders = lang.clone(this.config.helperServices.geocode);
+         array.forEach(geocoders, lang.hitch(this, function(geocoder, index) {
+            if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+               hasEsri = true;
+               geocoder.name = "Esri World Geocoder";
+               geocoder.outFields = "Match_addr, stAddr, City";
+               geocoder.singleLineFieldName = "SingleLine";
+               geocoder.esri = geocoder.placefinding = true;
             }
-            var options = {
-                map: this.map,
-                autoNavigate: false,
-                autoComplete: hasEsri
-            };
-            if (hasEsri && esriIdx === 0 && geocoders.length === 1) { // Esri geocoder is primary
-                options.arcgisGeocoder = true;
-            } else { // Esri geocoder is not primary
-                options.arcgisGeocoder = false;
-                options.geocoders = geocoders;
+         }));
+         //only use geocoders with a singleLineFieldName
+         geocoders = array.filter(geocoders, function(geocoder) {
+            return (esriLang.isDefined(geocoder.singleLineFieldName));
+         });
+         var esriIdx;
+         if (hasEsri) {
+            for (var i = 0; i < geocoders.length; i++) {
+               if (esriLang.isDefined(geocoders[i].esri) && geocoders[i].esri === true) {
+                  esriIdx = i;
+                  break;
+               }
             }
-            return options;
-        },
+         }
+         var options = {
+            map : this.map,
+            autoNavigate : false,
+            autoComplete : hasEsri
+         };
+         if (hasEsri && esriIdx === 0 && geocoders.length === 1) {// Esri geocoder is primary
+            options.arcgisGeocoder = true;
+         } else {// Esri geocoder is not primary
+            options.arcgisGeocoder = false;
+            options.geocoders = geocoders;
+         }
+         return options;
+      },
       
+      // Create Geofilter Options
+      _createGeofilterOptions : function() {
+         var options;
+         var searchLayers = [];
+         if (this.searchProps) {
+             array.forEach(this.searchProps.layers, lang.hitch(this, function (searchLayer) {
+                 var layer = null;
+                 var destId = this.config.destLayer.id;
+                 array.some(this.opLayers, function (lyr) {
+                     if (lyr.id === searchLayer.id && searchLayer.id == destId) {
+                         layer = lyr;
+                         return true;
+                     }
+                 });
+                 if (layer && layer.hasOwnProperty("url")) {
+                     var url = layer.url;
+                     var field = searchLayer.field.name;
+                     var name = layer.title;
+                     if (esriLang.isDefined(searchLayer.subLayer)) {
+                         url = url + "/" + searchLayer.subLayer;
+                         array.some(layer.layerObject.layerInfos, function (info) {
+                             if (info.id == searchLayer.subLayer) {
+                                 name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
+                                 return true;
+                             }
+
+                         });
+                     }
+                     searchLayers.push({
+                         "name": name,
+                         "url": url,
+                         "field": field,
+                         "exactMatch": (searchLayer.field.exactMatch || false),
+                         "placeholder": this.searchProps.hintText,
+                         "outFields": "*",
+                         "type": "query",
+                         "layerId": searchLayer.id,
+                         "subLayerId": parseInt(searchLayer.subLayer) || null
+                     });
+                 }
+             }));
+         }
+         if(searchLayers.length > 0) {
+            options = {};
+            options.map = this.map;
+            options.autoNavigate = false;
+            options.autoComplete = false;
+            options.arcgisGeocoder = false;
+            options.maxLocations = 250;
+            options.geocoders = searchLayers;
+         }
+         return options;
+      },
+
       // Configure Map UI
       _configureMapUI : function() {
 
@@ -468,30 +526,45 @@ define([
          this.geocoder.startup();
          var prompt = this.config.prompt || "";
          domAttr.set("panelGeocoder_input", "placeholder", prompt);
-         
+
+         // geofilter
+         var geofilterOptions;
+         if (this.searchProps) {
+            geofilterOptions = this._createGeofilterOptions();
+         }
+         if (geofilterOptions) {
+            this.geofilter = new Geocoder(geofilterOptions, "panelGeocoderFilter");
+            this.geofilter.startup();
+            domStyle.set("btnFilter", "display", "block");
+            on(this.geofilter, "find-results", lang.hitch(this, this._geofilterResults));
+            on(this.geofilter, "clear", lang.hitch(this, this._geofilterClear));
+         }
+
          // directions
          var rgb = Color.fromString(this.color).toRgb();
-         var symL = new SimpleLineSymbol(SimpleLineSymbol.STYLE_NULL, new Color([0,0,0]), 0);
-         var sym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 1, symL, new Color([0,0,0,0]));
+         var symL = new SimpleLineSymbol(SimpleLineSymbol.STYLE_NULL, new Color([0, 0, 0]), 0);
+         var sym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 1, symL, new Color([0, 0, 0, 0]));
          var routeSym = new CartographicLineSymbol(CartographicLineSymbol.STYLE_SOLID, new Color([rgb[0], rgb[1], rgb[2], 0.4]), 8, CartographicLineSymbol.CAP_SQUARE, CartographicLineSymbol.JOIN_MITER, 4);
-         var segmentSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SHORTDOT, new Color([0,0,0,0.4]), 8); 
+         var segmentSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SHORTDOT, new Color([0, 0, 0, 0.4]), 8);
          var units = "esriMiles";
          if (this.config.distanceUnits == "kilometers")
             units = "esriKilometers";
          var options = {
-              map: this.map,
-              maxStops: 2,
-              showTravelModesOption: false,
-              showTrafficOption: true,
-              routeParams: {directionsLengthUnits: units},
-              alphabet: false,
-              canModifyStops: false,
-              dragging: false,
-              fromSymbol: sym, 
-              toSymbol: sym, 
-              stopSymbol: sym,
-              routeSymbol: routeSym,
-              segmentSymbol: segmentSym
+            map : this.map,
+            maxStops : 2,
+            showTravelModesOption : false,
+            showTrafficOption : true,
+            routeParams : {
+               directionsLengthUnits : units
+            },
+            alphabet : false,
+            canModifyStops : false,
+            dragging : false,
+            fromSymbol : sym,
+            toSymbol : sym,
+            stopSymbol : sym,
+            routeSymbol : routeSym,
+            segmentSymbol : segmentSym
          };
          if (this.config.helperServices.routeTask)
             options.routeTaskURL = this.config.helperServices.routeTask.url;
@@ -500,25 +573,24 @@ define([
          this.dirWidget = new Directions(options, "resultsDirections");
          on(this.dirWidget, "directions-finish", lang.hitch(this, this._directionsFinished));
          this.dirWidget.startup();
-         
+
          // configure ui
          this._configureUI();
 
          // update theme
          this._updateTheme();
-         
+
       },
-      
+
       // Configure UI
       _configureUI : function() {
-         
+
          // top
          if (this.config.title !== "") {
             document.title = this.config.title;
             dom.byId("panelTitle").innerHTML = this.config.title;
          }
-         
-         // features
+
          // toggle
          var btnToggle = dom.byId("btnToggle");
          if (this.config && this.config.i18n) {
@@ -533,9 +605,15 @@ define([
             btnReset.title = this.config.i18n.tooltips.reset;
          }
          on(btnReset, "click", lang.hitch(this, this._resetApp));
+         // filter
+         var btnFilter = dom.byId("btnFilter");
+         if (this.config && this.config.i18n) {
+            btnFilter.title = this.config.i18n.tooltips.filter;
+         }
+         on(btnFilter, "click", lang.hitch(this, this._showPage, 2));
          // reverse
          on(dom.byId("btnReverse"), "click", lang.hitch(this, this._reverseDirections));
-         
+
       },
 
       // Update Theme
@@ -543,98 +621,140 @@ define([
          query(".bg").style("backgroundColor", this.color.toString());
          query(".esriPopup .titlePane").style("backgroundColor", this.color.toString());
       },
-      
+
       // Reset App
       _resetApp : function() {
          this._unselectRecords();
          this._updateOrigin(null, null);
          this._processDestinationFeatures();
       },
-      
+
       // Show Page
       _showPage : function(num) {
          this.page = num;
          switch (num) {
-            case 0:
-               this._clearDirections();
-               dom.byId("panelTitle").innerHTML = this.config.title;
-               domStyle.set("bodyFeatures", "display", "block");
-               domStyle.set("bodyDirections", "display", "none");
-               domStyle.set("btnClose", "display", "none");
-               domStyle.set("btnReset", "display", "block");
-               domStyle.set("panelDestination", "display", "none");
-               break;
-            case 1:
-               var tip = "Directions";
-               if (this.config && this.config.i18n) {
-                  tip = this.config.i18n.tooltips.directions;
-               }
-               dom.byId("panelTitle").innerHTML = tip;
-               domStyle.set("bodyFeatures", "display", "none");
-               domStyle.set("bodyDirections", "display", "block");
-               domStyle.set("btnClose", "display", "block");
-               domStyle.set("btnReset", "display", "none");
-               domStyle.set("panelDestination", "display", "block");
-               break;   
+         case 0:
+            this._clearDirections();
+            dom.byId("panelTitle").innerHTML = this.config.title;
+            domStyle.set("bodyFeatures", "display", "block");
+            domStyle.set("bodyDirections", "display", "none");
+            domStyle.set("btnClose", "display", "none");
+            if(this.geofilter)
+               domStyle.set("btnFilter", "display", "block");
+            domStyle.set("btnReset", "display", "block");
+            domStyle.set("panelDestination", "display", "none");
+            domStyle.set("panelSearchBox", "display", "block");
+            domStyle.set("panelFilterBox", "display", "none");
+            break;
+         case 1:
+            var tip = "Directions";
+            if (this.config && this.config.i18n) {
+               tip = this.config.i18n.tooltips.directions;
+            }
+            dom.byId("panelTitle").innerHTML = tip;
+            domStyle.set("bodyFeatures", "display", "none");
+            domStyle.set("bodyDirections", "display", "block");
+            domStyle.set("btnClose", "display", "block");
+            domStyle.set("btnFilter", "display", "none");
+            domStyle.set("btnReset", "display", "none");
+            domStyle.set("panelDestination", "display", "block");
+            domStyle.set("panelSearchBox", "display", "block");
+            domStyle.set("panelFilterBox", "display", "none");
+            break;
+         case 2:
+            this._clearDirections();
+            var tip = "Filter";
+            if (this.config && this.config.i18n) {
+               tip = this.config.i18n.tooltips.filter;
+            }
+            dom.byId("panelTitle").innerHTML = tip;
+            domStyle.set("bodyFeatures", "display", "block");
+            domStyle.set("bodyDirections", "display", "none");
+            domStyle.set("btnClose", "display", "block");
+            domStyle.set("btnFilter", "display", "none");
+            domStyle.set("btnReset", "display", "none");
+            domStyle.set("panelDestination", "display", "none");
+            domStyle.set("panelSearchBox", "display", "none");
+            domStyle.set("panelFilterBox", "display", "block");
+            break;
          }
          this._updateRouteTools();
       },
-      
-      
+
       // ** GEO FUNCTIONS ** //
-      
+
       // geoLocated
       _geoLocated : function(evt) {
          var gra;
          var pt;
          if (evt.graphic) {
             pt = evt.graphic.geometry;
-            this.locator.locationToAddress(pt, 500,
-               lang.hitch(this, function(result){
-                  if (result.address) {
-                     var label = result.address.Address;
-                     this.geocoder.set("value", label);
-                     var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
-                     var gra = new Graphic(pt, sym, {label: label});
-                     this._updateOrigin(gra, gra);
-                  }
-               }), 
-               lang.hitch(this, function(err){
-                  this._clearDirections();
-                  console.log(err.message);
-                  this.geocoder.set("value", "");
-               })
-            );
+            this.locator.locationToAddress(pt, 500, lang.hitch(this, function(result) {
+               if (result.address) {
+                  var label = result.address.Address;
+                  this.geocoder.set("value", label);
+                  var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
+                  var gra = new Graphic(pt, sym, {
+                     label : label
+                  });
+                  this._updateOrigin(gra, gra);
+               }
+            }), lang.hitch(this, function(err) {
+               this._clearDirections();
+               console.log(err.message);
+               this.geocoder.set("value", "");
+            }));
          } else {
             if (evt.error)
                console.log(evt.error.message);
          }
          this._updateOrigin(gra, pt);
       },
-      
+
       // geocoder select
       _geocoderSelect : function(obj) {
          var result = obj.result;
          var pt = result.feature.geometry;
          var label = result.name;
          var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
-         var gra = new Graphic(pt, sym, {label: label});
+         var gra = new Graphic(pt, sym, {
+            label : label
+         });
          this._updateOrigin(gra, result);
       },
-      
+
       // geocoder clear
       _geocoderClear : function() {
          this._updateOrigin(null, null);
       },
+      
+      // geofilter results
+      _geofilterResults : function(obj) {
+         this._unselectRecords();
+         var features = [];
+         if (obj.results && obj.results.results.length > 0) {
+            var results = obj.results.results;
+            array.forEach(results, function(rec){
+               features.push(rec.feature);
+            });
+         }
+         this.opFeatures = features;
+         this._processDestinationFeatures();
+      },
 
-      
+      // geofilter clear
+      _geofilterClear : function() {
+         this._unselectRecords();
+         this._queryDestinations();
+      },
+
       // ** QUERY FUNCTIONS ** //
-      
+
       // Query Destinations
       _queryDestinations : function() {
          var expr = "1=1";
          // if (this.opLayerObj.layerDefinition && this.opLayerObj.layerDefinition.definitionExpression) {
-            // expr = this.opLayerObj.layerDefinition.definitionExpression;
+         // expr = this.opLayerObj.layerDefinition.definitionExpression;
          // }
          var query = new Query();
          query.returnGeometry = true;
@@ -644,24 +764,24 @@ define([
          query.outFields = ["*"];
          this.opLayer.queryFeatures(query, lang.hitch(this, this._processResults), lang.hitch(this, this._processError));
       },
-      
+
       // Process Results
       _processResults : function(results) {
          this.opFeatures = results.features;
          this._processDestinationFeatures();
       },
-      
+
       // Process Error
       _processError : function(err) {
          console.log(err.message);
       },
-      
+
       // Process Destination
       _processDestinationFeatures : function() {
-         array.forEach(this.opFeatures, lang.hitch(this, function(gra){
+         array.forEach(this.opFeatures, lang.hitch(this, function(gra) {
             var geom = gra.geometry;
             var pt = geom;
-            if (geom.type != "point") 
+            if (geom.type != "point")
                pt = this._getPointForGeometry(geom);
             var dist = null;
             dist = this._getDistance(pt);
@@ -672,7 +792,7 @@ define([
          this.opFeatures.sort(this._compareDistance);
          this._updateDestinations();
       },
-      
+
       // Update Destinaions
       _updateDestinations : function() {
          if (registry.byId("recPane"))
@@ -680,37 +800,37 @@ define([
          var results = dom.byId("resultsFeatures");
          results.innerHTML = "";
          var features = this.opFeatures;
-         for (var i=0; i<features.length; i++) {
-            var num = i+1;
+         for (var i = 0; i < features.length; i++) {
+            var num = i + 1;
             var gra = features[i];
             // rec
             var rec = domConstruct.create("div", {
-               id: "rec_"+i
+               id : "rec_" + i
             }, results);
             domClass.add(rec, 'rec');
             // num
             var recNum = domConstruct.create("div", {
-               innerHTML: num
+               innerHTML : num
             }, rec);
             domClass.add(recNum, 'recNum');
             domClass.add(recNum, 'bg');
             // info
             var info = gra.getTitle();
             if (info === "" && this.opLayer) {
-               info = this.destLayer.id;
+               info = this.config.destLayer.title;
             }
             var recInfo = domConstruct.create("div", {
-               id: "recInfo_"+i,
-               innerHTML: info
+               id : "recInfo_" + i,
+               innerHTML : info
             }, rec);
             domClass.add(recInfo, 'recInfo');
             // distance
             if (this.origin) {
                var dist = "";
                if (gra.attributes.DISTANCE)
-                  dist =  "~ " + gra.attributes.DISTANCE + " " + this.config.distanceUnits.toUpperCase();
+                  dist = "~ " + gra.attributes.DISTANCE + " " + this.config.distanceUnits.toUpperCase();
                var recDist = domConstruct.create("div", {
-                  innerHTML: dist
+                  innerHTML : dist
                }, rec);
                domClass.add(recDist, 'recDist');
             }
@@ -726,7 +846,7 @@ define([
             }
             if (gra.attributes.DISTANCE) {
                var recRoute = domConstruct.create("div", {
-                  title: tip
+                  title : tip
                }, rec);
                domClass.add(recRoute, 'recRoute');
                recRoute.select = lang.hitch(this, this._selectRoute);
@@ -736,16 +856,15 @@ define([
          dom.byId("bodyFeatures").scrollTop = 0;
          this._renderDestinations();
       },
-      
+
       // Switch View
       _switchView : function() {
          setTimeout(lang.hitch(this, this._toggleScroll), 2000);
       },
-  
-      
+
       // Select Feature
       _selectFeature : function(evt) {
-         var gra  = evt.graphic;
+         var gra = evt.graphic;
          var num = gra.id;
          num = num.replace("R_", "").replace("T_", "");
          this._selectRecord(parseInt(num), false);
@@ -753,10 +872,10 @@ define([
          this._showPage(0);
          this._switchView();
       },
-      
+
       // Select Record
       _selectRecord : function(num, zoom) {
-         if(typeof(zoom)==='undefined') {
+         if ( typeof (zoom) === 'undefined') {
             zoom = true;
          }
          this._unselectRecords();
@@ -766,20 +885,20 @@ define([
             this.selectedNum = null;
          }
       },
-      
+
       // Highlight Record
       _highlightRecord : function(num, zoom) {
          this.selectedNum = num;
          var gra = this.opFeatures[num];
-         domClass.add("rec_"+num, "recOpened");
+         domClass.add("rec_" + num, "recOpened");
          this._zoomToDestination(gra, zoom);
-         var rec = dom.byId("rec_"+num);
+         var rec = dom.byId("rec_" + num);
          var recDetails = domConstruct.create("div", {
-            id: "recDetails"
+            id : "recDetails"
          }, rec);
          domClass.add(recDetails, "recDetails");
          var cp = new ContentPane({
-            id: "recPane"
+            id : "recPane"
          });
          cp.placeAt('recDetails', 'last');
          cp.startup();
@@ -791,13 +910,13 @@ define([
             setTimeout(lang.hitch(this, this._updatePosition), 300);
          }
       },
-      
+
       // Select Route
       _selectRoute : function(num, evt) {
          event.stop(evt);
          this._showRoute(num);
       },
-      
+
       // Show Route
       _showRoute : function(num) {
          var zoom = true;
@@ -808,27 +927,26 @@ define([
          var gra = this.opFeatures[num];
          this._routeToDestination(gra);
       },
-      
+
       // Update Position
       _updatePosition : function() {
          dom.byId("bodyFeatures").scrollTop = 0;
          var num = this.selectedNum;
-         var pos = num*60;
+         var pos = num * 60;
          dom.byId("bodyFeatures").scrollTop = pos;
       },
-      
+
       // Unselect Records
       _unselectRecords : function() {
          this.hiLayer.clear();
          if (registry.byId("recPane"))
             registry.byId("recPane").destroy();
          domConstruct.destroy("recDetails");
-         query(".recOpened").forEach(function(node){
+         query(".recOpened").forEach(function(node) {
             domClass.remove(node, "recOpened");
          });
       },
-      
-      
+
       // Render Destinations
       _renderDestinations : function() {
          this.destLayer.clear();
@@ -836,99 +954,98 @@ define([
          var symML = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255, 255, 255, 1]), 1);
          var symM = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 22, symML, this.color);
          var symL = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([rgb[0], rgb[1], rgb[2], 0.8]), 4);
-         var symF = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, symL, new Color([255,255,255,0.4]));
+         var symF = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, symL, new Color([255, 255, 255, 0.4]));
          var fnt = new Font();
          fnt.family = "Arial";
          fnt.size = "10px";
-         for (var i=0; i<this.opFeatures.length; i++) {
-             var num = i+1;
-             var gra = this.opFeatures[i];
-             var geom = gra.geometry;
-             var attr = gra.attributes;
-             var pt = gra.attributes.POINT_LOCATION;
-             if (geom.type == "polyline")
+         for (var i = 0; i < this.opFeatures.length; i++) {
+            var num = i + 1;
+            var gra = this.opFeatures[i];
+            var geom = gra.geometry;
+            var attr = gra.attributes;
+            var pt = gra.attributes.POINT_LOCATION;
+            if (geom.type == "polyline")
                this.destLayer.add(new Graphic(geom, symL, attr));
-             if (geom.type == "polygon")
+            if (geom.type == "polygon")
                this.destLayer.add(new Graphic(geom, symF, attr));
-             var symText = new TextSymbol(num, fnt, "#ffffff");
-             symText.setOffset(0, -4);
-             var graRing = new Graphic(pt, symM, attr);
-             graRing.id = "R_"+i;
-             var graText = new Graphic(pt, symText, attr);
-             graText.id = "T_"+i;
-             this.destLayer.add(graRing);
-             this.destLayer.add(graText);
+            var symText = new TextSymbol(num, fnt, "#ffffff");
+            symText.setOffset(0, -4);
+            var graRing = new Graphic(pt, symM, attr);
+            graRing.id = "R_" + i;
+            var graText = new Graphic(pt, symText, attr);
+            graText.id = "T_" + i;
+            this.destLayer.add(graRing);
+            this.destLayer.add(graText);
          }
       },
-      
+
       // Get point for geometry
-      _getPointForGeometry: function(geom) {
+      _getPointForGeometry : function(geom) {
          if (geom.type == "polygon")
             return geom.getCentroid();
          if (geom.type == "polyline") {
-            var pathNum = Math.floor(geom.paths.length/2);
-            var ptNum = Math.floor(geom.paths[pathNum].length/2);
+            var pathNum = Math.floor(geom.paths.length / 2);
+            var ptNum = Math.floor(geom.paths[pathNum].length / 2);
             return geom.getPoint(pathNum, ptNum);
          }
          return geom.getExtent().getCenter();
       },
-      
+
       // Get distance
-      _getDistance: function(loc) {
+      _getDistance : function(loc) {
          var pt = this.map.extent.getCenter();
          if (this.origin)
             pt = this.origin.geometry;
          var dist = 0;
          dist = mathUtils.getLength(pt, loc) * 0.000621371;
          if (this.config.distanceUnits == "kilometers")
-            dist = dist*1.60934;
-         dist = Math.round(dist*10)/10;
+            dist = dist * 1.60934;
+         dist = Math.round(dist * 10) / 10;
          return dist;
       },
-      
+
       // Compare distance
-      _compareDistance: function(a,b) {
+      _compareDistance : function(a, b) {
          if (a.attributes.DISTANCE < b.attributes.DISTANCE)
-             return -1;
+            return -1;
          if (a.attributes.DISTANCE > b.attributes.DISTANCE)
-             return 1;
+            return 1;
          return 0;
       },
-      
+
       // Zoom to destination
       _zoomToDestination : function(gra, zoom) {
          var pt = gra.attributes.POINT_LOCATION;
          if (zoom) {
             var c = pt;
             if (this.map.width > 570) {
-               c = pt.offset(this.offset/2, 0);
+               c = pt.offset(this.offset / 2, 0);
             }
             this.map.centerAndZoom(c, this.config.defaultZoomLevel || 13);
          }
          var rgb = Color.fromString(this.color).toRgb();
          rgb.push(0.4);
          var symML = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color.fromArray(rgb), 10);
-         var symM = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 34, symML, new Color.fromArray([0,0,0,1]));
+         var symM = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 34, symML, new Color.fromArray([0, 0, 0, 1]));
          this.hiLayer.clear();
          this.hiLayer.add(new Graphic(pt, symM, null));
       },
-      
-      
+
       // Route to destination
       _routeToDestination : function(gra) {
          this._clearDirections();
          var pt = gra.geometry;
          dom.byId("panelDestination").innerHTML = gra.getTitle();
          this._showPage(1);
-         if (this.originObj){
+         if (this.originObj) {
             this.dirWidget.removeStops();
             var def = this.dirWidget.addStops([this.originObj, pt]);
-            def.then(lang.hitch(this, function(){
-                 this.dirWidget.getDirections();
+            def.then(lang.hitch(this, function() {
+               this.dirWidget.getDirections();
             }));
          }
       },
-      
+
       // Reverse Directions
       _reverseDirections : function() {
          var stops = this.dirWidget.stops;
@@ -936,11 +1053,11 @@ define([
          this.dirWidget.clearDirections();
          this.dirWidget.reset();
          var def = this.dirWidget.addStops(stops);
-         def.then(lang.hitch(this, function(){
-              this.dirWidget.getDirections();
-          }));
+         def.then(lang.hitch(this, function() {
+            this.dirWidget.getDirections();
+         }));
       },
-      
+
       // Clear Directions
       _clearDirections : function() {
          this.dirWidget.reset();
@@ -948,7 +1065,7 @@ define([
          if (this.trackingPt)
             this.map.graphics.remove(this.trackingPt);
       },
-      
+
       // Directions Finished
       _directionsFinished : function() {
          if (this.dirWidget.mergedRouteGraphic != undefined) {
@@ -957,26 +1074,33 @@ define([
             var ext2 = ext;
             if (this.map.width > 570) {
                var offset = ext.getWidth() * 320 / this.map.width;
-               ext2.update(ext.xmin, ext.ymin, ext.xmax+offset, ext.ymax, ext.spatialReference);
+               ext2.update(ext.xmin, ext.ymin, ext.xmax + offset, ext.ymax, ext.spatialReference);
             }
             this.map.setExtent(ext2.expand(2));
-            
+
             var rgb = Color.fromString(this.color).toRgb();
             rgb.push(0);
             var symL = new SimpleLineSymbol(SimpleLineSymbol.STYLE_NULL, new Color.fromArray(rgb), 0);
             var sym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 20, symL, Color.fromArray(rgb));
-            var pt = gra.geometry.getPoint(0,0);
+            var pt = gra.geometry.getPoint(0, 0);
             if (this.trackingPt)
                this.map.graphics.remove(this.trackingPt);
-            this.trackingPt = new TrackingPt(pt, sym, {color:this.color, route:gra.geometry});
+            this.trackingPt = new TrackingPt(pt, sym, {
+               color : this.color,
+               route : gra.geometry
+            });
             this.map.graphics.add(this.trackingPt);
-            setTimeout(lang.hitch(this, function(){this.trackingPt.updateSymbol();}), 2000);
+            setTimeout(lang.hitch(this, function() {
+               this.trackingPt.updateSymbol();
+            }), 2000);
          } else {
-            setTimeout(lang.hitch(this, function(){this.dirWidget.removeStops();}), 2000);
+            setTimeout(lang.hitch(this, function() {
+               this.dirWidget.removeStops();
+            }), 2000);
             console.log("Error generating route");
          }
       },
-      
+
       // Update Origin
       _updateOrigin : function(gra, obj) {
          this._clearDirections();
@@ -994,24 +1118,24 @@ define([
                this._showRoute(num);
             }
          }
-         
+
          this._updateRouteTools();
       },
-      
+
       // Update Route Tools
-      _updateRouteTools: function() {
+      _updateRouteTools : function() {
          if (this.page == 1 && this.origin) {
             domStyle.set("btnReverse", "display", "block");
          } else {
             domStyle.set("btnReverse", "display", "none");
          }
       },
-      
+
       // Toggle Scroll
       _toggleScroll : function() {
          this._animateScroll();
       },
-      
+
       // Animate Scroll
       _animateScroll : function() {
          var box = html.getContentBox(dom.byId("panelContent"));
@@ -1021,18 +1145,18 @@ define([
          if (pos > 0) {
             start = pos;
             end = 0;
-         } 
+         }
          var anim = new fx.Animation({
-              duration: 300,
-              curve: [start, end]
-          });
-          on(anim, "Animate", function(v){
-              document.body.scrollTop = v;
-              document.documentElement.scrollTop = v;
-          });
-          anim.play();
+            duration : 300,
+            curve : [start, end]
+         });
+         on(anim, "Animate", function(v) {
+            document.body.scrollTop = v;
+            document.documentElement.scrollTop = v;
+         });
+         anim.play();
       },
-      
+
       // Map Click Handler
       _mapClickHandler : function(evt) {
          if (evt.target.id == "panelMap_gc") {
@@ -1042,7 +1166,7 @@ define([
                content = this.config.i18n.location.use;
             }
             var div = domConstruct.create("div", {
-               innerHTML: content
+               innerHTML : content
             });
             domClass.add(div, "useLocation");
             domClass.add(div, "rounded");
@@ -1051,34 +1175,31 @@ define([
             this.map.infoWindow.show(pt);
          }
       },
-      
+
       // Use Click Location
       _useClickLocation : function(pt) {
          this.map.infoWindow.hide();
-         this.locator.locationToAddress(pt, 500,
-            lang.hitch(this, function(result){
-               if (result.address) {
-                  var label = result.address.Address;
-                  this.geocoder.set("value", label);
-                  var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
-                  var gra = new Graphic(pt, sym, {label: label});
-                  this._updateOrigin(gra, gra);
-               }
-            }), 
-            lang.hitch(this, function(err){
-               this._clearDirections();
-               console.log(err);
-               var content = "Unable to use this location";
-               if (this.config && this.config.i18n) {
-                  content = this.config.i18n.location.error;
-               }
-               this.geocoder.set("value", "");
-               this.map.infoWindow.setContent(content);
-               this.map.infoWindow.show(pt);
-            })
-         );
+         this.locator.locationToAddress(pt, 500, lang.hitch(this, function(result) {
+            if (result.address) {
+               var label = result.address.Address;
+               this.geocoder.set("value", label);
+               var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
+               var gra = new Graphic(pt, sym, {
+                  label : label
+               });
+               this._updateOrigin(gra, gra);
+            }
+         }), lang.hitch(this, function(err) {
+            this._clearDirections();
+            console.log(err);
+            var content = "Unable to use this location";
+            if (this.config && this.config.i18n) {
+               content = this.config.i18n.location.error;
+            }
+            this.geocoder.set("value", "");
+            this.map.infoWindow.setContent(content);
+            this.map.infoWindow.show(pt);
+         }));
       }
-      
-      
    });
 });
