@@ -228,6 +228,10 @@ a {
   bottom: 55px !important;
   right: 20px !important;
 }
+.esriSimpleSliderBL {
+  bottom: 55px !important;
+  left: 20px !important;
+}
 .no-title .esriSimpleSlider.esriSimpleSliderTR {
   top: 10px !important;
 }
