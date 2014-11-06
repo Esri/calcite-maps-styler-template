@@ -22,12 +22,14 @@ define({
     "webmap": "24e01ef45d40423f95300ad2abc5038a",
     "oauthappid": null, //"AFTKRmv16wj14N3z",
     "extent": null,
-    "home": false,
-    "zoom": false,
+    "home": true,
+    "zoom": true,
+    "zoom_position":"top-left",
     "scale": false,
     "search": false,
-    "searchextent": false,
-    "basemap": false,
+    "searchextent": true,
+    "basemap_toggle": false,
+    "basemap_gallery": false,
     //"streets" , "satellite" , "hybrid", "topo", "gray", "oceans", "national-geographic" "osm"
     "alt_basemap": "satellite", 
     "legend": false,
@@ -36,12 +38,12 @@ define({
     "active_panel" : "legend", //"legend, details, popup"
     "find": null,
     "show_panel": null,
-    "bg_color": "#363636",
-    "color": "#fff",
-    "popuptheme": "light", //light or dark
+    "theme": "dark",
+    //"popuptheme": "light", //light or dark
     "marker_symbol": "http://www.arcgis.com/home/webmap/images/EsriBluePinCircle26.png",
     "level": null,
     "center": null,
+    "disable_scroll":true,
     //Enter the url to the proxy if needed by the application. See the 'Using the proxy page' help topic for details
     //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
     "proxyurl": "",

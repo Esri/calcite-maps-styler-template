@@ -91,7 +91,7 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                                         //Info template defined so create a feature layer and display the popup
                                         if (layerResult.infoTemplate) {
                                             geocodeResult.feature._layer = layerResult;
-
+        
                                             this.map.infoWindow.setFeatures([geocodeResult.feature]);
                                             this.map.infoWindow.show(anchorPoint);
                                             this.map.setExtent(bestView);

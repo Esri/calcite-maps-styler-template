@@ -24,11 +24,15 @@ define({
                 "currentLocation": "Current Location",
                 "title": "Location"
             },
+            "basemap":{
+                    "label": "Basemap",
+                    "title": "Select a Basemap"
+            },
             "legend":{
                 "title": "Legend"
             },
             "details":{
-                "title": "Details",
+                "title": "Map Details",
                 "error": "Update the web map description with the details to display in this section."
             },
             "popup": {

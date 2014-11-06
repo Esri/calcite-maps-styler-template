@@ -222,8 +222,8 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
 
                     //create the top bar 
                     domConstruct.create("div", {
-                        "class": "top-bar bg",
-                        innerHTML: "<div id='top-bar'><div id='toggle_button' class='icon-list hamburger-button'></div></div>"
+                        "class": "top-bar",
+                        innerHTML: "<div id='top-bar'><div id='toggle_button' class='icon-close menu-button'></div></div>"
                     }, this._contentPaneCenterNode);
 
                     this._toggleNode = dom.byId("toggle_button");
@@ -296,9 +296,12 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
         },
         _toggleButton: function () {
             // if drawer is displayed
+            domClass.toggle(dom.byId("toggle_button"), "icon-close");
+            domClass.toggle(dom.byId("toggle_button"), "icon-open");
             if (domClass.contains(document.body, this.css.drawerOpen)) {
                 // has normal class
                 if (domClass.contains(this._toggleNode, this.css.toggleButton)) {
+
                     // replace with selected class
                     domClass.replace(this._toggleNode, this.css.toggleButtonSelected, this.css.toggleButton);
                 }

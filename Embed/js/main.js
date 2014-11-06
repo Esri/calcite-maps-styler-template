@@ -8,10 +8,8 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
             // and application id
             // any url parameters and any application specific configuration information. 
             this.config = config;
-            //Get theme colors 
-            this.bg_color = this._setColor(this.config.bg_color, true);
-            this.color = this._setColor(this.config.color, false);
-           
+
+
             // responsive drawer
             this._drawer = new Drawer({
                 borderContainer: "border_container",
@@ -23,7 +21,7 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                 config: this.config,
                 displayDrawer: (this.config.legend || this.config.details || this.config.popup_sidepanel)
             });
-        
+
             // startup drawer
             this._drawer.startup();
 
@@ -78,6 +76,9 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     map: this.map
                 }, domConstruct.create("div", {}, query(".esriSimpleSliderIncrementButton")[0], "after"));
                 home.startup();
+            } else {
+                //add class so we can move basemap gallery button 
+                domClass.add(document.body, "no-home");
             }
             if (this.config.legend) {
                 var legend = new Legend({
@@ -88,8 +89,12 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
 
             }
             if (this.config.details) {
-                var content = this.config.response.itemInfo.item.description || this.config.i18n.tools.details.error;
-                registry.byId("details").set("content", content);
+                var template = "<div class='map-title'>{title}</div><div class='map-details'>{description}</div>";
+                var content = {
+                    title: this.config.response.itemInfo.item.title,
+                    description: this.config.response.itemInfo.item.description || this.config.i18n.tools.details.error,
+                };
+                registry.byId("details").set("content", lang.replace(template, content));
 
             }
             if (this.config.search) {
@@ -104,6 +109,7 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                         domConstruct.place(geocoder.geocoder.domNode, "top-bar");
                     } else {
                         domConstruct.place(geocoder.geocoder.domNode, "mapDiv");
+
                     }
 
                     //Go to find location if possible
@@ -113,27 +119,74 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                             if (result && result.results && result.results.length > 0) {
                                 geocoder.geocoder.select(result.results[0]);
                             }
-
                         });
-
                     }
                 }
             }
-            if (this.config.basemap) {
+            if (this.config.basemap_gallery) {
+                var basemapGallery = null;
+                //add a button below the slider to show/hide the basemaps 
+                var container = domConstruct.create("div", {
+                    "class": "icon-basemap-container active-toggle",
+                    "click": lang.hitch(this, this._displayBasemapContainer)
+                }, this.map.id + "_root");
 
-                var basemapGallery = new esri.dijit.BasemapGallery({
+                var sync = domConstruct.create("div", {
+                    "class": "icon-basemap",
+                    "title": this.config.i18n.tools.basemap.label
+                }, container);
+
+                var galleryOptions = {
                     showArcGISBasemaps: true,
+                    portalUrl: this.config.sharinghost,
+                    basemapsGroup: this._getBasemapGroup(),
                     map: this.map
-                });
+                };
+
+                if (this.config.basemap_gallery) {
+                    //Create a container to hold the basemap gallery title, gallery and also draw
+                    //the callout arrow 
+                   var container =  domConstruct.create("div",{
+                       id:"gallery_container"
+                    },dom.byId("mapDiv"));
+                    
+                   domConstruct.create("div",{
+                    "class": "arrow_box",
+                    innerHTML: "<div class='basemap_title'>"+ this.config.i18n.tools.basemap.title +"</div><div id='full_gallery'></div>"
+                   },container);
+
+                    basemapGallery = new esri.dijit.BasemapGallery(galleryOptions, dom.byId("full_gallery"));
+                    basemapGallery.startup();
+
+                    //Hide the basemap gallery at startup
+                    this._displayBasemapContainer();
+     
+                }
+
+            }
+            if(this.config.basemap_toggle){
+                var galleryOptions = {
+                    showArcGISBasemaps: true,
+                    portalUrl: this.config.sharinghost,
+                    basemapsGroup: this._getBasemapGroup(),
+                    map: this.map
+                };
+                var basemapGallery = new esri.dijit.BasemapGallery(galleryOptions);
                 basemapGallery.on("load", lang.hitch(this, function () {
+
+                    var toggle_container = domConstruct.create("div",{},"mapDiv");
+  
                     var toggle = new BasemapToggle({
                         map: this.map,
-                        id: "basemap_gallery",
                         basemap: this.config.alt_basemap || "satellite"
-                    }, domConstruct.create("div", {}, "mapDiv"));
+                    }, toggle_container);
 
+                    if(this.config.scale){
+                        domClass.add(toggle.domNode, "scale");
+                    }
+
+   
                     toggle.startup();
-
 
                     toggle.on("toggle", lang.hitch(this, function (e) {
                         var current = e.currentBasemap;
@@ -170,7 +223,15 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                         });
 
                     }));
+
                 }));
+
+
+
+
+
+
+
             }
             if (this.config.active_panel) {
                 var tabs = registry.byId("tabContainer");
@@ -199,40 +260,24 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     }
                 }
             }
-
-            //Update the app styles to match the specified color theme
-            this._updateStyles();
-
-        },
-        _updateStyles: function () {
-   
-            query(".bg").style("background-color", this.bg_color.toString());
-           // query(".calcite .dijitTabChecked").style("background", this.bg_color.toString());
-
-            //query(".top-bar").style("opacity", 0.4);
-            //query(".fg").style("opacity", 1.0);
-
-
-            //Use the background color for the hamburger icon
-            query(".icon-list").style("color", this.color.toString());
-
             var bc = registry.byId("border_container");
             if (bc) {
                 bc.resize();
             }
-        },
-        _setColor: function (value, transparent) {
-            var colorValue = null;
-            var rgb = Color.fromHex(value).toRgb();
-            if (has("ie") == 8 || transparent === false) {
-                colorValue = value;
-            } else {
-                rgb.push(0.4);
-                colorValue = Color.fromArray(rgb);
-            }
-            return colorValue;
 
         },
+        _displayBasemapContainer: function () {
+            var node = null, gallery = query(".basemap_gallery");
+            if (gallery && gallery.length > 0) {
+                node = gallery[0];
+            } else {
+                node = dom.byId("gallery_container");
+            }
+            domClass.toggle(query(".icon-basemap-container")[0], "active-toggle");
+            domUtils.toggle(node);
+
+        },
+
         // create a map based on the input web map id
         _createWebMap: function (itemInfo) {
 
@@ -249,11 +294,13 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
             var customPopup = new Popup({
                 titleInBody: false
             }, domConstruct.create("div"));
-            domClass.add(customPopup.domNode, this.config.popuptheme);
+            domClass.add(document.body, this.config.theme);
+            domClass.add(customPopup.domNode, this.config.theme);
 
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: {
                     slider: this.config.zoom,
+                    sliderPosition: this.config.zoom_position,
                     infoWindow: customPopup
                 },
                 usePopupManager: true,
@@ -262,6 +309,23 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
             }).then(lang.hitch(this, function (response) {
                 this.map = response.map;
                 this.config.response = response;
+                //disable symbol for text symbols
+                /*this.map.graphics.on("click", lang.hitch(this, function(e){
+                    if(e.graphic && e.graphic.symbol && e.graphic.symbol.type && e.graphic.symbol.type === "textsymbol"){
+                        this.map.infoWindow.set("highlight", false);
+                    }else{
+                        this.map.infoWindow.set("highlight", true);
+                    }
+
+                }));*/
+
+
+                //disable mouse zoom
+                if (this.config.disable_scroll) {
+                    this.map.disableScrollWheelZoom();
+                }
+
+
 
                 // remove loading class from body
                 domClass.remove(document.body, "app-loading");
@@ -287,11 +351,11 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                         symbolInfo = decodeURIComponent(this.config.marker).split(",");
                     }
 
-                    if (symbolInfo && symbolInfo.length && symbolInfo.length === 6) {
+                    if (symbolInfo && symbolInfo.length && symbolInfo.length >= 6) {
                         var x = symbolInfo[0],
                             y = symbolInfo[1],
                             wkid = symbolInfo[2],
-                            title = symbolInfo[3],
+                            description = symbolInfo[3],
                             icon_url = symbolInfo[4],
                             label = symbolInfo[5];
 
@@ -307,23 +371,19 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                         //set the marker location to the map center 
                         this.map.centerAt(point);
 
-                        var attributes = {},
-                            infoTemplate = null;
-                        if (title) {
-                            attributes = {
-                                title: title
-                            }
+                        var infoTemplate = null;
+                        if (description || label) {
                             infoTemplate = new PopupTemplate({
-                                "description": "{title}"
+                                "title": label || null,
+                                "description": description || null
                             });
 
                         }
 
-                        var graphic = new Graphic(point, markerSymbol, attributes, infoTemplate);
+                        var graphic = new Graphic(point, markerSymbol, null, infoTemplate);
                         this.map.graphics.add(graphic);
 
-                        if (label) {
-                            console.log("Boo")
+                        /*if (label) {
                             var textSym = new TextSymbol({
                                 "color": [0, 0, 0, 255],
                                 "type": "esriTS",
@@ -342,9 +402,14 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                                 },
                                 "text": label
                             });
-                            var labelGraphic = new Graphic(point, textSym);
-                            this.map.graphics.add(labelGraphic);
-                        }
+                            //var labelGraphic = new Graphic(point, textSym, null, infoTemplate);
+                            //Perhaps just show the popup
+                            this.map.infoWindow.setFeatures([graphic]);
+                            this.map.infoWindow.show(point);
+                            //this.map.graphics.add(labelGraphic);
+                        }*/
+                            this.map.infoWindow.setFeatures([graphic]);
+                            this.map.infoWindow.show(point);
 
                     }
 
