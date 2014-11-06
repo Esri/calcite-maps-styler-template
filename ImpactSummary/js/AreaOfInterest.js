@@ -10,8 +10,10 @@ define([
     "dojo/dom-class",
     "esri/symbols/SimpleFillSymbol",
     "esri/symbols/SimpleLineSymbol",
+    "esri/symbols/SimpleMarkerSymbol",
     "dojo/_base/Color",
     "dojo/_base/event",
+    "esri/geometry/Point",
     "esri/graphic",
     "esri/layers/GraphicsLayer",
     "esri/graphicsUtils",
@@ -28,9 +30,10 @@ define([
         on,
         StatsBlock,
          domClass,
-        SimpleFillSymbol, SimpleLineSymbol,
+        SimpleFillSymbol, SimpleLineSymbol, SimpleMarkerSymbol,
         Color,
         event,
+        Point,
         Graphic, GraphicsLayer,
         graphicsUtils,
         Query,
@@ -48,6 +51,7 @@ define([
                     rendererSummarize: 'summarize'
                 };
                 this.previousFeatures = null;
+                this.iconPathSVG = "M 1784,238 1805,238 1805,259 1784,259 1784,238 M 1777,248 1784,248 M 1794,231 1794,238 M 1812,248 1805,248 M 1794,266 1794,259";
                 this.previousRendererInfo = null;
                 this.entireAreaFeatures = null;
                 this.rendererInfo = null;
@@ -82,8 +86,10 @@ define([
                     }
                     // renderer layer infos
                     if (this._aoiInfos) {
-                        // create renderer menu
-                        this._createRendererItems(this._aoiInfos);
+                        if (this.config.enableRendererArea) {
+                            // create renderer menu
+                            this._createRendererItems(this._aoiInfos);
+                        }
                     }
                     // if layer exists
                     if (this._aoiLayer) {
@@ -138,7 +144,7 @@ define([
                 }
             },
             _selectFeatures: function (features, value) {
-                var alpha, themeColor, sls, i;
+                var alpha, themeColor, sls, i, symbolSize, rendererIndex, graphicSVG, rendererTypeSize, rendererHighlight;
                 this._selectedGraphics.clear();
                 themeColor = [0, 255, 255, 1];
                 sls = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(themeColor), 2);
@@ -155,6 +161,48 @@ define([
                             return true;
                         }
                     }));
+                    if (this._aoiLayer.geometryType === "esriGeometryPoint") {
+                        symbolSize = ""; rendererIndex = "";
+                        array.forEach(features, lang.hitch(this, function (feature) {
+                            array.forEach(this._aoiInfos, lang.hitch(this, function (sizeInfo) {
+                                // still in progress to find an optimal way to check the type of renderer in the layer.
+                                if (this._aoiLayer.renderer.breaks === undefined) {
+                                    if (feature.attributes[this._attributeField] == sizeInfo.value) {
+                                        this._setFeatureSize(feature, sizeInfo);
+                                    }
+                                }
+                                else {
+                                    if (feature.attributes[this._attributeField] > sizeInfo.minValue && feature.attributes[this._attributeField] <= sizeInfo.maxValue) {
+                                        this._setFeatureSize(feature, sizeInfo);
+                                    }
+                                }
+                            }));
+                        }));
+                        for (i = 0; i < features.length; i++) {
+                            array.some(this._aoiInfos, lang.hitch(this, function (rendererInfo, index) {
+                                // still in progress to find an optimal way to check the type of renderer in the layer.
+                                if (this._aoiLayer.renderer.breaks === undefined) {
+                                    if (value === rendererInfo.label || value === rendererInfo.value) {
+                                        rendererIndex = index;
+                                        return true;
+                                    }
+                                }
+                                else {
+                                    if (value > rendererInfo.minValue && value <= rendererInfo.maxValue) {
+                                        rendererIndex = index;
+                                        return true;
+                                    }
+                                }
+                            }));
+                            graphicSVG = new Graphic(new Point([features[i].geometry.x, features[i].geometry.y], this.map.spatialReference), this._createSVGSymbol(this.iconPathSVG, features[i].size));
+                            this._selectedGraphics.add(graphicSVG);
+                        }
+                        if (rendererIndex !== "") {
+                            // to highlight the renderer for the selected feature.
+                            this._highlightRenderer(rendererIndex + 1);
+                        }
+                        return;
+                    }
                     if (this.previousFeatures == "Entire Area") {
                         array.forEach(this.entireAreaFeatures, lang.hitch(this, function (feature) {
                             array.some(this._aoiInfos, lang.hitch(this, function (renderer, idx) {
@@ -203,7 +251,7 @@ define([
                     for (i = 0; i < features.length; i++) {
                         this._createSymbol(features[i], alpha, sls);
                     }
-                    // single fature
+                    // single feature
                     if (features.length === 1) {
                         // has attribute field for renderer
                         if (this._attributeField && features[0].attributes.hasOwnProperty(this._attributeField)) {
@@ -224,7 +272,7 @@ define([
                                             break;
                                         }
                                         //for class break
-                                        else if ((fieldValue.toString() > this._rendererNodes[i].minValue.toString()) && (fieldValue.toString() <= this._rendererNodes[i].maxValue)) {
+                                        else if ((fieldValue.toString() > this._rendererNodes[i].minValue) && (fieldValue.toString() <= this._rendererNodes[i].maxValue)) {
                                             this._highlightFeature(features, alpha, sls, i);
                                             break;
                                         }
@@ -238,6 +286,29 @@ define([
                         this.previousRendererInfo = this.rendererInfo;
                     }
                 }
+            },
+            _highlightRenderer: function (i) {
+                domClass.add(this._rendererNodes[i].node, this.areaCSS.rendererSelected);
+            },
+            //to add the feature size for each feature to show the crosshair accordingly
+            _setFeatureSize: function (feature, sizeInfo) {
+                feature.size = {};
+                if (sizeInfo.symbol.height) {
+                    feature.size = sizeInfo.symbol.height;
+                }
+                else { feature.size = sizeInfo.symbol.size; }
+            },
+            _createSVGSymbol: function (path, size) {
+                var sls = new SimpleLineSymbol(
+                SimpleLineSymbol.STYLE_SOLID,
+                new Color([0, 255, 255]),
+                2), markerSymbol;
+                markerSymbol = new SimpleMarkerSymbol();
+                markerSymbol.setPath(path);
+                markerSymbol.setOutline(sls);
+                markerSymbol.setSize(size + 15);
+                markerSymbol.setColor(null);
+                return markerSymbol;
             },
             _createSymbol: function (feature, alpha, sls) {
                 var fillColor;

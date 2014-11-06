@@ -41,6 +41,7 @@ function (
         previousConfigObj: null,
         configDialog: null,
         browseDlg: null,
+        entireAreaPrevState: null,
         // lifecycle: 1
         constructor: function (options) {
             // mix in settings and defaults
@@ -92,6 +93,7 @@ function (
             setTimeout(lang.hitch(this, function () {
                 this.get("drawer").resize();
             }), 200);
+            this.entireAreaPrevState = this.config.enableEntireAreaButton;
         },
 
         _loadCSS: function () {
@@ -211,6 +213,7 @@ function (
             this.appSetting.nextBasemap = this.config.nextBasemap;
             this.appSetting.defaultBasemap = this.config.defaultBasemap;
             this.appSetting.enableAboutPanel = this.config.enableAboutPanel;
+            this.appSetting.enableRendererArea = this.config.enableRendererArea;
             this.appSetting.enableLegendPanel = this.config.enableLegendPanel;
             this.appSetting.enableLayersPanel = this.config.enableLayersPanel;
             this.appSetting.theme = this.config.theme;
@@ -257,10 +260,10 @@ function (
                     appDijitInputContainer.execCommand('fontName', "Lato ,sans-serif");
                 }, 300);
             }));
-            on(appDijitInputContainer, "change", lang.hitch(this, function () {
-                if (lang.trim(domAttr.get(appDijitInputContainer, "value")) !== "") {
+            on(appDijitInputContainer, "change", lang.hitch(this, function (evt) {
+                if (lang.trim(evt) !== "") {
                     setTimeout(lang.hitch(this, function () {
-                        this.config.summary = lang.trim(domAttr.get(appDijitInputContainer, "value"));
+                        this.config.summary = lang.trim(evt);
                     }), 0);
                 }
                 else {
@@ -406,13 +409,20 @@ function (
             rendererLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, rendererContainer);
             rendererLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.appSetingsRendererAreaText }, rendererLabelContainer);
             rendererbuttonContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2" }, rendererContainer);
-            currentState = this._checkButtonState(this.config.enableEntireAreaButton);
+            currentState = this._checkButtonState(this.config.enableRendererArea);
             areaOnOffButtonLabel = domConstruct.create("div", { innerHTML: currentState.label, "class": "esriOnOffButtonLabel" }, rendererbuttonContainer);
             onOffButtondiv = domConstruct.create("div", { "class": "esriOnOffButtonDiv" }, rendererbuttonContainer);
             areaOnOffButton = domConstruct.create("div", { "class": currentState.class }, onOffButtondiv);
             on(areaOnOffButton, "click", lang.hitch(this, function () {
-                parameterStatus = this._toggleButtonState(areaOnOffButton, this.config.enableEntireAreaButton, areaOnOffButtonLabel);
-                this.config.enableEntireAreaButton = parameterStatus;
+                parameterStatus = this._toggleButtonState(areaOnOffButton, this.config.enableRendererArea, areaOnOffButtonLabel);
+                this.config.enableRendererArea = parameterStatus;
+                if (parameterStatus === false) {
+                    if (domClass.contains(this.areaOnOffButton, "esriOnButton")) {
+                        domClass.replace(this.areaOnOffButton, "esriOffButton", "esriOnButton");
+                        domAttr.set(this.areaOnOffButtonLabel, "innerHTML", nls.widgets.TemplateBuilder.offButtonLabel);
+                        this.config.enableEntireAreaButton = false;
+                    }
+                }
             }));
             rendererSortContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm3" }, rendererContainer);
             rendererSortInnerContainer = domConstruct.create("div", { "class": "esriParentinner" }, rendererSortContainer);
@@ -476,19 +486,22 @@ function (
 
         _createEntireAreaToggleButton: function (rightSettingsContent) {
             var entireAreaContainer, entireAreaLabelContainer, entireAreaLabel, entireAreaBtnContainer, onOffButtondiv, currentClass, onStartToggle,
-                currentState, areaOnOffButtonLabel, areaOnOffButton, parameterStatus, onStartContainer, onStartInnerContainer, onStartLabel;
+                currentState, parameterStatus, onStartContainer, onStartInnerContainer, onStartLabel;
 
             entireAreaContainer = domConstruct.create("div", { "class": "esriClear" }, rightSettingsContent);
             entireAreaLabelContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm1" }, entireAreaContainer);
             entireAreaLabel = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.entireAreaButton }, entireAreaLabelContainer);
             entireAreaBtnContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm2" }, entireAreaContainer);
             currentState = this._checkButtonState(this.config.enableEntireAreaButton);
-            areaOnOffButtonLabel = domConstruct.create("div", { innerHTML: currentState.label, "class": "esriOnOffButtonLabel" }, entireAreaBtnContainer);
+            this.areaOnOffButtonLabel = domConstruct.create("div", { innerHTML: currentState.label, "class": "esriOnOffButtonLabel" }, entireAreaBtnContainer);
             onOffButtondiv = domConstruct.create("div", { "class": "esriOnOffButtonDiv" }, entireAreaBtnContainer);
-            areaOnOffButton = domConstruct.create("div", { "class": currentState.class }, onOffButtondiv);
-            on(areaOnOffButton, "click", lang.hitch(this, function () {
-                parameterStatus = this._toggleButtonState(areaOnOffButton, this.config.enableEntireAreaButton, areaOnOffButtonLabel);
-                this.config.enableEntireAreaButton = parameterStatus;
+            this.areaOnOffButton = domConstruct.create("div", { "class": currentState.class, "id": "entireAreaBtn" }, onOffButtondiv);
+            on(this.areaOnOffButton, "click", lang.hitch(this, function () {
+                if (this.config.enableRendererArea) {
+                    parameterStatus = this._toggleButtonState(this.areaOnOffButton, this.config.enableEntireAreaButton, this.areaOnOffButtonLabel);
+                    this.entireAreaPrevState = parameterStatus;
+                    this.config.enableEntireAreaButton = parameterStatus;
+                }
             }));
             onStartContainer = domConstruct.create("div", { "class": "esriParentContainerStyleClm3" }, entireAreaContainer);
             onStartInnerContainer = domConstruct.create("div", { "class": "esriParentinner" }, onStartContainer);
@@ -496,7 +509,7 @@ function (
             currentClass = this.config.selectEntireAreaOnStart ? "esriSelectIcon" : "esriDeselectIcon";
             onStartToggle = domConstruct.create("div", { "class": currentClass }, onStartInnerContainer);
             on(onStartToggle, "click", lang.hitch(this, function () {
-                parameterStatus = this._toggleCheckBoxSate(onStartToggle, this.config.selectEntireAreaOnStart, areaOnOffButton);
+                parameterStatus = this._toggleCheckBoxSate(onStartToggle, this.config.selectEntireAreaOnStart, this.areaOnOffButton);
                 this.config.selectEntireAreaOnStart = parameterStatus;
             }));
         },
@@ -948,9 +961,9 @@ function (
                     areaDescription.innerHTML = "";
                     dijitEditorParentDiv = domConstruct.create("div", {}, areaDescription);
                     dijitInputContainer = this._createTextEditor(dijitEditorParentDiv, innerText);
-                    on(editAreaDescriptionButton, "click", lang.hitch(this, function () {
-                        this._saveAppDescription(dijitInputContainer, editAreaDescriptionIcon, editAreaDescriptionButtonContainer, areaDescription);
-                    }));
+                }));
+                on(editAreaDescriptionButton, "click", lang.hitch(this, function () {
+                    this._saveAppDescription(dijitInputContainer, editAreaDescriptionIcon, editAreaDescriptionButtonContainer, areaDescription);
                 }));
             }
         },
@@ -1370,7 +1383,8 @@ function (
                 "theme": config.theme,
                 "title": config.title,
                 "webmap": config.webmap,
-                "zoomType": config.zoomType
+                "zoomType": config.zoomType,
+                "enableRendererArea": config.enableRendererArea
             };
             return appSettings;
         },
@@ -1438,15 +1452,22 @@ function (
                     var rendererContent, rendererLabel, rendererOnOfButton, rendererSort, currentClass, currentState, rendererSortLabel,
                     parameterStatus;
                     rendererContent = domConstruct.create("div", { "class": "esriTooltipDialog" }, null);
-                    currentState = _this._checkButtonState(_this.config.enableEntireAreaButton);
+                    currentState = _this._checkButtonState(_this.config.enableRendererArea);
                     rendererLabel = domConstruct.create("div", { innerHTML: currentState.label, "class": "esriFloatLeftStyle esriToggleButtonClass" }, rendererContent);
                     rendererOnOfButton = domConstruct.create("div", { "class": "esriFloatLeftStyle " + currentState.class }, rendererContent);
                     currentClass = _this.config.summaryAttributeOrder == "ASC" ? "esriSelectIcon" : "esriDeselectIcon";
                     rendererSortLabel = domConstruct.create("label", { innerHTML: nls.widgets.TemplateBuilder.summaryAttrAscendingOrderTooltip, "class": "esriFloatLeftStyle" }, rendererContent);
                     rendererSort = domConstruct.create("div", { "class": "esriFloatLeftStyle " + currentClass, "style": "margin-left:5px;" }, rendererContent);
                     on(rendererOnOfButton, "click", function () {
-                        parameterStatus = _this._toggleButtonState(rendererOnOfButton, _this.config.enableEntireAreaButton, rendererLabel);
-                        _this.config.enableEntireAreaButton = parameterStatus;
+                        parameterStatus = _this._toggleButtonState(rendererOnOfButton, _this.config.enableRendererArea, rendererLabel);
+                        _this.config.enableRendererArea = parameterStatus;
+                        if (parameterStatus === false) {
+                            if (domClass.contains(_this.areaOnOffButton, "esriOnButton")) {
+                                domClass.replace(_this.areaOnOffButton, "esriOffButton", "esriOnButton");
+                                domAttr.set(_this.areaOnOffButtonLabel, "innerHTML", nls.widgets.TemplateBuilder.offButtonLabel);
+                                _this.config.enableEntireAreaButton = false;
+                            }
+                        }
                     });
                     on(rendererSort, "click", function () {
                         parameterStatus = _this._toggleCheckBoxSate(rendererSort, _this.config.summaryAttributeOrder, rendererOnOfButton);

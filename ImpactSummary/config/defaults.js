@@ -31,6 +31,7 @@ define({
     "enableLocateButton": true,
     "enableBasemapToggle": true,
     "enableShareDialog": true,
+    "enableRendererArea":true,
     "theme": "dark", //Valid parameters: "dark" and "light"
     "nextBasemap": "hybrid",
     "defaultBasemap": "topo",
