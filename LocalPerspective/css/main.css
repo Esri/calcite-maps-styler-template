@@ -611,7 +611,6 @@ a, a:hover, a:visited{
 	overflow: hidden;
 	transition: 0.2s linear;
 	-webkit-transition: 0.2s linear;
-	cursor: pointer;
 }
 
 .recOpened {
@@ -858,7 +857,7 @@ a, a:hover, a:visited{
 		width: 30px;
 		height: 30px;
 		left: 200%;
-		margin-left: -50px;
+		margin-left: -40px;
 		top: 5px;
 		text-align: center;
 		padding: 5px;

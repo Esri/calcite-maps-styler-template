@@ -510,6 +510,8 @@ define([
       // show previous page
       _showPreviousPage : function(num) {
          this.prevPage = null;
+         if (num == 1)
+            this.prevPage = this.curPage;
          var newnum = num-1;
          this._scrollToPage(newnum);
       },
