@@ -4,197 +4,88 @@
 		<title></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-
+		
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
+		
 		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
 		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
-
-		<!--
-			To correctly reference your Tpl in search engine:
-			 - create and fill out extensively an ArcGIS.com item that link to your final application
-			 - edit the following four tags as well as the upper title tag on line 4
+		
+		<!-- 
+			To correctly reference your Map Series in search engine:
+			 - create and fill out extensively an ArcGIS Online item that link to your final application
+			 - edit the following four tags as well as the title tag above on line 4
 		-->
 		<meta name="description" content="This story map was created with the Esri Tpl application in ArcGIS Online.">
-
+		
 		<!-- Facebook sharing -->
-		<meta property="og:title" content="Tpl"/>
-		<meta property="og:description" content="This story map was created with the Esri Tpl application in ArcGIS Online."/>
+		<meta property="og:title" content="Story Map Series"/>
+		<meta property="og:description" content="This story map was created with the Story Map Series application in ArcGIS Online."/>
 		<meta property="og:image" content="resources/common/icons/esri-globe.png"/>
-
-		<!--
-			This template is released under the Apache License V2.0 by Esri http://www.esri.com/
+		
+		<!-- 
+			This application is released under the Apache License V2.0 by Esri http://www.esri.com/
 			Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
-			https://github.com/Esri/TODO
+			https://github.com/Esri/map-series-storytelling-template-js
 		-->
-
+		
 		<script type="text/javascript">
-			//----------------------------------------------------------------
-			//     Template configuration (ignored on Portal and development)
-			//----------------------------------------------------------------
+			//-------------------------------------------------------------------------------------------
+			//     Application configuration (ignored on ArcGIS Online, Portal and during development)
+			//-------------------------------------------------------------------------------------------
 			var configOptions = {
-				// Enter either a web map ID or a web application ID
-				// - Using an application ID created through the interactive builder in ArcGIS.com allow to reuse
-				//   the settings like the header configuration without having to edit any configuration here
-				// - Web map and application can be dynamically specified through url parameters (webmap and appid)
-				//   if the authorizedOwners property is specified (see below)
-				// - If an application id is specified, the webmap configuration isn't used
-				webmap: "",
+				// Enter an application ID created through the Map Series builder 
 				appid: "",
-				// Optional list of authorized application or web map owners
-				// Has to be specified when using appid or webmap url parameters (e.g. ["user1"], ["user1", "user2"])
-				authorizedOwners: [""],
-				// The application header title, if no title is specified, the webmap's title is used
-				title: "",
-				// The application header subtitle, if not specified the ArcGIS.com web map's summary is used
-				subtitle: ""
+				// Optionally to secure Series's access, use an OAuth application ID (example: 6gyOg377fLUhUk6f)
+				// User will need to sign-in to access the viewer even if your application is public
+				oAuthAppId: "",
+				// Optionally to be able to use the appid URL parameter, configure here the list of application author 
+				//  whose application are allowed to be viewed by this Map Series deployment
+				// This is the Portal username of the Series owner (e.g. ["user1"], ["user1", "user2"])
+				authorizedOwners: [""]
 			};
-			// Optionally sharing and proxy URLs can be configured in app/tpl-config.js. This is only required
-			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the template isn't deployed as /home/Tpl/ or /apps/Tpl/.
-			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/commonConfig.js. This is only required
-			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed
-			//  on Portal for ArcGIS as /home/Tpl/ or /apps/Tpl/, that configuration is available in ../commonConfig.js
+			// Optionally sharing and proxy URLs can be configured in app/tpl-config.js. This is only required  
+			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the application isn't deployed as /home/MapSeries/ or /apps/MapSeries/. 
+			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/commonConfig.js. This is only required 
+			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed 
+			//  on Portal for ArcGIS as /home/MapSeries/ or /apps/MapSeries/, that configuration is available in ../commonConfig.js
 		</script>
-
+		
 		<!--
-
+		
 			Edit below at your own risk
-
+		
 		-->
-
+		
 		<script type="text/javascript">
 			var app = {
-				version: '1.0-alpha4',
-				isProduction: true,
-				isInBuilder: false,
-				indexCfg: configOptions
+				version: '1.0.0-alpha0.0.1',
+				pathJSAPI: '//jsdev.arcgis.com/3.12/'
 			};
-
-			function loadJS(url, isExternal)
-			{
-				if( isExternal )
-					url = document.location.protocol == 'file:' ? 'http:' + url : url;
-				else
-					url += '?v=' + app.version + (!app.isProduction ? '&_=' + new Date().getTime() : '');
-
-				document.write("<script language='javascript' type='text/javascript' src='" + url + "'><\/script>");
-			}
-
-			function loadCSS(url, isExternal)
-			{
-				if( isExternal )
-					url = document.location.protocol == 'file:' ? 'http:' + url : url;
-				else
-					url += '?v=' + app.version + (!app.isProduction ? '&_=' + new Date().getTime() : '');
-
-				var el = document.createElement("link");
-				el.setAttribute("rel", "stylesheet");
-				el.setAttribute("type", "text/css");
-				el.setAttribute("href", url);
-				document.getElementsByTagName("head")[0].appendChild(el);
-			}
-
-			function getUrlVar(name)
-			{
-			    var vars = [], hash;
-			   	if( window.location.href.indexOf('?') == -1 ) return null;
-
-			    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-			    for(var i = 0; i < hashes.length; i++){
-			        hash = hashes[i].split('=');
-					hash[0] = hash[0].split('#')[0];
-			        vars.push(hash[0]);
-			        vars[hash[0]] = (hash[1] == undefined) ? true : hash[1];
-			    }
-			    return vars[name];
-			}
-
-			app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch')
-								|| getUrlVar('fromscratch') || getUrlVar('fromGallery');
-
-			if( app.isProduction ) {
-				if ( app.isInBuilder )
-					loadCSS("app/builder-min.css");
-				else
-					loadCSS("app/viewer-min.css");
-			}
-
-			var pathJSAPI = "//js.arcgis.com/3.10/";
-			var path1 = location.pathname.replace(/\/[^/]+$/, '/');
-			var path2 = location.pathname.replace(/\/[^/]+$/, '');
-
-			// Check if the template is deployed on a Portal or AGOL, path contains (apps|home + one of the two template name)
-			// If is is commonConfig.js is loaded from the parent folder, otherwise it's loaded from the app folder
-			if( /(\/apps\/|\/home\/)(MapSeries\/)/.test(document.location.pathname) )
-				path2 = path2.substr(0,path2.lastIndexOf('/MapSeries'));
-			else if ( /(\/apps\/|\/home\/)(StorytellingBasic\/)/.test(document.location.pathname) )
-				path2 = path2.substr(0,path2.lastIndexOf('/StorytellingBasic'));
-			else
-				path2 = path2.replace(/\/+$/, '') + '/app';
-
-			var dojoConfig = {
-				parseOnLoad: true,
-				isDebug: false,
-				useDeferredInstrumentation: true,
-				cacheBust: ! app.isProduction,
-				packages: [
-					{
-						name: 'storymaps',
-						location: path1 + 'app/storymaps'
-					},
-					{
-						name: "templateConfig",
-						location: path2
-					},
-					{
-						name: 'lib-app',
-						location: path1 + 'lib-app'
-					},
-					{
-						name: 'lib-build',
-						location: path1 + 'lib-build'
-					},
-					{
-						name: 'commonResources',
-						location: path1 + (app.isProduction ? 'resources/common' : 'app/storymaps/common/_resources/')
-					}
-				],
-				aliases: [
-					//['i18n', 'dojo/i18n'],
-					['text', 'lib-build/text'],
-					['underscore', 'lib-build/lodash']
-				]
-			};
-
-			loadCSS(pathJSAPI + "js/esri/css/esri.css", true);
-			loadCSS(pathJSAPI + "/js/dojo/dijit/themes/claro/claro.css", true);
 		</script>
-		<!--[if IE 7]>
-			<link rel="stylesheet" href="resources/common/font/storymaps-icons-ie7.css">
-		<![endif]-->
 	</head>
 	<body class="claro">
 		<style>
 			/* CUSTOM CSS RULES */
 		</style>
-
+		
 		<!-- Builder top panel is injected here -->
-		<div id="builderPanel" class="mainViewAboveMap hide"></div>
-
+		<div id="builderPanel" class="hide mainViewAboveMap"></div>
+		
+		<!-- Header -->
 		<div id="header" class="mainViewAboveMap">
 			<!-- Mobile header -->
-			<div id="headerMobile" class="firstDisplay">
-				<div class="banner">
-					<h1 class="title"></h1>
-					<h2 class="subtitle"></h2>
+			<div id="headerMobile" class="headerMobile mobileView">
+				<div class="header">
+					<div class="titleArea">
+						<span class="glyphicon glyphicon-th-list menu-btn"></span>
+						<div class="title"></div>
+					</div>
+					<div class="rightArea">
+						<span class="glyphicon glyphicon-share share-btn"></span>
+					</div>
 				</div>
-				<div class="grip">...</div>
-				<h3 class="navBar">
-					<span data-viewid="list" class="leftLink"></span>
-					<span data-viewid="map" class="centerLink current"></span>
-					<span data-viewid="detail" class="rightLink"></span>
-				</h3>
+				<div class="menu"></div>
 			</div>
 			<!-- Desktop header -->
 			<div id="headerDesktop">
@@ -203,179 +94,237 @@
 					<h2 class="subtitle"></h2>
 				</div>
 				<div class="rightArea">
-					<div class="social">
+					<div class="linkSocialContainer">
+						<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
 						<span class="linkContainer"></span>
-						<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
-						<i class="shareIcon share_twitter icon-twitter-1"></i>
-						<i class="shareIcon share_bitly icon-link"></i>
-
+						<span class="shareBtns">
+							<i class="shareIcon blackHover share_facebook icon-facebook-squared"></i>
+							<i class="shareIcon blackHover share_twitter icon-twitter"></i>
+							<i class="shareIcon blackHover share_bitly icon-link"></i>
+						</span>
 					</div>
-					<div class="logo">
-						<a class="logoLink" target="_blank">
-							<img class="logoImg" />
-						</a>
+					<div class="logoContainer">
+						<table class="logoContainerInner">
+							<tr>
+								<td class="logoWrapper">
+									<a class="logoLink" target="_blank">
+										<img class="logoImg"/>
+									</a>
+								</td>
+							</tr>
+						</table>
 					</div>
 				</div>
-				<button type="button" class="switchBuilder btn"></button>
 			</div>
 		</div>
-
-		<!-- Organize button -->
-		<div id="organizeBtn" style="float: right; display: none; margin-right: 0.5em;">
-            <button type="button" class="btn builder-organize"><span class="glyphicon glyphicon-th-list"></span> ORGANIZE</button>
-        </div>
-
-		<!-- Add button -->
-		<div id="addBtn" style="float: right; display: none; margin-right: 0.5em;">
-			<button type="button" class="btn builder-add">ADD</button>
-		</div>
-
-		<!-- Tab navigation bar -->
-		<div id="tabNavigation" class="mainViewAboveMap">
-			<ul class="nav nav-tabs tabArea"></ul>
-		</div>
-
-        <!-- Content -->
-        <div id="contentPanel" class="mobileView">
-            <div id="mainMediaPanel" class="tab-content">
-                <!-- Maps and media injected here -->
-            </div>
-        </div>
-        <!-- /Content -->
-
-		<!-- Mobile views -->
-		<div id="swipeView" class="mobileView">
-			Hello from swipeView
-			<div id="swipeViewCarousel"></div>
-		</div>
-		<div id="listView" class="mobileView">
-			<div class="carouselWrapper">
-				<div class="carouselScroller"></div>
+		
+		<div id="nav-bar" class="mainViewAboveMap"></div>
+		
+		<!-- Content -->
+		<div id="contentPanel" class="mobileView">
+			<div id="mainStagePanel">
+				<div id="mainStagePanelInner">
+					<div class="medias">
+						<!-- Maps and media injected here -->
+					</div>
+					<div id="mainStageLoadingIndicator" class="loadingIndicator">
+					<div class="load-indicator icon-spin1 animate-spin"></div>
+						<script>
+							// Alternate loader on IE and FF
+							if (navigator.userAgent.indexOf('MSIE') !== -1 
+									|| navigator.appVersion.indexOf('Trident/') > 0
+									|| navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+								document.write('\
+									<style>\
+								 		.load-indicator { display: none; }\
+								 		.loadingIndicator { opacity: 1.0; margin-top: -60px; margin-left: -32px; }\
+								 	</style>\
+								    <img src="resources/tpl/viewer/icons/loading-light.gif" />');
+							}
+						</script>
+					</div>
+					<!-- Builder -->
+					<div id="builderQuotes"></div>
+					<div id="builderLanding"></div>
+					<div id="builderHelp" class="centerAlignOnFloat"></div>
+				</div>
+			</div>
+			
+			<div id="accordionPanel" class="accordionPanel">
+				<div class="content"></div>
+				<div class="builder builder-content-panel">
+					<div class="builder-content-panel-group builder-add">
+						<div class="builder-btn"></div>
+						<div class="builder-lbl"></div>
+					</div>
+					<div class="builder-content-panel-group builder-organize">
+						<div class="builder-btn"></div>
+						<div class="builder-lbl"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="descLegendPanel" class="descLegendPanel">
+				<div class="descriptions"></div>
+				<div class="legends"></div>
 			</div>
 		</div>
+		<!-- /Content -->
 
+		<div id="footerMobile" class="footerMobile mobileView mainViewBelowMap">
+			<!-- Mobile view footer is injected here -->
+		</div>		
+		
 		<!-- Loading -->
-		<div id="loadingOverlay" style="position: absolute; top: 0; left: 0;  z-index: 1100; width: 100%; height: 100%; overflow: hidden; background-color: #c2c2c2;"></div>
-		<div id="loadingIndicator"></div>
+		<style>
+			#loadingOverlay {
+				position: absolute; 
+				top: 0; 
+				left: 0; 
+				z-index: 1100; 
+				width: 100%; 
+				height: 100%; 
+				overflow: hidden; 
+				background-color: #E5E5E5; 
+				-webkit-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3); 
+				-moz-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3); 
+				box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
+			}
+			
+			@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+			@-moz-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+			@-webkit-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+			@-ms-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+			@-o-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+			
+			@keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+			@-moz-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+			@-webkit-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+			@-ms-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+			@-o-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+			
+			#loadingOverlay.fadeOut {
+				-webkit-animation: fadeout 1.1s;
+				-moz-animation: fadeout 1.1s;
+				-ms-animation: fadeout 1.1s;
+				-o-animation: fadeout 1.1s;
+				animation: fadeout 1.1s;
+				-webkit-animation-fill-mode:forwards;
+				-moz-animation-fill-mode:forwards;
+				animation-fill-mode:forwards;
+			}
+			
+			#loadingIndicator {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				z-index: 1101;
+			}
+			
+			.loadingIndicator {
+				width: 110px;
+				height: 80px;
+				margin-left: -60px;
+				margin-top: -80px;
+				color: #000;
+			}
+			
+			.loadingIndicator.fadeOut {
+				opacity: 1.0;
+				-webkit-animation: initial;
+				-moz-animation: initial;
+				-ms-animation: initial;
+				-o-animation: initial;
+				animation: initial;
+				-webkit-animation-fill-mode: initial;
+				-moz-animation-fill-mode: initial;
+				animation-fill-mode: initial;
+			}
+			
+			.animate-spin {
+				display: inline-block;
+				font-size: 80px;
+				line-height: 1;
+				font-family: sans-serif  !important;
+			}
+			
+			/*
+			 * Inlining of resources/tpl/viewer/font/font/css/fontello.css and animation.css
+			 */
+			@font-face{font-family:'fontello';src:url(resources/tpl/viewer/font/font/fontello.eot?22851922);src:url(resources/tpl/viewer/font/font/fontello.eot?22851922#iefix) format("embedded-opentype"),url(resources/tpl/viewer/font/font/fontello.woff?22851922) format("woff"),url(resources/tpl/viewer/font/font/fontello.ttf?22851922) format("truetype"),url(resources/tpl/viewer/font/font/fontello.svg?22851922#fontello) format("svg");font-weight:400;font-style:normal}[class^="icon-"]:before,[class*=" icon-"]:before{font-family:"fontello";font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em}.icon-spin1:before{content:'\e800'}.icon-link:before{content:'\e801'}.icon-facebook-squared:before{content:'\e802'}.icon-twitter:before{content:'\e803'}.animate-spin{-moz-animation:spin 2s infinite linear;-o-animation:spin 2s infinite linear;-webkit-animation:spin 2s infinite linear;animation:spin 2s infinite linear;display:inline-block}@-moz-keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@-webkit-keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@-o-keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@-ms-keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
+		</style>
+		
+		<script>
+			// Loading indicator get fade effect except on IE and FF
+			if ( ! (navigator.userAgent.indexOf('MSIE') !== -1 
+					|| navigator.appVersion.indexOf('Trident/') > 0
+					|| navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ) {
+				document.write('<style>.loadingIndicator {\
+					opacity: 0.0;\
+					-webkit-animation: fadein 3s;\
+					-moz-animation: fadein 3s;\
+					-ms-animation: fadein 3s;\
+					-o-animation: fadein 3s;\
+					animation: fadein 3s;\
+					-webkit-animation-fill-mode: forwards;\
+					-moz-animation-fill-mode: forwards;\
+					animation-fill-mode: forwards;\
+				}</style>');
+			}
+		</script>
+		
+		<div id="loadingOverlay"></div>
+		<div id="loadingIndicator" class="loadingIndicator">
+			<div class="load-indicator icon-spin1 animate-spin"></div>
+			<script>
+				// Alternate loader on IE and FF
+				if (navigator.userAgent.indexOf('MSIE') !== -1 
+						|| navigator.appVersion.indexOf('Trident/') > 0
+						|| navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+					document.write('\
+						<style>\
+					 		.load-indicator { display: none; }\
+					 		.loadingIndicator { opacity: 1.0; margin-top: -60px; margin-left: -32px; }\
+					 	</style>\
+						<img src="resources/tpl/viewer/icons/loading-light.gif" />');
+				}
+			</script>
+		</div>
 		<div id="loadingMessage"></div>
-
+		
+		<!-- Share dialog -->
+		<div class="modal fade shareDialog" id="shareDialog" role="dialog" data-backdrop="static" tabindex="-1"></div>
+		
 		<!-- Builder views are injected here -->
-        <div class="modal fade" id="addPopup" role="dialog" data-backdrop="static" tabindex="-1" aria-hidden="true"></div>
-		<div class="modal fade" id="organizePopup" role="dialog" data-backdrop="static" tabindex="-1" aria-hidden="true"></div>
-        <div class="modal fade" id="settingsPopup" role="dialog" data-backdrop="static" tabindex="-1" aria-hidden="true"></div>
-		<div class="modal fade" id="initPopup" role="dialog" data-backdrop="static"></div>
-		<div class="modal fade" id="sharePopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
-
+		<div id="builder-views"></div>
+		
 		<!-- Fatal error box -->
 		<div id="fatalError">
 			<table border="0">
 				<tr>
 					<td width="70px" align="center" id="fatalError-icon"></td>
-					<td>
+					<td id="fatalError-msg">
 						<b class="error-title"></b>
 						<p class="error-msg"></p>
 					</td>
 				</tr>
 			</table>
 		</div>
-
+		
+		<script type="text/javascript" src="app/main-config.js"></script>
 		<script type="text/javascript">
-			loadJS(pathJSAPI + 'init.js', true);
-			loadJS('app/config.js');
-
-			if( app.isProduction ) {
-				_ = {};
-
-				if ( app.isInBuilder )
-					loadJS('app/builder-min.js');
-				else
-					loadJS('app/viewer-min.js');
-			}
-		</script>
-
-		<!-- Enable Google Analytics on storymaps.esri.com -->
-		<script type="text/javascript">
-			if (window.location.href.toLowerCase().indexOf("storymaps.esri.com") >= 0) {
-				var _gaq = _gaq || [];
-				_gaq.push(['_setAccount', 'UA-26529417-1']);
-				_gaq.push(['_trackPageview']);
-
-				(function() {
-					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-				})();
-			}
-		</script>
-
-		<script type="text/javascript">
-			var i18n = null;
-
-			if (document.location.protocol == "file:") {
-				$(document).ready(function() {
-					$("#fatalError .error-title").html("Application loading failed");
-					$("#fatalError .error-msg").html("The application has to be accessed through a web server. Consult user guide for detail.");
-					$("#fatalError").show();
+			require(["dojo/topic"], function(topic) {
+				/*
+				 * Custom Javascript to be executed while the application is initializing goes here
+				 */
+				
+				// The application is ready
+				topic.subscribe("tpl-ready", function(){
+					/*
+					 * Custom Javascript to be executed when the application is ready goes here
+					 */
 				});
-			}
-			else {
-				define.amd.jQuery = true;
-
-				require([
-						"dojo/i18n!./resources/tpl/viewer/nls/template.js?v=" + app.version,
-						"storymaps/common/ui/loadingIndicator/LoadingIndicator",
-						"esri/urlUtils",
-						"dojo/ready"
-					], function(
-						i18nViewer,
-						LoadingIndicator,
-						urlUtils
-					){
-						i18n = i18nViewer;
-						app.ui = {
-							loadingIndicator: new LoadingIndicator("loadingIndicator", "loadingMessage")
-						};
-				 		app.ui.loadingIndicator.init();
-						app.ui.loadingIndicator.setMessage(i18n.viewer.loading.step1);
-
-					 	require([
-								"storymaps/common/Core",
-								"storymaps/tpl/core/MainView",
-								// TODO: If included in the first require, file is loaded twice (dojo.addOnLoad fix that)
-								"templateConfig/commonConfig.js?v=" + app.version
-							], function(
-								Core,
-								MainView
-							){
-								if (app.isInBuilder) {
-									require([
-											"storymaps/common/builder/Builder",
-											"storymaps/tpl/builder/BuilderView",
-											"dojo/i18n!./resources/tpl/builder/nls/template.js?v=" + app.version,
-											"dojo/_base/lang"
-										], function(
-											Builder,
-											BuilderView,
-											i18nBuilder,
-											lang
-										){
-											lang.mixin(i18n, i18nBuilder);
-											var builderView = new BuilderView(Core);
-											var mainView = new MainView(builderView);
-
-											Core.init(mainView, Builder);
-											Builder.init(Core, builderView);
-										}
-									);
-								}
-								else {
-									Core.init(new MainView());
-								}
-					 		}
-						);
-			 		}
-				);
-			 }
+			});
 		</script>
 	</body>
 </html>

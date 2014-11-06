@@ -1,43 +1,63 @@
 define({
 	root: ({
 		viewer: {
+			common: {
+				close: "Close"
+			},
 			loading: {
-				step1: "Loading application",
-				step2: "Loading data",
-				step3: "Initializing",
-				loadBuilder: "Switching to builder",
-				redirectSignIn: "Redirecting to Sign-in page",
-				redirectSignIn2: "(you will be redirected here after sign-in)",
-				fail: "Sorry, loading failed",
-				failButton: "Retry"
+				long: "Application is initializing",
+				long2: "Thanks for waiting",
+				failButton: "Reload the application"
+			},
+			signin: {
+				title: "Authentication is required",
+				explainViewer: "Please sign in with an account on %PORTAL_LINK% to access the application.",
+				explainBuilder: "Please sign in with an account on %PORTAL_LINK% to configure the application."
 			},
 			errors: {
 				boxTitle: "An error has occurred",
-				portalSelf: "Fatal error: Failed to get portal configuration",
-				invalidConfig: "Fatal error: Invalid configuration",
-				invalidConfigOwner: "Fatal error: Invalid configuration (authorized owner required)",
-				invalidConfigNoWebmap: "Fatal error: Invalid configuration (web map or application identifier not specified in index.html)",
+				invalidConfig: "Invalid configuration",
+				invalidConfigNoApp: "Web Mapping Application identifier not specified in index.html.",
+				unspecifiedConfigOwner: "Authorized owner hasn't been configured.",
+				invalidConfigOwner: "Application owner is not authorized.",
 				createMap: "Unable to create map",
-				invalidApp: "Fatal error: The application cannot be loaded",
-				/* TODO: remove this two? */
-				noLayer: "The web map does not contain a valid data layer.",
-				noLayerMobile: "Welcome to the %TPL_NAME% web application. The application is not configured. The builder is not supported on mobile devices.",
-				noLayerView: "Welcome to the %TPL_NAME% web application.<br />The application is not configured yet.",
+				invalidApp: "The %TPL_NAME% does not exist or is inaccessible.",
+				appLoadingFail: "Something went wrong, the %TPL_NAME% did not load correctly.",
+				notConfiguredDesktop: "The application is not configured yet.",
+				notConfiguredMobile: "The %TPL_NAME% builder is not supported at this screen resolution.",
 				notAuthorized: "You are not authorized to access this application",
-				noBuilderIE8: "The builder is not supported on Internet Explorer before version 9."
+				noBuilderIE: "The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%",
+				noViewerIE: "This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>.",
+				mapLoadingFail: "Something went wrong, the Map did not load correctly.",
+				signOut: "Sign Out"
 			},
-			mobile: {
-				navList: "List",
-				navMap: "Map",
-				navDetail: "Detail"
+			mobileView: {
+				swipeInvite: "Swipe to navigate the story",
+				lblNext: "Next",
+				lblEnd: "You have reached the end of the story"
 			},
-			commonHeader: {
+			headerFromCommon: {
 				storymapsText: "A story map",
 				builderButton: "Edit",
 				bitlyTooltip: "Get a short link to the application",
-				editMe: "Edit me!",
 				templateTitle: "Set template title",
-				templateSubtitle: "Set template subtitle"
+				templateSubtitle: "Set template subtitle",
+				share: "Share"
+			},
+			overviewFromCommon: {
+				title: "Overview Map"
+			},
+			legendFromCommon: {
+				title: "Legend"
+			},
+			shareFromCommon: {
+				copy: "Copy",
+				copied: "Copied",
+				open: "Open",
+				embed: "Embed in web page",
+				embedExplain: "Use the following HTML code to embed the application in a web page.",
+				size: "Size (width/height):"
 			}
         }
     }),
