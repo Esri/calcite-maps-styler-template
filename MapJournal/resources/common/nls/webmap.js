@@ -27,7 +27,9 @@ define({
 				tooltipPopup: "Choose a popup to be displayed when your readers navigate to this section.",
 				tooltipOverview: "Display a small overview map along with the main map",
 				tooltipLegend: "Display the map legend on the map, helpful when the map has many layers and symbols.",
-				mapCfgInvite: "Use these controls to configure your map"
+				mapCfgInvite: "Use these controls to configure your map",
+				lblLocationAlt: "Inherited from the first Map",
+				tooltipLocationAlt: "TODO"
 			},
 			configure: {
 				btnReset: "Reset",

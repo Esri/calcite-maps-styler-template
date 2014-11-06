@@ -66,7 +66,7 @@ define({
 				shareHeader2: "Your application is accessible by your organization's members (login is required).",
 				shareLinkCopy: "Copy",
 				shareLinkCopied: "Copied",
-				shareQ0: "How do I embed the application in a website?",
+				shareQ0: "How do I embed the application in a web page?",
 				shareQ1Opt1: "How do I keep the application private?",
 				shareQ1Opt2: "How do I keep the application private or share it publicly?",
 				shareA1: "Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>.",
@@ -98,7 +98,12 @@ define({
 				logoCustomTargetPlaceholder: "Click-through link",
 				logoSocialExplain: "Customize the header link.",
 				logoSocialText: "Text",
-				logoSocialLink: "Link"
+				logoSocialLink: "Link",
+				lblSmallHeader: "Use a compact header (no subtitle)"
+			},
+			header: {
+				title: "Set %TPL_NAME% title",
+				subtitle: "Set %TPL_NAME% subtitle"
 			}
 		}
 	}),
