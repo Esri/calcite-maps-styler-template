@@ -223,10 +223,17 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
                     //create the top bar 
                     domConstruct.create("div", {
                         "class": "top-bar",
-                        innerHTML: "<div id='top-bar'><div id='toggle_button' class='icon-close menu-button'></div></div>"
+                        innerHTML: "<div id='top-bar'><div id='toggle_button' class='menu-button'></div></div>"
                     }, this._contentPaneCenterNode);
 
                     this._toggleNode = dom.byId("toggle_button");
+
+                    if (domClass.contains(document.body, this.css.drawerOpen)) {
+                        domClass.add(this._toggleNode, "icon-close");
+                    } else {
+                        domClass.add(this._toggleNode, "icon-open");
+                    }
+
                 } else {
                     //add class to body
                     domClass.add(document.body, "no-title");
@@ -296,16 +303,23 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
         },
         _toggleButton: function () {
             // if drawer is displayed
-            domClass.toggle(dom.byId("toggle_button"), "icon-close");
-            domClass.toggle(dom.byId("toggle_button"), "icon-open");
             if (domClass.contains(document.body, this.css.drawerOpen)) {
+                if (domClass.contains(this._toggleNode), "icon-close") {
+                    domClass.replace(this._toggleNode, "icon-close", "icon-open");
+                } else {
+                    domClass.add(this._toggleNode, "icon-open");
+                }
                 // has normal class
                 if (domClass.contains(this._toggleNode, this.css.toggleButton)) {
-
                     // replace with selected class
                     domClass.replace(this._toggleNode, this.css.toggleButtonSelected, this.css.toggleButton);
                 }
             } else {
+                if (domClass.contains(this._toggleNode), "icon-open") {
+                    domClass.replace(this._toggleNode, "icon-open", "icon-close");
+                } else {
+                    domClass.add(this._toggleNode, "icon-close");
+                }
                 // has selected class
                 if (domClass.contains(this._toggleNode, this.css.toggleButtonSelected)) {
                     // replace with normal class
