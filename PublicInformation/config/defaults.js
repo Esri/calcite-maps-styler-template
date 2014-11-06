@@ -50,6 +50,9 @@ define({
     "youtubeSearch": "",
     "youtubeTime": "all_time", // today, this_week, this_month, all_time
     "youtube_key": "AI39si5AmNrzX3VKNKo4Kcet9BVemrvyjl4B13ezBbNLsvKOlw9Vh3eL_57dZ2vC6M9PwV9i3bHm6emtZLr_BhQ8qtnTbvwzCw",
+    "enableDialogModal": false,
+    "dialogModalContent": "",
+    "dialogModalTitle": "",
     "bitlyLogin": "esrimarketing",
     "bitlyKey": "R_52f84981da0e75b23aea2b3b20cbafbc",
     "twitterUrl": location.protocol + "//utility.arcgis.com/tproxy/proxy/1.1/search/tweets.json",
