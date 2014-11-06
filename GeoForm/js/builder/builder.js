@@ -52,7 +52,7 @@ define([
             this.onDemandResources = [
                 {
                     "type": "script",
-                    "path": "js/vendor/jquery-ui/jquery-ui-1.10.4.custom.min.js"
+                    "path": "js/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.min.js"
                 },
                 {
                     "type": "css",
@@ -64,7 +64,7 @@ define([
                 },
                 {
                     "type": "css",
-                    "path": "js/vendor/jquery-ui/jquery-ui-1.10.4.custom.css"
+                    "path": "js/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css"
                 },
                 {
                     "type": "script",
@@ -325,42 +325,13 @@ define([
             dom.byId("detailTitleInput").value = this.currentConfig.details.Title;
             dom.byId("detailLogoInput").value = this.currentConfig.details.Logo;
             dom.byId("detailDescriptionInput").innerHTML = this.currentConfig.details.Description;
-            $(document).ready(lang.hitch(this, function () {
-                this._createSummerNote(false);
-            }));
-            on(dom.byId("advanceTools"), "click", lang.hitch(this, function (evt) {
-                if (evt.currentTarget.innerHTML === nls.builder.additionalSummerNoteTools) {
-                    domAttr.set(evt.currentTarget, "innerHTML", nls.builder.basicSummerNoteTools);
-                    this._createSummerNote(true);
-                } else {
-                    domAttr.set(evt.currentTarget, "innerHTML", nls.builder.additionalSummerNoteTools);
-                    this._createSummerNote(false);
-                }
-            }));
-        },
-
-        _createSummerNote: function (isAdvanceToolRequired) {
-            var tollbarOptions;
-            if (isAdvanceToolRequired) {
-                tollbarOptions = [
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['font', ['strikethrough']],
-                    ['fontsize', ['fontsize']],
-                    ['color', ['color']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['height', ['height']]
-                    ];
-            }
-            else {
-                tollbarOptions = [['style', ['bold', 'italic', 'underline', 'clear']]];
-            }
-            $('#detailDescriptionInput').destroy();
-            $('#detailDescriptionInput').summernote({
-                height: 200,
-                minHeight: null,
-                maxHeight: null,
-                focus: true,
-                toolbar: tollbarOptions
+            $(document).ready(function () {
+                $('#detailDescriptionInput').summernote({
+                    height: 200,
+                    minHeight: null,
+                    maxHeight: null,
+                    focus: true
+                });
             });
         },
 
@@ -707,17 +678,19 @@ define([
         //function to query layer in order to obtain all the information of layer
         _queryLayer: function (layerUrl, layerId) {
             var capabilities = null, layer, layerDeferred;
-            layer = new FeatureLayer(layerUrl);
-            layerDeferred = new Deferred();
-            on(layer, "load", lang.hitch(this, function () {
-                capabilities = layer.getEditCapabilities();
-                this._validateFeatureServer(layer, capabilities.canCreate, layerId);
-                layerDeferred.resolve(true);
-            }));
-            on(layer, "error", function () {
-                layerDeferred.resolve(true);
-            });
-            return layerDeferred.promise;
+            if (layerUrl) {
+                layer = new FeatureLayer(layerUrl);
+                layerDeferred = new Deferred();
+                on(layer, "load", lang.hitch(this, function () {
+                    capabilities = layer.getEditCapabilities();
+                    this._validateFeatureServer(layer, capabilities.canCreate, layerId);
+                    layerDeferred.resolve(true);
+                }));
+                on(layer, "error", function () {
+                    layerDeferred.resolve(true);
+                });
+                return layerDeferred.promise;
+            }
         },
 
         //function to filter editable layers from all the layers in webmap
@@ -870,6 +843,9 @@ define([
                         }
                         if (dom.byId("requiredAttachmentInfo")) {
                             this.currentConfig.attachmentIsRequired = dom.byId("requiredAttachmentInfo").checked;
+                        }
+                        if (dom.byId("attachmentDescription")) {
+                            this.currentConfig.attachmentHelpText = dom.byId("attachmentDescription").value;
                         }
                         if (dom.byId("attachmentLabelInfo")) {
                             this.currentConfig.attachmentLabel = dom.byId("attachmentLabelInfo").value;
@@ -1063,7 +1039,7 @@ define([
 
         _createAttachmentInput: function (layerUrl) {
             var featureLayer, enableAttachmentContainer, enableAttachmentContent, enableAttachmentLabel, attachmentLabel,
-            requiredAttachmentContainer, requiredAttachmentContent, requiredAttachmentLabel;
+            requiredAttachmentContainer, requiredAttachmentContent, requiredAttachmentLabel, attachmentDetails;
             domConstruct.empty(dom.byId('attachmentDetails'));
             featureLayer = new FeatureLayer(layerUrl);
             on(featureLayer, 'load', lang.hitch(this, function () {
@@ -1141,6 +1117,24 @@ define([
                         "class": "attachmentHint",
                         "innerHTML": nls.builder.attachmentLabelHint
                     }, attachmentLabel);
+                    attachmentDetails = domConstruct.create("div", {
+                        "id": "attachmentDetails",
+                        "class": "form-group"
+                    }, dom.byId('attachmentDetails'));
+                    domConstruct.create("label", {
+                        "for": "attachmentDescription",
+                        "innerHTML": nls.builder.attachmentDescription
+                    }, attachmentDetails);
+                    domConstruct.create("input", {
+                        "type": "text",
+                        "class": "form-control",
+                        "id": "attachmentDescription",
+                        "value": this.currentConfig.attachmentHelpText
+                    }, attachmentDetails);
+                    domConstruct.create("span", {
+                        "class": "attachmentHint",
+                        "innerHTML": nls.builder.attachmentHint
+                    }, attachmentDetails);
                     on(dom.byId("enableAttachmentInfo"), "change", function (evt) {
                         if (!evt.currentTarget.checked) {
                             domAttr.set(dom.byId("requiredAttachmentInfo"), "disabled", true);
