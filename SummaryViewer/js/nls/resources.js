@@ -1,12 +1,12 @@
 define({
-   root : ( {
-      "map" : {
-         "error" : "Unable to create map"
+   root: ( {
+      "map": {
+         "error": "Unable to create map"
       },
-      "tooltips" : {
-         "logo" : "Logo",
-         "switchbasemap" : "Switch base map",
-         "close" : "Close"
+      "tooltips": {
+         "logo": "Logo",
+         "switchbasemap": "Switch base map",
+         "close": "Close"
       }
    }),
    "ar": 1,

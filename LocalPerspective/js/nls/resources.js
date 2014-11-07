@@ -15,27 +15,27 @@
  | limitations under the License.
  */
 define({
-   root : ( {
-      "map" : {
-         "error" : "Unable to create map"
+   root: ( {
+      "map": {
+         "error": "Unable to create map"
       },
-      "days" : {
-         "now" : "NOW",
-         "sun" : "SUN",
-         "mon" : "MON",
-         "tue" : "TUE",
-         "wed" : "WED",
-         "thu" : "THU",
-         "fri" : "FRI",
-         "sat" : "SAT"
+      "days": {
+         "now": "NOW",
+         "sun": "SUN",
+         "mon": "MON",
+         "tue": "TUE",
+         "wed": "WED",
+         "thu": "THU",
+         "fri": "FRI",
+         "sat": "SAT"
       },
-      "tooltips" : {
-         "logo" : "Logo",
-         "menu" : "Menu",
-         "close" : "Close",
-         "previous" : "Previous",
-         "next" : "Next",
-         "directions" : "Directions"
+      "tooltips": {
+         "logo": "Logo",
+         "menu": "Menu",
+         "close": "Close",
+         "previous": "Previous",
+         "next": "Next",
+         "directions": "Directions"
       }
    }),
    "ar": 1,

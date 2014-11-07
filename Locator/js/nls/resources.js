@@ -15,27 +15,27 @@
  | limitations under the License.
  */
 define({
-   root : ( {
-      "map" : {
-         "error" : "Unable to create map"
+   root: ( {
+      "map": {
+         "error": "Unable to create map"
       },
-      "location" : {
-         "name" : "Name",
-         "current" : "Current Location",
-         "address" : "Address",
-         "latitude" : "Latitude",
-         "longitude" : "Longitude",
+      "location": {
+         "name": "Name",
+         "current": "Current Location",
+         "address": "Address",
+         "latitude": "Latitude",
+         "longitude": "Longitude",
          "use": "Use this location",
          "error": "Unable to use this location"
       },
-      "tooltips" : {
-         "toggle" : "Show/Hide",
-         "reset" : "Reset",
-         "locate" : "Find my location",
-         "directions" : "Directions",
-         "filter" : "Filter",
-         "close" : "Close",
-         "reverse" : "Reverse"
+      "tooltips": {
+         "toggle": "Show/Hide",
+         "reset": "Reset",
+         "locate": "Find my location",
+         "directions": "Directions",
+         "filter": "Filter",
+         "close": "Close",
+         "reverse": "Reverse"
       }
    }),
    "ar": 1,
