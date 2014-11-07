@@ -69,8 +69,8 @@
                 {
                     "type": "string",
                     "fieldName": "destination",
-                    "label": "Destination",
-                    "tooltip": "Destination",
+                    "label": "Destination Name",
+                    "tooltip": "Destination Name",
                     "placeHolder": ""
                 },
                 {
