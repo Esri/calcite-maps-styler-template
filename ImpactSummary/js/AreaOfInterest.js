@@ -165,8 +165,7 @@ define([
                         symbolSize = ""; rendererIndex = "";
                         array.forEach(features, lang.hitch(this, function (feature) {
                             array.forEach(this._aoiInfos, lang.hitch(this, function (sizeInfo) {
-                                // still in progress to find an optimal way to check the type of renderer in the layer.
-                                if (this._aoiLayer.renderer.breaks === undefined) {
+                                if (this._aoiLayer.toJson().layerDefinition.drawingInfo.renderer.type !== "classBreaks") {
                                     if (feature.attributes[this._attributeField] == sizeInfo.value) {
                                         this._setFeatureSize(feature, sizeInfo);
                                     }
@@ -180,8 +179,7 @@ define([
                         }));
                         for (i = 0; i < features.length; i++) {
                             array.some(this._aoiInfos, lang.hitch(this, function (rendererInfo, index) {
-                                // still in progress to find an optimal way to check the type of renderer in the layer.
-                                if (this._aoiLayer.renderer.breaks === undefined) {
+                                if (this._aoiLayer.toJson().layerDefinition.drawingInfo.renderer.type !== "classBreaks") {
                                     if (value === rendererInfo.label || value === rendererInfo.value) {
                                         rendererIndex = index;
                                         return true;

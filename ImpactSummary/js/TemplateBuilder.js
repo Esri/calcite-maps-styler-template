@@ -41,6 +41,7 @@ function (
         previousConfigObj: null,
         configDialog: null,
         browseDlg: null,
+        aoiLayer: null,
         entireAreaPrevState: null,
         // lifecycle: 1
         constructor: function (options) {
@@ -75,6 +76,7 @@ function (
             this.get("drawer")._borderContainer.addChild(builderContentPane);
             this.get("drawer").resize();
             var bulilderModeHelpText = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.builderModeHelpText, "class": this.css.rootContainer }, builderNode);
+            this.aoiLayer = this.map.getLayer(this.config.summaryLayer.id);
             // resize border container
             if (this.config.edit) {
                 this._showBuilderMode(builderNode);
@@ -226,8 +228,15 @@ function (
         //Revert application settigns with previously stored object if user clicks cancel button
         _revertGlobalAppSetting: function () {
             for (var key in this.appSetting) {
-                if (this.appSetting.hasOwnProperty(key))
+                if (this.appSetting.hasOwnProperty(key)) {
                     this.config[key] = this.appSetting[key];
+                }
+                if (key === "enableEntireAreaButton" && this.config.enableEntireAreaButton) {
+                    this.entireAreaPrevState = this.appSetting[key];
+                    domClass.replace(this.areaOnOffButton, "esriOnButton", "esriOffButton");
+                    domAttr.set(this.areaOnOffButtonLabel, "innerHTML", nls.widgets.TemplateBuilder.onButtonLabel);
+                    this.config.enableEntireAreaButton = true;
+                }
             }
         },
 
@@ -293,7 +302,9 @@ function (
             //Create builder settings to switch between light and dark theme
             this._createFourthColumn(rightSettingsContent);
             this._createZoomLevelSelectionPanel(rightSettingsContent);
-            this._createFeatureSelectionPanel(rightSettingsContent);
+            if (this.aoiLayer && this.aoiLayer.geometryType !== "esriGeometryPoint") {
+                this._createFeatureSelectionPanel(rightSettingsContent);
+            }
         },
 
         _createAppSettingBasemapPanel: function (settingsContainer) {
@@ -421,6 +432,12 @@ function (
                         domClass.replace(this.areaOnOffButton, "esriOffButton", "esriOnButton");
                         domAttr.set(this.areaOnOffButtonLabel, "innerHTML", nls.widgets.TemplateBuilder.offButtonLabel);
                         this.config.enableEntireAreaButton = false;
+                    }
+                } else {
+                    if (this.entireAreaPrevState) {
+                        domClass.replace(this.areaOnOffButton, "esriOnButton", "esriOffButton");
+                        domAttr.set(this.areaOnOffButtonLabel, "innerHTML", nls.widgets.TemplateBuilder.onButtonLabel);
+                        this.config.enableEntireAreaButton = true;
                     }
                 }
             }));
@@ -1033,7 +1050,7 @@ function (
             parentVariableOption.text = nls.widgets.TemplateBuilder.selectVariableDropdown;
             selectInput.appendChild(parentVariableOption);
             on(selectInput, "change", lang.hitch(this, function (evt) {
-                array.forEach(this.map.getLayer(this.config.summaryLayer.id).fields, lang.hitch(this, function (currentField) {
+                array.forEach(this.aoiLayer.fields, lang.hitch(this, function (currentField) {
                     if (currentField.name == evt.currentTarget.value) {
                         query(".esriVariableSelectInput")[0].value = currentField.alias;
                     }
@@ -1066,7 +1083,7 @@ function (
             }));
 
             //populate all fields of layer and append it to dropdown
-            array.forEach(this.map.getLayer(this.config.summaryLayer.id).fields, lang.hitch(this, function (currentField) {
+            array.forEach(this.aoiLayer.fields, lang.hitch(this, function (currentField) {
                 if (currentField.type == "esriFieldTypeSmallInteger" || currentField.type == "esriFieldTypeInteger" || currentField.type == "esriFieldTypeSingle" || currentField.type == "esriFieldTypeDouble") {
                     parentVariableOption = domConstruct.create("option");
                     parentVariableOption.value = currentField.name;
@@ -1183,7 +1200,7 @@ function (
         //function to populate sub variables and allow users to add/update the same
         _populateSubVariables: function (subVariableContentContainer, currentNodeIndex, parentAttributeName) {
             var count = 0, currentFieldAlias;
-            array.forEach(this.map.getLayer(this.config.summaryLayer.id).fields, lang.hitch(this, function (currentField) {
+            array.forEach(this.aoiLayer.fields, lang.hitch(this, function (currentField) {
                 var subVariableContentDiv, subVariableContentFirstDiv, checkBox, subVariableContentSecondDiv, label,
                 subVariableContentThirdDiv, inputText, checkBoxStatusClass, className;
                 checkBoxStatusClass = "esriUncheckIcon";
@@ -1466,6 +1483,12 @@ function (
                                 domClass.replace(_this.areaOnOffButton, "esriOffButton", "esriOnButton");
                                 domAttr.set(_this.areaOnOffButtonLabel, "innerHTML", nls.widgets.TemplateBuilder.offButtonLabel);
                                 _this.config.enableEntireAreaButton = false;
+                            }
+                        } else {
+                            if (_this.entireAreaPrevState) {
+                                domClass.replace(_this.areaOnOffButton, "esriOnButton", "esriOffButton");
+                                domAttr.set(_this.areaOnOffButtonLabel, "innerHTML", nls.widgets.TemplateBuilder.onButtonLabel);
+                                _this.config.enableEntireAreaButton = true;
                             }
                         }
                     });
