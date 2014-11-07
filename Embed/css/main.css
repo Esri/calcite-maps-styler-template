@@ -161,6 +161,17 @@ a {
   cursor: pointer;
   color: #4c4c4c;
 }
+.icon-basemap-container.embed-bottom-right,
+.icon-basemap-container.embed-bottom-left,
+.icon-basemap-container.embed-top-right {
+  top: 65px;
+  left: 10px;
+}
+.no-title .icon-basemap-container.embed-bottom-right,
+.no-title .icon-basemap-container.embed-bottom-left,
+.no-title .icon-basemap-container.embed-top-right {
+  top: 20px;
+}
 .no-home .icon-basemap-container {
   top: 130px;
 }
@@ -171,8 +182,6 @@ a {
   top: 85px;
 }
 .icon-basemap {
-/*color: $icon-color;
-    text-align:center;*/
   background-image: url("../images/basemap.png");
   background-repeat: no-repeat;
   display: inline-block;
@@ -180,13 +189,7 @@ a {
   height: 16px;
   margin: 7px 0 9px 7px;
   z-index: 40;
-/*text-shadow:0px 0px 10px #fff;
-    font-size:1.5em;
-    line-height:1.2em;*/
 }
-/*.icon-basemap:before{
-    content:"\e602";
-}*/
 .icon-basemap-container:hover {
   background-color: #eee;
 }
@@ -252,6 +255,10 @@ a {
 .BasemapToggle.scale {
   bottom: 60px;
 }
+/*If the zoom slider is positioned in the br move the toggle a bit to the left*/
+.embed-bottom-left.BasemapToggle {
+  left: 55px;
+}
 .no-home .basemap_gallery {
   top: 130px;
 }
@@ -268,6 +275,17 @@ a {
   position: absolute;
   top: 110px;
   left: 55px;
+}
+#gallery_container.embed-bottom-right,
+#gallery_container.embed-bottom-left,
+#gallery_container.embed-top-right {
+  top: 35px;
+  left: 55px;
+}
+.no-title #gallery_container.embed-bottom-right,
+.no-title #gallery_container.embed-bottom-left,
+.no-title #gallery_container.embed-top-right {
+  top: 5px;
 }
 .no-home #gallery_container {
   top: 90px;

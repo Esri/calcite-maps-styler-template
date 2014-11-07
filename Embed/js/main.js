@@ -70,6 +70,7 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     scalebarUnit: this.config.units
                 });
             }
+
             //Zoom slider needs to be visible to add home
             if (this.config.home && this.config.zoom) {
                 var home = new HomeButton({
@@ -126,15 +127,16 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
             if (this.config.basemap_gallery) {
                 var basemapGallery = null;
                 //add a button below the slider to show/hide the basemaps 
-                var container = domConstruct.create("div", {
+                var mainContainer = domConstruct.create("div", {
                     "class": "icon-basemap-container active-toggle",
                     "click": lang.hitch(this, this._displayBasemapContainer)
                 }, this.map.id + "_root");
 
+     
                 var sync = domConstruct.create("div", {
                     "class": "icon-basemap",
                     "title": this.config.i18n.tools.basemap.label
-                }, container);
+                }, mainContainer);
 
                 var galleryOptions = {
                     showArcGISBasemaps: true,
@@ -154,6 +156,13 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     "class": "arrow_box",
                     innerHTML: "<div class='basemap_title'>"+ this.config.i18n.tools.basemap.title +"</div><div id='full_gallery'></div>"
                    },container);
+
+                    //add a class so we can move the basemap if the zoom position moved.
+                    if(this.config.zoom && this.config.zoom_position){ 
+                        domClass.add(mainContainer,  "embed-" + this.config.zoom_position);
+                        domClass.add(gallery_container, "embed-" + this.config.zoom_position);
+                    }
+
 
                     basemapGallery = new esri.dijit.BasemapGallery(galleryOptions, dom.byId("full_gallery"));
                     basemapGallery.startup();
@@ -180,6 +189,11 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                         map: this.map,
                         basemap: this.config.alt_basemap || "satellite"
                     }, toggle_container);
+
+                    //add a class so we can move the basemap if the zoom position moved.
+                    if(this.config.zoom && this.config.zoom_position){ 
+                        domClass.add(toggle.domNode, "embed-" + this.config.zoom_position);
+                    }
 
                     if(this.config.scale){
                         domClass.add(toggle.domNode, "scale");
