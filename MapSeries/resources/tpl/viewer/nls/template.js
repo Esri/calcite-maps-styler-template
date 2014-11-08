@@ -29,7 +29,7 @@ define({
 				noBuilderIE: "The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%",
 				noViewerIE: "This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>.",
-				mapLoadingFail: "Something went wrong, the Map did not load correctly.",
+				mapLoadingFail: "Something went wrong, the map did not load correctly.",
 				signOut: "Sign Out"
 			},
 			mobileView: {

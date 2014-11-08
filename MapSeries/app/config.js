@@ -30,13 +30,23 @@ app.cfg = {
 	// Size and position of represent the value relative to the Map
 	LAYOUTS: [
 		{
+			id: "tab",
+			thumbnail: "resources/tpl/builder/icons/builder-layout-tab.png",
+			liveApp: "http://links.esri.com/storymaps/map_series_example_tabbed",
+			sizes: { small: '25%', medium: '35%', large: '45%' },
+			positions: ["left", "right"],
+			themes: [
+				{name: "float-default-1", themeMajor: "white", header: "#28323a", panel: "#DBD9DA", media: "#EEEEEE", text: "#000000", textLink: "#555", mapControls: "#DBD9DA", softText: "#444",    softBtn: "#444", esriLogo: "white"}
+			]
+		},
+		{
 			id: "accordion",
 			thumbnail: "resources/tpl/builder/icons/builder-layout-accordion.png",
-			liveApp: "http://links.esri.com/storymaps/map_journal_example_side_panel",
+			liveApp: "http://links.esri.com/storymaps/map_series_example_side_accordion",
 			sizes: { small: '30%', medium: '40%', large: '50%' },
 			positions: ["left", "right"],
 			themes: [
-				{name: "side-default-1", themeMajor: "white", header: "#444444", panel: "#D3D3D3", media: "#EEEEEE", text: "#000000", textLink: "#555", mapControls: "#D3D3D3",	softText: "#444",    softBtn: "#444",    esriLogo: "white", accordionNumber: "#FFFFFF"},
+				{name: "side-default-1", themeMajor: "white", header: "#28323a", panel: "#DBD9DA", media: "#EEEEEE", text: "#000000", textLink: "#555", mapControls: "#DBD9DA",	softText: "#444",    softBtn: "#444",    esriLogo: "white", accordionNumber: "#FFFFFF"},
 				{name: "side-default-2", themeMajor: "black", header: "#000000", panel: "#D3D3D3", media: "#EEEEEE", text: "#000000", textLink: "#DDD", mapControls: "#D3D3D3",	softText: "#444",    softBtn: "#444",    esriLogo: "white", accordionNumber: "#FFFFFF"},
 				{name: "side-default-3", themeMajor: "white", header: "#726458", panel: "#FFF8E9", media: "#C9C1B9", text: "#000000", textLink: "#555", mapControls: "#726458",	softText: "#c0c0c0", softBtn: "#444",    esriLogo: "black", accordionNumber: "#726458"},
 				{name: "side-default-4", themeMajor: "white", header: "#676C7F", panel: "#F9F9EF", media: "#424D51", text: "#000000", textLink: "#555", mapControls: "#676C7F",	softText: "#444",	 softBtn: "#aaa",    esriLogo: "black", accordionNumber: "#676C7F"},
@@ -45,23 +55,13 @@ app.cfg = {
 			]
 		},
 		{
-			id: "tab",
-			thumbnail: "resources/tpl/builder/icons/builder-layout-tab.png",
-			liveApp: "http://links.esri.com/storymaps/map_journal_example_floating_panel",
-			sizes: { small: '25%', medium: '35%', large: '45%' },
-			positions: ["left", "right"],
-			themes: [
-				{name: "float-default-1", themeMajor: "white", header: "#444444", panel: "#D3D3D3", media: "#EEEEEE", text: "#000000", textLink: "#555", mapControls: "#D3D3D3", softText: "#444",    softBtn: "#444", esriLogo: "white"}
-			]
-		},
-		{
 			id: "bullet",
 			thumbnail: "resources/tpl/builder/icons/builder-layout-bullet.png",
-			liveApp: "http://links.esri.com/storymaps/map_journal_example_floating_panel",
+			liveApp: "http://links.esri.com/storymaps/map_series_example_bullets",
 			sizes: { small: '25%', medium: '35%', large: '45%' },
 			positions: ["left", "right"],
 			themes: [
-				{name: "float-default-1", themeMajor: "white", header: "#444444", panel: "#D3D3D3", media: "#EEEEEE", text: "#000000", textLink: "#555", mapControls: "#D3D3D3", softText: "#444",    softBtn: "#444", esriLogo: "white"}
+				{name: "float-default-1", themeMajor: "white", header: "#28323a", panel: "#DBD9DA", media: "#EEEEEE", text: "#000000", textLink: "#555", mapControls: "#DBD9DA", softText: "#444",    softBtn: "#444", esriLogo: "white"}
 			]
 		}
 	],
@@ -70,7 +70,7 @@ app.cfg = {
 	 * Builder
 	 */
 	
-	HELP_URL: "http://storymaps.arcgis.com/en/app-list/map-journal/",
+	HELP_URL: "http://links.esri.com/storymaps/map_series_app",
 	
 	// Control the authorized data source (for initialization and import screen)
 	AUTHORIZED_IMPORT_SOURCE: {

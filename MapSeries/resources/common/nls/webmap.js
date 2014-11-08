@@ -10,6 +10,8 @@ define({
 				lblOverview: "Overview Map",
 				lblLegend: "Legend",
 				loadingTitle: "Loading title",
+				entry: "Entry",
+				entries: "Entries",
 				section: "Section",
 				sections: "Sections",
 				and: "and",
@@ -22,14 +24,14 @@ define({
 				newMap: "Newly selected web map",
 				webmapDefault: "Web map default",
 				customCfg: "Custom configuration",
-				tooltipLocation: "Define the map location that will be used when your readers navigate to this section.",
+				tooltipLocation: "Define the location that this map will display.",
 				tooltipContent: "Define the visible layers.",
-				tooltipPopup: "Choose a popup to be displayed when your readers navigate to this section.",
-				tooltipOverview: "Display a small overview map along with the main map",
+				tooltipPopup: "Choose a popup that will be opened when this map is displayed.",
+				tooltipOverview: "Display a small overview map along with the main map.",
 				tooltipLegend: "Display the map legend on the map, helpful when the map has many layers and symbols.",
 				mapCfgInvite: "Use these controls to configure your map",
-				lblLocationAlt: "Inherited from the first Map",
-				tooltipLocationAlt: "TODO"
+				lblLocationAlt: "Inherited from the first map",
+				tooltipLocationAlt: "This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options."
 			},
 			configure: {
 				btnReset: "Reset",

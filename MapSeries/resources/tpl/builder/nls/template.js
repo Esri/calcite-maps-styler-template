@@ -2,12 +2,12 @@ define({
 	root: ({
 		builder: {
 			layouts: {
+				tabTitle: "Tabbed",
+				tabDescr: "Present maps and other content using tabs with an optional panel for descriptive text.",
 				sideTitle: "Side Accordion",
-				sideDescr: "TODO TODO TODO TODO TODO TODO TODO TODO",
-				floatTitle: "Tab",
-				floatDescr: "TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO dsa das asd asdarty yuty tyj ghj gkh gh tyuyuty fbvhhfsddasd re tert er er",
-				bulletTitle: "Numbered bullets",
-				bulletDescr: "Hello world"
+				sideDescr: "Present maps and other content using an expandable control that includes descriptive text.",
+				bulletTitle: "Bulleted",
+				bulletDescr: "Present maps and other content using bullets with an optional panel for descriptive text."
 			},
 			common: {
 				lblStatus1: "Published",
@@ -17,7 +17,7 @@ define({
 				title: "Layout options",
 				lblDescription: "Description",
 				lblLegend: "Legend placement",
-				tooltipLegend: "Control legend placement for the entries that use a Legend. Legend has to be enabled through individual entries configuration.",
+				tooltipLegend: "Choose where you want the map legend to be displayed. You can turn the legend on for any map when you add or configure it.",
 				lblDropdown: "Dropdown",
 				lblBelowDesc: "Below the description",
 				lblOnPanel: "As a panel",
@@ -37,18 +37,20 @@ define({
 			settingsMapOptions: {
 				title: "Map options",
 				lblOverview: "Overview Map",
-				tooltipOverview: "Display a small overview map along with the main map",
+				tooltipOverview: "Display a small overview map along with the main map.",
 				lblLocate: "Locate button",
-				tooltipLocate: "That functionality is supported on most mobile device and desktop browsers (Internet Explorer 9).",
-				lblGeocoder: "Address search",
-				tooltipGeocoder: "TODO",
-				lblNotSync: "Maps display at different initial location",
-				tooltipNotSync: "TODO... got to explain that user navigation are not synced(/persisted?) across the maps"
+				tooltipLocate: "This functionality is supported on most mobile device and desktop browsers (Internet Explorer 9).",
+				lblGeocoder: "Address or Place Finder",
+				tooltipGeocoder: "Allow your users to find addresses and places on your maps.",
+				lblSync: "Synchronize maps location",
+				tooltipSync: "When enabled, the initial location of the first map in your series will be applied to all the maps, and navigation by users in any map will be reflected in all maps. Disable for each map's location to remain independent."
 			},
 			initPopup: {
 				title: "Welcome to"
 			},
 			addEditPopup: {
+				lblAdd: "Add",
+				lblEdit: "Edit",
 				disabled: "Add Entry is disabled because the maximum number of allowed sections has been reached.",
 				titleAdd: "Add Entry",
 				titleEdit: "Edit Entry",

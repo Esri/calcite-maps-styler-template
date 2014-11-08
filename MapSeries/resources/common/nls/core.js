@@ -42,8 +42,8 @@ define({
 			saveError: {
 				title: "Error saving the application",
 				err1Div1: "The application can't be saved because you already have another item with the same name (see your <a class='linkagolroot' target='_blank'>content folder</a>).",
-				err1Div2: "Please modify the Home Section title and save the application.",
-				btnOk: "Edit the Home Section title"
+				err1Div2: "Please modify the title of your application and then save it.",
+				btnOk: "Edit the application title"
 			},
 			share: {
 				firstSaveTitle: "Application successfully saved",
