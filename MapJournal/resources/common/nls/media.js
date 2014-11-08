@@ -99,8 +99,8 @@ define({
 				lblPosition3Explain: "(won't crop)",
 				lblPosition3Explain2: "(width will always fit the panel)",
 				lblPosition4Explain: "(may distort)",
-				unloadLbl: "Unload when reader navigates away to different section",
-				unloadHelp: "If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away to a different section. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to that section."
+				unloadLbl: "Unload when reader navigates away",
+				unloadHelp: "If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it."
 			},
 			editorActionGeocode: {
 				lblTitle: "Locate an address or place",
