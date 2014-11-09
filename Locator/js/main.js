@@ -803,42 +803,44 @@ define([
          for (var i = 0; i < features.length; i++) {
             var num = i + 1;
             var gra = features[i];
+            
             // rec
             var rec = domConstruct.create("div", {
                id : "rec_" + i
             }, results);
             domClass.add(rec, 'rec');
+            
+            // header
+            var recHeader = domConstruct.create("div", {
+            }, rec);
+            domClass.add(recHeader, 'recHeader');
+            on(recHeader, "click", lang.hitch(this, this._selectRecord, i));
+               
             // num
             var recNum = domConstruct.create("div", {
                innerHTML : num
-            }, rec);
+            }, recHeader);
             domClass.add(recNum, 'recNum');
             domClass.add(recNum, 'bg');
+            
+            //headerInfo
+            var recHeaderInfo = domConstruct.create("div", {
+            }, recHeader);
+            domClass.add(recHeaderInfo, 'recHeaderInfo');
+            
             // info
             var info = gra.getTitle();
             if (info === "" && this.opLayer) {
                info = this.config.destLayer.title;
             }
-            var recInfo = domConstruct.create("div", {
-               id : "recInfo_" + i,
-               innerHTML : info
-            }, rec);
-            domClass.add(recInfo, 'recInfo');
+            
             // distance
-            if (this.origin) {
-               var dist = "";
-               if (gra.attributes.DISTANCE)
-                  dist = "~ " + gra.attributes.DISTANCE + " " + this.config.distanceUnits.toUpperCase();
-               var recDist = domConstruct.create("div", {
-                  innerHTML : dist
-               }, rec);
-               domClass.add(recDist, 'recDist');
+            if (this.origin && gra.attributes.DISTANCE) {
+               info += "<br/><span class='recDist'>~ " + gra.attributes.DISTANCE + " " + this.config.distanceUnits.toUpperCase() + "</span>";
             }
-            // click
-            var recClick = domConstruct.create("div", {
-            }, rec);
-            domClass.add(recClick, 'recClick');
-            on(recClick, "click", lang.hitch(this, this._selectRecord, i));
+            
+            recHeaderInfo.innerHTML = info;
+            
             // route
             var tip = "Directions";
             if (this.config && this.config.i18n) {
@@ -847,12 +849,20 @@ define([
             if (gra.attributes.DISTANCE) {
                var recRoute = domConstruct.create("div", {
                   title : tip
-               }, rec);
+               }, recHeader);
                domClass.add(recRoute, 'recRoute');
                recRoute.select = lang.hitch(this, this._selectRoute);
                on(recRoute, "click", lang.partial(recRoute.select, i));
             }
+            
+            //body
+            var recBody = domConstruct.create("div", {
+               id : 'recBody_' + i
+            }, rec);
+            domClass.add(recBody, 'recBody');
+            
          }
+         
          dom.byId("bodyFeatures").scrollTop = 0;
          this._renderDestinations();
       },
@@ -892,15 +902,11 @@ define([
          var gra = this.opFeatures[num];
          domClass.add("rec_" + num, "recOpened");
          this._zoomToDestination(gra, zoom);
-         var rec = dom.byId("rec_" + num);
-         var recDetails = domConstruct.create("div", {
-            id : "recDetails"
-         }, rec);
-         domClass.add(recDetails, "recDetails");
+         var recBody = dom.byId("recBody_" + num);
          var cp = new ContentPane({
             id : "recPane"
          });
-         cp.placeAt('recDetails', 'last');
+         cp.placeAt(recBody, 'last');
          cp.startup();
          var content = gra.getContent();
          registry.byId("recPane").set("content", content);
@@ -941,7 +947,7 @@ define([
          this.hiLayer.clear();
          if (registry.byId("recPane"))
             registry.byId("recPane").destroy();
-         domConstruct.destroy("recDetails");
+         //domConstruct.destroy("recDetails");
          query(".recOpened").forEach(function(node) {
             domClass.remove(node, "recOpened");
          });
