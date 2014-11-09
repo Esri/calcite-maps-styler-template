@@ -668,6 +668,10 @@ define([
                   pageObj.proximityInfo.updateSelection();
             }
          }
+         var s = "block";
+         if (this.curPage > 0 && this.map.width <= 500) 
+            s = "none";
+         domStyle.set("panelTop", "display", s);
       },
       
       // change color

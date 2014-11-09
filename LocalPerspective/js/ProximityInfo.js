@@ -124,7 +124,6 @@ define([
 
             // create content
             var content = domConstruct.create("div", {
-               //class: "resultsContent"
             }, this.container);
             domClass.add(content, 'resultsContent');
 
@@ -134,39 +133,42 @@ define([
                var dist = feature.attributes.DISTANCE;
 
                var num = i + 1;
-
+               
                //rec
                var rec = domConstruct.create("div", {
                   id : 'rec_' + this.pageObj.id + '_' + i
                }, content);
                domClass.add(rec, 'recProximity');
+               
+               //header
+               var recHeader = domConstruct.create("div", {
+               }, rec);
+               domClass.add(recHeader, 'recHeader');
+               on(recHeader, "click", lang.hitch(this, this._selectRecord, i));
+               
                // num
                var recNum = domConstruct.create("div", {
                   style : "background-color:" + this.pageObj.color,
                   innerHTML : num
-               }, rec);
+               }, recHeader);
                domClass.add(recNum, 'recNum');
-               //on(recNum, "click", lang.hitch(this, this._zoomToLocation, feature));
+               
+               //headerInfo
+               var recHeaderInfo = domConstruct.create("div", {
+               }, recHeader);
+               domClass.add(recHeaderInfo, 'recHeaderInfo');
+
                // info
                var info = feature.getTitle();
                if (info === "") {
                   info = this.pageObj.label;
                }
-               var recInfo = domConstruct.create("div", {
-                  innerHTML : info
-               }, rec);
-               domClass.add(recInfo, 'recInfo');
+               
                // distance
                var infoDist = "~" + Math.round(dist * 100) / 100 + " " + this.config.distanceUnits.toUpperCase();
-               var recDistance = domConstruct.create("div", {
-                  innerHTML : infoDist
-               }, rec);
-               domClass.add(recDistance, 'recDist');
-               // click
-               var recClick = domConstruct.create("div", {
-               }, rec);
-               domClass.add(recClick, 'recClick');
-               on(recClick, "click", lang.hitch(this, this._selectRecord, i));
+               
+               recHeaderInfo.innerHTML = info +"<br/><span class='recDist'>" + infoDist + "</span>";
+               
                // directions
                var tip = "Directions";
                if (this.config && this.config.i18n) {
@@ -175,12 +177,18 @@ define([
                if (geom.type == "point" && this.config.showDirections) {
                   var recRoute = domConstruct.create("div", {
                      title: tip
-                  }, rec);
+                  }, recHeader);
                   domClass.add(recRoute, 'recRoute');
                   //on(recRoute, "click", lang.hitch(this, this._routeToLocation, pt));
                   recRoute.select = lang.hitch(this, this._selectRoute);
                   on(recRoute, "click", lang.partial(recRoute.select, i));
                }
+               
+               //body
+               var recBody = domConstruct.create("div", {
+                  id : 'recBody_' + this.pageObj.id + '_' + i
+               }, rec);
+               domClass.add(recBody, 'recBody');
             }
 
          }
@@ -281,9 +289,10 @@ define([
          var rec = dom.byId("rec_" + this.pageObj.id + "_" + num);
          if (rec) {
             domClass.add(rec, "recOpened");
+            var recB = dom.byId("recBody_" + this.pageObj.id + "_" + num);
             var recDetails = domConstruct.create("div", {
                id: "recDetails"
-            }, rec);
+            }, recB);
             domClass.add(recDetails, "recDetails");
             var cp = new ContentPane({
                id: "recPane"
