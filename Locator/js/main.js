@@ -880,7 +880,7 @@ define([
          this._selectRecord(parseInt(num), false);
          event.stop(evt);
          this._showPage(0);
-         this._switchView();
+         //this._switchView();
       },
 
       // Select Record
