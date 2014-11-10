@@ -1,5 +1,5 @@
-define({root:
-({
+define({
+  root: ({
   app:{
    title:"Map Carousel",
     scaleBarUnits: "english", //"english (for miles) or "metric" (for km) - don't translate.
