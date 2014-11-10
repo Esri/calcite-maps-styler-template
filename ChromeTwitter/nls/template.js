@@ -1,18 +1,18 @@
-﻿define({root:
-({
-  viewer:{
-    main:{
+﻿define(
+﻿	root: ({
+  viewer: {
+    main: {
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "Description"
     },
-    errors:{
+    errors: {
       createMap: "Unable to create map",
       general: "Error"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "Screen name",
     "signIn": "Sign in",
@@ -34,26 +34,26 @@
     label: "Tweets",
     title: "Tweets",
     error: "No results found, try another search term or location",
-		search:{
+		search: {
 			label: "Search",
 			title: "Search Twitter",
 			placeholder: 'Keywords to search'
 		},
-		clear:{
+		clear: {
 			label: "Clear",
 			title: "Clear Map"
 		},
-		share:{
+		share: {
 			label: "Share Map:",
 			email:{
 				title: "Email",
 				label: "Email"
 			},
-			twitter:{
+			twitter: {
 				title: "Twitter",
 				label: "Twitter"
 			},
-			facebook:{
+			facebook: {
 				title: "Facebook",
 				label: "Facebook"
 			}
