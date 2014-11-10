@@ -343,7 +343,7 @@ define([
       // Update Selection
       updateSelection : function() {
          this._unselectRecords();
-         if (this.pageObj.selectedNum >= 0) {
+         if (this.pageObj && this.pageObj.selectedNum >= 0) {
             var num = this.pageObj.selectedNum;
             this._unselectRecords();
             this._highlightRecord(num, false);

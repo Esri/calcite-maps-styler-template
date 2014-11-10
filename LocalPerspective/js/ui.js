@@ -620,6 +620,8 @@ define([
             pageObj.buffer = null;
             pageObj.update = true;
             pageObj.proximityFeatures = null;
+            if (pageObj.type == "proximity")
+               dom.byId("pageCounter_" + pageObj.id).innerHTML = "";
             if (i>0) {
                dom.byId("pageBody_"+i).innerHTML = "";
             }
