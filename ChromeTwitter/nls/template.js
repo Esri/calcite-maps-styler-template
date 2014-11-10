@@ -1,5 +1,5 @@
-﻿define(
-﻿	root: ({
+﻿define({
+  root: ({
   viewer: {
     main: {
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
@@ -60,7 +60,7 @@
 		}
 	 }
    }
- }),
+}),
 "ar": 1,
 "cs": 1,
 "da": 1,
