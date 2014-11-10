@@ -1,5 +1,5 @@
 define({
-    "root": ({
+    root: ({
         "widgets": {
             "TemplateBuilder": {
                 "enterBuilderButtonText": "Enter Builder",

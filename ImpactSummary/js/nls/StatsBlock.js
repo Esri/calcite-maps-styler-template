@@ -1,5 +1,5 @@
 define({
-    "root": ({
+    root: ({
         "StatsBlock": {
             "close": "close",
             "next": "Next",
