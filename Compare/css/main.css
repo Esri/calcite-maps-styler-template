@@ -370,7 +370,7 @@ body {
 }
 .ac-container {
   width: 250px;
-  height: 100%;
+  height: 85%;
   overflow-y: auto;
   overflow-x: hidden;
 }
