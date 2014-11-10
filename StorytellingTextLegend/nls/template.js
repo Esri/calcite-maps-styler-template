@@ -1,21 +1,21 @@
-define({root:
-  ({
-    viewer:{
-      main:{
+define({
+  root: ({
+    viewer: {
+      main: {
         scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "Unable to create map:",
         general:"Error",
         timeout:"Please choose another tab to begin"
       },
-      loading:{
+      loading: {
         message: "Loading maps"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "LEGEND"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "MMMM d, yyyy",
         yearPattern: "yyyy",
         hourTimePattern: "h a",
