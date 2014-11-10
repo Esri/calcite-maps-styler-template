@@ -118,7 +118,7 @@ a, a:hover, a:visited{
 
 .esriSimpleSliderTL {
 	top: 5px;
-	left: 10px;
+	left: 5px;
 	border: none;
 }
 
@@ -339,20 +339,18 @@ a, a:hover, a:visited{
 	position: absolute;
 	right: 0px;
 	top: 0px;
-	width: 0px;
+	width: 320px;
 	height: 100%;
 	display: none;
-	background-color: rgba(0,0,0,0.5);
 }
 
 #panelContent {
 	position: absolute;
 	right: 0px;
 	top: 0px;
-	width: 0px;
+	width: 320px;
 	height: 100%;
 	display: block;
-	background-color: rgba(0,0,0,0.5);
 }
 
 #panelPages {
@@ -366,21 +364,9 @@ a, a:hover, a:visited{
 	height: 100%;
 }
 
-.pageMenu {
-	position: relative;
-	width: 30px;
-	height: 30px;
-	margin-left: -50px;
-	top: 5px;
-	text-align: center;
-	padding: 5px;
-	cursor: pointer;
-}
-
 .page {
 	position: relative;
 	width: 320px;
-	margin-left: -320px;
 	height: 100%;
 	display: block;
 	background-color: rgba(0,0,0,0.15);
@@ -691,16 +677,16 @@ a, a:hover, a:visited{
 	border-top: 1px solid #ffffff !important;
 }
 
-
 .num {
 	font-size: 30px;
 	font-family: Steelfish;
 	line-height: 40px;
 }
 
+
 #panelTop {
 	position: fixed;
-	left: 35px;
+	left: 30px;
 	top: 5px;
 	color: #ffffff;
 	font-family: HelveticaNeueUltraLight;
@@ -754,6 +740,18 @@ a, a:hover, a:visited{
 	height: 30px;
 }
 
+#panelMenu {
+	position: fixed;
+	right: 5px;
+	top: 5px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	padding: 5px;
+	cursor: pointer;
+	display: block;
+	background: url(../images/menu.png)no-repeat center center;
+}
 
 
 /* MEDIA SPECIFIC: SMALL TABLETS */
@@ -769,7 +767,7 @@ a, a:hover, a:visited{
 	}
 	
 	#panelTop {
-		left: 10px;
+		left: 5px;
 	}
 	
 	#panelText {
@@ -806,22 +804,20 @@ a, a:hover, a:visited{
 	
 	#panelContent {
 		position: absolute;
-		left: -100%;
+		left: 0px;
 		top: 0px;
 		width: 100%;
 		height: 100%;
 		display: block;
-		background-color: rgba(0,0,0,0.5);
 	}
 	
 	#panelDirections {
 		position: absolute;
-		left: -100%;
+		left: 0px;
 		top: 0px;
 		width: 100%;
 		height: 100%;
 		display: none;
-		background-color: rgba(0,0,0,0.5);
 	}
 	
 	.pageblank {
@@ -829,22 +825,10 @@ a, a:hover, a:visited{
 		height: 100%;
 	}
 	
-	.pageMenu {
-		position: relative;
-		width: 30px;
-		height: 30px;
-		left: 200%;
-		margin-left: -45px;
-		top: 5px;
-		text-align: center;
-		padding: 5px;
-		cursor: pointer;
-	}
-	
 	.page {
 		position: relative;
 		width: 100%;
-		margin-left: 100%;
+		margin-left: 0;
 		height: 100%;
 		display: block;
 		background-color: rgba(0,0,0,0.15);
