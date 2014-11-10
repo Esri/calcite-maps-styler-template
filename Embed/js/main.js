@@ -154,7 +154,7 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     
                    domConstruct.create("div",{
                     "class": "arrow_box",
-                    innerHTML: "<div class='basemap_title'>"+ this.config.i18n.tools.basemap.title +"</div><div id='full_gallery'></div>"
+                    innerHTML: "<div class='basemap_title'>"+ this.config.i18n.tools.basemap.title +"</div><span id='icon-menu-close' class='icon-menu-close'></span><div id='full_gallery'></div>"
                    },container);
 
                     //add a class so we can move the basemap if the zoom position moved.
@@ -166,6 +166,12 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
 
                     basemapGallery = new esri.dijit.BasemapGallery(galleryOptions, dom.byId("full_gallery"));
                     basemapGallery.startup();
+                    var closemenu= dom.byId("icon-menu-close");
+                    if(closemenu){
+                        on(closemenu, "click", lang.hitch(this, function(){
+                            this._displayBasemapContainer();
+                        }));
+                    }
 
                     //Hide the basemap gallery at startup
                     this._displayBasemapContainer();
@@ -239,12 +245,6 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     }));
 
                 }));
-
-
-
-
-
-
 
             }
             if (this.config.active_panel) {
