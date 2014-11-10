@@ -1,16 +1,16 @@
-define({root:
-({
-  viewer:{
-    main:{
+define({
+  root: ({
+  viewer: {
+    main: {
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Unable to create map",
       bitly: 'bitly is used to shorten the url for sharing. View the readme file for details on creating and using a bitly key',
       general: "Error"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Switch Basemap",
     label: "Basemap"
@@ -28,14 +28,14 @@ define({root:
     share: {
     title: "Share Map",
     label: "Share",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "Email",
         message: "Check out this map"
       }    
@@ -98,8 +98,8 @@ define({root:
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Close Panel",
       label: "Close"
     }
