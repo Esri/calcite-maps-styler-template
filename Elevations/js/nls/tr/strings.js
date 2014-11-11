@@ -1,5 +1,7 @@
-﻿define({
+﻿define(
+  ({
     map: {
       error: "Harita oluşturulamıyor"
     }
-});
+  })
+);

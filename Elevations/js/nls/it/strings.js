@@ -1,5 +1,7 @@
-﻿define({
+﻿define(
+   ({
     map: {
       error: "Impossibile creare la mappa"
     }
-});
+})
+);
