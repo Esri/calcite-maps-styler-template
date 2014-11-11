@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Žemėlapio sukurti nepavyko",
       bitly: 'bitly naudojamas url trumpinimui bendrinant. Susipažinkite su išsamia informacija, pateikiama faile skaityk (readme) kaip sukurti bitly raktą',
       general: "Klaida"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Pakeisti pagrindo žemėlapį",
     label: "Pagrindo žemėlapis"
@@ -28,14 +28,14 @@
     share: {
     title: "Bendrinti žemėlapį",
     label: "Bendrinti",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "El. paštas",
         message: "Išregistruoti šį žemėlapį"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "Į_yyyy G_š",
-      decadePattern: "Į_yyyy_š", 
-      yearPattern: "Į_MMMM yyyy_š",
-      weekPattern: "Į_MMMM d, yyyy_š",
+      datePattern: "Į_MMMM d, yyyy_š",
+      yearPattern: "Į_yyyy_š",
       hourTimePattern: "H a",
-      // e.g. for German: "Į_H:mm:ss:SSS_š"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "HH:mm",
-      // e.g. for German: "Į_H:mm_š"
-      monthPattern: "Į_MMMM d, y_š",
       secondTimePattern: "hh:m:s.SSS",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Rodyti laiko šliaužiklį",
       label: "Laikas",
-      timeRange: "Į_<b>Time Range:</b> ${start_time} to ${end_time}_š",
+      timeRange: "Į_${start_time} to ${end_time}_š",
       timeRangeSingle: "<b>Laiko intervalas:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Uždaryti skydelį",
       label: "Užverti"
     }

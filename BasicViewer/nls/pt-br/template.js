@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Não foi possível criar o mapa",
       bitly: 'O bitly é utilizado para diminuir a url para compartilhamento. Consulte o arquivo Leia-Me para detalhes sobre criar e utilizar a tecla bitly',
       general: "Erro"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Trocar Mapa Base",
     label: "Mapa Base"
@@ -28,14 +28,14 @@
     share: {
     title: "Compartilhar Mapa",
     label: "Compartilhar",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "E-mail",
         message: "Desconectar mapa"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "ã_yyyy G_Ç",
-      decadePattern: "ã_yyyy_Ç", 
-      yearPattern: "ã_MMMM yyyy_Ç",
-      weekPattern: "ã_MMMM d, yyyy_Ç",
+      datePattern: "ã_MMMM d, yyyy_Ç",
+      yearPattern: "ã_yyyy_Ç",
       hourTimePattern: "H",
-      // e.g. for German: "ã_H:mm:ss:SSS_Ç"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "h:mm a",
-      // e.g. for German: "ã_H:mm_Ç"
-      monthPattern: "ã_MMMM d, y_Ç",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Exibir Seletor de Tempo",
       label: "Tempo",
-      timeRange: "ã_<b>Time Range:</b> ${start_time} to ${end_time}_Ç",
+      timeRange: "ã_${start_time} to ${end_time}_Ç",
       timeRangeSingle: "<b>Intervalo de Tempo:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Fechar Painel",
       label: "Fechar"
     }

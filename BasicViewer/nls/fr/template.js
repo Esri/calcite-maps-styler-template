@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Impossible de créer la carte",
       bitly: 'bitly permet de raccourcir l\'URL pour le partage. Consultez le fichier Lisezmoi pour plus d\'informations sur la création et l\'utilisation d\'une clé bitly',
       general: "Erreur"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Changer de fond de carte",
     label: "Fond de carte"
@@ -28,14 +28,14 @@
     share: {
     title: "Partager la carte",
     label: "Partager",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "Adresse électronique",
         message: "Extraire cette carte"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "æ_yyyy G_Â",
-      decadePattern: "æ_yyyy_Â", 
-      yearPattern: "æ_MMMM yyyy_Â",
-      weekPattern: "æ_MMMM d, yyyy_Â",
+      datePattern: "æ_MMMM d, yyyy_Â",
+      yearPattern: "æ_yyyy_Â",
       hourTimePattern: "HH",
-      // e.g. for German: "æ_H:mm:ss:SSS_Â"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "HH:mm",
-      // e.g. for German: "æ_H:mm_Â"
-      monthPattern: "æ_MMMM d, y_Â",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Afficher le curseur temporel",
       label: "Heure",
-      timeRange: "æ_<b>Time Range:</b> ${start_time} to ${end_time}_Â",
+      timeRange: "æ_${start_time} to ${end_time}_Â",
       timeRangeSingle: "<b>Plage de temps :</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Fermer le volet",
       label: "Fermer"
     }

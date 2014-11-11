@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "맵을 생성할 수 없음",
       bitly: 'bitly가 공유를 위해 url을 단축하는 데 사용됩니다. bitly 키 생성 및 사용에 대한 자세한 내용은 readme 파일을 참조하세요.',
       general: "오류"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "베이스맵 전환",
     label: "베이스맵"
@@ -28,14 +28,14 @@
     share: {
     title: "맵 공유",
     label: "공유",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "이메일",
         message: "이 맵 체크 아웃"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "한_yyyy G_빠",
-      decadePattern: "한_yyyy_빠", 
-      yearPattern: "한_MMMM yyyy_빠",
-      weekPattern: "한_MMMM d, yyyy_빠",
+      datePattern: "한_MMMM d, yyyy_빠",
+      yearPattern: "한_yyyy_빠",
       hourTimePattern: "a h",
-      // e.g. for German: "한_H:mm:ss:SSS_빠"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "a h:mm",
-      // e.g. for German: "한_H:mm_빠"
-      monthPattern: "한_MMMM d, y_빠",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "시간 슬라이더 표시",
       label: "시간",
-      timeRange: "한_<b>Time Range:</b> ${start_time} to ${end_time}_빠",
+      timeRange: "한_${start_time} to ${end_time}_빠",
       timeRangeSingle: "<b>시간 범위:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "패널 닫기",
       label: "닫기"
     }

@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "לא ניתן ליצור מפה",
       bitly: 'השימוש ב-bit.ly מיועד לקיצור ה- url לצורך שיתוף. קרא את קובץ ה- readme לפרטים על איך ליצור ולהשתמש במפתח bitly',
       general: "שגיאה"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "החלף מפת בסיס",
     label: "מפת בסיס"
@@ -28,14 +28,14 @@
     share: {
     title: "שתף מפה",
     label: "שתף",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "פייסבוק"
        },
-      twitter:{
+      twitter: {
         label: "טוויטר"
       },
-      email:{
+      email: {
         label: "Email",
         message: "בדוק מפה זו"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "כן_yyyy G_ש",
-      decadePattern: "כן_yyyy_ש", 
-      yearPattern: "כן_MMMM yyyy_ש",
-      weekPattern: "כן_MMMM d, yyyy_ש",
+      datePattern: "כן_MMMM d, yyyy_ש",
+      yearPattern: "כן_yyyy_ש",
       hourTimePattern: "h a",
-      // e.g. for German: "כן_H:mm:ss:SSS_ש"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "h:mm a",
-      // e.g. for German: "כן_H:mm_ש"
-      monthPattern: "כן_MMMM d, y_ש",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "הצג סרגל זמן",
       label: "זמן",
-      timeRange: "כן_<b>Time Range:</b> ${start_time} to ${end_time}_ש",
+      timeRange: "כן_${start_time} to ${end_time}_ש",
       timeRangeSingle: "<b>טווח זמן: </b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "לוח סגור",
       label: "סגור"
     }

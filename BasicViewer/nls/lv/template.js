@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Nevar izveidot karti",
       bitly: 'bitly tiek izmantots, lai saīsinātu url uz koplietošanu. Apskatīt readme faila informāciju par bitly taustiņa izveidošanas un lietošanas detaļām',
       general: "Kļūda"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Pārslēgt pamatkarti",
     label: "Pamatkarte"
@@ -28,14 +28,14 @@
     share: {
     title: "Koplietot karti",
     label: "Koplietot",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "Epasts",
         message: "Pārbaudiet šo karti"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "ķ_yyyy G_ū",
-      decadePattern: "ķ_yyyy_ū", 
-      yearPattern: "ķ_MMMM yyyy_ū",
-      weekPattern: "ķ_MMMM d, yyyy_ū",
+      datePattern: "ķ_MMMM d, yyyy_ū",
+      yearPattern: "ķ_yyyy_ū",
       hourTimePattern: "H a",
-      // e.g. for German: "ķ_H:mm:ss:SSS_ū"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "HH:mm",
-      // e.g. for German: "ķ_H:mm_ū"
-      monthPattern: "ķ_MMMM d, y_ū",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Parādīt laika slīdni",
       label: "Laiks",
-      timeRange: "ķ_<b>Time Range:</b> ${start_time} to ${end_time}_ū",
+      timeRange: "ķ_${start_time} to ${end_time}_ū",
       timeRangeSingle: "<b>Laika diapazons:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Aizvērt paneli",
       label: "Aizvērt"
     }

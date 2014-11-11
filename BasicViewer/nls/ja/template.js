@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "マップを作成できません",
       bitly: 'bitly を使用すると共有する URL を短縮できます。bitly キーの作成と使用の詳細については、Readme ファイルをご参照ください。',
       general: "エラー"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "ベースマップの切り替え",
     label: "ベースマップ"
@@ -28,14 +28,14 @@
     share: {
     title: "マップの共有",
     label: "共有",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "E メール",
         message: "このマップをチェック アウト"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "須_yyyy G_鷗",
-      decadePattern: "須_yyyy_鷗", 
-      yearPattern: "須_MMMM yyyy_鷗",
-      weekPattern: "須_MMMM d, yyyy_鷗",
+      datePattern: "須_MMMM d, yyyy_鷗",
+      yearPattern: "須_yyyy_鷗",
       hourTimePattern: "h a",
-      // e.g. for German: "須_H:mm:ss:SSS_鷗"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "h:mm a",
-      // e.g. for German: "須_H:mm_鷗"
-      monthPattern: "須_MMMM d, y_鷗",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "タイム スライダの表示",
       label: "時間",
-      timeRange: "須_<b>Time Range:</b> ${start_time} to ${end_time}_鷗",
+      timeRange: "須_${start_time} to ${end_time}_鷗",
       timeRangeSingle: "<b>時間の範囲:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "パネルを閉じる",
       label: "閉じる"
     }

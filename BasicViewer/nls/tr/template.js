@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Harita oluşturulamıyor",
       bitly: 'bitly, paylaşmak üzere url\'yi kısaltmak için kullanılır. Bir bitly anahtarı oluşturma ve kullanmanın ayrıntıları için readme dosyasına bakın',
       general: "Hata"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Altlık Haritayı Değiştir",
     label: "Altlık Harita"
@@ -28,14 +28,14 @@
     share: {
     title: "Haritayı Paylaş",
     label: "Paylaş",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "E-posta",
         message: "Bu haritayı teslim al"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "ı_yyyy G_İ",
-      decadePattern: "ı_yyyy_İ", 
-      yearPattern: "ı_MMMM yyyy_İ",
-      weekPattern: "ı_MMMM d, yyyy_İ",
+      datePattern: "ı_MMMM d, yyyy_İ",
+      yearPattern: "ı_yyyy_İ",
       hourTimePattern: "h a",
-      // e.g. for German: "ı_H:mm:ss:SSS_İ"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "h:mm a",
-      // e.g. for German: "ı_H:mm_İ"
-      monthPattern: "ı_MMMM d, y_İ",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Zaman Kaydırıcısını Göster",
       label: "Zaman",
-      timeRange: "ı_<b>Time Range:</b> ${start_time} to ${end_time}_İ",
+      timeRange: "ı_${start_time} to ${end_time}_İ",
       timeRangeSingle: "<b>Saat Aralığı:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Paneli Kapat",
       label: "Kapat"
     }

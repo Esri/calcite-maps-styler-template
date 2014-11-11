@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Kan kaart niet maken",
       bitly: 'Bitly wordt gebruikt om de URL die u wilt delen, korter te maken. Bekijk het leesmij-bestand voor details over het maken en gebruiken van een bitly-code',
       general: "Fout"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Basiskaart wijzigen",
     label: "Basiskaart"
@@ -28,14 +28,14 @@
     share: {
     title: "Kaart delen",
     label: "Delen",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "E-mail",
         message: "Bekijk deze kaart"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "Ĳ_yyyy G_ä",
-      decadePattern: "Ĳ_yyyy_ä", 
-      yearPattern: "Ĳ_MMMM yyyy_ä",
-      weekPattern: "Ĳ_MMMM d, yyyy_ä",
+      datePattern: "Ĳ_MMMM d, yyyy_ä",
+      yearPattern: "Ĳ_yyyy_ä",
       hourTimePattern: "H",
-      // e.g. for German: "Ĳ_H:mm:ss:SSS_ä"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "H:mm",
-      // e.g. for German: "Ĳ_H:mm_ä"
-      monthPattern: "Ĳ_MMMM d, y_ä",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Tijdschuifregelaar weergeven",
       label: "Tijd",
-      timeRange: "Ĳ_<b>Time Range:</b> ${start_time} to ${end_time}_ä",
+      timeRange: "Ĳ_${start_time} to ${end_time}_ä",
       timeRangeSingle: "<b>Tijdspanne:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Sluiten",
       label: "Sluiten"
     }

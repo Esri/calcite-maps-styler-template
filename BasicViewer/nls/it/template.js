@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Impossibile creare la mappa",
       bitly: 'a livello di bit viene utilizzata per abbreviare l\'URL per la condivisione. Per informazioni dettagliate sulla creazione e l\'utilizzo di una chiave a livello di bit, vedere il file Readme.',
       general: "Errore"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Cambia mappa di base",
     label: "Mappa di base"
@@ -28,14 +28,14 @@
     share: {
     title: "Condividi mappa",
     label: "Condividi",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "E-mail",
         message: "Guarda questa mappa"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "é_yyyy G_È",
-      decadePattern: "é_yyyy_È", 
-      yearPattern: "é_MMMM yyyy_È",
-      weekPattern: "é_MMMM d, yyyy_È",
+      datePattern: "é_MMMM d, yyyy_È",
+      yearPattern: "é_yyyy_È",
       hourTimePattern: "H",
-      // e.g. for German: "é_H:mm:ss:SSS_È"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "H.mm",
-      // e.g. for German: "é_H:mm_È"
-      monthPattern: "é_MMMM d, y_È",
       secondTimePattern: "h.m.s.SSS",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Visualizza cursore temporale",
       label: "Data/Ora",
-      timeRange: "é_<b>Time Range:</b> ${start_time} to ${end_time}_È",
+      timeRange: "é_${start_time} to ${end_time}_È",
       timeRangeSingle: "<b>Intervallo di tempo:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Chiudi pannello",
       label: "Chiudi"
     }

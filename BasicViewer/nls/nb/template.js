@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Kan ikke opprette kart",
       bitly: 'bitly brukes til å forkorte URLen for deling. Les readme-filen for detaljer om å opprette og bruke en bitly-nøkkel',
       general: "Feil"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Bytt bakgrunnskart",
     label: "Bakgrunnskart"
@@ -28,14 +28,14 @@
     share: {
     title: "Del kart",
     label: "Del",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "E-post",
         message: "Sjekk ut dette kartet"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "å_yyyy G_ø",
-      decadePattern: "å_yyyy_ø", 
-      yearPattern: "å_MMMM yyyy_ø",
-      weekPattern: "å_MMMM d, yyyy_ø",
+      datePattern: "å_MMMM d, yyyy_ø",
+      yearPattern: "å_yyyy_ø",
       hourTimePattern: "H",
-      // e.g. for German: "å_H:mm:ss:SSS_ø"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "H.mm",
-      // e.g. for German: "å_H:mm_ø"
-      monthPattern: "å_MMMM d, y_ø",
       secondTimePattern: "t:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Vis tidskyvebryter",
       label: "Tid",
-      timeRange: "å_<b>Time Range:</b> ${start_time} to ${end_time}_ø",
+      timeRange: "å_${start_time} to ${end_time}_ø",
       timeRangeSingle: "<b>Tidsområde:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Lukk panelet",
       label: "Lukk"
     }

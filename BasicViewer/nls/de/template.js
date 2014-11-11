@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Karte kann nicht erstellt werden",
       bitly: 'Bitly verkürzt die URL für die Freigabe. Details zum Erstellen und Verwenden von Bitly-Schlüsseln finden Sie in der Readme-Datei.',
       general: "Fehler"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Grundkarte wechseln",
     label: "Grundkarte"
@@ -28,14 +28,14 @@
     share: {
     title: "Karte freigeben",
     label: "Freigeben",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "E-Mail",
         message: "Diese Karte ansehen"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "ä_yyyy G_Ü",
-      decadePattern: "ä_yyyy_Ü", 
-      yearPattern: "ä_MMMM yyyy_Ü",
-      weekPattern: "ä_MMMM d, yyyy_Ü",
+      datePattern: "ä_MMMM d, yyyy_Ü",
+      yearPattern: "ä_yyyy_Ü",
       hourTimePattern: "H",
-      // e.g. for German: "ä_H:mm:ss:SSS_Ü"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "H:mm",
-      // e.g. for German: "ä_H:mm_Ü"
-      monthPattern: "ä_MMMM d, y_Ü",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Zeitschieberegler anzeigen",
       label: "Zeit",
-      timeRange: "ä_<b>Time Range:</b> ${start_time} to ${end_time}_Ü",
+      timeRange: "ä_${start_time} to ${end_time}_Ü",
       timeRangeSingle: "<b>Zeitbereich:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Fenster schließen",
       label: "Schließen"
     }

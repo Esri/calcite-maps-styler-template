@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Nelze vytvořit mapu",
       bitly: 'Služba bitly slouží ke zkracování adresy URL pro usnadnění sdílení. Pro více informací o vytváření a používání klíče bitly si přečtěte soubor readme.',
       general: "Chyba"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Přepnout podkladovou mapu",
     label: "Podkladová mapa"
@@ -28,14 +28,14 @@
     share: {
     title: "Sdílet mapu",
     label: "Sdílet",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "E-mail",
         message: "Prohlédnout mapu"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "Ř_yyyy G_ů",
-      decadePattern: "Ř_yyyy_ů", 
-      yearPattern: "Ř_MMMM yyyy_ů",
-      weekPattern: "Ř_MMMM d, yyyy_ů",
+      datePattern: "Ř_MMMM d, yyyy_ů",
+      yearPattern: "Ř_yyyy_ů",
       hourTimePattern: "h a",
-      // e.g. for German: "Ř_H:mm:ss:SSS_ů"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "h:mm a",
-      // e.g. for German: "Ř_H:mm_ů"
-      monthPattern: "Ř_MMMM d, y_ů",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Zobrazit posuvník času",
       label: "Čas",
-      timeRange: "Ř_<b>Time Range:</b> ${start_time} to ${end_time}_ů",
+      timeRange: "Ř_${start_time} to ${end_time}_ů",
       timeRangeSingle: "<b>Časový rozsah:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Zavřít panel",
       label: "Zavřít"
     }

@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Nie można utworzyć mapy",
       bitly: 'Serwis Bitly umożliwia skracanie adresów URL, aby ułatwić ich udostępnianie. W pliku readme znajdują się szczegóły dotyczące tworzenia i używania klucza bitly.',
       general: "Błąd"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Przełącz mapę bazową",
     label: "Mapa bazowa"
@@ -28,14 +28,14 @@
     share: {
     title: "Udostępnij mapę",
     label: "Udostępnij",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "Email",
         message: "Sprawdź tę mapę"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "ł_yyyy G_ą",
-      decadePattern: "ł_yyyy_ą", 
-      yearPattern: "ł_MMMM yyyy_ą",
-      weekPattern: "ł_MMMM d, yyyy_ą",
+      datePattern: "ł_MMMM d, yyyy_ą",
+      yearPattern: "ł_yyyy_ą",
       hourTimePattern: "hh",
-      // e.g. for German: "ł_H:mm:ss:SSS_ą"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "hh:mm",
-      // e.g. for German: "ł_H:mm_ą"
-      monthPattern: "ł_MMMM d, y_ą",
       secondTimePattern: "hh:mm:ss",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Suwak wyświetlania czasu",
       label: "Czas",
-      timeRange: "ł_<b>Time Range:</b> ${start_time} to ${end_time}_ą",
+      timeRange: "ł_${start_time} to ${end_time}_ą",
       timeRangeSingle: "<b>Okres:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Zamknij panel",
       label: "Zamknij"
     }

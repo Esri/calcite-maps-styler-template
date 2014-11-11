@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Ei suuda luua kaarti",
       bitly: 'Et jagada url-i on selle lühendamiseks kasutusel bitly. Vaata loemind-faili bitly loomiseks ja kasutamiseks.',
       general: "Viga"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Vaheta aluskaart",
     label: "Aluskaart"
@@ -28,14 +28,14 @@
     share: {
     title: "Jaga kaart",
     label: "Jaga",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "E-mail",
         message: "Tutvu kaardiga"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "Š_yyyy G_ä",
-      decadePattern: "Š_yyyy_ä", 
-      yearPattern: "Š_MMMM yyyy_ä",
-      weekPattern: "Š_MMMM d, yyyy_ä",
+      datePattern: "Š_MMMM d, yyyy_ä",
+      yearPattern: "Š_yyyy_ä",
       hourTimePattern: "H",
-      // e.g. for German: "Š_H:mm:ss:SSS_ä"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "h:mm",
-      // e.g. for German: "Š_H:mm_ä"
-      monthPattern: "Š_MMMM d, y_ä",
       secondTimePattern: "h:m:s.SSS",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Kuva ajaliugur",
       label: "Aeg",
-      timeRange: "Š_<b>Time Range:</b> ${start_time} to ${end_time}_ä",
+      timeRange: "Š_${start_time} to ${end_time}_ä",
       timeRangeSingle: "<b>Ajavahemik:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Sulge paneel",
       label: "Sulge"
     }

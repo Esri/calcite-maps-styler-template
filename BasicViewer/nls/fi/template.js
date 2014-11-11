@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Karttaa ei voi luoda",
       bitly: 'bitly-palvelua käytetään url-osoitteen lyhentämiseksi jakamista varten. Readme-tiedostossa on lisätietoja bitly-avaimen luomisesta ja käyttämisestä',
       general: "Virhe"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Vaihda taustakartta",
     label: "Taustakartat"
@@ -28,14 +28,14 @@
     share: {
     title: "Jaa kartta",
     label: "Jaa",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "Sähköposti",
         message: "Tutustu tähän karttaan"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "Å_yyyy G_ö",
-      decadePattern: "Å_yyyy_ö", 
-      yearPattern: "Å_MMMM yyyy_ö",
-      weekPattern: "Å_MMMM d, yyyy_ö",
+      datePattern: "Å_MMMM d, yyyy_ö",
+      yearPattern: "Å_yyyy_ö",
       hourTimePattern: "H",
-      // e.g. for German: "Å_H:mm:ss:SSS_ö"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "h:mm a",
-      // e.g. for German: "Å_H:mm_ö"
-      monthPattern: "Å_MMMM d, y_ö",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Näytä ajan liukusäädin",
       label: "Kellonaika",
-      timeRange: "Å_<b>Time Range:</b> ${start_time} to ${end_time}_ö",
+      timeRange: "Å_${start_time} to ${end_time}_ö",
       timeRangeSingle: "<b>Aikaväli:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Sulje ruutu",
       label: "Sulje"
     }

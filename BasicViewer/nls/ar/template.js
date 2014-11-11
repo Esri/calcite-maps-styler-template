@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "يتعذر إنشاء الخريطة",
       bitly: 'يستخدم bitly لاختصار عنوان url حتى يمكن مشاركته. أظهر ملف \"اقرأني\" للحصول على تفاصيل إنشاء مفتاح bitly واستخدامه',
       general: "خطأ"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "تبديل خريطة الأساس",
     label: "خريطة أساسية"
@@ -28,14 +28,14 @@
     share: {
     title: "مشاركة الخريطة",
     label: "مشاركة",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "فيس بوك"
        },
-      twitter:{
+      twitter: {
         label: "تويتر"
       },
-      email:{
+      email: {
         label: "البريد الإلكتروني",
         message: "فحص الخريطة"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "بيت_yyyy G_لاحقة",
-      decadePattern: "بيت_yyyy_لاحقة", 
-      yearPattern: "بيت_MMMM yyyy_لاحقة",
-      weekPattern: "بيت_MMMM d, yyyy_لاحقة",
+      datePattern: "بيت_MMMM d, yyyy_لاحقة",
+      yearPattern: "بيت_yyyy_لاحقة",
       hourTimePattern: "h a",
-      // e.g. for German: "بيت_H:mm:ss:SSS_لاحقة"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "h:mm a",
-      // e.g. for German: "بيت_H:mm_لاحقة"
-      monthPattern: "بيت_MMMM d, y_لاحقة",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "عرض شريط تمرير الوقت",
       label: "الوقت",
-      timeRange: "بيت_<b>Time Range:</b> ${start_time} to ${end_time}_لاحقة",
+      timeRange: "بيت_${start_time} to ${end_time}_لاحقة",
       timeRangeSingle: "<b> نطاق الوقت: </b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "إغلاق اللوحة",
       label: "إغلاق"
     }

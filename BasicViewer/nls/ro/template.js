@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "Imposibil de creat harta",
       bitly: 'O cheie bitly este utilizată pentru scurtarea URL-ului în vederea partajării. Vizualizaţi fişierul readme pentru detalii despre crearea şi utilizarea unei chei bitly',
       general: "Eroare"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Schimbare hartă fundal",
     label: "Hartă fundal"
@@ -28,14 +28,14 @@
     share: {
     title: "Partajare hartă",
     label: "Partajare",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "Email",
         message: "Consultare această hartă"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "Ă_yyyy G_ș",
-      decadePattern: "Ă_yyyy_ș", 
-      yearPattern: "Ă_MMMM yyyy_ș",
-      weekPattern: "Ă_MMMM d, yyyy_ș",
+      datePattern: "Ă_MMMM d, yyyy_ș",
+      yearPattern: "Ă_yyyy_ș",
       hourTimePattern: "H",
-      // e.g. for German: "Ă_H:mm:ss:SSS_ș"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "H:mm",
-      // e.g. for German: "Ă_H:mm_ș"
-      monthPattern: "Ă_MMMM d, y_ș",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "Afişare glisor de timp",
       label: "Timp",
-      timeRange: "Ă_<b>Time Range:</b> ${start_time} to ${end_time}_ș",
+      timeRange: "Ă_${start_time} to ${end_time}_ș",
       timeRangeSingle: "<b>Interval de timp:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Închidere panou",
       label: "Închidere"
     }

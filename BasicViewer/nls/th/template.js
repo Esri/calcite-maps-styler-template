@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "ไม่สามารถสร้างแผนที่ได้",
       bitly: 'bitly ใช้เพื่อทำให้ URL สำหรับการแชร์สั้นลง อ่านไฟล์ Readme สำหรับรายละเอียดในการสร้างและใช้ bitly key',
       general: "ข้อผิดพลาด"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "เปลี่ยนแผนที่ฐาน",
     label: "แผนที่ฐาน"
@@ -28,14 +28,14 @@
     share: {
     title: "แชร์แผนที่",
     label: "แชร์",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "เฟสบุค"
        },
-      twitter:{
+      twitter: {
         label: "ทวิตเตอร์"
       },
-      email:{
+      email: {
         label: "อีเมล์",
         message: "ดูแผนที่นี้"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "ก้_yyyy G_ษฺ",
-      decadePattern: "ก้_yyyy_ษฺ", 
-      yearPattern: "ก้_MMMM yyyy_ษฺ",
-      weekPattern: "ก้_MMMM d, yyyy_ษฺ",
+      datePattern: "ก้_MMMM d, yyyy_ษฺ",
+      yearPattern: "ก้_yyyy_ษฺ",
       hourTimePattern: "h a",
-      // e.g. for German: "ก้_H:mm:ss:SSS_ษฺ"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "h:mm a",
-      // e.g. for German: "ก้_H:mm_ษฺ"
-      monthPattern: "ก้_MMMM d, y_ษฺ",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "แสดงตัวเลื่อนเวลา",
       label: "เวลา",
-      timeRange: "ก้_<b>Time Range:</b> ${start_time} to ${end_time}_ษฺ",
+      timeRange: "ก้_${start_time} to ${end_time}_ษฺ",
       timeRangeSingle: "<b>ช่วงเวลา:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "ปิดแถบเครื่องมือ",
       label: "ปิด"
     }

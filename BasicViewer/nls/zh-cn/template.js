@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
+    errors: {
       createMap: "无法创建地图",
       bitly: 'bitly 用于缩短共享 url。有关创建和使用 bitly 密钥的详细信息，请查看自述文件',
       general: "错误"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "切换底图",
     label: "底图"
@@ -28,14 +28,14 @@
     share: {
     title: "共享地图",
     label: "共享",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
+      email: {
         label: "电子邮件",
         message: "检出该地图"
       }    
@@ -55,20 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      centuryPattern: "试_yyyy G_验",
-      decadePattern: "试_yyyy_验", 
-      yearPattern: "试_MMMM yyyy_验",
-      weekPattern: "试_MMMM d, yyyy_验",
+      datePattern: "试_MMMM d, yyyy_验",
+      yearPattern: "试_yyyy_验",
       hourTimePattern: "H",
-      // e.g. for German: "试_H:mm:ss:SSS_验"
-      millisecondTimePattern:"h:m:ss.SSS a",
       minuteTimePattern: "H:mm",
-      // e.g. for German: "试_H:mm_验"
-      monthPattern: "试_MMMM d, y_验",
       secondTimePattern: "h:m:s.SSS a",
+      millisecondTimePattern:"h:m:ss.SSS a",
       title: "显示时间滑块",
       label: "时间",
-      timeRange: "试_<b>Time Range:</b> ${start_time} to ${end_time}_验",
+      timeRange: "试_${start_time} to ${end_time}_验",
       timeRangeSingle: "<b>时间范围:</b> ${time}"
     },
     editor: {
@@ -103,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "关闭面板",
       label: "关闭"
     }
