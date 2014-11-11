@@ -1,0 +1,99 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+      <title>Configure Premium Service</title>
+      <style>
+        body {
+           font-family: "Lucida Grande","Segoe UI","Arial",sans-serif;
+           margin:8px;
+           color:#4d4d4d;
+           background-color: #fefefe;
+        }
+        h1{
+            margin-bottom:.63158em;
+            margin-top: 0 !important;
+            font-size: 2.375em;
+            line-height: 1.26316em;
+            font-family: "Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif;
+            font-style:normal;
+            font-weight: 500;
+        }
+        a:link a:active, a:visited{
+            text-decoration: none;
+        }
+        a{
+            cursor: pointer;
+        }
+        a{
+            color:#007ac2;
+        }
+        .item{
+            font-weight: 700;
+            color:#444;
+        }
+        ul, ol{
+            list-style-position: inside;
+            margin-bottom: 1.5em;
+        }
+        ul{
+            list-style-type:none;
+        }
+ 
+        ol{
+            font-size:.875em;
+            line-height:1.71429em;    
+            margin-bottom: 1.5em;
+            margin-top:0;
+            padding:0;
+            padding-left:25px; 
+        }
+        ul li{
+            padding-left:1.25em;
+            background:transparent url(images/bullet.png) no-repeat scroll 5px 9px;
+        }
+        p{
+            font-size:.875em;
+            line-height:1.71429em;
+            margin-top:0;
+            margin-bottom: 1.71429em;
+        }
+        img{
+            margin-top:1em;
+            margin-bottom: 1em;
+        }
+      </style>
+    </head>
+    <body>
+        <h1>Configure a Premium Service for anonymous access</h1>
+        <p>This configurable app supports the configuration of the premium route service to support anonymous access scenarios like providing driving directions to a fixed destination or locating the closest site to the user’s location and routing them to that location.</p>
+        <p>Before you can publish and share your app, you need to follow the steps below to configure the route service for anonymous access.</p>
+        <ol>
+        <li> Create a new item in ArcGIS Online or your portal
+            <ul>
+                <li>Sign in to your organization and verify that you have <a href="http://doc.arcgis.com/en/arcgis-online/reference/roles.htm">privileges</a> to create content.</li>
+                <li>Open <span class="item">My Content</span> and click <span class="item">Add Item</span>.</li>
+                <li>Choose <span class="item">On the Web</span> from the <span class="item"> The item is</span> option. 
+                <li>Enter this URL to the <a href="http://www.arcgis.com/home/item.html?id=1feb41652c5c4bd2ba5c60df2b4ea2c4">World Route service</a>:
+                    <div class="item">http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer</div>
+                </li>
+                <li>Enter the <span class="item">Username</span> and <span class="item">Password</span> for an organizational account that has access to the service and select the option to store the credentials with the service item. If credentials are stored with the item, users will not be prompted for credentials when using the routing functionality in your app.</li>
+                <li>Enter a title and tags for the item.</li>
+                <li>Click <span class="item">Add Item</span> after verifying that the dialog looks similar to this:<img style="display:block;" src="images/additem_dialog.png"/></li>
+            </ul>
+       </li>
+       <li>Share the item with everyone. Sharing it with just the groups in your organization will still require users to login to access it. <img style="padding-left:10px;display:block;" src="images/share_dialog.png"/></li>
+       <li>Limit usage of the route service you just added by defining rate limiting and referrer.
+        <ul>
+            <li>On the item details page, click <span class="item">Edit</span> then under Advanced Options click <span class="item">Limit Usage</span>.</li>
+            <li>Check <span class="item">Enable rate limiting</span> and specify the number of requests per time period you want to allow.</li>
+            <li>Specify the Referrer URL or IP to further restrict traffic. You can provide either the URL to your app, or if you plan to have multiple configurable apps that use this service you can specify the URL the configurable app root directory instead. The configuratble app root directory will look something like this: http://www.arcgis.com/apps.
+            <img style="padding-left:10px;display:block;" src="images/rate_info.png"/></li>
+        </ul>
+       </li>
+       <li>Copy the URL  for the item from the <span class="item">ArcGIS Web REST Connection</span> section. You will need this URL when configuring the app. <img style="padding-left:10px;display:block;" src="images/secure_url.png"/></li>
+       <li>Return to the template configuration panel and configure the app to use the secure service by pasting the URL you copied in step 4 into the <span class="item"> Route utility item</span> field.<img style="display:block;" src="images/config.png"/></li>
+       </ol>
+    </body>
+  </html>

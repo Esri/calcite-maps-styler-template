@@ -137,7 +137,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
 
 
                 this.map = response.map;
-                domClass.add(this.map.infoWindow.domNode, "light");
+               // domClass.add(this.map.infoWindow.domNode, "light");
 
                 this.config.response = response;
 

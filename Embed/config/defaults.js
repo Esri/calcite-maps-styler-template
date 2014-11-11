@@ -38,12 +38,12 @@ define({
     "active_panel" : "legend", //"legend, details, popup"
     "find": null,
     "show_panel": null,
-    "theme": "dark",
+    "theme": "light",
     //"popuptheme": "light", //light or dark
     "marker_symbol": "http://www.arcgis.com/home/webmap/images/EsriBluePinCircle26.png",
     "level": null,
     "center": null,
-    "disable_scroll":true,
+    "disable_scroll":false,
     //Enter the url to the proxy if needed by the application. See the 'Using the proxy page' help topic for details
     //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
     "proxyurl": "",

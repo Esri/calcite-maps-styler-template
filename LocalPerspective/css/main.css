@@ -118,7 +118,7 @@ a, a:hover, a:visited{
 
 .esriSimpleSliderTL {
 	top: 5px;
-	left: 10px;
+	left: 5px;
 	border: none;
 }
 
@@ -339,20 +339,18 @@ a, a:hover, a:visited{
 	position: absolute;
 	right: 0px;
 	top: 0px;
-	width: 0px;
+	width: 320px;
 	height: 100%;
 	display: none;
-	background-color: rgba(0,0,0,0.5);
 }
 
 #panelContent {
 	position: absolute;
 	right: 0px;
 	top: 0px;
-	width: 0px;
+	width: 320px;
 	height: 100%;
 	display: block;
-	background-color: rgba(0,0,0,0.5);
 }
 
 #panelPages {
@@ -366,21 +364,9 @@ a, a:hover, a:visited{
 	height: 100%;
 }
 
-.pageMenu {
-	position: relative;
-	width: 30px;
-	height: 30px;
-	margin-left: -50px;
-	top: 5px;
-	text-align: center;
-	padding: 5px;
-	cursor: pointer;
-}
-
 .page {
 	position: relative;
 	width: 320px;
-	margin-left: -320px;
 	height: 100%;
 	display: block;
 	background-color: rgba(0,0,0,0.15);
@@ -542,10 +528,9 @@ a, a:hover, a:visited{
 }
 
 .resultsContent {
+	position: absolute;
 	width: 100%;
-	min-height: 100%;
-	overflow-x: hidden;
-	overflow-y: visible;
+	display: table;
 }
 
 .recDemographics {
@@ -597,9 +582,10 @@ a, a:hover, a:visited{
 }
 
 .recProximity {
-	position: relative;
+	float: left;
 	width: 100%;
-	height: 59px;
+	height: auto;
+	min-height: 59px;
 	border-bottom: 1px solid #afafaf;
 	text-align: left;
 	font-size: 11px;
@@ -608,40 +594,26 @@ a, a:hover, a:visited{
 	color: #6e6e6e;
 	background: url(../images/arrow.png)no-repeat;
 	background-position: right center;
-	overflow: hidden;
 	transition: 0.2s linear;
 	-webkit-transition: 0.2s linear;
 }
 
 .recOpened {
-	height: 260px;
-	overflow-y: auto;
 	background: none;
 	background-position: right center;
 	background-color: #e6e6e6;
 }
 
-.recClick {
-	position: absolute;
-	left: 0px;
-	right: 60px;
+.recHeader {
+	float: left;
+	width: 100%;
 	height: 59px;
-	z-index: 100;
 	cursor: pointer;
 }
 
-.recLeftNum {
-	position: absolute;
-	width: 40px;
-	height: 100%;
-	display: block
-	background-color: #ff0000;
-}
-
 .recNum {
-	position: absolute;
-	left: 10px;
-	top: 10px;
+	float: left;
+	margin: 10px;
 	width: 30px;
 	height: 30px;
 	text-align: center;
@@ -653,42 +625,44 @@ a, a:hover, a:visited{
 	border-radius: 15px;
 }
 
-.recInfo {
-	position: absolute;
-	text-align: left;
-	left: 50px;
-	right: 60px;
-	top: 10px;
-	height: 30px;
-	display: block;
-	font-size: 12px;
-	line-height: 15px;
+.recHeaderInfo {
+	float: left;
+	margin: 10px 0 10px 0;
+	width: calc(100% - 110px); 
+	min-width: 190px;
+	height: 39px;
+	display: inline;
+	white-space: nowrap;
 	overflow: hidden;
-	/*white-space: nowrap;*/
-	text-overflow: ellipsis;
-	cursor: pointer;
+	text-overflow:ellipsis;
 }
 
 .recDist {
-	position: absolute;
-	text-align: left;
-	left: 50px;
-	right: 60px;
-	top: 40px;
-	height: 15px;
 	line-height: 15px;
 	font-size: 11px;
-	display: block;
-	overflow: hidden;
 	color: #888888;
 	font-weight: 300;
 }
 
-.recDetails {
-	position: absolute;
-	top: 60px;
+.recRoute {
+	float: left;
+	margin: 10px 0 10px 0;
+	width: 30px;
+	height: 30px;
+	background: url(../images/car.png)no-repeat;
+	background-position: center center;
+	cursor: pointer;
+}
+
+.recBody {
+	float: left;
 	width: 100%;
-	height: 200px;
+	overflow: visible;
+}
+
+.recDetails {
+	float: left;
+	width: 100%;
 }
 
 .mainSection .header {
@@ -703,27 +677,16 @@ a, a:hover, a:visited{
 	border-top: 1px solid #ffffff !important;
 }
 
-
-.recRoute {
-	position: absolute;
-	right: 30px;
-	top: 18px;
-	width: 30px;
-	height: 30px;
-	background: url(../images/car.png)no-repeat;
-	background-position: center center;
-	cursor: pointer;
-}
-
 .num {
 	font-size: 30px;
 	font-family: Steelfish;
 	line-height: 40px;
 }
 
+
 #panelTop {
 	position: fixed;
-	left: 35px;
+	left: 30px;
 	top: 5px;
 	color: #ffffff;
 	font-family: HelveticaNeueUltraLight;
@@ -777,6 +740,18 @@ a, a:hover, a:visited{
 	height: 30px;
 }
 
+#panelMenu {
+	position: fixed;
+	right: 5px;
+	top: 5px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	padding: 5px;
+	cursor: pointer;
+	display: block;
+	background: url(../images/menu.png)no-repeat center center;
+}
 
 
 /* MEDIA SPECIFIC: SMALL TABLETS */
@@ -792,7 +767,7 @@ a, a:hover, a:visited{
 	}
 	
 	#panelTop {
-		left: 10px;
+		left: 5px;
 	}
 	
 	#panelText {
@@ -829,22 +804,20 @@ a, a:hover, a:visited{
 	
 	#panelContent {
 		position: absolute;
-		left: -100%;
+		left: 0px;
 		top: 0px;
 		width: 100%;
 		height: 100%;
 		display: block;
-		background-color: rgba(0,0,0,0.5);
 	}
 	
 	#panelDirections {
 		position: absolute;
-		left: -100%;
+		left: 0px;
 		top: 0px;
 		width: 100%;
 		height: 100%;
 		display: none;
-		background-color: rgba(0,0,0,0.5);
 	}
 	
 	.pageblank {
@@ -852,30 +825,18 @@ a, a:hover, a:visited{
 		height: 100%;
 	}
 	
-	.pageMenu {
-		position: relative;
-		width: 30px;
-		height: 30px;
-		left: 200%;
-		margin-left: -40px;
-		top: 5px;
-		text-align: center;
-		padding: 5px;
-		cursor: pointer;
-	}
-	
 	.page {
 		position: relative;
 		width: 100%;
-		margin-left: 100%;
+		margin-left: 0;
 		height: 100%;
 		display: block;
 		background-color: rgba(0,0,0,0.15);
 	}
 
-	.pageContent {
+	/*.pageContent {
 		top: 60px;
-	}
+	}*/
 	
 	.pageHeader {
 		position: relative;

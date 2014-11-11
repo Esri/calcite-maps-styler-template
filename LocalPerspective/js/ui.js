@@ -136,9 +136,6 @@ define([
          on (window, "scroll", lang.hitch(this, this._windowScrolled));
          on (window, "resize", lang.hitch(this, this._windowScrolled));
          
-         // info window
-         //this.map.infoWindow.resize(220, 220);
-         
          // graphics layer click
          var gl = this.map.graphics;
          on(gl, 'click', lang.hitch(this, this._graphicClickHandler));
@@ -148,6 +145,16 @@ define([
          
          // build page list
          this._buildPageList();
+         
+         // menu
+         var menu = dom.byId("panelMenu");
+         var tip = "Menu";
+         if (this.config && this.config.i18n) {
+            tip = this.config.i18n.tooltips.menu;
+         }
+         menu.title = tip;
+         domStyle.set(menu, "background-color", this.pages[0].color);
+         on (menu, "click", lang.hitch(this, this._showCurrentPage));
          
          // create pages
          for (var i=0; i<this.pages.length; i++) {
@@ -276,20 +283,6 @@ define([
                id : 'page_' + id
             }, this.pPages);
             domClass.add(page, 'pageblank');
-            
-            // page menu
-            tip = "Menu";
-            if (this.config && this.config.i18n) {
-               tip = this.config.i18n.tooltips.menu;
-            }
-            var pageMenu = domConstruct.create('div', {
-               id : 'pageMenu',
-               title : tip,
-               innerHTML : '<img src="images/menu.png" alt="Menu" />',
-               style : 'background-color:'+ options.color
-            }, page);
-            domClass.add(pageMenu, 'pageMenu rounded shadow');
-            on(pageMenu, 'click', lang.hitch(this, this._showCurrentPage));
             
          } else {
             
@@ -497,6 +490,8 @@ define([
       // show current page
       _showCurrentPage : function() {
          var num = 1;
+         domStyle.set("panelMenu", "display", "none");
+         domStyle.set("panelContent", "display", "block");
          if (this.prevPage)
             num = this.prevPage;
          this._showPage(num);
@@ -504,6 +499,8 @@ define([
       
       // show page
       _showPage : function(num) {
+         if (num > 0)
+            domStyle.set("panelContent", "display", "block");
          this._scrollToPage(num);
       },
       
@@ -573,6 +570,8 @@ define([
          var box = html.getContentBox(dom.byId("panelContent"));
          var numActual  = startPos/box.h;
          var num = Math.round(numActual);
+         if(isNaN(num))
+            num = 0;
          if (numActual > this.curPage) {
             if (numActual-this.curPage > 0.2)
                num = Math.ceil(startPos/box.h);
@@ -588,7 +587,7 @@ define([
          this._changeColor(this.curPage, num);
          this.curPage = num;
          this._updatePage();
-         //console.log("snapping", numActual, num, this.snap);
+         
          if (num != numActual)
             this._animateScroll(startPos, endPos);
       },
@@ -621,6 +620,8 @@ define([
             pageObj.buffer = null;
             pageObj.update = true;
             pageObj.proximityFeatures = null;
+            if (pageObj.type == "proximity")
+               dom.byId("pageCounter_" + pageObj.id).innerHTML = "";
             if (i>0) {
                dom.byId("pageBody_"+i).innerHTML = "";
             }
@@ -668,6 +669,19 @@ define([
                   pageObj.proximityInfo.updateSelection();
             }
          }
+         if (this.curPage === 0) {
+            domStyle.set("panelTop", "display", "block");
+            domStyle.set("panelMenu", "display", "block");
+            domStyle.set("panelContent", "display", "none");
+         } else {
+            domStyle.set("panelTop", "display", "block");
+            domStyle.set("panelMenu", "display", "none");
+            domStyle.set("panelContent", "display", "block");
+            if (this.map.width <= 500) {
+               domStyle.set("panelTop", "display", "none");
+            }
+         }
+         
       },
       
       // change color

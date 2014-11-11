@@ -15,7 +15,7 @@
  | limitations under the License.
  */
 define({
-    root: {
+    root: ({
         tagHeaderText: "Tags",
         expandGroupDescText: "More",
         shrinkGroupDescText: "Less",
@@ -86,7 +86,7 @@ define({
             noFullScreenSupport: "Current browser does not support full screen mode.",
             notMemberOfOrg: "You are not a member of this organization"
         }
-    },
+    }),
     "ar": 1,
     "cs": 1,
     "da": 1,
