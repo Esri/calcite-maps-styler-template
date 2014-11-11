@@ -70,8 +70,8 @@ define({
 				copy: "Copy",
 				copied: "Copied",
 				open: "Open",
-				embed: "Embed in website",
-				embedExplain: "Use the following HTML code to embed the journal in a website.",
+				embed: "Embed in web page",
+				embedExplain: "Use the following HTML code to embed the journal in a web page.",
 				size: "Size (width/height):"
 			}
         }
