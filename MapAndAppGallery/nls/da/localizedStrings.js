@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "Nøgleord",
     expandGroupDescText: "Mere",
     shrinkGroupDescText: "Mindre",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "Den aktuelle browser understøtter ikke fuldskærmstilstand.",
         notMemberOfOrg: "Du er ikke medlem af denne organisation."
     }
-});
+})
+);

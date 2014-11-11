@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "תגיות",
     expandGroupDescText: "עוד",
     shrinkGroupDescText: "פחות",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "הדפדפן הנוכחי אינו תומך במסך מלא.",
         notMemberOfOrg: "אינך חבר בארגון זה"
     }
-});
+})
+);

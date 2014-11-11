@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "Taggar",
     expandGroupDescText: "Mer",
     shrinkGroupDescText: "Mindre",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "Den aktuella webbläsaren har inte stöd för helskärmsläge.",
         notMemberOfOrg: "Du är inte medlem av den här organisationen"
     }
-});
+})
+);

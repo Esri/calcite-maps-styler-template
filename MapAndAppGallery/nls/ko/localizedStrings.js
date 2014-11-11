@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "태그",
     expandGroupDescText: "추가",
     shrinkGroupDescText: "미만",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "현재 브라우저에서 전체 화면 모드를 지원하지 않습니다.",
         notMemberOfOrg: "이 기관의 구성원이 아닙니다."
     }
-});
+})
+);

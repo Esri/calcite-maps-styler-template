@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "タグ",
     expandGroupDescText: "詳細",
     shrinkGroupDescText: "折りたたむ",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "現在のブラウザは、全画面モードをサポートしていません。",
         notMemberOfOrg: "この組織のメンバーではありません"
     }
-});
+})
+);

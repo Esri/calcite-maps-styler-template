@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "标签",
     expandGroupDescText: "更多",
     shrinkGroupDescText: "小于",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "当前浏览器不支持全屏模式。",
         notMemberOfOrg: "您不是该组织成员"
     }
-});
+})
+);

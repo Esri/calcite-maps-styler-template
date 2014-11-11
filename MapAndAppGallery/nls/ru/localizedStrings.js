@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "Теги",
     expandGroupDescText: "Больше",
     shrinkGroupDescText: "Меньше",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "Текущий браузер не поддерживает полноэкранный режим отображения.",
         notMemberOfOrg: "Вы не являетесь участником этой организации"
     }
-});
+})
+);

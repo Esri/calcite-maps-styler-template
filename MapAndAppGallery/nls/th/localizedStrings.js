@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "แท็กส์",
     expandGroupDescText: "เพิ่มเติม",
     shrinkGroupDescText: "น้อยกว่า",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "เบราว์เซอร์ปัจจุบันไม่สนับสนุนการแสดงผลแบบเต็มหน้าจอ",
         notMemberOfOrg: "คุณไม่ได้เป็นสมาชิกขององค์กรนี้"
     }
-});
+})
+);
