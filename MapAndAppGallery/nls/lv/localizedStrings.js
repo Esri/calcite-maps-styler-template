@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "Tagi",
     expandGroupDescText: "Vairāk",
     shrinkGroupDescText: "Mazāk",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "Pašreizējā pārlūkā pilnekrāna režīms nav atbalstīts.",
         notMemberOfOrg: "Jūs neesat šīs organizācijas dalībnieks"
     }
-});
+})
+);

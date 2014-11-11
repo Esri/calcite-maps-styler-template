@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "Raktažodžiai",
     expandGroupDescText: "Daugiau",
     shrinkGroupDescText: "Mažiau",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "Esamoje naršyklėje viso ekrano režimas neveikia.",
         notMemberOfOrg: "Nesate šios organizacijos narys."
     }
-});
+})
+);

@@ -91,7 +91,7 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                                         //Info template defined so create a feature layer and display the popup
                                         if (layerResult.infoTemplate) {
                                             geocodeResult.feature._layer = layerResult;
-        
+
                                             this.map.infoWindow.setFeatures([geocodeResult.feature]);
                                             this.map.infoWindow.show(anchorPoint);
                                             this.map.setExtent(bestView);
@@ -281,6 +281,10 @@ declare, Deferred, Geocoder, PopupTemplate, FeatureLayer, Extent, Point, esriLan
                     geocoder.outFields = "Match_addr, stAddr, City";
                     geocoder.singleLineFieldName = "SingleLine";
                     geocoder.esri = geocoder.placefinding = true;
+                    //set local search if defined in config 
+                    if (this.config.searchExtent) {
+                        geocoder.searchExtent = this.map.extent;
+                    }
 
                     geocoder.localSearchOptions = {
                         minScale: 300000,

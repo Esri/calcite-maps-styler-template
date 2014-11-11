@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "Etichete",
     expandGroupDescText: "Mai mult",
     shrinkGroupDescText: "Mai puţin",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "Browserul actual nu suportă modul pe tot ecranul.",
         notMemberOfOrg: "Nu sunteţi membru al acestei organizaţii"
     }
-});
+})
+);

@@ -37,6 +37,9 @@ define([], function() {
         //When true the home button is displayed on the map. 
         "home": true,
         //When true the geocoder search box is displayed in the title area
+        //When searchextent is true the geocoder will prioritize results within
+        //the current map extent
+        "searchExtent": true, 
         "search": true,
         "helperServices": {  
            "geometry":{

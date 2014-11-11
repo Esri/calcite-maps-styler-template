@@ -13,7 +13,7 @@
 		},
 		thirdPane: {
 			head: "Aby skorzystać z hostowanego szablonu mapy wycieczki, należy najpierw utworzyć mapę za pomocą przeglądarki map w serwisie ArcGIS Online (nie musi ona zawierać warstw), zapisać ją, a następnie kliknąć przycisk Udostępnij. W oknie dialogowym Udostępnij wybierz opcję Utwórz aplikację internetową, po czym wybierz szablon mapy wycieczki z galerii szablonów, która zostanie wyświetlona i postępuj zgodnie z wyświetlanymi instrukcjami. Po skonfigurowaniu aplikacji nastąpi automatyczne otwarcie interaktywnego edytora. <br/><br>Użytkownicy, którzy chcieliby udoskonalić interfejs użytkownika map wycieczek lub dodać nowe funkcje mogą:",
-			list0: "Należy pobrać szablon <a href='http://storymaps.esri.com/templategallery/' target='_blank'>ze strony szablonów map opowiadań</a> i postępować zgodnie z instrukcjami w załączonej dokumentacji".", 
+			list0: "Należy pobrać szablon <a href='http://storymaps.esri.com/templategallery/' target='_blank'>ze strony szablonów map opowiadań</a> i postępować zgodnie z instrukcjami w załączonej dokumentacji.", 
 			list1: "Hostowanie szablonów na własnym serwerze internetowym lub serwerze innych firm"
 		},
 		fourthPane: {

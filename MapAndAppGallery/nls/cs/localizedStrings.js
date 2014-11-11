@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "Klíčová slova",
     expandGroupDescText: "Více",
     shrinkGroupDescText: "Méně",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "Současný prohlížeč nepodporuje režim celé obrazovky.",
         notMemberOfOrg: "Nejste členem této organizace."
     }
-});
+})
+);

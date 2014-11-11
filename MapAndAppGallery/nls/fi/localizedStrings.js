@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "Tunnisteet",
     expandGroupDescText: "Lisää",
     shrinkGroupDescText: "Pienempi",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "Nykyinen selain ei tue koko näytön tilaa.",
         notMemberOfOrg: "Et ole tämän organisaation jäsen"
     }
-});
+})
+);

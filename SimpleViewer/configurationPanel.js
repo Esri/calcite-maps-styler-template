@@ -42,6 +42,10 @@
                 "label": "Address Finder"
             },{
                 "type": "boolean",
+                "fieldName": "searchExtent",
+                "label": "Search within current extent"
+            },{
+                "type": "boolean",
                 "fieldName": "locate",
                 "label": "Find Location"
             },{
@@ -54,6 +58,7 @@
     }],
     "values": {
         "search": true,
+        "searchExtent": true,
         "locate": true,
         "color": "#2f4f4f",
         "theme": "#949494",

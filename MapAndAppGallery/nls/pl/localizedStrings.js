@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "Znaczniki",
     expandGroupDescText: "Więcej",
     shrinkGroupDescText: "Mniej",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "Używana obecnie przeglądarka nie obsługuje trybu pełnoekranowego.",
         notMemberOfOrg: "Nie jesteś członkiem tej instytucji"
     }
-});
+})
+);

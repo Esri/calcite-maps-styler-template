@@ -14,7 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
+define(
+  ({
     tagHeaderText: "Etiquetas",
     expandGroupDescText: "Más",
     shrinkGroupDescText: "Menos",
@@ -87,4 +88,5 @@ define({
         noFullScreenSupport: "El navegador actual no es compatible con el modo de pantalla completa.",
         notMemberOfOrg: "No eres miembro de esta organización"
     }
-});
+})
+);
