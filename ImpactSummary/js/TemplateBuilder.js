@@ -23,6 +23,7 @@ define([
     "dijit/popup",
     "dijit/_editor/plugins/LinkDialog",
     "application/BrowseIdDlg",
+    "esri/basemaps",
     "esri/arcgis/utils"
 ],
 function (
@@ -30,12 +31,10 @@ function (
     lang,
     _WidgetBase,
     ContentPane,
-    dom, on, number, string, query, array, domConstruct, domClass, Dialog, esriRequest, domAttr, domStyle, nls, topic, keys, Editor, TooltipDialog, popup, LinkDialog, BrowseIdDlg, arcgisUtils) {
+    dom, on, number, string, query, array, domConstruct, domClass, Dialog, esriRequest, domAttr, domStyle, nls, topic, keys, Editor, TooltipDialog, popup, LinkDialog, BrowseIdDlg, esriBasemaps, arcgisUtils) {
     var Widget = declare([_WidgetBase], {
         declaredClass: "application.TemplateBuilder",
         //URL for updating Item
-        //Predefined keywords for basemap's available on AGOL
-        availableBaseMaps: ["streets", "satellite", "hybrid", "topo", "gray", "oceans", "national-geographic", "osm"],
         availableThemes: ["dark", "light"],
         unSavedChanges: false,
         previousConfigObj: null,
@@ -325,14 +324,14 @@ function (
             defaultBasemapSelect = domConstruct.create("select", {}, selectDiv);
             this.own(on(defaultBasemapSelect, "change", lang.hitch(this, function (evt) {
                 if (nextBasemapSelect.value != evt.currentTarget.value) {
-                    this._changeBasemap(defaultBasemapSiwtchDiv, evt.currentTarget.value, this.config.defaultBasemap, defaultBasemapSiwtchDivText);
+                    this._setBasemap(defaultBasemapSiwtchDiv, evt.currentTarget.value, defaultBasemapSiwtchDivText);
                     this.config.defaultBasemap = evt.currentTarget.value;
                 }
                 else {
                     defaultBasemapSelect.value = this.config.defaultBasemap;
                 }
             })));
-            this._createBasemapMenu(defaultBasemapSelect, this.config.defaultBasemap);
+            this._createBasemapMenu(defaultBasemapSelect, this.config.defaultBasemap, defaultBasemapSiwtchDiv, defaultBasemapSiwtchDivText);
 
             secondaryBasemapContainer = domConstruct.create("div", { "class": "" }, baseMapSelectionTemplate);
             basemapSwitchDivContainer = domConstruct.create("div", { "class": "esriBasemapSwitchDivLeft" }, secondaryBasemapContainer);
@@ -344,14 +343,14 @@ function (
             nextBasemapSelect = domConstruct.create("select", {}, selectDiv);
             this.own(on(nextBasemapSelect, "change", lang.hitch(this, function (evt) {
                 if (defaultBasemapSelect.value != evt.currentTarget.value) {
-                    this._changeBasemap(nextBasemapSwitchDiv, evt.currentTarget.value, this.config.nextBasemap, nextBasemapSwitchDivText);
+                    this._setBasemap(nextBasemapSwitchDiv, evt.currentTarget.value, nextBasemapSwitchDivText);
                     this.config.nextBasemap = evt.currentTarget.value;
                 }
                 else {
                     nextBasemapSelect.value = this.config.nextBasemap;
                 }
             })));
-            this._createBasemapMenu(nextBasemapSelect, this.config.nextBasemap);
+            this._createBasemapMenu(nextBasemapSelect, this.config.nextBasemap, nextBasemapSwitchDiv, nextBasemapSwitchDivText);
         },
 
         _createAppSettingBottomPanel: function (settingsContainer) {
@@ -679,23 +678,24 @@ function (
         },
 
         //function to fill dropdown with all available basemaps
-        _createBasemapMenu: function (basemapSelect, configuredBasemap) {
-            array.forEach(this.availableBaseMaps, lang.hitch(this, function (currentBasemap) {
+        _createBasemapMenu: function (basemapSelect, configuredBasemap, basemapImage, basemapLabel) {
+            for (var basemapKey in esriBasemaps) {
                 var basemapOption = domConstruct.create("option");
-                basemapOption.text = currentBasemap;
-                basemapOption.value = currentBasemap;
+                basemapOption.text = esriBasemaps[basemapKey].title;
+                basemapOption.value = basemapKey;
                 if (basemapOption.value == configuredBasemap) {
+                    this._setBasemap(basemapImage, basemapOption.value, basemapLabel);
                     basemapOption.selected = "selected";
                 }
                 basemapSelect.appendChild(basemapOption);
-            }));
-        },
+            }
+        },  
 
         /*End of Application settings dialog*/
 
-        _changeBasemap: function (domNode, currentValue, previousValue, basemapLabel) {
-            domClass.replace(domNode, " esri" + currentValue, " esri" + previousValue);
-            domAttr.set(basemapLabel, "innerHTML", currentValue);
+        _setBasemap: function (domNode, currentValue, basemapLabel) {
+            domStyle.set(domNode, "background", 'url(' + esriBasemaps[currentValue].thumbnailUrl + ') no-repeat center center');
+            domAttr.set(basemapLabel, "innerHTML", esriBasemaps[currentValue].title);
         },
 
         //function to check button state
@@ -898,30 +898,6 @@ function (
             }));
         },
 
-        _createBaseMapSelectPanel: function () {
-            var baseMapSelectPanel, currentBaseMapOption, nextBaseMap, nextBaseMapLabel;
-            baseMapSelectPanel = domConstruct.create("div", { "class": "esriSelectBasemapPanel" }, document.body);
-            nextBaseMapLabel = domConstruct.create("div", { innerHTML: "Next Basemap" }, baseMapSelectPanel);
-            nextBaseMap = domConstruct.create("select", { "class": "esriBaseMapSelect" }, baseMapSelectPanel);
-            //Loop all the available basemaps
-            array.forEach(this.availableBaseMaps, lang.hitch(this, function (basemap) {
-                currentBaseMapOption = domConstruct.create("option");
-                currentBaseMapOption.value = basemap;
-                currentBaseMapOption.text = basemap;
-                if (this.config.nextBasemap == currentBaseMapOption.value) {
-                    currentBaseMapOption.selected = true;
-                    this.nextBasmapSelectedOption = currentBaseMapOption.value;
-                }
-                nextBaseMap.appendChild(currentBaseMapOption);
-            }));
-
-            on(nextBaseMap, "change", lang.hitch(this, function () {
-                this.config.nextBasemap = nextBaseMap.value;
-                this.unSavedChanges = true;
-                this._displayMessage();
-                this.nextBasmapSelectedOption = nextBaseMap.value;
-            }));
-        },
 
         //create editable title
         _createEditableTitle: function () {

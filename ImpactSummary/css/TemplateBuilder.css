@@ -522,30 +522,7 @@
     background-repeat: no-repeat;
     background-position: center center;
 }
-.esritopo {
-    background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/topo.jpg);
-}
-.esristreets {
-    background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/streets.jpg);
-}
-.esrihybrid {
-    background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/hybrid.jpg);
-}
-.esrisatellite {
-    background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/satellite.jpg);
-}
-.esrigray {
-    background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/gray.jpg);
-}
-.esriosm {
-    background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/osm.jpg);
-}
-.esrioceans {
-    background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/oceans.jpg);
-}
-.esrinational-geographic {
-    background-image: url(//js.arcgis.com/3.8/js/esri/dijit/images/basemaps/national-geographic.jpg);
-}
+
 .esriBasemapSwitchDivText {
     text-align: center;
     height: 20px;
