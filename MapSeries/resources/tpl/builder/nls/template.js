@@ -42,7 +42,7 @@ define({
 				tooltipLocate: "This functionality is supported on most mobile device and desktop browsers (Internet Explorer 9).",
 				lblGeocoder: "Address or Place Finder",
 				tooltipGeocoder: "Allow your users to find addresses and places on your maps.",
-				lblSync: "Synchronize maps location",
+				lblSync: "Synchronize map locations",
 				tooltipSync: "When enabled, the initial location of the first map in your series will be applied to all the maps, and navigation by users in any map will be reflected in all maps. Disable for each map's location to remain independent."
 			},
 			initPopup: {
@@ -72,7 +72,7 @@ define({
 			},
 			help: {
 				lblHelp: "Help",
-				lblAdd: "Add Entry",
+				lblAdd: "Add",
 				lblSettings: "Settings",
 				lblOrga: "Organize",
 				lblEdit: "Edits",
@@ -80,18 +80,25 @@ define({
 				lblTips: "Tips",
 				lblMore: "Want more?",
 				lblLink: "Visit the Esri Story Maps website.",
-				content1Div1: "TODO TODO TODO",
-				content1Div2: "TOD TODO TODO",
-				content2Div1: "Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here.",
-				content2Div2: "You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others.",
-				content3Div1: "Your content is organized into entries. You can have as many entries as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete entries as you wish.",
+				content1Div1: "To create your %TPL_NAME%, use the Add button to add each map or other content into the layout. The other content can include images, videos or embedded web pages or code. For example you might want your readers to see an introductory image or video when they first launch your  %TPL_NAME%, before they move on to explore your maps.",
+				content1Div2: "When you click the Add button a dialog will appear that lets you choose and configure the map or other content you want to add. For example you can specify the location you want the map to show, enable its legend, etc.",
+				content2Div1: "The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, choose where the map legend will appear, etc.",
+				content2Div2: "You can also replace the Esri logo in the header of your %TPL_NAME% with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information.",
+				content3Div1: "The Organize dialog lets you manage your %TPL_NAME%. In this dialog you can change the order of the series by dragging and dropping.",
+				content3Div2: "You can also delete content or hide it. Hiding is useful if you are preparing new content that isn't ready to be included in your story map yet.",
 				content4Div1: "Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. You’ll use the edit functions many times as you develop your %TPL_NAME%!",
-				content5Div1: "Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it more easily.",
-				content6Div1: "TODO about not sync?",
-				content6Div2: "TODO about adding images and videos to the description?"
+				content5Div1: "When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it.",
+				content5Div2: "Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it.",
+				content6Div1: "By default the maps in a series are synchronized to show the same location. This means that the location shown in the first map will be automatically applied to all the other maps, and that if a reader zooms or pans to a different location in the map they are currently looking at, this will also be applied to the other maps.",
+				content6Div2: "For example if your series shows different thematic data for a city, a reader can zoom to their neighborhood and then simply switch between the tabs to see the maps for that area.",
+				content6Div3: "To disable location synchronization, go to the Settings dialog and uncheck that setting in the Map Options tab.",
+				content6AltDiv1: "By default the maps location are synchronized. Disabling synchronization allows each map to display a different location.",
+				content6AltDiv2: "Synchronization ON",
+				content6AltDiv3: "Synchronization OFF",
+				content6AltDiv4: "To disable synchronization, go to Settings > Map Options and uncheck \"Synchronize map locations\"."
 			},
 			landing: {
-				lblAdd: "What do you want to call your Map Series?",
+				lblAdd: "What do you want to call your %LAYOUT_TITLE% Map Series?",
 				phAdd: "Enter your title...",
 				lblOR: "Or",
 				lblHelp: "Take a Tour"

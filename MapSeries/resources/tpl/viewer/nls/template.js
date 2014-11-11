@@ -32,7 +32,11 @@ define({
 				mapLoadingFail: "Something went wrong, the map did not load correctly.",
 				signOut: "Sign Out"
 			},
-			mobileView: {
+			mobileInfo: {
+				legend: "Legend",
+				description: "Description"
+			},
+			mobileFooter: {
 				swipeInvite: "Swipe to navigate the story",
 				lblNext: "Next",
 				lblEnd: "You have reached the end of the story"

@@ -28,8 +28,8 @@ define({
 				buttonSettings: "Settings",
 				buttonHelp: "Help",
 				buttonPreview: "View Live",
-				tooltipFirstSave: "This function is not available until the application is saved",
-				tooltipNotShared: "This function is not available until the application is shared",
+				tooltipFirstSave: "This isn't available until you save.",
+				tooltipNotShared: "This isn't available until you share.",
 				noPendingChange: "No pending change",
 				unSavedChangePlural: "Pending changes",
 				closeWithPendingChange: "Are you sure to want to confirm this action? Your changes will be lost.",
@@ -99,11 +99,11 @@ define({
 				logoSocialExplain: "Customize the header link.",
 				logoSocialText: "Text",
 				logoSocialLink: "Link",
-				lblSmallHeader: "Use a compact header (no subtitle)"
+				lblSmallHeader: "Use compact header (no subtitle)"
 			},
 			header: {
-				title: "Set %TPL_NAME% title",
-				subtitle: "Set %TPL_NAME% subtitle"
+				title: "Edit the title of your %TPL_NAME%",
+				subtitle: "Edit the subtitle of your %TPL_NAME%"
 			}
 		}
 	}),
