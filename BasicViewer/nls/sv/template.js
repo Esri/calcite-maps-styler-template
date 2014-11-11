@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "MMMM d, yyyy",
-      yearPattern: "yyyy",
+      centuryPattern: "Å_yyyy G_ö",
+      decadePattern: "Å_yyyy_ö", 
+      yearPattern: "Å_MMMM yyyy_ö",
+      weekPattern: "Å_MMMM d, yyyy_ö",
       hourTimePattern: "h a",
-      minuteTimePattern: "h:mm a",
-      secondTimePattern: "h:m:s.SSS a",
+      // e.g. for German: "Å_H:mm:ss:SSS_ö"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "h:mm a",
+      // e.g. for German: "Å_H:mm_ö"
+      monthPattern: "Å_MMMM d, y_ö",
+      secondTimePattern: "h:m:s.SSS a",
       title: "Visa tidsreglage",
       label: "Tid",
-      timeRange: "${start_time} till ${end_time}",
+      timeRange: "Å_<b>Time Range:</b> ${start_time} to ${end_time}_ö",
       timeRangeSingle: "<b>Tidsintervall:</b> ${time}"
     },
     editor: {

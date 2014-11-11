@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "d\' de \'MMMM\' de \'yyyy",
-      yearPattern: "yyyy",
+      centuryPattern: "á_yyyy G_Ó",
+      decadePattern: "á_yyyy_Ó", 
+      yearPattern: "á_MMMM yyyy_Ó",
+      weekPattern: "á_MMMM d, yyyy_Ó",
       hourTimePattern: "H",
-      minuteTimePattern: "H:mm",
-      secondTimePattern: "h:m:s.SSS a",
+      // e.g. for German: "á_H:mm:ss:SSS_Ó"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "H:mm",
+      // e.g. for German: "á_H:mm_Ó"
+      monthPattern: "á_MMMM d, y_Ó",
+      secondTimePattern: "h:m:s.SSS a",
       title: "Mostrar control deslizante de tiempo",
       label: "Hora",
-      timeRange: "De las ${start_time} a las ${end_time}",
+      timeRange: "á_<b>Time Range:</b> ${start_time} to ${end_time}_Ó",
       timeRangeSingle: "<b>Intervalo de tiempo:</b> ${time}"
     },
     editor: {

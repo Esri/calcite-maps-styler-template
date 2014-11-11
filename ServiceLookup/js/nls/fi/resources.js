@@ -10,8 +10,7 @@
         error: {
             layerNotFound: "Karttataso ei ole Web-kartassa",
             fieldNotFound: "Kenttää ei löydy",
-            popupNotSet: "Tämän karttatason ponnahdusikkunaa ei ole otettu käyttöön",
-            noLayersSet: "Karttatasoja ei ole määritetty, hakuruutu ei toimi"
+            popupNotSet: "Tämän karttatason ponnahdusikkunaa ei ole otettu käyttöön"
         },
         page: {
             title: "Tietohaku",

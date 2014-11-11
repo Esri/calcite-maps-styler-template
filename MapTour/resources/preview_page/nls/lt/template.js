@@ -12,7 +12,7 @@
 			list2: "Galimybė pertempti piktogramas pasakojimo vietų pakeitimui"
 		},
 		thirdPane: {
-			head: "Norėdami naudoti talpinamą žemėlapio turo šabloną, pradėkite kurdami žemėlapį ArcGIS Online internetinio žemėlapio peržiūros aplikacijoje (ji nebūtinai turi turėti sluoksnių), išsaugokite jį, o tuomet spauskite mygtuką Bendrinti. Bendrinimo dialoge pasirinkite \"Sukurti internetinę aplikaciją\", tuomet pasirinkite Žemėlapio turo šabloną iš atsiradusios šablonų galerijos ir sekite žingsniais, kuriuos matote. Kai konfigūruosite aplikaciją, automatiškai bus įgalintas interaktyvus redagavimas.<br /><br />Vartotojai, kurie nori išplėsti žemėlapio turų vartotojo sąsają arba pridėti funkcionalumo, gali:",
+			head: "Į_To use the hosted map tour template, you start by making a map in the ArcGIS Online web map viewer (it doesn't need to contain any layers), saving it, and then clicking the Share button. In the Share dialog, choose the 'Make a Web Application' option and then choose the Map Tour template from the gallery of templates that appears, and continue with the steps that you see. When you configure the application, the interactive editor will open automatically.<br /><br />For users wishing to enhance the UI of their map tours or add new functionality, you can_š:",
 			list0: "Atsisiųsti šabloną iš <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Pristatomojo žemėlapio šablono puslapio</a> ir sekti dokumentaciją", 
 			list1: "Patalpinti šabloną savo, ar trečių šalių interneto serveryje"
 		},

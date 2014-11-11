@@ -17,7 +17,7 @@
 define(
     ({
         map: {
-            error: "Nelze vytvořit mapu"
+            error: "Ř_Unable to create the map_ů"
         },
         tooltips: {
             search: "Hledat",  // Command button to open a dialog box for finding a feature or an address (depending on app)

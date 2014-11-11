@@ -1,20 +1,20 @@
 ﻿define({
   display: {
-      elevationProfileTitle: "Profil wzniesień",
+    elevationProfileTitle: "ł_Elevation Profile_ą",
     showMe: "pokaż mi",
     selectLine: "<b>Wybierz</b> obiekt na mapie.",
     popupRequirement: "UWAGA: obiekt musi znajdować się w warstwie z włączonymi oknami podręcznymi.",
     digitizeDistanceMeasureTool: "Użyj narzędzi <b>pomiarowych</b>.",
     selectFeatureHelpUrl: "http://help.arcgis.com/pl/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
     measureToolHelpUrl: "http://help.arcgis.com/pl/arcgisonline/help/index.html#//010q00000096000000",
-      hoverOver: "Najedź kursorem lub dotknij wykresu Profil wzniesień, aby wyświetlić wzniesienia i pokazać je na mapie."
+    hoverOver: "ł_Hover over or touch the Elevation Profile chart to display elevations and show location on map_ą."
   },
   buttons: {
     measureLabel: "Zmierz",
     helpLabel: "Pomoc"
   },
   chart: {
-      title: "Profil wzniesień",
+    title: "ł_Elevation Profile_ą",
     demResolution:"Rozdzielczość DEM",
     elevationTitleTemplate: "Wzniesienie w {0}",
     distanceTitleTemplate: "Odległość w {0}",

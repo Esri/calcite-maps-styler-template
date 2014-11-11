@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "yyyy MMMM dd",
-      yearPattern: "yyyy",
+      centuryPattern: "Į_yyyy G_š",
+      decadePattern: "Į_yyyy_š", 
+      yearPattern: "Į_MMMM yyyy_š",
+      weekPattern: "Į_MMMM d, yyyy_š",
       hourTimePattern: "H a",
-      minuteTimePattern: "HH:mm",
-      secondTimePattern: "hh:m:s.SSS",
+      // e.g. for German: "Į_H:mm:ss:SSS_š"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "HH:mm",
+      // e.g. for German: "Į_H:mm_š"
+      monthPattern: "Į_MMMM d, y_š",
+      secondTimePattern: "hh:m:s.SSS",
       title: "Rodyti laiko šliaužiklį",
       label: "Laikas",
-      timeRange: "Nuo ${start_time} iki ${end_time}",
+      timeRange: "Į_<b>Time Range:</b> ${start_time} to ${end_time}_š",
       timeRangeSingle: "<b>Laiko intervalas:</b> ${time}"
     },
     editor: {

@@ -17,7 +17,7 @@
 define(
     ({
         map: {
-            error: "يتعذر إنشاء خريطة"
+            error: "بيت_Unable to create the map_لاحقة"
         },
         tooltips: {
             search: "عثور",  // Command button to open a dialog box for finding a feature or an address (depending on app)

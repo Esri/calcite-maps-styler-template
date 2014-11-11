@@ -17,7 +17,7 @@
 define(
     ({
         map: {
-            error: "Kan de kaart niet maken"
+            error: "Ĳ_Unable to create the map_ä"
         },
         tooltips: {
             search: "Zoeken",  // Command button to open a dialog box for finding a feature or an address (depending on app)

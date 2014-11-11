@@ -1,20 +1,20 @@
 ﻿define({
   display: {
-      elevationProfileTitle: "Profil för höjdkurva",
+    elevationProfileTitle: "Å_Elevation Profile_ö",
     showMe: "visa mig",
     selectLine: "<b>Markera</b> ett geoobjekt i kartan.",
     popupRequirement: "Obs! Geoobjektet måste finnas i ett lager där popupfönster har aktiverats.",
     digitizeDistanceMeasureTool: "Använd <b>Mät</b>-verktygen.",
     selectFeatureHelpUrl: "http://help.arcgis.com/sv/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
     measureToolHelpUrl: "http://help.arcgis.com/sv/arcgisonline/help/index.html#//010q00000096000000",
-      hoverOver: "Håll muspekaren över eller rör vid höjdprofiltabellen för att visa höjdkurvor och platser på kartan."
+    hoverOver: "Å_Hover over or touch the Elevation Profile chart to display elevations and show location on map_ö."
   },
   buttons: {
     measureLabel: "Mät",
     helpLabel: "Hjälp"
   },
   chart: {
-      title: "Profil för höjdkurva",
+    title: "Å_Elevation Profile_ö",
     demResolution:"DEM-upplösning",
     elevationTitleTemplate: "Höjd i {0}",
     distanceTitleTemplate: "Avstånd i {0}",

@@ -12,7 +12,7 @@
 			list2: "القدرة على سحب الرموز وإفلاتها لتغيير مواقع نقطة القصة"
 		},
 		thirdPane: {
-			head: "لاستخدام قالب جولة الخريطة المستضافة، تبدأ بجعل الخريطة في عارض الخريطة  ArcGIS Online على الويب (لا تقتضي الحاجة إلى تضمين أي طبقات) واحفظها وبعد ذلك انقر فوق زر مشاركة. في مربع حوار مشاركة، اختر خيار \"إنشاء تطبيق الويب\" وبعد ذلك اختر قالب جولة الخريطة من معرض القوالب الظاهر وتابع الخطوات التي تراها. عند تكوين التطبيق، سيتم فتح المحرر التفاعلي تلقائيًا. <br /><br /> للمستخدمين الراغبين في تحسين واجهة مستخدم جولات الخريطة أو إضافة وظائف جديد، بإمكانهم:",
+			head: "بيت_To use the hosted map tour template, you start by making a map in the ArcGIS Online web map viewer (it doesn't need to contain any layers), saving it, and then clicking the Share button. In the Share dialog, choose the 'Make a Web Application' option and then choose the Map Tour template from the gallery of templates that appears, and continue with the steps that you see. When you configure the application, the interactive editor will open automatically.<br /><br />For users wishing to enhance the UI of their map tours or add new functionality, you can_لاحقة:",
 			list0: "تنزيل القالب من <a href='http://storymaps.esri.com/templategallery/' target='_blank'>صفحة قالب خرائط القصة</a> واتباع الوثائق المتضمنة", 
 			list1: "استضافة القالب على خادم الويب الخاص بك، أو خادم أخر"
 		},

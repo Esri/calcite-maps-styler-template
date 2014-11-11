@@ -10,8 +10,7 @@
         error: {
             layerNotFound: "Lagret finns inte i webbkartan",
             fieldNotFound: "Fältet hittades inte",
-            popupNotSet: "Popupfönster har inte aktiverats för det här lagret",
-            noLayersSet: "Inga lager har definierats i konfig, sökrutan kommer inte att fungera"
+            popupNotSet: "Popupfönster har inte aktiverats för det här lagret"
         },
         page: {
             title: "Informationssökning",

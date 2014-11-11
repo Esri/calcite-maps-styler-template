@@ -10,8 +10,7 @@
         error: {
             layerNotFound: "Stratul tematic nu se găseşte pe harta Web",
             fieldNotFound: "Nu s-a găsit câmpul",
-            popupNotSet: "Funcţia pop-up nu este activată pentru acest strat tematic",
-            noLayersSet: "Niciun strat tematic nu este definit în configuraţie, caseta de căutare nu va funcţiona"
+            popupNotSet: "Funcţia pop-up nu este activată pentru acest strat tematic"
         },
         page: {
             title: "Căutare informaţii",

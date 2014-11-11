@@ -17,7 +17,7 @@
 define(
     ({
         map: {
-            error: "マップを作成できません"
+            error: "須_Unable to create the map_鷗"
         },
         tooltips: {
             search: "検索",  // Command button to open a dialog box for finding a feature or an address (depending on app)

@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "dd.MM.yyyy.",
-      yearPattern: "yyyy",
+      centuryPattern: "ķ_yyyy G_ū",
+      decadePattern: "ķ_yyyy_ū", 
+      yearPattern: "ķ_MMMM yyyy_ū",
+      weekPattern: "ķ_MMMM d, yyyy_ū",
       hourTimePattern: "H a",
-      minuteTimePattern: "HH:mm",
-      secondTimePattern: "h:m:s.SSS a",
+      // e.g. for German: "ķ_H:mm:ss:SSS_ū"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "HH:mm",
+      // e.g. for German: "ķ_H:mm_ū"
+      monthPattern: "ķ_MMMM d, y_ū",
+      secondTimePattern: "h:m:s.SSS a",
       title: "Parādīt laika slīdni",
       label: "Laiks",
-      timeRange: "${start_time} - ${end_time}",
+      timeRange: "ķ_<b>Time Range:</b> ${start_time} to ${end_time}_ū",
       timeRangeSingle: "<b>Laika diapazons:</b> ${time}"
     },
     editor: {

@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "d MMMM yyyy",
-      yearPattern: "yyyy",
+      centuryPattern: "æ_yyyy G_Â",
+      decadePattern: "æ_yyyy_Â", 
+      yearPattern: "æ_MMMM yyyy_Â",
+      weekPattern: "æ_MMMM d, yyyy_Â",
       hourTimePattern: "HH",
-      minuteTimePattern: "HH:mm",
-      secondTimePattern: "h:m:s.SSS a",
+      // e.g. for German: "æ_H:mm:ss:SSS_Â"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "HH:mm",
+      // e.g. for German: "æ_H:mm_Â"
+      monthPattern: "æ_MMMM d, y_Â",
+      secondTimePattern: "h:m:s.SSS a",
       title: "Afficher le curseur temporel",
       label: "Heure",
-      timeRange: "De ${start_time} à ${end_time}",
+      timeRange: "æ_<b>Time Range:</b> ${start_time} to ${end_time}_Â",
       timeRangeSingle: "<b>Plage de temps :</b> ${time}"
     },
     editor: {

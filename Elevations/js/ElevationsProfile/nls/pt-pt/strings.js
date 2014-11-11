@@ -1,20 +1,20 @@
 ﻿define({
   display: {
-      elevationProfileTitle: "Perfil de Elevações",
+    elevationProfileTitle: "ã_Elevation Profile_Ç",
     showMe: "mostre-me",
     selectLine: "<b>Selecione</b> um elemento no mapa.",
     popupRequirement: "NOTA: o elemento tem de estar numa camada com Janelas pop-up ativadas.",
     digitizeDistanceMeasureTool: "Utilize as ferramentas de <b>Medir</b>.",
     selectFeatureHelpUrl: "http://help.arcgis.com/pt-pt/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
     measureToolHelpUrl: "http://help.arcgis.com/pt-pt/arcgisonline/help/index.html#//010q00000096000000",
-      hoverOver: "Passe por cima ou toque no gráfico de Perfil de Elevações para exibir elevações e exibir a localização no mapa."
+    hoverOver: "ã_Hover over or touch the Elevation Profile chart to display elevations and show location on map_Ç."
   },
   buttons: {
     measureLabel: "Medir",
     helpLabel: "Ajuda"
   },
   chart: {
-      title: "Perfil de Elevações",
+    title: "ã_Elevation Profile_Ç",
     demResolution:"Resolução do DEM",
     elevationTitleTemplate: "Elevação em {0}",
     distanceTitleTemplate: "Distância em {0}",

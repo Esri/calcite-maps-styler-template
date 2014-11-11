@@ -10,8 +10,7 @@
         error: {
             layerNotFound: "Layer non incluso nella mappa Web",
             fieldNotFound: "Campo non trovato",
-            popupNotSet: "Popup non abilitato per questo layer",
-            noLayersSet: "Nella configurazione non è definito nessun layer. La casella di ricerca non funzionerà"
+            popupNotSet: "Popup non abilitato per questo layer"
         },
         page: {
             title: "Ricerca informazioni",

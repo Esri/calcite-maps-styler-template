@@ -10,8 +10,7 @@
         error: {
             layerNotFound: "Sluoksnio nėra internetiniame žemėlapyje",
             fieldNotFound: "Laukas nerastas",
-            popupNotSet: "Šiam sluoksniui iškylantys langai neįjungti",
-            noLayersSet: "Konfigūracijoje nėra apibrėžtų sluoksnių, paieškos laukas neveiks"
+            popupNotSet: "Šiam sluoksniui iškylantys langai neįjungti"
         },
         page: {
             title: "Informacijos paieška",

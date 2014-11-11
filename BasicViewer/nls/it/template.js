@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "d MMMM yyyy",
-      yearPattern: "yyyy",
+      centuryPattern: "é_yyyy G_È",
+      decadePattern: "é_yyyy_È", 
+      yearPattern: "é_MMMM yyyy_È",
+      weekPattern: "é_MMMM d, yyyy_È",
       hourTimePattern: "H",
-      minuteTimePattern: "H.mm",
-      secondTimePattern: "h.m.s.SSS",
+      // e.g. for German: "é_H:mm:ss:SSS_È"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "H.mm",
+      // e.g. for German: "é_H:mm_È"
+      monthPattern: "é_MMMM d, y_È",
+      secondTimePattern: "h.m.s.SSS",
       title: "Visualizza cursore temporale",
       label: "Data/Ora",
-      timeRange: "Dalle ore ${start_time} alle ore ${end_time}",
+      timeRange: "é_<b>Time Range:</b> ${start_time} to ${end_time}_È",
       timeRangeSingle: "<b>Intervallo di tempo:</b> ${time}"
     },
     editor: {

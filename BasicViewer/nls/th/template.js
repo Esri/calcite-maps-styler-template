@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "MMMM d, yyyy",
-      yearPattern: "yyyy",
+      centuryPattern: "ก้_yyyy G_ษฺ",
+      decadePattern: "ก้_yyyy_ษฺ", 
+      yearPattern: "ก้_MMMM yyyy_ษฺ",
+      weekPattern: "ก้_MMMM d, yyyy_ษฺ",
       hourTimePattern: "h a",
-      minuteTimePattern: "h:mm a",
-      secondTimePattern: "h:m:s.SSS a",
+      // e.g. for German: "ก้_H:mm:ss:SSS_ษฺ"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "h:mm a",
+      // e.g. for German: "ก้_H:mm_ษฺ"
+      monthPattern: "ก้_MMMM d, y_ษฺ",
+      secondTimePattern: "h:m:s.SSS a",
       title: "แสดงตัวเลื่อนเวลา",
       label: "เวลา",
-      timeRange: "${start_time} ถึง ${end_time}",
+      timeRange: "ก้_<b>Time Range:</b> ${start_time} to ${end_time}_ษฺ",
       timeRangeSingle: "<b>ช่วงเวลา:</b> ${time}"
     },
     editor: {

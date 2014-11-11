@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "d. MMMM yyyy",
-      yearPattern: "yyyy",
+      centuryPattern: "ä_yyyy G_Ü",
+      decadePattern: "ä_yyyy_Ü", 
+      yearPattern: "ä_MMMM yyyy_Ü",
+      weekPattern: "ä_MMMM d, yyyy_Ü",
       hourTimePattern: "H",
-      minuteTimePattern: "H:mm",
-      secondTimePattern: "h:m:s.SSS a",
+      // e.g. for German: "ä_H:mm:ss:SSS_Ü"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "H:mm",
+      // e.g. for German: "ä_H:mm_Ü"
+      monthPattern: "ä_MMMM d, y_Ü",
+      secondTimePattern: "h:m:s.SSS a",
       title: "Zeitschieberegler anzeigen",
       label: "Zeit",
-      timeRange: "${start_time} bis ${end_time}",
+      timeRange: "ä_<b>Time Range:</b> ${start_time} to ${end_time}_Ü",
       timeRangeSingle: "<b>Zeitbereich:</b> ${time}"
     },
     editor: {

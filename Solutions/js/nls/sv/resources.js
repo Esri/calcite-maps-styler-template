@@ -17,7 +17,7 @@
 define(
     ({
         map: {
-            error: "Det gick inte att skapa kartan"
+            error: "Å_Unable to create the map_ö"
         },
         tooltips: {
             search: "Sök",  // Command button to open a dialog box for finding a feature or an address (depending on app)

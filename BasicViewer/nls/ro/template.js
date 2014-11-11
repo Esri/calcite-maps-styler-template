@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "d. MMMM yyyy",
-      yearPattern: "yyyy",
+      centuryPattern: "Ă_yyyy G_ș",
+      decadePattern: "Ă_yyyy_ș", 
+      yearPattern: "Ă_MMMM yyyy_ș",
+      weekPattern: "Ă_MMMM d, yyyy_ș",
       hourTimePattern: "H",
-      minuteTimePattern: "H:mm",
-      secondTimePattern: "h:m:s.SSS a",
+      // e.g. for German: "Ă_H:mm:ss:SSS_ș"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "H:mm",
+      // e.g. for German: "Ă_H:mm_ș"
+      monthPattern: "Ă_MMMM d, y_ș",
+      secondTimePattern: "h:m:s.SSS a",
       title: "Afişare glisor de timp",
       label: "Timp",
-      timeRange: "de la ${start_time} până la ${end_time}",
+      timeRange: "Ă_<b>Time Range:</b> ${start_time} to ${end_time}_ș",
       timeRangeSingle: "<b>Interval de timp:</b> ${time}"
     },
     editor: {

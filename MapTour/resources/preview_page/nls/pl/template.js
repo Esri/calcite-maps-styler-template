@@ -12,8 +12,8 @@
 			list2: "funkcję zmiany lokalizacji punktów scenariusza metodą „przeciągnij i upuść”."
 		},
 		thirdPane: {
-			head: "Aby skorzystać z hostowanego szablonu mapy wycieczki, należy najpierw utworzyć mapę za pomocą przeglądarki map w serwisie ArcGIS Online (nie musi ona zawierać warstw), zapisać ją, a następnie kliknąć przycisk Udostępnij. W oknie dialogowym Udostępnij wybierz opcję Utwórz aplikację internetową, po czym wybierz szablon mapy wycieczki z galerii szablonów, która zostanie wyświetlona i postępuj zgodnie z wyświetlanymi instrukcjami. Po skonfigurowaniu aplikacji nastąpi automatyczne otwarcie interaktywnego edytora. <br/><br>Użytkownicy, którzy chcieliby udoskonalić interfejs użytkownika map wycieczek lub dodać nowe funkcje mogą:",
-			list0: "Należy pobrać szablon <a href='http://storymaps.esri.com/templategallery/' target='_blank'>ze strony szablonów map opowiadań</a> i postępować zgodnie z instrukcjami w załączonej dokumentacji.", 
+			head: "ł_To use the hosted map tour template, you start by making a map in the ArcGIS Online web map viewer (it doesn't need to contain any layers), saving it, and then clicking the Share button. In the Share dialog, choose the 'Make a Web Application' option and then choose the Map Tour template from the gallery of templates that appears, and continue with the steps that you see. When you configure the application, the interactive editor will open automatically.<br /><br />For users wishing to enhance the UI of their map tours or add new functionality, you can_ą:",
+			list0: "ł_Download the template from the <a href='http://storymaps.esri.com/templategallery/' target='_blank'>Story Maps template page</a> and follow the included documentation_ą", 
 			list1: "Hostowanie szablonów na własnym serwerze internetowym lub serwerze innych firm"
 		},
 		fourthPane: {

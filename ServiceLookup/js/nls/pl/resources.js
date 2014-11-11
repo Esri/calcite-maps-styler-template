@@ -10,8 +10,7 @@
         error: {
             layerNotFound: "Warstwa nie znajduje się na mapie internetowej",
             fieldNotFound: "Nie znaleziono pola.",
-            popupNotSet: "Nie włączono okna podręcznego dla tej warstwy",
-            noLayersSet: "Nie zdefiniowano warstw w ramach konfiguracji — nie będzie można korzystać z pola wyszukiwania"
+            popupNotSet: "Nie włączono okna podręcznego dla tej warstwy"
         },
         page: {
             title: "Wyszukiwanie informacji",

@@ -10,8 +10,7 @@
         error: {
             layerNotFound: "Kiht pole veebikaardil",
             fieldNotFound: "Välja ei leitud",
-            popupNotSet: "Hüpikaken ei ole selle kihi jaoks lubatud",
-            noLayersSet: "Seadistuses pole määratud kihte, otsingukast ei tööta"
+            popupNotSet: "Hüpikaken ei ole selle kihi jaoks lubatud"
         },
         page: {
             title: "Teabe otsimine",

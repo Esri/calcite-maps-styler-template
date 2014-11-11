@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "d. MMMM yyyy",
-      yearPattern: "yyyy",
+      centuryPattern: "å_yyyy G_ø",
+      decadePattern: "å_yyyy_ø", 
+      yearPattern: "å_MMMM yyyy_ø",
+      weekPattern: "å_MMMM d, yyyy_ø",
       hourTimePattern: "H",
-      minuteTimePattern: "H.mm",
-      secondTimePattern: "t:m:s.SSS a",
+      // e.g. for German: "å_H:mm:ss:SSS_ø"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "H.mm",
+      // e.g. for German: "å_H:mm_ø"
+      monthPattern: "å_MMMM d, y_ø",
+      secondTimePattern: "t:m:s.SSS a",
       title: "Vis tidskyvebryter",
       label: "Tid",
-      timeRange: "${start_time} til ${end_time}",
+      timeRange: "å_<b>Time Range:</b> ${start_time} to ${end_time}_ø",
       timeRangeSingle: "<b>Tidsområde:</b> ${time}"
     },
     editor: {

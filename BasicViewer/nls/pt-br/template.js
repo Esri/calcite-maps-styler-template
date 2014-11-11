@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "d\' de \'MMMM\' de \'yyyy",
-      yearPattern: "yyyy",
+      centuryPattern: "ã_yyyy G_Ç",
+      decadePattern: "ã_yyyy_Ç", 
+      yearPattern: "ã_MMMM yyyy_Ç",
+      weekPattern: "ã_MMMM d, yyyy_Ç",
       hourTimePattern: "H",
-      minuteTimePattern: "h:mm a",
-      secondTimePattern: "h:m:s.SSS a",
+      // e.g. for German: "ã_H:mm:ss:SSS_Ç"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "h:mm a",
+      // e.g. for German: "ã_H:mm_Ç"
+      monthPattern: "ã_MMMM d, y_Ç",
+      secondTimePattern: "h:m:s.SSS a",
       title: "Exibir Seletor de Tempo",
       label: "Tempo",
-      timeRange: "${start_time} até ${end_time}",
+      timeRange: "ã_<b>Time Range:</b> ${start_time} to ${end_time}_Ç",
       timeRangeSingle: "<b>Intervalo de Tempo:</b> ${time}"
     },
     editor: {

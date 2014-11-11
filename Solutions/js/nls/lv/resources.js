@@ -17,7 +17,7 @@
 define(
     ({
         map: {
-            error: "Nevar izveidot karti"
+            error: "ķ_Unable to create the map_ū"
         },
         tooltips: {
             search: "Atrast",  // Command button to open a dialog box for finding a feature or an address (depending on app)

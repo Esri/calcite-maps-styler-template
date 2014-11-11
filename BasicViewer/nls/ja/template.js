@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "yyyy'年'M'月'd'日'",
-      yearPattern: "yyyy'年'",
+      centuryPattern: "須_yyyy G_鷗",
+      decadePattern: "須_yyyy_鷗", 
+      yearPattern: "須_MMMM yyyy_鷗",
+      weekPattern: "須_MMMM d, yyyy_鷗",
       hourTimePattern: "h a",
-      minuteTimePattern: "h:mm a",
-      secondTimePattern: "h:m:s.SSS a",
+      // e.g. for German: "須_H:mm:ss:SSS_鷗"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "h:mm a",
+      // e.g. for German: "須_H:mm_鷗"
+      monthPattern: "須_MMMM d, y_鷗",
+      secondTimePattern: "h:m:s.SSS a",
       title: "タイム スライダの表示",
       label: "時間",
-      timeRange: "${start_time} ～ ${end_time}",
+      timeRange: "須_<b>Time Range:</b> ${start_time} to ${end_time}_鷗",
       timeRangeSingle: "<b>時間の範囲:</b> ${time}"
     },
     editor: {

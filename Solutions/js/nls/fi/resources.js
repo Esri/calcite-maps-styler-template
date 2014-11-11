@@ -17,7 +17,7 @@
 define(
     ({
         map: {
-            error: "Karttaa ei voi luoda"
+            error: "Å_Unable to create the map_ö"
         },
         tooltips: {
             search: "Etsi",  // Command button to open a dialog box for finding a feature or an address (depending on app)

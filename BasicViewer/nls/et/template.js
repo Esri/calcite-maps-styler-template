@@ -55,15 +55,20 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "d. MMMM yyyy",
-      yearPattern: "yyyy",
+      centuryPattern: "Š_yyyy G_ä",
+      decadePattern: "Š_yyyy_ä", 
+      yearPattern: "Š_MMMM yyyy_ä",
+      weekPattern: "Š_MMMM d, yyyy_ä",
       hourTimePattern: "H",
-      minuteTimePattern: "h:mm",
-      secondTimePattern: "h:m:s.SSS",
+      // e.g. for German: "Š_H:mm:ss:SSS_ä"
       millisecondTimePattern:"h:m:ss.SSS a",
+      minuteTimePattern: "h:mm",
+      // e.g. for German: "Š_H:mm_ä"
+      monthPattern: "Š_MMMM d, y_ä",
+      secondTimePattern: "h:m:s.SSS",
       title: "Kuva ajaliugur",
       label: "Aeg",
-      timeRange: "${start_time} kuni ${end_time}",
+      timeRange: "Š_<b>Time Range:</b> ${start_time} to ${end_time}_ä",
       timeRangeSingle: "<b>Ajavahemik:</b> ${time}"
     },
     editor: {
