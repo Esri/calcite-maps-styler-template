@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "Beskrivelse"
     },
-    errors:{
+    errors: {
       createMap: "Kan ikke oprette kort",
       general: "Fejl"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "Skærmnavn",
     "signIn": "Log ind",
@@ -34,31 +34,31 @@
     label: "Tweets",
     title: "Tweets",
     error: "Ingen resultater, prøv en anden søgeterm eller et andet sted",
-		search:{
+		search: {
 			label: "Søg",
 			title: "Søg på Twitter",
 			placeholder: 'Nøgleord'
 		},
-		clear:{
+		clear: {
 			label: "Ryd",
 			title: "Ryd kort"
 		},
-		share:{
+		share: {
 			label: "Del kort:",
 			email:{
 				title: "E-mail",
 				label: "E-mail"
 			},
-			twitter:{
+			twitter: {
 				title: "Twitter",
 				label: "Twitter"
 			},
-			facebook:{
+			facebook: {
 				title: "Facebook",
 				label: "Facebook"
 			}
 		}
 	 }
    }
- })
+})
 );

@@ -10,6 +10,8 @@
 				lblOverview: "מפת התמצאות",
 				lblLegend: "מקרא",
 				loadingTitle: "טוען כותרת",
+				entry: "כן_Entry_ש",
+				entries: "כן_Entries_ש",
 				section: "חלק",
 				sections: "חלקים",
 				and: "וגם",
@@ -22,12 +24,14 @@
 				newMap: "ה-web map שנבחרה אחרונה",
 				webmapDefault: "web map ברירת המחדל",
 				customCfg: "הגדרות מותאמות",
-				tooltipLocation: "הגדר את מיקום המפה שיעשה בו שימוש כאשר הקוראים שלך מנווטים לחלק הזה.",
+				tooltipLocation: "כן_Define the location that this map will display_ש.",
 				tooltipContent: "הגדר את השכבות הנראות.",
-				tooltipPopup: "הצג חלון קופץ שיוצג כאשר הקוראים שלך מנווטים לחלק הזה.",
-				tooltipOverview: "הצג מפת התמצאות קטנה יחד עם המפה הראשית",
+				tooltipPopup: "כן_Choose a popup that will be opened when this map is displayed_ש.",
+				tooltipOverview: "כן_Display a small overview map along with the main map_ש.",
 				tooltipLegend: "הצג את מקרא המפה על המפה. זה יכול להועיל כאשר יש למפה שכבות וסמלים רבים.",
-				mapCfgInvite: "השתמש בפקדים הללו לקבוע את תצורת המפה שלך"
+				mapCfgInvite: "השתמש בפקדים הללו לקבוע את תצורת המפה שלך",
+				lblLocationAlt: "כן_Inherited from the first map_ש",
+				tooltipLocationAlt: "כן_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_ש."
 			},
 			configure: {
 				btnReset: "אפס",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

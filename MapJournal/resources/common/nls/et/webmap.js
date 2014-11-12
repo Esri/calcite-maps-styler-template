@@ -10,6 +10,8 @@
 				lblOverview: "Ülevaatekaart",
 				lblLegend: "Legend",
 				loadingTitle: "Pealkirja laadimine",
+				entry: "Š_Entry_ä",
+				entries: "Š_Entries_ä",
 				section: "Jaotis",
 				sections: "Jaotised",
 				and: "ja",
@@ -22,12 +24,14 @@
 				newMap: "Vastvalitud veebikaart",
 				webmapDefault: "Veebikaardi vaikeseade",
 				customCfg: "Kohandatud konfiguratsioon",
-				tooltipLocation: "Määratlege kaardil asukoht, mida kasutatakse, kui Teie lugejad liiguvad sellesse jaotisse.",
+				tooltipLocation: "Š_Define the location that this map will display_ä.",
 				tooltipContent: "Määratlege nähtavad kihid.",
-				tooltipPopup: "Valige hüpikaken, mis kuvatakse, kui Teie lugejad liiguvad sellesse jaotisse.",
-				tooltipOverview: "Kuva koos peamise kaardiga väike ülevaatekaart",
+				tooltipPopup: "Š_Choose a popup that will be opened when this map is displayed_ä.",
+				tooltipOverview: "Š_Display a small overview map along with the main map_ä.",
 				tooltipLegend: "Kuva kaardil legend, millest on abi siis, kui kaardil on palju kihte ja sümboleid.",
-				mapCfgInvite: "Nende juhtelementide abil saate kaardi konfigureerida"
+				mapCfgInvite: "Nende juhtelementide abil saate kaardi konfigureerida",
+				lblLocationAlt: "Š_Inherited from the first map_ä",
+				tooltipLocationAlt: "Š_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_ä."
 			},
 			configure: {
 				btnReset: "Lähtesta",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

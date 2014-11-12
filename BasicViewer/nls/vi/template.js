@@ -2,48 +2,48 @@
    ({
   viewer: {
     main: {
-      scaleBarUnits: "á»‡_english_á»" //"english (for miles) or "metric" (for km) - don't translate.
+      scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors: {
-      createMap: "á»‡_Unable to create map_á»",
-      bitly: 'á»‡_bitly is used to shorten the url for sharing. View the readme file for details on creating and using a bitly key_á»',
-      general: "á»‡_Error_á»"
+      createMap: "Không thể tạo bản đồ",
+      bitly: 'bitly được sử dụng để rút ngắn url để chia sẻ. Xem tệp readme để biết chi tiết về việc tạo và sử dụng một khóa bitly',
+      general: "Lỗi"
     }
   },
   tools: {
     basemap: {
-    title: "á»‡_Switch Basemap_á»",
-    label: "á»‡_Basemap_á»"
+    title: "Chuyển đổi Bản đồ nền",
+    label: "Bản đồ nền"
     },
     print: {
     layouts:{
-      label1: 'á»‡_Landscape (PDF)_á»',
-      label2: 'á»‡_Portrait (PDF)_á»',
-      label3: 'á»‡_Landscape (Image)_á»',
-      label4: 'á»‡_Portrait (Image)_á»'
+      label1: 'Khổ ngang (PDF)',
+      label2: 'Khổ dọc (PDF)',
+      label3: 'Khổ ngang (Hình ảnh)',
+      label4: 'Khổ dọc (Hình ảnh)'
     },
-    title: "á»‡_Print Map_á»",
-    label: "á»‡_Print_á»"
+    title: "In Bản đồ",
+    label: "In"
     },
     share: {
-    title: "á»‡_Share Map_á»",
-    label: "á»‡_Share_á»",
+    title: "Chia sẻ Bản đồ",
+    label: "Chia sẻ",
     menu: {
       facebook: {
-        label: "á»‡_Facebook_á»"
+        label: "Facebook"
        },
       twitter: {
-        label: "á»‡_Twitter_á»"
+        label: "Twitter"
       },
       email: {
-        label: "á»‡_Email_á»",
-        message: "á»‡_Check out this map_á»"
+        label: "Email",
+        message: "Xem bản đồ này"
       }    
     }
     },
     measure: {
-      title: "á»‡_Measure_á»",
-      label: "á»‡_Measure_á»"
+      title: "Đo lường",
+      label: "Đo lường"
     },
     time: {
       // doc about date and time patterns: http://dojotoolkit.org/reference-guide/dojo/date/locale/format.html
@@ -57,51 +57,51 @@
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
       datePattern: "á»‡_MMMM d, yyyy_á»",
       yearPattern: "á»‡_yyyy_á»",
-      hourTimePattern: "á»‡_h a_á»",
-      minuteTimePattern: "á»‡_h:mm a_á»",
-      secondTimePattern: "á»‡_h:m:s.SSS a_á»",
+      hourTimePattern: "h a",
+      minuteTimePattern: "h:mm a",
+      secondTimePattern: "h:m:s.SSS a",
       millisecondTimePattern:"h:m:ss.SSS a",
-      title: "á»‡_Display Time Slider_á»",
-      label: "á»‡_Time_á»",
+      title: "Hiển thị Thanh trượt Thời gian",
+      label: "Thời gian",
       timeRange: "á»‡_${start_time} to ${end_time}_á»",
-      timeRangeSingle: "á»‡_<b>Time Range:</b> ${time}_á»"
+      timeRangeSingle: "<b>Khoảng thời gian:</b> ${time}"
     },
     editor: {
-      title: "á»‡_Display Editor_á»",
-      label: "á»‡_Editor_á»"
+      title: "Hiển thị Trình biên tập",
+      label: "Trình biên tập"
     },
     legend: {
-      title: "á»‡_Display Legend_á»",
-      label: "á»‡_Legend_á»"
+      title: "Hiển thị Chú giải",
+      label: "Chú giải"
     },
     details: {
-      title: "á»‡_Display Map Details_á»",
-      label: "á»‡_Details_á»"
+      title: "Hiển thị Chi tiết của Bản đồ",
+      label: "Chi tiết"
     },
     bookmark:{
-      title: "á»‡_Display Bookmarks_á»",
-      label: "á»‡_Bookmarks_á»",
-      details: "á»‡_Click a bookmark to navigate to the location_á»"
+      title: "Hiển thị Đánh dấu",
+      label: "Đánh dấu",
+      details: "Nhấp chuột vào một thẻ đánh dấu để điều hướng đến vị trí"
     },
     layers: {
-      title: "á»‡_Display layer list_á»",
-      label: "á»‡_Layers_á»"
+      title: "Hiển thị danh sách lớp",
+      label: "Lớp"
     },
     search: {
-      title: "á»‡_Find address or place_á»",
-      popupTitle: "á»‡_Location_á»",
-      currentLocation: "á»‡_Current location_á»",
-      notWhatYouWanted: "á»‡_Not what you wanted_á»?" ,
-      selectAnother: "á»‡_Select another location_á»",
+      title: "Tìm địa chỉ hoặc địa điểm",
+      popupTitle: "Vị trí",
+      currentLocation: "Vị trí hiện tại",
+      notWhatYouWanted: "Không phải cái bạn muốn?" ,
+      selectAnother: "Chọn một vị trí khác",
       errors:{
-       missingLocation: "á»‡_Location not found_á»"
+       missingLocation: "Không tìm thấy vị trí"
       }
     }
   },
   panel: {
     close: {
-      title: "á»‡_Close Panel_á»",
-      label: "á»‡_Close_á»"
+      title: "Đóng Bảng điều khiển",
+      label: "Đóng"
     }
   }
 })

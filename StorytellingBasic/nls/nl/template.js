@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"Fout"
     },
 	legToggle:{
-	  up:"KAARTLEGENDA ▲",
-	  down:"KAARTLEGENDA ▼"
+	  up:"Ĳ_MAP LEGEND â–²_ä",
+	  down:"Ĳ_MAP LEGEND â–¼_ä"
 	},
 	loading:{
 		message: "Kaart laden"

@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "ฟีเจอร์ที่เลือก",
                 "layerHelpTextMessage": "โปรแกรมประยุกต์นี้",
                 "alertMessage": {
-                    "resetVariableMessage": "คุณแน่ใจว่าต้องการปรับตัวแปรใหม่ ?",
+                    "resetVariableMessage": "ก้_Are you sure you want to reset variable_ษฺ?",
                     "emptyAppTitleMessage": "ชื่อโปรแกรมไม่สามารถเว้นว่าง",
                     "emptyDescriptionMessage": "คำบรรยายไม่สามารถเว้นว่าง",
                     "maxVariableSelection": "คุณไม่สามารถเลือกตัวแปรย่อยมากกว่า 25 ตัวแปร",
@@ -58,11 +58,10 @@
                     "unsavedChangesMessage": "ไม่ได้บันทึกการเปลี่ยนแปลง",
                     "failMessage": "ไม่สามารถอัพเดทรายการอย่างสมบูรณ์",
                     "saveChangesAlert": "คุณต้องการจัดเก็บการเปลี่ยนแปลงนี้หรือไม่ ?",
-                    "variableLabelValidation": "ตัวแปรนี้ไม่สามารถว่างเปล่า",
-                    "subVariableLabelValidation": "ตัวแปรย่อยไม่สามารถที่จะว่างเปล่า"
+                    "variableLabelValidation": "ก้_Variable label cannot be empty_ษฺ",
+                    "subVariableLabelValidation": "ก้_Sub variable label cannot be empty_ษฺ"
                     }
             }
         }
     })
-
 );

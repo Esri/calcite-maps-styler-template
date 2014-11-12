@@ -62,7 +62,7 @@
 				url: "Vimeo 비디오 URL"
 			},
 			videoSelectorOther: {
-				explain1: "맵 저널은 원시 비디오(예: avi, mpeg)를 재생할 수 없지만 내장 플레이어(예: YouTube 또는 Vimeo)가 있는 호스팅 비디오 파일은 재생할 수 있습니다.",
+				explain1: "한_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_빠.",
 				explain2: "대부분의 온라인 비디오 호스팅 서비스는 해당 피처를 제공하므로, 비디오를 포함할 옵션을 찾고 제공된 코드를 복사하고 %WEBPAGE%을(를) 사용해야 합니다.",
 				explain3: "또는 직접 비디오를 호스팅하려면 %EXAMPLE% 등의 비디오 플레이어를 사용하는 HTML 페이지를 생성하고, 해당 페이지를 호스팅하고, %WEBPAGE%을(를) 사용할 수도 있습니다.",
 				webpage: "웹 페이지 피처"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(잘리지 않음)",
 				lblPosition3Explain2: "(너비는 항상 패널에 맞춤)",
 				lblPosition4Explain: "(왜곡될 수 있음)",
-				unloadLbl: "리더가 다른 섹션으로 이동 시 언로드",
-				unloadHelp: "웹 페이지에 오디오 또는 비디오 미디어가 있는 경우 이 옵션을 선택 상태로 유지하여 리더가 다른 섹션으로 이동 시 콘텐츠가 재생되는 것을 막으세요. 리더가 저널을 통해 진행할 때 사운드 트랙 재생을 유지하려면 옵션을 선택 해제하세요.<br />웹 페이지가 응용프로그램일 경우 리더가 해당 섹션으로 되돌아올 때 응용프로그램이 다시 로드되지 않도록 이 옵션을 선택 해제하세요."
+				unloadLbl: "한_Unload when reader navigates away_빠",
+				unloadHelp: "한_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_빠."
 			},
 			editorActionGeocode: {
 				lblTitle: "주소 또는 장소 찾기",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

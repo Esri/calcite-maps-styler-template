@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Wybrany obiekt",
                 "layerHelpTextMessage": "W tej aplikacji wymagana jest warstwa z polami numerycznymi.",
                 "alertMessage": {
-                    "resetVariableMessage": "Czy na pewno chcesz zresetować zmienną?",
+                    "resetVariableMessage": "ł_Are you sure you want to reset variable_ą?",
                     "emptyAppTitleMessage": "Pole Tytuł aplikacji nie może być puste.",
                     "emptyDescriptionMessage": "Pole Opis nie może być puste.",
                     "maxVariableSelection": "Nie można wybrać więcej niż 25 zmiennych podrzędnych.",
@@ -58,11 +58,10 @@
                     "unsavedChangesMessage": "Niezapisane zmiany",
                     "failMessage": "Nie można pomyślnie zaktualizować elementu.",
                     "saveChangesAlert": "Czy chcesz zapisać zmiany?",
-                    "variableLabelValidation": "Pole Etykieta zmiennej nie może być PUSTE.",
-                    "subVariableLabelValidation": "Pole Etykieta zmiennej podrzędnej nie może być PUSTE."
+                    "variableLabelValidation": "ł_Variable label cannot be empty_ą",
+                    "subVariableLabelValidation": "ł_Sub variable label cannot be empty_ą"
                     }
             }
         }
     })
-
 );

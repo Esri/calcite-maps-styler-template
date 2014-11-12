@@ -70,11 +70,10 @@
 				copy: "Копировать",
 				copied: "Скопировано",
 				open: "Открыть",
-				embed: "Встроить в веб-сайт",
-				embedExplain: "Используйте следующий HTML-код для встраивания журнала в веб-сайт.",
+				embed: "Ж_Embed in web page_Я",
+				embedExplain: "Ж_Use the following HTML code to embed the journal in a web page_Я.",
 				size: "Размер (ширина/высота):"
 			}
         }
     })
-
 );

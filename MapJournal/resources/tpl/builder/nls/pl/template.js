@@ -85,11 +85,12 @@
 				lblLink: "Odwiedź witrynę Esri Story Maps.",
 				content1Div1: "Podczas tworzenia opowiadania możesz łączyć różne style. W układzie <strong>%LAYOUT_TITLE%</strong> zwykle znajduje się tekst, obrazy oraz filmy wideo, mapy natomiast są na ogół widoczne w <strong>obszarze głównym</strong>. Jednak aplikacja %TPL_NAME% pozwala również na umieszczenie w obszarze głównym także obrazów obiektów, diagramów i filmów wideo.",
 				content1Div2: "Dodanie sekcji umożliwia personalizację korzystania z aplikacji opowiadania. Możliwe jest dostosowanie aplikacji tak, aby podczas przewijania tekstu w układzie %LAYOUT_TITLE% mapa znajdująca się w obszarze głównym była przesuwana i powiększana do najważniejszych punktów lub automatycznie przełączane były nowe mapy i obrazy, stanowiące kontekst dla przekazywanych treści.",
-				content2Div1: "Tutaj możesz dostosować wygląd aplikacji %TPL_NAME%. Dostępne są tutaj szczegółowe ustawienia schematów kolorów, układów, szerokości i czcionek.",
-				content2Div2: "Możesz również dodać łącza udostępniania w serwisach Facebook, Twitter i Bitly, dzięki czemu użytkownicy będą mogli łatwo rozpowszechniać aplikację %TPL_NAME% wśród szerokiego grona odbiorców.",
+				content2Div1: "ł_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_ą.",
+				content2Div2: "ł_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_ą.",
 				content3Div1: "Zawartość jest podzielona na sekcje. Liczba sekcji, które można dodać jest nieograniczona (sekcje są w postaci niewielkich rozdziałów). Sposób i kolejność prezentacji rozdziałów są bardzo ważne. Na ekranie Organizuj można zmieniać kolejność sekcji lub usuwać je wedle uznania.",
 				content4Div1: "Czy znaleziono błąd w aplikacji, czy chcesz zmienić materiały? Odszukaj ikonę edycji w odpowiednim miejscu w aplikacji i zmodyfikuj zawartość. Podczas tworzenia aplikacji %TPL_NAME% konieczne może być wielokrotne korzystanie z funkcji edycji!",
-				content5Div1: "Aplikacja %TPL_NAME% zostaje zapisana na koncie w portalu %PORTAL% i domyślnie zostaje oznaczona jako prywatna. Użytkownik może zadecydować, czy będzie ona udostępniona instytucji, czy też dostępna dla użytkowników z całego świata. W celu ułatwienia użytkownikom udostępniania zapewniamy im skrócony adres URL.",
+				content5Div1: "ł_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_ą.",
+				content5Div2: "ł_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_ą.",
 				content6Div1: "Tytuł sekcji Start jest także tytułem Twojego Dziennika; sekcję Start należy postrzegać jako „okładkę” swojego opowiadania. Tytuł sekcji Start będzie widoczny, gdy użytkownicy będą poruszali się po Dzienniku.",
 				content6Div2: "%LAYOUT_TITLE% nie musi mieć wyłącznie formy tekstowej, pomyśl o dodaniu zdjęć, dzięki którym ożywisz opowiadanie oraz o podzieleniu długiego tekstu!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

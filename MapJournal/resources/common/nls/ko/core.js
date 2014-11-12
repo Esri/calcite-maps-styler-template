@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "추가",
@@ -28,8 +28,8 @@
 				buttonSettings: "설정",
 				buttonHelp: "도움말",
 				buttonPreview: "라이브 보기",
-				tooltipFirstSave: "이 기능을 사용하려면 먼저 응용프로그램을 저장해야 합니다.",
-				tooltipNotShared: "이 기능을 사용하려면 먼저 응용프로그램을 공유해야 합니다.",
+				tooltipFirstSave: "한_This isn't available until you save_빠.",
+				tooltipNotShared: "한_This isn't available until you share_빠.",
 				noPendingChange: "보류 중인 변경 사항 없음",
 				unSavedChangePlural: "보류 중인 변경 내용",
 				closeWithPendingChange: "이 작업을 확인하시겠습니까? 변경 내용이 손실됩니다.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "응용프로그램을 저장하는 동안 오류 발생",
 				err1Div1: "같은 이름을 가진 다른 항목이 이미 있으므로 응용프로그램을 저장할 수 없습니다(<a class='linkagolroot' target='_blank'>콘텐츠 폴더</a> 참조).",
-				err1Div2: "홈 섹션 제목을 수정한 후 응용프로그램을 저장하세요.",
-				btnOk: "홈 섹션 제목 편집"
+				err1Div2: "한_Please modify the title of your application and then save it_빠.",
+				btnOk: "한_Edit the application title_빠"
 			},
 			share: {
 				firstSaveTitle: "응용프로그램이 저장됨",
@@ -66,7 +66,7 @@
 				shareHeader2: "기관의 구성원이 응용프로그램에 접근할 수 있습니다(로그인 필요).",
 				shareLinkCopy: "복사",
 				shareLinkCopied: "복사됨",
-				shareQ0: "웹 사이트에 응용프로그램을 포함하는 방법",
+				shareQ0: "한_How do I embed the application in a web page_빠?",
 				shareQ1Opt1: "응용프로그램을 비공개 상태로 유지하려면 어떻게 해야 합니까?",
 				shareQ1Opt2: "응용프로그램을 비공개 상태로 유지하거나 공개적으로 공유하려면 어떻게 해야 합니까?",
 				shareA1: "<a href='%LINK1%' target='_blank'>응용프로그램 항목 페이지</a>의 %SHAREIMG%를 사용합니다.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "클릭 이동 링크",
 				logoSocialExplain: "헤더 링크를 사용자 정의합니다.",
 				logoSocialText: "텍스트",
-				logoSocialLink: "링크"
+				logoSocialLink: "링크",
+				lblSmallHeader: "한_Use compact header (no subtitle)_빠"
+			},
+			header: {
+				title: "한_Edit the title of your %TPL_NAME%_빠",
+				subtitle: "한_Edit the subtitle of your %TPL_NAME%_빠"
 			}
 		}
 	})
-
 );

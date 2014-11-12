@@ -1,5 +1,5 @@
 ﻿define(
-({
+	 ({
 		viewer: {
 			loading: {
 				step1: "正在加载应用程序",
@@ -68,7 +68,7 @@
 				dataPicError1: "地图浏览现在需要图片 URL 以下列任一扩展名为结尾: .jp(e)g、.png、.gif 或 .bmp。",
 				dataPicError2: "该要求不会影响您现有的已发布地图浏览。但是，为了使用交互式构建器，您必须首先执行以下两种操作之一来解决 URL 问题:",
 				dataPicError3: "编辑 URL",
-				dataPicError4: "此操作将在不受支持的图片 URL 尾部添加 <i>#isImage</i>。大多数服务器都支持 URL 附加。但在执行此操作后，应通过在各点间导航来确认更新的图片 URL 是否能够正常工作。如果各图片均可加载，则现在即可保存地图浏览。如果<b>图片已损坏，则不要保存地图浏览</b>。请重新加载构建器并执行第二个操作。",
+				dataPicError4: "试_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_验.",
 				dataPicError5: "限制图片浏览",
 				dataPicError6: "此选项导致所有 URL 都被视为影像，但您无法使用交互式构建器添加视频。如果您决定在以后添加视频，可以撤消此操作。",
 				dataPicError7: "您的地图浏览已限制为图片，无法使用视频。如果选择移除该限制，请在保存地图浏览前检查您的图片加载是否仍正确。如有需要，您可以在稍后恢复该限制。",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "图片",
 				addLabelThumbUrl: "缩略图",
 				addTextPlaceholderUrl: "输入图像 URL",
-				addTextPlaceholderUrl2: "输入 Youtube 页面 URL",
+				addTextPlaceholderUrl2: "试_Enter a YouTube page URL_验",
 				addTextPlaceholderUrl3: "输入 Vimeo 页面 URL",
 				addTextPlaceholderUrl4: "输入视频嵌入 URL",
 				addLabelVideo: "视频",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "重置字段选择",
 				settingsExtentExplain: "通过下面的交互式地图设置 Map Tour 初始范围。",
 				settingsExtentExplainBottom: "您定义的范围将修改 web 地图初始范围。请注意，如果范围不包括第一个浏览点，则不使用此范围。这时将以第一个点为中心打开浏览。",
-				settingsExtentDateLineError: "范围不可跨越 180° 经线",
+				settingsExtentDateLineError: "试_The extent cannot be across the meridian of 180Â° longitude_验",
 				settingsExtentDateLineError2: "计算范围时出错",
 				settingsExtentDrawBtn: "确定一个新范围",
 				settingsExtentModifyBtn: "编辑范围",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "应用"
 			},
 			headerJS:{
-				editMe: "编辑!",
+				editMe: "试_Edit me_验!",
 				templateTitle: "设置模板标题",
 				templateSubtitle: "设置模板子标题"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "导入成功。正在加载"
 			},
 			viewYoutube: {
-				title: "Youtube 导入",
+				title: "试_YouTube import_验",
 				header: "输入 YouTube 用户名以查找公开共享的视频。",
-				pageInputLbl: "输入 Youtube 用户名",
+				pageInputLbl: "试_Enter a YouTube user name_验",
 				lookupMsgError: "未找到用户",
-				howToFind: "如何查找 Youtube 用户名",
+				howToFind: "试_How to find a YouTube user name_验",
 				howToFind2: "用户名显示在视频下方",
 				found: "已找到",
 				noData: "未找到公开视频"
@@ -442,12 +442,12 @@
 					div172: "如果存在，则将始终使用图片和缩略图字段，且不会查询要素服务附件。",
 					div173: "示例 CSV 和 shapefile 可从以下位置下载",
 					div18: "通过 CSV 或 shapefile 创建托管的要素服务",
-					div19: "通过 CSV 或 shapefile 创建托管的要素服务时，默认情况下不启用附件。要启用附件，请打开要素服务的详细信息页面，单击图层部分上的小箭头，您将看到该选项。地图浏览将继续使用通过属性引用的图片和缩略图。另外，如果想将图片作为要素服务附件上传，可以使用图片面板上的两个按钮 (\“更改图片\”和\“更改缩略图\”)。",
-					div20: "支持的图片格式和视频",
-					div21: "支持的图片格式为: <b>.jpg、.jpeg、.png、.gif 和 .bmp</b>。如果您的媒体文件没有以此扩展名结尾，则地图浏览会将其视为视频，但使用要素服务时除外 (请参阅下文)。",
+					div19: "试_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_验.",
+					div20: "试_Supported picture formats and videos_验",
+					div21: "试_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_验.",
 					div22: "地图浏览模板不包括视频播放器，因此您必须使用喜欢的视频托管服务所提供的外部视频播放器 (找到嵌入视频并复制给定代码中的 URL 的选项)。如果您想要自己托管视频，则可以创建包含视频播放器 (例如 <a href='http://www.videojs.com/'>Video.js</a>) 的 HTML 页面。",
 					div23: "使用带有附件的要素服务时，交互式构建器不提供可包含视频的对话框，但可以通过在交互式构建器外部编辑数据来实现该功能。在 arcgis.com 地图查看器中，如果将图片字段修改为指向外部视频，并在 URL 尾部添加特殊参数 (#isVideo)，则您的媒体将被视为视频。",
-					div24: "请注意，您仍需要两个有效的图片附件，否则将不会使用此点。使用不含图片和缩略图字段的要素服务附件时，无法使用视频。"
+					div24: "试_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_验."
 				},
 				tab3: {
 					title: "自定义",
@@ -487,7 +487,7 @@
 					div2a: "通过构建器共享浏览",
 					div2b: "通过\“共享\”按钮可更新应用程序和 web 地图项目。如果您的浏览数据存储在要素服务项目中，它也会进行更新。如果通过 ArcGIS.com 地图查看器添加了其他图层，则这些图层将不会进行更新。这可能导致浏览不会按预期进行共享。具有所需 (或更多) 权限的项目将不会进行更新。",
 					div2c: "通过 ArcGIS Online 共享浏览",
-					div2d: "通过 ArcGIS Online 共享应用程序时，系统将在必要时要求您更新以不同方式共享的所有相关资源 (web 地图、要素服务和整饰图层)。如果地图浏览处于公共状态，且其中一个资源并没有共享给用户，则用户将被重定向至 ArcGIS Online 登录页面。",
+					div2d: "试_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_验.",
 					div3t: "要素服务安全性",
 					div3a: "如果使用通过地图浏览构建器创建的托管要素服务，应用程序将为您管理服务安全性，即使公开共享服务，您也是唯一具有编辑权限的人员。",
 					div3t2: "将浏览与用户共享之前",

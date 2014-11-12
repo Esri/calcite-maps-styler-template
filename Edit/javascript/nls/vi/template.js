@@ -1,13 +1,12 @@
 ﻿define(
-  ({
+   ({
     viewer: {
-      legend_title: "á»‡_Legend_á»",
-      content_title: "á»‡_Editor_á»",
+      legend_title: "Chú giải",
+      content_title: "Trình biên tập",
       errors:{
-        message: "á»‡_Problem creating the editing application_á»",
-        no_editable_layers_message: "á»‡_Web map does not contain any editable layers_á»."
+        message: "Có lỗi khi tạo ứng dụng biên tập",
+        no_editable_layers_message: "Bản đồ Web không chứa lớp có thể chỉnh sửa nào."
       }
     }
   })
-
 );

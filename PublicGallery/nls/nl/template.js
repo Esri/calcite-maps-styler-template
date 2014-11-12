@@ -1,5 +1,5 @@
 ﻿define(
-({
+     ({
         "viewer": {
             "main": {
                 "scaleBarUnits": "metric",
@@ -12,14 +12,14 @@
                 "bingError": "Het implementeren van deze applicatie vereist uw eigen code voor Bing Maps.",
                 "noLayers": "Geen operationele lagen",
                 "noSearchResults": "Er zijn geen resultaten gevonden.",
-				"noGroupResults": "De groep kan niet worden gevonden.",
+                "noGroupResults": "Ĳ_The group could not be found_ä.",
                 "noMatches": "Geen overeenkomsten gevonden.",
                 "noMapsFound": "Geen kaarten gevonden."
             },
             "sidePanel": {
                 "title": "Legenda",
                 "legendButton": "Legenda",
-				"layersButton": "Kaartlagen", // new
+                "layersButton": "Ĳ_Layers_ä", // new
                 "legendButtonTitle": "Kaartlegenda",
                 "aboutButton": "Over",
                 "aboutButtonTitle": "Informatie over kaart",
@@ -35,49 +35,49 @@
                 "listSwitch": "Omschakelen naar Lijstweergave",
                 "loadingText": "Kaarten laden&hellip;"
             },
-			"sortFields":{
-				"sortBy": "Sorteren op",
-				"modified": "Datum",
-				"title": "Titel",
-				"type": "Type",
-				"numRatings": "Beoordelingen",
-				"avgRating": "Gemiddelde beoordeling",
-				"numComments": "Opmerkingen",
-				"numViews": "Weergaven"
-			},
-			"comments":{
-				"commentsHeader": "Opmerkingen",
-				"posted": "Geplaatst",
-				"by": "van",
-				"deleteComment": "verwijderen",
-				"editComment": "bewerken",
-				"noComments": "Geen opmerkingen",
-				"addCommentButton": "Opmerking toevoegen",
-				"signIn": "Aanmelden",
-				"register": "Registreren",
-				"or": "of",
-				"toPost": "om een opmerking te plaatsen."
-			},
-			"buttons":{
-				"cancel": "Annuleren",
-				"submit": "Verzenden"
-			},
-			"rating":{
-				"signIn": "Aanmelden",
-				"toRate": "om te beoordelen."
-			},
-			"itemInfo":{
-				"createdLabel": "gemaakt",
-				"ratingsLabel": "beoordeling",
-				"ratingsLabelPlural": "beoordelingen",
-				"viewsLabel": "weergave",
-				"viewsLabelPlural": "keer bekeken",
-				"commentsLabel": "opmerking",
-				"commentsLabelPlural": "opmerkingen",
-				"modifiedLabel": "Laatst gewijzigd",
-				"by": "van",
-				"separator": ","
-			},
+            "sortFields": {
+                "sortBy": "Ĳ_Sort by_ä",
+                "modified": "Ĳ_Date_ä",
+                "title": "Ĳ_Title_ä",
+                "type": "Ĳ_Type_ä",
+                "numRatings": "Ĳ_Ratings_ä",
+                "avgRating": "Ĳ_Avg. Rating_ä",
+                "numComments": "Ĳ_Comments_ä",
+                "numViews": "Ĳ_Views_ä"
+            },
+            "comments": {
+                "commentsHeader": "Ĳ_Comments_ä",
+                "posted": "Ĳ_Posted_ä",
+                "by": "Ĳ_by_ä",
+                "deleteComment": "Ĳ_delete_ä",
+                "editComment": "Ĳ_edit_ä",
+                "noComments": "Ĳ_No comments_ä",
+                "addCommentButton": "Ĳ_Add Comment_ä",
+                "signIn": "Ĳ_Sign In_ä",
+                "register": "Ĳ_Register_ä",
+                "or": "Ĳ_or_ä",
+                "toPost": "Ĳ_to post a comment_ä."
+            },
+            "buttons": {
+                "cancel": "Ĳ_Cancel_ä",
+                "submit": "Ĳ_Submit_ä"
+            },
+            "rating": {
+                "signIn": "Ĳ_Sign In_ä",
+                "toRate": "Ĳ_to rate_ä."
+            },
+            "itemInfo": {
+                "createdLabel": "Ĳ_created_ä",
+                "ratingsLabel": "Ĳ_rating_ä",
+                "ratingsLabelPlural": "Ĳ_ratings_ä",
+                "viewsLabel": "Ĳ_view_ä",
+                "viewsLabelPlural": "Ĳ_views_ä",
+                "commentsLabel": "Ĳ_comment_ä",
+                "commentsLabelPlural": "Ĳ_comments_ä",
+                "modifiedLabel": "Ĳ_Last Modified_ä",
+                "by": "Ĳ_by_ä",
+                "separator": "Ĳ__ä,"
+            },
             "mapPage": {
                 "findLocation": "Een locatie zoeken",
                 "findPlaceholder": "Een adres zoeken",
@@ -93,13 +93,13 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Eigenaar:",
                 "switchBasemap": "Basiskaart wijzigen",
-				"getMobileApp": "App downloaden",
-				"constraintsHeading":"Gebruiksbeperkingen",
-				"createdLabel":"Gemaakt",
-				"noDescription":"Geen beschrijving.",
-				"detailsLabel":"Details"
+                "getMobileApp": "Ĳ_Get App_ä",
+                "constraintsHeading": "Ĳ_Use Constraints_ä",
+                "createdLabel": "Ĳ_Created_ä",
+                "noDescription": "Ĳ_No description_ä.",
+                "detailsLabel": "Ĳ_Details_ä"
             },
-            "filterItems":{
+            "filterItems": {
                 "show": "Weergeven",
                 "all": "Alle resultaten",
                 "maps": "Kaarten",

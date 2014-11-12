@@ -1,9 +1,9 @@
 ﻿define(
-({
+	 ({
 		firstPane: {
 			head: "Met de <span class='highlightText'>template Kaart Tour</span> kunnen gebruikers van ArcGIS Online inclusief het gratis openbare account een op plaatsen gebaseerd verhaal maken en bewerken met afbeeldingen, tekst en een kaart van:",
 			list0: "Afbeeldingen opgeslagen op grote onlinediensten voor het delen van foto\'s zoals Flickr, Picasa en Facebook, of op elke website of webserver",
-			list1: "Afbeeldingen die nog niet online zijn opgeslagen en die als Featureservice-bijlagen worden opgeslagen (beperkt tot leden van ArcGIS for Organizations)"
+			list1: "Ĳ_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_ä"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>De template</span> bevat gebruiksvriendelijke bewerkingstools met de volgende mogelijkheden:",
@@ -17,8 +17,8 @@
 			list1: "De template hosten op uw eigen webserver of de server van derden"
 		},
 		fourthPane: {
-			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Zie de site met kaartverhalen van Esri</a> voor meer informatie over het maken en delen van verhalen. Bronnen omvatten:",
-			list0: "Kaartverhalen die zijn gepubliceerd door Esri\'s story maps-teams",
+			head: "Ĳ_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_ä:",
+			list0: "Ĳ_Story maps published by Esriâ€™s story maps teams_ä",
 			list1: "Een verzameling downloadbare templates",
 			list2: "Handleidingen met best practices", 
 			list3: "Een galerij met kaartverhalen van een groeiende community storytellers"

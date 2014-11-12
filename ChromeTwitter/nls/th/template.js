@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "คำอธิบาย"
     },
-    errors:{
+    errors: {
       createMap: "ไม่สามารถสร้างแผนที่ได้",
       general: "ข้อผิดพลาด"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "ชื่อที่ใช้แสดง",
     "signIn": "ลงชื่อเข้าใช้",
@@ -34,31 +34,31 @@
     label: "ทวีต",
     title: "ทวีต",
     error: "ไม่พบผลลัพธ์ กรุณาใส่คำค้นหาหรือตำแหน่งใหม่",
-		search:{
+		search: {
 			label: "ค้นหา",
 			title: "ค้นหาจากทวิตเตอร์",
 			placeholder: 'คำสำคัญในการค้นหา'
 		},
-		clear:{
+		clear: {
 			label: "ลบ",
 			title: "ลบแผนที่"
 		},
-		share:{
+		share: {
 			label: "แชร์แผนที่:",
 			email:{
 				title: "อีเมล์",
 				label: "อีเมล์"
 			},
-			twitter:{
+			twitter: {
 				title: "ทวิตเตอร์",
 				label: "ทวิตเตอร์"
 			},
-			facebook:{
+			facebook: {
 				title: "เฟสบุค",
 				label: "เฟสบุค"
 			}
 		}
 	 }
    }
- })
+})
 );

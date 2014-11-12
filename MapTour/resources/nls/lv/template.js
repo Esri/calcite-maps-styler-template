@@ -1,5 +1,5 @@
 ﻿define(
-({
+	 ({
 		viewer: {
 			loading: {
 				step1: "IELĀDĒ APLIKĀCIJU",
@@ -68,7 +68,7 @@
 				dataPicError1: "Map Tour tagad pieprasa, lai attēla URL beidzas ar vienu no sekojošiem paplašinājumiem: .jp(e)g, .png, .gif vai .bmp.",
 				dataPicError2: "Šī prasība neietekmēs jau eksistējošās publicētās Map Tour. Lai gan, lai izmantotu inerkatīvo veidotāju, jums jāatrisina URL jautājums, veicot vienu no divām darbībām:",
 				dataPicError3: "Rediģēt URL",
-				dataPicError4: "Tas pievienos <i>#isImage</i> neatbalstītā URL galā. Lielākā daļa serveru atbalsta URL pielikumus. Lai gan, līdzko jūs esat veikuši šo darbību, jums jāpārliecinās, ka koriģētā attēla URL funkcionē, naviģējot caur punktiem. Ja katrs attēls ielādējas, jūs varat saglabāt Map Tour. Ja <b>ja attēli neielādējas, nesaglabājiet Map Tour</b>. Tā vietā pārlādējiet veidotāju un veiciet otru darbību.",
+				dataPicError4: "ķ_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_ū.",
 				dataPicError5: "Limitēt tūri uz attēliem",
 				dataPicError6: "Ši izvēlne liks uzkatīt visus URL par attēliem, bet nebūs iespējams pievienot video izmantojot interaktīvo veidotāju. Ši darbība ir atgriezeniska, ja jūs izlemsiet pievienot video nākotnē.",
 				dataPicError7: "Map Tour ir ierobežots lietot attēlus, video nevar tikt izmantots. Ja izvēlaties noņemt šo ierobežojumu, pārbaudiet vai attēli ielādējas korekti pirms saglabāt Map Tour. Jus varēsiet atjaunot šo ierobežojumu vēlāk, ja tas būs nepieciešams.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Bilde",
 				addLabelThumbUrl: "Sīktēls",
 				addTextPlaceholderUrl: "Ievadiet attēla URL",
-				addTextPlaceholderUrl2: "Ievadiet Youtube lapas URL",
+				addTextPlaceholderUrl2: "ķ_Enter a YouTube page URL_ū",
 				addTextPlaceholderUrl3: "Ievadiet Vimeo lapas URL",
 				addTextPlaceholderUrl4: "Ievadiet iedarinātā video URL",
 				addLabelVideo: "Video",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Atiestātīt lauku atlasi",
 				settingsExtentExplain: "Iestatīt Map Tour sākotnējo pārklājumu, izmantojot interaktīvo karti zemāk.",
 				settingsExtentExplainBottom: "Pārklājums, kas tiek definēts, modificēs jūsu web kartes sākotnējo pārklājumu. Ņemiet vērā, ka šis pārklājums netiks izmantots, ja ras nesatur pirmo tūres punktu. Šajā gadījumā tūre atvērsies iecentrēta uz pirmo punktu.",
-				settingsExtentDateLineError: "Pārklājums nevar būt pāri 180° meridiāna garumam.",
+				settingsExtentDateLineError: "ķ_The extent cannot be across the meridian of 180Â° longitude_ū",
 				settingsExtentDateLineError2: "Kļūda aprēķinot pārklājumu",
 				settingsExtentDrawBtn: "Zīmēt jaunu pārklājumu",
 				settingsExtentModifyBtn: "Rediģēt pārklājumu",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Lietot"
 			},
 			headerJS:{
-				editMe: "Rediģē mani !",
+				editMe: "ķ_Edit me_ū!",
 				templateTitle: "Iestatīt šablona virsrakstu",
 				templateSubtitle: "Iestatīt šablona apakšvirsrakstu"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Imports sekmīgs. Ielādē"
 			},
 			viewYoutube: {
-				title: "YouTube imports",
+				title: "ķ_YouTube import_ū",
 				header: "Ievadiet YouTube lietotāja vārdu, lai atrastu publiski koplietotus video.",
-				pageInputLbl: "Ievadiet Youtube lietotāja vārdu",
+				pageInputLbl: "ķ_Enter a YouTube user name_ū",
 				lookupMsgError: "Lietotājs nav atrasts",
-				howToFind: "Kā atrast Youtube lietotāja vārdu",
+				howToFind: "ķ_How to find a YouTube user name_ū",
 				howToFind2: "Lietotāja vārds ir attēlots zem video",
 				found: "Atrasts",
 				noData: "Nav atrasti publiski video"
@@ -442,12 +442,12 @@
 					div172: "Ja tādi būs, vienmēr tiks izmantoti attēlu un sīkattēlu lauki un elemetu servisa piesaistes netiks pieprasītas.",
 					div173: "Piemēra CSV un shape faili var tikt lejupielādēti no",
 					div18: "Rada viesotu elementu servisu no CSV vai shape faila",
-					div19: "Kad jūs izveidojat elementu servisu no CSV vai shape faila, piesaistes nav iespējotas pēc noklusējuma. Lai tās iespējotu, atveriet elementu servisa detaļu lapu, noklikšķiniet uz nelielas bultiņas slāņa sadaļā, un jūs redzēsiet šo opciju. Pēc tam Map Tour turpinās izmantot attēlus un sīktēlus, uz ko jūs atsaucaties caur atribūtiem. Pēc izvēles, ja jūs vēlaties augšupielādēt savas bildes kā elementu servisa piesaistes, jums būs iespēja to darīt caur divām pogām uz bildes paneļa (\"Mainīt attēlu\" un \"Mainīt sīkattēlu\").",
-					div20: "Atbalstītie bilžu un video formāti",
-					div21: "Atbalstītie attēla formāti: <b>.jpg, .jpeg, .png, .gif un .bmp</b>. Ja jūsu medijs nebeidzas ar šādu paplašinājumu, Map Tour uzksatīs to par video, izņemot gadījumu, ja izmanto elementu servisu (skatīt zemāk).",
+					div19: "ķ_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_ū.",
+					div20: "ķ_Supported picture formats and videos_ū",
+					div21: "ķ_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_ū.",
 					div22: "Map Tour šablons nesatur videopleijeri, tādēļ jāizmanto ārējs videopleijers, ko nodrošina video viesošanas serviss (atrodiet opciju lai iedarinātu video un iekopētu doto URL dotajā kodā) Ja vēlaties viesot video pats, jūs varat izveidot HTML lapu, kas satur videopleijeri, piemēram, <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "Ineraktīvais veidotājs nenodrošina dialogu, lai iekļautu video, gadījumos kad izmanto elementu servisu ar piesaistēm, bet ir iespējams to izdarīt rediģējot datus ārpus inerkatīvā veidotāja. Arcgis.com kartes pārlūkā, ja modificējat attēla laukus, lai norādītu ārēju video, un pievienojat speciālu parametru URL beigās (#isVideo), jūsu medijs tiks uzkatīs par video.",
-					div24: "Atcerieties, ka jums nepieciešami divas derīgas attēla piesaistes vai punkts netiks izmantots. Nav iespējams izmantoto video, izmantojot elementu servisa piesaistes bez attēla un sīkattēla laukiem."
+					div24: "ķ_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_ū."
 				},
 				tab3: {
 					title: "Pielāgošana",
@@ -487,7 +487,7 @@
 					div2a: "Koplietot tūri caur veidotāju",
 					div2b: "KOPLIETOT poga jauninās aplikāciju un web kartes vienības. Ja jūsu tūres dati tiek glabāti elementu servisa vienībā, tā arī tiks jaunināta. Ja esat pievienojis citus slāņus izmantojot ArcGIS.com kartes skatītāju, tie netiks jaunināti. šis var rezultēt, ka tūre netiek koplietota kā jūs sagaidījāt. Vienības, kurām jau ir nepieciešamās (vai vairāk) privilēģijas netiks jauninātas.",
 					div2c: "Koplietot tūri izmantojot ArcGIS Online",
-					div2d: "Kad jūs koplietojat aplikāciju izmantojot ArcGIS Online, ja nepieciešams tiks pieprasīts jaunināt jebkurus atkarīgus resursus  (web karti, elementu servisu, noformējuma slānis), kas nav koplietoti tādā pat veidā. Ja kartes tūre ir publiska un viens no tās resursiem nav koplietots ar jūsu auditoriju, lietotāji tiks pāradresēti uz ArcGIS Online pieteikšanās lapu.",
+					div2d: "ķ_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_ū.",
 					div3t: "Elementu servisa drošība",
 					div3a: "Ja jūs izmantojat viesotu elementu servisu, izveidotu caur Map Tour veidotāju, aplikācija pārvalda servisa drošību priekš jums un jums paliks tikai rediģēšanas privilēģijas, pat tad, ja jūs koplietosiet servisu publiski.",
 					div3t2: "Pirms koplietot jūsu tūri ar publiku.",

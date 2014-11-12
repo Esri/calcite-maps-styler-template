@@ -85,11 +85,12 @@
 				lblLink: "Consultez le site Web des cartes de narration Esri.",
 				content1Div1: "Vous pouvez intégrer différents styles lorsque vous élaborez votre narration. Le <strong>%LAYOUT_TITLE%</strong> contient généralement votre texte, vos images et vidéos tandis que vos cartes ont tendance à rejoindre la <strong>grande scène</strong>. Cependant, %TPL_NAME% vous permet de proposer des images, diagrammes et vidéos au sein de la grande scène également.",
 				content1Div2: "L\'ajout de sections vous permet de personnaliser réellement votre narration. Lorsque les lecteurs font défiler le texte de votre %LAYOUT_TITLE%, une carte sur la grande scène peut se déplacer et zoomer sur des points essentiels, ou de nouvelles cartes et images peuvent automatiquement apparaître pour appuyer votre point de vue.",
-				content2Div1: "Vous pouvez ajuster ici l\'apparence de votre %TPL_NAME%. Les combinaisons de couleurs, les mises en page, les largeurs et les polices sont précisées à cet emplacement.",
-				content2Div2: "Vous pouvez également ajouter des liens de partage vers Facebook, Twitter et Bitly afin que les lecteurs puissent facilement faire connaître votre %TPL_NAME% à d\'autres.",
+				content2Div1: "æ_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_Â.",
+				content2Div2: "æ_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_Â.",
 				content3Div1: "Votre contenu est organisé en sections. Vous pouvez avoir autant de sections que vous voulez (considérez-les comme des mini chapitres). Le flux de ces chapitres est important. Dans Organiser, vous pouvez agencer ou supprimer les sections comme bon vous semble.",
 				content4Div1: "Vous avez trouvé une erreur ou souhaitez changer vos documents ? Aucun problème. Recherchez l\'icône de mise à jour dans l\'application pour apporter les modifications souhaitées à votre contenu. Vous utiliserez les fonctions de mise à jour à maintes reprises au cours du développement de votre %TPL_NAME% !",
-				content5Div1: "Votre %TPL_NAME% est enregistré dans votre compte %PORTAL% et privé par défaut. Vous pouvez le partager avec votre organisation ou l\'ouvrir au monde entier. Nous vous proposons même une URL abrégée afin de faciliter son partage.",
+				content5Div1: "æ_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_Â.",
+				content5Div2: "æ_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_Â.",
 				content6Div1: "Le titre de votre section d\'accueil est également le titre de votre journal. Considérez votre section d\'accueil comme la page de couverture de votre narration. Le titre de la section d\'accueil demeure visible lorsque vos lecteurs parcourent le journal.",
 				content6Div2: "Votre %LAYOUT_TITLE% ne contient pas forcément que du texte. Vous pouvez ajouter des photos et des vidéos pour donner vie à votre narration et pour diviser de longues sections de texte !"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

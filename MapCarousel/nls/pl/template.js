@@ -1,5 +1,5 @@
 ﻿define(
-({
+   ({
   app:{
    title:"Mapa z widokiem ciągłego przewijania",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.

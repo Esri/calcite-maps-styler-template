@@ -70,11 +70,10 @@
 				copy: "Kopēt",
 				copied: "Kopēts",
 				open: "Atvērt",
-				embed: "Iedarinār tīmekļa vietnē",
-				embedExplain: "Izmantojiet šo HTML kodu, lai iegultu žurnālu web vietnē.",
+				embed: "ķ_Embed in web page_ū",
+				embedExplain: "ķ_Use the following HTML code to embed the journal in a web page_ū.",
 				size: "Izmēri (platums/augstums):"
 			}
         }
     })
-
 );

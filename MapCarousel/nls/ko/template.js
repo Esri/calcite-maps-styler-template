@@ -1,5 +1,5 @@
 ﻿define(
-({
+   ({
   app:{
    title:"맵 회전 슬라이드",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.

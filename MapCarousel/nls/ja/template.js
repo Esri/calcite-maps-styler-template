@@ -1,5 +1,5 @@
 ﻿define(
-({
+   ({
   app:{
    title:"マップ カルーセル",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.

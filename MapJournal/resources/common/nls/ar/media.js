@@ -62,7 +62,7 @@
 				url: "عنوان URL لفيديو Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "يتعذر على دفتر يومية الخريطة تشغيل مقاطع فيديو بسيطة (مثل avi وmpeg)، إلا أنه يمكنه تشغيل ملفات فيديو مُستضافة ذات مُشغلات مدمجة (مثل YouTube أو Vimeo).",
+				explain1: "بيت_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_لاحقة.",
 				explain2: "توفر معظم خدمات استضافة الفيديو على الإنترنت تلك الميزة، ويمكنك العثور على خيار تضمين هذا الفيديو ونسخ الكود المُعطى واستخدام %WEBPAGE%.",
 				explain3: "وبدلاً من ذلك، إذا أردت استضافة الفيديو بنفسك، يمكنك إنشاء صفحة HTML تستخدم مُشغل فيديو مثل %EXAMPLE% واستضافة الصفحة واستخدام %WEBPAGE% أيضًا.",
 				webpage: "معالم صفحة الويب"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(لا يتم القص)",
 				lblPosition3Explain2: "(سوف يناسب دائما العرض اللوحة)",
 				lblPosition4Explain: "(يمكن الإتلاف)",
-				unloadLbl: "عدم التحميل عندما ينتقل القارئ بعيدًا إلى مقطع أخر.",
-				unloadHelp: "إذا كانت صفحة الويب تحتوي على وسائط صوت أو فيديو، احتفظ بتحديد هذا الخيار لإيقاف هذا المحتوى من التشغيل عندما ينتقل القارئ بعيدًا إلى مقطع أخر. قم بإلغاء التحديد مثلاً للاحتفاظ بتشغيل مسار الصوت عندما يتقدم القارئ من خلال دفتر اليومية.<br />إذا كانت صفحة الويب عبارة عن تطبيق، قم بإلغاء تحديد هذا الخيار وبالتالي لم يعاد تحميل التطبيق إذا رجع القارئ إلى هذا المقطع."
+				unloadLbl: "بيت_Unload when reader navigates away_لاحقة",
+				unloadHelp: "بيت_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_لاحقة."
 			},
 			editorActionGeocode: {
 				lblTitle: "تحديد موقع العنوان أو المكان",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

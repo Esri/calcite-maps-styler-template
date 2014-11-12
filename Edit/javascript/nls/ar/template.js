@@ -1,5 +1,5 @@
 ﻿define(
-  ({
+   ({
     viewer: {
       legend_title: "مفتاح الخريطة",
       content_title: "المحرر",
@@ -9,5 +9,4 @@
       }
     }
   })
-
 );

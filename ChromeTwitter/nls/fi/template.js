@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "Kuvaus"
     },
-    errors:{
+    errors: {
       createMap: "Karttaa ei voi luoda",
       general: "Virhe"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "Nimi näytöllä",
     "signIn": "Kirjaudu sisään",
@@ -34,31 +34,31 @@
     label: "Tweetit",
     title: "Tweetit",
     error: "Tuloksia ei löytynyt, kokeile toista hakuehtoa tai sijaintia",
-		search:{
+		search: {
 			label: "Etsi",
 			title: "Etsi Twitteristä",
 			placeholder: 'Etsittävät avainsanat'
 		},
-		clear:{
+		clear: {
 			label: "Tyhjennä",
 			title: "Tyhjennä kartta"
 		},
-		share:{
+		share: {
 			label: "Jaa kartta:",
 			email:{
 				title: "Sähköposti:",
 				label: "Sähköposti"
 			},
-			twitter:{
+			twitter: {
 				title: "Twitter",
 				label: "Twitter"
 			},
-			facebook:{
+			facebook: {
 				title: "Facebook",
 				label: "Facebook"
 			}
 		}
 	 }
    }
- })
+})
 );

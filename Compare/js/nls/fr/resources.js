@@ -14,8 +14,20 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
-    map: {
-        error: "Impossible de créer la carte"
-    }
-}));
+define(
+     ({
+        map: {
+            error: "æ_Unable to create map_Â"
+        },
+        tools: {
+            info: {
+                label: "æ_Info_Â",
+                tooltip: "æ_Toggle map info_Â"
+            },
+            sync: {
+                label: "æ_Sync Map Extent_Â",
+                tooltip: "æ_Sync to extent of this map_Â"
+            }
+        }
+    })
+);

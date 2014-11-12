@@ -70,11 +70,10 @@
 				copy: "Copiere",
 				copied: "Copiat",
 				open: "Deschidere",
-				embed: "Încorporare în site web",
-				embedExplain: "Utilizaţi următorul cod HTML pentru a încorpora jurnalul într-un site web.",
+				embed: "Ă_Embed in web page_ș",
+				embedExplain: "Ă_Use the following HTML code to embed the journal in a web page_ș.",
 				size: "Dimensiune (lăţime/înălţime):"
 			}
         }
     })
-
 );

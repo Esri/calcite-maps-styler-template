@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Lisa",
@@ -28,8 +28,8 @@
 				buttonSettings: "Seaded",
 				buttonHelp: "Abi",
 				buttonPreview: "Kuva reaalajas",
-				tooltipFirstSave: "See funktsioon on saadaval alles pärast rakenduse salvestamist",
-				tooltipNotShared: "See funktsioon on saadaval alles pärast rakenduse jagamist",
+				tooltipFirstSave: "Š_This isn't available until you save_ä.",
+				tooltipNotShared: "Š_This isn't available until you share_ä.",
 				noPendingChange: "Ühtegi muudatust ei ole ootel",
 				unSavedChangePlural: "Ootel muudatused",
 				closeWithPendingChange: "Kas olete kindel, et soovite tegevuse kinnitada? Teie tehtud muudatused lähevad kaotsi.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Viga rakenduse salvestamisel",
 				err1Div1: "Rakendust ei saa salvestada, sest teil on juba sama nimega objekt (vaadake oma <a class='linkagolroot' target='_blank'>sisukausta</a>).",
-				err1Div2: "Muutke kodujaotise pealkirja ja salvestage rakendus.",
-				btnOk: "Muuda kodujaotise pealkirja"
+				err1Div2: "Š_Please modify the title of your application and then save it_ä.",
+				btnOk: "Š_Edit the application title_ä"
 			},
 			share: {
 				firstSaveTitle: "Rakendus on salvestatud",
@@ -66,7 +66,7 @@
 				shareHeader2: "Teie rakendus on kättesaadav organisatsiooni liikmetele (sisselogimine nõutav).",
 				shareLinkCopy: "Kopeeri",
 				shareLinkCopied: "Kopeeritud",
-				shareQ0: "Kuidas lisada rakendus veebisaidile?",
+				shareQ0: "Š_How do I embed the application in a web page_ä?",
 				shareQ1Opt1: "Kuidas hoida rakendus privaatne?",
 				shareQ1Opt2: "Kuidas hoida rakendus privaatne või seda avalikult jagada?",
 				shareA1: "Kasutage <a href='%LINK1%' target='_blank'>rakenduse üksuse lehel</a> üksust %SHAREIMG%.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Kliki läbi lingi",
 				logoSocialExplain: "Kohandage päiselinki.",
 				logoSocialText: "Tekst",
-				logoSocialLink: "Link"
+				logoSocialLink: "Link",
+				lblSmallHeader: "Š_Use compact header (no subtitle)_ä"
+			},
+			header: {
+				title: "Š_Edit the title of your %TPL_NAME%_ä",
+				subtitle: "Š_Edit the subtitle of your %TPL_NAME%_ä"
 			}
 		}
 	})
-
 );

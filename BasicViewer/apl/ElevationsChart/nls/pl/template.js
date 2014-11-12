@@ -1,5 +1,5 @@
 ﻿define(
-({
+   ({
   display: {
     elevationProfileTitle: "Profil wzniesień",
     showMe: "pokaż mi",
@@ -25,27 +25,22 @@
   },
   errors: {
     InvalidConfiguration: {
-      code: 17056601,
       name: 'Błąd — nieprawidłowa konfiguracja',
       message: 'Nieprawidłowa konfiguracja.'
     },
     MissingConstructorParameters: {
-      code: 17056602,
       name: 'Błąd — brak parametrów konstrukcyjnych',
       message: 'Brak parametru konstrukcyjnego.'
     },
     MissingInitParameter: {
-      code: 17056603,
       name: 'Błąd — brak parametru początkowego',
       message: 'Brak parametru początkowego.'
     },
     SOEOperationNotSupported: {
-      code: 17056604,
       name: 'Błąd — nieobsługiwana operacja',
       message: 'Ta wersja SOE NIE obsługuje żądanej operacji.'
     },
     SOEMultiPartGeometriesNotSupported: {
-      code: 17056605,
       name: 'Błąd — brak obsługi geometrii wieloczęściowych',
       message: "UWAGA: linie wieloczęściowe obecnie NIE są obsługiwane."
     }

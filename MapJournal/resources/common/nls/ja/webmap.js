@@ -10,6 +10,8 @@
 				lblOverview: "概観図",
 				lblLegend: "凡例",
 				loadingTitle: "タイトルを読み込んでいます",
+				entry: "須_Entry_鷗",
+				entries: "須_Entries_鷗",
 				section: "セクション",
 				sections: "セクション",
 				and: "および",
@@ -22,12 +24,14 @@
 				newMap: "新しく選択した Web マップ",
 				webmapDefault: "Web マップのデフォルト",
 				customCfg: "カスタム構成",
-				tooltipLocation: "ユーザがこのセクションに移動したときに使用されるマップ位置を定義します。",
+				tooltipLocation: "須_Define the location that this map will display_鷗.",
 				tooltipContent: "表示レイヤを定義します。",
-				tooltipPopup: "ユーザがこのセクションに移動したときに表示されるポップアップを選択します。",
-				tooltipOverview: "小さな概観図をメイン マップとともに表示します",
+				tooltipPopup: "須_Choose a popup that will be opened when this map is displayed_鷗.",
+				tooltipOverview: "須_Display a small overview map along with the main map_鷗.",
 				tooltipLegend: "マップの凡例をマップ上に表示します。マップに多くのレイヤとシンボルが存在する場合に役立ちます。",
-				mapCfgInvite: "これらのコントロールを使用してマップを構成"
+				mapCfgInvite: "これらのコントロールを使用してマップを構成",
+				lblLocationAlt: "須_Inherited from the first map_鷗",
+				tooltipLocationAlt: "須_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_鷗."
 			},
 			configure: {
 				btnReset: "リセット",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

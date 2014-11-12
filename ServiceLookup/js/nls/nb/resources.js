@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "Kan ikke opprette kart",
             mouseToolTip: "Klikk på kartet for å se eetter tjeneste"
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Laget er ikke i webkartet",
             fieldNotFound: "Fant ikke feltet",
-            popupNotSet: "Sprettoppvindu er ikke aktivert for dette laget"
+            popupNotSet: "Sprettoppvindu er ikke aktivert for dette laget",
+            noLayersSet: "å_No layers defined in the config, the search box will not work_ø"
         },
         page: {
             title: "Informasjonsoppslag",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "Bakgrunnskart"
         }
-    })
 
+    })
 );

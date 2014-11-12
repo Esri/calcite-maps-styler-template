@@ -1,5 +1,5 @@
 ﻿define(
-({
+	 ({
 		viewer: {
 			loading: {
 				step1: "APPLICATIE LADEN",
@@ -68,7 +68,7 @@
 				dataPicError1: "Kaarttours vereisen nu dat een afbeeldings-URL op een van de volgende extensies eindigt: .jp(e)g, .png, .gif of .bmp.",
 				dataPicError2: "Deze vereiste heeft geen invloed op uw bestaande gepubliceerde Kaarttour. Om echter de interactieve builder te kunnen gebruiken, moet u het probleem met de URL eerst oplossen door een van deze twee handelingen uit te voeren:",
 				dataPicError3: "URL\'s bewerken",
-				dataPicError4: "Hiermee voegt u <i>#isImage</i> toe aan het einde van niet-ondersteunde afbeeldings-URL\'s. De meeste servers ondersteunen URL-toevoegingen. Zodra u echter deze handeling hebt uitgevoerd, moet u controleren of de bijgewerkte afbeeldings-URL\'s functioneren door naar uw punten te navigeren. Als alle afbeeldingen zijn geladen, kunt u de Kaarttour nu opslaan. Als <b>de afbeeldingen gebroken zijn, slaat u de Kaarttour niet op</b>. Laad in plaats daarvan de builder opnieuw en voer de tweede handeling uit.",
+				dataPicError4: "Ĳ_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_ä.",
 				dataPicError5: "De tour beperken tot afbeeldingen",
 				dataPicError6: "Met deze optie worden alle URL\'s beschouwd als afbeeldingen, maar u kunt geen video\'s toevoegen met de interactieve builder. Deze handeling is omkeerbaar zodat u later nog kunt beslissen om video toe te voegen.",
 				dataPicError7: "Uw Kaarttour is beperkt tot afbeeldingen. Er kunnen geen video\'s worden gebruikt. Als u deze beperking wilt opheffen, controleert u of uw afbeeldingen nog steeds correct worden geladen voordat u de Kaarttour opslaat. U kunt deze beperking later herstellen als dat nodig is.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Afbeelding",
 				addLabelThumbUrl: "Thumbnail",
 				addTextPlaceholderUrl: "Voer een afbeeldings-URL in",
-				addTextPlaceholderUrl2: "Voer de URL van een Youtube-pagina in",
+				addTextPlaceholderUrl2: "Ĳ_Enter a YouTube page URL_ä",
 				addTextPlaceholderUrl3: "Voer de URL van een Vimeo-pagina in",
 				addTextPlaceholderUrl4: "Voer de URL van een ingebedde video in",
 				addLabelVideo: "Video",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Selectie van velden opnieuw instellen",
 				settingsExtentExplain: "Stel het oorspronkelijke extent van de Kaart Tour in op de onderstaande interactieve kaart.",
 				settingsExtentExplainBottom: "Het extent dat u definieert, zal het oorspronkelijke extent van de webmap wijzigen. Merk op dat dit extent niet wordt gebruikt als het het eerste punt van de tour niet bevat. In dat geval wordt de tour geopend met het eerste punt in het midden.",
-				settingsExtentDateLineError: "Het extent mag niet op de meridiaan van 180° lengtegraad zijn",
+				settingsExtentDateLineError: "Ĳ_The extent cannot be across the meridian of 180Â° longitude_ä",
 				settingsExtentDateLineError2: "Fout bij het berekenen van het extent",
 				settingsExtentDrawBtn: "Een nieuw extent tekenen",
 				settingsExtentModifyBtn: "Het extent bewerken",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Toepassen"
 			},
 			headerJS:{
-				editMe: "Bewerk me!",
+				editMe: "Ĳ_Edit me_ä!",
 				templateTitle: "Titel voor template instellen",
 				templateSubtitle: "Subtitel voor template instellen"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Importeren geslaagd. Bezig met laden"
 			},
 			viewYoutube: {
-				title: "Importeren van YouTube",
+				title: "Ĳ_YouTube import_ä",
 				header: "Voer een YouTube-gebruikersnaam in om te zoeken naar openbaar gedeelde video\'s.",
-				pageInputLbl: "Voer een Youtube-gebruikersnaam in",
+				pageInputLbl: "Ĳ_Enter a YouTube user name_ä",
 				lookupMsgError: "Gebruiker niet gevonden",
-				howToFind: "Hoe een Youtube-gebruikersnaam vinden",
+				howToFind: "Ĳ_How to find a YouTube user name_ä",
 				howToFind2: "Gebruikersnaam wordt weergegeven onder video\'s",
 				found: "Gevonden",
 				noData: "Geen openbare video\'s gevonden"
@@ -442,12 +442,12 @@
 					div172: "Indien aanwezig, worden de velden voor afbeelding en miniatuur altijd gebruikt en worden er geen query\'s uitgevoerd op de featureservicebijlagen.",
 					div173: "Voorbeelden van CSV-bestanden en shapefiles kunnen worden gedownload van",
 					div18: "Gehoste Featureservices maken van een CSV of shapefile",
-					div19: "Als u een gehoste featureservice maakt van een CSV of shapefile, worden de bijlagen standaard niet ingeschakeld. Om ze in te schakelen, opent u de pagina met details van de featureservice. Klik op het pijltje op het laaggedeelte en de optie verschijnt. Daarna blijft de Kaarttour de afbeeldingen en miniaturen gebruiken waarnaar u hebt verwezen via attributen. Of als u uw afbeeldingen wilt uploaden als featureservicebijlagen, kunt u dat doen met twee knoppen in het afbeeldingenvenster (\'Afbeelding wijzigen\' en \'Miniatuur wijzigen\').",
-					div20: "Ondersteunde afbeeldingsindelingen en video\'s",
-					div21: "Ondersteunde afbeeldingsindelingen zijn: <b>.jpg, .jpeg, .png, .gif en .bmp</b>. Als uw media niet eindigt op deze extensie, beschouwt de Kaarttour deze als een video, behalve wanneer u een featureservice gebruikt (zie hieronder).",
+					div19: "Ĳ_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_ä.",
+					div20: "Ĳ_Supported picture formats and videos_ä",
+					div21: "Ĳ_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_ä.",
 					div22: "De Kaarttour-template bevat geen videospeler. U moet de externe videospeler gebruiken die wordt geleverd door uw favoriete videohostservice (zoek naar de optie om de video in te bedden en kopieer de URL die aanwezig is in de opgegeven code). Als u de video zelf wilt hosten, kunt u een HTML-pagina maken die een videospeler bevat zoals <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "De interactieve builder biedt geen dialoogvenster om video op te nemen als featureservices met bijlagen worden gebruikt, maar het is wel mogelijk om dit te doen door uw gegevens buiten de interactieve builder te bewerken. Als u in de ArcGIS.com-map viewer de afbeeldingsvelden verandert zodat deze naar een externe video verwijzen en u een speciale parameter toevoegt aan het einde van uw URL (#isVideo), dan zal uw media als een video worden beschouwd.",
-					div24: "Houd er rekening mee dat u nog steeds twee geldige afbeeldingsbijlagen nodig hebt omdat de punten anders niet worden gebruikt. Het is niet mogelijk om video\'s te gebruiken wanneer u featureservicebijlagen gebruikt zonder de velden voor afbeelding en miniatuur."
+					div24: "Ĳ_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_ä."
 				},
 				tab3: {
 					title: "Aanpassen",
@@ -487,7 +487,7 @@
 					div2a: "De tour delen via de builder",
 					div2b: "De knop DELEN zal de applicatie- en webmapitems bijwerken. Als uw tourgegevens zijn opgeslagen in een featureservice-item, wordt dit ook bijgewerkt. Als u andere kaartlagen hebt toegevoegd via de ArcGIS.com-map viewer, worden deze niet bijgewerkt. Dit kan ertoe leiden dat de tour niet wordt gedeeld zoals u het verwachtte. Items die al over de vereiste machtigingen (of meer) beschikken, worden niet bijgewerkt.",
 					div2c: "De tour delen via ArcGIS Online",
-					div2d: "Wanneer u de applicatie deelt via ArcGIS Online, wordt u indien nodig gevraagd om eventuele afhankelijke bronnen (webmap, featureservice, decoratielaag) bij te werken die niet op dezelfde manier worden gedeeld. Als de Kaart tour openbaar is en een van uw bronnen wordt niet gedeeld met het publiek, worden gebruikers omgeleid naar de ArcGIS Online-aanmeldingspagina.",
+					div2d: "Ĳ_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_ä.",
 					div3t: "Featureservicebeveiliging",
 					div3a: "Als u een gehoste featureservice gebruikt die met de Kaarttour-builder is gemaakt, beheert de applicatie de beveiliging van de service voor u en behoudt u als enige de bewerkingsrechten, ook als u de service openbaar deelt.",
 					div3t2: "Voordat u uw tour deelt met uw publiek",

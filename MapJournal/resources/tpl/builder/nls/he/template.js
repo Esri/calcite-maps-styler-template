@@ -85,11 +85,12 @@
 				lblLink: "בקר באתר מפות סיפור של Esri.",
 				content1Div1: "ניתן לשלב מגוון סגנונות בעת בניית הסיפור שלך. ה- <strong>%LAYOUT_TITLE%</strong> בדרך כלל כולל את הטקסט שלך, וידאו ותמונות בזמן שהמפות שלך מתחלפות <strong>בתצוגה הראשית</strong>. עם זאת, ה- %TPL_NAME%  מאפשר לך להוסיף תמונות, וידאו ותרשימים גם בתוך התצוגה הראשית.",
 				content1Div2: "הוספת חלקים מאפשרת לך להתאים אישית את חויית הסיפור שלך. כאשר הקוראים גוללים את הטקסט בתוך ה%LAYOUT_TITLE% המפה בתצוגה הראשית יכולה להתמקד לנקודות מפתח, ומפות ותמונות יכולות להתחלף באופן אוטומטי כדי לתמוך במסר שלך.",
-				content2Div1: "זה המקום לשינוי מראה ה-%TPL_NAME%. כאן ניתן ללטש סכימות צבעים, פריסות, רוחב וגופנים.",
-				content2Div2: "אתה יכול גם להוסיף קישורי שיתוף לפייסבוק, טוויטר, ו- Bitly, כדי שקוראים יוכלו בקלות להפיץ את ה- %TPL_NAME% שלך לאחרים.",
+				content2Div1: "כן_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_ש.",
+				content2Div2: "כן_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_ש.",
 				content3Div1: "התוכן שלך מאורגן בחלקים. אתה יכול להגדיר חלקים רבים ככל שתרצה (חשוב עליהם כמו פרקים קטנים). המעבר בין הפרקים חשוב; בעזרת כלי זה באפשרותך לסדר מחדש או למחוק חלקים כרצונך.",
 				content4Div1: "מצאת שגיאה או רוצה לשנות את התוכן שלך? אל דאגה. חפש את סמל העריכה באפליקציה כדי לבצע שינויים בתוכן שלך. אתה יכול להשתמש ביכולות העריכה פעמים רבות בעת שאתה מפתח את ה-  %TPL_NAME% שלך!",
-				content5Div1: "%TPL_NAME% נשמר בחשבון ה-%PORTAL% והוא פרטי כברירת מחדל. אתה יכול להחליט לחלוק אותו עם הארגון שלך, או לפתוח אותו לעולם. אנחנו אפילו מספקים לך URL מקוצר, כך שתוכל לשתף אותו בצורה קלה יותר.",
+				content5Div1: "כן_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_ש.",
+				content5Div2: "כן_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_ש.",
 				content6Div1: "כותרת חלק דף הבית שלך היא גם כותרת החוברת; חשוב על חלק דף הבית שלך כעל העמוד הראשי של הסיפור שלך. כותרת חלק דף הבית שלך תוצג גם כאשר הקוראים ינווטו לחוברת.",
 				content6Div2: "ה%LAYOUT_TITLE% שלך לא חייב להכיל רק טקסט. שקול לכלול בתוכו גם וידאו ותמונות כדי להחיות את הסיפור ולגוון חלקי טקסט ארוכים."
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

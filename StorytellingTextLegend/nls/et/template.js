@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "Kaarti ei saa luua:",
         general:"Viga",
         timeout:"Palun vali alustamiseks teine sakk"
       },
-      loading:{
+      loading: {
         message: "Kaartide laadimine"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "LEGEND"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "d. MMMM yyyy",
         yearPattern: "yyyy",
         hourTimePattern: "H",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "h:mm:ss:SSS"
       }
     }
-})
+  })
 );

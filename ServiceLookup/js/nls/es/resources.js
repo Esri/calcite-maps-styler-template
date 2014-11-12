@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "No se puede crear el mapa",
             mouseToolTip: "Haz clic en el mapa para comprobar el servicio"
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "La capa no está en el mapa web",
             fieldNotFound: "Campo no encontrado",
-            popupNotSet: "La ventana emergente no se ha habilitado para esta capa"
+            popupNotSet: "La ventana emergente no se ha habilitado para esta capa",
+            noLayersSet: "á_No layers defined in the config, the search box will not work_Ó"
         },
         page: {
             title: "Búsqueda de información",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "Mapa base"
         }
-    })
 
+    })
 );

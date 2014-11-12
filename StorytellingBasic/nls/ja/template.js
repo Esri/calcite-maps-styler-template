@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"エラー"
     },
 	legToggle:{
-	  up:"マップの凡例 ▲",
-	  down:"マップの凡例 ▼"
+	  up:"須_MAP LEGEND â–²_鷗",
+	  down:"須_MAP LEGEND â–¼_鷗"
 	},
 	loading:{
 		message: "マップの読み込み"

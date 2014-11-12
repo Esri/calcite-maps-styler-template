@@ -85,11 +85,12 @@
 				lblLink: "Visite o site da web de Mapas Históricos da Esri.",
 				content1Div1: "Você pode integrar uma variedade de estilos na construção da sua história. O <strong>% LAYOUT_TITLE% </ strong> normalmente tem o seu texto, imagens e vídeo enquanto seus mapas tendem a ir para o<strong> Nível Principal</ strong>. No entanto, o% TPL_NAME% também permite a você apresentar imagens, gráficos e vídeos dentro do nível principal.",
 				content1Div2: "Adicionar seções permite a você personalizar verdadeiramente a sua experiência de contar histórias. Conforme os leitores rolam pelo seu texto %LAYOUT_TITLE%, um mapa no Nível Principal pode mover ou ampliar nos pontos-chaves ou novos mapas e imagens podem alternar automaticamente para suporte da sua mensagem.",
-				content2Div1: "Aqui é onde você pode ajustar o visual do seu%TPL_NAME%. Os esquemas de cores, layouts, larguras e fontes são todos refinados aqui.",
-				content2Div2: "Você também pode adicionar links de compartilhamento para Facebook, Twitter e Bitly, assim os leitores podem facilmente espalhar seu%TPL_NAME% para todos.",
+				content2Div1: "ã_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_Ç.",
+				content2Div2: "ã_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_Ç.",
 				content3Div1: "Seu conteúdo está organizado em seções. Você pode ter várias seções que desejar (pense nelas como mini capítulos). O fluxo destes capítulos é importante; dentro de Organizar você pode reordenar ou excluir seções como desejar.",
 				content4Div1: "Encontrou um erro ou deseja alterar o seu material? Não se preocupe. Procure o ícone de edição em todo o aplicativo para fazer alterações no seu conteúdo. Você utilizará as funções de edição várias vezes conforme desenvolver o seu %TPL_NAME%!",
-				content5Div1: "Seu%TPL_NAME% é salvo na sua conta %PORTAL%, e privado por padrão. Você pode decidir compartilhá-lo com sua organização, ou abrí-lo para o mundo. Até lhe oferecemos uma URL mais curta, para que você possa compartilhá-la facilmente.",
+				content5Div1: "ã_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_Ç.",
+				content5Div2: "ã_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_Ç.",
 				content6Div1: "O título da sua seção Inicial é também o título do seu diário; pense na sua seção Inicial como a \'página da capa\' para a sua história. O título da Seção Inicial permanecerá visível quando os leitores navegarem no Diário.",
 				content6Div2: "Seu %LAYOUT_TITLE% Não tem que ser apenas texto, considere incluir fotos e vídeos para ajudar a trazer a história viva e quebrar longos trechos do texto!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

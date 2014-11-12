@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "إضافة",
@@ -28,8 +28,8 @@
 				buttonSettings: "الإعدادات",
 				buttonHelp: "تعليمات",
 				buttonPreview: "عرض مباشر",
-				tooltipFirstSave: "تكون هذه الوظيفة غير متاحة حتى يتم حفظ التطبيق",
-				tooltipNotShared: "تكون هذه الوظيفة غير متاحة حتى تتم مشاركة التطبيق",
+				tooltipFirstSave: "بيت_This isn't available until you save_لاحقة.",
+				tooltipNotShared: "بيت_This isn't available until you share_لاحقة.",
 				noPendingChange: "لا يوجد تغيير معلق",
 				unSavedChangePlural: "تغييرات معلقة",
 				closeWithPendingChange: "هل أنت متأكد من تأكيد هذا الإجراء؟ سيتم فقدان التغييرات.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "خطأ في حفظ التطبيق",
 				err1Div1: "يتعذر حفظ التطبيق نظرًا لأنك بالفعل لديك عنصر أخر بنفس الاسم (راجع <a class='linkagolroot' target='_blank'>مجلد المحتوى</a>).",
-				err1Div2: "الرجاء تعديل عنوان قسم الصفحة الرئيسية وحفظ التطبيق.",
-				btnOk: "تحرير عنوان قسم الصفحة الرئيسية"
+				err1Div2: "بيت_Please modify the title of your application and then save it_لاحقة.",
+				btnOk: "بيت_Edit the application title_لاحقة"
 			},
 			share: {
 				firstSaveTitle: "تم حفظ التطبيق بنجاح",
@@ -66,7 +66,7 @@
 				shareHeader2: "يمكن الوصول إلى التطبيق من قبل أعضاء المؤسسة (يتطلب تسجيل الدخول).",
 				shareLinkCopy: "نسخ",
 				shareLinkCopied: "تم النسخ",
-				shareQ0: "كيف أقوم بتضمين التطبيق في موقع إلكتروني؟",
+				shareQ0: "بيت_How do I embed the application in a web page_لاحقة?",
 				shareQ1Opt1: "كيف يمكن الاحتفاظ بخصوصية التطبيق؟",
 				shareQ1Opt2: "كيف يمكن الاحتفاظ بخصوصية التطبيق أو مشاركته مع الجميع؟",
 				shareA1: "استخدام %SHAREIMG% على <a href='%LINK1%' target='_blank'>صفحة عنصر التطبيق</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "انقر فوق الرابط",
 				logoSocialExplain: "تخصيص رابط العنوان.",
 				logoSocialText: "النص",
-				logoSocialLink: "رابط"
+				logoSocialLink: "رابط",
+				lblSmallHeader: "بيت_Use compact header (no subtitle)_لاحقة"
+			},
+			header: {
+				title: "بيت_Edit the title of your %TPL_NAME%_لاحقة",
+				subtitle: "بيت_Edit the subtitle of your %TPL_NAME%_لاحقة"
 			}
 		}
 	})
-
 );

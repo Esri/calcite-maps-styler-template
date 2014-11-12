@@ -85,11 +85,12 @@
 				lblLink: "Vizitaţi site-ul web Esri cu hărţi informative.",
 				content1Div1: "La alcătuirea unei relatări, puteţi integra o multitudine de stiluri. <strong>%LAYOUT_TITLE%</strong> conţine de regulă text, imagini şi videoclipuri, în timp ce hărţile tind să se afle în <strong>Nivelul principal</strong>. Cu toate acestea, %TPL_NAME% vă permite să utilizaţi şi imagini de obiecte spaţiale, diagrame şi videoclipuri în nivelul principal.",
 				content1Div2: "Adăugarea de secţiuni vă permite să vă particularizaţi cu adevărat experienţa de relatare. Pe măsură ce cititorii derulează textul %LAYOUT_TITLE%, o hartă din Nivelul principal poate fi panoramată sau transfocată în punctele cheie sau noi hărţi şi imagini pot fi comutate automat în sprijinul mesajului.",
-				content2Div1: "Aici puteţi ajusta modul în care se afişează %TPL_NAME%. Aici puteţi rafina scheme de culori, configuraţii, dimensiuni şi fonturi.",
-				content2Div2: "De asemenea, puteţi adăuga linkuri către Facebook, Twitter şi Bitly, astfel încât cititorii să poată răspândi uşor %TPL_NAME% către alţii.",
+				content2Div1: "Ă_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_ș.",
+				content2Div2: "Ă_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_ș.",
 				content3Div1: "Conţinutul dvs. este organizat în secţiuni. Puteţi avea oricâte secţiuni doriţi (gândiţi-vă la acestea ca la nişte mini-capitole). Succesiunea acestor capitole este importantă; în Organizare puteţi reordona sau şterge secţiuni după cum doriţi.",
 				content4Div1: "Aţi găsit o greşeală sau doriţi să modificaţi materialul? Nicio problemă. Căutaţi în aplicaţie pictograma de editare pentru modifica conţinutul. Pe măsură ce dezvoltaţi %TPL_NAME%, veţi utiliza de multe ori funcţiile de editare!",
-				content5Div1: "%TPL_NAME% este salvat în contul dvs. %PORTAL% şi este privat în mod implicit. Dvs. puteţi decide să partajaţi relatarea în cadrul organizaţiei sau să o deschideţi publicului larg. Vă oferim chiar şi o adresă URL stabilă, scurtată, pe care să o puteţi partaja mai uşor.",
+				content5Div1: "Ă_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_ș.",
+				content5Div2: "Ă_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_ș.",
 				content6Div1: "Titlul secţiunii principale este şi titlul jurnalului; consideraţi secţiunea principală ca fiind o „copertă” pentru informaţiile pe care le transmiteţi. Titlul secţiunii principale va rămâne vizibil în timpul navigării cititorilor prin Jurnal.",
 				content6Div2: "%LAYOUT_TITLE% nu este obligatoriu să fie numai text. Puteţi include şi fotografii şi clipuri video pentru a ajuta la reflectarea informaţiilor şi întreruperea secţiunilor lungi de text!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

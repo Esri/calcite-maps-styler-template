@@ -1,5 +1,5 @@
 ﻿define(
-  ({
+   ({
     viewer: {
       legend_title: "מקרא",
       content_title: "עורך",
@@ -9,5 +9,4 @@
       }
     }
   })
-
 );

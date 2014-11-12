@@ -85,11 +85,12 @@
 				lblLink: "Visitare il sito Web delle story map Esri.",
 				content1Div1: "Quando si crea la storia, è possibile integrare diversi stili. Lo stile di <strong>%LAYOUT_TITLE%</strong> è quello utilizzato in genere per testo, immagini e video per le mappe nella <strong>visualizzazione principale</strong>. %TPL_NAME% consente inoltre di inserire nella visualizzazione principale anche immagini, grafici e video.",
 				content1Div2: "Per personalizzare l\'esperienza di storytelling, è possibile aggiungere sezioni. In tal modo quando i lettori scorrono il testo di %LAYOUT_TITLE%, una mappa nella visualizzazione principale viene ridotta/ingrandita per indicare i punti chiave oppure vengono attivate/disattivate automaticamente nuove mappe e immagini a supporto del messaggio.",
-				content2Div1: "In questa finestra è possibile modificare l\'aspetto di %TPL_NAME% ridefinendo combinazioni colori, layout, larghezze e caratteri.",
-				content2Div2: "È anche possibile condividere collegamenti in Facebook, Twitter e Bitly per consentire ai lettori di contribuire alla diffusione di %TPL_NAME%.",
+				content2Div1: "é_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_È.",
+				content2Div2: "é_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_È.",
 				content3Div1: "I contenuti sono organizzati in sezioni, paragonabili a minicapitoli. È possibile disporre del numero di sezioni desiderato. Il flusso delle sezioni è importante. In Organizza è possibile riordinarle o eliminarle secondo necessità.",
 				content4Div1: "È stato individuato un errore o si desidera modificare il materiale? Nessun problema. Grazie all\'icona di modifica presente nell\'applicazione, è possibile apportare modifiche ai contenuti. Durante lo sviluppo di %TPL_NAME% le funzioni di modifica verranno utilizzate spessissimo.",
-				content5Div1: "%TPL_NAME% viene salvato nell\'account %PORTAL% ed è privato per impostazione predefinita. È possibile decidere di condividerlo con l\'organizzazione o con tutti. Viene inoltre fornito un URL breve per facilitarne la condivisione.",
+				content5Div1: "é_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_È.",
+				content5Div2: "é_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_È.",
 				content6Div1: "Il titolo della prima sezione è anche il titolo del diario. La prima sezione è paragonabile alla \"copertina\" della propria storia. Il titolo della prima sezione resta visibile quando i lettori si spostano nel diario.",
 				content6Div2: "%LAYOUT_TITLE% non deve comprendere solo testo. Valutare l\'inserimento di foto e video per rendere più interessante la storia e suddividere le sezioni di testo particolarmente lunghe."
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

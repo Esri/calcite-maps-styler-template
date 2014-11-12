@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "Aprašas"
     },
-    errors:{
+    errors: {
       createMap: "Žemėlapio sukurti nepavyko",
       general: "Klaida"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "Ekrano vardas",
     "signIn": "Prisijunkite",
@@ -34,31 +34,31 @@
     label: "Twitter pranešimai",
     title: "Twitter pranešimai",
     error: "Nieko nerasta, bandykite kitą paieškos žodį ar vietą",
-		search:{
+		search: {
 			label: "Ieškoti",
 			title: "Ieškoti Twitter",
 			placeholder: 'Raktažodžiai paieškai'
 		},
-		clear:{
+		clear: {
 			label: "Valyti",
 			title: "Išvalyti žemėlapį"
 		},
-		share:{
+		share: {
 			label: "Bendrinti žemėlapį:",
 			email:{
 				title: "El. paštas",
 				label: "El. paštas"
 			},
-			twitter:{
+			twitter: {
 				title: "Twitter",
 				label: "Twitter"
 			},
-			facebook:{
+			facebook: {
 				title: "Facebook",
 				label: "Facebook"
 			}
 		}
 	 }
    }
- })
+})
 );

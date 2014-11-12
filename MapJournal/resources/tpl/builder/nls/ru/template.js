@@ -85,11 +85,12 @@
 				lblLink: "Посетите веб-сайт Esri Story Maps.",
 				content1Div1: "В процессе создания вашей истории вы можете интегрировать множество стилей. Компоновка <strong>%LAYOUT_TITLE%</strong> обычно содержит текст, изображения и видео, а для карт применяется <strong>Основная площадка</strong>. Однако %TPL_NAME% позволяет встраивать также изображения, таблицы и видео в основную площадку.",
 				content1Div2: "Добавление разделов позволяет чётко настроить представление вашей истории. Читатели просматривают текст  %LAYOUT_TITLE%, карту на основной площадке можно масштабировать и перемещать, новые карты и изображения автоматически переключаются для поддержки вашего сообщения.",
-				content2Div1: "Здесь вы можете указать, как должен выглядеть ваш %TPL_NAME%. Цветовые схемы, компоновки, отступы и шрифты настраиваются здесь.",
-				content2Div2: "Вы также можете добавить ссылки на Facebook, Twitter и Bitly, с помощью которых ваш %TPL_NAME% станет известен другим.",
+				content2Div1: "Ж_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_Я.",
+				content2Div2: "Ж_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_Я.",
 				content3Div1: "Ваши ресурсы организованны по разделам. Вы можете создавать любое количество разделов (глав истории). Последовательность изложения этих глав не менее важна; с помощью инструмента Организовать вы можете задать любой порядок следования и удалить ненужные главы.",
 				content4Div1: "Нашли ошибку или хотите внести изменения? Нет проблем! Чтобы изменить данные, нажмите значок Изменить в вашем приложении. В процессе создания вашего%TPL_NAME% функции редактирования будут применяться очень часто.",
-				content5Div1: "%TPL_NAME% сохранен в вашей учетной записи %PORTAL%, частной по умолчанию. Вы можете открыть общий доступ для вашей организации или для всего мира. Мы создаём для вас короткий постоянный URL, чтобы вам было проще поделиться историей.",
+				content5Div1: "Ж_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_Я.",
+				content5Div2: "Ж_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_Я.",
 				content6Div1: "Заголовок вашего Главного раздела также является заголовком журнала; главный раздел можно сравнить с обложкой вашей истории. Заголовок Главного раздела виден с любой страницы журнала.",
 				content6Div2: "В вашем %LAYOUT_TITLE% может быть не только текст, но и фотографии и видео, чтобы сделать историю более красочной и оживить длинные тексты разделов."
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

@@ -1,5 +1,5 @@
 ﻿define(
-({
+	 ({
 		viewer: {
 			loading: {
 				step1: "WCZYTYWANIE APLIKACJI",
@@ -68,7 +68,7 @@
 				dataPicError1: "Mapa wycieczki wymaga obecnie, aby adres URL obrazu kończył się jednym z następujących rozszerzeń: .jp(e)g, .png, .gif lub .bmp.",
 				dataPicError2: "Wymaganie to nie dotyczy opublikowanej już mapy wycieczki. W celu korzystania z interaktywnego kreatora należy jednak rozwiązać najpierw problem z adresami URL, wykonując jedną z dwóch operacji:",
 				dataPicError3: "Edytuj adresy URL",
-				dataPicError4: "Spowoduje to dodanie parametru <i>#isImage</i> do końca nieobsługiwanego adresu URL obrazu. Większość serwerów obsługuje parametry adresów URL. Po wykonaniu tej czynności należy jednak sprawdzić, czy zaktualizowane adresy URL obrazów są funkcjonalne poprzez nawigację po punktach. Jeżeli każdy obraz zostanie wczytany, można zapisać mapę wycieczki. Jeżeli <b>obrazy nie działają, nie zapisuj mapy wycieczki</b>. W takim przypadku uruchom ponownie kreator i wykonaj drugą operację.",
+				dataPicError4: "ł_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_ą.",
 				dataPicError5: "Ogranicz wycieczkę do obrazów",
 				dataPicError6: "Ta opcja spowoduje traktowanie wszystkich adresów URL jako adresów obrazów. Nie będzie można wtedy jednak dodawać plików wideo przy użyciu interaktywnego kreatora. Aby dodać w przyszłości pliki wideo, tę opcję można zmienić.",
 				dataPicError7: "Mapa wycieczki została ograniczona do obrazów. Nie można stosować plików wideo. Jeżeli zdecydujesz się usunąć to ograniczenie, sprawdź przed zapisaniem mapy wycieczki, czy obrazy nadal wczytują się prawidłowo. W razie potrzeby będzie można później zmienić to ograniczenie.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Obraz",
 				addLabelThumbUrl: "Miniatura",
 				addTextPlaceholderUrl: "Wprowadź adres URL obrazu",
-				addTextPlaceholderUrl2: "Wprowadź adres URL strony w serwisie Youtube",
+				addTextPlaceholderUrl2: "ł_Enter a YouTube page URL_ą",
 				addTextPlaceholderUrl3: "Wprowadź adres URL strony w serwisie Vimeo",
 				addTextPlaceholderUrl4: "Wprowadź adres URL umożliwiający osadzenie materiału wideo",
 				addLabelVideo: "Wideo",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Resetuj wybrane pola",
 				settingsExtentExplain: "Ustaw początkowy zasięg Mapy wycieczki za pomocą poniższej interaktywnej mapy.",
 				settingsExtentExplainBottom: "Zdefiniowany zasięg zostanie użyty do modyfikacji początkowego zasięgu mapy internetowej. Prosimy pamiętać, że zasięg ten nie jest używany, jeśli nie obejmuje pierwszego punktu wycieczki. W takim przypadku wycieczka zostanie rozpoczęta od punktu pierwszego.",
-				settingsExtentDateLineError: "Zasięg nie może przebiegać przez południk 180°",
+				settingsExtentDateLineError: "ł_The extent cannot be across the meridian of 180Â° longitude_ą",
 				settingsExtentDateLineError2: "Błąd w obliczaniu zasięgu",
 				settingsExtentDrawBtn: "Określ nowy zasięg",
 				settingsExtentModifyBtn: "Zmień zasięg",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Zastosuj"
 			},
 			headerJS:{
-				editMe: "Zmodyfikuj mnie!",
+				editMe: "ł_Edit me_ą!",
 				templateTitle: "Ustaw tytuł szablonu",
 				templateSubtitle: "Ustaw podtytuł szablonu"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Importowanie zakończyło się pomyślnie. Trwa wczytywanie"
 			},
 			viewYoutube: {
-				title: "Import z serwisu YouTube",
+				title: "ł_YouTube import_ą",
 				header: "Wprowadź nazwę użytkownika serwisu YouTube, aby znaleźć filmy wideo udostępnione publicznie.",
-				pageInputLbl: "Wpisz nazwę użytkownika serwisu Youtube",
+				pageInputLbl: "ł_Enter a YouTube user name_ą",
 				lookupMsgError: "Nie odnaleziono użytkownika",
-				howToFind: "Jak znaleźć nazwę użytkownika serwisu Youtube?",
+				howToFind: "ł_How to find a YouTube user name_ą",
 				howToFind2: "Nazwa użytkownika jest wyświetlana pod każdym filmem",
 				found: "Znaleziono",
 				noData: "Nie znaleziono żadnych filmów publicznych"
@@ -442,12 +442,12 @@
 					div172: "Jeżeli pola obrazu i załącznika są dostępne, będą zawsze używane, a zapytania dotyczące załączników w usłudze obiektowej nie będą wysyłane.",
 					div173: "Przykładowe pliki CSV i shape można pobrać z",
 					div18: "Tworzenie hostowanej usługi obiektowej z pliku CSV lub shape",
-					div19: "Gdy tworzysz hostowaną usługę obiektową z pliku CSV lub shape, obsługa załączników nie jest domyślnie włączona. Aby ją włączyć, otwórz stronę szczegółów usługi obiektowej, kliknij małą strzałkę w sekcji warstw, co spowoduje wyświetlenie odpowiedniej opcji. Wówczas mapa wycieczki nadal będzie używać obrazów i miniatury, do których utworzono odnośniki za pomocą atrybutów. Ewentualnie, jeśli chcesz wczytać obrazy jako załączniki do usługi obiektowej, można użyć w tym celu dwóch przycisków na panelu obrazów (\"Zmień obraz\" i \"Zmień miniaturę\").",
-					div20: "Obsługiwane materiały wideo i formaty obrazów",
-					div21: "Obsługiwane formaty obrazów to: <b>.jpg, .jpeg, .png, .gif i .bmp</b>. Jeżeli pliki multimedialne nie będą mieć takiego rozszerzenia, mapa wycieczki będzie traktować je jako pliki wideo, z wyjątkiem sytuacji, w których używane są usługi obiektowe (patrz poniżej).",
+					div19: "ł_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_ą.",
+					div20: "ł_Supported picture formats and videos_ą",
+					div21: "ł_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_ą.",
 					div22: "Szablon mapy wycieczki nie zawiera odtwarzacza wideo, dlatego należy użyć zewnętrznego odtwarzacza wideo z ulubionej usługi hostowania plików wideo (znajdź opcję osadzania wideo i skopiuj adres URL z podanego kodu). Jeżeli chcesz hostować wideo samodzielnie, możesz utworzyć stronę HTML zawierającą odtwarzacz wideo taki jak <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "Interaktywny kreator nie udostępnia okna dialogowego do dodawania wideo podczas korzystania z usług obiektowych z załącznikami. Można jednak w tym celu edytować dane poza interaktywnym kreatorem. Pliki multimedialne będą traktowane jak wideo, jeżeli w przeglądarce map ArcGIS.com zmodyfikujesz pola obrazów tak, by wskazywały zewnętrzne wideo i dodasz specjalny parametr na końcu adresu URL (#isVideo).",
-					div24: "Nadal wymagane będą dwa prawidłowe załączniki obrazów — w przeciwnym razie punkt nie będzie używany. Bez pól obrazu i miniatury nie można korzystać z wideo, kiedy w usłudze obiektowej używane są załączniki."
+					div24: "ł_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_ą."
 				},
 				tab3: {
 					title: "Dostosowanie",
@@ -487,7 +487,7 @@
 					div2a: "Udostępnianie wycieczki przy pomocy kreatora",
 					div2b: "Przycisk UDOSTĘPNIJ zaktualizuje aplikację i elementy mapy internetowej. Jeśli dane wycieczki przechowywane są w elemencie Usługi obiektowej, zostaną one również zaktualizowane. Jeśli dodane zostały inne warstwy przy pomocy przeglądarki map ArcGIS.com, nie zostaną one zaktualizowane. Może to sprawić, że wycieczka nie będzie udostępniana w oczekiwany sposób. Nie będą aktualizowane elementy, które posiadają już wymagane (lub wyższe) uprawnienia.",
 					div2c: "Udostępnianie wycieczki w serwisie ArcGIS Online",
-					div2d: "Podczas udostępniania aplikacji za pośrednictwem serwisu ArcGIS Online, w razie potrzeby, zostaniesz poproszony o uaktualnienie zasobów zależnych (mapy internetowej, usługi obiektowej, warstwy dekoracyjnej), które nie są udostępnione w ten sam sposób. Jeśli mapa wycieczki jest publicznie dostępna, ale jeden z zasobów nie został udostępniony wszystkim odbiorcom, użytkownicy zostaną przekierowani do strony logowania platformy Online ArcGIS.",
+					div2d: "ł_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_ą.",
 					div3t: "Zabezpieczenia Usług obiektowych",
 					div3a: "Jeśli korzystasz z hostowanej usługi obiektowej utworzonej za pomocą kreatora mapy wycieczki, aplikacja zarządza bezpieczeństwem usługi, dlatego pozostajesz jedyną osobą, która ma uprawnienia do edycji, nawet jeśli udostępnisz usługę publicznie.",
 					div3t2: "Zanim podzielisz się swoją wycieczką z odbiorcami",

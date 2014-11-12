@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "לא ניתן ליצור מפה",
             mouseToolTip: "הקש על המפה כדי לבדוק שירות"
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "השכבה לא נימצאת ב webmap",
             fieldNotFound: "שדה לא נמצא",
-            popupNotSet: "חלון קופץ לא אפשרי לשכבה זו."
+            popupNotSet: "חלון קופץ לא אפשרי לשכבה זו.",
+            noLayersSet: "כן_No layers defined in the config, the search box will not work_ש"
         },
         page: {
             title: "בדיקת מידע",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "מפת בסיס"
         }
-    })
 
+    })
 );

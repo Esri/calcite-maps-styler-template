@@ -1,5 +1,5 @@
 ﻿define(
-({
+   ({
   app:{
    title:"Žemėlapių karuselė",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.

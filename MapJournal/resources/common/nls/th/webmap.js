@@ -10,6 +10,8 @@
 				lblOverview: "ภาพรวมของแผนที่",
 				lblLegend: "สัญลักษณ์",
 				loadingTitle: "กำลังโหลดหัวเรื่อง",
+				entry: "ก้_Entry_ษฺ",
+				entries: "ก้_Entries_ษฺ",
 				section: "ส่วน",
 				sections: "ส่วน",
 				and: "และ",
@@ -22,12 +24,14 @@
 				newMap: "เลือกเว็บแมพใหม่",
 				webmapDefault: "เว็บแมพเริ่มต้น",
 				customCfg: "ปรับการตั้งค่า",
-				tooltipLocation: "กำหนดสถานแผนที่ที่จะนำมาใช้เมื่อผู้อ่านของคุณนำทางไปยังส่วนนี้",
+				tooltipLocation: "ก้_Define the location that this map will display_ษฺ.",
 				tooltipContent: "กำหนดระยะการมองเห็นชั้นข้อมูล",
-				tooltipPopup: "เลือกป๊อปอัพเพื่อแสดงเมื่อคุณนำทางไปยังส่วนนี้",
-				tooltipOverview: "แสดงแผนที่ภาพรวมขนาดเล็กพร้อมๆ กับแผนที่หลัก",
+				tooltipPopup: "ก้_Choose a popup that will be opened when this map is displayed_ษฺ.",
+				tooltipOverview: "ก้_Display a small overview map along with the main map_ษฺ.",
 				tooltipLegend: "เลือกแสดงสัญลักษณ์แผนที่บนแผนที่ ซึ่งจะเป็นประโยชน์อย่างมากในกรณีที่แผนที่มีหลายชั้นข้อมูลและหลายสัญลักษณ์",
-				mapCfgInvite: "ใช้การควบคุมการตั้งค่าแผนที่ของคุณ"
+				mapCfgInvite: "ใช้การควบคุมการตั้งค่าแผนที่ของคุณ",
+				lblLocationAlt: "ก้_Inherited from the first map_ษฺ",
+				tooltipLocationAlt: "ก้_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_ษฺ."
 			},
 			configure: {
 				btnReset: "รีเซ็ต",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

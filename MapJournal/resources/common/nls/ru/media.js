@@ -62,7 +62,7 @@
 				url: "URL видео на Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Map Journal не может проигрывать необработанное видео (например, формата avi, mpeg), но он может проигрывать размещенные видео-файлы, которые содержат встроенные видео-плейеры (YouTube или Vimeo).",
+				explain1: "Ж_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_Я.",
 				explain2: "Большинство сервисов для размещения видео-роликов позволяют использовать эту функцию. Вам необходимо найти соответствующую опцию, скопировать код и использовать в %WEBPAGE%.",
 				explain3: "Или вы можете разместить видео самостоятельно, затем создать страницу HTML, которая использует видео-плейер, например %EXAMPLE% и разместить ссылку на эту страницу на %WEBPAGE%.",
 				webpage: "Функция веб-страницы"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(не будет урезаться)",
 				lblPosition3Explain2: "(ширина всегда будет соответствовать панели)",
 				lblPosition4Explain: "(может исказиться)",
-				unloadLbl: "Выгрузить, когда читатель перейдет в другой раздел",
-				unloadHelp: "Если на веб-странице есть аудио или видео медиа, храните эту опцию включенной, чтобы остановить проигрывание ресурса при переходе читателя в другой раздел. Отключите ее, например, чтобы саундтрек проигрывался, пока читатель перемещается по журналу.<br />Если веб страница является приложением, отключите эту опцию, чтобы приложение не перезагружалось при возврате читателя в этот раздел."
+				unloadLbl: "Ж_Unload when reader navigates away_Я",
+				unloadHelp: "Ж_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_Я."
 			},
 			editorActionGeocode: {
 				lblTitle: "Найдите адрес или место",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

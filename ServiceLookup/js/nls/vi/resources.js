@@ -1,27 +1,28 @@
 ﻿define(
-	({
+     ({
         map: {
-            error: "á»‡_Unable to create map_á»",
-            mouseToolTip: "á»‡_Click on the map to check for service_á»"
+            error: "Không thể tạo bản đồ",
+            mouseToolTip: "Bấm vào bản đồ để kiểm tra dịch vụ"
         },
         geocoder: {
-            defaultText: "á»‡_Enter an address or point of interest_á»"
+            defaultText: "Nhập địa chỉ hoặc điểm quan tâm"
         },
         error: {
-            layerNotFound: "á»‡_Layer is not in the webmap_á»",
-            fieldNotFound: "á»‡_Field not found_á»",
-            popupNotSet: "á»‡_Popup not enabled for this layer_á»"
+            layerNotFound: "Lớp không có trong bản đồ web",
+            fieldNotFound: "Không tìm thấy trường",
+            popupNotSet: "Không kích hoạt cửa sổ pop-up cho lớp này",
+            noLayersSet: "á»‡_No layers defined in the config, the search box will not work_á»"
         },
         page: {
-            title: "á»‡_Information Lookup_á»",
+            title: "Tìm kiếm thông tin",
         },
 
         splashscreen: {
-            buttonText: "á»‡_OK_á»",
+            buttonText: "OK",
         },
         ui:{
-            basemapButton: "á»‡_Basemap_á»"
+            basemapButton: "Bản đồ nền"
         }
-    })
 
+    })
 );

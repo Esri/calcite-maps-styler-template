@@ -10,6 +10,8 @@
 				lblOverview: "Обзорная карта",
 				lblLegend: "Легенда",
 				loadingTitle: "Название загрузки",
+				entry: "Ж_Entry_Я",
+				entries: "Ж_Entries_Я",
 				section: "Раздел",
 				sections: "Разделы",
 				and: "и",
@@ -22,12 +24,14 @@
 				newMap: "Вновь выбранная веб-карта",
 				webmapDefault: "Веб-карта по умолчанию",
 				customCfg: "Пользовательская конфигурация",
-				tooltipLocation: "Определите местоположение на карте, которое будет открыто при обращении к данному разделу.",
+				tooltipLocation: "Ж_Define the location that this map will display_Я.",
 				tooltipContent: "Определите видимые слои.",
-				tooltipPopup: "Выберите всплывающее окно, которое будет открываться при переходе в данный раздел.",
-				tooltipOverview: "Отобразите маленькую обзорную карту вместе с основной картой",
+				tooltipPopup: "Ж_Choose a popup that will be opened when this map is displayed_Я.",
+				tooltipOverview: "Ж_Display a small overview map along with the main map_Я.",
 				tooltipLegend: "Отобразите легенду карты на самой карте, что пригодится, если на карте много слоев и символов.",
-				mapCfgInvite: "Используйте эти элементы управления для настройки вашей карты"
+				mapCfgInvite: "Используйте эти элементы управления для настройки вашей карты",
+				lblLocationAlt: "Ж_Inherited from the first map_Я",
+				tooltipLocationAlt: "Ж_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_Я."
 			},
 			configure: {
 				btnReset: "Сбросить",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

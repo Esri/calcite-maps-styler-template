@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"오류"
     },
 	legToggle:{
-	  up:"맵 범례 ▲",
-	  down:"맵 범례 ▼"
+	  up:"한_MAP LEGEND â–²_빠",
+	  down:"한_MAP LEGEND â–¼_빠"
 	},
 	loading:{
 		message: "맵 로드"

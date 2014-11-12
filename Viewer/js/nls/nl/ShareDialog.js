@@ -1,19 +1,18 @@
 ﻿define(
      ({
-        "widgets": {
-            "ShareDialog": {
-                "title": "Delen",
-                "heading": "Deze kaart delen",
-                "url": "Kaartkoppeling",
-                "embed": "Kaart inbedden",
-                "extent": "Huidige kaartextent delen",
-                "size": "Grootte (breedte/hoogte):",
-                "facebookTooltip": "Facebook",
-                "twitterTooltip": "Twitter",
-                "gplusTooltip": "Google Plus",
-                "emailTooltip": "E-mail"
+        widgets: {
+            ShareDialog: {
+                title: "Ĳ_Share_ä",
+                heading: "Ĳ_Share this map_ä",
+                url: "Ĳ_Map Link_ä",
+                embed: "Ĳ_Embed Map_ä",
+                extent: "Ĳ_Share current map extent_ä",
+                size: "Ĳ_Size (width/height)_ä:",
+                facebookTooltip: "Ĳ_Facebook_ä",
+                twitterTooltip: "Ĳ_Twitter_ä",
+                gplusTooltip: "Ĳ_Google Plus_ä",
+                emailTooltip: "Ĳ_Email_ä"
             }
         }
     })
-
 );

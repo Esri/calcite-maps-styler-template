@@ -70,11 +70,10 @@
 				copy: "Kopírovat",
 				copied: "Zkopírováno",
 				open: "Otevřít",
-				embed: "Vložit do webové stránky",
-				embedExplain: "Chcete-li deník vložit do webových stránek, použijte následující kód HTML.",
+				embed: "Ř_Embed in web page_ů",
+				embedExplain: "Ř_Use the following HTML code to embed the journal in a web page_ů.",
 				size: "Velikost (šířka/výška):"
 			}
         }
     })
-
 );

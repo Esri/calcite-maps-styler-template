@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "לא ניתן ליצור מפה:",
         general:"שגיאה",
         timeout:"אנא בחר לשונית אחרת כדי להתחיל"
       },
-      loading:{
+      loading: {
         message: "טוען מפות"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "מקרא"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "d, MMMM ,yyyy",
         yearPattern: "yyyy",
         hourTimePattern: "h a",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "h:mm:ss:SSS a"
       }
     }
-})
+  })
 );

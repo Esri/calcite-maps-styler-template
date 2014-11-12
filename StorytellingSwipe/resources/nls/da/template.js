@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "INDLÆSER APPLIKATION",
 				step2: "INDLÆSER DATA",
 				step3: "STARTER",
 				fail: "Beklager, Swipe-indlæsning mislykkedes",
-				loadBuilder: "SKIFTER TIL BUILDER-TILSTAND",
+				loadBuilder: "SKIFTER TIL BUILDER-TILSTAND",				
 				redirectSignIn: "OMDIRIGERER TIL LOG IND-SIDE",
 				redirectSignIn2: "(du omdirigeres hertil efter login)",
 				failButton: "Prøv igen"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

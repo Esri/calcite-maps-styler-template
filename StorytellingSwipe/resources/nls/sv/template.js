@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "LÄSER IN PROGRAM",
 				step2: "LÄSER IN DATA",
 				step3: "INITIERAR",
 				fail: "Det gick inte att hämta svep",
-				loadBuilder: "VÄXLAR TILL BYGGLÄGET",
+				loadBuilder: "VÄXLAR TILL BYGGLÄGET",				
 				redirectSignIn: "OMDIRIGERAR TILL INLOGGNINGSSIDAN",
 				redirectSignIn2: "(du omdirigeras hit efter inloggning)",
 				failButton: "Försök igen"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

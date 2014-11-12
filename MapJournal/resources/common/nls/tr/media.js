@@ -62,7 +62,7 @@
 				url: "Bir Vimeo videosu URL\'si"
 			},
 			videoSelectorOther: {
-				explain1: "Harita Bülteni ham videoları (avi, mpeg gibi) oynatamaz ancak dahili oynatıcıları  olan (YouTube ya da Vimeo gibi) video dosyalarını oynatabilir.",
+				explain1: "ı_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_İ.",
 				explain2: "Çoğu çevrimiçi video barındırma hizmeti bu özelliği sunar, videoyu gömmek için geçerli seçeneği bulmalı, verilen kodu kopyalamalı ve %WEBPAGE% kullanmalısınız.",
 				explain3: "Alternatif olarak videoyu kendiniz barındırmak istiyorsanız, %EXAMPLE% gibi bir video oynatıcı kullanan bir HTML sayfası oluşturabilir, sayfayı barındırabilir ve ayrıca %WEBPAGE% kullanabilirsiniz.",
 				webpage: "Web sayfası özelliği"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(kırpılmaz)",
 				lblPosition3Explain2: "(genişlik her zaman panele sığacaktır)",
 				lblPosition4Explain: "(şekil değiştirebilir)",
-				unloadLbl: "Okuyucu farklı bir bölüme gittiğinde yüklemeyi kaldır",
-				unloadHelp: "Web Sayfası ses ya da video ortamı içeriyorsa, okuyucu farklı bir bölüme giderken içeriğin oynatımını durdurmak için bu seçeneği işaretli bırakın. Okuyucu bülten boyunca ilerlerken örneğin bir seslendirmenin oynatılmasını sürdürmek için bunun işaretini kaldırın.<br />Web Sayfası bir uygulamaysa bu seçeneğin işaretini kaldırın, bu sayede okuyucu o bölüme geri döndüğünde uygulama yeniden yüklenmez."
+				unloadLbl: "ı_Unload when reader navigates away_İ",
+				unloadHelp: "ı_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_İ."
 			},
 			editorActionGeocode: {
 				lblTitle: "Adres veya yer bul",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"Klaida"
     },
 	legToggle:{
-	  up:"ŽEMĖLAPIO LEGENDA ▲",
-	  down:"ŽEMĖLAPIO LEGENDA ▼"
+	  up:"Į_MAP LEGEND â–²_š",
+	  down:"Į_MAP LEGEND â–¼_š"
 	},
 	loading:{
 		message: "Įkeliamas žemėlapis"

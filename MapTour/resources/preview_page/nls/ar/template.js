@@ -1,9 +1,9 @@
 ﻿define(
-({
+	 ({
 		firstPane: {
 			head: "<span class='highlightText'>قالب جولة الخريطة</span>يمكن جميع مستويات حساب ArcGIS Online بما في ذلك الحساب العام المجاني لإنشاء الصور والنصوص والخرائط وتحريرها من:",
 			list0: "الصور المخزنة في خدمات مشاركة الصور الرئيسية على الإنترنت مثل Flickr أو Picasa أو Facebook أو أي موقع إلكتروني أو خادم ويب",
-			list1: "تعذر تخزين الصور Online وسيتم تخزينها بصفتها مرفقات لخدمة المعالم (مقصورة على أعضاء  ArcGIS for Organization)"
+			list1: "بيت_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_لاحقة"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>القالب</span>يتضمن أدوات التحرير سهلة الاستخدام والتي تتضمن:",
@@ -17,8 +17,8 @@
 			list1: "استضافة القالب على خادم الويب الخاص بك، أو خادم أخر"
 		},
 		fourthPane: {
-			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>رجع موقع خرائط قصة Esri</a>لتتعلم المزيد عن إنشاء القصص ومشاركتها. تتضمن الموارد:",
-			list0: "خرائط القصص التي تم نشرها من قبل فريق خرائط قصص Esri",
+			head: "بيت_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_لاحقة:",
+			list0: "بيت_Story maps published by Esriâ€™s story maps teams_لاحقة",
 			list1: "تحديد القوالب التي تم تنزيلها",
 			list2: "أفضل الإرشادات التي تم ممارستها", 
 			list3: "يقوم معرض خرائط القصة بتمييز مجتمع متزايد من القصاصين"

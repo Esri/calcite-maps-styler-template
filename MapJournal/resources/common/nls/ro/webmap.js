@@ -10,6 +10,8 @@
 				lblOverview: "Hartă de prezentare generală",
 				lblLegend: "Legendă",
 				loadingTitle: "Se încarcă titlul",
+				entry: "Ă_Entry_ș",
+				entries: "Ă_Entries_ș",
 				section: "Secţiune",
 				sections: "Secţiuni",
 				and: "şi",
@@ -22,12 +24,14 @@
 				newMap: "Hartă web proaspăt selectată",
 				webmapDefault: "Hartă web implicită",
 				customCfg: "Configuraţie particularizată",
-				tooltipLocation: "Definiţi locaţia hărţii care va fi utilizată când cititorii vor naviga în această secţiune.",
+				tooltipLocation: "Ă_Define the location that this map will display_ș.",
 				tooltipContent: "Definiţi straturile tematice vizibile.",
-				tooltipPopup: "Alegeţi să se afişeze o fereastră pop-up când cititorii navighează la această secţiune.",
-				tooltipOverview: "Afişaţi o mică prezentare generală împreună cu harta principală",
+				tooltipPopup: "Ă_Choose a popup that will be opened when this map is displayed_ș.",
+				tooltipOverview: "Ă_Display a small overview map along with the main map_ș.",
 				tooltipLegend: "Afişaţi legenda hărţii pe hartă, lucru util atunci când harta conţine multe straturi tematice şi simboluri.",
-				mapCfgInvite: "Utilizaţi aceste comenzi pentru a configura harta"
+				mapCfgInvite: "Utilizaţi aceste comenzi pentru a configura harta",
+				lblLocationAlt: "Ă_Inherited from the first map_ș",
+				tooltipLocationAlt: "Ă_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_ș."
 			},
 			configure: {
 				btnReset: "Resetare",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

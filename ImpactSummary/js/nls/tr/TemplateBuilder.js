@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Seçilen Detaylar",
                 "layerHelpTextMessage": "Bu uygulama için sayısal alanları olan bir katman gereklidir",
                 "alertMessage": {
-                    "resetVariableMessage": "Değişkeni sıfırlamak istediğinizden emin misiniz?",
+                    "resetVariableMessage": "ı_Are you sure you want to reset variable_İ?",
                     "emptyAppTitleMessage": "Uygulama başlığı boş olamaz",
                     "emptyDescriptionMessage": "Açıklama boş olamaz",
                     "maxVariableSelection": "25 alt değişkenden fazlasını seçemezsiniz",
@@ -58,11 +58,10 @@
                     "unsavedChangesMessage": "Kaydedilmemiş Değişiklikler",
                     "failMessage": "Öğe başarıyla güncellenemedi",
                     "saveChangesAlert": "Değişiklikleri kaydetmek istiyor musunuz?",
-                    "variableLabelValidation": "Değişken etiketi BOŞ olamaz",
-                    "subVariableLabelValidation": "Alt değişken etiketi BOŞ olamaz"
+                    "variableLabelValidation": "ı_Variable label cannot be empty_İ",
+                    "subVariableLabelValidation": "ı_Sub variable label cannot be empty_İ"
                     }
             }
         }
     })
-
 );

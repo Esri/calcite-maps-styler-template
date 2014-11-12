@@ -10,6 +10,8 @@
 				lblOverview: "Mappa d\'insieme",
 				lblLegend: "Legenda",
 				loadingTitle: "Caricamento titolo in corso",
+				entry: "é_Entry_È",
+				entries: "é_Entries_È",
 				section: "Sezione",
 				sections: "Sezioni",
 				and: "e",
@@ -22,12 +24,14 @@
 				newMap: "Nuova mappa Web selezionata",
 				webmapDefault: "Predefinite mappa Web",
 				customCfg: "Configurazione personalizzata",
-				tooltipLocation: "Definisce la posizione della mappa che verrà utilizzata quando i lettori passano a questa sezione.",
+				tooltipLocation: "é_Define the location that this map will display_È.",
 				tooltipContent: "Definisce i layer visibili.",
-				tooltipPopup: "Consente di scegliere un popup da visualizzare quando i lettori passano a questa sezione.",
-				tooltipOverview: "Consente di visualizzare una piccola mappa d\'insieme insieme alla mappa principale.",
+				tooltipPopup: "é_Choose a popup that will be opened when this map is displayed_È.",
+				tooltipOverview: "é_Display a small overview map along with the main map_È.",
 				tooltipLegend: "Consente di visualizzare la legenda della mappa, utile quando la mappa contiene numerosi layer e simboli.",
-				mapCfgInvite: "Utilizzare questi controlli per configurare la mappa"
+				mapCfgInvite: "Utilizzare questi controlli per configurare la mappa",
+				lblLocationAlt: "é_Inherited from the first map_È",
+				tooltipLocationAlt: "é_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_È."
 			},
 			configure: {
 				btnReset: "Reimposta",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

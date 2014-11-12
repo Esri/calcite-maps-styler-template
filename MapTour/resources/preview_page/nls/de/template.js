@@ -1,9 +1,9 @@
 ﻿define(
-({
+	 ({
 		firstPane: {
 			head: "<span class='highlightText'>Die Map Tour-Vorlage</span> bietet allen ArcGIS Online-Kontoebenen einschließlich des kostenlosen öffentlichen Kontos die Möglichkeit, eine standortbasierte Zusammenfassung aus Bildern, Text und einer Karte aus den folgenden Ressourcen zu erstellen und zu bearbeiten:",
 			list0: "Bilder, die in großen Online-Fotofreigabe-Services wie Flickr, Picasa und Facebook oder auf einem beliebigen Webserver gespeichert sind",
-			list1: "Noch nicht online gespeicherte Bilder, die als Feature-Service-Anlagen gespeichert werden (nur für ArcGIS for Organizations-Mitglieder)"
+			list1: "ä_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_Ü"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>In die Vorlage</span> sind folgende benutzerfreundliche Bearbeitungswerkzeuge integriert:",
@@ -17,8 +17,8 @@
 			list1: "die Vorlage auf dem eigenen Webserver oder einem Drittanbieter-Server hosten"
 		},
 		fourthPane: {
-			head: "Weitere Informationen zum Erstellen und Freigeben von Storys <a href='http://storymaps.esri.com/home/' target='_blank'>finden Sie auf der Website \"Story Maps\" von Esri</a>. Folgende Ressourcen sind verfügbar:",
-			list0: "Story Maps, die von den Story Maps-Teams von Esri veröffentlicht wurden",
+			head: "ä_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_Ü:",
+			list0: "ä_Story maps published by Esriâ€™s story maps teams_Ü",
 			list1: "Eine Auswahl herunterladbarer Vorlagen",
 			list2: "Bewährte Methoden und Anleitungen", 
 			list3: "Eine Story Maps-Galerie mit einer wachsenden Storyteller-Community"

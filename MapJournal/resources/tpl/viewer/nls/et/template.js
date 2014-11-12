@@ -70,11 +70,10 @@
 				copy: "Kopeeri",
 				copied: "Kopeeritud",
 				open: "Ava",
-				embed: "Lisa veebisaidile",
-				embedExplain: "Kasutage ajakirja veebisaidile lisamiseks järgmist HTML-koodi.",
+				embed: "Š_Embed in web page_ä",
+				embedExplain: "Š_Use the following HTML code to embed the journal in a web page_ä.",
 				size: "Suurus (laius/kõrgus):"
 			}
         }
     })
-
 );

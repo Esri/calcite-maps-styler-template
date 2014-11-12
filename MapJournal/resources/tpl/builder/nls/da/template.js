@@ -85,11 +85,12 @@
 				lblLink: "Besøg Esri Story Maps-webstedet.",
 				content1Div1: "Du kan integrere en række forskellige typografier, når du skaber din historie. <strong>%LAYOUT_TITLE%</strong> indeholder typisk din tekst, dine billeder og videoer, mens dine kort ofte befinder sig i <strong>hovedområdet</strong>. Men %TPL_NAME% gør det også muligt for dig at bringe billeder, diagrammer og videoer i hovedområdet.",
 				content1Div2: "Ved at tilføje sektioner kan du virkelig tilpasse din historiefortælling. Som læser kan du rulle ned igennem din %LAYOUT_TITLE% tekst, et kort i hovedområdet kan panorere eller zoome til vigtige punkter, eller nye kort og billeder kan skifte automatisk for at understøtte dit budskab.",
-				content2Div1: "Her kan du justere udseendet af %TPL_NAME%. Farveskemaer, layouts, bredder og skrifttyper kan alle forfines her.",
-				content2Div2: "Du kan også føje delings-links til Facebook, Twitter og Bitly, så læserne nemt kan udbrede din %TPL_NAME% til andre.",
+				content2Div1: "ø_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_å.",
+				content2Div2: "ø_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_å.",
 				content3Div1: "Dit indhold er organiseret i sektioner. Du kan have så mange sektioner, som du ønsker (tænk på dem som på mini-kapitler). Flowet i disse kapitler er vigtigt. Så inden for Organisér kan du ændre sektionsrækkefølge efter eget valg.",
 				content4Div1: "Har du fundet en fejl, eller ønsker du at redigere i dit materiale? Ingen grund til bekymring. Se efter redigeringsikonet i hele app’en for at foretage ændringer i dit indhold. Du vil komme til at bruge redigeringsfunktionerne mange gange, mens du udvikler din %TPL_NAME%!",
-				content5Div1: "Din %TPL_NAME% et gemt på din %PORTAL%-konto og som standard sat til privat. Du kan beslutte at dele den med din organisation eller åbne den for hele verden. Vi giver dig endda en afkortet URL, så det bliver nemmere for dig at dele.",
+				content5Div1: "ø_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_å.",
+				content5Div2: "ø_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_å.",
 				content6Div1: "Titlen på din startsektion er også titlen på din journal. Tænk på startsektionen som \"forsiden\" til din historie. Titlen på startsektionen forbliver synlig, når dine læsere navigerer i journalen.",
 				content6Div2: "Din %LAYOUT_TITLE% behøver ikke kun at være tekst. Overvej at medtage fotos og videoer, så din historie bliver levende, og at opbryde lange tekstafsnit!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

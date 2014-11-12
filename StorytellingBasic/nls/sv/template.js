@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"Fel"
     },
 	legToggle:{
-	  up:"TECKENFÖRKLARING TILL KARTAN ▲",
-	  down:"TECKENFÖRKLARING TILL KARTAN ▼"
+	  up:"Å_MAP LEGEND â–²_ö",
+	  down:"Å_MAP LEGEND â–¼_ö"
 	},
 	loading:{
 		message: "Laddar karta"

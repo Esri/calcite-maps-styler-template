@@ -1,9 +1,9 @@
 ﻿define(
-({
+	 ({
 		firstPane: {
 			head: "<span class='highlightText'>Szablon Mapa wycieczki</span> umożliwia użytkownikom wszystkich kont w serwisie ArcGIS Online, w tym również bezpłatnego konta publicznego, tworzenie i edycję scenariusza na temat wybranego miejsca, który łączy w sobie obrazy, tekst i mapę, przy użyciu następujących elementów:",
 			list0: "Obrazy przechowywane w najpopularniejszych serwisach udostępniających zdjęcia, takich jak: Flickr, Picasa i Facebook oraz w dowolnej witrynie lub serwerze WWW",
-			list1: "obrazów, które jeszcze nie znajdują się w sieci i będą przechowywane jako załączniki do usługi obiektowej (tylko dla członków instytucji ArcGIS)"
+			list1: "ł_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_ą"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>Szablon</span> składa się z łatwych w obsłudze narzędzi do edycji, która obejmuje:",
@@ -17,8 +17,8 @@
 			list1: "Hostowanie szablonów na własnym serwerze internetowym lub serwerze innych firm"
 		},
 		fourthPane: {
-			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Odwiedź witrynę poświęconą mapom ze scenariuszami firmy Esri</a>, aby dowiedzieć się więcej o tworzeniu i udostępnianiu scenariuszy. Zasoby obejmują:",
-			list0: "mapy ze scenariuszami opublikowane przez zespół twórców map z historią firmy Esri,",
+			head: "ł_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_ą:",
+			list0: "ł_Story maps published by Esriâ€™s story maps teams_ą",
 			list1: "kolekcję szablonów do pobrania,",
 			list2: "wskazówki dotyczące najlepszych praktyk,", 
 			list3: "galerię map ze scenariuszem stworzoną przez powiększającą się społeczność twórców."

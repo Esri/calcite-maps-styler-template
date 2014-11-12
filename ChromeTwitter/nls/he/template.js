@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "תיאור"
     },
-    errors:{
+    errors: {
       createMap: "לא ניתן ליצור מפה",
       general: "שגיאה"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "שם מסך",
     "signIn": "התחבר",
@@ -34,31 +34,31 @@
     label: "ציוצים",
     title: "ציוצים",
     error: "לא נמצאו תוצאות, נסה חיפוש נוסף באמצעות ביטוי או מיקום אחר",
-		search:{
+		search: {
 			label: "חפש",
 			title: "חפש בטוויטר",
 			placeholder: 'מילות מפתח לחיפוש'
 		},
-		clear:{
+		clear: {
 			label: "נקה",
 			title: "נקה מפה"
 		},
-		share:{
+		share: {
 			label: "שתף מפה:",
 			email:{
 				title: "Email",
 				label: "Email"
 			},
-			twitter:{
+			twitter: {
 				title: "טוויטר",
 				label: "טוויטר"
 			},
-			facebook:{
+			facebook: {
 				title: "פייסבוק",
 				label: "פייסבוק"
 			}
 		}
 	 }
    }
- })
+})
 );

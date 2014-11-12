@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "Apraksts"
     },
-    errors:{
+    errors: {
       createMap: "Nevar izveidot karti",
       general: "Kļūda"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "Segvārds",
     "signIn": "Pierakstīties",
@@ -34,31 +34,31 @@
     label: "Tvīti",
     title: "Tvīti",
     error: "Rezultāts nav atrasts, mēģiniet citu meklējamo vārdu vai izvietojumu",
-		search:{
+		search: {
 			label: "Meklēt",
 			title: "Meklē Twitter",
 			placeholder: 'Atslēgvārdi, lai meklētu'
 		},
-		clear:{
+		clear: {
 			label: "Notīrīt",
 			title: "Notīrīt karti"
 		},
-		share:{
+		share: {
 			label: "Koplieto karti:",
 			email:{
 				title: "Epasts",
 				label: "Epasts"
 			},
-			twitter:{
+			twitter: {
 				title: "Twitter",
 				label: "Twitter"
 			},
-			facebook:{
+			facebook: {
 				title: "Facebook",
 				label: "Facebook"
 			}
 		}
 	 }
    }
- })
+})
 );

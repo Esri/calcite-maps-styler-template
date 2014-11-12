@@ -70,11 +70,10 @@
 				copy: "Kopiëren",
 				copied: "Gekopieerd",
 				open: "Openen",
-				embed: "Inbedden in website",
-				embedExplain: "Gebruik de volgende HTML-code om het journaal in een website in te bedden.",
+				embed: "Ĳ_Embed in web page_ä",
+				embedExplain: "Ĳ_Use the following HTML code to embed the journal in a web page_ä.",
 				size: "Grootte (breedte/hoogte):"
 			}
         }
     })
-
 );

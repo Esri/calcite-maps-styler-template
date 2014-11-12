@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"Virhe"
     },
 	legToggle:{
-	  up:"KARTAN SELITE ▲",
-	  down:"KARTAN SELITE ▼"
+	  up:"Å_MAP LEGEND â–²_ö",
+	  down:"Å_MAP LEGEND â–¼_ö"
 	},
 	loading:{
 		message: "Ladataan karttaa"

@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Vybraný prvek",
                 "layerHelpTextMessage": "Tato aplikace vyžaduje vrstvu s číselnými poli.",
                 "alertMessage": {
-                    "resetVariableMessage": "Opravdu chcete obnovit proměnnou?",
+                    "resetVariableMessage": "Ř_Are you sure you want to reset variable_ů?",
                     "emptyAppTitleMessage": "Název aplikace nesmí být prázdný",
                     "emptyDescriptionMessage": "Popis nesmí být prázdný",
                     "maxVariableSelection": "Nemůžete vybrat více než 25 podřízených proměnných",
@@ -58,11 +58,10 @@
                     "unsavedChangesMessage": "Neuložené změny",
                     "failMessage": "Položku se nepodařilo aktualizovat",
                     "saveChangesAlert": "Chcete uložit změny?",
-                    "variableLabelValidation": "Štítek proměnné nesmí být prázdný",
-                    "subVariableLabelValidation": "Štítek podřízené proměnné nesmí být prázdný"
+                    "variableLabelValidation": "Ř_Variable label cannot be empty_ů",
+                    "subVariableLabelValidation": "Ř_Sub variable label cannot be empty_ů"
                     }
             }
         }
     })
-
 );

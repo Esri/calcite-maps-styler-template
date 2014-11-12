@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Tilføj",
@@ -28,8 +28,8 @@
 				buttonSettings: "Indstillinger",
 				buttonHelp: "Hjælp",
 				buttonPreview: "Vis Live",
-				tooltipFirstSave: "Denne funktion er ikke tilgængelig, før applikationen er gemt",
-				tooltipNotShared: "Denne funktion er ikke tilgængelig, før applikationen er delt",
+				tooltipFirstSave: "ø_This isn't available until you save_å.",
+				tooltipNotShared: "ø_This isn't available until you share_å.",
 				noPendingChange: "Ingen ventende ændringer",
 				unSavedChangePlural: "Ventende ændringer",
 				closeWithPendingChange: "Er du sikker på, at du vil bekræfte denne handling? Dine ændringer vil gå tabt.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Layout",
 				err1Div1: "Applikationen kan ikke gemmes, fordi du har et andet element med samme navn (se din <a class='linkagolroot' target='_blank'>indholdsmappe</a>).",
-				err1Div2: "Rediger titlen på startsektionen, og gem applikationen.",
-				btnOk: "Rediger titlen på startsektionen"
+				err1Div2: "ø_Please modify the title of your application and then save it_å.",
+				btnOk: "ø_Edit the application title_å"
 			},
 			share: {
 				firstSaveTitle: "Applikationen er gemt",
@@ -66,7 +66,7 @@
 				shareHeader2: "Din applikation er tilgængelig for dine organisationsmedlemmer (der kræves login).",
 				shareLinkCopy: "Kopiér",
 				shareLinkCopied: "Kopieret",
-				shareQ0: "Hvordan integrerer jeg applikationen i et websted?",
+				shareQ0: "ø_How do I embed the application in a web page_å?",
 				shareQ1Opt1: "Hvordan kan jeg holde min applikation privat?",
 				shareQ1Opt2: "Hvordan kan jeg holde applikationen privat eller dele den offentligt?",
 				shareA1: "Brug %SHAREIMG% på <a href='%LINK1%' target='_blank'>applikationens elementside</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Klik gennem-link",
 				logoSocialExplain: "Tilpas header-linket.",
 				logoSocialText: "Tekst",
-				logoSocialLink: "Link"
+				logoSocialLink: "Link",
+				lblSmallHeader: "ø_Use compact header (no subtitle)_å"
+			},
+			header: {
+				title: "ø_Edit the title of your %TPL_NAME%_å",
+				subtitle: "ø_Edit the subtitle of your %TPL_NAME%_å"
 			}
 		}
 	})
-
 );

@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "CARREGANDO APLICATIVO",
 				step2: "CARREGANDO DADOS",
 				step3: "INICIALIZANDO",
 				fail: "Desculpe, falha ao carregar a ferramenta Oscilar",
-				loadBuilder: "TROCANDO PARA MODO DO CONSTRUTOR",
+				loadBuilder: "TROCANDO PARA MODO DO CONSTRUTOR",				
 				redirectSignIn: "REDIRECIONANDO PARA PÁGINA DE REGISTRO",
 				redirectSignIn2: "(você será redirecionado aqui após registrar)",
 				failButton: "Tentar Novamente"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

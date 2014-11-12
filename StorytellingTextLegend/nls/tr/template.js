@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "Harita oluşturulamıyor:",
         general:"Hata",
         timeout:"Başlamak için başka bir sekme seçin"
       },
-      loading:{
+      loading: {
         message: "Haritalar yükleniyor"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "GÖSTERİM"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "d MMMM yyyy",
         yearPattern: "yyyy",
         hourTimePattern: "h a",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "h:mm:ss:SSS a"
       }
     }
-})
+  })
 );

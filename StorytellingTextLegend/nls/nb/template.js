@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "Kan ikke opprette kart:",
         general:"Feil",
         timeout:"Velg en annen kategori for å begynne"
       },
-      loading:{
+      loading: {
         message: "Laster inn kart"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "TEGNFORKLARING"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "d. MMMM yyyy",
         yearPattern: "yyyy",
         hourTimePattern: "H",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "H.mm.ss.SSS"
       }
     }
-})
+  })
 );

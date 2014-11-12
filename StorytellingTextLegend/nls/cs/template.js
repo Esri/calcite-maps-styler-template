@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "Nelze vytvořit mapu:",
         general:"Chyba",
         timeout:"Pro zahájení prosím vyberte jinou záložku."
       },
-      loading:{
+      loading: {
         message: "Načítám mapy"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "LEGENDA"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "MMMM d, rrrr",
         yearPattern: "rrrr",
         hourTimePattern: "h a",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "H:mm:ss:SSS"
       }
     }
-})
+  })
 );

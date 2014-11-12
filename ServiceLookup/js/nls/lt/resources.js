@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "Žemėlapio sukurti nepavyko",
             mouseToolTip: "Spauskite ant žemėlapio, norėdami patikrinti paslaugą"
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Sluoksnio nėra internetiniame žemėlapyje",
             fieldNotFound: "Laukas nerastas",
-            popupNotSet: "Šiam sluoksniui iškylantys langai neįjungti"
+            popupNotSet: "Šiam sluoksniui iškylantys langai neįjungti",
+            noLayersSet: "Į_No layers defined in the config, the search box will not work_š"
         },
         page: {
             title: "Informacijos paieška",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "Pagrindo žemėlapis"
         }
-    })
 
+    })
 );

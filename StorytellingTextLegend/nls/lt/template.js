@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "Žemėlapio sukurti nepavyko:",
         general:"Klaida",
         timeout:"Norėdami pradėti, pasirinkite kitą kortelę"
       },
-      loading:{
+      loading: {
         message: "Įkeliami žemėlapiai"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "LEGENDA"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "yyyy MMMM dd",
         yearPattern: "yyyy",
         hourTimePattern: "H a",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "HH:mm:ss:SSS"
       }
     }
-})
+  })
 );

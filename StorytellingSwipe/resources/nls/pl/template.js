@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "WCZYTYWANIE APLIKACJI",
 				step2: "WCZYTYWANIE DANYCH",
 				step3: "INICJOWANIE",
 				fail: "Przepraszamy, wczytywanie narzędzia zwijania nie powiodło się",
-				loadBuilder: "PRZEŁĄCZANIE DO TRYBU KREATORA",
+				loadBuilder: "PRZEŁĄCZANIE DO TRYBU KREATORA",				
 				redirectSignIn: "PRZEKIEROWANIE DO STRONY LOGOWANIA",
 				redirectSignIn2: "(tutaj nastąpi przekierowanie po zalogowaniu)",
 				failButton: "Ponów próbę"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

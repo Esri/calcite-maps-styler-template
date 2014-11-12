@@ -70,11 +70,10 @@
 				copy: "Copia",
 				copied: "Copiato",
 				open: "Apri",
-				embed: "Incorporare nel sito Web",
-				embedExplain: "Utilizzare il codice HTML seguente per incorporare il diario in un sito Web.",
+				embed: "é_Embed in web page_È",
+				embedExplain: "é_Use the following HTML code to embed the journal in a web page_È.",
 				size: "Dimensioni (larghezza/altezza):"
 			}
         }
     })
-
 );

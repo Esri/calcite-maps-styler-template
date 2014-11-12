@@ -1,5 +1,5 @@
 ﻿define(
-  ({
+   ({
     viewer: {
       legend_title: "Selite",
       content_title: "Editori",
@@ -9,5 +9,4 @@
       }
     }
   })
-
 );

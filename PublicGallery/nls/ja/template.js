@@ -1,5 +1,5 @@
 ﻿define(
-({
+     ({
         "viewer": {
             "main": {
                 "scaleBarUnits": "metric",
@@ -12,14 +12,14 @@
                 "bingError": "このアプリケーションを導入するには、Bing Maps キーの所有が必要です。",
                 "noLayers": "操作レイヤがありません",
                 "noSearchResults": "該当する結果は見つかりませんでした。",
-				"noGroupResults": "グループが見つかりませんでした。",
+                "noGroupResults": "須_The group could not be found_鷗.",
                 "noMatches": "一致する結果は見つかりません。",
                 "noMapsFound": "マップは見つかりませんでした。"
             },
             "sidePanel": {
                 "title": "凡例",
                 "legendButton": "凡例",
-				"layersButton": "レイヤ", // new
+                "layersButton": "須_Layers_鷗", // new
                 "legendButtonTitle": "マップの凡例",
                 "aboutButton": "情報",
                 "aboutButtonTitle": "マップについて",
@@ -35,49 +35,49 @@
                 "listSwitch": "リスト ビューに切り替え",
                 "loadingText": "マップを読み込んでいます..."
             },
-			"sortFields":{
-				"sortBy": "並べ替え",
-				"modified": "日付",
-				"title": "タイトル",
-				"type": "タイプ",
-				"numRatings": "評価",
-				"avgRating": "評価の平均",
-				"numComments": "コメント",
-				"numViews": "ビュー"
-			},
-			"comments":{
-				"commentsHeader": "コメント",
-				"posted": "ポストされた",
-				"by": "作成者",
-				"deleteComment": "削除",
-				"editComment": "編集",
-				"noComments": "コメントなし",
-				"addCommentButton": "コメントの追加",
-				"signIn": "サイン イン",
-				"register": "登録",
-				"or": "または",
-				"toPost": "コメントをポストします。"
-			},
-			"buttons":{
-				"cancel": "キャンセル",
-				"submit": "送信"
-			},
-			"rating":{
-				"signIn": "サイン イン",
-				"toRate": "評価します。"
-			},
-			"itemInfo":{
-				"createdLabel": "作成された",
-				"ratingsLabel": "評価",
-				"ratingsLabelPlural": "評価",
-				"viewsLabel": "ビュー",
-				"viewsLabelPlural": "ビュー",
-				"commentsLabel": "コメント",
-				"commentsLabelPlural": "コメント",
-				"modifiedLabel": "最終更新日",
-				"by": "作成者",
-				"separator": ","
-			},
+            "sortFields": {
+                "sortBy": "須_Sort by_鷗",
+                "modified": "須_Date_鷗",
+                "title": "須_Title_鷗",
+                "type": "須_Type_鷗",
+                "numRatings": "須_Ratings_鷗",
+                "avgRating": "須_Avg. Rating_鷗",
+                "numComments": "須_Comments_鷗",
+                "numViews": "須_Views_鷗"
+            },
+            "comments": {
+                "commentsHeader": "須_Comments_鷗",
+                "posted": "須_Posted_鷗",
+                "by": "須_by_鷗",
+                "deleteComment": "須_delete_鷗",
+                "editComment": "須_edit_鷗",
+                "noComments": "須_No comments_鷗",
+                "addCommentButton": "須_Add Comment_鷗",
+                "signIn": "須_Sign In_鷗",
+                "register": "須_Register_鷗",
+                "or": "須_or_鷗",
+                "toPost": "須_to post a comment_鷗."
+            },
+            "buttons": {
+                "cancel": "須_Cancel_鷗",
+                "submit": "須_Submit_鷗"
+            },
+            "rating": {
+                "signIn": "須_Sign In_鷗",
+                "toRate": "須_to rate_鷗."
+            },
+            "itemInfo": {
+                "createdLabel": "須_created_鷗",
+                "ratingsLabel": "須_rating_鷗",
+                "ratingsLabelPlural": "須_ratings_鷗",
+                "viewsLabel": "須_view_鷗",
+                "viewsLabelPlural": "須_views_鷗",
+                "commentsLabel": "須_comment_鷗",
+                "commentsLabelPlural": "須_comments_鷗",
+                "modifiedLabel": "須_Last Modified_鷗",
+                "by": "須_by_鷗",
+                "separator": "須__鷗,"
+            },
             "mapPage": {
                 "findLocation": "場所を検索",
                 "findPlaceholder": "住所の特定",
@@ -93,13 +93,13 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "所有者:",
                 "switchBasemap": "ベースマップの切り替え",
-				"getMobileApp": "アプリケーションの取得",
-				"constraintsHeading":"利用制限",
-				"createdLabel":"作成日",
-				"noDescription":"説明がありません。",
-				"detailsLabel":"詳細"
+                "getMobileApp": "須_Get App_鷗",
+                "constraintsHeading": "須_Use Constraints_鷗",
+                "createdLabel": "須_Created_鷗",
+                "noDescription": "須_No description_鷗.",
+                "detailsLabel": "須_Details_鷗"
             },
-            "filterItems":{
+            "filterItems": {
                 "show": "表示",
                 "all": "すべての結果",
                 "maps": "マップ",

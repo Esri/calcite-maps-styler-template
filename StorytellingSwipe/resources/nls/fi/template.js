@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "LADATAAN SOVELLUSTA",
 				step2: "LADATAAN DATAA",
 				step3: "KÄYNNISTETÄÄN",
 				fail: "Pyyhkäisyn lataus epäonnistui",
-				loadBuilder: "VAIHDETAAN MUODOSTUSOHJELMAN TILAAN",
+				loadBuilder: "VAIHDETAAN MUODOSTUSOHJELMAN TILAAN",				
 				redirectSignIn: "OHJATAAN SISÄÄNKIRJAUTUMISSIVULLE",
 				redirectSignIn2: "(sinut ohjataan tänne sisäänkirjautumisen jälkeen)",
 				failButton: "Yritä uudelleen"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

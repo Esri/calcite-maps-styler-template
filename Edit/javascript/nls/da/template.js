@@ -1,5 +1,5 @@
 ﻿define(
-  ({
+   ({
     viewer: {
       legend_title: "Signaturforklaring",
       content_title: "Editor",
@@ -9,5 +9,4 @@
       }
     }
   })
-
 );

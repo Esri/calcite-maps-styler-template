@@ -1,5 +1,5 @@
 ﻿define(
-    ({
+     ({
         "widgets": {
             "ShareDialog": {
                 "title": "Partager",
@@ -15,5 +15,4 @@
             }
         }
     })
-   
 );

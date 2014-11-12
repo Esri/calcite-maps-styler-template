@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "Не удалось создать карту",
             mouseToolTip: "Щелкните на карте, чтобы проверить сервис"
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Слой отсутствует в веб-карте",
             fieldNotFound: "Поле не найдено",
-            popupNotSet: "Всплывающие окна не включены для данного слоя"
+            popupNotSet: "Всплывающие окна не включены для данного слоя",
+            noLayersSet: "Ж_No layers defined in the config, the search box will not work_Я"
         },
         page: {
             title: "Поиск сведений",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "Базовая карта"
         }
-    })
 
+    })
 );

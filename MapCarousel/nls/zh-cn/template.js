@@ -1,5 +1,5 @@
 ﻿define(
-({
+   ({
   app:{
    title:"地图转盘",
     scaleBarUnits: "metric", //"english (for miles) or "metric" (for km) - don't translate.

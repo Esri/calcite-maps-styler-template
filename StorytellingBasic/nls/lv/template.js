@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"Kļūda"
     },
 	legToggle:{
-	  up:"KARTES LEĢENDA ▲",
-	  down:"KARTES LEĢENDA ▼"
+	  up:"ķ_MAP LEGEND â–²_ū",
+	  down:"ķ_MAP LEGEND â–¼_ū"
 	},
 	loading:{
 		message: "Ielādē karti"

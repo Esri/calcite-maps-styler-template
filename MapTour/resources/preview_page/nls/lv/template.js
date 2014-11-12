@@ -1,9 +1,9 @@
 ﻿define(
-({
+	 ({
 		firstPane: {
 			head: "<span class='highlightText'>Map Tour šablons</span> iespējo visus ArcGIS Online kontu līmeņus, iekļaujot bezmaksas Publisko kontu, lai izveidotu un rediģētu ar vietām saistītus stāstus, apvienojot attēlus, tekstu un karti no:",
 			list0: "Bildes, kas glabājas lielākajos tiešsaistes fotoattēlu koplietošanas servisos, piemēram: Flickr, Picasa un Facebook vai jebkurā citā tīmekļa vietnē vai web serverī",
-			list1: "Bildes vēl nav saglabātas tiešsaistē, un tās tiks saglabātas kā Feature Service pielikumi (tikai ArcGIS for Organization biedriem)"
+			list1: "ķ_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_ū"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>Šablons</span> iekļauj viegli izmantojamus rediģēšanas rīkus, kas ietver:",
@@ -17,8 +17,8 @@
 			list1: "Viesojiet šablonu uz jūsu pašu servera vai trešās puses servera"
 		},
 		fourthPane: {
-			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Skatiet Esri Story Maps vietni</a>, lai uzzinātu vairāk par stāstu izveidošanu un koplietošanu. Resursi ietver:",
-			list0: "Esri karšu stāstu komandas publicētās stāstu mapes",
+			head: "ķ_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_ū:",
+			list0: "ķ_Story maps published by Esriâ€™s story maps teams_ū",
 			list1: "Izvēle no lejupielādējamiem šabloniem",
 			list2: "Vislabākās prakses ceļveži", 
 			list3: "Stāstu karšu galerija, ko piedāvā augošā stāstītāju kopiena"

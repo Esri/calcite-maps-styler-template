@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Entité sélectionnée",
                 "layerHelpTextMessage": "Cette application nécessite une couche avec des champs numériques",
                 "alertMessage": {
-                    "resetVariableMessage": "Voulez-vous vraiment réinitialiser la variable ?",
+                    "resetVariableMessage": "æ_Are you sure you want to reset variable_Â?",
                     "emptyAppTitleMessage": "Le titre de l\'application doit être indiqué",
                     "emptyDescriptionMessage": "La description doit être indiquée",
                     "maxVariableSelection": "Vous ne pouvez pas sélectionner plus de 25 sous-variables",
@@ -58,11 +58,10 @@
                     "unsavedChangesMessage": "Modifications non enregistrées",
                     "failMessage": "Impossible de mettre à jour l\'élément",
                     "saveChangesAlert": "Voulez-vous enregistrer les modifications ?",
-                    "variableLabelValidation": "L\'étiquette de la variable ne peut pas être VIDE",
-                    "subVariableLabelValidation": "L\'étiquette de la sous-variable ne peut pas être VIDE"
+                    "variableLabelValidation": "æ_Variable label cannot be empty_Â",
+                    "subVariableLabelValidation": "æ_Sub variable label cannot be empty_Â"
                     }
             }
         }
     })
-
 );

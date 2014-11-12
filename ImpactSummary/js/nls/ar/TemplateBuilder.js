@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "المعالم المحددة",
                 "layerHelpTextMessage": "يتطلب هذا التطبيق طبقة بها حقول عددية",
                 "alertMessage": {
-                    "resetVariableMessage": "هل أنت متأكد من رغبتك في إعادة تعيين المتغير؟",
+                    "resetVariableMessage": "بيت_Are you sure you want to reset variable_لاحقة?",
                     "emptyAppTitleMessage": "لا يكون عنوان التطبيق فارغ",
                     "emptyDescriptionMessage": "لا يكون الوصف فارغ",
                     "maxVariableSelection": "يتعذر تحديد ما يزيد عن 25 متغير فرعي",
@@ -58,11 +58,10 @@
                     "unsavedChangesMessage": "التغييرات غير المحفوظة",
                     "failMessage": "يتعذر تحديث العنصر بنجاح",
                     "saveChangesAlert": "هل تريد حفظ التغييرات؟",
-                    "variableLabelValidation": "لا تكون لافتة تسمية المتغير فارغة",
-                    "subVariableLabelValidation": "لا تكون لافتة تسمية المتغير الفرعي فارغة"
+                    "variableLabelValidation": "بيت_Variable label cannot be empty_لاحقة",
+                    "subVariableLabelValidation": "بيت_Sub variable label cannot be empty_لاحقة"
                     }
             }
         }
     })
-
 );

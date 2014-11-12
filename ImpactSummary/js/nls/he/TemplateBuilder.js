@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "ישויות נבחרות",
                 "layerHelpTextMessage": "אפליקציה זו דורשת שכבה עם שדות מספריים",
                 "alertMessage": {
-                    "resetVariableMessage": "האם אתה בטוח שברצונך לאתחל את המשתנים?",
+                    "resetVariableMessage": "כן_Are you sure you want to reset variable_ש?",
                     "emptyAppTitleMessage": "כותרת האפליקציה לא יכולה להיות ריקה",
                     "emptyDescriptionMessage": "התיאור לא יכול להיות ריק",
                     "maxVariableSelection": "לא ניתן לבחור יותר מ-25 תתי משתנים",
@@ -58,11 +58,10 @@
                     "unsavedChangesMessage": "שינויים שלא נשמרו",
                     "failMessage": "לא ניתן לעדכן את הפריט בהצלחה",
                     "saveChangesAlert": "האם ברצונך לשמור את השינויים?",
-                    "variableLabelValidation": "תווית המשתנה לא יכולה להיות ריקה",
-                    "subVariableLabelValidation": "תווית תת המשתנה לא יכולה להיות ריקה"
+                    "variableLabelValidation": "כן_Variable label cannot be empty_ש",
+                    "subVariableLabelValidation": "כן_Sub variable label cannot be empty_ש"
                     }
             }
         }
     })
-
 );

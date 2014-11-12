@@ -10,6 +10,8 @@
 				lblOverview: "Apžvalgos žemėlapis",
 				lblLegend: "Legenda",
 				loadingTitle: "Įkeliamas pavadinimas",
+				entry: "Į_Entry_š",
+				entries: "Į_Entries_š",
 				section: "Skiltis",
 				sections: "Skiltys",
 				and: "ir",
@@ -22,12 +24,14 @@
 				newMap: "Naujai pasirinktas internetinis žemėlapis",
 				webmapDefault: "Numatytasis internetinis žemėlapis",
 				customCfg: "Adaptuota konfigūracija",
-				tooltipLocation: "Nustatykite žemėlapio vietą, kuri bus naudojama, kai skaitytojai pereis į šią skiltį.",
+				tooltipLocation: "Į_Define the location that this map will display_š.",
 				tooltipContent: "Nustatykite matomus sluoksnius.",
-				tooltipPopup: "Pasirinkite iškylantį langą, kuris bus rodomas, kai skaitytojai pereis į šią skiltį.",
-				tooltipOverview: "Kartu su pagrindiniu žemėlapiu rodyti mažą apžvalgos žemėlapį",
+				tooltipPopup: "Į_Choose a popup that will be opened when this map is displayed_š.",
+				tooltipOverview: "Į_Display a small overview map along with the main map_š.",
 				tooltipLegend: "Žemėlapyje rodyti žemėlapio legendą. Tai naudinga, kai žemėlapyje yra daug sluoksnių ir simbolių.",
-				mapCfgInvite: "Konfigūruokite žemėlapį naudodami šiuos valdiklius"
+				mapCfgInvite: "Konfigūruokite žemėlapį naudodami šiuos valdiklius",
+				lblLocationAlt: "Į_Inherited from the first map_š",
+				tooltipLocationAlt: "Į_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_š."
 			},
 			configure: {
 				btnReset: "Atkurti",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

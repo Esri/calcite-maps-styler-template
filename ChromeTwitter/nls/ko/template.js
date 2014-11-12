@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "설명"
     },
-    errors:{
+    errors: {
       createMap: "맵을 생성할 수 없음",
       general: "오류"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "화면 이름",
     "signIn": "로그인",
@@ -34,31 +34,31 @@
     label: "트윗",
     title: "트윗",
     error: "결과가 없습니다. 다른 검색어 또는 위치를 시도하세요.",
-		search:{
+		search: {
 			label: "검색",
 			title: "Twitter 검색",
 			placeholder: '검색 키워드'
 		},
-		clear:{
+		clear: {
 			label: "지우기",
 			title: "맵 지우기"
 		},
-		share:{
+		share: {
 			label: "맵 공유:",
 			email:{
 				title: "이메일",
 				label: "이메일"
 			},
-			twitter:{
+			twitter: {
 				title: "Twitter",
 				label: "Twitter"
 			},
-			facebook:{
+			facebook: {
 				title: "Facebook",
 				label: "Facebook"
 			}
 		}
 	 }
    }
- })
+})
 );

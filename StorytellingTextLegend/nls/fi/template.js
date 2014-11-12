@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "Ei voi luoda karttaa:",
         general:"Virhe",
         timeout:"Aloita valitsemalla jokin toinen välilehti"
       },
-      loading:{
+      loading: {
         message: "Ladataan karttoja"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "SELITE"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "p. KKKK vvvv",
         yearPattern: "vvvv",
         hourTimePattern: "t",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "h:mm:ss:SSS"
       }
     }
-})
+  })
 );

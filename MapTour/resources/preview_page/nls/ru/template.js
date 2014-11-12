@@ -1,9 +1,9 @@
 ﻿define(
-({
+	 ({
 		firstPane: {
 			head: "<span class='highlightText'>Шаблон Map Tour</span> позволяет всем пользователям ArcGIS Online, включая уровень бесплатного публичного доступа, создавать и редактировать подробное описание местоположения, включающее изображения, текст и карту из:",
 			list0: "Изображения, хранящиеся на онлайн-сервисах хранения изображений, таких как Flickr, Picasa и Facebook, либо на любом веб-сайте или веб-сервере",
-			list1: "Изображения, еще не размещенные в сети, которые будут храниться в качестве вложений сервиса объектов (ограничено для участников ArcGIS for Organization)"
+			list1: "Ж_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_Я"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>Шаблон</span> включает простые инструменты редактирования, которые дают возможность:",
@@ -17,8 +17,8 @@
 			list1: "Опубликовать шаблон на собственном веб-сервере или на сервере третьей стороны"
 		},
 		fourthPane: {
-			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>См. сайт Esri Story Maps</a> чтобы узнать больше о создании и совместном использовании карт повествований. Ресурсы включают:",
-			list0: "Карты повествований, опубликованные командой разработки Esri",
+			head: "Ж_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_Я:",
+			list0: "Ж_Story maps published by Esriâ€™s story maps teams_Я",
 			list1: "Подборку загружаемых шаблонов",
 			list2: "Руководства и советы", 
 			list3: "Галерею карт историй, созданную растущим сообществом авторов"

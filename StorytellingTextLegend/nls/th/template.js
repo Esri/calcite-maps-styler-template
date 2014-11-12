@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "ไม่สามารถสร้างแผนที่ได้:",
         general:"ข้อผิดพลาด",
         timeout:"กรุณาเลือกแถบอื่นเพื่อเริ่ม"
       },
-      loading:{
+      loading: {
         message: "กำลังดาวน์โหลดแผนที่"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "คำอธิบายสัญลักษณ์"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "เดือน วัน, ปี",
         yearPattern: "ปี",
         hourTimePattern: "ชั่วโมง",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "ชั่วโมง:นาที:วินาที"
       }
     }
-})
+  })
 );

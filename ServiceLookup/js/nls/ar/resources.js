@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "يتعذر إنشاء الخريطة",
             mouseToolTip: "انقر فوق الخريطة للتحقق من الخدمة"
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "الطبقة ليست موجودة في خريطة الويب",
             fieldNotFound: "يتعذر إيجاد الحقل",
-            popupNotSet: "القائمة المنبثقة ليست ممكنة لهذه الطبقة"
+            popupNotSet: "القائمة المنبثقة ليست ممكنة لهذه الطبقة",
+            noLayersSet: "بيت_No layers defined in the config, the search box will not work_لاحقة"
         },
         page: {
             title: "البحث عن المعلومات",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "خريطة أساس"
         }
-    })
 
+    })
 );

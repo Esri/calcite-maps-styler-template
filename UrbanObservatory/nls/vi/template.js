@@ -1,39 +1,63 @@
-﻿define(({
+﻿define({
   mainPage: {
-    "UrbanObservatory": "á»‡_Urban Observatory_á»",
-    "Themes": "á»‡_Themes_á»",
-    "Cities": "á»‡_Cities_á»",
+    "UrbanObservatory": "Urban Observatory",
+    "Themes": "Chủ đề",
+    "Cities": "Thành phố",
     "Nouns": {
-      "Work": "á»‡_Work_á»",
-      "Movement": "á»‡_Movement_á»",
-      "People": "á»‡_People_á»",
-      "Public": "á»‡_Public_á»",
-      "Systems": "á»‡_Systems_á»"
+      "Work": "Công việc",
+      "Movement": "Di chuyển",
+      "People": "Con người",
+      "Public": "Công cộng",
+      "Systems": "Hệ thống"
     },
     "splashDialog": {
-      "welcome": "á»‡_The Urban Observatory city comparison app enables you to explore the living fabric of great cities by browsing a variety of cities and themes_á».",
-      "changTheme": "á»‡_To change <b>Themes</b>, click on a theme name in the Themes list_á».",
-      "changeCity": "á»‡_To change <b>Cities</b>, click on the city name in the Cities list, or drag-and-drop it over a map_á».",
-      "moreInfo": "á»‡_More Information on the Urban Observatory_á»",
-      "buttonText": "á»‡_Start Comparing_á»"
+      "welcome": "Ứng dụng so sánh thành phố Urban Observatory cho phép bạn khám phá nét sống động của những thành phố lớn bằng cách duyệt một loạt các thành phố và chủ đề.",
+      "changTheme": "Để thay đổi <b>Chủ đề</b>, bấm vào tên chủ đề trong danh sách Chủ đề.",
+      "changeCity": "Để thay đổi <b>Thành phố</b>, bấm vào tên thành phố trong danh sách Thành phố, hoặc kéo-và-thả nó trên bản đồ.",
+      "moreInfo": "Thông tin khác về Urban Observatory",
+      "buttonText": "Bắt đầu so sánh"
     },
-    "socialMediaMessage":"á»‡_Compare 16 global cities using maps as a common language. Experience #UrbanObservatory_á»",
-    "viewMapOnline": "á»‡_View this map in ArcGIS.com_á»",
-    "selectMapPanel": "á»‡_SELECT MAP PANEL_á»",
-    "noDescription": "á»‡_[ NO DESCRIPTION ]_á»",
-    "themeNotAvailable": "á»‡_Map not available_á».",
-    "legend": "á»‡_Legend_á»"
+    "socialMediaMessage":"So sánh 16 thành phố trên toàn cầu sử dụng bản đồ như là một ngôn ngữ chung. Trải nghiệm #UrbanObservatory",
+    "viewMapOnline": "Xem bản đồ này trên ArcGIS.com",
+    "selectMapPanel": "CHỌN BẢNG ĐIỀU KHIỂN BẢN ĐỒ",
+    "noDescription": "[ KHÔNG CÓ MÔ TẢ ]",
+    "themeNotAvailable": "Bản đồ không khả dụng.",
+    "legend": "Chú giải"
   },
   errors: {
-    "webmap": "á»‡_WebMap_á»",
-    "protocolMismatchError": "á»‡_Protocol mismatch error...  Proceed anyway_á»?",
-    "problematicWebmap": "á»‡_We're currently experiencing technical issues with this map_á»: ",
+    "webmap": "Bản đồ Web",
+    "protocolMismatchError": "Lỗi không khớp giao thức...  Vẫn tiếp tục?",
+    "problematicWebmap": "Chúng tôi hiện đang gặp các vấn đề kỹ thuật với bản đồ này: ",
     /* DO NOT REPLACE TEXT INSIDE CURLY BRACKETS */
-    "invalidDefaultThemeTemplate": "á»‡_Default theme '{theme}' is not available in the '{groupName}' group_á».",
-    "mapHasNoLODs": "á»‡_This map has no LODs defined_á»: ",
-    "errorCreatingMap": "á»‡_Error creating map_á»: ",
-    "cantFindWebmap": "á»‡_Can't find webmap_á»: ",
-    "alreadyLoadingCity": "á»‡_Already loading city_á»: "
-  }
-
-}));
+    "invalidDefaultThemeTemplate": "Chủ đề mặc định '{theme}' hiện không khả dụng trong nhóm '{groupName}'.",
+    "mapHasNoLODs": "Bản đồ này không có các LOD xác định: ",
+    "errorCreatingMap": "Lỗi khi tạo bản đồ: ",
+    "cantFindWebmap": "Không thể tìm bản đồ web: ",
+    "alreadyLoadingCity": "Đã tải thành phố: "
+  },
+"ar":1,
+"cs":1,
+"da":1,
+"de":1,
+"es":1,
+"et":1,
+"fi":1,
+"fr":1,
+"he":1,
+"it":1,
+"ja":1,
+"ko":1,
+"lt":1,
+"lv":1,
+"nl":1,
+"nb":1,
+"pl":1,
+"pt-br":1,
+"pt-pt":1,
+"ro":1,
+"ru":1,
+"sv":1,
+"tr":1,
+"th":1,
+"zh-cn":1
+});

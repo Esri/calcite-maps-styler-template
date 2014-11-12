@@ -85,11 +85,12 @@
 				lblLink: "Esri ストーリー マップ Web サイトに移動します。",
 				content1Div1: "さまざまなスタイルを統合してストーリーを作成することができます。通常、<strong>%LAYOUT_TITLE%</strong> にはテキスト、画像、ビデオが含まれ、マップは<strong>メイン ステージ</strong>に配置されることが多いですが、%TPL_NAME% を使用すると、ユーザはメイン ステージ内にも注目の画像、チャート、ビデオを表示することができます。",
 				content1Div2: "セクションを追加すると、ストーリーテリングを詳細にカスタマイズできます。ユーザが %LAYOUT_TITLE% のテキストをスクロールしたときに、メイン ステージ上のマップが画面移動または主要ポイントにズームしたり、新しいマップと画像を自動的に切り替えたりして、メッセージをサポートできます。",
-				content2Div1: "ここで %TPL_NAME% の外観を調整できます。ここでは、配色、レイアウト、幅、およびフォントをすべて調整できます。",
-				content2Div2: "また、リンクを Facebook、Twitter、および Bitly で共有して、ユーザが簡単に %TPL_NAME% を他のユーザに広めることもできます。",
+				content2Div1: "須_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_鷗.",
+				content2Div2: "須_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_鷗.",
 				content3Div1: "コンテンツは複数のセクションに整理されています。セクションは (小さな章のように考えて) 必要な数だけ作成できます。それらの章の流れは重要です。[整理] の中で、必要に応じてセクションの順序を変更したり削除したりできます。",
 				content4Div1: "間違いを見つけた場合やマテリアルを変更したい場合でも簡単に編集できます。コンテンツを変更するには、アプリケーションに表示されている編集アイコンを使用します。%TPL_NAME% の開発では、編集機能を多く使用します。",
-				content5Div1: "%TPL_NAME% は、%PORTAL% アカウントに保存され、デフォルトではプライベートになります。これを組織サイトで共有するか、世界中に公開するかを決定できます。また、簡単に共有できるように、短縮された URL も用意されています。",
+				content5Div1: "須_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_鷗.",
+				content5Div2: "須_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_鷗.",
 				content6Div1: "ホーム セクションのタイトルは、ジャーナルのタイトルでもあります。ホーム セクションは、ストーリーの「表紙」のようなものです。ホーム セクションのタイトルは、読者がジャーナルを操作するときにも表示されます。",
 				content6Div2: "%LAYOUT_TITLE% は、テキストだけでなくても構いません。写真やビデオを加えてストーリーを補強したり、テキストの長いセクションを分割することを検討してください。"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

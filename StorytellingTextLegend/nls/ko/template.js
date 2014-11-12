@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "맵을 생성할 수 없음:",
         general:"오류",
         timeout:"시작할 다른 탭을 선택하세요."
       },
-      loading:{
+      loading: {
         message: "맵을 로드하는 중"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "범례"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "yyyy MMMM d",
         yearPattern: "yyyy",
         hourTimePattern: "a h",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "a h:mm:ss:SSS"
       }
     }
-})
+  })
 );

@@ -1,9 +1,9 @@
 ﻿define(
-({
+	 ({
 		firstPane: {
 			head: "<span class='highlightText'>תבנית סיור ממופה</span> מאפשרת לכל המשתמשים ברמות השונות בחשבון ArcGIS Online כולל חשבון חינמי ציבורי ליצור ולערוך תסריט מבוסס מקום המשלב תמונות, טקסט ומפה מ:",
 			list0: "תמונות מאוחסנות בשירותי שיתוף תמונות מקוונים מרכזיים כדוגמת פליקר פיקסה ופייסבוק או כל שרת אינטרנט אחר",
-			list1: "תמונות שעדיין לא אוחסנו בצורה מקוונת שיעברו איחסון כקישורי שירות ישויות (מוגבל לחברי ArcGIS לארגונים)"
+			list1: "כן_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_ש"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>התבנית</span> המאגדת כלי עריכה קלים להפעלה הכוללים:",
@@ -17,8 +17,8 @@
 			list1: "לארח את התבנית על שרת ה- web שלך או על שרת צד שלישי"
 		},
 		fourthPane: {
-			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>בדוק באתר מפות סיפור של Esri</a> בכדי ללמוד עוד אודות יצירה ושיתוף סיפורים. מקורות המידע כוללים:",
-			list0: "מפות סיפור שפורסמו על ידי צוותי מפות הסיפור של Esri",
+			head: "כן_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_ש:",
+			list0: "כן_Story maps published by Esriâ€™s story maps teams_ש",
 			list1: "מבחר של תבניות להורדה",
 			list2: "מדריכים לשיטות עבודה מומלצות", 
 			list3: "גלריה של סיפורי מפות המציגים קהילה מתרחבת של מספרי סיפורים"

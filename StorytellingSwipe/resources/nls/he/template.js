@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "טעינת אפליקציה",
 				step2: "טעינת מידע",
 				step3: "מתחיל",
 				fail: "סליחה, אך טעינת כלי ה- swipe נכשלה",
-				loadBuilder: "מעבר למצב בניה",
+				loadBuilder: "מעבר למצב בניה",				
 				redirectSignIn: "הפניה לדף ההתחברות",
 				redirectSignIn2: "(תופנה מחדש לאחר ההתחברות)",
 				failButton: "נסה שוב"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

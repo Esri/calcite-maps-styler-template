@@ -1,22 +1,22 @@
 ﻿define(
-({
-  viewer:{
-    main:{
-      scaleBarUnits: "á»‡_english_á»" //"english (for miles) or "metric" (for km) - don't translate.
+   ({
+  viewer: {
+    main: {
+      scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
-   	label: "á»‡_Description_á»"
+   sidePanel: {
+   	label: "Mô tả"
     },
-    errors:{
-      createMap: "á»‡_Unable to create map_á»",
-      general: "á»‡_Error_á»"
+    errors: {
+      createMap: "Không thể tạo bản đồ",
+      general: "Lỗi"
     }
   },
-  tools:{
+  tools: {
     tweets: {
-    "screenName": "á»‡_Screen name_á»",
-    "signIn": "á»‡_Sign in_á»",
-    "switchAccount": "á»‡_Switch account_á»",
+    "screenName": "Tên màn hình",
+    "signIn": "Đăng nhập",
+    "switchAccount": "Chuyển đổi tài khoản",
     // doc about date and time patterns: http://dojotoolkit.org/reference-guide/dojo/date/locale/format.html
     // yyyy: full year, e.g. 2011
     // MMMM: full month name, e.g. December
@@ -26,39 +26,39 @@
     // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
     // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
     // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-    datePattern: "á»‡_d MMM yy_á»",
-    timePattern: "á»‡_h:mma_á»",
-    reply: "á»‡_Reply_á»",
-    retweet:"á»‡_Retweet_á»",
-    favorite:"á»‡_Favorite_á»",
-    label: "á»‡_Tweets_á»",
-    title: "á»‡_Tweets_á»",
-    error: "á»‡_No results found, try another search term or location_á»",
-		search:{
-			label: "á»‡_Search_á»",
-			title: "á»‡_Search Twitter_á»",
-			placeholder: 'á»‡_Keywords to search_á»'
+    datePattern: "d MMM yy",
+    timePattern: "h:mma",
+    reply: "Trả lời",
+    retweet:"Đăng lại",
+    favorite:"Yêu thích",
+    label: "Bài đăng",
+    title: "Bài đăng",
+    error: "Không tìm thấy kết quả nào, hãy thử một thuật ngữ tìm kiếm hoặc vị trí khác",
+		search: {
+			label: "Tìm kiếm",
+			title: "Tìm kiếm trên Twitter",
+			placeholder: 'Từ khóa tìm kiếm'
 		},
-		clear:{
-			label: "á»‡_Clear_á»",
-			title: "á»‡_Clear Map_á»"
+		clear: {
+			label: "Xóa",
+			title: "Xóa bản đồ"
 		},
-		share:{
-			label: "á»‡_Share Map_á»:",
+		share: {
+			label: "Chia sẻ Bản đồ:",
 			email:{
-				title: "á»‡_Email_á»",
-				label: "á»‡_Email_á»"
+				title: "Email",
+				label: "Email"
 			},
-			twitter:{
-				title: "á»‡_Twitter_á»",
-				label: "á»‡_Twitter_á»"
+			twitter: {
+				title: "Twitter",
+				label: "Twitter"
 			},
-			facebook:{
-				title: "á»‡_Facebook_á»",
-				label: "á»‡_Facebook_á»"
+			facebook: {
+				title: "Facebook",
+				label: "Facebook"
 			}
 		}
 	 }
    }
- })
+})
 );

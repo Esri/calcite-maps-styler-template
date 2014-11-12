@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"Ошибка"
     },
 	legToggle:{
-	  up:"ЛЕГЕНДА КАРТЫ ▲",
-	  down:"ЛЕГЕНДА КАРТЫ ▼"
+	  up:"Ж_MAP LEGEND â–²_Я",
+	  down:"Ж_MAP LEGEND â–¼_Я"
 	},
 	loading:{
 		message: "Загрузка карты"

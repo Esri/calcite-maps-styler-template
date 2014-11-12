@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "CARGANDO APLICACIÓN",
 				step2: "CARGANDO DATOS",
 				step3: "INICIALIZANDO",
 				fail: "La carga de la comparativa de mapas ha fallado",
-				loadBuilder: "CAMBIANDO A MODO DE BUILDER",
+				loadBuilder: "CAMBIANDO A MODO DE BUILDER",				
 				redirectSignIn: "REDIRIGIENDO A LA PÁGINA DE INICIO DE SESIÓN",
 				redirectSignIn2: "(se te redirigirá aquí después del inicio de sesión)",
 				failButton: "Reintentar"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

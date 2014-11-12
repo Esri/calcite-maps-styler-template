@@ -70,11 +70,10 @@
 				copy: "Kopier",
 				copied: "Kopiert",
 				open: "Åpne",
-				embed: "bygge inn på webområde",
-				embedExplain: "Bruk følgende HTML-kode for å bygge inn historien på en webside.",
+				embed: "å_Embed in web page_ø",
+				embedExplain: "å_Use the following HTML code to embed the journal in a web page_ø.",
 				size: "Størrelse (bredde/høyde):"
 			}
         }
     })
-
 );

@@ -1,12 +1,18 @@
 ﻿define(
-   ({
+     ({
         map: {
-            error: "á»‡_Unable to create map_á»"
+            error: "Không thể tạo bản đồ"
         }, 
-        tools: {
-        	legend: "á»‡_Legend_á»",
-        	 about: "á»‡_About_á»"
+        tools: {         
+            search: {
+                error: "á»‡_Location could not be found_á»",
+                notWhatYouWanted: "á»‡_Not what you wanted_á»?",
+                selectAnother: "á»‡_Select another location_á»",
+                currentLocation: "á»‡_Current Location_á»",
+                title: "á»‡_Location_á»"
+            },
+        	legend: "Chú giải",
+        	 about: "Về"
         }
     })
-   
 );

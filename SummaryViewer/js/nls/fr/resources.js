@@ -1,10 +1,12 @@
-﻿define(({
-    "map": {
-        "error": "Impossible de créer la carte"
-    },
-    "tooltips" : {
-        "logo" : "Logo",
-        "switchbasemap" : "Modules de base carte",
-        "close" : "Près"
-     }
-}));
+﻿define(
+    ({
+      "map": {
+         "error": "æ_Unable to create map_Â"
+      },
+      "tooltips": {
+         "logo": "æ_Logo_Â",
+         "switchbasemap": "æ_Switch base map_Â",
+         "close": "æ_Close_Â"
+      }
+   })
+);

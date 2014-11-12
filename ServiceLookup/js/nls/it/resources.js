@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "Impossibile creare la mappa",
             mouseToolTip: "Fare clic sulla mappa per cercare il servizio"
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Layer non incluso nella mappa Web",
             fieldNotFound: "Campo non trovato",
-            popupNotSet: "Popup non abilitato per questo layer"
+            popupNotSet: "Popup non abilitato per questo layer",
+            noLayersSet: "é_No layers defined in the config, the search box will not work_È"
         },
         page: {
             title: "Ricerca informazioni",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "Mappa di base"
         }
-    })
 
+    })
 );

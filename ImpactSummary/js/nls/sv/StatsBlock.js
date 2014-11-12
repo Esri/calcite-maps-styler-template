@@ -7,5 +7,4 @@
             "source":"Datakälla"
         }
     })
-    
 );

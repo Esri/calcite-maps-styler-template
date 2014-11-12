@@ -10,6 +10,8 @@
 				lblOverview: "Genel Bakış Haritası",
 				lblLegend: "Gösterim",
 				loadingTitle: "Başlık yükleniyor",
+				entry: "ı_Entry_İ",
+				entries: "ı_Entries_İ",
 				section: "Bölüm",
 				sections: "Bölümler",
 				and: "ve",
@@ -22,12 +24,14 @@
 				newMap: "Yeni seçilen web haritası",
 				webmapDefault: "Web haritası varsayılanı",
 				customCfg: "Özel yapılandırma",
-				tooltipLocation: "Okuyucularınız bu bölüme geldiğinde kullanılacak harita konumunu tanımlayın.",
+				tooltipLocation: "ı_Define the location that this map will display_İ.",
 				tooltipContent: "Görünür katmanları tanımlayın.",
-				tooltipPopup: "Okuyucularınız bu bölüme geldiğinde görüntülenecek bir açılır pencere seçin.",
-				tooltipOverview: "Ana harita boyunca küçük bir genel bakış haritası görüntüle.",
+				tooltipPopup: "ı_Choose a popup that will be opened when this map is displayed_İ.",
+				tooltipOverview: "ı_Display a small overview map along with the main map_İ.",
 				tooltipLegend: "Harita gösterimini harita üzerinde görüntüleyin, haritada bir çok katman ve sembol olduğunda yararlıdır.",
-				mapCfgInvite: "Haritanızı yapılandırmak için şu denetimleri kullanın"
+				mapCfgInvite: "Haritanızı yapılandırmak için şu denetimleri kullanın",
+				lblLocationAlt: "ı_Inherited from the first map_İ",
+				tooltipLocationAlt: "ı_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_İ."
 			},
 			configure: {
 				btnReset: "Sıfırla",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "Beskrivning"
     },
-    errors:{
+    errors: {
       createMap: "Det går inte att skapa kartan",
       general: "Fel"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "Skärmnamn",
     "signIn": "Logga in",
@@ -34,31 +34,31 @@
     label: "Tweets",
     title: "Tweets",
     error: "Inga resultat hittades, testa med en annan sökterm eller plats",
-		search:{
+		search: {
 			label: "Sök",
 			title: "Sök på Twitter",
 			placeholder: 'Sökord'
 		},
-		clear:{
+		clear: {
 			label: "Rensa",
 			title: "Rensa karta"
 		},
-		share:{
+		share: {
 			label: "Dela karta:",
 			email:{
 				title: "E-post",
 				label: "E-post"
 			},
-			twitter:{
+			twitter: {
 				title: "Twitter",
 				label: "Twitter"
 			},
-			facebook:{
+			facebook: {
 				title: "Facebook",
 				label: "Facebook"
 			}
 		}
 	 }
    }
- })
+})
 );

@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Entidad seleccionada",
                 "layerHelpTextMessage": "Esta aplicación necesita una capa con campos numéricos",
                 "alertMessage": {
-                    "resetVariableMessage": "¿Estás seguro de que deseas restablecer la variable?",
+                    "resetVariableMessage": "á_Are you sure you want to reset variable_Ó?",
                     "emptyAppTitleMessage": "El título de la aplicación no puede estar vacío",
                     "emptyDescriptionMessage": "La descripción no puede estar vacía",
                     "maxVariableSelection": "No puedes seleccionar más de 25 subvariables",
@@ -58,11 +58,10 @@
                     "unsavedChangesMessage": "Cambios no guardados",
                     "failMessage": "El elemento no se ha podido actualizar correctamente",
                     "saveChangesAlert": "¿Deseas guardar los cambios?",
-                    "variableLabelValidation": "La etiqueta de variable no puede estar VACÍA",
-                    "subVariableLabelValidation": "La etiqueta de subvariable no puede estar VACÍA"
+                    "variableLabelValidation": "á_Variable label cannot be empty_Ó",
+                    "subVariableLabelValidation": "á_Sub variable label cannot be empty_Ó"
                     }
             }
         }
     })
-
 );

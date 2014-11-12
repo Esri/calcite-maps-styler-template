@@ -1,5 +1,5 @@
 ﻿define(
-({
+	 ({
 		viewer: {
 			loading: {
 				step1: "SE ÎNCARCĂ APLICAŢIA",
@@ -68,7 +68,7 @@
 				dataPicError1: "Turul hărţii necesită acum ca un URL de fotografie să se termine cu una din următoarele extensii: .jp(e)g, .png, .gif sau .bmp.",
 				dataPicError2: "Această cerinţă nu va afecta Turul hărţii publicat în prezent. Cu toate acestea, pentru a utiliza instrumentul de creare interactiv, trebuie mai întâi să rezolvaţi problema URL-ului efectuând una din următoarele activităţi:",
 				dataPicError3: "Editare URL-uri",
-				dataPicError4: "Acesta va adăuga <i>#isImage</i> la sfârşitul URL-urilor de fotografii nesuportate. Majoritatea serverelor suportă anexe la URL-uri. Cu toate acestea, după ce aţi efectuat acea acţiune, trebuie să verificaţi dacă URL-urile de fotografii actualizate sunt funcţionale, navigând prin puncte.Dacă se încarcă toate fotografiile, puteţi salva Turul hărţii. Dacă există <b>fotografii defecte, nu salvaţi Turul hărţii</b>. În schimb, încărcaţi din nou instrumentul de creare şi efectuaţi a doua acţiune.",
+				dataPicError4: "Ă_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_ș.",
 				dataPicError5: "Limitarea turului la fotografii",
 				dataPicError6: "Această opţiune determină considerarea tuturor URL-urilor drept fotografii, însă nu veţi pute adăuga clipuri video utilizând instrumentul de creare interactivă. Această acţiune este reversibilă în cazul în care vă hotărâţi în viitor să adăugaţi clipuri video.",
 				dataPicError7: "Turul hărţii a fost restricţionat la fotografii; nu se pot utiliza clipuri video. Dacă alegeţi să eliminaţi limitarea, verificaţi dacă fotografiile se încarcă în continuare corect înainte de a salva Turul hărţii. Dacă va fi necesar, veţi putea restaura ulterior limitarea.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Fotografie",
 				addLabelThumbUrl: "Miniatură",
 				addTextPlaceholderUrl: "Introducere URL imagine",
-				addTextPlaceholderUrl2: "Introducere URL de pagină Youtube",
+				addTextPlaceholderUrl2: "Ă_Enter a YouTube page URL_ș",
 				addTextPlaceholderUrl3: "Introducere URL de pagină Vimeo",
 				addTextPlaceholderUrl4: "Introducere URL de încorporare video",
 				addLabelVideo: "Video",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Resetare selecţie câmpuri",
 				settingsExtentExplain: "Setaţi extinderea iniţială a Turului hărţii cu ajutorul hărţii interactive de mai jos.",
 				settingsExtentExplainBottom: "Extinderea pe care o definiţi va modifica extinderea iniţială a hărţii dvs. web. Reţineţi că această extensie nu este utilizată dacă nu include primul punct al turului. În acest caz, turul se va deschide centrat pe primul punct.",
-				settingsExtentDateLineError: "Extinderea nu poate traversa meridianul cu longitudinea 180°",
+				settingsExtentDateLineError: "Ă_The extent cannot be across the meridian of 180Â° longitude_ș",
 				settingsExtentDateLineError2: "Eroare la calculul extinderii",
 				settingsExtentDrawBtn: "Trasare extindere nouă",
 				settingsExtentModifyBtn: "Editare extindere",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Aplicare"
 			},
 			headerJS:{
-				editMe: "Editează-mă!",
+				editMe: "Ă_Edit me_ș!",
 				templateTitle: "Setare titlu şablon",
 				templateSubtitle: "Setare subtitlu şablon"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Importul a reuşit. Se încarcă"
 			},
 			viewYoutube: {
-				title: "Import Youtube",
+				title: "Ă_YouTube import_ș",
 				header: "Introduceţi un nume de utilizator YouTube pentru a găsi clipuri video partajate în mod public.",
-				pageInputLbl: "Introduceţi un nume de utilizator Youtube",
+				pageInputLbl: "Ă_Enter a YouTube user name_ș",
 				lookupMsgError: "Utilizator negăsit",
-				howToFind: "Cum se găseşte un nume de utilizator Youtube",
+				howToFind: "Ă_How to find a YouTube user name_ș",
 				howToFind2: "Numele de utilizator este afişat sub videoclipuri",
 				found: "Găsit",
 				noData: "Nu a fost găsit niciun videoclip public"
@@ -442,12 +442,12 @@
 					div172: "Când sunt prezente, câmpurile pentru fotografie şi miniatură vor fi întotdeauna utilizate, iar ataşările serviciului de obiecte spaţiale nu vor fi interogate.",
 					div173: "Exemple de fişiere CSV şi shapefile pot fi descărcate de la",
 					div18: "Crearea unui serviciu de obiecte spaţiale din CSV sau shapefile",
-					div19: "Când creaţi un serviciu de obiecte spaţiale din CSV sau shapefile, ataşările nu sunt activate implicit. Pentru a le activa, deschideţi pagina cu detaliile serviciului de obiecte spaţiale, faceţi clic pe mica săgeată de pe secţiunea stratului tematic şi veţi vedea opţiunea respectivă. Turul hărţii va continua să utilizeze fotografiile şi miniaturile pentru care aţi introdus referinţe prin atribute. Opţional, dacă doriţi să încărcaţi fotografiile ca ataşări la serviciul de obiecte spaţiale, veţi putea face acest lucru cu ajutorul a două butoane de pe panoul pentru imagini (\"Modificare fotografie\" şi \"Modificare miniatură\").",
-					div20: "Formate de imagini şi clipuri video suportate",
-					div21: "Formatele de fotografii suportate sunt: <b>.jpg, .jpeg, .png, .gif şi .bmp</b>. Dacă fişierul dvs. media nu se termină cu una din aceste extensii, Turul hărţii îl va considera un clip video, cu excepţia cazului în care se utilizează un serviciu de obiecte spaţiale (vedeţi mai jos).",
+					div19: "Ă_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_ș.",
+					div20: "Ă_Supported picture formats and videos_ș",
+					div21: "Ă_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_ș.",
 					div22: "Şablonul Tur hartă nu include un player video, astfel încât trebuie să utilizaţi player video extern furnizat de serviciul dvs. preferat de găzduire a materialelor video (găsiţi opţiunea pentru încorporarea clipurilor video şi copiaţi URL-ul prezent în codul dat). Dacă doriţi să găzduiţi voi înşivă clipul video, puteţi crea o pagină HTML care să conţină un player video precum <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "Instrumentul de creare interactiv nu furnizează un dialog pentru includerea clipului video când utilizaţi servicii de obiecte spaţiale cu ataşări, însă este posibil să faceţi acest lucru editând datele în afara instrumentului de creare interactiv. În aplicaţia de vizualizare a hărţilor din arcgis.com, dacă modificaţi câmpurile pentru fotografii pentru a conduce la un clip video extern şi adăugaţi un parametru special la sfârşitul URL-ului (#isVideo), fişierul media va fi considerat ca fiind un clip video.",
-					div24: "Reţineţi că este în continuare necesar să aveţi două ataşări de tip fotografie valide, în caz contrar punctul nu va fi utilizat. Nu se pot utiliza clipuri video când se utilizează ataşări la serviciul de obiecte spaţiale fără câmpuri pentru fotografie şi miniatură."
+					div24: "Ă_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_ș."
 				},
 				tab3: {
 					title: "Personalizarea",
@@ -487,7 +487,7 @@
 					div2a: "Partajare tur cu ajutorul instrumentului de creare",
 					div2b: "Butonul Partajare va actualiza aplicaţia şi elementele Hartă web. Dacă datele turului sunt stocate într-un element de tip Serviciu de obiecte spaţiale, acesta va fi, de asemenea, actualizat. Dacă aţi adăugat alte straturi tematice prin aplicaţia de vizualizare a hărţilor din ArcGIS.com, ele nu vor fi actualizate. Acest lucru poate conduce la nepartajarea turului aşa cum v-aţi aştepta. Elementele care dispun deja de privilegii necesare (sau superioare celor necesare) nu vor fi actualizate.",
 					div2c: "Partajare tur prin ArcGIS Online",
-					div2d: "Când partajaţi aplicaţia prin ArcGIS Online, dacă va fi necesar aceasta vă va solicita să actualizaţi eventuale resurse de care depinde (hărţi web, servicii de obiecte spaţiale, straturi tematice decorative) şi care nu sunt partajate în acelaşi fel. Dacă Turul hărţii este publica şi una din resurse nu este partajată cu audienţa dvs., utilizatorii vor fi redirecţionaţi către pagina de autentificare ArcGIS Online.",
+					div2d: "Ă_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_ș.",
 					div3t: "Securitate serviciu spaţial",
 					div3a: "Dacă utilizaţi un serviciu de obiecte spaţiale găzduit, creat prin instrumentul de creare a Turului hărţii, aplicaţia administrează securitatea serviciului pentru dvs. şi dvs. veţi rămâne singurul cu privilegii de editare chiar dacă partajaţi serviciul public.",
 					div3t2: "Înainte de partajarea turului cu audienţa",

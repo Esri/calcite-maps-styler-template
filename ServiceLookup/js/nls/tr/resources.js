@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "Harita oluşturulamıyor",
             mouseToolTip: "Servisi kontrol etmek için haritaya tıklayın"
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Katman, web haritasında değil",
             fieldNotFound: "Alan bulunamadı",
-            popupNotSet: "Açılır pencere bu katman için etkinleştirildi"
+            popupNotSet: "Açılır pencere bu katman için etkinleştirildi",
+            noLayersSet: "ı_No layers defined in the config, the search box will not work_İ"
         },
         page: {
             title: "Bilgi Arama",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "Altlık Haritası"
         }
-    })
 
+    })
 );

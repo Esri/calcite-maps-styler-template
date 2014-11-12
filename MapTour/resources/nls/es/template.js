@@ -1,5 +1,5 @@
 ﻿define(
-({
+	 ({
 		viewer: {
 			loading: {
 				step1: "CARGANDO APLICACIÓN",
@@ -68,7 +68,7 @@
 				dataPicError1: "La ruta de mapa ahora requiere que las direcciones URL de las imágenes acaben con una de las siguientes extensiones: .jp(e)g, .png, .gif o .bmp.",
 				dataPicError2: "Este requisito no afectará a las rutas de mapa existentes que ya estén publicadas. Sin embargo, para utilizar el builder interactivo, debes solucionar en primer lugar el problema con la dirección URL realizando una de las dos siguientes acciones:",
 				dataPicError3: "Editar las direcciones URL",
-				dataPicError4: "De esta forma, se agregará <i>#isImage</i> al final de las direcciones URL de imágenes que no sean compatibles. La mayoría de los servidores son compatibles con los extremos URL. Sin embargo, una vez que se haya realizado la acción, es necesario desplazarse por los puntos para comprobar que las direcciones URL de las imágenes actualizadas funcionan. Si se cargan todas las imágenes, puedes guardar la ruta de mapa. Si <b>las imágenes están dañadas, no guardes la ruta de mapa</b>. En lugar de eso, vuelve a cargar el builder y realiza la segunda acción.",
+				dataPicError4: "á_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_Ó.",
 				dataPicError5: "Limitar el recorrido a las imágenes",
 				dataPicError6: "Con esta opción, se considera que todas las direcciones URL son imágenes, pero no se puede agregar vídeos mediante el builder interactivo. Esta acción es reversible si deseas agregar vídeos en el futuro.",
 				dataPicError7: "La ruta de mapa está limitada a imágenes, por lo que no puedes utilizar vídeos. Si deseas eliminar dicha limitación, comprueba si las imágenes siguen cargándose correctamente antes de guardar la ruta de mapa. Podrás restaurar dicha limitación posteriormente, en caso necesario.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Imagen",
 				addLabelThumbUrl: "Miniatura",
 				addTextPlaceholderUrl: "Introduce la URL de una imagen",
-				addTextPlaceholderUrl2: "Introduce la URL de una página de Youtube",
+				addTextPlaceholderUrl2: "á_Enter a YouTube page URL_Ó",
 				addTextPlaceholderUrl3: "Introduce la URL de una página de Vimeo",
 				addTextPlaceholderUrl4: "Introduce la URL de un vídeo integrado",
 				addLabelVideo: "Vídeo",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Restablece la selección de campos",
 				settingsExtentExplain: "Define la extensión inicial de la ruta de mapa mediante el mapa interactivo siguiente.",
 				settingsExtentExplainBottom: "La extensión que definas modificará la extensión inicial de tu mapa web. Ten en cuenta que esta extensión no se utiliza si no incluye el primer punto del recorrido. En ese caso, el recorrido se abrirá centrándose en el primer punto.",
-				settingsExtentDateLineError: "La extensión no puede atravesar el meridiano de longitud 180º",
+				settingsExtentDateLineError: "á_The extent cannot be across the meridian of 180Â° longitude_Ó",
 				settingsExtentDateLineError2: "Error al calcular la extensión",
 				settingsExtentDrawBtn: "Dibuja una nueva extensión",
 				settingsExtentModifyBtn: "Edita la extensión",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Aplicar"
 			},
 			headerJS:{
-				editMe: "¡Modifícame!",
+				editMe: "á_Edit me_Ó!",
 				templateTitle: "Establecer título de plantilla",
 				templateSubtitle: "Establecer subtítulo de plantilla"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Importación correcta. Cargando"
 			},
 			viewYoutube: {
-				title: "Importación de Youtube",
+				title: "á_YouTube import_Ó",
 				header: "Introduce un nombre de usuario de YouTube para buscar vídeos que se hayan compartido públicamente.",
-				pageInputLbl: "Introduce un nombre de usuario de Youtube",
+				pageInputLbl: "á_Enter a YouTube user name_Ó",
 				lookupMsgError: "Usuario no encontrado",
-				howToFind: "Cómo encontrar un nombre de usuario de Youtube",
+				howToFind: "á_How to find a YouTube user name_Ó",
 				howToFind2: "El nombre de usuario se muestra bajo los vídeos",
 				found: "Encontrados",
 				noData: "No se han encontrado vídeos públicos"
@@ -442,12 +442,12 @@
 					div172: "Si están presentes, siempre se utilizarán los campos de imagen y miniatura, y no se consultarán los adjuntos del servicio de entidades.",
 					div173: "Puedes descargar archivos Shapefile y CSV de ejemplo en:",
 					div18: "Creación de servicios de entidades alojados desde archivos CSV o Shapefile",
-					div19: "Al crear un servicio de entidades alojado a partir de un archivo CSV o Shapefile, los adjuntos no se habilitan de forma predeterminada. Para habilitarlos, abre la página de detalles del servicio de entidades, haz clic en la flecha pequeña de la sección de capas y podrás ver dicha opción. La ruta de mapa seguirá utilizando las imágenes y las miniaturas a las que se hace referencia mediante atributos. De forma opcional, si deseas cargar las imágenes como adjuntos de servicios de entidades, podrás hacerlo mediante dos botones en el panel de imágenes (\"Cambiar imagen\" y \"Cambiar vista en miniatura\").",
-					div20: "Vídeos y formatos de imagen compatibles",
-					div21: "Los formatos de imágenes compatibles son los siguientes: <b>.jpg, .jpeg, .png, .gif y .bmp</b>. Si los medios no acaban con dichas extensiones, la ruta de mapa considerará que es un vídeo, excepto al utilizar un servicio de entidades (consulta a continuación).",
+					div19: "á_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_Ó.",
+					div20: "á_Supported picture formats and videos_Ó",
+					div21: "á_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_Ó.",
 					div22: "La plantilla de ruta de mapa no incluye un reproductor de vídeos, por lo que deberás utilizar el reproductor de vídeos externo ofrecido por tu servicio de alojamiento de vídeos favorito (busca la opción para integrar el vídeo y copia de la dirección URL presente en un código determinado). Si deseas alojar un vídeo tú mismo, puedes crear una página HTML que contenga un reproductor de vídeos como <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "El builder interactivo no ofrece ningún cuadro de diálogo para incluir vídeos al utilizar servicios de entidades con adjuntos, pero es posible hacerlo mediante la edición de datos fuera del builder interactivo. En el visor de mapas de arcgis.com, si modificas los campos de imágenes para que señalen a un vídeo externo y agregas un parámetro especial al final de la dirección URL (#isVideo), se considerará que el medio es un vídeo.",
-					div24: "Ten en cuenta que seguirás necesitando dos adjuntos de imágenes válidos o no se utilizará el punto. No se puede utilizar vídeos al emplear adjuntos de servicios de entidades sin los campos de imágenes y vistas en miniatura."
+					div24: "á_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_Ó."
 				},
 				tab3: {
 					title: "Personalización",
@@ -487,7 +487,7 @@
 					div2a: "Compartir el recorrido mediante el builder",
 					div2b: "Con el botón COMPARTIR se actualizará la aplicación y los elementos del mapa Web. Si los datos de tu recorrido están almacenados en un elemento de servicio de entidades, también se actualizarán. Si has agregado otras capas mediante el visor de mapas de ArcGIS.com, estas no se actualizarán. Esto puede dar lugar a que el recorrido no se comparta como esperabas. Los elementos que ya tienen los privilegios necesarios (o más) no se actualizarán.",
 					div2c: "Compartir el recorrido mediante ArcGIS Online",
-					div2d: "Cuando compartes la aplicación mediante ArcGIS Online, si es necesario se te pedirá que actualices los recursos dependientes (mapa Web, servicio de entidades, capa de decoración) que no se han compartido del mismo modo. Si el recorrido del mapa es público y uno de tus recursos no se ha compartido con el público, se redirigirá a los usuarios a la página de inicio de sesión de ArcGIS Online.",
+					div2d: "á_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_Ó.",
 					div3t: "Seguridad del servicio de entidades",
 					div3a: "Si estás utilizando un servicio de entidades alojado creado mediante el builder de rutas de mapa, la aplicación administra la seguridad del servicio por ti y serás la única persona con privilegios de edición, incluso aunque compartas el servicio públicamente.",
 					div3t2: "Antes de compartir el recorrido con el público",

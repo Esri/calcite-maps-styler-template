@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "LASTER INN APPLIKASJON",
 				step2: "LASTER INN DATA",
 				step3: "INITIALISERER",
 				fail: "Beklager, men innlasting av sveipeverktøyet mislyktes",
-				loadBuilder: "BYTTER TIL MODUS FOR BYGGEVERKTØY",
+				loadBuilder: "BYTTER TIL MODUS FOR BYGGEVERKTØY",				
 				redirectSignIn: "OMDIRIGERING TIL PÅLOGGINGSSIDEN",
 				redirectSignIn2: "(du blir omdirigert hit etter pålogging)",
 				failButton: "Prøv på nytt"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

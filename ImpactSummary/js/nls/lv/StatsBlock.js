@@ -7,5 +7,4 @@
             "source":"Datu avots"
         }
     })
-    
 );

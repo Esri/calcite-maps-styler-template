@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "Не удалось создать карту:",
         general:"Ошибка",
         timeout:"Выберите другую закладку, чтобы начать"
       },
-      loading:{
+      loading: {
         message: "Загрузка карт"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "ЛЕГЕНДА"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "ММММ д, гггг",
         yearPattern: "гггг",
         hourTimePattern: "ч",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "Ч:мм:сс:ммм"
       }
     }
-})
+  })
 );

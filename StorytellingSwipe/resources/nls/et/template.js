@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "RAKENDUSE LAADIMINE",
 				step2: "ANDMETE LAADIMINE",
 				step3: "LÄHTESTAMINE",
 				fail: "Vabandust, rullimisvahendi laadimine nurjus",
-				loadBuilder: "VAHETA KOOSTAJA TÜÜP",
+				loadBuilder: "VAHETA KOOSTAJA TÜÜP",				
 				redirectSignIn: "SUUNAN ÜMBER SISSELOGIMISE LEHELE",
 				redirectSignIn2: "(Teid suunatakse peale sisselogimist siia)",
 				failButton: "Proovi uuesti"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

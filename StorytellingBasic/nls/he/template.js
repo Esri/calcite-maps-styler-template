@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"שגיאה"
     },
 	legToggle:{
-	  up:"מקרא מפה ▲",
-	  down:"מקרא מפה ▼"
+	  up:"כן_MAP LEGEND â–²_ש",
+	  down:"כן_MAP LEGEND â–¼_ש"
 	},
 	loading:{
 		message: "טוען מפה"

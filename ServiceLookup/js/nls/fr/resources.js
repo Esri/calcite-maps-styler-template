@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "Impossible de créer la carte",
             mouseToolTip: "Cliquez sur la carte pour vérifier la présence d\'un service"
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "La couche ne se trouve pas dans la carte Web",
             fieldNotFound: "Champ introuvable",
-            popupNotSet: "La fenêtre contextuelle n\'est pas activée pour cette couche"
+            popupNotSet: "La fenêtre contextuelle n\'est pas activée pour cette couche",
+            noLayersSet: "æ_No layers defined in the config, the search box will not work_Â"
         },
         page: {
             title: "Consultation d\'informations",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "Fond de carte"
         }
-    })
 
+    })
 );

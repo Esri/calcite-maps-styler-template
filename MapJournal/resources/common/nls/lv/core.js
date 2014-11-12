@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Pievienot",
@@ -28,8 +28,8 @@
 				buttonSettings: "Iestatījumi",
 				buttonHelp: "Palīdzība",
 				buttonPreview: "Skatīt tiešraidē",
-				tooltipFirstSave: "Šī funkcionalitāte būs pieejama tikai pēc aplikācijas saglabāšanas",
-				tooltipNotShared: "Šī funkcionalitāte būs pieejama tikai pēc aplikācijas kopīgošanas",
+				tooltipFirstSave: "ķ_This isn't available until you save_ū.",
+				tooltipNotShared: "ķ_This isn't available until you share_ū.",
 				noPendingChange: "Nav neizpildītu izmaiņu",
 				unSavedChangePlural: "Gaida izmaiņas",
 				closeWithPendingChange: "Vai tiešām vēlaties apstiprināt šo darbību? Jūsu veiktās izmaiņas tiks zaudētas.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Saglabājot aplikāciju, radās kļūda",
 				err1Div1: "Aplikāciju nevar saglabāt, jo jums jau ir cita vienība ar tādu pašu nosaukumu (skatiet savu <a class='linkagolroot' target='_blank'>satura mapi</a>).",
-				err1Div2: "Lūdzu, modificējiet sadaļas Mājas nosaukumu un saglabājiet aplikāciju.",
-				btnOk: "Rediģēt sadaļas Mājas nosaukumu"
+				err1Div2: "ķ_Please modify the title of your application and then save it_ū.",
+				btnOk: "ķ_Edit the application title_ū"
 			},
 			share: {
 				firstSaveTitle: "Lietotne veiksmīgi saglabāta",
@@ -66,7 +66,7 @@
 				shareHeader2: "Jūsu aplikācijai var piekļūt jūsu organizācijas dalībnieki (nepieciešama pieteikšanās).",
 				shareLinkCopy: "Kopēt",
 				shareLinkCopied: "Kopēts",
-				shareQ0: "Kā iegult aplikāciju web vietnē?",
+				shareQ0: "ķ_How do I embed the application in a web page_ū?",
 				shareQ1Opt1: "Kā saglabāt aplikāciju privātu?",
 				shareQ1Opt2: "Kā saglabāt aplikāciju privātu vai koplietot to publiski?",
 				shareA1: "Izmantojiet %SHAREIMG% <a href='%LINK1%' target='_blank'>aplikācijas vienību lapā</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Klikšķis caur saiti",
 				logoSocialExplain: "Pielāgojiet galvenes saiti.",
 				logoSocialText: "Teksts",
-				logoSocialLink: "Saite"
+				logoSocialLink: "Saite",
+				lblSmallHeader: "ķ_Use compact header (no subtitle)_ū"
+			},
+			header: {
+				title: "ķ_Edit the title of your %TPL_NAME%_ū",
+				subtitle: "ķ_Edit the subtitle of your %TPL_NAME%_ū"
 			}
 		}
 	})
-
 );

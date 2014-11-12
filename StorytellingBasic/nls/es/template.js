@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"Error"
     },
 	legToggle:{
-	  up:"LEYENDA DEL MAPA ▲",
-	  down:"LEYENDA DEL MAPA ▼"
+	  up:"á_MAP LEGEND â–²_Ó",
+	  down:"á_MAP LEGEND â–¼_Ó"
 	},
 	loading:{
 		message: "Cargar el mapa"

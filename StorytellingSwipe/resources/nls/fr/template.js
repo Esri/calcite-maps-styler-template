@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "CHARGEMENT DE L\’APPLICATION",
 				step2: "CHARGEMENT DES DONNEES",
 				step3: "INITIALISATION",
 				fail: "Echec de chargement du balayage",
-				loadBuilder: "PASSAGE EN MODE DE GENERATEUR",
+				loadBuilder: "PASSAGE EN MODE DE GENERATEUR",				
 				redirectSignIn: "REDIRECTION VERS LA PAGE DE CONNEXION",
 				redirectSignIn2: "(vous serez redirigé vers cette page une fois connecté)",
 				failButton: "Réessayez"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

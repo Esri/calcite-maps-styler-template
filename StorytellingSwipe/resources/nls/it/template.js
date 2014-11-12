@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "CARICAMENTO APPLICAZIONE",
 				step2: "CARICAMENTO DATI",
 				step3: "INIZIALIZZAZIONE IN CORSO",
 				fail: "Caricamento scorrimento con dito non riuscito",
-				loadBuilder: "PASSAGGIO A MODALITÀ GENERATORE",
+				loadBuilder: "PASSAGGIO A MODALITÀ GENERATORE",				
 				redirectSignIn: "REINDIRIZZAMENTO ALLA PAGINA DI ACCESSO",
 				redirectSignIn2: "(pagina alla quale si verrà reindirizzati dopo l\'accesso)",
 				failButton: "Riprova"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

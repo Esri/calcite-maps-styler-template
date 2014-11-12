@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "Popis"
     },
-    errors:{
+    errors: {
       createMap: "Nelze vytvořit mapu",
       general: "Chyba"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "Zobrazované jméno",
     "signIn": "Přihlásit",
@@ -34,31 +34,31 @@
     label: "Tweety",
     title: "Tweety",
     error: "Nebyly nalezeny žádné výsledky, zkuste změnit hledaný výraz nebo umístění.",
-		search:{
+		search: {
 			label: "Hledat",
 			title: "Prohledat Twitter",
 			placeholder: 'Klíčová slova pro hledání'
 		},
-		clear:{
+		clear: {
 			label: "Vyprázdnit",
 			title: "Vyprázdnit mapu"
 		},
-		share:{
+		share: {
 			label: "Sdílet mapu:",
 			email:{
 				title: "E-mail",
 				label: "E-mail"
 			},
-			twitter:{
+			twitter: {
 				title: "Twitter",
 				label: "Twitter"
 			},
-			facebook:{
+			facebook: {
 				title: "Facebook",
 				label: "Facebook"
 			}
 		}
 	 }
    }
- })
+})
 );

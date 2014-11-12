@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Obiect spaţial selectat",
                 "layerHelpTextMessage": "Această aplicaţie necesită un strat tematic cu câmpuri numerice",
                 "alertMessage": {
-                    "resetVariableMessage": "Sigur doriţi să resetaţi variabila?",
+                    "resetVariableMessage": "Ă_Are you sure you want to reset variable_ș?",
                     "emptyAppTitleMessage": "Titlul aplicaţiei nu poate rămâne necompletat",
                     "emptyDescriptionMessage": "Descrierea nu poate rămâne necompletată",
                     "maxVariableSelection": "Nu puteţi selecta mai mult de 25 de subvariabile",
@@ -58,11 +58,10 @@
                     "unsavedChangesMessage": "Modificări nesalvate",
                     "failMessage": "Elementul nu a putut fi actualizat cu succes",
                     "saveChangesAlert": "Doriţi să salvaţi modificările?",
-                    "variableLabelValidation": "Eticheta variabilei nu poate fi goală",
-                    "subVariableLabelValidation": "Eticheta subvariabilei nu poate fi goală"
+                    "variableLabelValidation": "Ă_Variable label cannot be empty_ș",
+                    "subVariableLabelValidation": "Ă_Sub variable label cannot be empty_ș"
                     }
             }
         }
     })
-
 );

@@ -1,5 +1,5 @@
 ﻿define(
-({
+	 ({
 		viewer: {
 			loading: {
 				step1: "تحميل التطبيق",
@@ -68,7 +68,7 @@
 				dataPicError1: "تتطلب جولة الخريطة الآن أن ينتهي عنوان URL الخاص بالصورة بأحد الامتدادات التالية: .jp(e)g أو .png أو .gif أو .bmp",
 				dataPicError2: "لن يؤثر هذا المطلب على جولة الخريطة المنشورة الحالية، ومع ذلك يتعين عليك أولاً حل مشكلة عنوان URL بهدف استخدام المنشئ التفاعلي من خلال تنفيذ أحد الإجراءين التاليين:",
 				dataPicError3: "تحرير عناوين URL",
-				dataPicError4: "يقوم ذلك بإضافة <i>#isImage</i> إلى نهاية عناوين URL للصورة غير المدعومة. وتدعم معظم الخوادم ملحقات URL، ومع ذلك بمجرد تنفيذ هذا الإجراء، يتعين عليك التحقق من أن عناوين URL للصورة المُحدثة هي عناوين عملية بالتنقل خلال النقاط. إذا تم تحميل كل صورة، فإنه يمكنك الآن حفظ جولة الخريطة. إذا <b>تم تعطيل الصور، لا تحفظ جولة الخريطة</b>. وبدلاً من ذلك، قم بإعادة تحميل المُنشئ وتنفيذ الإجراء الثاني.",
+				dataPicError4: "بيت_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_لاحقة.",
 				dataPicError5: "تقييد الجولة للصور",
 				dataPicError6: "يؤدي هذا الخيار إلى التعامل مع جميع عناوين URL على أنها صور، ولكن لن تتمكن من إضافة مقاطع فيديو باستخدام المنشئ التفاعلي. كما أن هذا الإجراء قابل للانعكاس، ويتعين عليك تقرير إضافة الفيديو مستقبلاً.",
 				dataPicError7: "تم تقييد جولة الخريطة إلى الصورة، ولا يمكن استخدام مقاطع الفيديو. وإذا اخترت إزالة التقييد، تحقق من تحميل الصور بشكل صحيح قبل حفظ جولة الخريطة، ولن تتمكن من استعادة ذلك التقييد لاحقًا إذا لزم الأمر.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "الصورة",
 				addLabelThumbUrl: "الصورة المصغرة",
 				addTextPlaceholderUrl: "أدخل عنوان URL للصورة",
-				addTextPlaceholderUrl2: "أدخل عنوان URL لصفحة Youtube",
+				addTextPlaceholderUrl2: "بيت_Enter a YouTube page URL_لاحقة",
 				addTextPlaceholderUrl3: "أدخل عنوان URL لصفحة Vimeo",
 				addTextPlaceholderUrl4: "أدخل عنوان URL لتضمين مقاطع الفيديو",
 				addLabelVideo: "فيديو",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "إعادة تعيين تحديد الحقول",
 				settingsExtentExplain: "تعيين النطاق الأولي لـ Map Tour خلال الخريطة التفاعلية الموضحة أدناه.",
 				settingsExtentExplainBottom: "سيقوم النطاق الذي تقوم بتعريفة بتعديل النطاق الأولي لخريطة الويب. لاحظ أن هذا النطاق لم يستخدم في حالة عدم تضمينه نقطة الجولة الأولى. وفي تلك الحالة، سوف يتم فتح الجولة متمركزة على النقطة الأولى.",
-				settingsExtentDateLineError: "لا يجب أن يتجاوز النطاق خط الطول 180 درجة",
+				settingsExtentDateLineError: "بيت_The extent cannot be across the meridian of 180Â° longitude_لاحقة",
 				settingsExtentDateLineError2: "حدث خطأ أثناء حساب النطاق",
 				settingsExtentDrawBtn: "ارسم النطاق الجديد",
 				settingsExtentModifyBtn: "تحرير النطاق",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "تطبيق"
 			},
 			headerJS:{
-				editMe: "حررني !",
+				editMe: "بيت_Edit me_لاحقة!",
 				templateTitle: "تحديد عنوان القالب",
 				templateSubtitle: "تحديد العنوان الفرعي للقالب"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "نجحت عملية الاستيراد.جارِ التحميل"
 			},
 			viewYoutube: {
-				title: "استيراد Youtube",
+				title: "بيت_YouTube import_لاحقة",
 				header: "أدخل اسم مستخدم YouTube لإيجاد مقاطع الفيديو المشتركة بشكل عام.",
-				pageInputLbl: "أدخل اسم مستخدم Youtube",
+				pageInputLbl: "بيت_Enter a YouTube user name_لاحقة",
 				lookupMsgError: "لم يتم العثور على المستخدم",
-				howToFind: "كيفية العثور على اسم مستخدم Youtube",
+				howToFind: "بيت_How to find a YouTube user name_لاحقة",
 				howToFind2: "يتم عرض اسم المستخدم أسفل الفيديوهات",
 				found: "تم العثور",
 				noData: "لم يتم العثور على الفيديوهات العامة"
@@ -442,12 +442,12 @@
 					div172: "عند وجودهما، سيتم استخدام حقلي الصورة العادية والصورة المصغرة، ولن يتم الاستعلام عن مرفقات خدمة المعالم.",
 					div173: "يمكن تنزل أمثلة على ملفات CSV وملفات الشكل من",
 					div18: "إنشاء خدمات معالم مستضافة من CSV أو ملف الشكل",
-					div19: "عند إنشاء خدمة معالم مستضافة من CSV أو ملف شكلي، لا يتم تمكين المرفقات افتراضيًا. ولتمكينها، افتح صفحة تفاصيل خدمة المعالم وانقر فوق السهم الصغير على جزء الطبقة وسترى هذا الخيار. وستستمر جولة الخريطة في استخدام الصور والصور المصغرة التي قمت بإسنادها خلال البيانات الجدولية. وإذا رغبت اختياريًا في تحميل الصور كمرفقات لخدمة المعالم ستصبح قادرًا على القيام بذلك من خلال زرين على لوحة الصورة (\"تغيير الصورة\" و \"تغيير الصورة المصغرة\").",
-					div20: "تنسيقات الصور المدعومة ومقاطع الفيديو",
-					div21: "تنسيقات الصورة المدعومة هي: <b>.jpg و.jpeg و.png و.gif و.bmp</b>. إذا لم تنتهي الوسائط بأي امتداد من هذه الامتدادات، ستتعامل معه جولة الخريطة على أنه مقطع فيديو، باستثناء عند استخدام خدمة معالم (راجع الموضوع أدناه).",
+					div19: "بيت_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_لاحقة.",
+					div20: "بيت_Supported picture formats and videos_لاحقة",
+					div21: "بيت_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_لاحقة.",
 					div22: "لا يشمل قالب جولة الخريطة مُشغل فيديو؛ لذا يتعين عليك استخدام مشغل الفيديو الخارجي الذي توفره خدمة استضافة الفيديو المفضلة (اعثر على خيار تضمين الفيديو وانسخ عنوان URL الذي يوجد في الكود المعطى). إذا أردت استضافة الفيديو بنفسك، يمكنك إنشاء صفحة HTML تحتوي على مشغل فيديو مثل <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "لا يوفر المنشئ التفاعلي حوارًا ليتضمن فيديو عند استخدام خدمات المعالم ذات المرفقات، إلا أنه يمكن القيام بذلك بتحرير البيانات خارج المنشئ التفاعلي. وفي عارض خرائط arcgis.com إذا قمت بتعديل حقول الصورة للإشارة إلى فيديو خارجي وإضافة معطى مكاني في نهاية عنوان URL (#isVideo)، يتم اعتبار الوسائط على أنها فيديو.",
-					div24: "لاحظ أنه يجب توفر مرفقين بصورتين صالحتين أو النقطة التي لن تستخدمها. ولا يمكن استخدام مقاطع الفيديو عند استخدام مرفقات خدمة المعالم دون حقلي الصورة العادية والصورة المصغرة."
+					div24: "بيت_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_لاحقة."
 				},
 				tab3: {
 					title: "تخصيص",
@@ -487,7 +487,7 @@
 					div2a: "مشاركة الجولة من خلال المنشئ",
 					div2b: "سوف يعمل زر \"المشاركة\" على تحديث التطبيق وعناصر خريطة الويب. إذا تم تخزين بيانات الجولة في عنصر خدمة المعلم، فسيتم أيضًا تحديثها. وإذا قمت بإضافة طبقات أخرى من خلال عارض خرائط ArcGIS.com، فلن يتم تحديثهم. وهذا يمكن أن ينتج في الجولة التي لا يتم مشاركتها كما أنت متوقع. ولن يتم تحديث العناصر التي لديها الامتيازات المطلوبة (أو أكثر) بالفعل.",
 					div2c: "مشاركة الجولة من خلال ArcGIS Online",
-					div2d: "عند مشاركة التطبيق من خلال ArcGIS Online، فإنه سيطلب منك إذا لزم الأمر تحديث أي موارد مستقلة (خريطة ويب، خدمة معلم، طبقة زينة) التي لم يتم مشاركتها بنفس الطريقة. إذا كانت جولة الخريطة معروضة بشكل عام ولم يتم مشاركة أحد الموارد مع الحضور، فسوف يتم إعادة توجيه المستخدمين إلى صفحة تسجيل دخول ArcGIS Online.",
+					div2d: "بيت_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_لاحقة.",
 					div3t: "أمان خدمة المعلم",
 					div3a: "في حالة استخدام خدمة المعالم المستضافة التي يقوم مُنشئ جولة الخريطة بإنشائها، يقوم التطبيق بإدارة أمان الخدمة وستظل الشخص الوحيد الذي يملك امتيازات التحرير حتى أثناء مشاركة الخدمة مع الجميع.",
 					div3t2: "قبل مشاركة الجولة مع الحضور",

@@ -1,9 +1,9 @@
 ﻿define(
-({
+	 ({
 		firstPane: {
 			head: "<span class='highlightText'>Şablonul turului de hartă</span> permite tuturor nivelurilor de conturi ArcGIS Online, inclusiv celor publice, să creeze şi să editeze o reprezentare bazată pe locaţii, care să combine imagini, text şi hărţi din:",
 			list0: "Fotografii stocate în servicii mari de partajare online a fotografiilor precum Flickr, Picasa şi Facebook sau pe orice site web sau server web",
-			list1: "Fotografii care nu sunt încă stocate online, dar care vor fi stocate ca ataşări la serviciul de obiecte spaţiale (limitat la membrii ArcGIS for Organization)"
+			list1: "Ă_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_ș"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>Şablonul</span> cuprinde instrumente de editare uşor de utilizat care includ:",
@@ -17,8 +17,8 @@
 			list1: "Găzduiţi şablonul pe propriul server web sau pe un server terţ"
 		},
 		fourthPane: {
-			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Vizitaţi site-ul de hărţi informative al Esri</a> pentru a afla mai multe despre crearea şi partajarea informaţiilor. Resursele includ:",
-			list0: "Hărţi informative publicate de echipa hărţilor informative Esri",
+			head: "Ă_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_ș:",
+			list0: "Ă_Story maps published by Esriâ€™s story maps teams_ș",
 			list1: "O selecţie de şabloane care se pot descărca",
 			list2: "Ghidul celor mai bune practici", 
 			list3: "O galerie de hărţi informative cu o comunitate crescândă de povestitori"

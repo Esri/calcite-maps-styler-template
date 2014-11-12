@@ -1,5 +1,5 @@
 ﻿define(
-({
+     ({
         "viewer": {
             "main": {
                 "scaleBarUnits": "metric",
@@ -12,14 +12,14 @@
                 "bingError": "Šīs aplikācijas izvietošana prasa jūsu pašu Bing Maps taustiņu.",
                 "noLayers": "Nav operatīvo slāņu",
                 "noSearchResults": "Atvainojiet, rezultāti netika atrasti.",
-				"noGroupResults": "Grupu nevar atrast.",
+                "noGroupResults": "ķ_The group could not be found_ū.",
                 "noMatches": "Atbilstība netika atrasta.",
                 "noMapsFound": "Kartes netika atrastas."
             },
             "sidePanel": {
                 "title": "Leģenda",
                 "legendButton": "Leģenda",
-				"layersButton": "Slāņi", // new
+                "layersButton": "ķ_Layers_ū", // new
                 "legendButtonTitle": "Kartes leģenda",
                 "aboutButton": "Par",
                 "aboutButtonTitle": "Par Karti",
@@ -35,49 +35,49 @@
                 "listSwitch": "Pārslēgties uz Saraksta skatu",
                 "loadingText": "Ielādē kartes&hellip;"
             },
-			"sortFields":{
-				"sortBy": "Sortēt pēc",
-				"modified": "Datums",
-				"title": "Virsraksts",
-				"type": "Tips",
-				"numRatings": "Novērtējumi",
-				"avgRating": "Vid. novērtējums",
-				"numComments": "Komentāri",
-				"numViews": "Skati"
-			},
-			"comments":{
-				"commentsHeader": "Komentāri",
-				"posted": "Pasta sūtījums",
-				"by": "ar",
-				"deleteComment": "izdzēst",
-				"editComment": "rediģēt",
-				"noComments": "Nav komentāru",
-				"addCommentButton": "Pievienot komentāru",
-				"signIn": "Pierakstīties",
-				"register": "Reģistrēties",
-				"or": "vai",
-				"toPost": "lai sūtītu komentāru."
-			},
-			"buttons":{
-				"cancel": "Atcelt",
-				"submit": "Pakļauties"
-			},
-			"rating":{
-				"signIn": "Pierakstīties",
-				"toRate": "novērtēt."
-			},
-			"itemInfo":{
-				"createdLabel": "izveidots",
-				"ratingsLabel": "novērtējums",
-				"ratingsLabelPlural": "novērtējumi",
-				"viewsLabel": "skats",
-				"viewsLabelPlural": "skati",
-				"commentsLabel": "komentārs",
-				"commentsLabelPlural": "komentāri",
-				"modifiedLabel": "Pēdējā modificēšana",
-				"by": "ar",
-				"separator": ","
-			},
+            "sortFields": {
+                "sortBy": "ķ_Sort by_ū",
+                "modified": "ķ_Date_ū",
+                "title": "ķ_Title_ū",
+                "type": "ķ_Type_ū",
+                "numRatings": "ķ_Ratings_ū",
+                "avgRating": "ķ_Avg. Rating_ū",
+                "numComments": "ķ_Comments_ū",
+                "numViews": "ķ_Views_ū"
+            },
+            "comments": {
+                "commentsHeader": "ķ_Comments_ū",
+                "posted": "ķ_Posted_ū",
+                "by": "ķ_by_ū",
+                "deleteComment": "ķ_delete_ū",
+                "editComment": "ķ_edit_ū",
+                "noComments": "ķ_No comments_ū",
+                "addCommentButton": "ķ_Add Comment_ū",
+                "signIn": "ķ_Sign In_ū",
+                "register": "ķ_Register_ū",
+                "or": "ķ_or_ū",
+                "toPost": "ķ_to post a comment_ū."
+            },
+            "buttons": {
+                "cancel": "ķ_Cancel_ū",
+                "submit": "ķ_Submit_ū"
+            },
+            "rating": {
+                "signIn": "ķ_Sign In_ū",
+                "toRate": "ķ_to rate_ū."
+            },
+            "itemInfo": {
+                "createdLabel": "ķ_created_ū",
+                "ratingsLabel": "ķ_rating_ū",
+                "ratingsLabelPlural": "ķ_ratings_ū",
+                "viewsLabel": "ķ_view_ū",
+                "viewsLabelPlural": "ķ_views_ū",
+                "commentsLabel": "ķ_comment_ū",
+                "commentsLabelPlural": "ķ_comments_ū",
+                "modifiedLabel": "ķ_Last Modified_ū",
+                "by": "ķ_by_ū",
+                "separator": "ķ__ū,"
+            },
             "mapPage": {
                 "findLocation": "Meklēt izvietojumu",
                 "findPlaceholder": "Izvietot adresi",
@@ -93,13 +93,13 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Īpašnieks:",
                 "switchBasemap": "Pārslēgt pamatkarti",
-				"getMobileApp": "Darbojas lietotne",
-				"constraintsHeading":"Lietošanas ierobežojumi",
-				"createdLabel":"Izveidots",
-				"noDescription":"Bez apraksta.",
-				"detailsLabel":"Detaļas"
+                "getMobileApp": "ķ_Get App_ū",
+                "constraintsHeading": "ķ_Use Constraints_ū",
+                "createdLabel": "ķ_Created_ū",
+                "noDescription": "ķ_No description_ū.",
+                "detailsLabel": "ķ_Details_ū"
             },
-            "filterItems":{
+            "filterItems": {
                 "show": "Parādīt",
                 "all": "Visi rezultāti",
                 "maps": "Kartes",

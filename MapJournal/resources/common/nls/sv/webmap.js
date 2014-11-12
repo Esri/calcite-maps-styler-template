@@ -10,6 +10,8 @@
 				lblOverview: "Översiktskarta",
 				lblLegend: "Teckenförklaring",
 				loadingTitle: "Läser in titel",
+				entry: "Å_Entry_ö",
+				entries: "Å_Entries_ö",
 				section: "Avsnitt",
 				sections: "Avsnitt",
 				and: "och",
@@ -22,12 +24,14 @@
 				newMap: "Nyligen vald webbkarta",
 				webmapDefault: "Standardwebbkarta",
 				customCfg: "Anpassad konfiguration",
-				tooltipLocation: "Definiera vilken kartplats som ska användas när användarna navigerar till det här avsnittet.",
+				tooltipLocation: "Å_Define the location that this map will display_ö.",
 				tooltipContent: "Definiera synliga lager.",
-				tooltipPopup: "Välj ett popupfönster som ska visas när användarna navigerar till det här avsnittet.",
-				tooltipOverview: "Visa en liten översiktskarta tillsammans med huvudkartan.",
+				tooltipPopup: "Å_Choose a popup that will be opened when this map is displayed_ö.",
+				tooltipOverview: "Å_Display a small overview map along with the main map_ö.",
 				tooltipLegend: "Visa en teckenförklaring på kartan, vilket kan vara användbart om den innehåller många lager och symboler.",
-				mapCfgInvite: "Konfigurera kartan med dessa kontroller"
+				mapCfgInvite: "Konfigurera kartan med dessa kontroller",
+				lblLocationAlt: "Å_Inherited from the first map_ö",
+				tooltipLocationAlt: "Å_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_ö."
 			},
 			configure: {
 				btnReset: "Återställ",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

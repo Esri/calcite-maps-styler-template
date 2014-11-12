@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "Nu se poate crea harta:",
         general:"Eroare",
         timeout:"Alegeţi altă filă pentru a începe"
       },
-      loading:{
+      loading: {
         message: "Se încarcă hărţi"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "LEGENDĂ"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "d. MMMM yyyy",
         yearPattern: "yyyy",
         hourTimePattern: "H",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "H:mm:ss:SSS"
       }
     }
-})
+  })
 );

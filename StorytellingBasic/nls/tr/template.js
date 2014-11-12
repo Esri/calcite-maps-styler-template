@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"Hata"
     },
 	legToggle:{
-	  up:"HARİTA GÖSTERİMİ ▲",
-	  down:"HARİTA GÖSTERİMİ ▼"
+	  up:"ı_MAP LEGEND â–²_İ",
+	  down:"ı_MAP LEGEND â–¼_İ"
 	},
 	loading:{
 		message: "Harita yükleniyor"

@@ -10,6 +10,8 @@
 				lblOverview: "Mapa de Visão Geral",
 				lblLegend: "Legenda",
 				loadingTitle: "Carregando título",
+				entry: "ã_Entry_Ç",
+				entries: "ã_Entries_Ç",
 				section: "Seção",
 				sections: "Seções",
 				and: "e",
@@ -22,12 +24,14 @@
 				newMap: "Mapa da web recentemente selecionado",
 				webmapDefault: "Mapa da web padrão",
 				customCfg: "Configuração personalizada",
-				tooltipLocation: "Define a localização do mapa que será utilizada quando seus leitores navegarem nesta seção.",
+				tooltipLocation: "ã_Define the location that this map will display_Ç.",
 				tooltipContent: "Define a visibilidade das camadas.",
-				tooltipPopup: "Escolhe um pop-up a ser exibido quando seus leitores navegarem nesta seção.",
-				tooltipOverview: "Exibe um pequeno mapa de visão geral junto com o principal mapa",
+				tooltipPopup: "ã_Choose a popup that will be opened when this map is displayed_Ç.",
+				tooltipOverview: "ã_Display a small overview map along with the main map_Ç.",
 				tooltipLegend: "Exibe a legenda no mapa, útil quando o mapa tem muitas camadas e símbolos.",
-				mapCfgInvite: "Utilize estes controles para configurar o Mmapa"
+				mapCfgInvite: "Utilize estes controles para configurar o Mmapa",
+				lblLocationAlt: "ã_Inherited from the first map_Ç",
+				tooltipLocationAlt: "ã_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_Ç."
 			},
 			configure: {
 				btnReset: "Redefinir",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

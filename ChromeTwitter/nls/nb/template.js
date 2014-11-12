@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "Beskrivelse"
     },
-    errors:{
+    errors: {
       createMap: "Kan ikke opprette kart",
       general: "Feil"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "Skjermnavn",
     "signIn": "Logg inn",
@@ -34,31 +34,31 @@
     label: "Twittermeldinger",
     title: "Twittermeldinger",
     error: "Fant ingen resultater, prøv et annet søkeord eller lokasjon",
-		search:{
+		search: {
 			label: "Søk",
 			title: "Søk på Twitter",
 			placeholder: 'Nøkkelord å søke etter'
 		},
-		clear:{
+		clear: {
 			label: "Fjern",
 			title: "Fjern kart"
 		},
-		share:{
+		share: {
 			label: "Del kart:",
 			email:{
 				title: "E-post",
 				label: "E-post"
 			},
-			twitter:{
+			twitter: {
 				title: "Twitter",
 				label: "Twitter"
 			},
-			facebook:{
+			facebook: {
 				title: "Facebook",
 				label: "Facebook"
 			}
 		}
 	 }
    }
- })
+})
 );

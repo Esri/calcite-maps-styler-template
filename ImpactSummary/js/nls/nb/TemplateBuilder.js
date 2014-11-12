@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Valgt geoobjekt",
                 "layerHelpTextMessage": "Dette programmet krever et lag med numeriske felter",
                 "alertMessage": {
-                    "resetVariableMessage": "Er du sikker på at du vil nullstille variabelen?",
+                    "resetVariableMessage": "å_Are you sure you want to reset variable_ø?",
                     "emptyAppTitleMessage": "Programtittelen kan ikke være tom",
                     "emptyDescriptionMessage": "Beskrivelse kan ikke være tom",
                     "maxVariableSelection": "Du kan ikke velge mer enn 25 undervariabler",
@@ -58,11 +58,10 @@
                     "unsavedChangesMessage": "Ulagrede endringer",
                     "failMessage": "Oppdateringen av elementet mislyktes",
                     "saveChangesAlert": "Vil du lagre endringene?",
-                    "variableLabelValidation": "Variabeletikett kan ikke være TOM",
-                    "subVariableLabelValidation": "Undervariabeletikett kan ikke være TOM"
+                    "variableLabelValidation": "å_Variable label cannot be empty_ø",
+                    "subVariableLabelValidation": "å_Sub variable label cannot be empty_ø"
                     }
             }
         }
     })
-
 );

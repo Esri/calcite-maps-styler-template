@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Dodaj",
@@ -28,8 +28,8 @@
 				buttonSettings: "Ustawienia",
 				buttonHelp: "Pomoc",
 				buttonPreview: "Wyświetl dane dynamiczne",
-				tooltipFirstSave: "Z tej funkcji można skorzystać dopiero po zapisaniu aplikacji.",
-				tooltipNotShared: "Z tej funkcji można skorzystać dopiero po udostępnieniu aplikacji.",
+				tooltipFirstSave: "ł_This isn't available until you save_ą.",
+				tooltipNotShared: "ł_This isn't available until you share_ą.",
 				noPendingChange: "Brak oczekujących zmian",
 				unSavedChangePlural: "Oczekujące zmiany",
 				closeWithPendingChange: "Czy na pewno chcesz potwierdzić tę operację? Zmiany zostaną utracone.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Błąd podczas zapisywania aplikacji",
 				err1Div1: "Nie można zapisać aplikacji, ponieważ istnieje już inny element o tej samej nazwie (patrz <a class='linkagolroot' target='_blank'>folder zasobów</a>).",
-				err1Div2: "Zmień tytuł sekcji Start i zapisz aplikację.",
-				btnOk: "Edytuj tytuł sekcji Start"
+				err1Div2: "ł_Please modify the title of your application and then save it_ą.",
+				btnOk: "ł_Edit the application title_ą"
 			},
 			share: {
 				firstSaveTitle: "Aplikacja zapisana pomyślnie",
@@ -66,7 +66,7 @@
 				shareHeader2: "Aplikacja jest dostępna dla członków instytucji (wymagane logowanie).",
 				shareLinkCopy: "Kopiuj",
 				shareLinkCopied: "Skopiowane",
-				shareQ0: "Jak mogę osadzić aplikację w witrynie internetowej?",
+				shareQ0: "ł_How do I embed the application in a web page_ą?",
 				shareQ1Opt1: "Jak mogę zachować prywatny status aplikacji?",
 				shareQ1Opt2: "W jaki sposób mogę zachować prywatny status aplikacji lub udostępnić ją publicznie?",
 				shareA1: "Użyj przycisku %SHAREIMG% na <a href='%LINK1%' target='_blank'>stronie aplikacji</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "łącze przekierowujące do innej strony",
 				logoSocialExplain: "Dostosuj łącze w nagłówku.",
 				logoSocialText: "Tekst",
-				logoSocialLink: "Łącze"
+				logoSocialLink: "Łącze",
+				lblSmallHeader: "ł_Use compact header (no subtitle)_ą"
+			},
+			header: {
+				title: "ł_Edit the title of your %TPL_NAME%_ą",
+				subtitle: "ł_Edit the subtitle of your %TPL_NAME%_ą"
 			}
 		}
 	})
-
 );

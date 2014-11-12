@@ -1,5 +1,5 @@
 ﻿define(
-({
+   ({
   app:{
    title:"Pyörivä karttanäkymä",
     scaleBarUnits: "english", //"english (for miles) or "metric" (for km) - don't translate.

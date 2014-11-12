@@ -15,20 +15,27 @@
  | limitations under the License.
  */
 define(
-     ({
-        map: {
-            error: "يتعذر إنشاء الخريطة"
-        },
-        days: {
-           now: "الآن",
-           sun: "الأحد",
-           mon: "الأثنين",
-           tue: "الثلاثاء",
-           wed: "الأربعاء",
-           thu: "الخميس",
-           fri: "الجمعة",
-           sat: "السبت"
-        }
-    })
- 
+    ({
+      "map": {
+         "error": "بيت_Unable to create map_لاحقة"
+      },
+      "days": {
+         "now": "بيت_NOW_لاحقة",
+         "sun": "بيت_SUN_لاحقة",
+         "mon": "بيت_MON_لاحقة",
+         "tue": "بيت_TUE_لاحقة",
+         "wed": "بيت_WED_لاحقة",
+         "thu": "بيت_THU_لاحقة",
+         "fri": "بيت_FRI_لاحقة",
+         "sat": "بيت_SAT_لاحقة"
+      },
+      "tooltips": {
+         "logo": "بيت_Logo_لاحقة",
+         "menu": "بيت_Menu_لاحقة",
+         "close": "بيت_Close_لاحقة",
+         "previous": "بيت_Previous_لاحقة",
+         "next": "بيت_Next_لاحقة",
+         "directions": "بيت_Directions_لاحقة"
+      }
+   })
 );

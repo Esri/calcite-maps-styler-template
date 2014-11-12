@@ -70,11 +70,10 @@
 				copy: "Kopyala",
 				copied: "Kopyalandı",
 				open: "Aç",
-				embed: "Web sitesinin içine yerleştir",
-				embedExplain: "Bülteni bir web sitesinin içine yerleştirmek için aşağıdaki HTML kodunu kullanın.",
+				embed: "ı_Embed in web page_İ",
+				embedExplain: "ı_Use the following HTML code to embed the journal in a web page_İ.",
 				size: "Boyut (genişlik/yükseklik):"
 			}
         }
     })
-
 );

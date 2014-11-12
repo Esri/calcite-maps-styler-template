@@ -1,5 +1,5 @@
 ﻿define(
-({
+	 ({
 		viewer: {
 			loading: {
 				step1: "LÄSER IN PROGRAM",
@@ -68,7 +68,7 @@
 				dataPicError1: "Webbadresser till bilder måste numera ha något av följande filnamnstillägg: .jp(e)g, .png, .gif eller .bmp.",
 				dataPicError2: "Det påverkar inte den befintliga publicerade versionen av kartturen, men om du vill kunna använda det interaktiva byggverktyget måste du först åtgärda de felaktiga webbadresserna på något av följande sätt:",
 				dataPicError3: "Redigera webbadresser",
-				dataPicError4: "<i>#isImage</i> läggs till i slutet av webbadresser för bilder som inte stöds. De flesta servrar har stöd för tillägg i webbadresser. När du har genomfört åtgärden bör du kontrollera att de uppdaterade webbadresserna fungerar genom att gå igenom punkterna. Om alla bilder läses in kan du spara kartturen. <b>Spara inte kartturen om det finns bilder som inte fungerar</b>. Läs in byggverktyget igen och gå igenom steg två en gång till.",
+				dataPicError4: "Å_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_ö.",
 				dataPicError5: "Använd bara bilder i turen",
 				dataPicError6: "Med det här alternativet betraktas alla webbadresser som bilder, men du kommer inte att kunna lägga till videoklipp med det interaktiva byggverktyget. Du kan ångra den här åtgärden om du vill lägga till videoklipp i ett senare skede.",
 				dataPicError7: "Endast bilder används i kartturen, videoklipp kan inte användas. Om du tar bort den begränsningen bör du kontrollera att bilderna fortfarande fungerar som de ska innan du sparar kartturen. Du kan begränsa kartturen till bilder igen i ett senare skede om det skulle behövas.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Bild",
 				addLabelThumbUrl: "Miniatyrbild",
 				addTextPlaceholderUrl: "Ange en bild-URL",
-				addTextPlaceholderUrl2: "Ange en URL för en Youtube-sida",
+				addTextPlaceholderUrl2: "Å_Enter a YouTube page URL_ö",
 				addTextPlaceholderUrl3: "Ange en URL för en Vimeo-sida",
 				addTextPlaceholderUrl4: "Ange en inbäddad URL för ett videoklipp",
 				addLabelVideo: "Video",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Återställ valda fält",
 				settingsExtentExplain: "Ange ursprungsinnehåll för Map Tour via den interaktiva kartan nedan.",
 				settingsExtentExplainBottom: "Den utbredning du definierar ändrar webbkartans inledande utbredning. Observera att utbredningen inte används om den inte innehåller den första turpunkten. I så fall öppnas turen centrerad på den första punkten.",
-				settingsExtentDateLineError: "Det går inte att ha en utbredning över 180°-meridianen",
+				settingsExtentDateLineError: "Å_The extent cannot be across the meridian of 180Â° longitude_ö",
 				settingsExtentDateLineError2: "Det gick inte att beräkna utbredningen",
 				settingsExtentDrawBtn: "Rita en ny utbredning",
 				settingsExtentModifyBtn: "Redigera utbredning",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Använd"
 			},
 			headerJS:{
-				editMe: "Redigera mig!",
+				editMe: "Å_Edit me_ö!",
 				templateTitle: "Ange malltitel",
 				templateSubtitle: "Ange underrubrik för mallen"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Importen är färdig. Läser in"
 			},
 			viewYoutube: {
-				title: "YouTube-import",
+				title: "Å_YouTube import_ö",
 				header: "Ange ett YouTube-användarnamn för att söka efter videoklipp som delas offentligt.",
-				pageInputLbl: "Ange ett Youtube-användarnamn",
+				pageInputLbl: "Å_Enter a YouTube user name_ö",
 				lookupMsgError: "Det gick inte att hitta användaren",
-				howToFind: "Så här hittar du ett Youtube-användarnamn",
+				howToFind: "Å_How to find a YouTube user name_ö",
 				howToFind2: "Användarnamnet visas under videoklippen",
 				found: "Hittade",
 				noData: "Inga offentliga videoklipp hittades"
@@ -442,12 +442,12 @@
 					div172: "Om fälten Bild och Miniatyrbild har fyllts i kommer de alltid att användas, och geoobjekttjänstens bilagor anropas inte.",
 					div173: "Exempel på CSV-filer och shapefiler kan hämtas från",
 					div18: "Skapa en driftad geoobjekttjänst av en CSV-fil eller shapefil",
-					div19: "När du skapar en driftad geoobjekttjänst av en CSV-fil eller shapefil är bilagorna inte aktiverade som standard. Du aktiverar dem genom att öppna geoobjekttjänstens informationssida och klicka på den lilla pilen i lageravsnittet så visas det alternativet. De bilder och miniatyrbilder som du har refererat till i attributen fortsätter att användas. Om du i stället vill ladda upp bilderna som geoobjekttjänstbilagor kan du göra det med hjälp av de två knapparna på bildpanelen (Byt bild och Byt miniatyrbild).",
-					div20: "Bild- och videoformat som stöds",
-					div21: "De bildformat som stöds är: <b>JPG, JPEG, PNG, GIF och BMP</b>. Om filen inte har något av de filnamnstilläggen behandlas den som ett videoklipp i Map Tour, utom när du använder en geoobjekttjänst (se nedan).",
+					div19: "Å_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_ö.",
+					div20: "Å_Supported picture formats and videos_ö",
+					div21: "Å_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_ö.",
 					div22: "Map Tour-mallen innehåller inte någon videospelare. Du måste använda en extern videospelare från den videotjänst du använder (leta upp alternativet för att bädda in videoklippet och kopiera den URL som finns i koden). Om du vill drifta videoklippen själv kan du skapa en HTML-sida som innehåller en videospelare, till exempel <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "Det interaktiva byggverktyget innehåller ingen dialogruta för att ta med videoklipp när du använder geoobjekttjänster med bilagor, men det går att ta med videoklipp genom att redigera data utanför det interaktiva byggverktyget. I kartvisningsfönstret på ArcGIS.com kan du till exempel ändra bildfälten så att de pekar på ett externt videoklipp och lägga till en särskild parameter i slutet av webbadressen (#isVideo). Då behandlas filerna som videoklipp.",
-					div24: "Du måste dock fortfarande ha två giltiga bildbilagor, annars används inte punkten. Det går inte att använda videoklipp när du använder geoobjekttjänstbilagor utan fälten Bild och Miniatyrbild."
+					div24: "Å_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_ö."
 				},
 				tab3: {
 					title: "Anpassning",
@@ -487,7 +487,7 @@
 					div2a: "Dela kartturen via byggverktyget",
 					div2b: "När du klickar på delningsknappen uppdateras objekten i applikationen och webbkartan. Om dina karttursdata finns sparade i ett geoobjekttjänstobjekt, uppdateras även detta. Eventuella andra lager som du har lagt till via kartvisningsprogrammet på ArcGIS.com uppdateras inte. Det kan leda till att kartturen inte delas på det sätt du tänkt. Objekt som redan har minst den behörighet som krävs uppdateras inte.",
 					div2c: "Dela kartturen via ArcGIS Online",
-					div2d: "När du delar applikationen via ArcGIS Online ombeds du vid behov att uppdatera eventuella beroende resurser (webbkarta, geoobjekttjänst) dekorationslager) som inte delas på samma sätt. Om kartturen är offentlig och någon av dina resurser inte delas med mottagarna omdirigeras användarna till inloggningssidan för ArcGIS Online.",
+					div2d: "Å_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_ö.",
 					div3t: "Säkerhet för geoobjekttjänst",
 					div3a: "Om du använder en driftad geoobjekttjänst som har skapats med Map Tour-byggverktyget sköts säkerheten för tjänsten automatiskt och du är den enda som har redigeringsbehörighet även om tjänsten delas offentligt.",
 					div3t2: "Innan du delar en karttur med mottagarna",

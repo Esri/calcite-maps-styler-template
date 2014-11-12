@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "Nevar izveidot karti:",
         general:"Kļūda",
         timeout:"Lai sāktu, lūdzu, izvēlieties citu cilni"
       },
-      loading:{
+      loading: {
         message: "Ielādē kartes"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "LEĢENDA"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "dd.MM.yyyy.",
         yearPattern: "yyyy",
         hourTimePattern: "H a",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "HH:mm:ss:SSS"
       }
     }
-})
+  })
 );

@@ -15,20 +15,27 @@
  | limitations under the License.
  */
 define(
-     ({
-        map: {
-            error: "マップを作成できません"
-        },
-        days: {
-           now: "現在",
-           sun: "日",
-           mon: "月",
-           tue: "火",
-           wed: "水",
-           thu: "木",
-           fri: "金",
-           sat: "土"
-        }
-    })
- 
+    ({
+      "map": {
+         "error": "須_Unable to create map_鷗"
+      },
+      "days": {
+         "now": "須_NOW_鷗",
+         "sun": "須_SUN_鷗",
+         "mon": "須_MON_鷗",
+         "tue": "須_TUE_鷗",
+         "wed": "須_WED_鷗",
+         "thu": "須_THU_鷗",
+         "fri": "須_FRI_鷗",
+         "sat": "須_SAT_鷗"
+      },
+      "tooltips": {
+         "logo": "須_Logo_鷗",
+         "menu": "須_Menu_鷗",
+         "close": "須_Close_鷗",
+         "previous": "須_Previous_鷗",
+         "next": "須_Next_鷗",
+         "directions": "須_Directions_鷗"
+      }
+   })
 );

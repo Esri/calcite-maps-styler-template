@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "Açıklama"
     },
-    errors:{
+    errors: {
       createMap: "Harita oluşturulamıyor",
       general: "Hata"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "Ekran adı",
     "signIn": "Hesabınıza",
@@ -34,31 +34,31 @@
     label: "Tweetler",
     title: "Tweetler",
     error: "Hiçbir sonuç bulunamadı; başka bir arama terimini veya konumunu deneyin",
-		search:{
+		search: {
 			label: "Ara",
 			title: "Twitter\'da Ara",
 			placeholder: 'Aranacak anahtar kelimeler'
 		},
-		clear:{
+		clear: {
 			label: "Temizle",
 			title: "Haritayı Temizle"
 		},
-		share:{
+		share: {
 			label: "Haritayı Paylaş:",
 			email:{
 				title: "E-posta",
 				label: "E-posta"
 			},
-			twitter:{
+			twitter: {
 				title: "Twitter",
 				label: "Twitter"
 			},
-			facebook:{
+			facebook: {
 				title: "Facebook",
 				label: "Facebook"
 			}
 		}
 	 }
    }
- })
+})
 );

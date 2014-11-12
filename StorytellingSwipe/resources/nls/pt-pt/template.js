@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "CARREGAR A APLICAÇÃO",
 				step2: "CARREGAR DADOS",
 				step3: "INICIALIZAR",
 				fail: "Não foi possível carregar o Varrimento",
-				loadBuilder: "A MUDAR PARA O MODO DE BUILDER",
+				loadBuilder: "A MUDAR PARA O MODO DE BUILDER",				
 				redirectSignIn: "A REDIRECIONAR PARA A PÁGINA DE INÍCIO DE SESSÃO",
 				redirectSignIn2: "(será redirecionado para aqui depois de iniciar sessão)",
 				failButton: "Tentar Novamente"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

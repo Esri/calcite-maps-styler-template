@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "Nelze vytvořit mapu",
             mouseToolTip: "Kliknutím na mapu službu zkontrolujete."
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Vrstva není ve webové mapě",
             fieldNotFound: "Pole nenalezeno",
-            popupNotSet: "Vyskakovací okno není pro tuto vrstvu aktivováno"
+            popupNotSet: "Vyskakovací okno není pro tuto vrstvu aktivováno",
+            noLayersSet: "Ř_No layers defined in the config, the search box will not work_ů"
         },
         page: {
             title: "Vyhledávání informací",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "Podkladová mapa"
         }
-    })
 
+    })
 );

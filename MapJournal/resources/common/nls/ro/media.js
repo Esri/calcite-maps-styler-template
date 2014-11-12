@@ -62,7 +62,7 @@
 				url: "URL al unui clip video de pe Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Jurnalul hărţii nu poate reda clipuri video brute (de ex., avi, mpeg) însă poate reda fişiere video găzduite, care au aplicaţii de redare încorporate (de ex., YouTube sau Vimeo).",
+				explain1: "Ă_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ș.",
 				explain2: "Majoritatea serviciilor de găzduire video online oferă această funcţie; trebuie să găsiţi opţiunea de a încorpora clipul video, copiaţi codul dat şi utilizaţi %WEBPAGE%.",
 				explain3: "Alternativ, dacă doriţi să găzduiţi voi înşivă clipul video, puteţi crea o pagină HTML care să utilizeze o aplicaţie de redare video, cum ar fi %EXAMPLE%, găzduiţi pagina şi utilizaţi %WEBPAGE%.",
 				webpage: "Obiect spaţial pagină web"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(nu poate fi decupat)",
 				lblPosition3Explain2: "(lăţimea va corespunde întotdeauna panoului)",
 				lblPosition4Explain: "(poate fi distorsionat)",
-				unloadLbl: "Se revocă încărcare când cititorul trece în altă secţiune",
-				unloadHelp: "Dacă pagina web conţine materiale audio sau video, păstraţi această opţiune bifată pentru a opri redarea în momentul în care cititorul trece în altă secţiune. Debifaţi-o, de exemplu, pentru a continua redarea unei melodii când cititorul avansează în jurnal.<br />Dacă pagina web este o aplicaţie, debifaţi această opţiune pentru ca aplicaţia să nu fie nevoită să se încarce din nou când cititorul revine în secţiunea respectivă."
+				unloadLbl: "Ă_Unload when reader navigates away_ș",
+				unloadHelp: "Ă_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ș."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localizaţi o adresă sau un loc",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

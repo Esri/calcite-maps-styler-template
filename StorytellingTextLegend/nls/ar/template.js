@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "يتعذر إنشاء الخريطة:",
         general:"خطأ",
         timeout:"الرجاء اختيار علامة تبويب أخرى للبدء"
       },
-      loading:{
+      loading: {
         message: "تحميل الخرائط"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "وسيلة إيضاح"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "dd MMMM, yyyy",
         yearPattern: "yyyy",
         hourTimePattern: "h a",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "h:mm:ss:SSS a"
       }
     }
-})
+  })
 );

@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "Description"
     },
-    errors:{
+    errors: {
       createMap: "Impossible de créer la carte",
       general: "Erreur"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "Nom d\’écran",
     "signIn": "Se connecter",
@@ -34,31 +34,31 @@
     label: "Tweets",
     title: "Tweets",
     error: "Aucun résultat trouvé, essayez un autre terme de recherche ou emplacement",
-		search:{
+		search: {
 			label: "Rechercher",
 			title: "Rechercher dans Twitter",
 			placeholder: 'Mots-clés à rechercher'
 		},
-		clear:{
+		clear: {
 			label: "Effacer",
 			title: "Effacer la carte"
 		},
-		share:{
+		share: {
 			label: "Partager la carte :",
 			email:{
 				title: "Adresse électronique",
 				label: "Adresse électronique"
 			},
-			twitter:{
+			twitter: {
 				title: "Twitter",
 				label: "Twitter"
 			},
-			facebook:{
+			facebook: {
 				title: "Facebook",
 				label: "Facebook"
 			}
 		}
 	 }
    }
- })
+})
 );

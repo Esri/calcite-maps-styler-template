@@ -1,5 +1,5 @@
 ﻿define(
-({
+	 ({
 		viewer: {
 			loading: {
 				step1: "CHARGEMENT DE L\’APPLICATION",
@@ -68,7 +68,7 @@
 				dataPicError1: "Map Tour requiert désormais que l\'URL d\'une image possède une des extensions suivantes : .jp(e)g, .png, .gif ou .bmp.",
 				dataPicError2: "Cela ne concerne pas vos visites cartographiques existantes publiées. Cependant, pour pouvoir utiliser le générateur interactif, vous devez d\'abord résoudre le problème de l\'URL en effectuant l\'une des deux actions suivantes :",
 				dataPicError3: "Modifier les URL",
-				dataPicError4: "Cela ajoutera <i>#isImage</i> à la fin des URL des images non prises en charge. La plupart des serveurs prennent en charge l\'ajout d\'URL. Cependant, une fois que vous avez effectué cette action, vous devez vérifier que les URL des images mises à jour sont fonctionnelles en parcourant vos points. Si chaque image se charge, vous pouvez enregistrer la visite cartographique. Si les <b>images sont endommagées, n\'enregistrez pas la visite cartographique</b>. Rechargez le générateur et effectuez la seconde action.",
+				dataPicError4: "æ_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_Â.",
 				dataPicError5: "Limiter la visite aux images",
 				dataPicError6: "Cette option fait en sorte que toutes les URL soient considérées comme des images, mais vous ne pourrez pas ajouter de vidéos au moyen du générateur interactif. Cette action est réversible, au cas où vous décideriez d\'ajouter des vidéos à l\'avenir.",
 				dataPicError7: "Votre Map Tour est limité aux images, vous ne pouvez pas utiliser de vidéos. Si vous décidez de supprimer cette limitation, vérifiez que vos images se chargent correctement avant d\'enregistrer la visite cartographique. Vous pourrez restaurer cette limitation plus tard le cas échéant.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Image",
 				addLabelThumbUrl: "Miniature",
 				addTextPlaceholderUrl: "Saisissez l\'URL d\'une image",
-				addTextPlaceholderUrl2: "Saisissez l\'URL d\'une page Youtube",
+				addTextPlaceholderUrl2: "æ_Enter a YouTube page URL_Â",
 				addTextPlaceholderUrl3: "Saisissez l\'URL d\'une page Vimeo",
 				addTextPlaceholderUrl4: "Saisissez l\'URL d\'incorporation d\'une vidéo",
 				addLabelVideo: "Vidéo",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Réinitialiser la sélection des champs",
 				settingsExtentExplain: "Définissez l\’étendue initiale de Map Tour au moyen de la carte interactive ci-dessous.",
 				settingsExtentExplainBottom: "L\'étendue que vous définissez modifie l\'étendue initiale de votre carte Web. Notez que cette étendue n\'est pas utilisée si elle ne comprend pas le premier point de la visite. Dans ce cas, la visite est centrée sur le premier point lors de son ouverture.",
-				settingsExtentDateLineError: "L\'étendue ne peut pas traverser le méridien de 180° de longitude",
+				settingsExtentDateLineError: "æ_The extent cannot be across the meridian of 180Â° longitude_Â",
 				settingsExtentDateLineError2: "Erreur de calcul de l\'étendue",
 				settingsExtentDrawBtn: "Tracer une nouvelle étendue",
 				settingsExtentModifyBtn: "Modifier l\’étendue",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Appliquer"
 			},
 			headerJS:{
-				editMe: "Modifier",
+				editMe: "æ_Edit me_Â!",
 				templateTitle: "Définir le titre du modèle",
 				templateSubtitle: "Définir le sous-titre du modèle"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Importation réussie. Chargement en cours"
 			},
 			viewYoutube: {
-				title: "Importation de Youtube",
+				title: "æ_YouTube import_Â",
 				header: "Saisissez un nom d\'utilisateur YouTube pour chercher des vidéos partagées publiquement.",
-				pageInputLbl: "Entrez un nom d\'utilisateur Youtube",
+				pageInputLbl: "æ_Enter a YouTube user name_Â",
 				lookupMsgError: "Utilisateur introuvable",
-				howToFind: "Comment trouver un nom d\'utilisateur Youtube",
+				howToFind: "æ_How to find a YouTube user name_Â",
 				howToFind2: "Le nom d\'utilisateur est affiché sous les vidéos",
 				found: "Trouvés",
 				noData: "Aucune vidéo publique trouvée"
@@ -442,12 +442,12 @@
 					div172: "Lorsqu\'ils existent, les champs d\'image et de miniature sont toujours utilisés et les pièces jointes au service d\'entités ne sont pas interrogées.",
 					div173: "Vous pouvez télécharger des exemples de fichiers CSV et de fichiers de forme sur le site",
 					div18: "Création de services d\'entités hébergés à partir d\'un CSV ou d\'un fichier de forme",
-					div19: "Lorsque vous créez un service d\'entités hébergé à partir d\'un fichier CSV ou d\'un fichier de forme, les pièces jointes ne sont pas activées par défaut. Pour les activer, ouvrez la page de détails du service d\'entités, cliquez sur la petite flèche dans la section de la couche et vous verrez cette option. Après cela, le Map Tour continuera d\'utiliser les images et les miniatures que vous avez référencées via les attributs. Facultativement, si vous souhaitez charger vos images en tant que pièces jointes du service d\'entités, vous pouvez le faire grâce à deux boutons situés dans le volet d\'image (\"Modifier l\'image\" et \"Modifier la miniature\").",
-					div20: "Vidéos et formats d\'images pris en charge",
-					div21: "Les formats d\'images pris en charge sont les suivants : <b>.jpg, .jpeg, .png, .gif et .bmp</b>. Si votre support ne possède pas cette extension, le Map Tour le considère comme une vidéo, sauf lorsqu\'il utilise un service d\'entités (voir ci-après).",
+					div19: "æ_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_Â.",
+					div20: "æ_Supported picture formats and videos_Â",
+					div21: "æ_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_Â.",
 					div22: "Le modèle Map Tour ne comprenant pas de lecteur vidéo, vous devez utiliser le lecteur vidéo externe fourni par votre service d\'hébergement de vidéo favori (trouvez l\'option d\'incorporation de la vidéo et copiez l\'URL présente dans le code donné).Si vous souhaitez héberger la vidéo vous-même, vous pouvez créer une page HTML contenant un lecteur vidéo tel que <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "Le générateur interactif ne possède pas de boîte de dialogue permettant d\'inclure de la vidéo lors de l\'utilisation de services d\'entités avec des pièces jointes, mais il est possible de le faire en modifiant vos données en dehors du générateur interactif. Dans la visionneuse de carte arcgis.com, si vous modifiez les champs de l\'image de manière à pointer sur une vidéo externe et que vous ajoutez un paramètre spécial à la fin de votre URL (#isVideo), votre support sera considéré comme une vidéo.",
-					div24: "Notez que vous devez tout de même avoir deux pièces jointes d\'images valides pour que le point soit utilisé. Il est impossible d\'utiliser des vidéos lors de l\'utilisation de pièces jointes de service d\'entités sans les champs d\'image et de miniature."
+					div24: "æ_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_Â."
 				},
 				tab3: {
 					title: "Personnalisation",
@@ -487,7 +487,7 @@
 					div2a: "Partage de la visite via le générateur",
 					div2b: "Le bouton PARTAGER met à jour l\'application et les éléments de la carte Web. Si les données de votre visite sont stockées dans un élément du service d\'entités, elles sont également mises à jour. Si vous avez ajouté d\'autres couches via la visionneuse de carte ArcGIS.com, elles ne sont pas mises à jour. Il est possible qu\'en conséquence, la visite ne soit pas partagée comme vous le souhaitez. Les éléments qui ont déjà les privilèges requis (ou plus) ne sont pas mis à jour.",
 					div2c: "Partage de la visite via ArcGIS Online",
-					div2d: "Lorsque vous partagez l\'application via ArcGIS Online, vous pouvez être invité à mettre à jour les ressources dépendantes (carte Web, service d\'entités, couche d\'habillage) qui ne sont pas partagées de la même manière. Si la visite cartographique est publique et qu\'une de vos ressources n\'est pas partagée avec votre public, les utilisateurs seront redirigés vers la page de connexion à ArcGIS Online.",
+					div2d: "æ_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_Â.",
 					div3t: "Sécurité du service d\'entités",
 					div3a: "Si vous utilisez un service d\'entités hébergé créé via le générateur de Map Tour, l\'application gère la sécurité du service et vous restez la seule personne dotée de privilèges de modification, même si vous partagez le service publiquement.",
 					div3t2: "Avant de partager votre visite avec votre public",

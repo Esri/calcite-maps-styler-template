@@ -85,11 +85,12 @@
 				lblLink: "Siirry Esrin Tarinakartat-sivustoon.",
 				content1Div1: "Voit integroida useita tyylejä, kun muodostat tarinaasi. <strong>%LAYOUT_TITLE%</strong> sisältää tavallisesti tekstin, kuvat ja videot, kun kartat ovat yleensä <strong>päävaiheessa</strong>. Tarinassa %TPL_NAME% voit kuitenkin esitellä kuvia, kaavioita ja videoita myös päävaiheessa.",
 				content1Div2: "Lisäämällä osioita voit mukauttaa kattavasti tarinankerrontakokemustasi. Kun lukijat vierittävät tyylin %LAYOUT_TITLE% mukaista tekstiäsi, voit tehostaa viestiäsi vierittämällä päävaiheen karttaa tai tarkentamalla tärkeisiin pisteisiin tai kytkemällä uudet kartat ja kuvat näkymään automaattisesti.",
-				content2Div1: "Tässä voit säätää sitä, miltä %TPL_NAME% näyttää. Värimalleja, asetteluja, leveyksiä ja fontteja säädetään tässä.",
-				content2Div2: "Voit myös lisätä jaettavia linkkejä Facebookiin, Twitteriin ja Bitlyyn, jotta lukijat voivat helposti levittää %TPL_NAME% -tarinasi muille.",
+				content2Div1: "Å_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_ö.",
+				content2Div2: "Å_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_ö.",
 				content3Div1: "Sisältösi on jaettu osiin. Voit lisätä niin monta osaa kuin haluat (ajattele, että ne ovat lyhyitä kappaleita). Kappaleiden virta on tärkeä. Järjestä-näkymässä voit järjestää osia uudelleen tai poistaa niitä.",
 				content4Div1: "Löysitkö virheen vai haluatko muuttaa aineistoasi? Ei huolta. Etsi muokkauskuvaketta sovelluksesta tehdäksesi muutoksia sisältöösi. Käytät muokkaustoimintoja useita kertoja, kun kehität tarinaa %TPL_NAME%.",
-				content5Div1: "Tarinasi %TPL_NAME% on tallennettu portaalin %PORTAL% tiliin, ja se on oletusarvoisesti yksityinen. Voit jakaa sen organisaatiosi kanssa tai määrittää sen kaikille avoimeksi. Järjestelmä määrittää tarinallesi myös lyhennetyn URL-osoitteen, jotta voit jakaa sen helposti.",
+				content5Div1: "Å_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_ö.",
+				content5Div2: "Å_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_ö.",
 				content6Div1: "Kotisivu-osan otsikko on myös päiväkirjasi otsikko; Kotisivu-osa on ikään kuin tarinasi kansilehti. Kotisivu-osan otsikko pysyy näkyvissä, kun lukijasi selaavat päiväkirjaa.",
 				content6Div2: "%LAYOUT_TITLE%-asettelusi ei tarvitse olla vain tekstiä, vaan voit harkita valokuvien ja videoiden sisällyttämistä tarinan elävöittämiseksi ja pitkien tekstiosuuksien katkaisemiseksi!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

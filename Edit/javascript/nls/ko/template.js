@@ -1,5 +1,5 @@
 ﻿define(
-  ({
+   ({
     viewer: {
       legend_title: "범례",
       content_title: "편집기",
@@ -9,5 +9,4 @@
       }
     }
   })
-
 );

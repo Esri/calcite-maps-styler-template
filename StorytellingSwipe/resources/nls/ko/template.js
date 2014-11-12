@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "응용프로그램을 로드하는 중",
 				step2: "데이터를 로드하는 중",
 				step3: "초기화하는 중",
 				fail: "죄송합니다. 스와이프를 로드하지 못했습니다.",
-				loadBuilder: "빌더 모드로 전환하는 중",
+				loadBuilder: "빌더 모드로 전환하는 중",				
 				redirectSignIn: "로그인 페이지로 이동하는 중",
 				redirectSignIn2: "(로그인 후 이 페이지로 다시 돌아옵니다.)",
 				failButton: "재시도"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

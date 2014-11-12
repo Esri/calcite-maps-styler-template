@@ -85,11 +85,12 @@
 				lblLink: "Besuchen Sie die Esri Story Maps-Website.",
 				content1Div1: "Sie können eine Vielzahl von Styles zur Vermittlung von Informationen integrieren. Der <strong>%LAYOUT_TITLE%</strong> enthält in der Regel Ihren Text, Ihre Bilder und Videos, während Ihre Karten sich meist in der <strong>Hauptanzeige</strong> befinden. Mit %TPL_NAME% können Bilder, Diagramme und Videos jedoch auch in der Hauptanzeige dargestellt werden.",
 				content1Div2: "Sie können das Storytelling anpassen, indem Sie Abschnitte hinzufügen. Wenn Leser einen Bildlauf durch Ihren %LAYOUT_TITLE%-Text durchführen, kann eine Karte in der Hauptanzeige zu Schlüsselpunkten schwenken oder darauf zoomen oder es können neue Karten und Bilder automatisch gewechselt werden, um Ihre Botschaft zu unterstreichen.",
-				content2Div1: "Hier können Sie das Erscheinungsbild für %TPL_NAME% festlegen. Alle Farbschemen, Layouts, Breiten und Schriftarten werden hier optimiert.",
-				content2Div2: "Sie können Freigabe-Links auch zu Facebook, Twitter und Bitly hinzufügen, um die problemlose Verteilung von %TPL_NAME% durch Ihre Leser zu ermöglichen.",
+				content2Div1: "ä_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_Ü.",
+				content2Div2: "ä_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_Ü.",
 				content3Div1: "Inhalte werden in Abschnitten organisiert. Die Anzahl der Abschnitte ist beliebig (sie sind vergleichbar mit kleinen Kapiteln). Der Fluss dieser Kapitel ist wichtig. Abschnitte können mit \"Organisieren\" nach Wunsch neu angeordnet und gelöscht werden.",
 				content4Div1: "Sie haben einen Fehler gefunden oder möchten Änderungen vornehmen? Keine Sorge. Suchen Sie das Bearbeitungssymbol in der App, um Inhalte zu ändern. Sie werden die Bearbeitungsfunktionen beim Entwickeln von %TPL_NAME% häufig verwenden!",
-				content5Div1: "%TPL_NAME% wird in Ihrem %PORTAL%-Konto gespeichert und ist standardmäßig privat. Sie können festlegen, ob die Informationen für Ihre Organisation freigegeben oder weltweit zugänglich sind. Wir stellen sogar eine gekürzte URL für eine problemlose Freigabe bereit.",
+				content5Div1: "ä_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_Ü.",
+				content5Div2: "ä_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_Ü.",
 				content6Div1: "Der Titel Ihres Startseitenabschnitts ist gleichzeitig der Titel Ihres Journals. Der Startseitenabschnitt kann als \"Deckblatt\" Ihrer Informationen betrachtet werden. Der Titel des Startseitenabschnitts bleibt sichtbar, wenn Ihre Leser im Journal navigieren.",
 				content6Div2: "Ihr %LAYOUT_TITLE% muss nicht nur aus Text bestehen, Sie können auch Fotos und Videos einbeziehen, um Ihre Story lebendig zu gestalten und lange Textabschnitte zu vermeiden!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

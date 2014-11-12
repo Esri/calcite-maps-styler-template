@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "Det gick inte att skapa kartan:",
         general:"Fel",
         timeout:"Välj en annan flik för att börja"
       },
-      loading:{
+      loading: {
         message: "Läser in kartor"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "TECKENFÖRKLARING"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "MMMM d, yyyy",
         yearPattern: "yyyy",
         hourTimePattern: "h a",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "h:mm:ss:SSS a"
       }
     }
-})
+  })
 );

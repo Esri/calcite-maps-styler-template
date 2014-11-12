@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Pasirinktas elementas",
                 "layerHelpTextMessage": "Šiai aplikacijai būtinas sluoksnis su skaitiniais laukais",
                 "alertMessage": {
-                    "resetVariableMessage": "Ar tikrai norite iš naujo nustatyti kintamąjį?",
+                    "resetVariableMessage": "Į_Are you sure you want to reset variable_š?",
                     "emptyAppTitleMessage": "Aplikacijos pavadinimas negali būti tuščia reikšmė",
                     "emptyDescriptionMessage": "Aprašas negali būti tuščia reikšmė",
                     "maxVariableSelection": "Negalite pasirinkti daugiau nei 25 antrinių kintamųjų",
@@ -58,11 +58,10 @@
                     "unsavedChangesMessage": "Neįrašyti pakeitimai",
                     "failMessage": "Nepavyko atnaujinti šio elemento",
                     "saveChangesAlert": "Ar norite įrašyti pakeitimus?",
-                    "variableLabelValidation": "Kintamojo žymė negali būti TUŠČIA",
-                    "subVariableLabelValidation": "Antrinio kintamojo žymė negali būti TUŠČIA"
+                    "variableLabelValidation": "Į_Variable label cannot be empty_š",
+                    "subVariableLabelValidation": "Į_Sub variable label cannot be empty_š"
                     }
             }
         }
     })
-
 );

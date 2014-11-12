@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "NAHRÁVÁNÍ APLIKACE",
 				step2: "NAHRÁVÁNÍ DAT",
 				step3: "INICIALIZACE",
 				fail: "Nepodařilo se načíst nástroj překrývání.",
-				loadBuilder: "PŘEPÍNÁNÍ DO REŽIMU TVORBY",
+				loadBuilder: "PŘEPÍNÁNÍ DO REŽIMU TVORBY",				
 				redirectSignIn: "PROBÍHÁ PŘESMĚROVÁNÍ NA PŘIHLAŠOVACÍ STRÁNKU",
 				redirectSignIn2: "(budete sem přesměrováni po přihlášení)",
 				failButton: "Zkusit znovu"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

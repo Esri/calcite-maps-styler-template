@@ -10,6 +10,8 @@
 				lblOverview: "خريطة النظرة العامة",
 				lblLegend: "مفتاح الخريطة",
 				loadingTitle: "تحميل العنوان",
+				entry: "بيت_Entry_لاحقة",
+				entries: "بيت_Entries_لاحقة",
 				section: "الجزء",
 				sections: "الأجزاء",
 				and: "و",
@@ -22,12 +24,14 @@
 				newMap: "خريطة الويب المحددة حديثًا",
 				webmapDefault: "خريطة الويب الافتراضية",
 				customCfg: "التكوين المخصص",
-				tooltipLocation: "حدد موقع الخريطة التي سيتم استخدامها عند انتقال القراء إلى هذا المقطع.",
+				tooltipLocation: "بيت_Define the location that this map will display_لاحقة.",
 				tooltipContent: "تعريف الطبقات المرئية.",
-				tooltipPopup: "اختيار العناصر المنبثقة لعرضها عند انتقال القراء إلى هذا المقطع.",
-				tooltipOverview: "عرض خريطة النظرة العامة الصغيرة مع الخريطة الأساسية",
+				tooltipPopup: "بيت_Choose a popup that will be opened when this map is displayed_لاحقة.",
+				tooltipOverview: "بيت_Display a small overview map along with the main map_لاحقة.",
 				tooltipLegend: "عرض وسيلة إيضاح الخريطة على الخريطة وتكون مفيدة عند حصول الخريطة على العديد من الطبقات والرموز.",
-				mapCfgInvite: "استخدم عناصر التحكم الحالية لتكوين الخريطة"
+				mapCfgInvite: "استخدم عناصر التحكم الحالية لتكوين الخريطة",
+				lblLocationAlt: "بيت_Inherited from the first map_لاحقة",
+				tooltipLocationAlt: "بيت_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_لاحقة."
 			},
 			configure: {
 				btnReset: "إعادة تعيين",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

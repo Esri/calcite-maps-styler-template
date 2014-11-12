@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "SE ÎNCARCĂ APLICAŢIA",
 				step2: "SE ÎNCARCĂ DATELE",
 				step3: "INIŢIALIZARE",
 				fail: "Ne pare rău, încărcarea Swipe a eşuat",
-				loadBuilder: "SE COMUTĂ LA MODUL INSTRUMENT DE CĂUTARE",
+				loadBuilder: "SE COMUTĂ LA MODUL INSTRUMENT DE CĂUTARE",				
 				redirectSignIn: "REDIRECȚIONARE LA PAGINA DE AUTENTIFICARE",
 				redirectSignIn2: "(veţi fi redirecţionat aici după autentificare)",
 				failButton: "Reîncercare"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

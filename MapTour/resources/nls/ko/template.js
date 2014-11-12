@@ -1,5 +1,5 @@
 ﻿define(
-({
+	 ({
 		viewer: {
 			loading: {
 				step1: "응용프로그램을 로드하는 중",
@@ -68,7 +68,7 @@
 				dataPicError1: "이제 Map Tour에서는 그림 URL이 .jp(e)g, .png, .gif 또는 .bmp 확장명으로 끝나야 합니다.",
 				dataPicError2: "이 요구 사항은 기존에 발행된 Map Tour에는 영향을 주지 않습니다. 그러나 대화형 빌더를 사용하려면 먼저 다음 두 작업 중 하나를 수행하여 URL 문제를 해결해야 합니다.",
 				dataPicError3: "URL 편집",
-				dataPicError4: "지원되지 않는 그림 URL 끝에 <i>#isImage</i>를 추가합니다. 대부분의 서버는 URL 추가 요소를 지원합니다. 그러나 이 작업을 수행한 다음에는 포인트를 통해 이동하여 업데이트된 URL이 작동하는지 확인해야 합니다. 각 그림이 로드되면 이제 Map Tour를 저장할 수 있습니다. <b>그림이 손상된 경우에는 Map Tour를 저장하지 마세요</b>. 대신 빌더를 다시 로드하고 두 번째 작업을 수행하세요.",
+				dataPicError4: "한_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_빠.",
 				dataPicError5: "Tour를 그림으로 제한",
 				dataPicError6: "이 옵션을 사용하면 모든 URL이 이미지로 간주되지만 대화형 빌더를 사용하여 동영상을 추가할 수 없습니다. 향후 동영상을 추가하려는 경우 이 작업을 되돌릴 수 있습니다.",
 				dataPicError7: "Map Tour가 그림으로 제한되었으므로 동영상을 사용할 수 없습니다. 이 제한을 제거하려면 Map Tour를 저장하기 전에 그림이 올바르게 로드되는지 확인하세요. 나중에 필요한 경우 이 제한을 복원할 수 있습니다.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "그림",
 				addLabelThumbUrl: "미리보기",
 				addTextPlaceholderUrl: "이미지 URL 입력",
-				addTextPlaceholderUrl2: "Youtube 페이지 URL 입력",
+				addTextPlaceholderUrl2: "한_Enter a YouTube page URL_빠",
 				addTextPlaceholderUrl3: "Vimeo 페이지 URL 입력",
 				addTextPlaceholderUrl4: "동영상 포함 URL 입력",
 				addLabelVideo: "동영상",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "필드 선택 재설정",
 				settingsExtentExplain: "아래의 대화형 맵을 통해 Map Tour 초기 범위를 설정합니다.",
 				settingsExtentExplainBottom: "정의한 범위에 따라 웹 맵 초기 범위가 수정됩니다. 이 범위는 첫 번째 Tour 포인트가 포함되지 않은 경우에는 사용되지 않습니다. 이 경우 첫 번째 포인트를 중심으로 Tour가 열립니다.",
-				settingsExtentDateLineError: "범위는 180° 경도의 자오선을 교차할 수 없습니다.",
+				settingsExtentDateLineError: "한_The extent cannot be across the meridian of 180Â° longitude_빠",
 				settingsExtentDateLineError2: "범위를 계산하는 중 오류가 발생했습니다.",
 				settingsExtentDrawBtn: "새 범위 그리기",
 				settingsExtentModifyBtn: "범위 편집",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "적용"
 			},
 			headerJS:{
-				editMe: "편집!",
+				editMe: "한_Edit me_빠!",
 				templateTitle: "템플릿 제목 설정",
 				templateSubtitle: "템플릿 부제목 설정"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "가져오기가 완료되었습니다. 로드하는 중"
 			},
 			viewYoutube: {
-				title: "YouTube 가져오기",
+				title: "한_YouTube import_빠",
 				header: "공개적으로 공유된 동영상을 찾으려면 YouTube 사용자 이름을 입력하세요.",
-				pageInputLbl: "Youtube 사용자 이름 입력",
+				pageInputLbl: "한_Enter a YouTube user name_빠",
 				lookupMsgError: "사용자를 찾을 수 없습니다.",
-				howToFind: "Youtube 사용자 이름을 찾는 방법",
+				howToFind: "한_How to find a YouTube user name_빠",
 				howToFind2: "동영상 아래에 사용자 이름 표시",
 				found: "찾음",
 				noData: "공개된 동영상 없음"
@@ -442,12 +442,12 @@
 					div172: "그림 및 첨부 파일 필드가 있는 경우 항상 이러한 필드가 사용되며 피처 서비스 첨부 파일이 쿼리되지 않습니다.",
 					div173: "예제 CSV 및 쉐이프파일은 다음 위치에서 다운로드할 수 있습니다.",
 					div18: "CSV 또는 쉐이프파일에서 호스팅 피처 서비스 생성",
-					div19: "CSV 또는 쉐이프파일에서 호스팅 피처 서비스를 생성할 때는 기본적으로 첨부 파일을 사용할 수 없습니다. 첨부 파일을 사용하려면 피처 서비스 세부정보 페이지를 열고 레이어 섹션에 있는 작은 화살표를 클릭합니다. 그러면 해당 옵션이 표시됩니다. 속성을 통해 참조한 그림 및 미리보기가 Map Tour에서 계속 사용됩니다. 필요한 경우 그림을 피처 서비스 첨부 파일로 업로드하려면 그림 패널에 있는 버튼 두 개(\"그림 변경\" 및 \"미리보기 변경\")를 사용하면 됩니다.",
-					div20: "지원되는 그림 형식 및 동영상",
-					div21: "지원되는 그림 형식은 <b>.jpg, .jpeg, .png, .gif 및 .bmp</b>입니다. 미디어가 이 확장명으로 끝나지 않는 경우에는 피처 서비스를 사용할 때를 제외하고는 Map Tour에서 동영상으로 간주됩니다(아래 참조).",
+					div19: "한_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_빠.",
+					div20: "한_Supported picture formats and videos_빠",
+					div21: "한_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_빠.",
 					div22: "Map Tour 템플릿에는 동영상 플레이어가 포함되어 있지 않으므로 선호하는 동영상 호스팅 서비스에서 제공하는 외부 동영상 플레이어를 사용해야 합니다(동영상을 포함하는 옵션을 찾은 후 지정진 코드에 있는 URL 복사). 동영상을 직접 호스팅하려면 <a href='http://www.videojs.com/'>Video.js</a>와 같은 동영상 플레이어가 포함된 HTML 페이지를 만들면 됩니다.",
 					div23: "대화형 빌더는 첨부 파일이 있는 피처 서비스를 사용할 때 동영상을 포함할 수 있는 대화 상자를 제공하지 않지만 대화형 빌더 외부에서 데이터를 편집하여 동영상을 포함할 수 있습니다. arcgis.com map viewer에서 외부 동영상을 가리키도록 그림 필드를 수정하고 URL 끝에 특수 매개 변수를 추가하면 미디어가 동영상으로 간주됩니다.",
-					div24: "유효한 그림 첨부 파일 두 개가 있어야 합니다. 그렇지 않으면 포인트를 사용할 수 없습니다. 그림 및 미리보기 필드 없이 피처 서비스 첨부 파일을 사용하면 동영상을 사용할 수 없습니다."
+					div24: "한_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_빠."
 				},
 				tab3: {
 					title: "사용자 정의",
@@ -487,7 +487,7 @@
 					div2a: "빌더를 통해 Tour 공유",
 					div2b: "공유 버튼을 클릭하면 응용프로그램 및 웹 맵 항목이 업데이트됩니다. 피처 서비스 항목에 저장되어 있는 Tour 데이터도 업데이트됩니다. ArcGIS.com 맵 뷰어를 통해 추가한 다른 레이어는 업데이트되지 않습니다. 따라서 Tour가 원하는 대로 공유되지 않을 수 있습니다. 이미 필수 이상의 권한이 포함된 항목은 업데이트되지 않습니다.",
 					div2c: "ArcGIS Online을 통해 Tour 공유",
-					div2d: "ArcGIS Online을 통해 응용프로그램을 공유할 때에는 필요시 같은 방식으로 공유되지 않는 종속 리소스(웹 맵, 피처 서비스, 장식 레이어)를 업데이트할 것인지 묻는 메시지가 표시됩니다. Map Tour가 공용이고 리소스 중 하나가 대상 그룹과 공유되지 않는 경우 사용자는 ArcGIS Online 로그인 페이지로 리디렉션됩니다.",
+					div2d: "한_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_빠.",
 					div3t: "피처 서비스 보안",
 					div3a: "Map Tour 빌더를 통해 생성된 호스팅 피처 서비스를 사용하는 경우 응용프로그램에서 서비스 보안을 관리하므로 서비스를 공개적으로 공유한 경우에도 편집 권한은 소유자에게만 유지됩니다.",
 					div3t2: "대상 그룹과 Tour를 공유하기 전에",

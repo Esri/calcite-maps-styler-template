@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"خطأ"
     },
 	legToggle:{
-	  up:"وسيلة إيضاح الخريطة ▲",
-	  down:"وسيلة إيضاح الخريطة ▲"
+	  up:"بيت_MAP LEGEND â–²_لاحقة",
+	  down:"بيت_MAP LEGEND â–¼_لاحقة"
 	},
 	loading:{
 		message: "تحميل الخريطة"

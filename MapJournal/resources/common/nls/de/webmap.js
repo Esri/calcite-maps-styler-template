@@ -10,6 +10,8 @@
 				lblOverview: "Übersichtskarte",
 				lblLegend: "Legende",
 				loadingTitle: "Titel wird geladen",
+				entry: "ä_Entry_Ü",
+				entries: "ä_Entries_Ü",
 				section: "Abschnitt",
 				sections: "Abschnitte",
 				and: "und",
@@ -22,12 +24,14 @@
 				newMap: "Neu ausgewählte Webkarte",
 				webmapDefault: "Webkartenstandard",
 				customCfg: "Benutzerdefinierte Konfiguration",
-				tooltipLocation: "Definieren Sie die Kartenposition, die verwendet wird, wenn Leser zu diesem Abschnitt navigieren.",
+				tooltipLocation: "ä_Define the location that this map will display_Ü.",
 				tooltipContent: "Die sichtbaren Layer definieren.",
-				tooltipPopup: "Ein Pop-up auswählen, das angezeigt werden soll, wenn Leser zu diesem Abschnitt navigieren.",
-				tooltipOverview: "Eine kleine Übersichtskarte mit der Hauptkarte anzeigen",
+				tooltipPopup: "ä_Choose a popup that will be opened when this map is displayed_Ü.",
+				tooltipOverview: "ä_Display a small overview map along with the main map_Ü.",
 				tooltipLegend: "Die Kartenlegende auf der Karte anzeigen. Dies ist hilfreich, wenn die Karte mehrere Layer und Symbole aufweist.",
-				mapCfgInvite: "Konfigurieren Sie die Karte mit diesen Steuerelementen"
+				mapCfgInvite: "Konfigurieren Sie die Karte mit diesen Steuerelementen",
+				lblLocationAlt: "ä_Inherited from the first map_Ü",
+				tooltipLocationAlt: "ä_This map's location is synchronized to the first map in the series. To change this behavior for your series go to Settings > Map Options_Ü."
 			},
 			configure: {
 				btnReset: "Zurücksetzen",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

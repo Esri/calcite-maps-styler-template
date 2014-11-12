@@ -1,9 +1,9 @@
 ﻿define(
-({
+	 ({
 		firstPane: {
 			head: "Il <span class='highlightText'>modello Tour mappa</span> consente a tutti i livelli di account ArcGIS Online, compresi gli account pubblici gratuiti, di creare e modificare una storia basata su luoghi combinando immagini, testo e mappe da:",
 			list0: "Immagini archiviate nei principali servizi di condivisione di immagini, come Flickr, Picasa e Facebook, o su qualsiasi sito o server Web",
-			list1: "Immagini non ancora archiviate online che verranno archiviate come allegati di feature service (limitato ai membri di ArcGIS for Organization)"
+			list1: "é_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_È"
 		},
 		secondPane: {
 			head: "Il <span class='highlightText'>modello</span> incorpora strumenti di modifica di facile utilizzo, che includono:",
@@ -17,8 +17,8 @@
 			list1: "Ospitare il modello sul server Web personale o su un server di terzi"
 		},
 		fourthPane: {
-			head: "Per informazioni sulla creazione e la condivisione di storie, <a href='http://storymaps.esri.com/home/' target='_blank'>visitare il sito delle mappe collegate a storie di Esri</a>. Le risorse includono:",
-			list0: "Mappe collegate a storie pubblicate dai team Esri",
+			head: "é_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_È:",
+			list0: "é_Story maps published by Esriâ€™s story maps teams_È",
 			list1: "Una selezione di modelli scaricabili",
 			list2: "Guide con le procedure consigliate", 
 			list3: "Una galleria di mappe collegate a storie realizzate da una community di narratori in costante aumento"

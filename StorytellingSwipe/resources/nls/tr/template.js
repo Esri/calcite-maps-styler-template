@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "UYGULAMA YÜKLENİYOR",
 				step2: "VERİLER YÜKLENİYOR",
 				step3: "BAŞLATILIYOR",
 				fail: "Özür dileriz; Swipe yüklenemedi",
-				loadBuilder: "DERLEYİCİ MODUNA GEÇİLİYOR",
+				loadBuilder: "DERLEYİCİ MODUNA GEÇİLİYOR",				
 				redirectSignIn: "OTURUM AÇMA SAYFASINA YÖNLENDİRİLİYOR",
 				redirectSignIn2: "(oturum açtıktan sonra buraya yeniden yönlendirileceksiniz)",
 				failButton: "Tekrar dene"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

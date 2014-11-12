@@ -1,5 +1,5 @@
 ﻿define(
-  ({
+   ({
     viewer: {
       legend_title: "图例",
       content_title: "编辑器",
@@ -9,5 +9,4 @@
       }
     }
   })
-
 );

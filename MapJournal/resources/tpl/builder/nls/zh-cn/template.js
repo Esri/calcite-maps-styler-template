@@ -85,11 +85,12 @@
 				lblLink: "访问 Esri Story Maps 网站。",
 				content1Div1: "构建故事时，可集成各种风格。<strong>%LAYOUT_TITLE%</strong> 通常在地图要发布在<strong>主要阶段</strong>时会保留文本、图像和视频。但 %TPL_NAME% 也可以在主要阶段中展示图像、图表和视频。",
 				content1Div2: "添加节可以使您真正自定义提供信息的经验。在读者滚动 %LAYOUT_TITLE% 文本时，主要阶段上的地图可平移或缩放至关键点或新地图，图像也可以自动切换以支持消息。",
-				content2Div1: "此处可调整 %TPL_NAME% 的外观。配色方案、布局、宽度和字体均在此处进行优化。",
-				content2Div2: "还可添加至 Facebook、Twitter 和 Bitly 的共享链接，这样读者便可轻松将 %TPL_NAME% 共享给其他人。",
+				content2Div1: "试_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_验.",
+				content2Div2: "试_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_验.",
 				content3Div1: "您的内容将组织成部分。您可拥有任意数量的部分(可将其视为微型章节)。这些章节流十分重要；可在组织内根据需要重新排序或删除部分。",
 				content4Div1: "发现错误或希望更改材料？别担心。在整个应用程序中查找编辑图标，以对内容进行更改。在开发 %TPL_NAME% 时将多次使用编辑功能！",
-				content5Div1: "%TPL_NAME% 将保存在 %PORTAL% 帐户中，默认为私有。您可以决定是与组织共享，还是向全世界开放。我们甚至还为您提供简化的 URL，以便您轻松进行共享。",
+				content5Div1: "试_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_验.",
+				content5Div2: "试_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_验.",
 				content6Div1: "主目录节的标题也是您日志的标题；将主目录节作为故事的\“封面\”。读者浏览日志时主目录节标题仍然可见。",
 				content6Div2: "您的 %LAYOUT_TITLE% 无需仅包含文字，可考虑将照片和视频包含在内以更加生动地展现故事并断开长篇文本部分!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

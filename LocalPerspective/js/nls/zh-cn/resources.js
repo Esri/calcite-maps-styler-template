@@ -15,20 +15,27 @@
  | limitations under the License.
  */
 define(
-     ({
-        map: {
-            error: "无法创建地图"
-        },
-        days: {
-           now: "现在",
-           sun: "周日",
-           mon: "周一",
-           tue: "周二",
-           wed: "周三",
-           thu: "周四",
-           fri: "周五",
-           sat: "周六"
-        }
-    })
- 
+    ({
+      "map": {
+         "error": "试_Unable to create map_验"
+      },
+      "days": {
+         "now": "试_NOW_验",
+         "sun": "试_SUN_验",
+         "mon": "试_MON_验",
+         "tue": "试_TUE_验",
+         "wed": "试_WED_验",
+         "thu": "试_THU_验",
+         "fri": "试_FRI_验",
+         "sat": "试_SAT_验"
+      },
+      "tooltips": {
+         "logo": "试_Logo_验",
+         "menu": "试_Menu_验",
+         "close": "试_Close_验",
+         "previous": "试_Previous_验",
+         "next": "试_Next_验",
+         "directions": "试_Directions_验"
+      }
+   })
 );

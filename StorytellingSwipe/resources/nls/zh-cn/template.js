@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "正在加载应用程序",
 				step2: "正在加载数据",
 				step3: "正在初始化",
 				fail: "抱歉，卷帘加载失败",
-				loadBuilder: "切换到构建器模式",
+				loadBuilder: "切换到构建器模式",				
 				redirectSignIn: "重定向到登录页面",
 				redirectSignIn2: "(登录后您将重定向到此处)",
 				failButton: "重试"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

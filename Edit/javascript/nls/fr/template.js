@@ -1,5 +1,5 @@
 ﻿define(
-  ({
+   ({
     viewer: {
       legend_title: "Légende",
       content_title: "Editeur",
@@ -9,5 +9,4 @@
       }
     }
   })
-
 );

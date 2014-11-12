@@ -62,7 +62,7 @@
 				url: "Vimeo-videon URL-osoite"
 			},
 			videoSelectorOther: {
-				explain1: "Karttapäiväkirja ei voi toistaa raakavideoita (esim. avi- ja mpeg-muotoisia), mutta sillä voi toistaa isännöityjä videotiedostoja, joissa on sisäänrakennettuja soittimia (esim. YouTube tai Vimeo).",
+				explain1: "Å_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ö.",
 				explain2: "Useimmissa online-videoisännöintipalveluissa voi käyttää kyseistä ominaisuutta, ja sinun on etsittävä videon upotusvalinta, kopioitava annettu koodi ja käytettävä sivustoa %WEBPAGE%.",
 				explain3: "Jos taas haluat isännöidä itse videota, voit luoda HTML-sivun, joka käyttää videosoitinta (esim. %EXAMPLE%), isännöidä tätä sivua ja käyttää myös sivustoa %WEBPAGE%.",
 				webpage: "Web-sivukohde"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(ei rajaudu)",
 				lblPosition3Explain2: "(leveys sopii aina paneeliin)",
 				lblPosition4Explain: "(voi vääristyä)",
-				unloadLbl: "Poista lataus, kun lukija siirtyy toiseen osaan",
-				unloadHelp: "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy toiseen osaan. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä päiväkirjassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta sovellus ei lataudu uudelleen, kun lukija palaa osaan."
+				unloadLbl: "Å_Unload when reader navigates away_ö",
+				unloadHelp: "Å_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ö."
 			},
 			editorActionGeocode: {
 				lblTitle: "Paikanna osoite tai paikka",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "ANWENDUNG WIRD GELADEN",
 				step2: "DATEN WERDEN GELADEN",
 				step3: "WIRD INITIALISIERT",
 				fail: "\"Ausblenden\" konnte leider nicht geladen werden",
-				loadBuilder: "ES WIRD ZUM BUILDER-MODUS GEWECHSELT",
+				loadBuilder: "ES WIRD ZUM BUILDER-MODUS GEWECHSELT",				
 				redirectSignIn: "UMLEITUNG ZUR ANMELDESEITE",
 				redirectSignIn2: "(Sie werden nach der Anmeldung hierher umgeleitet)",
 				failButton: "Wiederholen"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

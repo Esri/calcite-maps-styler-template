@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Lägg till",
@@ -28,8 +28,8 @@
 				buttonSettings: "Inställningar",
 				buttonHelp: "Hjälp",
 				buttonPreview: "Visa live",
-				tooltipFirstSave: "Den här funktionen finns inte tillgänglig förrän applikationen sparas",
-				tooltipNotShared: "Den här funktionen finns inte tillgänglig förrän applikationen delas",
+				tooltipFirstSave: "Å_This isn't available until you save_ö.",
+				tooltipNotShared: "Å_This isn't available until you share_ö.",
 				noPendingChange: "Ingen väntande ändring",
 				unSavedChangePlural: "Väntande ändringar",
 				closeWithPendingChange: "Är du säker på att du vill bekräfta åtgärden? Dina ändringar sparas inte.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Det gick inte att spara applikationen",
 				err1Div1: "Det går inte att spara applikationen eftersom du redan har ett annat objekt med samma namn (se din <a class='linkagolroot' target='_blank'>innehållsmapp</a>).",
-				err1Div2: "Ändra titeln på startavsnittet och spara applikationen.",
-				btnOk: "Redigera titeln på startavsnittet"
+				err1Div2: "Å_Please modify the title of your application and then save it_ö.",
+				btnOk: "Å_Edit the application title_ö"
 			},
 			share: {
 				firstSaveTitle: "Applikationen har sparats",
@@ -66,7 +66,7 @@
 				shareHeader2: "Din applikation är tillgänglig för organisationens medlemmar (inloggning krävs).",
 				shareLinkCopy: "Kopiera",
 				shareLinkCopied: "Kopierad",
-				shareQ0: "Hur bäddar jag in applikationen på en webbplats?",
+				shareQ0: "Å_How do I embed the application in a web page_ö?",
 				shareQ1Opt1: "Hur behåller jag applikationen privat?",
 				shareQ1Opt2: "Hur behåller jag applikationen privat eller delar den publikt?",
 				shareA1: "Använd %SHAREIMG% på <a href='%LINK1%' target='_blank'>applikationens objektsida</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Genomklickningslänkar",
 				logoSocialExplain: "Anpassa rubriklänken.",
 				logoSocialText: "Text",
-				logoSocialLink: "Länk"
+				logoSocialLink: "Länk",
+				lblSmallHeader: "Å_Use compact header (no subtitle)_ö"
+			},
+			header: {
+				title: "Å_Edit the title of your %TPL_NAME%_ö",
+				subtitle: "Å_Edit the subtitle of your %TPL_NAME%_ö"
 			}
 		}
 	})
-
 );

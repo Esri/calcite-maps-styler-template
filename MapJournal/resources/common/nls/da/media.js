@@ -62,7 +62,7 @@
 				url: "URL til en Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "Kortjournal kan ikke afspille \"rå\" videoer (f.eks. avi, mpeg), men app\'en kan afspille \"hostede\" videofiler, der har indbyggede afspillere (f.eks. YouTube eller Vimeo).",
+				explain1: "ø_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_å.",
 				explain2: "De fleste online-videoværtstjenester tilbyder denne funktion. Du skal finde indstillingen til indlejring af videoen, kopiere den givne kode og bruge %WEBPAGE%.",
 				explain3: "Hvis du ønsker selv at være vært for videoen, kan du også oprette en HTML-side, der bruger en videoafspiller som %EXAMPLE%, være vært for den pågældende side og også bruge %WEBPAGE%.",
 				webpage: "Websideobjekt"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(kan ikke beskæres)",
 				lblPosition3Explain2: "(bredden vil altid passe til panelet)",
 				lblPosition4Explain: "(kan forvrænges)",
-				unloadLbl: "Udlæs, når læseren navigerer til en anden sektion",
-				unloadHelp: "Bevar markeringen af denne indstilling, hvis websiden har medier med lyd eller video, for at forhindre, at indholdet afspilles, når læseren navigerer til en anden sektion. Fjern markeringen, hvis lydsporet skal afspilles, mens læseren gennemgår artiklen.<br />Fjern markeringen af denne indstilling, hvis websiden er en applikation, så genindlæses applikationen ikke, hvis læseren vender tilbage til den pågældende sektion."
+				unloadLbl: "ø_Unload when reader navigates away_å",
+				unloadHelp: "ø_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_å."
 			},
 			editorActionGeocode: {
 				lblTitle: "Find en adresse eller et sted",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

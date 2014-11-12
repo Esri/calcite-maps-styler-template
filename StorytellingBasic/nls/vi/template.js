@@ -1,19 +1,19 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
-      scaleBarUnits: "á»‡_english_á»" //"english (for miles) or "metric" (for km) - don't translate.
+      scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors:{
-      createMap: "á»‡_Unable to create map_á»: ",
-      general:"á»‡_Error_á»"
+      createMap: "Không thể tạo bản đồ: ",
+      general:"Lỗi"
     },
 	legToggle:{
-	  up:"á»‡_MAP LEGEND ▲_á»",
-	  down:"á»‡_MAP LEGEND ▼_á»"
+	  up:"á»‡_MAP LEGEND â–²_á»",
+	  down:"á»‡_MAP LEGEND â–¼_á»"
 	},
 	loading:{
-		message: "á»‡_Loading map_á»"
+		message: "Đang tải bản đồ"
 	}
   }
 })

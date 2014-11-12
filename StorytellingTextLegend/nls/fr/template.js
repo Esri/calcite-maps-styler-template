@@ -1,21 +1,21 @@
 ﻿define(
-  ({
-    viewer:{
-      main:{
+   ({
+    viewer: {
+      main: {
         scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
       },
-      errors:{
+      errors: {
         createMap: "Impossible de créer la carte :",
         general:"Erreur",
         timeout:"Choisissez un autre onglet pour commencer"
       },
-      loading:{
+      loading: {
         message: "Chargement des cartes"
       },
-      sidePanel:{
+      sidePanel: {
         legendHeader: "LEGENDE"
       },
-      datePatterns:{
+      datePatterns: {
         datePattern: "d MMMM yyyy",
         yearPattern: "yyyy",
         hourTimePattern: "HH",
@@ -24,5 +24,5 @@
         millisecondTimePattern: "HH:mm:ss:SSS"
       }
     }
-})
+  })
 );

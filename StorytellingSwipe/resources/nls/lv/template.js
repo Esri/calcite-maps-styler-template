@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "IELĀDĒ APLIKĀCIJU",
 				step2: "IELĀDĒ DATUS",
 				step3: "INICIALIZĒŠANA",
 				fail: "Diemžēl neizdevās pārvilkt ielādēšanu",
-				loadBuilder: "PĀRSLĒGT UZ BUILDER MODE",
+				loadBuilder: "PĀRSLĒGT UZ BUILDER MODE",				
 				redirectSignIn: "NOVIRZA UZ PIERAKSTĪŠANĀS LAPU",
 				redirectSignIn2: "(pēc pierakstīšanās jūs tiksiet novirzīts uz šejieni)",
 				failButton: "Atkārtot"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

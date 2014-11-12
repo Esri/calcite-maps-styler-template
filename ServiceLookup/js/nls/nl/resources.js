@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "Kan kaart niet maken",
             mouseToolTip: "Klik op de kaart om te controleren op service"
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Kaartlaag bevindt zich niet in de webmap",
             fieldNotFound: "Veld niet gevonden",
-            popupNotSet: "Pop-up is niet ingeschakeld voor deze kaartlaag"
+            popupNotSet: "Pop-up is niet ingeschakeld voor deze kaartlaag",
+            noLayersSet: "Ĳ_No layers defined in the config, the search box will not work_ä"
         },
         page: {
             title: "Informatie zoeken",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "Basiskaart"
         }
-    })
 
+    })
 );

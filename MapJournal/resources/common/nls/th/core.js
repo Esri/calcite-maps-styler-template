@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "เพิ่ม",
@@ -28,8 +28,8 @@
 				buttonSettings: "การตั้งค่า",
 				buttonHelp: "ช่วยเหลือ",
 				buttonPreview: "ดูถ่ายทอดสด",
-				tooltipFirstSave: "ฟังก์ชั่นนี้ไม่สามารถใช้ได้จนกว่าโปรแกรมจะถูกบันทึกไว้",
-				tooltipNotShared: "ฟังก์ชั่นนี้ไม่สามารถใช้ได้จนกว่าจะมีการประยุกต์ใช้ร่วมกัน",
+				tooltipFirstSave: "ก้_This isn't available until you save_ษฺ.",
+				tooltipNotShared: "ก้_This isn't available until you share_ษฺ.",
 				noPendingChange: "ไม่มีการเปลี่ยนแปลง",
 				unSavedChangePlural: "อยู่ระหว่างการเปลี่ยนแปลง",
 				closeWithPendingChange: "คุณแน่ใจว่าจะต้องการที่จะยืนยันการดำเนินการนี้ การเปลี่ยนแปลงของคุณจะหายไป",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "พบข้อผิดพลาดในการจัดเก็บโปรแกรมประยุกต์",
 				err1Div1: "ไม่สามารถจัดเก็บโปรแกรมประยุกต์ เนื่องจากคุณมีรายการอื่นที่ชื่อเหมือนกันแล้ว (ดูของคุณ <a class='linkagolroot' target='_blank'>โฟลเดอร์เนื้อหา</a>)",
-				err1Div2: "กรุณาปรับหน้าโฮมและจัดเก็บโปรแกรมประยุกต์",
-				btnOk: "แก้ไขส่วนหน้าโฮม"
+				err1Div2: "ก้_Please modify the title of your application and then save it_ษฺ.",
+				btnOk: "ก้_Edit the application title_ษฺ"
 			},
 			share: {
 				firstSaveTitle: "บันทึกแอพพลิเคชั่นเรียบร้อยแล้ว",
@@ -66,7 +66,7 @@
 				shareHeader2: "ใบสมัครของคุณสามารถเข้าถึงได้โดยสมาชิกขององค์กรของคุณ (ต้องเข้าสู่ระบบ)",
 				shareLinkCopy: "คัดลอก",
 				shareLinkCopied: "คัดลอก",
-				shareQ0: "ฉันจะฝั่งโปรแกรมประยุกต์ไว้ในเว็บไซต์อย่างไร?",
+				shareQ0: "ก้_How do I embed the application in a web page_ษฺ?",
 				shareQ1Opt1: "ฉันจะเก็บโปรแกรมนี้เป็นส่วนตัวได้อย่างไร?",
 				shareQ1Opt2: "ฉันจะมีวิธีการประยุกต์ใช้ส่วนตัวหรือแบ่งปันต่อสาธารณชน?",
 				shareA1: "ใช้ %SHAREIMG% on <a href='%LINK1%' target='_blank'>หน้ารายการโปแกรมประยุกต์</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "คลิกผ่านลิ้ง",
 				logoSocialExplain: "แก้ไขหัวของลิ้ง",
 				logoSocialText: "ตัวหนังสือ",
-				logoSocialLink: "ลิงก์"
+				logoSocialLink: "ลิงก์",
+				lblSmallHeader: "ก้_Use compact header (no subtitle)_ษฺ"
+			},
+			header: {
+				title: "ก้_Edit the title of your %TPL_NAME%_ษฺ",
+				subtitle: "ก้_Edit the subtitle of your %TPL_NAME%_ษฺ"
 			}
 		}
 	})
-
 );

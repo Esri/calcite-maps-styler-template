@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "アプリケーションを読み込んでいます",
 				step2: "データを読み込んでいます",
 				step3: "初期化",
 				fail: "スワイプの読み込みに失敗しました",
-				loadBuilder: "ビルダ モードへの切り替え",
+				loadBuilder: "ビルダ モードへの切り替え",				
 				redirectSignIn: "サイン イン ページへのリダイレクト",
 				redirectSignIn2: "(サイン イン後にここにリダイレクトされます)",
 				failButton: "再試行"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

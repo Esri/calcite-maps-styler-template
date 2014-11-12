@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "Não foi possível criar o mapa",
             mouseToolTip: "Clique no mapa para verificar o serviço"
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "A Camada não está no mapa web.",
             fieldNotFound: "Campo não encontrado",
-            popupNotSet: "Janela pop-up não ativada nesta camada"
+            popupNotSet: "Janela pop-up não ativada nesta camada",
+            noLayersSet: "ã_No layers defined in the config, the search box will not work_Ç"
         },
         page: {
             title: "Verificação de Informação",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "Mapa Base"
         }
-    })
 
+    })
 );

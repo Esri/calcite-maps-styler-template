@@ -62,7 +62,7 @@
 				url: "URL de un vídeo de Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Map Journal no puede reproducir vídeos sin procesar (por ejemplo, avi, mpeg), pero puede reproducir archivos de vídeo alojados que tengan reproductores integrados (por ejemplo, YouTube o Vimeo).",
+				explain1: "á_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_Ó.",
 				explain2: "La mayoría de los servicios de alojamiento de vídeos en línea ofrecen esta función, tienes que encontrar la opción de integrar el vídeo, copiar el código que se indica y utilizar la %WEBPAGE%.",
 				explain3: "O bien, si deseas alojar el vídeo tú mismo, puedes crear una página HTML que utilice un reproductor de vídeo como %EXAMPLE%, alojar esa página y utilizar también la %WEBPAGE%.",
 				webpage: "Entidad de página web"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(no se recortará)",
 				lblPosition3Explain2: "(el ancho siempre se ajusta al panel)",
 				lblPosition4Explain: "(puede distorsionarse)",
-				unloadLbl: "Descargar cuando el lector navegue a otra sección diferente",
-				unloadHelp: "Si la página web incluye contenido multimedia de audio o vídeo, deja marcada esta opción para evitar que el contenido se reproduzca cuando el lector navegue a otra sección diferente. Desactiva la opción, por ejemplo, para que la pista de audio se siga reproduciendo a medida que el lector avanza por el diario.<br />Si la página web es una aplicación, desactiva la opción para que la aplicación no se vuelva a cargar si el lector regresa a dicha sección."
+				unloadLbl: "á_Unload when reader navigates away_Ó",
+				unloadHelp: "á_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_Ó."
 			},
 			editorActionGeocode: {
 				lblTitle: "Buscar una dirección o un lugar",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

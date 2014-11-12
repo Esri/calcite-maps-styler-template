@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "APPLICATIE LADEN",
 				step2: "GEGEVENS LADEN",
 				step3: "INITIALISEREN",
 				fail: "Laden Swipe mislukt",
-				loadBuilder: "OVERSCHAKELEN NAAR BUILDER MODUS",
+				loadBuilder: "OVERSCHAKELEN NAAR BUILDER MODUS",				
 				redirectSignIn: "OMLEIDEN NAAR AANMELDINGSPAGINA",
 				redirectSignIn2: "(na het aanmelden wordt u naar hier omgeleid)",
 				failButton: "Opnieuw proberen"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

@@ -1,18 +1,18 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-   sidePanel:{
+   sidePanel: {
    	label: "Описание"
     },
-    errors:{
+    errors: {
       createMap: "Не удалось создать карту",
       general: "Ошибка"
     }
   },
-  tools:{
+  tools: {
     tweets: {
     "screenName": "Ник",
     "signIn": "Войти",
@@ -34,31 +34,31 @@
     label: "Записи в Twitter",
     title: "Записи в Twitter",
     error: "Результаты не найдены, попробуйте другой термин или местоположение для поиска",
-		search:{
+		search: {
 			label: "Поиск",
 			title: "Поиск в Twitter",
 			placeholder: 'Ключевые слова для поиска'
 		},
-		clear:{
+		clear: {
 			label: "Очистить",
 			title: "Очистить карту"
 		},
-		share:{
+		share: {
 			label: "Общий доступ к карте:",
 			email:{
 				title: "Email",
 				label: "Email"
 			},
-			twitter:{
+			twitter: {
 				title: "Twitter",
 				label: "Twitter"
 			},
-			facebook:{
+			facebook: {
 				title: "Facebook",
 				label: "Facebook"
 			}
 		}
 	 }
    }
- })
+})
 );

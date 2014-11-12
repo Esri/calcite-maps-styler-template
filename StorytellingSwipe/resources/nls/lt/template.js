@@ -1,12 +1,12 @@
 ﻿define(
-	({
+	 ({
 		viewer: {
 			loading: {
 				step1: "ĮKELIAMA APLIKACIJA",
 				step2: "ĮKELIAMI DUOMENYS",
 				step3: "PRADEDAMA",
 				fail: "Atsiprašome keitiklio krovimas nepavyko",
-				loadBuilder: "PERSIJUNGIAMA Į KŪRIMO REŽIMĄ",
+				loadBuilder: "PERSIJUNGIAMA Į KŪRIMO REŽIMĄ",				
 				redirectSignIn: "NUKREIPIAMA Į PRISIJUNGIMO PUSLAPĮ",
 				redirectSignIn2: "(jūs būsite nukreiptas čia po prisijungimo)",
 				failButton: "Pakartoti"
@@ -277,3 +277,4 @@
 		}
     })
 );
+

@@ -62,7 +62,7 @@
 				url: "Vimeo video URL"
 			},
 			videoSelectorOther: {
-				explain1: "Kaardiajakiri ei saa esitada töötlemata videoid (nt .avi, .mpeg), kuid saab esitada majutatud videoid sisseehitatud pleierites (nt YouTube või Vimeo).",
+				explain1: "Š_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ä.",
 				explain2: "Enamik veebis olevaid videomajutusteenuseid pakub seda funktsiooni. Peate leidma video lisamise võimaluse, kopeerima antud koodi ja kasutama veebilehte %WEBPAGE%.",
 				explain3: "Kui soovite aga videot ise majutada, saate luua HTML-lehe, mis kasutab näiteks videopleierit %EXAMPLE%, selle lehe majutada ning kasutada ka veebilehte %WEBPAGE%.",
 				webpage: "Veebilehe funktsioon"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(ei kärbita)",
 				lblPosition3Explain2: "(laius on alati paneelile vastav)",
 				lblPosition4Explain: "(võib moonutada)",
-				unloadLbl: "Laadi maha, kui lugeja liigub teise jaotise juurde",
-				unloadHelp: "Kui veebileht sisaldab heli- või videosisu, märkige see valik, et takistada selle sisu esitamist siis, kui lugeja liigub teise jaotise juurde. Tühjendage see valik näiteks siis, kui soovite, et heliriba esitataks siis, kui lugeja läbi ajakirja liigub.<br />Kui veebileht on rakendus, tühjendage see valik, et rakendust ei laaditaks uuesti siis, kui lugeja sellesse jaotisesse naaseb."
+				unloadLbl: "Š_Unload when reader navigates away_ä",
+				unloadHelp: "Š_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ä."
 			},
 			editorActionGeocode: {
 				lblTitle: "Märgi aadress või asukoht",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

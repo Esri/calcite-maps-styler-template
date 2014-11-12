@@ -1,30 +1,29 @@
 ﻿define(
-(﻿{
+    ({
   viewer:{
     main:{
-      scaleBarUnits: "á»‡_english_á»" //"english (for miles) or "metric" (for km) - don't translate.
+      scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors:{
-      createMap: "á»‡_Unable to create map_á»:",
-      general:"á»‡_Error_á»",
-	  timeout:"á»‡_Please choose another tab to begin_á»"
+      createMap: "Không thể tạo bản đồ:",
+      general:"Lỗi",
+	  timeout:"Vui lòng chọn một tab khác để bắt đầu"
     },
     loading:{
-    	message: "á»‡_Loading maps_á»"
+    	message: "Đang tải bản đồ"
     },
 	sync:{
-		head: "á»‡_SYNCHRONIZE MAPS_á»",
-		scale: "á»‡_Scale_á»",
-		location: "á»‡_Location_á»"
+		head: "ĐỒNG BỘ HÓA BẢN ĐỒ",
+		scale: "Tỷ lệ",
+		location: "Vị trí"
 	},
 	toggles:{
-		legend: "á»‡_Legend_á»",
-		description: "á»‡_Description_á»"
+		legend: "Chú giải",
+		description: "Mô tả"
 	},
 	sidePanel:{
-        legendHeader: "á»‡_LEGEND_á»"
+        legendHeader: "CHÚ GIẢI"
     }
   }
-}
-)
+})
 );

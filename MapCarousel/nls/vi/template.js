@@ -1,14 +1,14 @@
 ﻿define(
-({
+   ({
   app:{
-   title:"á»‡_Map Carousel_á»",
-    scaleBarUnits: "á»‡_english_á»", //"english (for miles) or "metric" (for km) - don't translate.
+   title:"Map Carousel",
+    scaleBarUnits: "english", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
-      createMap: "á»‡_Unable to create map_á»",
-      bitly: 'á»‡_bitly is used to shorten the url for sharing. View the readme file for details on creating and using a bitly key_á»',
-      general: "á»‡_Error_á»"
+      createMap: "Không thể tạo bản đồ",
+      bitly: 'bitly được sử dụng để rút ngắn url để chia sẻ. Xem tệp readme để biết chi tiết về việc tạo và sử dụng một khóa bitly',
+      general: "Lỗi"
     },
-    mapcount: "á»‡_Map ${page} of  ${total}_á»"
+    mapcount: "Bản đồ ${page} trên ${total}"
   }
 })
 );

@@ -1,5 +1,5 @@
 ﻿define(
-({
+	 ({
 		viewer: {
 			loading: {
 				step1: "INDLÆSER APPLIKATION",
@@ -68,7 +68,7 @@
 				dataPicError1: "Map Tour kræver nu, at billed-URL\'er slutter med ét af følgende filtypenavne: .jp(e)g, .png, .gif eller .bmp.",
 				dataPicError2: "Dette krav vil ikke få nogen indflydelse på din eksisterende publicerede Map Tour. Men for at kunne bruge det interaktive builder-program skal du først løse URL-problemet ved at udføre én af følgende to handlinger:",
 				dataPicError3: "Redigér URL\'er",
-				dataPicError4: "Dette vil føje <i>#isPicture</i> til slutningen af ikke-understøttede billed-URL\'er. De fleste servere understøtter URL-tilknytninger. Men når du har udført denne handling, skal du kontrollere, at de opdaterede billed-URL\'er fungerer ved at navigere gennem dine punkter. Hvis alle billeder indlæses, kan du gemme din Map Tour. Hvis <b>billederne er ødelagte, skal du ikke gemme din Map Tour</b>. Genindlæs i stedet builder-programmet, og udfør den anden handling.",
+				dataPicError4: "ø_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_å.",
 				dataPicError5: "Begræns turen til billeder",
 				dataPicError6: "Denne indstiling medfører, at alle URLér bliver betragtet som billeder, men du vil ikke kunne tilføje videoer med det interaktive builder-program. Denne handling kan fortrydes, hvis du på et tidspunkt i fremtiden beslutter at tilføje videoer.",
 				dataPicError7: "Din Map Tour er begrænset til billeder, videoer kan ikke benyttes. Hvis du vælger at fjerne denne begrænsning, skal du kontrollere, at dine billeder fortsat indlæses korrekt, før du gemmer din Map Tour. Du kan gendanne denne begrænsning på et senere tidspunkt, hvis det bliver nødvendigt.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Billede",
 				addLabelThumbUrl: "Miniature",
 				addTextPlaceholderUrl: "Indtast en billed-URL",
-				addTextPlaceholderUrl2: "Indtast en Youtube-side-URL",
+				addTextPlaceholderUrl2: "ø_Enter a YouTube page URL_å",
 				addTextPlaceholderUrl3: "Indtast en Vimeo-side-URL",
 				addTextPlaceholderUrl4: "Indtast en URL, der er indlejret i en video",
 				addLabelVideo: "Video",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Nulstil feltvalget",
 				settingsExtentExplain: "Indstil startudstrækningen for kortturen via det interaktive kort nedenfor.",
 				settingsExtentExplainBottom: "Den udstrækning, du definerer, vil ændre din første webkortudstrækning. Bemærk, at denne udstrækning ikke bruges, hvis den ikke indeholder det første turpunkt. Hvis det er tilfældet, åbnes turen som centreret på det første punkt.",
-				settingsExtentDateLineError: "Udstrækningen må ikke krydse meridianen på længdegraden 180°",
+				settingsExtentDateLineError: "ø_The extent cannot be across the meridian of 180Â° longitude_å",
 				settingsExtentDateLineError2: "Fejl ved behandlingen af udstrækningen",
 				settingsExtentDrawBtn: "Tegn ny udstrækning",
 				settingsExtentModifyBtn: "Redigér udstrækningen",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Anvend"
 			},
 			headerJS:{
-				editMe: "Redigér mig!",
+				editMe: "ø_Edit me_å!",
 				templateTitle: "Indstil skabelontitel",
 				templateSubtitle: "Indstil skabelonundertitel"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Import lykkedes. Indlæser"
 			},
 			viewYoutube: {
-				title: "YouTube-import",
+				title: "ø_YouTube import_å",
 				header: "Angiv et YouTube-brugernavn for at finde offentligt delte videoer.",
-				pageInputLbl: "Indtast et Youtube-brugernavn",
+				pageInputLbl: "ø_Enter a YouTube user name_å",
 				lookupMsgError: "Bruger ikke fundet",
-				howToFind: "Sådan finder du et Youtube-brugernavn",
+				howToFind: "ø_How to find a YouTube user name_å",
 				howToFind2: "Brugernavnet vises under videoer",
 				found: "Fundet",
 				noData: "Ingen offentlige videoer fundet"
@@ -442,12 +442,12 @@
 					div172: "Billed- og miniaturefelterne vil, når de findes, altid blive brugt, og der vil ikke blive anmodet om featuretjenestens vedhæftninger.",
 					div173: "Eksempel-CSV-filer og shapefiler kan overføres fra",
 					div18: "Opretter en \"hosted\" featuretjeneste ud fra en CSV- eller shapefil",
-					div19: "Når du opretter en \"hosted\" featuretjeneste på basis af en CSV- eller shapefil, er vedhæftninger ikke aktiveret som standard. Hvis du vil aktivere dem, skal du åbne featuretjenestens oplysningsside og klikke på den lille pil på lagsektionen for at få indstillingen vist. Map Tour\'en vil fortsat bruge de billeder og miniaturer, du har refereret til via attributter. Hvis du vil overføre dine billeder som  featuretjeneste-vedhæftninger, kan du gøre det vha. to knapper på billedpanelet (\"Redigér billede\" og \"Redigér miniature\").",
-					div20: "Understøttede billedformater og videoer",
-					div21: "Understøttede billedformater er: <b>.jpg, .jpeg, .png, .gif og .bmp</b>. Hvis dit medie ikke slutter med en af disse filtypenavne, vil Map Tour betragte mediet som en video, undtagen når du bruger en featuretjeneste (se nedenfor).",
+					div19: "ø_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_å.",
+					div20: "ø_Supported picture formats and videos_å",
+					div21: "ø_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_å.",
 					div22: "Map Tour-skabelonen indeholder ikke en videoafspiller, så du skal bruge den eksterne videoafspiller, som leveres af din foretrukne værtstjeneste for videoindhold (find indstillingen til indlejring af videoen, og kopiér den URL, der findes i den givne kode). Hvis du selv ønsker at \"hoste\" videoen, kan du oprette en HTML-side, der indeholder en videoafspiller som f.eks. <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "Det interaktive builder-program indeholder ikke nogen dialogboks, som kan benyttes til at inkludere videoer, når du bruger featuretjenester med vedhæftninger, men det er muligt at gøre dette ved at redigere dine data uden for det interaktive builder-program. I ArcGIS-kortviseren vil dit medie blive betragtet som en video, hvis du redigerer billedfelterne, så de peger på en ekstern video og tilføjer en særlig parameter i slutningen af din URL (#isVideo).",
-					div24: "Bemærk, at du fortsat skal have to gyldige vedhæftede billeder, ellers vil punktet ikke blive anvendt. Du kan ikke bruge videoer, når du benytter featuretjeneste-vedhæftninger uden billed- og miniaturefelter."
+					div24: "ø_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_å."
 				},
 				tab3: {
 					title: "Tilpasning",
@@ -487,7 +487,7 @@
 					div2a: "Deler turen via builder-programmet",
 					div2b: "Knappen DEL vil opdatere applikations- og webkortelementerne. Hvis dine tour-data er lagret i et featuretjenesteelement, bliver dette element også opdateret. Hvis du har tilføjet andre lag via ArcGIS.com-kortviseren, opdateres disse ikke. Dette kan medføre, at turen ikke deles som forventet. Elementer, der allerede har de påkrævede rettigheder (eller flere), opdateres ikke.",
 					div2c: "Deler turen via ArcGIS Online",
-					div2d: "Når du deler applikationen via ArcGIS Online, vil du muligvis blive bedt om at opdatere eventuelle afhængige ressourcer (webkort, featuretjeneste, udsmykningslag), der ikke deles på samme måde. Hvis map tour\'en er offentlig, og en af dine ressourcer ikke deles med publikum, vil brugere blive omdirigeret til ArcGIS Online-loginsiden.",
+					div2d: "ø_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_å.",
 					div3t: "Sikkerhed for featuretjenester",
 					div3a: "Hvis du bruger en \"hosted\" featuretjeneste, der er oprettet med Map Tour-builder-programmet, håndterer applikationen tjenestens sikkerhed for dig , og du er den eneste, der har redigeringsrettigheder, også når tjenesten er delt med offentligheden.",
 					div3t2: "Før du deler turen med dit publikum",

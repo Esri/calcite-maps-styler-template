@@ -1,5 +1,5 @@
 ﻿define(
-	({
+     ({
         map: {
             error: "Kan ikke oprette kort",
             mouseToolTip: "Klik på kortet for at kontrollere tjenesten"
@@ -10,7 +10,8 @@
         error: {
             layerNotFound: "Laget findes ikke i webkortet",
             fieldNotFound: "Felt ikke fundet",
-            popupNotSet: "Pop-ups er ikke aktiveret for dette lag"
+            popupNotSet: "Pop-ups er ikke aktiveret for dette lag",
+            noLayersSet: "ø_No layers defined in the config, the search box will not work_å"
         },
         page: {
             title: "Informationssøgning",
@@ -22,6 +23,6 @@
         ui:{
             basemapButton: "Baggrundskort"
         }
-    })
 
+    })
 );

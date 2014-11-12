@@ -1,5 +1,5 @@
 ﻿define(
-(﻿{
+   ({
   viewer:{
     main:{
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
@@ -9,8 +9,8 @@
       general:"错误"
     },
 	legToggle:{
-	  up:"地图图例 ▲",
-	  down:"地图图例 ▼"
+	  up:"试_MAP LEGEND â–²_验",
+	  down:"试_MAP LEGEND â–¼_验"
 	},
 	loading:{
 		message: "正在加载地图"
