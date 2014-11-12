@@ -78,7 +78,16 @@ dojox.layout.FloatingPane.prototype.show = function (callback) {
       //fix for dojox/mobile bug https://bugs.dojotoolkit.org/ticket/17228
      document.dojoClick = false;
 
-
+     require(["dojo/sniff"],function(has){
+     
+        if(has("ie") || has("trident")){
+            var ss = document.createElement("link");
+            ss.type = "text/css";
+            ss.rel = "stylesheet";
+            ss.href = "css/ie.css";
+            document.getElementsByTagName("head")[0].appendChild(ss);
+        }
+     });
 
 
     configOptions = options;
