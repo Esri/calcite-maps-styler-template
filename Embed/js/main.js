@@ -382,9 +382,7 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                             }
                         });
 
-                        //set the marker location to the map center 
-                        this.map.centerAt(point);
-
+           
                         var infoTemplate = null;
                         if (description || label) {
                             infoTemplate = new PopupTemplate({
@@ -396,35 +394,10 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
 
                         var graphic = new Graphic(point, markerSymbol, null, infoTemplate);
                         this.map.graphics.add(graphic);
-
-                        /*if (label) {
-                            var textSym = new TextSymbol({
-                                "color": [0, 0, 0, 255],
-                                "type": "esriTS",
-                                "verticalAlignment": "baseline",
-                                "horizontalAlignment": "left",
-                                "angle": 0,
-                                "xoffset": markerSymbol.width / 2,
-                                "yoffset": 0,
-                                "rotated": false,
-                                "kerning": true,
-                                "font": {
-                                    "size": 12,
-                                    "style": "normal",
-                                    "weight": "bold",
-                                    "family": "Arial"
-                                },
-                                "text": label
-                            });
-                            //var labelGraphic = new Graphic(point, textSym, null, infoTemplate);
-                            //Perhaps just show the popup
-                            this.map.infoWindow.setFeatures([graphic]);
-                            this.map.infoWindow.show(point);
-                            //this.map.graphics.add(labelGraphic);
-                        }*/
-                            this.map.infoWindow.setFeatures([graphic]);
-                            this.map.infoWindow.show(point);
-
+                        this.map.infoWindow.setFeatures([graphic]);
+                        this.map.infoWindow.show(point);
+                        //set the marker location to the map center 
+                        this.map.centerAt(point);
                     }
 
                 }
