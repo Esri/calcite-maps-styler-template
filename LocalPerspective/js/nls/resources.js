@@ -15,7 +15,7 @@
  | limitations under the License.
  */
 define({
-   root: ( {
+   root: ({
       "map": {
          "error": "Unable to create map"
       },
