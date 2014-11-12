@@ -169,6 +169,7 @@ a{
     font-size: 30px;
     line-height: 42px;
     border: solid 1px #929497;
+    border-top:none;
     color: $dark-font-color;
     text-align:center;
 }
@@ -196,6 +197,9 @@ a{
     cursor:pointer;
     color:$icon-color;
 }
+.esriRTL .icon-basemap-container{
+    top: $no-title-top + 100;
+}
 .icon-basemap-container.embed-bottom-right,.icon-basemap-container.embed-bottom-left,.icon-basemap-container.embed-top-right{
     top:$title-top + 10;
     left:10px;
@@ -205,6 +209,12 @@ a{
 }
 .no-home .icon-basemap-container{
     top: $title-top + 75;
+}
+.no-title.no-home.no-zoom .icon-basemap-container{
+    top: $no-title-top;
+}
+.no-zoom .icon-basemap-container{
+    top: $no-title-top + 45;
 }
 .no-title .icon-basemap-container{
     top: $no-title-top + 100;
@@ -313,7 +323,9 @@ a{
 .esriBasemapGalleryNode a:hover{
     background-color:#E1F0FB;
 }
-
+.esriRTL #gallery_container{
+    top: $title-top + 20;
+}
 #gallery_container{
     position: absolute;
     top: $title-top + 55;
@@ -332,6 +344,9 @@ a{
 }
 .no-title #gallery_container{
     top: $no-title-top + 55;
+}
+.no-title.no-zoom #gallery_container{
+    top: $no-title-top;
 }
 .no-title.no-home #gallery_container{
     top: $no-title-top + 35;
@@ -394,6 +409,12 @@ a{
 }
 .esriPopup.dark .contentPane, .esriPopup.dark .actionsPane{
     background-color: $dark-base-color;   
+}
+.esriPopup.dark .pointer.top{
+    background: $dark-highlight-color;
+}
+.esriPopup.dark .pointer{
+    background: $dark-base-color;
 }
 .esriPopup.dark .titlePane{
     background-color: $dark-highlight-color;

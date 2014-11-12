@@ -81,6 +81,14 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                 //add class so we can move basemap gallery button 
                 domClass.add(document.body, "no-home");
             }
+            //Position basemap gallery higher if zoom isn't taking up space
+            if(this.config.zoom === false){
+                //add class so we can move basemap gallery button 
+                domClass.add(document.body, "no-zoom");
+            }
+            if(this.config.zoom && this.config.zoom_position && this.config.zoom_position !== "top-left"){
+                domClass.add(document.body, "no-zoom");
+            }
             if (this.config.legend) {
                 var legend = new Legend({
                     map: this.map,
@@ -403,6 +411,7 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                 }
 
                 this.loadMapWidgets();
+
                 // map has been created. You can start using it.
                 // If you need map to be loaded, listen for it's load event.
             }), this.reportError);
