@@ -125,6 +125,12 @@ a{
 .icon-arrow-left{
     cursor:pointer;
 }
+.esriRTL .icon-open:before{
+    content:"\e601";
+}
+.esriRTL .icon-close:before{
+    content:"\e602";
+}
 .icon-open:before {
     content: "\e602";
 }
@@ -148,6 +154,9 @@ a{
     font-size:12px;
     cursor:pointer;
     color:#595050;
+}
+.esriRTL .menu-button{
+    right:0;
 }
 .menu-button {
     position: absolute;
@@ -241,7 +250,10 @@ a{
     padding: 0px;
     border-radius: 0;
   }
-
+.esriRTL .esriSimpleSliderTL{
+    top: $no-title-top !important;
+    left:10px;
+}
 .esriSimpleSliderTL {
     top: $title-top !important;
     left:10px;
@@ -538,6 +550,10 @@ a{
     text-align: left;
     z-index: 1;
 }
+.esriRTL .nowrapTabStrip{
+    text-align:right;
+    width:-5000px;
+}
 
 .dijitTabListWrapper {
     overflow: hidden;
@@ -594,6 +610,7 @@ a{
     width:100%;
 }
 
+
 .dijitTabPane{
     color:$dark-font-color;
 }
@@ -628,15 +645,7 @@ a{
     background: $dark-highlight-color;
     color: $dark-font-color;
 }
-/*.calcite .dijitTabHover {
-    background-color: lighten($dark-base-color, 30%);
-}
-.calcite.dark .dijitTabHover {
-    background-color: lighten($dark-base-color, 30%);
-}
-.calcite.light .dijitTabHover {
-    background-color: lighten($light-base-color, 30%);
-}*/
+
 .calcite .dijitTabChecked {
     background: $dark-base-color;
 }
