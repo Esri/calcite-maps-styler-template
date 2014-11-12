@@ -113,6 +113,10 @@ background-color:#ddd;
 .dijitContentPane{
    overflow:visible;
 }
+#leftPaneHeader{
+  border:none !important;
+  background-color: inherit !important;
+}
 #legendPanel{
 /*width:100%;*/
 }
