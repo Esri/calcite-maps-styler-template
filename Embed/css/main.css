@@ -19,10 +19,12 @@ a {
 .logo a {
   cursor: pointer;
 }
-.logo {
-  position: absolute;
-  bottom: 10px;
-  right: 5px;
+.logo{
+    max-height:64px;
+    max-width:64px;
+    position:absolute;
+    bottom:20px;
+    right:5px;
 }
 #mapDiv {
   padding: 0;
