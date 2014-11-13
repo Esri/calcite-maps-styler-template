@@ -15,7 +15,7 @@
  | limitations under the License.
  */
 define({
-    root: {
+    root: ({
         map: {
             error: "Unable to create map"
         },
@@ -64,7 +64,7 @@ define({
             noConfiguration: "Unable to access application's configuration",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "Unable to launch application"  // Appears for any failure to build the user interface
         }
-    },
+    }),
     "ar": 1,
     "cs": 1,
     "da": 1,
