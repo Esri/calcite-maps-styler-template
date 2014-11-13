@@ -783,7 +783,9 @@ img{
         max-width:400px;
     }
 }
-
+#panelText.nosearch{
+  display: block;
+}
 #panelSearch {
     float: left;
     margin: 10px 0 10px 4px;

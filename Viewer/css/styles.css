@@ -793,6 +793,10 @@ img {
   display: none;
   font-size: 0.9em; }
 
+#panelText.nosearch{
+  display: block;
+}
+
 @media only screen and (min-width: 720px) {
   #panelText {
     display: block;
