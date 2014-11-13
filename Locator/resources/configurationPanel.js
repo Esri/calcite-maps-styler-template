@@ -37,7 +37,8 @@
                     "type": "layerAndFieldSelector",
                     "layerOptions": {
                         "supportedTypes": [
-                            "FeatureLayer"
+                            "FeatureLayer",
+                            "FeatureCollection"
                         ],
                         "geometryTypes": [
                             "esriGeometryPoint",
