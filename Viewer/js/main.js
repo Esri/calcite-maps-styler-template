@@ -204,6 +204,22 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             this._destroyEditor();
                             this.map.setInfoWindowOnClick(true);
                         }
+                      
+                      
+                        if(has("measure") && name !== "measure"){
+                            query(".esriMeasurement").forEach(lang.hitch(this, function(node){
+                                var m = registry.byId(node.id);
+                                if(m){
+                                    m.clearResult();
+                                    m.setTool("location", false);
+                                    m.setTool("area", false);
+                                    m.setTool("distance", false);
+                                }
+                            }));
+                        }         
+                      
+                      
+                      
                     }));
 
                     domStyle.set("panelPages", "visibility", "visible");
