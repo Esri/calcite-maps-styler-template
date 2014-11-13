@@ -411,8 +411,14 @@ a {
 .esriPopup.dark .pointer {
   background: #4c4c4c;
 }
+.esriPopup.dark .outerPointer {
+  background: #4c4c4c;
+}
 .esriPopup.dark .titlePane {
   background-color: #323232;
+}
+.esriPopup.light .pointer.top {
+  background: #e0e0df;
 }
 /*If the screen size is max-width or smaller and the drawer is open hide the geocder.*/
 @media screen and (max-width: 540px) {
