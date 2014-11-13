@@ -16,6 +16,14 @@ a {
   -ms-user-select: none;
   user-select: none;
 }
+.logo a {
+  cursor: pointer;
+}
+.logo {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+}
 #mapDiv {
   padding: 0;
   margin: 0;

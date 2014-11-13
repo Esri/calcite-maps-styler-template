@@ -28,6 +28,8 @@ define({
     "scale": true,
     "search": false,
     "searchextent": true,
+    "logoimage":null,
+    "logolink":null,
     "basemap_toggle": false,
     "basemap_gallery": false,
     //"streets" , "satellite" , "hybrid", "topo", "gray", "oceans", "national-geographic" "osm"

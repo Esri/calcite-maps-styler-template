@@ -43,5 +43,5 @@ define({
     //This option demonstrates how to handle additional custom url parameters. For example
     //if you want users to be able to specify lat/lon coordinates that define the map's center or
     //specify an alternate basemap via a url parameter.
-    "urlItems": ["extent", "home", "zoom", "scale", "search", "basemap_toggle", "basemap_gallery", "alt_basemap", "legend", "popup_sidepanel", "details", "theme", "searchextent", "marker", "level", "center", "active_panel", "show_panel", "find", "disable_scroll", "zoom_position"] // example param. ?theme=<my theme>
+    "urlItems": ["extent", "home", "zoom", "scale", "search", "basemap_toggle", "basemap_gallery", "alt_basemap", "legend", "popup_sidepanel", "details", "theme", "searchextent", "marker", "level", "center", "active_panel", "show_panel", "find", "disable_scroll", "zoom_position", "logoimage", "logolink"] // example param. ?theme=<my theme>
 });

@@ -1,5 +1,5 @@
-define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/has", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/Color", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "dijit/layout/ContentPane", "application/Drawer", "esri/domUtils", "application/CreateGeocoder", "esri/dijit/Legend", "esri/dijit/BasemapToggle", "esri/arcgis/utils", "esri/dijit/Scalebar", "esri/dijit/BasemapGallery", "esri/dijit/HomeButton", "esri/dijit/Popup", "esri/symbols/PictureMarkerSymbol", "esri/graphic", "esri/geometry/Point", "esri/geometry/Extent", "esri/dijit/PopupTemplate", "esri/symbols/TextSymbol", "dojo/domReady!"], function (
-ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domClass, domConstruct, registry, ContentPane, Drawer, domUtils, CreateGeocoder, Legend, BasemapToggle, arcgisUtils, Scalebar, BasemapGallery, HomeButton, Popup, PictureMarkerSymbol, Graphic, Point, Extent, PopupTemplate, TextSymbol) {
+define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/dom-style", "dojo/has", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/Color", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "dijit/layout/ContentPane", "application/Drawer", "esri/domUtils", "application/CreateGeocoder", "esri/dijit/Legend", "esri/dijit/BasemapToggle", "esri/arcgis/utils", "esri/dijit/Scalebar", "esri/dijit/BasemapGallery", "esri/dijit/HomeButton", "esri/dijit/Popup", "esri/symbols/PictureMarkerSymbol", "esri/graphic", "esri/geometry/Point", "esri/geometry/Extent", "esri/dijit/PopupTemplate", "esri/symbols/TextSymbol", "dojo/domReady!"], function (
+ready, parser, domAttr, domStyle, has, on, array, declare, lang, Color, query, dom, domClass, domConstruct, registry, ContentPane, Drawer, domUtils, CreateGeocoder, Legend, BasemapToggle, arcgisUtils, Scalebar, BasemapGallery, HomeButton, Popup, PictureMarkerSymbol, Graphic, Point, Extent, PopupTemplate, TextSymbol) {
     return declare(null, {
         config: {},
         startup: function (config) {
@@ -319,11 +319,13 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
             domClass.add(document.body, this.config.theme);
             domClass.add(customPopup.domNode, this.config.theme);
 
+    
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: {
                     slider: this.config.zoom,
                     sliderPosition: this.config.zoom_position,
-                    infoWindow: customPopup
+                    infoWindow: customPopup,
+                    logo: (this.config.logoimage === null) ? true : false
                 },
                 usePopupManager: true,
                 editable: false,
@@ -331,16 +333,27 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
             }).then(lang.hitch(this, function (response) {
                 this.map = response.map;
                 this.config.response = response;
-                //disable symbol for text symbols
-                /*this.map.graphics.on("click", lang.hitch(this, function(e){
-                    if(e.graphic && e.graphic.symbol && e.graphic.symbol.type && e.graphic.symbol.type === "textsymbol"){
-                        this.map.infoWindow.set("highlight", false);
-                    }else{
-                        this.map.infoWindow.set("highlight", true);
-                    }
 
-                }));*/
+                if(this.config.logoimage){
 
+                     query(".esriControlsBR").forEach(lang.hitch(this, function(node){
+                        var link = null;
+                        if(this.config.logolink){
+                            link = domConstruct.create("a",{
+                                href: this.config.logolink,
+                                target: "_blank"
+                            },node);
+                        }
+
+                        var logoimg = domConstruct.create("img",{
+                            src: this.config.logoimage,
+                            "class":"logo"
+                        },link || node);
+     
+                    }));
+
+
+                }
 
                 //disable mouse zoom
                 if (this.config.disable_scroll) {
