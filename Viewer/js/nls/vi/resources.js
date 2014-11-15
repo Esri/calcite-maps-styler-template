@@ -21,18 +21,18 @@ define(
         },
         "tools":{
             "search":{
-                "error": "á»‡_Location could not be found_á»",
-                "notWhatYouWanted": "á»‡_Not what you wanted_á»?",
-                "selectAnother": "á»‡_Select another location_á»",
-                "currentLocation": "á»‡_Current Location_á»",
-                "title": "á»‡_Location_á»"
+                "error": "Đ_Location could not be found_ớ",
+                "notWhatYouWanted": "Đ_Not what you wanted_ớ?",
+                "selectAnother": "Đ_Select another location_ớ",
+                "currentLocation": "Đ_Current Location_ớ",
+                "title": "Đ_Location_ớ"
             },
 	    	"print": {
 			    "layouts":{
-			      "label1": 'á»‡_Landscape_á»',
-			      "label2": 'á»‡_Portrait_á»',
-			      "label3": 'á»‡_Landscape_á»',
-			      "label4": 'á»‡_Portrait_á»'
+			      "label1": 'Đ_Landscape_ớ',
+			      "label2": 'Đ_Portrait_ớ',
+			      "label3": 'Đ_Landscape_ớ',
+			      "label4": 'Đ_Portrait_ớ'
 			    },
 			    "legend": "Thêm chú giải vào kết quả đầu ra"
 			},

@@ -5,11 +5,11 @@
         }, 
         tools: {         
             search: {
-                error: "á»‡_Location could not be found_á»",
-                notWhatYouWanted: "á»‡_Not what you wanted_á»?",
-                selectAnother: "á»‡_Select another location_á»",
-                currentLocation: "á»‡_Current Location_á»",
-                title: "á»‡_Location_á»"
+                error: "Đ_Location could not be found_ớ",
+                notWhatYouWanted: "Đ_Not what you wanted_ớ?",
+                selectAnother: "Đ_Select another location_ớ",
+                currentLocation: "Đ_Current Location_ớ",
+                title: "Đ_Location_ớ"
             },
         	legend: "Chú giải",
         	 about: "Về"

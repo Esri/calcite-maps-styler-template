@@ -11,7 +11,7 @@
             layerNotFound: "Lớp không có trong bản đồ web",
             fieldNotFound: "Không tìm thấy trường",
             popupNotSet: "Không kích hoạt cửa sổ pop-up cho lớp này",
-            noLayersSet: "á»‡_No layers defined in the config, the search box will not work_á»"
+            noLayersSet: "Đ_No layers defined in the config, the search box will not work_ớ"
         },
         page: {
             title: "Tìm kiếm thông tin",

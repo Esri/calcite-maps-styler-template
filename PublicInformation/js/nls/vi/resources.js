@@ -2,7 +2,7 @@
      ({
         map: {
             error: "Không thể tạo bản đồ",
-            views: "á»‡_views_á»."
+            views: "Đ_views_ớ."
         },
         report: {
             flag: "Gắn cờ là không phù hợp",

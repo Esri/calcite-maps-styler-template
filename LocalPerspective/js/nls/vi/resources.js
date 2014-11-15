@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "á»‡_Unable to create map_á»"
+         "error": "Đ_Unable to create map_ớ"
       },
       "days": {
-         "now": "á»‡_NOW_á»",
-         "sun": "á»‡_SUN_á»",
-         "mon": "á»‡_MON_á»",
-         "tue": "á»‡_TUE_á»",
-         "wed": "á»‡_WED_á»",
-         "thu": "á»‡_THU_á»",
-         "fri": "á»‡_FRI_á»",
-         "sat": "á»‡_SAT_á»"
+         "now": "Đ_NOW_ớ",
+         "sun": "Đ_SUN_ớ",
+         "mon": "Đ_MON_ớ",
+         "tue": "Đ_TUE_ớ",
+         "wed": "Đ_WED_ớ",
+         "thu": "Đ_THU_ớ",
+         "fri": "Đ_FRI_ớ",
+         "sat": "Đ_SAT_ớ"
       },
       "tooltips": {
-         "logo": "á»‡_Logo_á»",
-         "menu": "á»‡_Menu_á»",
-         "close": "á»‡_Close_á»",
-         "previous": "á»‡_Previous_á»",
-         "next": "á»‡_Next_á»",
-         "directions": "á»‡_Directions_á»"
+         "logo": "Đ_Logo_ớ",
+         "menu": "Đ_Menu_ớ",
+         "close": "Đ_Close_ớ",
+         "previous": "Đ_Previous_ớ",
+         "next": "Đ_Next_ớ",
+         "directions": "Đ_Directions_ớ"
       }
    })
 );

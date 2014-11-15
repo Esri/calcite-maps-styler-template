@@ -12,14 +12,14 @@
                 "bingError": "Triển khai ứng dụng này yêu cầu khóa Bản đồ Bing của riêng bạn.",
                 "noLayers": "Không có lớp hoạt động",
                 "noSearchResults": "Xin lỗi, không tìm thấy kết quả.",
-                "noGroupResults": "á»‡_The group could not be found_á».",
+                "noGroupResults": "Đ_The group could not be found_ớ.",
                 "noMatches": "Không tìm thấy kết quả phù hợp.",
                 "noMapsFound": "Không tìm thấy bản đồ."
             },
             "sidePanel": {
                 "title": "Chú giải",
                 "legendButton": "Chú giải",
-                "layersButton": "á»‡_Layers_á»", // new
+                "layersButton": "Đ_Layers_ớ", // new
                 "legendButtonTitle": "Chú giải Bản đồ",
                 "aboutButton": "Về",
                 "aboutButtonTitle": "Về Bản đồ",
@@ -36,47 +36,47 @@
                 "loadingText": "Đang tải Bản đồ&hellip;"
             },
             "sortFields": {
-                "sortBy": "á»‡_Sort by_á»",
-                "modified": "á»‡_Date_á»",
-                "title": "á»‡_Title_á»",
-                "type": "á»‡_Type_á»",
-                "numRatings": "á»‡_Ratings_á»",
-                "avgRating": "á»‡_Avg. Rating_á»",
-                "numComments": "á»‡_Comments_á»",
-                "numViews": "á»‡_Views_á»"
+                "sortBy": "Đ_Sort by_ớ",
+                "modified": "Đ_Date_ớ",
+                "title": "Đ_Title_ớ",
+                "type": "Đ_Type_ớ",
+                "numRatings": "Đ_Ratings_ớ",
+                "avgRating": "Đ_Avg. Rating_ớ",
+                "numComments": "Đ_Comments_ớ",
+                "numViews": "Đ_Views_ớ"
             },
             "comments": {
-                "commentsHeader": "á»‡_Comments_á»",
-                "posted": "á»‡_Posted_á»",
-                "by": "á»‡_by_á»",
-                "deleteComment": "á»‡_delete_á»",
-                "editComment": "á»‡_edit_á»",
-                "noComments": "á»‡_No comments_á»",
-                "addCommentButton": "á»‡_Add Comment_á»",
-                "signIn": "á»‡_Sign In_á»",
-                "register": "á»‡_Register_á»",
-                "or": "á»‡_or_á»",
-                "toPost": "á»‡_to post a comment_á»."
+                "commentsHeader": "Đ_Comments_ớ",
+                "posted": "Đ_Posted_ớ",
+                "by": "Đ_by_ớ",
+                "deleteComment": "Đ_delete_ớ",
+                "editComment": "Đ_edit_ớ",
+                "noComments": "Đ_No comments_ớ",
+                "addCommentButton": "Đ_Add Comment_ớ",
+                "signIn": "Đ_Sign In_ớ",
+                "register": "Đ_Register_ớ",
+                "or": "Đ_or_ớ",
+                "toPost": "Đ_to post a comment_ớ."
             },
             "buttons": {
-                "cancel": "á»‡_Cancel_á»",
-                "submit": "á»‡_Submit_á»"
+                "cancel": "Đ_Cancel_ớ",
+                "submit": "Đ_Submit_ớ"
             },
             "rating": {
-                "signIn": "á»‡_Sign In_á»",
-                "toRate": "á»‡_to rate_á»."
+                "signIn": "Đ_Sign In_ớ",
+                "toRate": "Đ_to rate_ớ."
             },
             "itemInfo": {
-                "createdLabel": "á»‡_created_á»",
-                "ratingsLabel": "á»‡_rating_á»",
-                "ratingsLabelPlural": "á»‡_ratings_á»",
-                "viewsLabel": "á»‡_view_á»",
-                "viewsLabelPlural": "á»‡_views_á»",
-                "commentsLabel": "á»‡_comment_á»",
-                "commentsLabelPlural": "á»‡_comments_á»",
-                "modifiedLabel": "á»‡_Last Modified_á»",
-                "by": "á»‡_by_á»",
-                "separator": "á»‡__á»,"
+                "createdLabel": "Đ_created_ớ",
+                "ratingsLabel": "Đ_rating_ớ",
+                "ratingsLabelPlural": "Đ_ratings_ớ",
+                "viewsLabel": "Đ_view_ớ",
+                "viewsLabelPlural": "Đ_views_ớ",
+                "commentsLabel": "Đ_comment_ớ",
+                "commentsLabelPlural": "Đ_comments_ớ",
+                "modifiedLabel": "Đ_Last Modified_ớ",
+                "by": "Đ_by_ớ",
+                "separator": "Đ__ớ,"
             },
             "mapPage": {
                 "findLocation": "Tìm một vị trí",
@@ -93,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Chủ sở hữu:",
                 "switchBasemap": "Chuyển đổi Bản đồ nền",
-                "getMobileApp": "á»‡_Get App_á»",
-                "constraintsHeading": "á»‡_Use Constraints_á»",
-                "createdLabel": "á»‡_Created_á»",
-                "noDescription": "á»‡_No description_á».",
-                "detailsLabel": "á»‡_Details_á»"
+                "getMobileApp": "Đ_Get App_ớ",
+                "constraintsHeading": "Đ_Use Constraints_ớ",
+                "createdLabel": "Đ_Created_ớ",
+                "noDescription": "Đ_No description_ớ.",
+                "detailsLabel": "Đ_Details_ớ"
             },
             "filterItems": {
                 "show": "Hiển thị",

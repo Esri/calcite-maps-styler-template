@@ -68,7 +68,7 @@
 				dataPicError1: "Map Tour hiện yêu cầu một URL hình ảnh kết thúc bằng một trong những phần mở rộng sau: .jp(e)g, .png, .gif hoặc .bmp.",
 				dataPicError2: "Yêu cầu này sẽ không ảnh hưởng đến Map Tour được xuất bản hiện tại của bạn. Tuy nhiên, để sử dụng bộ dựng tương tác, trước tiên bạn phải giải quyết vấn đề URL bằng cách thực hiện một trong hai hành động:",
 				dataPicError3: "Sửa URL",
-				dataPicError4: "á»‡_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_á».",
+				dataPicError4: "Đ_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_ớ.",
 				dataPicError5: "Hạn chế chuyến tham quan đến hình ảnh",
 				dataPicError6: "Tùy chọn này dẫn đến tất cả các URL được coi là hình ảnh, nhưng bạn sẽ không thể thêm video bằng cách sử dụng bộ dựng tương tác. Có thể đảo lại hành động này, nếu bạn quyết định thêm video sau này.",
 				dataPicError7: "Map Tour của bạn đã được giới hạn hình ảnh, không thể sử dụng video. Nếu bạn chọn xóa bỏ giới hạn đó, hãy kiểm tra xem hình ảnh của bạn vẫn tải đúng trước khi lưu Map Tour. Bạn sẽ có thể khôi phục lại giới hạn sau này nếu cần.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Ảnh",
 				addLabelThumbUrl: "Hình thu nhỏ",
 				addTextPlaceholderUrl: "Nhập URL Hình ảnh",
-				addTextPlaceholderUrl2: "á»‡_Enter a YouTube page URL_á»",
+				addTextPlaceholderUrl2: "Đ_Enter a YouTube page URL_ớ",
 				addTextPlaceholderUrl3: "Nhập URL trang Vimeo",
 				addTextPlaceholderUrl4: "Nhập URL nhúng video",
 				addLabelVideo: "Video",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Đặt lại lựa chọn trường",
 				settingsExtentExplain: "Thiết lập phạm vi ban đầu của Map Tour thông qua bản đồ tương tác dưới đây.",
 				settingsExtentExplainBottom: "Phạm vi bạn xác định sẽ thay đổi phạm vi ban đầu của bản đồ web của bạn. Lưu ý rằng phạm vi này không được dùng nếu nó không bao gồm điểm tham quan đầu tiên. Trong trường hợp đó chuyến tham quan sẽ mở ở giữa của điểm đầu tiên.",
-				settingsExtentDateLineError: "á»‡_The extent cannot be across the meridian of 180Â° longitude_á»",
+				settingsExtentDateLineError: "Đ_The extent cannot be across the meridian of 180Â° longitude_ớ",
 				settingsExtentDateLineError2: "Lỗi khi tính toán phạm vi",
 				settingsExtentDrawBtn: "Vẽ một phạm vi mới",
 				settingsExtentModifyBtn: "Sửa phạm vi",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Áp dụng"
 			},
 			headerJS:{
-				editMe: "á»‡_Edit me_á»!",
+				editMe: "Đ_Edit me_ớ!",
 				templateTitle: "Thiết lập tiêu đề mẫu",
 				templateSubtitle: "Thiết lập phụ đề mẫu"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Nhập thành công. Đang tải"
 			},
 			viewYoutube: {
-				title: "á»‡_YouTube import_á»",
+				title: "Đ_YouTube import_ớ",
 				header: "Nhập tên đăng nhập YouTube để tìm video chia sẻ công khai.",
-				pageInputLbl: "á»‡_Enter a YouTube user name_á»",
+				pageInputLbl: "Đ_Enter a YouTube user name_ớ",
 				lookupMsgError: "Không tìm thấy người dùng",
-				howToFind: "á»‡_How to find a YouTube user name_á»",
+				howToFind: "Đ_How to find a YouTube user name_ớ",
 				howToFind2: "Tên đăng nhập được hiển thị dưới video",
 				found: "Tìm thấy",
 				noData: "Không tìm thấy video công khai"
@@ -442,12 +442,12 @@
 					div172: "Khi có, các trường ảnh và hình thu nhỏ sẽ luôn luôn được sử dụng và các tệp đính kèm dịch vụ đối tượng sẽ không được truy vấn.",
 					div173: "Các CSV và shapefile mẫu có thể được tải về từ",
 					div18: "Tạo Dịch vụ Đối tượng được lưu trữ từ một CSV hoặc shapefile",
-					div19: "á»‡_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_á».",
-					div20: "á»‡_Supported picture formats and videos_á»",
-					div21: "á»‡_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_á».",
+					div19: "Đ_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_ớ.",
+					div20: "Đ_Supported picture formats and videos_ớ",
+					div21: "Đ_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_ớ.",
 					div22: "Mẫu Map Tour không bao gồm trình phát video, do đó bạn phải sử dụng trình phát video bên ngoài được cung cấp bởi dịch vụ lưu trữ video yêu thích của bạn (tìm tùy chọn để nhúng video và sao chép URL hiện tại vào mã nhất định). Nếu bạn muốn tự lưu trữ các video, bạn có thể tạo một trang HTML có chứa một trình phát video như <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "Bộ dựng tương tác không cung cấp một hộp thoại để kèm video khi sử dụng dịch vụ đối tượng có tệp đính kèm, nhưng có thể làm như vậy bằng cách sửa dữ liệu bên ngoài bộ dựng tương tác. Trong trình xem bản đồ arcgis.com, nếu bạn sửa đổi các trường ảnh để trỏ đến một video bên ngoài và thêm một tham số đặc biệt vào cuối URL của bạn (#isVideo), phương tiện của bạn sẽ được coi là một video.",
-					div24: "á»‡_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_á»."
+					div24: "Đ_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_ớ."
 				},
 				tab3: {
 					title: "Tùy chỉnh",
@@ -487,7 +487,7 @@
 					div2a: "Chia sẻ Chuyến tham quan thông qua bộ dựng",
 					div2b: "Nút CHIA SẺ sẽ cập nhật ứng dụng và các mục trên bản đồ web. Nếu dữ liệu Chuyến tham quan của bạn được lưu trữ trong một mục Dịch vụ Đối tượng, nó cũng sẽ được cập nhật. Nếu bạn đã thêm các lớp khác thông qua trình xem bản đồ ArcGIS.com, chúng sẽ không được cập nhật. Điều này có thể dẫn đến Chuyến tham quan không được chia sẻ như bạn mong đợi. Các mục đã có một (hoặc nhiều) đặc quyền bắt buộc sẽ không được cập nhật.",
 					div2c: "Chia sẻ Chuyến tham quan qua ArcGIS Online",
-					div2d: "á»‡_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_á».",
+					div2d: "Đ_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_ớ.",
 					div3t: "Bảo mật Dịch vụ Đối tượng",
 					div3a: "Nếu bạn đang sử dụng một dịch vụ đối tượng lưu trữ được tạo ra qua bộ dựng Map Tour, ứng dụng quản lý dịch vụ an ninh cho bạn và bạn sẽ vẫn là người duy nhất có quyền sửa, ngay cả khi bạn chia sẻ dịch vụ công khai.",
 					div3t2: "Trước khi chia sẻ Chuyến tham quan của bạn với khán giả",

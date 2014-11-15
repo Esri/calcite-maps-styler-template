@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Yếu tố được chọn",
                 "layerHelpTextMessage": "Ứng dụng này yêu cầu một lớp có các trường số",
                 "alertMessage": {
-                    "resetVariableMessage": "á»‡_Are you sure you want to reset variable_á»?",
+                    "resetVariableMessage": "Đ_Are you sure you want to reset variable_ớ?",
                     "emptyAppTitleMessage": "Tên ứng dụng không được trống",
                     "emptyDescriptionMessage": "Mô tả không được trống",
                     "maxVariableSelection": "Bạn không thể chọn nhiều hơn 25 biến phụ",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "Thay đổi chưa được lưu",
                     "failMessage": "Không thể cập nhật mục thành công",
                     "saveChangesAlert": "Bạn có muốn lưu thay đổi không?",
-                    "variableLabelValidation": "á»‡_Variable label cannot be empty_á»",
-                    "subVariableLabelValidation": "á»‡_Sub variable label cannot be empty_á»"
+                    "variableLabelValidation": "Đ_Variable label cannot be empty_ớ",
+                    "subVariableLabelValidation": "Đ_Sub variable label cannot be empty_ớ"
                     }
             }
         }

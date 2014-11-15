@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "á»‡_Location could not be found_á»",
-                "notWhatYouWanted": "á»‡_Not what you wanted_á»?",
-                "selectAnother": "á»‡_Select another location_á»",
-                "currentLocation": "á»‡_Current Location_á»",
-                "title": "á»‡_Location_á»"
+                "error": "Đ_Location could not be found_ớ",
+                "notWhatYouWanted": "Đ_Not what you wanted_ớ?",
+                "selectAnother": "Đ_Select another location_ớ",
+                "currentLocation": "Đ_Current Location_ớ",
+                "title": "Đ_Location_ớ"
             },
             "basemap":{
-                    "label": "á»‡_Basemap_á»",
-                    "title": "á»‡_Select a Basemap_á»"
+                    "label": "Đ_Basemap_ớ",
+                    "title": "Đ_Select a Basemap_ớ"
             },
             "legend":{
-                "title": "á»‡_Legend_á»"
+                "title": "Đ_Legend_ớ"
             },
             "details":{
-                "title": "á»‡_Map Details_á»",
-                "error": "á»‡_Update the web map description with the details to display in this section_á»."
+                "title": "Đ_Map Details_ớ",
+                "error": "Đ_Update the web map description with the details to display in this section_ớ."
             },
             "popup": {
-                "title": "á»‡_Info_á»",
-                "instructions": "á»‡_Select a feature on the map to view details_á»."
+                "title": "Đ_Info_ớ",
+                "instructions": "Đ_Select a feature on the map to view details_ớ."
             }
 
         },
         "map": {
-            "error": "á»‡_Unable to create map_á»"
+            "error": "Đ_Unable to create map_ớ"
         }
     })
 );

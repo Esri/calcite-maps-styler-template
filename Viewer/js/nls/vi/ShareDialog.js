@@ -2,16 +2,16 @@
      ({
         widgets: {
             ShareDialog: {
-                title: "á»‡_Share_á»",
-                heading: "á»‡_Share this map_á»",
-                url: "á»‡_Map Link_á»",
-                embed: "á»‡_Embed Map_á»",
-                extent: "á»‡_Share current map extent_á»",
-                size: "á»‡_Size (width/height)_á»:",
-                facebookTooltip: "á»‡_Facebook_á»",
-                twitterTooltip: "á»‡_Twitter_á»",
-                gplusTooltip: "á»‡_Google Plus_á»",
-                emailTooltip: "á»‡_Email_á»"
+                title: "Đ_Share_ớ",
+                heading: "Đ_Share this map_ớ",
+                url: "Đ_Map Link_ớ",
+                embed: "Đ_Embed Map_ớ",
+                extent: "Đ_Share current map extent_ớ",
+                size: "Đ_Size (width/height)_ớ:",
+                facebookTooltip: "Đ_Facebook_ớ",
+                twitterTooltip: "Đ_Twitter_ớ",
+                gplusTooltip: "Đ_Google Plus_ớ",
+                emailTooltip: "Đ_Email_ớ"
             }
         }
     })

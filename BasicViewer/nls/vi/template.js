@@ -55,15 +55,15 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "á»‡_MMMM d, yyyy_á»",
-      yearPattern: "á»‡_yyyy_á»",
+      datePattern: "Đ_MMMM d, yyyy_ớ",
+      yearPattern: "Đ_yyyy_ớ",
       hourTimePattern: "h a",
       minuteTimePattern: "h:mm a",
       secondTimePattern: "h:m:s.SSS a",
       millisecondTimePattern:"h:m:ss.SSS a",
       title: "Hiển thị Thanh trượt Thời gian",
       label: "Thời gian",
-      timeRange: "á»‡_${start_time} to ${end_time}_á»",
+      timeRange: "Đ_${start_time} to ${end_time}_ớ",
       timeRangeSingle: "<b>Khoảng thời gian:</b> ${time}"
     },
     editor: {

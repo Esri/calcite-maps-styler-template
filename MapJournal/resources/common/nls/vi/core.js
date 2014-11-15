@@ -28,8 +28,8 @@
 				buttonSettings: "Thiết lập",
 				buttonHelp: "Trợ giúp",
 				buttonPreview: "Xem Trực tiếp",
-				tooltipFirstSave: "á»‡_This isn't available until you save_á».",
-				tooltipNotShared: "á»‡_This isn't available until you share_á».",
+				tooltipFirstSave: "Đ_This isn't available until you save_ớ.",
+				tooltipNotShared: "Đ_This isn't available until you share_ớ.",
 				noPendingChange: "Không có thay đổi chờ xử lý",
 				unSavedChangePlural: "Thay đổi chờ xử lý",
 				closeWithPendingChange: "Bạn có chắc chắn muốn xác nhận hành động này không? Các thay đổi của bạn sẽ bị mất.",
@@ -40,10 +40,10 @@
 				shareStatus4: "Ứng dụng không được chia sẻ"
 			},
 			saveError: {
-				title: "á»‡_Error saving the application_á»",
-				err1Div1: "á»‡_The application can't be saved because you already have another item with the same name (see your <a class='linkagolroot' target='_blank'>content folder</a>)_á».",
-				err1Div2: "á»‡_Please modify the title of your application and then save it_á».",
-				btnOk: "á»‡_Edit the application title_á»"
+				title: "Đ_Error saving the application_ớ",
+				err1Div1: "Đ_The application can't be saved because you already have another item with the same name (see your <a class='linkagolroot' target='_blank'>content folder</a>)_ớ.",
+				err1Div2: "Đ_Please modify the title of your application and then save it_ớ.",
+				btnOk: "Đ_Edit the application title_ớ"
 			},
 			share: {
 				firstSaveTitle: "Đã lưu ứng dụng thành công",
@@ -66,7 +66,7 @@
 				shareHeader2: "Các thành viên trong tổ chức của bạn có thể truy cập ứng dụng (yêu cầu đăng nhập).",
 				shareLinkCopy: "Sao chép",
 				shareLinkCopied: "Đã sao chép",
-				shareQ0: "á»‡_How do I embed the application in a web page_á»?",
+				shareQ0: "Đ_How do I embed the application in a web page_ớ?",
 				shareQ1Opt1: "Làm cách nào để giữ ứng dụng riêng tư?",
 				shareQ1Opt2: "Làm cách nào để giữ ứng dụng riêng tư hoặc chia sẻ công khai?",
 				shareA1: "Sử dụng %SHAREIMG% trên <a href='%LINK1%' target='_blank'>trang mục ứng dụng</a>.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Tùy chỉnh liên kết đầu mục.",
 				logoSocialText: "Văn bản",
 				logoSocialLink: "Liên kết",
-				lblSmallHeader: "á»‡_Use compact header (no subtitle)_á»"
+				lblSmallHeader: "Đ_Use compact header (no subtitle)_ớ"
 			},
 			header: {
-				title: "á»‡_Edit the title of your %TPL_NAME%_á»",
-				subtitle: "á»‡_Edit the subtitle of your %TPL_NAME%_á»"
+				title: "Đ_Edit the title of your %TPL_NAME%_ớ",
+				subtitle: "Đ_Edit the subtitle of your %TPL_NAME%_ớ"
 			}
 		}
 	})

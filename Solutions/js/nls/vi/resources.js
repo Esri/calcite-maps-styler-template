@@ -17,7 +17,7 @@
 define(
      ({
         map: {
-            error: "á»‡_Unable to create map_á»"
+            error: "Đ_Unable to create map_ớ"
         },
         tooltips: {
             search: "Tìm",  // Command button to open a dialog box for finding a feature or an address (depending on app)
@@ -54,7 +54,7 @@ define(
             geolocationDenied: "Trang web này không được phép nhận vị trí hiện tại",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "Trình duyệt này không thể nhận vị trí hiện tại",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "Trình duyệt này không thể nhận vị trí hiện tại kịp thời",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            noSearchLayerConfigured: "á»‡_No find layer has been configured_á»",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
+            noSearchLayerConfigured: "Đ_No find layer has been configured_ớ",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "Không tìm thấy lớp cần tìm trong bản đồ",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "Không thể tìm thấy các trường cho lớp bản đồ.<br><br>Xác nhận rằng lớp này tồn tại ở thư mục gốc của Nội dung bản đồ. Dịch vụ lồng nhau, chẳng hạn như dịch vụ bản đồ năng động ArcGIS cho Máy chủ phải được thêm vào một lớp bản đồ tại một thời điểm (bao gồm cả số chỉ số lớp) được sử dụng để Tìm Lớp. Không thể sử dụng dịch vụ lát để Tìm Lớp.",
             searchFieldMissing: "Không tìm thấy trường này trong lớp bản đồ cần tìm",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
