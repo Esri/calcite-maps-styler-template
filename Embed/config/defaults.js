@@ -39,7 +39,7 @@ define({
     "details":false,
     "active_panel" : "legend", //"legend, details, popup"
     "find": null,
-    "show_panel": null,
+    "show_panel": false,
     "theme": "light",
     //"popuptheme": "light", //light or dark
     "marker_symbol": "images/EsriBluePinCircle26.png",

@@ -56,7 +56,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             // the application configuration has been applied so that the url parameters overwrite any
             // configured settings. It's up to the application developer to update the application to take
             // advantage of these parameters.
-            paramItems = ["webmap", "appid", "group", "oauthappid","portalurl"];
+            paramItems = ["webmap", "appid", "group", "oauthappid", "portalurl"];
             this.urlConfig = this._createUrlParamsObject(paramItems);
             // config defaults <- standard url params
             // we need the webmap, appid, group and oauthappid to query for the data
@@ -175,9 +175,9 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                 this.config.proxyurl = location.protocol + "//" + location.host + instance + "/sharing/proxy";
             }
 
-            if(this.urlConfig && this.urlConfig.portalurl){
+            if (this.urlConfig && this.urlConfig.portalurl) {
                 this.config.sharinghost = this.urlConfig.portalurl;
-                this.config.proxyurl = this.urlConfig.portalurl +  "/sharing/proxy";
+                this.config.proxyurl = this.urlConfig.portalurl + "/sharing/proxy";
             }
             arcgisUtils.arcgisUrl = this.config.sharinghost + "/sharing/rest/content/items";
             // Define the proxy url for the app

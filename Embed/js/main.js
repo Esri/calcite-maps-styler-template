@@ -19,7 +19,8 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                 direction: this.config.i18n.direction,
                 // i18n direction "ltr" or "rtl",
                 config: this.config,
-                displayDrawer: (this.config.legend || this.config.details || this.config.popup_sidepanel)
+                displayDrawer: (this.config.legend || this.config.details || this.config.popup_sidepanel),
+                drawerOpen: this.config.show_panel
             });
 
             // startup drawer
@@ -82,11 +83,11 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                 domClass.add(document.body, "no-home");
             }
             //Position basemap gallery higher if zoom isn't taking up space
-            if(this.config.zoom === false){
+            if (this.config.zoom === false) {
                 //add class so we can move basemap gallery button 
                 domClass.add(document.body, "no-zoom");
             }
-            if(this.config.zoom && this.config.zoom_position && this.config.zoom_position !== "top-left"){
+            if (this.config.zoom && this.config.zoom_position && this.config.zoom_position !== "top-left") {
                 domClass.add(document.body, "no-zoom");
             }
             if (this.config.legend) {
@@ -140,7 +141,7 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     "click": lang.hitch(this, this._displayBasemapContainer)
                 }, this.map.id + "_root");
 
-     
+
                 var sync = domConstruct.create("div", {
                     "class": "icon-basemap",
                     "title": this.config.i18n.tools.basemap.label
@@ -156,38 +157,38 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                 if (this.config.basemap_gallery) {
                     //Create a container to hold the basemap gallery title, gallery and also draw
                     //the callout arrow 
-                   var container =  domConstruct.create("div",{
-                       id:"gallery_container"
-                    },dom.byId("mapDiv"));
-                    
-                   domConstruct.create("div",{
-                    "class": "arrow_box",
-                    innerHTML: "<div class='basemap_title'>"+ this.config.i18n.tools.basemap.title +"</div><span id='icon-menu-close' class='icon-menu-close'></span><div id='full_gallery'></div>"
-                   },container);
+                    var container = domConstruct.create("div", {
+                        id: "gallery_container"
+                    }, dom.byId("mapDiv"));
+
+                    domConstruct.create("div", {
+                        "class": "arrow_box",
+                        innerHTML: "<div class='basemap_title'>" + this.config.i18n.tools.basemap.title + "</div><span id='icon-menu-close' class='icon-menu-close'></span><div id='full_gallery'></div>"
+                    }, container);
 
                     //add a class so we can move the basemap if the zoom position moved.
-                    if(this.config.zoom && this.config.zoom_position){ 
-                        domClass.add(mainContainer,  "embed-" + this.config.zoom_position);
+                    if (this.config.zoom && this.config.zoom_position) {
+                        domClass.add(mainContainer, "embed-" + this.config.zoom_position);
                         domClass.add(gallery_container, "embed-" + this.config.zoom_position);
                     }
 
 
                     basemapGallery = new esri.dijit.BasemapGallery(galleryOptions, dom.byId("full_gallery"));
                     basemapGallery.startup();
-                    var closemenu= dom.byId("icon-menu-close");
-                    if(closemenu){
-                        on(closemenu, "click", lang.hitch(this, function(){
+                    var closemenu = dom.byId("icon-menu-close");
+                    if (closemenu) {
+                        on(closemenu, "click", lang.hitch(this, function () {
                             this._displayBasemapContainer();
                         }));
                     }
 
                     //Hide the basemap gallery at startup
                     this._displayBasemapContainer();
-     
+
                 }
 
             }
-            if(this.config.basemap_toggle){
+            if (this.config.basemap_toggle) {
                 var galleryOptions = {
                     showArcGISBasemaps: true,
                     portalUrl: this.config.sharinghost,
@@ -197,8 +198,8 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                 var basemapGallery = new esri.dijit.BasemapGallery(galleryOptions);
                 basemapGallery.on("load", lang.hitch(this, function () {
 
-                    var toggle_container = domConstruct.create("div",{},"mapDiv");
-  
+                    var toggle_container = domConstruct.create("div", {}, "mapDiv");
+
                     var toggle = new BasemapToggle({
                         map: this.map,
                         basemap: this.config.alt_basemap || "satellite"
@@ -216,15 +217,15 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     }
 
                     //add a class so we can move the basemap if the zoom position moved.
-                    if(this.config.zoom && this.config.zoom_position){ 
+                    if (this.config.zoom && this.config.zoom_position) {
                         domClass.add(toggle.domNode, "embed-" + this.config.zoom_position);
                     }
 
-                    if(this.config.scale){
+                    if (this.config.scale) {
                         domClass.add(toggle.domNode, "scale");
                     }
 
-   
+
                     toggle.startup();
 
                     toggle.on("toggle", lang.hitch(this, function (e) {
@@ -300,7 +301,8 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
 
         },
         _displayBasemapContainer: function () {
-            var node = null, gallery = query(".basemap_gallery");
+            var node = null,
+                gallery = query(".basemap_gallery");
             if (gallery && gallery.length > 0) {
                 node = gallery[0];
             } else {
@@ -330,7 +332,7 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
             domClass.add(document.body, this.config.theme);
             domClass.add(customPopup.domNode, this.config.theme);
 
-    
+
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: {
                     slider: this.config.zoom,
@@ -345,22 +347,22 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                 this.map = response.map;
                 this.config.response = response;
 
-                if(this.config.logoimage){
+                if (this.config.logoimage) {
 
-                     query(".esriControlsBR").forEach(lang.hitch(this, function(node){
+                    query(".esriControlsBR").forEach(lang.hitch(this, function (node) {
                         var link = null;
-                        if(this.config.logolink){
-                            link = domConstruct.create("a",{
+                        if (this.config.logolink) {
+                            link = domConstruct.create("a", {
                                 href: this.config.logolink,
                                 target: "_blank"
-                            },node);
+                            }, node);
                         }
 
-                        var logoimg = domConstruct.create("img",{
+                        var logoimg = domConstruct.create("img", {
                             src: this.config.logoimage,
-                            "class":"logo"
-                        },link || node);
-     
+                            "class": "logo"
+                        }, link || node);
+
                     }));
 
 

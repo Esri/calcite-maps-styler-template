@@ -228,12 +228,6 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
 
                     this._toggleNode = dom.byId("toggle_button");
 
-                    if (domClass.contains(document.body, this.css.drawerOpen)) {
-                        domClass.add(this._toggleNode, "icon-close");
-                    } else {
-                        domClass.add(this._toggleNode, "icon-open");
-                    }
-
                 } else {
                     //add class to body
                     domClass.add(document.body, "no-title");
@@ -248,20 +242,6 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
                     this._events.push(toggleClick);
                 }
 
-                // window
-                var w = win.get(document);
-                // window size event
-                var winResize = on(w, "resize", lang.hitch(this, function () {
-                    this._windowResized();
-                }));
-                this._events.push(winResize);
-                // window focused on
-                var winFocus = on(w, "focus", lang.hitch(this, function () {
-                    setTimeout(lang.hitch(this, function () {
-                        this.resize();
-                    }), 250);
-                }));
-                this._events.push(winFocus);
                 // check window size
                 this._windowResized();
                 // fix layout
@@ -275,16 +255,15 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
             }
         },
         _windowResized: function () {
-            // view screen
-            var vs = win.getBox(),
-                add;
-            // if window width is less than specified size
-            if (vs.w < this.get("showDrawerSize")) {
+
+            var add;
+
+            if (this.drawerOpen && !domClass.contains(document.body, this.css.drawerOpen)) {
+                domClass.add(document.body, this.css.drawerOpen);
+                // show drawer so add is null 
+            } else if (!this.drawerOpen && domClass.contains(document.body, this.css.drawerOpen)) {
                 // hide drawer
                 add = false;
-            } else {
-                // show drawer
-                add = true;
             }
             // toggle
             this.toggle(add).always(lang.hitch(this, function () {
