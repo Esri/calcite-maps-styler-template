@@ -42,7 +42,7 @@ define({
     "show_panel": null,
     "theme": "light",
     //"popuptheme": "light", //light or dark
-    "marker_symbol": "http://www.arcgis.com/home/webmap/images/EsriBluePinCircle26.png",
+    "marker_symbol": "images/EsriBluePinCircle26.png",
     "level": null,
     "center": null,
     "disable_scroll":false,

@@ -1,5 +1,5 @@
-define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/has", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/Color", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "dijit/layout/ContentPane", "application/Drawer", "esri/domUtils", "application/CreateGeocoder", "esri/dijit/Legend", "esri/dijit/BasemapToggle", "esri/arcgis/utils", "esri/dijit/Scalebar", "esri/dijit/BasemapGallery", "esri/dijit/HomeButton", "esri/dijit/Popup", "esri/symbols/PictureMarkerSymbol", "esri/graphic", "esri/geometry/Point", "esri/geometry/Extent", "esri/dijit/PopupTemplate", "esri/symbols/TextSymbol", "dojo/domReady!"], function (
-ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domClass, domConstruct, registry, ContentPane, Drawer, domUtils, CreateGeocoder, Legend, BasemapToggle, arcgisUtils, Scalebar, BasemapGallery, HomeButton, Popup, PictureMarkerSymbol, Graphic, Point, Extent, PopupTemplate, TextSymbol) {
+define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/has", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/Color", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "dijit/layout/ContentPane", "application/Drawer", "esri/domUtils", "application/CreateGeocoder", "esri/dijit/Legend", "esri/dijit/BasemapToggle", "esri/arcgis/utils", "esri/dijit/Scalebar", "esri/dijit/BasemapGallery", "esri/basemaps", "esri/dijit/HomeButton", "esri/dijit/Popup", "esri/symbols/PictureMarkerSymbol", "esri/graphic", "esri/geometry/Point", "esri/geometry/Extent", "esri/dijit/PopupTemplate", "esri/symbols/TextSymbol", "dojo/domReady!"], function (
+ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domClass, domConstruct, registry, ContentPane, Drawer, domUtils, CreateGeocoder, Legend, BasemapToggle, arcgisUtils, Scalebar, BasemapGallery, basemaps, HomeButton, Popup, PictureMarkerSymbol, Graphic, Point, Extent, PopupTemplate, TextSymbol) {
     return declare(null, {
         config: {},
         startup: function (config) {
@@ -204,6 +204,17 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                         basemap: this.config.alt_basemap || "satellite"
                     }, toggle_container);
 
+                    if (this.config.response && this.config.response.itemInfo && this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.baseMap) {
+                        var b = this.config.response.itemInfo.itemData.baseMap;
+                        if (b.title) {
+                            for (var i in basemaps) {
+                                if (b.title === basemaps[i].title) {
+                                    this.map.setBasemap(i);
+                                }
+                            }
+                        }
+                    }
+
                     //add a class so we can move the basemap if the zoom position moved.
                     if(this.config.zoom && this.config.zoom_position){ 
                         domClass.add(toggle.domNode, "embed-" + this.config.zoom_position);
@@ -403,7 +414,7 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                             }
                         });
 
-           
+
                         var infoTemplate = null;
                         if (description || label) {
                             infoTemplate = new PopupTemplate({
@@ -414,9 +425,13 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                         }
 
                         var graphic = new Graphic(point, markerSymbol, null, infoTemplate);
+
                         this.map.graphics.add(graphic);
-                        this.map.infoWindow.setFeatures([graphic]);
-                        this.map.infoWindow.show(point);
+                        if (description || label) {
+                            this.map.infoWindow.setFeatures([graphic]);
+                            this.map.infoWindow.show(point);
+                        }
+
                         //set the marker location to the map center 
                         this.map.centerAt(point);
                     }
