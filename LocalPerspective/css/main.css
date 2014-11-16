@@ -530,7 +530,7 @@ a, a:hover, a:visited{
 .resultsContent {
 	position: absolute;
 	width: 100%;
-	display: table;
+	display: block;
 }
 
 .recDemographics {
