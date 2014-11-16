@@ -235,6 +235,7 @@ define([
             this.map.setInfoWindowOnClick(true);
             this.initExt = this.map.extent;
             this.opLayers = response.itemInfo.itemData.operationalLayers;
+            console.log(this.opLayers);
             on(this.map, "click", lang.hitch(this, this._mapClickHandler));
 
             // hi layer
@@ -330,28 +331,31 @@ define([
       _processOperationalLayers : function() {
          if (this.config.destLayer) {
             array.forEach(this.opLayers, lang.hitch(this, function(layer) {
-               if (layer.featureCollection) {
+               console.log(layer, this.config.destLayer.id);
+               if ((layer.featureCollection) && (layer.id + "_0" == this.config.destLayer.id)) {
+                  this.config.destLayer.title = layer.title;
+                  this.opLayerObj = layer;
+                  this.opLayer = layer.featureCollection.layers[0].layerObject;
+                  var features = [];
                   for (var i = 0; i < layer.featureCollection.layers.length; i++) {
-                     if (layer.featureCollection.layers[i].id == this.config.destLayer.id) {
-                        this.config.destLayer.title = layer.title;
-                        this.opLayerObj = layer;
-                        this.opLayer = layer.featureCollection.layers[i].layerObject;
-                        this.opFeatures = this.opLayer.graphics.slice(0);
-                     }
+                     var childLayer = layer.featureCollection.layers[i].layerObject;
+                     var graphics = childLayer.graphics;
+                     features = features.concat(graphics.slice(0));
+                     childLayer.setVisibility(false);
                   }
+                  this.opFeatures = features;
                } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.id == this.config.destLayer.id) {
                   this.config.destLayer.title = layer.title;
                   this.opLayerObj = layer;
                   this.opFeatureLayer = true;
                   this.opLayer = layer.layerObject;
+                  this.opLayer.setVisibility(false);
                }
             }));
          } else {
             this.opLayer = this._getDefaultOperationalLayer();
          }
          this._setupTemplate();
-         if (this.opLayer)
-            this.opLayer.setVisibility(false);
          if (this.opFeatureLayer) {
             this._queryDestinations();
          } else {

@@ -563,7 +563,7 @@ hr {
 .pageResults {
 	position: absolute;
 	width: 100%;
-	display: table;
+	display: block;
 }
 
 .rec {
