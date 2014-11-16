@@ -164,7 +164,7 @@ define([
          // create directions page
          if (this.config.showDirections)
             this._createDirectionsPage();
-         
+            
          deferred.resolve();
 
          return deferred.promise;
@@ -621,7 +621,7 @@ define([
             pageObj.update = true;
             pageObj.proximityFeatures = null;
             if (pageObj.type == "proximity")
-               dom.byId("pageCounter_" + pageObj.id).innerHTML = "";
+               dom.byId("pageCounter_" + pageObj.id).innerHTML = "0";
             if (i>0) {
                dom.byId("pageBody_"+i).innerHTML = "";
             }

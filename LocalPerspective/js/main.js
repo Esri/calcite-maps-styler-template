@@ -57,8 +57,6 @@ define([
 
       config : {},
 
-      color : null,
-
       map : null,
 
       initExt : null,
@@ -132,7 +130,6 @@ define([
          if (this.config.cycleColors === true) {
             this.config.color = this.config.colors[0];
          }
-         this.color = this.config.color;
       },
       
       // set protocol handler
@@ -182,7 +179,7 @@ define([
 
       // Map Loaded - Map is ready
       _mapLoaded : function() {
-         query(".esriSimpleSlider").style("backgroundColor", this.color.toString());
+         query(".esriSimpleSlider").style("backgroundColor", this.config.color.toString());
          // remove loading class from body
          domClass.remove(document.body, "app-loading");
       },
@@ -319,8 +316,8 @@ define([
 
       // Update Theme
       _updateTheme : function() {
-         query(".bg").style("backgroundColor", this.color.toString());
-         query(".esriPopup .titlePane").style("backgroundColor", this.color.toString());
+         query(".bg").style("backgroundColor", this.config.color.toString());
+         query(".esriPopup .titlePane").style("backgroundColor", this.config.color.toString());
       },
 
       // set default location
