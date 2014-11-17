@@ -401,21 +401,21 @@
                "type":"boolean",
                "fieldName":"showComments",
                "label":"Show comments",
-               "tooltip":"Shows comments for items and allows items to be commented on"
+               "tooltip":"Shows comments for maps and allows maps to be commented on"
             },
             {
                "type":"paragraph",
-               "value":"Shows comments for items and allows items to be commented on."
+               "value":"Shows comments for maps and allows maps to be commented on."
             },
             {
                "type":"boolean",
                "fieldName":"showRatings",
                "label":"Show ratings",
-               "tooltip":"Shows ratings for items and allows items to be rated"
+               "tooltip":"Shows ratings for maps and allows maps to be rated"
             },
             {
                "type":"paragraph",
-               "value":"Shows ratings for items and allows items to be rated."
+               "value":"Shows ratings for maps and allows maps to be rated."
             },
             {
                "type":"boolean",
