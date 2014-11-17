@@ -57,7 +57,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             // configured settings. It's up to the application developer to update the application to take
             // advantage of these parameters.
             paramItems = ["webmap", "appid", "group", "oauthappid", "portalurl"];
-            this.urlConfig = this._createUrlParamsObject(paramItems);
+            this.urlConfig = lang.hitch(this, this._createUrlParamsObject(paramItems));
             // config defaults <- standard url params
             // we need the webmap, appid, group and oauthappid to query for the data
             lang.mixin(this.config, this.urlConfig);
@@ -148,6 +148,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                 for (i = 0; i < items.length; i++) {
                     var item = urlObject.query[items[i]];
                     if (item) {
+                        item = this.stripHTML(item);
                         //if equal to 'true' or 'false' convert to true or false
                         if (item === "true" || item === "false") {
                             item = (item === "true") ? true : false;
@@ -158,6 +159,11 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             }
             return obj;
         },
+        stripHTML: function (str) {
+            var matchTag = /<(?:.|\s)*?>/g;
+            return str.replace(matchTag, "");
+        },
+
         _initializeApplication: function () {
             var appLocation, instance;
             // Check to see if the app is hosted or a portal. If the app is hosted or a portal set the
