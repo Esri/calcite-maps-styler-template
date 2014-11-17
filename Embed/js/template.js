@@ -57,7 +57,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             // configured settings. It's up to the application developer to update the application to take
             // advantage of these parameters.
             paramItems = ["webmap", "appid", "group", "oauthappid", "portalurl"];
-            this.urlConfig = lang.hitch(this, this._createUrlParamsObject(paramItems));
+            this.urlConfig = this._createUrlParamsObject(paramItems);
             // config defaults <- standard url params
             // we need the webmap, appid, group and oauthappid to query for the data
             lang.mixin(this.config, this.urlConfig);
@@ -132,7 +132,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
         },
         _createUrlParamsObject: function (items) {
             var urlObject, obj = {},
-                i, url;
+                i, url, matchTag = /<(?:.|\s)*?>/g;
             // retrieve url parameters. Templates all use url parameters to determine which arcgis.com
             // resource to work with.
             // Map templates use the webmap param to define the webmap to display
@@ -148,7 +148,8 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                 for (i = 0; i < items.length; i++) {
                     var item = urlObject.query[items[i]];
                     if (item) {
-                        item = this.stripHTML(item);
+                        //strip html tags 
+                        item = item.replace(matchTag, "");
                         //if equal to 'true' or 'false' convert to true or false
                         if (item === "true" || item === "false") {
                             item = (item === "true") ? true : false;
@@ -159,10 +160,6 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             }
             return obj;
         },
-        stripHTML: function (str) {
-            var matchTag = /<(?:.|\s)*?>/g;
-            return str.replace(matchTag, "");
-        },
 
         _initializeApplication: function () {
             var appLocation, instance;
