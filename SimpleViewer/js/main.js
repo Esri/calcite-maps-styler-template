@@ -107,7 +107,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
 
             //Define about panel content
             var about_content = this.config.about || this.config.itemInfo.item.description;
-            if (about_content !== null || about_content !== "") {
+            if (about_content !== null && about_content !== "") {
                 dom.byId("about-label").innerHTML = this.config.i18n.tools.about;
                 domConstruct.create("div", {
                     innerHTML: about_content,
