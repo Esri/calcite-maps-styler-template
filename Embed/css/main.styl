@@ -5,10 +5,12 @@ $title-top = 55px;
 $dark-base-color = #4C4C4C;
 $dark-highlight-color = #323232;
 $dark-font-color = #fff;
+$dark-tool-color = #a6a8ab;
 $light-base-color = #f7f8f8;
 $light-highlight-color = #e0e0df;
 $light-font-color = #4c4c4c;
 $icon-color = #4C4C4C;
+
 
 html,body {
     padding: 0;
@@ -266,7 +268,7 @@ a{
     height: 30px;
   }
   .dark .HomeButton .home{
-    background-color:lighten($dark-highlight-color, 40%);
+    background-color:$dark-tool-color;
   }
   .HomeButton .home:hover {
     background-color: #eee;
@@ -282,31 +284,31 @@ a{
     background-image:url("../images/basemap_light.png");
 }
 .dark .BasemapToggle .toggleButton{
-    background: lighten($dark-highlight-color, 40%);
+    background: $dark-tool-color;
 }
 .dark .BasemapToggle .basemapTitle{
     color:$dark-font-color;
 }
 .dark .HomeButton .home:hover{
- background-color: $dark-highlight-color; 
+ background-color:lighten($dark-tool-color, 10%); 
 }
 .dark .esriSimpleSlider{
-    background-color:lighten($dark-highlight-color, 40%);
+    background-color:$dark-tool-color;
     color: $dark-font-color;
 
 }
 .dark .icon-basemap-container{
-    background-color: lighten($dark-highlight-color, 40%);
+    background-color: $dark-tool-color;
 
 }
 .dark .icon-basemap-container:hover{
-     background-color: $dark-highlight-color; 
+  background-color:lighten($dark-tool-color, 10%); 
 }
 .dark .esriSimpleSliderDecrementButton, .dark .esriSimpleSliderIncrementButton{
 
 }
 .dark .esriSimpleSliderDecrementButton:hover, .dark .esriSimpleSliderIncrementButton:hover{
-    background-color: $dark-highlight-color;
+ background-color:lighten($dark-tool-color, 10%); 
 }
 .esriRTL .esriSimpleSliderTL{
     top: $no-title-top !important;
