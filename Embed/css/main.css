@@ -255,7 +255,7 @@ a {
   height: 30px;
 }
 .dark .HomeButton .home {
-  background-color: #848484;
+  background-color: #a6a8ab;
 }
 .HomeButton .home:hover {
   background-color: #eee;
@@ -272,27 +272,27 @@ a {
   background-image: url("../images/basemap_light.png");
 }
 .dark .BasemapToggle .toggleButton {
-  background: #848484;
+  background: #a6a8ab;
 }
 .dark .BasemapToggle .basemapTitle {
   color: #fff;
 }
 .dark .HomeButton .home:hover {
-  background-color: #323232;
+  background-color: #afb1b3;
 }
 .dark .esriSimpleSlider {
-  background-color: #848484;
+  background-color: #a6a8ab;
   color: #fff;
 }
 .dark .icon-basemap-container {
-  background-color: #848484;
+  background-color: #a6a8ab;
 }
 .dark .icon-basemap-container:hover {
-  background-color: #323232;
+  background-color: #afb1b3;
 }
 .dark .esriSimpleSliderDecrementButton:hover,
 .dark .esriSimpleSliderIncrementButton:hover {
-  background-color: #323232;
+  background-color: #afb1b3;
 }
 .esriRTL .esriSimpleSliderTL {
   top: 10px !important;
