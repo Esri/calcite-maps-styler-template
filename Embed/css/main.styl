@@ -5,7 +5,8 @@ $title-top = 55px;
 $dark-base-color = #4C4C4C;
 $dark-highlight-color = #323232;
 $dark-font-color = #fff;
-$dark-tool-color = #a6a8ab;
+$dark-tool-color = #6C6D70;
+$light-tool-color = #f7f8f8;
 $light-base-color = #f7f8f8;
 $light-highlight-color = #e0e0df;
 $light-font-color = #4c4c4c;
@@ -246,6 +247,7 @@ a{
 .icon-basemap-container:hover{
   background-color: #eee;
 }
+
 .icon-basemap-container:active{
   background-color: #ddd;
 }
@@ -260,6 +262,7 @@ a{
     height: 30px;
   }
   .light .HomeButton .home{
+      background-color: $light-tool-color;
       background: url("http://cdn.arcgis.com/cdn/5177/js/arcgisonline/map/css/images/home_locate.png") no-repeat 0 0;
   }
   .HomeButton .home {
@@ -283,6 +286,9 @@ a{
 .dark .icon-basemap{
     background-image:url("../images/basemap_light.png");
 }
+.light .BasemapToggle .toggleButton{
+    background-color: $light-tool-color;
+}
 .dark .BasemapToggle .toggleButton{
     background: $dark-tool-color;
 }
@@ -292,17 +298,25 @@ a{
 .dark .HomeButton .home:hover{
  background-color:lighten($dark-tool-color, 10%); 
 }
+.light .esriSimpleSlider{
+    background-color:$light-tool-color;
+}
 .dark .esriSimpleSlider{
     background-color:$dark-tool-color;
     color: $dark-font-color;
 
 }
+.light .icon-basemap-container{
+    background-color: $light-tool-color;
+}
 .dark .icon-basemap-container{
     background-color: $dark-tool-color;
-
 }
 .dark .icon-basemap-container:hover{
   background-color:lighten($dark-tool-color, 10%); 
+}
+.light .icon-basemap-container:hover{
+    background-color:#eee;
 }
 .dark .esriSimpleSliderDecrementButton, .dark .esriSimpleSliderIncrementButton{
 
