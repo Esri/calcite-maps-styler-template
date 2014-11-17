@@ -19,12 +19,12 @@ a {
 .logo a {
   cursor: pointer;
 }
-.logo{
-    max-height:64px;
-    max-width:64px;
-    position:absolute;
-    bottom:20px;
-    right:5px;
+.logo {
+  max-height: 64px;
+  max-width: 64px;
+  position: absolute;
+  bottom: 20px;
+  right: 5px;
 }
 #mapDiv {
   padding: 0;
@@ -246,10 +246,16 @@ a {
   width: 30px;
   height: 30px;
 }
-.HomeButton .home {
+.light .HomeButton .home {
   background: url("http://cdn.arcgis.com/cdn/5177/js/arcgisonline/map/css/images/home_locate.png") no-repeat 0 0;
+}
+.HomeButton .home {
+  padding: 0px !important;
   width: 30px;
   height: 30px;
+}
+.dark .HomeButton .home {
+  background-color: #848484;
 }
 .HomeButton .home:hover {
   background-color: #eee;
@@ -258,6 +264,35 @@ a {
   padding: 0px;
   -webkit-border-radius: 0;
   border-radius: 0;
+}
+.dark .HomeButton {
+  color: #fff;
+}
+.dark .icon-basemap {
+  background-image: url("../images/basemap_light.png");
+}
+.dark .BasemapToggle .toggleButton {
+  background: #848484;
+}
+.dark .BasemapToggle .basemapTitle {
+  color: #fff;
+}
+.dark .HomeButton .home:hover {
+  background-color: #323232;
+}
+.dark .esriSimpleSlider {
+  background-color: #848484;
+  color: #fff;
+}
+.dark .icon-basemap-container {
+  background-color: #848484;
+}
+.dark .icon-basemap-container:hover {
+  background-color: #323232;
+}
+.dark .esriSimpleSliderDecrementButton:hover,
+.dark .esriSimpleSliderIncrementButton:hover {
+  background-color: #323232;
 }
 .esriRTL .esriSimpleSliderTL {
   top: 10px !important;
