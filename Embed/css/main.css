@@ -130,13 +130,13 @@ a {
   content: "\e601";
 }
 .icon-arrow-left:before {
-  content: "\e604";
+  content: "\e605";
 }
 .icon-menu-close:before {
   content: "\e600";
 }
 .icon-arrow-right:before {
-  content: "\e603";
+  content: "\e604";
 }
 .icon-menu-close {
   position: absolute;
@@ -149,6 +149,15 @@ a {
 }
 .esriRTL .menu-button {
   right: 0;
+}
+.esriRTL #toggle_button {
+  right: 0;
+}
+#toggle_button {
+  position: absolute;
+  z-index: 36;
+  top: 0;
+  left: 0;
 }
 .menu-button {
   position: absolute;
@@ -474,18 +483,6 @@ a {
     display: none;
   }
 }
-.top-bar {
-  position: absolute;
-  z-index: 36;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 44px;
-}
-.esriRTL .top-bar {
-  left: auto;
-  right: 0;
-}
 .top-menu-right {
   margin-right: 5px;
 }
@@ -532,6 +529,9 @@ a {
   border-left: none;
 }
 .drawer-open-complete .content-pane-left:before {
+  display: none;
+}
+.drawer-closed .content-pane-left {
   display: none;
 }
 .pointer-events .drawer-open-complete .content-pane-left:before {

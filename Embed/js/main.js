@@ -1,5 +1,5 @@
-define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/has", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/Color", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "dijit/layout/ContentPane", "application/Drawer", "esri/domUtils", "application/CreateGeocoder", "esri/dijit/Legend", "esri/dijit/BasemapToggle", "esri/arcgis/utils", "esri/dijit/Scalebar", "esri/dijit/BasemapGallery", "esri/basemaps", "esri/dijit/HomeButton", "esri/dijit/Popup", "esri/symbols/PictureMarkerSymbol", "esri/graphic", "esri/geometry/Point", "esri/geometry/Extent", "esri/dijit/PopupTemplate", "esri/symbols/TextSymbol", "dojo/domReady!"], function (
-ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domClass, domConstruct, registry, ContentPane, Drawer, domUtils, CreateGeocoder, Legend, BasemapToggle, arcgisUtils, Scalebar, BasemapGallery, basemaps, HomeButton, Popup, PictureMarkerSymbol, Graphic, Point, Extent, PopupTemplate, TextSymbol) {
+define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "esri/domUtils", "esri/arcgis/utils", "esri/dijit/Popup", "esri/geometry/Point", "dojo/domReady!"], function (
+ready, parser, domAttr, on, array, declare, lang, query, dom, domClass, domConstruct, registry, domUtils, arcgisUtils, Popup, Point) {
     return declare(null, {
         config: {},
         startup: function (config) {
@@ -8,23 +8,34 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
             // and application id
             // any url parameters and any application specific configuration information. 
             this.config = config;
-
+            window.config = config;
 
             // responsive drawer
-            this._drawer = new Drawer({
-                borderContainer: "border_container",
-                // border container node id
-                contentPaneCenter: "cp_center",
-                // center content pane node id
-                direction: this.config.i18n.direction,
-                // i18n direction "ltr" or "rtl",
-                config: this.config,
-                displayDrawer: (this.config.legend || this.config.details || this.config.popup_sidepanel),
-                drawerOpen: this.config.show_panel
-            });
+            require(["application/sniff!drawer?application/Drawer"], lang.hitch(this, function (Drawer) {
+                if (!Drawer) {
+                    return;
+                }
+                this._drawer = new Drawer({
+                    borderContainer: "border_container",
+                    // border container node id
+                    contentPaneCenter: "cp_center",
+                    // center content pane node id
+                    direction: this.config.i18n.direction,
+                    // i18n direction "ltr" or "rtl",
+                    config: this.config,
+                    displayDrawer: (this.config.legend || this.config.details || this.config.popup_sidepanel),
+                    drawerOpen: this.config.show_panel
+                });
 
-            // startup drawer
-            this._drawer.startup();
+                // startup drawer
+                this._drawer.startup();
+
+
+
+            }));
+
+
+
 
 
             // document ready
@@ -64,20 +75,29 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
             }
         },
         loadMapWidgets: function () {
-
-            if (this.config.scale) {
+            require(["application/sniff!scale?esri/dijit/Scalebar"], lang.hitch(this, function (Scalebar) {
+                if (!Scalebar) {
+                    return;
+                }
                 var scalebar = new Scalebar({
                     map: this.map,
                     scalebarUnit: this.config.units
                 });
-            }
+
+            }));
 
             //Zoom slider needs to be visible to add home
             if (this.config.home && this.config.zoom) {
-                var home = new HomeButton({
-                    map: this.map
-                }, domConstruct.create("div", {}, query(".esriSimpleSliderIncrementButton")[0], "after"));
-                home.startup();
+                require(["application/sniff!home?esri/dijit/HomeButton"], lang.hitch(this, function (HomeButton) {
+                    if (!HomeButton) {
+                        return;
+                    }
+                    var home = new HomeButton({
+                        map: this.map
+                    }, domConstruct.create("div", {}, query(".esriSimpleSliderIncrementButton")[0], "after"));
+                    home.startup();
+                }));
+
             } else {
                 //add class so we can move basemap gallery button 
                 domClass.add(document.body, "no-home");
@@ -90,14 +110,18 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
             if (this.config.zoom && this.config.zoom_position && this.config.zoom_position !== "top-left") {
                 domClass.add(document.body, "no-zoom");
             }
-            if (this.config.legend) {
+
+            require(["application/sniff!legend?esri/dijit/Legend"], lang.hitch(this, function (Legend) {
+                if (!Legend) {
+                    return;
+                }
                 var legend = new Legend({
                     map: this.map,
                     layerInfos: arcgisUtils.getLegendLayers(this.config.response)
                 }, domConstruct.create("div", {}, registry.byId("legend").domNode));
                 legend.startup();
+            }));
 
-            }
             if (this.config.details) {
                 var template = "<div class='map-title'>{title}</div><div class='map-details'>{description}</div>";
                 var content = {
@@ -105,22 +129,20 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     description: this.config.response.itemInfo.item.description || this.config.i18n.tools.details.error,
                 };
                 registry.byId("details").set("content", lang.replace(template, content));
-
             }
-            if (this.config.search) {
+
+            require(["application/sniff!search?application/CreateGeocoder"], lang.hitch(this, function (CreateGeocoder) {
+                if (!CreateGeocoder) {
+                    return;
+                }
                 var geocoder = new CreateGeocoder({
                     map: this.map,
                     config: this.config
                 });
                 if (geocoder.geocoder && geocoder.geocoder.domNode) {
-                    //place on the top bar if it exists
-                    var bar = dom.byId("top-bar");
-                    if (bar) {
-                        domConstruct.place(geocoder.geocoder.domNode, "top-bar");
-                    } else {
-                        domConstruct.place(geocoder.geocoder.domNode, "mapDiv");
 
-                    }
+                    domConstruct.place(geocoder.geocoder.domNode, "mapDiv");
+
 
                     //Go to find location if possible
                     if (this.config.find) {
@@ -132,9 +154,25 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                         });
                     }
                 }
+
+            }));
+            var galleryOptions = null;
+            if (this.config.basemap_gallery || this.config.basemap_toggle) {
+
+                galleryOptions = {
+                    showArcGISBasemaps: true,
+                    portalUrl: this.config.sharinghost,
+                    basemapsGroup: this._getBasemapGroup(),
+                    map: this.map
+                };
             }
-            if (this.config.basemap_gallery) {
-                var basemapGallery = null;
+
+            require(["application/sniff!basemap_gallery?esri/dijit/BasemapGallery"], lang.hitch(this, function (BasemapGallery) {
+                if (!BasemapGallery) {
+                    return;
+                }
+
+                var gallery = null;
                 //add a button below the slider to show/hide the basemaps 
                 var mainContainer = domConstruct.create("div", {
                     "class": "icon-basemap-container active-toggle",
@@ -147,55 +185,45 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     "title": this.config.i18n.tools.basemap.label
                 }, mainContainer);
 
-                var galleryOptions = {
-                    showArcGISBasemaps: true,
-                    portalUrl: this.config.sharinghost,
-                    basemapsGroup: this._getBasemapGroup(),
-                    map: this.map
-                };
 
-                if (this.config.basemap_gallery) {
-                    //Create a container to hold the basemap gallery title, gallery and also draw
-                    //the callout arrow 
-                    var container = domConstruct.create("div", {
-                        id: "gallery_container"
-                    }, dom.byId("mapDiv"));
+                //Create a container to hold the basemap gallery title, gallery and also draw
+                //the callout arrow 
+                var container = domConstruct.create("div", {
+                    id: "gallery_container"
+                }, dom.byId("mapDiv"));
 
-                    domConstruct.create("div", {
-                        "class": "arrow_box",
-                        innerHTML: "<div class='basemap_title'>" + this.config.i18n.tools.basemap.title + "</div><span id='icon-menu-close' class='icon-menu-close'></span><div id='full_gallery'></div>"
-                    }, container);
+                domConstruct.create("div", {
+                    "class": "arrow_box",
+                    innerHTML: "<div class='basemap_title'>" + this.config.i18n.tools.basemap.title + "</div><span id='icon-menu-close' class='icon-menu-close'></span><div id='full_gallery'></div>"
+                }, container);
 
-                    //add a class so we can move the basemap if the zoom position moved.
-                    if (this.config.zoom && this.config.zoom_position) {
-                        domClass.add(mainContainer, "embed-" + this.config.zoom_position);
-                        domClass.add(gallery_container, "embed-" + this.config.zoom_position);
-                    }
-
-
-                    basemapGallery = new esri.dijit.BasemapGallery(galleryOptions, dom.byId("full_gallery"));
-                    basemapGallery.startup();
-                    var closemenu = dom.byId("icon-menu-close");
-                    if (closemenu) {
-                        on(closemenu, "click", lang.hitch(this, function () {
-                            this._displayBasemapContainer();
-                        }));
-                    }
-
-                    //Hide the basemap gallery at startup
-                    this._displayBasemapContainer();
-
+                //add a class so we can move the basemap if the zoom position moved.
+                if (this.config.zoom && this.config.zoom_position) {
+                    domClass.add(mainContainer, "embed-" + this.config.zoom_position);
+                    domClass.add(gallery_container, "embed-" + this.config.zoom_position);
                 }
 
-            }
-            if (this.config.basemap_toggle) {
-                var galleryOptions = {
-                    showArcGISBasemaps: true,
-                    portalUrl: this.config.sharinghost,
-                    basemapsGroup: this._getBasemapGroup(),
-                    map: this.map
-                };
-                var basemapGallery = new esri.dijit.BasemapGallery(galleryOptions);
+
+                gallery = new BasemapGallery(galleryOptions, dom.byId("full_gallery"));
+                gallery.startup();
+                var closemenu = dom.byId("icon-menu-close");
+                if (closemenu) {
+                    on(closemenu, "click", lang.hitch(this, function () {
+                        this._displayBasemapContainer();
+                    }));
+                }
+
+                //Hide the basemap gallery at startup
+                this._displayBasemapContainer();
+
+            }));
+
+            require(["application/sniff!basemap_toggle?esri/dijit/BasemapToggle", "application/sniff!basemap_toggle?esri/dijit/BasemapGallery", "application/sniff!basemap_toggle?esri/basemaps"], lang.hitch(this, function (BasemapToggle, BasemapGallery, basemaps) {
+                if (!BasemapToggle && !BasemapGallery && !basemaps) {
+                    return;
+                }
+
+                var basemapGallery = new BasemapGallery(galleryOptions);
                 basemapGallery.on("load", lang.hitch(this, function () {
 
                     var toggle_container = domConstruct.create("div", {}, "mapDiv");
@@ -265,32 +293,14 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     }));
 
                 }));
+            }));
 
-            }
             if (this.config.active_panel) {
                 var tabs = registry.byId("tabContainer");
                 if (tabs) {
                     var panel = dijit.byId(this.config.active_panel);
                     if (panel) {
                         tabs.selectChild(this.config.active_panel);
-                    }
-                }
-            }
-
-            if (this._drawer && this._drawer.displayDrawer) {
-                //is the drawer open? 
-                var drawer = query(".drawer-open");
-                if (drawer && drawer.length === 0) {
-                    //drawer is not open 
-                    if (this.config.show_panel === true) {
-                        //open drawer
-                        this._drawer.toggle();
-                    }
-
-                } else {
-                    //drawer is open 
-                    if (this.config.show_panel === false) {
-                        this._drawer.toggle();
                     }
                 }
             }
@@ -373,8 +383,6 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     this.map.disableScrollWheelZoom();
                 }
 
-
-
                 // remove loading class from body
                 domClass.remove(document.body, "app-loading");
 
@@ -391,9 +399,10 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                     this.map.centerAt(new Point(this.config.center));
                 }
 
-                //add graphic point to map 
-                if (this.config.marker) {
-
+                require(["application/sniff!marker?esri/symbols/PictureMarkerSymbol", "application/sniff!marker?esri/graphic", "application/sniff!marker?esri/dijit/PopupTemplate"], lang.hitch(this, function (PictureMarkerSymbol, Graphic, PopupTemplate) {
+                    if (!PictureMarkerSymbol && !Graphic && !PopupTemplate) {
+                        return;
+                    }
                     var symbolInfo = decodeURIComponent(this.config.marker).split(";");
                     if (symbolInfo.length === 1) {
                         symbolInfo = decodeURIComponent(this.config.marker).split(",");
@@ -416,16 +425,13 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                             }
                         });
 
-
                         var infoTemplate = null;
                         if (description || label) {
                             infoTemplate = new PopupTemplate({
                                 "title": label || null,
                                 "description": description || null
                             });
-
                         }
-
                         var graphic = new Graphic(point, markerSymbol, null, infoTemplate);
 
                         this.map.graphics.add(graphic);
@@ -438,7 +444,8 @@ ready, parser, domAttr, has, on, array, declare, lang, Color, query, dom, domCla
                         this.map.centerAt(point);
                     }
 
-                }
+                }));
+
 
                 this.loadMapWidgets();
 
