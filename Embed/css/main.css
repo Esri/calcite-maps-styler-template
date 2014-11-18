@@ -167,9 +167,12 @@ a {
   cursor: pointer;
   height: 42px;
   width: 42px;
-  font-size: 26px;
+  font-size: 24px;
+  font-weight: 700;
   line-height: 42px;
   border: solid 1px #929497;
+  border-top: none;
+  border-bottom: none;
   color: #fff;
   text-align: center;
 }
