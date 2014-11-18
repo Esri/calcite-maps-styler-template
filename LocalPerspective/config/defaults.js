@@ -79,7 +79,7 @@ define({
     
     // **************************** //
     // ** UTILITY PARAMETERS     ** //
-    "routeUtility" : "http://utility.arcgis.com/usrsvcs/servers/4394c7efb65548519c9963adca849e8e/rest/services/World/Route/NAServer/Route_World",
+    "routeUtility" : "",
     // **************************** //
     
     //This option demonstrates how to handle additional custom url parameters. For example
