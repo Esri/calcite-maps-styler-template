@@ -507,7 +507,7 @@ define([
       // show previous page
       _showPreviousPage : function(num) {
          this.prevPage = null;
-         if (num == 1)
+         if (num == 1) 
             this.prevPage = this.curPage;
          var newnum = num-1;
          this._scrollToPage(newnum);
@@ -533,7 +533,7 @@ define([
          var endPos = num * box.h;
          var diff = Math.abs(num-this.curPage);
          this.snap = false;
-         if (diff == 1) {
+         if ((diff == 1) && (this.prevPage != 1)) {
             this._animateScroll(startPos, endPos);
          } else {
             document.body.scrollTop = endPos;

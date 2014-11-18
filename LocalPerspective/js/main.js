@@ -245,7 +245,6 @@ define([
          // geocoder
          var geocoderOptions = this._createGeocoderOptions();
          var geocoder = new Geocoder(geocoderOptions, "panelGeocoder");
-         on(geocoder, "find-results", lang.hitch(this, this._geocoderResults));
          on(geocoder, "select", lang.hitch(this, this._geocoderSelect));
          on(geocoder, "clear", lang.hitch(this, this._geocoderClear));
          geocoder.startup();
@@ -272,15 +271,6 @@ define([
          } else {
             if (evt.error)
                console.log(evt.error.message);
-         }
-      },
-      
-      // geocoder results
-      _geocoderResults : function(obj) {
-         if (obj.results.results.length > 0) {
-            var result = obj.results.results[0];
-            var geom = result.feature.geometry;
-            this.ui.setLocation(geom);
          }
       },
       
