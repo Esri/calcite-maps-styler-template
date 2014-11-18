@@ -85,7 +85,7 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
                 if (layers.length > 0) {
                     content = this._buildFilterDialog(layers);
                 } else {
-                    content = "<div>" + this.config.i18n.viewer.filterNo + "</div>";
+                    content = "<div style='padding:8px;'>" + this.config.i18n.viewer.filterNo + "</div>";
                 }
 
                 registry.byId("cp_left").set("content", content);

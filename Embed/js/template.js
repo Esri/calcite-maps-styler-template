@@ -132,7 +132,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
         },
         _createUrlParamsObject: function (items) {
             var urlObject, obj = {},
-                i, url;
+                i, url, matchTag = /<(?:.|\s)*?>/g;
             // retrieve url parameters. Templates all use url parameters to determine which arcgis.com
             // resource to work with.
             // Map templates use the webmap param to define the webmap to display
@@ -148,6 +148,8 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                 for (i = 0; i < items.length; i++) {
                     var item = urlObject.query[items[i]];
                     if (item) {
+                        //strip html tags 
+                        item = item.replace(matchTag, "");
                         //if equal to 'true' or 'false' convert to true or false
                         if (item === "true" || item === "false") {
                             item = (item === "true") ? true : false;
@@ -158,6 +160,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             }
             return obj;
         },
+
         _initializeApplication: function () {
             var appLocation, instance;
             // Check to see if the app is hosted or a portal. If the app is hosted or a portal set the

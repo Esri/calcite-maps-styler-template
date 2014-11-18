@@ -1,5 +1,5 @@
-define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/lang", "dijit/_WidgetBase", "dojo/on", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dijit/layout/TabContainer", "dojo/Deferred", "dojo/window"], function (
-Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderContainer, ContentPane, TabContainer, Deferred, win) {
+define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/lang", "dijit/_WidgetBase", "dojo/on", "dojo/dom", "dojo/dom-style", "dojo/dom-class", "dojo/dom-construct", "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dijit/layout/TabContainer", "dojo/Deferred", "dojo/window"], function (
+Evented, declare, lang, _WidgetBase, on, dom, domStyle, domClass, domConstruct, BorderContainer, ContentPane, TabContainer, Deferred, win) {
     var Widget = declare("application.Drawer", [_WidgetBase, Evented], {
         options: {
             showDrawerSize: 850,
@@ -32,6 +32,7 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
         // start widget. called by user
         startup: function () {
             this._init();
+
         },
         // connections/subscriptions will be cleaned up during the destroy() lifecycle phase
         destroy: function () {
@@ -44,8 +45,9 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
             if (this._borderContainer) {
                 this._borderContainer.layout();
             }
+
             // drawer status resize
-            this.emit("resize", {});
+            // this.emit("resize", {});
         },
         /* ---------------- */
         /* Public Events */
@@ -57,23 +59,29 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
         /* Public Functions */
         /* ---------------- */
         toggle: function (add) {
+
             // deferred to return
             var def = new Deferred();
             // true if drawer is opened
             var currentlyOpen = domClass.contains(document.body, this.css.drawerOpen);
+
             // if already open or already closed and asked to do the same
             if ((currentlyOpen && add === true) || (!currentlyOpen && add === false)) {
                 // return
                 return def.promise;
             }
+
+
             // whether drawer is now opened or closed
             var nowOpen;
+
             // if add is set
             if (typeof add !== "undefined") {
                 nowOpen = domClass.toggle(document.body, this.css.drawerOpen, add);
             } else {
                 nowOpen = domClass.toggle(document.body, this.css.drawerOpen, !currentlyOpen);
             }
+
             // remove shadow
             domClass.remove(document.body, this.css.drawerOpenComplete);
             // if steps animation exists
@@ -100,6 +108,7 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
                 this._animationSteps = null;
                 // now drawer is open
                 if (nowOpen) {
+
                     // add shadow
                     domClass.add(document.body, this.css.drawerOpenComplete);
                 }
@@ -138,9 +147,7 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
             this._borderContainerNode = dom.byId(this.get("borderContainer"));
             this._contentPaneCenterNode = dom.byId(this.get("contentPaneCenter"));
             // all nodes present
-            if (this._borderContainerNode && this._contentPaneCenterNode
-
-            ) {
+            if (this._borderContainerNode && this._contentPaneCenterNode) {
                 // outer container
                 this._borderContainer = new BorderContainer({
                     design: "sidebar",
@@ -220,72 +227,67 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
 
                     tabs.startup();
 
-                    //create the top bar 
                     domConstruct.create("div", {
-                        "class": "top-bar",
-                        innerHTML: "<div id='top-bar'><div id='toggle_button' class='menu-button'></div></div>"
+                        innerHTML: "<div class='vertical-line'><div id='toggle_button' class='menu-button'></div></div>"
                     }, this._contentPaneCenterNode);
-
                     this._toggleNode = dom.byId("toggle_button");
 
                 } else {
                     //add class to body
                     domClass.add(document.body, "no-title");
                 }
+                //close the drawer by default  
+                domClass.add(document.body, "drawer-closed");
+
+
                 // start border container
                 this._borderContainer.startup();
                 // drawer button
                 if (this.displayDrawer) {
                     var toggleClick = on(this._toggleNode, "click", lang.hitch(this, function () {
+                        domClass.remove(document.body, "drawer-closed");
                         this.toggle();
                     }));
                     this._events.push(toggleClick);
                 }
 
-                // check window size
-                this._windowResized();
-                // fix layout
-                this.resize();
+                if (this.drawerOpen) {
+                    this._toggleNode.click();
+                } else {
+                    //close the drawer 
+                    domClass.add(document.body, this.css.drawerOpen);
+                    this.toggle(false).always(lang.hitch(this, function () {
+                        this.resize();
+
+                    }));
+                }
                 // set loaded property
                 this.set("loaded", true);
                 // emit loaded event
                 this.emit("load", {});
+
             } else {
                 console.log("Drawer::Missing required node");
             }
         },
-        _windowResized: function () {
 
-            var add;
-
-            if (this.drawerOpen && !domClass.contains(document.body, this.css.drawerOpen)) {
-                domClass.add(document.body, this.css.drawerOpen);
-                // show drawer so add is null 
-            } else if (!this.drawerOpen && domClass.contains(document.body, this.css.drawerOpen)) {
-                // hide drawer
-                add = false;
-            }
-            // toggle
-            this.toggle(add).always(lang.hitch(this, function () {
-                // remove forced open
-                this._checkDrawerStatus();
-            }));
-        },
         _checkDrawerStatus: function () {
-            // border container layout
-            this.resize();
             // hamburger button toggle
             if (this.displayDrawer) {
-                this._toggleButton();
-            }
 
+                this._toggleButton();
+
+            }
         },
         _toggleButton: function () {
+
             // if drawer is displayed
             if (domClass.contains(document.body, this.css.drawerOpen)) {
+
                 if (domClass.contains(this._toggleNode), "icon-close") {
                     domClass.replace(this._toggleNode, "icon-close", "icon-open");
                 } else {
+
                     domClass.add(this._toggleNode, "icon-open");
                 }
                 // has normal class
