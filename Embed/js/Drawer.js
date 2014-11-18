@@ -228,8 +228,7 @@ Evented, declare, lang, _WidgetBase, on, dom, domStyle, domClass, domConstruct, 
                     tabs.startup();
 
                     domConstruct.create("div", {
-                        "class": "",
-                        innerHTML: "<div id='toggle_button' class='menu-button'></div>"
+                        innerHTML: "<div class='vertical-line'><div id='toggle_button' class='menu-button'></div></div>"
                     }, this._contentPaneCenterNode);
                     this._toggleNode = dom.byId("toggle_button");
 

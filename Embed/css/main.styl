@@ -168,7 +168,7 @@ a{
     cursor:pointer;
     color:#595050;
 }
-.esriRTL .menu-button{
+.esriRTL .vertical-line{
     right:0;
 }
 .esriRTL #toggle_button{
@@ -182,8 +182,6 @@ a{
 }
 
 .menu-button {
-    position: absolute;
-    left:0;
     padding: 0;
     margin: 0;
     cursor: pointer;
@@ -198,6 +196,22 @@ a{
     color: $dark-font-color;
     text-align:center;
 }
+.vertical-line{
+    position: absolute;
+    top:0;
+    left:0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    height: 42px;
+    width: 48px;
+    font-size: 24px;
+    font-weight:700;
+    line-height: 42px;
+    color: $dark-font-color;
+    text-align:center;
+    border-right:solid 1px #929497;
+}
 .light .menu-button{
     color: $light-font-color;
     background-color:$light-base-color;  
@@ -206,6 +220,14 @@ a{
     color: $dark-font-color;
     background-color:$dark-base-color;
 }
+
+.light .vertical-line{
+    background-color: $light-tool-color;    
+}
+.dark .vertical-line{
+    background: $dark-base-color;
+}
+
 .esriRTL .menu-open-button {
     float: right;
 }
@@ -299,6 +321,7 @@ a{
 .dark .icon-basemap{
     background-image:url("../images/basemap_light.png");
 }
+
 .light .BasemapToggle .toggleButton{
     background-color: $light-tool-color;
 }

@@ -147,7 +147,7 @@ a {
   cursor: pointer;
   color: #595050;
 }
-.esriRTL .menu-button {
+.esriRTL .vertical-line {
   right: 0;
 }
 .esriRTL #toggle_button {
@@ -160,8 +160,6 @@ a {
   left: 0;
 }
 .menu-button {
-  position: absolute;
-  left: 0;
   padding: 0;
   margin: 0;
   cursor: pointer;
@@ -176,6 +174,22 @@ a {
   color: #fff;
   text-align: center;
 }
+.vertical-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  height: 42px;
+  width: 48px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 42px;
+  color: #fff;
+  text-align: center;
+  border-right: solid 1px #929497;
+}
 .light .menu-button {
   color: #4c4c4c;
   background-color: #f7f8f8;
@@ -183,6 +197,12 @@ a {
 .dark .menu-button {
   color: #fff;
   background-color: #4c4c4c;
+}
+.light .vertical-line {
+  background-color: #f7f8f8;
+}
+.dark .vertical-line {
+  background: #4c4c4c;
 }
 .esriRTL .menu-open-button {
   float: right;
