@@ -13,6 +13,7 @@ ready, parser, domAttr, on, array, declare, lang, query, dom, domClass, domConst
             // responsive drawer
             require(["application/sniff!drawer?application/Drawer"], lang.hitch(this, function (Drawer) {
                 if (!Drawer) {
+                    domClass.add(document.body, "no-title");
                     return;
                 }
                 this._drawer = new Drawer({
