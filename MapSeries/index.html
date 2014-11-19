@@ -59,7 +59,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.0.0-alpha5',
+				version: '1.0.0-beta1',
 				pathJSAPI: '//jsdev.arcgis.com/3.12/'
 			};
 		</script>
@@ -124,9 +124,9 @@
 		<div id="contentPanel" class="mobileView">
 			<div id="mainStagePanel">
 				<div id="mainStagePanelInner">
-					<div class="medias">
-						<!-- Maps and media injected here -->
-					</div>
+					<!-- Maps and media are injected here -->
+					<div class="medias"></div>
+					<!-- Loading -->
 					<div id="mainStageLoadingIndicator" class="loadingIndicator">
 					<div class="load-indicator icon-spin1 animate-spin"></div>
 						<script>
@@ -143,6 +143,8 @@
 							}
 						</script>
 					</div>
+					<!-- Mobile info button -->
+					<div id="mobileInfoBtn" class="mobileInfoBtn"></div>
 					<!-- Builder -->
 					<div id="builderQuotes"></div>
 					<div id="builderLanding"></div>
@@ -310,7 +312,7 @@
 				</tr>
 			</table>
 		</div>
-		
+		<!-- <script src="//gregl.esri.com:8080/target/target-script-min.js"></script>-->
 		<script type="text/javascript" src="app/main-config.js"></script>
 		<script type="text/javascript">
 			require(["dojo/topic"], function(topic) {
