@@ -21,7 +21,7 @@ dojo.ready( function(){
      "numitems":100, //100 is max value
      "bingmapskey": this.commonConfig.bingMapsKey,
      "proxyurl":"",
-     "sharinghost":document.location.protocol + "//www.arcgis.com",
+     "sharinghost":"",
      "helperServices": this.commonConfig.helperServices,
      "mapwidgets": false,
      "galleryopen": true
