@@ -218,7 +218,7 @@ Evented, declare, lang, _WidgetBase, on, dom, domStyle, domClass, domConstruct, 
                         var poupup_header = new ContentPane({
                             region: "top",
                             id: "info_header",
-                            content: "<div class='no-select'>" + this.config.i18n.tools.popup.instructions + "</div><div id='popupNav'><div id='prev_nav' class='nav icon-arrow-left'></div><div id='next_nav'class='nav icon-arrow-right'></div><div id='nav_count'class='nav no-select'></div></div>"
+                            content: "<div class='no-select'>" + this.config.i18n.tools.popup.instructions + "</div><div id='popupNav'><div id='prev_nav' class='nav embed-icon-arrow-left'></div><div id='next_nav'class='nav embed-icon-arrow-right'></div><div id='nav_count'class='nav no-select'></div></div>"
                         }, domConstruct.create("div"));
                         sidepanel.addChild(poupup_header);
                         tabs.addChild(sidepanel);
@@ -284,11 +284,11 @@ Evented, declare, lang, _WidgetBase, on, dom, domStyle, domClass, domConstruct, 
             // if drawer is displayed
             if (domClass.contains(document.body, this.css.drawerOpen)) {
 
-                if (domClass.contains(this._toggleNode), "icon-close") {
-                    domClass.replace(this._toggleNode, "icon-close", "icon-open");
+                if (domClass.contains(this._toggleNode), "embed-icon-close") {
+                    domClass.replace(this._toggleNode, "embed-icon-close", "embed-icon-open");
                 } else {
 
-                    domClass.add(this._toggleNode, "icon-open");
+                    domClass.add(this._toggleNode, "embed-icon-open");
                 }
                 // has normal class
                 if (domClass.contains(this._toggleNode, this.css.toggleButton)) {
@@ -296,10 +296,10 @@ Evented, declare, lang, _WidgetBase, on, dom, domStyle, domClass, domConstruct, 
                     domClass.replace(this._toggleNode, this.css.toggleButtonSelected, this.css.toggleButton);
                 }
             } else {
-                if (domClass.contains(this._toggleNode), "icon-open") {
-                    domClass.replace(this._toggleNode, "icon-open", "icon-close");
+                if (domClass.contains(this._toggleNode), "embed-icon-open") {
+                    domClass.replace(this._toggleNode, "embed-icon-open", "embed-icon-close");
                 } else {
-                    domClass.add(this._toggleNode, "icon-close");
+                    domClass.add(this._toggleNode, "embed-icon-close");
                 }
                 // has selected class
                 if (domClass.contains(this._toggleNode, this.css.toggleButtonSelected)) {

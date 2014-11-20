@@ -93,13 +93,13 @@ a {
 /*Icon fonts for menu and nav arrows*/
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?f6xq3b");
-  src: url("../fonts/icomoon.eot?#iefixf6xq3b") format('embedded-opentype'), url("../fonts/icomoon.woff?f6xq3b") format('woff'), url("../fonts/icomoon.ttf?f6xq3b") format('truetype'), url("../fonts/icomoon.svg?f6xq3b#icomoon") format('svg');
+  src: url("../fonts/icomoon.eot?-2tvcnr");
+  src: url("../fonts/icomoon.eot?#iefix-2tvcnr") format('embedded-opentype'), url("../fonts/icomoon.woff?-2tvcnr") format('woff'), url("../fonts/icomoon.ttf?-2tvcnr") format('truetype'), url("../fonts/icomoon.svg?-2tvcnr#icomoon") format('svg');
   font-weight: normal;
   font-style: normal;
 }
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="embed-icon-"],
+[class*=" embed-icon-"] {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -107,38 +107,37 @@ a {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-/* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-arrow-right {
+.embed-icon-arrow-right {
   cursor: pointer;
 }
-.icon-arrow-left {
+.embed-icon-arrow-left {
   cursor: pointer;
 }
-.esriRTL .icon-open:before {
+.esriRTL .embed-icon-open:before {
   content: "\e602";
 }
-.esriRTL .icon-close:before {
+.esriRTL .embed-icon-close:before {
   content: "\e601";
 }
-.icon-open:before {
+.embed-icon-open:before {
   content: "\e602";
 }
-.icon-close:before {
+.embed-icon-close:before {
   content: "\e601";
 }
-.icon-arrow-left:before {
+.embed-icon-arrow-left:before {
   content: "\e605";
 }
-.icon-menu-close:before {
+.embed-icon-menu-close:before {
   content: "\e600";
 }
-.icon-arrow-right:before {
+.embed-icon-arrow-right:before {
   content: "\e604";
 }
-.icon-menu-close {
+.embed-icon-menu-close {
   position: absolute;
   top: 12px;
   right: 10px;
@@ -226,6 +225,9 @@ a {
 }
 .esriRTL .icon-basemap-container {
   top: 110px;
+}
+.esriRTL .no-home .icon-basemap-container {
+  top: 90px;
 }
 .icon-basemap-container.embed-bottom-right,
 .icon-basemap-container.embed-bottom-left,
@@ -396,6 +398,9 @@ a {
   background-color: #e1f0fb;
 }
 .esriRTL #gallery_container {
+  top: 75px;
+}
+.esriRTL .no-home #gallery_container {
   top: 75px;
 }
 #gallery_container {

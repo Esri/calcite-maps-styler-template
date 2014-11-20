@@ -195,7 +195,7 @@ ready, parser, domAttr, on, array, declare, lang, query, dom, domClass, domConst
 
                 domConstruct.create("div", {
                     "class": "arrow_box",
-                    innerHTML: "<div class='basemap_title'>" + this.config.i18n.tools.basemap.title + "</div><span id='icon-menu-close' class='icon-menu-close'></span><div id='full_gallery'></div>"
+                    innerHTML: "<div class='basemap_title'>" + this.config.i18n.tools.basemap.title + "</div><span id='embed-icon-menu-close' class='embed-icon-menu-close'></span><div id='full_gallery'></div>"
                 }, container);
 
                 //add a class so we can move the basemap if the zoom position moved.
@@ -207,7 +207,7 @@ ready, parser, domAttr, on, array, declare, lang, query, dom, domClass, domConst
 
                 gallery = new BasemapGallery(galleryOptions, dom.byId("full_gallery"));
                 gallery.startup();
-                var closemenu = dom.byId("icon-menu-close");
+                var closemenu = dom.byId("embed-icon-menu-close");
                 if (closemenu) {
                     on(closemenu, "click", lang.hitch(this, function () {
                         this._displayBasemapContainer();
