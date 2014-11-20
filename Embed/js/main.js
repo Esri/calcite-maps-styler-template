@@ -1,5 +1,5 @@
-define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "esri/domUtils", "esri/arcgis/utils", "esri/dijit/Popup", "esri/geometry/Point", "dojo/domReady!"], function (
-ready, parser, domAttr, on, array, declare, lang, query, dom, domClass, domConstruct, registry, domUtils, arcgisUtils, Popup, Point) {
+define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/dom-geometry", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "esri/domUtils", "esri/arcgis/utils", "esri/dijit/Popup", "esri/geometry/Point", "dojo/domReady!"], function (
+ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domClass, domConstruct, registry, domUtils, arcgisUtils, Popup, Point) {
     return declare(null, {
         config: {},
         startup: function (config) {
@@ -311,6 +311,24 @@ ready, parser, domAttr, on, array, declare, lang, query, dom, domClass, domConst
             }
 
         },
+        _adjustPopupSize: function () {
+            if (!this.map) {
+                return;
+            }
+            var box = domGeometry.getContentBox(this.map.container);
+
+            var width = 270,
+                height = 300,
+                newWidth = Math.round(box.w * 0.50),
+                newHeight = Math.round(box.h * 0.35);
+            if (newWidth < width) {
+                width = newWidth;
+            }
+            if (newHeight < height) {
+                height = newHeight;
+            }
+            this.map.infoWindow.resize(width, height);
+        },
         _displayBasemapContainer: function () {
             var node = null,
                 gallery = query(".basemap_gallery");
@@ -357,7 +375,7 @@ ready, parser, domAttr, on, array, declare, lang, query, dom, domClass, domConst
             }).then(lang.hitch(this, function (response) {
                 this.map = response.map;
                 this.config.response = response;
-
+                this._adjustPopupSize();
                 if (this.config.logoimage) {
 
                     query(".esriControlsBR").forEach(lang.hitch(this, function (node) {
