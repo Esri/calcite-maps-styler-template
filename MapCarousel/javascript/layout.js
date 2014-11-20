@@ -24,7 +24,7 @@ dojo.ready( function(){
      "sharinghost":"",
      "helperServices": this.commonConfig.helperServices,
      "mapwidgets": false,
-     "galleryopen": true
+     "galleryopen": false
   };
 
     var app = new utilities.App(defaults, true);
