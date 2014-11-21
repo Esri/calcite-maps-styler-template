@@ -15,26 +15,7 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define([
-    "dojo/Evented",
-    "dojo/_base/declare",
-    "dojo/_base/kernel",
-    "dojo/_base/array",
-    "dojo/_base/lang",
-    "dojo/dom-class",
-    "dojo/Deferred",
-    "dojo/promise/all",
-    "esri/arcgis/utils",
-    "esri/urlUtils",
-    "esri/request",
-    "esri/config",
-    "esri/lang",
-    "esri/IdentityManager",
-    "esri/arcgis/Portal",
-    "esri/tasks/GeometryService",
-    "config/defaults",
-    "application/OAuthHelper"
-], function (
+define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/array", "dojo/_base/lang", "dojo/dom-class", "dojo/Deferred", "dojo/promise/all", "esri/arcgis/utils", "esri/urlUtils", "esri/request", "esri/config", "esri/lang", "esri/IdentityManager", "esri/arcgis/Portal", "esri/arcgis/OAuthInfo", "esri/tasks/GeometryService", "config/defaults"], function (
     Evented,
     declare,
     kernel,
@@ -50,9 +31,9 @@ define([
     esriLang,
     IdentityManager,
     esriPortal,
+    ArcGISOAuthInfo,
     GeometryService,
-    defaults,
-    OAuthHelper
+    defaults
 ) {
     return declare([Evented], {
         config: {},
@@ -110,7 +91,7 @@ define([
                 i18n: this._getLocalization(),
                 // get application data
                 app: this._queryApplicationConfiguration(),
-                // common config file
+                // Receives common config file from templates hosted on AGOL.
                 common: this._getCommonConfig(),
                 // do we need to create portal?
                 portal: this._createPortal()
@@ -135,10 +116,7 @@ define([
                     if (this.config.helperServices && this.config.helperServices.geometry && this.config.helperServices.geometry.url) {
                         esriConfig.defaults.geometryService = new GeometryService(this.config.helperServices.geometry.url);
                     }
-                    // setup OAuth if oauth appid exists_initializeApplication
-                    if (this.config.oauthappid) {
-                        this._setupOAuth(this.config.oauthappid, this.config.sharinghost);
-                    }
+
                     deferred.resolve(this.config);
                 }), deferred.reject);
             }), deferred.reject);
@@ -172,7 +150,7 @@ define([
         },
         _createUrlParamsObject: function (items) {
             var urlObject, obj = {},
-                i;
+                i, url;
             // retrieve url parameters. Templates all use url parameters to determine which arcgis.com
             // resource to work with.
             // Map templates use the webmap param to define the webmap to display
@@ -181,7 +159,8 @@ define([
             // id to retrieve application specific configuration information. The configuration
             // information will contain the values the  user selected on the template configuration
             // panel.
-            urlObject = urlUtils.urlToObject(document.location.href);
+            url = document.location.href;
+            urlObject = urlUtils.urlToObject(url);
             urlObject.query = urlObject.query || {};
             if (urlObject.query && items && items.length) {
                 for (i = 0; i < items.length; i++) {
@@ -207,12 +186,6 @@ define([
                 instance = location.pathname.substr(0, appLocation); //get the portal instance name
                 this.config.sharinghost = location.protocol + "//" + location.host + instance;
                 this.config.proxyurl = location.protocol + "//" + location.host + instance + "/sharing/proxy";
-            } else {
-                // setup OAuth if oauth appid exists. If we don't call it here before querying for appid
-                // the identity manager dialog will appear if the appid isn't publicly shared.
-                if (this.config.oauthappid) {
-                    this._setupOAuth(this.config.oauthappid, this.config.sharinghost);
-                }
             }
             arcgisUtils.arcgisUrl = this.config.sharinghost + "/sharing/rest/content/items";
             // Define the proxy url for the app
@@ -222,8 +195,17 @@ define([
             }
         },
         _checkSignIn: function () {
-            var deferred, signedIn;
+            var deferred, signedIn, oAuthInfo;
             deferred = new Deferred();
+            //If there's an oauth appid specified register it
+            if (this.config.oauthappid) {
+                oAuthInfo = new ArcGISOAuthInfo({
+                    appId: this.config.oauthappid,
+                    portalUrl: this.config.sharinghost,
+                    popup: true
+                });
+                IdentityManager.registerOAuthInfos([oAuthInfo]);
+            }
             // check sign-in status
             signedIn = IdentityManager.checkSignInStatus(this.config.sharinghost + "/sharing");
             // resolve regardless of signed in or not.
@@ -232,13 +214,7 @@ define([
             });
             return deferred.promise;
         },
-        _setupOAuth: function (id, portal) {
-            OAuthHelper.init({
-                appId: id,
-                portal: portal,
-                expiration: (14 * 24 * 60) //2 weeks (in minutes)
-            });
-        },
+
         _getLocalization: function () {
             var deferred, dirNode, classes, rtlClasses;
             deferred = new Deferred();
@@ -337,41 +313,39 @@ define([
             return deferred.promise;
         },
         _queryDisplayItem: function () {
-            var deferred, error;
+            var deferred;
             // Get details about the specified web map. If the web map is not shared publicly users will
             // be prompted to log-in by the Identity Manager.
             deferred = new Deferred();
             // If we want to get the webmap
             if (this.templateConfig.queryForWebmap) {
-                if (this.config.webmap) {
-                    arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
-                        // ArcGIS.com allows you to set an application extent on the application item. Overwrite the
-                        // existing web map extent with the application item extent when set.
-                        if (this.config.appid && this.config.application_extent.length > 0 && itemInfo.item.extent) {
-                            itemInfo.item.extent = [
-                                [
-                                    parseFloat(this.config.application_extent[0][0]),
-                                    parseFloat(this.config.application_extent[0][1])
-                                ],
-                                [
-                                    parseFloat(this.config.application_extent[1][0]),
-                                    parseFloat(this.config.application_extent[1][1])
-                                ]
-                            ];
-                        }
-                        // Set the itemInfo config option. This can be used when calling createMap instead of the webmap id
-                        this.config.itemInfo = itemInfo;
-                        deferred.resolve(itemInfo);
-                    }), function (error) {
-                        if (!error) {
-                            error = new Error("Error retrieving display item.");
-                        }
-                        deferred.reject(error);
-                    });
-                } else {
-                    error = new Error("Webmap undefined.");
-                    deferred.reject(error);
+                // if webmap does not exist
+                if(!this.config.webmap){
+                    // use default webmap for boilerplate
+                    this.config.webmap = "24e01ef45d40423f95300ad2abc5038a";   
                 }
+                arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
+                    // ArcGIS.com allows you to set an application extent on the application item. Overwrite the
+                    // existing web map extent with the application item extent when set.
+                    if (this.config.appid && this.config.application_extent.length > 0 && itemInfo.item.extent) {
+                        itemInfo.item.extent = [
+                            [
+                                parseFloat(this.config.application_extent[0][0]), parseFloat(this.config.application_extent[0][1])
+                            ],
+                            [
+                                parseFloat(this.config.application_extent[1][0]), parseFloat(this.config.application_extent[1][1])
+                            ]
+                        ];
+                    }
+                    // Set the itemInfo config option. This can be used when calling createMap instead of the webmap id
+                    this.config.itemInfo = itemInfo;
+                    deferred.resolve(itemInfo);
+                }), function (error) {
+                    if (!error) {
+                        error = new Error("Error retrieving display item.");
+                    }
+                    deferred.reject(error);
+                });
             } else {
                 // we're done. we dont need to get the webmap
                 deferred.resolve();
@@ -430,6 +404,8 @@ define([
                     },
                     callbackParamName: "callback"
                 }).then(lang.hitch(this, function (response) {
+                    // save organization information
+                    this.config.orgInfo = response;
                     // get units defined by the org or the org user
                     this.orgConfig.units = "metric";
                     if (response.user && response.user.units) { //user defined units
