@@ -2,13 +2,13 @@
 	 ({
 		commonMapControls: {
 			common: {
-				settings: "æ_Settings_Â",
-				openDefault: "æ_Open by default_Â"
+				settings: "Paramètres",
+				openDefault: "Ouvert par défaut"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "æ_Basemap_Â",
-				expandFactorLabel: "æ_Expand Factor_Â",
-				expandFactorPopover: "æ_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle_Â."
+				basemapGalleryBtnLabel: "Fond de carte",
+				expandFactorLabel: "Facteur de développement",
+				expandFactorPopover: "Ratio entre la taille de la vue générale et le rectangle d\'emprise affiché sur la vue générale. La valeur par défaut est de 2, ce qui signifie que la vue générale est au moins deux fois plus grande que le rectangle d\'emprise."
 			}
 		}
 	})

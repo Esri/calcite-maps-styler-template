@@ -25,7 +25,7 @@
 				mapSave: "Lỗi khi lưu bản đồ web",
 				notAuthorized: "Bạn không được phép truy cập vào ứng dụng này",
 				conflictingProjectionsTitle: "Xung đột Phép chiếu",
-				conflictingProjections: "Chức năng Trượt nhanh không hỗ trợ sử dụng hai bản đồ web với các phép chiếu khác nhau. Vui lòng vào phần cài đặt và sử dụng một bản đồ web có sử dụng cùng một phép chiếu với bản đồ web đầu tiên.",
+				conflictingProjections: "Chức năng Trượt nhanh không hỗ trợ sử dụng hai bản đồ web với các phép chiếu khác nhau. Vui lòng vào phần thiết lập và sử dụng một bản đồ web có sử dụng cùng một phép chiếu với bản đồ web đầu tiên.",
 				cpButton: "Đóng"
 			},
 			mobileView: {

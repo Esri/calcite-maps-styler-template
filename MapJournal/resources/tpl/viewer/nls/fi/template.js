@@ -70,8 +70,8 @@
 				copy: "Kopioi",
 				copied: "Kopioitu",
 				open: "Avaa",
-				embed: "Å_Embed in web page_ö",
-				embedExplain: "Å_Use the following HTML code to embed the journal in a web page_ö.",
+				embed: "Upota Web-sivulle",
+				embedExplain: "Käytä seuraavaa HTML-koodia päiväkirjan upottamiseen Web-sivulle.",
 				size: "Koko (leveys/korkeus):"
 			}
         }

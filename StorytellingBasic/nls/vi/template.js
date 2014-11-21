@@ -9,8 +9,8 @@
       general:"Lỗi"
     },
 	legToggle:{
-	  up:"Đ_MAP LEGEND â–²_ớ",
-	  down:"Đ_MAP LEGEND â–¼_ớ"
+	  up:"CHÚ GIẢI BẢN ĐỒ â–²",
+	  down:"CHÚ GIẢI BẢN ĐỒ â–¼"
 	},
 	loading:{
 		message: "Đang tải bản đồ"

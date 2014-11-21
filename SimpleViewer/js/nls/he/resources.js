@@ -5,11 +5,11 @@
         }, 
         tools: {         
             search: {
-                error: "כן_Location could not be found_ש",
-                notWhatYouWanted: "כן_Not what you wanted_ש?",
-                selectAnother: "כן_Select another location_ש",
-                currentLocation: "כן_Current Location_ש",
-                title: "כן_Location_ש"
+                error: "לא ניתן למצוא מיקום",
+                notWhatYouWanted: "לא מה שחיפשת?",
+                selectAnother: "בחר מיקום אחר",
+                currentLocation: "מיקום נוכחי",
+                title: "מיקום"
             },
         	legend: "מקרא",
         	 about: "אודות"

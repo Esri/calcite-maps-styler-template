@@ -1,30 +1,30 @@
 ﻿define({
   root: ({
     display: {
-      elevationProfileTitle: "ø_Elevations Profile_å",
-      showMe: "ø_show me_å",
-      selectLine: "ø_<b>Select</b> a feature in the map_å.",
-      popupRequirement: "ø_NOTE: the feature must be in a layer with Popups enabled_å.",
-      digitizeDistanceMeasureTool: "ø_Use the <b>Measure</b> tools_å.",
-      selectFeatureHelpUrl: "ø_http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D_å",
-      measureToolHelpUrl: "ø_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000_å",
-      hoverOver: "ø_Hover over or touch the Elevations Profile chart to display elevations and show location on map_å."
+      elevationProfileTitle: "Hævningsprofil",
+      showMe: "vis mig",
+      selectLine: "<b>Udvælg</b> et objekt på kortet.",
+      popupRequirement: "BEMÆRK: Objektet skal være i et lag, hvor popup-vinduer er aktiveret.",
+      digitizeDistanceMeasureTool: "Brug værktøjet <b>Opmål</b>.",
+      selectFeatureHelpUrl: "http://help.arcgis.com/da/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
+      measureToolHelpUrl: "http://help.arcgis.com/da/arcgisonline/help/index.html#//010q00000096000000",
+      hoverOver: "Før musemarkøren over, eller tryk på diagrammet med højdeprofilen for at få vist højder og placeringen på kortet."
     },
     buttons: {
-      measureLabel: "ø_Measure_å",
-      helpLabel: "ø_Help_å"
+      measureLabel: "Mål",
+      helpLabel: "Hjælp"
     },
     chart: {
-      title: "ø_Elevations Profile_å",
-      demResolution: "ø_DEM Resolution_å",
-      elevationTitleTemplate: "ø_Elevation in {0}_å",
-      distanceTitleTemplate: "ø_Distance in {0}_å",
-      gainLossTemplate: "ø_Min:{min}   Max:{max}   Start:{start}   End:{end}   Change:{gainloss}_å"
+      title: "Hævningsprofil",
+      demResolution: "DEM-opløsning",
+      elevationTitleTemplate: "Højde i {0}",
+      distanceTitleTemplate: "Afstand i {0}",
+      gainLossTemplate: "Min.:{min}   Maks.:{max}   Start:{start}   Slut:{end}   Ændring:{gainloss}"
     },
     errors: {
-      MissingConstructorParameters: "ø_Missing constructor parameter_å.",
-      InvalidConfiguration: "ø_Invalid configuration_å.",
-      UnableToProcessResults: "ø_Unable to process analysis results_å."
+      MissingConstructorParameters: "Parameter: Konstruktør mangler.",
+      InvalidConfiguration: "Ugyldig konfiguration.",
+      UnableToProcessResults: "Kan ikke behandle analyseresultater."
     }
   }),
   "ar": 1,

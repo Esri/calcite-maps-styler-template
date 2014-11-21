@@ -11,7 +11,7 @@
             layerNotFound: "Sluoksnio nėra internetiniame žemėlapyje",
             fieldNotFound: "Laukas nerastas",
             popupNotSet: "Šiam sluoksniui iškylantys langai neįjungti",
-            noLayersSet: "Į_No layers defined in the config, the search box will not work_š"
+            noLayersSet: "Konfigūracijoje nėra apibrėžtų sluoksnių, paieškos laukas neveiks"
         },
         page: {
             title: "Informacijos paieška",

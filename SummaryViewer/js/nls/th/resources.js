@@ -1,12 +1,12 @@
 ﻿define(
     ({
       "map": {
-         "error": "ก้_Unable to create map_ษฺ"
+         "error": "ไม่สามารถสร้างแผนที่ได้"
       },
       "tooltips": {
-         "logo": "ก้_Logo_ษฺ",
-         "switchbasemap": "ก้_Switch base map_ษฺ",
-         "close": "ก้_Close_ษฺ"
+         "logo": "โลโก้",
+         "switchbasemap": "เปลี่ยนแผนที่ฐาน",
+         "close": "ปิด"
       }
    })
 );

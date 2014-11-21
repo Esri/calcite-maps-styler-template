@@ -11,7 +11,7 @@
             layerNotFound: "Laget er ikke i webkartet",
             fieldNotFound: "Fant ikke feltet",
             popupNotSet: "Sprettoppvindu er ikke aktivert for dette laget",
-            noLayersSet: "å_No layers defined in the config, the search box will not work_ø"
+            noLayersSet: "Ingen lag er definert i konfigurasjonen, søkeboksen kommer ikke til å fungere"
         },
         page: {
             title: "Informasjonsoppslag",

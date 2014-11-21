@@ -32,7 +32,7 @@
 				notAuthorized: "Du er ikke autoriseret til at få adgang til denne applikation",
 				noBuilderIE: "Builder-programmet understøttes ikke i Internet Explorer før version %VERSION%. %UPGRADE%",
 				noViewerIE: "Denne applikation understøttes ikke i Internet Explorer før version %VERSION%. %UPGRADE%",
-				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Opdat\ér din browser</a>.",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Opdatér din browser</a>.",
 				mapLoadingFail: "Noget gik galt, kortet blev ikke indlæst korrekt.",
 				signOut: "Log ud"
 			},
@@ -70,8 +70,8 @@
 				copy: "Kopiér",
 				copied: "Kopieret",
 				open: "Åbn",
-				embed: "ø_Embed in web page_å",
-				embedExplain: "ø_Use the following HTML code to embed the journal in a web page_å.",
+				embed: "Indlejr i webside",
+				embedExplain: "Brug følgende HTML-kode til at indlejre journalen i en webside.",
 				size: "Størrelse (bredde/højde):"
 			}
         }

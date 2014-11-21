@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ł_Media_ą",
-				lblSelect2: "ł_Content_ą",
-				lblMap: "ł_Map_ą",
-				lblImage: "ł_Image_ą",
-				lblVideo: "ł_Video_ą",
-				lblExternal: "ł_Web page_ą",
-				disabled: "ł_This feature has been disabled by the Administrator_ą",
-				url: "ł_To manually enter the web address of an image_ą",
-				userLookup: "ł_Load albums_ą",
-				notImplemented: "ł_Not implemented yet_ą.",
-				noData: "ł_No public album found_ą"
+				lblSelect1: "Multimedia",
+				lblSelect2: "Zasoby",
+				lblMap: "Mapa",
+				lblImage: "Obraz",
+				lblVideo: "Wideo",
+				lblExternal: "Strona internetowa",
+				disabled: "Opcja ta została wyłączona przez Administratora",
+				url: "W celu manualnego wprowadzenia adresu internetowego obrazu",
+				userLookup: "Wczytaj albumy",
+				notImplemented: "Jeszcze nie wprowadzone",
+				noData: "Nie znaleziono żadnych albumów publicznych"
 			},
 			imageSelector: {
-				lblStep1: "ł_Choose the service_ą",
-				lblStep2: "ł_Select your media_ą",
-				lblStep3: "ł_Configure_ą"
+				lblStep1: "Wybierz usługę",
+				lblStep2: "Wybierz nośnik",
+				lblStep3: "Konfiguruj"
 			},
 			imageSelectorHome: {
-				explain: "ł_Load images from social media, <br /> or directly from a URL_ą"
+				explain: "Wczytaj obrazy z portalu społecznościowego <br /> lub bezpośrednio z adresu URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "ł_User name_ą",
-				signInMsg2: "ł_User not found_ą",
-				loadingFailed: "ł_Loading failed_ą"
+				userInputLbl: "Nazwa użytkownika",
+				signInMsg2: "Nie odnaleziono użytkownika",
+				loadingFailed: "Wczytywanie zakończyło się niepowodzeniem"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "ł_Facebook User_ą",
-				rightHeader: "ł_Facebook Page_ą",
-				pageExplain: "ł_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_ą.",
-				pageInputLbl: "ł_Page name_ą",
-				lookupMsgError: "ł_Page not found_ą"
+				leftHeader: "Użytkownik Facebook",
+				rightHeader: "Strona Facebook",
+				pageExplain: "Strona Facebook to publiczna strona marki/produktu lub znanej osoby, np.<b>esrigis</b>. Nazwa strony została umieszczona po pierwszym znaku „/” w adresie URL strony.",
+				pageInputLbl: "Nazwa strony",
+				lookupMsgError: "Nie znaleziono strony"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "ł_Email or Picasa/Google+ ID_ą",
-				signInMsg2: "ł_Account not found_ą",
-				howToFind: "ł_How to find a Picasa or Google+ account ID_ą",
-				howToFind2: "ł_Copy digits between the first and second '/' of any Picasa or G+ page_ą"
+				userInputLbl: "Adres e-mail lub identyfikator z serwisu Picasa/Google+",
+				signInMsg2: "Nie odnaleziono konta",
+				howToFind: "Jak znaleźć identyfikator konta Picasa lub Google+",
+				howToFind2: "Skopiuj cyfry znajdujące się między pierwszym a drugim znakiem „/” dowolnej strony Picasa lub G+"
 			},
 			videoSelectorCommon: {
-				check: "ł_Check_ą",
-				notFound: "ł_Video not found_ą",
-				found: "ł_Video found_ą",
-				select: "ł_Select this video_ą"
+				check: "Zaznacz",
+				notFound: "Nie znaleziono pliku wideo",
+				found: "Znaleziono plik wideo",
+				select: "Wybierz ten plik wideo"
 			},
 			videoSelectorHome: {
-				other: "ł_Other_ą"
+				other: "Inne"
 			},
 			videoSelectorYoutube: {
-				url: "ł_URL of a Youtube video_ą",
-				pageInputLbl: "ł_User name_ą",
-				lookupMsgError: "ł_User not found_ą",
-				howToFind: "ł_How to find a YouTube user name_ą",
-				howToFind2: "ł_User name is displayed under videos_ą",
-				found: "ł_Found_ą",
-				noData: "ł_No public videos found_ą"
+				url: "Adres URL pliku wideo dostępnego w serwisie YouTube",
+				pageInputLbl: "Nazwa użytkownika",
+				lookupMsgError: "Nie odnaleziono użytkownika",
+				howToFind: "W jaki sposób wyszukać nazwę użytkownika serwisu YouTube",
+				howToFind2: "Nazwa użytkownika jest wyświetlana pod każdym filmem",
+				found: "Znaleziono",
+				noData: "Nie znaleziono żadnych filmów publicznych"
 			},
 			videoSelectorVimeo: {
-				url: "ł_URL of a Vimeo video_ą"
+				url: "Adres URL pliku wideo dostępnego w serwisie Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "ł_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ą.",
-				explain2: "ł_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_ą.",
-				explain3: "ł_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_ą.",
-				webpage: "ł_Web page feature_ą"
+				explain1: "Aplikacja nie jest w stanie odtwarzać zwykłych plików wideo (np. w formacie .avi, .mpeg), ale może odtwarzać hostowane pliki wideo, w które wbudowane są odtwarzacze (np. pliki dostępne w serwisie YouTube lub Vimeo).",
+				explain2: "Funkcja ta jest udostępniana w ramach większości usług hostowania plików wideo w Internecie, konieczne jest znalezienie opcji osadzenia pliku wideo, skopiowanie danego kodu oraz skorzystanie z witryny %WEBPAGE%.",
+				explain3: "Ewentualnie, jeżeli użytkownik chce samodzielnie hostować plik wideo, może utworzyć stronę HTML, w ramach której wykorzystywany będzie odtwarzacz plików wideo, taki jak %EXAMPLE%, hostować tę stronę, a także skorzystać z witryny %WEBPAGE%.",
+				webpage: "Obiekt witryny internetowej"
 			},
 			webpageSelectorHome: {
-				lblUrl: "ł_Webpage URL_ą",
-				lblEmbed: "ł_Embed code_ą",
-				lblOR: "ł_OR_ą",
-				lblError1: "ł_Error, clear one of the two input fields_ą.",
-				lblError2: "ł_Embed code can only contain one %IFRAMETAG%_ą",
-				configure: "ł_Configure_ą"
+				lblUrl: "Adres URL witryny internetowej",
+				lblEmbed: "Kod do osadzenia",
+				lblOR: "LUB",
+				lblError1: "Błąd, wyczyść jedno z dwóch pól danych wejściowych.",
+				lblError2: "Kod do osadzenia może zawierać tylko jedną ramkę %IFRAMETAG%",
+				configure: "Konfiguruj"
 			},
 			mediaConfigure: {
-				lblURL: "ł_URL_ą",
-				lblURLPH: "ł_An image URL should start with http:// and end with .jpg or .png_ą",
-				lblURLError: "ł_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_ą.",
-				lblURLCheck: "ł_Checking image_ą...",
-				lblLabel: "ł_Image Caption_ą",
-				lblLabel1: "ł_Caption_ą",
-				lblLabel2: "ł_Hover text_ą",
-				lblLabel3: "ł_None_ą",
-				lblLabelPH: "ł_Enter some text_ą...",
-				lblMaximize: "ł_Include a maximize button in the corner of the image_ą",
-				lblMaximizeHelp: "ł_Recommended only for high quality photos_ą",
-				lblPosition: "ł_Position_ą",
-				lblPosition1: "ł_Center_ą",
-				lblPosition2: "ł_Fill_ą",
-				lblPosition3: "ł_Fit_ą",
-				lblPosition4: "ł_Stretch_ą",
-				lblPosition5: "ł_Custom_ą",
-				tooltipDimension: "ł_The value can be specified in 'px' or '%'_ą",
-				tooltipDimension2: "ł_The value has to be specified in 'px'_ą",
-				lblPosition2Explain: "ł_(may crop)_ą",
-				lblPosition3Explain: "ł_(won't crop)_ą",
-				lblPosition3Explain2: "ł_(width will always fit the panel)_ą",
-				lblPosition4Explain: "ł_(may distort)_ą",
-				unloadLbl: "ł_Unload when reader navigates away_ą",
-				unloadHelp: "ł_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ą."
+				lblURL: "URL",
+				lblURLPH: "Adres URL obrazu powinien zaczynać się od http:// i kończyć na .jpg lub .png",
+				lblURLError: "Prawdopodobnie ten obraz nie jest prawidłowy. Podaj bezpośredni adres łącza do pliku obrazu (wtedy adres URL zwykle kończy się rozszerzeniem .jpg lub .png). Adresy łączy do witryn internetowych zawierających dany obraz są nieobsługiwane.",
+				lblURLCheck: "Sprawdzanie obrazu...",
+				lblLabel: "Legenda do obrazu",
+				lblLabel1: "Podpis",
+				lblLabel2: "Aktywuj tekst",
+				lblLabel3: "Brak",
+				lblLabelPH: "Wprowadź tekst",
+				lblMaximize: "Wstaw przycisk maksymalizacji w rogu obrazu",
+				lblMaximizeHelp: "Zalecany tylko w przypadku zdjęć o wysokiej jakości",
+				lblPosition: "Położenie",
+				lblPosition1: "Wyśrodkuj",
+				lblPosition2: "Wypełnij",
+				lblPosition3: "Dopasuj",
+				lblPosition4: "Rozciągnij",
+				lblPosition5: "Niestandardowy",
+				tooltipDimension: "Wartość można podać w „px” lub „%”",
+				tooltipDimension2: "Wartość należy podać w „px”",
+				lblPosition2Explain: "(obraz może zostać przycięty)",
+				lblPosition3Explain: "(obraz nie zostanie przycięty)",
+				lblPosition3Explain2: "(szerokość będzie zawsze dopasowana do panelu)",
+				lblPosition4Explain: "(obraz może zostać zniekształcony)",
+				unloadLbl: "Usuń, gdy czytelnik przechodzi dalej",
+				unloadHelp: "Gdy na stronie internetowej udostępnione są materiały audio lub wideo, opcja ta powinna być zaznaczona, aby po przejściu czytelnika dalej odtwarzanie tych treści było przerywane. Opcję tę należy odznaczyć, aby na przykład podczas czytania tekstu przez czytelnika odtwarzane były utwory muzyczne.<br />Jeżeli strona internetowa jest aplikacją, opcję tę należy odznaczyć, aby uniknąć ponownego wczytywania tej aplikacji, gdy czytelnik powróci do niej."
 			},
 			editorActionGeocode: {
-				lblTitle: "ł_Locate an address or place_ą",
-				mapMarkerExplain: "ł_User will see a map marker when clicking the link_ą"
+				lblTitle: "Lokalizuj adres lub miejsce",
+				mapMarkerExplain: "Po kliknięciu łącza na mapie wyświetlony zostanie marker"
 			},
 			editorActionMedia: {
-				lblTitle: "ł_Change the Main Stage content_ą"
+				lblTitle: "Zmień zasoby w obszarze głównym"
 			},
 			editorInlineMedia: {
-				lblTitle: "ł_Insert an image, video or web page_ą"
+				lblTitle: "Wstaw obraz, film wideo lub witrynę internetową"
 			}
 		}
 	})

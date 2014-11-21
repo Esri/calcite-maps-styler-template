@@ -158,7 +158,7 @@
 				settingsDataModel2Explain: "Mit anderer Webkarte ausblenden.",
 				settingsDataModel2SpyGlassExplain: "Andere Webkarte einblenden.",
 				settingsDataModel2HelpTitle: "Suchen der ID einer Webkarte",
-				settingsDataModel2HelpContent: "Kopieren Sie die Ziffern nach dem Zeichen '=' in der URL der Webkarte, und fügen Sie sie ein",
+				settingsDataModel2HelpContent: "Kopieren Sie die Ziffern nach dem Zeichen \'=\' in der URL der Webkarte, und fügen Sie sie ein",
 				switchMaps: "Karten wechseln",
 				browseWebMaps: "Webkarten durchsuchen"
 			},

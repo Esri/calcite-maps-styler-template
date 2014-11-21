@@ -1,12 +1,12 @@
 ﻿define(
     ({
       "map": {
-         "error": "Ж_Unable to create map_Я"
+         "error": "Не удалось создать карту"
       },
       "tooltips": {
-         "logo": "Ж_Logo_Я",
-         "switchbasemap": "Ж_Switch base map_Я",
-         "close": "Ж_Close_Я"
+         "logo": "Логотип",
+         "switchbasemap": "Переключить базовую карту",
+         "close": "Закрыть"
       }
    })
 );

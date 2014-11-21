@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "כן_Location could not be found_ש",
-                "notWhatYouWanted": "כן_Not what you wanted_ש?",
-                "selectAnother": "כן_Select another location_ש",
-                "currentLocation": "כן_Current Location_ש",
-                "title": "כן_Location_ש"
+                "error": "לא ניתן למצוא מיקום",
+                "notWhatYouWanted": "לא מה שחיפשת?",
+                "selectAnother": "בחר מיקום אחר",
+                "currentLocation": "מיקום נוכחי",
+                "title": "מיקום"
             },
             "basemap":{
-                    "label": "כן_Basemap_ש",
-                    "title": "כן_Select a Basemap_ש"
+                    "label": "מפת בסיס",
+                    "title": "בחר מפת בסיס"
             },
             "legend":{
-                "title": "כן_Legend_ש"
+                "title": "מקרא"
             },
             "details":{
-                "title": "כן_Map Details_ש",
-                "error": "כן_Update the web map description with the details to display in this section_ש."
+                "title": "פרטי המפה",
+                "error": "עדכן את תיאור ה-web map בפרטים להצגה במקטע זה."
             },
             "popup": {
-                "title": "כן_Info_ש",
-                "instructions": "כן_Select a feature on the map to view details_ש."
+                "title": "מידע",
+                "instructions": "בחר ישות במפה להצגת פרטים."
             }
 
         },
         "map": {
-            "error": "כן_Unable to create map_ש"
+            "error": "לא ניתן ליצור מפה"
         }
     })
 );

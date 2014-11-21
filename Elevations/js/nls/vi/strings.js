@@ -5,11 +5,11 @@
     }, 
     tools: {
       search: {
-          "error": "Đ_Location could not be found_ớ",
-          "notWhatYouWanted": "Đ_Not what you wanted_ớ?",
-          "selectAnother": "Đ_Select another location_ớ",
-          "currentLocation": "Đ_Current Location_ớ",
-          "title": "Đ_Location_ớ"
+          "error": "Không thể tìm thấy vị trí",
+          "notWhatYouWanted": "Không phải cái bạn muốn?",
+          "selectAnother": "Chọn một vị trí khác",
+          "currentLocation": "Vị trí hiện tại",
+          "title": "Vị trí"
       }
     }
   })

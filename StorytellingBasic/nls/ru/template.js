@@ -9,8 +9,8 @@
       general:"Ошибка"
     },
 	legToggle:{
-	  up:"Ж_MAP LEGEND â–²_Я",
-	  down:"Ж_MAP LEGEND â–¼_Я"
+	  up:"ЛЕГЕНДА КАРТЫ â–²",
+	  down:"ЛЕГЕНДА КАРТЫ â–¼"
 	},
 	loading:{
 		message: "Загрузка карты"

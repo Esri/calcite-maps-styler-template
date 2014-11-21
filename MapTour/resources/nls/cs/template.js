@@ -68,7 +68,7 @@
 				dataPicError1: "Prohlídky map nyní vyžadují, aby URL obrázků měly jednu z těchto přípon: jp(e)g, png, gif nebo bmp.",
 				dataPicError2: "Tento požadavek nebude mít vliv na existující publikované prohlídky mapy. Aby však bylo možné používat interaktivní nástroj pro tvorbu, je nutné nejprve vyřešit problém s URL provedením jedné z následujících akcí:",
 				dataPicError3: "Upravit URL",
-				dataPicError4: "Ř_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_ů.",
+				dataPicError4: "Tato možnost přidá na konec nepodporovaných URL obrázků parametr <i>#isImage</i>. Většina serverů dodatky k adresám URL podporuje. Po provedení této akce je vhodné si navigací mezi body ověřit, zda jsou aktualizované URL obrázků funkční. Pokud se všechny obrázky načtou, můžete prohlídku mapy uložit. Pokud jsou <b>některé obrázky nefunkční, neukládejte prohlídku mapy</b>. Namísto toho znovu načtěte nástroj pro tvorbu a proveďte druhou nabídnutou akci.",
 				dataPicError5: "Omezit prohlídku na obrázky",
 				dataPicError6: "Tato možnost způsobí, že budou všechny URL adresy považovány za obrázky. Pomocí interaktivního nástroje pro tvorbu však nebude možné přidávat videa. Pokud se v budoucnosti rozhodnete přidávat videa, lze tuto akci vrátit zpět.",
 				dataPicError7: "Vaše prohlídka mapy byla omezena na obrázky, není možné používat videa. Pokud se rozhodnete toto omezení odebrat, před uložením prohlídky se ujistěte, že se všechny obrázky stále správně načítají. V případě potřeby budete moci toto omezení později znovu obnovit.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Obrázek",
 				addLabelThumbUrl: "Miniatura",
 				addTextPlaceholderUrl: "Zadejte URL obrázku.",
-				addTextPlaceholderUrl2: "Ř_Enter a YouTube page URL_ů",
+				addTextPlaceholderUrl2: "Zadejte URL YouTube stránky.",
 				addTextPlaceholderUrl3: "Zadejte URL stránky Vimeo.",
 				addTextPlaceholderUrl4: "Zadejte URL pro vložení videa.",
 				addLabelVideo: "Video",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Resetovat výběr polí.",
 				settingsExtentExplain: "Prostřednictvím následující interaktivní mapy nastavte výchozí rozsah prohlídky mapy.",
 				settingsExtentExplainBottom: "Vámi definovaný rozsah upraví počáteční rozsah vaší webové mapy. Pokud rozsah neobsahuje první bod prohlídky, nepoužije se. Prohlídka se v takovém případě otevře vycentrovaná na první bod.",
-				settingsExtentDateLineError: "Ř_The extent cannot be across the meridian of 180Â° longitude_ů",
+				settingsExtentDateLineError: "Rozsah nesmí přesahovat 180° zeměpisné délky.",
 				settingsExtentDateLineError2: "Při výpočtu rozsahu došlo k chybě.",
 				settingsExtentDrawBtn: "Určit nový rozsah",
 				settingsExtentModifyBtn: "Upravit rozsah",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Použít"
 			},
 			headerJS:{
-				editMe: "Ř_Edit me_ů!",
+				editMe: "Edituj mě!",
 				templateTitle: "Nastavit název šablony",
 				templateSubtitle: "Nastavit podnadpis šablony"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Import byl úspěšný. Načítání"
 			},
 			viewYoutube: {
-				title: "Ř_YouTube import_ů",
+				title: "Import z YouTube",
 				header: "Zadejte uživatelské jméno YouTube, abyste našli veřejně sdílená videa.",
-				pageInputLbl: "Ř_Enter a YouTube user name_ů",
+				pageInputLbl: "Zadejte uživatelské jméno YouTube.",
 				lookupMsgError: "Uživatel nenalezen",
-				howToFind: "Ř_How to find a YouTube user name_ů",
+				howToFind: "Jak najít uživatelské jméno YouTube",
 				howToFind2: "Uživatelské jméno se zobrazuje pod videi",
 				found: "Nalezeno",
 				noData: "Nenalezena žádná veřejná videa"
@@ -442,12 +442,12 @@
 					div172: "Pokud jsou pole obrázku a miniatury přítomny, budou vždy použity a přílohy feature service nebudou dotazovány.",
 					div173: "Vzorové soubory CSV a shapefile můžete stáhnout z",
 					div18: "Vytváření hostovaných Feature Service ze souboru CSV nebo shapefile",
-					div19: "Ř_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_ů.",
-					div20: "Ř_Supported picture formats and videos_ů",
-					div21: "Ř_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_ů.",
+					div19: "Při vytváření hostovaných služeb Feature Service ze souboru CSV nebo shapefile nejsou přílohy ve výchozím nastavení povoleny. Chcete-li je povolit, otevřete stránku podrobností služby Feature Service a klikněte na malou šipku v sekci vrstev. Daná možnost se zobrazí. Prohlídka map bude nadále používat obrázky a miniatury, na které odkazujete prostřednictvím atributů. Pokud chcete obrázky nahrát jako přílohy služby Feature Service, bude to volitelně možno provést dvěma tlačítky na panelu obrázku (Změnit obrázek a Změnit miniaturu).",
+					div20: "Podporované formáty obrázků a videí",
+					div21: "Podporované formáty obrázků: <b>jpg, jpeg, png, gif a bmp</b>. Pokud multimediální soubor nekončí touto příponou, bude jej prohlídka mapy považovat za video (mimo případy, kdy je používána služba Feature Service, viz níže).",
 					div22: "Šablona prohlídky mapy neobsahuje přehrávač videí, je nutné použít externí přehrávač videí poskytovaný některou službou pro hosting videí (najděte možnost vložení videa a zkopírujte adresu URL obsaženou v daném kódu). Chcete-li videa hostovat sami, můžete vytvořit html stránku, která obsahuje přehrávač videí jako např. <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "Interaktivní nástroj pro tvorbu neobsahuje dialogové rozhraní pro přidání videa při používání feature service s přílohami, ale je možné tak učinit úpravou vašich dat mimo nástroj pro tvorbu. Pokud ve webovém prohlížeči na stránkách arcgis.com upravíte pole obrázků tak, aby odkazovala na externí video, a přidáte na konec adresy URL speciální parametr (#isVideo), budou vaše média považována za video.",
-					div24: "Ř_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_ů."
+					div24: "Mějte na paměti, že je stále nutné mít dvě platné přílohy s obrázky, jinak bod nebude použit. U příloh služby Feature Service bez polí pro obrázek a miniaturu nelze používat videa."
 				},
 				tab3: {
 					title: "Přizpůsobení",
@@ -487,7 +487,7 @@
 					div2a: "Sdílení prohlídky v nástroji pro tvorbu",
 					div2b: "Tlačítko SDÍLET aktualizuje položky aplikace a webové mapy. Pokud jsou vaše data prohlídky uložena v položce služby Feature Service, bude také aktualizována. Pokud jste přidali další vrstvy v prohlížeči map ArcGIS.com, nebudou aktualizovány. To může mít za následek, že prohlídka nebude sdílena podle očekávání. Položky, které již mají vyžadovaná (nebo vyšší) oprávnění, nebudou aktualizovány.",
 					div2c: "Sdílení prohlídky přes ArcGIS Online",
-					div2d: "Ř_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_ů.",
+					div2d: "Sdílíte-li aplikaci přes ArcGIS Online, budete v případě potřeby požádáni, abyste aktualizovali související zdroje (webovou mapu, službu Feature Service, dekorační vrstvu), které nejsou sdíleny stejným způsobem. Pokud je prohlídka mapy veřejná a jeden z vašich zdrojů není sdílen s publikem, uživatelé budou přesměrováni na přihlašovací stránku ArcGIS Online.",
 					div3t: "Bezpečnost Feature Service",
 					div3a: "Pokud používáte hostovanou feature service vytvořenou nástrojem pro tvorbu prohlídek map, bude za vás aplikace spravovat zabezpečení služby. Zůstanete jediným uživatelem s oprávněním k editaci, i kdy budete službu sdílet veřejně.",
 					div3t2: "Před sdílením prohlídky s vaším publikem",

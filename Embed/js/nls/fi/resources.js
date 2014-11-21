@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "Å_Location could not be found_ö",
-                "notWhatYouWanted": "Å_Not what you wanted_ö?",
-                "selectAnother": "Å_Select another location_ö",
-                "currentLocation": "Å_Current Location_ö",
-                "title": "Å_Location_ö"
+                "error": "Sijaintia ei löytynyt",
+                "notWhatYouWanted": "Etkö löytänyt etsimääsi?",
+                "selectAnother": "Valitse toinen sijainti",
+                "currentLocation": "Nykyinen sijainti",
+                "title": "Sijainti"
             },
             "basemap":{
-                    "label": "Å_Basemap_ö",
-                    "title": "Å_Select a Basemap_ö"
+                    "label": "Taustakartta",
+                    "title": "Valitse taustakartta"
             },
             "legend":{
-                "title": "Å_Legend_ö"
+                "title": "Selite"
             },
             "details":{
-                "title": "Å_Map Details_ö",
-                "error": "Å_Update the web map description with the details to display in this section_ö."
+                "title": "Kartan tiedot",
+                "error": "Päivitä Web-kartan kuvaus tässä osassa näytettävillä tiedoilla."
             },
             "popup": {
-                "title": "Å_Info_ö",
-                "instructions": "Å_Select a feature on the map to view details_ö."
+                "title": "Tiedot",
+                "instructions": "Voit katsella tietoja valitsemalla kohteen kartalta."
             }
 
         },
         "map": {
-            "error": "Å_Unable to create map_ö"
+            "error": "Karttaa ei voi luoda"
         }
     })
 );

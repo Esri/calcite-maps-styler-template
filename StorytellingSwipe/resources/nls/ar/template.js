@@ -16,7 +16,7 @@
 				portalSelf: "خطأ فادح: فشل في الحصول على تكوين المدخل",
 				invalidConfig: "خطأ فادح: تكوين غير صحيح",
 				invalidConfigNoWebmap: "خطأ فادح: تكوين غير صحيح (لا توجد خرائط ويب محددة)",
-				createMap: "تعذر إنشاء الخريطة",
+				createMap: "يتعذر إنشاء الخريطة",
 				invalidApp: "خطأ فادح: لا يمكن تحميل التطبيق",
 				initMobile: "مرحبًا بك في تطبيق خريطة السحب. تعذر تكوين التطبيق. المنشئ التفاعلي غير مدعوم على أجهزة الجوال.",
 				noBuilderIE8: "منشئ السحب التفاعلي غير مدعوم على Internet Explorer فيما قبل الإصدار 9.",
@@ -71,7 +71,7 @@
 				signInTwo: "لحفظ التطبيق"
 			},
 			header:{
-				editMe: "حررني!",
+				editMe: "تحرير!",
 				templateTitle: "تحديد عنوان القالب",
 				templateSubtitle: "تحديد العنوان الفرعي للقالب"
 			},
@@ -122,7 +122,7 @@
 			},
 			swipeSidePanel: {
 				editTooltip: "تعيين وصف اللوحة الجانبية",
-				editMe: "حررني!",
+				editMe: "تحرير!",
 				legendTitle: "مفتاح الخريطة"
 			},
 			infoWindow: {
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "راجع مثال على التطبيق مع سحب السلاسل هنا",
 				preview: "معاينة واجهة المستخدم",
 				settingsLocateButtonExplain: "يتم دعم هذه الوظيفة على معظم أجهزة الجوال ومستعرضات سطح المكتب (بما في ذلك Internet Explorer 9+(.",
-				settingsLocateButton: "تمكين زر 'تحديد الموقع' في المستعرضات المدعومة",
+				settingsLocateButton: "تمكين زر \'تحديد الموقع\' في المستعرضات المدعومة",
 				settingsAddressSearch: "تمكين أداة البحث عن العنوان"
 			},
 			settingsSwipePopup: {
@@ -263,10 +263,10 @@
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "المنظمة",
+					organizationLabel: "المؤسسة",
 					onlineLabel: "ArcGIS Online",
 					contentLabel: "المحتوى",
-					favoritesLabel: "المفضّلات"
+					favoritesLabel: "المفضلات"
 				},
 				title: "تحديد خريطة الويب",
 				searchTitle: "بحث",

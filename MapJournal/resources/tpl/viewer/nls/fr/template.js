@@ -53,7 +53,7 @@
 				back: "Retour"
 			},
 			headerFromCommon: {
-				storymapsText: "Carte de narration",
+				storymapsText: "Une Story Map",
 				builderButton: "Modifier",
 				bitlyTooltip: "Obtenir un lien court vers l\'application",
 				templateTitle: "Définir le titre du modèle",
@@ -70,8 +70,8 @@
 				copy: "Copier",
 				copied: "Copié",
 				open: "Ouvrir",
-				embed: "æ_Embed in web page_Â",
-				embedExplain: "æ_Use the following HTML code to embed the journal in a web page_Â.",
+				embed: "Incorporer dans une page Web",
+				embedExplain: "Utilisez le code HTML suivant pour incorporer le journal dans une page Web.",
 				size: "Taille (largeur/hauteur) :"
 			}
         }

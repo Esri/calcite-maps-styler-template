@@ -9,8 +9,8 @@
       general:"Fout"
     },
 	legToggle:{
-	  up:"Ĳ_MAP LEGEND â–²_ä",
-	  down:"Ĳ_MAP LEGEND â–¼_ä"
+	  up:"KAARTLEGENDA â-²",
+	  down:"KAARTLEGENDA â-¼"
 	},
 	loading:{
 		message: "Kaart laden"

@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Valgt objekt",
                 "layerHelpTextMessage": "Denne applikation kræver et lag med numeriske felter",
                 "alertMessage": {
-                    "resetVariableMessage": "ø_Are you sure you want to reset variable_å?",
+                    "resetVariableMessage": "Er du sikker på, at du vil nulstille variabel?",
                     "emptyAppTitleMessage": "Applikationstitel kan ikke være tom",
                     "emptyDescriptionMessage": "Beskrivelse kan ikke være tom",
                     "maxVariableSelection": "Du kan ikke vælge mere end 25 undervariabler",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "Ændringer, der ikke er gemt",
                     "failMessage": "Kunne ikke opdatere element",
                     "saveChangesAlert": "Vil du gemme ændringerne?",
-                    "variableLabelValidation": "ø_Variable label cannot be empty_å",
-                    "subVariableLabelValidation": "ø_Sub variable label cannot be empty_å"
+                    "variableLabelValidation": "Variabel-etiket kan ikke være tom",
+                    "subVariableLabelValidation": "Undervariabel-etiket kan ikke være tom"
                     }
             }
         }

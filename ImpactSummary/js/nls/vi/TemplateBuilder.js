@@ -16,7 +16,7 @@
                 "layerLabelText": "Lớp",
                 "noLayerFoundText": "Không tìm thấy Lớp nào",
                 "selectLayer": "Chọn Lớp",
-                "applicationSettingText": "Cài đặt ứng dụng",
+                "applicationSettingText": "Thiết lập ứng dụng",
                 "summaryAttrAscendingOrderTooltip": "Tăng dần",
                 "onStartLabel": "Bắt đầu",
                 "selectVariableText": "Chọn Biến A",
@@ -46,10 +46,10 @@
                 "nextButtonText": "Tiếp",
                 "prevButtonText": "Trước",
                 "enterLabelText": "Nhập Nhãn",
-                "SelectedFeatureText": "Yếu tố được chọn",
+                "SelectedFeatureText": "Đối tượng được chọn",
                 "layerHelpTextMessage": "Ứng dụng này yêu cầu một lớp có các trường số",
                 "alertMessage": {
-                    "resetVariableMessage": "Đ_Are you sure you want to reset variable_ớ?",
+                    "resetVariableMessage": "Bạn có chắc chắn muốn đặt lại biến số không?",
                     "emptyAppTitleMessage": "Tên ứng dụng không được trống",
                     "emptyDescriptionMessage": "Mô tả không được trống",
                     "maxVariableSelection": "Bạn không thể chọn nhiều hơn 25 biến phụ",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "Thay đổi chưa được lưu",
                     "failMessage": "Không thể cập nhật mục thành công",
                     "saveChangesAlert": "Bạn có muốn lưu thay đổi không?",
-                    "variableLabelValidation": "Đ_Variable label cannot be empty_ớ",
-                    "subVariableLabelValidation": "Đ_Sub variable label cannot be empty_ớ"
+                    "variableLabelValidation": "Nhãn biến số không được trống",
+                    "subVariableLabelValidation": "Nhãn biến số phụ không được trống"
                     }
             }
         }

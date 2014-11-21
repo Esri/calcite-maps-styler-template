@@ -1,30 +1,30 @@
 ﻿define({
   root: ({
     display: {
-      elevationProfileTitle: "Ж_Elevations Profile_Я",
-      showMe: "Ж_show me_Я",
-      selectLine: "Ж_<b>Select</b> a feature in the map_Я.",
-      popupRequirement: "Ж_NOTE: the feature must be in a layer with Popups enabled_Я.",
-      digitizeDistanceMeasureTool: "Ж_Use the <b>Measure</b> tools_Я.",
-      selectFeatureHelpUrl: "Ж_http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D_Я",
-      measureToolHelpUrl: "Ж_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000_Я",
-      hoverOver: "Ж_Hover over or touch the Elevations Profile chart to display elevations and show location on map_Я."
+      elevationProfileTitle: "Профиль рельефа",
+      showMe: "показать",
+      selectLine: "<b>Выберите</b> объект на карте.",
+      popupRequirement: "Примечание: объект должен быть в слое с включенными всплывающими окнами.",
+      digitizeDistanceMeasureTool: "Используйте инструменты группы <b>Измерение</b>.",
+      selectFeatureHelpUrl: "http://help.arcgis.com/ru/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
+      measureToolHelpUrl: "http://help.arcgis.com/ru/arcgisonline/help/index.html#//010q00000096000000",
+      hoverOver: "Наведите курсор или коснитесь схемы профиля рельефа для отображения высот и показа местоположения на карте."
     },
     buttons: {
-      measureLabel: "Ж_Measure_Я",
-      helpLabel: "Ж_Help_Я"
+      measureLabel: "Измерить",
+      helpLabel: "Справка"
     },
     chart: {
-      title: "Ж_Elevations Profile_Я",
-      demResolution: "Ж_DEM Resolution_Я",
-      elevationTitleTemplate: "Ж_Elevation in {0}_Я",
-      distanceTitleTemplate: "Ж_Distance in {0}_Я",
-      gainLossTemplate: "Ж_Min:{min}   Max:{max}   Start:{start}   End:{end}   Change:{gainloss}_Я"
+      title: "Профиль рельефа",
+      demResolution: "Разрешение ЦМР",
+      elevationTitleTemplate: "Высота в {0}",
+      distanceTitleTemplate: "Расстояние в {0}",
+      gainLossTemplate: "Мин:{min}   Макс:{max}   Начало:{start}   Конец:{end}   Изменено:{gainloss}"
     },
     errors: {
-      MissingConstructorParameters: "Ж_Missing constructor parameter_Я.",
-      InvalidConfiguration: "Ж_Invalid configuration_Я.",
-      UnableToProcessResults: "Ж_Unable to process analysis results_Я."
+      MissingConstructorParameters: "Пропуск параметра конструктора.",
+      InvalidConfiguration: "Некорректная конфигурация",
+      UnableToProcessResults: "Не удалось обработать результаты анализа."
     }
   }),
   "ar": 1,

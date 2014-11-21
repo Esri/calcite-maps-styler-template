@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "ä_Unable to create map_Ü"
+         "error": "Karte kann nicht erstellt werden"
       },
       "location": {
-         "name": "ä_Name_Ü",
-         "current": "ä_Current Location_Ü",
-         "address": "ä_Address_Ü",
-         "latitude": "ä_Latitude_Ü",
-         "longitude": "ä_Longitude_Ü",
-         "use": "ä_Use this location_Ü",
-         "error": "ä_Unable to use this location_Ü"
+         "name": "Name",
+         "current": "Aktuelle Position",
+         "address": "Adresse",
+         "latitude": "Breitengrad",
+         "longitude": "Längengrad",
+         "use": "Diese Position verwenden",
+         "error": "Diese Position kann nicht verwendet werden"
       },
       "tooltips": {
-         "toggle": "ä_Show/Hide_Ü",
-         "reset": "ä_Reset_Ü",
-         "locate": "ä_Find my location_Ü",
-         "directions": "ä_Directions_Ü",
-         "filter": "ä_Filter_Ü",
-         "close": "ä_Close_Ü",
-         "reverse": "ä_Reverse_Ü"
+         "toggle": "Ein-/Ausblenden",
+         "reset": "Zurücksetzen",
+         "locate": "Eigenen Standort suchen",
+         "directions": "Wegbeschreibung",
+         "filter": "Filter",
+         "close": "Schließen",
+         "reverse": "Umkehren"
       }
    })
 );

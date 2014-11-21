@@ -9,8 +9,8 @@
       general:"Kļūda"
     },
 	legToggle:{
-	  up:"ķ_MAP LEGEND â–²_ū",
-	  down:"ķ_MAP LEGEND â–¼_ū"
+	  up:"KARTES LEĢENDA â–²",
+	  down:"KARTES LEĢENDA â–¼"
 	},
 	loading:{
 		message: "Ielādē karti"

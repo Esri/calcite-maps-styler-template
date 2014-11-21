@@ -11,7 +11,7 @@
             layerNotFound: "Laget findes ikke i webkortet",
             fieldNotFound: "Felt ikke fundet",
             popupNotSet: "Pop-ups er ikke aktiveret for dette lag",
-            noLayersSet: "ø_No layers defined in the config, the search box will not work_å"
+            noLayersSet: "Der er ikke konfigureret lag i konfigurationen. Søgeboksen fungerer ikke"
         },
         page: {
             title: "Informationssøgning",

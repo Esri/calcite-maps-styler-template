@@ -68,7 +68,7 @@
 				dataPicError1: "マップ ツアーの場合、写真 URL は .jp(e)g、.png、.gif、または .bmp のいずれかの拡張子で終わる必要があります。",
 				dataPicError2: "この要件は、公開された既存のマップ ツアーには適用されません。ただし、対話型ビルダを使用するには、最初に、次の 2 つのアクションのいずれかを実行して、 この URL の問題を解決する必要があります。",
 				dataPicError3: "URL の編集",
-				dataPicError4: "須_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_鷗.",
+				dataPicError4: "この操作では、画像に対応していない URL の末尾に <i>#isImage</i> を追加します。ほとんどのサーバでは URL の文字列追加がサポートされていますが、この操作を実行した後は、ポイントを移動することで、更新した写真の URL が正常に機能することを確認する必要があります。それぞれの写真が読み込まれた場合は、マップ ツアーを保存できます。<b>写真のリンクが切れている場合は、マップ ツアーを保存しないでください。</b>代わりに、ビルダを再び読み込んで、2 番目の操作を実行してください。",
 				dataPicError5: "ツアーを写真に制限",
 				dataPicError6: "このオプションを選択すると、すべての URL が画像と見なされますが、対話型ビルダを利用してビデオを追加できなくなります。このアクションは、今後、ビデオを追加することになった場合に元に戻すことができます。",
 				dataPicError7: "マップ ツアーは写真に制限されているため、ビデオは利用できません。この制限を解除することにした場合は、写真が正常に読み込まれることを確認してから、マップ ツアーを保存してください。この制限は、必要に応じて後で再適用できます。",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "写真",
 				addLabelThumbUrl: "サムネイル",
 				addTextPlaceholderUrl: "イメージの URL の入力",
-				addTextPlaceholderUrl2: "須_Enter a YouTube page URL_鷗",
+				addTextPlaceholderUrl2: "YouTube ページの URL の入力",
 				addTextPlaceholderUrl3: "Vimeo ページの URL の入力",
 				addTextPlaceholderUrl4: "ビデオ埋め込み URL の入力",
 				addLabelVideo: "ビデオ",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "フィールド選択のリセット",
 				settingsExtentExplain: "次の対話型マップを使用して、マップ ツアーの初期範囲を設定します。",
 				settingsExtentExplainBottom: "定義する範囲により、Web マップの初期範囲が変更されます。この範囲は、最初のツアー ポイントを含まない場合は使用されませんので、注意してください。その場合、ツアーは最初のポイントで中央にくるように開きます。",
-				settingsExtentDateLineError: "須_The extent cannot be across the meridian of 180Â° longitude_鷗",
+				settingsExtentDateLineError: "この範囲は、経度 180°の子午線を超えることはできません。",
 				settingsExtentDateLineError2: "範囲を計算中にエラーが発生しました",
 				settingsExtentDrawBtn: "新しい範囲の描画",
 				settingsExtentModifyBtn: "範囲の編集",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "適用"
 			},
 			headerJS:{
-				editMe: "須_Edit me_鷗!",
+				editMe: "編集",
 				templateTitle: "テンプレートのタイトルの設定",
 				templateSubtitle: "テンプレートのサブタイトルの設定"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "インポートに成功しました。読み込んでいます"
 			},
 			viewYoutube: {
-				title: "須_YouTube import_鷗",
+				title: "YouTube のインポート",
 				header: "YouTube のユーザ名を入力してパブリックに共有されているビデオを検索します。",
-				pageInputLbl: "須_Enter a YouTube user name_鷗",
+				pageInputLbl: "YouTube のユーザ名の入力",
 				lookupMsgError: "ユーザが見つかりません",
-				howToFind: "須_How to find a YouTube user name_鷗",
+				howToFind: "YouTube のユーザ名の検索方法",
 				howToFind2: "ビデオの下にユーザ名が表示されます",
 				found: "見つかりました",
 				noData: "パブリックなビデオが見つかりませんでした"
@@ -442,12 +442,12 @@
 					div172: "[写真] フィールドと [サムネイル] フィールドは、存在する場合、常に使用され、フィーチャ サービスのアタッチメントは検索されません。",
 					div173: "CSV とシェープファイルの例は次からダウンロード可能",
 					div18: "CVS またはシェープファイルからのホスト フィーチャ サービスの作成",
-					div19: "須_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_鷗.",
-					div20: "須_Supported picture formats and videos_鷗",
-					div21: "須_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_鷗.",
+					div19: "ホスト フィーチャ サービスを CSV またはシェープファイルから作成した場合、デフォルトではアタッチメントは有効化されません。これを有効化するには、フィーチャ サービスの詳細ページを開きます。そのページの [レイヤ] セクションで小さい矢印をクリックすると、そのオプションが表示されます。マップ ツアーは、属性を介して参照していた写真とサムネイルを引き続き使用します。必要に応じて、写真をフィーチャ サービスのアタッチメントとしてアップロードする場合、[写真] パネル上の 2 つのボタン (\"写真の変更\" と \"サムネイルの変更l\") を使用してそれを実行できます。",
+					div20: "サポートされている写真の形式とビデオ",
+					div21: "サポートされている写真の形式は <b>.jpg、.jpeg、.png、.gif、および .bmp</b> です。メディアがその拡張子で終わらない場合、マップ ツアーはそのメディアをビデオと見なします。ただし、フィーチャ サービスを使用している場合を除きます (下記を参照)。",
 					div22: "マップ ツアー テンプレートにはビデオ プレイヤが含まれていないため、お気に入りのビデオ ホスト サービスで提供される外部ビデオ プレイヤを使用する必要があります (ビデオを埋め込むオプションを見つけ、表示されている URL を指定のコードにコピーします)。ビデオを自分でホストしたい場合は、<a href='http://www.videojs.com/'>Video.js</a> のように、ビデオ プレイヤを含む HTML ページを作成できます。",
 					div23: "対話型ビルダでは、アタッチメントを含むフィーチャ サービスを使用しているときに、ビデオを埋め込むためのダイアログ ボックスが表示されません。しかし、対話型ビルダの外部でデータを編集して、これを行うことができます。arcgis.com マップ ビューアで、外部ビデオをポイントするよう [写真] フィールドを変更し、特別なパラメータ  (#isVideo)  を URL の末尾に追加すると、メディアはビデオと見なされます。",
-					div24: "須_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_鷗."
+					div24: "ただし、2 つの有効な写真のアタッチメントが存在している必要があります。存在していない場合、そのポイントは使用されません。[写真] フィールドと [サムネイル] フィールドが存在しないフィーチャ サービスのアタッチメントを使用している場合、ビデオは使用できません。"
 				},
 				tab3: {
 					title: "カスタマイズ",
@@ -487,7 +487,7 @@
 					div2a: "ビルダを使用したツアーの共有",
 					div2b: "[共有] ボタンを使用すると、アプリケーションと Web マップのアイテムが更新されます。ツアーのデータがフィーチャ サービスのアイテムに保存されている場合、そのアイテムも更新されます。ArcGIS.com マップ ビューアを使用してその他のレイヤを追加した場合、それらのレイヤは更新されません。このため、ツアーが想定通りに共有されない可能性があります。必要 (以上) の権限をすでに持っているアイテムは、更新されません。",
 					div2c: "ArcGIS Online を使用したツアーの共有",
-					div2d: "須_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_鷗.",
+					div2d: "ArcGIS Online を使用してアプリケーションを共有するとき、同じ方法で共有されていない依存するリソース (Web マップ、フィーチャ サービス、デコレーション レイヤ) を更新するか、必要に応じて尋ねられます。マップ ツアーがパブリックである場合にリソースのうちのいずれかが利用者と共有されていないときは、ユーザは ArcGIS Online のログイン ページにリダイレクトされます。",
 					div3t: "フィーチャ サービスのセキュリティ",
 					div3a: "マップ ツアー ビルダによって作成された、ホスト フィーチャ サービスを使用している場合、アプリケーションはサービスのセキュリティを自動的に管理します。サービスをパブリックに共有している場合でも、編集権限を持つのはあなただけです。",
 					div3t2: "利用者とツアーを共有する前に",

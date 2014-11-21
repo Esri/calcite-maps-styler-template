@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "Į_Location could not be found_š",
-                "notWhatYouWanted": "Į_Not what you wanted_š?",
-                "selectAnother": "Į_Select another location_š",
-                "currentLocation": "Į_Current Location_š",
-                "title": "Į_Location_š"
+                "error": "Vietos surasti nepavyko",
+                "notWhatYouWanted": "Ne tai ko norėjote?",
+                "selectAnother": "Pasirinkite kitą vietą",
+                "currentLocation": "dabartinė vieta",
+                "title": "Vieta"
             },
             "basemap":{
-                    "label": "Į_Basemap_š",
-                    "title": "Į_Select a Basemap_š"
+                    "label": "Pagrindo žemėlapis",
+                    "title": "Pasirinkite pagrindo žemėlapį"
             },
             "legend":{
-                "title": "Į_Legend_š"
+                "title": "Legenda"
             },
             "details":{
-                "title": "Į_Map Details_š",
-                "error": "Į_Update the web map description with the details to display in this section_š."
+                "title": "Žemėlapio apibūdinimas",
+                "error": "Atnaujinkite internetinio žemėlapio aprašą, kuris bus rodomas šioje skiltyje."
             },
             "popup": {
-                "title": "Į_Info_š",
-                "instructions": "Į_Select a feature on the map to view details_š."
+                "title": "Informacija",
+                "instructions": "Informacijos peržiūrai žemėlapyje pasirinkite elementą."
             }
 
         },
         "map": {
-            "error": "Į_Unable to create map_š"
+            "error": "Žemėlapio sukurti nepavyko"
         }
     })
 );

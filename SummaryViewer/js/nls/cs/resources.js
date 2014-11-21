@@ -1,12 +1,12 @@
 ﻿define(
     ({
       "map": {
-         "error": "Ř_Unable to create map_ů"
+         "error": "Nelze vytvořit mapu"
       },
       "tooltips": {
-         "logo": "Ř_Logo_ů",
-         "switchbasemap": "Ř_Switch base map_ů",
-         "close": "Ř_Close_ů"
+         "logo": "Logo",
+         "switchbasemap": "Přepnout podkladovou mapu",
+         "close": "Zavřít"
       }
    })
 );

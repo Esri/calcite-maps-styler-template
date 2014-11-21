@@ -11,7 +11,7 @@
             layerNotFound: "الطبقة ليست موجودة في خريطة الويب",
             fieldNotFound: "يتعذر إيجاد الحقل",
             popupNotSet: "القائمة المنبثقة ليست ممكنة لهذه الطبقة",
-            noLayersSet: "بيت_No layers defined in the config, the search box will not work_لاحقة"
+            noLayersSet: "لم يتم تحديد طبقات في التكوين، لن يعمل مربع البحث."
         },
         page: {
             title: "البحث عن المعلومات",

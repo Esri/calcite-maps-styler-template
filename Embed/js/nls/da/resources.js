@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "ø_Location could not be found_å",
-                "notWhatYouWanted": "ø_Not what you wanted_å?",
-                "selectAnother": "ø_Select another location_å",
-                "currentLocation": "ø_Current Location_å",
-                "title": "ø_Location_å"
+                "error": "Placeringen blev ikke fundet",
+                "notWhatYouWanted": "Var det ikke det, du ville?",
+                "selectAnother": "Vælg et andet sted",
+                "currentLocation": "Nuværende placering",
+                "title": "Placering"
             },
             "basemap":{
-                    "label": "ø_Basemap_å",
-                    "title": "ø_Select a Basemap_å"
+                    "label": "Baggrundskort",
+                    "title": "Vælg et baggrundskort"
             },
             "legend":{
-                "title": "ø_Legend_å"
+                "title": "Signaturforklaring"
             },
             "details":{
-                "title": "ø_Map Details_å",
-                "error": "ø_Update the web map description with the details to display in this section_å."
+                "title": "Kortoplysninger",
+                "error": "Opdatér webkortbeskrivelsen med de oplysninger, der skal vises i denne sektion."
             },
             "popup": {
-                "title": "ø_Info_å",
-                "instructions": "ø_Select a feature on the map to view details_å."
+                "title": "Oplysninger",
+                "instructions": "Vælg et objekt på kortet for at få vist oplysninger."
             }
 
         },
         "map": {
-            "error": "ø_Unable to create map_å"
+            "error": "Kan ikke oprette kort"
         }
     })
 );

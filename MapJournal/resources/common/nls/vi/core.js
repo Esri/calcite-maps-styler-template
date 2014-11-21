@@ -28,8 +28,8 @@
 				buttonSettings: "Thiết lập",
 				buttonHelp: "Trợ giúp",
 				buttonPreview: "Xem Trực tiếp",
-				tooltipFirstSave: "Đ_This isn't available until you save_ớ.",
-				tooltipNotShared: "Đ_This isn't available until you share_ớ.",
+				tooltipFirstSave: "Ứng dụng này không khả dụng cho đến khi bạn lưu.",
+				tooltipNotShared: "Ứng dụng này không khả dụng cho đến khi bạn chia sẻ.",
 				noPendingChange: "Không có thay đổi chờ xử lý",
 				unSavedChangePlural: "Thay đổi chờ xử lý",
 				closeWithPendingChange: "Bạn có chắc chắn muốn xác nhận hành động này không? Các thay đổi của bạn sẽ bị mất.",
@@ -40,10 +40,10 @@
 				shareStatus4: "Ứng dụng không được chia sẻ"
 			},
 			saveError: {
-				title: "Đ_Error saving the application_ớ",
-				err1Div1: "Đ_The application can't be saved because you already have another item with the same name (see your <a class='linkagolroot' target='_blank'>content folder</a>)_ớ.",
-				err1Div2: "Đ_Please modify the title of your application and then save it_ớ.",
-				btnOk: "Đ_Edit the application title_ớ"
+				title: "Lỗi khi lưu ứng dụng",
+				err1Div1: "Không thể lưu ứng dụng vì bạn đã có một mục khác có cùng tên (xem <a class='linkagolroot' target='_blank'>thư mục nội dung</a> của bạn).",
+				err1Div2: "Vui lòng sửa đổi tiêu đề ứng dụng của bạn, sau đó lưu lại.",
+				btnOk: "Chỉnh sửa tiêu đề ứng dụng"
 			},
 			share: {
 				firstSaveTitle: "Đã lưu ứng dụng thành công",
@@ -66,7 +66,7 @@
 				shareHeader2: "Các thành viên trong tổ chức của bạn có thể truy cập ứng dụng (yêu cầu đăng nhập).",
 				shareLinkCopy: "Sao chép",
 				shareLinkCopied: "Đã sao chép",
-				shareQ0: "Đ_How do I embed the application in a web page_ớ?",
+				shareQ0: "Làm cách nào để nhúng ứng dụng vào một trang web?",
 				shareQ1Opt1: "Làm cách nào để giữ ứng dụng riêng tư?",
 				shareQ1Opt2: "Làm cách nào để giữ ứng dụng riêng tư hoặc chia sẻ công khai?",
 				shareA1: "Sử dụng %SHAREIMG% trên <a href='%LINK1%' target='_blank'>trang mục ứng dụng</a>.",
@@ -83,7 +83,7 @@
 			settingsLayout: {
 				title: "Bố cục",
 				explain: "Bạn muốn sử dụng bố cục nào?",
-				explainInit: "Bạn có thể thay đổi bố cục bất kỳ lúc nào từ hộp thoại thiết đặt.",
+				explainInit: "Bạn có thể thay đổi bố cục bất kỳ lúc nào từ hộp thoại thiết lập.",
 				viewExample: "Xem ví dụ trực tiếp"
 			},
 			settingsTheme: {
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Tùy chỉnh liên kết đầu mục.",
 				logoSocialText: "Văn bản",
 				logoSocialLink: "Liên kết",
-				lblSmallHeader: "Đ_Use compact header (no subtitle)_ớ"
+				lblSmallHeader: "Sử dụng đầu trang ngắn gọn (không có phụ đề)"
 			},
 			header: {
-				title: "Đ_Edit the title of your %TPL_NAME%_ớ",
-				subtitle: "Đ_Edit the subtitle of your %TPL_NAME%_ớ"
+				title: "Chỉnh sửa tiêu đề %TPL_NAME% của bạn",
+				subtitle: "Chỉnh sửa phụ đề %TPL_NAME% của bạn"
 			}
 		}
 	})

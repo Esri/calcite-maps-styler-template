@@ -9,8 +9,8 @@
       general:"Errore"
     },
 	legToggle:{
-	  up:"é_MAP LEGEND â–²_È",
-	  down:"é_MAP LEGEND â–¼_È"
+	  up:"LEGENDA MAPPA ▲",
+	  down:"LEGENDA MAPPA ▼"
 	},
 	loading:{
 		message: "Caricamento mappa in corso"

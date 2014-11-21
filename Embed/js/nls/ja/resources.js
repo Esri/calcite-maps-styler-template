@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "須_Location could not be found_鷗",
-                "notWhatYouWanted": "須_Not what you wanted_鷗?",
-                "selectAnother": "須_Select another location_鷗",
-                "currentLocation": "須_Current Location_鷗",
-                "title": "須_Location_鷗"
+                "error": "場所が見つかりませんでした",
+                "notWhatYouWanted": "他の住所の候補を表示しますか？",
+                "selectAnother": "別の場所を選択",
+                "currentLocation": "現在の位置",
+                "title": "位置"
             },
             "basemap":{
-                    "label": "須_Basemap_鷗",
-                    "title": "須_Select a Basemap_鷗"
+                    "label": "ベースマップ",
+                    "title": "ベースマップの選択"
             },
             "legend":{
-                "title": "須_Legend_鷗"
+                "title": "凡例"
             },
             "details":{
-                "title": "須_Map Details_鷗",
-                "error": "須_Update the web map description with the details to display in this section_鷗."
+                "title": "マップの詳細",
+                "error": "このセクションに表示する、詳細を記した Web マップの説明を更新します。"
             },
             "popup": {
-                "title": "須_Info_鷗",
-                "instructions": "須_Select a feature on the map to view details_鷗."
+                "title": "情報",
+                "instructions": "マップ上のフィーチャを選択して詳細を表示します。"
             }
 
         },
         "map": {
-            "error": "須_Unable to create map_鷗"
+            "error": "マップを作成できません"
         }
     })
 );

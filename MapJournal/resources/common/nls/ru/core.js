@@ -28,8 +28,8 @@
 				buttonSettings: "Настройки",
 				buttonHelp: "Справка",
 				buttonPreview: "Просмотр текущего",
-				tooltipFirstSave: "Ж_This isn't available until you save_Я.",
-				tooltipNotShared: "Ж_This isn't available until you share_Я.",
+				tooltipFirstSave: "Недоступно, пока приложение не будет сохранено.",
+				tooltipNotShared: "Недоступно, пока приложение не будет опубликовано.",
 				noPendingChange: "Нет предполагаемых изменений",
 				unSavedChangePlural: "Ожидание изменений",
 				closeWithPendingChange: "Вы действительно хотите подтвердить это действие? Все изменения будут потеряны.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Ошибка при сохранении приложения",
 				err1Div1: "Это приложение может быть сохранено, так как у вас уже есть элемент с тем же именем (см. вашу <a class='linkagolroot' target='_blank'>ресурсную папку</a>).",
-				err1Div2: "Ж_Please modify the title of your application and then save it_Я.",
-				btnOk: "Ж_Edit the application title_Я"
+				err1Div2: "Измените заголовок приложения, затем сохраните его.",
+				btnOk: "Изменить заголовок приложения"
 			},
 			share: {
 				firstSaveTitle: "Приложение успешно сохранено",
@@ -66,7 +66,7 @@
 				shareHeader2: "Ваше приложение доступно для сотрудников вашей организации (требуется учетная запись).",
 				shareLinkCopy: "Копировать",
 				shareLinkCopied: "Скопировано",
-				shareQ0: "Ж_How do I embed the application in a web page_Я?",
+				shareQ0: "Как встроить приложение на веб-страницу?",
 				shareQ1Opt1: "Как сохранить приложение частным?",
 				shareQ1Opt2: "Как я могу сохранить частный доступ к приложению или предоставить к нему общий доступ?",
 				shareA1: "Используйте %SHAREIMG% на странице элемента приложения a href='%LINK1%' target='_blank'></a>.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Настройте ссылку заголовка.",
 				logoSocialText: "Текст",
 				logoSocialLink: "Ссылка",
-				lblSmallHeader: "Ж_Use compact header (no subtitle)_Я"
+				lblSmallHeader: "Использовать компактный заголовок (без подзаголовка)"
 			},
 			header: {
-				title: "Ж_Edit the title of your %TPL_NAME%_Я",
-				subtitle: "Ж_Edit the subtitle of your %TPL_NAME%_Я"
+				title: "Отредактируйте заголовок вашего %TPL_NAME%",
+				subtitle: "Отредактируйте подзаголовок вашего %TPL_NAME%"
 			}
 		}
 	})

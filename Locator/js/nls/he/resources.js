@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "כן_Unable to create map_ש"
+         "error": "לא ניתן ליצור מפה"
       },
       "location": {
-         "name": "כן_Name_ש",
-         "current": "כן_Current Location_ש",
-         "address": "כן_Address_ש",
-         "latitude": "כן_Latitude_ש",
-         "longitude": "כן_Longitude_ש",
-         "use": "כן_Use this location_ש",
-         "error": "כן_Unable to use this location_ש"
+         "name": "שם",
+         "current": "מיקום נוכחי",
+         "address": "כתובת",
+         "latitude": "קו רוחב",
+         "longitude": "קו אורך",
+         "use": "השתמש במיקום זה",
+         "error": "לא ניתן להשתמש במיקום זה"
       },
       "tooltips": {
-         "toggle": "כן_Show/Hide_ש",
-         "reset": "כן_Reset_ש",
-         "locate": "כן_Find my location_ש",
-         "directions": "כן_Directions_ש",
-         "filter": "כן_Filter_ש",
-         "close": "כן_Close_ש",
-         "reverse": "כן_Reverse_ש"
+         "toggle": "הצג/הסתר",
+         "reset": "אפס",
+         "locate": "מצא את המיקום שלי",
+         "directions": "כיוונים",
+         "filter": "מסנן",
+         "close": "סגור",
+         "reverse": "הפוך"
       }
    })
 );

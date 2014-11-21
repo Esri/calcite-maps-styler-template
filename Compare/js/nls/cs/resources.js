@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "Ř_Unable to create map_ů"
+            error: "Nelze vytvořit mapu"
         },
         tools: {
             info: {
-                label: "Ř_Info_ů",
-                tooltip: "Ř_Toggle map info_ů"
+                label: "Informace",
+                tooltip: "Přepnout informace o mapě"
             },
             sync: {
-                label: "Ř_Sync Map Extent_ů",
-                tooltip: "Ř_Sync to extent of this map_ů"
+                label: "Synchronizovat rozsah mapy",
+                tooltip: "Synchronizuje zobrazení s rozsahem této mapy."
             }
         }
     })

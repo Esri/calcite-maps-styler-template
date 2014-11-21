@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "Į_Unable to create map_š"
+            error: "Žemėlapio sukurti nepavyko"
         },
         tools: {
             info: {
-                label: "Į_Info_š",
-                tooltip: "Į_Toggle map info_š"
+                label: "Informacija",
+                tooltip: "Perjungti žemėlapio informaciją"
             },
             sync: {
-                label: "Į_Sync Map Extent_š",
-                tooltip: "Į_Sync to extent of this map_š"
+                label: "Sinchronizuoti žemėlapio aprėptį",
+                tooltip: "Sinchronizuokite su šio žemėlapio aprėptimi"
             }
         }
     })

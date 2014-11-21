@@ -11,7 +11,7 @@
             layerNotFound: "השכבה לא נימצאת ב webmap",
             fieldNotFound: "שדה לא נמצא",
             popupNotSet: "חלון קופץ לא אפשרי לשכבה זו.",
-            noLayersSet: "כן_No layers defined in the config, the search box will not work_ש"
+            noLayersSet: "לא הוגדרו שכבות בתצורה, תיבת החיפוש לא תפעל"
         },
         page: {
             title: "בדיקת מידע",

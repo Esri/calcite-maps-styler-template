@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ķ_Media_ū",
-				lblSelect2: "ķ_Content_ū",
-				lblMap: "ķ_Map_ū",
-				lblImage: "ķ_Image_ū",
-				lblVideo: "ķ_Video_ū",
-				lblExternal: "ķ_Web page_ū",
-				disabled: "ķ_This feature has been disabled by the Administrator_ū",
-				url: "ķ_To manually enter the web address of an image_ū",
-				userLookup: "ķ_Load albums_ū",
-				notImplemented: "ķ_Not implemented yet_ū.",
-				noData: "ķ_No public album found_ū"
+				lblSelect1: "Datu nesējs",
+				lblSelect2: "Saturs",
+				lblMap: "Karte",
+				lblImage: "Attēls",
+				lblVideo: "Video",
+				lblExternal: "Web lapa",
+				disabled: "Šo elementu ir atspējojis administrators",
+				url: "Lai manuālie ievadītu attēla web adresi",
+				userLookup: "Ielādēt albumus",
+				notImplemented: "Vēl nav ieviests.",
+				noData: "Nav atrasts publisks albums"
 			},
 			imageSelector: {
-				lblStep1: "ķ_Choose the service_ū",
-				lblStep2: "ķ_Select your media_ū",
-				lblStep3: "ķ_Configure_ū"
+				lblStep1: "Izvēlēties servisu",
+				lblStep2: "Izvēlēties mediju",
+				lblStep3: "Konfigurēt"
 			},
 			imageSelectorHome: {
-				explain: "ķ_Load images from social media, <br /> or directly from a URL_ū"
+				explain: "Ielādējiet attēlus no sociālajiem medijiem<br /> vai tieši no URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "ķ_User name_ū",
-				signInMsg2: "ķ_User not found_ū",
-				loadingFailed: "ķ_Loading failed_ū"
+				userInputLbl: "Lietotāja vārds",
+				signInMsg2: "Lietotājs nav atrasts",
+				loadingFailed: "Ielāde neizdevās"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "ķ_Facebook User_ū",
-				rightHeader: "ķ_Facebook Page_ū",
-				pageExplain: "ķ_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_ū.",
-				pageInputLbl: "ķ_Page name_ū",
-				lookupMsgError: "ķ_Page not found_ū"
+				leftHeader: "Facebook Lietotājs",
+				rightHeader: "Facebook Lapa",
+				pageExplain: "Facebook lapa ir publisks zīmols/produkts vai slavenība, piemēram, <b>esrigis</b>. Lapas nosaukumu var iegūt aiz pirmā / lapas vietrādī URL.",
+				pageInputLbl: "Lapas nosaukums",
+				lookupMsgError: "Lapa nav atrasta"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "ķ_Email or Picasa/Google+ ID_ū",
-				signInMsg2: "ķ_Account not found_ū",
-				howToFind: "ķ_How to find a Picasa or Google+ account ID_ū",
-				howToFind2: "ķ_Copy digits between the first and second '/' of any Picasa or G+ page_ū"
+				userInputLbl: "E-pasta adrese vai Picasa/Google+ ID",
+				signInMsg2: "Konts nav atrasts",
+				howToFind: "Kā atrast Picasa vai Google+ konta ID",
+				howToFind2: "Kopējiet jebkuras Picasa vai G+ lapas ciparus starp pirmo un otro /"
 			},
 			videoSelectorCommon: {
-				check: "ķ_Check_ū",
-				notFound: "ķ_Video not found_ū",
-				found: "ķ_Video found_ū",
-				select: "ķ_Select this video_ū"
+				check: "Pārbaudīt",
+				notFound: "Video nav atrasts",
+				found: "Video atrasts",
+				select: "Atlasīt šo video"
 			},
 			videoSelectorHome: {
-				other: "ķ_Other_ū"
+				other: "Citi"
 			},
 			videoSelectorYoutube: {
-				url: "ķ_URL of a Youtube video_ū",
-				pageInputLbl: "ķ_User name_ū",
-				lookupMsgError: "ķ_User not found_ū",
-				howToFind: "ķ_How to find a YouTube user name_ū",
-				howToFind2: "ķ_User name is displayed under videos_ū",
-				found: "ķ_Found_ū",
-				noData: "ķ_No public videos found_ū"
+				url: "Youtube video URL",
+				pageInputLbl: "Lietotāja vārds",
+				lookupMsgError: "Lietotājs nav atrasts",
+				howToFind: "Kā atrast YouTube lietotāja vārdu",
+				howToFind2: "Lietotāja vārds ir attēlots zem video",
+				found: "Atrasts",
+				noData: "Nav atrasti publiski video"
 			},
 			videoSelectorVimeo: {
-				url: "ķ_URL of a Vimeo video_ū"
+				url: "Vimeo video URL"
 			},
 			videoSelectorOther: {
-				explain1: "ķ_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ū.",
-				explain2: "ķ_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_ū.",
-				explain3: "ķ_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_ū.",
-				webpage: "ķ_Web page feature_ū"
+				explain1: "Aplikācija nevar atskaņot neapstrādātus video (piemēram, avi, mpeg), bet var atskaņot mitinātus video failus ar iebūvētiem atskaņotājiem (piemēram, YouTube vai Vimeo).",
+				explain2: "Lielākā daļa video mitināšanas pakalpojumu piedāvā šo funkciju, jums ir jāatrod iespēja iedarināt video, nokopēt saņemto kodu un izmantot %WEBPAGE%.",
+				explain3: "Ja video vēlaties mitināt pats, varat arī izveidot HTML lapu, kurā tiek izmantots video atskaņotājs (piemēram, %EXAMPLE%), mitināt šo lapu un arī izmantot %WEBPAGE%.",
+				webpage: "Web lapas funkcija"
 			},
 			webpageSelectorHome: {
-				lblUrl: "ķ_Webpage URL_ū",
-				lblEmbed: "ķ_Embed code_ū",
-				lblOR: "ķ_OR_ū",
-				lblError1: "ķ_Error, clear one of the two input fields_ū.",
-				lblError2: "ķ_Embed code can only contain one %IFRAMETAG%_ū",
-				configure: "ķ_Configure_ū"
+				lblUrl: "Web lapas URL",
+				lblEmbed: "Iedarināt kodu",
+				lblOR: "VAI",
+				lblError1: "Kļūda, notīriet vienu no diviem ievades laukiem.",
+				lblError2: "Iegultais kods var saturēt tikai vienu %IFRAMETAG%",
+				configure: "Konfigurēt"
 			},
 			mediaConfigure: {
-				lblURL: "ķ_URL_ū",
-				lblURLPH: "ķ_An image URL should start with http:// and end with .jpg or .png_ū",
-				lblURLError: "ķ_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_ū.",
-				lblURLCheck: "ķ_Checking image_ū...",
-				lblLabel: "ķ_Image Caption_ū",
-				lblLabel1: "ķ_Caption_ū",
-				lblLabel2: "ķ_Hover text_ū",
-				lblLabel3: "ķ_None_ū",
-				lblLabelPH: "ķ_Enter some text_ū...",
-				lblMaximize: "ķ_Include a maximize button in the corner of the image_ū",
-				lblMaximizeHelp: "ķ_Recommended only for high quality photos_ū",
-				lblPosition: "ķ_Position_ū",
-				lblPosition1: "ķ_Center_ū",
-				lblPosition2: "ķ_Fill_ū",
-				lblPosition3: "ķ_Fit_ū",
-				lblPosition4: "ķ_Stretch_ū",
-				lblPosition5: "ķ_Custom_ū",
-				tooltipDimension: "ķ_The value can be specified in 'px' or '%'_ū",
-				tooltipDimension2: "ķ_The value has to be specified in 'px'_ū",
-				lblPosition2Explain: "ķ_(may crop)_ū",
-				lblPosition3Explain: "ķ_(won't crop)_ū",
-				lblPosition3Explain2: "ķ_(width will always fit the panel)_ū",
-				lblPosition4Explain: "ķ_(may distort)_ū",
-				unloadLbl: "ķ_Unload when reader navigates away_ū",
-				unloadHelp: "ķ_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ū."
+				lblURL: "URL",
+				lblURLPH: "Attēla URL ir jāsākas ar http:// un jābeidzas ar .jpg vai .png",
+				lblURLError: "Šķiet, ka šis attēls nav derīgs. Lūdzu, norādiet tiešu saiti uz attēla failu (parasti URL beidzas ar .jpg vai .png). Saites uz web lapu, kurā atrodas attēls, nedarbosies.",
+				lblURLCheck: "Notiek attēla pārbaude...",
+				lblLabel: "Attēla teksts",
+				lblLabel1: "Uzraksts",
+				lblLabel2: "Novietot virs teksta",
+				lblLabel3: "Neviens",
+				lblLabelPH: "Ievadiet tekstu...",
+				lblMaximize: "Attēla stūrī iekļaut maksimizēšanas pogu",
+				lblMaximizeHelp: "Ieteicams tikai augstas kvalitātes foto",
+				lblPosition: "Pozīcija",
+				lblPosition1: "Centrs",
+				lblPosition2: "Aizpildīt",
+				lblPosition3: "Ietilpināt",
+				lblPosition4: "Izstiept",
+				lblPosition5: "Pielāgots",
+				tooltipDimension: "Vērtība var būt norādīta kā px vai %",
+				tooltipDimension2: "Vērtība ir jānorāda pikseļos",
+				lblPosition2Explain: "(var apgriezt)",
+				lblPosition3Explain: "(netiks apgriezts)",
+				lblPosition3Explain2: "(platums vienmēr atbildīs panelim)",
+				lblPosition4Explain: "(var tikt izkropļots)",
+				unloadLbl: "Izlādēt, ja lasītājs pārvietojas uz citurieni",
+				unloadHelp: "Ja web lapā ir audio vai video datu nesējs, saglabājiet šo opciju kā atzīmētu, lai tad, kad lasītājs pārvietojas uz citu vietu, netiktu demonstrēts saturs. Noņemiet atzīmi, piemēram, gadījumos, ja vēlaties atskaņot skaņu celiņu, kamēr lasītājs pārskata stāstu.<br />Ja web lapa ir aplikācija, noņemiet šīs opcijas atlasi, lai tad, kad lasītājs atgriežas tajā, aplikācija netiktu ielādēta atkārtoti."
 			},
 			editorActionGeocode: {
-				lblTitle: "ķ_Locate an address or place_ū",
-				mapMarkerExplain: "ķ_User will see a map marker when clicking the link_ū"
+				lblTitle: "Adreses vai vietas noteikšana",
+				mapMarkerExplain: "Noklikšķinot uz saites, lietotājam tiks rādīts kartes punkts"
 			},
 			editorActionMedia: {
-				lblTitle: "ķ_Change the Main Stage content_ū"
+				lblTitle: "Galvenā posma satura maiņa"
 			},
 			editorInlineMedia: {
-				lblTitle: "ķ_Insert an image, video or web page_ū"
+				lblTitle: "Attēla, video vai web lapas ievietošana"
 			}
 		}
 	})

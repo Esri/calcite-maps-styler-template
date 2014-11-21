@@ -9,8 +9,8 @@
       general:"Hata"
     },
 	legToggle:{
-	  up:"ı_MAP LEGEND â–²_İ",
-	  down:"ı_MAP LEGEND â–¼_İ"
+	  up:"HARİTA GÖSTERİMİ â–²",
+	  down:"HARİTA GÖSTERİMİ â–¼"
 	},
 	loading:{
 		message: "Harita yükleniyor"

@@ -11,7 +11,7 @@
             layerNotFound: "Lagret finns inte i webbkartan",
             fieldNotFound: "Fältet hittades inte",
             popupNotSet: "Popupfönster har inte aktiverats för det här lagret",
-            noLayersSet: "Å_No layers defined in the config, the search box will not work_ö"
+            noLayersSet: "Inga lager har definierats i konfig, sökrutan kommer inte att fungera"
         },
         page: {
             title: "Informationssökning",

@@ -1,30 +1,30 @@
 ﻿define({
   root: ({
     display: {
-      elevationProfileTitle: "ã_Elevations Profile_Ç",
-      showMe: "ã_show me_Ç",
-      selectLine: "ã_<b>Select</b> a feature in the map_Ç.",
-      popupRequirement: "ã_NOTE: the feature must be in a layer with Popups enabled_Ç.",
-      digitizeDistanceMeasureTool: "ã_Use the <b>Measure</b> tools_Ç.",
-      selectFeatureHelpUrl: "ã_http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D_Ç",
-      measureToolHelpUrl: "ã_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000_Ç",
-      hoverOver: "ã_Hover over or touch the Elevations Profile chart to display elevations and show location on map_Ç."
+      elevationProfileTitle: "Perfil de Elevação",
+      showMe: "mostre-me",
+      selectLine: "<b>Selecione</b>uma feição no mapa.",
+      popupRequirement: "OBSERVAÇÃO: a feição deve estar em uma camada com Pop-ups habilitados.",
+      digitizeDistanceMeasureTool: "Utilize a ferramenta <b>Medir</b>.",
+      selectFeatureHelpUrl: "http://help.arcgis.com/pt-br/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
+      measureToolHelpUrl: "http://help.arcgis.com/pt-br/arcgisonline/help/index.html#//010q00000096000000",
+      hoverOver: "Paire ou toque no gráfico do Perfil de Elevação para exibir elevações e mostrar a localização no mapa."
     },
     buttons: {
-      measureLabel: "ã_Measure_Ç",
-      helpLabel: "ã_Help_Ç"
+      measureLabel: "Medir",
+      helpLabel: "Ajuda"
     },
     chart: {
-      title: "ã_Elevations Profile_Ç",
-      demResolution: "ã_DEM Resolution_Ç",
-      elevationTitleTemplate: "ã_Elevation in {0}_Ç",
-      distanceTitleTemplate: "ã_Distance in {0}_Ç",
-      gainLossTemplate: "ã_Min:{min}   Max:{max}   Start:{start}   End:{end}   Change:{gainloss}_Ç"
+      title: "Perfil de Elevação",
+      demResolution: "Resolução do DEM",
+      elevationTitleTemplate: "Elevação em {0}",
+      distanceTitleTemplate: "Distância em {0}",
+      gainLossTemplate: "Mín:{min}   Máx:{max}   Inicial:{start}   Final:{end}   Alterar:{gainloss}"
     },
     errors: {
-      MissingConstructorParameters: "ã_Missing constructor parameter_Ç.",
-      InvalidConfiguration: "ã_Invalid configuration_Ç.",
-      UnableToProcessResults: "ã_Unable to process analysis results_Ç."
+      MissingConstructorParameters: "Parâmetro do construtor ausente.",
+      InvalidConfiguration: "Configuração inválida.",
+      UnableToProcessResults: "Não foi porcessar resultados da análise."
     }
   }),
   "ar": 1,

@@ -5,11 +5,11 @@
         }, 
         tools: {         
             search: {
-                error: "한_Location could not be found_빠",
-                notWhatYouWanted: "한_Not what you wanted_빠?",
-                selectAnother: "한_Select another location_빠",
-                currentLocation: "한_Current Location_빠",
-                title: "한_Location_빠"
+                error: "위치를 찾을 수 없습니다.",
+                notWhatYouWanted: "원하는 결과가 아닌가요?",
+                selectAnother: "다른 위치 선택",
+                currentLocation: "현재 위치",
+                title: "위치"
             },
         	legend: "범례",
         	 about: "정보"

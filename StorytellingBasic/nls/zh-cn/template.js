@@ -9,8 +9,8 @@
       general:"错误"
     },
 	legToggle:{
-	  up:"试_MAP LEGEND â–²_验",
-	  down:"试_MAP LEGEND â–¼_验"
+	  up:"地图图例 â–²",
+	  down:"地图图例 â–¼"
 	},
 	loading:{
 		message: "正在加载地图"

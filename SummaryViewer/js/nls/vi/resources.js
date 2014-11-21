@@ -1,12 +1,12 @@
 ﻿define(
     ({
       "map": {
-         "error": "Đ_Unable to create map_ớ"
+         "error": "Không thể tạo bản đồ"
       },
       "tooltips": {
-         "logo": "Đ_Logo_ớ",
-         "switchbasemap": "Đ_Switch base map_ớ",
-         "close": "Đ_Close_ớ"
+         "logo": "Logo",
+         "switchbasemap": "Chuyển đổi bản đồ nền",
+         "close": "Đóng"
       }
    })
 );

@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Valt geoobjekt",
                 "layerHelpTextMessage": "Programmet kräver ett lager med numeriska fält",
                 "alertMessage": {
-                    "resetVariableMessage": "Å_Are you sure you want to reset variable_ö?",
+                    "resetVariableMessage": "Vill du återställa variabeln?",
                     "emptyAppTitleMessage": "Programtiteln får inte vara tom",
                     "emptyDescriptionMessage": "Beskrivningen får inte vara tom",
                     "maxVariableSelection": "Det går inte att välja fler än 25 undervariabler",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "Osparade ändringar",
                     "failMessage": "Det gick inte att uppdatera objektet",
                     "saveChangesAlert": "Vill du spara ändringarna?",
-                    "variableLabelValidation": "Å_Variable label cannot be empty_ö",
-                    "subVariableLabelValidation": "Å_Sub variable label cannot be empty_ö"
+                    "variableLabelValidation": "Variabeletiketten får inte vara tom",
+                    "subVariableLabelValidation": "Undervariabeletiketten får inte vara tom"
                     }
             }
         }

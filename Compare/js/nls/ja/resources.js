@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "須_Unable to create map_鷗"
+            error: "マップを作成できません"
         },
         tools: {
             info: {
-                label: "須_Info_鷗",
-                tooltip: "須_Toggle map info_鷗"
+                label: "情報",
+                tooltip: "マップ情報の切り替え"
             },
             sync: {
-                label: "須_Sync Map Extent_鷗",
-                tooltip: "須_Sync to extent of this map_鷗"
+                label: "マップ範囲の同期",
+                tooltip: "このマップの範囲と同期"
             }
         }
     })

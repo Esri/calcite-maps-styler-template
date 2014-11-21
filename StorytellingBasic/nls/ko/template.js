@@ -9,8 +9,8 @@
       general:"오류"
     },
 	legToggle:{
-	  up:"한_MAP LEGEND â–²_빠",
-	  down:"한_MAP LEGEND â–¼_빠"
+	  up:"맵 범례 â–²",
+	  down:"맵 범례 â–¼"
 	},
 	loading:{
 		message: "맵 로드"

@@ -5,11 +5,11 @@
     }, 
     tools: {
       search: {
-          "error": "Ж_Location could not be found_Я",
-          "notWhatYouWanted": "Ж_Not what you wanted_Я?",
-          "selectAnother": "Ж_Select another location_Я",
-          "currentLocation": "Ж_Current Location_Я",
-          "title": "Ж_Location_Я"
+          "error": "Невозможно найти местоположение",
+          "notWhatYouWanted": "Не то, что вам нужно?",
+          "selectAnother": "Выберите другое местоположение",
+          "currentLocation": "Текущее местоположение",
+          "title": "Местоположение"
       }
     }
   })

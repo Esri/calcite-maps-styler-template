@@ -1,12 +1,12 @@
 ﻿define(
     ({
       "map": {
-         "error": "한_Unable to create map_빠"
+         "error": "맵을 생성할 수 없음"
       },
       "tooltips": {
-         "logo": "한_Logo_빠",
-         "switchbasemap": "한_Switch base map_빠",
-         "close": "한_Close_빠"
+         "logo": "로고",
+         "switchbasemap": "베이스맵 전환",
+         "close": "닫기"
       }
    })
 );

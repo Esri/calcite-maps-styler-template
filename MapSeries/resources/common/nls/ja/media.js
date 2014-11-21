@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "須_Media_鷗",
-				lblSelect2: "須_Content_鷗",
-				lblMap: "須_Map_鷗",
-				lblImage: "須_Image_鷗",
-				lblVideo: "須_Video_鷗",
-				lblExternal: "須_Web page_鷗",
-				disabled: "須_This feature has been disabled by the Administrator_鷗",
-				url: "須_To manually enter the web address of an image_鷗",
-				userLookup: "須_Load albums_鷗",
-				notImplemented: "須_Not implemented yet_鷗.",
-				noData: "須_No public album found_鷗"
+				lblSelect1: "メディア",
+				lblSelect2: "コンテンツ",
+				lblMap: "マップ",
+				lblImage: "画像",
+				lblVideo: "ビデオ",
+				lblExternal: "Web ページ",
+				disabled: "この機能は、管理者によって無効にされています",
+				url: "画像の Web アドレスを手動で入力",
+				userLookup: "アルバムを読み込む",
+				notImplemented: "まだ実装されていません。",
+				noData: "パブリックなアルバムが見つかりませんでした"
 			},
 			imageSelector: {
-				lblStep1: "須_Choose the service_鷗",
-				lblStep2: "須_Select your media_鷗",
-				lblStep3: "須_Configure_鷗"
+				lblStep1: "サービスの選択",
+				lblStep2: "メディアの選択",
+				lblStep3: "構成"
 			},
 			imageSelectorHome: {
-				explain: "須_Load images from social media, <br /> or directly from a URL_鷗"
+				explain: "画像をソーシャル メディアから読み込むか、<br />URL から直接読み込みます"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "須_User name_鷗",
-				signInMsg2: "須_User not found_鷗",
-				loadingFailed: "須_Loading failed_鷗"
+				userInputLbl: "ユーザ名",
+				signInMsg2: "ユーザが見つかりません",
+				loadingFailed: "読み込みに失敗しました"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "須_Facebook User_鷗",
-				rightHeader: "須_Facebook Page_鷗",
-				pageExplain: "須_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_鷗.",
-				pageInputLbl: "須_Page name_鷗",
-				lookupMsgError: "須_Page not found_鷗"
+				leftHeader: "Facebook ユーザ",
+				rightHeader: "Facebook ページ",
+				pageExplain: "Facebook ページは、<b>esrigis</b> などの、公開されたブランド/製品または著名人です。ページ URL 内の最初の「/」以降から、ページ名を取得できます。",
+				pageInputLbl: "ページ名",
+				lookupMsgError: "ページが見つかりません"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "須_Email or Picasa/Google+ ID_鷗",
-				signInMsg2: "須_Account not found_鷗",
-				howToFind: "須_How to find a Picasa or Google+ account ID_鷗",
-				howToFind2: "須_Copy digits between the first and second '/' of any Picasa or G+ page_鷗"
+				userInputLbl: "電子メールまたは Picasa/Google+ ID",
+				signInMsg2: "アカウントが見つかりません",
+				howToFind: "Picasa または Google+ アカウントの ID の検索方法",
+				howToFind2: "任意の Picasa または Google+ のページの 1 番目と 2 番目の「/」の間の数字をコピーします。"
 			},
 			videoSelectorCommon: {
-				check: "須_Check_鷗",
-				notFound: "須_Video not found_鷗",
-				found: "須_Video found_鷗",
-				select: "須_Select this video_鷗"
+				check: "チェック",
+				notFound: "ビデオが見つかりません",
+				found: "ビデオが見つかりました",
+				select: "このビデオを選択"
 			},
 			videoSelectorHome: {
-				other: "須_Other_鷗"
+				other: "その他"
 			},
 			videoSelectorYoutube: {
-				url: "須_URL of a Youtube video_鷗",
-				pageInputLbl: "須_User name_鷗",
-				lookupMsgError: "須_User not found_鷗",
-				howToFind: "須_How to find a YouTube user name_鷗",
-				howToFind2: "須_User name is displayed under videos_鷗",
-				found: "須_Found_鷗",
-				noData: "須_No public videos found_鷗"
+				url: "YouTube ビデオの URL",
+				pageInputLbl: "ユーザ名",
+				lookupMsgError: "ユーザが見つかりません",
+				howToFind: "YouTube のユーザ名の検索方法",
+				howToFind2: "ビデオの下にユーザ名が表示されます",
+				found: "見つかりました",
+				noData: "パブリックなビデオが見つかりませんでした"
 			},
 			videoSelectorVimeo: {
-				url: "須_URL of a Vimeo video_鷗"
+				url: "Vimeo ビデオの URL"
 			},
 			videoSelectorOther: {
-				explain1: "須_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_鷗.",
-				explain2: "須_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_鷗.",
-				explain3: "須_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_鷗.",
-				webpage: "須_Web page feature_鷗"
+				explain1: "アプリケーションは、単体のビデオファイル (avi、mpeg など) は再生できませんが、プレイヤ (YouTube または Vimeo など) が組み込まれているホストされたビデオ ファイルは再生できます。",
+				explain2: "ほとんどのオンライン ビデオ ホスティング サービスは、その機能を提供しています。ビデオを埋め込み、指定のコードをコピーし、%WEBPAGE% を使用するオプションを見つける必要があります。",
+				explain3: "または、ビデオを自分でホストする場合、%EXAMPLE% のようなビデオ プレイヤを使用する HTML ページを作成して、そのページをホストしたり、%WEBPAGE% を使用したりすることもできます。",
+				webpage: "Web ページ フィーチャ"
 			},
 			webpageSelectorHome: {
-				lblUrl: "須_Webpage URL_鷗",
-				lblEmbed: "須_Embed code_鷗",
-				lblOR: "須_OR_鷗",
-				lblError1: "須_Error, clear one of the two input fields_鷗.",
-				lblError2: "須_Embed code can only contain one %IFRAMETAG%_鷗",
-				configure: "須_Configure_鷗"
+				lblUrl: "Web ページ URL",
+				lblEmbed: "コードの埋め込み",
+				lblOR: "または",
+				lblError1: "エラーです。2 つの入力フィールドの 1 つを削除してください。",
+				lblError2: "コードの埋め込みには 1 つの %IFRAMETAG% だけを含めることができます",
+				configure: "構成"
 			},
 			mediaConfigure: {
-				lblURL: "須_URL_鷗",
-				lblURLPH: "須_An image URL should start with http:// and end with .jpg or .png_鷗",
-				lblURLError: "須_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_鷗.",
-				lblURLCheck: "須_Checking image_鷗...",
-				lblLabel: "須_Image Caption_鷗",
-				lblLabel1: "須_Caption_鷗",
-				lblLabel2: "須_Hover text_鷗",
-				lblLabel3: "須_None_鷗",
-				lblLabelPH: "須_Enter some text_鷗...",
-				lblMaximize: "須_Include a maximize button in the corner of the image_鷗",
-				lblMaximizeHelp: "須_Recommended only for high quality photos_鷗",
-				lblPosition: "須_Position_鷗",
-				lblPosition1: "須_Center_鷗",
-				lblPosition2: "須_Fill_鷗",
-				lblPosition3: "須_Fit_鷗",
-				lblPosition4: "須_Stretch_鷗",
-				lblPosition5: "須_Custom_鷗",
-				tooltipDimension: "須_The value can be specified in 'px' or '%'_鷗",
-				tooltipDimension2: "須_The value has to be specified in 'px'_鷗",
-				lblPosition2Explain: "須_(may crop)_鷗",
-				lblPosition3Explain: "須_(won't crop)_鷗",
-				lblPosition3Explain2: "須_(width will always fit the panel)_鷗",
-				lblPosition4Explain: "須_(may distort)_鷗",
-				unloadLbl: "須_Unload when reader navigates away_鷗",
-				unloadHelp: "須_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_鷗."
+				lblURL: "URL",
+				lblURLPH: "画像の URL は、http:// から始まり、*.jpg または *.png で終わる必要があります。",
+				lblURLError: "この画像は有効ではありません。画像ファイルへの直接のリンクを指定してください (URL の末尾は通常 *.jpg または *.png となります)。画像を含む Web ページへのリンクは機能しません。",
+				lblURLCheck: "画像をチェックしています...",
+				lblLabel: "画像のキャプション",
+				lblLabel1: "キャプション",
+				lblLabel2: "ホバー テキスト",
+				lblLabel3: "なし",
+				lblLabelPH: "テキストの入力...",
+				lblMaximize: "画像の隅に最大化ボタンを含めます。",
+				lblMaximizeHelp: "高品質の写真のみに推奨します",
+				lblPosition: "位置",
+				lblPosition1: "中央",
+				lblPosition2: "塗りつぶし",
+				lblPosition3: "調整",
+				lblPosition4: "ストレッチ",
+				lblPosition5: "カスタム",
+				tooltipDimension: "値は「px」または「%」で指定できます",
+				tooltipDimension2: "値は「px」で指定する必要があります",
+				lblPosition2Explain: "(トリミングの可能性あり)",
+				lblPosition3Explain: "(トリミングなし)",
+				lblPosition3Explain2: "(幅は常にパネルに合わせて調整されます)",
+				lblPosition4Explain: "(歪みの可能性あり)",
+				unloadLbl: "ユーザが移動したときにアンロード",
+				unloadHelp: "Web ページに音声やビデオ メディアが含まれている場合、このオプションをオンにすると、ユーザが移動したときにコンテンツの再生が停止されます。たとえば、ユーザが次のストーリーに進んでもサウンド トラックの再生を維持したいときはオフにします。<br />Web ページがアプリケーションである場合、ユーザが戻ってもアプリケーションが再読み込みされないようにするには、このオプションをオフにします。"
 			},
 			editorActionGeocode: {
-				lblTitle: "須_Locate an address or place_鷗",
-				mapMarkerExplain: "須_User will see a map marker when clicking the link_鷗"
+				lblTitle: "住所または位置の検索",
+				mapMarkerExplain: "リンクをクリックすると、マップ マーカーが表示されます"
 			},
 			editorActionMedia: {
-				lblTitle: "須_Change the Main Stage content_鷗"
+				lblTitle: "メイン ステージのコンテンツを変更"
 			},
 			editorInlineMedia: {
-				lblTitle: "須_Insert an image, video or web page_鷗"
+				lblTitle: "画像、ビデオ、または Web ページの挿入"
 			}
 		}
 	})

@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "试_Location could not be found_验",
-                "notWhatYouWanted": "试_Not what you wanted_验?",
-                "selectAnother": "试_Select another location_验",
-                "currentLocation": "试_Current Location_验",
-                "title": "试_Location_验"
+                "error": "无法找到位置",
+                "notWhatYouWanted": "不是您想要的位置?",
+                "selectAnother": "选择其他位置",
+                "currentLocation": "当前位置",
+                "title": "位置"
             },
             "basemap":{
-                    "label": "试_Basemap_验",
-                    "title": "试_Select a Basemap_验"
+                    "label": "底图",
+                    "title": "选择底图"
             },
             "legend":{
-                "title": "试_Legend_验"
+                "title": "图例"
             },
             "details":{
-                "title": "试_Map Details_验",
-                "error": "试_Update the web map description with the details to display in this section_验."
+                "title": "地图详细信息",
+                "error": "使用将在此部分中显示的详细信息来更新 web 地图描述。"
             },
             "popup": {
-                "title": "试_Info_验",
-                "instructions": "试_Select a feature on the map to view details_验."
+                "title": "信息",
+                "instructions": "在地图上选择要素以查看详细信息。"
             }
 
         },
         "map": {
-            "error": "试_Unable to create map_验"
+            "error": "无法创建地图"
         }
     })
 );

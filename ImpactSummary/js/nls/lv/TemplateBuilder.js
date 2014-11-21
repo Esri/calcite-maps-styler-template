@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Atlasītais elements",
                 "layerHelpTextMessage": "Šai aplikācijai nepieciešams slānis ar ciparu laukiem",
                 "alertMessage": {
-                    "resetVariableMessage": "ķ_Are you sure you want to reset variable_ū?",
+                    "resetVariableMessage": "Vai tiešām vēlaties atiestatīt mainīgo?",
                     "emptyAppTitleMessage": "Aplikācijas nosaukums nevar būt tukšs",
                     "emptyDescriptionMessage": "Apraksts nevar būt tukšs",
                     "maxVariableSelection": "Nevarat atlasīt vairāk par 25 papildu mainīgajiem",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "Nesaglabātās izmaiņas",
                     "failMessage": "Nevarēja veiksmīgi atjaunināt vienību",
                     "saveChangesAlert": "Vai vēlaties saglabāt izmaiņas?",
-                    "variableLabelValidation": "ķ_Variable label cannot be empty_ū",
-                    "subVariableLabelValidation": "ķ_Sub variable label cannot be empty_ū"
+                    "variableLabelValidation": "Mainīgais kartes apraksts nevar būt tukšs",
+                    "subVariableLabelValidation": "Papildu mainīgais kartes apraksts nevar būt tukšs"
                     }
             }
         }

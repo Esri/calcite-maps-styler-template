@@ -17,7 +17,7 @@
 define(
      ({
         map: {
-            error: "بيت_Unable to create map_لاحقة"
+            error: "يتعذر إنشاء الخريطة"
         },
         tooltips: {
             search: "عثور",  // Command button to open a dialog box for finding a feature or an address (depending on app)
@@ -39,8 +39,8 @@ define(
         },
         labels: {
             email: "البريد الإلكتروني",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
-            Facebook: "فيس بوك",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
-            Twitter: "تويتر",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
+            Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
+            Twitter: "Twitter",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
             title: "العنوان",  // Shown as title hint in print specification box if a title hint is not configured
             author: "المؤلف"  // Shown as author hint in print specification box if an author hint is not configured
         },

@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "á_Unable to create map_Ó"
+         "error": "No se puede crear el mapa"
       },
       "location": {
-         "name": "á_Name_Ó",
-         "current": "á_Current Location_Ó",
-         "address": "á_Address_Ó",
-         "latitude": "á_Latitude_Ó",
-         "longitude": "á_Longitude_Ó",
-         "use": "á_Use this location_Ó",
-         "error": "á_Unable to use this location_Ó"
+         "name": "Nombre",
+         "current": "Ubicación actual",
+         "address": "Dirección",
+         "latitude": "Latitud",
+         "longitude": "Longitud",
+         "use": "Usa esta ubicación",
+         "error": "No se puede usar esta ubicación"
       },
       "tooltips": {
-         "toggle": "á_Show/Hide_Ó",
-         "reset": "á_Reset_Ó",
-         "locate": "á_Find my location_Ó",
-         "directions": "á_Directions_Ó",
-         "filter": "á_Filter_Ó",
-         "close": "á_Close_Ó",
-         "reverse": "á_Reverse_Ó"
+         "toggle": "Mostrar/ocultar",
+         "reset": "Reiniciar",
+         "locate": "Buscar mi ubicación",
+         "directions": "Direcciones",
+         "filter": "Filtro",
+         "close": "Cerrar",
+         "reverse": "Invertir"
       }
    })
 );

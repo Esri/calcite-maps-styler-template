@@ -5,11 +5,11 @@
     }, 
     tools: {
       search: {
-          "error": "ķ_Location could not be found_ū",
-          "notWhatYouWanted": "ķ_Not what you wanted_ū?",
-          "selectAnother": "ķ_Select another location_ū",
-          "currentLocation": "ķ_Current Location_ū",
-          "title": "ķ_Location_ū"
+          "error": "Izvietojumu nevarēja atrast",
+          "notWhatYouWanted": "Vēlējāties kaut ko citu?",
+          "selectAnother": "Izvēlieties citu izvietojumu",
+          "currentLocation": "Pašreizējais izvietojums",
+          "title": "Izvietojums"
       }
     }
   })

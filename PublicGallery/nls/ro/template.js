@@ -12,14 +12,14 @@
                 "bingError": "Lansarea acestei aplicaţii necesită propria dvs. cheie de hărţi Bing.",
                 "noLayers": "Niciun strat tematic operaţional",
                 "noSearchResults": "Ne pare rău, nu a fost găsit niciun rezultat.",
-                "noGroupResults": "Ă_The group could not be found_ș.",
+                "noGroupResults": "Grupul nu a putut fi găsit.",
                 "noMatches": "Nu au fost găsite concordanţe.",
                 "noMapsFound": "Nu a fost găsită nicio hartă."
             },
             "sidePanel": {
                 "title": "Legendă",
                 "legendButton": "Legendă",
-                "layersButton": "Ă_Layers_ș", // new
+                "layersButton": "Straturi tematice", // new
                 "legendButtonTitle": "Legendă hartă",
                 "aboutButton": "Despre",
                 "aboutButtonTitle": "Despre hartă",
@@ -36,47 +36,47 @@
                 "loadingText": "Încărcare hărţi&hellip;"
             },
             "sortFields": {
-                "sortBy": "Ă_Sort by_ș",
-                "modified": "Ă_Date_ș",
-                "title": "Ă_Title_ș",
-                "type": "Ă_Type_ș",
-                "numRatings": "Ă_Ratings_ș",
-                "avgRating": "Ă_Avg. Rating_ș",
-                "numComments": "Ă_Comments_ș",
-                "numViews": "Ă_Views_ș"
+                "sortBy": "Sortare după",
+                "modified": "Dată",
+                "title": "Titlu",
+                "type": "Tip",
+                "numRatings": "Calificative",
+                "avgRating": "Calificativ mediu",
+                "numComments": "Comentarii",
+                "numViews": "Vizualizări"
             },
             "comments": {
-                "commentsHeader": "Ă_Comments_ș",
-                "posted": "Ă_Posted_ș",
-                "by": "Ă_by_ș",
-                "deleteComment": "Ă_delete_ș",
-                "editComment": "Ă_edit_ș",
-                "noComments": "Ă_No comments_ș",
-                "addCommentButton": "Ă_Add Comment_ș",
-                "signIn": "Ă_Sign In_ș",
-                "register": "Ă_Register_ș",
-                "or": "Ă_or_ș",
-                "toPost": "Ă_to post a comment_ș."
+                "commentsHeader": "Comentarii",
+                "posted": "Postat",
+                "by": "de",
+                "deleteComment": "ştergere",
+                "editComment": "editare",
+                "noComments": "Niciun comentariu",
+                "addCommentButton": "Adăugare comentariu",
+                "signIn": "Autentificare",
+                "register": "Înregistrare",
+                "or": "sau",
+                "toPost": "pentru a posta un comentariu."
             },
             "buttons": {
-                "cancel": "Ă_Cancel_ș",
-                "submit": "Ă_Submit_ș"
+                "cancel": "Anulare",
+                "submit": "Trimitere"
             },
             "rating": {
-                "signIn": "Ă_Sign In_ș",
-                "toRate": "Ă_to rate_ș."
+                "signIn": "Autentificare",
+                "toRate": "pentru a furniza un calificativ."
             },
             "itemInfo": {
-                "createdLabel": "Ă_created_ș",
-                "ratingsLabel": "Ă_rating_ș",
-                "ratingsLabelPlural": "Ă_ratings_ș",
-                "viewsLabel": "Ă_view_ș",
-                "viewsLabelPlural": "Ă_views_ș",
-                "commentsLabel": "Ă_comment_ș",
-                "commentsLabelPlural": "Ă_comments_ș",
-                "modifiedLabel": "Ă_Last Modified_ș",
-                "by": "Ă_by_ș",
-                "separator": "Ă__ș,"
+                "createdLabel": "creat",
+                "ratingsLabel": "calificativ",
+                "ratingsLabelPlural": "calificative",
+                "viewsLabel": "vizualizare",
+                "viewsLabelPlural": "vizualizări",
+                "commentsLabel": "comentariu",
+                "commentsLabelPlural": "comentarii",
+                "modifiedLabel": "Ultima modificare",
+                "by": "de",
+                "separator": ","
             },
             "mapPage": {
                 "findLocation": "Găsire locaţie",
@@ -93,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Proprietar:",
                 "switchBasemap": "Schimbare hartă fundal",
-                "getMobileApp": "Ă_Get App_ș",
-                "constraintsHeading": "Ă_Use Constraints_ș",
-                "createdLabel": "Ă_Created_ș",
-                "noDescription": "Ă_No description_ș.",
-                "detailsLabel": "Ă_Details_ș"
+                "getMobileApp": "Obţinere aplicaţie",
+                "constraintsHeading": "Utilizare restricţii",
+                "createdLabel": "Creat",
+                "noDescription": "Nicio descriere.",
+                "detailsLabel": "Detalii"
             },
             "filterItems": {
                 "show": "Afişare",

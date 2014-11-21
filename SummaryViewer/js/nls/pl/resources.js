@@ -1,12 +1,12 @@
 ﻿define(
     ({
       "map": {
-         "error": "ł_Unable to create map_ą"
+         "error": "Nie można utworzyć mapy"
       },
       "tooltips": {
-         "logo": "ł_Logo_ą",
-         "switchbasemap": "ł_Switch base map_ą",
-         "close": "ł_Close_ą"
+         "logo": "Logo",
+         "switchbasemap": "Przełącz mapę bazową",
+         "close": "Zamknij"
       }
    })
 );

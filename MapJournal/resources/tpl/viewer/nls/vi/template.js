@@ -9,9 +9,9 @@
 				step2: "Đang tải dữ liệu",
 				step3: "Đang khởi tạo",
 				loadBuilder: "Chuyển sang chế độ bộ thiết lập",
-				long: "Đ_Map Journal is initializing_ớ",
-				long2: "Đ_Thanks for waiting_ớ",
-				failButton: "Đ_Reload the application_ớ"
+				long: "Map Journal đang khởi tạo",
+				long2: "Cảm ơn bạn đã đợi",
+				failButton: "Tải lại ứng dụng"
 			},
 			signin: {
 				title: "Yêu cầu xác thực",
@@ -20,28 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Đã xảy ra lỗi",
-				invalidConfig: "Đ_Invalid configuration_ớ",
-				invalidConfigNoApp: "Đ_Web Mapping Application identifier not specified in index.html_ớ.",
-				unspecifiedConfigOwner: "Đ_Authorized owner hasn't been configured_ớ.",
-				invalidConfigOwner: "Đ_Application owner is not authorized_ớ.",
+				invalidConfig: "Cấu hình không hợp lệ",
+				invalidConfigNoApp: "Định danh Ứng dụng Lập bản đồ Web không được chỉ định trong index.html.",
+				unspecifiedConfigOwner: "Chủ sở hữu được ủy quyền chưa được cấu hình.",
+				invalidConfigOwner: "Chủ sở hữu ứng dụng chưa được ủy quyền.",
 				createMap: "Không thể tạo bản đồ",
-				invalidApp: "Đ_The %TPL_NAME% does not exist or is inaccessible_ớ.",
-				appLoadingFail: "Đ_Something went wrong, the %TPL_NAME% did not load correctly_ớ.",
-				notConfiguredDesktop: "Đ_The application is not configured yet_ớ.",
-				notConfiguredMobile: "Đ_The %TPL_NAME% builder is not supported at this screen resolution_ớ.",
+				invalidApp: "%TPL_NAME% không tồn tại hoặc không thể truy cập được.",
+				appLoadingFail: "Đã xảy ra sự cố, %TPL_NAME% không tải đúng.",
+				notConfiguredDesktop: "Ứng dụng chưa được cấu hình.",
+				notConfiguredMobile: "Bộ thiết lập %TPL_NAME% không được hỗ trợ theo độ phân giải màn hình này.",
 				notAuthorized: "Bạn không được phép truy cập vào ứng dụng này",
-				noBuilderIE: "Đ_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%_ớ",
-				noViewerIE: "Đ_This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%_ớ",
-				upgradeBrowser: "Đ_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>_ớ.",
-				mapLoadingFail: "Đ_Something went wrong, the Map did not load correctly_ớ.",
-				signOut: "Đ_Sign Out_ớ"
+				noBuilderIE: "Bộ thiết lập không được hỗ trợ trên Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
+				noViewerIE: "Ứng dụng này không được hỗ trợ trong Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Vui lòng cập nhật trình duyệt của bạn</a>.",
+				mapLoadingFail: "Đã xảy ra lỗi, Bản đồ không tải đúng.",
+				signOut: "Đăng xuất"
 			},
 			mobileView: {
 				tapForDetails: "Chạm nhẹ vào để biết chi tiết",
-				clickForDetails: "Đ_Learn more_ớ",
+				clickForDetails: "Tìm hiểu thêm",
 				swipeToExplore: "Vuốt để khám phá",
 				tapForMap: "Chạm nhẹ để quay lại Bản đồ",
-				clickForMap: "Đ_BACK TO MAP_ớ"
+				clickForMap: "QUAY LẠI BẢN ĐỒ"
 			},
 			floatLayout: {
 				scroll: "Cuộn"
@@ -70,8 +70,8 @@
 				copy: "Sao chép",
 				copied: "Đã sao chép",
 				open: "Mở",
-				embed: "Đ_Embed in web page_ớ",
-				embedExplain: "Đ_Use the following HTML code to embed the journal in a web page_ớ.",
+				embed: "Nhúng vào trang web",
+				embedExplain: "Sử dụng mã HTML sau để nhúng bài viết vào một trang web.",
 				size: "Kích thước (chiều rộng/chiều cao):"
 			}
         }

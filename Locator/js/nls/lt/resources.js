@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "Į_Unable to create map_š"
+         "error": "Žemėlapio sukurti nepavyko"
       },
       "location": {
-         "name": "Į_Name_š",
-         "current": "Į_Current Location_š",
-         "address": "Į_Address_š",
-         "latitude": "Į_Latitude_š",
-         "longitude": "Į_Longitude_š",
-         "use": "Į_Use this location_š",
-         "error": "Į_Unable to use this location_š"
+         "name": "Pavadinimas",
+         "current": "dabartinė vieta",
+         "address": "Adresas",
+         "latitude": "Platuma",
+         "longitude": "Ilguma",
+         "use": "Naudoti šią vietą",
+         "error": "Šios vietos naudoti nepavyko"
       },
       "tooltips": {
-         "toggle": "Į_Show/Hide_š",
-         "reset": "Į_Reset_š",
-         "locate": "Į_Find my location_š",
-         "directions": "Į_Directions_š",
-         "filter": "Į_Filter_š",
-         "close": "Į_Close_š",
-         "reverse": "Į_Reverse_š"
+         "toggle": "Rodyti / slėpti",
+         "reset": "Atkurti",
+         "locate": "Rasti mano vietą",
+         "directions": "Maršrutai",
+         "filter": "Filtruoti",
+         "close": "Užverti",
+         "reverse": "Apsukti"
       }
    })
 );

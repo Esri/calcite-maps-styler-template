@@ -11,7 +11,7 @@
             layerNotFound: "La couche ne se trouve pas dans la carte Web",
             fieldNotFound: "Champ introuvable",
             popupNotSet: "La fenêtre contextuelle n\'est pas activée pour cette couche",
-            noLayersSet: "æ_No layers defined in the config, the search box will not work_Â"
+            noLayersSet: "Aucune couche n\'est définie dans la configuration, la zone de recherche ne fonctionnera pas"
         },
         page: {
             title: "Consultation d\'informations",

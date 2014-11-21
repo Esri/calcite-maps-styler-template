@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Valitud objekt",
                 "layerHelpTextMessage": "See rakendus nõuab numbriväljadega kihti",
                 "alertMessage": {
-                    "resetVariableMessage": "Š_Are you sure you want to reset variable_ä?",
+                    "resetVariableMessage": "Kas olete kindel, et soovite muutuja lähtestada?",
                     "emptyAppTitleMessage": "Rakenduse nime väli ei saa olla tühi",
                     "emptyDescriptionMessage": "Kirjeldus ei saa olla tühi",
                     "maxVariableSelection": "Te ei saa valida rohkem kui 25 alammuutujat",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "Salvestamata muudatused",
                     "failMessage": "Objekti ei õnnestunud edukalt uuendada",
                     "saveChangesAlert": "Kas soovite muudatused salvestada ?",
-                    "variableLabelValidation": "Š_Variable label cannot be empty_ä",
-                    "subVariableLabelValidation": "Š_Sub variable label cannot be empty_ä"
+                    "variableLabelValidation": "Muutuja märgis ei saa olla tühi",
+                    "subVariableLabelValidation": "Alammuutuja märgis ei saa olla tühi"
                     }
             }
         }

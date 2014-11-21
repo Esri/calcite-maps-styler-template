@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Geselecteerd object",
                 "layerHelpTextMessage": "Deze applicatie vereist een kaartlaag met numerieke velden",
                 "alertMessage": {
-                    "resetVariableMessage": "Ĳ_Are you sure you want to reset variable_ä?",
+                    "resetVariableMessage": "Weet u zeker dat u de variabele wilt opnieuw instellen?",
                     "emptyAppTitleMessage": "Applicatietitel mag niet leeg zijn",
                     "emptyDescriptionMessage": "Beschrijving mag niet leeg zijn",
                     "maxVariableSelection": "U mag niet meer dan 25 subvariabelen selecteren",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "Niet-opgeslagen wijzigingen",
                     "failMessage": "Het item kon niet worden bijgewerkt",
                     "saveChangesAlert": "Wilt u de wijzigingen opslaan?",
-                    "variableLabelValidation": "Ĳ_Variable label cannot be empty_ä",
-                    "subVariableLabelValidation": "Ĳ_Sub variable label cannot be empty_ä"
+                    "variableLabelValidation": "Label van variabele mag niet leeg zijn",
+                    "subVariableLabelValidation": "Label van subvariabele mag niet leeg zijn"
                     }
             }
         }

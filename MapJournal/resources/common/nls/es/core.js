@@ -28,8 +28,8 @@
 				buttonSettings: "Configuración",
 				buttonHelp: "Ayuda",
 				buttonPreview: "Ver en directo",
-				tooltipFirstSave: "á_This isn't available until you save_Ó.",
-				tooltipNotShared: "á_This isn't available until you share_Ó.",
+				tooltipFirstSave: "Esto no está disponible hasta que guardes.",
+				tooltipNotShared: "Esto no está disponible hasta que compartas.",
 				noPendingChange: "Sin cambios pendientes",
 				unSavedChangePlural: "Cambios pendientes",
 				closeWithPendingChange: "¿Estás seguro de que deseas confirmar esta acción? Los cambios se perderán.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Error al guardar la aplicación",
 				err1Div1: "La aplicación no se puede guardar porque ya tienes otro elemento con el mismo nombre (comprueba la <a class='linkagolroot' target='_blank'>carpeta de contenido</a>).",
-				err1Div2: "á_Please modify the title of your application and then save it_Ó.",
-				btnOk: "á_Edit the application title_Ó"
+				err1Div2: "Modifica el título de tu aplicación y, a continuación, guárdala.",
+				btnOk: "Editar título de la aplicación"
 			},
 			share: {
 				firstSaveTitle: "La aplicación se ha guardado correctamente",
@@ -66,7 +66,7 @@
 				shareHeader2: "Tu aplicación está disponible para los miembros de tu organización (se requiere inicio de sesión).",
 				shareLinkCopy: "Copiar",
 				shareLinkCopied: "Copiado",
-				shareQ0: "á_How do I embed the application in a web page_Ó?",
+				shareQ0: "¿Cómo se integra la aplicación en una página web?",
 				shareQ1Opt1: "¿Cómo puedo hacer que la aplicación siga siendo privada?",
 				shareQ1Opt2: "¿Cómo puedo hacer que la aplicación siga siendo privada o que se comparta públicamente?",
 				shareA1: "Usa %SHAREIMG% en <a href='%LINK1%' target='_blank'>la página del elemento de la aplicación</a>.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Personaliza el vínculo del encabezado.",
 				logoSocialText: "Texto",
 				logoSocialLink: "Vínculo",
-				lblSmallHeader: "á_Use compact header (no subtitle)_Ó"
+				lblSmallHeader: "Usar encabezado compacto (sin subtítulo)"
 			},
 			header: {
-				title: "á_Edit the title of your %TPL_NAME%_Ó",
-				subtitle: "á_Edit the subtitle of your %TPL_NAME%_Ó"
+				title: "Editar el título de tu %TPL_NAME%",
+				subtitle: "Editar el subtítulo de tu %TPL_NAME%"
 			}
 		}
 	})

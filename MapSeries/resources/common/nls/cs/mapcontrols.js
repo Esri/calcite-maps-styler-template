@@ -2,13 +2,13 @@
 	 ({
 		commonMapControls: {
 			common: {
-				settings: "Ř_Settings_ů",
-				openDefault: "Ř_Open by default_ů"
+				settings: "Nastavení",
+				openDefault: "Otevřít jako výchozí"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "Ř_Basemap_ů",
-				expandFactorLabel: "Ř_Expand Factor_ů",
-				expandFactorPopover: "Ř_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle_ů."
+				basemapGalleryBtnLabel: "Podkladová mapa",
+				expandFactorLabel: "Faktor rozšíření",
+				expandFactorPopover: "Poměr mezi velikostí mapy přehledu a obdélníkem rozsahu zobrazeným na mapě přehledu. Výchozí hodnota je 2, což znamená, že mapa přehledu bude minimálně dvakrát tak velká jako obdélník rozsahu."
 			}
 		}
 	})

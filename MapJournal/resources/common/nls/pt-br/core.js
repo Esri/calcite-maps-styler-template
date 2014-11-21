@@ -28,8 +28,8 @@
 				buttonSettings: "Configurações",
 				buttonHelp: "Ajuda",
 				buttonPreview: "Visualizar em Tempo Real",
-				tooltipFirstSave: "ã_This isn't available until you save_Ç.",
-				tooltipNotShared: "ã_This isn't available until you share_Ç.",
+				tooltipFirstSave: "Isto não está disponível até que seja salvo.",
+				tooltipNotShared: "Isto não está disponível até que seja compartilhado",
 				noPendingChange: "Nenhuma alteração pendente",
 				unSavedChangePlural: "Alterações pendentes",
 				closeWithPendingChange: "Você tem certeza que deseja confirmar esta ação? Suas alterações serão perdidas.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Erro ao salvar o aplicativo",
 				err1Div1: "O aplicativo não pode ser salvo, pois você já tem outro item com o mesmo nome (consulte sua <a class='linkagolroot' target='_blank'>pasta de conteúdo</a>).",
-				err1Div2: "ã_Please modify the title of your application and then save it_Ç.",
-				btnOk: "ã_Edit the application title_Ç"
+				err1Div2: "Modifique o título do seu aplicativo e então o salve.",
+				btnOk: "Edite o título do aplicativo"
 			},
 			share: {
 				firstSaveTitle: "Aplicativo salvo com sucesso",
@@ -66,7 +66,7 @@
 				shareHeader2: "O aplicativo pode ser acessado por membros da sua organização (é necessário login).",
 				shareLinkCopy: "Copiar",
 				shareLinkCopied: "Copiado",
-				shareQ0: "ã_How do I embed the application in a web page_Ç?",
+				shareQ0: "Como eu anexo o aplicativo em um página da web?",
 				shareQ1Opt1: "Como faço para manter o aplicativo privado?",
 				shareQ1Opt2: "Como faço para manter o aplicativo privado ou compartilhá-lo publicamente?",
 				shareA1: "Utilize %SHAREIMG% na <a href='%LINK1%' target='_blank'>página de item do aplicativo</a>.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Personaliza o link do cabeçalho.",
 				logoSocialText: "Texto",
 				logoSocialLink: "Link",
-				lblSmallHeader: "ã_Use compact header (no subtitle)_Ç"
+				lblSmallHeader: "Utilizar cabeçalho compacto (sem subtítulo)"
 			},
 			header: {
-				title: "ã_Edit the title of your %TPL_NAME%_Ç",
-				subtitle: "ã_Edit the subtitle of your %TPL_NAME%_Ç"
+				title: "Edite o título do seu %TPL_NAME%",
+				subtitle: "Edite o subtítulo do seu %TPL_NAME%"
 			}
 		}
 	})

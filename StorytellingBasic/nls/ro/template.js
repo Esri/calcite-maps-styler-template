@@ -9,8 +9,8 @@
       general:"Eroare"
     },
 	legToggle:{
-	  up:"Ă_MAP LEGEND â–²_ș",
-	  down:"Ă_MAP LEGEND â–¼_ș"
+	  up:"LEGENDĂ HARTĂ â–²",
+	  down:"LEGENDĂ HARTĂ â–¼"
 	},
 	loading:{
 		message: "Se încarcă harta"

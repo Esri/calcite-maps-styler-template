@@ -3,8 +3,8 @@
   display: {
     elevationProfileTitle: "Cấu hình Độ cao",
     showMe: "hiển thị cho tôi",
-    selectLine: "Chọn một yếu tố trong bản đồ.",
-    popupRequirement: "LƯU Ý: yếu tố cần ở trong một Lớp Yếu tố hoặc là một phần của dịch vụ bản đồ có Cửa sổ pop-up được bật.",
+    selectLine: "Chọn một đối tượng trong bản đồ.",
+    popupRequirement: "LƯU Ý: đối tượng cần ở trong một Lớp Đối tượng hoặc là một phần của dịch vụ bản đồ có Cửa sổ pop-up được bật.",
     digitizeDistanceMeasureTool: "Sử dụng nút <b>Đo lường</b>.",
     selectFeatureHelpUrl: "http://help.arcgis.com/vi/arcgisonline/help/index.html#//010q0000004s000000#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
     measureToolHelpUrl: "http://help.arcgis.com/vi/arcgisonline/help/index.html#//010q00000096000000",

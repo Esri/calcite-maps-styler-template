@@ -50,12 +50,12 @@
 				label: "البريد الإلكتروني"
 			},
 			twitter: {
-				title: "تويتر",
-				label: "تويتر"
+				title: "Twitter",
+				label: "Twitter"
 			},
 			facebook: {
-				title: "فيس بوك",
-				label: "فيس بوك"
+				title: "Facebook",
+				label: "Facebook"
 			}
 		}
 	 }

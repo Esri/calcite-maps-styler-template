@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "Đ_Location could not be found_ớ",
-                "notWhatYouWanted": "Đ_Not what you wanted_ớ?",
-                "selectAnother": "Đ_Select another location_ớ",
-                "currentLocation": "Đ_Current Location_ớ",
-                "title": "Đ_Location_ớ"
+                "error": "Không thể tìm thấy vị trí",
+                "notWhatYouWanted": "Không phải cái bạn muốn?",
+                "selectAnother": "Chọn một vị trí khác",
+                "currentLocation": "Vị trí hiện tại",
+                "title": "Vị trí"
             },
             "basemap":{
-                    "label": "Đ_Basemap_ớ",
-                    "title": "Đ_Select a Basemap_ớ"
+                    "label": "Bản đồ nền",
+                    "title": "Chọn Bản đồ nền"
             },
             "legend":{
-                "title": "Đ_Legend_ớ"
+                "title": "Chú giải"
             },
             "details":{
-                "title": "Đ_Map Details_ớ",
-                "error": "Đ_Update the web map description with the details to display in this section_ớ."
+                "title": "Chi tiết Bản đồ",
+                "error": "Cập nhật mô tả bản đồ web với các chi tiết để hiển thị trong phần này."
             },
             "popup": {
-                "title": "Đ_Info_ớ",
-                "instructions": "Đ_Select a feature on the map to view details_ớ."
+                "title": "Thông tin",
+                "instructions": "Chọn một đối tượng trên bản đồ để xem thông tin chi tiết."
             }
 
         },
         "map": {
-            "error": "Đ_Unable to create map_ớ"
+            "error": "Không thể tạo bản đồ"
         }
     })
 );

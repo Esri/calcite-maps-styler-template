@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "ı_Unable to create map_İ"
+            error: "Harita oluşturulamıyor"
         },
         tools: {
             info: {
-                label: "ı_Info_İ",
-                tooltip: "ı_Toggle map info_İ"
+                label: "Bilgi",
+                tooltip: "Harita bilgisini aç"
             },
             sync: {
-                label: "ı_Sync Map Extent_İ",
-                tooltip: "ı_Sync to extent of this map_İ"
+                label: "Harita Kapsamını Eşitle",
+                tooltip: "Bu haritanın kapsamına eşitle"
             }
         }
     })

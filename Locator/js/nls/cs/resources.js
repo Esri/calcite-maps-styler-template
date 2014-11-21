@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "Ř_Unable to create map_ů"
+         "error": "Nelze vytvořit mapu"
       },
       "location": {
-         "name": "Ř_Name_ů",
-         "current": "Ř_Current Location_ů",
-         "address": "Ř_Address_ů",
-         "latitude": "Ř_Latitude_ů",
-         "longitude": "Ř_Longitude_ů",
-         "use": "Ř_Use this location_ů",
-         "error": "Ř_Unable to use this location_ů"
+         "name": "Název",
+         "current": "Aktuální umístění",
+         "address": "Adresa",
+         "latitude": "Zeměpisná šířka",
+         "longitude": "Zeměpisná délka",
+         "use": "Použít toto umístění",
+         "error": "Toto umístění nelze použít."
       },
       "tooltips": {
-         "toggle": "Ř_Show/Hide_ů",
-         "reset": "Ř_Reset_ů",
-         "locate": "Ř_Find my location_ů",
-         "directions": "Ř_Directions_ů",
-         "filter": "Ř_Filter_ů",
-         "close": "Ř_Close_ů",
-         "reverse": "Ř_Reverse_ů"
+         "toggle": "Zobrazit/skrýt",
+         "reset": "Resetovat",
+         "locate": "Najít moji polohu",
+         "directions": "Pokyny trasy",
+         "filter": "Filtr",
+         "close": "Zavřít",
+         "reverse": "Obrátit"
       }
    })
 );

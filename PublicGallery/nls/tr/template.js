@@ -12,14 +12,14 @@
                 "bingError": "Bu uygulamayı dağıtmak kendi Bing Haritalar anahtarınızı gerektirir.",
                 "noLayers": "Hiçbir operasyonel katman yok",
                 "noSearchResults": "Üzgünüz, hiçbir sonuç bulunamadı.",
-                "noGroupResults": "ı_The group could not be found_İ.",
+                "noGroupResults": "Grup bulunamadı.",
                 "noMatches": "Hiçbir eşleşme bulunamadı.",
                 "noMapsFound": "Hiçbir harita bulunamadı."
             },
             "sidePanel": {
                 "title": "Gösterim",
                 "legendButton": "Gösterim",
-                "layersButton": "ı_Layers_İ", // new
+                "layersButton": "Katmanlar", // new
                 "legendButtonTitle": "Harita Gösterimi",
                 "aboutButton": "Hakkında",
                 "aboutButtonTitle": "Harita Hakkında",
@@ -36,47 +36,47 @@
                 "loadingText": "Haritaları Yükle&hellip;"
             },
             "sortFields": {
-                "sortBy": "ı_Sort by_İ",
-                "modified": "ı_Date_İ",
-                "title": "ı_Title_İ",
-                "type": "ı_Type_İ",
-                "numRatings": "ı_Ratings_İ",
-                "avgRating": "ı_Avg. Rating_İ",
-                "numComments": "ı_Comments_İ",
-                "numViews": "ı_Views_İ"
+                "sortBy": "Şuna göre sırala:",
+                "modified": "Tarih",
+                "title": "Başlık",
+                "type": "Tür",
+                "numRatings": "Derecelendirmeler",
+                "avgRating": "Ort. Derecelendirme",
+                "numComments": "Yorumlar",
+                "numViews": "Görünümler"
             },
             "comments": {
-                "commentsHeader": "ı_Comments_İ",
-                "posted": "ı_Posted_İ",
-                "by": "ı_by_İ",
-                "deleteComment": "ı_delete_İ",
-                "editComment": "ı_edit_İ",
-                "noComments": "ı_No comments_İ",
-                "addCommentButton": "ı_Add Comment_İ",
-                "signIn": "ı_Sign In_İ",
-                "register": "ı_Register_İ",
-                "or": "ı_or_İ",
-                "toPost": "ı_to post a comment_İ."
+                "commentsHeader": "Yorumlar",
+                "posted": "Gönderen",
+                "by": "kişi",
+                "deleteComment": "sil",
+                "editComment": "düzenle",
+                "noComments": "Yorum yok",
+                "addCommentButton": "Yorum Ekle",
+                "signIn": "Oturum Aç",
+                "register": "Kaydettir",
+                "or": "veya",
+                "toPost": "yorum göndermek için."
             },
             "buttons": {
-                "cancel": "ı_Cancel_İ",
-                "submit": "ı_Submit_İ"
+                "cancel": "İptal",
+                "submit": "Gönder"
             },
             "rating": {
-                "signIn": "ı_Sign In_İ",
-                "toRate": "ı_to rate_İ."
+                "signIn": "Oturum Aç",
+                "toRate": "derecelendirmek için."
             },
             "itemInfo": {
-                "createdLabel": "ı_created_İ",
-                "ratingsLabel": "ı_rating_İ",
-                "ratingsLabelPlural": "ı_ratings_İ",
-                "viewsLabel": "ı_view_İ",
-                "viewsLabelPlural": "ı_views_İ",
-                "commentsLabel": "ı_comment_İ",
-                "commentsLabelPlural": "ı_comments_İ",
-                "modifiedLabel": "ı_Last Modified_İ",
-                "by": "ı_by_İ",
-                "separator": "ı__İ,"
+                "createdLabel": "oluşturma",
+                "ratingsLabel": "derecelendirme",
+                "ratingsLabelPlural": "derecelendirme",
+                "viewsLabel": "görünüm",
+                "viewsLabelPlural": "görünüm",
+                "commentsLabel": "yorum",
+                "commentsLabelPlural": "yorum",
+                "modifiedLabel": "Son Değiştirme",
+                "by": "kişi",
+                "separator": ","
             },
             "mapPage": {
                 "findLocation": "Konum bul",
@@ -93,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Sahibi:",
                 "switchBasemap": "Altlık Haritayı Değiştir",
-                "getMobileApp": "ı_Get App_İ",
-                "constraintsHeading": "ı_Use Constraints_İ",
-                "createdLabel": "ı_Created_İ",
-                "noDescription": "ı_No description_İ.",
-                "detailsLabel": "ı_Details_İ"
+                "getMobileApp": "Uygulama Al",
+                "constraintsHeading": "Kısıtlama Kullan",
+                "createdLabel": "Oluşturma",
+                "noDescription": "Açıklama yok.",
+                "detailsLabel": "Ayrıntılar"
             },
             "filterItems": {
                 "show": "Göster",

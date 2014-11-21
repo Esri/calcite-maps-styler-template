@@ -7,7 +7,7 @@
 				step3: "INIŢIALIZARE",
 				fail: "Ne pare rău, încărcarea Swipe a eşuat",
 				loadBuilder: "SE COMUTĂ LA MODUL INSTRUMENT DE CĂUTARE",				
-				redirectSignIn: "REDIRECȚIONARE LA PAGINA DE AUTENTIFICARE",
+				redirectSignIn: "REDIRECŢIONARE LA PAGINA DE AUTENTIFICARE",
 				redirectSignIn2: "(veţi fi redirecţionat aici după autentificare)",
 				failButton: "Reîncercare"
 			},

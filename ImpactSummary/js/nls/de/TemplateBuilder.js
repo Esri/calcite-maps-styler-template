@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Ausgewähltes Feature",
                 "layerHelpTextMessage": "Für diese Anwendung ist ein Layer mit numerischen Feldern erforderlich",
                 "alertMessage": {
-                    "resetVariableMessage": "ä_Are you sure you want to reset variable_Ü?",
+                    "resetVariableMessage": "Möchten Sie diese Variable wirklich zurücksetzen?",
                     "emptyAppTitleMessage": "Anwendungstitel darf nicht leer sein",
                     "emptyDescriptionMessage": "Beschreibung darf nicht leer sein",
                     "maxVariableSelection": "Sie können nicht mehr als 25 Subvariablen auswählen",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "Nicht gespeicherte Änderungen",
                     "failMessage": "Element konnte nicht erfolgreich gespeichert werden",
                     "saveChangesAlert": "Möchten Sie die Änderungen speichern?",
-                    "variableLabelValidation": "ä_Variable label cannot be empty_Ü",
-                    "subVariableLabelValidation": "ä_Sub variable label cannot be empty_Ü"
+                    "variableLabelValidation": "Variablenbeschriftung darf nicht leer sein",
+                    "subVariableLabelValidation": "Subvariablenbeschriftung darf nicht leer sein"
                     }
             }
         }

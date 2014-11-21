@@ -3,7 +3,7 @@
 		firstPane: {
 			head: "<span class='highlightText'>O Modelo de Apresentação do Mapa</span> habilita todos os níveis de conta do ArcGIS Online incluindo a conta Pública gratuita para criar e editar narrativas baseadas no local, combinando imagens, textos e mapas de:",
 			list0: "Figuras armazenadas em serviços de compartilhamento de fotos online maiores como Flickr, Picasa e Facebook ou em qualquer servidor da web ou site da web",
-			list1: "ã_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_Ç"
+			list1: "Figuras ainda não armazenadas online que serão armazenadas como anexos do Serviço da Feição (limitadas aos membros do ArcGIS for Organizations)"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>O Modelo</span> incorpora ferramentas de edição de fácil uso que incluem:",
@@ -17,8 +17,8 @@
 			list1: "Hospedar o modelo no seu próprio servidor da web ou um servidor de terceiros"
 		},
 		fourthPane: {
-			head: "ã_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_Ç:",
-			list0: "ã_Story maps published by Esriâ€™s story maps teams_Ç",
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Consulte o site Mapas Históricos da Esriâ€™</a> para obter mais informações sobre criar e compartilhar histórias. Os recursos incluem:",
+			list0: "Mapas históricos publicados pela equipe de mapas históricos da Esriâ€™",
 			list1: "Uma seleção de modelos para download",
 			list2: "Guia das melhores práticas", 
 			list3: "Uma galeria de mapas históricos apresentando uma comunidade crescente de narradores"

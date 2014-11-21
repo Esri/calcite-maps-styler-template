@@ -1,12 +1,12 @@
 ﻿define(
     ({
       "map": {
-         "error": "试_Unable to create map_验"
+         "error": "无法创建地图"
       },
       "tooltips": {
-         "logo": "试_Logo_验",
-         "switchbasemap": "试_Switch base map_验",
-         "close": "试_Close_验"
+         "logo": "徽标",
+         "switchbasemap": "切换底图",
+         "close": "关闭"
       }
    })
 );

@@ -68,7 +68,7 @@
 				dataPicError1: "Žemėlapio turui dabar privaloma, kad vaizdo URL baigtųsi vienu iš šių plėtinių: .jp(e)g, .png, .gif arba .bmp.",
 				dataPicError2: "Reikalavimas neįtakos jūsų esamo publikuoto žemėlapio turo. Tačiau, kad galėtumėt naudoti interaktyvų kūrėją, jums pirmiausiai reikia išspręsti URL klausimą atliekant vieną iš šių dviejų veiksmų:",
 				dataPicError3: "Redaguoti URL",
-				dataPicError4: "Į_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_š.",
+				dataPicError4: "Tai pridės <i>#isImage</i> į nepalaikomo vaizdo URL pabaigą. Dauguma serverių palaiko URL plėtinius. Tačiau, kai tik atliksite šį veiksmą, naviguodami per taškus turite įsitikinti, kad veikia atnaujinti nuotraukų URL. Jei kiekviena nuotrauka įkeliama, galite išsaugoti žemėlapio turą. Jei <b>nuotraukos yra nerodomos, nesaugokite žemėlapio turo</b>. Vietoje to, įkelkite kūrėją iš naujo ir atlikite antrą veiksmą.",
 				dataPicError5: "Apribokite turą iki nuotraukų",
 				dataPicError6: "Šis pasirinkimas lems tai, kad visi URL bus laikomi nuotraukomis, tačiau tuomet negalėsite pridėti video naudodami interaktyvų kūrėją. Šis veiksmas yra grįžtamas, jei nuspręstumėt pridėti video ateityje.",
 				dataPicError7: "Jūsų žemėlapio turas buvo apribotas iki nuotraukų, video negali būti naudojami. Jei pasirinksite pašalinti šį ribojimą, prieš išsaugodami žemėlapio turą patikrinkite ar jūsų nuotraukos dar vis užkraunamos. Jei reikės, jūs galėsite atkurti šį apribojimą.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Nuotrauka",
 				addLabelThumbUrl: "Miniatiūra",
 				addTextPlaceholderUrl: "Įveskite vaizdo URL",
-				addTextPlaceholderUrl2: "Į_Enter a YouTube page URL_š",
+				addTextPlaceholderUrl2: "Įveskite YouTube puslapio URL",
 				addTextPlaceholderUrl3: "Įveskite Vimeo puslapio URL",
 				addTextPlaceholderUrl4: "Įveskite video nuorodos URL",
 				addLabelVideo: "Video",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Perkrauti laukų pažymėjimą",
 				settingsExtentExplain: "Nustatykite kelionės žemėlapyje pradinę aprėptį naudojant žemiau esantį žemėlapį.",
 				settingsExtentExplainBottom: "Aprėptis, kurią nustatote pakeis internetinio žemėlapio pradinę aprėptį. Turėkite omenyje, kad ši aprėptis nėra naudojama jei joje nėra pirmo turo taško. Šiuo atveju turas atveriamas turas bus centruojamas į pirmą tašką.",
-				settingsExtentDateLineError: "Į_The extent cannot be across the meridian of 180Â° longitude_š",
+				settingsExtentDateLineError: "Aprėptis negali būti abipus 180° ilgumos",
 				settingsExtentDateLineError2: "Klaida apskaičiuojant aprėptį",
 				settingsExtentDrawBtn: "Brėžti naują aprėptį",
 				settingsExtentModifyBtn: "Redaguoti aprėptį",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Vykdyti"
 			},
 			headerJS:{
-				editMe: "Į_Edit me_š!",
+				editMe: "Redaguok!",
 				templateTitle: "Nustatyti šablono antraštę",
 				templateSubtitle: "Nustatyti šablono paantraštę"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Importavimas pavyko. Kraunama"
 			},
 			viewYoutube: {
-				title: "Į_YouTube import_š",
+				title: "YouTube importas",
 				header: "Įveskite YouTube vartotojo vardą ir raskite viešai bendrinamų video.",
-				pageInputLbl: "Į_Enter a YouTube user name_š",
+				pageInputLbl: "Įveskite YouTube vartotojo vardą",
 				lookupMsgError: "Vartotojas nerastas",
-				howToFind: "Į_How to find a YouTube user name_š",
+				howToFind: "Kaip rasti YouTube vartotojo vardą",
 				howToFind2: "Vartotojo vardas rodomas po video",
 				found: "Surasta",
 				noData: "Nerasta viešų video"
@@ -442,12 +442,12 @@
 					div172: "Kai jie yra, nuotraukos ir miniatiūros laukai visada bus naudojami, o elementų paslaugų priedus galima bus naudoti užklausomis.",
 					div173: "CSV ir Shape failų pavyzdžių galima parsisiųsti iš",
 					div18: "Talpinamų elementų paslaugų kūrimas iš CSV ar Shape failo",
-					div19: "Į_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_š.",
-					div20: "Į_Supported picture formats and videos_š",
-					div21: "Į_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_š.",
+					div19: "Kai kuriate talpinamą elementų paslaugą iš CSV ar Shape failo, priedai nėra įjungti. Kad juos įjungtumėte, atverkite elementų paslaugos elementų puslapį, spustelkite nedidelę rodyklę ties sluoksnio pasirinkimu ir pamatysite šį nustatymą. Tai atlikus Žemėlapio turas ir toliau naudos nuotraukas bei miniatiūras, kurias nurodėte per atributus. Pasirinktinai, jei norite talpinti nuotraukas kaip elementų paslaugų priedus, galite tai padaryti dviem mygtukais nuotraukų skyde (\"Pakeisti nuotrauką\" ir \"Pakeisti miniatiūrą\").",
+					div20: "Palaikomi nuotraukų formatai ir video",
+					div21: "Palaikomi nuotraukų formatai yra: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. Jei jūsų medija nesibaigia vienu šių plėtinių, žemėlapio turas laikys ją video, išskyrus tuos atvejus, kai naudojama elementų paslauga (žiūrėti žemiau).",
 					div22: "Žemėlapio turo šablone nėra vaizdo grotuvo, todėl turite naudoti išorinį vaizdo grotuvą, kurį pateikia jūsų mėgstamas vaizdo talpinimo paslaugų teikėjas (pasirinkite sprendimus vaizdui talpinti ir nukopijuokite URL, esantį duotame kode). Jei norite talpinti vaizdą patys, galite sukurti HTML puslapį, turintį grotuvą, tokį kaip <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "Interaktyvus vedlys nesuteikia dialogo video pridėjimui, naudojant elementų paslaugas su priedais, bet tai galima padaryti redaguojant jūsų duomenys už interaktyvaus vedlio ribų. Arcgis.com žemėlapių peržiūros aplikacijoje, jei pakeičiate nuotraukos laukus taip, kad jie nurodytų į išorinius video ir pridėtumėt specialų parametrą URL pabaigoje (#isVideo), jūsų medija bus laikoma video.",
-					div24: "Į_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_š."
+					div24: "Atkreipkite dėmesį, kad jums reikalingi du tinkami nuotraukų priedai arba taškas nebus naudojamas. Naudojant elementų paslaugą naudoti video priedų be nuotraukų ir miniatiūrų laukų negalima."
 				},
 				tab3: {
 					title: "Adaptavimas",
@@ -487,7 +487,7 @@
 					div2a: "Turas bendrinamas per kūrėją.",
 					div2b: "BENDRINTI mygtukas atnaujins aplikacijos ir internetinio žemėlapio elementus. Jei jūsų turo duomenys saugomi elementų paslaugoje, jie taip pat bus atnaujinti. Jei pridėjote kitų sluoksnius per ArcGIS.com žemėlapių peržiūros aplikaciją, jie nebus atnaujinti. Tai gali lemti tai, kad turas nebus bendrintas taip kaip norėjote. Elementai, jau turintys reikiamas (ar didesnes) teises nebus atnaujinti.",
 					div2c: "Turas bendrinamas per ArcGIS Online",
-					div2d: "Į_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_š.",
+					div2d: "Kai bendrinsite aplikaciją per ArcGIS Online, jei reikės, jūsų bus prašoma bendrinti susijusius šaltinius (internetinį žemėlapį, elementų paslaugą, žymėjimų sluoksnį), kurie dar nėra bendrinti. Jei žemėlapio turas yra viešas ir vienas iš jūsų išteklių nėra bendrintas su auditorija, vartotojai bus nukreipiami į ArcGIS Online prisijungimo puslapį.",
 					div3t: "Elementų paslaugos saugumas",
 					div3a: "Jei naudojate talpinamą elementų paslaugą, sukurta žemėlapių turo vedlio pagalba, aplikacija už jus sutvarkys paslaugos saugumą, ir jūs išliksite vienintelis vartotojas, turintis redagavimo teises, net jei bendrinsite viešai.",
 					div3t2: "Prieš bendrindami turą su auditoriją",

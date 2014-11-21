@@ -11,7 +11,7 @@
             layerNotFound: "Vrstva není ve webové mapě",
             fieldNotFound: "Pole nenalezeno",
             popupNotSet: "Vyskakovací okno není pro tuto vrstvu aktivováno",
-            noLayersSet: "Ř_No layers defined in the config, the search box will not work_ů"
+            noLayersSet: "V konfiguraci nejsou definovány žádné vrstvy, pole vyhledávání nebude fungovat."
         },
         page: {
             title: "Vyhledávání informací",

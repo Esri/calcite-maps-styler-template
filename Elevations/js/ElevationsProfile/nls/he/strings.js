@@ -1,30 +1,30 @@
 ﻿define({
   root: ({
     display: {
-      elevationProfileTitle: "כן_Elevations Profile_ש",
-      showMe: "כן_show me_ש",
-      selectLine: "כן_<b>Select</b> a feature in the map_ש.",
-      popupRequirement: "כן_NOTE: the feature must be in a layer with Popups enabled_ש.",
-      digitizeDistanceMeasureTool: "כן_Use the <b>Measure</b> tools_ש.",
-      selectFeatureHelpUrl: "כן_http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D_ש",
-      measureToolHelpUrl: "כן_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000_ש",
-      hoverOver: "כן_Hover over or touch the Elevations Profile chart to display elevations and show location on map_ש."
+      elevationProfileTitle: "פרופיל גבהים",
+      showMe: "הצג בפניי",
+      selectLine: "<b>בחר</b> ישות במפה.",
+      popupRequirement: "הערה: הישות חייבת להיות בשכבה שבה האפשרות לחלונות קופצים מופעלת.",
+      digitizeDistanceMeasureTool: "השתמש בכלי <b>מדידה</b>.",
+      selectFeatureHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
+      measureToolHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000",
+      hoverOver: "רחף מעל תרשים פרופיל הגבהים או גע בו כדי להציג גבהים ולהראות את המיקום על מפה."
     },
     buttons: {
-      measureLabel: "כן_Measure_ש",
-      helpLabel: "כן_Help_ש"
+      measureLabel: "מדידה",
+      helpLabel: "עזרה"
     },
     chart: {
-      title: "כן_Elevations Profile_ש",
-      demResolution: "כן_DEM Resolution_ש",
-      elevationTitleTemplate: "כן_Elevation in {0}_ש",
-      distanceTitleTemplate: "כן_Distance in {0}_ש",
-      gainLossTemplate: "כן_Min:{min}   Max:{max}   Start:{start}   End:{end}   Change:{gainloss}_ש"
+      title: "פרופיל גבהים",
+      demResolution: "רזולוצית DEM",
+      elevationTitleTemplate: "גובה ב{0}",
+      distanceTitleTemplate: "מרחק ב{0}",
+      gainLossTemplate: "מינימום:{min}   מקסימום:{max}   התחלה:{start}   סוף:{end}   שינוי:{gainloss}"
     },
     errors: {
-      MissingConstructorParameters: "כן_Missing constructor parameter_ש.",
-      InvalidConfiguration: "כן_Invalid configuration_ש.",
-      UnableToProcessResults: "כן_Unable to process analysis results_ש."
+      MissingConstructorParameters: "פרמטר בונה חסר.",
+      InvalidConfiguration: "תצורה לא חוקית.",
+      UnableToProcessResults: "לא ניתן לעבד את תוצאות הניתוח."
     }
   }),
   "ar": 1,

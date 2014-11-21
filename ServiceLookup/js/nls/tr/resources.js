@@ -11,7 +11,7 @@
             layerNotFound: "Katman, web haritasında değil",
             fieldNotFound: "Alan bulunamadı",
             popupNotSet: "Açılır pencere bu katman için etkinleştirildi",
-            noLayersSet: "ı_No layers defined in the config, the search box will not work_İ"
+            noLayersSet: "Yapılandırma dosyasında herhangi bir katman tanımlanmadı, arama kutusu çalışmayacak"
         },
         page: {
             title: "Bilgi Arama",

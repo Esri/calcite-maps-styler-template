@@ -28,8 +28,8 @@
 				buttonSettings: "Nastavení",
 				buttonHelp: "Nápověda",
 				buttonPreview: "Živý náhled",
-				tooltipFirstSave: "Ř_This isn't available until you save_ů.",
-				tooltipNotShared: "Ř_This isn't available until you share_ů.",
+				tooltipFirstSave: "Tato funkce není k dispozici, dokud aplikaci neuložíte.",
+				tooltipNotShared: "Tato funkce není k dispozici, dokud aplikaci nenasdílíte.",
 				noPendingChange: "Žádná neuložená změna",
 				unSavedChangePlural: "Neuložené změny",
 				closeWithPendingChange: "Opravdu chcete potvrdit tuto akci? Vaše změny budou ztraceny.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Chyba při ukládání aplikace",
 				err1Div1: "Aplikaci nelze uložit, protože již máte uloženou položku se stejným názvem (viz vaše <a class='linkagolroot' target='_blank'>složka obsahu</a>).",
-				err1Div2: "Ř_Please modify the title of your application and then save it_ů.",
-				btnOk: "Ř_Edit the application title_ů"
+				err1Div2: "Změňte název aplikace a uložte ji.",
+				btnOk: "Změňte název aplikace."
 			},
 			share: {
 				firstSaveTitle: "Aplikace úspěšně uložena",
@@ -66,7 +66,7 @@
 				shareHeader2: "Vaše aplikace je přístupná členům vaší organizace (je vyžadováno přihlášení).",
 				shareLinkCopy: "Kopírovat",
 				shareLinkCopied: "Zkopírováno",
-				shareQ0: "Ř_How do I embed the application in a web page_ů?",
+				shareQ0: "Jak vložím aplikaci do webové stránky?",
 				shareQ1Opt1: "Jak lze aplikaci ponechat jako soukromou?",
 				shareQ1Opt2: "Jak lze aplikaci ponechat jako soukromou nebo ji veřejně sdílet?",
 				shareA1: "Použijte %SHAREIMG% na <a href='%LINK1%' target='_blank'>stránce položek aplikace</a>.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Odkaz v záhlaví si můžete přizpůsobit.",
 				logoSocialText: "Text",
 				logoSocialLink: "Odkaz",
-				lblSmallHeader: "Ř_Use compact header (no subtitle)_ů"
+				lblSmallHeader: "Použít kompaktní záhlaví (bez podnázvu)"
 			},
 			header: {
-				title: "Ř_Edit the title of your %TPL_NAME%_ů",
-				subtitle: "Ř_Edit the subtitle of your %TPL_NAME%_ů"
+				title: "Změňte název šablony %TPL_NAME%.",
+				subtitle: "Změňte podnázev šablony %TPL_NAME%."
 			}
 		}
 	})

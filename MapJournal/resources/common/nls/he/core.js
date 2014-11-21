@@ -28,8 +28,8 @@
 				buttonSettings: "הגדרות",
 				buttonHelp: "עזרה",
 				buttonPreview: "תצוגה דינמית",
-				tooltipFirstSave: "כן_This isn't available until you save_ש.",
-				tooltipNotShared: "כן_This isn't available until you share_ש.",
+				tooltipFirstSave: "אפשרות זו אינה זמינה עד לשמירה.",
+				tooltipNotShared: "אפשרות זו אינה זמינה עד לשיתוף.",
 				noPendingChange: "אין שינוי לביצוע",
 				unSavedChangePlural: "השינויים בהמתנה",
 				closeWithPendingChange: "האם הינך בטוח שברצונך לאשר פעולה זו? אתה עלול לאבד את השינויים שביצעת.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "שגיאה בשמירת היישום",
 				err1Div1: "לא ניתן לשמור את היישום משום שכבר יש לך פריט אחר באותו שם (ראה את<a class='linkagolroot' target='_blank'>תיקיית התוכן</a> שלך).",
-				err1Div2: "כן_Please modify the title of your application and then save it_ש.",
-				btnOk: "כן_Edit the application title_ש"
+				err1Div2: "שנה את כותרת האפליקציה ולאחר מכן שמור אותה.",
+				btnOk: "ערוך את כותרת האפליקציה"
 			},
 			share: {
 				firstSaveTitle: "האפליקציה נשמרה בהצלחה",
@@ -66,7 +66,7 @@
 				shareHeader2: "האפליקציה שלך נגישה לחברי הארגון שלך (נדרש להתחבר).",
 				shareLinkCopy: "העתק",
 				shareLinkCopied: "הועתק",
-				shareQ0: "כן_How do I embed the application in a web page_ש?",
+				shareQ0: "כיצד ניתן להטמיע את האפליקציה בדף אינטרנט?",
 				shareQ1Opt1: "כיצד אני יכול לשמור את האפליקציה פרטית?",
 				shareQ1Opt2: "כיצד אני יכול לשמור את האפליקציה פרטית או לשתף אותה לציבור?",
 				shareA1: "השתמש ב-%SHAREIMG% ב- <a href='%LINK1%' target='_blank'>בדף פריטי האפליקציה</a>.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "התאמה אישית של קישור הכותרת.",
 				logoSocialText: "טקסט",
 				logoSocialLink: "קישור",
-				lblSmallHeader: "כן_Use compact header (no subtitle)_ש"
+				lblSmallHeader: "השתמש בכותרת מצומצמת (ללא כותרת משנה)"
 			},
 			header: {
-				title: "כן_Edit the title of your %TPL_NAME%_ש",
-				subtitle: "כן_Edit the subtitle of your %TPL_NAME%_ש"
+				title: "ערוך את הכותרת של %TPL_NAME%",
+				subtitle: "ערוך את כותרת המשנה של %TPL_NAME%"
 			}
 		}
 	})

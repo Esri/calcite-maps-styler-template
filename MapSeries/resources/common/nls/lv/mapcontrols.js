@@ -2,13 +2,13 @@
 	 ({
 		commonMapControls: {
 			common: {
-				settings: "ķ_Settings_ū",
-				openDefault: "ķ_Open by default_ū"
+				settings: "Iestatījumi",
+				openDefault: "Atvērt pēc noklusējuma"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "ķ_Basemap_ū",
-				expandFactorLabel: "ķ_Expand Factor_ū",
-				expandFactorPopover: "ķ_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle_ū."
+				basemapGalleryBtnLabel: "Pamatkarte",
+				expandFactorLabel: "Izvēršanas koeficients",
+				expandFactorPopover: "Proporcija starp pārskata kartes lielumu un pārskata kartē attēloto pārklājuma taisnstūri. Noklusējuma vērtība ir 2. Tas nozīmē, ka pārskata karte būs vismaz divas reizes lielāka par pārklājuma taisnstūri."
 			}
 		}
 	})

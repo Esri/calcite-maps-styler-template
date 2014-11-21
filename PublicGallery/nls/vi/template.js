@@ -12,14 +12,14 @@
                 "bingError": "Triển khai ứng dụng này yêu cầu khóa Bản đồ Bing của riêng bạn.",
                 "noLayers": "Không có lớp hoạt động",
                 "noSearchResults": "Xin lỗi, không tìm thấy kết quả.",
-                "noGroupResults": "Đ_The group could not be found_ớ.",
+                "noGroupResults": "Không thể tìm thấy nhóm.",
                 "noMatches": "Không tìm thấy kết quả phù hợp.",
                 "noMapsFound": "Không tìm thấy bản đồ."
             },
             "sidePanel": {
                 "title": "Chú giải",
                 "legendButton": "Chú giải",
-                "layersButton": "Đ_Layers_ớ", // new
+                "layersButton": "Lớp", // new
                 "legendButtonTitle": "Chú giải Bản đồ",
                 "aboutButton": "Về",
                 "aboutButtonTitle": "Về Bản đồ",
@@ -36,47 +36,47 @@
                 "loadingText": "Đang tải Bản đồ&hellip;"
             },
             "sortFields": {
-                "sortBy": "Đ_Sort by_ớ",
-                "modified": "Đ_Date_ớ",
-                "title": "Đ_Title_ớ",
-                "type": "Đ_Type_ớ",
-                "numRatings": "Đ_Ratings_ớ",
-                "avgRating": "Đ_Avg. Rating_ớ",
-                "numComments": "Đ_Comments_ớ",
-                "numViews": "Đ_Views_ớ"
+                "sortBy": "Phân loại theo",
+                "modified": "Ngày",
+                "title": "Tiêu đề",
+                "type": "Loại",
+                "numRatings": "Xếp loại",
+                "avgRating": "Xếp loại trung bình",
+                "numComments": "Bình luận",
+                "numViews": "Các chế độ xem"
             },
             "comments": {
-                "commentsHeader": "Đ_Comments_ớ",
-                "posted": "Đ_Posted_ớ",
-                "by": "Đ_by_ớ",
-                "deleteComment": "Đ_delete_ớ",
-                "editComment": "Đ_edit_ớ",
-                "noComments": "Đ_No comments_ớ",
-                "addCommentButton": "Đ_Add Comment_ớ",
-                "signIn": "Đ_Sign In_ớ",
-                "register": "Đ_Register_ớ",
-                "or": "Đ_or_ớ",
-                "toPost": "Đ_to post a comment_ớ."
+                "commentsHeader": "Bình luận",
+                "posted": "Đã đăng",
+                "by": "bởi",
+                "deleteComment": "xóa",
+                "editComment": "chỉnh sửa",
+                "noComments": "Không có bình luận",
+                "addCommentButton": "Thêm bình luận",
+                "signIn": "Đăng nhập",
+                "register": "Đăng ký",
+                "or": "hoặc",
+                "toPost": "để đăng một bình luận."
             },
             "buttons": {
-                "cancel": "Đ_Cancel_ớ",
-                "submit": "Đ_Submit_ớ"
+                "cancel": "Hủy",
+                "submit": "Đệ trình"
             },
             "rating": {
-                "signIn": "Đ_Sign In_ớ",
-                "toRate": "Đ_to rate_ớ."
+                "signIn": "Đăng nhập",
+                "toRate": "để xếp loại."
             },
             "itemInfo": {
-                "createdLabel": "Đ_created_ớ",
-                "ratingsLabel": "Đ_rating_ớ",
-                "ratingsLabelPlural": "Đ_ratings_ớ",
-                "viewsLabel": "Đ_view_ớ",
-                "viewsLabelPlural": "Đ_views_ớ",
-                "commentsLabel": "Đ_comment_ớ",
-                "commentsLabelPlural": "Đ_comments_ớ",
-                "modifiedLabel": "Đ_Last Modified_ớ",
-                "by": "Đ_by_ớ",
-                "separator": "Đ__ớ,"
+                "createdLabel": "đã tạo",
+                "ratingsLabel": "xếp loại",
+                "ratingsLabelPlural": "các xếp loại",
+                "viewsLabel": "chế độ xem",
+                "viewsLabelPlural": "các chế độ xem",
+                "commentsLabel": "bình luận",
+                "commentsLabelPlural": "các bình luận",
+                "modifiedLabel": "Chỉnh sửa lần cuối",
+                "by": "bởi",
+                "separator": ","
             },
             "mapPage": {
                 "findLocation": "Tìm một vị trí",
@@ -93,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Chủ sở hữu:",
                 "switchBasemap": "Chuyển đổi Bản đồ nền",
-                "getMobileApp": "Đ_Get App_ớ",
-                "constraintsHeading": "Đ_Use Constraints_ớ",
-                "createdLabel": "Đ_Created_ớ",
-                "noDescription": "Đ_No description_ớ.",
-                "detailsLabel": "Đ_Details_ớ"
+                "getMobileApp": "Tải ứng dụng",
+                "constraintsHeading": "Ràng buộc về sử dụng",
+                "createdLabel": "Đã tạo",
+                "noDescription": "Không có mô tả.",
+                "detailsLabel": "Chi tiết"
             },
             "filterItems": {
                 "show": "Hiển thị",

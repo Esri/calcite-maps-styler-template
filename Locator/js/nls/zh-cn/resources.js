@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "试_Unable to create map_验"
+         "error": "无法创建地图"
       },
       "location": {
-         "name": "试_Name_验",
-         "current": "试_Current Location_验",
-         "address": "试_Address_验",
-         "latitude": "试_Latitude_验",
-         "longitude": "试_Longitude_验",
-         "use": "试_Use this location_验",
-         "error": "试_Unable to use this location_验"
+         "name": "名称",
+         "current": "当前位置",
+         "address": "地址",
+         "latitude": "纬度",
+         "longitude": "经度",
+         "use": "使用此位置",
+         "error": "无法使用此位置"
       },
       "tooltips": {
-         "toggle": "试_Show/Hide_验",
-         "reset": "试_Reset_验",
-         "locate": "试_Find my location_验",
-         "directions": "试_Directions_验",
-         "filter": "试_Filter_验",
-         "close": "试_Close_验",
-         "reverse": "试_Reverse_验"
+         "toggle": "显示/隐藏",
+         "reset": "重置",
+         "locate": "查找我的位置",
+         "directions": "方向",
+         "filter": "过滤器",
+         "close": "关闭",
+         "reverse": "反向"
       }
    })
 );

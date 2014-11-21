@@ -2,13 +2,13 @@
 	 ({
 		commonMapControls: {
 			common: {
-				settings: "כן_Settings_ש",
-				openDefault: "כן_Open by default_ש"
+				settings: "הגדרות",
+				openDefault: "פתוח כברירת מחדל"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "כן_Basemap_ש",
-				expandFactorLabel: "כן_Expand Factor_ש",
-				expandFactorPopover: "כן_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle_ש."
+				basemapGalleryBtnLabel: "מפת בסיס",
+				expandFactorLabel: "פקטור הרחבה",
+				expandFactorPopover: "היחס בין גודל מפת ההתמצאות ותיחום המלבן המוצג במפת ההתמצאות. ערך ברירת המחדל הוא 2, משמעותו שמפת ההתמצאות תהיה לפחות פי שנים מגודל התיחום של המלבן."
 			}
 		}
 	})

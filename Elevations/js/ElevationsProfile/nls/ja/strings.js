@@ -1,30 +1,30 @@
 ﻿define({
   root: ({
     display: {
-      elevationProfileTitle: "須_Elevations Profile_鷗",
-      showMe: "須_show me_鷗",
-      selectLine: "須_<b>Select</b> a feature in the map_鷗.",
-      popupRequirement: "須_NOTE: the feature must be in a layer with Popups enabled_鷗.",
-      digitizeDistanceMeasureTool: "須_Use the <b>Measure</b> tools_鷗.",
-      selectFeatureHelpUrl: "須_http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D_鷗",
-      measureToolHelpUrl: "須_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000_鷗",
-      hoverOver: "須_Hover over or touch the Elevations Profile chart to display elevations and show location on map_鷗."
+      elevationProfileTitle: "標高断面図",
+      showMe: "表示",
+      selectLine: "マップ内のフィーチャを<b>選択します</b>。",
+      popupRequirement: "注意: フィーチャはポップアップが有効になっているレイヤ内にある必要があります。",
+      digitizeDistanceMeasureTool: "<b>計測</b>ツールを使用します。",
+      selectFeatureHelpUrl: "http://help.arcgis.com/ja/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
+      measureToolHelpUrl: "http://help.arcgis.com/ja/arcgisonline/help/index.html#//010q00000096000000",
+      hoverOver: "地形の断面図をマウスでポイントすると、断面図上に標高値およびマップ上に位置が表示されます。"
     },
     buttons: {
-      measureLabel: "須_Measure_鷗",
-      helpLabel: "須_Help_鷗"
+      measureLabel: "計測",
+      helpLabel: "ヘルプ"
     },
     chart: {
-      title: "須_Elevations Profile_鷗",
-      demResolution: "須_DEM Resolution_鷗",
-      elevationTitleTemplate: "須_Elevation in {0}_鷗",
-      distanceTitleTemplate: "須_Distance in {0}_鷗",
-      gainLossTemplate: "須_Min:{min}   Max:{max}   Start:{start}   End:{end}   Change:{gainloss}_鷗"
+      title: "標高断面図",
+      demResolution: "DEM 解像度",
+      elevationTitleTemplate: "標高 ({0})",
+      distanceTitleTemplate: "距離 ({0})",
+      gainLossTemplate: "最小: {min}   最大: {max}   始点: {start}   終点: {end}   標高差: {gainloss}"
     },
     errors: {
-      MissingConstructorParameters: "須_Missing constructor parameter_鷗.",
-      InvalidConfiguration: "須_Invalid configuration_鷗.",
-      UnableToProcessResults: "須_Unable to process analysis results_鷗."
+      MissingConstructorParameters: "コンストラクタ パラメータが見つかりません。",
+      InvalidConfiguration: "構成が無効です。",
+      UnableToProcessResults: "解析結果を処理できません。"
     }
   }),
   "ar": 1,

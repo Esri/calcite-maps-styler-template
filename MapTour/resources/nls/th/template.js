@@ -68,7 +68,7 @@
 				dataPicError1: "Map Tour ต้องการ URLของรูปภาพ ตามด้วยนามสกุลของภาพ  .jp(e)g, .png, .gif หรือ .bmp.",
 				dataPicError2: "สิงที่ต้องการนี้จะไม่กระทบกับทัวร์ของคุณที่นำเสนอไปแล้ว อย่างไรก็ตาม ในกรณีใช้โหมดสร้างแบบโต้ตอบ  คุณต้องแก้ไขปัญหา URL โดยดำเนินการอย่างใดอย่างหนึ่งของทั้งสองการกระทำนี้ :",
 				dataPicError3: "แก้ไข URLs",
-				dataPicError4: "ก้_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_ษฺ.",
+				dataPicError4: "สิ่งนี้จะเพิ่ม <i>#isImage</i> ส่วนท้ายของ URLs.รูปภาพที่รองรับ ส่วนมากจะเป็นภาคผนวกจากเซิร์ฟเวอร์  อย่างไรก็ตาม คุณได้ดำเนินการกระทำนี้  คุณควรจะตรวจสอบการอัพเดท URL รูปภาพ เป็นฟังก์ชั้นของการนำผ่านไปยังจุดทัวร์ของคุณ  ถ้าแต่ละรูปโหลด คุณสามารถมองเห็นแผนที่ทัวร์ที่บันทึก ถ้า <b>รูปขาดไป ไม่ต้องบันทึกทัวร์นี้</b>แทนที่  ย้อนกลับไปที่การสร้างและทำให้สำเร็จในส่วนต่อไป",
 				dataPicError5: "จำกัดทัวร์ให้กับรูปภาพ",
 				dataPicError6: "ตัวเลือกนี้จะทำให้ URLทั้งหมด ถูกพิจารณารูปภาพ แต่คุณไม่สามารถจะเพิ่มวิดีโอโดยใช้โหมดสร้างแบบโต้ตอบ การกระทำนี้สามารถเปลี่ยนกลับได้ คุณสามารถตัดสินใจเพิ่มวิดีโอในอนาคตได้",
 				dataPicError7: "แผนที่ทัวร์ของคุณมีภาพที่ห้วงห้าม วิดีโอไม่สามารถใช้ได้ ถ้าคุณเลือกการจำกัดออก  ตรวจสอบดูว่ารูปภาพของคุณยังคงโหลดรูปล่าสุดก่อนที่จะบันทึกแผนที่ทัวร์ คุณสามารถที่จะเรียกคืนในภายหลังว่ามีข้อจำกัดได้ในกรณีที่จำเป็น",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "รูปภาพ",
 				addLabelThumbUrl: "รูปขนาดเล็ก",
 				addTextPlaceholderUrl: "เพิ่ม URL รูปภาพ",
-				addTextPlaceholderUrl2: "ก้_Enter a YouTube page URL_ษฺ",
+				addTextPlaceholderUrl2: "เพิ่ม URL หน้ายูทูป",
 				addTextPlaceholderUrl3: "เพิ่ม URL ของหน้า Vimeo",
 				addTextPlaceholderUrl4: "เพิ่ม วิดีโอฝังด้วย URL",
 				addLabelVideo: "วิดีโอ",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "ล้างฟิลด์ที่เลือก",
 				settingsExtentExplain: "ตั้งค่าเริ่มต้นสำหรับแผนที่ทัวร์ ผ่านหน้าต่างแผนที่้ด้านล่าง",
 				settingsExtentExplainBottom: "ขอบเขตที่คุณตั้งค่าไว้จะเปลี่ยนไปเป็นขอบเขตเริ่มต้น  โปรดทราบว่าขอบเขตนี้ไม่ได้ใช้หากไม่รวมถึงการเพิ่มจุดทัวร์แรก ในกรณีนี้ทัวร์จะเปิดที่ตรงกลางเป็นตำแหน่งแรก",
-				settingsExtentDateLineError: "ก้_The extent cannot be across the meridian of 180Â° longitude_ษฺ",
+				settingsExtentDateLineError: "ขอบเขตไม่สามารถข้ามเส้นเมอร์ริเดียน ณ ลองจิจูด 180°",
 				settingsExtentDateLineError2: "ผิดพลาดในการคำนวณขอบเขต",
 				settingsExtentDrawBtn: "วาดขนาดใหม่",
 				settingsExtentModifyBtn: "แก้ไขขอบเขต",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "ประยุกต์"
 			},
 			headerJS:{
-				editMe: "ก้_Edit me_ษฺ!",
+				editMe: "แก้ไขฉัน!",
 				templateTitle: "ตั้งค่าโครงร่างชื่อเรื่อง",
 				templateSubtitle: "ตั้งค่าโครงร่างคำบรรยาย"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "นำเข้าสำเร็จกำลังโหลด"
 			},
 			viewYoutube: {
-				title: "ก้_YouTube import_ษฺ",
+				title: "นำเข้ายูทูป",
 				header: "เพิ่มชื่อผู้ใช้ ยูทูป เพื่อค้นหาวิดิโอที่แบ่งปันสาธารณะ",
-				pageInputLbl: "ก้_Enter a YouTube user name_ษฺ",
+				pageInputLbl: "เพิ่มชื่อผู้ใช้ยูทูป",
 				lookupMsgError: "ไม่พบผู้ใช้งาน",
-				howToFind: "ก้_How to find a YouTube user name_ษฺ",
+				howToFind: "วิธีการค้นหาชื่อ YouTube",
 				howToFind2: "ชื่อผู้ใช้ไม่แสดงอยู่ด้านล่างวิดีโอ",
 				found: "พบ",
 				noData: "ไม่พบวิดีโอสาธารณะ"
@@ -442,12 +442,12 @@
 					div172: "เมื่อนำเสนอ , รูปภาพหลักและภาพขนาดเล็กจะถูกใช้เสมอ ซึ่งฟีเจอร์เซอรวิสที่ถูกแนบไปจะไม่ต้องการ",
 					div173: "ตัวอย่าง CSVs และ shapefiles สามารถโหลดได้จาก",
 					div18: "สร้างโฮสต์ ข้อมูลบริการจากไฟล์ CSV หรือ Shapefile",
-					div19: "ก้_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_ษฺ.",
-					div20: "ก้_Supported picture formats and videos_ษฺ",
-					div21: "ก้_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_ษฺ.",
+					div19: "เมื่อคุณสร้างการฝากฟีเจอร์เซอร์วิสผ่านโดยใช้ CSV ไฟล์หรือ Shapfile, การแนบไฟล์ไม่สามารถตั้งค่าตั้งต้นได้ ในการให้ความสามารถโดย  เปิดหน้ารายละเอียดฟีเจอร์  คลิกที่ลูกศรเล็กๆ ในส่วนของชั้นข้อมูลโดยคุณจะเห็นเงื่อนไข แผนที่ทัวร์จะต่อไปยังการใช้รูปภาพหลักและรูปภาพขนาดเล็ก คุณใช้ผ่านข้อมูลทางตารางเพื่ออ้างอิง .เลือก ถ้าคุณต้องการแนบโหลดรูปของคุณเป็นฟีเจอร์เซอร์วิส คุณสามารถทำผ่านปุ่มสองปุ่มที่แผงทำงานของรูปภาพ",
+					div20: "สนับสนุนนามสกุลภาพและวิดีโอ",
+					div21: "สนับสนุนเมื่อนามสกุลไฟล์เป็น : <b>.jpg, .jpeg, .png, .gif and .bmp</b>.ถ้ามีเดียของคุณไม่ได้ตามด้วยนามสกุล, แผนที่ทัวร์จะพิจารณาวิดีโอนี้ การยอมรับเมื่อใช้บริการข้อมูลนี้ (ดูด้านล่าง)",
 					div22: "โครงร่างแผนที่ทัวร์ไม่รวมอยู่ในที่เล่นวิดีโอ ดังนั้นคุณต้องใช้เครื่องเล่นวิดีโอด้านนอกที่เตรียมไว้ให้ ด้วยวิดีโอรายการโปรดของคุณเอง  (หาตัวเลือกที่จะฝังวิดีโอและคัดลอก URL ปัจจุบันในรหัสที่กำหนด). หากคุณต้องการที่จะโฮสต์วิดีโอตัวคุณเองคุณสามารถสร้างเพจ HTML ที่ประกอบด้วยเครื่องเล่นวิดีโอเหมือนกับ <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "หน้าต่างผู้สร้างแบบปฏิสัมพันธ์ จะไม่เตรียมหน้าต่างสำหรับวิดีโอ เมื่อข้อมูลฟีเจอร์เซอร์วิสกำลังใช้อยู่ แต่ก็สามารถเป็นไปได้ในการแก้ไขข้อมูลด้านนอกจากหน้าต่างผู้สร้าง ในหน้าต่างของ arcgis.com ถ้าคุณแก้ไขฟิลด์รูปภาพโดยชี้ไปด้านนอกของวิดีโอ และเพิ่มพารามิเตอร์ลงท้ายด้วย URL ของคุณ  (#isVideo), มีเดียของคุณจะพิจารณาจากวิดีโอ",
-					div24: "ก้_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_ษฺ."
+					div24: "โปรดทราบ คุณจะยังต้องมีสองรูปที่ใช้ได้แนบไป หรือรูปที่จะไม่ได้ใช้มันจะไม่สามารถใช้วิดีโอ เมื่อคุณกำลังใช้ข้อมูลที่บริการแนบอยู่ โดยไม่มีรูปภาพขนาดเล็กในฟิลด์นั้น"
 				},
 				tab3: {
 					title: "ปรับแต่ง",
@@ -487,7 +487,7 @@
 					div2a: "แบ่งปันทัวร์ผ่านผู้สร้าง",
 					div2b: "ปุ่มแชร์ จะอัพเดทรายการโปรแกรมและเว็บแมพ ถ้าข้อมูลทัวร์ของคุณเก็บอยู่ในรายการ จะถูกอัพเดทด้วย ถ้าคุณเพิ่มชั้นข้อมูลอื่นผ่าน ArcGIS.com จะไม่อัพเดท ผลลัพธ์ในทัวร์จะไม่ถูกยอมรับให้แบ่งปัน รายการสิทธิพิเศษนั้น หรือมากกว่า จะไม่อัพเดทด้วย",
 					div2c: "แบ่งปันทัวร์ผ่าน ArcGIS Online",
-					div2d: "ก้_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_ษฺ.",
+					div2d: "เมื่อคุณแบ่งปันโปรแกรมนี้ผ่าน ArcGIS Online, หากจำเป็นอาจมีคำถามที่ให้คุณอัพเดทแหล่งข้อมูล (เว็บแมพ, ฟีเจอร์เซอรวิส, การตกแต่งชั้นข้อมูล) ซึ่งไม่ได้แบ่งปันในทางเดียวกัน. ถ้าแผนที่ทัวร์นี้เป็นสาธารณะ และหนึ่งในทรัพยากรของคุณ ไม่สามารถแบ่งปันไปยังผู้ชมของคุณได้ ผู้ใช้งานสามารถกลับไปยังหน้าลงทะเบียนผู้ใช้งานของ ArcGIS Online",
 					div3t: "การรักษาความปลอดภัยของ ข้อมูลที่บริการอยู่",
 					div3a: "ถ้าคุณกำลังใช้การฝากข้อมูลที่ให้บริการ โดยสร้างผ่านผู้ช่วยสร้าง Map tour โปรแกรมจะจัดการความปลอดภัยสำหรับคุณ และคุณยังคงแก้ไขได้อย่างมีระเบียบ แม้ว่าคุณจะแบ่นปันเซอร์วิสนี้ในสาธารณะ",
 					div3t2: "ก่อนการแบ่งปัน Tour ของคุณไปให้ผู้ชม",

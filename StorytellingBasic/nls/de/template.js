@@ -9,8 +9,8 @@
       general:"Fehler"
     },
 	legToggle:{
-	  up:"ä_MAP LEGEND â–²_Ü",
-	  down:"ä_MAP LEGEND â–¼_Ü"
+	  up:"KARTENLEGENDE â–²",
+	  down:"KARTENLEGENDE â–¼"
 	},
 	loading:{
 		message: "Karte wird geladen"

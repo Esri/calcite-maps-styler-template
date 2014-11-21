@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ж_Media_Я",
-				lblSelect2: "Ж_Content_Я",
-				lblMap: "Ж_Map_Я",
-				lblImage: "Ж_Image_Я",
-				lblVideo: "Ж_Video_Я",
-				lblExternal: "Ж_Web page_Я",
-				disabled: "Ж_This feature has been disabled by the Administrator_Я",
-				url: "Ж_To manually enter the web address of an image_Я",
-				userLookup: "Ж_Load albums_Я",
-				notImplemented: "Ж_Not implemented yet_Я.",
-				noData: "Ж_No public album found_Я"
+				lblSelect1: "Медиа",
+				lblSelect2: "Ресурсы",
+				lblMap: "Карта",
+				lblImage: "Изображение",
+				lblVideo: "Видео",
+				lblExternal: "Веб-страница",
+				disabled: "Объект был отключен администратором",
+				url: "Чтобы вручную ввести веб-адрес изображения",
+				userLookup: "Загрузить альбомы",
+				notImplemented: "Еще не реализовано.",
+				noData: "Общедоступных альбомов не найдено"
 			},
 			imageSelector: {
-				lblStep1: "Ж_Choose the service_Я",
-				lblStep2: "Ж_Select your media_Я",
-				lblStep3: "Ж_Configure_Я"
+				lblStep1: "Выберите услугу",
+				lblStep2: "Выберите ваши средства массовой информации",
+				lblStep3: "Настроить"
 			},
 			imageSelectorHome: {
-				explain: "Ж_Load images from social media, <br /> or directly from a URL_Я"
+				explain: "Загрузка изображения из социальных средств массовой информации,<br>или прямо из URL-адреса"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "Ж_User name_Я",
-				signInMsg2: "Ж_User not found_Я",
-				loadingFailed: "Ж_Loading failed_Я"
+				userInputLbl: "Имя пользователя",
+				signInMsg2: "Пользователь не найден",
+				loadingFailed: "Загрузка не удалась"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "Ж_Facebook User_Я",
-				rightHeader: "Ж_Facebook Page_Я",
-				pageExplain: "Ж_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_Я.",
-				pageInputLbl: "Ж_Page name_Я",
-				lookupMsgError: "Ж_Page not found_Я"
+				leftHeader: "Пользователь Facebook",
+				rightHeader: "Страница Facebook",
+				pageExplain: "Страница Facebook - это публичный продукт, как <b>esrigis</b>. Вы можете использовать имя страницы, расположенное после первой косой черты \'/\' в URL-адресе страницы.",
+				pageInputLbl: "Имя страницы",
+				lookupMsgError: "Страница не найдена"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "Ж_Email or Picasa/Google+ ID_Я",
-				signInMsg2: "Ж_Account not found_Я",
-				howToFind: "Ж_How to find a Picasa or Google+ account ID_Я",
-				howToFind2: "Ж_Copy digits between the first and second '/' of any Picasa or G+ page_Я"
+				userInputLbl: "Электронная почта или Picasa / ID Google +",
+				signInMsg2: "Учетная запись не найдена",
+				howToFind: "Как найти ID учетной записи Picasa или Google+",
+				howToFind2: "Скопируйте цифры, расположенные между первой и второй косой чертой \'/\' любой страницы Picasa или G+"
 			},
 			videoSelectorCommon: {
-				check: "Ж_Check_Я",
-				notFound: "Ж_Video not found_Я",
-				found: "Ж_Video found_Я",
-				select: "Ж_Select this video_Я"
+				check: "Проверить",
+				notFound: "Видео не найдено",
+				found: "Видео найдено",
+				select: "Выбрать это видео"
 			},
 			videoSelectorHome: {
-				other: "Ж_Other_Я"
+				other: "Другие"
 			},
 			videoSelectorYoutube: {
-				url: "Ж_URL of a Youtube video_Я",
-				pageInputLbl: "Ж_User name_Я",
-				lookupMsgError: "Ж_User not found_Я",
-				howToFind: "Ж_How to find a YouTube user name_Я",
-				howToFind2: "Ж_User name is displayed under videos_Я",
-				found: "Ж_Found_Я",
-				noData: "Ж_No public videos found_Я"
+				url: "URL видео на Youtube",
+				pageInputLbl: "Имя пользователя",
+				lookupMsgError: "Пользователь не найден",
+				howToFind: "Как найти имя пользователя YouTube",
+				howToFind2: "Имя пользователя отображается под видео",
+				found: "Найдено",
+				noData: "Общедоступных видео не найдено"
 			},
 			videoSelectorVimeo: {
-				url: "Ж_URL of a Vimeo video_Я"
+				url: "URL видео на Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Ж_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_Я.",
-				explain2: "Ж_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_Я.",
-				explain3: "Ж_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_Я.",
-				webpage: "Ж_Web page feature_Я"
+				explain1: "Приложение не может проигрывать необработанное видео (например, формата avi, mpeg), но он может проигрывать размещенные видео-файлы, которые содержат встроенные видео-плейеры (YouTube или Vimeo).",
+				explain2: "Большинство сервисов для размещения видео-роликов позволяют использовать эту функцию. Вам необходимо найти соответствующую опцию, скопировать код и использовать в %WEBPAGE%.",
+				explain3: "Или вы можете разместить видео самостоятельно, затем создать страницу HTML, которая использует видео-плейер, например %EXAMPLE% и разместить ссылку на эту страницу на %WEBPAGE%.",
+				webpage: "Функция веб-страницы"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Ж_Webpage URL_Я",
-				lblEmbed: "Ж_Embed code_Я",
-				lblOR: "Ж_OR_Я",
-				lblError1: "Ж_Error, clear one of the two input fields_Я.",
-				lblError2: "Ж_Embed code can only contain one %IFRAMETAG%_Я",
-				configure: "Ж_Configure_Я"
+				lblUrl: "URL веб-страницы",
+				lblEmbed: "Встроенный код",
+				lblOR: "ИЛИ",
+				lblError1: "Ошибка, очистите одно из двух входных полей.",
+				lblError2: "Внедренный код может содержать только один %IFRAMETAG%",
+				configure: "Настроить"
 			},
 			mediaConfigure: {
-				lblURL: "Ж_URL_Я",
-				lblURLPH: "Ж_An image URL should start with http:// and end with .jpg or .png_Я",
-				lblURLError: "Ж_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_Я.",
-				lblURLCheck: "Ж_Checking image_Я...",
-				lblLabel: "Ж_Image Caption_Я",
-				lblLabel1: "Ж_Caption_Я",
-				lblLabel2: "Ж_Hover text_Я",
-				lblLabel3: "Ж_None_Я",
-				lblLabelPH: "Ж_Enter some text_Я...",
-				lblMaximize: "Ж_Include a maximize button in the corner of the image_Я",
-				lblMaximizeHelp: "Ж_Recommended only for high quality photos_Я",
-				lblPosition: "Ж_Position_Я",
-				lblPosition1: "Ж_Center_Я",
-				lblPosition2: "Ж_Fill_Я",
-				lblPosition3: "Ж_Fit_Я",
-				lblPosition4: "Ж_Stretch_Я",
-				lblPosition5: "Ж_Custom_Я",
-				tooltipDimension: "Ж_The value can be specified in 'px' or '%'_Я",
-				tooltipDimension2: "Ж_The value has to be specified in 'px'_Я",
-				lblPosition2Explain: "Ж_(may crop)_Я",
-				lblPosition3Explain: "Ж_(won't crop)_Я",
-				lblPosition3Explain2: "Ж_(width will always fit the panel)_Я",
-				lblPosition4Explain: "Ж_(may distort)_Я",
-				unloadLbl: "Ж_Unload when reader navigates away_Я",
-				unloadHelp: "Ж_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_Я."
+				lblURL: "URL-адрес",
+				lblURLPH: "URL-адрес изображения должен начинаться с http:// и заканчиваться .jpg или .png",
+				lblURLError: "Возможно изображение некорректно. Укажите прямую ссылку на файл изображения (URL скорей всего будет заканчиваться на .jpg или .png). Ссылка на веб-страницу, содержащую изображение, может не работать.",
+				lblURLCheck: "Проверка изображения...",
+				lblLabel: "Заголовок изображения",
+				lblLabel1: "Заголовок",
+				lblLabel2: "Наведите курсор на текст",
+				lblLabel3: "Нет",
+				lblLabelPH: "Введите текст...",
+				lblMaximize: "Добавить кнопку увеличения размера до максимального в угол изображения",
+				lblMaximizeHelp: "Рекомендуется только для фотографий высокого качества",
+				lblPosition: "Положение",
+				lblPosition1: "По центру",
+				lblPosition2: "Заливка",
+				lblPosition3: "Разместить",
+				lblPosition4: "Растяжка",
+				lblPosition5: "Настраиваемый",
+				tooltipDimension: "Значение можно задать в \'px\' или \'%\'",
+				tooltipDimension2: "Значение можно задать в \'px\'",
+				lblPosition2Explain: "(может быть урезано)",
+				lblPosition3Explain: "(не будет урезаться)",
+				lblPosition3Explain2: "(ширина всегда будет соответствовать панели)",
+				lblPosition4Explain: "(может исказиться)",
+				unloadLbl: "Выгрузить, когда читатель уйдет",
+				unloadHelp: "Если на веб-странице есть аудио или видео медиа, храните эту опцию включенной, чтобы остановить проигрывание ресурса при уходе читателя. Отключите ее, например, чтобы саундтрек проигрывался, пока читатель перемещается по истории.<br />Если веб страница является приложением, отключите эту опцию, чтобы приложение не перезагружалось при возврате читателя в этот раздел."
 			},
 			editorActionGeocode: {
-				lblTitle: "Ж_Locate an address or place_Я",
-				mapMarkerExplain: "Ж_User will see a map marker when clicking the link_Я"
+				lblTitle: "Найдите адрес или место",
+				mapMarkerExplain: "При нажатии на ссылку пользователь увидит маркер карты"
 			},
 			editorActionMedia: {
-				lblTitle: "Ж_Change the Main Stage content_Я"
+				lblTitle: "Изменить ресурсы основной площадки"
 			},
 			editorInlineMedia: {
-				lblTitle: "Ж_Insert an image, video or web page_Я"
+				lblTitle: "Вставить изображение, видео или веб-страницу"
 			}
 		}
 	})

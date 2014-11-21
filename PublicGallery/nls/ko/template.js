@@ -12,14 +12,14 @@
                 "bingError": "이 응용프로그램을 보급하려면 자체 Bing 맵 키가 필요합니다.",
                 "noLayers": "운영 레이어 없음",
                 "noSearchResults": "죄송하지만 결과를 찾을 수 없습니다.",
-                "noGroupResults": "한_The group could not be found_빠.",
+                "noGroupResults": "그룹을 찾을 수 없습니다.",
                 "noMatches": "일치하는 항목이 없습니다.",
                 "noMapsFound": "맵을 찾을 수 없습니다."
             },
             "sidePanel": {
                 "title": "범례",
                 "legendButton": "범례",
-                "layersButton": "한_Layers_빠", // new
+                "layersButton": "레이어", // new
                 "legendButtonTitle": "맵 범례",
                 "aboutButton": "정보",
                 "aboutButtonTitle": "맵 정보",
@@ -36,47 +36,47 @@
                 "loadingText": "맵을 로드하는 중&hellip;"
             },
             "sortFields": {
-                "sortBy": "한_Sort by_빠",
-                "modified": "한_Date_빠",
-                "title": "한_Title_빠",
-                "type": "한_Type_빠",
-                "numRatings": "한_Ratings_빠",
-                "avgRating": "한_Avg. Rating_빠",
-                "numComments": "한_Comments_빠",
-                "numViews": "한_Views_빠"
+                "sortBy": "정렬",
+                "modified": "날짜",
+                "title": "제목",
+                "type": "유형",
+                "numRatings": "등급",
+                "avgRating": "평균 등급",
+                "numComments": "설명",
+                "numViews": "뷰"
             },
             "comments": {
-                "commentsHeader": "한_Comments_빠",
-                "posted": "한_Posted_빠",
-                "by": "한_by_빠",
-                "deleteComment": "한_delete_빠",
-                "editComment": "한_edit_빠",
-                "noComments": "한_No comments_빠",
-                "addCommentButton": "한_Add Comment_빠",
-                "signIn": "한_Sign In_빠",
-                "register": "한_Register_빠",
-                "or": "한_or_빠",
-                "toPost": "한_to post a comment_빠."
+                "commentsHeader": "설명",
+                "posted": "게시됨",
+                "by": "작성자",
+                "deleteComment": "삭제",
+                "editComment": "편집",
+                "noComments": "설명 없음",
+                "addCommentButton": "설명 추가",
+                "signIn": "로그인",
+                "register": "등록",
+                "or": "또는",
+                "toPost": "설명 게시"
             },
             "buttons": {
-                "cancel": "한_Cancel_빠",
-                "submit": "한_Submit_빠"
+                "cancel": "취소",
+                "submit": "보고"
             },
             "rating": {
-                "signIn": "한_Sign In_빠",
-                "toRate": "한_to rate_빠."
+                "signIn": "로그인",
+                "toRate": "등급 지정"
             },
             "itemInfo": {
-                "createdLabel": "한_created_빠",
-                "ratingsLabel": "한_rating_빠",
-                "ratingsLabelPlural": "한_ratings_빠",
-                "viewsLabel": "한_view_빠",
-                "viewsLabelPlural": "한_views_빠",
-                "commentsLabel": "한_comment_빠",
-                "commentsLabelPlural": "한_comments_빠",
-                "modifiedLabel": "한_Last Modified_빠",
-                "by": "한_by_빠",
-                "separator": "한__빠,"
+                "createdLabel": "생성됨",
+                "ratingsLabel": "등급",
+                "ratingsLabelPlural": "등급",
+                "viewsLabel": "뷰",
+                "viewsLabelPlural": "뷰",
+                "commentsLabel": "설명",
+                "commentsLabelPlural": "설명",
+                "modifiedLabel": "마지막으로 수정한 날짜",
+                "by": "작성자",
+                "separator": ","
             },
             "mapPage": {
                 "findLocation": "위치 찾기",
@@ -93,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "소유자:",
                 "switchBasemap": "베이스맵 전환",
-                "getMobileApp": "한_Get App_빠",
-                "constraintsHeading": "한_Use Constraints_빠",
-                "createdLabel": "한_Created_빠",
-                "noDescription": "한_No description_빠.",
-                "detailsLabel": "한_Details_빠"
+                "getMobileApp": "앱 가져오기",
+                "constraintsHeading": "사용 제약 조건",
+                "createdLabel": "생성됨",
+                "noDescription": "설명이 없습니다.",
+                "detailsLabel": "세부 정보"
             },
             "filterItems": {
                 "show": "표시",

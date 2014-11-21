@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Feição Selecionada",
                 "layerHelpTextMessage": "Este aplicativo exige uma camada com campos numéricos",
                 "alertMessage": {
-                    "resetVariableMessage": "ã_Are you sure you want to reset variable_Ç?",
+                    "resetVariableMessage": "Tem certeza que deseja redefinir a variável?",
                     "emptyAppTitleMessage": "O título do aplicativo não pode estar vazio",
                     "emptyDescriptionMessage": "A descrição não pode estar vazia",
                     "maxVariableSelection": "Você não pode selecionar mais de 25 subvariáveis",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "Alterações Não Salvas",
                     "failMessage": "Não foi possível atualizar o item com sucesso",
                     "saveChangesAlert": "Você deseja salvar as alterações ?",
-                    "variableLabelValidation": "ã_Variable label cannot be empty_Ç",
-                    "subVariableLabelValidation": "ã_Sub variable label cannot be empty_Ç"
+                    "variableLabelValidation": "O rótulo da variável não pode estar vazio",
+                    "subVariableLabelValidation": "O rótulo da subvariável não pode estar vazio"
                     }
             }
         }

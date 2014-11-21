@@ -70,8 +70,8 @@
 				copy: "คัดลอก",
 				copied: "คัดลอก",
 				open: "เปิด",
-				embed: "ก้_Embed in web page_ษฺ",
-				embedExplain: "ก้_Use the following HTML code to embed the journal in a web page_ษฺ.",
+				embed: "ฝังลงในเว็บไซต์",
+				embedExplain: "ใช้รหัส HTML ต่อไปนี้ ในการฝังลงในเว็บไซต์การเดินทาง",
 				size: "ขนาด (กว้าง/สูง):"
 			}
         }

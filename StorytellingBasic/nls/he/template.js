@@ -9,8 +9,8 @@
       general:"שגיאה"
     },
 	legToggle:{
-	  up:"כן_MAP LEGEND â–²_ש",
-	  down:"כן_MAP LEGEND â–¼_ש"
+	  up:"מקרא מפה â–²",
+	  down:"מקרא מפה â–¼"
 	},
 	loading:{
 		message: "טוען מפה"

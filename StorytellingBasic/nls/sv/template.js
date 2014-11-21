@@ -9,8 +9,8 @@
       general:"Fel"
     },
 	legToggle:{
-	  up:"Å_MAP LEGEND â–²_ö",
-	  down:"Å_MAP LEGEND â–¼_ö"
+	  up:"TECKENFÖRKLARING TILL KARTAN â–²",
+	  down:"TECKENFÖRKLARING TILL KARTAN â–¼"
 	},
 	loading:{
 		message: "Laddar karta"

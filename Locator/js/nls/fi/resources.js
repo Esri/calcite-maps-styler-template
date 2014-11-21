@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "Å_Unable to create map_ö"
+         "error": "Karttaa ei voi luoda"
       },
       "location": {
-         "name": "Å_Name_ö",
-         "current": "Å_Current Location_ö",
-         "address": "Å_Address_ö",
-         "latitude": "Å_Latitude_ö",
-         "longitude": "Å_Longitude_ö",
-         "use": "Å_Use this location_ö",
-         "error": "Å_Unable to use this location_ö"
+         "name": "Nimi",
+         "current": "Nykyinen sijainti",
+         "address": "Osoite",
+         "latitude": "Leveysaste",
+         "longitude": "Pituusaste",
+         "use": "Käytä tätä sijaintia",
+         "error": "Tämän sijainnin käyttö ei onnistu"
       },
       "tooltips": {
-         "toggle": "Å_Show/Hide_ö",
-         "reset": "Å_Reset_ö",
-         "locate": "Å_Find my location_ö",
-         "directions": "Å_Directions_ö",
-         "filter": "Å_Filter_ö",
-         "close": "Å_Close_ö",
-         "reverse": "Å_Reverse_ö"
+         "toggle": "Näytä/piilota",
+         "reset": "Palauta",
+         "locate": "Etsi sijaintini",
+         "directions": "Suunnat",
+         "filter": "Suodata",
+         "close": "Sulje",
+         "reverse": "Käänteinen"
       }
    })
 );

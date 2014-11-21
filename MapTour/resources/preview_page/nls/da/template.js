@@ -3,7 +3,7 @@
 		firstPane: {
 			head: "<span class='highlightText'>Map Tour-skabelonen</span> gør alle ArcGIS Online-konti, inklusive gratis, offentlige konti, i stand til at oprette og redigere en stedbaseret historie vha. billeder, tekst og kort fra:",
 			list0: "Billeder, der er gemt på større fotodelingstjenester såsom Flickr, Picasa og Facebook eller på et websted eller en webserver",
-			list1: "ø_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_å"
+			list1: "Billeder, der ikke er gemt online endnu, bliver gemt som vedhæftninger til en featuretjeneste (gælder kun ArcGIS Online-organisationsmedlemmer)"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>Skabelonen</span> indeholder letanvendelige redigeringsværktøjer, som omfatter:",
@@ -17,8 +17,8 @@
 			list1: "Placér skabelonen på din egen webserver eller en tredjepartsserver"
 		},
 		fourthPane: {
-			head: "ø_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_å:",
-			list0: "ø_Story maps published by Esriâ€™s story maps teams_å",
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Se Esris Story Maps-websted</a> for at lære mere om at oprette og dele historier. Ressourcerne omfatter:",
+			list0: "Story Maps udgivet af Esri story maps-teams",
 			list1: "Et udvalg af skabeloner, der kan overføres",
 			list2: "Vejledninger til best practices", 
 			list3: "Et galleri med story maps, der indeholder et voksende fællesskab af historiefortællere"

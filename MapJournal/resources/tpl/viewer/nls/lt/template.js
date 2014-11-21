@@ -70,8 +70,8 @@
 				copy: "Kopijuoti",
 				copied: "Nukopijuota",
 				open: "Atverti",
-				embed: "Į_Embed in web page_š",
-				embedExplain: "Į_Use the following HTML code to embed the journal in a web page_š.",
+				embed: "Įterpti į tinklalapį",
+				embedExplain: "Jei į tinklalapį norite įterpti žurnalą, naudokite šį HTML kodą.",
 				size: "Dydis (plotis / aukštis):"
 			}
         }

@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "بيت_Location could not be found_لاحقة",
-                "notWhatYouWanted": "بيت_Not what you wanted_لاحقة?",
-                "selectAnother": "بيت_Select another location_لاحقة",
-                "currentLocation": "بيت_Current Location_لاحقة",
-                "title": "بيت_Location_لاحقة"
+                "error": "تعذر العثور على الموقع",
+                "notWhatYouWanted": "أليس هذا ما تريده؟",
+                "selectAnother": "تحديد موقع آخر",
+                "currentLocation": "الموقع الحالي",
+                "title": "الموقع"
             },
             "basemap":{
-                    "label": "بيت_Basemap_لاحقة",
-                    "title": "بيت_Select a Basemap_لاحقة"
+                    "label": "خريطة أساس",
+                    "title": "حدد خريطة أساس"
             },
             "legend":{
-                "title": "بيت_Legend_لاحقة"
+                "title": "وسيلة الإيضاح"
             },
             "details":{
-                "title": "بيت_Map Details_لاحقة",
-                "error": "بيت_Update the web map description with the details to display in this section_لاحقة."
+                "title": "تفاصيل الخريطة",
+                "error": "تحديث وصف خريطة الويب بتفاصيل ليتم عرضها في هذا الجزء."
             },
             "popup": {
-                "title": "بيت_Info_لاحقة",
-                "instructions": "بيت_Select a feature on the map to view details_لاحقة."
+                "title": "معلومات",
+                "instructions": "تحديد معلم على الخريطة لإظهار التفاصيل."
             }
 
         },
         "map": {
-            "error": "بيت_Unable to create map_لاحقة"
+            "error": "يتعذر إنشاء الخريطة"
         }
     })
 );

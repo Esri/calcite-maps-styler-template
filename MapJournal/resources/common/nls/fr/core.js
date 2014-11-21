@@ -28,8 +28,8 @@
 				buttonSettings: "Paramètres",
 				buttonHelp: "Aide",
 				buttonPreview: "Voir en direct",
-				tooltipFirstSave: "æ_This isn't available until you save_Â.",
-				tooltipNotShared: "æ_This isn't available until you share_Â.",
+				tooltipFirstSave: "Cette fonction n\'est pas disponible tant qu\'un enregistrement n\'est pas effectué.",
+				tooltipNotShared: "Cette fonction n\'est pas disponible tant qu\'un partage n\'est pas effectué.",
 				noPendingChange: "Aucune modification en attente",
 				unSavedChangePlural: "Modifications en attente",
 				closeWithPendingChange: "Vouez-vous vraiment confirmer cette opération ? Vos modifications seront perdues.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Erreur d\'enregistrement de l\'application",
 				err1Div1: "Impossible d\'enregistrer l\'application, car un autre élément porte déjà le même nom (consultez votre <a class='linkagolroot' target='_blank'>dossier de contenu</a>).",
-				err1Div2: "æ_Please modify the title of your application and then save it_Â.",
-				btnOk: "æ_Edit the application title_Â"
+				err1Div2: "Modifiez le titre de votre application et enregistrez-la.",
+				btnOk: "Modifier le titre de l\'application"
 			},
 			share: {
 				firstSaveTitle: "L\'application a été enregistrée",
@@ -66,7 +66,7 @@
 				shareHeader2: "Votre application est accessible par les membres de votre organisation (identifiant de connexion requis).",
 				shareLinkCopy: "Copier",
 				shareLinkCopied: "Copié",
-				shareQ0: "æ_How do I embed the application in a web page_Â?",
+				shareQ0: "Comment incorporer l\'application dans une page Web ?",
 				shareQ1Opt1: "Comment préserver le caractère privé de l'\'application ?",
 				shareQ1Opt2: "Comment préserver le caractère privé de l\'application ou la partager publiquement ?",
 				shareA1: "Utilisez %SHAREIMG% sur la <a href='%LINK1%' target='_blank'>page des éléments de l\'application</a>.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Personnalisez le lien d\'en-tête.",
 				logoSocialText: "Texte",
 				logoSocialLink: "Lien",
-				lblSmallHeader: "æ_Use compact header (no subtitle)_Â"
+				lblSmallHeader: "Utiliser un en-tête compact (pas de sous-titre)"
 			},
 			header: {
-				title: "æ_Edit the title of your %TPL_NAME%_Â",
-				subtitle: "æ_Edit the subtitle of your %TPL_NAME%_Â"
+				title: "Modifiez le titre de votre %TPL_NAME%",
+				subtitle: "Modifiez le sous-titre de votre %TPL_NAME%"
 			}
 		}
 	})

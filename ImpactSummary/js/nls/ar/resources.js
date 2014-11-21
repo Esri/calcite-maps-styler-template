@@ -28,7 +28,7 @@
                     favoritesLabel: "المُفضلة"
                 },
                 title: "تحديد خريطة الويب",
-                searchTitle: "البحث",
+                searchTitle: "بحث",
                 ok: "موافق",
                 cancel: "إلغاء الأمر",
                 placeholder: "أدخل مصطلح البحث"
@@ -41,7 +41,7 @@
                     favoritesLabel: "المُفضلة"
                 },
                 title: "تحديد مجموعة",
-                searchTitle: "البحث",
+                searchTitle: "بحث",
                 ok: "موافق",
                 cancel: "إلغاء الأمر",
                 placeholder: "أدخل مصطلح البحث"

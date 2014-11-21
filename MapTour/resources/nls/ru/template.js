@@ -68,7 +68,7 @@
 				dataPicError1: "Теперь для тура по карте требуется, чтобы URL-адрес изображения заканчивался одним из следующих расширений: .jp(e)g, .png, .gif или .bmp.",
 				dataPicError2: "Это требование не касается существующих, уже опубликованных туров по карте. Однако чтобы использовать интерактивный конструктор, следует сначала решить проблему URL-адреса одним из двух способов:",
 				dataPicError3: "Отредактировать URL-адреса",
-				dataPicError4: "Ж_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_Я.",
+				dataPicError4: "При этом в конце неподдерживаемого URL-адреса будет добавлено окончание <i>#isImage</i>. Большинство серверов поддерживает окончания URL-адресов. Однако после этого следует проверить, что обновленные URL-адреса изображений работоспособны, пройдя по точкам. Если каждое изображение загружается, можно сохранить тур по карте. Если <b>изображения не появляются, не сохраняйте тур по карте</b>. Вместо этого, перезапустите конструктор и выполните второе действие.",
 				dataPicError5: "Ограничьте тур только изображениями",
 				dataPicError6: "При включении этой опции все URL-адреса рассматриваются как изображения, но вы не сможете добавлять с помощью интерактивного конструктора видео-файлы. Эту опцию можно отключить, если вы захотите в будущем добавить видео.",
 				dataPicError7: "Тур по карте был ограничен для работы только с изображениями, видео использоваться не может. Если вы хотите убрать это ограничение, проверьте, что изображения загружаются правильно перед сохранением тура по карте. При необходимости данное ограничение можно снова включить.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Изображение",
 				addLabelThumbUrl: "Образец",
 				addTextPlaceholderUrl: "Введите URL-адрес изображения",
-				addTextPlaceholderUrl2: "Ж_Enter a YouTube page URL_Я",
+				addTextPlaceholderUrl2: "Введите URL-адрес страницы YouTube",
 				addTextPlaceholderUrl3: "Введите URL-адрес страницы Vimeo",
 				addTextPlaceholderUrl4: "Введите URL-адрес видео",
 				addLabelVideo: "Видео",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Очистить выборку полей",
 				settingsExtentExplain: "Выберите начальный экстент Тура по карте через интерактивную карту, показанную ниже.",
 				settingsExtentExplainBottom: "Указанный экстент приведет к изменению исходного экстента веб-карты. Помните, этот экстент не используется, если он не содержит первую точку маршрута. В этом случае первая точка маршрута будет отображаться в центре.",
-				settingsExtentDateLineError: "Ж_The extent cannot be across the meridian of 180Â° longitude_Я",
+				settingsExtentDateLineError: "Экстент не может продолжаться за меридиан 180°",
 				settingsExtentDateLineError2: "Ошибка вычисления экстента",
 				settingsExtentDrawBtn: "Нарисовать новый экстент",
 				settingsExtentModifyBtn: "Изменить экстент",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Применить"
 			},
 			headerJS:{
-				editMe: "Ж_Edit me_Я!",
+				editMe: "Отредактируйте меня!",
 				templateTitle: "Ввести заголовок шаблона",
 				templateSubtitle: "Ввести подзаголовок шаблона"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Импорт успешно завершен. Загрузка"
 			},
 			viewYoutube: {
-				title: "Ж_YouTube import_Я",
+				title: "Импорт из YouTube",
 				header: "Введите имя пользователя YouTube, чтобы увидеть общедоступное видео.",
-				pageInputLbl: "Ж_Enter a YouTube user name_Я",
+				pageInputLbl: "Введите имя пользователя YouTube",
 				lookupMsgError: "Пользователь не найден",
-				howToFind: "Ж_How to find a YouTube user name_Я",
+				howToFind: "Как найти имя пользователя YouTube",
 				howToFind2: "Имя пользователя отображается под видео",
 				found: "Найдено",
 				noData: "Общедоступных видео не найдено"
@@ -442,12 +442,12 @@
 					div172: "При наличии, поля изображения и эскиза будут использоваться всегда, вложения сервиса объектов запрашиваться не будут.",
 					div173: "Примеры файлов CSV и шейп-файлов можно загрузить с",
 					div18: "Создание размещенных сервисов объектов из файлов CSV или шейп-файлов",
-					div19: "Ж_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_Я.",
-					div20: "Ж_Supported picture formats and videos_Я",
-					div21: "Ж_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_Я.",
+					div19: "При создании размещенного сервиса объектов из файла CSV или шейп-файла по умолчанию вложения не активированы. Для их включения откройте страницу описания сервиса объектов, щелкните стрелку в разделе слоя и вы увидите эту опцию. Тур по карте продолжит использование изображений и эскизов, содержащихся в атрибутах. Кроме того, если вы хотите загрузить изображения в качестве вложений сервиса объектов, вы можете сделать это, используя две кнопки, расположенные на панели управления изображениями (\"Изменить изображение\" и \"Изменить образец\").",
+					div20: "Поддерживаемые форматы изображений и видео",
+					div21: "Поддерживаемые форматы изображений это: <b>.jpg, .jpeg, .png, .gif и .bmp</b>. Если изображение имеет другое расширение, тур по карте рассматривает его как видео, кроме случаев использования сервиса объектов (подробнее см. ниже).",
 					div22: "Шаблон Тура по карте не содержит видео-плейера, поэтому следует использовать внешний видео-плейер, предлагаемый вашим сервисом видео-хостинга (найдите опцию для встраивания видео и скопируйте представленный в нем URL). Если вы хотите сами опубликовать видео, можно создать HTML-страницу с видео-плейером наподобие <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "Интерактивный конструктор не имеет элементов интерфейса для вставки видео при использовании сервиса объектов с вложениями, но это можно сделать, отредактировав данные во внешнем редакторе. Например, с помощью вьюера карт arcgis.com, если вы измените поля изображения, укажите внешний видео-файл и добавите в конце строки URL-адреса специальный параметр (#isVideo), указанный файл будет рассматриваться как видео-файл.",
-					div24: "Ж_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_Я."
+					div24: "Помните, что вам необходимы два вложенных изображения, иначе объект использоваться не будет. Невозможно использовать видео при работе с вложениями сервиса объектов без полей изображения и эскиза."
 				},
 				tab3: {
 					title: "Настройка",
@@ -487,7 +487,7 @@
 					div2a: "Публикация тура с помощью компоновщика",
 					div2b: "Кнопка Опубликовать обновит элементы приложения и веб-карты. Если данные тура сохранены как сервис объектов, то он также обновиться. Если вы добавили другие слои через вьюер карт ArcGIS.com, они не обновятся. В результате ваш тур может быть опубликован не так, как бы вам хотелось. Элементы, уже имеющие требуемые (или более того) права доступа не будут обновляться.",
 					div2c: "Публикация тура через ArcGIS Online",
-					div2d: "Ж_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_Я.",
+					div2d: "Когда вы публикуете приложение через ArcGIS Online, где необходимо система попросит обновить все зависимые ресурсы (веб-карты, сервисы объектов, слои оформления), которые опубликованы на разных адресах путей. Если тур по карте является общедоступным, и один из его ресурсов не опубликован, пользователи будут перенаправлены на страницу авторизации ArcGIS Online.",
 					div3t: "Безопасность сервиса объектов",
 					div3a: "Если вы используете размещенный сервис объектов, созданный конструктором тура по карте, безопасностью сервиса будет управлять приложение, а вы будете являться единственным пользователем, имеющим права редактирования даже в случае публикации сервиса для широкой аудитории.",
 					div3t2: "До публикации вашего сервиса для аудитории",

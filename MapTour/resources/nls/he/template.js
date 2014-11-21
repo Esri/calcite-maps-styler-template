@@ -68,7 +68,7 @@
 				dataPicError1: "סיור ממופה דורש שסיומות כתובות URL יהיו מהסוגים הבאים: jp(e)g, .png, .gif או .bmp",
 				dataPicError2: "דרישה זו לא תשפיע על הסיור הממופה שכבר פרסמת. יחד עם זאת, בכדי להשתמש בכלי הבניה האינטראקטיבי, עליך תחילה לטפל בנושא כתובת ה- URL על ידי ביצוע אחת משתי הפעולות שלהלן:",
 				dataPicError3: "ערוך כתובות URL",
-				dataPicError4: "כן_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_ש.",
+				dataPicError4: "פעולה זו תוסיף <i>#isImage</i> לסיומת של כתובות URL לא נתמכות של תמונות. רוב השרתים תומכים בתוספי URL. יחד עם זאת, ברגע שתבצע פעולה זו, עליך לודא שכתובות ה-URL המעודכנות של התמונות פעילות על ידי ניווט באמצעות הנקודות שלך. באם כל התמונות נטענות, ניתן כעת לשמור את הסיור הממופה שלך. אם <b>התמונות נטענות בצורה לא תקינה, אל תשמור את הסיור הממופה<b>. במקום זאת, טען מחדש את כלי הבניה ובצע את הפעולה השניה.",
 				dataPicError5: "הגבל את הסיור לתמונות",
 				dataPicError6: "פעולה זו גרמה לכל כתובות ה- URL להיחשב כתמונות, אך לא תוכל להוסיף סרטונים באמצעות כלי הבניה האינטראקטיבי. פעולה זו הפיכה, במידה ותחליט להוסיף סרטון בעתיד.",
 				dataPicError7: "הסיור הממופה שלך הוגבל לתמונות, לא ניתן לטעון סרטונים. במידה ותבחר להסיר את ההגבלה הזו, בדוק שהתמונות שלך עדיין נטענות בצורה תקינה לפני שמירת הסיור הממופה. תוכל להחזיר מגבלה זו במידת הצורת ובאם תבחר בכך.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "תמונה",
 				addLabelThumbUrl: "תמונה ממוזערת",
 				addTextPlaceholderUrl: "הכנס URL של תמונה",
-				addTextPlaceholderUrl2: "כן_Enter a YouTube page URL_ש",
+				addTextPlaceholderUrl2: "הכנס URL של דף YouTube",
 				addTextPlaceholderUrl3: "הכנס URL של דף וידאו",
 				addTextPlaceholderUrl4: "הכנס URL של דף וידאו מוטמע",
 				addLabelVideo: "וידאו",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "אפס בחירת שדות",
 				settingsExtentExplain: "קבע את התיחום ההתחלתי של מפת הסיור על ידי המפה האינטראקטיבית שלהלן.",
 				settingsExtentExplainBottom: "התיחום אותו הגדרת ישנה את התיחום ההתחלתי של ה- web map. שים לב שהתיחום לא יהיה בשימוש אם הוא לא כולל את נקודת הסיור הראשונה. במקרה זה הסיור יפתח ממורכז בנקודה הראשונה.",
-				settingsExtentDateLineError: "כן_The extent cannot be across the meridian of 180Â° longitude_ש",
+				settingsExtentDateLineError: "התיחום לא יכול להיות בין המרידיאן של קו אורך 180°",
 				settingsExtentDateLineError2: "שגיאה בחישוב התיחום",
 				settingsExtentDrawBtn: "שרטט תיחום חדש",
 				settingsExtentModifyBtn: "ערוך את התיחום",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "בצע"
 			},
 			headerJS:{
-				editMe: "כן_Edit me_ש!",
+				editMe: "ערוך אותי!",
 				templateTitle: "קבע כותרת תבנית",
 				templateSubtitle: "קבע כותרת המשנה לתבנית"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "הייבוא הצליח. טוען"
 			},
 			viewYoutube: {
-				title: "כן_YouTube import_ש",
+				title: "ייבא YouTube",
 				header: "הכנס שם משתמש YouTube כדי לחפש סרטונים המשותפים לציבור.",
-				pageInputLbl: "כן_Enter a YouTube user name_ש",
+				pageInputLbl: "הזן שם משתמש YouTube",
 				lookupMsgError: "משתמש לא נמצא",
-				howToFind: "כן_How to find a YouTube user name_ש",
+				howToFind: "איך למצוא שם משתמש ב-YouTube",
 				howToFind2: "שם המשתמש מוצג תחת קטעי וידאו",
 				found: "נמצא",
 				noData: "לא נמצאו סרטונים ציבוריים"
@@ -442,12 +442,12 @@
 					div172: "אם קיים מידע בשדות התמונה והתמונה הממוזערת, תמיד יעשה בו שימוש והקישורים של שירות הישויות לא נדרשים.",
 					div173: "ניתן להוריד קבצי דוגמה של shapefiles ו- CSVs מתוך",
 					div18: "יצירת שירותי ישויות מתארחים מתוך shapefiles או CSV",
-					div19: "כן_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_ש.",
-					div20: "כן_Supported picture formats and videos_ש",
-					div21: "כן_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_ש.",
+					div19: "כאשר אתה יוצר שירות ישויות מתארח מתוך קובץ CSV או Shapefile, הקישורים לא פתוחים לפעולה על פי הגדרת ברירת מחדל. פתח את עמוד התיאור של שירות הישויות, לחץ על החץ הקטן ליד השכבה ותראה שם את האפשרות. לאחר מכן, הסיור הממופה ימשיך להשתמש בתמונות והתמונות הממוזערות שקישרת אותן באמצעות המאפיינים. ישנה אפשרות נוספת לטעון את התמונות כשירות ישויות עם קישורים ואת זאת תוכל לבצע באמצעות שני כפתורים בפאנל התמונה (\"שנה תמונה\" ו\"שנה תמונה ממוזערת\").",
+					div20: "פורמטים נתמכים של תמונות וקטעי וידאן",
+					div21: "פורמטים נתמכים של תמונות הינם: <b>.jpg, .jpeg, .png, .gif ו- .bmp</b>. אם הסיומת של הקובץ שלך אינה אחת מהמפורטות לעיל, הקובץ ייחשב כסרטון בסיור הממופה, למעט אם תשתמש בשירות ישויות (ראה להלן).",
 					div22: "תבנית סיור ממופה זה לא כולל נגן סרטונים ועל כן עלייך להשתמש בנגן סרטונים חיצוני, המסופק על ידי שירות אירוח הסרטונים המועדף עליך (מצא את האפשרות להטמיע את הסרטון והעתק את כתובת ה- URL המופיעה בקוד המוצג). אם ברצונך לארח את הסרטון בעצמך, תוכל ליצור עמוד HTML המכילה נגן סרטונים דוגמת <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "כלי הבניה האינטראקטיבי לא מספק תיבת דו שיח להכללת סרטון בעת שימוש בשירותי ישויות עם קישורים, אך ניתן לבצע זאת על ידי עריכת המידע שלך מחוץ לכלי הבניה האינטראקטיבי. בצפיין המפה של arcgis.com, אם תשנה את שדות התמונה שיכוונו לסרטון חיצוני ותוסיף פרמטר ייחודי בסוף כתובת ה- URL שלך (#isVideo), המדיה שלך תיחשב לסרטון.",
-					div24: "כן_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_ש."
+					div24: "שים לב שעדיין תצטרך שני קישורי תמונות תקינים או שלא יהיה ניתן להשתמש בנקודה. אין אפשרות להשתמש בסרטונים כאשר משתמשים בקישורי שירות ישויות ללא שדות של תמונה ותמונה ממוזערת."
 				},
 				tab3: {
 					title: "התאמה",
@@ -487,14 +487,14 @@
 					div2a: "משתף את הסיור באמצעות אשף בניית הסיור",
 					div2b: "כפתור שתף יעדכן את פריטי האפליקציה ופריט ה- webmap. אם נתוני הסיור שלך מאוחסנים בפריט שירות ישויות, גם הוא יעודכן. אם הוספת שכבות אחרות באמצעות צפין מפת ArcGIS.com, אלו לא יעודכו. זה לעלול לגרום לכך שהסיור לא יהיה בשיתוף כפי לשאתה מצפה. פריטים שכבר יש להם את ההרשאות הנדרשות (או יותר) לא עודכנו.",
 					div2c: "משתך את הסיור באמצעות ArcGIS Online",
-					div2d: "כן_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_ש.",
+					div2d: "כאשר אתה משתף את האפליקציה באמצעות ArcGIS Online, תידרש במידת הצורך לעדכן את המשאבים התלויים (web map, שירות ישויות, שכבת קישוט) שאינם משותפים באותה הדרך. אם הסיור הממופה ציבורי ואחד מהמשאבים שלך אינו משותף עם קהל היעד שלך, המשתמשים ינותבו לדף כניסת ArcGIS Online.",
 					div3t: "אבטחה לשירות ישויות",
 					div3a: "אם אתה משתמש בשירות ישויות מתארח שנוצר באמצעות כלי הבניה של הסיור הממופה, האפליקציה מנהלת את שירות האבטחה עבורך ואתה תישאר היחידי עם הרשאות עריכה אפילו אם תשתף את השירות הזה לציבור.",
 					div3t2: "לפני שיתוף הסיור שלך עם הקהל",
 					div3: "וודא שהסיור אכן עובד כאשר אתה לא מחובר לחשבון ה- ArcGIS.com שלך. ה- URL לא צריך להפנות לדף הכניסה או למצב בנייה.",
 					div4: "שווה לבדוק איך הסיור הממופה שלך נראה ב- iPad כאשר הוא מוחזק לרוחב ולוודא שזה נראה טוב על המכשיר הפופולרי הזה. בדיקה זו עשוייה לעזור לך לראות אם ההסברים שהוספת מכסים שטח רב מידי יחסית לתמונות. כמו כן זה מאפשר לך לבדוק שכיתוביות  שלך אינן ניראות מקוטעות בגלל אורכן.",
 					div5a: "המלצה על חיפוש",
-					div5b: "כדי לעזור לאנשים למצוא את הסיור הממופה שלך אם הם מחפשים ב- ArcGIS Online, אנו ממליצים לך להוסיף את התג 'מפת הסיפור' לדף פריט  היישום של הסיור הממופה שלך (לא דף הפריט של ה- web map שלך), יחד עם תגים כגון שם המדינה או האיזור בו נמצא הסיור, את שם המדינה, אם זה  מחוץ לגבולות המדינה, ותגים נושאיים כמו \"אמנות ציבורית\", 'מדריך תיירים' או 'מקומות היסטוריים'. תגים אלה יכולים גם לעזור לנו ב- Esri למצוא דוגמאות  חדשות מענינות של סיורים שאנחנו יכולים להציג בגלריות שלנו ולקדום ברשתות החברתיות. כמו כן, אנו ממליצים לך להעלות תמונות גרפיות ממוזערות שניראות טוב לדף פריט היישום שלך, כגון צילום מסך קטן של הסיור או אחת התמונות שלו. תמונה זו תהיה בשימוש באופן אוטומטי אם הסיור הממופה שלך  יתווסף לגלרית ArcGIS Online."
+					div5b: "כדי לעזור לאנשים למצוא את הסיור הממופה שלך אם הם מחפשים ב- ArcGIS Online, אנו ממליצים לך להוסיף את התג \'מפת הסיפור\' לדף פריט  היישום של הסיור הממופה שלך (לא דף הפריט של ה- web map שלך), יחד עם תגים כגון שם המדינה או האיזור בו נמצא הסיור, את שם המדינה, אם זה  מחוץ לגבולות המדינה, ותגים נושאיים כמו \"אמנות ציבורית\", \'מדריך תיירים\' או \'מקומות היסטוריים\'. תגים אלה יכולים גם לעזור לנו ב- Esri למצוא דוגמאות  חדשות מענינות של סיורים שאנחנו יכולים להציג בגלריות שלנו ולקדום ברשתות החברתיות. כמו כן, אנו ממליצים לך להעלות תמונות גרפיות ממוזערות שניראות טוב לדף פריט היישום שלך, כגון צילום מסך קטן של הסיור או אחת התמונות שלו. תמונה זו תהיה בשימוש באופן אוטומטי אם הסיור הממופה שלך  יתווסף לגלרית ArcGIS Online."
 				}
 			},
 			share: {

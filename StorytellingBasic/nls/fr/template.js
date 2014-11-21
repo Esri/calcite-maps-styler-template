@@ -9,8 +9,8 @@
       general:"Erreur"
     },
 	legToggle:{
-	  up:"æ_MAP LEGEND â–²_Â",
-	  down:"æ_MAP LEGEND â–¼_Â"
+	  up:"LEGENDE DE LA CARTE â–²",
+	  down:"LEGENDE DE LA CARTE â–¼"
 	},
 	loading:{
 		message: "Chargement de la carte"

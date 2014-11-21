@@ -30,7 +30,7 @@
 			imageSelectorFacebook: {
 				leftHeader: "مستخدم Facebook",
 				rightHeader: "صفحة Facebook",
-				pageExplain: "تكون صفحة Facebook علامة تجارية/منتج عام أو تكون ذات شهرة مثل <b>esrigis</b>. يمكنك الحصول على اسم الصفحة بعد  \'/\' الأول في عنوان URL للصفحة.",
+				pageExplain: "صفحة Facebook هي علامة تجارية/منتج عام أو ذات شهرة مثل <b>esrigis</b>. يمكنك الحصول على اسم الصفحة بعد  \'/\' الأول في عنوان URL للصفحة.",
 				pageInputLbl: "اسم الصفحة",
 				lookupMsgError: "لم يتم العثور على الصفحة"
 			},
@@ -62,7 +62,7 @@
 				url: "عنوان URL لفيديو Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "بيت_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_لاحقة.",
+				explain1: "يتعذر على التطبيق تشغيل مقاطع فيديو بسيطة (مثل avi وmpeg)، إلا أنه يمكنه تشغيل ملفات فيديو مُستضافة ذات مُشغلات مدمجة (مثل YouTube أو Vimeo).",
 				explain2: "توفر معظم خدمات استضافة الفيديو على الإنترنت تلك الميزة، ويمكنك العثور على خيار تضمين هذا الفيديو ونسخ الكود المُعطى واستخدام %WEBPAGE%.",
 				explain3: "وبدلاً من ذلك، إذا أردت استضافة الفيديو بنفسك، يمكنك إنشاء صفحة HTML تستخدم مُشغل فيديو مثل %EXAMPLE% واستضافة الصفحة واستخدام %WEBPAGE% أيضًا.",
 				webpage: "معالم صفحة الويب"
@@ -83,7 +83,7 @@
 				lblLabel: "التسمية التوضيحية الصورة",
 				lblLabel1: "تسمية وضيحية",
 				lblLabel2: "التحويم حول النص",
-				lblLabel3: "بلا",
+				lblLabel3: "لا شيء",
 				lblLabelPH: "إدخال النص...",
 				lblMaximize: "تشمل زر تكبير في زاوية الصورة",
 				lblMaximizeHelp: "يكون مفضل فقط للصور عالية الجودة",
@@ -93,14 +93,14 @@
 				lblPosition3: "احتواء",
 				lblPosition4: "توسيع",
 				lblPosition5: "مخصص",
-				tooltipDimension: "يمكن تحديد القيمة بـ 'px' أو '%'",
-				tooltipDimension2: "يجب تحديد القيمة 'بالبكسل'",
+				tooltipDimension: "يمكن تحديد القيمة بـ \'px\' أو \'%\'",
+				tooltipDimension2: "يجب تحديد القيمة \'بالبكسل\'",
 				lblPosition2Explain: "(يمكن القص)",
 				lblPosition3Explain: "(لا يتم القص)",
 				lblPosition3Explain2: "(سوف يناسب دائما العرض اللوحة)",
 				lblPosition4Explain: "(يمكن الإتلاف)",
-				unloadLbl: "بيت_Unload when reader navigates away_لاحقة",
-				unloadHelp: "بيت_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_لاحقة."
+				unloadLbl: "إلغاء التحميل عندما ينتقل القارئ بعيدًا",
+				unloadHelp: "إذا كانت صفحة الويب تحتوي على وسائط صوت أو فيديو، احتفظ بتحديد هذا الخيار لإيقاف ذلك المحتوى من التشغيل عندما ينتقل القارئ بعيدًا إلى مقطع آخر. قم بإلغاء التأشير على سبيل المثال للاحتفاظ بتشغيل مسار الصوت عندما يتقدم القارئ خلال القصة.<br />إذا كانت صفحة الويب عبارة عن تطبيق، قم بإلغاء تحديد هذا الخيار حتى لا يتم إعادة تحميل التطبيق إذا رجع القارئ إليه."
 			},
 			editorActionGeocode: {
 				lblTitle: "تحديد موقع العنوان أو المكان",

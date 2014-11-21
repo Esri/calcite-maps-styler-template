@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "é_Media_È",
-				lblSelect2: "é_Content_È",
-				lblMap: "é_Map_È",
-				lblImage: "é_Image_È",
-				lblVideo: "é_Video_È",
-				lblExternal: "é_Web page_È",
-				disabled: "é_This feature has been disabled by the Administrator_È",
-				url: "é_To manually enter the web address of an image_È",
-				userLookup: "é_Load albums_È",
-				notImplemented: "é_Not implemented yet_È.",
-				noData: "é_No public album found_È"
+				lblSelect1: "Supporto",
+				lblSelect2: "Contenuti",
+				lblMap: "Mappa",
+				lblImage: "Immagine",
+				lblVideo: "Video",
+				lblExternal: "Pagina Web",
+				disabled: "Questa feature è stata disabilitata dall\'amministratore",
+				url: "Per immettere manualmente l\'indirizzo Web di un\'immagine",
+				userLookup: "Carica album",
+				notImplemented: "Non ancora implementato.",
+				noData: "Nessun album pubblico trovato"
 			},
 			imageSelector: {
-				lblStep1: "é_Choose the service_È",
-				lblStep2: "é_Select your media_È",
-				lblStep3: "é_Configure_È"
+				lblStep1: "Scegli il servizio",
+				lblStep2: "Seleziona il file multimediale",
+				lblStep3: "Configura"
 			},
 			imageSelectorHome: {
-				explain: "é_Load images from social media, <br /> or directly from a URL_È"
+				explain: "Caricare le immagini da social media, <br /> o direttamente da un URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "é_User name_È",
-				signInMsg2: "é_User not found_È",
-				loadingFailed: "é_Loading failed_È"
+				userInputLbl: "Nome utente",
+				signInMsg2: "Utente non trovato",
+				loadingFailed: "Caricamento non riuscito"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "é_Facebook User_È",
-				rightHeader: "é_Facebook Page_È",
-				pageExplain: "é_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_È.",
-				pageInputLbl: "é_Page name_È",
-				lookupMsgError: "é_Page not found_È"
+				leftHeader: "Utente Facebook",
+				rightHeader: "Pagina Facebook",
+				pageExplain: "Una pagina Facebook è un marchio/prodotto pubblico o un personaggio pubblico come esrigis. È possibile ottenere il nome della pagina dopo il primo \'/\' nell\'URL della pagina.",
+				pageInputLbl: "Nome pagina",
+				lookupMsgError: "Pagina non trovata"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "é_Email or Picasa/Google+ ID_È",
-				signInMsg2: "é_Account not found_È",
-				howToFind: "é_How to find a Picasa or Google+ account ID_È",
-				howToFind2: "é_Copy digits between the first and second '/' of any Picasa or G+ page_È"
+				userInputLbl: "E-mail o ID Picasa/Google+",
+				signInMsg2: "Account non trovato",
+				howToFind: "Come trovare l\'ID di un account Picasa o Google+",
+				howToFind2: "Copiare le cifre tra il primo e il secondo \'/\' di una qualsiasi pagina Picasa o G+"
 			},
 			videoSelectorCommon: {
-				check: "é_Check_È",
-				notFound: "é_Video not found_È",
-				found: "é_Video found_È",
-				select: "é_Select this video_È"
+				check: "Seleziona",
+				notFound: "Video non trovato",
+				found: "Video trovato",
+				select: "Seleziona questo video"
 			},
 			videoSelectorHome: {
-				other: "é_Other_È"
+				other: "Altro"
 			},
 			videoSelectorYoutube: {
-				url: "é_URL of a Youtube video_È",
-				pageInputLbl: "é_User name_È",
-				lookupMsgError: "é_User not found_È",
-				howToFind: "é_How to find a YouTube user name_È",
-				howToFind2: "é_User name is displayed under videos_È",
-				found: "é_Found_È",
-				noData: "é_No public videos found_È"
+				url: "URL di un video Youtube",
+				pageInputLbl: "Nome utente",
+				lookupMsgError: "Utente non trovato",
+				howToFind: "Come trovare un nome utente di YouTube",
+				howToFind2: "Il nome utente è visualizzato sotto i video",
+				found: "Trovato",
+				noData: "Nessun video pubblico trovato."
 			},
 			videoSelectorVimeo: {
-				url: "é_URL of a Vimeo video_È"
+				url: "URL di un video Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "é_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_È.",
-				explain2: "é_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_È.",
-				explain3: "é_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_È.",
-				webpage: "é_Web page feature_È"
+				explain1: "L\'applicazione non è in grado di riprodurre video non elaborati (ad esempio, avi o mpeg), ma può riprodurre video in hosting con lettori incorporati (ad esempio, YouTube o Vimeo).",
+				explain2: "La maggior parte dei servizi di hosting di video online offre tale feature. È necessario individuare l\'opzione per incorporare il video, copiare il codice specificato e utilizzare %WEBPAGE%.",
+				explain3: "In alternativa, se si desidera eseguire autonomamente l\'hosting del video, è possibile creare una pagina HTML che utilizza un lettore video come %EXAMPLE%, eseguire l\'hosting di tale pagina e utilizzare %WEBPAGE%.",
+				webpage: "Feature pagina Web"
 			},
 			webpageSelectorHome: {
-				lblUrl: "é_Webpage URL_È",
-				lblEmbed: "é_Embed code_È",
-				lblOR: "é_OR_È",
-				lblError1: "é_Error, clear one of the two input fields_È.",
-				lblError2: "é_Embed code can only contain one %IFRAMETAG%_È",
-				configure: "é_Configure_È"
+				lblUrl: "URL pagina Web",
+				lblEmbed: "Incorpora codice",
+				lblOR: "OPPURE",
+				lblError1: "Errore, cancellare uno dei due campi di input.",
+				lblError2: "Il codice incorporato può contenere un solo %IFRAMETAG%",
+				configure: "Configura"
 			},
 			mediaConfigure: {
-				lblURL: "é_URL_È",
-				lblURLPH: "é_An image URL should start with http:// and end with .jpg or .png_È",
-				lblURLError: "é_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_È.",
-				lblURLCheck: "é_Checking image_È...",
-				lblLabel: "é_Image Caption_È",
-				lblLabel1: "é_Caption_È",
-				lblLabel2: "é_Hover text_È",
-				lblLabel3: "é_None_È",
-				lblLabelPH: "é_Enter some text_È...",
-				lblMaximize: "é_Include a maximize button in the corner of the image_È",
-				lblMaximizeHelp: "é_Recommended only for high quality photos_È",
-				lblPosition: "é_Position_È",
-				lblPosition1: "é_Center_È",
-				lblPosition2: "é_Fill_È",
-				lblPosition3: "é_Fit_È",
-				lblPosition4: "é_Stretch_È",
-				lblPosition5: "é_Custom_È",
-				tooltipDimension: "é_The value can be specified in 'px' or '%'_È",
-				tooltipDimension2: "é_The value has to be specified in 'px'_È",
-				lblPosition2Explain: "é_(may crop)_È",
-				lblPosition3Explain: "é_(won't crop)_È",
-				lblPosition3Explain2: "é_(width will always fit the panel)_È",
-				lblPosition4Explain: "é_(may distort)_È",
-				unloadLbl: "é_Unload when reader navigates away_È",
-				unloadHelp: "é_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_È."
+				lblURL: "URL",
+				lblURLPH: "Un URL di immagine deve iniziare con http:// e terminare con .jpg o .png",
+				lblURLError: "Questa immagine non sembra valida. Specificare un collegamento diretto a un file immagine (l\'URL in genere termina con .jpg o .png). I collegamenti a una pagina Web che contiene un\'immagine non funzioneranno.",
+				lblURLCheck: "Verifica immagine in corso...",
+				lblLabel: "Didascalia immagine",
+				lblLabel1: "Didascalia",
+				lblLabel2: "Testo al passaggio del mouse",
+				lblLabel3: "Nessuno",
+				lblLabelPH: "Immettere un testo...",
+				lblMaximize: "Includere un pulsante Ingrandisci nell\'angolo dell\'immagine",
+				lblMaximizeHelp: "Consigliato solo per le foto di alta qualità",
+				lblPosition: "Posizione",
+				lblPosition1: "Al centro",
+				lblPosition2: "Riempimento",
+				lblPosition3: "Adatta",
+				lblPosition4: "Estendi",
+				lblPosition5: "Personalizza",
+				tooltipDimension: "Il valore può essere specificato come \'px\' o \'%\'",
+				tooltipDimension2: "Il valore deve essere specificato in \'px\'",
+				lblPosition2Explain: "(possibile ritaglio)",
+				lblPosition3Explain: "(nessun ritaglio)",
+				lblPosition3Explain2: "(la larghezza viene sempre adattata al pannello)",
+				lblPosition4Explain: "(possibile distorsione)",
+				unloadLbl: "Scarica quando il lettore passa a un altro elemento",
+				unloadHelp: "Se la pagina Web dispone di supporti audio o video, mantenere l\'opzione selezionata per arrestare la riproduzione del contenuto quando il lettore passa a un elemento diverso. Deselezionarla, per esempio, per mantenere la riproduzione di una colonna sonora mentre il lettore continua a leggere la storia.<br />Se la pagina Web è un\'applicazione, deselezionare l\'opzione in modo che l\'applicazione non venga ricaricata se il lettore torna alla pagina."
 			},
 			editorActionGeocode: {
-				lblTitle: "é_Locate an address or place_È",
-				mapMarkerExplain: "é_User will see a map marker when clicking the link_È"
+				lblTitle: "Trova un indirizzo o un luogo",
+				mapMarkerExplain: "Quando l\'utente fa clic sul collegamento, verrà visualizzato un marcatore di mappa"
 			},
 			editorActionMedia: {
-				lblTitle: "é_Change the Main Stage content_È"
+				lblTitle: "Cambia contenuti per Visualizzazione principale"
 			},
 			editorInlineMedia: {
-				lblTitle: "é_Insert an image, video or web page_È"
+				lblTitle: "Inserisci immagine, video o pagina Web"
 			}
 		}
 	})

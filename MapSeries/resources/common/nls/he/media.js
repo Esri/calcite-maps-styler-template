@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "כן_Media_ש",
-				lblSelect2: "כן_Content_ש",
-				lblMap: "כן_Map_ש",
-				lblImage: "כן_Image_ש",
-				lblVideo: "כן_Video_ש",
-				lblExternal: "כן_Web page_ש",
-				disabled: "כן_This feature has been disabled by the Administrator_ש",
-				url: "כן_To manually enter the web address of an image_ש",
-				userLookup: "כן_Load albums_ש",
-				notImplemented: "כן_Not implemented yet_ש.",
-				noData: "כן_No public album found_ש"
+				lblSelect1: "מדיה",
+				lblSelect2: "תוכן",
+				lblMap: "מפה",
+				lblImage: "תמונה",
+				lblVideo: "וידאו",
+				lblExternal: "דף אינטרנט",
+				disabled: "תכונה זו הוגדרה כלא זמינה על ידי המנהל",
+				url: "בכדי להכניס באופן ידני כתובת אינטרנט או תמונה",
+				userLookup: "טען אלבומים",
+				notImplemented: "לא נתמך כעת.",
+				noData: "לא נמצא אלבום ציבורי"
 			},
 			imageSelector: {
-				lblStep1: "כן_Choose the service_ש",
-				lblStep2: "כן_Select your media_ש",
-				lblStep3: "כן_Configure_ש"
+				lblStep1: "בחר את השירות",
+				lblStep2: "בחר את המדיה שלך",
+				lblStep3: "קבע תצורה"
 			},
 			imageSelectorHome: {
-				explain: "כן_Load images from social media, <br /> or directly from a URL_ש"
+				explain: "טען תמונות ממדיה חברתית, <br /> או באופן ישיר מ- URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "כן_User name_ש",
-				signInMsg2: "כן_User not found_ש",
-				loadingFailed: "כן_Loading failed_ש"
+				userInputLbl: "שם משתמש",
+				signInMsg2: "משתמש לא נמצא",
+				loadingFailed: "טעינה נכשלה"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "כן_Facebook User_ש",
-				rightHeader: "כן_Facebook Page_ש",
-				pageExplain: "כן_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_ש.",
-				pageInputLbl: "כן_Page name_ש",
-				lookupMsgError: "כן_Page not found_ש"
+				leftHeader: "משתמש פייסבוק",
+				rightHeader: "עמוד פייסבוק",
+				pageExplain: "דף Facebook הוא מותג/מוצר ציבורי או אדם מפורסם, כגון <b>esrigis</b>. תוכל להשיג את שם הדף לאחר ה-\'\/' הראשון ב-URL של הדף.",
+				pageInputLbl: "שם דף",
+				lookupMsgError: "עמוד לא נמצא"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "כן_Email or Picasa/Google+ ID_ש",
-				signInMsg2: "כן_Account not found_ש",
-				howToFind: "כן_How to find a Picasa or Google+ account ID_ש",
-				howToFind2: "כן_Copy digits between the first and second '/' of any Picasa or G+ page_ש"
+				userInputLbl: "אמייל או Picasa/Google+ ID",
+				signInMsg2: "חשבון לא נמצא",
+				howToFind: "כיצד למצוא את ה- ID של חשבון ה- Picasa או Google+",
+				howToFind2: "העתק את הספרות בין ה-'\/'\ הראשון לשני בדף של Picasa או G+‎"
 			},
 			videoSelectorCommon: {
-				check: "כן_Check_ש",
-				notFound: "כן_Video not found_ש",
-				found: "כן_Video found_ש",
-				select: "כן_Select this video_ש"
+				check: "בדיקה",
+				notFound: "לא נמצא וידאו",
+				found: "נמצא וידאו",
+				select: "בחר וידאו זה"
 			},
 			videoSelectorHome: {
-				other: "כן_Other_ש"
+				other: "אחר"
 			},
 			videoSelectorYoutube: {
-				url: "כן_URL of a Youtube video_ש",
-				pageInputLbl: "כן_User name_ש",
-				lookupMsgError: "כן_User not found_ש",
-				howToFind: "כן_How to find a YouTube user name_ש",
-				howToFind2: "כן_User name is displayed under videos_ש",
-				found: "כן_Found_ש",
-				noData: "כן_No public videos found_ש"
+				url: "URL של וידאו של יוטיוב",
+				pageInputLbl: "שם משתמש",
+				lookupMsgError: "משתמש לא נמצא",
+				howToFind: "איך למצוא שם משתמש ב-YouTube",
+				howToFind2: "שם המשתמש מוצג תחת קטעי וידאו",
+				found: "נמצא",
+				noData: "לא נמצאו סרטונים ציבוריים"
 			},
 			videoSelectorVimeo: {
-				url: "כן_URL of a Vimeo video_ש"
+				url: "URL של וידאו של Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "כן_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ש.",
-				explain2: "כן_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_ש.",
-				explain3: "כן_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_ש.",
-				webpage: "כן_Web page feature_ש"
+				explain1: "האפליקציה לא יכולה להציג וידאו גולמי (כגון avi‏, mpeg) אולם היא יכולה להציג קבצי וידאו המתארחים בנגנים מובנים (כגון YouTube או Vimeo).",
+				explain2: "רוב שירותי הארוח של וידאו מאפשרים את היכולת הזו. אתה צריך למצוא את האפשרות לשבץ את הוידאו, להעתיק את הקוד המתאים ולהשתמש בתוך  %WEBPAGE%.",
+				explain3: "לחילופין, אם אתה רוצה לארח וידאו בעצמך, אתה יכול ליצור דף HTML המשתמש בנגן וידאו כגון %EXAMPLE%, לארח דף זה וגם להשתמש ב-%WEBPAGE%.",
+				webpage: "תכונות דף אינטרנט"
 			},
 			webpageSelectorHome: {
-				lblUrl: "כן_Webpage URL_ש",
-				lblEmbed: "כן_Embed code_ש",
-				lblOR: "כן_OR_ש",
-				lblError1: "כן_Error, clear one of the two input fields_ש.",
-				lblError2: "כן_Embed code can only contain one %IFRAMETAG%_ש",
-				configure: "כן_Configure_ש"
+				lblUrl: "URL של דף האינטרנט",
+				lblEmbed: "קוד מוטמע",
+				lblOR: "או",
+				lblError1: "שגיאה, נקה אחד משני שדות הקלט.",
+				lblError2: "קוד מוטמע יכול להכיל רק %IFRAMETAG% אחד",
+				configure: "קבע תצורה"
 			},
 			mediaConfigure: {
-				lblURL: "כן_URL_ש",
-				lblURLPH: "כן_An image URL should start with http:// and end with .jpg or .png_ש",
-				lblURLError: "כן_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_ש.",
-				lblURLCheck: "כן_Checking image_ש...",
-				lblLabel: "כן_Image Caption_ש",
-				lblLabel1: "כן_Caption_ש",
-				lblLabel2: "כן_Hover text_ש",
-				lblLabel3: "כן_None_ש",
-				lblLabelPH: "כן_Enter some text_ש...",
-				lblMaximize: "כן_Include a maximize button in the corner of the image_ש",
-				lblMaximizeHelp: "כן_Recommended only for high quality photos_ש",
-				lblPosition: "כן_Position_ש",
-				lblPosition1: "כן_Center_ש",
-				lblPosition2: "כן_Fill_ש",
-				lblPosition3: "כן_Fit_ש",
-				lblPosition4: "כן_Stretch_ש",
-				lblPosition5: "כן_Custom_ש",
-				tooltipDimension: "כן_The value can be specified in 'px' or '%'_ש",
-				tooltipDimension2: "כן_The value has to be specified in 'px'_ש",
-				lblPosition2Explain: "כן_(may crop)_ש",
-				lblPosition3Explain: "כן_(won't crop)_ש",
-				lblPosition3Explain2: "כן_(width will always fit the panel)_ש",
-				lblPosition4Explain: "כן_(may distort)_ש",
-				unloadLbl: "כן_Unload when reader navigates away_ש",
-				unloadHelp: "כן_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ש."
+				lblURL: "URL",
+				lblURLPH: "URL של תמונה צריך להתחיל עם http:// ולהסתיים עם .jpg או .png",
+				lblURLError: "תמונה זו אינה נראית חוקית. ציין קישור ישיר לקובץ תמונה (ה-URL שלך יסתיים בדרך כלל ב-‎.jpg או ‎.png). קישורים לדף אינטרנט שמכיל תמונה לא יפעלו.",
+				lblURLCheck: "בודק תמונה...",
+				lblLabel: "תאור תמונה",
+				lblLabel1: "תיאור",
+				lblLabel2: "טקסט מוצג בריחוף",
+				lblLabel3: "ללא",
+				lblLabelPH: "הכנס טקסט כלשהו...",
+				lblMaximize: "כלול את כפתור ה-maximize  בפינת התמונה",
+				lblMaximizeHelp: "מומלץ רק לתמונות באיכות גבוהה",
+				lblPosition: "מיקום",
+				lblPosition1: "ממורכז",
+				lblPosition2: "מלא",
+				lblPosition3: "מותאם",
+				lblPosition4: "מתוח",
+				lblPosition5: "מותאם אישית",
+				tooltipDimension: "הערך יכול להיות מוגדר בתוך  \'px\' או \'%\'",
+				tooltipDimension2: "יש לציין את הערך ב-'px'",
+				lblPosition2Explain: "(יכול להחתך)",
+				lblPosition3Explain: "(לא יכול להחתך)",
+				lblPosition3Explain2: "(רוחב תמיד יתאים ללוח)",
+				lblPosition4Explain: "(יכול להתעוות)",
+				unloadLbl: "בטל את הטעינה כשהקורא מנווט למקום אחר",
+				unloadHelp: "אם דף האינטרנט מכיל מדיה של שמע או וידאו, השאר אפשרות זו מסומנת כדי למנוע הפעלת תוכן זה כשהקורא מנווט למקום אחר. בטל את סימון האפשרות, למשל, כדי לגרום לפסקול להמשיך לנגן בזמן שהקורא מתקדם לאורך הסיפור.<br />אם דף האינטרנט הוא אפליקציה, בטל את סימון האפשרות כדי שהאפליקציה לא תיטען מחדש אם הקורא יחזור לשם."
 			},
 			editorActionGeocode: {
-				lblTitle: "כן_Locate an address or place_ש",
-				mapMarkerExplain: "כן_User will see a map marker when clicking the link_ש"
+				lblTitle: "אתר כתובת או מקום",
+				mapMarkerExplain: "המשתמש יראה סימן מפה בעת לחיצה על הקישור"
 			},
 			editorActionMedia: {
-				lblTitle: "כן_Change the Main Stage content_ש"
+				lblTitle: "שנה את תוכן התצוגה הראשית"
 			},
 			editorInlineMedia: {
-				lblTitle: "כן_Insert an image, video or web page_ש"
+				lblTitle: "הכנס תמונה, קטע וידאו או דף אינטרנט"
 			}
 		}
 	})

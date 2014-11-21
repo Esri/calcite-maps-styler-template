@@ -1,12 +1,12 @@
 ﻿define(
     ({
       "map": {
-         "error": "Š_Unable to create map_ä"
+         "error": "Kaarti ei saa luua"
       },
       "tooltips": {
-         "logo": "Š_Logo_ä",
-         "switchbasemap": "Š_Switch base map_ä",
-         "close": "Š_Close_ä"
+         "logo": "Logo",
+         "switchbasemap": "Vaheta aluskaarti",
+         "close": "Sulge"
       }
    })
 );

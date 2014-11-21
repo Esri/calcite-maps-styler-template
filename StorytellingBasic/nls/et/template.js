@@ -9,8 +9,8 @@
       general:"Viga"
     },
 	legToggle:{
-	  up:"Š_MAP LEGEND â–²_ä",
-	  down:"Š_MAP LEGEND â–¼_ä"
+	  up:"KAARDILEGEND â-²",
+	  down:"KAARDILEGEND â-¼"
 	},
 	loading:{
 		message: "Kaardi laadimine"

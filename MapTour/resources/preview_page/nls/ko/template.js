@@ -3,7 +3,7 @@
 		firstPane: {
 			head: "무료 공용 계정을 비롯하여 모든 ArcGIS Online 계정은 계정 수준에 관계없이 <span class='highlightText'>Map Tour 템플릿</span>을 사용하여 다음 소스에서 이미지, 텍스트 및 맵이 조합된 장소 기반 내레이션을 생성하고 편집할 수 있습니다.",
 			list0: "주요 온라인 사진 공유 서비스(Flickr, Picasa 및 Facebook) 또는 모든 웹 사이트나 웹 서버에 저장된 그림",
-			list1: "한_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_빠"
+			list1: "아직 온라인으로 저장되지 않은 그림 중 피처 서비스 첨부 파일로 저장할 그림(ArcGIS for Organization 구성원에게만 해당)"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>템플릿</span>에는 다음을 비롯한 사용하기 쉬운 편집 도구가 들어 있습니다.",
@@ -17,8 +17,8 @@
 			list1: "자체 웹 서버 또는 타사 서버에서 템플릿 호스팅"
 		},
 		fourthPane: {
-			head: "한_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_빠:",
-			list0: "한_Story maps published by Esriâ€™s story maps teams_빠",
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Esri 스토리 맵 사이트를 참조</a>하여 스토리를 생성하고 공유하는 방법에 대해 자세히 알아봅니다. 제공되는 리소스는 다음과 같습니다.",
+			list0: "Esri 스토리 맵 팀이 발행한 스토리 맵",
 			list1: "다운로드 가능한 템플릿 선택",
 			list2: "모범 사례 가이드", 
 			list3: "확장되는 스토리텔러 커뮤니티에서 제공하는 스토리 맵 갤러리"

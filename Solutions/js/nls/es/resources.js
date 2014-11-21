@@ -17,7 +17,7 @@
 define(
      ({
         map: {
-            error: "á_Unable to create map_Ó"
+            error: "No se puede crear el mapa"
         },
         tooltips: {
             search: "Buscar",  // Command button to open a dialog box for finding a feature or an address (depending on app)

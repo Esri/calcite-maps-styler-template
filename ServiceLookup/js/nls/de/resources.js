@@ -11,7 +11,7 @@
             layerNotFound: "Layer ist nicht in der Webkarte enthalten",
             fieldNotFound: "Feld nicht gefunden",
             popupNotSet: "Pop-up ist für diesen Layer nicht aktiviert",
-            noLayersSet: "ä_No layers defined in the config, the search box will not work_Ü"
+            noLayersSet: "In der Konfiguration wurden keine Layer definiert; das Suchfeld funktioniert nicht"
         },
         page: {
             title: "Informationssuche",

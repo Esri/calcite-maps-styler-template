@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "Ă_Location could not be found_ș",
-                "notWhatYouWanted": "Ă_Not what you wanted_ș?",
-                "selectAnother": "Ă_Select another location_ș",
-                "currentLocation": "Ă_Current Location_ș",
-                "title": "Ă_Location_ș"
+                "error": "Locaţia nu a putut fi găsită",
+                "notWhatYouWanted": "Nu este ce doreaţi?",
+                "selectAnother": "Selectaţi altă locaţie",
+                "currentLocation": "Locaţie curentă",
+                "title": "Locaţie"
             },
             "basemap":{
-                    "label": "Ă_Basemap_ș",
-                    "title": "Ă_Select a Basemap_ș"
+                    "label": "Hartă fundal",
+                    "title": "Selectare hartă fundal"
             },
             "legend":{
-                "title": "Ă_Legend_ș"
+                "title": "Legendă"
             },
             "details":{
-                "title": "Ă_Map Details_ș",
-                "error": "Ă_Update the web map description with the details to display in this section_ș."
+                "title": "Detalii hartă",
+                "error": "Actualizaţi descriere hărţii web cu detaliile ce vor fi afişate în această secţiune."
             },
             "popup": {
-                "title": "Ă_Info_ș",
-                "instructions": "Ă_Select a feature on the map to view details_ș."
+                "title": "Informaţii",
+                "instructions": "Selectaţi un obiect spaţial de pe hartă pentru a vizualiza detaliile."
             }
 
         },
         "map": {
-            "error": "Ă_Unable to create map_ș"
+            "error": "Imposibil de creat harta"
         }
     })
 );

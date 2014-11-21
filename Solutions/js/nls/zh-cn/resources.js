@@ -17,7 +17,7 @@
 define(
      ({
         map: {
-            error: "试_Unable to create map_验"
+            error: "无法创建地图"
         },
         tooltips: {
             search: "查找",  // Command button to open a dialog box for finding a feature or an address (depending on app)

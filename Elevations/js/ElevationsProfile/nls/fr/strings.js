@@ -1,30 +1,30 @@
 ﻿define({
   root: ({
     display: {
-      elevationProfileTitle: "æ_Elevations Profile_Â",
-      showMe: "æ_show me_Â",
-      selectLine: "æ_<b>Select</b> a feature in the map_Â.",
-      popupRequirement: "æ_NOTE: the feature must be in a layer with Popups enabled_Â.",
-      digitizeDistanceMeasureTool: "æ_Use the <b>Measure</b> tools_Â.",
-      selectFeatureHelpUrl: "æ_http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D_Â",
-      measureToolHelpUrl: "æ_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000_Â",
-      hoverOver: "æ_Hover over or touch the Elevations Profile chart to display elevations and show location on map_Â."
+      elevationProfileTitle: "Profil d\'élévation",
+      showMe: "me montrer",
+      selectLine: "<b>Sélectionner</b> une entité sur la carte.",
+      popupRequirement: "REMARQUE : l\'entité doit être dans une couche dans laquelle les fenêtres contextuelles sont activées.",
+      digitizeDistanceMeasureTool: "Utiliser les outils <b>Mesure</b>.",
+      selectFeatureHelpUrl: "http://help.arcgis.com/fr/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
+      measureToolHelpUrl: "http://help.arcgis.com/fr/arcgisonline/help/index.html#//010q00000096000000",
+      hoverOver: "Survolez ou touchez le diagramme Profil d\'élévation pour afficher les élévations et en afficher l\'emplacement sur la carte."
     },
     buttons: {
-      measureLabel: "æ_Measure_Â",
-      helpLabel: "æ_Help_Â"
+      measureLabel: "Mesurer",
+      helpLabel: "Aide"
     },
     chart: {
-      title: "æ_Elevations Profile_Â",
-      demResolution: "æ_DEM Resolution_Â",
-      elevationTitleTemplate: "æ_Elevation in {0}_Â",
-      distanceTitleTemplate: "æ_Distance in {0}_Â",
-      gainLossTemplate: "æ_Min:{min}   Max:{max}   Start:{start}   End:{end}   Change:{gainloss}_Â"
+      title: "Profil d\'élévation",
+      demResolution: "Résolution MNA",
+      elevationTitleTemplate: "Elévation en {0}",
+      distanceTitleTemplate: "Distance en {0}",
+      gainLossTemplate: "Min :{min}   Max :{max}   Début :{start}   Fin :{end}   Changement :{gainloss}"
     },
     errors: {
-      MissingConstructorParameters: "æ_Missing constructor parameter_Â.",
-      InvalidConfiguration: "æ_Invalid configuration_Â.",
-      UnableToProcessResults: "æ_Unable to process analysis results_Â."
+      MissingConstructorParameters: "Paramètre de construction manquant.",
+      InvalidConfiguration: "Configuration incorrecte.",
+      UnableToProcessResults: "Impossible de traiter les résultats d\'analyse."
     }
   }),
   "ar": 1,

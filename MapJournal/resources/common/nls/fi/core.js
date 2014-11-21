@@ -28,8 +28,8 @@
 				buttonSettings: "Asetukset",
 				buttonHelp: "Ohje",
 				buttonPreview: "Näytä reaaliaikaisesti",
-				tooltipFirstSave: "Å_This isn't available until you save_ö.",
-				tooltipNotShared: "Å_This isn't available until you share_ö.",
+				tooltipFirstSave: "Tämä toiminto ei ole käytettävissä ennen tallennusta.",
+				tooltipNotShared: "Tämä toiminto ei ole käytettävissä ennen jakamista.",
 				noPendingChange: "Ei odottavaa muutosta",
 				unSavedChangePlural: "Odottavat muutokset",
 				closeWithPendingChange: "Haluatko varmasti vahvistaa tämän toiminnon? Menetät tekemäsi muutokset.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Virhe tallennettaessa sovellusta",
 				err1Div1: "Sovellusta ei voi tallentaa, koska toisella kohteella on sama nimi (katso <a class='linkagolroot' target='_blank'>sisältökansio</a>).",
-				err1Div2: "Å_Please modify the title of your application and then save it_ö.",
-				btnOk: "Å_Edit the application title_ö"
+				err1Div2: "Muokkaa sovelluksen otsikkoa ja tallenna sovellus sen jälkeen.",
+				btnOk: "Muokkaa sovelluksen otsikkoa"
 			},
 			share: {
 				firstSaveTitle: "Sovellus on tallennettu",
@@ -66,7 +66,7 @@
 				shareHeader2: "Organisaatiosi jäsenet voivat käyttää sovellustasi (sisäänkirjauduttuaan).",
 				shareLinkCopy: "Kopioi",
 				shareLinkCopied: "Kopioitu",
-				shareQ0: "Å_How do I embed the application in a web page_ö?",
+				shareQ0: "Miten upotan sovelluksen Web-sivulle?",
 				shareQ1Opt1: "Miten voin pitää sovelluksen yksityisenä?",
 				shareQ1Opt2: "Miten säilytän sovelluksen yksityisenä tai jaan sen julkisesti?",
 				shareA1: "Käytä kohdetta %SHAREIMG% <a href='%LINK1%' target='_blank'>sovelluskohteen sivulla</a>.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Mukauta ylätunnisteen linkkiä.",
 				logoSocialText: "Teksti",
 				logoSocialLink: "Linkki",
-				lblSmallHeader: "Å_Use compact header (no subtitle)_ö"
+				lblSmallHeader: "Käytä tiivistä otsikko (ei alaotsikkoa)"
 			},
 			header: {
-				title: "Å_Edit the title of your %TPL_NAME%_ö",
-				subtitle: "Å_Edit the subtitle of your %TPL_NAME%_ö"
+				title: "Muokkaa tarinan %TPL_NAME% otsikkoa",
+				subtitle: "Muokkaa tarinan %TPL_NAME% alaotsikkoa"
 			}
 		}
 	})

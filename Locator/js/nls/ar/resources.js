@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "بيت_Unable to create map_لاحقة"
+         "error": "يتعذر إنشاء الخريطة"
       },
       "location": {
-         "name": "بيت_Name_لاحقة",
-         "current": "بيت_Current Location_لاحقة",
-         "address": "بيت_Address_لاحقة",
-         "latitude": "بيت_Latitude_لاحقة",
-         "longitude": "بيت_Longitude_لاحقة",
-         "use": "بيت_Use this location_لاحقة",
-         "error": "بيت_Unable to use this location_لاحقة"
+         "name": "الاسم",
+         "current": "الموقع الحالي",
+         "address": "العنوان",
+         "latitude": "خط العرض",
+         "longitude": "خط الطول",
+         "use": "استخدم هذا الموقع",
+         "error": "يتعذر استخدام هذا الموقع"
       },
       "tooltips": {
-         "toggle": "بيت_Show/Hide_لاحقة",
-         "reset": "بيت_Reset_لاحقة",
-         "locate": "بيت_Find my location_لاحقة",
-         "directions": "بيت_Directions_لاحقة",
-         "filter": "بيت_Filter_لاحقة",
-         "close": "بيت_Close_لاحقة",
-         "reverse": "بيت_Reverse_لاحقة"
+         "toggle": "إظهار/إخفاء",
+         "reset": "إعادة تعيين",
+         "locate": "العثور على الموقع الخاص بي",
+         "directions": "الاتجاهات",
+         "filter": "مُنقي",
+         "close": "إغلاق",
+         "reverse": "عكس"
       }
    })
 );

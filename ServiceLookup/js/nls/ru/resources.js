@@ -11,7 +11,7 @@
             layerNotFound: "Слой отсутствует в веб-карте",
             fieldNotFound: "Поле не найдено",
             popupNotSet: "Всплывающие окна не включены для данного слоя",
-            noLayersSet: "Ж_No layers defined in the config, the search box will not work_Я"
+            noLayersSet: "В конфигурации не указаны слои, окно поиска не будет работать"
         },
         page: {
             title: "Поиск сведений",

@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "한_Unable to create map_빠"
+         "error": "맵을 생성할 수 없음"
       },
       "days": {
-         "now": "한_NOW_빠",
-         "sun": "한_SUN_빠",
-         "mon": "한_MON_빠",
-         "tue": "한_TUE_빠",
-         "wed": "한_WED_빠",
-         "thu": "한_THU_빠",
-         "fri": "한_FRI_빠",
-         "sat": "한_SAT_빠"
+         "now": "지금",
+         "sun": "일",
+         "mon": "월",
+         "tue": "화",
+         "wed": "수",
+         "thu": "목",
+         "fri": "금",
+         "sat": "토"
       },
       "tooltips": {
-         "logo": "한_Logo_빠",
-         "menu": "한_Menu_빠",
-         "close": "한_Close_빠",
-         "previous": "한_Previous_빠",
-         "next": "한_Next_빠",
-         "directions": "한_Directions_빠"
+         "logo": "로고",
+         "menu": "메뉴",
+         "close": "닫기",
+         "previous": "이전",
+         "next": "다음",
+         "directions": "방향"
       }
    })
 );

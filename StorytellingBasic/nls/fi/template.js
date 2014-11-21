@@ -9,8 +9,8 @@
       general:"Virhe"
     },
 	legToggle:{
-	  up:"Å_MAP LEGEND â–²_ö",
-	  down:"Å_MAP LEGEND â–¼_ö"
+	  up:"KARTAN SELITE â–²",
+	  down:"KARTAN SELITE â–¼"
 	},
 	loading:{
 		message: "Ladataan karttaa"

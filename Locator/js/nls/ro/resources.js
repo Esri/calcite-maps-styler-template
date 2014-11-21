@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "Ă_Unable to create map_ș"
+         "error": "Imposibil de creat harta"
       },
       "location": {
-         "name": "Ă_Name_ș",
-         "current": "Ă_Current Location_ș",
-         "address": "Ă_Address_ș",
-         "latitude": "Ă_Latitude_ș",
-         "longitude": "Ă_Longitude_ș",
-         "use": "Ă_Use this location_ș",
-         "error": "Ă_Unable to use this location_ș"
+         "name": "Nume",
+         "current": "Locaţie curentă",
+         "address": "Adresă",
+         "latitude": "Latitudine",
+         "longitude": "Longitudine",
+         "use": "Utilizaţi această locaţie",
+         "error": "Imposibil de utilizat această locaţie"
       },
       "tooltips": {
-         "toggle": "Ă_Show/Hide_ș",
-         "reset": "Ă_Reset_ș",
-         "locate": "Ă_Find my location_ș",
-         "directions": "Ă_Directions_ș",
-         "filter": "Ă_Filter_ș",
-         "close": "Ă_Close_ș",
-         "reverse": "Ă_Reverse_ș"
+         "toggle": "Afişare/ascundere",
+         "reset": "Resetare",
+         "locate": "Găsire locaţie proprie",
+         "directions": "Indicaţii",
+         "filter": "Filtru",
+         "close": "Închidere",
+         "reverse": "Inversare"
       }
    })
 );

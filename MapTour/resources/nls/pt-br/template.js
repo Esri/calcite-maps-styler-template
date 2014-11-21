@@ -68,7 +68,7 @@
 				dataPicError1: "A Apresentação do Mapa exige agora que uma URL da figura termine com uma das seguintes extensões: .jp(e)g, .png, .gif or .bmp.",
 				dataPicError2: "Este requisito não afetará sua Apresentação do Mapa existente publicada. No entanto, para utilizar o construtor interativo, você deve primeiro resolver o problema da URL executando uma de duas ações:",
 				dataPicError3: "Editar URLs",
-				dataPicError4: "ã_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_Ç.",
+				dataPicError4: "Isto adicionará <i>#isImage</i> no final das URLs da figura suportadas. A maioria dos servidores tem suporte para apêndices da URL. No entanto, após executar esta ação, você deve verificar se as URLs da figura atualizadas são funcionais, navegando por seus pontos. Se cada figura carregar, você poderá agora salvar a Apresentação do Mapa. Se <b>as figuras estiverem quebradas, não salve a Apresentação do Mapa</b>. Pelo contrário, recarregue o construtor e execute uma segunda ação.",
 				dataPicError5: "Limitar a apresentação nas figuras",
 				dataPicError6: "Esta opção faz com que todas as URLs sejam consideradas imagens, mas você não poderá adicionar vídeos utilizando o construtor interativo. Esta ação é reversível, se você decidir adicionar o vídeo no futuro.",
 				dataPicError7: "Sua Apresentação do Mapa foi limitada para figuras, vídeos não podem ser utilizados. Se você optar por remover esta limitação, verifique se as suas figuras ainda carregam corretamente antes de salvar a Apresentação do Mapa. Você poderá restaurar esta limitação posteriormente, se necessário.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Figura",
 				addLabelThumbUrl: "Miniatura",
 				addTextPlaceholderUrl: "Insira uma URL da imagem",
-				addTextPlaceholderUrl2: "ã_Enter a YouTube page URL_Ç",
+				addTextPlaceholderUrl2: "Insira uma URL da página do YouTube",
 				addTextPlaceholderUrl3: "Insira uma URL da página do Vimeo",
 				addTextPlaceholderUrl4: "Insira uma URL do vídeo embutido",
 				addLabelVideo: "Vídeo",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Redefinir seleção de campos",
 				settingsExtentExplain: "Configure a extensão inicial de Apresentação do Mapa pelo mapa interativo abaixo.",
 				settingsExtentExplainBottom: "A extensão que você definir modificará a extensão inicial do seu mapa da web. Observe que esta extensão não será utilizada se não incluir o primeiro ponto do percurso. Neste caso, o percurso abrirá centrado no primeiro ponto.",
-				settingsExtentDateLineError: "ã_The extent cannot be across the meridian of 180Â° longitude_Ç",
+				settingsExtentDateLineError: "A extensão não pode cruzar o meridiano de longitude de 180Â°",
 				settingsExtentDateLineError2: "Erro ao calcular a extensão",
 				settingsExtentDrawBtn: "Desenhar uma nova extensão",
 				settingsExtentModifyBtn: "Editar a extensão",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Aplicar"
 			},
 			headerJS:{
-				editMe: "ã_Edit me_Ç!",
+				editMe: "Editar-me!",
 				templateTitle: "Configurar título do modelo",
 				templateSubtitle: "Configurar subtítulo do modelo"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Importação bem sucedida. Carregando"
 			},
 			viewYoutube: {
-				title: "ã_YouTube import_Ç",
+				title: "Importar do YouTube",
 				header: "Insira um nome de usuário do YouTube para localizar vídeos compartilhados publicamente.",
-				pageInputLbl: "ã_Enter a YouTube user name_Ç",
+				pageInputLbl: "Insira um nome de usuário do YouTube",
 				lookupMsgError: "Usuário não encontrado",
-				howToFind: "ã_How to find a YouTube user name_Ç",
+				howToFind: "Como encontrar um nome de usuário do YouTube",
 				howToFind2: "O nome de usuário é exibido abaixo dos vídeos",
 				found: "Localizado",
 				noData: "Nenhum vídeo público localizado"
@@ -410,7 +410,7 @@
 					div1: "O modelo de Apresentação do Mapa é projetado para apresentar informações geográficas onde há um elemento fotográfico narrativo para a história que você deseja contar.",
 					div2: "O modelo produz um aplicativo da web, atraente e de fácil uso que permite a você apresentar um pequeno conjunto de lugares em um mapa em uma sequência numerada pela qual os usuários podem procurar. O modelo é projetado para ser utilizado em qualquer navegador da web em qualquer dispositivo, inclusive smartphones e tablets. <br /><br />Aqui está um exemplo da classificação de aplicativo que você pode criar:",
 					div4: "<a href='http://storymaps.esri.com/stories/maptour-palmsprings' target='_blank'>Apresentar Mapa de Palm Springs</a>.",
-					div42: "Para consultar os exemplos de apresentação do mapa que outros usuários estão criando, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>visite a galeria</a> no <a href='http://storymaps.arcgis.com/' target='_blank'>site da web Story Maps</a>. Você também pode nos seguir no Twitter em <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
+					div42: "Para visualizar os exemplos de apresentação do mapa que outros usuários estão criando, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>visite a galeria</a> no <a href='http://storymaps.arcgis.com/' target='_blank'>site da web Story Maps</a>. Você também pode nos seguir no Twitter em <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div5: "Nós adoraríamos ouvir sua opinião! Se você tem uma pergunta, deseja solicitar uma nova feição ou se você localizou um erro, visite <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>."
 				},
 				tab2: {
@@ -442,12 +442,12 @@
 					div172: "Quando presentes, os campos de figura e miniatura serão sempre utilizados e os anexos de serviço da feição não serão exigidos.",
 					div173: "Exemplos de CSVs e shapefiles podem ser baixados de",
 					div18: "Criando um Serviço da Feição hospedado de um Shapefile ou CSV",
-					div19: "ã_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_Ç.",
-					div20: "ã_Supported picture formats and videos_Ç",
-					div21: "ã_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_Ç.",
+					div19: "Quando você cria um serviço da feição hospedado a partir de um shapefile ou CSV, os anexos não são habilitados por padrão. Para habilitá-los, abra a página de detalhes do serviço da feição, clique na seta pequena na seção da camada e você visualizará esta opção. A Apresentação do Mapa continuará a utilizar as figuras e miniaturas que você referenciou pelos atributos. Opcionalmente, se você desejar carregar suas figuras como anexos de serviço da feição, você poderá fazer isto por dois botões no painel da figura (\"Alterar Figura\" e \"Alterar Miniatura\").",
+					div20: "Formatos de figura e vídeos suportados",
+					div21: "Os formatos de figura suportados são: <b>.jpg, .jpeg, .png, .gif e .bmp</b>. Se a mídia não finalizar com esta extensão, a Apresentação do Mapa irá considerá-la para ser um vídeo, exceto quando utilizar um serviço da feição (veja abaixo).",
 					div22: "O modelo Apresentação do Mapa não inclui uma reprodução de vídeo, então você tem que utilizar uma reprodução de vídeo externa fornecida pelo seu serviço de hospedagem de vídeo favorito (encontre a opção para embutir o vídeo e copie a URL atual no código fornecido). Se desejar hospedar o vídeo você mesmo, é possível criar uma página HTML que contém uma reprodução de vídeo como <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "O construtor interativo não fornece uma caixa de diálogo para incluir vídeo ao utilizar os serviços da feição com anexos, mas é possível fazer isto editando seus dados fora do construtor interativo. No viualizador de mapa do arcgis.com, se você modificar os campos da figura para apontar para um vídeo externo e adicionar um parâmetro especial no final da sua URL (# isVideo), sua mídia será considerada um vídeo.",
-					div24: "ã_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_Ç."
+					div24: "Observe que você ainda precisa ter dois anexos de figura válidos ou o ponto não será utilizado. Não é possível utilizar vídeos ao utilizar anexos do serviço da feição, sem os campos de miniatura e figura."
 				},
 				tab3: {
 					title: "Personalização",
@@ -487,7 +487,7 @@
 					div2a: "Compartilhando a Apresentação pelo construtor",
 					div2b: "O botão COMPARTILHAR atualizará o aplicativo e itens do mapa da web. Se seus dados de Apresentação são armazenados no item do Serviço de Feição, também será atualizado. Se você adicionar outras camadas pelo visualizador de mapa ArcGIS.com, eles não serão atualizados. Isto pode resultar na Apresentação não sendo compartilhada da forma espera. Os itens que já têm os privilégios exigidos (ou mais) não serão atualizado.",
 					div2c: "Compartilhando a Tour através do ArcGIS Online",
-					div2d: "ã_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_Ç.",
+					div2d: "Ao compartilhar o aplicativo pelo ArcGIS Online, se necessário, ele pergunta a você para atualizar quaisquer recursos dependentes (mapa da web, serviço de feição, camada de decoração) que não são compartilhados da mesma maneira. Se a Apresentação do Mapa for pública e um de seus recursos não estiver compartilhado com seu público, os usuários serão redirecionados na página de login do ArcGIS Online.",
 					div3t: "Segurança de Serviço de Feição",
 					div3a: "Se você estiver utilizando um serviço da feição hospedado criado pelo construtor de Apresentação do Mapa, o aplicativo gerenciará a segurança do serviço para você e você permanecerá como o único com privilégios de edição, mesmo se você compartilhar o serviço publicamente.",
 					div3t2: "Antes de compartilhar sua Apresentação com seu público",

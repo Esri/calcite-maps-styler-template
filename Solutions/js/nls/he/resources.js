@@ -17,7 +17,7 @@
 define(
      ({
         map: {
-            error: "כן_Unable to create map_ש"
+            error: "לא ניתן ליצור מפה"
         },
         tooltips: {
             search: "מצא",  // Command button to open a dialog box for finding a feature or an address (depending on app)

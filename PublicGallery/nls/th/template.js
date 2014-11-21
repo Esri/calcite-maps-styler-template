@@ -12,14 +12,14 @@
                 "bingError": "การใช้งานแอพพลิเคชันนี้ คุณต้องมีคีย์ Bing Map ของตนเอง",
                 "noLayers": "ไม่มีชั้นข้อมูลที่กำลังทำงานอยู่",
                 "noSearchResults": "ขออภัย ไม่พบผลลัพธ์",
-                "noGroupResults": "ก้_The group could not be found_ษฺ.",
+                "noGroupResults": "ไม่พบกลุ่ม",
                 "noMatches": "ไม่พบข้อมูลที่สัมพันธ์กัน",
                 "noMapsFound": "ไม่พบแผนที่"
             },
             "sidePanel": {
                 "title": "คำอธิบายสัญลักษณ์แผนที่",
                 "legendButton": "คำอธิบายสัญลักษณ์แผนที่",
-                "layersButton": "ก้_Layers_ษฺ", // new
+                "layersButton": "ชั้นข้อมูล", // new
                 "legendButtonTitle": "คำอธิบายสัญลักษณ์แผนที่",
                 "aboutButton": "เกี่ยวกับ",
                 "aboutButtonTitle": "เกี่ยวกับแผนที่",
@@ -36,47 +36,47 @@
                 "loadingText": "กำลังโหลดแผนที่&hellip;"
             },
             "sortFields": {
-                "sortBy": "ก้_Sort by_ษฺ",
-                "modified": "ก้_Date_ษฺ",
-                "title": "ก้_Title_ษฺ",
-                "type": "ก้_Type_ษฺ",
-                "numRatings": "ก้_Ratings_ษฺ",
-                "avgRating": "ก้_Avg. Rating_ษฺ",
-                "numComments": "ก้_Comments_ษฺ",
-                "numViews": "ก้_Views_ษฺ"
+                "sortBy": "จัดลำดับตาม",
+                "modified": "วันที่",
+                "title": "ชื่อ",
+                "type": "ประเภท",
+                "numRatings": "คะแนน",
+                "avgRating": "คะแนนเฉลี่ย",
+                "numComments": "ความคิดเห็น",
+                "numViews": "ยอดเข้าชม"
             },
             "comments": {
-                "commentsHeader": "ก้_Comments_ษฺ",
-                "posted": "ก้_Posted_ษฺ",
-                "by": "ก้_by_ษฺ",
-                "deleteComment": "ก้_delete_ษฺ",
-                "editComment": "ก้_edit_ษฺ",
-                "noComments": "ก้_No comments_ษฺ",
-                "addCommentButton": "ก้_Add Comment_ษฺ",
-                "signIn": "ก้_Sign In_ษฺ",
-                "register": "ก้_Register_ษฺ",
-                "or": "ก้_or_ษฺ",
-                "toPost": "ก้_to post a comment_ษฺ."
+                "commentsHeader": "ความคิดเห็น",
+                "posted": "ประกาศ",
+                "by": "โดย",
+                "deleteComment": "ลบ",
+                "editComment": "แก้ไข",
+                "noComments": "ไม่มีความคิดเห็น",
+                "addCommentButton": "เพิ่มความคิดเห็น",
+                "signIn": "เข้าระบบ",
+                "register": "ลงทะเบียน",
+                "or": "หรือ",
+                "toPost": "แสดงความคิดเห็น"
             },
             "buttons": {
-                "cancel": "ก้_Cancel_ษฺ",
-                "submit": "ก้_Submit_ษฺ"
+                "cancel": "ยกเลิก",
+                "submit": "ส่ง"
             },
             "rating": {
-                "signIn": "ก้_Sign In_ษฺ",
-                "toRate": "ก้_to rate_ษฺ."
+                "signIn": "เข้าระบบ",
+                "toRate": "ให้คะแนน"
             },
             "itemInfo": {
-                "createdLabel": "ก้_created_ษฺ",
-                "ratingsLabel": "ก้_rating_ษฺ",
-                "ratingsLabelPlural": "ก้_ratings_ษฺ",
-                "viewsLabel": "ก้_view_ษฺ",
-                "viewsLabelPlural": "ก้_views_ษฺ",
-                "commentsLabel": "ก้_comment_ษฺ",
-                "commentsLabelPlural": "ก้_comments_ษฺ",
-                "modifiedLabel": "ก้_Last Modified_ษฺ",
-                "by": "ก้_by_ษฺ",
-                "separator": "ก้__ษฺ,"
+                "createdLabel": "สร้างโดย",
+                "ratingsLabel": "การจัดลำดับ",
+                "ratingsLabelPlural": "คะแนน",
+                "viewsLabel": "เปิดดู",
+                "viewsLabelPlural": "ยอดเข้าชม",
+                "commentsLabel": "แสดงความคิดเห็น",
+                "commentsLabelPlural": "ความคิดเห็น",
+                "modifiedLabel": "ปรับปรุงครั้งสุดท้าย",
+                "by": "โดย",
+                "separator": "คอมม่า"
             },
             "mapPage": {
                 "findLocation": "ค้นหาตำแหน่ง",
@@ -93,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "เจ้าของ:",
                 "switchBasemap": "เปลี่ยนแผนที่ฐาน",
-                "getMobileApp": "ก้_Get App_ษฺ",
-                "constraintsHeading": "ก้_Use Constraints_ษฺ",
-                "createdLabel": "ก้_Created_ษฺ",
-                "noDescription": "ก้_No description_ษฺ.",
-                "detailsLabel": "ก้_Details_ษฺ"
+                "getMobileApp": "รับโปรแกรมประยุกต์",
+                "constraintsHeading": "ข้อกำหนดการใช้",
+                "createdLabel": "สร้างโดย",
+                "noDescription": "ไม่มีคำอธิบาย",
+                "detailsLabel": "รายละเอียด"
             },
             "filterItems": {
                 "show": "แสดง",

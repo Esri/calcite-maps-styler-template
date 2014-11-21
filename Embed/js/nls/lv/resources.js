@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "ķ_Location could not be found_ū",
-                "notWhatYouWanted": "ķ_Not what you wanted_ū?",
-                "selectAnother": "ķ_Select another location_ū",
-                "currentLocation": "ķ_Current Location_ū",
-                "title": "ķ_Location_ū"
+                "error": "Izvietojumu nevarēja atrast",
+                "notWhatYouWanted": "Vēlējāties kaut ko citu?",
+                "selectAnother": "Izvēlieties citu izvietojumu",
+                "currentLocation": "Pašreizējais izvietojums",
+                "title": "Izvietojums"
             },
             "basemap":{
-                    "label": "ķ_Basemap_ū",
-                    "title": "ķ_Select a Basemap_ū"
+                    "label": "Pamatkarte",
+                    "title": "Atlasīt pamatkarti"
             },
             "legend":{
-                "title": "ķ_Legend_ū"
+                "title": "Eksplikācija"
             },
             "details":{
-                "title": "ķ_Map Details_ū",
-                "error": "ķ_Update the web map description with the details to display in this section_ū."
+                "title": "Kartes detaļas",
+                "error": "Atjauniniet web kartes aprakstu ar šajā sadaļā parādāmajām detaļām."
             },
             "popup": {
-                "title": "ķ_Info_ū",
-                "instructions": "ķ_Select a feature on the map to view details_ū."
+                "title": "Informācija",
+                "instructions": "Izvēlieties elementu kartē, lai skatītu detaļas."
             }
 
         },
         "map": {
-            "error": "ķ_Unable to create map_ū"
+            "error": "Nevar izveidot karti"
         }
     })
 );

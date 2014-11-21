@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "כן_Unable to create map_ש"
+            error: "לא ניתן ליצור מפה"
         },
         tools: {
             info: {
-                label: "כן_Info_ש",
-                tooltip: "כן_Toggle map info_ש"
+                label: "מידע",
+                tooltip: "החלף מידע מפה"
             },
             sync: {
-                label: "כן_Sync Map Extent_ש",
-                tooltip: "כן_Sync to extent of this map_ש"
+                label: "סנכרן תיחום מפה",
+                tooltip: "סנכרן עם תיחום מפה זו"
             }
         }
     })

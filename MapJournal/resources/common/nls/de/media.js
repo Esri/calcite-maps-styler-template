@@ -62,7 +62,7 @@
 				url: "URL eines Vimeo-Videos"
 			},
 			videoSelectorOther: {
-				explain1: "ä_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_Ü.",
+				explain1: "Die Anwendung kann keine unverarbeiteten Videos (z. B. avi, mpeg) wiedergeben. Sie kann jedoch gehostete Videodateien mit integrierten Playern (z. B. YouTube oder Vimeo) wiedergeben.",
 				explain2: "Diese Funktion wird von den meisten Online-Services, die Videos hosten, bereitgestellt. Sie müssen die Option zum Einbetten des Videos suchen, den angegebenen Code kopieren und %WEBPAGE% verwenden.",
 				explain3: "Wenn Sie das Video selbst hosten möchten, können Sie auch eine HTML-Seite erstellen, die einen Videoplayer wie %EXAMPLE% verwendet, diese Seite hosten und auch %WEBPAGE% verwenden.",
 				webpage: "Webseitenfunktion"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(Zuschneiden nicht möglich)",
 				lblPosition3Explain2: "(Breite wird immer an das Fenster angepasst)",
 				lblPosition4Explain: "(Verzerren möglich)",
-				unloadLbl: "ä_Unload when reader navigates away_Ü",
-				unloadHelp: "ä_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_Ü."
+				unloadLbl: "Wird angehalten, wenn Leser zu einem anderen Ort navigiert",
+				unloadHelp: "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Anwendung nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt."
 			},
 			editorActionGeocode: {
 				lblTitle: "Adresse oder Ort suchen",

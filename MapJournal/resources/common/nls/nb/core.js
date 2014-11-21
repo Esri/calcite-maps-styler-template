@@ -28,8 +28,8 @@
 				buttonSettings: "Innstillinger",
 				buttonHelp: "Hjelp",
 				buttonPreview: "Vis i sanntid",
-				tooltipFirstSave: "å_This isn't available until you save_ø.",
-				tooltipNotShared: "å_This isn't available until you share_ø.",
+				tooltipFirstSave: "Dette er ikke tilgjengelig før du har lagret.",
+				tooltipNotShared: "Dette er ikke tilgjengelig før du har delt.",
 				noPendingChange: "Ingen ventende endring",
 				unSavedChangePlural: "Ventende endringer",
 				closeWithPendingChange: "Er du sikker på at du vil bekrefte denne handlingen? Du mister endringene du har gjort.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Feil under lagring av programmet",
 				err1Div1: "Programmet kan ikke lagres, fordi du allerede har et annet element med samme navn (se <a class='linkagolroot' target='_blank'>innholdsmappen</a>).",
-				err1Div2: "å_Please modify the title of your application and then save it_ø.",
-				btnOk: "å_Edit the application title_ø"
+				err1Div2: "Endre tittelen på programmet, og deretter lagrer du det.",
+				btnOk: "Rediger tittelen på programmet"
 			},
 			share: {
 				firstSaveTitle: "Programmet er lagret",
@@ -66,7 +66,7 @@
 				shareHeader2: "Programmet ditt er tilgjengelig for medlemmer av organisasjonen din (krever pålogging).",
 				shareLinkCopy: "Kopier",
 				shareLinkCopied: "Kopiert",
-				shareQ0: "å_How do I embed the application in a web page_ø?",
+				shareQ0: "Hvordan bygger jeg inn programmet på en webside?",
 				shareQ1Opt1: "Hvordan holder jeg programmet privat?",
 				shareQ1Opt2: "Hvordan holder jeg programmet privat eller deler det offentlig?",
 				shareA1: "Bruk %SHAREIMG% på <a href='%LINK1%' target='_blank'>elementsiden for programmet</a>.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Tilpass overskriftskoblingen.",
 				logoSocialText: "Tekst",
 				logoSocialLink: "Kobling",
-				lblSmallHeader: "å_Use compact header (no subtitle)_ø"
+				lblSmallHeader: "Bruk kompakt overskrift (ingen undertittel)"
 			},
 			header: {
-				title: "å_Edit the title of your %TPL_NAME%_ø",
-				subtitle: "å_Edit the subtitle of your %TPL_NAME%_ø"
+				title: "Rediger tittelen på din %TPL_NAME%",
+				subtitle: "Rediger undertittelen på din %TPL_NAME%"
 			}
 		}
 	})

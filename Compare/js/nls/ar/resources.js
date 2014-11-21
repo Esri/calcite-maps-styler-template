@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "بيت_Unable to create map_لاحقة"
+            error: "يتعذر إنشاء الخريطة"
         },
         tools: {
             info: {
-                label: "بيت_Info_لاحقة",
-                tooltip: "بيت_Toggle map info_لاحقة"
+                label: "معلومات",
+                tooltip: "تبديل معلومات الخريطة"
             },
             sync: {
-                label: "بيت_Sync Map Extent_لاحقة",
-                tooltip: "بيت_Sync to extent of this map_لاحقة"
+                label: "تزامن مدى الخريطة",
+                tooltip: "تزامن مدى هذه الخريطة"
             }
         }
     })

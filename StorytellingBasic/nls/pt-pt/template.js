@@ -9,8 +9,8 @@
       general:"Erro"
     },
 	legToggle:{
-	  up:"ã_MAP LEGEND â–²_Ç",
-	  down:"ã_MAP LEGEND â–¼_Ç"
+	  up:"LEGENDA DO MAPA ▲",
+	  down:"LEGENDA DO MAPA ▼"
 	},
 	loading:{
 		message: "A carregar mapa"

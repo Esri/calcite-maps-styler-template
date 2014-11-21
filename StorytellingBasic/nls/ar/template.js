@@ -9,8 +9,8 @@
       general:"خطأ"
     },
 	legToggle:{
-	  up:"بيت_MAP LEGEND â–²_لاحقة",
-	  down:"بيت_MAP LEGEND â–¼_لاحقة"
+	  up:"وسيلة إيضاح الخريطة â–²",
+	  down:"وسيلة إيضاح الخريطة â–¼"
 	},
 	loading:{
 		message: "تحميل الخريطة"

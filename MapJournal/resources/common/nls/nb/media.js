@@ -62,7 +62,7 @@
 				url: "Nettadressen for en Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "å_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ø.",
+				explain1: "Programmet kan ikke spille av råvideoer (f.eks. AVI- og MPEG-format), men det kan spille av hostede videofiler som har innebygde spillere (f.eks. YouTube og Vimeo).",
 				explain2: "De fleste nettbaserte videovertstjenestene har denne funksjonen. Du må finne alternativet for å bygge inn videoen, kopiere den oppgitte koden og bruke %WEBPAGE%.",
 				explain3: "Du kan eventuelt være vert for videoen selv. Da må du lage en HTML-side som bruker en videospiller som %EXAMPLE%, være vert for den siden og også bruke %WEBPAGE%.",
 				webpage: "Nettsidefunksjon"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(blir ikke beskåret)",
 				lblPosition3Explain2: "(bredden passer alltid med panelet)",
 				lblPosition4Explain: "(kan bli forvrengt / vises skjevt)",
-				unloadLbl: "å_Unload when reader navigates away_ø",
-				unloadHelp: "å_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ø."
+				unloadLbl: "Last ut når leseren navigerer bort",
+				unloadHelp: "Hvis websiden inneholder lyd- eller videomedier, beholder du avmerkingen for dette alternativet, slik at dette innholdet ikke spilles av når leseren navigerer bort. Du kan fjerne avmerkingen hvis du for eksempel vil spille av et lydspor mens leseren går gjennom historien.<br />Hvis websiden er et program, fjerner du avmerkingen for dette alternativet, slik at programmet ikke lastes inn på nytt hvis leseren går tilbake til det."
 			},
 			editorActionGeocode: {
 				lblTitle: "Finn en adresse eller et sted",

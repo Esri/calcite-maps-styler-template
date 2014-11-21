@@ -28,8 +28,8 @@
 				buttonSettings: "設定",
 				buttonHelp: "ヘルプ",
 				buttonPreview: "最新表示",
-				tooltipFirstSave: "須_This isn't available until you save_鷗.",
-				tooltipNotShared: "須_This isn't available until you share_鷗.",
+				tooltipFirstSave: "これは保存するまで利用できません。",
+				tooltipNotShared: "これは共有するまで利用できません。",
 				noPendingChange: "保留中の変更はありません",
 				unSavedChangePlural: "保留中の変更",
 				closeWithPendingChange: "このアクションを確認しますか？変更内容は失われます。",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "アプリケーションの保存中にエラーが発生しました",
 				err1Div1: "すでに同じ名前のアイテムがあるためアプリケーションが保存できません (<a class='linkagolroot' target='_blank'>コンテンツ フォルダ</a>をご参照ください)。",
-				err1Div2: "須_Please modify the title of your application and then save it_鷗.",
-				btnOk: "須_Edit the application title_鷗"
+				err1Div2: "アプリケーションのタイトルを変更して保存してください。",
+				btnOk: "アプリケーション タイトルの編集"
 			},
 			share: {
 				firstSaveTitle: "アプリケーションが保存されました",
@@ -66,7 +66,7 @@
 				shareHeader2: "アプリケーションには組織のメンバーがアクセスできます (ログインが必要)。",
 				shareLinkCopy: "コピー",
 				shareLinkCopied: "コピー",
-				shareQ0: "須_How do I embed the application in a web page_鷗?",
+				shareQ0: "Web ページにアプリケーションを埋め込む方法",
 				shareQ1Opt1: "アプリケーションをプライベートにする方法",
 				shareQ1Opt2: "アプリケーションのプライベート使用とパブリック使用を切り替える方法",
 				shareA1: "<a href='%LINK1%' target='_blank'>アプリケーション アイテム ページ</a>で %SHAREIMG% を使用します。",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "ヘッダー リンクをカスタマイズします。",
 				logoSocialText: "テキスト",
 				logoSocialLink: "リンク",
-				lblSmallHeader: "須_Use compact header (no subtitle)_鷗"
+				lblSmallHeader: "コンパクトなヘッダーを使用 (サブタイプなし)"
 			},
 			header: {
-				title: "須_Edit the title of your %TPL_NAME%_鷗",
-				subtitle: "須_Edit the subtitle of your %TPL_NAME%_鷗"
+				title: "%TPL_NAME% のタイトルの編集",
+				subtitle: "%TPL_NAME% のサブタイトルの編集"
 			}
 		}
 	})

@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "Š_Unable to create map_ä"
+         "error": "Kaarti ei saa luua"
       },
       "location": {
-         "name": "Š_Name_ä",
-         "current": "Š_Current Location_ä",
-         "address": "Š_Address_ä",
-         "latitude": "Š_Latitude_ä",
-         "longitude": "Š_Longitude_ä",
-         "use": "Š_Use this location_ä",
-         "error": "Š_Unable to use this location_ä"
+         "name": "Nimi",
+         "current": "Praegune asukoht",
+         "address": "Aadress",
+         "latitude": "Laiuskraad",
+         "longitude": "Pikkuskraad",
+         "use": "Kasuta seda asukohta",
+         "error": "Seda asukohta ei saa kasutada"
       },
       "tooltips": {
-         "toggle": "Š_Show/Hide_ä",
-         "reset": "Š_Reset_ä",
-         "locate": "Š_Find my location_ä",
-         "directions": "Š_Directions_ä",
-         "filter": "Š_Filter_ä",
-         "close": "Š_Close_ä",
-         "reverse": "Š_Reverse_ä"
+         "toggle": "Kuva/peida",
+         "reset": "Lähtesta",
+         "locate": "Leia minu asukoht",
+         "directions": "Teejuhised",
+         "filter": "Filter",
+         "close": "Sulge",
+         "reverse": "Pööra ümber"
       }
    })
 );

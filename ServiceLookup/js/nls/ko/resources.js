@@ -11,7 +11,7 @@
             layerNotFound: "레이어가 웹 맵에 없습니다.",
             fieldNotFound: "필드를 찾을 수 없음",
             popupNotSet: "이 레이어에 팝업을 사용할 수 없습니다.",
-            noLayersSet: "한_No layers defined in the config, the search box will not work_빠"
+            noLayersSet: "구성에 레이어가 정의되지 않았으므로 검색 상자가 작동하지 않습니다."
         },
         page: {
             title: "정보 조회",

@@ -68,7 +68,7 @@
 				dataPicError1: "Karttakierros edellyttää nyt, että kuvan URL-osoite päättyy johonkin seuraavista tunnisteista: .jp(e)g, .png, .gif tai .bmp.",
 				dataPicError2: "Tämä vaatimus ei vaikuta nykyiseen julkaistuun karttakierrokseesi. Voidaksesi kuitenkin käyttää interaktiivista muodostusohjelmaa sinun on ensin ratkaistava URL-ongelma tekemällä jompikumpi seuraavista toimista:",
 				dataPicError3: "Muokkaa URL-osoitteita",
-				dataPicError4: "Å_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_ö.",
+				dataPicError4: "Tämä lisää parametrin <i>#isImage</i> niiden kuvien URL-osoitteiden loppuun, joita ei tueta. Useimmat palvelimet tukevat URL-jatkeita. Parametrin lisäämisen jälkeen sinun on vahvistettava, että päivitetyt kuvien URL-osoitteet toimivat, siirtymällä pisteidesi välillä. Jos kaikki kuvat latautuvat, voit tallentaa karttakierroksesi. Jos <b>kuvat eivät toimi, älä tallenna karttakierrosta</b>. Lataa muodostusohjelma sen sijaan uudelleen ja tee toinen toimi.",
 				dataPicError5: "Rajoita kierros kuviin",
 				dataPicError6: "Kun valitset tämän vaihtoehdon, kaikki URL-osoitteet tulkitaan kuviksi. Et voi kuitenkaan lisätä videoita interaktiivisen muodostusohjelman avulla. Voit peruuttaa tämän, mikäli muutat mielesi ja haluat lisätä videon myöhemmin.",
 				dataPicError7: "Karttakierroksesi on rajoitettu kuviin eikä videoita voi käyttää. Jos haluat poistaa rajoituksen, tarkista ennen karttakierroksen tallentamista, että kaikki kuvasi latautuvat oikein. Voit tarvittaessa ottaa rajoituksen uudelleen käyttöön myöhemmin.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Kuva",
 				addLabelThumbUrl: "Pikkukuva",
 				addTextPlaceholderUrl: "Anna kuvan URL-osoite",
-				addTextPlaceholderUrl2: "Å_Enter a YouTube page URL_ö",
+				addTextPlaceholderUrl2: "Anna YouTube-sivun URL-osoite",
 				addTextPlaceholderUrl3: "Anna Vimeo-sivun URL-osoite",
 				addTextPlaceholderUrl4: "Anna upotetun videon URL-osoite",
 				addLabelVideo: "Video",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Nollaa kenttien valinta",
 				settingsExtentExplain: "Määritä karttakierroksen alkuperäinen laajuus alla olevan vuorovaikutteisen kartan avulla.",
 				settingsExtentExplainBottom: "Määrittämäsi laajuus määrittää web-kartan alkuperäisen laajuuden. Huomaa, että tätä laajuutta käytetään vain, jos se sisältää kierroksen ensimmäisen pisteen. Muussa tapauksessa kierros avautuu ensimmäiseen pisteeseen kohdistettuna.",
-				settingsExtentDateLineError: "Å_The extent cannot be across the meridian of 180Â° longitude_ö",
+				settingsExtentDateLineError: "Laajuus ei saa ylittää 180Â° pituusasteen meridiaania",
 				settingsExtentDateLineError2: "Virhe laajuuden laskennassa",
 				settingsExtentDrawBtn: "Piirrä uusi laajuus",
 				settingsExtentModifyBtn: "Muokkaa laajuutta",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Käytä"
 			},
 			headerJS:{
-				editMe: "Å_Edit me_ö!",
+				editMe: "Muokkaa minua!",
 				templateTitle: "Määritä mallin nimi",
 				templateSubtitle: "Määritä mallin alaotsikko"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Tuonti onnistui. Ladataan"
 			},
 			viewYoutube: {
-				title: "Å_YouTube import_ö",
+				title: "YouTube-tuonti",
 				header: "Etsi julkisesti jaettuja videoita käyttämällä YouTube-käyttäjätunnusta.",
-				pageInputLbl: "Å_Enter a YouTube user name_ö",
+				pageInputLbl: "Anna YouTube-käyttäjätunnus",
 				lookupMsgError: "Käyttäjää ei löydy",
-				howToFind: "Å_How to find a YouTube user name_ö",
+				howToFind: "YouTube-käyttäjätunnuksen etsiminen",
 				howToFind2: "Käyttäjätunnus näkyy videoissa",
 				found: "Löytyi",
 				noData: "Yhtään julkista videota ei löytynyt"
@@ -442,12 +442,12 @@
 					div172: "Jos kuva- ja pikkukuvakentät ovat käytettävissä, niitä käytetään aina eikä kohdepalvelun liitteisiin kohdistuvia hakuja tehdä.",
 					div173: "CSV- ja shapefile-esimerkkitiedostot voi ladata kohteesta",
 					div18: "Isännöityjen kohdepalvelujen luominen CSV- tai shapefile-tiedostosta",
-					div19: "Å_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_ö.",
-					div20: "Å_Supported picture formats and videos_ö",
-					div21: "Å_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_ö.",
+					div19: "Kun luot isännöidyn kohdepalvelun CSV- tai shapefile-tiedostosta, liitteet eivät ole käytössä oletusarvon mukaan. Voit ottaa ne käyttöön avaamalla kohdepalvelun tietosivun ja napsauttamalla taso-osassa olevaa pientä nuolta, jolloin kyseinen vaihtoehto tulee näkyviin. Karttakierros käyttää uudelleen kuvia ja pikkukuvia, joihin olet viitannut määritteiden avulla. Voit vaihtoehtoisesti ladata kuvasi kohdepalvelun liitteinä kuvaruudun kahden painikkeen avulla (\"Vaihda kuva\" ja \"Vaihda pikkukuva\").",
+					div20: "Tuetut  kuvamuodot ja videot",
+					div21: "Seuraavia kuvamuotoja tuetaan: <b>.jpg, .jpeg, .png, .gif ja .bmp</b>. Jos mediatiedostosi ei pääty johonkin näistä tunnisteista, karttakierros tulkitsee sen videoksi kaikissa muissa tilanteissa paitsi käytettäessä kohdepalvelua (lisätietoja on alla).",
 					div22: "Karttakierrosmalli ei sisällä videosoitinta, joten sinun on käytettävä ulkoista videosoitinta (etsi videon upottamisasetus ja kopioi annetussa koodissa oleva URL-osoite). Jos haluat isännöidä videota itse, voit luoda videosoittimen, kuten <a href='http://www.videojs.com/'>Video.js</a>, sisältävän HTML-sivun.",
 					div23: "Interaktiivinen muodostusohjelma ei sisällä videon sisällyttämisen valintaikkunaa käytettäessä liitteitä sisältäviä kohdepalveluita. Voit kuitenkin sisällyttää videon muokkaamalla tietojasi interaktiivisen muodostusohjelman ulkopuolella. Jos muokkaat kuvakenttiä arcgis.com-palvelun karttojen katseluohjelmassa niin, että ne osoittavat ulkoiseen videoon ja lisäät URL-osoitteen loppuun parametrin #isVideo, mediasi tulkitaan videoksi.",
-					div24: "Å_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_ö."
+					div24: "Huomaa, ettei pistettä käytetä, ellei sinulla ole kahta kelvollista kuvaliitettä. Videoita ei voi käyttää, kun kohdepalvelun liitteitä käytetään ilman kuva- ja pikkukuvakenttiä."
 				},
 				tab3: {
 					title: "Mukauttaminen",
@@ -487,7 +487,7 @@
 					div2a: "Kierroksen jakaminen muodostusohjelman kautta",
 					div2b: "JAA-painike päivittää sovelluksen ja web-kartan kohteet. Jos kierroksen aineisto on tallennettu kohdepalvelun kohteeseen, se päivittyy myös. Jos olet lisännyt muita tasoja ArcGIS.com-kartankatseluohjelman kautta, ne eivät päivity. Tämä voi johtaa siihen, ettei kierrosta jaeta odotetulla tavalla. Kohteita, joissa on jo vaaditut (tai tiukemmat) oikeudet, ei päivitetä.",
 					div2c: "Kierroksen jakaminen ArcGIS Onlinen kautta",
-					div2d: "Å_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_ö.",
+					div2d: "Kun jaat sovelluksen ArcGIS Onlinen kautta, ohjelma pyytää tarvittaessa päivittämään kaikki riippuvat resurssit (web-kartan, kohdepalvelun ja koristelutason), joita ei ole jaettu samalla tavalla. Jos karttakierros on julkinen, ja yhtä resursseista ei ole jaettu yleisön kanssa, käyttäjät ohjataan edelleen ArcGIS Online -sisäänkirjaussivulle.",
 					div3t: "Kohdepalvelun suojaus",
 					div3a: "Jos käytät karttakierroksen muodostusohjelman avulla luotua isännöityä kohdepalvelua, sovellus huolehtii palvelun suojaamisesta puolestasi säilyttäen muokkausoikeudet vain itsellään, vaikka palvelu jaettaisiinkin julkisesti.",
 					div3t2: "Ennen kierroksen jakamista yleisölle",

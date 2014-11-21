@@ -21,18 +21,18 @@ define(
         },
         "tools":{
             "search":{
-                "error": "Đ_Location could not be found_ớ",
-                "notWhatYouWanted": "Đ_Not what you wanted_ớ?",
-                "selectAnother": "Đ_Select another location_ớ",
-                "currentLocation": "Đ_Current Location_ớ",
-                "title": "Đ_Location_ớ"
+                "error": "Không thể tìm thấy vị trí",
+                "notWhatYouWanted": "Không phải cái bạn muốn?",
+                "selectAnother": "Chọn một vị trí khác",
+                "currentLocation": "Vị trí hiện tại",
+                "title": "Vị trí"
             },
 	    	"print": {
 			    "layouts":{
-			      "label1": 'Đ_Landscape_ớ',
-			      "label2": 'Đ_Portrait_ớ',
-			      "label3": 'Đ_Landscape_ớ',
-			      "label4": 'Đ_Portrait_ớ'
+			      "label1": 'Hướng ngang',
+			      "label2": 'Hướng dọc',
+			      "label3": 'Hướng ngang',
+			      "label4": 'Hướng dọc'
 			    },
 			    "legend": "Thêm chú giải vào kết quả đầu ra"
 			},

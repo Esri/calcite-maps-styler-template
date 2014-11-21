@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "선택한 피처",
                 "layerHelpTextMessage": "이 응용프로그램에는 숫자 필드가 포함된 레이어가 필요합니다.",
                 "alertMessage": {
-                    "resetVariableMessage": "한_Are you sure you want to reset variable_빠?",
+                    "resetVariableMessage": "변수를 재설정하시겠습니까?",
                     "emptyAppTitleMessage": "응용프로그램 제목은 비워 둘 수 없습니다.",
                     "emptyDescriptionMessage": "설명은 비워 둘 수 없습니다.",
                     "maxVariableSelection": "하위 변수를 26개 이상 선택할 수 없습니다.",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "저장되지 않은 변경 사항",
                     "failMessage": "항목을 업데이트할 수 없습니다.",
                     "saveChangesAlert": "변경 사항을 저장하시겠습니까?",
-                    "variableLabelValidation": "한_Variable label cannot be empty_빠",
-                    "subVariableLabelValidation": "한_Sub variable label cannot be empty_빠"
+                    "variableLabelValidation": "변수 레이블은 비워 둘 수 없음",
+                    "subVariableLabelValidation": "하위 변수 레이블은 비워 둘 수 없음"
                     }
             }
         }

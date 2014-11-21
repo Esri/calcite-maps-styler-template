@@ -3,7 +3,7 @@
 		firstPane: {
 			head: "<span class='highlightText'>Kaardi tuuri mall</span> võimaldab kõigil ArcGIS Online kasutajail (sh isikliku konto valdajatel) luua ja muuta kohaga seotud kaarte, kombineerides neid piltide ja tekstiga:",
 			list0: "Pildid majutatakse peamistesse fotode jagamise keskkondadesse nagu näiteks Flickr, Picasa ja Facebook või mistahes muu veebiserver või koduleht.",
-			list1: "Š_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_ä"
+			list1: "Pildid ei ole veel salvestatud veebikeskkonda objektiteenuse manustena (ainult ArcGIS for Organizations liikmetele)"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>Mall</span> sisaldab lihtsaid valmiskujul toimetamisvahendeid, mille kaudu:",
@@ -17,8 +17,8 @@
 			list1: "Majuta mall oma veebiserverisse või kolmanda osapoole serverisse"
 		},
 		fourthPane: {
-			head: "Š_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_ä:",
-			list0: "Š_Story maps published by Esriâ€™s story maps teams_ä",
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Külasta Esri kaardilugude saiti</a>, et saada rohkem teavet lugude koostamise ja levitamise võimalustest. Ressursid sisaldavad:",
+			list0: "Esri koostatud kaardilood",
 			list1: "Valikut laaditavatest mallidest",
 			list2: "Asjakohaseid praktilisi näiteid", 
 			list3: "Järjest kasvava kogukonna poolt uuenevat kaardilugude galeriid"

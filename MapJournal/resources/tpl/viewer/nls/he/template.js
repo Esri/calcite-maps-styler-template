@@ -70,8 +70,8 @@
 				copy: "העתק",
 				copied: "הועתק",
 				open: "פתח",
-				embed: "כן_Embed in web page_ש",
-				embedExplain: "כן_Use the following HTML code to embed the journal in a web page_ש.",
+				embed: "הטמע בדף האינטרנט",
+				embedExplain: "השתמש בקוד ה-HTML הבא כדי להטמיע את ה-Journal בדף אינטרנט.",
 				size: "גודל (רוחב/גובה):"
 			}
         }

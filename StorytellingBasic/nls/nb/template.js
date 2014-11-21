@@ -9,8 +9,8 @@
       general:"Feil"
     },
 	legToggle:{
-	  up:"å_MAP LEGEND â–²_ø",
-	  down:"å_MAP LEGEND â–¼_ø"
+	  up:"TEGNFORKLARING FOR KARTET â–²",
+	  down:"TEGNFORKLARING FOR KARTET â–¼"
 	},
 	loading:{
 		message: "Laster inn kart"

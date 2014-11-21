@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "한_Unable to create map_빠"
+         "error": "맵을 생성할 수 없음"
       },
       "location": {
-         "name": "한_Name_빠",
-         "current": "한_Current Location_빠",
-         "address": "한_Address_빠",
-         "latitude": "한_Latitude_빠",
-         "longitude": "한_Longitude_빠",
-         "use": "한_Use this location_빠",
-         "error": "한_Unable to use this location_빠"
+         "name": "이름",
+         "current": "현재 위치",
+         "address": "주소",
+         "latitude": "위도",
+         "longitude": "경도",
+         "use": "이 위치 사용",
+         "error": "이 위치를 사용할 수 없습니다."
       },
       "tooltips": {
-         "toggle": "한_Show/Hide_빠",
-         "reset": "한_Reset_빠",
-         "locate": "한_Find my location_빠",
-         "directions": "한_Directions_빠",
-         "filter": "한_Filter_빠",
-         "close": "한_Close_빠",
-         "reverse": "한_Reverse_빠"
+         "toggle": "표시/숨김",
+         "reset": "재설정",
+         "locate": "내 위치 찾기",
+         "directions": "방향",
+         "filter": "필터",
+         "close": "닫기",
+         "reverse": "반전"
       }
    })
 );

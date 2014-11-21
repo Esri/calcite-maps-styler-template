@@ -3,7 +3,7 @@
 		firstPane: {
 			head: "<span class='highlightText'>โครงร่างแผนที่ท่องเที่ยว</span> ให้บัญชีของ ArcGIS Online ทุกระดับรวมถึงบัญชีผู้ใช้ฟรีสามารถสร้างแผนที่ที่รวมรูปภาพซึ่งมีสถานที่ที่ถ่ายและข้อความเข้าด้วยกันจาก:",
 			list0: "รูปภาพที่อยู่บนเว็บไซต์แชร์ภาพทั่วไป เช่น Flickr, Picasa และ Facebook หรือเว็บไซต์หรือเว็บเซิร์ฟเวอร์อื่นๆ",
-			list1: "ก้_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_ษฺ"
+			list1: "รูปภาพที่ยังไม่ได้อยู่บนออนไลน์ซึ่งจะถูกเก็บเป็นฟีเจอร์เซอร์วิส (เฉพาะสมาชิกขององค์กรที่ใช้ ArcGIS for Organization เท่านั้น)"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>The Template</span> มีเครื่องมือแก้ไขที่ใช้งานง่ายรวมถึง:",
@@ -17,8 +17,8 @@
 			list1: "ฝากโครงร่างไว้บนเว็บเซิร์ฟเวอร์ของคุณเองหรือเซิร์ฟเวอร์อื่นๆ"
 		},
 		fourthPane: {
-			head: "ก้_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_ษฺ:",
-			list0: "ก้_Story maps published by Esriâ€™s story maps teams_ษฺ",
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>เยี่ยมชมเว็บไซต์แผนที่แสดงเรื่องราวของ Esri </a> เพื่อเรียนรู้เพิ่มเติมเกี่ยวกับการสร้างและแชร์เรื่องราว แหล่งข้อมูลรวมถึง:",
+			list0: "สตอรี่แมพโดยทีมสตอรี่แมพของ Esri",
 			list1: "โครงร่างที่น่าสนใจสำหรับดาวน์โหลด",
 			list2: "คำแนะนำการฝึกฝน", 
 			list3: "สตอรี่แมพแกลลอรี่ซึ่งเป็นเหมือนชุมชนที่มีผู้ถ่ายทอดเรื่องราวมากมาย"

@@ -12,14 +12,14 @@
                 "bingError": "Для размещения этого приложения необходимо иметь собственный ключ Bing Map.",
                 "noLayers": "Нет рабочих слоев",
                 "noSearchResults": "Результаты не найдены.",
-                "noGroupResults": "Ж_The group could not be found_Я.",
+                "noGroupResults": "Не удалось найти группу.",
                 "noMatches": "Совпадения не найдены.",
                 "noMapsFound": "Карты не найдены."
             },
             "sidePanel": {
                 "title": "Легенда",
                 "legendButton": "Легенда",
-                "layersButton": "Ж_Layers_Я", // new
+                "layersButton": "Слои", // new
                 "legendButtonTitle": "Легенда",
                 "aboutButton": "О",
                 "aboutButtonTitle": "О карте",
@@ -36,47 +36,47 @@
                 "loadingText": "Загрузка карт&hellip;"
             },
             "sortFields": {
-                "sortBy": "Ж_Sort by_Я",
-                "modified": "Ж_Date_Я",
-                "title": "Ж_Title_Я",
-                "type": "Ж_Type_Я",
-                "numRatings": "Ж_Ratings_Я",
-                "avgRating": "Ж_Avg. Rating_Я",
-                "numComments": "Ж_Comments_Я",
-                "numViews": "Ж_Views_Я"
+                "sortBy": "Сортировать по",
+                "modified": "Дата",
+                "title": "Заголовок",
+                "type": "Тип",
+                "numRatings": "Рейтингу",
+                "avgRating": "Усредненному рейтингу",
+                "numComments": "Комментарии",
+                "numViews": "Просмотров"
             },
             "comments": {
-                "commentsHeader": "Ж_Comments_Я",
-                "posted": "Ж_Posted_Я",
-                "by": "Ж_by_Я",
-                "deleteComment": "Ж_delete_Я",
-                "editComment": "Ж_edit_Я",
-                "noComments": "Ж_No comments_Я",
-                "addCommentButton": "Ж_Add Comment_Я",
-                "signIn": "Ж_Sign In_Я",
-                "register": "Ж_Register_Я",
-                "or": "Ж_or_Я",
-                "toPost": "Ж_to post a comment_Я."
+                "commentsHeader": "Комментарии",
+                "posted": "Размещению",
+                "by": "от",
+                "deleteComment": "удалить",
+                "editComment": "редактировать",
+                "noComments": "Комментарии отсутствуют",
+                "addCommentButton": "Добавить комментарий",
+                "signIn": "Войти",
+                "register": "Регистрация",
+                "or": "или",
+                "toPost": "чтобы опубликовать комментарий."
             },
             "buttons": {
-                "cancel": "Ж_Cancel_Я",
-                "submit": "Ж_Submit_Я"
+                "cancel": "Отмена",
+                "submit": "Отправить"
             },
             "rating": {
-                "signIn": "Ж_Sign In_Я",
-                "toRate": "Ж_to rate_Я."
+                "signIn": "Войти",
+                "toRate": "чтобы присвоить рейтинг."
             },
             "itemInfo": {
-                "createdLabel": "Ж_created_Я",
-                "ratingsLabel": "Ж_rating_Я",
-                "ratingsLabelPlural": "Ж_ratings_Я",
-                "viewsLabel": "Ж_view_Я",
-                "viewsLabelPlural": "Ж_views_Я",
-                "commentsLabel": "Ж_comment_Я",
-                "commentsLabelPlural": "Ж_comments_Я",
-                "modifiedLabel": "Ж_Last Modified_Я",
-                "by": "Ж_by_Я",
-                "separator": "Ж__Я,"
+                "createdLabel": "создано",
+                "ratingsLabel": "рейтинг",
+                "ratingsLabelPlural": "рейтинги",
+                "viewsLabel": "вид",
+                "viewsLabelPlural": "просмотров",
+                "commentsLabel": "комментарий",
+                "commentsLabelPlural": "комментарии",
+                "modifiedLabel": "Последние изменения",
+                "by": "от",
+                "separator": ","
             },
             "mapPage": {
                 "findLocation": "Найти местоположение",
@@ -93,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Владелец:",
                 "switchBasemap": "Переключить базовую карту",
-                "getMobileApp": "Ж_Get App_Я",
-                "constraintsHeading": "Ж_Use Constraints_Я",
-                "createdLabel": "Ж_Created_Я",
-                "noDescription": "Ж_No description_Я.",
-                "detailsLabel": "Ж_Details_Я"
+                "getMobileApp": "Получить приложение",
+                "constraintsHeading": "Ограничения на использование",
+                "createdLabel": "Создано",
+                "noDescription": "Описание отсутствует.",
+                "detailsLabel": "Детали"
             },
             "filterItems": {
                 "show": "Показать",

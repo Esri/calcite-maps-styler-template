@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "Š_Location could not be found_ä",
-                "notWhatYouWanted": "Š_Not what you wanted_ä?",
-                "selectAnother": "Š_Select another location_ä",
-                "currentLocation": "Š_Current Location_ä",
-                "title": "Š_Location_ä"
+                "error": "Asukohta ei leitud",
+                "notWhatYouWanted": "Ei ole see, mida soovisid?",
+                "selectAnother": "Vali muu asukoht",
+                "currentLocation": "Praegune asukoht",
+                "title": "Asukoht"
             },
             "basemap":{
-                    "label": "Š_Basemap_ä",
-                    "title": "Š_Select a Basemap_ä"
+                    "label": "Aluskaart",
+                    "title": "Vali aluskaart"
             },
             "legend":{
-                "title": "Š_Legend_ä"
+                "title": "Legend"
             },
             "details":{
-                "title": "Š_Map Details_ä",
-                "error": "Š_Update the web map description with the details to display in this section_ä."
+                "title": "Kaardi detailid",
+                "error": "Täiendage veebikaardi kirjeldust selles jaotises kuvatavate detailidega."
             },
             "popup": {
-                "title": "Š_Info_ä",
-                "instructions": "Š_Select a feature on the map to view details_ä."
+                "title": "Info",
+                "instructions": "Valige detailide kuvamiseks kaardil objekt."
             }
 
         },
         "map": {
-            "error": "Š_Unable to create map_ä"
+            "error": "Kaarti ei saa luua"
         }
     })
 );

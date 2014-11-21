@@ -7,7 +7,7 @@
       descriptionLabel: "الوصف"
     },
     errors:{
-      createMap: "تعذر إنشاء خريطة",
+      createMap: "يتعذر إنشاء الخريطة",
       general: "خطأ"
     },
     footer:{

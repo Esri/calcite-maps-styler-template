@@ -28,8 +28,8 @@
 				buttonSettings: "Ayarlar",
 				buttonHelp: "Yardım",
 				buttonPreview: "Canlı Görünüm",
-				tooltipFirstSave: "ı_This isn't available until you save_İ.",
-				tooltipNotShared: "ı_This isn't available until you share_İ.",
+				tooltipFirstSave: "Bu, kaydedene kadar kullanılamaz.",
+				tooltipNotShared: "Bu, paylaşana kadar kullanılamaz.",
 				noPendingChange: "Bekleyen değişiklik yok",
 				unSavedChangePlural: "Bekleyen değişiklikler",
 				closeWithPendingChange: "Bu eylemi onaylamak istediğinizden emin misiniz? Değişiklikleriniz silinecek.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Uygulama kaydederken hata",
 				err1Div1: "Aynı ada sahip başka bir öğeniz olduğundan uygulama kaydedilemiyor (bkz. <a class='linkagolroot' target='_blank'>içerik klasörünüz</a>).",
-				err1Div2: "ı_Please modify the title of your application and then save it_İ.",
-				btnOk: "ı_Edit the application title_İ"
+				err1Div2: "Uygulamanızın başlığını değiştirin ve ardından kaydedin.",
+				btnOk: "Uygulama başlığını düzenle"
 			},
 			share: {
 				firstSaveTitle: "Uygulama başarıyla kaydedildi",
@@ -66,7 +66,7 @@
 				shareHeader2: "Uygulamanız kuruluşunuzun üyeleri tarafından (oturum açılması gerekir) erişilebilir durumda.",
 				shareLinkCopy: "Kopyala",
 				shareLinkCopied: "Kopyalandı",
-				shareQ0: "ı_How do I embed the application in a web page_İ?",
+				shareQ0: "Uygulamayı bir web sayfasına nasıl gömerim?",
 				shareQ1Opt1: "Uygulamayı nasıl özel tutarım?",
 				shareQ1Opt2: "Uygulamayı nasıl özel tutabilir ya da herkesle paylaşabilirim?",
 				shareA1: "<a href='%LINK1%' target='_blank'>Uygulama öğesi sayfasındaki</a> %SHAREIMG% özelliğini kullanın.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Başlık bağlantısını özelleştirin.",
 				logoSocialText: "Metin",
 				logoSocialLink: "Bağlantı",
-				lblSmallHeader: "ı_Use compact header (no subtitle)_İ"
+				lblSmallHeader: "Kompakt başlık kullanın (alt başlıksız)"
 			},
 			header: {
-				title: "ı_Edit the title of your %TPL_NAME%_İ",
-				subtitle: "ı_Edit the subtitle of your %TPL_NAME%_İ"
+				title: "%TPL_NAME% adınızın başlığını düzenleyin",
+				subtitle: "%TPL_NAME% adınızın alt başlığını düzenleyin"
 			}
 		}
 	})

@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Å_Media_ö",
-				lblSelect2: "Å_Content_ö",
-				lblMap: "Å_Map_ö",
-				lblImage: "Å_Image_ö",
-				lblVideo: "Å_Video_ö",
-				lblExternal: "Å_Web page_ö",
-				disabled: "Å_This feature has been disabled by the Administrator_ö",
-				url: "Å_To manually enter the web address of an image_ö",
-				userLookup: "Å_Load albums_ö",
-				notImplemented: "Å_Not implemented yet_ö.",
-				noData: "Å_No public album found_ö"
+				lblSelect1: "Media",
+				lblSelect2: "Innehåll",
+				lblMap: "Karta",
+				lblImage: "Bild",
+				lblVideo: "Video",
+				lblExternal: "Webbsida",
+				disabled: "Den här funktionen har inaktiverats av administratören",
+				url: "Ange webbadressen för en bild manuellt",
+				userLookup: "Läs in album",
+				notImplemented: "Inte infört ännu.",
+				noData: "Inget offentligt album hittades"
 			},
 			imageSelector: {
-				lblStep1: "Å_Choose the service_ö",
-				lblStep2: "Å_Select your media_ö",
-				lblStep3: "Å_Configure_ö"
+				lblStep1: "Välj tjänst",
+				lblStep2: "Välj media",
+				lblStep3: "Konfigurera"
 			},
 			imageSelectorHome: {
-				explain: "Å_Load images from social media, <br /> or directly from a URL_ö"
+				explain: "Läs in bilder från sociala media <br /> eller direkt från en URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "Å_User name_ö",
-				signInMsg2: "Å_User not found_ö",
-				loadingFailed: "Å_Loading failed_ö"
+				userInputLbl: "Användarnamn",
+				signInMsg2: "Det gick inte att hitta användaren",
+				loadingFailed: "Det gick inte att läsa in"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "Å_Facebook User_ö",
-				rightHeader: "Å_Facebook Page_ö",
-				pageExplain: "Å_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_ö.",
-				pageInputLbl: "Å_Page name_ö",
-				lookupMsgError: "Å_Page not found_ö"
+				leftHeader: "Facebook-användare",
+				rightHeader: "Facebook-sida",
+				pageExplain: "En Facebook-sida är ett offentligt varumärke/produkt eller en kändis, till exempel <b>esrigis</b>. Du kan hitta sidnamnet efter det första '/'-tecknet i sidans webbadress.",
+				pageInputLbl: "Sidnamn",
+				lookupMsgError: "Det gick inte att hitta sidan"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "Å_Email or Picasa/Google+ ID_ö",
-				signInMsg2: "Å_Account not found_ö",
-				howToFind: "Å_How to find a Picasa or Google+ account ID_ö",
-				howToFind2: "Å_Copy digits between the first and second '/' of any Picasa or G+ page_ö"
+				userInputLbl: "E-postadress eller ID för Picasa/Google+",
+				signInMsg2: "Det gick inte att hitta kontot",
+				howToFind: "Så här hittar du ett konto-ID för Picasa eller Google+",
+				howToFind2: "Kopiera siffrorna mellan det första och andra '/'-tecknet på en Picasa- eller G+-sida"
 			},
 			videoSelectorCommon: {
-				check: "Å_Check_ö",
-				notFound: "Å_Video not found_ö",
-				found: "Å_Video found_ö",
-				select: "Å_Select this video_ö"
+				check: "Kontroll",
+				notFound: "Det gick inte att hitta videon",
+				found: "Video hittad",
+				select: "Välj den här videon"
 			},
 			videoSelectorHome: {
-				other: "Å_Other_ö"
+				other: "Annat"
 			},
 			videoSelectorYoutube: {
-				url: "Å_URL of a Youtube video_ö",
-				pageInputLbl: "Å_User name_ö",
-				lookupMsgError: "Å_User not found_ö",
-				howToFind: "Å_How to find a YouTube user name_ö",
-				howToFind2: "Å_User name is displayed under videos_ö",
-				found: "Å_Found_ö",
-				noData: "Å_No public videos found_ö"
+				url: "URL till en Youtube-video",
+				pageInputLbl: "Användarnamn",
+				lookupMsgError: "Det gick inte att hitta användaren",
+				howToFind: "Så här hittar du ett YouTube-användarnamn",
+				howToFind2: "Användarnamnet visas under videoklippen",
+				found: "Hittade",
+				noData: "Inga offentliga videoklipp hittades"
 			},
 			videoSelectorVimeo: {
-				url: "Å_URL of a Vimeo video_ö"
+				url: "URL till en Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "Å_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ö.",
-				explain2: "Å_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_ö.",
-				explain3: "Å_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_ö.",
-				webpage: "Å_Web page feature_ö"
+				explain1: "Applikationen kan inte spela upp obearbetade videoklipp (till exempel avi och mpeg), men kan spela driftade videofiler som har inbyggda spelare (till exempel YouTube eller Vimeo).",
+				explain2: "De flesta tjänster som driftar videoklipp online erbjuder den här funktionen. Du måste hitta alternativet för att bädda in videon, kopiera den angivna koden och använda %WEBPAGE%.",
+				explain3: "Om du själv vill drifta videon kan du skapa en HTML-sida som använder en videospelare som %EXAMPLE%, drifta sidan och använda %WEBPAGE%.",
+				webpage: "Webbsidefunktion"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Å_Webpage URL_ö",
-				lblEmbed: "Å_Embed code_ö",
-				lblOR: "Å_OR_ö",
-				lblError1: "Å_Error, clear one of the two input fields_ö.",
-				lblError2: "Å_Embed code can only contain one %IFRAMETAG%_ö",
-				configure: "Å_Configure_ö"
+				lblUrl: "Webbsidans URL",
+				lblEmbed: "Bädda in kod",
+				lblOR: "ELLER",
+				lblError1: "Fel, rensa ett av de båda inmatningsfälten.",
+				lblError2: "Inbäddad kod kan endast innehålla en %IFRAMETAG%",
+				configure: "Konfigurera"
 			},
 			mediaConfigure: {
-				lblURL: "Å_URL_ö",
-				lblURLPH: "Å_An image URL should start with http:// and end with .jpg or .png_ö",
-				lblURLError: "Å_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_ö.",
-				lblURLCheck: "Å_Checking image_ö...",
-				lblLabel: "Å_Image Caption_ö",
-				lblLabel1: "Å_Caption_ö",
-				lblLabel2: "Å_Hover text_ö",
-				lblLabel3: "Å_None_ö",
-				lblLabelPH: "Å_Enter some text_ö...",
-				lblMaximize: "Å_Include a maximize button in the corner of the image_ö",
-				lblMaximizeHelp: "Å_Recommended only for high quality photos_ö",
-				lblPosition: "Å_Position_ö",
-				lblPosition1: "Å_Center_ö",
-				lblPosition2: "Å_Fill_ö",
-				lblPosition3: "Å_Fit_ö",
-				lblPosition4: "Å_Stretch_ö",
-				lblPosition5: "Å_Custom_ö",
-				tooltipDimension: "Å_The value can be specified in 'px' or '%'_ö",
-				tooltipDimension2: "Å_The value has to be specified in 'px'_ö",
-				lblPosition2Explain: "Å_(may crop)_ö",
-				lblPosition3Explain: "Å_(won't crop)_ö",
-				lblPosition3Explain2: "Å_(width will always fit the panel)_ö",
-				lblPosition4Explain: "Å_(may distort)_ö",
-				unloadLbl: "Å_Unload when reader navigates away_ö",
-				unloadHelp: "Å_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ö."
+				lblURL: "URL",
+				lblURLPH: "En bild-URL bör börja med http:// och slutar med .jpg eller .png",
+				lblURLError: "Den här bilden verkar inte vara giltig. Ange en direktlänk till en bildfil (din URL slutar vanligtvis med en .jpg eller .png). Länkar till en webbsida som innehåller en bild fungerar inte.",
+				lblURLCheck: "Kontrollerar bild ...",
+				lblLabel: "Bildtext",
+				lblLabel1: "Bildtext",
+				lblLabel2: "Hovringstext",
+				lblLabel3: "Ingen",
+				lblLabelPH: "Ange text ...",
+				lblMaximize: "Ta med knappen Maximera i hörnet av bilden",
+				lblMaximizeHelp: "Rekommenderas endast för bilder av hög kvalitet",
+				lblPosition: "Position",
+				lblPosition1: "Centrera",
+				lblPosition2: "Fyllning",
+				lblPosition3: "Anpassa",
+				lblPosition4: "Sträck",
+				lblPosition5: "Anpassad",
+				tooltipDimension: "Värdet kan anges i \"px\" eller \"%\"",
+				tooltipDimension2: "Värdet måste anges i \"px\"",
+				lblPosition2Explain: "(kan beskäras)",
+				lblPosition3Explain: "(kan inte beskäras)",
+				lblPosition3Explain2: "(bredden kommer alltid att fylla rutan)",
+				lblPosition4Explain: "(kan förvrängas)",
+				unloadLbl: "Ta bort när användaren navigerar vidare",
+				unloadHelp: "Om webbsidan innehåller ljud- eller videomedia behåller du det här alternativet markerat så att innehållet inte spelas när användaren navigerar vidare. Avmarkera det till exempel om du vill att ett ljudspår ska spelas när användaren bläddrar vidare genom berättelsen.<br />Om webbplatsen är en applikation avmarkerar du alternativet så att applikationen inte läses in på nytt om användaren återvänder till den."
 			},
 			editorActionGeocode: {
-				lblTitle: "Å_Locate an address or place_ö",
-				mapMarkerExplain: "Å_User will see a map marker when clicking the link_ö"
+				lblTitle: "Hitta en adress eller plats",
+				mapMarkerExplain: "Användare ser en kartmarkör när de klickar på länken"
 			},
 			editorActionMedia: {
-				lblTitle: "Å_Change the Main Stage content_ö"
+				lblTitle: "Ändra innehåll för huvudscenen"
 			},
 			editorInlineMedia: {
-				lblTitle: "Å_Insert an image, video or web page_ö"
+				lblTitle: "Infoga en bild, ett videoklipp eller en webbsida"
 			}
 		}
 	})

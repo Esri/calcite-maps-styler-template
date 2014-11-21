@@ -17,7 +17,7 @@
 define(
      ({
         map: {
-            error: "한_Unable to create map_빠"
+            error: "맵을 생성할 수 없음"
         },
         tooltips: {
             search: "찾기",  // Command button to open a dialog box for finding a feature or an address (depending on app)

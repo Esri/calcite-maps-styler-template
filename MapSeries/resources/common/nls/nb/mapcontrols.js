@@ -2,13 +2,13 @@
 	 ({
 		commonMapControls: {
 			common: {
-				settings: "å_Settings_ø",
-				openDefault: "å_Open by default_ø"
+				settings: "Innstillinger",
+				openDefault: "Åpne som standard"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "å_Basemap_ø",
-				expandFactorLabel: "å_Expand Factor_ø",
-				expandFactorPopover: "å_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle_ø."
+				basemapGalleryBtnLabel: "Bakgrunnskart",
+				expandFactorLabel: "Utvid faktor",
+				expandFactorPopover: "Forholdet mellom størrelsen på oversiktskartet og rektangelet for utstrekning vist på oversiktskartet. Standardverdien er 2, noe som betyr at oversiktskartet vil bli minst dobbelt så stort som rektangelet for utstrekning."
 			}
 		}
 	})

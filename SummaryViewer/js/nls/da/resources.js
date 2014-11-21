@@ -1,12 +1,12 @@
 ﻿define(
     ({
       "map": {
-         "error": "ø_Unable to create map_å"
+         "error": "Kan ikke oprette kort"
       },
       "tooltips": {
-         "logo": "ø_Logo_å",
-         "switchbasemap": "ø_Switch base map_å",
-         "close": "ø_Close_å"
+         "logo": "Logo",
+         "switchbasemap": "Skift baggrundskort",
+         "close": "Luk"
       }
    })
 );

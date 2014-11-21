@@ -12,14 +12,14 @@
                 "bingError": "Le déploiement de cette application nécessite votre propre clé Bing Maps.",
                 "noLayers": "Aucune couche fonctionnelle",
                 "noSearchResults": "Aucun résultat n\'a été trouvé.",
-                "noGroupResults": "æ_The group could not be found_Â.",
+                "noGroupResults": "Le groupe est introuvable.",
                 "noMatches": "Aucun résultat n\'a été trouvé.",
                 "noMapsFound": "Aucune carte n\'a été trouvée."
             },
             "sidePanel": {
                 "title": "Légende",
                 "legendButton": "Légende",
-                "layersButton": "æ_Layers_Â", // new
+                "layersButton": "Couches", // new
                 "legendButtonTitle": "Légende de la carte",
                 "aboutButton": "A propos",
                 "aboutButtonTitle": "A propos de la carte",
@@ -36,47 +36,47 @@
                 "loadingText": "Chargement de Maps&hellip;"
             },
             "sortFields": {
-                "sortBy": "æ_Sort by_Â",
-                "modified": "æ_Date_Â",
-                "title": "æ_Title_Â",
-                "type": "æ_Type_Â",
-                "numRatings": "æ_Ratings_Â",
-                "avgRating": "æ_Avg. Rating_Â",
-                "numComments": "æ_Comments_Â",
-                "numViews": "æ_Views_Â"
+                "sortBy": "Trier par",
+                "modified": "Date",
+                "title": "Titre",
+                "type": "Type",
+                "numRatings": "Evaluations",
+                "avgRating": "Evaluation moyenne",
+                "numComments": "Commentaires",
+                "numViews": "Vues"
             },
             "comments": {
-                "commentsHeader": "æ_Comments_Â",
-                "posted": "æ_Posted_Â",
-                "by": "æ_by_Â",
-                "deleteComment": "æ_delete_Â",
-                "editComment": "æ_edit_Â",
-                "noComments": "æ_No comments_Â",
-                "addCommentButton": "æ_Add Comment_Â",
-                "signIn": "æ_Sign In_Â",
-                "register": "æ_Register_Â",
-                "or": "æ_or_Â",
-                "toPost": "æ_to post a comment_Â."
+                "commentsHeader": "Commentaires",
+                "posted": "Publié(s)",
+                "by": "par",
+                "deleteComment": "supprimer",
+                "editComment": "modifier",
+                "noComments": "Aucun commentaire",
+                "addCommentButton": "Ajouter un commentaire",
+                "signIn": "Se connecter",
+                "register": "Enregistrement",
+                "or": "ou",
+                "toPost": "pour publier un commentaire."
             },
             "buttons": {
-                "cancel": "æ_Cancel_Â",
-                "submit": "æ_Submit_Â"
+                "cancel": "Annuler",
+                "submit": "Envoyer"
             },
             "rating": {
-                "signIn": "æ_Sign In_Â",
-                "toRate": "æ_to rate_Â."
+                "signIn": "Se connecter",
+                "toRate": "pour laisser une évaluation."
             },
             "itemInfo": {
-                "createdLabel": "æ_created_Â",
-                "ratingsLabel": "æ_rating_Â",
-                "ratingsLabelPlural": "æ_ratings_Â",
-                "viewsLabel": "æ_view_Â",
-                "viewsLabelPlural": "æ_views_Â",
-                "commentsLabel": "æ_comment_Â",
-                "commentsLabelPlural": "æ_comments_Â",
-                "modifiedLabel": "æ_Last Modified_Â",
-                "by": "æ_by_Â",
-                "separator": "æ__Â,"
+                "createdLabel": "créé(e)",
+                "ratingsLabel": "évaluation",
+                "ratingsLabelPlural": "évaluations",
+                "viewsLabel": "vue",
+                "viewsLabelPlural": "vues",
+                "commentsLabel": "commentaire",
+                "commentsLabelPlural": "commentaires",
+                "modifiedLabel": "Dernière modification",
+                "by": "par",
+                "separator": ","
             },
             "mapPage": {
                 "findLocation": "Rechercher un lieu",
@@ -93,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Propriétaire :",
                 "switchBasemap": "Changer de fond de carte",
-                "getMobileApp": "æ_Get App_Â",
-                "constraintsHeading": "æ_Use Constraints_Â",
-                "createdLabel": "æ_Created_Â",
-                "noDescription": "æ_No description_Â.",
-                "detailsLabel": "æ_Details_Â"
+                "getMobileApp": "Obtenir une application",
+                "constraintsHeading": "Contraintes d\'utilisation",
+                "createdLabel": "Créé",
+                "noDescription": "Aucune description.",
+                "detailsLabel": "Détails"
             },
             "filterItems": {
                 "show": "Afficher",

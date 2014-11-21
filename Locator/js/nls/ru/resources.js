@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "Ж_Unable to create map_Я"
+         "error": "Не удалось создать карту"
       },
       "location": {
-         "name": "Ж_Name_Я",
-         "current": "Ж_Current Location_Я",
-         "address": "Ж_Address_Я",
-         "latitude": "Ж_Latitude_Я",
-         "longitude": "Ж_Longitude_Я",
-         "use": "Ж_Use this location_Я",
-         "error": "Ж_Unable to use this location_Я"
+         "name": "Имя",
+         "current": "Текущее местоположение",
+         "address": "Адрес",
+         "latitude": "Широта",
+         "longitude": "Долгота",
+         "use": "Использовать это местоположение",
+         "error": "Не удалось использовать это местоположение"
       },
       "tooltips": {
-         "toggle": "Ж_Show/Hide_Я",
-         "reset": "Ж_Reset_Я",
-         "locate": "Ж_Find my location_Я",
-         "directions": "Ж_Directions_Я",
-         "filter": "Ж_Filter_Я",
-         "close": "Ж_Close_Я",
-         "reverse": "Ж_Reverse_Я"
+         "toggle": "Показать/скрыть",
+         "reset": "Сбросить",
+         "locate": "Найти мое местоположение",
+         "directions": "Направления",
+         "filter": "Фильтр",
+         "close": "Закрыть",
+         "reverse": "Обратить"
       }
    })
 );

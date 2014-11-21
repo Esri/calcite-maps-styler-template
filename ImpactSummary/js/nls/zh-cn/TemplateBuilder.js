@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "所选要素",
                 "layerHelpTextMessage": "此应用程序需要包含数值字段的图层",
                 "alertMessage": {
-                    "resetVariableMessage": "试_Are you sure you want to reset variable_验?",
+                    "resetVariableMessage": "是否确定要重置变量?",
                     "emptyAppTitleMessage": "应用程序标题不能为空",
                     "emptyDescriptionMessage": "描述不能为空",
                     "maxVariableSelection": "不能选择超过 25 个子变量",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "未保存更改",
                     "failMessage": "无法成功更新项目",
                     "saveChangesAlert": "是否想要保存更改?",
-                    "variableLabelValidation": "试_Variable label cannot be empty_验",
-                    "subVariableLabelValidation": "试_Sub variable label cannot be empty_验"
+                    "variableLabelValidation": "变量标注不能为空",
+                    "subVariableLabelValidation": "子变量标注不能为空"
                     }
             }
         }

@@ -2,16 +2,16 @@
      ({
         widgets: {
             ShareDialog: {
-                title: "須_Share_鷗",
-                heading: "須_Share this map_鷗",
-                url: "須_Map Link_鷗",
-                embed: "須_Embed Map_鷗",
-                extent: "須_Share current map extent_鷗",
-                size: "須_Size (width/height)_鷗:",
-                facebookTooltip: "須_Facebook_鷗",
-                twitterTooltip: "須_Twitter_鷗",
-                gplusTooltip: "須_Google Plus_鷗",
-                emailTooltip: "須_Email_鷗"
+                title: "共有",
+                heading: "このマップを共有",
+                url: "マップ リンク",
+                embed: "マップの埋め込み",
+                extent: "現在のマップ表示範囲の共有",
+                size: "サイズ (幅/高さ):",
+                facebookTooltip: "Facebook",
+                twitterTooltip: "Twitter",
+                gplusTooltip: "Google+",
+                emailTooltip: "電子メール"
             }
         }
     })

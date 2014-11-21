@@ -35,7 +35,7 @@
 				navRight: "Données"
 			},
 			desktopView: {
-				storymapsText: "Carte de narration",
+				storymapsText: "Une Story Map",
 				builderButton: "Mode de générateur",
 				bitlyTooltip: "Obtenir un lien court vers l\'application"
 			}
@@ -208,8 +208,8 @@
 				close: "Fermer",
 				tab1: {
 					div1: "Le modèle Balayage/Longue-vue est conçu pour comparer deux cartes Web distinctes ou deux couches d\'une seule carte Web dans une application Web attrayante et simple d\'utilisation, qui peut être utilisée dans n\'importe quel navigateur de n\'importe quel périphérique, y compris les smartphones et tablettes.",
-					div2: "Pour plus d\'informations sur le modèle Balayage/Longue-vue, notamment pour voir des exemples créés par les utilisateurs, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> consultez le site Web des cartes de narration</a>. Vous pouvez également nous suivre sur Twitter à l\'adresse <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
-					div3: "Nous aimerions avoir de vos nouvelles ! Pour poser une question, proposer une nouvelle fonctionnalité ou si vous pensez avoir trouvé un bogue, consultez le <a href='http://links.esri.com/storymaps/forum' target='_blank'>forum des utilisateurs des cartes de narration</a>."
+					div2: "Pour plus d\'informations sur le modèle Balayage/Longue-vue, notamment pour voir des exemples créés par les utilisateurs, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> consultez le site Web des Story Maps</a>. Vous pouvez également nous suivre sur Twitter à l\'adresse <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
+					div3: "Nous aimerions avoir de vos nouvelles ! Pour poser une question, proposer une nouvelle fonctionnalité ou si vous pensez avoir trouvé un bogue, consultez le <a href='http://links.esri.com/storymaps/forum' target='_blank'>forum des utilisateurs des Story Maps</a>."
 				}
 			},
 			share: {
@@ -255,8 +255,8 @@
 				mapPickHeader: "Pour commencer, saisissez un ID de carte Web valide ou utilisez le bouton de recherche pour parcourir les cartes Web.",
 				launchBuilder: "Lancer le générateur",
 				chooseWebmapLbl: "Choisir une carte Web...",
-				explain2: "Pour créer une carte de narration Balayage ou Longue-vue, utilisez le bouton ci-dessous pour choisir la carte Web ArcGIS Online existante que vous voulez utiliser. Vous pouvez également coller l\'ID de la carte Web dans le champ ci-dessous.",
-				explain3: "Si vous voulez utiliser deux cartes Web dans votre carte de narration, vous serez invité à choisir la seconde carte Web ultérieurement au moment de la sélection de cette option.",
+				explain2: "Pour créer une Story MapSwipe ou Spyglass, utilisez le bouton ci-dessous pour choisir la carte Web ArcGIS Online existante que vous voulez utiliser. Vous pouvez également coller l\'ID de la carte Web dans le champ ci-dessous.",
+				explain3: "Si vous voulez utiliser deux cartes Web dans votre Story Map, vous serez invité à choisir la seconde carte Web ultérieurement au moment de la sélection de cette option.",
 				webmapPlaceholder: "Entrer l\'ID d\'une carte Web..."
 			}
 		},

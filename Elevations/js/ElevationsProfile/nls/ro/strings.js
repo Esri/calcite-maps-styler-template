@@ -1,30 +1,30 @@
 ﻿define({
   root: ({
     display: {
-      elevationProfileTitle: "Ă_Elevations Profile_ș",
-      showMe: "Ă_show me_ș",
-      selectLine: "Ă_<b>Select</b> a feature in the map_ș.",
-      popupRequirement: "Ă_NOTE: the feature must be in a layer with Popups enabled_ș.",
-      digitizeDistanceMeasureTool: "Ă_Use the <b>Measure</b> tools_ș.",
-      selectFeatureHelpUrl: "Ă_http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D_ș",
-      measureToolHelpUrl: "Ă_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000_ș",
-      hoverOver: "Ă_Hover over or touch the Elevations Profile chart to display elevations and show location on map_ș."
+      elevationProfileTitle: "Profil de niveluri",
+      showMe: "arată",
+      selectLine: "<b>Selectaţi</b> un obiect spaţial în hartă.",
+      popupRequirement: "NOTĂ: obiectul spaţial trebuie să facă parte dintr-un strat tematic pentru care sunt activate pop-upurile.",
+      digitizeDistanceMeasureTool: "Utilizaţi instrumentele <b>Măsurare</b>.",
+      selectFeatureHelpUrl: "http://help.arcgis.com/ro/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
+      measureToolHelpUrl: "http://help.arcgis.com/ro/arcgisonline/help/index.html#//010q00000096000000",
+      hoverOver: "Suprapuneţi cursorul peste sau atingeţi diagrama Profil de niveluri pentru a afişa niveluri şi afişa locaţia pe hartă."
     },
     buttons: {
-      measureLabel: "Ă_Measure_ș",
-      helpLabel: "Ă_Help_ș"
+      measureLabel: "Măsurare",
+      helpLabel: "Ajutor"
     },
     chart: {
-      title: "Ă_Elevations Profile_ș",
-      demResolution: "Ă_DEM Resolution_ș",
-      elevationTitleTemplate: "Ă_Elevation in {0}_ș",
-      distanceTitleTemplate: "Ă_Distance in {0}_ș",
-      gainLossTemplate: "Ă_Min:{min}   Max:{max}   Start:{start}   End:{end}   Change:{gainloss}_ș"
+      title: "Profil de niveluri",
+      demResolution: "Rezoluţie DEM",
+      elevationTitleTemplate: "Elevaţie în {0}",
+      distanceTitleTemplate: "Distanţă în {0}",
+      gainLossTemplate: "Min.:{min}   Max.:{max}   Pornire:{start}   Sfârşit:{end}   Modificare:{gainloss}"
     },
     errors: {
-      MissingConstructorParameters: "Ă_Missing constructor parameter_ș.",
-      InvalidConfiguration: "Ă_Invalid configuration_ș.",
-      UnableToProcessResults: "Ă_Unable to process analysis results_ș."
+      MissingConstructorParameters: "Lipsesc parametrii constructorului.",
+      InvalidConfiguration: "Configuraţie nevalidă.",
+      UnableToProcessResults: "Nu se pot procesa rezultatele analizei."
     }
   }),
   "ar": 1,

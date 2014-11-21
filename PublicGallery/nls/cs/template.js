@@ -12,14 +12,14 @@
                 "bingError": "K vydání této aplikace je nutný vlastní klíč Bing Maps.",
                 "noLayers": "Žádné operační vrstvy",
                 "noSearchResults": "Omlouváme se, nebyly nalezeny žádné výsledky.",
-                "noGroupResults": "Ř_The group could not be found_ů.",
+                "noGroupResults": "Skupina nebyla nalezena.",
                 "noMatches": "Nebyly nalezeny žádné shody.",
                 "noMapsFound": "Nebyly nalezeny žádné mapy."
             },
             "sidePanel": {
                 "title": "Legenda",
                 "legendButton": "Legenda",
-                "layersButton": "Ř_Layers_ů", // new
+                "layersButton": "Vrstvy", // new
                 "legendButtonTitle": "Legenda mapy",
                 "aboutButton": "O aplikaci",
                 "aboutButtonTitle": "O mapě",
@@ -36,47 +36,47 @@
                 "loadingText": "Načítám mapy&hellip;"
             },
             "sortFields": {
-                "sortBy": "Ř_Sort by_ů",
-                "modified": "Ř_Date_ů",
-                "title": "Ř_Title_ů",
-                "type": "Ř_Type_ů",
-                "numRatings": "Ř_Ratings_ů",
-                "avgRating": "Ř_Avg. Rating_ů",
-                "numComments": "Ř_Comments_ů",
-                "numViews": "Ř_Views_ů"
+                "sortBy": "Třídit podle",
+                "modified": "Datum",
+                "title": "Název",
+                "type": "Typ",
+                "numRatings": "Hodnocení",
+                "avgRating": "Prům. hodnocení",
+                "numComments": "Poznámky",
+                "numViews": "Zobrazení"
             },
             "comments": {
-                "commentsHeader": "Ř_Comments_ů",
-                "posted": "Ř_Posted_ů",
-                "by": "Ř_by_ů",
-                "deleteComment": "Ř_delete_ů",
-                "editComment": "Ř_edit_ů",
-                "noComments": "Ř_No comments_ů",
-                "addCommentButton": "Ř_Add Comment_ů",
-                "signIn": "Ř_Sign In_ů",
-                "register": "Ř_Register_ů",
-                "or": "Ř_or_ů",
-                "toPost": "Ř_to post a comment_ů."
+                "commentsHeader": "Poznámky",
+                "posted": "Vystaveno",
+                "by": "podle",
+                "deleteComment": "smazat",
+                "editComment": "upravit",
+                "noComments": "Žádné komentáře",
+                "addCommentButton": "Přidat komentář",
+                "signIn": "Přihlásit",
+                "register": "Registrovat",
+                "or": "nebo",
+                "toPost": "pro přidání komentáře."
             },
             "buttons": {
-                "cancel": "Ř_Cancel_ů",
-                "submit": "Ř_Submit_ů"
+                "cancel": "Storno",
+                "submit": "Odeslat"
             },
             "rating": {
-                "signIn": "Ř_Sign In_ů",
-                "toRate": "Ř_to rate_ů."
+                "signIn": "Přihlásit",
+                "toRate": "pro ohodnocení."
             },
             "itemInfo": {
-                "createdLabel": "Ř_created_ů",
-                "ratingsLabel": "Ř_rating_ů",
-                "ratingsLabelPlural": "Ř_ratings_ů",
-                "viewsLabel": "Ř_view_ů",
-                "viewsLabelPlural": "Ř_views_ů",
-                "commentsLabel": "Ř_comment_ů",
-                "commentsLabelPlural": "Ř_comments_ů",
-                "modifiedLabel": "Ř_Last Modified_ů",
-                "by": "Ř_by_ů",
-                "separator": "Ř__ů,"
+                "createdLabel": "vytvořeno",
+                "ratingsLabel": "hodnocení",
+                "ratingsLabelPlural": "hodnocení",
+                "viewsLabel": "zobrazení",
+                "viewsLabelPlural": "zobrazení",
+                "commentsLabel": "komentář",
+                "commentsLabelPlural": "komentáře",
+                "modifiedLabel": "Naposledy upraveno",
+                "by": "podle",
+                "separator": ","
             },
             "mapPage": {
                 "findLocation": "Najít umístění",
@@ -93,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Vlastník:",
                 "switchBasemap": "Přepnout podkladovou mapu",
-                "getMobileApp": "Ř_Get App_ů",
-                "constraintsHeading": "Ř_Use Constraints_ů",
-                "createdLabel": "Ř_Created_ů",
-                "noDescription": "Ř_No description_ů.",
-                "detailsLabel": "Ř_Details_ů"
+                "getMobileApp": "Stáhnout aplikaci",
+                "constraintsHeading": "Omezení použití",
+                "createdLabel": "Vytvořeno",
+                "noDescription": "Bez popisu.",
+                "detailsLabel": "Podrobnosti"
             },
             "filterItems": {
                 "show": "Zobrazit",

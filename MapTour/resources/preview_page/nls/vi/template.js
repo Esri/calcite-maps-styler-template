@@ -3,7 +3,7 @@
 		firstPane: {
 			head: "<span class='highlightText'>Mẫu Map Tour</span> cho phép tất cả cấp tài khoản ArcGIS Online bao gồm cả tài khoản công cộng miễn phí tạo và sửa một câu chuyện diễn ra theo địa điểm kết hợp hình ảnh, văn bản và bản đồ từ:",
 			list0: "Hình ảnh được lưu trữ trong các dịch vụ chia sẻ hình ảnh trực tuyến lớn như Flickr, Picasa và Facebook hoặc trên bất kỳ trang web hoặc máy chủ web nào",
-			list1: "Đ_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_ớ"
+			list1: "Hình ảnh chưa được lưu trữ trực tuyến sẽ được lưu trữ dưới dạng tệp đính kèm Dịch vụ Đối tượng (giới hạn với các thành viên ArcGIS dành cho Tổ chức)"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>Mẫu</span> kết hợp công cụ sửa dễ sử dụng bao gồm:",
@@ -17,8 +17,8 @@
 			list1: "Lưu trữ mẫu trên máy chủ web của riêng bạn hoặc một máy chủ của bên thứ ba"
 		},
 		fourthPane: {
-			head: "Đ_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_ớ:",
-			list0: "Đ_Story maps published by Esriâ€™s story maps teams_ớ",
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Xem trang web Story Maps của Esri</a> để tìm hiểu thêm về việc tạo và chia sẻ những câu chuyện. Tài nguyên bao gồm:",
+			list0: "Story maps được xuất bản bởi các nhóm story map của Esri",
 			list1: "Một bộ sưu tập các mẫu tải về",
 			list2: "Hướng dẫn thực tiễn tốt nhất", 
 			list3: "Một bộ sưu tập ảnh story maps với một cộng đồng người kể chuyện ngày càng tăng"

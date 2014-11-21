@@ -62,7 +62,7 @@
 				url: "URL של וידאו של Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "כן_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ש.",
+				explain1: "האפליקציה לא יכולה להציג וידאו גולמי (כגון avi‏, mpeg) אולם היא יכולה להציג קבצי וידאו המתארחים בנגנים מובנים (כגון YouTube או Vimeo).",
 				explain2: "רוב שירותי הארוח של וידאו מאפשרים את היכולת הזו. אתה צריך למצוא את האפשרות לשבץ את הוידאו, להעתיק את הקוד המתאים ולהשתמש בתוך  %WEBPAGE%.",
 				explain3: "לחילופין, אם אתה רוצה לארח וידאו בעצמך, אתה יכול ליצור דף HTML המשתמש בנגן וידאו כגון %EXAMPLE%, לארח דף זה וגם להשתמש ב-%WEBPAGE%.",
 				webpage: "תכונות דף אינטרנט"
@@ -93,14 +93,14 @@
 				lblPosition3: "מותאם",
 				lblPosition4: "מתוח",
 				lblPosition5: "גודל מותאם",
-				tooltipDimension: "הערך יכול להיות מוגדר בתוך  'px' או '%'",
+				tooltipDimension: "הערך יכול להיות מוגדר בתוך  \'px\' או \'%\'",
 				tooltipDimension2: "יש לציין את הערך ב-'px'",
 				lblPosition2Explain: "(יכול להחתך)",
 				lblPosition3Explain: "(לא יכול להחתך)",
 				lblPosition3Explain2: "(רוחב תמיד יתאים ללוח)",
 				lblPosition4Explain: "(יכול להתעוות)",
-				unloadLbl: "כן_Unload when reader navigates away_ש",
-				unloadHelp: "כן_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ש."
+				unloadLbl: "בטל את הטעינה כשהקורא מנווט למקום אחר",
+				unloadHelp: "אם דף האינטרנט מכיל מדיה של שמע או וידאו, השאר אפשרות זו מסומנת כדי למנוע הפעלת תוכן זה כשהקורא מנווט למקום אחר. בטל את סימון האפשרות, למשל, כדי לגרום לפסקול להמשיך לנגן בזמן שהקורא מתקדם לאורך הסיפור.<br />אם דף האינטרנט הוא אפליקציה, בטל את סימון האפשרות כדי שהאפליקציה לא תיטען מחדש אם הקורא יחזור לשם."
 			},
 			editorActionGeocode: {
 				lblTitle: "אתר כתובת או מקום",

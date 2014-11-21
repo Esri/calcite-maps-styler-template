@@ -3,7 +3,7 @@
 		firstPane: {
 			head: "<span class='highlightText'>Map Tour Template -mallin</span> avulla kaikki ArcGIS Online -tilitasot ja vapaa julkinen tili voivat luoda ja muokata paikkapohjaisia kertomuksia yhdistämällä kuvia, tekstiä ja karttoja seuraavista kohteista:",
 			list0: "merkittäviin kuvanjakopalveluihin, kuten Flickriin, Picasaan ja Facebookiin, tai johonkin verkkopalvelimeen tallennetut kuvat",
-			list1: "Å_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_ö"
+			list1: "verkkoon tallentamattomat kuvat, jotka tallennetaan kohdepalveluliitteinä (vain ArcGIS for Organisationin jäsenten käytettävissä)."
 		},
 		secondPane: {
 			head: "<span class='highlightText'>Malli</span> sisältää helppokäyttöisiä muokkaustyökaluja, joita ovat mm. seuraavat:",
@@ -17,8 +17,8 @@
 			list1: "Isännöi mallia omalla Web-palvelimellasi tai kolmannen osapuolen palvelimella"
 		},
 		fourthPane: {
-			head: "Å_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_ö:",
-			list0: "Å_Story maps published by Esriâ€™s story maps teams_ö",
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Lisätietoa tarinoiden luomisesta ja jakamisesta on Esrin Story Maps -sivustossa</a>. Resurssien sisältö:",
+			list0: "Esrin tarinakarttatiimien julkaisemat tarinakartat",
 			list1: "Valikoima ladattavia malleja",
 			list2: "Parhaiden käytäntöjen oppaat", 
 			list3: "Tarinakarttojen galleria – kasvava tarinankertojien yhteisö"

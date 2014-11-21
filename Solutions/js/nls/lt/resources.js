@@ -17,7 +17,7 @@
 define(
      ({
         map: {
-            error: "Į_Unable to create map_š"
+            error: "Žemėlapio sukurti nepavyko"
         },
         tooltips: {
             search: "Ieškoti",  // Command button to open a dialog box for finding a feature or an address (depending on app)

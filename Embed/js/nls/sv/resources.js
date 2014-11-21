@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "Å_Location could not be found_ö",
-                "notWhatYouWanted": "Å_Not what you wanted_ö?",
-                "selectAnother": "Å_Select another location_ö",
-                "currentLocation": "Å_Current Location_ö",
-                "title": "Å_Location_ö"
+                "error": "Det gick inte att hitta platsen",
+                "notWhatYouWanted": "Är det inte vad du vill ha?",
+                "selectAnother": "Välj en annan plats",
+                "currentLocation": "Aktuell plats",
+                "title": "Plats"
             },
             "basemap":{
-                    "label": "Å_Basemap_ö",
-                    "title": "Å_Select a Basemap_ö"
+                    "label": "Baskarta",
+                    "title": "Välj en baskarta"
             },
             "legend":{
-                "title": "Å_Legend_ö"
+                "title": "Teckenförklaring"
             },
             "details":{
-                "title": "Å_Map Details_ö",
-                "error": "Å_Update the web map description with the details to display in this section_ö."
+                "title": "Kartinformation",
+                "error": "Uppdatera webbkartbeskrivningen med den information som ska visas i det här avsnittet."
             },
             "popup": {
-                "title": "Å_Info_ö",
-                "instructions": "Å_Select a feature on the map to view details_ö."
+                "title": "Info",
+                "instructions": "Välj ett geoobjekt på kartan för att visa information."
             }
 
         },
         "map": {
-            "error": "Å_Unable to create map_ö"
+            "error": "Det gick inte att skapa kartan"
         }
     })
 );

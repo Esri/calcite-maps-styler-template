@@ -5,11 +5,11 @@
     }, 
     tools: {
       search: {
-          "error": "试_Location could not be found_验",
-          "notWhatYouWanted": "试_Not what you wanted_验?",
-          "selectAnother": "试_Select another location_验",
-          "currentLocation": "试_Current Location_验",
-          "title": "试_Location_验"
+          "error": "无法找到位置",
+          "notWhatYouWanted": "不是您想要的位置?",
+          "selectAnother": "选择其他位置",
+          "currentLocation": "当前位置",
+          "title": "位置"
       }
     }
   })

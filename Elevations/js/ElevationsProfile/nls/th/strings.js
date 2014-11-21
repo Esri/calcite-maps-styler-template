@@ -1,30 +1,30 @@
 ﻿define({
   root: ({
     display: {
-      elevationProfileTitle: "ก้_Elevations Profile_ษฺ",
-      showMe: "ก้_show me_ษฺ",
-      selectLine: "ก้_<b>Select</b> a feature in the map_ษฺ.",
-      popupRequirement: "ก้_NOTE: the feature must be in a layer with Popups enabled_ษฺ.",
-      digitizeDistanceMeasureTool: "ก้_Use the <b>Measure</b> tools_ษฺ.",
-      selectFeatureHelpUrl: "ก้_http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D_ษฺ",
-      measureToolHelpUrl: "ก้_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000_ษฺ",
-      hoverOver: "ก้_Hover over or touch the Elevations Profile chart to display elevations and show location on map_ษฺ."
+      elevationProfileTitle: "โปรไฟล์ความสูง",
+      showMe: "แสดงให้ฉันเห็น",
+      selectLine: "<b>เลือก</b> ฟีเจอร์บนแผนที่",
+      popupRequirement: "หมายเหตุ: ฟีเจอร์ต้องอยู่ในชั้นข้อมูลที่มีป๊อปอัพ",
+      digitizeDistanceMeasureTool: "ใช้เครื่องมือ <b>วัดความยาว</b>",
+      selectFeatureHelpUrl: "http://help.arcgis.com/th/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
+      measureToolHelpUrl: "http://help.arcgis.com/th/arcgisonline/help/index.html#//010q00000096000000",
+      hoverOver: "แตะแผน๓มิโปรไฟล์ความสูงเพื่อแสดงผลและแสดงตำแหน่งบนแผนที่"
     },
     buttons: {
-      measureLabel: "ก้_Measure_ษฺ",
-      helpLabel: "ก้_Help_ษฺ"
+      measureLabel: "ตรวจวัด",
+      helpLabel: "ช่วยเหลือ"
     },
     chart: {
-      title: "ก้_Elevations Profile_ษฺ",
-      demResolution: "ก้_DEM Resolution_ษฺ",
-      elevationTitleTemplate: "ก้_Elevation in {0}_ษฺ",
-      distanceTitleTemplate: "ก้_Distance in {0}_ษฺ",
-      gainLossTemplate: "ก้_Min:{min}   Max:{max}   Start:{start}   End:{end}   Change:{gainloss}_ษฺ"
+      title: "โปรไฟล์ความสูง",
+      demResolution: "ความละเอียดของ DEM",
+      elevationTitleTemplate: "ความสูง {0}",
+      distanceTitleTemplate: "ระยะทาง {0}",
+      gainLossTemplate: "ต่ำสุด:{min}   สูงสุด:{max}   เริ่ม:{start}   สิ้นสุด:{end}   เปลี่ยน:{gainloss}"
     },
     errors: {
-      MissingConstructorParameters: "ก้_Missing constructor parameter_ษฺ.",
-      InvalidConfiguration: "ก้_Invalid configuration_ษฺ.",
-      UnableToProcessResults: "ก้_Unable to process analysis results_ษฺ."
+      MissingConstructorParameters: "พารามิเตอร์ไม่ครบโครงสร้าง",
+      InvalidConfiguration: "การกำหนดค่าไม่ถูกต้อง",
+      UnableToProcessResults: "ไม่สามารถวิเคราะห์หาผลลัพธ์ได้"
     }
   }),
   "ar": 1,

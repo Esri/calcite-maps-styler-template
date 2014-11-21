@@ -17,7 +17,7 @@
 define(
      ({
         map: {
-            error: "Š_Unable to create map_ä"
+            error: "Kaardi loomine ebaõnnestus"
         },
         tooltips: {
             search: "Leia",  // Command button to open a dialog box for finding a feature or an address (depending on app)

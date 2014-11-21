@@ -9,8 +9,8 @@
       general:"Error"
     },
 	legToggle:{
-	  up:"á_MAP LEGEND â–²_Ó",
-	  down:"á_MAP LEGEND â–¼_Ó"
+	  up:"LEYENDA DEL MAPA â–²",
+	  down:"LEYENDA DEL MAPA â–¼"
 	},
 	loading:{
 		message: "Cargar el mapa"

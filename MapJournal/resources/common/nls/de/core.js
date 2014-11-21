@@ -28,8 +28,8 @@
 				buttonSettings: "Einstellungen",
 				buttonHelp: "Hilfe",
 				buttonPreview: "Live anzeigen",
-				tooltipFirstSave: "ä_This isn't available until you save_Ü.",
-				tooltipNotShared: "ä_This isn't available until you share_Ü.",
+				tooltipFirstSave: "Dies ist erst beim Speichern verfügbar.",
+				tooltipNotShared: "Dies ist erst beim Freigeben verfügbar.",
 				noPendingChange: "Keine ausstehende Änderung",
 				unSavedChangePlural: "Ausstehende Änderungen",
 				closeWithPendingChange: "Möchten Sie die Aktion wirklich bestätigen? Ihre Änderungen gehen dabei verloren.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Fehler beim Speichern der Anwendung",
 				err1Div1: "Die Anwendung kann nicht gespeichert werden, da Sie bereits über ein anderes Element mit demselben Namen verfügen (weitere Informationen finden Sie im <a class='linkagolroot' target='_blank'>Inhaltsordner</a>).",
-				err1Div2: "ä_Please modify the title of your application and then save it_Ü.",
-				btnOk: "ä_Edit the application title_Ü"
+				err1Div2: "Ändern Sie den Titel Ihrer Anwendung, und speichern Sie ihn anschließend.",
+				btnOk: "Den Anwendungstitel bearbeiten"
 			},
 			share: {
 				firstSaveTitle: "Anwendung wurde erfolgreich gespeichert",
@@ -66,7 +66,7 @@
 				shareHeader2: "Ihre Anwendung ist für die Mitglieder Ihrer Organisation zugänglich (Anmeldung ist erforderlich).",
 				shareLinkCopy: "Kopieren",
 				shareLinkCopied: "Kopiert",
-				shareQ0: "ä_How do I embed the application in a web page_Ü?",
+				shareQ0: "Wie wird die Anwendung in eine Webseite eingebettet?",
 				shareQ1Opt1: "Wie bleibt die Anwendung privat?",
 				shareQ1Opt2: "Wie bleibt die Anwendung privat oder wie wird sie veröffentlicht?",
 				shareA1: "Verwenden Sie %SHAREIMG% auf <a href='%LINK1%' target='_blank'>der Elementseite der Anwendung</a>.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Passen Sie den Kopfzeilen-Link an.",
 				logoSocialText: "Text",
 				logoSocialLink: "Link",
-				lblSmallHeader: "ä_Use compact header (no subtitle)_Ü"
+				lblSmallHeader: "Kompakte Überschrift verwenden (keinen Untertitel)"
 			},
 			header: {
-				title: "ä_Edit the title of your %TPL_NAME%_Ü",
-				subtitle: "ä_Edit the subtitle of your %TPL_NAME%_Ü"
+				title: "Den Titel für %TPL_NAME% bearbeiten",
+				subtitle: "Den Untertitel für %TPL_NAME% bearbeiten"
 			}
 		}
 	})

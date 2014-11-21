@@ -1,12 +1,12 @@
 ﻿define(
     ({
       "map": {
-         "error": "Į_Unable to create map_š"
+         "error": "Žemėlapio sukurti nepavyko"
       },
       "tooltips": {
-         "logo": "Į_Logo_š",
-         "switchbasemap": "Į_Switch base map_š",
-         "close": "Į_Close_š"
+         "logo": "Logotipas",
+         "switchbasemap": "Perjungti pagrindo žemėlapį",
+         "close": "Užverti"
       }
    })
 );

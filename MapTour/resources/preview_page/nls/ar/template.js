@@ -3,7 +3,7 @@
 		firstPane: {
 			head: "<span class='highlightText'>قالب جولة الخريطة</span>يمكن جميع مستويات حساب ArcGIS Online بما في ذلك الحساب العام المجاني لإنشاء الصور والنصوص والخرائط وتحريرها من:",
 			list0: "الصور المخزنة في خدمات مشاركة الصور الرئيسية على الإنترنت مثل Flickr أو Picasa أو Facebook أو أي موقع إلكتروني أو خادم ويب",
-			list1: "بيت_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_لاحقة"
+			list1: "الصور التي لم يتم تخزينها على الإنترنت حتى الآن والتي سيتم تخزينها كمرفقات لخدمة المعالم (مقصورة على أعضاء ArcGIS for Organizations)"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>القالب</span>يتضمن أدوات التحرير سهلة الاستخدام والتي تتضمن:",
@@ -12,13 +12,13 @@
 			list2: "القدرة على سحب الرموز وإفلاتها لتغيير مواقع نقطة القصة"
 		},
 		thirdPane: {
-			head: "بيت_To use the hosted map tour template, you start by making a map in the ArcGIS Online web map viewer (it doesn't need to contain any layers), saving it, and then clicking the Share button. In the Share dialog, choose the 'Make a Web Application' option and then choose the Map Tour template from the gallery of templates that appears, and continue with the steps that you see. When you configure the application, the interactive editor will open automatically.<br /><br />For users wishing to enhance the UI of their map tours or add new functionality, you can_لاحقة:",
+			head: "لاستخدام قالب جولة الخريطة المستضافة، تبدأ بجعل الخريطة في عارض الخريطة  ArcGIS Online على الويب (لا تقتضي الحاجة إلى تضمين أي طبقات) واحفظها وبعد ذلك انقر فوق زر مشاركة. في مربع حوار مشاركة، اختر خيار \"إنشاء تطبيق الويب\" وبعد ذلك اختر قالب جولة الخريطة من معرض القوالب الظاهر وتابع الخطوات التي تراها. عند تكوين التطبيق، سيتم فتح المحرر التفاعلي تلقائيًا. <br /><br /> للمستخدمين الراغبين في تحسين واجهة مستخدم جولات الخريطة أو إضافة وظائف جديد، بإمكانهم:",
 			list0: "تنزيل القالب من <a href='http://storymaps.esri.com/templategallery/' target='_blank'>صفحة قالب خرائط القصة</a> واتباع الوثائق المتضمنة", 
 			list1: "استضافة القالب على خادم الويب الخاص بك، أو خادم أخر"
 		},
 		fourthPane: {
-			head: "بيت_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_لاحقة:",
-			list0: "بيت_Story maps published by Esriâ€™s story maps teams_لاحقة",
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>راجع موقع خرائط قصص Esri</a>لتتعلم المزيد عن إنشاء القصص ومشاركتها. وتتضمن الموارد ما يلي:",
+			list0: "خرائط القصص التي تم نشرها من قبل فرق خرائط قصص Esri",
 			list1: "تحديد القوالب التي تم تنزيلها",
 			list2: "أفضل الإرشادات التي تم ممارستها", 
 			list3: "يقوم معرض خرائط القصة بتمييز مجتمع متزايد من القصاصين"

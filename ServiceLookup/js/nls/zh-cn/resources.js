@@ -11,7 +11,7 @@
             layerNotFound: "图层不在 webmap 中",
             fieldNotFound: "未找到字段",
             popupNotSet: "此图层未启用弹出窗口",
-            noLayersSet: "试_No layers defined in the config, the search box will not work_验"
+            noLayersSet: "配置中未定义任何图层，搜索框将无法使用"
         },
         page: {
             title: "信息查找",

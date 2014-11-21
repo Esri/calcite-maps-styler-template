@@ -1,12 +1,12 @@
 ﻿define(
     ({
       "map": {
-         "error": "須_Unable to create map_鷗"
+         "error": "マップを作成できません"
       },
       "tooltips": {
-         "logo": "須_Logo_鷗",
-         "switchbasemap": "須_Switch base map_鷗",
-         "close": "須_Close_鷗"
+         "logo": "ロゴ",
+         "switchbasemap": "ベース マップの切り替え",
+         "close": "閉じる"
       }
    })
 );

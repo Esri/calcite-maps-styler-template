@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "Ř_Location could not be found_ů",
-                "notWhatYouWanted": "Ř_Not what you wanted_ů?",
-                "selectAnother": "Ř_Select another location_ů",
-                "currentLocation": "Ř_Current Location_ů",
-                "title": "Ř_Location_ů"
+                "error": "Umístění nebylo nalezeno.",
+                "notWhatYouWanted": "Nenašli jste, co jste hledali?",
+                "selectAnother": "Zvolte jiné umístění.",
+                "currentLocation": "Aktuální umístění",
+                "title": "Umístění"
             },
             "basemap":{
-                    "label": "Ř_Basemap_ů",
-                    "title": "Ř_Select a Basemap_ů"
+                    "label": "Podkladová mapa",
+                    "title": "Výběr podkladové mapy"
             },
             "legend":{
-                "title": "Ř_Legend_ů"
+                "title": "Legenda"
             },
             "details":{
-                "title": "Ř_Map Details_ů",
-                "error": "Ř_Update the web map description with the details to display in this section_ů."
+                "title": "Podrobnosti mapy",
+                "error": "V této části se budou zobrazovat podrobnosti o webové mapě."
             },
             "popup": {
-                "title": "Ř_Info_ů",
-                "instructions": "Ř_Select a feature on the map to view details_ů."
+                "title": "Informace",
+                "instructions": "Vyberte prvek na mapě, jehož podrobnosti chcete zobrazit."
             }
 
         },
         "map": {
-            "error": "Ř_Unable to create map_ů"
+            "error": "Nelze vytvořit mapu"
         }
     })
 );

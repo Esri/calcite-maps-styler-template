@@ -70,8 +70,8 @@
 				copy: "복사",
 				copied: "복사됨",
 				open: "열기",
-				embed: "한_Embed in web page_빠",
-				embedExplain: "한_Use the following HTML code to embed the journal in a web page_빠.",
+				embed: "웹 페이지에 포함",
+				embedExplain: "다음 HTML 코드를 사용하여 저널을 웹 페이지에 포함시킵니다.",
 				size: "크기(너비/높이):"
 			}
         }

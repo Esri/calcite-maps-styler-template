@@ -17,7 +17,7 @@
 define(
      ({
         map: {
-            error: "ı_Unable to create map_İ"
+            error: "Harita oluşturulamıyor"
         },
         tooltips: {
             search: "Bul",  // Command button to open a dialog box for finding a feature or an address (depending on app)

@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Valittu kohde",
                 "layerHelpTextMessage": "Tämä sovellus edellyttää numerokenttiä sisältävän karttatason",
                 "alertMessage": {
-                    "resetVariableMessage": "Å_Are you sure you want to reset variable_ö?",
+                    "resetVariableMessage": "Haluatko varmasti nollata muuttujan?",
                     "emptyAppTitleMessage": "Sovelluksen otsikko ei voi olla tyhjä",
                     "emptyDescriptionMessage": "Kuvaus ei voi olla tyhjä",
                     "maxVariableSelection": "Voit valita enintään 25 alimuuttujaa",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "Tallentamattomat muutokset",
                     "failMessage": "Kohteen päivitys ei onnistunut",
                     "saveChangesAlert": "Haluatko tallentaa muutokset?",
-                    "variableLabelValidation": "Å_Variable label cannot be empty_ö",
-                    "subVariableLabelValidation": "Å_Sub variable label cannot be empty_ö"
+                    "variableLabelValidation": "Muuttujan tunnusteksti ei voi olla tyhjä",
+                    "subVariableLabelValidation": "Alimuuttujan tunnusteksti ei voi olla tyhjä"
                     }
             }
         }

@@ -11,7 +11,7 @@
             layerNotFound: "Kiht pole veebikaardil",
             fieldNotFound: "Välja ei leitud",
             popupNotSet: "Hüpikaken ei ole selle kihi jaoks lubatud",
-            noLayersSet: "Š_No layers defined in the config, the search box will not work_ä"
+            noLayersSet: "Seadistuses pole määratud kihte, otsingukast ei tööta"
         },
         page: {
             title: "Teabe otsimine",

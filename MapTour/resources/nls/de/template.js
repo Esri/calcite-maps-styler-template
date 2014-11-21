@@ -68,7 +68,7 @@
 				dataPicError1: "Für Map Tour ist jetzt eine Bild-URL erforderlich, die auf eine der folgenden Erweiterungen endet: .jp(e)g, .png, .gif oder .bmp.",
 				dataPicError2: "Diese Anforderung hat keine Auswirkungen auf Ihre bereits veröffentlichte Map Tour. Um jedoch den interaktiven Builder nutzen zu können, müssen Sie zunächst eine von zwei Modifikationen an der URL vornehmen:",
 				dataPicError3: "URLs bearbeiten",
-				dataPicError4: "ä_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_Ü.",
+				dataPicError4: "Hiermit wird <i>#isImage</i> an das Ende von nicht unterstützten Bild-URLs gehängt. URL-Anhänge werden von den meisten Servern unterstützt. Sobald Sie diese Aktion durchgeführt haben, sollten Sie allerdings mittels Navigation durch Ihre Punkte prüfen, ob die aktualisierten Bild-URLs funktionieren. Wird jedes Bild geladen, können Sie die Map Tour jetzt speichern. Sollten die <b>Bilder nicht angezeigt werden, speichern Sie Map Tour bitte nicht</b>. Rufen Sie stattdessen den Builder erneut auf und führen Sie die zweite Aktion durch.",
 				dataPicError5: "Die Tour auf Bilder beschränken",
 				dataPicError6: "Durch diese Option werden alle URLS als Bilder behandelt, es lassen sich jedoch keine Videos mithilfe des interaktiven Builders hinzufügen. Diese Aktion kann rückgängig gemacht werden, falls Sie künftig Videos hinzufügen möchten.",
 				dataPicError7: "Ihre Map Tour ist auf Bilder beschränkt, es können keine Videos verwendet werden. Wenn Sie diese Beschränkung aufheben wollen, vergewissern Sie sich bitte vor dem Speichern der Map Tour, ob Ihre Bilder immer noch richtig geladen werden. Sie können diese Beschränkung später bei Bedarf wiederherstellen.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Bild",
 				addLabelThumbUrl: "Miniaturansicht",
 				addTextPlaceholderUrl: "Bild-URL eingeben",
-				addTextPlaceholderUrl2: "ä_Enter a YouTube page URL_Ü",
+				addTextPlaceholderUrl2: "YouTube-Seiten-URL eingeben",
 				addTextPlaceholderUrl3: "Videoseiten-URL eingeben",
 				addTextPlaceholderUrl4: "Videoeinbettungs-URL eingeben",
 				addLabelVideo: "Video",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Feldauswahl zurücksetzen",
 				settingsExtentExplain: "Die Anfangsausdehnung von Map Tour über die nachstehende interaktive Karte festlegen.",
 				settingsExtentExplainBottom: "Die definierte Ausdehnung ändert die Anfangsausdehnung Ihrer Webkarte. Beachten Sie, dass diese Ausdehnung nicht verwendet wird, wenn sie nicht den ersten Tour-Punkt umfasst. In diesem Fall wird die Tour mit Zentrierung auf den ersten Punkt geöffnet.",
-				settingsExtentDateLineError: "ä_The extent cannot be across the meridian of 180Â° longitude_Ü",
+				settingsExtentDateLineError: "Die Ausdehnung darf nicht über den Meridian von 180Â° Längengrad hinausreichen",
 				settingsExtentDateLineError2: "Fehler beim Berechnen der Ausdehnung",
 				settingsExtentDrawBtn: "Eine neue Ausdehnung darstellen",
 				settingsExtentModifyBtn: "Ausdehnung bearbeiten",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Übernehmen"
 			},
 			headerJS:{
-				editMe: "ä_Edit me_Ü!",
+				editMe: "Bearbeiten!",
 				templateTitle: "Vorlagentitel festlegen",
 				templateSubtitle: "Untertitel der Vorlage festlegen"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Import erfolgreich. Wird geladen"
 			},
 			viewYoutube: {
-				title: "ä_YouTube import_Ü",
+				title: "Import über YouTube",
 				header: "Geben Sie einen YouTube-Benutzernamen ein, um nach öffentlich freigegebenen Videos zu suchen.",
-				pageInputLbl: "ä_Enter a YouTube user name_Ü",
+				pageInputLbl: "YouTube-Benutzername eingeben",
 				lookupMsgError: "Benutzer nicht gefunden",
-				howToFind: "ä_How to find a YouTube user name_Ü",
+				howToFind: "So finden Sie einen Youtube-Benutzernamen",
 				howToFind2: "Benutzername wird unter Videos angezeigt",
 				found: "Gefunden",
 				noData: "Keine öffentlichen Videos gefunden"
@@ -442,12 +442,12 @@
 					div172: "Sofern vorhanden, werden die Felder Bild und Miniaturansicht stets verwendet, und die Anlagen des Feature-Service werden nicht abgefragt.",
 					div173: "Beispiele für CSV-Dateien und Shapefiles können heruntergeladen werden unter",
 					div18: "Erstellen eines gehosteten Feature-Service aus einer CSV-Datei oder einem Shapefile",
-					div19: "ä_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_Ü.",
-					div20: "ä_Supported picture formats and videos_Ü",
-					div21: "ä_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_Ü.",
+					div19: "Bei der Erstellung eines gehosteten Feature-Service aus einer CSV-Datei oder einem Shapefile sind Anlagen nicht standardmäßig aktiviert. Um sie zu aktivieren, öffnen Sie die Feature-Service-Seite und klicken Sie auf den kleinen Pfeil im Layer-Abschnitt, damit die Option angezeigt wird. Die Bilder und Miniaturansichten, auf die Sie durch Attribute verwiesen haben, werden in Map Tour weiter verwendet. Wenn Sie Ihre Bilder optional als Feature-Service-Anlagen hochladen möchten, ist dies über zwei Schaltflächen im Bildbereich möglich (\"Bild ändern\" und \"Miniaturansicht ändern\").",
+					div20: "Unterstützte Bildformate und Videos",
+					div21: "Folgende Bildformate werden unterstützt: <b>.jpg, .jpeg, .png, .gif und .bmp</b>. Sollten Ihre Medien keine dieser Dateierweiterungen aufweisen, werden sie von Map Tour als Video behandelt, es sei denn, Sie verwenden einen Feature-Service (siehe unten).",
 					div22: "Da die Map Tour-Vorlage über keine Videoabspielfunktion verfügt, müssen Sie auf den externen Videoplayer Ihres bevorzugten Video-Hosting-Service zurückgreifen (betten Sie das Video mit der entsprechenden Option ein und kopieren Sie die vorhandene URL in den angegebenen Code). Wenn Sie das Video selbst hosten möchten, können Sie eine HTML-Seite erstellen, die einen Videoplayer wie <a href='http://www.videojs.com/'>Video.js</a> enthält.",
 					div23: "Der interaktive Builder bietet keine Dialogfunktion zum Einbetten eines Videos bei Verwendung von Feature-Services mit Anlagen an, aber Sie können die Daten einfach außerhalb des interaktiven Builders bearbeiten. Bearbeiten Sie im arcgis.com Map Viewer die Bildfelder so, dass diese auf ein externes Video verweisen, fügen Sie einen speziellen Parameter (#isVideo) an das Ende Ihrer URL an und schon werden Ihre Medien als Video behandelt.",
-					div24: "ä_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_Ü."
+					div24: "Beachten Sie, dass Sie weiterhin zwei gültige Anlagen mit Bildern benötigen; andernfalls wird der Punkt nicht verwendet. Wenn Anlagen von Feature-Services ohne die Felder für Bild und Miniaturansicht verwendet werden, können keine Videos integriert werden."
 				},
 				tab3: {
 					title: "Anpassung",
@@ -487,7 +487,7 @@
 					div2a: "Freigeben der Tour mit dem Builder",
 					div2b: "Mit der Schaltfläche FREIGEBEN werden die Anwendungs- und Webkartenelemente freigegeben. Wenn Ihre Tour-Daten in einem Feature-Service-Element gespeichert sind, werden diese ebenfalls aktualisiert. Wenn Sie andere Layer über ArcGIS.com Map Viewer hinzugefügt haben, werden sie nicht aktualisiert. Dies kann dazu führen, dass die Tour nicht wie erwartet freigegeben wird. Elemente, die bereits über die erforderlichen (oder mehr) Berechtigungen verfügen, werden nicht aktualisiert.",
 					div2c: "Freigeben der Tour über ArcGIS Online",
-					div2d: "ä_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_Ü.",
+					div2d: "Wenn Sie die Anwendung über ArcGIS Online freigeben, werden Sie ggf. aufgefordert, alle abhängigen Ressourcen (Webkarte, Feature-Service, Verzierungs-Layer) zu aktualisieren, die nicht auf dieselbe Weise freigegeben werden. Sollte bei veröffentlichter Map Tour eine der Ressourcen nicht für die Zielgruppe freigegeben sein, werden die Benutzer zur ArcGIS Online-Anmeldeseite umgeleitet.",
 					div3t: "Sicherheit für Feature-Services",
 					div3a: "Wenn Sie einen durch den Map Tour-Builder gehosteten Feature-Service verwenden, wird die Service-Sicherheit von der Anwendung für Sie verwaltet, und nur Sie verfügen über Bearbeitungsberechtigungen, selbst wenn der Service öffentlich freigegeben ist.",
 					div3t2: "Bevor Sie die Tour für Ihre Zielgruppe freigeben",

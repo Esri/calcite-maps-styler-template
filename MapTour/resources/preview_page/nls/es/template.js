@@ -3,7 +3,7 @@
 		firstPane: {
 			head: "<span class='highlightText'>La plantilla Recorrido de mapa</span> permite a todos los niveles de cuentas de usuarios de ArcGIS Online, incluidas las cuentas públicas gratuitas, crear y editar una historia basada en lugares combinando imágenes, texto y mapas desde:",
 			list0: "Imágenes almacenadas en los principales servicios de intercambio de fotografías como Flickr, Picasa y Facebook o en cualquier sitio web o servidor web",
-			list1: "á_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_Ó"
+			list1: "Imágenes no almacenadas en línea aún que se almacenarán como adjuntos de servicio de entidades (limitado a los miembros de ArcGIS for Organizations)"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>La plantilla</span> incorpora herramientas de edición fáciles de usar que incluyen:",
@@ -17,8 +17,8 @@
 			list1: "Aloja la plantilla en tu propio servidor web o en un servidor externo"
 		},
 		fourthPane: {
-			head: "á_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_Ó:",
-			list0: "á_Story maps published by Esriâ€™s story maps teams_Ó",
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Consulta el sitio Story Maps de Esri</a> para obtener más información sobre cómo crear y compartir historias. Entre los recursos se incluyen:",
+			list0: "Mapas de historias publicados por los equipos de Story Maps de Esri",
 			list1: "Una selección de plantillas descargables",
 			list2: "Guías de prácticas recomendadas", 
 			list3: "Una galería de mapas de historias compuesta por una extensa comunidad de narradores"

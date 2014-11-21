@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "須_Unable to create map_鷗"
+         "error": "マップを作成できません"
       },
       "location": {
-         "name": "須_Name_鷗",
-         "current": "須_Current Location_鷗",
-         "address": "須_Address_鷗",
-         "latitude": "須_Latitude_鷗",
-         "longitude": "須_Longitude_鷗",
-         "use": "須_Use this location_鷗",
-         "error": "須_Unable to use this location_鷗"
+         "name": "名前",
+         "current": "現在の位置",
+         "address": "住所",
+         "latitude": "緯度",
+         "longitude": "経度",
+         "use": "この場所を使用",
+         "error": "この場所は使用できません"
       },
       "tooltips": {
-         "toggle": "須_Show/Hide_鷗",
-         "reset": "須_Reset_鷗",
-         "locate": "須_Find my location_鷗",
-         "directions": "須_Directions_鷗",
-         "filter": "須_Filter_鷗",
-         "close": "須_Close_鷗",
-         "reverse": "須_Reverse_鷗"
+         "toggle": "表示/非表示",
+         "reset": "リセット",
+         "locate": "現在の場所を検索",
+         "directions": "方向",
+         "filter": "フィルタ",
+         "close": "閉じる",
+         "reverse": "反転"
       }
    })
 );

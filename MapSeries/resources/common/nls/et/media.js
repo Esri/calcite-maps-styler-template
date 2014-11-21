@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Š_Media_ä",
-				lblSelect2: "Š_Content_ä",
-				lblMap: "Š_Map_ä",
-				lblImage: "Š_Image_ä",
-				lblVideo: "Š_Video_ä",
-				lblExternal: "Š_Web page_ä",
-				disabled: "Š_This feature has been disabled by the Administrator_ä",
-				url: "Š_To manually enter the web address of an image_ä",
-				userLookup: "Š_Load albums_ä",
-				notImplemented: "Š_Not implemented yet_ä.",
-				noData: "Š_No public album found_ä"
+				lblSelect1: "Meedia",
+				lblSelect2: "Sisu",
+				lblMap: "Kaart",
+				lblImage: "Pilt",
+				lblVideo: "Video",
+				lblExternal: "Veebileht",
+				disabled: "Administraator on selle võimaluse keelanud",
+				url: "Pildi veebiaadressi käsitsi sisestamiseks",
+				userLookup: "Laadi albumid",
+				notImplemented: "Pole veel kasutusele võetud.",
+				noData: "Avalikku albumit ei leitud"
 			},
 			imageSelector: {
-				lblStep1: "Š_Choose the service_ä",
-				lblStep2: "Š_Select your media_ä",
-				lblStep3: "Š_Configure_ä"
+				lblStep1: "Valige teenus",
+				lblStep2: "Valige meedium",
+				lblStep3: "Seadista"
 			},
 			imageSelectorHome: {
-				explain: "Š_Load images from social media, <br /> or directly from a URL_ä"
+				explain: "Pildid saate laadida sotsiaalmeediast <br /> või otse kindlalt URL-ilt"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "Š_User name_ä",
-				signInMsg2: "Š_User not found_ä",
-				loadingFailed: "Š_Loading failed_ä"
+				userInputLbl: "Kasutajanimi",
+				signInMsg2: "Kasutajat ei leitud",
+				loadingFailed: "Laadimine nurjus"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "Š_Facebook User_ä",
-				rightHeader: "Š_Facebook Page_ä",
-				pageExplain: "Š_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_ä.",
-				pageInputLbl: "Š_Page name_ä",
-				lookupMsgError: "Š_Page not found_ä"
+				leftHeader: "Facebooki kasutajanimi",
+				rightHeader: "Facebooki leht",
+				pageExplain: "Facebooki leht on avalik kaubamärk/toode nagu <b>esrigis</b>. Lehe nime leiate lehe URL-ist pärast '/'.",
+				pageInputLbl: "Lehe nimi",
+				lookupMsgError: "Lehte ei leitud"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "Š_Email or Picasa/Google+ ID_ä",
-				signInMsg2: "Š_Account not found_ä",
-				howToFind: "Š_How to find a Picasa or Google+ account ID_ä",
-				howToFind2: "Š_Copy digits between the first and second '/' of any Picasa or G+ page_ä"
+				userInputLbl: "e-post või Picasa/Google+ ID",
+				signInMsg2: "Kontot ei leitud",
+				howToFind: "Kuidas leida Picasa või Google+ konto ID-d",
+				howToFind2: "Kopeerige mis tahes Picasa või G+ lehe esimese ja teise kaldkriipsu vahel asuvad numbrikohad"
 			},
 			videoSelectorCommon: {
-				check: "Š_Check_ä",
-				notFound: "Š_Video not found_ä",
-				found: "Š_Video found_ä",
-				select: "Š_Select this video_ä"
+				check: "Kontrolli",
+				notFound: "Videot ei leitud",
+				found: "Video leiti",
+				select: "Vali see video"
 			},
 			videoSelectorHome: {
-				other: "Š_Other_ä"
+				other: "Muu"
 			},
 			videoSelectorYoutube: {
-				url: "Š_URL of a Youtube video_ä",
-				pageInputLbl: "Š_User name_ä",
-				lookupMsgError: "Š_User not found_ä",
-				howToFind: "Š_How to find a YouTube user name_ä",
-				howToFind2: "Š_User name is displayed under videos_ä",
-				found: "Š_Found_ä",
-				noData: "Š_No public videos found_ä"
+				url: "Youtube video URL",
+				pageInputLbl: "Kasutajanimi",
+				lookupMsgError: "Kasutajat ei leitud",
+				howToFind: "Kuidas leida YouTube’i kasutajanime",
+				howToFind2: "Kasutajanime kuvatakse videote all",
+				found: "Leitud",
+				noData: "Avalikke videoid ei leitud"
 			},
 			videoSelectorVimeo: {
-				url: "Š_URL of a Vimeo video_ä"
+				url: "Vimeo video URL"
 			},
 			videoSelectorOther: {
-				explain1: "Š_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ä.",
-				explain2: "Š_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_ä.",
-				explain3: "Š_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_ä.",
-				webpage: "Š_Web page feature_ä"
+				explain1: "Rakendus ei saa esitada töötlemata videoid (nt .avi, .mpeg), kuid saab esitada majutatud videoid sisseehitatud pleierites (nt YouTube või Vimeo).",
+				explain2: "Enamik veebis olevaid videomajutusteenuseid pakub seda funktsiooni. Peate leidma video lisamise võimaluse, kopeerima antud koodi ja kasutama veebilehte %WEBPAGE%.",
+				explain3: "Kui soovite aga videot ise majutada, saate luua HTML-lehe, mis kasutab näiteks videopleierit %EXAMPLE%, selle lehe majutada ning kasutada ka veebilehte %WEBPAGE%.",
+				webpage: "Veebilehe funktsioon"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Š_Webpage URL_ä",
-				lblEmbed: "Š_Embed code_ä",
-				lblOR: "Š_OR_ä",
-				lblError1: "Š_Error, clear one of the two input fields_ä.",
-				lblError2: "Š_Embed code can only contain one %IFRAMETAG%_ä",
-				configure: "Š_Configure_ä"
+				lblUrl: "Veebilehe URL",
+				lblEmbed: "Lisa kood",
+				lblOR: "VÕI",
+				lblError1: "Viga, tühjendage üks kahest sisendväljast.",
+				lblError2: "Lisatud kood võib sisaldada ainult ühte märksõna %IFRAMETAG%",
+				configure: "Seadista"
 			},
 			mediaConfigure: {
-				lblURL: "Š_URL_ä",
-				lblURLPH: "Š_An image URL should start with http:// and end with .jpg or .png_ä",
-				lblURLError: "Š_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_ä.",
-				lblURLCheck: "Š_Checking image_ä...",
-				lblLabel: "Š_Image Caption_ä",
-				lblLabel1: "Š_Caption_ä",
-				lblLabel2: "Š_Hover text_ä",
-				lblLabel3: "Š_None_ä",
-				lblLabelPH: "Š_Enter some text_ä...",
-				lblMaximize: "Š_Include a maximize button in the corner of the image_ä",
-				lblMaximizeHelp: "Š_Recommended only for high quality photos_ä",
-				lblPosition: "Š_Position_ä",
-				lblPosition1: "Š_Center_ä",
-				lblPosition2: "Š_Fill_ä",
-				lblPosition3: "Š_Fit_ä",
-				lblPosition4: "Š_Stretch_ä",
-				lblPosition5: "Š_Custom_ä",
-				tooltipDimension: "Š_The value can be specified in 'px' or '%'_ä",
-				tooltipDimension2: "Š_The value has to be specified in 'px'_ä",
-				lblPosition2Explain: "Š_(may crop)_ä",
-				lblPosition3Explain: "Š_(won't crop)_ä",
-				lblPosition3Explain2: "Š_(width will always fit the panel)_ä",
-				lblPosition4Explain: "Š_(may distort)_ä",
-				unloadLbl: "Š_Unload when reader navigates away_ä",
-				unloadHelp: "Š_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ä."
+				lblURL: "URL",
+				lblURLPH: "Pildi URL-i alguses peaks olema http:// ja lõpus laiend .jpg või .png",
+				lblURLError: "See pilt paistab olevat vigane. Määrake pildifaili otselink (URL-i lõpus on üldiselt laiend .jpg või .png). Pilti sisaldava veebilehe lingid ei tööta.",
+				lblURLCheck: "Pildi kontrollimine...",
+				lblLabel: "Pildi alapealkiri",
+				lblLabel1: "Alapealkiri",
+				lblLabel2: "Hõljuktekst",
+				lblLabel3: "Pole",
+				lblLabelPH: "Sisestage teksti...",
+				lblMaximize: "Lisa pildi nurka maksimeerimise nupp",
+				lblMaximizeHelp: "Soovitatud ainult kvaliteetsete piltide puhul",
+				lblPosition: "Paigutus",
+				lblPosition1: "Keskel",
+				lblPosition2: "Täida",
+				lblPosition3: "Sobita",
+				lblPosition4: "Venita",
+				lblPosition5: "Kohandatud",
+				tooltipDimension: "Väärtuse ühikuks võib olla px või %",
+				tooltipDimension2: "Väärtuse ühikuks peab olema px",
+				lblPosition2Explain: "(võib kärpida)",
+				lblPosition3Explain: "(ei kärbita)",
+				lblPosition3Explain2: "(laius on alati paneelile vastav)",
+				lblPosition4Explain: "(võib moonutada)",
+				unloadLbl: "Laadi maha, kui lugeja liigub mujale",
+				unloadHelp: "Kui veebileht sisaldab audio- või videosisu, märkige see valik, et takistada selle sisu esitamist siis, kui lugeja liigub mujale. Tühjendage see valik näiteks siis, kui soovite, et heliriba esitataks siis, kui lugeja läbi loo liigub.<br />Kui veebileht on rakendus, tühjendage see valik, et rakendust ei laaditaks uuesti siis, kui lugeja selle juurde naaseb."
 			},
 			editorActionGeocode: {
-				lblTitle: "Š_Locate an address or place_ä",
-				mapMarkerExplain: "Š_User will see a map marker when clicking the link_ä"
+				lblTitle: "Märgi aadress või asukoht",
+				mapMarkerExplain: "Kasutajad näevad lingi klõpsamisel kaardil tähist"
 			},
 			editorActionMedia: {
-				lblTitle: "Š_Change the Main Stage content_ä"
+				lblTitle: "Põhietapi sisu muutmine"
 			},
 			editorInlineMedia: {
-				lblTitle: "Š_Insert an image, video or web page_ä"
+				lblTitle: "Pildi, video või veebilehe lisamine"
 			}
 		}
 	})

@@ -28,8 +28,8 @@
 				buttonSettings: "Iestatījumi",
 				buttonHelp: "Palīdzība",
 				buttonPreview: "Skatīt tiešraidē",
-				tooltipFirstSave: "ķ_This isn't available until you save_ū.",
-				tooltipNotShared: "ķ_This isn't available until you share_ū.",
+				tooltipFirstSave: "Tas nav pieejams pirms saglabāšanas.",
+				tooltipNotShared: "Tas nav pieejams pirms kopīgošanas.",
 				noPendingChange: "Nav neizpildītu izmaiņu",
 				unSavedChangePlural: "Gaida izmaiņas",
 				closeWithPendingChange: "Vai tiešām vēlaties apstiprināt šo darbību? Jūsu veiktās izmaiņas tiks zaudētas.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Saglabājot aplikāciju, radās kļūda",
 				err1Div1: "Aplikāciju nevar saglabāt, jo jums jau ir cita vienība ar tādu pašu nosaukumu (skatiet savu <a class='linkagolroot' target='_blank'>satura mapi</a>).",
-				err1Div2: "ķ_Please modify the title of your application and then save it_ū.",
-				btnOk: "ķ_Edit the application title_ū"
+				err1Div2: "Lūdzu, modificējiet savas aplikācijas nosaukumu un saglabājiet to.",
+				btnOk: "Rediģēt aplikācijas nosaukumu"
 			},
 			share: {
 				firstSaveTitle: "Lietotne veiksmīgi saglabāta",
@@ -66,7 +66,7 @@
 				shareHeader2: "Jūsu aplikācijai var piekļūt jūsu organizācijas dalībnieki (nepieciešama pieteikšanās).",
 				shareLinkCopy: "Kopēt",
 				shareLinkCopied: "Kopēts",
-				shareQ0: "ķ_How do I embed the application in a web page_ū?",
+				shareQ0: "Kā iegult aplikāciju web lapā?",
 				shareQ1Opt1: "Kā saglabāt aplikāciju privātu?",
 				shareQ1Opt2: "Kā saglabāt aplikāciju privātu vai koplietot to publiski?",
 				shareA1: "Izmantojiet %SHAREIMG% <a href='%LINK1%' target='_blank'>aplikācijas vienību lapā</a>.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Pielāgojiet galvenes saiti.",
 				logoSocialText: "Teksts",
 				logoSocialLink: "Saite",
-				lblSmallHeader: "ķ_Use compact header (no subtitle)_ū"
+				lblSmallHeader: "Lietot kompaktu galveni (bez apakšvirsraksta)"
 			},
 			header: {
-				title: "ķ_Edit the title of your %TPL_NAME%_ū",
-				subtitle: "ķ_Edit the subtitle of your %TPL_NAME%_ū"
+				title: "Rediģējiet sava %TPL_NAME% nosaukumu",
+				subtitle: "Rediģējiet sava %TPL_NAME% apakšnosaukumu"
 			}
 		}
 	})

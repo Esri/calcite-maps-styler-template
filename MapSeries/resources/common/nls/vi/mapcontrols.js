@@ -2,13 +2,13 @@
 	 ({
 		commonMapControls: {
 			common: {
-				settings: "Đ_Settings_ớ",
-				openDefault: "Đ_Open by default_ớ"
+				settings: "Thiết lập",
+				openDefault: "Mở theo mặc định"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "Đ_Basemap_ớ",
-				expandFactorLabel: "Đ_Expand Factor_ớ",
-				expandFactorPopover: "Đ_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle_ớ."
+				basemapGalleryBtnLabel: "Bản đồ nền",
+				expandFactorLabel: "Hệ số Mở rộng",
+				expandFactorPopover: "Tỷ lệ giữa kích cỡ của bản đồ toàn cảnh và hình chữ nhật kéo dài hiển thị trên bản đồ toàn cảnh. Giá trị mặc định là 2, có nghĩa là bản đồ toàn cảnh sẽ gấp ít nhất hai lần kích thước của hình chữ nhật kéo dài."
 			}
 		}
 	})

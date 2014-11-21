@@ -70,8 +70,8 @@
 				copy: "Kopier",
 				copied: "Kopiert",
 				open: "Åpne",
-				embed: "å_Embed in web page_ø",
-				embedExplain: "å_Use the following HTML code to embed the journal in a web page_ø.",
+				embed: "Bygg inn på webside",
+				embedExplain: "Bruk følgende HTML-kode for å bygge inn historien på en webside.",
 				size: "Størrelse (bredde/høyde):"
 			}
         }

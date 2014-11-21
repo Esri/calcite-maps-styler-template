@@ -2,16 +2,16 @@
      ({
         widgets: {
             ShareDialog: {
-                title: "Đ_Share_ớ",
-                heading: "Đ_Share this map_ớ",
-                url: "Đ_Map Link_ớ",
-                embed: "Đ_Embed Map_ớ",
-                extent: "Đ_Share current map extent_ớ",
-                size: "Đ_Size (width/height)_ớ:",
-                facebookTooltip: "Đ_Facebook_ớ",
-                twitterTooltip: "Đ_Twitter_ớ",
-                gplusTooltip: "Đ_Google Plus_ớ",
-                emailTooltip: "Đ_Email_ớ"
+                title: "Chia sẻ",
+                heading: "Chia sẻ bản đồ này",
+                url: "Liên kết Bản đồ",
+                embed: "Nhúng Bản đồ",
+                extent: "Chia sẻ phạm vi bản đồ hiện tại",
+                size: "Kích thước (chiều rộng/chiều cao):",
+                facebookTooltip: "Facebook",
+                twitterTooltip: "Twitter",
+                gplusTooltip: "Google Plus",
+                emailTooltip: "Email"
             }
         }
     })

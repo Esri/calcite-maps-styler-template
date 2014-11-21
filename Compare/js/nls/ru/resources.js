@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "Ж_Unable to create map_Я"
+            error: "Не удалось создать карту"
         },
         tools: {
             info: {
-                label: "Ж_Info_Я",
-                tooltip: "Ж_Toggle map info_Я"
+                label: "Информация",
+                tooltip: "Переключение сведений о карте"
             },
             sync: {
-                label: "Ж_Sync Map Extent_Я",
-                tooltip: "Ж_Sync to extent of this map_Я"
+                label: "Синхронизировать экстент карты",
+                tooltip: "Синхронизация экстента этой карты"
             }
         }
     })

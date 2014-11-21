@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "æ_Location could not be found_Â",
-                "notWhatYouWanted": "æ_Not what you wanted_Â?",
-                "selectAnother": "æ_Select another location_Â",
-                "currentLocation": "æ_Current Location_Â",
-                "title": "æ_Location_Â"
+                "error": "Emplacement introuvable",
+                "notWhatYouWanted": "Ce n\'est pas ce que vous vouliez ?",
+                "selectAnother": "Sélectionnez un autre emplacement",
+                "currentLocation": "Emplacement actuel",
+                "title": "Emplacement"
             },
             "basemap":{
-                    "label": "æ_Basemap_Â",
-                    "title": "æ_Select a Basemap_Â"
+                    "label": "Fond de carte",
+                    "title": "Sélectionner un fond de carte"
             },
             "legend":{
-                "title": "æ_Legend_Â"
+                "title": "Légende"
             },
             "details":{
-                "title": "æ_Map Details_Â",
-                "error": "æ_Update the web map description with the details to display in this section_Â."
+                "title": "Détails de la carte",
+                "error": "Mettez à jour la description de la carte Web avec les détails à afficher dans cette section."
             },
             "popup": {
-                "title": "æ_Info_Â",
-                "instructions": "æ_Select a feature on the map to view details_Â."
+                "title": "Infos",
+                "instructions": "Sélectionnez une entité sur la carte pour afficher ses détails."
             }
 
         },
         "map": {
-            "error": "æ_Unable to create map_Â"
+            "error": "Impossible de créer la carte"
         }
     })
 );

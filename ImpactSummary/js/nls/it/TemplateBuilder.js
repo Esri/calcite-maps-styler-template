@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Feature selezionata",
                 "layerHelpTextMessage": "Per l\'applicazione è richiesto un layer con campi numerici",
                 "alertMessage": {
-                    "resetVariableMessage": "é_Are you sure you want to reset variable_È?",
+                    "resetVariableMessage": "Reimpostare la variabile?",
                     "emptyAppTitleMessage": "Il campo del titolo dell\'applicazione non può essere vuoto",
                     "emptyDescriptionMessage": "Il campo della descrizione non può essere vuoto",
                     "maxVariableSelection": "Impossibile selezionare più di 25 variabili secondarie",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "Modifiche non salvate",
                     "failMessage": "Impossibile aggiornare l\'elemento",
                     "saveChangesAlert": "Salvare le modifiche?",
-                    "variableLabelValidation": "é_Variable label cannot be empty_È",
-                    "subVariableLabelValidation": "é_Sub variable label cannot be empty_È"
+                    "variableLabelValidation": "L\'etichetta della variabile non può essere vuota",
+                    "subVariableLabelValidation": "L\'etichetta della variabile secondaria non può essere vuota"
                     }
             }
         }

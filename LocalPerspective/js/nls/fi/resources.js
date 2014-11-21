@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "Å_Unable to create map_ö"
+         "error": "Karttaa ei voi luoda"
       },
       "days": {
-         "now": "Å_NOW_ö",
-         "sun": "Å_SUN_ö",
-         "mon": "Å_MON_ö",
-         "tue": "Å_TUE_ö",
-         "wed": "Å_WED_ö",
-         "thu": "Å_THU_ö",
-         "fri": "Å_FRI_ö",
-         "sat": "Å_SAT_ö"
+         "now": "NYT",
+         "sun": "SU",
+         "mon": "MA",
+         "tue": "TI",
+         "wed": "KE",
+         "thu": "TO",
+         "fri": "PE",
+         "sat": "LA"
       },
       "tooltips": {
-         "logo": "Å_Logo_ö",
-         "menu": "Å_Menu_ö",
-         "close": "Å_Close_ö",
-         "previous": "Å_Previous_ö",
-         "next": "Å_Next_ö",
-         "directions": "Å_Directions_ö"
+         "logo": "Logo",
+         "menu": "Valikko",
+         "close": "Sulje",
+         "previous": "Edellinen",
+         "next": "Seuraava",
+         "directions": "Suunnat"
       }
    })
 );

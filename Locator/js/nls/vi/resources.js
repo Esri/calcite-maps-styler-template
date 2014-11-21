@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "Đ_Unable to create map_ớ"
+         "error": "Không thể tạo bản đồ"
       },
       "location": {
-         "name": "Đ_Name_ớ",
-         "current": "Đ_Current Location_ớ",
-         "address": "Đ_Address_ớ",
-         "latitude": "Đ_Latitude_ớ",
-         "longitude": "Đ_Longitude_ớ",
-         "use": "Đ_Use this location_ớ",
-         "error": "Đ_Unable to use this location_ớ"
+         "name": "Tên",
+         "current": "Vị trí hiện tại",
+         "address": "Địa chỉ",
+         "latitude": "Vĩ độ",
+         "longitude": "Kinh độ",
+         "use": "Sử dụng vị trí này",
+         "error": "Không thể sử dụng vị trí này"
       },
       "tooltips": {
-         "toggle": "Đ_Show/Hide_ớ",
-         "reset": "Đ_Reset_ớ",
-         "locate": "Đ_Find my location_ớ",
-         "directions": "Đ_Directions_ớ",
-         "filter": "Đ_Filter_ớ",
-         "close": "Đ_Close_ớ",
-         "reverse": "Đ_Reverse_ớ"
+         "toggle": "Hiện/Ẩn",
+         "reset": "Thiết lập lại",
+         "locate": "Tìm vị trí của tôi",
+         "directions": "Hướng",
+         "filter": "Bộ lọc",
+         "close": "Đóng",
+         "reverse": "Đảo ngược"
       }
    })
 );

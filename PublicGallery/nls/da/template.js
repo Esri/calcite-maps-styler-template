@@ -12,14 +12,14 @@
                 "bingError": "Du skal have din egen Bing-kortnøgle for at bruge denne applikation.",
                 "noLayers": "Ingen lag klar til brug",
                 "noSearchResults": "Beklager, ingen resultater fundet.",
-                "noGroupResults": "ø_The group could not be found_å.",
+                "noGroupResults": "Gruppen blev ikke fundet.",
                 "noMatches": "Ingen match.",
                 "noMapsFound": "Ingen kort fundet"
             },
             "sidePanel": {
                 "title": "Signaturforklaring",
                 "legendButton": "Signaturforklaring",
-                "layersButton": "ø_Layers_å", // new
+                "layersButton": "Lag", // new
                 "legendButtonTitle": "Signaturforklaring til kort",
                 "aboutButton": "Om",
                 "aboutButtonTitle": "Om kort",
@@ -36,47 +36,47 @@
                 "loadingText": "Indlæser kort&hellip;"
             },
             "sortFields": {
-                "sortBy": "ø_Sort by_å",
-                "modified": "ø_Date_å",
-                "title": "ø_Title_å",
-                "type": "ø_Type_å",
-                "numRatings": "ø_Ratings_å",
-                "avgRating": "ø_Avg. Rating_å",
-                "numComments": "ø_Comments_å",
-                "numViews": "ø_Views_å"
+                "sortBy": "Sortér efter",
+                "modified": "Dato",
+                "title": "Titel",
+                "type": "Type",
+                "numRatings": "Vurderinger",
+                "avgRating": "Gnms. vurdering",
+                "numComments": "Kommentarer",
+                "numViews": "Visninger"
             },
             "comments": {
-                "commentsHeader": "ø_Comments_å",
-                "posted": "ø_Posted_å",
-                "by": "ø_by_å",
-                "deleteComment": "ø_delete_å",
-                "editComment": "ø_edit_å",
-                "noComments": "ø_No comments_å",
-                "addCommentButton": "ø_Add Comment_å",
-                "signIn": "ø_Sign In_å",
-                "register": "ø_Register_å",
-                "or": "ø_or_å",
-                "toPost": "ø_to post a comment_å."
+                "commentsHeader": "Kommentarer",
+                "posted": "Indsendt",
+                "by": "af",
+                "deleteComment": "slet",
+                "editComment": "redigér",
+                "noComments": "Ingen kommentarer",
+                "addCommentButton": "Tilføj kommentar",
+                "signIn": "Log ind",
+                "register": "Registrér",
+                "or": "eller",
+                "toPost": "at indsende en kommentar."
             },
             "buttons": {
-                "cancel": "ø_Cancel_å",
-                "submit": "ø_Submit_å"
+                "cancel": "Annullér",
+                "submit": "Send"
             },
             "rating": {
-                "signIn": "ø_Sign In_å",
-                "toRate": "ø_to rate_å."
+                "signIn": "Log ind",
+                "toRate": "at vurdere."
             },
             "itemInfo": {
-                "createdLabel": "ø_created_å",
-                "ratingsLabel": "ø_rating_å",
-                "ratingsLabelPlural": "ø_ratings_å",
-                "viewsLabel": "ø_view_å",
-                "viewsLabelPlural": "ø_views_å",
-                "commentsLabel": "ø_comment_å",
-                "commentsLabelPlural": "ø_comments_å",
-                "modifiedLabel": "ø_Last Modified_å",
-                "by": "ø_by_å",
-                "separator": "ø__å,"
+                "createdLabel": "oprettet",
+                "ratingsLabel": "vurdering",
+                "ratingsLabelPlural": "vurderinger",
+                "viewsLabel": "visning",
+                "viewsLabelPlural": "visninger",
+                "commentsLabel": "kommentar",
+                "commentsLabelPlural": "kommentarer",
+                "modifiedLabel": "Sidst ændret",
+                "by": "af",
+                "separator": ","
             },
             "mapPage": {
                 "findLocation": "Find et sted",
@@ -93,11 +93,11 @@
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Ejer:",
                 "switchBasemap": "Skift baggrundskort",
-                "getMobileApp": "ø_Get App_å",
-                "constraintsHeading": "ø_Use Constraints_å",
-                "createdLabel": "ø_Created_å",
-                "noDescription": "ø_No description_å.",
-                "detailsLabel": "ø_Details_å"
+                "getMobileApp": "Hent App",
+                "constraintsHeading": "Brug begrænsninger",
+                "createdLabel": "Oprettet",
+                "noDescription": "Ingen beskrivelse",
+                "detailsLabel": "Oplysninger"
             },
             "filterItems": {
                 "show": "Vis",

@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "ก้_Unable to create map_ษฺ"
+         "error": "ไม่สามารถสร้างแผนที่ได้"
       },
       "location": {
-         "name": "ก้_Name_ษฺ",
-         "current": "ก้_Current Location_ษฺ",
-         "address": "ก้_Address_ษฺ",
-         "latitude": "ก้_Latitude_ษฺ",
-         "longitude": "ก้_Longitude_ษฺ",
-         "use": "ก้_Use this location_ษฺ",
-         "error": "ก้_Unable to use this location_ษฺ"
+         "name": "ชื่อ",
+         "current": "ตำแหน่งปัจจุบัน",
+         "address": "ที่อยู่",
+         "latitude": "ละติจูด",
+         "longitude": "ลองจิจูด",
+         "use": "ใช้ที่ตั้งนี้",
+         "error": "ไม่สามารถใช้ที่ตั้งนี้"
       },
       "tooltips": {
-         "toggle": "ก้_Show/Hide_ษฺ",
-         "reset": "ก้_Reset_ษฺ",
-         "locate": "ก้_Find my location_ษฺ",
-         "directions": "ก้_Directions_ษฺ",
-         "filter": "ก้_Filter_ษฺ",
-         "close": "ก้_Close_ษฺ",
-         "reverse": "ก้_Reverse_ษฺ"
+         "toggle": "แสดง/ซ่อน",
+         "reset": "รีเซ็ต",
+         "locate": "ค้นหาที่ตั้งของฉัน",
+         "directions": "คำสั่ง",
+         "filter": "ตัวกรอง",
+         "close": "ปิด",
+         "reverse": "กลับหลัง"
       }
    })
 );

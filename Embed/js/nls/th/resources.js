@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "ก้_Location could not be found_ษฺ",
-                "notWhatYouWanted": "ก้_Not what you wanted_ษฺ?",
-                "selectAnother": "ก้_Select another location_ษฺ",
-                "currentLocation": "ก้_Current Location_ษฺ",
-                "title": "ก้_Location_ษฺ"
+                "error": "ไม่พบตำแหน่งนี้",
+                "notWhatYouWanted": "ไม่ใช่สิ่งที่คุณต้องการ?",
+                "selectAnother": "เลือกที่ตั้งอื่น",
+                "currentLocation": "ตำแหน่งปัจจุบัน",
+                "title": "ตำแหน่ง"
             },
             "basemap":{
-                    "label": "ก้_Basemap_ษฺ",
-                    "title": "ก้_Select a Basemap_ษฺ"
+                    "label": "แผนที่ฐาน",
+                    "title": "เลือกแผนที่ฐาน"
             },
             "legend":{
-                "title": "ก้_Legend_ษฺ"
+                "title": "สัญลักษณ์"
             },
             "details":{
-                "title": "ก้_Map Details_ษฺ",
-                "error": "ก้_Update the web map description with the details to display in this section_ษฺ."
+                "title": "รายละเอียดแผนที่",
+                "error": "อัพเดทคำบรรยายของเว็บแมพด้วยรายละเอียดเพื่อแสดงในส่วนนี้"
             },
             "popup": {
-                "title": "ก้_Info_ษฺ",
-                "instructions": "ก้_Select a feature on the map to view details_ษฺ."
+                "title": "ข้อมูล",
+                "instructions": "เลือกฟีเจอร์บนแผนที่เพื่อแสดงรายละเอียด"
             }
 
         },
         "map": {
-            "error": "ก้_Unable to create map_ษฺ"
+            "error": "ไม่สามารถสร้างแผนที่ได้"
         }
     })
 );

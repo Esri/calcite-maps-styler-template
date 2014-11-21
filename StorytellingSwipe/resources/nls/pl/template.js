@@ -25,7 +25,7 @@
 				mapSave: "Błąd podczas zapisywania mapy internetowej",
 				notAuthorized: "Nie masz uprawnień do uzyskania dostępu do tej aplikacji.",
 				conflictingProjectionsTitle: "Konflikt odwzorowań",
-				conflictingProjections: "Narzędzie zwijania nie obsługuje dwóch map internetowych o różnych odwzorowaniach. Przejdź do ustawień i wybierz mapę internetową o tym samym odwzorowaniu co pierwsza użyta mapa.",
+				conflictingProjections: "Narzędzie zwijania nie obsługuje dwóch map internetowych o różnych odwzorowaniach. Przejdź do ustawień i wybierz mapę internetową o tym samym odwzorowaniu, co pierwsza użyta mapa.",
 				cpButton: "Zamknij"
 			},
 			mobileView: {

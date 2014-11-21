@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "Выбранный объект",
                 "layerHelpTextMessage": "Приложению требуется слой с числовыми полями",
                 "alertMessage": {
-                    "resetVariableMessage": "Ж_Are you sure you want to reset variable_Я?",
+                    "resetVariableMessage": "Вы уверены, что хотите сбросить переменную?",
                     "emptyAppTitleMessage": "Заголовок приложения не может быть пустым",
                     "emptyDescriptionMessage": "Описание не может быть пустым",
                     "maxVariableSelection": "Вы не можете выбрать более 25 суб-переменных",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "Несохраненные изменения",
                     "failMessage": "Не удалось обновить элемент",
                     "saveChangesAlert": "Сохранить изменения?",
-                    "variableLabelValidation": "Ж_Variable label cannot be empty_Я",
-                    "subVariableLabelValidation": "Ж_Sub variable label cannot be empty_Я"
+                    "variableLabelValidation": "Надпись переменной не может быть пустой",
+                    "subVariableLabelValidation": "Надпись суб-переменной не может быть пустой"
                     }
             }
         }

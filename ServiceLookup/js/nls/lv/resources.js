@@ -11,7 +11,7 @@
             layerNotFound: "Slānis neatrodas web kartē",
             fieldNotFound: "Lauks netika atrasts",
             popupNotSet: "Šim slānim nav iespējots uznirstošais ekrāns",
-            noLayersSet: "ķ_No layers defined in the config, the search box will not work_ū"
+            noLayersSet: "Konfigurācijā nav definēti slāņi, meklēšanas lodziņš nedarbosies."
         },
         page: {
             title: "Informācijas meklēšana",

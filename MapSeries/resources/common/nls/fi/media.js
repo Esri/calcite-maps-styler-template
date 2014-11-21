@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Å_Media_ö",
-				lblSelect2: "Å_Content_ö",
-				lblMap: "Å_Map_ö",
-				lblImage: "Å_Image_ö",
-				lblVideo: "Å_Video_ö",
-				lblExternal: "Å_Web page_ö",
-				disabled: "Å_This feature has been disabled by the Administrator_ö",
-				url: "Å_To manually enter the web address of an image_ö",
-				userLookup: "Å_Load albums_ö",
-				notImplemented: "Å_Not implemented yet_ö.",
-				noData: "Å_No public album found_ö"
+				lblSelect1: "Media",
+				lblSelect2: "Sisältö",
+				lblMap: "Kartta",
+				lblImage: "Kuva",
+				lblVideo: "Video",
+				lblExternal: "Web-sivu",
+				disabled: "Pääkäyttäjä on poistanut tämän toiminnon käytöstä",
+				url: "Kuvan verkko-osoitteen manuaalinen syöttäminen",
+				userLookup: "Lataa albumit",
+				notImplemented: "Ei ole vielä toteutettu.",
+				noData: "Julkista albumia ei löytynyt"
 			},
 			imageSelector: {
-				lblStep1: "Å_Choose the service_ö",
-				lblStep2: "Å_Select your media_ö",
-				lblStep3: "Å_Configure_ö"
+				lblStep1: "Valitse palvelu",
+				lblStep2: "Valitse media",
+				lblStep3: "Määritä"
 			},
 			imageSelectorHome: {
-				explain: "Å_Load images from social media, <br /> or directly from a URL_ö"
+				explain: "Lataa kuvat sosiaalisesta mediasta <br />tai suoraan URL-osoitteesta"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "Å_User name_ö",
-				signInMsg2: "Å_User not found_ö",
-				loadingFailed: "Å_Loading failed_ö"
+				userInputLbl: "Käyttäjätunnus",
+				signInMsg2: "Käyttäjää ei löydy",
+				loadingFailed: "Lataus epäonnistui"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "Å_Facebook User_ö",
-				rightHeader: "Å_Facebook Page_ö",
-				pageExplain: "Å_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_ö.",
-				pageInputLbl: "Å_Page name_ö",
-				lookupMsgError: "Å_Page not found_ö"
+				leftHeader: "Facebook-käyttäjä",
+				rightHeader: "Facebook-sivu",
+				pageExplain: "Facebook-sivu on julkinen tuotemerkki tai tunnettu tuote, kuten <b>esrigis</b>. Saat sivun nimen sivun URL-osoitteessa olevan ensimmäisen vinoviivan (/) jälkeen.",
+				pageInputLbl: "Sivun nimi",
+				lookupMsgError: "Sivua ei löydy"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "Å_Email or Picasa/Google+ ID_ö",
-				signInMsg2: "Å_Account not found_ö",
-				howToFind: "Å_How to find a Picasa or Google+ account ID_ö",
-				howToFind2: "Å_Copy digits between the first and second '/' of any Picasa or G+ page_ö"
+				userInputLbl: "Sähköpostiosoite tai Picasa-/Google+-tunnus",
+				signInMsg2: "Tiliä ei löydy",
+				howToFind: "Picasa- tai Google+-tilitunnuksen etsiminen",
+				howToFind2: "Kopioi minkä tahansa Picasa- tai Google+-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
 			},
 			videoSelectorCommon: {
-				check: "Å_Check_ö",
-				notFound: "Å_Video not found_ö",
-				found: "Å_Video found_ö",
-				select: "Å_Select this video_ö"
+				check: "Valitse",
+				notFound: "Videota ei löydy",
+				found: "Video löytyi",
+				select: "Valitse tämä video"
 			},
 			videoSelectorHome: {
-				other: "Å_Other_ö"
+				other: "Muu"
 			},
 			videoSelectorYoutube: {
-				url: "Å_URL of a Youtube video_ö",
-				pageInputLbl: "Å_User name_ö",
-				lookupMsgError: "Å_User not found_ö",
-				howToFind: "Å_How to find a YouTube user name_ö",
-				howToFind2: "Å_User name is displayed under videos_ö",
-				found: "Å_Found_ö",
-				noData: "Å_No public videos found_ö"
+				url: "Youtube-videon URL-osoite",
+				pageInputLbl: "Käyttäjätunnus",
+				lookupMsgError: "Käyttäjää ei löydy",
+				howToFind: "YouTube-käyttäjätunnuksen etsiminen",
+				howToFind2: "Käyttäjätunnus näkyy videoissa",
+				found: "Löytyi",
+				noData: "Yhtään julkista videota ei löytynyt"
 			},
 			videoSelectorVimeo: {
-				url: "Å_URL of a Vimeo video_ö"
+				url: "Vimeo-videon URL-osoite"
 			},
 			videoSelectorOther: {
-				explain1: "Å_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ö.",
-				explain2: "Å_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_ö.",
-				explain3: "Å_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_ö.",
-				webpage: "Å_Web page feature_ö"
+				explain1: "Sovellus ei voi toistaa raakavideoita (esim. avi- ja mpeg-muotoisia), mutta sillä voi toistaa isännöityjä videotiedostoja, joissa on sisäänrakennettuja soittimia (esim. YouTube tai Vimeo).",
+				explain2: "Useimmissa online-videoisännöintipalveluissa voi käyttää kyseistä ominaisuutta, ja sinun on etsittävä videon upotusvalinta, kopioitava annettu koodi ja käytettävä sivustoa %WEBPAGE%.",
+				explain3: "Jos taas haluat isännöidä itse videota, voit luoda HTML-sivun, joka käyttää videosoitinta (esim. %EXAMPLE%), isännöidä tätä sivua ja käyttää myös sivustoa %WEBPAGE%.",
+				webpage: "Web-sivukohde"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Å_Webpage URL_ö",
-				lblEmbed: "Å_Embed code_ö",
-				lblOR: "Å_OR_ö",
-				lblError1: "Å_Error, clear one of the two input fields_ö.",
-				lblError2: "Å_Embed code can only contain one %IFRAMETAG%_ö",
-				configure: "Å_Configure_ö"
+				lblUrl: "Web-sivun URL-osoite",
+				lblEmbed: "Upotuskoodi",
+				lblOR: "TAI",
+				lblError1: "Virhe, tyhjennä toinen kahdesta lähtöaineistokentästä.",
+				lblError2: "Upotuskoodi voi sisältää vain yhden merkkijonon %IFRAMETAG%",
+				configure: "Määritä"
 			},
 			mediaConfigure: {
-				lblURL: "Å_URL_ö",
-				lblURLPH: "Å_An image URL should start with http:// and end with .jpg or .png_ö",
-				lblURLError: "Å_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_ö.",
-				lblURLCheck: "Å_Checking image_ö...",
-				lblLabel: "Å_Image Caption_ö",
-				lblLabel1: "Å_Caption_ö",
-				lblLabel2: "Å_Hover text_ö",
-				lblLabel3: "Å_None_ö",
-				lblLabelPH: "Å_Enter some text_ö...",
-				lblMaximize: "Å_Include a maximize button in the corner of the image_ö",
-				lblMaximizeHelp: "Å_Recommended only for high quality photos_ö",
-				lblPosition: "Å_Position_ö",
-				lblPosition1: "Å_Center_ö",
-				lblPosition2: "Å_Fill_ö",
-				lblPosition3: "Å_Fit_ö",
-				lblPosition4: "Å_Stretch_ö",
-				lblPosition5: "Å_Custom_ö",
-				tooltipDimension: "Å_The value can be specified in 'px' or '%'_ö",
-				tooltipDimension2: "Å_The value has to be specified in 'px'_ö",
-				lblPosition2Explain: "Å_(may crop)_ö",
-				lblPosition3Explain: "Å_(won't crop)_ö",
-				lblPosition3Explain2: "Å_(width will always fit the panel)_ö",
-				lblPosition4Explain: "Å_(may distort)_ö",
-				unloadLbl: "Å_Unload when reader navigates away_ö",
-				unloadHelp: "Å_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ö."
+				lblURL: "URL",
+				lblURLPH: "Kuvan URL-osoitteen on alettava merkkijonolla http:// ja loputtava tarkenteeseen .jpg tai .png",
+				lblURLError: "Kuva ei ole kelvollinen. Määritä suora linkki kuvatiedostoon (URL päättyy yleensä jpg- tai png-tunnisteeseen ). Linkki kuvan sisältävään verkkosivuun ei toimi.",
+				lblURLCheck: "Tarkistetaan kuvaa...",
+				lblLabel: "Kuvan seloste",
+				lblLabel1: "Seloste",
+				lblLabel2: "Kohoteksti",
+				lblLabel3: "Ei mitään",
+				lblLabelPH: "Kirjoita vähän tekstiä...",
+				lblMaximize: "Sisällytä suurennuspainike kuvan kulmaan",
+				lblMaximizeHelp: "Suositellaan vain korkealaatuisille valokuville",
+				lblPosition: "Sijainti",
+				lblPosition1: "Keskikohta",
+				lblPosition2: "Täytä",
+				lblPosition3: "Sovita",
+				lblPosition4: "Venytä",
+				lblPosition5: "Mukautettu",
+				tooltipDimension: "Arvo voidaan määrittää px (pikseli)- tai %-yksiköissä",
+				tooltipDimension2: "Arvo on määritettävä pikseleinä",
+				lblPosition2Explain: "(voi rajautua)",
+				lblPosition3Explain: "(ei rajaudu)",
+				lblPosition3Explain2: "(leveys sopii aina paneeliin)",
+				lblPosition4Explain: "(voi vääristyä)",
+				unloadLbl: "Poista lataus, kun lukija siirtyy",
+				unloadHelp: "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy pois. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä tarinassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta sovellus ei lataudu uudelleen, kun lukija palaa tarinaan."
 			},
 			editorActionGeocode: {
-				lblTitle: "Å_Locate an address or place_ö",
-				mapMarkerExplain: "Å_User will see a map marker when clicking the link_ö"
+				lblTitle: "Paikanna osoite tai paikka",
+				mapMarkerExplain: "Käyttäjä näkee karttamerkit napsauttaessaan linkkiä"
 			},
 			editorActionMedia: {
-				lblTitle: "Å_Change the Main Stage content_ö"
+				lblTitle: "Muuta päävaiheen sisältöä"
 			},
 			editorInlineMedia: {
-				lblTitle: "Å_Insert an image, video or web page_ö"
+				lblTitle: "Lisää kuva, video tai verkkosivu"
 			}
 		}
 	})

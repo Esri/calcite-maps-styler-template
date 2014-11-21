@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "ก้_Media_ษฺ",
-				lblSelect2: "ก้_Content_ษฺ",
-				lblMap: "ก้_Map_ษฺ",
-				lblImage: "ก้_Image_ษฺ",
-				lblVideo: "ก้_Video_ษฺ",
-				lblExternal: "ก้_Web page_ษฺ",
-				disabled: "ก้_This feature has been disabled by the Administrator_ษฺ",
-				url: "ก้_To manually enter the web address of an image_ษฺ",
-				userLookup: "ก้_Load albums_ษฺ",
-				notImplemented: "ก้_Not implemented yet_ษฺ.",
-				noData: "ก้_No public album found_ษฺ"
+				lblSelect1: "สื่อ",
+				lblSelect2: "เนื้อหา",
+				lblMap: "แผนที่",
+				lblImage: "รูปภาพ",
+				lblVideo: "วิดีโอ",
+				lblExternal: "เว็บเพจ",
+				disabled: "ฟีเจอร์นี้ได้รับการแสดงโดยผู้ดูแลระบบ",
+				url: "ในการป้อนที่อยู่เว็บของภาพด้วยตนเอง",
+				userLookup: "โหลดอัลบัม",
+				notImplemented: "ยังไม่ได้ดำเนินการ",
+				noData: "ไม่พบวิดีโอสาธารณะ"
 			},
 			imageSelector: {
-				lblStep1: "ก้_Choose the service_ษฺ",
-				lblStep2: "ก้_Select your media_ษฺ",
-				lblStep3: "ก้_Configure_ษฺ"
+				lblStep1: "เลือกการบริการ",
+				lblStep2: "เลือกมีเดียของคุณ",
+				lblStep3: "การตั้งค่า"
 			},
 			imageSelectorHome: {
-				explain: "ก้_Load images from social media, <br /> or directly from a URL_ษฺ"
+				explain: "โหลดรูปภาพจากโซเชียลมีเดีย <br /> หรือตรงจาก URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "ก้_User name_ษฺ",
-				signInMsg2: "ก้_User not found_ษฺ",
-				loadingFailed: "ก้_Loading failed_ษฺ"
+				userInputLbl: "ชื่อผู้ใช้งาน",
+				signInMsg2: "ไม่พบผู้ใช้งาน",
+				loadingFailed: "โหดลผิดพลาด"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "ก้_Facebook User_ษฺ",
-				rightHeader: "ก้_Facebook Page_ษฺ",
-				pageExplain: "ก้_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_ษฺ.",
-				pageInputLbl: "ก้_Page name_ษฺ",
-				lookupMsgError: "ก้_Page not found_ษฺ"
+				leftHeader: "ผู้ใช้เฟสบุค",
+				rightHeader: "เพจเฟสบุค",
+				pageExplain: "หน้าเฟสบุคเป็นที่นิยมสำหรับการแสดงแบรนด์สินค้าและผู้มีชื่อเสียง<b>esrigis</b>. คุณสามารถให้ชื่อเพจหลัง'/' ในหน้า URL ได้",
+				pageInputLbl: "ชื่อเพจ",
+				lookupMsgError: "ไม่พบหน้านี้"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "ก้_Email or Picasa/Google+ ID_ษฺ",
-				signInMsg2: "ก้_Account not found_ษฺ",
-				howToFind: "ก้_How to find a Picasa or Google+ account ID_ษฺ",
-				howToFind2: "ก้_Copy digits between the first and second '/' of any Picasa or G+ page_ษฺ"
+				userInputLbl: "อีเมล์  หรือ  Picasa/Google+ ID",
+				signInMsg2: "ไม่พบชื่อบัญชี",
+				howToFind: "วิธีการค้นหา Picasa หรือ บัญชี ID Google+",
+				howToFind2: "คัดลอกตัวเลขระหว่างลำดับที่หนึ่งและสอง  / ของ Picasa หรือ หน้า G+"
 			},
 			videoSelectorCommon: {
-				check: "ก้_Check_ษฺ",
-				notFound: "ก้_Video not found_ษฺ",
-				found: "ก้_Video found_ษฺ",
-				select: "ก้_Select this video_ษฺ"
+				check: "ตรวจสอบ",
+				notFound: "ไม่พบวิดีโอ",
+				found: "พบวิดีโอ",
+				select: "เลือกวิดีโอนี้"
 			},
 			videoSelectorHome: {
-				other: "ก้_Other_ษฺ"
+				other: "อื่นๆ"
 			},
 			videoSelectorYoutube: {
-				url: "ก้_URL of a Youtube video_ษฺ",
-				pageInputLbl: "ก้_User name_ษฺ",
-				lookupMsgError: "ก้_User not found_ษฺ",
-				howToFind: "ก้_How to find a YouTube user name_ษฺ",
-				howToFind2: "ก้_User name is displayed under videos_ษฺ",
-				found: "ก้_Found_ษฺ",
-				noData: "ก้_No public videos found_ษฺ"
+				url: "URL ของวิดีโอจากยูทูบ",
+				pageInputLbl: "ชื่อผู้ใช้งาน",
+				lookupMsgError: "ไม่พบผู้ใช้งาน",
+				howToFind: "วิธีการค้นหาชื่อ YouTube",
+				howToFind2: "ชื่อผู้ใช้ไม่แสดงอยู่ด้านล่างวิดีโอ",
+				found: "พบ",
+				noData: "ไม่พบวิดีโอสาธารณะ"
 			},
 			videoSelectorVimeo: {
-				url: "ก้_URL of a Vimeo video_ษฺ"
+				url: "URL ของวิดีโอจาก Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "ก้_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ษฺ.",
-				explain2: "ก้_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_ษฺ.",
-				explain3: "ก้_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_ษฺ.",
-				webpage: "ก้_Web page feature_ษฺ"
+				explain1: "โปรแกรมประยุกต์ไม่สามารถเล่นจากวิดีโอ เช่น avi mpeg  แต่สามารถเล่นวิดีโอไฟล์ของตัวเองที่มากับเครื่องเล่น เช่น ยูทูป หรือ วิมีโอ",
+				explain2: "วิดีโอออนไลน์บริการโฮสติ้งส่วนมากมีคุณสมบัติที่คุณจะต้องไปหาตัวเลือกที่จะฝังวิดีโอคัดลอกโค้ดที่กำหนดและใช้ %WEBPAGE%",
+				explain3: "หรือถ้าคุณต้องการโฮสต์วิดีโอตัวคุณเองคุณสามารถสร้างเพจ HTML ที่ใช้เครื่องเล่นวิดีโอ เช่น %EXAMPLE% เจ้าของหน้านั้นและยังใช้%WEBPAGE%",
+				webpage: "ฟีเจอร์ของหน้าเว็บ"
 			},
 			webpageSelectorHome: {
-				lblUrl: "ก้_Webpage URL_ษฺ",
-				lblEmbed: "ก้_Embed code_ษฺ",
-				lblOR: "ก้_OR_ษฺ",
-				lblError1: "ก้_Error, clear one of the two input fields_ษฺ.",
-				lblError2: "ก้_Embed code can only contain one %IFRAMETAG%_ษฺ",
-				configure: "ก้_Configure_ษฺ"
+				lblUrl: "เว็บเพจ URL",
+				lblEmbed: "รหัสที่ฝัง",
+				lblOR: "หรือ",
+				lblError1: "ข้อผิดพลาด ยกเลิกหนึ่งในสองฟิลด์ที่นำเข้า",
+				lblError2: "รหัสที่ฝังสามารถมีได้เพียงชุดเดียวเท่านั้น %IFRAMETAG%",
+				configure: "การตั้งค่า"
 			},
 			mediaConfigure: {
-				lblURL: "ก้_URL_ษฺ",
-				lblURLPH: "ก้_An image URL should start with http:// and end with .jpg or .png_ษฺ",
-				lblURLError: "ก้_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_ษฺ.",
-				lblURLCheck: "ก้_Checking image_ษฺ...",
-				lblLabel: "ก้_Image Caption_ษฺ",
-				lblLabel1: "ก้_Caption_ษฺ",
-				lblLabel2: "ก้_Hover text_ษฺ",
-				lblLabel3: "ก้_None_ษฺ",
-				lblLabelPH: "ก้_Enter some text_ษฺ...",
-				lblMaximize: "ก้_Include a maximize button in the corner of the image_ษฺ",
-				lblMaximizeHelp: "ก้_Recommended only for high quality photos_ษฺ",
-				lblPosition: "ก้_Position_ษฺ",
-				lblPosition1: "ก้_Center_ษฺ",
-				lblPosition2: "ก้_Fill_ษฺ",
-				lblPosition3: "ก้_Fit_ษฺ",
-				lblPosition4: "ก้_Stretch_ษฺ",
-				lblPosition5: "ก้_Custom_ษฺ",
-				tooltipDimension: "ก้_The value can be specified in 'px' or '%'_ษฺ",
-				tooltipDimension2: "ก้_The value has to be specified in 'px'_ษฺ",
-				lblPosition2Explain: "ก้_(may crop)_ษฺ",
-				lblPosition3Explain: "ก้_(won't crop)_ษฺ",
-				lblPosition3Explain2: "ก้_(width will always fit the panel)_ษฺ",
-				lblPosition4Explain: "ก้_(may distort)_ษฺ",
-				unloadLbl: "ก้_Unload when reader navigates away_ษฺ",
-				unloadHelp: "ก้_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ษฺ."
+				lblURL: "URL",
+				lblURLPH: "URL ของรูปภาพควรเริ่มต้นด้วย http:// และลงท้ายด้วย .jpg หรือ .png",
+				lblURLError: "ไฟล์ภาพนี้ไม่ถูกต้อง กรุณากำหนดลิงค์ไปยังไฟล์ภาพโดยตรง ( URL ของคุณควรลงท้ายด้วย .jpg หรือ .png). ลิงค์ไปยังหน้าเว็บที่เก็บภาพไม่ถูกต้อง",
+				lblURLCheck: "กำลังตรวจสอบภาพ...",
+				lblLabel: "คำอธิบายรูปภาพ",
+				lblLabel1: "คำบรรยายภาพ",
+				lblLabel2: "เลื่อนข้อความ",
+				lblLabel3: "ไม่มี",
+				lblLabelPH: "เพิ่มข้อความ...",
+				lblMaximize: "รวมถึงปุ่มขยายที่อยู่บริเวณมุมของรูป",
+				lblMaximizeHelp: "แนะนำรูปภาพที่มีความละเอียดสูงเท่านั้น",
+				lblPosition: "ตำแหน่ง",
+				lblPosition1: "ศูนย์กลาง",
+				lblPosition2: "กรอก",
+				lblPosition3: "พอดี",
+				lblPosition4: "ยืด",
+				lblPosition5: "กำหนดเอง",
+				tooltipDimension: "ระบุค่าด้วย px หรือ %",
+				tooltipDimension2: "มีการกำหนดค่าใน 'px'",
+				lblPosition2Explain: "(อาจจะตัด)",
+				lblPosition3Explain: "(ไม่ตัด)",
+				lblPosition3Explain2: "(ความกว้างจะต้องพอดีกับแผงข้อมูล)",
+				lblPosition4Explain: "(อาจจะเบี้ยว)",
+				unloadLbl: "ไม่โหลดเมื่อผู้อ่านนำทางไป",
+				unloadHelp: "หากหน้าเว็บมีสื่อเสียงหรือวิดีโอให้เลือกตัวเลือกนี้จะหยุดเนื้อหาที่จากการเล่นเมื่อผู้อ่านนำทางไป ยกเลิกการเลือกตัวอย่างเช่นเพื่อให้การเล่นซาวด์แทร็กเป็นผู้อ่านผ่านเรื่องราวความก้าวหน้า <br /> หากหน้าเว็บเป็นโปรแกรมยกเลิกตัวเลือกนี้เพื่อให้โปรแกรมประยุกต์ที่ไม่โหลดถ้าผลตอบแทนที่ได้อ่าน"
 			},
 			editorActionGeocode: {
-				lblTitle: "ก้_Locate an address or place_ษฺ",
-				mapMarkerExplain: "ก้_User will see a map marker when clicking the link_ษฺ"
+				lblTitle: "ตำแหน่งของที่อยู่หรือสถานที่",
+				mapMarkerExplain: "ผู้ใช้จะมองเห็นตัวชี้แผนที่เมื่อคลิกที่ลิ้ง"
 			},
 			editorActionMedia: {
-				lblTitle: "ก้_Change the Main Stage content_ษฺ"
+				lblTitle: "เปลี่ยนเนื้อหาที่สือเวทีหลัก"
 			},
 			editorInlineMedia: {
-				lblTitle: "ก้_Insert an image, video or web page_ษฺ"
+				lblTitle: "เพิ่มภาพหรือวิดีโอ"
 			}
 		}
 	})

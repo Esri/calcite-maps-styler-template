@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "å_Unable to create map_ø"
+         "error": "Kan ikke opprette kart"
       },
       "location": {
-         "name": "å_Name_ø",
-         "current": "å_Current Location_ø",
-         "address": "å_Address_ø",
-         "latitude": "å_Latitude_ø",
-         "longitude": "å_Longitude_ø",
-         "use": "å_Use this location_ø",
-         "error": "å_Unable to use this location_ø"
+         "name": "Navn",
+         "current": "Gjeldende lokasjon",
+         "address": "Adresse",
+         "latitude": "Breddegrad",
+         "longitude": "Lengdegrad",
+         "use": "Bruk denne lokasjonen",
+         "error": "Kan ikke bruke denne lokasjonen"
       },
       "tooltips": {
-         "toggle": "å_Show/Hide_ø",
-         "reset": "å_Reset_ø",
-         "locate": "å_Find my location_ø",
-         "directions": "å_Directions_ø",
-         "filter": "å_Filter_ø",
-         "close": "å_Close_ø",
-         "reverse": "å_Reverse_ø"
+         "toggle": "Vis/skjul",
+         "reset": "Tilbakestill",
+         "locate": "Finn min lokasjon",
+         "directions": "Veibeskrivelser",
+         "filter": "Filter",
+         "close": "Lukk",
+         "reverse": "Motsatt retning"
       }
    })
 );

@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Đ_Media_ớ",
-				lblSelect2: "Đ_Content_ớ",
-				lblMap: "Đ_Map_ớ",
-				lblImage: "Đ_Image_ớ",
-				lblVideo: "Đ_Video_ớ",
-				lblExternal: "Đ_Web page_ớ",
-				disabled: "Đ_This feature has been disabled by the Administrator_ớ",
-				url: "Đ_To manually enter the web address of an image_ớ",
-				userLookup: "Đ_Load albums_ớ",
-				notImplemented: "Đ_Not implemented yet_ớ.",
-				noData: "Đ_No public album found_ớ"
+				lblSelect1: "Phương tiện",
+				lblSelect2: "Nội dung",
+				lblMap: "Bản đồ",
+				lblImage: "Hình ảnh",
+				lblVideo: "Video",
+				lblExternal: "Trang web",
+				disabled: "Người quản trị đã vô hiệu hóa tính năng này",
+				url: "Để nhập địa chỉ trang web của một hình ảnh theo cách thủ công",
+				userLookup: "Tải album",
+				notImplemented: "Chưa được thực hiện.",
+				noData: "Không tìm thấy album công khai nào"
 			},
 			imageSelector: {
-				lblStep1: "Đ_Choose the service_ớ",
-				lblStep2: "Đ_Select your media_ớ",
-				lblStep3: "Đ_Configure_ớ"
+				lblStep1: "Chọn dịch vụ",
+				lblStep2: "Chọn phương tiện của bạn",
+				lblStep3: "Cấu hình"
 			},
 			imageSelectorHome: {
-				explain: "Đ_Load images from social media, <br /> or directly from a URL_ớ"
+				explain: "Tải ảnh từ mạng xã hội <br /> hoặc trực tiếp từ URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "Đ_User name_ớ",
-				signInMsg2: "Đ_User not found_ớ",
-				loadingFailed: "Đ_Loading failed_ớ"
+				userInputLbl: "Tên đăng nhập",
+				signInMsg2: "Không tìm thấy người dùng",
+				loadingFailed: "Tải thất bại"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "Đ_Facebook User_ớ",
-				rightHeader: "Đ_Facebook Page_ớ",
-				pageExplain: "Đ_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_ớ.",
-				pageInputLbl: "Đ_Page name_ớ",
-				lookupMsgError: "Đ_Page not found_ớ"
+				leftHeader: "Người dùng Facebook",
+				rightHeader: "Trang Facebook",
+				pageExplain: "Trang Facebook là một thương hiệu/sản phẩm công cộng hay nổi tiếng như <b>esrigis</b>. Bạn có thể lấy tên trang sau '/' đầu tiên trong URL trang.",
+				pageInputLbl: "Tên trang",
+				lookupMsgError: "Không tìm thấy trang"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "Đ_Email or Picasa/Google+ ID_ớ",
-				signInMsg2: "Đ_Account not found_ớ",
-				howToFind: "Đ_How to find a Picasa or Google+ account ID_ớ",
-				howToFind2: "Đ_Copy digits between the first and second '/' of any Picasa or G+ page_ớ"
+				userInputLbl: "ID Email hoặc ID Picasa/Google+",
+				signInMsg2: "Không tìm thấy tài khoản",
+				howToFind: "Cách tìm ID tài khoản Picasa hoặc Google+",
+				howToFind2: "Sao chép chữ số giữa '/' đầu tiên và thứ hai của bất kỳ trang Picasa hoặc G+ nào"
 			},
 			videoSelectorCommon: {
-				check: "Đ_Check_ớ",
-				notFound: "Đ_Video not found_ớ",
-				found: "Đ_Video found_ớ",
-				select: "Đ_Select this video_ớ"
+				check: "Kiểm tra",
+				notFound: "Không tìm thấy video",
+				found: "Đã tìm thấy video",
+				select: "Chọn video này"
 			},
 			videoSelectorHome: {
-				other: "Đ_Other_ớ"
+				other: "Khác"
 			},
 			videoSelectorYoutube: {
-				url: "Đ_URL of a Youtube video_ớ",
-				pageInputLbl: "Đ_User name_ớ",
-				lookupMsgError: "Đ_User not found_ớ",
-				howToFind: "Đ_How to find a YouTube user name_ớ",
-				howToFind2: "Đ_User name is displayed under videos_ớ",
-				found: "Đ_Found_ớ",
-				noData: "Đ_No public videos found_ớ"
+				url: "URL của một video trên Youtube",
+				pageInputLbl: "Tên đăng nhập",
+				lookupMsgError: "Không tìm thấy người dùng",
+				howToFind: "Cách tìm tên đăng nhập Youtube",
+				howToFind2: "Tên đăng nhập được hiển thị dưới video",
+				found: "Tìm thấy",
+				noData: "Không tìm thấy video công khai"
 			},
 			videoSelectorVimeo: {
-				url: "Đ_URL of a Vimeo video_ớ"
+				url: "URL của một video trên Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Đ_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ớ.",
-				explain2: "Đ_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_ớ.",
-				explain3: "Đ_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_ớ.",
-				webpage: "Đ_Web page feature_ớ"
+				explain1: "Ứng dụng không thể phát các video thô (ví dụ: avi, mpeg) nhưng nó có thể phát các tệp video được lưu trữ có trình phát tích hợp (ví dụ: YouTube hoặc Vimeo).",
+				explain2: "Hầu hết dịch vụ lưu trữ video trực tuyến đều cung cấp tính năng này, bạn cần phải tìm tùy chọn để nhúng video, sao chép mã đã cung cấp và sử dụng %WEBPAGE%.",
+				explain3: "Ngoài ra, nếu bạn muốn tự lưu trữ video, bạn có thể tạo một trang HTML sử dụng một trình phát video như %EXAMPLE%, lưu trữ trang đó và cũng sử dụng %WEBPAGE%.",
+				webpage: "Tính năng của trang web"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Đ_Webpage URL_ớ",
-				lblEmbed: "Đ_Embed code_ớ",
-				lblOR: "Đ_OR_ớ",
-				lblError1: "Đ_Error, clear one of the two input fields_ớ.",
-				lblError2: "Đ_Embed code can only contain one %IFRAMETAG%_ớ",
-				configure: "Đ_Configure_ớ"
+				lblUrl: "URL trang web",
+				lblEmbed: "Mã nhúng",
+				lblOR: "HOẶC",
+				lblError1: "Lỗi, xóa một trong hai trường nhập.",
+				lblError2: "Mã nhúng chỉ có thể chứa một %IFRAMETAG%",
+				configure: "Cấu hình"
 			},
 			mediaConfigure: {
-				lblURL: "Đ_URL_ớ",
-				lblURLPH: "Đ_An image URL should start with http:// and end with .jpg or .png_ớ",
-				lblURLError: "Đ_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_ớ.",
-				lblURLCheck: "Đ_Checking image_ớ...",
-				lblLabel: "Đ_Image Caption_ớ",
-				lblLabel1: "Đ_Caption_ớ",
-				lblLabel2: "Đ_Hover text_ớ",
-				lblLabel3: "Đ_None_ớ",
-				lblLabelPH: "Đ_Enter some text_ớ...",
-				lblMaximize: "Đ_Include a maximize button in the corner of the image_ớ",
-				lblMaximizeHelp: "Đ_Recommended only for high quality photos_ớ",
-				lblPosition: "Đ_Position_ớ",
-				lblPosition1: "Đ_Center_ớ",
-				lblPosition2: "Đ_Fill_ớ",
-				lblPosition3: "Đ_Fit_ớ",
-				lblPosition4: "Đ_Stretch_ớ",
-				lblPosition5: "Đ_Custom_ớ",
-				tooltipDimension: "Đ_The value can be specified in 'px' or '%'_ớ",
-				tooltipDimension2: "Đ_The value has to be specified in 'px'_ớ",
-				lblPosition2Explain: "Đ_(may crop)_ớ",
-				lblPosition3Explain: "Đ_(won't crop)_ớ",
-				lblPosition3Explain2: "Đ_(width will always fit the panel)_ớ",
-				lblPosition4Explain: "Đ_(may distort)_ớ",
-				unloadLbl: "Đ_Unload when reader navigates away_ớ",
-				unloadHelp: "Đ_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ớ."
+				lblURL: "URL",
+				lblURLPH: "URL Hình ảnh nên bắt đầu bằng http:// và kết thúc bằng .jpg hoặc .png",
+				lblURLError: "Hình ảnh này dường như không hợp lệ. Vui lòng chỉ định một liên kết trực tiếp đến tệp hình ảnh (URL của bạn thường sẽ kết thúc bằng .jpg hoặc .png). Các liên kết đến trang web chứa một hình ảnh sẽ không hoạt động.",
+				lblURLCheck: "Đang kiểm tra hình ảnh...",
+				lblLabel: "Chú thích Hình ảnh",
+				lblLabel1: "Chú thích",
+				lblLabel2: "Di chuột qua văn bản",
+				lblLabel3: "Không có",
+				lblLabelPH: "Nhập một số chữ...",
+				lblMaximize: "Bao gồm một nút phóng đại ở góc hình ảnh",
+				lblMaximizeHelp: "Chỉ dành cho hình ảnh chất lượng cao",
+				lblPosition: "Vị trí",
+				lblPosition1: "Căn giữa",
+				lblPosition2: "Tô",
+				lblPosition3: "Đặt vừa",
+				lblPosition4: "Kéo giãn",
+				lblPosition5: "Tùy chỉnh",
+				tooltipDimension: "Giá trị có thể được chỉ định theo 'px' hoặc '%'",
+				tooltipDimension2: "Giá trị phải được chỉ định bằng 'px'",
+				lblPosition2Explain: "(có thể xén)",
+				lblPosition3Explain: "(không xén)",
+				lblPosition3Explain2: "(chiều rộng sẽ luôn luôn vừa với bảng điều khiển)",
+				lblPosition4Explain: "(có thể bóp méo)",
+				unloadLbl: "Không tải khi người đọc điều hướng ra ngoài",
+				unloadHelp: "Nếu Trang Web có phương tiện âm thanh hoặc video, tiếp tục chọn tùy chọn này để dừng phát nội dung đó khi người đọc điều hướng ra ngoài. Ví dụ: bỏ chọn để tiếp tục phát rãnh âm thanh khi trình đọc chuyển qua câu chuyện.<br />Nếu Trang Web là một ứng dụng, bỏ chọn tùy chọn này để ứng dụng không tải lại nếu người đọc quay lại."
 			},
 			editorActionGeocode: {
-				lblTitle: "Đ_Locate an address or place_ớ",
-				mapMarkerExplain: "Đ_User will see a map marker when clicking the link_ớ"
+				lblTitle: "Định vị một địa chỉ hoặc địa điểm",
+				mapMarkerExplain: "Người dùng sẽ thấy một điểm đánh dấu trên bản đồ khi bấm vào liên kết"
 			},
 			editorActionMedia: {
-				lblTitle: "Đ_Change the Main Stage content_ớ"
+				lblTitle: "Thay đổi nội dung Tầng Chính"
 			},
 			editorInlineMedia: {
-				lblTitle: "Đ_Insert an image, video or web page_ớ"
+				lblTitle: "Chèn hình ảnh, video hoặc trang web"
 			}
 		}
 	})

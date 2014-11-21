@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Ĳ_Media_ä",
-				lblSelect2: "Ĳ_Content_ä",
-				lblMap: "Ĳ_Map_ä",
-				lblImage: "Ĳ_Image_ä",
-				lblVideo: "Ĳ_Video_ä",
-				lblExternal: "Ĳ_Web page_ä",
-				disabled: "Ĳ_This feature has been disabled by the Administrator_ä",
-				url: "Ĳ_To manually enter the web address of an image_ä",
-				userLookup: "Ĳ_Load albums_ä",
-				notImplemented: "Ĳ_Not implemented yet_ä.",
-				noData: "Ĳ_No public album found_ä"
+				lblSelect1: "Media",
+				lblSelect2: "Content",
+				lblMap: "Kaart",
+				lblImage: "Afbeelding",
+				lblVideo: "Video",
+				lblExternal: "Webpagina",
+				disabled: "Deze functie is uitgeschakeld door de beheerder",
+				url: "Om het webadres van een afbeelding handmatig in te voeren",
+				userLookup: "Albums laden",
+				notImplemented: "Nog niet geïmplementeerd.",
+				noData: "Geen openbaar album gevonden"
 			},
 			imageSelector: {
-				lblStep1: "Ĳ_Choose the service_ä",
-				lblStep2: "Ĳ_Select your media_ä",
-				lblStep3: "Ĳ_Configure_ä"
+				lblStep1: "Kies de service",
+				lblStep2: "Selecteer uw media",
+				lblStep3: "Configureren"
 			},
 			imageSelectorHome: {
-				explain: "Ĳ_Load images from social media, <br /> or directly from a URL_ä"
+				explain: "Laad afbeeldingen vanaf sociale media, <br /> of direct vanaf een URL"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "Ĳ_User name_ä",
-				signInMsg2: "Ĳ_User not found_ä",
-				loadingFailed: "Ĳ_Loading failed_ä"
+				userInputLbl: "Gebruikersnaam",
+				signInMsg2: "Gebruiker niet gevonden",
+				loadingFailed: "Laden mislukt"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "Ĳ_Facebook User_ä",
-				rightHeader: "Ĳ_Facebook Page_ä",
-				pageExplain: "Ĳ_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_ä.",
-				pageInputLbl: "Ĳ_Page name_ä",
-				lookupMsgError: "Ĳ_Page not found_ä"
+				leftHeader: "Facebook-gebruiker",
+				rightHeader: "Facebook-pagina",
+				pageExplain: "Een Facebook-pagina is een openbaar merk/product of beroemdheid zoals <b>esrigis</b>. U vindt de naam van de pagina achter de eerste  \'/\' in de URL van de pagina.",
+				pageInputLbl: "Paginanaam",
+				lookupMsgError: "Pagina niet gevonden"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "Ĳ_Email or Picasa/Google+ ID_ä",
-				signInMsg2: "Ĳ_Account not found_ä",
-				howToFind: "Ĳ_How to find a Picasa or Google+ account ID_ä",
-				howToFind2: "Ĳ_Copy digits between the first and second '/' of any Picasa or G+ page_ä"
+				userInputLbl: "E-mail of Picasa-/Google+-ID",
+				signInMsg2: "Account niet gevonden",
+				howToFind: "Zoeken naar een Picasa- of Google+-account-ID",
+				howToFind2: "Kopieer getallen tussen de eerste en tweede \'/\' van een pagina van Picasa of G+"
 			},
 			videoSelectorCommon: {
-				check: "Ĳ_Check_ä",
-				notFound: "Ĳ_Video not found_ä",
-				found: "Ĳ_Video found_ä",
-				select: "Ĳ_Select this video_ä"
+				check: "Controleren",
+				notFound: "Video niet gevonden",
+				found: "Video gevonden",
+				select: "Deze video selecteren"
 			},
 			videoSelectorHome: {
-				other: "Ĳ_Other_ä"
+				other: "Overig"
 			},
 			videoSelectorYoutube: {
-				url: "Ĳ_URL of a Youtube video_ä",
-				pageInputLbl: "Ĳ_User name_ä",
-				lookupMsgError: "Ĳ_User not found_ä",
-				howToFind: "Ĳ_How to find a YouTube user name_ä",
-				howToFind2: "Ĳ_User name is displayed under videos_ä",
-				found: "Ĳ_Found_ä",
-				noData: "Ĳ_No public videos found_ä"
+				url: "URL van een Youtube-video",
+				pageInputLbl: "Gebruikersnaam",
+				lookupMsgError: "Gebruiker niet gevonden",
+				howToFind: "Hoe een YouTube-gebruikersnaam vinden",
+				howToFind2: "Gebruikersnaam wordt weergegeven onder video\'s",
+				found: "Gevonden",
+				noData: "Geen openbare video\'s gevonden"
 			},
 			videoSelectorVimeo: {
-				url: "Ĳ_URL of a Vimeo video_ä"
+				url: "URL van een Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "Ĳ_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ä.",
-				explain2: "Ĳ_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_ä.",
-				explain3: "Ĳ_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_ä.",
-				webpage: "Ĳ_Web page feature_ä"
+				explain1: "De applicatie kan geen raw video\'s (bijv. avi, mpeg) afspelen maar het kan gehoste videobestanden afspelen die ingebouwde spelers hebben (bijv. YouTube of Vimeo).",
+				explain2: "De meeste online videoservices bieden deze functie. U moet de optie vinden om de video in te kunnen sluiten, de verstrekte code kopieren en de %WEBPAGE% gebruiken.",
+				explain3: "Als u de video zelf wilt hosten, kunt u een HTML-pagina maken die een videospeler gebruikt zoals %EXAMPLE%. Host die pagina en gebruik tevens de %WEBPAGE%.",
+				webpage: "Functie webpagina"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Ĳ_Webpage URL_ä",
-				lblEmbed: "Ĳ_Embed code_ä",
-				lblOR: "Ĳ_OR_ä",
-				lblError1: "Ĳ_Error, clear one of the two input fields_ä.",
-				lblError2: "Ĳ_Embed code can only contain one %IFRAMETAG%_ä",
-				configure: "Ĳ_Configure_ä"
+				lblUrl: "URL webpagina",
+				lblEmbed: "Code voor inbedden",
+				lblOR: "OF",
+				lblError1: "Fout: maak een van de twee velden leeg.",
+				lblError2: "Invoegcode kan maar één %IFRAMETAG% bevatten",
+				configure: "Configureren"
 			},
 			mediaConfigure: {
-				lblURL: "Ĳ_URL_ä",
-				lblURLPH: "Ĳ_An image URL should start with http:// and end with .jpg or .png_ä",
-				lblURLError: "Ĳ_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_ä.",
-				lblURLCheck: "Ĳ_Checking image_ä...",
-				lblLabel: "Ĳ_Image Caption_ä",
-				lblLabel1: "Ĳ_Caption_ä",
-				lblLabel2: "Ĳ_Hover text_ä",
-				lblLabel3: "Ĳ_None_ä",
-				lblLabelPH: "Ĳ_Enter some text_ä...",
-				lblMaximize: "Ĳ_Include a maximize button in the corner of the image_ä",
-				lblMaximizeHelp: "Ĳ_Recommended only for high quality photos_ä",
-				lblPosition: "Ĳ_Position_ä",
-				lblPosition1: "Ĳ_Center_ä",
-				lblPosition2: "Ĳ_Fill_ä",
-				lblPosition3: "Ĳ_Fit_ä",
-				lblPosition4: "Ĳ_Stretch_ä",
-				lblPosition5: "Ĳ_Custom_ä",
-				tooltipDimension: "Ĳ_The value can be specified in 'px' or '%'_ä",
-				tooltipDimension2: "Ĳ_The value has to be specified in 'px'_ä",
-				lblPosition2Explain: "Ĳ_(may crop)_ä",
-				lblPosition3Explain: "Ĳ_(won't crop)_ä",
-				lblPosition3Explain2: "Ĳ_(width will always fit the panel)_ä",
-				lblPosition4Explain: "Ĳ_(may distort)_ä",
-				unloadLbl: "Ĳ_Unload when reader navigates away_ä",
-				unloadHelp: "Ĳ_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ä."
+				lblURL: "URL",
+				lblURLPH: "Een afbeeldings-URL moet beginnen met http:// en met .jpg of .png eindigen",
+				lblURLError: "Deze afbeelding is blijkbaar niet geldig. Geef een directe koppeling naar een afbeeldingsbestand op (uw URL eindigt doorgaans op .jpg of .png). Koppelingen naar een webpagina die een afbeelding bevat, functioneren niet.",
+				lblURLCheck: "Afbeelding bekijken...",
+				lblLabel: "Bijschrift afbeelding",
+				lblLabel1: "Bijschrift",
+				lblLabel2: "Over tekst bewegen",
+				lblLabel3: "Geen",
+				lblLabelPH: "Voer wat tekst in...",
+				lblMaximize: "Voeg een knop voor maximaliseren in de hoek van de afbeelding toe",
+				lblMaximizeHelp: "Alleen aanbevolen voor foto\'s van hoge kwaliteit",
+				lblPosition: "Positie",
+				lblPosition1: "Centreren",
+				lblPosition2: "Vulling",
+				lblPosition3: "Passend maken",
+				lblPosition4: "Uitrekken",
+				lblPosition5: "Aangepast",
+				tooltipDimension: "De waarde kan in 'px' of '%' worden gespecificeerd",
+				tooltipDimension2: "De waarde moet worden opgegeven in \'px\'",
+				lblPosition2Explain: "(kan worden bijgesneden)",
+				lblPosition3Explain: "(wordt niet bijgesneden)",
+				lblPosition3Explain2: "(breedte past altijd in het deelvenster)",
+				lblPosition4Explain: "(kan worden vervormd)",
+				unloadLbl: "Onladen als lezer weggaat",
+				unloadHelp: "Houd deze optie aangevinkt als de webpagina audio- of videomedia heeft om te voorkomen dat de content wordt afgespeeld als de lezer weggaat. Haal het vinkje weg om een soundtrack te laten doorspelen als de lezer verdergaat door het verhaal.<br />Als de webpagina een applicatie is, haal het vinkje dan weg zodat de applicatie het niet opnieuw laadt als de lezer terugkeert."
 			},
 			editorActionGeocode: {
-				lblTitle: "Ĳ_Locate an address or place_ä",
-				mapMarkerExplain: "Ĳ_User will see a map marker when clicking the link_ä"
+				lblTitle: "Een adres of plaats zoeken",
+				mapMarkerExplain: "De gebruiker ziet een kaartmarkering wanneer hij/zij op de koppeling klikt"
 			},
 			editorActionMedia: {
-				lblTitle: "Ĳ_Change the Main Stage content_ä"
+				lblTitle: "De inhoud van het hoofdvenster wijzigen"
 			},
 			editorInlineMedia: {
-				lblTitle: "Ĳ_Insert an image, video or web page_ä"
+				lblTitle: "Een afbeelding, video of webpagina invoegen"
 			}
 		}
 	})

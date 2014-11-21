@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "ı_Location could not be found_İ",
-                "notWhatYouWanted": "ı_Not what you wanted_İ?",
-                "selectAnother": "ı_Select another location_İ",
-                "currentLocation": "ı_Current Location_İ",
-                "title": "ı_Location_İ"
+                "error": "Konum bulunamadı",
+                "notWhatYouWanted": "İstediğiniz bu değil mi?",
+                "selectAnother": "Başka bir konum seç",
+                "currentLocation": "Mevcut Konum",
+                "title": "Konum"
             },
             "basemap":{
-                    "label": "ı_Basemap_İ",
-                    "title": "ı_Select a Basemap_İ"
+                    "label": "Altlık Haritası",
+                    "title": "Altlık Haritası Seç"
             },
             "legend":{
-                "title": "ı_Legend_İ"
+                "title": "Gösterim"
             },
             "details":{
-                "title": "ı_Map Details_İ",
-                "error": "ı_Update the web map description with the details to display in this section_İ."
+                "title": "Harita Ayrıntıları",
+                "error": "Web haritası açıklamasını bu kısımda görüntülenecek ayrıntılarla güncelleyin."
             },
             "popup": {
-                "title": "ı_Info_İ",
-                "instructions": "ı_Select a feature on the map to view details_İ."
+                "title": "Bilgi",
+                "instructions": "Ayrıntıları görüntülemek için haritada bir özellik seçin."
             }
 
         },
         "map": {
-            "error": "ı_Unable to create map_İ"
+            "error": "Harita oluşturulamıyor"
         }
     })
 );

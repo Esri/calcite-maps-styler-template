@@ -2,13 +2,13 @@
 	 ({
 		commonMapControls: {
 			common: {
-				settings: "试_Settings_验",
-				openDefault: "试_Open by default_验"
+				settings: "设置",
+				openDefault: "默认打开"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "试_Basemap_验",
-				expandFactorLabel: "试_Expand Factor_验",
-				expandFactorPopover: "试_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle_验."
+				basemapGalleryBtnLabel: "底图",
+				expandFactorLabel: "扩展因子",
+				expandFactorPopover: "鹰眼图大小和鹰眼图上显示的范围矩形大小之比。默认值为 2，表示鹰眼图至少为范围矩形大小的两倍。"
 			}
 		}
 	})

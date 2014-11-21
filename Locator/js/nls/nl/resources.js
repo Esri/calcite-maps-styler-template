@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "Ĳ_Unable to create map_ä"
+         "error": "Kan geen kaart maken"
       },
       "location": {
-         "name": "Ĳ_Name_ä",
-         "current": "Ĳ_Current Location_ä",
-         "address": "Ĳ_Address_ä",
-         "latitude": "Ĳ_Latitude_ä",
-         "longitude": "Ĳ_Longitude_ä",
-         "use": "Ĳ_Use this location_ä",
-         "error": "Ĳ_Unable to use this location_ä"
+         "name": "Naam",
+         "current": "Huidige locatie",
+         "address": "Adres",
+         "latitude": "Breedtegraad",
+         "longitude": "Lengtegraad",
+         "use": "Deze locatie gebruiken",
+         "error": "Kan deze locatie niet gebruiken"
       },
       "tooltips": {
-         "toggle": "Ĳ_Show/Hide_ä",
-         "reset": "Ĳ_Reset_ä",
-         "locate": "Ĳ_Find my location_ä",
-         "directions": "Ĳ_Directions_ä",
-         "filter": "Ĳ_Filter_ä",
-         "close": "Ĳ_Close_ä",
-         "reverse": "Ĳ_Reverse_ä"
+         "toggle": "Tonen/verbergen",
+         "reset": "Opnieuw instellen",
+         "locate": "Mijn locatie zoeken",
+         "directions": "Routebeschrijving",
+         "filter": "Filter",
+         "close": "Sluiten",
+         "reverse": "Omkeren"
       }
    })
 );

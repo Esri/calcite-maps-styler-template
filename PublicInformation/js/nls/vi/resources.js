@@ -2,7 +2,7 @@
      ({
         map: {
             error: "Không thể tạo bản đồ",
-            views: "Đ_views_ớ."
+            views: "lượt xem."
         },
         report: {
             flag: "Gắn cờ là không phù hợp",
@@ -11,7 +11,7 @@
             loading: "Đang tải&hellip;"
         },
         mapNotes:{
-            notesUnavailable: "Mô tả không có sẵn",
+            notesUnavailable: "Mô tả không khả dụng",
             bookmarks: "Đánh dấu",
             zoomTo: "Phóng to đến vị trí này và tìm hiểu thêm thông tin.",
             untitledNote: "Chưa có tiêu đề"

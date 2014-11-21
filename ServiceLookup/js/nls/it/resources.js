@@ -11,7 +11,7 @@
             layerNotFound: "Layer non incluso nella mappa Web",
             fieldNotFound: "Campo non trovato",
             popupNotSet: "Popup non abilitato per questo layer",
-            noLayersSet: "é_No layers defined in the config, the search box will not work_È"
+            noLayersSet: "Nella configurazione non è definito nessun layer. La casella di ricerca non funzionerà"
         },
         page: {
             title: "Ricerca informazioni",

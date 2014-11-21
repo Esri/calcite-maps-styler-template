@@ -15,7 +15,7 @@
 	sync:{
 		head: "تزامن الخرائط",
 		scale: "مقياس رسم",
-		location: "موقع"
+		location: "الموقع"
 	},
 	toggles:{
 		legend: "مفتاح الخريطة",

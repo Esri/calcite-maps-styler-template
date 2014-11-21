@@ -9,8 +9,8 @@
       general:"Chyba"
     },
 	legToggle:{
-	  up:"Ř_MAP LEGEND â–²_ů",
-	  down:"Ř_MAP LEGEND â–¼_ů"
+	  up:"LEGENDA MAPY â–²",
+	  down:"LEGENDA MAPY â–¼"
 	},
 	loading:{
 		message: "Načítám mapu"

@@ -28,8 +28,8 @@
 				buttonSettings: "Setări",
 				buttonHelp: "Ajutor",
 				buttonPreview: "Vizualizare live",
-				tooltipFirstSave: "Ă_This isn't available until you save_ș.",
-				tooltipNotShared: "Ă_This isn't available until you share_ș.",
+				tooltipFirstSave: "Această funcţie nu este disponibilă decât după ce salvaţi.",
+				tooltipNotShared: "Această funcţie nu este disponibilă decât după ce partajaţi.",
 				noPendingChange: "Nicio modificare în aşteptare",
 				unSavedChangePlural: "Modificări în aşteptare",
 				closeWithPendingChange: "Sigur doriţi să confirmaţi această acţiune? Modificările dvs. se vor pierde.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Eroare la salvarea aplicaţiei",
 				err1Div1: "Aplicaţia nu poate fi salvată deoarece aveţi deja alt element cu acelaşi nume (consultaţi <a class='linkagolroot' target='_blank'>directorul de conţinut</a>).",
-				err1Div2: "Ă_Please modify the title of your application and then save it_ș.",
-				btnOk: "Ă_Edit the application title_ș"
+				err1Div2: "Modificaţi titlul aplicaţiei, apoi salvaţi-l.",
+				btnOk: "Editaţi titlul aplicaţiei"
 			},
 			share: {
 				firstSaveTitle: "S-a reuşit salvarea aplicaţiei",
@@ -66,7 +66,7 @@
 				shareHeader2: "Aplicaţia este accesibilă pentru membrii organizaţiei (necesită autentificare).",
 				shareLinkCopy: "Copiere",
 				shareLinkCopied: "Copiat",
-				shareQ0: "Ă_How do I embed the application in a web page_ș?",
+				shareQ0: "Cum încorporez aplicaţia într-o pagină web?",
 				shareQ1Opt1: "Cum menţin aplicaţia privată?",
 				shareQ1Opt2: "Cum menţin aplicaţia privată sau o partajez public?",
 				shareA1: "Utilizaţi %SHAREIMG% în <a href='%LINK1%' target='_blank'>pagina elementului aplicaţie</a>.",
@@ -99,11 +99,11 @@
 				logoSocialExplain: "Particularizaţi linkul din antet.",
 				logoSocialText: "Text",
 				logoSocialLink: "Link",
-				lblSmallHeader: "Ă_Use compact header (no subtitle)_ș"
+				lblSmallHeader: "Utilizare antet compact (fără subtitlu)"
 			},
 			header: {
-				title: "Ă_Edit the title of your %TPL_NAME%_ș",
-				subtitle: "Ă_Edit the subtitle of your %TPL_NAME%_ș"
+				title: "Editaţi titlul %TPL_NAME%",
+				subtitle: "Editaţi subtitlul %TPL_NAME%"
 			}
 		}
 	})

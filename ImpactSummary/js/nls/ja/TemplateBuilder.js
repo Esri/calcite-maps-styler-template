@@ -49,7 +49,7 @@
                 "SelectedFeatureText": "選択されたフィーチャ",
                 "layerHelpTextMessage": "このアプリケーションには数値フィールドを持つレイヤが必要です",
                 "alertMessage": {
-                    "resetVariableMessage": "須_Are you sure you want to reset variable_鷗?",
+                    "resetVariableMessage": "変数をリセットしますか？",
                     "emptyAppTitleMessage": "アプリケーション タイトルは空にできません",
                     "emptyDescriptionMessage": "説明は空欄にできません",
                     "maxVariableSelection": "25 を超えるサブ変数は選択できません",
@@ -58,8 +58,8 @@
                     "unsavedChangesMessage": "変更が保存されていません",
                     "failMessage": "アイテムを正常に更新できませんでした",
                     "saveChangesAlert": "変更内容を保存しますか？",
-                    "variableLabelValidation": "須_Variable label cannot be empty_鷗",
-                    "subVariableLabelValidation": "須_Sub variable label cannot be empty_鷗"
+                    "variableLabelValidation": "変数のラベルは空欄にできません",
+                    "subVariableLabelValidation": "サブ変数のラベルは空にできません"
                     }
             }
         }

@@ -68,7 +68,7 @@
 				dataPicError1: "Con Tour mappa è ora necessario che un URL immagine termini con una delle seguenti estensioni: .jp(e)g, .png, .gif o .bmp.",
 				dataPicError2: "Questo requisito non influirà sull\'istanza esistente di Tour mappa pubblicata. Tuttavia, per poter utilizzare il generatore interattivo, è prima necessario risolvere il problema relativo all\'URL eseguendo una delle seguenti due azioni:",
 				dataPicError3: "Modificare gli URL",
-				dataPicError4: "é_This will add <i>#isImage</i> to the end of unsupported picture URLs. Most server support URL appendages. However, once you have performed that action, you should verify that the updated picture URLs are functional by navigating through your points. If each pictures loads, you can now save the Map Tour. If <b>pictures are broken, donâ€™t save the Map Tour</b>. Instead, reload the builder and perform the second action_È.",
+				dataPicError4: "Con questa azione il suffisso <i>#isImage</i> verrà aggiunto alla fine degli URL immagine non supportati. La maggior parte dei server supporta l\'aggiunta di suffissi agli URL. Tuttavia, una volta completata questa azione, è necessario spostarsi tra i punti per verificare che gli URL immagine aggiornati siano funzionanti. Se tutte le immagini vengono caricate, è possibile salvare il Tour mappa. Se <b>le immagini non vengono caricate, non salvare il Tour mappa</b>. Ricaricare invece il generatore ed eseguire la seconda azione.",
 				dataPicError5: "Limitare il tour alle immagini",
 				dataPicError6: "Con questa opzione tutti gli URL verranno considerati immagini, ma non sarà possibile aggiungere video utilizzando il generatore interattivo. Questa azione è reversibile qualora si decidesse di aggiungere video in futuro.",
 				dataPicError7: "Il Tour mappa è stato limitato alle immagini, pertanto non è possibile utilizzare i video. Se si sceglie di rimuovere questa limitazione, verificare che le immagini vengano caricate correttamente prima di salvare il Tour mappa. Se necessario, sarà comunque possibile ripristinare la limitazione.",
@@ -104,7 +104,7 @@
 				addLabelPicUrl: "Immagine",
 				addLabelThumbUrl: "Anteprima",
 				addTextPlaceholderUrl: "Inserire un URL dell\'immagine",
-				addTextPlaceholderUrl2: "é_Enter a YouTube page URL_È",
+				addTextPlaceholderUrl2: "Immettere l\'URL di una pagina YouTube",
 				addTextPlaceholderUrl3: "Inserire un URL della pagina Vimeo",
 				addTextPlaceholderUrl4: "Inserire un URL dell\'incorporamento del video",
 				addLabelVideo: "Video",
@@ -163,7 +163,7 @@
 				settingsFieldsReset: "Ripristinare la selezione dei campi",
 				settingsExtentExplain: "Impostare l\'estensione iniziale di Tour mappa utilizzando la mappa interattiva seguente.",
 				settingsExtentExplainBottom: "L\'estensione specificata modificherà l\'estensione iniziale della mappa. Tenere presente che, se tale estensione non include il primo punto del tour, non verrà utilizzata . In questo caso, il tour verrà aperto sul primo punto.",
-				settingsExtentDateLineError: "é_The extent cannot be across the meridian of 180Â° longitude_È",
+				settingsExtentDateLineError: "L\'estensione non può attraversare il meridiano per 180° di longitudine",
 				settingsExtentDateLineError2: "Errore di calcolo dell\'estensione",
 				settingsExtentDrawBtn: "Disegna una nuova estensione",
 				settingsExtentModifyBtn: "Modifica l\'estensione",
@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Applica"
 			},
 			headerJS:{
-				editMe: "é_Edit me_È!",
+				editMe: "Modifica utente",
 				templateTitle: "Imposta titolo modello",
 				templateSubtitle: "Imposta sottotitolo modello"
 			},
@@ -357,11 +357,11 @@
 				footerSucceed: "Importazione riuscita. Caricamento in corso"
 			},
 			viewYoutube: {
-				title: "é_YouTube import_È",
+				title: "Importazione da YouTube",
 				header: "Immettere un nome utente di YouTube per trovare video condivisi pubblicamente.",
-				pageInputLbl: "é_Enter a YouTube user name_È",
+				pageInputLbl: "Immettere un nome utente di YouTube",
 				lookupMsgError: "Utente non trovato",
-				howToFind: "é_How to find a YouTube user name_È",
+				howToFind: "Come trovare un nome utente di YouTube",
 				howToFind2: "Il nome utente è visualizzato sotto i video",
 				found: "Trovato",
 				noData: "Nessun video pubblico trovato."
@@ -442,12 +442,12 @@
 					div172: "Quando presenti, verranno sempre utilizzati i campi relativi a immagine e anteprima e gli allegati del feature service non verranno cercati.",
 					div173: "È possibile scaricare CSV e shapefile di esempio da",
 					div18: "Creazione di un feature service ospitato da CSV o shapefile",
-					div19: "é_When you create a hosted feature service from a CSV or shapefile, the attachments are not enabled by default. To enable them, open the feature serviceâ€™s details page, click the small arrow on the layer section, and you will see that option. The Map Tour will continue to use the pictures and thumbnails you have referenced through attributes. Optionally, if you want to upload your pictures as feature service attachments, you will be able to do so through two buttons on the picture panel (\"Change Picture\" and \"Change Thumbnail\")_È.",
-					div20: "é_Supported picture formats and videos_È",
-					div21: "é_Supported picture formats are: <b>.jpg, .jpeg, .png, .gif and .bmp</b>. If your media doesnâ€™t end with that extension, the Map Tour will consider it to be a video, except when using a feature service (see below)_È.",
+					div19: "Quando si crea un feature service ospitato da un CSV o shapefile, per impostazione predefinita gli allegati non sono abilitati. Per abilitarli, aprire la pagina dei dettagli del feature service e fare clic sulla piccola freccia sulla sezione Layer per visualizzare l\'opzione. Dopo aver effettuato quest\'operazione, Tour mappa continuerà a utilizzare le immagini e le anteprime a cui si è fatto riferimento mediante gli attributi. Facoltativamente, se si desidera caricare le immagini come allegati di feature service, utilizzare i due pulsanti sul pannello immagini (\"Cambia immagine\" e \"Cambia anteprima\").",
+					div20: "Formati immagine e video supportati",
+					div21: "I formati immagine supportati sono: <b>.jpg, .jpeg, .png, .gif e .bmp</b>. Se il file non termina con tale estensione, verrà considerato come video nel Tour mappa, ad eccezione dei casi in cui si utilizza un feature service (vedere sotto).",
 					div22: "Il modello Tour mappa non include un lettore video, pertanto è necessario utilizzare il lettore esterno fornito dal servizio di hosting video preferito (individuare l\'opzione per incorporare il video e copiare l\'URL presente nel codice specificato). Se si desidera ospitare il video, è possibile creare una pagina HTML che contiene un lettore video, ad esempio <a href='http://www.videojs.com/'>Video.js</a>.",
 					div23: "Il generatore interattivo non prevede una finestra di dialogo per includere i video quando si utilizzano feature service senza allegati, ma è possibile effettuare questa operazione modificando i dati all\'esterno del generatore interattivo. Se in Arcgis.com Map Viewer si modificano i campi delle immagini in modo che puntino a un video esterno e si aggiunge un parametro speciale alla fine dell\'URL (#isVideo), il file multimediale verrà considerato come video.",
-					div24: "é_Note that you still need to have two valid pictures attachments or the point wonâ€™t be used. It isn't possible to use videos when using feature service attachments without the picture and thumbnail fields_È."
+					div24: "Si noti che per utilizzare il punto è comunque necessario disporre di due allegati immagine validi. Non è possibile utilizzare video quando si utilizzano allegati di feature service senza i campi immagine e anteprima."
 				},
 				tab3: {
 					title: "Personalizzazione",
@@ -487,7 +487,7 @@
 					div2a: "Condivisione del Tour tramite il generatore",
 					div2b: "Il pulsante CONDIVIDI consente di aggiornare gli elementi dell\'applicazione e della mappa Web. Se memorizzati in un elemento feature service, verranno aggiornati anche i dati del Tour. Gli eventuali altri layer aggiunti tramite ArcGIS.com Map Viewer non verranno aggiornati. In questo caso è possibile che il Tour non venga condiviso nel modo previsto. Gli elementi che già dispongono dei privilegi necessari o di privilegi superiori non verranno aggiornati.",
 					div2c: "Condivisione del Tour tramite ArcGIS Online",
-					div2d: "é_When you share the application through ArcGIS Online, it will if necessary ask you to update any dependent resources (web map, feature service, decoration layer) that arenâ€™t shared in the same way. If the Map Tour is public and one of your resources isn't shared with your audience, users will be redirected to the ArcGIS Online login page_È.",
+					div2d: "Quando si condivide l\'applicazione tramite ArcGIS Online, se necessario verrà chiesto di aggiornare le eventuali risorse dipendenti (mappa Web, feature service, layer decorazioni) non condivise nello stesso modo. Se il Tour mappa è pubblico e una delle risorse non è condivisa con il pubblico, gli utenti verranno reindirizzati alla pagina di accesso di ArcGIS Online.",
 					div3t: "Sicurezza feature service",
 					div3a: "Se si utilizza un feature service ospitato creato mediante il generatore di Tour mappa, l\'applicazione gestisce la protezione del servizio e l\'utente è il solo con privilegi di modifica, anche se il servizio è condiviso pubblicamente.",
 					div3t2: "Operazioni preliminari alla condivisione del Tour con il pubblico",

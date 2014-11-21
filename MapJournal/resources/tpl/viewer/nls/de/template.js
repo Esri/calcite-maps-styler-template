@@ -70,8 +70,8 @@
 				copy: "Kopieren",
 				copied: "Kopiert",
 				open: "Öffnen",
-				embed: "ä_Embed in web page_Ü",
-				embedExplain: "ä_Use the following HTML code to embed the journal in a web page_Ü.",
+				embed: "In Webseite einbetten",
+				embedExplain: "Verwenden Sie den folgenden HTML-Code, um das Journal in eine Webseite einzubetten.",
 				size: "Größe (Breite/Höhe):"
 			}
         }

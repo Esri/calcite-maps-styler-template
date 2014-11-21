@@ -17,25 +17,25 @@
 define(
     ({
       "map": {
-         "error": "ı_Unable to create map_İ"
+         "error": "Harita oluşturulamıyor"
       },
       "location": {
-         "name": "ı_Name_İ",
-         "current": "ı_Current Location_İ",
-         "address": "ı_Address_İ",
-         "latitude": "ı_Latitude_İ",
-         "longitude": "ı_Longitude_İ",
-         "use": "ı_Use this location_İ",
-         "error": "ı_Unable to use this location_İ"
+         "name": "Ad",
+         "current": "Mevcut Konum",
+         "address": "Adres",
+         "latitude": "Enlem",
+         "longitude": "Boylam",
+         "use": "Bu konumu kullan",
+         "error": "Bu konum kullanılamıyor"
       },
       "tooltips": {
-         "toggle": "ı_Show/Hide_İ",
-         "reset": "ı_Reset_İ",
-         "locate": "ı_Find my location_İ",
-         "directions": "ı_Directions_İ",
-         "filter": "ı_Filter_İ",
-         "close": "ı_Close_İ",
-         "reverse": "ı_Reverse_İ"
+         "toggle": "Göster/Gizle",
+         "reset": "Sıfırla",
+         "locate": "Konumumu bul",
+         "directions": "Doğrultular",
+         "filter": "Filtre",
+         "close": "Kapat",
+         "reverse": "Ters"
       }
    })
 );

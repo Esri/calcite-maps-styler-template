@@ -9,8 +9,8 @@
       general:"Fejl"
     },
 	legToggle:{
-	  up:"ø_MAP LEGEND â–²_å",
-	  down:"ø_MAP LEGEND â–¼_å"
+	  up:"SIGNATURFORKLARING TIL KORT â–²",
+	  down:"SIGNATURFORKLARING TIL KORT â–¼"
 	},
 	loading:{
 		message: "Indlæser kort"

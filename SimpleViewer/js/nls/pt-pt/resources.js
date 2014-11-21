@@ -5,11 +5,11 @@
         }, 
         tools: {         
             search: {
-                error: "ã_Location could not be found_Ç",
-                notWhatYouWanted: "ã_Not what you wanted_Ç?",
-                selectAnother: "ã_Select another location_Ç",
-                currentLocation: "ã_Current Location_Ç",
-                title: "ã_Location_Ç"
+                error: "A localização não pode ser encontrada",
+                notWhatYouWanted: "Não é o que queria?",
+                selectAnother: "Selecionar outra localização",
+                currentLocation: "Localização Atual",
+                title: "localização"
             },
         	legend: "Legenda",
         	 about: "Sobre"

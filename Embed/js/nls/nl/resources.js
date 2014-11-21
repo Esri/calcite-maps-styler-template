@@ -18,31 +18,31 @@ define(
      ({
         "tools":{
             "search":{
-                "error": "Ĳ_Location could not be found_ä",
-                "notWhatYouWanted": "Ĳ_Not what you wanted_ä?",
-                "selectAnother": "Ĳ_Select another location_ä",
-                "currentLocation": "Ĳ_Current Location_ä",
-                "title": "Ĳ_Location_ä"
+                "error": "Locatie is niet gevonden",
+                "notWhatYouWanted": "Niet wat u wilde?",
+                "selectAnother": "Een andere locatie selecteren",
+                "currentLocation": "Huidige locatie",
+                "title": "Locatie"
             },
             "basemap":{
-                    "label": "Ĳ_Basemap_ä",
-                    "title": "Ĳ_Select a Basemap_ä"
+                    "label": "Basiskaart",
+                    "title": "Een basiskaart selecteren"
             },
             "legend":{
-                "title": "Ĳ_Legend_ä"
+                "title": "Legenda"
             },
             "details":{
-                "title": "Ĳ_Map Details_ä",
-                "error": "Ĳ_Update the web map description with the details to display in this section_ä."
+                "title": "Kaartdetails",
+                "error": "Update de webkaartbeschrijving met de details om in deze sectie weer te geven."
             },
             "popup": {
-                "title": "Ĳ_Info_ä",
-                "instructions": "Ĳ_Select a feature on the map to view details_ä."
+                "title": "Info",
+                "instructions": "Selecteer een object op de kaart om de details te bekijken."
             }
 
         },
         "map": {
-            "error": "Ĳ_Unable to create map_ä"
+            "error": "Kan geen kaart maken"
         }
     })
 );

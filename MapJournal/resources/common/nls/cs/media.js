@@ -62,7 +62,7 @@
 				url: "Adresa URL videa ve službě Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Ř_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_ů.",
+				explain1: "Tato aplikace nedokáže přehrávat videa v původním formátu (tj. avi, mpeg), ale dokáže přehrávat hostované videosoubory s vestavěným přehrávačem (tj. YouTube nebo Vimeo).",
 				explain2: "Tuto funkci nabízí většina online služeb pro hostování videa. Musíte najít možnost pro vložení videa, zkopírovat uvedený kód a použít %WEBPAGE%.",
 				explain3: "Video také můžete hostovat sami. Stačí vytvořit HTML stránku, která používá videopřehrávač, jako je například %EXAMPLE%, hostovat danou stránku a také použít %WEBPAGE%.",
 				webpage: "Prvek webové stránky"
@@ -93,14 +93,14 @@
 				lblPosition3: "Přizpůsobit",
 				lblPosition4: "Roztáhnout",
 				lblPosition5: "Vlastní",
-				tooltipDimension: "Hodnotu lze uvést v 'px' nebo '%'",
+				tooltipDimension: "Hodnotu lze uvést v \'px\' nebo \'%\'",
 				tooltipDimension2: "Hodnota musí být uvedena v 'px'.",
 				lblPosition2Explain: "(může dojít k ořezu)",
 				lblPosition3Explain: "(nedojde k ořezu)",
 				lblPosition3Explain2: "(šířka se vždy přizpůsobí panelu)",
 				lblPosition4Explain: "(může dojít ke zkreslení)",
-				unloadLbl: "Ř_Unload when reader navigates away_ů",
-				unloadHelp: "Ř_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_ů."
+				unloadLbl: "Zrušit spuštění, když čtenář opustí stránku",
+				unloadHelp: "Pokud webová stránka obsahuje audio nebo video média, nechte tuto možnost zaškrtnutou, aby se přehrávání tohoto obsahu ukončilo, pokud čtenář stránku opustí. Zrušte její zaškrtnutí, pokud například chcete, aby hudební podkres hrál po celou dobu prohlížení příběhu.<br />Pokud je webová stránka aplikací, zrušte zaškrtnutí této možnosti, aby se aplikace nespouštěla znovu, když se k ní čtenář vrátí."
 			},
 			editorActionGeocode: {
 				lblTitle: "Najít adresu nebo místo",

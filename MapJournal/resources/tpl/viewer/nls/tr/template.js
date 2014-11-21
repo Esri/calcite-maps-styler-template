@@ -70,8 +70,8 @@
 				copy: "Kopyala",
 				copied: "Kopyalandı",
 				open: "Aç",
-				embed: "ı_Embed in web page_İ",
-				embedExplain: "ı_Use the following HTML code to embed the journal in a web page_İ.",
+				embed: "Web sayfasının içine yerleştir",
+				embedExplain: "Bülteni bir web sayfasının içine yerleştirmek için aşağıdaki HTML kodunu kullanın.",
 				size: "Boyut (genişlik/yükseklik):"
 			}
         }

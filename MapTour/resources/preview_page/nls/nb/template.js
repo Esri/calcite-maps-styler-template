@@ -3,7 +3,7 @@
 		firstPane: {
 			head: "<span class='highlightText'>Malen for Map Tour</span> gjør at ArcGIS Online-brukere på alle nivåer, inkludert den offentlige kontoen som er gratis, kan opprette og redigere en stedsbasert fortelling som kombinerer bilder, tekst og kart fra:",
 			list0: "Bilder som er lagret på større nettbaserte bildedelingstjenester som Flickr, Picasa og Facebook, eller på et nettsted eller en webserver",
-			list1: "å_Pictures not yet stored online that will be stored as Feature Service attachments (limited to ArcGIS for Organizations members)_ø"
+			list1: "Bilder som ennå ikke er lagret på Internett, som lagres som vedlegg til geoobjektstjenester (begrenset til medlemmer av ArcGIS for Organizations)"
 		},
 		secondPane: {
 			head: "<span class='highlightText'>Malen</span> består av brukervennlige redigeringsverktøy som omfatter:",
@@ -17,8 +17,8 @@
 			list1: "La din egen webserver eller en tredjepartsserver være vert for malen"
 		},
 		fourthPane: {
-			head: "å_<a href='http://storymaps.esri.com/home/' target='_blank'>See Esriâ€™s Story Maps site</a> to learn more about creating and sharing stories. Resources include_ø:",
-			list0: "å_Story maps published by Esriâ€™s story maps teams_ø",
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Se Esri-webområdet for fortellende kart</a> for å få mer informasjon om hvordan du oppretter og deler fortellinger. Ressursene omfatter:",
+			list0: "Fortellende kart publisert av Esris team for fortellende kart",
 			list1: "Et utvalg maler som kan lastes ned",
 			list2: "Beste praksis-veiledninger", 
 			list3: "Et galleri bestående av fortellingskart med et økende antall historiefortellere"
