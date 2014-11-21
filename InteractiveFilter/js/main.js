@@ -222,7 +222,7 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
                     var clear = domConstruct.create("span", {
                         className: "cancelButton icon-cancel",
                         id: layer.id + "_clear",
-                        title: this.config.i18n.viewer.clear_text
+                        title: "Clear" //this.config.i18n.viewer.clear_text
                     }, filterGroup);
                     on(clear, "click", lang.hitch(this, function () {
                         if (layer.layerType && layer.layerType === "ArcGISStreamLayer") {
