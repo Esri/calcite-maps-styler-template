@@ -37,7 +37,9 @@ app.cfg = {
 			positions: ["left", "right"],
 			themes: [
 				{
-					name: "tab-default-1", 
+					name: "tab-default-1",
+					// Group of matching theme across layout
+					group: "default",
 					themeMajor: "white", 
 					// Header background
 					header: "#28323A",
@@ -61,6 +63,7 @@ app.cfg = {
 					softBtn: "#444444", 
 					// Esri logo "white" or "black"
 					esriLogo: "white",
+					esriLogoMobile: "black",
 					tab: "#5F788B",
 					tabActive: "#58ACCB",
 					tabHover: "#49879E",
@@ -70,6 +73,7 @@ app.cfg = {
 				},
 				{
 					name: "tab-default-2", 
+					group: "antique",
 					themeMajor: "white", 
 					header: "#726458",
 					headerTitle: "#FFFFFF", 
@@ -82,6 +86,7 @@ app.cfg = {
 					softText: "#4D4D4D", 
 					softBtn: "#444444", 
 					esriLogo: "white",
+					esriLogoMobile: "black",
 					tab: "#9B9693",
 					tabActive: "#BBA594",
 					tabHover: "#A49181",
@@ -91,6 +96,7 @@ app.cfg = {
 				},
 				{
 					name: "tab-default-3", 
+					group: "bright",
 					themeMajor: "white", 
 					header: "#6195BE",
 					headerTitle: "#FFFFFF", 
@@ -103,6 +109,7 @@ app.cfg = {
 					softText: "#444444", 
 					softBtn: "#444444", 
 					esriLogo: "white",
+					esriLogoMobile: "black",
 					tab: "#4A7698",
 					tabActive: "#A4D1ED",
 					tabHover: "#97CCF6",
@@ -112,7 +119,8 @@ app.cfg = {
 				},
 				{
 					name: "tab-default-4", 
-					themeMajor: "white", 
+					group: "dark",
+					themeMajor: "black", 
 					header: "#28323A",
 					headerTitle: "#FFFFFF", 
 					headerText: "#FEE680", 
@@ -124,12 +132,36 @@ app.cfg = {
 					softText: "#FEE680", 
 					softBtn: "#FEE680", 
 					esriLogo: "white",
+					esriLogoMobile: "white",
 					tab: "#666666",
 					tabActive: "#8C8C8C",
 					tabHover: "#6D7072",
 					tabText: "#FEE680",
 					tabTextHover: "#FEE680",
 					tabTextActive: "#FEE680"
+				},
+				{
+					name: "tab-default-5", 
+					group: "green",
+					themeMajor: "white", 
+                    header: "#3C4739",
+                    headerTitle: "#D4E7C2", 
+                    headerText: "#81997A", 
+                    panel: "#D4E7C2", 
+                    text: "#231F20", 
+                    textLink: "#555555", 
+                    media: "#FFFFFF", 
+                    mapControls: "#DBD9DA",    
+                    softText: "#444444", 
+                    softBtn: "#444444", 
+                    esriLogo: "white",
+                    esriLogoMobile: "black",
+                    tab: "#AFBF9F",
+                    tabActive: "#D4E7C2",
+                    tabHover: "#B4D895",
+                    tabText: "#5B754C",
+                    tabTextHover: "#5B754C",
+                    tabTextActive: "#5B754C"
 				}
 			]
 		},
@@ -141,7 +173,8 @@ app.cfg = {
 			positions: ["left", "right"],
 			themes: [
 				{
-					name: "accordion-default-1", 
+					name: "accordion-default-1",
+					group: "default",
 					themeMajor: "white", 
 					header: "#28323A",
 					headerTitle: "#FFFFFF", 
@@ -154,6 +187,7 @@ app.cfg = {
 					softText: "#444444", 
 					softBtn: "#444444", 
 					esriLogo: "white", 
+					esriLogoMobile: "black",
 					// Arrow and entries separator
 					accordionArrow: "#58ADCC",
 					accordionArrowActive: "#FFFFFF",
@@ -163,6 +197,7 @@ app.cfg = {
 				},
 				{
 					name: "accordion-default-2", 
+					group: "antique",
 					themeMajor: "white", 
 					header: "#726458",
 					headerTitle: "#FFFFFF", 
@@ -175,6 +210,7 @@ app.cfg = {
 					softText: "#4D4D4D", 
 					softBtn: "#444444", 
 					esriLogo: "white", 
+					esriLogoMobile: "black",
 					accordionArrow: "#9B9693",
 					accordionArrowActive: "#404040",
 					accordionArrowHover: "#747474",
@@ -183,6 +219,7 @@ app.cfg = {
 				},
 				{
 					name: "accordion-default-3", 
+					group: "bright",
 					themeMajor: "white", 
 					header: "#68AAE1",
 					headerTitle: "#FFFFFF", 
@@ -195,6 +232,7 @@ app.cfg = {
 					softText: "#444444", 
 					softBtn: "#444444", 
 					esriLogo: "white", 
+					esriLogoMobile: "black",
 					accordionArrow: "#ACDAFF",
 					accordionArrowActive: "#4A7698",
 					accordionArrowHover: "#73A0C4",
@@ -203,7 +241,8 @@ app.cfg = {
 				},
 				{
 					name: "accordion-default-4", 
-					themeMajor: "white", 
+					group: "black",
+					themeMajor: "black", 
 					header: "#404040",
 					headerTitle: "#FFFFFF", 
 					headerText: "#E5FA84", 
@@ -215,11 +254,34 @@ app.cfg = {
 					softText: "#E5FA84", 
 					softBtn: "#E5FA84", 
 					esriLogo: "white", 
+					esriLogoMobile: "white",
 					accordionArrow: "#8C8C8C",
 					accordionArrowActive: "#FFFFFF",
 					accordionArrowHover: "#C0C0C0",
 					accordionNumber: "#E5FA84",
 					accordionTitle: "#D8D8D8"
+				},
+				{
+					name: "accordion-default-5", 
+					group: "green",
+                    themeMajor: "white", 
+                    header: "#3C4739",
+                    headerTitle: "#D4E7C2", 
+                    headerText: "#81997A", 
+                    panel: "#D4E7C2", 
+                    text: "#231F20", 
+                    textLink: "#555555", 
+                    media: "#FFFFFF", 
+                    mapControls: "#DBD9DA",    
+                    softText: "#444444", 
+                    softBtn: "#444444", 
+                    esriLogo: "white",
+                    esriLogoMobile: "black",
+                	accordionArrow: "#231F20",
+					accordionArrowActive: "#99B87E",
+					accordionArrowHover: "#81997A",
+					accordionNumber: "#3C4739",
+					accordionTitle: "#5B754C"
 				}
 			]
 		},
@@ -231,7 +293,8 @@ app.cfg = {
 			positions: ["left", "right"],
 			themes: [
 				{
-					name: "bullet-default-1", 
+					name: "bullet-default-1",
+					group: "default",
 					themeMajor: "white", 
 					header: "#28323A",
 					headerTitle: "#FFFFFF", 
@@ -244,6 +307,7 @@ app.cfg = {
 					softText: "#444444", 
 					softBtn: "#444444", 
 					esriLogo: "white",
+					esriLogoMobile: "black",
 					tab: "#5F788B",
 					tabActive: "#58ACCB",
 					tabHover: "#49879E",
@@ -253,6 +317,7 @@ app.cfg = {
 				},
 				{
 					name: "bullet-default-2", 
+					group: "antique",
 					themeMajor: "white", 
 					header: "#726458",
 					headerTitle: "#FFFFFF", 
@@ -265,6 +330,7 @@ app.cfg = {
 					softText: "#4D4D4D", 
 					softBtn: "#444444", 
 					esriLogo: "white",
+					esriLogoMobile: "black",
 					tab: "#9B9693",
 					tabActive: "#BBA594",
 					tabHover: "#A49181",
@@ -274,6 +340,7 @@ app.cfg = {
 				},
 				{
 					name: "bullet-default-3", 
+					group: "bright",
 					themeMajor: "white", 
 					header: "#6195BE",
 					headerTitle: "#FFFFFF", 
@@ -286,6 +353,7 @@ app.cfg = {
 					softText: "#444444", 
 					softBtn: "#444444", 
 					esriLogo: "white",
+					esriLogoMobile: "black",
 					tab: "#4A7698",
 					tabActive: "#A4D1ED",
 					tabHover: "#97CCF6",
@@ -295,7 +363,8 @@ app.cfg = {
 				},
 				{
 					name: "bullet-default-4", 
-					themeMajor: "white", 
+					group: "dark",
+					themeMajor: "black", 
 					header: "#28323A",
 					headerTitle: "#FFFFFF", 
 					headerText: "#FEE680", 
@@ -307,12 +376,36 @@ app.cfg = {
 					softText: "#FEE680", 
 					softBtn: "#FEE680", 
 					esriLogo: "white",
+					esriLogoMobile: "white",
 					tab: "#666666",
 					tabActive: "#8C8C8C",
 					tabHover: "#6D7072",
 					tabText: "#FEE680",
 					tabTextHover: "#FEE680",
 					tabTextActive: "#FEE680"
+				},
+				{
+					name: "bullet-default-5", 
+					group: "green",
+                    themeMajor: "white", 
+                    header: "#3C4739",
+                    headerTitle: "#D4E7C2", 
+                    headerText: "#81997A", 
+                    panel: "#D4E7C2", 
+                    text: "#231F20", 
+                    textLink: "#555555", 
+                    media: "#FFFFFF", 
+                    mapControls: "#DBD9DA",    
+                    softText: "#444444", 
+                    softBtn: "#444444", 
+                    esriLogo: "white",
+                    esriLogoMobile: "black",
+                    tab: "#AFBF9F",
+                    tabActive: "#D4E7C2",
+                    tabHover: "#B4D895",
+                    tabText: "#5B754C",
+                    tabTextHover: "#5B754C",
+                    tabTextActive: "#5B754C"
 				}
 			]
 		}

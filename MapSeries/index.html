@@ -59,7 +59,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.0.0-beta1',
+				version: '1.0.0-beta2',
 				pathJSAPI: '//jsdev.arcgis.com/3.12/'
 			};
 		</script>
@@ -118,61 +118,68 @@
 			</div>
 		</div>
 		
+		<!-- Tab/bullet navigation bar -->
 		<div id="nav-bar" class="mainViewAboveMap"></div>
 		
 		<!-- Content -->
 		<div id="contentPanel" class="mobileView">
-			<div id="mainStagePanel">
-				<div id="mainStagePanelInner">
-					<!-- Maps and media are injected here -->
-					<div class="medias"></div>
-					<!-- Loading -->
-					<div id="mainStageLoadingIndicator" class="loadingIndicator">
-					<div class="load-indicator icon-spin1 animate-spin"></div>
-						<script>
-							// Alternate loader on IE and FF
-							if (navigator.userAgent.indexOf('MSIE') !== -1 
-									|| navigator.appVersion.indexOf('Trident/') > 0
-									|| navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-								document.write('\
-									<style>\
-								 		.load-indicator { display: none; }\
-								 		.loadingIndicator { opacity: 1.0; margin-top: -60px; margin-left: -32px; }\
-								 	</style>\
-								    <img src="resources/tpl/viewer/icons/loading-light.gif" />');
-							}
-						</script>
-					</div>
-					<!-- Mobile info button -->
-					<div id="mobileInfoBtn" class="mobileInfoBtn"></div>
-					<!-- Builder -->
-					<div id="builderQuotes"></div>
-					<div id="builderLanding"></div>
-					<div id="builderHelp" class="centerAlignOnFloat"></div>
-				</div>
-			</div>
-			
-			<div id="accordionPanel" class="accordionPanel">
-				<div class="content"></div>
-				<div class="builder builder-content-panel">
-					<div class="builder-content-panel-group builder-add">
-						<div class="builder-btn"></div>
-						<div class="builder-lbl"></div>
-					</div>
-					<div class="builder-content-panel-group builder-organize">
-						<div class="builder-btn"></div>
-						<div class="builder-lbl"></div>
-					</div>
-				</div>
-			</div>
-			
-			<div id="descLegendPanel" class="descLegendPanel">
-				<div class="descriptions"></div>
-				<div class="legends"></div>
-			</div>
+			<table class="containerPanelInner">
+				<tr>
+					<!-- Side Accordion panel -->
+					<td id="accordionPanel" class="accordionPanel">
+						<div class="content"></div>
+						<div class="builder builder-content-panel">
+							<div class="builder-content-panel-group builder-add">
+								<div class="builder-btn"></div>
+								<div class="builder-lbl"></div>
+							</div>
+							<div class="builder-content-panel-group builder-organize">
+								<div class="builder-btn"></div>
+								<div class="builder-lbl"></div>
+							</div>
+						</div>
+					</td>
+					<!-- Main Stage -->
+					<td id="mainStagePanel">
+						<div id="mainStagePanelInner">
+							<!-- Maps and media are injected here -->
+							<div class="medias"></div>
+							<!-- Loading -->
+							<div id="mainStageLoadingIndicator" class="loadingIndicator">
+							<div class="load-indicator icon-spin1 animate-spin"></div>
+								<script>
+									// Alternate loader on IE and FF
+									if (navigator.userAgent.indexOf('MSIE') !== -1 
+											|| navigator.appVersion.indexOf('Trident/') > 0
+											|| navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+										document.write('\
+											<style>\
+										 		.load-indicator { display: none; }\
+										 		.loadingIndicator { opacity: 1.0; margin-top: -60px; margin-left: -32px; }\
+										 	</style>\
+										    <img src="resources/tpl/viewer/icons/loading-light.gif" />');
+									}
+								</script>
+							</div>
+							<!-- Mobile info button -->
+							<div id="mobileInfoBtn" class="mobileInfoBtn"></div>
+							<!-- Builder -->
+							<div id="builderQuotes"></div>
+							<div id="builderLanding"></div>
+							<div id="builderHelp" class="centerAlignOnFloat"></div>
+						</div>
+						
+						<!-- Description and legend floating panel -->
+						<div id="descLegendPanel" class="descLegendPanel">
+							<div class="descriptions"></div>
+							<div class="legends"></div>
+						</div>
+					</td>
+				</tr>
+			</table>
 		</div>
-		<!-- /Content -->
 
+		<!-- Mobile footer -->
 		<div id="footerMobile" class="footerMobile mobileView mainViewBelowMap">
 			<!-- Mobile view footer is injected here -->
 		</div>		
@@ -312,7 +319,7 @@
 				</tr>
 			</table>
 		</div>
-		<!-- <script src="//gregl.esri.com:8080/target/target-script-min.js"></script>-->
+		
 		<script type="text/javascript" src="app/main-config.js"></script>
 		<script type="text/javascript">
 			require(["dojo/topic"], function(topic) {
