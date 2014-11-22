@@ -128,6 +128,10 @@ define([
                   var cGraphics = [];
                   for (var i in features) {
                      var feature = features[i];
+                     // Normalizing point for wrap around map support
+                     // TO DO: Look into doing this only when required since it does affect performance
+                     var ptNorm = feature.geometry.normalize();
+                     feature.geometry = ptNorm;
                      if (ext.contains(feature.geometry)) {
                         cGraphics.push(feature);
                      }
