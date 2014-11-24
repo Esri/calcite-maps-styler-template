@@ -29,7 +29,7 @@ define([
          me.clusterSize = options.clusterSize || 100;
 
          me.color = options.color || '#ff0000';
-
+         
          //base connections to update clusters during user/map interaction
          me._map.on('zoom-start', lang.hitch(me, me._handleMapZoomStart));
          me._map.on('extent-change', lang.hitch(me, me._handleMapExtentChange));
@@ -94,12 +94,12 @@ define([
 
       //fires when cluster layer is loaded, but not added to map yet.
       _handleLayerLoaded : function() {
-         this.clusterFeatures();
+         //this.clusterFeatures();
       },
-
+      
       // cluster features
       clusterFeatures : function() {
-
+         
          this.clear();
          var features = this._features;
          if (features.length > 0) {
@@ -108,7 +108,16 @@ define([
             var clusterGraphics = [];
 
             var sr = this._map.spatialReference;
-            var mapExt = this._map.extent;
+            var orgExt = this._map.extent;
+            var mapExt = orgExt;
+            var normExts = orgExt.normalize();
+            if (normExts.length > 0) {
+               mapExt = normExts[0];
+               for (var j=1; i<normExts.length; j++) {
+                  mapExt = mapExt.union(normExts[j]);
+               }
+            }
+            //var mapExt = this._map.extent;
             var o = new Point(mapExt.xmin, mapExt.ymax, sr);
 
             var rows = Math.ceil(this._map.height / clusterSize);
@@ -128,10 +137,6 @@ define([
                   var cGraphics = [];
                   for (var i in features) {
                      var feature = features[i];
-                     // Normalizing point for wrap around map support
-                     // TO DO: Look into doing this only when required since it does affect performance
-                     var ptNorm = feature.geometry.normalize();
-                     feature.geometry = ptNorm;
                      if (ext.contains(feature.geometry)) {
                         cGraphics.push(feature);
                      }

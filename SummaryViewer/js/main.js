@@ -13,6 +13,7 @@ define([
         "dojo/mouse",
         "esri/arcgis/utils", 
         "esri/dijit/BasemapGallery",
+        "esri/geometry/normalizeUtils",
         "esri/graphic",
         "esri/graphicsUtils",
         "esri/tasks/query",
@@ -34,6 +35,7 @@ define([
         mouse,
         arcgisUtils, 
         BasemapGallery,
+        normalizeUtils,
         Graphic,
         graphicsUtils,
         Query,
@@ -657,17 +659,30 @@ define([
       summarizeFeatures : function() {
          var ext = this.map.extent;
          var features = [];
-         for (var i = 0; i < this.opLayer.graphics.length; i++) {
-            var gra = this.opLayer.graphics[i];
-            if (ext.intersects(gra.geometry)) {
-               features.push(gra);
+         
+         normalizeUtils.normalizeCentralMeridian([ext], null, 
+            lang.hitch(this, function(results){
+               if (results.length > 0) {
+                  var poly  = results[0];
+                  var normExt = poly.getExtent();
+                  for (var i = 0; i < this.opLayer.graphics.length; i++) {
+                     var gra = this.opLayer.graphics[i];
+                     if (normExt.intersects(gra.geometry)) {
+                        features.push(gra);
+                     }
+                  }
+                  if (this.cluster)
+                     this.clusterLayer.setFeatures(features);
+                  this.count = features.length;
+                  this.sumData = this.summarizeAttributes(features);
+                  this.updateCounters();
+               }
+            }), 
+            function(error){
+               console.log(error);
             }
-         }
-         if (this.cluster)
-            this.clusterLayer.setFeatures(features);
-         this.count = features.length;
-         this.sumData = this.summarizeAttributes(features);
-         this.updateCounters();
+         );
+         
       },
 
       // cluster click
