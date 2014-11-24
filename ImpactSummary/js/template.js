@@ -322,7 +322,7 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
                 // if webmap does not exist
                 if(!this.config.webmap){
                     // use default webmap for boilerplate
-                    this.config.webmap = "89101dfb026243558ac74ce5b8c223a8";   
+                    this.config.webmap = "24e01ef45d40423f95300ad2abc5038a";   
                 }
                 arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
                     // ArcGIS.com allows you to set an application extent on the application item. Overwrite the
