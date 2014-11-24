@@ -1,8 +1,9 @@
-Built on 10/13/2014 12:34:35.73 from
+Built on 11/24/2014 14:10:32.97 from
 repository local-government-online-apps
-branch portal_preview
-commit 02c9cac30626d1c011d45cf2a434c5b659d0dec2
+branch release_3.6
+commit d3d6dd3babcdc490ab89c2a50997fc7356b2df38
+Merge: 99feb67 02c9cac
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Oct 13 10:15:18 2014 -0700
+Date:   Mon Nov 24 14:09:44 2014 -0800
 
-    Only do try-it substitution if in hosted environment and not in Portal
+    Merge branch 'portal_preview' into develop
