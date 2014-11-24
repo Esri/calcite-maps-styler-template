@@ -113,7 +113,7 @@ define([
             var normExts = orgExt.normalize();
             if (normExts.length > 0) {
                mapExt = normExts[0];
-               for (var j=1; i<normExts.length; j++) {
+               for (var j=1; j<normExts.length; j++) {
                   mapExt = mapExt.union(normExts[j]);
                }
             }
