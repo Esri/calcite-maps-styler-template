@@ -37,7 +37,7 @@ define(
             },
             "popup": {
                 "title": "Información",
-                "instructions": "Selecciona una función en el mapa para ver los detalles."
+                "instructions": "Selecciona una entidad en el mapa para ver los detalles."
             }
 
         },

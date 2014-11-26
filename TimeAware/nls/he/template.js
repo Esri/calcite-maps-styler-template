@@ -31,7 +31,7 @@
     },
     legend: {
       label: "מקרא",
-      layerMessage: "אין שכבות אופרטיביות"
+      layerMessage: "אין שכבות תפעוליות"
     }
   }
 })

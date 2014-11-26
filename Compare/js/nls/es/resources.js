@@ -26,7 +26,7 @@ define(
             },
             sync: {
                 label: "Sincronizar extensión del mapa",
-                tooltip: "Sincronizar a la extensión de este mapa"
+                tooltip: "Sincroniza a la extensión de este mapa"
             }
         }
     })

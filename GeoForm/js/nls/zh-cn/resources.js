@@ -93,7 +93,7 @@
             invalidNumber: "请输入有效${openStrong}整数${closeStrong}值，范围在 -2147483648 到 2147483647 之间。",
             invalidFloat: "请输入有效${openStrong}浮点${closeStrong}值。",
             invalidDouble: "请输入有效${openStrong}双精度${closeStrong}值。",
-            invalidLatLong: "请输入有效的纬度坐标和经度坐标。",
+            invalidLatLong: "请输入有效的经纬度坐标。",
             invalidUTM: "请输入有效的 UTM 坐标。",
             invalidUSNG: "请输入有效的 USNG 坐标。",
             invalidMGRS: "请输入有效的 MGRS 坐标。",

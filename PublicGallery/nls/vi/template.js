@@ -83,7 +83,7 @@
                 "findPlaceholder": "Tìm một địa chỉ",
                 "aboutHeader": "Về bản đồ này",
                 "layersHeader": "Lớp",
-                "enterFullscreen": "Chế độ xem toàn màn hình",
+                "enterFullscreen": "Chế độ xem Toàn màn hình",
                 "exitFullscreen": "Thoát Xem toàn màn hình",
                 "arcgisLink": "Chi tiết Mục",
                 "moreInformation": "Thông tin khác",

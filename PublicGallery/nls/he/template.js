@@ -10,7 +10,7 @@
                 "createMap": "לא ניתן ליצור מפה",
                 "general": "שגיאה",
                 "bingError": "הפצת אפליקציה זו דורשת מפתח מפות Bing משלך.",
-                "noLayers": "אין שכבות אופרטיביות",
+                "noLayers": "אין שכבות תפעוליות",
                 "noSearchResults": "מצטערים, לא נמצאו תוצאות.",
                 "noGroupResults": "הקבוצה לא נמצאה.",
                 "noMatches": "לא נמצאו התאמות.",
@@ -23,7 +23,7 @@
                 "legendButtonTitle": "מקרא מפה",
                 "aboutButton": "אודות",
                 "aboutButtonTitle": "אודות מפה",
-                "message": "אין שכבות אופרטיביות"
+                "message": "אין שכבות תפעוליות"
             },
             "groupPage": {
                 "showAllMaps": "הצג את כל המפות",
@@ -94,7 +94,7 @@
                 "ownerHeader": "יוצר:",
                 "switchBasemap": "החלף מפת בסיס",
                 "getMobileApp": "השג אפליקציה",
-                "constraintsHeading": "השתמש במגבלות",
+                "constraintsHeading": "השתמש באילוצים",
                 "createdLabel": "נוצר",
                 "noDescription": "אין תיאור.",
                 "detailsLabel": "פרטים"

@@ -25,7 +25,7 @@ define(
          "address": "Dirección",
          "latitude": "Latitud",
          "longitude": "Longitud",
-         "use": "Usa esta ubicación",
+         "use": "Usar esta ubicación",
          "error": "No se puede usar esta ubicación"
       },
       "tooltips": {

@@ -51,7 +51,7 @@
 				firstSavePreview: "תצוגה מקדימה",
 				firstSaveShare: "שתף",
 				firstSaveA1: "אם אינך מכיר את %PORTAL% או שאתה מעוניין בקיצור דרך לממשק העריכה, אתה יכול לשמור את הלינק הבא: %LINK1%",
-				firstSaveA1bis: "ניתן למצוא את האפליקציה גם ב- <a href='%LINK2%' target='_blank'>מחיצת תוכן %PORTAL%</a>.",
+				firstSaveA1bis: "ניתן למצוא את האפליקציה גם בתוך <a href='%LINK2%' target='_blank'>מחיצת תוכן %PORTAL%</a>.",
 				shareTitle: "שתף את האפליקציה שלך",
 				sharePrivateHeader: "האפליקציה שלך אינה משותפת, ​​היית רוצה לשתף אותה?",
 				sharePrivateBtn1: "שתף באופן ציבורי",
@@ -72,9 +72,9 @@
 				shareA1: "השתמש ב-%SHAREIMG% ב- <a href='%LINK1%' target='_blank'>בדף פריטי האפליקציה</a>.",
 				shareQ2bis: "כיצד אני יכול לחזור לממשק הבניה?",
 				shareA2div1: "שמור והשתמש שוב בקישור הבא %LINK1% או השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט האפליקציה</a>.",
-				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל %PORTAL% האפליקציה כוללת כפתור הפותח את כלי הבניה.",				
+				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל %PORTAL%, האפליקציה תכלול כפתור הפותח את כלי הבניה.",				
 				shareQ3: "היכן מאוחסן המידע?",
-				shareA3: "הנתונים וההגדרות של %TPL_NAME% מאוחסנות ב- <a href='%LINK2%' target='_blank'>פריט אפליקציה זה</a>. אם השתמשת ביבוא מ- Flickr, Picasa, Facebook או YouTube התמונות וקטעי הוידאו לא יוכפלו ב- %PORTAL%."
+				shareA3: "הנתונים וההגדרות של %TPL_NAME% מאוחסנות בתוך <a href='%LINK2%' target='_blank'>פריט אפליקציה זה</a>. אם השתמשת ביבוא מתוך Flickr, Picasa, Facebook או YouTube התמונות וקטעי הוידאו לא יוכפלו ב- %PORTAL%."
 			},
 			settings: {
 				header: "הגדרות",
@@ -83,7 +83,7 @@
 			settingsLayout: {
 				title: "תצוגה",
 				explain: "באיזו תצוגה תרצה להשתמש?",
-				explainInit: "אתה יכול לשנות את כל עת את סידור המפה מתוך דיאלוג ההגדרות.",
+				explainInit: "בכל זמן אתה יכול לשנות את סידור המפה מתוך דיאלוג ההגדרות.",
 				viewExample: "הצג דוגמה חיה"
 			},
 			settingsTheme: {

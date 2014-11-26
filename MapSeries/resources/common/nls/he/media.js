@@ -30,7 +30,7 @@
 			imageSelectorFacebook: {
 				leftHeader: "משתמש פייסבוק",
 				rightHeader: "עמוד פייסבוק",
-				pageExplain: "דף Facebook הוא מותג/מוצר ציבורי או אדם מפורסם, כגון <b>esrigis</b>. תוכל להשיג את שם הדף לאחר ה-\'\/' הראשון ב-URL של הדף.",
+				pageExplain: "דף Facebook הוא מותג/מוצר ציבורי או אדם מפורסם כגון <b>esrigis</b>. תוכל להשיג את שם הדף לאחר ה-\'\/' הראשון ב-URL של הדף.",
 				pageInputLbl: "שם דף",
 				lookupMsgError: "עמוד לא נמצא"
 			},

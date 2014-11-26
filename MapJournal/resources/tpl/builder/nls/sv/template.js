@@ -90,7 +90,7 @@
 				content3Div1: "Ditt innehåll är ordnat i avsnitt. Du kan ha så många avsnitt du vill (tänk dig dem som minikapitel). Flödet för kapitlen är viktigt. Med Organisera kan du ändra ordning på eller ta bort avsnitt som du vill.",
 				content4Div1: "Har du hittat ett fel eller vill du ändra ditt material? Inga problem. Titta efter redigeringsikonen i appen om du vill göra ändringar i innehållet. Du kommer att använda redigeringsfunktionerna många gånger medan du utvecklar din %TPL_NAME%!",
 				content5Div1: "När du sparar din %TPL_NAME% är den privat i början. Använd knappen Dela om du vill dela den med andra. Du kan dela din %TPL_NAME% offentligt så alla kan komma åt den.",
-				content5Div2: "Beroende på konto kanske du också kan dela din %TPL_NAME% bara med personer inom din organisation så att andra inte kommer åt den.",
+				content5Div2: "Beroende på konto kanske du också kan dela din %TPL_NAME% enbart med personer inom din organisation så att andra inte kommer åt den.",
 				content6Div1: "Titeln på startavsnittet är också titeln på din journal. Du kan tänka dig startavsnittet som försättsbladet för din berättelse. Titeln på startavsnittet fortsätter att visas när läsarna navigerar i journalen.",
 				content6Div2: "Din %LAYOUT_TITLE% behöver inte bara bestå av text, du kan även ta med foton och videoklipp för att göra berättelsen mer levande och dela upp långa stycken text!"
 			},

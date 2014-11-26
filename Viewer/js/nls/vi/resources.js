@@ -22,7 +22,7 @@ define(
         "tools":{
             "search":{
                 "error": "Không thể tìm thấy vị trí",
-                "notWhatYouWanted": "Không phải cái bạn muốn?",
+                "notWhatYouWanted": "Không phải là những gì bạn muốn?",
                 "selectAnother": "Chọn một vị trí khác",
                 "currentLocation": "Vị trí hiện tại",
                 "title": "Vị trí"
@@ -51,7 +51,7 @@ define(
         	"bookmarks": "Đánh dấu",
         	"layers": "Lớp",
         	"basemap": "Bộ sưu tập ảnh bản đồ nền",
-        	"overview": "Bản đồ tổng quan",
+        	"overview": "Bản đồ Toàn cảnh",
         	"measure": "Đo lường",
         	"edit": "Chỉnh sửa",
         	"time": "Thời gian",

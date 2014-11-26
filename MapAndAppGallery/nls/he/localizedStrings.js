@@ -76,7 +76,7 @@ define(
             falseConfigParams: "ערכי מפתחות קונפיגורציה נדרשים ריקים או לא תואמים למאפייני השכבה. הודעה זו עלולה להופיע מספר פעמים.",
             invalidLocation: "המיקום הנוכחי לא נמצא.",
             invalidProjection: "לא ניתן להטיל את המיקום הנוכחי במפה.",
-            widgetNotLoaded: "נכשל בטעינת widgets.",
+            widgetNotLoaded: "נכשל בטעינת הוידג\'ט.",
             minfontSizeGreater: "גודל מינימלי של ערך פונט בהגדרות גדול מהערך המקסימלי.",
             layerNotFound: "לא ניתן לקבל נתונים מהשכבות.",
             unableToOpenItem: "לא ניתן לפתוח פריט.",

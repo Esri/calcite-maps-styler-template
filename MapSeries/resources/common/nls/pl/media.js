@@ -62,7 +62,7 @@
 				url: "Adres URL pliku wideo dostępnego w serwisie Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Aplikacja nie jest w stanie odtwarzać zwykłych plików wideo (np. w formacie .avi, .mpeg), ale może odtwarzać hostowane pliki wideo, w które wbudowane są odtwarzacze (np. pliki dostępne w serwisie YouTube lub Vimeo).",
+				explain1: "Aplikacja nie jest w stanie odtwarzać zwykłych plików wideo (np. w formacie .avi, .mpeg), ale może odtwarzać hostowane pliki wideo, które mają wbudowane odtwarzacze (np. pliki dostępne w serwisie YouTube lub Vimeo).",
 				explain2: "Funkcja ta jest udostępniana w ramach większości usług hostowania plików wideo w Internecie, konieczne jest znalezienie opcji osadzenia pliku wideo, skopiowanie danego kodu oraz skorzystanie z witryny %WEBPAGE%.",
 				explain3: "Ewentualnie, jeżeli użytkownik chce samodzielnie hostować plik wideo, może utworzyć stronę HTML, w ramach której wykorzystywany będzie odtwarzacz plików wideo, taki jak %EXAMPLE%, hostować tę stronę, a także skorzystać z witryny %WEBPAGE%.",
 				webpage: "Obiekt witryny internetowej"

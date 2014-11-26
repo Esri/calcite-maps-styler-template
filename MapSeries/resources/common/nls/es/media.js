@@ -30,7 +30,7 @@
 			imageSelectorFacebook: {
 				leftHeader: "Usuario de Facebook",
 				rightHeader: "Página de Facebook",
-				pageExplain: "Una página de Facebook es una marca/producto público o un famoso como <b>esrigis</b>. Puedes obtener el nombre de la página después de la  primera «/» de la URL de la página.",
+				pageExplain: "Una página de Facebook es una marca/producto público o famoso como <b>esrigis</b>. Puedes obtener el nombre de la página después de la  primera «/» de la URL de la página.",
 				pageInputLbl: "Nombre de la página",
 				lookupMsgError: "No se encontró la página"
 			},
@@ -99,7 +99,7 @@
 				lblPosition3Explain: "(no se recortará)",
 				lblPosition3Explain2: "(el ancho siempre se ajusta al panel)",
 				lblPosition4Explain: "(puede distorsionarse)",
-				unloadLbl: "Descargar cuando el lector navegue afuera",
+				unloadLbl: "Detener cuando el lector abandone la sección",
 				unloadHelp: "Si la página web incluye contenido multimedia de audio o vídeo, deja marcada esta opción para evitar que el contenido se reproduzca cuando el lector navegue afuera. Desactiva la opción, por ejemplo, para que la pista de audio se siga reproduciendo a medida que el lector avanza por la historia.<br />Si la página web es una aplicación, desactiva la opción para que la aplicación no se vuelva a cargar si el lector regresa a ella."
 			},
 			editorActionGeocode: {

@@ -54,7 +54,7 @@
             submitInstructions: "Lägg till den här informationen i kartan.",
             myLocationText: "Aktuell plats",
             locationDescriptionForMoreThanOneOption: "Ange en plats för det här bidraget genom att klicka/peka på kartan eller använda något av följande alternativ.",
-            locationDescriptionForOneOption: "Ange en plats för det här bidraget genom att klicka/peka på kartan eller använda följande alternativ.",
+            locationDescriptionForOneOption: "Ange en plats för den här posten genom att klicka/peka på kartan eller använda följande alternativ.",
             locationDescriptionForNoOption: "Ange plats för den här posten genom att klicka/peka på kartan.",
             addressText: "Sök",
             geographic: "Lat/lon",

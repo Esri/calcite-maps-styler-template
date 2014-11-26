@@ -123,7 +123,7 @@
             publishText: "Publikuj",
             optionsApplicationText: "Opcje",
             titleText: "Kreator",
-            descriptionText: "GeoForm to konfigurowalny szablon umożliwiający edytowanie danych opartych na formularzach i określonych dla ${link1}usługi obiektowej${closeLink}. Aplikacja ta umożliwia użytkownikom wprowadzanie danych za pośrednictwem formularza bez konieczności korzystania z okna podręcznego mapy, z jednoczesnym wykorzystaniem potencjału ${link2}mapy internetowej${closeLink} i edytowalnych usług obiektowych. W celu spersonalizowania i wdrożenia GeoForm należy wykonać czynności przedstawione w poniższych krokach.",
+            descriptionText: "GeoForm to konfigurowalny szablon umożliwiający edytowanie danych  ${link1}usługi obiektowej${closeLink} w formularzu. Aplikacja ta umożliwia użytkownikom wprowadzanie danych za pośrednictwem formularza bez konieczności korzystania z okna podręcznego mapy, z jednoczesnym wykorzystaniem potencjału ${link2}mapy internetowej${closeLink} i edytowalnych usług obiektowych. W celu spersonalizowania i wdrożenia formularza GeoForm należy wykonać czynności przedstawione w poniższych etapach.",
             btnPreviousText: "Wstecz",
             btnNextText: "Dalej",
             webmapTabTitleText: "Wybierz mapę internetową",

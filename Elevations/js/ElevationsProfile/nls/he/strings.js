@@ -4,7 +4,7 @@
       elevationProfileTitle: "פרופיל גבהים",
       showMe: "הצג בפניי",
       selectLine: "<b>בחר</b> ישות במפה.",
-      popupRequirement: "הערה: הישות חייבת להיות בשכבה שבה האפשרות לחלונות קופצים מופעלת.",
+      popupRequirement: "הערה: הישות חייבת להיות בשכבה המאפשרת חלונות קופצים.",
       digitizeDistanceMeasureTool: "השתמש בכלי <b>מדידה</b>.",
       selectFeatureHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
       measureToolHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000",

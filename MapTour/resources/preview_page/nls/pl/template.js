@@ -17,8 +17,8 @@
 			list1: "Hostowanie szablonów na własnym serwerze internetowym lub serwerze innych firm"
 		},
 		fourthPane: {
-			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Odwiedź witrynę poświęconą mapom ze scenariuszami firmy Esri</a>, aby dowiedzieć się więcej o tworzeniu i udostępnianiu scenariuszy. Zasoby obejmują:",
-			list0: "Mapy ze scenariuszami opublikowane przez zespół twórców map z historią firmy Esri",
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Odwiedź witrynę poświęconą Story Maps firmy Esri</a>, aby dowiedzieć się więcej o tworzeniu i udostępnianiu swoich narracji. Zasoby obejmują:",
+			list0: "Story maps (mapy narracyjne) opublikowane przez zespół twórców map Esriâ€™s story maps",
 			list1: "kolekcję szablonów do pobrania,",
 			list2: "wskazówki dotyczące najlepszych praktyk,", 
 			list3: "galerię map ze scenariuszem stworzoną przez powiększającą się społeczność twórców."
