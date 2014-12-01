@@ -820,6 +820,8 @@ define([
          // num = Math.floor(value*10/ 1000000000)/10;
          // units = "BILLIONS";
          // }
+         if (value > 1000)
+            num = Math.round(value);
          if (value >= 10000000000000) {
             num = Math.floor(value * 10 / 1000000000000) / 10;
             units = "TRILLIONS";
