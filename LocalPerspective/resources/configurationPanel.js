@@ -87,7 +87,7 @@
             },
             {
                "type": "paragraph",
-               "value": "View the <a style=\"color:#007AC2;\" target=\"_blank\" href=\"http://www.arcgis.com/apps/Directions/resources/doc/addpremiumservice.html\">Configure a premium service for anonymous access<\/a> help topic for more details"
+               "value": "View the <a style=\"color:#007AC2;\" target=\"_blank\" href=\"http://www.arcgis.com/apps/LocalPerspective/resources/doc/addpremiumservice.html\">Configure a premium service for anonymous access<\/a> help topic for more details"
             },
             {
                "type" : "string",
