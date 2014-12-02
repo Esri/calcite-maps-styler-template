@@ -55,6 +55,16 @@ a {
   padding : 0 !important;
 }
 
+#geocoder{
+  position: absolute;
+  top:20px;
+  right:10px;
+  z-index: 30;
+}
+.simpleGeocoder .esriGeocoderResult{
+  color: #444;
+}
+
 #profileChartPane {
   height             : 275px;
   padding            : 0;
