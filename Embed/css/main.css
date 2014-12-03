@@ -325,9 +325,7 @@ a {
 .dark .BasemapToggle .toggleButton {
   background: #6c6d70;
 }
-.dark .BasemapToggle .basemapTitle {
-  color: #fff;
-}
+
 .dark .HomeButton .home:hover {
   background-color: #7a7b7f;
 }
