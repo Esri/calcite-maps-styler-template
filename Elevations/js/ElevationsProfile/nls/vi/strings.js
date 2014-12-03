@@ -8,7 +8,7 @@
       digitizeDistanceMeasureTool: "Sử dụng dụng cụ <b>Đo lường</b>.",
       selectFeatureHelpUrl: "http://help.arcgis.com/vi/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
       measureToolHelpUrl: "http://help.arcgis.com/vi/arcgisonline/help/index.html#//010q00000096000000",
-      hoverOver: "Di chuyển chuột qua hoặc chạm vào biểu đồ Thông tin Độ cao để hiển thị giá trị độ cao và vị trí trên bản đồ."
+      hoverOver: "Di chuột qua hoặc chạm vào biểu đồ Thông tin Độ cao để hiển thị giá trị độ cao và vị trí trên bản đồ."
     },
     buttons: {
       measureLabel: "Đo lường",

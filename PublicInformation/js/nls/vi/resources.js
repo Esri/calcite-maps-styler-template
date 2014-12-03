@@ -5,7 +5,7 @@
             views: "lượt xem."
         },
         report: {
-            flag: "Gắn cờ không phù hợp",
+            flag: "Gắn cờ là không phù hợp",
             error: "Lỗi",
             success: "Gắn cờ",
             loading: "Đang tải&hellip;"
@@ -28,11 +28,11 @@
             webcams: "Webcams.travel",
             instagram: "Instagram",
             instagramSettings: "Thiết lập Instagram",
-            igTime: "Đã tải lên trong một số ngày qua",
+            igTime: "Tải lên trong số ngày qua",
             youtube: "YouTube",
             youtubeSettings: "Thiết lập YouTube",
             ytSettingsInfo: "Xem video do người dùng tạo bao gồm nội dung trên mạng và nội dung chuyên nghiệp.",
-            ytTime: "Đã tải lên trong quá khứ",
+            ytTime: "Tải lên trong quá khứ",
             today: "Ngày",
             this_week: "Tuần",
             this_month: "Tháng",

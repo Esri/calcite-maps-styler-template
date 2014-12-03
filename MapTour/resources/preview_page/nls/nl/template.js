@@ -18,7 +18,7 @@
 		},
 		fourthPane: {
 			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Zie de site met kaartverhalen van Esri</a> voor meer informatie over het maken en delen van verhalen. Bronnen omvatten:",
-			list0: "Kaartverhalen die zijn gepubliceerd door Esri\'s story maps-teams",
+			list0: "Storymaps die zijn gepubliceerd door Esri\'s story maps-teams",
 			list1: "Een verzameling downloadbare templates",
 			list2: "Handleidingen met best practices", 
 			list3: "Een galerij met kaartverhalen van een groeiende community storytellers"

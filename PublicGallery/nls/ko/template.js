@@ -40,10 +40,10 @@
                 "modified": "날짜",
                 "title": "제목",
                 "type": "유형",
-                "numRatings": "등급",
-                "avgRating": "평균 등급",
-                "numComments": "설명",
-                "numViews": "뷰"
+                "numRatings": "평점",
+                "avgRating": "평균 평점",
+                "numComments": "의견",
+                "numViews": "조회수"
             },
             "comments": {
                 "commentsHeader": "설명",
@@ -68,12 +68,12 @@
             },
             "itemInfo": {
                 "createdLabel": "생성됨",
-                "ratingsLabel": "등급",
-                "ratingsLabelPlural": "등급",
-                "viewsLabel": "뷰",
-                "viewsLabelPlural": "뷰",
-                "commentsLabel": "설명",
-                "commentsLabelPlural": "설명",
+                "ratingsLabel": "평점",
+                "ratingsLabelPlural": "평점",
+                "viewsLabel": "조회수",
+                "viewsLabelPlural": "조회수",
+                "commentsLabel": "의견",
+                "commentsLabelPlural": "의견",
                 "modifiedLabel": "마지막으로 수정한 날짜",
                 "by": "작성자",
                 "separator": ","

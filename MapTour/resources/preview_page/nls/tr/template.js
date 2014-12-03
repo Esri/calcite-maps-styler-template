@@ -18,7 +18,7 @@
 		},
 		fourthPane: {
 			head: "Öykü oluşturma ve bunları paylaşma hakkında daha fazla bilgi almak için <a href='http://storymaps.esri.com/home/' target='_blank'>Esri’nin Öykü Haritaları sitesine</a> bakın. Kaynak arasında şunlar bulunur:",
-			list0: "Esri’nin öykü haritaları ekiplerinin yayınladığı öykü haritaları",
+			list0: "Esri\’nin öykü haritaları ekiplerinin yayınladığı öykü haritaları",
 			list1: "Seçme indirilebilir şablonlar",
 			list2: "En başarılı uygulamalar kılavuzları", 
 			list3: "Büyüyen öykü anlatıcılar topluluğunun gösterimde olduğu bir öykü haritaları galerisi"

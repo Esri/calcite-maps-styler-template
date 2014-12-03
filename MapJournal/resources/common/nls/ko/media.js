@@ -10,7 +10,7 @@
 				lblExternal: "웹 페이지",
 				disabled: "이 기능은 관리자가 사용하지 않도록 설정했습니다.",
 				url: "이미지의 웹 주소를 수동으로 입력하려면",
-				userLookup: "앨범 로드",
+				userLookup: "앨범 불러오기",
 				notImplemented: "아직 구현되지 않았습니다.",
 				noData: "공개 앨범을 찾을 수 없음"
 			},
@@ -25,7 +25,7 @@
 			imageSelectorFlickr: {
 				userInputLbl: "사용자 이름",
 				signInMsg2: "사용자를 찾을 수 없습니다.",
-				loadingFailed: "로드 실패"
+				loadingFailed: "불러오기 실패"
 			},
 			imageSelectorFacebook: {
 				leftHeader: "Facebook 사용자",
@@ -62,7 +62,7 @@
 				url: "Vimeo 비디오 URL"
 			},
 			videoSelectorOther: {
-				explain1: "응용프로그램은 원시 비디오(예: avi, mpeg)를 재생할 수 없지만 기본 제공 플레이어(예: YouTube 또는 Vimeo)가 있는 호스팅 비디오 파일은 재생할 수 있습니다.",
+				explain1: "응용프로그램은 비디오 파일(예: avi, mpeg)를 재생할 수 없지만 기본 제공 플레이어(예: YouTube 또는 Vimeo)가 있는 호스팅 비디오 파일은 재생할 수 있습니다.",
 				explain2: "대부분의 온라인 비디오 호스팅 서비스는 해당 피처를 제공하므로, 비디오를 포함할 옵션을 찾고 제공된 코드를 복사하고 %WEBPAGE%을(를) 사용해야 합니다.",
 				explain3: "또는 직접 비디오를 호스팅하려면 %EXAMPLE% 등의 비디오 플레이어를 사용하는 HTML 페이지를 생성하고, 해당 페이지를 호스팅하고, %WEBPAGE%을(를) 사용할 수도 있습니다.",
 				webpage: "웹 페이지 피처"

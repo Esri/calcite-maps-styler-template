@@ -12,7 +12,7 @@
 				close: "닫기",
 				open: "열기",
 				start: "시작",
-				loading: "로드 중",
+				loading: "불러오는 중",
 				disabledAdmin: "이 기능은 관리자가 사용하지 않도록 설정했습니다.",
 				width: "너비",
 				height: "높이"
@@ -27,7 +27,7 @@
 				buttonShare: "공유",
 				buttonSettings: "설정",
 				buttonHelp: "도움말",
-				buttonPreview: "라이브 보기",
+				buttonPreview: "실시간 보기",
 				tooltipFirstSave: "저장하기 전까지 사용할 수 없습니다.",
 				tooltipNotShared: "공유하기 전까지 사용할 수 없습니다.",
 				noPendingChange: "보류 중인 변경 사항 없음",
@@ -61,7 +61,7 @@
 				sharePrivateWarningWith2: "기관에 공개",
 				sharePrivateProgress: "공유 처리 중...",
 				sharePrivateErr: "공유에 실패했습니다. 다시 시도하거나",
-				sharePrivateOk: "공유가 업데이트되었습니다. 로그하는 중...",
+				sharePrivateOk: "공유가 업데이트되었습니다. 불러오는 중...",
 				shareHeader1: "응용프로그램에 <strong>공개적으로 접근 가능</strong>합니다.",
 				shareHeader2: "기관의 구성원이 응용프로그램에 접근할 수 있습니다(로그인 필요).",
 				shareLinkCopy: "복사",
@@ -78,25 +78,25 @@
 			},
 			settings: {
 				header: "설정",
-				tabError: "모든 탭에서 오류를 확인하세요."
+				tabError: "오류가 있는지 모든 탭을 확인하세요."
 			},
 			settingsLayout: {
 				title: "레이아웃",
 				explain: "어떤 레이아웃을 사용하시겠습니까?",
 				explainInit: "언제든지 설정 대화상자에서 레이아웃을 변경할 수 있습니다.",
-				viewExample: "라이브 예 보기"
+				viewExample: "실시간 예 보기"
 			},
 			settingsTheme: {
 				title: "테마"
 			},
 			settingsHeader: {
-				title: "헤더",
+				title: "머리글",
 				logoEsri: "Esri 로고",
 				logoNone: "로고 없음",
 				logoCustom: "사용자 지정 로고",
 				logoCustomPlaceholder: "URL(최대 250x50픽셀)",
 				logoCustomTargetPlaceholder: "클릭 이동 링크",
-				logoSocialExplain: "헤더 링크를 사용자 정의합니다.",
+				logoSocialExplain: "머리글 링크를 사용자 정의합니다.",
 				logoSocialText: "텍스트",
 				logoSocialLink: "링크",
 				lblSmallHeader: "압축 머리글 사용(부제목 없음)"

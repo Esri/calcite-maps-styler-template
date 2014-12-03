@@ -9,7 +9,7 @@
 				lblControls: "추가",
 				lblOverview: "개요 맵",
 				lblLegend: "범례",
-				loadingTitle: "제목을 로드하는 중",
+				loadingTitle: "제목을 불러오는 중",
 				entry: "항목",
 				entries: "항목",
 				section: "섹션",

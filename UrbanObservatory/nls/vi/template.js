@@ -13,7 +13,7 @@
     "splashDialog": {
       "welcome": "Ứng dụng so sánh thành phố Urban Observatory cho phép bạn khám phá nét sống động của những thành phố lớn bằng cách duyệt một loạt các thành phố và chủ đề.",
       "changTheme": "Để thay đổi <b>Chủ đề</b>, bấm vào tên chủ đề trong danh sách Chủ đề.",
-      "changeCity": "Để thay đổi <b>Thành phố</b>, bấm vào tên thành phố trong danh sách Thành phố, hoặc kéo thả nó trên bản đồ.",
+      "changeCity": "Để thay đổi <b>Thành phố</b>, bấm vào tên thành phố trong danh sách Thành phố, hoặc kéo-và-thả nó trên bản đồ.",
       "moreInfo": "Thông tin khác về Urban Observatory",
       "buttonText": "Bắt đầu so sánh"
     },
@@ -26,7 +26,7 @@
   },
   errors: {
     "webmap": "Bản đồ Web",
-    "protocolMismatchError": "Lỗi không trùng khớp giao thức...  Vẫn tiếp tục?",
+    "protocolMismatchError": "Lỗi không khớp giao thức...  Vẫn tiếp tục?",
     "problematicWebmap": "Chúng tôi hiện đang gặp các vấn đề kỹ thuật với bản đồ này: ",
     /* DO NOT REPLACE TEXT INSIDE CURLY BRACKETS */
     "invalidDefaultThemeTemplate": "Chủ đề mặc định '{theme}' hiện không khả dụng trong nhóm '{groupName}'.",

@@ -30,7 +30,7 @@
 			imageSelectorFacebook: {
 				leftHeader: "Người dùng Facebook",
 				rightHeader: "Trang Facebook",
-				pageExplain: "Trang Facebook là một thương hiệu/sản phẩm công cộng nổi tiếng như <b>esrigis</b>. Bạn có thể lấy tên trang sau dấu '/' đầu tiên trong URL của trang.",
+				pageExplain: "Trang Facebook là một thương hiệu/sản phẩm công cộng hay nổi tiếng như <b>esrigis</b>. Bạn có thể lấy tên trang sau '/' đầu tiên trong URL trang.",
 				pageInputLbl: "Tên trang",
 				lookupMsgError: "Không tìm thấy trang"
 			},
@@ -78,11 +78,11 @@
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "URL Hình ảnh nên bắt đầu bằng http:// và kết thúc bằng .jpg hoặc .png",
-				lblURLError: "Hình ảnh này không hợp lệ. Vui lòng chỉ định một liên kết trực tiếp đến tệp hình ảnh (URL của bạn thường sẽ kết thúc bằng .jpg hoặc .png). Các liên kết đến trang web chứa chỉ một hình ảnh sẽ không hoạt động.",
+				lblURLError: "Hình ảnh này dường như không hợp lệ. Vui lòng chỉ định một liên kết trực tiếp đến tệp hình ảnh (URL của bạn thường sẽ kết thúc bằng .jpg hoặc .png). Các liên kết đến trang web chứa một hình ảnh sẽ không hoạt động.",
 				lblURLCheck: "Đang kiểm tra hình ảnh...",
 				lblLabel: "Chú thích Hình ảnh",
 				lblLabel1: "Chú thích",
-				lblLabel2: "Di chuyển chuột qua văn bản",
+				lblLabel2: "Di chuột qua văn bản",
 				lblLabel3: "Không có",
 				lblLabelPH: "Nhập một số chữ...",
 				lblMaximize: "Bao gồm một nút phóng đại ở góc hình ảnh",
@@ -90,17 +90,17 @@
 				lblPosition: "Vị trí",
 				lblPosition1: "Căn giữa",
 				lblPosition2: "Tô",
-				lblPosition3: "Vừa",
+				lblPosition3: "Đặt vừa",
 				lblPosition4: "Kéo giãn",
 				lblPosition5: "Tùy chỉnh",
 				tooltipDimension: "Giá trị có thể được chỉ định theo 'px' hoặc '%'",
 				tooltipDimension2: "Giá trị phải được chỉ định bằng 'px'",
-				lblPosition2Explain: "(có thể cắt bớt)",
-				lblPosition3Explain: "(sẽ không cắt bớt)",
+				lblPosition2Explain: "(có thể xén)",
+				lblPosition3Explain: "(không xén)",
 				lblPosition3Explain2: "(chiều rộng sẽ luôn luôn vừa với bảng điều khiển)",
-				lblPosition4Explain: "(có thể làm biến dạng)",
+				lblPosition4Explain: "(có thể bóp méo)",
 				unloadLbl: "Không tải khi người đọc điều hướng ra ngoài",
-				unloadHelp: "Nếu Trang Web có phương tiện âm thanh hoặc video, tiếp tục chọn tùy chọn này để dừng phát nội dung đó khi trình đọc điều hướng ra ngoài. Ví dụ: bỏ chọn để tiếp tục phát âm thanh khi trình đọc chuyển qua câu chuyện.<br />Nếu Trang Web là một ứng dụng, bỏ chọn tùy chọn này để ứng dụng không tự động tải lại khi người đọc quay lại."
+				unloadHelp: "Nếu Trang Web có phương tiện âm thanh hoặc video, tiếp tục chọn tùy chọn này để dừng phát nội dung đó khi người đọc điều hướng ra ngoài. Ví dụ: bỏ chọn để tiếp tục phát rãnh âm thanh khi trình đọc chuyển qua câu chuyện.<br />Nếu Trang Web là một ứng dụng, bỏ chọn tùy chọn này để ứng dụng không tải lại nếu người đọc quay lại."
 			},
 			editorActionGeocode: {
 				lblTitle: "Định vị một địa chỉ hoặc địa điểm",

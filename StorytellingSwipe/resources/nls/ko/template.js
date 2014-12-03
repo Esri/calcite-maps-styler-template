@@ -2,8 +2,8 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "응용프로그램을 로드하는 중",
-				step2: "데이터를 로드하는 중",
+				step1: "응용프로그램을 불러오는 중",
+				step2: "데이터를 불러오는 중",
 				step3: "초기화하는 중",
 				fail: "죄송합니다. 스와이프를 로드하지 못했습니다.",
 				loadBuilder: "빌더 모드로 전환하는 중",				
@@ -93,7 +93,7 @@
 				settingsLogoCustom: "사용자 지정 로고",
 				settingsLogoCustomPlaceholder: "이미지 URL",
 				settingsLogoCustomTargetPlaceholder: "클릭 이동 링크",
-				settingsLogoSocialExplain: "헤더 오른쪽 상단 링크를 사용자 정의합니다.",
+				settingsLogoSocialExplain: "머리글 오른쪽 상단 링크를 사용자 정의합니다.",
 				settingsLogoSocialText: "텍스트",
 				settingsLogoSocialLink: "링크",
 				settingsLogoSocialDisabled: "이 기능은 관리자가 사용하지 않도록 설정했습니다."
@@ -225,7 +225,7 @@
 				sharePrivateBtn2: "내 기관과 공유",
 				sharePrivateProgress: "공유 처리 중...",
 				sharePrivateErr: "공유에 실패했습니다. 다시 시도하거나",
-				sharePrivateOk: "공유가 업데이트되었습니다. 로그하는 중...",
+				sharePrivateOk: "공유가 업데이트되었습니다. 불러오는 중...",
 				shareStatus1: "응용프로그램이 저장되지 않음",
 				shareStatus2: "응용프로그램이 공개적으로 공유됨",
 				shareStatus3: "응용프로그램이 기관 내에서 공유됨",
