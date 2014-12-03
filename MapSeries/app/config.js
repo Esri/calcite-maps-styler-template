@@ -431,7 +431,7 @@ app.cfg = {
 	// If used on another domain, user will have an error in the Facebook popup after login
 	// To use Facebook import on Portal for ArcGIS, create your own ID at https://developers.facebook.com/ 
 	// or set AUTHORIZED_IMPORT_SOURCE.facebook to false
-	FACEBOOK_APP_ID: "276669785846752",
+	FACEBOOK_APP_ID: "1403302059961274",
 	
 	//
 	// Builder direct creation
