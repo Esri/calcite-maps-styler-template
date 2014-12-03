@@ -59,7 +59,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.0.0-beta4',
+				version: '1.0.0-beta5',
 				pathJSAPI: '//jsdev.arcgis.com/3.12/'
 			};
 		</script>
@@ -171,8 +171,11 @@
 						
 						<!-- Description and legend floating panel -->
 						<div id="descLegendPanel" class="descLegendPanel">
-							<div class="descriptions textEditorContent"></div>
-							<div class="legends"></div>
+							<div class="descLegendPanelInner">
+								<div class="backdrop"></div>
+								<div class="descriptions textEditorContent"></div>
+								<div class="legends"></div>
+							</div>
 						</div>
 					</td>
 				</tr>
