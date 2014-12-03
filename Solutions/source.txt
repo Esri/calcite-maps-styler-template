@@ -1,9 +1,8 @@
-Built on 11/24/2014 14:10:32.97 from
+Built on 12/03/2014  7:50:13.76 from
 repository local-government-online-apps
 branch release_3.6
-commit d3d6dd3babcdc490ab89c2a50997fc7356b2df38
-Merge: 99feb67 02c9cac
+commit 1cc4b3220640ea88eec06b765d63cf8a155b1abb
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Nov 24 14:09:44 2014 -0800
+Date:   Wed Dec 3 07:14:01 2014 -0800
 
-    Merge branch 'portal_preview' into develop
+    Use the webmap in the template file if no webmap id was supplied in the URL or configured for the app

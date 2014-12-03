@@ -97,6 +97,11 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
                                     this.config.appValues = templateResponse.itemData.values || {};
                                     lang.mixin(this.config.appValues, appResponse.itemData.values || {});
 
+                                    // If no webmap id was supplied in the URL or configured for the app, use the webmap in the file
+                                    if (!this.config.webmap) {
+                                        this.config.webmap = this.config.appValues.webmap;
+                                    }
+
                                     uiSource = "Using app specification in " + this.config.appid;
                                     waitForUI.resolve();
                                 } else {
