@@ -29,9 +29,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 });
 
                 // startup drawer
-                this._drawer.startup();
-
-
+                this._drawer.startup()
 
             }));
 
@@ -228,7 +226,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 basemapGallery.on("load", lang.hitch(this, function () {
 
                     var toggle_container = domConstruct.create("div", {}, "mapDiv");
-
+                   
                     var toggle = new BasemapToggle({
                         map: this.map,
                         basemap: this.config.alt_basemap || "satellite"
@@ -237,14 +235,15 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                     if (this.config.response && this.config.response.itemInfo && this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.baseMap) {
                         var b = this.config.response.itemInfo.itemData.baseMap;
                         if (b.title) {
+                            //title is translated so lets compare the key
                             for (var i in basemaps) {
-                                if (b.title === basemaps[i].title) {
+                                if (b.title === this._getBasemapName(i)) {
                                     this.map.setBasemap(i);
                                 }
                             }
                         }
                     }
-
+   
                     //add a class so we can move the basemap if the zoom position moved.
                     if (this.config.zoom && this.config.zoom_position) {
                         domClass.add(toggle.domNode, "embed-" + this.config.zoom_position);
@@ -258,33 +257,8 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                     toggle.startup();
 
                     toggle.on("toggle", lang.hitch(this, function (e) {
-                        var current = e.currentBasemap;
-                        switch (current) {
-                        case "streets":
-                            current = "Streets";
-                            break;
-                        case "satellite":
-                            current = "Imagery";
-                            break;
-                        case "hybrid":
-                            current = "Imagery with Labels";
-                            break;
-                        case "topo":
-                            current = "Topographic";
-                            break;
-                        case "gray":
-                            current = "Light Gray Canvas";
-                            break;
-                        case "oceans":
-                            current = "Oceans";
-                            break;
-                        case "national-geographic":
-                            current = "National Geographic";
-                            break;
-                        case "osm":
-                            current = "OpenStreetMap";
-                            break;
-                        }
+                        var current = this._getBasemapName(e.currentBasemap);
+     
                         array.forEach(basemapGallery.basemaps, function (basemap) {
                             if (basemap.title === current) {
                                 basemapGallery.select(basemap.id);
@@ -310,6 +284,36 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 bc.resize();
             }
 
+        },
+        _getBasemapName: function(name){
+            var current = null;
+            switch (name) {
+            case "streets":
+                current = "Streets";
+                break;
+            case "satellite":
+                current = "Imagery";
+                break;
+            case "hybrid":
+                current = "Imagery with Labels";
+                break;
+            case "topo":
+                current = "Topographic";
+                break;
+            case "gray":
+                current = "Light Gray Canvas";
+                break;
+            case "oceans":
+                current = "Oceans";
+                break;
+            case "national-geographic":
+                current = "National Geographic";
+                break;
+            case "osm":
+                current = "OpenStreetMap";
+                break;
+            }
+            return current;
         },
         _adjustPopupSize: function () {
             if (!this.map) {
