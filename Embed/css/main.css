@@ -319,6 +319,9 @@ a {
 .dark .icon-basemap {
   background-image: url("../images/basemap_light.png");
 }
+.BasemapToggle .basemapTitle {
+  font-family: "Times New Roman", Georgia, "Book Antiqua", serif;
+}
 .light .BasemapToggle .toggleButton {
   background-color: #f7f8f8;
 }
