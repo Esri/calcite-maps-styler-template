@@ -21,7 +21,7 @@
 				cfgMedium: "중간",
 				cfgLarge: "대",
 				socialLinksLabel: "각 섹션의 하단에 공유 링크 표시",
-				socialLinksDescr: "사용자가 %TPL_NAME%의 특정 섹션을 참조하고 홍보할 수 있도록 합니다. 예를 들어 섹션 공유 아이콘을 사용하는 경우 사용자는 스토리 시작 부분 대신 특정 %TPL_NAME% 섹션으로 이동합니다. 사용자는 제목 섹션에 있는 소셜 미디어 링크를 사용하여 전체 %TPL_NAME%(헤더 탭)을(를) 홍보하고 %TPL_NAME% 시작 부분에 둘 수 있습니다."
+				socialLinksDescr: "사용자가 %TPL_NAME%의 특정 섹션을 참조하고 홍보할 수 있도록 합니다. 예를 들어 섹션 공유 아이콘을 사용하는 경우 사용자는 스토리 시작 부분 대신 특정 %TPL_NAME% 섹션으로 이동합니다. 사용자는 제목 섹션에 있는 소셜 미디어 링크를 사용하여 전체 %TPL_NAME%(머리글 탭)을(를) 홍보하고 %TPL_NAME% 시작 부분에 둘 수 있습니다."
 			},
 			settingsLayoutFonts: {
 				title: "글꼴",
@@ -95,7 +95,7 @@
 				content6Div2: "%LAYOUT_TITLE%은(는) 꼭 텍스트만이어야 할 필요는 없습니다. 사진과 비디오를 포함하여 스토리를 생동감 있게 표현하고 긴 텍스트 섹션을 나눠보세요!"
 			},
 			landing: {
-				lblAdd: "Map Journal을 어떻게 부르고 싶으신가요?",
+				lblAdd: "맵 저널을 어떻게 부르고 싶으신가요?",
 				phAdd: "제목을 입력하세요...",
 				lblOR: "또는",
 				lblHelp: "둘러보기"

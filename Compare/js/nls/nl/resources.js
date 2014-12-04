@@ -22,11 +22,11 @@ define(
         tools: {
             info: {
                 label: "Info",
-                tooltip: "Kaartinfo omschakelen"
+                tooltip: "Kaartinfo wisselen"
             },
             sync: {
-                label: "Kaartbereik synchroniseren",
-                tooltip: "Synchroniseren tot bereik van deze kaart"
+                label: "Extent van de kaart",
+                tooltip: "Het extent van de kaart synchroniseren"
             }
         }
     })

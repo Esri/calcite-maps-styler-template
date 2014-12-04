@@ -2,7 +2,7 @@
      ({
         "widgets": {
             "TemplateBuilder": {
-                "enterBuilderButtonText": "Nhập vào Bộ thiết lập",
+                "enterBuilderButtonText": "Vào Bộ thiết lập",
                 "exitBuilderButtonText": "Thoát Bộ thiết lập",
                 "enterBuilderModeHelpText": "Chuyển sang Chế độ Bộ thiết lập để cấu hình ứng dụng",
                 "builderModeHelpText": "Chế độ Bộ thiết lập Mẫu",
@@ -39,8 +39,8 @@
                 "entireAreaButton": "Toàn bộ Khu vực",
                 "entireAreaOnStartButton": "Toàn bộ khu vực khi bắt đầu",
                 "aboutPanel": "Về Bảng điều khiển",
-                "legendPanel": "Bảng điều khiển Chú giải",
-                "layersPanel": "Bảng điều khiển Lớp",
+                "legendPanel": "Bảng điều khiển chú giải",
+                "layersPanel": "Bảng điều khiển lớp",
                 "dataConfigurationButtonText": "Cấu hình dữ liệu",
                 "savingChangesMessage": "Đang lưu thay đổi...",
                 "nextButtonText": "Tiếp",
@@ -49,14 +49,14 @@
                 "SelectedFeatureText": "Đối tượng được chọn",
                 "layerHelpTextMessage": "Ứng dụng này yêu cầu một lớp có các trường số",
                 "alertMessage": {
-                    "resetVariableMessage": "Bạn có chắc chắn muốn thiết lập lại biến số không?",
+                    "resetVariableMessage": "Bạn có chắc chắn muốn đặt lại biến số không?",
                     "emptyAppTitleMessage": "Tên ứng dụng không được trống",
                     "emptyDescriptionMessage": "Mô tả không được trống",
                     "maxVariableSelection": "Bạn không thể chọn nhiều hơn 25 biến phụ",
                     "signInFail" : "Đăng nhập Thất bại",
                     "itemUpdateMessage": "Mục được cập nhật",
                     "unsavedChangesMessage": "Thay đổi chưa được lưu",
-                    "failMessage": "Không thể cập nhật thành công mục",
+                    "failMessage": "Không thể cập nhật mục thành công",
                     "saveChangesAlert": "Bạn có muốn lưu thay đổi không?",
                     "variableLabelValidation": "Nhãn biến số không được trống",
                     "subVariableLabelValidation": "Nhãn biến số phụ không được trống"

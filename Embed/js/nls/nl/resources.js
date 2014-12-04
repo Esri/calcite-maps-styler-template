@@ -33,7 +33,7 @@ define(
             },
             "details":{
                 "title": "Kaartdetails",
-                "error": "Update de webkaartbeschrijving met de details om in deze sectie weer te geven."
+                "error": "De webmap beschrijving aanpassen met de details die in deze sectie weegegeven moeten worden."
             },
             "popup": {
                 "title": "Info",

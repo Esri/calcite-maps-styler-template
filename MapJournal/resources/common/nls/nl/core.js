@@ -29,7 +29,7 @@
 				buttonHelp: "Help",
 				buttonPreview: "Live weergeven",
 				tooltipFirstSave: "Dit is niet beschikbaar totdat u opslaat.",
-				tooltipNotShared: "Dit is niet beschikbaar totdat u opslaat.",
+				tooltipNotShared: "Dit is niet beschikbaar totdat u deelt.",
 				noPendingChange: "Geen wijziging in behandeling",
 				unSavedChangePlural: "Wijzigingen in behandeling",
 				closeWithPendingChange: "Weet u zeker dat u deze actie wilt bevestigen? Uw wijzigingen gaan verloren.",

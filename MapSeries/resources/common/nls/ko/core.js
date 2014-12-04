@@ -12,7 +12,7 @@
 				close: "닫기",
 				open: "열기",
 				start: "시작",
-				loading: "로드 중",
+				loading: "불러오는 중",
 				disabledAdmin: "이 기능은 관리자가 사용하지 않도록 설정했습니다.",
 				width: "너비",
 				height: "높이"
@@ -61,7 +61,7 @@
 				sharePrivateWarningWith2: "기관에 공개",
 				sharePrivateProgress: "공유 처리 중...",
 				sharePrivateErr: "공유에 실패했습니다. 다시 시도하거나",
-				sharePrivateOk: "공유가 업데이트되었습니다. 로그하는 중...",
+				sharePrivateOk: "공유가 업데이트되었습니다. 불러오는 중...",
 				shareHeader1: "응용프로그램에 <strong>공개적으로 접근 가능</strong>합니다.",
 				shareHeader2: "기관의 구성원이 응용프로그램에 접근할 수 있습니다(로그인 필요).",
 				shareLinkCopy: "복사",
@@ -90,13 +90,13 @@
 				title: "테마"
 			},
 			settingsHeader: {
-				title: "헤더",
+				title: "머리글",
 				logoEsri: "Esri 로고",
 				logoNone: "로고 없음",
 				logoCustom: "사용자 지정 로고",
 				logoCustomPlaceholder: "URL(최대 250x50픽셀)",
 				logoCustomTargetPlaceholder: "클릭 이동 링크",
-				logoSocialExplain: "헤더 링크를 사용자 정의합니다.",
+				logoSocialExplain: "머리글 링크를 사용자 정의합니다.",
 				logoSocialText: "텍스트",
 				logoSocialLink: "링크",
 				lblSmallHeader: "압축 머리글 사용(부제목 없음)"

@@ -37,9 +37,9 @@
 				signOut: "Đăng xuất"
 			},
 			mobileView: {
-				tapForDetails: "Chạm nhẹ để xem chi tiết",
+				tapForDetails: "Chạm nhẹ vào để biết chi tiết",
 				clickForDetails: "Tìm hiểu thêm",
-				swipeToExplore: "Trượt nhanh để khám phá",
+				swipeToExplore: "Vuốt để khám phá",
 				tapForMap: "Chạm nhẹ để quay lại Bản đồ",
 				clickForMap: "QUAY LẠI BẢN ĐỒ"
 			},

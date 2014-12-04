@@ -32,7 +32,7 @@ define(
          "toggle": "표시/숨김",
          "reset": "재설정",
          "locate": "내 위치 찾기",
-         "directions": "방향",
+         "directions": "길찾기",
          "filter": "필터",
          "close": "닫기",
          "reverse": "반전"

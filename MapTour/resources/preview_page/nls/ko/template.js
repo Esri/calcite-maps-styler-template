@@ -17,7 +17,7 @@
 			list1: "자체 웹 서버 또는 타사 서버에서 템플릿 호스팅"
 		},
 		fourthPane: {
-			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Esri 스토리 맵 사이트를 참조</a>하여 스토리를 생성하고 공유하는 방법에 대해 자세히 알아봅니다. 제공되는 리소스는 다음과 같습니다.",
+			head: "<a href='http://storymaps.esri.com/home/' target='_blank'>Esri 스토리 맵 사이트를 참고</a>하여 스토리를 생성하고 공유하는 방법에 대해 자세히 알아봅니다. 제공되는 리소스는 다음과 같습니다.",
 			list0: "Esri 스토리 맵 팀이 발행한 스토리 맵",
 			list1: "다운로드 가능한 템플릿 선택",
 			list2: "모범 사례 가이드", 

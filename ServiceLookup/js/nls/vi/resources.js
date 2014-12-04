@@ -10,7 +10,7 @@
         error: {
             layerNotFound: "Lớp không có trong bản đồ web",
             fieldNotFound: "Không tìm thấy trường",
-            popupNotSet: "Không bật cửa sổ pop-up cho lớp này",
+            popupNotSet: "Không kích hoạt cửa sổ pop-up cho lớp này",
             noLayersSet: "Không có lớp nào được xác định trong cấu hình, hộp tìm kiếm sẽ không hoạt động"
         },
         page: {

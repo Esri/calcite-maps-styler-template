@@ -99,7 +99,7 @@
 				lblPosition3Explain: "(wordt niet bijgesneden)",
 				lblPosition3Explain2: "(breedte past altijd in het deelvenster)",
 				lblPosition4Explain: "(kan worden vervormd)",
-				unloadLbl: "Onladen als lezer weggaat",
+				unloadLbl: "Laden ongedaan maken als lezer weggaat",
 				unloadHelp: "Houd deze optie aangevinkt als de webpagina audio- of videomedia heeft om te voorkomen dat de content wordt afgespeeld als de lezer weggaat. Haal het vinkje weg om een soundtrack te laten doorspelen als de lezer verdergaat door het verhaal.<br />Als de webpagina een applicatie is, haal het vinkje dan weg zodat de applicatie het niet opnieuw laadt als de lezer terugkeert."
 			},
 			editorActionGeocode: {

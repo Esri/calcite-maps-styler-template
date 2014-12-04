@@ -25,8 +25,8 @@ define(
                 tooltip: "Harita bilgisini aç"
             },
             sync: {
-                label: "Harita Kapsamını Eşitle",
-                tooltip: "Bu haritanın kapsamına eşitle"
+                label: "Harita Yayılımını Eşitle",
+                tooltip: "Bu haritanın yayılımına eşitle"
             }
         }
     })

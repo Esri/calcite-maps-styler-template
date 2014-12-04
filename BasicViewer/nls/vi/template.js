@@ -6,7 +6,7 @@
     },
     errors: {
       createMap: "Không thể tạo bản đồ",
-      bitly: 'bitly được sử dụng để rút ngắn url cho việc chia sẻ. Xem tệp readme để biết chi tiết về việc tạo và sử dụng một khóa bitly',
+      bitly: 'bitly được sử dụng để rút ngắn url để chia sẻ. Xem tệp readme để biết chi tiết về việc tạo và sử dụng một khóa bitly',
       general: "Lỗi"
     }
   },
@@ -81,7 +81,7 @@
     bookmark:{
       title: "Hiển thị Đánh dấu",
       label: "Đánh dấu",
-      details: "Bấm chuột vào một đánh dấu để điều hướng đến vị trí"
+      details: "Nhấp chuột vào một thẻ đánh dấu để điều hướng đến vị trí"
     },
     layers: {
       title: "Hiển thị danh sách lớp",
@@ -91,7 +91,7 @@
       title: "Tìm địa chỉ hoặc địa điểm",
       popupTitle: "Vị trí",
       currentLocation: "Vị trí hiện tại",
-      notWhatYouWanted: "Không phải là những gì bạn muốn?" ,
+      notWhatYouWanted: "Không phải cái bạn muốn?" ,
       selectAnother: "Chọn một vị trí khác",
       errors:{
        missingLocation: "Không tìm thấy vị trí"
