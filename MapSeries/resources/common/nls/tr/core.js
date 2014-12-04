@@ -66,7 +66,7 @@
 				shareHeader2: "Uygulamanız kuruluşunuzun üyeleri tarafından (oturum açılması gerekir) erişilebilir durumda.",
 				shareLinkCopy: "Kopyala",
 				shareLinkCopied: "Kopyalandı",
-				shareQ0: "Uygulamayı bir web sayfasına nasıl gömerim?",
+				shareQ0: "Uygulamayı bir web sayfası içerisine nasıl yerleştirebilirim ?",
 				shareQ1Opt1: "Uygulamayı nasıl özel tutarım?",
 				shareQ1Opt2: "Uygulamayı nasıl özel tutabilir ya da herkesle paylaşabilirim?",
 				shareA1: "<a href='%LINK1%' target='_blank'>Uygulama öğesi sayfasındaki</a> %SHAREIMG% özelliğini kullanın.",
@@ -99,7 +99,7 @@
 				logoSocialExplain: "Başlık bağlantısını özelleştirin.",
 				logoSocialText: "Metin",
 				logoSocialLink: "Bağlantı",
-				lblSmallHeader: "Kompakt başlık kullanın (alt başlıksız)"
+				lblSmallHeader: "Kısa başlık kullanın (alt başlıksız)"
 			},
 			header: {
 				title: "%TPL_NAME% adınızın başlığını düzenleyin",

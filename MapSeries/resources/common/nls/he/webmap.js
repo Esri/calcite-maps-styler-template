@@ -17,7 +17,7 @@
 				and: "וגם",
 				action: "פעולה בתוך החלק",
 				actions: "פעולה בתוך החלקים",
-				originalWebmap: "ה-Web map הפיצה את ה-%TPL_NAME%",
+				originalWebmap: "ה-Web map שמשה להפצת את ה-%TPL_NAME%",
 				browseMaps: "דפדף למפות",
 				current: "ה-web map הנוכחית",
 				select: "בחר web map",

@@ -73,7 +73,7 @@
 				shareQ2bis: "Miten palaan luontitoiminnon käyttöliittymään?",
 				shareA2div1: "Tallenna ja käytä uudelleen seuraavaa linkkiä %LINK1% tai käytä <a href='%LINK2%' target='_blank'>sovelluskohteen sivua</a>.",
 				shareA2div2: "Koska olet sovelluksen omistaja, kun olet kirjautunut %PORTAL%-sivustoon, sovelluksessa näkyy painike, jolla voita avata luontitoiminnon:",				
-				shareQ3: "Minne tiedot on tallennettu?",
+				shareQ3: "Minne aineistot on tallennettu?",
 				shareA3: "Tarinan %TPL_NAME% aineisto ja määritykset tallennetaan <a href='%LINK2%' target='_blank'>tähän Web-sovelluskohteeseen</a>. Jos olet käyttänyt Flickr-, Picasa-, Facebook- tai YouTube-tuontia, kuviasi ja videoitasi ei kopioida portaaliin %PORTAL%."
 			},
 			settings: {

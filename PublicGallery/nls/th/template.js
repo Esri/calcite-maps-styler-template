@@ -53,7 +53,7 @@
                 "editComment": "แก้ไข",
                 "noComments": "ไม่มีความคิดเห็น",
                 "addCommentButton": "เพิ่มความคิดเห็น",
-                "signIn": "เข้าระบบ",
+                "signIn": "ลงชื่อเข้าใช้",
                 "register": "ลงทะเบียน",
                 "or": "หรือ",
                 "toPost": "แสดงความคิดเห็น"
@@ -76,7 +76,7 @@
                 "commentsLabelPlural": "ความคิดเห็น",
                 "modifiedLabel": "ปรับปรุงครั้งสุดท้าย",
                 "by": "โดย",
-                "separator": "คอมม่า"
+                "separator": ","
             },
             "mapPage": {
                 "findLocation": "ค้นหาตำแหน่ง",

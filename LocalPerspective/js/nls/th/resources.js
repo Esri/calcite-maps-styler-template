@@ -34,7 +34,7 @@ define(
          "menu": "เมนู",
          "close": "ปิด",
          "previous": "ก่อน",
-         "next": "ถัดจาก",
+         "next": "ถัดไป",
          "directions": "คำสั่ง"
       }
    })

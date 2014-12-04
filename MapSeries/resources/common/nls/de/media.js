@@ -20,7 +20,7 @@
 				lblStep3: "Konfigurieren"
 			},
 			imageSelectorHome: {
-				explain: "Bilder über soziale Medien <br /> oder direkt über eine URL laden"
+				explain: "Bilder von sozialen Medien <br /> oder direkt über eine URL laden"
 			},
 			imageSelectorFlickr: {
 				userInputLbl: "Benutzername",
@@ -99,18 +99,18 @@
 				lblPosition3Explain: "(Zuschneiden nicht möglich)",
 				lblPosition3Explain2: "(Breite wird immer an das Fenster angepasst)",
 				lblPosition4Explain: "(Verzerren möglich)",
-				unloadLbl: "Wird angehalten, wenn Leser zu einem anderen Ort navigiert",
+				unloadLbl: "Unload when reader navigates away",
 				unloadHelp: "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Anwendung nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt."
 			},
 			editorActionGeocode: {
-				lblTitle: "Adresse oder Ort suchen",
-				mapMarkerExplain: "Beim Klicken auf den Link wird ein Karten-Marker angezeigt"
+				lblTitle: "Locate an address or place",
+				mapMarkerExplain: "User will see a map marker when clicking the link"
 			},
 			editorActionMedia: {
-				lblTitle: "Inhalt der Hauptanzeige ändern"
+				lblTitle: "Change the Main Stage content"
 			},
 			editorInlineMedia: {
-				lblTitle: "Bild, Video oder Webseite einfügen"
+				lblTitle: "Insert an image, video or web page"
 			}
 		}
 	})

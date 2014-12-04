@@ -18,7 +18,7 @@
 		},
 		fourthPane: {
 			head: "Weitere Informationen zum Erstellen und Freigeben von Storys <a href='http://storymaps.esri.com/home/' target='_blank'>finden Sie auf der Website \"Story Maps\" von Esri</a>. Folgende Ressourcen sind verfügbar:",
-			list0: "Story Maps, die von den Story Maps-Teams von Esri veröffentlicht wurden",
+			list0: "Story Maps, die von den Story Map-Teams von Esri veröffentlicht wurden",
 			list1: "Eine Auswahl herunterladbarer Vorlagen",
 			list2: "Bewährte Methoden und Anleitungen", 
 			list3: "Eine Story Maps-Galerie mit einer wachsenden Storyteller-Community"

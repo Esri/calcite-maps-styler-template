@@ -90,7 +90,7 @@
 				content3Div1: "Inhalte werden in Abschnitten organisiert. Die Anzahl der Abschnitte ist beliebig (sie sind vergleichbar mit kleinen Kapiteln). Der Fluss dieser Kapitel ist wichtig. Abschnitte können mit \"Organisieren\" nach Wunsch neu angeordnet und gelöscht werden.",
 				content4Div1: "Sie haben einen Fehler gefunden oder möchten Änderungen vornehmen? Keine Sorge. Suchen Sie das Bearbeitungssymbol in der App, um Inhalte zu ändern. Sie werden die Bearbeitungsfunktionen beim Entwickeln von %TPL_NAME% häufig verwenden!",
 				content5Div1: "%TPL_NAME% ist beim Speichern zunächst privat. Verwenden Sie die Schaltfläche \"Freigeben\", um %TPL_NAME% für andere Benutzer freizugeben. Sie können %TPL_NAME% öffentlich freigeben, sodass jeder darauf zugreifen kann.",
-				content5Div2: "Je nach Konto haben Sie außerdem die Möglichkeit, %TPL_NAME% nur für Benutzer in Ihrer Organisation freizugeben, damit andere Benutzer nicht darauf zugreifen können.",
+				content5Div2: "Je nach Konto haben Sie außerdem die Möglichkeit, %TPL_NAME% nur für Benutzer in Ihrer Organisation freizugeben, damit andere nicht darauf zugreifen können.",
 				content6Div1: "Der Titel Ihres Startseitenabschnitts ist gleichzeitig der Titel Ihres Journals. Der Startseitenabschnitt kann als \"Deckblatt\" Ihrer Informationen betrachtet werden. Der Titel des Startseitenabschnitts bleibt sichtbar, wenn Ihre Leser im Journal navigieren.",
 				content6Div2: "Ihr %LAYOUT_TITLE% muss nicht nur aus Text bestehen, Sie können auch Fotos und Videos einbeziehen, um Ihre Story lebendig zu gestalten und lange Textabschnitte zu vermeiden!"
 			},

@@ -1,7 +1,7 @@
 ﻿define(
    ({
   display: {
-    elevationProfileTitle: "Profil wzniesień",
+    elevationProfileTitle: "Profil wysokościowy",
     showMe: "pokaż mi",
     selectLine: "Wybierz obiekt na mapie.",
     popupRequirement: "UWAGA: obiekt musi znajdować się w warstwie obiektów lub być częścią usługi mapowej, w której włączone są okna podręczne.",
@@ -10,14 +10,14 @@
     measureToolHelpUrl: "http://help.arcgis.com/pl/arcgisonline/help/index.html#//010q00000096000000",
     hoverOver: "Kursor nad ",
     touchIPad: "wskaż na urządzeniu iPad",
-    locationOnMap: "diagram profilu wzniesień, aby wyświetlić wzniesienia i lokalizację na mapie."
+    locationOnMap: "diagram profilu wysokościowego, aby wyświetlić wysokości terenu i lokalizację na mapie."
   },
   // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //
-  locationResultTemplate: "Wzniesienie: {0} metrów",
+  locationResultTemplate: "Wysokości terenu: {0} metrów",
   chart: {
-    title: "Profil wzniesień",
+    title: "Profil wysokościowy",
     // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //
-    elevationTitleTemplate: "Wzniesienie w {0}",
+    elevationTitleTemplate: "Wysokości terenu w {0}",
     // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //
     distanceTitleTemplate: "Odległość w {0}",
     // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //

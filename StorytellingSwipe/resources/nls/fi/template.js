@@ -3,7 +3,7 @@
 		viewer: {
 			loading: {
 				step1: "LADATAAN SOVELLUSTA",
-				step2: "LADATAAN DATAA",
+				step2: "LADATAAN AINEISTOA",
 				step3: "KÄYNNISTETÄÄN",
 				fail: "Pyyhkäisyn lataus epäonnistui",
 				loadBuilder: "VAIHDETAAN MUODOSTUSOHJELMAN TILAAN",				
@@ -32,7 +32,7 @@
 				hideIntro: "PIILOTA ESITTELY",
 				navLeft: "Selite",
 				navMap: "Kartta",
-				navRight: "Data"
+				navRight: "Aineisto"
 			},
 			desktopView: {
 				storymapsText: "Tarinakartta",
@@ -112,9 +112,9 @@
         },
 		swipe: {
 			mobileData: {
-				noData: "Näytettäviä tietoja ei ole.",
+				noData: "Näytettäviä aineistoja ei ole.",
 				noDataExplain: "Valitse kohde ja palaa tähän napauttamalla karttaa.",
-				noDataMap: "Tälle kartalle ei ole tietoja.",
+				noDataMap: "Tälle kartalle ei ole aineistoja.",
 				noPopup: "Tälle kohteelle ei ole ponnahdusikkunaa."
 			},
 			mobileLegend: {
@@ -126,7 +126,7 @@
 				legendTitle: "Selite"
 			},
 			infoWindow: {
-				noFeature: "Näytettäviä tietoja ei ole.",
+				noFeature: "Näytettäviä aineistoja ei ole.",
 				noFeatureExplain: "Valitse kohde napauttamalla karttaa."
 			},
 			settingsLayout: {
@@ -244,7 +244,7 @@
 				shareQ2bis: "Miten palaan sisällönluonnin käyttöliittymään?",
 				shareA2div1: "Tallenna ja käytä uudelleen seuraavaa linkkiä %LINK1% tai käytä <a href='%LINK2%' target='_blank'>sovelluskohteen sivua</a>.",
 				shareA2div2: "Koska olet sovelluksen omistaja, kun olet kirjautunut ArcGIS.com-sivustoon, sovelluksessa näkyy painike, jolla voita avata vuorovaikutteisen muodostusohjelman:",				
-				shareQ3: "Minne tiedot on tallennettu?",
+				shareQ3: "Minne aineistot on tallennettu?",
 				shareA3: "Sovelluksen määritykset tallennetaan tähän web-sovelluskohteeseen</a>.",
 				shareWarning: "Jakaminen kohteen %WITH% kanssa on poistettu käytöstä, koska et ole <a href='%LINK%' target='_blank'>Web-kartan</a> omistaja.",
  				shareWarningWith1: "julkisesti",

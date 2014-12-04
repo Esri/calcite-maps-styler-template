@@ -48,7 +48,7 @@
             "comments": {
                 "commentsHeader": "Kommentit",
                 "posted": "Lähetetty",
-                "by": "peruste",
+                "by": "tekijältä",
                 "deleteComment": "poista",
                 "editComment": "muokkaa",
                 "noComments": "Ei kommentteja",
@@ -75,7 +75,7 @@
                 "commentsLabel": "kommentti",
                 "commentsLabelPlural": "kommentit",
                 "modifiedLabel": "Muokattu viimeksi",
-                "by": "peruste",
+                "by": "tekijältä",
                 "separator": ","
             },
             "mapPage": {

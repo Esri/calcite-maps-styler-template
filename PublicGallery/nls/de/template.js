@@ -94,9 +94,9 @@
                 "ownerHeader": "Besitzer:",
                 "switchBasemap": "Grundkarte wechseln",
                 "getMobileApp": "Anwendung abrufen",
-                "constraintsHeading": "Nutzungsbeschränkungen",
-                "createdLabel": "Erstellt",
-                "noDescription": "Keine Beschreibung.",
+                "constraintsHeading": "Use Constraints",
+                "createdLabel": "Created",
+                "noDescription": "No description.",
                 "detailsLabel": "Details"
             },
             "filterItems": {

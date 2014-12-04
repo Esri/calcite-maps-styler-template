@@ -28,8 +28,8 @@
 				buttonSettings: "Einstellungen",
 				buttonHelp: "Hilfe",
 				buttonPreview: "Live anzeigen",
-				tooltipFirstSave: "Dies ist erst beim Speichern verfügbar.",
-				tooltipNotShared: "Dies ist erst beim Freigeben verfügbar.",
+				tooltipFirstSave: "Dies ist erst nach dem Speichern verfügbar.",
+				tooltipNotShared: "Dies ist erst nach dem Freigeben verfügbar.",
 				noPendingChange: "Keine ausstehende Änderung",
 				unSavedChangePlural: "Ausstehende Änderungen",
 				closeWithPendingChange: "Möchten Sie die Aktion wirklich bestätigen? Ihre Änderungen gehen dabei verloren.",
@@ -42,7 +42,7 @@
 			saveError: {
 				title: "Fehler beim Speichern der Anwendung",
 				err1Div1: "Die Anwendung kann nicht gespeichert werden, da Sie bereits über ein anderes Element mit demselben Namen verfügen (weitere Informationen finden Sie im <a class='linkagolroot' target='_blank'>Inhaltsordner</a>).",
-				err1Div2: "Ändern Sie den Titel Ihrer Anwendung, und speichern Sie ihn anschließend.",
+				err1Div2: "Ändern Sie den Titel Ihrer Anwendung, und speichern Sie anschließend.",
 				btnOk: "Den Anwendungstitel bearbeiten"
 			},
 			share: {
@@ -91,19 +91,19 @@
 			},
 			settingsHeader: {
 				title: "Kopfzeile",
-				logoEsri: "Esri Logo",
-				logoNone: "Kein Logo",
-				logoCustom: "Benutzerdefiniertes Logo",
-				logoCustomPlaceholder: "URL (max. 250 x 50 Pixel)",
-				logoCustomTargetPlaceholder: "Ziel-URL",
-				logoSocialExplain: "Passen Sie den Kopfzeilen-Link an.",
+				logoEsri: "Esri logo",
+				logoNone: "No logo",
+				logoCustom: "Custom logo",
+				logoCustomPlaceholder: "URL (max 250x50 pixels)",
+				logoCustomTargetPlaceholder: "Click-through link",
+				logoSocialExplain: "Customize the header link.",
 				logoSocialText: "Text",
 				logoSocialLink: "Link",
-				lblSmallHeader: "Kompakte Überschrift verwenden (keinen Untertitel)"
+				lblSmallHeader: "Use compact header (no subtitle)"
 			},
 			header: {
-				title: "Den Titel für %TPL_NAME% bearbeiten",
-				subtitle: "Den Untertitel für %TPL_NAME% bearbeiten"
+				title: "Edit the title of your %TPL_NAME%",
+				subtitle: "Edit the subtitle of your %TPL_NAME%"
 			}
 		}
 	})

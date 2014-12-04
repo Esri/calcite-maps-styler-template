@@ -261,7 +261,7 @@
 				uploadPicAndThumb: "Übernehmen"
 			},
 			headerJS:{
-				editMe: "Bearbeiten!",
+				editMe: "Edit me!",
 				templateTitle: "Vorlagentitel festlegen",
 				templateSubtitle: "Untertitel der Vorlage festlegen"
 			},
@@ -361,7 +361,7 @@
 				header: "Geben Sie einen YouTube-Benutzernamen ein, um nach öffentlich freigegebenen Videos zu suchen.",
 				pageInputLbl: "YouTube-Benutzername eingeben",
 				lookupMsgError: "Benutzer nicht gefunden",
-				howToFind: "So finden Sie einen Youtube-Benutzernamen",
+				howToFind: "How to find a YouTube user name",
 				howToFind2: "Benutzername wird unter Videos angezeigt",
 				found: "Gefunden",
 				noData: "Keine öffentlichen Videos gefunden"
