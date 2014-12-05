@@ -155,22 +155,17 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 }
 
             }));
-            var galleryOptions = null;
-            if (this.config.basemap_gallery || this.config.basemap_toggle) {
-
-                galleryOptions = {
-                    showArcGISBasemaps: true,
-                    portalUrl: this.config.sharinghost,
-                    basemapsGroup: this._getBasemapGroup(),
-                    map: this.map
-                };
-            }
 
             require(["application/sniff!basemap_gallery?esri/dijit/BasemapGallery"], lang.hitch(this, function (BasemapGallery) {
                 if (!BasemapGallery) {
                     return;
                 }
-
+                var galleryOptions = {
+                    showArcGISBasemaps: true,
+                    portalUrl: this.config.sharinghost,
+                    basemapsGroup: this._getBasemapGroup(),
+                    map: this.map
+                };
                 var gallery = null;
                 //add a button below the slider to show/hide the basemaps 
                 var mainContainer = domConstruct.create("div", {
@@ -221,7 +216,13 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 if (!BasemapToggle && !BasemapGallery && !basemaps) {
                     return;
                 }
-
+                //don't specify a custom group because toggle supports
+                //online basemaps
+                var galleryOptions = {
+                    showArcGISBasemaps: true,
+                    portalUrl: this.config.sharinghost,
+                    map: this.map
+                };
                 var basemapGallery = new BasemapGallery(galleryOptions);
                 basemapGallery.on("load", lang.hitch(this, function () {
 
@@ -236,8 +237,11 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                         var b = this.config.response.itemInfo.itemData.baseMap;
                         if (b.title) {
                             //title is translated so lets compare the key
+
                             for (var i in basemaps) {
+    
                                 if (b.title === this._getBasemapName(i)) {
+
                                     this.map.setBasemap(i);
                                 }
                             }
@@ -288,29 +292,35 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
         _getBasemapName: function(name){
             var current = null;
             switch (name) {
-            case "streets":
-                current = "Streets";
-                break;
-            case "satellite":
-                current = "Imagery";
-                break;
-            case "hybrid":
-                current = "Imagery with Labels";
-                break;
-            case "topo":
-                current = "Topographic";
+            case "dark-gray":
+                current = "Dark Gray Canvas";
                 break;
             case "gray":
                 current = "Light Gray Canvas";
                 break;
-            case "oceans":
-                current = "Oceans";
+            case "hybrid":
+                current = "Imagery with Labels";
                 break;
             case "national-geographic":
                 current = "National Geographic";
                 break;
+            case "oceans":
+                current = "Oceans";
+                break;
             case "osm":
                 current = "OpenStreetMap";
+                break;
+            case "satellite":
+                current = "Imagery";
+                break;
+            case "streets":
+                current = "Streets";
+                break;
+            case "terrain":
+                current = "Terrain with Labels";
+                break;
+            case "topo":
+                current = "Topographic";
                 break;
             }
             return current;
