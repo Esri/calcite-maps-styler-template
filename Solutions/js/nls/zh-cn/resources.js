@@ -15,7 +15,7 @@
  | limitations under the License.
  */
 define(
-    ({
+     ({
         map: {
             error: "无法创建地图"
         },
@@ -56,7 +56,7 @@ define(
             geolocationTimeout: "浏览器无法及时获取当前位置",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             noSearchLayerConfigured: "尚未配置任何查找图层",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "在地图中未找到此查找图层",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
-            searchLayerNotSearchable: "无法找到地图图层的字段。<br><br>请确认此图层存在于地图内容的根部。嵌套服务(例如 ArcGIS for Server 动态地图服务)必须添加到地图(一次添加到一个图层)(包括图层索引号)以用作“查找图层”。切片服务不能用作“查找图层”。",
+            searchLayerNotSearchable: "无法找到地图图层的字段。<br><br>请确认此图层存在于地图内容的根部。嵌套服务(例如 ArcGIS for Server 动态地图服务)必须添加到地图(一次添加到一个图层)(包括图层索引号)以用作\“查找图层\”。切片服务不能用作\“查找图层\”。",
             searchFieldMissing: "在地图查找图层中未找到此字段",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
             allSearchFieldsMissing: "在地图查找图层中未找到这些字段",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "此字段不存在于任何地图图层中",  // Appears when a field used in the configuration was not found in any map layer
