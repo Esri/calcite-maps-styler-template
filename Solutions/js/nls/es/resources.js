@@ -15,7 +15,7 @@
  | limitations under the License.
  */
 define(
-     ({
+    ({
         map: {
             error: "No se puede crear el mapa"
         },
