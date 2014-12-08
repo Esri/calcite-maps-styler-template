@@ -602,7 +602,11 @@ define([
          }
          on(btnToggle, "click", lang.hitch(this, this._toggleScroll));
          // close
-         on(dom.byId("btnClose"), "click", lang.hitch(this, this._showPage, 0));
+         var btnClose = dom.byId("btnClose");
+         if (this.config && this.config.i18n) {
+            btnClose.title = this.config.i18n.tooltips.close;
+         }
+         on(btnClose, "click", lang.hitch(this, this._showPage, 0));
          // reset
          var btnReset = dom.byId("btnReset");
          if (this.config && this.config.i18n) {
@@ -616,7 +620,11 @@ define([
          }
          on(btnFilter, "click", lang.hitch(this, this._showPage, 2));
          // reverse
-         on(dom.byId("btnReverse"), "click", lang.hitch(this, this._reverseDirections));
+         var btnReverse = dom.byId("btnReverse");
+         if (this.config && this.config.i18n) {
+            btnReverse.title = this.config.i18n.tooltips.reverse;
+         }
+         on(btnReverse, "click", lang.hitch(this, this._reverseDirections));
 
       },
 
