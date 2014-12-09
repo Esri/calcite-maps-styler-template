@@ -49,9 +49,9 @@ app.cfg = {
 					headerText: "#D9D9D9", 
 					// Main Panel background
 					panel: "#DBD9DA", 
-					// Main text
+					// Description text
 					text: "#000000", 
-					// TODO
+					// Description link
 					textLink: "#555555", 
 					// Media background
 					media: "#FFFFFF", 
@@ -126,7 +126,7 @@ app.cfg = {
 					headerText: "#C5D5D5", 
 					panel: "#000000", 
 					text: "#D8D8D8", 
-					textLink: "#555555", 
+					textLink: "#CCCCCC", 
 					media: "#8C8C8C", 
 					mapControls: "#404040",	
 					softText: "#C5D5D5", 
@@ -248,7 +248,7 @@ app.cfg = {
 					headerText: "#C5D5D5", 
 					panel: "#181818", 
 					text: "#D8D8D8", 
-					textLink: "#555555", 
+					textLink: "#CCCCCC", 
 					media: "#8C8C8C", 
 					mapControls: "#404040",	
 					softText: "#C5D5D5", 
@@ -370,7 +370,7 @@ app.cfg = {
 					headerText: "#C5D5D5", 
 					panel: "#000000", 
 					text: "#D8D8D8", 
-					textLink: "#555555", 
+					textLink: "#CCCCCC", 
 					media: "#8C8C8C", 
 					mapControls: "#404040",	
 					softText: "#C5D5D5", 
