@@ -26,7 +26,7 @@ define(
             },
             sync: {
                 label: "Synchronizovat rozsah mapy",
-                tooltip: "Synchronizuje zobrazení s rozsahem této mapy."
+                tooltip: "Synchronizovat zobrazení na rozsah této mapy."
             }
         }
     })

@@ -54,7 +54,7 @@
             submitInstructions: "Přidejte tyto informace do mapy.",
             myLocationText: "Současná poloha",
             locationDescriptionForMoreThanOneOption: "Zadejte polohu pro tento záznam kliknutím/klepnutím na mapu, nebo pomocí jedné z následujících možností.",
-            locationDescriptionForOneOption: "Zadejte polohu pro tento záznam kliknutím/klepnutím na mapu nebo pomocí následující možnosti.",
+            locationDescriptionForOneOption: "Zadejte polohu pro tento záznam kliknutím/klepnutím na mapu, nebo pomocí následující možnosti.",
             locationDescriptionForNoOption: "Zadejte polohu pro tento záznam kliknutím/klepnutím na mapu.",
             addressText: "Hledat",
             geographic: "Zem. šířka/délka",

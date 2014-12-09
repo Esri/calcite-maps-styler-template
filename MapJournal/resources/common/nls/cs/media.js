@@ -99,7 +99,7 @@
 				lblPosition3Explain: "(nedojde k ořezu)",
 				lblPosition3Explain2: "(šířka se vždy přizpůsobí panelu)",
 				lblPosition4Explain: "(může dojít ke zkreslení)",
-				unloadLbl: "Zrušit spuštění, když čtenář opustí stránku",
+				unloadLbl: "Zrušit spouštění, když čtenář opustí stránku",
 				unloadHelp: "Pokud webová stránka obsahuje audio nebo video média, nechte tuto možnost zaškrtnutou, aby se přehrávání tohoto obsahu ukončilo, pokud čtenář stránku opustí. Zrušte její zaškrtnutí, pokud například chcete, aby hudební podkres hrál po celou dobu prohlížení příběhu.<br />Pokud je webová stránka aplikací, zrušte zaškrtnutí této možnosti, aby se aplikace nespouštěla znovu, když se k ní čtenář vrátí."
 			},
 			editorActionGeocode: {

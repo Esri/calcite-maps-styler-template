@@ -25,7 +25,7 @@ define(
          "address": "Adresa",
          "latitude": "Zeměpisná šířka",
          "longitude": "Zeměpisná délka",
-         "use": "Použít toto umístění",
+         "use": "Použít tuto polohu",
          "error": "Toto umístění nelze použít."
       },
       "tooltips": {

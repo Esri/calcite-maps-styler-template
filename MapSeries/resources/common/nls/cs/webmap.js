@@ -15,8 +15,8 @@
 				section: "Část",
 				sections: "Části",
 				and: "a",
-				action: "Akce v části",
-				actions: "Akce v částech",
+				action: "Akce v sekci",
+				actions: "Akce v sekcích",
 				originalWebmap: "Webová mapa použitá při publikaci %TPL_NAME%",
 				browseMaps: "Procházet mapy",
 				current: "Současná webová mapa",
@@ -24,14 +24,14 @@
 				newMap: "Nově vybraná webová mapa",
 				webmapDefault: "Výchozí nastavení webové mapy",
 				customCfg: "Vlastní konfigurace",
-				tooltipLocation: "Určete umístění, které bude tato mapa zobrazovat.",
+				tooltipLocation: "Určete oblast, kterou bude tato mapa zobrazovat.",
 				tooltipContent: "Určete viditelné vrstvy.",
-				tooltipPopup: "Zvolte vyskakovací okno, které se zobrazí po otevření mapy.",
-				tooltipOverview: "Zobrazí spolu s hlavní mapou malou mapu přehledu.",
+				tooltipPopup: "Vyberte vyskakovací okno, které se zobrazí po otevření mapy.",
+				tooltipOverview: "Zobrazí spolu s hlavní mapou malou přehledovou mapu.",
 				tooltipLegend: "Zobrazí v mapě její legendu. Užitečné v případě, kdy mapa obsahuje velké množství vrstev a symbolů.",
 				mapCfgInvite: "Pomocí těchto ovládacích prvků můžete konfigurovat mapu.",
 				lblLocationAlt: "Převzato z první mapy",
-				tooltipLocationAlt: "Umístění této mapy bude synchronizováno s první mapou v sérii map. Chcete-li změnit toto chování série, přejděte do nabídky Nastavení > Možnosti mapy."
+				tooltipLocationAlt: "Oblast zobrazení této mapy bude synchronizována s první mapou v sérii map. Chcete-li změnit toto chování série, přejděte do nabídky Nastavení > Možnosti mapy."
 			},
 			configure: {
 				btnReset: "Resetovat",
@@ -46,7 +46,7 @@
 				popupTitle: "Vyskakovací okno mapy",
 				popupExplain: "Kliknutím na prvek otevřete vyskakovací okno, s informacemi, které chcete o prvku zobrazit.",
 				popupSave: "Uložit konfiguraci vyskakovacího okna",
-				hintNavigation: "Navigace mapy je vypnuta."
+				hintNavigation: "Navigace v mapě je vypnuta."
 			}
 		},
 		configure: {
@@ -61,7 +61,7 @@
 				searchTitle: "Hledat",
 				ok: "OK",
 				cancel: "Storno",
-				placeholder: "Zadejte vyhledávací výraz nebo identifikátor webové mapy..."
+				placeholder: "Zadejte výraz pro vyhledávání nebo identifikátor webové mapy..."
 			}
 		}
 	})

@@ -50,7 +50,7 @@
 				other: "Jiné"
 			},
 			videoSelectorYoutube: {
-				url: "Adresa URL videa ve službě YouTube",
+				url: "Adresa URL videa ke službě YouTube",
 				pageInputLbl: "Uživatelské jméno",
 				lookupMsgError: "Uživatel nenalezen",
 				howToFind: "Jak najít uživatelské jméno YouTube",
@@ -59,11 +59,11 @@
 				noData: "Nenalezena žádná veřejná videa"
 			},
 			videoSelectorVimeo: {
-				url: "Adresa URL videa ve službě Vimeo"
+				url: "Adresa URL videa ke službě Vimeo"
 			},
 			videoSelectorOther: {
 				explain1: "Tato aplikace nedokáže přehrávat videa v původním formátu (tj. avi, mpeg), ale dokáže přehrávat hostované videosoubory s vestavěným přehrávačem (tj. YouTube nebo Vimeo).",
-				explain2: "Tuto funkci nabízí většina online služeb pro hostování videa. Musíte najít možnost pro vložení videa, zkopírovat uvedený kód a použít %WEBPAGE%.",
+				explain2: "Tuto funkci nabízí většina online služeb pro hostování videa. Musíte najít volbu pro vložení videa, zkopírovat uvedený kód a použít %WEBPAGE%.",
 				explain3: "Video také můžete hostovat sami. Stačí vytvořit HTML stránku, která používá videopřehrávač, jako je například %EXAMPLE%, hostovat danou stránku a také použít %WEBPAGE%.",
 				webpage: "Prvek webové stránky"
 			},
@@ -99,7 +99,7 @@
 				lblPosition3Explain: "(nedojde k ořezu)",
 				lblPosition3Explain2: "(šířka se vždy přizpůsobí panelu)",
 				lblPosition4Explain: "(může dojít ke zkreslení)",
-				unloadLbl: "Zrušit spuštění, když čtenář opustí stránku",
+				unloadLbl: "Zrušit spouštění, když čtenář opustí stránku",
 				unloadHelp: "Pokud webová stránka obsahuje audio nebo video média, nechte tuto možnost zaškrtnutou, aby se přehrávání tohoto obsahu ukončilo, pokud čtenář stránku opustí. Zrušte její zaškrtnutí, pokud například chcete, aby hudební podkres hrál po celou dobu prohlížení příběhu.<br />Pokud je webová stránka aplikací, zrušte zaškrtnutí této možnosti, aby se aplikace nespouštěla znovu, když se k ní čtenář vrátí."
 			},
 			editorActionGeocode: {
