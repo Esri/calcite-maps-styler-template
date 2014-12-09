@@ -469,12 +469,18 @@ define([
               id: "pageDir"
          }, pageBody);
          domClass.add(pageDir, 'resultsContent');
+         var userLang = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage);
+         if (!userLang)
+            userLang = "en_US";
          var units = "esriMiles";
          if (this.config.distanceUnits == "kilometers")
             units = "esriKilometers";
          var options = {
               map: this.map,
-              routeParams: {directionsLengthUnits: units},
+              routeParams: {
+                 directionsLanguage : userLang,
+                 directionsLengthUnits : units
+              },
               alphabet: false,
               canModifyStops: false
          };

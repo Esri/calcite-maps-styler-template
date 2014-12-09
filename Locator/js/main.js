@@ -53,7 +53,7 @@ define([
     "esri/symbols/SimpleMarkerSymbol",
     "esri/symbols/TextSymbol",
     "esri/tasks/locator",
-    'esri/tasks/query',
+    "esri/tasks/query",
     "esri/urlUtils"
 ], function (
     ready,
@@ -545,6 +545,9 @@ define([
          }
 
          // directions
+         var userLang = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage);
+         if (!userLang)
+            userLang = "en_US";
          var rgb = Color.fromString(this.color).toRgb();
          var symL = new SimpleLineSymbol(SimpleLineSymbol.STYLE_NULL, new Color([0, 0, 0]), 0);
          var sym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 1, symL, new Color([0, 0, 0, 0]));
@@ -559,6 +562,7 @@ define([
             showTravelModesOption : false,
             showTrafficOption : true,
             routeParams : {
+               directionsLanguage : userLang,
                directionsLengthUnits : units
             },
             alphabet : false,
