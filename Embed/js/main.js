@@ -442,8 +442,8 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                     }
 
                     if (symbolInfo && symbolInfo.length && symbolInfo.length >= 6) {
-                        var x = symbolInfo[0].replace(",", "."),
-                            y = symbolInfo[1].replace(",", "."),
+                        var x = symbolInfo[0],
+                            y = symbolInfo[1],
                             wkid = symbolInfo[2],
                             description = symbolInfo[3],
                             icon_url = symbolInfo[4],
