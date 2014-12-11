@@ -621,13 +621,14 @@ hr {
 .recHeaderInfo {
 	float: left;
 	margin: 10px 0 10px 0;
+	width: 190px;
 	width: calc(100% - 110px); 
-	min-width: 190px;
+	/*min-width: 190px;*/
 	height: 39px;
 	display: inline;
 	white-space: nowrap;
 	overflow: hidden;
-	text-overflow:ellipsis;
+	text-overflow: ellipsis;
 }
 
 .recDist {
