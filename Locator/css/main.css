@@ -127,7 +127,8 @@ hr {
 }
 
 .LocateButton .loading {
-	background: url(../images/loading.gif)no-repeat;
+	background-image: url('../images/loading.gif');
+	background-repeat: no-repeat;
 	background-position: center center;
 }
 
@@ -255,9 +256,8 @@ hr {
 
 .esriPopup .pointer, 
 .esriPopup .outerPointer {
-	/*display: none !important;*/
-	background: url(../images/marker.png)no-repeat !important;
-	/*background-color: rgba(0,0,0,0.1) !important;*/
+	background-image: url('../images/marker.png') !important;
+	background-repeat: no-repeat;
 	box-shadow: none !important;
 	-webkit-box-shadow:none !important;
 }
@@ -289,18 +289,19 @@ hr {
 }
 
 .simpleDirections .esriResultsLoading .esriResultsContainer {
-    background: url(../images/ajax-loader.gif)no-repeat;
+    background-image: url('../images/ajax-loader.gif');
+    background-repeat: no-repeat;
     background-position: center center;
     height: 30px;
 }
 
 .esriDMTStopOrigin .esriRouteIcon{
-	background-image: url(../images/start.png) !important;
+	background-image: url('../images/start.png') !important;
 	background-repeat: no-repeat !important;
 }
 
 .esriDMTStopDestination .esriRouteIcon{
-	background-image: url(../images/end.png) !important;
+	background-image: url('../images/end.png') !important;
 	background-repeat: no-repeat !important;
 }
 
@@ -422,7 +423,8 @@ hr {
 	position: absolute;
 	left: 50%;
 	margin-left: -12px;
-	background: url(../images/up.png)no-repeat;
+	background-image: url('../images/up.png');
+	background-repeat: no-repeat;
 	display: none;
 }
 
@@ -430,14 +432,16 @@ hr {
 	position: absolute;
 	top: 10px;
 	right: 7px;
-	background: url(../images/reset.png)no-repeat;
+	background-image: url('../images/reset.png');
+	background-repeat: no-repeat;
 }
 
 .btnFilter {
 	position: absolute;
 	top: 10px;
 	right: 37px;
-	background: url(../images/filter.png)no-repeat;
+	background-image: url('../images/filter.png');
+	background-repeat: no-repeat;
 	display: none;
 }
 
@@ -445,7 +449,8 @@ hr {
 	position: absolute;
 	top: 10px;
 	right: 7px;
-	background: url(../images/close.png)no-repeat;
+	background-image: url('../images/close.png');
+	background-repeat: no-repeat;
 	display: none;
 }
 
@@ -453,7 +458,8 @@ hr {
 	position: absolute;
 	bottom: 10px;
 	right: 7px;
-	background: url(../images/reverse.png)no-repeat;
+	background-image: url('../images/reverse.png');
+	background-repeat: no-repeat;
 	display: none;
 }
 
@@ -579,7 +585,8 @@ hr {
 	display: block;
 	transition: 0.2s linear;
 	-webkit-transition: 0.2s linear;
-	background: url(../images/arrow.png)no-repeat;
+	background-image: url('../images/arrow.png');
+	background-repeat: no-repeat;
 	background-position: right top;
 }
 
@@ -635,7 +642,8 @@ hr {
 	margin: 10px 0 10px 0;
 	width: 30px;
 	height: 30px;
-	background: url(../images/route.png)no-repeat;
+	background-image: url('../images/route.png');
+	background-repeat: no-repeat;
 	background-position: center center;
 	cursor: pointer;
 }
@@ -662,7 +670,7 @@ hr {
 	height: 30px;
 	line-height: 30px;
 	background-color: rgba(0,0,0,0.4);
-	background-image: url(../images/pin.png);
+	background-image: url('../images/pin.png');
 	background-repeat: no-repeat;
 	padding-left: 35px;
 	cursor: pointer;
