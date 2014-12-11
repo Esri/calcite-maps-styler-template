@@ -179,8 +179,8 @@ define([
          }
       },
 
-      // Set Color
-      _setColor : function() {
+      // Set Color Old
+      _setColorOld : function() {
          this.color = this.config.color;
          var style = document.createElement('style');
          style.type = 'text/css';
@@ -198,6 +198,47 @@ define([
          style3.type = 'text/css';
          style3.innerHTML = '.recOpened {background-color:' + recColor.toCss() + ';}';
          document.getElementsByTagName('head')[0].appendChild(style3);
+      },
+      
+      // Set Color
+      _setColor : function() {
+         this.color = this.config.color;
+         
+         var style1 = document.createElement('style');
+         var str1 = '.bg {background-color: ' + this.color + '};';
+         style1.setAttribute("type", "text/css");
+         document.getElementsByTagName('head')[0].appendChild(style1);
+         if (style1.styleSheet) {   // IE
+             style1.styleSheet.cssText = str1;
+         } else {                // the world
+             var t1 = document.createTextNode(str1);
+             style1.appendChild(t1);
+         } 
+         
+         if (this.config.styleBasemap == 1) {
+            var style2 = document.createElement('style');
+            var str2 = '.layerTile {filter: url(css/filters.svg#grayscale); filter: gray; -webkit-filter: grayscale(1); -ms-filter: grayscale(100%); -moz-opacity: 0.7; -khtml-opacity: 0.7; opacity: 0.7;}';
+            style2.setAttribute("type", "text/css");
+            document.getElementsByTagName('head')[0].appendChild(style2);
+            if (style2.styleSheet) {   // IE
+               style2.styleSheet.cssText = str2;
+            } else {                // the world
+                var t2 = document.createTextNode(str2);
+                style2.appendChild(t2);
+            }
+         }
+         
+         var recColor = Color.blendColors(Color.fromString("#ffffff"), Color.fromString(this.color), 0.3);
+         var style3 = document.createElement('style');
+         var str3 = '.recOpened {background-color:' + recColor.toCss() + ';}';
+         style3.setAttribute("type", "text/css");
+         document.getElementsByTagName('head')[0].appendChild(style3);
+         if (style3.styleSheet) {   // IE
+             style3.styleSheet.cssText = str3;
+         } else {                // the world
+             var t3 = document.createTextNode(str3);
+             style3.appendChild(t3);
+         }
       },
 
       // set protocol handler
