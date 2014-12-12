@@ -219,27 +219,27 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
 
                  var toggle_container = domConstruct.create("div", {}, "mapDiv");
     
-                     /* basemap fix */
-                    var bmLayers = [],
-                      mapLayers = this.map.getLayersVisibleAtScale(this.map.getScale());
-                    if (mapLayers) {
-                      for (var i = 0; i < mapLayers.length; i++) {
-                        if (mapLayers[i]._basemapGalleryLayerType) {
-                          var bmLayer = this.map.getLayer(mapLayers[i].id);
-                          if (bmLayer) {
-                            bmLayers.push(bmLayer);
-                          }
-                        }
+                     /* Start temporary until after JSAPI 4.0 is released */
+                var bmLayers = [],
+                  mapLayers = this.map.getLayersVisibleAtScale(this.map.getScale());
+                if (mapLayers) {
+                  for (var i = 0; i < mapLayers.length; i++) {
+                    if (mapLayers[i]._basemapGalleryLayerType) {
+                      var bmLayer = this.map.getLayer(mapLayers[i].id);
+                      if (bmLayer) {
+                        bmLayers.push(bmLayer);
                       }
                     }
-                    on.once(this.map, 'basemap-change', lang.hitch(this, function () {
-                      if (bmLayers) {
-                        for (var i = 0; i < bmLayers.length; i++) {
-                          this.map.removeLayer(bmLayers[i]);
-                        }
-                      }
-                    }));
-                    /* end basemap fix */
+                  }
+                }
+                on.once(this.map, 'basemap-change', lang.hitch(this, function () {
+                  if (bmLayers && bmLayers.length) {
+                    for (var i = 0; i < bmLayers.length; i++) {
+                      bmLayers[i].setVisibility(false);
+                    }
+                  }
+                }));
+                /* END temporary until after JSAPI 4.0 is released */
 
 
                     var toggle = new BasemapToggle({
