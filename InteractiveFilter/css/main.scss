@@ -58,6 +58,20 @@ html,body {
 .esriPopup .pointer.bottom , .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight{
     background: #f7f7f7 !important;
 }
+.esriPopup.light .actionsPane .action.zoomTo {
+  background-position: 0 -224px; }
+
+.esriPopup .actionsPane .action {
+  margin-right: 10px; }
+
+.esriPopup.light .actionsPane .action {
+  position: absolute;
+  cursor: pointer;
+  background-image: url("http://js.arcgis.com/3.12/esri/css/calcite/images/popup-sprite.png");
+  width: 12px;
+  height: 12px;
+  text-indent: -9999px; }
+
 #locateDiv{
     position: absolute;
     top:55px;
