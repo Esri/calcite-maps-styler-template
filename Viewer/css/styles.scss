@@ -243,6 +243,19 @@ html, body {
 .esriPopupMaximized{
    top:100px !important;
 }
+.esriPopup.light .actionsPane .action.zoomTo {
+  background-position: 0 -224px; }
+
+.esriPopup .actionsPane .action {
+  margin-right: 10px; }
+
+.esriPopup.light .actionsPane .action {
+  position: absolute;
+  cursor: pointer;
+  background-image: url("http://js.arcgis.com/3.12/esri/css/calcite/images/popup-sprite.png");
+  width: 12px;
+  height: 12px;
+  text-indent: -9999px; }
 .esriPrintout a{
     color:#5daddd;
 }
@@ -957,6 +970,75 @@ img{
 .calcite .dijitPopup{
     border: solid 1px #d3d3d3;
 }
+
+.esriPopup .titlePane,
+.esriPopup .titlePane {
+  font-size: 12px;
+  line-height: 16px;
+  height: 16px;
+  padding: 10px;
+  border: 0;
+  border-radius: 3px 3px 0 0;
+  -webkit-border-radius: 3px 3px 0 0;
+}
+.esriPopup. .titlePane .title,
+.esriPopup .titlePane .title {
+  line-height: 16px;
+}
+.esriPopup .titleButton,
+.esriPopup .titleButton {
+  top: 10px;
+  background: none;
+}
+.esriPopup .titleButton.prev,
+.esriPopup .titleButton.prev {
+  right: 73px;
+}
+.dj_rtl .esriPopup .titleButton.prev,
+.dj_rtl .esriPopup .titleButton.prev {
+  left: 73px;
+  right: auto;
+}
+.esriPopup .titleButton.next,
+.esriPopup .titleButton.next {
+  right: 55px;
+}
+.dj_rtl .esriPopup .titleButton.next,
+.dj_rtl .esriPopup .titleButton.next {
+  left: 55px;
+  right: auto;
+}
+.esriPopup .titleButton.maximize,
+.esriPopup .titleButton.maximize {
+  right: 31px;
+}
+.dj_rtl .esriPopup .titleButton.maximize,
+.dj_rtl .esriPopup .titleButton.maximize {
+  left: 31px;
+  right: auto;
+}
+.esriPopup .titleButton.restore,
+.esriPopup .titleButton.restore {
+  right: 29px;
+}
+.dj_rtl .esriPopup .titleButton.restore,
+.dj_rtl .esriPopup .titleButton.restore {
+  left: 29px;
+  right: auto;
+}
+.esriPopup .titleButton.close,
+.esriPopup .titleButton.close {
+  right: 10px;
+}
+.dj_rtl .esriPopup .titleButton.close,
+.dj_rtl .esriPopup .titleButton.close {
+  left: 10px;
+  right: auto;
+}
+
+
+
+
 
 /*Share Dialog updates*/
 
