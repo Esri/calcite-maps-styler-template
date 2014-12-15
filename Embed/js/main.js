@@ -219,7 +219,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
 
                  var toggle_container = domConstruct.create("div", {}, "mapDiv");
     
-                     /* Start temporary until after JSAPI 4.0 is released */
+                /* Start temporary until after JSAPI 4.0 is released */
                 var bmLayers = [],
                   mapLayers = this.map.getLayersVisibleAtScale(this.map.getScale());
                 if (mapLayers) {
@@ -258,6 +258,14 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                                 //use this to handle translated titles
                                 if (b.title === this._getBasemapName(i)) {
                                     toggle.defaultBasemap = i;
+                                    //remove at 4.0
+                                    if(i === "dark-gray"){
+                                        if(this.map.layerIds && this.map.layerIds.length > 0){
+                                            this.map.basemapLayerIds = this.map.layerIds.slice(0);
+                                            this.map._basemap = "dark-gray";
+                                        }
+                                    }   
+                                    //end remove at 4.0
                                     this.map.setBasemap(i);
                                 }
                             }
