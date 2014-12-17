@@ -295,7 +295,7 @@ a {
 }
 .light .HomeButton .home {
   background-color: #f7f8f8;
-  background: url("http://cdn.arcgis.com/cdn/5177/js/arcgisonline/map/css/images/home_locate.png") no-repeat 0 0;
+  background: url("../images/home_locate.png") no-repeat 0 0;
 }
 .HomeButton .home {
   padding: 0px !important;
