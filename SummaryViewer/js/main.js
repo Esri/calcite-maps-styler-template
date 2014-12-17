@@ -694,7 +694,7 @@ define([
             if (f === 0 && this.config.hideCount) {
                //skip
             } else {
-               info += this.aliases[f] + ": " + sumData[f] + "<br/><br/>";
+               info += this.aliases[f] + ": " + Math.round(sumData[f]*100)/100 + "<br/><br/>";
             }
          }
          this.map.infoWindow.setTitle(title);
