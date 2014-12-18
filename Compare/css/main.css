@@ -57,7 +57,7 @@ body {
   height: 30px;
 }
 .HomeButton .home {
-  background: url("http://cdn.arcgis.com/cdn/5177/js/arcgisonline/map/css/images/home_locate.png") no-repeat 0 0;
+  background: url("../images/home_locate.png") no-repeat 0 0;
   width: 30px;
   height: 30px;
 }
