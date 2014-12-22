@@ -18,6 +18,8 @@ mkdir %BUILD_OUTPUT%\Compare\storytelling_compare
 mkdir %BUILD_OUTPUT%\Compare\storytelling_sidepanel  
 mkdir %BUILD_OUTPUT%\Compare\storytelling_tabbed  
 mkdir %BUILD_OUTPUT%\CompareMaps
+mkdir %BUILD_OUTPUT%\ConstituentEngagement
+mkdir %BUILD_OUTPUT%\ConstituentEngagementConsole
 mkdir %BUILD_OUTPUT%\Edit
 mkdir %BUILD_OUTPUT%\Editor
 mkdir %BUILD_OUTPUT%\Editor\Chrome
@@ -94,6 +96,8 @@ xcopy %TEMPLATES_ROOT%\archive\CompareSideBySideViewer          %BUILD_OUTPUT%\C
 xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingSidepanel     %BUILD_OUTPUT%\Compare\storytelling_sidepanel       /E /Y
 xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingTabbed        %BUILD_OUTPUT%\Compare\storytelling_tabbed          /E /Y
 xcopy %TEMPLATES_ROOT%\Compare                                  %BUILD_OUTPUT%\CompareMaps                          /E /Y
+xcopy %TEMPLATES_ROOT%\ConstituentEngagement                    %BUILD_OUTPUT%\ConstituentEngagement                /E /Y
+xcopy %TEMPLATES_ROOT%\ConstituentEngagementConsole             %BUILD_OUTPUT%\ConstituentEngagementConsole         /E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingCompare                      %BUILD_OUTPUT%\Compare\storytelling_compare         /E /Y
 xcopy %TEMPLATES_ROOT%\archive\EditorChrome                     %BUILD_OUTPUT%\Editor\Chrome                        /E /Y
 xcopy %TEMPLATES_ROOT%\Edit                                     %BUILD_OUTPUT%\Edit                                 /E /Y
