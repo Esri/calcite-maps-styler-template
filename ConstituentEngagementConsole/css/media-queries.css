@@ -1,0 +1,57 @@
+﻿@media only screen and (max-width: 480px)
+{
+    .esriCTMainContainer
+    {
+        /*display: none;*/
+    }
+}
+
+/* CSS for Devices other than desktop browser*/
+
+@media screen and (max-width:1024px)
+{
+    html, body
+    {
+        font-size: 15px;
+    }
+
+    .esriCTSignInButton
+    {
+        background-image: url(../images/sign-in-44.png);
+        height: 44px;
+        width: 44px;
+    }
+
+    .esriCTHeaderIcons
+    {
+        height: 44px !important;
+        width: 44px !important;
+        background-size: 44px !important;
+        margin: 6px 12px;
+    }
+
+    .esriCTHeaderContainer
+    {
+        height: 60px;
+    }
+
+    .esriCTApplicationIcon
+    {
+        height: 60px;
+    }
+
+    .esriCTMainContainer
+    {
+        height: calc(100% - 60px);
+    }
+
+    .esriCTMenuTabLeft
+    {
+        line-height: 50px;
+    }
+
+    .esriCTLoginDetailsDiv
+    {
+        top: 18px;
+    }
+}

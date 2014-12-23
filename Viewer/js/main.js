@@ -181,11 +181,10 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     //Now that all the tools have been added to the toolbar we can add page naviagation
                     //to the toolbar panel, update the color theme and set the active tool.
                     this._updateTheme();
-
+                    toolbar.updatePageNavigation();
 
                     if (this.config.activeTool !== "") {
                         toolbar.activateTool(this.config.activeTool);
-                        toolbar.updatePageNavigation();
                     } else {
                         toolbar._closePage();
                     }
@@ -921,7 +920,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             }).then(lang.hitch(this, function (response) {
 
                 this.map = response.map;
-              //  domClass.add(this.map.infoWindow.domNode, "light");
+                domClass.add(this.map.infoWindow.domNode, "light");
                 this._updateTheme();
 
                 //Add a logo if provided

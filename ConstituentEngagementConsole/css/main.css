@@ -1,0 +1,473 @@
+html, body
+{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 11px;
+    font-family: Verdana;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#mapDiv
+{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.esriRTL label
+{
+    /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
+}
+
+/* Overridden Styles */
+
+.esriSimpleSliderTL
+{
+    top: 10px;
+    left: auto !important;
+    right: 10px;
+}
+
+.esriSimpleSlider div
+{
+    font-weight: normal !important;
+    width: 32px;
+    height: 31px;
+}
+
+.esriSimpleSliderDecrementButton, .esriSimpleSliderIncrementButton
+{
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.esriSimpleSlider, .esriSimpleSliderVertical .esriSimpleSliderIncrementButton, .esriSimpleSliderVertical .esriSimpleSliderDecrementButton
+{
+    border-radius: 0px !important;
+}
+
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton
+{
+    border: 0px !important;
+}
+
+/* End of Overridden Styles */
+
+/* Main Layout*/
+
+.esriCTNoWebMapParentDiv
+{
+    display: table;
+    height: calc(100% - 48px);
+    width: 100%;
+}
+
+.esriCTNoWebMapChildDiv
+{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.esriCTMainContainer
+{
+    height: calc(100% - 50px);
+}
+
+.esriCTLeftContainer
+{
+    float: left;
+    width: 30%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 5px;
+    background: #EDEDED;
+    -webkit-overflow-scrolling: touch;
+}
+
+.esriCTRightContainer
+{
+    float: left;
+    width: 70%;
+    height: 100%;
+    overflow: auto;
+}
+
+.esriCTUpperContainer
+{
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+}
+
+.esriCTLowerContainer
+{
+    width: 100%;
+    height: 60%;
+    overflow: auto;
+}
+.esriCTHeaderContainer
+{
+    height: 48px;
+}
+
+/* End of Main Layout*/
+
+/* Loading Indicator */
+
+.loading-indicator
+{
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    filter: alpha(opacity = 40);
+    -moz-opacity: 0.4;
+    -khtml-opacity: 0.4;
+    opacity: 0.4;
+    background-color: #000;
+}
+
+.app-loading .loading-indicator
+{
+    display: block;
+    background-position: center center;
+    background-image: url(../images/loading-indicator.gif);
+    background-repeat: no-repeat;
+}
+
+.esriCTHideLoadingIndicatorImage
+{
+    background-image: none !important;
+}
+
+/* End of Loading Indicator */
+
+/* MapViewer */
+
+.esriCTMapViewerHeader
+{
+    height: 46px;
+    position: relative;
+    display: table;
+    width: 100%;
+}
+
+.esriCTMapViewerBody
+{
+    height: calc(100% - 46px);
+}
+
+.esriCTLocationDetailsBtns
+{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 5px;
+    text-align: right;
+}
+
+.esriCTMaximizeContainer
+{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 0 0 5px;
+}
+
+.esriCTLocationBtn
+{
+    padding: 5px;
+}
+
+.esriCTDetailBtn
+{
+    padding: 5px;
+}
+
+.esriCTFutureRelease
+{
+    float: left;
+    padding: 10px;
+}
+
+/* End of MapViewer*/
+
+/* Web Map List */
+
+.esriCTWebMapImg
+{
+    height: 80px;
+}
+
+.esriCTWebMapListParentDiv
+{
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+}
+
+.esriCTDisplayList, .esriCTDisplayWebMapTemplate
+{
+    display: block;
+    background: #fff;
+}
+
+.esriCTRightArrow
+{
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    background-image: url(../images/right-arrow.png) !important;
+    float: right;
+}
+
+.esriCTMediaBody
+{
+    display: table-cell !important;
+    padding-top: 10px;
+    background: #fff;
+    width: 100%;
+    word-break: break-all;
+    position: relative;
+}
+
+.esriCTWebmaplistContents
+{
+    margin-left: 25px;
+    height: 40px;
+    padding: 10px 8px 0 0;
+}
+
+.esriCTMedia
+{
+    margin: 10px 0;
+    border-bottom-width: 0px;
+}
+
+.esriCTWebMapBorder
+{
+    border: 1px solid #ddd;
+}
+
+.esriCTDisplayList
+{
+    padding: 5px 0px 0px 0px;
+}
+
+.esriCTWebMapLayer
+{
+    border-top: 1px solid #b4b4b4;
+}
+
+.esriCTInfoImg
+{
+    height: 24px;
+    width: 24px;
+    background-image: url('../images/info.png');
+}
+
+.esriCTInfoImgRight
+{
+    float: right;
+    margin-right: 5px;
+    background-position: right bottom;
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+}
+
+.esriCTInfoImgLeft
+{
+    float: left;
+    margin-left: 5px;
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+}
+
+.esriCTDescription
+{
+    color: #515151;
+    padding: 5px;
+    overflow-x: auto;
+}
+
+.esriCTMultiLineEllipsisdiv
+{
+    line-height: 18px;
+    overflow: hidden;
+    position: relative;
+    max-height: 36px;
+    max-width: 100%;
+    word-break: break-all;
+}
+
+.esriCTMultiLineEllipsis
+{
+    background: #fff;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+
+.esriCTMultiLineFill
+{
+    background: #fff;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.esriCTMediaLeftText
+{
+    margin-left: 5px;
+}
+
+/* End of Web Map List */
+
+/* Application Header Styles */
+
+.esriCTApplicationHeader
+{
+    width: 100%;
+    float: left;
+    line-height: 38px;
+    z-index: 12;
+    border-bottom: 1px solid;
+}
+
+.esriCTMenuTabLeft
+{
+    font-size: 22px;
+    padding: 5px 0 5px 15px;
+    text-shadow: 0px 0px 1px #aaaaaa;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.esriCTMenuTabRight
+{
+    float: right;
+}
+
+.esriCTHomeIcon
+{
+    float: left;
+    height: 48px;
+}
+
+.esriCTApplicationIcon
+{
+    height: 48px;
+}
+
+.esriCTHeaderIcons
+{
+    float: left;
+    margin: 12px 12px;
+    height: 24px;
+    width: 24px;
+}
+
+.esriCTSignInButtonDiv
+{
+    display: block;
+}
+
+.esriCTMobileIcons
+{
+    display: none;
+}
+
+.esriCTLoginDetailsDiv
+{
+    width: 288px;
+    height: 40px;
+    line-height: 20px !important;
+    position: relative;
+    top: 15px;
+    right: 5px;
+}
+
+.esriCTLoginUserNameDiv
+{
+    cursor: pointer;
+    width: calc(100% - 24px);
+    float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: right;
+}
+
+.esriCTLoginOptionsDiv
+{
+    display: none;
+    cursor: pointer;
+    width: 100px;
+    float: right;
+}
+
+.esriCTLogoutOption
+{
+    display: inline-block;
+    border: 1px solid #b4b4b4;
+    width: 100px;
+    background: #fff;
+    padding: 0px 2px;
+}
+
+.esriCTLogoutOption:hover
+{
+    background: #EDEDED;
+}
+
+.esriCTDownArrowSignIn
+{
+    float: right;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+}
+
+.esriCTDownArrowSignInImg
+{
+    height: 18px;
+    width: 18px;
+    background-image: url(../images/down-arrow.png);
+    background-position: center;
+    margin-top: 2px;
+}
+
+/* End of application header Styles */
+
+/* Buttons */
+
+.esriCTSignInButton
+{
+    background-image: url(../images/sign-in-24.png);
+    height: 24px;
+    width: 24px;
+}
+
+/* End of Buttons */
+
+/* Dijit wrapper */
+
+.esriCTHideWrapper
+{
+    display: none !important;
+}
+
+/* End of dijit wrapper */

@@ -212,42 +212,67 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
 
             }));
 
-            require(["application/sniff!basemap_toggle?esri/dijit/BasemapToggle", "application/sniff!basemap_toggle?esri/dijit/BasemapGallery", "application/sniff!basemap_toggle?esri/basemaps"], lang.hitch(this, function (BasemapToggle, BasemapGallery, basemaps) {
-                if (!BasemapToggle && !BasemapGallery && !basemaps) {
-                    return;
-                }
-                //don't specify a custom group because toggle supports
-                //online basemaps
-                var galleryOptions = {
-                    showArcGISBasemaps: true,
-                    portalUrl: this.config.sharinghost,
-                    map: this.map
-                };
-                var basemapGallery = new BasemapGallery(galleryOptions);
-                basemapGallery.on("load", lang.hitch(this, function () {
+            require(["application/sniff!basemap_toggle?esri/dijit/BasemapToggle", "application/sniff!basemap_toggle?esri/basemaps"], lang.hitch(this, function (BasemapToggle, basemaps) {
+                    if (!BasemapToggle  && !basemaps) {
+                        return;
+                    }
 
-                    var toggle_container = domConstruct.create("div", {}, "mapDiv");
-                   
+                 var toggle_container = domConstruct.create("div", {}, "mapDiv");
+    
+                /* Start temporary until after JSAPI 4.0 is released */
+                var bmLayers = [],
+                  mapLayers = this.map.getLayersVisibleAtScale(this.map.getScale());
+                if (mapLayers) {
+                  for (var i = 0; i < mapLayers.length; i++) {
+                    if (mapLayers[i]._basemapGalleryLayerType) {
+                      var bmLayer = this.map.getLayer(mapLayers[i].id);
+                      if (bmLayer) {
+                        bmLayers.push(bmLayer);
+                      }
+                    }
+                  }
+                }
+                on.once(this.map, 'basemap-change', lang.hitch(this, function () {
+                  if (bmLayers && bmLayers.length) {
+                    for (var i = 0; i < bmLayers.length; i++) {
+                      bmLayers[i].setVisibility(false);
+                    }
+                  }
+                }));
+                /* END temporary until after JSAPI 4.0 is released */
+
+
                     var toggle = new BasemapToggle({
                         map: this.map,
                         basemap: this.config.alt_basemap || "satellite"
                     }, toggle_container);
-
+                    
+                
                     if (this.config.response && this.config.response.itemInfo && this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.baseMap) {
                         var b = this.config.response.itemInfo.itemData.baseMap;
+                           if(b.title === "World Dark Gray Base"){
+                                b.title = "Dark Gray Canvas";
+                           }
                         if (b.title) {
-                            //title is translated so lets compare the key
-
                             for (var i in basemaps) {
-    
+                                //use this to handle translated titles
                                 if (b.title === this._getBasemapName(i)) {
-
+                                    toggle.defaultBasemap = i;
+                                    //remove at 4.0
+                                    if(i === "dark-gray"){
+                                        if(this.map.layerIds && this.map.layerIds.length > 0){
+                                            this.map.basemapLayerIds = this.map.layerIds.slice(0);
+                                            this.map._basemap = "dark-gray";
+                                        }
+                                    }   
+                                    //end remove at 4.0
                                     this.map.setBasemap(i);
                                 }
                             }
                         }
-                    }
-   
+                    } 
+
+ 
                     //add a class so we can move the basemap if the zoom position moved.
                     if (this.config.zoom && this.config.zoom_position) {
                         domClass.add(toggle.domNode, "embed-" + this.config.zoom_position);
@@ -259,19 +284,8 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
 
 
                     toggle.startup();
+                
 
-                    toggle.on("toggle", lang.hitch(this, function (e) {
-                        var current = this._getBasemapName(e.currentBasemap);
-     
-                        array.forEach(basemapGallery.basemaps, function (basemap) {
-                            if (basemap.title === current) {
-                                basemapGallery.select(basemap.id);
-                            }
-                        });
-
-                    }));
-
-                }));
             }));
 
             if (this.config.active_panel) {
