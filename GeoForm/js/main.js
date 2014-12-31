@@ -4,6 +4,7 @@ define([
     "dojo/_base/declare",
     "dojo/_base/lang",
     "dojo/string",
+    "esri/dijit/BasemapToggle",
     "esri/arcgis/utils",
     "esri/config",
     "esri/lang",
@@ -44,6 +45,7 @@ define([
     declare,
     lang,
     string,
+    basemapToggle,
     arcgisUtils,
     esriConfig,
     esriLang,
@@ -73,6 +75,13 @@ define([
         defaultValueAttributes: null,
         sortedFields: [],
         isHumanEntry: null,
+        currentLocation:null,
+        constructor: function () {
+            if (dom.byId("geoform").dir == "rtl") {
+                this._loadCSS();
+            }
+        },
+
         _createGeocoderOptions: function () {
             //Check for multiple geocoder support and setup options for geocoder widget.
             var hasEsri = false,
@@ -195,6 +204,13 @@ define([
                 this.reportError(error);
             }
         },
+
+        _loadCSS: function () {
+            var cssStyle;
+            cssStyle = dom.byId("rtlCSS");
+            cssStyle.href = "css/bootstrap.rtl.css";
+        },
+
         _init: function () {
             // no theme set
             if (!this.config.theme) {
@@ -958,8 +974,10 @@ define([
                         });
                         $(inputDateGroupContainer).data("DateTimePicker").setDate(defaultDate);
                     } else {
-                        domAttr.set(inputContent, "value", currentField.defaultValue);
-                        domClass.add(formContent, "has-success");
+                        if (lang.trim(currentField.defaultValue) !== "") {
+                            domAttr.set(inputContent, "value", currentField.defaultValue);
+                            domClass.add(formContent, "has-success");
+                        }
                     }
                 }
                 //Add specific display type if present
@@ -969,6 +987,8 @@ define([
                 if (currentField.type !== "esriFieldTypeDate") {
                     on(inputContent, "focusout", lang.hitch(this, function (evt) {
                         this._validateField(evt, true);
+                    }));
+                    on(inputContent, "keyup", lang.hitch(this, function (evt) {
                         if (currentField.displayType === "textarea") {
                             var availableLength;
                             if (inputContent.value.length > currentField.length) {
@@ -1193,6 +1213,8 @@ define([
                 email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                 url = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/,
                 error;
+            //To remove extra spaces
+            currentNode.currentTarget.value = lang.trim(currentNode.currentTarget.value);
             if (iskeyPress) {
                 inputValue = currentNode.currentTarget.value;
                 inputType = domAttr.get(currentNode.currentTarget, "data-input-type");
@@ -1354,10 +1376,7 @@ define([
             var mapDiv = dom.byId('mapDiv');
             // fullscreen button HTML
             var fsHTML = '';
-            fsHTML += '<div class="fullscreen-button" id="fullscreen_button">';
-            fsHTML += '<div class="btn btn-default">';
-            fsHTML += '<span id="fullscreen_icon" class="glyphicon glyphicon-fullscreen"></span>';
-            fsHTML += '</div>';
+            fsHTML = '<div class="basemapToggle-button"><div class="basemapToggle-button" id="BasemapToggle"></div></div>';
             fsHTML += '</div>';
             mapDiv.innerHTML = fsHTML;
             arcgisUtils.createMap(itemInfo, mapDiv, {
@@ -1377,6 +1396,22 @@ define([
                 // console.log(this.config);
                 this.map = response.map;
                 // Disable scroll zoom handler
+		var toggle = new basemapToggle({
+                    map: this.map,
+                    basemap: "topo",
+                    defaultBasemap: "satellite"
+                }, "BasemapToggle");
+                toggle.startup();
+
+                var layers = this.map.getLayersVisibleAtScale(this.map.getScale());
+                on.once(this.map, 'basemap-change', lang.hitch(this, function () {
+                    for (var i = 0; i < layers.length; i++) {
+                        if (layers[i]._basemapGalleryLayerType) {
+                            var layer = this.map.getLayer(layers[i].id);
+                            this.map.removeLayer(layer);
+                        }
+                    }
+                }));
                 this.map.disableScrollWheelZoom();
                 this.defaultExtent = this.map.extent;
                 // webmap defaults
@@ -1583,9 +1618,10 @@ define([
                     this._checkUTM();
                 }));
                 // fullscreen
-                var fsButton = dom.byId('fullscreen_button');
+                var fsButton = domConstruct.create("div", { class: "fullScreenButtonContainer" }, mapDiv);
+                var fullscreenButton = domConstruct.create("span", { id: "fullscreen_icon", title:"Full Screen", class: "glyphicon glyphicon-fullscreen fullScreenImage" }, fsButton);
                 if (fsButton) {
-                    on(dom.byId('fullscreen_button'), "click", lang.hitch(this, function () {
+                    on(fsButton, "click", lang.hitch(this, function () {
                         this._toggleFullscreen();
                     }));
                 }
@@ -1616,6 +1652,14 @@ define([
                         this._mapLoaded();
                     }));
                 }
+                //Check location parameters in url
+                if (this.config.mylocation) {
+                    this._setLocation("mylocation", this.config.mylocation);
+                } else if (this.config.search) {
+                    this._setLocation("search", this.config.search);
+                } else if (this.config.latlon) {
+                    this._setLocation("latlon", this.config.latlon);
+                }
             }), this.reportError);
         },
         _mapLoaded: function () {
@@ -1634,29 +1678,47 @@ define([
                 this._resizeMap();
             }), 1000);
         },
+
+        _setLocation: function (urlParameter, value) {
+            switch (urlParameter) {
+                case "mylocation":
+                    this.currentLocation.locate();
+                    break;
+                case "search":
+                    dom.byId('searchInput').value = value;
+                    this._searchGeocoder();
+                    break;
+                case "latlon":
+                    var latlonValue = value.split(",");
+                    this._locatePointOnMap(latlonValue[0], latlonValue[1], 'latlon');
+                    domAttr.set(dom.byId('lat_coord'), "value", latlonValue[0]);
+                    domAttr.set(dom.byId('lng_coord'), "value", latlonValue[1]);
+                    break;
+                default:
+                    //Code for default value
+                    break;
+            }
+        },
         _fullscreenState: function () {
             // get all nodes
-            var mapNode = dom.byId('mapDiv');
-            var fsContainerNode = dom.byId('fullscreen_container');
-            var mapContainerNode = dom.byId('map_container');
-            var btnNode = dom.byId('fullscreen_icon');
-            // if fullscreen
+            var mapNode, fsContainerNode, btnNode, mapContainerNode;
+            mapNode = dom.byId('mapDiv');
+            fsContainerNode = dom.byId('fullscreen_container');
+            mapContainerNode = dom.byId('map_container');
+            btnNode = dom.byId('fullscreen_icon');
             if (domClass.contains(document.body, 'fullscreen')) {
-                // icon classes
-                domClass.add(btnNode, 'glyphicon-remove');
-                domClass.remove(btnNode, 'glyphicon-fullscreen');
                 domClass.remove(this.map.root, 'panel');
-                // move map node and clear hash
                 domConstruct.place(mapNode, fsContainerNode);
+                domClass.replace(btnNode, "glyphicon glyphicon-remove", "glyphicon glyphicon-fullscreen");
+				// move map node and clear hash
                 window.location.hash = "";
+                btnNode.title = nls.user.mapRestore;
             } else {
-                // icon classes
-                domClass.remove(btnNode, 'glyphicon-remove');
-                domClass.add(btnNode, 'glyphicon-fullscreen');
                 domClass.add(this.map.root, 'panel');
-                // move map node and set hash
                 domConstruct.place(mapNode, mapContainerNode);
-                window.location.hash = "#mapDiv";
+                domClass.replace(btnNode, "glyphicon glyphicon-fullscreen", "glyphicon glyphicon-remove");
+                window.location.hash = "#mapDiv";   
+                btnNode.title = nls.user.mapFullScreen;
             }
             this._resizeMap();
             // if current selected location
@@ -1815,14 +1877,14 @@ define([
         // my location button
         _createLocateButton: function () {
             // create widget
-            var currentLocation = new LocateButton({
+          this.currentLocation = new LocateButton({
                 map: this.map,
                 highlightLocation: false,
                 theme: "btn btn-default"
             }, domConstruct.create('div'));
-            currentLocation.startup();
+          this.currentLocation.startup();
             // on current location submit
-            on(currentLocation, "locate", lang.hitch(this, function (evt) {
+          on(this.currentLocation, "locate", lang.hitch(this, function (evt) {
                 // remove error
                 var errorMessageNode = dom.byId('errorMessageDiv');
                 domConstruct.empty(errorMessageNode);
@@ -1846,7 +1908,7 @@ define([
                 // set loading button
                 $('#geolocate_button').button('loading');
                 // widget locate
-                currentLocation.locate();
+                this.currentLocation.locate();
             }));
         },
         // geocoder search submitted

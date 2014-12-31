@@ -105,7 +105,9 @@ define({
             error: "Error",
             textRangeHintMessage: "${openStrong}Hint:${closeStrong} Minimum value ${minValue} and Maximum value ${maxValue}",
             dateRangeHintMessage: "${openStrong}Hint:${closeStrong} Minimum Date ${minValue} and Maximum Date ${maxValue}",
-            remainingCharactersHintMessage: "${value} characters remaining"
+            remainingCharactersHintMessage: "${value} characters remaining",
+            mapFullScreen: "Full Screen",
+            mapRestore:"Restore"
         },
         builder: {
             invalidUser: "Sorry, you dont have permission to view this item",
@@ -199,8 +201,11 @@ define({
             utm: "UTM Coordinates",
             selectLocationSDescription: "Allow users to select a location using these methods.",
             dragTooltipText:"Drag the field where you want it to appear",
-            showHideLayerText:"Show/Hide Layer",
-            showHideLayerHelpText:"You can configure the GeoForm to Show/Hide Layer"
+            showHideLayerText: "Show Layer",
+            showHideLayerHelpText: "You can configure the GeoForm to Show/Hide Layer",
+            labelHelpMessage: "Label",
+            placeHolderHintMessage: "Hint Text",
+            placeHolderHelpMessage:"Help Text"
         }
     }),
     "ar": 1, 

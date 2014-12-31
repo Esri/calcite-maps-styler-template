@@ -182,7 +182,6 @@ input::-ms-clear {
     height: 100%;
     min-height: 100px;
     max-height: 100%;
-    text-align: left;
     overflow: hidden;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
@@ -233,7 +232,15 @@ body.modal-open,
 }
 .fullscreen-button {
     position: absolute;
-    top: 20px;
+    top: 85px;
+    left: 11px;
+    z-index: 31;
+    width:10px;
+    height:10px;
+}
+.basemapToggle-button {
+    position: absolute;
+    top: 15px;
     right: 20px;
     z-index: 31;
 }
@@ -262,4 +269,38 @@ body.modal-open,
 #appLogo {
     width: auto \9;
     margin: 0 auto;
+}
+
+.hintBackgroundColor {
+    background-color:#f2dede;
+}
+
+.fileInputButton
+{
+    position:absolute;
+}
+
+.fullScreenButtonContainer {
+    position: absolute;
+    top: 85px;
+    left: 15px;
+    z-index: 31;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+
+.fullScreenButtonContainer:hover {
+    background-color: #eee;
+}
+.fullScreenButtonContainer .fullScreenImage {
+    font-size: 16px;
+    padding:7px;
+    color: #4C4C4C;
+}
+
+.tableDimension a {
+    text-decoration:none;
 }
