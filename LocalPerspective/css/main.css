@@ -71,14 +71,14 @@ a, a:hover, a:visited{
 .app-loading .loading-indicator {
 	/* Loading image */
 	background-position: center center;
-	background-image: url(../images/ajax-loader.gif);
+	background-image: url('../images/ajax-loader.gif');
 	background-repeat: no-repeat;
 }
 
 .app-error .loading-message {
 	/* Error status */
 	background-position: top center;
-	background-image: url(../images/error.png);
+	background-image: url('../images/error.png');
 	background-repeat: no-repeat;
 	padding-top: 60px;
 	width: 100%;
@@ -229,7 +229,8 @@ a, a:hover, a:visited{
 }
 
 .LocateButton .loading {
-	background: url(../images/loading.gif)no-repeat;
+	background-image: url('../images/loading.gif');
+	background-repeat: no-repeat;
 	background-position: center center;
 }
 
@@ -439,7 +440,8 @@ a, a:hover, a:visited{
 	height: 30px;
 	margin-left: -15px;
 	cursor: pointer;
-	background: url(../images/reverse.png) no-repeat;
+	background-image: url('../images/reverse.png');
+	background-repeat: no-repeat;
 }
 
 .pageUnits {
@@ -467,7 +469,8 @@ a, a:hover, a:visited{
 	height: 20px;
 	z-index: 200;
 	display: block;
-	background: url(../images/slider.png) no-repeat;
+	background-image: url('../images/slider.png');
+	background-repeat: no-repeat;
 	background-position:bottom;
 }
 
@@ -475,7 +478,8 @@ a, a:hover, a:visited{
 	position: absolute;
 	right: 5px;
 	top: 5px;
-	background: url(../images/close.png) no-repeat;
+	background-image: url('../images/close.png');
+	background-repeat: no-repeat;
 	cursor: pointer;
 	width: 20px;
 	height: 20px;
@@ -486,7 +490,8 @@ a, a:hover, a:visited{
 	position: absolute;
 	top: 27px;
 	right: 5px;
-	background: url(../images/up.png) no-repeat;
+	background-image: url('../images/up.png');
+	background-repeat: no-repeat;
 	cursor: pointer;
 	width: 20px;
 	height: 20px;
@@ -497,7 +502,8 @@ a, a:hover, a:visited{
 	position: absolute;
 	top: 49px;
 	right: 5px;
-	background: url(../images/down.png) no-repeat;
+	background-image: url('../images/down.png');
+	background-repeat: no-repeat;
 	cursor: pointer;
 	width: 20px;
 	height: 20px;
@@ -592,7 +598,8 @@ a, a:hover, a:visited{
 	line-height: 14px;
 	line-height: 20px;
 	color: #6e6e6e;
-	background: url(../images/arrow.png)no-repeat;
+	background-image: url('../images/arrow.png');
+	background-repeat: no-repeat;
 	background-position: right center;
 	transition: 0.2s linear;
 	-webkit-transition: 0.2s linear;
@@ -649,7 +656,8 @@ a, a:hover, a:visited{
 	margin: 10px 0 10px 0;
 	width: 30px;
 	height: 30px;
-	background: url(../images/car.png)no-repeat;
+	background-image: url('../images/car.png');
+	background-repeat: no-repeat;
 	background-position: center center;
 	cursor: pointer;
 }
@@ -750,7 +758,9 @@ a, a:hover, a:visited{
 	padding: 5px;
 	cursor: pointer;
 	display: block;
-	background: url(../images/menu.png)no-repeat center center;
+	background-image: url('../images/menu.png');
+	background-repeat:no-repeat;
+	background-position: center center;
 }
 
 
