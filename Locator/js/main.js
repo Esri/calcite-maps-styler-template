@@ -651,7 +651,8 @@ define([
          if (this.config && this.config.i18n) {
             btnClose.title = this.config.i18n.tooltips.close;
          }
-         on(btnClose, "click", lang.hitch(this, this._showPage, 0));
+         //on(btnClose, "click", lang.hitch(this, this._showPage, 0));
+         on(btnClose, "click", lang.hitch(this, this._closeDirections));
          // reset
          var btnReset = dom.byId("btnReset");
          if (this.config && this.config.i18n) {
@@ -684,6 +685,12 @@ define([
          this._unselectRecords();
          this._updateOrigin(null, null);
          this._processDestinationFeatures();
+      },
+      
+      // Close Directions
+      _closeDirections : function() {
+         this._unselectRecords();
+         this._showPage(0);
       },
 
       // Show Page
@@ -1229,6 +1236,7 @@ define([
                content = this.config.i18n.location.use;
             }
             var div = domConstruct.create("div", {
+               id : "divUserLoc",
                innerHTML : content
             });
             domClass.add(div, "useLocation");
@@ -1237,6 +1245,8 @@ define([
             this.map.infoWindow.setContent(div);
             this.map.infoWindow.show(pt);
          }
+         //lang.mixin(evt, {});
+         evt.stopPropagation();
       },
 
       // Use Click Location
@@ -1245,6 +1255,7 @@ define([
          this.locator.locationToAddress(pt, 500, lang.hitch(this, function(result) {
             if (result.address) {
                var label = result.address.Address;
+               //console.log("CLICK ADDRESS", label);
                this.geocoder.set("value", label);
                var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
                var gra = new Graphic(pt, sym, {
@@ -1252,17 +1263,18 @@ define([
                });
                this._updateOrigin(gra, gra);
             }
-         }), lang.hitch(this, function(err) {
-            this._clearDirections();
-            console.log(err);
-            var content = "Unable to use this location";
-            if (this.config && this.config.i18n) {
-               content = this.config.i18n.location.error;
-            }
-            this.geocoder.set("value", "");
-            this.map.infoWindow.setContent(content);
-            this.map.infoWindow.show(pt);
-         }));
+            }), lang.hitch(this, function(err) {
+               this._clearDirections();
+               console.log(err);
+               var content = "Unable to use this location";
+               if (this.config && this.config.i18n) {
+                  content = this.config.i18n.location.error;
+               }
+               this.geocoder.set("value", "");
+               this.map.infoWindow.setContent(content);
+               this.map.infoWindow.show(pt);
+            })
+         );
       }
    });
 });

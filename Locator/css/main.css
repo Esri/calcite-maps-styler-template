@@ -256,6 +256,7 @@ hr {
 
 .esriPopup .pointer, 
 .esriPopup .outerPointer {
+	background-color: transparent !important;
 	background-image: url('../images/marker.png') !important;
 	background-repeat: no-repeat;
 	box-shadow: none !important;
