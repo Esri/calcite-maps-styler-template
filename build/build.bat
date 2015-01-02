@@ -168,7 +168,6 @@ REM Finally copy assorted files in the root directory
 copy /Y %TEMPLATES_ROOT%\*.*  %BUILD_OUTPUT%
 
 REM Copy the common config to the template config directory
-copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\Viewer\config\commonConfig.js        
 copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\bv_build\commonConfig.js             
 copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\SimpleViewer\config\commonConfig.js  
 copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\LocalPerspective\config\commonConfig.js  
