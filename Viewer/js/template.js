@@ -15,19 +15,23 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/array", "dojo/_base/lang", "dojo/dom-class", "dojo/Deferred", "dojo/promise/all", "esri/arcgis/utils", "esri/urlUtils", "esri/request", "esri/config", "esri/lang", "esri/IdentityManager", "esri/arcgis/Portal", "esri/arcgis/OAuthInfo", "esri/tasks/GeometryService", "config/defaults", "config/commonConfig"], function (
-Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, urlUtils, esriRequest, esriConfig, esriLang, IdentityManager, Portal, ArcGISOAuthInfo, GeometryService, defaults, commonConfig) {
+define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/array", "dojo/_base/lang", "dojo/dom-class", "dojo/Deferred", "dojo/promise/all", "esri/arcgis/utils", "esri/urlUtils", "esri/request", "esri/config", "esri/lang", "esri/IdentityManager", "esri/arcgis/Portal", "esri/arcgis/OAuthInfo", "esri/tasks/GeometryService", "config/defaults", "dojo/string"], function (
+Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, urlUtils, esriRequest, esriConfig, esriLang, IdentityManager, esriPortal, ArcGISOAuthInfo, GeometryService, defaults, string) {
     return declare([Evented], {
         config: {},
         orgConfig: {},
         appConfig: {},
         urlConfig: {},
         customUrlConfig: {},
-        constructor: function () {
-            // config will contain application and user defined info for the application such as i18n strings,
-            // the web map id and application id, any url parameters and any application specific configuration
-            // information.
-            this.config = declare.safeMixin(defaults, commonConfig);
+        commonConfig: {},
+        constructor: function (templateConfig) {
+            // template settings
+            var defaultTemplateConfig = {
+                queryForWebmap: true
+            };
+            this.templateConfig = lang.mixin(defaultTemplateConfig, templateConfig);
+            // config will contain application and user defined info for the application such as i18n strings the web map id and application id, any url parameters and any application specific configuration information.
+            this.config = defaults;
         },
         startup: function () {
             var deferred = this._init();
@@ -44,7 +48,6 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
         // an application and to see if the app is running in Portal or an Org
         _init: function () {
             var deferred, paramItems;
-
             deferred = new Deferred();
             // Set the web map, group and appid if they exist but ignore other url params.
             // Additional url parameters may be defined by the application but they need to be mixed in
@@ -53,7 +56,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             // the application configuration has been applied so that the url parameters overwrite any
             // configured settings. It's up to the application developer to update the application to take
             // advantage of these parameters.
-            paramItems = ["webmap", "appid", "group", "oauthappid", "color", "extent"];
+            paramItems = ["webmap", "appid", "group", "oauthappid"];
             this.urlConfig = this._createUrlParamsObject(paramItems);
             // config defaults <- standard url params
             // we need the webmap, appid, group and oauthappid to query for the data
@@ -69,12 +72,22 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                 // get localization
                 i18n: this._getLocalization(),
                 // get application data
-                app: this._queryApplicationConfiguration()
+                app: this._queryApplicationConfiguration(),
+                // Receives common config file from templates hosted on AGOL.
+                common: this._getCommonConfig(),
+                // do we need to create portal?
+                portal: this._createPortal()
             }).then(lang.hitch(this, function () {
+                // mix in commonconfig and appconfig before fetching groupInfo and groupItems so that GroupID Configured from Application configuration panel is honoured.
+                lang.mixin(this.config, this.commonConfig, this.appConfig);
                 // then execute these async
                 all({
-                    // get item data
+                    // webmap item
                     item: this._queryDisplayItem(),
+                    // group information
+                    groupInfo: this._queryGroupInfo(),
+                    // group items
+                    groupItems: this.queryGroupItems(),
                     // get org data
                     org: this._queryOrganizationInformation()
                 }).then(lang.hitch(this, function () {
@@ -94,10 +107,34 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             // return promise
             return deferred.promise;
         },
+        _createPortal: function () {
+            var deferred = new Deferred();
+            if (this.templateConfig.queryForGroupInfo || this.templateConfig.queryForGroupItems) {
+                this.portal = new esriPortal.Portal(this.config.sharinghost);
+                this.portal.on("load", function () {
+                    deferred.resolve();
+                });
+            } else {
+                deferred.resolve();
+            }
+            return deferred.promise;
+        },
+        _getCommonConfig: function () {
+            var deferred;
+            deferred = new Deferred();
+            if (this.templateConfig.queryForCommonConfig) {
+                require(["arcgis_templates/commonConfig"], lang.hitch(this, function (response) {
+                    this.commonConfig = response;
+                    deferred.resolve(response);
+                }));
+            } else {
+                deferred.resolve();
+            }
+            return deferred.promise;
+        },
         _createUrlParamsObject: function (items) {
             var urlObject, obj = {},
-                i;
-
+                i, url;
             // retrieve url parameters. Templates all use url parameters to determine which arcgis.com
             // resource to work with.
             // Map templates use the webmap param to define the webmap to display
@@ -106,8 +143,11 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             // id to retrieve application specific configuration information. The configuration
             // information will contain the values the  user selected on the template configuration
             // panel.
-            urlObject = urlUtils.urlToObject(document.location.href);
+            url = document.location.href;
+            urlObject = urlUtils.urlToObject(url);
             urlObject.query = urlObject.query || {};
+            // remove any HTML tags from query item
+            urlObject = esriLang.stripTags(urlObject);
             if (urlObject.query && items && items.length) {
                 for (i = 0; i < items.length; i++) {
                     if (urlObject.query[items[i]]) {
@@ -119,7 +159,6 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
         },
         _initializeApplication: function () {
             var appLocation, instance;
-
             // Check to see if the app is hosted or a portal. If the app is hosted or a portal set the
             // sharing url and the proxy. Otherwise use the sharing url set it to arcgis.com.
             // We know app is hosted (or portal) if it has /apps/ or /home/ in the url.
@@ -134,7 +173,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                 this.config.sharinghost = location.protocol + "//" + location.host + instance;
                 this.config.proxyurl = location.protocol + "//" + location.host + instance + "/sharing/proxy";
             }
-            arcgisUtils.arcgisUrl = this.config.sharinghost + "/sharing/content/items";
+            arcgisUtils.arcgisUrl = this.config.sharinghost + "/sharing/rest/content/items";
             // Define the proxy url for the app
             if (this.config.proxyurl) {
                 esriConfig.defaults.io.proxyUrl = this.config.proxyurl;
@@ -142,20 +181,17 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             }
         },
         _checkSignIn: function () {
-            var deferred, signedIn;
+            var deferred, signedIn, oAuthInfo;
             deferred = new Deferred();
-
-
             //If there's an oauth appid specified register it
             if (this.config.oauthappid) {
-                var oAuthInfo = new ArcGISOAuthInfo({
+                oAuthInfo = new ArcGISOAuthInfo({
                     appId: this.config.oauthappid,
+                    portalUrl: this.config.sharinghost,
                     popup: true
                 });
                 IdentityManager.registerOAuthInfos([oAuthInfo]);
             }
-
-
             // check sign-in status
             signedIn = IdentityManager.checkSignInStatus(this.config.sharinghost + "/sharing");
             // resolve regardless of signed in or not.
@@ -167,9 +203,8 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
 
         _getLocalization: function () {
             var deferred, dirNode, classes, rtlClasses;
-
             deferred = new Deferred();
-            if (this.config.localize) {
+            if (this.templateConfig.queryForLocale) {
                 require(["dojo/i18n!application/nls/resources"], lang.hitch(this, function (appBundle) {
                     // Get the localization strings for the template and store in an i18n variable. Also determine if the
                     // application is in a right-to-left language like Arabic or Hebrew.
@@ -197,22 +232,93 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                         dirNode.setAttribute("dir", "ltr");
                         domClass.add(dirNode, "esriLTR");
                     }
-                    deferred.resolve(true);
+                    deferred.resolve(appBundle);
                 }));
             } else {
-                deferred.resolve(true);
+                deferred.resolve();
+            }
+            return deferred.promise;
+        },
+        queryGroupItems: function (options) {
+            var deferred = new Deferred(),
+                error, defaultParams, params;
+            // If we want to get the group info
+            if (this.templateConfig.queryForGroupItems) {
+                if (this.config.group) {
+                    // group params
+                    defaultParams = {
+                        q: "group:\"${groupid}\" AND -type:\"Code Attachment\"",
+                        sortField: "modified",
+                        sortOrder: "desc",
+                        num: 9,
+                        start: 0,
+                        f: "json"
+                    };
+                    // mixin params
+                    params = lang.mixin(defaultParams, this.templateConfig.groupParams, options);
+                    // place group ID
+                    if (params.q) {
+                        params.q = string.substitute(params.q, {
+                            groupid: this.config.group
+                        });
+                    }
+                    // get items from the group
+                    this.portal.queryItems(params).then(lang.hitch(this, function (response) {
+                        this.config.groupItems = response;
+                        deferred.resolve(response);
+                    }), function (error) {
+                        deferred.reject(error);
+                    });
+                } else {
+                    error = new Error("Group undefined.");
+                    deferred.reject(error);
+                }
+            } else {
+                // just resolve
+                deferred.resolve();
+            }
+            return deferred.promise;
+        },
+        _queryGroupInfo: function () {
+            var deferred = new Deferred(),
+                error, params;
+            // If we want to get the group info
+            if (this.templateConfig.queryForGroupInfo) {
+                if (this.config.group) {
+                    // group params
+                    params = {
+                        q: "id:\"" + this.config.group + "\"",
+                        f: "json"
+                    };
+                    this.portal.queryGroups(params).then(lang.hitch(this, function (response) {
+                        this.config.groupInfo = response;
+                        deferred.resolve(response);
+                    }), function (error) {
+                        deferred.reject(error);
+                    });
+                } else {
+                    error = new Error("Group undefined.");
+                    deferred.reject(error);
+                }
+            } else {
+                // just resolve
+                deferred.resolve();
             }
             return deferred.promise;
         },
         _queryDisplayItem: function () {
-            var deferred, itemId, error;
-
-            // Get details about the specified web map or group. If the group or web map is not shared publicly users will
+            var deferred;
+            // Get details about the specified web map. If the web map is not shared publicly users will
             // be prompted to log-in by the Identity Manager.
             deferred = new Deferred();
-            if (this.config.webmap || this.config.group) {
-                itemId = this.config.webmap || this.config.group;
-                arcgisUtils.getItem(itemId).then(lang.hitch(this, function (itemInfo) {
+            // If we want to get the webmap
+            if (this.templateConfig.queryForWebmap) {
+                // if webmap does not exist
+                if (!this.config.webmap) {
+                    // use default webmap for boilerplate
+                    this.config.webmap = "24e01ef45d40423f95300ad2abc5038a";
+                }
+                arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
                     // ArcGIS.com allows you to set an application extent on the application item. Overwrite the
                     // existing web map extent with the application item extent when set.
                     if (this.config.appid && this.config.application_extent.length > 0 && itemInfo.item.extent) {
@@ -223,9 +329,9 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                             parseFloat(this.config.application_extent[1][0]), parseFloat(this.config.application_extent[1][1])]
                         ];
                     }
-                    // Set the itemInfo config option. This can be used when calling createMap instead of the webmap or group id
+                    // Set the itemInfo config option. This can be used when calling createMap instead of the webmap id
                     this.config.itemInfo = itemInfo;
-                    deferred.resolve(true);
+                    deferred.resolve(itemInfo);
                 }), function (error) {
                     if (!error) {
                         error = new Error("Error retrieving display item.");
@@ -233,8 +339,8 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                     deferred.reject(error);
                 });
             } else {
-                error = new Error("webmap or group undefined.");
-                deferred.reject(error);
+                // we're done. we dont need to get the webmap
+                deferred.resolve();
             }
             return deferred.promise;
         },
@@ -263,7 +369,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                     if (response.item && response.item.extent) {
                         this.config.application_extent = response.item.extent;
                     }
-                    deferred.resolve(true);
+                    deferred.resolve(response);
                 }), function (error) {
                     if (!error) {
                         error = new Error("Error retrieving application configuration.");
@@ -271,13 +377,13 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                     deferred.reject(error);
                 });
             } else {
-                deferred.resolve(true);
+                deferred.resolve();
             }
             return deferred.promise;
         },
         _queryOrganizationInformation: function () {
             var deferred = new Deferred();
-            if (this.config.queryForOrg) {
+            if (this.templateConfig.queryForOrg) {
                 // Query the ArcGIS.com organization. This is defined by the sharinghost that is specified. For example if you
                 // are a member of an org you'll want to set the sharinghost to be http://<your org name>.arcgis.com. We query
                 // the organization by making a self request to the org url which returns details specific to that organization.
@@ -290,6 +396,8 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                     },
                     callbackParamName: "callback"
                 }).then(lang.hitch(this, function (response) {
+                    // save organization information
+                    this.config.orgInfo = response;
                     // get units defined by the org or the org user
                     this.orgConfig.units = "metric";
                     if (response.user && response.user.units) { //user defined units
@@ -324,7 +432,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                             this.orgConfig.userPrivileges = response.user.privileges;
                         }
                     }
-                    deferred.resolve(true);
+                    deferred.resolve(response);
                 }), function (error) {
                     if (!error) {
                         error = new Error("Error retrieving organization information.");
@@ -332,7 +440,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                     deferred.reject(error);
                 });
             } else {
-                deferred.resolve(true);
+                deferred.resolve();
             }
             return deferred.promise;
         },
@@ -344,10 +452,9 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             // application default and configuration info has been applied. Currently these values
             // (center, basemap, theme) are only here as examples and can be removed if you don't plan on
             // supporting additional url parameters in your application.
-            this.customUrlConfig = this._createUrlParamsObject(this.config.urlItems);
-
+            this.customUrlConfig = this._createUrlParamsObject(this.templateConfig.urlItems);
         },
-        _parseQuery: function (queryString) {
+         _parseQuery: function (queryString) {
 
             var regex = /(AND|OR)?\W*([a-z]+):/ig,
                 fields = {},

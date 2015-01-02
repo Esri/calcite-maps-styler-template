@@ -72,12 +72,6 @@ define({
     "scalebar": false,
     //Specify a title for the application. If not provided the web map title is used.
     "title": null,
-    //This option demonstrates how to handle additional custom url parameters. For example
-    //if you want users to be able to specify lat/lon coordinates that define the map's center or
-    //specify an alternate basemap via a url parameter.
-    "urlItems": [
-        "extent,color"
-    ],
     //Replace these with your own bitly key
     "bitlyLogin": "esrimarketing",
     "bitlyKey": "R_52f84981da0e75b23aea2b3b20cbafbc"
