@@ -454,7 +454,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             // supporting additional url parameters in your application.
             this.customUrlConfig = this._createUrlParamsObject(this.templateConfig.urlItems);
         },
-         _parseQuery: function (queryString) {
+        _parseQuery: function (queryString) {
 
             var regex = /(AND|OR)?\W*([a-z]+):/ig,
                 fields = {},

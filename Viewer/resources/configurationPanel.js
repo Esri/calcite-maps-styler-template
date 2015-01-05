@@ -106,6 +106,23 @@
                ]
             },
             {  
+               "type":"paragraph",
+               "value":"Select search layers and fields. These layers will appear in the search tool allowing application users to search for particular values in the specified layers and fields."
+            },
+            {
+               "label": "Select layers and fields",
+               "fieldName": "searchLayers",
+               "type": "multilayerandfieldselector",
+               "tooltip": "Select layer and fields to search",
+               "layerOptions":{
+                  "supportedTypes": ["FeatureLayer"],
+                  "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline", "esriGeometryPolygon"]
+               },
+               "fieldOptions":{
+                  "supportedTypes": ["esriFieldTypeString"]
+               }
+            },
+            {  
                "type":"boolean",
                "fieldName":"tool_search",
                "label":"Address Finder"

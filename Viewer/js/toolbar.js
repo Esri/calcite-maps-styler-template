@@ -41,7 +41,6 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
             on(this.pMenu, "click", lang.hitch(this, this._menuClick));
             this.pPages = dom.byId("panelPages");
             //Prevent body scroll when scrolling to the end of the panel content
-
             on(this.pPages, mouse.enter, lang.hitch(this, function () {
 
                 if (this._hasScrollbar()) {
@@ -200,7 +199,6 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
             var num = this._getPageNum(name) + 1;
             var box = html.getContentBox(dom.byId("panelContent"));
 
-
             var endPos = num * box.h;
 
             document.body.scrollTop = endPos;
@@ -211,9 +209,6 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
 
             this.curTool = num;
             this._updateTool(num);
-
-
-
         },
 
         _toolClick: function (name) {

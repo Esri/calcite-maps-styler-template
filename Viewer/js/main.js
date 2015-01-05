@@ -13,8 +13,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/ready", "dojo/json", "dojo/_base/array", "dojo/_base/Color", "dojo/_base/declare", "dojo/_base/lang", "dojo/dom", "dojo/dom-geometry", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/Deferred", "dojo/promise/all", "dojo/query", "dijit/registry", "dijit/Menu", "dijit/CheckedMenuItem", "application/toolbar", "application/has-config", "esri/arcgis/utils", "esri/dijit/HomeButton", "esri/dijit/LocateButton", "esri/dijit/Legend", "esri/dijit/BasemapGallery", "esri/dijit/Measurement", "esri/dijit/OverviewMap", "esri/geometry/Extent", "esri/layers/FeatureLayer", "application/TableOfContents", "application/ShareDialog"], function (
-ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, domConstruct, domStyle, on, Deferred, all, query, registry, Menu, CheckedMenuItem, Toolbar, has, arcgisUtils, HomeButton, LocateButton, Legend, BasemapGallery, Measurement, OverviewMap, Extent, FeatureLayer, TableOfContents, ShareDialog) {
+define(["dojo/ready", "dojo/json", "dojo/_base/array", "dojo/_base/Color", "dojo/_base/declare", "dojo/_base/lang", "dojo/dom", "dojo/dom-geometry", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/Deferred", "dojo/promise/all", "dojo/query", "dijit/registry", "dijit/Menu", "dijit/CheckedMenuItem", "application/toolbar", "application/has-config", "esri/arcgis/utils", "esri/lang", "esri/dijit/HomeButton", "esri/dijit/LocateButton", "esri/dijit/Legend", "esri/dijit/BasemapGallery", "esri/dijit/Measurement", "esri/dijit/OverviewMap", "esri/geometry/Extent", "esri/layers/FeatureLayer", "application/TableOfContents", "application/ShareDialog"], function (
+ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, domConstruct, domStyle, on, Deferred, all, query, registry, Menu, CheckedMenuItem, Toolbar, has, arcgisUtils,esriLang, HomeButton, LocateButton, Legend, BasemapGallery, Measurement, OverviewMap, Extent, FeatureLayer, TableOfContents, ShareDialog) {
 
 
     return declare(null, {
@@ -182,7 +182,6 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     //to the toolbar panel, update the color theme and set the active tool.
                     this._updateTheme();
                     toolbar.updatePageNavigation();
-
                     if (this.config.activeTool !== "") {
                         toolbar.activateTool(this.config.activeTool);
                     } else {
@@ -203,22 +202,22 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             this._destroyEditor();
                             this.map.setInfoWindowOnClick(true);
                         }
-                      
-                      
-                        if(has("measure") && name !== "measure"){
-                            query(".esriMeasurement").forEach(lang.hitch(this, function(node){
+
+
+                        if (has("measure") && name !== "measure") {
+                            query(".esriMeasurement").forEach(lang.hitch(this, function (node) {
                                 var m = registry.byId(node.id);
-                                if(m){
+                                if (m) {
                                     m.clearResult();
                                     m.setTool("location", false);
                                     m.setTool("area", false);
                                     m.setTool("distance", false);
                                 }
                             }));
-                        }         
-                      
-                      
-                      
+                        }
+
+
+
                     }));
 
                     domStyle.set("panelPages", "visibility", "visible");
@@ -838,20 +837,89 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             }
 
             //Add the location search widget
-            require(["application/has-config!search?application/CreateGeocoder"], lang.hitch(this, function (CreateGeocoder) {
-                if (!CreateGeocoder) {
-                    //add class to make title area max-width smaller. Since geocoder isn't there we don't need extra space.
-                    domClass.add("panelTop", "smallerTitle");
+            require(["application/has-config!search?esri/dijit/Search", "application/has-config!search?esri/tasks/locator"], lang.hitch(this, function (Search, Locator) {
+                if (!Search && !Locator) {
+                    //add class so we know we don't have to hide title since search isn't visible
+                    domClass.add("panelTop", "no-search");
                     return;
                 }
-
-                var geocoder = new CreateGeocoder({
+                
+                var options = {
                     map: this.map,
-                    config: this.config
-                });
-                if (geocoder.geocoder && geocoder.geocoder.domNode) {
-                    domConstruct.place(geocoder.geocoder.domNode, "panelGeocoder");
+                    addLayersFromMap:false
+                };
+
+                var search = new Search(options, domConstruct.create("div"));
+
+                var defaultSources = [];//search.get("sources");
+
+                //setup geocoders defined in common config 
+                if(this.config.helperServices.geocode){
+                    var geocoders = lang.clone(this.config.helperServices.geocode);
+                    array.forEach(geocoders, lang.hitch(this, function(geocoder){                    
+                        if(geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1){
+                            geocoder.locator  = new Locator(geocoder.url);
+                            geocoder.singleLineFieldName = "SingleLine";
+                            if(this.config.searchExtent){
+                                geocoder.searchExtent = this.map.extent;
+                            }
+                            defaultSources.push(geocoder);
+                        }else if(esriLang.isDefined(geocoder.singleLineFieldName)){
+                            //Add geocoders with a singleLineFieldName defined 
+                            geocoder.locator = new Locator(geocoder.url);
+                            defaultSources.push(geocoder);
+                        }
+                    }));
                 }
+                //add configured search layers to the search widget 
+                array.forEach(this.config.searchLayers, lang.hitch(this, function(layer){
+                    var mapLayer = this.map.getLayer(layer.id);
+                    if(mapLayer){
+                        var source = {};
+                        source.featureLayer = mapLayer;
+                        if(layer.fields && layer.fields.length && layer.fields.length > 0){
+                            source.searchFields = layer.fields;
+                            defaultSources.push(source);
+                        }
+                    }
+                }));
+                //Add search layers defined on the web map item
+                if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
+                 var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
+                 array.forEach(searchOptions.layers, lang.hitch(this, function(searchLayer){
+
+                    var mapLayer = this.map.getLayer(searchLayer.id);
+
+                    if(mapLayer && mapLayer.url){
+                        var source = {};
+                        var url = mapLayer.url;
+                        var name = mapLayer._titleForLegend;
+                        if(esriLang.isDefined(searchLayer.subLayer)){
+                            url = url + "/" + searchLayer.subLayer;
+                        }
+                        //TODO - talk to Matt about this. It is supposed to accept either
+                        //a layer or a layer url. But w/o the FeatureLayer part it doesn't work. 
+                        source.featureLayer = new FeatureLayer(url);
+                        source.name = name;
+                        source.exactMatch = searchLayer.field.exactMatch;
+                        source.searchField = [searchLayer.field.name];
+                        source.placeholder = searchOptions.hintText;
+                        defaultSources.push(source);
+                    }
+
+                 }));  
+                }
+
+                search.set("sources", defaultSources);
+
+                search.startup();   
+
+
+
+                if (search && search.domNode) {
+                    domConstruct.place(search.domNode, "panelGeocoder");
+                }
+
             }));
 
             //create the tools

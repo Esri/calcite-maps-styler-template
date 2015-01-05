@@ -339,49 +339,27 @@ html, body {
 .esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
   border: none !important; }
 
-.simpleGeocoder .esriGeocoder {
-  display: block;
-  width: 100%;
-  margin: 0;
-  border: transparent;
+.arcgis-search .search-group .search-input {
+  width:200px;
+  padding: 6px 17px 6px 18px;
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.3);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
   zoom: 1;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px; }
+  color:#fff;
+}
+.arcgis-search .search-clear{
+  background:none;
+  background-color: inherit;
+  color:#a8a8a8;
+ }
 
-.simpleGeocoder .esriGeocoderMenu {
-  color: #333; }
-
-.simpleGeocoder .esriGeocoderResults {
-  border: transparent;
-  background-color: transparent;
-  background-color: rgba(0, 0, 0, 0.6);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
-  zoom: 1; }
-
-.simpleGeocoder .esriGeocoder input {
-  color: #FFF !important; }
-
-.simpleGeocoder .esriGeocoderResult:hover, .simpleGeocoder .esriGeocoderResultEven:focus, .simpleGeocoder .esriGeocoderResultOdd:focus {
+.arcgis-search .search-btn {
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.3);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
-  zoom: 1; }
-
-.simpleGeocoder .esriGeocoder .esriGeocoderMenuArrow {
-  background: none; }
-
-.simpleGeocoder .esriGeocoder .esriGeocoderMenuArrow:before {
-  content: "\e809";
-  width: 16px;
-  height: 16px;
-  font-size: 16px;
-  color: #a8a8a8;
-  font-family: "tool-icons"; }
+  color:#a8a8a8;
+}
 
 .esriMeasurement .esriMeasurementResultLabel {
   text-align: left;
@@ -600,7 +578,7 @@ img {
   .pageContent {
     max-height: none; } }
 
-@media only screen and (min-width: 1012px) {
+@media only screen and (min-width: 1070px) {
   .pageContent {
     top: 10px;
     max-height: none; } }
@@ -754,7 +732,8 @@ img {
 
 @media only screen and (min-width: 760px) {
   #panelTop {
-    max-width: 650px;
+    /*max-width: 700px;*/
+    width:auto;
     left: 44px;
     top: 10px;
     -webkit-border-radius: 5px;
@@ -763,12 +742,12 @@ img {
     border-radius: 5px; } }
 
 @media only screen and (min-width: 720px) {
-  .largerTitle {
-    max-width: 720px !important; } }
+  /*.largerTitle {
+    max-width: 720px !important; }*/ }
 
 @media only screen and (min-width: 720px) {
-  .smallerTitle {
-    max-width: 520px !important; } }
+  /*.smallerTitle {
+    max-width: 520px !important; }*/ }
 
 #panelTitle {
   height: 50px;
@@ -805,8 +784,9 @@ img {
   display: none;
   font-size: 0.9em; }
 
-#panelText.nosearch{
-  display: block;
+
+.no-search #panelText{
+  display:block;
 }
 
 @media only screen and (min-width: 720px) {
@@ -816,13 +796,12 @@ img {
 
 #panelSearch {
   float: left;
-  margin: 10px 0 10px 4px;
-  width: 227px;
+  margin: 10px 0 10px 20px;
   height: 30px; }
 
 @media only screen and (min-width: 720px) {
   #panelSearch {
-    margin: 10px 4px 10px 10px;
+    margin: 10px 4px 10px 20px;
     float: right; } }
 
 #panelTools {
@@ -1202,3 +1181,5 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
 /* '	' */
 .icon-check-1:before {
   content: '\2713'; }
+
+

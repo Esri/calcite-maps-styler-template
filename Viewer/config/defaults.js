@@ -64,6 +64,10 @@ define({
     "search": true,
     //When searchExtent is true the locator will prioritize results within the current map extent.
     "searchExtent": false,
+    "searchLayers":[{
+        "id": "Boston_Marathon_7694",
+        "fields": ["STATE_NAME"]
+    }],
     //Add the home extent button to the toolbar
     "home": true,
     //Add the geolocation button on the toolbar. Only displayed if browser supports geolocation
@@ -71,7 +75,7 @@ define({
     //When true display a scalebar on the map
     "scalebar": false,
     //Specify a title for the application. If not provided the web map title is used.
-    "title": null,
+    "title": "",
     //Replace these with your own bitly key
     "bitlyLogin": "esrimarketing",
     "bitlyKey": "R_52f84981da0e75b23aea2b3b20cbafbc"
