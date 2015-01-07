@@ -141,9 +141,7 @@ function (
         },
 
         _mapLoaded: function () {
-            topic.publish("app/mapLoaded", this.map);
-
-            // Map is ready
+             // Map is ready
             try {
                 console.log("map loaded");
                 //search control
@@ -151,7 +149,7 @@ function (
                     {
                         geocode: this.config.helperServices.geocode,
                         domNode: "searchDiv"
-                    });
+                    },this.map);
                 this.search.startup();
 
                 this.popup = new CombinedPopup(this.map, this.config, this.layers, this.handler);
@@ -160,6 +158,7 @@ function (
                 this.popup.enableMapClick();
 
                 this._toggleIndicator(false);
+                topic.publish("app/mapLoaded", this.map);
 
             }
             catch (e) {

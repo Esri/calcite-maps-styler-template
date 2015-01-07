@@ -32,14 +32,15 @@ function (
             domNode: null,
             geocode: null
         },
-        constructor: function (options) {
+        map: null,
+        constructor: function (options, map) {
             // mix in settings and defaults
             var defaults = lang.mixin({}, this.options, options);
             // properties
             // widget node
 
             this._i18n = i18n;
-
+            this.map = map;
             this.geocode = defaults.geocode;
             this.domNode = defaults.domNode;
         },
@@ -53,13 +54,8 @@ function (
         /* ---------------- */
         _init: function () {
             this._removeEvents();
-            this._events.push(topic.subscribe("app/mapLoaded", lang.hitch(this, this._mapLoaded)));
-
+     
             this._addGeocoder();
-        },
-        _mapLoaded: function () {
-            this.map = arguments[0];
-
         },
         _removeEvents: function () {
             if (this._events && this._events.length) {

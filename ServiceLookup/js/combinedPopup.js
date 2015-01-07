@@ -649,6 +649,7 @@ define([
                     }
                     var featureArray = [];
                     if (this.results.length === 0) {
+                        
                         var editGraphic = new Graphic(this.event, this.editSymbol, null, null);
                         this.map.infoWindow.highlight = false;
                         this.map.infoWindow._highlighted = undefined;
