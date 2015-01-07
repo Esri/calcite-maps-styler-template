@@ -22,6 +22,9 @@
         },
         ui:{
             basemapButton: "Aluskaart"
+        },
+        popup: {
+            urlMoreInfo: "Š_More Info_ä"
         }
 
     })

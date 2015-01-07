@@ -105,7 +105,9 @@
             error: "Erro",
             textRangeHintMessage: "${openStrong}Dica:${closeStrong} Valor mínimo ${minValue} e Valor máximo ${maxValue}",
             dateRangeHintMessage: "${openStrong}Dica:${closeStrong} Data Mínima ${minValue} e Data Máxima ${maxValue}",
-            remainingCharactersHintMessage: "${value} caracteres restantes"
+            remainingCharactersHintMessage: "${value} caracteres restantes",
+            mapFullScreen: "ã_Full Screen_Ç",
+            mapRestore:"ã_Restore_Ç"
         },
         builder: {
             invalidUser: "Lamentamos, não tem permissão para visualizar este item",
@@ -199,8 +201,11 @@
             utm: "Coordenadas UTM",
             selectLocationSDescription: "Permitir aos utilizadores selecionar uma localização utilizando estes métodos.",
             dragTooltipText:"Arraste o campo para onde pretende que apareça",
-            showHideLayerText:"Exibir/Esconder Camada",
-            showHideLayerHelpText:"Pode configurar o GeoForm para Exibir/Esconder Camada"
+            showHideLayerText: "ã_Show Layer_Ç",
+            showHideLayerHelpText: "Pode configurar o GeoForm para Exibir/Esconder Camada",
+            labelHelpMessage: "ã_Label_Ç",
+            placeHolderHintMessage: "ã_Hint Text_Ç",
+            placeHolderHelpMessage:"ã_Help Text_Ç"
         }
     })
 );

@@ -105,7 +105,9 @@
             error: "Fel",
             textRangeHintMessage: "${openStrong}Tips:${closeStrong} minsta värde ${minValue} och största värde ${maxValue}",
             dateRangeHintMessage: "${openStrong}Tips:${closeStrong} minsta datum ${minValue} och största datum ${maxValue}",
-            remainingCharactersHintMessage: "${value} tecken återstår"
+            remainingCharactersHintMessage: "${value} tecken återstår",
+            mapFullScreen: "Å_Full Screen_ö",
+            mapRestore:"Å_Restore_ö"
         },
         builder: {
             invalidUser: "Du har tyvärr inte behörighet att visa det här objektet",
@@ -199,8 +201,11 @@
             utm: "UTM-koordinater",
             selectLocationSDescription: "Låt användare välja en plats med de här metoderna.",
             dragTooltipText:"Dra fältet dit du vill ha det",
-            showHideLayerText:"Visa/dölj lager",
-            showHideLayerHelpText:"Du kan konfigurera ditt GeoForm att visa/dölja lager"
+            showHideLayerText: "Å_Show Layer_ö",
+            showHideLayerHelpText: "Du kan konfigurera ditt GeoForm att visa/dölja lager",
+            labelHelpMessage: "Å_Label_ö",
+            placeHolderHintMessage: "Å_Hint Text_ö",
+            placeHolderHelpMessage:"Å_Help Text_ö"
         }
     })
 );

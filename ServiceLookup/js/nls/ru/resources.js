@@ -22,6 +22,9 @@
         },
         ui:{
             basemapButton: "Базовая карта"
+        },
+        popup: {
+            urlMoreInfo: "Ж_More Info_Я"
         }
 
     })

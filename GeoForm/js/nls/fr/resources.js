@@ -105,7 +105,9 @@
             error: "Erreur",
             textRangeHintMessage: "${openStrong}Astuce :${closeStrong} Valeur minimale ${minValue} et valeur maximale ${maxValue}",
             dateRangeHintMessage: "${openStrong}Astuce :${closeStrong} Date minimum ${minValue} et date maximum ${maxValue}",
-            remainingCharactersHintMessage: "${value} caractères restants"
+            remainingCharactersHintMessage: "${value} caractères restants",
+            mapFullScreen: "æ_Full Screen_Â",
+            mapRestore:"æ_Restore_Â"
         },
         builder: {
             invalidUser: "Vous n\'êtes pas autorisé à consulter cet élément",
@@ -199,8 +201,11 @@
             utm: "Coordonnées UTM",
             selectLocationSDescription: "Autorisez les utilisateurs à sélectionner un emplacement à l\'aide de ces méthodes.",
             dragTooltipText:"Faites glisser le champ à l\'endroit où il doit apparaître",
-            showHideLayerText:"Afficher/Masquer la couche",
-            showHideLayerHelpText:"Vous pouvez configurer le formulaire géographique de façon à afficher/masquer la couche"
+            showHideLayerText: "æ_Show Layer_Â",
+            showHideLayerHelpText: "Vous pouvez configurer le formulaire géographique de façon à afficher/masquer la couche",
+            labelHelpMessage: "æ_Label_Â",
+            placeHolderHintMessage: "æ_Hint Text_Â",
+            placeHolderHelpMessage:"æ_Help Text_Â"
         }
     })
 );

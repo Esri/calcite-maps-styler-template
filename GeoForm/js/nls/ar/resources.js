@@ -105,7 +105,9 @@
             error: "خطأ",
             textRangeHintMessage: "${openStrong}لمحة:${closeStrong} قيمة الحد الأدنى ${minValue} وقيمة الحد الأقصى ${maxValue}",
             dateRangeHintMessage: "${openStrong}لمحة:${closeStrong} الحد الأدنى للتاريخ ${minValue} والحد الأقصى للتاريخ ${maxValue}",
-            remainingCharactersHintMessage: "${value} الحروف المتبقية"
+            remainingCharactersHintMessage: "${value} الحروف المتبقية",
+            mapFullScreen: "بيت_Full Screen_لاحقة",
+            mapRestore:"بيت_Restore_لاحقة"
         },
         builder: {
             invalidUser: "عذرًا، ليس لديك الإذن لعرض هذا العنصر",
@@ -199,8 +201,11 @@
             utm: "إحداثيات UTM",
             selectLocationSDescription: "السماح للمستخدمين بتحديد موقع باستخدام تلك الطرق.",
             dragTooltipText:"اسحب الحقل حيث تريد ظهوره",
-            showHideLayerText:"إظهار/إخفاء الطبقة",
-            showHideLayerHelpText:"يمكنك تكوين GeoForm لإظهار/إخفاء الطبقة"
+            showHideLayerText: "بيت_Show Layer_لاحقة",
+            showHideLayerHelpText: "يمكنك تكوين GeoForm لإظهار/إخفاء الطبقة",
+            labelHelpMessage: "بيت_Label_لاحقة",
+            placeHolderHintMessage: "بيت_Hint Text_لاحقة",
+            placeHolderHelpMessage:"بيت_Help Text_لاحقة"
         }
     })
 );

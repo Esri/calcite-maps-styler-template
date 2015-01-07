@@ -105,7 +105,9 @@
             error: "שגיאה",
             textRangeHintMessage: "${openStrong}רמז:${closeStrong} ערך מינימום ${minValue} וערך מקסימום ${maxValue}",
             dateRangeHintMessage: "${openStrong}רמז:${closeStrong} תאריך מינימום ${minValue} ותאריך מקסימום ${maxValue}",
-            remainingCharactersHintMessage: "נותרו ${value} תווים"
+            remainingCharactersHintMessage: "נותרו ${value} תווים",
+            mapFullScreen: "כן_Full Screen_ש",
+            mapRestore:"כן_Restore_ש"
         },
         builder: {
             invalidUser: "מצטערים, אין לך הרשאה להצגת פריט זה",
@@ -199,8 +201,11 @@
             utm: "קואורדינטות UTM",
             selectLocationSDescription: "אפשר למשתמשים לבחור מיקום באמצעות שיטות אלה.",
             dragTooltipText:"גרור את השדה למקום שבו הוא יופיע",
-            showHideLayerText:"הצג/הסתר שכבה",
-            showHideLayerHelpText:"תוכל להגדיר את ה-GeoForm כך שיציג/יסתיר שכבה"
+            showHideLayerText: "כן_Show Layer_ש",
+            showHideLayerHelpText: "תוכל להגדיר את ה-GeoForm כך שיציג/יסתיר שכבה",
+            labelHelpMessage: "כן_Label_ש",
+            placeHolderHintMessage: "כן_Hint Text_ש",
+            placeHolderHelpMessage:"כן_Help Text_ש"
         }
     })
 );

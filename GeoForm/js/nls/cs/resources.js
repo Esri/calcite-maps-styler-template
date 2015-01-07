@@ -105,7 +105,9 @@
             error: "Chyba",
             textRangeHintMessage: "${openStrong}Tip:${closeStrong} Minimální hodnota ${minValue} a Maximální hodnota ${maxValue}",
             dateRangeHintMessage: "${openStrong}Tip:${closeStrong} Minimální datum ${minValue} a Maximální datum ${maxValue}",
-            remainingCharactersHintMessage: "Počet zbývajících znaků: ${value}"
+            remainingCharactersHintMessage: "Počet zbývajících znaků: ${value}",
+            mapFullScreen: "Ř_Full Screen_ů",
+            mapRestore:"Ř_Restore_ů"
         },
         builder: {
             invalidUser: "Je nám líto, ale nemáte oprávnění prohlížet tuto položku.",
@@ -199,8 +201,11 @@
             utm: "Souřadnice UTM",
             selectLocationSDescription: "Umožňuje uživatelům vybírat polohu těmito způsoby.",
             dragTooltipText:"Přetáhněte pole na požadované místo",
-            showHideLayerText:"Zobrazit/skrýt vrstvu",
-            showHideLayerHelpText:"Můžete nastavit, zda má formulář GeoForm zobrazit nebo skrýt vrstvu."
+            showHideLayerText: "Ř_Show Layer_ů",
+            showHideLayerHelpText: "Můžete nastavit, zda má formulář GeoForm zobrazit nebo skrýt vrstvu.",
+            labelHelpMessage: "Ř_Label_ů",
+            placeHolderHintMessage: "Ř_Hint Text_ů",
+            placeHolderHelpMessage:"Ř_Help Text_ů"
         }
     })
 );

@@ -105,7 +105,9 @@
             error: "Fout",
             textRangeHintMessage: "${openStrong}Tip:${closeStrong} Minimumwaarde ${minValue} en Maximumwaarde ${maxValue}",
             dateRangeHintMessage: "${openStrong}Tip:${closeStrong} Minimumdatum ${minValue} en Maximumdatum ${maxValue}",
-            remainingCharactersHintMessage: "${value} resterende tekens"
+            remainingCharactersHintMessage: "${value} resterende tekens",
+            mapFullScreen: "Ĳ_Full Screen_ä",
+            mapRestore:"Ĳ_Restore_ä"
         },
         builder: {
             invalidUser: "U beschikt niet over de nodige machtigingen om dit item te bekijken",
@@ -199,8 +201,11 @@
             utm: "UTM-coördinaten",
             selectLocationSDescription: "Sta gebruikers toe om een locatie te selecteren met behulp van deze methoden.",
             dragTooltipText:"Sleep de velden naar de gewenste plek",
-            showHideLayerText:"Laag tonen/verbergen",
-            showHideLayerHelpText:"U kunt het Geo-formulier configureren om de laag te tonen/verbergen"
+            showHideLayerText: "Ĳ_Show Layer_ä",
+            showHideLayerHelpText: "U kunt het Geo-formulier configureren om de laag te tonen/verbergen",
+            labelHelpMessage: "Ĳ_Label_ä",
+            placeHolderHintMessage: "Ĳ_Hint Text_ä",
+            placeHolderHelpMessage:"Ĳ_Help Text_ä"
         }
     })
 );

@@ -105,7 +105,9 @@
             error: "エラー",
             textRangeHintMessage: "${openStrong}ヒント:${closeStrong} 最小値 ${minValue} および最大値 ${maxValue}",
             dateRangeHintMessage: "${openStrong}ヒント:${closeStrong} 最小日付 ${minValue} および最大日付 ${maxValue}",
-            remainingCharactersHintMessage: "残り ${value} 文字"
+            remainingCharactersHintMessage: "残り ${value} 文字",
+            mapFullScreen: "須_Full Screen_鷗",
+            mapRestore:"須_Restore_鷗"
         },
         builder: {
             invalidUser: "このアイテムを表示する権限がありません",
@@ -199,8 +201,11 @@
             utm: "UTM 座標",
             selectLocationSDescription: "ユーザはこれらの方法を使用して位置を選択できます。",
             dragTooltipText:"フィールドを表示したい場所にドラッグ",
-            showHideLayerText:"レイヤの表示/非表示",
-            showHideLayerHelpText:"GeoForm を構成してレイヤを表示/非表示することができます"
+            showHideLayerText: "須_Show Layer_鷗",
+            showHideLayerHelpText: "GeoForm を構成してレイヤを表示/非表示することができます",
+            labelHelpMessage: "須_Label_鷗",
+            placeHolderHintMessage: "須_Hint Text_鷗",
+            placeHolderHelpMessage:"須_Help Text_鷗"
         }
     })
 );

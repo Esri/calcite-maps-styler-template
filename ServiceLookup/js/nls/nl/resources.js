@@ -22,6 +22,9 @@
         },
         ui:{
             basemapButton: "Basiskaart"
+        },
+        popup: {
+            urlMoreInfo: "Ĳ_More Info_ä"
         }
 
     })

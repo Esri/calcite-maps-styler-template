@@ -105,7 +105,9 @@
             error: "Virhe",
             textRangeHintMessage: "${openStrong}Vihje:${closeStrong} Vähimmäisarvo ${minValue} ja enimmäisarvo ${maxValue}",
             dateRangeHintMessage: "${openStrong}Vihje:${closeStrong} aikaisin ${minValue} ja myöhäisin päivämäärä ${maxValue}",
-            remainingCharactersHintMessage: "${value} merkkiä jäljellä"
+            remainingCharactersHintMessage: "${value} merkkiä jäljellä",
+            mapFullScreen: "Å_Full Screen_ö",
+            mapRestore:"Å_Restore_ö"
         },
         builder: {
             invalidUser: "Sinulla ei ole oikeuksia tarkastella tätä kohdetta",
@@ -199,8 +201,11 @@
             utm: "UTM-koordinaatit",
             selectLocationSDescription: "Antaa käyttäjille mahdollisuuden valita sijainnin eri menetelmillä.",
             dragTooltipText:"Vedä kenttä kohtaan, jossa haluat sen näkyvän",
-            showHideLayerText:"Näytä/piilota karttataso",
-            showHideLayerHelpText:"Voit näyttää tai piilottaa karttatason määrittämällä GeoForm-mallin"
+            showHideLayerText: "Å_Show Layer_ö",
+            showHideLayerHelpText: "Voit näyttää tai piilottaa karttatason määrittämällä GeoForm-mallin",
+            labelHelpMessage: "Å_Label_ö",
+            placeHolderHintMessage: "Å_Hint Text_ö",
+            placeHolderHelpMessage:"Å_Help Text_ö"
         }
     })
 );

@@ -22,6 +22,9 @@
         },
         ui:{
             basemapButton: "מפת בסיס"
+        },
+        popup: {
+            urlMoreInfo: "כן_More Info_ש"
         }
 
     })

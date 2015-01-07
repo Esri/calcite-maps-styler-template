@@ -105,7 +105,9 @@
             error: "Feil",
             textRangeHintMessage: "${openStrong}Hint:${closeStrong} Minimumsverdi ${minValue} og maksimumsverdi ${maxValue}",
             dateRangeHintMessage: "${openStrong}Hint:${closeStrong} Laveste dato ${minValue} og høyeste dato ${maxValue}",
-            remainingCharactersHintMessage: "${value} tegn gjenstår"
+            remainingCharactersHintMessage: "${value} tegn gjenstår",
+            mapFullScreen: "å_Full Screen_ø",
+            mapRestore:"å_Restore_ø"
         },
         builder: {
             invalidUser: "Beklager, du har ikke tillatelse til å se dette elementet",
@@ -199,8 +201,11 @@
             utm: "UTM-koordinater",
             selectLocationSDescription: "La brukere velge en lokasjon ved hjelp av disse metodene.",
             dragTooltipText:"Dra feltet dit du vil at det skal vises",
-            showHideLayerText:"Vis/skjul lag",
-            showHideLayerHelpText:"Du kan konfigurere GeoForm til Vis/skjul lag"
+            showHideLayerText: "å_Show Layer_ø",
+            showHideLayerHelpText: "Du kan konfigurere GeoForm til Vis/skjul lag",
+            labelHelpMessage: "å_Label_ø",
+            placeHolderHintMessage: "å_Hint Text_ø",
+            placeHolderHelpMessage:"å_Help Text_ø"
         }
     })
 );

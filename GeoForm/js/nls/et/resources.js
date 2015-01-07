@@ -105,7 +105,9 @@
             error: "Viga",
             textRangeHintMessage: "${openStrong}Vihje:${closeStrong} Miinimumväärtus ${minValue} ja maksimumväärtus ${maxValue}",
             dateRangeHintMessage: "${openStrong}Vihje:${closeStrong} Kuupäeva alampiir ${minValue} ja kuupäeva ülempiir ${maxValue}",
-            remainingCharactersHintMessage: "${value} tähemärki kasutamata"
+            remainingCharactersHintMessage: "${value} tähemärki kasutamata",
+            mapFullScreen: "Š_Full Screen_ä",
+            mapRestore:"Š_Restore_ä"
         },
         builder: {
             invalidUser: "Kahjuks pole Teil selle sisu vaatamiseks õigusi",
@@ -199,8 +201,11 @@
             utm: "UTM-koordinaadid",
             selectLocationSDescription: "Lubage kasutajatel nende meetodite abil valida asukoht.",
             dragTooltipText:"Lohistage välja, kus soovite selle kuvada",
-            showHideLayerText:"Kuva/peida kiht",
-            showHideLayerHelpText:"Malli GeoForm saab konfigureerida kihtide kuvamist/peitmist"
+            showHideLayerText: "Š_Show Layer_ä",
+            showHideLayerHelpText: "Malli GeoForm saab konfigureerida kihtide kuvamist/peitmist",
+            labelHelpMessage: "Š_Label_ä",
+            placeHolderHintMessage: "Š_Hint Text_ä",
+            placeHolderHelpMessage:"Š_Help Text_ä"
         }
     })
 );

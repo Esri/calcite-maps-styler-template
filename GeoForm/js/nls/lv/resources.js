@@ -105,7 +105,9 @@
             error: "Kļūda",
             textRangeHintMessage: "${openStrong}Padoms:${closeStrong} minimālā vērtība ${minValue} un maksimālā vērtība ${maxValue}",
             dateRangeHintMessage: "${openStrong}Padoms:${closeStrong} minimālais datums ${minValue} un maksimālais datums ${maxValue}",
-            remainingCharactersHintMessage: "Atlikušas ${value} rakstzīmes"
+            remainingCharactersHintMessage: "Atlikušas ${value} rakstzīmes",
+            mapFullScreen: "ķ_Full Screen_ū",
+            mapRestore:"ķ_Restore_ū"
         },
         builder: {
             invalidUser: "Diemžēl jums nav atļaujas skatīt šo vienību",
@@ -199,8 +201,11 @@
             utm: "UTM koordinātas",
             selectLocationSDescription: "Atļaujiet lietotājiem izvēlēties izvietojumu, izmantojot šīs metodes.",
             dragTooltipText:"Velciet lauku uz vietu, kur to vēlaties parādīt",
-            showHideLayerText:"Rādīt/paslēpt slāni",
-            showHideLayerHelpText:"GeoForm var konfigurēt, lai rādītu/slēptu slāni"
+            showHideLayerText: "ķ_Show Layer_ū",
+            showHideLayerHelpText: "GeoForm var konfigurēt, lai rādītu/slēptu slāni",
+            labelHelpMessage: "ķ_Label_ū",
+            placeHolderHintMessage: "ķ_Hint Text_ū",
+            placeHolderHelpMessage:"ķ_Help Text_ū"
         }
     })
 );

@@ -105,7 +105,9 @@
             error: "Fehler",
             textRangeHintMessage: "${openStrong}Hinweis:${closeStrong} Minimalwert ${minValue} und Maximalwert ${maxValue}",
             dateRangeHintMessage: "${openStrong}Hinweis:${closeStrong} Mindestdatum ${minValue} und maximal auswählbares Datum ${maxValue}",
-            remainingCharactersHintMessage: "${value} verbleibende Zeichen"
+            remainingCharactersHintMessage: "${value} verbleibende Zeichen",
+            mapFullScreen: "ä_Full Screen_Ü",
+            mapRestore:"ä_Restore_Ü"
         },
         builder: {
             invalidUser: "Sie verfügen leider nicht über die Berechtigungen zum Anzeigen dieses Elements",
@@ -199,8 +201,11 @@
             utm: "UTM-Koordinaten",
             selectLocationSDescription: "Benutzern das Auswählen einer Position anhand dieser Methoden erlauben.",
             dragTooltipText:"Das Feld an die Position ziehen, an der es angezeigt werden soll",
-            showHideLayerText:"Layer ein-/ausblenden",
-            showHideLayerHelpText:"Sie können das GeoForm konfigurieren, um den Layer ein-/auszublenden"
+            showHideLayerText: "ä_Show Layer_Ü",
+            showHideLayerHelpText: "Sie können das GeoForm konfigurieren, um den Layer ein-/auszublenden",
+            labelHelpMessage: "ä_Label_Ü",
+            placeHolderHintMessage: "ä_Hint Text_Ü",
+            placeHolderHelpMessage:"ä_Help Text_Ü"
         }
     })
 );

@@ -22,6 +22,9 @@
         },
         ui:{
             basemapButton: "Podkladová mapa"
+        },
+        popup: {
+            urlMoreInfo: "Ř_More Info_ů"
         }
 
     })

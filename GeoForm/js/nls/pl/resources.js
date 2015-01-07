@@ -105,7 +105,9 @@
             error: "Błąd",
             textRangeHintMessage: "${openStrong}Wskazówka:${closeStrong} Wartość minimalna ${minValue} i Wartość maksymalna ${maxValue}",
             dateRangeHintMessage: "${openStrong}Wskazówka:${closeStrong} Data minimalna ${minValue} i Data maksymalna ${maxValue}",
-            remainingCharactersHintMessage: "pozostały(-o) ${value} znaki(-ów)"
+            remainingCharactersHintMessage: "pozostały(-o) ${value} znaki(-ów)",
+            mapFullScreen: "ł_Full Screen_ą",
+            mapRestore:"ł_Restore_ą"
         },
         builder: {
             invalidUser: "Przepraszamy, nie masz uprawnień do wyświetlania tego elementu",
@@ -199,8 +201,11 @@
             utm: "Współrzędne UTM",
             selectLocationSDescription: "Zezwalaj użytkownikom na wybór lokalizacji za pomocą tych metod.",
             dragTooltipText:"Przeciągnij pole do miejsca, w którym ma być wyświetlane",
-            showHideLayerText:"Pokaż/ukryj warstwę",
-            showHideLayerHelpText:"Możesz skonfigurować formularz geograficzny, aby pokazał/ukrył warstwę"
+            showHideLayerText: "ł_Show Layer_ą",
+            showHideLayerHelpText: "Możesz skonfigurować formularz geograficzny, aby pokazał/ukrył warstwę",
+            labelHelpMessage: "ł_Label_ą",
+            placeHolderHintMessage: "ł_Hint Text_ą",
+            placeHolderHelpMessage:"ł_Help Text_ą"
         }
     })
 );

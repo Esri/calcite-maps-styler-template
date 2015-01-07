@@ -105,7 +105,9 @@
             error: "Ошибка",
             textRangeHintMessage: "${openStrong}Подсказка:${closeStrong} Минимальное значение ${minValue} и Максимальное значение ${maxValue}",
             dateRangeHintMessage: "${openStrong}Подсказка:${closeStrong} Минимальная дата ${minValue} и Максимальная дата ${maxValue}",
-            remainingCharactersHintMessage: "${value} знаков осталось"
+            remainingCharactersHintMessage: "${value} знаков осталось",
+            mapFullScreen: "Ж_Full Screen_Я",
+            mapRestore:"Ж_Restore_Я"
         },
         builder: {
             invalidUser: "У вас нет прав на просмотр этого элемента",
@@ -199,8 +201,11 @@
             utm: "Координаты UTM",
             selectLocationSDescription: "Позволяет выбирать местоположения одним из этих методов.",
             dragTooltipText:"Перетащите поле на желаемое место",
-            showHideLayerText:"Показать/скрыть слой",
-            showHideLayerHelpText:"Вы можете настроить GeoForm на отображение/скрытие слоя"
+            showHideLayerText: "Ж_Show Layer_Я",
+            showHideLayerHelpText: "Вы можете настроить GeoForm на отображение/скрытие слоя",
+            labelHelpMessage: "Ж_Label_Я",
+            placeHolderHintMessage: "Ж_Hint Text_Я",
+            placeHolderHelpMessage:"Ж_Help Text_Я"
         }
     })
 );

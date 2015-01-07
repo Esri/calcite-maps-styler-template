@@ -105,7 +105,9 @@
             error: "Eroare",
             textRangeHintMessage: "${openStrong}Sugestie:${closeStrong} Valoarea minimă ${minValue} şi Valoarea maximă ${maxValue}",
             dateRangeHintMessage: "${openStrong}Sugestie:${closeStrong} Data minimă ${minValue} şi Data maximă ${maxValue}",
-            remainingCharactersHintMessage: "${value} caractere rămase"
+            remainingCharactersHintMessage: "${value} caractere rămase",
+            mapFullScreen: "Ă_Full Screen_ș",
+            mapRestore:"Ă_Restore_ș"
         },
         builder: {
             invalidUser: "Ne pare rău, nu aveţi permisiunea de a vizualiza acest element",
@@ -199,8 +201,11 @@
             utm: "Coordonate UTM",
             selectLocationSDescription: "Permite utilizatorilor să selecteze o locaţie cu ajutorul acestor metode.",
             dragTooltipText:"Glisaţi câmpul în care doriţi să apară",
-            showHideLayerText:"Afişare/ascundere strat tematic",
-            showHideLayerHelpText:"Puteţi configura GeoForm pentru a afişa/ascunde stratul tematic"
+            showHideLayerText: "Ă_Show Layer_ș",
+            showHideLayerHelpText: "Puteţi configura GeoForm pentru a afişa/ascunde stratul tematic",
+            labelHelpMessage: "Ă_Label_ș",
+            placeHolderHintMessage: "Ă_Hint Text_ș",
+            placeHolderHelpMessage:"Ă_Help Text_ș"
         }
     })
 );

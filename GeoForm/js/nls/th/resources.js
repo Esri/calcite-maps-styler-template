@@ -105,7 +105,9 @@
             error: "ข้อผิดพลาด",
             textRangeHintMessage: "${openStrong}บอกใบ้:${closeStrong} ค่าน้อยที่สุด ${minValue} และค่ามากที่สุด ${maxValue}",
             dateRangeHintMessage: "${openStrong}Hint:${closeStrong} จำนวนวันน้อยที่สุด ${minValue} และจำนวนวันมากที่สุด ${maxValue}",
-            remainingCharactersHintMessage: "${value} ตัวอักษรที่เหลืออยู่"
+            remainingCharactersHintMessage: "${value} ตัวอักษรที่เหลืออยู่",
+            mapFullScreen: "ก้_Full Screen_ษฺ",
+            mapRestore:"ก้_Restore_ษฺ"
         },
         builder: {
             invalidUser: "ขอโทษ คุณไม่ได้รับอนุญาตให้เรียกดูรายการนี้",
@@ -199,8 +201,11 @@
             utm: "พิกัด UTM",
             selectLocationSDescription: "อนุญาตให้ผู้ใช้งานเลือกตำแหน่งโดยใช้วิธีการนี้",
             dragTooltipText:"ลากฟิลด์ที่คุณต้องการให้ปรากฎ",
-            showHideLayerText:"แสดง/ซ่อนชั้นข้อมูล",
-            showHideLayerHelpText:"คุณสามารถปรับ GeoForm เพื่อแสดง/ซ่อนชั้นข้อมูล"
+            showHideLayerText: "ก้_Show Layer_ษฺ",
+            showHideLayerHelpText: "คุณสามารถปรับ GeoForm เพื่อแสดง/ซ่อนชั้นข้อมูล",
+            labelHelpMessage: "ก้_Label_ษฺ",
+            placeHolderHintMessage: "ก้_Hint Text_ษฺ",
+            placeHolderHelpMessage:"ก้_Help Text_ษฺ"
         }
     })
 );

@@ -22,6 +22,9 @@
         },
         ui:{
             basemapButton: "Hartă fundal"
+        },
+        popup: {
+            urlMoreInfo: "Ă_More Info_ș"
         }
 
     })

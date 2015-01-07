@@ -105,7 +105,9 @@
             error: "오류",
             textRangeHintMessage: "${openStrong}힌트:${closeStrong} 최소 값 ${minValue} 및 최대 값 ${maxValue}",
             dateRangeHintMessage: "${openStrong}힌트:${closeStrong} 최소 날짜 ${minValue} 및 최대 날짜 ${maxValue}",
-            remainingCharactersHintMessage: "${value} 문자가 남음"
+            remainingCharactersHintMessage: "${value} 문자가 남음",
+            mapFullScreen: "한_Full Screen_빠",
+            mapRestore:"한_Restore_빠"
         },
         builder: {
             invalidUser: "죄송합니다. 이 항목을 볼 수 있는 권한이 없습니다.",
@@ -199,8 +201,11 @@
             utm: "UTM 좌표",
             selectLocationSDescription: "사용자가 이러한 방법을 사용하여 위치를 선택하도록 허용합니다.",
             dragTooltipText:"원하는 위치로 필드를 드래그하기",
-            showHideLayerText:"레이어 표시/숨김",
-            showHideLayerHelpText:"레이어를 표시하거나 숨기도록 GeoForm을 구성할 수 있습니다."
+            showHideLayerText: "한_Show Layer_빠",
+            showHideLayerHelpText: "레이어를 표시하거나 숨기도록 GeoForm을 구성할 수 있습니다.",
+            labelHelpMessage: "한_Label_빠",
+            placeHolderHintMessage: "한_Hint Text_빠",
+            placeHolderHelpMessage:"한_Help Text_빠"
         }
     })
 );

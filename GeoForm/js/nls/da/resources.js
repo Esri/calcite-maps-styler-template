@@ -105,7 +105,9 @@
             error: "Fejl",
             textRangeHintMessage: "${openStrong}Hint:${closeStrong} Minimumværdi ${minValue} og maksimumværdi ${maxValue}",
             dateRangeHintMessage: "${openStrong}Hint:${closeStrong} Minimumdato ${minValue} og maksimumdato ${maxValue}",
-            remainingCharactersHintMessage: "${value} resterende tegn"
+            remainingCharactersHintMessage: "${value} resterende tegn",
+            mapFullScreen: "ø_Full Screen_å",
+            mapRestore:"ø_Restore_å"
         },
         builder: {
             invalidUser: "Du har desværre ikke tilladelse til at få dette element vist",
@@ -199,8 +201,11 @@
             utm: "UTM-koordinater",
             selectLocationSDescription: "Tillad brugerne at vælge en placering vha. disse metoder.",
             dragTooltipText:"Træk feltet derhen, hvor du vil have det vist",
-            showHideLayerText:"Vis/Skjul lag",
-            showHideLayerHelpText:"Du kan konfigurere GeoForm til Vis/Skjul lag"
+            showHideLayerText: "ø_Show Layer_å",
+            showHideLayerHelpText: "Du kan konfigurere GeoForm til Vis/Skjul lag",
+            labelHelpMessage: "ø_Label_å",
+            placeHolderHintMessage: "ø_Hint Text_å",
+            placeHolderHelpMessage:"ø_Help Text_å"
         }
     })
 );

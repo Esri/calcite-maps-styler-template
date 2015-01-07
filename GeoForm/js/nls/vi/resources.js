@@ -105,7 +105,9 @@
             error: "Lỗi",
             textRangeHintMessage: "${openStrong}Gợi ý:${closeStrong} Giá trị tối thiểu ${minValue} và Giá trị tối đa ${maxValue}",
             dateRangeHintMessage: "${openStrong}Gợi ý:${closeStrong} Ngày tối thiểu ${minValue} và Ngày tối đa ${maxValue}",
-            remainingCharactersHintMessage: "Còn ${value} ký tự"
+            remainingCharactersHintMessage: "Còn ${value} ký tự",
+            mapFullScreen: "Đ_Full Screen_ớ",
+            mapRestore:"Đ_Restore_ớ"
         },
         builder: {
             invalidUser: "Rất tiếc, bạn không có quyền xem mục này",
@@ -199,8 +201,11 @@
             utm: "Tọa độ UTM",
             selectLocationSDescription: "Cho phép người dùng chọn vị trí bằng cách sử dụng những phương pháp này.",
             dragTooltipText:"Kéo trường mà bạn muốn đầu đề xuất hiện",
-            showHideLayerText:"Hiện/Ẩn Lớp",
-            showHideLayerHelpText:"Bạn có thể cấu hình GeoForm để Hiện/Ẩn Lớp"
+            showHideLayerText: "Đ_Show Layer_ớ",
+            showHideLayerHelpText: "Bạn có thể cấu hình GeoForm để Hiện/Ẩn Lớp",
+            labelHelpMessage: "Đ_Label_ớ",
+            placeHolderHintMessage: "Đ_Hint Text_ớ",
+            placeHolderHelpMessage:"Đ_Help Text_ớ"
         }
     })
 );

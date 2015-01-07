@@ -105,7 +105,9 @@
             error: "Errore",
             textRangeHintMessage: "${openStrong}Suggerimento:${closeStrong} Valore minimo ${minValue} e valore massimo ${maxValue}",
             dateRangeHintMessage: "${openStrong}Suggerimento:${closeStrong} Data minima ${minValue} e data massima ${maxValue}",
-            remainingCharactersHintMessage: "${value} caratteri residui"
+            remainingCharactersHintMessage: "${value} caratteri residui",
+            mapFullScreen: "é_Full Screen_È",
+            mapRestore:"é_Restore_È"
         },
         builder: {
             invalidUser: "Non si dispone dell\'autorizzazione per visualizzare questo elemento",
@@ -199,8 +201,11 @@
             utm: "Coordinate UTM",
             selectLocationSDescription: "Consente agli utenti di selezionare una posizione utilizzando questi metodi.",
             dragTooltipText:"Trascinare il campo nella posizione in cui si desidera visualizzarlo.",
-            showHideLayerText:"Mostra/nascondi layer",
-            showHideLayerHelpText:"È possibile configurare il modulo GeoForm in modo da visualizzare/nascondere il layer."
+            showHideLayerText: "é_Show Layer_È",
+            showHideLayerHelpText: "È possibile configurare il modulo GeoForm in modo da visualizzare/nascondere il layer.",
+            labelHelpMessage: "é_Label_È",
+            placeHolderHintMessage: "é_Hint Text_È",
+            placeHolderHelpMessage:"é_Help Text_È"
         }
     })
 );

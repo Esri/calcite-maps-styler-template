@@ -105,7 +105,9 @@
             error: "错误",
             textRangeHintMessage: "${openStrong}提示:${closeStrong} 最小值 ${minValue} 和最大值 ${maxValue}",
             dateRangeHintMessage: "${openStrong}提示:${closeStrong} 最小日期 ${minValue} 和最大日期 ${maxValue}",
-            remainingCharactersHintMessage: "剩余 ${value} 个字符"
+            remainingCharactersHintMessage: "剩余 ${value} 个字符",
+            mapFullScreen: "试_Full Screen_验",
+            mapRestore:"试_Restore_验"
         },
         builder: {
             invalidUser: "抱歉，您无权查看此项目",
@@ -199,8 +201,11 @@
             utm: "UTM 坐标",
             selectLocationSDescription: "允许用户使用这些方法选择位置",
             dragTooltipText:"将字段拖放到预期的显示位置",
-            showHideLayerText:"显示/隐藏图层",
-            showHideLayerHelpText:"可配置 GeoForm 以显示/隐藏图层"
+            showHideLayerText: "试_Show Layer_验",
+            showHideLayerHelpText: "可配置 GeoForm 以显示/隐藏图层",
+            labelHelpMessage: "试_Label_验",
+            placeHolderHintMessage: "试_Hint Text_验",
+            placeHolderHelpMessage:"试_Help Text_验"
         }
     })
 );

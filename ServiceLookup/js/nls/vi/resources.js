@@ -22,6 +22,9 @@
         },
         ui:{
             basemapButton: "Bản đồ nền"
+        },
+        popup: {
+            urlMoreInfo: "Đ_More Info_ớ"
         }
 
     })

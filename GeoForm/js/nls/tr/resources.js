@@ -105,7 +105,9 @@
             error: "Hata",
             textRangeHintMessage: "${openStrong}İpucu:${closeStrong} Minimum değer ${minValue} ve Maksimum değer ${maxValue}",
             dateRangeHintMessage: "${openStrong}İpucu:${closeStrong} Minimum Tarih ${minValue} ve Maksimum Tarih ${maxValue}",
-            remainingCharactersHintMessage: "${value} karakter kaldı"
+            remainingCharactersHintMessage: "${value} karakter kaldı",
+            mapFullScreen: "ı_Full Screen_İ",
+            mapRestore:"ı_Restore_İ"
         },
         builder: {
             invalidUser: "Üzgünüz, bu öğeyi görüntüleme izniniz yok",
@@ -199,8 +201,11 @@
             utm: "UTM Koordinatları",
             selectLocationSDescription: "Kullanıcıların bu yöntemleri kullanarak bir konum seçmesine izin verin.",
             dragTooltipText:"Alanı, görünmesini istediğiniz yere sürükleyin",
-            showHideLayerText:"Kaymanı Göster/Gizle",
-            showHideLayerHelpText:"GeoForm\'u Katmanı Göstermek/Gizleme için kullanabilirsiniz"
+            showHideLayerText: "ı_Show Layer_İ",
+            showHideLayerHelpText: "GeoForm\'u Katmanı Göstermek/Gizleme için kullanabilirsiniz",
+            labelHelpMessage: "ı_Label_İ",
+            placeHolderHintMessage: "ı_Hint Text_İ",
+            placeHolderHelpMessage:"ı_Help Text_İ"
         }
     })
 );

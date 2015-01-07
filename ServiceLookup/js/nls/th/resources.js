@@ -22,6 +22,9 @@
         },
         ui:{
             basemapButton: "แผนที่ฐาน"
+        },
+        popup: {
+            urlMoreInfo: "ก้_More Info_ษฺ"
         }
 
     })

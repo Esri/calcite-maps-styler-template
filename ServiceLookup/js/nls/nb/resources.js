@@ -22,6 +22,9 @@
         },
         ui:{
             basemapButton: "Bakgrunnskart"
+        },
+        popup: {
+            urlMoreInfo: "å_More Info_ø"
         }
 
     })

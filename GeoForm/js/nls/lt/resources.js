@@ -105,7 +105,9 @@
             error: "Klaida",
             textRangeHintMessage: "${openStrong}Užuomina:${closeStrong} minimali vertė ${minValue} ir maksimali vertė ${maxValue}",
             dateRangeHintMessage: "${openStrong}Užuomina:${closeStrong} minimali data ${minValue} ir maksimali data ${maxValue}",
-            remainingCharactersHintMessage: "Liko simbolių: ${value}"
+            remainingCharactersHintMessage: "Liko simbolių: ${value}",
+            mapFullScreen: "Į_Full Screen_š",
+            mapRestore:"Į_Restore_š"
         },
         builder: {
             invalidUser: "Atsiprašome, tačiau neturite teisės peržiūrėti šį elementą",
@@ -199,8 +201,11 @@
             utm: "UTM koordinatės",
             selectLocationSDescription: "Vartotojai gali pasirinkti vietą šiais būdais.",
             dragTooltipText:"Nuvilkite lauką ten, kur jis turėtų būti",
-            showHideLayerText:"Rodyti / slėpti sluoksnį",
-            showHideLayerHelpText:"Konfigūruokite GeoForm rodyti / slėpti sluoksnį"
+            showHideLayerText: "Į_Show Layer_š",
+            showHideLayerHelpText: "Konfigūruokite GeoForm rodyti / slėpti sluoksnį",
+            labelHelpMessage: "Į_Label_š",
+            placeHolderHintMessage: "Į_Hint Text_š",
+            placeHolderHelpMessage:"Į_Help Text_š"
         }
     })
 );
