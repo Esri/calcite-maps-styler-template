@@ -590,7 +590,21 @@ define([
                                         layerDescription = layerDescription.replace(re, "{" + result.Layer.name + "_" + layerFields[g].fieldName + "}");
 
                                     }
-                                    resultFeature[result.Layer.name + "_" + layerFields[g].fieldName] = result.results[0].attributes[layerFields[g].fieldName];
+                                    var fldVal = result.results[0].attributes[layerFields[g].fieldName];
+                                    if (fldVal != null) {
+
+
+                                        fldVal = fldVal.toString();
+                                        if (fldVal.indexOf("http://") >= 0 || fldVal.indexOf("https://") >= 0 || fldVal.indexOf("www.") >= 0) {
+                                            resultFeature[result.Layer.name + "_" + layerFields[g].fieldName] = "<a target='_blank' href='" + fldVal + "'>" + i18n.popup.urlMoreInfo + "</a>"
+                                        }
+                                        else {
+                                            resultFeature[result.Layer.name + "_" + layerFields[g].fieldName] = fldVal;
+                                        }
+                                    }
+                                    else {
+                                        resultFeature[result.Layer.name + "_" + layerFields[g].fieldName] = fldVal;
+                                    }
                                     layerFields[g].fieldName = result.Layer.name + "_" + layerFields[g].fieldName;
 
                                 }
@@ -649,7 +663,7 @@ define([
                     }
                     var featureArray = [];
                     if (this.results.length === 0) {
-                        
+
                         var editGraphic = new Graphic(this.event, this.editSymbol, null, null);
                         this.map.infoWindow.highlight = false;
                         this.map.infoWindow._highlighted = undefined;

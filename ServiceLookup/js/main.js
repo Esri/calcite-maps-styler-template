@@ -20,7 +20,7 @@ define([
     "dojo/ready",
     "dojo/_base/declare",
     "dojo/_base/lang",
-    "esri/arcgis/utils",  
+    "esri/arcgis/utils",
     "dojo/dom",
     "dojo/dom-class",
     "dojo/on",
@@ -60,7 +60,7 @@ function (
 
             if (config) {
                 this.config = config;
-                    this._checkEditing();
+                this._checkEditing();
                 try {
 
                     this.config = config;
@@ -76,19 +76,26 @@ function (
                 catch (e) {
                     console.log(e.message);
                 }
-
-                this.basemapButton = new BasemapButton(
-                    {
-                        basemapGalleryGroupQuery: this.config.orgInfo.basemapGalleryGroupQuery,
-                        domNode: "basemapDiv",
-                        config: this.config
-                    });
-                this.basemapButton.startup();
+                if (this.config.basemapWidgetVisible === undefined) {
+                    this.config.basemapWidgetVisible = true;
+                }
+                if (this.config.basemapWidgetVisible === null) {
+                    this.config.basemapWidgetVisible = true;
+                }
+                if (this.config.basemapWidgetVisible == true) {
+                    this.basemapButton = new BasemapButton(
+                        {
+                            basemapGalleryGroupQuery: this.config.orgInfo.basemapGalleryGroupQuery,
+                            domNode: "basemapDiv",
+                            config: this.config
+                        });
+                    this.basemapButton.startup();
+                }
                 var zoomScale = 16;
                 if (this.config != null) {
                     if (this.config.zoomLevel != null) {
-                      
-                            zoomScale = this.config.zoomLevel;                        
+
+                        zoomScale = this.config.zoomLevel;
                     }
                 }
                 this.navigationButtons = new NavigationButtons({
@@ -141,19 +148,20 @@ function (
         },
 
         _mapLoaded: function () {
-             // Map is ready
+            // Map is ready
             try {
                 console.log("map loaded");
                 //search control
                 this.search = new Search(
                     {
-                        geocode: this.config.helperServices.geocode,
-                        domNode: "searchDiv"
-                    },this.map);
+                        config: this.config,
+                        domNode: "searchDiv",
+                        map: this.map
+                    });
                 this.search.startup();
 
                 this.popup = new CombinedPopup(this.map, this.config, this.layers, this.handler);
-               
+
                 this.popup.startup();
                 this.popup.enableMapClick();
 
@@ -180,7 +188,7 @@ function (
                 domClass.remove(document.body, "app-loading");
             }
         },
-      
+
         _checkEditing: function () {
             if (this.config.editingAllowed == null) {
                 this.config.editingAllowed = false;
@@ -244,7 +252,7 @@ function (
 
                 //Added for the service lookup
                 this.layers = response.itemInfo.itemData.operationalLayers;
-
+                this.config.response = response;
                 if (this.map.loaded) {
                     // do something with the map
                     this._mapLoaded();

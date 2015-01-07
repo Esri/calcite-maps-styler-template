@@ -1,10 +1,10 @@
 /*global define,location */
 define([], function () {
-    //Default configuration settings for the applciation. This is where you'll define things like a bing maps key, 
+    //Default configuration settings for the application. This is where you'll define things like a bing maps key, 
     //default web map, default app color theme and more. These values can be overwritten by template configuration settings
     //and url parameters.
     var defaults = {
-        "appid": "a676386833304ed6a9dd95e1b86b0721",
+        "appid": "",
         "webmap": "25660c0facdb419191c8b2dec5da74d7",
         "oauthappid": null, //"AFTKRmv16wj14N3z",
         //Group templates must support a group url parameter. This will contain the id of the group.
@@ -64,7 +64,8 @@ define([], function () {
         "serviceRequestLayerAvailibiltyFieldValueNotAvail": "Not Intersected",
         "showSplash": false,
         "splashText": "<center>Information Lookup is a configurable web application template that can be used to provide the general public, internal staff and other interested parties the with information about a location. If no features are found at that location, a general message is displayed. Optionally, the location entered can be stored in a point layer. The template can be configured using the ArcGIS Online Configuration dialog.</center>",
-
+        "theme": "black",
+        "basemapWidgetVisible": true
     };
     return defaults;
 });

@@ -2,52 +2,25 @@
 .searchControl {
     display: block;
     position: absolute;
-    z-index: 3;
+    z-index: 1000;
     top: 20px;
-    left: 75px;
-    width: 60%;
+    left: 15px;
+   
+   }
+/*.search-input-group{
+    width:90%
 }
-.simpleGeocoder .esriGeocoderContainer {
-       width: 100%;
-}
-.simpleGeocoder .esriGeocoder input{
-     width: 80%;
-   /* Firefox */
-    width: -moz-calc(100% - 60px) !important;
-    /* WebKit */ 
-    width: -webkit-calc(100% - 60px) !important;
-    /* Opera */
-    width: -o-calc(100% - 60px) !important;
-    /* Standard */
-    width: calc(100% - 60px) !important;
-}
-.esriGeocoder input {
-    width: 80%;
-     /* Firefox */
-    width: -moz-calc(100% - 60px) !important;
-    /* WebKit */ 
-    width: -webkit-calc(100% - 60px) !important;
-    /* Opera */
-    width: -o-calc(100% - 60px) !important;
-    /* Standard */
-    width: calc(100% - 60px) !important;
+.arcgis-search .search-group .search-input {
+   
+    width: -moz-calc(100% - 12px) !important;
+  
+    width: -webkit-calc(100% - 12px) !important;
+    
+    width: -o-calc(100% - 12px) !important;
+   
+    width: calc(100% - 12px) !important;
     padding-right: 0;
     margin-right: 0;
     overflow: hidden;
-}
 
-.simpleGeocoder .esriGeocoderMultiple  input {
-     /* Firefox */
-    width: 80%;
-    width: -moz-calc(100% - 80px) !important;
-    /* WebKit */ 
-    width: -webkit-calc(100% - 80px) !important;
-    /* Opera */
-    width: -o-calc(100% - 80px) !important;
-    /* Standard */
-    width: calc(100% - 80px) !important ;
-    padding-right: 0;
-    margin-right: 0;
-    overflow: hidden;
-}
-
+}*/

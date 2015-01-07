@@ -22,6 +22,9 @@ define({
         },
         ui:{
             basemapButton: "Basemap"
+        },
+        popup: {
+            urlMoreInfo: "More Info"
         }
 
     }),
