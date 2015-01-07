@@ -60,6 +60,9 @@ define([
                 if (this.config.summaryLayer && this.config.summaryLayer.id) {
                     // get layer by id/title
                     this._aoiLayer = this._getAOILayer(this.config.summaryLayer.id);
+                    if (this._aoiLayer) {
+                        this._aoiLayer.setInfoTemplate(null);
+                    }
                 }
                 // get layer infos
                 this._getLayerInfos();
@@ -102,7 +105,6 @@ define([
                         }
                         // selected poly from layer
                         on(this._aoiLayer, 'click', lang.hitch(this, function (evt) {
-                            this._hideInfoWindow();
                             this._selectEvent(evt);
                         }));
                         // layer show/hide
@@ -446,7 +448,6 @@ define([
             _createRendererItemClick: function (node, minValue, maxValue) {
                 // renderer item click
                 on(node, 'click', lang.hitch(this, function (evt) {
-                    this._hideInfoWindow();
                     var ct = evt.currentTarget;
                     // current renderer isn't already selected
                     if (!domClass.contains(ct, this.areaCSS.rendererSelected)) {
@@ -614,11 +615,7 @@ define([
                     event.stop(evt);
                 }
             },
-            _hideInfoWindow: function () {
-                if (this.map && this.map.infoWindow) {
-                    this.map.infoWindow.hide();
-                }
-            },
+
             _zoomToFeature: function (type, fs) {
                 switch (type) {
                     case "No Zoom":
