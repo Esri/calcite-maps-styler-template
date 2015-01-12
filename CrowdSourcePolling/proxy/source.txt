@@ -1,0 +1,8 @@
+Proxy program is from repository https://github.com/Esri/resource-proxy, DotNet version
+commit 4355ad22065720e1e1ef7cb8b0546916d71e7db1
+Author: john gravois <jgravois@esri.com>
+Date:   Fri Aug 29 09:19:55 2014 -0700
+
+    Update FAQ.md
+    
+    added a line item to describe steps for installing ASP.NET 4.0 on a Windows 7 machine

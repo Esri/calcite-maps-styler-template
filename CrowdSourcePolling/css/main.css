@@ -1,0 +1,772 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Roboto;
+    font-weight: 300;
+}
+
+a, a:hover, a:visited{
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+input {
+    width: 95%;
+    height: 24px;
+}
+
+select {
+    width: 95%;
+    height: 24px;
+}
+
+textArea {
+    width: 95%;
+    height: 60px;
+    resize: none;
+}
+
+h3 {
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+h4 {
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 15px;
+}
+
+#btnSubmit {
+    cursor: pointer;
+}
+
+/* Facebook API */
+
+._li {
+    width: 20px !important;
+    height: 20px !important;
+    overflow: hidden;
+}
+
+
+.esriRTL label {
+    /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
+}
+
+.loading-indicator {
+    /* Loading status */
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: #fff;
+}
+
+.charactersRemaining {
+    float: right;
+    padding-right: 7px;
+}
+
+.app-loading .loading-indicator, .app-error .loading-indicator {
+    /* Show this class when loading or error */
+    display: block;
+}
+
+.app-loading .loading-indicator {
+    /* Loading image */
+    background-position: center center;
+    background-image: url(../images/ajax-loader.gif);
+    background-repeat: no-repeat;
+}
+
+.app-error .loading-message {
+    /* Error status */
+    background-position: top center;
+    background-image: url(../images/error.png);
+    background-repeat: no-repeat;
+    padding-top: 60px;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 0;
+    text-align: center;
+}
+
+/* Esri Javascript API*/
+.esriSimpleSliderDecrementButton:hover, .esriSimpleSliderIncrementButton:hover {
+    background-color: rgba(0,0,0,0.3);
+}
+
+/*.arcgisGeocoder .esriGeocoderLoading .esriGeocoderReset {
+    background: url("../images/loading.gif") no-repeat scroll center center transparent;
+}
+
+.simpleGeocoder .esriGeocoderLoading .esriGeocoderReset {
+    background: url("../images/loading.gif") no-repeat scroll center center transparent;
+}*/
+
+.simpleGeocoder .esriGeocoder {
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    border: transparent;
+    line-height: 32px;
+    /*background-color: rgba(0,0,0,0.3);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;*/
+}
+
+#divGeocoder_input {
+    height: 30px;
+    padding: 0;
+}
+
+/*.simpleGeocoder .esriGeocoder input {
+    color: #bbbbbb;
+}
+
+.simpleGeocoder .esriGeocoder input:focus {
+    color: #bbbbbb;
+}*/
+
+.esriControlsBR {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.logo-med {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.logo-sm {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.esriAttribution {
+    position: absolute;
+    left: 65px;
+    bottom: 3px;
+    font-size: 10px;
+}
+
+.HomeButton .home {
+    top: 0px;
+    padding: 0px;
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -o-border-radius: 13px;
+    border-radius: 13px;
+    background-size: 14px 14px;
+}
+
+.LocateButton .zoomLocateButton {
+    padding: 0px;
+    width: 26px;
+    height: 26px;
+    /*background-color: transparent;*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -o-border-radius: 13px;
+    border-radius: 13px;
+    background-size: 14px 14px;
+}
+
+.sizer .titlePane{
+    height: 30px;
+}
+
+.esriPopup .titlePane {
+    border: none !important;
+}
+
+.esriPopup .contentPane {
+    background-color: #FFFFFF;
+}
+
+.esriPopup .actionsPane {
+    background-color: #FFFFFF;
+}
+
+.esriPopup {
+    font-size: 9px !important;
+}
+
+.esriPopup .pointer{
+    display: none !important;
+}
+
+.esriPopup .outerPointer {
+    display: none !important;
+}
+
+.esriPopup .titleButton.maximize {
+    display: none !important;
+}
+
+
+/* Template */
+
+/*.bg {
+    display: block;
+    background-color: rgb(255,255,255);
+    -moz-opacity: 0.9;
+    -khtml-opacity: 0.9;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}*/
+
+.rounded {
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.roundedTop {
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.roundedBottom {
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+.shadow {
+    -moz-box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=135, Color='#000000')";
+    filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=135, Color='#000000')";
+}
+
+
+#panelMap {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+
+#panelContent {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 320px;
+    height: 100%;
+    display: block;
+    background-color: rgba(0,0,0,0.1);
+}
+
+#panelPages {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+    overflow: hidden;
+}
+
+.page {
+    background-color: #ffffff;
+    color: #646464;
+    font-family: Roboto;
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+}
+
+.pageHeader {
+    width: 100%;
+    display: block;
+    /*color: #ffffff;*/
+}
+
+#pageTitle {
+    padding: 10px 10px 10px 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 15px;
+    text-align: center;
+}
+
+#pageButton {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+#actionButton {
+    position: relative;
+    height: 30px;
+    margin: auto;
+    padding: 0 8px 3px 0;
+    /*background: url(../images/add.png)no-repeat;*/
+    border: 1px solid #ffffff;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    display: none;
+    cursor: pointer;
+}
+
+.highlightHover:hover {
+    background-color: rgba(0,0,0,0.3);
+}
+
+.pageClose {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    height: 24px;
+    padding: 4px;
+    cursor: pointer;
+    /*-moz-opacity: 0.65;
+    -khtml-opacity: 0.65;
+    opacity: 0.65;
+    filter: alpha(opacity=65);*/
+}
+
+.showPanel {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    height: 24px;
+    padding: 4px;
+    cursor: pointer;
+    /*-moz-opacity: 0.65;
+    -khtml-opacity: 0.65;
+    opacity: 0.65;
+    filter: alpha(opacity=65);*/
+}
+
+.pageTools {
+    padding: 8px;
+    height: 32px;
+    display: block;
+}
+
+#pageToolsSortLabel {
+    display: inline-block;
+    float: left;
+}
+
+#pageToolsSort {
+    display: inline-block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    background: url(../images/heart.png);
+    cursor: pointer;
+}
+
+.sortCal {
+    background: url(../images/cal.png)no-repeat !important;
+    background-position: right center !important;
+}
+
+.pageToolsSignIn {
+    display: inline-block;
+    float: right;
+    font-size: 14px;
+    line-height: 28px;
+    padding-right: 6px;
+}
+
+.pageToolsTwitter {
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+}
+
+.pageToolsFacebook {
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+}
+
+.pageToolsIcon {
+    padding: 4px;
+    height: 24px;
+}
+
+.pageInfo {
+    padding: 10px 10px 0px 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 24px;
+    /*color: #ffffff;*/
+}
+
+.pageBody {
+    height: 100%;
+    width: 100%;
+    display: block;
+    /*color: #646464;*/
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.resultsContent {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.avatar {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    background: url(../images/avatar.png)no-repeat;
+    background-size: 50px 50px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+}
+
+.avatarPict {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+}
+
+.formRow {
+    position: relative;
+    margin: 10px 10px 10px 10px;
+    height: auto;
+    line-height: 18px;
+}
+
+#divGeocoder {
+    width: 225px;
+    height: 30px;
+    border: 1px solid #bbbbbb;
+}
+
+#btnLocate {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 30px;
+    height: 30px;
+}
+
+.rec {
+    position: relative;
+    display: block;
+    border-bottom: 1px solid #dcdcdc;
+    font-size: 11px;
+    /*color: #646464;*/
+    cursor: pointer;
+    padding: 8px;
+}
+
+.recInfo {
+    position: absolute;
+    left: 70px;
+    right: 30px;
+    top: 10px;
+    bottom: 20px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    /*color: #9c9c9c;*/
+}
+
+.recTitle {
+    font-family: Roboto;
+    font-size: 13px;
+    line-height: 14px;
+}
+
+/*.recInfo .recTitle {
+    color: #646464;
+}*/
+
+.recTools {
+    padding: 0px 10px 0px 10px;
+    height: 20px;
+    font-size: 10px;
+    /*color: #000000;*/
+    display: block;
+    /*-moz-opacity: 0.4;
+    -khtml-opacity: 0.4;
+    opacity: 0.4;
+    filter: alpha(opacity=40);*/
+}
+
+.votes {
+    float: right;
+    margin: 0px 0px 0px 16px;
+    cursor: pointer;
+}
+
+#votesCount {
+    /*color: #000000;*/
+    font-size: 9px;
+    margin-left: 4px;
+}
+
+.recComments {
+    float: right;
+    margin: 0px 0px 0px 16px;
+}
+
+#recCommentsCount {
+    /*color: #000000;*/
+    font-size: 9px;
+    margin-left: 4px;
+}
+
+.recCal {
+    float: right;
+    /*color: #000000;*/
+    font-size: 9px;
+}
+
+.imgDetails {
+    width: 100%;
+    text-align: center;
+}
+
+.details {
+    position: relative;
+    left: 0px;
+    right: 0px;
+    padding: 10px 30px 10px 10px;
+    height: auto;
+    display: block;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    font-size: 11px;
+    line-height: 14px;
+    /*color: #ffffff;*/
+}
+
+.comment {
+    position: relative;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #dcdcdc;
+    font-size: 11px;
+    line-height: 14px;
+    /*color: #646464;*/
+}
+
+.commentInfo {
+    padding: 10px 10px 0px 10px;
+    overflow: hidden;
+    font-family: Roboto;
+    font-size: 10px;
+    line-height: 11px;
+    /*color: #9c9c9c;*/
+}
+
+#panelMessage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.6);
+    z-index: 100;
+    display: none;
+}
+
+#panelMessageContent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    width: 300px;
+    height: 300px;
+    background-color: #ffffff;
+}
+
+#panelMessageTitle {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    /*left: 10px;
+    right: 10px;
+    top: 10px;*/
+    /*height: 50px;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: Roboto;
+    font-size: 20px;
+    /*line-height: 50px;*/
+    /*color: #6e6e6;*/
+    border-bottom: 1px solid #bbbbbb;
+    padding: 10px;
+}
+
+#panelMessageBody {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 56px;
+    bottom: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 16px;
+    /*color: #6e6e6;*/
+}
+
+#btnLike {
+    position: absolute;
+    left: 30px;
+    top: 45px;
+    width: 30px;
+    height: 30px;
+    background: url(../images/like.png)no-repeat;
+    cursor: pointer;
+}
+
+.esriViewPopup .header {
+    font-weight: normal;
+}
+
+
+/* MEDIA SPECIFIC: SMALL TABLETS */
+
+@media only screen and (max-width: 570px) {
+
+    .esriSimpleSlider {
+        display: none;
+    }
+
+    .esriControlsBR {
+        position: absolute;
+        left: 0px;
+        bottom: 5px;
+    }
+
+    .esriAttribution {
+        display:none;
+    }
+
+    #panelMain {
+        height: 200%;
+    }
+
+    #panelMap {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 120px;
+    }
+
+    #panelContent {
+        position: absolute;
+        width: 100%;
+        margin-top: -120px;
+        top: 100%;
+    }
+
+    #panelPages {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        overflow: hidden;
+    }
+
+    .pageHeader {
+        position: absolute;
+        width: 100%;
+        height: 120px;
+        display: block;
+        /*color: #ffffff;*/
+    }
+
+    .pageTools {
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        height: 20px;
+        line-height: 24px;
+        font-size: 10px;
+        /*color: #000000;*/
+        display: block;
+        /*-moz-opacity: 0.5;
+        -khtml-opacity: 0.5;
+        opacity: 0.5;
+        filter: alpha(opacity=50);*/
+    }
+
+    .pageBody {
+        position: absolute;
+        top: 120px;
+        bottom: 0px;
+        width: 100%;
+        display: block;
+        /*color: #646464;*/
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .rounded {
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+    }
+
+    .roundedTop {
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+    }
+
+}
