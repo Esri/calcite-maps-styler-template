@@ -11,6 +11,11 @@ html, body
     overflow: hidden;
 }
 
+.esriCTHeaderFont
+{
+    font-size: 13px;
+}
+
 #mapDiv
 {
     padding: 0;
@@ -24,13 +29,16 @@ html, body
     /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
 }
 
-/* Overridden Styles */
-
+/* esri API Overridden Styles */
+th
+{
+    font-weight: normal !important;
+}
 .esriSimpleSliderTL
 {
     top: 10px;
     left: auto !important;
-    right: 10px;
+    right: 20px;
 }
 
 .esriSimpleSlider div
@@ -44,6 +52,7 @@ html, body
 {
     margin-bottom: 2px;
     margin-top: 2px;
+    border: #fff solid 1 !important;
 }
 
 .esriSimpleSlider, .esriSimpleSliderVertical .esriSimpleSliderIncrementButton, .esriSimpleSliderVertical .esriSimpleSliderDecrementButton
@@ -56,7 +65,14 @@ html, body
     border: 0px !important;
 }
 
-/* End of Overridden Styles */
+.esriSimpleSlider
+{
+    background-color: transparent !important;
+    color: #fff !important;
+    border: #fff solid 0 !important;
+}
+
+/* esri API End of Overridden Styles */
 
 /* Main Layout*/
 
@@ -118,6 +134,11 @@ html, body
     height: 48px;
 }
 
+.esriCTHideWrapper
+{
+    display: none !important;
+}
+
 /* End of Main Layout*/
 
 /* Loading Indicator */
@@ -156,48 +177,29 @@ html, body
 
 /* MapViewer */
 
-.esriCTMapViewerHeader
-{
-    height: 46px;
-    position: relative;
-    display: table;
-    width: 100%;
-}
-
 .esriCTMapViewerBody
 {
-    height: calc(100% - 46px);
+    height: 100%;
 }
 
-.esriCTLocationDetailsBtns
+.esriCTDetailsButton
 {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0 5px;
-    text-align: right;
+    width: 32px;
+    height: 31px;
+    background-image: url(../images/details.png);
+    background-size: 32px 31px;
 }
 
-.esriCTMaximizeContainer
+.esriCTLocationButton
 {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0 0 0 5px;
-}
-
-.esriCTLocationBtn
-{
-    padding: 5px;
-}
-
-.esriCTDetailBtn
-{
-    padding: 5px;
-}
-
-.esriCTFutureRelease
-{
-    float: left;
-    padding: 10px;
+    width: 32px;
+    height: 31px;
+    background-size: 32px 31px;
+    background-image: url(../images/location.png) !important;
+    float: right;
+    position: fixed;
+    right: 20px;
+    margin-top: 5px;
 }
 
 /* End of MapViewer*/
@@ -213,7 +215,6 @@ html, body
 {
     width: 100%;
     height: 100%;
-    word-wrap: break-word;
 }
 
 .esriCTDisplayList, .esriCTDisplayWebMapTemplate
@@ -222,12 +223,18 @@ html, body
     background: #fff;
 }
 
+.esriCTMediaBorder
+{
+    border-top: 1px solid #dfdfdf;
+}
 .esriCTRightArrow
 {
     height: 24px;
     width: 24px;
+    background-repeat: no-repeat;
+    background-size: 24px;
     display: inline-block;
-    background-image: url(../images/right-arrow.png) !important;
+    background-image: url(../images/right-arrow.png);
     float: right;
 }
 
@@ -237,7 +244,7 @@ html, body
     padding-top: 10px;
     background: #fff;
     width: 100%;
-    word-break: break-all;
+    word-wrap: break-word;
     position: relative;
 }
 
@@ -261,18 +268,20 @@ html, body
 
 .esriCTDisplayList
 {
-    padding: 5px 0px 0px 0px;
+    padding: 0px;
 }
 
 .esriCTWebMapLayer
 {
-    border-top: 1px solid #b4b4b4;
+    border-bottom: 1px solid #dfdfdf;
 }
 
 .esriCTInfoImg
 {
     height: 24px;
     width: 24px;
+    background-repeat: no-repeat;
+    background-size: 24px;
     background-image: url('../images/info.png');
 }
 
@@ -298,7 +307,7 @@ html, body
 .esriCTDescription
 {
     color: #515151;
-    padding: 5px;
+    padding: 5px 0px 0px 15px;
     overflow-x: auto;
 }
 
@@ -309,15 +318,7 @@ html, body
     position: relative;
     max-height: 36px;
     max-width: 100%;
-    word-break: break-all;
-}
-
-.esriCTMultiLineEllipsis
-{
-    background: #fff;
-    bottom: 0;
-    position: absolute;
-    right: 0;
+    word-break: break-word;
 }
 
 .esriCTMultiLineFill
@@ -333,27 +334,319 @@ html, body
     margin-left: 5px;
 }
 
+.esriCTInfoHeader
+{
+    margin-bottom: 5px;
+}
+
+.esriCTInfoDetails
+{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
 /* End of Web Map List */
 
-/* Application Header Styles */
+/* Data viewer */
 
+.dataTables_wrapper.no-footer .dataTables_scrollBody
+{
+    border-bottom: 0px solid #111111;
+}
+
+.esriCTDataViewerBody
+{
+    height: 100%;
+    overflow: hidden;
+    color: #555;
+}
+
+.esriCTDataViewer
+{
+    width: 100%;
+    cellspacing: 0;
+    padding-left: 5px;
+}
+
+.esriCTDataViewerParentDiv, .dataTables_wrapper, .dataTables_wrapper .dataTables_scroll
+{
+    height: 99.6%;
+}
+
+.dataTables_scroll div.dataTables_scrollBody
+{
+    height: calc(100% - 40px) !important;
+}
+
+.sorting_1
+{
+    background: none !important;
+}
+
+.esriCTOperationalLayerName
+{
+    height: 25px;
+    width: calc(100% - 350px);
+    margin-top: 16px;
+    margin-right: 5px;
+    margin-left: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    float: left;
+    color: #fff;
+}
+
+.esriCTNoFeature
+{
+    padding: 10px;
+}
+
+table.dataTable th, table.dataTable td
+{
+    white-space: nowrap;
+}
+
+.esriCTRowSelected
+{
+    background-color: #C8C8C8 !important;
+}
+
+table.dataTable thead .sorting
+{
+    background: url("../images/sort_both.png") no-repeat center right !important;
+}
+
+table.dataTable thead .sorting_asc
+{
+    background: url("../images/sort_asc.png") no-repeat center right !important;
+}
+
+table.dataTable thead .sorting_desc
+{
+    background: url("../images/sort_desc.png") no-repeat center right !important;
+}
+
+table.dataTable thead .sorting_asc_disabled
+{
+    background: url("../images/sort_asc_disabled.png") no-repeat center right !important;
+}
+
+table.dataTable thead .sorting_desc_disabled
+{
+    background: url("../images/sort_desc_disabled.png") no-repeat center right !important;
+}
+
+.esriCTNumberAlign
+{
+    text-align: right;
+}
+
+.esriCTHiddenColumn
+{
+    display: none !important;
+}
+
+.esriCTTextInput
+{
+    width: 100% !important;
+    min-width: 200px !important;
+    height: 34px;
+}
+
+.esriCTDetailsTab
+{
+    padding-left: 5px;
+    padding-top: 5px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.esriCTDetailsTabImgSpan
+{
+    margin: 0 5px 5px 0;
+    float: left;
+    max-width: 110px;
+    max-height: 80px;
+    overflow: hidden;
+}
+
+.esriCTImageLoader
+{
+    cursor: default;
+    display: block;
+    background-position: center center;
+    background-image: url(../images/list-loader.gif);
+    background-repeat: no-repeat;
+    width: 110px;
+    height: 80px;
+}
+
+.esriCTDetailsTabImg
+{
+    float: left;
+}
+
+.row
+{
+    margin: 0 !important;
+}
+
+.esriCTDateTimePicker
+{
+    width: 200px !important;
+}
+
+.esriCTDataHeight
+{
+    height: 150px;
+}
+
+table.dataTable tbody tr
+{
+    height: 40px !important;
+}
+
+.esriCTCodedDomain
+{
+    height: 34px;
+    width: 200px;
+}
+
+table.dataTable tbody td
+{
+    padding: 0px 8px 0px 0px;
+}
+
+.form-control
+{
+    font-size: 11px;
+}
+
+.esriCTDetailsContent
+{
+    padding: 5px 0px 0px 15px;
+}
+
+.esriCTDetailsFieldHeader
+{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.esriCTDetailsFieldValue
+{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #dfdfdf;
+}
+/* End of data viewer */
+
+/* Application Header Styles */
+.esriCTHeaderIcons
+{
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+    background-size: 24px;
+    float: right;
+    margin: 12px 24px;
+    display: inline-block;
+}
+.esriCTViews:hover
+{
+    background: #EDEDED;
+}
+
+.esriCTSearch
+{
+    background-image: url('../images/search.png');
+}
+
+.esriCTViewMode
+{
+    background-image: url('../images/mode.png');
+}
+
+.esriCTSettingsButton
+{
+    background-image: url('../images/settings.png');
+}
+
+.esriCTOptions
+{
+    position: absolute;
+    background-color: white;
+    z-index: 100;
+    cursor: pointer;
+    width: auto;
+    top: 49px;
+}
+
+.esriCTItems
+{
+    padding: 5px;
+}
+
+.esriCTItems:hover
+{
+    background: #EDEDED;
+}
+
+.esriCTOptionsSearchMode
+{
+    padding: 9px 5px 5px 6px;
+    right: 60px;
+}
+
+.esriCTOptionsViewMode
+{
+    right: 126px;
+    width: 100px;
+}
+
+.esriCTSettingsOptions
+{
+    display: none;
+    right: 38px;
+}
 .esriCTApplicationHeader
 {
     width: 100%;
     float: left;
-    line-height: 38px;
-    z-index: 12;
+    height: 50px;
     border-bottom: 1px solid;
+    background: #d15706;
+    color: #fff !important;
+}
+
+.esriCTheaderLeft
+{
+    width: 30%;
+    float: left;
+    border-right: 1px solid #fff;
+}
+.esriCTheaderRight
+{
+    width: 70%;
+    float: left;
+}
+
+.esriCTHomeIcon
+{
+    float: left;
+    width: 50px;
 }
 
 .esriCTMenuTabLeft
 {
     font-size: 22px;
-    padding: 5px 0 5px 15px;
-    text-shadow: 0px 0px 1px #aaaaaa;
+    text-shadow: 0px 0px 1px #AAA;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 9px 0px 5px 10px;
+    float: left;
+    width: calc(100% - 50px);
+    color: #fff;
 }
 
 .esriCTMenuTabRight
@@ -361,62 +654,61 @@ html, body
     float: right;
 }
 
-.esriCTHomeIcon
+.esriCTMenuTabSecondRight
 {
-    float: left;
-    height: 48px;
+    float: right;
+    width: 100%;
 }
 
 .esriCTApplicationIcon
 {
-    height: 48px;
-}
-
-.esriCTHeaderIcons
-{
-    float: left;
-    margin: 12px 12px;
-    height: 24px;
-    width: 24px;
+    min-height: 48px;
+    min-width: 48px;
+    max-height: 48px;
+    max-width: 48px;
 }
 
 .esriCTSignInButtonDiv
 {
     display: block;
+    float: right;
 }
 
-.esriCTMobileIcons
+.esriCTUserControlContainer
 {
-    display: none;
+    float: right;
+}
+
+.esriCTSettingIconContainer
+{
+    float: left;
 }
 
 .esriCTLoginDetailsDiv
 {
-    width: 288px;
     height: 40px;
     line-height: 20px !important;
     position: relative;
-    top: 15px;
     right: 5px;
 }
 
 .esriCTLoginUserNameDiv
 {
     cursor: pointer;
-    width: calc(100% - 24px);
-    float: left;
-    text-overflow: ellipsis;
+    max-width: 135px;
     white-space: nowrap;
     overflow: hidden;
     text-align: right;
+    margin-top: 18px;
+    float: left;
+    margin-left: 10px;
+    color: #fff;
 }
 
 .esriCTLoginOptionsDiv
 {
     display: none;
-    cursor: pointer;
-    width: 100px;
-    float: right;
+    right: 0px;
 }
 
 .esriCTLogoutOption
@@ -425,49 +717,52 @@ html, body
     border: 1px solid #b4b4b4;
     width: 100px;
     background: #fff;
-    padding: 0px 2px;
 }
 
-.esriCTLogoutOption:hover
+.esriCTCaretIcon
 {
-    background: #EDEDED;
+    height: 18px;
+    width: 18px;
+    background-position: center;
+    margin-top: 17px;
+    display: inline-block;
+    float: right;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #fff;
 }
 
-.esriCTDownArrowSignIn
+.esriCTLoginCredentialsDiv
 {
     float: right;
-    width: 18px;
-    height: 18px;
-    margin-top: 2px;
 }
 
-.esriCTDownArrowSignInImg
+.esriCTSearchBox
 {
-    height: 18px;
-    width: 18px;
-    background-image: url(../images/down-arrow.png);
-    background-position: center;
-    margin-top: 2px;
+    float: left;
+    height: 24px;
+    width: 200px;
+    border-radius: 0px;
+    border: 1px solid grey;
+    color: #555;
 }
 
-/* End of application header Styles */
-
-/* Buttons */
+.esriCTSearchButton
+{
+    background-image: url('../images/data-search.png');
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+    margin-right: 2px;
+    display: inline-block;
+    background-size: 24px;
+}
 
 .esriCTSignInButton
 {
-    background-image: url(../images/sign-in-24.png);
+    background-image: url(../images/sign-in.png);
     height: 24px;
     width: 24px;
 }
 
-/* End of Buttons */
-
-/* Dijit wrapper */
-
-.esriCTHideWrapper
-{
-    display: none !important;
-}
-
-/* End of dijit wrapper */
+/* End of application header styles */

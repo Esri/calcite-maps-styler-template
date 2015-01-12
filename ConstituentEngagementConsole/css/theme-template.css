@@ -9,7 +9,7 @@
 
 .esriCTBGColor, .esriCTCustomButtonInner
 {
-    background-color: ${SelectedThemeColor};
+    background-color: ${SelectedThemeColor} !important;
 }
 
 .esriCTBorder, .esriCTBorderLeft, .esriCTBorderTop, .esriCTBorderRight, .esriCTBorderBottom
@@ -17,19 +17,11 @@
     border-color: ${SelectedThemeColor};
 }
 
-/* Overriden Styles */
+/* esri API Overriden Styles */
 
 .esriSimpleSliderDecrementButton, .esriSimpleSliderIncrementButton
 {
     background-color:${SelectedThemeColor}  !important;
-    border:#fff solid 1 !important;
 }
 
-.esriSimpleSlider
-{
-    background-color: transparent !important;
-    color: #fff !important;
-    border: #fff solid 0 !important;
-}
-
-/* End of Overriden Styles */
+/* esri API End of Overriden Styles */

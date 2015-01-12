@@ -1,0 +1,62 @@
+﻿/* Main Layout*/
+
+.esriCTLeftContainer
+{
+    height: 92%;
+}
+
+.esriCTRightContainer
+{
+    height: 92%;
+}
+
+/* End of Main Layout */
+
+/* Data viewer */
+
+.dataTables_scrollBody
+{
+    height: 83% !important;
+}
+
+.dataTables_splitViewHeight
+{
+    height: 83% !important;
+}
+
+.dataTables_listViewHeight
+{
+    height: 94% !important;
+}
+
+/* End of data viewer */
+
+/* Header Icons */
+
+.esriCTSearch
+{
+    background-image: url('../images/search-24.png');
+}
+.esriCTViewMode
+{
+    background-image: url('../images/mode-24.png');
+}
+
+.esriCTSettingsButton
+{
+    background-image: url('../images/settings-24.png');
+}
+
+.esriCTSignInButton
+{
+    background-image: url(../images/sign-in-24.png);
+}
+
+/* Header Icons */
+
+/* WebmapList */
+.esriCTRightArrow
+{
+    background-image: url('../images/right-arrow-24.png');
+}
+/* WebmapList*/

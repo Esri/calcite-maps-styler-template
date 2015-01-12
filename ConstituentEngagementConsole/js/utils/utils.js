@@ -20,14 +20,16 @@ define(["dojo/dom",
     "dojo/dom-class",
     "dojo/text!css/theme-template.css",
     "dojo/string",
-    "dojo/dom-construct"
+    "dojo/dom-construct",
+    "dojo/query"
     ], function (
     dom,
     coreFx,
     domClass,
     ThemeCss,
     string,
-    domConstruct
+    domConstruct,
+    query
 ) {
     return {
 
@@ -70,20 +72,75 @@ define(["dojo/dom",
         * @memberOf utils/utils
         */
         loadApplicationTheme: function () {
-            try {
-                var cssString;
-                if (dojo.configData.theme) {
-                    cssString = string.substitute(ThemeCss, {
-                        SelectedThemeColor: dojo.configData.theme
-                    });
+            var cssString, head, style;
+            //if theme is configured
+            if (dojo.configData.theme) {
+                //substitute theme color values in theme template
+                cssString = string.substitute(ThemeCss, {
+                    SelectedThemeColor: dojo.configData.theme
+                });
+                //Create Style using theme template and append it to head
+                //On Lower versions of IE10 Style tag is read only so create theme using styleSheet.cssText
+                if (dojo.isIE < 10) {
+                    head = document.getElementsByTagName('head')[0];
+                    style = document.createElement('style');
+                    style.type = 'text/css';
+                    style.styleSheet.cssText = cssString;
+                    head.appendChild(style);
+                } else {
                     domConstruct.create("style", {
                         "type": "text/css",
                         "innerHTML": cssString
                     }, dojo.query("head")[0]);
                 }
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
             }
+        },
+
+        /**
+        * This function is used to get format of date
+        * @memberOf utils/utils
+        */
+        getDateFormat: function (type) {
+            switch (type) {
+            case "shortDate":
+                return "MM/DD/YYYY";
+            case "shortDateLE":
+                return "DD/MM/YYYY";
+            case "longMonthDayYear":
+                return "MMMM DD,YYYY";
+            case "dayShortMonthYear":
+                return "DD MMM YYYY";
+            case "longDate":
+                return "dddd, MMMM DD, YYYY";
+            case "shortDateLongTime":
+                return "MM/DD/YYYY h:mm:ss a";
+            case "shortDateLELongTime":
+                return "DD/MM/YYYY h:mm:ss a";
+            case "shortDateShortTime":
+                return "DD/MM/YYYY h:mm a";
+            case "shortDateLEShortTime":
+                return "MM/DD/YYYY h:mm a";
+            case "shortDateShortTime24":
+                return "MM/DD/YYYY HH:mm";
+            case "shortDateLEShortTime24":
+                return "MM/DD/YYYY HH:mm";
+            case "longMonthYear":
+                return "MMMM YYYY";
+            case "shortMonthYear":
+                return "MMM YYYY";
+            case "year":
+                return "YYYY";
+            default:
+                return "MMMM DD,YYYY";
+            }
+        },
+
+        /**
+        * This function is used to convert number to thousand seperator
+        * @memberOf utils/utils
+        */
+        convertNumberToThousandSeperator: function (number) {
+            return number.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
         }
     };
 });

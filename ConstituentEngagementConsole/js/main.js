@@ -27,7 +27,9 @@ define(["dojo/_base/declare",
     "widgets/app-header/app-header",
     "widgets/map-viewer/map-viewer",
     "widgets/webmap-list/webmap-list",
+    "widgets/data-viewer/data-viewer",
     "dojo/dom-class",
+    "dojo/query",
     "dojo/domReady!"
     ], function (
     declare,
@@ -42,15 +44,18 @@ define(["dojo/_base/declare",
     ApplicationHeader,
     MapViewer,
     WebMapList,
-    domClass
+    DataViewer,
+    domClass,
+    query
 ) {
     return declare(null, {
         config: {},
-        _isSliderOpen: true,
-        _webMapListWidget: null,
-        _dataViewerWidget: null,
-        _appHeader: null,
+        _webMapListWidget: null, // store object of web map list widget
+        _dataViewerWidget: null, // store object of data-viewer widget
+        _appHeader: null, // store object of application header widget
         _groupItems: [],
+        _isGridViewClicked: false, // track whether grid view is clicked or not
+
 
         /**
         * This function is called when user needs to start operation of widget
@@ -60,29 +65,28 @@ define(["dojo/_base/declare",
         */
         startup: function (config, loggedInUser) {
             try {
-                var error, queryParams = {};
+                var queryParams = {};
                 // config will contain application and user defined info for the template such as i18n strings, the web map id
                 // and application id
                 // any url parameters and any application specific configuration information.
                 dojo.applicationUtils = ApplicationUtils;
                 if (config) {
                     this.config = config;
-                    //if login details are not available set it to anonymousUserName
+                    // if login details are not available set it to anonymousUserName
                     if (loggedInUser) {
                         this.config.logInDetails = {
-                            "userName": loggedInUser.username,
+                            "userName": loggedInUser.fullName,
                             "token": loggedInUser.credential.token
                         };
                     } else {
                         this.config.logInDetails = {
-                            "userName": this.config.i18n.main.anonymousUserName,
+                            "userName": "",
                             "token": ""
                         };
                     }
-                    //enable queryForGroupItems in templateconfig
+                    // enable queryForGroupItems in templateconfig
                     dojo.BoilerPlateTemplate.templateConfig.queryForGroupItems = true;
-
-                    //construct the query params if found in group info
+                    // construct the query params if found in group info
                     if (config.groupInfo.results && config.groupInfo.results.length > 0) {
                         lang.mixin(queryParams, dojo.BoilerPlateTemplate.templateConfig.groupParams);
                         if (config.groupInfo.results[0].sortField) {
@@ -92,12 +96,11 @@ define(["dojo/_base/declare",
                             queryParams.sortOrder = config.groupInfo.results[0].sortOrder;
                         }
                     }
-                    //Pass the newly constructed queryparams from groupinfo.
-                    //If query params not available in groupinfo or proup is private items will be sorted according to modified date.
+                    // pass the newly constructed queryparams from groupinfo.
+                    // if query params not available in groupinfo or proup is private items will be sorted according to modified date.
                     this._loadGroupItems(queryParams);
                 } else {
-                    error = new Error("Main:: Config is not defined");
-                    dojo.applicationUtils.showError(error);
+                    dojo.applicationUtils.showError(dojo.configData.i18n.config.configNotDefined);
                 }
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
@@ -134,9 +137,9 @@ define(["dojo/_base/declare",
         */
         _loadApplication: function () {
             dojo.configData = this.config;
-            //Set Application Theme
+            // set Application Theme
             dojo.applicationUtils.loadApplicationTheme();
-            //Set Application header
+            // set Application header
             this._createApplicationHeader();
             // load MapViewer
             this._mapViewer = new MapViewer(this.config, domConstruct.create("div", {}, dom.byId("LowerContainer")));
@@ -146,7 +149,7 @@ define(["dojo/_base/declare",
             } else {
                 this._handleNoWebMapToDsiplay();
             }
-            //Attach event handelers
+            // attach event handlers
             this._attachEvents();
         },
 
@@ -166,46 +169,22 @@ define(["dojo/_base/declare",
         },
 
         /**
-        * This function is used to resize upper container
-        * @memberOf widgets/main/main
-        */
-        _resizeUpperConatiner: function () {
-            try {
-                $("#UpperContainer").resizable({
-                    alsoResizeReverse: "#LowerContainer",
-                    handles: 'n, s'
-                });
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
-            }
-        },
-
-        /**
         * This function is used to attach events
         * @memberOf widgets/main/main
         */
         _attachEvents: function () {
             try {
+                // resize map on window resize
                 on(window, "resize", lang.hitch(this, this._resizeMap));
-                //Handel slider button click
-                if (dom.byId("SliderButton")) {
-                    on(dom.byId("SliderButton"), "click", lang.hitch(this, this._animateSliderConatainer));
-                }
-                // Handle maximize Map button click
-                if (this._mapViewer) {
-                    this._mapViewer.maximizeMapContainer = lang.hitch(this, function () {
-                        if (domStyle.get("UpperContainer", "display") === "block") {
-                            domStyle.set("UpperContainer", "display", "none");
-                            domStyle.set("LowerContainer", "height", "100%");
-                        } else {
-                            domStyle.set("UpperContainer", "display", "block");
-                            domStyle.set("UpperContainer", "height", "40%");
-                            domStyle.set("LowerContainer", "height", "60%");
-                        }
-                        //resize Map only if mapdiv is visible otherwise map extent will be lost
-                        this._resizeMap();
-                    });
-                }
+                // resize map
+                this._mapViewer.resizeMap = lang.hitch(this, function () {
+                    this._dataViewerWidget.isDetailsTabClicked = false;
+                    this._resizeMap();
+                });
+                // display details tab
+                this._mapViewer.onDetailsTabClick = lang.hitch(this, function () {
+                    this._dataViewerWidget.showDetails();
+                });
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
@@ -217,13 +196,21 @@ define(["dojo/_base/declare",
         */
         _resizeMap: function () {
             try {
-                var mapCenter;
-                if (this.map && domStyle.get(this._mapViewer.mapDiv, "display") === "block") {
-                    mapCenter = this.map.extent.getCenter();
-                    this.map.resize();
-                    this.map.reposition();
+                // only resize map in map & split view
+                if (!this._isGridViewClicked) {
+                    var mapCenter;
+                    if (this.map && domStyle.get(this._mapViewer.mapDiv, "display") === "block") {
+                        mapCenter = this.map.extent.getCenter();
+                        domStyle.set(dom.byId("mapDiv"), "height", "100%");
+                        domStyle.set(dom.byId("mapDiv"), "width", "100%");
+                    }
                     setTimeout(lang.hitch(this, function () {
-                        this.map.centerAt(mapCenter);
+                        if (this.map && domStyle.get(this._mapViewer.mapDiv, "display") === "block") {
+                            this.map.resize();
+                            this.map.reposition();
+                            this.map.centerAt(mapCenter);
+                            dojo.applicationUtils.hideLoadingIndicator();
+                        }
                     }), 500);
                 }
             } catch (err) {
@@ -232,14 +219,82 @@ define(["dojo/_base/declare",
         },
 
         /**
-        * This function is used to create application header
+        * This function is used to create application header.
         * @memberOf widgets/main/main
         */
         _createApplicationHeader: function () {
             try {
                 this._appHeader = new ApplicationHeader({}, domConstruct.create("div", {}, dom.byId('headerContainer')));
+                // display selected records
+                this._appHeader.onShowSelectedRecordsClick = lang.hitch(this, function () {
+                    this._dataViewerWidget.showSelectedRecords();
+                });
+                // display all records
+                this._appHeader.onShowAllRecordsClick = lang.hitch(this, function () {
+                    this._dataViewerWidget.showAllRecords();
+                });
+                // clears the selected records
+                this._appHeader.onClearSelectionClick = lang.hitch(this, function () {
+                    this._dataViewerWidget.clearSelection();
+                });
+                // zoom to selected record
+                this._appHeader.onZoomToSelectedClick = lang.hitch(this, function () {
+                    this._dataViewerWidget.zoomToSelected();
+                });
+                // display grid view
+                this._appHeader.onGridViewClick = lang.hitch(this, function () {
+                    this._isGridViewClicked = true;
+                    this._dataViewerWidget.isMapViewClicked = false;
+                    domStyle.set("LowerContainer", "display", "none");
+                    domStyle.set("UpperContainer", "display", "block");
+                    domStyle.set("UpperContainer", "height", "100%");
+                    this._dataViewerWidget.refreshDataViewer();
+                    this._setDataViewerHeight();
+
+                });
+                // display map view
+                this._appHeader.onMapViewClick = lang.hitch(this, function () {
+                    this._isGridViewClicked = false;
+                    this._dataViewerWidget.isMapViewClicked = true;
+                    domStyle.set("UpperContainer", "display", "none");
+                    domStyle.set("LowerContainer", "display", "block");
+                    domStyle.set("LowerContainer", "height", "100%");
+                    this._setDataViewerHeight();
+                    // resize Map only if mapdiv is visible otherwise map extent will be lost
+                    this._resizeMap();
+                });
+                // display split view
+                this._appHeader.onGridMapViewClick = lang.hitch(this, function () {
+                    this._isGridViewClicked = false;
+                    this._dataViewerWidget.isMapViewClicked = false;
+                    domStyle.set("UpperContainer", "display", "block");
+                    domStyle.set("LowerContainer", "display", "block");
+                    domStyle.set("UpperContainer", "height", "40%");
+                    domStyle.set("LowerContainer", "height", "60%");
+                    this._setDataViewerHeight();
+                    this._resizeMap();
+                });
+                // search records in data-viewer widget
+                this._appHeader.onSearchIconClick = lang.hitch(this, function () {
+                    this._dataViewerWidget.searchDataInDataViewer();
+                });
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to set data viewer height in split view & list view
+        * @memberOf widgets/main/main
+        */
+        _setDataViewerHeight: function () {
+            var tableBodyNodes = query(".dataTables_scrollBody");
+            if (tableBodyNodes.length > 0) {
+                if (this._isGridViewClicked) {
+                    domClass.replace(tableBodyNodes[0], "dataTables_listViewHeight", "dataTables_splitViewHeight");
+                } else {
+                    domClass.replace(tableBodyNodes[0], "dataTables_splitViewHeight", "dataTables_listViewHeight");
+                }
             }
         },
 
@@ -250,6 +305,7 @@ define(["dojo/_base/declare",
         _createWebMapList: function () {
             try {
                 var webMapDescriptionFields, webMapListConfigData;
+                // hide/show info fields of web-map
                 webMapDescriptionFields = {
                     "description": dojo.configData.webMapInfoDescription,
                     "snippet": dojo.configData.webMapInfoSnippet,
@@ -262,24 +318,27 @@ define(["dojo/_base/declare",
                     "numViews": dojo.configData.webMapInfoNumViews,
                     "avgRating": dojo.configData.webMapInfoAvgRating
                 };
-
+                // parameters needed for instantiating web-map list widget
                 webMapListConfigData = {
                     "webMapDescriptionFields": webMapDescriptionFields,
                     "configData": this.config,
-                    "mapDivID": "mapDiv"
+                    "mapDivID": "mapDiv",
+                    "changeExtentOnLayerChange": false
                 };
-
+                // instantiate web-map list widget
                 this._webMapListWidget = new WebMapList(webMapListConfigData, domConstruct.create("div", {}, dom.byId('LeftContainer')));
-
-                this._webMapListWidget.OnOperationalLayerSelected = lang.hitch(this, function (details) {
+                // when new operational layer is selected show it in data-viewer
+                this._webMapListWidget.onOperationalLayerSelected = lang.hitch(this, function (details) {
                     this.map = details.map;
+                    this._mapViewer.addDetailsBtn();
                     this._createDataViewer(details);
+                    this._appHeader.setLayerTitle(details.operationalLayerDetails.title);
                 });
-
+                // show message when there is no web map to display
                 this._webMapListWidget.noMapsFound = lang.hitch(this, function () {
                     this._handleNoWebMapToDsiplay();
                 });
-
+                // start web-map list widget
                 this._webMapListWidget.startup();
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
@@ -287,12 +346,39 @@ define(["dojo/_base/declare",
         },
 
         /**
-        * This function is used to create data viewer widget.
+        * This function is used to instantiate data-viewer widget.
         * @memberOf widgets/main/main
         */
-        _createDataViewer: function () {
+        _createDataViewer: function (details) {
             try {
-                dom.byId('upperContainerText').innerHTML = "Coming Soon...";
+                var dataViewerConfigData;
+                // parameters that are passed to data-viewer widget
+                dataViewerConfigData = {
+                    "configData": this.config,
+                    "map": this.map,
+                    "selectedOperationalLayerID": details.operationalLayerId,
+                    "selectedOperationalLayerTitle": details.operationalLayerDetails.title,
+                    "popupInfo": details.operationalLayerDetails.popupInfo
+                };
+                domConstruct.empty("UpperContainer");
+                // instantiate data-viewer widget
+                this._dataViewerWidget = new DataViewer(dataViewerConfigData, domConstruct.create("div", {}, dom.byId("UpperContainer")));
+                setTimeout(lang.hitch(this, function () {
+                    // create ui of data-viewer widget
+                    this._dataViewerWidget.createDataViewerUI(true);
+                }), 1000);
+                // hide/show settings options
+                this._dataViewerWidget.toggleSelectionViewOption = lang.hitch(this, function (hideClearSelection) {
+                    this._appHeader.toggleSelectionViewOption(hideClearSelection);
+                });
+                // show details panel
+                this._dataViewerWidget.showDetailsTab = lang.hitch(this, function () {
+                    this._mapViewer.switchViewer("details");
+                });
+                // show map panel
+                this._dataViewerWidget.showLocationTab = lang.hitch(this, function () {
+                    this._mapViewer.switchViewer("location");
+                });
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }

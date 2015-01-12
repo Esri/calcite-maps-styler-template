@@ -21,11 +21,7 @@ define({
             error: "Unable to create map"
         },
         main: {
-            anonymousUserName: "Anonymous"
-        },
-        mapViewer: {
-            locationBtnLbl: "Location",
-            detailsBtnLbl: "Details"
+            noGroup: "No Group configured"
         },
         webMapList: {
             owner: "Owner",
@@ -38,11 +34,35 @@ define({
             tags: "Tags",
             numViews: "Number of views",
             avgRating: "Rating",
-            noWebMapInGroup: "No maps found"
+            noWebMapInGroup: "Configured group is invalid or no items have been shared with this group yet"
         },
         applicationHeader: {
             signOutOption: "Sign Out",
-            pleaseSignInText: "Please Sign in"
+            helpOption: "Help",
+            pleaseSignInText: "Please Sign in",
+            showSelectedOption: "Show Selected",
+            showAllOption: "Show All",
+            clearSelectionOption: "Clear Selection",
+            zoomToSelectedOption: "Zoom To Selected",
+            gridViewOption: "List View",
+            mapViewOption: "Map View",
+            gridMapViewOption: "Split View"
+        },
+        dataviewer: {
+            noFeaturesInCurrentExtent: "No issues in current extent",
+            singleFeatureSelection: "No issue/feature selected",
+            multipleFeatureSelection: "Multiple issues/features selected",
+            photoAttachmentHeader: "Photo",
+            invalidSmallNumber: "Please enter valid integer value between -32768 and 32767",
+            invalidNumber: "Please enter valid integer value between -2147483648 and 2147483647",
+            invalidFloat: "Please enter valid floating point value between -3.4E38 and 1.2E38",
+            invalidDouble: "Please enter valid double value between -2.2E308 and 1.8E308",
+            invalidString: "Please enter valid value",
+            invalidDate: "Please enter valid date",
+            invalidNumericRange: "Minimum value ${minValue} and Maximum value ${maxValue}"
+        },
+        config: {
+            configNotDefined: "Config is not defined"
         }
     }),
     "fr": 1

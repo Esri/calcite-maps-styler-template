@@ -28,7 +28,9 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/dom-class",
     "dijit/_WidgetsInTemplateMixin",
-    "esri/arcgis/utils"
+    "esri/arcgis/utils",
+    "dojo/query",
+    "dojo/dom"
 ], function (
     declare,
     domConstruct,
@@ -41,66 +43,89 @@ define([
     _TemplatedMixin,
     domClass,
     _WidgetsInTemplateMixin,
-    arcgisUtils
+    arcgisUtils,
+    query,
+    dom
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
-        config: null,
+        config: null, // configuration data
 
+        /**
+        * This function is called when widget is constructed
+        * @name widgets/mapviewer/mapviewer
+        */
         constructor: function (data, domnode) {
             this.config = data;
         },
 
         /**
-        * This function is called when widget is constructed.
-        *
-        * @class
+        * This function is called after all properties of a widget are defined
         * @name widgets/mapviewer/mapviewer
         */
         postCreate: function () {
-            this.inherited(arguments);
-            domAttr.set(this.locationButton, "innerHTML", this.config.i18n.mapViewer.locationBtnLbl);
-            domAttr.set(this.detailsButton, "innerHTML", this.config.i18n.mapViewer.detailsBtnLbl);
-
-            on(this.locationButton, "click", lang.hitch(this, function () {
-                this._switchViewer("location");
-            }));
-
-            on(this.detailsButton, "click", lang.hitch(this, function () {
-                this._switchViewer("details");
-            }));
-
-            on(this.maximizeBtn, "click", lang.hitch(this, function (event) {
-                if (domClass.contains(this.maximizeBtn, "esriCTMinimizeButton")) {
-                    domClass.replace(this.maximizeBtn, "esriCTMaxmizeButton", "esriCTMinimizeButton");
-                } else {
-                    domClass.replace(this.maximizeBtn, "esriCTMinimizeButton", "esriCTMaxmizeButton");
-                }
-                this.maximizeMapContainer(event);
-            }));
-        },
-
-        /**
-        * This function is used to switch location view to details view or vice versa.
-        * @param {string} view is used to select tab.
-        * @name widgets/mapviewer/mapviewer
-        */
-        _switchViewer: function (view) {
-            if (domStyle.get(view === "location" ? this.mapDiv : this.detailsDiv, "display") === "none") {
-                domStyle.set(view === "location" ? this.detailsDiv : this.mapDiv, "display", "none");
-                domStyle.set(view === "location" ? this.mapDiv : this.detailsDiv, "display", "block");
-                domClass.replace(view === "location" ? this.locationButton : this.detailsButton, "esriCTBorder esriCTApplicationColor esriCTDefaultCursor", "esriCTBorderWhite esriCTApplicationColor esriCTPointerCursor");
-                domClass.replace(view === "location" ? this.detailsButton : this.locationButton, "esriCTBorderWhite esriCTApplicationColor esriCTPointerCursor", "esriCTBorder esriCTApplicationColor esriCTDefaultCursor");
+            try {
+                this.inherited(arguments);
+                // to show map panel & resize map
+                on(this.locationButton, "click", lang.hitch(this, function () {
+                    dojo.applicationUtils.showLoadingIndicator();
+                    this.switchViewer("location");
+                    this.resizeMap();
+                }));
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
             }
         },
 
         /**
-        * This function is used to toggle the map container to full screen view or restore it back.
-        * @param {object} event is used to maximize the map.
+        * This function is used to generate event for resizing of map
         * @name widgets/mapviewer/mapviewer
         */
-        maximizeMapContainer: function (event) {
-            return event;
+        resizeMap: function () {
+            return null;
+        },
+
+        /**
+        * This function is used to notify that details tab is clicked
+        * @name widgets/mapviewer/mapviewer
+        */
+        onDetailsTabClick: function () {
+            return null;
+        },
+
+        /**
+        * This function is used to switch map view to details view or vice versa.
+        * @param {string} to display map view/details view
+        * @name widgets/mapviewer/mapviewer
+        */
+        switchViewer: function (view) {
+            if (domStyle.get(view === "location" ? this.mapDiv : this.detailsDiv, "display") === "none") {
+                domStyle.set(view === "location" ? this.detailsDiv : this.mapDiv, "display", "none");
+                domStyle.set(view === "location" ? this.mapDiv : this.detailsDiv, "display", "block");
+            }
+        },
+
+        /**
+        * This function is used to add details button on top right corner of map panel
+        * @name widgets/mapviewer/mapviewer
+        */
+        addDetailsBtn: function () {
+            try {
+                domConstruct.destroy("detailsBtnDiv");
+                // details tab button that needs to be added
+                var detailsDiv = domConstruct.create("div", {
+                    "class": "esriCTBGColor esriCTDetailsButton",
+                    "id": "detailsBtnDiv"
+                });
+                // to place details button on top of zoom in button of map
+                domConstruct.place(detailsDiv, query(".esriSimpleSliderIncrementButton", dom.byId("mapDiv"))[0], "before");
+                // to show details tab
+                on(detailsDiv, "click", lang.hitch(this, function (evt) {
+                    this.onDetailsTabClick();
+                }));
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
         }
     });
 });

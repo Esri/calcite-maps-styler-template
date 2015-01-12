@@ -17,17 +17,18 @@
     <!-- Bootstrap core CSS -->
     <link href="js/vendor/bootstrap-3.3.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link href="js/vendor/bootstrap-datatable/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="js/vendor/bootstrap-datatable/jquery.datatables.css" rel="stylesheet" type="text/css" />
     <!--Dojo and Esri CSS-->
-    <link rel="stylesheet" href="//js.arcgis.com/3.11//dijit/themes/claro/claro.css" />
-    <link rel="stylesheet" href="//js.arcgis.com/3.11/esri/css/esri.css" />
+    <link rel="stylesheet" href="//js.arcgis.com/3.12/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="//js.arcgis.com/3.12/esri/css/esri.css" />
     <!-- Load any application specific styles -->
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <link rel="stylesheet" href="css/common.css" type="text/css" />
     <link rel="stylesheet" href="css/media-queries.css" type="text/css" />
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Add Legacy browsers css -->
     <!--[if lt IE 9]>
-    <script src="js/vendor/html5shiv.min.js"></script>
-    <script src="js/vendor/respond.min.js"></script>
+    <link rel="stylesheet"  type="text/css" href="css/legacy-browsers.css" />
   <![endif]-->
 </head>
 
@@ -46,7 +47,6 @@
         <div class="esriCTRightContainer">
             <div class="esriCTFullHeightWidth">
                 <div id="UpperContainer" class="esriCTUpperContainer esriCTBorderBottom">
-                    <span class="esriCTFutureRelease" id="upperContainerText"></span>
                 </div>
                 <div id="LowerContainer" class="esriCTLowerContainer esriCTBorderBottom">
                 </div>
@@ -61,7 +61,9 @@
     <script type="text/javascript" src="js/vendor/moment-with-langs.min.js"></script>
     <script src="js/vendor/bootstrap-3.3.0-dist/js/bootstrap.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
-    <script type="text/javascript" src="//js.arcgis.com/3.11/"></script>
+    <script src="js/vendor/bootstrap-datatable/jquery.datatables.min.js" type="text/javascript"></script>
+    <script src="js/vendor/bootstrap-datatable/datatables.bootstrap.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//js.arcgis.com/3.12/"></script>
     <script type="text/javascript">
         require([
             "application/template-options",
@@ -71,11 +73,11 @@
             "dojo/_base/lang",
             "dojo/on",
             "esri/arcgis/Portal",
+            "esri/config",
             "esri/IdentityManager",
             "widgets/app-header/app-header",
             "dojo/dom-construct",
-            "dojo/dom",
-            "esri/config"
+            "dojo/dom"
         ], function(
             templateConfig,
             Template,
@@ -84,16 +86,17 @@
             lang,
             on,
             esriPortal,
+            esriConfig,
             IdentityManager,
             ApplicationHeader,
             domConstruct,
-            dom,
-            esriConfig
+            dom
         ) {
-            esriConfig.defaults.io.proxyUrl = "proxy.ashx";
+            //Set proxy url as portal.signin() will be called before intializing of BoilerPlate template.
+            esriConfig.defaults.io.proxyUrl = Defaults.proxyurl;
+            //create portal Object
             this.portal = new esriPortal.Portal(Defaults.sharinghost);
             this._appHeader = null;
-
             /**
              * This function is used to show message screen
              * @param{object} error that is to be displayed
@@ -108,24 +111,28 @@
                 }
                 $(document.body).removeClass("app-loading");
                 domConstruct.empty("headerContainer");
+                // display message when any error occurs during sign-in
                 if (error) {
                     $(dom.byId("headerContainer")).addClass('esriCTHidden');
                     $(dom.byId("esriCTMainContainer")).addClass('esriCTHidden');
                     $(dom.byId("esriCTNoWebMapParentDiv")).removeClass("esriCTHidden");
                     message = error.message;
+                    // show error message when group is undefined
                     if (message.toLowerCase() === "group undefined.") {
-                        message = "No Group configured";
+                        message = dojo.BoilerPlateTemplate.config.i18n.main.noGroup;
                     }
                     dom.byId("esriCTNoWebMapChildDiv").innerHTML = message;
                 } else {
+                    // display please sign-in page
                     $(dom.byId("headerContainer")).removeClass('esriCTHidden');
                     dojo.configData = config;
+                    // instantiate application header widget
                     this._appHeader = new ApplicationHeader({}, domConstruct.create("div", {}, dom.byId('headerContainer')));
                 }
             }
 
             /**
-             * This function is used to handle cancel button click of identity manager
+             * This function is used to show sign-in page when user clicks on cancel button.
              */
             on(IdentityManager, "dialog-cancel", lang.hitch(this, function() {
                 var myTemplate = new Template(templateConfig);
@@ -142,6 +149,7 @@
              */
             this.portal.on("load", lang.hitch(this, function() {
                 $(dom.byId("loadingIndicator")).addClass('esriCTHideLoadingIndicatorImage');
+                // when user successfully signs in, load instantiate template & main file
                 this.portal.signIn().then(lang.hitch(this, function(loggedInUser) {
                     var myTemplate, myApp;
                     $(dom.byId("loadingIndicator")).removeClass("esriCTHideLoadingIndicatorImage");
@@ -163,6 +171,7 @@
                         _showMessageScreen(error, null);
                     }));
                 }), lang.hitch(this, function(error) {
+                    // show error message when sign-in operation is aborted
                     if (!(error.message.toLowerCase() === "aborted")) {
                         _showMessageScreen(error, null);
                     }

@@ -1,12 +1,4 @@
-﻿@media only screen and (max-width: 480px)
-{
-    .esriCTMainContainer
-    {
-        /*display: none;*/
-    }
-}
-
-/* CSS for Devices other than desktop browser*/
+﻿/* CSS for Devices other than desktop browser*/
 
 @media screen and (max-width:1024px)
 {
@@ -15,11 +7,22 @@
         font-size: 15px;
     }
 
-    .esriCTSignInButton
+    .esriCTApplicationHeader
     {
-        background-image: url(../images/sign-in-44.png);
-        height: 44px;
-        width: 44px;
+        height: 60px;
+    }
+
+    .esriCTApplicationIcon
+    {
+        min-height: 60px;
+        min-width: 60px;
+        max-height: 60px;
+        max-width: 60px;
+    }
+
+    .esriCTHeaderFont
+    {
+        font-size: 17px;
     }
 
     .esriCTHeaderIcons
@@ -27,12 +30,12 @@
         height: 44px !important;
         width: 44px !important;
         background-size: 44px !important;
-        margin: 6px 12px;
+        margin: 8px 24px;
     }
 
     .esriCTHeaderContainer
     {
-        height: 60px;
+        height: 50px;
     }
 
     .esriCTApplicationIcon
@@ -42,16 +45,98 @@
 
     .esriCTMainContainer
     {
-        height: calc(100% - 60px);
+        height: calc(100% - 50px);
     }
 
     .esriCTMenuTabLeft
     {
         line-height: 50px;
+        margin-top: -2px;
+    }
+
+    /* Application Header Styles */
+
+    .esriCTCaretIcon
+    {
+        font-size: 14px;
+        margin-top: 23px;
+    }
+
+    .esriCTOperationalLayerName
+    {
+        margin-top: 22px;
+        height: 30px;
+        width: calc(100% - 460px);
     }
 
     .esriCTLoginDetailsDiv
     {
-        top: 18px;
+        top: 4px;
+    }
+
+    .esriCTOptions
+    {
+        top: 59px;
+    }
+    .esriCTLoginUserNameDiv
+    {
+        margin-top: 23px;
+    }
+
+    .esriCTSettingsOptions
+    {
+        right: 50px;
+    }
+
+    .esriCTOptionsViewMode
+    {
+        right: 190px;
+    }
+
+    .esriCTOptionsSearchMode
+    {
+        right: 142px;
+    }
+
+    .esriCTMenuTabLeft{
+        width: calc(100% - 60px);
+    }
+
+    .esriCTHomeIcon{
+        width:60px;
+    }
+
+    /* End of application header styles */
+
+    /* Data viewer */
+
+    .esriCTDataViewerParentDiv, .dataTables_wrapper, .dataTables_wrapper .dataTables_scroll
+    {
+        height: 99%;
+    }
+
+    /* End of data viewer */
+}
+
+/*  Retina images */
+
+@media only screen and (min-device-width : 319px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2)
+{
+
+    .esriCTSearchButton
+    {
+        background-image: url('../images/data-search-2x.png') !important;
+    }
+
+    .esriCTDetailsButton
+    {
+        background-image: url('../images/details-2x.png') !important;
+    }
+
+    .esriCTLocationButton
+    {
+        background-image: url('../images/location-2x.png') !important;
     }
 }
+
+/*  End of retina images */

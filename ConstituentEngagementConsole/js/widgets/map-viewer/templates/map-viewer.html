@@ -1,21 +1,11 @@
 ﻿<div data-dojo-attach-point="mapViewerOuterContainer" class="esriCTFullHeightWidth">
-    <div class="esriCTMapViewerHeader">
-        <div class="esriCTMaximizeContainer">
-            <div class="esriCTMaximizeButton esriCTBGColor esriCTBorder esriCTPointerCursor"
-                data-dojo-attach-point="maximizeBtn">
-            </div>
-        </div>
-        <div class="esriCTLocationDetailsBtns">
-            <span data-dojo-attach-point="locationButton" class="esriCTBorder esriCTApplicationColor esriCTDefaultCursor esriCTLocationBtn">
-            </span><span data-dojo-attach-point="detailsButton" class="esriCTBorderWhite esriCTApplicationColor esriCTPointerCursor esriCTDetailBtn">
-            </span>
-        </div>
-    </div>
     <div class="esriCTMapViewerBody">
-        <div id="mapDiv" data-dojo-attach-point="mapDiv" dir="ltr" class="esriCTBorderTop">
+        <div id="mapDiv" data-dojo-attach-point="mapDiv" dir="ltr">
         </div>
-        <div id="detailsDiv" data-dojo-attach-point="detailsDiv" class="esriCTBorderTop esriCTHidden">
-            <span class="esriCTFutureRelease">Coming Soon...</span>
+        <div id="detailsDiv" data-dojo-attach-point="detailsDiv" class="esriCTDetailsTab esriCTHidden">
+            <div class="esriCTLocationButton esriCTBGColor esriCTPointerCursor" data-dojo-attach-point="locationButton">
+            </div>
+            <div id="detailsContentDiv" class="esriCTDetailsContent"></div>
         </div>
     </div>
 </div>

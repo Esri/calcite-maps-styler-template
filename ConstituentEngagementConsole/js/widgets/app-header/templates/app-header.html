@@ -1,29 +1,85 @@
 ﻿<div data-dojo-attach-point="applicationHeaderParentContainer">
     <div class="esriCTApplicationHeader esriCTBorderBottom">
-        <div class="esriCTHomeIcon">
-            <img data-dojo-attach-point="applicationHeaderIcon" class="esriCTApplicationIcon" alt="" />
+        <div class="esriCTheaderLeft">
+            <div class="esriCTHomeIcon">
+                <img data-dojo-attach-point="applicationHeaderIcon" class="esriCTApplicationIcon"
+                    alt="Logo" title="Logo" />
+            </div>
+            <div data-dojo-attach-point="applicationHeaderName" class="esriCTMenuTabLeft">
+            </div>
         </div>
-        <div class="esriCTMenuTabRight">
-            <div data-dojo-attach-point="applicationHeaderWidgetsContainer">
-                <div class="esriCTSignInButtonDiv" data-dojo-attach-point="esriCTSignInButtonDiv">
-                    <div onclick="location.reload();" class="esriCTHeaderIcons esriCTSignInButton esriCTPointerCursor esriCTBGColor" data-dojo-attach-point="esriCTSignInButton">
+        <div class="esriCTheaderRight">
+            <div class="esriCTMenuTabRight">
+                <div class="esriCTUserControlContainer">
+                    <div data-dojo-attach-point="esriCTLoginDetailsDiv">
+                        <div class="esriCTLoginCredentialsDiv" data-dojo-attach-point="esriCTLoginCredentialsDiv">
+                            <div>
+                                <div class="esriCTLoginUserNameDiv" data-dojo-attach-point="esriCTLoginUserNameDiv">
+                                </div>
+                                <div class="esriCTCaretIcon  esriCTPointerCursor">
+                                    &#9660;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="esriCTOptions esriCTLoginOptionsDiv esriCTHidden" data-dojo-attach-point="esriCTLoginOptionsDiv">
+                            <div class="esriCTLogoutOption esriCTBorder" >
+                                <div class="esriCTItems" data-dojo-attach-point="esriCTHelpOption">
+                                </div>
+                                <div class="esriCTItems" data-dojo-attach-point="esriCTLogoutOption">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="esriCTLoginDetailsDiv" data-dojo-attach-point="esriCTLoginDetailsDiv">
-                    <div class="esriCTLoginCredentialsDiv" data-dojo-attach-point="esriCTLoginCredentialsDiv">
-                        <div class="esriCTLoginUserNameDiv" data-dojo-attach-point="esriCTLoginUserNameDiv">
+                <div class="esriCTSettingIconContainer">
+                    <div data-dojo-attach-point="applicationHeaderWidgetsContainer">
+                        <div class="esriCTHeaderIcons esriCTSettingsButton esriCTBGColor esriCTPointerCursor" data-dojo-attach-point="settingsDataViewerBtn">
                         </div>
-                        <div class="esriCTDownArrowSignInImg esriCTApplicationColor esriCTBGColor esriCTDownArrowSignIn esriCTPointerCursor">
+                        <div class="esriCTOptions esriCTSettingsOptions esriCTBorder esriCTPointerCursor esriCTApplicationColor  esriCTHidden"
+                            data-dojo-attach-point="esriCTSettingsOptionsItemDiv">
+                            <div class="esriCTItems esriCTHidden esriCTShowAll" data-dojo-attach-point="esriCTShowAll">
+                            </div>
+                            <div class="esriCTItems esriCTVisible esriCTShowSelected" data-dojo-attach-point="esriCTShowSelected">
+                            </div>
+                            <div class="esriCTItems esriCTVisible" data-dojo-attach-point="esriCTClearSelection">
+                            </div>
+                            <div class="esriCTItems" data-dojo-attach-point="esriCTZoomToSelected">
+                            </div>
                         </div>
-                    </div>
-                    <div class="esriCTLoginOptionsDiv esriCTHidden" data-dojo-attach-point="esriCTLoginOptionsDiv">
-                        <div class="esriCTLogoutOption" data-dojo-attach-point="esriCTLogoutOption">
+                        <div class="esriCTHeaderIcons esriCTViewMode esriCTBGColor esriCTPointerCursor" data-dojo-attach-point="viewModeBtn">
+                        </div>
+                        <div class="esriCTOptions esriCTOptionsViewMode esriCTBorder esriCTPointerCursor esriCTApplicationColor  esriCTHidden"
+                            data-dojo-attach-point="optionsViewMode">
+                            <div class="esriCTViews esriCTItems" data-dojo-attach-point="mapView">
+                            </div>
+                            <div class="esriCTViews esriCTItems" data-dojo-attach-point="listView">
+                            </div>
+                            <div class="esriCTViews esriCTItems" data-dojo-attach-point="splitView">
+                            </div>
+                        </div>
+                        <div class="esriCTHeaderIcons esriCTSearch esriCTBGColor esriCTPointerCursor" data-dojo-attach-point="searchDataViewerRecords">
+                        </div>
+                        <div class="esriCTOptions esriCTOptionsSearchMode esriCTBorder esriCTPointerCursor esriCTApplicationColor esriCTHidden"
+                            data-dojo-attach-point="searchOptions">
+                            <div class="esriCTSearch" data-dojo-attach-point="search">
+                                <input type="text" class="esriCTSearchBox" placeholder="Coming soon..." />
+                                <div class="esriCTSearchButton esriCTBGColor esriCTPointerCursor" data-dojo-attach-point="searchClick">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div data-dojo-attach-point="applicationHeaderName" class="esriCTMenuTabLeft esriCTApplicationColor">
+            <div class="esriCTMiddle" data-dojo-attach-point="esriCTMiddle">
+                <div class="esriCTOperationalLayerName esriCTHeaderFont" data-dojo-attach-point="operationalLayerTitle">
+                </div>
+            </div>
+            <div class="esriCTSignInButtonDiv" data-dojo-attach-point="esriCTSignInButtonDiv">
+                <div onclick="location.reload();" class="esriCTHeaderIcons esriCTSignInButton esriCTPointerCursor esriCTBGColor"
+                    data-dojo-attach-point="esriCTSignInButton">
+                </div>
+            </div>
         </div>
     </div>
 </div>
+

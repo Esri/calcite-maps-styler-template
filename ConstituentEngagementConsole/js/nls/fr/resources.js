@@ -19,11 +19,7 @@ define(({
         error: "@fr@ Impossible de créer la carte"
     },
     main: {
-        anonymousUserName: "@fr@ Anonymous"
-    },
-    mapViewer: {
-        locationBtnLbl: "@fr@ Location",
-        detailsBtnLbl: "@fr@ Details"
+        noGroup: "@fr@ No Group configured"
     },
     webMapList: {
         owner: "@fr@ Owner",
@@ -36,10 +32,34 @@ define(({
         tags: "@fr@ Tags",
         numViews: "@fr@ Number of views",
         avgRating: "@fr@ Rating",
-        noWebMapInGroup: "@fr@ No maps found"
+        noWebMapInGroup: "@fr@ Configured group is invalid or no items have been shared with this group yet"
     },
     applicationHeader: {
         signOutOption: "@fr@ Sign Out",
-        pleaseSignInText: "@fr@ Please Sign in"
+        helpOption: "@fr@ Help",
+        pleaseSignInText: "@fr@ Please Sign in",
+        showSelectedOption: "@fr@ Show Selected",
+        showAllOption: "@fr@ Show All",
+        clearSelectionOption: "@fr@ Clear Selection",
+        zoomToSelectedOption: "@fr@ Zoom To Selected",
+        gridViewOption: "@fr@ List View",
+        mapViewOption: "@fr@ Map View",
+        gridMapViewOption: "@fr@ Split View"
+    },
+    dataviewer: {
+        noFeaturesInCurrentExtent: "@fr@ No issues in current extent",
+        singleFeatureSelection: "@fr@ No issue/feature selected",
+        multipleFeatureSelection: "@fr@ Multiple issues/features selected",
+        photoAttachmentHeader: "@fr@ Photo",
+        invalidSmallNumber: "@fr@ Please enter valid integer value between -32768 and 32767",
+        invalidNumber: "@fr@ Please enter valid integer value between -2147483648 and 2147483647",
+        invalidFloat: "@fr@ Please enter valid floating point value between -3.4E38 and 1.2E38",
+        invalidDouble: "@fr@ Please enter valid double value between -2.2E308 and 1.8E308",
+        invalidString: "@fr@ Please enter valid value",
+        invalidDate: "@fr@ Please enter valid date",
+        invalidNumericRange: "@fr@ Minimum value ${minValue} and Maximum value ${maxValue}"
+    },
+    config: {
+        configNotDefined: "@fr@ Config is not defined"
     }
 }));

@@ -1,10 +1,5 @@
 ﻿/* Common */
 
-.esriCTHeaderFont
-{
-    font-weight: bold;
-}
-
 .esriCTEllipsis
 {
     text-overflow: ellipsis;
@@ -73,26 +68,4 @@
     border-bottom: 1px solid #fff;
 }
 
-/* End of common style */
-
-/* Buttons */
-
-.esriCTMaximizeButton
-{
-    background-image: url('../images/maximize.png');
-    background-repeat: no-repeat;
-    height: 32px;
-    width: 32px;
-    background-position: center;
-}
-
-.esriCTMinimizeButton
-{
-    background-image: url('../images/minimize.png');
-    background-repeat: no-repeat;
-    height: 32px;
-    width: 32px;
-    background-position: center;
-}
-
-/* End Of buttons */
+/* End of common style */.
