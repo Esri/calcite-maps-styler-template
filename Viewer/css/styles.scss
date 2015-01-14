@@ -320,6 +320,27 @@ html, body {
     line-height: 40px;
     -webkit-user-select: none;
 }
+.arcgisSearch .searchGroup .searchInput {
+  width:200px;
+  padding: 6px 17px 6px 18px;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+  zoom: 1;
+  color:#fff;
+}
+.arcgisSearch .searchClear{
+  background:none;
+  background-color: inherit;
+  color:#a8a8a8;
+ }
+
+.arcgisSearch .searchBtn {
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+  color:#a8a8a8;
+}
 
 .notools div{
     width:30px;
