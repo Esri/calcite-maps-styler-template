@@ -384,7 +384,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 }
             }
             var customPopup = new Popup({
-                titleInBody: false
+                titleInBody: true
             }, domConstruct.create("div"));
             domClass.add(document.body, this.config.theme);
             domClass.add(customPopup.domNode, this.config.theme);
