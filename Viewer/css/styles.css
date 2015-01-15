@@ -339,7 +339,7 @@ html, body {
 .esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
   border: none !important; }
 
-.arcgis-search .search-group .search-input {
+.arcgisSearch .searchGroup .searchInput {
   width:200px;
   padding: 6px 17px 6px 18px;
   background-color: transparent;
@@ -348,13 +348,13 @@ html, body {
   zoom: 1;
   color:#fff;
 }
-.arcgis-search .search-clear{
+.arcgisSearch .searchClear{
   background:none;
   background-color: inherit;
   color:#a8a8a8;
  }
 
-.arcgis-search .search-btn {
+.arcgisSearch .searchBtn {
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.3);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
