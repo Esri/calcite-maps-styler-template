@@ -60,6 +60,7 @@ define({
     "flickr_key": "404ebea7d5bc27aa5251d1207620e99b",
     "webcams_key": "65939add1ebe8bc9cc4180763f5df2ca",
     "instagram_key": "288c36a1a42c49de9a2480a05d054619",
+    "enablePrintButton": false,
     //Enter the url to your organizations bing maps key if you want to use bing basemaps
     "bingmapskey": "",
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
