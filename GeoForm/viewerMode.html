@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -21,7 +21,9 @@
     <link rel="stylesheet" type="text/css" href="js/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.12/esri/css/esri.css">
     <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.12/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" type="text/css" href="css/geocoder.css" />
     <link rel="stylesheet" type="text/css" href="js/vendor/font-awesome-4.2.0/css/font-awesome.min.css">
+    <link href="css/viewerMode.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link id="rtlCSS" rel="stylesheet" />
     <link href="css/select2.css" rel="stylesheet" />
@@ -33,7 +35,7 @@
   <![endif]-->
 </head>
 
-<body id="geoform" class="claro app-loading">
+<body id="geoform" class="claro calcite app-loading">
     <a id="top"><!-- Top of page --></a>
     <div class="loading-indicator">
         <div class="icon-loading fa fa-spinner fa-spin"></div>
@@ -72,34 +74,24 @@
     <script type="text/javascript" src="js/offlineOptions.js"></script>
     <script type="text/javascript" src="js/vendor/IndexedDBShim.min.js"></script>
     <script type="text/javascript">
-        require(["application/templateOptions", "application/template", "application/main"], function (templateOptions, Template, Main) {
+        require(["application/templateOptions", "application/template", "application/viewerMode"], function (templateOptions, Template, viewerMode) {
             // start template
             var myTemplate = new Template(templateOptions);
             // create my main application. Start placing your logic in the main.js file.
-            var myApp = new Main();
+            var myApp = new viewerMode();
             // create my main application. Start placing your logic in the main.js file.
             myTemplate.startup().then(function (config) {
                 //The config object contains the following properties: helper services, (optionally)
                 //i18n, appid, webmap and any custom values defined by the application.
                 //In this example we have one called theme.
-                if (config.edit && config.appid) {
-                    // get the app builder code
-                    require(["application/builder/builder"], function (builderMode) {
-                        // create configuration app builder
-                        var builder = new builderMode(config, myTemplate.appResponse);
-                        // start it
-                        builder.startup().otherwise(function (error) {
-                            // something went wrong. Let's report it.
-                            myApp.reportError(error);
-                        });
-                    });
-                } else {
-                    // lets go!
-                    myApp.startup(config, myTemplate.appResponse);
-                }
+                // lets go!
+                //var Browse = new viewerMode();
+                //debugger;
+                myApp.startup(config, myTemplate.appResponse);
             }, function (error) {
                 // something went wrong. Let's report it.
-                myApp.reportError(error);
+                //myApp.reportError(error);
+                alert("error");
             });
         });
     </script>
@@ -107,7 +99,7 @@
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-215788-4']);
-         //_gaq.push(['_setDomainName', 'esri.com']);
+        //_gaq.push(['_setDomainName', 'esri.com']);
         _gaq.push(['_trackPageview']);
         _gaq.push(['_trackPageLoadTime']);
         (function () {
