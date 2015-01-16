@@ -1,4 +1,4 @@
-/*global define */
+﻿/*global define */
 /*
  | Copyright 2014 Esri
  |
@@ -42,6 +42,7 @@ define({
    "cs": 1,
    "da": 1,
    "de": 1,
+   "el": 1,
    "es": 1,
    "et": 1,
    "fi": 1,
