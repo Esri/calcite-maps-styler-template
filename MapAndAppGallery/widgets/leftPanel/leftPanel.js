@@ -189,7 +189,7 @@ define([
         gallery: null,
 
         startup: function () {
-            var i, listSortMenu;
+            var i, listSortMenu, groupItems = [];
             dojo.sortBy = dojo.configData.values.sortField;
             listSortMenu = query(".listSortMenu")[0];
             for (i = 0; i < listSortMenu.children.length; i++) {
@@ -200,9 +200,8 @@ define([
             }
             this._setGroupContent();
             this._expandGroupdescEvent(this.expandGroupDescription, this);
-            this._queryGroupItems();
+            this._queryGroupItems(null, null, groupItems);
             domAttr.set(this.leftPanelHeader, "innerHTML", dojo.configData.values.applicationName);
-            topic.subscribe("queryGroupItems", lang.hitch(this, this._queryGroupItems));
             topic.subscribe("createNoDataContainer", lang.hitch(this, this._createNoDataContainer));
             topic.subscribe("queryItemPods", this._queryItemPods);
         },
@@ -211,8 +210,8 @@ define([
         * @memberOf widgets/leftPanel/leftPanel
         * Store the item details in an array
         */
-        _queryGroupItems: function (nextQuery, queryString) {
-            var groupItems = [], defObj = new Deferred();
+        _queryGroupItems: function (nextQuery, queryString, groupItems) {
+            var defObj = new Deferred();
 
             if ((!nextQuery) && (!queryString)) {
                 dojo.queryString = 'group:("' + dojo.configData.values.group + '")';
@@ -233,7 +232,7 @@ define([
                         groupItems.push(data.results[i]);
                     }
                     if (data.nextQueryParams.start !== -1) {
-                        this._queryGroupItems(data.nextQueryParams);
+                        this._queryGroupItems(data.nextQueryParams, null, groupItems);
                     } else {
                         dojo.groupItems = groupItems;
                         this._setLeftPanelContent(groupItems);

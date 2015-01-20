@@ -106,7 +106,7 @@ define([
                 if (dojo.configData.groupDescription) {
                     if (domStyle.get(query(".esriCTSignInIcon")[0], "display") !== "none") {
                         descHeight = window.innerHeight / 5;
-                        leftPanelDescHeight = window.innerHeight - (domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelBottom")[0]).h  - descHeight) + "px";
+                        leftPanelDescHeight = window.innerHeight - (domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelBottom")[0]).h - descHeight) + "px";
                         domStyle.set(query(".esriCTGroupDesc")[0], "height", leftPanelDescHeight);
                     }
                 }
@@ -117,7 +117,7 @@ define([
                     if (domStyle.get(query(".esriCTSignInIcon")[0], "display") === "none") {
                         domClass.remove(query(".esriCTGroupDesc")[0], "esriCTLeftTextReadLess");
                         domStyle.set(query(".esriCTExpand")[0], "display", "none");
-                        descContainerHeight = window.innerHeight - (domGeom.position(query(".esriCTGalleryNameSample")[0]).h +  100) + "px";
+                        descContainerHeight = window.innerHeight - (domGeom.position(query(".esriCTGalleryNameSample")[0]).h + 100) + "px";
                         domStyle.set(query(".esriCTGroupDesc")[0], "height", descContainerHeight);
                     } else {
                         domStyle.set(query(".esriCTGroupDesc")[0], "height", "");
@@ -152,7 +152,7 @@ define([
                 domConstruct.empty(this.itemPodsList);
             }
             if (query(".esriCTShowMoreResults")[0]) {
-                if (itemResults.length !== 100) {
+                if (itemResults.length < 100 || (itemResults.length === 100 && dojo.groupItems.length === 100)) {
                     domClass.replace(query(".esriCTShowMoreResults")[0], "displayNoneAll", "displayBlockAll");
                 } else {
                     domClass.replace(query(".esriCTShowMoreResults")[0], "displayBlockAll", "displayNoneAll");
