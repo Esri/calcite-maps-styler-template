@@ -207,27 +207,24 @@ html, body {
   background: #d3d3d3; }
 
 /* Esri Javascript API*/
-.esriEditor{
-  height:400px;
-}
 .templatePicker {
-  height:100%;
-  padding-top:30px;
-  padding-bottom:120px;
-  border: none; 
-}
+  height: 100%;
+  padding-top: 30px;
+  padding-bottom: 120px;
+  border: none; }
+
 .esriEditor .esriDrawingToolbar {
   position: absolute;
   right: 0;
   left: 0;
   top: 10px;
-  border-top:none;
+  border-top: none;
   border-right: none;
   border-left: none; }
 
 @media only screen and (min-width: 720px) {
   .esriEditor .esriDrawingToolbar {
-    top:10px;
+    top: 10px;
     right: 0;
     left: 0; } }
 
@@ -237,8 +234,6 @@ html, body {
 .esriPopupMaximized {
   top: 100px !important; }
 
-.esriPrintout a {
-  color: #5daddd; }
 .esriPopup.light .actionsPane .action.zoomTo {
   background-position: 0 -224px; }
 
@@ -252,12 +247,14 @@ html, body {
   width: 12px;
   height: 12px;
   text-indent: -9999px; }
+
+.esriPrintout a {
+  color: #5daddd; }
+
 .esriPrint {
   position: absolute;
   top: 40px;
   left: 15px; }
-
-
 
 .esriMeasurement .esriMeasurementButtonPane {
   padding-left: 6px; }
@@ -306,7 +303,7 @@ html, body {
   cursor: pointer;
   display: none; }
 
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 700px) {
   .esriSimpleSlider {
     display: block; } }
 
@@ -318,6 +315,26 @@ html, body {
   font-weight: bold;
   line-height: 40px;
   -webkit-user-select: none; }
+
+.arcgisSearch .searchGroup .searchInput {
+  width: 200px;
+  padding: 6px 17px 6px 18px;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+  zoom: 1;
+  color: #fff; }
+
+.arcgisSearch .searchClear {
+  background: none;
+  background-color: inherit;
+  color: #a8a8a8; }
+
+.arcgisSearch .searchBtn {
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+  color: #a8a8a8; }
 
 .notools div {
   width: 30px;
@@ -339,27 +356,49 @@ html, body {
 .esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
   border: none !important; }
 
-.arcgisSearch .searchGroup .searchInput {
-  width:200px;
-  padding: 6px 17px 6px 18px;
+.simpleGeocoder .esriGeocoder {
+  display: block;
+  width: 100%;
+  margin: 0;
+  border: transparent;
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.3);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
   zoom: 1;
-  color:#fff;
-}
-.arcgisSearch .searchClear{
-  background:none;
-  background-color: inherit;
-  color:#a8a8a8;
- }
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
 
-.arcgisSearch .searchBtn {
+.simpleGeocoder .esriGeocoderMenu {
+  color: #333; }
+
+.simpleGeocoder .esriGeocoderResults {
+  border: transparent;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+  zoom: 1; }
+
+.simpleGeocoder .esriGeocoder input {
+  color: #FFF !important; }
+
+.simpleGeocoder .esriGeocoderResult:hover, .simpleGeocoder .esriGeocoderResultEven:focus, .simpleGeocoder .esriGeocoderResultOdd:focus {
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.3);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
-  color:#a8a8a8;
-}
+  zoom: 1; }
+
+.simpleGeocoder .esriGeocoder .esriGeocoderMenuArrow {
+  background: none; }
+
+.simpleGeocoder .esriGeocoder .esriGeocoderMenuArrow:before {
+  content: "\e809";
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  color: #a8a8a8;
+  font-family: "tool-icons"; }
 
 .esriMeasurement .esriMeasurementResultLabel {
   text-align: left;
@@ -732,22 +771,13 @@ img {
 
 @media only screen and (min-width: 760px) {
   #panelTop {
-    /*max-width: 700px;*/
-    width:auto;
+    width: auto;
     left: 44px;
     top: 10px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     border-radius: 5px; } }
-
-@media only screen and (min-width: 720px) {
-  /*.largerTitle {
-    max-width: 720px !important; }*/ }
-
-@media only screen and (min-width: 720px) {
-  /*.smallerTitle {
-    max-width: 520px !important; }*/ }
 
 #panelTitle {
   height: 50px;
@@ -759,6 +789,9 @@ img {
   font-family: "Helvetica Neue", "Arial", sans-serif;
   font-weight: normal;
   font-size: 25px; }
+
+.no-search #panelText {
+  display: block; }
 
 #panelLogo {
   width: 50px;
@@ -784,15 +817,17 @@ img {
   display: none;
   font-size: 0.9em; }
 
-
-.no-search #panelText{
-  display:block;
-}
-
 @media only screen and (min-width: 720px) {
   #panelText {
     display: block;
+    max-width: 300px; } }
+
+@media only screen and (min-width: 800px) {
+  #panelText {
     max-width: 400px; } }
+
+#panelText.nosearch {
+  display: block; }
 
 #panelSearch {
   float: left;
@@ -993,6 +1028,57 @@ img {
 .calcite .dijitPopup {
   border: solid 1px #d3d3d3; }
 
+.esriPopup .titlePane {
+  font-size: 12px;
+  line-height: 16px;
+  height: 16px;
+  padding: 10px;
+  border: 0;
+  border-radius: 3px 3px 0 0;
+  -webkit-border-radius: 3px 3px 0 0; }
+
+.esriPopup .titlePane .title {
+  line-height: 16px; }
+
+.esriPopup .titleButton {
+  top: 10px;
+  background: none; }
+
+.esriPopup .titleButton.prev {
+  right: 73px; }
+
+.dj_rtl .esriPopup .titleButton.prev {
+  left: 73px;
+  right: auto; }
+
+.esriPopup .titleButton.next {
+  right: 55px; }
+
+.dj_rtl .esriPopup .titleButton.next {
+  left: 55px;
+  right: auto; }
+
+.esriPopup .titleButton.maximize {
+  right: 31px; }
+
+.dj_rtl .esriPopup .titleButton.maximize {
+  left: 31px;
+  right: auto; }
+
+.esriPopup .titleButton.restore {
+  right: 29px; }
+
+.dj_rtl .esriPopup .titleButton.restore {
+  left: 29px;
+  right: auto; }
+
+.esriPopup .titleButton.close {
+  right: 10px; }
+
+.dj_rtl .esriPopup .titleButton.close {
+  left: 10px;
+  right: auto; }
+
 /*Share Dialog updates*/
 .calcite .icon-container {
   margin: 10px 0 10px;
@@ -1181,5 +1267,3 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
 /* '	' */
 .icon-check-1:before {
   content: '\2713'; }
-
-

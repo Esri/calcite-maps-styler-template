@@ -306,7 +306,7 @@ html, body {
     @include box-shadow (3px, 3px, 10px, rgba(0,0,0,0.3));
     cursor: pointer;
     display:none;
-    @include respond-to(720){
+    @include respond-to(760){
         display:block;
     }
 }
@@ -604,7 +604,7 @@ img{
     @include respond-to(600){
         max-height:none;
     }
-    @include respond-to(1012){
+    @include respond-to(1070){
        top:10px;
         max-height:none;
     }
@@ -760,22 +760,13 @@ img{
     height: auto;
     @include border-radius (0);
     @include respond-to(760){
-        max-width:650px;
+        width:auto;
         left: 44px;
         top: 10px;
         @include border-radius(5px);
     }
 }
-.largerTitle{
-     @include respond-to(720){
-        max-width:720px !important;
-    }
-}
-.smallerTitle{
-     @include respond-to(720){
-        max-width:520px !important;
-    }
-}
+
 #panelTitle {
     height: 50px;
     width:100%;
@@ -787,7 +778,9 @@ img{
     font-weight:normal;
     font-size: 25px;
 }
-
+.no-search #panelText{
+    display:block;
+}
 #panelLogo {
     width: 50px;
     height: 50px;
@@ -814,7 +807,10 @@ img{
     font-size:.9em;
     @include respond-to(720){
         display:block;
-        max-width:400px;
+        max-width:300px
+    }
+    @include respond-to(800){
+    max-width:400px;
     }
 }
 #panelText.nosearch{
@@ -822,11 +818,10 @@ img{
 }
 #panelSearch {
     float: left;
-    margin: 10px 0 10px 4px;
-    width: 227px;
+    margin: 10px 0 10px 20px;
     height: 30px;
     @include respond-to(720){
-     margin: 10px 4px 10px 10px;
+     margin: 10px 4px 10px 20px;
      float:right;
     }
 }
@@ -992,8 +987,7 @@ img{
     border: solid 1px #d3d3d3;
 }
 
-.esriPopup .titlePane,
-.esriPopup .titlePane {
+.esriPopup .titlePane{
   font-size: 12px;
   line-height: 16px;
   height: 16px;
@@ -1002,63 +996,48 @@ img{
   border-radius: 3px 3px 0 0;
   -webkit-border-radius: 3px 3px 0 0;
 }
-.esriPopup. .titlePane .title,
 .esriPopup .titlePane .title {
   line-height: 16px;
 }
-.esriPopup .titleButton,
 .esriPopup .titleButton {
   top: 10px;
   background: none;
 }
-.esriPopup .titleButton.prev,
 .esriPopup .titleButton.prev {
   right: 73px;
 }
-.dj_rtl .esriPopup .titleButton.prev,
-.dj_rtl .esriPopup .titleButton.prev {
+.dj_rtl .esriPopup .titleButton.prev{
   left: 73px;
   right: auto;
 }
-.esriPopup .titleButton.next,
 .esriPopup .titleButton.next {
   right: 55px;
 }
-.dj_rtl .esriPopup .titleButton.next,
 .dj_rtl .esriPopup .titleButton.next {
   left: 55px;
   right: auto;
 }
-.esriPopup .titleButton.maximize,
 .esriPopup .titleButton.maximize {
   right: 31px;
 }
-.dj_rtl .esriPopup .titleButton.maximize,
 .dj_rtl .esriPopup .titleButton.maximize {
   left: 31px;
   right: auto;
 }
-.esriPopup .titleButton.restore,
-.esriPopup .titleButton.restore {
+.esriPopup .titleButton.restore{
   right: 29px;
 }
-.dj_rtl .esriPopup .titleButton.restore,
-.dj_rtl .esriPopup .titleButton.restore {
+.dj_rtl .esriPopup .titleButton.restore{
   left: 29px;
   right: auto;
 }
-.esriPopup .titleButton.close,
-.esriPopup .titleButton.close {
+.esriPopup .titleButton.close{
   right: 10px;
 }
-.dj_rtl .esriPopup .titleButton.close,
-.dj_rtl .esriPopup .titleButton.close {
+.dj_rtl .esriPopup .titleButton.close{
   left: 10px;
   right: auto;
 }
-
-
-
 
 
 /*Share Dialog updates*/
