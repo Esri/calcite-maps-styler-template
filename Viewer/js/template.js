@@ -1,6 +1,6 @@
 /*
-  Version 1.3
-  1/21/2015
+  Version 1.2
+  1/15/2015
 */
 
 /*global define,document,location,require */
@@ -46,10 +46,6 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
     orgConfig: {},
     appConfig: {},
     urlConfig: {},
-    i18nConfig: {},
-    groupItemConfig: {},
-    groupInfoConfig: {},
-    displayItemConfig: {},
     customUrlConfig: {},
     commonUrlItems: ["webmap", "appid", "group", "oauthappid"],
     constructor: function (templateConfig) {
@@ -64,15 +60,15 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
       this.urlObject = this._createUrlParamsObject();
     },
     startup: function () {
-      var promise = this._init();
-      promise.then(lang.hitch(this, function (config) {
+      var deferred = this._init();
+      deferred.then(lang.hitch(this, function (config) {
         // optional ready event to listen to
         this.emit("ready", config);
       }), lang.hitch(this, function (error) {
         // optional error event to listen to
         this.emit("error", error);
       }));
-      return promise;
+      return deferred;
     },
     // Get URL parameters and set application defaults needed to query arcgis.com for
     // an application and to see if the app is running in Portal or an Org
@@ -128,8 +124,10 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
           }).then(lang.hitch(this, function () {
             // mixin all new settings from item, group info and group items.
             this._mixinAll();
-            // We have all we need, let's set up a few things
-            this._completeApplication();
+            // Set the geometry helper service to be the app default.
+            if (this.config.helperServices && this.config.helperServices.geometry && this.config.helperServices.geometry.url) {
+              esriConfig.defaults.geometryService = new GeometryService(this.config.helperServices.geometry.url);
+            }
             deferred.resolve(this.config);
           }), deferred.reject);
         }), deferred.reject);
@@ -137,30 +135,10 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
       // return promise
       return deferred.promise;
     },
-    _completeApplication: function () {
-      // ArcGIS.com allows you to set an application extent on the application item. Overwrite the
-      // existing web map extent with the application item extent when set.
-      if (this.config.appid && this.config.application_extent && this.config.application_extent.length > 0 && this.config.itemInfo && this.config.itemInfo.item && this.config.itemInfo.item.extent) {
-        this.config.itemInfo.item.extent = [
-              [
-                  parseFloat(this.config.application_extent[0][0]), parseFloat(this.config.application_extent[0][1])
-              ],
-              [
-                  parseFloat(this.config.application_extent[1][0]), parseFloat(this.config.application_extent[1][1])
-              ]
-          ];
-      }
-      // Set the geometry helper service to be the app default.
-      if (this.config.helperServices && this.config.helperServices.geometry && this.config.helperServices.geometry.url) {
-        esriConfig.defaults.geometryService = new GeometryService(this.config.helperServices.geometry.url);
-      }
-    },
     _mixinAll: function () {
-      /*
-      mix in all the settings we got!
-      {} <- i18n <- organization <- application <- group info <- group items <- webmap <- custom url params <- standard url params.
-      */
-      lang.mixin(this.config, this.i18nConfig, this.orgConfig, this.appConfig, this.groupInfoConfig, this.groupItemConfig, this.displayItemConfig, this.customUrlConfig, this.urlConfig);
+      // mix in all the settings we got!
+      // defaults <- organization <- application id config <- custom url params <- standard url params
+      lang.mixin(this.config, this.orgConfig, this.appConfig, this.customUrlConfig, this.urlConfig);
     },
     _createPortal: function () {
       var deferred = new Deferred();
@@ -252,6 +230,7 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
       });
       return deferred.promise;
     },
+
     _getLocalization: function () {
       var deferred, dirNode, classes, rtlClasses;
       deferred = new Deferred();
@@ -259,13 +238,13 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
         require(["dojo/i18n!application/nls/resources"], lang.hitch(this, function (appBundle) {
           // Get the localization strings for the template and store in an i18n variable. Also determine if the
           // application is in a right-to-left language like Arabic or Hebrew.
-          this.i18nConfig.i18n = appBundle || {};
+          this.config.i18n = appBundle || {};
           // Bi-directional language support added to support right-to-left languages like Arabic and Hebrew
           // Note: The map must stay ltr
-          this.i18nConfig.i18n.direction = "ltr";
+          this.config.i18n.direction = "ltr";
           array.some(["ar", "he"], lang.hitch(this, function (l) {
             if (kernel.locale.indexOf(l) !== -1) {
-              this.i18nConfig.i18n.direction = "rtl";
+              this.config.i18n.direction = "rtl";
               return true;
             }
             return false;
@@ -273,7 +252,7 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
           // add a dir attribute to the html tag. Then you can add special css classes for rtl languages
           dirNode = document.getElementsByTagName("html")[0];
           classes = dirNode.className;
-          if (this.i18nConfig.i18n.direction === "rtl") {
+          if (this.config.i18n.direction === "rtl") {
             // need to add support for dj_rtl.
             // if the dir node is set when the app loads dojo will handle.
             dirNode.setAttribute("dir", "rtl");
@@ -315,7 +294,7 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
           }
           // get items from the group
           this.portal.queryItems(params).then(lang.hitch(this, function (response) {
-            this.groupItemConfig.groupItems = response;
+            this.config.groupItems = response;
             deferred.resolve(response);
           }), function (error) {
             deferred.reject(error);
@@ -342,7 +321,7 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
             f: "json"
           };
           this.portal.queryGroups(params).then(lang.hitch(this, function (response) {
-            this.groupInfoConfig.groupInfo = response;
+            this.config.groupInfo = response;
             deferred.resolve(response);
           }), function (error) {
             deferred.reject(error);
@@ -370,8 +349,20 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
           this.config.webmap = "24e01ef45d40423f95300ad2abc5038a";
         }
         arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
+          // ArcGIS.com allows you to set an application extent on the application item. Overwrite the
+          // existing web map extent with the application item extent when set.
+          if (this.config.appid && this.config.application_extent.length > 0 && itemInfo.item.extent) {
+            itemInfo.item.extent = [
+                            [
+                                parseFloat(this.config.application_extent[0][0]), parseFloat(this.config.application_extent[0][1])
+                            ],
+                            [
+                                parseFloat(this.config.application_extent[1][0]), parseFloat(this.config.application_extent[1][1])
+                            ]
+                        ];
+          }
           // Set the itemInfo config option. This can be used when calling createMap instead of the webmap id
-          this.displayItemConfig.itemInfo = itemInfo;
+          this.config.itemInfo = itemInfo;
           deferred.resolve(itemInfo);
         }), function (error) {
           if (!error) {
@@ -400,7 +391,7 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
           }
           // get the extent for the application item. This can be used to override the default web map extent
           if (response.item && response.item.extent) {
-            this.appConfig.application_extent = response.item.extent;
+            this.config.application_extent = response.item.extent;
           }
           deferred.resolve(response);
         }), function (error) {
@@ -430,7 +421,7 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
           callbackParamName: "callback"
         }).then(lang.hitch(this, function (response) {
           // save organization information
-          this.orgConfig.orgInfo = response;
+          this.config.orgInfo = response;
           // get units defined by the org or the org user
           this.orgConfig.units = "metric";
           if (response.user && response.user.units) { //user defined units
@@ -442,21 +433,21 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
             this.orgConfig.units = "english";
           }
 
-          //Get the basemap group for the organization
-          var q = this._parseQuery(response.basemapGalleryGroupQuery);
-          this.orgConfig.basemapgroup = {
-              id: null,
-              title: null,
-              owner: null
-          };
-          if (q.id) {
-              this.orgConfig.basemapgroup.id = q.id;
-          } else if (q.title && q.owner) {
-              this.orgConfig.basemapgroup.title = q.title;
-              this.orgConfig.basemapgroup.owner = q.owner;
-          }
+            //Get the basemap group for the organization
+            var q = this._parseQuery(response.basemapGalleryGroupQuery);
+            this.orgConfig.basemapgroup = {
+                id: null,
+                title: null,
+                owner: null
+            };
+            if (q.id) {
+                this.orgConfig.basemapgroup.id = q.id;
+            } else if (q.title && q.owner) {
+                this.orgConfig.basemapgroup.title = q.title;
+                this.orgConfig.basemapgroup.owner = q.owner;
+            }
 
-          
+
           // Get the helper services (routing, print, locator etc)
           this.orgConfig.helperServices = response.helperServices;
           // are any custom roles defined in the organization?
@@ -476,21 +467,21 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
         deferred.resolve();
       }
       return deferred.promise;
-    },
+    },        
     _parseQuery: function (queryString) {
 
-        var regex = /(AND|OR)?\W*([a-z]+):/ig,
-            fields = {},
-            fieldName, fieldIndex, result = regex.exec(queryString);
-        while (result) {
-            fieldName = result && result[2];
-            fieldIndex = result ? (result.index + result[0].length) : -1;
+            var regex = /(AND|OR)?\W*([a-z]+):/ig,
+                fields = {},
+                fieldName, fieldIndex, result = regex.exec(queryString);
+            while (result) {
+                fieldName = result && result[2];
+                fieldIndex = result ? (result.index + result[0].length) : -1;
 
-            result = regex.exec(queryString);
+                result = regex.exec(queryString);
 
-            fields[fieldName] = queryString.substring(fieldIndex, result ? result.index : queryString.length).replace(/^\s+|\s+$/g, "").replace(/\"/g, ""); //remove extra quotes in title
-        }
-        return fields;
-    }
+                fields[fieldName] = queryString.substring(fieldIndex, result ? result.index : queryString.length).replace(/^\s+|\s+$/g, "").replace(/\"/g, ""); //remove extra quotes in title
+            }
+            return fields;
+      }
   });
 });
