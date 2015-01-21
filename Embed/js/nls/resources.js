@@ -32,7 +32,7 @@ define({
                 "title": "Legend"
             },
             "details":{
-                "title": "Map Details",
+                "title": "Details",
                 "error": "Update the web map description with the details to display in this section."
             },
             "popup": {
