@@ -65,8 +65,8 @@ define({
     //When searchExtent is true the locator will prioritize results within the current map extent.
     "searchExtent": false,
     "searchLayers":[{
-        "id": "Boston_Marathon_7694",
-        "fields": ["STATE_NAME"]
+        "id": "",
+        "fields": []
     }],
     //Add the home extent button to the toolbar
     "home": true,
