@@ -41,6 +41,10 @@ define([], function() {
         //the current map extent
         "searchExtent": true, 
         "search": true,
+        "searchLayers":[{
+            "id": "",
+            "fields": []
+        }],
         "helperServices": {  
            "geometry":{
             "url": null

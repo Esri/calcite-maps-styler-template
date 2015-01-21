@@ -1,11 +1,11 @@
-define(["dojo/ready", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/Color", "esri/arcgis/utils", "dojo/on", "dojo/has", "dojo/sniff", "dijit/registry", "application/Drawer", "application/CreateGeocoder", "esri/dijit/Legend", "dojo/dom-class", "dojo/dom", "dojo/query", "dojo/dom-construct", "esri/dijit/LocateButton", "esri/dijit/HomeButton"], function (
-ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, CreateGeocoder, Legend, domClass, dom, query, domConstruct, LocateButton, HomeButton) {
+define(["dojo/ready", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base/Color", "esri/arcgis/utils", "dojo/on", "dojo/has", "dojo/sniff", "dijit/registry", "application/Drawer", "esri/dijit/Search", "esri/tasks/locator", "esri/lang", "esri/dijit/Legend", "dojo/dom-class", "dojo/dom", "dojo/query", "dojo/dom-construct", "esri/dijit/LocateButton", "esri/dijit/HomeButton"], function (
+ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawer, Search, Locator, esriLang, Legend, domClass, dom, query, domConstruct, LocateButton, HomeButton) {
     return declare("", null, {
         config: {},
         theme: null,
         color: null,
         paneltheme: null,
-        constructor: function (config) {
+        startup: function (config) {
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
             // any url parameters and any application specific configuration information.
@@ -26,6 +26,7 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
 
             // document ready
             ready(lang.hitch(this, function () {
+
                 this.theme = this.setColor(this.config.theme);
                 this.color = this.setColor(this.config.color);
                 this.paneltheme = this.setColor(this.config.paneltheme);
@@ -60,15 +61,82 @@ ready, declare, lang, Color, arcgisUtils, on, has, sniff, registry, Drawer, Crea
 
             //Add the geocoder if search is enabled
             if (this.config.search) {
+
                 var options = {
                     map: this.map,
-                    config: this.config
+                    addLayersFromMap: false
                 };
-                var myGeocoder = new CreateGeocoder(options);
 
-                if (myGeocoder.geocoder && myGeocoder.geocoder.domNode) {
-                    domConstruct.place(myGeocoder.geocoder.domNode, "search");
+                var search = new Search(options, domConstruct.create("div"));
+
+                var defaultSources = []; //search.get("sources");
+                //setup geocoders defined in common config 
+                if (this.config.helperServices.geocode) {
+                    var geocoders = lang.clone(this.config.helperServices.geocode);
+                    array.forEach(geocoders, lang.hitch(this, function (geocoder) {
+                        if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+                            geocoder.locator = new Locator(geocoder.url);
+                            geocoder.singleLineFieldName = "SingleLine";
+                            if (this.config.searchExtent) {
+                                geocoder.searchExtent = this.map.extent;
+                            }
+                            defaultSources.push(geocoder);
+                        } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
+                            //Add geocoders with a singleLineFieldName defined 
+                            geocoder.locator = new Locator(geocoder.url);
+                            defaultSources.push(geocoder);
+                        }
+                    }));
                 }
+                //add configured search layers to the search widget 
+                array.forEach(this.config.searchLayers, lang.hitch(this, function (layer) {
+                    var mapLayer = this.map.getLayer(layer.id);
+                    if (mapLayer) {
+                        var source = {};
+                        source.featureLayer = mapLayer;
+                        if (layer.fields && layer.fields.length && layer.fields.length > 0) {
+                            source.searchFields = layer.fields;
+                            defaultSources.push(source);
+                        }
+                    }
+                }));
+                //Add search layers defined on the web map item
+                if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
+                    var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
+                    array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
+
+                        var mapLayer = this.map.getLayer(searchLayer.id);
+
+                        if (mapLayer && mapLayer.url) {
+                            var source = {};
+                            var url = mapLayer.url;
+                            var name = mapLayer._titleForLegend;
+                            if (esriLang.isDefined(searchLayer.subLayer)) {
+                                url = url + "/" + searchLayer.subLayer;
+                            }
+                            //TODO - talk to Matt about this. It is supposed to accept either
+                            //a layer or a layer url. But w/o the FeatureLayer part it doesn't work. 
+                            source.featureLayer = new FeatureLayer(url);
+                            source.name = name;
+                            source.exactMatch = searchLayer.field.exactMatch;
+                            source.searchField = [searchLayer.field.name];
+                            source.placeholder = searchOptions.hintText;
+                            defaultSources.push(source);
+                        }
+
+                    }));
+                }
+
+                search.set("sources", defaultSources);
+
+                search.startup();
+
+
+
+                if (search && search.domNode) {
+                    domConstruct.place(search.domNode, "search");
+                }
+
             }
 
             //Add the location button if enabled
