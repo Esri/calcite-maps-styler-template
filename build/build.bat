@@ -100,7 +100,8 @@ xcopy %TEMPLATES_ROOT%\ConstituentEngagement                    %BUILD_OUTPUT%\C
 xcopy %TEMPLATES_ROOT%\ConstituentEngagementConsole             %BUILD_OUTPUT%\ConstituentEngagementConsole         /E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingCompare                      %BUILD_OUTPUT%\Compare\storytelling_compare         /E /Y
 xcopy %TEMPLATES_ROOT%\archive\EditorChrome                     %BUILD_OUTPUT%\Editor\Chrome                        /E /Y
-xcopy %TEMPLATES_ROOT%\Edit                                     %BUILD_OUTPUT%\Edit                                 /E /Y
+xcopy %TEMPLATES_ROOT%\archive\Edit                             %BUILD_OUTPUT%\Edit                                 /E /Y
+xcopy %TEMPLATES_ROOT%\Editor                                   %BUILD_OUTPUT%\Editor                               /E /Y
 xcopy %TEMPLATES_ROOT%\archive\ElevationsProfile                %BUILD_OUTPUT%\ElevationsProfile                    /E /Y
 xcopy %TEMPLATES_ROOT%\Elevations                               %BUILD_OUTPUT%\Elevations                           /E /Y
 xcopy %TEMPLATES_ROOT%\Embed                                    %BUILD_OUTPUT%\Embed                                /E /Y

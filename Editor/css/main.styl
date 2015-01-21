@@ -1,0 +1,134 @@
+@import "nib";
+@import "drawer";
+@import "iconfonts";
+
+$drawer-width = 320px;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#mapDiv {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+#title{
+  width:80%;
+  text-align:center;
+  vertical-align:middle;
+  margin:auto;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.esriRTL label {
+  /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
+}
+ .esriSimpleSliderDecrementButton:hover {
+  border-top: 1px solid #666;
+  }
+  .HomeButton .home{
+    background-image: url(../images/home.png);
+    padding:0;
+    border-radius: 0;
+    border-bottom: 1px solid #666;
+    background-color:#FFF;
+  }
+  .HomeButton .home:hover {
+    background-color:#eee;
+    background-color: rgb(238, 238, 238);
+  }
+
+  .HomeButton .home:active {
+   background-color:#ddd;
+  }
+  #locateDiv{
+    position: absolute;
+    top:155px;
+    left:20px;
+    z-index: 50;
+  }
+  .LocateButton .zoomLocateButton {
+    background-color: #989898;
+  }
+
+  #search{
+    position:absolute;
+    display:block;
+    z-index:50;
+    top:55px;
+    left:74px;
+  }
+.edit-toolbar .templatePicker{
+    padding-top:80px;
+}
+.templatePicker{
+  padding: 10px 20px 0 10px;
+  width:$drawer-width;
+  height:100%;
+  border: none; 
+  margin:auto;
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+}
+.esriEditor{
+  width:$drawer-width;
+  height:100%;
+}
+.edit-toolbar  .esriEditor .esriDrawingToolbar{
+    position: absolute;
+    right:0;
+    left:0;
+    top:0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding-bottom:11px;
+    padding-top:11px;
+    background: rgba(255, 255, 255, 0.9);
+}
+.loading-indicator {
+  /* Loading status */
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #fff;
+}
+.app-loading .loading-indicator,
+.app-error .loading-indicator {
+  /* Show this class when loading or error */
+  display: block;
+}
+.app-loading .loading-indicator {
+  /* Loading image */
+  background-position: center center;
+  background-image: url(../images/ajax-loader.gif);
+  background-repeat: no-repeat;
+}
+.app-error .loading-message {
+  /* Error status */
+  background-position: top center;
+  background-image: url(../images/error.png);
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 0;
+  text-align: center;
+}

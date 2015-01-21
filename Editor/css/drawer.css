@@ -1,0 +1,125 @@
+/* Drawer */
+.top-bar {
+  position: absolute;
+  z-index: 36;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  background: rgba(255,255,255,0.9);
+  height: 44px;
+  border-bottom: 1px solid #ddd;
+}
+.esriRTL .top-bar {
+  left: auto;
+  right: 0;
+}
+.top-menu-right {
+  margin-right: 5px;
+}
+.esriRTL .top-menu-right {
+  margin-right: 0;
+  margin-left: 5px;
+}
+.app-title {
+  color: #007ac2;
+  line-height: 44px;
+  font-size: 18px;
+  font-weight: 700;
+  max-width: 40%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  float: left;
+}
+.esriRTL .app-title {
+  float: right;
+}
+.hamburger-button {
+  float: left;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  height: 44px;
+  width: 44px;
+  font-size: 28px;
+  line-height: 44px;
+  padding: 8px;
+  width: auto;
+  height: auto;
+  line-height: 28px;
+}
+.esriRTL .hamburger-button {
+  float: right;
+}
+.border-container-outer {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+}
+.content-pane-left {
+  width: 0px;
+  max-width: 320px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: #fff;
+  overflow: hidden;
+  -webkit-transition: width 250ms ease;
+  -moz-transition: width 250ms ease;
+  -ms-transition: width 250ms ease;
+  -o-transition: width 250ms ease;
+  transition: width 250ms ease;
+}
+.app-loading .content-pane-left {
+  width: 320px;
+}
+.drawer-open .content-pane-left {
+  width: 320px;
+  overflow: auto;
+  overflow-x: hidden;
+  border-right: 1px solid #ddd;
+}
+.esriRTL .drawer-open .content-pane-left {
+  border-right: 0;
+  border-left: 1px solid #ddd;
+}
+.drawer-open-complete .content-pane-left:before {
+  display: none;
+}
+.pointer-events .drawer-open-complete .content-pane-left:before {
+  -webkit-box-shadow: inset -1px 0 6px 0 rgba(0,0,0,0.5);
+  box-shadow: inset -1px 0 6px 0 rgba(0,0,0,0.5);
+  position: fixed;
+  z-index: 450;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100%;
+  content: '';
+  display: block;
+  pointer-events: none;
+}
+.esriRTL .drawer-open-complete .content-pane-left:before {
+  left: auto;
+  right: 0;
+}
+.content-pane-center {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.esriSimpleSlider {
+  top: 55px;
+}
+@media screen and (max-width: 850px) {
+  .app-loading .content-pane-left {
+    width: 0px;
+  }
+}

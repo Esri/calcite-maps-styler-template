@@ -1,0 +1,292 @@
+.top-bar {
+  position: absolute;
+  z-index: 36;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  background: rgba(255,255,255,0.9);
+  height: 44px;
+  border-bottom: 1px solid #ddd;
+}
+.esriRTL .top-bar {
+  left: auto;
+  right: 0;
+}
+.top-menu-right {
+  margin-right: 5px;
+}
+.esriRTL .top-menu-right {
+  margin-right: 0;
+  margin-left: 5px;
+}
+.app-title {
+  color: #007ac2;
+  line-height: 44px;
+  font-size: 18px;
+  font-weight: 700;
+  max-width: 40%;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  float: left;
+}
+.esriRTL .app-title {
+  float: right;
+}
+.hamburger-button {
+  float: left;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  height: 44px;
+  width: 44px;
+  font-size: 28px;
+  line-height: 44px;
+  padding: 8px;
+  width: auto;
+  height: auto;
+  line-height: 28px;
+}
+.esriRTL .hamburger-button {
+  float: right;
+}
+.border-container-outer {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+}
+.content-pane-left {
+  width: 0px;
+  max-width: 320px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: #fff;
+  overflow: hidden;
+  -webkit-transition: width 250ms ease;
+  -moz-transition: width 250ms ease;
+  -ms-transition: width 250ms ease;
+  -o-transition: width 250ms ease;
+  -webkit-transition: width 250ms ease;
+  -moz-transition: width 250ms ease;
+  -o-transition: width 250ms ease;
+  -ms-transition: width 250ms ease;
+  transition: width 250ms ease;
+}
+.app-loading .content-pane-left {
+  width: 320px;
+}
+.drawer-open .content-pane-left {
+  width: 320px;
+  overflow: auto;
+  overflow-x: hidden;
+  border-right: 1px solid #ddd;
+}
+.esriRTL .drawer-open .content-pane-left {
+  border-right: 0;
+  border-left: 1px solid #ddd;
+}
+.drawer-open-complete .content-pane-left:before {
+  display: none;
+}
+.pointer-events .drawer-open-complete .content-pane-left:before {
+  -webkit-box-shadow: inset -1px 0 6px 0 rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset -1px 0 6px 0 rgba(0,0,0,0.5);
+  box-shadow: inset -1px 0 6px 0 rgba(0,0,0,0.5);
+  position: fixed;
+  z-index: 450;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100%;
+  content: '';
+  display: block;
+  pointer-events: none;
+}
+.esriRTL .drawer-open-complete .content-pane-left:before {
+  left: auto;
+  right: 0;
+}
+.content-pane-center {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.esriSimpleSlider {
+  top: 55px;
+}
+@media screen and (max-width: 850px) {
+  .app-loading .content-pane-left {
+    width: 0px;
+  }
+}
+@font-face {
+  font-family: 'editor_fonts';
+  src: url("../fonts/icomoon.eot?-idvs4c");
+  src: url("../fonts/icomoon.eot?#iefix-idvs4c") format('embedded-opentype'), url("../fonts/icomoon.woff?-idvs4c") format('woff'), url("../fonts/icomoon.ttf?-idvs4c") format('truetype'), url("../fonts/icomoon.svg?-idvs4c#icomoon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'editor_fonts';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+/* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-home:before {
+  content: "\e602";
+}
+.icon-next:before {
+  content: "\e603";
+  cursor: pointer;
+}
+.icon-close:before {
+  content: "\e604";
+}
+.icon-previous:before {
+  content: "\e601";
+  cursor: pointer;
+}
+.icon-edit:before {
+  content: "\e600";
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#mapDiv {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+#title {
+  width: 80%;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.esriSimpleSliderDecrementButton:hover {
+  border-top: 1px solid #666;
+}
+.HomeButton .home {
+  background-image: url("../images/home.png");
+  padding: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #666;
+  background-color: #fff;
+}
+.HomeButton .home:hover {
+  background-color: #eee;
+  background-color: #eee;
+}
+.HomeButton .home:active {
+  background-color: #ddd;
+}
+#locateDiv {
+  position: absolute;
+  top: 155px;
+  left: 20px;
+  z-index: 50;
+}
+.LocateButton .zoomLocateButton {
+  background-color: #989898;
+}
+#search {
+  position: absolute;
+  display: block;
+  z-index: 50;
+  top: 55px;
+  left: 74px;
+}
+.edit-toolbar .templatePicker {
+  padding-top: 80px;
+}
+.templatePicker {
+  padding: 10px 20px 0 10px;
+  width: 320px;
+  height: 100%;
+  border: none;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.esriEditor {
+  width: 320px;
+  height: 100%;
+}
+.edit-toolbar .esriEditor .esriDrawingToolbar {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding-bottom: 11px;
+  padding-top: 11px;
+  background: rgba(255,255,255,0.9);
+}
+.loading-indicator {
+/* Loading status */
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #fff;
+}
+.app-loading .loading-indicator,
+.app-error .loading-indicator {
+/* Show this class when loading or error */
+  display: block;
+}
+.app-loading .loading-indicator {
+/* Loading image */
+  background-position: center center;
+  background-image: url("../images/ajax-loader.gif");
+  background-repeat: no-repeat;
+}
+.app-error .loading-message {
+/* Error status */
+  background-position: top center;
+  background-image: url("../images/error.png");
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 0;
+  text-align: center;
+}
