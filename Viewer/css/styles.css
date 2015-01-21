@@ -303,7 +303,7 @@ html, body {
   cursor: pointer;
   display: none; }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 765px) {
   .esriSimpleSlider {
     display: block; } }
 
