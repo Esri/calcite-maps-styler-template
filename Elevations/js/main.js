@@ -23,24 +23,45 @@ define([
 
     config: {},
 
-    /**
-     * CONSTRUCTOR
-     *
-     * @param config
-     */
-    constructor: function (config) {
+    startup: function (config) {
       this.config = config;
-      ready(lang.hitch(this, this._createWebMap));
-    },
+      //supply either the webmap id or, if available, the item info
+      var itemInfo = this.config.itemInfo || this.config.webmap;
+      this._createWebMap(itemInfo);
 
+      if(config){
+        this.config = config;
+        this._createWebMap(itemInfo);
+      }else{
+
+      }
+    },
+    reportError: function (error) {
+      // remove loading class from body
+      domClass.remove(document.body, "app-loading");
+      domClass.add(document.body, "app-error");
+      // an error occurred - notify the user. In this example we pull the string from the
+      // resource.js file located in the nls folder because we've set the application up
+      // for localization. If you don't need to support multiple languages you can hardcode the
+      // strings here and comment out the call in index.html to get the localization strings.
+      // set message
+      var node = dom.byId("loading_message");
+      if (node) {
+        if (this.config && this.config.i18n) {
+          node.innerHTML = this.config.i18n.map.error + ": " + error.message;
+        } else {
+          node.innerHTML = "Unable to create map: " + error.message;
+        }
+      }
+    },
     /**
      * CREATE MAP FROM WEBMAP
      *
      * @private
      */
-    _createWebMap: function () {
+    _createWebMap: function (itemInfo) {
       // CREATE MAP FROM WEBMAP //
-      arcgisUtils.createMap(this.config.webmap, "mapPane", {
+      arcgisUtils.createMap(itemInfo, "mapPane", {
         mapOptions: {
           wrapAround180: true
         },
