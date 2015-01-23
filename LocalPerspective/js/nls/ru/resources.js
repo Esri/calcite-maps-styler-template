@@ -16,26 +16,26 @@
  */
 define(
     ({
-      "map": {
-         "error": "Не удалось создать карту"
+      "map" : {
+         "error" : "Ж_Unable to create map_Я"
       },
-      "days": {
-         "now": "СЕЙЧАС",
-         "sun": "ВС",
-         "mon": "ПН",
-         "tue": "ВТ",
-         "wed": "СР",
-         "thu": "ЧТ",
-         "fri": "ПТ",
-         "sat": "СБ"
+      "days" : {
+         "now" : "Ж_NOW_Я",
+         "sun" : "Ж_SUN_Я",
+         "mon" : "Ж_MON_Я",
+         "tue" : "Ж_TUE_Я",
+         "wed" : "Ж_WED_Я",
+         "thu" : "Ж_THU_Я",
+         "fri" : "Ж_FRI_Я",
+         "sat" : "Ж_SAT_Я"
       },
-      "tooltips": {
-         "logo": "Логотип",
-         "menu": "Меню",
-         "close": "Закрыть",
-         "previous": "Предыдущий",
-         "next": "Следующий",
-         "directions": "Направления"
+      "tooltips" : {
+         "logo" : "Ж_Logo_Я",
+         "menu" : "Ж_Menu_Я",
+         "close" : "Ж_Close_Я",
+         "previous" : "Ж_Previous_Я",
+         "next" : "Ж_Next_Я",
+         "directions" : "Ж_Directions_Я"
       }
    })
 );

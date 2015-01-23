@@ -16,26 +16,26 @@
  */
 define(
     ({
-      "map": {
-         "error": "Impossible de créer la carte"
+      "map" : {
+         "error" : "æ_Unable to create map_Â"
       },
-      "days": {
-         "now": "MAINTENANT",
-         "sun": "DIM",
-         "mon": "LUN",
-         "tue": "MAR",
-         "wed": "MER",
-         "thu": "JEU",
-         "fri": "VEN",
-         "sat": "SAM"
+      "days" : {
+         "now" : "æ_NOW_Â",
+         "sun" : "æ_SUN_Â",
+         "mon" : "æ_MON_Â",
+         "tue" : "æ_TUE_Â",
+         "wed" : "æ_WED_Â",
+         "thu" : "æ_THU_Â",
+         "fri" : "æ_FRI_Â",
+         "sat" : "æ_SAT_Â"
       },
-      "tooltips": {
-         "logo": "Logo",
-         "menu": "Menu",
-         "close": "Fermer",
-         "previous": "Précédent",
-         "next": "Suivant",
-         "directions": "Directions"
+      "tooltips" : {
+         "logo" : "æ_Logo_Â",
+         "menu" : "æ_Menu_Â",
+         "close" : "æ_Close_Â",
+         "previous" : "æ_Previous_Â",
+         "next" : "æ_Next_Â",
+         "directions" : "æ_Directions_Â"
       }
    })
 );

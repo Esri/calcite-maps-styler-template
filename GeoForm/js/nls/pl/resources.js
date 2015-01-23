@@ -48,9 +48,10 @@
             utm_northing: "Współrzędne północne",
             utm_easting: "Współrzędne wschodnie",
             utm_zone_number: "Numer strefy",
-            geoFormGeneralTabText: "1. Wpisz informacje",
-            locationInformationText: "2. Wybierz lokalizację",
-            submitInformationText: "3. Wypełnij formularz",
+            selectLayerTabText: "ł_${formSection} Choose Form_ą",
+            geoFormGeneralTabText: "ł_${formSection} Enter Information_ą",
+            locationInformationText: "ł_${formSection} Select Location_ą",
+            submitInformationText: "ł_${formSection} Complete Form_ą",
             submitInstructions: "Dodaj te informacje do mapy.",
             myLocationText: "Bieżąca lokalizacja",
             locationDescriptionForMoreThanOneOption: "Wybierz lokalizację dla tego obiektu poprzez kliknięcie/dotknięcie mapy lub za pomocą jednej z następujących opcji.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Wskazówka:${closeStrong} Data minimalna ${minValue} i Data maksymalna ${maxValue}",
             remainingCharactersHintMessage: "pozostały(-o) ${value} znaki(-ów)",
             mapFullScreen: "ł_Full Screen_ą",
-            mapRestore:"ł_Restore_ą"
+            mapRestore: "ł_Restore_ą",
+            filterSelectEmptyText: "ł_Select_ą",
+            invalidLayerMessage: "ł_Form layer does not exist. Please configure the application and set the layer_ą."
         },
         builder: {
             invalidUser: "Przepraszamy, nie masz uprawnień do wyświetlania tego elementu",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Wybierz warstwę edytowalną",
             selectLayerLabelText: "Warstwa",
             selectLayerDefaultOptionText: "Wybierz warstwę",
+            defaultBasemap: "ł_Default Basemap_ą",
+            secondaryBasemap: "ł_Secondary Basemap_ą",
             detailsTabTitleText: "Szczegóły formularza",
             detailTitleLabelText: "Tytuł",
             detailLogoLabelText: "Obraz logo",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Możesz skonfigurować formularz geograficzny, aby pokazał/ukrył warstwę",
             labelHelpMessage: "ł_Label_ą",
             placeHolderHintMessage: "ł_Hint Text_ą",
-            placeHolderHelpMessage:"ł_Help Text_ą"
+            placeHolderHelpMessage: "ł_Help Text_ą",
+            selectTextOptionValue: "ł_Filter Select_ą",
+            disableLogo: "ł_Disable Logo_ą",
+            disableLogoDescription: "ł_You can configure the GeoForm to Show/Hide Logo in the form header_ą",
+            locateOnLoadText: "ł_Locate On Load_ą",
+            locateOnLoadDescription: "ł_You can configure the GeoForm to locate the current location on form load_ą"
         }
     })
 );

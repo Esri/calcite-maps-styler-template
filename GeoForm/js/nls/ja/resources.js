@@ -48,9 +48,10 @@
             utm_northing: "北距",
             utm_easting: "東距",
             utm_zone_number: "ゾーン ナンバー",
-            geoFormGeneralTabText: "1. 情報の入力",
-            locationInformationText: "2. 位置の選択",
-            submitInformationText: "3. フォームの入力",
+            selectLayerTabText: "須_${formSection} Choose Form_鷗",
+            geoFormGeneralTabText: "須_${formSection} Enter Information_鷗",
+            locationInformationText: "須_${formSection} Select Location_鷗",
+            submitInformationText: "須_${formSection} Complete Form_鷗",
             submitInstructions: "この情報をマップに追加します。",
             myLocationText: "現在の位置",
             locationDescriptionForMoreThanOneOption: "マップをクリックまたはタップするか、次のオプションのいずれかを使用して、このエントリの位置を指定します。",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}ヒント:${closeStrong} 最小日付 ${minValue} および最大日付 ${maxValue}",
             remainingCharactersHintMessage: "残り ${value} 文字",
             mapFullScreen: "須_Full Screen_鷗",
-            mapRestore:"須_Restore_鷗"
+            mapRestore: "須_Restore_鷗",
+            filterSelectEmptyText: "須_Select_鷗",
+            invalidLayerMessage: "須_Form layer does not exist. Please configure the application and set the layer_鷗."
         },
         builder: {
             invalidUser: "このアイテムを表示する権限がありません",
@@ -136,6 +139,8 @@
             layerTabTitleText: "編集可能レイヤの選択",
             selectLayerLabelText: "レイヤ",
             selectLayerDefaultOptionText: "レイヤの選択",
+            defaultBasemap: "須_Default Basemap_鷗",
+            secondaryBasemap: "須_Secondary Basemap_鷗",
             detailsTabTitleText: "フォームの詳細",
             detailTitleLabelText: "タイトル",
             detailLogoLabelText: "ロゴ画像",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "GeoForm を構成してレイヤを表示/非表示することができます",
             labelHelpMessage: "須_Label_鷗",
             placeHolderHintMessage: "須_Hint Text_鷗",
-            placeHolderHelpMessage:"須_Help Text_鷗"
+            placeHolderHelpMessage: "須_Help Text_鷗",
+            selectTextOptionValue: "須_Filter Select_鷗",
+            disableLogo: "須_Disable Logo_鷗",
+            disableLogoDescription: "須_You can configure the GeoForm to Show/Hide Logo in the form header_鷗",
+            locateOnLoadText: "須_Locate On Load_鷗",
+            locateOnLoadDescription: "須_You can configure the GeoForm to locate the current location on form load_鷗"
         }
     })
 );

@@ -48,9 +48,10 @@
             utm_northing: "Hochwert",
             utm_easting: "Rechtswert",
             utm_zone_number: "Zonennummer",
-            geoFormGeneralTabText: "1. Informationen eingeben",
-            locationInformationText: "2. Position auswählen",
-            submitInformationText: "3. Formular ausfüllen",
+            selectLayerTabText: "ä_${formSection} Choose Form_Ü",
+            geoFormGeneralTabText: "ä_${formSection} Enter Information_Ü",
+            locationInformationText: "ä_${formSection} Select Location_Ü",
+            submitInformationText: "ä_${formSection} Complete Form_Ü",
             submitInstructions: "Fügen Sie der Karte diese Informationen hinzu.",
             myLocationText: "Aktuelle Position",
             locationDescriptionForMoreThanOneOption: "Geben Sie die Position für diesen Eintrag an, indem Sie auf die Karte klicken/tippen oder eine der folgenden Optionen verwenden.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Hinweis:${closeStrong} Mindestdatum ${minValue} und maximal auswählbares Datum ${maxValue}",
             remainingCharactersHintMessage: "${value} verbleibende Zeichen",
             mapFullScreen: "ä_Full Screen_Ü",
-            mapRestore:"ä_Restore_Ü"
+            mapRestore: "ä_Restore_Ü",
+            filterSelectEmptyText: "ä_Select_Ü",
+            invalidLayerMessage: "ä_Form layer does not exist. Please configure the application and set the layer_Ü."
         },
         builder: {
             invalidUser: "Sie verfügen leider nicht über die Berechtigungen zum Anzeigen dieses Elements",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Editierbaren Layer auswählen",
             selectLayerLabelText: "Layer",
             selectLayerDefaultOptionText: "Layer auswählen",
+            defaultBasemap: "ä_Default Basemap_Ü",
+            secondaryBasemap: "ä_Secondary Basemap_Ü",
             detailsTabTitleText: "Formulardetails",
             detailTitleLabelText: "Titel",
             detailLogoLabelText: "Logo-Bild",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Sie können das GeoForm konfigurieren, um den Layer ein-/auszublenden",
             labelHelpMessage: "ä_Label_Ü",
             placeHolderHintMessage: "ä_Hint Text_Ü",
-            placeHolderHelpMessage:"ä_Help Text_Ü"
+            placeHolderHelpMessage: "ä_Help Text_Ü",
+            selectTextOptionValue: "ä_Filter Select_Ü",
+            disableLogo: "ä_Disable Logo_Ü",
+            disableLogoDescription: "ä_You can configure the GeoForm to Show/Hide Logo in the form header_Ü",
+            locateOnLoadText: "ä_Locate On Load_Ü",
+            locateOnLoadDescription: "ä_You can configure the GeoForm to locate the current location on form load_Ü"
         }
     })
 );

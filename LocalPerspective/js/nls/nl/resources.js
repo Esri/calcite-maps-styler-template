@@ -16,26 +16,26 @@
  */
 define(
     ({
-      "map": {
-         "error": "Kan geen map maken"
+      "map" : {
+         "error" : "Ĳ_Unable to create map_ä"
       },
-      "days": {
-         "now": "NU",
-         "sun": "ZO",
-         "mon": "MA",
-         "tue": "DI",
-         "wed": "WO",
-         "thu": "DO",
-         "fri": "VR",
-         "sat": "ZA"
+      "days" : {
+         "now" : "Ĳ_NOW_ä",
+         "sun" : "Ĳ_SUN_ä",
+         "mon" : "Ĳ_MON_ä",
+         "tue" : "Ĳ_TUE_ä",
+         "wed" : "Ĳ_WED_ä",
+         "thu" : "Ĳ_THU_ä",
+         "fri" : "Ĳ_FRI_ä",
+         "sat" : "Ĳ_SAT_ä"
       },
-      "tooltips": {
-         "logo": "Logo",
-         "menu": "Menu",
-         "close": "Sluiten",
-         "previous": "Vorige",
-         "next": "Volgende",
-         "directions": "Routebeschrijving"
+      "tooltips" : {
+         "logo" : "Ĳ_Logo_ä",
+         "menu" : "Ĳ_Menu_ä",
+         "close" : "Ĳ_Close_ä",
+         "previous" : "Ĳ_Previous_ä",
+         "next" : "Ĳ_Next_ä",
+         "directions" : "Ĳ_Directions_ä"
       }
    })
 );

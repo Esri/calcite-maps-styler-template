@@ -16,26 +16,26 @@
  */
 define(
     ({
-      "map": {
-         "error": "Imposibil de creat harta"
+      "map" : {
+         "error" : "Ă_Unable to create map_ș"
       },
-      "days": {
-         "now": "ACUM",
-         "sun": "DUM",
-         "mon": "LUN",
-         "tue": "MAR",
-         "wed": "MIE",
-         "thu": "JOI",
-         "fri": "VIN",
-         "sat": "SÂM"
+      "days" : {
+         "now" : "Ă_NOW_ș",
+         "sun" : "Ă_SUN_ș",
+         "mon" : "Ă_MON_ș",
+         "tue" : "Ă_TUE_ș",
+         "wed" : "Ă_WED_ș",
+         "thu" : "Ă_THU_ș",
+         "fri" : "Ă_FRI_ș",
+         "sat" : "Ă_SAT_ș"
       },
-      "tooltips": {
-         "logo": "Siglă",
-         "menu": "Meniu",
-         "close": "Închidere",
-         "previous": "Înapoi",
-         "next": "Înainte",
-         "directions": "Indicaţii"
+      "tooltips" : {
+         "logo" : "Ă_Logo_ș",
+         "menu" : "Ă_Menu_ș",
+         "close" : "Ă_Close_ș",
+         "previous" : "Ă_Previous_ș",
+         "next" : "Ă_Next_ș",
+         "directions" : "Ă_Directions_ș"
       }
    })
 );

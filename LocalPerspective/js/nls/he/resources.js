@@ -16,26 +16,26 @@
  */
 define(
     ({
-      "map": {
-         "error": "לא ניתן ליצור מפה"
+      "map" : {
+         "error" : "כן_Unable to create map_ש"
       },
-      "days": {
-         "now": "כעת",
-         "sun": "יום א",
-         "mon": "יום ב",
-         "tue": "יום ג",
-         "wed": "יום ד",
-         "thu": "יום ה",
-         "fri": "יום ו",
-         "sat": "שבת"
+      "days" : {
+         "now" : "כן_NOW_ש",
+         "sun" : "כן_SUN_ש",
+         "mon" : "כן_MON_ש",
+         "tue" : "כן_TUE_ש",
+         "wed" : "כן_WED_ש",
+         "thu" : "כן_THU_ש",
+         "fri" : "כן_FRI_ש",
+         "sat" : "כן_SAT_ש"
       },
-      "tooltips": {
-         "logo": "לוגו",
-         "menu": "תפריט",
-         "close": "סגור",
-         "previous": "הקודם",
-         "next": "הבא",
-         "directions": "כיוונים"
+      "tooltips" : {
+         "logo" : "כן_Logo_ש",
+         "menu" : "כן_Menu_ש",
+         "close" : "כן_Close_ש",
+         "previous" : "כן_Previous_ש",
+         "next" : "כן_Next_ש",
+         "directions" : "כן_Directions_ש"
       }
    })
 );

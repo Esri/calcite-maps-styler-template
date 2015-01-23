@@ -16,26 +16,26 @@
  */
 define(
     ({
-      "map": {
-         "error": "Nie można utworzyć mapy"
+      "map" : {
+         "error" : "ł_Unable to create map_ą"
       },
-      "days": {
-         "now": "TERAZ",
-         "sun": "NIEDZ",
-         "mon": "PON",
-         "tue": "WT",
-         "wed": "ŚR",
-         "thu": "CZW",
-         "fri": "PT",
-         "sat": "SOB"
+      "days" : {
+         "now" : "ł_NOW_ą",
+         "sun" : "ł_SUN_ą",
+         "mon" : "ł_MON_ą",
+         "tue" : "ł_TUE_ą",
+         "wed" : "ł_WED_ą",
+         "thu" : "ł_THU_ą",
+         "fri" : "ł_FRI_ą",
+         "sat" : "ł_SAT_ą"
       },
-      "tooltips": {
-         "logo": "Logo",
-         "menu": "Menu",
-         "close": "Zamknij",
-         "previous": "Wstecz",
-         "next": "Dalej",
-         "directions": "Wskazówki"
+      "tooltips" : {
+         "logo" : "ł_Logo_ą",
+         "menu" : "ł_Menu_ą",
+         "close" : "ł_Close_ą",
+         "previous" : "ł_Previous_ą",
+         "next" : "ł_Next_ą",
+         "directions" : "ł_Directions_ą"
       }
    })
 );

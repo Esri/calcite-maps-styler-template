@@ -48,9 +48,10 @@
             utm_northing: "כלפי צפון",
             utm_easting: "כלפי מזרח",
             utm_zone_number: "מספר אזור",
-            geoFormGeneralTabText: "1. הכנס מידע",
-            locationInformationText: "2. בחר מיקום",
-            submitInformationText: "3. השלם טופס",
+            selectLayerTabText: "כן_${formSection} Choose Form_ש",
+            geoFormGeneralTabText: "כן_${formSection} Enter Information_ש",
+            locationInformationText: "כן_${formSection} Select Location_ש",
+            submitInformationText: "כן_${formSection} Complete Form_ש",
             submitInstructions: "הוסף מידע זה למפה.",
             myLocationText: "מיקום נוכחי",
             locationDescriptionForMoreThanOneOption: "ציין את המיקום עבור ערך זה על-ידי לחיצה/הקשה על המפה או באמצעות אחת האפשרויות הבאות.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}רמז:${closeStrong} תאריך מינימום ${minValue} ותאריך מקסימום ${maxValue}",
             remainingCharactersHintMessage: "נותרו ${value} תווים",
             mapFullScreen: "כן_Full Screen_ש",
-            mapRestore:"כן_Restore_ש"
+            mapRestore: "כן_Restore_ש",
+            filterSelectEmptyText: "כן_Select_ש",
+            invalidLayerMessage: "כן_Form layer does not exist. Please configure the application and set the layer_ש."
         },
         builder: {
             invalidUser: "מצטערים, אין לך הרשאה להצגת פריט זה",
@@ -136,6 +139,8 @@
             layerTabTitleText: "בחר שכבה לעריכה",
             selectLayerLabelText: "שכבה",
             selectLayerDefaultOptionText: "בחר שכבה",
+            defaultBasemap: "כן_Default Basemap_ש",
+            secondaryBasemap: "כן_Secondary Basemap_ש",
             detailsTabTitleText: "פרטי הטופס",
             detailTitleLabelText: "כותרת",
             detailLogoLabelText: "תמונת לוגו",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "תוכל להגדיר את ה-GeoForm כך שיציג/יסתיר שכבה",
             labelHelpMessage: "כן_Label_ש",
             placeHolderHintMessage: "כן_Hint Text_ש",
-            placeHolderHelpMessage:"כן_Help Text_ש"
+            placeHolderHelpMessage: "כן_Help Text_ש",
+            selectTextOptionValue: "כן_Filter Select_ש",
+            disableLogo: "כן_Disable Logo_ש",
+            disableLogoDescription: "כן_You can configure the GeoForm to Show/Hide Logo in the form header_ש",
+            locateOnLoadText: "כן_Locate On Load_ש",
+            locateOnLoadDescription: "כן_You can configure the GeoForm to locate the current location on form load_ש"
         }
     })
 );

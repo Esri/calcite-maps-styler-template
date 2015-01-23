@@ -48,9 +48,10 @@
             utm_northing: "Norte",
             utm_easting: "Este",
             utm_zone_number: "Número de zona",
-            geoFormGeneralTabText: "1. Introducir información",
-            locationInformationText: "2. Seleccionar ubicación",
-            submitInformationText: "3. Completar formulario",
+            selectLayerTabText: "á_${formSection} Choose Form_Ó",
+            geoFormGeneralTabText: "á_${formSection} Enter Information_Ó",
+            locationInformationText: "á_${formSection} Select Location_Ó",
+            submitInformationText: "á_${formSection} Complete Form_Ó",
             submitInstructions: "Agrega esta información al mapa.",
             myLocationText: "Ubicación actual",
             locationDescriptionForMoreThanOneOption: "Especifica la ubicación de esta entrada haciendo clic o tocando el mapa, o utilizando una de las opciones siguientes.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Sugerencia:${closeStrong} Fecha mínima ${minValue} y fecha máxima ${maxValue}",
             remainingCharactersHintMessage: "${value} caracteres restantes",
             mapFullScreen: "á_Full Screen_Ó",
-            mapRestore:"á_Restore_Ó"
+            mapRestore: "á_Restore_Ó",
+            filterSelectEmptyText: "á_Select_Ó",
+            invalidLayerMessage: "á_Form layer does not exist. Please configure the application and set the layer_Ó."
         },
         builder: {
             invalidUser: "Lo lamentamos, no tienes permiso para ver este elemento",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Seleccionar capa editable",
             selectLayerLabelText: "Capa",
             selectLayerDefaultOptionText: "Seleccionar capa",
+            defaultBasemap: "á_Default Basemap_Ó",
+            secondaryBasemap: "á_Secondary Basemap_Ó",
             detailsTabTitleText: "Detalles del formulario",
             detailTitleLabelText: "Título",
             detailLogoLabelText: "Imagen del logotipo",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Puedes configurar el GeoForm para mostrar/ocultar la capa",
             labelHelpMessage: "á_Label_Ó",
             placeHolderHintMessage: "á_Hint Text_Ó",
-            placeHolderHelpMessage:"á_Help Text_Ó"
+            placeHolderHelpMessage: "á_Help Text_Ó",
+            selectTextOptionValue: "á_Filter Select_Ó",
+            disableLogo: "á_Disable Logo_Ó",
+            disableLogoDescription: "á_You can configure the GeoForm to Show/Hide Logo in the form header_Ó",
+            locateOnLoadText: "á_Locate On Load_Ó",
+            locateOnLoadDescription: "á_You can configure the GeoForm to locate the current location on form load_Ó"
         }
     })
 );

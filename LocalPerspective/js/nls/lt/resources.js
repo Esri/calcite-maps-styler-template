@@ -16,26 +16,26 @@
  */
 define(
     ({
-      "map": {
-         "error": "Žemėlapio sukurti nepavyko"
+      "map" : {
+         "error" : "Į_Unable to create map_š"
       },
-      "days": {
-         "now": "DABAR",
-         "sun": "SEK",
-         "mon": "PIR",
-         "tue": "ANT",
-         "wed": "TRE",
-         "thu": "KET",
-         "fri": "PEN",
-         "sat": "ŠEŠ"
+      "days" : {
+         "now" : "Į_NOW_š",
+         "sun" : "Į_SUN_š",
+         "mon" : "Į_MON_š",
+         "tue" : "Į_TUE_š",
+         "wed" : "Į_WED_š",
+         "thu" : "Į_THU_š",
+         "fri" : "Į_FRI_š",
+         "sat" : "Į_SAT_š"
       },
-      "tooltips": {
-         "logo": "Logotipas",
-         "menu": "Meniu",
-         "close": "Užverti",
-         "previous": "Ankstesnis",
-         "next": "Sekantis",
-         "directions": "Maršrutai"
+      "tooltips" : {
+         "logo" : "Į_Logo_š",
+         "menu" : "Į_Menu_š",
+         "close" : "Į_Close_š",
+         "previous" : "Į_Previous_š",
+         "next" : "Į_Next_š",
+         "directions" : "Į_Directions_š"
       }
    })
 );

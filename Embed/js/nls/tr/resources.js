@@ -32,7 +32,7 @@ define(
                 "title": "Gösterim"
             },
             "details":{
-                "title": "Harita Ayrıntıları",
+                "title": "ı_Details_İ",
                 "error": "Web haritası açıklamasını bu kısımda görüntülenecek ayrıntılarla güncelleyin."
             },
             "popup": {

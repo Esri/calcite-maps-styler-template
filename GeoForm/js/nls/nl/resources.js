@@ -48,9 +48,10 @@
             utm_northing: "Noordwaarde",
             utm_easting: "Oostwaarde",
             utm_zone_number: "Zonenummer",
-            geoFormGeneralTabText: "1. Informatie invoeren",
-            locationInformationText: "2. Locatie selecteren",
-            submitInformationText: "3. Melding afronden",
+            selectLayerTabText: "Ĳ_${formSection} Choose Form_ä",
+            geoFormGeneralTabText: "Ĳ_${formSection} Enter Information_ä",
+            locationInformationText: "Ĳ_${formSection} Select Location_ä",
+            submitInformationText: "Ĳ_${formSection} Complete Form_ä",
             submitInstructions: "Deze informatie toevoegen aan de kaart.",
             myLocationText: "Huidige locatie",
             locationDescriptionForMoreThanOneOption: "Geef de locatie op voor deze melding door op de kaart te klikken/tikken of door een van de volgende opties te gebruiken.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Tip:${closeStrong} Minimumdatum ${minValue} en Maximumdatum ${maxValue}",
             remainingCharactersHintMessage: "${value} resterende tekens",
             mapFullScreen: "Ĳ_Full Screen_ä",
-            mapRestore:"Ĳ_Restore_ä"
+            mapRestore: "Ĳ_Restore_ä",
+            filterSelectEmptyText: "Ĳ_Select_ä",
+            invalidLayerMessage: "Ĳ_Form layer does not exist. Please configure the application and set the layer_ä."
         },
         builder: {
             invalidUser: "U beschikt niet over de nodige machtigingen om dit item te bekijken",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Bewerkbare kaartlaag selecteren",
             selectLayerLabelText: "Kaartlaag",
             selectLayerDefaultOptionText: "Kaartlaag selecteren",
+            defaultBasemap: "Ĳ_Default Basemap_ä",
+            secondaryBasemap: "Ĳ_Secondary Basemap_ä",
             detailsTabTitleText: "Details van het formulier",
             detailTitleLabelText: "Titel",
             detailLogoLabelText: "Logoafbeelding",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "U kunt het Geo-formulier configureren om de laag te tonen/verbergen",
             labelHelpMessage: "Ĳ_Label_ä",
             placeHolderHintMessage: "Ĳ_Hint Text_ä",
-            placeHolderHelpMessage:"Ĳ_Help Text_ä"
+            placeHolderHelpMessage: "Ĳ_Help Text_ä",
+            selectTextOptionValue: "Ĳ_Filter Select_ä",
+            disableLogo: "Ĳ_Disable Logo_ä",
+            disableLogoDescription: "Ĳ_You can configure the GeoForm to Show/Hide Logo in the form header_ä",
+            locateOnLoadText: "Ĳ_Locate On Load_ä",
+            locateOnLoadDescription: "Ĳ_You can configure the GeoForm to locate the current location on form load_ä"
         }
     })
 );

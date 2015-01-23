@@ -48,9 +48,10 @@
             utm_northing: "لا شيء",
             utm_easting: "اتجاه نحو الشرق",
             utm_zone_number: "رقم المنطقة",
-            geoFormGeneralTabText: "1. أدخل المعلومات",
-            locationInformationText: "2. حدد الموقع",
-            submitInformationText: "3. أكمل النموذج",
+            selectLayerTabText: "بيت_${formSection} Choose Form_لاحقة",
+            geoFormGeneralTabText: "بيت_${formSection} Enter Information_لاحقة",
+            locationInformationText: "بيت_${formSection} Select Location_لاحقة",
+            submitInformationText: "بيت_${formSection} Complete Form_لاحقة",
             submitInstructions: "أضف هذه المعلومات إلى الخريطة.",
             myLocationText: "الموقع الحالي",
             locationDescriptionForMoreThanOneOption: "حدد موقع هذا الإدخال عن طريق النقر/الضغط فوق الخريطة أو عن طريق استخدام أحد الخيارات التالية.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}لمحة:${closeStrong} الحد الأدنى للتاريخ ${minValue} والحد الأقصى للتاريخ ${maxValue}",
             remainingCharactersHintMessage: "${value} الحروف المتبقية",
             mapFullScreen: "بيت_Full Screen_لاحقة",
-            mapRestore:"بيت_Restore_لاحقة"
+            mapRestore: "بيت_Restore_لاحقة",
+            filterSelectEmptyText: "بيت_Select_لاحقة",
+            invalidLayerMessage: "بيت_Form layer does not exist. Please configure the application and set the layer_لاحقة."
         },
         builder: {
             invalidUser: "عذرًا، ليس لديك الإذن لعرض هذا العنصر",
@@ -136,6 +139,8 @@
             layerTabTitleText: "تحديد الطبقة التي يمكن تحريرها",
             selectLayerLabelText: "طبقة",
             selectLayerDefaultOptionText: "تحديد الطبقة",
+            defaultBasemap: "بيت_Default Basemap_لاحقة",
+            secondaryBasemap: "بيت_Secondary Basemap_لاحقة",
             detailsTabTitleText: "تفاصيل النموذج",
             detailTitleLabelText: "العنوان",
             detailLogoLabelText: "صورة الشعار",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "يمكنك تكوين GeoForm لإظهار/إخفاء الطبقة",
             labelHelpMessage: "بيت_Label_لاحقة",
             placeHolderHintMessage: "بيت_Hint Text_لاحقة",
-            placeHolderHelpMessage:"بيت_Help Text_لاحقة"
+            placeHolderHelpMessage: "بيت_Help Text_لاحقة",
+            selectTextOptionValue: "بيت_Filter Select_لاحقة",
+            disableLogo: "بيت_Disable Logo_لاحقة",
+            disableLogoDescription: "بيت_You can configure the GeoForm to Show/Hide Logo in the form header_لاحقة",
+            locateOnLoadText: "بيت_Locate On Load_لاحقة",
+            locateOnLoadDescription: "بيت_You can configure the GeoForm to locate the current location on form load_لاحقة"
         }
     })
 );

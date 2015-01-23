@@ -32,7 +32,7 @@ define(
                 "title": "凡例"
             },
             "details":{
-                "title": "マップの詳細",
+                "title": "須_Details_鷗",
                 "error": "このセクションに表示する、詳細を記した Web マップの説明を更新します。"
             },
             "popup": {

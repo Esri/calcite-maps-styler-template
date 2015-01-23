@@ -32,7 +32,7 @@ define(
                 "title": "Eksplikācija"
             },
             "details":{
-                "title": "Kartes detaļas",
+                "title": "ķ_Details_ū",
                 "error": "Atjauniniet web kartes aprakstu ar šajā sadaļā parādāmajām detaļām."
             },
             "popup": {

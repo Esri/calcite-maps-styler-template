@@ -48,9 +48,10 @@
             utm_northing: "Kuzeye Yöneltme",
             utm_easting: "Doğuya Yöneltme",
             utm_zone_number: "Bölge Numarası",
-            geoFormGeneralTabText: "1. Bilgileri girin",
-            locationInformationText: "2. Konumu seçin",
-            submitInformationText: "3. Formu doldurun",
+            selectLayerTabText: "ı_${formSection} Choose Form_İ",
+            geoFormGeneralTabText: "ı_${formSection} Enter Information_İ",
+            locationInformationText: "ı_${formSection} Select Location_İ",
+            submitInformationText: "ı_${formSection} Complete Form_İ",
             submitInstructions: "Bu bilgileri haritaya ekleyin.",
             myLocationText: "Mevcut Konum",
             locationDescriptionForMoreThanOneOption: "Haritaya dokunarak/tıklayarak ya da aşağıdaki seçeneklerden birini kullanarak bu giriş için bir konum belirtin.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}İpucu:${closeStrong} Minimum Tarih ${minValue} ve Maksimum Tarih ${maxValue}",
             remainingCharactersHintMessage: "${value} karakter kaldı",
             mapFullScreen: "ı_Full Screen_İ",
-            mapRestore:"ı_Restore_İ"
+            mapRestore: "ı_Restore_İ",
+            filterSelectEmptyText: "ı_Select_İ",
+            invalidLayerMessage: "ı_Form layer does not exist. Please configure the application and set the layer_İ."
         },
         builder: {
             invalidUser: "Üzgünüz, bu öğeyi görüntüleme izniniz yok",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Düzenlenebilir Katman Seç",
             selectLayerLabelText: "Katman",
             selectLayerDefaultOptionText: "Katman seç",
+            defaultBasemap: "ı_Default Basemap_İ",
+            secondaryBasemap: "ı_Secondary Basemap_İ",
             detailsTabTitleText: "Form Ayrıntıları",
             detailTitleLabelText: "Başlık",
             detailLogoLabelText: "Logo Görseli",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "GeoForm\'u Katmanı Göstermek/Gizleme için kullanabilirsiniz",
             labelHelpMessage: "ı_Label_İ",
             placeHolderHintMessage: "ı_Hint Text_İ",
-            placeHolderHelpMessage:"ı_Help Text_İ"
+            placeHolderHelpMessage: "ı_Help Text_İ",
+            selectTextOptionValue: "ı_Filter Select_İ",
+            disableLogo: "ı_Disable Logo_İ",
+            disableLogoDescription: "ı_You can configure the GeoForm to Show/Hide Logo in the form header_İ",
+            locateOnLoadText: "ı_Locate On Load_İ",
+            locateOnLoadDescription: "ı_You can configure the GeoForm to locate the current location on form load_İ"
         }
     })
 );

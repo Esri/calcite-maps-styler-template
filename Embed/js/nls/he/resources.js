@@ -32,7 +32,7 @@ define(
                 "title": "מקרא"
             },
             "details":{
-                "title": "פרטי המפה",
+                "title": "כן_Details_ש",
                 "error": "עדכן את תיאור ה-web map בפרטים להצגה במקטע זה."
             },
             "popup": {

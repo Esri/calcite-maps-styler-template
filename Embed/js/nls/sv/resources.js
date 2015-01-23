@@ -32,7 +32,7 @@ define(
                 "title": "Teckenförklaring"
             },
             "details":{
-                "title": "Kartinformation",
+                "title": "Å_Details_ö",
                 "error": "Uppdatera webbkartbeskrivningen med den information som ska visas i det här avsnittet."
             },
             "popup": {

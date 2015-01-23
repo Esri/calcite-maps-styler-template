@@ -48,9 +48,10 @@
             utm_northing: "Virzība uz ziemeļiem",
             utm_easting: "Virzība uz austrumiem",
             utm_zone_number: "Zonas numurs",
-            geoFormGeneralTabText: "1. Ievadiet informāciju",
-            locationInformationText: "2. Atlasiet atrašanās vietu",
-            submitInformationText: "3. Aizpildiet veidlapu",
+            selectLayerTabText: "ķ_${formSection} Choose Form_ū",
+            geoFormGeneralTabText: "ķ_${formSection} Enter Information_ū",
+            locationInformationText: "ķ_${formSection} Select Location_ū",
+            submitInformationText: "ķ_${formSection} Complete Form_ū",
             submitInstructions: "Pievienot šo informāciju kartei.",
             myLocationText: "Pašreizējais izvietojums",
             locationDescriptionForMoreThanOneOption: "Norādiet šī ieraksta izvietojumu, noklikšķinot uz/pieskaroties pie kartes vai izmantojot kādu no tālāk minētajām opcijām.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Padoms:${closeStrong} minimālais datums ${minValue} un maksimālais datums ${maxValue}",
             remainingCharactersHintMessage: "Atlikušas ${value} rakstzīmes",
             mapFullScreen: "ķ_Full Screen_ū",
-            mapRestore:"ķ_Restore_ū"
+            mapRestore: "ķ_Restore_ū",
+            filterSelectEmptyText: "ķ_Select_ū",
+            invalidLayerMessage: "ķ_Form layer does not exist. Please configure the application and set the layer_ū."
         },
         builder: {
             invalidUser: "Diemžēl jums nav atļaujas skatīt šo vienību",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Atlasiet rediģējamu slāni",
             selectLayerLabelText: "Slānis",
             selectLayerDefaultOptionText: "Atlasīt slāni",
+            defaultBasemap: "ķ_Default Basemap_ū",
+            secondaryBasemap: "ķ_Secondary Basemap_ū",
             detailsTabTitleText: "Formas detaļas",
             detailTitleLabelText: "Nosaukums",
             detailLogoLabelText: "Logotipa attēls",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "GeoForm var konfigurēt, lai rādītu/slēptu slāni",
             labelHelpMessage: "ķ_Label_ū",
             placeHolderHintMessage: "ķ_Hint Text_ū",
-            placeHolderHelpMessage:"ķ_Help Text_ū"
+            placeHolderHelpMessage: "ķ_Help Text_ū",
+            selectTextOptionValue: "ķ_Filter Select_ū",
+            disableLogo: "ķ_Disable Logo_ū",
+            disableLogoDescription: "ķ_You can configure the GeoForm to Show/Hide Logo in the form header_ū",
+            locateOnLoadText: "ķ_Locate On Load_ū",
+            locateOnLoadDescription: "ķ_You can configure the GeoForm to locate the current location on form load_ū"
         }
     })
 );

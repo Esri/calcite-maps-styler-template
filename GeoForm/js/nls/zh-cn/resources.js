@@ -48,9 +48,10 @@
             utm_northing: "北移",
             utm_easting: "东移",
             utm_zone_number: "区域编号",
-            geoFormGeneralTabText: "1. 输入信息",
-            locationInformationText: "2. 选择位置",
-            submitInformationText: "3. 完成表单",
+            selectLayerTabText: "试_${formSection} Choose Form_验",
+            geoFormGeneralTabText: "试_${formSection} Enter Information_验",
+            locationInformationText: "试_${formSection} Select Location_验",
+            submitInformationText: "试_${formSection} Complete Form_验",
             submitInstructions: "将此信息添加到地图。",
             myLocationText: "当前位置",
             locationDescriptionForMoreThanOneOption: "通过单击/点击地图或使用以下选项之一来指定此输入的位置。",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}提示:${closeStrong} 最小日期 ${minValue} 和最大日期 ${maxValue}",
             remainingCharactersHintMessage: "剩余 ${value} 个字符",
             mapFullScreen: "试_Full Screen_验",
-            mapRestore:"试_Restore_验"
+            mapRestore: "试_Restore_验",
+            filterSelectEmptyText: "试_Select_验",
+            invalidLayerMessage: "试_Form layer does not exist. Please configure the application and set the layer_验."
         },
         builder: {
             invalidUser: "抱歉，您无权查看此项目",
@@ -136,6 +139,8 @@
             layerTabTitleText: "选择可编辑图层",
             selectLayerLabelText: "图层",
             selectLayerDefaultOptionText: "选择图层",
+            defaultBasemap: "试_Default Basemap_验",
+            secondaryBasemap: "试_Secondary Basemap_验",
             detailsTabTitleText: "表单详细信息",
             detailTitleLabelText: "标题",
             detailLogoLabelText: "徽标图像",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "可配置 GeoForm 以显示/隐藏图层",
             labelHelpMessage: "试_Label_验",
             placeHolderHintMessage: "试_Hint Text_验",
-            placeHolderHelpMessage:"试_Help Text_验"
+            placeHolderHelpMessage: "试_Help Text_验",
+            selectTextOptionValue: "试_Filter Select_验",
+            disableLogo: "试_Disable Logo_验",
+            disableLogoDescription: "试_You can configure the GeoForm to Show/Hide Logo in the form header_验",
+            locateOnLoadText: "试_Locate On Load_验",
+            locateOnLoadDescription: "试_You can configure the GeoForm to locate the current location on form load_验"
         }
     })
 );

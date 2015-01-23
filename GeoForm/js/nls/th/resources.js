@@ -48,9 +48,10 @@
             utm_northing: "ทิศเหนือ",
             utm_easting: "ทิศตะวันออก",
             utm_zone_number: "เลขประจำโซน",
-            geoFormGeneralTabText: "1. ใส่ข้อมูล",
-            locationInformationText: "2. เลือกตำแหน่ง",
-            submitInformationText: "3. ใส่ข้อความลงในแบบฟอร์มให้สมบูรณ์",
+            selectLayerTabText: "ก้_${formSection} Choose Form_ษฺ",
+            geoFormGeneralTabText: "ก้_${formSection} Enter Information_ษฺ",
+            locationInformationText: "ก้_${formSection} Select Location_ษฺ",
+            submitInformationText: "ก้_${formSection} Complete Form_ษฺ",
             submitInstructions: "เพิ่มข้อมูล",
             myLocationText: "ตำแหน่งปัจจุบัน",
             locationDescriptionForMoreThanOneOption: "ระบุสถานที่สำหรับรายการนี้โดยคลิกหรือแตะบนแผนที่ หรือโดยใช้หนึ่งในตัวเลือกต่อไป",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Hint:${closeStrong} จำนวนวันน้อยที่สุด ${minValue} และจำนวนวันมากที่สุด ${maxValue}",
             remainingCharactersHintMessage: "${value} ตัวอักษรที่เหลืออยู่",
             mapFullScreen: "ก้_Full Screen_ษฺ",
-            mapRestore:"ก้_Restore_ษฺ"
+            mapRestore: "ก้_Restore_ษฺ",
+            filterSelectEmptyText: "ก้_Select_ษฺ",
+            invalidLayerMessage: "ก้_Form layer does not exist. Please configure the application and set the layer_ษฺ."
         },
         builder: {
             invalidUser: "ขอโทษ คุณไม่ได้รับอนุญาตให้เรียกดูรายการนี้",
@@ -136,6 +139,8 @@
             layerTabTitleText: "เลือกชั้นข้อมูลที่แก้ไขได้",
             selectLayerLabelText: "ชั้นข้อมูล",
             selectLayerDefaultOptionText: "เลือกชั้นข้อมูล",
+            defaultBasemap: "ก้_Default Basemap_ษฺ",
+            secondaryBasemap: "ก้_Secondary Basemap_ษฺ",
             detailsTabTitleText: "แบบฟอร์มรายละเอียด",
             detailTitleLabelText: "ชื่อ",
             detailLogoLabelText: "รูปโลโก้",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "คุณสามารถปรับ GeoForm เพื่อแสดง/ซ่อนชั้นข้อมูล",
             labelHelpMessage: "ก้_Label_ษฺ",
             placeHolderHintMessage: "ก้_Hint Text_ษฺ",
-            placeHolderHelpMessage:"ก้_Help Text_ษฺ"
+            placeHolderHelpMessage: "ก้_Help Text_ษฺ",
+            selectTextOptionValue: "ก้_Filter Select_ษฺ",
+            disableLogo: "ก้_Disable Logo_ษฺ",
+            disableLogoDescription: "ก้_You can configure the GeoForm to Show/Hide Logo in the form header_ษฺ",
+            locateOnLoadText: "ก้_Locate On Load_ษฺ",
+            locateOnLoadDescription: "ก้_You can configure the GeoForm to locate the current location on form load_ษฺ"
         }
     })
 );

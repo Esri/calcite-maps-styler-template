@@ -48,9 +48,10 @@
             utm_northing: "Ilgumos poslinkis",
             utm_easting: "Platumos poslinkis",
             utm_zone_number: "Zonos numeris",
-            geoFormGeneralTabText: "1. Įveskite informaciją",
-            locationInformationText: "2. Pasirinkite vietą",
-            submitInformationText: "3. Užpildykite formą",
+            selectLayerTabText: "Į_${formSection} Choose Form_š",
+            geoFormGeneralTabText: "Į_${formSection} Enter Information_š",
+            locationInformationText: "Į_${formSection} Select Location_š",
+            submitInformationText: "Į_${formSection} Complete Form_š",
             submitInstructions: "Įtraukite šią informaciją į žemėlapį.",
             myLocationText: "dabartinė vieta",
             locationDescriptionForMoreThanOneOption: "Nurodykite šio įrašo vietą spustelėdami / bakstelėdami žemėlapį arba naudodami vieną iš toliau pateiktų parinkčių.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Užuomina:${closeStrong} minimali data ${minValue} ir maksimali data ${maxValue}",
             remainingCharactersHintMessage: "Liko simbolių: ${value}",
             mapFullScreen: "Į_Full Screen_š",
-            mapRestore:"Į_Restore_š"
+            mapRestore: "Į_Restore_š",
+            filterSelectEmptyText: "Į_Select_š",
+            invalidLayerMessage: "Į_Form layer does not exist. Please configure the application and set the layer_š."
         },
         builder: {
             invalidUser: "Atsiprašome, tačiau neturite teisės peržiūrėti šį elementą",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Pasirinkti redaguojamą sluoksnį",
             selectLayerLabelText: "Sluoksnis",
             selectLayerDefaultOptionText: "Pasirinkti sluoksnį",
+            defaultBasemap: "Į_Default Basemap_š",
+            secondaryBasemap: "Į_Secondary Basemap_š",
             detailsTabTitleText: "Išsami formos informacija",
             detailTitleLabelText: "Pavadinimas",
             detailLogoLabelText: "Logotipo paveikslėlis",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Konfigūruokite GeoForm rodyti / slėpti sluoksnį",
             labelHelpMessage: "Į_Label_š",
             placeHolderHintMessage: "Į_Hint Text_š",
-            placeHolderHelpMessage:"Į_Help Text_š"
+            placeHolderHelpMessage: "Į_Help Text_š",
+            selectTextOptionValue: "Į_Filter Select_š",
+            disableLogo: "Į_Disable Logo_š",
+            disableLogoDescription: "Į_You can configure the GeoForm to Show/Hide Logo in the form header_š",
+            locateOnLoadText: "Į_Locate On Load_š",
+            locateOnLoadDescription: "Į_You can configure the GeoForm to locate the current location on form load_š"
         }
     })
 );

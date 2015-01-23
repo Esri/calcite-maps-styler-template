@@ -48,9 +48,10 @@
             utm_northing: "По широте",
             utm_easting: "По долготе",
             utm_zone_number: "Номер зоны",
-            geoFormGeneralTabText: "1. Введите информацию",
-            locationInformationText: "2. Выберите местоположение",
-            submitInformationText: "3. Заполните форму",
+            selectLayerTabText: "Ж_${formSection} Choose Form_Я",
+            geoFormGeneralTabText: "Ж_${formSection} Enter Information_Я",
+            locationInformationText: "Ж_${formSection} Select Location_Я",
+            submitInformationText: "Ж_${formSection} Complete Form_Я",
             submitInstructions: "Добавьте эту информацию в карту.",
             myLocationText: "Текущее местоположение",
             locationDescriptionForMoreThanOneOption: "Укажите местоположение этой записи, щелкнув/нажав на карте или при помощи одной из следующих опций.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Подсказка:${closeStrong} Минимальная дата ${minValue} и Максимальная дата ${maxValue}",
             remainingCharactersHintMessage: "${value} знаков осталось",
             mapFullScreen: "Ж_Full Screen_Я",
-            mapRestore:"Ж_Restore_Я"
+            mapRestore: "Ж_Restore_Я",
+            filterSelectEmptyText: "Ж_Select_Я",
+            invalidLayerMessage: "Ж_Form layer does not exist. Please configure the application and set the layer_Я."
         },
         builder: {
             invalidUser: "У вас нет прав на просмотр этого элемента",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Выбрать редактируемый слой",
             selectLayerLabelText: "Слой",
             selectLayerDefaultOptionText: "Выбрать слой",
+            defaultBasemap: "Ж_Default Basemap_Я",
+            secondaryBasemap: "Ж_Secondary Basemap_Я",
             detailsTabTitleText: "Детали формы",
             detailTitleLabelText: "Заголовок",
             detailLogoLabelText: "Изображение логотипа",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Вы можете настроить GeoForm на отображение/скрытие слоя",
             labelHelpMessage: "Ж_Label_Я",
             placeHolderHintMessage: "Ж_Hint Text_Я",
-            placeHolderHelpMessage:"Ж_Help Text_Я"
+            placeHolderHelpMessage: "Ж_Help Text_Я",
+            selectTextOptionValue: "Ж_Filter Select_Я",
+            disableLogo: "Ж_Disable Logo_Я",
+            disableLogoDescription: "Ж_You can configure the GeoForm to Show/Hide Logo in the form header_Я",
+            locateOnLoadText: "Ж_Locate On Load_Я",
+            locateOnLoadDescription: "Ж_You can configure the GeoForm to locate the current location on form load_Я"
         }
     })
 );

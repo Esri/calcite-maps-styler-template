@@ -48,9 +48,10 @@
             utm_northing: "Ordonnée",
             utm_easting: "Abscisse",
             utm_zone_number: "Numéro de fuseau",
-            geoFormGeneralTabText: "1. Entrez des informations",
-            locationInformationText: "2. Sélectionnez un emplacement",
-            submitInformationText: "3. Remplissez le formulaire",
+            selectLayerTabText: "æ_${formSection} Choose Form_Â",
+            geoFormGeneralTabText: "æ_${formSection} Enter Information_Â",
+            locationInformationText: "æ_${formSection} Select Location_Â",
+            submitInformationText: "æ_${formSection} Complete Form_Â",
             submitInstructions: "Ajoutez ces informations à la carte.",
             myLocationText: "Emplacement actuel",
             locationDescriptionForMoreThanOneOption: "Sélectionnez un emplacement pour cette entrée en cliquant/touchant la carte, ou à l\'aide d\'une des options suivantes.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Astuce :${closeStrong} Date minimum ${minValue} et date maximum ${maxValue}",
             remainingCharactersHintMessage: "${value} caractères restants",
             mapFullScreen: "æ_Full Screen_Â",
-            mapRestore:"æ_Restore_Â"
+            mapRestore: "æ_Restore_Â",
+            filterSelectEmptyText: "æ_Select_Â",
+            invalidLayerMessage: "æ_Form layer does not exist. Please configure the application and set the layer_Â."
         },
         builder: {
             invalidUser: "Vous n\'êtes pas autorisé à consulter cet élément",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Sélectionner une couche modifiable",
             selectLayerLabelText: "Couche",
             selectLayerDefaultOptionText: "Sélectionner une couche",
+            defaultBasemap: "æ_Default Basemap_Â",
+            secondaryBasemap: "æ_Secondary Basemap_Â",
             detailsTabTitleText: "Détails du formulaire",
             detailTitleLabelText: "Titre",
             detailLogoLabelText: "Image du logo",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Vous pouvez configurer le formulaire géographique de façon à afficher/masquer la couche",
             labelHelpMessage: "æ_Label_Â",
             placeHolderHintMessage: "æ_Hint Text_Â",
-            placeHolderHelpMessage:"æ_Help Text_Â"
+            placeHolderHelpMessage: "æ_Help Text_Â",
+            selectTextOptionValue: "æ_Filter Select_Â",
+            disableLogo: "æ_Disable Logo_Â",
+            disableLogoDescription: "æ_You can configure the GeoForm to Show/Hide Logo in the form header_Â",
+            locateOnLoadText: "æ_Locate On Load_Â",
+            locateOnLoadDescription: "æ_You can configure the GeoForm to locate the current location on form load_Â"
         }
     })
 );

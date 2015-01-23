@@ -48,9 +48,10 @@
             utm_northing: "A Nord",
             utm_easting: "Ad Est",
             utm_zone_number: "Numero zona",
-            geoFormGeneralTabText: "1. Immettere le informazioni",
-            locationInformationText: "2. Selezionare la posizione",
-            submitInformationText: "3. Compilare il modulo",
+            selectLayerTabText: "é_${formSection} Choose Form_È",
+            geoFormGeneralTabText: "é_${formSection} Enter Information_È",
+            locationInformationText: "é_${formSection} Select Location_È",
+            submitInformationText: "é_${formSection} Complete Form_È",
             submitInstructions: "Aggiungere queste informazioni alla mappa.",
             myLocationText: "Posizione corrente",
             locationDescriptionForMoreThanOneOption: "Specificare la posizione per questa voce facendo clic o toccando la mappa o utilizzando una delle opzioni di seguito.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Suggerimento:${closeStrong} Data minima ${minValue} e data massima ${maxValue}",
             remainingCharactersHintMessage: "${value} caratteri residui",
             mapFullScreen: "é_Full Screen_È",
-            mapRestore:"é_Restore_È"
+            mapRestore: "é_Restore_È",
+            filterSelectEmptyText: "é_Select_È",
+            invalidLayerMessage: "é_Form layer does not exist. Please configure the application and set the layer_È."
         },
         builder: {
             invalidUser: "Non si dispone dell\'autorizzazione per visualizzare questo elemento",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Seleziona layer modificabile",
             selectLayerLabelText: "Layer",
             selectLayerDefaultOptionText: "Seleziona layer",
+            defaultBasemap: "é_Default Basemap_È",
+            secondaryBasemap: "é_Secondary Basemap_È",
             detailsTabTitleText: "Dettagli modulo",
             detailTitleLabelText: "Titolo",
             detailLogoLabelText: "Immagine logo",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "È possibile configurare il modulo GeoForm in modo da visualizzare/nascondere il layer.",
             labelHelpMessage: "é_Label_È",
             placeHolderHintMessage: "é_Hint Text_È",
-            placeHolderHelpMessage:"é_Help Text_È"
+            placeHolderHelpMessage: "é_Help Text_È",
+            selectTextOptionValue: "é_Filter Select_È",
+            disableLogo: "é_Disable Logo_È",
+            disableLogoDescription: "é_You can configure the GeoForm to Show/Hide Logo in the form header_È",
+            locateOnLoadText: "é_Locate On Load_È",
+            locateOnLoadDescription: "é_You can configure the GeoForm to locate the current location on form load_È"
         }
     })
 );

@@ -32,7 +32,7 @@ define(
                 "title": "Legendă"
             },
             "details":{
-                "title": "Detalii hartă",
+                "title": "Ă_Details_ș",
                 "error": "Actualizaţi descriere hărţii web cu detaliile ce vor fi afişate în această secţiune."
             },
             "popup": {

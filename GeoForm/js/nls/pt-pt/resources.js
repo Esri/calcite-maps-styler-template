@@ -48,9 +48,10 @@
             utm_northing: "Northing",
             utm_easting: "Easting",
             utm_zone_number: "Número da Zona",
-            geoFormGeneralTabText: "1. Introduzir Informação",
-            locationInformationText: "2. Escolher Localização",
-            submitInformationText: "3. Completar Formulário",
+            selectLayerTabText: "ã_${formSection} Choose Form_Ç",
+            geoFormGeneralTabText: "ã_${formSection} Enter Information_Ç",
+            locationInformationText: "ã_${formSection} Select Location_Ç",
+            submitInformationText: "ã_${formSection} Complete Form_Ç",
             submitInstructions: "Adicione estas informações ao mapa.",
             myLocationText: "Localização Atual",
             locationDescriptionForMoreThanOneOption: "Especifique a localização para esta entrada clicando/tocando no mapa ou utilizando uma das seguintes opções.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Dica:${closeStrong} Data Mínima ${minValue} e Data Máxima ${maxValue}",
             remainingCharactersHintMessage: "${value} caracteres restantes",
             mapFullScreen: "ã_Full Screen_Ç",
-            mapRestore:"ã_Restore_Ç"
+            mapRestore: "ã_Restore_Ç",
+            filterSelectEmptyText: "ã_Select_Ç",
+            invalidLayerMessage: "ã_Form layer does not exist. Please configure the application and set the layer_Ç."
         },
         builder: {
             invalidUser: "Lamentamos, não tem permissão para visualizar este item",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Escolher Camada Editável",
             selectLayerLabelText: "Camada",
             selectLayerDefaultOptionText: "Selecionar Camada",
+            defaultBasemap: "ã_Default Basemap_Ç",
+            secondaryBasemap: "ã_Secondary Basemap_Ç",
             detailsTabTitleText: "Detalhes do Formulário",
             detailTitleLabelText: "Título",
             detailLogoLabelText: "Imagem do Logotipo",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Pode configurar o GeoForm para Exibir/Esconder Camada",
             labelHelpMessage: "ã_Label_Ç",
             placeHolderHintMessage: "ã_Hint Text_Ç",
-            placeHolderHelpMessage:"ã_Help Text_Ç"
+            placeHolderHelpMessage: "ã_Help Text_Ç",
+            selectTextOptionValue: "ã_Filter Select_Ç",
+            disableLogo: "ã_Disable Logo_Ç",
+            disableLogoDescription: "ã_You can configure the GeoForm to Show/Hide Logo in the form header_Ç",
+            locateOnLoadText: "ã_Locate On Load_Ç",
+            locateOnLoadDescription: "ã_You can configure the GeoForm to locate the current location on form load_Ç"
         }
     })
 );

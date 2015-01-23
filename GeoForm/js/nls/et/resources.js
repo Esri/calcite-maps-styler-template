@@ -48,9 +48,10 @@
             utm_northing: "Y-koordinaat",
             utm_easting: "X-koordinaat",
             utm_zone_number: "Tsooni number",
-            geoFormGeneralTabText: "1. Sisestage teave",
-            locationInformationText: "2. Valige asukoht",
-            submitInformationText: "3. Täitke vorm",
+            selectLayerTabText: "Š_${formSection} Choose Form_ä",
+            geoFormGeneralTabText: "Š_${formSection} Enter Information_ä",
+            locationInformationText: "Š_${formSection} Select Location_ä",
+            submitInformationText: "Š_${formSection} Complete Form_ä",
             submitInstructions: "Lisage see teave kaardile.",
             myLocationText: "Praegune asukoht",
             locationDescriptionForMoreThanOneOption: "Määrake selle kirje jaoks asukoht, klõpsates/puudutades kaarti või kasutades üht järgmist valikut.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Vihje:${closeStrong} Kuupäeva alampiir ${minValue} ja kuupäeva ülempiir ${maxValue}",
             remainingCharactersHintMessage: "${value} tähemärki kasutamata",
             mapFullScreen: "Š_Full Screen_ä",
-            mapRestore:"Š_Restore_ä"
+            mapRestore: "Š_Restore_ä",
+            filterSelectEmptyText: "Š_Select_ä",
+            invalidLayerMessage: "Š_Form layer does not exist. Please configure the application and set the layer_ä."
         },
         builder: {
             invalidUser: "Kahjuks pole Teil selle sisu vaatamiseks õigusi",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Vali muudetav kiht",
             selectLayerLabelText: "Kiht",
             selectLayerDefaultOptionText: "Vali kiht",
+            defaultBasemap: "Š_Default Basemap_ä",
+            secondaryBasemap: "Š_Secondary Basemap_ä",
             detailsTabTitleText: "Vormi üksikasjad",
             detailTitleLabelText: "Pealkiri",
             detailLogoLabelText: "Logo pilt",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Malli GeoForm saab konfigureerida kihtide kuvamist/peitmist",
             labelHelpMessage: "Š_Label_ä",
             placeHolderHintMessage: "Š_Hint Text_ä",
-            placeHolderHelpMessage:"Š_Help Text_ä"
+            placeHolderHelpMessage: "Š_Help Text_ä",
+            selectTextOptionValue: "Š_Filter Select_ä",
+            disableLogo: "Š_Disable Logo_ä",
+            disableLogoDescription: "Š_You can configure the GeoForm to Show/Hide Logo in the form header_ä",
+            locateOnLoadText: "Š_Locate On Load_ä",
+            locateOnLoadDescription: "Š_You can configure the GeoForm to locate the current location on form load_ä"
         }
     })
 );

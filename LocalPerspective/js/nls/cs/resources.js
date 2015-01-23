@@ -16,26 +16,26 @@
  */
 define(
     ({
-      "map": {
-         "error": "Nelze vytvořit mapu"
+      "map" : {
+         "error" : "Ř_Unable to create map_ů"
       },
-      "days": {
-         "now": "NYNÍ",
-         "sun": "NE",
-         "mon": "PO",
-         "tue": "ÚT",
-         "wed": "ST",
-         "thu": "ČT",
-         "fri": "PÁ",
-         "sat": "SO"
+      "days" : {
+         "now" : "Ř_NOW_ů",
+         "sun" : "Ř_SUN_ů",
+         "mon" : "Ř_MON_ů",
+         "tue" : "Ř_TUE_ů",
+         "wed" : "Ř_WED_ů",
+         "thu" : "Ř_THU_ů",
+         "fri" : "Ř_FRI_ů",
+         "sat" : "Ř_SAT_ů"
       },
-      "tooltips": {
-         "logo": "Logo",
-         "menu": "Nabídka",
-         "close": "Zavřít",
-         "previous": "Předchozí",
-         "next": "Další",
-         "directions": "Pokyny trasy"
+      "tooltips" : {
+         "logo" : "Ř_Logo_ů",
+         "menu" : "Ř_Menu_ů",
+         "close" : "Ř_Close_ů",
+         "previous" : "Ř_Previous_ů",
+         "next" : "Ř_Next_ů",
+         "directions" : "Ř_Directions_ů"
       }
    })
 );

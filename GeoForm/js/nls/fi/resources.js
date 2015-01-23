@@ -48,9 +48,10 @@
             utm_northing: "Pohjois",
             utm_easting: "Itäinen",
             utm_zone_number: "Vyöhykkeen numero",
-            geoFormGeneralTabText: "1. Anna tiedot",
-            locationInformationText: "2. Valitse sijainti",
-            submitInformationText: "3. Täytä lomake",
+            selectLayerTabText: "Å_${formSection} Choose Form_ö",
+            geoFormGeneralTabText: "Å_${formSection} Enter Information_ö",
+            locationInformationText: "Å_${formSection} Select Location_ö",
+            submitInformationText: "Å_${formSection} Complete Form_ö",
             submitInstructions: "Lisää nämä tiedot karttaan.",
             myLocationText: "Nykyinen sijainti",
             locationDescriptionForMoreThanOneOption: "Määritä syötteen sijainti käyttämällä jotain seuraavista vaihtoehdoista tai napsauttamalla/ napauttamalla karttaa.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Vihje:${closeStrong} aikaisin ${minValue} ja myöhäisin päivämäärä ${maxValue}",
             remainingCharactersHintMessage: "${value} merkkiä jäljellä",
             mapFullScreen: "Å_Full Screen_ö",
-            mapRestore:"Å_Restore_ö"
+            mapRestore: "Å_Restore_ö",
+            filterSelectEmptyText: "Å_Select_ö",
+            invalidLayerMessage: "Å_Form layer does not exist. Please configure the application and set the layer_ö."
         },
         builder: {
             invalidUser: "Sinulla ei ole oikeuksia tarkastella tätä kohdetta",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Valitse muokattava karttataso",
             selectLayerLabelText: "Karttataso",
             selectLayerDefaultOptionText: "Valitse karttataso",
+            defaultBasemap: "Å_Default Basemap_ö",
+            secondaryBasemap: "Å_Secondary Basemap_ö",
             detailsTabTitleText: "Lomakkeen tiedot",
             detailTitleLabelText: "Otsikko",
             detailLogoLabelText: "Logokuva",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Voit näyttää tai piilottaa karttatason määrittämällä GeoForm-mallin",
             labelHelpMessage: "Å_Label_ö",
             placeHolderHintMessage: "Å_Hint Text_ö",
-            placeHolderHelpMessage:"Å_Help Text_ö"
+            placeHolderHelpMessage: "Å_Help Text_ö",
+            selectTextOptionValue: "Å_Filter Select_ö",
+            disableLogo: "Å_Disable Logo_ö",
+            disableLogoDescription: "Å_You can configure the GeoForm to Show/Hide Logo in the form header_ö",
+            locateOnLoadText: "Å_Locate On Load_ö",
+            locateOnLoadDescription: "Å_You can configure the GeoForm to locate the current location on form load_ö"
         }
     })
 );

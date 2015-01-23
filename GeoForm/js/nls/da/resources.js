@@ -48,9 +48,10 @@
             utm_northing: "Nordlig",
             utm_easting: "Østlig",
             utm_zone_number: "Zonenummer",
-            geoFormGeneralTabText: "1. Indtast oplysninger",
-            locationInformationText: "2. Vælg placering",
-            submitInformationText: "3. Udfyld formularen",
+            selectLayerTabText: "ø_${formSection} Choose Form_å",
+            geoFormGeneralTabText: "ø_${formSection} Enter Information_å",
+            locationInformationText: "ø_${formSection} Select Location_å",
+            submitInformationText: "ø_${formSection} Complete Form_å",
             submitInstructions: "Føj disse oplysninger til kortet.",
             myLocationText: "Nuværende placering",
             locationDescriptionForMoreThanOneOption: "Angiv en placering til din post ved at klikke på/berøre kortet eller vha. en af følgende muligheder.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Hint:${closeStrong} Minimumdato ${minValue} og maksimumdato ${maxValue}",
             remainingCharactersHintMessage: "${value} resterende tegn",
             mapFullScreen: "ø_Full Screen_å",
-            mapRestore:"ø_Restore_å"
+            mapRestore: "ø_Restore_å",
+            filterSelectEmptyText: "ø_Select_å",
+            invalidLayerMessage: "ø_Form layer does not exist. Please configure the application and set the layer_å."
         },
         builder: {
             invalidUser: "Du har desværre ikke tilladelse til at få dette element vist",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Vælg redigérbart lag",
             selectLayerLabelText: "Lag",
             selectLayerDefaultOptionText: "Vælg lag",
+            defaultBasemap: "ø_Default Basemap_å",
+            secondaryBasemap: "ø_Secondary Basemap_å",
             detailsTabTitleText: "Formularoplysninger",
             detailTitleLabelText: "Titel",
             detailLogoLabelText: "Logobillede",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Du kan konfigurere GeoForm til Vis/Skjul lag",
             labelHelpMessage: "ø_Label_å",
             placeHolderHintMessage: "ø_Hint Text_å",
-            placeHolderHelpMessage:"ø_Help Text_å"
+            placeHolderHelpMessage: "ø_Help Text_å",
+            selectTextOptionValue: "ø_Filter Select_å",
+            disableLogo: "ø_Disable Logo_å",
+            disableLogoDescription: "ø_You can configure the GeoForm to Show/Hide Logo in the form header_å",
+            locateOnLoadText: "ø_Locate On Load_å",
+            locateOnLoadDescription: "ø_You can configure the GeoForm to locate the current location on form load_å"
         }
     })
 );

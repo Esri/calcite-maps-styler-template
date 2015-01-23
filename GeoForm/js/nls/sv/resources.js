@@ -48,9 +48,10 @@
             utm_northing: "Nordlig",
             utm_easting: "Östlig",
             utm_zone_number: "Zonnummer",
-            geoFormGeneralTabText: "1. Ange information",
-            locationInformationText: "2. Välj plats",
-            submitInformationText: "3. Fyll i formulär",
+            selectLayerTabText: "Å_${formSection} Choose Form_ö",
+            geoFormGeneralTabText: "Å_${formSection} Enter Information_ö",
+            locationInformationText: "Å_${formSection} Select Location_ö",
+            submitInformationText: "Å_${formSection} Complete Form_ö",
             submitInstructions: "Lägg till den här informationen i kartan.",
             myLocationText: "Aktuell plats",
             locationDescriptionForMoreThanOneOption: "Ange en plats för det här bidraget genom att klicka/peka på kartan eller använda något av följande alternativ.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Tips:${closeStrong} minsta datum ${minValue} och största datum ${maxValue}",
             remainingCharactersHintMessage: "${value} tecken återstår",
             mapFullScreen: "Å_Full Screen_ö",
-            mapRestore:"Å_Restore_ö"
+            mapRestore: "Å_Restore_ö",
+            filterSelectEmptyText: "Å_Select_ö",
+            invalidLayerMessage: "Å_Form layer does not exist. Please configure the application and set the layer_ö."
         },
         builder: {
             invalidUser: "Du har tyvärr inte behörighet att visa det här objektet",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Välj redigerbart lager",
             selectLayerLabelText: "Lager",
             selectLayerDefaultOptionText: "Välj lager",
+            defaultBasemap: "Å_Default Basemap_ö",
+            secondaryBasemap: "Å_Secondary Basemap_ö",
             detailsTabTitleText: "Formulärinformation",
             detailTitleLabelText: "Titel",
             detailLogoLabelText: "Logobild",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Du kan konfigurera ditt GeoForm att visa/dölja lager",
             labelHelpMessage: "Å_Label_ö",
             placeHolderHintMessage: "Å_Hint Text_ö",
-            placeHolderHelpMessage:"Å_Help Text_ö"
+            placeHolderHelpMessage: "Å_Help Text_ö",
+            selectTextOptionValue: "Å_Filter Select_ö",
+            disableLogo: "Å_Disable Logo_ö",
+            disableLogoDescription: "Å_You can configure the GeoForm to Show/Hide Logo in the form header_ö",
+            locateOnLoadText: "Å_Locate On Load_ö",
+            locateOnLoadDescription: "Å_You can configure the GeoForm to locate the current location on form load_ö"
         }
     })
 );

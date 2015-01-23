@@ -48,9 +48,10 @@
             utm_northing: "Spre nord",
             utm_easting: "Spre est",
             utm_zone_number: "Număr zonă",
-            geoFormGeneralTabText: "1. Introduceţi informaţii",
-            locationInformationText: "2. Selectaţi o locaţie",
-            submitInformationText: "3. Completaţi un formular",
+            selectLayerTabText: "Ă_${formSection} Choose Form_ș",
+            geoFormGeneralTabText: "Ă_${formSection} Enter Information_ș",
+            locationInformationText: "Ă_${formSection} Select Location_ș",
+            submitInformationText: "Ă_${formSection} Complete Form_ș",
             submitInstructions: "Adăugaţi aceste informaţii în hartă.",
             myLocationText: "Locaţie curentă",
             locationDescriptionForMoreThanOneOption: "Specificaţi locaţia acestei intrări făcând clic pe / atingând harta sau utilizând una din următoarele opţiuni.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Sugestie:${closeStrong} Data minimă ${minValue} şi Data maximă ${maxValue}",
             remainingCharactersHintMessage: "${value} caractere rămase",
             mapFullScreen: "Ă_Full Screen_ș",
-            mapRestore:"Ă_Restore_ș"
+            mapRestore: "Ă_Restore_ș",
+            filterSelectEmptyText: "Ă_Select_ș",
+            invalidLayerMessage: "Ă_Form layer does not exist. Please configure the application and set the layer_ș."
         },
         builder: {
             invalidUser: "Ne pare rău, nu aveţi permisiunea de a vizualiza acest element",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Selectare strat tematic editabil",
             selectLayerLabelText: "Strat tematic",
             selectLayerDefaultOptionText: "Selectare strat tematic",
+            defaultBasemap: "Ă_Default Basemap_ș",
+            secondaryBasemap: "Ă_Secondary Basemap_ș",
             detailsTabTitleText: "Detalii formular",
             detailTitleLabelText: "Titlu",
             detailLogoLabelText: "Imagine siglă",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Puteţi configura GeoForm pentru a afişa/ascunde stratul tematic",
             labelHelpMessage: "Ă_Label_ș",
             placeHolderHintMessage: "Ă_Hint Text_ș",
-            placeHolderHelpMessage:"Ă_Help Text_ș"
+            placeHolderHelpMessage: "Ă_Help Text_ș",
+            selectTextOptionValue: "Ă_Filter Select_ș",
+            disableLogo: "Ă_Disable Logo_ș",
+            disableLogoDescription: "Ă_You can configure the GeoForm to Show/Hide Logo in the form header_ș",
+            locateOnLoadText: "Ă_Locate On Load_ș",
+            locateOnLoadDescription: "Ă_You can configure the GeoForm to locate the current location on form load_ș"
         }
     })
 );

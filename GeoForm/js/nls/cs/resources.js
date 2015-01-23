@@ -48,9 +48,10 @@
             utm_northing: "Odsazení v severním směru",
             utm_easting: "Odsazení ve východním směru",
             utm_zone_number: "Číslo zóny",
-            geoFormGeneralTabText: "1. Zadejte informace",
-            locationInformationText: "2. Vyberte umístění",
-            submitInformationText: "3. Vyplňte formulář",
+            selectLayerTabText: "Ř_${formSection} Choose Form_ů",
+            geoFormGeneralTabText: "Ř_${formSection} Enter Information_ů",
+            locationInformationText: "Ř_${formSection} Select Location_ů",
+            submitInformationText: "Ř_${formSection} Complete Form_ů",
             submitInstructions: "Přidejte tyto informace do mapy.",
             myLocationText: "Současná poloha",
             locationDescriptionForMoreThanOneOption: "Zadejte polohu pro tento záznam kliknutím/klepnutím na mapu, nebo pomocí jedné z následujících možností.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Tip:${closeStrong} Minimální datum ${minValue} a Maximální datum ${maxValue}",
             remainingCharactersHintMessage: "Počet zbývajících znaků: ${value}",
             mapFullScreen: "Ř_Full Screen_ů",
-            mapRestore:"Ř_Restore_ů"
+            mapRestore: "Ř_Restore_ů",
+            filterSelectEmptyText: "Ř_Select_ů",
+            invalidLayerMessage: "Ř_Form layer does not exist. Please configure the application and set the layer_ů."
         },
         builder: {
             invalidUser: "Je nám líto, ale nemáte oprávnění prohlížet tuto položku.",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Vybrat editovatelnou vrstvu",
             selectLayerLabelText: "Vrstva",
             selectLayerDefaultOptionText: "Vybrat vrstvu",
+            defaultBasemap: "Ř_Default Basemap_ů",
+            secondaryBasemap: "Ř_Secondary Basemap_ů",
             detailsTabTitleText: "Podrobnosti formuláře",
             detailTitleLabelText: "Nadpis",
             detailLogoLabelText: "Obrázek loga",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Můžete nastavit, zda má formulář GeoForm zobrazit nebo skrýt vrstvu.",
             labelHelpMessage: "Ř_Label_ů",
             placeHolderHintMessage: "Ř_Hint Text_ů",
-            placeHolderHelpMessage:"Ř_Help Text_ů"
+            placeHolderHelpMessage: "Ř_Help Text_ů",
+            selectTextOptionValue: "Ř_Filter Select_ů",
+            disableLogo: "Ř_Disable Logo_ů",
+            disableLogoDescription: "Ř_You can configure the GeoForm to Show/Hide Logo in the form header_ů",
+            locateOnLoadText: "Ř_Locate On Load_ů",
+            locateOnLoadDescription: "Ř_You can configure the GeoForm to locate the current location on form load_ů"
         }
     })
 );

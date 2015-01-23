@@ -48,9 +48,10 @@
             utm_northing: "Hướng bắc",
             utm_easting: "Hướng đông",
             utm_zone_number: "Số khu vực",
-            geoFormGeneralTabText: "1. Nhập Thông tin",
-            locationInformationText: "2. Chọn Vị trí",
-            submitInformationText: "3. Hoàn thành Biểu mẫu",
+            selectLayerTabText: "Đ_${formSection} Choose Form_ớ",
+            geoFormGeneralTabText: "Đ_${formSection} Enter Information_ớ",
+            locationInformationText: "Đ_${formSection} Select Location_ớ",
+            submitInformationText: "Đ_${formSection} Complete Form_ớ",
             submitInstructions: "Thêm thông tin này vào bản đồ.",
             myLocationText: "Vị trí hiện tại",
             locationDescriptionForMoreThanOneOption: "Chỉ định vị trí cho mục nhập này bằng cách bấm/chạm vào bản đồ hoặc bằng cách sử dụng một trong các tùy chọn sau.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}Gợi ý:${closeStrong} Ngày tối thiểu ${minValue} và Ngày tối đa ${maxValue}",
             remainingCharactersHintMessage: "Còn ${value} ký tự",
             mapFullScreen: "Đ_Full Screen_ớ",
-            mapRestore:"Đ_Restore_ớ"
+            mapRestore: "Đ_Restore_ớ",
+            filterSelectEmptyText: "Đ_Select_ớ",
+            invalidLayerMessage: "Đ_Form layer does not exist. Please configure the application and set the layer_ớ."
         },
         builder: {
             invalidUser: "Rất tiếc, bạn không có quyền xem mục này",
@@ -136,6 +139,8 @@
             layerTabTitleText: "Chọn Lớp có thể chỉnh sửa được",
             selectLayerLabelText: "Lớp",
             selectLayerDefaultOptionText: "Chọn Lớp",
+            defaultBasemap: "Đ_Default Basemap_ớ",
+            secondaryBasemap: "Đ_Secondary Basemap_ớ",
             detailsTabTitleText: "Chi tiết Biểu mẫu",
             detailTitleLabelText: "Tiêu đề",
             detailLogoLabelText: "Hình ảnh Logo",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "Bạn có thể cấu hình GeoForm để Hiện/Ẩn Lớp",
             labelHelpMessage: "Đ_Label_ớ",
             placeHolderHintMessage: "Đ_Hint Text_ớ",
-            placeHolderHelpMessage:"Đ_Help Text_ớ"
+            placeHolderHelpMessage: "Đ_Help Text_ớ",
+            selectTextOptionValue: "Đ_Filter Select_ớ",
+            disableLogo: "Đ_Disable Logo_ớ",
+            disableLogoDescription: "Đ_You can configure the GeoForm to Show/Hide Logo in the form header_ớ",
+            locateOnLoadText: "Đ_Locate On Load_ớ",
+            locateOnLoadDescription: "Đ_You can configure the GeoForm to locate the current location on form load_ớ"
         }
     })
 );

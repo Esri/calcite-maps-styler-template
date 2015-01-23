@@ -48,9 +48,10 @@
             utm_northing: "노씽(Northing)",
             utm_easting: "이스팅(Easting)",
             utm_zone_number: "영역(Zone) 번호",
-            geoFormGeneralTabText: "1. 정보 입력",
-            locationInformationText: "2. 위치 선택",
-            submitInformationText: "3. 양식 완료",
+            selectLayerTabText: "한_${formSection} Choose Form_빠",
+            geoFormGeneralTabText: "한_${formSection} Enter Information_빠",
+            locationInformationText: "한_${formSection} Select Location_빠",
+            submitInformationText: "한_${formSection} Complete Form_빠",
             submitInstructions: "이 정보를 맵에 추가합니다.",
             myLocationText: "현재 위치",
             locationDescriptionForMoreThanOneOption: "맵을 클릭/탭하거나 다음 옵션 중 하나를 사용하여 이 항목의 위치를 지정하세요.",
@@ -107,7 +108,9 @@
             dateRangeHintMessage: "${openStrong}힌트:${closeStrong} 최소 날짜 ${minValue} 및 최대 날짜 ${maxValue}",
             remainingCharactersHintMessage: "${value} 문자가 남음",
             mapFullScreen: "한_Full Screen_빠",
-            mapRestore:"한_Restore_빠"
+            mapRestore: "한_Restore_빠",
+            filterSelectEmptyText: "한_Select_빠",
+            invalidLayerMessage: "한_Form layer does not exist. Please configure the application and set the layer_빠."
         },
         builder: {
             invalidUser: "죄송합니다. 이 항목을 볼 수 있는 권한이 없습니다.",
@@ -136,6 +139,8 @@
             layerTabTitleText: "편집 가능한 레이어 선택",
             selectLayerLabelText: "레이어",
             selectLayerDefaultOptionText: "레이어 선택",
+            defaultBasemap: "한_Default Basemap_빠",
+            secondaryBasemap: "한_Secondary Basemap_빠",
             detailsTabTitleText: "양식 세부정보",
             detailTitleLabelText: "제목",
             detailLogoLabelText: "로고 이미지",
@@ -205,7 +210,12 @@
             showHideLayerHelpText: "레이어를 표시하거나 숨기도록 GeoForm을 구성할 수 있습니다.",
             labelHelpMessage: "한_Label_빠",
             placeHolderHintMessage: "한_Hint Text_빠",
-            placeHolderHelpMessage:"한_Help Text_빠"
+            placeHolderHelpMessage: "한_Help Text_빠",
+            selectTextOptionValue: "한_Filter Select_빠",
+            disableLogo: "한_Disable Logo_빠",
+            disableLogoDescription: "한_You can configure the GeoForm to Show/Hide Logo in the form header_빠",
+            locateOnLoadText: "한_Locate On Load_빠",
+            locateOnLoadDescription: "한_You can configure the GeoForm to locate the current location on form load_빠"
         }
     })
 );
