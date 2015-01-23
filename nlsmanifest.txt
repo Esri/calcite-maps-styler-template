@@ -1,6 +1,9 @@
 Viewer\js\nls
 ChromeTwitter\nls
 BasicViewer\nls
+ConstituentEngagement\js\nls
+ConstituentEngagementConsole\js\nls
+CrowdSourcePolling\js\nls
 archive\Edit\javascript\nls
 Editor\js\nls
 Elevations\js\nls
@@ -29,11 +32,11 @@ Compare\js\nls
 Embed\js\nls
 Locator\js\nls
 MapSeries\js\nls
-MapJournal\resources\tpl\builder\nls	
+MapJournal\resources\tpl\builder\nls
 MapJournal\resources\tpl\viewer\nls
 MapTour\resources\preview_page\nls
 BasicViewer\apl\ElevationsChart\nls
 MapSeries\resources\tpl\viewer\nls
 MapSeries\resources\common\nls
-MapSeries\resources\tpl\builder\nls	
+MapSeries\resources\tpl\builder\nls
 
