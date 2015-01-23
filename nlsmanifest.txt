@@ -1,7 +1,7 @@
 Viewer\js\nls
 ChromeTwitter\nls
 BasicViewer\nls
-archive\Edit\js\nls
+archive\Edit\javascript\nls
 Editor\js\nls
 Elevations\js\nls
 Elevations\js\ElevationsProfile\nls
