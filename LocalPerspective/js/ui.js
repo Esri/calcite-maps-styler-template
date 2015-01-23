@@ -241,18 +241,20 @@ define([
             num +=1;
             pages.push({id:num, label: this.config.weatherLabel, type:"weather", color: this._getPageColor(num), buffer:null, proximityFeatures: null, update:true});
             try {
-               if (this.config.weatherLayerURL_Tiled) {
-                  this.lyrWeather = new WebTiledLayer(this.config.weatherLayerURL_Tiled);
-                  this.lyrWeather.setOpacity(0.6);
-                  this.lyrWeather.setVisibility(false);
-                  this.map.addLayer(this.lyrWeather);
-               } else {
+               // change to use WMS service instead of AccuWeather
+               // if (this.config.weatherLayerURL_Tiled) {
+                  // this.lyrWeather = new WebTiledLayer(this.config.weatherLayerURL_Tiled);
+                  // this.lyrWeather.setOpacity(0.6);
+                  // this.lyrWeather.setVisibility(false);
+                  // this.map.addLayer(this.lyrWeather);
+               // } else {
                   if (this.config.weatherLayerURL_WMS) {
                      this.lyrWeather = new WMSLayer(this.config.weatherLayerURL_WMS, {opacity: 0.5, format: "png", visibleLayers: [0]});
                      this.lyrWeather.setVisibility(false);
+                     console.log(this.lyrWeather);
                      this.map.addLayer(this.lyrWeather);
                   }
-               }
+               //}
             } catch(err) {
                console.log("Unable to create weather layer: " + err);
             }

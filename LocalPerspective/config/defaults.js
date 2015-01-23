@@ -19,7 +19,7 @@ define({
     //Default configuration settings for the application. This is where you'll define things like a bing maps key,
     //default web map, default app color theme and more. These values can be overwritten by template configuration settings and url parameters.
     "appid": "",
-    "webmap": "9569a8b938c746359c1b4aa490476506", //"c6070d8c33474fada019803e4b7cf008", //"9569a8b938c746359c1b4aa490476506", //"4ab11e3ebab04de6b04c42bbc102d3c0",
+    "webmap": "9569a8b938c746359c1b4aa490476506", //"4ab11e3ebab04de6b04c42bbc102d3c0",
     "oauthappid": null, //"AFTKRmv16wj14N3z",
     //Group templates must support a group url parameter. This will contain the id of the group.
     //group: "",
@@ -42,7 +42,7 @@ define({
     
     // **************************** //
     // ** UI SPECIFIC PARAMETERS ** //
-    "cycleColors": 1,
+    "cycleColors": true,
     "color": "#80ab00",
     "colors": ["#0071ab", "#27a4d2", "#886197", "#8a2581", "#fc0055", "#c50143", "#db0111", "#ec5b02", "#efa602", "#dab900", "#80ab00", "#548901", "#049686", "#097096"],
     "logo" : "images/logo.png",
@@ -66,7 +66,7 @@ define({
     "weatherLabel": "Weather",
     "weatherURL": location.protocol + "//api.worldweatheronline.com/free/v1/weather.ashx?format=json&num_of_days=3&extra=localObsTime&key=63hkyhwzpks3a3kj9k9jdfeg", // URL to free weather API information with your access token
     "weatherLayerURL_Tiled" : "https://gisserver.accuweather.com/ESRITileServices2/tileRequest/AccuTileServices/LatestUSHiResRadar/N1dvRW9KUjNNK2tYWFp4Y1h6M2lCa2ZTRW5wMWJzeXdaamxIY3ZkRmcxVCs1YXdPaE1MckpBPT0=/MapServer/tile/{level}/{row}/{col}",
-    "weatherLayerURL_WMS": location.protocol + "//gis.srh.noaa.gov/ArcGIS/services/RIDGERadar/MapServer/WMSServer", // URL for WMS weather layer.
+    "weatherLayerURL_WMS" : location.protocol "//mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi?SERVICE=WMS", // URL for WMS weather layer.
     "weatherUnits": "F", // options: F or C
     "showDirections": false,
     "directionsLabel": "Directions",
