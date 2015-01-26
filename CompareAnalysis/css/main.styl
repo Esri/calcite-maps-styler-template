@@ -1,0 +1,457 @@
+@import "nib";
+$panel-width = 250px;
+$font-color = #575757;
+$background-fallback-color = #bcb5b5;
+$title-background-color = rgba(188,181,181,1);
+$font-size = 1.2em;
+html,body {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+body{
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+}
+#bc{
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+}
+.container{
+    background-color: #f2f2f2;
+}
+.claro .dijitContentPane {
+    padding: 0;
+
+}
+
+.panel_desc{
+    margin-top:3px;
+    padding:4px;
+}
+
+.panel_title{
+    display:none;
+    padding-top:2px;
+    font-weight: bold;
+    font-size: $font-size;
+}
+#headerContent{
+  max-height:50%;
+  overflow-y:scroll;
+}
+.header_info{
+    padding: 15px 2px 10px 6px;
+}
+#expandoPane{
+    background-color: #fff; 
+    width: $panel-width;
+    padding:0px;
+}
+#detailPanel{
+    background-color: inherit;
+    padding:4px;
+    border:none;
+}
+
+.esriRTL label {
+    /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
+}
+.esriSimpleSlider{
+  top:35px;
+  left:5px;
+}
+.mapInfo{
+  position: absolute;
+  right:2px;
+  top:2px;
+  font-size:1em !important;
+  cursor:pointer;
+  color:$font-color;
+}
+.article{
+}
+.mapInfoPanel{
+  position:absolute;
+  top:0;
+  right:0;
+  z-index:30;
+  height:100%;
+  width:40%;
+  overflow:scroll;
+  border-radius:0 0 4px 4px;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding-top:23px;
+}
+.esriLegendServiceLabel{
+  display:none;
+}
+.mapTitle{
+  padding: 2px 2px 2px 2px;
+  z-index:40;
+  margin:auto;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  text-align:center;
+  font-size:1.2em;
+  line-height:1.2em;
+  color:$font-color;
+  border: solid 1px darken($background-fallback-color,5%);
+  border-right:none;
+}
+.HomeButton {
+  border-bottom: 1px solid #57585a;
+  width: 30px;
+  height: 30px;
+}
+.HomeButton .home {
+  background: url("../images/home_locate.png") no-repeat 0 0;
+  width: 30px;
+  height: 30px;
+}
+.HomeButton .home:hover {
+  background-color: #eee;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  border-radius: 0;
+}
+.loading-indicator {
+    /* Loading status */
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: #fff;
+}
+.app-loading .loading-indicator,
+.app-error .loading-indicator {
+    /* Show this class when loading or error */
+    display: block;
+}
+.app-loading .loading-indicator {
+    /* Loading image */
+    background-position: center center;
+    background-image: url(../images/ajax-loader.gif);
+    background-repeat: no-repeat;
+}
+.app-error .loading-message {
+    /* Error status */
+    background-position: top center;
+    background-image: url(../images/error.png);
+    background-repeat: no-repeat;
+    padding-top: 60px;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 0;
+    text-align: center;
+}
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?-giz6jb');
+    src:url('../fonts/icomoon.eot?#iefix-giz6jb') format('embedded-opentype'),
+        url('../fonts/icomoon.woff?-giz6jb') format('woff'),
+        url('../fonts/icomoon.ttf?-giz6jb') format('truetype'),
+        url('../fonts/icomoon.svg?-giz6jb#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-size:1.5em;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-selected{
+  color: darken($font-color, 30) !important;
+}
+.icon-sync-container{
+  position:relative;
+  top:135px;
+  left:5px;
+  width:30px;
+  height:30px;
+  border: 1px solid #57585A;
+  background-color: #FFF;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.icon-sync{
+    text-align:center;
+    vertical-align:middle;
+    cursor:pointer;
+    z-index: 40;
+    color:lighten($font-color, 30);
+    text-shadow:0px 0px 10px #fff;
+    font-size:1em;
+    line-height:1.2em;
+}
+.icon-sync:hover{
+    border-radius:4px;
+    line-height:1.2em;
+    background-color: #eee;
+}
+.icon-sync:active{
+}
+.icon-info:before {
+    content: "\e600";
+}
+.icon-menu:before{
+    content: "\e602";
+}
+.icon-sync:before{
+    content:"\e601";
+}
+.icon-up:before {
+    content: "\e604";
+}
+.icon-down:before {
+    content: "\e603";
+}
+/*Expando Pane*/
+:focus{
+    outline:none;
+}
+
+.claro .dojoxExpandoClosed .dojoxExpandoTitleNode {
+    display: block;
+    padding-top:40px;
+    white-space: nowrap;
+    transform: rotate(90deg);
+    transform-origin: 50% 84%;
+    overflow:visible;
+    text-overflow:normal;
+} 
+
+.claro .dojoxExpandoIcon{
+  z-index:500;
+    cursor:pointer;
+    font-family: 'icomoon';
+    speak: none;
+    font-size:$font-size;
+    font-style: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    background-image: none;
+}
+.claro .dojoxExpandoIcon:hover{
+    cursor:pointer;
+    color:#A9A9A9;
+}
+.claro .dojoxExpandoIcon:before {
+    content: "\e602";
+}
+
+.dojoxExpandoPane {
+    overflow: hidden;
+    width: $panel-width;    
+    z-index: 440 !important;
+}
+
+.dojoxExpandoPane .dojoxExpandoWrapper {
+    width: $panel-width;
+    overflow: hidden;
+}
+
+.dojoxExpandoClosed .dojoxExpandoTitleNode {
+    display: none;
+}
+
+.dojoxExpandoClosed .dojoxExpandoWrapper * {
+    overflow: hidden !important;
+}
+
+
+.dojoxExpandoTitle{
+    cursor:pointer;
+    padding-top:none;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    padding-right: 6px;
+    padding-left: 2px;
+}
+
+.dojoxExpandoIcon .a11yNode {
+    display: none;
+    visibility: hidden;
+}
+
+.dojoxExpandoBottom .dojoxExpandoIcon, .dojoxExpandoTop .dojoxExpandoIcon, .dojoxExpandoLeft .dojoxExpandoIcon {
+    float: right;
+    margin-right: 2px;
+}
+
+.dojoxExpandoRight .dojoxExpandoIcon {
+    float: left;
+    margin-left: 2px;
+}
+
+.dojoxExpandoIcon {
+    width: 22px;
+    cursor: pointer;
+    height: 22px;
+}
+
+.dojoxExpandoClosed .dojoxExpandoIcon {
+    margin: 0 auto;
+}
+
+.dijitBorderContainer-dijitExpandoPane {
+    border: none !important;
+}
+
+.claro .dojoxExpandoTitle {
+    color:$font-color;
+    font-size:1.2em;
+    padding: 3px 2px 3px 2px;
+    line-height:1.2em;
+    font-weight: 600;
+}
+
+.claro .dojoxExpandoClosed .dojoxExpandoTitle {
+    background: none;
+    border: none;
+    padding: 3px;
+    height:100%;
+}
+.dojoxExpandoClosed .dojoxExpandoIcon {
+    /*margin-right: 4px;*/
+}
+
+.dojoxExpandoClosed .dojoxExpandoIconRight {
+    margin-left: 4px;
+}
+
+/*Grid css*/
+/* Responsive grid css from http://www.responsivegridsystem.com/calculator/ */
+.section {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+    display: block;
+    float:left;
+    margin: 0;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after {
+    content:"";
+    display:table;
+}
+.group:after {
+    clear:both;
+}
+
+.group {
+    zoom:1; /* For IE 6/7 */
+}
+                                               
+                    
+/*  GRID OF TWO  */
+.span_2_of_2 {
+    width: 100%;
+}
+.span_1_of_2 {
+    width:50%;
+}
+/*Grid of three*/
+.span_3_of_3 {
+    width: 100%;
+}
+.span_2_of_3 {
+    width: 66.66%;
+}
+.span_1_of_3 {
+    width: 33.33%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+    .col { 
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .span_2_of_2 {
+        width: 100%; 
+    }
+    .span_1_of_2 {
+        width: 100%;
+    }
+    .span_3_of_3 {
+        width: 100%; 
+    }
+    .span_2_of_3 {
+        width: 100%; 
+    }
+    .span_1_of_3 {
+        width: 100%;
+    }
+
+}
+@media only screen and (max-width:820px){
+    .esriAttribution{
+      display: none;
+
+    }
+}
+@media only screen and (max-width:820px){
+    .esriAttribution{
+      display: none;
+
+    }
+}
+.dojoxExpandoContent{
+  background-color:#fff;
+}
+.truncate{
+    padding-left:2px;
+    display:inline-block;
+    max-width:180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hidden {
+  display: none; }

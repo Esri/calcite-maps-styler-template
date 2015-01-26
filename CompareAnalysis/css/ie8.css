@@ -1,0 +1,32 @@
+.claro .dojoxExpandoClosed .dojoxExpandoTitleNode {
+    display:none;
+}
+
+.ac-container label {
+    cursor: pointer;
+}
+
+.ac-container input{
+    display:inline-block !important;
+    position:absolute;
+    right:1000px;
+}
+.checkInput input{
+    cursor:pointer;
+}
+
+.checkInput input:checked + label:after{
+    cursor:pointer;
+}
+.ac-container input[type="checkbox"][value="on"] ~ div.ac-medium {
+  height: 20%; }
+
+.ac-container input[type="checkbox"][value="on"] ~ div.ac-large {
+  height: 80%; }
+
+  }
+
+.ac-container input[type="checkbox"][value="on"] ~ div.ac-medium, .ac-container input[type="checkbox"][value="on"] ~ div.ac-large {
+    transition: height 0.5s ease-in-out;
+    transition: box-shadow 0.1s linear;
+}

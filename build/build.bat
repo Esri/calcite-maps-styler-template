@@ -10,6 +10,7 @@ mkdir %BUILD_OUTPUT%
 
 REM xcopy apparently cannot create directories automatically
 mkdir %BUILD_OUTPUT%\Compare
+mkdir %BUILD_OUTPUT%\CompareAnalysis
 mkdir %BUILD_OUTPUT%\Compare\Configure
 mkdir %BUILD_OUTPUT%\Compare\Multiviewer  
 mkdir %BUILD_OUTPUT%\Compare\Search
@@ -95,7 +96,8 @@ xcopy %TEMPLATES_ROOT%\archive\CompareSearch                    %BUILD_OUTPUT%\C
 xcopy %TEMPLATES_ROOT%\archive\CompareSideBySideViewer          %BUILD_OUTPUT%\Compare\SideBySideViewer_Configure   /E /Y
 xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingSidepanel     %BUILD_OUTPUT%\Compare\storytelling_sidepanel       /E /Y
 xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingTabbed        %BUILD_OUTPUT%\Compare\storytelling_tabbed          /E /Y
-xcopy %TEMPLATES_ROOT%\Compare                                  %BUILD_OUTPUT%\CompareMaps                          /E /Y
+xcopy %TEMPLATES_ROOT%\archive\Compare                          %BUILD_OUTPUT%\CompareMaps                          /E /Y
+xcopy %TEMPLATES_ROOT%\CompareAnalysis                          %BUILD_OUTPUT%\CompareAnalysis                      /E /Y
 xcopy %TEMPLATES_ROOT%\ConstituentEngagement                    %BUILD_OUTPUT%\ConstituentEngagement                /E /Y
 xcopy %TEMPLATES_ROOT%\ConstituentEngagementConsole             %BUILD_OUTPUT%\ConstituentEngagementConsole         /E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingCompare                      %BUILD_OUTPUT%\Compare\storytelling_compare         /E /Y
