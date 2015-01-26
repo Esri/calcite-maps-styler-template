@@ -28,7 +28,8 @@ MapAndAppGallery\nls
 PublicGallery\nls
 GeoForm\js\nls
 Solutions\js\nls
-Compare\js\nls
+archive\Compare\js\nls
+CompareAnalysis\js\nls
 Embed\js\nls
 Locator\js\nls
 MapSeries\js\nls
