@@ -1,7 +1,7 @@
 {  
    "configurationSettings":[  
       {  
-         "category":"<b>Configure template</b>",
+         "category":"<b>Map Settings</b>",
          "fields":[  
             {  
                "type":"webmap"
@@ -12,7 +12,11 @@
                "fieldName":"title",
                "type":"string",
                "tooltip":"Defaults to web map title"
-            },
+            }
+         ]
+      },{
+         "category": "Theme",
+         "fields":[
             {  
                "type":"color",
                "fieldName":"theme",
@@ -24,17 +28,17 @@
                "fieldName":"color",
                "tooltip":"Title bar text color",
                "label":"Title Color:"
-            },
-            {  
-               "type":"boolean",
-               "fieldName":"edittoolbar",
-               "label":"Display Edit Toolbar"
             }
          ]
       },
       {  
          "category":"Tools",
          "fields":[  
+            {
+               "type":"boolean",
+               "fieldName":"edittoolbar",
+               "label":"Display Edit Toolbar"
+            },
             {  
                "type":"paragraph",
                "value":"Select search layers and fields. These layers will appear in the search tool allowing application users to search for particular values in the specified layers and fields."
@@ -71,10 +75,18 @@
                "fieldName":"searchExtent",
                "label":"Prioritize search results in current extent."
             },
+            {
+               "type": "paragraph",
+               "value": "Enable the Locate Button to add a button to the map that allows users to identify thier current location. To track the users current location set Locate Button and Location Tracking to true."
+            },
             {  
                "type":"boolean",
                "fieldName":"locate",
                "label":"Locate Button"
+            },{
+               "type": "boolean",
+               "fieldName": "locatetrack",
+               "label": "Location Tracking"
             },
             {  
                "type":"boolean",
@@ -95,6 +107,7 @@
       "scale":true,
       "home":true,
       "locate":false,
+      "locatetrack": false,
       "search":true,
       "searchExtent":false
    }

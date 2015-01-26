@@ -105,7 +105,8 @@ declare,has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAt
                         id: "locateDiv"
                     }, "mapDiv");
                     var locationButton = new LocateButton({
-                        map: this.map
+                        map: this.map,
+                        useTracking: this.config.locatetrack
                     }, locateDiv);
                     locationButton.startup();
                 }));

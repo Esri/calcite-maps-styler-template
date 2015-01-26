@@ -39,6 +39,7 @@ define({
   "edittoolbar": false,
   "home": true,
   "locate": false,
+  "locatetrack": false,
   "search": true,
   //When searchExtent is true the locator will prioritize results within the current map extent.
   "searchExtent": false,
