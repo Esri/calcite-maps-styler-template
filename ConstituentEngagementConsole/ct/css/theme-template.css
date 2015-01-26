@@ -1,0 +1,27 @@
+﻿body
+{
+}
+
+.esriCTApplicationColor, .esriCTApplicationHeader
+{
+    color: ${SelectedThemeColor} !important;
+}
+
+.esriCTBGColor, .esriCTCustomButtonInner
+{
+    background-color: ${SelectedThemeColor} !important;
+}
+
+.esriCTBorder, .esriCTBorderLeft, .esriCTBorderTop, .esriCTBorderRight, .esriCTBorderBottom
+{
+    border-color: ${SelectedThemeColor};
+}
+
+/* esri API Overriden Styles */
+
+.esriSimpleSliderDecrementButton, .esriSimpleSliderIncrementButton
+{
+    background-color:${SelectedThemeColor}  !important;
+}
+
+/* esri API End of Overriden Styles */

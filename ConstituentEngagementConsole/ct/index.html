@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, height=device-height, user-scalable=no, target-densityDpi=device-dpi">-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- End Responsive -->
+    <title>Constituent Engagement</title>
+    <!-- Latest compiled and minified CSS -->
+    <!-- jquery-ui CSS -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+    <!-- Bootstrap core CSS -->
+    <link href="js/vendor/bootstrap-3.3.0-dist/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" type="text/css" href="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link href="js/vendor/bootstrap-datatable/datatables.bootstrap.css" rel="stylesheet"
+        type="text/css" />
+    <link href="js/vendor/bootstrap-datatable/jquery.datatables.css" rel="stylesheet"
+        type="text/css" />
+    <!--Dojo and Esri CSS-->
+    <link rel="stylesheet" href="//jsdev.arcgis.com/3.13/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="//jsdev.arcgis.com/3.13/esri/css/esri.css" />
+    <!-- Load any application specific styles -->
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="stylesheet" href="css/common.css" type="text/css" />
+    <link rel="stylesheet" href="css/media-queries.css" type="text/css" />
+    <!-- Add Legacy browsers css -->
+    <!--[if lt IE 9]>
+    <link rel="stylesheet"  type="text/css" href="css/legacy-browsers.css" />
+  <![endif]-->
+</head>
+<body class="claro app-loading">
+    <div class="loading-indicator" id="loadingIndicator">
+    </div>
+    <div id="headerContainer" class="esriCTHeaderContainer">
+    </div>
+    <div id="esriCTNoWebMapParentDiv" class="esriCTNoWebMapParentDiv esriCTHidden">
+        <div class="esriCTNoWebMapChildDiv" id="esriCTNoWebMapChildDiv">
+        </div>
+    </div>
+    <div class="esriCTMainContainer esriCTHidden" id="esriCTMainContainer">
+        <div class="esriCTLeftContainer esriCTBorderRight" id="LeftContainer">
+        </div>
+        <div class="esriCTRightContainer">
+            <div class="esriCTFullHeightWidth" id="rightParentContainer">
+                <div id="UpperContainer" class="esriCTUpperContainer esriCTBorderBottom">
+                </div>
+                <div id="LowerContainer" class="esriCTLowerContainer esriCTBorderBottom">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Load dojo configuration -->
+    <script src="js/dojo-configuration.js" type="text/javascript"></script>
+    <!-- Load Different API's(Vendor)-->
+    <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/vendor/moment-with-langs.min.js"></script>
+    <script src="js/vendor/bootstrap-3.3.0-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/vendor/bootstrap-datatable/jquery.datatables.min.js" type="text/javascript"></script>
+    <script src="js/vendor/bootstrap-datatable/datatables.bootstrap.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//jsdev.arcgis.com/3.13/"></script>
+    <script type='text/javascript'>
+        $(window).load(function () {
+            $.ui.plugin.add("resizable", "alsoResizeReverse", {
+
+                start: function () {
+                    var that = $(this).data("ui-resizable"),
+                        o = that.options,
+                        _store = function (exp) {
+                            $(exp).each(function () {
+                                var el = $(this);
+                                el.data("ui-resizable-alsoresize-reverse", {
+                                    width: parseInt(el.width(), 10),
+                                    height: parseInt(el.height(), 10),
+                                    left: parseInt(el.css("left"), 10),
+                                    top: parseInt(el.css("top"), 10)
+                                });
+                            });
+                        };
+
+                    if (typeof (o.alsoResizeReverse) === "object" && !o.alsoResizeReverse.parentNode) {
+                        if (o.alsoResizeReverse.length) {
+                            o.alsoResizeReverse = o.alsoResizeReverse[0];
+                            _store(o.alsoResizeReverse);
+                        } else {
+                            $.each(o.alsoResizeReverse, function (exp) {
+                                _store(exp);
+                            });
+                        }
+                    } else {
+                        _store(o.alsoResizeReverse);
+                    }
+                },
+
+                resize: function (event, ui) {
+                    var that = $(this).data("ui-resizable"),
+                        o = that.options,
+                        os = that.originalSize,
+                        op = that.originalPosition,
+                        delta = {
+                            height: (that.size.height - os.height) || 0,
+                            width: (that.size.width - os.width) || 0,
+                            top: (that.position.top - op.top) || 0,
+                            left: (that.position.left - op.left) || 0
+                        },
+
+                        _alsoResizeReverse = function (exp, c) {
+                            $(exp).each(function () {
+                                var el = $(this),
+                                    start = $(this).data("ui-resizable-alsoresize-reverse"),
+                                    style = {},
+                                    css = c && c.length ? c : el.parents(ui.originalElement[0]).length ? ["width", "height", "top", "left"] : ["width", "height", "top", "left"];
+
+                                $.each(css, function (i, prop) {
+                                    var sum = (start[prop] || 0) - (delta[prop] || 0);
+                                    if (sum && sum >= 0) {
+                                        style[prop] = sum || null;
+                                    }
+                                });
+
+                                el.css(style);
+                            });
+                        };
+
+                    if (typeof (o.alsoResizeReverse) === "object" && !o.alsoResizeReverse.nodeType) {
+                        $.each(o.alsoResizeReverse, function (exp, c) {
+                            _alsoResizeReverse(exp, c);
+                        });
+                    } else {
+                        _alsoResizeReverse(o.alsoResizeReverse);
+                    }
+                },
+
+                stop: function () {
+                    $(this).removeData("resizable-alsoresize-reverse");
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        require([
+            "application/template-options",
+            "application/template",
+            "application/main",
+            "config/defaults",
+            "dojo/_base/lang",
+            "dojo/on",
+            "esri/arcgis/Portal",
+            "esri/IdentityManager",
+            "widgets/app-header/app-header",
+            "dojo/dom-construct",
+            "dojo/dom"
+        ], function (
+            templateConfig,
+            Template,
+            Main,
+            Defaults,
+            lang,
+            on,
+            esriPortal,
+            IdentityManager,
+            ApplicationHeader,
+            domConstruct,
+            dom
+        ) {
+
+            this._appHeader = null;
+
+            /**
+            * This function is used to show message screen
+            * @param{object} error that is to be displayed
+            * @param{object} configuration settings
+            */
+            function _showMessageScreen(error, config) {
+                var message;
+                $(".esriSignInDialog").addClass("esriCTHidden");
+                $(".dijitDialogUnderlayWrapper").addClass("esriCTHideWrapper");
+                if (dojo.configData) {
+                    dojo.configData.logInDetails = null;
+                }
+                $(document.body).removeClass("app-loading");
+                domConstruct.empty("headerContainer");
+                // display message when any error occurs during sign-in
+                if (error) {
+                    $(dom.byId("headerContainer")).addClass('esriCTHidden');
+                    $(dom.byId("esriCTMainContainer")).addClass('esriCTHidden');
+                    $(dom.byId("esriCTNoWebMapParentDiv")).removeClass("esriCTHidden");
+                    message = error.message;
+                    // show error message when group is undefined
+                    if (message.toLowerCase() === "group undefined.") {
+                        message = dojo.BoilerPlateTemplate.config.i18n.main.noGroup;
+                    }
+                    dom.byId("esriCTNoWebMapChildDiv").innerHTML = message;
+                } else {
+                    // display please sign-in page
+                    $(dom.byId("headerContainer")).removeClass('esriCTHidden');
+                    dojo.configData = config;
+                    // instantiate application header widget
+                    this._appHeader = new ApplicationHeader({}, domConstruct.create("div", {}, dom.byId('headerContainer')));
+                }
+            }
+
+            /**
+            * This function is used to show sign-in page when user clicks on cancel button.
+            */
+            on(IdentityManager, "dialog-cancel", lang.hitch(this, function () {
+                var myTemplate = new Template(templateConfig);
+                dojo.BoilerPlateTemplate = myTemplate;
+                myTemplate.startup().then(function (config) {
+                    _showMessageScreen(null, config);
+                }, lang.hitch(this, function (error) {
+                    _showMessageScreen(error, null);
+                }));
+            }));
+
+            var templateObj;
+
+            // create the template. This will take care of all the logic required for template applications
+            templateObj = new Template(templateConfig);
+            dojo.BoilerPlateTemplate = templateObj;
+
+            // start template
+            templateObj.startup().then(function (config) {
+                /**
+                * This function is used to display identity manager on startup
+                */
+                this.portal = new esriPortal.Portal(config.sharinghost);
+                this.portal.on("load", lang.hitch(this, function () {
+                    $(dom.byId("loadingIndicator")).addClass('esriCTHideLoadingIndicatorImage');
+                    // when user successfully signs in, load instantiate template & main file
+                    this.portal.signIn().then(lang.hitch(this, function (loggedInUser) {
+                        var consoleApp;
+                        $(dom.byId("loadingIndicator")).removeClass("esriCTHideLoadingIndicatorImage");
+                        $(dom.byId("esriCTMainContainer")).removeClass("esriCTHidden");
+                        // create the template. This will take care of all the logic required for template applications
+                        // create my main application. Start placing your logic in the main.js file.
+                        consoleApp = new Main();
+                        // The config object contains the following properties: helper services, (optionally)
+                        // i18n, appid, webmap and any custom values defined by the application.
+                        // In this example we have one called theme.
+                        consoleApp.startup(config, loggedInUser);
+                    }), lang.hitch(this, function (error) {
+                        // show error message when sign-in operation is aborted
+                        if (!(error.message.toLowerCase() === "aborted")) {
+                            _showMessageScreen(error, null);
+                        }
+                    }));
+                }));
+            }, lang.hitch(this, function (error) {
+                $(dom.byId("loadingIndicator")).addClass('esriCTHideLoadingIndicatorImage');
+                $(dom.byId("esriCTMainContainer")).addClass('esriCTHidden');
+                _showMessageScreen(error, null);
+            }));
+        });
+    </script>
+</body>
+</html>
