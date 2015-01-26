@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, height=device-height, user-scalable=no, target-densityDpi=device-dpi">-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- End Responsive -->
+    <title>Constituent Engagement</title>
+    <!-- Latest compiled and minified CSS -->
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="js/vendor/bootstrap-3.3.0-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/vendor/touch-spinner/jquery.bootstrap-touchspin.min.css" />
+    <!--Dojo and Esri CSS-->
+    <link rel="stylesheet" href="//jsdev.arcgis.com/3.13/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="//jsdev.arcgis.com/3.13/esri/css/esri.css" />
+    <!-- Load any application specific styles -->
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="stylesheet" href="css/common.css" type="text/css" />
+    <link rel="stylesheet" href="css/mediaqueries.css" type="text/css" />
+    <!-- Add Legacy browsers css -->
+    <!--[if lt IE 9]>
+    <link rel="stylesheet"  type="text/css" href="css/legacy-browsers.css" />
+  <![endif]-->
+</head>
+<body class="claro app-loading">
+    <div class="loading-indicator">
+    </div>
+    <div id="headerContainer" class="esriCTHeaderContainer">
+    </div>
+    <div class="esriCTMainContainer" id="esriCTMainContainer">
+        <div id="esriCTNoWebMapParentDiv" class="esriCTNoWebMapParentDiv esriCTHidden">
+            <div class="esriCTNoWebMapChildDiv" id="esriCTNoWebMapChildDiv">
+            </div>
+        </div>
+        <div class="esriCTFullHeightWidth" id="layoutContainer">
+            <div id="LeftContainer" class="esriCTLeftContainer esriCTBorderRight">
+            </div>
+            <div id="CenterContainer" class="esriCTCenterContainer">
+                <!-- The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. -->
+                <div id="mapDiv" dir="ltr" data-dojo-props="region:'center'">
+                </div>
+            </div>
+            <div id="SlideContainermain" class="esriCTSlideContainer esriCTBorderLeft ">
+                <div id="SliderButton" class="esriCTHidden esriCTSlidderButton esriCTSlideInButton esriCTBottom esriCTLeft esriCTBGColor">
+                </div>
+                <div id="SlideContainer" class="esriCTIssueWallContainer esriCTFullHeight">
+                </div>
+            </div>
+        </div>
+        <div id="geoformContainerDiv" class="esriCTHidden esriCTGeoFormParentContainer">
+        </div>
+        <div id="mobilemenu" class="esriCTMobileMenuContainer esriCTHideMobileMenu">
+        </div>
+    </div>
+    <!-- Load dojo configuration -->
+    <script src="js/dojo-configuration.js" type="text/javascript"></script>
+    <!-- Load Different API's(Vendor)-->
+    <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="js/vendor/moment-with-langs.min.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap-3.3.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/vendor/touch-spinner/jquery.bootstrap-touchspin.min.js"></script>
+    <script type="text/javascript" src="//jsdev.arcgis.com/3.13"></script>
+    <!-- google plus -->
+    <meta name="google-signin-clientid" content="CLIENT_ID" />
+    <meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login" />
+    <meta name="google-signin-requestvisibleactions" content="http://schema.org/AddAction" />
+    <meta name="google-signin-cookiepolicy" content="single_host_origin" />
+    <script src="https://apis.google.com/js/client:platform.js?onload=render" async defer></script>
+    <!-- google plus -->
+    <script type="text/javascript">
+        require([
+            "application/template-options",
+            "application/template",
+            "widgets/sign-in/sign-in",
+            "application/utils/utils",
+            "dojo/_base/lang"
+        ], function (
+            TemplateConfig,
+            Template,
+            ApplicationSignIn,
+            ApplicationUtils,
+            lang
+        ) {
+            // create the template. This will take care of all the logic required for template applications
+            var myTemplate = new Template(TemplateConfig), myApp;
+            dojo.BoilerPlateTemplate = myTemplate;
+            // create application signin.
+            myApp = new ApplicationSignIn();
+            myTemplate.startup().then(function (config) {
+                // The config object contains the following properties: helper services, (optionally)
+                // i18n, appid, webmap and any custom values defined by the application.
+                // Load Application if valid group-id is configured, if not show error message.
+                if (lang.trim(config.group) !== "") {
+                    myApp.startup(config);
+                } else {
+                    ApplicationUtils.showErrorScreen(dojo.BoilerPlateTemplate.config.i18n.main.noGroup);
+                    ApplicationUtils.hideLoadingIndicator();
+                }
+            }, function (error) {
+                var message = error.message;
+                // handle error when group is not configured
+                if (message.toLowerCase() === "group undefined.") {
+                    message = dojo.BoilerPlateTemplate.config.i18n.main.noGroup;
+                }
+                ApplicationUtils.showErrorScreen(message);
+                ApplicationUtils.hideLoadingIndicator();
+            });
+        });
+    </script>
+</body>
+</html>
