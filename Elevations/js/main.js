@@ -116,7 +116,12 @@ define([
 
             // ===========================================================================================//
             // ELEVATIONS PROFILE PARAMETERS //
-            var profileParams = {
+            
+						if(this.config.elevationSync){
+								this.config.helperServices.elevationSync.url = this.config.elevationSync;
+						}
+
+						var profileParams = {
               map: this.map,
               profileTaskUrl: this.config.helperServices.elevationSync.url,
               scalebarUnits: this.config.scalebarUnits
