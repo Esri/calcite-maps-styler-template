@@ -20,7 +20,6 @@ define([
 ], function (ready, declare, connect, lang, on, dom, domClass, domConstruct, registry, ContentPane, arcgisUtils, Legend, Scalebar, Measurement, Units, IdentityManager, CreateGeocoder, ElevationsProfile) {
 
   return declare([], {
-
     config: {},
 
     startup: function (config) {
@@ -112,16 +111,14 @@ define([
                 }
              }
 
-
-
             // ===========================================================================================//
             // ELEVATIONS PROFILE PARAMETERS //
             
-						if(this.config.elevationSync){
-								this.config.helperServices.elevationSync.url = this.config.elevationSync;
-						}
+            if(this.config.elevationSync){
+                this.config.helperServices.elevationSync.url = this.config.elevationSync;
+            }
 
-						var profileParams = {
+            var profileParams = {
               map: this.map,
               profileTaskUrl: this.config.helperServices.elevationSync.url,
               scalebarUnits: this.config.scalebarUnits
@@ -151,7 +148,6 @@ define([
               alert("Unable to create map: " + error.message);
             }
           }));
-
     }
   });
 });
