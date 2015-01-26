@@ -306,7 +306,7 @@ html, body {
   cursor: pointer;
   display: none; }
 
-@media only screen and (min-width: 765px) {
+@media only screen and (min-width: 760px) {
   .esriSimpleSlider {
     display: block; } }
 
@@ -327,6 +327,11 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
   zoom: 1;
   color: #fff; }
+
+@media only screen and (min-width: 800px) {
+  .arcgisSearch .searchGroup .searchInput {
+    max-width: 190px;
+    display: block; } }
 
 .arcgisSearch .searchClear {
   background: none;

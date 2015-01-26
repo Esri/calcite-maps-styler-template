@@ -309,7 +309,7 @@ html, body {
     @include box-shadow (3px, 3px, 10px, rgba(0,0,0,0.3));
     cursor: pointer;
     display:none;
-    @include respond-to(765){
+    @include respond-to(760){
         display:block;
     }
 }
@@ -331,6 +331,10 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
   zoom: 1;
   color:#fff;
+      @include respond-to(800){
+        max-width:190px;
+        display:block;
+    }
 }
 .arcgisSearch .searchClear{
   background:none;
