@@ -859,6 +859,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     array.forEach(geocoders, lang.hitch(this, function(geocoder){                    
                         if(geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1){
                             geocoder.locator  = new Locator(geocoder.url);
+                            geocoder.name = geocoder.name || "Esri World Geocoder";
                             geocoder.singleLineFieldName = "SingleLine";
                             if(this.config.searchExtent){
                                 geocoder.searchExtent = this.map.extent;
