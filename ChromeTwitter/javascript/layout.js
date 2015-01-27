@@ -25,7 +25,7 @@ dojo.require("social.twitter");
 
    dojo.byId('twitterImage').title = configOptions.i18n.tools.tweets.share.twitter.title;
    dojo.byId('twitterImage').alt = configOptions.i18n.tools.tweets.share.twitter.label;
-
+   dojo.byId("ownerText").innerHTML = configOptions.i18n.viewer.main.ownerText;
    //Hook up key press events for search text box
    dojo.connect(dijit.byId("twittersearch"), "onKeyUp", function (e) {
      if (e.keyCode == 13) {
