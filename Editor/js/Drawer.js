@@ -1,4 +1,4 @@
-define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/lang", "dijit/_WidgetBase", "dojo/on", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/layout/BorderContainer", "dijit/layout/ContentPane",  "dojo/Deferred", "dojo/window"], function (
+define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/lang", "dijit/_WidgetBase", "dojo/on", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dojo/Deferred", "dojo/window"], function (
 Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderContainer, ContentPane, Deferred, win) {
     var Widget = declare("application.Drawer", [_WidgetBase, Evented], {
         options: {
@@ -169,13 +169,13 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
 
                 var editor = new ContentPane({
                     id: "editorStack",
-                    className:"fc",
+                    className: "fc",
                     title: "Editor",
                     content: "<div id='editorDiv'></div>"
                 });
                 this._contentPaneSide.addChild(editor);
 
-        
+
                 // start border container
                 this._borderContainer.startup();
                 // drawer button

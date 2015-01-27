@@ -97,6 +97,51 @@
                "type":"boolean",
                "fieldName":"scale",
                "label":"Scalebar"
+            },{
+               "type": "paragraph",
+               "value": "Enable the basemap toggle button. The button will use the web map's default basemap as the map main. Select an alternate basemap from the list to toggle."
+            },{
+               "type": "boolean",
+               "fieldName": "basemap",
+               "label": "Basemap Toggle"
+            },{
+               "type": "string",
+               "fieldName": "alt_basemap",
+               "tooltip": "Select the alternate basemap",
+               "label": "Alternate Basmap",
+               "options":[
+                  {
+                     "label": "Dark Gray",
+                     "value": "dark-gray"
+                  },{
+                     "label": "Light Gray",
+                     "value": "gray"
+                  },{
+                     "label": "Imagery with Labels",
+                     "value": "hybrid"
+                  },{
+                     "label": "National Geographic",
+                     "value": "national-geographic"
+                  },{
+                     "label": "Oceans",
+                     "value": "oceans"
+                  },{
+                     "label": "Open Street Map",
+                     "value": "osm"
+                  },{
+                     "label": "Imagery",
+                     "value": "satellite"
+                  },{
+                     "label": "Streets",
+                     "value": "streets"
+                  },{
+                     "label": "Terrain with Labels",
+                     "value": "terrain"
+                  },{
+                     "label": "Topographic",
+                     "value": "topo"
+                  }
+               ]
             }
          ]
       }
@@ -109,6 +154,8 @@
       "locate":false,
       "locatetrack": false,
       "search":true,
-      "searchExtent":false
+      "searchExtent":false,
+      "basemap": false,
+      "alt_basemap": "satellite"
    }
 }

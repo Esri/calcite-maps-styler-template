@@ -16,7 +16,7 @@
  | limitations under the License.
  */
 define(["dojo/_base/declare", "dojo/has", "dojo/_base/lang", "dojo/_base/Color", "dojo/_base/array", "dojo/on", "dijit/registry", "esri/arcgis/utils", "esri/lang", "dojo/dom", "dojo/dom-attr", "dojo/query", "dojo/dom-construct", "dojo/dom-class", "application/Drawer", "esri/layers/FeatureLayer", "esri/dijit/editing/Editor", "esri/dijit/AttributeInspector", "esri/dijit/editing/TemplatePicker", "esri/tasks/query", "esri/domUtils", "dojo/domReady!"], function (
-declare,has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAttr, query, domConstruct, domClass, Drawer, FeatureLayer, Editor, AttributeInspector, TemplatePicker, esriQuery, domUtils) {
+declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAttr, query, domConstruct, domClass, Drawer, FeatureLayer, Editor, AttributeInspector, TemplatePicker, esriQuery, domUtils) {
     return declare(null, {
         config: {},
         editor: null,
@@ -89,6 +89,9 @@ declare,has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAt
             }
             if (this.config.home) {
                 require(["esri/dijit/HomeButton"], lang.hitch(this, function (HomeButton) {
+                    if (!HomeButton) {
+                        return;
+                    }
                     var home = new HomeButton({
                         map: this.map
                     }, domConstruct.create("div", {}, query(".esriSimpleSliderIncrementButton")[0], "after"));
@@ -99,6 +102,9 @@ declare,has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAt
 
             //add the location button if enabled.
             if (this.config.locate) {
+                if (!LocateButton) {
+                    return;
+                }
                 require(["esri/dijit/LocateButton"], lang.hitch(this, function (LocateButton) {
                     //add the location button as a child of the map div. 
                     var locateDiv = domConstruct.create("div", {
@@ -112,10 +118,73 @@ declare,has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAt
                 }));
             }
 
+            //add the basemap toggle if enabled. 
+            if (this.config.basemap) {
+                require(["esri/dijit/BasemapToggle", "esri/basemaps"], lang.hitch(this, function (BasemapToggle, basemaps) {
+                    if (!BasemapToggle && basemaps) {
+                        return;
+                    }
+
+                    var toggle_container = domConstruct.create("div", {}, "mapDiv"); /*Remove at JSAPI 4.0*/
+                    var bmLayers = [],
+                        mapLayers = this.map.getLayersVisibleAtScale(this.map.getScale());
+                    if (mapLayers) {
+                        for (var i = 0; i < mapLayers.length; i++) {
+                            if (mapLayers[i]._basemapGalleryLayerType) {
+                                var bmLayer = this.map.getLayer(mapLayers[i].id);
+                                if (bmLayer) {
+                                    bmLayers.push(bmLayer);
+                                }
+                            }
+                        }
+                    }
+                    on.once(this.map, 'basemap-change', lang.hitch(this, function () {
+                        if (bmLayers && bmLayers.length) {
+                            for (var i = 0; i < bmLayers.length; i++) {
+                                bmLayers[i].setVisibility(false);
+                            }
+                        }
+                    })); /*End Remove*/
+
+                    var toggle = new BasemapToggle({
+                        map: this.map,
+                        basemap: this.config.alt_basemap || "satellite"
+                    }, toggle_container);
+                    console.log(basemaps);
+                    if (this.config.response && this.config.response.itemInfo && this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.baseMap) {
+                        var b = this.config.response.itemInfo.itemData.baseMap;
+                        if (b.title === "World Dark Gray Base") {
+                            b.title = "Dark Gray Canvas";
+                        }
+                        if (b.title) {
+                            for (var i in basemaps) {
+                                //use this to handle translated titles
+                                if (b.title === this._getBasemapName(i)) {
+                                    toggle.defaultBasemap = i;
+                                    //remove at 4.0
+                                    if (i === "dark-gray") {
+                                        if (this.map.layerIds && this.map.layerIds.length > 0) {
+                                            this.map.basemapLayerIds = this.map.layerIds.slice(0);
+                                            this.map._basemap = "dark-gray";
+                                        }
+                                    }
+                                    //end remove at 4.0
+                                    this.map.setBasemap(i);
+                                }
+                            }
+                        }
+                    }
+                    toggle.startup();
+                }));
+            }
+
             //Add the location search widget
             if (this.config.search) {
 
                 require(["esri/dijit/Search", "esri/tasks/locator", "esri/lang"], lang.hitch(this, function (Search, Locator, esriLang) {
+                    if (!Search && !Locator) {
+                        return;
+                    }
                     var options = {
                         map: this.map,
                         enableButtonMode: true,
@@ -136,13 +205,18 @@ declare,has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAt
                             if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
                                 geocoder.locator = new Locator(geocoder.url);
                                 geocoder.singleLineFieldName = "SingleLine";
+
+                                geocoder.name = geocoder.name || "Esri World Geocoder";
+
                                 if (this.config.searchExtent) {
                                     geocoder.searchExtent = this.map.extent;
                                 }
                                 defaultSources.push(geocoder);
                             } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
+
                                 //Add geocoders with a singleLineFieldName defined 
                                 geocoder.locator = new Locator(geocoder.url);
+
                                 defaultSources.push(geocoder);
                             }
                         }));
@@ -153,6 +227,7 @@ declare,has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAt
                         if (mapLayer) {
                             var source = {};
                             source.featureLayer = mapLayer;
+
                             if (layer.fields && layer.fields.length && layer.fields.length > 0) {
                                 source.searchFields = layer.fields;
                                 defaultSources.push(source);
@@ -162,20 +237,23 @@ declare,has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAt
                     //Add search layers defined on the web map item
                     if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
                         var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
-                        array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
 
+                        array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
+                            console.log("test")
                             var mapLayer = this.map.getLayer(searchLayer.id);
 
                             if (mapLayer && mapLayer.url) {
                                 var source = {};
                                 var url = mapLayer.url;
-                                var name = mapLayer._titleForLegend;
+
                                 if (esriLang.isDefined(searchLayer.subLayer)) {
                                     url = url + "/" + searchLayer.subLayer;
                                 }
 
+
                                 source.featureLayer = new FeatureLayer(url);
-                                source.name = name;
+                                source.name = mapLayer.name;
+
                                 source.exactMatch = searchLayer.field.exactMatch;
                                 source.searchField = [searchLayer.field.name];
                                 source.placeholder = searchOptions.hintText;
@@ -184,7 +262,6 @@ declare,has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAt
 
                         }));
                     }
-
                     search.set("sources", defaultSources);
 
                     search.startup();
@@ -297,7 +374,7 @@ declare,has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAt
 
             return editableLayers;
         },
-        _updateTheme: function(){
+        _updateTheme: function () {
             //Set the background color using the configured theme value
             query(".bg").style("backgroundColor", this.config.theme.toString());
             query(".esriPopup .pointer").style("backgroundColor", this.config.theme.toString());
@@ -332,6 +409,41 @@ declare,has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAt
             return outputColor;
         },
 
-
+        _getBasemapName: function (name) {
+            var current = null;
+            switch (name) {
+            case "dark-gray":
+                current = "Dark Gray Canvas";
+                break;
+            case "gray":
+                current = "Light Gray Canvas";
+                break;
+            case "hybrid":
+                current = "Imagery with Labels";
+                break;
+            case "national-geographic":
+                current = "National Geographic";
+                break;
+            case "oceans":
+                current = "Oceans";
+                break;
+            case "osm":
+                current = "OpenStreetMap";
+                break;
+            case "satellite":
+                current = "Imagery";
+                break;
+            case "streets":
+                current = "Streets";
+                break;
+            case "terrain":
+                current = "Terrain with Labels";
+                break;
+            case "topo":
+                current = "Topographic";
+                break;
+            }
+            return current;
+        },
     });
 });

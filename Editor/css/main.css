@@ -192,6 +192,12 @@ body {
 .esriSimpleSliderDecrementButton:hover {
   border-top: 1px solid #666;
 }
+.BasemapToggle {
+  position: absolute;
+  bottom: 60px;
+  left: 25px;
+  z-index: 35;
+}
 .HomeButton .home {
   background-image: url("../images/home.png");
   padding: 0;
