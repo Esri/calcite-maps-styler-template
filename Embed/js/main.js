@@ -383,20 +383,34 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                     ];
                 }
             }
+
+   
+
             var customPopup = new Popup({
                 titleInBody: true
             }, domConstruct.create("div"));
             domClass.add(document.body, this.config.theme);
             domClass.add(customPopup.domNode, this.config.theme);
 
-
-            arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: {
+            var options = {
                     slider: this.config.zoom,
                     sliderPosition: this.config.zoom_position,
                     infoWindow: customPopup,
                     logo: (this.config.logoimage === null) ? true : false
-                },
+            };
+            //specify center and zoom if provided as url params 
+            if(this.config.level){
+                options.zoom = this.config.level;
+            }
+            if(this.config.center){
+                var points = this.config.center.split(",");
+                if(points && points.length === 2){
+                    options.center = [parseFloat(points[0]), parseFloat(points[1])];
+                }
+        
+            }
+            arcgisUtils.createMap(itemInfo, "mapDiv", {
+                mapOptions: options,
                 usePopupManager: true,
                 editable: false,
                 bingMapsKey: this.config.bingKey
@@ -405,7 +419,6 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 this.config.response = response;
                 this._adjustPopupSize();
                 if (this.config.logoimage) {
-
                     query(".esriControlsBR").forEach(lang.hitch(this, function (node) {
                         var link = null;
                         if (this.config.logolink) {
@@ -421,8 +434,6 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                         }, link || node);
 
                     }));
-
-
                 }
 
                 //disable mouse zoom
@@ -437,15 +448,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                     this.map.infoWindow.set("popupWindow", false);
                     this._initializeSidepanel();
                 }
-
-                if (this.config.level && this.config.center) {
-                    this.map.centerAndZoom(new Point(this.config.center), this.config.level);
-                } else if (this.config.level) {
-                    this.map.setLevel(this.config.level);
-                } else if (this.config.center) {
-                    this.map.centerAt(new Point(this.config.center));
-                }
-
+                
                 require(["application/sniff!marker?esri/symbols/PictureMarkerSymbol", "application/sniff!marker?esri/graphic", "application/sniff!marker?esri/dijit/PopupTemplate"], lang.hitch(this, function (PictureMarkerSymbol, Graphic, PopupTemplate) {
                     if (!PictureMarkerSymbol && !Graphic && !PopupTemplate) {
                         return;
