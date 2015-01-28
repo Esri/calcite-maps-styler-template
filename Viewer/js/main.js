@@ -14,7 +14,7 @@
  | limitations under the License.
  */
 define(["dojo/ready", "dojo/json", "dojo/_base/array", "dojo/_base/Color", "dojo/_base/declare", "dojo/_base/lang", "dojo/dom", "dojo/dom-geometry", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/Deferred", "dojo/promise/all", "dojo/query", "dijit/registry", "dijit/Menu", "dijit/CheckedMenuItem", "application/toolbar", "application/has-config", "esri/arcgis/utils", "esri/lang", "esri/dijit/HomeButton", "esri/dijit/LocateButton", "esri/dijit/Legend", "esri/dijit/BasemapGallery", "esri/dijit/Measurement", "esri/dijit/OverviewMap", "esri/geometry/Extent", "esri/layers/FeatureLayer", "application/TableOfContents", "application/ShareDialog"], function (
-ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, domConstruct, domStyle, on, Deferred, all, query, registry, Menu, CheckedMenuItem, Toolbar, has, arcgisUtils,esriLang, HomeButton, LocateButton, Legend, BasemapGallery, Measurement, OverviewMap, Extent, FeatureLayer, TableOfContents, ShareDialog) {
+ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, domConstruct, domStyle, on, Deferred, all, query, registry, Menu, CheckedMenuItem, Toolbar, has, arcgisUtils, esriLang, HomeButton, LocateButton, Legend, BasemapGallery, Measurement, OverviewMap, Extent, FeatureLayer, TableOfContents, ShareDialog) {
 
 
     return declare(null, {
@@ -289,7 +289,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     }
 
                     var detailDiv = toolbar.createTool(tool, panelClass);
-                    detailDiv.innerHTML = description;
+                    detailDiv.innerHTML = "<div class='desc'>" + description + "</div>";
                 }
                 deferred.resolve(true);
             } else {
@@ -843,29 +843,27 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     domClass.add("panelTop", "no-search");
                     return;
                 }
-                
+
                 var options = {
                     map: this.map,
-                    addLayersFromMap:false
+                    addLayersFromMap: false
                 };
 
                 var search = new Search(options, domConstruct.create("div"));
 
-                var defaultSources = [];//search.get("sources");
-
+                var defaultSources = []; //search.get("sources");
                 //setup geocoders defined in common config 
-                if(this.config.helperServices.geocode){
+                if (this.config.helperServices.geocode) {
                     var geocoders = lang.clone(this.config.helperServices.geocode);
-                    array.forEach(geocoders, lang.hitch(this, function(geocoder){                    
-                        if(geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1){
-                            geocoder.locator  = new Locator(geocoder.url);
-                            geocoder.name = geocoder.name || "Esri World Geocoder";
+                    array.forEach(geocoders, lang.hitch(this, function (geocoder) {
+                        if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+                            geocoder.locator = new Locator(geocoder.url);
                             geocoder.singleLineFieldName = "SingleLine";
-                            if(this.config.searchExtent){
+                            if (this.config.searchExtent) {
                                 geocoder.searchExtent = this.map.extent;
                             }
                             defaultSources.push(geocoder);
-                        }else if(esriLang.isDefined(geocoder.singleLineFieldName)){
+                        } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
                             //Add geocoders with a singleLineFieldName defined 
                             geocoder.locator = new Locator(geocoder.url);
                             defaultSources.push(geocoder);
@@ -873,12 +871,12 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     }));
                 }
                 //add configured search layers to the search widget 
-                array.forEach(this.config.searchLayers, lang.hitch(this, function(layer){
+                array.forEach(this.config.searchLayers, lang.hitch(this, function (layer) {
                     var mapLayer = this.map.getLayer(layer.id);
-                    if(mapLayer){
+                    if (mapLayer) {
                         var source = {};
                         source.featureLayer = mapLayer;
-                        if(layer.fields && layer.fields.length && layer.fields.length > 0){
+                        if (layer.fields && layer.fields.length && layer.fields.length > 0) {
                             source.searchFields = layer.fields;
                             defaultSources.push(source);
                         }
@@ -886,34 +884,34 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 }));
                 //Add search layers defined on the web map item
                 if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
-                 var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
-                 array.forEach(searchOptions.layers, lang.hitch(this, function(searchLayer){
+                    var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
+                    array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
 
-                    var mapLayer = this.map.getLayer(searchLayer.id);
+                        var mapLayer = this.map.getLayer(searchLayer.id);
 
-                    if(mapLayer && mapLayer.url){
-                        var source = {};
-                        var url = mapLayer.url;
-                        var name = mapLayer._titleForLegend;
-                        if(esriLang.isDefined(searchLayer.subLayer)){
-                            url = url + "/" + searchLayer.subLayer;
+                        if (mapLayer && mapLayer.url) {
+                            var source = {};
+                            var url = mapLayer.url;
+                            var name = mapLayer._titleForLegend;
+                            if (esriLang.isDefined(searchLayer.subLayer)) {
+                                url = url + "/" + searchLayer.subLayer;
+                            }
+                            //TODO - talk to Matt about this. It is supposed to accept either
+                            //a layer or a layer url. But w/o the FeatureLayer part it doesn't work. 
+                            source.featureLayer = new FeatureLayer(url);
+                            source.name = name;
+                            source.exactMatch = searchLayer.field.exactMatch;
+                            source.searchField = [searchLayer.field.name];
+                            source.placeholder = searchOptions.hintText;
+                            defaultSources.push(source);
                         }
-                        //TODO - talk to Matt about this. It is supposed to accept either
-                        //a layer or a layer url. But w/o the FeatureLayer part it doesn't work. 
-                        source.featureLayer = new FeatureLayer(url);
-                        source.name = name;
-                        source.exactMatch = searchLayer.field.exactMatch;
-                        source.searchField = [searchLayer.field.name];
-                        source.placeholder = searchOptions.hintText;
-                        defaultSources.push(source);
-                    }
 
-                 }));  
+                    }));
                 }
 
                 search.set("sources", defaultSources);
 
-                search.startup();   
+                search.startup();
 
 
 
