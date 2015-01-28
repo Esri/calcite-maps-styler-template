@@ -17,6 +17,7 @@
 define({
   root: ({
     map: {
+      noEditLayers: "This web map does not contain any editable layers.",
       error: "Unable to create map"
     },
     tools: {

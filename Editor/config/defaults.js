@@ -29,6 +29,7 @@ define({
   "theme": "#f7f8f8",
   "color": "#4c4c4c",
   "title": null,
+  "drawerSize": null,
   "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
   //Defaults to arcgis.com. Set this value to your portal or organization host name.
   "sharinghost": location.protocol + "//" + "www.arcgis.com",

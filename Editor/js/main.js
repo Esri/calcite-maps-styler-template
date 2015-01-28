@@ -15,8 +15,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/_base/declare", "dojo/has", "dojo/_base/lang", "dojo/_base/Color", "dojo/_base/array", "dojo/on", "dijit/registry", "esri/arcgis/utils", "esri/lang", "dojo/dom", "dojo/dom-attr", "dojo/query", "dojo/dom-construct", "dojo/dom-class", "application/Drawer", "esri/layers/FeatureLayer", "esri/dijit/editing/Editor", "esri/dijit/AttributeInspector", "esri/dijit/editing/TemplatePicker", "esri/tasks/query", "esri/domUtils", "dojo/domReady!"], function (
-declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAttr, query, domConstruct, domClass, Drawer, FeatureLayer, Editor, AttributeInspector, TemplatePicker, esriQuery, domUtils) {
+define(["dojo/_base/declare", "dojo/has", "dojo/_base/lang", "dojo/_base/Color", "dojo/_base/array", "dojo/on", "dijit/registry", "esri/arcgis/utils", "esri/lang", "dojo/dom", "dojo/dom-attr","dojo/dom-style", "dojo/query", "dojo/dom-construct", "dojo/dom-class", "application/Drawer", "esri/layers/FeatureLayer", "esri/dijit/editing/Editor", "esri/dijit/AttributeInspector", "esri/dijit/editing/TemplatePicker", "esri/tasks/query", "esri/domUtils", "dojo/domReady!"], function (
+declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAttr, domStyle, query, domConstruct, domClass, Drawer, FeatureLayer, Editor, AttributeInspector, TemplatePicker, esriQuery, domUtils) {
     return declare(null, {
         config: {},
         editor: null,
@@ -33,7 +33,6 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
 
                 // responsive drawer
                 this._drawer = new Drawer({
-                    showDrawerSize: 850,
                     // Pixel size when the drawer is automatically opened
                     borderContainer: "border_container",
                     // border container node id
@@ -46,6 +45,7 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                     config: this.config,
                     direction: this.config.i18n.direction // i18n direction "ltr" or "rtl"
                 });
+    
                 // startup drawer
                 this._drawer.startup();
 
@@ -323,8 +323,13 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
 
 
                         this.editor.startup();
+                        console.log(this.editor);
+                        this._drawer.resize();
 
                     }
+                }else{
+                    //add note that map doesn't contain editable layers 
+                    registry.byId("cp_left").set("content", "<div style='padding:5px;'>" + this.config.i18n.map.noEditLayers + "</div>");
                 }
 
 

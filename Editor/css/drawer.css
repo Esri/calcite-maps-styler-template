@@ -62,7 +62,7 @@
 }
 .content-pane-left {
   width: 0px;
-  max-width: 320px;
+  max-width: 230px;
   height: 100%;
   padding: 0;
   margin: 0;
@@ -76,10 +76,10 @@
   transition: width 250ms ease;
 }
 .app-loading .content-pane-left {
-  width: 320px;
+  width: 230px;
 }
 .drawer-open .content-pane-left {
-  width: 320px;
+  width: 230px;
   overflow: auto;
   overflow-x: hidden;
   border-right: 1px solid #ddd;
@@ -98,7 +98,7 @@
   z-index: 450;
   top: 0;
   left: 0;
-  width: 320px;
+  width: 230px;
   height: 100%;
   content: '';
   display: block;
