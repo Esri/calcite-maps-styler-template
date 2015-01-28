@@ -7,6 +7,11 @@
         font-size: 15px;
     }
 
+    .esriCTRightContainer
+    {
+        height: 100%;
+    }
+
     .esriCTApplicationHeader
     {
         height: 60px;
@@ -45,7 +50,7 @@
 
     .esriCTMainContainer
     {
-        height: calc(100% - 50px);
+        height: calc(100% - 58px);
     }
 
     .esriCTMenuTabLeft
@@ -78,6 +83,7 @@
     {
         top: 59px;
     }
+
     .esriCTLoginUserNameDiv
     {
         margin-top: 23px;
@@ -95,15 +101,17 @@
 
     .esriCTOptionsSearchMode
     {
-        right: 142px;
+        right: 110px;
     }
 
-    .esriCTMenuTabLeft{
+    .esriCTMenuTabLeft
+    {
         width: calc(100% - 60px);
     }
 
-    .esriCTHomeIcon{
-        width:60px;
+    .esriCTHomeIcon
+    {
+        width: 60px;
     }
 
     /* End of application header styles */
@@ -136,6 +144,11 @@
     .esriCTLocationButton
     {
         background-image: url('../images/location-2x.png') !important;
+    }
+
+    .esriCTClearBtn
+    {
+        background-image: url('../images/clear-text-2x.png') !impotant;
     }
 }
 

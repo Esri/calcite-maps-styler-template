@@ -17,8 +17,8 @@
 */
 //============================================================================================================================//
 /**
- * initialize default dojo configuration attributes by creating a dojoConfig object
- */
+* initialize default dojo configuration attributes by creating a dojoConfig object
+*/
 var root = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
 dojoConfig = {
     parseOnLoad: true,

@@ -63,6 +63,9 @@ define({
         },
         config: {
             configNotDefined: "Config is not defined"
+        },
+        searchPanel: {
+            noResultsFound: "No results found"
         }
     }),
     "ar": 1,

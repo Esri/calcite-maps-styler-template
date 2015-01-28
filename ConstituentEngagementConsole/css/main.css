@@ -30,10 +30,12 @@ html, body
 }
 
 /* esri API Overridden Styles */
+
 th
 {
     font-weight: normal !important;
 }
+
 .esriSimpleSliderTL
 {
     top: 10px;
@@ -70,6 +72,11 @@ th
     background-color: transparent !important;
     color: #fff !important;
     border: #fff solid 0 !important;
+}
+
+::-ms-clear
+{
+    display: none;
 }
 
 /* esri API End of Overridden Styles */
@@ -113,7 +120,7 @@ th
     float: left;
     width: 70%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .esriCTUpperContainer
@@ -123,12 +130,18 @@ th
     overflow: hidden;
 }
 
+.esriCTDataViewerContainer
+{
+    height: 100%;
+}
+
 .esriCTLowerContainer
 {
     width: 100%;
     height: 60%;
     overflow: auto;
 }
+
 .esriCTHeaderContainer
 {
     height: 48px;
@@ -227,6 +240,7 @@ th
 {
     border-top: 1px solid #dfdfdf;
 }
+
 .esriCTRightArrow
 {
     height: 24px;
@@ -316,7 +330,7 @@ th
     line-height: 18px;
     overflow: hidden;
     position: relative;
-    max-height: 36px;
+    max-height: 38.3px;
     max-width: 100%;
     word-break: break-word;
 }
@@ -345,6 +359,11 @@ th
     border-bottom: 1px solid #dfdfdf;
 }
 
+.esriCTSelectedItem
+{
+    font-weight: bold;
+}
+
 /* End of Web Map List */
 
 /* Data viewer */
@@ -365,17 +384,17 @@ th
 {
     width: 100%;
     cellspacing: 0;
-    padding-left: 5px;
 }
 
 .esriCTDataViewerParentDiv, .dataTables_wrapper, .dataTables_wrapper .dataTables_scroll
 {
-    height: 99.6%;
+    height: 100%;
 }
 
 .dataTables_scroll div.dataTables_scrollBody
 {
-    height: calc(100% - 40px) !important;
+    height: calc(100% - 36px) !important;
+    cursor: default !important;
 }
 
 .sorting_1
@@ -399,7 +418,29 @@ th
 
 .esriCTNoFeature
 {
-    padding: 10px;
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
+table.dataTable thead > tr > th
+{
+    border-right: 1px solid #dddddd;
+}
+
+table.dataTable
+{
+    margin-top: 0px !important;
+}
+
+table.dataTable tbody > tr > td
+{
+    padding-left: 5px;
+}
+
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td
+{
+    border-right: 1px solid #dddddd;
+    border-top: 1px solid #cccccc;
 }
 
 table.dataTable th, table.dataTable td
@@ -435,11 +476,6 @@ table.dataTable thead .sorting_asc_disabled
 table.dataTable thead .sorting_desc_disabled
 {
     background: url("../images/sort_desc_disabled.png") no-repeat center right !important;
-}
-
-.esriCTNumberAlign
-{
-    text-align: right;
 }
 
 .esriCTHiddenColumn
@@ -493,7 +529,8 @@ table.dataTable thead .sorting_desc_disabled
 
 .esriCTDateTimePicker
 {
-    width: 200px !important;
+    min-width: 200px !important;
+    width: 100%;
 }
 
 .esriCTDataHeight
@@ -509,7 +546,8 @@ table.dataTable tbody tr
 .esriCTCodedDomain
 {
     height: 34px;
-    width: 200px;
+    min-width: 200px;
+    width: 100%;
 }
 
 table.dataTable tbody td
@@ -538,9 +576,16 @@ table.dataTable tbody td
     padding-bottom: 5px;
     border-bottom: 1px solid #dfdfdf;
 }
+
+.ui-resizable-s
+{
+    cursor: row-resize;
+}
+
 /* End of data viewer */
 
 /* Application Header Styles */
+
 .esriCTHeaderIcons
 {
     background-repeat: no-repeat;
@@ -551,6 +596,7 @@ table.dataTable tbody td
     margin: 12px 24px;
     display: inline-block;
 }
+
 .esriCTViews:hover
 {
     background: #EDEDED;
@@ -559,6 +605,12 @@ table.dataTable tbody td
 .esriCTSearch
 {
     background-image: url('../images/search.png');
+}
+
+.esriCTSearchDisable
+{
+    background-image: url('../images/search-disable.png');
+    cursor: default !important;
 }
 
 .esriCTViewMode
@@ -594,7 +646,8 @@ table.dataTable tbody td
 .esriCTOptionsSearchMode
 {
     padding: 9px 5px 5px 6px;
-    right: 60px;
+    right: 25px;
+    cursor: default;
 }
 
 .esriCTOptionsViewMode
@@ -614,7 +667,6 @@ table.dataTable tbody td
     float: left;
     height: 50px;
     border-bottom: 1px solid;
-    background: #d15706;
     color: #fff !important;
 }
 
@@ -743,19 +795,41 @@ table.dataTable tbody td
     height: 24px;
     width: 200px;
     border-radius: 0px;
-    border: 1px solid grey;
+    border: 1px solid #ddd;
     color: #555;
+}
+
+.esriCTClearBtn
+{
+    background: url('../images/clear-text-24.png') no-repeat center;
+    height: 22px;
+    width: 22px;
+    background-size: 22px;
+    cursor: pointer;
+    position: inherit;
+    background-color: #fff;
+}
+
+.esriCTClearDiv
+{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-top: 1px solid #DFDFDF;
+    border-right: 1px solid #DFDFDF;
+    border-bottom: 1px solid #DFDFDF;
+    cursor: pointer;
+    float: left;
 }
 
 .esriCTSearchButton
 {
-    background-image: url('../images/data-search.png');
+    background-image: url('../images/data-search-24.png');
     background-repeat: no-repeat;
     height: 24px;
     width: 24px;
     margin-right: 2px;
     display: inline-block;
     background-size: 24px;
+    margin-left: 2px;
 }
 
 .esriCTSignInButton
@@ -763,6 +837,11 @@ table.dataTable tbody td
     background-image: url(../images/sign-in.png);
     height: 24px;
     width: 24px;
+}
+
+.esriCTNoResults
+{
+    color: #555;
 }
 
 /* End of application header styles */

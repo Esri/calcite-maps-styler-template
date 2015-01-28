@@ -61,5 +61,8 @@ define(({
     },
     config: {
         configNotDefined: "@fr@ Config is not defined"
+    },
+    searchPanel: {
+        noResultsFound: "@fr@ No results found"
     }
 }));

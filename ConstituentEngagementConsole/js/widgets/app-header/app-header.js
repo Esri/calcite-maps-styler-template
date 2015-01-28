@@ -1,4 +1,4 @@
-﻿/*global define,dojo,dojoConfig,alert */
+﻿/*global define,dojo,dojoConfig,alert,$ */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,indent:4 */
 /*
 | Copyright 2014 Esri
@@ -31,7 +31,8 @@ define([
     "dijit/_WidgetsInTemplateMixin",
     "dojo/text!css/theme-template.css",
     "dojo/string",
-    "application/utils/utils"
+    "application/utils/utils",
+    "dojo/query"
 ], function (
     declare,
     domConstruct,
@@ -47,7 +48,8 @@ define([
     _WidgetsInTemplateMixin,
     ThemeCss,
     string,
-    ApplicationUtils
+    ApplicationUtils,
+    query
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
@@ -123,9 +125,9 @@ define([
                     domClass.add(this.applicationHeaderWidgetsContainer, "esriCTHidden");
                     domClass.remove(this.esriCTSignInButton, "esriCTHidden");
                 }
-                this._handleHelpClick();
                 this._onSettingsIconClick();
                 this._setSettingsOptionText();
+                this._setSearchPanelText();
                 this._attachEventHandlers();
                 this._onViewModeClick();
                 this._setViewModeOptionText();
@@ -173,8 +175,18 @@ define([
                 this.onGridMapViewClick();
             }));
 
-            on(this.searchClick, "click", lang.hitch(this, function (event) {
-                this.onSearchIconClick();
+            on(this.searchRecords, "click", lang.hitch(this, function (event) {
+                this.onSearchRecordsClick();
+            }));
+
+            on(this.clearTextContent, "click", lang.hitch(this, function (event) {
+                this.onClearContentClick();
+            }));
+
+            $(".esriCTSearchBox").keyup(lang.hitch(this, function (event) {
+                if (event.keyCode === 13) {
+                    this.onSearchRecordsClick();
+                }
             }));
         },
 
@@ -230,7 +242,6 @@ define([
         _displayLoginDetails: function () {
             this.esriCTLoginUserNameDiv.innerHTML = dojo.configData.logInDetails.userName;
             this.esriCTLogoutOption.innerHTML = dojo.configData.i18n.applicationHeader.signOutOption;
-            this.esriCTHelpOption.innerHTML = dojo.configData.i18n.applicationHeader.helpOption;
         },
 
         /**
@@ -248,17 +259,6 @@ define([
         _handleLogoutClick: function () {
             on(this.esriCTLogoutOption, "click", lang.hitch(this, function (evt) {
                 location.reload();
-            }));
-        },
-
-        /**
-        * This function is used to handle help option click.
-        * @memberOf widgets/app-header/app-header
-        */
-        _handleHelpClick: function () {
-            on(this.esriCTHelpOption, "click", lang.hitch(this, function (evt) {
-                this._toggleLoginOptionsVisibility();
-                window.open(dojoConfig.baseURL + "/help.html");
             }));
         },
 
@@ -284,6 +284,14 @@ define([
         },
 
         /**
+        * This function is used to set text of search panel which shows no results found
+        * @memberOf widgets/app-header/app-header
+        */
+        _setSearchPanelText: function () {
+            this.noResultsFound.innerHTML = dojo.configData.i18n.searchPanel.noResultsFound;
+        },
+
+        /**
         * This function is used to display setting option's list
         * @memberOf widgets/app-header/app-header
         */
@@ -301,14 +309,20 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _onSearchIconClick: function () {
-            on(this.searchDataViewerRecords, "click", lang.hitch(this, function (event) {
-                this._toggleSearchModeVisibility();
-                domClass.replace(this.esriCTSettingsOptionsItemDiv, "esriCTHidden", "esriCTVisible");
-                domClass.replace(this.optionsViewMode, "esriCTHidden", "esriCTVisible");
-                domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
-                domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
+            on(this.searchModeBtn, "click", lang.hitch(this, function (event) {
+                if (query(".esriCTSearch").length > 0) {
+                    this._toggleSearchModeVisibility();
+                    domClass.replace(this.esriCTSettingsOptionsItemDiv, "esriCTHidden", "esriCTVisible");
+                    domClass.replace(this.optionsViewMode, "esriCTHidden", "esriCTVisible");
+                    domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
+                    domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
+                    if (typeof $(".esriCTSearchBox, textarea").placeholder === 'function') {
+                        $(".esriCTSearchBox, textarea").placeholder();
+                    }
+                }
             }));
         },
+
         /**
         * This function is used to display view option's list
         * @memberOf widgets/app-header/app-header
@@ -443,7 +457,15 @@ define([
         * This function is used to generate event on click of search button
         * @memberOf widgets/app-header/app-header
         */
-        onSearchIconClick: function () {
+        onSearchRecordsClick: function () {
+            return;
+        },
+
+        /**
+        * This function is used to generate event on click of clear button
+        * @memberOf widgets/app-header/app-header
+        */
+        onClearContentClick: function () {
             return;
         }
     });

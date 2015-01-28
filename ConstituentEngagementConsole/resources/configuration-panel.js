@@ -131,7 +131,7 @@
     "values": {
         "group": "2f7ae054c7ef43c6a2d4c19c90855b7c",
         "theme": "#d15706",
-        "applicationName": "Constituent Engagement",
+        "applicationName": "",
         "applicationIcon": "",
         "applicationFavicon": "",
         "zoomLevel": 12,

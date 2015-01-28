@@ -79,7 +79,6 @@ define([
         _dataViewerTable: null, // store data-viewer table object
         _entireFeatureDataArr: [], // store entire feature's of feature layer that is visible
         _features: [], // store features that are selected
-        _isShowSelectedClicked: false, // keep track whether show selected option is clicked or not
         _selectedOperationalLayer: null, // store object of feature layer that is selected by user
         _dataViewerGraphicsLayer: null, // store object of graphics layer needed for highlighting point feature
         _isPointLayer: false, // keep track whether operational layer that is selected by user if of type point or polygon or polyline etc...
@@ -96,13 +95,22 @@ define([
         _showDatePickerErrorMessage: false, // show error message when update of date-picker gets failed
         _updatedGraphic: null, // store graphic when it is updated
         _updatedField: null, // store name of the field when it is updated
+        _existingDefinitionExpression: null, // store existing definition expression that is set to feature layer
+        _updatedFieldAttribute: {}, // to store dependent field attributes that needs to be updated
+        _updatedTextInputControl: [], // to store dependent text input control which are updated
+        _updatedDropDownControl: [], // to store dependent drop down control which are updated
+        _updateDatePickerControl: [], // to store dependent date picker control which are updated
+        _isOrientationChangedInListView: false, // to keep track whether orientation is changed in list view or not
         options: {}, // mixin data in this object
         configData: {}, // store configuration data
         map: null, // used to store map object
         selectedOperationalLayerID: null, // store id of operational layer that is selected by user
         popupInfo: null, // store popup info details of operational layer that is selected by user
         isMapViewClicked: false, // keep track whether map view option is clicked or not
-        isDetailsTabClicked: false, // keep track whether details tab is clicked or not
+        isDetailsTabClicked: false, // keep track whether details tab is clicked or not,
+        itemInfo: null,
+        lastSelectedWebMapExtent: null,
+        isShowSelectedClicked: false, // keep track whether show selected option is clicked or not
 
         /**
         * This function is called when widget is constructed
@@ -141,10 +149,11 @@ define([
                 domConstruct.empty(this.dataViewerParentDiv);
                 // if new operational layer is selected than clear previous selected features
                 if (operationalLayerSelected) {
+                    this._resetSearchPanel();
                     this.showLocationTab();
                     this._resetDetailsTab();
                     if (!domClass.contains(query(".esriCTShowSelected")[0], "esriCTVisible")) {
-                        this._isShowSelectedClicked = false;
+                        this.isShowSelectedClicked = false;
                         this.toggleSelectionViewOption(false);
                     }
                     if (dojo.dataViewerFeatureLayerHandle) {
@@ -164,7 +173,7 @@ define([
                 }
                 // to display only selected features
                 // else display all features available in current extent
-                if (this._isShowSelectedClicked) {
+                if (this.isShowSelectedClicked) {
                     // if it is point feature than get selected feature from graphics layer
                     // if it is other than point feature get selected feature from feature layer
                     if (this._isPointLayer) {
@@ -188,6 +197,7 @@ define([
                             this._features = this._features.concat(selectedFeatureArr);
                             this._features = this._removeDuplicateFeatures(this._features);
                         }
+
                         if (this._features.length > 0) {
                             this._createDataViewerPanel();
                         } else {
@@ -219,7 +229,8 @@ define([
                 }
                 if (selectedFeaturesLength > 0) {
                     this.toggleSelectionViewOption(true);
-                    this._isShowSelectedClicked = true;
+                    this.isShowSelectedClicked = true;
+                    this._addDisabledSearchIcon();
                     this._showSelectedFeatureInDataViewer();
                 }
             } catch (err) {
@@ -234,6 +245,7 @@ define([
         showAllRecords: function () {
             this.toggleSelectionViewOption(false);
             this._showAllFeaturesInDataViewer();
+            this._addRegularSearchIcon();
         },
 
         /**
@@ -252,7 +264,7 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         clearSelection: function () {
-            if (!this._isShowSelectedClicked) {
+            if (!this.isShowSelectedClicked) {
                 $(".esriCTRowSelected").removeClass("esriCTRowSelected");
                 if (this._isPointLayer) {
                     this._dataViewerGraphicsLayer.clear();
@@ -301,22 +313,283 @@ define([
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
-
         },
+
+        /**
+        * This function is used to validate search criteria
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        searchDataInDataViewer: function () {
+            try {
+                $(".esriCTNoResults").addClass("esriCTHidden");
+                if (!this.isShowSelectedClicked && lang.trim($(".esriCTSearchBox")[0].value) !== "") {
+                    $(".esriCTSearchBox")[0].value = lang.trim($(".esriCTSearchBox")[0].value);
+                    this.clearSelection();
+                    this._removeControlsFromPreviousRow();
+                    this._searchData();
+                } else {
+                    $(".esriCTSearchBox")[0].value = "";
+                }
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
         /**
         * This function is used to search data in data-viewer
         * @memberOf widgets/data-viewer/data-viewer
         */
-        searchDataInDataViewer: function () {
-            alert("Coming soon...");
+        _searchData: function () {
+            dojo.applicationUtils.showLoadingIndicator();
+            if (this.isDetailsTabClicked) {
+                this.showLocationTab();
+            }
+            this._setExistingDefinitionExpression();
+            var searchValue = lang.trim($(".esriCTSearchBox")[0].value),
+                newDefinitionExpression;
+            if (searchValue) {
+                newDefinitionExpression = this._getDefinitionExpression(searchValue);
+            } else {
+                $(".esriCTNoResults").addClass("esriCTHidden");
+                newDefinitionExpression = this._existingDefinitionExpression;
+            }
+            this._resetDefinitionExpression(newDefinitionExpression);
+            setTimeout(lang.hitch(this, function () {
+                var filteredIconNode;
+                if (this._selectedOperationalLayer.graphics.length === 0) {
+                    $(".esriCTNoResults").removeClass("esriCTHidden");
+                    $(".esriCTSearchBox")[0].value = "";
+                    newDefinitionExpression = this._existingDefinitionExpression;
+                    this._resetDefinitionExpression(newDefinitionExpression);
+                    filteredIconNode = query(".esriCTSearchFiltered");
+                    if (filteredIconNode.length > 0) {
+                        this._addRegularSearchIcon();
+                        setTimeout(lang.hitch(this, function () {
+                            this.map.setExtent(this.lastSelectedWebMapExtent);
+                        }), 1000);
+                    } else {
+                        this._addRegularSearchIcon();
+                    }
+                    dojo.applicationUtils.hideLoadingIndicator();
+                } else {
+                    if (newDefinitionExpression === this._existingDefinitionExpression) {
+                        this._addRegularSearchIcon();
+                        this.map.setExtent(this.lastSelectedWebMapExtent);
+                    } else {
+                        this._addFilteredSearchIcon();
+                        this._createNewDataSet();
+                    }
+                }
+            }), 1000);
         },
 
         /**
-        * This function is used to refresh data-viewer
+        * This function is used to clear contents of search input control
         * @memberOf widgets/data-viewer/data-viewer
         */
-        refreshDataViewer: function () {
-            this._recreateDataViewer();
+        clearSearchText: function () {
+            try {
+                var filteredIconNode;
+                $(".esriCTNoResults").addClass("esriCTHidden");
+                if (lang.trim($(".esriCTSearchBox")[0].value)) {
+                    $(".esriCTSearchBox")[0].value = "";
+                }
+                filteredIconNode = query(".esriCTSearchFiltered");
+                if (filteredIconNode.length > 0) {
+                    this._searchData();
+                }
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to reset search panel
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _resetSearchPanel: function () {
+            try {
+                var i;
+                $(".esriCTSearchBox")[0].value = "";
+                $(".esriCTNoResults").addClass("esriCTHidden");
+                $(".esriCTOptionsSearchMode").removeClass("esriCTVisible");
+                $(".esriCTOptionsSearchMode").addClass("esriCTHidden");
+                this._addDisabledSearchIcon();
+                if (this.itemInfo.itemData.applicationProperties.viewing.search && this.itemInfo.itemData.applicationProperties.viewing.search.enabled) {
+                    for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing.search.layers.length; i++) {
+                        if (this.selectedOperationalLayerID === this.itemInfo.itemData.applicationProperties.viewing.search.layers[i].id) {
+                            this._addRegularSearchIcon();
+                            break;
+                        }
+                    }
+                } else {
+                    this._addDisabledSearchIcon();
+                }
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to create a new data set after definition expression is set
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _createNewDataSet: function () {
+            try {
+                this.clearSelection();
+                var selectedFeatureArr, geometryService, selectedFeaturesGeometryArr = [],
+                    i;
+                geometryService = new GeometryService(dojo.configData.helperServices.geometry.url);
+                // if it is point feature than get selected feature from graphics layer
+                // if it is other than point feature get selected feature from feature layer
+                selectedFeatureArr = this._selectedOperationalLayer.graphics;
+                for (i = 0; i < selectedFeatureArr.length; i++) {
+                    selectedFeaturesGeometryArr.push(selectedFeatureArr[i].geometry);
+                }
+                // do union of selected feature's geometry and set map extent to it
+                geometryService.union(selectedFeaturesGeometryArr).then(lang.hitch(this, function (response) {
+                    this.map.setExtent(response.getExtent(), true);
+                }), function (err) {
+                    dojo.applicationUtils.showError(err.message);
+                });
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to reset definition expression
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _resetDefinitionExpression: function (newDefinitionExpression) {
+            try {
+                this._selectedOperationalLayer.setDefinitionExpression(newDefinitionExpression);
+                this._selectedOperationalLayer.refresh();
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to add filtered search icon
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _addFilteredSearchIcon: function () {
+            try {
+                var searchIconNode;
+                searchIconNode = query(".esriCTSearch");
+                if (searchIconNode.length > 0) {
+                    domClass.add(searchIconNode[0], "esriCTSearchFiltered");
+                }
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to add disable search icon
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _addDisabledSearchIcon: function () {
+            try {
+                var searchIconNode, filteredIconNode;
+                searchIconNode = query(".esriCTSearch");
+                filteredIconNode = query(".esriCTSearchFiltered");
+                if (searchIconNode.length > 0) {
+                    domClass.replace(searchIconNode[0], "esriCTSearchDisable", "esriCTSearch");
+                } else if (filteredIconNode.length > 0) {
+                    domClass.replace(filteredIconNode[0], "esriCTSearchDisable", "esriCTSearchFiltered");
+                }
+                if (searchIconNode.length > 0) {
+                    domClass.replace(searchIconNode[0], "esriCTSearchDisable", "esriCTSearch");
+                }
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to add regular search icon
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _addRegularSearchIcon: function () {
+            try {
+                var disableIconNode, filteredIconNode;
+                disableIconNode = query(".esriCTSearchDisable");
+                filteredIconNode = query(".esriCTSearchFiltered");
+                if (disableIconNode.length > 0) {
+                    domClass.replace(disableIconNode[0], "esriCTSearch", "esriCTSearchDisable");
+                } else if (filteredIconNode.length > 0) {
+                    domClass.remove(filteredIconNode[0], "esriCTSearchFiltered");
+                }
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to set existing definition expression.
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _setExistingDefinitionExpression: function () {
+            try {
+                var j;
+                for (j = 0; j < this.itemInfo.itemData.operationalLayers.length; j++) {
+                    if (this.selectedOperationalLayerID === this.itemInfo.itemData.operationalLayers[j].id) {
+                        if (this.itemInfo.itemData.operationalLayers[j].layerDefinition && this.itemInfo.itemData.operationalLayers[j].layerDefinition.definitionExpression) {
+                            this._existingDefinitionExpression = this.itemInfo.itemData.operationalLayers[j].layerDefinition.definitionExpression;
+                        } else {
+                            this._existingDefinitionExpression = null;
+                        }
+                    }
+                }
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to get definition expression
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _getDefinitionExpression: function (searchValue) {
+            try {
+                var layerObject, i, definitionExpression = null;
+                if (this.itemInfo.itemData.applicationProperties.viewing.search && this.itemInfo.itemData.applicationProperties.viewing.search.enabled) {
+                    for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing.search.layers.length; i++) {
+                        if (this.selectedOperationalLayerID === this.itemInfo.itemData.applicationProperties.viewing.search.layers[i].id) {
+                            layerObject = this.itemInfo.itemData.applicationProperties.viewing.search.layers[i];
+                            if (this._existingDefinitionExpression) {
+                                definitionExpression = this._existingDefinitionExpression;
+                                if (layerObject.field.exactMatch) {
+                                    definitionExpression += " AND " + layerObject.field.name.toUpperCase() + " = '" + lang.trim(searchValue).toUpperCase() + "'";
+                                } else {
+                                    definitionExpression += " AND " + layerObject.field.name.toUpperCase() + " LIKE '%" + lang.trim(searchValue).toUpperCase() + "%'";
+                                }
+                            } else {
+                                if (layerObject.field.exactMatch) {
+                                    definitionExpression = layerObject.field.name.toUpperCase() + " = '" + lang.trim(searchValue).toUpperCase() + "'";
+                                } else {
+                                    definitionExpression = layerObject.field.name.toUpperCase() + " LIKE '%" + lang.trim(searchValue).toUpperCase() + "%'";
+                                }
+                            }
+                            return definitionExpression;
+                        }
+                    }
+                }
+                return definitionExpression;
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to retain show selected mode after resize
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        retainShowSelectedModeAfterResize: function () {
+            this.createDataViewerUI(false);
+            this._retainSelectedFeature();
         },
 
         /**
@@ -346,18 +619,30 @@ define([
         */
         _onMapExtentChange: function () {
             dojo.dataViewerMapExtentHandle = on(this.map, "extent-change", lang.hitch(this, function (evt) {
-                $(".esriCTTextInput").off("blur");
-                $(".esriCTTextInput").off("focus");
-                $(".esriCTCodedDomain").off("change");
-                $(".esriCTCodedDomain").off("click");
-                $(".esriCTDateInputField").off("blur");
-                $(".esriCTDateInputField").off("focus");
-                this._isTextInputInFocus = false;
-                this._isDropDownClicked = false;
-                this._isDateTextInputInFocus = false;
-                this._removeControlsFromPreviousRow();
-                this._recreateDataViewer();
+                if (this._isOrientationChangedInListView) {
+                    this._isOrientationChangedInListView = false;
+                } else {
+                    this._detachEvents();
+                    this._isTextInputInFocus = false;
+                    this._isDropDownClicked = false;
+                    this._isDateTextInputInFocus = false;
+                    this._removeControlsFromPreviousRow();
+                    this._recreateDataViewer();
+                }
             }));
+        },
+
+        /**
+        * This function is used to detach events
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _detachEvents: function () {
+            $(".esriCTTextInput").off("blur");
+            $(".esriCTTextInput").off("focus");
+            $(".esriCTCodedDomain").off("change");
+            $(".esriCTCodedDomain").off("click");
+            $(".esriCTDateInputField").off("blur");
+            $(".esriCTDateInputField").off("focus");
         },
 
         /**
@@ -368,9 +653,11 @@ define([
             // first check if show selected option is clicked
             // if it is clicked than no action should be performed
             // if not than refresh data-viewer grid with new features which are visible in extent
-            if ((!this._isShowSelectedClicked) && (!this.isMapViewClicked)) {
+            if ((!this.isShowSelectedClicked) && (!this.isMapViewClicked)) {
                 this.createDataViewerUI(false);
                 this._retainSelectedFeature();
+            } else {
+                dojo.applicationUtils.hideLoadingIndicator();
             }
         },
 
@@ -415,7 +702,7 @@ define([
         */
         _showAllFeaturesInDataViewer: function () {
             try {
-                this._isShowSelectedClicked = false;
+                this.isShowSelectedClicked = false;
                 dojo.applicationUtils.showLoadingIndicator();
                 this.createDataViewerUI(false);
                 this._retainSelectedFeature();
@@ -467,7 +754,7 @@ define([
                 for (i = 0; i < selectedFeatureArr.length; i++) {
                     selectedFeaturesGeometryArr.push(selectedFeatureArr[i].geometry);
                 }
-                if (selectedFeaturesGeometryArr.length === 1) {
+                if (selectedFeaturesGeometryArr.length === 1 && this._isPointLayer) {
                     this.map.setLevel(dojo.configData.zoomLevel);
                     this.map.centerAt(selectedFeaturesGeometryArr[0]);
                 } else if (selectedFeaturesGeometryArr.length > 0) {
@@ -557,7 +844,7 @@ define([
         _onFeatureClick: function () {
             try {
                 dojo.dataViewerFeatureLayerHandle = on(this._selectedOperationalLayer, "click", lang.hitch(this, function (evt) {
-                    if (!this._isShowSelectedClicked) {
+                    if (!this.isShowSelectedClicked) {
                         this._removeControlsFromPreviousRow();
                         if (this._isCurrentFeatureSelected(evt.graphic)) {
                             this._deSelectFeatureOnMapClick(evt.graphic);
@@ -766,6 +1053,9 @@ define([
                                 obj.length = this._selectedOperationalLayer.fields[j].length;
                                 obj.fieldName = this.popupInfo.fieldInfos[i].fieldName;
                                 obj.nullable = this._selectedOperationalLayer.fields[j].nullable;
+                                if (this._selectedOperationalLayer.typeIdField === this.popupInfo.fieldInfos[i].fieldName) {
+                                    obj.types = this._selectedOperationalLayer.types;
+                                }
                                 this._displayColumn.push(obj);
                             }
                         }
@@ -782,7 +1072,7 @@ define([
         */
         _createDataViewerDataPanel: function () {
             try {
-                var i, j, number, fieldName, format, type, value, dateFormat, k;
+                var i, j, number, fieldName, format, type, value, dateFormat, k, n;
                 this._entireFeatureDataArr = [];
                 for (i = 0; i < this._features.length; i++) {
                     this._dataSet = [];
@@ -798,18 +1088,32 @@ define([
                                 this._dataSet.push(value);
                                 break;
                             case "esriFieldTypeDate":
-                                if (value) {
+                                if (value && value !== 0) {
                                     this._dataSet.push((moment(value)).format(dateFormat));
                                 } else {
-                                    this._dataSet.push(value);
+                                    if (value === 0) {
+                                        this._dataSet.push("");
+                                    } else {
+                                        this._dataSet.push(value);
+                                    }
                                 }
                                 break;
                             default:
                                 if (this._displayColumn[j].codedValues) {
-                                    if (value) {
+                                    if (value || value === 0) {
                                         for (k = 0; k < this._displayColumn[j].codedValues.length; k++) {
                                             if (this._displayColumn[j].codedValues[k].code === value) {
                                                 this._dataSet.push(this._displayColumn[j].codedValues[k].name);
+                                            }
+                                        }
+                                    } else {
+                                        this._dataSet.push(value);
+                                    }
+                                } else if (this._displayColumn[j].types) {
+                                    if (value || value === 0) {
+                                        for (n = 0; n < this._displayColumn[j].types.length; n++) {
+                                            if (this._displayColumn[j].types[n].id === value) {
+                                                this._dataSet.push(this._displayColumn[j].types[n].name);
                                             }
                                         }
                                     } else {
@@ -849,6 +1153,14 @@ define([
         */
         _convertHtmlTableToDataTable: function () {
             try {
+                var columnWidth = null;
+                if ((this._displayColumn.length - 1) === 1) {
+                    columnWidth = "100%";
+                } else if ((this._displayColumn.length - 1) === 2) {
+                    columnWidth = "50%";
+                } else {
+                    columnWidth = "200px";
+                }
                 this._dataViewerTable = $('#dataViewerTable').DataTable({
                     "destroy": true,
                     "aaData": this._entireFeatureDataArr, // data that needs to be displayed
@@ -862,16 +1174,36 @@ define([
                         "aTargets": [0]
                     }, {
                         "sDefaultContent": "", // when no data is available to display
-                        "sWidth": "200px",
+                        "sWidth": columnWidth,
                         "aTargets": "_all" // to apply condition to all column when no data is there to display,
                     }],
                     "autoWidth": true
                 });
                 this._onRowClick();
-                this._rightAlignNumericData();
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
+        },
+
+        /**
+        * This function is used to set auto width property of data-viewer
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        destroyDataViewerTable: function (value) {
+            if (this._dataViewerTable) {
+                this._dataViewerTable.destroy();
+            }
+        },
+
+        /**
+        * This function is used to empty dependent controls
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _emptyDependentControls: function () {
+            this._updatedFieldAttribute = {};
+            this._updatedTextInputControl = [];
+            this._updatedDropDownControl = [];
+            this._updateDatePickerControl = [];
         },
 
         /**
@@ -883,6 +1215,7 @@ define([
                 $(".esriCTTextInput").on({
                     // update feature on focus out of text-box
                     blur: lang.hitch(this, function (evt) {
+                        this._emptyDependentControls();
                         this._isTextInputInFocus = false;
                         if (evt.currentTarget.defaultValue !== evt.currentTarget.value) {
                             dojo.applicationUtils.showLoadingIndicator();
@@ -891,6 +1224,7 @@ define([
                         }
                     }),
                     focus: lang.hitch(this, function (evt) {
+                        this._emptyDependentControls();
                         this._featureObjectID = this._fetchObjectID(evt.currentTarget.parentElement.parentElement);
                         this._isTextInputInFocus = true;
                     })
@@ -898,24 +1232,129 @@ define([
                 $(".esriCTCodedDomain").on({
                     // update feature on change of drop-down
                     change: lang.hitch(this, function (evt) {
+                        this._emptyDependentControls();
+                        var field, value;
                         this._isDropDownClicked = true;
                         dojo.applicationUtils.showLoadingIndicator();
                         this._lastEditedControl = evt;
-                        this._updateFeature(evt.currentTarget.value.split("|")[0], evt.currentTarget.value.split("|")[1]);
+                        field = evt.currentTarget.value.split("|")[1];
+                        value = evt.currentTarget.value.split("|")[0];
+                        if (field === this._selectedOperationalLayer.typeIdField) {
+                            this._detachEvents();
+                            this._changeValueOfDependentField(parseInt(value, 10));
+                            this._attachEventToControls();
+                        }
+                        this._updateFeature(value, field);
                     }),
                     click: lang.hitch(this, function (evt) {
+                        this._emptyDependentControls();
                         this._isDropDownClicked = true;
                         this._featureObjectID = this._fetchObjectID(evt.currentTarget.parentElement.parentElement);
+                    }),
+                    blur: lang.hitch(this, function (evt) {
+                        this._isDropDownClicked = false;
                     })
                 });
                 $(".esriCTDateInputField").on({
                     blur: lang.hitch(this, function (evt) {
+                        this._emptyDependentControls();
                         this._isDateTextInputInFocus = false;
                     }),
                     focus: lang.hitch(this, function (evt) {
+                        this._emptyDependentControls();
                         this._isDateTextInputInFocus = true;
                     })
                 });
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+
+        /**
+        * This function is used to change the value of dependent field
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _changeValueOfDependentField: function (id) {
+            try {
+                var j, i, className, updateField, defaultValue, k;
+                for (j = 0; j < this._selectedOperationalLayer.types.length; j++) {
+                    if (id === this._selectedOperationalLayer.types[j].id) {
+                        for (i = 1; i < this._lastSelectedRow.currentTarget.childNodes.length; i++) {
+                            if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes.length > 0) {
+                                if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].className) {
+                                    className = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].className;
+                                    updateField = this._extractField(className, i);
+                                    defaultValue = null;
+                                    if (this._selectedOperationalLayer.types[j].domains[updateField] && this._selectedOperationalLayer.typeIdField !== updateField) {
+                                        defaultValue = this._selectedOperationalLayer.types[j].templates[0].prototype.attributes[updateField];
+                                        this._updatedFieldAttribute[updateField] = defaultValue;
+                                        if (className.indexOf("esriCTTextInput") > -1) {
+                                            this._updatedTextInputControl.push({
+                                                "control": this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0],
+                                                "newValue": defaultValue,
+                                                "oldValue": this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].value
+                                            });
+                                            this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].value = defaultValue;
+                                        } else if (className.indexOf("esriCTCodedDomain") > -1) {
+                                            this._updatedDropDownControl.push({
+                                                "control": this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0],
+                                                "newValue": defaultValue,
+                                                "oldValue": this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].selectedIndex
+                                            });
+                                            if (defaultValue || defaultValue === 0) {
+                                                for (k = 0; k < this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].length; k++) {
+                                                    if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0][k].value.split("|")[0].toString() === defaultValue.toString()) {
+                                                        this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].selectedIndex = k;
+                                                        break;
+                                                    }
+                                                }
+                                            } else {
+                                                this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].selectedIndex = -1;
+                                            }
+                                        } else if (className.indexOf("esriCTDateTimePicker") > -1) {
+                                            this._updateDatePickerControl.push({
+                                                "control": this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].childNodes[0],
+                                                "newValue": defaultValue,
+                                                "oldValue": this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].childNodes[0].name,
+                                                "dateControl": this._lastSelectedRow.currentTarget
+                                            });
+                                            if (!defaultValue) {
+                                                $(this._lastSelectedRow.currentTarget.childNodes[i]).data("DateTimePicker").setDate(defaultValue);
+                                            } else {
+                                                $(this._lastSelectedRow.currentTarget.childNodes[i]).data("DateTimePicker").setDate(parseInt(defaultValue, 10));
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to extract field
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _extractField: function (className, index) {
+            try {
+                var updateField = null;
+                if (className.indexOf("esriCTTextInput") > -1) {
+                    updateField = this._lastSelectedRow.currentTarget.childNodes[index].childNodes[0].name;
+                } else if (className.indexOf("esriCTCodedDomain") > -1) {
+                    if (this._lastSelectedRow.currentTarget.childNodes[index].childNodes[0].value.split("|")[1]) {
+                        updateField = this._lastSelectedRow.currentTarget.childNodes[index].childNodes[0].value.split("|")[1];
+                    } else {
+                        updateField = this._lastSelectedRow.currentTarget.childNodes[index].childNodes[0][1].value.split("|")[1];
+                    }
+                } else if (className.indexOf("esriCTDateTimePicker") > -1) {
+                    updateField = this._lastSelectedRow.currentTarget.childNodes[index].childNodes[0].childNodes[0].name.split("|")[1];
+                }
+                return updateField;
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
@@ -935,10 +1374,8 @@ define([
                 featureLayerQuery.returnGeometry = true;
                 this._selectedOperationalLayer.queryFeatures(featureLayerQuery, lang.hitch(this, function (featureSet) {
                     if (featureSet.features.length > 0) {
-                        var attr = {},
-                            i,
-                            type,
-                            obj;
+                        var i, type, obj, attrname, attr;
+                        attr = {};
                         if (featureSet.features[0].attributes.OBJECTID) {
                             attr.OBJECTID = parseInt(this._featureObjectID, 10);
                         } else {
@@ -967,7 +1404,16 @@ define([
                                 }
                             }
                         }
-                        this._updatedGraphic = new Graphic(featureSet.features[0].geometry, null, attr, null);
+                        if (!$.isEmptyObject(this._updatedFieldAttribute)) {
+                            for (attrname in attr) {
+                                if (attr.hasOwnProperty(attrname)) {
+                                    this._updatedFieldAttribute[attrname] = attr[attrname];
+                                }
+                            }
+                            this._updatedGraphic = new Graphic(featureSet.features[0].geometry, null, this._updatedFieldAttribute, null);
+                        } else {
+                            this._updatedGraphic = new Graphic(featureSet.features[0].geometry, null, attr, null);
+                        }
                         this._updatedField = field;
                         obj = this._validateControl(type, field);
                         if (obj.isValueValid) {
@@ -977,7 +1423,11 @@ define([
                                     className = this._lastEditedControl.currentTarget.className;
                                     if (className.indexOf("esriCTDateTimePicker") > -1) {
                                         newValueArr = this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name.split('|');
-                                        newValueStr = newValueArr[0] + "|" + parseInt(newValue, 10) + "|" + newValueArr[2];
+                                        if (newValue) {
+                                            newValueStr = newValueArr[0] + "|" + parseInt(newValue, 10) + "|" + newValueArr[2];
+                                        } else {
+                                            newValueStr = newValueArr[0] + "||" + newValueArr[2];
+                                        }
                                         this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name = newValueStr;
                                     }
                                     if (className.indexOf("esriCTTextInput") > -1) {
@@ -986,11 +1436,14 @@ define([
                                     if (className.indexOf("esriCTCodedDomain") > -1) {
                                         this._lastEditedControl.currentTarget.name = newValue;
                                     }
-                                    this._validateClassOfControl();
                                     if (this._isDropDownClicked) {
                                         this._isDropDownClicked = false;
                                     }
+                                    if (!$.isEmptyObject(this._updatedFieldAttribute)) {
+                                        this._updateDependentFieldControls();
+                                    }
                                     this.map.getLayer(this.selectedOperationalLayerID).refresh();
+                                    this._updateFieldInSelectedFeaturesList(field);
                                     dojo.applicationUtils.hideLoadingIndicator();
                                 } else {
                                     this._retainOldValue();
@@ -1013,6 +1466,58 @@ define([
                 }));
             } catch (err) {
                 this._retainOldValue();
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to update field in selected features list
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _updateFieldInSelectedFeaturesList: function (field) {
+            try {
+                var i, objectID, updatedObjectID;
+                if (this._isPointLayer) {
+                    updatedObjectID = this._updatedGraphic.attributes.objectid || this._updatedGraphic.attributes.OBJECTID;
+                    for (i = 0; i < this._dataViewerGraphicsLayer.graphics.length; i++) {
+                        objectID = this._dataViewerGraphicsLayer.graphics[i].attributes.objectid || this._dataViewerGraphicsLayer.graphics[i].attributes.OBJECTID;
+                        if (objectID === updatedObjectID) {
+                            this._dataViewerGraphicsLayer.graphics[i].attributes[field] = this._updatedGraphic.attributes[field];
+                            break;
+                        }
+                    }
+                }
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to update dependent field controls
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _updateDependentFieldControls: function () {
+            try {
+                var i, newValueArr, newValueStr;
+                this._detachEvents();
+                for (i = 0; i < this._updatedTextInputControl.length; i++) {
+                    this._updatedTextInputControl[i].control.defaultValue = this._updatedTextInputControl[i].newValue;
+                }
+                for (i = 0; i < this._updatedDropDownControl.length; i++) {
+                    this._updatedDropDownControl[i].control.name = this._updatedDropDownControl[i].newValue;
+                }
+                for (i = 0; i < this._updateDatePickerControl.length; i++) {
+                    newValueArr = this._updateDatePickerControl[i].control.name.split('|');
+                    if (this._updateDatePickerControl[i].control.newValue) {
+                        newValueStr = newValueArr[0] + "|" + parseInt(this._updateDatePickerControl[i].newValue, 10) + "|" + newValueArr[2];
+                    } else {
+                        newValueStr = newValueArr[0] + "||" + newValueArr[2];
+                    }
+                    this._updateDatePickerControl[i].control.name = newValueStr;
+                }
+                this._attachEventToControls();
+                this._emptyDependentControls();
+            } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
         },
@@ -1177,28 +1682,6 @@ define([
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
-
-        },
-
-        /**
-        * This function is used to align data in text-box
-        * @memberOf widgets/data-viewer/data-viewer
-        */
-        _validateClassOfControl: function () {
-            try {
-                var className = this._lastEditedControl.currentTarget.className,
-                    isValueNumeric;
-                if (className.indexOf("esriCTTextInput") > -1) {
-                    isValueNumeric = this._lastEditedControl.currentTarget.value.match(/^[0-9\s\.,]+$/);
-                    if (isValueNumeric) {
-                        $(this._lastEditedControl.currentTarget).addClass('esriCTNumberAlign');
-                    } else {
-                        $(this._lastEditedControl.currentTarget).removeClass('esriCTNumberAlign');
-                    }
-                }
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
-            }
         },
 
         /**
@@ -1215,6 +1698,23 @@ define([
                     existingCode,
                     i,
                     code;
+                this._detachEvents();
+                for (i = 0; i < this._updatedTextInputControl.length; i++) {
+                    this._updatedTextInputControl[i].control.value = this._updatedTextInputControl[i].oldValue;
+                }
+                for (i = 0; i < this._updatedDropDownControl.length; i++) {
+                    this._updatedDropDownControl[i].control.selectedIndex = this._updatedDropDownControl[i].oldValue;
+                }
+                for (i = 0; i < this._updateDatePickerControl.length; i++) {
+                    date = this._updateDatePickerControl[i].oldValue.split('|')[1];
+                    if (date === "null") {
+                        $(this._updateDatePickerControl[i].dateControl).data("DateTimePicker").setDate(null);
+                    } else {
+                        $(this._updateDatePickerControl[i].dateControl).data("DateTimePicker").setDate(parseInt(date, 10));
+                    }
+                }
+                this._attachEventToControls();
+                this._emptyDependentControls();
                 // retain value in text box
                 if (className.indexOf("esriCTTextInput") > -1) {
                     this._lastEditedControl.currentTarget.value = this._lastEditedControl.currentTarget.defaultValue;
@@ -1228,7 +1728,7 @@ define([
                             break;
                         }
                     }
-                    // retain value in drop-down
+                    // retain value in date picker
                 } else if (className.indexOf("esriCTDateTimePicker") > -1) {
                     date = this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name.split('|')[1];
                     if (date === "null") {
@@ -1274,6 +1774,9 @@ define([
                     } else {
                         datePicker.data("DateTimePicker").setMaxDate(parseInt(max, 10));
                         datePicker.data("DateTimePicker").setMinDate(parseInt(min, 10));
+                        if (date !== "null") {
+                            datePicker.data("DateTimePicker").setDate(parseInt(date, 10));
+                        }
                     }
                     this._attachDatePickerEvent(datePicker);
                 }
@@ -1308,17 +1811,24 @@ define([
                 }));
                 // show error when invalid date is entered
                 datePicker.on('dp.error', lang.hitch(this, function (evt) {
-                    if (this._isDatePickerValueRetained) {
-                        this._isDatePickerValueRetained = false;
-                    } else {
-                        this._showDatePickerErrorMessage = true;
+                    var field;
+                    field = evt.currentTarget.childNodes[0].name.split('|')[0];
+                    if (evt.date._i === "" && this._isNullableValueAllowed(field)) {
                         this._lastEditedControl = evt;
-                        this._retainOldValue();
-                        this._isDatePickerValueRetained = false;
-                    }
-                    if (this._showDatePickerErrorMessage) {
-                        this._showDatePickerErrorMessage = false;
-                        dojo.applicationUtils.showMessage(dojo.configData.i18n.dataviewer.invalidDate);
+                        this._updateFeature(null, field);
+                    } else {
+                        if (this._isDatePickerValueRetained) {
+                            this._isDatePickerValueRetained = false;
+                        } else {
+                            this._showDatePickerErrorMessage = true;
+                            this._lastEditedControl = evt;
+                            this._retainOldValue();
+                            this._isDatePickerValueRetained = false;
+                        }
+                        if (this._showDatePickerErrorMessage) {
+                            this._showDatePickerErrorMessage = false;
+                            dojo.applicationUtils.showMessage(dojo.configData.i18n.dataviewer.invalidDate);
+                        }
                     }
                 }));
             } catch (err) {
@@ -1335,9 +1845,15 @@ define([
         */
         _createDropDown: function (obj, code, key) {
             try {
-                var codedValueOptions = '<select class="esriCTCodedDomain" name="' + obj.codedValues[0].code + '">displayValue',
+                var codedValueOptions,
                     j,
                     value;
+                if (code === "" || code === null) {
+                    codedValueOptions = '<select class="esriCTCodedDomain" name="">displayValue';
+                    codedValueOptions = codedValueOptions.replace("displayValue", '<option value=""></option>');
+                } else {
+                    codedValueOptions = '<select class="esriCTCodedDomain" name="' + obj.codedValues[0].code + '">displayValue';
+                }
                 for (j = 0; j < obj.codedValues.length; j++) {
                     value = obj.codedValues[j].code + "|" + key;
                     if (obj.codedValues[j].code === code) {
@@ -1354,6 +1870,39 @@ define([
         },
 
         /**
+        * This function is used to create drop-down for coded domain value
+        * @param{object} coded domain values
+        * @param{string} code of value
+        * @param{string} field containing value
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _createDependentDropDown: function (obj, code, key) {
+            try {
+                var dependentValueOptions,
+                    j,
+                    value;
+                if (code === "" || code === null) {
+                    dependentValueOptions = '<select class="esriCTCodedDomain" name="">displayValue';
+                    dependentValueOptions = dependentValueOptions.replace("displayValue", '<option value=""></option>');
+                } else {
+                    dependentValueOptions = '<select class="esriCTCodedDomain" name="' + obj.types[0].id + '">displayValue';
+                }
+                for (j = 0; j < obj.types.length; j++) {
+                    value = obj.types[j].id + "|" + key;
+                    if (obj.types[j].id === code) {
+                        dependentValueOptions = dependentValueOptions.replace("displayValue", '<option value="' + value + '">' + obj.types[j].name + '</option>');
+                    } else {
+                        dependentValueOptions += '<option value="' + value + '">' + obj.types[j].name + '</option>';
+                    }
+                }
+                dependentValueOptions += '</select>';
+                return dependentValueOptions;
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
         * This function is used to create text input
         * @param{string} value of text-box
         * @param{string} field containing value
@@ -1364,21 +1913,17 @@ define([
         _createTextInput: function (value, key, type, length) {
             try {
                 var maxLengthValue = null,
-                    isValueNumeric,
                     textInput,
                     textInputClass;
                 if (!value) {
-                    value = "";
+                    if (value !== 0) {
+                        value = "";
+                    }
                 }
                 if (type === "esriFieldTypeString") {
                     maxLengthValue = length;
                 }
-                isValueNumeric = value.toString().match(/^[0-9\s\.,]+$/);
-                if (isValueNumeric) {
-                    textInputClass = "esriCTTextInput esriCTNumberAlign";
-                } else {
-                    textInputClass = "esriCTTextInput";
-                }
+                textInputClass = "esriCTTextInput";
                 textInput = '<input type="text" class="' + textInputClass + '" value="' + value + '" name="' + key + '" maxlength="' + maxLengthValue + '"></input>';
                 return textInput;
             } catch (err) {
@@ -1408,34 +1953,6 @@ define([
         },
 
         /**
-        * This function is used to align all numeric data in table at right side
-        * @memberOf widgets/data-viewer/data-viewer
-        */
-        _rightAlignNumericData: function () {
-            try {
-                $('#dataViewerTable tr').each(function () {
-                    var isValueNumeric;
-                    // right align any numeric data
-                    $(this).children('td').filter(function () {
-                        if ((this.childNodes.length > 0) && (this.childNodes[0].className) && (this.childNodes[0].className.indexOf("esriCTTextInput") > -1)) {
-                            isValueNumeric = this.childNodes[0].value.match(/^[0-9\s\.,]+$/);
-                            if (isValueNumeric) {
-                                $(this.childNodes[0]).addClass('esriCTNumberAlign');
-                            }
-                        } else {
-                            isValueNumeric = this.innerHTML.match(/^[0-9\s\.,]+$/);
-                            if (isValueNumeric) {
-                                $(this).addClass('esriCTNumberAlign');
-                            }
-                        }
-                    });
-                });
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
-            }
-        },
-
-        /**
         * This function is used to highlight feature on row click.
         * @memberOf widgets/data-viewer/data-viewer
         */
@@ -1443,7 +1960,7 @@ define([
             try {
                 $('#dataViewerTable tbody').on('click', 'tr', lang.hitch(this, function (evt) {
                     this._featureObjectID = this._fetchObjectID(evt.currentTarget);
-                    if ((!this._isShowSelectedClicked) && (!this._isTextInputInFocus) && (!this._isDropDownClicked) && (!this._isDateTextInputInFocus)) {
+                    if ((!this.isShowSelectedClicked) && (!this._isTextInputInFocus) && (!this._isDropDownClicked) && (!this._isDateTextInputInFocus)) {
                         if (this.isDetailsTabClicked) {
                             this.clearSelection();
                         }
@@ -1471,7 +1988,7 @@ define([
         */
         _removeControlsFromPreviousRow: function () {
             try {
-                var i, className, selectedIndex, value, date, dateFormat, isValueNumeric;
+                var i, className, selectedIndex, value, date, dateFormat;
                 if (this._lastSelectedRow) {
                     for (i = 1; i < this._lastSelectedRow.currentTarget.childNodes.length; i++) {
                         if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes.length > 0) {
@@ -1480,20 +1997,18 @@ define([
                                 if (className.indexOf("esriCTTextInput") > -1) {
                                     value = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].value;
                                     this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = value;
-                                    isValueNumeric = value.match(/^[0-9\s\.,]+$/);
-                                    if (isValueNumeric) {
-                                        $(this._lastSelectedRow.currentTarget.childNodes[i]).addClass('esriCTNumberAlign');
-                                    } else {
-                                        $(this._lastSelectedRow.currentTarget.childNodes[i]).removeClass('esriCTNumberAlign');
-                                    }
                                 } else if (className.indexOf("esriCTCodedDomain") > -1) {
                                     selectedIndex = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].selectedIndex;
                                     value = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0][selectedIndex];
-                                    this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = value.text;
+                                    if (value) {
+                                        this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = value.text;
+                                    } else {
+                                        this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = "";
+                                    }
                                 } else if (className.indexOf("esriCTDateTimePicker") > -1) {
                                     date = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].childNodes[0].name.split('|')[1];
                                     dateFormat = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].childNodes[0].name.split('|')[2];
-                                    if (date === "null") {
+                                    if (date === "null" || date === "") {
                                         this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = "";
                                     } else {
                                         date = parseInt(date, 10);
@@ -1517,7 +2032,7 @@ define([
         */
         _addControlsToRow: function (featureSet) {
             try {
-                var i, j, fieldName, format, type, length, value, dateFormat, isFieldEditable, number;
+                var i, j, fieldName, format, type, length, value, dateFormat, isFieldEditable, number, k;
                 for (i = 0; i < featureSet.features.length; i++) {
                     for (j = 0; j < this._displayColumn.length; j++) {
                         if (this._displayColumn[j].displayField) {
@@ -1534,7 +2049,11 @@ define([
                             case "esriFieldTypeDate":
                                 // dislay date-picker if field has date value
                                 if (this._displayColumn[j].domain && isFieldEditable) {
-                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(null, dateFormat, fieldName, this._displayColumn[j].domain.minValue, this._displayColumn[j].domain.maxValue);
+                                    if (value) {
+                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(value, dateFormat, fieldName, this._displayColumn[j].domain.minValue, this._displayColumn[j].domain.maxValue);
+                                    } else {
+                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(null, dateFormat, fieldName, this._displayColumn[j].domain.minValue, this._displayColumn[j].domain.maxValue);
+                                    }
                                 } else {
                                     // if fields are editable than only add controls
                                     if (isFieldEditable) {
@@ -1547,7 +2066,7 @@ define([
                                         if (value) {
                                             this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = (moment(value)).format(dateFormat);
                                         } else {
-                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value;
+                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = "";
                                         }
                                     }
                                 }
@@ -1557,6 +2076,16 @@ define([
                                 if (this._displayColumn[j].codedValues) {
                                     if (isFieldEditable) {
                                         this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDropDown(this._displayColumn[j], value, fieldName);
+                                    } else {
+                                        for (k = 0; k < this._displayColumn[j].codedValues.length; k++) {
+                                            if (this._displayColumn[j].codedValues[k].code === value) {
+                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._displayColumn[j].codedValues[k].name;
+                                            }
+                                        }
+                                    }
+                                } else if (this._displayColumn[j].types) {
+                                    if (isFieldEditable) {
+                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDependentDropDown(this._displayColumn[j], value, fieldName);
                                     } else {
                                         this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value;
                                     }
@@ -1698,7 +2227,8 @@ define([
         */
         _getHighLightSymbol: function (graphic) {
             try {
-                var i, symbol, path, point, graphics, symbolWidth, symbolFillColor, height, width, size;
+                var i, symbol, path, point, graphics, symbolWidth, symbolFillColor, height, width, size, isSymbolFound;
+                isSymbolFound = false;
                 switch (graphic.geometry.type) {
                 case "point":
                     path = "M 1784,238 1805,238 1805,259 1784,259 1784,238 M 1777,248 1784,248 M 1794,231 1794,238 M 1812,248 1805,248 M 1794,266 1794,259";
@@ -1706,6 +2236,7 @@ define([
                     symbol.setPath(path);
                     symbol.setColor(null);
                     if (this._selectedOperationalLayer.renderer.symbol) {
+                        isSymbolFound = true;
                         height = this._selectedOperationalLayer.renderer.symbol.height;
                         width = this._selectedOperationalLayer.renderer.symbol.width;
                         size = (height > width) ? height : width;
@@ -1713,12 +2244,21 @@ define([
                     } else if ((this._selectedOperationalLayer.renderer.infos) && (this._selectedOperationalLayer.renderer.infos.length > 1)) {
                         for (i = 0; i < this._selectedOperationalLayer.renderer.infos.length; i++) {
                             if (graphic.attributes[this._selectedOperationalLayer.typeIdField] === parseInt(this._selectedOperationalLayer.renderer.infos[i].value, 10)) {
+                                isSymbolFound = true;
                                 height = this._selectedOperationalLayer.renderer.infos[i].symbol.height;
                                 width = this._selectedOperationalLayer.renderer.infos[i].symbol.width;
                                 // to display cross-hair properly around feature
                                 size = (height > width) ? height : width;
                                 symbol.size = size + 20;
+                                break;
                             }
+                        }
+                        if (!isSymbolFound) {
+                            isSymbolFound = true;
+                            height = this._selectedOperationalLayer.renderer.defaultSymbol.height;
+                            width = this._selectedOperationalLayer.renderer.defaultSymbol.width;
+                            size = (height > width) ? height : width;
+                            symbol.size = size + 20;
                         }
                     }
                     point = new Point(graphic.geometry.x, graphic.geometry.y, new SpatialReference({
@@ -1817,7 +2357,7 @@ define([
         */
         _showFeatureDetails: function () {
             try {
-                var graphic, parentDiv, fieldValue, key, obj, j, number, i;
+                var graphic, parentDiv, fieldValue, key, obj, j, number, i, n;
                 parentDiv = dom.byId("detailsContentDiv");
                 parentDiv.innerHTML = "";
                 if (this._isPointLayer) {
@@ -1833,21 +2373,39 @@ define([
                             "innerHTML": obj.label,
                             "class": "esriCTDetailsFieldHeader"
                         }, parentDiv);
-                        fieldValue = null;
+                        fieldValue = "";
                         switch (obj.type) {
                         case "esriFieldTypeDate":
-                            if (graphic.attributes[key]) {
+                            if (graphic.attributes[key] && graphic.attributes[key] !== 0) {
                                 fieldValue = (moment(graphic.attributes[key])).format(dojo.applicationUtils.getDateFormat(obj.format));
                             } else {
-                                fieldValue = graphic.attributes[key];
+                                if (graphic.attributes[key] === 0) {
+                                    fieldValue = "";
+                                } else {
+                                    fieldValue = graphic.attributes[key];
+                                }
                             }
                             break;
                         default:
                             if (obj.codedValues) {
-                                for (j = 0; j < obj.codedValues.length; j++) {
-                                    if (obj.codedValues[j].code === graphic.attributes[key]) {
-                                        fieldValue = obj.codedValues[j].name;
+                                if (graphic.attributes[key] || graphic.attributes[key] === 0) {
+                                    for (j = 0; j < obj.codedValues.length; j++) {
+                                        if (obj.codedValues[j].code === graphic.attributes[key]) {
+                                            fieldValue = obj.codedValues[j].name;
+                                        }
                                     }
+                                } else {
+                                    fieldValue = graphic.attributes[key];
+                                }
+                            } else if (obj.types) {
+                                if (graphic.attributes[key] || graphic.attributes[key] === 0) {
+                                    for (n = 0; n < obj.types.length; n++) {
+                                        if (obj.types[n].id === graphic.attributes[key]) {
+                                            fieldValue = obj.types[n].name;
+                                        }
+                                    }
+                                } else {
+                                    fieldValue = graphic.attributes[key];
                                 }
                             } else {
                                 if (obj.numberFormat) {
@@ -1867,7 +2425,7 @@ define([
                                 }
                             }
                         }
-                        if (!fieldValue || lang.trim(fieldValue + "") === "") {
+                        if (!fieldValue || lang.trim(String(fieldValue)) === "") {
                             fieldValue = "<br/>";
                         }
                         domConstruct.create("div", {
@@ -1905,7 +2463,7 @@ define([
                         }, parentDiv);
                         // display all attached images in thumbnails
                         for (i = 0; i < infos.length; i++) {
-                            imagePath = dojoConfig.baseURL + dojo.configData.noImageIcon;
+                            imagePath = dojoConfig.baseURL + dojo.configData.noAttachmentIcon;
                             if (infos[i].contentType.indexOf("image") > -1) {
                                 imagePath = infos[i].url;
                             }
