@@ -1,0 +1,554 @@
+@import "nib";
+@import "iconfonts";
+
+
+$light-tool-color = #fff;
+$light-text-color = #333;
+$toolbar-color-grad-start = #545454;
+$toolbar-color-grad-end = #2a2a2a;
+$border-color = #e3e3e3;
+$color = #333;
+
+html,body {
+    margin:0;
+    padding: 0;
+    height:100%;
+    width:100%;
+    font-family: Arial,Helvetica,sans-serif;
+    background-repeat: repeat;
+    background:#ebebeb;
+}
+#bc{
+    margin-right:auto;
+    margin-left:auto;
+    width:98%;
+    height:98%;
+}
+.no-title .header{
+    margin-top:5px;
+    height:0;
+}
+.header{
+    margin:0;
+    padding:0;
+    height:40px;
+}
+.header h1{
+    padding-top:4px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-size:2em;
+    font-weight:400;
+    margin:0;
+}
+.toolbar {
+
+    height:42px;
+    line-height:42px;
+    width:100%;
+    background-repeat: repeat;
+    vertical-align:middle;
+    border-radius:4px 4px 0 0;
+    border:none;
+    z-index:40;
+}
+
+#toolbar-leading{
+    width:280px;
+    margin:auto;
+}
+#toolbar-trailing{
+    margin:auto;
+}
+
+.toolbar button:active, .toolbar button:hover:enabled{
+  box-shadow: 0 0 1px rgba(81, 203, 238, 1); 
+  border-radius: 4px; 
+}
+.toolbar button:focus{
+    outline:none;
+}
+.tool-selected{
+  background: rgba(0,0,0,.2) !important;
+  box-shadow: 1px 1px 1px lighten(rgba(0,0,0,.6),20%);
+  border-radius: 4px; 
+}
+.toolbar button{
+    display:inline-block;
+    font-size:1em;
+    height:38px;
+    cursor:pointer;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border:none;
+    overflow:hidden;
+}
+
+#toolbar-trailing button{
+    display:inline-block;
+    float:right;
+    margin-top:2px;
+}
+.tool-label{
+    color:#fff;
+    font-size:.8em;
+    padding: 1px 2px;
+}
+@media screen and (max-width: 640px){
+    .tool-label{
+        display:none;
+    }
+}
+
+.toolbar button:disabled{
+    cursor:default;
+    color: #ccc;
+}
+
+#tableDiv{
+    height:0;
+    background-color: #eee;
+    border:none;
+    border-radius: 0 0 4px 4px;
+}
+
+.esriFeatureTable .esriFeatureTable_menu{
+    display:none;
+}
+.esriFeatureTable .esriFeatureTable_closer{
+    display:none;
+}
+.esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottom, .esriPopup .pointer.bottomRight{
+    background: #fff !important;
+}
+.sidepanel{
+    width:0;
+    border:none;
+    border-left:solid thin $border-color;
+    border-bottom: solid thin $border-color;
+    border-radius: 0 0 0 4px;
+    background-color: inherit;
+}
+.sidepanel_content{
+    padding:4px;
+}
+.sidepanel a{
+    color:#336699;
+}
+#mapDiv.has-sidepanel {
+ border-radius:0 0 4px 0;
+}
+
+#mapDiv{
+    width:100%;
+    height:100%;
+    border-right: solid 1px none;
+    border-bottom: solid 1px none;
+    border-radius:0 0 4px 4px;
+}
+/*overwrite claro styles*/
+.claro .dijitContentPane{
+    padding:0 !important;
+}
+.esriSimpleSlider{
+
+}
+.esriSimpleSlider span{
+    display:none;
+}
+
+.HomeButton {
+    border-bottom: 1px solid #57585A;
+    width: 30px;
+    height: 30px;
+}
+.HomeButton .home {
+    border-radius:0;
+    padding:0px !important;
+    width: 30px;
+    height: 30px;
+    background-color:transparent;
+    background-image:none;
+}
+
+.arcgisSearch{
+    position:absolute;
+    top:160px;
+    left:20px;
+    z-index:40;
+}
+.arcgisSearch .searchCollapsed .searchSubmit{
+    padding:6px;
+}
+.LocateButton{
+    position:absolute;
+    top:120px;
+    left:20px;
+    z-index:50px;
+}
+/*Position the zoom, locate and search differently if parts are missing*/
+.no-zoom .LocateButton{
+    top:20px;
+}
+.no-home .LocateButton{
+    top:90px;
+}
+
+.no-home.no-locate .arcgisSearch{
+    top:90px;
+}
+.no-zoom .LocateButton{
+    top:20px;
+}
+.no-home .arcgisSearch{
+    top:130px;
+}
+.no-home.no-zoom.no-locate .arcgisSearch{
+    top:20px;
+}
+.no-zoom .arcgisSearch{
+    top:60px;
+}
+.no-locate .arcgisSearch{
+    top:120px;
+}
+/*End map tools positioning section*/
+.LocateButton .zoomLocateButton{
+    font-size:28px;
+    line-height:28px;
+    text-align:center;
+    vertical-align:baseline;
+    padding:0px !important;
+    width: 30px;
+    height: 30px;
+    background-image:none;
+    background-color: transparent;
+    /*color:$light-text-color;
+    background-color: $light-tool-color;*/
+    border: 1px solid #57585A;
+}
+.LocateButton .zoomLocateButton:hover{
+     /*background-color:#eee;   */
+}
+/*Measure Window*/
+.tool_container{
+    position: absolute;
+    top: 0;
+    z-index:100;       
+}
+
+#measureDiv{
+    padding:5px;
+    height:200px;
+    width:300px;
+    overflow-y:scroll;
+}
+#printDiv{
+    padding:5px;
+    height:80px;
+    width:200px;
+}
+.esriPrint{
+    position:absolute;
+    top:30px;
+    left:0;
+}
+
+.esriPrintout a{
+    color: #5daddd;
+}
+
+/*Styles for the print dialog checkbox*/
+#printDiv .checkbox {
+    display: inline-block;
+    cursor: pointer;
+    margin-left:10px;
+    line-height:18px;
+    padding:4px;
+}
+#printDiv input[type=checkbox].checkbox {
+    display:none;
+}
+
+#printDiv .checkbox:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align:middle;
+    background-color: #d3d3d3;
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 3px;
+}
+#printDiv input[type=checkbox]:checked.checkbox + .checkbox:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+}
+#layerDiv{
+    height:auto;
+    width:auto;
+    overflow-y:scroll;   
+}
+#shareDiv{
+    padding:5px;
+    height:auto;
+    width:auto;
+    overflow-y:scroll;   
+}
+/*Basemap Gallery*/
+.closemenu{
+    position:absolute;
+    cursor:pointer;
+    top:5px;
+    right:5px;
+    font-weight:400;
+    font-size:1.2em;
+}
+
+#galleryDiv{
+    width:380px;
+    height:265px;
+    overflow-y:scroll;
+}
+.container_box {
+    border-radius:5px;
+    position: relative;
+    background: #fff;
+    border: 1px solid #333;
+    z-index:60;
+}
+
+@media screen and (max-width: 640px){
+    #galleryDiv{
+        width:140px;
+        height:265px;
+    }
+}
+
+.basemap_title{
+    padding: 5px;
+}
+
+/*Share Dialog*/
+
+.icon-container {
+    margin: 10px 0 10px;
+    display:none;
+}
+@media screen and (min-width: 620px){
+    .icon-container{
+      display:block;
+    }
+
+}
+ .map-size-label {
+    float: left;
+    font-size: 15px;
+    margin: 0 5px 0 0;
+}
+.esriRTL  .map-size-label {
+    float: right;
+    margin: 0 0 0 5px;
+}
+ .share-dialog-icon {
+    /*font-size: 32px;
+    line-height: 32px;*/
+    font-size:30px;
+    line-height:30px;
+    float: left;
+    color: rgba(0, 0, 0, 0.3) !important;
+    cursor: pointer;
+    margin: 0 10px 0 0;
+    text-decoration: none;
+    display: block;
+}
+ .share-dialog-icon:visited{
+    color: rgba(0, 0, 0, 0.5);
+}
+.esriRTL  .share-dialog-icon {
+    float: right;
+    margin: 0 0 0 10px;
+}
+ .share-dialog-icon:hover {
+    color:rgba(0, 0, 0, 0.8);
+}
+
+ .share-map-url {
+    width: 50%;
+    min-width: 80%;
+    max-width: 90%;
+    height: 25px;
+    font-size: 14px;
+    color: #777;
+    border: 1px solid #dcdcdc;
+    margin: 0 0 10px;
+}
+ .map-size-container {
+    margin: 0;
+    padding: 0 0 20px;
+}
+ .embed-map-size-clear,
+ .icon-clear {
+    clear: both;
+}
+ .embed-map-size-dropdown {
+    float: left;
+}
+.esriRTL  .embed-map-size-dropdown {
+    float: right;
+}
+ .share-dialog-subheader {
+    font-size: 17px;
+    display:none;
+}
+@media screen and (min-width: 620px){
+    .share-dialog-subheader{
+      display:block;
+    }
+
+}
+ .share-dialog-textarea {
+    width: auto;
+    max-width: 90%;
+    width: 80%;
+    height: 50px;
+    font-size: 14px;
+    color: #777;
+    border: 1px solid #dcdcdc;
+    margin: 0 0 10px;
+}
+
+.share-dialog-checkbox {
+    display: inline-block;
+    cursor: pointer;
+    padding:8px;
+}
+ input[type=checkbox].share-dialog-checkbox {
+    display:none;
+}
+
+.share-dialog-checkbox:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align:middle;
+    background-color: #d3d3d3;
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 3px;
+}
+
+ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+}
+
+
+.TableOfContents {
+    position:relative;
+    width: 100%;
+    overflow:scroll;
+    padding-bottom:5%;
+}
+.TableOfContents .toc-title {
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 16px;
+    line-height: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.TableOfContents .toc-first-layer .toc-title {
+    border-top: 1px solid #e0e0e0;
+}
+.TableOfContents .toc-title-container {
+    background: none;
+    color: #555;
+    position: relative;
+    zoom: 1;
+}
+.TableOfContents .toc-text {
+    float: left;
+    padding: 12px 0;
+    margin: 0;
+    text-overflow: ellipsis;
+    width: 200px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    line-height: 16px;
+    height: 16px;
+    border: 1px solid transparent;
+    vertical-align: middle;
+}
+.esriRTL .TableOfContents .toc-text {
+    float: right;
+}
+.TableOfContents .toc-checkbox {
+    float: left;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #bababa;
+    margin: 12px 8px;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+.esriRTL .TableOfContents .toc-checkbox {
+    float: right;
+}
+.TableOfContents .toc-checkbox:hover {
+    color: #555;
+}
+.TableOfContents .toc-checkbox:active {
+    color: #999;
+}
+.TableOfContents .toc-check:before{
+    content: "\2713";
+    color:#333;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 18px;   
+}
+.toc-settings {
+    cursor: pointer;
+    padding: 12px 0;
+    float: right;
+    margin-right: 15px;
+    color: #999;
+}
+.toc-settings:hover {
+    color: #333;
+}
+.toc-settings:active {
+    color: #97cbec;
+}
+.esriRTL .toc-settings {
+    margin-right: 0;
+    float: left;
+    margin-left: 15px;
+}
+.toc-account {
+    margin-left: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.esriRTL .toc-account {
+    margin-left: 0;
+    margin-right: 4px;
+}
+@media screen and (max-width:300px) {
+    .TableOfContents {
+    width: auto;
+}
+.TableOfContents .toc-text {
+    width: 60%}
+}.clear {
+    clear: both;
+}

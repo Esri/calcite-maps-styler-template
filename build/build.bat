@@ -48,6 +48,7 @@ mkdir %BUILD_OUTPUT%\LocalPerspective
 mkdir %BUILD_OUTPUT%\Directions
 mkdir %BUILD_OUTPUT%\MapCarousel
 mkdir %BUILD_OUTPUT%\MapTour
+mkdir %BUILD_OUTPUT%\MapTools
 mkdir %BUILD_OUTPUT%\MapAndAppGallery
 mkdir %BUILD_OUTPUT%\OnePane
 mkdir %BUILD_OUTPUT%\OnePane\azuretime
@@ -160,6 +161,7 @@ xcopy %TEMPLATES_ROOT%\UrbanObservatory                         %BUILD_OUTPUT%\U
 xcopy %TEMPLATES_ROOT%\PublicInformation                        %BUILD_OUTPUT%\PublicInformation                    /E /Y
 xcopy %TEMPLATES_ROOT%\ImpactSummary                            %BUILD_OUTPUT%\ImpactSummary                        /E /Y
 xcopy %TEMPLATES_ROOT%\SummaryViewer                            %BUILD_OUTPUT%\SummaryViewer                        /E /Y
+xcopy %TEMPLATES_ROOT%\MapTools                                 %BUILD_OUTPUT%\MapTools                             /E /Y
 xcopy %TEMPLATES_ROOT%\MapJournal                               %BUILD_OUTPUT%\MapJournal                           /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\MapSeries                            /E /Y
 xcopy %TEMPLATES_ROOT%\Viewer                             	  	%BUILD_OUTPUT%\Viewer                               /E /Y
