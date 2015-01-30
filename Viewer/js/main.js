@@ -899,7 +899,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             //TODO - talk to Matt about this. It is supposed to accept either
                             //a layer or a layer url. But w/o the FeatureLayer part it doesn't work. 
                             source.featureLayer = new FeatureLayer(url);
-                            source.name = name;
+                            source.name = mapLayer.name;
                             source.exactMatch = searchLayer.field.exactMatch;
                             source.searchField = [searchLayer.field.name];
                             source.placeholder = searchOptions.hintText;
