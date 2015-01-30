@@ -55,7 +55,7 @@ ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawe
         _mapLoaded: function () {
 
             // remove loading class
-            domClass.remove(dom.byId("ac-container"), "hidden");
+            domClass.remove(dom.byId("ac-container"), "node-hidden");
             domClass.remove(document.body, "app-loading");
 
 
@@ -113,11 +113,9 @@ ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawe
                             var name = mapLayer._titleForLegend;
                             if (esriLang.isDefined(searchLayer.subLayer)) {
                                 url = url + "/" + searchLayer.subLayer;
-                            }
-                            //TODO - talk to Matt about this. It is supposed to accept either
-                            //a layer or a layer url. But w/o the FeatureLayer part it doesn't work. 
+                            } 
                             source.featureLayer = new FeatureLayer(url);
-                            source.name = name;
+                            source.name = mapLayer.name;
                             source.exactMatch = searchLayer.field.exactMatch;
                             source.searchField = [searchLayer.field.name];
                             source.placeholder = searchOptions.hintText;
@@ -159,18 +157,26 @@ ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawe
                 homeButton.startup();
             }
 
-            //Define legend panel content
-            dom.byId("legend-label").innerHTML = this.config.i18n.tools.legend;
-            var legend_div = domConstruct.create("div", {
-                className: "panel_content"
-            }, dom.byId("legendDiv"));
-            var layerInfo = arcgisUtils.getLegendLayers(this.config.response);
 
-            var legend = new Legend({
-                map: this.map,
-                layerInfos: layerInfo
-            }, legend_div);
-            legend.startup();
+            //Define legend panel content
+            var noLegend = null, noAbout = null;
+            var layerInfo = arcgisUtils.getLegendLayers(this.config.response);
+            if(layerInfo && layerInfo.length && layerInfo.length > 0){
+                dom.byId("legend-label").innerHTML = this.config.i18n.tools.legend;
+                var legend_div = domConstruct.create("div", {
+                    className: "panel_content"
+                }, dom.byId("legendDiv"));
+
+                var legend = new Legend({
+                    map: this.map,
+                    layerInfos: layerInfo
+                }, legend_div);
+                legend.startup();                
+            }else{
+                domClass.add(dom.byId("legend-cont"), "node-hidden");
+                noLegend = true;
+            }
+
 
 
             //Define about panel content
@@ -182,7 +188,15 @@ ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawe
                     className: "panel_content"
                 }, dom.byId("aboutDiv"));
             } else {
-                domClass.add(dom.byId("about-cont"), "hidden");
+                domClass.add(dom.byId("about-cont"), "node-hidden");
+                noAbout= true;
+            }
+            //hide arrows if legend or about if both options aren't shown
+            if(noAbout ||  noLegend){
+                console.log("no about")
+                query(".ac-container").forEach(function(node){
+                    domClass.add(node, "no-label");
+                });
             }
             this._updateTheme();
 

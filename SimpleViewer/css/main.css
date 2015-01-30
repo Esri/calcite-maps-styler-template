@@ -74,7 +74,7 @@
   width: 280px;
   overflow: auto;
   overflow-x: hidden;
-  border-right: 1px solid #ddd; }
+  border-right: none; }
 
 .esriRTL .drawer-open .content-pane-left {
   border-right: 0;
@@ -101,7 +101,7 @@ html, body {
   width: 100%;
   height: 100%; }
 
-.hidden {
+.node-hidden {
   display: none; }
 
 .ac-container {
@@ -131,6 +131,12 @@ html, body {
 
 .esriRTL .ac-container label {
   float: right; }
+
+.ac-container.no-label input:checked + label:after {
+  content: ""; }
+
+.ac-container.no-label label:after, .ac-container.no-label input:checked + label:after {
+  content: ""; }
 
 .ac-container label:after, .ac-container input:checked + label:after {
   font-family: "simple";
