@@ -283,9 +283,10 @@ ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawe
             //Query for the title areas in the drawer and  apply the panel theme.
             query(".ab").style("backgroundColor", this.paneltheme.toString());
 
-
-
-            registry.byId("border_container").resize();
+            this._drawer.toggle();
+            this._drawer.resize();
+            this_drawer.toggle();
+            //registry.byId("border_container").resize();
         }
     });
 });
