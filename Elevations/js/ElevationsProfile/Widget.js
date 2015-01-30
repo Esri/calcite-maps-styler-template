@@ -14,6 +14,7 @@ define([
   "dijit/registry",
   "dijit/Dialog",
   "dijit/Toolbar",
+  "dijit/ToolbarSeparator",
   "dijit/layout/ContentPane",
   "dijit/form/Button",
   "dijit/form/ToggleButton",
@@ -49,7 +50,7 @@ define([
   "dojo/i18n!./nls/strings",
   "dojo/text!./Widget.html",
   "xstyle!./css/style.css"
-], function (Evented, _WidgetBase, _OnDijitClickMixin, _TemplatedMixin, _WidgetsInTemplateMixin, on, aspect, declare, lang, Deferred, array, number, registry, Dialog, Toolbar, ContentPane, Button, ToggleButton, put, domGeometry, domStyle, domClass, query, Color, colors, easing, Chart, Default, Grid, Areas, MouseIndicator, TouchIndicator, ThreeD, esriConfig, esriSniff, esriRequest, Measurement, Geoprocessor, Polyline, SimpleLineSymbol, SimpleMarkerSymbol, Graphic, FeatureSet, LinearUnit, geodesicUtils, webMercatorUtils, Units, i18NStrings, dijitTemplate) {
+], function (Evented, _WidgetBase, _OnDijitClickMixin, _TemplatedMixin, _WidgetsInTemplateMixin, on, aspect, declare, lang, Deferred, array, number, registry, Dialog, Toolbar, ToolbarSeparator, ContentPane, Button, ToggleButton, put, domGeometry, domStyle, domClass, query, Color, colors, easing, Chart, Default, Grid, Areas, MouseIndicator, TouchIndicator, ThreeD, esriConfig, esriSniff, esriRequest, Measurement, Geoprocessor, Polyline, SimpleLineSymbol, SimpleMarkerSymbol, Graphic, FeatureSet, LinearUnit, geodesicUtils, webMercatorUtils, Units, i18NStrings, dijitTemplate) {
 
   /**
    *  ElevationsProfile
