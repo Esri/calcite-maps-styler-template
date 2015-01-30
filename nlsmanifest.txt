@@ -1,4 +1,5 @@
 Viewer\js\nls
+MapTools\js\nls
 ChromeTwitter\nls
 BasicViewer\nls
 ConstituentEngagement\js\nls
