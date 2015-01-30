@@ -1,28 +1,27 @@
 {
+    "values": {
+        "group": "2f7ae054c7ef43c6a2d4c19c90855b7c",
+        "theme": "#d15706",
+        "applicationName": "",
+        "applicationIcon": "",
+        "applicationFavicon": "",
+        "zoomLevel": 12,
+        "webMapInfoDescription": true,
+        "webMapInfoSnippet": false,
+        "webMapInfoOwner": true,
+        "webMapInfoCreated": false,
+        "webMapInfoModified": false,
+        "webMapInfoLicenseInfo": false,
+        "webMapInfoAccessInformation": false,
+        "webMapInfoTags": false,
+        "webMapInfoNumViews": false,
+        "webMapInfoAvgRating": false
+    },
+    
     "configurationSettings": [
         {
-            "category": "<b>Configure template</b>",
+            "category": "<b>Header Settings</b>",
             "fields": [
-                {
-                    "type": "group",
-                    "label": "Select group",
-                    "tooltip": "Group displayed in the application"
-                },
-                {
-                    "type": "color",
-                    "fieldName": "theme",
-                    "tooltip": "Color theme to use",
-                    "label": "Color Scheme"
-                }
-            ]
-        },
-        {
-            "category": "<b>Application header</b>",
-            "fields": [
-                {
-                    "type": "paragraph",
-                    "value": "Configure Application header settings."
-                },
                 {
                     "type": "string",
                     "fieldName": "applicationName",
@@ -36,114 +35,92 @@
                     "tooltip": "Icon in top left corner of application. Icon should be 48px high."
                 },
                 {
-                    "label": "Favicon URL",
-                    "fieldName": "applicationFavicon",
-                    "type": "string",
-                    "tooltip": "Application favicon."
+                    "type": "color",
+                    "fieldName": "theme",
+                    "tooltip": "Application color theme",
+                    "label": "Color Scheme"
                 }
             ]
         },
         {
-            "category": "<b>General Settings</b>",
+            "category": "<b>Group and Map Settings</b>",
             "fields": [
                 {
-                    "type": "paragraph",
-                    "value": "Configure General fields settings."
+                    "type": "group",
+                    "label": "Select group",
+                    "tooltip": "Group displayed in the application"
                 },
                 {
                     "type": "string",
                     "fieldName": "zoomLevel",
                     "label": "Zoom Level",
                     "tooltip": "Configure zoom level"
-                }
-            ]
-        },
-        {
-            "category": "<b>Webmap information settings</b>",
-            "fields": [
+                },
                 {
                     "type": "paragraph",
-                    "value": "Configure settings for details that are shown when info icon is clicked in the list of maps."
+                    "value": "Choose the map information to display:"
                 },
                 {
                     "type": "boolean",
                     "fieldName": "webMapInfoDescription",
-                    "label": "Show description",
+                    "label": "Description",
                     "tooltip": "Enable to show webmap description"
                 },
                 {
                     "type": "boolean",
                     "fieldName": "webMapInfoSnippet",
-                    "label": "Show snippet",
-                    "tooltip": "Enable to show webmap snippet"
+                    "label": "Short Summary",
+                    "tooltip": "Enable to show webmap summary"
                 },
                 {
                     "type": "boolean",
                     "fieldName": "webMapInfoOwner",
-                    "label": "Show owner",
+                    "label": "Owner Name",
                     "tooltip": "Enable to show webmap owner"
                 },
                 {
                     "type": "boolean",
                     "fieldName": "webMapInfoCreated",
-                    "label": "Show created date",
+                    "label": "Creation Date",
                     "tooltip": "Enable to show webmap created date"
                 },
                 {
                     "type": "boolean",
                     "fieldName": "webMapInfoModified",
-                    "label": "Show modified date",
+                    "label": "Modification Date",
                     "tooltip": "Enable to show webmap modified date"
                 },
                 {
                     "type": "boolean",
                     "fieldName": "webMapInfoLicenseInfo",
-                    "label": "Show license information",
-                    "tooltip": "Enable to show webmap license information"
+                    "label": "Access and Use Constraints",
+                    "tooltip": "Enable to show webmap licensing information"
                 },
                 {
                     "type": "boolean",
                     "fieldName": "webMapInfoAccessInformation",
-                    "label": "Show access information",
-                    "tooltip": "Enable to show webmap access information"
+                    "label": "Credits",
+                    "tooltip": "Enable to show webmap credits"
                 },
                 {
                     "type": "boolean",
                     "fieldName": "webMapInfoTags",
-                    "label": "Show tags",
+                    "label": "Tags",
                     "tooltip": "Enable to show webmap tags"
                 },
                 {
                     "type": "boolean",
                     "fieldName": "webMapInfoNumViews",
-                    "label": "Show number of views",
+                    "label": "Number of Views",
                     "tooltip": "Enable to show webmap number of views"
                 },
                 {
                     "type": "boolean",
                     "fieldName": "webMapInfoAvgRating",
-                    "label": "Show average rating",
+                    "label": "Average Rating",
                     "tooltip": "Enable to show webmap average rating"
                 }
             ]
         }
-    ],
-    "values": {
-        "group": "2f7ae054c7ef43c6a2d4c19c90855b7c",
-        "theme": "#d15706",
-        "applicationName": "",
-        "applicationIcon": "",
-        "applicationFavicon": "",
-        "zoomLevel": 12,
-        "webMapInfoDescription": true,
-        "webMapInfoSnippet": true,
-        "webMapInfoOwner": true,
-        "webMapInfoCreated": false,
-        "webMapInfoModified": false,
-        "webMapInfoLicenseInfo": false,
-        "webMapInfoAccessInformation": false,
-        "webMapInfoTags": false,
-        "webMapInfoNumViews": false,
-        "webMapInfoAvgRating": false
-    }
+    ]
 }
