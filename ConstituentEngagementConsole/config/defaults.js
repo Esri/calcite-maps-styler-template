@@ -31,7 +31,7 @@ define({
     "theme": "#d15706",
     "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
-    "sharinghost": location.protocol + "//" + "localgovdev.mapsdevext.arcgis.com/",
+    "sharinghost": location.protocol + "//" + "arcgis.com/",
     //If your applcation needs to edit feature layer fields set this value to true. When false the map will
     //be treated with layers that are not set to editable which allows the FeatureLayer to load features optimally.
     "editable": false,
