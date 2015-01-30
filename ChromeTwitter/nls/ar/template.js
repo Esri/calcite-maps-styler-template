@@ -2,6 +2,7 @@
    ({
   viewer: {
     main: {
+      ownerText: "بيت_A map from_لاحقة: ",
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {
