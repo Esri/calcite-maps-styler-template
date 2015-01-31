@@ -333,8 +333,9 @@ define([
                     errorMessage += nls.user.selectLocation;
                     this._showErrorMessageDiv(errorMessage, dom.byId("select_location"));
                 }
+              var elementId;
                 if (!erroneousFields[0].children[0].id) {
-                    var elementId = erroneousFields[0].parentElement.children[0].id;
+                    elementId = erroneousFields[0].parentElement.children[0].id;
                     domClass.remove(elementId, "has-success");  
                 } else {
                     elementId = erroneousFields[0].children[0].id;
@@ -1406,7 +1407,7 @@ define([
         },
         // validate form input
         _validateUserInput: function (error, node, inputValue, iskeyPress) {
-            if (domClass.contains(node, "filterSelect") && inputValue == "" && domClass.contains(node.parentElement, "mandatory")) {
+            if (domClass.contains(node, "filterSelect") && inputValue === "" && domClass.contains(node.parentElement, "mandatory")) {
                 this._showErrorMessageDiv(error, node.parentElement.children[0]);
                 domClass.add(node.parentElement, "has-error");
                 domClass.remove(node, "has-success");
@@ -1487,7 +1488,7 @@ define([
                 if (this.config.details && this.config.details.Title) {
                     window.document.title = this.config.details.Title;
                 }
-                if (this.config.form_layer.id == "All Layer") {
+                if (this.config.form_layer.id == nls.user.selectedLayerText) {
                     var webmapLayers;
                     this.layerCollection = {};
                     webmapLayers = domConstruct.create("select", { class: "form-control" }, dom.byId("multipleLayers"));
@@ -1750,7 +1751,7 @@ define([
 	
 	_createGeoformSections: function () {
             array.forEach(query(".geoformSection"), lang.hitch(this, function (currentSection, index) {
-                if (this.config.form_layer.id === "All Layer") {
+                if (this.config.form_layer.id === nls.user.selectedLayerText) {
                     currentSection.innerHTML = string.substitute(currentSection.innerHTML, { formSection: ++index + "." });
                 } else {
                     if (index !== 0) {
@@ -2477,7 +2478,7 @@ define([
                     this.config.fields[this._formLayer.id] = fieldsArray;
                 }
             } else {
-                if (this.config.form_layer.id !== "All Layer") {
+                if (this.config.form_layer.id !== nls.user.selectedLayerText) {
                     var error = new Error(nls.user.invalidLayerMessage);
                     this.reportError(error);
                     return;
