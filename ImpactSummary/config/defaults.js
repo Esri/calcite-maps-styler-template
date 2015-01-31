@@ -31,7 +31,8 @@ define({
     "enableLocateButton": true,
     "enableBasemapToggle": true,
     "enableShareDialog": true,
-    "enableRendererArea":true,
+    "enablePopupDialog": true,
+    "enableRendererArea": true,
     "theme": "dark", //Valid parameters: "dark" and "light"
     "nextBasemap": "hybrid",
     "defaultBasemap": "topo",
@@ -181,6 +182,12 @@ define({
     }, {
         "label": "Fully Opaque",
         "value": 1
+    }, { "label": "Diagonal Cross",
+        "value": "STYLE_DIAGONAL_CROSS"
+    }, { "label": "Diagonal Forward",
+        "value": "STYLE_FORWARD_DIAGONAL"
+    }, { "label": "Diagonal Vertical",
+        "value": "STYLE_VERTICAL"
     }],
     "featureCurrentTransparency": "Fully Opaque"
 });

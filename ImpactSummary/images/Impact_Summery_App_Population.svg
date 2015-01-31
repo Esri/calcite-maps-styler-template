@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g id="Dark_Theme_1_" display="none">
+	<rect x="-32" y="-256" display="inline" fill="#333333" width="544" height="736"/>
+	
+		<rect x="-64" y="-288" display="inline" fill="none" stroke="#808080" stroke-width="0.25" stroke-miterlimit="10" width="612" height="792"/>
+</g>
+<g id="LightTheme">
+</g>
+<g id="Hover" display="none">
+	<rect x="-32" y="-256" display="inline" fill="#C5E5F9" width="544" height="736"/>
+</g>
+<g id="Selected" display="none">
+	<rect x="-32" y="-256" display="inline" fill="#AADBFA" width="544" height="736"/>
+</g>
+<g id="Icon_Name">
+	<path fill="#57A6D9" d="M17,10h-6c-1.1044922,0-2,0.8944702-2,2v2v2v2c0,0.5526733,0.4472656,1,1,1h1v1
+		c0,0.5526733,0.4473267,1,1,1h4v-2c0-1.8583984,1.2792969-3.4111328,3-3.8583984V14v-2C19,10.8944702,18.1044922,10,17,10z"/>
+	<path fill="#D3EAF9" d="M16,20v-1v-1h0.1419067C16.4139404,16.9608154,17.0907593,16.0932007,18,15.5654907V12
+		c0-0.5518188-0.4492188-1-1-1h-6c-0.5507812,0-1,0.4481812-1,1v6h2v2H16z"/>
+	<g>
+		<path fill="#57A6D9" d="M10.5791016,9.0429688C10.2197266,8.4423828,10,7.7489624,10,7
+			c0-0.234375,0.0302734-0.461731,0.0692749-0.6852417C9.7594604,6.1178589,9.3942871,6,9,6H4C2.8955078,6,2,6.8944702,2,8v2v2
+			c0,0.5526733,0.4472656,1,1,1h1v1c0,0.5526733,0.4472656,1,1,1h3v-3C8,10.4901733,9.125,9.2489624,10.5791016,9.0429688z"/>
+	</g>
+	<path fill="#D3EAF9" d="M8,14v-2c0-1.3014526,0.8378906-2.3994751,2-2.8106689V8c0-0.5518188-0.4492188-1-1-1H4
+		C3.4492188,7,3,7.4481812,3,8v4h2v2H8z"/>
+	<g>
+		<rect x="4" y="9" fill="#6DB5E3" width="1" height="3"/>
+		<circle fill="#57A6D9" cx="6.5" cy="3.5" r="2.3496001"/>
+		<circle fill="#D3EAF9" cx="6.5" cy="3.5" r="1.75"/>
+	</g>
+	<path fill="#6DB5E3" d="M9,9.7890625V9H8v3C8,11.117981,8.3908081,10.3348999,9,9.7890625z"/>
+	<g>
+		<circle fill="#57A6D9" cx="14" cy="7" r="3"/>
+		<circle fill="#D3EAF9" cx="14" cy="7" r="2"/>
+		<rect x="11" y="13" fill="#6DB5E3" width="1" height="5"/>
+	</g>
+	<path fill="#6DB5E3" d="M17,16.3855591V13h-1v5h0.1419067C16.3010864,17.3920288,16.5963135,16.843689,17,16.3855591z"/>
+	<g>
+		<circle fill="#57A6D9" cx="24" cy="11" r="4"/>
+		<circle fill="#D3EAF9" cx="24" cy="11" r="3"/>
+		<path fill="#57A6D9" d="M28,16h-8c-1.6571999,0-3,1.3428001-3,3v8c0,1.1044998,0.8955002,2,2,2h1v2c0,0.5527,0.4473,1,1,1h6
+			c0.5527,0,1-0.4473,1-1v-2h1c1.1044998,0,2-0.8955002,2-2v-8C31,17.3428001,29.6571999,16,28,16z"/>
+		<path fill="#D3EAF9" d="M28,17h-8c-1.1044998,0-2,0.8955002-2,2v6v2c0,0.5527,0.4473,1,1,1h2v3h6v-3h2c0.5527,0,1-0.4473,1-1v-2
+			v-6C30,17.8955002,29.1044998,17,28,17z"/>
+		<rect x="20" y="20" fill="#6DB5E3" width="1" height="8"/>
+		<rect x="27" y="20" fill="#6DB5E3" width="1" height="8"/>
+	</g>
+</g>
+<g id="Icons">
+</g>
+</svg>

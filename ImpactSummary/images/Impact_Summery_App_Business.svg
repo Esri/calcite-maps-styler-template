@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g id="Dark_Theme_1_" display="none">
+	<rect x="-224" y="-64" display="inline" fill="#333333" width="544" height="736"/>
+	
+		<rect x="-256" y="-96" display="inline" fill="none" stroke="#808080" stroke-width="0.25" stroke-miterlimit="10" width="612" height="792"/>
+</g>
+<g id="LightTheme">
+</g>
+<g id="Hover" display="none">
+	<rect x="-224" y="-64" display="inline" fill="#C5E5F9" width="544" height="736"/>
+</g>
+<g id="Selected" display="none">
+	<rect x="-224" y="-64" display="inline" fill="#AADBFA" width="544" height="736"/>
+</g>
+<g id="Icon_Name">
+	<polygon fill="#57A6D9" points="27,15 27,12 26,12 26,10 23,10 23,6 22,6 22,10 19,10 19,12 18,12 18,15 17.0020008,15 
+		17.0020008,32 28,32 28,15 	"/>
+	<polygon fill="#57A6D9" points="14,6 14,4 5,4 5,6 4,6 4,32 15,32 15,6 	"/>
+	<rect x="5" y="7" fill="#D3EAF9" width="9" height="24"/>
+	<rect x="18" y="16" fill="#D3EAF9" width="9" height="15"/>
+	<g>
+		<rect x="19" y="18" fill="#57A6D9" width="1" height="1"/>
+		<rect x="23" y="18" fill="#57A6D9" width="1" height="1"/>
+		<rect x="25" y="18" fill="#57A6D9" width="1" height="1"/>
+		<rect x="19" y="20" fill="#57A6D9" width="1" height="1"/>
+		<rect x="23" y="20" fill="#57A6D9" width="1" height="1"/>
+		<rect x="25" y="20" fill="#57A6D9" width="1" height="1"/>
+		<rect x="19" y="22" fill="#57A6D9" width="1" height="1"/>
+		<rect x="23" y="22" fill="#57A6D9" width="1" height="1"/>
+		<rect x="25" y="22" fill="#57A6D9" width="1" height="1"/>
+		<rect x="19" y="24" fill="#57A6D9" width="1" height="1"/>
+		<rect x="23" y="24" fill="#57A6D9" width="1" height="1"/>
+		<rect x="25" y="24" fill="#57A6D9" width="1" height="1"/>
+		<rect x="19" y="26" fill="#57A6D9" width="1" height="1"/>
+		<rect x="23" y="26" fill="#57A6D9" width="1" height="1"/>
+		<rect x="25" y="26" fill="#57A6D9" width="1" height="1"/>
+		<rect x="19" y="28" fill="#57A6D9" width="1" height="1"/>
+		<rect x="23" y="28" fill="#57A6D9" width="1" height="1"/>
+		<rect x="25" y="28" fill="#57A6D9" width="1" height="1"/>
+		<rect x="21" y="18" fill="#57A6D9" width="1" height="1"/>
+		<rect x="21" y="20" fill="#57A6D9" width="1" height="1"/>
+		<rect x="21" y="22" fill="#57A6D9" width="1" height="1"/>
+		<rect x="21" y="24" fill="#57A6D9" width="1" height="1"/>
+		<rect x="21" y="26" fill="#57A6D9" width="1" height="1"/>
+		<rect x="21" y="28" fill="#57A6D9" width="1" height="1"/>
+	</g>
+	<rect x="5" y="7" fill="#FFFFFF" width="1" height="24"/>
+	<rect x="18" y="16" fill="#FFFFFF" width="1" height="15"/>
+	<rect x="19" y="13" fill="#D3EAF9" width="7" height="2"/>
+	<rect x="20" y="11" fill="#D3EAF9" width="5" height="1"/>
+	<rect x="19" y="13" fill="#FFFFFF" width="1" height="2"/>
+	<rect x="20" y="11" fill="#FFFFFF" width="3" height="1"/>
+	<g>
+		<rect x="10" y="8" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="6" y="8" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="10" y="10" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="6" y="10" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="10" y="12" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="6" y="12" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="10" y="14" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="6" y="14" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="10" y="16" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="6" y="16" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="10" y="18" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="6" y="18" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="10" y="20" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="6" y="20" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="10" y="22" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="6" y="22" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="10" y="24" fill="#6DB5E3" width="3" height="1"/>
+		<polygon fill="#6DB5E3" points="6,24 6,24 6,25 6,25 7,25 9,25 9,24 7,24 		"/>
+		<rect x="10" y="26" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="6" y="26" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="10" y="28" fill="#6DB5E3" width="3" height="1"/>
+		<rect x="6" y="28" fill="#6DB5E3" width="3" height="1"/>
+	</g>
+	<rect x="6" y="5" fill="#FFFFFF" width="7" height="1"/>
+	<rect x="7" y="5" fill="#D3EAF9" width="6" height="1"/>
+	<polygon fill="#57A6D9" points="2,31.125 2,32 11.0985947,32 30,32 30,31.125 	"/>
+	<rect fill="none" width="32" height="32"/>
+</g>
+<g id="Icons">
+</g>
+</svg>

@@ -1,0 +1,439 @@
+﻿.dataCollectionsContainer
+{
+    height: 150px;
+    width: 98%;
+    border: 1px solid #7a7a7a;
+    overflow: auto;
+    margin-left: 2px;
+}
+.enrichAreaLabel
+{
+    padding-top: 10px;
+}
+.loading-features {
+background-image: url(../images/ajax-loader.gif);
+background-position: center center;
+background-repeat: no-repeat;
+}
+.esriLayerHelpEnrichText {
+    width: auto;
+    font-size: 13px;
+    text-align: center;
+    line-height: 15px;
+    background-color: #FAF6D0;
+    margin-top: 10px;
+    padding: 5px;
+}
+.variableLabel {
+background-color: Orange;
+padding: 6px 0px 6px 10px;
+width: 100%;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.lighterButton
+{
+opacity:0.5;
+}
+.enrichLoadingContainer {
+height: 20px;
+width: 20px;
+position: absolute;
+background-repeat: no-repeat;
+left: 50%;
+top: 50%;
+}
+.variableLabelSpace {
+height:10px;
+}
+.enrichVariableContent {
+height: 210px;
+overflow-x: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+margin-bottom:20px;
+}
+.creditsRecords {
+width: 230px;
+display: inline-block;
+}
+.esriVariable {
+display:none;
+min-width: 314px;
+}
+.variableDisplayBlock
+{
+    display:block;
+}
+.variableDisplayNone
+{
+display:none;
+}
+
+.enrichCountryContent 
+{
+margin-left: 18px;
+margin-top: 8px;
+cursor: pointer;
+display: inline-block;
+color: #007AC2;
+text-align: center;
+padding: 15px 2px;
+}
+
+.creditsRecordsText {
+display: inline-block;
+}
+.transparent-indicator {
+opacity: 0.2;
+z-index: 100;
+}
+.inputDiv {
+margin-bottom: 25px;
+}
+.unitInput {
+width: 123px;
+}
+.imageAreaContanier {
+margin-top: 10px;
+}
+.imgStraightLine {
+background-image: url('../images/StraightLineDistance.png');
+height: 32px;
+width: 32px;
+cursor: pointer;
+display: inline-block;
+margin: 5px 125px 10px 19px;
+}
+.imgDriveTime {
+background-image: url('../images/DrivingTime.png');
+background-repeat: no-repeat;
+height: 32px;
+width: 32px;
+cursor: pointer;
+display: inline-block;
+margin: 0px 0px 10px 6px;
+}
+.imgHighlight{
+-moz-box-shadow: 0px 0px 5px 1px rgba(243, 135, 18, 0.91);
+-webkit-box-shadow: 0px 0px 5px 1px rgba(243, 135, 18, 0.91);
+box-shadow: 0px 0px 5px 1px rgba(243, 135, 18, 0.91);
+}
+.labelHighlight {
+font-weight: bold;
+}
+.labelBufferType {
+display: inline-block;
+margin: 10px 46px 0px 18px;
+}
+.labelNumber {
+float: left;
+margin: 1px 5px 0px 0px;
+}
+.inputDistance {
+width: 123px;
+margin-left: 18px;
+margin-right: 35px;
+}
+.radioOptionContainer {
+margin: 15px 0px 20px 0px;
+}
+.enrichImageContanier {
+display: none;
+}
+.inputLayerName {
+width: 287px;
+margin: 10px 0px 15px 17px;
+vertical-align: -webkit-baseline-middle;
+}
+.enrichCountry {
+margin-bottom: 10px;
+margin-right:39px;
+}
+.enrichCountryText {
+padding-top: 2px;
+font-size: 11px;
+
+}
+.enrichCountryImage { 
+padding: 0px 10px 0px 10px;
+width: 60px;
+}
+.enrichGlobalVariableContent
+{
+    padding-bottom: 30px;
+}
+.fieldContainer
+{
+    padding: 3px 0px 3px 0px;
+}
+.fieldCheckBox
+{
+    background-image: url('../images/deselect.png') !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 19px !important;
+    width: 19px !important;
+    vertical-align: bottom;
+    background-size: 80%;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.esriUpArrow {
+background-image: url('../images/selected-up-arrow.png');
+background-position: center;
+background-repeat: no-repeat;
+height: 11px;
+width: 18px;
+display:none;
+margin-left: 15%;
+top:-11px;
+position:absolute;
+}
+.disableAreaParameters
+{
+    position: absolute;
+    width: 90%;
+    height: 36%;
+    background: #696666;
+    opacity: 0.1;
+    filter: alpha(opacity=60);
+    z-index: 1;
+    cursor: no-drop;
+}
+.displayNone
+{
+    display: none;
+}
+.displayBlock
+{
+    display: block;
+}
+.fieldCheckBoxChecked
+{
+    background-image: url('../images/select.png') !important;
+}
+.subFieldContainer
+{
+    display: none;
+}
+.icon-plus
+{
+    cursor: pointer;
+}
+.expand-field
+{
+    display: block;
+    margin-left: 40px;
+}
+.collapse-field
+{
+    display: none;
+}
+.subFieldContent
+{
+    padding-top: 3px;
+}
+.enrichLayerContainer
+{
+    width: 566px;
+    height: 375px;
+}
+.enrichCategory
+{
+    padding: 2px;
+    margin-left: 2px;
+}
+.enrichCategoryDescription
+{
+    width: 100%;
+    height: 20px;
+    padding-bottom: 5px;
+    float: left;
+}
+.ShoppingCart
+{
+    top: 48px;
+}
+.enrichVariableText {
+width: 100%;
+height: 20px;
+padding-bottom: 5px;
+float: left;
+}
+.enrichVariableContainer {
+width: 100%;
+height: 50px;
+padding-bottom: 10px;
+float: left;
+overflow: auto;
+}
+.dataBrowserContainer {
+width: 100%;
+height: 100%;
+overflow: hidden;
+margin: 0;
+font-family: 'Segoe UI';
+font-size: 13px;
+background-color: black;
+z-index: 1000;
+}
+.enrichCustomize {
+cursor: pointer;
+text-decoration: underline;
+color: #007ac2;
+margin: 10px 10px 15px 15px;
+}
+.variableContent {
+ margin:12px 0px 0px 5px;
+ }
+.enrichVariableCount {
+width: 100%;
+margin: 10px 10px 15px 15px;
+}
+.creditsUsedText {
+cursor: pointer;
+text-decoration: underline;
+color: #7a346d;
+display: inline-block;
+margin: 0px 0px 0px 13px;
+width: 100%;
+margin-left: 17px;
+}
+.variableContainer {
+border: 1px solid #007ac2;
+display:none;
+background-color:#eaf7ff;
+position:relative;
+margin-top:18px;
+padding: 3px;
+}
+.enrichReset {
+cursor: pointer;
+text-decoration: underline;
+color: #007ac2;
+margin: 10px 0px 15px 15px;
+padding-right: 104px;
+}
+.checkboxLabel {
+padding-bottom: 10px;
+display: inline-block;
+margin-left: 10px;
+margin-right: 20px;
+margin-top: 10px;
+}
+.summarizeLabel {
+margin-top: 20px;
+}
+.tabImage {
+padding: 0px 10px 0px 10px;
+width:60px;
+}
+.enrichCategoryContainer {
+display: inline-block;
+padding: 0px 5px 0px 5px;
+}
+.enrichCategoryContent {
+margin-left: 8px;
+margin-top: 8px;
+margin-right:37px;
+display: inline-block;
+text-align: center;
+cursor: pointer;
+color:#007AC2;
+padding: 15px 2px;
+
+}
+.selectedCategory {
+background-color: #007ac2;
+color: White;
+}
+.selectedEnrichCategory {
+background-color: #d4eaf9;
+color: #007ac2;
+}
+.enrichNextPreviousButton {
+float: right;
+margin-right: 11px;
+}
+.esriButtonDisabled {
+background-color: Gray;
+}
+.loadingIndicatorContainer {
+position: absolute;
+opacity: 0.5;
+filter: alpha(opacity=60);
+height: 100%;
+width: 100%;
+top: 0;
+right: 0;
+background-image: url(../images/busyIndicator.gif);
+background-position: center;
+background-repeat: no-repeat;
+display: block;
+}
+.hideLoadingIndicator {
+display: none;
+}
+.messageDialogNext {
+position: absolute;
+bottom: 12px;
+right: 20px;
+line-height: 20px;
+display: none;
+}
+.showMessage {
+position: absolute;
+bottom: 52px;
+left: 20px;
+display: none;
+}
+/* Common classes of builderMode */
+.esriButtonConfig
+{
+    float: left;
+    margin: 20px 0px 0px 0px;
+    width: 100%;
+}
+.esriButtonInnerConfig
+{
+    margin: 10px auto;
+    float: right;
+}
+.esriButton
+{
+    background-color: #007ac2;
+    padding: 5px 15px;
+    color: White;
+    border: 0px;
+    cursor: pointer;
+}
+.esriPreviousButton
+{
+    margin-right: 10px;
+}
+.claro .dijitTabDisabled
+{
+    color: #cdcdcd !important;
+}
+.esriTabContent
+{
+    padding: 3px 0px 3px 2px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #CDCDCD;
+}
+.messageContainer
+{
+    height: 200px;
+    width: 400px;
+}
+
+.enrichLayerContainer .dijitTextBox
+{
+    width: auto !important;
+}
+.selectedCountry {
+background-color: #007ac2;
+color: White;
+}

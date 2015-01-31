@@ -358,6 +358,7 @@
 }
 .esriButtonDisabled {
     background-color: #999;
+    cursor:auto;
 }
 .esriDijitDialog .dijitDialogPaneContent {
     background-color: #f8f8f8 !important;
@@ -432,7 +433,6 @@
     width: 30%;
     border-bottom: 1px solid #efefef;
     border-right: 1px solid #efefef;
-    height: 25px;
     padding: 7px 5px;
 }
 .esriParentContainerStyleClm2 {
@@ -619,4 +619,42 @@ label {
     width: 92%;
     height: 23px;
     text-align: left;
+}
+.configurationPanelToggleContainer
+{
+    width: 100%;
+    margin-top: 20px;
+    display: none;
+}
+.existingValueLabel, .enrichLayerLabel, .currentMapExtentLabel
+{
+    display: inline-block;
+    margin-left: 5px;
+}
+.configurationPanelToggleContent
+{
+    padding-bottom: 5px;
+}
+.enrichLayerImage
+{
+    background-image: url('../images/enrich-layer.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50%;
+    cursor: pointer;
+    margin-top: 10px;
+    background-size: 60%; 
+}
+
+.enrichLayerImageContainer
+{
+    display: none;
+}
+.enrichLayerLink
+{
+    margin-left: 33px;
+    text-decoration: underline;
+    color: #007AC2;
+    cursor: pointer;
 }

@@ -319,7 +319,7 @@ function (
             this.initArea();
             this.startupArea();
             // on body click containing underlay class
-            on(document.body, '.dijitDialogUnderlay:click', function () {
+            var dijitHandler = on.pausable(document.body, '.dijitDialogUnderlay:click', function () {
                 // get all dialogs
                 var filtered = array.filter(registry.toArray(), function (w) {
                     return w && w.declaredClass == "dijit.Dialog";
@@ -342,7 +342,8 @@ function (
                             response: this.data,
                             layers: this.layers,
                             userInfo: this.userInfo,
-                            map: this.map
+                            map: this.map,
+                            dijitClickHandler: dijitHandler
                         });
                         builder.startup();
                     }));

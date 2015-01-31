@@ -60,7 +60,7 @@ define([
                 if (this.config.summaryLayer && this.config.summaryLayer.id) {
                     // get layer by id/title
                     this._aoiLayer = this._getAOILayer(this.config.summaryLayer.id);
-                    if (this._aoiLayer) {
+                    if (this._aoiLayer && !this.config.enablePopupDialog) {
                         this._aoiLayer.setInfoTemplate(null);
                     }
                 }
@@ -105,6 +105,7 @@ define([
                         }
                         // selected poly from layer
                         on(this._aoiLayer, 'click', lang.hitch(this, function (evt) {
+                            this._hideInfoWindow();
                             this._selectEvent(evt);
                         }));
                         // layer show/hide
@@ -146,13 +147,19 @@ define([
                 }
             },
             _selectFeatures: function (features, value) {
-                var alpha, themeColor, sls, i, symbolSize, rendererIndex, graphicSVG, rendererTypeSize, rendererHighlight;
+                var alpha, themeColor, sls, i, symbolSize, fillStyle, rendererIndex, graphicSVG, rendererTypeSize, rendererHighlight;
                 this._selectedGraphics.clear();
                 themeColor = [0, 255, 255, 1];
                 sls = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(themeColor), 2);
                 array.forEach(this.config.featuresTransparency, lang.hitch(this, function (transparency) {
                     if (transparency.label == this.config.featureCurrentTransparency) {
-                        alpha = transparency.value;
+                        if (this._validateNumber(transparency.value)) {
+                            alpha = transparency.value;
+                        }
+                        else {
+                            alpha = 1;
+                            fillStyle = transparency.value;
+                        }
                     }
                 }));
                 if (features && features.length) {
@@ -209,6 +216,7 @@ define([
                                 var attributeField = feature.attributes[this._attributeField];
                                 if (attributeField == renderer.label || attributeField == renderer.value || (attributeField >= renderer.minValue && attributeField <= renderer.maxValue)) {
                                     feature.setSymbol(this._aoiInfos[idx].symbol);
+                                    return true;
                                 }
                             }));
                         }));
@@ -218,8 +226,10 @@ define([
                     if (this.previousFeatures !== null) {
                         for (i = 0; i < this.previousFeatures.length; i++) {
                             if (this.rendererInfo) {
+                                this.symbol.color = this.previousRendererInfo.symbol.color;
                                 this.symbol.color.a = this.previousRendererInfo.symbol.color.a;
                                 this.symbol.outline = this.previousRendererInfo.symbol.outline;
+                                this.symbol.style = "solid";
                                 if (this.previousFeatures[i].geometry.type !== "polyline") {
                                     this.previousFeatures[i].setSymbol(this.symbol);
                                 }
@@ -233,7 +243,12 @@ define([
                                 var attributeField = feature.attributes[this._attributeField];
                                 if (attributeField == renderer.label || attributeField == renderer.value || (attributeField >= renderer.minValue && attributeField <= renderer.maxValue)) {
                                     var tempSymbol = lang.clone(this._aoiInfos[idx].symbol);
-                                    tempSymbol.color.a = alpha;
+                                    if (fillStyle) {
+                                        tempSymbol.style = SimpleFillSymbol[fillStyle];
+                                        tempSymbol.color.a = alpha;
+                                    } else {
+                                        tempSymbol.color.a = alpha;
+                                    }
                                     var g = new Graphic(feature.geometry, sls, feature.attributes, null);
                                     if (g) {
                                         // add graphic to layer
@@ -249,7 +264,7 @@ define([
                     }
                     // each selected feature
                     for (i = 0; i < features.length; i++) {
-                        this._createSymbol(features[i], alpha, sls);
+                        this._createSymbol(features[i], alpha, fillStyle, sls);
                     }
                     // single feature
                     if (features.length === 1) {
@@ -263,17 +278,17 @@ define([
                                     if (this._rendererNodes[i].value) {
                                         // value matches
                                         if (this._rendererNodes[i].value.toString() === fieldValue.toString()) {
-                                            this._highlightFeature(features, alpha, sls, i);
+                                            this._highlightFeature(features, alpha, fillStyle, sls, i);
                                             break;
                                         }
                                     } else {
                                         if (this._rendererNodes[i].minValue == this._rendererNodes[i].maxValue && fieldValue.toString() == this._rendererNodes[i].maxValue) {
-                                            this._highlightFeature(features, alpha, sls, i);
+                                            this._highlightFeature(features, alpha, fillStyle, sls, i);
                                             break;
                                         }
                                         //for class break
                                         else if ((fieldValue.toString() > this._rendererNodes[i].minValue) && (fieldValue.toString() <= this._rendererNodes[i].maxValue)) {
-                                            this._highlightFeature(features, alpha, sls, i);
+                                            this._highlightFeature(features, alpha, fillStyle, sls, i);
                                             break;
                                         }
                                     }
@@ -285,6 +300,16 @@ define([
                         this.previousFeatures = features;
                         this.previousRendererInfo = this.rendererInfo;
                     }
+                }
+            },
+            // function to check if the entered value is a number
+            _validateNumber: function (num) {
+                // the entered text should only be a number
+                var numPattern = /^([0-9]+[\.]?[0-9]?[0-9]?|[0-9]+)$/;
+                if (numPattern.test(num)) {
+                    return true;
+                } else {
+                    return false;
                 }
             },
             _highlightRenderer: function (i) {
@@ -310,13 +335,16 @@ define([
                 markerSymbol.setColor(null);
                 return markerSymbol;
             },
-            _createSymbol: function (feature, alpha, sls) {
+            _createSymbol: function (feature, alpha, fillStyle, sls) {
                 var fillColor;
                 if (this.rendererInfo) {
                     // set fill color
                     fillColor = new Color([this.rendererInfo.symbol.color.r, this.rendererInfo.symbol.color.g, this.rendererInfo.symbol.color.b, alpha]);
                     // set symbol
-                    this.symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, null, fillColor);
+                    if (fillStyle) {
+                        this.symbol = new SimpleFillSymbol(SimpleFillSymbol[fillStyle], null, fillColor);
+                    }
+                    else { this.symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, null, fillColor); }
                     // set feature symbol
                     if (feature.geometry.type !== "polyline") {
                         feature.setSymbol(this.symbol);
@@ -328,14 +356,14 @@ define([
                     }
                 }
             },
-            _highlightFeature: function (features, alpha, sls, i) {
+            _highlightFeature: function (features, alpha, fillStyle, sls, i) {
                 domClass.add(this._rendererNodes[i].node, this.areaCSS.rendererSelected);
                 if (this.config.enableEntireAreaButton) {
                     this.rendererInfo = this._aoiInfos[i - 1];
                 } else {
                     this.rendererInfo = this._aoiInfos[i];
                 }
-                this._createSymbol(features[0], alpha, sls);
+                this._createSymbol(features[0], alpha, fillStyle, sls);
             },
             _setImpactLayerTitle: function(){
                 var node;
@@ -448,6 +476,7 @@ define([
             _createRendererItemClick: function (node, minValue, maxValue) {
                 // renderer item click
                 on(node, 'click', lang.hitch(this, function (evt) {
+                    this._hideInfoWindow();
                     var ct = evt.currentTarget;
                     // current renderer isn't already selected
                     if (!domClass.contains(ct, this.areaCSS.rendererSelected)) {
@@ -612,10 +641,16 @@ define([
                     this._clearSelected();
                     this._sb.set("features", [evt.graphic]);
                     this._selectFeatures([evt.graphic], evt.graphic.attributes[this._attributeField]);
-                    event.stop(evt);
+                    if (!this.config.enablePopupDialog) {
+                        event.stop(evt);
+                    }
                 }
             },
-
+            _hideInfoWindow: function () {
+                if (this.map && this.map.infoWindow) {
+                    this.map.infoWindow.hide();
+                }
+            },
             _zoomToFeature: function (type, fs) {
                 switch (type) {
                     case "No Zoom":

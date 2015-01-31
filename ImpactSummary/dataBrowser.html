@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Data Browser</title>
+    <style>
+        html, body
+        {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: 'Segoe UI';
+            font-size: 13px;
+            background-color: #f9f9f9;
+        }
+        .ShoppingCartRowCloser
+        {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="claro">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/esri/css/esri.css" />
+    <script type="text/javascript">
+        var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+        var dojoConfig = {
+            async: true,
+            //The location.pathname.replace() logic below may look confusing but all its doing is
+            // enabling us to load the api from a CDN and load local modules from the correct location.
+            packages: [{
+                name: "application",
+                location: package_path + '/js'
+            }]
+        };
+    </script>
+    <script src="//jsdev.arcgis.com/3.12compact"></script>
+    <script type="text/javascript">
+        var dataBrowser;
+        require([
+        "esri/urlUtils",
+        "esri/dijit/geoenrichment/DataBrowser",
+        "dojo/on",
+        "esri/kernel",
+        "dojo/cookie",
+        "dojo/domReady!"
+        ], function (
+        urlUtils,
+            DataBrowser,
+            on,
+            kernel,
+            cookie
+ ) {
+            var userInfo = {};
+            objRef = window.opener.selectedData;
+            window.document.title = objRef.selectedTab + " - Data Browser";
+            userInfo.username = window.opener.selectedData.userInfo.username;
+            userInfo.token = window.opener.selectedData.userInfo.token;
+            userInfo.portal = window.opener.selectedData.userInfo.portal;
+            var cred = "esri_jsapi_id_manager_data";
+            idJson = cookie(cred);
+            window.onbeforeunload = function () {
+                window.opener._showData();
+            };
+            //This logic is for handling Identity Manager
+            //TODO: Minify the code
+            var serverInfo = {
+                "serverInfos": [
+        {
+            "server": "https://geoenrich.arcgis.com",
+            "tokenServiceUrl": "https://geoenrich.arcgis.com/ArcGIS/tokens",
+            "adminTokenServiceUrl": "https://geoenrich.arcgis.com/ArcGIS/admin/generateToken",
+            "currentVersion": 10.02,
+            "hasServer": true
+        }
+    ],
+                "oAuthInfos": [],
+                "credentials": [
+        {
+            "userId": window.opener.selectedData.userInfo.username,
+            "server": "https://geoenrich.arcgis.com",
+            "token": window.opener.selectedData.userInfo.token,
+            "expires": window.opener.selectedData.userInfo.credential.expires,
+            "validity": window.opener.selectedData.userInfo.credential.validity,
+            "ssl": window.opener.selectedData.userInfo.credential.ssl,
+            "creationTime": window.opener.selectedData.userInfo.credential.creationTime,
+            "scope": "server",
+            "resources": [
+                window.opener.selectedData.userInfo.credential.resources[0]
+            ]
+        }
+    ]
+            };
+            if ("localStorage" in window && window["localStorage"] !== null) {
+                var idString = JSON.stringify(serverInfo);
+                window.localStorage.setItem(cred, idString);
+            }
+            else {
+                cookie(cred, idString, { expires: 1 });
+            }
+            var idObject = JSON.parse(idString);
+            kernel.id.initialize(idObject);
+            dataBrowser = new DataBrowser({
+                okButton: 'Apply',
+                backButton: null, //Back button text. Can be set to -null- which should hide the button.
+                cancelButton: 'Cancel', //Cancel button text. Can be set to -null- which should hide the button.
+                countryBox: false, //Show/hide country dropdowm
+                selection: objRef.selectedVariables, //Array of currently selected variables
+                countryID: objRef.selectedCountry
+            }, "dataBrowser");
+            dataBrowser.startup();
+            on(dataBrowser, 'ok', function (evt) {
+                window.opener.selectedVariables = dataBrowser.selection.join();
+                window.opener.selectedTab = objRef.selectedTab;
+                window.close();
+            });
+            on(dataBrowser, 'cancel', function (evt) {
+                window.close();
+            });
+        });
+    </script>
+    <div id="dataBrowser">
+    </div>
+</body>
+</html>

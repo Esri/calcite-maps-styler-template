@@ -15,6 +15,9 @@ body {
 input[type=text]::-ms-clear {
     display: none;
 }
+.esriEditTitleInput::-ms-clear {
+display:none;
+}
 .calcite a {
     color: #007ac2;
 }

@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="css/SimpleSlider.css" />
     <link rel="stylesheet" type="text/css" href="css/popup.css" />
     <link rel="stylesheet" type="text/css" href="css/dialogs.css" />
+    <link rel="stylesheet" type="text/css" href="css/EnrichLayer.css" />
     <link rel="stylesheet" type="text/css" href="css/geocoder.css" />
     <link rel="stylesheet" type="text/css" href="css/AreaOfInterest.css" />
     <link rel="stylesheet" type="text/css" href="css/ShareDialog.css" />
@@ -109,7 +110,7 @@
     <script type="text/javascript" src="//jsdev.arcgis.com/3.13/init.js"></script>
     <script type="text/javascript">
         require([
-            "config/templateConfig",
+            "application/templateOptions",
             "application/template",
             "application/main",
             "application/signInHelper"
@@ -145,10 +146,11 @@
                     }
                     else {
                         if (config.edit) {
-                        signIn.createPortal().then(function (loggedInUser) {
-                            userInfo.username = loggedInUser.username;
-                            userInfo.token = loggedInUser.credential.token;
-                            userInfo.portal = signIn.getPortal();
+                            signIn.createPortal().then(function (loggedInUser) {
+                                userInfo.username = loggedInUser.username;
+                                userInfo.token = loggedInUser.credential.token;
+                                userInfo.credential = loggedInUser.credential;
+                                userInfo.portal = signIn.getPortal();
                                 var canExecute = signIn.authenticateUser(config.edit, myTemplate.appResponse, userInfo);
                                 if (canExecute) {
                                 myApp.startup(config, myTemplate.appResponse, userInfo);

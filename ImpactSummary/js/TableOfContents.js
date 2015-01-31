@@ -126,6 +126,7 @@ function (
             if (layers && layers.length) {
                 for (var i = 0; i < layers.length; i++) {
                     var layer = layers[i];
+                    if (typeof layer.layerObject === "undefined") { continue; }
                     // ceckbox class
                     var titleCheckBoxClass = this.css.titleCheckbox;
                     // layer class
@@ -305,6 +306,7 @@ function (
                 // get all layers
                 for (var i = 0; i < layers.length; i++) {
                     var layer = layers[i];
+                    if (typeof layer.layerObject === "undefined") { continue; }
                     // if it is a feature collection with layers
                     if (layer.featureCollection && layer.featureCollection.layers && layer.featureCollection.layers.length) {
                         this._featureLayerEvent(layer, i);
