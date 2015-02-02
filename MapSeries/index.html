@@ -329,32 +329,17 @@
 		
 		<script type="text/javascript" src="app/main-config.js"></script>
 		<script type="text/javascript">
-		require(["dojo/topic"], function(topic) {
-			  /*
-			   * Custom Javascript to be executed while the application is initializing goes here
-			   */
-			   
-			  console.log("Map Series is initializing");
-			  
-			  // The application is ready
-			  topic.subscribe("tpl-ready", function(){
-			    /*
-			     * Custom Javascript to be executed when the application is ready goes here
-			     */
-			     
-			    console.log("Map Series is ready");
-			  });
-			  
-			  // When an entry is being loaded (don't wait for the Main Stage media to be loaded) 
-			  topic.subscribe("story-load-entry", function(index){
-			    console.log("The entry", index, "is being loaded");
-			  });
-			  
-			  // After a map is loaded (when the map starts to render)	
-			  topic.subscribe("story-loaded-map", function(result){
-			    if ( result.index !== null )
-			      console.log("The map", result.id, "has been loaded from the entry", result.index);
-			  });
+			require(["dojo/topic"], function(topic) {
+				/*
+				 * Custom Javascript to be executed while the application is initializing goes here
+				 */
+				   
+				// The application is ready
+				topic.subscribe("tpl-ready", function(){
+					/*
+					 * Custom Javascript to be executed when the application is ready goes here
+					 */
+				});
 			});
 		</script>
 	</body>
