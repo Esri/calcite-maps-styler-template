@@ -36,7 +36,6 @@ Locator\js\nls
 MapSeries\js\nls
 MapJournal\resources\tpl\builder\nls
 MapJournal\resources\tpl\viewer\nls
-MapTour\resources\preview_page\nls
 BasicViewer\apl\ElevationsChart\nls
 MapSeries\resources\tpl\viewer\nls
 MapSeries\resources\common\nls
