@@ -15,8 +15,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/Color", "dojo/promise/all", "dojo/Deferred", "dojo/_base/lang", "esri/domUtils", "esri/request", "esri/lang", "esri/arcgis/utils", "dojo/query", "dojo/dom", "dijit/registry", "dojo/dom-class", "dojo/dom-style", "dojo/dom-geometry", "dojo/dom-construct", "dojo/on", "esri/layers/FeatureLayer", "esri/graphic", "dojo/domReady!"], function (
-declare, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang, arcgisUtils, query, dom, registry, domClass, domStyle, domGeometry, domConstruct, on, FeatureLayer, Graphic) {
+define(["dojo/_base/declare", "dojo/window", "dojo/_base/array", "dojo/_base/Color", "dojo/promise/all", "dojo/Deferred", "dojo/_base/lang", "esri/domUtils", "esri/request", "esri/lang", "esri/arcgis/utils", "dojo/query", "dojo/dom", "dijit/registry", "dojo/dom-class", "dojo/dom-style", "dojo/dom-geometry", "dojo/dom-construct", "dojo/on", "esri/layers/FeatureLayer", "esri/graphic", "dojo/domReady!"], function (
+declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang, arcgisUtils, query, dom, registry, domClass, domStyle, domGeometry, domConstruct, on, FeatureLayer, Graphic) {
     return declare(null, {
         config: {},
         ovmap: null,
@@ -719,6 +719,7 @@ declare, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang, arc
                     dom.byId("titleDiv").innerHTML = this.config.title;
                 } else {
                     domClass.add(document.body, "no-title");
+                    registry.byId("bc").resize();
                 }
 
 
@@ -857,13 +858,13 @@ declare, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang, arc
             }
          
             var pos = domGeometry.position(dom.byId(button));
-            if (button === "share_toggle") {
-                domStyle.set(node, "right", 0);
-            } else {
-                domStyle.set(node, "right", (pos.w * 2) + "px");
+            var winWidth = win.getBox();
+            var buttonSize = pos.x + pos.w;
+            if(buttonSize === winWidth.w){
+               domStyle.set(node, "right", 0);
+            }else{
+               domStyle.set(node, "right", (pos.w) + "px");
             }
-
-
         },
         _navigateStack: function (panelLabel, buttonLabel) {
             var stackContainer = registry.byId("stackContainer");
