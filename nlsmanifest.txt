@@ -2,9 +2,6 @@ Viewer\js\nls
 MapTools\js\nls
 ChromeTwitter\nls
 BasicViewer\nls
-ConstituentEngagement\js\nls
-ConstituentEngagementConsole\js\nls
-CrowdSourcePolling\js\nls
 archive\Edit\javascript\nls
 Editor\js\nls
 Elevations\js\nls
