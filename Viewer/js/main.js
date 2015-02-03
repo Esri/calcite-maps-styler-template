@@ -848,10 +848,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     map: this.map,
                     addLayersFromMap: false
                 };
+                var search = new Search(options, domConstruct.create("div", {
+                    id: "search"
+                }, "mapDiv"));
+                var defaultSources = [];
 
-                var search = new Search(options, domConstruct.create("div"));
-
-                var defaultSources = []; //search.get("sources");
                 //setup geocoders defined in common config 
                 if (this.config.helperServices.geocode) {
                     var geocoders = lang.clone(this.config.helperServices.geocode);
@@ -859,23 +860,31 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
                             geocoder.locator = new Locator(geocoder.url);
                             geocoder.singleLineFieldName = "SingleLine";
+
+                            geocoder.name = geocoder.name || "Esri World Geocoder";
+
                             if (this.config.searchExtent) {
                                 geocoder.searchExtent = this.map.extent;
                             }
                             defaultSources.push(geocoder);
                         } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
+
                             //Add geocoders with a singleLineFieldName defined 
                             geocoder.locator = new Locator(geocoder.url);
+
                             defaultSources.push(geocoder);
                         }
                     }));
                 }
                 //add configured search layers to the search widget 
-                array.forEach(this.config.searchLayers, lang.hitch(this, function (layer) {
+                var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
+                //var configuredSearchLayers = JSON.parse(this.config.searchLayers);
+                array.forEach(configuredSearchLayers, lang.hitch(this, function (layer) {
                     var mapLayer = this.map.getLayer(layer.id);
                     if (mapLayer) {
                         var source = {};
                         source.featureLayer = mapLayer;
+
                         if (layer.fields && layer.fields.length && layer.fields.length > 0) {
                             source.searchFields = layer.fields;
                             defaultSources.push(source);
@@ -885,21 +894,21 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 //Add search layers defined on the web map item
                 if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
                     var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
-                    array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
 
-                        var mapLayer = this.map.getLayer(searchLayer.id);
+                    array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {                        var mapLayer = this.map.getLayer(searchLayer.id);
 
                         if (mapLayer && mapLayer.url) {
                             var source = {};
                             var url = mapLayer.url;
-                            var name = mapLayer._titleForLegend;
+
                             if (esriLang.isDefined(searchLayer.subLayer)) {
                                 url = url + "/" + searchLayer.subLayer;
                             }
-                            //TODO - talk to Matt about this. It is supposed to accept either
-                            //a layer or a layer url. But w/o the FeatureLayer part it doesn't work. 
+
+
                             source.featureLayer = new FeatureLayer(url);
                             source.name = mapLayer.name;
+
                             source.exactMatch = searchLayer.field.exactMatch;
                             source.searchField = [searchLayer.field.name];
                             source.placeholder = searchOptions.hintText;
@@ -908,11 +917,9 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
                     }));
                 }
-
                 search.set("sources", defaultSources);
 
                 search.startup();
-
 
 
                 if (search && search.domNode) {
