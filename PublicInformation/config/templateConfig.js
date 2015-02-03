@@ -46,5 +46,5 @@ define({
     "extent"
   ],
   // For esri hosted envoronments only. Will automatically create a sharingurl and proxyurl for the application.
-  esriEnvironment: false
+  esriEnvironment: true
 });
