@@ -23,7 +23,7 @@
                "type":"string",
                "fieldName":"description",
                "label":"Details",
-               "placeHolder": "Defaults to web map description.",
+               "placeHolder":"Defaults to web map description.",
                "tooltip":"Enter content for the details panel",
                "stringFieldOption":"richtext"
             },
@@ -66,22 +66,25 @@
                "tooltip":"Active Tool",
                "label":"Active Tool:",
                "options":[  
-                  {
-                     "label": "None",
-                     "value": ""
+                  {  
+                     "label":"None",
+                     "value":""
                   },
                   {  
                      "label":"Bookmarks",
                      "value":"bookmarks"
-                  },{
-                     "label": "Basemap",
-                     "value": "basemap"
-                  },{
-                     "label": "Details",
-                     "value": "details"
-                  },{
-                     "label": "Edit",
-                     "value": "edit"
+                  },
+                  {  
+                     "label":"Basemap",
+                     "value":"basemap"
+                  },
+                  {  
+                     "label":"Details",
+                     "value":"details"
+                  },
+                  {  
+                     "label":"Edit",
+                     "value":"edit"
                   },
                   {  
                      "label":"Layers",
@@ -90,43 +93,24 @@
                   {  
                      "label":"Legend",
                      "value":"legend"
-                  },{
-                     "label": "Measure",
-                     "value": "measure"
-                  },{
-                     "label": "Overview",
-                     "value": "overview"
-                  },{
-                     "label": "Print",
-                     "value": "print"
-                  },{
-                     "label": "Share",
-                     "value": "share"
+                  },
+                  {  
+                     "label":"Measure",
+                     "value":"measure"
+                  },
+                  {  
+                     "label":"Overview",
+                     "value":"overview"
+                  },
+                  {  
+                     "label":"Print",
+                     "value":"print"
+                  },
+                  {  
+                     "label":"Share",
+                     "value":"share"
                   }
                ]
-            },
-            {
-               "label": "Select layers and fields that will be searchable using the search tool",
-               "fieldName": "searchLayers",
-               "type": "multilayerandfieldselector",
-               "tooltip": "Select layer and fields to search",
-               "layerOptions":{
-                  "supportedTypes": ["FeatureLayer"],
-                  "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline", "esriGeometryPolygon"]
-               },
-               "fieldOptions":{
-                  "supportedTypes": ["esriFieldTypeString"]
-               }
-            },
-            {  
-               "type":"boolean",
-               "fieldName":"tool_search",
-               "label":"Address Finder"
-            },
-            {  
-               "type":"boolean",
-               "fieldName":"searchExtent",
-               "label":"Prioritize search results in current extent."
             },
             {  
                "type":"boolean",
@@ -182,6 +166,45 @@
                "type":"boolean",
                "fieldName":"tool_share",
                "label":"Share Tools"
+            }
+         ]
+      },{
+         "category": "Search Settings",
+         "fields": [
+            {
+               "type": "paragraph",
+               "value": "Enable/disable the search tool and optionally select layers (and fields) to add to the search tool."
+            },
+                        {  
+               "label":"Select search layers and fields",
+               "fieldName":"searchLayers",
+               "type":"multilayerandfieldselector",
+               "tooltip":"Select layer and fields to search",
+               "layerOptions":{  
+                  "supportedTypes":[  
+                     "FeatureLayer"
+                  ],
+                  "geometryTypes":[  
+                     "esriGeometryPoint",
+                     "esriGeometryLine",
+                     "esriGeometryPolyline",
+                     "esriGeometryPolygon"
+                  ]
+               },
+               "fieldOptions":{  
+                  "supportedTypes":[  
+                     "esriFieldTypeString"
+                  ]
+               }
+            },{  
+               "type":"boolean",
+               "fieldName":"tool_search",
+               "label":"Address Finder"
+            },
+            {  
+               "type":"boolean",
+               "fieldName":"searchExtent",
+               "label":"Prioritize search results in current extent."
             }
          ]
       },
@@ -245,8 +268,8 @@
       "logo":"images/logo.png",
       "color":"#fff",
       "theme":"80ab00",
-      "activeTool": "legend",
-      "scalebar": false,
+      "activeTool":"legend",
+      "scalebar":false,
       "tool_print":true,
       "tool_print_layouts":false,
       "tool_print_legend":false,
