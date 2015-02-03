@@ -105,12 +105,8 @@
                   }
                ]
             },
-            {  
-               "type":"paragraph",
-               "value":"Select search layers and fields. These layers will appear in the search tool allowing application users to search for particular values in the specified layers and fields."
-            },
             {
-               "label": "Select layers and fields",
+               "label": "Select layers and fields that will be searchable using the search tool",
                "fieldName": "searchLayers",
                "type": "multilayerandfieldselector",
                "tooltip": "Select layer and fields to search",
