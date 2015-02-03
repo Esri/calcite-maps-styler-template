@@ -645,6 +645,7 @@ label {
     cursor: pointer;
     margin-top: 10px;
     background-size: 60%; 
+    float: left;
 }
 
 .enrichLayerImageContainer
@@ -657,4 +658,5 @@ label {
     text-decoration: underline;
     color: #007AC2;
     cursor: pointer;
+    float: left;
 }

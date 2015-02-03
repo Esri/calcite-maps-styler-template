@@ -542,20 +542,25 @@
                 "innerHTML": nls.widgets.geoEnrichment.lineDistanceText,
                 "class": "labelBufferType"
             }, divLabelContainer);
+            if (this.map.getLayer(this.config.summaryLayer.id).geometryType !== "esriGeometryPolyline") {
             this.driveTimeTextLabelDiv = domConstruct.create("div", {
                 "innerHTML": nls.widgets.geoEnrichment.drivingTime,
                 "class": "labelBufferType"
             }, divLabelContainer);
+            }
             defineAreaImageContainer = domConstruct.create("div", {
                 "class": "imageAreaContanier"
             }, defineAreaDiv);
             this.imageLineDistance = domConstruct.create("div", {
                 "class": "imgStraightLine"
             }, defineAreaImageContainer);
+            if (this.map.getLayer(this.config.summaryLayer.id).geometryType !== "esriGeometryPolyline") {
             imageDriveTime = domConstruct.create("div", {
                 "class": "imgDriveTime"
             }, defineAreaImageContainer);
+            }
             this.bufferType = "StraightLine";
+            if (this.map.getLayer(this.config.summaryLayer.id).geometryType !== "esriGeometryPolyline") {
             on(this.imageLineDistance, "click", lang.hitch(this, function (evt) {
                 this.bufferType = "StraightLine";
                 this._highlightAreaParameters(evt.currentTarget, imageDriveTime);
@@ -570,6 +575,7 @@
                 domClass.add(this.driveTimeTextLabelDiv, "labelHighlight");
                 domClass.remove(this.lineDistanceTextLabelDiv, "labelHighlight");
             }));
+            }
             divInputContainer = domConstruct.create("div", {
                 "class": "inputDiv"
             }, defineAreaDiv);
@@ -595,8 +601,10 @@
                 this.inputDistance.disabled = false;
                 this.bufferAreaUnit.disabled = false;
                 domClass.remove(this.disableAreaDiv, "displayBlock");
+                if (this.map.getLayer(this.config.summaryLayer.id).geometryType !== "esriGeometryPolyline") {
                 domClass.add(this.imageLineDistance, "imgHighlight");
                 domClass.add(this.lineDistanceTextLabelDiv, "labelHighlight");
+                }
             }
             domConstruct.create("div", {
                 "innerHTML": nls.widgets.geoEnrichment.enrichLayerName
@@ -865,6 +873,7 @@
                     deferred.resolve(response);
                 }),
                 error: lang.hitch(this, function (e) {
+                    this._deleteService();
                     this._gotoPreviousDialog(nls.widgets.geoEnrichment.message.shareFailed);
                     deferred.reject(e);
                 })
@@ -1085,6 +1094,7 @@
                     deferred.resolve(response);
                 }),
                 error: lang.hitch(this, function (e) {
+                    this._deleteService();
                     this._removeLoadingIndicator();
                     this._gotoPreviousDialog(nls.widgets.geoEnrichment.message.updateItemFailed, false);
                     deferred.reject(e);
@@ -1109,6 +1119,7 @@
                     deferred.resolve(response);
                 }),
                 error: lang.hitch(this, function (e) {
+                    this._deleteService();
                     this._removeLoadingIndicator();
                     this._gotoPreviousDialog(nls.widgets.geoEnrichment.message.geoEnrichFailed, false);
                     deferred.reject(e);
@@ -1134,6 +1145,7 @@
                     deferred.resolve(response);
                 }),
                 error: lang.hitch(this, function (e) {
+                    this._deleteService();
                     this._removeLoadingIndicator();
                     this._gotoPreviousDialog(nls.widgets.geoEnrichment.message.refreshServiceFailed, false);
                     deferred.reject(e);
@@ -1167,6 +1179,7 @@
                     deferred.resolve(response);
                 }),
                 error: lang.hitch(this, function (e) {
+                    this._deleteService();
                     this._removeLoadingIndicator();
                     this._gotoPreviousDialog(nls.widgets.geoEnrichment.message.addToWebmapFailed, false);
                     deferred.reject(e);
@@ -1190,6 +1203,7 @@
                     deferred.resolve(response);
                 }),
                 error: lang.hitch(this, function (e) {
+                    this._deleteService();
                     this._removeLoadingIndicator();
                     this._gotoPreviousDialog(nls.widgets.geoEnrichment.message.layerJsonFailed, false);
                     deferred.reject(e);
