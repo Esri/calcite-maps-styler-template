@@ -192,79 +192,123 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                         addLayersFromMap: false
                     };
 
-                    var search = new Search(options, domConstruct.create("div", {
-                        id: "search"
-                    }, "mapDiv"));
+                var searchLayers = false;
+                var search = new Search(options, domConstruct.create("div", {
+                    id: "search"
+                }, "mapDiv"));
+                var defaultSources = [];
 
-                    var defaultSources = [];
+                //setup geocoders defined in common config 
+                if (this.config.helperServices.geocode) {
+                    var geocoders = lang.clone(this.config.helperServices.geocode);
+                    array.forEach(geocoders, lang.hitch(this, function (geocoder) {
+                        if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
 
-                    //setup geocoders defined in common config 
-                    if (this.config.helperServices.geocode) {
-                        var geocoders = lang.clone(this.config.helperServices.geocode);
-                        array.forEach(geocoders, lang.hitch(this, function (geocoder) {
-                            if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
-                                geocoder.locator = new Locator(geocoder.url);
-                                geocoder.singleLineFieldName = "SingleLine";
+                            geocoder.hasEsri = true;
+                            geocoder.locator = new Locator(geocoder.url);
 
-                                geocoder.name = geocoder.name || "Esri World Geocoder";
+                            geocoder.singleLineFieldName = "SingleLine";
 
-                                if (this.config.searchExtent) {
-                                    geocoder.searchExtent = this.map.extent;
-                                }
-                                defaultSources.push(geocoder);
-                            } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
+                            geocoder.name = geocoder.name || "Esri World Geocoder";
 
-                                //Add geocoders with a singleLineFieldName defined 
-                                geocoder.locator = new Locator(geocoder.url);
-
-                                defaultSources.push(geocoder);
+                            if (this.config.searchExtent) {
+                                geocoder.searchExtent = this.map.extent;
                             }
-                        }));
-                    }
-                    //add configured search layers to the search widget 
-                    array.forEach(this.config.searchLayers, lang.hitch(this, function (layer) {
-                        var mapLayer = this.map.getLayer(layer.id);
-                        if (mapLayer) {
-                            var source = {};
-                            source.featureLayer = mapLayer;
+                            defaultSources.push(geocoder);
+                        } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
 
-                            if (layer.fields && layer.fields.length && layer.fields.length > 0) {
-                                source.searchFields = layer.fields;
-                                defaultSources.push(source);
-                            }
+                            //Add geocoders with a singleLineFieldName defined 
+                            geocoder.locator = new Locator(geocoder.url);
+
+                            defaultSources.push(geocoder);
                         }
                     }));
-                    //Add search layers defined on the web map item
-                    if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
-                        var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
+                }
+                //add configured search layers to the search widget 
+                var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
 
-                        array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
-                            console.log("test")
-                            var mapLayer = this.map.getLayer(searchLayer.id);
+                array.forEach(configuredSearchLayers, lang.hitch(this, function (layer) {
+                  
+                    var mapLayer = this.map.getLayer(layer.id);
+                    if (mapLayer) {
+                        var source = {};
+                        source.featureLayer = mapLayer;
 
-                            if (mapLayer && mapLayer.url) {
-                                var source = {};
-                                var url = mapLayer.url;
+                        if (layer.fields && layer.fields.length && layer.fields.length > 0) {
+                            source.searchFields = layer.fields;
+                            searchLayers = true;
+                            defaultSources.push(source);
+                        }
+                    }
+                }));
+                //Add search layers defined on the web map item 
+                if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
+                    var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
+                
+                    array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
+                        //we do this so we can get the title specified in the item
+                        var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
+                        var layer = null;
+                        array.some(operationalLayers, function (opLayer) {
+                            if (opLayer.id === searchLayer.id) {
+                                layer = opLayer;
+                                return true;
+                            }
+                        });
 
-                                if (esriLang.isDefined(searchLayer.subLayer)) {
-                                    url = url + "/" + searchLayer.subLayer;
-                                }
+                        if (layer && layer.url) {
+                            var source = {};
+                            var url = layer.url;
 
+                            if (esriLang.isDefined(searchLayer.subLayer)) {
+                                url = url + "/" + searchLayer.subLayer;
+                                array.some(layer.layerObject.layerInfos, function (info) {
+                                    if (info.id == searchLayer.subLayer) {
+                                        name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
+                                        return true;
+                                    }
 
-                                source.featureLayer = new FeatureLayer(url);
-                                source.name = mapLayer.name;
-
-                                source.exactMatch = searchLayer.field.exactMatch;
-                                source.searchField = [searchLayer.field.name];
-                                source.placeholder = searchOptions.hintText;
-                                defaultSources.push(source);
+                                });
                             }
 
-                        }));
-                    }
-                    search.set("sources", defaultSources);
+                            source.featureLayer = new FeatureLayer(url);
 
-                    search.startup();
+
+                            source.name = layer.title || layer.name;
+
+                            source.exactMatch = searchLayer.field.exactMatch;
+                            source.searchField = [searchLayer.field.name];
+                            source.placeholder = searchOptions.hintText;
+                            defaultSources.push(source);
+                            searchLayers = true;
+                        }
+
+                    }));
+                }
+
+
+
+
+                search.set("sources", defaultSources);
+                //set the first non esri layer as active if search layers are defined. 
+                var activeIndex = 0;
+                if (searchLayers) {
+                    array.some(defaultSources, function (s, index) {
+                        if (!s.hasEsri) {
+                            activeIndex = index;
+                            return true;
+                        }
+                    });
+
+
+                    if (activeIndex > 0) {
+                        search.set("activeSourceIndex", activeIndex);
+                    }
+                }
+
+
+                search.startup();
+
 
 
                 }));

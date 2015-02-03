@@ -30,18 +30,22 @@
                "label":"Title Color:"
             }
          ]
-      },
-      {  
-         "category":"Tools",
-         "fields":[  
-            {
-               "type":"boolean",
-               "fieldName":"edittoolbar",
-               "label":"Display Edit Toolbar"
-            },
+      },{
+         "category": "Search Settings",
+         "fields":[
             {  
                "type":"paragraph",
-               "value":"Select search layers and fields. These layers will appear in the search tool allowing application users to search for particular values in the specified layers and fields."
+               "value":"Enable the search capability and optionally select search layers and fields. These layers will appear in the search tool allowing application users to search for particular values in the specified layers and fields."
+            },
+            {  
+               "type":"boolean",
+               "fieldName":"search",
+               "label":"Address Finder"
+            },
+            {  
+               "type":"boolean",
+               "fieldName":"searchExtent",
+               "label":"Prioritize search results in current extent."
             },
             {  
                "label":"Select layers and fields",
@@ -64,17 +68,18 @@
                      "esriFieldTypeString"
                   ]
                }
-            },
-            {  
+            }
+         ]
+      },
+      {  
+         "category":"Tools",
+         "fields":[  
+            {
                "type":"boolean",
-               "fieldName":"search",
-               "label":"Address Finder"
+               "fieldName":"edittoolbar",
+               "label":"Display Edit Toolbar"
             },
-            {  
-               "type":"boolean",
-               "fieldName":"searchExtent",
-               "label":"Prioritize search results in current extent."
-            },
+           
             {
                "type": "paragraph",
                "value": "Enable the Locate Button to add a button to the map that allows users to identify thier current location. To track the users current location set Locate Button and Location Tracking to true."
