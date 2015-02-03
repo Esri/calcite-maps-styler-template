@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "ķ_Tabbed_ū",
 				tabDescr: "ķ_Present maps and other content using tabs with an optional panel for descriptive text_ū.",
+				tabItem: "ķ_Tab_ū",
+				tabItems: "ķ_Tabs_ū",
 				sideTitle: "ķ_Side Accordion_ū",
 				sideDescr: "ķ_Present maps and other content using an expandable control that includes descriptive text_ū.",
+				sideItem: "ķ_Entry_ū",
+				sideItems: "ķ_Entries_ū",
 				bulletTitle: "ķ_Bulleted_ū",
-				bulletDescr: "ķ_Present maps and other content using bullets with an optional panel for descriptive text_ū."
+				bulletDescr: "ķ_Present maps and other content using bullets with an optional panel for descriptive text_ū.",
+				bulletItem: "ķ_Bullet_ū",
+				bulletItems: "ķ_Bullets_ū"
 			},
 			common: {
 				lblStatus1: "ķ_Published_ū",
@@ -21,18 +27,19 @@
 				lblDropdown: "ķ_Dropdown_ū",
 				lblBelowDesc: "ķ_Below the description_ū",
 				lblOnPanel: "ķ_As a panel_ū",
-				lblPanelDescAndLegend: "ķ_Description and legend Panel_ū",
-				lblPanelDescAndOrLegend: "ķ_Description and/or legend Panel_ū",
-				lblPanelDesc: "ķ_Description Panel_ū",
-				lblPanelLegend: "ķ_Legend Panel_ū",
-				lblPanelAccordion: "ķ_Accordion Panel_ū",
+				lblPanelDescAndLegend: "ķ_Description and legend panel_ū",
+				lblPanelDescAndOrLegend: "ķ_Description and/or legend panel_ū",
+				lblPanelDesc: "ķ_Description panel_ū",
+				lblPanelLegend: "ķ_Legend panel_ū",
+				lblPanelAccordion: "ķ_Accordion panel_ū",
 				cfgLeft: "ķ_Left_ū",
 				cfgRight: "ķ_Right_ū",
 				cfgSmall: "ķ_Small_ū",
 				cfgMedium: "ķ_Medium_ū",
 				cfgLarge: "ķ_Large_ū",
-				lblNumbering: "ķ_Entry numbering_ū",
-				lblReverse: "ķ_Reverse entry numbering_ū"
+				lblNumbering: "ķ_Display numbers_ū",
+				lblReverse: "ķ_Reverse numbering_ū",
+				canOverlapMap: "ķ_can overlap map location_ū"
 			},
 			settingsMapOptions: {
 				title: "ķ_Map options_ū",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "ķ_Add_ū",
 				lblEdit: "ķ_Edit_ū",
-				disabled: "ķ_Add Entry is disabled because the maximum number of allowed sections has been reached_ū.",
-				titleAdd: "ķ_Add Entry_ū",
-				titleEdit: "ķ_Edit Entry_ū",
-				stepMainStageNextTooltip: "ķ_Enter the Entry title and content_ū",
-				titlePlaceholder: "ķ_Entry title_ū..."
+				disabled: "ķ_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_ū.",
+				titleAdd: "ķ_Add_ū",
+				titleEdit: "ķ_Edit_ū",
+				stepMainStageNextTooltip: "ķ_Enter the %LBL_LAYOUT% title and content_ū",
+				titlePlaceholder: "ķ_%LBL_LAYOUT% title_ū..."
 			},
 			textEditor: {
 				placeholder1: "ķ_Add text, links, and small graphics here_ū.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "ķ_Organize_ū",
-				lblHeader: "ķ_Drag and drop entries to organize your series_ū.",
+				lblHeader: "ķ_Drag and drop %LBL_LAYOUT% to organize your series_ū.",
 				lblColTitle: "ķ_Title_ū",
 				lblColStatus: "ķ_Status_ū",
-				btnApplyWarning: "ķ_Confirm deletion of %NB% entries_ū",
+				btnApplyWarning: "ķ_Confirm deletion of %NB% %LBL_LAYOUT%_ū",
 				deleteTooltip: "ķ_Delete_ū",
 				firstSectionExplain: "ķ_(The home section cannot be moved)_ū"
 			},

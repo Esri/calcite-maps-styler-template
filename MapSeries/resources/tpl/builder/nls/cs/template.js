@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "Ř_Tabbed_ů",
 				tabDescr: "Ř_Present maps and other content using tabs with an optional panel for descriptive text_ů.",
+				tabItem: "Ř_Tab_ů",
+				tabItems: "Ř_Tabs_ů",
 				sideTitle: "Ř_Side Accordion_ů",
 				sideDescr: "Ř_Present maps and other content using an expandable control that includes descriptive text_ů.",
+				sideItem: "Ř_Entry_ů",
+				sideItems: "Ř_Entries_ů",
 				bulletTitle: "Ř_Bulleted_ů",
-				bulletDescr: "Ř_Present maps and other content using bullets with an optional panel for descriptive text_ů."
+				bulletDescr: "Ř_Present maps and other content using bullets with an optional panel for descriptive text_ů.",
+				bulletItem: "Ř_Bullet_ů",
+				bulletItems: "Ř_Bullets_ů"
 			},
 			common: {
 				lblStatus1: "Ř_Published_ů",
@@ -21,18 +27,19 @@
 				lblDropdown: "Ř_Dropdown_ů",
 				lblBelowDesc: "Ř_Below the description_ů",
 				lblOnPanel: "Ř_As a panel_ů",
-				lblPanelDescAndLegend: "Ř_Description and legend Panel_ů",
-				lblPanelDescAndOrLegend: "Ř_Description and/or legend Panel_ů",
-				lblPanelDesc: "Ř_Description Panel_ů",
-				lblPanelLegend: "Ř_Legend Panel_ů",
-				lblPanelAccordion: "Ř_Accordion Panel_ů",
+				lblPanelDescAndLegend: "Ř_Description and legend panel_ů",
+				lblPanelDescAndOrLegend: "Ř_Description and/or legend panel_ů",
+				lblPanelDesc: "Ř_Description panel_ů",
+				lblPanelLegend: "Ř_Legend panel_ů",
+				lblPanelAccordion: "Ř_Accordion panel_ů",
 				cfgLeft: "Ř_Left_ů",
 				cfgRight: "Ř_Right_ů",
 				cfgSmall: "Ř_Small_ů",
 				cfgMedium: "Ř_Medium_ů",
 				cfgLarge: "Ř_Large_ů",
-				lblNumbering: "Ř_Entry numbering_ů",
-				lblReverse: "Ř_Reverse entry numbering_ů"
+				lblNumbering: "Ř_Display numbers_ů",
+				lblReverse: "Ř_Reverse numbering_ů",
+				canOverlapMap: "Ř_can overlap map location_ů"
 			},
 			settingsMapOptions: {
 				title: "Ř_Map options_ů",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "Ř_Add_ů",
 				lblEdit: "Ř_Edit_ů",
-				disabled: "Ř_Add Entry is disabled because the maximum number of allowed sections has been reached_ů.",
-				titleAdd: "Ř_Add Entry_ů",
-				titleEdit: "Ř_Edit Entry_ů",
-				stepMainStageNextTooltip: "Ř_Enter the Entry title and content_ů",
-				titlePlaceholder: "Ř_Entry title_ů..."
+				disabled: "Ř_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_ů.",
+				titleAdd: "Ř_Add_ů",
+				titleEdit: "Ř_Edit_ů",
+				stepMainStageNextTooltip: "Ř_Enter the %LBL_LAYOUT% title and content_ů",
+				titlePlaceholder: "Ř_%LBL_LAYOUT% title_ů..."
 			},
 			textEditor: {
 				placeholder1: "Ř_Add text, links, and small graphics here_ů.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "Ř_Organize_ů",
-				lblHeader: "Ř_Drag and drop entries to organize your series_ů.",
+				lblHeader: "Ř_Drag and drop %LBL_LAYOUT% to organize your series_ů.",
 				lblColTitle: "Ř_Title_ů",
 				lblColStatus: "Ř_Status_ů",
-				btnApplyWarning: "Ř_Confirm deletion of %NB% entries_ů",
+				btnApplyWarning: "Ř_Confirm deletion of %NB% %LBL_LAYOUT%_ů",
 				deleteTooltip: "Ř_Delete_ů",
 				firstSectionExplain: "Ř_(The home section cannot be moved)_ů"
 			},

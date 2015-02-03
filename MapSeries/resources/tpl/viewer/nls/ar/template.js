@@ -34,7 +34,9 @@
 			},
 			mobileInfo: {
 				legend: "بيت_Legend_لاحقة",
-				description: "بيت_Description_لاحقة"
+				description: "بيت_Description_لاحقة",
+				lblLegendMobileError: "بيت_Sorry, the legend is unavailable. Please reload the application_لاحقة.",
+				lblLegendMobileErrorExplain: "بيت_The legend is not available when the device is rotated to portrait mode after the application is loaded_لاحقة."
 			},
 			mobileFooter: {
 				swipeInvite: "بيت_Swipe to navigate the story_لاحقة",

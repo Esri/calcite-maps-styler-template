@@ -110,10 +110,19 @@
       mapRestore: "כן_Restore_ש",
       filterSelectEmptyText: "כן_Select_ש",
       invalidLayerMessage: "כן_Form layer does not exist. Please configure the application and set the layer_ש.",
-      selectedLayerText: "כן_All_ש"
+      selectedLayerText: "כן_All_ש",
+      fileUploadStatus: "כן_File Upload Status_ש",
+      uploadingBadge: "כן_&nbsp;Uploading&hellip;_ש",
+      successBadge: "כן_&nbsp;Uploaded_ש",
+      retryBadge: "כן_Retry_ש",
+      errorBadge: "כן_Error uploading&nbsp;&nbsp;&nbsp;_ש",
+      fileTooLargeError: "כן_File too large to attach_ש",
+      exceededFileCountError: "כן_Exceeded maximum no. of attachments allowed_ש",
+      selectFileTitle: "כן_Select a file_ש",
+      btnViewSubmissions: "כן_View Submissions_ש"
     },
     builder: {
-      invalidUser: "כן_Sorry, you dont have permission to view this item_ש",
+      invalidUser: "כן_Sorry, you don't have permission to view this item_ש",
       invalidWebmapSelectionAlert: "כן_The selected webmap does not contain a valid layer to use. Please add an editable FeatureLayer into your webmap to continue_ש.",
       invalidWebmapSelectionAlert2: "כן_For More Information please refer to ${openLink}What is Feature Service?${closeLink}_ש",
       selectFieldsText: "כן_Select Form Fields_ש",
@@ -151,6 +160,7 @@
       fieldTabDisplayTypeHeaderText: "כן_Display As_ש",
       fieldTabOrderColumnText: "כן_Order_ש",
       fieldTabVisibleColumnText: "כן_Enabled_ש",
+      displayFieldText: "כן_Display Field_ש",
       selectMenuOption: "כן_Select Menu_ש",
       selectRadioOption: "כן_Radio Button_ש",
       selectTextOption: "כן_Text_ש",
@@ -217,7 +227,33 @@
       locateOnLoadText: "כן_Locate On Load_ש",
       locateOnLoadDescription: "כן_You can configure the GeoForm to use the current location on page load_ש",
       selectLayerFieldTabText: "כן_Select Layer_ש",
-      allLayerSelectOptionText:"כן_All_ש"
+      allLayerSelectOptionText: "כן_All_ש",
+      disableViewer: "כן_Disable Viewer_ש",
+      disableViewerDescription: "כן_You can configure the GeoForm to disable/enable Viewer_ש",
+      displayFieldHintText: "כן_Selected display field will be shown in viewerMode as title field_ש"
+    },
+    viewer: {
+      geocoderCancelText: "כן_Cancel_ש",
+      viewReportsTabText: "כן_Submissions_ש",
+      viewLegendTabText: "כן_Legend_ש",
+      viewAboutusTabText: "כן_About_ש",
+      viewMapTabText: "כן_Map_ש",
+      sortHeaderText: "כן_Sort By_ש:",
+      btnSubmitReportText: "כן_Submit a Report_ש",
+      geocoderPlaceholderText: "כן_Zip Code, city, etc_ש.",
+      noSearchResult: "כן_No result found_ש",
+      recordsTabTooltip: "כן_View Submissions_ש",
+      legendTabTooltip: "כן_Legend_ש",
+      aboutUsTabTooltip: "כן_AboutUs_ש",
+      mapTabTooltip: "כן_Map_ש",
+      appLoadingFailedMessage: "כן_ViewerMode is Unavailable_ש",
+      btnDescendingText: "כן_Desc_ש",
+      btnAscendingText: "כן_Asc_ש",
+      geometryUnavailableErrorMessage: "כן_Unable to find the geometry of the feature_ש",
+      infoPopupOffErrorMessage: "כן_InfoPopup is off_ש",
+      btnLoadMoreText: "כן_Load More_ש",
+      unavailableTitleText: "כן_Untitled_ש",
+      unavailableConfigMessage: "כן_Unable to load config_ש"
     }
   })
 );

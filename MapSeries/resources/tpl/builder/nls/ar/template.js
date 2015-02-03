@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "بيت_Tabbed_لاحقة",
 				tabDescr: "بيت_Present maps and other content using tabs with an optional panel for descriptive text_لاحقة.",
+				tabItem: "بيت_Tab_لاحقة",
+				tabItems: "بيت_Tabs_لاحقة",
 				sideTitle: "بيت_Side Accordion_لاحقة",
 				sideDescr: "بيت_Present maps and other content using an expandable control that includes descriptive text_لاحقة.",
+				sideItem: "بيت_Entry_لاحقة",
+				sideItems: "بيت_Entries_لاحقة",
 				bulletTitle: "بيت_Bulleted_لاحقة",
-				bulletDescr: "بيت_Present maps and other content using bullets with an optional panel for descriptive text_لاحقة."
+				bulletDescr: "بيت_Present maps and other content using bullets with an optional panel for descriptive text_لاحقة.",
+				bulletItem: "بيت_Bullet_لاحقة",
+				bulletItems: "بيت_Bullets_لاحقة"
 			},
 			common: {
 				lblStatus1: "بيت_Published_لاحقة",
@@ -21,18 +27,19 @@
 				lblDropdown: "بيت_Dropdown_لاحقة",
 				lblBelowDesc: "بيت_Below the description_لاحقة",
 				lblOnPanel: "بيت_As a panel_لاحقة",
-				lblPanelDescAndLegend: "بيت_Description and legend Panel_لاحقة",
-				lblPanelDescAndOrLegend: "بيت_Description and/or legend Panel_لاحقة",
-				lblPanelDesc: "بيت_Description Panel_لاحقة",
-				lblPanelLegend: "بيت_Legend Panel_لاحقة",
-				lblPanelAccordion: "بيت_Accordion Panel_لاحقة",
+				lblPanelDescAndLegend: "بيت_Description and legend panel_لاحقة",
+				lblPanelDescAndOrLegend: "بيت_Description and/or legend panel_لاحقة",
+				lblPanelDesc: "بيت_Description panel_لاحقة",
+				lblPanelLegend: "بيت_Legend panel_لاحقة",
+				lblPanelAccordion: "بيت_Accordion panel_لاحقة",
 				cfgLeft: "بيت_Left_لاحقة",
 				cfgRight: "بيت_Right_لاحقة",
 				cfgSmall: "بيت_Small_لاحقة",
 				cfgMedium: "بيت_Medium_لاحقة",
 				cfgLarge: "بيت_Large_لاحقة",
-				lblNumbering: "بيت_Entry numbering_لاحقة",
-				lblReverse: "بيت_Reverse entry numbering_لاحقة"
+				lblNumbering: "بيت_Display numbers_لاحقة",
+				lblReverse: "بيت_Reverse numbering_لاحقة",
+				canOverlapMap: "بيت_can overlap map location_لاحقة"
 			},
 			settingsMapOptions: {
 				title: "بيت_Map options_لاحقة",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "بيت_Add_لاحقة",
 				lblEdit: "بيت_Edit_لاحقة",
-				disabled: "بيت_Add Entry is disabled because the maximum number of allowed sections has been reached_لاحقة.",
-				titleAdd: "بيت_Add Entry_لاحقة",
-				titleEdit: "بيت_Edit Entry_لاحقة",
-				stepMainStageNextTooltip: "بيت_Enter the Entry title and content_لاحقة",
-				titlePlaceholder: "بيت_Entry title_لاحقة..."
+				disabled: "بيت_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_لاحقة.",
+				titleAdd: "بيت_Add_لاحقة",
+				titleEdit: "بيت_Edit_لاحقة",
+				stepMainStageNextTooltip: "بيت_Enter the %LBL_LAYOUT% title and content_لاحقة",
+				titlePlaceholder: "بيت_%LBL_LAYOUT% title_لاحقة..."
 			},
 			textEditor: {
 				placeholder1: "بيت_Add text, links, and small graphics here_لاحقة.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "بيت_Organize_لاحقة",
-				lblHeader: "بيت_Drag and drop entries to organize your series_لاحقة.",
+				lblHeader: "بيت_Drag and drop %LBL_LAYOUT% to organize your series_لاحقة.",
 				lblColTitle: "بيت_Title_لاحقة",
 				lblColStatus: "بيت_Status_لاحقة",
-				btnApplyWarning: "بيت_Confirm deletion of %NB% entries_لاحقة",
+				btnApplyWarning: "بيت_Confirm deletion of %NB% %LBL_LAYOUT%_لاحقة",
 				deleteTooltip: "بيت_Delete_لاحقة",
 				firstSectionExplain: "بيت_(The home section cannot be moved)_لاحقة"
 			},

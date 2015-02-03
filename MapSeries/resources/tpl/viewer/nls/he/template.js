@@ -34,7 +34,9 @@
 			},
 			mobileInfo: {
 				legend: "כן_Legend_ש",
-				description: "כן_Description_ש"
+				description: "כן_Description_ש",
+				lblLegendMobileError: "כן_Sorry, the legend is unavailable. Please reload the application_ש.",
+				lblLegendMobileErrorExplain: "כן_The legend is not available when the device is rotated to portrait mode after the application is loaded_ש."
 			},
 			mobileFooter: {
 				swipeInvite: "כן_Swipe to navigate the story_ש",

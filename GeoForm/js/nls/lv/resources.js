@@ -110,10 +110,19 @@
       mapRestore: "ķ_Restore_ū",
       filterSelectEmptyText: "ķ_Select_ū",
       invalidLayerMessage: "ķ_Form layer does not exist. Please configure the application and set the layer_ū.",
-      selectedLayerText: "ķ_All_ū"
+      selectedLayerText: "ķ_All_ū",
+      fileUploadStatus: "ķ_File Upload Status_ū",
+      uploadingBadge: "ķ_&nbsp;Uploading&hellip;_ū",
+      successBadge: "ķ_&nbsp;Uploaded_ū",
+      retryBadge: "ķ_Retry_ū",
+      errorBadge: "ķ_Error uploading&nbsp;&nbsp;&nbsp;_ū",
+      fileTooLargeError: "ķ_File too large to attach_ū",
+      exceededFileCountError: "ķ_Exceeded maximum no. of attachments allowed_ū",
+      selectFileTitle: "ķ_Select a file_ū",
+      btnViewSubmissions: "ķ_View Submissions_ū"
     },
     builder: {
-      invalidUser: "ķ_Sorry, you dont have permission to view this item_ū",
+      invalidUser: "ķ_Sorry, you don't have permission to view this item_ū",
       invalidWebmapSelectionAlert: "ķ_The selected webmap does not contain a valid layer to use. Please add an editable FeatureLayer into your webmap to continue_ū.",
       invalidWebmapSelectionAlert2: "ķ_For More Information please refer to ${openLink}What is Feature Service?${closeLink}_ū",
       selectFieldsText: "ķ_Select Form Fields_ū",
@@ -151,6 +160,7 @@
       fieldTabDisplayTypeHeaderText: "ķ_Display As_ū",
       fieldTabOrderColumnText: "ķ_Order_ū",
       fieldTabVisibleColumnText: "ķ_Enabled_ū",
+      displayFieldText: "ķ_Display Field_ū",
       selectMenuOption: "ķ_Select Menu_ū",
       selectRadioOption: "ķ_Radio Button_ū",
       selectTextOption: "ķ_Text_ū",
@@ -217,7 +227,33 @@
       locateOnLoadText: "ķ_Locate On Load_ū",
       locateOnLoadDescription: "ķ_You can configure the GeoForm to use the current location on page load_ū",
       selectLayerFieldTabText: "ķ_Select Layer_ū",
-      allLayerSelectOptionText:"ķ_All_ū"
+      allLayerSelectOptionText: "ķ_All_ū",
+      disableViewer: "ķ_Disable Viewer_ū",
+      disableViewerDescription: "ķ_You can configure the GeoForm to disable/enable Viewer_ū",
+      displayFieldHintText: "ķ_Selected display field will be shown in viewerMode as title field_ū"
+    },
+    viewer: {
+      geocoderCancelText: "ķ_Cancel_ū",
+      viewReportsTabText: "ķ_Submissions_ū",
+      viewLegendTabText: "ķ_Legend_ū",
+      viewAboutusTabText: "ķ_About_ū",
+      viewMapTabText: "ķ_Map_ū",
+      sortHeaderText: "ķ_Sort By_ū:",
+      btnSubmitReportText: "ķ_Submit a Report_ū",
+      geocoderPlaceholderText: "ķ_Zip Code, city, etc_ū.",
+      noSearchResult: "ķ_No result found_ū",
+      recordsTabTooltip: "ķ_View Submissions_ū",
+      legendTabTooltip: "ķ_Legend_ū",
+      aboutUsTabTooltip: "ķ_AboutUs_ū",
+      mapTabTooltip: "ķ_Map_ū",
+      appLoadingFailedMessage: "ķ_ViewerMode is Unavailable_ū",
+      btnDescendingText: "ķ_Desc_ū",
+      btnAscendingText: "ķ_Asc_ū",
+      geometryUnavailableErrorMessage: "ķ_Unable to find the geometry of the feature_ū",
+      infoPopupOffErrorMessage: "ķ_InfoPopup is off_ū",
+      btnLoadMoreText: "ķ_Load More_ū",
+      unavailableTitleText: "ķ_Untitled_ū",
+      unavailableConfigMessage: "ķ_Unable to load config_ū"
     }
   })
 );

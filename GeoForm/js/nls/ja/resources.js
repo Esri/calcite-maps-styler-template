@@ -110,10 +110,19 @@
       mapRestore: "須_Restore_鷗",
       filterSelectEmptyText: "須_Select_鷗",
       invalidLayerMessage: "須_Form layer does not exist. Please configure the application and set the layer_鷗.",
-      selectedLayerText: "須_All_鷗"
+      selectedLayerText: "須_All_鷗",
+      fileUploadStatus: "須_File Upload Status_鷗",
+      uploadingBadge: "須_&nbsp;Uploading&hellip;_鷗",
+      successBadge: "須_&nbsp;Uploaded_鷗",
+      retryBadge: "須_Retry_鷗",
+      errorBadge: "須_Error uploading&nbsp;&nbsp;&nbsp;_鷗",
+      fileTooLargeError: "須_File too large to attach_鷗",
+      exceededFileCountError: "須_Exceeded maximum no. of attachments allowed_鷗",
+      selectFileTitle: "須_Select a file_鷗",
+      btnViewSubmissions: "須_View Submissions_鷗"
     },
     builder: {
-      invalidUser: "須_Sorry, you dont have permission to view this item_鷗",
+      invalidUser: "須_Sorry, you don't have permission to view this item_鷗",
       invalidWebmapSelectionAlert: "須_The selected webmap does not contain a valid layer to use. Please add an editable FeatureLayer into your webmap to continue_鷗.",
       invalidWebmapSelectionAlert2: "須_For More Information please refer to ${openLink}What is Feature Service?${closeLink}_鷗",
       selectFieldsText: "須_Select Form Fields_鷗",
@@ -151,6 +160,7 @@
       fieldTabDisplayTypeHeaderText: "須_Display As_鷗",
       fieldTabOrderColumnText: "須_Order_鷗",
       fieldTabVisibleColumnText: "須_Enabled_鷗",
+      displayFieldText: "須_Display Field_鷗",
       selectMenuOption: "須_Select Menu_鷗",
       selectRadioOption: "須_Radio Button_鷗",
       selectTextOption: "須_Text_鷗",
@@ -217,7 +227,33 @@
       locateOnLoadText: "須_Locate On Load_鷗",
       locateOnLoadDescription: "須_You can configure the GeoForm to use the current location on page load_鷗",
       selectLayerFieldTabText: "須_Select Layer_鷗",
-      allLayerSelectOptionText:"須_All_鷗"
+      allLayerSelectOptionText: "須_All_鷗",
+      disableViewer: "須_Disable Viewer_鷗",
+      disableViewerDescription: "須_You can configure the GeoForm to disable/enable Viewer_鷗",
+      displayFieldHintText: "須_Selected display field will be shown in viewerMode as title field_鷗"
+    },
+    viewer: {
+      geocoderCancelText: "須_Cancel_鷗",
+      viewReportsTabText: "須_Submissions_鷗",
+      viewLegendTabText: "須_Legend_鷗",
+      viewAboutusTabText: "須_About_鷗",
+      viewMapTabText: "須_Map_鷗",
+      sortHeaderText: "須_Sort By_鷗:",
+      btnSubmitReportText: "須_Submit a Report_鷗",
+      geocoderPlaceholderText: "須_Zip Code, city, etc_鷗.",
+      noSearchResult: "須_No result found_鷗",
+      recordsTabTooltip: "須_View Submissions_鷗",
+      legendTabTooltip: "須_Legend_鷗",
+      aboutUsTabTooltip: "須_AboutUs_鷗",
+      mapTabTooltip: "須_Map_鷗",
+      appLoadingFailedMessage: "須_ViewerMode is Unavailable_鷗",
+      btnDescendingText: "須_Desc_鷗",
+      btnAscendingText: "須_Asc_鷗",
+      geometryUnavailableErrorMessage: "須_Unable to find the geometry of the feature_鷗",
+      infoPopupOffErrorMessage: "須_InfoPopup is off_鷗",
+      btnLoadMoreText: "須_Load More_鷗",
+      unavailableTitleText: "須_Untitled_鷗",
+      unavailableConfigMessage: "須_Unable to load config_鷗"
     }
   })
 );

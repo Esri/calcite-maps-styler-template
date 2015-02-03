@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "试_Tabbed_验",
 				tabDescr: "试_Present maps and other content using tabs with an optional panel for descriptive text_验.",
+				tabItem: "试_Tab_验",
+				tabItems: "试_Tabs_验",
 				sideTitle: "试_Side Accordion_验",
 				sideDescr: "试_Present maps and other content using an expandable control that includes descriptive text_验.",
+				sideItem: "试_Entry_验",
+				sideItems: "试_Entries_验",
 				bulletTitle: "试_Bulleted_验",
-				bulletDescr: "试_Present maps and other content using bullets with an optional panel for descriptive text_验."
+				bulletDescr: "试_Present maps and other content using bullets with an optional panel for descriptive text_验.",
+				bulletItem: "试_Bullet_验",
+				bulletItems: "试_Bullets_验"
 			},
 			common: {
 				lblStatus1: "试_Published_验",
@@ -21,18 +27,19 @@
 				lblDropdown: "试_Dropdown_验",
 				lblBelowDesc: "试_Below the description_验",
 				lblOnPanel: "试_As a panel_验",
-				lblPanelDescAndLegend: "试_Description and legend Panel_验",
-				lblPanelDescAndOrLegend: "试_Description and/or legend Panel_验",
-				lblPanelDesc: "试_Description Panel_验",
-				lblPanelLegend: "试_Legend Panel_验",
-				lblPanelAccordion: "试_Accordion Panel_验",
+				lblPanelDescAndLegend: "试_Description and legend panel_验",
+				lblPanelDescAndOrLegend: "试_Description and/or legend panel_验",
+				lblPanelDesc: "试_Description panel_验",
+				lblPanelLegend: "试_Legend panel_验",
+				lblPanelAccordion: "试_Accordion panel_验",
 				cfgLeft: "试_Left_验",
 				cfgRight: "试_Right_验",
 				cfgSmall: "试_Small_验",
 				cfgMedium: "试_Medium_验",
 				cfgLarge: "试_Large_验",
-				lblNumbering: "试_Entry numbering_验",
-				lblReverse: "试_Reverse entry numbering_验"
+				lblNumbering: "试_Display numbers_验",
+				lblReverse: "试_Reverse numbering_验",
+				canOverlapMap: "试_can overlap map location_验"
 			},
 			settingsMapOptions: {
 				title: "试_Map options_验",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "试_Add_验",
 				lblEdit: "试_Edit_验",
-				disabled: "试_Add Entry is disabled because the maximum number of allowed sections has been reached_验.",
-				titleAdd: "试_Add Entry_验",
-				titleEdit: "试_Edit Entry_验",
-				stepMainStageNextTooltip: "试_Enter the Entry title and content_验",
-				titlePlaceholder: "试_Entry title_验..."
+				disabled: "试_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_验.",
+				titleAdd: "试_Add_验",
+				titleEdit: "试_Edit_验",
+				stepMainStageNextTooltip: "试_Enter the %LBL_LAYOUT% title and content_验",
+				titlePlaceholder: "试_%LBL_LAYOUT% title_验..."
 			},
 			textEditor: {
 				placeholder1: "试_Add text, links, and small graphics here_验.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "试_Organize_验",
-				lblHeader: "试_Drag and drop entries to organize your series_验.",
+				lblHeader: "试_Drag and drop %LBL_LAYOUT% to organize your series_验.",
 				lblColTitle: "试_Title_验",
 				lblColStatus: "试_Status_验",
-				btnApplyWarning: "试_Confirm deletion of %NB% entries_验",
+				btnApplyWarning: "试_Confirm deletion of %NB% %LBL_LAYOUT%_验",
 				deleteTooltip: "试_Delete_验",
 				firstSectionExplain: "试_(The home section cannot be moved)_验"
 			},

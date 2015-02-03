@@ -14,20 +14,46 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
+define({
+    root: ({
         map: {
-            error: "Não foi possível criar o mapa"
+            error: "ã_Unable to create map_Ç"
         },
         tools: {
             info: {
-                label: "Informação",
-                tooltip: "Alternar informações do mapa"
+                label: "ã_Info_Ç",
+                tooltip: "ã_Toggle map info_Ç"
             },
             sync: {
-                label: "Sincronizar extensão do mapa",
-                tooltip: "Sincronizar para a extensão do mapa atual"
+                label: "ã_Sync Map Extent_Ç",
+                tooltip: "ã_Sync to extent of this map_Ç"
             }
         }
-    })
-);
+    }),
+    "ar": 1,
+    "cs": 1,
+    "da": 1,
+    "de": 1,
+    "es": 1,
+    "et": 1,
+    "fi": 1,
+    "fr": 1,
+    "he": 1,
+    "it": 1,
+    "ja": 1,
+    "ko": 1,
+    "lt": 1,
+    "lv": 1,
+    "nl": 1,
+    "nb": 1,
+    "pl": 1,
+    "pt-br": 1,
+    "pt-pt": 1,
+    "ro": 1,
+    "ru": 1,
+    "sv": 1,
+    "tr": 1,
+    "th": 1,
+    "vi": 1,
+    "zh-cn": 1
+});

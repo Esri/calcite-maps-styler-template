@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "한_Tabbed_빠",
 				tabDescr: "한_Present maps and other content using tabs with an optional panel for descriptive text_빠.",
+				tabItem: "한_Tab_빠",
+				tabItems: "한_Tabs_빠",
 				sideTitle: "한_Side Accordion_빠",
 				sideDescr: "한_Present maps and other content using an expandable control that includes descriptive text_빠.",
+				sideItem: "한_Entry_빠",
+				sideItems: "한_Entries_빠",
 				bulletTitle: "한_Bulleted_빠",
-				bulletDescr: "한_Present maps and other content using bullets with an optional panel for descriptive text_빠."
+				bulletDescr: "한_Present maps and other content using bullets with an optional panel for descriptive text_빠.",
+				bulletItem: "한_Bullet_빠",
+				bulletItems: "한_Bullets_빠"
 			},
 			common: {
 				lblStatus1: "한_Published_빠",
@@ -21,18 +27,19 @@
 				lblDropdown: "한_Dropdown_빠",
 				lblBelowDesc: "한_Below the description_빠",
 				lblOnPanel: "한_As a panel_빠",
-				lblPanelDescAndLegend: "한_Description and legend Panel_빠",
-				lblPanelDescAndOrLegend: "한_Description and/or legend Panel_빠",
-				lblPanelDesc: "한_Description Panel_빠",
-				lblPanelLegend: "한_Legend Panel_빠",
-				lblPanelAccordion: "한_Accordion Panel_빠",
+				lblPanelDescAndLegend: "한_Description and legend panel_빠",
+				lblPanelDescAndOrLegend: "한_Description and/or legend panel_빠",
+				lblPanelDesc: "한_Description panel_빠",
+				lblPanelLegend: "한_Legend panel_빠",
+				lblPanelAccordion: "한_Accordion panel_빠",
 				cfgLeft: "한_Left_빠",
 				cfgRight: "한_Right_빠",
 				cfgSmall: "한_Small_빠",
 				cfgMedium: "한_Medium_빠",
 				cfgLarge: "한_Large_빠",
-				lblNumbering: "한_Entry numbering_빠",
-				lblReverse: "한_Reverse entry numbering_빠"
+				lblNumbering: "한_Display numbers_빠",
+				lblReverse: "한_Reverse numbering_빠",
+				canOverlapMap: "한_can overlap map location_빠"
 			},
 			settingsMapOptions: {
 				title: "한_Map options_빠",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "한_Add_빠",
 				lblEdit: "한_Edit_빠",
-				disabled: "한_Add Entry is disabled because the maximum number of allowed sections has been reached_빠.",
-				titleAdd: "한_Add Entry_빠",
-				titleEdit: "한_Edit Entry_빠",
-				stepMainStageNextTooltip: "한_Enter the Entry title and content_빠",
-				titlePlaceholder: "한_Entry title_빠..."
+				disabled: "한_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_빠.",
+				titleAdd: "한_Add_빠",
+				titleEdit: "한_Edit_빠",
+				stepMainStageNextTooltip: "한_Enter the %LBL_LAYOUT% title and content_빠",
+				titlePlaceholder: "한_%LBL_LAYOUT% title_빠..."
 			},
 			textEditor: {
 				placeholder1: "한_Add text, links, and small graphics here_빠.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "한_Organize_빠",
-				lblHeader: "한_Drag and drop entries to organize your series_빠.",
+				lblHeader: "한_Drag and drop %LBL_LAYOUT% to organize your series_빠.",
 				lblColTitle: "한_Title_빠",
 				lblColStatus: "한_Status_빠",
-				btnApplyWarning: "한_Confirm deletion of %NB% entries_빠",
+				btnApplyWarning: "한_Confirm deletion of %NB% %LBL_LAYOUT%_빠",
 				deleteTooltip: "한_Delete_빠",
 				firstSectionExplain: "한_(The home section cannot be moved)_빠"
 			},

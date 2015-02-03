@@ -110,10 +110,19 @@
       mapRestore: "한_Restore_빠",
       filterSelectEmptyText: "한_Select_빠",
       invalidLayerMessage: "한_Form layer does not exist. Please configure the application and set the layer_빠.",
-      selectedLayerText: "한_All_빠"
+      selectedLayerText: "한_All_빠",
+      fileUploadStatus: "한_File Upload Status_빠",
+      uploadingBadge: "한_&nbsp;Uploading&hellip;_빠",
+      successBadge: "한_&nbsp;Uploaded_빠",
+      retryBadge: "한_Retry_빠",
+      errorBadge: "한_Error uploading&nbsp;&nbsp;&nbsp;_빠",
+      fileTooLargeError: "한_File too large to attach_빠",
+      exceededFileCountError: "한_Exceeded maximum no. of attachments allowed_빠",
+      selectFileTitle: "한_Select a file_빠",
+      btnViewSubmissions: "한_View Submissions_빠"
     },
     builder: {
-      invalidUser: "한_Sorry, you dont have permission to view this item_빠",
+      invalidUser: "한_Sorry, you don't have permission to view this item_빠",
       invalidWebmapSelectionAlert: "한_The selected webmap does not contain a valid layer to use. Please add an editable FeatureLayer into your webmap to continue_빠.",
       invalidWebmapSelectionAlert2: "한_For More Information please refer to ${openLink}What is Feature Service?${closeLink}_빠",
       selectFieldsText: "한_Select Form Fields_빠",
@@ -151,6 +160,7 @@
       fieldTabDisplayTypeHeaderText: "한_Display As_빠",
       fieldTabOrderColumnText: "한_Order_빠",
       fieldTabVisibleColumnText: "한_Enabled_빠",
+      displayFieldText: "한_Display Field_빠",
       selectMenuOption: "한_Select Menu_빠",
       selectRadioOption: "한_Radio Button_빠",
       selectTextOption: "한_Text_빠",
@@ -217,7 +227,33 @@
       locateOnLoadText: "한_Locate On Load_빠",
       locateOnLoadDescription: "한_You can configure the GeoForm to use the current location on page load_빠",
       selectLayerFieldTabText: "한_Select Layer_빠",
-      allLayerSelectOptionText:"한_All_빠"
+      allLayerSelectOptionText: "한_All_빠",
+      disableViewer: "한_Disable Viewer_빠",
+      disableViewerDescription: "한_You can configure the GeoForm to disable/enable Viewer_빠",
+      displayFieldHintText: "한_Selected display field will be shown in viewerMode as title field_빠"
+    },
+    viewer: {
+      geocoderCancelText: "한_Cancel_빠",
+      viewReportsTabText: "한_Submissions_빠",
+      viewLegendTabText: "한_Legend_빠",
+      viewAboutusTabText: "한_About_빠",
+      viewMapTabText: "한_Map_빠",
+      sortHeaderText: "한_Sort By_빠:",
+      btnSubmitReportText: "한_Submit a Report_빠",
+      geocoderPlaceholderText: "한_Zip Code, city, etc_빠.",
+      noSearchResult: "한_No result found_빠",
+      recordsTabTooltip: "한_View Submissions_빠",
+      legendTabTooltip: "한_Legend_빠",
+      aboutUsTabTooltip: "한_AboutUs_빠",
+      mapTabTooltip: "한_Map_빠",
+      appLoadingFailedMessage: "한_ViewerMode is Unavailable_빠",
+      btnDescendingText: "한_Desc_빠",
+      btnAscendingText: "한_Asc_빠",
+      geometryUnavailableErrorMessage: "한_Unable to find the geometry of the feature_빠",
+      infoPopupOffErrorMessage: "한_InfoPopup is off_빠",
+      btnLoadMoreText: "한_Load More_빠",
+      unavailableTitleText: "한_Untitled_빠",
+      unavailableConfigMessage: "한_Unable to load config_빠"
     }
   })
 );

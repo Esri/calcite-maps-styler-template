@@ -110,10 +110,19 @@
       mapRestore: "بيت_Restore_لاحقة",
       filterSelectEmptyText: "بيت_Select_لاحقة",
       invalidLayerMessage: "بيت_Form layer does not exist. Please configure the application and set the layer_لاحقة.",
-      selectedLayerText: "بيت_All_لاحقة"
+      selectedLayerText: "بيت_All_لاحقة",
+      fileUploadStatus: "بيت_File Upload Status_لاحقة",
+      uploadingBadge: "بيت_&nbsp;Uploading&hellip;_لاحقة",
+      successBadge: "بيت_&nbsp;Uploaded_لاحقة",
+      retryBadge: "بيت_Retry_لاحقة",
+      errorBadge: "بيت_Error uploading&nbsp;&nbsp;&nbsp;_لاحقة",
+      fileTooLargeError: "بيت_File too large to attach_لاحقة",
+      exceededFileCountError: "بيت_Exceeded maximum no. of attachments allowed_لاحقة",
+      selectFileTitle: "بيت_Select a file_لاحقة",
+      btnViewSubmissions: "بيت_View Submissions_لاحقة"
     },
     builder: {
-      invalidUser: "بيت_Sorry, you dont have permission to view this item_لاحقة",
+      invalidUser: "بيت_Sorry, you don't have permission to view this item_لاحقة",
       invalidWebmapSelectionAlert: "بيت_The selected webmap does not contain a valid layer to use. Please add an editable FeatureLayer into your webmap to continue_لاحقة.",
       invalidWebmapSelectionAlert2: "بيت_For More Information please refer to ${openLink}What is Feature Service?${closeLink}_لاحقة",
       selectFieldsText: "بيت_Select Form Fields_لاحقة",
@@ -151,6 +160,7 @@
       fieldTabDisplayTypeHeaderText: "بيت_Display As_لاحقة",
       fieldTabOrderColumnText: "بيت_Order_لاحقة",
       fieldTabVisibleColumnText: "بيت_Enabled_لاحقة",
+      displayFieldText: "بيت_Display Field_لاحقة",
       selectMenuOption: "بيت_Select Menu_لاحقة",
       selectRadioOption: "بيت_Radio Button_لاحقة",
       selectTextOption: "بيت_Text_لاحقة",
@@ -217,7 +227,33 @@
       locateOnLoadText: "بيت_Locate On Load_لاحقة",
       locateOnLoadDescription: "بيت_You can configure the GeoForm to use the current location on page load_لاحقة",
       selectLayerFieldTabText: "بيت_Select Layer_لاحقة",
-      allLayerSelectOptionText:"بيت_All_لاحقة"
+      allLayerSelectOptionText: "بيت_All_لاحقة",
+      disableViewer: "بيت_Disable Viewer_لاحقة",
+      disableViewerDescription: "بيت_You can configure the GeoForm to disable/enable Viewer_لاحقة",
+      displayFieldHintText: "بيت_Selected display field will be shown in viewerMode as title field_لاحقة"
+    },
+    viewer: {
+      geocoderCancelText: "بيت_Cancel_لاحقة",
+      viewReportsTabText: "بيت_Submissions_لاحقة",
+      viewLegendTabText: "بيت_Legend_لاحقة",
+      viewAboutusTabText: "بيت_About_لاحقة",
+      viewMapTabText: "بيت_Map_لاحقة",
+      sortHeaderText: "بيت_Sort By_لاحقة:",
+      btnSubmitReportText: "بيت_Submit a Report_لاحقة",
+      geocoderPlaceholderText: "بيت_Zip Code, city, etc_لاحقة.",
+      noSearchResult: "بيت_No result found_لاحقة",
+      recordsTabTooltip: "بيت_View Submissions_لاحقة",
+      legendTabTooltip: "بيت_Legend_لاحقة",
+      aboutUsTabTooltip: "بيت_AboutUs_لاحقة",
+      mapTabTooltip: "بيت_Map_لاحقة",
+      appLoadingFailedMessage: "بيت_ViewerMode is Unavailable_لاحقة",
+      btnDescendingText: "بيت_Desc_لاحقة",
+      btnAscendingText: "بيت_Asc_لاحقة",
+      geometryUnavailableErrorMessage: "بيت_Unable to find the geometry of the feature_لاحقة",
+      infoPopupOffErrorMessage: "بيت_InfoPopup is off_لاحقة",
+      btnLoadMoreText: "بيت_Load More_لاحقة",
+      unavailableTitleText: "بيت_Untitled_لاحقة",
+      unavailableConfigMessage: "بيت_Unable to load config_لاحقة"
     }
   })
 );

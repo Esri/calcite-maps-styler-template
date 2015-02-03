@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "Ĳ_Tabbed_ä",
 				tabDescr: "Ĳ_Present maps and other content using tabs with an optional panel for descriptive text_ä.",
+				tabItem: "Ĳ_Tab_ä",
+				tabItems: "Ĳ_Tabs_ä",
 				sideTitle: "Ĳ_Side Accordion_ä",
 				sideDescr: "Ĳ_Present maps and other content using an expandable control that includes descriptive text_ä.",
+				sideItem: "Ĳ_Entry_ä",
+				sideItems: "Ĳ_Entries_ä",
 				bulletTitle: "Ĳ_Bulleted_ä",
-				bulletDescr: "Ĳ_Present maps and other content using bullets with an optional panel for descriptive text_ä."
+				bulletDescr: "Ĳ_Present maps and other content using bullets with an optional panel for descriptive text_ä.",
+				bulletItem: "Ĳ_Bullet_ä",
+				bulletItems: "Ĳ_Bullets_ä"
 			},
 			common: {
 				lblStatus1: "Ĳ_Published_ä",
@@ -21,18 +27,19 @@
 				lblDropdown: "Ĳ_Dropdown_ä",
 				lblBelowDesc: "Ĳ_Below the description_ä",
 				lblOnPanel: "Ĳ_As a panel_ä",
-				lblPanelDescAndLegend: "Ĳ_Description and legend Panel_ä",
-				lblPanelDescAndOrLegend: "Ĳ_Description and/or legend Panel_ä",
-				lblPanelDesc: "Ĳ_Description Panel_ä",
-				lblPanelLegend: "Ĳ_Legend Panel_ä",
-				lblPanelAccordion: "Ĳ_Accordion Panel_ä",
+				lblPanelDescAndLegend: "Ĳ_Description and legend panel_ä",
+				lblPanelDescAndOrLegend: "Ĳ_Description and/or legend panel_ä",
+				lblPanelDesc: "Ĳ_Description panel_ä",
+				lblPanelLegend: "Ĳ_Legend panel_ä",
+				lblPanelAccordion: "Ĳ_Accordion panel_ä",
 				cfgLeft: "Ĳ_Left_ä",
 				cfgRight: "Ĳ_Right_ä",
 				cfgSmall: "Ĳ_Small_ä",
 				cfgMedium: "Ĳ_Medium_ä",
 				cfgLarge: "Ĳ_Large_ä",
-				lblNumbering: "Ĳ_Entry numbering_ä",
-				lblReverse: "Ĳ_Reverse entry numbering_ä"
+				lblNumbering: "Ĳ_Display numbers_ä",
+				lblReverse: "Ĳ_Reverse numbering_ä",
+				canOverlapMap: "Ĳ_can overlap map location_ä"
 			},
 			settingsMapOptions: {
 				title: "Ĳ_Map options_ä",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "Ĳ_Add_ä",
 				lblEdit: "Ĳ_Edit_ä",
-				disabled: "Ĳ_Add Entry is disabled because the maximum number of allowed sections has been reached_ä.",
-				titleAdd: "Ĳ_Add Entry_ä",
-				titleEdit: "Ĳ_Edit Entry_ä",
-				stepMainStageNextTooltip: "Ĳ_Enter the Entry title and content_ä",
-				titlePlaceholder: "Ĳ_Entry title_ä..."
+				disabled: "Ĳ_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_ä.",
+				titleAdd: "Ĳ_Add_ä",
+				titleEdit: "Ĳ_Edit_ä",
+				stepMainStageNextTooltip: "Ĳ_Enter the %LBL_LAYOUT% title and content_ä",
+				titlePlaceholder: "Ĳ_%LBL_LAYOUT% title_ä..."
 			},
 			textEditor: {
 				placeholder1: "Ĳ_Add text, links, and small graphics here_ä.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "Ĳ_Organize_ä",
-				lblHeader: "Ĳ_Drag and drop entries to organize your series_ä.",
+				lblHeader: "Ĳ_Drag and drop %LBL_LAYOUT% to organize your series_ä.",
 				lblColTitle: "Ĳ_Title_ä",
 				lblColStatus: "Ĳ_Status_ä",
-				btnApplyWarning: "Ĳ_Confirm deletion of %NB% entries_ä",
+				btnApplyWarning: "Ĳ_Confirm deletion of %NB% %LBL_LAYOUT%_ä",
 				deleteTooltip: "Ĳ_Delete_ä",
 				firstSectionExplain: "Ĳ_(The home section cannot be moved)_ä"
 			},

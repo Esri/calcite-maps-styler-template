@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "ø_Tabbed_å",
 				tabDescr: "ø_Present maps and other content using tabs with an optional panel for descriptive text_å.",
+				tabItem: "ø_Tab_å",
+				tabItems: "ø_Tabs_å",
 				sideTitle: "ø_Side Accordion_å",
 				sideDescr: "ø_Present maps and other content using an expandable control that includes descriptive text_å.",
+				sideItem: "ø_Entry_å",
+				sideItems: "ø_Entries_å",
 				bulletTitle: "ø_Bulleted_å",
-				bulletDescr: "ø_Present maps and other content using bullets with an optional panel for descriptive text_å."
+				bulletDescr: "ø_Present maps and other content using bullets with an optional panel for descriptive text_å.",
+				bulletItem: "ø_Bullet_å",
+				bulletItems: "ø_Bullets_å"
 			},
 			common: {
 				lblStatus1: "ø_Published_å",
@@ -21,18 +27,19 @@
 				lblDropdown: "ø_Dropdown_å",
 				lblBelowDesc: "ø_Below the description_å",
 				lblOnPanel: "ø_As a panel_å",
-				lblPanelDescAndLegend: "ø_Description and legend Panel_å",
-				lblPanelDescAndOrLegend: "ø_Description and/or legend Panel_å",
-				lblPanelDesc: "ø_Description Panel_å",
-				lblPanelLegend: "ø_Legend Panel_å",
-				lblPanelAccordion: "ø_Accordion Panel_å",
+				lblPanelDescAndLegend: "ø_Description and legend panel_å",
+				lblPanelDescAndOrLegend: "ø_Description and/or legend panel_å",
+				lblPanelDesc: "ø_Description panel_å",
+				lblPanelLegend: "ø_Legend panel_å",
+				lblPanelAccordion: "ø_Accordion panel_å",
 				cfgLeft: "ø_Left_å",
 				cfgRight: "ø_Right_å",
 				cfgSmall: "ø_Small_å",
 				cfgMedium: "ø_Medium_å",
 				cfgLarge: "ø_Large_å",
-				lblNumbering: "ø_Entry numbering_å",
-				lblReverse: "ø_Reverse entry numbering_å"
+				lblNumbering: "ø_Display numbers_å",
+				lblReverse: "ø_Reverse numbering_å",
+				canOverlapMap: "ø_can overlap map location_å"
 			},
 			settingsMapOptions: {
 				title: "ø_Map options_å",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "ø_Add_å",
 				lblEdit: "ø_Edit_å",
-				disabled: "ø_Add Entry is disabled because the maximum number of allowed sections has been reached_å.",
-				titleAdd: "ø_Add Entry_å",
-				titleEdit: "ø_Edit Entry_å",
-				stepMainStageNextTooltip: "ø_Enter the Entry title and content_å",
-				titlePlaceholder: "ø_Entry title_å..."
+				disabled: "ø_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_å.",
+				titleAdd: "ø_Add_å",
+				titleEdit: "ø_Edit_å",
+				stepMainStageNextTooltip: "ø_Enter the %LBL_LAYOUT% title and content_å",
+				titlePlaceholder: "ø_%LBL_LAYOUT% title_å..."
 			},
 			textEditor: {
 				placeholder1: "ø_Add text, links, and small graphics here_å.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "ø_Organize_å",
-				lblHeader: "ø_Drag and drop entries to organize your series_å.",
+				lblHeader: "ø_Drag and drop %LBL_LAYOUT% to organize your series_å.",
 				lblColTitle: "ø_Title_å",
 				lblColStatus: "ø_Status_å",
-				btnApplyWarning: "ø_Confirm deletion of %NB% entries_å",
+				btnApplyWarning: "ø_Confirm deletion of %NB% %LBL_LAYOUT%_å",
 				deleteTooltip: "ø_Delete_å",
 				firstSectionExplain: "ø_(The home section cannot be moved)_å"
 			},

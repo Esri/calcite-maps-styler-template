@@ -14,20 +14,46 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
+define({
+    root: ({
         map: {
-            error: "无法创建地图"
+            error: "试_Unable to create map_验"
         },
         tools: {
             info: {
-                label: "信息",
-                tooltip: "切换地图信息"
+                label: "试_Info_验",
+                tooltip: "试_Toggle map info_验"
             },
             sync: {
-                label: "同步地图范围",
-                tooltip: "与此地图的范围保持同步"
+                label: "试_Sync Map Extent_验",
+                tooltip: "试_Sync to extent of this map_验"
             }
         }
-    })
-);
+    }),
+    "ar": 1,
+    "cs": 1,
+    "da": 1,
+    "de": 1,
+    "es": 1,
+    "et": 1,
+    "fi": 1,
+    "fr": 1,
+    "he": 1,
+    "it": 1,
+    "ja": 1,
+    "ko": 1,
+    "lt": 1,
+    "lv": 1,
+    "nl": 1,
+    "nb": 1,
+    "pl": 1,
+    "pt-br": 1,
+    "pt-pt": 1,
+    "ro": 1,
+    "ru": 1,
+    "sv": 1,
+    "tr": 1,
+    "th": 1,
+    "vi": 1,
+    "zh-cn": 1
+});

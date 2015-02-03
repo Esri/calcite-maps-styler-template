@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "ł_Tabbed_ą",
 				tabDescr: "ł_Present maps and other content using tabs with an optional panel for descriptive text_ą.",
+				tabItem: "ł_Tab_ą",
+				tabItems: "ł_Tabs_ą",
 				sideTitle: "ł_Side Accordion_ą",
 				sideDescr: "ł_Present maps and other content using an expandable control that includes descriptive text_ą.",
+				sideItem: "ł_Entry_ą",
+				sideItems: "ł_Entries_ą",
 				bulletTitle: "ł_Bulleted_ą",
-				bulletDescr: "ł_Present maps and other content using bullets with an optional panel for descriptive text_ą."
+				bulletDescr: "ł_Present maps and other content using bullets with an optional panel for descriptive text_ą.",
+				bulletItem: "ł_Bullet_ą",
+				bulletItems: "ł_Bullets_ą"
 			},
 			common: {
 				lblStatus1: "ł_Published_ą",
@@ -21,18 +27,19 @@
 				lblDropdown: "ł_Dropdown_ą",
 				lblBelowDesc: "ł_Below the description_ą",
 				lblOnPanel: "ł_As a panel_ą",
-				lblPanelDescAndLegend: "ł_Description and legend Panel_ą",
-				lblPanelDescAndOrLegend: "ł_Description and/or legend Panel_ą",
-				lblPanelDesc: "ł_Description Panel_ą",
-				lblPanelLegend: "ł_Legend Panel_ą",
-				lblPanelAccordion: "ł_Accordion Panel_ą",
+				lblPanelDescAndLegend: "ł_Description and legend panel_ą",
+				lblPanelDescAndOrLegend: "ł_Description and/or legend panel_ą",
+				lblPanelDesc: "ł_Description panel_ą",
+				lblPanelLegend: "ł_Legend panel_ą",
+				lblPanelAccordion: "ł_Accordion panel_ą",
 				cfgLeft: "ł_Left_ą",
 				cfgRight: "ł_Right_ą",
 				cfgSmall: "ł_Small_ą",
 				cfgMedium: "ł_Medium_ą",
 				cfgLarge: "ł_Large_ą",
-				lblNumbering: "ł_Entry numbering_ą",
-				lblReverse: "ł_Reverse entry numbering_ą"
+				lblNumbering: "ł_Display numbers_ą",
+				lblReverse: "ł_Reverse numbering_ą",
+				canOverlapMap: "ł_can overlap map location_ą"
 			},
 			settingsMapOptions: {
 				title: "ł_Map options_ą",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "ł_Add_ą",
 				lblEdit: "ł_Edit_ą",
-				disabled: "ł_Add Entry is disabled because the maximum number of allowed sections has been reached_ą.",
-				titleAdd: "ł_Add Entry_ą",
-				titleEdit: "ł_Edit Entry_ą",
-				stepMainStageNextTooltip: "ł_Enter the Entry title and content_ą",
-				titlePlaceholder: "ł_Entry title_ą..."
+				disabled: "ł_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_ą.",
+				titleAdd: "ł_Add_ą",
+				titleEdit: "ł_Edit_ą",
+				stepMainStageNextTooltip: "ł_Enter the %LBL_LAYOUT% title and content_ą",
+				titlePlaceholder: "ł_%LBL_LAYOUT% title_ą..."
 			},
 			textEditor: {
 				placeholder1: "ł_Add text, links, and small graphics here_ą.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "ł_Organize_ą",
-				lblHeader: "ł_Drag and drop entries to organize your series_ą.",
+				lblHeader: "ł_Drag and drop %LBL_LAYOUT% to organize your series_ą.",
 				lblColTitle: "ł_Title_ą",
 				lblColStatus: "ł_Status_ą",
-				btnApplyWarning: "ł_Confirm deletion of %NB% entries_ą",
+				btnApplyWarning: "ł_Confirm deletion of %NB% %LBL_LAYOUT%_ą",
 				deleteTooltip: "ł_Delete_ą",
 				firstSectionExplain: "ł_(The home section cannot be moved)_ą"
 			},

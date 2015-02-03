@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "須_Tabbed_鷗",
 				tabDescr: "須_Present maps and other content using tabs with an optional panel for descriptive text_鷗.",
+				tabItem: "須_Tab_鷗",
+				tabItems: "須_Tabs_鷗",
 				sideTitle: "須_Side Accordion_鷗",
 				sideDescr: "須_Present maps and other content using an expandable control that includes descriptive text_鷗.",
+				sideItem: "須_Entry_鷗",
+				sideItems: "須_Entries_鷗",
 				bulletTitle: "須_Bulleted_鷗",
-				bulletDescr: "須_Present maps and other content using bullets with an optional panel for descriptive text_鷗."
+				bulletDescr: "須_Present maps and other content using bullets with an optional panel for descriptive text_鷗.",
+				bulletItem: "須_Bullet_鷗",
+				bulletItems: "須_Bullets_鷗"
 			},
 			common: {
 				lblStatus1: "須_Published_鷗",
@@ -21,18 +27,19 @@
 				lblDropdown: "須_Dropdown_鷗",
 				lblBelowDesc: "須_Below the description_鷗",
 				lblOnPanel: "須_As a panel_鷗",
-				lblPanelDescAndLegend: "須_Description and legend Panel_鷗",
-				lblPanelDescAndOrLegend: "須_Description and/or legend Panel_鷗",
-				lblPanelDesc: "須_Description Panel_鷗",
-				lblPanelLegend: "須_Legend Panel_鷗",
-				lblPanelAccordion: "須_Accordion Panel_鷗",
+				lblPanelDescAndLegend: "須_Description and legend panel_鷗",
+				lblPanelDescAndOrLegend: "須_Description and/or legend panel_鷗",
+				lblPanelDesc: "須_Description panel_鷗",
+				lblPanelLegend: "須_Legend panel_鷗",
+				lblPanelAccordion: "須_Accordion panel_鷗",
 				cfgLeft: "須_Left_鷗",
 				cfgRight: "須_Right_鷗",
 				cfgSmall: "須_Small_鷗",
 				cfgMedium: "須_Medium_鷗",
 				cfgLarge: "須_Large_鷗",
-				lblNumbering: "須_Entry numbering_鷗",
-				lblReverse: "須_Reverse entry numbering_鷗"
+				lblNumbering: "須_Display numbers_鷗",
+				lblReverse: "須_Reverse numbering_鷗",
+				canOverlapMap: "須_can overlap map location_鷗"
 			},
 			settingsMapOptions: {
 				title: "須_Map options_鷗",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "須_Add_鷗",
 				lblEdit: "須_Edit_鷗",
-				disabled: "須_Add Entry is disabled because the maximum number of allowed sections has been reached_鷗.",
-				titleAdd: "須_Add Entry_鷗",
-				titleEdit: "須_Edit Entry_鷗",
-				stepMainStageNextTooltip: "須_Enter the Entry title and content_鷗",
-				titlePlaceholder: "須_Entry title_鷗..."
+				disabled: "須_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_鷗.",
+				titleAdd: "須_Add_鷗",
+				titleEdit: "須_Edit_鷗",
+				stepMainStageNextTooltip: "須_Enter the %LBL_LAYOUT% title and content_鷗",
+				titlePlaceholder: "須_%LBL_LAYOUT% title_鷗..."
 			},
 			textEditor: {
 				placeholder1: "須_Add text, links, and small graphics here_鷗.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "須_Organize_鷗",
-				lblHeader: "須_Drag and drop entries to organize your series_鷗.",
+				lblHeader: "須_Drag and drop %LBL_LAYOUT% to organize your series_鷗.",
 				lblColTitle: "須_Title_鷗",
 				lblColStatus: "須_Status_鷗",
-				btnApplyWarning: "須_Confirm deletion of %NB% entries_鷗",
+				btnApplyWarning: "須_Confirm deletion of %NB% %LBL_LAYOUT%_鷗",
 				deleteTooltip: "須_Delete_鷗",
 				firstSectionExplain: "須_(The home section cannot be moved)_鷗"
 			},

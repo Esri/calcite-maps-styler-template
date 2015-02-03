@@ -5,7 +5,7 @@
       },
       "tooltips": {
          "logo": "Λογότυπο",
-         "switchbasemap": "Αλλαγή βασικού χάρτη",
+         "switchbasemap": "Αλλαγή υποβάθρου",
          "close": "Κλείσιμο"
       }
    })

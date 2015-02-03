@@ -34,7 +34,9 @@
 			},
 			mobileInfo: {
 				legend: "한_Legend_빠",
-				description: "한_Description_빠"
+				description: "한_Description_빠",
+				lblLegendMobileError: "한_Sorry, the legend is unavailable. Please reload the application_빠.",
+				lblLegendMobileErrorExplain: "한_The legend is not available when the device is rotated to portrait mode after the application is loaded_빠."
 			},
 			mobileFooter: {
 				swipeInvite: "한_Swipe to navigate the story_빠",

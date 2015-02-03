@@ -6,14 +6,14 @@
     },
     errors: {
       createMap: "Δεν είναι δυνατή η δημιουργία χάρτη",
-      bitly: 'Το bitly χρησιμοποιείται για σύντμηση του URL για κοινοποίηση. Δείτε το αρχείο readme για λεπτομέρειες σχετικά με τη δημιουργία και τη χρήση ενός κλειδιού bitly',
+      bitly: 'Το bitly χρησιμοποιείται για σύντμηση του URL της κοινοποίησης. Δείτε το αρχείο readme για λεπτομέρειες σχετικά με τη δημιουργία και τη χρήση ενός κλειδιού bitly',
       general: "Σφάλμα"
     }
   },
   tools: {
     basemap: {
-    title: "Αλλαγή βασικού χάρτη",
-    label: "Βασικός χάρτης"
+    title: "Αλλαγή υποβάθρου",
+    label: "Υπόβαθρο"
     },
     print: {
     layouts:{
@@ -55,13 +55,13 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "d MMMM, yyyy",
+      datePattern: "d MMMM yyyy",
       yearPattern: "yyyy",
-      hourTimePattern: "h a",
-      minuteTimePattern: "h:mm a",
-      secondTimePattern: "h:m:s.SSS a",
+      hourTimePattern: "h",
+      minuteTimePattern: "hh:mm",
+      secondTimePattern: "hh:mm:ss",
       millisecondTimePattern:"h:m:ss.SSS a",
-      title: "Εμφάνιση ρυθμιστικού χρόνου",
+      title: "Εμφάνιση μπάρα κύλισης χρόνου",
       label: "Χρόνος",
       timeRange: "${start_time} έως ${end_time}",
       timeRangeSingle: "<b>Εύρος χρόνου:</b> ${time}"
@@ -84,8 +84,8 @@
       details: "Κάντε κλικ σε έναν σελιδοδείκτη για να πλοηγηθείτε στην τοποθεσία"
     },
     layers: {
-      title: "Εμφάνιση λίστας επιπέδων",
-      label: "Επίπεδα"
+      title: "Εμφάνιση θεματικών επιπέδων",
+      label: "Θεματικά επίπεδα"
     },
     search: {
       title: "Βρείτε μια διεύθυνση ή ένα μέρος",

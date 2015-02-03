@@ -1,4 +1,4 @@
-/*global define */
+﻿/*global define */
 /*
  | Copyright 2014 Esri
  |
@@ -14,8 +14,17 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
-  map: {
-    error: "Impossible de créer la carte"
-  }
-}));
+define(
+   ({
+    map: {
+      noEditLayers: "æ_This web map does not contain any editable layers_Â.",
+      error: "æ_Unable to create map_Â"
+    },
+    tools: {
+    "popup": {
+            "title": "æ_Info_Â",
+            "instructions": "æ_Select a feature on the map to view details_Â."
+        } 
+    }
+  })
+);

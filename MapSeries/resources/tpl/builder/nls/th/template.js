@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "ก้_Tabbed_ษฺ",
 				tabDescr: "ก้_Present maps and other content using tabs with an optional panel for descriptive text_ษฺ.",
+				tabItem: "ก้_Tab_ษฺ",
+				tabItems: "ก้_Tabs_ษฺ",
 				sideTitle: "ก้_Side Accordion_ษฺ",
 				sideDescr: "ก้_Present maps and other content using an expandable control that includes descriptive text_ษฺ.",
+				sideItem: "ก้_Entry_ษฺ",
+				sideItems: "ก้_Entries_ษฺ",
 				bulletTitle: "ก้_Bulleted_ษฺ",
-				bulletDescr: "ก้_Present maps and other content using bullets with an optional panel for descriptive text_ษฺ."
+				bulletDescr: "ก้_Present maps and other content using bullets with an optional panel for descriptive text_ษฺ.",
+				bulletItem: "ก้_Bullet_ษฺ",
+				bulletItems: "ก้_Bullets_ษฺ"
 			},
 			common: {
 				lblStatus1: "ก้_Published_ษฺ",
@@ -21,18 +27,19 @@
 				lblDropdown: "ก้_Dropdown_ษฺ",
 				lblBelowDesc: "ก้_Below the description_ษฺ",
 				lblOnPanel: "ก้_As a panel_ษฺ",
-				lblPanelDescAndLegend: "ก้_Description and legend Panel_ษฺ",
-				lblPanelDescAndOrLegend: "ก้_Description and/or legend Panel_ษฺ",
-				lblPanelDesc: "ก้_Description Panel_ษฺ",
-				lblPanelLegend: "ก้_Legend Panel_ษฺ",
-				lblPanelAccordion: "ก้_Accordion Panel_ษฺ",
+				lblPanelDescAndLegend: "ก้_Description and legend panel_ษฺ",
+				lblPanelDescAndOrLegend: "ก้_Description and/or legend panel_ษฺ",
+				lblPanelDesc: "ก้_Description panel_ษฺ",
+				lblPanelLegend: "ก้_Legend panel_ษฺ",
+				lblPanelAccordion: "ก้_Accordion panel_ษฺ",
 				cfgLeft: "ก้_Left_ษฺ",
 				cfgRight: "ก้_Right_ษฺ",
 				cfgSmall: "ก้_Small_ษฺ",
 				cfgMedium: "ก้_Medium_ษฺ",
 				cfgLarge: "ก้_Large_ษฺ",
-				lblNumbering: "ก้_Entry numbering_ษฺ",
-				lblReverse: "ก้_Reverse entry numbering_ษฺ"
+				lblNumbering: "ก้_Display numbers_ษฺ",
+				lblReverse: "ก้_Reverse numbering_ษฺ",
+				canOverlapMap: "ก้_can overlap map location_ษฺ"
 			},
 			settingsMapOptions: {
 				title: "ก้_Map options_ษฺ",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "ก้_Add_ษฺ",
 				lblEdit: "ก้_Edit_ษฺ",
-				disabled: "ก้_Add Entry is disabled because the maximum number of allowed sections has been reached_ษฺ.",
-				titleAdd: "ก้_Add Entry_ษฺ",
-				titleEdit: "ก้_Edit Entry_ษฺ",
-				stepMainStageNextTooltip: "ก้_Enter the Entry title and content_ษฺ",
-				titlePlaceholder: "ก้_Entry title_ษฺ..."
+				disabled: "ก้_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_ษฺ.",
+				titleAdd: "ก้_Add_ษฺ",
+				titleEdit: "ก้_Edit_ษฺ",
+				stepMainStageNextTooltip: "ก้_Enter the %LBL_LAYOUT% title and content_ษฺ",
+				titlePlaceholder: "ก้_%LBL_LAYOUT% title_ษฺ..."
 			},
 			textEditor: {
 				placeholder1: "ก้_Add text, links, and small graphics here_ษฺ.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "ก้_Organize_ษฺ",
-				lblHeader: "ก้_Drag and drop entries to organize your series_ษฺ.",
+				lblHeader: "ก้_Drag and drop %LBL_LAYOUT% to organize your series_ษฺ.",
 				lblColTitle: "ก้_Title_ษฺ",
 				lblColStatus: "ก้_Status_ษฺ",
-				btnApplyWarning: "ก้_Confirm deletion of %NB% entries_ษฺ",
+				btnApplyWarning: "ก้_Confirm deletion of %NB% %LBL_LAYOUT%_ษฺ",
 				deleteTooltip: "ก้_Delete_ษฺ",
 				firstSectionExplain: "ก้_(The home section cannot be moved)_ษฺ"
 			},

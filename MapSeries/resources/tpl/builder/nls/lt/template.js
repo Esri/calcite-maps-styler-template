@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "Į_Tabbed_š",
 				tabDescr: "Į_Present maps and other content using tabs with an optional panel for descriptive text_š.",
+				tabItem: "Į_Tab_š",
+				tabItems: "Į_Tabs_š",
 				sideTitle: "Į_Side Accordion_š",
 				sideDescr: "Į_Present maps and other content using an expandable control that includes descriptive text_š.",
+				sideItem: "Į_Entry_š",
+				sideItems: "Į_Entries_š",
 				bulletTitle: "Į_Bulleted_š",
-				bulletDescr: "Į_Present maps and other content using bullets with an optional panel for descriptive text_š."
+				bulletDescr: "Į_Present maps and other content using bullets with an optional panel for descriptive text_š.",
+				bulletItem: "Į_Bullet_š",
+				bulletItems: "Į_Bullets_š"
 			},
 			common: {
 				lblStatus1: "Į_Published_š",
@@ -21,18 +27,19 @@
 				lblDropdown: "Į_Dropdown_š",
 				lblBelowDesc: "Į_Below the description_š",
 				lblOnPanel: "Į_As a panel_š",
-				lblPanelDescAndLegend: "Į_Description and legend Panel_š",
-				lblPanelDescAndOrLegend: "Į_Description and/or legend Panel_š",
-				lblPanelDesc: "Į_Description Panel_š",
-				lblPanelLegend: "Į_Legend Panel_š",
-				lblPanelAccordion: "Į_Accordion Panel_š",
+				lblPanelDescAndLegend: "Į_Description and legend panel_š",
+				lblPanelDescAndOrLegend: "Į_Description and/or legend panel_š",
+				lblPanelDesc: "Į_Description panel_š",
+				lblPanelLegend: "Į_Legend panel_š",
+				lblPanelAccordion: "Į_Accordion panel_š",
 				cfgLeft: "Į_Left_š",
 				cfgRight: "Į_Right_š",
 				cfgSmall: "Į_Small_š",
 				cfgMedium: "Į_Medium_š",
 				cfgLarge: "Į_Large_š",
-				lblNumbering: "Į_Entry numbering_š",
-				lblReverse: "Į_Reverse entry numbering_š"
+				lblNumbering: "Į_Display numbers_š",
+				lblReverse: "Į_Reverse numbering_š",
+				canOverlapMap: "Į_can overlap map location_š"
 			},
 			settingsMapOptions: {
 				title: "Į_Map options_š",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "Į_Add_š",
 				lblEdit: "Į_Edit_š",
-				disabled: "Į_Add Entry is disabled because the maximum number of allowed sections has been reached_š.",
-				titleAdd: "Į_Add Entry_š",
-				titleEdit: "Į_Edit Entry_š",
-				stepMainStageNextTooltip: "Į_Enter the Entry title and content_š",
-				titlePlaceholder: "Į_Entry title_š..."
+				disabled: "Į_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_š.",
+				titleAdd: "Į_Add_š",
+				titleEdit: "Į_Edit_š",
+				stepMainStageNextTooltip: "Į_Enter the %LBL_LAYOUT% title and content_š",
+				titlePlaceholder: "Į_%LBL_LAYOUT% title_š..."
 			},
 			textEditor: {
 				placeholder1: "Į_Add text, links, and small graphics here_š.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "Į_Organize_š",
-				lblHeader: "Į_Drag and drop entries to organize your series_š.",
+				lblHeader: "Į_Drag and drop %LBL_LAYOUT% to organize your series_š.",
 				lblColTitle: "Į_Title_š",
 				lblColStatus: "Į_Status_š",
-				btnApplyWarning: "Į_Confirm deletion of %NB% entries_š",
+				btnApplyWarning: "Į_Confirm deletion of %NB% %LBL_LAYOUT%_š",
 				deleteTooltip: "Į_Delete_š",
 				firstSectionExplain: "Į_(The home section cannot be moved)_š"
 			},

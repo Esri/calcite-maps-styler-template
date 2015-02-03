@@ -110,10 +110,19 @@
       mapRestore: "ก้_Restore_ษฺ",
       filterSelectEmptyText: "ก้_Select_ษฺ",
       invalidLayerMessage: "ก้_Form layer does not exist. Please configure the application and set the layer_ษฺ.",
-      selectedLayerText: "ก้_All_ษฺ"
+      selectedLayerText: "ก้_All_ษฺ",
+      fileUploadStatus: "ก้_File Upload Status_ษฺ",
+      uploadingBadge: "ก้_&nbsp;Uploading&hellip;_ษฺ",
+      successBadge: "ก้_&nbsp;Uploaded_ษฺ",
+      retryBadge: "ก้_Retry_ษฺ",
+      errorBadge: "ก้_Error uploading&nbsp;&nbsp;&nbsp;_ษฺ",
+      fileTooLargeError: "ก้_File too large to attach_ษฺ",
+      exceededFileCountError: "ก้_Exceeded maximum no. of attachments allowed_ษฺ",
+      selectFileTitle: "ก้_Select a file_ษฺ",
+      btnViewSubmissions: "ก้_View Submissions_ษฺ"
     },
     builder: {
-      invalidUser: "ก้_Sorry, you dont have permission to view this item_ษฺ",
+      invalidUser: "ก้_Sorry, you don't have permission to view this item_ษฺ",
       invalidWebmapSelectionAlert: "ก้_The selected webmap does not contain a valid layer to use. Please add an editable FeatureLayer into your webmap to continue_ษฺ.",
       invalidWebmapSelectionAlert2: "ก้_For More Information please refer to ${openLink}What is Feature Service?${closeLink}_ษฺ",
       selectFieldsText: "ก้_Select Form Fields_ษฺ",
@@ -151,6 +160,7 @@
       fieldTabDisplayTypeHeaderText: "ก้_Display As_ษฺ",
       fieldTabOrderColumnText: "ก้_Order_ษฺ",
       fieldTabVisibleColumnText: "ก้_Enabled_ษฺ",
+      displayFieldText: "ก้_Display Field_ษฺ",
       selectMenuOption: "ก้_Select Menu_ษฺ",
       selectRadioOption: "ก้_Radio Button_ษฺ",
       selectTextOption: "ก้_Text_ษฺ",
@@ -217,7 +227,33 @@
       locateOnLoadText: "ก้_Locate On Load_ษฺ",
       locateOnLoadDescription: "ก้_You can configure the GeoForm to use the current location on page load_ษฺ",
       selectLayerFieldTabText: "ก้_Select Layer_ษฺ",
-      allLayerSelectOptionText:"ก้_All_ษฺ"
+      allLayerSelectOptionText: "ก้_All_ษฺ",
+      disableViewer: "ก้_Disable Viewer_ษฺ",
+      disableViewerDescription: "ก้_You can configure the GeoForm to disable/enable Viewer_ษฺ",
+      displayFieldHintText: "ก้_Selected display field will be shown in viewerMode as title field_ษฺ"
+    },
+    viewer: {
+      geocoderCancelText: "ก้_Cancel_ษฺ",
+      viewReportsTabText: "ก้_Submissions_ษฺ",
+      viewLegendTabText: "ก้_Legend_ษฺ",
+      viewAboutusTabText: "ก้_About_ษฺ",
+      viewMapTabText: "ก้_Map_ษฺ",
+      sortHeaderText: "ก้_Sort By_ษฺ:",
+      btnSubmitReportText: "ก้_Submit a Report_ษฺ",
+      geocoderPlaceholderText: "ก้_Zip Code, city, etc_ษฺ.",
+      noSearchResult: "ก้_No result found_ษฺ",
+      recordsTabTooltip: "ก้_View Submissions_ษฺ",
+      legendTabTooltip: "ก้_Legend_ษฺ",
+      aboutUsTabTooltip: "ก้_AboutUs_ษฺ",
+      mapTabTooltip: "ก้_Map_ษฺ",
+      appLoadingFailedMessage: "ก้_ViewerMode is Unavailable_ษฺ",
+      btnDescendingText: "ก้_Desc_ษฺ",
+      btnAscendingText: "ก้_Asc_ษฺ",
+      geometryUnavailableErrorMessage: "ก้_Unable to find the geometry of the feature_ษฺ",
+      infoPopupOffErrorMessage: "ก้_InfoPopup is off_ษฺ",
+      btnLoadMoreText: "ก้_Load More_ษฺ",
+      unavailableTitleText: "ก้_Untitled_ษฺ",
+      unavailableConfigMessage: "ก้_Unable to load config_ษฺ"
     }
   })
 );

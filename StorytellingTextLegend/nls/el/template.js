@@ -16,12 +16,12 @@
         legendHeader: "ΥΠΟΜΝΗΜΑ"
       },
       datePatterns: {
-        datePattern: "d MMMM, yyyy",
+        datePattern: "d MMMM yyyy",
         yearPattern: "yyyy",
-        hourTimePattern: "h a",
-        minuteTimePattern: "h:mm a",
-        secondTimePattern: "h:mm:ss a",
-        millisecondTimePattern: "h:mm:ss:SSS a"
+        hourTimePattern: "h",
+        minuteTimePattern: "hh:mm",
+        secondTimePattern: "hh:mm:ss",
+        millisecondTimePattern: "hh:mm:ss:SSS"
       }
     }
   })

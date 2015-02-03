@@ -110,10 +110,19 @@
       mapRestore: "试_Restore_验",
       filterSelectEmptyText: "试_Select_验",
       invalidLayerMessage: "试_Form layer does not exist. Please configure the application and set the layer_验.",
-      selectedLayerText: "试_All_验"
+      selectedLayerText: "试_All_验",
+      fileUploadStatus: "试_File Upload Status_验",
+      uploadingBadge: "试_&nbsp;Uploading&hellip;_验",
+      successBadge: "试_&nbsp;Uploaded_验",
+      retryBadge: "试_Retry_验",
+      errorBadge: "试_Error uploading&nbsp;&nbsp;&nbsp;_验",
+      fileTooLargeError: "试_File too large to attach_验",
+      exceededFileCountError: "试_Exceeded maximum no. of attachments allowed_验",
+      selectFileTitle: "试_Select a file_验",
+      btnViewSubmissions: "试_View Submissions_验"
     },
     builder: {
-      invalidUser: "试_Sorry, you dont have permission to view this item_验",
+      invalidUser: "试_Sorry, you don't have permission to view this item_验",
       invalidWebmapSelectionAlert: "试_The selected webmap does not contain a valid layer to use. Please add an editable FeatureLayer into your webmap to continue_验.",
       invalidWebmapSelectionAlert2: "试_For More Information please refer to ${openLink}What is Feature Service?${closeLink}_验",
       selectFieldsText: "试_Select Form Fields_验",
@@ -151,6 +160,7 @@
       fieldTabDisplayTypeHeaderText: "试_Display As_验",
       fieldTabOrderColumnText: "试_Order_验",
       fieldTabVisibleColumnText: "试_Enabled_验",
+      displayFieldText: "试_Display Field_验",
       selectMenuOption: "试_Select Menu_验",
       selectRadioOption: "试_Radio Button_验",
       selectTextOption: "试_Text_验",
@@ -217,7 +227,33 @@
       locateOnLoadText: "试_Locate On Load_验",
       locateOnLoadDescription: "试_You can configure the GeoForm to use the current location on page load_验",
       selectLayerFieldTabText: "试_Select Layer_验",
-      allLayerSelectOptionText:"试_All_验"
+      allLayerSelectOptionText: "试_All_验",
+      disableViewer: "试_Disable Viewer_验",
+      disableViewerDescription: "试_You can configure the GeoForm to disable/enable Viewer_验",
+      displayFieldHintText: "试_Selected display field will be shown in viewerMode as title field_验"
+    },
+    viewer: {
+      geocoderCancelText: "试_Cancel_验",
+      viewReportsTabText: "试_Submissions_验",
+      viewLegendTabText: "试_Legend_验",
+      viewAboutusTabText: "试_About_验",
+      viewMapTabText: "试_Map_验",
+      sortHeaderText: "试_Sort By_验:",
+      btnSubmitReportText: "试_Submit a Report_验",
+      geocoderPlaceholderText: "试_Zip Code, city, etc_验.",
+      noSearchResult: "试_No result found_验",
+      recordsTabTooltip: "试_View Submissions_验",
+      legendTabTooltip: "试_Legend_验",
+      aboutUsTabTooltip: "试_AboutUs_验",
+      mapTabTooltip: "试_Map_验",
+      appLoadingFailedMessage: "试_ViewerMode is Unavailable_验",
+      btnDescendingText: "试_Desc_验",
+      btnAscendingText: "试_Asc_验",
+      geometryUnavailableErrorMessage: "试_Unable to find the geometry of the feature_验",
+      infoPopupOffErrorMessage: "试_InfoPopup is off_验",
+      btnLoadMoreText: "试_Load More_验",
+      unavailableTitleText: "试_Untitled_验",
+      unavailableConfigMessage: "试_Unable to load config_验"
     }
   })
 );

@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "Ж_Tabbed_Я",
 				tabDescr: "Ж_Present maps and other content using tabs with an optional panel for descriptive text_Я.",
+				tabItem: "Ж_Tab_Я",
+				tabItems: "Ж_Tabs_Я",
 				sideTitle: "Ж_Side Accordion_Я",
 				sideDescr: "Ж_Present maps and other content using an expandable control that includes descriptive text_Я.",
+				sideItem: "Ж_Entry_Я",
+				sideItems: "Ж_Entries_Я",
 				bulletTitle: "Ж_Bulleted_Я",
-				bulletDescr: "Ж_Present maps and other content using bullets with an optional panel for descriptive text_Я."
+				bulletDescr: "Ж_Present maps and other content using bullets with an optional panel for descriptive text_Я.",
+				bulletItem: "Ж_Bullet_Я",
+				bulletItems: "Ж_Bullets_Я"
 			},
 			common: {
 				lblStatus1: "Ж_Published_Я",
@@ -21,18 +27,19 @@
 				lblDropdown: "Ж_Dropdown_Я",
 				lblBelowDesc: "Ж_Below the description_Я",
 				lblOnPanel: "Ж_As a panel_Я",
-				lblPanelDescAndLegend: "Ж_Description and legend Panel_Я",
-				lblPanelDescAndOrLegend: "Ж_Description and/or legend Panel_Я",
-				lblPanelDesc: "Ж_Description Panel_Я",
-				lblPanelLegend: "Ж_Legend Panel_Я",
-				lblPanelAccordion: "Ж_Accordion Panel_Я",
+				lblPanelDescAndLegend: "Ж_Description and legend panel_Я",
+				lblPanelDescAndOrLegend: "Ж_Description and/or legend panel_Я",
+				lblPanelDesc: "Ж_Description panel_Я",
+				lblPanelLegend: "Ж_Legend panel_Я",
+				lblPanelAccordion: "Ж_Accordion panel_Я",
 				cfgLeft: "Ж_Left_Я",
 				cfgRight: "Ж_Right_Я",
 				cfgSmall: "Ж_Small_Я",
 				cfgMedium: "Ж_Medium_Я",
 				cfgLarge: "Ж_Large_Я",
-				lblNumbering: "Ж_Entry numbering_Я",
-				lblReverse: "Ж_Reverse entry numbering_Я"
+				lblNumbering: "Ж_Display numbers_Я",
+				lblReverse: "Ж_Reverse numbering_Я",
+				canOverlapMap: "Ж_can overlap map location_Я"
 			},
 			settingsMapOptions: {
 				title: "Ж_Map options_Я",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "Ж_Add_Я",
 				lblEdit: "Ж_Edit_Я",
-				disabled: "Ж_Add Entry is disabled because the maximum number of allowed sections has been reached_Я.",
-				titleAdd: "Ж_Add Entry_Я",
-				titleEdit: "Ж_Edit Entry_Я",
-				stepMainStageNextTooltip: "Ж_Enter the Entry title and content_Я",
-				titlePlaceholder: "Ж_Entry title_Я..."
+				disabled: "Ж_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_Я.",
+				titleAdd: "Ж_Add_Я",
+				titleEdit: "Ж_Edit_Я",
+				stepMainStageNextTooltip: "Ж_Enter the %LBL_LAYOUT% title and content_Я",
+				titlePlaceholder: "Ж_%LBL_LAYOUT% title_Я..."
 			},
 			textEditor: {
 				placeholder1: "Ж_Add text, links, and small graphics here_Я.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "Ж_Organize_Я",
-				lblHeader: "Ж_Drag and drop entries to organize your series_Я.",
+				lblHeader: "Ж_Drag and drop %LBL_LAYOUT% to organize your series_Я.",
 				lblColTitle: "Ж_Title_Я",
 				lblColStatus: "Ж_Status_Я",
-				btnApplyWarning: "Ж_Confirm deletion of %NB% entries_Я",
+				btnApplyWarning: "Ж_Confirm deletion of %NB% %LBL_LAYOUT%_Я",
 				deleteTooltip: "Ж_Delete_Я",
 				firstSectionExplain: "Ж_(The home section cannot be moved)_Я"
 			},

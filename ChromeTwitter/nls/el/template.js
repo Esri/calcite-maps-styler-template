@@ -28,7 +28,7 @@
     // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
     // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
     datePattern: "d MMM yy",
-    timePattern: "h:mma",
+    timePattern: "hh:mm",
     reply: "Απάντηση",
     retweet:"Retweet",
     favorite:"Αγαπημένο",

@@ -4,10 +4,16 @@
 			layouts: {
 				tabTitle: "כן_Tabbed_ש",
 				tabDescr: "כן_Present maps and other content using tabs with an optional panel for descriptive text_ש.",
+				tabItem: "כן_Tab_ש",
+				tabItems: "כן_Tabs_ש",
 				sideTitle: "כן_Side Accordion_ש",
 				sideDescr: "כן_Present maps and other content using an expandable control that includes descriptive text_ש.",
+				sideItem: "כן_Entry_ש",
+				sideItems: "כן_Entries_ש",
 				bulletTitle: "כן_Bulleted_ש",
-				bulletDescr: "כן_Present maps and other content using bullets with an optional panel for descriptive text_ש."
+				bulletDescr: "כן_Present maps and other content using bullets with an optional panel for descriptive text_ש.",
+				bulletItem: "כן_Bullet_ש",
+				bulletItems: "כן_Bullets_ש"
 			},
 			common: {
 				lblStatus1: "כן_Published_ש",
@@ -21,18 +27,19 @@
 				lblDropdown: "כן_Dropdown_ש",
 				lblBelowDesc: "כן_Below the description_ש",
 				lblOnPanel: "כן_As a panel_ש",
-				lblPanelDescAndLegend: "כן_Description and legend Panel_ש",
-				lblPanelDescAndOrLegend: "כן_Description and/or legend Panel_ש",
-				lblPanelDesc: "כן_Description Panel_ש",
-				lblPanelLegend: "כן_Legend Panel_ש",
-				lblPanelAccordion: "כן_Accordion Panel_ש",
+				lblPanelDescAndLegend: "כן_Description and legend panel_ש",
+				lblPanelDescAndOrLegend: "כן_Description and/or legend panel_ש",
+				lblPanelDesc: "כן_Description panel_ש",
+				lblPanelLegend: "כן_Legend panel_ש",
+				lblPanelAccordion: "כן_Accordion panel_ש",
 				cfgLeft: "כן_Left_ש",
 				cfgRight: "כן_Right_ש",
 				cfgSmall: "כן_Small_ש",
 				cfgMedium: "כן_Medium_ש",
 				cfgLarge: "כן_Large_ש",
-				lblNumbering: "כן_Entry numbering_ש",
-				lblReverse: "כן_Reverse entry numbering_ש"
+				lblNumbering: "כן_Display numbers_ש",
+				lblReverse: "כן_Reverse numbering_ש",
+				canOverlapMap: "כן_can overlap map location_ש"
 			},
 			settingsMapOptions: {
 				title: "כן_Map options_ש",
@@ -51,11 +58,11 @@
 			addEditPopup: {
 				lblAdd: "כן_Add_ש",
 				lblEdit: "כן_Edit_ש",
-				disabled: "כן_Add Entry is disabled because the maximum number of allowed sections has been reached_ש.",
-				titleAdd: "כן_Add Entry_ש",
-				titleEdit: "כן_Edit Entry_ש",
-				stepMainStageNextTooltip: "כן_Enter the Entry title and content_ש",
-				titlePlaceholder: "כן_Entry title_ש..."
+				disabled: "כן_Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached_ש.",
+				titleAdd: "כן_Add_ש",
+				titleEdit: "כן_Edit_ש",
+				stepMainStageNextTooltip: "כן_Enter the %LBL_LAYOUT% title and content_ש",
+				titlePlaceholder: "כן_%LBL_LAYOUT% title_ש..."
 			},
 			textEditor: {
 				placeholder1: "כן_Add text, links, and small graphics here_ש.",
@@ -63,10 +70,10 @@
 			},
 			organizePopup: {
 				title: "כן_Organize_ש",
-				lblHeader: "כן_Drag and drop entries to organize your series_ש.",
+				lblHeader: "כן_Drag and drop %LBL_LAYOUT% to organize your series_ש.",
 				lblColTitle: "כן_Title_ש",
 				lblColStatus: "כן_Status_ש",
-				btnApplyWarning: "כן_Confirm deletion of %NB% entries_ש",
+				btnApplyWarning: "כן_Confirm deletion of %NB% %LBL_LAYOUT%_ש",
 				deleteTooltip: "כן_Delete_ש",
 				firstSectionExplain: "כן_(The home section cannot be moved)_ש"
 			},

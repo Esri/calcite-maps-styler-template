@@ -10,7 +10,7 @@
                 "createMap": "Δεν είναι δυνατή η δημιουργία χάρτη",
                 "general": "Σφάλμα",
                 "bingError": "Για την υλοποίηση αυτής της εφαρμογής απαιτείται να έχετε δικό σας κλειδί για τους Χάρτες Bing.",
-                "noLayers": "Δεν υπάρχουν λειτουργικά επίπεδα",
+                "noLayers": "Δεν υπάρχουν επιχειρησιακά επίπεδα",
                 "noSearchResults": "Λυπούμαστε, δεν βρέθηκαν αποτελέσματα.",
                 "noGroupResults": "Δεν ήταν δυνατή η εύρεση της ομάδας.",
                 "noMatches": "Δεν βρέθηκαν αντιστοιχίσεις.",
@@ -19,11 +19,11 @@
             "sidePanel": {
                 "title": "Υπόμνημα",
                 "legendButton": "Υπόμνημα",
-                "layersButton": "Επίπεδα", // new
+                "layersButton": "Θεματικά επίπεδα", // new
                 "legendButtonTitle": "Υπόμνημα χάρτη",
                 "aboutButton": "Πληροφορίες",
                 "aboutButtonTitle": "Πληροφορίες για το χάρτη",
-                "message": "Δεν υπάρχουν λειτουργικά επίπεδα"
+                "message": "Δεν υπάρχουν επιχειρησιακά επίπεδα"
             },
             "groupPage": {
                 "showAllMaps": "Εμφάνιση όλων των χαρτών",
@@ -82,17 +82,17 @@
                 "findLocation": "Βρείτε μια τοποθεσία",
                 "findPlaceholder": "Εντοπίστε μια διεύθυνση",
                 "aboutHeader": "Πληροφορίες για αυτόν το χάρτη",
-                "layersHeader": "Επίπεδα",
+                "layersHeader": "Θεματικά επίπεδα",
                 "enterFullscreen": "Προβολή πλήρους οθόνης",
                 "exitFullscreen": "Έξοδος από την πλήρη οθόνη",
-                "arcgisLink": "Λεπτομέρειες στοιχείου",
+                "arcgisLink": "Λεπτομέρειες αντικειμένου",
                 "moreInformation": "Περισσότερες πληροφορίες",
                 "geoLocateTitle": "Χρήση τρέχουσας τοποθεσίας",
                 "openInMobile": "Άνοιγμα σε εφαρμογή για κινητά",
                 "openInArcGIS": "Map Viewer",
                 "openInExplorer": "Explorer Online",
                 "ownerHeader": "Κάτοχος:",
-                "switchBasemap": "Αλλαγή βασικού χάρτη",
+                "switchBasemap": "Αλλαγή υποβάθρου",
                 "getMobileApp": "Λήψη εφαρμογής",
                 "constraintsHeading": "Χρήση περιορισμών",
                 "createdLabel": "Δημιουργήθηκε",
@@ -103,7 +103,7 @@
                 "show": "Εμφάνιση",
                 "all": "Όλα τα αποτελέσματα",
                 "maps": "Χάρτες",
-                "layers": "Επίπεδα",
+                "layers": "Θεματικά επίπεδα",
                 "applications": "Εφαρμογές",
                 "tools": "Εργαλεία",
                 "files": "Αρχεία"

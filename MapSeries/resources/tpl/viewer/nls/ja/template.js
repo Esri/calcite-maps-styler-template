@@ -34,7 +34,9 @@
 			},
 			mobileInfo: {
 				legend: "須_Legend_鷗",
-				description: "須_Description_鷗"
+				description: "須_Description_鷗",
+				lblLegendMobileError: "須_Sorry, the legend is unavailable. Please reload the application_鷗.",
+				lblLegendMobileErrorExplain: "須_The legend is not available when the device is rotated to portrait mode after the application is loaded_鷗."
 			},
 			mobileFooter: {
 				swipeInvite: "須_Swipe to navigate the story_鷗",

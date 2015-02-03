@@ -34,7 +34,9 @@
 			},
 			mobileInfo: {
 				legend: "Ř_Legend_ů",
-				description: "Ř_Description_ů"
+				description: "Ř_Description_ů",
+				lblLegendMobileError: "Ř_Sorry, the legend is unavailable. Please reload the application_ů.",
+				lblLegendMobileErrorExplain: "Ř_The legend is not available when the device is rotated to portrait mode after the application is loaded_ů."
 			},
 			mobileFooter: {
 				swipeInvite: "Ř_Swipe to navigate the story_ů",

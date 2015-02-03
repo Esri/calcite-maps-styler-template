@@ -34,7 +34,9 @@
 			},
 			mobileInfo: {
 				legend: "试_Legend_验",
-				description: "试_Description_验"
+				description: "试_Description_验",
+				lblLegendMobileError: "试_Sorry, the legend is unavailable. Please reload the application_验.",
+				lblLegendMobileErrorExplain: "试_The legend is not available when the device is rotated to portrait mode after the application is loaded_验."
 			},
 			mobileFooter: {
 				swipeInvite: "试_Swipe to navigate the story_验",
