@@ -175,7 +175,7 @@
                "type": "paragraph",
                "value": "Enable/disable the search tool and optionally select layers (and fields) to add to the search tool."
             },
-                        {  
+            {  
                "label":"Select search layers and fields",
                "fieldName":"searchLayers",
                "type":"multilayerandfieldselector",

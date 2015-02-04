@@ -1,17 +1,30 @@
 {
    "configurationSettings":[
       {
-         "category":"<b>General</b>",
+         "category":"<b>Map Settings</b>",
          "fields":[
             {
                "type":"webmap",
                "label":"Select a map"
+            },
+            {
+               "type":"boolean",
+               "fieldName":"home_button",
+               "label":"Full extent button"
+            },
+            {
+               "type":"boolean",
+               "fieldName":"locate_button",
+               "label":"Location button"
             }
          ]
-      },
-      {
-         "category":"<b>Choose template theme</b>",
+      },{
+         "category":"Color Scheme",
          "fields":[
+            {
+               "type":"paragraph",
+               "value": "Choose from one of the predefined color themes or use the color pickers to define a custom color scheme."
+            },
             {
                "type":"string",
                "fieldName":"theme",
@@ -35,15 +48,30 @@
                      "value":"pavement"
                   }
                ]
+            },{
+               "type": "color",
+               "fieldName": "panelcolor",
+               "tooltip": "Specify a color for the side panel background",
+               "label":"Side panel color"
+            },{
+               "type": "color",
+               "fieldName": "backgroundcolor",
+               "tooltip": "Specify a color for the application background.",
+               "label": "Background color"
+            },{
+               "type": "color",
+               "fieldName": "textcolor",
+               "tooltip": "Specify a color for the title and side panel text",
+               "label": "Text color"
             }
          ]
       },
       {
-         "category":"<b>Header</b>",
+         "category":"Header",
          "fields":[
             {
                "type":"paragraph",
-               "value":"Set to true to add a header section to the application. The header will display the specified title and subtitle. If title and subtitle and not specified the default webmap title and subtitle values will be used."
+               "value":"Add a header section to the application. The header will display the specified title and subtitle. If title and subtitle and not specified the default webmap title and subtitle values will be used."
             },
             {
                "type":"boolean",
@@ -66,11 +94,11 @@
          ]
       },
       {
-         "category":"<b>Footer</b>",
+         "category":"Footer",
          "fields":[
             {
                "type":"paragraph",
-               "value":"Set to true to add a footer to the application. The footer will display the text specified in the footer content field."
+               "value":"Add a footer section to the application. The footer will display the text specified in the footer content field."
             },
             {
                "type":"boolean",
@@ -88,11 +116,11 @@
          ]
       },
       {
-         "category":"<b>Description</b>",
+         "category":"Description Panel",
          "fields":[
             {
                "type":"paragraph",
-               "value":"Set to true to add a panel to the right or left side of the map. This panel will display the content specified in the description content field. If no text is specified then the web map description will display."
+               "value":"Add a side panel that contains descriptive information to the application. This panel will display the content specified in the description content field. If no text is specified then the web map description will display."
             },
             {
                "type":"boolean",
@@ -125,11 +153,11 @@
          ]
       },
       {
-         "category":"<b>Legend</b>",
+         "category":"Legend Panel",
          "fields":[
             {
                "type":"paragraph",
-               "value":"Set to true to add a panel to the right or left side of the map. This panel will display a legend for the map."
+               "value":"Add a side panel that displays a legend to the map."
             },
             {
                "type":"boolean",
@@ -155,26 +183,41 @@
          ]
       },
       {
-         "category":"<b>Optional Widgets</b>",
+         "category":"<b>Search Settings</b>",
          "fields":[
             {
                "type":"paragraph",
-               "value":"Add one or more of the following widgets to the application."
-            },
-            {
-               "type":"boolean",
-               "fieldName":"home_button",
-               "label":"Full extent button"
-            },
-            {
-               "type":"boolean",
-               "fieldName":"locate_button",
-               "label":"Location button"
+               "value":"Enable the search widget and optionally specify on or more layers and fields to be searchable."
             },
             {
                "type":"boolean",
                "fieldName":"geocoder",
                "label":"Place search"
+            },{  
+               "type":"boolean",
+               "fieldName":"searchExtent",
+               "label":"Prioritize search results in current extent."
+            },{  
+               "label":"Select search layers and fields",
+               "fieldName":"searchLayers",
+               "type":"multilayerandfieldselector",
+               "tooltip":"Select layer and fields to search",
+               "layerOptions":{  
+                  "supportedTypes":[  
+                     "FeatureLayer"
+                  ],
+                  "geometryTypes":[  
+                     "esriGeometryPoint",
+                     "esriGeometryLine",
+                     "esriGeometryPolyline",
+                     "esriGeometryPolygon"
+                  ]
+               },
+               "fieldOptions":{  
+                  "supportedTypes":[  
+                     "esriFieldTypeString"
+                  ]
+               }
             }
          ]
       }
@@ -189,6 +232,7 @@
       "legend_side":"right",
       "home_button":true,
       "locate_button":true,
-      "geocoder":true
+      "geocoder":true,
+      "searchExtent": true
    }
 }

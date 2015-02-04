@@ -14,7 +14,7 @@ define([], function() {
         //Specify the default color theme of the application. 
         "theme": "chrome", //valid values are seaside, chrome, pavement, gray
         "bingmapskey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
-        "sharinghost": "", //Defaults to arcgis.com. Set this value to your portal or organization host name. 
+        "sharinghost": location.protocol + "//" + "www.arcgis.com",
         //If you've registered your application with arcgis online and have an oauth client id enter that value 
         //here. 
         "oauthappid": null, 

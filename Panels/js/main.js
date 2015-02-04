@@ -43,25 +43,41 @@ function(
     return declare("", null, {
         config: {},
         allResults: null,
-        constructor: function(config) {
+        startup: function(config) {
             //config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
             // any url parameters and any application specific configuration information.
-            this.config = config;
-            ready(lang.hitch(this, function() {
+            if(config){
+                this.config = config;
+                ready(lang.hitch(this, function() {
+                    //supply either the webmap id or, if available, the item info
+                    var itemInfo = this.config.itemInfo || this.config.webmap;
 
-                //load a color theme
-                var ss = document.createElement("link");
-                ss.type = "text/css";
-                ss.rel = "stylesheet";
-                ss.href = "css/" + this.config.theme + ".css";
-                document.getElementsByTagName("head")[0].appendChild(ss);
+                    this._createWebMap(itemInfo);
+                }));
+            }else{
+                var error = new Error("Main:: Config is not defined");
+                this.reportError(error);
+            }
 
-                //supply either the webmap id or, if available, the item info
-                var itemInfo = this.config.itemInfo || this.config.webmap;
-
-                this._createWebMap(itemInfo);
-            }));
+        },
+        reportError: function (error) {
+            // remove loading class from body
+            domClass.remove(document.body, "app-loading");
+            domClass.add(document.body, "app-error");
+            // an error occurred - notify the user. In this example we pull the string from the
+            // resource.js file located in the nls folder because we've set the application up
+            // for localization. If you don't need to support multiple languages you can hardcode the
+            // strings here and comment out the call in index.html to get the localization strings.
+            // set message
+            var node = dom.byId("loading_message");
+            if (node) {
+                if (this.config && this.config.i18n) {
+                    node.innerHTML = this.config.i18n.map.error + ": " + error.message;
+                } else {
+                    node.innerHTML = "Unable to create map: " + error.message;
+                }
+            }
         },
         _mapLoaded: function() {
           //apply the theme to the popups
@@ -103,225 +119,142 @@ function(
             this._createGeocoder();
         }
 
-
-
         },
         _createGeocoder: function (){
-            require(["esri/dijit/Geocoder"], lang.hitch(this,function(Geocoder){
-                //add the geocoder widget as a child of the map div. This widget
-                //is positioned using css. Search main.css for the geocoderDiv selector
-
-                var options = this._createGeocoderOptions();
-
-                var geocoderDiv = domConstruct.create("div",{id:"geocoderDiv"},"mapDiv");
-                var geocoder = new Geocoder(options,geocoderDiv);
-
-
-                geocoder.startup();
-
-                geocoder.on("find-results", lang.hitch(this, this.checkResults));
-                geocoder.on("select", lang.hitch(this, this.showGeocodingResult));
-                geocoder.on("auto-complete", lang.hitch(this, this.clearGeocodeResults));
-                geocoder.on("clear", lang.hitch(this, this.clearGeocodeResults));
-
-
-
-            }));
-        },
-        checkResults: function(geocodeResults){
-            this.allResults = null;
-            if (geocodeResults && geocodeResults.results && geocodeResults.results.results) {
-                geocodeResults.results = geocodeResults.results.results;
-            }
-            if ((!geocodeResults || !geocodeResults.results || !geocodeResults.results.length)) {
-                //No results
-                console.log("No results found");
-            } else if (geocodeResults) {
-                this.allResults = geocodeResults.results;
-            }
-        },
-        clearGeocodeResults: function(){
-            if(this.map.infoWindow.isShowing){
-                this.map.infoWindow.hide();
-            }
-            this.allResults = null;
-
-        },
-        showGeocodingResult: function(geocodeResult, pos) {
-            if (!esriLang.isDefined(pos)) {
-                pos = 0;
-            }
-
-            if (geocodeResult.result) {
-                geocodeResult = geocodeResult.result;
-            }
-
-            if (geocodeResult.extent) {
-                this.setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, geocodeResult.extent, geocodeResult, pos);
-            } else { //best view
-                var bestView = this.map.extent.centerAt(geocodeResult.feature.geometry).expand(0.0625);
-                this.setupInfoWindowAndZoom(geocodeResult.name, geocodeResult.feature.geometry, bestView, geocodeResult, pos);
-            }
-        },
-        setupInfoWindowAndZoom: function(content, geocodeLocation, newExtent, geocodeResult, pos) {
-            this.map.infoWindow.clearFeatures();
-
-            //Show info window
-            if (this.allResults && this.allResults.length > 1) {
-                    //let's update the content to show additional results
-                var currentLocationName = content;
-                var attr = this.allResults[pos].feature.attributes;
-                content = "<div id='geocodeCurrentResult' style='display:none;'><span style='font-weight:bold;'>";
-                content += "Current Location";//this.config.i18n.viewer.main.search.currentLocation;
-                content += "</span></div>";
-                content += "<span>";
-
-                if (!attr.Match_addr) {
-                    content += currentLocationName;
-                } else {
-                    content += attr.Match_addr;
-                    if (attr.stAddr && attr.City) {
-                        content += " - " + attr.stAddr + ", " + attr.City;
-                    } else if (attr.stAddr) {
-                        content += " - " + attr.stAddr;
-                    }
+            //Add the location search widget
+            require(["esri/dijit/Search", "esri/tasks/locator"], lang.hitch(this, function (Search, Locator) {
+                if (!Search && !Locator) {
+                    return;
                 }
 
-                content += "</span>";
-                content += "<div id='geocodeWantOtherResults'>";
-                content += "<a id='results' style='cursor:pointer'>";
+                var options = {
+                    map: this.map,
+                    enableButtonMode: true,
+                    expanded: false,
+                    addLayersFromMap: false
+                };
+                var searchLayers = false;
+                var search = new Search(options, domConstruct.create("div", {
+                    id: "geocoderDiv"
+                }, "mapDiv"));
+                var defaultSources = [];
 
-                content += "Not what you wanted?";//this.config.i18n.viewer.main.search.notWhatYouWanted;
-                content += "</a>";
-                content += "</div>";
-                content += "<div id='geocodeOtherResults' style='display:none;'><span style='font-weight:bold;'>";
-                content += "Select another location";//this.config.i18n.viewer.main.search.selectAnother;
-                content += "</span><br/>";
-                for (var i = 0; i < this.allResults.length; i++) {
-                    if (i !== pos) {
-                        var result = this.allResults[i];
-                        attr = result.feature.attributes;
-                        content += "<a style='cursor:pointer' class='li_item' id=" + i + ">";
+                //setup geocoders defined in common config 
+                if (this.config.helperServices.geocode) {
+                    var geocoders = lang.clone(this.config.helperServices.geocode);
+                    array.forEach(geocoders, lang.hitch(this, function (geocoder) {
+                        if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
 
-                        if (!attr.Match_addr) {
-                            content += result.name;
-                        } else {
-                            //content += result.feature.attributes.Place_addr ? (" - " + result.feature.attributes.Place_addr) : ""
-                            content += attr.Match_addr;
-                            if (attr.stAddr && attr.City) {
-                                content += " - " + attr.stAddr + ", " + attr.City;
-                            } else if (attr.stAddr) {
-                                content += " - " + attr.stAddr;
+                            geocoder.hasEsri = true;
+                            geocoder.locator = new Locator(geocoder.url);
+
+                            geocoder.singleLineFieldName = "SingleLine";
+
+                            geocoder.name = geocoder.name || "Esri World Geocoder";
+
+                            if (this.config.searchExtent) {
+                                geocoder.searchExtent = this.map.extent;
                             }
+                            defaultSources.push(geocoder);
+                        } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
+
+                            //Add geocoders with a singleLineFieldName defined 
+                            geocoder.locator = new Locator(geocoder.url);
+
+                            defaultSources.push(geocoder);
+                        }
+                    }));
+                }
+                //add configured search layers to the search widget 
+                var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
+
+                array.forEach(configuredSearchLayers, lang.hitch(this, function (layer) {
+                  
+                    var mapLayer = this.map.getLayer(layer.id);
+                    if (mapLayer) {
+                        var source = {};
+                        source.featureLayer = mapLayer;
+
+                        if (layer.fields && layer.fields.length && layer.fields.length > 0) {
+                            source.searchFields = layer.fields;
+                            searchLayers = true;
+                            defaultSources.push(source);
+                        }
+                    }
+                }));
+                //Add search layers defined on the web map item 
+                if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
+                    var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
+                
+                    array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
+                        //we do this so we can get the title specified in the item
+                        var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
+                        var layer = null;
+                        array.some(operationalLayers, function (opLayer) {
+                            if (opLayer.id === searchLayer.id) {
+                                layer = opLayer;
+                                return true;
+                            }
+                        });
+
+                        if (layer && layer.url) {
+                            var source = {};
+                            var url = layer.url;
+
+                            if (esriLang.isDefined(searchLayer.subLayer)) {
+                                url = url + "/" + searchLayer.subLayer;
+                                array.some(layer.layerObject.layerInfos, function (info) {
+                                    if (info.id == searchLayer.subLayer) {
+                                        name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
+                                        return true;
+                                    }
+
+                                });
+                            }
+
+                            source.featureLayer = new FeatureLayer(url);
+
+
+                            source.name = layer.title || layer.name;
+
+                            source.exactMatch = searchLayer.field.exactMatch;
+                            source.searchField = [searchLayer.field.name];
+                            source.placeholder = searchOptions.hintText;
+                            defaultSources.push(source);
+                            searchLayers = true;
                         }
 
-                        content += "</a><br/>";
+                    }));
+                }
+
+
+
+
+                search.set("sources", defaultSources);
+                //set the first non esri layer as active if search layers are defined. 
+                var activeIndex = 0;
+                if (searchLayers) {
+                    array.some(defaultSources, function (s, index) {
+                        if (!s.hasEsri) {
+                            activeIndex = index;
+                            return true;
+                        }
+                    });
+
+
+                    if (activeIndex > 0) {
+                        search.set("activeSourceIndex", activeIndex);
                     }
                 }
-                content += "</div>";
 
-            }
 
-            //display a popup for the result
-            //this.config.i18n.viewer.main.search.popupTitle
-            this.map.infoWindow.setTitle("Location");
+                search.startup();
 
-            this.map.infoWindow.setContent(content);
-            query(".li_item").forEach(lang.hitch(this, function(node){
-                on(node, "click", lang.hitch(this, function(){
-                    if(node.id >= 0){
-                        this.selectAnotherResult(node.id);
-                    }
-                }));
 
             }));
-            var resDiv = dom.byId("results");
-            if(resDiv){
-                on(resDiv,"click",lang.hitch(this, function(){
-                    this.showOtherResults();
-                }));
-            }
-
-
-
-
-
-
-            var location = new Point(geocodeLocation.x, geocodeLocation.y, geocodeLocation.spatialReference);
-            on.once(this.map, "extent-change", lang.hitch(this, function(){
-                this.map.infoWindow.show(location);
-            }));
-            this.map.setExtent(newExtent);
-
 
         },
-        showOtherResults: function() {
 
-            domStyle.set(dom.byId("geocodeWantOtherResults"), "display", "none");
-            domStyle.set(dom.byId("geocodeCurrentResult"), "display", "block");
-            domStyle.set(dom.byId("geocodeOtherResults"), "display", "block");
-
-        },
-        selectAnotherResult: function(pos) {
-            this.showGeocodingResult(this.allResults[pos], pos);
-        },
-        _createGeocoderOptions: function(){
-            //Check for multiple geocoder support and setup options for geocoder widget.
-            var hasEsri = false,
-                geocoders = lang.clone(this.config.helperServices.geocode);
-
-            array.forEach(geocoders, function (geocoder, index) {
-                if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
-                    hasEsri = true;
-                    geocoder.name = "Esri World Geocoder";
-                    geocoder.outFields = "Match_addr, stAddr, City";
-                    geocoder.singleLineFieldName = "SingleLine";
-                    geocoder.esri = geocoder.placefinding = true;
-
-                }
-
-            });
-            //only use geocoders with a singleLineFieldName that allow placefinding
-            geocoders = array.filter(geocoders, function (geocoder) {
-                return (esriLang.isDefined(geocoder.singleLineFieldName) && esriLang.isDefined(geocoder.placefinding) && geocoder.placefinding);
-            });
-            var esriIdx;
-            if (hasEsri) {
-                for (var i = 0; i < geocoders.length; i++) {
-                    if (esriLang.isDefined(geocoders[i].esri) && geocoders[i].esri === true) {
-                        esriIdx = i;
-                        break;
-                    }
-                }
-            }
-            var options = {
-                map: this.map,
-                autoNavigate: false,
-                theme: "simpleGeocoder",
-                autoComplete:hasEsri
-
-            }
-
-
-            if (hasEsri && esriIdx === 0) {
-
-                options.minCharacters = 0;
-                options.maxLocations = 5;
-                options.searchDelay = 100
-                options.arcgisGeocoder = geocoders.splice(0, 1)[0]; //geocoders[0];
-                if (geocoders.length > 0) {
-                    options.geocoders = geocoders;
-                }
-            } else {
-                //options.autoComplete = false;
-                options.arcgisGeocoder = false;
-                options.geocoders = geocoders;
-            }
-
-            return options;
-
-
-        },
         //create a map based on the input web map id
         _createWebMap: function(itemInfo) {
             arcgisUtils.createMap(itemInfo , "mapDiv", {
@@ -338,8 +271,7 @@ function(
                 //Here' we'll use it to update the application to match the specified color theme.
 
                this.map = response.map;
-
-
+               this.config.response = response;
 
                //set the application title
                document.title = this.config.title || response.itemInfo.item.title;
@@ -351,7 +283,7 @@ function(
                     var title = (this.config.title) ?  this.config.title : response.itemInfo.item.title;
                     var subtitle = (this.config.subtitle) ? this.config.subtitle : response.itemInfo.item.snippet;
 
-                    var content = esriLang.substitute({"title": title, "subtitle": subtitle}, "<div id='title'>${title}</div><div id='subtitle'>${subtitle}</div>")
+                    var content = esriLang.substitute({"title": title, "subtitle": subtitle}, "<div class='fc' id='title'>${title}</div><div class='fc' id='subtitle'>${subtitle}</div>")
                     this._addContentPane("header","top", content, null);
                 }
                 //Footer
@@ -391,22 +323,40 @@ function(
                         map: this.map,
                         layerInfos: (arcgisUtils.getLegendLayers(response))
                       },"legendDiv");
+                      //apply color scheme to legend if applicable
+                      if(this.config.panelcolor){
+                         query(".legendPane").style("background",this.config.panelcolor.toString());
+                      }
+                      if(this.config.textcolor){
+                         query(".legendPane").style("color", this.config.textcolor.toString());
+                      }
                       legend.startup();
+
 
 
                    }));
                 }
 
-                if (this.map.loaded) {
-                    // do something with the map
-                    this._mapLoaded();
-                } else {
-                    on(this.map, "load", lang.hitch(this, function() {
-                        // do something with the map
-                        this._mapLoaded();
-                    }));
-                }
 
+                this._mapLoaded();
+                //load a color theme (maintain to support old theme behavior)
+                var ss = document.createElement("link");
+                ss.type = "text/css";
+                ss.rel = "stylesheet";
+                ss.href = "css/" + this.config.theme + ".css";
+                document.getElementsByTagName("head")[0].appendChild(ss);
+                //update color scheme if configured values exist 
+                if(this.config.backgroundcolor){
+                    query(".bg").style("background",this.config.backgroundcolor.toString());
+                }
+                if(this.config.panelcolor){
+                    query(".descriptionPane").style("background",this.config.panelcolor.toString());
+                }
+                if(this.config.textcolor){
+                    query(".footer").style("color", this.config.textcolor.toString());
+                    query("#descriptionPane").style("color", this.config.textcolor.toString());
+                    query(".fc").style("color",this.config.textcolor.toString());
+                }
                 //refresh the layout to catch changes
                 var bc = registry.byId("mainWindow");
                 bc.resize();
