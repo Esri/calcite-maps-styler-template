@@ -51,10 +51,6 @@ define(["dojo/has"], function (has) { /*App capabilities*/
         var zoom = g.config.zoom;
         return zoom;
     });
-    has.add("overview", function (g) {
-        var overview = g.config.overview;
-        return overview;
-    });
     has.add("print", function (g) {
         var print = g.config.print;
         return print;

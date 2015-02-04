@@ -49,21 +49,22 @@ define({
     "editable": false,
     "editortoolbar": false,    
     "search": true,
-    "searchExtent": false,
+    "searchExtent": true,
     "searchLayers":[{
         "id": null,//"Boston_Marathon_7694",
         "fields": [] //"STATE_NAME"
     }],
     "table": true,
-    "tableLayer":{
-        "id": null, //SeattleBikes_5154
-        "fields": [] //{"id":"tableFields","fields":["SEGKEY","COMPKEY","COMPTYPE","DISTANCE","WIDTH","UNITID","UNITDESC","BIKE_FACIL","DELINEATOR","FINISH_TYP","SURFACE_TY","INSTALL_DA","MOUNT_TYPE"]}
+    "tableLayer": {
+        "id": "SeattleBikes_5154",
+        "fields":[
+            {"id":"hiddenFields",
+            "fields":["SEGKEY","COMPKEY","COMPTYPE","DISTANCE","WIDTH","UNITID","UNITDESC","BIKE_FACIL","DELINEATOR","FINISH_TYP","SURFACE_TY","INSTALL_DA","MOUNT_TYPE"]}
+        ]
     },
     "layerlist": true,
-    "bookmarks": true,
-    "slider": true,
+    "bookmarks": false,
     "basemaps": true,
-    "overview": false,
     "print": true,
     "printlegend": true,
     "printlayouts": true,
@@ -72,8 +73,8 @@ define({
     "zoom_position": "top-left",
     "home" : true,
     "locate": false,
-    "scale": true,
-    "share": true,
+    "scale": false,
+    "share": false,
     "basemapgroup": {
         "title": null,
         "owner": null

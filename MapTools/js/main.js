@@ -100,70 +100,121 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     expanded: false
                 };
 
-                //TODO put in button mode
-                var search = new Search(options, domConstruct.create("div", {}, "mapDiv"));
-                var defaultSources = []; //search.get("sources");
+                 var searchLayers = false;
+                var search = new Search(options, domConstruct.create("div", {
+                    id: "search"
+                }, "mapDiv"));
+                var defaultSources = [];
+
                 //setup geocoders defined in common config 
                 if (this.config.helperServices.geocode) {
                     var geocoders = lang.clone(this.config.helperServices.geocode);
                     array.forEach(geocoders, lang.hitch(this, function (geocoder) {
                         if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+
+                            geocoder.hasEsri = true;
                             geocoder.locator = new Locator(geocoder.url);
+
                             geocoder.singleLineFieldName = "SingleLine";
+
+                            geocoder.name = geocoder.name || "Esri World Geocoder";
+
                             if (this.config.searchExtent) {
                                 geocoder.searchExtent = this.map.extent;
                             }
                             defaultSources.push(geocoder);
                         } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
+
                             //Add geocoders with a singleLineFieldName defined 
                             geocoder.locator = new Locator(geocoder.url);
+
                             defaultSources.push(geocoder);
                         }
                     }));
-                }               
+                }
                 //add configured search layers to the search widget 
-                array.forEach(this.config.searchLayers, lang.hitch(this, function (layer) {
+                var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
+
+                array.forEach(configuredSearchLayers, lang.hitch(this, function (layer) {
+                  
                     var mapLayer = this.map.getLayer(layer.id);
                     if (mapLayer) {
                         var source = {};
                         source.featureLayer = mapLayer;
+
                         if (layer.fields && layer.fields.length && layer.fields.length > 0) {
                             source.searchFields = layer.fields;
+                            searchLayers = true;
                             defaultSources.push(source);
                         }
                     }
                 }));
-                //Add search layers defined on the web map item
+                //Add search layers defined on the web map item 
                 if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
                     var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
+                
                     array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
+                        //we do this so we can get the title specified in the item
+                        var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
+                        var layer = null;
+                        array.some(operationalLayers, function (opLayer) {
+                            if (opLayer.id === searchLayer.id) {
+                                layer = opLayer;
+                                return true;
+                            }
+                        });
 
-                        var mapLayer = this.map.getLayer(searchLayer.id);
-
-                        if (mapLayer && mapLayer.url) {
+                        if (layer && layer.url) {
                             var source = {};
-                            var url = mapLayer.url;
-                            var name = mapLayer._titleForLegend;
+                            var url = layer.url;
+
                             if (esriLang.isDefined(searchLayer.subLayer)) {
                                 url = url + "/" + searchLayer.subLayer;
+                                array.some(layer.layerObject.layerInfos, function (info) {
+                                    if (info.id == searchLayer.subLayer) {
+                                        name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
+                                        return true;
+                                    }
+
+                                });
                             }
 
                             source.featureLayer = new FeatureLayer(url);
-                            source.name = name;
+
+
+                            source.name = layer.title || layer.name;
+
                             source.exactMatch = searchLayer.field.exactMatch;
                             source.searchField = [searchLayer.field.name];
                             source.placeholder = searchOptions.hintText;
                             defaultSources.push(source);
+                            searchLayers = true;
                         }
 
                     }));
                 }
 
+
+
+
                 search.set("sources", defaultSources);
+                //set the first non esri layer as active if search layers are defined. 
+                var activeIndex = 0;
+                if (searchLayers) {
+                    array.some(defaultSources, function (s, index) {
+                        if (!s.hasEsri) {
+                            activeIndex = index;
+                            return true;
+                        }
+                    });
 
 
-                //TODO configure search extent and setup sources to handle search layers, 
-                //custom geocoders etc. 
+                    if (activeIndex > 0) {
+                        search.set("activeSourceIndex", activeIndex);
+                    }
+                }
+
+
                 search.startup();
 
             }));
@@ -183,7 +234,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 locate.startup();
 
             }));
-            this._createOverviewMap();
+           
         },
         _addToolbarWidgets: function () {
 
@@ -212,7 +263,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                         //get hidden fields
                         var hiddenFields = null;
                         if (this.config.tableLayer.fields) {
-                            if (this.config.tableLayer.fields.length && this.config.tableLayer.fields.length > 0) {
+                           if (this.config.tableLayer.fields.length && this.config.tableLayer.fields.length > 0) {
                                 hiddenFields = this.config.tableLayer.fields[0].fields;
                             }
                         }
@@ -500,11 +551,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 this._createContainer("gallery_container", "galleryDiv");
 
                 var gallery = new BasemapGallery(galleryOptions, dom.byId("galleryDiv"));
-                if (this.config.overview) {
-                    on(gallery, "selection-change", lang.hitch(this, function () {
-                        this._createOverviewMap();
-                    }));
-                }
+       
 
                 gallery.startup();
                 basemapDef.resolve(btn);
@@ -615,29 +662,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 };
             }
             return basemapGroup;
-        },
-        _createOverviewMap: function () {
-            require(["application/sniff!overview?esri/dijit/OverviewMap"], lang.hitch(this, function (OverviewMap) {
-                if (!OverviewMap) {
-                    return;
-                }
-                //destroy overview map if it already exists
-                var isVisible = false;
-                if (this.ovmap) {
-                    isVisible = this.ovmap.visible;
-                    this.ovmap.destroy();
-                }
-                this.ovmap = new OverviewMap({
-                    map: this.map,
-                    opacity: 0.5,
-                    expandFactor: 2,
-                    visible: isVisible,
-                    maximizeButton: false,
-                    color: "#000",
-                    id: "overviewMap"
-                });
-                this.ovmap.startup();
-            }));
         },
         reportError: function (error) {
             // remove loading class from body
