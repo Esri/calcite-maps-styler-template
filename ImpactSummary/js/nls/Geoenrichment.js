@@ -32,7 +32,9 @@
                     "shareFailed": "Failed to share enriched layer. Please try again.",
                     "refreshServiceFailed": "Failed to refresh layer. Please try again.",
                     "layerJsonFailed": "Failed to create JSON for layer. Please try again.",
-                    "addToWebmapFailed": "Failed to add layer to webmap. Please try again."
+                    "addToWebmapFailed": "Failed to add layer to webmap. Please try again.",
+                    "bufferAreaHelpText": "Please enter the value less than ",
+                    "invalidBufferInput": "The value entered is not valid."
                 },
                 "populationText": "Population",
                 "housingText": "Household",
