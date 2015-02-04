@@ -12,15 +12,16 @@ REM xcopy apparently cannot create directories automatically
 mkdir %BUILD_OUTPUT%\Compare
 mkdir %BUILD_OUTPUT%\CompareAnalysis
 mkdir %BUILD_OUTPUT%\Compare\Configure
-mkdir %BUILD_OUTPUT%\Compare\Multiviewer  
+mkdir %BUILD_OUTPUT%\Compare\Multiviewer
 mkdir %BUILD_OUTPUT%\Compare\Search
 mkdir %BUILD_OUTPUT%\Compare\SideBySideViewer_Configure
 mkdir %BUILD_OUTPUT%\Compare\storytelling_compare
-mkdir %BUILD_OUTPUT%\Compare\storytelling_sidepanel  
-mkdir %BUILD_OUTPUT%\Compare\storytelling_tabbed  
+mkdir %BUILD_OUTPUT%\Compare\storytelling_sidepanel
+mkdir %BUILD_OUTPUT%\Compare\storytelling_tabbed
 mkdir %BUILD_OUTPUT%\CompareMaps
 mkdir %BUILD_OUTPUT%\ConstituentEngagement
 mkdir %BUILD_OUTPUT%\ConstituentEngagementConsole
+mkdir %BUILD_OUTPUT%\CrowdSourcePolling
 mkdir %BUILD_OUTPUT%\Edit
 mkdir %BUILD_OUTPUT%\Editor
 mkdir %BUILD_OUTPUT%\Editor\Chrome
@@ -30,20 +31,20 @@ mkdir %BUILD_OUTPUT%\Embed
 mkdir %BUILD_OUTPUT%\Filter
 mkdir %BUILD_OUTPUT%\GeoForm
 mkdir %BUILD_OUTPUT%\HeaderFooter
-mkdir %BUILD_OUTPUT%\HeaderFooter\Chrome                
-mkdir %BUILD_OUTPUT%\HeaderFooter\pavement              
-mkdir %BUILD_OUTPUT%\HeaderFooter\seaside                   
-mkdir %BUILD_OUTPUT%\HeaderFooter\main                  
+mkdir %BUILD_OUTPUT%\HeaderFooter\Chrome
+mkdir %BUILD_OUTPUT%\HeaderFooter\pavement
+mkdir %BUILD_OUTPUT%\HeaderFooter\seaside
+mkdir %BUILD_OUTPUT%\HeaderFooter\main
 mkdir %BUILD_OUTPUT%\Identify
-mkdir %BUILD_OUTPUT%\Identify\Chrome                        
-mkdir %BUILD_OUTPUT%\Identify\Pavement                  
-mkdir %BUILD_OUTPUT%\Identify\Seaside                       
-mkdir %BUILD_OUTPUT%\InteractiveFilter   
+mkdir %BUILD_OUTPUT%\Identify\Chrome
+mkdir %BUILD_OUTPUT%\Identify\Pavement
+mkdir %BUILD_OUTPUT%\Identify\Seaside
+mkdir %BUILD_OUTPUT%\InteractiveFilter
 mkdir %BUILD_OUTPUT%\Legend
-mkdir %BUILD_OUTPUT%\Legend\Chrome                      
-mkdir %BUILD_OUTPUT%\Legend\pavement                        
-mkdir %BUILD_OUTPUT%\Legend\seaside                     
-mkdir %BUILD_OUTPUT%\Legend\main          
+mkdir %BUILD_OUTPUT%\Legend\Chrome
+mkdir %BUILD_OUTPUT%\Legend\pavement
+mkdir %BUILD_OUTPUT%\Legend\seaside
+mkdir %BUILD_OUTPUT%\Legend\main
 mkdir %BUILD_OUTPUT%\LocalPerspective
 mkdir %BUILD_OUTPUT%\Directions
 mkdir %BUILD_OUTPUT%\MapCarousel
@@ -54,18 +55,18 @@ mkdir %BUILD_OUTPUT%\OnePane
 mkdir %BUILD_OUTPUT%\OnePane\azuretime
 mkdir %BUILD_OUTPUT%\OnePane\azuretwitter
 mkdir %BUILD_OUTPUT%\OnePane\basicviewer
-mkdir %BUILD_OUTPUT%\OnePane\main                       
-mkdir %BUILD_OUTPUT%\OnePane\contemporary_blue          
-mkdir %BUILD_OUTPUT%\OnePane\contemporary_green         
-mkdir %BUILD_OUTPUT%\OnePane\Chrome                     
-mkdir %BUILD_OUTPUT%\OnePane\pavement                       
-mkdir %BUILD_OUTPUT%\OnePane\seaside                        
-mkdir %BUILD_OUTPUT%\OnePane\splash   
-mkdir %BUILD_OUTPUT%\OnePane\storytelling_basic                     
-mkdir %BUILD_OUTPUT%\OnePane\swipe                      
-mkdir %BUILD_OUTPUT%\OnePane\twittertimeline                
-mkdir %BUILD_OUTPUT%\OnePane\gpx  
-mkdir %BUILD_OUTPUT%\Panels  
+mkdir %BUILD_OUTPUT%\OnePane\main
+mkdir %BUILD_OUTPUT%\OnePane\contemporary_blue
+mkdir %BUILD_OUTPUT%\OnePane\contemporary_green
+mkdir %BUILD_OUTPUT%\OnePane\Chrome
+mkdir %BUILD_OUTPUT%\OnePane\pavement
+mkdir %BUILD_OUTPUT%\OnePane\seaside
+mkdir %BUILD_OUTPUT%\OnePane\splash
+mkdir %BUILD_OUTPUT%\OnePane\storytelling_basic
+mkdir %BUILD_OUTPUT%\OnePane\swipe
+mkdir %BUILD_OUTPUT%\OnePane\twittertimeline
+mkdir %BUILD_OUTPUT%\OnePane\gpx
+mkdir %BUILD_OUTPUT%\Panels
 mkdir %BUILD_OUTPUT%\PanelsLegend
 mkdir %BUILD_OUTPUT%\PublicGallery
 mkdir %BUILD_OUTPUT%\ServiceLookup
@@ -77,10 +78,10 @@ mkdir %BUILD_OUTPUT%\Solutions
 mkdir %BUILD_OUTPUT%\StorytellingSwipe
 mkdir %BUILD_OUTPUT%\StorytellingTextLegend
 mkdir %BUILD_OUTPUT%\TwoPane
-mkdir %BUILD_OUTPUT%\TwoPane\main                       
-mkdir %BUILD_OUTPUT%\TwoPane\Chrome                         
-mkdir %BUILD_OUTPUT%\TwoPane\pavement                   
-mkdir %BUILD_OUTPUT%\TwoPane\seaside                        
+mkdir %BUILD_OUTPUT%\TwoPane\main
+mkdir %BUILD_OUTPUT%\TwoPane\Chrome
+mkdir %BUILD_OUTPUT%\TwoPane\pavement
+mkdir %BUILD_OUTPUT%\TwoPane\seaside
 mkdir %BUILD_OUTPUT%\UrbanObservatory
 mkdir %BUILD_OUTPUT%\PublicInformation
 mkdir %BUILD_OUTPUT%\ImpactSummary
@@ -164,8 +165,8 @@ xcopy %TEMPLATES_ROOT%\SummaryViewer                            %BUILD_OUTPUT%\S
 xcopy %TEMPLATES_ROOT%\MapTools                                 %BUILD_OUTPUT%\MapTools                             /E /Y
 xcopy %TEMPLATES_ROOT%\MapJournal                               %BUILD_OUTPUT%\MapJournal                           /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\MapSeries                            /E /Y
-xcopy %TEMPLATES_ROOT%\Viewer                             	  	%BUILD_OUTPUT%\Viewer                               /E /Y
-xcopy %TEMPLATES_ROOT%\Locator                                  %BUILD_OUTPUT%\Directions                           /E /Y 
+xcopy %TEMPLATES_ROOT%\Viewer                                   %BUILD_OUTPUT%\Viewer                               /E /Y
+xcopy %TEMPLATES_ROOT%\Locator                                  %BUILD_OUTPUT%\Directions                           /E /Y
 xcopy %TEMPLATES_ROOT%\bv_build\src                             %BUILD_OUTPUT%\bv_build                             /E /Y
 
 
@@ -173,9 +174,9 @@ REM Finally copy assorted files in the root directory
 copy /Y %TEMPLATES_ROOT%\*.*  %BUILD_OUTPUT%
 
 REM Copy the common config to the template config directory
-copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\bv_build\commonConfig.js             
-copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\LocalPerspective\config\commonConfig.js  
-copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\InteractiveFilter\config\commonConfig.js  
+copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\bv_build\commonConfig.js
+copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\LocalPerspective\config\commonConfig.js
+copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\InteractiveFilter\config\commonConfig.js
 echo ########## BUILD END TIME: %date% - %time% ##########
 
 :END
