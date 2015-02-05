@@ -40,8 +40,8 @@ html,body {
 #search{
     position:absolute;
     top:0;
-    padding:2px 4px;
-    right:8px;
+    right:0;
+    width:333px;
 }
 
 .filter-content{
@@ -54,7 +54,7 @@ html,body {
      display:block;
     }
 }
-/* Esri Jvascript API*/
+/* Esri Javascript API*/
 .esriPopup .pointer.bottom , .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight{
     background: #f7f7f7 !important;
 }

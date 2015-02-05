@@ -1,0 +1,14 @@
+.esriSimpleSlider {
+    display: block
+}
+
+#homeDiv {
+    position: absolute;
+    top: 125px;
+    left: 4px;
+    z-index: 50
+}
+
+#search,.top-bar-title {
+    display: block
+}

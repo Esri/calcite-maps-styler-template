@@ -271,11 +271,13 @@ html, body {
   .esriSimpleSlider {
     display: block; } }
 
-#search {
-  position: absolute;
-  top: 0;
-  padding: 2px 4px;
-  right: 8px; }
+#search{
+    position:absolute;
+    top:0;
+    right:0;
+    width:333px;
+}
+
 
 .filter-content {
   padding: 4px; }

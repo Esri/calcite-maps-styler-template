@@ -26,8 +26,15 @@ define([], function() {
         "locate": true,
         //When true the home button is displayed on the map.
         "home": true,
-        //When true the geocoder search box is displayed in the title area
+        //Add the geocoder search box to the title area .
         "search": true,
+        "locationSearch": true,
+        //When searchExtent is true the locator will prioritize results within the current map extent.
+        "searchExtent": false,
+        "searchLayers":[{
+            "id": "",
+            "fields": []
+        }],
         //If the web map has multiple filters they will be displayed in a dropdown when
         //this value is true.
         "filterDropdown": false,
@@ -43,7 +50,6 @@ define([], function() {
         //When true the template will query arcgis.com for default settings for helper services, units etc. If you
         //want to use custom settings for units or any of the helper services set queryForOrg to false then enter
         //default values for any items you need using the helper services and units properties.
-        "queryForOrg": true,
         "units": null,
         "helperServices": {
            "geometry":{
