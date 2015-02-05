@@ -52,7 +52,7 @@
             {
                "type":"paragraph",
                "value":"The filter instructions provide text that explains to application users how to use the filter."
-            }
+            },
             {
                "type":"paragraph",
                "value":"Set Display dropdown to true if your app contains multiple filters and you want to display a dropdown list of the filters and allow application users to select and view the options for one filter at a time."
@@ -151,7 +151,7 @@
                "label": "Location Search"
             }
          ]
-      },
+      }
    ],
    "values":{
       "home":true,
