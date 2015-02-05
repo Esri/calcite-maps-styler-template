@@ -26,7 +26,7 @@
                     "type": "string",
                     "fieldName": "applicationName",
                     "label": "Title",
-                    "tooltip": "Application title displayed in header"
+                    "tooltip": "Application title (max 27 chars)"
                 },
                 {
                     "label": "Icon URL",

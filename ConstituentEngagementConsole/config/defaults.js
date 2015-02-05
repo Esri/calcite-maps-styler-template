@@ -21,7 +21,7 @@ define({
     "appid": "",
     "oauthappid": null,
     //Group templates must support a group url parameter. This will contain the id of the group.
-    "group": "e96bd5b249a04235bcd7399cb80ee3cf",
+    "group": "",
     //Enter the url to the proxy if needed by the application. See the 'Using the proxy page' help topic for details
     //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
     "proxyurl": "proxy.ashx",
@@ -57,7 +57,7 @@ define({
     // to set description field whether it needs to be displayed or not in web-map description area
     "webMapInfoDescription": true,
     // to set snippet field whether it needs to be displayed or not in web-map description area
-    "webMapInfoSnippet": true,
+    "webMapInfoSnippet": false,
     // to set owner field whether it needs to be displayed or not in web-map description area
     "webMapInfoOwner": true,
     // to set created field whether it needs to be displayed or not in web-map description area

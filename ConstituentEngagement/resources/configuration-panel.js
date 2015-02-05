@@ -5,9 +5,11 @@
         "signInSubtitle": "",
         "signInBackgroundImage": "/images/signinbg.png",
         "enableFacebook": true,
+        "facebookAppId": "",
         "enableTwitter": true,
         "enableGoogleplus": true,
-        "applicationName": "Crowd Source Reporter",
+        "googleplusClientId": "",
+        "applicationName": "",
         "applicationIcon": "/images/app-icon.png",
         "applicationFavicon": "/images/favicon.ico",
         "webMapInfoDescription": true,
@@ -37,26 +39,20 @@
                     "type": "string",
                     "fieldName": "applicationName",
                     "label": "Title",
-                    "tooltip": "Application title"
+                    "tooltip": "Application title (max 34 chars)"
                 },
                 {
                     "type": "string",
                     "stringFieldOption": "textarea",
                     "fieldName": "signInSubtitle",
                     "label": "Subtitle",
-                    "tooltip": "text displayed below title on splash page"
+                    "tooltip": "Text displayed below title on splash page (max 36 chars)"
                 },
                 {
                     "type": "string",
                     "fieldName": "signInBackgroundImage",
-                    "tooltip": "Background image for login screen",
+                    "tooltip": "Background image for login screen. Recommended 640x960.",
                     "label": "Splash Screen Image"
-                },
-                {
-                    "type": "boolean",
-                    "fieldName": "enableFacebook",
-                    "label": "Allow users to sign in using Facebook",
-                    "tooltip": "Enable to allow users to sign in using their Facebook credentials"
                 },
                 {
                     "type": "boolean",
@@ -66,9 +62,28 @@
                 },
                 {
                     "type": "boolean",
+                    "fieldName": "enableFacebook",
+                    "label": "Allow users to sign in using Facebook",
+                    "tooltip": "Enable to allow users to sign in using their Facebook credentials"
+                },
+                {
+                    "type": "string",
+                    "fieldName": "facebookAppId",
+                    "label": "Facebook AppId",
+                    "tooltip": "Facebook AppId"
+                },
+
+                {
+                    "type": "boolean",
                     "fieldName": "enableGoogleplus",
                     "label": "Allow users to sign in using Google+",
                     "tooltip": "Enable to allow users to sign in using their Google+ credentials"
+                },
+                {
+                    "type": "string",
+                    "fieldName": "googleplusClientId",
+                    "label": "Google+ Client ID",
+                    "tooltip": "Google+ ClientId"
                 }
             ]
         },
@@ -108,7 +123,7 @@
                 {
                     "type": "string",
                     "fieldName": "reportedByField",
-                    "label": "Reporter Name Field",
+                    "label": "Reporter Name Field (optional)",
                     "tooltip": "Text field that stores the username of the person who created the feature. Field name must be the same across all layers and maps."
                 },
                 {
