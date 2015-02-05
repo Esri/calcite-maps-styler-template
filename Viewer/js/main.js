@@ -869,6 +869,10 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
                             if (this.config.searchExtent) {
                                 geocoder.searchExtent = this.map.extent;
+                                geocoder.localSearchOptions = {
+                                    minScale: 300000,
+                                    distance: 50000
+                                };
                             }
                             defaultSources.push(geocoder);
                         } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
