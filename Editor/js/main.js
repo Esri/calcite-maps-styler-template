@@ -150,7 +150,6 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                         map: this.map,
                         basemap: this.config.alt_basemap || "satellite"
                     }, toggle_container);
-                    console.log(basemaps);
                     if (this.config.response && this.config.response.itemInfo && this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.baseMap) {
                         var b = this.config.response.itemInfo.itemData.baseMap;
                         if (b.title === "World Dark Gray Base") {
@@ -212,6 +211,10 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
 
                             if (this.config.searchExtent) {
                                 geocoder.searchExtent = this.map.extent;
+                                geocoder.localSearchOptions = {
+                                    minScale: 300000,
+                                    distance: 50000
+                                };
                             }
                             defaultSources.push(geocoder);
                         } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
