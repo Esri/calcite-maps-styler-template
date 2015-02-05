@@ -1,3 +1,2 @@
-Commit hash:    6cbad035f6b28340238058727e2e29efec2c084f
-https://github.com/Esri/map-and-app-gallery-template
-1/20/2015
+1.14.1
+2/5/2015

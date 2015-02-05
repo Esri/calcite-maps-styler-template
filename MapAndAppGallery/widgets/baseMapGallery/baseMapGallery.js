@@ -29,8 +29,12 @@ define([
     "dijit/_TemplatedMixin",
     "dijit/_WidgetsInTemplateMixin",
     "esri/layers/ArcGISTiledMapServiceLayer",
-    "esri/layers/OpenStreetMapLayer"
-], function (declare, domConstruct, array, lang, on, dom, query, template, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, ArcGISTiledMapServiceLayer, OpenStreetMapLayer) {
+    "esri/layers/OpenStreetMapLayer",
+    "esri/layers/ArcGISDynamicMapServiceLayer",
+    "esri/layers/ArcGISImageServiceLayer",
+    "esri/layers/ImageParameters",
+    "esri/layers/ImageServiceParameters"
+], function (declare, domConstruct, array, lang, on, dom, query, template, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, ArcGISTiledMapServiceLayer, OpenStreetMapLayer, ArcGISDynamicMapServiceLayer, ArcGISImageServiceLayer, ImageParameters, ImageServiceParameters) {
 
     //========================================================================================================================//
 
@@ -116,7 +120,7 @@ define([
         * @memberOf widgets/baseMapGallery/baseMapGallery
         */
         _addBasemapLayerOnMap: function (basemapLayerId) {
-            var layer, basemapLayers = dojo.configData.values.baseMapLayers[dojo.selectedBasemapIndex];
+            var layer, params, imageParameters, basemapLayers = dojo.configData.values.baseMapLayers[dojo.selectedBasemapIndex];
             this.map.onLayerAdd = lang.hitch(this, function () {
                 this.enableToggling = true;
             });
@@ -130,6 +134,20 @@ define([
                 this.enableToggling = false;
                 if (basemapLayers.layerType === "OpenStreetMap") {
                     layer = new OpenStreetMapLayer({ id: basemapLayerId, visible: true });
+                } else if (basemapLayers.layerType === "ArcGISMapServiceLayer") {
+                    imageParameters = new ImageParameters();
+                    layer = new ArcGISDynamicMapServiceLayer(basemapLayers.MapURL, {
+                        "imageParameters": imageParameters,
+                        id: basemapLayerId
+                    });
+                } else if (basemapLayers.layerType === "ArcGISImageServiceLayer") {
+                    params = new ImageServiceParameters();
+                    params.noData = 0;
+                    layer = new ArcGISImageServiceLayer(basemapLayers.MapURL, {
+                        imageServiceParameters: params,
+                        id: basemapLayerId,
+                        opacity: 0.75
+                    });
                 } else {
                     layer = new ArcGISTiledMapServiceLayer(basemapLayers.MapURL, { id: basemapLayerId, visible: true });
                 }

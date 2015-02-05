@@ -191,7 +191,7 @@ define([
             * display all the located address in the address container
             * 'this.divAddressResults' div dom element contains located addresses, created in widget template
             */
-            if (candidates.length > 0) {
+            if (candidates && candidates.length > 0) {
                 for (i = 0; i < candidates.length; i++) {
                     this._displayValidLocations(candidates[i]);
                 }

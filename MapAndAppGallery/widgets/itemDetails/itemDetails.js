@@ -326,25 +326,27 @@ define([
         _filterRedundantBasemap: function (bmLayers, baseMapArray, isItemBasemap) {
             var i, bmLayerData, multiBasemap = [];
             if (bmLayers.itemData.baseMap) {
-                bmLayerData = bmLayers.itemData.baseMap.baseMapLayers;
-            } else {
-                bmLayerData = [];
-                bmLayerData.push(bmLayers);
-            }
-            if (bmLayerData[0].layerType === "OpenStreetMap" || bmLayerData[0].type === "OpenStreetMap") {
-                bmLayerData[0].url = bmLayerData[0].id;
-            }
-            if (this._isUniqueBasemap(baseMapArray, bmLayerData)) {
-                if (bmLayerData[0].visibility || isItemBasemap) {
-                    dojo.selectedBasemapIndex = baseMapArray.length;
+                if (bmLayers.itemData.baseMap.baseMapLayers) {
+                    bmLayerData = bmLayers.itemData.baseMap.baseMapLayers;
+                } else {
+                    bmLayerData = [];
+                    bmLayerData.push(bmLayers);
                 }
-                if (bmLayerData.length === 1) {
-                    this._setBasemapAttribute(baseMapArray, bmLayerData[0], bmLayers, isItemBasemap);
-                } else if (bmLayerData.length > 1) {
-                    for (i = 0; i < bmLayerData.length; i++) {
-                        this._setBasemapAttribute(multiBasemap, bmLayerData[i], bmLayers, isItemBasemap);
+                if (bmLayerData[0].layerType === "OpenStreetMap" || bmLayerData[0].type === "OpenStreetMap") {
+                    bmLayerData[0].url = bmLayerData[0].id;
+                }
+                if (this._isUniqueBasemap(baseMapArray, bmLayerData)) {
+                    if (bmLayerData[0].visibility || isItemBasemap) {
+                        dojo.selectedBasemapIndex = baseMapArray.length;
                     }
-                    baseMapArray.push(multiBasemap);
+                    if (bmLayerData.length === 1) {
+                        this._setBasemapAttribute(baseMapArray, bmLayerData[0], bmLayers, isItemBasemap);
+                    } else if (bmLayerData.length > 1) {
+                        for (i = 0; i < bmLayerData.length; i++) {
+                            this._setBasemapAttribute(multiBasemap, bmLayerData[i], bmLayers, isItemBasemap);
+                        }
+                        baseMapArray.push(multiBasemap);
+                    }
                 }
             }
         },
@@ -945,18 +947,29 @@ define([
         * @memberOf widgets/itemDetails/itemDetails
         */
         _addFeaturelayerToMap: function (map, layerId, url, title, layerInfo, layerFlag) {
-            var featureLayerMap = new FeatureLayer(url, {
+            var layerTitle, featureLayerMap;
+            layerTitle = title + layerId;
+            featureLayerMap = new FeatureLayer(url, {
                 mode: FeatureLayer.MODE_ONDEMAND,
-                id: layerId,
+                id: layerTitle,
                 outFields: ["*"]
             });
 
-            map.addLayer(featureLayerMap);
-            map.getLayer(featureLayerMap.id).show();
-            layerInfo.push({
-                layer: featureLayerMap,
-                title: title
-            });
+            this.own(on(featureLayerMap, "load", lang.hitch(this, function (currentLayer) {
+                if (currentLayer.layer.defaultVisibility) {
+                    map.addLayer(featureLayerMap);
+                    map.getLayer(featureLayerMap.id).show();
+                    layerInfo.push({
+                        layer: featureLayerMap,
+                        title: title
+                    });
+                }
+            })));
+
+            this.own(on(featureLayerMap, "error", function (err) {
+                alert(err.error);
+            }));
+
             if (layerFlag) {
                 setTimeout(lang.hitch(this, function () {
                     this.createLegend(layerInfo, map, this.legendDiv);
