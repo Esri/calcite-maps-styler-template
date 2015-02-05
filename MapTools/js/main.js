@@ -107,7 +107,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 var defaultSources = [];
 
                 //setup geocoders defined in common config 
-                if (this.config.helperServices.geocode) {
+                if (this.config.helperServices.geocode && this.config.locationSearch) {
                     var geocoders = lang.clone(this.config.helperServices.geocode);
                     array.forEach(geocoders, lang.hitch(this, function (geocoder) {
                         if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
@@ -257,8 +257,10 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 /*Create the table if a layer and field have been defined or if there's a feature layer in the map
                 */
                 var layer = null;
+
                 if (this.config.tableLayer && this.config.tableLayer.id) {
                     layer = this.map.getLayer(this.config.tableLayer.id);
+                    
                     if (layer) {
                         //get hidden fields
                         var hiddenFields = null;
@@ -267,9 +269,12 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                                 hiddenFields = this.config.tableLayer.fields[0].fields;
                             }
                         }
-                    } 
+                    }else{
+                        layer = null;
+                    }
                 }
-                if(layer === null){
+          
+                if(layer === null ){
                     //get first feature layer from map if no feature layers then return
                     array.some(this.map.graphicsLayerIds, lang.hitch(this, function (id) {
                         var l = this.map.getLayer(id);
@@ -307,7 +312,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     registry.byId("bc").resize();
                     registry.byId("mapbc").resize();
                 }));
-
 
                 var table = new FeatureTable({
                     id: "featureTable",

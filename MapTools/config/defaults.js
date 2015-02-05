@@ -49,6 +49,7 @@ define({
     "editable": false,
     "editortoolbar": false,    
     "search": true,
+    "locationSearch": true,
     "searchExtent": true,
     "searchLayers":[{
         "id": null,//"Boston_Marathon_7694",
@@ -56,10 +57,9 @@ define({
     }],
     "table": true,
     "tableLayer": {
-        "id": "SeattleBikes_5154",
+        "id": null,
         "fields":[
-            {"id":"hiddenFields",
-            "fields":["SEGKEY","COMPKEY","COMPTYPE","DISTANCE","WIDTH","UNITID","UNITDESC","BIKE_FACIL","DELINEATOR","FINISH_TYP","SURFACE_TY","INSTALL_DA","MOUNT_TYPE"]}
+            //{"id":"hiddenFields","fields":["SEGKEY","COMPKEY"]}
         ]
     },
     "layerlist": true,
