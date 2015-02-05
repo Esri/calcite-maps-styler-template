@@ -328,7 +328,6 @@ a {
 .dark .BasemapToggle .toggleButton {
   background: #6c6d70;
 }
-
 .dark .HomeButton .home:hover {
   background-color: #7a7b7f;
 }
@@ -528,7 +527,7 @@ a {
 /*If the screen size is max-width or smaller and the drawer is open hide the geocder.*/
 @media screen and (max-width: 540px) {
   .drawer-open .simpleGeocoder {
-    display: none;
+    display: none !important;
   }
 }
 .top-menu-right {

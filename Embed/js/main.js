@@ -1,5 +1,5 @@
-define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/dom-geometry", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "esri/domUtils", "esri/arcgis/utils", "esri/dijit/Popup", "esri/geometry/Point", "dojo/domReady!"], function (
-ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domClass, domConstruct, registry, domUtils, arcgisUtils, Popup, Point) {
+define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/dom-geometry", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "esri/domUtils", "esri/lang", "esri/arcgis/utils", "esri/dijit/Popup", "esri/layers/FeatureLayer", "esri/geometry/Point", "dojo/domReady!"], function (
+ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domClass, domConstruct, registry, domUtils, esriLang, arcgisUtils, Popup, FeatureLayer, Point) {
     return declare(null, {
         config: {},
         startup: function (config) {
@@ -29,7 +29,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 });
 
                 // startup drawer
-                this._drawer.startup()
+                this._drawer.startup();
 
             }));
 
@@ -130,31 +130,125 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 registry.byId("details").set("content", lang.replace(template, content));
             }
 
-            require(["application/sniff!search?application/CreateGeocoder"], lang.hitch(this, function (CreateGeocoder) {
-                if (!CreateGeocoder) {
+            //Add the location search widget
+            require(["application/sniff!search?esri/dijit/Search", "application/sniff!search?esri/tasks/locator"], lang.hitch(this, function (Search, Locator) {
+                if (!Search && !Locator) {
                     return;
                 }
-                var geocoder = new CreateGeocoder({
+
+                var options = {
                     map: this.map,
-                    config: this.config
-                });
-                if (geocoder.geocoder && geocoder.geocoder.domNode) {
+                    addLayersFromMap: false
+                };
+                var searchLayers = false;
+                var search = new Search(options, domConstruct.create("div", {
+                    id: "search"
+                }, "mapDiv"));
+                domClass.add(dom.byId("search"), "simpleGeocoder");
+                var defaultSources = [];
 
-                    domConstruct.place(geocoder.geocoder.domNode, "mapDiv");
+                //setup geocoders defined in common config 
+                if (this.config.helperServices.geocode) {
+                    var geocoders = lang.clone(this.config.helperServices.geocode);
+                    array.forEach(geocoders, lang.hitch(this, function (geocoder) {
+                        if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
 
+                            geocoder.hasEsri = true;
+                            geocoder.locator = new Locator(geocoder.url);
 
-                    //Go to find location if possible
-                    if (this.config.find) {
-                        geocoder.geocoder.set("value", this.config.find);
-                        geocoder.geocoder.find().then(function (result) {
-                            if (result && result.results && result.results.length > 0) {
-                                geocoder.geocoder.select(result.results[0]);
+                            geocoder.singleLineFieldName = "SingleLine";
+
+                            geocoder.name = geocoder.name || "Esri World Geocoder";
+
+                            if (this.config.searchextent) {
+                                geocoder.searchextent = this.map.extent;
+                                geocoder.localSearchOptions = {
+                                    minScale: 300000,
+                                    distance: 50000
+                                };
+                            }
+                            defaultSources.push(geocoder);
+                        } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
+
+                            //Add geocoders with a singleLineFieldName defined 
+                            geocoder.locator = new Locator(geocoder.url);
+
+                            defaultSources.push(geocoder);
+                        }
+                    }));
+                }
+
+                //Add search layers defined on the web map item 
+                if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
+                    var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
+
+                    array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
+                        //we do this so we can get the title specified in the item
+                        var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
+                        var layer = null;
+                        array.some(operationalLayers, function (opLayer) {
+                            if (opLayer.id === searchLayer.id) {
+                                layer = opLayer;
+                                return true;
                             }
                         });
+
+                        if (layer && layer.url) {
+                            var source = {};
+                            var url = layer.url;
+
+                            if (esriLang.isDefined(searchLayer.subLayer)) {
+                                url = url + "/" + searchLayer.subLayer;
+                                array.some(layer.layerObject.layerInfos, function (info) {
+                                    if (info.id == searchLayer.subLayer) {
+                                        name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
+                                        return true;
+                                    }
+
+                                });
+                            }
+
+                            source.featureLayer = new FeatureLayer(url);
+
+
+                            source.name = layer.title || layer.name;
+
+                            source.exactMatch = searchLayer.field.exactMatch;
+                            source.searchField = [searchLayer.field.name];
+                            source.placeholder = searchOptions.hintText;
+                            defaultSources.push(source);
+                            searchLayers = true;
+                        }
+
+                    }));
+                }
+
+
+
+
+                search.set("sources", defaultSources);
+                //set the first non esri layer as active if search layers are defined. 
+                var activeIndex = 0;
+                if (searchLayers) {
+                    array.some(defaultSources, function (s, index) {
+                        if (!s.hasEsri) {
+                            activeIndex = index;
+                            return true;
+                        }
+                    });
+
+
+                    if (activeIndex > 0) {
+                        search.set("activeSourceIndex", activeIndex);
                     }
                 }
 
+
+                search.startup();
+
+
             }));
+
 
             require(["application/sniff!basemap_gallery?esri/dijit/BasemapGallery"], lang.hitch(this, function (BasemapGallery) {
                 if (!BasemapGallery) {
@@ -174,7 +268,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 }, this.map.id + "_root");
 
 
-                var sync = domConstruct.create("div", {
+                domConstruct.create("div", {
                     "class": "icon-basemap",
                     "title": this.config.i18n.tools.basemap.label
                 }, mainContainer);
@@ -194,7 +288,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 //add a class so we can move the basemap if the zoom position moved.
                 if (this.config.zoom && this.config.zoom_position) {
                     domClass.add(mainContainer, "embed-" + this.config.zoom_position);
-                    domClass.add(gallery_container, "embed-" + this.config.zoom_position);
+                    domClass.add(dom.byId("gallery_container"), "embed-" + this.config.zoom_position);
                 }
 
 
@@ -213,85 +307,84 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
             }));
 
             require(["application/sniff!basemap_toggle?esri/dijit/BasemapToggle", "application/sniff!basemap_toggle?esri/basemaps"], lang.hitch(this, function (BasemapToggle, basemaps) {
-                    if (!BasemapToggle  && !basemaps) {
-                        return;
-                    }
+                if (!BasemapToggle && !basemaps) {
+                    return;
+                }
 
-                 var toggle_container = domConstruct.create("div", {}, "mapDiv");
-    
+                var toggle_container = domConstruct.create("div", {}, "mapDiv");
+
                 /* Start temporary until after JSAPI 4.0 is released */
                 var bmLayers = [],
-                  mapLayers = this.map.getLayersVisibleAtScale(this.map.getScale());
+                    mapLayers = this.map.getLayersVisibleAtScale(this.map.getScale());
                 if (mapLayers) {
-                  for (var i = 0; i < mapLayers.length; i++) {
-                    if (mapLayers[i]._basemapGalleryLayerType) {
-                      var bmLayer = this.map.getLayer(mapLayers[i].id);
-                      if (bmLayer) {
-                        bmLayers.push(bmLayer);
-                      }
-                    }
-                  }
-                }
-                on.once(this.map, 'basemap-change', lang.hitch(this, function () {
-                  if (bmLayers && bmLayers.length) {
-                    for (var i = 0; i < bmLayers.length; i++) {
-                      bmLayers[i].setVisibility(false);
-                    }
-                  }
-                }));
-                /* END temporary until after JSAPI 4.0 is released */
-
-
-                    var toggle = new BasemapToggle({
-                        map: this.map,
-                        basemap: this.config.alt_basemap || "satellite"
-                    }, toggle_container);
-                    
-                
-                    if (this.config.response && this.config.response.itemInfo && this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.baseMap) {
-                        var b = this.config.response.itemInfo.itemData.baseMap;
-                           if(b.title === "World Dark Gray Base"){
-                                b.title = "Dark Gray Canvas";
-                           }
-                        if (b.title) {
-                            for (var i in basemaps) {
-                                //use this to handle translated titles
-                                if (b.title === this._getBasemapName(i)) {
-                                    toggle.defaultBasemap = i;
-                                    //remove at 4.0
-                                    if(i === "dark-gray"){
-                                        if(this.map.layerIds && this.map.layerIds.length > 0){
-                                            this.map.basemapLayerIds = this.map.layerIds.slice(0);
-                                            this.map._basemap = "dark-gray";
-                                        }
-                                    }   
-                                    //end remove at 4.0
-                                    this.map.setBasemap(i);
-                                }
+                    for (var i = 0; i < mapLayers.length; i++) {
+                        if (mapLayers[i]._basemapGalleryLayerType) {
+                            var bmLayer = this.map.getLayer(mapLayers[i].id);
+                            if (bmLayer) {
+                                bmLayers.push(bmLayer);
                             }
                         }
-                    } 
-
- 
-                    //add a class so we can move the basemap if the zoom position moved.
-                    if (this.config.zoom && this.config.zoom_position) {
-                        domClass.add(toggle.domNode, "embed-" + this.config.zoom_position);
                     }
-
-                    if (this.config.scale) {
-                        domClass.add(toggle.domNode, "scale");
+                }
+                on.once(this.map, "basemap-change", lang.hitch(this, function () {
+                    if (bmLayers && bmLayers.length) {
+                        for (var i = 0; i < bmLayers.length; i++) {
+                            bmLayers[i].setVisibility(false);
+                        }
                     }
+                })); /* END temporary until after JSAPI 4.0 is released */
 
 
-                    toggle.startup();
-                
+                var toggle = new BasemapToggle({
+                    map: this.map,
+                    basemap: this.config.alt_basemap || "satellite"
+                }, toggle_container);
+
+
+                if (this.config.response && this.config.response.itemInfo && this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.baseMap) {
+                    var b = this.config.response.itemInfo.itemData.baseMap;
+                    if (b.title === "World Dark Gray Base") {
+                        b.title = "Dark Gray Canvas";
+                    }
+                    if (b.title) {
+                        for (var j in basemaps) {
+                            //use this to handle translated titles
+                            if (b.title === this._getBasemapName(j)) {
+                                toggle.defaultBasemap = j;
+                                //remove at 4.0
+                                if (j === "dark-gray") {
+                                    if (this.map.layerIds && this.map.layerIds.length > 0) {
+                                        this.map.basemapLayerIds = this.map.layerIds.slice(0);
+                                        this.map._basemap = "dark-gray";
+                                    }
+                                }
+                                //end remove at 4.0
+                                this.map.setBasemap(j);
+                            }
+                        }
+                    }
+                }
+
+
+                //add a class so we can move the basemap if the zoom position moved.
+                if (this.config.zoom && this.config.zoom_position) {
+                    domClass.add(toggle.domNode, "embed-" + this.config.zoom_position);
+                }
+
+                if (this.config.scale) {
+                    domClass.add(toggle.domNode, "scale");
+                }
+
+
+                toggle.startup();
+
 
             }));
 
             if (this.config.active_panel) {
                 var tabs = registry.byId("tabContainer");
                 if (tabs) {
-                    var panel = dijit.byId(this.config.active_panel);
+                    var panel = registry.byId(this.config.active_panel);
                     if (panel) {
                         tabs.selectChild(this.config.active_panel);
                     }
@@ -303,7 +396,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
             }
 
         },
-        _getBasemapName: function(name){
+        _getBasemapName: function (name) {
             var current = null;
             switch (name) {
             case "dark-gray":
@@ -384,7 +477,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 }
             }
 
-   
+
 
             var customPopup = new Popup({
                 titleInBody: true
@@ -393,21 +486,21 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
             domClass.add(customPopup.domNode, this.config.theme);
 
             var options = {
-                    slider: this.config.zoom,
-                    sliderPosition: this.config.zoom_position,
-                    infoWindow: customPopup,
-                    logo: (this.config.logoimage === null) ? true : false
+                slider: this.config.zoom,
+                sliderPosition: this.config.zoom_position,
+                infoWindow: customPopup,
+                logo: (this.config.logoimage === null) ? true : false
             };
             //specify center and zoom if provided as url params 
-            if(this.config.level){
+            if (this.config.level) {
                 options.zoom = this.config.level;
             }
-            if(this.config.center){
+            if (this.config.center) {
                 var points = this.config.center.split(",");
-                if(points && points.length === 2){
+                if (points && points.length === 2) {
                     options.center = [parseFloat(points[0]), parseFloat(points[1])];
                 }
-        
+
             }
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: options,
@@ -428,7 +521,8 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                             }, node);
                         }
 
-                        var logoimg = domConstruct.create("img", {
+                        //create a logo image
+                        domConstruct.create("img", {
                             src: this.config.logoimage,
                             "class": "logo"
                         }, link || node);
@@ -448,7 +542,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                     this.map.infoWindow.set("popupWindow", false);
                     this._initializeSidepanel();
                 }
-                
+
                 require(["application/sniff!marker?esri/symbols/PictureMarkerSymbol", "application/sniff!marker?esri/graphic", "application/sniff!marker?esri/dijit/PopupTemplate"], lang.hitch(this, function (PictureMarkerSymbol, Graphic, PopupTemplate) {
                     if (!PictureMarkerSymbol && !Graphic && !PopupTemplate) {
                         return;
