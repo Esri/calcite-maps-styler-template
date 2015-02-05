@@ -47,6 +47,7 @@ define([], function() {
         "basemap_option": "", //valid values are street, satellite, hybrid, topo, gray, oceans, national-geographic and osm
         "locate_button": true,
         "geocoder": true,
+        "locationSearch": true,
         "searchExtent":false,
         "searchLayers":[{
             "id": "",

@@ -197,6 +197,13 @@
                "type":"boolean",
                "fieldName":"searchExtent",
                "label":"Prioritize search results in current extent."
+            },{
+               "type":"paragraph",
+               "value": "When Location Search is true the search widget will allow users to search for addresses and locations using one or more locators and also search the layers and fields specified in the Search Layers configuration option. Unchecking the Location Search option will remove the locator search and only configured search layers will be displayed."
+            },{
+               "type": "boolean",
+               "fieldName": "locationSearch",
+               "label": "Location Search"
             },{  
                "label":"Select search layers and fields",
                "fieldName":"searchLayers",
@@ -233,6 +240,7 @@
       "home_button":true,
       "locate_button":true,
       "geocoder":true,
-      "searchExtent": true
+      "searchExtent": true, 
+      "locationSearch": true
    }
 }
