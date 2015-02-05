@@ -176,7 +176,6 @@ copy /Y %TEMPLATES_ROOT%\*.*  %BUILD_OUTPUT%
 REM Copy the common config to the template config directory
 copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\bv_build\commonConfig.js
 copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\LocalPerspective\config\commonConfig.js
-copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\InteractiveFilter\config\commonConfig.js
 echo ########## BUILD END TIME: %date% - %time% ##########
 
 :END
