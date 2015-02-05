@@ -855,7 +855,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 var defaultSources = [];
 
                 //setup geocoders defined in common config 
-                if (this.config.helperServices.geocode) {
+                if (this.config.helperServices.geocode && this.config.locationSearch) {
                     var geocoders = lang.clone(this.config.helperServices.geocode);
                     array.forEach(geocoders, lang.hitch(this, function (geocoder) {
                         if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
