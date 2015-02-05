@@ -191,7 +191,6 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                         expanded: false,
                         addLayersFromMap: false
                     };
-
                 var searchLayers = false;
                 var search = new Search(options, domConstruct.create("div", {
                     id: "search"
@@ -199,7 +198,7 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                 var defaultSources = [];
 
                 //setup geocoders defined in common config 
-                if (this.config.helperServices.geocode) {
+                if (this.config.helperServices.geocode && this.config.locationSearch) {
                     var geocoders = lang.clone(this.config.helperServices.geocode);
                     array.forEach(geocoders, lang.hitch(this, function (geocoder) {
                         if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
@@ -300,7 +299,6 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                         }
                     });
 
-
                     if (activeIndex > 0) {
                         search.set("activeSourceIndex", activeIndex);
                     }
@@ -308,9 +306,6 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
 
 
                 search.startup();
-
-
-
                 }));
             }
             this._updateTheme();
