@@ -121,6 +121,10 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                             if (this.config.searchExtent) {
                                 geocoder.searchExtent = this.map.extent;
+                                geocoder.localSearchOptions = {
+                                    minScale: 300000,
+                                    distance: 50000
+                                };
                             }
                             defaultSources.push(geocoder);
                         } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
