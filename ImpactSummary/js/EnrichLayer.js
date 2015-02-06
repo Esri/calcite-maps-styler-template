@@ -73,8 +73,6 @@
         _createDataSelectionBox: function (layerChange) {
             if (this.enrichCategoriesDialog && !layerChange) {
                 this.enrichCategoriesDialog.show();
-                domClass.remove(this.enrichVariableContainer, "variableDisplayBlock");
-                domClass.remove(this.enrichCategoriesSelect, "variableDisplayNone");
             } else {
                 this.enrichGeoenrichmentParameterDialog = "";
                 var enrichCategoriesDialogContent = this._createEnrichVariableContent();
@@ -164,8 +162,8 @@
             on(backButton, "click", lang.hitch(this, function () {
                 this.enrichCategoriesDialog.hide();
                 this.closeHandler.remove();
-                domClass.remove(this.enrichVariableContainer, "variableDisplayBlock");
-                domClass.remove(this.enrichCategoriesSelect, "variableDisplayNone");
+                domStyle.set(this.enrichCategoriesSelect, "display", "block");
+                domStyle.set(this.enrichVariableContainer, "display", "none");
                 this.enrichCategoriesDialog.show();
             }));
             on(enrichResetLinkText, "click", lang.hitch(this, function () {
@@ -194,15 +192,14 @@
             on(viewVariableText, "click", lang.hitch(this, function () {
                 this.enrichCategoriesDialog.hide();
                 this.closeHandler = on.pausable(this.enrichCategoriesDialog, "hide", lang.hitch(this, function () {
-                    domClass.remove(this.enrichVariableContainer, "variableDisplayBlock");
-                    domClass.remove(this.enrichCategoriesSelect, "variableDisplayNone");
-                    domClass.add(this.enrichCategoriesSelect, "variableDisplayBlock");
+                    domStyle.set(this.enrichVariableContainer, "display", "none");
+                    domStyle.set(this.enrichCategoriesSelect, "display", "block");
                     this.enrichCategoriesDialog.show();
                     this.closeHandler.remove();
                 }));
                 selectedVariablesText = this._updateDataBrowserSelection();
-                domClass.add(this.enrichCategoriesSelect, "variableDisplayNone");
-                domClass.add(this.enrichVariableContainer, "variableDisplayBlock");
+                domStyle.set(this.enrichCategoriesSelect, "display", "none");
+                domStyle.set(this.enrichVariableContainer, "display", "block");
                 domAttr.set(enrichVariableContent, "innerHTML", "");
                 array.forEach(selectedVariablesText, lang.hitch(this, function (variableLabel) {
                     domConstruct.create("div", {
@@ -580,7 +577,7 @@
                 this._createUnitOptions(drivingTimeUnits);
                 domClass.add(this.driveTimeTextLabelDiv, "labelHighlight");
                 domClass.remove(this.lineDistanceTextLabelDiv, "labelHighlight");
-                    if (this.inputDistance.value.match(/^[0-9]+?$/)) {
+                    if (this.inputDistance.value.match(/^[0-9]+(\.\d+)?$/)) {
                         this._validateBufferInputs(bufferAreaHelpText, divInputContainer, nextButtonDiv);
                     } else {
                         this._showHintTextMessage(bufferAreaHelpText, divInputContainer, nextButtonDiv, nls.widgets.geoEnrichment.message.invalidBufferInput);
@@ -599,22 +596,14 @@
             bufferAreaHelpText = domConstruct.create("div", { "class": "bufferAreaHelpText" }, defineAreaDiv);
             domStyle.set(bufferAreaHelpText, "display", "none");
             on(this.inputDistance, "keyup", lang.hitch(this, function (evt) {
-                if (this.bufferType == "DrivingTime") {
-                    this._checkBufferInputs(/^[0-9]+?$/, bufferAreaHelpText, divInputContainer, nextButtonDiv);
-                } else {
-                    this._checkBufferInputs(/^[0-9]+(\.\d+)?$/, bufferAreaHelpText, divInputContainer, nextButtonDiv);
-                }
+                this._checkBufferInputs(/^[0-9]+(\.\d+)?$/, bufferAreaHelpText, divInputContainer, nextButtonDiv);
             }));
             this.bufferAreaUnit = domConstruct.create("select", {
                 "class": "unitInput"
             }, divInputContainer);
             this._createUnitOptions(lineDistanceUnits);
             on(this.bufferAreaUnit, "change", lang.hitch(this, function () {
-                if (this.bufferType == "DrivingTime") {
-                    this._checkBufferInputs(/^[0-9]+?$/, bufferAreaHelpText, divInputContainer, nextButtonDiv);
-                } else {
-                    this._checkBufferInputs(/^[0-9]+(\.\d+)?$/, bufferAreaHelpText, divInputContainer, nextButtonDiv);
-                }
+                this._checkBufferInputs(/^[0-9]+(\.\d+)?$/, bufferAreaHelpText, divInputContainer, nextButtonDiv);
             }));
             if (this.map.getLayer(this.config.summaryLayer.id).geometryType === "esriGeometryPolygon") {
                 domClass.add(this.disableAreaDiv, "displayBlock");
@@ -695,6 +684,10 @@
             return enrichParameterContainer;
         },
         _checkBufferInputs: function (regEx, bufferAreaHelpText, divInputContainer, nextButtonDiv) {
+            if (this.inputDistance.value === "") {
+                this._showHintTextMessage(bufferAreaHelpText, divInputContainer, nextButtonDiv, nls.widgets.geoEnrichment.message.emptyBufferInput);
+                return;
+            }
             if (this.inputDistance.value.match(regEx)) {
                 this._validateBufferInputs(bufferAreaHelpText, divInputContainer, nextButtonDiv);
             } else {
@@ -762,15 +755,6 @@
         },
         _startEnrichProcess: function () {
             var layerName, featuresVisibleOnMap;
-            if (this.inputDistance.value.trim() === "") {
-                alert(nls.widgets.geoEnrichment.message.emptyTextFieldDsitance);
-                return;
-            }
-            var validnumber = this._validateNumber(this.inputDistance.value.trim());
-            if (!validnumber) {
-                alert(nls.widgets.geoEnrichment.message.enterNumbersOnly);
-                return;
-            }
             if (this.inputLayerName.value.trim() === "") {
                 alert(nls.widgets.geoEnrichment.message.emptyTextFieldLayerName);
                 return;

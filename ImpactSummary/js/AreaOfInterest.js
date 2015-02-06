@@ -214,7 +214,7 @@ define([
                         array.forEach(this.entireAreaFeatures, lang.hitch(this, function (feature) {
                             array.some(this._aoiInfos, lang.hitch(this, function (renderer, idx) {
                                 var attributeField = feature.attributes[this._attributeField];
-                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField >= renderer.minValue && attributeField <= renderer.maxValue)) {
+                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField > renderer.minValue && attributeField <= renderer.maxValue) || (renderer.minValue && renderer.maxValue && (renderer.minValue == renderer.maxValue))) {
                                     feature.setSymbol(this._aoiInfos[idx].symbol);
                                     return true;
                                 }
@@ -421,6 +421,8 @@ define([
                         this._sb.startup();
                         // selected features
                         this._selectFeatures([fs.features[0]], fs.features[0].attributes[this._attributeField]);
+                        // zoom to feature
+                        this._zoomToFeature(this.config.zoomType, fs);
                     }
                 }));
             },

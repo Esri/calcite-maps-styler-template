@@ -134,6 +134,14 @@ margin-right: 35px;
 .radioOptionContainer {
 margin: 15px 0px 20px 0px;
 }
+.displayNone, .hideLoadingIndicator
+{
+    display: none;
+}
+.displayBlock
+{
+    display: block;
+}
 .inputLayerName
 {
     width: 287px;
@@ -195,14 +203,6 @@ position:absolute;
     filter: alpha(opacity=60);
     z-index: 1;
     cursor: no-drop;
-}
-.displayNone, .variableDisplayNone
-{
-    display: none;
-}
-.displayBlock, .variableDisplayBlock
-{
-    display: block;
 }
 .fieldCheckBoxChecked
 {
@@ -359,15 +359,13 @@ background-position: center;
 background-repeat: no-repeat;
 display: block;
 }
-.hideLoadingIndicator {
-display: none;
-}
-.messageDialogNext {
-position: absolute;
-bottom: 12px;
-right: 20px;
-line-height: 20px;
-display: none;
+.messageDialogNext
+{
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    line-height: 20px;
+    display: none;
 }
 .showMessage {
 position: absolute;

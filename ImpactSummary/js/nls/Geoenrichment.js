@@ -23,7 +23,6 @@
                     "nofeatures": "No features are present in the current extent",
                     "selectData": "Please select data to enrich layer.",
                     "resetVariableMessage": "Are you sure you want to reset variable?",
-                    "emptyTextFieldDsitance": "Only numeric values are allowed",
                     "emptyTextFieldLayerName": "Enter result layer name",
                     "createService":"Layer not created.",
                     "sharingLayer":"Sharing layer..",
@@ -34,7 +33,8 @@
                     "layerJsonFailed": "Failed to create JSON for layer. Please try again.",
                     "addToWebmapFailed": "Failed to add layer to webmap. Please try again.",
                     "bufferAreaHelpText": "Please enter the value less than ",
-                    "invalidBufferInput": "The value entered is not valid."
+                    "invalidBufferInput": "The value entered is not valid.",
+                    "emptyBufferInput": "Please enter valid value."
                 },
                 "populationText": "Population",
                 "housingText": "Household",
