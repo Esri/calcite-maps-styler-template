@@ -951,7 +951,7 @@ function (
                 enrichLayerButton = domConstruct.create("div", { "class": "esriSelectIcon" }, enrichLayerContainer);
                 domAttr.set(enrichLayerButton, "checked", true);
                 domConstruct.create("div", { "class": "enrichLayerLabel", "innerHTML": nls.widgets.TemplateBuilder.enrichLayer }, enrichLayerContainer);
-                enrichLayerImageContainer = domConstruct.create("div", { "class": "enrichImageContanier" }, fieldsetContainer);
+                enrichLayerImageContainer = domConstruct.create("div", { "class": "displayNone" }, fieldsetContainer);
                 domConstruct.create("div", { "class": "enrichLayerImage" }, enrichLayerImageContainer);
                 domConstruct.create("div", { "class": "enrichLayerLink", "innerHTML": nls.widgets.TemplateBuilder.imageLabel }, enrichLayerImageContainer);
                 on(enrichLayerImageContainer, 'click', lang.hitch(this, function () {
