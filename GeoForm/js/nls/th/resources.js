@@ -119,7 +119,8 @@
       fileTooLargeError: "ก้_File too large to attach_ษฺ",
       exceededFileCountError: "ก้_Exceeded maximum no. of attachments allowed_ษฺ",
       selectFileTitle: "ก้_Select a file_ษฺ",
-      btnViewSubmissions: "ก้_View Submissions_ษฺ"
+      btnViewSubmissions: "ก้_View Submissions_ษฺ",
+      dateFormat: "ก้_MM/DD/YYYY h:mm a_ษฺ"
     },
     builder: {
       invalidUser: "ก้_Sorry, you don't have permission to view this item_ษฺ",

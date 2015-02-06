@@ -119,7 +119,8 @@
       fileTooLargeError: "بيت_File too large to attach_لاحقة",
       exceededFileCountError: "بيت_Exceeded maximum no. of attachments allowed_لاحقة",
       selectFileTitle: "بيت_Select a file_لاحقة",
-      btnViewSubmissions: "بيت_View Submissions_لاحقة"
+      btnViewSubmissions: "بيت_View Submissions_لاحقة",
+      dateFormat: "بيت_MM/DD/YYYY h:mm a_لاحقة"
     },
     builder: {
       invalidUser: "بيت_Sorry, you don't have permission to view this item_لاحقة",

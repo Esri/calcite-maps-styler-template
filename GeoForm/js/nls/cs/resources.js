@@ -119,7 +119,8 @@
       fileTooLargeError: "Ř_File too large to attach_ů",
       exceededFileCountError: "Ř_Exceeded maximum no. of attachments allowed_ů",
       selectFileTitle: "Ř_Select a file_ů",
-      btnViewSubmissions: "Ř_View Submissions_ů"
+      btnViewSubmissions: "Ř_View Submissions_ů",
+      dateFormat: "Ř_MM/DD/YYYY h:mm a_ů"
     },
     builder: {
       invalidUser: "Ř_Sorry, you don't have permission to view this item_ů",

@@ -119,7 +119,8 @@
       fileTooLargeError: "Å_File too large to attach_ö",
       exceededFileCountError: "Å_Exceeded maximum no. of attachments allowed_ö",
       selectFileTitle: "Å_Select a file_ö",
-      btnViewSubmissions: "Å_View Submissions_ö"
+      btnViewSubmissions: "Å_View Submissions_ö",
+      dateFormat: "Å_MM/DD/YYYY h:mm a_ö"
     },
     builder: {
       invalidUser: "Å_Sorry, you don't have permission to view this item_ö",

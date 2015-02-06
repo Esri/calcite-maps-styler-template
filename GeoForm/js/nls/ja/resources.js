@@ -119,7 +119,8 @@
       fileTooLargeError: "須_File too large to attach_鷗",
       exceededFileCountError: "須_Exceeded maximum no. of attachments allowed_鷗",
       selectFileTitle: "須_Select a file_鷗",
-      btnViewSubmissions: "須_View Submissions_鷗"
+      btnViewSubmissions: "須_View Submissions_鷗",
+      dateFormat: "須_MM/DD/YYYY h:mm a_鷗"
     },
     builder: {
       invalidUser: "須_Sorry, you don't have permission to view this item_鷗",

@@ -119,7 +119,8 @@
       fileTooLargeError: "试_File too large to attach_验",
       exceededFileCountError: "试_Exceeded maximum no. of attachments allowed_验",
       selectFileTitle: "试_Select a file_验",
-      btnViewSubmissions: "试_View Submissions_验"
+      btnViewSubmissions: "试_View Submissions_验",
+      dateFormat: "试_MM/DD/YYYY h:mm a_验"
     },
     builder: {
       invalidUser: "试_Sorry, you don't have permission to view this item_验",

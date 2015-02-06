@@ -119,7 +119,8 @@
       fileTooLargeError: "כן_File too large to attach_ש",
       exceededFileCountError: "כן_Exceeded maximum no. of attachments allowed_ש",
       selectFileTitle: "כן_Select a file_ש",
-      btnViewSubmissions: "כן_View Submissions_ש"
+      btnViewSubmissions: "כן_View Submissions_ש",
+      dateFormat: "כן_MM/DD/YYYY h:mm a_ש"
     },
     builder: {
       invalidUser: "כן_Sorry, you don't have permission to view this item_ש",

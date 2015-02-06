@@ -119,7 +119,8 @@
       fileTooLargeError: "Đ_File too large to attach_ớ",
       exceededFileCountError: "Đ_Exceeded maximum no. of attachments allowed_ớ",
       selectFileTitle: "Đ_Select a file_ớ",
-      btnViewSubmissions: "Đ_View Submissions_ớ"
+      btnViewSubmissions: "Đ_View Submissions_ớ",
+      dateFormat: "Đ_MM/DD/YYYY h:mm a_ớ"
     },
     builder: {
       invalidUser: "Đ_Sorry, you don't have permission to view this item_ớ",

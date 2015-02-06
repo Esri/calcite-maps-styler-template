@@ -119,7 +119,8 @@
       fileTooLargeError: "한_File too large to attach_빠",
       exceededFileCountError: "한_Exceeded maximum no. of attachments allowed_빠",
       selectFileTitle: "한_Select a file_빠",
-      btnViewSubmissions: "한_View Submissions_빠"
+      btnViewSubmissions: "한_View Submissions_빠",
+      dateFormat: "한_MM/DD/YYYY h:mm a_빠"
     },
     builder: {
       invalidUser: "한_Sorry, you don't have permission to view this item_빠",

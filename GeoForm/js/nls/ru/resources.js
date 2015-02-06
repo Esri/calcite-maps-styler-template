@@ -119,7 +119,8 @@
       fileTooLargeError: "Ж_File too large to attach_Я",
       exceededFileCountError: "Ж_Exceeded maximum no. of attachments allowed_Я",
       selectFileTitle: "Ж_Select a file_Я",
-      btnViewSubmissions: "Ж_View Submissions_Я"
+      btnViewSubmissions: "Ж_View Submissions_Я",
+      dateFormat: "Ж_MM/DD/YYYY h:mm a_Я"
     },
     builder: {
       invalidUser: "Ж_Sorry, you don't have permission to view this item_Я",

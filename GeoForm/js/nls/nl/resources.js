@@ -119,7 +119,8 @@
       fileTooLargeError: "Ĳ_File too large to attach_ä",
       exceededFileCountError: "Ĳ_Exceeded maximum no. of attachments allowed_ä",
       selectFileTitle: "Ĳ_Select a file_ä",
-      btnViewSubmissions: "Ĳ_View Submissions_ä"
+      btnViewSubmissions: "Ĳ_View Submissions_ä",
+      dateFormat: "Ĳ_MM/DD/YYYY h:mm a_ä"
     },
     builder: {
       invalidUser: "Ĳ_Sorry, you don't have permission to view this item_ä",
