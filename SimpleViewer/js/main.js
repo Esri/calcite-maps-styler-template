@@ -187,10 +187,7 @@ ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawe
 
 
                 search.startup();
-           
-
-
-
+        
                 if (search && search.domNode) {
                     domConstruct.place(search.domNode, "search");
                 }
@@ -253,7 +250,6 @@ ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawe
             }
             //hide arrows if legend or about if both options aren't shown
             if(noAbout ||  noLegend){
-                console.log("no about")
                 query(".ac-container").forEach(function(node){
                     domClass.add(node, "no-label");
                 });
@@ -343,10 +339,8 @@ ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawe
             //Query for the title areas in the drawer and  apply the panel theme.
             query(".ab").style("backgroundColor", this.paneltheme.toString());
 
-            this._drawer.toggle();
             this._drawer.resize();
-            this_drawer.toggle();
-            //registry.byId("border_container").resize();
+            registry.byId("border_container").resize();
         }
     });
 });
