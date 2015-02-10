@@ -13,8 +13,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <!-- End Responsive -->
   <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
-  <link rel="stylesheet" href="//js.arcgis.com/3.12//dijit/themes/claro/claro.css">
-  <link rel="stylesheet" href="//js.arcgis.com/3.12/esri/css/esri.css">
+  <link rel="stylesheet" href="//jsdev.arcgis.com/3.13//dijit/themes/claro/claro.css">
+  <link rel="stylesheet" href="//jsdev.arcgis.com/3.13/esri/css/esri.css">
   <!-- Load any application specific styles -->
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -25,9 +25,6 @@
   </div>
     <div id="mainContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="gutters:false">
       <div id="topContainer" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
-        <span id="titleNode"></span>
-        <br/>
-        <span id="snippetNode"></span>
       </div>
       <div id="mapPane" dir="ltr" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"> 
         <div id="geocoder"></div>
@@ -48,7 +45,7 @@
     var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
     var dojoConfig = {
       parseOnLoad:true,
-      //has: {'dojo-bidi': (["ar", "he"].indexOf(navigator.language) > -1)},
+      has: {'dojo-bidi': (["ar", "he"].indexOf(navigator.language) > -1)},
       // The locationPath logic below may look confusing but all its doing is
       // enabling us to load the api from a CDN and load local modules from the correct location.
       packages: [{
@@ -63,7 +60,7 @@
             }]
     };
   </script>
-  <script type="text/javascript" src="//js.arcgis.com/3.12/"></script>
+  <script type="text/javascript" src="//jsdev.arcgis.com/3.13/"></script>
   <script type="text/javascript">
     require([
             "config/templateConfig",
