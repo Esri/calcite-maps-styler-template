@@ -364,6 +364,23 @@ th
     font-weight: bold;
 }
 
+.esriCTDetailsContainerParent
+{
+    display: table;
+    width: 100%;
+}
+
+.esriCTDetailsContainerRow
+{
+    display: table-row;
+}
+
+.esriCTDetailsContainerCell
+{
+    display: table-cell;
+    width: 100%;
+}
+
 /* End of Web Map List */
 
 /* Data viewer */
@@ -384,6 +401,7 @@ th
 {
     width: 100%;
     cellspacing: 0;
+    table-layout: fixed;
 }
 
 .esriCTDataViewerParentDiv, .dataTables_wrapper, .dataTables_wrapper .dataTables_scroll
@@ -393,7 +411,7 @@ th
 
 .dataTables_scroll div.dataTables_scrollBody
 {
-    height: calc(100% - 36px) !important;
+    height: calc(100% - 37px) !important;
     cursor: default !important;
 }
 
@@ -432,15 +450,17 @@ table.dataTable
     margin-top: 0px !important;
 }
 
-table.dataTable tbody > tr > td
+table.dataTable tbody > tr > td, table.dataTable thead > tr > th
 {
-    padding-left: 5px;
+    padding-left: 8px;
 }
+
 
 table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td
 {
     border-right: 1px solid #dddddd;
-    border-top: 1px solid #cccccc;
+    border-top: none;
+    border-bottom: 1px solid #cccccc;
 }
 
 table.dataTable th, table.dataTable td
@@ -488,6 +508,7 @@ table.dataTable thead .sorting_desc_disabled
     width: 100% !important;
     min-width: 200px !important;
     height: 34px;
+    padding-left: 12px !important;
 }
 
 .esriCTDetailsTab
@@ -582,6 +603,31 @@ table.dataTable tbody td
     cursor: row-resize;
 }
 
+.esriCTCustomPopupDiv
+{
+    margin: 5px 15px 5px 0px;
+}
+
+.esriCTDataViewerTableCellContent
+{
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 250px !important;
+}
+
+.esriCTDataViewerTableHeaderContent
+{
+    min-width: 250px !important;
+}
+
+.esriCTInfoLink
+{
+    color: blue;
+    text-decoration: underline;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
 /* End of data viewer */
 
 /* Application Header Styles */
@@ -653,7 +699,7 @@ table.dataTable tbody td
 .esriCTOptionsViewMode
 {
     right: 126px;
-    width: 100px;
+    min-width: 100px;
 }
 
 .esriCTSettingsOptions
@@ -767,7 +813,7 @@ table.dataTable tbody td
 {
     display: inline-block;
     border: 1px solid #b4b4b4;
-    width: 100px;
+    min-width: 100px;
     background: #fff;
 }
 
@@ -797,27 +843,27 @@ table.dataTable tbody td
     border-radius: 0px;
     border: 1px solid #ddd;
     color: #555;
+    padding-left: 5px;
 }
 
 .esriCTClearBtn
 {
     background: url('../images/clear-text-24.png') no-repeat center;
-    height: 22px;
-    width: 22px;
-    background-size: 22px;
+    height: 24px;
+    width: 24px;
+    background-size: 24px;
     cursor: pointer;
     position: inherit;
     background-color: #fff;
+    float:left;
 }
 
 .esriCTClearDiv
 {
-    background: none repeat scroll 0 0 #FFFFFF;
     border-top: 1px solid #DFDFDF;
     border-right: 1px solid #DFDFDF;
     border-bottom: 1px solid #DFDFDF;
     cursor: pointer;
-    float: left;
 }
 
 .esriCTSearchButton
@@ -845,3 +891,21 @@ table.dataTable tbody td
 }
 
 /* End of application header styles */
+
+/* Sign out */
+
+.esriCTSignOut
+{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.esriCTSignOutParentDiv
+{
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+/* Sign out */

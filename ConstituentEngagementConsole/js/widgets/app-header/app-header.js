@@ -105,6 +105,7 @@ define([
                     domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/images/app-icon.png");
                 }
                 applicationIcon = domAttr.get(this.applicationHeaderIcon, "src");
+                // load application shortcut icons
                 this._loadIcons("apple-touch-icon-precomposed", applicationIcon);
                 this._loadIcons("apple-touch-icon", applicationIcon);
                 this._setApplicationShortcutIcon();
@@ -125,6 +126,10 @@ define([
                     domClass.add(this.applicationHeaderWidgetsContainer, "esriCTHidden");
                     domClass.remove(this.esriCTSignInButton, "esriCTHidden");
                 }
+                //tooltip is coming from nls
+                domAttr.set(this.settingsDataViewerBtn, "title", dojo.configData.i18n.applicationHeader.settingsBtnToolTip);
+                domAttr.set(this.viewModeBtn, "title", dojo.configData.i18n.applicationHeader.viewModeBtnToolTip);
+                domAttr.set(this.searchModeBtn, "title", dojo.configData.i18n.applicationHeader.searchModeBtnToolTip);
                 this._onSettingsIconClick();
                 this._setSettingsOptionText();
                 this._setSearchPanelText();
@@ -231,7 +236,11 @@ define([
             icon = domConstruct.create("link");
             icon.rel = rel;
             icon.type = "image/x-icon";
-            icon.href = dojoConfig.baseURL + iconPath;
+            if (iconPath.indexOf("http") === 0) {
+                icon.href = iconPath;
+            } else {
+                icon.href = dojoConfig.baseURL + iconPath;
+            }
             document.getElementsByTagName('head')[0].appendChild(icon);
         },
 
@@ -258,7 +267,21 @@ define([
         */
         _handleLogoutClick: function () {
             on(this.esriCTLogoutOption, "click", lang.hitch(this, function (evt) {
-                location.reload();
+                var signOutParentDiv, signOutMessageDiv;
+                signOutParentDiv = domConstruct.create("div", {
+                    "class": "esriCTSignOutParentDiv"
+                });
+                signOutMessageDiv = domConstruct.create("div", {
+                    "class": "esriCTSignOut"
+                }, signOutParentDiv);
+                domConstruct.create("div", {
+                    "innerHTML": dojo.configData.i18n.signOutPage.signOutMessage
+                }, signOutMessageDiv);
+                domConstruct.create("a", {
+                    "href": "",
+                    "innerHTML": dojo.configData.i18n.signOutPage.reSignInMessage
+                }, signOutMessageDiv);
+                document.body.innerHTML = signOutParentDiv.outerHTML;
             }));
         },
 

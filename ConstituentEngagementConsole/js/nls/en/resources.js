@@ -14,10 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-//Lbl-Label, Txt-Text, Err-Error, Msg-Message
-define(
-    ({
-        map: {
+define(({
+       map: {
             error: "Unable to create map"
         },
         main: {
@@ -34,7 +32,8 @@ define(
             tags: "Tags",
             numViews: "Number of views",
             avgRating: "Rating",
-            noWebMapInGroup: "Configured group is invalid or no items have been shared with this group yet"
+            noWebMapInGroup: "Configured group is invalid or no items have been shared with this group yet",
+            infoBtnToolTip: "Map Information"
         },
         applicationHeader: {
             signOutOption: "Sign Out",
@@ -46,12 +45,15 @@ define(
             zoomToSelectedOption: "Zoom To Selected",
             gridViewOption: "List View",
             mapViewOption: "Map View",
-            gridMapViewOption: "Split View"
+            gridMapViewOption: "Split View",
+            settingsBtnToolTip: "Selection Options",
+            viewModeBtnToolTip: "View Options",
+            searchModeBtnToolTip: "Layer Search"
         },
         dataviewer: {
             noFeaturesInCurrentExtent: "No issues in current extent",
-            singleFeatureSelection: "No issue/feature selected",
-            multipleFeatureSelection: "Multiple issues/features selected",
+            singleFeatureSelection: "Please select a single feature to view the item details",
+            multipleFeatureSelection: "Please select a single feature to view the item details",
             photoAttachmentHeader: "Photo",
             invalidSmallNumber: "Please enter valid integer value between -32768 and 32767",
             invalidNumber: "Please enter valid integer value between -2147483648 and 2147483647",
@@ -59,10 +61,23 @@ define(
             invalidDouble: "Please enter valid double value between -2.2E308 and 1.8E308",
             invalidString: "Please enter valid value",
             invalidDate: "Please enter valid date",
-            invalidNumericRange: "Minimum value ${minValue} and Maximum value ${maxValue}"
+            invalidNumericRange: "Minimum value ${minValue} and Maximum value ${maxValue}",
+            moreInfolink: "Link"
         },
         config: {
             configNotDefined: "Config is not defined"
+        },
+        searchPanel: {
+            noResultsFound: "No results found"
+        },
+        mapViewer: {
+            detailsBtnToolTip: "View Details",
+            locationBtnToolTip: "View Map",
+            zoomInToolTip: "Zoom In",
+            zoomOutToolTip: "Zoom Out"
+        },
+        signOutPage: {
+            signOutMessage: "You've been successfully signed out.",
+            reSignInMessage: "Click here to sign in"
         }
-    })
-);
+}));

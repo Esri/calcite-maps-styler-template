@@ -101,37 +101,68 @@ define(["dojo/dom",
         * @memberOf utils/utils
         */
         getDateFormat: function (type) {
+            var obj = {};
             switch (type) {
             case "shortDate":
-                return "MM/DD/YYYY";
+                obj.dateFormat = "MM/DD/YYYY";
+                obj.showTime = false;
+                return obj;
             case "shortDateLE":
-                return "DD/MM/YYYY";
+                obj.dateFormat = "DD/MM/YYYY";
+                obj.showTime = false;
+                return obj;
             case "longMonthDayYear":
-                return "MMMM DD,YYYY";
+                obj.dateFormat = "MMMM DD, YYYY";
+                obj.showTime = false;
+                return obj;
             case "dayShortMonthYear":
-                return "DD MMM YYYY";
+                obj.dateFormat = "DD MMM YYYY";
+                obj.showTime = false;
+                return obj;
             case "longDate":
-                return "dddd, MMMM DD, YYYY";
+                obj.dateFormat = "dddd, MMMM DD, YYYY";
+                obj.showTime = false;
+                return obj;
             case "shortDateLongTime":
-                return "MM/DD/YYYY h:mm:ss a";
+                obj.dateFormat = "MM/DD/YYYY h:mm:ss a";
+                obj.showTime = true;
+                return obj;
             case "shortDateLELongTime":
-                return "DD/MM/YYYY h:mm:ss a";
+                obj.dateFormat = "DD/MM/YYYY h:mm:ss a";
+                obj.showTime = true;
+                return obj;
             case "shortDateShortTime":
-                return "DD/MM/YYYY h:mm a";
+                obj.dateFormat = "DD/MM/YYYY h:mm a";
+                obj.showTime = true;
+                return obj;
             case "shortDateLEShortTime":
-                return "MM/DD/YYYY h:mm a";
+                obj.dateFormat = "MM/DD/YYYY h:mm a";
+                obj.showTime = true;
+                return obj;
             case "shortDateShortTime24":
-                return "MM/DD/YYYY HH:mm";
+                obj.dateFormat = "MM/DD/YYYY HH:mm";
+                obj.showTime = true;
+                return obj;
             case "shortDateLEShortTime24":
-                return "MM/DD/YYYY HH:mm";
+                obj.dateFormat = "MM/DD/YYYY HH:mm";
+                obj.showTime = true;
+                return obj;
             case "longMonthYear":
-                return "MMMM YYYY";
+                obj.dateFormat = "MMMM YYYY";
+                obj.showTime = false;
+                return obj;
             case "shortMonthYear":
-                return "MMM YYYY";
+                obj.dateFormat = "MMM YYYY";
+                obj.showTime = false;
+                return obj;
             case "year":
-                return "YYYY";
+                obj.dateFormat = "YYYY";
+                obj.showTime = false;
+                return obj;
             default:
-                return "MMMM DD,YYYY";
+                obj.dateFormat = "MMMM DD, YYYY";
+                obj.showTime = false;
+                return obj;
             }
         },
 
@@ -141,6 +172,26 @@ define(["dojo/dom",
         */
         convertNumberToThousandSeperator: function (number) {
             return number.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+        },
+
+        /**
+        * To determine the andriod operating system
+        * @returns {bool}
+        * @memberOf utils/utils
+        */
+        isAndroid: function () {
+            var ua = navigator.userAgent.toLowerCase();
+            return ua.indexOf("android") > -1;
+        },
+
+        /**
+        * To determine the ios operating system
+        * @returns {bool}
+        * @memberOf utils/utils
+        */
+        isIos: function () {
+            var ua = navigator.userAgent.toLowerCase();
+            return ua.indexOf("ipad") > -1;
         }
     };
 });

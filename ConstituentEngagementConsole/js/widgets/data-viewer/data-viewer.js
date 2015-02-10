@@ -43,7 +43,8 @@ define([
     "dojo/dom",
     "dojo/string",
     "dojo/dom-attr",
-    "dojo/dom-style"
+    "dojo/dom-style",
+    "dojo/dom-geometry"
 ], function (
     declare,
     lang,
@@ -72,7 +73,8 @@ define([
     dom,
     string,
     domAttr,
-    domStyle
+    domStyle,
+    domGeometry
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: dijitTemplate,
@@ -96,17 +98,20 @@ define([
         _updatedGraphic: null, // store graphic when it is updated
         _updatedField: null, // store name of the field when it is updated
         _existingDefinitionExpression: null, // store existing definition expression that is set to feature layer
+        _newDefinitionExpression: null, // store new definition expression that is set to feature layer
         _updatedFieldAttribute: {}, // to store dependent field attributes that needs to be updated
         _updatedTextInputControl: [], // to store dependent text input control which are updated
         _updatedDropDownControl: [], // to store dependent drop down control which are updated
         _updateDatePickerControl: [], // to store dependent date picker control which are updated
-        _isOrientationChangedInListView: false, // to keep track whether orientation is changed in list view or not
+        _isShowSelectedClickedInMapView: false, // track whether show selected is clicked in map view or not
+        isOrientationChangedInListView: false, // to keep track whether orientation is changed in list view or not
         options: {}, // mixin data in this object
         configData: {}, // store configuration data
         map: null, // used to store map object
         selectedOperationalLayerID: null, // store id of operational layer that is selected by user
         popupInfo: null, // store popup info details of operational layer that is selected by user
         isMapViewClicked: false, // keep track whether map view option is clicked or not
+        isGridViewClicked: false, // keep track whether grid view is clicked or not
         isDetailsTabClicked: false, // keep track whether details tab is clicked or not,
         itemInfo: null,
         lastSelectedWebMapExtent: null,
@@ -163,11 +168,13 @@ define([
                     this._onFeatureClick();
                     this._addDataViewerGraphicsLayer();
                     this._clearSelectedFeatures();
-                    if (this._selectedOperationalLayer.graphics.length > 0) {
-                        if (this._selectedOperationalLayer.graphics[0].geometry.type === "point") {
-                            this._isPointLayer = true;
-                        } else {
-                            this._isPointLayer = false;
+                    if (this._selectedOperationalLayer) {
+                        if (this._selectedOperationalLayer.graphics.length > 0) {
+                            if (this._selectedOperationalLayer.graphics[0].geometry.type === "point") {
+                                this._isPointLayer = true;
+                            } else {
+                                this._isPointLayer = false;
+                            }
                         }
                     }
                 }
@@ -179,34 +186,40 @@ define([
                     if (this._isPointLayer) {
                         this._features = this._dataViewerGraphicsLayer.graphics;
                     } else {
-                        this._features = this._selectedOperationalLayer.getSelectedFeatures();
+                        if (this._selectedOperationalLayer) {
+                            this._features = this._selectedOperationalLayer.getSelectedFeatures();
+                        }
                     }
                     this._createDataViewerPanel();
                 } else {
-                    this._displayFeaturesWithinCurrentExtent().then(lang.hitch(this, function (response) {
-                        this._features = response.features;
-                        // if it is point feature than get selected feature from graphics layer
-                        // if it is other than point feature get selected feature from feature layer
-                        if (this._isPointLayer) {
-                            selectedFeatureArr = this._dataViewerGraphicsLayer.graphics;
-                        } else {
-                            selectedFeatureArr = this._selectedOperationalLayer.getSelectedFeatures();
-                        }
-                        // to combine both selected feature and new features in current extent
-                        if (selectedFeatureArr.length > 0) {
-                            this._features = this._features.concat(selectedFeatureArr);
-                            this._features = this._removeDuplicateFeatures(this._features);
-                        }
+                    if (this._selectedOperationalLayer) {
+                        this._displayFeaturesWithinCurrentExtent().then(lang.hitch(this, function (response) {
+                            this._features = response.features;
+                            // if it is point feature than get selected feature from graphics layer
+                            // if it is other than point feature get selected feature from feature layer
+                            if (this._isPointLayer) {
+                                selectedFeatureArr = this._dataViewerGraphicsLayer.graphics;
+                            } else {
+                                selectedFeatureArr = this._selectedOperationalLayer.getSelectedFeatures();
+                            }
+                            // to combine both selected feature and new features in current extent
+                            if (selectedFeatureArr.length > 0) {
+                                this._features = this._features.concat(selectedFeatureArr);
+                                this._features = this._removeDuplicateFeatures(this._features);
+                            }
 
-                        if (this._features.length > 0) {
-                            this._createDataViewerPanel();
-                        } else {
-                            domClass.remove(this.noFeatureDiv, "esriCTHidden");
-                            domClass.add(this.dataViewerParentDiv, "esriCTHidden");
-                            this.noFeatureDiv.innerHTML = dojo.configData.i18n.dataviewer.noFeaturesInCurrentExtent;
-                            dojo.applicationUtils.hideLoadingIndicator();
-                        }
-                    }));
+                            if (this._features.length > 0) {
+                                if (!operationalLayerSelected) {
+                                    this._createDataViewerPanel();
+                                }
+                            } else {
+                                domClass.remove(this.noFeatureDiv, "esriCTHidden");
+                                domClass.add(this.dataViewerParentDiv, "esriCTHidden");
+                                this.noFeatureDiv.innerHTML = dojo.configData.i18n.dataviewer.noFeaturesInCurrentExtent;
+                                dojo.applicationUtils.hideLoadingIndicator();
+                            }
+                        }));
+                    }
                 }
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
@@ -230,6 +243,9 @@ define([
                 if (selectedFeaturesLength > 0) {
                     this.toggleSelectionViewOption(true);
                     this.isShowSelectedClicked = true;
+                    if (this.isMapViewClicked) {
+                        this._isShowSelectedClickedInMapView = true;
+                    }
                     this._addDisabledSearchIcon();
                     this._showSelectedFeatureInDataViewer();
                 }
@@ -243,9 +259,17 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         showAllRecords: function () {
+            var i;
             this.toggleSelectionViewOption(false);
             this._showAllFeaturesInDataViewer();
-            this._addRegularSearchIcon();
+            if (this.itemInfo.itemData.applicationProperties.viewing.search && this.itemInfo.itemData.applicationProperties.viewing.search.enabled) {
+                for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing.search.layers.length; i++) {
+                    if (this.selectedOperationalLayerID === this.itemInfo.itemData.applicationProperties.viewing.search.layers[i].id) {
+                        this._addRegularSearchIcon();
+                        break;
+                    }
+                }
+            }
         },
 
         /**
@@ -263,7 +287,7 @@ define([
         * If show selected option is clicked than this functionality will be freezed
         * @memberOf widgets/data-viewer/data-viewer
         */
-        clearSelection: function () {
+        clearSelection: function (hideMessage) {
             if (!this.isShowSelectedClicked) {
                 $(".esriCTRowSelected").removeClass("esriCTRowSelected");
                 if (this._isPointLayer) {
@@ -271,7 +295,7 @@ define([
                 } else {
                     this._selectedOperationalLayer.clearSelection();
                 }
-                this._resetDetailsTab();
+                this._resetDetailsTab(hideMessage);
                 this._removeControlsFromPreviousRow();
             }
         },
@@ -280,10 +304,12 @@ define([
         * This function is used to reset details tab
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _resetDetailsTab: function () {
+        _resetDetailsTab: function (hideMessage) {
             var parentDiv;
             parentDiv = dom.byId("detailsContentDiv");
-            parentDiv.innerHTML = dojo.configData.i18n.dataviewer.singleFeatureSelection;
+            if (!hideMessage) {
+                parentDiv.innerHTML = dojo.configData.i18n.dataviewer.singleFeatureSelection;
+            }
         },
 
         /**
@@ -345,36 +371,35 @@ define([
                 this.showLocationTab();
             }
             this._setExistingDefinitionExpression();
-            var searchValue = lang.trim($(".esriCTSearchBox")[0].value),
-                newDefinitionExpression;
+            var searchValue = lang.trim($(".esriCTSearchBox")[0].value);
             if (searchValue) {
-                newDefinitionExpression = this._getDefinitionExpression(searchValue);
+                this._newDefinitionExpression = this._getDefinitionExpression(searchValue);
             } else {
                 $(".esriCTNoResults").addClass("esriCTHidden");
-                newDefinitionExpression = this._existingDefinitionExpression;
+                this._newDefinitionExpression = this._existingDefinitionExpression;
             }
-            this._resetDefinitionExpression(newDefinitionExpression);
+            this._resetDefinitionExpression();
             setTimeout(lang.hitch(this, function () {
                 var filteredIconNode;
                 if (this._selectedOperationalLayer.graphics.length === 0) {
                     $(".esriCTNoResults").removeClass("esriCTHidden");
                     $(".esriCTSearchBox")[0].value = "";
-                    newDefinitionExpression = this._existingDefinitionExpression;
-                    this._resetDefinitionExpression(newDefinitionExpression);
+                    this._newDefinitionExpression = this._existingDefinitionExpression;
+                    this._resetDefinitionExpression();
                     filteredIconNode = query(".esriCTSearchFiltered");
                     if (filteredIconNode.length > 0) {
                         this._addRegularSearchIcon();
                         setTimeout(lang.hitch(this, function () {
-                            this.map.setExtent(this.lastSelectedWebMapExtent);
+                            this.map.setExtent(this.lastSelectedWebMapExtent, true);
                         }), 1000);
                     } else {
                         this._addRegularSearchIcon();
                     }
                     dojo.applicationUtils.hideLoadingIndicator();
                 } else {
-                    if (newDefinitionExpression === this._existingDefinitionExpression) {
+                    if (this._newDefinitionExpression === this._existingDefinitionExpression) {
                         this._addRegularSearchIcon();
-                        this.map.setExtent(this.lastSelectedWebMapExtent);
+                        this.map.setExtent(this.lastSelectedWebMapExtent, true);
                     } else {
                         this._addFilteredSearchIcon();
                         this._createNewDataSet();
@@ -391,6 +416,7 @@ define([
             try {
                 var filteredIconNode;
                 $(".esriCTNoResults").addClass("esriCTHidden");
+                $(".esriCTSearchBox")[0].value = lang.trim($(".esriCTSearchBox")[0].value);
                 if (lang.trim($(".esriCTSearchBox")[0].value)) {
                     $(".esriCTSearchBox")[0].value = "";
                 }
@@ -410,7 +436,10 @@ define([
         _resetSearchPanel: function () {
             try {
                 var i;
-                $(".esriCTSearchBox")[0].value = "";
+                if ($(".esriCTSearchBox").length > 0) {
+                    $(".esriCTSearchBox")[0].value = "";
+                    $(".esriCTSearchBox")[0].placeholder = "";
+                }
                 $(".esriCTNoResults").addClass("esriCTHidden");
                 $(".esriCTOptionsSearchMode").removeClass("esriCTVisible");
                 $(".esriCTOptionsSearchMode").addClass("esriCTHidden");
@@ -419,6 +448,12 @@ define([
                     for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing.search.layers.length; i++) {
                         if (this.selectedOperationalLayerID === this.itemInfo.itemData.applicationProperties.viewing.search.layers[i].id) {
                             this._addRegularSearchIcon();
+                            if ($(".esriCTSearchBox").length > 0 && this.itemInfo.itemData.applicationProperties.viewing.search.hintText) {
+                                $(".esriCTSearchBox")[0].placeholder = this.itemInfo.itemData.applicationProperties.viewing.search.hintText;
+                                if (typeof $(".esriCTSearchBox, textarea").placeholder === 'function') {
+                                    $(".esriCTSearchBox, textarea").placeholder();
+                                }
+                            }
                             break;
                         }
                     }
@@ -461,9 +496,9 @@ define([
         * This function is used to reset definition expression
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _resetDefinitionExpression: function (newDefinitionExpression) {
+        _resetDefinitionExpression: function () {
             try {
-                this._selectedOperationalLayer.setDefinitionExpression(newDefinitionExpression);
+                this._selectedOperationalLayer.setDefinitionExpression(this._newDefinitionExpression);
                 this._selectedOperationalLayer.refresh();
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
@@ -538,8 +573,10 @@ define([
                     if (this.selectedOperationalLayerID === this.itemInfo.itemData.operationalLayers[j].id) {
                         if (this.itemInfo.itemData.operationalLayers[j].layerDefinition && this.itemInfo.itemData.operationalLayers[j].layerDefinition.definitionExpression) {
                             this._existingDefinitionExpression = this.itemInfo.itemData.operationalLayers[j].layerDefinition.definitionExpression;
+                            this._newDefinitionExpression = this.itemInfo.itemData.operationalLayers[j].layerDefinition.definitionExpression;
                         } else {
                             this._existingDefinitionExpression = null;
+                            this._newDefinitionExpression = null;
                         }
                     }
                 }
@@ -588,8 +625,12 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         retainShowSelectedModeAfterResize: function () {
-            this.createDataViewerUI(false);
-            this._retainSelectedFeature();
+            if (((dojo.applicationUtils.isAndroid()) && (this.isGridViewClicked)) || ((dojo.applicationUtils.isIos()) && (this.isGridViewClicked))) {
+                this.isOrientationChangedInListView = false;
+            } else {
+                this.createDataViewerUI(false);
+                this._retainSelectedFeature();
+            }
         },
 
         /**
@@ -606,10 +647,13 @@ define([
                     this._dataViewerGraphicsLayer = new GraphicsLayer({
                         "id": "dataViewerGraphicsLayer"
                     });
+                    //this._dataViewerGraphicsLayer.hasOwnProperty("createGroup")
                     this.map.addLayer(this._dataViewerGraphicsLayer);
                 }
             } catch (err) {
-                dojo.applicationUtils.showError(err.message);
+                if (!(err.message.toLowerCase().indexOf("creategroup") > -1)) {
+                    dojo.applicationUtils.showError(err.message);
+                }
             }
         },
 
@@ -619,8 +663,8 @@ define([
         */
         _onMapExtentChange: function () {
             dojo.dataViewerMapExtentHandle = on(this.map, "extent-change", lang.hitch(this, function (evt) {
-                if (this._isOrientationChangedInListView) {
-                    this._isOrientationChangedInListView = false;
+                if (((dojo.applicationUtils.isAndroid()) && (this.isGridViewClicked)) || ((dojo.applicationUtils.isIos()) && (this.isGridViewClicked))) {
+                    this.isOrientationChangedInListView = false;
                 } else {
                     this._detachEvents();
                     this._isTextInputInFocus = false;
@@ -656,6 +700,9 @@ define([
             if ((!this.isShowSelectedClicked) && (!this.isMapViewClicked)) {
                 this.createDataViewerUI(false);
                 this._retainSelectedFeature();
+            } else if ((this._isShowSelectedClickedInMapView) && (!this.isMapViewClicked)) {
+                this._isShowSelectedClickedInMapView = false;
+                this.retainShowSelectedModeAfterResize();
             } else {
                 dojo.applicationUtils.hideLoadingIndicator();
             }
@@ -667,12 +714,18 @@ define([
         */
         _displayFeaturesWithinCurrentExtent: function () {
             try {
-                var featureQuery, deferred;
+                var featureQuery, deferred, featureLayer;
                 featureQuery = new Query();
                 featureQuery.outSpatialReference = this.map.spatialReference;
                 featureQuery.returnGeometry = true;
                 featureQuery.geometry = this.map.extent;
-                deferred = this._selectedOperationalLayer.queryFeatures(featureQuery);
+                featureQuery.outFields = ["*"];
+                featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
+                if (this._newDefinitionExpression !== this._existingDefinitionExpression) {
+                    featureLayer.setDefinitionExpression(this._newDefinitionExpression);
+                    featureLayer.refresh();
+                }
+                deferred = featureLayer.queryFeatures(featureQuery);
                 return deferred;
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
@@ -691,7 +744,6 @@ define([
                     $(this).addClass("esriCTRowSelected");
                 });
             } catch (err) {
-
                 dojo.applicationUtils.showError(err.message);
             }
         },
@@ -723,14 +775,17 @@ define([
                 if (this._isPointLayer) {
                     selectedFeatureArr = this._dataViewerGraphicsLayer.graphics;
                 } else {
-                    selectedFeatureArr = this._selectedOperationalLayer.getSelectedFeatures();
+                    if (this._selectedOperationalLayer) {
+                        selectedFeatureArr = this._selectedOperationalLayer.getSelectedFeatures();
+                    }
                 }
-                for (i = 0; i < selectedFeatureArr.length; i++) {
-                    objectID = selectedFeatureArr[i].attributes.objectid || selectedFeatureArr[i].attributes.OBJECTID;
-                    this._highlightRowOnFeatureClick(objectID);
+                if (selectedFeatureArr) {
+                    for (i = 0; i < selectedFeatureArr.length; i++) {
+                        objectID = selectedFeatureArr[i].attributes.objectid || selectedFeatureArr[i].attributes.OBJECTID;
+                        this._highlightRowOnFeatureClick(objectID);
+                    }
                 }
             } catch (err) {
-
                 dojo.applicationUtils.showError(err.message);
             }
         },
@@ -832,7 +887,6 @@ define([
                 this._createDataViewerDataPanel();
                 dojo.applicationUtils.hideLoadingIndicator();
             } catch (err) {
-
                 dojo.applicationUtils.showError(err.message);
             }
         },
@@ -843,16 +897,18 @@ define([
         */
         _onFeatureClick: function () {
             try {
-                dojo.dataViewerFeatureLayerHandle = on(this._selectedOperationalLayer, "click", lang.hitch(this, function (evt) {
-                    if (!this.isShowSelectedClicked) {
-                        this._removeControlsFromPreviousRow();
-                        if (this._isCurrentFeatureSelected(evt.graphic)) {
-                            this._deSelectFeatureOnMapClick(evt.graphic);
-                        } else {
-                            this._selectFeatureOnMapClick(evt.graphic);
+                if (this._selectedOperationalLayer) {
+                    dojo.dataViewerFeatureLayerHandle = on(this._selectedOperationalLayer, "click", lang.hitch(this, function (evt) {
+                        if (!this.isShowSelectedClicked) {
+                            this._removeControlsFromPreviousRow();
+                            if (this._isCurrentFeatureSelected(evt.graphic)) {
+                                this._deSelectFeatureOnMapClick(evt.graphic);
+                            } else {
+                                this._selectFeatureOnMapClick(evt.graphic);
+                            }
                         }
-                    }
-                }));
+                    }));
+                }
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
@@ -866,13 +922,15 @@ define([
         */
         _selectFeatureOnMapClick: function (feature) {
             try {
-                var objectId,
-                    featureQuery = new Query();
+                var objectId, featureQuery, featureLayer;
+                featureQuery = new Query();
                 objectId = feature.attributes.objectid || feature.attributes.OBJECTID;
                 featureQuery.objectIds = [parseInt(objectId, 10)];
                 featureQuery.outSpatialReference = this.map.spatialReference;
                 featureQuery.returnGeometry = true;
-                this._selectedOperationalLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
+                featureQuery.outFields = ["*"];
+                featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
+                featureLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
                     // if it is point feature than add selected feature on graphics layer
                     // if it is other than point feature than select feature using selectFeatures method & FeatureLayer.SELECTION_ADD option
                     if (this._isPointLayer) {
@@ -896,11 +954,13 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _highlightRowOnFeatureClick: function (objectId) {
-            $('#dataViewerTable tr').each(function () {
-                if (parseInt($(this).find('td').eq(0).text(), 10) === objectId) {
-                    $(this).addClass("esriCTRowSelected");
-                }
-            });
+            setTimeout(function () {
+                $('#dataViewerTable tr').each(function () {
+                    if (parseInt($(this).find('td').eq(0).text(), 10) === objectId) {
+                        $(this).addClass("esriCTRowSelected");
+                    }
+                });
+            }, 1500);
         },
 
         /**
@@ -999,7 +1059,9 @@ define([
                 if (this._features.length > 0) {
                     this._getFieldProperties();
                     for (i = 0; i < this._displayColumn.length; i++) {
-                        tableHeader = domConstruct.create("th", {});
+                        tableHeader = domConstruct.create("th", {
+                            "class": "esriCTDataViewerTableHeaderContent"
+                        });
                         tableHeader.innerHTML = this._displayColumn[i].label;
                         tr.appendChild(tableHeader);
                     }
@@ -1025,7 +1087,7 @@ define([
                 for (i = 0; i < this.popupInfo.fieldInfos.length; i++) {
                     for (j = 0; j < this._selectedOperationalLayer.fields.length; j++) {
                         if (this._selectedOperationalLayer.fields[j].name === this.popupInfo.fieldInfos[i].fieldName) {
-                            if ((this.popupInfo.fieldInfos[i].visible) || (this.popupInfo.fieldInfos[i].fieldName.toLowerCase() === "objectid")) {
+                            if ((this.popupInfo.fieldInfos[i].visible) || (this.popupInfo.fieldInfos[i].fieldName.toLowerCase() === "objectid") || (this.popupInfo.fieldInfos[i].isEditable)) {
                                 obj = {};
                                 obj.type = this._selectedOperationalLayer.fields[j].type;
                                 obj.displayField = true;
@@ -1056,6 +1118,12 @@ define([
                                 if (this._selectedOperationalLayer.typeIdField === this.popupInfo.fieldInfos[i].fieldName) {
                                     obj.types = this._selectedOperationalLayer.types;
                                 }
+                                if (this.popupInfo.fieldInfos[i].visible) {
+                                    obj.showInDetailsTab = true;
+                                }
+                                if (this.popupInfo.fieldInfos[i].visible && this.popupInfo.fieldInfos[i].fieldName.toLowerCase() === "objectid") {
+                                    obj.showObjectIdField = true;
+                                }
                                 this._displayColumn.push(obj);
                             }
                         }
@@ -1072,7 +1140,7 @@ define([
         */
         _createDataViewerDataPanel: function () {
             try {
-                var i, j, number, fieldName, format, type, value, dateFormat, k, n;
+                var i, j, number, fieldName, format, type, value, dateFormat, k, n, id, m, isCodeMatched;
                 this._entireFeatureDataArr = [];
                 for (i = 0; i < this._features.length; i++) {
                     this._dataSet = [];
@@ -1082,7 +1150,7 @@ define([
                             format = this._displayColumn[j].format;
                             type = this._displayColumn[j].type;
                             value = this._features[i].attributes[fieldName];
-                            dateFormat = dojo.applicationUtils.getDateFormat(format);
+                            dateFormat = dojo.applicationUtils.getDateFormat(format).dateFormat;
                             switch (type) {
                             case "esriFieldTypeOID":
                                 this._dataSet.push(value);
@@ -1119,6 +1187,26 @@ define([
                                     } else {
                                         this._dataSet.push(value);
                                     }
+                                } else if (this._selectedOperationalLayer.types && this._selectedOperationalLayer.types.length > 0 && this._selectedOperationalLayer.types[0].domains && this._selectedOperationalLayer.types[0].domains[fieldName] && this._selectedOperationalLayer.types[0].domains[fieldName].codedValues) {
+                                    isCodeMatched = false;
+                                    id = this._features[i].attributes[this._selectedOperationalLayer.typeIdField];
+                                    for (m = 0; m < this._selectedOperationalLayer.types.length; m++) {
+                                        if (this._selectedOperationalLayer.types[m].id === id) {
+                                            for (n = 0; n < this._selectedOperationalLayer.types[m].domains[fieldName].codedValues.length; n++) {
+                                                if (value === this._selectedOperationalLayer.types[m].domains[fieldName].codedValues[n].code) {
+                                                    isCodeMatched = true;
+                                                    if (value || value === 0) {
+                                                        this._dataSet.push(this._selectedOperationalLayer.types[m].domains[fieldName].codedValues[n].name);
+                                                    } else {
+                                                        this._dataSet.push(value);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    if (!isCodeMatched) {
+                                        this._dataSet.push(value);
+                                    }
                                 } else {
                                     if (this._displayColumn[j].numberFormat) {
                                         if (value || value === 0) {
@@ -1153,13 +1241,21 @@ define([
         */
         _convertHtmlTableToDataTable: function () {
             try {
-                var columnWidth = null;
-                if ((this._displayColumn.length - 1) === 1) {
-                    columnWidth = "100%";
-                } else if ((this._displayColumn.length - 1) === 2) {
-                    columnWidth = "50%";
-                } else {
-                    columnWidth = "200px";
+                var domNodeWidth, columnWidth, displayColumnCount, objectIdFieldClass;
+                domNodeWidth = domGeometry.getMarginBox(this.dataViewerParentDiv).w;
+                columnWidth = "250px";
+                if (this._displayColumn.length > 0) {
+                    if (this._displayColumn[0].showObjectIdField) {
+                        objectIdFieldClass = null;
+                        displayColumnCount = this._displayColumn.length;
+                    } else {
+                        objectIdFieldClass = "esriCTHiddenColumn";
+                        displayColumnCount = this._displayColumn.length - 1;
+                    }
+                }
+                if ((displayColumnCount * 250) < domNodeWidth) {
+                    columnWidth = (domNodeWidth / displayColumnCount) + 10;
+                    columnWidth += "px";
                 }
                 this._dataViewerTable = $('#dataViewerTable').DataTable({
                     "destroy": true,
@@ -1170,7 +1266,7 @@ define([
                     "scrollCollapse": true,
                     "paging": false, // to disable pagination
                     "aoColumnDefs": [{
-                        "sClass": "esriCTHiddenColumn",
+                        "sClass": objectIdFieldClass,
                         "aTargets": [0]
                     }, {
                         "sDefaultContent": "", // when no data is available to display
@@ -1180,6 +1276,24 @@ define([
                     "autoWidth": true
                 });
                 this._onRowClick();
+                this._restrictSizeOfTableCellContent();
+                this._retainSelectedFeature();
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to restrict size of table cell content
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _restrictSizeOfTableCellContent: function () {
+            try {
+                $('#dataViewerTable tr').each(function () {
+                    $(this).children('td').filter(function () {
+                        $(this).addClass('esriCTDataViewerTableCellContent');
+                    });
+                });
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
@@ -1222,11 +1336,13 @@ define([
                             this._lastEditedControl = evt;
                             this._updateFeature(evt.currentTarget.value, evt.currentTarget.name);
                         }
+                        this.OnEditingComplete();
                     }),
                     focus: lang.hitch(this, function (evt) {
                         this._emptyDependentControls();
                         this._featureObjectID = this._fetchObjectID(evt.currentTarget.parentElement.parentElement);
                         this._isTextInputInFocus = true;
+                        this.OnEditingStart();
                     })
                 });
                 $(".esriCTCodedDomain").on({
@@ -1250,19 +1366,23 @@ define([
                         this._emptyDependentControls();
                         this._isDropDownClicked = true;
                         this._featureObjectID = this._fetchObjectID(evt.currentTarget.parentElement.parentElement);
+                        //this.OnEditingStart();
                     }),
                     blur: lang.hitch(this, function (evt) {
                         this._isDropDownClicked = false;
+                        //this.OnEditingComplete();
                     })
                 });
                 $(".esriCTDateInputField").on({
                     blur: lang.hitch(this, function (evt) {
                         this._emptyDependentControls();
                         this._isDateTextInputInFocus = false;
+                        this.OnEditingComplete();
                     }),
                     focus: lang.hitch(this, function (evt) {
                         this._emptyDependentControls();
                         this._isDateTextInputInFocus = true;
+                        this.OnEditingStart();
                     })
                 });
             } catch (err) {
@@ -1368,11 +1488,14 @@ define([
         */
         _updateFeature: function (newValue, field) {
             try {
-                var featureLayerQuery = new Query();
+                var featureLayerQuery, featureLayer;
+                featureLayerQuery = new Query();
                 featureLayerQuery.outSpatialReference = this.map.spatialReference;
                 featureLayerQuery.objectIds = [parseInt(this._featureObjectID, 10)];
                 featureLayerQuery.returnGeometry = true;
-                this._selectedOperationalLayer.queryFeatures(featureLayerQuery, lang.hitch(this, function (featureSet) {
+                featureLayerQuery.outFields = ["*"];
+                featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
+                featureLayer.queryFeatures(featureLayerQuery, lang.hitch(this, function (featureSet) {
                     if (featureSet.features.length > 0) {
                         var i, type, obj, attrname, attr;
                         attr = {};
@@ -1381,9 +1504,9 @@ define([
                         } else {
                             attr.objectid = parseInt(this._featureObjectID, 10);
                         }
-                        for (i = 0; i < featureSet.features[0]._layer.fields.length; i++) {
-                            if (featureSet.features[0]._layer.fields[i].name === field) {
-                                type = featureSet.features[0]._layer.fields[i].type;
+                        for (i = 0; i < featureSet.fields.length; i++) {
+                            if (featureSet.fields[i].name === field) {
+                                type = featureSet.fields[i].type;
                                 switch (type) {
                                 case "esriFieldTypeString":
                                     attr[field] = newValue;
@@ -1422,13 +1545,15 @@ define([
                                     var className, newValueArr, newValueStr;
                                     className = this._lastEditedControl.currentTarget.className;
                                     if (className.indexOf("esriCTDateTimePicker") > -1) {
-                                        newValueArr = this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name.split('|');
-                                        if (newValue) {
-                                            newValueStr = newValueArr[0] + "|" + parseInt(newValue, 10) + "|" + newValueArr[2];
-                                        } else {
-                                            newValueStr = newValueArr[0] + "||" + newValueArr[2];
+                                        if (this._lastEditedControl.currentTarget.parentElement && this._lastEditedControl.currentTarget.parentElement.childNodes && this._lastEditedControl.currentTarget.parentElement.childNodes[0] && this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes && this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0]) {
+                                            newValueArr = this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name.split('|');
+                                            if (newValue) {
+                                                newValueStr = newValueArr[0] + "|" + parseInt(newValue, 10) + "|" + newValueArr[2];
+                                            } else {
+                                                newValueStr = newValueArr[0] + "||" + newValueArr[2];
+                                            }
+                                            this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name = newValueStr;
                                         }
-                                        this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name = newValueStr;
                                     }
                                     if (className.indexOf("esriCTTextInput") > -1) {
                                         this._lastEditedControl.currentTarget.defaultValue = this._lastEditedControl.currentTarget.value;
@@ -1476,7 +1601,7 @@ define([
         */
         _updateFieldInSelectedFeaturesList: function (field) {
             try {
-                var i, objectID, updatedObjectID;
+                var i, objectID, updatedObjectID, featureQuery, featureLayer;
                 if (this._isPointLayer) {
                     updatedObjectID = this._updatedGraphic.attributes.objectid || this._updatedGraphic.attributes.OBJECTID;
                     for (i = 0; i < this._dataViewerGraphicsLayer.graphics.length; i++) {
@@ -1486,6 +1611,22 @@ define([
                             break;
                         }
                     }
+                } else {
+                    featureQuery = new Query();
+                    objectID = this._updatedGraphic.attributes.objectid || this._updatedGraphic.attributes.OBJECTID;
+                    featureQuery.objectIds = [parseInt(objectID, 10)];
+                    featureQuery.outSpatialReference = this.map.spatialReference;
+                    featureQuery.returnGeometry = true;
+                    featureQuery.outFields = ["*"];
+                    this._selectedOperationalLayer.selectFeatures(featureQuery, FeatureLayer.SELECTION_SUBTRACT);
+                    this.map.getLayer(this.selectedOperationalLayerID).refresh();
+                    featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
+                    featureLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
+                        this._selectedOperationalLayer.setSelectionSymbol(this._getHighLightSymbol(featureSet.features[0]));
+                        this._selectedOperationalLayer.selectFeatures(featureQuery, FeatureLayer.SELECTION_ADD);
+                    }), function (err) {
+                        dojo.applicationUtils.showError(err.message);
+                    });
                 }
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
@@ -1612,7 +1753,7 @@ define([
                             }
                             break;
                         case "esriFieldTypeSmallInteger":
-                            typeCastedInputValue = parseInt(inputValue, 10);
+                            typeCastedInputValue = parseFloat(inputValue);
                             rangeObj = this._isValueInRange(field, typeCastedInputValue);
                             if (rangeObj.valueInRange) {
                                 if ((inputValue.match(decimal) && typeCastedInputValue >= -32768 && typeCastedInputValue <= 32767) && inputValue.length !== 0) {
@@ -1627,7 +1768,7 @@ define([
                             }
                             break;
                         case "esriFieldTypeInteger":
-                            typeCastedInputValue = parseInt(inputValue, 10);
+                            typeCastedInputValue = parseFloat(inputValue);
                             rangeObj = this._isValueInRange(field, typeCastedInputValue);
                             if (rangeObj.valueInRange) {
                                 if ((inputValue.match(decimal) && typeCastedInputValue >= -2147483648 && typeCastedInputValue <= 2147483647) && inputValue.length !== 0) {
@@ -1730,13 +1871,15 @@ define([
                     }
                     // retain value in date picker
                 } else if (className.indexOf("esriCTDateTimePicker") > -1) {
-                    date = this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name.split('|')[1];
-                    if (date === "null") {
-                        this._isDatePickerValueRetained = true;
-                        $(this._lastEditedControl.currentTarget).data("DateTimePicker").setDate(null);
-                    } else {
-                        this._isDatePickerValueRetained = true;
-                        $(this._lastEditedControl.currentTarget).data("DateTimePicker").setDate(parseInt(date, 10));
+                    if (this._lastEditedControl.currentTarget.parentElement && this._lastEditedControl.currentTarget.parentElement.childNodes && this._lastEditedControl.currentTarget.parentElement.childNodes[0] && this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes && this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0]) {
+                        date = this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name.split('|')[1];
+                        if (date === "null") {
+                            this._isDatePickerValueRetained = true;
+                            $(this._lastEditedControl.currentTarget).data("DateTimePicker").setDate(null);
+                        } else {
+                            this._isDatePickerValueRetained = true;
+                            $(this._lastEditedControl.currentTarget).data("DateTimePicker").setDate(parseInt(date, 10));
+                        }
                     }
                 }
                 dojo.applicationUtils.hideLoadingIndicator();
@@ -1757,16 +1900,20 @@ define([
                     format,
                     datePicker,
                     min,
-                    max;
+                    max,
+                    showTime;
                 for (i = 0; i < datePickerArr.length; i++) {
                     date = datePickerArr[i].childNodes[0].name.split('|')[1];
                     format = datePickerArr[i].childNodes[0].name.split('|')[2];
                     min = datePickerArr[i].childNodes[0].name.split('|')[3];
                     max = datePickerArr[i].childNodes[0].name.split('|')[4];
+                    showTime = datePickerArr[i].childNodes[0].name.split('|')[5];
+                    showTime = (showTime === "true") ? true : false;
                     datePicker = $(datePickerArr[i]).datetimepicker({
                         useSeconds: false,
                         useStrict: false,
-                        format: format
+                        format: format,
+                        pickTime: showTime
                     });
                     // set date if not than set min,max date
                     if (min === "null" && max === "null") {
@@ -1799,7 +1946,6 @@ define([
                     } else {
                         var value, field;
                         this._lastEditedControl = evt;
-                        $(evt.currentTarget).data("DateTimePicker").hide();
                         this._featureObjectID = this._fetchObjectID(evt.currentTarget.parentElement.parentElement);
                         value = $(evt.currentTarget).data('DateTimePicker').getDate().valueOf();
                         field = evt.currentTarget.childNodes[0].name.split('|')[0];
@@ -1943,7 +2089,7 @@ define([
         _createDatePicker: function (date, format, key, minValue, maxValue) {
             try {
                 var datePickerString = '<div class="input-group date esriCTDateTimePicker">';
-                datePickerString += '<input type="text" class="form-control esriCTDateInputField" name="' + key + "|" + date + "|" + format + "|" + minValue + "|" + maxValue + '"></input>';
+                datePickerString += '<input type="text" class="form-control esriCTDateInputField" name="' + key + "|" + date + "|" + format.dateFormat + "|" + minValue + "|" + maxValue + "|" + format.showTime + '"></input>';
                 datePickerString += '<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>';
                 datePickerString += '</div>';
                 return datePickerString;
@@ -1962,7 +2108,7 @@ define([
                     this._featureObjectID = this._fetchObjectID(evt.currentTarget);
                     if ((!this.isShowSelectedClicked) && (!this._isTextInputInFocus) && (!this._isDropDownClicked) && (!this._isDateTextInputInFocus)) {
                         if (this.isDetailsTabClicked) {
-                            this.clearSelection();
+                            this.clearSelection(true);
                         }
                         $(evt.currentTarget).toggleClass('esriCTRowSelected');
                         if (domClass.contains(evt.currentTarget, "esriCTRowSelected")) {
@@ -2032,106 +2178,128 @@ define([
         */
         _addControlsToRow: function (featureSet) {
             try {
-                var i, j, fieldName, format, type, length, value, dateFormat, isFieldEditable, number, k;
-                for (i = 0; i < featureSet.features.length; i++) {
-                    for (j = 0; j < this._displayColumn.length; j++) {
-                        if (this._displayColumn[j].displayField) {
-                            fieldName = this._displayColumn[j].fieldName;
-                            format = this._displayColumn[j].format;
-                            type = this._displayColumn[j].type;
-                            length = this._displayColumn[j].length;
-                            value = featureSet.features[i].attributes[fieldName];
-                            dateFormat = dojo.applicationUtils.getDateFormat(format);
-                            isFieldEditable = this._displayColumn[j].isFieldEditable;
-                            switch (type) {
-                            case "esriFieldTypeOID":
-                                break;
-                            case "esriFieldTypeDate":
-                                // dislay date-picker if field has date value
-                                if (this._displayColumn[j].domain && isFieldEditable) {
-                                    if (value) {
-                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(value, dateFormat, fieldName, this._displayColumn[j].domain.minValue, this._displayColumn[j].domain.maxValue);
-                                    } else {
-                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(null, dateFormat, fieldName, this._displayColumn[j].domain.minValue, this._displayColumn[j].domain.maxValue);
-                                    }
-                                } else {
-                                    // if fields are editable than only add controls
-                                    if (isFieldEditable) {
+                var i, j, fieldName, format, type, length, value, dateFormat, isFieldEditable, number, k, id, m, n;
+                if (this._lastSelectedRow) {
+                    for (i = 0; i < featureSet.features.length; i++) {
+                        for (j = 0; j < this._displayColumn.length; j++) {
+                            if (this._displayColumn[j].displayField) {
+                                fieldName = this._displayColumn[j].fieldName;
+                                format = this._displayColumn[j].format;
+                                type = this._displayColumn[j].type;
+                                length = this._displayColumn[j].length;
+                                value = featureSet.features[i].attributes[fieldName];
+                                dateFormat = dojo.applicationUtils.getDateFormat(format);
+                                isFieldEditable = this._displayColumn[j].isFieldEditable;
+                                switch (type) {
+                                case "esriFieldTypeOID":
+                                    break;
+                                case "esriFieldTypeDate":
+                                    // dislay date-picker if field has date value
+                                    if (this._displayColumn[j].domain && isFieldEditable) {
                                         if (value) {
-                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(value, dateFormat, fieldName, null, null);
+                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(value, dateFormat, fieldName, this._displayColumn[j].domain.minValue, this._displayColumn[j].domain.maxValue);
                                         } else {
-                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(null, dateFormat, fieldName, null, null);
+                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(null, dateFormat, fieldName, this._displayColumn[j].domain.minValue, this._displayColumn[j].domain.maxValue);
                                         }
                                     } else {
-                                        if (value) {
-                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = (moment(value)).format(dateFormat);
+                                        // if fields are editable than only add controls
+                                        if (isFieldEditable) {
+                                            if (value) {
+                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(value, dateFormat, fieldName, null, null);
+                                            } else {
+                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(null, dateFormat, fieldName, null, null);
+                                            }
                                         } else {
-                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = "";
-                                        }
-                                    }
-                                }
-                                break;
-                            default:
-                                // display drop-down if field has coded value
-                                if (this._displayColumn[j].codedValues) {
-                                    if (isFieldEditable) {
-                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDropDown(this._displayColumn[j], value, fieldName);
-                                    } else {
-                                        for (k = 0; k < this._displayColumn[j].codedValues.length; k++) {
-                                            if (this._displayColumn[j].codedValues[k].code === value) {
-                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._displayColumn[j].codedValues[k].name;
+                                            if (value) {
+                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = (moment(value)).format(dateFormat.dateFormat);
+                                            } else {
+                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = "";
                                             }
                                         }
                                     }
-                                } else if (this._displayColumn[j].types) {
-                                    if (isFieldEditable) {
-                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDependentDropDown(this._displayColumn[j], value, fieldName);
-                                    } else {
-                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value;
-                                    }
-                                } else {
-                                    if (this._displayColumn[j].numberFormat) {
-                                        if (value || value === 0) {
-                                            // if number has digit seperator
-                                            if (this._displayColumn[j].numberFormat.digitSeparator) {
-                                                number = value.toFixed(this._displayColumn[j].numberFormat.places);
-                                                number = dojo.applicationUtils.convertNumberToThousandSeperator(number);
+                                    break;
+                                default:
+                                    // display drop-down if field has coded value
+                                    if (this._displayColumn[j].codedValues) {
+                                        if (isFieldEditable) {
+                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDropDown(this._displayColumn[j], value, fieldName);
+                                        } else {
+                                            for (k = 0; k < this._displayColumn[j].codedValues.length; k++) {
+                                                if (this._displayColumn[j].codedValues[k].code === value) {
+                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._displayColumn[j].codedValues[k].name;
+                                                }
+                                            }
+                                        }
+                                    } else if (this._displayColumn[j].types) {
+                                        if (isFieldEditable) {
+                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDependentDropDown(this._displayColumn[j], value, fieldName);
+                                        } else {
+                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value;
+                                        }
+                                    } else if (this._selectedOperationalLayer.types && this._selectedOperationalLayer.types.length > 0 && this._selectedOperationalLayer.types[0].domains && this._selectedOperationalLayer.types[0].domains[fieldName] && this._selectedOperationalLayer.types[0].domains[fieldName].codedValues) {
+                                        id = featureSet.features[i].attributes[this._selectedOperationalLayer.typeIdField];
+                                        for (m = 0; m < this._selectedOperationalLayer.types.length; m++) {
+                                            if (this._selectedOperationalLayer.types[m].id === id) {
                                                 if (isFieldEditable) {
-                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createTextInput(number, fieldName, type, length);
+                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDropDown(this._selectedOperationalLayer.types[m].domains[fieldName], value, fieldName);
                                                 } else {
-                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = number;
+                                                    for (n = 0; n < this._selectedOperationalLayer.types[m].domains[fieldName].codedValues.length; n++) {
+                                                        if (value === this._selectedOperationalLayer.types[m].domains[fieldName].codedValues[n].code) {
+                                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._selectedOperationalLayer.types[m].domains[fieldName].codedValues[n].name;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    } else {
+                                        if (this._displayColumn[j].numberFormat) {
+                                            if (value || value === 0) {
+                                                // if number has digit seperator
+                                                if (this._displayColumn[j].numberFormat.digitSeparator) {
+                                                    number = value.toFixed(this._displayColumn[j].numberFormat.places);
+                                                    number = dojo.applicationUtils.convertNumberToThousandSeperator(number);
+                                                    if (isFieldEditable) {
+                                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createTextInput(number, fieldName, type, length);
+                                                    } else {
+                                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = number;
+                                                    }
+                                                } else {
+                                                    if (isFieldEditable) {
+                                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createTextInput(value.toFixed(this._displayColumn[j].numberFormat.places), fieldName, type, length);
+                                                    } else {
+                                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value.toFixed(this._displayColumn[j].numberFormat.places);
+                                                    }
                                                 }
                                             } else {
                                                 if (isFieldEditable) {
-                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createTextInput(value.toFixed(this._displayColumn[j].numberFormat.places), fieldName, type, length);
+                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createTextInput(value, fieldName, type, length);
                                                 } else {
-                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value.toFixed(this._displayColumn[j].numberFormat.places);
+                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value;
                                                 }
                                             }
                                         } else {
+                                            // display text box for rest of fields
                                             if (isFieldEditable) {
                                                 this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createTextInput(value, fieldName, type, length);
                                             } else {
-                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value;
+                                                if (value !== null && value !== "") {
+                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value;
+                                                } else {
+                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = "";
+                                                }
                                             }
-                                        }
-                                    } else {
-                                        // display text box for rest of fields
-                                        if (isFieldEditable) {
-                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createTextInput(value, fieldName, type, length);
-                                        } else {
-                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value;
                                         }
                                     }
                                 }
                             }
                         }
                     }
+                    // convert to date-picker object with properties
+                    this._renderDateTimePicker();
+                    // attach events to controls for editing
+                    this._attachEventToControls();
                 }
-                // convert to date-picker object with properties
-                this._renderDateTimePicker();
-                // attach events to controls for editing
-                this._attachEventToControls();
+
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
@@ -2189,11 +2357,14 @@ define([
         */
         _highLightFeatureOnRowClick: function (objectId) {
             try {
-                var featureQuery = new Query();
+                var featureQuery, featureLayer;
+                featureQuery = new Query();
                 featureQuery.outSpatialReference = this.map.spatialReference;
                 featureQuery.objectIds = [parseInt(objectId, 10)];
                 featureQuery.returnGeometry = true;
-                this._selectedOperationalLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
+                featureQuery.outFields = ["*"];
+                featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
+                featureLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
                     // if it is point feature than add selected feature on graphics layer
                     // if it is other than point feature than select feature using selectFeatures method & FeatureLayer.SELECTION_ADD option
                     if (this._isPointLayer) {
@@ -2204,7 +2375,7 @@ define([
                     }
                     // if details tab is displayed than display fields of feature in it
                     if (this.isDetailsTabClicked) {
-                        this._showFeatureDetails();
+                        this._showFeatureDetails(featureSet.features[0]);
                     } else {
                         // used to add controls in row so that user can edit it
                         this._addControlsToRow(featureSet);
@@ -2227,7 +2398,7 @@ define([
         */
         _getHighLightSymbol: function (graphic) {
             try {
-                var i, symbol, path, point, graphics, symbolWidth, symbolFillColor, height, width, size, isSymbolFound;
+                var i, symbol, path, point, graphics, symbolWidth, symbolFillColor, height, width, size, isSymbolFound, graphicInfoValue, layerInfoValue;
                 isSymbolFound = false;
                 switch (graphic.geometry.type) {
                 case "point":
@@ -2237,28 +2408,67 @@ define([
                     symbol.setColor(null);
                     if (this._selectedOperationalLayer.renderer.symbol) {
                         isSymbolFound = true;
-                        height = this._selectedOperationalLayer.renderer.symbol.height;
-                        width = this._selectedOperationalLayer.renderer.symbol.width;
-                        size = (height > width) ? height : width;
-                        symbol.size = size + 20;
+                        if (this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("height") && this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("width")) {
+                            height = this._selectedOperationalLayer.renderer.symbol.height;
+                            width = this._selectedOperationalLayer.renderer.symbol.width;
+                            size = (height > width) ? height : width;
+                            size = size + 20;
+                            symbol.size = size;
+                        }
+                        if (this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("size")) {
+                            if (!size || size < this._selectedOperationalLayer.renderer.symbol.size) {
+                                symbol.size = this._selectedOperationalLayer.renderer.symbol.size + 20;
+                            }
+                        }
+                        if (this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("xoffset") && this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("yoffset")) {
+                            symbol.xoffset = this._selectedOperationalLayer.renderer.symbol.xoffset;
+                            symbol.yoffset = this._selectedOperationalLayer.renderer.symbol.yoffset;
+                        }
                     } else if ((this._selectedOperationalLayer.renderer.infos) && (this._selectedOperationalLayer.renderer.infos.length > 1)) {
                         for (i = 0; i < this._selectedOperationalLayer.renderer.infos.length; i++) {
-                            if (graphic.attributes[this._selectedOperationalLayer.typeIdField] === parseInt(this._selectedOperationalLayer.renderer.infos[i].value, 10)) {
-                                isSymbolFound = true;
-                                height = this._selectedOperationalLayer.renderer.infos[i].symbol.height;
-                                width = this._selectedOperationalLayer.renderer.infos[i].symbol.width;
-                                // to display cross-hair properly around feature
-                                size = (height > width) ? height : width;
-                                symbol.size = size + 20;
-                                break;
+                            graphicInfoValue = graphic.attributes[this._selectedOperationalLayer.typeIdField];
+                            layerInfoValue = this._selectedOperationalLayer.renderer.infos[i].value;
+                            if (graphicInfoValue !== null && graphicInfoValue !== "") {
+                                if (graphicInfoValue.toString() === layerInfoValue.toString()) {
+                                    isSymbolFound = true;
+                                    if (this._selectedOperationalLayer.renderer.infos[i].symbol.hasOwnProperty("height") && this._selectedOperationalLayer.renderer.infos[i].symbol.hasOwnProperty("width")) {
+                                        height = this._selectedOperationalLayer.renderer.infos[i].symbol.height;
+                                        width = this._selectedOperationalLayer.renderer.infos[i].symbol.width;
+                                        // to display cross-hair properly around feature
+                                        size = (height > width) ? height : width;
+                                        size = size + 20;
+                                        symbol.size = size;
+                                    }
+                                    if (this._selectedOperationalLayer.renderer.infos[i].symbol.hasOwnProperty("size")) {
+                                        if (!size || size < this._selectedOperationalLayer.renderer.infos[i].symbol.size) {
+                                            symbol.size = this._selectedOperationalLayer.renderer.infos[i].symbol.size + 20;
+                                        }
+                                    }
+                                    if (this._selectedOperationalLayer.renderer.infos[i].symbol.hasOwnProperty("xoffset") && this._selectedOperationalLayer.renderer.infos[i].symbol.hasOwnProperty("yoffset")) {
+                                        symbol.xoffset = this._selectedOperationalLayer.renderer.infos[i].symbol.xoffset;
+                                        symbol.yoffset = this._selectedOperationalLayer.renderer.infos[i].symbol.yoffset;
+                                    }
+                                }
                             }
                         }
                         if (!isSymbolFound) {
                             isSymbolFound = true;
-                            height = this._selectedOperationalLayer.renderer.defaultSymbol.height;
-                            width = this._selectedOperationalLayer.renderer.defaultSymbol.width;
-                            size = (height > width) ? height : width;
-                            symbol.size = size + 20;
+                            if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("height") && this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("width")) {
+                                height = this._selectedOperationalLayer.renderer.defaultSymbol.height;
+                                width = this._selectedOperationalLayer.renderer.defaultSymbol.width;
+                                size = (height > width) ? height : width;
+                                size = size + 20;
+                                symbol.size = size;
+                            }
+                            if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("size")) {
+                                if (!size || size < this._selectedOperationalLayer.renderer.defaultSymbol.size) {
+                                    symbol.size = this._selectedOperationalLayer.renderer.defaultSymbol.size + 20;
+                                }
+                            }
+                            if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("xoffset") && this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("yoffset")) {
+                                symbol.xoffset = this._selectedOperationalLayer.renderer.defaultSymbol.xoffset;
+                                symbol.yoffset = this._selectedOperationalLayer.renderer.defaultSymbol.yoffset;
+                            }
                         }
                     }
                     point = new Point(graphic.geometry.x, graphic.geometry.y, new SpatialReference({
@@ -2332,7 +2542,6 @@ define([
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
-
         },
 
         /**
@@ -2355,20 +2564,69 @@ define([
         * This function is used to display fields of features in details tab
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _showFeatureDetails: function () {
+        _showFeatureDetails: function (graphic) {
             try {
-                var graphic, parentDiv, fieldValue, key, obj, j, number, i, n;
+                var parentDiv, objectId, featureQuery, featureLayer;
                 parentDiv = dom.byId("detailsContentDiv");
                 parentDiv.innerHTML = "";
-                if (this._isPointLayer) {
-                    graphic = this._dataViewerGraphicsLayer.graphics[0];
+                if (!graphic) {
+                    if (this._isPointLayer) {
+                        graphic = this._dataViewerGraphicsLayer.graphics[0];
+                        this._showConfiguredAttribute(graphic, parentDiv);
+                    } else {
+                        graphic = this._selectedOperationalLayer.getSelectedFeatures()[0];
+                        objectId = graphic.attributes.objectid || graphic.attributes.OBJECTID;
+                        featureQuery = new Query();
+                        featureQuery.outSpatialReference = this.map.spatialReference;
+                        featureQuery.objectIds = [parseInt(objectId, 10)];
+                        featureQuery.returnGeometry = true;
+                        featureQuery.outFields = ["*"];
+                        featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
+                        featureLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
+                            this._showConfiguredAttribute(featureSet.features[0], parentDiv);
+                        }));
+                    }
                 } else {
-                    graphic = this._selectedOperationalLayer.getSelectedFeatures()[0];
+                    this._showConfiguredAttribute(graphic, parentDiv);
                 }
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to show configured attribute in details tab
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _showConfiguredAttribute: function (graphic, parentDiv) {
+            try {
+                // custom popup
+                if (this.popupInfo && this.popupInfo.description) {
+                    this._showCustomPopupConfiguration(graphic, parentDiv);
+                } else {
+                    this._showAttributeConfiguration(graphic, parentDiv);
+                }
+                // if layer has attachments & also pop-up has info has attachment property as true
+                if ((this._selectedOperationalLayer.hasAttachments) && (this.popupInfo.showAttachments)) {
+                    this._showAttachments(graphic, parentDiv);
+                }
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to show attribute configuration in details tab
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _showAttributeConfiguration: function (graphic, parentDiv) {
+            try {
+                var i, obj, key, isDisplayFieldAvailable, fieldValue, j, n, number, m, isCodeMatched, id, regex, spanLink;
                 for (i = 0; i < this._displayColumn.length; i++) {
                     obj = this._displayColumn[i];
                     key = this._displayColumn[i].fieldName;
-                    if ((obj.displayField) && (obj.type !== "esriFieldTypeOID")) {
+                    if (obj.showInDetailsTab) {
+                        isDisplayFieldAvailable = true;
                         domConstruct.create("div", {
                             "innerHTML": obj.label,
                             "class": "esriCTDetailsFieldHeader"
@@ -2377,7 +2635,7 @@ define([
                         switch (obj.type) {
                         case "esriFieldTypeDate":
                             if (graphic.attributes[key] && graphic.attributes[key] !== 0) {
-                                fieldValue = (moment(graphic.attributes[key])).format(dojo.applicationUtils.getDateFormat(obj.format));
+                                fieldValue = (moment(graphic.attributes[key])).format(dojo.applicationUtils.getDateFormat(obj.format).dateFormat);
                             } else {
                                 if (graphic.attributes[key] === 0) {
                                     fieldValue = "";
@@ -2407,6 +2665,26 @@ define([
                                 } else {
                                     fieldValue = graphic.attributes[key];
                                 }
+                            } else if (this._selectedOperationalLayer.types && this._selectedOperationalLayer.types.length > 0 && this._selectedOperationalLayer.types[0].domains && this._selectedOperationalLayer.types[0].domains[key] && this._selectedOperationalLayer.types[0].domains[key].codedValues) {
+                                isCodeMatched = false;
+                                id = graphic.attributes[this._selectedOperationalLayer.typeIdField];
+                                for (m = 0; m < this._selectedOperationalLayer.types.length; m++) {
+                                    if (this._selectedOperationalLayer.types[m].id === id) {
+                                        for (n = 0; n < this._selectedOperationalLayer.types[m].domains[key].codedValues.length; n++) {
+                                            if (graphic.attributes[key] === this._selectedOperationalLayer.types[m].domains[key].codedValues[n].code) {
+                                                isCodeMatched = true;
+                                                if (graphic.attributes[key] || graphic.attributes[key] === 0) {
+                                                    fieldValue = this._selectedOperationalLayer.types[m].domains[key].codedValues[n].name;
+                                                } else {
+                                                    fieldValue = graphic.attributes[key];
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                if (!isCodeMatched) {
+                                    fieldValue = graphic.attributes[key];
+                                }
                             } else {
                                 if (obj.numberFormat) {
                                     if ((graphic.attributes[key]) || (graphic.attributes[key] === 0)) {
@@ -2426,18 +2704,202 @@ define([
                             }
                         }
                         if (!fieldValue || lang.trim(String(fieldValue)) === "") {
-                            fieldValue = "<br/>";
+                            fieldValue = dojo.configData.showNullValueAs + "<br/>";
                         }
-                        domConstruct.create("div", {
-                            "class": "esriCTDetailsFieldValue",
-                            "innerHTML": fieldValue
-                        }, parentDiv);
+                        if (isNaN(fieldValue) && (fieldValue.match("http:") || fieldValue.match("https:"))) {
+                            regex = new RegExp("^(http[s]?:\\/\\/(www\\.)?|ftp:\\/\\/(www\\.)?|www\\.){1}([0-9A-Za-z-\\.@:%_\+~#=]+)+((\\.[a-zA-Z]{2,3})+)(/(.)*)?(\\?(.)*)?");
+                            if (fieldValue.match(regex)) {
+                                spanLink = domConstruct.create("span", {
+                                    "class": "esriCTInfoLink",
+                                    "innerHTML": dojo.configData.i18n.dataviewer.moreInfolink
+                                }, parentDiv);
+                                on(spanLink, "click", lang.hitch(this, this.openWindowHandler(fieldValue)));
+                            } else {
+                                domConstruct.create("div", {
+                                    "class": "esriCTDetailsFieldValue",
+                                    "innerHTML": fieldValue
+                                }, parentDiv);
+                            }
+                        } else {
+                            domConstruct.create("div", {
+                                "class": "esriCTDetailsFieldValue",
+                                "innerHTML": fieldValue
+                            }, parentDiv);
+                        }
                     }
                 }
-                // if layer has attachments & also pop-up has info has attachment property as true
-                if ((this._selectedOperationalLayer.hasAttachments) && (this.popupInfo.showAttachments)) {
-                    this._showAttachments(graphic, parentDiv);
+                if (!isDisplayFieldAvailable) {
+                    domConstruct.create("div", {
+                        "class": "",
+                        "innerHTML": ""
+                    }, parentDiv);
                 }
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * open link in a new window
+        * @param {url} get link url
+        * @memberOf widgets/issue-wall/issue-wall
+        */
+        openWindowHandler: function (link) {
+            return function () {
+                window.open(link);
+            };
+        },
+
+        /**
+        * This function is used to show custom popup configuration in details tab
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _showCustomPopupConfiguration: function (graphic, parentDiv) {
+            try {
+                var fieldValue, i, splittedArrayForClosingBraces, field, k, obj, key, j, n, number, isCodeMatched, id, m;
+                //Assuming Fields will be configure within the curly braces'{}'
+                //check if Custom Configuration has any fields Configured in it.
+                if (this.popupInfo.description.split("{").length > 0) {
+                    //Add the data before 1st instance on curly '{' braces
+                    fieldValue = this.popupInfo.description.split("{")[0];
+                    // Loop through the possible number of configured fields
+                    for (i = 1; i < this.popupInfo.description.split("{").length; i++) {
+                        //check if string is having closing curly braces '}'. i.e. it has some field
+                        if (this.popupInfo.description.split("{")[i].indexOf("}") !== -1) {
+                            splittedArrayForClosingBraces = this.popupInfo.description.split("{")[i].split("}");
+                            field = string.substitute(splittedArrayForClosingBraces[0]);
+                            //Check if the field is valid field or not, if it valid then substitute its value.
+                            if (field !== null && field !== "") {
+                                for (k = 0; k < this._displayColumn.length; k++) {
+                                    obj = this._displayColumn[k];
+                                    key = this._displayColumn[k].fieldName;
+                                    if (key === field) {
+                                        switch (obj.type) {
+                                        case "esriFieldTypeDate":
+                                            if (graphic.attributes[key] && graphic.attributes[key] !== 0) {
+                                                fieldValue += (moment(graphic.attributes[key])).format(dojo.applicationUtils.getDateFormat(obj.format).dateFormat);
+                                            } else {
+                                                if (graphic.attributes[key] === 0) {
+                                                    fieldValue += dojo.configData.showNullValueAs;
+                                                } else {
+                                                    if (!graphic.attributes[key] || lang.trim(String(graphic.attributes[key])) === "") {
+                                                        fieldValue += dojo.configData.showNullValueAs;
+                                                    } else {
+                                                        fieldValue += graphic.attributes[key];
+                                                    }
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            if (obj.codedValues) {
+                                                if (graphic.attributes[key] || graphic.attributes[key] === 0) {
+                                                    for (j = 0; j < obj.codedValues.length; j++) {
+                                                        if (obj.codedValues[j].code === graphic.attributes[key]) {
+                                                            fieldValue += obj.codedValues[j].name;
+                                                        }
+                                                    }
+                                                } else {
+                                                    if (!graphic.attributes[key] || lang.trim(String(graphic.attributes[key])) === "") {
+                                                        fieldValue += dojo.configData.showNullValueAs;
+                                                    } else {
+                                                        fieldValue += graphic.attributes[key];
+                                                    }
+                                                }
+                                            } else if (obj.types) {
+                                                if (graphic.attributes[key] || graphic.attributes[key] === 0) {
+                                                    for (n = 0; n < obj.types.length; n++) {
+                                                        if (obj.types[n].id === graphic.attributes[key]) {
+                                                            fieldValue += obj.types[n].name;
+                                                        }
+                                                    }
+                                                } else {
+                                                    if (!graphic.attributes[key] || lang.trim(String(graphic.attributes[key])) === "") {
+                                                        fieldValue += dojo.configData.showNullValueAs;
+                                                    } else {
+                                                        fieldValue += graphic.attributes[key];
+                                                    }
+                                                }
+                                            } else if (this._selectedOperationalLayer.types && this._selectedOperationalLayer.types.length > 0 && this._selectedOperationalLayer.types[0].domains && this._selectedOperationalLayer.types[0].domains[key] && this._selectedOperationalLayer.types[0].domains[key].codedValues) {
+                                                isCodeMatched = false;
+                                                id = graphic.attributes[this._selectedOperationalLayer.typeIdField];
+                                                for (m = 0; m < this._selectedOperationalLayer.types.length; m++) {
+                                                    if (this._selectedOperationalLayer.types[m].id === id) {
+                                                        for (n = 0; n < this._selectedOperationalLayer.types[m].domains[key].codedValues.length; n++) {
+                                                            if (graphic.attributes[key] === this._selectedOperationalLayer.types[m].domains[key].codedValues[n].code) {
+                                                                isCodeMatched = true;
+                                                                if (graphic.attributes[key] || graphic.attributes[key] === 0) {
+                                                                    fieldValue += this._selectedOperationalLayer.types[m].domains[key].codedValues[n].name;
+                                                                } else {
+                                                                    if (!graphic.attributes[key] || lang.trim(String(graphic.attributes[key])) === "") {
+                                                                        fieldValue += dojo.configData.showNullValueAs;
+                                                                    } else {
+                                                                        fieldValue += graphic.attributes[key];
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                if (!isCodeMatched) {
+                                                    if (!graphic.attributes[key] || lang.trim(String(graphic.attributes[key])) === "") {
+                                                        fieldValue += dojo.configData.showNullValueAs;
+                                                    } else {
+                                                        fieldValue += graphic.attributes[key];
+                                                    }
+                                                }
+                                            } else {
+                                                if (obj.numberFormat) {
+                                                    if ((graphic.attributes[key]) || (graphic.attributes[key] === 0)) {
+                                                        if (obj.numberFormat.digitSeparator) {
+                                                            number = graphic.attributes[key].toFixed(obj.numberFormat.places);
+                                                            number = dojo.applicationUtils.convertNumberToThousandSeperator(number);
+                                                            fieldValue += number;
+                                                        } else {
+                                                            fieldValue += graphic.attributes[key].toFixed(obj.numberFormat.places);
+                                                        }
+                                                    } else {
+                                                        if (!graphic.attributes[key] || lang.trim(String(graphic.attributes[key])) === "") {
+                                                            fieldValue += dojo.configData.showNullValueAs;
+                                                        } else {
+                                                            fieldValue += graphic.attributes[key];
+                                                        }
+                                                    }
+                                                } else {
+                                                    if (!graphic.attributes[key] || lang.trim(String(graphic.attributes[key])) === "") {
+                                                        fieldValue += dojo.configData.showNullValueAs;
+                                                    } else {
+                                                        fieldValue += graphic.attributes[key];
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            } else if (field === "") {
+                                //if field is empty means only curly braces are configured in pop-up
+                                fieldValue += "{}";
+                            }
+                            splittedArrayForClosingBraces.shift();
+                            //if splittedArrayForClosingBraces length is more than 1, then there are more closing braces in the string, so join the array with }
+                            if (splittedArrayForClosingBraces.length > 1) {
+                                fieldValue += splittedArrayForClosingBraces.join("}");
+                            } else {
+                                fieldValue += splittedArrayForClosingBraces.join("");
+                            }
+                        } else {
+                            //if there is no closing bracket then add the rest of the string preponding with '{' as we have split it with '{'
+                            fieldValue += "{" + this.popupInfo.description.split("{")[i];
+                        }
+                    }
+                } else {
+                    //no '{' braces means no field has been configured only Custom description is present in pop-up
+                    fieldValue = this.popupInfo.description;
+                }
+                //create a div with popup info description and add it to details div
+                domConstruct.create("div", {
+                    "innerHTML": fieldValue,
+                    "class": "esriCTCustomPopupDiv"
+                }, parentDiv);
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
@@ -2537,6 +2999,22 @@ define([
                 domStyle.set(imgModule, "width", newWidth + 'px');
                 domStyle.set(imgModule, "height", newHeight + 'px');
             }
+        },
+
+        /**
+        * This function is used to notify that editing is started
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        OnEditingStart: function () {
+            return;
+        },
+
+        /**
+        * This function is used to notify that editing is completed
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        OnEditingComplete: function () {
+            return;
         }
     });
 });

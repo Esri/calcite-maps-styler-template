@@ -32,7 +32,8 @@ define(({
         tags: "@fr@ Tags",
         numViews: "@fr@ Number of views",
         avgRating: "@fr@ Rating",
-        noWebMapInGroup: "@fr@ Configured group is invalid or no items have been shared with this group yet"
+        noWebMapInGroup: "@fr@ Configured group is invalid or no items have been shared with this group yet",
+        infoBtnToolTip: "@fr@ Map Information"
     },
     applicationHeader: {
         signOutOption: "@fr@ Sign Out",
@@ -44,12 +45,15 @@ define(({
         zoomToSelectedOption: "@fr@ Zoom To Selected",
         gridViewOption: "@fr@ List View",
         mapViewOption: "@fr@ Map View",
-        gridMapViewOption: "@fr@ Split View"
+        gridMapViewOption: "@fr@ Split View",
+        settingsBtnToolTip: "@fr@ Selection Options",
+        viewModeBtnToolTip: "@fr@ View Options",
+        searchModeBtnToolTip: "@fr@ Layer Search"
     },
     dataviewer: {
         noFeaturesInCurrentExtent: "@fr@ No issues in current extent",
-        singleFeatureSelection: "@fr@ No issue/feature selected",
-        multipleFeatureSelection: "@fr@ Multiple issues/features selected",
+        singleFeatureSelection: "@fr@ Please select a single feature to view the item details",
+        multipleFeatureSelection: "@fr@ Please select a single feature to view the item details",
         photoAttachmentHeader: "@fr@ Photo",
         invalidSmallNumber: "@fr@ Please enter valid integer value between -32768 and 32767",
         invalidNumber: "@fr@ Please enter valid integer value between -2147483648 and 2147483647",
@@ -57,12 +61,23 @@ define(({
         invalidDouble: "@fr@ Please enter valid double value between -2.2E308 and 1.8E308",
         invalidString: "@fr@ Please enter valid value",
         invalidDate: "@fr@ Please enter valid date",
-        invalidNumericRange: "@fr@ Minimum value ${minValue} and Maximum value ${maxValue}"
+        invalidNumericRange: "@fr@ Minimum value ${minValue} and Maximum value ${maxValue}",
+        moreInfolink: "@fr@ Link"
     },
     config: {
         configNotDefined: "@fr@ Config is not defined"
     },
     searchPanel: {
         noResultsFound: "@fr@ No results found"
+    },
+    mapViewer: {
+        detailsBtnToolTip: "@fr@ View Details",
+        locationBtnToolTip: "@fr@ View Map",
+        zoomInToolTip: "@fr@ Zoom In",
+        zoomOutToolTip: "@fr@ Zoom Out"
+    },
+    signOutPage: {
+        signOutMessage: "@fr@ You've been successfully signed out.",
+        reSignInMessage: "@fr@ Click here to sign in"
     }
 }));

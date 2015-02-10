@@ -50,13 +50,15 @@ define(["dojo/_base/declare",
 ) {
     return declare(null, {
         config: {},
+        boilerPlateTemplate: null,
         _webMapListWidget: null, // store object of web map list widget
         _dataViewerWidget: null, // store object of data-viewer widget
         _appHeader: null, // store object of application header widget
         _groupItems: [],
         _isMapViewClicked: false, // track whether map view is clicked or not
         _isGridViewClicked: false, // track whether grid view is clicked or not
-        _isSplitViewClicked: true, // track whether map view is clicked or not
+        _isSplitViewClicked: true, // track whether split view is clicked or not
+        _isEditingOnAndroid: false, // track whether editing is started on android devices
 
         /**
         * This function is called when user needs to start operation of widget
@@ -64,15 +66,17 @@ define(["dojo/_base/declare",
         * @param{object} logged in user details
         * @memberOf widgets/main/main
         */
-        startup: function (config, loggedInUser) {
+        startup: function (boilerPlateTemplateObject, loggedInUser) {
             try {
                 var queryParams = {};
                 // config will contain application and user defined info for the template such as i18n strings, the web map id
                 // and application id
                 // any url parameters and any application specific configuration information.
+
                 dojo.applicationUtils = ApplicationUtils;
-                if (config) {
-                    this.config = config;
+                if (boilerPlateTemplateObject) {
+                    this.boilerPlateTemplate = boilerPlateTemplateObject;
+                    this.config = boilerPlateTemplateObject.config;
                     // if login details are not available set it to anonymousUserName
                     if (loggedInUser) {
                         this.config.logInDetails = {
@@ -86,22 +90,22 @@ define(["dojo/_base/declare",
                         };
                     }
                     // enable queryForGroupItems in templateconfig
-                    dojo.BoilerPlateTemplate.templateConfig.queryForGroupItems = true;
+                    this.boilerPlateTemplate.templateConfig.queryForGroupItems = true;
                     // construct the query params if found in group info
-                    if (config.groupInfo.results && config.groupInfo.results.length > 0) {
-                        lang.mixin(queryParams, dojo.BoilerPlateTemplate.templateConfig.groupParams);
-                        if (config.groupInfo.results[0].sortField) {
-                            queryParams.sortField = config.groupInfo.results[0].sortField;
+                    if (this.config.groupInfo.results && this.config.groupInfo.results.length > 0) {
+                        lang.mixin(queryParams, this.boilerPlateTemplate.templateConfig.groupParams);
+                        if (this.config.groupInfo.results[0].sortField) {
+                            queryParams.sortField = this.config.groupInfo.results[0].sortField;
                         }
-                        if (config.groupInfo.results[0].sortOrder) {
-                            queryParams.sortOrder = config.groupInfo.results[0].sortOrder;
+                        if (this.config.groupInfo.results[0].sortOrder) {
+                            queryParams.sortOrder = this.config.groupInfo.results[0].sortOrder;
                         }
                     }
                     // pass the newly constructed queryparams from groupinfo.
                     // if query params not available in groupinfo or proup is private items will be sorted according to modified date.
                     this._loadGroupItems(queryParams);
                 } else {
-                    dojo.applicationUtils.showError(dojo.configData.i18n.config.configNotDefined);
+                    dojo.applicationUtils.showError(this.config.i18n.config.configNotDefined);
                 }
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
@@ -114,7 +118,7 @@ define(["dojo/_base/declare",
         * @memberOf widgets/main/main
         */
         _loadGroupItems: function (queryParams) {
-            dojo.BoilerPlateTemplate.queryGroupItems(queryParams).then(lang.hitch(this, this._groupItemsLoaded));
+            this.boilerPlateTemplate.queryGroupItems(queryParams).then(lang.hitch(this, this._groupItemsLoaded));
         },
 
         /**
@@ -123,12 +127,15 @@ define(["dojo/_base/declare",
         * @memberOf widgets/main/main
         */
         _groupItemsLoaded: function (response) {
-            this._groupItems.push.apply(this._groupItems, response.results);
-            if (response.nextQueryParams.start < 0) {
+            this._groupItems.push.apply(this._groupItems, response.groupItems.results);
+            if (response.groupItems.nextQueryParams.start < 0) {
+                if (!this.config.groupItems) {
+                    this.config.groupItems = {};
+                }
                 this.config.groupItems.results = this._groupItems;
                 this._loadApplication();
             } else {
-                this._loadGroupItems(response.nextQueryParams);
+                this._loadGroupItems(response.groupItems.nextQueryParams);
             }
         },
 
@@ -198,6 +205,9 @@ define(["dojo/_base/declare",
         * @memberOf widgets/main/main
         */
         _onWindowResize: function () {
+            if (this._isEditingOnAndroid) {
+                this._dataViewerWidget.OnEditingComplete();
+            }
             if (this._isMapViewClicked) {
                 domStyle.set("UpperContainer", "display", "none");
                 domStyle.set("LowerContainer", "display", "block");
@@ -206,7 +216,7 @@ define(["dojo/_base/declare",
                 this._resizeMap();
             }
             if (this._isGridViewClicked) {
-                this._dataViewerWidget._isOrientationChangedInListView = true;
+                this._dataViewerWidget.isOrientationChangedInListView = true;
                 domStyle.set("UpperContainer", "display", "block");
                 domStyle.set("LowerContainer", "height", "0%");
                 domStyle.set("UpperContainer", "height", "100%");
@@ -236,7 +246,7 @@ define(["dojo/_base/declare",
                     minHeight: 75
                 });
 
-                //handek resize stop event which will be fired on resize complete
+                //handle resize stop event which will be fired on resize complete
                 //after completing resize of containers, resize the map so that it will be fit resized size
                 $("#UpperContainer").on("resizestop", lang.hitch(this, function (event, ui) {
                     var mainContainerHeight, upperContainerHeight, lowerContainerHeight;
@@ -318,49 +328,17 @@ define(["dojo/_base/declare",
                 });
                 // display grid view
                 this._appHeader.onGridViewClick = lang.hitch(this, function () {
-                    $("#UpperContainer").resizable("disable");
-                    this._isMapViewClicked = false;
-                    this._isGridViewClicked = true;
-                    this._isSplitViewClicked = false;
-                    this._dataViewerWidget.isMapViewClicked = false;
-                    domStyle.set("UpperContainer", "display", "block");
-                    domStyle.set("LowerContainer", "height", "0%");
-                    domStyle.set("UpperContainer", "height", "100%");
-                    this._dataViewerWidget.retainShowSelectedModeAfterResize();
-                    this._setDataViewerHeight();
+                    //after switching to gridView by clicking on List-view mode always refresh it's UI
+                    this._showOnlyGridView(true);
                 });
                 // display map view
-                this._appHeader.onMapViewClick = lang.hitch(this, function () {
-                    $("#UpperContainer").resizable("disable");
-                    this._isMapViewClicked = true;
-                    this._isGridViewClicked = false;
-                    this._isSplitViewClicked = false;
-                    this._dataViewerWidget.isMapViewClicked = true;
-                    domStyle.set("UpperContainer", "display", "none");
-                    domStyle.set("LowerContainer", "display", "block");
-                    domStyle.set("LowerContainer", "height", "100%");
-                    this._setDataViewerHeight();
-                    // resize Map only if mapdiv is visible otherwise map extent will be lost
-                    this._resizeMap();
-                });
+                this._appHeader.onMapViewClick = lang.hitch(this, this._showOnlyMapView);
                 // display split view
-                this._appHeader.onGridMapViewClick = lang.hitch(this, function () {
-                    $("#UpperContainer").resizable("enable");
-                    this._isMapViewClicked = false;
-                    this._isGridViewClicked = false;
-                    this._isSplitViewClicked = true;
-                    this._dataViewerWidget.isMapViewClicked = false;
-                    domStyle.set("UpperContainer", "display", "block");
-                    domStyle.set("LowerContainer", "display", "block");
-                    this._setDefaultHeightOfUpperAndLowerContainer();
-                    this._setDataViewerHeight();
-                    this._resizeMap();
-                });
+                this._appHeader.onGridMapViewClick = lang.hitch(this, this._showSplitView);
                 // search records in data-viewer widget
                 this._appHeader.onSearchRecordsClick = lang.hitch(this, function () {
                     this._dataViewerWidget.searchDataInDataViewer();
                 });
-
                 // clear content in search input control
                 this._appHeader.onClearContentClick = lang.hitch(this, function () {
                     this._dataViewerWidget.clearSearchText();
@@ -371,7 +349,66 @@ define(["dojo/_base/declare",
         },
 
         /**
+        * This function is used to set the view of application to grid-view only.
+        * @param{boolean} refreshGridViewUI set to true will refresh the UI of Grid-view.
+        * @memberOf widgets/main/main
+        */
+        _showOnlyGridView: function (refreshGridViewUI) {
+            $("#UpperContainer").resizable("disable");
+            this._isMapViewClicked = false;
+            this._isGridViewClicked = true;
+            this._isSplitViewClicked = false;
+            this._dataViewerWidget.isMapViewClicked = false;
+            this._dataViewerWidget.isGridViewClicked = true;
+            domStyle.set("UpperContainer", "display", "block");
+            domStyle.set("LowerContainer", "height", "0%");
+            domStyle.set("UpperContainer", "height", "100%");
+            if (refreshGridViewUI) {
+                this._dataViewerWidget.retainShowSelectedModeAfterResize();
+            }
+            this._setDataViewerHeight();
+        },
+
+        /**
+        * This function is used to set the view of application to map-view only.
+        * @memberOf widgets/main/main
+        */
+        _showOnlyMapView: function () {
+            $("#UpperContainer").resizable("disable");
+            this._isMapViewClicked = true;
+            this._isGridViewClicked = false;
+            this._isSplitViewClicked = false;
+            this._dataViewerWidget.isMapViewClicked = true;
+            this._dataViewerWidget.isGridViewClicked = false;
+            domStyle.set("UpperContainer", "display", "none");
+            domStyle.set("LowerContainer", "display", "block");
+            domStyle.set("LowerContainer", "height", "100%");
+            this._setDataViewerHeight();
+            this._resizeMap();
+        },
+
+        /**
+        * This function is used to set the view of application to split-view.
+        * In which Grid-view will be 40% and map-view will be 605 of the screen height.
+        * @memberOf widgets/main/main
+        */
+        _showSplitView: function () {
+            $("#UpperContainer").resizable("enable");
+            this._isMapViewClicked = false;
+            this._isGridViewClicked = false;
+            this._isSplitViewClicked = true;
+            this._dataViewerWidget.isMapViewClicked = false;
+            this._dataViewerWidget.isGridViewClicked = false;
+            domStyle.set("UpperContainer", "display", "block");
+            domStyle.set("LowerContainer", "display", "block");
+            this._setDefaultHeightOfUpperAndLowerContainer();
+            this._setDataViewerHeight();
+            this._resizeMap();
+        },
+
+        /**
         * This function is used to set default height of upper and lower container
+        * @memberOf widgets/main/main
         */
         _setDefaultHeightOfUpperAndLowerContainer: function () {
             domStyle.set("UpperContainer", "height", "40%");
@@ -506,6 +543,32 @@ define(["dojo/_base/declare",
                 // show map panel
                 this._dataViewerWidget.showLocationTab = lang.hitch(this, function () {
                     this._mapViewer.switchViewer("location");
+                });
+
+                // Handle Edit start and complete event
+                this._dataViewerWidget.OnEditingStart = lang.hitch(this, function () {
+                    //check if it's android device and user is in split-view then only switch to only grid-view
+                    if (dojo.applicationUtils.isAndroid() && this._isSplitViewClicked) {
+                        domStyle.set(this._mapViewer.mapDiv, "display", "none");
+                        //Show only grid-view while editing in android devices
+                        this._showOnlyGridView(false);
+                        //Set Editing started on android after keyboard animation is done
+                        setTimeout(lang.hitch(this, function () {
+                            this._isEditingOnAndroid = true;
+                        }), 500);
+                    }
+                });
+
+                // Handle Edit start and complete event
+                this._dataViewerWidget.OnEditingComplete = lang.hitch(this, function () {
+                    if (dojo.applicationUtils.isAndroid() && this._isEditingOnAndroid) {
+                        //reset the flag to false once editing is done
+                        this._isEditingOnAndroid = false;
+                        //set the display of the map to true so that it is visible after keyboard is hidden
+                        domStyle.set(this._mapViewer.mapDiv, "display", "block");
+                        //after editing move to split-view
+                        this._showSplitView(false);
+                    }
                 });
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
