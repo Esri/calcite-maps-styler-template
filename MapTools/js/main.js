@@ -702,14 +702,27 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     ];
                 }
             }
-            arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: {
+
+            //Define map options
+            var options = {
                     slider: this.config.zoom,
                     sliderPosition: this.config.zoom_position,
                     logo: (this.config.logoimage === null) ? true : false
-                    // Optionally define additional map config here for example you can
-                    // turn the slider off, display info windows, disable wraparound 180, slider position and more.
-                },
+            };
+
+            //specify center and zoom if provided as url params 
+            if (this.config.level) {
+                options.zoom = this.config.level;
+            }
+            if (this.config.center) {
+                var points = this.config.center.split(",");
+                if (points && points.length === 2) {
+                    options.center = [parseFloat(points[0]), parseFloat(points[1])];
+                }
+
+            }
+            arcgisUtils.createMap(itemInfo, "mapDiv", {
+                mapOptions: options,
                 usePopupManager: true,
                 editable: this.config.editable,
                 bingMapsKey: this.config.bingKey
