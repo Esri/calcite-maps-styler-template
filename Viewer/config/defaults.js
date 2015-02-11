@@ -77,6 +77,8 @@ define({
     "scalebar": false,
     //Specify a title for the application. If not provided the web map title is used.
     "title": "",
+    "level": null,
+    "center": null,
     //Replace these with your own bitly key
     "bitlyLogin": "esrimarketing",
     "bitlyKey": "R_52f84981da0e75b23aea2b3b20cbafbc"

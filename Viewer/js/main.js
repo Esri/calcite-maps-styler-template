@@ -1032,9 +1032,24 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
         _createWebMap: function (itemInfo) {
 
             window.config = this.config;
+
+            var options = {};
+            //specify center and zoom if provided as url params 
+            if (this.config.level) {
+                options.zoom = this.config.level;
+            }
+            if (this.config.center) {
+                var points = this.config.center.split(",");
+                if (points && points.length === 2) {
+                    options.center = [parseFloat(points[0]), parseFloat(points[1])];
+                }
+
+            }
+
+
             // create a map based on the input web map id
             arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: {},
+                mapOptions: options,
                 editable: has("edit"),
                 //is the app editable
                 usePopupManager: true,
