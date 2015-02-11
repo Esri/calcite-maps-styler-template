@@ -83,8 +83,7 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
             this.inherited(arguments);
             this.own(
               on(this._helpNode, "click", lang.partial(this._showHelp, false)), 
-             // on(this._measureBtn, "click", lang.hitch(this, this._toggleMeasurePane)), 
-             // on(this._closePaneBtn, "click", lang.hitch(this, this._toggleMeasurePane)), 
+
               aspect.after(registry.getEnclosingWidget(this.domNode), "resize", lang.hitch(this, this._resizeChart), true)
             );
 
@@ -126,6 +125,7 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
 
                 // DIJIT SUCCESSFULLY LOADED //
                 this.loaded = true;
+
                 this.emit("load", {});
 
             }), lang.hitch(this, function () {
@@ -198,6 +198,8 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
                 defaultAreaUnit: (this.scalebarUnits === "metric") ? Units.SQUARE_KILOMETERS : Units.SQUARE_MILES,
                 defaultLengthUnit: (this.scalebarUnits === "metric") ? Units.KILOMETERS : Units.MILES
             }, this._measureNode);
+
+
             this.measureTool.startup();
 
             // Hide area and location tools since we don't use them
@@ -205,9 +207,12 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
             this.measureTool.hideTool("location");
 
             //Activate then deactivate the distance tool to enable the measure units 
+            on.once(this.measureTool, "tool-change", lang.hitch(this, function(){
+                this.measureTool.setTool("distance", false);
+                this.measureTool.clearResult();
+            }));
             this.measureTool.setTool("distance", true);
-            this.measureTool.setTool("distance", false);
-
+            
             // Create profile on measure end 
             this.measureTool.on("measure-end", lang.hitch(this, this._onMeasureEnd));
 
@@ -215,8 +220,8 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
             this.measureTool._distanceButton.on("click", lang.hitch(this, this._onMeasureClick));
 
             // Update the chart when units change 
-            //aspect.after(this.measureTool._unitDropDown.dropDown, "onItemClick", lang.hitch(this, this._updateProfileChart), true);
-            aspect.after(this.measureTool._unitDropDown.dropDown, "onItemClick", lang.hitch(this, this._unitsChanged), true);
+            on(this.measureTool, "unit-change", lang.hitch(this, this._unitsChanged), true);
+
         },
 
         /**
@@ -238,9 +243,6 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
                 //Todo we should really list distance for both select and measure
                 console.log(number.format(evt.values) + " " + evt.unitName);
                 this.displayProfileChart(evt.geometry);
-                //Update the chart when user changes units 
-                //aspect.after(this.measureTool._unitDropDown.dropDown, "onItemClick", lang.hitch(this, this._updateProfileChart), true);
-                aspect.after(this.measureTool._unitDropDown.dropDown, "onItemClick", lang.hitch(this, this._unitsChanged), true);
             }
         },
 
@@ -386,9 +388,6 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
             this.elevationInfo = null;
             this._updateProfileChart();
             this.emit("clear-profile", {});
-            // update the chart when units change 
-           // aspect.after(this.measureTool._unitDropDown.dropDown, "onItemClick", lang.hitch(this, this._updateProfileChart), true);
-            aspect.after(this.measureTool._unitDropDown.dropDown, "onItemClick", lang.hitch(this, this._unitsChanged), true);
         },
 
         /**
