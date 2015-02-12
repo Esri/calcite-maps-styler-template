@@ -162,7 +162,7 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                 for (i = 0; i < items.length; i++) {
                     if (urlObject.query[items[i]]) {
                         var item = urlObject.query[items[i]];
-                        obj[items[i]] = item === "true" || (item == "false" ? false : item);                        
+                        obj[items[i]] = item === "true" || (item == "false" ? false : item);
                     }
                 }
             }

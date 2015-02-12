@@ -100,7 +100,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     expanded: false
                 };
 
-                 var searchLayers = false;
+                var searchLayers = false;
                 var search = new Search(options, domConstruct.create("div", {
                     id: "search"
                 }, "mapDiv"));
@@ -140,7 +140,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
 
                 array.forEach(configuredSearchLayers, lang.hitch(this, function (layer) {
-                  
+
                     var mapLayer = this.map.getLayer(layer.id);
                     if (mapLayer) {
                         var source = {};
@@ -148,15 +148,20 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                         if (layer.fields && layer.fields.length && layer.fields.length > 0) {
                             source.searchFields = layer.fields;
+                            source.displayField = layer.fields[0];
+                            source.outFields = ["*"];
                             searchLayers = true;
                             defaultSources.push(source);
+                            if (mapLayer.infoTemplate) {
+                                source.infoTemplate = mapLayer.infoTemplate;
+                            }
                         }
                     }
                 }));
                 //Add search layers defined on the web map item 
                 if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
                     var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
-                
+
                     array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
                         //we do this so we can get the title specified in the item
                         var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
@@ -238,7 +243,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 locate.startup();
 
             }));
-           
+
         },
         _addToolbarWidgets: function () {
 
@@ -258,27 +263,27 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     return;
                 }
                 this.tableHandler = null;
-                /*Create the table if a layer and field have been defined or if there's a feature layer in the map
+/*Create the table if a layer and field have been defined or if there's a feature layer in the map
                 */
                 var layer = null;
 
                 if (this.config.tableLayer && this.config.tableLayer.id) {
                     layer = this.map.getLayer(this.config.tableLayer.id);
-                    
+
                     if (layer) {
                         //get hidden fields
                         var hiddenFields = null;
                         if (this.config.tableLayer.fields) {
-                           if (this.config.tableLayer.fields.length && this.config.tableLayer.fields.length > 0) {
+                            if (this.config.tableLayer.fields.length && this.config.tableLayer.fields.length > 0) {
                                 hiddenFields = this.config.tableLayer.fields[0].fields;
                             }
                         }
-                    }else{
+                    } else {
                         layer = null;
                     }
                 }
-          
-                if(layer === null ){
+
+                if (layer === null) {
                     //get first feature layer from map if no feature layers then return
                     array.some(this.map.graphicsLayerIds, lang.hitch(this, function (id) {
                         var l = this.map.getLayer(id);
@@ -298,7 +303,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                 on(btn, "click", lang.hitch(this, function () {
                     this._closeContainers("tableDiv");
-                   
+
                     //Toggle table display 
                     var table = dom.byId("tableDiv");
                     var height = domStyle.get(table, "height");
@@ -559,7 +564,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 this._createContainer("gallery_container", "galleryDiv");
 
                 var gallery = new BasemapGallery(galleryOptions, dom.byId("galleryDiv"));
-       
+
 
                 gallery.startup();
                 basemapDef.resolve(btn);
@@ -705,9 +710,9 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
             //Define map options
             var options = {
-                    slider: this.config.zoom,
-                    sliderPosition: this.config.zoom_position,
-                    logo: (this.config.logoimage === null) ? true : false
+                slider: this.config.zoom,
+                sliderPosition: this.config.zoom_position,
+                logo: (this.config.logoimage === null) ? true : false
             };
 
             //specify center and zoom if provided as url params 
@@ -730,7 +735,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 this.map = response.map;
                 this.config.response = response;
 
-                 if (this.config.logoimage) {
+                if (this.config.logoimage) {
 
                     query(".esriControlsBR").forEach(lang.hitch(this, function (node) {
                         var link = null;
@@ -742,14 +747,14 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                         }
 
                         var logoimg = domConstruct.create("img", {
-                            width:"65px",
-                            height:"36px",
+                            width: "65px",
+                            height: "36px",
                             src: this.config.logoimage,
                             "class": "logo"
                         }, link || node);
 
                     }));
-                }       
+                }
 
 
                 //Set the popup theme so it doesn't use sprite also update colors
@@ -873,14 +878,14 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             query(".tool_container").forEach(lang.hitch(this, function (container_node) {
                 //close any open containers when another tool is open
                 var visible = domStyle.get(container_node, "display");
-                 if (visible === "block" && (container !== container_node.id)) {
+                if (visible === "block" && (container !== container_node.id)) {
                     domUtils.hide(container_node);
                 }
             }));
 
             //remove any selected styles 
             query("#toolbar-trailing .tool-selected").forEach(function (node) {
-                if(node && node.id !== "table_toggle"){
+                if (node && node.id !== "table_toggle") {
                     domClass.remove(node, "tool-selected");
                 }
             });
@@ -890,25 +895,25 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
         _displayContainer: function (container, button) {
 
             this._closeContainers(container);
-        
+
             var node = dom.byId(container);
             domUtils.toggle(node);
 
-            if(domStyle.get(node, "display") === "none"){
+            if (domStyle.get(node, "display") === "none") {
                 //remove tool selected style from node
                 domClass.remove(dom.byId(button), "tool-selected");
-            }else{
+            } else {
                 //add the selected style
-                 domClass.add(dom.byId(button), "tool-selected");
+                domClass.add(dom.byId(button), "tool-selected");
             }
-         
+
             var pos = domGeometry.position(dom.byId(button));
             var winWidth = win.getBox();
             var buttonSize = pos.x + pos.w;
-            if(buttonSize === winWidth.w){
-               domStyle.set(node, "right", 0);
-            }else{
-               domStyle.set(node, "right", (pos.w) + "px");
+            if (buttonSize === winWidth.w) {
+                domStyle.set(node, "right", 0);
+            } else {
+                domStyle.set(node, "right", (pos.w) + "px");
             }
         },
         _navigateStack: function (panelLabel, buttonLabel) {
