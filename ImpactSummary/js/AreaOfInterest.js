@@ -125,7 +125,7 @@ define([
                     // set layer title
                     this._setImpactLayerTitle();
                     this._sb.show();
-                        // drawer resize event
+                    // drawer resize event
                     on(this._drawer, 'resize', lang.hitch(this, function () {
                         // resize stats block
                         if (this._sb) {
@@ -214,7 +214,7 @@ define([
                         array.forEach(this.entireAreaFeatures, lang.hitch(this, function (feature) {
                             array.some(this._aoiInfos, lang.hitch(this, function (renderer, idx) {
                                 var attributeField = feature.attributes[this._attributeField];
-                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField > renderer.minValue && attributeField <= renderer.maxValue) || (renderer.minValue && renderer.maxValue && (renderer.minValue == renderer.maxValue))) {
+                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField > renderer.minValue && attributeField <= renderer.maxValue) || ((renderer.minValue == renderer.maxValue) && renderer.minValue == attributeField)) {
                                     feature.setSymbol(this._aoiInfos[idx].symbol);
                                     return true;
                                 }
@@ -241,7 +241,7 @@ define([
                         array.forEach(features, lang.hitch(this, function (feature) {
                             array.some(this._aoiInfos, lang.hitch(this, function (renderer, idx) {
                                 var attributeField = feature.attributes[this._attributeField];
-                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField >= renderer.minValue && attributeField <= renderer.maxValue)) {
+                                if (attributeField == renderer.label || attributeField == renderer.value || (attributeField > renderer.minValue && attributeField <= renderer.maxValue) || ((renderer.minValue == renderer.maxValue) && renderer.minValue == attributeField)) {
                                     var tempSymbol = lang.clone(this._aoiInfos[idx].symbol);
                                     if (fillStyle) {
                                         tempSymbol.style = SimpleFillSymbol[fillStyle];
@@ -413,14 +413,14 @@ define([
                     q.orderByFields = [this._attributeField + ' ' + this.config.summaryAttributeOrder];
                 }
                 // get features
-                this._aoiLayer.queryFeatures(q, lang.hitch(this, function (fs) {
+                this._aoiLayer.selectFeatures(q, esri.layers.FeatureLayer.SELECTION_NEW, lang.hitch(this, function (fs) {
                     // features were returned
-                    if (fs.features && fs.features.length) {
+                    if (fs && fs.length) {
                         // display stats
-                        this._sb.set("features", [fs.features[0]]);
+                        this._sb.set("features", [fs[0]]);
                         this._sb.startup();
                         // selected features
-                        this._selectFeatures([fs.features[0]], fs.features[0].attributes[this._attributeField]);
+                        this._selectFeatures([fs[0]], fs[0].attributes[this._attributeField]);
                         // zoom to feature
                         this._zoomToFeature(this.config.zoomType, fs);
                     }
@@ -461,12 +461,12 @@ define([
                 }
                 var ct = node;
                 // query features
-                this._aoiLayer.queryFeatures(q, lang.hitch(this, function (fs) {
+                this._aoiLayer.selectFeatures(q, esri.layers.FeatureLayer.SELECTION_NEW, lang.hitch(this, function (fs) {
                     // remove current renderer
                     domClass.remove(ct, this.areaCSS.rendererLoading);
                     // display geo stats
-                    this._sb.set("features", fs.features);
-                    this._selectFeatures(fs.features, node.textContent || node.innerText);
+                    this._sb.set("features", fs);
+                    this._selectFeatures(fs, node.textContent || node.innerText);
                     // zoom to feature
                     this._zoomToFeature(this.config.zoomType, fs);
 
@@ -610,7 +610,9 @@ define([
                     var parent = this.config.summaryAttributes[i];
                     var children = parent.children;
                     // add parent field
-                    outFields.push(parent.attribute);
+                    if (parent.attribute) {
+                        outFields.push(parent.attribute);
+                    }
                     // parent children
                     if(children && children.length){
                         // each child
@@ -656,17 +658,17 @@ define([
             _zoomToFeature: function (type, fs) {
                 switch (type) {
                     case "No Zoom":
-                        this.map.centerAt(graphicsUtils.graphicsExtent(fs.features).getCenter());
+                        this.map.centerAt(graphicsUtils.graphicsExtent(fs).getCenter());
                         break;
                     case "Zoom to extent":
-                        this.map.setExtent(graphicsUtils.graphicsExtent(fs.features), true);
+                        this.map.setExtent(graphicsUtils.graphicsExtent(fs), true);
                         break;
                     default:
                         if (this.previousFeatures == "Entire Area") {
-                            this.map.setExtent(graphicsUtils.graphicsExtent(fs.features), true);
+                            this.map.setExtent(graphicsUtils.graphicsExtent(fs), true);
                         } else {
                             this.map.setScale(type);
-                            this.map.centerAt(graphicsUtils.graphicsExtent(fs.features).getCenter());
+                            this.map.centerAt(graphicsUtils.graphicsExtent(fs).getCenter());
                             break;
                         }
                 }
