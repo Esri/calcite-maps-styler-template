@@ -17,12 +17,12 @@
                "type":"string",
                "tooltip":"Defaults to web map title"
             },{  
-               "label":"Title logo:",
+               "label":"Map logo:",
                "fieldName":"logoimage",
                "type":"string",
-               "tooltip":"Defaults to sample logo"
+               "tooltip":"Defaults to esri logo"
             },{
-                "label": "Logo Link",
+                "label": "Map Logo Link",
                 "fieldName": "logolink",
                 "type": "string",
                 "tooltip": "Url to navigate to when logo is clicked"
