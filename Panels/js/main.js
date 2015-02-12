@@ -173,7 +173,7 @@ function(
                 var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
 
                 array.forEach(configuredSearchLayers, lang.hitch(this, function (layer) {
-                  
+
                     var mapLayer = this.map.getLayer(layer.id);
                     if (mapLayer) {
                         var source = {};
@@ -181,8 +181,13 @@ function(
 
                         if (layer.fields && layer.fields.length && layer.fields.length > 0) {
                             source.searchFields = layer.fields;
+                            source.displayField = layer.fields[0];
+                            source.outFields = ["*"];
                             searchLayers = true;
                             defaultSources.push(source);
+                            if (mapLayer.infoTemplate) {
+                                source.infoTemplate = mapLayer.infoTemplate;
+                            }
                         }
                     }
                 }));

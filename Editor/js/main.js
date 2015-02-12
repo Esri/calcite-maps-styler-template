@@ -230,7 +230,7 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                 var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
 
                 array.forEach(configuredSearchLayers, lang.hitch(this, function (layer) {
-                  
+
                     var mapLayer = this.map.getLayer(layer.id);
                     if (mapLayer) {
                         var source = {};
@@ -238,11 +238,17 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
 
                         if (layer.fields && layer.fields.length && layer.fields.length > 0) {
                             source.searchFields = layer.fields;
+                            source.displayField = layer.fields[0];
+                            source.outFields = ["*"];
                             searchLayers = true;
                             defaultSources.push(source);
+                            if (mapLayer.infoTemplate) {
+                                source.infoTemplate = mapLayer.infoTemplate;
+                            }
                         }
                     }
                 }));
+                
                 //Add search layers defined on the web map item 
                 if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
                     var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;

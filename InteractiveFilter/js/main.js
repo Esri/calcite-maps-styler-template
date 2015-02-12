@@ -159,8 +159,13 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
 
                             if (layer.fields && layer.fields.length && layer.fields.length > 0) {
                                 source.searchFields = layer.fields;
+                                source.displayField = layer.fields[0];
+                                source.outFields = ["*"];
                                 searchLayers = true;
                                 defaultSources.push(source);
+                                if (mapLayer.infoTemplate) {
+                                    source.infoTemplate = mapLayer.infoTemplate;
+                                }
                             }
                         }
                     }));
