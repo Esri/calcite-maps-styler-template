@@ -895,25 +895,28 @@ define([
         // ROUTE TO LOCATION
         _routeToLocation: function(event) {
             var pt = event.data;
-            this.dirWidget.reset();
-            this.dirWidget.removeStops();
-            this._toggleDirections();
-            var def = this.dirWidget.addStops([this.location, pt]);
-            def.then(lang.hitch(this, function(){
-                 this.dirWidget.getDirections();
-             }));
+            var promise = this.dirWidget.reset();
+            promise.then(lang.hitch(this, function(){
+               this._toggleDirections();
+               var def = this.dirWidget.addStops([this.location, pt]);
+               def.then(lang.hitch(this, function(){
+                  this.dirWidget.getDirections();
+               }));
+            }));
         },
         
         // REVERSE DIRECTIONS
         _reverseDirections: function() {
-            var stops = this.dirWidget.stops;
+            var stops = this.dirWidget.stops.slice();
             stops.reverse();
-            this.dirWidget.reset();
-            this.dirWidget.removeStops();
-            var def = this.dirWidget.addStops(stops);
-            def.then(lang.hitch(this, function(){
-                 this.dirWidget.getDirections();
-             }));
+            var promise = this.dirWidget.reset();
+            promise.then(lang.hitch(this, function(){
+               this._toggleDirections();
+               var def = this.dirWidget.addStops(stops);
+               def.then(lang.hitch(this, function(){
+                  this.dirWidget.getDirections();
+               }));
+            }));
         },
         
         // TOGGLE DIRECTIONS
