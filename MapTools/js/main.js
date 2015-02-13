@@ -36,6 +36,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 //supply either the webmap id or, if available, the item info
                 var itemInfo = this.config.itemInfo || this.config.webmap;
                 this._createWebMap(itemInfo);
+                this._updateTheme();
             } else {
                 var error = new Error("Main:: Config is not defined");
                 this.reportError(error);
