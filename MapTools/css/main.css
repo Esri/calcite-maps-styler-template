@@ -120,10 +120,9 @@ body {
 .title-header {
   margin: 0;
   padding: 0;
-  height: 40px;
+  overflow: hidden;
 }
 .title-header h1 {
-  padding-top: 4px;
   white-space: nowrap;
   overflow: hidden;
   -o-text-overflow: ellipsis;
@@ -370,11 +369,6 @@ body {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   font-size: 15px;
 }
-#layerDiv {
-  height: auto;
-  width: auto;
-  overflow-y: scroll;
-}
 #shareDiv {
   padding: 5px;
   height: auto;
@@ -521,11 +515,15 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   font-size: 15px;
 }
+#layerDiv {
+  max-height: 300px;
+  overflow: hidden;
+}
 .TableOfContents {
   position: relative;
-  width: 100%;
-  overflow: scroll;
-  padding-bottom: 5%;
+  width: 280px;
+  max-height: 300px;
+  overflow: auto;
 }
 .TableOfContents .toc-title {
   border-bottom: 1px solid #e0e0e0;
