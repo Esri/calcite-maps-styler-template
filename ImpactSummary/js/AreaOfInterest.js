@@ -16,6 +16,7 @@ define([
     "esri/geometry/Point",
     "esri/graphic",
     "esri/layers/GraphicsLayer",
+    "esri/layers/FeatureLayer",
     "esri/graphicsUtils",
     "esri/tasks/query",
     "dojo/window"
@@ -34,7 +35,7 @@ define([
         Color,
         event,
         Point,
-        Graphic, GraphicsLayer,
+        Graphic, GraphicsLayer, FeatureLayer,
         graphicsUtils,
         Query,
         win
@@ -147,7 +148,7 @@ define([
                 }
             },
             _selectFeatures: function (features, value) {
-                var alpha, themeColor, sls, i, symbolSize, fillStyle, rendererIndex, graphicSVG, rendererTypeSize, rendererHighlight;
+                var alpha, themeColor, sls, i, symbolSize, fillStyle, rendererIndex, graphicSVG;
                 this._selectedGraphics.clear();
                 themeColor = [0, 255, 255, 1];
                 sls = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(themeColor), 2);
@@ -413,7 +414,7 @@ define([
                     q.orderByFields = [this._attributeField + ' ' + this.config.summaryAttributeOrder];
                 }
                 // get features
-                this._aoiLayer.selectFeatures(q, esri.layers.FeatureLayer.SELECTION_NEW, lang.hitch(this, function (fs) {
+                this._aoiLayer.selectFeatures(q, FeatureLayer.SELECTION_NEW, lang.hitch(this, function (fs) {
                     // features were returned
                     if (fs && fs.length) {
                         // display stats
@@ -461,7 +462,7 @@ define([
                 }
                 var ct = node;
                 // query features
-                this._aoiLayer.selectFeatures(q, esri.layers.FeatureLayer.SELECTION_NEW, lang.hitch(this, function (fs) {
+                this._aoiLayer.selectFeatures(q, FeatureLayer.SELECTION_NEW, lang.hitch(this, function (fs) {
                     // remove current renderer
                     domClass.remove(ct, this.areaCSS.rendererLoading);
                     // display geo stats

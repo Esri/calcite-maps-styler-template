@@ -595,7 +595,7 @@
             }, divInputContainer);
             bufferAreaHelpText = domConstruct.create("div", { "class": "bufferAreaHelpText" }, defineAreaDiv);
             domStyle.set(bufferAreaHelpText, "display", "none");
-            on(this.inputDistance, "keyup", lang.hitch(this, function (evt) {
+            on(this.inputDistance, "keyup", lang.hitch(this, function () {
                 this._checkBufferInputs(/^[0-9]+(\.\d+)?$/, bufferAreaHelpText, divInputContainer, nextButtonDiv);
             }));
             this.bufferAreaUnit = domConstruct.create("select", {

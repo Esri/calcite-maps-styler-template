@@ -123,6 +123,7 @@ define([
                   pagingLinks: this._pagingLinks,
                   sort: this._sort
               }, this.domNode);
+              this._grid.startup();
           },
           _onGridRefresh: function () {
               this.emit("onRefresh", { currentPage: this._grid._currentPage });
