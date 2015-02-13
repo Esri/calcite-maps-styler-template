@@ -38,7 +38,7 @@ define({
   //be dreated with layers that are not set to editable which allows the FeatureLayer to load features optimally. 
   "editable": true,
   "edittoolbar": false,
-  "basemap": true,
+  "basemap": false,
   "alt_basemap": null,
   "home": true,
   "locate": false,

@@ -63,7 +63,7 @@ $drawer-width = 230px;
     overflow: hidden;
 }
 .content-pane-left {
-    width: 0px;
+    width: 0;
     max-width: $drawer-width;
     height: 100%;
     padding: 0;
@@ -81,8 +81,9 @@ $drawer-width = 230px;
     width: $drawer-width;
 }
 .drawer-open .content-pane-left {
-    width: $drawer-width;
-    overflow: auto;
+    width: $drawer-width - 6px;
+    padding-right:5px !important;
+
     overflow-x: hidden;
     border-right: 1px solid #ddd;
 }

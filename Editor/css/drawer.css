@@ -61,7 +61,7 @@
   overflow: hidden;
 }
 .content-pane-left {
-  width: 0px;
+  width: 0;
   max-width: 230px;
   height: 100%;
   padding: 0;
@@ -79,8 +79,8 @@
   width: 230px;
 }
 .drawer-open .content-pane-left {
-  width: 230px;
-  overflow: auto;
+  width: 224px;
+  padding-right: 5px !important;
   overflow-x: hidden;
   border-right: 1px solid #ddd;
 }
