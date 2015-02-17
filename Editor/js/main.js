@@ -337,6 +337,7 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                 this.map = response.map;
                 this.config.response = response;
                 domClass.add(this.map.infoWindow.domNode, "light");
+                this.map.setInfoWindowOnClick(false);
                 //set the title 
                 var title = this.config.title || this.config.response.itemInfo.item.title;
                 document.title = title;
