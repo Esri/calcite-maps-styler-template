@@ -227,7 +227,8 @@ function(
                             source.name = layer.title || layer.name;
 
                             source.exactMatch = searchLayer.field.exactMatch;
-                            source.searchField = [searchLayer.field.name];
+                            source.displayField = searchLayer.field.name;
+                            source.searchFields = [searchLayer.field.name];
                             source.placeholder = searchOptions.hintText;
                             defaultSources.push(source);
                             searchLayers = true;
