@@ -245,9 +245,24 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query",  "dojo/dom-style", "do
                 }
 
 
+                var elevationObj = {
+                    "elevationSync": {
+                      "url": location.protocol + "//elevation.arcgis.com/arcgis/rest/services/Tools/ElevationSync/GPServer"
+                    }
+                };
+
+                //Elevation service configured in app. 
                 if (this.config.elevationSync) {
-                    this.config.helperServices.elevationSync.url = this.config.elevationSync;
+                    elevationObj.elevationSync.url = this.config.elevationSync;
+                    lang.mixin(this.config.helperServices, elevationObj);
                 }
+  
+                //No elevation service in self call or configured. This happens in portal which doesn't have 
+                //an elevation service defined. 
+                if(!this.config.helperServices.hasOwnProperty("elevationSync")){ 
+                    lang.mixin(this.config.helperServices, elevationObj);
+                }
+
 
                 var profileParams = {
                     map: this.map,
