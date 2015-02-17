@@ -174,9 +174,10 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                             }
                         });
 
-                        if (layer && layer.url) {
+                        if (layer && layer.hasOwnProperty("url")) {
                             var source = {};
                             var url = layer.url;
+                            var name = layer.title || layer.name;
 
                             if (esriLang.isDefined(searchLayer.subLayer)) {
                                 url = url + "/" + searchLayer.subLayer;
@@ -185,14 +186,14 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                                         name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
                                         return true;
                                     }
-
                                 });
                             }
 
                             source.featureLayer = new FeatureLayer(url);
 
 
-                            source.name = layer.title || layer.name;
+                            source.name = name;
+
 
                             source.exactMatch = searchLayer.field.exactMatch;
                             source.displayField = searchLayer.field.name;
