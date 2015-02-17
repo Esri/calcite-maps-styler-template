@@ -139,7 +139,7 @@ define([
                     this.onDetailsTabClick();
                 }));
             } catch (err) {
-                dojo.applicationUtils.showError(err);
+                dojo.applicationUtils.showError(err.message);
             }
         }
     });

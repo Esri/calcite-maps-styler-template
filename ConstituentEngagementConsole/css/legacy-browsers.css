@@ -26,7 +26,7 @@
 
 .dataTables_listViewHeight
 {
-    height: 94% !important;
+    height: 93% !important;
 }
 
 /* End of data viewer */
@@ -73,3 +73,12 @@
 }
 
 /* WebmapList*/
+
+/* Application Header Styles */
+
+.esriCTMenuTabLeft
+{
+    max-width: 330px;
+}
+
+/* End of application header styles */

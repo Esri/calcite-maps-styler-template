@@ -19,7 +19,7 @@ define(({
             error: "Unable to create map"
         },
         main: {
-            noGroup: "No Group configured"
+            noGroup: "No group configured"
         },
         webMapList: {
             owner: "Owner",
@@ -37,8 +37,7 @@ define(({
         },
         applicationHeader: {
             signOutOption: "Sign Out",
-            helpOption: "Help",
-            pleaseSignInText: "Please Sign in",
+            pleaseSignInText: "Please sign in",
             showSelectedOption: "Show Selected",
             showAllOption: "Show All",
             clearSelectionOption: "Clear Selection",
@@ -51,7 +50,7 @@ define(({
             searchModeBtnToolTip: "Layer Search"
         },
         dataviewer: {
-            noFeaturesInCurrentExtent: "No issues in current extent",
+            noFeaturesInCurrentExtent: "No issues in current map area",
             singleFeatureSelection: "Please select a single feature to view the item details",
             multipleFeatureSelection: "Please select a single feature to view the item details",
             photoAttachmentHeader: "Photo",
@@ -65,7 +64,7 @@ define(({
             moreInfolink: "Link"
         },
         config: {
-            configNotDefined: "Config is not defined"
+            configNotDefined: "No configuration defined"
         },
         searchPanel: {
             noResultsFound: "No results found"

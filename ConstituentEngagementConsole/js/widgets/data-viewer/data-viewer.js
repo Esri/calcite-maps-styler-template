@@ -104,6 +104,7 @@ define([
         _updatedDropDownControl: [], // to store dependent drop down control which are updated
         _updateDatePickerControl: [], // to store dependent date picker control which are updated
         _isShowSelectedClickedInMapView: false, // track whether show selected is clicked in map view or not
+        _existingRowData: null, // to store internal row data of data-viewer that was last edited
         isOrientationChangedInListView: false, // to keep track whether orientation is changed in list view or not
         options: {}, // mixin data in this object
         configData: {}, // store configuration data
@@ -154,6 +155,7 @@ define([
                 domConstruct.empty(this.dataViewerParentDiv);
                 // if new operational layer is selected than clear previous selected features
                 if (operationalLayerSelected) {
+                    this._setExistingDefinitionExpression();
                     this._resetSearchPanel();
                     this.showLocationTab();
                     this._resetDetailsTab();
@@ -369,6 +371,7 @@ define([
             dojo.applicationUtils.showLoadingIndicator();
             if (this.isDetailsTabClicked) {
                 this.showLocationTab();
+                this.isDetailsTabClicked = false;
             }
             this._setExistingDefinitionExpression();
             var searchValue = lang.trim($(".esriCTSearchBox")[0].value);
@@ -725,6 +728,10 @@ define([
                     featureLayer.setDefinitionExpression(this._newDefinitionExpression);
                     featureLayer.refresh();
                 }
+                if (this._newDefinitionExpression === this._existingDefinitionExpression) {
+                    featureLayer.setDefinitionExpression(this._existingDefinitionExpression);
+                    featureLayer.refresh();
+                }
                 deferred = featureLayer.queryFeatures(featureQuery);
                 return deferred;
             } catch (err) {
@@ -1063,10 +1070,27 @@ define([
                             "class": "esriCTDataViewerTableHeaderContent"
                         });
                         tableHeader.innerHTML = this._displayColumn[i].label;
+                        this._onTableHeaderClick(tableHeader);
                         tr.appendChild(tableHeader);
                     }
                 }
                 this.dataViewerParentDiv.appendChild(table);
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to redraw data-viewer on header click
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _onTableHeaderClick: function (tableHeader) {
+            try {
+                on(tableHeader, "click", lang.hitch(this, function () {
+                    if (this._dataViewerTable) {
+                        this._dataViewerTable.draw();
+                    }
+                }));
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
@@ -1180,7 +1204,7 @@ define([
                                 } else if (this._displayColumn[j].types) {
                                     if (value || value === 0) {
                                         for (n = 0; n < this._displayColumn[j].types.length; n++) {
-                                            if (this._displayColumn[j].types[n].id === value) {
+                                            if (this._displayColumn[j].types[n].id.toString() === value.toString()) {
                                                 this._dataSet.push(this._displayColumn[j].types[n].name);
                                             }
                                         }
@@ -1278,8 +1302,24 @@ define([
                 this._onRowClick();
                 this._restrictSizeOfTableCellContent();
                 this._retainSelectedFeature();
+                this._setDataViewerHeight();
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to set data viewer height in split view & list view
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _setDataViewerHeight: function () {
+            var tableBodyNodes = query(".dataTables_scrollBody");
+            if (tableBodyNodes.length > 0) {
+                if (this.isGridViewClicked) {
+                    domClass.replace(tableBodyNodes[0], "dataTables_listViewHeight", "dataTables_splitViewHeight");
+                } else {
+                    domClass.replace(tableBodyNodes[0], "dataTables_splitViewHeight", "dataTables_listViewHeight");
+                }
             }
         },
 
@@ -2035,7 +2075,13 @@ define([
                 }
                 for (j = 0; j < obj.types.length; j++) {
                     value = obj.types[j].id + "|" + key;
-                    if (obj.types[j].id === code) {
+                    if ((obj.types[j].id !== null) && (obj.types[j].id !== "") && (code !== null) && (code !== "")) {
+                        if (obj.types[j].id.toString() === code.toString()) {
+                            dependentValueOptions = dependentValueOptions.replace("displayValue", '<option value="' + value + '">' + obj.types[j].name + '</option>');
+                        } else {
+                            dependentValueOptions += '<option value="' + value + '">' + obj.types[j].name + '</option>';
+                        }
+                    } else if ((obj.types[j].id === null || obj.types[j].id === "") && (code === null || code === "")) {
                         dependentValueOptions = dependentValueOptions.replace("displayValue", '<option value="' + value + '">' + obj.types[j].name + '</option>');
                     } else {
                         dependentValueOptions += '<option value="' + value + '">' + obj.types[j].name + '</option>';
@@ -2135,7 +2181,9 @@ define([
         _removeControlsFromPreviousRow: function () {
             try {
                 var i, className, selectedIndex, value, date, dateFormat;
+                this._existingRowData = null;
                 if (this._lastSelectedRow) {
+                    this._existingRowData = this._dataViewerTable.row(this._lastSelectedRow.currentTarget).data();
                     for (i = 1; i < this._lastSelectedRow.currentTarget.childNodes.length; i++) {
                         if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes.length > 0) {
                             if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].className) {
@@ -2143,29 +2191,71 @@ define([
                                 if (className.indexOf("esriCTTextInput") > -1) {
                                     value = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].value;
                                     this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = value;
+                                    this._updateInternalData(i, value);
                                 } else if (className.indexOf("esriCTCodedDomain") > -1) {
                                     selectedIndex = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].selectedIndex;
                                     value = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0][selectedIndex];
                                     if (value) {
                                         this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = value.text;
+                                        this._updateInternalData(i, value.text);
                                     } else {
                                         this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = "";
+                                        this._updateInternalData(i, "");
                                     }
                                 } else if (className.indexOf("esriCTDateTimePicker") > -1) {
                                     date = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].childNodes[0].name.split('|')[1];
                                     dateFormat = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].childNodes[0].name.split('|')[2];
                                     if (date === "null" || date === "") {
                                         this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = "";
+                                        this._updateInternalData(i, "");
                                     } else {
                                         date = parseInt(date, 10);
                                         this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = (moment(date)).format(dateFormat);
+                                        this._updateInternalData(i, (moment(date)).format(dateFormat));
                                     }
                                 }
                             }
                         }
                     }
+                    if (this._dataViewerTable) {
+                        if (this._existingRowData) {
+                            this._dataViewerTable.row(this._lastSelectedRow.currentTarget).data(this._existingRowData);
+                        }
+                    }
                 }
                 this._lastSelectedRow = null;
+            } catch (err) {
+                dojo.applicationUtils.showError(err.message);
+            }
+        },
+
+        /**
+        * This function is used to update internal data of data-viewer
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _updateInternalData: function (index, value) {
+            try {
+                if ((this._existingRowData) && (this._existingRowData[index])) {
+                    switch (typeof this._existingRowData[index]) {
+                    case "string":
+                        if (typeof value === "string") {
+                            this._existingRowData[index] = value;
+                        }
+                        break;
+                    case "object":
+                        if ((this._existingRowData[index] === null) && (value !== "" && value !== null)) {
+                            this._existingRowData[index] = value;
+                        }
+                        break;
+                    case "number":
+                        if (typeof value === "number") {
+                            this._existingRowData[index] = value;
+                        }
+                        break;
+                    }
+                } else if ((this._existingRowData) && (this._existingRowData[index] === null || this._existingRowData[index] === "") && (value !== "" && value !== null)) {
+                    this._existingRowData[index] = value;
+                }
             } catch (err) {
                 dojo.applicationUtils.showError(err.message);
             }
@@ -2424,7 +2514,7 @@ define([
                             symbol.xoffset = this._selectedOperationalLayer.renderer.symbol.xoffset;
                             symbol.yoffset = this._selectedOperationalLayer.renderer.symbol.yoffset;
                         }
-                    } else if ((this._selectedOperationalLayer.renderer.infos) && (this._selectedOperationalLayer.renderer.infos.length > 1)) {
+                    } else if ((this._selectedOperationalLayer.renderer.infos) && (this._selectedOperationalLayer.renderer.infos.length > 0)) {
                         for (i = 0; i < this._selectedOperationalLayer.renderer.infos.length; i++) {
                             graphicInfoValue = graphic.attributes[this._selectedOperationalLayer.typeIdField];
                             layerInfoValue = this._selectedOperationalLayer.renderer.infos[i].value;
@@ -2452,23 +2542,29 @@ define([
                             }
                         }
                         if (!isSymbolFound) {
-                            isSymbolFound = true;
-                            if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("height") && this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("width")) {
-                                height = this._selectedOperationalLayer.renderer.defaultSymbol.height;
-                                width = this._selectedOperationalLayer.renderer.defaultSymbol.width;
-                                size = (height > width) ? height : width;
-                                size = size + 20;
-                                symbol.size = size;
-                            }
-                            if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("size")) {
-                                if (!size || size < this._selectedOperationalLayer.renderer.defaultSymbol.size) {
-                                    symbol.size = this._selectedOperationalLayer.renderer.defaultSymbol.size + 20;
+                            if (this._selectedOperationalLayer.renderer.defaultSymbol) {
+                                isSymbolFound = true;
+                                if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("height") && this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("width")) {
+                                    height = this._selectedOperationalLayer.renderer.defaultSymbol.height;
+                                    width = this._selectedOperationalLayer.renderer.defaultSymbol.width;
+                                    size = (height > width) ? height : width;
+                                    size = size + 20;
+                                    symbol.size = size;
+                                }
+                                if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("size")) {
+                                    if (!size || size < this._selectedOperationalLayer.renderer.defaultSymbol.size) {
+                                        symbol.size = this._selectedOperationalLayer.renderer.defaultSymbol.size + 20;
+                                    }
+                                }
+                                if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("xoffset") && this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("yoffset")) {
+                                    symbol.xoffset = this._selectedOperationalLayer.renderer.defaultSymbol.xoffset;
+                                    symbol.yoffset = this._selectedOperationalLayer.renderer.defaultSymbol.yoffset;
                                 }
                             }
-                            if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("xoffset") && this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("yoffset")) {
-                                symbol.xoffset = this._selectedOperationalLayer.renderer.defaultSymbol.xoffset;
-                                symbol.yoffset = this._selectedOperationalLayer.renderer.defaultSymbol.yoffset;
-                            }
+                        }
+                        if (!isSymbolFound) {
+                            isSymbolFound = true;
+                            symbol.size = 45;
                         }
                     }
                     point = new Point(graphic.geometry.x, graphic.geometry.y, new SpatialReference({
@@ -2658,7 +2754,7 @@ define([
                             } else if (obj.types) {
                                 if (graphic.attributes[key] || graphic.attributes[key] === 0) {
                                     for (n = 0; n < obj.types.length; n++) {
-                                        if (obj.types[n].id === graphic.attributes[key]) {
+                                        if (obj.types[n].id.toString() === graphic.attributes[key].toString()) {
                                             fieldValue = obj.types[n].name;
                                         }
                                     }
@@ -2742,7 +2838,7 @@ define([
         /**
         * open link in a new window
         * @param {url} get link url
-        * @memberOf widgets/issue-wall/issue-wall
+        * @memberOf widgets/data-viewer/data-viewer
         */
         openWindowHandler: function (link) {
             return function () {
@@ -2808,7 +2904,7 @@ define([
                                             } else if (obj.types) {
                                                 if (graphic.attributes[key] || graphic.attributes[key] === 0) {
                                                     for (n = 0; n < obj.types.length; n++) {
-                                                        if (obj.types[n].id === graphic.attributes[key]) {
+                                                        if (obj.types[n].id.toString() === graphic.attributes[key].toString()) {
                                                             fieldValue += obj.types[n].name;
                                                         }
                                                     }

@@ -106,7 +106,7 @@ define({
             noResultsFound: "No reports found" // Shown when no issues are reported by the logged in user
         },
         comment: {
-            errorInSubmmitingComment: "Comment could not be submitted.", // Shown when user is unable to add comments
+            errorInSubmittingComment: "Comment could not be submitted.", // Shown when user is unable to add comments
             emptyCommentMessage: "Please enter comment.", // Shown when user submits a comment without any text/character
             placeHolderText: "Type a comment", // Shown as a placeholder in comments textbox
             noCommentsAvailableText: "No comments available", // Shown when no comments are available for the selected issue
@@ -122,32 +122,5 @@ define({
             votesUpdateFailure: "Unable to update" // Shown as an alert when user is unable to vote for an issue
         }
     }),
-    "ar": 1,
-    "cs": 1,
-    "da": 1,
-    "de": 1,
-    "el": 1,
-    "en": 1,
-    "es": 1,
-    "et": 1,
-    "fi": 1,
-    "fr": 1,
-    "he": 1,
-    "it": 1,
-    "ja": 1,
-    "ko": 1,
-    "lt": 1,
-    "lv": 1,
-    "nb": 1,
-    "nl": 1,
-    "pl": 1,
-    "pt-br": 1,
-    "pt-pt": 1,
-    "ro": 1,
-    "ru": 1,
-    "sv": 1,
-    "th": 1,
-    "tr": 1,
-    "vi": 1,
-    "zh-cn": 1
+    "en": 1
 });
