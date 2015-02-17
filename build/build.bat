@@ -19,8 +19,8 @@ mkdir %BUILD_OUTPUT%\Compare\storytelling_compare
 mkdir %BUILD_OUTPUT%\Compare\storytelling_sidepanel
 mkdir %BUILD_OUTPUT%\Compare\storytelling_tabbed
 mkdir %BUILD_OUTPUT%\CompareMaps
-mkdir %BUILD_OUTPUT%\ConstituentEngagement
-mkdir %BUILD_OUTPUT%\ConstituentEngagementConsole
+mkdir %BUILD_OUTPUT%\CrowdsourceReporter
+mkdir %BUILD_OUTPUT%\CrowdsourceManager
 mkdir %BUILD_OUTPUT%\CrowdSourcePolling
 mkdir %BUILD_OUTPUT%\Edit
 mkdir %BUILD_OUTPUT%\Editor
@@ -100,8 +100,8 @@ xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingSidepanel     %BUILD_OUTPUT%\C
 xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingTabbed        %BUILD_OUTPUT%\Compare\storytelling_tabbed          /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Compare                          %BUILD_OUTPUT%\CompareMaps                          /E /Y
 xcopy %TEMPLATES_ROOT%\CompareAnalysis                          %BUILD_OUTPUT%\CompareAnalysis                      /E /Y
-xcopy %TEMPLATES_ROOT%\ConstituentEngagement                    %BUILD_OUTPUT%\ConstituentEngagement                /E /Y
-xcopy %TEMPLATES_ROOT%\ConstituentEngagementConsole             %BUILD_OUTPUT%\ConstituentEngagementConsole         /E /Y
+xcopy %TEMPLATES_ROOT%\ConstituentEngagement                    %BUILD_OUTPUT%\CrowdsourceReporter                  /E /Y
+xcopy %TEMPLATES_ROOT%\ConstituentEngagementConsole             %BUILD_OUTPUT%\CrowdsourceManager                   /E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingCompare                      %BUILD_OUTPUT%\Compare\storytelling_compare         /E /Y
 xcopy %TEMPLATES_ROOT%\archive\EditorChrome                     %BUILD_OUTPUT%\Editor\Chrome                        /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Edit                             %BUILD_OUTPUT%\Edit                                 /E /Y
