@@ -53,15 +53,7 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
           
                 }
 
-       
-                //Configured apps will have web map as an array. 
-                if(lang.isArray(this.config.webmap)){
-                    this.config.webmaps = this.config.webmap;
-                }else{
-                    this.config.webmaps.push(this.config.webmap);
-                }
-  
-
+      
                 this._createGrid();
 
             } else {
