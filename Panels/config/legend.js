@@ -48,7 +48,7 @@ define([], function() {
         "locate_button": true,
         "geocoder": true,
         "locationSearch": true,
-        "searchExtent":false,
+        "searchExtent":true,
         "searchLayers":[{
             "id": "",
             "fields": []
