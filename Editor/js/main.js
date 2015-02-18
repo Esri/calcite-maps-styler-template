@@ -297,9 +297,9 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                 }
 
 
-
-
                 search.set("sources", defaultSources);
+                search.startup();
+                
                 //set the first non esri layer as active if search layers are defined. 
                 var activeIndex = 0;
                 if (searchLayers) {
@@ -316,7 +316,6 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                 }
 
 
-                search.startup();
                 }));
             }
             this._updateTheme();
