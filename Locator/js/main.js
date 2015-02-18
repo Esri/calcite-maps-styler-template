@@ -141,6 +141,19 @@ define([
                urlPrefix : "traffic.arcgis.com",
                proxyUrl : this.config.proxyurl
             });
+            // add proxy for custom route tasks
+            if (this.config.helperServices.route.url && this.config.helperServices.route.url) {
+               urlUtils.addProxyRule({
+                  urlPrefix : this.config.helperServices.route.url,
+                  proxyUrl : this.config.proxyurl
+               });
+            }
+            if (this.config.routeUtility) {
+               urlUtils.addProxyRule({
+                  urlPrefix : this.config.routeUtility,
+                  proxyUrl : this.config.proxyurl
+               });
+            }
             // document ready
             ready(lang.hitch(this, function() {
                //supply either the webmap id or, if available, the item info
