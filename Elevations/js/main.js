@@ -224,6 +224,8 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query",  "dojo/dom-style", "do
                         }
 
                         search.set("sources", defaultSources);
+                        search.startup();
+                        
                         //set the first non esri layer as active if search layers are defined. 
                         var activeIndex = 0;
                         if (searchLayers) {
@@ -239,7 +241,7 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query",  "dojo/dom-style", "do
                                 search.set("activeSourceIndex", activeIndex);
                             }
                         }
-                        search.startup();
+
 
                     }));
                 }
