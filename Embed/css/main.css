@@ -559,7 +559,7 @@ a {
   height: 100%;
   margin: 0;
   border: none;
-  overflow: hidden;
+  overflow: hidden !important;
   -webkit-transition: width 250ms ease;
   -moz-transition: width 250ms ease;
   -o-transition: width 250ms ease;
