@@ -1,0 +1,70 @@
+﻿define(
+     ({
+        "widgets": {
+            "geoEnrichment": {
+                "placeholder": {
+                    "enterValue": "ก้_Enter distance_ษฺ",
+                    "layerName": "ก้_Enter layer name here_ษฺ"
+                },
+                "message": {
+                    "analysisFailed": "ก้_Analysis failed_ษฺ.",
+                    "errorOccurred": "ก้_Some error occurred_ษฺ.",
+                    "layerAdded": "ก้_Layer successfully added_ษฺ. ",
+                    "enrichLayerNameError": "ก้_The 'Result layer name' should not contain invalid characters" + "(<,>,#,%,:,\",?,&,+,/,\\)_ษฺ.",
+                    "creatingService": "ก้_Creating service_ษฺ.. ",
+                    "starting": "ก้_Starting_ษฺ",
+                    "performingAnalysis": "ก้_Performing analysis_ษฺ..",
+                    "checkLayerName": "ก้_Checking for layer name_ษฺ.. ",
+                    "addingLayer": "ก้_Adding layer to webmap_ษฺ ",
+                    "layerNameExist": "ก้_Layer name already exists_ษฺ.",
+                    "clickOnSave": " ก้_Click on 'Save' button to reload the application_ษฺ.",
+                    "clickOnOk": " ก้_Please click on 'OK' button to try again_ษฺ.",
+                    "enterNumbersOnly": "ก้_The values entered is not valid_ษฺ",
+                    "nofeatures": "ก้_No features are present in the current extent_ษฺ",
+                    "selectData": "ก้_Please select data to enrich layer_ษฺ.",
+                    "resetVariableMessage": "ก้_Are you sure you want to reset variable_ษฺ?",
+                    "emptyTextFieldLayerName": "ก้_Enter result layer name_ษฺ",
+                    "createService":"ก้_Layer not created_ษฺ.",
+                    "sharingLayer":"ก้_Sharing layer_ษฺ..",
+                    "updateItemFailed": "ก้_Failed to update. Please try again_ษฺ.",
+                    "geoEnrichFailed": "ก้_Failed to enrich layer. Please try again_ษฺ.",
+                    "shareFailed": "ก้_Failed to share enriched layer. Please try again_ษฺ.",
+                    "refreshServiceFailed": "ก้_Failed to refresh layer. Please try again_ษฺ.",
+                    "layerJsonFailed": "ก้_Failed to create JSON for layer. Please try again_ษฺ.",
+                    "addToWebmapFailed": "ก้_Failed to add layer to webmap. Please try again_ษฺ.",
+                    "bufferAreaHelpText": "ก้_Please enter the value less than_ษฺ ",
+                    "invalidBufferInput": "ก้_The value entered is not valid_ษฺ.",
+                    "emptyBufferInput": "ก้_Please enter valid value_ษฺ."
+                },
+                "populationText": "ก้_Population_ษฺ",
+                "housingText": "ก้_Household_ษฺ",
+                "businessText": "ก้_Business_ษฺ",
+                "variableListText": " ก้_variables are listed here_ษฺ:",
+                "countrySelectTitle": "ก้_1. Select Data Location_ษฺ",
+                "unitedStates": "ก้_United States_ษฺ",
+                "global": "ก้_Global_ษฺ",
+                "geoenrichDialogText": "ก้_Geoenrichment Variables_ษฺ",
+                "viewVariablestext": "ก้_View variables_ษฺ",
+                "backButtonText":"ก้_Back_ษฺ",
+                "customizeVariables": "ก้_Customize variables_ษฺ",
+                "resetVariables": "ก้_Reset_ษฺ",
+                "defineAreaTitle": "ก้_3. Define area to enrich_ษฺ",
+                "currentMapExtent": "ก้_Use current map extent_ษฺ",
+                "enrichLayerName": "ก้_4. Result layer name_ษฺ",
+                "lineDistanceText": "ก้_Line Distance_ษฺ",
+                "drivingTime": "ก้_Driving Time_ษฺ",
+                "enrichButtonText": "ก้_Enrich Layer_ษฺ",
+                "selectDataText": "ก้_2. Select Data_ษฺ",
+                "showCreditsText": "ก้_Show credits_ษฺ",
+                "variableCount": "ก้_Total variable count_ษฺ ",
+                "totalRecords": "ก้_Total Records_ษฺ:",
+                "cost": "ก้_Cost_ษฺ:",
+                "showCreditsDialogText": "ก้_Show Credits_ษฺ",
+                "nextButtonText": "ก้_Next_ษฺ",
+                "prevButtonText": "ก้_Previous_ษฺ",
+                "saveButtonText": "ก้_Save_ษฺ",
+                "ok": "ก้_OK_ษฺ"
+            }
+        }
+    })
+); 

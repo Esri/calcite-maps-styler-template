@@ -1,0 +1,70 @@
+﻿define(
+     ({
+        "widgets": {
+            "geoEnrichment": {
+                "placeholder": {
+                    "enterValue": "ã_Enter distance_Ç",
+                    "layerName": "ã_Enter layer name here_Ç"
+                },
+                "message": {
+                    "analysisFailed": "ã_Analysis failed_Ç.",
+                    "errorOccurred": "ã_Some error occurred_Ç.",
+                    "layerAdded": "ã_Layer successfully added_Ç. ",
+                    "enrichLayerNameError": "ã_The 'Result layer name' should not contain invalid characters" + "(<,>,#,%,:,\",?,&,+,/,\\)_Ç.",
+                    "creatingService": "ã_Creating service_Ç.. ",
+                    "starting": "ã_Starting_Ç",
+                    "performingAnalysis": "ã_Performing analysis_Ç..",
+                    "checkLayerName": "ã_Checking for layer name_Ç.. ",
+                    "addingLayer": "ã_Adding layer to webmap_Ç ",
+                    "layerNameExist": "ã_Layer name already exists_Ç.",
+                    "clickOnSave": " ã_Click on 'Save' button to reload the application_Ç.",
+                    "clickOnOk": " ã_Please click on 'OK' button to try again_Ç.",
+                    "enterNumbersOnly": "ã_The values entered is not valid_Ç",
+                    "nofeatures": "ã_No features are present in the current extent_Ç",
+                    "selectData": "ã_Please select data to enrich layer_Ç.",
+                    "resetVariableMessage": "ã_Are you sure you want to reset variable_Ç?",
+                    "emptyTextFieldLayerName": "ã_Enter result layer name_Ç",
+                    "createService":"ã_Layer not created_Ç.",
+                    "sharingLayer":"ã_Sharing layer_Ç..",
+                    "updateItemFailed": "ã_Failed to update. Please try again_Ç.",
+                    "geoEnrichFailed": "ã_Failed to enrich layer. Please try again_Ç.",
+                    "shareFailed": "ã_Failed to share enriched layer. Please try again_Ç.",
+                    "refreshServiceFailed": "ã_Failed to refresh layer. Please try again_Ç.",
+                    "layerJsonFailed": "ã_Failed to create JSON for layer. Please try again_Ç.",
+                    "addToWebmapFailed": "ã_Failed to add layer to webmap. Please try again_Ç.",
+                    "bufferAreaHelpText": "ã_Please enter the value less than_Ç ",
+                    "invalidBufferInput": "ã_The value entered is not valid_Ç.",
+                    "emptyBufferInput": "ã_Please enter valid value_Ç."
+                },
+                "populationText": "ã_Population_Ç",
+                "housingText": "ã_Household_Ç",
+                "businessText": "ã_Business_Ç",
+                "variableListText": " ã_variables are listed here_Ç:",
+                "countrySelectTitle": "ã_1. Select Data Location_Ç",
+                "unitedStates": "ã_United States_Ç",
+                "global": "ã_Global_Ç",
+                "geoenrichDialogText": "ã_Geoenrichment Variables_Ç",
+                "viewVariablestext": "ã_View variables_Ç",
+                "backButtonText":"ã_Back_Ç",
+                "customizeVariables": "ã_Customize variables_Ç",
+                "resetVariables": "ã_Reset_Ç",
+                "defineAreaTitle": "ã_3. Define area to enrich_Ç",
+                "currentMapExtent": "ã_Use current map extent_Ç",
+                "enrichLayerName": "ã_4. Result layer name_Ç",
+                "lineDistanceText": "ã_Line Distance_Ç",
+                "drivingTime": "ã_Driving Time_Ç",
+                "enrichButtonText": "ã_Enrich Layer_Ç",
+                "selectDataText": "ã_2. Select Data_Ç",
+                "showCreditsText": "ã_Show credits_Ç",
+                "variableCount": "ã_Total variable count_Ç ",
+                "totalRecords": "ã_Total Records_Ç:",
+                "cost": "ã_Cost_Ç:",
+                "showCreditsDialogText": "ã_Show Credits_Ç",
+                "nextButtonText": "ã_Next_Ç",
+                "prevButtonText": "ã_Previous_Ç",
+                "saveButtonText": "ã_Save_Ç",
+                "ok": "ã_OK_Ç"
+            }
+        }
+    })
+); 

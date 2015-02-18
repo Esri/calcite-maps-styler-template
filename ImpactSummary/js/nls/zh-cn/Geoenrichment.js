@@ -1,0 +1,70 @@
+﻿define(
+     ({
+        "widgets": {
+            "geoEnrichment": {
+                "placeholder": {
+                    "enterValue": "输入距离",
+                    "layerName": "在此输入图层名称"
+                },
+                "message": {
+                    "analysisFailed": "分析失败。",
+                    "errorOccurred": "出现错误。",
+                    "layerAdded": "已成功添加图层。 ",
+                    "enrichLayerNameError": "“结果图层名称”不应包含无效字符 " + "(<、>、#、%、:、\"、?、&、+、/、\\)。",
+                    "creatingService": "正在创建服务... ",
+                    "starting": "开始",
+                    "performingAnalysis": "正在执行分析...",
+                    "checkLayerName": "正在检查图层名称... ",
+                    "addingLayer": "正在将图层添加到 Web 地图 ",
+                    "layerNameExist": "图层名称已存在。",
+                    "clickOnSave": " 单击“保存”按钮重新加载应用程序。",
+                    "clickOnOk": " 请单击“确定”按钮重试。",
+                    "enterNumbersOnly": "输入的值无效",
+                    "nofeatures": "当前范围内不存在任何要素",
+                    "selectData": "请选择要用于丰富图层的数据。",
+                    "resetVariableMessage": "是否确定要重置变量?",
+                    "emptyTextFieldLayerName": "输入结果图层名称",
+                    "createService":"图层未创建。",
+                    "sharingLayer":"正在共享图层...",
+                    "updateItemFailed": "更新失败。请重试。",
+                    "geoEnrichFailed": "丰富图层失败。请重试。",
+                    "shareFailed": "共享丰富图层失败。请重试。",
+                    "refreshServiceFailed": "刷新图层失败。请重试。",
+                    "layerJsonFailed": "为图层创建 JSON 失败。请重试。",
+                    "addToWebmapFailed": "向 Web 地图添加图层失败。请重试。",
+                    "bufferAreaHelpText": "请保证输入的值小于 ",
+                    "invalidBufferInput": "输入的值无效。",
+                    "emptyBufferInput": "试_Please enter valid value_验."
+                },
+                "populationText": "人口",
+                "housingText": "家庭",
+                "businessText": "商业",
+                "variableListText": " 变量在此处列出:",
+                "countrySelectTitle": "1. 选择数据位置",
+                "unitedStates": "美国",
+                "global": "全球",
+                "geoenrichDialogText": "Geoenrichment 变量",
+                "viewVariablestext": "查看变量",
+                "backButtonText":"返回",
+                "customizeVariables": "自定义变量",
+                "resetVariables": "重置",
+                "defineAreaTitle": "3. 定义要丰富的区域",
+                "currentMapExtent": "使用当前地图范围",
+                "enrichLayerName": "4. 结果图层名称",
+                "lineDistanceText": "直线距离",
+                "drivingTime": "行驶时间",
+                "enrichButtonText": "丰富图层",
+                "selectDataText": "2. 选择数据",
+                "showCreditsText": "显示配额",
+                "variableCount": "变量总计数 ",
+                "totalRecords": "总记录数:",
+                "cost": "成本:",
+                "showCreditsDialogText": "显示配额",
+                "nextButtonText": "下一页",
+                "prevButtonText": "上一页",
+                "saveButtonText": "保存",
+                "ok": "确定"
+            }
+        }
+    })
+); 

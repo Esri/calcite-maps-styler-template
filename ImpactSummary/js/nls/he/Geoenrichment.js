@@ -1,0 +1,70 @@
+﻿define(
+     ({
+        "widgets": {
+            "geoEnrichment": {
+                "placeholder": {
+                    "enterValue": "הזן מרחק",
+                    "layerName": "הזן שם שכבה כאן"
+                },
+                "message": {
+                    "analysisFailed": "הניתוח נכשל.",
+                    "errorOccurred": "אירעה שגיאה.",
+                    "layerAdded": "השכבה נוספה בהצלחה. ",
+                    "enrichLayerNameError": "שם שכבת התוצאה אינו יכול להכיל תווים לא חוקיים" + "(<,>,#,%,:,\",?,&,+,/,\\).",
+                    "creatingService": "יוצר שירות.. ",
+                    "starting": "מתחיל",
+                    "performingAnalysis": "מבצע ניתוח...",
+                    "checkLayerName": "מחפש שם שכבה... ",
+                    "addingLayer": "מוסיף שכבה למפת אינטרנט ",
+                    "layerNameExist": "שם השכבה כבר קיים.",
+                    "clickOnSave": " לחץ על לחצן \'שמור\' כדי לטעון מחדש את האפליקציה.",
+                    "clickOnOk": " לחץ על לחצן \'אישור\' כדי לנסות שוב.",
+                    "enterNumbersOnly": "הערכים שהוזנו אינם חוקיים",
+                    "nofeatures": "לא קיימות ישויות בתיחום הנוכחי",
+                    "selectData": "בחר נתונים כדי להעשיר את השכבה.",
+                    "resetVariableMessage": "האם אתה בטוח שברצונך לאפס את המשתנה?",
+                    "emptyTextFieldLayerName": "הזן שם שכבת תוצאה",
+                    "createService":"לא נוצרה שכבה.",
+                    "sharingLayer":"משתף שכבה...",
+                    "updateItemFailed": "העדכון נכשל. נסה שוב.",
+                    "geoEnrichFailed": "העשרת השכבה נכשלה. נסה שוב.",
+                    "shareFailed": "שיתוף שכבה מועשרת נכשל. נסה שוב.",
+                    "refreshServiceFailed": "רענון שכבה נכשל. נסה שוב.",
+                    "layerJsonFailed": "יצירת JSON עבור השכבה נכשלה. נסה שוב.",
+                    "addToWebmapFailed": "הוספת שכבה למפת אינטרנט נכשלה. נסה שוב.",
+                    "bufferAreaHelpText": "הזן ערך קטן מאשר ",
+                    "invalidBufferInput": "הערך שהוזן אינו חוקי.",
+                    "emptyBufferInput": "כן_Please enter valid value_ש."
+                },
+                "populationText": "אוכלוסייה",
+                "housingText": "משק בית",
+                "businessText": "עסק",
+                "variableListText": " המשתנים רשומים כאן:",
+                "countrySelectTitle": "1. בחר מיקום נתונים",
+                "unitedStates": "ארצות הברית",
+                "global": "עולמי",
+                "geoenrichDialogText": "משתני העשרה גיאוגרפית",
+                "viewVariablestext": "הצג משתנים",
+                "backButtonText":"אחורה",
+                "customizeVariables": "התאם אישית משתנים",
+                "resetVariables": "איפוס",
+                "defineAreaTitle": "3. הגדר אזור להעשרה",
+                "currentMapExtent": "השתמש בתיחום המפה הנוכחי",
+                "enrichLayerName": "4. שם שכבת תוצאה",
+                "lineDistanceText": "מרחק קווים",
+                "drivingTime": "זמן נסיעה",
+                "enrichButtonText": "העשר שכבה",
+                "selectDataText": "2. בחר נתונים",
+                "showCreditsText": "הצג קרדיטים",
+                "variableCount": "מספר משתנים כולל ",
+                "totalRecords": "סה''כ רשומות:",
+                "cost": "מחיר:",
+                "showCreditsDialogText": "הצג קרדיטים",
+                "nextButtonText": "הבא",
+                "prevButtonText": "הקודם",
+                "saveButtonText": "שמור",
+                "ok": "אישור"
+            }
+        }
+    })
+); 

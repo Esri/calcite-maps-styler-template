@@ -1,0 +1,70 @@
+﻿define(
+     ({
+        "widgets": {
+            "geoEnrichment": {
+                "placeholder": {
+                    "enterValue": "Ievadiet attālumu",
+                    "layerName": "Ievadiet slāņa nosaukumu šeit"
+                },
+                "message": {
+                    "analysisFailed": "Analīze neizdevās.",
+                    "errorOccurred": "Radās kāda kļūda.",
+                    "layerAdded": "Slānis sekmīgi pievienots. ",
+                    "enrichLayerNameError": "Rezultātu slāņa nosaukums nedrīkst saturēt nederīgas rakstzīmes" + "(<,>,#,%,:,\",?,&,+,/,\\).",
+                    "creatingService": "Izveido servisu.. ",
+                    "starting": "Startē",
+                    "performingAnalysis": "Veic analīzi..",
+                    "checkLayerName": "Pārbauda slāņa nosaukumu.. ",
+                    "addingLayer": "Slāņa pievienošana tīmekļa kartē ",
+                    "layerNameExist": "Slāņa nosaukums jau pastāv.",
+                    "clickOnSave": " Noklikšķiniet uz pogas Saglabāt, lai pārlādētu lietotni.",
+                    "clickOnOk": " Noklikšķiniet uz pogas Labi, lai mēģinātu vēlreiz.",
+                    "enterNumbersOnly": "Ievadītās vērtības nav derīgas",
+                    "nofeatures": "Pašreizējā pārklājumā nav neviena elementa",
+                    "selectData": "Izvēlieties datus slāņa bagātināšanai.",
+                    "resetVariableMessage": "Vai tiešām vēlaties atiestatīt mainīgo?",
+                    "emptyTextFieldLayerName": "Ievadiet rezultātu slāņa nosaukumu",
+                    "createService":"Slānis nav izveidots.",
+                    "sharingLayer":"Kopīgo slāni..",
+                    "updateItemFailed": "Neizdevās atjaunināt. Lūdzu, mēģiniet vēlreiz.",
+                    "geoEnrichFailed": "Neizdevās bagātināt slāni. Lūdzu, mēģiniet vēlreiz.",
+                    "shareFailed": "Neizdevās kopīgot bagātināto slāni. Lūdzu, mēģiniet vēlreiz.",
+                    "refreshServiceFailed": "Neizdevās atjaunināt slāni. Lūdzu, mēģiniet vēlreiz.",
+                    "layerJsonFailed": "Neizdevās slānim izveidot JSON. Lūdzu, mēģiniet vēlreiz.",
+                    "addToWebmapFailed": "Neizdevās pievienot slāni tīmekļa kartē. Lūdzu, mēģiniet vēlreiz.",
+                    "bufferAreaHelpText": "Ievadiet vērtību, mazāku nekā ",
+                    "invalidBufferInput": "Ievadītā vērtība nav derīga.",
+                    "emptyBufferInput": "ķ_Please enter valid value_ū."
+                },
+                "populationText": "Apdzīvotība",
+                "housingText": "Mājsaimniecība",
+                "businessText": "Uzņēmums",
+                "variableListText": " mainīgie ir uzskaitīti šeit:",
+                "countrySelectTitle": "1. Izvēlieties datu izvietojumu",
+                "unitedStates": "Amerikas SavienotÄs valstis",
+                "global": "Globāls",
+                "geoenrichDialogText": "Ģeobagātināšanas mainīgie",
+                "viewVariablestext": "Skatīt mainīgos",
+                "backButtonText":"Atpakaļ",
+                "customizeVariables": "Pielāgot mainīgos",
+                "resetVariables": "Atiestatīt",
+                "defineAreaTitle": "3. Definējiet bagātināmo zonu",
+                "currentMapExtent": "Lieto pašreizējo kartes pārklājumu",
+                "enrichLayerName": "RezultÄtu slÄÅ†a nosaukums",
+                "lineDistanceText": "Līnijas attālums",
+                "drivingTime": "Braukšanas laiks",
+                "enrichButtonText": "BagÄtinÄt slÄni",
+                "selectDataText": "2. Izvēlieties datus",
+                "showCreditsText": "Rādīt kredītus",
+                "variableCount": "Mainīgo kopskaits ",
+                "totalRecords": "Ierakstu kopskaits:",
+                "cost": "Izmaksas:",
+                "showCreditsDialogText": "Rādīt kredītus",
+                "nextButtonText": "Tālāk",
+                "prevButtonText": "Atpakaļ",
+                "saveButtonText": "Saglabāt",
+                "ok": "Labi"
+            }
+        }
+    })
+); 

@@ -1,0 +1,70 @@
+﻿define(
+     ({
+        "widgets": {
+            "geoEnrichment": {
+                "placeholder": {
+                    "enterValue": "Įveskite atstumą",
+                    "layerName": "Įveskite sluoksnio pavadinimą čia"
+                },
+                "message": {
+                    "analysisFailed": "Analizė nepavyko.",
+                    "errorOccurred": "Įvyko klaida.",
+                    "layerAdded": "Sluoksnis sėkmingai pridėtas. ",
+                    "enrichLayerNameError": "Rezultatų sluoksnio pavadinime neturėtų būti neleistinų simbolių" + "(<, >, #, %, :, \", ?, &, +, /, \\).",
+                    "creatingService": "Kuriama paslauga... ",
+                    "starting": "Pradedama",
+                    "performingAnalysis": "Atliekama analizė...",
+                    "checkLayerName": "Tikrinamassluoksnio pavadinimas... ",
+                    "addingLayer": "Pridedamas sluoksnis prie internetinio žemėlapio ",
+                    "layerNameExist": "Sluoksnio pavadinimas jau yra.",
+                    "clickOnSave": " Spustelkite mygtuką Įrašyti, kad iš naujo įkelti aplikaciją.",
+                    "clickOnOk": " Spustelėkite mygtuką Gerai, kad pabandyti dar kartą.",
+                    "enterNumbersOnly": "Įvestos reikšmės yra netinkamos",
+                    "nofeatures": "Dabartinėje aprėptyje nėra elementų",
+                    "selectData": "Pasirinkite duomenis, kad praturtinti sluoksnį.",
+                    "resetVariableMessage": "Ar tikrai norite iš naujo nustatyti kintamąjį?",
+                    "emptyTextFieldLayerName": "Įveskite rezultatų sluoksnio pavadinimą",
+                    "createService":"Sluoksnis nesukurtas.",
+                    "sharingLayer":"Bendrinamas sluoksnis...",
+                    "updateItemFailed": "Nepavyko atnaujinti. Bandykite dar kartą.",
+                    "geoEnrichFailed": "Nepavyko praturtinti sluoksnio. Bandykite dar kartą.",
+                    "shareFailed": "Nepavyko bendrinti praturtinto sluoksnio. Bandykite dar kartą.",
+                    "refreshServiceFailed": "Nepavyko atnaujinti sluoksnio. Bandykite dar kartą.",
+                    "layerJsonFailed": "Nepavyko sukurti JSON sluoksniui. Bandykite dar kartą.",
+                    "addToWebmapFailed": "Nepavyko pridėti sluoksnio prie internetinio žemėlapio. Bandykite dar kartą.",
+                    "bufferAreaHelpText": "Įveskite reikšmę mažesnę nei ",
+                    "invalidBufferInput": "Įvesta reikšmė netinkama.",
+                    "emptyBufferInput": "Į_Please enter valid value_š."
+                },
+                "populationText": "Gyventojai",
+                "housingText": "Namų ūkis",
+                "businessText": "Verslas",
+                "variableListText": " kintamieji pateikti čia:",
+                "countrySelectTitle": "1. Pasirinkite duomenų vietą",
+                "unitedStates": "JAV",
+                "global": "Globalus",
+                "geoenrichDialogText": "Geopraturtinimo kintamieji",
+                "viewVariablestext": "Peržiūrėti kintamuosius",
+                "backButtonText":"Atgal",
+                "customizeVariables": "Adaptuoti kintamuosius",
+                "resetVariables": "Atkurti",
+                "defineAreaTitle": "3. Nurodykite praturtinimo plotą",
+                "currentMapExtent": "Naudoti esamą žemėlapio aprėptį",
+                "enrichLayerName": "4. Rezultatų sluoksnio pavadinimas",
+                "lineDistanceText": "Tiesinis atstumas",
+                "drivingTime": "Važiavimo laikas",
+                "enrichButtonText": "Praturtinti sluoksnį",
+                "selectDataText": "2. Pasirinkite duomenis",
+                "showCreditsText": "Rodyti kreditus",
+                "variableCount": "Iš viso suskaičiuota kintamųjų ",
+                "totalRecords": "Iš viso įrašų:",
+                "cost": "Kaina:",
+                "showCreditsDialogText": "Rodyti kreditus",
+                "nextButtonText": "Kitas",
+                "prevButtonText": "Ankstesnis",
+                "saveButtonText": "Įrašyti",
+                "ok": "Gerai"
+            }
+        }
+    })
+); 
