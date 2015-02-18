@@ -184,7 +184,7 @@ function (
         _results: function (evt) {
 
             this.emit("search-results", evt);
-        r
+            
         },
         _clear: function (evt) {
             this.emit("clear", evt);
