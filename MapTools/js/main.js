@@ -1079,6 +1079,11 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             //Also update the menu icon to match the tool color. 
             query(".tool-label").style("color", this.config.color.toString());
             query("[class^='icon-'], [class*=' icon-']").style("color", this.config.iconcolortheme.toString());
+            
+            this.map.resize();
+            this.map.reposition();
+            registry.byId("bc").resize();
+            registry.byId("mapbc").resize();
 
         }
     });
