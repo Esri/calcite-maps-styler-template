@@ -42,15 +42,16 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                     pane.startup();
                     var bc = registry.byId("bc");
                     bc.addChild(pane);
+
                     query(".dojoxExpandoIcon").on("click",function(){
-                        console.log(pane);
                         pane.toggle();
                     });
                     query(".dojoxExpandoTitle").on("click",function(){
-                        console.log(pane);
                         pane.toggle();
                     });
-          
+                    if(!this.config.openPanelOnLoad){
+                        pane.toggle();
+                    }
                 }
 
       
@@ -260,7 +261,7 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
             query(".dojoxExpandoTitleNode").style("color", color.toString()); //title 
         },
         _createInfoContent: function (details, layer) {
-            var template = "<div class='panel_title'>${title}</div><div class='panel_desc'>${snippet}</div><div id=${legendId}></div>";           
+            var template = "<div class='panel_title'>${title}</div><div class='panel_desc'>${description}</div><div id=${legendId}></div>";           
             var content = esriLang.substitute(details, template);
 
             domConstruct.create("div",{
@@ -281,6 +282,7 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                     layerInfos: arcgisUtils.getLegendLayers(layer)
                 }, layer.itemInfo.item.legendId);
                 legend.startup();
+
             } 
         },
         _resizeMap: function () {

@@ -31,6 +31,7 @@ define({
     "title": "Compare Analysis",
     "description": "This is a sample app that compares multiple maps. Configure the application to specify custom text for this panel. You can hide this panel if desired by unchecking the 'Show Panel' option when configuring the app.",
     "showTitleAndDescription": true,
+    "openPanelOnLoad": true,
     "home": true,
     "theme_color":"#575757",
     "theme_bg_color": "#d3d3d3",
