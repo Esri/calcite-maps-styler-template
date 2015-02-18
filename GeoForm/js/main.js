@@ -80,11 +80,6 @@ define([
         sortedFields: [],
         isHumanEntry: null,
         currentLocation:null,
-        constructor: function () {
-            if (dom.byId("geoform").dir == "rtl") {
-                this._loadCSS();
-            }
-        },
 
         _createGeocoderOptions: function () {
             //Check for multiple geocoder support and setup options for geocoder widget.
@@ -224,6 +219,9 @@ define([
             }
             // set theme
             this._switchStyle(this.config.theme);
+            if (this.config && this.config.i18n && this.config.i18n.direction == "rtl") {
+                this._loadCSS();
+            }
             userHTML = string.substitute(userTemplate, nls);
             dom.byId("parentContainter").innerHTML = userHTML;
             // get item info from template
@@ -2651,7 +2649,7 @@ define([
                                         formLayerField.editable = popupField.isEditable;
                                         formLayerField.visible = popupField.isEditable;
                                         formLayerField.tooltip = popupField.tooltip;
-                                        this.config.fields.push(formLayerField);
+                                        this.config.fields[this._formLayer.id].push(formLayerField);
                                         return true;
                                     }
                                 }));
