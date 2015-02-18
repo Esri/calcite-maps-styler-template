@@ -255,7 +255,7 @@
             },
             {  
                "type":"boolean",
-               "fieldName":"tool_print_legend",
+               "fieldName":"printlegend",
                "label":"Add Legend to Output"
             }
          ]
