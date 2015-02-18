@@ -2,7 +2,7 @@
    ({
   viewer: {
     main: {
-      ownerText: "Đ_A map from_ớ: ",
+      ownerText: "Bản đồ từ: ",
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {

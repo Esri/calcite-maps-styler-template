@@ -17,25 +17,25 @@
 define(
     ({
       "map" : {
-         "error" : "Š_Unable to create map_ä"
+         "error" : "Kaarti ei saa luua"
       },
       "days" : {
-         "now" : "Š_NOW_ä",
-         "sun" : "Š_SUN_ä",
-         "mon" : "Š_MON_ä",
-         "tue" : "Š_TUE_ä",
-         "wed" : "Š_WED_ä",
-         "thu" : "Š_THU_ä",
-         "fri" : "Š_FRI_ä",
-         "sat" : "Š_SAT_ä"
+         "now" : "KOHE",
+         "sun" : "P",
+         "mon" : "E",
+         "tue" : "T",
+         "wed" : "K",
+         "thu" : "N",
+         "fri" : "R",
+         "sat" : "L"
       },
       "tooltips" : {
-         "logo" : "Š_Logo_ä",
-         "menu" : "Š_Menu_ä",
-         "close" : "Š_Close_ä",
-         "previous" : "Š_Previous_ä",
-         "next" : "Š_Next_ä",
-         "directions" : "Š_Directions_ä"
+         "logo" : "Logo",
+         "menu" : "Menüü",
+         "close" : "Sulge",
+         "previous" : "Eelmine",
+         "next" : "Järgmine",
+         "directions" : "Teejuhised"
       }
    })
 );

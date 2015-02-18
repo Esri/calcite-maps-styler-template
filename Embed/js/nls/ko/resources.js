@@ -32,7 +32,7 @@ define(
                 "title": "범례"
             },
             "details":{
-                "title": "한_Details_빠",
+                "title": "세부정보",
                 "error": "이 섹션에 표시할 세부 정보로 웹 맵 설명을 업데이트합니다."
             },
             "popup": {

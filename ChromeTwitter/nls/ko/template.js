@@ -2,7 +2,7 @@
    ({
   viewer: {
     main: {
-      ownerText: "한_A map from_빠: ",
+      ownerText: "맵 출처: ",
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {

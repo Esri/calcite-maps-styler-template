@@ -13,7 +13,7 @@
 	  down:"LEGENDA MAPY â–¼"
 	},
 	loading:{
-		message: "Ładowanie mapy"
+		message: "Wczytywanie mapy"
 	}
   }
 })

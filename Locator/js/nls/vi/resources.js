@@ -32,7 +32,7 @@ define(
          "toggle": "Hiện/Ẩn",
          "reset": "Thiết lập lại",
          "locate": "Tìm vị trí của tôi",
-         "directions": "Hướng",
+         "directions": "Chỉ đường",
          "filter": "Bộ lọc",
          "close": "Đóng",
          "reverse": "Đảo ngược"

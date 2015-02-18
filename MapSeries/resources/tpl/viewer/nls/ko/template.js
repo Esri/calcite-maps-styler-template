@@ -2,68 +2,68 @@
 	 ({
 		viewer: {
 			common: {
-				close: "한_Close_빠"
+				close: "닫기"
 			},
 			loading: {
-				long: "한_Application is initializing_빠",
-				long2: "한_Thanks for waiting_빠",
-				failButton: "한_Reload the application_빠"
+				long: "응용프로그램 초기화하는 중",
+				long2: "기다려 주셔서 감사합니다.",
+				failButton: "응용프로그램 다시 불러오기"
 			},
 			signin: {
-				title: "한_Authentication is required_빠",
-				explainViewer: "한_Please sign in with an account on %PORTAL_LINK% to access the application_빠.",
-				explainBuilder: "한_Please sign in with an account on %PORTAL_LINK% to configure the application_빠."
+				title: "인증 필요",
+				explainViewer: "응용프로그램에 액세스하려면 %PORTAL_LINK%에 계정으로 로그인하세요.",
+				explainBuilder: "응용프로그램을 구성하려면 %PORTAL_LINK%에 계정으로 로그인하세요."
 			},
 			errors: {
-				boxTitle: "한_An error has occurred_빠",
-				invalidConfig: "한_Invalid configuration_빠",
-				invalidConfigNoApp: "한_Web Mapping Application identifier not specified in index.html_빠.",
-				unspecifiedConfigOwner: "한_Authorized owner hasn't been configured_빠.",
-				invalidConfigOwner: "한_Application owner is not authorized_빠.",
-				createMap: "한_Unable to create map_빠",
-				invalidApp: "한_The %TPL_NAME% does not exist or is inaccessible_빠.",
-				appLoadingFail: "한_Something went wrong, the %TPL_NAME% did not load correctly_빠.",
-				notConfiguredDesktop: "한_The application is not configured yet_빠.",
-				notConfiguredMobile: "한_The %TPL_NAME% builder is not supported at this screen resolution_빠.",
-				notAuthorized: "한_You are not authorized to access this application_빠",
-				noBuilderIE: "한_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%_빠",
-				noViewerIE: "한_This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%_빠",
-				upgradeBrowser: "한_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>_빠.",
-				mapLoadingFail: "한_Something went wrong, the map did not load correctly_빠.",
-				signOut: "한_Sign Out_빠"
+				boxTitle: "오류가 발생했습니다.",
+				invalidConfig: "잘못된 구성",
+				invalidConfigNoApp: "index.html에 웹 매핑 응용프로그램 식별자가 지정되지 않았습니다.",
+				unspecifiedConfigOwner: "권한이 있는 소유자가 구성되지 않았습니다.",
+				invalidConfigOwner: "응용프로그램 소유자가 인증되지 않았습니다.",
+				createMap: "맵을 생성할 수 없음",
+				invalidApp: "%TPL_NAME%이(가) 없거나 액세스할 수 없습니다.",
+				appLoadingFail: "오류가 발생했습니다. %TPL_NAME%을(를) 올바르게 불러오지 않았습니다.",
+				notConfiguredDesktop: "응용프로그램이 아직 구성되지 않았습니다.",
+				notConfiguredMobile: "이 화면 해상도에서 %TPL_NAME% 빌더가 지원되지 않습니다.",
+				notAuthorized: "이 응용프로그램을 액세스할 권한이 없습니다.",
+				noBuilderIE: "빌더는 %VERSION% 이전 버전의 Internet Explorer에서 지원되지 않습니다. %UPGRADE%",
+				noViewerIE: "이 응용프로그램은 %VERSION% 이전 버전의 Internet Explorer에서 지원되지 않습니다. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>브라우저를 업데이트하세요</a>.",
+				mapLoadingFail: "오류가 발생했습니다. 맵을 올바르게 불러오지 않았습니다.",
+				signOut: "로그아웃"
 			},
 			mobileInfo: {
-				legend: "한_Legend_빠",
-				description: "한_Description_빠",
-				lblLegendMobileError: "한_Sorry, the legend is unavailable. Please reload the application_빠.",
-				lblLegendMobileErrorExplain: "한_The legend is not available when the device is rotated to portrait mode after the application is loaded_빠."
+				legend: "범례",
+				description: "설명",
+				lblLegendMobileError: "죄송합니다. 범례를 사용할 수 없습니다. 응용프로그램을 다시 불러오세요.",
+				lblLegendMobileErrorExplain: "응용프로그램을 불러온 후 기기가 세로 모드로 회전하면 범례를 사용할 수 없습니다."
 			},
 			mobileFooter: {
-				swipeInvite: "한_Swipe to navigate the story_빠",
-				lblNext: "한_Next_빠",
-				lblEnd: "한_You have reached the end of the story_빠"
+				swipeInvite: "스토리를 탐색하려면 스와이프",
+				lblNext: "다음",
+				lblEnd: "스토리 끝에 도달했습니다."
 			},
 			headerFromCommon: {
-				storymapsText: "한_A story map_빠",
-				builderButton: "한_Edit_빠",
-				bitlyTooltip: "한_Get a short link to the application_빠",
-				templateTitle: "한_Set template title_빠",
-				templateSubtitle: "한_Set template subtitle_빠",
-				share: "한_Share_빠"
+				storymapsText: "스토리 맵",
+				builderButton: "편집",
+				bitlyTooltip: "응용프로그램에 대한 짧은 링크 가져오기",
+				templateTitle: "템플릿 제목 설정",
+				templateSubtitle: "템플릿 부제목 설정",
+				share: "공유"
 			},
 			overviewFromCommon: {
-				title: "한_Overview Map_빠"
+				title: "오버뷰 맵"
 			},
 			legendFromCommon: {
-				title: "한_Legend_빠"
+				title: "범례"
 			},
 			shareFromCommon: {
-				copy: "한_Copy_빠",
-				copied: "한_Copied_빠",
-				open: "한_Open_빠",
-				embed: "한_Embed in web page_빠",
-				embedExplain: "한_Use the following HTML code to embed the application in a web page_빠.",
-				size: "한_Size (width/height)_빠:"
+				copy: "복사",
+				copied: "복사됨",
+				open: "열기",
+				embed: "웹 페이지에 임베드",
+				embedExplain: "응용프로그램을 웹 페이지에 임베드하려면 다음의 HTML 코드를 사용합니다.",
+				size: "크기(너비/높이):"
 			}
         }
     })

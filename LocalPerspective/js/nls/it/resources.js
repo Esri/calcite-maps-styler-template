@@ -17,25 +17,25 @@
 define(
     ({
       "map" : {
-         "error" : "é_Unable to create map_È"
+         "error" : "Impossibile creare la mappa"
       },
       "days" : {
-         "now" : "é_NOW_È",
-         "sun" : "é_SUN_È",
-         "mon" : "é_MON_È",
-         "tue" : "é_TUE_È",
-         "wed" : "é_WED_È",
-         "thu" : "é_THU_È",
-         "fri" : "é_FRI_È",
-         "sat" : "é_SAT_È"
+         "now" : "ORA",
+         "sun" : "DOM",
+         "mon" : "LUN",
+         "tue" : "MAR",
+         "wed" : "MER",
+         "thu" : "GIO",
+         "fri" : "VEN",
+         "sat" : "SAB"
       },
       "tooltips" : {
-         "logo" : "é_Logo_È",
-         "menu" : "é_Menu_È",
-         "close" : "é_Close_È",
-         "previous" : "é_Previous_È",
-         "next" : "é_Next_È",
-         "directions" : "é_Directions_È"
+         "logo" : "Logo",
+         "menu" : "Menu",
+         "close" : "Chiudi",
+         "previous" : "Indietro",
+         "next" : "Avanti",
+         "directions" : "Indicazioni"
       }
    })
 );

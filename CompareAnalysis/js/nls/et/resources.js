@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "Š_Unable to create map_ä"
+            error: "Kaarti ei saa luua"
         },
         tools: {
             info: {
-                label: "Š_Info_ä",
-                tooltip: "Š_Toggle map info_ä"
+                label: "Teave",
+                tooltip: "Kuvage kaardi info"
             },
             sync: {
-                label: "Š_Sync Map Extent_ä",
-                tooltip: "Š_Sync to extent of this map_ä"
+                label: "Sünkroniseeri kaardi ulatus",
+                tooltip: "Sünkroniseeri selle kaardi kuvaulatus"
             }
         }
     })

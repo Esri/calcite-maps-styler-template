@@ -7,7 +7,7 @@
       descriptionLabel: "Descriere"
     },
     errors:{
-      createMap: "Imposibil de creat harta",
+      createMap: "Nu se poate crea harta",
       general: "Eroare"
     },
     footer:{

@@ -23,7 +23,7 @@
             mapdlg: {
                 items: {
                     organizationLabel: "Moja instytucja",
-                    onlineLabel: "ArcGIS Online",
+                    onlineLabel: "Usługa ArcGIS Online",
                     contentLabel: "Moje zasoby",
                     favoritesLabel: "Moje ulubione"
                 },
@@ -36,7 +36,7 @@
             groupdlg: {
                 items: {
                     organizationLabel: "Moja instytucja",
-                    onlineLabel: "ArcGIS Online",
+                    onlineLabel: "Usługa ArcGIS Online",
                     contentLabel: "Moje zasoby",
                     favoritesLabel: "Moje ulubione"
                 },

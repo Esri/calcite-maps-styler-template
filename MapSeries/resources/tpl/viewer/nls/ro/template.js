@@ -2,68 +2,68 @@
 	 ({
 		viewer: {
 			common: {
-				close: "Ă_Close_ș"
+				close: "Închidere"
 			},
 			loading: {
-				long: "Ă_Application is initializing_ș",
-				long2: "Ă_Thanks for waiting_ș",
-				failButton: "Ă_Reload the application_ș"
+				long: "Aplicaţia se iniţializează",
+				long2: "Vă mulţumim pentru aşteptare",
+				failButton: "Reîncărcare aplicaţie"
 			},
 			signin: {
-				title: "Ă_Authentication is required_ș",
-				explainViewer: "Ă_Please sign in with an account on %PORTAL_LINK% to access the application_ș.",
-				explainBuilder: "Ă_Please sign in with an account on %PORTAL_LINK% to configure the application_ș."
+				title: "Necesită autentificare",
+				explainViewer: "Pentru a accesa aplicaţia, autentificaţi-vă cu un cont în %PORTAL_LINK%.",
+				explainBuilder: "Pentru a configura aplicaţia, autentificaţi-vă cu un cont în %PORTAL_LINK%."
 			},
 			errors: {
-				boxTitle: "Ă_An error has occurred_ș",
-				invalidConfig: "Ă_Invalid configuration_ș",
-				invalidConfigNoApp: "Ă_Web Mapping Application identifier not specified in index.html_ș.",
-				unspecifiedConfigOwner: "Ă_Authorized owner hasn't been configured_ș.",
-				invalidConfigOwner: "Ă_Application owner is not authorized_ș.",
-				createMap: "Ă_Unable to create map_ș",
-				invalidApp: "Ă_The %TPL_NAME% does not exist or is inaccessible_ș.",
-				appLoadingFail: "Ă_Something went wrong, the %TPL_NAME% did not load correctly_ș.",
-				notConfiguredDesktop: "Ă_The application is not configured yet_ș.",
-				notConfiguredMobile: "Ă_The %TPL_NAME% builder is not supported at this screen resolution_ș.",
-				notAuthorized: "Ă_You are not authorized to access this application_ș",
-				noBuilderIE: "Ă_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%_ș",
-				noViewerIE: "Ă_This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%_ș",
-				upgradeBrowser: "Ă_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>_ș.",
-				mapLoadingFail: "Ă_Something went wrong, the map did not load correctly_ș.",
-				signOut: "Ă_Sign Out_ș"
+				boxTitle: "A apărut o eroare",
+				invalidConfig: "Configurare incorectă",
+				invalidConfigNoApp: "ID-ul aplicaţiei de cartografiere web nu este specificat în index.html.",
+				unspecifiedConfigOwner: "Proprietarul autorizat nu a fost configurat.",
+				invalidConfigOwner: "Proprietarul aplicaţiei nu este autorizat.",
+				createMap: "Nu se poate crea harta",
+				invalidApp: "%TPL_NAME% nu există sau nu este accesibil.",
+				appLoadingFail: "Ceva nu a mers bine, %TPL_NAME% nu s-a încărcat corect.",
+				notConfiguredDesktop: "Aplicaţia nu este configurată încă.",
+				notConfiguredMobile: "Aplicaţia de creare %TPL_NAME% nu este acceptată la această rezoluţie a ecranului.",
+				notAuthorized: "Nu sunteţi autorizat pentru a accesa această aplicaţie",
+				noBuilderIE: "Instrumentul de creare nu este acceptat în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
+				noViewerIE: "Această aplicaţie nu este acceptată în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Efectuaţi un upgrade al browserului</a>.",
+				mapLoadingFail: "Ceva nu a mers bine şi harta nu a fost încărcată corect.",
+				signOut: "Ieşire"
 			},
 			mobileInfo: {
-				legend: "Ă_Legend_ș",
-				description: "Ă_Description_ș",
-				lblLegendMobileError: "Ă_Sorry, the legend is unavailable. Please reload the application_ș.",
-				lblLegendMobileErrorExplain: "Ă_The legend is not available when the device is rotated to portrait mode after the application is loaded_ș."
+				legend: "Legendă",
+				description: "Descriere",
+				lblLegendMobileError: "Ne pare rău, legenda nu este disponibilă. Încercaţi din nou.",
+				lblLegendMobileErrorExplain: "Legenda nu este disponibilă atunci când dispozitivul este rotit în mod portret după încărcarea aplicaţiei."
 			},
 			mobileFooter: {
-				swipeInvite: "Ă_Swipe to navigate the story_ș",
-				lblNext: "Ă_Next_ș",
-				lblEnd: "Ă_You have reached the end of the story_ș"
+				swipeInvite: "Glisaţi pentru a naviga printre informaţii",
+				lblNext: "Următor",
+				lblEnd: "Aţi ajuns la finalul informaţiilor"
 			},
 			headerFromCommon: {
-				storymapsText: "Ă_A story map_ș",
-				builderButton: "Ă_Edit_ș",
-				bitlyTooltip: "Ă_Get a short link to the application_ș",
-				templateTitle: "Ă_Set template title_ș",
-				templateSubtitle: "Ă_Set template subtitle_ș",
-				share: "Ă_Share_ș"
+				storymapsText: "O hartă informativă",
+				builderButton: "Editare",
+				bitlyTooltip: "Obţinere link scurt către aplicaţie",
+				templateTitle: "Setare titlu şablon",
+				templateSubtitle: "Setare subtitlu şablon",
+				share: "Partajare"
 			},
 			overviewFromCommon: {
-				title: "Ă_Overview Map_ș"
+				title: "Hartă de prezentare generală"
 			},
 			legendFromCommon: {
-				title: "Ă_Legend_ș"
+				title: "Legendă"
 			},
 			shareFromCommon: {
-				copy: "Ă_Copy_ș",
-				copied: "Ă_Copied_ș",
-				open: "Ă_Open_ș",
-				embed: "Ă_Embed in web page_ș",
-				embedExplain: "Ă_Use the following HTML code to embed the application in a web page_ș.",
-				size: "Ă_Size (width/height)_ș:"
+				copy: "Copiere",
+				copied: "Copiat",
+				open: "Deschidere",
+				embed: "Încorporare în pagină web",
+				embedExplain: "Utilizaţi următorul cod HTML pentru a încorpora aplicaţia într-o pagină web.",
+				size: "Dimensiune (lăţime/înălţime):"
 			}
         }
     })

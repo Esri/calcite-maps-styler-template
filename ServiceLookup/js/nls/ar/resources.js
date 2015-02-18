@@ -24,7 +24,7 @@
             basemapButton: "خريطة أساس"
         },
         popup: {
-            urlMoreInfo: "بيت_More Info_لاحقة"
+            urlMoreInfo: "مزيد من المعلومات"
         }
 
     })

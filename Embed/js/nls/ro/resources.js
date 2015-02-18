@@ -32,7 +32,7 @@ define(
                 "title": "Legendă"
             },
             "details":{
-                "title": "Ă_Details_ș",
+                "title": "Detalii",
                 "error": "Actualizaţi descriere hărţii web cu detaliile ce vor fi afişate în această secţiune."
             },
             "popup": {
@@ -42,7 +42,7 @@ define(
 
         },
         "map": {
-            "error": "Imposibil de creat harta"
+            "error": "Nu se poate crea harta"
         }
     })
 );

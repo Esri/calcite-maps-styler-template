@@ -104,7 +104,7 @@
 			},
 			editorActionGeocode: {
 				lblTitle: "Lokalizuj adres lub miejsce",
-				mapMarkerExplain: "Po kliknięciu łącza na mapie wyświetlony zostanie marker"
+				mapMarkerExplain: "Po kliknięciu łącza na mapie wyświetlony zostanie znak"
 			},
 			editorActionMedia: {
 				lblTitle: "Zmień zasoby w obszarze głównym"

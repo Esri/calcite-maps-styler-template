@@ -32,7 +32,7 @@ define(
                 "title": "Selite"
             },
             "details":{
-                "title": "Å_Details_ö",
+                "title": "Yksityiskohdat",
                 "error": "Päivitä Web-kartan kuvaus tässä osassa näytettävillä tiedoilla."
             },
             "popup": {

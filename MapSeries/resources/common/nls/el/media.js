@@ -30,7 +30,7 @@
 			imageSelectorFacebook: {
 				leftHeader: "Χρήστης Facebook",
 				rightHeader: "Σελίδα Facebook",
-				pageExplain: "Μια Facebook σελίδα είναι μια εμπορική επωνυμία, ένα προϊόν ή μια διασημότητα, π.χ. <b>esrigis</b>. Το όνομα της σελίδας βρίσκεται μετά το πρώτο \'/\' στο URL της σελίδας.",
+				pageExplain: "Μια Facebook σελίδα είναι μια εμπορική επωνυμία, ένα προϊόν ή μια διασημότητα, π.χ. <b>esrigis</b>. Το όνομα της σελίδας βρίσκεται μετά το πρώτο '/' στο URL της σελίδας.",
 				pageInputLbl: "Όνομα σελίδας",
 				lookupMsgError: "Η σελίδα δεν βρέθηκε"
 			},
@@ -38,7 +38,7 @@
 				userInputLbl: "Email ή Picasa/Google+ ID",
 				signInMsg2: "Ο λογαριασμός δεν βρέθηκε",
 				howToFind: "Πώς να βρείτε ένα ID λογαριασμού στο Picasa ή στο Google+",
-				howToFind2: "Αντιγράψτε τα ψηφία ανάμεσα στο πρώτο και το δεύτερο \'/\' οποιασδήποτε σελίδας Picasa ή G+"
+				howToFind2: "Αντιγράψτε τα ψηφία ανάμεσα στο πρώτο και το δεύτερο '/' οποιασδήποτε σελίδας Picasa ή G+"
 			},
 			videoSelectorCommon: {
 				check: "Έλεγχος",
@@ -93,8 +93,8 @@
 				lblPosition3: "Προσαρμογή",
 				lblPosition4: "Επέκταση",
 				lblPosition5: "Προσαρμοσμένο",
-				tooltipDimension: "Η τιμή μπορεί να καθοριστεί σε \'px\' ή \'%\'",
-				tooltipDimension2: "Η τιμή πρέπει να καθοριστεί σε \'px\'",
+				tooltipDimension: "Η τιμή μπορεί να καθοριστεί σε 'px' ή '%'",
+				tooltipDimension2: "Η τιμή πρέπει να καθοριστεί σε 'px'",
 				lblPosition2Explain: "(μπορεί να περικοπεί)",
 				lblPosition3Explain: "(δεν θα περικοπεί)",
 				lblPosition3Explain2: "(το πλάτος θα προσαρμόζεται πάντα στο πλαίσιο)",

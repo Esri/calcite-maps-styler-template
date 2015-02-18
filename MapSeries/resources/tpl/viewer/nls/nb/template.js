@@ -2,68 +2,68 @@
 	 ({
 		viewer: {
 			common: {
-				close: "å_Close_ø"
+				close: "Lukk"
 			},
 			loading: {
-				long: "å_Application is initializing_ø",
-				long2: "å_Thanks for waiting_ø",
-				failButton: "å_Reload the application_ø"
+				long: "Programmet initialiseres",
+				long2: "Takk for at du venter",
+				failButton: "Last inn programmet på nytt"
 			},
 			signin: {
-				title: "å_Authentication is required_ø",
-				explainViewer: "å_Please sign in with an account on %PORTAL_LINK% to access the application_ø.",
-				explainBuilder: "å_Please sign in with an account on %PORTAL_LINK% to configure the application_ø."
+				title: "Krever godkjenning",
+				explainViewer: "Logg på med en konto på %PORTAL_LINK% for å få tilgang til programmet.",
+				explainBuilder: "Logg på med en konto på %PORTAL_LINK% for å konfigurere programmet."
 			},
 			errors: {
-				boxTitle: "å_An error has occurred_ø",
-				invalidConfig: "å_Invalid configuration_ø",
-				invalidConfigNoApp: "å_Web Mapping Application identifier not specified in index.html_ø.",
-				unspecifiedConfigOwner: "å_Authorized owner hasn't been configured_ø.",
-				invalidConfigOwner: "å_Application owner is not authorized_ø.",
-				createMap: "å_Unable to create map_ø",
-				invalidApp: "å_The %TPL_NAME% does not exist or is inaccessible_ø.",
-				appLoadingFail: "å_Something went wrong, the %TPL_NAME% did not load correctly_ø.",
-				notConfiguredDesktop: "å_The application is not configured yet_ø.",
-				notConfiguredMobile: "å_The %TPL_NAME% builder is not supported at this screen resolution_ø.",
-				notAuthorized: "å_You are not authorized to access this application_ø",
-				noBuilderIE: "å_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%_ø",
-				noViewerIE: "å_This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%_ø",
-				upgradeBrowser: "å_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>_ø.",
-				mapLoadingFail: "å_Something went wrong, the map did not load correctly_ø.",
-				signOut: "å_Sign Out_ø"
+				boxTitle: "Det har oppstått en feil",
+				invalidConfig: "Ugyldig konfigurasjon",
+				invalidConfigNoApp: "Identifikator for webkartprogram ikke angitt i index.html.",
+				unspecifiedConfigOwner: "Godkjent eier er ikke konfigurert.",
+				invalidConfigOwner: "Programeier er ikke godkjent.",
+				createMap: "Kan ikke opprette kart",
+				invalidApp: "%TPL_NAME% finnes ikke eller er ikke tilgjengelig.",
+				appLoadingFail: "Noe gikk galt, og %TPL_NAME% ble ikke lastet inn på riktig måte.",
+				notConfiguredDesktop: "Programmet er ikke konfigurert ennå.",
+				notConfiguredMobile: "%TPL_NAME% støttes ikke av denne skjermoppløsningen.",
+				notAuthorized: "Du har ikke tillatelse til å bruke denne applikasjonen",
+				noBuilderIE: "Byggeverktøyet er ikke støttet i Internet Explorer før versjon %VERSION%. %UPGRADE%",
+				noViewerIE: "Dette programmet er ikke støttet i Internet Explorer før versjon %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Oppdater webleseren</a>.",
+				mapLoadingFail: "Noe gikk galt, og kartet ble ikke lastet inn på riktig måte.",
+				signOut: "Logg ut"
 			},
 			mobileInfo: {
-				legend: "å_Legend_ø",
-				description: "å_Description_ø",
-				lblLegendMobileError: "å_Sorry, the legend is unavailable. Please reload the application_ø.",
-				lblLegendMobileErrorExplain: "å_The legend is not available when the device is rotated to portrait mode after the application is loaded_ø."
+				legend: "Tegnforklaring",
+				description: "Beskrivelse",
+				lblLegendMobileError: "Tegnforklaringen er ikke tilgjengelig. Last inn programmet på nytt.",
+				lblLegendMobileErrorExplain: "Tegnforklaringen er ikke tilgjengelig når enheten roteres til portrettmodus etter at programmet er lastet inn."
 			},
 			mobileFooter: {
-				swipeInvite: "å_Swipe to navigate the story_ø",
-				lblNext: "å_Next_ø",
-				lblEnd: "å_You have reached the end of the story_ø"
+				swipeInvite: "Sveip for å navigere i tegnforklaringen",
+				lblNext: "Neste",
+				lblEnd: "Du er kommet til slutten av fortellingen"
 			},
 			headerFromCommon: {
-				storymapsText: "å_A story map_ø",
-				builderButton: "å_Edit_ø",
-				bitlyTooltip: "å_Get a short link to the application_ø",
-				templateTitle: "å_Set template title_ø",
-				templateSubtitle: "å_Set template subtitle_ø",
-				share: "å_Share_ø"
+				storymapsText: "Et fortellingskart",
+				builderButton: "Rediger",
+				bitlyTooltip: "Få en kort kobling til applikasjonen",
+				templateTitle: "Angi tittel på malen",
+				templateSubtitle: "Angi undertittel for malen",
+				share: "Del"
 			},
 			overviewFromCommon: {
-				title: "å_Overview Map_ø"
+				title: "Oversiktskart"
 			},
 			legendFromCommon: {
-				title: "å_Legend_ø"
+				title: "Tegnforklaring"
 			},
 			shareFromCommon: {
-				copy: "å_Copy_ø",
-				copied: "å_Copied_ø",
-				open: "å_Open_ø",
-				embed: "å_Embed in web page_ø",
-				embedExplain: "å_Use the following HTML code to embed the application in a web page_ø.",
-				size: "å_Size (width/height)_ø:"
+				copy: "Kopier",
+				copied: "Kopiert",
+				open: "Åpne",
+				embed: "Bygg inn på webside",
+				embedExplain: "Bruk følgende HTML-kode for å bygge inn programmet på en webside.",
+				size: "Størrelse (bredde/høyde):"
 			}
         }
     })

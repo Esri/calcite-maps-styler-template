@@ -32,12 +32,12 @@ define(
                 "title": "Legenda"
             },
             "details":{
-                "title": "ł_Details_ą",
+                "title": "Szczegóły",
                 "error": "Aktualizuj opis mapy internetowej za pomocą informacji wyświetlanych w tej sekcji."
             },
             "popup": {
                 "title": "Informacje",
-                "instructions": "Wybierz funkcję na mapie, aby wyświetlić szczegóły."
+                "instructions": "Wybierz obiekt na mapie, aby wyświetlić szczegóły."
             }
 
         },

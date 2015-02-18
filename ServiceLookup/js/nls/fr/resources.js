@@ -24,7 +24,7 @@
             basemapButton: "Fond de carte"
         },
         popup: {
-            urlMoreInfo: "æ_More Info_Â"
+            urlMoreInfo: "Plus d\'informations"
         }
 
     })

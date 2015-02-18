@@ -24,7 +24,7 @@
             basemapButton: "Aluskaart"
         },
         popup: {
-            urlMoreInfo: "Š_More Info_ä"
+            urlMoreInfo: "Rohkem teavet"
         }
 
     })

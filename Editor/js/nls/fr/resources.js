@@ -17,13 +17,13 @@
 define(
    ({
     map: {
-      noEditLayers: "æ_This web map does not contain any editable layers_Â.",
-      error: "æ_Unable to create map_Â"
+      noEditLayers: "Cette carte Web ne contient pas de couches modifiables.",
+      error: "Impossible de créer la carte"
     },
     tools: {
     "popup": {
-            "title": "æ_Info_Â",
-            "instructions": "æ_Select a feature on the map to view details_Â."
+            "title": "Informations",
+            "instructions": "Sélectionnez une entité sur la carte pour afficher ses détails."
         } 
     }
   })

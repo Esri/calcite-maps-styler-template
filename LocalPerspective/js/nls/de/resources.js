@@ -17,25 +17,25 @@
 define(
     ({
       "map" : {
-         "error" : "ä_Unable to create map_Ü"
+         "error" : "Karte kann nicht erstellt werden"
       },
       "days" : {
-         "now" : "ä_NOW_Ü",
-         "sun" : "ä_SUN_Ü",
-         "mon" : "ä_MON_Ü",
-         "tue" : "ä_TUE_Ü",
-         "wed" : "ä_WED_Ü",
-         "thu" : "ä_THU_Ü",
-         "fri" : "ä_FRI_Ü",
-         "sat" : "ä_SAT_Ü"
+         "now" : "JETZT",
+         "sun" : "SO",
+         "mon" : "MO",
+         "tue" : "DI",
+         "wed" : "MI",
+         "thu" : "DO",
+         "fri" : "FR",
+         "sat" : "SA"
       },
       "tooltips" : {
-         "logo" : "ä_Logo_Ü",
-         "menu" : "ä_Menu_Ü",
-         "close" : "ä_Close_Ü",
-         "previous" : "ä_Previous_Ü",
-         "next" : "ä_Next_Ü",
-         "directions" : "ä_Directions_Ü"
+         "logo" : "Logo",
+         "menu" : "Menü",
+         "close" : "Schließen",
+         "previous" : "Zurück",
+         "next" : "Weiter",
+         "directions" : "Wegbeschreibung"
       }
    })
 );

@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "é_Unable to create map_È"
+            error: "Impossibile creare la mappa"
         },
         tools: {
             info: {
-                label: "é_Info_È",
-                tooltip: "é_Toggle map info_È"
+                label: "Informazioni",
+                tooltip: "Attiva/disattiva informazioni mappa"
             },
             sync: {
-                label: "é_Sync Map Extent_È",
-                tooltip: "é_Sync to extent of this map_È"
+                label: "Sincronizza estensione mappa",
+                tooltip: "Sincronizza in base all\'estensione di questa mappa"
             }
         }
     })

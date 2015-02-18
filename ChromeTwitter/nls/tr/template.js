@@ -2,7 +2,7 @@
    ({
   viewer: {
     main: {
-      ownerText: "ı_A map from_İ: ",
+      ownerText: "Harita kaynağı: ",
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {

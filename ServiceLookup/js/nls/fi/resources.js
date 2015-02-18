@@ -24,7 +24,7 @@
             basemapButton: "Taustakartta"
         },
         popup: {
-            urlMoreInfo: "Å_More Info_ö"
+            urlMoreInfo: "Lisätietoja"
         }
 
     })

@@ -32,7 +32,7 @@ define(
                 "title": "Chú giải"
             },
             "details":{
-                "title": "Đ_Details_ớ",
+                "title": "Chi tiết",
                 "error": "Cập nhật mô tả bản đồ web với các chi tiết để hiển thị trong phần này."
             },
             "popup": {

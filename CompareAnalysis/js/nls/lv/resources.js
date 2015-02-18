@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "ķ_Unable to create map_ū"
+            error: "Nevar izveidot karti"
         },
         tools: {
             info: {
-                label: "ķ_Info_ū",
-                tooltip: "ķ_Toggle map info_ū"
+                label: "Informācija",
+                tooltip: "Pārslēgt kartes informāciju"
             },
             sync: {
-                label: "ķ_Sync Map Extent_ū",
-                tooltip: "ķ_Sync to extent of this map_ū"
+                label: "Sinhronizēt kartes pārklājumu",
+                tooltip: "Sinhronizēt ar šīs kartes pārklājumu"
             }
         }
     })

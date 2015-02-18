@@ -31,14 +31,14 @@ define(
             shareViaEmail: "Udostępnij przez e-mail",  // Command button to share the current map extents via email
             shareViaFacebook: "Udostępnij przez Facebook",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
             shareViaTwitter: "Udostępnij przez Twitter",  // Command button to share the current map extents via a Twitter tweet: a URL is opened that permits the user to log into Twitter with a tweet that is ready to go
-            print: "Drukowanie mapy",  // Command button to open a dialog box for specifying print orientation, title, and author before printing; also used inside print dialog box
+            print: "Drukuj mapę",  // Command button to open a dialog box for specifying print orientation, title, and author before printing; also used inside print dialog box
             fetchPrint: "Wyświetl drukowaną mapę",  // Command button to open a PDF containing a map that was just printed by the print map command
             landscape: "Orientacja pozioma strony",  // Command button in the print map dialog box to select the landscape page orientation
             portrait: "Orientacja pionowa strony",  // Command button in the print map dialog box to select the portrait page orientation
             help: "Pomoc"  // Command button to open a dialog box with a short description of the app
         },
         labels: {
-            email: "e-mail",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
+            email: "email",  // Shown next to icon for sharing the current map extents via email; works with shareViaEmail tooltip
             Facebook: "Facebook",  // Shown next to icon for sharing the current map extents via a Facebook post; works with shareViaFacebook tooltip
             Twitter: "Twitter",  // Shown next to icon for sharing the current map extents via a Twitter tweet; works with shareViaTwitter tooltip
             title: "tytuł",  // Shown as title hint in print specification box if a title hint is not configured
@@ -46,7 +46,7 @@ define(
         },
         prompts: {
             search: "Znajdź:",  // Appears before a find text field in dialog box for searching for a feature
-            markup: "Narysuj",  // Appears before a set of tools for drawing on the map
+            markup: "Wyświetl",  // Appears before a set of tools for drawing on the map
             mapLayers: "Warstwy mapy:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
             layerFields: "Pola wyszukiwanej warstwy:"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },

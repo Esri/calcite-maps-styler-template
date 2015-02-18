@@ -2,68 +2,68 @@
 	 ({
 		viewer: {
 			common: {
-				close: "Į_Close_š"
+				close: "Užverti"
 			},
 			loading: {
-				long: "Į_Application is initializing_š",
-				long2: "Į_Thanks for waiting_š",
-				failButton: "Į_Reload the application_š"
+				long: "Aplikacija įjungiama",
+				long2: "Ačiū, kad palaukėte.",
+				failButton: "Įkelti aplikaciją iš naujo"
 			},
 			signin: {
-				title: "Į_Authentication is required_š",
-				explainViewer: "Į_Please sign in with an account on %PORTAL_LINK% to access the application_š.",
-				explainBuilder: "Į_Please sign in with an account on %PORTAL_LINK% to configure the application_š."
+				title: "Autentifikacija būtina",
+				explainViewer: "Norėdami pasiekti aplikaciją, prisijunkite prie paskyros, esančios %PORTAL_LINK%.",
+				explainBuilder: "Norėdami konfigūruoti aplikaciją, prisijunkite prie paskyros, esančios %PORTAL_LINK%."
 			},
 			errors: {
-				boxTitle: "Į_An error has occurred_š",
-				invalidConfig: "Į_Invalid configuration_š",
-				invalidConfigNoApp: "Į_Web Mapping Application identifier not specified in index.html_š.",
-				unspecifiedConfigOwner: "Į_Authorized owner hasn't been configured_š.",
-				invalidConfigOwner: "Į_Application owner is not authorized_š.",
-				createMap: "Į_Unable to create map_š",
-				invalidApp: "Į_The %TPL_NAME% does not exist or is inaccessible_š.",
-				appLoadingFail: "Į_Something went wrong, the %TPL_NAME% did not load correctly_š.",
-				notConfiguredDesktop: "Į_The application is not configured yet_š.",
-				notConfiguredMobile: "Į_The %TPL_NAME% builder is not supported at this screen resolution_š.",
-				notAuthorized: "Į_You are not authorized to access this application_š",
-				noBuilderIE: "Į_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%_š",
-				noViewerIE: "Į_This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%_š",
-				upgradeBrowser: "Į_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>_š.",
-				mapLoadingFail: "Į_Something went wrong, the map did not load correctly_š.",
-				signOut: "Į_Sign Out_š"
+				boxTitle: "Įvyko klaida",
+				invalidConfig: "Neteisinga konfigūracija",
+				invalidConfigNoApp: "Interneto žemėlapių aplikacijos identifikatorius nenurodytas index.html.",
+				unspecifiedConfigOwner: "Nesukonfigūruotas teisėtas savininkas.",
+				invalidConfigOwner: "Teisėtas savininkas neautorizuotas.",
+				createMap: "Žemėlapio sukurti nepavyko",
+				invalidApp: "%TPL_NAME% neegzistuoja arba yra nepasiekiamas.",
+				appLoadingFail: "Įvyko klaida ir tinkamai įkelti %TPL_NAME% nepavyko.",
+				notConfiguredDesktop: "Aplikacija dar nesukonfigūruota.",
+				notConfiguredMobile: "%TPL_NAME% kūrimo priemonė šia ekrano raiška nepalaikoma.",
+				notAuthorized: "Neturite teisių pasiekti šią aplikaciją",
+				noBuilderIE: "Kūrimo priemonė neveikia „Internet Explorer“, jei jo versija mažesnė nei %VERSION%. %UPGRADE%",
+				noViewerIE: "Aplikacija neveikia „Internet Explorer“, jei jo versija mažesnė nei %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Atnaujinkite naršyklę</a>.",
+				mapLoadingFail: "Įvyko klaida ir žemėlapio nepavyko tinkamai įkelti.",
+				signOut: "Atsijungti"
 			},
 			mobileInfo: {
-				legend: "Į_Legend_š",
-				description: "Į_Description_š",
-				lblLegendMobileError: "Į_Sorry, the legend is unavailable. Please reload the application_š.",
-				lblLegendMobileErrorExplain: "Į_The legend is not available when the device is rotated to portrait mode after the application is loaded_š."
+				legend: "Legenda",
+				description: "Aprašas",
+				lblLegendMobileError: "Atsiprašome, legenda negalima. Iš naujo įkelkite aplikaciją.",
+				lblLegendMobileErrorExplain: "Legenda negalima, kai įrenginys pasukamas į statųjį režimą po to, kai aplikacija įkelta."
 			},
 			mobileFooter: {
-				swipeInvite: "Į_Swipe to navigate the story_š",
-				lblNext: "Į_Next_š",
-				lblEnd: "Į_You have reached the end of the story_š"
+				swipeInvite: "Perbraukite, kad pereitumėte prie kito pasakojimo",
+				lblNext: "Kitas",
+				lblEnd: "Pasiekėte pasakojimo pabaigą"
 			},
 			headerFromCommon: {
-				storymapsText: "Į_A story map_š",
-				builderButton: "Į_Edit_š",
-				bitlyTooltip: "Į_Get a short link to the application_š",
-				templateTitle: "Į_Set template title_š",
-				templateSubtitle: "Į_Set template subtitle_š",
-				share: "Į_Share_š"
+				storymapsText: "Žemėlapis su pasakojimu",
+				builderButton: "Redaguoti",
+				bitlyTooltip: "Gauti sutrumpintą aplikacijos nuorodą",
+				templateTitle: "Nustatyti šablono antraštę",
+				templateSubtitle: "Nustatyti šablono paantraštę",
+				share: "Bendrinti"
 			},
 			overviewFromCommon: {
-				title: "Į_Overview Map_š"
+				title: "Apžvalgos žemėlapis"
 			},
 			legendFromCommon: {
-				title: "Į_Legend_š"
+				title: "Legenda"
 			},
 			shareFromCommon: {
-				copy: "Į_Copy_š",
-				copied: "Į_Copied_š",
-				open: "Į_Open_š",
-				embed: "Į_Embed in web page_š",
-				embedExplain: "Į_Use the following HTML code to embed the application in a web page_š.",
-				size: "Į_Size (width/height)_š:"
+				copy: "Kopijuoti",
+				copied: "Nukopijuota",
+				open: "Atverti",
+				embed: "Įterpti į tinklalapį",
+				embedExplain: "Naudokite šį HTML kodą, kad įterptumėte aplikaciją į tinklalapį.",
+				size: "Dydis (plotis / aukštis):"
 			}
         }
     })

@@ -24,7 +24,7 @@
             basemapButton: "ベースマップ"
         },
         popup: {
-            urlMoreInfo: "須_More Info_鷗"
+            urlMoreInfo: "詳細情報"
         }
 
     })

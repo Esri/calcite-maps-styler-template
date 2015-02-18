@@ -2,7 +2,7 @@
    ({
   viewer: {
     main: {
-      ownerText: "ł_A map from_ą: ",
+      ownerText: "Mapa od: ",
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {
@@ -16,7 +16,7 @@
   tools: {
     tweets: {
     "screenName": "Nazwa ekranu",
-    "signIn": "Logowanie",
+    "signIn": "Zaloguj się",
     "switchAccount": "Przełącz konto",
     // doc about date and time patterns: http://dojotoolkit.org/reference-guide/dojo/date/locale/format.html
     // yyyy: full year, e.g. 2011

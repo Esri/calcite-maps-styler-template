@@ -32,7 +32,7 @@ define(
                 "title": "图例"
             },
             "details":{
-                "title": "试_Details_验",
+                "title": "详细信息",
                 "error": "使用将在此部分中显示的详细信息来更新 web 地图描述。"
             },
             "popup": {

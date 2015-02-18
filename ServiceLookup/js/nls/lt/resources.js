@@ -24,7 +24,7 @@
             basemapButton: "Pagrindo žemėlapis"
         },
         popup: {
-            urlMoreInfo: "Į_More Info_š"
+            urlMoreInfo: "Plačiau"
         }
 
     })

@@ -32,7 +32,7 @@ define(
                 "title": "Signaturforklaring"
             },
             "details":{
-                "title": "ø_Details_å",
+                "title": "Oplysninger",
                 "error": "Opdatér webkortbeskrivelsen med de oplysninger, der skal vises i denne sektion."
             },
             "popup": {

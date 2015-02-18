@@ -61,7 +61,7 @@
       minuteTimePattern: "hh:mm",
       secondTimePattern: "hh:mm:ss",
       millisecondTimePattern:"h:m:ss.SSS a",
-      title: "Εμφάνιση μπάρα κύλισης χρόνου",
+      title: "Εμφάνιση μπάρας κύλισης χρόνου",
       label: "Χρόνος",
       timeRange: "${start_time} έως ${end_time}",
       timeRangeSingle: "<b>Εύρος χρόνου:</b> ${time}"

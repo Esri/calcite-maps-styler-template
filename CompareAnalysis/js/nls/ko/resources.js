@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "한_Unable to create map_빠"
+            error: "맵을 생성할 수 없음"
         },
         tools: {
             info: {
-                label: "한_Info_빠",
-                tooltip: "한_Toggle map info_빠"
+                label: "정보",
+                tooltip: "맵 정보 전환"
             },
             sync: {
-                label: "한_Sync Map Extent_빠",
-                tooltip: "한_Sync to extent of this map_빠"
+                label: "맵 범위 동기화",
+                tooltip: "이 맵의 범위로 동기화"
             }
         }
     })

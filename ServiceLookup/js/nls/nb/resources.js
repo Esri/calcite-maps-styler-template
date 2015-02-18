@@ -24,7 +24,7 @@
             basemapButton: "Bakgrunnskart"
         },
         popup: {
-            urlMoreInfo: "å_More Info_ø"
+            urlMoreInfo: "Mer informasjon"
         }
 
     })

@@ -158,7 +158,7 @@
 				settingsDataModel2Explain: "Σάρωση με άλλον web χάρτη.",
 				settingsDataModel2SpyGlassExplain: "Αποκάλυψη άλλου web χάρτη.",
 				settingsDataModel2HelpTitle: "Πώς μπορώ να βρω το ID ενός web χάρτη;",
-				settingsDataModel2HelpContent: "Αντιγράψτε και επικολλήστε τα ψηφία μετά το σύμβολο \'=\' στο URL του web χάρτη",
+				settingsDataModel2HelpContent: "Αντιγράψτε και επικολλήστε τα ψηφία μετά το σύμβολο '=' στο URL του web χάρτη",
 				switchMaps: "Αλλαγή χαρτών",
 				browseWebMaps: "Αναζήτηση web χαρτών"
 			},
@@ -177,7 +177,7 @@
 				settingsSeriesHelpLink: "Δείτε ένα παράδειγμα εφαρμογής με μια σειρά σαρώσεων εδώ",
 				preview: "Προεπισκόπηση περιβάλλοντος εργασίας (UI)",
 				settingsLocateButtonExplain: "Αυτή η λειτουργία υποστηρίζεται στα περισσότερα προγράμματα περιήγησης για φορητές συσκευές και επιτραπέζιους υπολογιστές (συμπεριλαμβανομένου του Internet Explorer 9+).",
-				settingsLocateButton: "Ενεργοποίηση ενός κουμπιού \'Εντοπισμός\' σε υποστηριζόμενα προγράμματα περιήγησης",
+				settingsLocateButton: "Ενεργοποίηση ενός κουμπιού 'Εντοπισμός' σε υποστηριζόμενα προγράμματα περιήγησης",
 				settingsAddressSearch: "Ενεργοποίηση εργαλείου αναζήτησης διεύθυνσης"
 			},
 			settingsSwipePopup: {

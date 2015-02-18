@@ -2,9 +2,9 @@
      ({
         "widgets": {
             "AboutDialog": {
-                "title": "Informacje",
+                "title": "Informacje o",
                 "itemInfo": "Wyświetl ten element",
-                "itemInfoLink": "w serwisie ArcGIS Online.",
+                "itemInfoLink": "w usłudze ArcGIS Online.",
                 "licenseHeader":"Licencja",
                 "dateCreated":"Utworzono:",
                 "dateModified":"Ostatnia modyfikacja",

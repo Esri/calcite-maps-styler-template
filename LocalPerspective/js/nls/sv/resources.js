@@ -17,25 +17,25 @@
 define(
     ({
       "map" : {
-         "error" : "Å_Unable to create map_ö"
+         "error" : "Det går inte att skapa kartan"
       },
       "days" : {
-         "now" : "Å_NOW_ö",
-         "sun" : "Å_SUN_ö",
-         "mon" : "Å_MON_ö",
-         "tue" : "Å_TUE_ö",
-         "wed" : "Å_WED_ö",
-         "thu" : "Å_THU_ö",
-         "fri" : "Å_FRI_ö",
-         "sat" : "Å_SAT_ö"
+         "now" : "NU",
+         "sun" : "SÖN",
+         "mon" : "MÅN",
+         "tue" : "TIS",
+         "wed" : "ONS",
+         "thu" : "TOR",
+         "fri" : "FRE",
+         "sat" : "LÖR"
       },
       "tooltips" : {
-         "logo" : "Å_Logo_ö",
-         "menu" : "Å_Menu_ö",
-         "close" : "Å_Close_ö",
-         "previous" : "Å_Previous_ö",
-         "next" : "Å_Next_ö",
-         "directions" : "Å_Directions_ö"
+         "logo" : "Logotyp",
+         "menu" : "Meny",
+         "close" : "Stäng",
+         "previous" : "Föregående",
+         "next" : "Nästa",
+         "directions" : "Vägbeskrivning"
       }
    })
 );

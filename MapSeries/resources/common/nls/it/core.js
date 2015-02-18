@@ -58,7 +58,7 @@
 				sharePrivateBtn2: "Condividi con l\'organizzazione",
 				sharePrivateWarning: "La condivisione %WITH% è stata disabilitata perché non si è proprietari della <a href='%LINK%' target='_blank'>mappa Web</a>.",
 				sharePrivateWarningWith1: "con il pubblico",
-				sharePrivateWarningWith2: "pubblicamente e con l\'organizzazione",
+				sharePrivateWarningWith2: "con il pubblico e con l\'organizzazione",
 				sharePrivateProgress: "Condivisione in corso...",
 				sharePrivateErr: "Condivisione non riuscita. Riprovare o",
 				sharePrivateOk: "Condivisione aggiornata. Caricamento in corso...",
@@ -71,7 +71,7 @@
 				shareQ1Opt2: "Come si mantiene privata o si condivide pubblicamente l\'applicazione?",
 				shareA1: "Utilizzare %SHAREIMG% nella <a href='%LINK1%' target='_blank'>pagina degli elementi dell\'applicazione</a>.",
 				shareQ2bis: "Come si torna all\'interfaccia del generatore?",
-				shareA2div1: "Salvare e riutilizzare il seguente collegamento %LINK1% oppure utilizzare la <a href='%LINK2%' target='_blank'>pagina degli elementi dell\'applicazione</a>.",
+				shareA2div1: "Salvare e riutilizzare il collegamento seguente %LINK1% oppure utilizzare la <a href='%LINK2%' target='_blank'>pagina degli elementi dell\'applicazione</a>.",
 				shareA2div2: "In quanto proprietari dell\'applicazione, all\'accesso in %PORTAL%, l\'applicazione includerà un pulsante per aprire il generatore:",				
 				shareQ3: "Dove vengono memorizzati i dati?",
 				shareA3: "La configurazione e i dati di %TPL_NAME% vengono memorizzati in <a href='%LINK2%' target='_blank'>questo elemento dell\'applicazione Web</a>. Se è stata utilizzata l\'importazione da Flickr, Picasa, Facebook o YouTube, le immagini e i video non sono stati duplicati in %PORTAL%."

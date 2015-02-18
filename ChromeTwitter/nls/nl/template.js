@@ -2,7 +2,7 @@
    ({
   viewer: {
     main: {
-      ownerText: "Ĳ_A map from_ä: ",
+      ownerText: "Een kaart van: ",
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {

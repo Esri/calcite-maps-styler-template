@@ -2,68 +2,68 @@
 	 ({
 		viewer: {
 			common: {
-				close: "试_Close_验"
+				close: "关闭"
 			},
 			loading: {
-				long: "试_Application is initializing_验",
-				long2: "试_Thanks for waiting_验",
-				failButton: "试_Reload the application_验"
+				long: "应用程序正在初始化",
+				long2: "谢谢等候",
+				failButton: "重新加载应用程序"
 			},
 			signin: {
-				title: "试_Authentication is required_验",
-				explainViewer: "试_Please sign in with an account on %PORTAL_LINK% to access the application_验.",
-				explainBuilder: "试_Please sign in with an account on %PORTAL_LINK% to configure the application_验."
+				title: "需要进行身份验证",
+				explainViewer: "请使用帐户登录 %PORTAL_LINK%，以访问应用程序。",
+				explainBuilder: "请使用帐户登录 %PORTAL_LINK%，以配置应用程序。"
 			},
 			errors: {
-				boxTitle: "试_An error has occurred_验",
-				invalidConfig: "试_Invalid configuration_验",
-				invalidConfigNoApp: "试_Web Mapping Application identifier not specified in index.html_验.",
-				unspecifiedConfigOwner: "试_Authorized owner hasn't been configured_验.",
-				invalidConfigOwner: "试_Application owner is not authorized_验.",
-				createMap: "试_Unable to create map_验",
-				invalidApp: "试_The %TPL_NAME% does not exist or is inaccessible_验.",
-				appLoadingFail: "试_Something went wrong, the %TPL_NAME% did not load correctly_验.",
-				notConfiguredDesktop: "试_The application is not configured yet_验.",
-				notConfiguredMobile: "试_The %TPL_NAME% builder is not supported at this screen resolution_验.",
-				notAuthorized: "试_You are not authorized to access this application_验",
-				noBuilderIE: "试_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%_验",
-				noViewerIE: "试_This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%_验",
-				upgradeBrowser: "试_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>_验.",
-				mapLoadingFail: "试_Something went wrong, the map did not load correctly_验.",
-				signOut: "试_Sign Out_验"
+				boxTitle: "发生错误",
+				invalidConfig: "配置无效",
+				invalidConfigNoApp: "未在 index.html 中指定 Web 制图应用程序标识符。",
+				unspecifiedConfigOwner: "尚未配置授权的所有者。",
+				invalidConfigOwner: "未授权应用程序所有者。",
+				createMap: "无法创建地图",
+				invalidApp: "%TPL_NAME% 不存在或不可访问。",
+				appLoadingFail: "发生了一些错误， %TPL_NAME% 未正确加载。",
+				notConfiguredDesktop: "应用程序尚未配置。",
+				notConfiguredMobile: "%TPL_NAME% 构建器不支持此屏幕分辨率。",
+				notAuthorized: "您无权访问该应用程序",
+				noBuilderIE: "低于版本 %VERSION% 的 Internet Explorer 不支持构建器。%UPGRADE%",
+				noViewerIE: "低于版本 %VERSION% 的 Internet Explorer 不支持该应用程序。%UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>请更新您的浏览器</a>。",
+				mapLoadingFail: "发生了一些错误，地图未正确加载。",
+				signOut: "登出"
 			},
 			mobileInfo: {
-				legend: "试_Legend_验",
-				description: "试_Description_验",
-				lblLegendMobileError: "试_Sorry, the legend is unavailable. Please reload the application_验.",
-				lblLegendMobileErrorExplain: "试_The legend is not available when the device is rotated to portrait mode after the application is loaded_验."
+				legend: "图例",
+				description: "描述",
+				lblLegendMobileError: "抱歉，图例不可用。请重新加载应用程序。",
+				lblLegendMobileErrorExplain: "如果设备在加载应用程序后旋转到纵向模式，则图例不可用。"
 			},
 			mobileFooter: {
-				swipeInvite: "试_Swipe to navigate the story_验",
-				lblNext: "试_Next_验",
-				lblEnd: "试_You have reached the end of the story_验"
+				swipeInvite: "滑动浏览故事",
+				lblNext: "下一页",
+				lblEnd: "您已到达故事末尾"
 			},
 			headerFromCommon: {
-				storymapsText: "试_A story map_验",
-				builderButton: "试_Edit_验",
-				bitlyTooltip: "试_Get a short link to the application_验",
-				templateTitle: "试_Set template title_验",
-				templateSubtitle: "试_Set template subtitle_验",
-				share: "试_Share_验"
+				storymapsText: "故事地图",
+				builderButton: "编辑",
+				bitlyTooltip: "获取应用程序的短链接",
+				templateTitle: "设置模板标题",
+				templateSubtitle: "设置模板子标题",
+				share: "共享"
 			},
 			overviewFromCommon: {
-				title: "试_Overview Map_验"
+				title: "总览图"
 			},
 			legendFromCommon: {
-				title: "试_Legend_验"
+				title: "图例"
 			},
 			shareFromCommon: {
-				copy: "试_Copy_验",
-				copied: "试_Copied_验",
-				open: "试_Open_验",
-				embed: "试_Embed in web page_验",
-				embedExplain: "试_Use the following HTML code to embed the application in a web page_验.",
-				size: "试_Size (width/height)_验:"
+				copy: "复制",
+				copied: "已复制",
+				open: "打开",
+				embed: "嵌入到网页",
+				embedExplain: "使用以下 HTML 代码将应用程序嵌入到网页。",
+				size: "大小(宽度/高度):"
 			}
         }
     })

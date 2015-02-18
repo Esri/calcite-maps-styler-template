@@ -5,7 +5,7 @@
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors:{
-      createMap: "Imposibil de creat harta: ",
+      createMap: "Nu se poate crea harta: ",
       general:"Eroare"
     },
 	legToggle:{

@@ -2,7 +2,7 @@
    ({
   viewer: {
     main: {
-      ownerText: "Š_A map from_ä: ",
+      ownerText: "Kaart: ",
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {

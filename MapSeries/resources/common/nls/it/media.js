@@ -30,7 +30,7 @@
 			imageSelectorFacebook: {
 				leftHeader: "Utente Facebook",
 				rightHeader: "Pagina Facebook",
-				pageExplain: "Una pagina Facebook è un marchio/prodotto pubblico o un personaggio pubblico come esrigis. È possibile ottenere il nome della pagina dopo il primo \'/\' nell\'URL della pagina.",
+				pageExplain: "Una pagina Facebook è un marchio/prodotto pubblico o un personaggio pubblico come <b>esrigis</b>. È possibile ottenere il nome della pagina dopo il primo \'/\' nell\'URL della pagina.",
 				pageInputLbl: "Nome pagina",
 				lookupMsgError: "Pagina non trovata"
 			},

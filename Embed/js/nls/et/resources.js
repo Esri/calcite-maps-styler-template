@@ -32,7 +32,7 @@ define(
                 "title": "Legend"
             },
             "details":{
-                "title": "Š_Details_ä",
+                "title": "Detailid",
                 "error": "Täiendage veebikaardi kirjeldust selles jaotises kuvatavate detailidega."
             },
             "popup": {

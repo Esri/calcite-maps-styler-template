@@ -24,7 +24,7 @@
             basemapButton: "Baskarta"
         },
         popup: {
-            urlMoreInfo: "Å_More Info_ö"
+            urlMoreInfo: "Mer information"
         }
 
     })

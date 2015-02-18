@@ -2,7 +2,7 @@
    ({
   viewer: {
     main: {
-      ownerText: "Å_A map from_ö: ",
+      ownerText: "Kartta kohteesta: ",
       scaleBarUnits: "english" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {

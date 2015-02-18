@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "ø_Unable to create map_å"
+            error: "Kan ikke oprette kort"
         },
         tools: {
             info: {
-                label: "ø_Info_å",
-                tooltip: "ø_Toggle map info_å"
+                label: "Oplysninger",
+                tooltip: "Skift kortinfo"
             },
             sync: {
-                label: "ø_Sync Map Extent_å",
-                tooltip: "ø_Sync to extent of this map_å"
+                label: "Synkronisér kortudstrækning",
+                tooltip: "Synkronisér til udstrækningen af dette kort"
             }
         }
     })

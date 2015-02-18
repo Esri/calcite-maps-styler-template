@@ -2,68 +2,68 @@
 	 ({
 		viewer: {
 			common: {
-				close: "á_Close_Ó"
+				close: "Cerrar"
 			},
 			loading: {
-				long: "á_Application is initializing_Ó",
-				long2: "á_Thanks for waiting_Ó",
-				failButton: "á_Reload the application_Ó"
+				long: "La aplicación se está inicializando",
+				long2: "Gracias por esperar",
+				failButton: "Volver a cargar la aplicación"
 			},
 			signin: {
-				title: "á_Authentication is required_Ó",
-				explainViewer: "á_Please sign in with an account on %PORTAL_LINK% to access the application_Ó.",
-				explainBuilder: "á_Please sign in with an account on %PORTAL_LINK% to configure the application_Ó."
+				title: "Se requiere autenticación",
+				explainViewer: "Inicia sesión con una cuenta en %PORTAL_LINK% para acceder a la aplicación.",
+				explainBuilder: "Inicia sesión con una cuenta en %PORTAL_LINK% para configurar la aplicación."
 			},
 			errors: {
-				boxTitle: "á_An error has occurred_Ó",
-				invalidConfig: "á_Invalid configuration_Ó",
-				invalidConfigNoApp: "á_Web Mapping Application identifier not specified in index.html_Ó.",
-				unspecifiedConfigOwner: "á_Authorized owner hasn't been configured_Ó.",
-				invalidConfigOwner: "á_Application owner is not authorized_Ó.",
-				createMap: "á_Unable to create map_Ó",
-				invalidApp: "á_The %TPL_NAME% does not exist or is inaccessible_Ó.",
-				appLoadingFail: "á_Something went wrong, the %TPL_NAME% did not load correctly_Ó.",
-				notConfiguredDesktop: "á_The application is not configured yet_Ó.",
-				notConfiguredMobile: "á_The %TPL_NAME% builder is not supported at this screen resolution_Ó.",
-				notAuthorized: "á_You are not authorized to access this application_Ó",
-				noBuilderIE: "á_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%_Ó",
-				noViewerIE: "á_This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%_Ó",
-				upgradeBrowser: "á_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>_Ó.",
-				mapLoadingFail: "á_Something went wrong, the map did not load correctly_Ó.",
-				signOut: "á_Sign Out_Ó"
+				boxTitle: "Se ha producido un error",
+				invalidConfig: "Configuración no válida",
+				invalidConfigNoApp: "No se ha especificado el identificador de la aplicación de representación cartográfica en la red en index.html.",
+				unspecifiedConfigOwner: "El propietario autorizado no se ha configurado.",
+				invalidConfigOwner: "El propietario de la aplicación no está autorizado.",
+				createMap: "No se puede crear el mapa",
+				invalidApp: "No se puede acceder a %TPL_NAME% o no existe.",
+				appLoadingFail: "Se ha producido un error, %TPL_NAME% no se cargó correctamente.",
+				notConfiguredDesktop: "La aplicación no se ha configurado todavía.",
+				notConfiguredMobile: "El builder de %TPL_NAME% no es compatible con esta resolución de pantalla.",
+				notAuthorized: "No tienes autorización para acceder a esta aplicación",
+				noBuilderIE: "El builder no es compatible con versiones de Internet Explorer anteriores a la %VERSION%. %UPGRADE%",
+				noViewerIE: "Esta aplicación no es compatible con versiones de Internet Explorer anteriores a la %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Actualiza tu navegador</a>.",
+				mapLoadingFail: "Se ha producido un error, el mapa no se cargó correctamente.",
+				signOut: "Cerrar sesión"
 			},
 			mobileInfo: {
-				legend: "á_Legend_Ó",
-				description: "á_Description_Ó",
-				lblLegendMobileError: "á_Sorry, the legend is unavailable. Please reload the application_Ó.",
-				lblLegendMobileErrorExplain: "á_The legend is not available when the device is rotated to portrait mode after the application is loaded_Ó."
+				legend: "Leyenda",
+				description: "Descripción",
+				lblLegendMobileError: "Lo sentimos, la leyenda no está disponible. Vuelve a cargar la aplicación.",
+				lblLegendMobileErrorExplain: "La leyenda no está disponible cuando el dispositivo se rota a modo vertical una vez cargada la aplicación."
 			},
 			mobileFooter: {
-				swipeInvite: "á_Swipe to navigate the story_Ó",
-				lblNext: "á_Next_Ó",
-				lblEnd: "á_You have reached the end of the story_Ó"
+				swipeInvite: "Desliza para navegar por la historia",
+				lblNext: "Siguiente",
+				lblEnd: "Has llegado al final de la historia"
 			},
 			headerFromCommon: {
-				storymapsText: "á_A story map_Ó",
-				builderButton: "á_Edit_Ó",
-				bitlyTooltip: "á_Get a short link to the application_Ó",
-				templateTitle: "á_Set template title_Ó",
-				templateSubtitle: "á_Set template subtitle_Ó",
-				share: "á_Share_Ó"
+				storymapsText: "Un story map",
+				builderButton: "Editar",
+				bitlyTooltip: "Obtén un enlace corto a la aplicación",
+				templateTitle: "Establecer título de plantilla",
+				templateSubtitle: "Establecer subtítulo de plantilla",
+				share: "Compartir"
 			},
 			overviewFromCommon: {
-				title: "á_Overview Map_Ó"
+				title: "Mapa de vista general"
 			},
 			legendFromCommon: {
-				title: "á_Legend_Ó"
+				title: "Leyenda"
 			},
 			shareFromCommon: {
-				copy: "á_Copy_Ó",
-				copied: "á_Copied_Ó",
-				open: "á_Open_Ó",
-				embed: "á_Embed in web page_Ó",
-				embedExplain: "á_Use the following HTML code to embed the application in a web page_Ó.",
-				size: "á_Size (width/height)_Ó:"
+				copy: "Copiar",
+				copied: "Copiado",
+				open: "Abrir",
+				embed: "Integrar en página web",
+				embedExplain: "Usa el siguiente código HTML para integrar la aplicación en una página web.",
+				size: "Tamaño (ancho/alto):"
 			}
         }
     })

@@ -32,7 +32,7 @@ define(
                 "title": "Legenda"
             },
             "details":{
-                "title": "Į_Details_š",
+                "title": "Daugiau informacijos",
                 "error": "Atnaujinkite internetinio žemėlapio aprašą, kuris bus rodomas šioje skiltyje."
             },
             "popup": {

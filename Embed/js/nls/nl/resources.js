@@ -32,7 +32,7 @@ define(
                 "title": "Legenda"
             },
             "details":{
-                "title": "Ĳ_Details_ä",
+                "title": "Details",
                 "error": "De webmap beschrijving aanpassen met de details die in deze sectie weegegeven moeten worden."
             },
             "popup": {

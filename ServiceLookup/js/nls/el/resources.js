@@ -24,7 +24,7 @@
             basemapButton: "Υπόβαθρο"
         },
         popup: {
-            urlMoreInfo: "Đ_More Info_ớ"
+            urlMoreInfo: "Περισσότερες πληροφορίες"
         }
 
     })

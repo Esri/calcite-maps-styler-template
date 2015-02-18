@@ -29,7 +29,7 @@
     "protocolMismatchError": "Σφάλμα ασυμφωνίας πρωτοκόλλου... Θέλετε να συνεχίσετε;",
     "problematicWebmap": "Αυτή τη στιγμή αντιμετωπίζουμε τεχνικά προβλήματα με αυτόν το χάρτη: ",
     /* DO NOT REPLACE TEXT INSIDE CURLY BRACKETS */
-    "invalidDefaultThemeTemplate": "Το προεπιλεγμένο θέμα \'{theme}\' δεν είναι διαθέσιμο στην ομάδα \'{groupName}\'.",
+    "invalidDefaultThemeTemplate": "Το προεπιλεγμένο θέμα '{theme}' δεν είναι διαθέσιμο στην ομάδα '{groupName}'.",
     "mapHasNoLODs": "Αυτός ο χάρτης δεν έχει καθορισμένα LOD: ",
     "errorCreatingMap": "Σφάλμα κατά τη δημιουργία του χάρτη: ",
     "cantFindWebmap": "Δεν είναι δυνατή η εύρεση του web χάρτη: ",

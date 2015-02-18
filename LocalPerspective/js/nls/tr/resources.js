@@ -17,25 +17,25 @@
 define(
     ({
       "map" : {
-         "error" : "ı_Unable to create map_İ"
+         "error" : "Harita oluşturulamıyor"
       },
       "days" : {
-         "now" : "ı_NOW_İ",
-         "sun" : "ı_SUN_İ",
-         "mon" : "ı_MON_İ",
-         "tue" : "ı_TUE_İ",
-         "wed" : "ı_WED_İ",
-         "thu" : "ı_THU_İ",
-         "fri" : "ı_FRI_İ",
-         "sat" : "ı_SAT_İ"
+         "now" : "ŞİMDİ",
+         "sun" : "PAZ",
+         "mon" : "PTS",
+         "tue" : "SAL",
+         "wed" : "ÇAR",
+         "thu" : "PER",
+         "fri" : "CUM",
+         "sat" : "CTS"
       },
       "tooltips" : {
-         "logo" : "ı_Logo_İ",
-         "menu" : "ı_Menu_İ",
-         "close" : "ı_Close_İ",
-         "previous" : "ı_Previous_İ",
-         "next" : "ı_Next_İ",
-         "directions" : "ı_Directions_İ"
+         "logo" : "Logo",
+         "menu" : "Menü",
+         "close" : "Kapat",
+         "previous" : "Önceki",
+         "next" : "Sonraki",
+         "directions" : "Yol Tarifleri"
       }
    })
 );

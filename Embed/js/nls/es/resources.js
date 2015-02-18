@@ -32,7 +32,7 @@ define(
                 "title": "Leyenda"
             },
             "details":{
-                "title": "á_Details_Ó",
+                "title": "Detalles",
                 "error": "Actualiza la descripción del mapa web con los detalles para mostrar en esta sección."
             },
             "popup": {

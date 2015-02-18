@@ -24,7 +24,7 @@
             basemapButton: "底图"
         },
         popup: {
-            urlMoreInfo: "试_More Info_验"
+            urlMoreInfo: "更多信息"
         }
 
     })

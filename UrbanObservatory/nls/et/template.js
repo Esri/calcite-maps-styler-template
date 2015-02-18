@@ -11,7 +11,7 @@
       "Systems": "Süsteemid"
     },
     "splashDialog": {
-      "welcome": "Linna observatoorium linnade võrdluse rakendus võimaldab teil uurida suurlinnade elumustreid sirvides erinevaid linnu ja teemasid.",
+      "welcome": "Linna observatooriumi linnade võrdluse rakendus võimaldab Teil uurida suurlinnade elumustreid sirvides erinevaid linnu ja teemasid.",
       "changTheme": "<b>Teemade</b> muutmiseks kliki teema nimel teemade nimekirjas.",
       "changeCity": "<b>Linnade</b> muutmiseks kliki linna nimel linnade nimekirjas või lohista see kaardile.",
       "moreInfo": "Rohkem infot linna observatooriumist",

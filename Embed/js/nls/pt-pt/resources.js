@@ -32,7 +32,7 @@ define(
                 "title": "Legenda"
             },
             "details":{
-                "title": "ã_Details_Ç",
+                "title": "Detalhes",
                 "error": "Atualize a descrição do mapa web com detalhes para exibir nesta secção."
             },
             "popup": {

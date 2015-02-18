@@ -17,25 +17,25 @@
 define(
     ({
       "map" : {
-         "error" : "Đ_Unable to create map_ớ"
+         "error" : "Δεν είναι δυνατή η δημιουργία χάρτη"
       },
       "days" : {
-         "now" : "Đ_NOW_ớ",
-         "sun" : "Đ_SUN_ớ",
-         "mon" : "Đ_MON_ớ",
-         "tue" : "Đ_TUE_ớ",
-         "wed" : "Đ_WED_ớ",
-         "thu" : "Đ_THU_ớ",
-         "fri" : "Đ_FRI_ớ",
-         "sat" : "Đ_SAT_ớ"
+         "now" : "ΤΩΡΑ",
+         "sun" : "ΚΥΡ",
+         "mon" : "ΔΕΥ",
+         "tue" : "ΤΡΙ",
+         "wed" : "ΤΕΤ",
+         "thu" : "ΠΕΜ",
+         "fri" : "ΠΑΡ",
+         "sat" : "ΣΑΒ"
       },
       "tooltips" : {
-         "logo" : "Đ_Logo_ớ",
-         "menu" : "Đ_Menu_ớ",
-         "close" : "Đ_Close_ớ",
-         "previous" : "Đ_Previous_ớ",
-         "next" : "Đ_Next_ớ",
-         "directions" : "Đ_Directions_ớ"
+         "logo" : "Λογότυπο",
+         "menu" : "Μενού",
+         "close" : "Κλείσιμο",
+         "previous" : "Προηγούμενο",
+         "next" : "Επόμενο",
+         "directions" : "Οδηγίες"
       }
    })
 );

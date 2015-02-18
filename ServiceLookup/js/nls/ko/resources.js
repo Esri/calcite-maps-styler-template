@@ -24,7 +24,7 @@
             basemapButton: "베이스맵"
         },
         popup: {
-            urlMoreInfo: "한_More Info_빠"
+            urlMoreInfo: "자세한 내용"
         }
 
     })

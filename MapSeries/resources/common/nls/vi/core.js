@@ -5,7 +5,7 @@
 				add: "Thêm",
 				edit: "Chỉnh sửa",
 				save: "Lưu",
-				next: "Tiếp",
+				next: "Tiếp theo",
 				cancel: "Hủy",
 				back: "Quay lại",
 				apply: "Áp dụng",
@@ -83,7 +83,7 @@
 			settingsLayout: {
 				title: "Bố cục",
 				explain: "Bạn muốn sử dụng bố cục nào?",
-				explainInit: "Bạn có thể thay đổi bố cục bất kỳ lúc nào từ hộp thoại thiết đặt.",
+				explainInit: "Bạn có thể thay đổi bố cục bất kỳ lúc nào từ hộp thoại thiết lập.",
 				viewExample: "Xem ví dụ trực tiếp"
 			},
 			settingsTheme: {

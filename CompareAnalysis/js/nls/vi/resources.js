@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "Đ_Unable to create map_ớ"
+            error: "Không thể tạo bản đồ"
         },
         tools: {
             info: {
-                label: "Đ_Info_ớ",
-                tooltip: "Đ_Toggle map info_ớ"
+                label: "Thông tin",
+                tooltip: "Chuyển đổi thông tin bản đồ"
             },
             sync: {
-                label: "Đ_Sync Map Extent_ớ",
-                tooltip: "Đ_Sync to extent of this map_ớ"
+                label: "Đồng bộ hóa Phạm vi Bản đồ",
+                tooltip: "Đồng bộ hóa với phạm vi của bản đồ này"
             }
         }
     })

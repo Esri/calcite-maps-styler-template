@@ -2,68 +2,68 @@
 	 ({
 		viewer: {
 			common: {
-				close: "Š_Close_ä"
+				close: "Sulge"
 			},
 			loading: {
-				long: "Š_Application is initializing_ä",
-				long2: "Š_Thanks for waiting_ä",
-				failButton: "Š_Reload the application_ä"
+				long: "Rakendust lähtestatakse",
+				long2: "Täname ootamast",
+				failButton: "Laadi rakendus uuesti"
 			},
 			signin: {
-				title: "Š_Authentication is required_ä",
-				explainViewer: "Š_Please sign in with an account on %PORTAL_LINK% to access the application_ä.",
-				explainBuilder: "Š_Please sign in with an account on %PORTAL_LINK% to configure the application_ä."
+				title: "Autentimine on nõutav",
+				explainViewer: "Rakendusele juurdepääsuks logige sisse portaali %PORTAL_LINK% kontoga.",
+				explainBuilder: "Rakenduse konfigureerimiseks logige sisse portaali %PORTAL_LINK% kontoga."
 			},
 			errors: {
-				boxTitle: "Š_An error has occurred_ä",
-				invalidConfig: "Š_Invalid configuration_ä",
-				invalidConfigNoApp: "Š_Web Mapping Application identifier not specified in index.html_ä.",
-				unspecifiedConfigOwner: "Š_Authorized owner hasn't been configured_ä.",
-				invalidConfigOwner: "Š_Application owner is not authorized_ä.",
-				createMap: "Š_Unable to create map_ä",
-				invalidApp: "Š_The %TPL_NAME% does not exist or is inaccessible_ä.",
-				appLoadingFail: "Š_Something went wrong, the %TPL_NAME% did not load correctly_ä.",
-				notConfiguredDesktop: "Š_The application is not configured yet_ä.",
-				notConfiguredMobile: "Š_The %TPL_NAME% builder is not supported at this screen resolution_ä.",
-				notAuthorized: "Š_You are not authorized to access this application_ä",
-				noBuilderIE: "Š_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%_ä",
-				noViewerIE: "Š_This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%_ä",
-				upgradeBrowser: "Š_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>_ä.",
-				mapLoadingFail: "Š_Something went wrong, the map did not load correctly_ä.",
-				signOut: "Š_Sign Out_ä"
+				boxTitle: "Esines tõrge",
+				invalidConfig: "Vigane konfiguratsioon",
+				invalidConfigNoApp: "Veebikaardi rakenduse identifikaatorit pole failis index.html määratud.",
+				unspecifiedConfigOwner: "Autoriseeritud omanikku pole määratud.",
+				invalidConfigOwner: "Rakenduse omanik pole autoriseeritud.",
+				createMap: "Kaarti ei saa luua",
+				invalidApp: "Rakendust %TPL_NAME% ei eksisteeri või see pole kättesaadav.",
+				appLoadingFail: "Midagi läks valesti, rakendust %TPL_NAME% ei laaditud õigesti.",
+				notConfiguredDesktop: "Rakendust pole veel konfigureeritud.",
+				notConfiguredMobile: "Rakenduse %TPL_NAME% koostajat ekraani sellise eraldusvõime puhul ei toetata.",
+				notAuthorized: "Teil pole õigust sellele rakendusele juurde pääseda",
+				noBuilderIE: "Internet Exploreri versioonist %VERSION% varasemad versioonid ei toeta koostajat. %UPGRADE%",
+				noViewerIE: "Internet Explorer versioonist %VERSION% varasemad versioonid ei toeta seda rakendust. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Värskendage oma brauserit</a>.",
+				mapLoadingFail: "Midagi läks valesti ning kaarti ei laaditud õigesti.",
+				signOut: "Logi välja"
 			},
 			mobileInfo: {
-				legend: "Š_Legend_ä",
-				description: "Š_Description_ä",
-				lblLegendMobileError: "Š_Sorry, the legend is unavailable. Please reload the application_ä.",
-				lblLegendMobileErrorExplain: "Š_The legend is not available when the device is rotated to portrait mode after the application is loaded_ä."
+				legend: "Legend",
+				description: "Kirjeldus",
+				lblLegendMobileError: "Legend pole kahjuks saadaval. Laadige rakendus uuesti.",
+				lblLegendMobileErrorExplain: "Legend pole saadaval, kui seade pööratakse pärast rakenduse laadimist vertikaalasendisse."
 			},
 			mobileFooter: {
-				swipeInvite: "Š_Swipe to navigate the story_ä",
-				lblNext: "Š_Next_ä",
-				lblEnd: "Š_You have reached the end of the story_ä"
+				swipeInvite: "Nipsake loos liikumiseks",
+				lblNext: "Järgmine",
+				lblEnd: "Jõudsite loo lõppu"
 			},
 			headerFromCommon: {
-				storymapsText: "Š_A story map_ä",
-				builderButton: "Š_Edit_ä",
-				bitlyTooltip: "Š_Get a short link to the application_ä",
-				templateTitle: "Š_Set template title_ä",
-				templateSubtitle: "Š_Set template subtitle_ä",
-				share: "Š_Share_ä"
+				storymapsText: "Kaardilugu",
+				builderButton: "Muuda",
+				bitlyTooltip: "Tekita kiirlink rakendusele",
+				templateTitle: "Määra mallile pealkiri",
+				templateSubtitle: "Määra mallile alampealkiri",
+				share: "Jaga"
 			},
 			overviewFromCommon: {
-				title: "Š_Overview Map_ä"
+				title: "Ülevaatekaart"
 			},
 			legendFromCommon: {
-				title: "Š_Legend_ä"
+				title: "Legend"
 			},
 			shareFromCommon: {
-				copy: "Š_Copy_ä",
-				copied: "Š_Copied_ä",
-				open: "Š_Open_ä",
-				embed: "Š_Embed in web page_ä",
-				embedExplain: "Š_Use the following HTML code to embed the application in a web page_ä.",
-				size: "Š_Size (width/height)_ä:"
+				copy: "Kopeeri",
+				copied: "Kopeeritud",
+				open: "Ava",
+				embed: "Lisa veebilehele",
+				embedExplain: "Kasutage rakenduse veebilehele manustamiseks järgmist HTML-koodi.",
+				size: "Suurus (laius/kõrgus):"
 			}
         }
     })

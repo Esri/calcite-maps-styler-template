@@ -32,7 +32,7 @@ define(
                 "title": "Legenda"
             },
             "details":{
-                "title": "Ř_Details_ů",
+                "title": "Podrobnosti",
                 "error": "V této části se budou zobrazovat podrobnosti o webové mapě."
             },
             "popup": {

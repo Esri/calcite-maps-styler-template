@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "Ĳ_Unable to create map_ä"
+            error: "Kan geen kaart creëren"
         },
         tools: {
             info: {
-                label: "Ĳ_Info_ä",
-                tooltip: "Ĳ_Toggle map info_ä"
+                label: "Info",
+                tooltip: "Kaartinfo wisselen"
             },
             sync: {
-                label: "Ĳ_Sync Map Extent_ä",
-                tooltip: "Ĳ_Sync to extent of this map_ä"
+                label: "Extent van de kaart",
+                tooltip: "Het extent van de kaart synchroniseren"
             }
         }
     })

@@ -2,7 +2,7 @@
    ({
   viewer: {
     main: {
-      ownerText: "Į_A map from_š: ",
+      ownerText: "Žemėlapį sudarė: ",
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {

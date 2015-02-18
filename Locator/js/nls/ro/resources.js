@@ -17,7 +17,7 @@
 define(
     ({
       "map": {
-         "error": "Imposibil de creat harta"
+         "error": "Nu se poate crea harta"
       },
       "location": {
          "name": "Nume",

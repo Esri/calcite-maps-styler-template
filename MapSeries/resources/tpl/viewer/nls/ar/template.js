@@ -2,68 +2,68 @@
 	 ({
 		viewer: {
 			common: {
-				close: "بيت_Close_لاحقة"
+				close: "إغلاق"
 			},
 			loading: {
-				long: "بيت_Application is initializing_لاحقة",
-				long2: "بيت_Thanks for waiting_لاحقة",
-				failButton: "بيت_Reload the application_لاحقة"
+				long: "جارِ تهيئة التطبيق",
+				long2: "شكرًا للانتظار",
+				failButton: "إعادة تحميل التطبيق"
 			},
 			signin: {
-				title: "بيت_Authentication is required_لاحقة",
-				explainViewer: "بيت_Please sign in with an account on %PORTAL_LINK% to access the application_لاحقة.",
-				explainBuilder: "بيت_Please sign in with an account on %PORTAL_LINK% to configure the application_لاحقة."
+				title: "مطلوب المصادقة",
+				explainViewer: "يرجى تسجيل الدخول بحساب على %PORTAL_LINK% للوصول إلى التطبيق.",
+				explainBuilder: "يرجى تسجيل الدخول بحساب على %PORTAL_LINK% لتكوين التطبيق."
 			},
 			errors: {
-				boxTitle: "بيت_An error has occurred_لاحقة",
-				invalidConfig: "بيت_Invalid configuration_لاحقة",
-				invalidConfigNoApp: "بيت_Web Mapping Application identifier not specified in index.html_لاحقة.",
-				unspecifiedConfigOwner: "بيت_Authorized owner hasn't been configured_لاحقة.",
-				invalidConfigOwner: "بيت_Application owner is not authorized_لاحقة.",
-				createMap: "بيت_Unable to create map_لاحقة",
-				invalidApp: "بيت_The %TPL_NAME% does not exist or is inaccessible_لاحقة.",
-				appLoadingFail: "بيت_Something went wrong, the %TPL_NAME% did not load correctly_لاحقة.",
-				notConfiguredDesktop: "بيت_The application is not configured yet_لاحقة.",
-				notConfiguredMobile: "بيت_The %TPL_NAME% builder is not supported at this screen resolution_لاحقة.",
-				notAuthorized: "بيت_You are not authorized to access this application_لاحقة",
-				noBuilderIE: "بيت_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%_لاحقة",
-				noViewerIE: "بيت_This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%_لاحقة",
-				upgradeBrowser: "بيت_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>_لاحقة.",
-				mapLoadingFail: "بيت_Something went wrong, the map did not load correctly_لاحقة.",
-				signOut: "بيت_Sign Out_لاحقة"
+				boxTitle: "حدث خطأ",
+				invalidConfig: "تكوين غير صحيح",
+				invalidConfigNoApp: "مُعرّف تطبيق تخطيط الويب غير محدد في index.html.",
+				unspecifiedConfigOwner: "لم يتم تكوين المالك المعتمد.",
+				invalidConfigOwner: "لم يتم اعتماد مالك التطبيق",
+				createMap: "يتعذر إنشاء الخريطة",
+				invalidApp: "%TPL_NAME% غير موجود أو لا يمكن الوصول إليه.",
+				appLoadingFail: "‏‏حدث خطأ ما، لم يتم تحميل %TPL_NAME% بشكل صحيح.",
+				notConfiguredDesktop: "لم يتم تكوين التطبيق حتى الآن.",
+				notConfiguredMobile: "مُنشئ %TPL_NAME% غير مدعوم عند تركيز الشاشة الحالي.",
+				notAuthorized: "أنت غير مُخوّل للوصول إلى هذا التطبيق",
+				noBuilderIE: "المُنشئ غير مدعوم في Internet Explorer قبل الإصدار %VERSION%. %UPGRADE%",
+				noViewerIE: "التطبيق غير مدعوم في Internet Explorer قبل الإصدار %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>يرجى تحديث المستعرض</a>.",
+				mapLoadingFail: "‏‏حدث خطأ ما، لم يتم تحميل الخريطة بشكل صحيح.",
+				signOut: "تسجيل المغادرة"
 			},
 			mobileInfo: {
-				legend: "بيت_Legend_لاحقة",
-				description: "بيت_Description_لاحقة",
-				lblLegendMobileError: "بيت_Sorry, the legend is unavailable. Please reload the application_لاحقة.",
-				lblLegendMobileErrorExplain: "بيت_The legend is not available when the device is rotated to portrait mode after the application is loaded_لاحقة."
+				legend: "وسيلة إيضاح",
+				description: "الوصف",
+				lblLegendMobileError: "عذرًا، وسيلة الإيضاح غير متوفرة. يرجى إعادة تحميل التطبيق.",
+				lblLegendMobileErrorExplain: "لا تتوفر وسيلة الإيضاح عند استدارة الجهاز للوضع العمودي بعد تحميل التطبيق."
 			},
 			mobileFooter: {
-				swipeInvite: "بيت_Swipe to navigate the story_لاحقة",
-				lblNext: "بيت_Next_لاحقة",
-				lblEnd: "بيت_You have reached the end of the story_لاحقة"
+				swipeInvite: "سحب انتقال القصة",
+				lblNext: "التالي",
+				lblEnd: "وصلت إلى نهاية القصة"
 			},
 			headerFromCommon: {
-				storymapsText: "بيت_A story map_لاحقة",
-				builderButton: "بيت_Edit_لاحقة",
-				bitlyTooltip: "بيت_Get a short link to the application_لاحقة",
-				templateTitle: "بيت_Set template title_لاحقة",
-				templateSubtitle: "بيت_Set template subtitle_لاحقة",
-				share: "بيت_Share_لاحقة"
+				storymapsText: "خريطة قصة",
+				builderButton: "تحرير",
+				bitlyTooltip: "الحصول على رابط قصير للتطبيق",
+				templateTitle: "تعيين عنوان للقالب",
+				templateSubtitle: "تعيين عنوان فرعي للقالب",
+				share: "مشاركة"
 			},
 			overviewFromCommon: {
-				title: "بيت_Overview Map_لاحقة"
+				title: "خريطة النظرة العامة"
 			},
 			legendFromCommon: {
-				title: "بيت_Legend_لاحقة"
+				title: "وسيلة إيضاح"
 			},
 			shareFromCommon: {
-				copy: "بيت_Copy_لاحقة",
-				copied: "بيت_Copied_لاحقة",
-				open: "بيت_Open_لاحقة",
-				embed: "بيت_Embed in web page_لاحقة",
-				embedExplain: "بيت_Use the following HTML code to embed the application in a web page_لاحقة.",
-				size: "بيت_Size (width/height)_لاحقة:"
+				copy: "نسخ",
+				copied: "تم النسخ",
+				open: "فتح",
+				embed: "تضمين في صفحة الويب",
+				embedExplain: "استخدم كود HTML التالي لتضمين التطبيق في صفحة ويب.",
+				size: "الحجم (العرض/الارتفاع)"
 			}
         }
     })

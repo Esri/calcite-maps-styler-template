@@ -61,7 +61,7 @@ define(
             allSearchFieldsMissing: "Niciunul dintre aceste câmpuri nu a fost găsit în stratul tematic de căutare al hărţii",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "Acest câmp nu există în niciunul din straturile tematice de hartă",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "S-a remis conţinutul dvs. Vă mulţumim.",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "Imposibil de accesat configuraţia aplicaţiei",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            noConfiguration: "Nu se poate accesa configuraţia aplicaţiei",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "Imposibil de lansat aplicaţia"  // Appears for any failure to build the user interface
         }
     })

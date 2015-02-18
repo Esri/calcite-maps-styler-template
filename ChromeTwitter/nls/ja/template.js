@@ -2,7 +2,7 @@
    ({
   viewer: {
     main: {
-      ownerText: "須_A map from_鷗: ",
+      ownerText: "マップの参照元: ",
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {

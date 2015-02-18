@@ -2,68 +2,68 @@
 	 ({
 		viewer: {
 			common: {
-				close: "ķ_Close_ū"
+				close: "Aizvērt"
 			},
 			loading: {
-				long: "ķ_Application is initializing_ū",
-				long2: "ķ_Thanks for waiting_ū",
-				failButton: "ķ_Reload the application_ū"
+				long: "Lietotne tiek inicializēta",
+				long2: "Paldies, ka uzgaidījāt",
+				failButton: "Pārlādēt aplikāciju"
 			},
 			signin: {
-				title: "ķ_Authentication is required_ū",
-				explainViewer: "ķ_Please sign in with an account on %PORTAL_LINK% to access the application_ū.",
-				explainBuilder: "ķ_Please sign in with an account on %PORTAL_LINK% to configure the application_ū."
+				title: "Nepieciešama autentifikācija",
+				explainViewer: "Lai piekļūtu aplikācijai, pierakstieties %PORTAL_LINK%, izmantojot kontu.",
+				explainBuilder: "Lai konfigurētu aplikāciju, pierakstieties %PORTAL_LINK%, izmantojot kontu."
 			},
 			errors: {
-				boxTitle: "ķ_An error has occurred_ū",
-				invalidConfig: "ķ_Invalid configuration_ū",
-				invalidConfigNoApp: "ķ_Web Mapping Application identifier not specified in index.html_ū.",
-				unspecifiedConfigOwner: "ķ_Authorized owner hasn't been configured_ū.",
-				invalidConfigOwner: "ķ_Application owner is not authorized_ū.",
-				createMap: "ķ_Unable to create map_ū",
-				invalidApp: "ķ_The %TPL_NAME% does not exist or is inaccessible_ū.",
-				appLoadingFail: "ķ_Something went wrong, the %TPL_NAME% did not load correctly_ū.",
-				notConfiguredDesktop: "ķ_The application is not configured yet_ū.",
-				notConfiguredMobile: "ķ_The %TPL_NAME% builder is not supported at this screen resolution_ū.",
-				notAuthorized: "ķ_You are not authorized to access this application_ū",
-				noBuilderIE: "ķ_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%_ū",
-				noViewerIE: "ķ_This application is not supported in Internet Explorer before version %VERSION%. %UPGRADE%_ū",
-				upgradeBrowser: "ķ_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>_ū.",
-				mapLoadingFail: "ķ_Something went wrong, the map did not load correctly_ū.",
-				signOut: "ķ_Sign Out_ū"
+				boxTitle: "Kļūda",
+				invalidConfig: "Nederīga konfigurācija",
+				invalidConfigNoApp: "Web kartēšanas aplikācijas identifikators nav norādīts šeit: index.html.",
+				unspecifiedConfigOwner: "Autorizētais īpašnieks nav konfigurēts.",
+				invalidConfigOwner: "Aplikācijas īpašnieks nav autorizēts.",
+				createMap: "Nevar izveidot karti",
+				invalidApp: "%TPL_NAME% nepastāv vai tai nevar piekļūt.",
+				appLoadingFail: "Ir atgadījusies kļūme — %TPL_NAME% netika ielādēta pareizi.",
+				notConfiguredDesktop: "Aplikācija vēl nav konfigurēta.",
+				notConfiguredMobile: "%TPL_NAME% veidotājs ekrānā ar šādu izšķirtspēju netiek atbalstīts.",
+				notAuthorized: "Jūs neesat pilnvarots piekļūt šai lietotnei",
+				noBuilderIE: "Veidotājs netiek atbalstīts Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
+				noViewerIE: "Šī aplikācija netiek atbalstīta Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
+				mapLoadingFail: "Ir atgadījusies kļūme — karte netika ielādēta pareizi.",
+				signOut: "Izrakstīties"
 			},
 			mobileInfo: {
-				legend: "ķ_Legend_ū",
-				description: "ķ_Description_ū",
-				lblLegendMobileError: "ķ_Sorry, the legend is unavailable. Please reload the application_ū.",
-				lblLegendMobileErrorExplain: "ķ_The legend is not available when the device is rotated to portrait mode after the application is loaded_ū."
+				legend: "Apzīmējumi",
+				description: "Apraksts",
+				lblLegendMobileError: "Diemžēl apzīmējumi nav pieejami. Lūdzu, pārlādējiet lietotni.",
+				lblLegendMobileErrorExplain: "Apzīmējumi nav pieejami, ja ierīce pēc lietotnes ielādēšanas tiek pagriezta portreta režīmā."
 			},
 			mobileFooter: {
-				swipeInvite: "ķ_Swipe to navigate the story_ū",
-				lblNext: "ķ_Next_ū",
-				lblEnd: "ķ_You have reached the end of the story_ū"
+				swipeInvite: "Pārvelciet, lai navigētu stāstā",
+				lblNext: "Tālāk",
+				lblEnd: "Ir sasniegtas stāsta beigas"
 			},
 			headerFromCommon: {
-				storymapsText: "ķ_A story map_ū",
-				builderButton: "ķ_Edit_ū",
-				bitlyTooltip: "ķ_Get a short link to the application_ū",
-				templateTitle: "ķ_Set template title_ū",
-				templateSubtitle: "ķ_Set template subtitle_ū",
-				share: "ķ_Share_ū"
+				storymapsText: "Stāstu karte",
+				builderButton: "Rediģēt",
+				bitlyTooltip: "Saņemt īsu saiti uz lietotni",
+				templateTitle: "Iestatīt šablona virsrakstu",
+				templateSubtitle: "Iestatīt šablona apakšvirsrakstu",
+				share: "Kopīgot"
 			},
 			overviewFromCommon: {
-				title: "ķ_Overview Map_ū"
+				title: "Kartes pārskatīšana"
 			},
 			legendFromCommon: {
-				title: "ķ_Legend_ū"
+				title: "Apzīmējumi"
 			},
 			shareFromCommon: {
-				copy: "ķ_Copy_ū",
-				copied: "ķ_Copied_ū",
-				open: "ķ_Open_ū",
-				embed: "ķ_Embed in web page_ū",
-				embedExplain: "ķ_Use the following HTML code to embed the application in a web page_ū.",
-				size: "ķ_Size (width/height)_ū:"
+				copy: "Kopēt",
+				copied: "Kopēts",
+				open: "Atvērt",
+				embed: "Iegult web lapā",
+				embedExplain: "Izmantojiet šo HTML kodu, lai lietotni iegultu tīmekļa lapā.",
+				size: "Izmēri (platums/augstums):"
 			}
         }
     })

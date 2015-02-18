@@ -32,7 +32,7 @@ define(
                 "title": "Legende"
             },
             "details":{
-                "title": "ä_Details_Ü",
+                "title": "Details",
                 "error": "Aktualisieren Sie die Webkartenbeschreibung mit den Details, die in diesem Abschnitt angezeigt werden sollen."
             },
             "popup": {

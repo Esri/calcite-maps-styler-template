@@ -2,7 +2,7 @@
      ({
         "StatsBlock": {
             "close": "đóng",
-            "next": "Tiếp",
+            "next": "Tiếp theo",
             "previous": "Trước",
             "source":"Nguồn dữ liệu"
         }

@@ -24,7 +24,7 @@
             basemapButton: "Mappa di base"
         },
         popup: {
-            urlMoreInfo: "é_More Info_È"
+            urlMoreInfo: "Ulteriori informazioni"
         }
 
     })

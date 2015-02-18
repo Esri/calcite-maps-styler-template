@@ -1,7 +1,7 @@
 ﻿define(
      ({
         map: {
-            error: "Nie udało się utworzyć mapy"
+            error: "Nie można utworzyć mapy"
         }, 
         tools: {         
             search: {
@@ -12,7 +12,7 @@
                 title: "Lokalizacja"
             },
         	legend: "Legenda",
-        	 about: "Informacje"
+        	 about: "Informacje o"
         }
     })
 );

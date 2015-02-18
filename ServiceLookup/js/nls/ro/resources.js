@@ -1,7 +1,7 @@
 ﻿define(
      ({
         map: {
-            error: "Imposibil de creat harta",
+            error: "Nu se poate crea harta",
             mouseToolTip: "Faceţi clic pe hartă pentru a căuta servicii"
         },
         geocoder: {
@@ -24,7 +24,7 @@
             basemapButton: "Hartă fundal"
         },
         popup: {
-            urlMoreInfo: "Ă_More Info_ș"
+            urlMoreInfo: "Mai multe informaţii"
         }
 
     })

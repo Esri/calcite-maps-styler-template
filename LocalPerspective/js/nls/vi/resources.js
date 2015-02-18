@@ -17,25 +17,25 @@
 define(
     ({
       "map" : {
-         "error" : "Đ_Unable to create map_ớ"
+         "error" : "Không thể tạo bản đồ"
       },
       "days" : {
-         "now" : "Đ_NOW_ớ",
-         "sun" : "Đ_SUN_ớ",
-         "mon" : "Đ_MON_ớ",
-         "tue" : "Đ_TUE_ớ",
-         "wed" : "Đ_WED_ớ",
-         "thu" : "Đ_THU_ớ",
-         "fri" : "Đ_FRI_ớ",
-         "sat" : "Đ_SAT_ớ"
+         "now" : "BÂY GIỜ",
+         "sun" : "CN",
+         "mon" : "T2",
+         "tue" : "T3",
+         "wed" : "T4",
+         "thu" : "T5",
+         "fri" : "T6",
+         "sat" : "T7"
       },
       "tooltips" : {
-         "logo" : "Đ_Logo_ớ",
-         "menu" : "Đ_Menu_ớ",
-         "close" : "Đ_Close_ớ",
-         "previous" : "Đ_Previous_ớ",
-         "next" : "Đ_Next_ớ",
-         "directions" : "Đ_Directions_ớ"
+         "logo" : "Logo",
+         "menu" : "Menu",
+         "close" : "Đóng",
+         "previous" : "Trước",
+         "next" : "Tiếp theo",
+         "directions" : "Chỉ đường"
       }
    })
 );

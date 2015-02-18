@@ -17,25 +17,25 @@
 define(
     ({
       "map" : {
-         "error" : "å_Unable to create map_ø"
+         "error" : "Kan ikke opprette kart"
       },
       "days" : {
-         "now" : "å_NOW_ø",
-         "sun" : "å_SUN_ø",
-         "mon" : "å_MON_ø",
-         "tue" : "å_TUE_ø",
-         "wed" : "å_WED_ø",
-         "thu" : "å_THU_ø",
-         "fri" : "å_FRI_ø",
-         "sat" : "å_SAT_ø"
+         "now" : "NÅ",
+         "sun" : "SØN",
+         "mon" : "MAN",
+         "tue" : "TIR",
+         "wed" : "ONS",
+         "thu" : "TOR",
+         "fri" : "FRE",
+         "sat" : "LØR"
       },
       "tooltips" : {
-         "logo" : "å_Logo_ø",
-         "menu" : "å_Menu_ø",
-         "close" : "å_Close_ø",
-         "previous" : "å_Previous_ø",
-         "next" : "å_Next_ø",
-         "directions" : "å_Directions_ø"
+         "logo" : "Logo",
+         "menu" : "Meny",
+         "close" : "Lukk",
+         "previous" : "Forrige",
+         "next" : "Neste",
+         "directions" : "Beskrivelser"
       }
    })
 );

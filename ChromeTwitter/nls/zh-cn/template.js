@@ -2,7 +2,7 @@
    ({
   viewer: {
     main: {
-      ownerText: "试_A map from_验: ",
+      ownerText: "地图来自: ",
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {
@@ -27,7 +27,7 @@
     // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
     // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
     // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-    datePattern: "yyyy年MM月dd日",
+    datePattern: "yyyy年mm月dd日",
     timePattern: "h:mma",
     reply: "回复",
     retweet:"转推",

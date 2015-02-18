@@ -2,7 +2,7 @@
    ({
   viewer: {
     main: {
-      ownerText: "Ж_A map from_Я: ",
+      ownerText: "Карта из: ",
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {
@@ -28,7 +28,7 @@
     // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
     // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
     datePattern: "д МММ гг",
-    timePattern: "ч:ммa",
+    timePattern: "ч:мм",
     reply: "Ответить",
     retweet:"ReTweet",
     favorite:"Избранное",
