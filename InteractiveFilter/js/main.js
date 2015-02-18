@@ -220,6 +220,7 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
 
 
                     search.set("sources", defaultSources);
+                    search.startup();
                     //set the first non esri layer as active if search layers are defined. 
                     var activeIndex = 0;
                     if (searchLayers) {
@@ -236,8 +237,6 @@ ready, declare, dom, Deferred, all, number, Color, query, lang, array, domConstr
                         }
                     }
 
-
-                    search.startup();
 
 
                     if (search && search.domNode) {
