@@ -953,10 +953,10 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     }));
                 }
 
-
-
-
                 search.set("sources", defaultSources);
+
+                search.startup();
+                
                 //set the first non esri layer as active if search layers are defined. 
                 var activeIndex = 0;
                 if (searchLayers) {
@@ -972,9 +972,6 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         search.set("activeSourceIndex", activeIndex);
                     }
                 }
-
-
-                search.startup();
 
 
                 if (search && search.domNode) {
