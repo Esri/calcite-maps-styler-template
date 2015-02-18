@@ -410,6 +410,9 @@ a {
 .esriBasemapGalleryNode a:hover {
   background-color: #e1f0fb;
 }
+.esriBasemapGalleryLabelContainer {
+  font-size: 12px;
+}
 .esriRTL #gallery_container {
   top: 75px;
 }
@@ -451,6 +454,7 @@ a {
 }
 .basemap_title {
   padding: 5px;
+  font-size: 16px;
 }
 .arrow_box {
   -webkit-border-radius: 5px;
