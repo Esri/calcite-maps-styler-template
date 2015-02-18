@@ -189,7 +189,7 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
         _createCell: function (count, cols, row, i) {
             //Create a cell for each map and size to fit the number of rows
             var cell = domConstruct.create("div", {
-                "class": "col span_" + count + "_of_" + cols,
+                "class": "col span_" + count + "_of_" + cols + " shadow",
                 "id": "map_" + i,
                 "style": "height: " + win.getBox().h / Math.ceil(this.config.webmaps.length / cols) + "px;"
             }, row);

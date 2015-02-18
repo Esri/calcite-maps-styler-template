@@ -36,7 +36,14 @@ body {
   overflow-y: scroll;
 }
 .header_info {
-  padding: 15px 2px 10px 6px;
+  padding: 15px 6px 10px 6px;
+}
+.shadow {
+  border-right: solid 1px #b3abab;
+  border-bottom: solid 1px #b3abab;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 #expandoPane {
   background-color: #fff;
@@ -65,20 +72,20 @@ body {
   top: 0;
   right: 0;
   z-index: 30;
-  height: 100%;
+  height: 98%;
   width: 40%;
   overflow: scroll;
   -webkit-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
   background-color: transparent;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.9);
   padding: 28px 1em 1em 1em;
 }
 .esriLegendServiceLabel {
   display: none;
 }
 .mapTitle {
-  padding: 2px 2px 2px 2px;
+  padding: 3px 2px 3px 2px;
   z-index: 40;
   margin: auto;
   position: absolute;
@@ -93,8 +100,6 @@ body {
   font-size: 1.2em;
   line-height: 1.2em;
   color: #575757;
-  border: solid 1px #b3abab;
-  border-right: none;
 }
 .HomeButton {
   border-bottom: 1px solid #57585a;
@@ -272,6 +277,7 @@ body {
   overflow: hidden;
   width: 250px;
   z-index: 440 !important;
+  border-right: solid 1px #b3abab;
 }
 .dojoxExpandoPane .dojoxExpandoWrapper {
   width: 250px;
@@ -414,6 +420,7 @@ body {
   }
 }
 .dojoxExpandoContent {
+  overflow: auto !important;
   background-color: #fff;
 }
 .truncate {
