@@ -242,6 +242,7 @@ function(
 
 
                 search.set("sources", defaultSources);
+                search.startup();
                 //set the first non esri layer as active if search layers are defined. 
                 var activeIndex = 0;
                 if (searchLayers) {
@@ -257,9 +258,6 @@ function(
                         search.set("activeSourceIndex", activeIndex);
                     }
                 }
-
-
-                search.startup();
 
 
             }));
