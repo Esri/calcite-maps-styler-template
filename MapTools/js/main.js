@@ -210,6 +210,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
 
                 search.set("sources", defaultSources);
+                search.startup();
                 //set the first non esri layer as active if search layers are defined. 
                 var activeIndex = 0;
                 if (searchLayers) {
@@ -226,8 +227,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     }
                 }
 
-
-                search.startup();
 
             }));
 
