@@ -89,12 +89,12 @@
                     "type": "paragraph",
                     "value": "This application uses the Elevation Analysis<a  target=\"_blank\" href=\"https://developers.arcgis.com/rest/elevation/api-reference/profilesync.htm\"> Profile Task<\/a> to generate the elevation values along the profile.  It can be configured to consume a custom profile task. Learn more about <a target=\"_blank\" href=\"http://blogs.esri.com/esri/arcgis/2014/08/26/setting-up-your-own-profile-service \">setting up your own Profile Service.<\/a> "
                 }, 
-								{
+				{
                     "type": "string",
                     "fieldName": "elevationSync",
                     "label": "Profile Service Url",
                     "tooltip": "Url to the Custom Elevation Profile Service",
-										"placeHolder": "http://elevation.arcgis.com/arcgis/rest/services/Tools/ElevationSync/GPServer"
+					"placeHolder": "http://elevation.arcgis.com/arcgis/rest/services/Tools/ElevationSync/GPServer"
                 }
             ]
         },{
