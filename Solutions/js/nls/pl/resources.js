@@ -46,7 +46,7 @@ define(
         },
         prompts: {
             search: "Znajdź:",  // Appears before a find text field in dialog box for searching for a feature
-            markup: "Wyświetl",  // Appears before a set of tools for drawing on the map
+            markup: "Narysuj",  // Appears before a set of tools for drawing on the map
             mapLayers: "Warstwy mapy:",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the searchLayerMissing message
             layerFields: "Pola wyszukiwanej warstwy:"  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the searchFieldMissing message
         },
