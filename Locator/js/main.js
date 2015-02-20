@@ -133,24 +133,13 @@ define([
             this._setColor();
             this._setProtocolHandler();
             // proxy rules
-            urlUtils.addProxyRule({
-               urlPrefix : "route.arcgis.com",
-               proxyUrl : this.config.proxyurl
-            });
-            urlUtils.addProxyRule({
-               urlPrefix : "traffic.arcgis.com",
-               proxyUrl : this.config.proxyurl
-            });
-            // add proxy for custom route tasks
-            if (this.config.helperServices.route.url && this.config.helperServices.route.url) {
+            if (this.config.proxyurl != "") {
                urlUtils.addProxyRule({
-                  urlPrefix : this.config.helperServices.route.url,
+                  urlPrefix : "route.arcgis.com",
                   proxyUrl : this.config.proxyurl
                });
-            }
-            if (this.config.routeUtility) {
                urlUtils.addProxyRule({
-                  urlPrefix : this.config.routeUtility,
+                  urlPrefix : "traffic.arcgis.com",
                   proxyUrl : this.config.proxyurl
                });
             }
@@ -630,8 +619,8 @@ define([
             routeSymbol : routeSym,
             segmentSymbol : segmentSym
          };
-         if (this.config.helperServices.routeTask)
-            options.routeTaskURL = this.config.helperServices.routeTask.url;
+         if (this.config.helperServices.route && this.config.helperServices.route.url)
+            options.routeTaskURL = this.config.helperServices.route.url;
          if (this.config.routeUtility)
            options.routeTaskUrl = this.config.routeUtility;
          this.dirWidget = new Directions(options, "resultsDirections");
