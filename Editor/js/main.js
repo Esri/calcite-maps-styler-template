@@ -102,10 +102,10 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
 
             //add the location button if enabled.
             if (this.config.locate) {
-                if (!LocateButton) {
-                    return;
-                }
                 require(["esri/dijit/LocateButton"], lang.hitch(this, function (LocateButton) {
+                    if (!LocateButton) {
+                      return;
+                    }
                     //add the location button as a child of the map div. 
                     var locateDiv = domConstruct.create("div", {
                         id: "locateDiv"
