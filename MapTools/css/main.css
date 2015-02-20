@@ -261,7 +261,7 @@ body {
   background-color: transparent;
   background-image: none;
 }
-.arcgisSearch {
+#search.arcgisSearch {
   position: absolute;
   top: 160px;
   left: 20px;
@@ -283,22 +283,28 @@ body {
 .no-home .LocateButton {
   top: 90px;
 }
-.no-home.no-locate .arcgisSearch {
+.no-home.no-locate #search.arcgisSearch {
   top: 90px;
 }
 .no-zoom .LocateButton {
   top: 20px;
 }
-.no-home .arcgisSearch {
+.no-home #search.arcgisSearch {
   top: 130px;
 }
-.no-home.no-zoom.no-locate .arcgisSearch {
+.no-home.no-zoom.no-locate #search.arcgisSearch {
   top: 20px;
 }
-.no-zoom .arcgisSearch {
+.no-zoom #search.arcgisSearch {
   top: 60px;
 }
-.no-locate .arcgisSearch {
+.no-locate.no-zoom #search.arcgisSearch {
+  top: 60px;
+}
+.no-locate.no-title.no-zoom #search.arcgisSearch {
+  top: 20px;
+}
+.no-locate #search.arcgisSearch {
   top: 120px;
 }
 /*End map tools positioning section*/
@@ -373,7 +379,7 @@ body {
   padding: 5px;
   height: auto;
   width: auto;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 /*Basemap Gallery*/
 .closemenu {
