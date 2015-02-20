@@ -373,7 +373,7 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/a
         // if webmap does not exist
         if (!this.config.webmap) {
           // use default webmap for boilerplate
-          this.config.webmap = "24e01ef45d40423f95300ad2abc5038a";
+          this.config.webmap = "c2617e10abd9409c8e21af449bdfdef4";
         }
         arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
           // Set the itemInfo config option. This can be used when calling createMap instead of the webmap id
