@@ -105,7 +105,7 @@ function (
         _loadCSS: function () {
             //Load claro css
             if (dom.byId("claroTheme")) {
-                domAttr.set(dom.byId("claroTheme"), "href", location.protocol + "//jsdev.arcgis.com/3.12/dijit/themes/claro/claro.css");
+                domAttr.set(dom.byId("claroTheme"), "href", location.protocol + "//js.arcgis.com/3.13/dijit/themes/claro/claro.css");
             }
             domClass.add(document.body, "claro");
             //Load browser dialog

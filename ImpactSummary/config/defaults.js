@@ -3,7 +3,8 @@ define({
     //default web map, default app color theme and more. These values can be overwritten by template configuration settings
     //and url parameters.
     "appid": "",
-    "webmap": "21633896293248b7a40d4e3126c93621",
+    //"webmap": "21633896293248b7a40d4e3126c93621",
+    "webmap": "c2617e10abd9409c8e21af449bdfdef4",
     "oauthappid": null,
     //"AFTKRmv16wj14N3z",
     //Enter the url to the proxy if needed by the applcation. See the "Using the proxy page" help topic for details

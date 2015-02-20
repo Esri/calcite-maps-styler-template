@@ -32,12 +32,12 @@ define(
                 "title": "Legenda"
             },
             "details":{
-                "title": "ã_Details_Ç",
+                "title": "Detalhes",
                 "error": "Atualize a descrição de mapa da web com detalhes para exibir nesta seção."
             },
             "popup": {
                 "title": "Info",
-                "instructions": "Selecionar uma feição no mapa para visualizar detalhes."
+                "instructions": "Selecione uma feição no mapa para visualizar detalhes."
             }
 
         },

@@ -17,24 +17,24 @@
 define(
      ({
         map: {
-            error: "ã_Unable to create map_Ç"
+            error: "Não foi possível criar o mapa"
         },
         tools:{
-            basemapTool: "ã_Basemaps_Ç",
-            legendTool: "ã_Legend_Ç",
-            detailsTool: "ã_Details_Ç",
-            measureTool: "ã_Measure_Ç",
-            shareTool: "ã_Share_Ç",
-            layerTool: "ã_Layers_Ç",
-            tableTool: "ã_Table_Ç",
-            editTool: "ã_Edit_Ç",
-            printTool: "ã_Print_Ç",
-            printLegend: "ã_Add legend to output_Ç",
+            basemapTool: "Mapas Base",
+            legendTool: "Legenda",
+            detailsTool: "Detalhes",
+            measureTool: "Medir",
+            shareTool: "Compartilhar",
+            layerTool: "Camadas",
+            tableTool: "Tabela",
+            editTool: "Editar",
+            printTool: "Imprimir",
+            printLegend: "Adicionar legenda na saída",
             printLayouts: {
-                  "label1": 'ã_Landscape_Ç',
-                  "label2": 'ã_Portrait_Ç',
-                  "label3": 'ã_Landscape_Ç',
-                  "label4": 'ã_Portrait_Ç'
+                  "label1": 'Paisagem',
+                  "label2": 'Retrato',
+                  "label3": 'Paisagem',
+                  "label4": 'Retrato'
             }
         }
     })

@@ -45,7 +45,7 @@
 				step2NextTooltip: "Wpisz tytuł sekcji i zawartość, która będzie wyświetlana w układzie %LAYOUT-TYPE%",
 				stepNextTooltipNext: "aby przejść do kolejnego etapu",
 				stepNextTooltipAdd: "aby dodać sekcję",
-				firstAddExplain: "Pierwsza sekcja to sekcja Start, którą należy postrzegać jako „okładkę” swojej historii. Tytuł, który właśnie zdefiniowałeś, będzie wyświetlony dużą czcionką.",
+				firstAddExplain: "Pierwsza sekcja to sekcja Start, którą należy postrzegać jako „okładkę” swojej historii. Zdefiniowany tytuł będzie wyświetlony dużą czcionką.",
 				firstAddLeanMore: "Dowiedz się więcej",
 				titlePlaceholder: "Tytuł sekcji..."
 			},
@@ -53,7 +53,7 @@
 				editorPlaceholder: "Tutaj możesz dodać tekst, łącza oraz niewielkie elementy graficzne.",
 				editorActionsTitle: "Działania w obszarze głównym",
 				editorActionsHelpDescr: "Użyj tych kontrolek do utworzenia łączy, które zmienią obszar główny. Na przykład, gdy użytkownik kliknie łącze, może nastąpić powiększenie mapy do określonej lokalizacji, wyświetlenie innej mapy internetowej lub wyświetlenie obrazu.",
-				mainStageDisabled: "Działania w obszarze głównym nie mogą być wykonywane, gdy okno edytora jest zmaksymalizowane."
+				mainStageDisabled: "Działania w obszarze głównym są wyłączone, gdy okno edytora jest zmaksymalizowane."
 			},
 			organizePopup: {
 				title: "Organizuj",

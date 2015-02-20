@@ -43,7 +43,7 @@
                 "countrySelectTitle": "1. Välj dataplats",
                 "unitedStates": "USA",
                 "global": "Global",
-                "geoenrichDialogText": "Variabler för utökad geoinformation",
+                "geoenrichDialogText": "Variabler för GeoEnrichment",
                 "viewVariablestext": "Visa variabler",
                 "backButtonText":"Bakåt",
                 "customizeVariables": "Anpassa variabler",

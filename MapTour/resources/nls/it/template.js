@@ -43,7 +43,7 @@
 				introStartBtn: "Avvia"
 			},
 			desktopHTML: {
-				storymapsText: "Mappa collegata a una storia",
+				storymapsText: "Una story map",
 				builderButton: "Passa a modalità generatore",
 				bitlyTooltip: "Ottieni un collegamento breve all\'applicazione",
 				bitlyStartIndex: "Collegamento alla posizione corrente"

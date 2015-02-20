@@ -53,7 +53,7 @@
 				back: "Wstecz"
 			},
 			headerFromCommon: {
-				storymapsText: "Story Map",
+				storymapsText: "Mapa narracji (Story Map)",
 				builderButton: "Edytuj",
 				bitlyTooltip: "Pobierz skrócone łącze do aplikacji",
 				templateTitle: "Skonfiguruj tytuł szablonu",

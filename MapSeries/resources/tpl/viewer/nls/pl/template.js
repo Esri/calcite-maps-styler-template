@@ -41,10 +41,10 @@
 			mobileFooter: {
 				swipeInvite: "Zwiń, aby poruszać się po scenariuszu",
 				lblNext: "Dalej",
-				lblEnd: "Doszedłeś do końca scenariusza"
+				lblEnd: "Znajdujesz się na końcu scenariusza"
 			},
 			headerFromCommon: {
-				storymapsText: "Story Map",
+				storymapsText: "mapa narracji (Story Map)",
 				builderButton: "Edytuj",
 				bitlyTooltip: "Pobierz skrócone łącze do aplikacji",
 				templateTitle: "Skonfiguruj tytuł szablonu",
@@ -61,7 +61,7 @@
 				copy: "Kopiuj",
 				copied: "Skopiowane",
 				open: "Otwórz",
-				embed: "Osadzanie na stronie internetowej",
+				embed: "Osadzono na stronie internetowej",
 				embedExplain: "Aby umieścić Dziennik na stronie internetowej, skorzystaj z poniższego kodu HTML.",
 				size: "Rozmiar (szerokość/wysokość):"
 			}
