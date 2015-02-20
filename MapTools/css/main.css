@@ -143,7 +143,8 @@ body {
   z-index: 40;
 }
 #toolbar-leading {
-  width: 280px;
+  width: auto;
+/*280px*/
   margin: auto;
 }
 #toolbar-trailing {
@@ -175,6 +176,8 @@ body {
   background-repeat: no-repeat;
   border: none;
   overflow: hidden;
+  margin-right: 2px;
+  margin-left: 2px;
 }
 #toolbar-trailing button {
   display: inline-block;
@@ -186,7 +189,7 @@ body {
   font-size: 0.8em;
   padding: 1px 2px;
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 680px) {
   .tool-label {
     display: none;
   }
