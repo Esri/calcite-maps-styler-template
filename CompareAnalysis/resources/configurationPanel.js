@@ -27,11 +27,11 @@
                     "label": "Hide side panel"
                 },
                 {
-                    "placeHolder": "Defaults to Compare Maps",
+                    "placeHolder": "Defaults to Compare Analysis",
                     "type": "string",
                     "fieldName": "title",
                     "label": "Title",
-                    "tooltip": "Defaults to Compare Maps"
+                    "tooltip": "Defaults to Compare Analysis"
                 },
                 {
                     "type": "string",
