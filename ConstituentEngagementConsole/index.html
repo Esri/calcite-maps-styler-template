@@ -70,12 +70,25 @@
     <script type="text/javascript" src="js/resize-reverse.js"></script>
     <script type="text/javascript">
         require([
-            "application/bootstrapper"
-        ], function(
-            BootStrapper
+            "application/bootstrapper", "esri/urlUtils", "esri/lang", "config/template-config"
+        ], function (
+            BootStrapper, urlUtils, esriLang, templateConfig
         ) {
-            var bootStrapperObj = new BootStrapper();
-            bootStrapperObj.startup();
+            function checkIfAppIDExist() {
+                var urlObject,url;
+                url = document.location.href;
+                urlObject = urlUtils.urlToObject(url);
+                urlObject.query = urlObject.query || {};
+                // remove any HTML tags from query item
+                urlObject.query = esriLang.stripTags(urlObject.query);
+                return urlObject.query["appid"] ? true : false;
+            };
+            if (templateConfig.esriEnvironment && !checkIfAppIDExist()) {
+                window.location.assign("resources/preview/preview.html");
+            } else {
+                var bootStrapperObj = new BootStrapper();
+                bootStrapperObj.startup();
+            }
         });
     </script>
 </body>

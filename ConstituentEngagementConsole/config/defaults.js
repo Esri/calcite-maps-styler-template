@@ -21,7 +21,7 @@ define({
     "appid": "",
     "oauthappid": null,
     //Group templates must support a group url parameter. This will contain the id of the group.
-    "group": "2f7ae054c7ef43c6a2d4c19c90855b7c",
+    "group": "d3e11b4398984ec481d3ae9bde0d2810",
     //Enter the url to the proxy if needed by the application. See the 'Using the proxy page' help topic for details
     //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
     "proxyurl": "proxy.ashx",
