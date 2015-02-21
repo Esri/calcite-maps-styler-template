@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "レイヤを Web マップに追加できませんでした。もう一度やり直してください。",
                     "bufferAreaHelpText": "次より小さな値を入力してください ",
                     "invalidBufferInput": "入力された値が有効ではありません。",
-                    "emptyBufferInput": "須_Please enter valid value_鷗."
+                    "emptyBufferInput": "有効な値を入力してください。"
                 },
                 "populationText": "人口",
                 "housingText": "世帯",

@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "向 Web 地图添加图层失败。请重试。",
                     "bufferAreaHelpText": "请保证输入的值小于 ",
                     "invalidBufferInput": "输入的值无效。",
-                    "emptyBufferInput": "试_Please enter valid value_验."
+                    "emptyBufferInput": "请输入有效值。"
                 },
                 "populationText": "人口",
                 "housingText": "家庭",

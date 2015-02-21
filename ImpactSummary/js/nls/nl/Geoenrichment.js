@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Kan geen laag toevoegen. Probeer het later nogmaals.",
                     "bufferAreaHelpText": "Voer een waarde in kleiner dan ",
                     "invalidBufferInput": "De ingevoerde waarde is niet geldig.",
-                    "emptyBufferInput": "Ĳ_Please enter valid value_ä."
+                    "emptyBufferInput": "Geef een geldige waarde op."
                 },
                 "populationText": "Bevolking",
                 "housingText": "Huishoudens",

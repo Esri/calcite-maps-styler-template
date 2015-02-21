@@ -17,24 +17,24 @@
 define(
      ({
         map: {
-            error: "ก้_Unable to create map_ษฺ"
+            error: "ไม่สามารถสร้างแผนที่ได้"
         },
         tools:{
-            basemapTool: "ก้_Basemaps_ษฺ",
-            legendTool: "ก้_Legend_ษฺ",
-            detailsTool: "ก้_Details_ษฺ",
-            measureTool: "ก้_Measure_ษฺ",
-            shareTool: "ก้_Share_ษฺ",
-            layerTool: "ก้_Layers_ษฺ",
-            tableTool: "ก้_Table_ษฺ",
-            editTool: "ก้_Edit_ษฺ",
-            printTool: "ก้_Print_ษฺ",
-            printLegend: "ก้_Add legend to output_ษฺ",
+            basemapTool: "แผนที่ฐาน",
+            legendTool: "คำอธิบาย",
+            detailsTool: "รายละเอียด",
+            measureTool: "การวัด",
+            shareTool: "แชร์",
+            layerTool: "ชั้นข้อมูล",
+            tableTool: "ตาราง",
+            editTool: "แก้ไข",
+            printTool: "พิมพ์",
+            printLegend: "เพิ่มคำอธิบายแผนที่ไปยังส่วนผลลัพธ์",
             printLayouts: {
-                  "label1": 'ก้_Landscape_ษฺ',
-                  "label2": 'ก้_Portrait_ษฺ',
-                  "label3": 'ก้_Landscape_ษฺ',
-                  "label4": 'ก้_Portrait_ษฺ'
+                  "label1": 'แนวนอน',
+                  "label2": 'แนวตั้ง',
+                  "label3": 'แนวนอน',
+                  "label4": 'แนวตั้ง'
             }
         }
     })
