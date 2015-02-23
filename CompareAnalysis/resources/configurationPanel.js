@@ -19,12 +19,12 @@
                 {
                     "type":"boolean",
                     "fieldName":"showTitleAndDescription",
-                    "label": "Display side panel"
+                    "label": "Include side panel"
                 },
                 {
                     "type":"boolean",
                     "fieldName":"openPanelOnLoad",
-                    "label": "Hide side panel"
+                    "label": "Show side panel"
                 },
                 {
                     "placeHolder": "Defaults to Compare Analysis",
