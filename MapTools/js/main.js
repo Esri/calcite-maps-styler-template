@@ -69,7 +69,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                 query(".esriSimpleSlider").style("color", this.config.iconcolortheme.toString());
                 query(".esriSimpleSlider").style("background-color", this.config.theme.toString());
-
+                query(".esriSimpleSlider").style("background", this.config.theme.toString());
             }
             //add classes to manage positioning locate, zoom,  home buttons
             if (this.config.zoom === false || this.config.zoom_position !== "top-left") {
