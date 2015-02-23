@@ -88,11 +88,7 @@
       {  
          "category":"Tools",
          "fields":[  
-            {  
-               "type":"boolean",
-               "fieldName":"bookmarks",
-               "label":"Bookmarks"
-            },{
+            {
                "type":"boolean",
                "fieldName": "basemaps",
                "label": "Basemap Gallery"
