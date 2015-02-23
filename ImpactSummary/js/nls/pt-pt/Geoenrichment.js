@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Falhaadicionar camada ao mapa web. Por favor, volte a tentar.",
                     "bufferAreaHelpText": "Por favor, introduza o valor inferior a ",
                     "invalidBufferInput": "O valor introduzido não é válido.",
-                    "emptyBufferInput": "ã_Please enter valid value_Ç."
+                    "emptyBufferInput": "Por favor introduza um valor válido."
                 },
                 "populationText": "População",
                 "housingText": "Agregado Familiar",

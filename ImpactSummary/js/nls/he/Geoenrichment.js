@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "הוספת שכבה למפת אינטרנט נכשלה. נסה שוב.",
                     "bufferAreaHelpText": "הזן ערך קטן מאשר ",
                     "invalidBufferInput": "הערך שהוזן אינו חוקי.",
-                    "emptyBufferInput": "כן_Please enter valid value_ש."
+                    "emptyBufferInput": "בחר ערך תקף."
                 },
                 "populationText": "אוכלוסייה",
                 "housingText": "משק בית",

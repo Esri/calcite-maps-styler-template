@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Adăugarea stratului tematic la harta web nu a reuşit. Încercaţi din nou.",
                     "bufferAreaHelpText": "Introduceţi valoare mai mică decât ",
                     "invalidBufferInput": "Valoarea introdusă nu este validă.",
-                    "emptyBufferInput": "Ă_Please enter valid value_ș."
+                    "emptyBufferInput": "Introduceţi o valoare validă."
                 },
                 "populationText": "Populaţie",
                 "housingText": "Locuință",

@@ -10,7 +10,7 @@
                     "analysisFailed": "Analyse konnte nicht durchgeführt werden.",
                     "errorOccurred": "Ein Fehler ist aufgetreten.",
                     "layerAdded": "Layer wurde erfolgreich hinzugefügt. ",
-                    "enrichLayerNameError": "Der 'Name des Ergebnis-Layers' darf keine ungültigen Zeichen enthalten" + "(<,>,#,%,:,\",?,&,+,/,\\).",
+                    "enrichLayerNameError": "Der \'Name des Ergebnis-Layers\' darf keine ungültigen Zeichen enthalten" + "(<,>,#,%,:,\",?,&,+,/,\\).",
                     "creatingService": "Service wird erstellt.. ",
                     "starting": "Wird gestartet",
                     "performingAnalysis": "Analyse wird durchgeführt..",
@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Layer konnte nicht zur Webkarte hinzugefügt werden. Versuchen Sie es erneut.",
                     "bufferAreaHelpText": "Geben Sie den Wert ein, der kleiner ist als ",
                     "invalidBufferInput": "Der eingegebene Wert ist ungültig.",
-                    "emptyBufferInput": "ä_Please enter valid value_Ü."
+                    "emptyBufferInput": "Geben Sie einen gültigen Wert ein."
                 },
                 "populationText": "Bevölkerung",
                 "housingText": "Haushalt",

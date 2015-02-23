@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "فشل إضافة الطبقة إلى خريطة الويب. يرجى إعادة المحاولة.",
                     "bufferAreaHelpText": "يرجى إدخال القيمة أقل من ",
                     "invalidBufferInput": "القيمة المُدخلة غير صحيحة.",
-                    "emptyBufferInput": "بيت_Please enter valid value_لاحقة."
+                    "emptyBufferInput": "يرجى إدخال قيمة صحيحة."
                 },
                 "populationText": "عدد السكان",
                 "housingText": "أجهزة كهربائية",

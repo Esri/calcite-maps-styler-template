@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Не удалось добавить слой к карте. Попробуйте еще раз.",
                     "bufferAreaHelpText": "Введите значение меньше, чем ",
                     "invalidBufferInput": "Введенное значение некорректно.",
-                    "emptyBufferInput": "Ж_Please enter valid value_Я."
+                    "emptyBufferInput": "Введите корректное значение."
                 },
                 "populationText": "Население",
                 "housingText": "Домохозяйство",
