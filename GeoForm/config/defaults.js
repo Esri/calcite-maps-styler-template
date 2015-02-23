@@ -3,8 +3,7 @@ define({
     //default web map, default app color theme and more. These values can be overwritten by template configuration settings
     //and url parameters.
     "appid": "",
-    //"webmap": "0c5cb13c4fc54b28bb26a125221ed96f",
-    "webmap": "c2617e10abd9409c8e21af449bdfdef4",
+    "webmap": "0c5cb13c4fc54b28bb26a125221ed96f",
     "form_layer": {
         "id": ""
     },
