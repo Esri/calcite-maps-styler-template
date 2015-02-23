@@ -146,6 +146,7 @@ body {
   width: auto;
 /*280px*/
   margin: auto;
+  overflow-y:hidden;
 }
 #toolbar-trailing {
   margin: auto;
