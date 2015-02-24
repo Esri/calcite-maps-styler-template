@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -60,7 +60,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.1.0-022015',
+				version: '1.1.0-022315',
 				pathJSAPI: '//js.arcgis.com/3.13/'
 			};
 		</script>
@@ -90,10 +90,6 @@
 			</div>
 			<!-- Desktop header -->
 			<div id="headerDesktop">
-				<div class="textArea">
-					<h1 class="title"></h1>
-					<h2 class="subtitle"></h2>
-				</div>
 				<div class="rightArea">
 					<div class="linkSocialContainer">
 						<button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
@@ -115,6 +111,10 @@
 							</tr>
 						</table>
 					</div>
+				</div>
+				<div class="textArea">
+					<h1 class="title" tabindex="0"></h1>
+					<h2 class="subtitle" tabindex="0"></h2>
 				</div>
 				<div class="builder-mask"></div>
 			</div>
@@ -173,11 +173,11 @@
 						</div>
 						
 						<!-- Description and legend floating panel -->
-						<div id="descLegendPanel" class="descLegendPanel">
+						<div id="descLegendPanel" class="descLegendPanel" tabindex="0">
 							<div class="descLegendPanelInner">
 								<div class="backdrop"></div>
 								<div class="descriptions textEditorContent"></div>
-								<div class="legends"></div>
+								<div class="legends" aria-hidden="true"></div>
 								<div class="builder-mask"></div>
 							</div>
 						</div>
