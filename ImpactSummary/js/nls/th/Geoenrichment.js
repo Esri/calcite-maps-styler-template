@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "การเพิ่มชั้นข้อมูลสำหรับเว็บแผนที่ ไม่สำเร็จ กรุณาลองใหม่",
                     "bufferAreaHelpText": "กรุณาใส่ค่าน้อยกว่า ",
                     "invalidBufferInput": "ค่าข้อมูลที่คุณใส่ไม่ถูกต้อง",
-                    "emptyBufferInput": "ก้_Please enter valid value_ษฺ."
+                    "emptyBufferInput": "กรุณากรอกค่าที่ถูกต้อง"
                 },
                 "populationText": "ประชากร",
                 "housingText": "ครัวเรือน",
