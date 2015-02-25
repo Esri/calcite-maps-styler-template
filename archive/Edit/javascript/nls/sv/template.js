@@ -1,5 +1,5 @@
 ﻿define(
-  root: ({
+   ({
     viewer: {
       legend_title: "Teckenförklaring",
       content_title: "Redigerare",
