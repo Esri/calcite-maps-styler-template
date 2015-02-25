@@ -238,9 +238,9 @@ define([
                             array.forEach(layer.featureCollection.layers, function (subLyrs) {
                                 if (subLyrs.layerObject != null) {
 
-                                    if (layer.title == serviceAreaLayerNames[f] || layer.id == serviceAreaLayerNames[f]) {
-                                        serviceAreaLayerNames[f] = layer.title;
-                                        layDetails.name = layer.title;
+                                    if (subLyrs.layerObject.name == serviceAreaLayerNames[f] || subLyrs.id == serviceAreaLayerNames[f]) {
+                                        serviceAreaLayerNames[f] = subLyrs.layerObject.name;
+                                        layDetails.name = subLyrs.layerObject.name;
                                         layDetails.layerOrder = f;
                                         layDetails.url = subLyrs.layerObject.url;
                                         layDetails.layer = subLyrs;
