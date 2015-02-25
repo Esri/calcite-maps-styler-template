@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Dodanie warstwy do mapy internetowej nie powiodło się. Spróbuj ponownie.",
                     "bufferAreaHelpText": "Wprowadź wartość mniejszą niż ",
                     "invalidBufferInput": "Wprowadzona wartość nie jest prawidłowa.",
-                    "emptyBufferInput": "ł_Please enter valid value_ą."
+                    "emptyBufferInput": "Podaj właściwą wartość."
                 },
                 "populationText": "Populacja",
                 "housingText": "Gospodarstwa",

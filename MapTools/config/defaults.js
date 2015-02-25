@@ -63,7 +63,6 @@ define({
         ]
     },
     "layerlist": true,
-    "bookmarks": false,
     "basemaps": true,
     "print": true,
     "printlegend": true,

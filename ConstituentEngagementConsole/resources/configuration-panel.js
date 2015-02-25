@@ -1,6 +1,6 @@
 {
     "values": {
-        "group": "2f7ae054c7ef43c6a2d4c19c90855b7c",
+        "group": "d3e11b4398984ec481d3ae9bde0d2810",
         "theme": "#d15706",
         "applicationName": "",
         "applicationIcon": "",
@@ -17,7 +17,6 @@
         "webMapInfoNumViews": false,
         "webMapInfoAvgRating": false
     },
-    
     "configurationSettings": [
         {
             "category": "<b>Header Settings</b>",

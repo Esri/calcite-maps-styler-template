@@ -61,8 +61,9 @@ html,body {
 }
 
 #toolbar-leading{
-    width:280px;
+    width:auto;/*280px*/
     margin:auto;
+    overflow-y:hidden;
 }
 #toolbar-trailing{
     margin:auto;
@@ -89,6 +90,8 @@ html,body {
     background-repeat: no-repeat;
     border:none;
     overflow:hidden;
+    margin-right:2px;
+    margin-left:2px;
 }
 
 #toolbar-trailing button{
@@ -101,7 +104,7 @@ html,body {
     font-size:.8em;
     padding: 1px 2px;
 }
-@media screen and (max-width: 640px){
+@media screen and (max-width: 680px){
     .tool-label{
         display:none;
     }
@@ -111,7 +114,9 @@ html,body {
     cursor:default;
     color: #ccc;
 }
-
+.esriBasemapGalleryLabelContainer{
+    font-size:12px;
+}
 #tableDiv{
     height:0;
     background-color: #eee;
@@ -179,7 +184,7 @@ html,body {
     background-image:none;
 }
 
-.arcgisSearch{
+#search.arcgisSearch{
     position:absolute;
     top:160px;
     left:20px;
@@ -202,22 +207,28 @@ html,body {
     top:90px;
 }
 
-.no-home.no-locate .arcgisSearch{
+.no-home.no-locate #search.arcgisSearch{
     top:90px;
 }
 .no-zoom .LocateButton{
     top:20px;
 }
-.no-home .arcgisSearch{
+.no-home #search.arcgisSearch{
     top:130px;
 }
-.no-home.no-zoom.no-locate .arcgisSearch{
+.no-home.no-zoom.no-locate #search.arcgisSearch{
     top:20px;
 }
-.no-zoom .arcgisSearch{
+.no-zoom #search.arcgisSearch{
     top:60px;
 }
-.no-locate .arcgisSearch{
+.no-locate.no-zoom #search.arcgisSearch{
+    top:60px;
+}
+.no-locate.no-title.no-zoom #search.arcgisSearch{
+    top:20px;
+}
+.no-locate #search.arcgisSearch{
     top:120px;
 }
 /*End map tools positioning section*/
@@ -299,7 +310,7 @@ html,body {
     padding:5px;
     height:auto;
     width:auto;
-    overflow-y:scroll;   
+    overflow-y:auto;   
 }
 /*Basemap Gallery*/
 .closemenu{

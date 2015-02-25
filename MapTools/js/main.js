@@ -36,7 +36,12 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 //supply either the webmap id or, if available, the item info
                 var itemInfo = this.config.itemInfo || this.config.webmap;
                 this._createWebMap(itemInfo);
-                this._updateTheme();
+
+                //update app theme            
+                query(".bg").style("backgroundColor", this.config.theme.toString());
+                query("#titleDiv").style("color", this.config.titlecolor.toString());
+
+
             } else {
                 var error = new Error("Main:: Config is not defined");
                 this.reportError(error);
@@ -61,6 +66,10 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 query(".esriSimpleSliderDecrementButton").forEach(function (node) {
                     domClass.add(node, "icon-zoomout");
                 });
+
+                query(".esriSimpleSlider").style("color", this.config.iconcolortheme.toString());
+                query(".esriSimpleSlider").style("background-color", this.config.theme.toString());
+                query(".esriSimpleSlider").style("background", this.config.theme.toString());
             }
             //add classes to manage positioning locate, zoom,  home buttons
             if (this.config.zoom === false || this.config.zoom_position !== "top-left") {
@@ -87,6 +96,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                         domClass.add(node, "icon-color");
                     });
                     home.startup();
+                    this._updateTheme();
 
                 }));
             }
@@ -96,11 +106,10 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 }
                 var options = {
                     map: this.map,
-                    addLayersFromMap: false,
                     enableButtonMode: true,
-                    expanded: false
+                    expanded: false,
+                    addLayersFromMap: false
                 };
-
                 var searchLayers = false;
                 var search = new Search(options, domConstruct.create("div", {
                     id: "search"
@@ -159,10 +168,11 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                         }
                     }
                 }));
+                
                 //Add search layers defined on the web map item 
                 if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
                     var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
-
+                
                     array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
                         //we do this so we can get the title specified in the item
                         var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
@@ -174,7 +184,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                             }
                         });
 
-                        if (layer && layer.hasOwnProperty("url")) {
+                          if (layer && layer.hasOwnProperty("url")) {
                             var source = {};
                             var url = layer.url;
                             var name = layer.title || layer.name;
@@ -207,10 +217,9 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 }
 
 
-
-
                 search.set("sources", defaultSources);
                 search.startup();
+                
                 //set the first non esri layer as active if search layers are defined. 
                 var activeIndex = 0;
                 if (searchLayers) {
@@ -221,11 +230,16 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                         }
                     });
 
-
                     if (activeIndex > 0) {
                         search.set("activeSourceIndex", activeIndex);
                     }
                 }
+
+                query(".arcgisSearch .searchBtn").style("backgroundColor", this.config.theme.toString());
+                query(".arcgisSearch .esriIconSearch").style("color", this.config.iconcolortheme.toString());
+
+                query(".searchIcon").style("color", this.config.iconcolortheme.toString());
+
 
 
             }));
@@ -243,6 +257,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     domClass.add(node, "icon-color");
                 });
                 locate.startup();
+                query(".LocateButton .zoomLocateButton").style("background-color", this.config.theme.toString());
 
             }));
 
@@ -265,7 +280,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     return;
                 }
                 this.tableHandler = null;
-/*Create the table if a layer and field have been defined or if there's a feature layer in the map
+                /*Create the table if a layer and field have been defined or if there's a feature layer in the map
                 */
                 var layer = null;
 
@@ -451,7 +466,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                     }));
 
-
+                    this._updateTheme();
                 }
 
                 if (this.config.printlayouts) {
@@ -761,7 +776,14 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                 //Set the popup theme so it doesn't use sprite also update colors
                 domClass.add(this.map.infoWindow.domNode, "light");
-                this._updateTheme();
+                query(".esriPopup .pointer").style("backgroundColor", this.config.theme.toString());
+                query(".esriPopup .titlePane").style("backgroundColor", this.config.theme.toString());
+       
+                //Set the font color using the configured color value
+                query(".esriPopup .titlePane").style("color", this.config.color.toString());
+                query(".esriPopup. .titleButton").style("color", this.config.color.toString());  
+                
+
                 //Add a title 
                 this.config.title = this.config.title || response.itemInfo.item.title;
                 //set browser tab title 
@@ -783,6 +805,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 domClass.remove(document.body, "app-loading");
                 this._addToolbarWidgets();
                 this.loadMapWidgets();
+
                 // map has been created. You can start using it.
                 // If you need map to be loaded, listen for it's load event.
             }), this.reportError);
@@ -1054,35 +1077,16 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
         _updateTheme: function () {
 
-            //Set the background color using the configured theme value
-            query(".bg").style("backgroundColor", this.config.theme.toString());
-            query(".esriPopup .pointer").style("backgroundColor", this.config.theme.toString());
-            query(".esriPopup .titlePane").style("backgroundColor", this.config.theme.toString());
-            query(".arcgisSearch .searchBtn").style("backgroundColor", this.config.theme.toString());
-
-            query("#titleDiv").style("color", this.config.titlecolor.toString());
-
-            query(".esriSimpleSlider").style("color", this.config.iconcolortheme.toString());
-            query(".arcgisSearch .esriIconSearch").style("color", this.config.iconcolortheme.toString());
-            query(".esriSimpleSlider").style("background-color", this.config.theme.toString());
-            query(".searchIcon").style("color", this.config.iconcolortheme.toString());
-            //query(".search-btn").style("background-color", this.config.theme.toString());
-            query(".LocateButton .zoomLocateButton").style("background-color", this.config.theme.toString());
-
-            //Set the font color using the configured color value
-            query(".esriPopup .titlePane").style("color", this.config.color.toString());
-            query(".esriPopup. .titleButton").style("color", this.config.color.toString());
-
-
             //Set the Slider +/- color to match the icon style. 
             //Also update the menu icon to match the tool color. 
             query(".tool-label").style("color", this.config.color.toString());
             query("[class^='icon-'], [class*=' icon-']").style("color", this.config.iconcolortheme.toString());
+            
             if(this.map){
-             this.map.resize();
-             this.map.reposition();
-             registry.byId("bc").resize();
-             registry.byId("mapbc").resize();             
+                this.map.resize();
+                this.map.reposition();
+                registry.byId("bc").resize();
+                registry.byId("mapbc").resize();
             }
 
 

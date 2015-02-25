@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Karttatason lisäys Web-karttaan epäonnistui. Yritä uudelleen.",
                     "bufferAreaHelpText": "Anna arvo, joka on pienempi kuin ",
                     "invalidBufferInput": "Annettu arvo ei kelpaa.",
-                    "emptyBufferInput": "Å_Please enter valid value_ö."
+                    "emptyBufferInput": "Anna kelvollinen arvo."
                 },
                 "populationText": "Väestö",
                 "housingText": "Kotitalous",

@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Echec de l\'ajout de la couche à la carte Web. Réessayez.",
                     "bufferAreaHelpText": "Entrez une valeur inférieure à ",
                     "invalidBufferInput": "La valeur entrée n\'est pas valide.",
-                    "emptyBufferInput": "æ_Please enter valid value_Â."
+                    "emptyBufferInput": "Entrez une valeur valide."
                 },
                 "populationText": "Population",
                 "housingText": "Ménage",

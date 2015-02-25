@@ -17,13 +17,13 @@
 define(
    ({
     map: {
-      noEditLayers: "ก้_This web map does not contain any editable layers_ษฺ.",
-      error: "ก้_Unable to create map_ษฺ"
+      noEditLayers: "เว็บแมพไม่มีชั้นข้อมูลใดที่สามารถแก้ไขได้",
+      error: "ไม่สามารถสร้างแผนที่ได้"
     },
     tools: {
     "popup": {
-            "title": "ก้_Info_ษฺ",
-            "instructions": "ก้_Select a feature on the map to view details_ษฺ."
+            "title": "ข้อมูล",
+            "instructions": "เลือกฟีเจอร์บนแผนที่เพื่อแสดงรายละเอียด"
         } 
     }
   })

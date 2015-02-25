@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Error al agregar la capa al mapa web. Vuelve a intentarlo.",
                     "bufferAreaHelpText": "Introduce el valor menor que ",
                     "invalidBufferInput": "El valor introducido no es válido.",
-                    "emptyBufferInput": "á_Please enter valid value_Ó."
+                    "emptyBufferInput": "Introduce un valor válido."
                 },
                 "populationText": "Población",
                 "housingText": "Hogares",

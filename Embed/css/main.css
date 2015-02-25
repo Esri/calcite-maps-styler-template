@@ -533,6 +533,10 @@ a {
   .drawer-open .simpleGeocoder {
     display: none !important;
   }
+  .esriRTL .esriSimpleSliderTL {
+    top: 55px !important;
+    left: 10px;
+  }
 }
 .top-menu-right {
   margin-right: 5px;

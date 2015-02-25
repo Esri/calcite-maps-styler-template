@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Laget ble ikke lagt til i webkartet. Prøv på nytt.",
                     "bufferAreaHelpText": "Skriv inn en verdi som er mindre enn ",
                     "invalidBufferInput": "Den angitte verdien er ugyldig.",
-                    "emptyBufferInput": "å_Please enter valid value_ø."
+                    "emptyBufferInput": "Du må angi en gyldig verdi."
                 },
                 "populationText": "Befolkning",
                 "housingText": "Husholdning",

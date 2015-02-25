@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Vrstvu se nepodařilo přidat do webové mapy. Zkuste to znovu.",
                     "bufferAreaHelpText": "Zadejte prosím hodnotu, která je nižší než ",
                     "invalidBufferInput": "Zadaná hodnota je neplatná.",
-                    "emptyBufferInput": "Ř_Please enter valid value_ů."
+                    "emptyBufferInput": "Zadejte platnou hodnotu."
                 },
                 "populationText": "Populace",
                 "housingText": "Domácnost",

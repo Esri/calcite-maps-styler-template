@@ -1,4 +1,4 @@
-﻿define([
+define([
     "dojo/Evented",
     "dojo",
     "dojo/ready",
@@ -256,7 +256,7 @@ function (
         },
         _showLocation: function (evt) {
 
-            topic.publish("app/mapLocate", evt.feature.geometry);
+            topic.publish("app/mapLocate", evt.result.feature.geometry);
         },
 
 

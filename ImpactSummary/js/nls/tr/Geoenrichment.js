@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Katman web haritasına eklenemedi. Yeniden deneyin.",
                     "bufferAreaHelpText": "Şundan daha küçük bir değer girin: ",
                     "invalidBufferInput": "Girilen değer geçerli değil.",
-                    "emptyBufferInput": "ı_Please enter valid value_İ."
+                    "emptyBufferInput": "Geçerli bir değer girin."
                 },
                 "populationText": "Nüfus",
                 "housingText": "Hane",

@@ -10,7 +10,7 @@
                     "analysisFailed": "Не удалось выполнить анализ.",
                     "errorOccurred": "Произошла некая ошибка.",
                     "layerAdded": "Слой успешно добавлен. ",
-                    "enrichLayerNameError": "'Имя слоя результата' не должно содержать символы " + "(<,>,#,%,:,\",?,&,+,/,\\).",
+                    "enrichLayerNameError": "\'Имя слоя результата\' не должно содержать символы " + "(<,>,#,%,:,\",?,&,+,/,\\).",
                     "creatingService": "Создание сервиса.. ",
                     "starting": "Начало",
                     "performingAnalysis": "Выполнение анализа..",
@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Не удалось добавить слой к карте. Попробуйте еще раз.",
                     "bufferAreaHelpText": "Введите значение меньше, чем ",
                     "invalidBufferInput": "Введенное значение некорректно.",
-                    "emptyBufferInput": "Ж_Please enter valid value_Я."
+                    "emptyBufferInput": "Введите корректное значение."
                 },
                 "populationText": "Население",
                 "housingText": "Домохозяйство",

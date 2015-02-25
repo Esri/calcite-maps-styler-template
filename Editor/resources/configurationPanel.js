@@ -163,6 +163,7 @@
       "theme":"#f7f8f8",
       "scale":true,
       "home":true,
+      "edittoolbar": false,
       "locate":false,
       "locatetrack": false,
       "search":true,

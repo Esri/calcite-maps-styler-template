@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Kihi lisamine veebikaardile nurjus. Proovige uuesti.",
                     "bufferAreaHelpText": "Sisestage väärtus, mis on väiksem kui ",
                     "invalidBufferInput": "Sisestatud väärtus ei sobi.",
-                    "emptyBufferInput": "Š_Please enter valid value_ä."
+                    "emptyBufferInput": "Sisestage sobiv väärtus."
                 },
                 "populationText": "Rahvastik",
                 "housingText": "Leibkond",

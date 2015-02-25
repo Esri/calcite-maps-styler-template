@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Nepavyko pridėti sluoksnio prie internetinio žemėlapio. Bandykite dar kartą.",
                     "bufferAreaHelpText": "Įveskite reikšmę mažesnę nei ",
                     "invalidBufferInput": "Įvesta reikšmė netinkama.",
-                    "emptyBufferInput": "Į_Please enter valid value_š."
+                    "emptyBufferInput": "Įveskite leistiną reikšmę."
                 },
                 "populationText": "Gyventojai",
                 "housingText": "Namų ūkis",

@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "웹 맵에 레이어를 추가하지 못했습니다. 다시 시도하세요.",
                     "bufferAreaHelpText": "다음보다 작은 값 입력: ",
                     "invalidBufferInput": "입력한 값이 유효하지 않습니다.",
-                    "emptyBufferInput": "한_Please enter valid value_빠."
+                    "emptyBufferInput": "유효한 값을 입력하세요."
                 },
                 "populationText": "인구",
                 "housingText": "가구",

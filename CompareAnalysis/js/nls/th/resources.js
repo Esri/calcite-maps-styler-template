@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "ก้_Unable to create map_ษฺ"
+            error: "ไม่สามารถสร้างแผนที่ได้"
         },
         tools: {
             info: {
-                label: "ก้_Info_ษฺ",
-                tooltip: "ก้_Toggle map info_ษฺ"
+                label: "ข้อมูล",
+                tooltip: "สลับกับข้อมูลแผนที่"
             },
             sync: {
-                label: "ก้_Sync Map Extent_ษฺ",
-                tooltip: "ก้_Sync to extent of this map_ษฺ"
+                label: "ซิงค์ขอบเขตแผนที่",
+                tooltip: "ซิงค์กับขอบเขตของแผนที่"
             }
         }
     })

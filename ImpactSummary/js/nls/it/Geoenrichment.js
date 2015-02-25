@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Aggiunta del layer alla mappa Web non riuscita. Riprovare.",
                     "bufferAreaHelpText": "Immettere un valore minore di ",
                     "invalidBufferInput": "Il valore immesso non è valido.",
-                    "emptyBufferInput": "é_Please enter valid value_È."
+                    "emptyBufferInput": "Immettere un valore valido."
                 },
                 "populationText": "Popolazione",
                 "housingText": "Nucleo familiare",

@@ -34,7 +34,7 @@
                     "addToWebmapFailed": "Không thể thêm lớp vào bản đồ web. Vui lòng thử lại.",
                     "bufferAreaHelpText": "Vui lòng nhập giá trị nhỏ hơn ",
                     "invalidBufferInput": "Giá trị được nhập không hợp lệ.",
-                    "emptyBufferInput": "Đ_Please enter valid value_ớ."
+                    "emptyBufferInput": "Vui lòng nhập giá trị hợp lệ."
                 },
                 "populationText": "Dân số",
                 "housingText": "Hộ gia đình",
