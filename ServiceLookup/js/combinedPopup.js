@@ -662,6 +662,7 @@ define([
 
                     }
                     var featureArray = [];
+                   
                     if (this.results.length === 0) {
 
                         var editGraphic = new Graphic(this.event, this.editSymbol, null, null);
@@ -676,7 +677,7 @@ define([
                         this.map.infoWindow.setFeatures(featureArray);
                         this.map.infoWindow.setTitle(this.config.serviceUnavailableTitle);
                         this.map.infoWindow.setContent(this.config.serviceUnavailableMessage.replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'"));
-                        this.map.infoWindow.show(editGraphic.geometry);
+                        //this.map.infoWindow.show(editGraphic.geometry);
                         if (this.config.popupWidth != null && this.config.popupHeight != null) {
                             this.map.infoWindow.resize(this.config.popupWidth, this.config.popupHeight);
                         } else if (this.config.popupWidth != null) {
@@ -701,7 +702,7 @@ define([
                         }
 
                         this.map.infoWindow.setFeatures(featureArray);
-                        this.map.infoWindow.show(editGraphic.geometry);
+                        //this.map.infoWindow.show(editGraphic.geometry);
                         if (this.config.popupWidth != null && this.config.popupHeight != null) {
                             this.map.infoWindow.resize(this.config.popupWidth, this.config.popupHeight);
                         } else if (this.config.popupWidth != null) {
@@ -715,8 +716,11 @@ define([
                             this._logRequest(this.event, atts);
                         }
                     }
-                    this.map.centerAndZoom(this.event, this.config.zoomLevel);
-
+                    var def = this.map.centerAndZoom(this.event, this.config.zoomLevel);
+                    def.addCallback(lang.hitch(this, function () {
+                        this.map.infoWindow.show(editGraphic.geometry);
+                       
+                    }));
                 }
 
             } catch (err) {
