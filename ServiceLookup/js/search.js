@@ -255,8 +255,19 @@ function (
 
         },
         _showLocation: function (evt) {
+            if (evt) {
+                if (evt.feature) {
+                    topic.publish("app/mapLocate", evt.feature.geometry);
+                }
+                else if  (evt.result)
+                {
+                    if (evt.result.feature) {
+                        topic.publish("app/mapLocate", evt.result.feature.geometry);
+                    }
+                }
+            }
 
-            topic.publish("app/mapLocate", evt.result.feature.geometry);
+          
         },
 
 
