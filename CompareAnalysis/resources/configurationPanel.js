@@ -14,7 +14,7 @@
             "fields": [
                 {
                     "type":"paragraph",
-                    "value": "Uncheck the 'Display side panel' box to remove the side panel from the app. To hide the side panel on load check the 'Hide side panel' checkbox."
+                    "value": "Uncheck the 'Include side panel' box to remove the side panel from the app. To hide the side panel on load uncheck the 'Show side panel' checkbox."
                 },
                 {
                     "type":"boolean",
