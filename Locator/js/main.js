@@ -847,7 +847,13 @@ define([
 
       // Process Results
       _processResults : function(results) {
-         this.opFeatures = results.features;
+         this.opFeatures = [];
+         array.forEach(results.features, lang.hitch(this, function(gra) {
+            if (gra.geometry) {
+               this.opFeatures.push(gra);
+            }
+         }));
+         //this.opFeatures = results.features;
          this._processDestinationFeatures();
       },
 
