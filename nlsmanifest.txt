@@ -30,7 +30,6 @@ archive\Compare\js\nls
 CompareAnalysis\js\nls
 Embed\js\nls
 Locator\js\nls
-MapSeries\js\nls
 MapJournal\resources\tpl\builder\nls
 MapJournal\resources\tpl\viewer\nls
 BasicViewer\apl\ElevationsChart\nls
