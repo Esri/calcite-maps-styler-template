@@ -161,7 +161,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                             geocoder.name = geocoder.name || "Esri World Geocoder";
 
                             if (this.config.searchextent) {
-                                geocoder.searchextent = this.map.extent;
+                                geocoder.searchExtent = this.map.extent;
                                 geocoder.localSearchOptions = {
                                     minScale: 300000,
                                     distance: 50000
