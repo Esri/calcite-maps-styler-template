@@ -102,7 +102,7 @@
 				content6AltDiv1: "Theo mặc định, địa điểm trên các bản đồ được đồng bộ hóa. Tắt đồng bộ hóa cho phép từng bản đồ hiển thị một địa điểm khác nhau.",
 				content6AltDiv2: "BẬT đồng bộ hóa",
 				content6AltDiv3: "TẮT đồng bộ hóa",
-				content6AltDiv4: "Để tắt đồng bộ hóa, vào Thiết lập > Tùy chọn Bản đồ và bỏ chọn "Đồng bộ hóa các địa điểm trên bản đồ"."
+				content6AltDiv4: "Để tắt đồng bộ hóa, vào Thiết lập > Tùy chọn Bản đồ và bỏ chọn \"Đồng bộ hóa các địa điểm trên bản đồ\"."
 			},
 			landing: {
 				lblAdd: "Bạn muốn gọi Chuỗi Bản đồ %LAYOUT_TITLE% là gì?",
