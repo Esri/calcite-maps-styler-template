@@ -2496,6 +2496,7 @@ define([
                     symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_PATH, null, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), 4));
                     symbol.setPath(path);
                     symbol.setColor(null);
+                    symbol.size = 50; //set default Symbol size which will be used in case symbol not found.
                     if (this._selectedOperationalLayer.renderer.symbol) {
                         isSymbolFound = true;
                         if (this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("height") && this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("width")) {
@@ -2516,7 +2517,12 @@ define([
                         }
                     } else if ((this._selectedOperationalLayer.renderer.infos) && (this._selectedOperationalLayer.renderer.infos.length > 0)) {
                         for (i = 0; i < this._selectedOperationalLayer.renderer.infos.length; i++) {
-                            graphicInfoValue = graphic.attributes[this._selectedOperationalLayer.typeIdField];
+                            if (this._selectedOperationalLayer.typeIdField) {
+                                graphicInfoValue = graphic.attributes[this._selectedOperationalLayer.typeIdField];
+                            }
+                            else if (this._selectedOperationalLayer.renderer.attributeField) {
+                                graphicInfoValue = graphic.attributes[this._selectedOperationalLayer.renderer.attributeField];
+                            }
                             layerInfoValue = this._selectedOperationalLayer.renderer.infos[i].value;
                             if (graphicInfoValue !== null && graphicInfoValue !== "") {
                                 if (graphicInfoValue.toString() === layerInfoValue.toString()) {
