@@ -447,6 +447,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     legend.startup();
                     if (this.config.activeTool !== "") {
                         toolbar.activateTool(this.config.activeTool || "legend");
+                    }else{
+                        toolbar._closePage();
                     }
                     deferred.resolve(true);
 
