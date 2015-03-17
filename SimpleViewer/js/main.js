@@ -1,5 +1,5 @@
-define(["dojo/ready", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base/Color", "esri/arcgis/utils", "dojo/on", "dojo/has", "dojo/sniff", "dijit/registry", "application/Drawer", "esri/dijit/Search", "esri/tasks/locator", "esri/lang", "esri/dijit/Legend", "dojo/dom-class", "dojo/dom", "dojo/query", "dojo/dom-construct", "esri/dijit/LocateButton", "esri/dijit/HomeButton"], function (
-ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawer, Search, Locator, esriLang, Legend, domClass, dom, query, domConstruct, LocateButton, HomeButton) {
+define(["dojo/ready", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base/Color", "esri/arcgis/utils", "dojo/on", "dojo/has", "dojo/sniff", "dijit/registry", "application/Drawer", "esri/dijit/Search", "esri/tasks/locator", "esri/lang", "esri/dijit/Legend", "dojo/dom-class", "dojo/dom", "dojo/query", "dojo/dom-construct", "esri/dijit/LocateButton", "esri/dijit/HomeButton", "esri/layers/FeatureLayer"], function (
+ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawer, Search, Locator, esriLang, Legend, domClass, dom, query, domConstruct, LocateButton, HomeButton,FeatureLayer) {
     return declare("", null, {
         config: {},
         theme: null,
