@@ -246,6 +246,17 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
 
                 search.startup();
 
+                if(this.config.find){
+                    search.set("value", this.config.find);
+                    search.search(this.config.find).then(function(result){
+                        console.log(result);
+                        if(result.results && result.results.length && result.results.length > 0){
+                          search.select(result.results[0]);
+                        }
+
+                    });
+                }
+
 
             }));
 
