@@ -1,0 +1,171 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#mapDiv {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*Change slider thumb to a circle*/
+.calcite .dijitSliderImageHandleH {
+  background-image:none;
+  background:#4992CD;
+  width:14px;
+  height:14px;
+  /*border-radius: 50%;*/
+}
+.dijtiSliderMoveableH{
+  /*top:0;*/
+  top:2px;
+}
+/*Esri Time Slider Div Customizations*/
+.esriTimeSlider{
+  margin:auto;
+}
+.esriTimeSlider .dijitButton{
+  display:none;
+}
+/*Remove ticks from slider*/
+.esriTimeSlider .tsTicks{
+  display:none;
+}
+#timeSliderDiv{
+  position: absolute;
+  margin-top:13px;
+  margin-left:30px;
+  max-width: 96%;
+}
+/*Make the horizontal slider area fill entire window. Need this to hide
+space for prev/next buttons that we have hidden*/
+.tsTmp{
+  width:96% !important;
+}
+/*Container that holds all the time components (buttons, text, slider) */
+.timeInfo{
+  position: absolute;
+  bottom:30px;
+  left:20px;
+  z-index: 40;
+  height:auto;
+  width: 350px;
+  background-color: #fff;
+  border-radius:2px;
+}
+/*Container that holds the play/pause button and slider*/
+.controlCont{
+  line-height: 40px;
+  height:40px;
+}
+.dijitSliderBar{
+  border-color:#CCC !important;
+  height:8px;
+}
+.calcite .dijitSlider .dijitSliderProgressBarH, .calcite .dijitSlider .dijitSliderLeftBumper {
+  background-image: none;
+}
+.calcite .dijitSliderFocused .dijitSliderProgressBarH, .calcite .dijitSliderFocused .dijitSliderLeftBumper{
+  background-image:none;
+}
+/*Background color of time slider channel*/
+.calcite .dijitSlider .dijitSliderProgressBarH, .calcite .dijitSlider .dijitSliderLeftBumper{
+  background-color:#2b6b9e;
+}
+/*Time text */
+#timeLabel{
+ border-top: solid 1px #ccc;
+ padding:1em;
+ font-size:.8em;
+ color:#6E6E6E;
+}
+/*Custom Time Slider buttons */
+#playSlider{
+  width:30px;
+  padding:0 2px 0 2px;
+  float:left;
+  line-height: 40px;
+  border-right: solid 1px #ccc;
+  color:#4992CD;
+  margin:auto;
+}
+
+/*Play Pause Icon Fonts*/
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot?-jf5cst');
+  src:url('../fonts/icomoon.eot?#iefix-jf5cst') format('embedded-opentype'),
+    url('../fonts/icomoon.woff?-jf5cst') format('woff'),
+    url('../fonts/icomoon.ttf?-jf5cst') format('truetype'),
+    url('../fonts/icomoon.svg?-jf5cst#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  cursor:pointer;
+  font-family: 'icomoon';
+  speak: none;
+  font-size:28px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pause:before {
+  content: "\e600";
+}
+.icon-play:before {
+  content: "\e601";
+}
+
+.esriRTL label {
+  /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
+}
+.loading-indicator {
+  /* Loading status */
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #fff;
+}
+.app-loading .loading-indicator,
+.app-error .loading-indicator {
+  /* Show this class when loading or error */
+  display: block;
+}
+.app-loading .loading-indicator {
+  /* Loading image */
+  background-position: center center;
+  background-image: url(../images/ajax-loader.gif);
+  background-repeat: no-repeat;
+}
+.app-error .loading-message {
+  /* Error status */
+  background-position: top center;
+  background-image: url(../images/error.png);
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 0;
+  text-align: center;
+}

@@ -77,6 +77,7 @@ mkdir %BUILD_OUTPUT%\SocialMedia
 mkdir %BUILD_OUTPUT%\Solutions
 mkdir %BUILD_OUTPUT%\StorytellingSwipe
 mkdir %BUILD_OUTPUT%\StorytellingTextLegend
+mkdir %BUILD_OUTPUT%\Time
 mkdir %BUILD_OUTPUT%\TwoPane
 mkdir %BUILD_OUTPUT%\TwoPane\main
 mkdir %BUILD_OUTPUT%\TwoPane\Chrome
@@ -167,6 +168,7 @@ xcopy %TEMPLATES_ROOT%\MapJournal                               %BUILD_OUTPUT%\M
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\MapSeries                            /E /Y
 xcopy %TEMPLATES_ROOT%\Viewer                                   %BUILD_OUTPUT%\Viewer                               /E /Y
 xcopy %TEMPLATES_ROOT%\Locator                                  %BUILD_OUTPUT%\Directions                           /E /Y
+xcopy %TEMPLATES_ROOT%\Time                                     %BUILD_OUTPUT%\Time
 xcopy %TEMPLATES_ROOT%\bv_build\src                             %BUILD_OUTPUT%\bv_build                             /E /Y
 
 
