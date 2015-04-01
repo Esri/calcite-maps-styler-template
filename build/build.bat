@@ -168,7 +168,7 @@ xcopy %TEMPLATES_ROOT%\MapJournal                               %BUILD_OUTPUT%\M
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\MapSeries                            /E /Y
 xcopy %TEMPLATES_ROOT%\Viewer                                   %BUILD_OUTPUT%\Viewer                               /E /Y
 xcopy %TEMPLATES_ROOT%\Locator                                  %BUILD_OUTPUT%\Directions                           /E /Y
-xcopy %TEMPLATES_ROOT%\Time                                     %BUILD_OUTPUT%\Time
+xcopy %TEMPLATES_ROOT%\Time                                     %BUILD_OUTPUT%\Time                                 /E /Y
 xcopy %TEMPLATES_ROOT%\bv_build\src                             %BUILD_OUTPUT%\bv_build                             /E /Y
 
 
