@@ -134,7 +134,7 @@ xcopy %TEMPLATES_ROOT%\Panels                                   %BUILD_OUTPUT%\P
 xcopy %TEMPLATES_ROOT%\Panels\config\onepane.js                 %BUILD_OUTPUT%\Panels\config\defaults.js            /E /Y
 xcopy %TEMPLATES_ROOT%\Panels\config\legend.js                  %BUILD_OUTPUT%\PanelsLegend\config\defaults.js      /E /Y
 xcopy %TEMPLATES_ROOT%\BasicViewer                              %BUILD_OUTPUT%\OnePane\basicviewer                  /E /Y
-xcopy %TEMPLATES_ROOT%\TimeAware                                %BUILD_OUTPUT%\OnePane\azuretime                    /E /Y
+xcopy %TEMPLATES_ROOT%\archive\TimeAware                        %BUILD_OUTPUT%\OnePane\azuretime                    /E /Y
 xcopy %TEMPLATES_ROOT%\ChromeTwitter                            %BUILD_OUTPUT%\OnePane\azuretwitter                 /E /Y
 xcopy %TEMPLATES_ROOT%\archive\OnePaneBlue                      %BUILD_OUTPUT%\OnePane\contemporary_blue            /E /Y
 xcopy %TEMPLATES_ROOT%\archive\OnePaneGreen                     %BUILD_OUTPUT%\OnePane\contemporary_green           /E /Y
