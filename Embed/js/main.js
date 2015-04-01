@@ -131,40 +131,35 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
             }
 
             //Feature Search or find (if no search widget)
-            if ((this.config.find || this.config.feature) && this.config.search === false) {
-                require(["esri/dijit/Search"], lang.hitch(this, function (Search) {
+            if((this.config.find || this.config.feature) && this.config.search === false){
+                require(["esri/dijit/Search"], lang.hitch(this, function(Search){
                     //get the search value
-                    var feature = null,
-                        find = null,
-                        source = null,
-                        value = null;
-                    if (this.config.feature) {
-                        feature = decodeURIComponent(this.config.feature);
-                        if (feature) {
-                            var splitFeature = feature.split(";");
-                            if (splitFeature.length && splitFeature.length !== 2) {
-                                splitFeature = feature.split(",");
-                            }
-                            feature = splitFeature;
-                            if (feature && feature.length && feature.length === 2) {
-                                var layerId = feature[0],
-                                    featureId = feature[1],
-                                    searchLayer = null;
-                                searchLayer = this.map.getLayer(layerId);
-                                if (searchLayer) {
-                                    source = {
-                                        exactMatch: true,
-                                        featureLayer: searchLayer,
-                                        displayField: searchLayer.objectIdField,
-                                        searchFields: [searchLayer.objectIdField]
-                                    };
-                                    value = featureId;
-                                }
-
-                            }
-                        }
+                    var feature = null, find = null, source = null, value = null;
+                    if(this.config.feature){
+                       feature = decodeURIComponent(this.config.feature);
+                        if(feature){
+                          var splitFeature = feature.split(";");
+                          if(splitFeature.length && splitFeature.length !== 2){
+                            splitFeature = feature.split(",");
+                          }
+                          feature = splitFeature;
+                          if(feature && feature.length && feature.length === 2){
+                             var layerId = feature[0], featureId = feature[1],searchLayer = null;
+                             searchLayer = this.map.getLayer(layerId);
+                             if(searchLayer){
+                                source = {
+                                    exactMatch: true,
+                                    featureLayer: searchLayer,
+                                    displayField: searchLayer.objectIdField,
+                                    searchFields: [searchLayer.objectIdField]
+                                };
+                                value = featureId;
+                             }
+    
+                          }
+                        }         
                     }
-                    if (this.config.find) {
+                    if(this.config.find){
                         find = decodeURIComponent(this.config.find);
                         value = find;
                     }
@@ -173,15 +168,15 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                         map: this.map
                     });
                     urlSearch.startup();
-                    if (source) {
-                        if (source.featureLayer && source.featureLayer.infoTemplate) {
+                    if(source){
+                        if(source.featureLayer && source.featureLayer.infoTemplate){
                             urlSearch.set("infoTemplate", source.featureLayer.infoTemplate);
                         }
                         urlSearch.set("sources", [source]);
                     }
                     urlSearch.startup();
-                    urlSearch.search(value).then(lang.hitch(this, function () {
-                        on.once(this.map.infoWindow, "hide", lang.hitch(this, function () {
+                    urlSearch.search(value).then(lang.hitch(this, function(){
+                        on.once(this.map.infoWindow, "hide", lang.hitch(this, function(){
                             urlSearch.clear();
                             urlSearch.destroy();
                         }));
@@ -276,7 +271,8 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                             source.name = layer.title || layer.name;
 
                             source.exactMatch = searchLayer.field.exactMatch;
-                            source.searchField = [searchLayer.field.name];
+                            source.searchFields = [searchLayer.field.name];
+                            source.displayField = searchLayer.field.name;
                             source.placeholder = searchOptions.hintText;
                             defaultSources.push(source);
                             searchLayers = true;
@@ -285,9 +281,9 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                     }));
                 }
                 //workaround to handle bug with pagination remove at 3.14
-                array.forEach(defaultSources, lang.hitch(this, function (s) {
+                array.forEach(defaultSources, lang.hitch(this, function(s){
                     var paging = this._supportsPagination(s);
-                    if (!paging) {
+                    if(!paging){
                         s.maxResults = "foo";
                     }
                 }));
@@ -311,7 +307,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
 
                 search.startup();
                 //use search if its available.
-                if (this.config.find) {
+                if(this.config.find){
                     search.set("value", this.config.find);
                     search.search(this.config.find);
                 }
@@ -742,12 +738,13 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
             }
             return basemapGroup;
         },
-        _supportsPagination: function (source) {
+        _supportsPagination: function(source) {
             // check if featurelayer supports pagination remove at 3.14
             var supported;
             if (source.locator) {
                 supported = true;
-            } else if (source.featureLayer) {
+            } else
+            if (source.featureLayer) {
                 // supports pagination
                 if (source.featureLayer.advancedQueryCapabilities && source.featureLayer.advancedQueryCapabilities.supportsPagination) {
                     supported = true;
