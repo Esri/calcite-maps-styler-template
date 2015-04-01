@@ -39,6 +39,7 @@ define({
     "details":false,
     "active_panel" : "legend", //"legend, details, popup"
     "find": null,
+    "feature": null,
     "show_panel": false,
     "theme": "light",
     //"popuptheme": "light", //light or dark
