@@ -1,4 +1,4 @@
-﻿/*global define,dojo,esri,console */
+﻿/*global define,Modernizr,console */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true */
 /*
  | Copyright 2014 Esri
@@ -16,141 +16,82 @@
  | limitations under the License.
  */
 define([
-    "dojo/ready",
-    "dojo/_base/array",
-    "dojo/_base/Color",
-    "dojox/color/_base",
     "dojo/_base/declare",
-    "dojo/dom-attr",
+    "dojo/_base/Color",
     "dojo/_base/fx",
-    "dojo/_base/html",
     "dojo/_base/lang",
-    "dojo/cookie",
+    "dojo/Deferred",
     "dojo/dom",
     "dojo/dom-class",
-    "dojo/dom-construct",
-    "dojo/dom-geometry",
-    "dojo/dom-style",
+    "dojo/json",
     "dojo/on",
-    "dojo/query",
-    "dojo/window",
-    "dijit/layout/ContentPane",
-    "dijit/registry",
-    "dijit/form/DateTextBox",
+    "dojo/parser",
+    "dojo/promise/all",
+    "dojo/promise/first",
+    "dojo/topic",
     "esri/arcgis/utils",
-    "esri/dijit/HomeButton",
-    "esri/dijit/Geocoder",
     "esri/dijit/LocateButton",
-    "esri/graphic",
-    "esri/lang",
-    "esri/request",
-    "esri/symbols/PictureMarkerSymbol",
-    "esri/tasks/locator",
-    'esri/tasks/query',
-    "esri/urlUtils",
-    "application/date"
+    "application/lib/LayerAndTableMgmt",
+    "application/widgets/ItemDetails/ItemDetailsController",
+    "application/widgets/ItemList/ItemList",
+    "application/widgets/PopupWindow/PopupWindow",
+    "application/widgets/PopupWindow/SocialMediaSignin",
+    "application/widgets/SidebarContentController/SidebarContentController",
+    "application/widgets/SidebarHeader/SidebarHeader",
+    "dijit/layout/LayoutContainer",
+    "dijit/layout/ContentPane",
+    "dojox/color/_base",
+    "dojo/domReady!"
 ], function (
-    ready,
-    array,
-    Color,
-    ColorX,
     declare,
-    domAttr,
+    Color,
     fx,
-    html,
     lang,
-    cookie,
+    Deferred,
     dom,
     domClass,
-    domConstruct,
-    domGeom,
-    domStyle,
+    JSON,
     on,
-    query,
-    win,
-    ContentPane,
-    registry,
-    DateTextBox,
+    parser,
+    all,
+    first,
+    topic,
     arcgisUtils,
-    HomeButton,
-    Geocoder,
     LocateButton,
-    Graphic,
-    esriLang,
-    esriRequest,
-    PictureMarkerSymbol,
-    Locator,
-    Query,
-    urlUtils,
-    date
+    LayerAndTableMgmt,
+    ItemDetails,
+    ItemList,
+    PopupWindow,
+    SocialMediaSignin,
+    SidebarContentController,
+    SidebarHeader
 ) {
-
     return declare(null, {
-
         config: {},
-        colors: null,
         map: null,
-        locator: null,
-        initExt: null,
-        opLayers: [],
-        lyrCrowd: null,
-        lyrComments: null,
-        lyrCluster: null,
-        mapExt: null,
-        types: [],
-        geocoder: null,
-        geoLocate: null,
-        newMode: false,
-        location: null,
-        sort: "cal",
-        selectedGraphic: null,
-        selectedGraphicOld: null,
-        user: {
-            name: "",
-            twitterId: "",
-            facebookId: ""
-        },
-        newEntryForm: [],
-        commentEntryForm: [],
+        mapData: null,
+        _linkToMapView: false,
+        _currentlyCommenting: false,
 
-
-        // Startup
         startup: function (config) {
+            var itemInfo, error;
+
+            parser.parse();
+
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
             // any url parameters and any application specific configuration information.
             if (config) {
                 this.config = config;
-                this._setColor();
-                this._setProtocolHandler();
-                this.types = this.config.types.split(",");
-                // social media
-                this._checkinSocialMedia();
-                // document ready
-                ready(lang.hitch(this, function () {
-                    var itemInfo, extArray;
-
-                    // supply either the webmap id or, if available, the item info
-                    itemInfo = this.config.itemInfo || this.config.webmap;
-                    // If a custom extent is set as a url parameter handle that before creating the map
-                    if (this.config.extent) {
-                        extArray = decodeURIComponent(this.config.extent).split(",");
-                        if (extArray.length === 4) {
-                            itemInfo.item.extent = [
-                                [parseFloat(extArray[0]), parseFloat(extArray[1])],
-                                [parseFloat(extArray[2]), parseFloat(extArray[3])]
-                            ];
-                        }
-                    }
-                    this._createWebMap(itemInfo);
-                }));
+                //supply either the webmap id or, if available, the item info
+                itemInfo = this.config.itemInfo || this.config.webmap;
+                this._launch(itemInfo);
             } else {
-                var error = new Error(this.config.i18n.messages.noConfiguration);
+                error = new Error("Main:: Config is not defined");
                 this.reportError(error);
             }
         },
 
-        // Report error
         reportError: function (error) {
             // remove loading class from body
             domClass.remove(document.body, "app-loading");
@@ -163,40 +104,535 @@ define([
             var node = dom.byId("loading_message");
             if (node) {
                 if (this.config && this.config.i18n) {
-                    node.innerHTML = this.config.i18n.map.error + "<br>" + dojo.toJson(error);
+                    node.innerHTML = this.config.i18n.map.error + ": " + ((error && error.message) || error || "");
                 } else {
-                    node.innerHTML = "Unable to create map<br>" + dojo.toJson(error);
+                    node.innerHTML = "Unable to create map: " + ((error && error.message) || error || "");
                 }
             }
         },
 
-        _getForecolor: function (color) {
-            return new Color(color).toHsl().l > 60 ? "black" : "white";
+        //========================================================================================================================//
+
+        /**
+         * Launches app.
+         * @param {object|string} itemInfo Configuration object created by template.js or webmap id
+         */
+        _launch: function (itemInfo) {
+            var setupUI, createMap;
+
+            this.config.isIE8 = this._createIE8Test();
+
+            // Perform setups in parallel
+            setupUI = this._setupUI();
+            createMap = this._createWebMap(itemInfo);
+
+            // Show the app when the first of the setups completes
+            first([setupUI, createMap]).then(lang.hitch(this, function () {
+                this._revealApp();
+            }));
+
+            // Complete wiring-up when all of the setups complete
+            all([setupUI, createMap]).then(lang.hitch(this, function (statusList) {
+                var votesField, commentFields;
+
+                //----- Merge map-loading info with UI items -----
+                votesField = (this.config.itemVotesField && this.config.itemVotesField.length > 0) ?
+                        this.config.itemVotesField : null;
+                commentFields = this._mapData.getCommentFields();
+                this._itemsList.setFields(votesField);
+                this._itemDetails.setItemFields(votesField, commentFields);
+                this._itemDetails.setActionsVisibility(votesField, commentFields, this._mapData.getItemLayer().hasAttachments);
+
+                //----- Catch published messages and wire them to their actions -----
+
+                /**
+                 * @param {object} item Item whose vote was updated
+                 */
+                topic.subscribe("addLike", lang.hitch(this, function (item) {
+                    console.log(">addLike>", item);  //???
+                    this._mapData.incrementVote(item);
+                }));
+
+                topic.subscribe("cancelForm", lang.hitch(this, function () {
+                    console.log(">cancelForm>");  //???
+                    this._itemDetails.destroyCommentForm();
+                    this._currentlyCommenting = false;
+                }));
+
+                /**
+                 * @param {object} item Item that received a comment
+                 */
+                topic.subscribe("commentAdded", lang.hitch(this, function (item) {
+                    console.log(">commentAdded>", item);  //???
+                    topic.publish("updateComments", item);
+                }));
+
+                /**
+                 * @param {string} err Error message for when an item's comment add failed
+                 */
+                topic.subscribe("commentAddFailed", lang.hitch(this, function (err) {
+                    console.log(">commentAddFailed>", err);  //???
+                    this._sidebarCnt.showBusy(false);
+                    topic.publish("showError", err);
+                }));
+
+                topic.subscribe("detailsCancel", lang.hitch(this, function () {
+                    console.log(">detailsCancel>");  //???
+                    topic.publish("showPanel", "itemsList");
+                }));
+
+                /**
+                 * @param {object} item Item for which a comment might be submitted
+                 */
+                topic.subscribe("getComment", lang.hitch(this, function (item) {
+                    var userInfo;
+                    console.log(">getComment>", item);  //???
+
+                    if (this._currentlyCommenting) {
+                        topic.publish("cancelForm");
+                    } else {
+                        userInfo = this._socialDialog.getSignedInUser();
+                        this._itemDetails.showCommentForm(userInfo);
+                        this._currentlyCommenting = true;
+                    }
+                }));
+
+                topic.subscribe("helpSelected", lang.hitch(this, function () {
+                    console.log(">helpSelected>");  //???
+                    this._helpDialogContainer.set("displayText", this.config.displayText);
+                    this._helpDialogContainer.show();
+                }));
+
+                /**
+                 * @param {object} item Item to find out more about
+                 */
+                topic.subscribe("itemSelected", lang.hitch(this, function (item) {
+                    console.log(">itemSelected>", item);  //???
+                    var itemExtent;
+
+                    this._currentItem = item;
+                    this._itemsList.setSelection(item.attributes[item._layer.objectIdField]);
+
+                    this._itemDetails.clearComments();
+                    this._itemDetails.setItem(item);
+                    this._mapData.refreshVoteCount(item).then(function (item) {
+                        topic.publish("voteUpdated", item);
+                    });
+
+                    if (this._mapData.getItemLayer().hasAttachments) {
+                        topic.publish("updateAttachments", item);
+                    }
+                    topic.publish("updateComments", item);
+                    topic.publish("showPanel", "itemDetails");
+
+                    // Zoom to item if possible
+                    if (item.geometry.getExtent) {
+                        itemExtent = item.geometry.getExtent();
+                    }
+                    if (itemExtent) {
+                        this.map.setExtent(itemExtent.expand(1.5));
+                    } else {
+                        this.map.centerAndZoom(item.geometry,
+                            Math.min(2 + this.map.getZoom(), this.map.getMaxZoom()));
+                    }
+                }));
+
+                /**
+                 * @param {boolean} isSelected New state of setting
+                 */
+                topic.subscribe("linkToMapViewChanged", lang.hitch(this, function (isSelected) {
+                    console.log(">linkToMapViewChanged>", isSelected);  //???
+                    this._linkToMapView = isSelected;
+                    topic.publish("updateItems");
+                }));
+
+                /**
+                 * @param {string} err Error message to display
+                 */
+                topic.subscribe("showError", lang.hitch(this, function (err) {
+                    console.log(">showError>", err);  //???
+                    this._helpDialogContainer.set("displayText", err);
+                    this._helpDialogContainer.show();
+                }));
+
+                /**
+                 * @param {string} name Name of sidebar content panel to switch to
+                 */
+                topic.subscribe("showPanel", lang.hitch(this, function (name) {
+                    console.log(">showPanel>", name);  //???
+                    this._sidebarCnt.showPanel(name);
+
+                    if (name === "itemsList") {
+                        this._itemsList.clearList();
+                        topic.publish("updateItems");
+                    }
+                }));
+
+                topic.subscribe("signinUpdate", lang.hitch(this, function () {
+                    console.log(">signinUpdate>");  //???
+                    this._sidebarHdr.updateSignin(this._socialDialog.getSignedInUser());
+                }));
+
+                topic.subscribe("socialSelected", lang.hitch(this, function () {
+                    console.log(">socialSelected>");  //???
+                    var signedInUser = this._socialDialog.getSignedInUser();
+                    if (!signedInUser) {
+                        // Show the social media sign-in screen so that the user can sign in
+                        this._socialDialog.show();
+                    } else {
+                        // Simply sign out
+                        this._socialDialog.signOut(signedInUser);
+                    }
+                }));
+
+                /**
+                 * @param {object} item Item to receive a comment
+                 * @param {object} comment Comment to add to item
+                 */
+                topic.subscribe("submitForm", lang.hitch(this, function (item, comment) {
+                    console.log(">submitForm>", item, comment);  //???
+                    this._sidebarCnt.showBusy(true);
+                    this._mapData.addComment(item, comment);
+                    this._itemDetails.destroyCommentForm();
+                    this._currentlyCommenting = false;
+                }));
+
+                /**
+                 * @param {object} item Item whose attachments are to be refreshed
+                 */
+                topic.subscribe("updateAttachments", lang.hitch(this, function (item) {
+                    console.log(">updateAttachments>", item);  //???
+                    this._sidebarCnt.showBusy(true);
+                    this._mapData.queryAttachments(item);
+                }));
+
+                /**
+                 * @param {object} item Item whose comments list is to be refreshed
+                 */
+                topic.subscribe("updateComments", lang.hitch(this, function (item) {
+                    console.log(">updateComments>", item);  //???
+                    this._sidebarCnt.showBusy(true);
+                    this._mapData.queryComments(item);
+                }));
+
+                /**
+                 * @param {object} item Item owning attachments
+                 * @param {array} attachments List of attachments for the current item
+                 */
+                topic.subscribe("updatedAttachments", lang.hitch(this, function (item, attachments) {
+                    console.log(">updatedAttachments>", attachments);  //???
+                    if (this._currentItem &&
+                            this._currentItem.attributes[this._currentItem._layer.objectIdField] ===
+                            item.attributes[item._layer.objectIdField]) {
+                        this._itemDetails.setAttachments(attachments);
+                    }
+                    this._sidebarCnt.showBusy(false);
+                }));
+
+                /**
+                 * @param {object} item Item owning comments
+                 * @param {array} comments List of comments for the current item
+                 */
+                topic.subscribe("updatedCommentsList", lang.hitch(this, function (item, comments) {
+                    console.log(">updatedCommentsList>", comments);  //???
+                    if (this._currentItem &&
+                            this._currentItem.attributes[this._currentItem._layer.objectIdField] ===
+                            item.attributes[item._layer.objectIdField]) {
+                        this._itemDetails.setComments(comments);
+                    }
+                    this._sidebarCnt.showBusy(false);
+                }));
+
+                /**
+                 * @param {array} items List of items matching update request
+                 */
+                topic.subscribe("updatedItemsList", lang.hitch(this, function (items) {
+                    console.log(">updatedItemsList>", items);  //???
+                    this._itemsList.setItems(items);
+                    this._sidebarCnt.showBusy(false);
+                }));
+
+                topic.subscribe("updateItems", lang.hitch(this, function () {
+                    console.log(">updateItems>");  //???
+                    this._sidebarCnt.showBusy(true);
+                    this._mapData.queryItems(this._linkToMapView ? this.map.extent : null);
+                }));
+
+                /**
+                 * @param {object} item Item whose votes count was changed
+                 */
+                topic.subscribe("voteUpdated", lang.hitch(this, function (item) {
+                    console.log(">voteUpdated>", item);  //???
+                    this._itemDetails.updateItemVotes(item);
+                }));
+
+                /**
+                 * @param {string} err Error message for when an item's votes count change failed
+                 */
+                topic.subscribe("voteUpdateFailed", lang.hitch(this, function (err) {
+                    console.log(">voteUpdateFailed>", err);  //???
+                    topic.publish("showError", err);
+                }));
+
+
+                //----- Set up controller-published messages (other than -----
+                //----- those that are forwards from subscriptions)      -----
+
+                // Click on an item in the map
+                on(this._mapData.getItemLayer(), "click", function (evt) {
+                    if (evt.graphic) {
+                        topic.publish("itemSelected", evt.graphic);
+                    }
+                });
+
+                // Support option to reset items list whenever the map is resized while the items
+                // list is visible
+                on(this.map, "extent-change", lang.hitch(this, function (evt) {
+                    if (this._linkToMapView && this._sidebarCnt.getCurrentPanelName() === "itemsList") {
+                        topic.publish("updateItems");
+                    }
+                }));
+
+                // Start with items list
+                topic.publish("showPanel", "itemsList");
+                topic.publish("signinUpdate");
+
+
+                //----- Done -----
+                console.log("app is ready");
+            }), lang.hitch(this, function (err) {
+                this.reportError(err);
+            }));
         },
 
-        // Set Color
-        _setColor: function () {
-            // Define classes for HTML elements
-            this.colors = [this._getForecolor(this.config.color), this.config.color];
-            this._addStyle('.fg {color:' + this.colors[0] + '}.bg {background-color:' + this.colors[1] + '}');
+        /**
+         * Sets up UI.
+         * @return {object} Deferred
+         */
+        _setupUI: function () {
+            var deferred = new Deferred(), styleString = "";
+            setTimeout(lang.hitch(this, function () {
+                var luminance = new Color(this.config.color).toHsl().l;
 
-            // And swap out icons to match if the forecolor is white
-            if (this.colors[0] === "white") {
-                domAttr.set("addIcon", "src", "images/addW.png");
-                domAttr.set("closeIcon", "src", "images/closeW.png");
-                domAttr.set("closeIcon2", "src", "images/closeW.png");
-                domAttr.set("closeIcon3", "src", "images/closeW.png");
-                domAttr.set("commentIcon", "src", "images/commentW.png");
-                domAttr.set("facebookIcon", "src", "images/facebookW.png");
-                domAttr.set("facebook2Icon", "src", "images/facebookW.png");
-                domAttr.set("rightIcon", "src", "images/rightW.png");
-                domAttr.set("twitterIcon", "src", "images/twitterW.png");
-                domAttr.set("twitter2Icon", "src", "images/twitterW.png");
-                domAttr.set("voteIcon", "src", "images/heartPlusW.png");
+                // Set the theme
+                if (luminance > this.config.maxDarkLuminance) {
+                    this.config.theme = {
+                        "background": this.config.color,  // lighter
+                        "foreground": "black",
+                        "accentBkgd": (Modernizr.rgba ? "rgba(0, 0, 0, 0.35)" : this.config.color),
+                        "accentText": (Modernizr.rgba ? "rgba(0, 0, 0, 0.35)" : "black")
+                    };
+                } else {
+                    this.config.theme = {
+                        "background": this.config.color,  // darker
+                        "foreground": "white",
+                        "accentBkgd": (Modernizr.rgba ? "rgba(255, 255, 255, 0.35)" : this.config.color),
+                        "accentText": (Modernizr.rgba ? "rgba(255, 255, 255, 0.35)" : "white")
+                    };
+                }
+
+                // Set the theme
+                styleString += ".appTheme{color:" + this.config.theme.foreground + ";background-color:" + this.config.theme.background + "}";
+                styleString += ".appTheme:hover{color:" + this.config.theme.foreground + ";background-color:" + this.config.theme.background + "!important}";
+                styleString += ".appThemeAccentBkgd{background-color:" + this.config.theme.accentBkgd + "}";
+                styleString += ".appThemeAccentText{color:" + this.config.theme.accentText + "!important}";
+                this.injectCSS(styleString);
+
+
+                //----- Add the widgets -----
+
+                // Social media
+                this._socialDialog = new SocialMediaSignin({
+                    "appConfig": this.config,
+                    "showClose": true,
+                    "maxima": {
+                        "width": 350,
+                        "height": 300
+                    }
+                }).placeAt(document.body); // placeAt triggers a startup call to _socialDialog
+
+                // Sidebar header
+                this._sidebarHdr = new SidebarHeader({
+                    "appConfig": this.config,
+                    "showSignin": this._socialDialog.isAvailable && (this.config.commentNameField.trim().length > 0),
+                    "showHelp": this.config.displayText.length > 0
+                }).placeAt("sidebarHeading"); // placeAt triggers a startup call to _sidebarHdr
+
+                // Popup window for help, error messages, social media
+                this._helpDialogContainer = new PopupWindow({
+                    "appConfig": this.config,
+                    "showClose": true,
+                    "maxima": {
+                        "width": 350,
+                        "height": 300
+                    }
+                }).placeAt(document.body); // placeAt triggers a startup call to _helpDialogContainer
+
+                // Sidebar content controller
+                this._sidebarCnt = new SidebarContentController({
+                    "appConfig": this.config
+                }).placeAt("sidebarContent"); // placeAt triggers a startup call to _sidebarCnt
+
+                // Items list
+                this._itemsList = new ItemList({
+                    "appConfig": this.config,
+                    "linkToMapView": this._linkToMapView
+                }).placeAt("sidebarContent"); // placeAt triggers a startup call to _itemsList
+                this._sidebarCnt.addPanel("itemsList", this._itemsList);
+
+                // Item details
+                this._itemDetails = new ItemDetails({
+                    "appConfig": this.config
+                }).placeAt("sidebarContent"); // placeAt triggers a startup call to _itemDetails
+                this._itemDetails.hide();
+                this._sidebarCnt.addPanel("itemDetails", this._itemDetails);
+
+
+                deferred.resolve("ui");
+            }));
+            return deferred.promise;
+        },
+
+        /**
+         * Creates a map based on the input item info or web map id.
+         * @param {object|string} itemInfo Configuration object created by template.js or webmap id
+         * @return {object} Deferred
+         */
+        _createWebMap: function (itemInfo) {
+            var mapCreateDeferred, mapDataReadyDeferred;
+            mapCreateDeferred = new Deferred();
+            mapDataReadyDeferred = new Deferred();
+
+            // Create and load the map
+            arcgisUtils.createMap(itemInfo, "mapDiv", {
+                mapOptions: {
+                    // Optionally define additional map config here for example you can
+                    // turn the slider off, display info windows, disable wraparound 180, slider position and more.
+                },
+                usePopupManager: false,  // disable searching thru all layers for infoTemplates
+                //ignorePopups: true,
+                editable: this.config.editable,
+                bingMapsKey: this.config.bingKey
+            }).then(lang.hitch(this, function (response) {
+                // Once the map is created we get access to the response which provides important info
+                // such as the map, operational layers, popup info and more. This object will also contain
+                // any custom options you defined for the template. In this example that is the 'theme' property.
+                // Here we'll use it to update the application to match the specified color theme.
+                this.map = response.map;
+
+                // start up locate widget
+                var geoLocate = new LocateButton({
+                    map: this.map
+                }, "LocateButton");
+                geoLocate.startup();
+
+                // Keep info window invisible when one clicks upon a graphic
+                on(this.map, "click", lang.hitch(this, function (evt) {
+                    this.map.infoWindow.hide();
+                }));
+
+                // make sure map is loaded
+                if (this.map.loaded) {
+                    mapCreateDeferred.resolve();
+                } else {
+                    on.once(this.map, "load", lang.hitch(this, function () {
+                        mapCreateDeferred.resolve();
+                    }));
+                }
+            }), function (err) {
+                mapCreateDeferred.reject((err ? ": " + err : ""));
+            });
+
+            // Once the map and its first layer are loaded, get the layer's data
+            mapCreateDeferred.then(lang.hitch(this, function () {
+                // At this point, this.config has been supplemented with
+                // the first operational layer's layerObject
+                this._mapData = new LayerAndTableMgmt(this.config);
+                this._mapData.load().then(function () {
+                    mapDataReadyDeferred.resolve("map data");
+                }, lang.hitch(this, function (err) {
+                    mapDataReadyDeferred.reject(this.config.i18n.map.layerLoad + (err ? ": " + err : ""));
+                }));
+            }), lang.hitch(this, function (err) {
+                mapDataReadyDeferred.reject(this.config.i18n.map.layerLoad + (err ? ": " + err : ""));
+            }));
+
+            return mapDataReadyDeferred.promise;
+        },
+
+        /**
+         * Hides the loading indicator and reveals the content.
+         */
+        _revealApp: function () {
+            domClass.remove(document.body, "app-loading");
+            fx.fadeIn({
+                node: "contentDiv",
+                duration: 1000,
+                onEnd: function () {
+                    domClass.remove("contentDiv", "transparent");
+                }
+            }).play();
+        },
+
+        //====================================================================================================================//
+
+        /**
+         * Tests if the browser is IE 8 or lower.
+         * @return {boolean} True if the browser is IE 8 or lower
+         */
+        _createIE8Test: function () {
+            return this._isIE(8, "lte");
+        },
+
+        /**
+         * Detects IE and version number through injected conditional comments (no UA detect, no need for conditional
+         * compilation / jscript check).
+         * @param {string} [version] IE version
+         * @param {string} [comparison] Operator testing multiple versions based on "version"
+         * parameter, e.g., 'lte', 'gte', etc.
+         * @return {boolean} Result of conditional test; note that since IE stopped supporting conditional comments with
+         * IE 10, this routine only works for IE 9 and below; for IE 10 and above, it always returns "false"
+         * @author Scott Jehl
+         * @see The <a href="https://gist.github.com/scottjehl/357727">detect IE and version number through injected
+         * conditional comments.js</a>.
+         */
+        _isIE: function (version, comparison) {
+            var cc      = 'IE',
+                b       = document.createElement('B'),
+                docElem = document.documentElement,
+                isIE;
+
+            if (version) {
+                cc += ' ' + version;
+                if (comparison) { cc = comparison + ' ' + cc; }
             }
+
+            b.innerHTML = '<!--[if ' + cc + ']><b id="iecctest"></b><![endif]-->';
+            docElem.appendChild(b);
+            isIE = !!document.getElementById('iecctest');
+            docElem.removeChild(b);
+            return isIE;
         },
 
-        _addStyle: function (cssStr) {
+        /**
+         * Injects a string of CSS into the document.
+         * @example
+         * <pre>
+         * // For <div class="titleBox"><div class="title">Title</div></div>
+         * require(["dojo/ready", "js/lgonlineBase"], function (ready) {
+         *     ready(function () {
+         *         var loader = new js.LGObject();
+         *         loader.injectCSS(
+         *             ".titleBox{width:100%;height:52px;margin:0px;padding:4px;color:white;background-color:#1e90ff;text-align:center;overflow:hidden;}"+
+         *             ".title{font-size:24px;position:relative;top:25%}"
+         *         );
+         *     });
+         * });
+         * </pre>
+         * @param {string} cssStr A string of CSS text
+         * @return {object} DOM style element
+         */
+        injectCSS: function (cssStr) {
             var customStyles, cssText;
 
             // By Fredrik Johansson
@@ -214,1157 +650,7 @@ define([
             document.body.appendChild(customStyles);
 
             return customStyles;
-        },
-
-        // set protocol handler
-        _setProtocolHandler: function () {
-            esri.id.setProtocolErrorHandler(function () {
-                if (window.confirm(this.config.i18n.messages.confirmHTTPSRedirect)) {
-                    window.location = window.location.href.replace("http:", "https:");
-                }
-            });
-        },
-
-        // Create web map based on the input web map id
-        _createWebMap: function (itemInfo) {
-            arcgisUtils.createMap(itemInfo, "panelMap", {
-                mapOptions: {},
-                usePopupManager: true,
-                editable: this.config.editable,
-                bingMapsKey: this.config.bingKey
-            }).then(lang.hitch(this, function (response) {
-
-                this.map = response.map;
-                this.initExt = this.map.extent;
-                this.opLayers = response.itemInfo.itemData.operationalLayers;
-
-                // locator
-                this.locator = new Locator(this.config.locatorURL);
-                on(this.locator, "location-to-address-complete", lang.hitch(this, this._updateAddress));
-
-                // make sure map is loaded
-                if (this.map.loaded) {
-                    // do something with the map
-                    this._mapLoaded();
-                } else {
-                    on.once(this.map, "load", lang.hitch(this, function () {
-                        // do something with the map
-                        this._mapLoaded();
-                    }));
-                }
-            }), this.reportError);
-        },
-
-        // Map Loaded - Map is ready
-        _mapLoaded: function () {
-            // Set the popup's popupWindow property to false; this prevents the popup from displaying,
-            // and we want the popup info to appear in the app's details panel
-            this.map.infoWindow.set("popupWindow", false);
-
-            this._processOperationalLayers();
-            this._configureUI();
-            // remove loading class from body
-            domClass.remove(document.body, "app-loading");
-        },
-
-        // Update Address
-        _updateAddress: function (evt) {
-            if (evt.address.address) {
-                var address = evt.address.address.Address;
-                dom.byId("curAddress").innerHTML = this.config.i18n.labels.currentLocation + " " + address;
-            }
-        },
-
-        // Process Operational Layers
-        _processOperationalLayers: function () {
-            array.forEach(this.opLayers, lang.hitch(this, function (layer) {
-                // Is this the layer configured to receive contributions?
-                if (layer && layer.layerObject) {
-                    if (this.config.ideasLayer
-                        && this.config.ideasLayer.id && this.config.ideasLayer.id === layer.id) {
-                        // Found the layer configured as the polling layer
-                        // Is it editable, which is what we'll need in order to add entries?
-                        // If "capabilities" is set to "Query", editing is disabled in the web map
-                        // (the layer check is for the webmap; the eLayer check is for the underlying feature service)
-                        this.lyrCrowd = layer.layerObject;
-                        this.lyrCrowd.editable = false;
-                        if (this.lyrCrowd instanceof esri.layers.FeatureLayer && this.lyrCrowd.isEditable()) {
-                            if ((layer.capabilities === null || layer.capabilities !== "Query")
-                                    && (this.lyrCrowd.capabilities === null || this.lyrCrowd.capabilities !== "Query")) {
-                                // Layer is editable
-                                this.lyrCrowd.editable = this.config.editable;
-                            }
-                        }
-                    } else if (this.config.commentsTable
-                            && this.config.commentsTable.id && this.config.commentsTable.id === layer.id) {
-                        if (layer.layerObject instanceof esri.layers.FeatureLayer && layer.layerObject.isEditable()) {
-                            if ((layer.capabilities === null || layer.capabilities !== "Query")
-                                    && (layer.layerObject.capabilities === null || layer.layerObject.capabilities !== "Query")) {
-                                // Layer is editable
-                                this.lyrComments = layer.layerObject;
-                            }
-                        }
-                    }
-                }
-            }));
-
-            if (this.lyrCrowd) {
-                on(this.lyrCrowd, "click", lang.hitch(this, this._clickClusterLayer));
-            } else {
-                this._showMessage("Error", this.config.i18n.messages.noEditableLayer);
-            }
-
-            if (!this.lyrComments) {
-                this.config.enableComments = false;
-                domStyle.set("pageComments", "display", "none");
-            }
-
-            // map ui
-            this._configureMapUI();
-        },
-
-        // Click Cluster Layer
-        _clickClusterLayer: function (event) {
-            this._showDetails(event.graphic);
-        },
-
-        // Show Temp Location
-        _showTempLocation: function () {
-            var sym, gra;
-
-            this.map.graphics.clear();
-            //this._toggleSubmit();
-            if (this.location) {
-                this.locator.locationToAddress(this.location, 100);
-                sym = new PictureMarkerSymbol('images/pin.png', 30, 30);
-                sym.setOffset(0, 15);
-                gra = new Graphic(this.location, sym, {});
-                this.map.graphics.add(gra);
-            } else {
-                dom.byId("curAddress").innerHTML = "";
-            }
-        },
-
-        // Show Selected Graphic
-        _showSelectedGraphic: function () {
-            var sym, gra;
-
-            this.map.graphics.clear();
-            if (this.selectedGraphic) {
-                sym = new PictureMarkerSymbol('images/pin.png', 30, 30);
-                sym.setOffset(0, 15);
-                gra = new Graphic(this.selectedGraphic.geometry, sym, {});
-                this.map.graphics.add(gra);
-            }
-        },
-
-
-        // ** MESSAGE FUNCTIONS **//
-
-        // Show message
-        _showMessage: function (title, msg) {
-            dom.byId("panelMessageTitle").innerHTML = title;
-            dom.byId("panelMessageBody").innerHTML = msg;
-            domStyle.set("panelMessage", "display", "block");
-        },
-
-        // Close message
-        _closeMessage: function () {
-            domStyle.set("panelMessage", "display", "none");
-            dom.byId("panelMessageTitle").innerHTML = "";
-            dom.byId("panelMessageBody").innerHTML = "";
-        },
-
-
-        // ** UI FUNCTIONS **//
-
-        // Configure UI
-        _configureUI: function () {
-
-            // === main ===
-            // colors
-            query(".esriSimpleSlider").style("color", this.colors[0].toString());
-            query(".esriSimpleSlider").style("backgroundColor", this.colors[1].toString());
-
-            // show hidden panel
-            dom.byId("showPanel").title = this.config.i18n.tooltips.showPanel;
-            on(dom.byId("showPanel"), "click", lang.hitch(this, this._showPanel));
-
-            // title
-            dom.byId("pageTitle").innerHTML = this.config.title;
-
-            // action; only visible if submission layer is editable, which we know because
-            // of the "editable" attribute on the layer
-            domStyle.set("actionButton", "display", (this.lyrCrowd && this.lyrCrowd.editable) ? "inline-block" : "none");
-            dom.byId("actionButton").innerHTML += this.config.action;
-            on(dom.byId("actionButton"), "click", lang.hitch(this, this._showPage, 1));
-
-/*
-            // sort
-            dom.byId("pageToolsSortLabel").innerHTML = this.config.i18n.labels.sort;
-            on(dom.byId("pageToolsSort"), "click", lang.hitch(this, this._clickSort));
-*/
-
-            // social media
-            dom.byId("signInLabel").innerHTML = this.config.i18n.labels.signInLabel;
-            on(dom.byId("signTwitter"), "click", lang.hitch(this, this._clickTwitter));
-            on(dom.byId("signFacebook"), "click", lang.hitch(this, this._clickFacebook));
-
-            // === new ===
-            // hide panel
-            dom.byId("hidePanel").title = this.config.i18n.tooltips.hidePanel;
-            on(dom.byId("hidePanel"), "click", lang.hitch(this, this._hidePanel));
-
-            // action
-            dom.byId("pageInfoNew").innerHTML = this.config.action;
-            dom.byId("closeNew").title = this.config.i18n.tooltips.returnToList;
-            on(dom.byId("closeNew"), "click", lang.hitch(this, this._showPage, 0));
-
-            // social media
-            dom.byId("signInLabelNew").innerHTML = this.config.i18n.labels.signInLabel;
-            on(dom.byId("toolTwitter"), "click", lang.hitch(this, this._clickTwitter));
-            on(dom.byId("toolFacebook"), "click", lang.hitch(this, this._clickFacebook));
-
-/*
-            if (this.types.length > 1) {
-                var node = dom.byId("selType");
-                domConstruct.create("option", {
-                    value: "",
-                    label: "Choose one"
-                }, node);
-                array.forEach(this.types, function (type) {
-                    domConstruct.create("option", {
-                        value: type,
-                        label: type
-                    }, node);
-                });
-                domStyle.set("divType", "display", "block");
-                on(node, "change", lang.hitch(this, this._toggleSubmit));
-            }
-*/
-
-            // location
-            dom.byId("locationPrompt").innerHTML = this.config.i18n.labels.location;
-            dom.byId("locationTip").innerHTML = this.config.i18n.labels.locationTip;
-
-            // attachment
-            dom.byId("attachmentPrompt").innerHTML = this.config.i18n.labels.attachment;
-
-            // submit
-            dom.byId("btnSubmit").innerHTML = this.config.i18n.labels.submit;
-            on(dom.byId("btnSubmit"), "click", lang.hitch(this, this._clickSubmit));
-
-            // === old ===
-            dom.byId("closeOld").title = this.config.i18n.tooltips.returnToList;
-            on(dom.byId("closeOld"), "click", lang.hitch(this, this._showPage, 0));
-            dom.byId("recComments").title = this.config.i18n.tooltips.comments;
-            if (!this.config.allowUpVotes) {
-                domStyle.set("votes", "display", "none");
-            }
-            dom.byId("votes").title = this.config.i18n.tooltips.votes;
-            on(dom.byId("votes"), "click", lang.hitch(this, this._clickUpVote));
-
-            // message
-            on(dom.byId("closeMessage"), "click", this._closeMessage);
-
-            // form
-            dom.byId("btnCommentSubmit").innerHTML = this.config.i18n.labels.submit;
-            on(dom.byId("btnCommentSubmit"), "click", lang.hitch(this, this._clickSubmitComment));
-
-
-            // Show the list of items at the start
-            on(window, "resize", this._handleResize);
-            this._showPage(0);
-        },
-
-        // Clear New Form
-        _clearNewForm: function () {
-            newEntryForm = this._generateForm("divNewForm", this.lyrCrowd.fields);
-
-            // Initialize the attachment and position echoes
-            dom.byId("attachment").value = "";
-            dom.byId("curAddress").innerHTML = "";
-            var str = "";
-            if (this.geocoder) {
-                this.geocoder.clear();
-            }
-/*
-            if (this.user.name) {
-                dom.byId("txtName").value = this.user.name;
-            }
-*/
-        },
-
-        // Clear Old Form
-        _clearOldForm: function () {
-            commentEntryForm = this._generateForm("divCommentForm", [
-                {
-                    "alias": this.config.i18n.labels.addComment,
-                    "editable": true,
-                    "length": 256,  //???
-                    "name": "txtComment",
-                    "nullable": false,
-                    "type": "esriFieldTypeString"
-                },
-                {
-                    "alias": this.config.i18n.labels.commentName,
-                    "editable": true,
-                    "length": 32,  //???
-                    "name": "txtCommentator",
-                    "nullable": true,
-                    "type": "esriFieldTypeString",
-                    "value": this.user.name || ""
-                }
-            ]);
-        },
-
-        _generateForm: function (formDivName, fields) {
-            var formDiv, form;
-
-            // Clear out the existing form
-            formDiv = dom.byId(formDivName);
-            while (formDiv.children.length > 0) {
-                formDiv.removeChild(formDiv.childNodes[0]);
-            }
-
-            // Find the editable attributes and create a form from them
-            form = [];
-            array.forEach(fields, lang.hitch(this, function (field) {
-                var row, inputItem, count;
-                if (field.editable) {
-                    row = domConstruct.create("div", {
-                        className: "formRow",
-                        innerHTML: field.alias + (field.nullable ? this.config.i18n.labels.optional : "")
-                    }, formDivName);
-
-                    if (field.type === "esriFieldTypeString") {
-                        // Create a characters-remaining counter
-                        count = domConstruct.create("span", {
-                            innerHTML: field.length,
-                            className: "charactersRemaining",
-                            title: this.config.i18n.tooltips.charactersRemaining
-                        }, row);
-
-                        if (field.length > 32) {
-                            inputItem = domConstruct.create("textArea", {
-                                value: field.value || ""
-                            }, row);
-                        } else {
-                            inputItem = domConstruct.create("input", {
-                                type: "text",
-                                value: field.value || ""
-                            }, row);
-                        }
-
-                        // Keep the content within the field's length limit
-                        on(inputItem, "keyup", function (evt) {
-                            if (field.length < this.value.length) {
-                                this.value = this.value.substr(0, field.length);
-                            }
-                            count.innerHTML = field.length - this.value.length;
-                        });
-
-                    } else if (field.type === "esriFieldTypeSmallInteger" || field.type === "esriFieldTypeInteger") {
-                        inputItem = domConstruct.create("input", {
-                            type: "number"
-                        }, row);
-                    } else if (field.type === "esriFieldTypeDouble") {
-                        inputItem = domConstruct.create("input", {
-                            type: "number"
-                        }, row);
-                    } else if (field.type === "esriFieldTypeDate") {
-                        inputItem = new DateTextBox(
-                            {value: new Date()},
-                            domConstruct.create("div", {}, row)
-                        );
-                    }
-
-                    if (esriLang.isDefined(inputItem)) {
-                        form.push({
-                            "field": field,
-                            "input": inputItem
-                        });
-                    }
-                }
-            }));
-
-            return form;
-        },
-
-        // Converts a Date into a string in the format that the HTML DOM <input> element needs.
-        _dateAsHtmlInput: function (dateToConvert) {
-            if (!dateToConvert) {
-                dateToConvert = new Date();
-            }
-
-            return dateToConvert.getFullYear() + "-" +
-                (dateToConvert.getMonth() + 1) + "-" +
-                dateToConvert.getDate();
-        },
-
-        // Toggle Scroll
-        _toggleScroll: function () {
-            this._animateScroll();
-        },
-
-        // Animate Scroll
-        _animateScroll: function (top) {
-            var box, pos, start, end, anim;
-
-            box = html.getContentBox(dom.byId("panelContent"));
-            pos = document.body.scrollTop || document.documentElement.scrollTop;
-            start = 0;
-            end = box.h;
-            if (pos > 0) {
-                start = box.h;
-                end = 0;
-            }
-            if (top) {
-                start = 0;
-                end = box.h;
-            }
-            anim = new fx.Animation({
-                duration: 300,
-                curve: [start, end]
-            });
-            on(anim, "Animate", function (v) {
-                document.body.scrollTop = v;
-                document.documentElement.scrollTop = v;
-            });
-            anim.play();
-        },
-
-        // Show Page
-        _showPage: function (num) {
-            this.newMode = false;
-            this.location = null;
-            this._showTempLocation();
-            this.selectedGraphic = null;
-            this._showSelectedGraphic();
-            switch (num) {
-            case 0:
-                // Show list of ideas
-                this._updateFeatures();
-                domStyle.set("pageMain", "display", "block");
-                domStyle.set("pageNew", "display", "none");
-                domStyle.set("pageOld", "display", "none");
-                break;
-            case 1:
-                // Show form for new idea
-                this._clearNewForm();
-                this._animateScroll(true);
-                this.newMode = true;
-                domStyle.set("pageMain", "display", "none");
-                domStyle.set("pageNew", "display", "block");
-                domStyle.set("pageOld", "display", "none");
-                break;
-            case 2:
-                // Show existing idea, its comments, and offer up-voting (if permitted) and adding comment
-                this._clearOldForm();
-                domStyle.set("pageMain", "display", "none");
-                domStyle.set("pageNew", "display", "none");
-                domStyle.set("pageOld", "display", "block");
-                break;
-            }
-
-            // Adjust height of content part of right-hand panel
-            this._handleResize();
-        },
-
-        // Animate panel hiding and showing
-        _animatePanelVisibility: function (moveOff) {
-            var box, start, end, anim;
-
-            box = html.getContentBox(dom.byId("panelContent"));
-            if (moveOff) {
-                start = 0;
-                end = -box.w;
-            } else {
-                start = -box.w;
-                end = 0;
-            }
-            anim = new fx.Animation({
-                duration: 300,
-                curve: [start, end]
-            });
-            on(anim, "Animate", function (v) {
-                domStyle.set("panelContent", "right", v + "px");
-            });
-            anim.play();
-        },
-
-        // Hide the ideas list panel
-        _hidePanel: function () {
-            this._animatePanelVisibility(true);
-        },
-
-        // Show the ideas list panel
-        _showPanel: function () {
-            this._animatePanelVisibility(false);
-        },
-
-        _handleResize: function () {
-            var page, header, content, pageDimensions, headerDimensions, newHeight;
-
-            page = dom.byId("pageMain");
-            if (domStyle.get(page, "display") !== "none") {
-                pageDimensions = domGeom.getMarginBox(page);
-                header = dom.byId("pageHeaderMain");
-                headerDimensions = domGeom.getMarginBox(header);
-                newHeight = (pageDimensions.h - headerDimensions.h) + "px";
-                domStyle.set("pageList", {"height": newHeight});
-            } else {
-                page = dom.byId("pageNew");
-                if (domStyle.get(page, "display") !== "none") {
-                    pageDimensions = domGeom.getMarginBox(page);
-                    header = dom.byId("pageHeaderNew");
-                    headerDimensions = domGeom.getMarginBox(header);
-                    domStyle.set("pageForm", {"height": (pageDimensions.h - headerDimensions.h) + "px"});
-                } else {
-                    page = dom.byId("pageOld");
-                    if (domStyle.get(page, "display") !== "none") {
-                        pageDimensions = domGeom.getMarginBox(page);
-                        header = dom.byId("pageHeaderOld");
-                        headerDimensions = domGeom.getMarginBox(header);
-                        domStyle.set("pageComments", {"height": (pageDimensions.h - headerDimensions.h) + "px"});
-                    }
-                }
-            }
-        },
-
-        // Click Sort
-        _clickSort: function () {
-            if (this.sort === "cal") {
-                this.sort = "votes";
-            } else {
-                this.sort = "cal";
-            }
-            domClass.toggle("pageToolsSort", "sortCal");
-            this._updateFeatures();
-            var pos = document.body.scrollTop || document.documentElement.scrollTop;
-            if (pos === 0) {
-                this._animateScroll(true);
-            }
-        },
-
-        // Click Twitter
-        _clickTwitter: function () {
-            var force = false;
-            if (this.user.name && this.user.twitterId) {
-                force = true;
-            }
-            this._twitterSignIn(force);
-        },
-
-        // Click Facebook
-        _clickFacebook: function () {
-            if (this.user.name && this.user.facebookId) {
-                this._facebookLogout();
-            } else {
-                this._facebookLogin();
-            }
-        },
-
-        // Toggle Submit
-        _toggleSubmit: function () {
-            var type = "";
-            if (this.types.length === 0) {
-                type = this.config.title;
-            } else if (this.types.length === 1) {
-                type = this.types[0];
-            } else {
-                if (dom.byId("selType").selectedIndex > 0) {
-                    type = this.types[dom.byId("selType").selectedIndex - 1];
-                }
-            }
-            if (type !== "" && this.location) {
-                dom.byId("btnSubmit").disabled = false;
-            } else {
-                dom.byId("btnSubmit").disabled = true;
-            }
-        },
-
-        // Click Submit
-        _clickSubmit: function () {
-            var gra, attr = {}, title, msg;
-
-            if (newEntryForm.length > 0 && this.location) {
-                // Assemble the attributes for the new item from the form
-                console.log("Add idea");  //???
-                array.forEach(newEntryForm, lang.hitch(this, function (entry) {
-                    attr[entry.field.name] = entry.input.value;
-                    console.log("    " + entry.field.name + " = " + entry.input.value);  //???
-                }));
-
-                // Create and add the graphic to the map
-                gra = new Graphic(this.location, null, attr);
-                this.lyrCrowd.applyEdits([gra], null, null,
-                    lang.hitch(this, function (addResults) {
-
-                    // Add the attachment if present
-                    if (dom.byId("formAttachment")[0].value !== "") {
-                        this.lyrCrowd.addAttachment(addResults[0].objectId, dom.byId("formAttachment"),
-                            lang.hitch(this, function () {
-                                this._showPage(0);
-                            }),
-                            lang.hitch(this, function () {
-                                this._showMessage("Error", "Unable to load attachment.");
-                                this._showPage(0);
-                            }));
-                    } else {
-                        this._showPage(0);
-                    }
-                }),
-                lang.hitch(this, function () {
-                    console.log("Error", "Unable to add data.");
-                }));
-            } else {
-                // invalid
-                title = this.config.i18n.messages.incompleteForm;
-                msg = "";
-                if (!this.location) {
-                    msg += this.config.i18n.messages.noLocation;
-                }
-                this._showMessage(title, msg);
-            }
-        },
-
-        // Click Submit Like
-        _clickUpVote: function () {
-            var gra, id, chk, num;
-
-            gra = this.selectedGraphic;
-            if (gra) {
-                domAttr.set("voteIcon", "src", (this.colors[0] === "white" ? "images/heartBusyW.png" : "images/heartBusyB.png"));
-                id = gra.attributes[this.lyrCrowd.objectIdField];
-                chk = this._checkHistory(id);
-                if (!chk) {
-                    num = 1;
-                    if (gra.attributes.Votes) {
-                        num = gra.attributes.Votes + 1;
-                    }
-                    gra.attributes.Votes = num;
-                    this.lyrCrowd.applyEdits(null, [gra], null,
-                        lang.hitch(this, function (addResults) {
-                            dom.byId("votesCount").innerHTML = num;
-
-                            // Flag that this user & browser combo has "liked" this object id
-                            this._updateHistory(id);
-                            domAttr.set("voteIcon", "src", (this.colors[0] === "white" ? "images/heartPlusW.png" : "images/heartPlusB.png"));
-                        }),
-                        lang.hitch(this, function () {
-                            console.log("Error", "Unable to add comment.");
-                            domAttr.set("voteIcon", "src", (this.colors[0] === "white" ? "images/heartPlusW.png" : "images/heartPlusB.png"));
-                        }));
-                } else {
-                    domAttr.set("voteIcon", "src", (this.colors[0] === "white" ? "images/heartPlusW.png" : "images/heartPlusB.png"));
-                }
-            }
-        },
-
-        // Check History
-        _checkHistory: function (id) {
-            var val, c;
-
-            val = "|" + id + ",";
-            c = cookie("hrt") || "";
-            if (c.indexOf(val) !== -1) {
-                return true;
-            }
-            return false;
-        },
-
-        // Update History
-        _updateHistory: function (id) {
-            var val, c;
-
-            val = "|" + id + ",";
-            c = cookie("hrt") || "";
-            c += val;
-            cookie("hrt", c, {
-                expires: 30
-            });
-        },
-
-        // Click Submit Comment
-        _clickSubmitComment: function () {
-            var gra, attr = {}, id, title, msg;
-
-            if (commentEntryForm.length > 0) {
-                // Assemble the attributes for the new item from the form
-                array.forEach(commentEntryForm, lang.hitch(this, function (entry) {
-                    attr[entry.field.name] = entry.input.value;
-                }));
-
-                // Create a comment graphic
-                if (attr.txtComment !== "" && this.selectedGraphic) {
-                    id = this.selectedGraphic.attributes[this.lyrCrowd.objectIdField];
-                    attr = {
-                        IdeaID: id,
-                        Date: new Date(),
-                        Name: attr.txtCommentator,
-                        Comment: attr.txtComment
-                    };
-                    console.log("Add comment");  //???
-                    console.log("    IdeaID = " + attr.IdeaID);  //???
-                    console.log("    Date = " + attr.Date);  //???
-                    console.log("    Name = " + attr.Name);  //???
-                    console.log("    Comment = " + attr.Comment);  //???
-                    gra = new Graphic(null, null, attr);
-                    this.lyrComments.applyEdits([gra], null, null,
-                        lang.hitch(this, function (addResults) {
-                            if (esriLang.isDefined(addResults[0].error)) {
-                                console.log("Error", addResults[0].error);
-                            }
-                            this._showPage(0);
-                        }),
-                        lang.hitch(this, function () {
-                            console.log("Error", "Unable to add comment.");
-                            this._showPage(0);
-                        }));
-                }
-            } else {
-                // invalid
-                title = this.config.i18n.messages.incompleteForm;
-                msg = "";
-                if (!this.location) {
-                    msg += this.config.i18n.messages.noLocation;
-                }
-                this._showMessage(title, msg);
-            }
-        },
-
-        // Configure Map UI
-        _configureMapUI: function () {
-
-            // home
-            // var home = new HomeButton({
-            // map : this.map
-            // }, "btnHome");
-            // home.startup();
-
-            // gelocate
-            this.geoLocate = new LocateButton({
-                map: this.map,
-                highlightLocation: false
-            }, "btnLocate");
-            this.geoLocate.startup();
-            on(this.geoLocate, "locate", lang.hitch(this, this._positionLocate));
-
-            // geocoder
-            this.geocoder = new Geocoder({
-                map: this.map,
-                url: this.config.helperServices.geocode[0].url,
-                autoComplete: true
-            }, "divGeocoder");
-            on(this.geocoder, "find-results", lang.hitch(this, this._geocoderResults));
-            on(this.geocoder, "select", lang.hitch(this, this._geocoderSelect));
-            on(this.geocoder, "clear", lang.hitch(this, this._geocoderClear));
-            this.geocoder.startup();
-
-            // map click
-            on(this.map, "click", lang.hitch(this, this._mapClickHandler));
-
-            // update features
-            this._updateFeatures();
-
-        },
-
-        // geocoder results
-        _geocoderResults: function (obj) {
-            if (obj.results.results.length > 0) {
-                var result = obj.results.results[0];
-                this.location = result.feature.geometry;
-                this._showTempLocation();
-            }
-        },
-
-        // geocoder select
-        _geocoderSelect: function (obj) {
-            var result = obj.result;
-            this.location = result.feature.geometry;
-            this._showTempLocation();
-        },
-
-        // geocoder clear
-        _geocoderClear: function () {
-            this.location = null;
-            this._showTempLocation();
-        },
-
-        // position locate
-        _positionLocate: function (event) {
-            this.location = event.graphic.geometry;
-            this._showTempLocation();
-        },
-
-        // map click handler
-        _mapClickHandler: function (event) {
-            if (this.newMode) {
-                this.location = event.mapPoint;
-                this._showTempLocation();
-            }
-        },
-
-
-        // ** DATA FUNCTIONS **//
-
-        // Update Features
-        _updateFeatures: function () {
-            if (this.lyrCrowd) {
-                var updateQuery = new Query();
-                updateQuery.returnGeometry = true;
-                updateQuery.where = "1=1";
-                updateQuery.orderByFields = ["Date DESC"];
-                if (this.sort === "votes") {
-                    updateQuery.orderByFields = ["Votes DESC", "Date DESC"];
-                }
-                updateQuery.outFields = ["*"];
-                this.lyrCrowd.queryFeatures(updateQuery, lang.hitch(this, this._processFeatures), lang.hitch(this, this._errorHandler));
-            }
-        },
-
-        // Process Features
-        _processFeatures: function (results) {
-            var container, features, i, gra, attr, rec, str, recInfo, recTools;
-
-            container = dom.byId("resultsList");
-            container.innerHTML = "";
-            features = results.features;
-            for (i = 0; i < features.length; i++) {
-                gra = features[i];
-
-                rec = domConstruct.create("div", {}, container);
-                new ContentPane({
-                    content: gra.getContent(),
-                    className: "rec"
-                }, rec).startup();
-                domStyle.set(rec, "border-bottom", "1px solid " + this.colors[1]);
-
-                on(rec, "click", lang.hitch(this, this._selectRecord, gra));
-            }
-        },
-
-        // Get Rec Info
-        _getRecInfo: function (attr) {
-            var info = "";
-            info += "<span class='recTitle'>" + attr.Type + "</span><br/>";
-            info += attr.Comment + "<br/>";
-            if (attr.Name !== "") {
-                info += "- " + attr.Name;
-            } else {
-                info += "- Anonymous";
-            }
-            return info;
-        },
-
-        // Get Rec Votes
-        _getRecLikes: function (attr) {
-            if (attr.Votes) {
-                return attr.Votes;
-            }
-            return 0;
-        },
-
-        // Get Rec Age
-        _getRecAge: function (attr) {
-            var dt = new Date(attr.Date);
-            // var diff = Math.ceil((new Date() - dt)/60000);
-            // var age = diff + " MINS AGO";
-            // if (diff > 60)
-            // age = parseInt(diff/60) + " HOURS AGO";
-            // if (diff > 60*24)
-            // age = parseInt(diff/(60*24)) + " DAYS AGO";
-            // if (diff > 60*24*365)
-            // age = parseInt(diff/(60*24*365)) + " YEARS AGO";
-            return dt.toLocaleString();
-        },
-
-        // Error Handler
-        _errorHandler: function (error) {
-            console.log("Error: " + dojo.toJson(error));
-        },
-
-        // Select Record
-        _selectRecord: function (gra) {
-            this._showDetails(gra);
-            this.map.centerAndZoom(gra.geometry, 19);
-        },
-
-        // Show Details
-        _showDetails: function (gra) {
-            // Empty the details area
-            var header = dom.byId("pageInfoDetails");
-            while (header.children.length > 0) {
-                header.removeChild(header.childNodes[0]);
-            }
-
-            // Add the item as the title
-            new ContentPane({
-                content: gra.getContent()
-                //className: "rec"
-            }).placeAt("pageInfoDetails").startup();
-
-            // Init
-            dom.byId("votesCount").innerHTML = this._getRecLikes(gra.attributes);
-            dom.byId("recCommentsCount").innerHTML = "0";  // we'll update this after querying; see _updateDetails()
-
-            // Show the page and update the comments
-            this._showPage(2);
-            this._updateDetails(gra);
-
-            this.selectedGraphic = gra;
-            this._showSelectedGraphic();
-        },
-
-        // Get Page Info
-        _getPageInfo: function (attr) {
-            var info = "";
-            info += attr.Type + "<br/>";
-            if (attr.Name !== "") {
-                info += "- " + attr.Name;
-            } else {
-                info += "- Anonymous";
-            }
-            return info;
-        },
-
-        // Update Details
-        _updateDetails: function (gra) {
-            var container, str, details, lyr, idFld;
-
-            // Get container to receive attachment
-            var container = dom.byId("existingComments");
-            container.innerHTML = "";
-
-            lyr = this.lyrCrowd;
-            idFld = lyr.objectIdField;
-            lyr.queryAttachmentInfos(gra.attributes[idFld], lang.hitch(this, function (infos) {
-                if (infos.length > 0 && infos[0].url) {
-                    var imgDetails = domConstruct.create("div", {
-                        innerHTML: "<img src='" + infos[0].url + "' style='max-width:100%'/>"
-                    }, container);
-                    domClass.add(imgDetails, 'imgDetails');
-                }
-                this._updateComments(gra);
-            }), lang.hitch(this, function () {
-                this._updateComments(gra);
-            }));
-        },
-
-        // Update Comments
-        _updateComments: function (gra) {
-            var expr, updateQuery;
-
-            if (this.lyrComments) {
-                expr = "IdeaID = " + gra.attributes[this.lyrCrowd.objectIdField];
-                updateQuery = new Query();
-                updateQuery.returnGeometry = false;
-                updateQuery.where = expr;
-                updateQuery.orderByFields = ["Date"];
-                updateQuery.outFields = ["*"];
-                this.lyrComments.queryFeatures(updateQuery, lang.hitch(this, this._processComments), lang.hitch(this, this._errorHandler));
-            }
-        },
-
-        // Process Comments
-        _processComments: function (results) {
-            var container, features, i, gra, attr, rec, str, recInfo, recTools;
-
-            container = dom.byId("existingComments");
-
-            features = results.features;
-            for (i = 0; i < features.length; i++) {
-                gra = features[i];
-                attr = gra.attributes;
-                // comment block
-                rec = domConstruct.create("div", {}, container);
-                domClass.add(rec, 'comment');
-                // comment itself
-                str = "";
-                recInfo = domConstruct.create("div", {
-                    innerHTML: this._getCommentInfo(attr)
-                }, rec);
-                domClass.add(recInfo, 'commentInfo');
-                // recTools
-                recTools = domConstruct.create("div", {}, rec);
-                domClass.add(recTools, 'recTools');
-                // timestamp
-                recCal = domConstruct.create("div", {
-                    innerHTML: this._getRecAge(attr)
-                }, recTools);
-                domClass.add(recCal, 'recCal');
-            }
-            dom.byId("recCommentsCount").innerHTML = features.length;
-        },
-
-        // Get Comment Info
-        _getCommentInfo: function (attr) {
-            var info = "";
-            info += attr.Comment + "<br/>" + this.config.i18n.labels.author + " ";
-            if (attr.Name !== "") {
-                info += attr.Name;
-            } else {
-                info += this.config.i18n.labels.anonymous;
-            }
-            return info;
-        },
-
-
-        // ** TWITTER FUNCTIONS **//
-
-        // Checkin Social Media
-        _checkinSocialMedia: function () {
-            this._twitterGetAccount();
-            this._initFacebookAPI();
-        },
-
-        // Twitter Sign In
-        _twitterSignIn: function (forceLogin) {
-            var redirect_uri, page;
-
-            //this._twitterWindow(this.config.twitterSigninUrl);
-            redirect_uri = encodeURIComponent(window.location);
-            page = this.config.twitterSigninUrl + '?redirect_uri=' + redirect_uri;
-            if (forceLogin) {
-                this.user.name = "";
-                this.user.twitterId = "";
-                page += '&force_login=true';
-            }
-            window.location = page;
-        },
-
-        // Twitter Get Account
-        _twitterGetAccount: function () {
-            esriRequest({
-                url: this.config.twitterAccountUrl,
-                handleAs: "json",
-                timeout: 10000,
-                content: "",
-                callbackParamName: "callback",
-                preventCache: true,
-                failOk: true,
-                handle: lang.hitch(this, function (data) {
-                    if (data.screen_name) {
-                        this.user.twitterId = data.screen_name;
-                        this._twitterGetUser(data.screen_name);
-                    }
-                })
-            }, {
-                useProxy: false
-            });
-        },
-
-        // Twitter Get User
-        _twitterGetUser: function (screen_name) {
-            esriRequest({
-                url: this.config.twitterUsersUrl + "?screen_name=" + screen_name,
-                handleAs: "json",
-                timeout: 10000,
-                content: "",
-                callbackParamName: "callback",
-                preventCache: true,
-                failOk: true,
-                handle: lang.hitch(this, function (data) {
-                    console.log("Twitter", data);
-                    if (data.name) {
-                        this.user.name = data.name;
-                        dom.byId("signInLabel").innerHTML = this.config.i18n.labels.signOutLabel;
-                        dom.byId("signInNew").innerHTML = this.config.i18n.labels.signOutLabel;
-                    }
-                })
-            }, {
-                useProxy: false
-            });
-        },
-
-        // ** FACEBOOK FUNCTIONS **//
-
-        _facebookLogin: function () {
-            return null;
-/*
-            var ref, si, siN, access_token, user_id;
-
-            ref = this;
-            si = dom.byId("signInLabel");
-            siN = dom.byId("signInNew");
-            FB.login(function (response) {
-
-                if (response.authResponse) {
-                    console.log("Facebook", response); // dump complete info
-                    access_token = response.authResponse.accessToken; //get access token
-                    user_id = response.authResponse.userID; //get FB UID
-                    si.innerHTML = "SIGN OUT";
-                    siN.innerHTML = "SIGN OUT";
-                    FB.api('/me', function (response) {
-                        ref.user.facebookId = response.id;
-                        ref.user.name = response.first_name + " " + response.last_name;
-                    });
-
-                    FB.api("/me/picture", function (response) {
-                        if (response && !response.error) {
-                            if (!response.data.is_silhouette) {
-                            }
-                        }
-                    });
-
-                } else {
-                    //user hit cancel button
-                    console.log('User cancelled login or did not fully authorize.');
-
-                }
-            }, {
-                scope: 'publish_stream,email'
-            });
-*/
-        },
-
-        // Facebook logout
-        _facebookLogout: function () {
-            return null;
-/*
-            this.user.name = "";
-            this.user.facebookId = "";
-            dom.byId("signInLabel").innerHTML = "SIGN IN";
-            dom.byId("signInNew").innerHTML = "SIGN IN";
-            FB.logout(function (response) {
-                // user is now logged out
-            });
-*/
-        },
-
-        // Init Facebook API
-        _initFacebookAPI: function () {
-            return null;
-/*
-            var id = this.config.facebookAppId;
-
-            window.fbAsyncInit = function () {
-
-                FB.init({
-                    appId: id,
-                    cookie: true, // enable cookies to allow the server to access
-                    // the session
-                    xfbml: true, // parse social plugins on this page
-                    version: 'v2.1' // use version 2.1
-                });
-
-            };
-
-            // Load the SDK asynchronously
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-*/
         }
-
-
-
 
     });
 });

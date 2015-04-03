@@ -3,7 +3,7 @@
 /*
  * DotNet proxy client.
  *
- * Version 1.1 beta
+ * Version 1.0
  * See https://github.com/Esri/resource-proxy for more information.
  *
  */
@@ -71,16 +71,16 @@ public class proxy : IHttpHandler {
         string uri = context.Request.Url.Query.Substring(1);
 
         //if url is encoded, decode it.
-        if (uri.StartsWith("http%3a%2f%2f", StringComparison.InvariantCultureIgnoreCase) || uri.StartsWith("https%3a%2f%2f", StringComparison.InvariantCultureIgnoreCase))
+        if (uri.StartsWith("http%3a%2f%2f") || uri.StartsWith("https%3a%2f%2f"))
             uri = HttpUtility.UrlDecode(uri);
-        
+
         log(TraceLevel.Info, uri);
         ServerUrl serverUrl;
         bool passThrough = false;
         try {
             serverUrl = getConfig().GetConfigServerUrl(uri);
             passThrough = serverUrl == null;
-        } 
+        }
         //if XML couldn't be parsed
         catch (InvalidOperationException ex) {
 
@@ -88,7 +88,7 @@ public class proxy : IHttpHandler {
             log(TraceLevel.Error, errorMsg);
             sendErrorResponse(context.Response, null, errorMsg, System.Net.HttpStatusCode.InternalServerError);
             return;
-        }  
+        }
         //if mustMatch was set to true and URL wasn't in the list
         catch (ArgumentException ex) {
             string errorMsg = ex.Message + " " + uri;
@@ -170,69 +170,51 @@ public class proxy : IHttpHandler {
         byte[] postBody = readRequestPostBody(context);
         string post = System.Text.Encoding.UTF8.GetString(postBody);
 
-        System.Net.NetworkCredential credentials = null;
-        string requestUri = uri;
-        bool hasClientToken = false;
+        //if token comes with client request, it takes precedence over token or credentials stored in configuration
+        bool hasClientToken = uri.Contains("?token=") || uri.Contains("&token=") || post.Contains("?token=") || post.Contains("&token=");
         string token = string.Empty;
-        string tokenParamName = null;
+        if (!passThrough && !hasClientToken) {
+            // Get new token and append to the request.
+            // But first, look up in the application scope, maybe it's already there:
+            token = (String)context.Application["token_for_" + serverUrl.Url];
+            bool tokenIsInApplicationScope = !String.IsNullOrEmpty(token);
 
-        if (!passThrough && serverUrl.Domain != null)
-        {
-            credentials = new System.Net.NetworkCredential(serverUrl.Username, serverUrl.Password, serverUrl.Domain);
-        }
-        else
-        {
-            //if token comes with client request, it takes precedence over token or credentials stored in configuration
-            hasClientToken = uri.Contains("?token=") || uri.Contains("&token=") || post.Contains("?token=") || post.Contains("&token=");
-
-            if (!passThrough && !hasClientToken)
-            {
-                // Get new token and append to the request.
-                // But first, look up in the application scope, maybe it's already there:
-                token = (String)context.Application["token_for_" + serverUrl.Url];
-                bool tokenIsInApplicationScope = !String.IsNullOrEmpty(token);
-
-                //if still no token, let's see if there is an access token or if are credentials stored in configuration which we can use to obtain new token
-                if (!tokenIsInApplicationScope)
-                {
-                    token = serverUrl.AccessToken;
-                    if (String.IsNullOrEmpty(token))
-                        token = getNewTokenIfCredentialsAreSpecified(serverUrl, uri);
-                }
-
-                if (!String.IsNullOrEmpty(token) && !tokenIsInApplicationScope)
-                {
-                    //storing the token in Application scope, to do not waste time on requesting new one untill it expires or the app is restarted.
-                    context.Application.Lock();
-                    context.Application["token_for_" + serverUrl.Url] = token;
-                    context.Application.UnLock();
-                }
+            //if still no token, let's see if there is an access token or if are credentials stored in configuration which we can use to obtain new token
+            if (!tokenIsInApplicationScope) {
+                token = serverUrl.AccessToken;
+                if (String.IsNullOrEmpty(token))
+                    token = getNewTokenIfCredentialsAreSpecified(serverUrl, uri);
             }
 
-            //name by which token parameter is passed (if url actually came from the list)
-            tokenParamName = serverUrl != null ? serverUrl.TokenParamName : null;
-
-            if (String.IsNullOrEmpty(tokenParamName))
-                tokenParamName = "token";
-
-            requestUri = addTokenToUri(uri, token, tokenParamName);
+            if (!String.IsNullOrEmpty(token) && !tokenIsInApplicationScope) {
+                //storing the token in Application scope, to do not waste time on requesting new one untill it expires or the app is restarted.
+                context.Application.Lock();
+                context.Application["token_for_" + serverUrl.Url] = token;
+                context.Application.UnLock();
+            }
         }
-        
 
-        
+        //name by which token parameter is passed (if url actually came from the list)
+        string tokenParamName = serverUrl != null ? serverUrl.TokenParamName : null;
+
+
+        if (String.IsNullOrEmpty(tokenParamName))
+            tokenParamName = "token";
+
         //forwarding original request
         System.Net.WebResponse serverResponse = null;
         try {
-            serverResponse = forwardToServer(context, requestUri, postBody, credentials);
+            serverResponse = forwardToServer(context, addTokenToUri(uri, token, tokenParamName), postBody);
         } catch (System.Net.WebException webExc) {
-            
+
             string errorMsg = webExc.Message + " " + uri;
             log(TraceLevel.Error, errorMsg);
 
             if (webExc.Response != null)
             {
-                copyHeaders(webExc.Response as System.Net.HttpWebResponse, context.Response);
-                
+                string contentEncoding = (webExc.Response as System.Net.HttpWebResponse).ContentEncoding;
+                context.Response.AddHeader("Content-Encoding", contentEncoding);
+
                 using (Stream responseStream = webExc.Response.GetResponseStream())
                 {
                     byte[] bytes = new byte[32768];
@@ -301,39 +283,16 @@ public class proxy : IHttpHandler {
         return new byte[0];
     }
 
-    private System.Net.WebResponse forwardToServer(HttpContext context, string uri, byte[] postBody, System.Net.NetworkCredential credentials = null)
-    {
+    private System.Net.WebResponse forwardToServer(HttpContext context, string uri, byte[] postBody) {
         return
             postBody.Length > 0?
-            doHTTPRequest(uri, postBody, "POST", context.Request.Headers["referer"], context.Request.ContentType, credentials):
-            doHTTPRequest(uri, context.Request.HttpMethod, credentials);
+            doHTTPRequest(uri, postBody, "POST", context.Request.Headers["referer"], context.Request.ContentType):
+            doHTTPRequest(uri, context.Request.HttpMethod);
     }
 
-    /// <summary>
-    /// Attempts to copy all headers from the fromResponse to the the toResponse.
-    /// </summary>
-    /// <param name="fromResponse">The response that we are copying the headers from</param>
-    /// <param name="toResponse">The response that we are copying the headers to</param>
-    private void copyHeaders(System.Net.WebResponse fromResponse, HttpResponse toResponse)
-    {
-        foreach (var headerKey in fromResponse.Headers.AllKeys)
-        {
-            switch (headerKey.ToLower())
-            {
-                case "content-type":
-                case "transfer-encoding":
-                    continue;
-                default:
-                    toResponse.AddHeader(headerKey, fromResponse.Headers[headerKey]);
-                    break;
-            }
-        }
-        toResponse.ContentType = fromResponse.ContentType;
-    }
-    
     private bool fetchAndPassBackToClient(System.Net.WebResponse serverResponse, HttpResponse clientResponse, bool ignoreAuthenticationErrors) {
         if (serverResponse != null) {
-            copyHeaders(serverResponse, clientResponse);
+            clientResponse.ContentType = serverResponse.ContentType;
             using (Stream byteStream = serverResponse.GetResponseStream()) {
                 // Text response
                 if (serverResponse.ContentType.Contains("text") ||
@@ -368,11 +327,9 @@ public class proxy : IHttpHandler {
         return false;
     }
 
-    private System.Net.WebResponse doHTTPRequest(string uri, string method, System.Net.NetworkCredential credentials = null)
-    {
+    private System.Net.WebResponse doHTTPRequest(string uri, string method) {
         byte[] bytes = null;
         String contentType = null;
-        log(TraceLevel.Info, "Sending request!");
 
         if (method.Equals("POST"))
         {
@@ -387,19 +344,14 @@ public class proxy : IHttpHandler {
             }
         }
 
-        return doHTTPRequest(uri, bytes, method, PROXY_REFERER, contentType, credentials);
+        return doHTTPRequest(uri, bytes, method, PROXY_REFERER, contentType);
     }
 
-    private System.Net.WebResponse doHTTPRequest(string uri, byte[] bytes, string method, string referer, string contentType, System.Net.NetworkCredential credentials = null)
-    {
+    private System.Net.WebResponse doHTTPRequest(string uri, byte[] bytes, string method, string referer, string contentType) {
         System.Net.HttpWebRequest req = (System.Net.HttpWebRequest)System.Net.HttpWebRequest.Create(uri);
         req.ServicePoint.Expect100Continue = false;
         req.Referer = referer;
         req.Method = method;
-
-        if (credentials != null)
-            req.Credentials = credentials;
-        
         if (bytes != null && bytes.Length > 0 || method == "POST") {
             req.Method = "POST";
             req.ContentType = string.IsNullOrEmpty(contentType) ? "application/x-www-form-urlencoded" : contentType;
@@ -449,12 +401,12 @@ public class proxy : IHttpHandler {
                     string tokenResponse = webResponseToString(doHTTPRequest(reqUrl, "POST"));
                     token = extractToken(tokenResponse, "token");
                     return token;
-                }           
-                
+                }
+
                 //lets look for '/rest/' in the requested URL (could be 'rest/services', 'rest/community'...)
                 if (reqUrl.ToLower().Contains("/rest/"))
                     infoUrl = reqUrl.Substring(0, reqUrl.IndexOf("/rest/", StringComparison.OrdinalIgnoreCase));
-                
+
                 //if we don't find 'rest', lets look for the portal specific 'sharing' instead
                 else if (reqUrl.ToLower().Contains("/sharing/")) {
                     infoUrl = reqUrl.Substring(0, reqUrl.IndexOf("/sharing/", StringComparison.OrdinalIgnoreCase));
@@ -462,7 +414,7 @@ public class proxy : IHttpHandler {
                 }
                 else
                     throw new ApplicationException("Unable to determine the correct URL to request a token to access private resources");
-                    
+
                 if (infoUrl != "") {
                     log(TraceLevel.Info," Querying security endpoint...");
                     infoUrl += "/rest/info?f=json";
@@ -496,7 +448,7 @@ public class proxy : IHttpHandler {
 
     private static void sendErrorResponse(HttpResponse response, String errorDetails, String errorMessage, System.Net.HttpStatusCode errorCode)
     {
-        String message = string.Format("{{error: {{code: {0},message:\"{1}\"", (int)errorCode, errorMessage);
+        String message = string.Format("{{error: {{code: {0},message:\"{1}\"", errorCode, errorMessage);
         if (!string.IsNullOrEmpty(errorDetails))
             message += string.Format(",details:[message:\"{0}\"]", errorDetails);
         message += "}}";
@@ -577,46 +529,14 @@ public class proxy : IHttpHandler {
         if (TraceLevel.Error == logLevel)
         {
             Trace.TraceError(logMessage);
-            logMessageToFile(logMessage);
         }
         else if (TraceLevel.Warning == logLevel)
         {
             Trace.TraceWarning(logMessage);
-            logMessageToFile(logMessage);
         }
         else
         {
             Trace.TraceInformation(logMessage);
-            logMessageToFile(logMessage);
-        }
-    }
-
-    private static object _lockobject = new object();
-
-    private static void logMessageToFile(String message)
-    {
-        //Only log messages to disk if logFile has value in configuration, otherwise log nothing.   
-        ProxyConfig config = ProxyConfig.GetCurrentConfig();
-        if (config.LogFile != null)
-        {
-            string log = config.LogFile;
-            if (!log.Contains("\\") || log.Contains(".\\"))
-            {
-                if (log.Contains(".\\")) //If this type of relative pathing .\log.txt
-                {
-                    log = log.Replace(".\\", "");  
-                }
-                string configDirectory = HttpContext.Current.Server.MapPath("proxy.config"); //Cannot use System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath b/ config may be in a child directory
-                string path = configDirectory.Replace("proxy.config","");
-                log = path + log;  
-            }
-        
-            lock(_lockobject) {
-                using (StreamWriter sw = File.AppendText(log))
-                {
-                    sw.WriteLine(message);
-                }
-            }
         }
     }
 }
@@ -678,7 +598,6 @@ public class ProxyConfig
     }
 
     ServerUrl[] serverUrls;
-    public String logFile;
     bool mustMatch;
     //referer
     static String allowedReferers;
@@ -698,16 +617,6 @@ public class ProxyConfig
         set
         { mustMatch = value; }
     }
-    
-    //logFile
-    [XmlAttribute("logFile")]
-    public String LogFile
-    {
-        get { return logFile; }
-        set
-        { logFile = value; }
-    }
-
 
     //referer
     [XmlAttribute("allowedReferers")]
@@ -720,36 +629,36 @@ public class ProxyConfig
         }
     }
 
-    public ServerUrl GetConfigServerUrl(string uri) {                       
+    public ServerUrl GetConfigServerUrl(string uri) {
         //split both request and proxy.config urls and compare them
-        string[] uriParts = uri.Split(new char[] {'/','?'}, StringSplitOptions.RemoveEmptyEntries); 
+        string[] uriParts = uri.Split(new char[] {'/','?'}, StringSplitOptions.RemoveEmptyEntries);
         string[] configUriParts = new string[] {};
-                
+
         foreach (ServerUrl su in serverUrls) {
             //if a relative path is specified in the proxy.config, append what's in the request itself
             if (!su.Url.StartsWith("http"))
                 su.Url = su.Url.Insert(0, uriParts[0]);
 
             configUriParts = su.Url.Split(new char[] { '/','?' }, StringSplitOptions.RemoveEmptyEntries);
-            
+
             //if the request has less parts than the config, don't allow
             if (configUriParts.Length > uriParts.Length) continue;
-            
+
             int i = 0;
             for (i = 0; i < configUriParts.Length; i++) {
-                
+
                 if (!configUriParts[i].ToLower().Equals(uriParts[i].ToLower())) break;
             }
             if (i == configUriParts.Length) {
                 //if the urls don't match exactly, and the individual matchAll tag is 'false', don't allow
                 if (configUriParts.Length == uriParts.Length || su.MatchAll)
                     return su;
-            }                  
-        }       
-        
+            }
+        }
+
         if (mustMatch)
             throw new ArgumentException("Proxy is being used for an unsupported service:");
-        
+
         return null;
     }
 
@@ -760,7 +669,6 @@ public class ServerUrl {
     string url;
     bool matchAll;
     string oauth2Endpoint;
-    string domain;
     string username;
     string password;
     string clientId;
@@ -769,7 +677,7 @@ public class ServerUrl {
     string tokenParamName;
     string rateLimit;
     string rateLimitPeriod;
-    
+
     [XmlAttribute("url")]
     public string Url {
         get { return url; }
@@ -784,12 +692,6 @@ public class ServerUrl {
     public string OAuth2Endpoint {
         get { return oauth2Endpoint; }
         set { oauth2Endpoint = value; }
-    }
-    [XmlAttribute("domain")]
-    public string Domain
-    {
-        get { return domain; }
-        set { domain = value; }
     }
     [XmlAttribute("username")]
     public string Username {

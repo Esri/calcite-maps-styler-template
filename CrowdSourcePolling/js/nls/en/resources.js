@@ -14,44 +14,51 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-    ({
-        map: {
-            error: "Unable to create map"
-        },
-        tooltips: {
-            location: "Use your location",
-            charactersRemaining: "Characters remaining",
-            returnToList: "Return to list",
-            votes: "Number of votes; click to add",
-            comments: "Number of comments; click to add",
-            hidePanel: "Hide this panel",
-            showPanel: "Show summary panel"
-        },
-        labels: {
-            sort: "Sort",
-            signInLabel: "Sign in",
-            signOutLabel: "Sign out",
-            location: "Location",
-            locationTip: "(Enter address, use locate button or click on map)",
-            attachment: "Attach image (optional)",
-            submit: "Submit",
-            optional: " (optional)",
-            addComment: "Add comment",
-            commentName: "Your name",
-            author: "by",
-            anonymous: "Anonymous",
-            currentLocation: "Current location:"
-        },
-        prompts: {
-            confirmHTTPSRedirect: "Your browser is not CORS enabled. You need to redirect to HTTPS. Continue?"
-        },
-        messages: {
-            yourContentSubmitted: "Your content has been submitted. Thank you.",  // Appears after content has been added to the map and successfully submitted to the server
-            noEditableLayer: "No editable layer is available for accepting data",
-            noConfiguration: "Unable to access application's configuration",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            incompleteForm: "Incomplete form",  // Appears when new-item form is missing required items
-            noLocation: "No location specified."  // Appears when a new item is submitted with specifying the submitter's location
-        }
-    })
-);
+define(({
+    map: {
+        error: "Unable to create map",
+        layerLoad: "Unable to fully load map",
+        missingItemsFeatureLayer: "Item feature layer is missing",
+        missingCommentsTable: "Comment table is missing"
+    },
+    sidebar_header: {
+        signInButton: "Sign In",
+        signInButtonTooltip: "Sign in to a social medium",
+        signOutButton: "Sign Out",
+        signOutButtonTooltip: "Disconnect this app from your social medium",
+        helpButtonTooltip: "Find out more about this app"
+    },
+    popup_Close: {
+        closeButtonTooltip: "Close"
+    },
+    social_media: {
+        signIntoFacebookTooltip: "Sign in to Facebook",
+        signIntoGooglePlusTooltip: "Sign in to Google+",
+        signIntoTwitterTooltip: "Sign in to Twitter",
+        signOutOfFacebookTooltip: "Sign out of Facebook",
+        signOutOfGooglePlusTooltip: "Sign out of Google+",
+        signOutOfTwitterTooltip: "Sign out of Twitter"
+    },
+    dynamic_form: {
+        optionalFormItemFlag: " (optional)",
+        requiredFormItemFlag: " (required)",
+        unsettableRequiredField: "A required field is neither initialized nor in the form",
+        countOfRemainingCharactersTooltip: "Characters remaining",
+        cancelButtonLabel: "Cancel",
+        submitButtonLabel: "Submit"
+    },
+    item_details: {
+        likeButtonLabel: "Like",
+        likeButtonTooltip: "Vote for this",
+        commentButtonLabel: "Comment",
+        commentButtonTooltip: "Add a comment about this",
+        galleryButtonLabel: "Gallery",
+        galleryButtonTooltip: "See attached photos for this",
+        commentsListHeading: "Comments",
+        noCommentsPlaceholder: "No comments"
+    },
+    item_list: {
+        linkToMapViewOptionLabel: "Link to map view",
+        likesForThisItemTooltip: "Votes for this"
+    }
+}));

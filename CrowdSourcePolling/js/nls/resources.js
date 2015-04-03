@@ -16,42 +16,51 @@
  */
 define({
     root: ({
-        map: {
-            error: "Unable to create map"
+        map: {  // Map, feature layer, and comments table loading and checking
+            error: "Unable to create map",
+            layerLoad: "Unable to fully load map",
+            missingItemsFeatureLayer: "Item feature layer is missing",
+            missingCommentsTable: "Comment table is missing"
         },
-        tooltips: {
-            location: "Use your location",
-            charactersRemaining: "Characters remaining",
-            returnToList: "Return to list",
-            votes: "Number of votes; click to add",
-            comments: "Number of comments; click to add",
-            hidePanel: "Hide this panel",
-            showPanel: "Show summary panel"
+        sidebar_header: {  // Top panel of right-side display; contains social media sign-in, help button, title
+            signInButton: "Sign In",
+            signInButtonTooltip: "Sign in to a social medium",
+            signOutButton: "Sign Out",
+            signOutButtonTooltip: "Disconnect this app from your social medium",
+            helpButtonTooltip: "Find out more about this app"
         },
-        labels: {
-            sort: "Sort",
-            signInLabel: "Sign in",
-            signOutLabel: "Sign out",
-            location: "Location",
-            locationTip: "(Enter address, use locate button or click on map)",
-            attachment: "Attach image (optional)",
-            submit: "Submit",
-            optional: " (optional)",
-            addComment: "Add comment",
-            commentName: "Your name",
-            author: "by",
-            anonymous: "Anonymous",
-            currentLocation: "Current location:"
+        popup_Close: {  // Close button for help and social-media-sign-in popup box
+            closeButtonTooltip: "Close"
         },
-        prompts: {
-            confirmHTTPSRedirect: "Your browser is not CORS enabled. You need to redirect to HTTPS. Continue?"
+        social_media: {  // Social media sign-in/out
+            signIntoFacebookTooltip: "Sign in to Facebook",
+            signIntoGooglePlusTooltip: "Sign in to Google+",
+            signIntoTwitterTooltip: "Sign in to Twitter",
+            signOutOfFacebookTooltip: "Sign out of Facebook",
+            signOutOfGooglePlusTooltip: "Sign out of Google+",
+            signOutOfTwitterTooltip: "Sign out of Twitter"
         },
-        messages: {
-            yourContentSubmitted: "Your content has been submitted. Thank you.",  // Appears after content has been added to the map and successfully submitted to the server
-            noEditableLayer: "No editable layer is available for accepting data",
-            noConfiguration: "Unable to access application's configuration",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            incompleteForm: "Incomplete form",  // Appears when new-item form is missing required items
-            noLocation: "No location specified."  // Appears when a new item is submitted with specifying the submitter's location
+        dynamic_form: {  // General-purpose form; used to receive comment entry
+            optionalFormItemFlag: " (optional)",
+            requiredFormItemFlag: " (required)",
+            unsettableRequiredField: "A required field is neither initialized nor in the form",
+            countOfRemainingCharactersTooltip: "Characters remaining",
+            cancelButtonLabel: "Cancel",
+            submitButtonLabel: "Submit"
+        },
+        item_details: {  // Detailed information about an item and a list of its comments
+            likeButtonLabel: "Like",
+            likeButtonTooltip: "Vote for this",
+            commentButtonLabel: "Comment",
+            commentButtonTooltip: "Add a comment about this",
+            galleryButtonLabel: "Gallery",
+            galleryButtonTooltip: "See attached photos for this",
+            commentsListHeading: "Comments",
+            noCommentsPlaceholder: "No comments"
+        },
+        item_list: {  // List of feature layer items
+            linkToMapViewOptionLabel: "Link to map view",
+            likesForThisItemTooltip: "Votes for this"
         }
     }),
     "ar": 1,
@@ -81,5 +90,7 @@ define({
     "th": 1,
     "tr": 1,
     "vi": 1,
-    "zh-cn": 1
+    "zh-cn": 1,
+    "zh-hk": 1,
+    "zh-tw": 1
 });

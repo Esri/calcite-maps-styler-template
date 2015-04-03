@@ -1,201 +1,109 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Crowd Sourcing</title>
-    <meta charset="utf-8">
-    <!-- Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional. -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <!-- End Responsive -->
-    <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
-    <link rel="stylesheet" href="//jsdev.arcgis.com/3.13/dijit/themes/claro/claro.css">
-    <link rel="stylesheet"  href="//jsdev.arcgis.com/3.13/esri/css/esri.css">
-    <!-- Load any application specific styles -->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:500,300' rel='stylesheet' type='text/css'>
+  <title></title>
+  <meta charset="utf-8">
+  <!--
+   | Copyright 2015 Esri
+   |
+   | Licensed under the Apache License, Version 2.0 (the "License");
+   | you may not use this file except in compliance with the License.
+   | You may obtain a copy of the License at
+   |
+   |    http://www.apache.org/licenses/LICENSE-2.0
+   |
+   | Unless required by applicable law or agreed to in writing, software
+   | distributed under the License is distributed on an "AS IS" BASIS,
+   | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   | See the License for the specific language governing permissions and
+   | limitations under the License.
+  -->
+  <!-- Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <!-- End Responsive -->
+  <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
+  <link rel="stylesheet" href="//js.arcgis.com/3.13/dijit/themes/claro/claro.css">
+  <link rel="stylesheet" href="//js.arcgis.com/3.13/esri/css/esri.css">
+  <!-- Load any application specific styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/lib/modernizr.custom.62855.js"></script>
 </head>
-<body class="claro app-loading" style="overflow:hidden">
-    <!-- Loading Indicator -->
-    <div class="loading-indicator">
-        <div class="loading-message" id="loading_message"></div>
+
+<body class="claro app-loading">
+  <div class="loading-indicator">
+    <div class="loading-message" id="loading_message"></div>
+  </div>
+  <noscript>
+    <div class="noJavaScriptMessage">
+      <span>This site requires JavaScript.</span>
     </div>
-
-    <!-- Map -->
-    <div id="panelMap" dir="ltr"></div>
-
-    <!-- Restore hidden panel content -->
-    <div id="showPanel" class="showPanel highlightHover">
-        <img src="images/left.png"/>
+  </noscript>
+  <div id="contentDiv" class="fill transparent" data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="design: 'sidebar'">
+    <!-- The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. -->
+    <div id="mapDiv" dir="ltr" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
+        <div id="LocateButton"></div>
     </div>
-
-    <!-- Panel Content -->
-    <div id="panelContent">
-        <!-- Panel Pages -->
-        <div id="panelPages" class="shadow">
-
-            <!-- Page Main -->
-            <div id="pageMain" class="page rounded shadow" style="display: none;">
-                <div id="pageHeaderMain" class="pageHeader fg bg roundedTop ">
-                    <div id="pageTitle"></div>
-                    <div id="hidePanel" class="pageClose highlightHover">
-                        <img id="rightIcon" src="images/rightB.png"/>
-                    </div>
-                    <div id="pageButton">
-                        <div id="actionButton" class="highlightHover"><img id="addIcon" src="images/addB.png" style="margin:4px;vertical-align:middle"/></div>
-                    </div>
-                    <div class="pageTools">
-                        <!--div id="pageToolsSortLabel"></div>
-                        <div id="pageToolsSort"></div-->
-                        <div id="signFacebook" class="pageToolsFacebook pageToolsIcon highlightHover">
-                            <img id="facebookIcon" src="images/facebookB.png"/>
-                        </div>
-                        <div id="signTwitter" class="pageToolsTwitter pageToolsIcon highlightHover">
-                            <img id="twitterIcon" src="images/twitterB.png"/>
-                        </div>
-                        <div id="signInLabel" class="pageToolsSignIn"></div>
-                    </div>
-                </div>
-                <div id="pageList" class="pageBody">
-                    <div id="resultsList" class="resultsContent"></div>
-                </div>
-            </div>
-
-            <!-- Page New-->
-            <div id="pageNew" class="page rounded shadow box" style="display: none;">
-                <div id="pageHeaderNew" class="pageHeader fg bg roundedTop">
-                    <div id="pageInfoNew" class="pageInfo"></div>
-                    <div id="closeNew" class="pageClose highlightHover">
-                        <img id="closeIcon" src="images/closeB.png"/>
-                    </div>
-                    <div class="pageTools">
-                        <div id="toolFacebook" class="pageToolsFacebook pageToolsIcon highlightHover">
-                            <img id="facebook2Icon" src="images/facebookB.png"/>
-                        </div>
-                        <div id="toolTwitter" class="pageToolsTwitter pageToolsIcon highlightHover">
-                            <img id="twitter2Icon" src="images/twitterB.png"/>
-                        </div>
-                        <div id="signInLabelNew" class="pageToolsSignIn"></div>
-                    </div>
-                </div>
-                <div id="pageForm" class="pageBody">
-                    <div id="resultsContent" class="resultsContent">
-                        <div id="divLocation" class="formRow">
-                            <div id="locationPrompt"></div>
-                            <div id="locationTip"></div>
-                            <div id="divGeocoder"></div>
-                            <div id="btnLocate"></div>
-                        </div>
-                        <div id="submitButton" class="formRow">
-                            <div id="curAddress"></div>
-                            <button type="submit" id="btnSubmit"></button>
-                        </div>
-                        <div id="divNewForm">
-                            <!-- Dynamically-generated form items go in here -->
-                        </div>
-                        <div id="divAttachment" class="formRow">
-                            <div id="attachmentPrompt"></div>
-                            <form id="formAttachment">
-                                <input id="attachment" name="attachment" type="file" accept="image/*" capture="camera" />
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Page Old-->
-            <div id="pageOld" class="page rounded shadow box" style="display: none;">
-                <div id="pageHeaderOld" class="pageHeader fg bg roundedTop">
-                    <div id="pageInfoDetails"></div>
-                    <div id="closeOld" class="pageClose highlightHover">
-                        <img id="closeIcon2" src="images/closeB.png"/>
-                    </div>
-                    <div class="pageTools fg bg">
-                        <div id="recComments" class="recComments">
-                            <img id="commentIcon" src="images/commentB.png" class="pageToolsIcon highlightHover"/><span id="recCommentsCount"></span>
-                        </div>
-                        <div id="votes" class="votes">
-                            <img id="voteIcon" src="images/heartPlusB.png" class="pageToolsIcon highlightHover"/><span id="votesCount"></span>
-                        </div>
-                    </div>
-                </div>
-                <div id="pageComments" class="pageBody">
-                    <div id="commentsForm" class="resultsContent">
-                        <div id="existingComments"></div>
-                        <div id="divCommentForm">
-                            <!-- Dynamically-generated form items go in here -->
-                        </div>
-                        <div id="submitButton" class="formRow">
-                            <button type="submit" id="btnCommentSubmit"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <div id="sidebar" class="fill" data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="region:'right', design: 'headline'">
+      <div id="sidebarHeading" class="fill" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'"></div>
+      <div id="sidebarContent" class="fill" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
     </div>
+  </div>
+  <script type="text/javascript">
+    var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+    var dojoConfig = {
+      async: true,
+      // The locationPath logic below may look confusing but all its doing is
+      // enabling us to load the api from a CDN and load local modules from the correct location.
+      packages: [{
+        name: "application",
+        location: package_path + '/js'
+      }, {
+        name: "config",
+        location: package_path + '/config'
+      }, {
+        name: "arcgis_templates",
+        location: package_path + '/..'
+      }]
+    };
 
-    <!-- Panel Message -->
-    <!-- To support modal messages and for future support of multiple web maps for differnt crowd sourcing projects -->
-    <div id="panelMessage" >
-        <div id="panelMessageContent" class="rounded shadow">
-            <div id="panelMessageTitle" class="fg bg"></div>
-            <div id="panelMessageBody"></div>
-            <div id="closeMessage" class="pageClose highlightHover">
-                <img id="closeIcon3" src="images/closeB.png"/>
-            </div>
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-        var dojoConfig = {
-            async: true,
-            // The locationPath logic below may look confusing but all its doing is
-            // enabling us to load the api from a CDN and load local modules from the correct location.
-            packages: [{
-                name: "application",
-                location: package_path + '/js'
-            }, {
-                name: "config",
-                location: package_path + '/config'
-            }, {
-                name: "arcgis_templates",
-                location: package_path + '/..'
-            }]
-        };
-    </script>
-    <script type="text/javascript" src="//jsdev.arcgis.com/3.13/"></script>
-    <script type="text/javascript">
-        require([
-            "application/templateOptions",
+    // Have to handle a locale parameter before dojo is loaded
+    if (location.search.match(/locale=([\w\-]+)/)) {
+        dojoConfig.locale = RegExp.$1;
+    }
+  </script>
+  <script type="text/javascript" src="//js.arcgis.com/3.13/"></script>
+  <script type="text/javascript">
+    require([
+            "config/templateConfig",
             "application/template",
             "application/main"
-        ], function(
-            templateConfig,
-            Template,
-            Main
-        ){
-            // create the template. This will take care of all the logic required for template applications
-            var myTemplate = new Template(templateConfig);
-            // create my main application. Start placing your logic in the main.js file.
-            var myApp = new Main();
-            // start template
-            myTemplate.startup().then(function(config) {
-                // The config object contains the following properties: helper services, (optionally)
-                // i18n, appid, webmap and any custom values defined by the application.
-                // In this example we have one called theme.
-                console.log(config);
-                myApp.startup(config);
-            }, function(error) {
-                // something went wrong. Let's report it.
-                myApp.reportError(error);
-            });
-        });
-    </script>
+        ], function (
+      templateConfig,
+      Template,
+      Main
+    ) {
+      // create the template. This will take care of all the logic required for template applications
+      var myTemplate = new Template(templateConfig);
+      // create my main application. Start placing your logic in the main.js file.
+      var myApp = new Main();
+      // start template
+      myTemplate.startup().then(function (config) {
+        // The config object contains the following properties: helper services, (optionally)
+        // i18n, appid, webmap and any custom values defined by the application.
+        // In this example we have one called theme.
+        myApp.startup(config);
+      }, function (error) {
+        // something went wrong. Let's report it.
+        myApp.reportError(error);
+      });
+    });
+  </script>
 </body>
+
 </html>

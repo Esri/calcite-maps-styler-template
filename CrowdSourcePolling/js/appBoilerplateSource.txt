@@ -1,6 +1,6 @@
 Using repository https://github.com/Esri/application-boilerplate
-commit 40520589edf3f94a7b29b3d47b8c4bd7ea382f27
+commit 2ef9d90632f4d15373e34ecf5cff4fd12e78bdc4
 Author: Matt Driscoll <MDriscoll@esri.com>
-Date:   Wed Sep 24 10:12:39 2014 -0700
+Date:   Mon Jan 26 16:58:03 2015 -0800
 
-    Set default webmap. Remove 3.10 hash fix
+    update read

@@ -14,44 +14,51 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-    ({
-        map: {
-            error: "Impossible de créer la carte"
-        },
-        tooltips: {
-            location: "Utilisez votre position",
-            charactersRemaining: "Caractères restants",
-            returnToList: "Retour à la liste",
-            votes: "Nombre de votes; cliquez pour ajouter",
-            comments: "Nombre de commentaires; cliquez pour ajouter",
-            hidePanel: "Cacher ce panneau",
-            showPanel: "Montrer le panneau récapitulatif"
-        },
-        labels: {
-            sort: "Trier",
-            signInLabel: "Se connecter",
-            signOutLabel: "Se déconnecter",
-            location: "Location",
-            locationTip: "(Entrez l'adresse, utilisez le bouton localiser, ou cliquez sur la carte)",
-            attachment: "Attacher une image (facultatif)",
-            submit: "Soumettre",
-            optional: " (facultatif)",
-            addComment: "Ajouter un commentaire",
-            commentName: "Votre nom",
-            author: "par",
-            anonymous: "Anonyme",
-            currentLocation: "Emplacement actuel :"
-        },
-        prompts: {
-            confirmHTTPSRedirect: "Votre navigateur ne supporte pas CORS. Vous avez besoin de rediriger vers HTTPS. Continuer ?"
-        },
-        messages: {
-            yourContentSubmitted: "Votre contenu a été envoyé. Merci.",  // Appears after content has been added to the map and successfully submitted to the server
-            noEditableLayer: "Aucune couche modifiable est disponible pour accepter des données",
-            noConfiguration: "Impossible d\'accéder à la configuration de l\'application",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
-            incompleteForm: "Le formulaire est incomplète",  // Appears when new-item form is missing required items
-            noLocation: "Pas de lieu spécifié."  // Appears when a new item is submitted with specifying the submitter's location
-        }
-    })
-);
+define(({
+    map: {
+        error: "Impossible de créer la carte",
+        layerLoad: "Impossible de charger entièrement la carte",
+        missingItemsFeatureLayer: "La couche de questions est manquant",
+        missingCommentsTable: "Le tableau des commentaires est manquant"
+    },
+    sidebar_header: {
+        signInButton: "Se Connecter",
+        signInButtonTooltip: "Se connecter à un média social",
+        signOutButton: "Se déconnecter",
+        signOutButtonTooltip: "Se déconnecter cette application de votre média social",
+        helpButtonTooltip: "Pour en savoir plus sur cette application"
+    },
+    popup_Close: {
+        closeButtonTooltip: "Fermer"
+    },
+    social_media: {
+        signIntoFacebookTooltip: "Connectez-vous à Facebook",
+        signIntoGooglePlusTooltip: "Connectez-vous à Google+",
+        signIntoTwitterTooltip: "Connectez-vous à Twitter",
+        signOutOfFacebookTooltip: "Se déconnecter de Facebook",
+        signOutOfGooglePlusTooltip: "Se déconnecter de Google+",
+        signOutOfTwitterTooltip: "Se déconnecter de Twitter"
+    },
+    dynamic_form: {
+        optionalFormItemFlag: " (facultatif)",
+        requiredFormItemFlag: " (obligatoire)",
+        unsettableRequiredField: "Un champ obligatoire est ni dans le formulaire ni initialisé",
+        countOfRemainingCharactersTooltip: "Caractères restants",
+        cancelButtonLabel: "Annuler",
+        submitButtonLabel: "Envoyer"
+    },
+    item_details: {
+        likeButtonLabel: "Voter",
+        likeButtonTooltip: "Voter pour cet article",
+        commentButtonLabel: "Commenter",
+        commentButtonTooltip: "Ajouter un commentaire à propos de cet article",
+        galleryButtonLabel: "Voir la galerie",
+        galleryButtonTooltip: "Voir photos ci-jointes pour cet article",
+        commentsListHeading: "Commentaires",
+        noCommentsPlaceholder: "Il n'y a aucun commentaire"
+    },
+    item_list: {
+        linkToMapViewOptionLabel: "Lier les articles avec la carte",
+        likesForThisItemTooltip: "Votes pour cet article"
+    }
+}));
