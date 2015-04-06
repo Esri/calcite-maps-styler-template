@@ -778,7 +778,25 @@ img {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
-    border-radius: 5px; } }
+    border-radius: 5px; 
+  }
+
+    #panelLogo {
+      display:block !important;
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+      float: left;
+      line-height: 50px;
+      margin-left: 5px; 
+    }
+
+    #panelLogo img {
+      max-width: 50px;
+      max-height: 50px; 
+    }
+
+  }
 
 #panelTitle {
   height: 50px;
@@ -792,19 +810,12 @@ img {
   font-size: 25px; }
 
 .no-search #panelText {
-  display: block; }
+  display: block; 
+}
 
-#panelLogo {
-  width: 50px;
-  height: 50px;
-  overflow: hidden;
-  float: left;
-  line-height: 50px;
-  margin-left: 5px; }
-
-#panelLogo img {
-  max-width: 50px;
-  max-height: 50px; }
+#panelLogo{
+  display:none;
+}
 
 #panelText {
   float: left;
