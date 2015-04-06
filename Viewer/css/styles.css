@@ -661,7 +661,8 @@ img {
   font-size: 14px;
   color: #ffffff;
   line-height: 20px;
-  overflow: hidden; }
+  overflow: hidden; 
+}
 
 .pageHeaderImg {
   position: absolute;
@@ -768,7 +769,8 @@ img {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
-  border-radius: 0; }
+  border-radius: 0; 
+}
 
 @media only screen and (min-width: 760px) {
   #panelTop {
@@ -807,7 +809,7 @@ img {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   font-family: "Helvetica Neue", "Arial", sans-serif;
   font-weight: normal;
-  font-size: 25px; }
+}
 
 .no-search #panelText {
   display: block; 
@@ -818,33 +820,54 @@ img {
 }
 
 #panelText {
+  z-index: 40;
+  display: none;
   float: left;
   max-width: 196px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   margin-left: 5px;
+  height:50px;
+  line-height: 50px;
+}
+#title{
+  height: 30px;
+  line-height: 30px;
+  font-size: 1.5em;   
+}
+#subtitle{
+  height: 30px;
+  line-height: 20px;
+  font-size: 0.9em;  
+}
+#title.nosubtitle{
   height: 50px;
   line-height: 50px;
-  display: none;
-  font-size: 0.9em; }
+}
 
 @media only screen and (min-width: 720px) {
   #panelText {
     display: block;
-    max-width: 300px; } }
+    max-width: 300px; 
+  } 
+}
 
 @media only screen and (min-width: 800px) {
   #panelText {
-    max-width: 400px; } }
+    max-width: 400px; 
+  } 
+
+}
 
 #panelText.nosearch {
-  display: block; }
-
+  display: block; 
+}
 #panelSearch {
   float: left;
   margin: 10px 0 10px 20px;
-  height: 30px; }
+  height: 30px; 
+}
 
 @media only screen and (min-width: 720px) {
   #panelSearch {

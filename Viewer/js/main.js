@@ -866,7 +866,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             geocoder.locator = new Locator(geocoder.url);
 
                             geocoder.singleLineFieldName = "SingleLine";
-
+                            geocoder.placeholder = "Select a location";
                             geocoder.name = geocoder.name || "Esri World Geocoder";
 
                             if (this.config.searchExtent) {
@@ -1078,25 +1078,23 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 //Set the application title
                 this.map = response.map;
                 //Set the title - use the config value if provided.
-                //var title = (this.config.title === null) ? response.itemInfo.item.title : this.config.title;
                 var title;
                 if (this.config.title === null || this.config.title === "") {
                     title = response.itemInfo.item.title;
                 } else {
                     title = this.config.title;
                 }
-
-                //if title is short make title area smaller
-                if (title && title.length && title.length === 0) {
-                    domClass.add("panelTop", "smallerTitle");
-                } else if (title && title.length && title.length <= 20 && !this.config.logo) {
-                    domClass.add("panelTop", "smallerTitle");
-                }
-
-
+                
                 this.config.title = title;
                 document.title = title;
-                dom.byId("panelText").innerHTML = title;
+                dom.byId("title").innerHTML = title;
+
+                //Set subtitle if provided 
+                if(this.config.subtitle){
+                    dom.byId("subtitle").innerHTML = this.config.subtitle;
+                }else{
+                    domClass.add("title","nosubtitle" )
+                }
                 this.config.response = response;
                 window.config = this.config;
 
