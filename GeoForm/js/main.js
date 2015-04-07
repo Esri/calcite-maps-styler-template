@@ -20,10 +20,12 @@ define([
     "dojo/dom-construct",
     "dojo/dom-attr",
     "esri/dijit/LocateButton",
-    "esri/dijit/Geocoder",
+    "esri/dijit/Search",
     "dojo/text!views/modal.html",
     "dojo/text!views/user.html",
     "dojo/i18n!application/nls/resources",
+    "esri/tasks/locator",
+    "esri/layers/FeatureLayer",
     "esri/tasks/ProjectParameters",
     "esri/geometry/webMercatorUtils",
     "esri/geometry/Point",
@@ -60,10 +62,10 @@ define([
     domConstruct,
     domAttr,
     LocateButton,
-    Geocoder,
+    Search,
     modalTemplate,
     userTemplate,
-    nls, ProjectParameters, webMercatorUtils, Point, GraphicsLayer, ShareModal, localStorageHelper, Graphic, PictureMarkerSymbol, editToolbar, InfoTemplate, Popup, theme, pushpins, usng) {
+    nls, Locator, FeatureLayer, ProjectParameters, webMercatorUtils, Point, GraphicsLayer, ShareModal, localStorageHelper, Graphic, PictureMarkerSymbol, editToolbar, InfoTemplate, Popup, theme, pushpins, usng) {
     return declare([], {
         arrPendingAttachments: [],
         objFailedAttachments: {},
@@ -82,97 +84,7 @@ define([
         isHumanEntry: null,
         currentLocation:null,
 
-        _createGeocoderOptions: function () {
-            //Check for multiple geocoder support and setup options for geocoder widget.
-            var hasEsri = false,
-                geocoders = lang.clone(this.config.helperServices.geocode);
-            // each geocoder
-            array.forEach(geocoders, lang.hitch(this, function (geocoder) {
-                // if its the esri world geocoder
-                if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
-                    hasEsri = true;
-                    geocoder.name = "Esri World Geocoder";
-                    geocoder.outFields = "Match_addr, stAddr, City";
-                    geocoder.singleLineFieldName = "SingleLine";
-                    geocoder.esri = geocoder.placefinding = true;
-                    geocoder.placeholder = nls.user.find;
-                }
-            }));
-            //only use geocoders with a singleLineFieldName that allow placefinding
-            geocoders = array.filter(geocoders, function (geocoder) {
-                return (esriLang.isDefined(geocoder.singleLineFieldName) && esriLang.isDefined(geocoder.placefinding) && geocoder.placefinding);
-            });
-            var esriIdx;
-            // if we have the esri Geocoder
-            if (hasEsri) {
-                for (var i = 0; i < geocoders.length; i++) {
-                    if (esriLang.isDefined(geocoders[i].esri) && geocoders[i].esri === true) {
-                        esriIdx = i;
-                        break;
-                    }
-                }
-            }
-            // options object
-            var options = {
-                map: this.map,
-                autoComplete: hasEsri
-            };
-            //If there is a valid search id and field defined add the feature layer to the geocoder array
-            var searchLayers = [];
-            if (this.config.itemInfo.itemData && this.config.itemInfo.itemData.applicationProperties && this.config.itemInfo.itemData.applicationProperties.viewing && this.config.itemInfo.itemData.applicationProperties.viewing.search) {
-                var searchOptions = this.config.itemInfo.itemData.applicationProperties.viewing.search;
-                // add layers from webmap to geocoder widget
-                array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
-                    var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
-                    var layer = null;
-                    array.some(operationalLayers, function (opLayer) {
-                        if (opLayer.id === searchLayer.id) {
-                            layer = opLayer;
-                            return true;
-                        }
-                    });
-                    var url = layer.url;
-                    var field = searchLayer.field.name;
-                    var name = layer.title;
-                    // if its a sublayer
-                    if (esriLang.isDefined(searchLayer.subLayer)) {
-                        url = url + "/" + searchLayer.subLayer;
-                        array.some(layer.layerObject.layerInfos, function (info) {
-                            if (info.id == searchLayer.subLayer) {
-                                name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
-                                return true;
-                            }
-
-                        });
-                    }
-                    // create layer object
-                    searchLayers.push({
-                        "name": name,
-                        "url": url,
-                        "field": field,
-                        "exactMatch": (searchLayer.field.exactMatch || false),
-                        "placeholder": searchOptions.hintText,
-                        "outFields": "*",
-                        "type": "query",
-                        "layerId": searchLayer.id,
-                        "subLayerId": parseInt(searchLayer.subLayer) || null
-                    });
-                }));
-            }
-            // if we have esri geocoder and its first
-            if (hasEsri && esriIdx === 0) { // Esri geocoder is primary
-                options.arcgisGeocoder = false;
-                if (geocoders.length > 0) {
-                    options.geocoders = searchLayers.length ? searchLayers.concat(geocoders) : geocoders;
-                } else if (searchLayers.length > 0) {
-                    options.geocoders = searchLayers;
-                }
-            } else { // Esri geocoder is not primary
-                options.arcgisGeocoder = false;
-                options.geocoders = searchLayers.length ? searchLayers.concat(geocoders) : geocoders;
-            }
-            return options;
-        },
+        
         startup: function () {
             var config = arguments[0];
             var isPreview = arguments[2];
@@ -274,7 +186,7 @@ define([
             var erroneousFields = [];
             array.forEach(query(".geoFormQuestionare"), lang.hitch(this, function (currentField) {
                 if (domClass.contains(currentField, "hasAttachment")) {
-                    if (domClass.contains(currentField, "mandatory") && query(".alert-dismissable", dom.byId("fileListRow")).length === 0) {
+                    if (domClass.contains(currentField, "mandatory") && query(".alert-dismissable", dom.byId("divColumn2")).length === 0) {
                         this._validateUserInput(nls.user.requiredFields, currentField, query(".hideFileInputUI")[0].value, true);
                         erroneousFields.push(currentField);
                     }
@@ -413,7 +325,7 @@ define([
             }
         },
         // set symbol for submitting location
-        _setSymbol: function (point) {
+        _setSymbol: function (point, isMapClicked) {
             if (this.map.infoWindow) {
                 var symbolUrl, pictureMarkerSymbol, graphic, it;
                 // use appropriate symbol pin image
@@ -433,7 +345,7 @@ define([
                         // add to graphics layer
                         this._gl.add(graphic);
                         // get current features
-                        var features = this.map.infoWindow.features || [];
+                        var features = isMapClicked ? this.map.infoWindow.features : [];
                         // remove existing geoform graphic(s)
                         var filtered = array.filter(features, function (item) {
                             return !item._geoformGraphic;
@@ -637,8 +549,7 @@ define([
             }));
             // if form has attachments
             if (this._formLayer.hasAttachments && this.config.attachmentInfo[this._formLayer.id] && this.config.attachmentInfo[this._formLayer.id].enableAttachments) {
-                var requireField = null, helpBlock, labelHTML = "", divRowContainer, divRow, divColumn1, fileBtnSpan, fileInput, fileChange,
-                    divColumn2, fileListContainer, fileListRow, fileListColumn, fileForm;
+                var requireField = null, helpBlock, labelHTML = "", divRow, divColumn1, fileBtnSpan, fileInput, fileChange, divColumn2, fileForm;
                 userFormNode = dom.byId('userForm');
                 formContent = domConstruct.create("div", {
                     className: "form-group hasAttachment geoFormQuestionare"
@@ -663,19 +574,15 @@ define([
                 if (requireField && labelContent) {
                     domConstruct.place(requireField, labelContent, "last");
                 }
-                divRowContainer = domConstruct.create("div", {
-                    "class": "container",
-                    "style": "width:inherit;"
-                }, formContent);
                 divRow = domConstruct.create("div", {
                     "class": "row"
-                }, divRowContainer);
+                }, formContent);
                 divColumn1 = domConstruct.create("div", {
-                    "class": "col-sm-2"
+                    "class": "col-sm-2 form-group"
                 }, divRow);
                 fileBtnSpan = domConstruct.create("span", {
-                    "class": "btn-file",
-                    "innerHTML": "Select File"
+                    "class": "btn btn-default btn-file",
+                    "innerHTML": nls.user.btnSelectFileText
                 }, divColumn1);
                 fileForm = domConstruct.create("form", { "class": "selectFileForm" }, fileBtnSpan);
                 fileInput = domConstruct.create("input", {
@@ -700,12 +607,9 @@ define([
                 }
                 //prepare domnode to show the selected file list
                 divColumn2 = domConstruct.create("div", {
-                    "class": "col-sm-10"
+                    "class": "col-sm-10",
+                    "id": "divColumn2"
                 }, divRow);
-                domStyle.set(divColumn2, "padding-left", "0px");
-                fileListContainer = domConstruct.create("div", { "class": "container", "style": "width:inherit;" }, divColumn2);
-                fileListRow = domConstruct.create("div", { "class": "row", "id": "fileListRow" }, fileListContainer);
-                fileListColumn = domConstruct.create("div", { "class": "col-sm-12", "id": "fileListColumn" }, fileListRow);
             }
             this._verifyHumanEntry();
         },
@@ -742,9 +646,9 @@ define([
             //Preparing the domNode for selected file
             alertHtml = "<div class=\"alert alert-dismissable alert-success\">";
             alertHtml += "<button type=\"button\" class=\"close\" data-dismiss=\"alert\">" + "&times" + "</button>";
-            alertHtml += "<strong>" + fileDetails.value.split('\\').pop() + "<br/>" + fileSize + "</strong>";
+            alertHtml += "<strong class=\"fileInputUI\">" + fileDetails.value.split('\\').pop() + "<br/>" + fileSize + "</strong>";
             alertHtml += "</div>";
-            alertHtml = domConstruct.place(alertHtml, dom.byId("fileListColumn"), "last");
+            alertHtml = domConstruct.place(alertHtml, dom.byId("divColumn2"), "last");
             domConstruct.place(fileInput.parentNode, alertHtml, "last");
             //binding event to perform activities on removal of a selected file from the file list
             on(query(".close", alertHtml)[0], "click", function () {
@@ -781,7 +685,7 @@ define([
                 }));
                 return true;
             }
-            if (query(".alert-dismissable", dom.byId("fileListRow")).length > 19) {
+            if (query(".alert-dismissable", dom.byId("divColumn2")).length > 19) {
                 $(fileBtnSpan).popover({ content: nls.user.exceededFileCountError, container: 'body', trigger: 'manual', placement: 'bottom' });
                 $(fileBtnSpan).popover('show');
                 setTimeout(function () {
@@ -831,7 +735,7 @@ define([
                 fieldLabelText = currentField.name;
             }
             fieldname = currentField.name;
-            if (currentField.displayType !== "checkbox") {
+            if (currentField.displayType !== "checkbox" || currentField.domain) {
                 labelContent = domConstruct.create("label", {
                     "for": fieldname,
                     className: "control-label",
@@ -1282,7 +1186,10 @@ define([
                     if (!currentInput.isTypeDependent) {
                         return true;
                     }
-                    this._resetSubTypeFields(currentInput);
+                    if (dom.byId(currentInput.name)) {
+                        var domToDestroy = this._getFormElement(dom.byId(currentInput.name));
+                        domConstruct.destroy(domToDestroy);
+                    }
                     this._resizeMap();
                 }));
                 return true;
@@ -1357,14 +1264,12 @@ define([
                 }
                 //code to be executed when the input is already present
                 if (dom.byId(field.name)) {
-                    this._resetSubTypeFields(field);
+                    var domToDestroy;
+                    domToDestroy = this._getFormElement(dom.byId(field.name));
+                    domConstruct.destroy(domToDestroy);
                 }
                 this._createFormElements(field, index, referenceNode);
-                if (field.type == "esriFieldTypeDate" || field.displayType == "url" || field.displayType == "email" || (field.type == "esriFieldTypeSingle" || field.type == "esriFieldTypeDouble" || field.type == "esriFieldTypeSmallInteger" || field.type == "esriFieldTypeInteger") && (field.domain && field.domain.type && field.domain.type === "range")) {
-                    referenceNode = dom.byId(field.name).parentNode.parentNode;
-                } else {
-                    referenceNode = dom.byId(field.name).parentNode;
-                }
+                referenceNode = this._getFormElement(dom.byId(field.name));
             }));
             this._resizeMap();
         },
@@ -1556,10 +1461,12 @@ define([
             domClass.add(popup.domNode, 'light');
             var mapDiv = dom.byId('mapDiv');
             // fullscreen button HTML
-            var fsHTML = '';
-            fsHTML = '<div class="basemapToggle-button"><div class="basemapToggle-button" id="BasemapToggle"></div></div>';
-            fsHTML += '</div>';
-            mapDiv.innerHTML = fsHTML;
+            if (this.config.enableBasemapToggle) {
+                var fsHTML = '';
+                fsHTML = '<div class="basemapToggle-button"><div class="basemapToggle-button" id="BasemapToggle"></div></div>';
+                fsHTML += '</div>';
+                mapDiv.innerHTML = fsHTML;
+            }
             arcgisUtils.createMap(itemInfo, mapDiv, {
                 mapOptions: {
                     infoWindow: popup
@@ -1578,22 +1485,24 @@ define([
                 this._createGeoformSections();
                 this.map = response.map;
                 // Disable scroll zoom handler
-		var toggle = new basemapToggle({
-                    map: this.map,
-                    basemap: this.config.defaultBasemap,
-                    defaultBasemap: this.config.nextBasemap
-                }, "BasemapToggle");
-                toggle.startup();
+                if (this.config.enableBasemapToggle) {
+                    var toggle = new basemapToggle({
+                        map: this.map,
+                        basemap: this.config.defaultBasemap,
+                        defaultBasemap: this.config.nextBasemap
+                    }, "BasemapToggle");
+                    toggle.startup();
 
-                var layers = this.map.getLayersVisibleAtScale(this.map.getScale());
-                on.once(this.map, 'basemap-change', lang.hitch(this, function () {
-                    for (var i = 0; i < layers.length; i++) {
-                        if (layers[i]._basemapGalleryLayerType) {
-                            var layer = this.map.getLayer(layers[i].id);
-                            this.map.removeLayer(layer);
+                    var layers = this.map.getLayersVisibleAtScale(this.map.getScale());
+                    on.once(this.map, 'basemap-change', lang.hitch(this, function () {
+                        for (var i = 0; i < layers.length; i++) {
+                            if (layers[i]._basemapGalleryLayerType) {
+                                var layer = this.map.getLayer(layers[i].id);
+                                this.map.removeLayer(layer);
+                            }
                         }
-                    }
-                }));
+                    }));
+                }
                 this.map.disableScrollWheelZoom();
                 this.defaultExtent = this.map.extent;
                 // webmap defaults
@@ -1692,7 +1601,7 @@ define([
                     this._removeErrorNode(dom.byId("select_location").nextSibling);
                     this._clearSubmissionGraphic();
                     this.addressGeometry = evt.mapPoint;
-                    this._setSymbol(this.addressGeometry);
+                    this._setSymbol(this.addressGeometry, true);
                     // get coords string
                     var coords = this._calculateLatLong(evt.mapPoint);
                     domAttr.set(dom.byId("coordinatesValue"), "innerHTML", coords);
@@ -1851,6 +1760,14 @@ define([
                         this._submitForm();
                     }));
                 }
+                //disable viewSubmissionsButton
+                if (this.config.disableViewer) {
+                    domAttr.set(dom.byId("viewSubmissionsButton"), 'disabled', 'disabled');
+                }
+                //Open Viewer Mode
+                on(dom.byId("viewSubmissionsButton"), "click", lang.hitch(this, function () {
+                    this._viewSubmissions();
+                }));
                 // set location options
                 this._populateLocationsOptions();
                 // resize map
@@ -1874,6 +1791,16 @@ define([
                 }
             }), this.reportError);
         },
+
+        //this function opens viewer page
+        _viewSubmissions: function(){
+                var urlString = "viewer.html";
+                if (this.config.appid) {
+                    urlString += "?appid=" + this.config.appid;
+                }
+                window.location.assign(urlString);
+        },
+
         //this function ensures that the layer is either loaded or throws an error in console naming the layer that did not load successfully
         _loadNewLayer: function (webmapLayers, key) {
             var layerLoadedEvent, errorLoadEvent, def, layer;
@@ -1963,8 +1890,8 @@ define([
                     this.currentLocation.locate();
                     break;
                 case "search":
-                    dom.byId('searchInput').value = value;
-                    this._searchGeocoder();
+                    this.geocodeAddress.set("value", value);
+                    this.geocodeAddress.search();
                     break;
                 case "latlon":
                     var latlonValue = value.split(",");
@@ -2180,121 +2107,116 @@ define([
                 $('#geolocate_button').button('reset');
             }));
             // event for clicking node
-            on(dom.byId('geolocate_button'), 'click', lang.hitch(this, function () {
+            on(dom.byId('geolocate_button'), 'click', lang.hitch(this, function (evt) {
                 // remove graphic
                 this._clearSubmissionGraphic();
                 // set loading button
                 $('#geolocate_button').button('loading');
                 // widget locate
                 this.currentLocation.locate();
+                evt.stopPropagation();
+                evt.preventDefault();
             }));
         },
-        // geocoder search submitted
-        _searchGeocoder: function () {
-            // remove error
-            var errorMessageNode = dom.byId('errorMessageDiv');
-            domConstruct.empty(errorMessageNode);
-            // remove graphic
-            this._clearSubmissionGraphic();
-            // get nodes and value
-            var value = dom.byId('searchInput').value;
-            var node = dom.byId('geocoder_spinner');
-            if (value) {
-                // remove searching class
-                domClass.remove(node, 'glyphicon glyphicon-search');
-                // add spinner
-                domClass.add(node, 'fa fa-spinner fa-spin');
-                // find location
-                this.geocodeAddress.find(value).then(lang.hitch(this, function (evt) {
-                    // switch classes
-                    domClass.remove(node, 'fa fa-spinner fa-spin');
-                    domClass.add(node, 'glyphicon glyphicon-search');
-                    // if results, select
-                    if (evt.results && evt.results.length) {
-                        this.geocodeAddress.select(evt.results[0]);
-                        var coords = this._calculateLatLong(evt.results[0].feature.geometry);
-                        domAttr.set(dom.byId("coordinatesValue"), "innerHTML", coords);
-                        //this will remove the error message if it exists
-                        this._removeErrorNode(dom.byId("select_location").nextSibling);
-                    } else {
-                        alert(nls.user.locationNotFound);
-                    }
-                }));
+        
+      _templateSearchOptions: function(w){
+        var sources = [];
+        var searchLayers;
+        //setup geocoders defined in common config 
+        if (this.config.helperServices.geocode) {
+          var geocoders = lang.clone(this.config.helperServices.geocode);
+          array.forEach(geocoders, lang.hitch(this, function(geocoder) {
+            if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+              // use the default esri locator from the search widget
+              geocoder = lang.clone(w.sources[0]);
+              geocoder.hasEsri = true;
+              sources.push(geocoder);
+            } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
+              //Add geocoders with a singleLineFieldName defined 
+              geocoder.locator = new Locator(geocoder.url);
+              sources.push(geocoder);
             }
-        },
-        // create menu items for multiple geocoders
-        _geocoderMenuItems: function () {
-            var html = '';
-            for (var i = 0; i < this.geocodeAddress._geocoders.length; i++) {
-                var gc = this.geocodeAddress._geocoders[i];
-                var active = '';
-                if (i === this.geocodeAddress.activeGeocoderIndex) {
-                    active = 'active';
-                }
-                html += '<li class="' + active + '"><a data-index="' + i + '" href="#">' + gc.name + '</a></li>';
+          }));
+        }
+        //Add search layers defined on the web map item 
+        if (this.config.itemInfo.itemData && this.config.itemInfo.itemData.applicationProperties && this.config.itemInfo.itemData.applicationProperties.viewing && this.config.itemInfo.itemData.applicationProperties.viewing.search) {
+          var searchOptions = this.config.itemInfo.itemData.applicationProperties.viewing.search;
+          array.forEach(searchOptions.layers, lang.hitch(this, function(searchLayer) {
+            //we do this so we can get the title specified in the item
+            var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
+            var layer = null;
+            array.some(operationalLayers, function(opLayer) {
+              if (opLayer.id === searchLayer.id) {
+                layer = opLayer;
+                return true;
+              }
+            });
+            if (layer && layer.url) {
+              var source = {};
+              var url = layer.url;
+              if (esriLang.isDefined(searchLayer.subLayer)) {
+                url = url + "/" + searchLayer.subLayer;
+                array.some(layer.layerObject.layerInfos, function(info) {
+                  if (info.id == searchLayer.subLayer) {
+                    return true;
+                  }
+                });
+              }
+              source.featureLayer = new FeatureLayer(url);
+              source.name = layer.title || layer.name;
+              source.exactMatch = searchLayer.field.exactMatch;
+              source.searchFields = [searchLayer.field.name];
+              source.placeholder = searchOptions.hintText;
+              sources.push(source);
+              searchLayers = true;
             }
-            var node = dom.byId('geocoder_menu');
-            node.innerHTML = html;
-        },
+          }));
+        }
+        //set the first non esri layer as active if search layers are defined. 
+        var activeIndex = 0;
+        if (searchLayers) {
+          array.some(sources, function(s, index) {
+            if (!s.hasEsri) {
+              activeIndex = index;
+              return true;
+            }
+          });
+        }
+        // get back the sources and active index
+        return {
+          sources: sources,
+          activeSourceIndex: activeIndex
+        };
+      },
+      
         // geocoder with bootstrap
         _createGeocoderButton: function () {
             // create options
-            var options = this._createGeocoderOptions();
+            var options = {
+              enableHighlight: false,
+              enableInfoWindow: false,
+              map: this.map
+            };
             // create geocoder
-            this.geocodeAddress = new Geocoder(options, domConstruct.create('div'));
+            this.geocodeAddress = new Search(options, "search-widget");
+            var templateOptions = this._templateSearchOptions(this.geocodeAddress);
+            this.geocodeAddress.set("sources", templateOptions.sources);
+            this.geocodeAddress.set("activeSourceIndex", templateOptions.activeSourceIndex);
             this.geocodeAddress.startup();
-            // if we need a locator switch menu
-            if (this.geocodeAddress._geocoders && this.geocodeAddress._geocoders.length > 1) {
-                var html = '';
-                html += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">';
-                html += '<span class="caret"></span>';
-                html += '<span class="sr-only">' + nls.user.toggleDropdown + '</span>';
-                html += '</button>';
-                html += '<ul class="dropdown-menu" role="menu" id="geocoder_menu">';
-                html += '</ul>';
-                var node = dom.byId('geocoder_buttons');
-                domConstruct.place(html, node, 'last');
-                this._geocoderMenuItems();
-            }
-            // search input
-            var searchInputNode = dom.byId('searchInput');
-            // search placeholder
-            domAttr.set(searchInputNode, 'placeholder', this.geocodeAddress.activeGeocoder.placeholder);
-            // input keyup
-            on(searchInputNode, 'keyup', lang.hitch(this, function (evt) {
-                var keyCode = evt.charCode || evt.keyCode;
-                if (keyCode === 13) {
-                    this._searchGeocoder();
-                }
-            }));
-            // submit button
-            on(dom.byId('searchSubmit'), 'click', lang.hitch(this, function () {
-                this._searchGeocoder();
-            }));
             // on find
-            on(this.geocodeAddress, "select", lang.hitch(this, function (evt) {
+            on(this.geocodeAddress, "select-result", lang.hitch(this, function (evt) {
+                var coords = this._calculateLatLong(evt.result.feature.geometry);
+                domAttr.set(dom.byId("coordinatesValue"), "innerHTML", coords);
+                //this will remove the error message if it exists
+                this._removeErrorNode(dom.byId("select_location").nextSibling);
                 this.addressGeometry = evt.result.feature.geometry;
                 this._setSymbol(evt.result.feature.geometry);
                 this.map.centerAt(evt.result.feature.geometry).then(lang.hitch(this, function () {
                     this._resizeMap();
                 }));
             }));
-            // geocoder menu select event
-            on(this.geocodeAddress, "geocoder-select", lang.hitch(this, function () {
-                domAttr.set(searchInputNode, 'placeholder', this.geocodeAddress.activeGeocoder.placeholder);
-                this._geocoderMenuItems();
-            }));
-            // geocoder menu
-            var gcMenu = dom.byId('geocoder_menu');
-            if (gcMenu) {
-                // menu item clicked
-                on(gcMenu, 'a:click', lang.hitch(this, function (evt) {
-                    var idx = parseInt(domAttr.get(evt.target, 'data-index'), 10);
-                    this.geocodeAddress.set('activeGeocoderIndex', idx);
-                    evt.preventDefault();
-                }));
-            }
         },
+
         // submit form with applyedits
         _addFeatureToLayer: function () {
             var userFormNode, featureData, key, value;
@@ -2569,6 +2491,9 @@ define([
             this._ShareModal.startup();
             // show modal
             $("#myModal").modal('show');
+            on(dom.byId("viewSubmissionsOption"), "click", lang.hitch(this, function () {
+                this._viewSubmissions();
+            }));
         },
         // error modal content
         _openErrorModal: function () {
@@ -2586,12 +2511,15 @@ define([
         _openFileUploadStatusModal: function (fileList) {
             var fileUploadStatusMsgContainer, fileUploadStatusMsgUl, fileUploadStatusMsgLi, fileUploadStatusMsgBadge;
             domConstruct.empty(query(".modal-body")[0]);
+            if (dom.byId("viewSubmissionsOption")) {
+                domConstruct.destroy(query(".modal-footer")[0].children[1]);
+            }
             domAttr.set(dom.byId('myModalLabel'), "innerHTML", nls.user.fileUploadStatus);
             fileUploadStatusMsgContainer = domConstruct.create("div", { "id": "fileUploadStatusMsgContainer" }, query(".modal-body")[0]);
             fileUploadStatusMsgUl = domConstruct.create("ul", { "class": "list-group" }, fileUploadStatusMsgContainer);
 
             for (var i = 0; i < fileList.length; i++) {
-                fileUploadStatusMsgLi = domConstruct.create("li", { "class": "message alert alert-info" }, fileUploadStatusMsgUl);
+                fileUploadStatusMsgLi = domConstruct.create("li", { "class": "message alert alert-info fileInputUI" }, fileUploadStatusMsgUl);
                 fileUploadStatusMsgBadge = domConstruct.create("span", { "class": "right file-upload-status-badge glyphicon glyphicon-upload", "innerHTML": nls.user.uploadingBadge, "id": "badge" + i }, fileUploadStatusMsgLi);
                 fileUploadStatusMsgBadge = domConstruct.create("span", { "class": "right hide attachment-error-message", "innerHTML": nls.user.errorBadge }, fileUploadStatusMsgLi);
                 fileUploadStatusMsgLi.innerHTML += fileList[i].value.split('\\').pop();
@@ -2610,6 +2538,9 @@ define([
             var iconContainer, group;
             // empty modal node
             domConstruct.empty(query(".modal-body")[0]);
+            if (dom.byId("viewSubmissionsOption")) {
+                domConstruct.destroy(query(".modal-footer")[0].children[1]);
+            }
             // set modal title
             domAttr.set(dom.byId('myModalLabel'), "innerHTML", nls.user.shareUserTitleMessage);
             // create nodes for modal
@@ -2663,6 +2594,14 @@ define([
                 className: "form-control",
                 id: "shareMapUrlText"
             }, group);
+            domConstruct.create("button", {
+                className: "btn btn-default pull-left",
+                id: "viewSubmissionsOption",
+                innerHTML: nls.user.btnViewSubmissions
+            }, query(".modal-footer")[0]);
+            if (this.config.disableViewer) {
+                domAttr.set(dom.byId("viewSubmissionsOption"), 'disabled', 'disabled');
+            }
         },
         // display error message
         _showErrorMessageDiv: function (errorMessage, errorMessageNode) {
@@ -2825,19 +2764,26 @@ define([
                 };
             }
             for (var key in this.config.locationSearchOptions) {
-                if (key === "enableMyLocation" && !this.config.locationSearchOptions[key]) {
-                    domStyle.set(dom.byId("geolocate_button"), 'display', 'none');
-                }
                 if (this.config.locationSearchOptions.hasOwnProperty(key) && key !== "enableMyLocation") {
-                    if (!this.config.locationSearchOptions[key]) {
+                    if (!this.config.locationSearchOptions[key] && key !== "enableSearch") {
                         domStyle.set(locationTabs[count], 'display', 'none');
-                    } else {
+                    }
+                    else if (key === "enableSearch" && !this.config.locationSearchOptions[key] && !this.config.locationSearchOptions.enableMyLocation) {
+                        domStyle.set(locationTabs[count], 'display', 'none');
+                    }
+                    else {
                         //resize the map to set the correct info-window anchor
                         on(locationTabs[count], 'click', lang.hitch(this, this._resizeMap));
                         total++;
                     }
                     count++;
                 }
+            }
+            if (!this.config.locationSearchOptions.enableMyLocation) {
+                domStyle.set(dom.byId("geolocate_button"), 'display', 'none');
+            }
+            if (!this.config.locationSearchOptions.enableSearch) {
+                domStyle.set(dom.byId("search-widget"), 'display', 'none');
             }
             //add 'active' class to first tab and its content
             array.some(locationTabs, lang.hitch(this, function (tab, idx) {
@@ -2887,12 +2833,12 @@ define([
             }, inputIconGroupAddOn);
             return inputIconGroupContainer;
         },
-        _resetSubTypeFields: function (currentInput) {
-            if (currentInput.type == "esriFieldTypeDate" || currentInput.displayType == "url" || currentInput.displayType == "email" || (currentInput.type == "esriFieldTypeSmallFloat" || currentInput.type == "esriFieldTypeSmallInteger" || currentInput.type == "esriFieldTypeDouble" || currentInput.type == "esriFieldTypeInteger") && (currentInput.domain && currentInput.domain.type && currentInput.domain.type === "range")) {
-                domConstruct.destroy(dom.byId(currentInput.name).parentNode.parentNode);
-            } else {
-                domConstruct.destroy(dom.byId(currentInput.name).parentNode);
+        _getFormElement: function (currentDom) {
+            var formElement = currentDom;
+            while (!domClass.contains(formElement, "geoFormQuestionare")) {
+                formElement = formElement.parentNode;
             }
+            return formElement;
         },
 
         _createDateField: function (parentNode, isRangeField, fieldname, currentField) {

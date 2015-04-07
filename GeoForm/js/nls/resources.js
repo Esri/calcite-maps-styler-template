@@ -41,6 +41,7 @@ define({
       }
     },
     user: {
+      all: "All",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -119,6 +120,7 @@ define({
       fileTooLargeError: "File too large to attach",
       exceededFileCountError: "Exceeded maximum no. of attachments allowed",
       selectFileTitle: "Select a file",
+      btnSelectFileText: "Select File",
       btnViewSubmissions: "View Submissions",
       dateFormat: "MM/DD/YYYY h:mm a"
     },
@@ -149,6 +151,8 @@ define({
       layerTabTitleText: "Select Editable Layer",
       selectLayerLabelText: "Layer",
       selectLayerDefaultOptionText: "Select Layer",
+      enableBasemapToggle: "Show Basemap Toggle",
+      enableBasemapToggleDescription: "You can configure the GeoForm to Show/Hide the Basemap Toggle",
       defaultBasemap: "Basemap Toggle",
       secondaryBasemap: "Default Basemap",
       detailsTabTitleText: "Form Details",
@@ -231,7 +235,7 @@ define({
       allLayerSelectOptionText: "All",
       disableViewer: "Disable Viewer",
       disableViewerDescription: "You can configure the GeoForm to disable/enable Viewer",
-      displayFieldHintText: "Selected display field will be shown in viewerMode as title field"
+      displayFieldHintText: "Selected display field will be shown in the viewer as a title"
     },
     viewer: {
       geocoderCancelText: "Cancel",
@@ -283,5 +287,7 @@ define({
   "th": 1, 
   "tr": 1, 
   "vi": 1, 
-  "zh-cn": 1 
+  "zh-cn": 1, 
+  "zh-hk": 1, 
+  "zh-tw": 1 
 });
