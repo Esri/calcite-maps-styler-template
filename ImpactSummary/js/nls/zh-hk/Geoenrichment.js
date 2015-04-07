@@ -1,0 +1,70 @@
+﻿define(
+     ({
+        "widgets": {
+            "geoEnrichment": {
+                "placeholder": {
+                    "enterValue": "試_Enter distance_驗",
+                    "layerName": "試_Enter layer name here_驗"
+                },
+                "message": {
+                    "analysisFailed": "試_Analysis failed_驗.",
+                    "errorOccurred": "試_Some error occurred_驗.",
+                    "layerAdded": "試_Layer successfully added_驗. ",
+                    "enrichLayerNameError": "試_The 'Result layer name' should not contain invalid characters" + "(<,>,#,%,:,\",?,&,+,/,\\)_驗.",
+                    "creatingService": "試_Creating service_驗.. ",
+                    "starting": "試_Starting_驗",
+                    "performingAnalysis": "試_Performing analysis_驗..",
+                    "checkLayerName": "試_Checking for layer name_驗.. ",
+                    "addingLayer": "試_Adding layer to webmap_驗 ",
+                    "layerNameExist": "試_Layer name already exists_驗.",
+                    "clickOnSave": " 試_Click on 'Save' button to reload the application_驗.",
+                    "clickOnOk": " 試_Please click on 'OK' button to try again_驗.",
+                    "enterNumbersOnly": "試_The values entered is not valid_驗",
+                    "nofeatures": "試_No features are present in the current extent_驗",
+                    "selectData": "試_Please select data to enrich layer_驗.",
+                    "resetVariableMessage": "試_Are you sure you want to reset variable_驗?",
+                    "emptyTextFieldLayerName": "試_Enter result layer name_驗",
+                    "createService":"試_Layer not created_驗.",
+                    "sharingLayer":"試_Sharing layer_驗..",
+                    "updateItemFailed": "試_Failed to update. Please try again_驗.",
+                    "geoEnrichFailed": "試_Failed to enrich layer. Please try again_驗.",
+                    "shareFailed": "試_Failed to share enriched layer. Please try again_驗.",
+                    "refreshServiceFailed": "試_Failed to refresh layer. Please try again_驗.",
+                    "layerJsonFailed": "試_Failed to create JSON for layer. Please try again_驗.",
+                    "addToWebmapFailed": "試_Failed to add layer to webmap. Please try again_驗.",
+                    "bufferAreaHelpText": "試_Please enter the value less than_驗 ",
+                    "invalidBufferInput": "試_The value entered is not valid_驗.",
+                    "emptyBufferInput": "試_Please enter valid value_驗."
+                },
+                "populationText": "試_Population_驗",
+                "housingText": "試_Household_驗",
+                "businessText": "試_Business_驗",
+                "variableListText": " 試_variables are listed here_驗:",
+                "countrySelectTitle": "試_1. Select Data Location_驗",
+                "unitedStates": "試_United States_驗",
+                "global": "試_Global_驗",
+                "geoenrichDialogText": "試_Geoenrichment Variables_驗",
+                "viewVariablestext": "試_View variables_驗",
+                "backButtonText":"試_Back_驗",
+                "customizeVariables": "試_Customize variables_驗",
+                "resetVariables": "試_Reset_驗",
+                "defineAreaTitle": "試_3. Define area to enrich_驗",
+                "currentMapExtent": "試_Use current map extent_驗",
+                "enrichLayerName": "試_4. Result layer name_驗",
+                "lineDistanceText": "試_Line Distance_驗",
+                "drivingTime": "試_Driving Time_驗",
+                "enrichButtonText": "試_Enrich Layer_驗",
+                "selectDataText": "試_2. Select Data_驗",
+                "showCreditsText": "試_Show credits_驗",
+                "variableCount": "試_Total variable count_驗 ",
+                "totalRecords": "試_Total Records_驗:",
+                "cost": "試_Cost_驗:",
+                "showCreditsDialogText": "試_Show Credits_驗",
+                "nextButtonText": "試_Next_驗",
+                "prevButtonText": "試_Previous_驗",
+                "saveButtonText": "試_Save_驗",
+                "ok": "試_OK_驗"
+            }
+        }
+    })
+); 
