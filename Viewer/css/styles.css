@@ -814,11 +814,22 @@ img {
 .no-search #panelText {
   display: block; 
 }
-
+.no-search #panelLogo {
+  display: block !important;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  float: left;
+  line-height: 50px;
+  margin-left: 5px;
+}
+.no-search #panelLogo img{
+  max-width:50px;
+  max-height:50px;
+}
 #panelLogo{
   display:none;
 }
-
 #panelText {
   z-index: 40;
   display: none;
@@ -857,7 +868,6 @@ img {
   #panelText {
     max-width: 400px; 
   } 
-
 }
 
 #panelText.nosearch {
