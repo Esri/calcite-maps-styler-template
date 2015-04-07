@@ -271,20 +271,16 @@ display:none;
 }
 .close-geocoder-button {
     float: left;
-    width: 60px;
     padding: 1px 0;
     line-height: 36px;
     height: 36px;
     color: #999;
-    margin-left: 10px;
-    font-size: 17px;
+    font-size: 14px;
     cursor: pointer;
     text-align: center;
 }
 .esriRTL .close-geocoder-button {
     float: right;
-    margin-left: 0;
-    margin-right: 10px;
 }
 .close-geocoder-button:hover {
     color: #555;
@@ -308,7 +304,10 @@ display:none;
     padding: 5px 15px;
     background: #fff;
     background: rgba(255, 255, 255, 0.7);
-    height: 36px;
+    _height: 36px;
+    *height: 36px;
+    min-height: 36px;
+
 }
 /* Drawer Menu */
 
@@ -545,7 +544,7 @@ display:none;
         display: none;
     }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 575px) {
     .esriAttribution {
         display: none!important;
     }
@@ -603,7 +602,7 @@ display:none;
         display: none;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 930px) {
     .drawer-open .esriSimpleSlider,
     .drawer-open .map-buttons,
     .drawer-open .BasemapToggle,

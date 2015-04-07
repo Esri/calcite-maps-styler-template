@@ -46,12 +46,7 @@
         "dojo/cookie",
         "dojo/domReady!"
         ], function (
-        urlUtils,
-            DataBrowser,
-            on,
-            kernel,
-            cookie
- ) {
+        urlUtils, DataBrowser, on, kernel, cookie) {
             var userInfo = {};
             objRef = window.opener.selectedData;
             window.document.title = objRef.selectedTab + " - Data Browser";
@@ -65,32 +60,27 @@
             };
             //This logic is for handling Identity Manager
             //TODO: Minify the code
+            var baseUrl = window.opener.selectedData.userInfo.portal.helperServices.geoenrichment.url.split("/arcgis/rest/services")[0];
             var serverInfo = {
-                "serverInfos": [
-        {
-            "server": "https://geoenrich.arcgis.com",
-            "tokenServiceUrl": "https://geoenrich.arcgis.com/ArcGIS/tokens",
-            "adminTokenServiceUrl": "https://geoenrich.arcgis.com/ArcGIS/admin/generateToken",
-            "currentVersion": 10.02,
-            "hasServer": true
-        }
-    ],
+                "serverInfos": [{
+                    "server": baseUrl,
+                    "tokenServiceUrl": baseUrl + "/ArcGIS/tokens",
+                    "adminTokenServiceUrl": baseUrl + "/ArcGIS/admin/generateToken",
+                    "currentVersion": 10.02,
+                    "hasServer": true
+                }],
                 "oAuthInfos": [],
-                "credentials": [
-        {
-            "userId": window.opener.selectedData.userInfo.username,
-            "server": "https://geoenrich.arcgis.com",
-            "token": window.opener.selectedData.userInfo.token,
-            "expires": window.opener.selectedData.userInfo.credential.expires,
-            "validity": window.opener.selectedData.userInfo.credential.validity,
-            "ssl": window.opener.selectedData.userInfo.credential.ssl,
-            "creationTime": window.opener.selectedData.userInfo.credential.creationTime,
-            "scope": "server",
-            "resources": [
-                window.opener.selectedData.userInfo.credential.resources[0]
-            ]
-        }
-    ]
+                "credentials": [{
+                    "userId": window.opener.selectedData.userInfo.username,
+                    "server": baseUrl,
+                    "token": window.opener.selectedData.userInfo.token,
+                    "expires": window.opener.selectedData.userInfo.credential.expires,
+                    "validity": window.opener.selectedData.userInfo.credential.validity,
+                    "ssl": window.opener.selectedData.userInfo.credential.ssl,
+                    "creationTime": window.opener.selectedData.userInfo.credential.creationTime,
+                    "scope": "server",
+                    "resources": [window.opener.selectedData.userInfo.credential.resources[0]]
+                }]
             };
             if ("localStorage" in window && window["localStorage"] !== null) {
                 var idString = JSON.stringify(serverInfo);
