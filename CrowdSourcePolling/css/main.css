@@ -293,9 +293,9 @@ input[type="radio"]
 .esriCTChkBox + label.css-label
 {
     padding-left: 24px;
-    height: 20px;
+    height: 16px;
     display: inline-block;
-    line-height: 20px;
+    line-height: 16px;
     background-repeat: no-repeat;
     background-position: 0 0;
     font-size: 12px;
@@ -310,7 +310,7 @@ label.css-label
 
 .esriCTChkBox:checked + label.css-label
 {
-    background-position: 0 -20px;
+    background-position: 0 -16px;
 }
 
 

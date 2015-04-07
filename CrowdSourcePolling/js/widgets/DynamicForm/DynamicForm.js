@@ -28,7 +28,9 @@ define([
     "dojo/dom-construct",
     "dojo/dom-style",
     "dojo/on",
+    "dojo/sniff",
     "dojo/topic",
+    "dojox/fx/scroll",
     "dijit/form/DateTextBox",
     "esri/lang"
 ], function (
@@ -43,7 +45,9 @@ define([
     domConstruct,
     domStyle,
     on,
+    has,
     topic,
+    scroller,
     DateTextBox,
     esriLang
 ) {
@@ -79,9 +83,6 @@ define([
         show: function () {
             this._entryForm = this.generateForm(this.dynamicForm, this._formFields);
             domStyle.set(this.domNode, "display", "block");
-            if (this.domNode.scrollIntoView) {
-                this.domNode.scrollIntoView();
-            }
         },
 
         /**

@@ -19,12 +19,15 @@ define([
     'dojo/_base/declare',
     'dojo/_base/lang',
     'dojo/_base/array',
+    "dojo/dom",
     'dojo/dom-construct',
     'dojo/dom-style',
     'dojo/dom-class',
     'dojo/dom-attr',
     'dojo/query',
-    'dojo/topic',
+    "dojo/sniff",
+    "dojo/topic",
+    "dojox/fx/scroll",
     'dojo/on',
     'dojo/NodeList-dom',
 
@@ -39,7 +42,7 @@ define([
     "application/widgets/PopupWindow/PopupWindow",
 
     'dojo/text!./ItemDetailsView.html'
-], function (declare, lang, array, domConstruct, domStyle, domClass, domAttr, query, topic, on, nld,
+], function (declare, lang, array, dom, domConstruct, domStyle, domClass, domAttr, query, has, topic, scroller, on, nld,
     SvgHelper,
     ContentPane,
     _WidgetBase, _TemplatedMixin,
@@ -361,6 +364,9 @@ define([
                 // Show the form
                 this.itemAddComment.show();
                 this.invertButton("comment", true, this.commentButton, this.commentIcon);
+
+                // Scroll the comment form into view if needed
+                this.scrollIntoView(this.domNode.parentNode, this.itemAddComment.domNode);
             }
         },
 
@@ -372,6 +378,32 @@ define([
                 this.itemAddComment.destroy();
                 this.itemAddComment = null;
                 this.invertButton("comment", false, this.commentButton, this.commentIcon);
+
+                // Scroll to the top of the details to restore context
+                this.scrollIntoView(this.domNode.parentNode, this.itemSummary);
+            }
+        },
+
+        /**
+         * Scrolls a container node to make a specified node visible.
+         * @param {object} nodeToScroll Container node that's to be scrolled
+         * @param {object} nodeToMakeVisible Node that's to be brought into view
+         */
+        scrollIntoView: function (nodeToScroll, nodeToMakeVisible) {
+            if (!has("ff")) {
+                // Dojo dojox/fx/scroll scroller doesn't appear to work in Firefox--often scrolls to end
+                // of node to make visible
+                scroller({
+                    win: nodeToScroll,
+                    node: nodeToMakeVisible
+                }).play();
+            } else {
+                // Fortunately, there's a fallback: scrollIntoView with options, which is only
+                // supported in Firefox >= 36
+                nodeToMakeVisible.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
             }
         },
 
