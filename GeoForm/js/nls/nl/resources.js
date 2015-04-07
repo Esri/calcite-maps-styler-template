@@ -1,4 +1,4 @@
-define(
+﻿define(
    ({
     map: {
       error: "Kan geen kaart creëren"
