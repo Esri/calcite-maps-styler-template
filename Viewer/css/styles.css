@@ -846,16 +846,22 @@ img {
   line-height: 50px;
 }
 #title{
+  overflow: hidden;
+  text-overflow:ellipsis;
   height: 30px;
   line-height: 30px;
   font-size: 1.3em;   
 }
 #subtitle{
+  overflow: hidden;
+  text-overflow:ellipsis;
   height: 30px;
   line-height: 20px;
   font-size: 0.9em;  
 }
 #title.nosubtitle{
+  overflow: hidden;
+  text-overflow:ellipsis;
   height: 50px;
   line-height: 50px;
 }
