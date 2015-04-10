@@ -785,16 +785,18 @@ img {
   }
 
     #panelLogo {
+      margin-left: 5px; 
       display:block !important;
-      width: 50px;
-      height: 50px;
+      max-width: 50px;
+      min-height: 50px;
       overflow: hidden;
       float: left;
       line-height: 50px;
-      margin-left: 5px; 
     }
 
     #panelLogo img {
+      vertical-align: middle;
+      line-height: 50px;
       max-width: 50px;
       max-height: 50px; 
     }
@@ -1310,6 +1312,6 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
 .icon-angle-down:before {
   content: '\e809'; }
 
-/* '	' */
+/* '  ' */
 .icon-check-1:before {
   content: '\2713'; }
