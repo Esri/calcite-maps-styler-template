@@ -721,9 +721,10 @@ img {
 .pageBody {
   position: relative;
   top: 0;
-  /*display: -moz-box;*/ 
+  /*display: -moz-box;
   display: -webkit-box;
-  display: box;
+  display: box;*/
+  display:block;
   max-height: 400px;
   width:100%;
   overflow-x:hidden;
