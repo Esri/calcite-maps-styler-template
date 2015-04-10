@@ -270,7 +270,9 @@ html, body {
   left: 15px;
   padding:2px !important;
 }
-
+.esriMeasurement .esriMeasurementResultTable{
+  padding:6px;
+}
 .esriMeasurement .esriMeasurementButtonPane {
   padding-left: 6px; }
 
