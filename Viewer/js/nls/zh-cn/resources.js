@@ -34,8 +34,10 @@ define(
 			      "label3": '横向',
 			      "label4": '纵向'
 			    },
-			    "legend": "向输出添加图例"
-			},
+			    "legend": "向输出添加图例",
+                "title": "试_Title_验",
+                "titlePrompt": "试_Add custom title_验"
+            },
 			"share": {
 				"extent": "使用当前地图范围",
 				"label": "共享此地图",

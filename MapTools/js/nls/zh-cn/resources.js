@@ -35,7 +35,9 @@ define(
                   "label2": '纵向',
                   "label3": '横向',
                   "label4": '纵向'
-            }
+            },
+            printTitle: "试_Title_验",
+            printTitlePrompt: "试_Add custom title_验"
         }
     })
 );

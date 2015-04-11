@@ -41,6 +41,7 @@
       }
     },
     user: {
+      all: "Š_All_ä",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -119,6 +120,7 @@
       fileTooLargeError: "Fail on manustamiseks liiga suur",
       exceededFileCountError: "Manuste suurim lubatud arv on täis",
       selectFileTitle: "Faili valimine",
+      btnSelectFileText: "Š_Select File_ä",
       btnViewSubmissions: "Kuva edastused",
       dateFormat: "MM/DD/YYYY h:mm a"
     },
@@ -149,6 +151,8 @@
       layerTabTitleText: "Vali muudetav kiht",
       selectLayerLabelText: "Kiht",
       selectLayerDefaultOptionText: "Vali kiht",
+      enableBasemapToggle: "Š_Show Basemap Toggle_ä",
+      enableBasemapToggleDescription: "Š_You can configure the GeoForm to Show/Hide the Basemap Toggle_ä",
       defaultBasemap: "Aluskaardi vahetamine",
       secondaryBasemap: "Vaikimisi aluskaart",
       detailsTabTitleText: "Vormi üksikasjad",
@@ -231,7 +235,7 @@
       allLayerSelectOptionText: "Kõik",
       disableViewer: "Keela vaatur",
       disableViewerDescription: "GeoFormi saab konfigureerida vaaturit kuvama/peitma",
-      displayFieldHintText: "Valitud kuvamisväli kuvatakse režiimis viewerMode pealkirjaväljana"
+      displayFieldHintText: "Š_Selected display field will be shown in the viewer as a title_ä"
     },
     viewer: {
       geocoderCancelText: "Tühista",

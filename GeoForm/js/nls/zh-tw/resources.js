@@ -41,6 +41,7 @@
       }
     },
     user: {
+      all: "試_All_驗",
       mgrs: "試_MGRS_驗",
       usng: "試_USNG_驗",
       utm: "試_UTM_驗",
@@ -119,6 +120,7 @@
       fileTooLargeError: "試_File too large to attach_驗",
       exceededFileCountError: "試_Exceeded maximum no. of attachments allowed_驗",
       selectFileTitle: "試_Select a file_驗",
+      btnSelectFileText: "試_Select File_驗",
       btnViewSubmissions: "試_View Submissions_驗",
       dateFormat: "試_MM/DD/YYYY h:mm a_驗"
     },
@@ -149,6 +151,8 @@
       layerTabTitleText: "試_Select Editable Layer_驗",
       selectLayerLabelText: "試_Layer_驗",
       selectLayerDefaultOptionText: "試_Select Layer_驗",
+      enableBasemapToggle: "試_Show Basemap Toggle_驗",
+      enableBasemapToggleDescription: "試_You can configure the GeoForm to Show/Hide the Basemap Toggle_驗",
       defaultBasemap: "試_Basemap Toggle_驗",
       secondaryBasemap: "試_Default Basemap_驗",
       detailsTabTitleText: "試_Form Details_驗",
@@ -231,7 +235,7 @@
       allLayerSelectOptionText: "試_All_驗",
       disableViewer: "試_Disable Viewer_驗",
       disableViewerDescription: "試_You can configure the GeoForm to disable/enable Viewer_驗",
-      displayFieldHintText: "試_Selected display field will be shown in viewerMode as title field_驗"
+      displayFieldHintText: "試_Selected display field will be shown in the viewer as a title_驗"
     },
     viewer: {
       geocoderCancelText: "試_Cancel_驗",

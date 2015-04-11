@@ -34,8 +34,10 @@ define(
 			      "label3": '横',
 			      "label4": '縦'
 			    },
-			    "legend": "凡例を出力に追加"
-			},
+			    "legend": "凡例を出力に追加",
+                "title": "須_Title_鷗",
+                "titlePrompt": "須_Add custom title_鷗"
+            },
 			"share": {
 				"extent": "現在のマップ範囲を使用",
 				"label": "このマップを共有",

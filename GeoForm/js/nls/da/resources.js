@@ -41,6 +41,7 @@
       }
     },
     user: {
+      all: "ø_All_å",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -119,6 +120,7 @@
       fileTooLargeError: "Fil er for stor til at vedhæfte",
       exceededFileCountError: "Har overskredet det maksimale antal tillladte vedhæftninger",
       selectFileTitle: "Vælg en fil",
+      btnSelectFileText: "ø_Select File_å",
       btnViewSubmissions: "Vis afsendelser",
       dateFormat: "DD/MM/YYYY h:mm a"
     },
@@ -149,6 +151,8 @@
       layerTabTitleText: "Vælg redigérbart lag",
       selectLayerLabelText: "Lag",
       selectLayerDefaultOptionText: "Vælg lag",
+      enableBasemapToggle: "ø_Show Basemap Toggle_å",
+      enableBasemapToggleDescription: "ø_You can configure the GeoForm to Show/Hide the Basemap Toggle_å",
       defaultBasemap: "Skift baggrundskort",
       secondaryBasemap: "Standardbaggrundskort",
       detailsTabTitleText: "Formularoplysninger",
@@ -231,7 +235,7 @@
       allLayerSelectOptionText: "ALLE",
       disableViewer: "Deaktivér visningsprogram",
       disableViewerDescription: "Du kan konfigurere GeoFormen til at deaktivere/aktivere visningsprogrammet",
-      displayFieldHintText: "Det valgte visningsfelt vil blive vist i viewerMode som titelfelt"
+      displayFieldHintText: "ø_Selected display field will be shown in the viewer as a title_å"
     },
     viewer: {
       geocoderCancelText: "Annullér",

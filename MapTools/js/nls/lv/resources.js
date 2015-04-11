@@ -35,7 +35,9 @@ define(
                   "label2": 'Portrets',
                   "label3": 'Ainava',
                   "label4": 'Portrets'
-            }
+            },
+            printTitle: "ķ_Title_ū",
+            printTitlePrompt: "ķ_Add custom title_ū"
         }
     })
 );

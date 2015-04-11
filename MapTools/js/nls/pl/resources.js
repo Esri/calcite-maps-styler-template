@@ -35,7 +35,9 @@ define(
                   "label2": 'Pionowo',
                   "label3": 'Poziomo',
                   "label4": 'Pionowo'
-            }
+            },
+            printTitle: "ł_Title_ą",
+            printTitlePrompt: "ł_Add custom title_ą"
         }
     })
 );

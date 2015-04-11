@@ -35,7 +35,9 @@ define(
                   "label2": 'Na výšku',
                   "label3": 'Na šířku',
                   "label4": 'Na výšku'
-            }
+            },
+            printTitle: "Ř_Title_ů",
+            printTitlePrompt: "Ř_Add custom title_ů"
         }
     })
 );

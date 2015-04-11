@@ -41,6 +41,7 @@
       }
     },
     user: {
+      all: "Į_All_š",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -119,6 +120,7 @@
       fileTooLargeError: "Failas yra per didelis pridėti",
       exceededFileCountError: "Viršytas maksimalus leidžiamas priedų skaičius",
       selectFileTitle: "Pasirinkite failą",
+      btnSelectFileText: "Į_Select File_š",
       btnViewSubmissions: "Peržiūrėti pateikimus",
       dateFormat: "yyy MM dd hh:mm"
     },
@@ -149,6 +151,8 @@
       layerTabTitleText: "Pasirinkti redaguojamą sluoksnį",
       selectLayerLabelText: "Sluoksnis",
       selectLayerDefaultOptionText: "Pasirinkti sluoksnį",
+      enableBasemapToggle: "Į_Show Basemap Toggle_š",
+      enableBasemapToggleDescription: "Į_You can configure the GeoForm to Show/Hide the Basemap Toggle_š",
       defaultBasemap: "Pagrindo žemėlapio perjungiklis",
       secondaryBasemap: "Numatytasis pagrindo žemėlapis",
       detailsTabTitleText: "Smulkesnė formos informacija",
@@ -231,7 +235,7 @@
       allLayerSelectOptionText: "Viskas",
       disableViewer: "Išjungti peržiūros programą",
       disableViewerDescription: "Galite konfigūruoti GeoForm ir įjungti / išjungti peržiūros priemonę",
-      displayFieldHintText: "Pasirinktas rodymo laukas bus rodomas viewerMode kaip pavadinimo laukas"
+      displayFieldHintText: "Į_Selected display field will be shown in the viewer as a title_š"
     },
     viewer: {
       geocoderCancelText: "Atšaukti",

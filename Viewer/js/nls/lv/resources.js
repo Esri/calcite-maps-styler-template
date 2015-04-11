@@ -34,8 +34,10 @@ define(
 			      "label3": 'Ainava',
 			      "label4": 'Portrets'
 			    },
-			    "legend": "Pievienot apzīmējumus izvadei"
-			},
+			    "legend": "Pievienot apzīmējumus izvadei",
+                "title": "ķ_Title_ū",
+                "titlePrompt": "ķ_Add custom title_ū"
+            },
 			"share": {
 				"extent": "Lieto pašreizējo kartes pārklājumu",
 				"label": "Koplietot šo karti",

@@ -41,6 +41,7 @@
       }
     },
     user: {
+      all: "ł_All_ą",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -119,6 +120,7 @@
       fileTooLargeError: "Plik jest za duży, aby go załączyć",
       exceededFileCountError: "Przekroczono maksymalną liczbę dozwolonych załączników",
       selectFileTitle: "Wybierz plik",
+      btnSelectFileText: "ł_Select File_ą",
       btnViewSubmissions: "Wyświetl zgłoszenia",
       dateFormat: "MM/DD/YYYY g:mm a"
     },
@@ -149,6 +151,8 @@
       layerTabTitleText: "Wybierz warstwę edytowalną",
       selectLayerLabelText: "Warstwa",
       selectLayerDefaultOptionText: "Wybierz warstwę",
+      enableBasemapToggle: "ł_Show Basemap Toggle_ą",
+      enableBasemapToggleDescription: "ł_You can configure the GeoForm to Show/Hide the Basemap Toggle_ą",
       defaultBasemap: "Przełączanie mapy bazowej",
       secondaryBasemap: "Domyślna mapa bazowa",
       detailsTabTitleText: "Szczegóły formularza",
@@ -231,7 +235,7 @@
       allLayerSelectOptionText: "WSZYSTKIE",
       disableViewer: "Wyłącz przeglądarkę",
       disableViewerDescription: "Można skonfigurować formularz geograficzny, żeby wyłączał/włączał przeglądarkę",
-      displayFieldHintText: "Wybrane pole wyświetlania zostanie pokazane w trybie przeglądania jako pole tytułu"
+      displayFieldHintText: "ł_Selected display field will be shown in the viewer as a title_ą"
     },
     viewer: {
       geocoderCancelText: "Anuluj",

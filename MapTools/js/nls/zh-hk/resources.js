@@ -35,7 +35,9 @@ define(
                   "label2": '試_Portrait_驗',
                   "label3": '試_Landscape_驗',
                   "label4": '試_Portrait_驗'
-            }
+            },
+            printTitle: "試_Title_驗",
+            printTitlePrompt: "試_Add custom title_驗"
         }
     })
 );

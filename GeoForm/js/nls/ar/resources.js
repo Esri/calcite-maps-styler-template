@@ -41,6 +41,7 @@
       }
     },
     user: {
+      all: "بيت_All_لاحقة",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -119,6 +120,7 @@
       fileTooLargeError: "حجم الملف كبير جدا لإرفاقه",
       exceededFileCountError: "تم تجاوز العدد الأقصى للمرفقات المسموح بها",
       selectFileTitle: "حدد ملفًا",
+      btnSelectFileText: "بيت_Select File_لاحقة",
       btnViewSubmissions: "عرض عمليات الإرسال",
       dateFormat: "MM/DD/YYYY h:mm a"
     },
@@ -149,6 +151,8 @@
       layerTabTitleText: "حدد طبقة قابلة للتحرير",
       selectLayerLabelText: "طبقة",
       selectLayerDefaultOptionText: "حدد طبقة",
+      enableBasemapToggle: "بيت_Show Basemap Toggle_لاحقة",
+      enableBasemapToggleDescription: "بيت_You can configure the GeoForm to Show/Hide the Basemap Toggle_لاحقة",
       defaultBasemap: "تبديل خريطة الأساس",
       secondaryBasemap: "خريطة الأساس الافتراضية",
       detailsTabTitleText: "تفاصيل النموذج",
@@ -231,7 +235,7 @@
       allLayerSelectOptionText: "الكل",
       disableViewer: "تعطيل العارض",
       disableViewerDescription: "يمكنك تكوين GeoForm لتمكين/تعطيل العارض",
-      displayFieldHintText: "سيتم عرض حقل العرض المحدد في viewerMode كحقل عنوان"
+      displayFieldHintText: "بيت_Selected display field will be shown in the viewer as a title_لاحقة"
     },
     viewer: {
       geocoderCancelText: "إلغاء الأمر",

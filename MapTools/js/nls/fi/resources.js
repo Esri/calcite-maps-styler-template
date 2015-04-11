@@ -35,7 +35,9 @@ define(
                   "label2": 'Pysty',
                   "label3": 'Vaaka',
                   "label4": 'Pysty'
-            }
+            },
+            printTitle: "Å_Title_ö",
+            printTitlePrompt: "Å_Add custom title_ö"
         }
     })
 );

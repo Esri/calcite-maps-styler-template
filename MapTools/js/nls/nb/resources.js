@@ -35,7 +35,9 @@ define(
                   "label2": 'Stående',
                   "label3": 'Liggende',
                   "label4": 'Stående'
-            }
+            },
+            printTitle: "å_Title_ø",
+            printTitlePrompt: "å_Add custom title_ø"
         }
     })
 );

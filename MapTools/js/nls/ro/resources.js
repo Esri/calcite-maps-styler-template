@@ -35,7 +35,9 @@ define(
                   "label2": 'Portret',
                   "label3": 'Peisaj',
                   "label4": 'Portret'
-            }
+            },
+            printTitle: "Ă_Title_ș",
+            printTitlePrompt: "Ă_Add custom title_ș"
         }
     })
 );

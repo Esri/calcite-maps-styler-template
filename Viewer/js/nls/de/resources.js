@@ -34,8 +34,10 @@ define(
 			      "label3": 'Querformat',
 			      "label4": 'Hochformat'
 			    },
-			    "legend": "Legende zu Ausgabe hinzufügen"
-			},
+			    "legend": "Legende zu Ausgabe hinzufügen",
+                "title": "ä_Title_Ü",
+                "titlePrompt": "ä_Add custom title_Ü"
+            },
 			"share": {
 				"extent": "Aktuelle Kartenausdehnung verwenden",
 				"label": "Diese Karte freigeben",

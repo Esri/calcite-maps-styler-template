@@ -34,8 +34,10 @@ define(
 			      "label3": '試_Landscape_驗',
 			      "label4": '試_Portrait_驗'
 			    },
-			    "legend": "試_Add legend to output_驗"
-			},
+			    "legend": "試_Add legend to output_驗",
+                "title": "試_Title_驗",
+                "titlePrompt": "試_Add custom title_驗"
+            },
 			"share": {
 				"extent": "試_Use current map extent_驗",
 				"label": "試_Share this map_驗",

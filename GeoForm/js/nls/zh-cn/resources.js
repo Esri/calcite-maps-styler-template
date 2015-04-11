@@ -41,6 +41,7 @@
       }
     },
     user: {
+      all: "试_All_验",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -119,6 +120,7 @@
       fileTooLargeError: "文件过大，无法附加",
       exceededFileCountError: "超出允许的最大附件数",
       selectFileTitle: "选择一个文件",
+      btnSelectFileText: "试_Select File_验",
       btnViewSubmissions: "查看提交内容",
       dateFormat: "YYYY/MM/DD h:mm a"
     },
@@ -149,6 +151,8 @@
       layerTabTitleText: "选择可编辑图层",
       selectLayerLabelText: "图层",
       selectLayerDefaultOptionText: "选择图层",
+      enableBasemapToggle: "试_Show Basemap Toggle_验",
+      enableBasemapToggleDescription: "试_You can configure the GeoForm to Show/Hide the Basemap Toggle_验",
       defaultBasemap: "底图切换",
       secondaryBasemap: "默认底图",
       detailsTabTitleText: "表单详细信息",
@@ -231,7 +235,7 @@
       allLayerSelectOptionText: "全部",
       disableViewer: "禁用查看器",
       disableViewerDescription: "可配置 GeoForm 以禁用/启用查看器",
-      displayFieldHintText: "选择的显示字段将在查看器模式下显示为标题字段"
+      displayFieldHintText: "试_Selected display field will be shown in the viewer as a title_验"
     },
     viewer: {
       geocoderCancelText: "取消",

@@ -35,7 +35,9 @@ define(
                   "label2": '縦',
                   "label3": '横',
                   "label4": '縦'
-            }
+            },
+            printTitle: "須_Title_鷗",
+            printTitlePrompt: "須_Add custom title_鷗"
         }
     })
 );

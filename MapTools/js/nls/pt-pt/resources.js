@@ -35,7 +35,9 @@ define(
                   "label2": 'Retrato',
                   "label3": 'Paisagem',
                   "label4": 'Retrato'
-            }
+            },
+            printTitle: "ã_Title_Ç",
+            printTitlePrompt: "ã_Add custom title_Ç"
         }
     })
 );

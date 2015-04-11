@@ -34,8 +34,10 @@ define(
 			      "label3": 'Liggande',
 			      "label4": 'Stående'
 			    },
-			    "legend": "Lägg till teckenförklaring i utdata"
-			},
+			    "legend": "Lägg till teckenförklaring i utdata",
+                "title": "Å_Title_ö",
+                "titlePrompt": "Å_Add custom title_ö"
+            },
 			"share": {
 				"extent": "Använd aktuell kartutbredning",
 				"label": "Dela den här kartan",

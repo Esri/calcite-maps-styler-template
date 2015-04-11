@@ -35,7 +35,9 @@ define(
                   "label2": 'Hướng dọc',
                   "label3": 'Hướng ngang',
                   "label4": 'Hướng dọc'
-            }
+            },
+            printTitle: "Đ_Title_ớ",
+            printTitlePrompt: "Đ_Add custom title_ớ"
         }
     })
 );

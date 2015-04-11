@@ -35,7 +35,9 @@ define(
                   "label2": 'Vertical',
                   "label3": 'Horizontal',
                   "label4": 'Vertical'
-            }
+            },
+            printTitle: "á_Title_Ó",
+            printTitlePrompt: "á_Add custom title_Ó"
         }
     })
 );

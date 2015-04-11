@@ -35,7 +35,9 @@ define(
                   "label2": 'Stačias',
                   "label3": 'Gulsčias',
                   "label4": 'Stačias'
-            }
+            },
+            printTitle: "Į_Title_š",
+            printTitlePrompt: "Į_Add custom title_š"
         }
     })
 );

@@ -34,8 +34,10 @@ define(
 			      "label3": 'Yatay',
 			      "label4": 'Dikey'
 			    },
-			    "legend": "Çıktıya gösterim ekle"
-			},
+			    "legend": "Çıktıya gösterim ekle",
+                "title": "ı_Title_İ",
+                "titlePrompt": "ı_Add custom title_İ"
+            },
 			"share": {
 				"extent": "Geçerli harita yayılımını kullan",
 				"label": "Bu haritayı paylaş",

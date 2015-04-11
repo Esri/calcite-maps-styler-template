@@ -34,8 +34,10 @@ define(
 			      "label3": 'Horizontal',
 			      "label4": 'Vertical'
 			    },
-			    "legend": "Agregar leyenda a la salida"
-			},
+			    "legend": "Agregar leyenda a la salida",
+                "title": "á_Title_Ó",
+                "titlePrompt": "á_Add custom title_Ó"
+            },
 			"share": {
 				"extent": "Usar la extensión del mapa actual",
 				"label": "Compartir este mapa",

@@ -34,8 +34,10 @@ define(
 			      "label3": 'Peisaj',
 			      "label4": 'Portret'
 			    },
-			    "legend": "Adăugare legendă în rezultate"
-			},
+			    "legend": "Adăugare legendă în rezultate",
+                "title": "Ă_Title_ș",
+                "titlePrompt": "Ă_Add custom title_ș"
+            },
 			"share": {
 				"extent": "Utilizare extindere curentă a hărţii",
 				"label": "Se partajează această hartă",

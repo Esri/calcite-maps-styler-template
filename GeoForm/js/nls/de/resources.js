@@ -41,6 +41,7 @@
       }
     },
     user: {
+      all: "ä_All_Ü",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -119,6 +120,7 @@
       fileTooLargeError: "Datei ist zu groß, um sie anzuhängen",
       exceededFileCountError: "Maximal zulässige Anzahl von Anlagen wurde überschritten",
       selectFileTitle: "Datei auswählen",
+      btnSelectFileText: "ä_Select File_Ü",
       btnViewSubmissions: "Übermittlungen anzeigen",
       dateFormat: "MM/TT/JJJJ h:mm a"
     },
@@ -149,6 +151,8 @@
       layerTabTitleText: "Editierbaren Layer auswählen",
       selectLayerLabelText: "Layer",
       selectLayerDefaultOptionText: "Layer auswählen",
+      enableBasemapToggle: "ä_Show Basemap Toggle_Ü",
+      enableBasemapToggleDescription: "ä_You can configure the GeoForm to Show/Hide the Basemap Toggle_Ü",
       defaultBasemap: "Grundkarte wechseln",
       secondaryBasemap: "Standardgrundkarte",
       detailsTabTitleText: "Formulardetails",
@@ -231,7 +235,7 @@
       allLayerSelectOptionText: "Alle",
       disableViewer: "Viewer deaktivieren",
       disableViewerDescription: "Sie können das GeoForm konfigurieren, um den Viewer zu deaktivieren/aktivieren",
-      displayFieldHintText: "Ausgewähltes Anzeigefeld wird im viewerMode als Titelfeld angezeigt"
+      displayFieldHintText: "ä_Selected display field will be shown in the viewer as a title_Ü"
     },
     viewer: {
       geocoderCancelText: "Abbrechen",

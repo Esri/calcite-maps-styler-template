@@ -34,8 +34,10 @@ define(
 			      "label3": 'Vaaka',
 			      "label4": 'Pysty'
 			    },
-			    "legend": "Lisää selite tulokseen"
-			},
+			    "legend": "Lisää selite tulokseen",
+                "title": "Å_Title_ö",
+                "titlePrompt": "Å_Add custom title_ö"
+            },
 			"share": {
 				"extent": "Käytä nykyisen kartan laajuutta.",
 				"label": "Jaa tämä kartta",

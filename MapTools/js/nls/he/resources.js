@@ -35,7 +35,9 @@ define(
                   "label2": 'לאורך',
                   "label3": 'לרוחב',
                   "label4": 'לאורך'
-            }
+            },
+            printTitle: "כן_Title_ש",
+            printTitlePrompt: "כן_Add custom title_ש"
         }
     })
 );

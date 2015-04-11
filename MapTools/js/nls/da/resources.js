@@ -35,7 +35,9 @@ define(
                   "label2": 'På højkant',
                   "label3": 'På langs',
                   "label4": 'På højkant'
-            }
+            },
+            printTitle: "ø_Title_å",
+            printTitlePrompt: "ø_Add custom title_å"
         }
     })
 );

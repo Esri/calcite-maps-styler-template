@@ -41,6 +41,7 @@
       }
     },
     user: {
+      all: "한_All_빠",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -119,6 +120,7 @@
       fileTooLargeError: "파일이 너무 커서 첨부할 수 없음",
       exceededFileCountError: "허용된 첨부의 최대 개수 초과",
       selectFileTitle: "파일 선택",
+      btnSelectFileText: "한_Select File_빠",
       btnViewSubmissions: "제출 내역 보기",
       dateFormat: "YYYY/MM/DD a h:mm"
     },
@@ -149,6 +151,8 @@
       layerTabTitleText: "편집 가능한 레이어 선택",
       selectLayerLabelText: "레이어",
       selectLayerDefaultOptionText: "레이어 선택",
+      enableBasemapToggle: "한_Show Basemap Toggle_빠",
+      enableBasemapToggleDescription: "한_You can configure the GeoForm to Show/Hide the Basemap Toggle_빠",
       defaultBasemap: "베이스맵 전환",
       secondaryBasemap: "기본 베이스맵",
       detailsTabTitleText: "양식 세부정보",
@@ -231,7 +235,7 @@
       allLayerSelectOptionText: "모두",
       disableViewer: "뷰어 비활성화",
       disableViewerDescription: "GeoForm을 뷰어 활성화/비활성화로 구성할 수 있습니다.",
-      displayFieldHintText: "선택한 보기 필드는 제목 필드가 뷰어 모드로 보여집니다."
+      displayFieldHintText: "한_Selected display field will be shown in the viewer as a title_빠"
     },
     viewer: {
       geocoderCancelText: "취소",

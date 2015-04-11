@@ -41,6 +41,7 @@
       }
     },
     user: {
+      all: "Å_All_ö",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -119,6 +120,7 @@
       fileTooLargeError: "Filen är för stor för att bifoga",
       exceededFileCountError: "Överskrider högsta antalet tillåtna bilagor",
       selectFileTitle: "Välj en fil",
+      btnSelectFileText: "Å_Select File_ö",
       btnViewSubmissions: "Visa bidrag",
       dateFormat: "yyyy-MM-dd H:mm"
     },
@@ -149,6 +151,8 @@
       layerTabTitleText: "Välj redigerbart lager",
       selectLayerLabelText: "Lager",
       selectLayerDefaultOptionText: "Välj lager",
+      enableBasemapToggle: "Å_Show Basemap Toggle_ö",
+      enableBasemapToggleDescription: "Å_You can configure the GeoForm to Show/Hide the Basemap Toggle_ö",
       defaultBasemap: "Växla baskarta",
       secondaryBasemap: "Standardbaskarta",
       detailsTabTitleText: "Formulärinformation",
@@ -231,7 +235,7 @@
       allLayerSelectOptionText: "Alla",
       disableViewer: "Inaktivera vy",
       disableViewerDescription: "Du kan konfigurera din GeoForm så att vyn aktiveras/inaktiveras",
-      displayFieldHintText: "Det valda visningsfältet kommer att visas i viewerMode som titelfält"
+      displayFieldHintText: "Å_Selected display field will be shown in the viewer as a title_ö"
     },
     viewer: {
       geocoderCancelText: "Avbryt",

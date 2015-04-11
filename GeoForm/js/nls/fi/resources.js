@@ -41,6 +41,7 @@
       }
     },
     user: {
+      all: "Å_All_ö",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -119,6 +120,7 @@
       fileTooLargeError: "Tiedosto on liian suuri liitettäväksi",
       exceededFileCountError: "Liitteiden sallittu enimmäismäärä on ylittynyt",
       selectFileTitle: "Valitse tiedosto",
+      btnSelectFileText: "Å_Select File_ö",
       btnViewSubmissions: "Näytä lähetykset",
       dateFormat: "DD/MM/YYYY h:mm a"
     },
@@ -149,6 +151,8 @@
       layerTabTitleText: "Valitse muokattava karttataso",
       selectLayerLabelText: "Karttataso",
       selectLayerDefaultOptionText: "Valitse karttataso",
+      enableBasemapToggle: "Å_Show Basemap Toggle_ö",
+      enableBasemapToggleDescription: "Å_You can configure the GeoForm to Show/Hide the Basemap Toggle_ö",
       defaultBasemap: "Taustakartan vaihto",
       secondaryBasemap: "Oletustaustakartta",
       detailsTabTitleText: "Lomakkeen tiedot",
@@ -231,7 +235,7 @@
       allLayerSelectOptionText: "Kaikki",
       disableViewer: "Poista katseluohjelma käytöstä",
       disableViewerDescription: "Voit määrittää GeoForm-lomakkeen poistamaan katseluohjelman käytöstä tai ottamaan sen käyttöön",
-      displayFieldHintText: "Valittu näyttökenttä näkyy katseluohjelmatilassa otsikkokenttänä"
+      displayFieldHintText: "Å_Selected display field will be shown in the viewer as a title_ö"
     },
     viewer: {
       geocoderCancelText: "Peruuta",

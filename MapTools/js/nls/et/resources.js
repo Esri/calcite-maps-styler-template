@@ -35,7 +35,9 @@ define(
                   "label2": 'Vertikaalpaigutus',
                   "label3": 'Horisontaalpaigutus',
                   "label4": 'Vertikaalpaigutus'
-            }
+            },
+            printTitle: "Š_Title_ä",
+            printTitlePrompt: "Š_Add custom title_ä"
         }
     })
 );

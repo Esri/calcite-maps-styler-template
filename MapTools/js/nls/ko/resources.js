@@ -35,7 +35,9 @@ define(
                   "label2": '세로',
                   "label3": '가로',
                   "label4": '세로'
-            }
+            },
+            printTitle: "한_Title_빠",
+            printTitlePrompt: "한_Add custom title_빠"
         }
     })
 );
