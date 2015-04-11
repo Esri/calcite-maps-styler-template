@@ -34,8 +34,10 @@ define({
 			      "label3": 'Landscape',
 			      "label4": 'Portrait'
 			    },
-			    "legend": "Add legend to output"
-			},
+			    "legend": "Add legend to output",
+                "title": "Title",
+                "titlePrompt": "Add custom title"
+            },
 			"share": {
 				"extent": "Use current map extent",
 				"label": "Share this map",

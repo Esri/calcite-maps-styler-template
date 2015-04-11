@@ -544,6 +544,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
 
             require(["application/has-config!print?esri/dijit/Print"], lang.hitch(this, function (Print) {
+                //TODO Update this to have custom title text if specified by user. 
+                //Add a new item to the print dialog that allows people to set this. 
+                //By default it should show the web map text. 
+                var titleText = dom.byId("print_title").value;
+                console.log(titleText);
                 var layoutOptions = {
                     "titleText": this.config.title,
                     "scalebarUnit": this.config.units,
@@ -569,8 +574,17 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 if (this.config.hasOwnProperty("tool_print_format")) {
                     this.format = this.config.tool_print_format.toLowerCase();
                 }
+                //add text box for title to print dialog
+                var titleNode = domConstruct.create("input",{
+                    id:"print_title",
+                    className: "printTitle",
+                    placeholder: this.config.i18n.tools.print.titlePrompt
+                },domConstruct.create("div"));
+
+                domConstruct.place(titleNode, printDiv);
 
 
+    
                 if (has("print-legend")) {
                     legendNode = domConstruct.create("input", {
                         id: "legend_ck",
@@ -618,6 +632,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
 
                     }));
+                }else{
+                    domStyle.set("pageBody_print","height","90px");
                 }
 
                 require(["application/has-config!print-layouts?esri/request", "application/has-config!print-layouts?esri/tasks/PrintTemplate"], lang.hitch(this, function (esriRequest, PrintTemplate) {

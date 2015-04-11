@@ -259,16 +259,26 @@ html, body {
   background-image: url("http://js.arcgis.com/3.12/esri/css/calcite/images/popup-sprite.png");
   width: 12px;
   height: 12px;
-  text-indent: -9999px; }
-
+  text-indent: -9999px; 
+}
+.printTitle{
+  width: 265px;
+  font-size: 14px;
+  border-width: 2px;
+  border-color: #CCC;
+  border-style: solid;
+  padding: 5px;
+  margin-bottom: 12px;
+}
 .esriPrintout a {
-  color: #5daddd; }
+  color: #5daddd; 
+}
 
 .esriPrint {
   position: absolute;
-  top: 30px;
-  left: 15px;
-  padding:2px !important;
+  bottom:5px;
+  right: 20px;
+  padding:5px;
 }
 .esriMeasurement .esriMeasurementResultTable{
   padding:6px;
@@ -736,7 +746,7 @@ img {
 
 #pageBody_print {
   padding: 10px; 
-  height:70px;
+  height:120px;
 }
 
 #pageBody_legend {
@@ -1320,6 +1330,6 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
 .icon-angle-down:before {
   content: '\e809'; }
 
-/* '  ' */
+/* '	' */
 .icon-check-1:before {
   content: '\2713'; }
