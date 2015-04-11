@@ -35,7 +35,9 @@ define({
                   "label2": 'Portrait',
                   "label3": 'Landscape',
                   "label4": 'Portrait'
-            }
+            },
+            printTitle: "Title",
+            printTitlePrompt: "Add custom title"
         }
     }),
 "ar": 1,

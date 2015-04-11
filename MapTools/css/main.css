@@ -146,7 +146,7 @@ body {
   width: auto;
 /*280px*/
   margin: auto;
-  overflow-y:hidden;
+  overflow-y: hidden;
 }
 #toolbar-trailing {
   margin: auto;
@@ -199,8 +199,8 @@ body {
   cursor: default;
   color: #ccc;
 }
-.esriBasemapGalleryLabelContainer{
-    font-size:12px;
+.esriBasemapGalleryLabelContainer {
+  font-size: 12px;
 }
 #tableDiv {
   height: 0;
@@ -343,13 +343,23 @@ body {
 }
 #printDiv {
   padding: 5px;
-  height: 80px;
+  height: 110px;
   width: 200px;
 }
 .esriPrint {
   position: absolute;
-  top: 30px;
-  left: 0;
+  bottom: 5px;
+  right: 20px;
+  padding: 5px;
+}
+.printTitle {
+  width: 185px;
+  font-size: 14px;
+  border-width: 2px;
+  border-color: #ccc;
+  border-style: solid;
+  padding: 5px;
+  margin-bottom: 12px;
 }
 .esriPrintout a {
   color: #5daddd;

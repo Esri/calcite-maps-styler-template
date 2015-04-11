@@ -168,11 +168,11 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                         }
                     }
                 }));
-                
+
                 //Add search layers defined on the web map item 
                 if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
                     var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
-                
+
                     array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
                         //we do this so we can get the title specified in the item
                         var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
@@ -184,7 +184,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                             }
                         });
 
-                          if (layer && layer.hasOwnProperty("url")) {
+                        if (layer && layer.hasOwnProperty("url")) {
                             var source = {};
                             var url = layer.url;
                             var name = layer.title || layer.name;
@@ -219,7 +219,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                 search.set("sources", defaultSources);
                 search.startup();
-                
+
                 //set the first non esri layer as active if search layers are defined. 
                 var activeIndex = 0;
                 if (searchLayers) {
@@ -280,7 +280,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     return;
                 }
                 this.tableHandler = null;
-                /*Create the table if a layer and field have been defined or if there's a feature layer in the map
+/*Create the table if a layer and field have been defined or if there's a feature layer in the map
                 */
                 var layer = null;
 
@@ -417,6 +417,16 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     "legendLayers": []
                 };
 
+
+                //add text box for title to print dialog
+                var titleNode = domConstruct.create("input", {
+                    id: "print_title",
+                    className: "printTitle",
+                    placeholder: this.config.i18n.tools.printTitlePrompt
+                }, domConstruct.create("div"));
+
+                domConstruct.place(titleNode, printDiv);
+
                 this.config.printformat = this.config.printformat.toLowerCase();
                 if (this.config.printlegend) {
 
@@ -428,6 +438,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     }, domConstruct.create("div", {
                         "class": "checkbox"
                     }));
+
 
                     var labelNode = domConstruct.create("label", {
                         "for": "legend_ck",
@@ -467,6 +478,8 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     }));
 
                     this._updateTheme();
+                } else {
+                    domStyle.set("printDiv", "height", "80px");
                 }
 
                 if (this.config.printlayouts) {
@@ -512,6 +525,16 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                             templates: templates,
                             url: this.config.helperServices.printTask.url
                         }, domConstruct.create("div"));
+
+                        print.on("print-start", lang.hitch(this, function () {
+                            var printBox = dom.byId("print_title");
+                            if (printBox.value) {
+                                array.forEach(print.templates, lang.hitch(this, function (template) {
+                                    template.layoutOptions.titleText = printBox.value;
+                                }));
+                            }
+                        }));
+
                         domConstruct.place(print.printDomNode, dom.byId("printDiv"), "first");
 
 
@@ -550,6 +573,16 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                         templates: templates,
                         url: this.config.helperServices.printTask.url
                     }, domConstruct.create("div"));
+
+                    print.on("print-start", lang.hitch(this, function () {
+                        var printBox = dom.byId("print_title");
+                        if (printBox.value) {
+                            array.forEach(print.templates, lang.hitch(this, function (template) {
+                                template.layoutOptions.titleText = printBox.value;
+                            }));
+                        }
+                    }));
+
                     domConstruct.place(print.printDomNode, dom.byId("printDiv"), "first");
                     print.startup();
 
@@ -778,11 +811,11 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 domClass.add(this.map.infoWindow.domNode, "light");
                 query(".esriPopup .pointer").style("backgroundColor", this.config.theme.toString());
                 query(".esriPopup .titlePane").style("backgroundColor", this.config.theme.toString());
-       
+
                 //Set the font color using the configured color value
                 query(".esriPopup .titlePane").style("color", this.config.color.toString());
-                query(".esriPopup. .titleButton").style("color", this.config.color.toString());  
-                
+                query(".esriPopup. .titleButton").style("color", this.config.color.toString());
+
 
                 //Add a title 
                 this.config.title = this.config.title || response.itemInfo.item.title;
@@ -1081,8 +1114,8 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             //Also update the menu icon to match the tool color. 
             query(".tool-label").style("color", this.config.color.toString());
             query("[class^='icon-'], [class*=' icon-']").style("color", this.config.iconcolortheme.toString());
-            
-            if(this.map){
+
+            if (this.map) {
                 this.map.resize();
                 this.map.reposition();
                 registry.byId("bc").resize();
