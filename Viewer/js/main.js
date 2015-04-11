@@ -546,9 +546,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             require(["application/has-config!print?esri/dijit/Print"], lang.hitch(this, function (Print) {
                 //TODO Update this to have custom title text if specified by user. 
                 //Add a new item to the print dialog that allows people to set this. 
-                //By default it should show the web map text. 
-                var titleText = dom.byId("print_title").value;
-                console.log(titleText);
+                //By default it should show the web map text.
                 var layoutOptions = {
                     "titleText": this.config.title,
                     "scalebarUnit": this.config.units,
@@ -674,6 +672,15 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         }, domConstruct.create("div"));
                         domConstruct.place(print.printDomNode, printDiv, "first");
 
+                        print.on("print-start", lang.hitch(this,function(){
+                         var printBox = dom.byId("print_title");
+                         if(printBox.value){
+                            array.forEach(print.templates, lang.hitch(this, function(template){
+                                template.layoutOptions.titleText = printBox.value;
+                            }));
+                         }
+                        }));
+
                         print.startup();
 
 
@@ -724,6 +731,14 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             templates: templates,
                             url: this.config.helperServices.printTask.url
                         }, domConstruct.create("div"));
+                        print.on("print-start", lang.hitch(this,function(){
+                         var printBox = dom.byId("print_title");
+                         if(printBox.value){
+                            array.forEach(print.templates, lang.hitch(this, function(template){
+                                template.layoutOptions.titleText = printBox.value;
+                            }));
+                         }
+                        }));
                         domConstruct.place(print.printDomNode, printDiv, "first");
 
                         print.startup();
