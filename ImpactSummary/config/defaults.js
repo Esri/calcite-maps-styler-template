@@ -38,8 +38,8 @@ define({
     "defaultBasemap": "topo",
     "summaryAttributeOrder": "DESC",
     "zoomType": "No Zoom", //Valid parameters: "No Zoom","Zoom to Extent" and "Zoom to Scale"
-    "bitlyLogin": "esri",
-    "bitlyKey": "R_65fd9891cd882e2a96b99d4bda1be00e",
+    "bitlyLogin": "arcgis",
+    "bitlyKey": "R_b8a169f3a8b978b9697f64613bf1db6d",
     "summaryAttributes": [{
         "attribute": "TOTPOP_CY",
         "label": "Population",
