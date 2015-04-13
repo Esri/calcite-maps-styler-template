@@ -2,6 +2,7 @@
 /*jslint sloppy:true,nomen:true */
 define([
     "dojo/_base/declare",
+    "dojo/_base/kernel",
     "dojo/_base/lang",
     "dojo/string",
     "esri/dijit/BasemapToggle",
@@ -45,6 +46,7 @@ define([
     "dojo/domReady!"
 ], function (
     declare,
+    kernel,
     lang,
     string,
     basemapToggle,
@@ -83,7 +85,7 @@ define([
         sortedFields: [],
         isHumanEntry: null,
         currentLocation:null,
-
+        dateFormat: "LLL",
         
         startup: function () {
             var config = arguments[0];
@@ -120,7 +122,7 @@ define([
         _loadCSS: function () {
             var cssStyle;
             cssStyle = dom.byId("rtlCSS");
-            cssStyle.href = "js/vendor/bootstrap-3.3.0-dist/css/bootstrap.rtl.css";
+            cssStyle.href = "js/vendor/bootstrap/css/bootstrap.rtl.css";
         },
 
         _init: function () {
@@ -128,7 +130,7 @@ define([
             // no theme set
             if (!this.config.theme) {
                 // lets use bootstrap theme!
-                this.config.theme = "bootstrap";
+                this.config.theme = "basic";
             }
             // set theme
             this._switchStyle(this.config.theme);
@@ -155,7 +157,7 @@ define([
             }
             // set theme to selected
             array.forEach(this.themes, lang.hitch(this, function (currentTheme) {
-                if (this.config.theme == currentTheme.id) {
+                if (this.config.theme == currentTheme.id && currentTheme.url) {
                     cssStyle = domConstruct.create('link', {
                         rel: 'stylesheet',
                         type: 'text/css',
@@ -449,7 +451,7 @@ define([
         //function to set the theme for application
         _switchStyle: function (themeName) {
             array.forEach(this.themes, lang.hitch(this, function (currentTheme) {
-                if (themeName == currentTheme.id) {
+                if (themeName == currentTheme.id && currentTheme.url) {
                     var themeNode = domConstruct.create("link", {
                         rel: "stylesheet",
                         type: "text/css",
@@ -912,12 +914,12 @@ define([
                         var inputRangeDateGroupContainer = this._addNotationIcon(formContent, "glyphicon-calendar");
                         inputContent = this._createDateField(inputRangeDateGroupContainer, true, fieldname, currentField);
                         if (currentField.defaultValue) {
-                            var rangeDefaultDate = moment(currentField.defaultValue).format(nls.user.dateFormat);
+                            var rangeDefaultDate = moment(currentField.defaultValue).format(this.dateFormat);
                             $(inputRangeDateGroupContainer).data("DateTimePicker").setDate(rangeDefaultDate);
                         }
                         rangeHelpText = string.substitute(nls.user.dateRangeHintMessage, {
-                            minValue: moment(currentField.domain.minValue).format(nls.user.dateFormat),
-                            maxValue: moment(currentField.domain.maxValue).format(nls.user.dateFormat),
+                            minValue: moment(currentField.domain.minValue).format(this.dateFormat),
+                            maxValue: moment(currentField.domain.maxValue).format(this.dateFormat),
                             openStrong: "<strong>",
                             closeStrong: "</strong>"
                         });
@@ -1026,7 +1028,7 @@ define([
                 //If present fetch default values
                 if (currentField.defaultValue) {
                     if (currentField.type == "esriFieldTypeDate") {
-                        var defaultDate = moment(currentField.defaultValue).format(nls.user.dateFormat);
+                        var defaultDate = moment(currentField.defaultValue).format(this.dateFormat);
                         $(inputDateGroupContainer).data("DateTimePicker").setDate(defaultDate);
                     } else {
                         if (currentField.type == "esriFieldTypeString" && lang.trim(currentField.defaultValue) !== "") {
@@ -1567,6 +1569,7 @@ define([
                             // support basic offline editing
                             this._offlineSupport = new OfflineSupport({
                                 map: this.map,
+                                proxy: this.config.proxyurl,
                                 layer: this._formLayer
                             });
                         }));
@@ -2230,7 +2233,7 @@ define([
                     key = domAttr.get(currentField, "id");
                     if (domClass.contains(currentField, "hasDatetimepicker")) {
                         var picker = $(currentField.parentNode).data('DateTimePicker');
-                        var d = picker.getDate();
+                        var d = picker.date();
                         // need to get time of date in ms for service
                         value = d.valueOf();
                     } else {
@@ -2861,15 +2864,15 @@ define([
             on(dateInputField, "blur", function () {
                 $(this.parentElement).data("DateTimePicker").hide();
             });
-            
+
             $(parentNode).datetimepicker({
-                useSeconds: false,
                 useStrict: false,
-                format: nls.user.dateFormat,
+                locale: kernel.locale,
+                format: this.dateFormat,
                 useCurrent: isDefaultDate
             }).on('dp.show', function (evt) {
                 var picker = $(this).data('DateTimePicker');
-                var selectedDate = picker.getDate();
+                var selectedDate = picker.date();
                 if (selectedDate === null) {
                     query("input", this)[0].value = "";
                 }
@@ -2893,8 +2896,8 @@ define([
                 domClass.remove(query(evt.target).parents(".geoFormQuestionare")[0], "has-error");
             });
             if (isRangeField) {
-                $(parentNode).data("DateTimePicker").setMaxDate(moment(currentField.domain.maxValue).format(nls.user.dateFormat));
-                $(parentNode).data("DateTimePicker").setMinDate(moment(currentField.domain.minValue).format(nls.user.dateFormat));
+                $(parentNode).data("DateTimePicker").setMaxDate(moment(currentField.domain.maxValue).format(this.dateFormat));
+                $(parentNode).data("DateTimePicker").setMinDate(moment(currentField.domain.minValue).format(this.dateFormat));
             }
             return dateInputField;
         },
