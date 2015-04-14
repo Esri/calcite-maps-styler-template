@@ -606,10 +606,10 @@ define([
             maxStops : 2,
             showTravelModesOption : false,
             showTrafficOption : true,
-            // routeParams : {
-               // directionsLanguage : userLang,
-               // directionsLengthUnits : units
-            // },
+            routeParams : {
+               //directionsLanguage : userLang,
+               directionsLengthUnits : units
+            },
             alphabet : false,
             canModifyStops : false,
             dragging : false,
@@ -619,6 +619,7 @@ define([
             routeSymbol : routeSym,
             segmentSymbol : segmentSym
          };
+         console.log("Routing", this.config);
          if (this.config.helperServices.route && this.config.helperServices.route.url)
             options.routeTaskURL = this.config.helperServices.route.url;
          if (this.config.routeUtility)

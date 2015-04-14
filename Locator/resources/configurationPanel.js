@@ -58,6 +58,22 @@
                     "placeHolder": ""
                 },
                 {
+                     "type" : "string",
+                     "fieldName" : "distanceUnits",
+                     "tooltip" : "Distance units",
+                     "label" : "Distance units",
+                     "options" : [
+                        {
+                           "label" : "Miles",
+                           "value" : "miles"
+                        },
+                        {
+                           "label" : "Kilometers",
+                           "value" : "kilometers"
+                        }
+                     ]
+                },
+                {
                     "type": "paragraph",
                     "value": "View the <a  target=\"_blank\" href=\"http://www.arcgis.com/apps/Directions/resources/doc/addpremiumservice.html\">Configure a premium service for anonymous access<\/a> help topic for more details" 
                 }
