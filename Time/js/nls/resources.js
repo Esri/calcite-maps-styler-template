@@ -22,6 +22,13 @@ define({
     legend:{
       title: "Legend"
     },
+    share: {
+      title: "Share"
+    },
+    about: {
+      title: "About",
+      error: "By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel."
+    },
     time: {
         enableTimeMessage: "The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option.",
         datePattern: "MMMM d, yyyy",
@@ -31,6 +38,9 @@ define({
         secondTimePattern: "h:mm:ss a",
         timeRange: "${startTime} to ${endTime}",
         yearPattern: "yyyy"
+    },
+    histogram:{
+      error: "No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option."
     }
   }),
   "fr": 1

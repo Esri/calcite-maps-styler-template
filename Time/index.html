@@ -14,11 +14,11 @@
   <meta name = "viewport" content = "initial-scale = 1.0">  
   <!-- End Responsive -->
   <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
-  <!--<link rel="stylesheet" href="//jsdev.arcgis.com/3.13/esri/themes/calcite/css/calcite.css">-->
   <link rel="stylesheet" href="http://js.arcgis.com/3.13/dijit/themes/claro/claro.css">
   <link rel="stylesheet" href="//jsdev.arcgis.com/3.13/esri/css/esri.css">
   <!-- Load any application specific styles -->
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dialogs.css">
 </head>
 
 <body class="claro app-loading">
@@ -27,22 +27,44 @@
   </div>
   <!-- The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. -->
   <div id="mapDiv" dir="ltr">
-    <div id="titleContainer" class="bg fg">
+    <div id="titleContainer" class="top-bar bg fg">
       <div class="titleContent">
-        <div id="title"></div>
-        <div id="subtitle"></div>
+        <div id="title" class="app-title"></div>
+        <div class="top-menu-right">
+           <div id="aboutDiv" class="menuDiv hide">
+            <div  role="presentation" id="aboutDialog" >
+                <div id="aboutBtn" class="button-container">
+                  <div class="icon-info menuIcon"></div>
+                  <div id="aboutLabel" class="iconLabel aboutLabel"></div>
+                </div>
+            </div>
+          </div>
+        <div id="shareDiv" class="menuDiv hide" >
+          <div  role="presentation" id="shareDialog">
+            <div id="shareBtn" class="button-container">
+                <div class="icon-share menuIcon"></div>
+                <div id="shareLabel" class="iconLabel shareLabel"></div>
+              </div>
+          </div>
+        </div>
+
+        </div>
       </div>
     </div>
     <div id="legendContainer" class="bg fg">
-      <div id="legendHeader" class="icon-close show"></div>
+      <div id="legendButton" class="legendButtonDiv icon-menu-open fg bg"></div>
       <div id="legendDiv"></div>
     </div>
-    <div id="timeContainer" class="timeInfo bg fg">
+     <div id="timeContainer" class="timeInfo bg fg">
       <div id="timeControls" class="controlCont">
-        <div id="playSlider" class="icon-play fg tc"></div>
-        <div id="timeSliderDiv" class="tc"></div>
+        <div id="playSlider" class="icon-play tc"></div>
+        <div id="timeLabel" ></div>
       </div>
-      <div id="timeLabel"></div>
+      <div id="sliderContainer">
+        <div id="timeSliderDiv" class="tc"></div>        
+      </div>
+
+
     </div>
   </div>
   <script type="text/javascript">

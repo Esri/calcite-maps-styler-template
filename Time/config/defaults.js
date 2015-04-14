@@ -26,38 +26,36 @@ define({
   //Enter the url to the proxy if needed by the application. See the 'Using the proxy page' help topic for details
   //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
   "proxyurl": "",
-  //Example of a template specific property. If your template had several color schemes
-  //you could define the default here and setup configuration settings to allow users to choose a different
-  //color theme.
-  "theme": "blue",
   "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
   //Defaults to arcgis.com. Set this value to your portal or organization host name.
   "sharinghost": location.protocol + "//" + "www.arcgis.com",
   "units": null,
-  //If your applcation needs to edit feature layer fields set this value to true. When false the map will
-  //be dreated with layers that are not set to editable which allows the FeatureLayer to load features optimally. 
-  "editable": false,
   "time": true,
   //Overwrite the calculated date time format with a custom value. 
-  "datetimeformat": null,
+  "datetimeformat": null,//"MMMM d yyyy, h:m:s.SSS a",
   //Disable slider ticks when true
   "sliderticks":false, //display slider tics
-  "looptime": true,//loop through time 
+  "looptime": false,//loop through time 
   "autoplay": false, //auto play the slider when app starts 
-  "nocontrols":false, //hide slider and play controls and just show time
+  "sliderrate": 500, //rate at which time slider plays in milliseconds.
+  "noslider":false, //hide slider and play controls and just show time
   //position time and legend containers. Valid values are top-right, bottom-right, top-left
-  //bottom-left. Note that if you set both to the same value they'll occupy the same space and the 
-  //layout will look odd.
-  "timeposition":"bottom-left",
+  //bottom-left, top-center, bottom-center. Note that if you set both to the same value they'll occupy the same space and the 
+  //layout won't position correctly.
+  "timeposition":"bottom-center", 
   "legendposition": "top-right",
-  "panelbackground": null, //panel background color as hex value
+  "panelbackground": null, //panel and title bar background color as hex value
   "panelcolor":null, //text color as hex value 
   "timecolor": null, //color for play and slider controls
+  "slidercolor": null, //color for the slider bar on time slider
   "legend": true, //Add legend to map 
-  "title": true, //add title and optionally subtitle
+  "title": true, //add title
   "titletext": null,
-  "subtitletext": null,
+  "about":true,
+  "abouttext": null,
+  "share":true,
   "zoomslider":true,
+  "basemap_gallery": true,
   //add the search tool 
   "search": true,
   "locationSearch": true,
