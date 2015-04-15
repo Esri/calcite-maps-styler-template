@@ -80,7 +80,7 @@
                "value": "Set <i>Hide slider control</i> to true to hide the slider portion of the time display and show just the play control and date."
             },{
                "type": "boolean",
-               "fieldName": "hideslider",
+               "fieldName": "noslider",
                "label": "Hide slider control"
             },{
                "type": "boolean",
