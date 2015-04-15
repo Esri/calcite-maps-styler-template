@@ -210,8 +210,8 @@
                }
             },{  
                "type":"boolean",
-               "fieldName":"tool_search",
-               "label":"Address Finder"
+               "fieldName":"search",
+               "label":"Search"
             },
             {  
                "type":"boolean",
