@@ -121,7 +121,7 @@ html, body {
   font-weight: normal; }
 
 @font-face {
-  font-family: "HelveticaNeueUltraLight";
+  font-family: "HelveticaNeueUltraLight ";
   src: url('../fonts/helveticaneueultralight.eot');
   src: url('../fonts/helveticaneueultralight.eot?#iefix') format('embedded-opentype'), url('../fonts/helveticaneueultralight.woff') format('woff'), url('../fonts/helveticaneueultralight.ttf') format('truetype'), url('../fonts/helveticaneueultralight.svg#HelveticaNeueUltraLight') format('svg');
   font-style: normal;
@@ -799,22 +799,21 @@ img {
     #panelLogo {
       margin-left: 5px; 
       display:block !important;
-      max-width: 50px;
-      min-height: 50px;
       overflow: hidden;
       float: left;
       line-height: 50px;
+      width:50px;
+      height: 50px;
     }
 
     #panelLogo img {
       vertical-align: middle;
-      line-height: 50px;
-      max-width: 50px;
-      max-height: 50px; 
+      line-height: inherit;
+      max-width: 45px;
+      max-height: 45px; 
     }
 
   }
-
 #panelTitle {
   height: 50px;
   width: 100%;
@@ -839,8 +838,8 @@ img {
   margin-left: 5px;
 }
 .no-search #panelLogo img{
-  max-width:50px;
-  max-height:50px;
+  max-width:50px !important;
+  max-height:50px !important;
 }
 #panelLogo{
   display:none;
