@@ -30,6 +30,13 @@ Enable Routing Directions: Choose this option to allow users to generate turn by
 Route Utility Item: URL to route utility item (with stored credentials). *
 *requires organization account.
 
+Distance Units: Choose this distance units (miles, kilometers or meters).
+
+Maximum Distance: Specify a maximum search distance. 
+
+Defaukt Distance: Specify a default search distance. 
+
+
 #Instructions
 
 1. Download and unzip the .zip file or clone the repo. 

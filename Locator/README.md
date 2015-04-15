@@ -25,6 +25,8 @@ Destination Layer: Choose this option to include demographic information about t
 
 Route Utility Item: URL to route utility item (with stored credentials).
 
+Distance Units: Choose this distance units (miles or kilometers).
+
 #Optional
 
 The template can be configured using the following optional settings if no destination layer is specified:
