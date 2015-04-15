@@ -142,6 +142,18 @@ define([
                   urlPrefix : "traffic.arcgis.com",
                   proxyUrl : this.config.proxyurl
                });
+               if (this.config.helperServices.route && this.config.helperServices.route.url) {
+                  urlUtils.addProxyRule({
+                     urlPrefix : this.config.helperServices.route.url,
+                     proxyUrl : this.config.proxyurl
+                  });
+               }
+               if (this.config.routeUtility) {
+                  urlUtils.addProxyRule({
+                     urlPrefix : this.config.routeUtility,
+                     proxyUrl : this.config.proxyurl
+                  });
+               }
             }
             // document ready
             ready(lang.hitch(this, function() {
@@ -603,7 +615,7 @@ define([
             units = "esriKilometers";
          var options = {
             map : this.map,
-            maxStops : 2,
+            //maxStops : 2,
             showTravelModesOption : false,
             showTrafficOption : true,
             routeParams : {
@@ -621,7 +633,7 @@ define([
          };
          console.log("Routing", this.config);
          if (this.config.helperServices.route && this.config.helperServices.route.url)
-            options.routeTaskURL = this.config.helperServices.route.url;
+            options.routeTaskUrl = this.config.helperServices.route.url;
          if (this.config.routeUtility)
            options.routeTaskUrl = this.config.routeUtility;
          this.dirWidget = new Directions(options, "resultsDirections");

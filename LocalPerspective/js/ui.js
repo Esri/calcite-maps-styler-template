@@ -327,7 +327,7 @@ define([
             if (type == "demographics" || type == "proximity") {
                 
                 var pageUnits = domConstruct.create('div', {
-                  innerHTML: this.config.distanceUnits.toUpperCase()
+                  innerHTML: this.config.distanceUnits.toUpperCase() + " (1 - " + this.config.maxDistance + ")"
                }, pageHeader);
                domClass.add(pageUnits, 'pageUnits');
                
@@ -339,14 +339,14 @@ define([
                // slider
                // default to 3 if not specified or out of range
                var dist = 3;
-               if (this.config.defaultDistance && this.config.defaultDistance > 0 && this.config.defaultDistance <11)
+               if (this.config.defaultDistance && this.config.defaultDistance > 0 && this.config.defaultDistance <= this.config.maxDistance)
                   dist = this.config.defaultDistance;
                var sliderH = new HorizontalSlider({
                   value: dist,
                   minimum: 1,
-                  maximum: 10,
+                  maximum: this.config.maxDistance,
                   intermediateChanges: false,
-                  discreteValues: 10,
+                  discreteValues: this.config.maxDistance,
                   showButtons: false
                }, "slider_" +id);
                sliderH.startup();
@@ -477,10 +477,12 @@ define([
          var units = "esriMiles";
          if (this.config.distanceUnits == "kilometers")
             units = "esriKilometers";
+         if (this.config.distanceUnits == "meters")
+            units = "esriKilometers";
          var options = {
               map: this.map,
               routeParams: {
-                 directionsLanguage : userLang,
+                 //directionsLanguage : userLang,
                  directionsLengthUnits : units
               },
               alphabet: false,
@@ -739,6 +741,8 @@ define([
          var units = GeometryService.UNIT_STATUTE_MILE;
          if (this.config.distanceUnits == "kilometers")
             units = GeometryService.UNIT_KILOMETER;
+         if (this.config.distanceUnits == "meters")
+            units = GeometryService.UNIT_METER;
          params.unit = units;
          params.bufferSpatialReference = this.map.spatialReference;
          params.outSpatialReference = this.map.spatialReference;
@@ -808,6 +812,8 @@ define([
                   pageObj.proximityInfo.selectFeature(gra);
                }
             }
+         } else {
+            this.setLocation(evt.mapPoint);
          }
       },
       

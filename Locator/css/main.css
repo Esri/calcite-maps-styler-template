@@ -165,6 +165,12 @@ hr {
 	color: #bbbbbb;
 }
 
+.simpleGeocoder .esriGeocoder .esriGeocoderMenuArrow {
+  display: none;
+  cursor: pointer;
+  background: url("../images/simpleGeocoder.png") no-repeat -32px 0;
+}
+
 .esriGeocoderResults {
 	color: #ffffff !important;
 	font-weight: 300 !important;

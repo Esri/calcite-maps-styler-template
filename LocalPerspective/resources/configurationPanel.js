@@ -102,8 +102,26 @@
                   {
                   "label" : "Kilometers",
                   "value" : "kilometers"
+                  },
+                  {
+                  "label" : "Meters",
+                  "value" : "meters"
                   }
                ]
+            },
+            {
+               "type":"number",
+               "fieldName":"maxDistance", 
+               "label": "Maximum distance",
+               "tooltip": "Maximum distance",
+               "constraints" :{"min":10,"places":0}
+            },
+            {
+               "type":"number",
+               "fieldName":"defaultDistance", 
+               "label": "Default distance",
+               "tooltip": "Default distance",
+               "constraints" :{"min":1,"places":0}
             }
          ]
       }
@@ -119,6 +137,8 @@
       "showWeather" : true,
       "weatherUnits" : "F",
       "showDirections" : false,
-      "distanceUnits" : "miles"
+      "distanceUnits" : "miles",
+      "maxDistance" : 10,
+      "defaultDistance" : 3
    }
 }

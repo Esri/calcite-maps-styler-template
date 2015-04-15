@@ -72,6 +72,7 @@ define({
     "directionsLabel": "Directions",
     "directionsURL": null,
     "distanceUnits": "miles", // options: miles or kilometers
+    "maxDistance": 10,
     "defaultDistance": 3,
     "defaultZoomLevel": 14,
     "defaultToCenter": true,
