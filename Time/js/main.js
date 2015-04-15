@@ -390,9 +390,11 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 if (this.config.sliderrate) {
                     timeSlider.setThumbMovingRate(this.config.sliderrate);
                 }
-                //autoplay the timer 
                 if (this.config.autoplay) {
                     timeSlider.play();
+                    //switch icon to pause
+                    domClass.remove("playSlider", "icon-play");
+                    domClass.add("playSlider", "icon-pause");
                 }
                 //Listen for time extent changes
                 var info = this._formatLabel(this.map.timeExtent);
