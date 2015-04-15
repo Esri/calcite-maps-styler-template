@@ -234,7 +234,7 @@
       "autoplay": false,
       "sliderrate": 500,
       "noslider": false,
-      "scalebar":false,
+      "scale":false,
       "zoomslider": true,
       "share": true,
       "about": true,
