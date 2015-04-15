@@ -25,12 +25,15 @@ body,html {
 .showtitle .esriSimpleSlider {
     top: 50px;
 }
-#search {
+#search{
+    top:95px;
     position: absolute;
     left: 20px;
-    top: 115px;
     display: block;
     z-index: 40;
+}
+.showtitle #search {
+    top: 115px;
 }
 
 .showtitle.nozoom #search {
@@ -176,10 +179,7 @@ body,html {
     height: 40px;
     line-height: 40px;
 }
-.error-text{
-  padding:4px;
-  line-height:normal;
-}
+
 .timeInfo {
     width:450px;
     position: absolute;
@@ -188,6 +188,10 @@ body,html {
     border-color: #ccc;
     border-color: rgba(128,128,128,.2);
     border-radius: 2px;
+}
+.error-text{
+  padding:4px;
+  line-height:normal;
 }
 
 /*Date-Time label*/
