@@ -514,7 +514,8 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                         templates = array.map(templateNames, lang.hitch(this, function (name) {
                             var plate = new PrintTemplate();
                             plate.layout = plate.label = name;
-                            plate.format = this.format;
+                            plate.format = this.config.printformat;
+
                             plate.layoutOptions = layoutOptions;
                             return plate;
                         }));
@@ -547,13 +548,13 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                         layout: "Letter ANSI A Landscape",
                         layoutOptions: layoutOptions,
                         label: this.config.i18n.tools.printLayouts.label1 + " ( " + this.config.printformat + " )",
-                        format: this.format
+                        format: this.config.printformat
                     },
                     {
                         layout: "Letter ANSI A Portrait",
                         layoutOptions: layoutOptions,
                         label: this.config.i18n.tools.printLayouts.label2 + " ( " + this.config.printformat + " )",
-                        format: this.format
+                        format: this.config.printformat
                     },
                     {
                         layout: "Letter ANSI A Landscape",
@@ -951,7 +952,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
         },
         _displayContainer: function (container, button) {
-
             this._closeContainers(container);
 
             var node = dom.byId(container);
