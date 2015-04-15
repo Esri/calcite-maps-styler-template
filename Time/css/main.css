@@ -176,7 +176,10 @@ body,html {
     height: 40px;
     line-height: 40px;
 }
-
+.error-text{
+  padding:4px;
+  line-height:normal;
+}
 .timeInfo {
     width:450px;
     position: absolute;
