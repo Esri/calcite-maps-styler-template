@@ -426,7 +426,7 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 //time 
                 domClass.add(dom.byId("timeControls"), "hide");
                 dom.byId("timeSliderDiv").innerHTML = this.config.i18n.time.enableTimeMessage;
-
+                domClass.add(dom.byId("timeSliderDiv"), "error-text");
             }
             this._updateTheme();
         },
