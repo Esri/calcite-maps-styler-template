@@ -17,6 +17,19 @@
                "fieldName":"titletext",
                "type":"string",
                "tooltip":"Defaults to web map title"
+            },{
+               "type":"paragraph",
+               "value":"Enter the url to a logo image and optionally provide the url to a site that will open when the logo image is clicked. The logo image will display in the title bar to the left of the title. "
+            },{
+               "type":"string",
+               "fieldName":"logo",
+               "label": "Logo image url"
+            },{
+               "type":"string",
+               "fieldName":"logolink",
+               "label":"Logo url"
+            },{
+
             },
             {
                "type":"boolean",
@@ -92,6 +105,14 @@
                "fieldName":"sliderrate",
                "type":"string",
                "tooltip":"Rate at which slider plays (in milliseconds)"
+            },{
+               "type":"paragraph",
+               "value":"By default the application will calculate an appropriate date format as the time slider progresses based on the time extent. Alternatively you can specify a custom date/time extent by providing a custom date string. See the examples in the <a href='http://dojotoolkit.org/reference-guide/1.10/dojo/date/locale/format.html'>dojo date format help</a> for more information. "
+            },{
+               "type":"string",
+               "label": "Date Format",
+               "fieldName": "datetimeformat",
+               "placeHolder": "yyyy-MM-dd"
             },
             {
                "type":"color",
@@ -129,10 +150,6 @@
          "category": "Positioning",
          "fields":[
             {
-               "type":"paragraph",
-               "value":"Position the time slider and legend controls. Note that some combinations may not display well. For example if you set both controls to the bottom-right they'll overlap. "
-            },
-            {
                "type": "string",
                "fieldName": "timeposition",
                "tooltip": "Select location for time control",
@@ -147,35 +164,6 @@
                   },{
                      "label": "Bottom left",
                      "value": "bottom-left"
-                  },{
-                     "label": "Top right",
-                     "value": "top-right"
-                  },{
-                     "label": "Top left",
-                     "value": "top-left"
-                  },{
-                     "label": "Top center",
-                     "value": "top-center"
-                  }
-               ]
-            },            {
-               "type": "string",
-               "fieldName": "legendposition",
-               "tooltip": "Select location for legned control",
-               "label": "Legned control location",
-               "options":[
-                  {
-                     "label": "Bottom right",
-                     "value": "bottom-right"
-                  },{
-                     "label": "Bottom left",
-                     "value": "bottom-left"
-                  },{
-                     "label": "Top right",
-                     "value": "top-right"
-                  },{
-                     "label": "Top left",
-                     "value": "top-left"
                   }
                ]
             }

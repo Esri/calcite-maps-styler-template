@@ -50,14 +50,20 @@ define({
   "slidercolor": null, //color for the slider bar on time slider
   "legend": true, //Add legend to map 
   "title": true, //add title
-  "titletext": null,
-  "about":true,
+  "titletext": null, //specify title text 
+  "logo": null, //Provide the url to a logo image 
+  "logolink":null,//optionally provide link text for the logo image 
+  "about":true, //Enable the about dialog
+  //Define text that appears in the about dialog. If no text is specified the web map desc is used. 
   "abouttext": null,
+  //Enable the social sharing dialog (email, facebook, twitter etc)
   "share":true,
+  //Enable the map zoom slider 
   "zoomslider":true,
-  "basemap_gallery": true,
   //add the search tool 
   "search": true,
+  //Set locationSearch to false to disable search with the locators. Only feature layer search
+  //will be enabled. 
   "locationSearch": true,
   //When searchExtent is true the locator will prioritize results within the current map extent.
   "searchExtent": false,

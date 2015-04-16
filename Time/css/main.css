@@ -22,6 +22,21 @@ body,html {
 }
 
 /*Map Navigation Widgets (zoom slider, search, home)*/
+#logo{
+    float:left;
+    width: 44px;
+    height: 44px;
+
+}
+#logo img{
+    vertical-align: middle;
+    line-height: 44px;
+    width: 44px;
+    height: 44px;
+}
+#logo a{
+    cursor:pointer;
+}
 .showtitle .esriSimpleSlider {
     top: 50px;
 }
@@ -73,7 +88,7 @@ body,html {
     overflow: hidden;
     text-overflow: ellipsis;
     float: left;
-    padding-left: 1em;
+    padding-left: .5em;
 }
 /*Styles for the right menu container that holds share and about*/
 .top-menu-right{
@@ -321,8 +336,9 @@ body,html {
     max-height: 60%;
     overflow-y: auto;
     width: 240px;
-    border-radius: 2px;
+    border-radius: 4px;
     display: block;
+    margin:auto;
 }
 
 

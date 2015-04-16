@@ -81,9 +81,10 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
             }));
         },
         _createWidgets: function () {
+
             //Specify the app title
             document.title = this.config.response.itemInfo.item.title;
-            if (this.config.title || this.config.about || this.config.share) {
+            if (this.config.title || this.config.about || this.config.share || this.config.logo) {
                 domClass.add(document.body, "showtitle");
                 if (this.config.title) {
                     var title = this.config.titletext || this.config.response.itemInfo.item.title;
@@ -92,6 +93,24 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
             } else {
                 domClass.add(dom.byId("titleContainer"), "hide");
             }
+            //Add a logo
+            if(this.config.logo){
+                domClass.remove(dom.byId("logo"),"hide");
+                var link = null;
+                if(this.config.logolink){
+                    link = domConstruct.create("a",{
+                        href:"http://www.arcgis.com",
+                        target:"_blank"
+                    },dom.byId("logo"));
+                }
+
+                var logoDiv = link || dom.byId("logo");
+                domConstruct.create("img",{
+                    src: this.config.logo
+                },logoDiv);
+            }
+
+
 
             //add share dialog
             if (this.config.share) {
