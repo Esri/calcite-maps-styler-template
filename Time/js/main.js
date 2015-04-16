@@ -94,23 +94,21 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 domClass.add(dom.byId("titleContainer"), "hide");
             }
             //Add a logo
-            if(this.config.logo){
-                domClass.remove(dom.byId("logo"),"hide");
+            if (this.config.logo) {
+                domClass.remove(dom.byId("logo"), "hide");
                 var link = null;
-                if(this.config.logolink){
-                    link = domConstruct.create("a",{
-                        href:"http://www.arcgis.com",
-                        target:"_blank"
-                    },dom.byId("logo"));
+                if (this.config.logolink) {
+                    link = domConstruct.create("a", {
+                        href: "http://www.arcgis.com",
+                        target: "_blank"
+                    }, dom.byId("logo"));
                 }
 
                 var logoDiv = link || dom.byId("logo");
-                domConstruct.create("img",{
+                domConstruct.create("img", {
                     src: this.config.logo
-                },logoDiv);
+                }, logoDiv);
             }
-
-
 
             //add share dialog
             if (this.config.share) {
@@ -350,7 +348,6 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
         _updateTheme: function () {
             if (this.config.panelbackground) {
                 query(".bg").style("backgroundColor", this.config.panelbackground.toString());
-
             }
             if (this.config.panelcolor) {
                 query(".fg").style("color", this.config.panelcolor.toString());
@@ -363,10 +360,14 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
             }
             if (this.config.slidercolor) {
                 query(".dijitSliderProgressBarH").style("backgroundColor", this.config.slidercolor.toString());
-                query(".fg").style("borderColor", this.config.slidercolor.toString());
             }
         },
-
+        _updatePlayButton: function (add, remove) {
+            //switch play/pause icon 
+            var play = dom.byId("playSlider");
+            domClass.remove(play, remove);
+            domClass.add(play, add);
+        },
         _displayTime: function () {
             //position the time window 
             domClass.add("timeContainer", "window-" + this.config.timeposition);
@@ -399,8 +400,25 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 timeSlider.startup();
                 //Hide the play controls if configured. 
                 if (this.config.noslider) {
-                    //hide the play and slider controls
+                    //hide the slider control
                     domClass.add(dom.byId("sliderContainer"), "noslider");
+                }
+                //Show the time navigation controls (prev,  next)
+                if (this.config.timenav) {
+                    domClass.remove(dom.byId("nextSlider"), "hide");
+                    domClass.remove(dom.byId("prevSlider"), "hide");
+                    //handle forward/back navigation on time slider 
+                    query(".timenav").on("click", lang.hitch(this, function (e) {
+                        if (timeSlider.playing) {
+                            timeSlider.pause();
+                            this._updatePlayButton("icon-play", "icon-pause");
+                        }
+                        if (e.target.id === "nextSlider") {
+                            timeSlider.next();
+                        } else {
+                            timeSlider.previous();
+                        }
+                    }));
                 }
 
                 if (!this.config.sliderticks) {
@@ -411,9 +429,7 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 }
                 if (this.config.autoplay) {
                     timeSlider.play();
-                    //switch icon to pause
-                    domClass.remove("playSlider", "icon-play");
-                    domClass.add("playSlider", "icon-pause");
+                    this._updatePlayButton("icon-pause", "icon-play");
                 }
                 //Listen for time extent changes
                 var info = this._formatLabel(this.map.timeExtent);
@@ -425,24 +441,23 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 }));
                 on(dom.byId("playSlider"), "click", lang.hitch(this, function () {
                     var play = domClass.contains("playSlider", "icon-play");
+
                     var removeClass = null,
                         addClass = null;
                     if (play) { //Switch to the pause icon and press play
                         removeClass = "icon-play";
                         addClass = "icon-pause";
                         timeSlider.play();
+
                     } else { //Switch to the play icon and press pause
                         removeClass = "icon-pause";
                         addClass = "icon-play";
                         timeSlider.pause();
                     }
-
-                    domClass.remove("playSlider", removeClass);
-                    domClass.add("playSlider", addClass);
+                    this._updatePlayButton(addClass, removeClass);
 
                 }));
             } else {
-
                 //hide play and slider controls and add message about no 
                 //time 
                 domClass.add(dom.byId("timeControls"), "hide");
@@ -453,7 +468,7 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
         },
 
         _updateLabel: function (timeInfo) {
-        //Update the time extent label for the time slider 
+            //Update the time extent label for the time slider 
             var info;
             if (timeInfo.end) {
                 info = string.substitute(this.config.i18n.time.timeRange, {

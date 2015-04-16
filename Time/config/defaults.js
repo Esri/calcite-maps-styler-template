@@ -28,7 +28,7 @@ define({
   "proxyurl": "",
   "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
   //Defaults to arcgis.com. Set this value to your portal or organization host name.
-  "sharinghost": location.protocol + "//" + "www.arcgis.com",
+  "sharinghost": location.protocol + "//" + "devext.arcgis.com",
   "units": null,
   "time": true,
   //Overwrite the calculated date time format with a custom value. 
@@ -39,15 +39,16 @@ define({
   "autoplay": false, //auto play the slider when app starts 
   "sliderrate": 500, //rate at which time slider plays in milliseconds.
   "noslider":false, //hide slider and play controls and just show time
+  "timenav": false, //When true show the time navigation (next previous arrows)
   //position time and legend containers. Valid values are top-right, bottom-right, top-left
   //bottom-left, top-center, bottom-center. Note that if you set both to the same value they'll occupy the same space and the 
   //layout won't position correctly.
   "timeposition":"bottom-center", 
   "legendposition": "top-right",
-  "panelbackground": null, //panel and title bar background color as hex value
-  "panelcolor":null, //text color as hex value 
-  "timecolor": null, //color for play and slider controls
-  "slidercolor": null, //color for the slider bar on time slider
+  "panelbackground": "#575757", //panel and title bar background color as hex value
+  "panelcolor":"#FFF", //text color as hex value 
+  "timecolor": "#4992CD", //color for play and slider controls
+  "slidercolor": "#7CC5FF", //color for the slider bar on time slider
   "legend": true, //Add legend to map 
   "title": true, //add title
   "titletext": null, //specify title text 

@@ -97,6 +97,10 @@
                "label": "Hide slider control"
             },{
                "type": "boolean",
+               "fieldName": "timenav",
+               "label": "Show navigation buttons"
+            },{
+               "type": "boolean",
                "fieldName": "sliderticks",
                "label": "Add tick marks to slider"
             },{
@@ -217,11 +221,16 @@
       }
    ],
    "values":{  
+      "panelcolor": "#FFF",
+      "panelbackground": "#575757",
+      "timecolor": "#4992CD",
+      "slidercolor":"#7CC5FF",
       "sliderticks":false,
       "looptime":true,
       "autoplay": false,
       "sliderrate": 500,
       "noslider": false,
+      "timenav": false,
       "scale":false,
       "zoomslider": true,
       "share": true,

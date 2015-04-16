@@ -186,7 +186,7 @@ body,html {
 }
 
 #sliderContainer{
-    width:450px;
+    max-width:450px;
     margin:auto;
     position: relative;
     vertical-align: middle;
@@ -196,12 +196,12 @@ body,html {
 }
 
 .timeInfo {
-    width:450px;
+    max-width:450px;
     position: absolute;
     z-index: 40;
     height: auto;
     border-color: #ccc;
-    border-color: rgba(128,128,128,.2);
+    border-color: rgba(128,128,128,.5);
     border-radius: 2px;
 }
 .error-text{
@@ -211,15 +211,17 @@ body,html {
 
 /*Date-Time label*/
 #timeControls{
+    width:100%;
     overflow: hidden;
     border-bottom: solid 1px;
     border-color:inherit;
 }
 
 #timeLabel {
-    padding-left:30px;
+    width:100%;
+    display: table-cell;
+    vertical-align: middle;
     font-size: .9em;
-    line-height: 40px;
     text-align: center;
     white-space: normal;
 }
@@ -236,7 +238,9 @@ body,html {
 /*Time Slider Controls*/
 
 .controlCont {
-    line-height: 40px;
+    display: table;
+    width: 100%;
+    overflow: hidden;
     height: 40px;
     border-color: #ccc;
     border-color: rgba(128,128,128,.2);
@@ -248,15 +252,36 @@ body,html {
 
 
 /*Play/Pause Button*/
-#playSlider {
-    width: 30px;
-    padding: 0 2px;
-    float: left;
+#playControls{
+    padding:2px;
+    display: table-cell;
+    margin:.5em;
+    width:auto;
+    vertical-align: middle;
+    text-align: center;
     line-height: 40px;
     border-right: solid 1px;
     border-color: inherit;
-    color: #4992CD;
-    margin: auto;
+    text-shadow: 0px 1px 2px rgba(128,128,128,.5);
+}
+#playSlider{
+    width:20px;
+    font-size:24px;
+}
+#sliderDisabled{
+    color:#dddddd;
+}
+
+#prevSlider, #nextSlider{
+    font-size:15px;
+}
+#prevSlider.hide, #nextSlider.hide{
+    display: none;
+}
+#playSlider, #prevSlider, #nextSlider {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 /*Time Slider Widget Customizations*/
 .claro .dijitSliderImageHandleH {
@@ -386,7 +411,7 @@ body,html {
 
 /*Icon Font Styles (Play/Pause/Open/Close)*/
 @font-face {
-    font-family:timeicons;src:url(../fonts/icomoon.eot?-9szrd3);src:url(../fonts/icomoon.eot?#iefix-9szrd3) format('embedded-opentype'),url(../fonts/icomoon.woff?-9szrd3) format('woff'),url(../fonts/icomoon.ttf?-9szrd3) format('truetype'),url(../fonts/icomoon.svg?-9szrd3#icomoon) format('svg');font-weight:400;font-style:normal;
+    font-family:timeicons;src:url(../fonts/icomoon.eot?-i18m8k);src:url(../fonts/icomoon.eot?#iefix-i18m8k) format('embedded-opentype'),url(../fonts/icomoon.woff?-i18m8k) format('woff'),url(../fonts/icomoon.ttf?-i18m8k) format('truetype'),url(../fonts/icomoon.svg?-i18m8k#icomoon) format('svg');font-weight:400;font-style:normal;
 }
 
 [class*=" icon-"],[class^=icon-] {
@@ -432,11 +457,11 @@ body,html {
     content: "\e601";
 }
 .icon-next:before {
-    content: "\e60d";
+    content: "\e62c";
 }
 
 .icon-previous:before {
-    content: "\e60e";
+    content: "\e62b";
 }
 
 .icon-close:before {
