@@ -123,48 +123,50 @@ function (
             //search.get("sources");
 
             array.forEach(geocoders, lang.hitch(this, function (geocoder) {
-                if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+                if (geocoder.url) {
+                    if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
 
-                    geocoder.hasEsri = true;
-                    geocoder.locator = new Locator(geocoder.url);
-                    geocoder.placefinding = true;
-                    geocoder.singleLineFieldName = "SingleLine";
+                        geocoder.hasEsri = true;
+                        geocoder.locator = new Locator(geocoder.url);
+                        geocoder.placefinding = true;
+                        geocoder.singleLineFieldName = "SingleLine";
 
-                    geocoder.name = geocoder.name || "Esri World Geocoder";
+                        geocoder.name = geocoder.name || "Esri World Geocoder";
 
-                    if (this.config.searchExtent) {
-                        geocoder.searchExtent = this.map.extent;
-                        geocoder.localSearchOptions = {
-                            minScale: 300000,
-                            distance: 50000
-                        };
-                    }
-                    if (i18n) {
-                        if (i18n.geocoder) {
-                            if (i18n.geocoder.defaultText) {
+                        if (this.config.searchExtent) {
+                            geocoder.searchExtent = this.map.extent;
+                            geocoder.localSearchOptions = {
+                                minScale: 300000,
+                                distance: 50000
+                            };
+                        }
+                        if (i18n) {
+                            if (i18n.geocoder) {
+                                if (i18n.geocoder.defaultText) {
 
-                                geocoder.placeholder = i18n.geocoder.defaultText;
+                                    geocoder.placeholder = i18n.geocoder.defaultText;
 
+                                }
                             }
                         }
-                    }
-                    geocoder.suggest = true;
-                    defaultSources.push(geocoder);
-                } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
+                        geocoder.suggest = true;
+                        defaultSources.push(geocoder);
+                    } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
 
-                    //Add geocoders with a singleLineFieldName defined 
-                    geocoder.locator = new Locator(geocoder.url);
-                    if (i18n) {
-                        if (i18n.geocoder) {
-                            if (i18n.geocoder.defaultText) {
+                        //Add geocoders with a singleLineFieldName defined 
+                        geocoder.locator = new Locator(geocoder.url);
+                        if (i18n) {
+                            if (i18n.geocoder) {
+                                if (i18n.geocoder.defaultText) {
 
-                                geocoder.placeholder = i18n.geocoder.defaultText;
+                                    geocoder.placeholder = i18n.geocoder.defaultText;
 
+                                }
                             }
                         }
+                        geocoder.suggest = true;
+                        defaultSources.push(geocoder);
                     }
-                    geocoder.suggest = true;
-                    defaultSources.push(geocoder);
                 }
             }));
 
@@ -259,15 +261,14 @@ function (
                 if (evt.feature) {
                     topic.publish("app/mapLocate", evt.feature.geometry);
                 }
-                else if  (evt.result)
-                {
+                else if (evt.result) {
                     if (evt.result.feature) {
                         topic.publish("app/mapLocate", evt.result.feature.geometry);
                     }
                 }
             }
 
-          
+
         },
 
 

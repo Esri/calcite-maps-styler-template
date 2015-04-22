@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>Information Lookup</title>
@@ -38,7 +38,7 @@
     </div>
     <div id="splash"></div>
 
-  
+
     <div id="mapButtons" class="map-buttons">
 
     </div>
@@ -61,26 +61,20 @@
             }, {
                 name: "arcgis_templates",
                 location: package_path + '/..'
-            }, {
-                name: "templateConfig",
-                location: package_path//package_path.substr(0, package_path.lastIndexOf('/'))
-
-            }
-            ]
+            }]
         };
     </script>
     <script type="text/javascript" src="//js.arcgis.com/3.13/"></script>
     <script type="text/javascript">
         require([
-            "application/templateOptions",
-            "application/template",
-            "application/main",
-
+              "config/templateConfig",
+              "application/template",
+              "application/main"
         ], function (
-            templateConfig,
-            Template,
-            Main
-        ) {
+        templateConfig,
+        Template,
+        Main
+          ) {
             // create the template. This will take care of all the logic required for template applications
             var myTemplate = new Template(templateConfig);
             // create my main application. Start placing your logic in the main.js file.

@@ -83,9 +83,17 @@ function (
                     this.config.basemapWidgetVisible = true;
                 }
                 if (this.config.basemapWidgetVisible == true) {
+                    var basemapGalleryGroupQuery = null;
+                    if (this.config.orgInfo) {
+                        if (this.config.orgInfo.basemapGalleryGroupQuery) {
+                            basemapGalleryGroupQuery = this.config.orgInfo.basemapGalleryGroupQuery;
+
+
+                        }
+                    }
                     this.basemapButton = new BasemapButton(
                         {
-                            basemapGalleryGroupQuery: this.config.orgInfo.basemapGalleryGroupQuery,
+                            basemapGalleryGroupQuery: basemapGalleryGroupQuery,
                             domNode: "basemapDiv",
                             config: this.config
                         });
