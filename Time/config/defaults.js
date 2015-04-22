@@ -32,7 +32,7 @@ define({
   "units": null,
   "time": true,
   //Overwrite the calculated date time format with a custom value. 
-  "datetimeformat": null,//"MMMM d yyyy, h:m:s.SSS a",
+  "datetimeformat": "yyyy",//"MMMM d yyyy, h:m:s.SSS a",
   //Disable slider ticks when true
   "sliderticks":false, //display slider tics
   "looptime": false,//loop through time 
@@ -43,7 +43,7 @@ define({
   //position time and legend containers. Valid values are top-right, bottom-right, top-left
   //bottom-left, top-center, bottom-center. Note that if you set both to the same value they'll occupy the same space and the 
   //layout won't position correctly.
-  "timeposition":"bottom-center", 
+  "timeposition":"bottom-right", 
   "legendposition": "top-right",
   "panelbackground": "#575757", //panel and title bar background color as hex value
   "panelcolor":"#FFF", //text color as hex value 

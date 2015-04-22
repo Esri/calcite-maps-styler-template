@@ -156,18 +156,19 @@ body,html {
     left: 20px;
 }
 .window-top-center{
-    top:20px;
-    margin-left: auto;
-    margin-right: auto;
-    left:0 !important;
-    right:0 !important 
+  position: absolute;
+  left: 50%;
+  top:20px;
+  transform: translate(-50%, 0%);
+  text-align: center;
 }
+
 .window-bottom-center{
-    bottom:55px;
-    margin-left: auto;
-    margin-right: auto;
-    left:0 !important;
-    right:0 !important;
+  position: absolute;
+  left: 50%;
+  bottom:55px;
+  transform: translate(-50%, 0%);
+  text-align: center;
 }
 .window-top-left {
     top: 20px;
@@ -186,7 +187,6 @@ body,html {
 }
 
 #sliderContainer{
-    max-width:450px;
     margin:auto;
     position: relative;
     vertical-align: middle;
@@ -196,12 +196,11 @@ body,html {
 }
 
 .timeInfo {
-    max-width:450px;
     position: absolute;
     z-index: 40;
     height: auto;
     border-color: #ccc;
-    border-color: rgba(128,128,128,.5);
+    border-color: rgba(128,128,128,.2);
     border-radius: 2px;
 }
 .error-text{
@@ -218,7 +217,7 @@ body,html {
 }
 
 #timeLabel {
-    width:100%;
+    padding:10px;
     display: table-cell;
     vertical-align: middle;
     font-size: .9em;
@@ -246,17 +245,19 @@ body,html {
     border-color: rgba(128,128,128,.2);
 }
 
-#sliderContainer.noslider {
+.noslider #sliderContainer {
     display: none;
 }
-
+.noslider #timeControls{
+    border-bottom:none;
+}
 
 /*Play/Pause Button*/
 #playControls{
     padding:2px;
     display: table-cell;
     margin:.5em;
-    width:auto;
+    width:40px;
     vertical-align: middle;
     text-align: center;
     line-height: 40px;
@@ -265,6 +266,7 @@ body,html {
     text-shadow: 0px 1px 2px rgba(128,128,128,.5);
 }
 #playSlider{
+    padding:10px;
     width:20px;
     font-size:24px;
 }
@@ -296,7 +298,8 @@ body,html {
 }
 
 .esriTimeSlider {
-    width:100%;
+    margin:auto;
+    max-width:450px;
     z-index: 850;
     position: relative;
 }
@@ -499,8 +502,9 @@ body,html {
     .timeInfo{
         width:100%;
         border-radius: 0;
-        right:0 !important;
-        left:0 !important;
+        right:0;
+        left:0;
+        transform: translate(0%, 0%);
     }
     .app-title{
         max-width: 50%;

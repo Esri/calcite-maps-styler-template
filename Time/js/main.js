@@ -370,6 +370,7 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
         },
         _displayTime: function () {
             //position the time window 
+            console.log(this.config.timeposition);
             domClass.add("timeContainer", "window-" + this.config.timeposition);
             //Add the time slider the map is time aware or there are time aware layers
             var timeProperties = null,
@@ -400,8 +401,10 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 timeSlider.startup();
                 //Hide the play controls if configured. 
                 if (this.config.noslider) {
-                    //hide the slider control
-                    domClass.add(dom.byId("sliderContainer"), "noslider");
+                    //hide the play and slider controls
+                    domClass.add(dom.byId("timeContainer"), "noslider");
+                }else{
+                    console.log("Time Container")
                 }
                 //Show the time navigation controls (prev,  next)
                 if (this.config.timenav) {
