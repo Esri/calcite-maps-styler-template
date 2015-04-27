@@ -133,6 +133,11 @@ function (
             on(dataConfigurationButton, "click", lang.hitch(this, function () {
                 this._createConfigurationPanel(true);
             }));
+          
+          // open webmap config if default webmap
+          if(this.config.webmap === "21633896293248b7a40d4e3126c93621"){
+            this._createConfigurationPanel(true);
+          }
 
             on(appSettingConfigurationButton, "click", lang.hitch(this, function () {
                 this._createAppSettingsPanel();
