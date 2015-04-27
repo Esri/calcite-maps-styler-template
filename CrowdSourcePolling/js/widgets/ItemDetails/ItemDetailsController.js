@@ -38,6 +38,8 @@ define([
     'dijit/_WidgetBase',
     'dijit/_TemplatedMixin',
 
+    "esri/urlUtils",
+
     "application/widgets/DynamicForm/DynamicForm",
     "application/widgets/PopupWindow/PopupWindow",
 
@@ -46,6 +48,7 @@ define([
     SvgHelper,
     ContentPane,
     _WidgetBase, _TemplatedMixin,
+    urlUtils,
     DynamicForm, PopupWindow,
     template) {
 
@@ -295,21 +298,57 @@ define([
          */
         updateGallery: function (attachments) {
             // Create gallery
+
             array.forEach(attachments, lang.hitch(this, function (attachment) {
-                var thumb, srcURL;
-                srcURL = attachment.url + "/" + attachment.name;
-                thumb = domConstruct.create('img', {
-                    'class': 'attachment',
-                    'src': srcURL
-                }, this.gallery);
-                this.own(on(thumb, 'click', lang.hitch(this, function (attachment) {
-                    domConstruct.empty(this.enlargedViewPopup.popupContent);
-                    domConstruct.create('img', {
+                var urlsplit, thumb, srcURL, attachmentUrl;
+
+                if (attachment.contentType === "image/jpeg" || attachment.contentType === "image/png") {
+                    urlsplit = attachment.url.split("?");
+                    if (urlsplit.length > 1) {
+                        srcURL = urlsplit[0] + "/" + attachment.name + "?" + urlsplit[1];
+                    } else {
+                        srcURL = urlsplit[0] + "/" + attachment.name;
+                    }
+                    thumb = domConstruct.create('img', {
                         'class': 'attachment',
+                        'title': attachment.name,
                         'src': srcURL
-                    }, this.enlargedViewPopup.popupContent);
-                    this.enlargedViewPopup.show();
-                })));
+                    }, this.gallery);
+                    this.own(on(thumb, 'click', lang.hitch(this, function (attachment) {
+                        domConstruct.empty(this.enlargedViewPopup.popupContent);
+                        var imgContainer = domConstruct.create('div', {
+                            'class': 'popupImgContent'
+                        }, this.enlargedViewPopup.popupContent);
+                        domConstruct.create('img', {
+                            'class': 'attachment',
+                            'src': srcURL
+                        }, imgContainer);
+                        this.enlargedViewPopup.show();
+                    })));
+
+                } else if (attachment.contentType === "application/pdf") {
+                    thumb = domConstruct.create('img', {
+                        'class': 'attachment',
+                        'title': attachment.name,
+                        'src': 'images/pdficon_large.png'
+                    }, this.gallery);
+                    attachmentUrl = attachment.url;
+                    this.own(on(thumb, 'click', lang.hitch(this, function () {
+                        window.open(attachmentUrl, "_blank");
+                    })));
+
+                } else if (attachment.url && attachment.url.length > 0) {
+                    thumb = domConstruct.create('img', {
+                        'class': 'attachment',
+                        'title': attachment.name,
+                        'src': 'images/file_wht.png'
+                    }, this.gallery);
+                    attachmentUrl = attachment.url;
+                    this.own(on(thumb, 'click', lang.hitch(this, function () {
+                        window.open(attachmentUrl, "_blank");
+                    })));
+                }
+
             }));
         },
 

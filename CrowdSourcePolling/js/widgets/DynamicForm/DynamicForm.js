@@ -292,13 +292,13 @@ define([
 
                         if (useTextArea) {
                             inputItem = domConstruct.create("textArea", {
-                                value: field.value || "",
+                                value: field.value || field.dtTooltip || "",
                                 className: "dynamicFormTextAreaCtl"
                             }, row);
                         } else {
                             inputItem = domConstruct.create("input", {
                                 type: "text",
-                                value: field.value || "",
+                                value: field.value || field.dtTooltip || "",
                                 className: "dynamicFormInputCtl"
                             }, row);
                         }

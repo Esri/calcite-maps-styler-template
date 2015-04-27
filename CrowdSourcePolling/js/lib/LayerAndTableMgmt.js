@@ -108,7 +108,8 @@ define([
 
         /**
          * Extracts the layer and loads its table from the configuration information.
-         * @return {object} Deferred for notification of completed load
+         * @return {object} Deferred for notification of completed load; deferred's result
+         * indicates if there is a comment table or not
          */
         load: function () {
             var deferred = new Deferred();
@@ -130,8 +131,15 @@ define([
                     }
                 }
                 this._itemLayerInWebmap = opLayers[iOpLayer];
+                if (this._itemLayerInWebmap.errors) {//Add by Mike M, itemLayer is null on secure data if signed in with wrong user
+
+                    if (this._itemLayerInWebmap.errors.length > 0) {
+                        deferred.reject(this._itemLayerInWebmap.errors[0]);
+                        return;
+                    }
+                }
                 this._itemLayer = this._itemLayerInWebmap.layerObject;
-                if (!this._itemLayerInWebmap) {
+                if (!this._itemLayerInWebmap || !this._itemLayer) {
                     deferred.reject(this.appConfig.i18n.map.missingItemsFeatureLayer);
                     return;
                 }
@@ -160,14 +168,30 @@ define([
                         promises.push(loadDeferred.promise);
                         commentTable = new FeatureLayer(commentTableURL);
                         on.once(commentTable, "load", lang.hitch(this, function (evt) {
-                            // Note that we only consider the first relationship in the items layer
-                            if (this._itemLayer.relationships[0].relatedTableId === commentTable.layerId) {
-                                loadDeferred.resolve({
-                                    "commentTableInWebmap": commentTableInWebmap,
-                                    "commentTableURL": commentTableURL,
-                                    "commentTable": commentTable
-                                });
-                            } else {
+                            var relateFound = array.some(this._itemLayer.relationships, lang.hitch(this, function (relate, i) {
+                                if (relate.relatedTableId === commentTable.layerId) {
+                                    var tableKeyField = "";
+                                    array.some(commentTable.relationships, lang.hitch(this, function (tablerelate, i) {
+                                        if (tablerelate.id === this._itemLayer.layerId) {
+                                            tableKeyField = tablerelate.keyField;
+                                            return true;
+                                        }
+                                        return false;
+                                    }));
+                                    loadDeferred.resolve({
+                                        "commentTableInWebmap": commentTableInWebmap,
+                                        "commentTableURL": commentTableURL,
+                                        "commentTable": commentTable,
+                                        "commentTableRelateID": i,
+                                        "pollingKeyField": relate.keyField,
+                                        "tableKeyField": tableKeyField
+                                    });
+                                    return true;
+                                }
+                                return false;
+                            }));
+
+                            if (relateFound === false) {
                                 loadDeferred.resolve();
                             }
                         }), lang.hitch(this, function () {
@@ -183,7 +207,7 @@ define([
                                 this._commentTableInWebmap = result.commentTableInWebmap;
                                 this._commentTableURL = result.commentTableURL;
                                 this._commentTable = result.commentTable;
-
+                                this._commentTableRelateID = result.commentTableRelateID;
                                 // Provides _commentFields[n].{alias, editable, length, name, nullable, type} after adjusting
                                 // to the presence of editing and visibility controls in the optional popup
                                 this._commentFields = this.applyWebmapControlsToFields(
@@ -210,8 +234,8 @@ define([
 
                                 // Save the field names for the linkage between the item layer and its table
                                 // Note that we only consider the first relationship in the items layer
-                                this._primaryKeyField = this._itemLayer.relationships[0].keyField;
-                                this._foreignKeyField = this._commentTable.relationships[0].keyField;
+                                this._primaryKeyField = result.pollingKeyField;
+                                this._foreignKeyField = result.tableKeyField;
 
                                 return true;
                             }
@@ -219,11 +243,11 @@ define([
                         }));
 
                         // We're done whether or not a table matched
-                        deferred.resolve();
+                        deferred.resolve(!(this._commentTable === undefined));
                     }));
                 } else {
                     // No comments for this webmap
-                    deferred.resolve();
+                    deferred.resolve(false);
                 }
             }));
             return deferred;
@@ -366,7 +390,8 @@ define([
             updateQuery.objectIds = [item.attributes[this._itemLayer.objectIdField]];
             updateQuery.returnGeometry = true;
             updateQuery.outFields = ["*"];
-            updateQuery.relationshipId = this._itemLayer.relationships[0].id;  // Note that we only consider the first relationship in the items layer
+
+            updateQuery.relationshipId = this._itemLayer.relationships[this._commentTableRelateID].id;  // Note that we only consider the first relationship in the items layer
 
             this._itemLayer.queryRelatedFeatures(updateQuery, lang.hitch(this, function (results) {
                 var pThis = this, fset, i, features;
@@ -403,25 +428,26 @@ define([
         /**
          * Updates the vote count in an item.
          * @param {object} item Item to be updated
+         * @param {string} votesField Name of field containing votes
          * @return {object} Deferred for notification of completed update
          */
-        refreshVoteCount: function (item) {
+        refreshVoteCount: function (item, votesField) {
             var updateQuery, updateQueryTask, deferred = new Deferred();
 
-            if (this.appConfig.itemVotesField && this.appConfig.itemVotesField.length > 0) {
+            if (votesField && votesField.length > 0) {
                 // Get the latest vote count from the server, not just the feature layer
                 updateQuery = new Query();
                 updateQuery.objectIds = [item.attributes[this._itemLayer.objectIdField]];
                 updateQuery.returnGeometry = false;
-                updateQuery.outFields = [this.appConfig.itemVotesField];
+                updateQuery.outFields = [votesField];
 
                 updateQueryTask = new QueryTask(this._itemLayer.url);
                 updateQueryTask.execute(updateQuery, lang.hitch(this, function (results) {
                     var retrievedVotes;
                     if (results && results.features && results.features.length > 0) {
-                        retrievedVotes = results.features[0].attributes[this.appConfig.itemVotesField];
+                        retrievedVotes = results.features[0].attributes[votesField];
                         if (retrievedVotes !== undefined) {
-                            item.attributes[this.appConfig.itemVotesField] = retrievedVotes;
+                            item.attributes[votesField] = retrievedVotes;
                             deferred.resolve(item);
                         }
                     }
@@ -439,14 +465,15 @@ define([
         /**
          * Increments the designated "votes" field for the specified item.
          * @param {object} item Item to update
+         * @param {string} votesField Name of field containing votes
          * @return {publish} "voteUpdated" with updated item
          */
-        incrementVote: function (item) {
-            if (this.appConfig.itemVotesField && this.appConfig.itemVotesField.length > 0) {
+        incrementVote: function (item, votesField) {
+            if (votesField && votesField.length > 0) {
                 // Get the latest vote count
                 this.refreshVoteCount(item).then(lang.hitch(this, function (item) {
                     // Increment the vote
-                    item.attributes[this.appConfig.itemVotesField] = item.attributes[this.appConfig.itemVotesField] + 1;
+                    item.attributes[votesField] = item.attributes[votesField] + 1;
 
                     // Update the item in the feature layer
                     this._itemLayer.applyEdits(null, [item], null, lang.hitch(this, function (ignore, updates) {

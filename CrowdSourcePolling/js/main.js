@@ -17,6 +17,7 @@
  */
 define([
     "dojo/_base/declare",
+    "dojo/_base/array",
     "dojo/_base/Color",
     "dojo/_base/fx",
     "dojo/_base/lang",
@@ -30,7 +31,9 @@ define([
     "dojo/promise/first",
     "dojo/topic",
     "esri/arcgis/utils",
+    "esri/config",
     "esri/dijit/LocateButton",
+    "esri/dijit/Search",
     "application/lib/LayerAndTableMgmt",
     "application/widgets/ItemDetails/ItemDetailsController",
     "application/widgets/ItemList/ItemList",
@@ -44,6 +47,7 @@ define([
     "dojo/domReady!"
 ], function (
     declare,
+    array,
     Color,
     fx,
     lang,
@@ -57,7 +61,9 @@ define([
     first,
     topic,
     arcgisUtils,
+    esriConfig,
     LocateButton,
+    Search,
     LayerAndTableMgmt,
     ItemDetails,
     ItemList,
@@ -72,6 +78,8 @@ define([
         mapData: null,
         _linkToMapView: false,
         _currentlyCommenting: false,
+        _hasCommentTable: false,
+        _votesField: null,
 
         startup: function (config) {
             var itemInfo, error;
@@ -133,15 +141,22 @@ define([
 
             // Complete wiring-up when all of the setups complete
             all([setupUI, createMap]).then(lang.hitch(this, function (statusList) {
-                var votesField, commentFields;
+                var commentFields;
 
                 //----- Merge map-loading info with UI items -----
-                votesField = (this.config.itemVotesField && this.config.itemVotesField.length > 0) ?
-                        this.config.itemVotesField : null;
+                if (this.config.itemVotesField && this.config.itemVotesField.length > 0) {
+                    // Make sure that the configured votes field exists
+                    if (array.some(this._mapData.getItemFields(), lang.hitch(this, function (field) {
+                            return this.config.itemVotesField === field.name &&
+                                (field.type === "esriFieldTypeInteger" || field.type === "esriFieldTypeSmallInteger");
+                        }))) {
+                        this._votesField = this.config.itemVotesField;
+                    }
+                }
                 commentFields = this._mapData.getCommentFields();
-                this._itemsList.setFields(votesField);
-                this._itemDetails.setItemFields(votesField, commentFields);
-                this._itemDetails.setActionsVisibility(votesField, commentFields, this._mapData.getItemLayer().hasAttachments);
+                this._itemsList.setFields(this._votesField);
+                this._itemDetails.setItemFields(this._votesField, commentFields);
+                this._itemDetails.setActionsVisibility(this._votesField, commentFields, this._mapData.getItemLayer().hasAttachments);
 
                 //----- Catch published messages and wire them to their actions -----
 
@@ -150,7 +165,9 @@ define([
                  */
                 topic.subscribe("addLike", lang.hitch(this, function (item) {
                     console.log(">addLike>", item);  //???
-                    this._mapData.incrementVote(item);
+                    if (this._votesField) {
+                        this._mapData.incrementVote(item, this._votesField);
+                    }
                 }));
 
                 topic.subscribe("cancelForm", lang.hitch(this, function () {
@@ -215,9 +232,11 @@ define([
 
                     this._itemDetails.clearComments();
                     this._itemDetails.setItem(item);
-                    this._mapData.refreshVoteCount(item).then(function (item) {
-                        topic.publish("voteUpdated", item);
-                    });
+                    if (this._votesField) {
+                        this._mapData.refreshVoteCount(item, this._votesField).then(function (item) {
+                            topic.publish("voteUpdated", item);
+                        });
+                    }
 
                     if (this._mapData.getItemLayer().hasAttachments) {
                         topic.publish("updateAttachments", item);
@@ -311,8 +330,10 @@ define([
                  */
                 topic.subscribe("updateComments", lang.hitch(this, function (item) {
                     console.log(">updateComments>", item);  //???
-                    this._sidebarCnt.showBusy(true);
-                    this._mapData.queryComments(item);
+                    if (this._hasCommentTable) {
+                        this._sidebarCnt.showBusy(true);
+                        this._mapData.queryComments(item);
+                    }
                 }));
 
                 /**
@@ -514,6 +535,8 @@ define([
                 editable: this.config.editable,
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
+                var geoLocate;
+
                 // Once the map is created we get access to the response which provides important info
                 // such as the map, operational layers, popup info and more. This object will also contain
                 // any custom options you defined for the template. In this example that is the 'theme' property.
@@ -521,8 +544,9 @@ define([
                 this.map = response.map;
 
                 // start up locate widget
-                var geoLocate = new LocateButton({
-                    map: this.map
+                geoLocate = new LocateButton({
+                    map: this.map,
+                    theme: "LocateButtonLight"
                 }, "LocateButton");
                 geoLocate.startup();
 
@@ -548,9 +572,20 @@ define([
                 // At this point, this.config has been supplemented with
                 // the first operational layer's layerObject
                 this._mapData = new LayerAndTableMgmt(this.config);
-                this._mapData.load().then(function () {
+                this._mapData.load().then(lang.hitch(this, function (hasCommentTable) {
+                    this._hasCommentTable = hasCommentTable;
+
+                    // Add search control to search world places as well as GIS Day feature service
+                    var searchControl = new Search({
+                        addLayersFromMap: true,
+                        enableButtonMode: true,
+                        enableInfoWindow: false,
+                        map: this.map
+                    }, "SearchButton");
+                    searchControl.startup();
+
                     mapDataReadyDeferred.resolve("map data");
-                }, lang.hitch(this, function (err) {
+                }), lang.hitch(this, function (err) {
                     mapDataReadyDeferred.reject(this.config.i18n.map.layerLoad + (err ? ": " + err : ""));
                 }));
             }), lang.hitch(this, function (err) {

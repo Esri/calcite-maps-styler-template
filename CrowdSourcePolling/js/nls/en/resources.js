@@ -53,7 +53,7 @@ define(({
         commentButtonLabel: "Comment",
         commentButtonTooltip: "Add a comment about this",
         galleryButtonLabel: "Gallery",
-        galleryButtonTooltip: "See attached photos for this",
+        galleryButtonTooltip: "See attached files",
         commentsListHeading: "Comments",
         noCommentsPlaceholder: "No comments"
     },
