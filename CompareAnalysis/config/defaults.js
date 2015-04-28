@@ -35,6 +35,8 @@ define({
     "home": true,
     "theme_color":"#575757",
     "theme_bg_color": "#d3d3d3",
+    //when true will auto sync to the first map 
+    "auto_sync": true,
     //If your applcation needs to edit feature layer fields set this value to true. When false the map will
     //be dreated with layers that are not set to editable which allows the FeatureLayer to load features optimally. 
     "editable": false,

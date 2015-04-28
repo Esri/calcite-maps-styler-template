@@ -6,6 +6,11 @@
                 {
                     "type": "webmap",
                     "selection": "multiple"
+                },{
+                    "type":"boolean",
+                    "fieldName": "auto_sync",
+                    "label": "Auto sync maps",
+                    "tooltip": "When true maps will be synced to the extent of the first map."
                 }
             ]
         },
@@ -77,6 +82,7 @@
         "theme_color": "#575757",
         "theme_bg_color": "#fff",
         "openPanelOnLoad": true,
-        "showTitleAndDescription": true
+        "showTitleAndDescription": true,
+        "auto_sync": true
     }
 }

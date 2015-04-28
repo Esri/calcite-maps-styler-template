@@ -159,7 +159,6 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                                     domClass.toggle(panel, "hidden");
                                 }
                             }
-
                         }));
 
                 
@@ -176,6 +175,11 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                                 "title": this.config.i18n.tools.sync.tooltip,
                                 "click": lang.hitch(this, this._syncMaps, result.map)
                             }, container);
+                            //if auto sync is enabled then we'll sync the other 
+                            //maps to the first map in the list
+                            if(this.config.auto_sync & i === 0){
+                                sync.click();
+                            }
                         }
                     }
                 }
