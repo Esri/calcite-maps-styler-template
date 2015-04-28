@@ -36,6 +36,7 @@ define({
     "description": null, //Description if not entered web map desc is used. 
     "theme": "#545454",
     "titlecolor": "#333",
+    "titlefontsize": null,
     "color": "#fff",
     "iconcolortheme": "#fff",
     "showdescription": true,

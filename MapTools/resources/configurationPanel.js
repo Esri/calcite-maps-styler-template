@@ -17,6 +17,15 @@
                "fieldName":"title",
                "type":"string",
                "tooltip":"Defaults to web map title"
+            },{
+               "type": "paragraph",
+               "value": "Enter a value to override the default title font size. Make sure to specify the font units. For example 20px would result in a title font size of 20 pixels. Em and pt are also valid units.  "
+            },{
+               "type": "string",
+               "label": "Title font size",
+               "tooltip": "Specify title font size",
+               "fieldName": "titlefontsize",
+               "placeHolder": "20px"
             },
             {  
                "label":"Map logo:",

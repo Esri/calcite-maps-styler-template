@@ -41,7 +41,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 query(".bg").style("backgroundColor", this.config.theme.toString());
                 query("#titleDiv").style("color", this.config.titlecolor.toString());
 
-
             } else {
                 var error = new Error("Main:: Config is not defined");
                 this.reportError(error);
@@ -424,6 +423,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     className: "printTitle",
                     placeholder: this.config.i18n.tools.printTitlePrompt
                 }, domConstruct.create("div"));
+
 
                 domConstruct.place(titleNode, printDiv);
 
@@ -824,7 +824,12 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 document.title = this.config.title;
                 //add application title 
                 if (this.config.showtitle) {
-                    dom.byId("titleDiv").innerHTML = this.config.title;
+                    var title_node = dom.byId("titleDiv");
+                    title_node.innerHTML = this.config.title;
+
+                    if(this.config.titlefontsize){
+                        domStyle.set(title_node, "font-size", this.config.titlefontsize);    
+                    }
                 } else {
                     domClass.add(document.body, "no-title");
                     registry.byId("bc").resize();
