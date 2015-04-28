@@ -292,13 +292,13 @@ define([
 
                         if (useTextArea) {
                             inputItem = domConstruct.create("textArea", {
-                                value: field.value || field.dtTooltip || "",
+                                placeholder: field.dtTooltip || "",
                                 className: "dynamicFormTextAreaCtl"
                             }, row);
                         } else {
                             inputItem = domConstruct.create("input", {
                                 type: "text",
-                                value: field.value || field.dtTooltip || "",
+                                placeholder: field.dtTooltip || "",
                                 className: "dynamicFormInputCtl"
                             }, row);
                         }
@@ -311,15 +311,19 @@ define([
                             row = createRow();
                             domConstruct.create("br", {}, row);
                             inputItem = domConstruct.create("input", {
-                                type: "number",
-                                className: "dynamicFormInputCtl"
+                                type: "text",
+                                className: "dynamicFormInputCtl",
+                                placeholder: field.dtTooltip || "",
+                                pattern: "[\\+\\-]?[0-9]*"
                             }, row);
-                        } else if (field.type === "esriFieldTypeDouble") {
+                        } else if (field.type === "esriFieldTypeSingle" || field.type === "esriFieldTypeDouble") {
                             row = createRow();
                             domConstruct.create("br", {}, row);
                             inputItem = domConstruct.create("input", {
-                                type: "number",
-                                className: "dynamicFormInputCtl"
+                                type: "text",
+                                className: "dynamicFormInputCtl",
+                                placeholder: field.dtTooltip || "",
+                                pattern: "[\\+\\-]?[0-9]*[\\.,]?[0-9]*"
                             }, row);
                         } else if (field.type === "esriFieldTypeDate") {
                             row = createRow();

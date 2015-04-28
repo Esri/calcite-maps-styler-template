@@ -1,6 +1,9 @@
 Using repository https://github.com/Esri/application-boilerplate
-commit 2ef9d90632f4d15373e34ecf5cff4fd12e78bdc4
-Author: Matt Driscoll <MDriscoll@esri.com>
-Date:   Mon Jan 26 16:58:03 2015 -0800
+commit 0076882e44c36efc4ae5c882e996f6f824740acd
+Merge: ae06dff 39fa557
+Author: Kelly Hutchins <khutchins@esri.com>
+Date:   Tue Mar 17 14:54:43 2015 -0700
 
-    update read
+    Merge pull request #56 from Esri/development
+    
+    #44

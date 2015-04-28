@@ -138,6 +138,7 @@ define([
 
             itemTitleDiv = domConstruct.create('div', {
                 'class': 'itemTitle',
+                'title': itemTitle,
                 'innerHTML': itemTitle
             }, itemSummaryDiv);
 

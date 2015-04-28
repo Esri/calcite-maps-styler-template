@@ -24,6 +24,7 @@ define([
     "dojo/Deferred",
     "dojo/dom",
     "dojo/dom-class",
+    "dojo/dom-style",
     "dojo/json",
     "dojo/on",
     "dojo/parser",
@@ -54,6 +55,7 @@ define([
     Deferred,
     dom,
     domClass,
+    domStyle,
     JSON,
     on,
     parser,
@@ -458,6 +460,9 @@ define([
                 styleString += ".appThemeAccentBkgd{background-color:" + this.config.theme.accentBkgd + "}";
                 styleString += ".appThemeAccentText{color:" + this.config.theme.accentText + "!important}";
                 this.injectCSS(styleString);
+
+                // Apply the theme to the sidebar
+                domStyle.set("sidebar", "border-left-color", this.config.theme.background);
 
 
                 //----- Add the widgets -----

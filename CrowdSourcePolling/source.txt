@@ -1,10 +1,5 @@
-commit bdb9a60d2a133567706eba109e4a66f1175ff604
+commit 872f36aed504e452012b4cd8c0fc329a521092e6
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Apr 27 15:28:30 2015 -0700
+Date:   Tue Apr 28 16:10:16 2015 -0700
 
-    Added search dijit
-commit bdb9a60d2a133567706eba109e4a66f1175ff604
-Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Apr 27 15:28:30 2015 -0700
-
-    Added search dijit
+    Fixed typo

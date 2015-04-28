@@ -28,8 +28,8 @@ define({
     "proxyurl": "proxy/proxy.ashx",
 
     //Template-specific properties in AGOL configuration
-    "title": "Title",
-    "displayText": "",
+    "title": "Crowdsource Polling",
+    "displayText": "<p><b>Welcome to the crowdsource polling application</b></p><p>Use Crowdsource Polling to provide information and collect feedback on plans and issues around your community.</p><p>Search for a location or click an item in the list to get started.</p><hr/>",
     "color": "#206bdb",
     "featureLayer": "",
     "commentNameField": "",
@@ -39,7 +39,7 @@ define({
     "allowTwitter": false,
     "facebookAppId": "808394189204220",
     "googleplusClientId": "862973275076-qadao43h9btc27oui3mfhj846rh4so6o.apps.googleusercontent.com",
-    "socialMediaDisclaimer": "",
+    "socialMediaDisclaimer": "Choose how you would like to sign in to this application. The name associated with your social media account will be added to any comments you post.",
 
     //Other template-specific properties
     "maxDarkLuminance": 49,  // if the luminance of 'color' (above) is greater than this threshold, then the foreground color will be black; otherwise, it is white

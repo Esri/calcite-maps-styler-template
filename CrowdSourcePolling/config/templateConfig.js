@@ -22,6 +22,10 @@ define({
   "queryForGroupInfo": false,
   // When true, the template will query arcgis.com for the items contained within the group
   "queryForGroupItems": false,
+  // Use a local hosted webmap instead of a webmap on ArcGIS or portal.
+  "useLocalWebmap": false,
+  // Webmap file to use for the local webmap
+  "localWebmapFile": "config/demoMap",
   //When true the template will query arcgis.com for default settings for helper services, units etc. If you
   //want to use custom settings for units or any of the helper services set queryForOrg to false then enter
   //default values for any items you need using the helper services and units properties.
@@ -45,6 +49,6 @@ define({
   "urlItems": [
     "theme" // example param. ?theme=<my theme>
   ],
-  // For esri hosted envoronments only. Will automatically create a sharingurl and proxyurl for the application.
-  esriEnvironment: true
+  // Most users will not need to modify this value. For esri hosting environments only. Will automatically create a "sharinghost" and "proxyurl" for the application. Only set this is to true if the app is going to be stored on Esri's hosting servers. If you are using your own custom hosted portal, set the "sharinghost" in defaults.js instead of setting this to true.
+  esriEnvironment: false
 });

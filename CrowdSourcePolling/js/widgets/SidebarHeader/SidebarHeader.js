@@ -20,7 +20,7 @@ define([
     "dojo/_base/declare",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
-    "dojo/text!./templates/SidebarHeader.html",
+    "dojo/text!./SidebarHeader.html",
     "dojo/dom",
     "dojo/_base/lang",
     "dojo/dom-style",
@@ -55,7 +55,7 @@ define([
          */
 
         /**
-         * Initializes the widget once the DOM structure is ready
+         * Initializes the widget once the DOM structure is ready.
          */
         postCreate: function () {
             var i18n = this.appConfig.i18n.sidebar_header;
@@ -83,6 +83,14 @@ define([
             }
 
             this.appTitle.innerHTML = this.appConfig.title || "";
+        },
+
+        /**
+         * Performs post-DOM-placement actions.
+         */
+        startup: function () {
+            this.inherited(arguments);
+            domStyle.set(this.domNode.parentNode, "border-bottom-color", this.appConfig.theme.background);
         },
 
         /**
