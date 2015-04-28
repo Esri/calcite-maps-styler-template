@@ -13,6 +13,21 @@
                     "tooltip": "When true maps will be synced to the extent of the first map."
                 }
             ]
+        },{
+            "category": "Search Settings",
+            "fields":[
+                {
+                    "type": "boolean",
+                    "fieldName": "search",
+                    "label": "Place search",
+                    "tooltip": "Add location search tool"
+                },{
+                    "type":"boolean",
+                    "fieldName": "searchExtent",
+                    "label": "Display search results in current extent"
+                }
+
+            ]
         },
         {
             "category": "<b>Side Panel Settings</b>",
@@ -83,6 +98,8 @@
         "theme_bg_color": "#fff",
         "openPanelOnLoad": true,
         "showTitleAndDescription": true,
-        "auto_sync": true
+        "auto_sync": true,
+        "search": false,
+        "searchExtent": true
     }
 }

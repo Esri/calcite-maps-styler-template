@@ -15,46 +15,46 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/_base/declare", "dojo/_base/Color", "dojo/parser", "dojo/has", "dojo/query", "dijit/registry", "dojo/window", "dojo/promise/all", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom", "dojo/dom-attr", "dojo/dom-construct", "dojo/dom-style", "dojo/dom-class", "dojo/on", "esri/dijit/Legend", "esri/dijit/HomeButton", "esri/lang", "dijit/layout/ContentPane", "dojox/layout/ExpandoPane", "dojo/domReady!"], function (
-declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, domAttr, domConstruct, domStyle, domClass, on, Legend, HomeButton, esriLang, ContentPane, ExpandoPane) {
+define(["dojo/_base/declare", "dojo/_base/Color", "dojo/parser", "dojo/has", "dojo/query", "dijit/registry", "dojo/window", "dojo/promise/all", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom", "dojo/dom-attr", "dojo/dom-construct", "dojo/dom-style", "dojo/dom-class", "dojo/on", "esri/dijit/Legend", "esri/layers/FeatureLayer", "esri/dijit/Search", "esri/tasks/locator","dojo/_base/array", "esri/dijit/HomeButton", "esri/lang", "dijit/layout/ContentPane", "dojox/layout/ExpandoPane", "dojo/domReady!"], function (
+declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, domAttr, domConstruct, domStyle, domClass, on, Legend, FeatureLayer, Search, Locator, array, HomeButton, esriLang, ContentPane, ExpandoPane) {
     return declare(null, {
         config: {},
         mapInfo: [],
-        handler:  null,
+        handler: null,
         startup: function (config) {
             parser.parse();
             if (config) {
                 this.config = config;
 
                 //set title and default app text if defined
-                if(this.config.title){
+                if (this.config.title) {
                     document.title = this.config.title;
                 }
-                if(this.config.showTitleAndDescription){
+                if (this.config.showTitleAndDescription) {
                     var content = esriLang.substitute(this.config, "<div class='header_info'>${description}</div>");
-                   
+
                     var pane = new ExpandoPane({
-                        "region":"left",
+                        "region": "left",
                         "class": "bg",
                         "title": this.config.title,
-                        "content":content 
+                        "content": content
                     });
                     pane.startup();
                     var bc = registry.byId("bc");
                     bc.addChild(pane);
 
-                    query(".dojoxExpandoIcon").on("click",function(){
+                    query(".dojoxExpandoIcon").on("click", function () {
                         pane.toggle();
                     });
-                    query(".dojoxExpandoTitle").on("click",function(){
+                    query(".dojoxExpandoTitle").on("click", function () {
                         pane.toggle();
                     });
-                    if(!this.config.openPanelOnLoad){
+                    if (!this.config.openPanelOnLoad) {
                         pane.toggle();
                     }
                 }
 
-      
+
                 this._createGrid();
 
             } else {
@@ -84,27 +84,27 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
 
             for (var i = 0; i < this.config.webmaps.length; i++) {
 
-                    if (this.config.webmaps.length == 1) {
-                        //if only one map fill up the page 
+                if (this.config.webmaps.length == 1) {
+                    //if only one map fill up the page 
+                    row = this._createRow();
+                    cell = this._createCell(2, 2, row, i);
+                }
+                else if (this.config.webmaps.length % 3 === 0) {
+                    //multiples of three  so show in rows of three 
+                    if (i % 3 === 0) { //create a new row for all even values
                         row = this._createRow();
-                        cell = this._createCell(2, 2, row, i);
                     }
-                    else if (this.config.webmaps.length % 3 === 0) {
-                        //multiples of three  so show in rows of three 
-                        if (i % 3 === 0) { //create a new row for all even values
-                            row = this._createRow();
-                        }
-                        //Create a cell for each map and size to fit the number of rows
-                        cell = this._createCell(1, 3, row, i);
+                    //Create a cell for each map and size to fit the number of rows
+                    cell = this._createCell(1, 3, row, i);
 
+                }
+                else {
+                    //not a multiple of three so let's just show in rows of two 
+                    if (i % 2 === 0) { //create a new row for all even values 
+                        row = this._createRow();
                     }
-                    else {
-                        //not a multiple of three so let's just show in rows of two 
-                        if (i % 2 === 0) { //create a new row for all even values 
-                            row = this._createRow();
-                        }
-                        cell = this._createCell(1, 2, row, i);
-                    }
+                    cell = this._createCell(1, 2, row, i);
+                }
 
 
 
@@ -136,39 +136,39 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                         }
 
                         //add a title to the map area 
-                        var map_title = domConstruct.create("div",{
+                        var map_title = domConstruct.create("div", {
                             "class": "mapTitle bg fg",
                             innerHTML: result.itemInfo.item.title
-                        },result.map.id + "_root");
+                        }, result.map.id + "_root");
 
-                        var map_info = domConstruct.create("div",{
+                        var map_info = domConstruct.create("div", {
                             "id": "_" + result.map.id,
                             "title": this.config.i18n.tools.info.tooltip,
                             "class": "mapInfo fg icon-info"
-                        },map_title);
-                
+                        }, map_title);
+
                         result.itemInfo.item.legendId = "legend_" + result.map.id;
                         this._createInfoContent(result.itemInfo.item, result);
-                        
-                        on(map_info, "click", lang.hitch(this, function(item){
-                            if(item.target && item.target.id){
+
+                        on(map_info, "click", lang.hitch(this, function (item) {
+                            if (item.target && item.target.id) {
                                 var panel_id = "panel" + item.target.id;
-                       
+
                                 var panel = dom.byId(panel_id);
-                                if(panel){
+                                if (panel) {
                                     domClass.toggle(panel, "hidden");
                                 }
                             }
                         }));
 
-                
+
                         //Create a sync button for each map
                         //when clicked it will sync other maps to that extent. 
                         //if only one map don't enable
                         if (results && results.length > 1) {
-                            var container = domConstruct.create("div",{
+                            var container = domConstruct.create("div", {
                                 "class": "icon-sync-container"
-                            },result.map.id + "_root");
+                            }, result.map.id + "_root");
 
                             var sync = domConstruct.create("div", {
                                 "class": "icon-sync",
@@ -177,10 +177,131 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                             }, container);
                             //if auto sync is enabled then we'll sync the other 
                             //maps to the first map in the list
-                            if(this.config.auto_sync & i === 0){
+                            if (this.config.auto_sync && i === 0) {
                                 sync.click();
                             }
                         }
+
+                        //Add the search button if enabled
+                        if (this.config.search) {
+                           // require(["esri/dijit/Search", "esri/tasks/locator","dojo/_base/array"], lang.hitch(this, function (Search, Locator,array) {
+                              //  if (!Search && !locator) {
+                              //      return;
+                              //  }
+
+                                var searchLayers = null;
+                                var searchContainer = domConstruct.create("div", {
+                                    "class": "search-container"
+                                }, result.map.id + "_root");
+
+                                var search = new Search({
+                                    map: result.map,
+                                    enableButtonMode: true
+                                }, searchContainer);
+                                var defaultSources = [];
+                                //setup geocoders defined in common config 
+                                if (this.config.helperServices.geocode) {
+                                    var geocoders = lang.clone(this.config.helperServices.geocode);
+                                    array.forEach(geocoders, lang.hitch(this, function (geocoder) {
+                                        if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+
+                                            geocoder.hasEsri = true;
+                                            geocoder.locator = new Locator(geocoder.url);
+
+                                            geocoder.singleLineFieldName = "SingleLine";
+                                            geocoder.placeholder = "Select a location";
+                                            geocoder.name = geocoder.name || "Esri World Geocoder";
+
+                                            if (this.config.searchExtent) {
+                                                geocoder.searchExtent = result.map.extent;
+                                                geocoder.localSearchOptions = {
+                                                    minScale: 300000,
+                                                    distance: 50000
+                                                };
+                                            }
+                                            defaultSources.push(geocoder);
+                                        } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
+
+                                            //Add geocoders with a singleLineFieldName defined 
+                                            geocoder.locator = new Locator(geocoder.url);
+
+                                            defaultSources.push(geocoder);
+                                        }
+                                    }));
+                                }
+
+                                //Add search layers defined on the web map item 
+                                if (result.itemInfo.itemData && result.itemInfo.itemData.applicationProperties && result.itemInfo.itemData.applicationProperties.viewing && result.itemInfo.itemData.applicationProperties.viewing.search) {
+                                    var searchOptions = result.itemInfo.itemData.applicationProperties.viewing.search;
+
+                                    array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
+                                        //we do this so we can get the title specified in the item
+                                        var operationalLayers = result.itemInfo.itemData.operationalLayers;
+                                        var layer = null;
+                                        array.some(operationalLayers, function (opLayer) {
+                                            if (opLayer.id === searchLayer.id) {
+                                                layer = opLayer;
+                                                return true;
+                                            }
+                                        });
+
+                                        if (layer && layer.hasOwnProperty("url")) {
+                                            var source = {};
+                                            var url = layer.url;
+                                            var name = layer.title || layer.name;
+
+                                            if (esriLang.isDefined(searchLayer.subLayer)) {
+                                                url = url + "/" + searchLayer.subLayer;
+                                                array.some(layer.layerObject.layerInfos, function (info) {
+                                                    if (info.id == searchLayer.subLayer) {
+                                                        name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
+                                                        return true;
+                                                    }
+                                                });
+                                            }
+
+                                            source.featureLayer = new FeatureLayer(url);
+
+
+                                            source.name = name;
+
+
+                                            source.exactMatch = searchLayer.field.exactMatch;
+                                            source.displayField = searchLayer.field.name;
+                                            source.searchFields = [searchLayer.field.name];
+                                            source.placeholder = searchOptions.hintText;
+                                            defaultSources.push(source);
+                                            searchLayers = true;
+                                        }
+
+                                    }));
+                                }
+
+                                search.set("sources", defaultSources);
+
+                                search.startup();
+
+                                //set the first non esri layer as active if search layers are defined. 
+                                var activeIndex = 0;
+                                if (searchLayers) {
+                                    array.some(defaultSources, function (s, index) {
+                                        if (!s.hasEsri) {
+                                            activeIndex = index;
+                                            return true;
+                                        }
+                                    });
+
+
+                                    if (activeIndex > 0) {
+                                        search.set("activeSourceIndex", activeIndex);
+                                    }
+                                }
+
+
+                           // }));
+
+                        }
+
                     }
                 }
                 //update theme
@@ -205,8 +326,8 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
             }, "container");
             return row;
         },
-        _syncMaps: function (extent_map,evt) {
-            if(this.handler){
+        _syncMaps: function (extent_map, evt) {
+            if (this.handler) {
                 this.handler.remove();
             }
 
@@ -219,7 +340,7 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
             if (!sel) { //Toggle the selection capability 
                 domClass.add(evt.target, "icon-selected");
             } else {
-                if(this.handler){
+                if (this.handler) {
                     this.handler.remove();
                 }
                 return;
@@ -231,7 +352,7 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                     map.setExtent(extent_map.extent);
                 }
             }
-            this.handler = on(extent_map, "extent-change", lang.hitch(this, function(){
+            this.handler = on(extent_map, "extent-change", lang.hitch(this, function () {
                 for (var i = 0; i < this.mapInfo.length; i++) {
                     var map = this.mapInfo[i].map;
                     if (map.id !== extent_map.id) {
@@ -265,17 +386,22 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
             query(".dojoxExpandoTitleNode").style("color", color.toString()); //title 
         },
         _createInfoContent: function (details, layer) {
-            var template = "<div class='panel_title'>${title}</div><div class='panel_desc'>${description}</div><div id=${legendId}></div>";           
+            var template = "<div class='panel_title'>${title}</div><div class='panel_desc'>${description}</div><div id=${legendId}></div>";
             var content = esriLang.substitute(details, template);
 
-            domConstruct.create("div",{
+            domConstruct.create("div", {
                 "id": "panel_" + layer.map.id,
                 "class": "article mapInfoPanel hidden",
                 innerHTML: content
-            },layer.map.id + "_root");
+            }, layer.map.id + "_root");
+            //don't create if we don't have a legend or details 
+            var legendLayers = arcgisUtils.getLegendLayers(layer);
+            if (legendLayers.length === 0 && details.description === null) {
+                return;
+            }
             //create the legend
             var legDiv = registry.byId(details.legendId);
-            if(legDiv){
+            if (legDiv) {
                 legDiv.destroy();
             }
             var legendLayers = arcgisUtils.getLegendLayers(layer);
@@ -287,7 +413,7 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                 }, layer.itemInfo.item.legendId);
                 legend.startup();
 
-            } 
+            }
         },
         _resizeMap: function () {
             if (this.mapInfo && this.mapInfo.length === 0) {

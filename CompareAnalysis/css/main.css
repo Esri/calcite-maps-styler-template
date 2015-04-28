@@ -78,7 +78,7 @@ body {
   -webkit-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
   background-color: transparent;
-  background-color:#fff;
+  background-color: #fff;
   background-color: rgba(255,255,255,0.9);
   padding: 28px 1em 1em 1em;
 }
@@ -179,6 +179,11 @@ body {
 }
 .icon-selected {
   color: #0a0a0a !important;
+}
+.arcgisSearch {
+  position: relative;
+  top: 140px;
+  left: 5px;
 }
 .icon-sync-container {
   position: relative;
