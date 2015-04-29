@@ -49,12 +49,14 @@ define({
             gridMapViewOption: "Split View", // Command button to display split view
             settingsBtnToolTip: "Selection Options", // Display tool-tip on command button to open a list of settings options
             viewModeBtnToolTip: "View Options", // Display tool-tip on command button to open a list of view options
-            searchModeBtnToolTip: "Layer Search" // Display tool-tip on command button to open a dialog box for finding a feature
+            searchModeBtnToolTip: "Layer Search", // Display tool-tip on command button to open a dialog box for finding a feature
+            manualRefreshBtnToolTip: "Refresh", // Display tool-tip on command button to manually refresh the selected operational layer
+            confirmManualRefeshText: "All changes/selections will be lost", // Appears when user wants to do manual refresh
+            signInOption: "Sign in" // Appears when user has not signed in
         },
         dataviewer: {
-            noFeaturesInCurrentExtent: "No issues in current map area", // Appears when no issues are available in current extent
-            singleFeatureSelection: "Please select a single feature to view the item details", // Shown when user selects multiple features instead of single feature
-            multipleFeatureSelection: "Please select a single feature to view the item details", // Shown when user selects multiple features instead of single feature
+            noIssuesReported: "No issues reported for this layer", // Appears when no issues are available in current extent
+            activateFeature: "Please activate a single feature to view the item details", // Shown when user has not activated a single feature
             photoAttachmentHeader: "Photo", // Appears when attachments are available for display in details tab
             invalidSmallNumber: "Please enter valid integer value between -32768 and 32767", // Shown when invalid integer value is entered while editing in data-viewer
             invalidNumber: "Please enter valid integer value between -2147483648 and 2147483647", // Shown when invalid integer value is entered while editing in data-viewer
@@ -63,7 +65,7 @@ define({
             invalidString: "Please enter valid value", // Shown when user enters invalid string value
             invalidDate: "Please enter valid date", // Shown when user enters invalid date value
             invalidNumericRange: "Minimum value ${minValue} and Maximum value ${maxValue}", // Shown when user enters value which is out of range
-            moreInfolink: "Link"
+            moreInfolink: "Link" // Shown when value in field contains only URL.
         },
         config: {
             configNotDefined: "No configuration defined" // Shown when there is an issue with config file
@@ -72,7 +74,7 @@ define({
             noResultsFound: "No results found" // Appears when user search for features and no feature is found
         },
         mapViewer: {
-            detailsBtnToolTip: "View Details", // Display tool-tip on command button to view details of selected feature
+            detailsBtnToolTip: "View details for a single activated feature", // Display tool-tip on command button to view details of selected feature
             locationBtnToolTip: "View Map", // Display tool-tip on command button to view map panel
             zoomInToolTip: "Zoom In", // Display tool-tip on command button to zoom in map
             zoomOutToolTip: "Zoom Out" // Display tool-tip on command button to zoom out map

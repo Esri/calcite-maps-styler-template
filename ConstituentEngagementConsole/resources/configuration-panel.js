@@ -56,6 +56,12 @@
                     "tooltip": "Configure zoom level"
                 },
                 {
+                    "type": "color",
+                    "fieldName": "activeRow",
+                    "tooltip": "Active row and feature",
+                    "label": "Active row and feature"
+                },
+                {
                     "type": "paragraph",
                     "value": "Choose the map information to display:"
                 },

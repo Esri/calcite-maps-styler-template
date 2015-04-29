@@ -21,7 +21,7 @@ define({
     "appid": "",
     "oauthappid": null,
     //Group templates must support a group url parameter. This will contain the id of the group.
-    "group": "d3e11b4398984ec481d3ae9bde0d2810",
+    "group": "",
     //Enter the url to the proxy if needed by the application. See the 'Using the proxy page' help topic for details
     //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
     "proxyurl": "proxy.ashx",
@@ -31,10 +31,7 @@ define({
     "theme": "#d15706",
     "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
-    "sharinghost": location.protocol + "//" + "arcgis.com/",
-    //If your applcation needs to edit feature layer fields set this value to true. When false the map will
-    //be treated with layers that are not set to editable which allows the FeatureLayer to load features optimally.
-    "editable": false,
+    "sharinghost": location.protocol + "//" + "arcgis.com",
     "helperServices": {
         "geometry": {
             "url": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer"
@@ -43,7 +40,7 @@ define({
     // name of the application
     "applicationName": "",
     // application icon
-    "applicationIcon": "/images/app-icon.png",
+    "applicationIcon": "",
     // application favicon icon
     "applicationFavicon": "/images/favicon.ico",
     // to display any null values
@@ -51,7 +48,7 @@ define({
     // to set zoom level of map when single feature is selected
     "zoomLevel": 12,
     // when web-map thumbnail icon is not available it will get replaced by this default icon
-    "noThumbnailIcon": "/images/no-thumbnail.png",
+    "noThumbnailIcon": "/images/default-webmap-thumbnail.png",
     // when attachment is not available it will get replaced by this default icon
     "noAttachmentIcon": "/images/no-attachment.png",
     // to set description field whether it needs to be displayed or not in web-map description area
@@ -73,5 +70,7 @@ define({
     // to set views field whether it needs to be displayed or not in web-map description area
     "webMapInfoNumViews": false,
     // to set rating field whether it needs to be displayed or not in web-map description area
-    "webMapInfoAvgRating": false
+    "webMapInfoAvgRating": false,
+    // to set the color of feature that is activated by selecting particular row
+    "activeRow": "#C8C8C8"
 });

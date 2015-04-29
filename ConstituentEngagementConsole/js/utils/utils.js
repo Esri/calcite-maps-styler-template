@@ -15,14 +15,15 @@
 | See the License for the specific language governing permissions and
 | limitations under the License.
 */
-define(["dojo/dom",
+define([
+    "dojo/dom",
     "dojo/_base/fx",
     "dojo/dom-class",
     "dojo/text!css/theme-template.css",
     "dojo/string",
     "dojo/dom-construct",
     "dojo/query"
-    ], function (
+], function (
     dom,
     coreFx,
     domClass,
@@ -71,13 +72,14 @@ define(["dojo/dom",
         * This function is used to load application theme.
         * @memberOf utils/utils
         */
-        loadApplicationTheme: function () {
+        loadApplicationTheme: function (appConfig) {
             var cssString, head, style;
             //if theme is configured
-            if (dojo.configData.theme) {
+            if (appConfig.theme) {
                 //substitute theme color values in theme template
                 cssString = string.substitute(ThemeCss, {
-                    SelectedThemeColor: dojo.configData.theme
+                    SelectedThemeColor: appConfig.theme,
+                    ActivatedRowColor: appConfig.activeRow
                 });
                 //Create Style using theme template and append it to head
                 //On Lower versions of IE10 Style tag is read only so create theme using styleSheet.cssText
@@ -91,7 +93,7 @@ define(["dojo/dom",
                     domConstruct.create("style", {
                         "type": "text/css",
                         "innerHTML": cssString
-                    }, dojo.query("head")[0]);
+                    }, query("head")[0]);
                 }
             }
         },

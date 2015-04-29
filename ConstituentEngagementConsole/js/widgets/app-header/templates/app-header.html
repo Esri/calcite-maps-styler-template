@@ -2,7 +2,7 @@
     <div class="esriCTApplicationHeader esriCTBorderBottom esriCTBGColor">
         <div class="esriCTheaderLeft">
             <div class="esriCTHomeIcon">
-                <img data-dojo-attach-point="applicationHeaderIcon" class="esriCTApplicationIcon"/>
+                <img data-dojo-attach-point="applicationHeaderIcon" class="esriCTApplicationIcon" />
             </div>
             <div data-dojo-attach-point="applicationHeaderName" class="esriCTMenuTabLeft">
             </div>
@@ -15,7 +15,7 @@
                             <div>
                                 <div class="esriCTLoginUserNameDiv" data-dojo-attach-point="esriCTLoginUserNameDiv">
                                 </div>
-                                <div class="esriCTCaretIcon  esriCTPointerCursor">
+                                <div class="esriCTCaretIcon  esriCTPointerCursor" data-dojo-attach-point="esriCTCaretIcon">
                                     &#9660;
                                 </div>
                             </div>
@@ -35,13 +35,15 @@
                         </div>
                         <div class="esriCTOptions esriCTSettingsOptions esriCTBorder esriCTPointerCursor esriCTApplicationColor  esriCTHidden"
                             data-dojo-attach-point="esriCTSettingsOptionsItemDiv">
-                            <div class="esriCTItems esriCTHidden esriCTShowAll" data-dojo-attach-point="esriCTShowAll">
+                            <div class="esriCTItems esriCTHidden esriCTShowAll esriCTDisableShowAll" data-dojo-attach-point="esriCTShowAll">
                             </div>
-                            <div class="esriCTItems esriCTVisible esriCTShowSelected" data-dojo-attach-point="esriCTShowSelected">
+                            <div class="esriCTItems esriCTVisible esriCTShowSelected esriCTDisableShowSelected"
+                                data-dojo-attach-point="esriCTShowSelected">
                             </div>
-                            <div class="esriCTItems esriCTVisible" data-dojo-attach-point="esriCTClearSelection">
+                            <div class="esriCTItems esriCTVisible esriCTClearSelection esriCTDisableClearSelection"
+                                data-dojo-attach-point="esriCTClearSelection">
                             </div>
-                            <div class="esriCTItems" data-dojo-attach-point="esriCTZoomToSelected">
+                            <div class="esriCTItems esriCTZoomToSelected esriCTDisableCTZoomToSelected" data-dojo-attach-point="esriCTZoomToSelected">
                             </div>
                         </div>
                         <div class="esriCTHeaderIcons esriCTViewMode esriCTBGColor esriCTPointerCursor" data-dojo-attach-point="viewModeBtn">
@@ -57,6 +59,9 @@
                         </div>
                         <div class="esriCTHeaderIcons esriCTSearchDisable esriCTBGColor esriCTPointerCursor"
                             data-dojo-attach-point="searchModeBtn">
+                        </div>
+                        <div class="esriCTHeaderIcons esriCTManualRefreshButton esriCTBGColor esriCTPointerCursor"
+                            data-dojo-attach-point="manualRefreshBtn">
                         </div>
                         <div class="esriCTOptions esriCTOptionsSearchMode esriCTBorder esriCTApplicationColor esriCTHidden"
                             data-dojo-attach-point="searchOptions">
@@ -76,11 +81,6 @@
             </div>
             <div class="esriCTMiddle" data-dojo-attach-point="esriCTMiddle">
                 <div class="esriCTOperationalLayerName esriCTHeaderFont" data-dojo-attach-point="operationalLayerTitle">
-                </div>
-            </div>
-            <div class="esriCTSignInButtonDiv" data-dojo-attach-point="esriCTSignInButtonDiv">
-                <div onclick="location.reload();" class="esriCTHeaderIcons esriCTSignInButton esriCTPointerCursor esriCTBGColor"
-                    data-dojo-attach-point="esriCTSignInButton">
                 </div>
             </div>
         </div>

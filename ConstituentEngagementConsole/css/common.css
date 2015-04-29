@@ -27,6 +27,11 @@
     display: block;
 }
 
+.esriCTVisibilityHidden
+{
+    visibility: hidden;
+}
+
 .esriCTFullHeightWidth
 {
     height: 100%;

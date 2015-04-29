@@ -1,4 +1,4 @@
-html, body
+﻿html, body
 {
     padding: 0;
     margin: 0;
@@ -110,7 +110,6 @@ th
     width: 30%;
     height: 100%;
     overflow-y: auto;
-    padding: 5px;
     background: #EDEDED;
     -webkit-overflow-scrolling: touch;
 }
@@ -219,44 +218,57 @@ th
 
 /* Web Map List */
 
+.esriCTDisplayList, .esriCTDisplayWebMapTemplate:hover .esriCTWebMapbgColor
+{
+    background: #fff;
+}
+
+.esriCTDisplayList, .esriCTDisplayWebMapTemplate:hover .esriCTMediaBody
+{
+    background: #fff;
+}
+
+.esriCTDisplayList, .esriCTDisplayWebMapTemplate:hover .esriCTMultiLineFill
+{
+    background: #fff;
+}
+
+.esriCTWebMapbgColor
+{
+    background: #f0f0f0;
+}
+
 .esriCTWebMapImg
 {
     height: 80px;
+    width: 120px;
+    border: 1px solid #ccc;
 }
 
 .esriCTWebMapListParentDiv
 {
     width: 100%;
     height: 100%;
+    overflow: auto;
 }
 
 .esriCTDisplayList, .esriCTDisplayWebMapTemplate
 {
     display: block;
-    background: #fff;
+    background: #f0f0f0;
+    padding: 5px;
 }
 
 .esriCTMediaBorder
 {
-    border-top: 1px solid #dfdfdf;
-}
-
-.esriCTRightArrow
-{
-    height: 24px;
-    width: 24px;
-    background-repeat: no-repeat;
-    background-size: 24px;
-    display: inline-block;
-    background-image: url(../images/right-arrow.png);
-    float: right;
+    border-top: 1px solid #ccc;
 }
 
 .esriCTMediaBody
 {
     display: table-cell !important;
-    padding-top: 10px;
-    background: #fff;
+    background: #f0f0f0;
+    vertical-align: middle;
     width: 100%;
     word-wrap: break-word;
     position: relative;
@@ -264,20 +276,19 @@ th
 
 .esriCTWebmaplistContents
 {
-    margin-left: 25px;
     height: 40px;
-    padding: 10px 8px 0 0;
+    padding: 8px 0 0 0;
 }
 
-.esriCTMedia
+.esriCTWebMapLayerTitle
 {
-    margin: 10px 0;
-    border-bottom-width: 0px;
+    margin-left: 25px;
+    line-height: 24px;
 }
 
 .esriCTWebMapBorder
 {
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ccc;
 }
 
 .esriCTDisplayList
@@ -287,35 +298,27 @@ th
 
 .esriCTWebMapLayer
 {
-    border-bottom: 1px solid #dfdfdf;
+    border-bottom: 1px solid #ccc;
 }
 
 .esriCTInfoImg
 {
-    height: 24px;
-    width: 24px;
+    height: 16px;
+    width: 16px;
     background-repeat: no-repeat;
-    background-size: 24px;
+    background-position: center center;
+    background-size: 16px;
     background-image: url('../images/info.png');
 }
 
 .esriCTInfoImgRight
 {
+    display: table-cell !important;
     float: right;
-    margin-right: 5px;
-    background-position: right bottom;
-    position: absolute;
-    bottom: 5px;
-    right: 0px;
-}
-
-.esriCTInfoImgLeft
-{
-    float: left;
+    width: 16px;
+    vertical-align: middle;
     margin-left: 5px;
-    position: absolute;
-    bottom: 5px;
-    left: 0px;
+    margin-right: 5px;
 }
 
 .esriCTDescription
@@ -327,7 +330,7 @@ th
 
 .esriCTMultiLineEllipsisdiv
 {
-    line-height: 18px;
+    line-height: 19px;
     overflow: hidden;
     position: relative;
     max-height: 38.3px;
@@ -337,15 +340,10 @@ th
 
 .esriCTMultiLineFill
 {
-    background: #fff;
+    background: #f0f0f0;
     position: absolute;
     height: 100%;
     width: 100%;
-}
-
-.esriCTMediaLeftText
-{
-    margin-left: 5px;
 }
 
 .esriCTInfoHeader
@@ -381,6 +379,22 @@ th
     width: 100%;
 }
 
+.esriCTWebMapLayer:hover
+{
+    background: #fff;
+}
+
+.esriCTRightArrow
+{
+    height: 24px;
+    width: 24px;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    display: inline-block;
+    background-image: url(../images/right-arrow.png);
+    float: right;
+}
+
 /* End of Web Map List */
 
 /* Data viewer */
@@ -395,6 +409,7 @@ th
     height: 100%;
     overflow: hidden;
     color: #555;
+    padding-bottom: 1px;
 }
 
 .esriCTDataViewer
@@ -423,7 +438,7 @@ th
 .esriCTOperationalLayerName
 {
     height: 25px;
-    width: calc(100% - 350px);
+    width: calc(100% - 425px);
     margin-top: 16px;
     margin-right: 5px;
     margin-left: 5px;
@@ -455,7 +470,6 @@ table.dataTable tbody > tr > td, table.dataTable thead > tr > th
     padding-left: 8px;
 }
 
-
 table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td
 {
     border-right: 1px solid #dddddd;
@@ -466,11 +480,6 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
 table.dataTable th, table.dataTable td
 {
     white-space: nowrap;
-}
-
-.esriCTRowSelected
-{
-    background-color: #C8C8C8 !important;
 }
 
 table.dataTable thead .sorting
@@ -617,7 +626,19 @@ table.dataTable tbody td
 
 .esriCTDataViewerTableHeaderContent
 {
+    overflow: hidden;
+    white-space: nowrap;
     min-width: 250px !important;
+}
+
+.esriCTDataViewerTableHeaderCheckbox
+{
+    width: 10px !important;
+}
+
+table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
+{
+    background: none !important;
 }
 
 .esriCTInfoLink
@@ -626,6 +647,13 @@ table.dataTable tbody td
     text-decoration: underline;
     margin: 0 auto;
     cursor: pointer;
+}
+
+.esriCTCheckBoxColumn
+{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 10px !important;
 }
 
 /* End of data viewer */
@@ -667,6 +695,11 @@ table.dataTable tbody td
 .esriCTSettingsButton
 {
     background-image: url('../images/settings.png');
+}
+
+.esriCTManualRefreshButton
+{
+    background-image: url('../images/refresh.png');
 }
 
 .esriCTOptions
@@ -764,12 +797,6 @@ table.dataTable tbody td
     min-width: 48px;
     max-height: 48px;
     max-width: 48px;
-}
-
-.esriCTSignInButtonDiv
-{
-    display: block;
-    float: right;
 }
 
 .esriCTUserControlContainer
@@ -878,16 +905,29 @@ table.dataTable tbody td
     margin-left: 2px;
 }
 
-.esriCTSignInButton
-{
-    background-image: url(../images/sign-in.png);
-    height: 24px;
-    width: 24px;
-}
-
 .esriCTNoResults
 {
     color: #555;
+}
+
+.esriCTDisableShowAll
+{
+    color: #808080;
+}
+
+.esriCTDisableShowSelected
+{
+    color: #808080;
+}
+
+.esriCTDisableClearSelection
+{
+    color: #808080;
+}
+
+.esriCTDisableCTZoomToSelected
+{
+    color: #808080;
 }
 
 /* End of application header styles */
@@ -909,3 +949,70 @@ table.dataTable tbody td
 }
 
 /* Sign out */
+
+/* Checkbox styling */
+
+.esriCTCheckBoxParentContainer
+{
+    margin: 0px 2px 18px !important;
+}
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked
+{
+    position: absolute;
+    left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label
+{
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before, [type="checkbox"]:checked + label:before
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #777;
+    background: #f8f8f8;
+}
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after
+{
+    content: '✔';
+    position: absolute;
+    top: 0;
+    left: 4px;
+    font-size: 14px;
+    color: #09ad7e;
+    transition: all .2s;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after
+{
+    opacity: 0;
+    transform: scale(0);
+}
+
+[type="checkbox"]:checked + label:after
+{
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* hover style just for information */
+label:hover:before
+{
+    border: 1px solid #4778d9 !important;
+}
+
+/* Checkbox styling */

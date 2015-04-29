@@ -1,4 +1,4 @@
-﻿/*global define,dojo,dojoConfig,alert,$ */
+﻿/*global define,dojo,dojoConfig,alert,$,confirm */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,indent:4 */
 /*
 | Copyright 2014 Esri
@@ -31,7 +31,6 @@ define([
     "dijit/_WidgetsInTemplateMixin",
     "dojo/text!css/theme-template.css",
     "dojo/string",
-    "application/utils/utils",
     "dojo/query"
 ], function (
     declare,
@@ -48,7 +47,6 @@ define([
     _WidgetsInTemplateMixin,
     ThemeCss,
     string,
-    ApplicationUtils,
     query
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
@@ -56,90 +54,100 @@ define([
         splashScreenScrollbar: null,
 
         /**
+        * This function is called when widget is constructed
+        * @param{object} parameters of widget
+        * @param{object} parent node of widget
+        * @memberOf widgets/app-header/app-header
+        */
+        constructor: function (options, srcRefNode) {
+            lang.mixin(this, options);
+        },
+
+        /**
         * This function is called when widget is constructed.
         * @memberOf widgets/app-header/app-header
         */
         postCreate: function () {
-            try {
-                var applicationName, applicationIcon;
-                // first check if application name is configured than display that
-                // second check if group title is available display that
-                // if user clicks cancel button than display sign-in text
-                if (dojo.configData.applicationName && lang.trim(dojo.configData.applicationName).length !== 0) {
-                    applicationName = dojo.configData.applicationName;
-                } else if (dojo.configData.groupInfo.results.length > 0 && dojo.configData.groupInfo.results[0].title) {
-                    applicationName = dojo.configData.groupInfo.results[0].title;
-                } else {
-                    applicationName = dojo.configData.i18n.applicationHeader.pleaseSignInText;
-                }
-                if (!dojo.configData.logInDetails) {
-                    applicationName = dojo.configData.i18n.applicationHeader.pleaseSignInText;
-                }
-                // to set title of document
-                document.title = applicationName;
-                // to set application name
-                domAttr.set(this.applicationHeaderName, "innerHTML", applicationName);
-                // first check if application icon is configured than display that
-                // second check if group icon is available than display that
-                // third default fallback icon will be displayed if above both scenario are not available
-                if (dojo.configData.applicationIcon && lang.trim(dojo.configData.applicationIcon).length !== 0) {
-                    if (dojo.configData.applicationIcon.indexOf("http") === 0) {
-                        domAttr.set(this.applicationHeaderIcon, "src", dojo.configData.applicationIcon);
-                    } else {
-                        if (dojo.configData.applicationIcon.indexOf("/") === 0) {
-                            domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + dojo.configData.applicationIcon);
-                        } else {
-                            domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/" + dojo.configData.applicationIcon);
-                        }
-                    }
-                } else if (dojo.configData.groupInfo) {
-                    if (dojo.configData.groupInfo.results.length > 0 && dojo.configData.groupInfo.results[0].thumbnailUrl) {
-                        domAttr.set(this.applicationHeaderIcon, "src", dojo.configData.groupInfo.results[0].thumbnailUrl);
-                    } else {
-                        domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/images/app-icon.png");
-                    }
-                } else {
-                    domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/images/app-icon.png");
-                }
-                if (!dojo.configData.logInDetails) {
-                    domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/images/app-icon.png");
-                }
-                applicationIcon = domAttr.get(this.applicationHeaderIcon, "src");
-                // load application shortcut icons
-                this._loadIcons("apple-touch-icon-precomposed", applicationIcon);
-                this._loadIcons("apple-touch-icon", applicationIcon);
-                this._setApplicationShortcutIcon();
-                // if user logs in than display application header with different controls like setting, view, etc...
-                // if user clicks cancel button than hide different and display sign-in button
-                if (dojo.configData.logInDetails) {
-                    domClass.add(this.esriCTSignInButtonDiv, "esriCTHidden");
-                    domClass.remove(this.esriCTLoginDetailsDiv, "esriCTHidden");
-                    this._displayLoginDetails();
-                    this._handleLoginArrowClick();
-                    this._handleLogoutClick();
-                } else {
-                    dojo.applicationUtils = ApplicationUtils;
-                    dojo.applicationUtils.loadApplicationTheme();
-                    domClass.add(dom.byId("esriCTMainContainer"), "esriCTHidden");
-                    domClass.add(this.esriCTMiddle, "esriCTHidden");
-                    domClass.add(this.esriCTLoginDetailsDiv, "esriCTHidden");
-                    domClass.add(this.applicationHeaderWidgetsContainer, "esriCTHidden");
-                    domClass.remove(this.esriCTSignInButton, "esriCTHidden");
-                }
-                //tooltip is coming from nls
-                domAttr.set(this.settingsDataViewerBtn, "title", dojo.configData.i18n.applicationHeader.settingsBtnToolTip);
-                domAttr.set(this.viewModeBtn, "title", dojo.configData.i18n.applicationHeader.viewModeBtnToolTip);
-                domAttr.set(this.searchModeBtn, "title", dojo.configData.i18n.applicationHeader.searchModeBtnToolTip);
-                this._onSettingsIconClick();
-                this._setSettingsOptionText();
-                this._setSearchPanelText();
-                this._attachEventHandlers();
-                this._onViewModeClick();
-                this._setViewModeOptionText();
-                this._onSearchIconClick();
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
+            var applicationName, applicationIcon;
+            // first check if application name is configured than display that
+            // second check if group title is available display that
+            // if user clicks cancel button than display sign-in text
+            if (this.appConfig.applicationName && lang.trim(this.appConfig.applicationName).length !== 0) {
+                applicationName = this.appConfig.applicationName;
+            } else if (this.appConfig.groupInfo.results.length > 0 && this.appConfig.groupInfo.results[0].title) {
+                applicationName = this.appConfig.groupInfo.results[0].title;
+            } else {
+                applicationName = this.appConfig.i18n.applicationHeader.pleaseSignInText;
             }
+            if (!this.appConfig.logInDetails) {
+                applicationName = this.appConfig.i18n.applicationHeader.pleaseSignInText;
+            }
+            // to set title of document
+            document.title = applicationName;
+            // to set application name
+            domAttr.set(this.applicationHeaderName, "innerHTML", applicationName);
+            // first check if application icon is configured than display that
+            // second check if group icon is available than display that
+            // third default fallback icon will be displayed if above both scenario are not available
+            if (this.appConfig.applicationIcon && lang.trim(this.appConfig.applicationIcon).length !== 0) {
+                if (this.appConfig.applicationIcon.indexOf("http") === 0) {
+                    domAttr.set(this.applicationHeaderIcon, "src", this.appConfig.applicationIcon);
+                } else {
+                    if (this.appConfig.applicationIcon.indexOf("/") === 0) {
+                        domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + this.appConfig.applicationIcon);
+                    } else {
+                        domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/" + this.appConfig.applicationIcon);
+                    }
+                }
+            } else if (this.appConfig.groupInfo) {
+                if (this.appConfig.groupInfo.results.length > 0 && this.appConfig.groupInfo.results[0].thumbnailUrl) {
+                    domAttr.set(this.applicationHeaderIcon, "src", this.appConfig.groupInfo.results[0].thumbnailUrl);
+                } else {
+                    domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/images/app-icon.png");
+                }
+            } else {
+                domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/images/app-icon.png");
+            }
+            if (!this.appConfig.logInDetails) {
+                domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/images/app-icon.png");
+            }
+            applicationIcon = domAttr.get(this.applicationHeaderIcon, "src");
+            // load application shortcut icons
+            this._loadIcons("apple-touch-icon-precomposed", applicationIcon);
+            this._loadIcons("apple-touch-icon", applicationIcon);
+            this._setApplicationShortcutIcon();
+            // if user logs in than display application header with different controls like setting, view, etc...
+            // if user clicks cancel button than hide different and display sign-in button
+            if (this.appConfig.logInDetails) {
+                domClass.remove(this.esriCTLoginDetailsDiv, "esriCTHidden");
+                this._displayLoginDetails();
+                this._handleLoginArrowClick();
+                this._handleLogoutClick();
+            } else {
+                this.appUtils.loadApplicationTheme(this.appConfig);
+                domClass.add(dom.byId("esriCTMainContainer"), "esriCTHidden");
+                domClass.add(query(".esriCTSettingsButton")[0], "esriCTHidden");
+                domClass.add(query(".esriCTViewMode")[0], "esriCTHidden");
+                domClass.add(query(".esriCTSearchDisable")[0], "esriCTHidden");
+                domClass.add(query(".esriCTManualRefreshButton")[0], "esriCTHidden");
+                domClass.remove(dom.byId("esriCTNoWebMapParentDiv"), "esriCTHidden");
+                this.esriCTLoginUserNameDiv.innerHTML = this.appConfig.i18n.applicationHeader.signInOption;
+                domClass.add(this.esriCTCaretIcon, "esriCTVisibilityHidden");
+                this._handleLoginArrowClick();
+                this.appUtils.hideLoadingIndicator();
+            }
+            //tooltip is coming from nls
+            domAttr.set(this.settingsDataViewerBtn, "title", this.appConfig.i18n.applicationHeader.settingsBtnToolTip);
+            domAttr.set(this.viewModeBtn, "title", this.appConfig.i18n.applicationHeader.viewModeBtnToolTip);
+            domAttr.set(this.searchModeBtn, "title", this.appConfig.i18n.applicationHeader.searchModeBtnToolTip);
+            domAttr.set(this.manualRefreshBtn, "title", this.appConfig.i18n.applicationHeader.manualRefreshBtnToolTip);
+            this._onSettingsIconClick();
+            this._setSettingsOptionText();
+            this._setSearchPanelText();
+            this._attachEventHandlers();
+            this._onViewModeClick();
+            this._setViewModeOptionText();
+            this._onSearchIconClick();
         },
 
         /**
@@ -148,46 +156,53 @@ define([
         */
         _attachEventHandlers: function () {
             on(this.esriCTShowSelected, "click", lang.hitch(this, function (event) {
-                this._toggleOptionsVisibility();
-                this.onShowSelectedRecordsClick();
+                if (!domClass.contains(event.currentTarget, "esriCTDisableShowSelected")) {
+                    this._toggleOptionsVisibility();
+                    this.onShowSelectedRecordsClick();
+                }
             }));
             on(this.esriCTShowAll, "click", lang.hitch(this, function (event) {
-                this._toggleOptionsVisibility();
-                this.onShowAllRecordsClick();
+                if (!domClass.contains(event.currentTarget, "esriCTDisableShowAll")) {
+                    this._toggleOptionsVisibility();
+                    this.onShowAllRecordsClick();
+                }
             }));
             on(this.esriCTClearSelection, "click", lang.hitch(this, function (event) {
-                this._toggleOptionsVisibility();
-                this.onClearSelectionClick();
+                if (!domClass.contains(event.currentTarget, "esriCTDisableClearSelection")) {
+                    this._toggleOptionsVisibility();
+                    this.onClearSelectionClick();
+                }
             }));
-
             on(this.esriCTZoomToSelected, "click", lang.hitch(this, function (event) {
-                this._toggleOptionsVisibility();
-                this.onZoomToSelectedClick();
+                if (!domClass.contains(event.currentTarget, "esriCTDisableCTZoomToSelected")) {
+                    this._toggleOptionsVisibility();
+                    this.onZoomToSelectedClick();
+                }
             }));
-
             on(this.listView, "click", lang.hitch(this, function (event) {
                 this._toggleViewModeOptionsVisibility();
                 this.onGridViewClick();
             }));
-
             on(this.mapView, "click", lang.hitch(this, function (event) {
                 this._toggleViewModeOptionsVisibility();
                 this.onMapViewClick();
             }));
-
             on(this.splitView, "click", lang.hitch(this, function (event) {
                 this._toggleViewModeOptionsVisibility();
                 this.onGridMapViewClick();
             }));
-
             on(this.searchRecords, "click", lang.hitch(this, function (event) {
                 this.onSearchRecordsClick();
             }));
-
             on(this.clearTextContent, "click", lang.hitch(this, function (event) {
                 this.onClearContentClick();
             }));
-
+            on(this.manualRefreshBtn, "click", lang.hitch(this, function (event) {
+                var confirmValue = confirm(this.appConfig.i18n.applicationHeader.confirmManualRefeshText);
+                if (confirmValue) {
+                    this.onManualRefreshClick();
+                }
+            }));
             $(".esriCTSearchBox").keyup(lang.hitch(this, function (event) {
                 if (event.keyCode === 13) {
                     this.onSearchRecordsClick();
@@ -220,8 +235,8 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _setApplicationShortcutIcon: function () {
-            if (dojo.configData.applicationFavicon && lang.trim(dojo.configData.applicationFavicon).length !== 0) {
-                this._loadIcons("shortcut icon", dojo.configData.applicationFavicon);
+            if (this.appConfig.applicationFavicon && lang.trim(this.appConfig.applicationFavicon).length !== 0) {
+                this._loadIcons("shortcut icon", this.appConfig.applicationFavicon);
             }
         },
 
@@ -249,8 +264,11 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _displayLoginDetails: function () {
-            this.esriCTLoginUserNameDiv.innerHTML = dojo.configData.logInDetails.userName;
-            this.esriCTLogoutOption.innerHTML = dojo.configData.i18n.applicationHeader.signOutOption;
+            this.esriCTLoginUserNameDiv.innerHTML = this.appConfig.logInDetails.userName;
+            if (!this.loggedInUser) {
+                domClass.add(this.esriCTCaretIcon, "esriCTVisibilityHidden");
+            }
+            this.esriCTLogoutOption.innerHTML = this.appConfig.i18n.applicationHeader.signOutOption;
         },
 
         /**
@@ -275,11 +293,11 @@ define([
                     "class": "esriCTSignOut"
                 }, signOutParentDiv);
                 domConstruct.create("div", {
-                    "innerHTML": dojo.configData.i18n.signOutPage.signOutMessage
+                    "innerHTML": this.appConfig.i18n.signOutPage.signOutMessage
                 }, signOutMessageDiv);
                 domConstruct.create("a", {
                     "href": "",
-                    "innerHTML": dojo.configData.i18n.signOutPage.reSignInMessage
+                    "innerHTML": this.appConfig.i18n.signOutPage.reSignInMessage
                 }, signOutMessageDiv);
                 document.body.innerHTML = signOutParentDiv.outerHTML;
             }));
@@ -290,10 +308,10 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _setSettingsOptionText: function () {
-            this.esriCTShowSelected.innerHTML = dojo.configData.i18n.applicationHeader.showSelectedOption;
-            this.esriCTShowAll.innerHTML = dojo.configData.i18n.applicationHeader.showAllOption;
-            this.esriCTClearSelection.innerHTML = dojo.configData.i18n.applicationHeader.clearSelectionOption;
-            this.esriCTZoomToSelected.innerHTML = dojo.configData.i18n.applicationHeader.zoomToSelectedOption;
+            this.esriCTShowSelected.innerHTML = this.appConfig.i18n.applicationHeader.showSelectedOption;
+            this.esriCTShowAll.innerHTML = this.appConfig.i18n.applicationHeader.showAllOption;
+            this.esriCTClearSelection.innerHTML = this.appConfig.i18n.applicationHeader.clearSelectionOption;
+            this.esriCTZoomToSelected.innerHTML = this.appConfig.i18n.applicationHeader.zoomToSelectedOption;
         },
 
         /**
@@ -301,9 +319,9 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _setViewModeOptionText: function () {
-            this.listView.innerHTML = dojo.configData.i18n.applicationHeader.gridViewOption;
-            this.mapView.innerHTML = dojo.configData.i18n.applicationHeader.mapViewOption;
-            this.splitView.innerHTML = dojo.configData.i18n.applicationHeader.gridMapViewOption;
+            this.listView.innerHTML = this.appConfig.i18n.applicationHeader.gridViewOption;
+            this.mapView.innerHTML = this.appConfig.i18n.applicationHeader.mapViewOption;
+            this.splitView.innerHTML = this.appConfig.i18n.applicationHeader.gridMapViewOption;
         },
 
         /**
@@ -311,7 +329,7 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _setSearchPanelText: function () {
-            this.noResultsFound.innerHTML = dojo.configData.i18n.searchPanel.noResultsFound;
+            this.noResultsFound.innerHTML = this.appConfig.i18n.searchPanel.noResultsFound;
         },
 
         /**
@@ -347,6 +365,14 @@ define([
         },
 
         /**
+        * This function is used to do manual refresh of currently selected layer
+        * @memberOf widgets/app-header/app-header
+        */
+        onManualRefreshClick: function () {
+            return;
+        },
+
+        /**
         * This function is used to display view option's list
         * @memberOf widgets/app-header/app-header
         */
@@ -365,16 +391,28 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _toggleLoginOptionsVisibility: function () {
-            if (domClass.contains(this.esriCTLoginOptionsDiv, "esriCTHidden")) {
-                domClass.remove(this.esriCTLoginOptionsDiv, "esriCTHidden");
-                domClass.add(this.esriCTLoginOptionsDiv, "esriCTVisible");
-                domClass.replace(this.esriCTSettingsOptionsItemDiv, "esriCTHidden", "esriCTVisible");
-                domClass.replace(this.optionsViewMode, "esriCTHidden", "esriCTVisible");
-                domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
+            if (this.loggedInUser) {
+                if (domClass.contains(this.esriCTLoginOptionsDiv, "esriCTHidden")) {
+                    domClass.remove(this.esriCTLoginOptionsDiv, "esriCTHidden");
+                    domClass.add(this.esriCTLoginOptionsDiv, "esriCTVisible");
+                    domClass.replace(this.esriCTSettingsOptionsItemDiv, "esriCTHidden", "esriCTVisible");
+                    domClass.replace(this.optionsViewMode, "esriCTHidden", "esriCTVisible");
+                    domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
+                } else {
+                    domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
+                    domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
+                }
             } else {
-                domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
-                domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
+                this.signInUser();
             }
+        },
+
+        /**
+        * This function is used to display identity manager
+        * @memberOf widgets/app-header/app-header
+        */
+        signInUser: function () {
+            return;
         },
 
         /**
@@ -400,6 +438,7 @@ define([
                 domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
             }
         },
+
         /**
         * This function is used to show/hide view option's list
         * @memberOf widgets/app-header/app-header

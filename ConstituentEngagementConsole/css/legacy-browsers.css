@@ -48,14 +48,14 @@
     background-image: url('../images/settings-24.png');
 }
 
-.esriCTSignInButton
-{
-    background-image: url(../images/sign-in-24.png);
-}
-
 .esriCTSearchDisable
 {
     background-image: url('../images/search-disable-24.png');
+}
+
+.esriCTManualRefreshButton
+{
+    background-image: url('../images/refresh-24.png');
 }
 
 /* Header Icons */

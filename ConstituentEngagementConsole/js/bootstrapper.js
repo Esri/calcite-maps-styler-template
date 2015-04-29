@@ -15,7 +15,8 @@
 | See the License for the specific language governing permissions and
 | limitations under the License.
 */
-define(["dojo/_base/declare",
+define([
+    "dojo/_base/declare",
     "config/template-config",
     "application/template",
     "application/main",
@@ -26,8 +27,9 @@ define(["dojo/_base/declare",
     "esri/IdentityManager",
     "widgets/app-header/app-header",
     "dojo/dom-construct",
-    "dojo/dom"
-    ], function (
+    "dojo/dom",
+    "application/utils/utils"
+], function (
     declare,
     templateConfig,
     Template,
@@ -39,11 +41,13 @@ define(["dojo/_base/declare",
     IdentityManager,
     ApplicationHeader,
     domConstruct,
-    dom
+    dom,
+    ApplicationUtils
 ) {
     return declare(null, {
-        boilerPlateTemplateObject: null,
-        _appHeader: null,
+        _boilerPlateTemplateObject: null, // stores object of boilerPlateTemplateObject
+        _appHeader: null, // stores object of application header
+        _consoleApp: null, // stores object of main
 
         /**
         * This function is called when user needs to start operation of widget
@@ -51,38 +55,21 @@ define(["dojo/_base/declare",
         */
         startup: function () {
             // create the template. This will take care of all the logic required for template applications
-            this.boilerPlateTemplateObject = new Template(templateConfig);
+            this._boilerPlateTemplateObject = new Template(templateConfig);
 
             // start template
-            this.boilerPlateTemplateObject.startup().then(lang.hitch(this, function (config) {
+            this._boilerPlateTemplateObject.startup().then(lang.hitch(this, function (config) {
                 //create the portal instance and initiate the identity manager
                 this.portal = new esriPortal.Portal(config.sharinghost);
-                this.portal.on("load", lang.hitch(this, function () {
-                    $(dom.byId("loadingIndicator")).addClass('esriCTHideLoadingIndicatorImage');
-                    // when user successfully signs in, load instantiate template & main file
-                    this.portal.signIn().then(lang.hitch(this, function (loggedInUser) {
-                        //As current version of boilerplate not handling the private Groups
-                        //once user is logged in query for the group info.
-                        this.boilerPlateTemplateObject.queryGroupInfo().then(lang.hitch(this, function (response) {
-                            //Proceed to load the app  if we get the group info, else show error.
-                            if (response.groupInfo.results.length > 0) {
-                                //update the group info in config file
-                                this.boilerPlateTemplateObject.config.groupInfo = response.groupInfo;
-                                //Now everything is ready, so initiate the App
-                                this.initApplication(loggedInUser);
-                            } else {
-                                $(dom.byId("loadingIndicator")).addClass('esriCTHideLoadingIndicatorImage');
-                                $(dom.byId("esriCTMainContainer")).addClass('esriCTHidden');
-                                this.showMessageScreen({
-                                    "message": config.i18n.webMapList.noWebMapInGroup
-                                }, null);
-                            }
+                this.portal.on("load", lang.hitch(this, function (evt) {
+                    var signedIn;
+                    signedIn = IdentityManager.checkSignInStatus(config.sharinghost + "/sharing");
+                    signedIn.then(lang.hitch(this, function (response) {
+                        this.portal.signIn().then(lang.hitch(this, function (loggedInUser) {
+                            this._queryGroupInfo(loggedInUser, config);
                         }));
                     }), lang.hitch(this, function (error) {
-                        // show error message when sign-in operation is aborted
-                        if (!(error.message.toLowerCase() === "aborted")) {
-                            this.showMessageScreen(error, null);
-                        }
+                        this._queryGroupInfo(null, config);
                     }));
                 }));
             }), lang.hitch(this, function (error) {
@@ -98,17 +85,37 @@ define(["dojo/_base/declare",
         },
 
         /**
+        * This function is used to query for group info
+        * @param{object} loggedInUser's credentials
+        * @param{object} configuration details
+        * @memberOf js/bootstrapper
+        */
+        _queryGroupInfo: function (loggedInUser, config) {
+            //As current version of boilerplate not handling the private Groups
+            //once user is logged in query for the group info.
+            this._boilerPlateTemplateObject.queryGroupInfo().then(lang.hitch(this, function (response) {
+                this._boilerPlateTemplateObject.config.groupInfo = response.groupInfo;
+                this.initApplication(loggedInUser);
+            }));
+        },
+
+        /**
         * This function is used to initiate the main application
         * @param{object} loggedInUser's credentials
         * @memberOf js/bootstrapper
         */
         initApplication: function (loggedInUser) {
-            var consoleApp;
             $(dom.byId("loadingIndicator")).removeClass("esriCTHideLoadingIndicatorImage");
             $(dom.byId("esriCTMainContainer")).removeClass("esriCTHidden");
             // create my main application. Start placing your logic in the main.js file.
-            consoleApp = new Main();
-            consoleApp.startup(this.boilerPlateTemplateObject, loggedInUser);
+            this._consoleApp = new Main();
+            this._consoleApp.reload = lang.hitch(this, function (logInDetails) {
+                // domConstruct.destroy(this._consoleApp);
+                loggedInUser = { "fullName": logInDetails.credential.userId, "credential": { "token": logInDetails.credential.token} };
+                // this._consoleApp = new Main();
+                this._queryGroupInfo(loggedInUser, this._boilerPlateTemplateObject.config);
+            });
+            this._consoleApp.startup(this._boilerPlateTemplateObject, loggedInUser);
         },
 
         /**
@@ -118,12 +125,9 @@ define(["dojo/_base/declare",
         * @memberOf js/bootstrapper
         */
         showMessageScreen: function (error) {
-            var message;
+            var message, appHeaderParameter;
             $(".esriSignInDialog").addClass("esriCTHidden");
             $(".dijitDialogUnderlayWrapper").addClass("esriCTHideWrapper");
-            if (dojo.configData) {
-                dojo.configData.logInDetails = null;
-            }
             $(document.body).removeClass("app-loading");
             domConstruct.empty("headerContainer");
             // display message when any error occurs during sign-in
@@ -134,15 +138,25 @@ define(["dojo/_base/declare",
                 message = error.message;
                 // show error message when group is undefined
                 if (message.toLowerCase() === "group undefined.") {
-                    message = this.boilerPlateTemplateObject.config.i18n.main.noGroup;
+                    message = this._boilerPlateTemplateObject.config.i18n.main.noGroup;
                 }
                 dom.byId("esriCTNoWebMapChildDiv").innerHTML = message;
             } else {
                 // display please sign-in page
                 $(dom.byId("headerContainer")).removeClass('esriCTHidden');
-                dojo.configData = this.boilerPlateTemplateObject.config;
+                appHeaderParameter = { "appConfig": this._boilerPlateTemplateObject.config, "appUtils": ApplicationUtils, "loggedInUser": null };
                 // instantiate application header widget
-                this._appHeader = new ApplicationHeader({}, domConstruct.create("div", {}, dom.byId('headerContainer')));
+                this._appHeader = new ApplicationHeader(appHeaderParameter, domConstruct.create("div", {}, dom.byId('headerContainer')));
+                // sign in user on click of sign-in option
+                this._appHeader.signInUser = lang.hitch(this, function () {
+                    this._boilerPlateTemplateObject.portal.signIn().then(lang.hitch(this, function (logInDetails) {
+                        $(dom.byId("esriCTNoWebMapParentDiv")).addClass("esriCTHidden");
+                        var loggedInUser;
+                        this._appHeader.destroy();
+                        loggedInUser = { "fullName": logInDetails.credential.userId, "credential": { "token": logInDetails.credential.token} };
+                        this.initApplication(loggedInUser);
+                    }));
+                });
             }
         }
     });

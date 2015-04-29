@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,15 +9,17 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <!-- End Responsive -->
-    <title>Constituent Engagement</title>
     <!-- Latest compiled and minified CSS -->
     <!-- jquery-ui CSS -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
     <!-- Bootstrap core CSS -->
-    <link href="js/vendor/bootstrap-3.3.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="js/vendor/bootstrap-3.3.0-dist/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
     <link rel="stylesheet" type="text/css" href="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
-    <link href="js/vendor/bootstrap-datatable/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="js/vendor/bootstrap-datatable/jquery.datatables.css" rel="stylesheet" type="text/css" />
+    <link href="js/vendor/bootstrap-datatable/datatables.bootstrap.css" rel="stylesheet"
+        type="text/css" />
+    <link href="js/vendor/bootstrap-datatable/jquery.datatables.css" rel="stylesheet"
+        type="text/css" />
     <!--Dojo and Esri CSS-->
     <link rel="stylesheet" href="//jsdev.arcgis.com/3.14/dijit/themes/claro/claro.css" />
     <link rel="stylesheet" href="//jsdev.arcgis.com/3.14/esri/css/esri.css" />
@@ -31,7 +32,6 @@
     <link rel="stylesheet"  type="text/css" href="css/legacy-browsers.css" />
   <![endif]-->
 </head>
-
 <body class="claro app-loading">
     <div class="loading-indicator" id="loadingIndicator">
     </div>
@@ -70,27 +70,13 @@
     <script type="text/javascript" src="js/resize-reverse.js"></script>
     <script type="text/javascript">
         require([
-            "application/bootstrapper", "esri/urlUtils", "esri/lang", "config/template-config"
+            "application/bootstrapper"
         ], function (
-            BootStrapper, urlUtils, esriLang, templateConfig
+            BootStrapper
         ) {
-            function checkIfAppIDExist() {
-                var urlObject,url;
-                url = document.location.href;
-                urlObject = urlUtils.urlToObject(url);
-                urlObject.query = urlObject.query || {};
-                // remove any HTML tags from query item
-                urlObject.query = esriLang.stripTags(urlObject.query);
-                return urlObject.query["appid"] ? true : false;
-            };
-            if (templateConfig.esriEnvironment && !checkIfAppIDExist()) {
-                window.location.assign("resources/preview/preview.html");
-            } else {
-                var bootStrapperObj = new BootStrapper();
-                bootStrapperObj.startup();
-            }
+            var bootStrapperObj = new BootStrapper();
+            bootStrapperObj.startup();
         });
     </script>
 </body>
-
 </html>

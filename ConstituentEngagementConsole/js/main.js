@@ -30,8 +30,10 @@ define(["dojo/_base/declare",
     "widgets/data-viewer/data-viewer",
     "dojo/dom-class",
     "dojo/query",
+    "esri/layers/FeatureLayer",
+    "esri/arcgis/Portal",
     "dojo/domReady!"
-    ], function (
+], function (
     declare,
     lang,
     dom,
@@ -46,19 +48,35 @@ define(["dojo/_base/declare",
     WebMapList,
     DataViewer,
     domClass,
-    query
+    query,
+    FeatureLayer,
+    esriPortal
 ) {
     return declare(null, {
-        config: {},
+        appConfig: {},
         boilerPlateTemplate: null,
         _webMapListWidget: null, // store object of web map list widget
         _dataViewerWidget: null, // store object of data-viewer widget
         _appHeader: null, // store object of application header widget
+        _mapViewer: null, // store object of map-viewer widget
         _groupItems: [],
         _isMapViewClicked: false, // track whether map view is clicked or not
         _isGridViewClicked: false, // track whether grid view is clicked or not
         _isSplitViewClicked: true, // track whether split view is clicked or not
         _isEditingOnAndroid: false, // track whether editing is started on android devices
+        _featureLayerClickHandle: null, // click handle of feature layer
+        _dataViewerFeatureLayerSelectionCompleteHandle: null, // selection complete handle of feature layer
+        _dataViewerFeatureLayerSelectionClearHandle: null, // selection clear handle of feature layer
+        _dataViewerGraphicsAddHandle: null, // adding graphics handle of graphics layer
+        _dataViewerGraphicsRemoveHandle: null, // removing graphics handle of graphics layer
+        _dataViewerGraphicsClearHandle: null, // clearing graphics handle of graphics layer
+        _activeRowGraphicsAddHandle: null, // adding graphics handle of active row graphics layer
+        _activeRowGraphicsRemoveHandle: null, // removing graphics handle of active row graphics layer
+        _activeRowClearHandle: null, // clearing graphics handle of active row graphics layer
+        _existingDefinitionExpression: null, // to store existing definition expression of layer
+        _loggedInUser: null, // to store details of user that is signed in
+
+        /** WIDGET INSTANTIATION **/
 
         /**
         * This function is called when user needs to start operation of widget
@@ -67,50 +85,52 @@ define(["dojo/_base/declare",
         * @memberOf widgets/main/main
         */
         startup: function (boilerPlateTemplateObject, loggedInUser) {
-            try {
-                var queryParams = {};
-                // config will contain application and user defined info for the template such as i18n strings, the web map id
-                // and application id
-                // any url parameters and any application specific configuration information.
-
-                dojo.applicationUtils = ApplicationUtils;
-                if (boilerPlateTemplateObject) {
-                    this.boilerPlateTemplate = boilerPlateTemplateObject;
-                    this.config = boilerPlateTemplateObject.config;
-                    // if login details are not available set it to anonymousUserName
-                    if (loggedInUser) {
-                        this.config.logInDetails = {
-                            "userName": loggedInUser.fullName,
-                            "token": loggedInUser.credential.token
-                        };
-                    } else {
-                        this.config.logInDetails = {
-                            "userName": "",
-                            "token": ""
-                        };
-                    }
-                    // enable queryForGroupItems in templateconfig
-                    this.boilerPlateTemplate.templateConfig.queryForGroupItems = true;
-                    // construct the query params if found in group info
-                    if (this.config.groupInfo.results && this.config.groupInfo.results.length > 0) {
-                        lang.mixin(queryParams, this.boilerPlateTemplate.templateConfig.groupParams);
-                        if (this.config.groupInfo.results[0].sortField) {
-                            queryParams.sortField = this.config.groupInfo.results[0].sortField;
-                        }
-                        if (this.config.groupInfo.results[0].sortOrder) {
-                            queryParams.sortOrder = this.config.groupInfo.results[0].sortOrder;
-                        }
-                    }
-                    // pass the newly constructed queryparams from groupinfo.
-                    // if query params not available in groupinfo or proup is private items will be sorted according to modified date.
-                    this._loadGroupItems(queryParams);
+            this._loggedInUser = loggedInUser;
+            var queryParams = {};
+            // config will contain application and user defined info for the template such as i18n strings, the web map id
+            // and application id
+            // any url parameters and any application specific configuration information.
+            if (boilerPlateTemplateObject) {
+                this.boilerPlateTemplate = boilerPlateTemplateObject;
+                this.appConfig = boilerPlateTemplateObject.config;
+                // if login details are not available set it to anonymousUserName
+                if (this._loggedInUser) {
+                    this.appConfig.logInDetails = {
+                        "userName": this._loggedInUser.fullName,
+                        "token": this._loggedInUser.credential.token
+                    };
+                    queryParams.token = this._loggedInUser.credential.token;
                 } else {
-                    dojo.applicationUtils.showError(this.config.i18n.config.configNotDefined);
+                    this.appConfig.logInDetails = {
+                        "userName": this.appConfig.i18n.applicationHeader.signInOption,
+                        "token": ""
+                    };
                 }
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
+                // enable queryForGroupItems in templateconfig
+                this.boilerPlateTemplate.templateConfig.queryForGroupItems = true;
+                // construct the query params if found in group info
+                //mixin configured group params so that in case of private group where we dont get the gropu info, items will be loaded as configured in templateconfig
+                lang.mixin(queryParams, this.boilerPlateTemplate.templateConfig.groupParams);
+                if (this.appConfig.groupInfo.results && this.appConfig.groupInfo.results.length > 0) {
+                    if (this.appConfig.groupInfo.results[0].sortField) {
+                        queryParams.sortField = this.appConfig.groupInfo.results[0].sortField;
+                    }
+                    if (this.appConfig.groupInfo.results[0].sortOrder) {
+                        queryParams.sortOrder = this.appConfig.groupInfo.results[0].sortOrder;
+                    }
+                }
+                // pass the newly constructed queryparams from groupinfo.
+                // if query params not available in groupinfo or proup is private items will be sorted according to modified date.
+                this._groupItems = [];
+                this._loadGroupItems(queryParams);
+            } else {
+                ApplicationUtils.showError(this.appConfig.i18n.config.configNotDefined);
             }
         },
+
+        /** WIDGET INSTANTIATION **/
+
+        /** GROUP ITEMS **/
 
         /**
         * This function is used to load group items
@@ -129,30 +149,41 @@ define(["dojo/_base/declare",
         _groupItemsLoaded: function (response) {
             this._groupItems.push.apply(this._groupItems, response.groupItems.results);
             if (response.groupItems.nextQueryParams.start < 0) {
-                if (!this.config.groupItems) {
-                    this.config.groupItems = {};
+                if (!this.appConfig.groupItems) {
+                    this.appConfig.groupItems = {};
                 }
-                this.config.groupItems.results = this._groupItems;
+                this.appConfig.groupItems.results = this._groupItems;
                 this._loadApplication();
+
             } else {
                 this._loadGroupItems(response.groupItems.nextQueryParams);
             }
         },
+
+        /** GROUP ITEMS **/
+
+        /** LOAD APPLICATION **/
 
         /**
         * This function is used to load application
         * @memberOf widgets/main/main
         */
         _loadApplication: function () {
-            dojo.configData = this.config;
             // set Application Theme
-            dojo.applicationUtils.loadApplicationTheme();
+            ApplicationUtils.loadApplicationTheme(this.appConfig);
             // set Application header
             this._createApplicationHeader();
+            var mapViewerParameter;
+            mapViewerParameter = {
+                "appConfig": this.appConfig,
+                "appUtils": ApplicationUtils
+            };
             // load MapViewer
-            this._mapViewer = new MapViewer(this.config, domConstruct.create("div", {}, dom.byId("LowerContainer")));
+            this._mapViewer = new MapViewer(mapViewerParameter, domConstruct.create("div", {}, dom.byId("LowerContainer")));
             // load web map list
-            if (this.config.groupItems.results.length > 0) {
+            if (this.appConfig.groupItems.results.length > 0) {
+                domClass.add(dom.byId("esriCTNoWebMapParentDiv"), "esriCTHidden");
+                domClass.remove(dom.byId("esriCTMainContainer"), "esriCTHidden");
                 this._createWebMapList();
             } else {
                 this._handleNoWebMapToDsiplay();
@@ -166,14 +197,14 @@ define(["dojo/_base/declare",
         * @memberOf widgets/main/main
         */
         _handleNoWebMapToDsiplay: function () {
-            try {
-                domClass.add(dom.byId("esriCTMainContainer"), "esriCTHidden");
-                dojo.applicationUtils.hideLoadingIndicator();
-                domClass.remove(dom.byId("esriCTNoWebMapParentDiv"), "esriCTHidden");
-                dom.byId("esriCTNoWebMapChildDiv").innerHTML = dojo.configData.i18n.webMapList.noWebMapInGroup;
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
-            }
+            domClass.add(dom.byId("esriCTMainContainer"), "esriCTHidden");
+            domClass.add(query(".esriCTSettingsButton")[0], "esriCTHidden");
+            domClass.add(query(".esriCTViewMode")[0], "esriCTHidden");
+            domClass.add(query(".esriCTSearchDisable")[0], "esriCTHidden");
+            domClass.add(query(".esriCTManualRefreshButton")[0], "esriCTHidden");
+            domClass.remove(dom.byId("esriCTNoWebMapParentDiv"), "esriCTHidden");
+            dom.byId("esriCTNoWebMapChildDiv").innerHTML = this.appConfig.i18n.webMapList.noWebMapInGroup;
+            ApplicationUtils.hideLoadingIndicator();
         },
 
         /**
@@ -181,24 +212,24 @@ define(["dojo/_base/declare",
         * @memberOf widgets/main/main
         */
         _attachEvents: function () {
-            try {
-                // resize map on window resize
-                on(window, "resize", lang.hitch(this, this._onWindowResize));
-                // resize map
-                this._mapViewer.resizeMap = lang.hitch(this, function () {
-                    this._dataViewerWidget.isDetailsTabClicked = false;
-                    this._resizeMap();
-                });
-                // display details tab
-                this._mapViewer.onDetailsTabClick = lang.hitch(this, function () {
-                    this._dataViewerWidget.showDetails();
-                });
-                // handle resize of containers
-                this._resizeUpperAndLowerContainer();
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
-            }
+            // resize map on window resize
+            on(window, "resize", lang.hitch(this, this._onWindowResize));
+            // resize map
+            this._mapViewer.resizeMap = lang.hitch(this, function () {
+                this._dataViewerWidget.isDetailsTabClicked = false;
+                this._resizeMap();
+            });
+            // display details tab
+            this._mapViewer.onDetailsTabClick = lang.hitch(this, function () {
+                this._dataViewerWidget.showDetails();
+            });
+            // handle resize of containers
+            this._resizeUpperAndLowerContainer();
         },
+
+        /** LOAD APPLICATION **/
+
+        /** RESIZE **/
 
         /**
         * This function is used to handle views on orientation change
@@ -236,43 +267,40 @@ define(["dojo/_base/declare",
         * @memberOf widgets/main/main
         */
         _resizeUpperAndLowerContainer: function () {
-            try {
-                //set jquery resizable on upper container
-                $("#UpperContainer").resizable({
-                    alsoResizeReverse: "#LowerContainer", //on resizeing upper container resize the lower map container
-                    handles: 's', //show resize handel only at the bottom of the grid container
-                    containment: "#esriCTMainContainer",
-                    maxHeight: 550,
-                    minHeight: 75
-                });
+            //set jquery resizable on upper container
+            $("#UpperContainer").resizable({
+                alsoResizeReverse: "#LowerContainer", //on resizeing upper container resize the lower map container
+                handles: 's', //show resize handel only at the bottom of the grid container
+                containment: "#esriCTMainContainer",
+                maxHeight: 550,
+                minHeight: 75
+            });
 
-                //handle resize stop event which will be fired on resize complete
-                //after completing resize of containers, resize the map so that it will be fit resized size
-                $("#UpperContainer").on("resizestop", lang.hitch(this, function (event, ui) {
-                    var mainContainerHeight, upperContainerHeight, lowerContainerHeight;
-                    mainContainerHeight = parseFloat(domStyle.get("esriCTMainContainer", "height"));
-                    upperContainerHeight = parseFloat(domStyle.get("UpperContainer", "height"));
-                    lowerContainerHeight = mainContainerHeight - upperContainerHeight;
-                    domStyle.set("LowerContainer", "height", lowerContainerHeight + "px");
-                    this._resizeMap();
-                    if (this._dataViewerWidget.isShowSelectedClicked) {
-                        this._dataViewerWidget.retainShowSelectedModeAfterResize();
-                    }
-                }));
+            //handle resize stop event which will be fired on resize complete
+            //after completing resize of containers, resize the map so that it will be fit resized size
+            $("#UpperContainer").on("resizestop", lang.hitch(this, function (event, ui) {
+                var mainContainerHeight, upperContainerHeight, lowerContainerHeight;
+                mainContainerHeight = parseFloat(domStyle.get("esriCTMainContainer", "height"));
+                upperContainerHeight = parseFloat(domStyle.get("UpperContainer", "height"));
+                lowerContainerHeight = mainContainerHeight - upperContainerHeight;
+                domStyle.set("LowerContainer", "height", lowerContainerHeight + "px");
+                this._resizeMap();
+                this._dataViewerWidget.createDataViewerUI(false);
+                if (this._dataViewerWidget.isShowSelectedClicked) {
+                    this._dataViewerWidget.retainShowSelectedModeAfterResize();
+                }
+            }));
 
-                $("#UpperContainer").on("resizestart", lang.hitch(this, function (event, ui) {
-                    var dataViewerParentDiv;
-                    if (!this._dataViewerWidget.isDetailsTabClicked) {
-                        this._dataViewerWidget.destroyDataViewerTable();
-                        dataViewerParentDiv = query(".esriCTDataViewerParentDiv");
-                        if (dataViewerParentDiv.length > 0) {
-                            domConstruct.empty(dataViewerParentDiv[0]);
-                        }
+            $("#UpperContainer").on("resizestart", lang.hitch(this, function (event, ui) {
+                var dataViewerParentDiv;
+                if (!this._dataViewerWidget.isDetailsTabClicked) {
+                    this._dataViewerWidget.destroyDataViewerTable();
+                    dataViewerParentDiv = query(".esriCTDataViewerParentDiv");
+                    if (dataViewerParentDiv.length > 0) {
+                        domConstruct.empty(dataViewerParentDiv[0]);
                     }
-                }));
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
-            }
+                }
+            }));
         },
 
         /**
@@ -280,73 +308,133 @@ define(["dojo/_base/declare",
         * @memberOf widgets/main/main
         */
         _resizeMap: function () {
-            try {
-                // only resize map in map & split view
-                if (!this._isGridViewClicked) {
-                    var mapCenter;
-                    if (this.map && domStyle.get(this._mapViewer.mapDiv, "display") === "block") {
-                        mapCenter = this.map.extent.getCenter();
-                        domStyle.set(dom.byId("mapDiv"), "height", "100%");
-                        domStyle.set(dom.byId("mapDiv"), "width", "100%");
-                    }
-                    setTimeout(lang.hitch(this, function () {
-                        if (this.map && domStyle.get(this._mapViewer.mapDiv, "display") === "block") {
-                            this.map.resize();
-                            this.map.reposition();
-                            this.map.centerAt(mapCenter);
-                            dojo.applicationUtils.hideLoadingIndicator();
-                        }
-                    }), 500);
+            // only resize map in map & split view
+            if (!this._isGridViewClicked) {
+                var mapCenter;
+                if (this.map && domStyle.get(this._mapViewer.mapDiv, "display") === "block") {
+                    mapCenter = this.map.extent.getCenter();
+                    domStyle.set(dom.byId("mapDiv"), "height", "100%");
+                    domStyle.set(dom.byId("mapDiv"), "width", "100%");
                 }
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
+                setTimeout(lang.hitch(this, function () {
+                    if (this.map && domStyle.get(this._mapViewer.mapDiv, "display") === "block") {
+                        this.map.resize();
+                        this.map.reposition();
+                        this.map.centerAt(mapCenter);
+                        ApplicationUtils.hideLoadingIndicator();
+                    }
+                }), 500);
             }
         },
+
+        /** RESIZE **/
+
+        /** APPLICATION HEADER CREATION **/
 
         /**
         * This function is used to create application header.
         * @memberOf widgets/main/main
         */
         _createApplicationHeader: function () {
-            try {
-                this._appHeader = new ApplicationHeader({}, domConstruct.create("div", {}, dom.byId('headerContainer')));
-                // display selected records
-                this._appHeader.onShowSelectedRecordsClick = lang.hitch(this, function () {
-                    this._dataViewerWidget.showSelectedRecords();
-                });
-                // display all records
-                this._appHeader.onShowAllRecordsClick = lang.hitch(this, function () {
-                    this._dataViewerWidget.showAllRecords();
-                });
-                // clears the selected records
-                this._appHeader.onClearSelectionClick = lang.hitch(this, function () {
-                    this._dataViewerWidget.clearSelection();
-                });
-                // zoom to selected record
-                this._appHeader.onZoomToSelectedClick = lang.hitch(this, function () {
-                    this._dataViewerWidget.zoomToSelected();
-                });
-                // display grid view
-                this._appHeader.onGridViewClick = lang.hitch(this, function () {
-                    //after switching to gridView by clicking on List-view mode always refresh it's UI
-                    this._showOnlyGridView(true);
-                });
-                // display map view
-                this._appHeader.onMapViewClick = lang.hitch(this, this._showOnlyMapView);
-                // display split view
-                this._appHeader.onGridMapViewClick = lang.hitch(this, this._showSplitView);
-                // search records in data-viewer widget
-                this._appHeader.onSearchRecordsClick = lang.hitch(this, function () {
-                    this._dataViewerWidget.searchDataInDataViewer();
-                });
-                // clear content in search input control
-                this._appHeader.onClearContentClick = lang.hitch(this, function () {
-                    this._dataViewerWidget.clearSearchText();
-                });
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
+            var appHeaderParameter;
+            appHeaderParameter = {
+                "appConfig": this.appConfig,
+                "appUtils": ApplicationUtils,
+                "loggedInUser": this._loggedInUser
+            };
+            this._appHeader = new ApplicationHeader(appHeaderParameter, domConstruct.create("div", {}, dom.byId('headerContainer')));
+            // display selected records
+            this._appHeader.onShowSelectedRecordsClick = lang.hitch(this, function () {
+                this._dataViewerWidget.showSelectedRecords();
+            });
+            // display all records
+            this._appHeader.onShowAllRecordsClick = lang.hitch(this, function () {
+                this._dataViewerWidget.showAllRecords();
+            });
+            // clears the selected records
+            this._appHeader.onClearSelectionClick = lang.hitch(this, function () {
+                this._dataViewerWidget.clearSelection();
+            });
+            // zoom to selected record
+            this._appHeader.onZoomToSelectedClick = lang.hitch(this, function () {
+                this._dataViewerWidget.zoomToSelected();
+            });
+            // display grid view
+            this._appHeader.onGridViewClick = lang.hitch(this, function () {
+                //after switching to gridView by clicking on List-view mode always refresh it's UI
+                this._showOnlyGridView(true);
+            });
+            // display map view
+            this._appHeader.onMapViewClick = lang.hitch(this, this._showOnlyMapView);
+            // display split view
+            this._appHeader.onGridMapViewClick = lang.hitch(this, this._showSplitView);
+            // search records in data-viewer widget
+            this._appHeader.onSearchRecordsClick = lang.hitch(this, function () {
+                this._dataViewerWidget.searchDataInDataViewer();
+            });
+            // clear content in search input control
+            this._appHeader.onClearContentClick = lang.hitch(this, function () {
+                this._dataViewerWidget.clearSearchText();
+            });
+            // manual refresh the selected layer
+            this._appHeader.onManualRefreshClick = lang.hitch(this, function () {
+                $("#UpperContainer").resizable("enable");
+                this._isMapViewClicked = false;
+                this._isGridViewClicked = false;
+                this._isSplitViewClicked = true;
+                this._dataViewerWidget.isMapViewClicked = false;
+                this._dataViewerWidget.isGridViewClicked = false;
+                domStyle.set("UpperContainer", "display", "block");
+                domStyle.set("LowerContainer", "display", "block");
+                this._setDefaultHeightOfUpperAndLowerContainer();
+                this._dataViewerWidget._doManualRefresh();
+            });
+            // sign in user on click of sign-in option
+            this._appHeader.signInUser = lang.hitch(this, function () {
+                var portal = new esriPortal.Portal(this.appConfig.sharinghost);
+                portal.on("load", lang.hitch(this, function (evt) {
+                    portal.signIn().then(lang.hitch(this, function (logInDetails) {
+                        this._destroyWidgets();
+                        this.reload(logInDetails);
+                    }), lang.hitch(this, function (err) {
+                        ApplicationUtils.showError(err.message);
+                        location.reload();
+                    }));
+                }));
+            });
+        },
+
+        /**
+        * This function is used to destroy the widgets
+        * @memberOf widgets/main/main
+        */
+        _destroyWidgets: function () {
+            if (this._webMapListWidget) {
+                this._webMapListWidget.destroy();
+            }
+            if (this._dataViewerWidget) {
+                this._dataViewerWidget.destroy();
+            }
+            if (this._appHeader) {
+                this._appHeader.destroy();
+            }
+            if (this._mapViewer) {
+                this._mapViewer.destroy();
             }
         },
+
+        /**
+        * This function is used to reload the application
+        * @param{object} details of logged-in user
+        * @memberOf widgets/main/main
+        */
+        reload: function (logInDetails) {
+            return;
+        },
+
+        /** APPLICATION HEADER CREATION **/
+
+        /** VIEWS **/
 
         /**
         * This function is used to set the view of application to grid-view only.
@@ -406,6 +494,10 @@ define(["dojo/_base/declare",
             this._resizeMap();
         },
 
+        /** VIEWS **/
+
+        /** DATA-GRID/MAP PANEL **/
+
         /**
         * This function is used to set default height of upper and lower container
         * @memberOf widgets/main/main
@@ -431,148 +523,292 @@ define(["dojo/_base/declare",
         },
 
         /**
+        * This function is used to reset upper container
+        * @memberOf widgets/main/main
+        */
+        _resetUpperContainer: function () {
+            var refNode, node;
+            domConstruct.empty("UpperContainer");
+            $("#UpperContainer").remove();
+            node = domConstruct.create("div", {
+                "class": "esriCTUpperContainer esriCTBorderBottom",
+                "id": "UpperContainer"
+            });
+            refNode = dom.byId("rightParentContainer");
+            domConstruct.place(node, refNode, "first");
+            domStyle.set(dom.byId("LowerContainer"), "height", "60%");
+            this._resizeUpperAndLowerContainer();
+        },
+
+        /** DATA-GRID/MAP PANEL **/
+
+        /** WEBMAP-LIST WIDGET CREATION **/
+
+        /**
         * This function is used to instantiate webMapList widget.
         * @memberOf widgets/main/main
         */
         _createWebMapList: function () {
-            try {
-                var webMapDescriptionFields, webMapListConfigData;
-                // hide/show info fields of web-map
-                webMapDescriptionFields = {
-                    "description": dojo.configData.webMapInfoDescription,
-                    "snippet": dojo.configData.webMapInfoSnippet,
-                    "owner": dojo.configData.webMapInfoOwner,
-                    "created": dojo.configData.webMapInfoCreated,
-                    "modified": dojo.configData.webMapInfoModified,
-                    "licenseInfo": dojo.configData.webMapInfoLicenseInfo,
-                    "accessInformation": dojo.configData.webMapInfoAccessInformation,
-                    "tags": dojo.configData.webMapInfoTags,
-                    "numViews": dojo.configData.webMapInfoNumViews,
-                    "avgRating": dojo.configData.webMapInfoAvgRating
-                };
-                // parameters needed for instantiating web-map list widget
-                webMapListConfigData = {
-                    "webMapDescriptionFields": webMapDescriptionFields,
-                    "configData": this.config,
-                    "mapDivID": "mapDiv",
-                    "changeExtentOnLayerChange": false
-                };
-                // instantiate web-map list widget
-                this._webMapListWidget = new WebMapList(webMapListConfigData, domConstruct.create("div", {}, dom.byId('LeftContainer')));
-                // when new operational layer is selected show it in data-viewer
-                this._webMapListWidget.onOperationalLayerSelected = lang.hitch(this, function (details) {
+            var webMapDescriptionFields, webMapListConfigData;
+            // hide/show info fields of web-map
+            webMapDescriptionFields = {
+                "description": this.appConfig.webMapInfoDescription,
+                "snippet": this.appConfig.webMapInfoSnippet,
+                "owner": this.appConfig.webMapInfoOwner,
+                "created": this.appConfig.webMapInfoCreated,
+                "modified": this.appConfig.webMapInfoModified,
+                "licenseInfo": this.appConfig.webMapInfoLicenseInfo,
+                "accessInformation": this.appConfig.webMapInfoAccessInformation,
+                "tags": this.appConfig.webMapInfoTags,
+                "numViews": this.appConfig.webMapInfoNumViews,
+                "avgRating": this.appConfig.webMapInfoAvgRating
+            };
+            // parameters needed for instantiating web-map list widget
+            webMapListConfigData = {
+                "webMapDescriptionFields": webMapDescriptionFields,
+                "appConfig": this.appConfig,
+                "mapDivID": "mapDiv",
+                "appUtils": ApplicationUtils,
+                "changeExtentOnLayerChange": false,
+                "autoResize": false
+            };
+            // instantiate web-map list widget
+            this._webMapListWidget = new WebMapList(webMapListConfigData, domConstruct.create("div", {}, dom.byId('LeftContainer')));
+            // when new operational layer is selected show it in data-viewer
+            this._webMapListWidget.onOperationalLayerSelected = lang.hitch(this, function (details) {
+                setTimeout(lang.hitch(this, function () {
+                    ApplicationUtils.showLoadingIndicator();
                     this._isGridViewClicked = false;
                     this.map = details.map;
                     this._mapViewer.addDetailsBtn();
                     this._createDataViewer(details);
                     this._appHeader.setLayerTitle(details.operationalLayerDetails.title);
-                });
-                // show message when there is no web map to display
-                this._webMapListWidget.noMapsFound = lang.hitch(this, function () {
-                    this._handleNoWebMapToDsiplay();
-                });
-                // set upper and lower container's to default height
-                this._webMapListWidget.setDefaultHeightOfContainers = lang.hitch(this, function () {
-                    this._setDefaultHeightOfUpperAndLowerContainer();
-                });
-                // start web-map list widget
-                this._webMapListWidget.startup();
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
-            }
+                }), 10);
+            });
+            // show message when there is no web map to display
+            this._webMapListWidget.noMapsFound = lang.hitch(this, function () {
+                this._handleNoWebMapToDsiplay();
+            });
+            // set upper and lower container's to default height
+            this._webMapListWidget.setDefaultHeightOfContainers = lang.hitch(this, function () {
+                this._setDefaultHeightOfUpperAndLowerContainer();
+            });
+            // start web-map list widget
+            this._webMapListWidget.startup();
         },
 
-        /**
-        * This function is used to reset upper container
-        * @memberOf widgets/main/main
-        */
-        _resetUpperContainer: function () {
-            try {
-                var refNode, node;
-                domConstruct.empty("UpperContainer");
-                $("#UpperContainer").remove();
-                node = domConstruct.create("div", {
-                    "class": "esriCTUpperContainer esriCTBorderBottom",
-                    "id": "UpperContainer"
-                });
-                refNode = dom.byId("rightParentContainer");
-                domConstruct.place(node, refNode, "first");
-                domStyle.set(dom.byId("LowerContainer"), "height", "60%");
-                this._resizeUpperAndLowerContainer();
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
-            }
-        },
+        /** WEBMAP-LIST WIDGET CREATION **/
+
+        /** DATA-VIEWER WIDGET CREATION **/
 
         /**
         * This function is used to instantiate data-viewer widget.
         * @memberOf widgets/main/main
         */
         _createDataViewer: function (details) {
-            try {
-                var dataViewerConfigData;
-                // parameters that are passed to data-viewer widget
-                dataViewerConfigData = {
-                    "configData": this.config,
-                    "map": this.map,
-                    "selectedOperationalLayerID": details.operationalLayerId,
-                    "selectedOperationalLayerTitle": details.operationalLayerDetails.title,
-                    "popupInfo": details.operationalLayerDetails.popupInfo,
-                    "itemInfo": details.itemInfo,
-                    "lastSelectedWebMapExtent": this._webMapListWidget.lastSelectedWebMapExtent
-                };
+            var dataViewerConfigData, selectedOperationalLayer, layerUrl, layerID, cloneRenderer;
+            // parameters that are passed to data-viewer widget
+            dataViewerConfigData = {
+                "appConfig": this.appConfig,
+                "map": this.map,
+                "selectedOperationalLayerID": details.operationalLayerId,
+                "selectedOperationalLayerTitle": details.operationalLayerDetails.title,
+                "popupInfo": details.operationalLayerDetails.popupInfo,
+                "itemInfo": details.itemInfo,
+                "lastSelectedWebMapExtent": this._webMapListWidget.lastSelectedWebMapExtent,
+                "lastMapZoomLevel": this.map.getZoom(),
+                "lastMapScale": this.map.getScale(),
+                "appUtils": ApplicationUtils
+            };
+            selectedOperationalLayer = this.map.getLayer(details.operationalLayerDetails.id);
+            layerUrl = selectedOperationalLayer.url;
+            layerID = details.operationalLayerDetails.id;
+            cloneRenderer = lang.clone(selectedOperationalLayer.renderer);
+            this._getExistingDefinitionExpression(details.itemInfo, selectedOperationalLayer);
+            this.map.removeLayer(selectedOperationalLayer);
+            selectedOperationalLayer = new FeatureLayer(layerUrl, { mode: FeatureLayer.MODE_SNAPSHOT, id: layerID, outFields: ["*"], definitionExpression: this._existingDefinitionExpression });
+            selectedOperationalLayer.setRenderer(cloneRenderer);
+            this._removeHandles();
+            this._createHandles(selectedOperationalLayer);
+            this._resetUpperContainer();
+            // instantiate data-viewer widget
+            this._dataViewerWidget = new DataViewer(dataViewerConfigData, domConstruct.create("div", {}, dom.byId("UpperContainer")));
+            this.map.addLayer(selectedOperationalLayer);
+            this._attachDataViewerEventListener();
+        },
 
-                this._resetUpperContainer();
+        /**
+        * This function is used to remove event handles
+        * @memberOf widgets/main/main
+        */
+        _removeHandles: function () {
+            // removes previous feature layer click handle
+            if (this._featureLayerClickHandle) {
+                this._featureLayerClickHandle.remove();
+            }
+            // removes previous feature layer selection complete handle
+            if (this._dataViewerFeatureLayerSelectionCompleteHandle) {
+                this._dataViewerFeatureLayerSelectionCompleteHandle.remove();
+            }
+            // removes previous feature layer clear selection handle
+            if (this._dataViewerFeatureLayerSelectionClearHandle) {
+                this._dataViewerFeatureLayerSelectionClearHandle.remove();
+            }
+            // removes previous feature layer update end handle
+            if (this._dataViewerFeatureLayerUpdateEndHandle) {
+                this._dataViewerFeatureLayerUpdateEndHandle.remove();
+            }
+        },
 
-                // instantiate data-viewer widget
-                this._dataViewerWidget = new DataViewer(dataViewerConfigData, domConstruct.create("div", {}, dom.byId("UpperContainer")));
-
-                setTimeout(lang.hitch(this, function () {
+        /**
+        * This function is used to create event handles
+        * @memberOf widgets/main/main
+        */
+        _createHandles: function (selectedOperationalLayer) {
+            // attach click event to feature layer
+            if (selectedOperationalLayer) {
+                // to enable/disable details button on click of feature layer
+                this._featureLayerClickHandle = on(selectedOperationalLayer, "click", lang.hitch(this, function (evt) {
+                    this._dataViewerWidget.onFeatureClick(evt);
+                }));
+                // to enable/disable details button on selection complete of features
+                this._dataViewerFeatureLayerSelectionCompleteHandle = on(selectedOperationalLayer, "selection-complete", lang.hitch(this, function (evt) {
+                    this._dataViewerWidget.changeDetailsButtonMode(false);
+                }));
+                // to enable/disable details button on clear selection of features
+                this._dataViewerFeatureLayerSelectionClearHandle = on(selectedOperationalLayer, "selection-clear", lang.hitch(this, function (evt) {
+                    this._dataViewerWidget.changeDetailsButtonMode(false);
+                }));
+                this._dataViewerFeatureLayerUpdateEndHandle = on(selectedOperationalLayer, "update-end", lang.hitch(this, function (evt) {
                     // create ui of data-viewer widget
-                    this._dataViewerWidget.createDataViewerUI(true);
-                    this._resizeMap();
-                }), 1000);
-                // hide/show settings options
-                this._dataViewerWidget.toggleSelectionViewOption = lang.hitch(this, function (hideClearSelection) {
-                    this._appHeader.toggleSelectionViewOption(hideClearSelection);
-                });
-                // show details panel
-                this._dataViewerWidget.showDetailsTab = lang.hitch(this, function () {
-                    this._mapViewer.switchViewer("details");
-                });
-                // show map panel
-                this._dataViewerWidget.showLocationTab = lang.hitch(this, function () {
-                    this._mapViewer.switchViewer("location");
-                });
-
-                // Handle Edit start and complete event
-                this._dataViewerWidget.OnEditingStart = lang.hitch(this, function () {
-                    //check if it's android device and user is in split-view then only switch to only grid-view
-                    if (dojo.applicationUtils.isAndroid() && this._isSplitViewClicked) {
-                        domStyle.set(this._mapViewer.mapDiv, "display", "none");
-                        //Show only grid-view while editing in android devices
-                        this._showOnlyGridView(false);
-                        //Set Editing started on android after keyboard animation is done
-                        setTimeout(lang.hitch(this, function () {
-                            this._isEditingOnAndroid = true;
-                        }), 500);
+                    if ((evt.target._defnExpr === this._existingDefinitionExpression)) {
+                        this._dataViewerWidget.createDataViewerUI(true);
+                    } else {
+                        if (evt.target.graphics.length === 0) {
+                            this._dataViewerWidget.noResultFound = true;
+                            this._dataViewerWidget._displaySearchData();
+                        } else {
+                            this._dataViewerWidget._displaySearchData();
+                            this._dataViewerWidget.createDataViewerUI(false);
+                        }
                     }
-                });
+                }));
+            }
+        },
 
-                // Handle Edit start and complete event
-                this._dataViewerWidget.OnEditingComplete = lang.hitch(this, function () {
-                    if (dojo.applicationUtils.isAndroid() && this._isEditingOnAndroid) {
-                        //reset the flag to false once editing is done
-                        this._isEditingOnAndroid = false;
-                        //set the display of the map to true so that it is visible after keyboard is hidden
-                        domStyle.set(this._mapViewer.mapDiv, "display", "block");
-                        //after editing move to split-view
-                        this._showSplitView(false);
+        /**
+        * This function is used to attach event handlers
+        * @memberOf widgets/main/main
+        */
+        _attachDataViewerEventListener: function () {
+            // hide/show settings options
+            this._dataViewerWidget.toggleSelectionViewOption = lang.hitch(this, function (hideClearSelection) {
+                this._appHeader.toggleSelectionViewOption(hideClearSelection);
+            });
+            // show details panel
+            this._dataViewerWidget.showDetailsTab = lang.hitch(this, function () {
+                this._mapViewer.switchViewer("details");
+            });
+            // show map panel
+            this._dataViewerWidget.showLocationTab = lang.hitch(this, function () {
+                this._mapViewer.switchViewer("location");
+            });
+            // Handle Edit start and complete event
+            this._dataViewerWidget.OnEditingStart = lang.hitch(this, function () {
+                //check if it's android device and user is in split-view then only switch to only grid-view
+                if (ApplicationUtils.isAndroid() && this._isSplitViewClicked) {
+                    domStyle.set(this._mapViewer.mapDiv, "display", "none");
+                    //Show only grid-view while editing in android devices
+                    this._showOnlyGridView(false);
+                    //Set Editing started on android after keyboard animation is done
+                    setTimeout(lang.hitch(this, function () {
+                        this._isEditingOnAndroid = true;
+                    }), 500);
+                }
+            });
+            // Handle Edit start and complete event
+            this._dataViewerWidget.OnEditingComplete = lang.hitch(this, function () {
+                if (ApplicationUtils.isAndroid() && this._isEditingOnAndroid) {
+                    //reset the flag to false once editing is done
+                    this._isEditingOnAndroid = false;
+                    //set the display of the map to true so that it is visible after keyboard is hidden
+                    domStyle.set(this._mapViewer.mapDiv, "display", "block");
+                    //after editing move to split-view
+                    this._showSplitView(false);
+                }
+            });
+            this._dataViewerWidget.attachEventToGraphicsLayer = lang.hitch(this, function (graphicsLayer) {
+                // removes previous graphic's add handle
+                if (this._dataViewerGraphicsAddHandle) {
+                    this._dataViewerGraphicsAddHandle.remove();
+                }
+                // removes previous graphic's remove handle
+                if (this._dataViewerGraphicsRemoveHandle) {
+                    this._dataViewerGraphicsRemoveHandle.remove();
+                }
+                // removes previous graphic's clear handle
+                if (this._dataViewerGraphicsClearHandle) {
+                    this._dataViewerGraphicsClearHandle.remove();
+                }
+                // to enable/disable details button on add of graphics in graphics layer
+                this._dataViewerGraphicsAddHandle = on(graphicsLayer, "graphic-add", lang.hitch(this, function (evt) {
+                    this._dataViewerWidget.changeDetailsButtonMode(true);
+                }));
+                // to enable/disable details button on remove of graphics in graphics layer
+                this._dataViewerGraphicsRemoveHandle = on(graphicsLayer, "graphic-remove", lang.hitch(this, function (evt) {
+                    this._dataViewerWidget.changeDetailsButtonMode(true);
+                }));
+                // to enable/disable details button on clearing of graphics
+                this._dataViewerGraphicsClearHandle = on(graphicsLayer, "graphics-clear", lang.hitch(this, function (evt) {
+                    this._dataViewerWidget.changeDetailsButtonMode(true);
+                }));
+            });
+            this._dataViewerWidget.attachEventToActiveRowLayer = lang.hitch(this, function (graphicsLayer) {
+                // removes previous graphic's add handle
+                if (this._activeRowGraphicsAddHandle) {
+                    this._activeRowGraphicsAddHandle.remove();
+                }
+                // removes previous graphic's remove handle
+                if (this._activeRowGraphicsRemoveHandle) {
+                    this._activeRowGraphicsRemoveHandle.remove();
+                }
+                // removes previous graphic's clear handle
+                if (this._activeRowClearHandle) {
+                    this._activeRowClearHandle.remove();
+                }
+                // to enable/disable details button on add of graphics in graphics layer
+                this._activeRowGraphicsAddHandle = on(graphicsLayer, "graphic-add", lang.hitch(this, function (evt) {
+                    this._dataViewerWidget.changeDetailsButtonMode(true);
+                }));
+                // to enable/disable details button on remove of graphics in graphics layer
+                this._activeRowGraphicsRemoveHandle = on(graphicsLayer, "graphic-remove", lang.hitch(this, function (evt) {
+                    this._dataViewerWidget.changeDetailsButtonMode(true);
+                }));
+                // to enable/disable details button on clearing of graphics
+                this._activeRowClearHandle = on(graphicsLayer, "graphics-clear", lang.hitch(this, function (evt) {
+                    this._dataViewerWidget.changeDetailsButtonMode(true);
+                }));
+            });
+        },
+
+        /**
+        * This function is used to set existing definition expression.
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _getExistingDefinitionExpression: function (itemInfo, selectedOperationalLayer) {
+            var j;
+            // Initially, if a layer has some definition expression than store it
+            for (j = 0; j < itemInfo.itemData.operationalLayers.length; j++) {
+                if (selectedOperationalLayer.id === itemInfo.itemData.operationalLayers[j].id) {
+                    if (itemInfo.itemData.operationalLayers[j].layerDefinition && itemInfo.itemData.operationalLayers[j].layerDefinition.definitionExpression) {
+                        this._existingDefinitionExpression = itemInfo.itemData.operationalLayers[j].layerDefinition.definitionExpression;
+                    } else {
+                        this._existingDefinitionExpression = null;
                     }
-                });
-            } catch (err) {
-                dojo.applicationUtils.showError(err.message);
+                }
             }
         }
+
+        /** DATA-VIEWER WIDGET CREATION **/
     });
 });
